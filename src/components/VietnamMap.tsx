@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { City } from '@/types';
+import vnMap from '../../public/ban-do-viet-nam-34-tinh.jpg';
+
 
 interface VietnamMapProps {
   cities: City[];
@@ -45,7 +47,7 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
       <div 
         className="absolute inset-4 rounded-lg bg-contain bg-center bg-no-repeat opacity-90"
         style={{
-          backgroundImage: 'url(/ban-do-viet-nam-34-tinh.jpg)',
+          backgroundImage: `url(${vnMap.src})`,
         }}
       />
       
