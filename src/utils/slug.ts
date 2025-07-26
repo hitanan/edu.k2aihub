@@ -17,6 +17,26 @@ export function createSlug(name: string): string {
     .trim();
 }
 
+// Create a Map for O(1) city lookups by slug
+let citySlugMap: Map<string, City> | null = null;
+
+function initializeCitySlugMap(cities: City[]): Map<string, City> {
+  if (!citySlugMap) {
+    citySlugMap = new Map();
+    cities.forEach(city => {
+      citySlugMap!.set(city.slug, city);
+    });
+  }
+  return citySlugMap;
+}
+
 export function findCityBySlug(cities: City[], slug: string): City | undefined {
-  return cities.find((city) => city.slug === slug);
+  // Use Map for O(1) lookup instead of O(n) array.find()
+  const map = initializeCitySlugMap(cities);
+  return map.get(slug);
+}
+
+// Reset the map when needed (e.g., in development)
+export function resetCitySlugMap(): void {
+  citySlugMap = null;
 }

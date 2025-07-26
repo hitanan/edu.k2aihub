@@ -1,20 +1,44 @@
 'use client';
 
-import React from 'react';
+import React, { memo, useMemo, lazy, Suspense, useEffect } from 'react';
 import Link from 'next/link';
 import { City } from '@/types';
 import { createSlug } from '@/utils/slug';
-import VietnamMap from '@/components/VietnamMap';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import { preloadCriticalResources, optimizeImageLoading } from '@/utils/performance';
+import CityStructuredData from '@/components/CityStructuredData';
+
+// Lazy load the VietnamMap component for better performance
+const VietnamMap = lazy(() => import('@/components/VietnamMap'));
 
 interface CityPageProps {
   city: City;
   allCities: City[];
 }
 
-const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
+const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
   const [selectedCity, setSelectedCity] = React.useState<City>(city);
-    const router = useRouter();
+  const router = useRouter();
+  
+  // Performance optimizations on component mount
+  useEffect(() => {
+    preloadCriticalResources();
+    optimizeImageLoading();
+  }, []);
+  
+  // Memoize related cities calculation for performance
+  const relatedCities = useMemo(() => {
+    return allCities
+      .filter(c => c.region === city.region && c.id !== city.id)
+      .slice(0, 6);
+  }, [allCities, city.region, city.id]);
+  
+  // Memoize share data
+  const shareData = useMemo(() => ({
+    title: `${city.name} - Địa Lý Việt Nam`,
+    text: `Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`,
+    url: typeof window !== 'undefined' ? window.location.href : ''
+  }), [city.name, city.description]);
   const handleCityClick = (newCity: City) => {
     setSelectedCity(newCity);
     // Navigate to the new city page using slug
@@ -33,12 +57,6 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
   };
 
   const handleShare = async () => {
-    const shareData = {
-      title: `${city.name} - Nền Tảng Thông Minh`,
-      text: `Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`,
-      url: window.location.href
-    };
-
     try {
       if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
         await navigator.share(shareData);
@@ -100,6 +118,9 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Structured Data for SEO */}
+      <CityStructuredData city={city} />
+      
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,13 +237,22 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
               Vị trí trên Bản đồ
             </h2>
             <div className="aspect-[3/4] w-full">
-              <VietnamMap
-                cities={allCities}
-                selectedCity={selectedCity}
-                onCityClick={handleCityClick}
-                onCityHover={handleCityHover}
-                filteredCities={[city]}
-              />
+              <Suspense fallback={
+                <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-lg">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+                    <p className="text-sm text-gray-600">Đang tải bản đồ...</p>
+                  </div>
+                </div>
+              }>
+                <VietnamMap
+                  cities={allCities}
+                  selectedCity={selectedCity}
+                  onCityClick={handleCityClick}
+                  onCityHover={handleCityHover}
+                  filteredCities={[city]}
+                />
+              </Suspense>
             </div>
             <p className="text-sm text-gray-600 mt-4">
               Nhấp vào các thành phố khác để khám phá chúng
@@ -276,10 +306,7 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
             Các Thành Phố Khác trong {city.region}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {allCities
-              .filter(c => c.region === city.region && c.id !== city.id)
-              .slice(0, 6)
-              .map((relatedCity) => (
+            {relatedCities.map((relatedCity) => (
                 <Link
                   key={relatedCity.id}
                   href={`/city/${createSlug(relatedCity.name)}`}
@@ -320,6 +347,8 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
       </footer>
     </div>
   );
-};
+});
+
+CityPage.displayName = 'CityPage';
 
 export default CityPage;
