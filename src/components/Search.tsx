@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { City } from '@/types';
 import { matchVietnameseText } from '@/utils/vietnamese';
 
@@ -14,12 +14,22 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredCities, setFilteredCities] = useState<City[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (searchTerm.trim() === '') {
-      setFilteredCities([]);
-      onFilterChange([]);
-      setShowResults(false);
+      // When search is empty, show all cities if input is focused or clicked
+      if (isFocused || showResults) {
+        setFilteredCities(cities);
+        onFilterChange([]);
+        setShowResults(true);
+      } else {
+        setFilteredCities([]);
+        onFilterChange([]);
+        setShowResults(false);
+      }
       return;
     }
 
@@ -34,12 +44,38 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
     setFilteredCities(filtered);
     onFilterChange(filtered);
     setShowResults(true);
-  }, [searchTerm, cities, onFilterChange]);
+  }, [searchTerm, cities, onFilterChange, isFocused, showResults]);
+
+  // Handle clicks outside to close the dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setShowResults(false);
+        setIsFocused(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleCityClick = (city: City) => {
     onCitySelect(city);
     setShowResults(false);
+    setIsFocused(false);
     setSearchTerm(city.name);
+  };
+
+  const handleInputFocus = () => {
+    setIsFocused(true);
+    setShowResults(true);
+  };
+
+  const handleInputClick = () => {
+    setIsFocused(true);
+    setShowResults(true);
   };
 
   const clearSearch = () => {
@@ -47,10 +83,16 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
     setFilteredCities([]);
     onFilterChange([]);
     setShowResults(false);
+    setIsFocused(false);
   };
 
+  const displayCities = searchTerm.trim() === '' ? cities : filteredCities;
+  const resultText = searchTerm.trim() === '' 
+    ? `Tất cả ${cities.length} tỉnh thành` 
+    : `Tìm thấy ${filteredCities.length} kết quả`;
+
   return (
-    <div className="relative w-1/3">
+    <div ref={containerRef} className="relative md:w-1/3">
       {/* Search Input */}
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -59,10 +101,13 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
           </svg>
         </div>
         <input
+          ref={inputRef}
           type="text"
           placeholder="Tìm kiếm thành phố, vùng miền hoặc tên cũ..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onFocus={handleInputFocus}
+          onClick={handleInputClick}
           className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-black placeholder-gray-500"
         />
         {searchTerm && (
@@ -80,39 +125,49 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
       {/* Search Results */}
       {showResults && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
-          {filteredCities.length > 0 ? (
+          {displayCities.length > 0 ? (
             <div className="py-2">
-              <div className="px-4 py-2 text-sm text-gray-500 border-b border-gray-100">
-                Tìm thấy {filteredCities.length} kết quả{filteredCities.length !== 1 ? '' : ''}
+              <div className="px-4 py-2 text-sm text-gray-500 border-b border-gray-100 sticky top-0 bg-white">
+                {resultText}
+                {searchTerm.trim() === '' && (
+                  <span className="ml-2 text-blue-600 font-medium">
+                    (Nhấp để chọn thành phố)
+                  </span>
+                )}
               </div>
-              {filteredCities.map((city) => (
-                <button
-                  key={city.id}
-                  onClick={() => handleCityClick(city)}
-                  className="w-full px-4 py-3 text-left hover:bg-gray-50 focus:bg-gray-50 focus:outline-none transition-colors duration-150"
-                >
-                  <div className="flex items-center gap-3">
-                    <div 
-                      className="w-3 h-3 rounded-full flex-shrink-0" 
-                      style={{ backgroundColor: city.color }}
-                    />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <span className="font-medium text-gray-900">{city.name}</span>
-                        <span className="text-xs text-gray-500">#{city.code}</span>
-                      </div>
-                      <div className="text-sm text-gray-600 mt-1">
-                        {city.region}
-                        {city.oldNames.length > 1 && (
-                          <span className="ml-2 text-gray-400">
-                            • Bao gồm: {city.oldNames.slice(1).join(', ')}
-                          </span>
-                        )}
+              <div className="max-h-80 overflow-y-auto">
+                {displayCities.map((city) => (
+                  <button
+                    key={city.id}
+                    onClick={() => handleCityClick(city)}
+                    className="w-full px-4 py-3 text-left hover:bg-gray-50 focus:bg-gray-50 focus:outline-none transition-colors duration-150"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div 
+                        className="w-3 h-3 rounded-full flex-shrink-0" 
+                        style={{ backgroundColor: city.color }}
+                      />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="font-medium text-gray-900">{city.name}</span>
+                          <span className="text-xs text-gray-500">#{city.code}</span>
+                        </div>
+                        <div className="text-sm text-gray-600 mt-1">
+                          {city.region}
+                          {city.oldNames.length > 1 && (
+                            <span className="ml-2 text-gray-400">
+                              • Bao gồm: {city.oldNames.slice(1).join(', ')}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-xs text-gray-500 mt-1">
+                          Dân số: {city.population} • Diện tích: {city.area}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </button>
-              ))}
+                  </button>
+                ))}
+              </div>
             </div>
           ) : (
             <div className="px-4 py-8 text-center text-gray-500">

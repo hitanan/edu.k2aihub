@@ -46,7 +46,7 @@ export const citiesData: City[] = [
         <li><a href="https://hanoi.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Hà Nội</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -97,7 +97,7 @@ export const citiesData: City[] = [
         <li><a href="https://vi.wikipedia.org/wiki/C%C3%B4ng_vi%C3%AAn_%C4%91%E1%BB%8Ba_ch%E1%BA%A5t_Non_n%C6%B0%E1%BB%9Bc_Cao_B%E1%BA%B1ng" target="_blank">Công viên địa chất Non nước Cao Bằng</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -145,7 +145,7 @@ export const citiesData: City[] = [
         <li><a href="http://tuyenquang.gov.vn/" target="_blank">Cổng thông tin tỉnh Tuyên Quang</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -192,7 +192,7 @@ export const citiesData: City[] = [
         <li><a href="http://dienbien.gov.vn/" target="_blank">Cổng thông tin tỉnh Điện Biên</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -242,7 +242,7 @@ export const citiesData: City[] = [
         <li><a href="http://laichau.gov.vn/" target="_blank">Cổng thông tin tỉnh Lai Châu</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -289,7 +289,7 @@ export const citiesData: City[] = [
         <li><a href="http://sonla.gov.vn/" target="_blank">Cổng thông tin tỉnh Sơn La</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -337,7 +337,7 @@ export const citiesData: City[] = [
         <li><a href="http://laocai.gov.vn/" target="_blank">Cổng thông tin tỉnh Lào Cai</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -385,7 +385,7 @@ export const citiesData: City[] = [
         <li><a href="http://thainguyen.gov.vn/" target="_blank">Cổng thông tin tỉnh Thái Nguyên</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -435,7 +435,7 @@ export const citiesData: City[] = [
         <li><a href="http://langson.gov.vn/" target="_blank">Cổng thông tin tỉnh Lạng Sơn</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -482,7 +482,7 @@ export const citiesData: City[] = [
         <li><a href="https://quangninh.gov.vn/" target="_blank">Cổng thông tin tỉnh Quảng Ninh</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -530,7 +530,7 @@ export const citiesData: City[] = [
         <li><a href="http://bacninh.gov.vn/" target="_blank">Cổng thông tin tỉnh Bắc Ninh</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -578,7 +578,7 @@ export const citiesData: City[] = [
         <li><a href="http://phuthe.gov.vn/" target="_blank">Cổng thông tin tỉnh Phú Thọ</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -625,7 +625,7 @@ export const citiesData: City[] = [
         <li><a href="https://haiphong.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Hải Phòng</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -675,7 +675,7 @@ export const citiesData: City[] = [
         <li><a href="http://hungyen.gov.vn/" target="_blank">Cổng thông tin tỉnh Hưng Yên</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -736,7 +736,7 @@ export const citiesData: City[] = [
         <li><a href="http://thanhhoa.gov.vn/" target="_blank">Cổng thông tin tỉnh Thanh Hóa</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -783,7 +783,7 @@ export const citiesData: City[] = [
         <li><a href="http://nghean.gov.vn/" target="_blank">Cổng thông tin tỉnh Nghệ An</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -830,7 +830,7 @@ export const citiesData: City[] = [
         <li><a href="http://hatinh.gov.vn/" target="_blank">Cổng thông tin tỉnh Hà Tĩnh</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -878,7 +878,7 @@ export const citiesData: City[] = [
         <li><a href="http://quangtri.gov.vn/" target="_blank">Cổng thông tin tỉnh Quảng Trị</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -929,7 +929,7 @@ export const citiesData: City[] = [
         <li><a href="https://whc.unesco.org/en/list/678/" target="_blank">UNESCO - Complex of Huế Monuments</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -977,7 +977,7 @@ export const citiesData: City[] = [
         <li><a href="https://danang.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Đà Nẵng</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1025,7 +1025,7 @@ export const citiesData: City[] = [
         <li><a href="http://quangngai.gov.vn/" target="_blank">Cổng thông tin tỉnh Quảng Ngãi</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1073,7 +1073,7 @@ export const citiesData: City[] = [
         <li><a href="http://gialai.gov.vn/" target="_blank">Cổng thông tin tỉnh Gia Lai</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1121,7 +1121,7 @@ export const citiesData: City[] = [
         <li><a href="http://khanhhoa.gov.vn/" target="_blank">Cổng thông tin tỉnh Khánh Hòa</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1169,7 +1169,7 @@ export const citiesData: City[] = [
         <li><a href="http://daklak.gov.vn/" target="_blank">Cổng thông tin tỉnh Đắk Lắk</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1217,7 +1217,7 @@ export const citiesData: City[] = [
         <li><a href="http://lamdong.gov.vn/" target="_blank">Cổng thông tin tỉnh Lâm Đồng</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1268,7 +1268,7 @@ export const citiesData: City[] = [
         <li><a href="http://dongnai.gov.vn/" target="_blank">Cổng thông tin tỉnh Đồng Nai</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1319,7 +1319,7 @@ export const citiesData: City[] = [
         <li><a href="https://www.hochiminhcity.gov.vn/" target="_blank">Cổng thông tin điện tử TP.HCM</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1367,7 +1367,7 @@ export const citiesData: City[] = [
         <li><a href="http://tayninh.gov.vn/" target="_blank">Cổng thông tin tỉnh Tây Ninh</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1417,7 +1417,7 @@ export const citiesData: City[] = [
         <li><a href="http://dongthap.gov.vn/" target="_blank">Cổng thông tin tỉnh Đồng Tháp</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1467,7 +1467,7 @@ export const citiesData: City[] = [
         <li><a href="http://vinhlong.gov.vn/" target="_blank">Cổng thông tin tỉnh Vĩnh Long</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1519,7 +1519,7 @@ export const citiesData: City[] = [
         <li><a href="https://vi.wikipedia.org/wiki/Ph%C3%BA_Qu%E1%BB%91c" target="_blank">Wikipedia - Phú Quốc</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1567,7 +1567,7 @@ export const citiesData: City[] = [
         <li><a href="https://cantho.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Cần Thơ</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   },
   {
@@ -1619,7 +1619,7 @@ export const citiesData: City[] = [
         <li><a href="https://vi.wikipedia.org/wiki/M%C5%A9i_C%C3%A0_Mau" target="_blank">Wikipedia - Mũi Cà Mau</a></li>
       </ul>
 
-      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+      <p><em>Nguồn: <a href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025" target="_blank">Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</a></em></p>
     `
   }
 ];

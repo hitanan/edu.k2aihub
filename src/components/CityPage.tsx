@@ -137,7 +137,7 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
           <ol className="flex items-center space-x-2 text-sm text-gray-500">
             <li>
               <button onClick={handleBackToMap} className="hover:text-gray-700">
-                Trang chủ
+                Địa Lý Việt Nam
               </button>
             </li>
             <li>/</li>
@@ -156,7 +156,7 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
                   className="w-6 h-6 rounded-full" 
                   style={{ backgroundColor: city.color }}
                 />
-                <span className="text-sm text-gray-500">Mã: {city.code}</span>
+                <span className="text-sm text-gray-500">Mã đơn vị hành chính: {city.code}</span>
                 <span className="text-sm text-gray-500">•</span>
                 <span className="text-sm text-gray-500">{city.region}</span>
               </div>
@@ -295,7 +295,7 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
                         {relatedCity.name}
                       </h3>
                       <p className="text-sm text-gray-600">
-                        Mã: {relatedCity.code}
+                        Mã đơn vị hành chính: {relatedCity.code}
                       </p>
                     </div>
                   </div>

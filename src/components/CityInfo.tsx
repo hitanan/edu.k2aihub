@@ -123,7 +123,7 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
               className="w-4 h-4 rounded-full" 
               style={{ backgroundColor: city.color }}
             />
-            <span className="text-sm text-gray-500">Mã: {city.code}</span>
+            <span className="text-sm text-gray-500">Mã đơn vị hành chính: {city.code}</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-800 mb-1 hover:text-blue-800 cursor-pointer" onClick={handleViewFullPage}>
             {city.name}
