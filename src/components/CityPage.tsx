@@ -34,7 +34,7 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
 
   const handleShare = async () => {
     const shareData = {
-      title: `${city.name} - Địa Lý Việt Nam`,
+      title: `${city.name} - Nền Tảng Thông Minh`,
       text: `Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`,
       url: window.location.href
     };

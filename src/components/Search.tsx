@@ -55,17 +55,30 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    // Also handle escape key
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setShowResults(false);
+        setIsFocused(false);
+      }
+    };
+
+    if (showResults) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscapeKey);
     };
-  }, []);
+  }, [showResults]);
 
   const handleCityClick = (city: City) => {
     onCitySelect(city);
     setShowResults(false);
     setIsFocused(false);
-    setSearchTerm(city.name);
+    setSearchTerm(''); // Clear search term when city is selected
   };
 
   const handleInputFocus = () => {

@@ -167,6 +167,17 @@ export default function Home() {
               Xây dựng tương lai giáo dục với công nghệ hiện đại và phương pháp giảng dạy tiên tiến. 
               Học tập không giới hạn, khám phá không ngừng.
             </p>
+            
+            {/* Feedback Link */}
+            <div className="mb-6">
+              <Link
+                href="/feedback"
+                className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+              >
+                💬 Góp Ý & Phản Hồi
+              </Link>
+            </div>
+            
             <div className="flex justify-center space-x-6 text-sm text-gray-400">
               <span>© 2025 Education Platform</span>
               <span>•</span>
