@@ -45,6 +45,8 @@ export const citiesData: City[] = [
         <li><a href="https://vi.wikipedia.org/wiki/H%C3%A0_N%E1%BB%99i" target="_blank">Wikipedia - Hà Nội</a></li>
         <li><a href="https://hanoi.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Hà Nội</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
@@ -622,6 +624,8 @@ export const citiesData: City[] = [
         <li><a href="https://vi.wikipedia.org/wiki/H%E1%BA%A3i_Ph%C3%B2ng" target="_blank">Wikipedia - Hải Phòng</a></li>
         <li><a href="https://haiphong.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Hải Phòng</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
@@ -1230,35 +1234,41 @@ export const citiesData: City[] = [
     description:
       'Đồng Nai là tỉnh công nghiệp phát triển sau sáp nhập với Bình Phước, giáp ranh với TP.HCM. Tỉnh có nhiều khu công nghiệp lớn và là trung tâm sản xuất quan trọng.',
     fullPageContent: `
-      <h2>Đồng Nai</h2>
-      <p>Đồng Nai là tỉnh công nghiệp phát triển sau khi sáp nhập với Bình Phước, giáp ranh với TP.HCM. Tỉnh có nhiều khu công nghiệp lớn và là trung tâm sản xuất quan trọng của vùng kinh tế trọng điểm phía Nam.</p>
+      <h2>Tỉnh Đồng Nai - Trung tâm công nghiệp miền Đông</h2>
       
-      <h3>Lịch sử và Sáp nhập</h3>
-      <p>Theo quy hoạch mới, Đồng Nai sáp nhập với Bình Phước tạo thành tỉnh với diện tích 12.737,18 km² và dân số 4.491.408 người, trở thành tỉnh có tiềm lực kinh tế mạnh nhất miền Đông Nam Bộ.</p>
-      
-      <h3>Địa lý và Dân số</h3>
+      <h3>Tổng quan kinh tế</h3>
+      <p>Đồng Nai là một trong những trung tâm công nghiệp hàng đầu với GRDP đạt <strong>609,176,602 triệu đồng</strong>, xếp hạng <strong>4/34</strong> toàn quốc. Thu ngân sách đạt <strong>73,458,454 triệu đồng</strong>, xếp hạng <strong>4/34</strong>. Sau sáp nhập với Bình Phước, tỉnh có tiềm lực kinh tế mạnh nhất miền Đông Nam Bộ.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>78.04 triệu đồng/năm</strong>, xếp hạng <strong>4/34</strong> toàn quốc - trong top các tỉnh có thu nhập cao nhất. Với dân số <strong>4,491,408 người</strong> (xếp hạng <strong>5/34</strong>) và diện tích <strong>12,737.18 km²</strong> (xếp hạng <strong>9/34</strong>), Đồng Nai có mật độ dân số vừa phải.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>Đồng Nai là tỉnh công nghiệp phát triển sau sáp nhập với Bình Phước, giáp ranh với TP.HCM. Tỉnh có vị trí chiến lược trong vùng kinh tế trọng điểm phía Nam với nhiều khu công nghiệp lớn và là trung tâm sản xuất quan trọng.</p>
+
+      <h3>Công nghiệp và sản xuất</h3>
+      <p>Tỉnh có nhiều khu công nghiệp lớn như Amata, Long Thành, Nhơn Trạch, là trung tâm sản xuất ô tô, điện tử, dệt may và chế biến nông sản của cả nước. Sân bay quốc tế Long Thành đang được xây dựng sẽ tăng cường thêm lợi thế giao thông.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Với lợi thế gần TP.HCM, hạ tầng công nghiệp phát triển và sân bay Long Thành tương lai, Đồng Nai có tiềm năng trở thành trung tâm logistics và sản xuất hàng đầu Đông Nam Á. Tỉnh đang chuyển dịch cơ cấu sang các ngành công nghiệp công nghệ cao và dịch vụ.</p>
+
+      <h3>Thông tin cơ bản</h3>
       <ul>
-        <li>Diện tích: 12.737,18 km² (xếp hạng 9/34)</li>
-        <li>Dân số: 4.491.408 người (xếp hạng 5/34)</li>
-        <li>Bao gồm: Đồng Nai cũ + Bình Phước cũ</li>
+        <li>GRDP: 609,176,602 triệu đồng (Xếp hạng 4/34)</li>
+        <li>Thu ngân sách: 73,458,454 triệu đồng (Xếp hạng 4/34)</li>
+        <li>Thu nhập bình quân: 78.04 triệu đồng/năm (Xếp hạng 4/34)</li>
+        <li>Dân số: 4,491,408 người (Xếp hạng 5/34)</li>
+        <li>Diện tích: 12,737.18 km² (Xếp hạng 9/34)</li>
+        <li>Thủ phủ: Thành phố Biên Hòa</li>
+        <li>Trước sáp nhập: Đồng Nai + Bình Phước</li>
       </ul>
-      
-      <h3>Kinh tế</h3>
-      <p>Đồng Nai có nền kinh tế công nghiệp mạnh với các chỉ số dẫn đầu:</p>
-      <ul>
-        <li>GRDP 2024: 609,176,602 triệu đồng (xếp hạng 4/34)</li>
-        <li>Thu ngân sách: 73,458,454 triệu đồng (xếp hạng 4/34)</li>
-        <li>Thu nhập bình quân: 78.04 triệu đồng/năm</li>
-      </ul>
-      
-      <h3>Công nghiệp và Sản xuất</h3>
-      <p>Tỉnh có nhiều khu công nghiệp lớn như Amata, Long Thành, Nhơn Trạch, là trung tâm sản xuất ô tô, điện tử, dệt may và chế biến nông sản của cả nước.</p>
       
       <h3>Tham khảo</h3>
       <ul>
         <li><a href="https://vi.wikipedia.org/wiki/%C4%90%E1%BB%93ng_Nai" target="_blank">Wikipedia - Đồng Nai</a></li>
         <li><a href="http://dongnai.gov.vn/" target="_blank">Cổng thông tin tỉnh Đồng Nai</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
@@ -1275,37 +1285,41 @@ export const citiesData: City[] = [
     description:
       'TP.HCM là thành phố lớn nhất Việt Nam, trung tâm kinh tế, tài chính của cả nước. Sau sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương, TP.HCM trở thành đô thị đặc biệt lớn nhất Việt Nam.',
     fullPageContent: `
-      <h2>Thành phố Hồ Chí Minh</h2>
-      <p>TP.HCM là thành phố lớn nhất Việt Nam, trung tâm kinh tế - tài chính - thương mại của cả nước. Sau sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương, TP.HCM trở thành đô thị đặc biệt lớn nhất Việt Nam.</p>
+      <h2>Thành phố Hồ Chí Minh - Trung tâm kinh tế lớn nhất Việt Nam</h2>
       
-      <h3>Lịch sử và Sáp nhập</h3>
-      <p>TP.HCM được thành lập từ việc sáp nhập Sài Gòn - Gia Định. Theo quy hoạch mới, thành phố sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương tạo thành đô thị đặc biệt với diện tích 6.772,59 km² và dân số 14.002.598 người.</p>
-      
-      <h3>Địa lý và Dân số</h3>
+      <h3>Tổng quan kinh tế</h3>
+      <p>TP.HCM là động lực kinh tế lớn nhất Việt Nam với GRDP đạt <strong>2,715,782,233 triệu đồng</strong>, xếp hạng <strong>1/34</strong> toàn quốc. Thu ngân sách đạt <strong>681,935,856 triệu đồng</strong>, xếp hạng <strong>1/34</strong>. Sau sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương, TP.HCM trở thành đô thị đặc biệt lớn nhất Việt Nam.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>85.53 triệu đồng/năm</strong>, xếp hạng <strong>2/34</strong> toàn quốc - chỉ sau Hà Nội. Với dân số lớn nhất cả nước <strong>14,002,598 người</strong> (xếp hạng <strong>1/34</strong>) và diện tích <strong>6,772.59 km²</strong> (xếp hạng <strong>22/34</strong>), TP.HCM có mật độ dân số cao nhất.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>TP.HCM là thành phố lớn nhất Việt Nam, trung tâm kinh tế, tài chính của cả nước. Sau sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương, thành phố có thêm cảng biển Vũng Tàu và các khu công nghiệp Bình Dương, tạo thành siêu đô thị hoàn chỉnh.</p>
+
+      <h3>Kinh tế và thương mại</h3>
+      <p>Thành phố đóng góp khoảng 23% GDP cả nước, là trung tâm tài chính, thương mại, công nghiệp và dịch vụ lớn nhất Việt Nam. Có cảng Sài Gòn, cảng Vũng Tàu và nhiều khu công nghiệp phát triển, sân bay quốc tế Tân Sơn Nhất.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Là trung tâm kinh tế - tài chính - thương mại hàng đầu Đông Nam Á, TP.HCM có tiềm năng trở thành thành phố toàn cầu. Với việc sáp nhập, thành phố có đủ các yếu tố của một siêu đô thị: trung tâm tài chính, cảng biển quốc tế, khu công nghiệp hiện đại và dịch vụ cao cấp.</p>
+
+      <h3>Thông tin cơ bản</h3>
       <ul>
-        <li>Diện tích: 6.772,59 km² (xếp hạng 22/34)</li>
-        <li>Dân số: 14.002.598 người (xếp hạng 1/34)</li>
+        <li>GRDP: 2,715,782,233 triệu đồng (Xếp hạng 1/34)</li>
+        <li>Thu ngân sách: 681,935,856 triệu đồng (Xếp hạng 1/34)</li>
+        <li>Thu nhập bình quân: 85.53 triệu đồng/năm (Xếp hạng 2/34)</li>
+        <li>Dân số: 14,002,598 người (Xếp hạng 1/34)</li>
+        <li>Diện tích: 6,772.59 km² (Xếp hạng 22/34)</li>
         <li>Trung tâm: Quận 1</li>
-        <li>Bao gồm: TP.HCM cũ + Bà Rịa - Vũng Tàu + Bình Dương</li>
+        <li>Trước sáp nhập: TP.HCM + Bà Rịa - Vũng Tàu + Bình Dương</li>
       </ul>
-      
-      <h3>Kinh tế</h3>
-      <p>TP.HCM là động lực kinh tế lớn nhất Việt Nam với các chỉ số dẫn đầu cả nước:</p>
-      <ul>
-        <li>GRDP 2024: 2,715,782,233 triệu đồng (xếp hạng 1/34)</li>
-        <li>Thu ngân sách: 681,935,856 triệu đồng (xếp hạng 1/34)</li>
-        <li>Thu nhập bình quân: 85.53 triệu đồng/năm</li>
-        <li>Đóng góp khoảng 23% GDP cả nước</li>
-      </ul>
-      
-      <h3>Thương mại và Công nghiệp</h3>
-      <p>Thành phố là trung tâm tài chính, thương mại, công nghiệp và dịch vụ lớn nhất Việt Nam. Có cảng Sài Gòn và nhiều khu công nghiệp phát triển.</p>
       
       <h3>Tham khảo</h3>
       <ul>
         <li><a href="https://vi.wikipedia.org/wiki/Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh" target="_blank">Wikipedia - TP.HCM</a></li>
         <li><a href="https://www.hochiminhcity.gov.vn/" target="_blank">Cổng thông tin điện tử TP.HCM</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
