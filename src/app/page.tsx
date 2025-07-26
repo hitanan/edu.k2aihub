@@ -1,102 +1,200 @@
-import Image from "next/image";
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import VietnamMap from '@/components/VietnamMap';
+import CityInfo from '@/components/CityInfo';
+import Search from '@/components/Search';
+import FeedbackForm from '@/components/FeedbackForm';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import { City } from '@/types';
+import citiesData from '@/data/cities';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [cities, setCities] = useState<City[]>([]);
+  const [selectedCity, setSelectedCity] = useState<City | null>(null);
+  const [hoveredCity, setHoveredCity] = useState<City | null>(null);
+  const [filteredCities, setFilteredCities] = useState<City[]>([]);
+  const [activeTab, setActiveTab] = useState<'map' | 'feedback'>('map');
+  const [loading, setLoading] = useState(true);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    // Use static data instead of dynamic imports
+    setCities(citiesData);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    // Load selected city from localStorage on mount
+    const savedCityId = localStorage.getItem('selectedCityId');
+    if (savedCityId && cities.length > 0) {
+      const city = cities.find(c => c.id === parseInt(savedCityId));
+      if (city) {
+        setSelectedCity(city);
+      }
+    }
+  }, [cities]);
+
+  useEffect(() => {
+    // Save selected city to localStorage
+    if (selectedCity) {
+      localStorage.setItem('selectedCityId', selectedCity.id.toString());
+    } else {
+      localStorage.removeItem('selectedCityId');
+    }
+  }, [selectedCity]);
+
+  const handleCityClick = (city: City) => {
+    setSelectedCity(city);
+  };
+
+  const handleCityHover = (city: City | null) => {
+    setHoveredCity(city);
+  };
+
+  const handleFilterChange = (filtered: City[]) => {
+    setFilteredCities(filtered);
+  };
+
+  const handleCitySelect = (city: City) => {
+    setSelectedCity(city);
+    setActiveTab('map');
+  };
+
+  if (loading) {
+    return (
+      <LoadingSpinner message="Loading Vietnam Geography..." />
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-green-600 rounded-lg"></div>
+              <h1 className="text-xl font-bold text-gray-900">
+                Vietnam Geography
+              </h1>
+            </div>
+            <nav className="flex items-center gap-6">
+              <button
+                onClick={() => setActiveTab('map')}
+                className={`px-3 py-2 rounded-lg font-medium transition-colors duration-200 ${
+                  activeTab === 'map'
+                    ? 'bg-blue-100 text-blue-700'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Interactive Map
+              </button>
+              <button
+                onClick={() => setActiveTab('feedback')}
+                className={`px-3 py-2 rounded-lg font-medium transition-colors duration-200 ${
+                  activeTab === 'feedback'
+                    ? 'bg-blue-100 text-blue-700'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Feedback
+              </button>
+            </nav>
+          </div>
         </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {activeTab === 'map' ? (
+          <>
+            {/* Search */}
+            <div className="mb-8">
+              <Search
+                cities={cities}
+                onFilterChange={handleFilterChange}
+                onCitySelect={handleCitySelect}
+              />
+            </div>
+
+            {/* Map and Info Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Map Section */}
+              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div className="mb-4">
+                  <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                    Interactive Map of Vietnam&apos;s 34 Provincial Units
+                  </h2>
+                  <p className="text-sm text-gray-600">
+                    Click on any city to learn more about it. 
+                    {hoveredCity && (
+                      <span className="ml-2 font-medium text-blue-600">
+                        Hovering: {hoveredCity.name}
+                      </span>
+                    )}
+                  </p>
+                </div>
+                <div className="aspect-[3/4] w-full">
+                  <VietnamMap
+                    cities={cities}
+                    selectedCity={selectedCity}
+                    onCityClick={handleCityClick}
+                    onCityHover={handleCityHover}
+                    filteredCities={filteredCities}
+                  />
+                </div>
+                {filteredCities.length > 0 && (
+                  <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+                    <p className="text-sm text-blue-800">
+                      <strong>{filteredCities.length}</strong> cities match your search
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              {/* Info Section */}
+              <div>
+                <CityInfo city={selectedCity} />
+              </div>
+            </div>
+
+            {/* Stats Section */}
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">34</div>
+                <div className="text-sm text-gray-600">Provincial Units</div>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">5</div>
+                <div className="text-sm text-gray-600">Major Cities</div>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
+                <div className="text-3xl font-bold text-purple-600 mb-2">8</div>
+                <div className="text-sm text-gray-600">Regions</div>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
+                <div className="text-3xl font-bold text-orange-600 mb-2">96M+</div>
+                <div className="text-sm text-gray-600">Total Population</div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <FeedbackForm />
+        )}
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <p className="text-gray-600 mb-2">
+              Vietnam Geography - Educational App for 34 Provincial Administrative Units
+            </p>
+            <p className="text-sm text-gray-500">
+              Built with Next.js, TypeScript, and Tailwind CSS
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
   );

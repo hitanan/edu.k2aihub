@@ -43,3 +43,8 @@ Build a complete education web app that helps users quickly get the Vietnam prov
 ## INSTRUCTIONS
 
 Please keep this as a complete, production-ready application, keep the project structure, implement all features, and make sure everything works together seamlessly. Focus on creating something that looks professional
+
+## Vietnamese Geography
+
+The following table lists the 34 provincial-level administrative units of Vietnam after the merger:
+[reqs/34-cities.md](../docs/34-cities.md)
