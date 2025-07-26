@@ -7,14 +7,38 @@ export const citiesData: City[] = [
     code: '01',
     name: 'Thành phố Hà Nội',
     slug: 'ha-noi',
-    oldNames: ['Hà Nội', 'Hà Đông', 'Sơn Tây'],
+    oldNames: ['Hà Nội'],
     region: 'Bắc Bộ',
     coordinates: { x: 380, y: 180 },
     color: '#ff6b35',
-    population: '8,435,700',
-    area: '3,359 km²',
+    population: '8,718,000',
+    area: '3,359.82 km²',
     description:
-      'Hà Nội là thủ đô của Việt Nam, trung tâm chính trị, văn hóa và giáo dục của cả nước. Thành phố có lịch sử hơn 1000 năm tuổi với nhiều di tích lịch sử quan trọng như Văn Miếu, Hoàng thành Thăng Long. Hà Nội được hình thành từ việc sáp nhập các tỉnh Hà Nội cũ, Hà Tây và một phần của Hòa Bình, Vĩnh Phúc.'
+      'Hà Nội là thủ đô của Việt Nam, trung tâm chính trị, văn hóa và giáo dục của cả nước. Thành phố có lịch sử hơn 1000 năm tuổi với nhiều di tích lịch sử quan trọng như Văn Miếu, Hoàng thành Thăng Long.',
+    fullPageContent: `
+      <h2>Tổng quan về Hà Nội</h2>
+      <p>Hà Nội là thủ đô của nước Cộng hòa Xã hội chủ nghĩa Việt Nam và là thành phố trực thuộc trung ương loại đặc biệt. Thành phố nằm ở vùng châu thổ sông Hồng, phía bắc Việt Nam.</p>
+      
+      <h3>Lịch sử</h3>
+      <p>Hà Nội có lịch sử hơn 1000 năm, được thành lập năm 1010 dưới triều Lý với tên gọi Thăng Long. Qua các triều đại phong kiến, thành phố luôn giữ vai trò là trung tâm chính trị quan trọng.</p>
+      
+      <h3>Địa lý và khí hậu</h3>
+      <p>Diện tích: 3,359.82 km²<br>
+      Dân số: 8,718,000 người<br>
+      Khí hậu: Nhiệt đới gió mùa với 4 mùa rõ rệt</p>
+      
+      <h3>Kinh tế</h3>
+      <p>Hà Nội là trung tâm kinh tế lớn thứ hai của Việt Nam, với GDP bình quân đầu người cao nhất cả nước. Các ngành kinh tế chủ lực bao gồm công nghiệp, dịch vụ, và du lịch.</p>
+      
+      <h3>Văn hóa và du lịch</h3>
+      <p>Thành phố sở hữu nhiều di sản văn hóa thế giới như Hoàng thành Thăng Long, Văn Miếu - Quốc Tử Giám. Phố cổ Hà Nội với 36 phố phường là điểm thu hút khách du lịch quốc tế.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/H%C3%A0_N%E1%BB%99i" target="_blank">Wikipedia - Hà Nội</a></li>
+        <li><a href="https://hanoi.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Hà Nội</a></li>
+      </ul>
+    `
   },
   {
     id: 2,
@@ -277,10 +301,34 @@ export const citiesData: City[] = [
     region: 'Bắc Trung Bộ',
     coordinates: { x: 420, y: 380 },
     color: '#74b9ff',
-    population: '1,230,000',
-    area: '5,009 km²',
+    population: '1,236,393',
+    area: '4,947.1 km²',
     description:
-      'Huế là cố đô của Việt Nam thời phong kiến, di sản văn hóa thế giới với Hoàng thành Huế. Thành phố có nền văn hóa cung đình độc đáo và ẩm thực truyền thống phong phú. Huế là trung tâm giáo dục quan trọng của miền Trung với nhiều trường đại học danh tiếng.'
+      'Huế là cố đô của Việt Nam thời phong kiến, di sản văn hóa thế giới với Hoàng thành Huế. Thành phố có nền văn hóa cung đình độc đáo và ẩm thực truyền thống phong phú.',
+    fullPageContent: `
+      <h2>Tổng quan về Thành phố Huế</h2>
+      <p>Huế là thành phố trực thuộc trung ương, cố đô của Việt Nam thời phong kiến. Thành phố nằm ở miền Trung Việt Nam, bên bờ sông Hương thơ mộng.</p>
+      
+      <h3>Lịch sử</h3>
+      <p>Huế là kinh đô của triều Nguyễn từ 1802 đến 1945, nơi lưu giữ nhiều di sản văn hóa quý báu. Hoàng thành Huế được UNESCO công nhận là di sản văn hóa thế giới năm 1993.</p>
+      
+      <h3>Địa lý và khí hậu</h3>
+      <p>Diện tích: 4,947.1 km²<br>
+      Dân số: 1,236,393 người<br>
+      Khí hậu: Nhiệt đới gió mùa, có mùa mưa từ tháng 9 đến tháng 2</p>
+      
+      <h3>Di sản văn hóa</h3>
+      <p>Huế sở hữu hệ thống di tích cung đình phong phú bao gồm Hoàng thành, các lăng tẩm của các vua triều Nguyễn, và hệ thống đền chùa cổ kính.</p>
+      
+      <h3>Ẩm thực</h3>
+      <p>Ẩm thực Huế mang đậm dấu ấn cung đình với các món ăn tinh tế như bún bò Huế, bánh khoái, chè Huế.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Hu%E1%BA%BF" target="_blank">Wikipedia - Huế</a></li>
+        <li><a href="https://huecity.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Huế</a></li>
+      </ul>
+    `
   },
   {
     id: 21,
@@ -291,10 +339,35 @@ export const citiesData: City[] = [
     region: 'Nam Trung Bộ',
     coordinates: { x: 440, y: 400 },
     color: '#ff7675',
-    population: '1,540,000',
-    area: '1,285 km²',
+    population: '3,065,628',
+    area: '11,859.59 km²',
     description:
-      'Đà Nẵng là thành phố trực thuộc trung ương, cửa ngõ kinh tế của miền Trung. Thành phố có bãi biển Mỹ Khê được bình chọn là một trong những bãi biển đẹp nhất thế giới. Sau sáp nhập với Quảng Nam, Đà Nẵng có thêm di sản văn hóa thế giới Hội An và thánh địa Mỹ Sơn.'
+      'Đà Nẵng là thành phố trực thuộc trung ương, cửa ngõ kinh tế của miền Trung. Sau sáp nhập với Quảng Nam, thành phố có thêm di sản văn hóa thế giới Hội An và thánh địa Mỹ Sơn.',
+    fullPageContent: `
+      <h2>Thành phố Đà Nẵng</h2>
+      <p>Đà Nẵng là thành phố trực thuộc trung ương, cửa ngõ kinh tế của miền Trung Việt Nam. Sau sáp nhập với Quảng Nam, thành phố trở thành một trung tâm du lịch và văn hóa quan trọng.</p>
+      
+      <h3>Lịch sử và Sáp nhập</h3>
+      <p>Theo quy hoạch mới, Đà Nẵng sáp nhập với Quảng Nam tạo thành thành phố với diện tích 11.859,59 km² và dân số 3.065.628 người. Việc sáp nhập mang lại nhiều di sản văn hóa thế giới như Hội An và Mỹ Sơn.</p>
+      
+      <h3>Địa lý</h3>
+      <p>Thành phố có diện tích 11.859,59 km² với dân số 3.065.628 người. Đà Nẵng có cả vùng núi, đồng bằng và bờ biển đẹp.</p>
+      <ul>
+        <li>Diện tích: 11.859,59 km²</li>
+        <li>Dân số: 3.065.628 người</li>
+        <li>Trung tâm: Quận Hải Châu</li>
+        <li>Bao gồm: Đà Nẵng cũ + Quảng Nam cũ</li>
+      </ul>
+      
+      <h3>Du lịch và Di sản</h3>
+      <p>Thành phố có bãi biển Mỹ Khê được bình chọn là một trong những bãi biển đẹp nhất thế giới. Di sản văn hóa thế giới Hội An và thánh địa Mỹ Sơn là những điểm đến hấp dẫn du khách quốc tế.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/%C4%90%C3%A0_N%E1%BA%B5ng" target="_blank">Wikipedia - Đà Nẵng</a></li>
+        <li><a href="https://danang.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Đà Nẵng</a></li>
+      </ul>
+    `
   },
   {
     id: 22,
@@ -385,14 +458,39 @@ export const citiesData: City[] = [
     code: '79',
     name: 'Thành phố Hồ Chí Minh',
     slug: 'ho-chi-minh',
-    oldNames: ['TP.HCM', 'Bà Rịa - Vũng Tàu'],
+    oldNames: ['TP.HCM', 'Bà Rịa - Vũng Tàu', 'Bình Dương'],
     region: 'Đông Nam Bộ',
     coordinates: { x: 480, y: 580 },
     color: '#ff6b35',
-    population: '10,420,000',
-    area: '2,095 km²',
+    population: '14,002,598',
+    area: '6,772.59 km²',
     description:
-      'TP.HCM là thành phố lớn nhất Việt Nam, trung tâm kinh tế, tài chính của cả nước. Thành phố có mật độ dân số cao và là nơi tập trung nhiều doanh nghiệp lớn. Sau sáp nhập với Bà Rịa - Vũng Tàu, TP.HCM có thêm vùng ven biển phát triển du lịch và công nghiệp.'
+      'TP.HCM là thành phố lớn nhất Việt Nam, trung tâm kinh tế, tài chính của cả nước. Sau sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương, TP.HCM trở thành đô thị đặc biệt lớn nhất Việt Nam.',
+    fullPageContent: `
+      <h2>Thành phố Hồ Chí Minh</h2>
+      <p>TP.HCM là thành phố lớn nhất Việt Nam, trung tâm kinh tế - tài chính - thương mại của cả nước. Sau sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương, TP.HCM trở thành đô thị đặc biệt lớn nhất Việt Nam.</p>
+      
+      <h3>Lịch sử và Sáp nhập</h3>
+      <p>TP.HCM được thành lập từ việc sáp nhập Sài Gòn - Gia Định. Theo quy hoạch mới, thành phố sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương tạo thành đô thị đặc biệt với diện tích 6.772,59 km² và dân số 14.002.598 người.</p>
+      
+      <h3>Địa lý</h3>
+      <p>Thành phố có diện tích 6.772,59 km² với dân số 14.002.598 người. Đây là đô thị có mật độ dân số cao nhất Việt Nam và là trung tâm kinh tế lớn nhất.</p>
+      <ul>
+        <li>Diện tích: 6.772,59 km²</li>
+        <li>Dân số: 14.002.598 người</li>
+        <li>Trung tâm: Quận 1</li>
+        <li>Bao gồm: TP.HCM cũ + Bà Rịa - Vũng Tàu + Bình Dương</li>
+      </ul>
+      
+      <h3>Kinh tế</h3>
+      <p>TP.HCM đóng góp khoảng 23% GDP cả nước, là trung tâm tài chính, thương mại, công nghiệp và dịch vụ lớn nhất Việt Nam. Thành phố có cảng Sài Gòn và nhiều khu công nghiệp phát triển.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh" target="_blank">Wikipedia - TP.HCM</a></li>
+        <li><a href="https://www.hochiminhcity.gov.vn/" target="_blank">Cổng thông tin điện tử TP.HCM</a></li>
+      </ul>
+    `
   },
   {
     id: 29,
@@ -459,10 +557,35 @@ export const citiesData: City[] = [
     region: 'Đồng bằng sông Cửu Long',
     coordinates: { x: 440, y: 680 },
     color: '#6c5ce7',
-    population: '2,750,000',
-    area: '1,409 km²',
+    population: '4,199,824',
+    area: '6,360.83 km²',
     description:
-      'Cần Thơ là thành phố trực thuộc trung ương, trung tâm kinh tế của đồng bằng sông Cửu Long. Thành phố nổi tiếng với chợ nổi Cái Răng và các món ăn đặc sản miền Tây. Sau sáp nhập với Hậu Giang và Sóc Trăng, Cần Thơ trở thành đô thị lớn nhất ĐBSCL.'
+      'Cần Thơ là thành phố trực thuộc trung ương, trung tâm kinh tế của đồng bằng sông Cửu Long. Sau sáp nhập với Hậu Giang và Sóc Trăng, Cần Thơ trở thành đô thị lớn nhất ĐBSCL.',
+    fullPageContent: `
+      <h2>Thành phố Cần Thơ</h2>
+      <p>Cần Thơ là thành phố trực thuộc trung ương, trung tâm kinh tế của đồng bằng sông Cửu Long. Sau sáp nhập với Hậu Giang và Sóc Trăng, Cần Thơ trở thành đô thị lớn nhất ĐBSCL.</p>
+      
+      <h3>Lịch sử và Sáp nhập</h3>
+      <p>Theo quy hoạch mới, Cần Thơ sáp nhập với Hậu Giang và Sóc Trăng tạo thành thành phố với diện tích 6.360,83 km² và dân số 4.199.824 người. Đây là trung tâm kinh tế quan trọng nhất của vùng ĐBSCL.</p>
+      
+      <h3>Địa lý</h3>
+      <p>Thành phố có diện tích 6.360,83 km² với dân số 4.199.824 người. Cần Thơ nằm trong vùng trung tâm đồng bằng sông Cửu Long với hệ thống sông ngòi chằng chịt.</p>
+      <ul>
+        <li>Diện tích: 6.360,83 km²</li>
+        <li>Dân số: 4.199.824 người</li>
+        <li>Trung tâm: Quận Ninh Kiều</li>
+        <li>Bao gồm: Cần Thơ cũ + Hậu Giang + Sóc Trăng</li>
+      </ul>
+      
+      <h3>Kinh tế và Du lịch</h3>
+      <p>Cần Thơ nổi tiếng với chợ nổi Cái Răng, các món ăn đặc sản miền Tây và du lịch sinh thái sông nước. Thành phố là trung tâm nông nghiệp lớn với sản lượng lúa gạo cao.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/C%E1%BA%A7n_Th%C6%A1" target="_blank">Wikipedia - Cần Thơ</a></li>
+        <li><a href="https://cantho.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Cần Thơ</a></li>
+      </ul>
+    `
   },
   {
     id: 34,

@@ -58,34 +58,51 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
         {/* Cities */}
         {cities.map((city) => {
           const coords = city.coordinates;
+          const isSelected = selectedCity?.id === city.id;
+          
           return (
             <g key={city.id}>
               <circle
                 cx={coords.x}
                 cy={coords.y}
-                r={selectedCity?.id === city.id ? 10 : 7}
+                r={isSelected ? 10 : 7}
                 fill={city.color}
                 stroke={getCityStroke(city)}
                 strokeWidth={getCityStrokeWidth(city)}
                 opacity={getCityOpacity(city)}
-                className="cursor-pointer transition-all duration-200 hover:scale-110"
+                className="cursor-pointer transition-all duration-150 ease-out"
                 onMouseEnter={() => onCityHover(city)}
                 onMouseLeave={() => onCityHover(null)}
                 onClick={() => onCityClick(city)}
                 style={{
-                  filter: selectedCity?.id === city.id ? 'brightness(1.2) drop-shadow(0 0 8px rgba(0,0,0,0.3))' : 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))',
+                  filter: isSelected ? 'brightness(1.2) drop-shadow(0 0 8px rgba(0,0,0,0.3))' : 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))',
+                  transformOrigin: `${coords.x}px ${coords.y}px`,
                 }}
               >
                 <title>{city.name}</title>
               </circle>
 
+              {/* Invisible larger circle for easier hover/click */}
+              <circle
+                cx={coords.x}
+                cy={coords.y}
+                r={15}
+                fill="transparent"
+                className="cursor-pointer"
+                onMouseEnter={() => onCityHover(city)}
+                onMouseLeave={() => onCityHover(null)}
+                onClick={() => onCityClick(city)}
+              >
+                <title>{city.name}</title>
+              </circle>
+
               {/* City labels for major cities */}
-              {(city.name.includes('Thành phố') || selectedCity?.id === city.id) && (
+              {(city.name.includes('Thành phố') || isSelected) && (
                 <text
                   x={coords.x}
                   y={coords.y - 15}
                   textAnchor="middle"
-                  className="text-xs font-bold fill-white pointer-events-none"
+                  className="text-xs font-bold fill-white pointer-events-none select-none"
                   opacity={getCityOpacity(city)}
                   style={{
                     textShadow: '1px 1px 2px rgba(0,0,0,0.8)',

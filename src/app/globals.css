@@ -24,3 +24,41 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Styles for full page content */
+.city-full-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  color: #1f2937;
+}
+
+.city-full-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem 0;
+  color: #374151;
+}
+
+.city-full-content p {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+}
+
+.city-full-content ul {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.city-full-content li {
+  margin: 0.25rem 0;
+}
+
+.city-full-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.city-full-content a:hover {
+  color: #1d4ed8;
+}

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { City } from '@/types';
 import { createSlug } from '@/utils/slug';
 import VietnamMap from '@/components/VietnamMap';
+import { useRouter } from 'next/navigation'
 
 interface CityPageProps {
   city: City;
@@ -13,11 +14,11 @@ interface CityPageProps {
 
 const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
   const [selectedCity, setSelectedCity] = React.useState<City>(city);
-
+    const router = useRouter();
   const handleCityClick = (newCity: City) => {
     setSelectedCity(newCity);
     // Navigate to the new city page using slug
-    window.location.href = `/city/${createSlug(newCity.name)}`;
+    router.push(`/city/${createSlug(newCity.name)}`);
   };
 
   const handleCityHover = (newCity: City | null) => {
@@ -28,7 +29,7 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
   const handleBackToMap = () => {
     // Save the current city to localStorage before navigating back
     localStorage.setItem('selectedCityId', city.id.toString());
-    window.location.href = '/';
+    router.back();
   };
 
   const handleShare = async () => {
@@ -234,11 +235,21 @@ const CityPage: React.FC<CityPageProps> = ({ city, allCities }) => {
               Về {city.name}
             </h2>
             
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>{para1}{para1.endsWith('.') ? '' : '.'}</p>
-              {para2 && <p>{para2}{para2.endsWith('.') ? '' : '.'}</p>}
-              {para3 && <p>{para3}{para3.endsWith('.') ? '' : '.'}</p>}
-            </div>
+            {city.fullPageContent ? (
+              <div 
+                className="text-gray-700 leading-relaxed space-y-4"
+                dangerouslySetInnerHTML={{ __html: city.fullPageContent }}
+                style={{
+                  lineHeight: '1.6',
+                }}
+              />
+            ) : (
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>{para1}{para1.endsWith('.') ? '' : '.'}</p>
+                {para2 && <p>{para2}{para2.endsWith('.') ? '' : '.'}</p>}
+                {para3 && <p>{para3}{para3.endsWith('.') ? '' : '.'}</p>}
+              </div>
+            )}
 
             <div className="mt-8 pt-6 border-t border-gray-200">
               <div className="flex gap-3">

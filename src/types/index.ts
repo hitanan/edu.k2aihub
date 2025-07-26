@@ -13,6 +13,7 @@ export interface City {
   population: string;
   area: string;
   description: string;
+  fullPageContent?: string;
 }
 
 export interface ContactForm {
