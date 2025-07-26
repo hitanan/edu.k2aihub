@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Địa Lý Việt Nam - 34 Đơn Vị Hành Chính Cấp Tỉnh",
-  description: "Ứng dụng giáo dục tương tác khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam sau sáp nhập. Tìm hiểu về các thành phố, vùng miền và địa lý.",
-  keywords: "Việt Nam, địa lý, tỉnh thành, thành phố, giáo dục, bản đồ tương tác",
-  authors: [{ name: "Đội Địa Lý Việt Nam" }],
+  title: "Nền Tảng Thông Tin Tương Tác, Địa Lý Việt Nam, AI Của Tôi",
+  description: "Nền Tảng Thông Tin Tương Tác, khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và thông tin chi tiết về kinh tế, văn hóa, lịch sử. AI Của Tôi giúp bạn hiểu và áp dụng AI trong công việc và cuộc sống hàng ngày.",
+  keywords: "Việt Nam, địa lý, tỉnh thành, thành phố, giáo dục, bản đồ tương tác, ai, trí tuệ nhân tạo, học tập",
+  authors: [{ name: "M2 Design" }],
   openGraph: {
-    title: "Địa Lý Việt Nam - 34 Đơn Vị Cấp Tỉnh",
-    description: "Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác",
+    title: "Nền Tảng Thông Tin Tương Tác, Địa Lý Việt Nam, AI Của Tôi",
+    description: "Nền Tảng Thông Tin Tương Tác, khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và thông tin chi tiết về kinh tế, văn hóa, lịch sử. AI Của Tôi giúp bạn hiểu và áp dụng AI trong công việc và cuộc sống hàng ngày.",
     type: "website",
   },
 };
