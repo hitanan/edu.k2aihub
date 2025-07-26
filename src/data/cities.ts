@@ -594,10 +594,43 @@ export const citiesData: City[] = [
     region: 'Bắc Trung Bộ',
     coordinates: { x: 380, y: 320 },
     color: '#00b894',
-    population: '1,290,000',
-    area: '6,056 km²',
+    population: '1,622,901',
+    area: '5,994.4 km²',
     description:
-      'Hà Tĩnh là tỉnh ven biển miền Trung, nổi tiếng là quê hương Chủ tịch Hồ Chí Minh. Tỉnh có nhiều di tích lịch sử quan trọng và phong cảnh thiên nhiên đẹp. Hà Tĩnh đang phát triển mạnh về công nghiệp với khu kinh tế Vũng Áng.'
+      'Hà Tĩnh là tỉnh ven biển miền Trung, nổi tiếng là quê hương Chủ tịch Hồ Chí Minh. Tỉnh có nhiều di tích lịch sử quan trọng và phong cảnh thiên nhiên đẹp. Hà Tĩnh đang phát triển mạnh về công nghiệp với khu kinh tế Vũng Áng.',
+    fullPageContent: `
+      <h2>Tỉnh Hà Tĩnh - Quê hương Bác Hồ và trung tâm công nghiệp nặng</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Hà Tĩnh là tỉnh có tiềm lực kinh tế quan trọng với GRDP đạt <strong>112,855,090 triệu đồng</strong>, xếp hạng <strong>27/34</strong> toàn quốc. Thu ngân sách đạt <strong>17,972,968 triệu đồng</strong>, xếp hạng <strong>23/34</strong>. Tỉnh đang có sự phát triển mạnh mẽ về công nghiệp nặng.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>51.60 triệu đồng/năm</strong>, xếp hạng <strong>28/34</strong> toàn quốc. Với dân số <strong>1,622,901 người</strong> (xếp hạng <strong>27/34</strong>) và diện tích <strong>5,994.4 km²</strong> (xếp hạng <strong>27/34</strong>), Hà Tĩnh có quy mô trung bình nhưng tiềm năng phát triển lớn.</p>
+
+      <h3>Vị trí lịch sử và văn hóa</h3>
+      <p>Hà Tĩnh là tỉnh ven biển miền Trung, nổi tiếng là quê hương của Chủ tịch Hồ Chí Minh vĩ đại. Tỉnh có nhiều di tích lịch sử quan trọng như Làng Sen - Kim Liên, và phong cảnh thiên nhiên đẹp với bãi biển Thiên Cầm, vườn quốc gia Vũ Quang.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Hà Tĩnh đang phát triển mạnh về công nghiệp nặng với khu kinh tế Vũng Áng - một trong những khu kinh tế trọng điểm quốc gia. Tỉnh có cảng nước sâu, hạ tầng công nghiệp hiện đại và nhiều dự án đầu tư lớn từ trong và ngoài nước, hứa hẹn trở thành trung tâm công nghiệp quan trọng của miền Trung.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 112,855,090 triệu đồng (Xếp hạng 27/34)</li>
+        <li>Thu ngân sách: 17,972,968 triệu đồng (Xếp hạng 23/34)</li>
+        <li>Thu nhập bình quân: 51.60 triệu đồng/năm (Xếp hạng 28/34)</li>
+        <li>Dân số: 1,622,901 người (Xếp hạng 27/34)</li>
+        <li>Diện tích: 5,994.4 km² (Xếp hạng 27/34)</li>
+        <li>Thủ phủ: Thành phố Hà Tĩnh</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/H%C3%A0_T%C4%A9nh" target="_blank">Wikipedia - Hà Tĩnh</a></li>
+        <li><a href="http://hatinh.gov.vn/" target="_blank">Cổng thông tin tỉnh Hà Tĩnh</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 19,
@@ -608,10 +641,44 @@ export const citiesData: City[] = [
     region: 'Bắc Trung Bộ',
     coordinates: { x: 400, y: 360 },
     color: '#a29bfe',
-    population: '870,000',
-    area: '4,739 km²',
+    population: '1,870,845',
+    area: '12,700 km²',
     description:
-      'Quảng Trị là vùng đất anh hùng với nhiều di tích lịch sử thời kỳ kháng chiến. Tỉnh có vị trí địa lý quan trọng ở vùng Bắc Trung Bộ. Sau sáp nhập với Quảng Bình, tỉnh có thêm các di sản thiên nhiên như động Phong Nha - Kẻ Bàng.'
+      'Quảng Trị là vùng đất anh hùng với nhiều di tích lịch sử thời kỳ kháng chiến. Tỉnh có vị trí địa lý quan trọng ở vùng Bắc Trung Bộ. Sau sáp nhập với Quảng Bình, tỉnh có thêm các di sản thiên nhiên như động Phong Nha - Kẻ Bàng.',
+    fullPageContent: `
+      <h2>Tỉnh Quảng Trị - Vùng đất anh hùng và di sản thiên nhiên</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Quảng Trị là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>113,687,549 triệu đồng</strong>, xếp hạng <strong>26/34</strong> toàn quốc. Thu ngân sách đạt <strong>12,082,370 triệu đồng</strong>, xếp hạng <strong>27/34</strong>. Sau sáp nhập với Quảng Bình, tỉnh có quy mô kinh tế lớn hơn.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>48.65 triệu đồng/năm</strong>, xếp hạng <strong>30/34</strong> toàn quốc. Với dân số <strong>1,870,845 người</strong> (xếp hạng <strong>23/34</strong>) và diện tích <strong>12,700 km²</strong> (xếp hạng <strong>10/34</strong>), Quảng Trị có diện tích lớn với nhiều tiềm năng phát triển.</p>
+
+      <h3>Vị trí lịch sử và di sản</h3>
+      <p>Quảng Trị là vùng đất anh hùng với nhiều di tích lịch sử thời kỳ kháng chiến như Vịnh Mốc, Thành cổ Quảng Trị, cầu Hiền Lương. Tỉnh có vị trí địa lý quan trọng ở vùng Bắc Trung Bộ, là cửa ngõ nối liền miền Bắc và miền Nam.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Sau sáp nhập với Quảng Bình, tỉnh có thêm các di sản thiên nhiên thế giới như động Phong Nha - Kẻ Bàng, tạo tiềm năng lớn cho du lịch. Quảng Trị còn có vị trí giao thông thuận lợi, cảng biển và nhiều tiềm năng phát triển công nghiệp, nông nghiệp và dịch vụ.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 113,687,549 triệu đồng (Xếp hạng 26/34)</li>
+        <li>Thu ngân sách: 12,082,370 triệu đồng (Xếp hạng 27/34)</li>
+        <li>Thu nhập bình quân: 48.65 triệu đồng/năm (Xếp hạng 30/34)</li>
+        <li>Dân số: 1,870,845 người (Xếp hạng 23/34)</li>
+        <li>Diện tích: 12,700 km² (Xếp hạng 10/34)</li>
+        <li>Thủ phủ: Thành phố Đông Hà</li>
+        <li>Trước sáp nhập: Quảng Trị + Quảng Bình</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_Tr%E1%BB%8B" target="_blank">Wikipedia - Quảng Trị</a></li>
+        <li><a href="http://quangtri.gov.vn/" target="_blank">Cổng thông tin tỉnh Quảng Trị</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 20,
@@ -665,29 +732,38 @@ export const citiesData: City[] = [
     description:
       'Đà Nẵng là thành phố trực thuộc trung ương, cửa ngõ kinh tế của miền Trung. Sau sáp nhập với Quảng Nam, thành phố có thêm di sản văn hóa thế giới Hội An và thánh địa Mỹ Sơn.',
     fullPageContent: `
-      <h2>Thành phố Đà Nẵng</h2>
-      <p>Đà Nẵng là thành phố trực thuộc trung ương, cửa ngõ kinh tế của miền Trung Việt Nam. Sau sáp nhập với Quảng Nam, thành phố trở thành một trung tâm du lịch và văn hóa quan trọng.</p>
+      <h2>Thành phố Đà Nẵng - Cửa ngõ kinh tế miền Trung và trung tâm du lịch</h2>
       
-      <h3>Lịch sử và Sáp nhập</h3>
-      <p>Theo quy hoạch mới, Đà Nẵng sáp nhập với Quảng Nam tạo thành thành phố với diện tích 11.859,59 km² và dân số 3.065.628 người. Việc sáp nhập mang lại nhiều di sản văn hóa thế giới như Hội An và Mỹ Sơn.</p>
-      
-      <h3>Địa lý</h3>
-      <p>Thành phố có diện tích 11.859,59 km² với dân số 3.065.628 người. Đà Nẵng có cả vùng núi, đồng bằng và bờ biển đẹp.</p>
+      <h3>Tổng quan kinh tế</h3>
+      <p>Đà Nẵng là một trong những trung tâm kinh tế quan trọng của miền Trung với GRDP đạt <strong>279,926,325 triệu đồng</strong>, xếp hạng <strong>14/34</strong> toàn quốc. Thu ngân sách đạt <strong>54,916,707 triệu đồng</strong>, xếp hạng <strong>7/34</strong>, thể hiện hiệu quả kinh tế cao của thành phố.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>64.68 triệu đồng/năm</strong>, xếp hạng <strong>12/34</strong> toàn quốc. Với dân số <strong>3,065,628 người</strong> (xếp hạng <strong>19/34</strong>) và diện tích <strong>11,859.59 km²</strong> (xếp hạng <strong>11/34</strong>), Đà Nẵng có mức sống khá cao và phát triển cân bằng.</p>
+
+      <h3>Vị trí chiến lược và sáp nhập</h3>
+      <p>Đà Nẵng là thành phố trực thuộc trung ương, cửa ngõ kinh tế của miền Trung Việt Nam. Sau sáp nhập với Quảng Nam, thành phố trở thành một trung tâm du lịch và văn hóa quan trọng với di sản văn hóa thế giới Hội An và thánh địa Mỹ Sơn. Thành phố có cả vùng núi, đồng bằng và bờ biển đẹp.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Đà Nẵng có bãi biển Mỹ Khê được bình chọn là một trong những bãi biển đẹp nhất thế giới. Với việc sáp nhập, thành phố có thêm nhiều di sản văn hóa và tiềm năng du lịch lớn, đồng thời là trung tâm công nghệ thông tin và dịch vụ quan trọng của miền Trung.</p>
+
+      <h3>Thông tin cơ bản</h3>
       <ul>
-        <li>Diện tích: 11.859,59 km²</li>
-        <li>Dân số: 3.065.628 người</li>
+        <li>GRDP: 279,926,325 triệu đồng (Xếp hạng 14/34)</li>
+        <li>Thu ngân sách: 54,916,707 triệu đồng (Xếp hạng 7/34)</li>
+        <li>Thu nhập bình quân: 64.68 triệu đồng/năm (Xếp hạng 12/34)</li>
+        <li>Dân số: 3,065,628 người (Xếp hạng 19/34)</li>
+        <li>Diện tích: 11,859.59 km² (Xếp hạng 11/34)</li>
         <li>Trung tâm: Quận Hải Châu</li>
-        <li>Bao gồm: Đà Nẵng cũ + Quảng Nam cũ</li>
+        <li>Trước sáp nhập: Đà Nẵng + Quảng Nam</li>
       </ul>
-      
-      <h3>Du lịch và Di sản</h3>
-      <p>Thành phố có bãi biển Mỹ Khê được bình chọn là một trong những bãi biển đẹp nhất thế giới. Di sản văn hóa thế giới Hội An và thánh địa Mỹ Sơn là những điểm đến hấp dẫn du khách quốc tế.</p>
       
       <h3>Tham khảo</h3>
       <ul>
         <li><a href="https://vi.wikipedia.org/wiki/%C4%90%C3%A0_N%E1%BA%B5ng" target="_blank">Wikipedia - Đà Nẵng</a></li>
         <li><a href="https://danang.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Đà Nẵng</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
@@ -695,14 +771,48 @@ export const citiesData: City[] = [
     code: '51',
     name: 'Quảng Ngãi',
     slug: 'quang-ngai',
-    oldNames: ['Quảng Ngãi'],
+    oldNames: ['Quảng Ngãi', 'Kon Tum'],
     region: 'Nam Trung Bộ',
     coordinates: { x: 460, y: 420 },
     color: '#fd79a8',
-    population: '1,250,000',
-    area: '5,153 km²',
+    population: '2,161,755',
+    area: '14,832.55 km²',
     description:
-      'Quảng Ngãi là tỉnh ven biển Nam Trung Bộ, có đảo Lý Sơn nổi tiếng với tỏi Lý Sơn. Tỉnh có nhiều bãi biển đẹp và khu bảo tồn thiên nhiên. Quảng Ngãi đang phát triển mạnh về du lịch biển và có tiềm năng lớn về năng lượng tái tạo.'
+      'Quảng Ngãi là tỉnh ven biển Nam Trung Bộ, có đảo Lý Sơn nổi tiếng với tỏi Lý Sơn. Tỉnh có nhiều bãi biển đẹp và khu bảo tồn thiên nhiên. Sau sáp nhập với Kon Tum, tỉnh có thêm tiềm năng về du lịch sinh thái và văn hóa dân tộc.',
+    fullPageContent: `
+      <h2>Tỉnh Quảng Ngãi - Vùng đất anh hùng và đa dạng văn hóa</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Quảng Ngãi là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>173,526,456 triệu đồng</strong>, xếp hạng <strong>24/34</strong> toàn quốc. Thu ngân sách đạt <strong>33,685,093 triệu đồng</strong>, xếp hạng <strong>13/34</strong>. Sau sáp nhập với Kon Tum, tỉnh có quy mô kinh tế và tiềm năng lớn hơn.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>49.53 triệu đồng/năm</strong>, xếp hạng <strong>29/34</strong> toàn quốc. Với dân số <strong>2,161,755 người</strong> (xếp hạng <strong>22/34</strong>) và diện tích <strong>14,832.55 km²</strong> (xếp hạng <strong>5/34</strong>), Quảng Ngãi có diện tích lớn với nhiều tiềm năng phát triển.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>Quảng Ngãi là tỉnh ven biển Nam Trung Bộ, có đảo Lý Sơn nổi tiếng với tỏi Lý Sơn và nhiều bãi biển đẹp. Sau sáp nhập với Kon Tum, tỉnh có địa hình đa dạng từ bờ biển đến vùng cao nguyên, tạo điều kiện phát triển đa dạng các ngành kinh tế và du lịch sinh thái.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Quảng Ngãi có nhiều tiềm năng phát triển với các di tích lịch sử, khu bảo tồn thiên nhiên, và sau sáp nhập có thêm văn hóa các dân tộc thiểu số từ Kon Tum. Tỉnh đang phát triển mạnh về du lịch biển và có tiềm năng lớn về năng lượng tái tạo, nông nghiệp và lâm nghiệp.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 173,526,456 triệu đồng (Xếp hạng 24/34)</li>
+        <li>Thu ngân sách: 33,685,093 triệu đồng (Xếp hạng 13/34)</li>
+        <li>Thu nhập bình quân: 49.53 triệu đồng/năm (Xếp hạng 29/34)</li>
+        <li>Dân số: 2,161,755 người (Xếp hạng 22/34)</li>
+        <li>Diện tích: 14,832.55 km² (Xếp hạng 5/34)</li>
+        <li>Thủ phủ: Thành phố Quảng Ngãi</li>
+        <li>Trước sáp nhập: Quảng Ngãi + Kon Tum</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_Ng%C3%A3i" target="_blank">Wikipedia - Quảng Ngãi</a></li>
+        <li><a href="http://quangngai.gov.vn/" target="_blank">Cổng thông tin tỉnh Quảng Ngãi</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 23,
