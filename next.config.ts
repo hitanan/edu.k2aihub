@@ -16,17 +16,14 @@ const nextConfig: NextConfig = {
   },
 
   // Build optimizations
-  swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production'
   },
 
-  // Static generation optimizations
-  generateStaticParams: true,
-
   // Compression and performance
   compress: true,
-  poweredByHeader: false
+  poweredByHeader: false,
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/k2aihub/' : ''
 
   // Bundle analyzer (optional - can be enabled when needed)
   // bundleAnalyzer: {
