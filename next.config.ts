@@ -23,7 +23,8 @@ const nextConfig: NextConfig = {
   // Compression and performance
   compress: true,
   poweredByHeader: false,
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/k2aihub/' : ''
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/k2aihub/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/k2aihub' : ''
 
   // Bundle analyzer (optional - can be enabled when needed)
   // bundleAnalyzer: {
