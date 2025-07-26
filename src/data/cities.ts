@@ -228,14 +228,48 @@ export const citiesData: City[] = [
     code: '19',
     name: 'Thái Nguyên',
     slug: 'thai-nguyen',
-    oldNames: ['Thái Nguyên', 'Bắc Cạn'],
+    oldNames: ['Thái Nguyên', 'Bắc Kạn'],
     region: 'Bắc Bộ',
     coordinates: { x: 390, y: 150 },
     color: '#a29bfe',
-    population: '1,280,000',
-    area: '3,534 km²',
+    population: '1,799,489',
+    area: '8,375.21 km²',
     description:
-      "Thái Nguyên được mệnh danh là 'thủ đô chè' của Việt Nam với truyền thống trồng chè hàng trăm năm. Tỉnh là trung tâm công nghiệp quan trọng với nhiều khu công nghiệp lớn. Sau sáp nhập, Thái Nguyên bao gồm cả tỉnh Bắc Cạn cũ, tạo thành một tỉnh có tiềm năng phát triển lớn."
+      "Thái Nguyên được mệnh danh là 'thủ đô chè' của Việt Nam với truyền thống trồng chè hàng trăm năm. Tỉnh là trung tâm công nghiệp quan trọng với nhiều khu công nghiệp lớn. Sau sáp nhập với Bắc Kạn, Thái Nguyên tạo thành một tỉnh có tiềm năng phát triển lớn.",
+    fullPageContent: `
+      <h2>Tỉnh Thái Nguyên - Thủ đô chè và trung tâm công nghiệp Bắc Bộ</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Thái Nguyên là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>185,613,943 triệu đồng</strong>, xếp hạng <strong>23/34</strong> toàn quốc. Thu ngân sách đạt <strong>21,057,020 triệu đồng</strong>, xếp hạng <strong>22/34</strong>. Sau sáp nhập với Bắc Kạn, tỉnh có quy mô kinh tế và diện tích lớn hơn.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>57.55 triệu đồng/năm</strong>, xếp hạng <strong>26/34</strong> toàn quốc. Với dân số <strong>1,799,489 người</strong> (xếp hạng <strong>25/34</strong>) và diện tích <strong>8,375.21 km²</strong> (xếp hạng <strong>19/34</strong>), Thái Nguyên có quy mô trung bình với tiềm năng phát triển công nghiệp.</p>
+
+      <h3>Vị trí địa lý và đặc sản</h3>
+      <p>Thái Nguyên được mệnh danh là "thủ đô chè" của Việt Nam với truyền thống trồng chè hàng trăm năm và sản phẩm chè Thái Nguyên nổi tiếng. Tỉnh là trung tâm công nghiệp quan trọng với nhiều khu công nghiệp lớn và có Đại học Thái Nguyên - trung tâm giáo dục quan trọng của miền Bắc.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Sau sáp nhập với Bắc Kạn, Thái Nguyên có thêm tiềm năng về du lịch sinh thái, khoáng sản và nông lâm nghiệp. Tỉnh có vị trí giao thông thuận lợi, gần Hà Nội và biên giới Trung Quốc, tạo nhiều cơ hội phát triển thương mại, công nghiệp và du lịch.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 185,613,943 triệu đồng (Xếp hạng 23/34)</li>
+        <li>Thu ngân sách: 21,057,020 triệu đồng (Xếp hạng 22/34)</li>
+        <li>Thu nhập bình quân: 57.55 triệu đồng/năm (Xếp hạng 26/34)</li>
+        <li>Dân số: 1,799,489 người (Xếp hạng 25/34)</li>
+        <li>Diện tích: 8,375.21 km² (Xếp hạng 19/34)</li>
+        <li>Thủ phủ: Thành phố Thái Nguyên</li>
+        <li>Trước sáp nhập: Thái Nguyên + Bắc Kạn</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Th%C3%A1i_Nguy%C3%AAn" target="_blank">Wikipedia - Thái Nguyên</a></li>
+        <li><a href="http://thainguyen.gov.vn/" target="_blank">Cổng thông tin tỉnh Thái Nguyên</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 9,
@@ -819,56 +853,192 @@ export const citiesData: City[] = [
     code: '52',
     name: 'Gia Lai',
     slug: 'gia-lai',
-    oldNames: ['Gia Lai', 'Kon Tum'],
+    oldNames: ['Gia Lai', 'Bình Định'],
     region: 'Tây Nguyên',
     coordinates: { x: 440, y: 460 },
     color: '#00cec9',
-    population: '1,510,000',
-    area: '15,536 km²',
+    population: '3,583,693',
+    area: '21,576.53 km²',
     description:
-      'Gia Lai là tỉnh cao nguyên với khí hậu mát mẻ quanh năm, nổi tiếng với cà phê Buôn Ma Thuột. Tỉnh có nhiều thác nước đẹp và rừng nguyên sinh. Sau sáp nhập với Kon Tum, Gia Lai trở thành tỉnh có diện tích lớn với đa dạng dân tộc thiểu số.'
+      'Gia Lai là tỉnh cao nguyên với khí hậu mát mẻ quanh năm, nổi tiếng với cà phê Buôn Ma Thuột. Tỉnh có nhiều thác nước đẹp và rừng nguyên sinh. Sau sáp nhập với Bình Định, Gia Lai trở thành tỉnh có diện tích lớn với đa dạng dân tộc thiểu số.',
+    fullPageContent: `
+      <h2>Tỉnh Gia Lai - Cao nguyên cà phê và đa dạng văn hóa</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Gia Lai là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>242,007,551 triệu đồng</strong>, xếp hạng <strong>19/34</strong> toàn quốc. Thu ngân sách đạt <strong>22,736,658 triệu đồng</strong>, xếp hạng <strong>19/34</strong>. Sau sáp nhập với Bình Định, tỉnh có quy mô kinh tế và diện tích lớn hơn đáng kể.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>47.93 triệu đồng/năm</strong>, xếp hạng <strong>31/34</strong> toàn quốc. Với dân số <strong>3,583,693 người</strong> (xếp hạng <strong>15/34</strong>) và diện tích <strong>21,576.53 km²</strong> (xếp hạng <strong>2/34</strong>), Gia Lai có diện tích lớn thứ 2 cả nước với mật độ dân số thưa.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>Gia Lai là tỉnh cao nguyên với khí hậu mát mẻ quanh năm, nổi tiếng với cà phê Buôn Ma Thuột chất lượng cao. Tỉnh có nhiều thác nước đẹp và rừng nguyên sinh. Sau sáp nhập với Bình Định, tỉnh có thêm vùng ven biển, tạo sự đa dạng về địa hình từ cao nguyên đến bờ biển.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Gia Lai có tiềm năng lớn về nông nghiệp (đặc biệt là cà phê), du lịch sinh thái và văn hóa dân tộc thiểu số. Sau sáp nhập với Bình Định, tỉnh có thêm tiềm năng phát triển du lịch biển, công nghiệp chế biến thủy sản và logistics. Đây là trung tâm quan trọng của vùng Tây Nguyên với nhiều cơ hội phát triển.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 242,007,551 triệu đồng (Xếp hạng 19/34)</li>
+        <li>Thu ngân sách: 22,736,658 triệu đồng (Xếp hạng 19/34)</li>
+        <li>Thu nhập bình quân: 47.93 triệu đồng/năm (Xếp hạng 31/34)</li>
+        <li>Dân số: 3,583,693 người (Xếp hạng 15/34)</li>
+        <li>Diện tích: 21,576.53 km² (Xếp hạng 2/34)</li>
+        <li>Thủ phủ: Thành phố Pleiku</li>
+        <li>Trước sáp nhập: Gia Lai + Bình Định</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Gia_Lai" target="_blank">Wikipedia - Gia Lai</a></li>
+        <li><a href="http://gialai.gov.vn/" target="_blank">Cổng thông tin tỉnh Gia Lai</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 24,
     code: '56',
     name: 'Khánh Hòa',
     slug: 'khanh-hoa',
-    oldNames: ['Khánh Hòa', 'Phú Yên'],
+    oldNames: ['Khánh Hòa', 'Ninh Thuận'],
     region: 'Nam Trung Bộ',
     coordinates: { x: 480, y: 480 },
     color: '#6c5ce7',
-    population: '1,320,000',
-    area: '5,197 km²',
+    population: '2,243,554',
+    area: '8,555.86 km²',
     description:
-      'Khánh Hòa là tỉnh ven biển nổi tiếng với Nha Trang - thành phố du lịch biển hàng đầu Việt Nam. Tỉnh có nhiều hòn đảo đẹp và các khu nghỉ dưỡng cao cấp. Sau sáp nhập với Phú Yên, Khánh Hòa có bờ biển dài hơn với nhiều bãi tắm đẹp.'
+      'Khánh Hòa là tỉnh ven biển nổi tiếng với Nha Trang - thành phố du lịch biển hàng đầu Việt Nam. Tỉnh có nhiều hòn đảo đẹp và các khu nghỉ dưỡng cao cấp. Sau sáp nhập với Ninh Thuận, Khánh Hòa có bờ biển dài hơn với nhiều bãi tắm đẹp.',
+    fullPageContent: `
+      <h2>Tỉnh Khánh Hòa - Thiên đường du lịch biển Việt Nam</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Khánh Hòa là tỉnh có tiềm năng kinh tế du lịch với GRDP đạt <strong>191,357,151 triệu đồng</strong>, xếp hạng <strong>22/34</strong> toàn quốc. Thu ngân sách đạt <strong>25,880,100 triệu đồng</strong>, xếp hạng <strong>16/34</strong>. Sau sáp nhập với Ninh Thuận, tỉnh có quy mô kinh tế và tiềm năng du lịch lớn hơn.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>49.83 triệu đồng/năm</strong>, xếp hạng <strong>27/34</strong> toàn quốc. Với dân số <strong>2,243,554 người</strong> (xếp hạng <strong>21/34</strong>) và diện tích <strong>8,555.86 km²</strong> (xếp hạng <strong>17/34</strong>), Khánh Hòa có quy mô trung bình với thế mạnh về du lịch.</p>
+
+      <h3>Vị trí địa lý và du lịch</h3>
+      <p>Khánh Hòa là tỉnh ven biển nổi tiếng với Nha Trang - thành phố du lịch biển hàng đầu Việt Nam. Tỉnh có nhiều hòn đảo đẹp như Hòn Tre, Hòn Mun và các khu nghỉ dưỡng cao cấp. Sau sáp nhập với Ninh Thuận, tỉnh có bờ biển dài hơn với nhiều bãi tắm đẹp và văn hóa Chăm đặc sắc.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Khánh Hòa có tiềm năng rất lớn về du lịch biển, nghỉ dưỡng cao cấp và thể thao biển. Tỉnh là điểm đến ưa thích của khách du lịch quốc tế với hạ tầng du lịch phát triển. Sau sáp nhập, tỉnh có thêm tiềm năng về nông nghiệp, nuôi trồng thủy sản và văn hóa đa dạng.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 191,357,151 triệu đồng (Xếp hạng 22/34)</li>
+        <li>Thu ngân sách: 25,880,100 triệu đồng (Xếp hạng 16/34)</li>
+        <li>Thu nhập bình quân: 49.83 triệu đồng/năm (Xếp hạng 27/34)</li>
+        <li>Dân số: 2,243,554 người (Xếp hạng 21/34)</li>
+        <li>Diện tích: 8,555.86 km² (Xếp hạng 17/34)</li>
+        <li>Thủ phủ: Thành phố Nha Trang</li>
+        <li>Trước sáp nhập: Khánh Hòa + Ninh Thuận</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Kh%C3%A1nh_H%C3%B2a" target="_blank">Wikipedia - Khánh Hòa</a></li>
+        <li><a href="http://khanhhoa.gov.vn/" target="_blank">Cổng thông tin tỉnh Khánh Hòa</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 25,
     code: '66',
     name: 'Đắk Lắk',
     slug: 'dak-lak',
-    oldNames: ['Đắk Lắk', 'Đắk Nông'],
+    oldNames: ['Đắk Lắk', 'Phú Yên'],
     region: 'Tây Nguyên',
     coordinates: { x: 460, y: 500 },
     color: '#fdcb6e',
-    population: '2,020,000',
-    area: '13,125 km²',
+    population: '3,346,853',
+    area: '18,096.40 km²',
     description:
-      "Đắk Lắk là tỉnh lớn nhất Tây Nguyên, được mệnh danh là 'thủ đô cà phê' của Việt Nam. Tỉnh có nhiều vườn quốc gia và khu bảo tồn thiên nhiên quý hiếm. Sau sáp nhập với Đắk Nông, Đắk Lắk trở thành vùng sản xuất cà phê lớn nhất cả nước."
+      "Đắk Lắk là tỉnh lớn nhất Tây Nguyên, được mệnh danh là 'thủ đô cà phê' của Việt Nam. Tỉnh có nhiều vườn quốc gia và khu bảo tồn thiên nhiên quý hiếm. Sau sáp nhập với Phú Yên, Đắk Lắk trở thành vùng sản xuất cà phê lớn nhất cả nước và có thêm bờ biển.",
+    fullPageContent: `
+      <h2>Tỉnh Đắk Lắk - Thủ đô cà phê và trung tâm Tây Nguyên</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Đắk Lắk là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>198,132,950 triệu đồng</strong>, xếp hạng <strong>21/34</strong> toàn quốc. Thu ngân sách đạt <strong>14,095,836 triệu đồng</strong>, xếp hạng <strong>25/34</strong>. Sau sáp nhập với Phú Yên, tỉnh có quy mô kinh tế và diện tích lớn hơn đáng kể.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>46.82 triệu đồng/năm</strong>, xếp hạng <strong>32/34</strong> toàn quốc. Với dân số <strong>3,346,853 người</strong> (xếp hạng <strong>17/34</strong>) và diện tích <strong>18,096.40 km²</strong> (xếp hạng <strong>3/34</strong>), Đắk Lắk có diện tích lớn thứ 3 cả nước với mật độ dân số thấp.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>Đắk Lắk là tỉnh lớn nhất Tây Nguyên, được mệnh danh là "thủ đô cà phê" của Việt Nam. Tỉnh có nhiều vườn quốc gia và khu bảo tồn thiên nhiên quý hiếm như Vườn quốc gia Yok Đôn. Sau sáp nhập với Phú Yên, tỉnh có thêm bờ biển đẹp, tạo sự đa dạng về địa hình từ cao nguyên đến ven biển.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Đắk Lắk có tiềm năng rất lớn về nông nghiệp (đặc biệt là cà phê), du lịch sinh thái và văn hóa dân tộc thiểu số. Sau sáp nhập với Phú Yên, tỉnh có thêm tiềm năng về du lịch biển, thủy sản và logistics. Đây là trung tâm quan trọng của vùng Tây Nguyên với nhiều cơ hội phát triển đa dạng.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 198,132,950 triệu đồng (Xếp hạng 21/34)</li>
+        <li>Thu ngân sách: 14,095,836 triệu đồng (Xếp hạng 25/34)</li>
+        <li>Thu nhập bình quân: 46.82 triệu đồng/năm (Xếp hạng 32/34)</li>
+        <li>Dân số: 3,346,853 người (Xếp hạng 17/34)</li>
+        <li>Diện tích: 18,096.40 km² (Xếp hạng 3/34)</li>
+        <li>Thủ phủ: Thành phố Buôn Ma Thuột</li>
+        <li>Trước sáp nhập: Đắk Lắk + Phú Yên</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/%C4%90%E1%BA%AFk_L%E1%BA%AFk" target="_blank">Wikipedia - Đắk Lắk</a></li>
+        <li><a href="http://daklak.gov.vn/" target="_blank">Cổng thông tin tỉnh Đắk Lắk</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 26,
     code: '68',
     name: 'Lâm Đồng',
     slug: 'lam-dong',
-    oldNames: ['Lâm Đồng'],
+    oldNames: ['Lâm Đồng', 'Đắk Nông', 'Bình Thuận'],
     region: 'Tây Nguyên',
     coordinates: { x: 480, y: 520 },
     color: '#e84393',
-    population: '1,350,000',
-    area: '9,773 km²',
+    population: '3,872,999',
+    area: '24,233.07 km²',
     description:
-      'Lâm Đồng là tỉnh cao nguyên với khí hậu mát mẻ, nổi tiếng với Đà Lạt - thành phố ngàn hoa. Tỉnh có nhiều thác nước đẹp, hồ nước trong xanh và là trung tâm sản xuất hoa, rau quả ôn đới. Lâm Đồng là điểm du lịch nghỉ dưỡng lý tưởng với khí hậu Châu Âu thu nhỏ.'
+      'Lâm Đồng là tỉnh cao nguyên với khí hậu mát mẻ, nổi tiếng với Đà Lạt - thành phố ngàn hoa. Tỉnh có nhiều thác nước đẹp, hồ nước trong xanh và là trung tâm sản xuất hoa, rau quả ôn đới. Sau sáp nhập với Đắk Nông và Bình Thuận, Lâm Đồng trở thành tỉnh có diện tích lớn nhất cả nước.',
+    fullPageContent: `
+      <h2>Tỉnh Lâm Đồng - Cao nguyên ngàn hoa và diện tích lớn nhất cả nước</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Lâm Đồng là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>319,878,839 triệu đồng</strong>, xếp hạng <strong>8/34</strong> toàn quốc. Thu ngân sách đạt <strong>27,190,308 triệu đồng</strong>, xếp hạng <strong>14/34</strong>. Sau sáp nhập với Đắk Nông và Bình Thuận, tỉnh có quy mô kinh tế và diện tích lớn nhất cả nước.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>59.36 triệu đồng/năm</strong>, xếp hạng <strong>23/34</strong> toàn quốc. Với dân số <strong>3,872,999 người</strong> (xếp hạng <strong>12/34</strong>) và diện tích <strong>24,233.07 km²</strong> (xếp hạng <strong>1/34</strong>), Lâm Đồng có diện tích lớn nhất cả nước với mật độ dân số thấp.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>Lâm Đồng là tỉnh cao nguyên với khí hậu mát mẻ, nổi tiếng với Đà Lạt - thành phố ngàn hoa. Tỉnh có nhiều thác nước đẹp, hồ nước trong xanh và là trung tâm sản xuất hoa, rau quả ôn đới. Sau sáp nhập với Đắk Nông và Bình Thuận, tỉnh có địa hình đa dạng từ cao nguyên đến bờ biển.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Lâm Đồng có tiềm năng rất lớn về du lịch nghỉ dưỡng với khí hậu Châu Âu thu nhỏ, nông nghiệp công nghệ cao và du lịch sinh thái. Sau sáp nhập, tỉnh có thêm tiềm năng về du lịch biển, năng lượng tái tạo và công nghiệp chế biển. Với diện tích lớn nhất cả nước, đây là tỉnh có nhiều cơ hội phát triển đa dạng.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 319,878,839 triệu đồng (Xếp hạng 8/34)</li>
+        <li>Thu ngân sách: 27,190,308 triệu đồng (Xếp hạng 14/34)</li>
+        <li>Thu nhập bình quân: 59.36 triệu đồng/năm (Xếp hạng 23/34)</li>
+        <li>Dân số: 3,872,999 người (Xếp hạng 12/34)</li>
+        <li>Diện tích: 24,233.07 km² (Xếp hạng 1/34)</li>
+        <li>Thủ phủ: Thành phố Đà Lạt</li>
+        <li>Trước sáp nhập: Lâm Đồng + Đắk Nông + Bình Thuận</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/L%C3%A2m_%C4%90%E1%BB%93ng" target="_blank">Wikipedia - Lâm Đồng</a></li>
+        <li><a href="http://lamdong.gov.vn/" target="_blank">Cổng thông tin tỉnh Lâm Đồng</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 27,
@@ -967,14 +1137,48 @@ export const citiesData: City[] = [
     code: '80',
     name: 'Tây Ninh',
     slug: 'tay-ninh',
-    oldNames: ['Tây Ninh', 'Bình Thuận'],
+    oldNames: ['Tây Ninh', 'Long An'],
     region: 'Đông Nam Bộ',
     coordinates: { x: 460, y: 600 },
     color: '#a29bfe',
-    population: '1,320,000',
-    area: '4,039 km²',
+    population: '3,254,170',
+    area: '8,536.44 km²',
     description:
-      'Tây Ninh là tỉnh biên giới với Campuchia, nổi tiếng với núi Bà Đen và tòa thánh Cao Đài. Tỉnh có nhiều di tích lịch sử thời kỳ kháng chiến. Sau sáp nhập với Bình Thuận, Tây Ninh có thêm vùng ven biển với tiềm năng du lịch lớn.'
+      'Tây Ninh là tỉnh biên giới với Campuchia, nổi tiếng với núi Bà Đen và tòa thánh Cao Đài. Tỉnh có nhiều di tích lịch sử thời kỳ kháng chiến. Sau sáp nhập với Long An, Tây Ninh có thêm vùng đồng bằng sông Cửu Long với tiềm năng nông nghiệp lớn.',
+    fullPageContent: `
+      <h2>Tỉnh Tây Ninh - Vùng đất thiêng và cửa ngõ biên giới</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Tây Ninh là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>312,456,603 triệu đồng</strong>, xếp hạng <strong>10/34</strong> toàn quốc. Thu ngân sách đạt <strong>39,704,480 triệu đồng</strong>, xếp hạng <strong>12/34</strong>. Sau sáp nhập với Long An, tỉnh có quy mô kinh tế và tiềm năng lớn hơn đáng kể.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>58.54 triệu đồng/năm</strong>, xếp hạng <strong>24/34</strong> toàn quốc. Với dân số <strong>3,254,170 người</strong> (xếp hạng <strong>18/34</strong>) và diện tích <strong>8,536.44 km²</strong> (xếp hạng <strong>18/34</strong>), Tây Ninh có quy mô trung bình với tiềm năng phát triển tốt.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>Tây Ninh là tỉnh biên giới với Campuchia, nổi tiếng với núi Bà Đen - đỉnh núi cao nhất Nam Bộ và tòa thánh Cao Đài. Tỉnh có nhiều di tích lịch sử thời kỳ kháng chiến và văn hóa tôn giáo đặc sắc. Sau sáp nhập với Long An, tỉnh có thêm vùng đồng bằng sông Cửu Long phì nhiêu.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Tây Ninh có tiềm năng lớn về thương mại biên giới, du lịch tâm linh và nông nghiệp. Sau sáp nhập với Long An, tỉnh có thêm tiềm năng về nông nghiệp công nghệ cao, chăn nuôi và logistics. Đây là cửa ngõ quan trọng nối liền Việt Nam với Campuchia và có nhiều cơ hội phát triển kinh tế biên giới.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 312,456,603 triệu đồng (Xếp hạng 10/34)</li>
+        <li>Thu ngân sách: 39,704,480 triệu đồng (Xếp hạng 12/34)</li>
+        <li>Thu nhập bình quân: 58.54 triệu đồng/năm (Xếp hạng 24/34)</li>
+        <li>Dân số: 3,254,170 người (Xếp hạng 18/34)</li>
+        <li>Diện tích: 8,536.44 km² (Xếp hạng 18/34)</li>
+        <li>Thủ phủ: Thành phố Tây Ninh</li>
+        <li>Trước sáp nhập: Tây Ninh + Long An</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/T%C3%A2y_Ninh" target="_blank">Wikipedia - Tây Ninh</a></li>
+        <li><a href="http://tayninh.gov.vn/" target="_blank">Cổng thông tin tỉnh Tây Ninh</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 30,
@@ -1057,29 +1261,38 @@ export const citiesData: City[] = [
     description:
       'Cần Thơ là thành phố trực thuộc trung ương, trung tâm kinh tế của đồng bằng sông Cửu Long. Sau sáp nhập với Hậu Giang và Sóc Trăng, Cần Thơ trở thành đô thị lớn nhất ĐBSCL.',
     fullPageContent: `
-      <h2>Thành phố Cần Thơ</h2>
-      <p>Cần Thơ là thành phố trực thuộc trung ương, trung tâm kinh tế của đồng bằng sông Cửu Long. Sau sáp nhập với Hậu Giang và Sóc Trăng, Cần Thơ trở thành đô thị lớn nhất ĐBSCL.</p>
+      <h2>Thành phố Cần Thơ - Trung tâm kinh tế đồng bằng sông Cửu Long</h2>
       
-      <h3>Lịch sử và Sáp nhập</h3>
-      <p>Theo quy hoạch mới, Cần Thơ sáp nhập với Hậu Giang và Sóc Trăng tạo thành thành phố với diện tích 6.360,83 km² và dân số 4.199.824 người. Đây là trung tâm kinh tế quan trọng nhất của vùng ĐBSCL.</p>
-      
-      <h3>Địa lý</h3>
-      <p>Thành phố có diện tích 6.360,83 km² với dân số 4.199.824 người. Cần Thơ nằm trong vùng trung tâm đồng bằng sông Cửu Long với hệ thống sông ngòi chằng chịt.</p>
+      <h3>Tổng quan kinh tế</h3>
+      <p>Cần Thơ là trung tâm kinh tế quan trọng với GRDP đạt <strong>281,674,628 triệu đồng</strong>, xếp hạng <strong>13/34</strong> toàn quốc. Thu ngân sách đạt <strong>24,788,357 triệu đồng</strong>, xếp hạng <strong>18/34</strong>. Sau sáp nhập với Hậu Giang và Sóc Trăng, thành phố có quy mô kinh tế lớn và vai trò trung tâm vùng ĐBSCL.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>59.56 triệu đồng/năm</strong>, xếp hạng <strong>22/34</strong> toàn quốc. Với dân số <strong>4,199,824 người</strong> (xếp hạng <strong>10/34</strong>) và diện tích <strong>6,360.83 km²</strong> (xếp hạng <strong>24/34</strong>), Cần Thơ có mật độ dân số cao và là đô thị lớn nhất ĐBSCL.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>Cần Thơ là thành phố trực thuộc trung ương, trung tâm kinh tế của đồng bằng sông Cửu Long. Thành phố nằm trong vùng trung tâm ĐBSCL với hệ thống sông ngòi chằng chịt. Sau sáp nhập với Hậu Giang và Sóc Trăng, Cần Thơ trở thành đô thị lớn nhất và quan trọng nhất của vùng.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Cần Thơ có vị trí chiến lược là trung tâm giao thông, thương mại và dịch vụ của ĐBSCL. Thành phố có sân bay quốc tế, cảng sông lớn và là trung tâm giáo dục, y tế của vùng. Sau sáp nhập, thành phố có thêm tiềm năng về nông nghiệp, nuôi trồng thủy sản và du lịch sinh thái sông nước.</p>
+
+      <h3>Thông tin cơ bản</h3>
       <ul>
-        <li>Diện tích: 6.360,83 km²</li>
-        <li>Dân số: 4.199.824 người</li>
+        <li>GRDP: 281,674,628 triệu đồng (Xếp hạng 13/34)</li>
+        <li>Thu ngân sách: 24,788,357 triệu đồng (Xếp hạng 18/34)</li>
+        <li>Thu nhập bình quân: 59.56 triệu đồng/năm (Xếp hạng 22/34)</li>
+        <li>Dân số: 4,199,824 người (Xếp hạng 10/34)</li>
+        <li>Diện tích: 6,360.83 km² (Xếp hạng 24/34)</li>
         <li>Trung tâm: Quận Ninh Kiều</li>
-        <li>Bao gồm: Cần Thơ cũ + Hậu Giang + Sóc Trăng</li>
+        <li>Trước sáp nhập: Cần Thơ + Hậu Giang + Sóc Trăng</li>
       </ul>
-      
-      <h3>Kinh tế và Du lịch</h3>
-      <p>Cần Thơ nổi tiếng với chợ nổi Cái Răng, các món ăn đặc sản miền Tây và du lịch sinh thái sông nước. Thành phố là trung tâm nông nghiệp lớn với sản lượng lúa gạo cao.</p>
       
       <h3>Tham khảo</h3>
       <ul>
         <li><a href="https://vi.wikipedia.org/wiki/C%E1%BA%A7n_Th%C6%A1" target="_blank">Wikipedia - Cần Thơ</a></li>
         <li><a href="https://cantho.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Cần Thơ</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
