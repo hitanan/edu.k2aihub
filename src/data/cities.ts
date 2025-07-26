@@ -56,33 +56,46 @@ export const citiesData: City[] = [
     region: 'Bắc Bộ',
     coordinates: { x: 420, y: 90 },
     color: '#4ecdc4',
-    population: '555,809',
-    area: '6,700.4 km²',
+    population: '573,119',
+    area: '6,700.39 km²',
     description:
-      'Cao Bằng là tỉnh miền núi phía Bắc, nổi tiếng với thác Bản Giốc - thác nước lớn nhất Việt Nam. Tỉnh có nhiều di tích lịch sử cách mạng quan trọng như hang Pác Bó - nơi Chủ tịch Hồ Chí Minh về nước.',
+      'Cao Bằng là tỉnh miền núi phía Bắc có biên giới với Trung Quốc. Nơi đây có thác Bản Giốc hùng vĩ và non nước đá vôi kỳ thú. Cao Bằng có ý nghĩa lịch sử quan trọng trong phong trào cách mạng.',
     fullPageContent: `
-      <h2>Cao Bằng</h2>
-      <p>Cao Bằng là tỉnh miền núi phía bắc Việt Nam, giáp biên giới với Trung Quốc. Tỉnh nổi tiếng với thác Bản Giốc - thác nước lớn nhất Việt Nam và nhiều di tích lịch sử cách mạng quan trọng.</p>
+      <h2>Tỉnh Cao Bằng - Vùng đất biên giới và di sản địa chất</h2>
       
-      <h3>Lịch sử</h3>
-      <p>Cao Bằng là vùng đất có nhiều di tích lịch sử cách mạng quan trọng, đặc biệt là hang Pác Bó - nơi Chủ tịch Hồ Chí Minh về nước và hoạt động cách mạng đầu tiên.</p>
-      
-      <h3>Địa lý</h3>
-      <p>Tỉnh có diện tích 6.700,4 km² với dân số 555.809 người. Cao Bằng có địa hình núi cao hiểm trở, khí hậu cận nhiệt đới gió mùa.</p>
+      <h3>Tổng quan kinh tế</h3>
+      <p>Cao Bằng là tỉnh biên giới với GRDP thấp nhất cả nước đạt <strong>25,203,769 triệu đồng</strong>, xếp hạng <strong>34/34</strong>. Thu ngân sách đạt <strong>2,476,011 triệu đồng</strong>, xếp hạng <strong>33/34</strong>. Dù kinh tế còn khó khăn nhưng tỉnh có vị trí địa chính trị quan trọng và tiềm năng du lịch lớn.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>30.70 triệu đồng/năm</strong>, xếp hạng <strong>33/34</strong> toàn quốc. Với dân số ít nhất cả nước <strong>573,119 người</strong> (xếp hạng <strong>33/34</strong>) và diện tích <strong>6,700.39 km²</strong> (xếp hạng <strong>23/34</strong>), Cao Bằng có mật độ dân số rất thấp.</p>
+
+      <h3>Địa lý và tài nguyên thiên nhiên</h3>
+      <p>Cao Bằng là tỉnh miền núi phía Bắc có biên giới với Trung Quốc, nổi tiếng với thác Bản Giốc hùng vĩ - thác nước lớn nhất Việt Nam và non nước đá vôi kỳ thú. Công viên địa chất Non nước Cao Bằng được UNESCO công nhận là công viên địa chất toàn cầu.</p>
+
+      <h3>Ý nghĩa lịch sử</h3>
+      <p>Cao Bằng có ý nghĩa lịch sử quan trọng trong phong trào cách mạng Việt Nam. Đây là nơi Chủ tịch Hồ Chí Minh trở về nước năm 1941 và thành lập căn cứ địa cách mạng. Nhiều di tích lịch sử quan trọng được bảo tồn như hang Pác Bó, suối Lê-nin.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Mặc dù kinh tế còn khó khăn, Cao Bằng có tiềm năng lớn về du lịch sinh thái với thác Bản Giốc, du lịch địa chất với công viên UNESCO, du lịch lịch sử cách mạng và thương mại biên giới với Trung Quốc. Cần đầu tư hạ tầng giao thông để khai thác hiệu quả các tiềm năng này.</p>
+
+      <h3>Thông tin cơ bản</h3>
       <ul>
-        <li>Diện tích: 6.700,4 km²</li>
-        <li>Dân số: 555.809 người</li>
+        <li>GRDP: 25,203,769 triệu đồng (Xếp hạng 34/34)</li>
+        <li>Thu ngân sách: 2,476,011 triệu đồng (Xếp hạng 33/34)</li>
+        <li>Thu nhập bình quân: 30.70 triệu đồng/năm (Xếp hạng 33/34)</li>
+        <li>Dân số: 573,119 người (Xếp hạng 33/34)</li>
+        <li>Diện tích: 6,700.39 km² (Xếp hạng 23/34)</li>
         <li>Thủ phủ: Thành phố Cao Bằng</li>
       </ul>
-      
-      <h3>Văn hóa và Du lịch</h3>
-      <p>Thác Bản Giốc là điểm đến du lịch nổi tiếng với dòng nước đổ từ độ cao 30m. Bên cạnh đó, tỉnh còn có nhiều hang động đẹp, di tích lịch sử và văn hóa đa dân tộc đặc sắc.</p>
       
       <h3>Tham khảo</h3>
       <ul>
         <li><a href="https://vi.wikipedia.org/wiki/Cao_B%E1%BA%B1ng" target="_blank">Wikipedia - Cao Bằng</a></li>
         <li><a href="http://caobang.gov.vn/" target="_blank">Cổng thông tin tỉnh Cao Bằng</a></li>
+        <li><a href="https://vi.wikipedia.org/wiki/C%C3%B4ng_vi%C3%AAn_%C4%91%E1%BB%8Ba_ch%E1%BA%A5t_Non_n%C6%B0%E1%BB%9Bc_Cao_B%E1%BA%B1ng" target="_blank">Công viên địa chất Non nước Cao Bằng</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
@@ -138,14 +151,47 @@ export const citiesData: City[] = [
     code: '11',
     name: 'Điện Biên',
     slug: 'dien-bien',
-    oldNames: ['Điện Biên', 'Lai Châu cũ'],
+    oldNames: ['Điện Biên'],
     region: 'Tây Bắc',
     coordinates: { x: 280, y: 140 },
     color: '#96ceb4',
-    population: '580,000',
-    area: '9,562 km²',
+    population: '673,091',
+    area: '9,539.93 km²',
     description:
-      'Điện Biên nổi tiếng với chiến thắng Điện Biên Phủ lịch sử năm 1954. Tỉnh có địa hình đồi núi hiểm trở, khí hậu cận nhiệt đới ẩm gió mùa. Đây là nơi sinh sống của nhiều dân tộc thiểu số với văn hóa truyền thống đặc sắc.'
+      'Điện Biên nổi tiếng với chiến thắng Điện Biên Phủ lịch sử năm 1954. Tỉnh có địa hình đồi núi hiểm trở, khí hậu cận nhiệt đới ẩm gió mùa. Đây là nơi sinh sống của nhiều dân tộc thiểu số với văn hóa truyền thống đặc sắc.',
+    fullPageContent: `
+      <h2>Tỉnh Điện Biên - Vùng đất lịch sử và đa dạng văn hóa</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Điện Biên là tỉnh miền núi với GRDP đạt <strong>31,663,387 triệu đồng</strong>, xếp hạng <strong>32/34</strong> toàn quốc. Thu ngân sách đạt <strong>1,574,989 triệu đồng</strong>, xếp hạng <strong>34/34</strong>. Tuy kinh tế còn khiêm tốn nhưng tỉnh có ý nghĩa lịch sử quan trọng và tiềm năng du lịch lớn.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>28.20 triệu đồng/năm</strong>, xếp hạng <strong>32/34</strong> toàn quốc. Với dân số <strong>673,091 người</strong> (xếp hạng <strong>32/34</strong>) và diện tích <strong>9,539.93 km²</strong> (xếp hạng <strong>14/34</strong>), Điện Biên có diện tích lớn với mật độ dân số thấp.</p>
+
+      <h3>Vị trí lịch sử và văn hóa</h3>
+      <p>Điện Biên nổi tiếng với chiến thắng Điện Biên Phủ lịch sử năm 1954 - sự kiện "lừng lẫy năm châu, chấn động địa cầu". Tỉnh có địa hình đồi núi hiểm trở, khí hậu cận nhiệt đới ẩm gió mùa. Đây là nơi sinh sống của nhiều dân tộc thiểu số với văn hóa truyền thống đặc sắc và phong tục tập quán độc đáo.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Điện Biên có tiềm năng lớn về du lịch lịch sử với các di tích Điện Biên Phủ, du lịch văn hóa dân tộc thiểu số và du lịch sinh thái. Tỉnh có vị trí biên giới quan trọng, gần các tuyến giao thương với Lào, tạo cơ hội phát triển thương mại biên giới và các sản phẩm nông nghiệp đặc sản vùng cao.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 31,663,387 triệu đồng (Xếp hạng 32/34)</li>
+        <li>Thu ngân sách: 1,574,989 triệu đồng (Xếp hạng 34/34)</li>
+        <li>Thu nhập bình quân: 28.20 triệu đồng/năm (Xếp hạng 32/34)</li>
+        <li>Dân số: 673,091 người (Xếp hạng 32/34)</li>
+        <li>Diện tích: 9,539.93 km² (Xếp hạng 14/34)</li>
+        <li>Thủ phủ: Thành phố Điện Biên Phủ</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/%C4%90i%E1%BB%87n_Bi%C3%AAn" target="_blank">Wikipedia - Điện Biên</a></li>
+        <li><a href="http://dienbien.gov.vn/" target="_blank">Cổng thông tin tỉnh Điện Biên</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 5,
@@ -156,10 +202,46 @@ export const citiesData: City[] = [
     region: 'Tây Bắc',
     coordinates: { x: 260, y: 120 },
     color: '#feca57',
-    population: '460,000',
-    area: '9,068 km²',
+    population: '512,601',
+    area: '9,068.73 km²',
     description:
-      'Lai Châu là tỉnh miền núi Tây Bắc, có nhiều thung lũng màu mỡ và đỉnh núi cao. Tỉnh được biết đến với các sản phẩm nông nghiệp chất lượng cao như chè Shan Tuyết, các loại quả đặc sản. Đây là nơi sinh sống chủ yếu của đồng bào dân tộc Thái với nền văn hóa độc đáo.'
+      'Lai Châu là tỉnh miền núi Tây Bắc, có nhiều thung lũng màu mỡ và đỉnh núi cao. Tỉnh được biết đến với các sản phẩm nông nghiệp chất lượng cao như chè Shan Tuyết, các loại quả đặc sản. Đây là nơi sinh sống chủ yếu của đồng bào dân tộc Thái với nền văn hóa độc đáo.',
+    fullPageContent: `
+      <h2>Tỉnh Lai Châu - Vùng cao nguyên Tây Bắc</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Lai Châu là tỉnh miền núi với GRDP đạt <strong>31,024,867 triệu đồng</strong>, xếp hạng <strong>33/34</strong> toàn quốc. Thu ngân sách đạt <strong>2,509,439 triệu đồng</strong>, xếp hạng <strong>32/34</strong>. Tuy kinh tế còn khiêm tốn nhưng tỉnh có tiềm năng lớn về nông nghiệp vùng cao và du lịch sinh thái.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>30.40 triệu đồng/năm</strong>, xếp hạng <strong>33/34</strong> toàn quốc. Với dân số ít nhất cả nước <strong>512,601 người</strong> (xếp hạng <strong>34/34</strong>) và diện tích <strong>9,068.73 km²</strong> (xếp hạng <strong>16/34</strong>), Lai Châu có mật độ dân số rất thấp.</p>
+
+      <h3>Địa lý và tài nguyên</h3>
+      <p>Lai Châu là tỉnh miền núi Tây Bắc, có nhiều thung lũng màu mỡ và đỉnh núi cao. Tỉnh được biết đến với các sản phẩm nông nghiệp chất lượng cao như chè Shan Tuyết, các loại quả đặc sản. Đây là nơi sinh sống chủ yếu của đồng bào dân tộc Thái với nền văn hóa độc đáo.</p>
+
+      <h3>Văn hóa dân tộc</h3>
+      <p>Lai Châu là tỉnh có đông đồng bào dân tộc thiểu số, chủ yếu là người Thái, Mông, Khơ Mú với những nền văn hóa truyền thống đặc sắc. Các lễ hội dân tộc, nghề thủ công truyền thống và ẩm thực dân tộc tạo nên bản sắc văn hóa đặc trưng của vùng cao Tây Bắc.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Mặc dù kinh tế còn khó khăn, Lai Châu có tiềm năng lớn về du lịch sinh thái, du lịch văn hóa cộng đồng, nông nghiệp đặc sản vùng cao như chè Shan Tuyết, cà phê và các sản phẩm nông nghiệp hữu cơ. Cần đầu tư hạ tầng giao thông để khai thác hiệu quả các tiềm năng này.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 31,024,867 triệu đồng (Xếp hạng 33/34)</li>
+        <li>Thu ngân sách: 2,509,439 triệu đồng (Xếp hạng 32/34)</li>
+        <li>Thu nhập bình quân: 30.40 triệu đồng/năm (Xếp hạng 33/34)</li>
+        <li>Dân số: 512,601 người (Xếp hạng 34/34)</li>
+        <li>Diện tích: 9,068.73 km² (Xếp hạng 16/34)</li>
+        <li>Thủ phủ: Thành phố Lai Châu</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Lai_Ch%C3%A2u" target="_blank">Wikipedia - Lai Châu</a></li>
+        <li><a href="http://laichau.gov.vn/" target="_blank">Cổng thông tin tỉnh Lai Châu</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 6,
@@ -170,10 +252,43 @@ export const citiesData: City[] = [
     region: 'Tây Bắc',
     coordinates: { x: 320, y: 160 },
     color: '#ff9ff3',
-    population: '1,250,000',
-    area: '14,055 km²',
+    population: '1,404,587',
+    area: '14,108.89 km²',
     description:
-      'Sơn La là tỉnh có diện tích lớn nhất miền Bắc, nổi tiếng với nhà tù Sơn La - di tích lịch sử quan trọng. Tỉnh có thế mạnh về thủy điện với nhà máy thủy điện Sơn La lớn nhất Đông Nam Á. Đây cũng là vùng trồng chè, cà phê và các cây ăn quả có múi chất lượng cao.'
+      'Sơn La là tỉnh có diện tích lớn nhất miền Bắc, nổi tiếng với nhà tù Sơn La - di tích lịch sử quan trọng. Tỉnh có thế mạnh về thủy điện với nhà máy thủy điện Sơn La lớn nhất Đông Nam Á. Đây cũng là vùng trồng chè, cà phê và các cây ăn quả có múi chất lượng cao.',
+    fullPageContent: `
+      <h2>Tỉnh Sơn La - Thủy điện và vùng cao nguyên Tây Bắc</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Sơn La là tỉnh miền núi với GRDP đạt <strong>76,626,373 triệu đồng</strong>, xếp hạng <strong>30/34</strong> toàn quốc. Thu ngân sách đạt <strong>4,138,845 triệu đồng</strong>, xếp hạng <strong>31/34</strong>. Tuy kinh tế còn khiêm tốn nhưng tỉnh có tiềm năng lớn về thủy điện và nông nghiệp.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>32.50 triệu đồng/năm</strong>, xếp hạng <strong>34/34</strong> toàn quốc. Với dân số <strong>1,404,587 người</strong> (xếp hạng <strong>30/34</strong>) và diện tích <strong>14,108.89 km²</strong> (xếp hạng <strong>6/34</strong>), Sơn La có diện tích lớn nhất miền Bắc với mật độ dân số thấp.</p>
+
+      <h3>Vị trí địa lý và thế mạnh</h3>
+      <p>Sơn La là tỉnh có diện tích lớn nhất miền Bắc, nổi tiếng với nhà tù Sơn La - di tích lịch sử quan trọng thời kỳ đấu tranh giải phóng dân tộc. Tỉnh có thế mạnh về thủy điện với nhà máy thủy điện Sơn La lớn nhất Đông Nam Á, góp phần quan trọng vào an ninh năng lượng quốc gia.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Sơn La có tiềm năng lớn về thủy điện, du lịch sinh thái và nông nghiệp vùng cao. Tỉnh là vùng trồng chè, cà phê và các cây ăn quả có múi chất lượng cao. Với địa hình núi cao và khí hậu đặc trưng, Sơn La có nhiều cơ hội phát triển du lịch cộng đồng và các sản phẩm nông nghiệp đặc sản.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 76,626,373 triệu đồng (Xếp hạng 30/34)</li>
+        <li>Thu ngân sách: 4,138,845 triệu đồng (Xếp hạng 31/34)</li>
+        <li>Thu nhập bình quân: 32.50 triệu đồng/năm (Xếp hạng 34/34)</li>
+        <li>Dân số: 1,404,587 người (Xếp hạng 30/34)</li>
+        <li>Diện tích: 14,108.89 km² (Xếp hạng 6/34)</li>
+        <li>Thủ phủ: Thành phố Sơn La</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/S%C6%A1n_La" target="_blank">Wikipedia - Sơn La</a></li>
+        <li><a href="http://sonla.gov.vn/" target="_blank">Cổng thông tin tỉnh Sơn La</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 7,
@@ -280,33 +395,45 @@ export const citiesData: City[] = [
     region: 'Đông Bắc',
     coordinates: { x: 430, y: 120 },
     color: '#fd79a8',
-    population: '813,978',
-    area: '8,310.2 km²',
+    population: '881,384',
+    area: '8,310.18 km²',
     description:
       'Lạng Sơn là tỉnh biên giới quan trọng với Trung Quốc, có cửa khẩu Đồng Đăng lớn nhất phía Bắc. Tỉnh có nhiều di tích lịch sử như Thành cổ Cây Thị, động Tam Thanh.',
     fullPageContent: `
-      <h2>Lạng Sơn</h2>
-      <p>Lạng Sơn là tỉnh biên giới phía bắc Việt Nam, giáp với Trung Quốc. Tỉnh có vị trí chiến lược quan trọng với cửa khẩu Đồng Đăng - cửa khẩu lớn nhất phía Bắc.</p>
+      <h2>Tỉnh Lạng Sơn - Cửa khẩu biên giới quan trọng</h2>
       
-      <h3>Lịch sử</h3>
-      <p>Lạng Sơn có lịch sử lâu đời với nhiều di tích quan trọng như Thành cổ Cây Thị, động Tam Thanh. Đây là nơi có truyền thống anh hùng với nhiều câu chuyện lịch sử hào hùng.</p>
-      
-      <h3>Địa lý</h3>
-      <p>Tỉnh có diện tích 8.310,2 km² với dân số 813.978 người. Lạng Sơn có địa hình núi cao, nhiều thung lũng và sông suối.</p>
+      <h3>Tổng quan kinh tế</h3>
+      <p>Lạng Sơn là tỉnh biên giới với GRDP đạt <strong>49,735,616 triệu đồng</strong>, xếp hạng <strong>31/34</strong>. Thu ngân sách đạt <strong>10,727,290 triệu đồng</strong>, xếp hạng <strong>28/34</strong>. Tuy quy mô kinh tế nhỏ nhưng tỉnh có vị trí chiến lược quan trọng về thương mại biên giới.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>37.20 triệu đồng/năm</strong>, xếp hạng <strong>31/34</strong> toàn quốc. Với dân số <strong>881,384 người</strong> (xếp hạng <strong>31/34</strong>) và diện tích <strong>8,310.18 km²</strong> (xếp hạng <strong>20/34</strong>), Lạng Sơn có mật độ dân số thấp.</p>
+
+      <h3>Vị trí chiến lược và thương mại</h3>
+      <p>Lạng Sơn là tỉnh biên giới phía bắc Việt Nam, giáp với Trung Quốc. Tỉnh có vị trí chiến lược quan trọng với cửa khẩu Đồng Đăng - cửa khẩu lớn nhất phía Bắc, đóng vai trò quan trọng trong giao thương Việt - Trung.</p>
+
+      <h3>Di sản lịch sử và văn hóa</h3>
+      <p>Lạng Sơn có lịch sử lâu đời với nhiều di tích quan trọng như Thành cổ Cây Thị, động Tam Thanh. Đây là nơi có truyền thống anh hùng với nhiều câu chuyện lịch sử hào hùng. Tỉnh có địa hình núi cao, nhiều thung lũng và sông suối.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Lạng Sơn là cửa ngõ giao thương quan trọng với Trung Quốc, có tiềm năng lớn phát triển thương mại biên giới, logistics và các ngành công nghiệp chế biến phục vụ xuất khẩu. Du lịch lịch sử, văn hóa và sinh thái cũng là hướng phát triển triển vọng.</p>
+
+      <h3>Thông tin cơ bản</h3>
       <ul>
-        <li>Diện tích: 8.310,2 km²</li>
-        <li>Dân số: 813.978 người</li>
+        <li>GRDP: 49,735,616 triệu đồng (Xếp hạng 31/34)</li>
+        <li>Thu ngân sách: 10,727,290 triệu đồng (Xếp hạng 28/34)</li>
+        <li>Thu nhập bình quân: 37.20 triệu đồng/năm (Xếp hạng 31/34)</li>
+        <li>Dân số: 881,384 người (Xếp hạng 31/34)</li>
+        <li>Diện tích: 8,310.18 km² (Xếp hạng 20/34)</li>
         <li>Thủ phủ: Thành phố Lạng Sơn</li>
       </ul>
-      
-      <h3>Kinh tế</h3>
-      <p>Lạng Sơn là cửa ngõ giao thương quan trọng với Trung Quốc. Tỉnh phát triển mạnh về thương mại biên giới và có tiềm năng lớn về du lịch.</p>
       
       <h3>Tham khảo</h3>
       <ul>
         <li><a href="https://vi.wikipedia.org/wiki/L%E1%BA%A1ng_S%C6%A1n" target="_blank">Wikipedia - Lạng Sơn</a></li>
         <li><a href="http://langson.gov.vn/" target="_blank">Cổng thông tin tỉnh Lạng Sơn</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
@@ -723,33 +850,46 @@ export const citiesData: City[] = [
     region: 'Bắc Trung Bộ',
     coordinates: { x: 420, y: 380 },
     color: '#74b9ff',
-    population: '1,236,393',
-    area: '4,947.1 km²',
+    population: '1,432,986',
+    area: '4,947.11 km²',
     description:
       'Huế là cố đô của Việt Nam thời phong kiến, di sản văn hóa thế giới với Hoàng thành Huế. Thành phố có nền văn hóa cung đình độc đáo và ẩm thực truyền thống phong phú.',
     fullPageContent: `
-      <h2>Tổng quan về Thành phố Huế</h2>
-      <p>Huế là thành phố trực thuộc trung ương, cố đô của Việt Nam thời phong kiến. Thành phố nằm ở miền Trung Việt Nam, bên bờ sông Hương thơ mộng.</p>
+      <h2>Thành phố Huế - Cố đô di sản văn hóa thế giới</h2>
       
-      <h3>Lịch sử</h3>
-      <p>Huế là kinh đô của triều Nguyễn từ 1802 đến 1945, nơi lưu giữ nhiều di sản văn hóa quý báu. Hoàng thành Huế được UNESCO công nhận là di sản văn hóa thế giới năm 1993.</p>
-      
-      <h3>Địa lý và khí hậu</h3>
-      <p>Diện tích: 4,947.1 km²<br>
-      Dân số: 1,236,393 người<br>
-      Khí hậu: Nhiệt đới gió mùa, có mùa mưa từ tháng 9 đến tháng 2</p>
-      
-      <h3>Di sản văn hóa</h3>
-      <p>Huế sở hữu hệ thống di tích cung đình phong phú bao gồm Hoàng thành, các lăng tẩm của các vua triều Nguyễn, và hệ thống đền chùa cổ kính.</p>
-      
-      <h3>Ẩm thực</h3>
-      <p>Ẩm thực Huế mang đậm dấu ấn cung đình với các món ăn tinh tế như bún bò Huế, bánh khoái, chè Huế.</p>
+      <h3>Tổng quan kinh tế</h3>
+      <p>Huế là thành phố trực thuộc trung ương với GRDP đạt <strong>80,966,514 triệu đồng</strong>, xếp hạng <strong>29/34</strong> toàn quốc. Thu ngân sách đạt <strong>12,787,196 triệu đồng</strong>, xếp hạng <strong>26/34</strong>. Tuy quy mô kinh tế còn khiêm tốn nhưng thành phố có tiềm năng lớn về du lịch văn hóa.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>62.80 triệu đồng/năm</strong>, xếp hạng <strong>15/34</strong> toàn quốc. Với dân số <strong>1,432,986 người</strong> (xếp hạng <strong>29/34</strong>) và diện tích <strong>4,947.11 km²</strong> (xếp hạng <strong>29/34</strong>), Huế có mật độ dân số vừa phải.</p>
+
+      <h3>Di sản văn hóa UNESCO</h3>
+      <p>Huế là cố đô của Việt Nam thời phong kiến, được UNESCO công nhận là di sản văn hóa thế giới năm 1993. Thành phố là kinh đô của triều Nguyễn từ 1802 đến 1945, nơi lưu giữ nhiều di sản văn hóa quý báu với Hoàng thành, các lăng tẩm của các vua triều Nguyễn, và hệ thống đền chùa cổ kính.</p>
+
+      <h3>Văn hóa cung đình và ẩm thực</h3>
+      <p>Huế có nền văn hóa cung đình độc đáo và ẩm thực truyền thống phong phú. Ẩm thực Huế mang đậm dấu ấn cung đình với các món ăn tinh tế như bún bò Huế, bánh khoái, chè Huế. Thành phố nằm ở miền Trung Việt Nam, bên bờ sông Hương thơ mộng với khí hậu nhiệt đới gió mùa.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Huế có tiềm năng lớn về du lịch văn hóa với di sản UNESCO, nhạc cung đình Huế, lễ hội truyền thống và ẩm thực đặc sắc. Thành phố đang phát triển thành trung tâm giáo dục, y tế và du lịch của miền Trung, kết hợp bảo tồn di sản với phát triển bền vững.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 80,966,514 triệu đồng (Xếp hạng 29/34)</li>
+        <li>Thu ngân sách: 12,787,196 triệu đồng (Xếp hạng 26/34)</li>
+        <li>Thu nhập bình quân: 62.80 triệu đồng/năm (Xếp hạng 15/34)</li>
+        <li>Dân số: 1,432,986 người (Xếp hạng 29/34)</li>
+        <li>Diện tích: 4,947.11 km² (Xếp hạng 29/34)</li>
+        <li>Thủ phủ: Thành phố Huế</li>
+      </ul>
       
       <h3>Tham khảo</h3>
       <ul>
         <li><a href="https://vi.wikipedia.org/wiki/Hu%E1%BA%BF" target="_blank">Wikipedia - Huế</a></li>
         <li><a href="https://huecity.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Huế</a></li>
+        <li><a href="https://whc.unesco.org/en/list/678/" target="_blank">UNESCO - Complex of Huế Monuments</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
