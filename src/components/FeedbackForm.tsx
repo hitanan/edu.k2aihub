@@ -17,23 +17,23 @@ const FeedbackForm: React.FC = () => {
     const newErrors: Partial<ContactForm> = {};
 
     if (!form.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'Tên là bắt buộc';
     }
 
     if (!form.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'Email là bắt buộc';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = 'Vui lòng nhập địa chỉ email hợp lệ';
     }
 
     if (!form.subject.trim()) {
-      newErrors.subject = 'Subject is required';
+      newErrors.subject = 'Tiêu đề là bắt buộc';
     }
 
     if (!form.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Nội dung là bắt buộc';
     } else if (form.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long';
+      newErrors.message = 'Nội dung phải có ít nhất 10 ký tự';
     }
 
     setErrors(newErrors);
@@ -50,9 +50,9 @@ const FeedbackForm: React.FC = () => {
     setIsSubmitting(true);
 
     // Create mailto link
-    const subject = encodeURIComponent(`Vietnam Geography Feedback: ${form.subject}`);
+    const subject = encodeURIComponent(`Góp Ý Địa Lý Việt Nam: ${form.subject}`);
     const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}\n\n---\nSent from Vietnam Geography App`
+      `Tên: ${form.name}\nEmail: ${form.email}\n\nNội dung:\n${form.message}\n\n---\nGửi từ Ứng Dụng Địa Lý Việt Nam`
     );
     const mailtoLink = `mailto:jobtimeseo@gmail.com?subject=${subject}&body=${body}`;
 
@@ -63,7 +63,7 @@ const FeedbackForm: React.FC = () => {
     setTimeout(() => {
       setForm({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
-      alert('Thank you for your feedback! Your email client should have opened with the feedback ready to send.');
+      alert('Cảm ơn bạn đã gửi góp ý! Ứng dụng email của bạn sẽ mở với nội dung góp ý sẵn sàng để gửi.');
     }, 1000);
   };
 
@@ -81,10 +81,10 @@ const FeedbackForm: React.FC = () => {
     <div className="max-w-2xl mx-auto">
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Feedback</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">Góp Ý</h2>
           <p className="text-gray-600">
-            We&apos;d love to hear your thoughts and suggestions about the Vietnam Geography app. 
-            Your feedback helps us improve the experience for everyone.
+            Chúng tôi rất mong nhận được ý kiến và đề xuất của bạn về ứng dụng Địa Lý Việt Nam. 
+            Góp ý của bạn giúp chúng tôi cải thiện trải nghiệm cho mọi người.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ const FeedbackForm: React.FC = () => {
           {/* Name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-              Name <span className="text-red-500">*</span>
+              Họ và Tên <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -100,10 +100,10 @@ const FeedbackForm: React.FC = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-black ${
                 errors.name ? 'border-red-500' : 'border-gray-300'
               }`}
-              placeholder="Your full name"
+              placeholder="Họ và tên của bạn"
             />
             {errors.name && (
               <p className="mt-1 text-sm text-red-600">{errors.name}</p>
@@ -121,10 +121,10 @@ const FeedbackForm: React.FC = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-black ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
-              placeholder="your.email@example.com"
+              placeholder="email.cua.ban@example.com"
             />
             {errors.email && (
               <p className="mt-1 text-sm text-red-600">{errors.email}</p>
@@ -134,7 +134,7 @@ const FeedbackForm: React.FC = () => {
           {/* Subject */}
           <div>
             <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-              Subject <span className="text-red-500">*</span>
+              Tiêu Đề <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -142,10 +142,10 @@ const FeedbackForm: React.FC = () => {
               name="subject"
               value={form.subject}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-black ${
                 errors.subject ? 'border-red-500' : 'border-gray-300'
               }`}
-              placeholder="Brief description of your feedback"
+              placeholder="Mô tả ngắn gọn về góp ý của bạn"
             />
             {errors.subject && (
               <p className="mt-1 text-sm text-red-600">{errors.subject}</p>
@@ -155,7 +155,7 @@ const FeedbackForm: React.FC = () => {
           {/* Message */}
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-              Message <span className="text-red-500">*</span>
+              Nội Dung <span className="text-red-500">*</span>
             </label>
             <textarea
               id="message"
@@ -163,16 +163,16 @@ const FeedbackForm: React.FC = () => {
               rows={6}
               value={form.message}
               onChange={handleChange}
-              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-vertical ${
+              className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-vertical text-black ${
                 errors.message ? 'border-red-500' : 'border-gray-300'
               }`}
-              placeholder="Please share your detailed feedback, suggestions, or questions about the Vietnam Geography app..."
+              placeholder="Vui lòng chia sẻ góp ý chi tiết, đề xuất hoặc câu hỏi của bạn về ứng dụng Địa Lý Việt Nam..."
             />
             {errors.message && (
               <p className="mt-1 text-sm text-red-600">{errors.message}</p>
             )}
             <p className="mt-1 text-sm text-gray-500">
-              Minimum 10 characters ({form.message.length}/10)
+              Tối thiểu 10 ký tự ({form.message.length}/10)
             </p>
           </div>
 
@@ -192,14 +192,14 @@ const FeedbackForm: React.FC = () => {
                   <svg className="animate-spin h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1a8 8 0 018 8h1m-9 8v-1a8 8 0 01-8-8H3m9-8a8 8 0 00-8 8v1m8 7a8 8 0 008-8h1" />
                   </svg>
-                  Preparing Email...
+                  Đang chuẩn bị Email...
                 </span>
               ) : (
-                'Send Feedback via Email'
+                'Gửi Góp Ý qua Email'
               )}
             </button>
             <p className="mt-2 text-xs text-gray-500 text-center">
-              This will open your email client with the feedback ready to send to jobtimeseo@gmail.com
+              Thao tác này sẽ mở ứng dụng email của bạn với nội dung góp ý sẵn sàng gửi tới jobtimeseo@gmail.com
             </p>
           </div>
         </form>

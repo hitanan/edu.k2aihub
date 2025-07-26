@@ -6,12 +6,10 @@ export const citiesData: City[] = [
     id: 1,
     code: '01',
     name: 'Thành phố Hà Nội',
+    slug: 'ha-noi',
     oldNames: ['Hà Nội', 'Hà Đông', 'Sơn Tây'],
     region: 'Bắc Bộ',
-    coordinates: {
-      x: 380,
-      y: 180
-    },
+    coordinates: { x: 380, y: 180 },
     color: '#ff6b35',
     population: '8,435,700',
     area: '3,359 km²',
@@ -22,28 +20,24 @@ export const citiesData: City[] = [
     id: 2,
     code: '04',
     name: 'Cao Bằng',
+    slug: 'cao-bang',
     oldNames: ['Cao Bằng'],
     region: 'Bắc Bộ',
-    coordinates: {
-      x: 420,
-      y: 90
-    },
+    coordinates: { x: 420, y: 90 },
     color: '#4ecdc4',
     population: '525,000',
     area: '6,707 km²',
     description:
-      'Cao Bằng là tỉnh miền núi phía Bắc, nổi tiếng với thác Bản Giốc - thác nước lớn nhất Việt Nam. Tỉnh có nhiều di tích lịch sử cách mạng quan trọng như hang Pác Bó - nơi Chủ tích Hồ Chí Minh về nước. Đây là vùng đất có nhiều dân tộc thiểu số sinh sống với văn hóa đặc sắc.'
+      'Cao Bằng là tỉnh miền núi phía Bắc, nổi tiếng với thác Bản Giốc - thác nước lớn nhất Việt Nam. Tỉnh có nhiều di tích lịch sử cách mạng quan trọng như hang Pác Bó - nơi Chủ tịch Hồ Chí Minh về nước. Đây là vùng đất có nhiều dân tộc thiểu số sinh sống với văn hóa đặc sắc.'
   },
   {
     id: 3,
     code: '08',
     name: 'Tuyên Quang',
+    slug: 'tuyen-quang',
     oldNames: ['Tuyên Quang'],
     region: 'Bắc Bộ',
-    coordinates: {
-      x: 360,
-      y: 120
-    },
+    coordinates: { x: 360, y: 120 },
     color: '#45b7d1',
     population: '760,000',
     area: '5,867 km²',
@@ -54,12 +48,10 @@ export const citiesData: City[] = [
     id: 4,
     code: '11',
     name: 'Điện Biên',
+    slug: 'dien-bien',
     oldNames: ['Điện Biên', 'Lai Châu cũ'],
     region: 'Tây Bắc',
-    coordinates: {
-      x: 280,
-      y: 140
-    },
+    coordinates: { x: 280, y: 140 },
     color: '#96ceb4',
     population: '580,000',
     area: '9,562 km²',
@@ -70,12 +62,10 @@ export const citiesData: City[] = [
     id: 5,
     code: '12',
     name: 'Lai Châu',
+    slug: 'lai-chau',
     oldNames: ['Lai Châu'],
     region: 'Tây Bắc',
-    coordinates: {
-      x: 260,
-      y: 120
-    },
+    coordinates: { x: 260, y: 120 },
     color: '#feca57',
     population: '460,000',
     area: '9,068 km²',
@@ -86,12 +76,10 @@ export const citiesData: City[] = [
     id: 6,
     code: '14',
     name: 'Sơn La',
+    slug: 'son-la',
     oldNames: ['Sơn La'],
     region: 'Tây Bắc',
-    coordinates: {
-      x: 320,
-      y: 160
-    },
+    coordinates: { x: 320, y: 160 },
     color: '#ff9ff3',
     population: '1,250,000',
     area: '14,055 km²',
@@ -102,12 +90,10 @@ export const citiesData: City[] = [
     id: 7,
     code: '15',
     name: 'Lào Cai',
+    slug: 'lao-cai',
     oldNames: ['Lào Cai'],
     region: 'Tây Bắc',
-    coordinates: {
-      x: 340,
-      y: 100
-    },
+    coordinates: { x: 340, y: 100 },
     color: '#74b9ff',
     population: '730,000',
     area: '6,364 km²',
@@ -118,12 +104,10 @@ export const citiesData: City[] = [
     id: 8,
     code: '19',
     name: 'Thái Nguyên',
+    slug: 'thai-nguyen',
     oldNames: ['Thái Nguyên', 'Bắc Cạn'],
     region: 'Bắc Bộ',
-    coordinates: {
-      x: 390,
-      y: 150
-    },
+    coordinates: { x: 390, y: 150 },
     color: '#a29bfe',
     population: '1,280,000',
     area: '3,534 km²',
@@ -134,12 +118,10 @@ export const citiesData: City[] = [
     id: 9,
     code: '20',
     name: 'Lạng Sơn',
+    slug: 'lang-son',
     oldNames: ['Lạng Sơn'],
     region: 'Đông Bắc',
-    coordinates: {
-      x: 430,
-      y: 120
-    },
+    coordinates: { x: 430, y: 120 },
     color: '#fd79a8',
     population: '780,000',
     area: '8,320 km²',
@@ -150,12 +132,10 @@ export const citiesData: City[] = [
     id: 10,
     code: '22',
     name: 'Quảng Ninh',
+    slug: 'quang-ninh',
     oldNames: ['Quảng Ninh', 'Hải Dương một phần'],
     region: 'Đông Bắc',
-    coordinates: {
-      x: 460,
-      y: 150
-    },
+    coordinates: { x: 460, y: 150 },
     color: '#00b894',
     population: '1,320,000',
     area: '6,102 km²',
@@ -166,12 +146,10 @@ export const citiesData: City[] = [
     id: 11,
     code: '24',
     name: 'Bắc Ninh',
+    slug: 'bac-ninh',
     oldNames: ['Bắc Ninh', 'Bắc Giang'],
     region: 'Đồng bằng Bắc Bộ',
-    coordinates: {
-      x: 420,
-      y: 180
-    },
+    coordinates: { x: 420, y: 180 },
     color: '#e17055',
     population: '1,540,000',
     area: '822 km²',
@@ -182,12 +160,10 @@ export const citiesData: City[] = [
     id: 12,
     code: '25',
     name: 'Phú Thọ',
+    slug: 'phu-tho',
     oldNames: ['Phú Thọ', 'Vĩnh Phúc'],
     region: 'Đồng bằng Bắc Bộ',
-    coordinates: {
-      x: 360,
-      y: 160
-    },
+    coordinates: { x: 360, y: 160 },
     color: '#0984e3',
     population: '1,450,000',
     area: '3,533 km²',
@@ -198,12 +174,10 @@ export const citiesData: City[] = [
     id: 13,
     code: '31',
     name: 'Thành phố Hải Phòng',
+    slug: 'hai-phong',
     oldNames: ['Hải Phòng', 'Hải Dương'],
     region: 'Đồng bằng Bắc Bộ',
-    coordinates: {
-      x: 440,
-      y: 200
-    },
+    coordinates: { x: 440, y: 200 },
     color: '#6c5ce7',
     population: '2,130,000',
     area: '1,523 km²',
@@ -214,12 +188,10 @@ export const citiesData: City[] = [
     id: 14,
     code: '33',
     name: 'Hưng Yên',
+    slug: 'hung-yen',
     oldNames: ['Hưng Yên', 'Hà Nam'],
     region: 'Đồng bằng Bắc Bộ',
-    coordinates: {
-      x: 400,
-      y: 200
-    },
+    coordinates: { x: 400, y: 200 },
     color: '#fd79a8',
     population: '1,180,000',
     area: '926 km²',
@@ -230,12 +202,10 @@ export const citiesData: City[] = [
     id: 15,
     code: '37',
     name: 'Ninh Bình',
+    slug: 'ninh-binh',
     oldNames: ['Ninh Bình', 'Nam Định'],
     region: 'Đồng bằng Bắc Bộ',
-    coordinates: {
-      x: 380,
-      y: 220
-    },
+    coordinates: { x: 380, y: 220 },
     color: '#00cec9',
     population: '1,050,000',
     area: '1,376 km²',
@@ -246,12 +216,10 @@ export const citiesData: City[] = [
     id: 16,
     code: '38',
     name: 'Thanh Hóa',
+    slug: 'thanh-hoa',
     oldNames: ['Thanh Hóa'],
     region: 'Bắc Trung Bộ',
-    coordinates: {
-      x: 360,
-      y: 260
-    },
+    coordinates: { x: 360, y: 260 },
     color: '#fdcb6e',
     population: '3,640,000',
     area: '11,132 km²',
@@ -262,12 +230,10 @@ export const citiesData: City[] = [
     id: 17,
     code: '40',
     name: 'Nghệ An',
+    slug: 'nghe-an',
     oldNames: ['Nghệ An', 'Hà Tĩnh một phần'],
     region: 'Bắc Trung Bộ',
-    coordinates: {
-      x: 360,
-      y: 300
-    },
+    coordinates: { x: 360, y: 300 },
     color: '#e84393',
     population: '3,100,000',
     area: '16,490 km²',
@@ -278,12 +244,10 @@ export const citiesData: City[] = [
     id: 18,
     code: '42',
     name: 'Hà Tĩnh',
+    slug: 'ha-tinh',
     oldNames: ['Hà Tĩnh'],
     region: 'Bắc Trung Bộ',
-    coordinates: {
-      x: 380,
-      y: 320
-    },
+    coordinates: { x: 380, y: 320 },
     color: '#00b894',
     population: '1,290,000',
     area: '6,056 km²',
@@ -294,12 +258,10 @@ export const citiesData: City[] = [
     id: 19,
     code: '44',
     name: 'Quảng Trị',
+    slug: 'quang-tri',
     oldNames: ['Quảng Trị', 'Quảng Bình'],
     region: 'Bắc Trung Bộ',
-    coordinates: {
-      x: 400,
-      y: 360
-    },
+    coordinates: { x: 400, y: 360 },
     color: '#a29bfe',
     population: '870,000',
     area: '4,739 km²',
@@ -310,12 +272,10 @@ export const citiesData: City[] = [
     id: 20,
     code: '46',
     name: 'Thành phố Huế',
+    slug: 'hue',
     oldNames: ['Thừa Thiên Huế'],
     region: 'Bắc Trung Bộ',
-    coordinates: {
-      x: 420,
-      y: 380
-    },
+    coordinates: { x: 420, y: 380 },
     color: '#74b9ff',
     population: '1,230,000',
     area: '5,009 km²',
@@ -326,12 +286,10 @@ export const citiesData: City[] = [
     id: 21,
     code: '48',
     name: 'Thành phố Đà Nẵng',
+    slug: 'da-nang',
     oldNames: ['Đà Nẵng', 'Quảng Nam'],
     region: 'Nam Trung Bộ',
-    coordinates: {
-      x: 440,
-      y: 400
-    },
+    coordinates: { x: 440, y: 400 },
     color: '#ff7675',
     population: '1,540,000',
     area: '1,285 km²',
@@ -342,12 +300,10 @@ export const citiesData: City[] = [
     id: 22,
     code: '51',
     name: 'Quảng Ngãi',
+    slug: 'quang-ngai',
     oldNames: ['Quảng Ngãi'],
     region: 'Nam Trung Bộ',
-    coordinates: {
-      x: 460,
-      y: 420
-    },
+    coordinates: { x: 460, y: 420 },
     color: '#fd79a8',
     population: '1,250,000',
     area: '5,153 km²',
@@ -358,12 +314,10 @@ export const citiesData: City[] = [
     id: 23,
     code: '52',
     name: 'Gia Lai',
+    slug: 'gia-lai',
     oldNames: ['Gia Lai', 'Kon Tum'],
     region: 'Tây Nguyên',
-    coordinates: {
-      x: 440,
-      y: 460
-    },
+    coordinates: { x: 440, y: 460 },
     color: '#00cec9',
     population: '1,510,000',
     area: '15,536 km²',
@@ -374,12 +328,10 @@ export const citiesData: City[] = [
     id: 24,
     code: '56',
     name: 'Khánh Hòa',
+    slug: 'khanh-hoa',
     oldNames: ['Khánh Hòa', 'Phú Yên'],
     region: 'Nam Trung Bộ',
-    coordinates: {
-      x: 480,
-      y: 480
-    },
+    coordinates: { x: 480, y: 480 },
     color: '#6c5ce7',
     population: '1,320,000',
     area: '5,197 km²',
@@ -390,12 +342,10 @@ export const citiesData: City[] = [
     id: 25,
     code: '66',
     name: 'Đắk Lắk',
+    slug: 'dak-lak',
     oldNames: ['Đắk Lắk', 'Đắk Nông'],
     region: 'Tây Nguyên',
-    coordinates: {
-      x: 460,
-      y: 500
-    },
+    coordinates: { x: 460, y: 500 },
     color: '#fdcb6e',
     population: '2,020,000',
     area: '13,125 km²',
@@ -406,12 +356,10 @@ export const citiesData: City[] = [
     id: 26,
     code: '68',
     name: 'Lâm Đồng',
+    slug: 'lam-dong',
     oldNames: ['Lâm Đồng'],
     region: 'Tây Nguyên',
-    coordinates: {
-      x: 480,
-      y: 520
-    },
+    coordinates: { x: 480, y: 520 },
     color: '#e84393',
     population: '1,350,000',
     area: '9,773 km²',
@@ -422,12 +370,10 @@ export const citiesData: City[] = [
     id: 27,
     code: '75',
     name: 'Đồng Nai',
+    slug: 'dong-nai',
     oldNames: ['Đồng Nai', 'Bình Phước', 'Bình Dương'],
     region: 'Đông Nam Bộ',
-    coordinates: {
-      x: 500,
-      y: 560
-    },
+    coordinates: { x: 500, y: 560 },
     color: '#00b894',
     population: '3,240,000',
     area: '5,907 km²',
@@ -438,12 +384,10 @@ export const citiesData: City[] = [
     id: 28,
     code: '79',
     name: 'Thành phố Hồ Chí Minh',
+    slug: 'ho-chi-minh',
     oldNames: ['TP.HCM', 'Bà Rịa - Vũng Tàu'],
     region: 'Đông Nam Bộ',
-    coordinates: {
-      x: 480,
-      y: 580
-    },
+    coordinates: { x: 480, y: 580 },
     color: '#ff6b35',
     population: '10,420,000',
     area: '2,095 km²',
@@ -454,12 +398,10 @@ export const citiesData: City[] = [
     id: 29,
     code: '80',
     name: 'Tây Ninh',
+    slug: 'tay-ninh',
     oldNames: ['Tây Ninh', 'Bình Thuận'],
     region: 'Đông Nam Bộ',
-    coordinates: {
-      x: 460,
-      y: 600
-    },
+    coordinates: { x: 460, y: 600 },
     color: '#a29bfe',
     population: '1,320,000',
     area: '4,039 km²',
@@ -470,12 +412,10 @@ export const citiesData: City[] = [
     id: 30,
     code: '82',
     name: 'Đồng Tháp',
+    slug: 'dong-thap',
     oldNames: ['Đồng Tháp', 'Long An'],
     region: 'Đồng bằng sông Cửu Long',
-    coordinates: {
-      x: 440,
-      y: 620
-    },
+    coordinates: { x: 440, y: 620 },
     color: '#74b9ff',
     population: '1,830,000',
     area: '3,238 km²',
@@ -486,12 +426,10 @@ export const citiesData: City[] = [
     id: 31,
     code: '86',
     name: 'Vĩnh Long',
+    slug: 'vinh-long',
     oldNames: ['Vĩnh Long', 'Tiền Giang', 'Bến Tre'],
     region: 'Đồng bằng sông Cửu Long',
-    coordinates: {
-      x: 460,
-      y: 640
-    },
+    coordinates: { x: 460, y: 640 },
     color: '#fd79a8',
     population: '2,120,000',
     area: '2,367 km²',
@@ -502,12 +440,10 @@ export const citiesData: City[] = [
     id: 32,
     code: '91',
     name: 'An Giang',
+    slug: 'an-giang',
     oldNames: ['An Giang', 'Kiên Giang'],
     region: 'Đồng bằng sông Cửu Long',
-    coordinates: {
-      x: 420,
-      y: 660
-    },
+    coordinates: { x: 420, y: 660 },
     color: '#00cec9',
     population: '2,430,000',
     area: '3,406 km²',
@@ -518,12 +454,10 @@ export const citiesData: City[] = [
     id: 33,
     code: '92',
     name: 'Thành phố Cần Thơ',
+    slug: 'can-tho',
     oldNames: ['Cần Thơ', 'Hậu Giang', 'Sóc Trăng'],
     region: 'Đồng bằng sông Cửu Long',
-    coordinates: {
-      x: 440,
-      y: 680
-    },
+    coordinates: { x: 440, y: 680 },
     color: '#6c5ce7',
     population: '2,750,000',
     area: '1,409 km²',
@@ -534,12 +468,10 @@ export const citiesData: City[] = [
     id: 34,
     code: '96',
     name: 'Cà Mau',
+    slug: 'ca-mau',
     oldNames: ['Cà Mau', 'Bạc Liêu'],
     region: 'Đồng bằng sông Cửu Long',
-    coordinates: {
-      x: 460,
-      y: 720
-    },
+    coordinates: { x: 460, y: 720 },
     color: '#e17055',
     population: '1,640,000',
     area: '5,294 km²',

@@ -2,6 +2,7 @@ export interface City {
   id: number;
   code: string;
   name: string;
+  slug: string;
   oldNames: string[];
   region: string;
   coordinates: {

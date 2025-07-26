@@ -18,5 +18,5 @@ export function createSlug(name: string): string {
 }
 
 export function findCityBySlug(cities: City[], slug: string): City | undefined {
-  return cities.find((city) => createSlug(city.name) === slug);
+  return cities.find((city) => city.slug === slug);
 }
