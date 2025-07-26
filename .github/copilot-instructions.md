@@ -48,3 +48,5 @@ Please keep this as a complete, production-ready application, keep the project s
 
 The following table lists the 34 provincial-level administrative units of Vietnam after the merger:
 [reqs/34-cities.md](../docs/34-cities.md) and the data is also available in the `src/data/cities.ts` file.
+
+The city rankings and statistics are available in the `[docs/34-cities-rank.md](../docs/34-cities-rank.md)` file.

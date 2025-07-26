@@ -1,3 +1,7 @@
+# Thông số các tỉnh thành sau sáp nhập
+
+Bảng sau sẽ thể hiện các [thông số chính của các tỉnh thành sau sáp nhập](https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025)
+
 | TT  | Địa phương  | Diện tích (km2) | Xếp hạng Diện tích | Dân số (người) | Xếp hạng Dân số | GRDP 2024 (triệu đồng) | Xếp hạng GRDP 2024 | Thu ngân sách (triệu đồng) | Xếp hạng Thu ngân sách | Thu nhập bình quân 2024 (triệu đồng/năm) | Xếp hạng Thu nhập bình quân 2024 |
 | --- | ----------- | --------------- | ------------------ | -------------- | --------------- | ---------------------- | ------------------ | -------------------------- | ---------------------- | ---------------------------------------- | -------------------------------- |
 | 1   | An Giang    | 9,888.91        | 13                 | 4,952,238      | 3               | 271,345,883            | 16                 | 26,279,135                 | 15                     | 55.22                                    |                                  |

@@ -11,8 +11,8 @@ export const citiesData: City[] = [
     region: 'Bắc Bộ',
     coordinates: { x: 380, y: 180 },
     color: '#ff6b35',
-    population: '8,718,000',
-    area: '3,359.82 km²',
+    population: '8,807,523',
+    area: '3,359.84 km²',
     description:
       'Hà Nội là thủ đô của Việt Nam, trung tâm chính trị, văn hóa và giáo dục của cả nước. Thành phố có lịch sử hơn 1000 năm tuổi với nhiều di tích lịch sử quan trọng như Văn Miếu, Hoàng thành Thăng Long.',
     fullPageContent: `
@@ -22,13 +22,20 @@ export const citiesData: City[] = [
       <h3>Lịch sử</h3>
       <p>Hà Nội có lịch sử hơn 1000 năm, được thành lập năm 1010 dưới triều Lý với tên gọi Thăng Long. Qua các triều đại phong kiến, thành phố luôn giữ vai trò là trung tâm chính trị quan trọng.</p>
       
-      <h3>Địa lý và khí hậu</h3>
-      <p>Diện tích: 3,359.82 km²<br>
-      Dân số: 8,718,000 người<br>
-      Khí hậu: Nhiệt đới gió mùa với 4 mùa rõ rệt</p>
+      <h3>Địa lý và Dân số</h3>
+      <ul>
+        <li>Diện tích: 3,359.84 km² (xếp hạng 32/34)</li>
+        <li>Dân số: 8,807,523 người (xếp hạng 2/34)</li>
+        <li>Khí hậu: Nhiệt đới gió mùa với 4 mùa rõ rệt</li>
+      </ul>
       
       <h3>Kinh tế</h3>
-      <p>Hà Nội là trung tâm kinh tế lớn thứ hai của Việt Nam, với GDP bình quân đầu người cao nhất cả nước. Các ngành kinh tế chủ lực bao gồm công nghiệp, dịch vụ, và du lịch.</p>
+      <p>Hà Nội là trung tâm kinh tế lớn thứ hai của Việt Nam với các chỉ số kinh tế ấn tượng:</p>
+      <ul>
+        <li>GRDP 2024: 1,425,521,277 triệu đồng (xếp hạng 2/34)</li>
+        <li>Thu ngân sách: 511,338,453 triệu đồng (xếp hạng 2/34)</li>
+        <li>Thu nhập bình quân: 89.00 triệu đồng/năm</li>
+      </ul>
       
       <h3>Văn hóa và du lịch</h3>
       <p>Thành phố sở hữu nhiều di sản văn hóa thế giới như Hoàng thành Thăng Long, Văn Miếu - Quốc Tử Giám. Phố cổ Hà Nội với 36 phố phường là điểm thu hút khách du lịch quốc tế.</p>
@@ -49,24 +56,82 @@ export const citiesData: City[] = [
     region: 'Bắc Bộ',
     coordinates: { x: 420, y: 90 },
     color: '#4ecdc4',
-    population: '525,000',
-    area: '6,707 km²',
+    population: '555,809',
+    area: '6,700.4 km²',
     description:
-      'Cao Bằng là tỉnh miền núi phía Bắc, nổi tiếng với thác Bản Giốc - thác nước lớn nhất Việt Nam. Tỉnh có nhiều di tích lịch sử cách mạng quan trọng như hang Pác Bó - nơi Chủ tịch Hồ Chí Minh về nước. Đây là vùng đất có nhiều dân tộc thiểu số sinh sống với văn hóa đặc sắc.'
+      'Cao Bằng là tỉnh miền núi phía Bắc, nổi tiếng với thác Bản Giốc - thác nước lớn nhất Việt Nam. Tỉnh có nhiều di tích lịch sử cách mạng quan trọng như hang Pác Bó - nơi Chủ tịch Hồ Chí Minh về nước.',
+    fullPageContent: `
+      <h2>Cao Bằng</h2>
+      <p>Cao Bằng là tỉnh miền núi phía bắc Việt Nam, giáp biên giới với Trung Quốc. Tỉnh nổi tiếng với thác Bản Giốc - thác nước lớn nhất Việt Nam và nhiều di tích lịch sử cách mạng quan trọng.</p>
+      
+      <h3>Lịch sử</h3>
+      <p>Cao Bằng là vùng đất có nhiều di tích lịch sử cách mạng quan trọng, đặc biệt là hang Pác Bó - nơi Chủ tịch Hồ Chí Minh về nước và hoạt động cách mạng đầu tiên.</p>
+      
+      <h3>Địa lý</h3>
+      <p>Tỉnh có diện tích 6.700,4 km² với dân số 555.809 người. Cao Bằng có địa hình núi cao hiểm trở, khí hậu cận nhiệt đới gió mùa.</p>
+      <ul>
+        <li>Diện tích: 6.700,4 km²</li>
+        <li>Dân số: 555.809 người</li>
+        <li>Thủ phủ: Thành phố Cao Bằng</li>
+      </ul>
+      
+      <h3>Văn hóa và Du lịch</h3>
+      <p>Thác Bản Giốc là điểm đến du lịch nổi tiếng với dòng nước đổ từ độ cao 30m. Bên cạnh đó, tỉnh còn có nhiều hang động đẹp, di tích lịch sử và văn hóa đa dân tộc đặc sắc.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Cao_B%E1%BA%B1ng" target="_blank">Wikipedia - Cao Bằng</a></li>
+        <li><a href="http://caobang.gov.vn/" target="_blank">Cổng thông tin tỉnh Cao Bằng</a></li>
+      </ul>
+    `
   },
   {
     id: 3,
     code: '08',
     name: 'Tuyên Quang',
     slug: 'tuyen-quang',
-    oldNames: ['Tuyên Quang'],
+    oldNames: ['Tuyên Quang', 'Hà Giang'],
     region: 'Bắc Bộ',
     coordinates: { x: 360, y: 120 },
     color: '#45b7d1',
-    population: '760,000',
-    area: '5,867 km²',
+    population: '1,865,270',
+    area: '13,795.50 km²',
     description:
-      "Tuyên Quang là tỉnh miền núi phía Bắc, được mệnh danh là 'thủ đô của rừng'. Tỉnh có nhiều danh thắng thiên nhiên như Hồ Na Hang, Công viên địa chất Đồng Văn. Đây cũng là nơi có nhiều di tích lịch sử cách mạng và là cái nôi của nhiều phong trào yêu nước."
+      "Tuyên Quang là tỉnh miền núi phía Bắc sau sáp nhập với Hà Giang, được mệnh danh là 'thủ đô của rừng'. Tỉnh có nhiều danh thắng thiên nhiên như Hồ Na Hang, Công viên địa chất Đồng Văn.",
+    fullPageContent: `
+      <h2>Tỉnh Tuyên Quang - Vùng núi phía Bắc với tiềm năng phát triển</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Tuyên Quang là tỉnh miền núi với GRDP đạt <strong>88,751,988 triệu đồng</strong>, xếp hạng <strong>20/34</strong> toàn quốc. Thu ngân sách đạt <strong>11,838,569 triệu đồng</strong>, xếp hạng <strong>20/34</strong>. Sau sáp nhập với Hà Giang, tỉnh có quy mô kinh tế lớn hơn.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>36.23 triệu đồng/năm</strong>, xếp hạng <strong>33/34</strong> toàn quốc. Với dân số <strong>1,865,270 người</strong> (xếp hạng <strong>12/34</strong>) và diện tích <strong>13,795.50 km²</strong> (xếp hạng <strong>3/34</strong>), Tuyên Quang có diện tích lớn nhưng mật độ dân số thấp.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>Theo quy hoạch mới, Tuyên Quang sáp nhập với Hà Giang tạo thành tỉnh lớn với địa hình chủ yếu là núi cao, nhiều thung lũng và cao nguyên đá. Đây là nơi có nhiều di tích lịch sử cách mạng và là cái nôi của nhiều phong trào yêu nước.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Tỉnh được mệnh danh là "thủ đô của rừng" với tiềm năng lớn về du lịch sinh thái. Có Công viên địa chất Đồng Văn - di sản địa chất thế giới, Hồ Na Hang, cao nguyên đá Đồng Văn với cảnh quan hùng vĩ và văn hóa các dân tộc thiểu số đặc sắc.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 88,751,988 triệu đồng (Xếp hạng 20/34)</li>
+        <li>Thu ngân sách: 11,838,569 triệu đồng (Xếp hạng 20/34)</li>
+        <li>Thu nhập bình quân: 36.23 triệu đồng/năm (Xếp hạng 33/34)</li>
+        <li>Dân số: 1,865,270 người (Xếp hạng 12/34)</li>
+        <li>Diện tích: 13,795.50 km² (Xếp hạng 3/34)</li>
+        <li>Thủ phủ: Thành phố Tuyên Quang</li>
+        <li>Trước sáp nhập: Tuyên Quang + Hà Giang</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Tuy%C3%AAn_Quang" target="_blank">Wikipedia - Tuyên Quang</a></li>
+        <li><a href="http://tuyenquang.gov.vn/" target="_blank">Cổng thông tin tỉnh Tuyên Quang</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 4,
@@ -115,14 +180,48 @@ export const citiesData: City[] = [
     code: '15',
     name: 'Lào Cai',
     slug: 'lao-cai',
-    oldNames: ['Lào Cai'],
+    oldNames: ['Lào Cai', 'Yên Bái'],
     region: 'Tây Bắc',
     coordinates: { x: 340, y: 100 },
     color: '#74b9ff',
-    population: '730,000',
-    area: '6,364 km²',
+    population: '1,778,785',
+    area: '13,256.92 km²',
     description:
-      'Lào Cai là tỉnh biên giới phía Bắc, nổi tiếng với Sa Pa - điểm du lịch nổi tiếng thế giới. Tỉnh có đỉnh Fansipan - nóc nhà Đông Dương cao 3,143m. Đây là nơi sinh sống của nhiều dân tộc thiểu số với những thửa ruộng bậc thang tuyệt đẹp.'
+      'Lào Cai là tỉnh biên giới phía Bắc sau sáp nhập với Yên Bái, nổi tiếng với Sa Pa - điểm du lịch nổi tiếng thế giới. Tỉnh có đỉnh Fansipan - nóc nhà Đông Dương cao 3,143m. Đây là nơi sinh sống của nhiều dân tộc thiểu số với những thửa ruộng bậc thang tuyệt đẹp.',
+    fullPageContent: `
+      <h2>Tỉnh Lào Cai - Thiên đường du lịch miền núi phía Bắc</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Lào Cai là tỉnh miền núi với GRDP đạt <strong>88,089,394 triệu đồng</strong>, xếp hạng <strong>21/34</strong> toàn quốc. Thu ngân sách đạt <strong>15,298,559 triệu đồng</strong>, xếp hạng <strong>17/34</strong>. Sau sáp nhập với Yên Bái, tỉnh có quy mô kinh tế và tiềm năng phát triển lớn hơn.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>37.71 triệu đồng/năm</strong>, xếp hạng <strong>32/34</strong> toàn quốc. Với dân số <strong>1,778,785 người</strong> (xếp hạng <strong>13/34</strong>) và diện tích <strong>13,256.92 km²</strong> (xếp hạng <strong>4/34</strong>), Lào Cai có diện tích lớn và tiềm năng phát triển du lịch cao.</p>
+
+      <h3>Vị trí địa lý và du lịch</h3>
+      <p>Lào Cai là tỉnh biên giới phía Bắc, nổi tiếng với Sa Pa - điểm du lịch nổi tiếng thế giới với khí hậu mát mẻ quanh năm. Tỉnh có đỉnh Fansipan - nóc nhà Đông Dương cao 3,143m. Đây là nơi sinh sống của nhiều dân tộc thiểu số với văn hóa đặc sắc và những thửa ruộng bậc thang tuyệt đẹp.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Sau sáp nhập với Yên Bái, Lào Cai trở thành tỉnh có diện tích lớn với tiềm năng du lịch sinh thái, du lịch văn hóa và thương mại biên giới. Tỉnh có thế mạnh về nông nghiệp vùng cao, chăn nuôi và các sản phẩm đặc trưng như trà, thuốc nam.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 88,089,394 triệu đồng (Xếp hạng 21/34)</li>
+        <li>Thu ngân sách: 15,298,559 triệu đồng (Xếp hạng 17/34)</li>
+        <li>Thu nhập bình quân: 37.71 triệu đồng/năm (Xếp hạng 32/34)</li>
+        <li>Dân số: 1,778,785 người (Xếp hạng 13/34)</li>
+        <li>Diện tích: 13,256.92 km² (Xếp hạng 4/34)</li>
+        <li>Thủ phủ: Thành phố Lào Cai</li>
+        <li>Trước sáp nhập: Lào Cai + Yên Bái</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/L%C3%A0o_Cai" target="_blank">Wikipedia - Lào Cai</a></li>
+        <li><a href="http://laocai.gov.vn/" target="_blank">Cổng thông tin tỉnh Lào Cai</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 8,
@@ -147,24 +246,81 @@ export const citiesData: City[] = [
     region: 'Đông Bắc',
     coordinates: { x: 430, y: 120 },
     color: '#fd79a8',
-    population: '780,000',
-    area: '8,320 km²',
+    population: '813,978',
+    area: '8,310.2 km²',
     description:
-      'Lạng Sơn là tỉnh biên giới quan trọng với Trung Quốc, có cửa khẩu Đồng Đăng lớn nhất phía Bắc. Tỉnh có nhiều di tích lịch sử như Thành cổ Cây Thị, động Tam Thanh. Đây là nơi có truyền thống anh hùng với nhiều câu chuyện lịch sử hào hùng.'
+      'Lạng Sơn là tỉnh biên giới quan trọng với Trung Quốc, có cửa khẩu Đồng Đăng lớn nhất phía Bắc. Tỉnh có nhiều di tích lịch sử như Thành cổ Cây Thị, động Tam Thanh.',
+    fullPageContent: `
+      <h2>Lạng Sơn</h2>
+      <p>Lạng Sơn là tỉnh biên giới phía bắc Việt Nam, giáp với Trung Quốc. Tỉnh có vị trí chiến lược quan trọng với cửa khẩu Đồng Đăng - cửa khẩu lớn nhất phía Bắc.</p>
+      
+      <h3>Lịch sử</h3>
+      <p>Lạng Sơn có lịch sử lâu đời với nhiều di tích quan trọng như Thành cổ Cây Thị, động Tam Thanh. Đây là nơi có truyền thống anh hùng với nhiều câu chuyện lịch sử hào hùng.</p>
+      
+      <h3>Địa lý</h3>
+      <p>Tỉnh có diện tích 8.310,2 km² với dân số 813.978 người. Lạng Sơn có địa hình núi cao, nhiều thung lũng và sông suối.</p>
+      <ul>
+        <li>Diện tích: 8.310,2 km²</li>
+        <li>Dân số: 813.978 người</li>
+        <li>Thủ phủ: Thành phố Lạng Sơn</li>
+      </ul>
+      
+      <h3>Kinh tế</h3>
+      <p>Lạng Sơn là cửa ngõ giao thương quan trọng với Trung Quốc. Tỉnh phát triển mạnh về thương mại biên giới và có tiềm năng lớn về du lịch.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/L%E1%BA%A1ng_S%C6%A1n" target="_blank">Wikipedia - Lạng Sơn</a></li>
+        <li><a href="http://langson.gov.vn/" target="_blank">Cổng thông tin tỉnh Lạng Sơn</a></li>
+      </ul>
+    `
   },
   {
     id: 10,
     code: '22',
     name: 'Quảng Ninh',
     slug: 'quang-ninh',
-    oldNames: ['Quảng Ninh', 'Hải Dương một phần'],
+    oldNames: ['Quảng Ninh'],
     region: 'Đông Bắc',
     coordinates: { x: 460, y: 150 },
     color: '#00b894',
-    population: '1,320,000',
-    area: '6,102 km²',
+    population: '1,429,841',
+    area: '6,207.9 km²',
     description:
-      'Quảng Ninh là tỉnh ven biển nổi tiếng với vịnh Hạ Long - di sản thiên nhiên thế giới. Tỉnh có nhiều đảo đẹp, hang động kỳ thú và là trung tâm khai thác than quan trọng. Sau sáp nhập, Quảng Ninh mở rộng diện tích và trở thành cửa ngõ kinh tế quan trọng phía Bắc.'
+      'Quảng Ninh là tỉnh ven biển nổi tiếng với vịnh Hạ Long - di sản thiên nhiên thế giới. Tỉnh có nhiều đảo đẹp, hang động kỳ thú và là trung tâm khai thác than quan trọng.',
+    fullPageContent: `
+      <h2>Tỉnh Quảng Ninh - Trung tâm du lịch và công nghiệp</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Quảng Ninh là một trong những trung tâm kinh tế quan trọng của miền Bắc với GRDP đạt <strong>459,162,298 triệu đồng</strong>, xếp hạng <strong>8/34</strong> toàn quốc. Thu ngân sách đạt <strong>136,702,488 triệu đồng</strong>, xếp hạng <strong>8/34</strong>, thể hiện sức mạnh kinh tế của tỉnh.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>244.99 triệu đồng/năm</strong>, xếp hạng <strong>1/34</strong> toàn quốc - cao nhất cả nước. Với dân số <strong>1,429,841 người</strong> (xếp hạng <strong>15/34</strong>) và diện tích <strong>6,207.9 km²</strong> (xếp hạng <strong>18/34</strong>), Quảng Ninh có mức sống cao nhất Việt Nam.</p>
+
+      <h3>Vị trí địa lý và du lịch</h3>
+      <p>Quảng Ninh là tỉnh ven biển phía đông bắc Việt Nam, nổi tiếng với danh thắng Vịnh Hạ Long - Di sản thiên nhiên thế giới được UNESCO công nhận. Tỉnh giáp Trung Quốc về phía đông bắc và có đường bờ biển dài với nhiều đảo đẹp, tạo nên tiềm năng du lịch và thương mại biên giới lớn.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Quảng Ninh có vị trí chiến lược quan trọng, là cửa ngõ giao thương với Trung Quốc và trung tâm du lịch hàng đầu. Vịnh Hạ Long với hàng nghìn đảo đá vôi kỳ thú là điểm đến hàng đầu của du lịch Việt Nam. Tỉnh còn phát triển mạnh khai thác than đá và các ngành công nghiệp khác.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 459,162,298 triệu đồng (Xếp hạng 8/34)</li>
+        <li>Thu ngân sách: 136,702,488 triệu đồng (Xếp hạng 8/34)</li>
+        <li>Thu nhập bình quân: 244.99 triệu đồng/năm (Xếp hạng 1/34)</li>
+        <li>Dân số: 1,429,841 người (Xếp hạng 15/34)</li>
+        <li>Diện tích: 6,207.9 km² (Xếp hạng 18/34)</li>
+        <li>Thủ phủ: Thành phố Hạ Long</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Quảng_Ninh" target="_blank">Wikipedia - Quảng Ninh</a></li>
+        <li><a href="https://quangninh.gov.vn/" target="_blank">Cổng thông tin tỉnh Quảng Ninh</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 11,
@@ -175,24 +331,92 @@ export const citiesData: City[] = [
     region: 'Đồng bằng Bắc Bộ',
     coordinates: { x: 420, y: 180 },
     color: '#e17055',
-    population: '1,540,000',
-    area: '822 km²',
+    population: '3,619,433',
+    area: '4,718.6 km²',
     description:
-      "Bắc Ninh là tỉnh có mật độ dân số cao nhất cả nước, được mệnh danh là 'đất tổ' văn hóa Việt Nam. Tỉnh nổi tiếng với làng quan họ Bắc Ninh và nhiều di tích lịch sử. Sau sáp nhập với Bắc Giang, tỉnh trở thành trung tâm công nghiệp quan trọng với nhiều khu công nghiệp lớn."
+      "Bắc Ninh là tỉnh có mật độ dân số cao nhất cả nước, được mệnh danh là 'đất tổ' văn hóa Việt Nam. Tỉnh nổi tiếng với làng quan họ Bắc Ninh và nhiều di tích lịch sử. Sau sáp nhập với Bắc Giang, tỉnh trở thành trung tâm công nghiệp quan trọng với nhiều khu công nghiệp lớn.",
+    fullPageContent: `
+      <h2>Tỉnh Bắc Ninh - Trung tâm công nghiệp công nghệ cao</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Bắc Ninh là một trong những trung tâm công nghiệp hàng đầu với GRDP đạt <strong>504,513,894 triệu đồng</strong>, xếp hạng <strong>7/34</strong> toàn quốc. Thu ngân sách đạt <strong>151,043,775 triệu đồng</strong>, xếp hạng <strong>6/34</strong>, cho thấy hiệu quả kinh tế cao của tỉnh.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>106.25 triệu đồng/năm</strong>, xếp hạng <strong>7/34</strong> toàn quốc. Với dân số <strong>3,619,433 người</strong> (xếp hạng <strong>7/34</strong>) và diện tích <strong>4,718.6 km²</strong> (xếp hạng <strong>24/34</strong>), Bắc Ninh có mật độ dân số rất cao và là trung tâm công nghiệp tập trung.</p>
+
+      <h3>Vị trí địa lý và văn hóa</h3>
+      <p>Bắc Ninh được mệnh danh là "đất tổ" văn hóa Việt Nam, nổi tiếng với làng quan họ và nhiều di tích lịch sử quan trọng. Tỉnh có vị trí địa lý thuận lợi, gần Hà Nội, tạo điều kiện phát triển công nghiệp và dịch vụ. Sau sáp nhập với Bắc Giang, tỉnh trở thành một trung tâm kinh tế lớn.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Bắc Ninh là trung tâm công nghiệp công nghệ cao quan trọng với nhiều khu công nghiệp lớn, đặc biệt trong lĩnh vực điện tử và công nghệ thông tin. Tỉnh có hạ tầng phát triển và lực lượng lao động chất lượng cao, là điểm đến hấp dẫn cho các nhà đầu tư trong và ngoài nước.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 504,513,894 triệu đồng (Xếp hạng 7/34)</li>
+        <li>Thu ngân sách: 151,043,775 triệu đồng (Xếp hạng 6/34)</li>
+        <li>Thu nhập bình quân: 106.25 triệu đồng/năm (Xếp hạng 7/34)</li>
+        <li>Dân số: 3,619,433 người (Xếp hạng 7/34)</li>
+        <li>Diện tích: 4,718.6 km² (Xếp hạng 24/34)</li>
+        <li>Thủ phủ: Thành phố Bắc Ninh</li>
+        <li>Trước sáp nhập: Bắc Ninh + Bắc Giang</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/B%E1%BA%AFc_Ninh" target="_blank">Wikipedia - Bắc Ninh</a></li>
+        <li><a href="http://bacninh.gov.vn/" target="_blank">Cổng thông tin tỉnh Bắc Ninh</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 12,
     code: '25',
     name: 'Phú Thọ',
     slug: 'phu-tho',
-    oldNames: ['Phú Thọ', 'Vĩnh Phúc'],
+    oldNames: ['Phú Thọ', 'Hòa Bình', 'Vĩnh Phúc'],
     region: 'Đồng bằng Bắc Bộ',
     coordinates: { x: 360, y: 160 },
     color: '#0984e3',
-    population: '1,450,000',
-    area: '3,533 km²',
+    population: '4,022,638',
+    area: '9,361.38 km²',
     description:
-      "Phú Thọ được mệnh danh là 'đất tổ' của dân tộc Việt Nam với đền Hùng - nơi thờ các vua Hùng. Tỉnh có vị trí giao thông quan trọng, là cầu nối giữa Hà Nội và các tỉnh Tây Bắc. Sau sáp nhập với Vĩnh Phúc, Phú Thọ có tiềm năng phát triển kinh tế lớn."
+      "Phú Thọ được mệnh danh là 'đất tổ' của dân tộc Việt Nam với đền Hùng - nơi thờ các vua Hùng. Tỉnh có vị trí giao thông quan trọng, là cầu nối giữa Hà Nội và các tỉnh Tây Bắc. Sau sáp nhập với Hòa Bình và Vĩnh Phúc, Phú Thọ có tiềm năng phát triển kinh tế lớn.",
+    fullPageContent: `
+      <h2>Tỉnh Phú Thọ - Đất tổ dân tộc và trung tâm kinh tế quan trọng</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Phú Thọ là một trong những trung tâm kinh tế quan trọng với GRDP đạt <strong>449,336,598 triệu đồng</strong>, xếp hạng <strong>9/34</strong> toàn quốc. Thu ngân sách đạt <strong>61,799,876 triệu đồng</strong>, xếp hạng <strong>9/34</strong>, thể hiện tiềm lực kinh tế mạnh mẽ sau sáp nhập.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>85.10 triệu đồng/năm</strong>, xếp hạng <strong>11/34</strong> toàn quốc. Với dân số <strong>4,022,638 người</strong> (xếp hạng <strong>6/34</strong>) và diện tích <strong>9,361.38 km²</strong> (xếp hạng <strong>9/34</strong>), Phú Thọ là một trong những tỉnh có quy mô lớn sau sáp nhập.</p>
+
+      <h3>Vị trí văn hóa và lịch sử</h3>
+      <p>Phú Thọ được mệnh danh là "đất tổ" của dân tộc Việt Nam với đền Hùng - nơi thờ các vua Hùng, tổ tiên của dân tộc Việt. Tỉnh có vị trí giao thông quan trọng, là cầu nối giữa Hà Nội và các tỉnh Tây Bắc. Sau sáp nhập với Hòa Bình và Vĩnh Phúc, tỉnh có thêm nhiều tiềm năng phát triển.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Phú Thọ có vị trí địa lý thuận lợi, gần Hà Nội, với hạ tầng giao thông phát triển. Tỉnh có tiềm năng lớn về du lịch tâm linh với đền Hùng, công nghiệp chế biến và dịch vụ. Việc sáp nhập tạo ra một tỉnh có quy mô kinh tế lớn với nhiều lợi thế c경쟁 tranh.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 449,336,598 triệu đồng (Xếp hạng 9/34)</li>
+        <li>Thu ngân sách: 61,799,876 triệu đồng (Xếp hạng 9/34)</li>
+        <li>Thu nhập bình quân: 85.10 triệu đồng/năm (Xếp hạng 11/34)</li>
+        <li>Dân số: 4,022,638 người (Xếp hạng 6/34)</li>
+        <li>Diện tích: 9,361.38 km² (Xếp hạng 9/34)</li>
+        <li>Thủ phủ: Thành phố Việt Trì</li>
+        <li>Trước sáp nhập: Phú Thọ + Hòa Bình + Vĩnh Phúc</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Ph%C3%BA_Th%E1%BB%8D" target="_blank">Wikipedia - Phú Thọ</a></li>
+        <li><a href="http://phuthe.gov.vn/" target="_blank">Cổng thông tin tỉnh Phú Thọ</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 13,
@@ -203,10 +427,41 @@ export const citiesData: City[] = [
     region: 'Đồng bằng Bắc Bộ',
     coordinates: { x: 440, y: 200 },
     color: '#6c5ce7',
-    population: '2,130,000',
-    area: '1,523 km²',
+    population: '4,664,124',
+    area: '3,194.72 km²',
     description:
-      'Hải Phòng là thành phố cảng lớn nhất miền Bắc, cửa ngõ ra biển quan trọng của Việt Nam. Thành phố có cảng Hải Phòng - một trong những cảng container lớn nhất Đông Nam Á. Sau sáp nhập với Hải Dương, Hải Phòng trở thành trung tâm kinh tế biển quan trọng.'
+      'Hải Phòng là thành phố cảng lớn nhất miền Bắc sau sáp nhập với Hải Dương, cửa ngõ ra biển quan trọng của Việt Nam với cảng container lớn nhất Đông Nam Á.',
+    fullPageContent: `
+      <h2>Thành phố Hải Phòng</h2>
+      <p>Hải Phòng là thành phố cảng lớn nhất miền Bắc Việt Nam sau khi sáp nhập với Hải Dương, là cửa ngõ ra biển quan trọng của cả nước với hệ thống cảng hiện đại.</p>
+      
+      <h3>Lịch sử và Sáp nhập</h3>
+      <p>Theo quy hoạch mới, Hải Phòng sáp nhập với Hải Dương tạo thành thành phố với diện tích 3.194,72 km² và dân số 4.664.124 người, trở thành trung tâm kinh tế biển quan trọng.</p>
+      
+      <h3>Địa lý và Dân số</h3>
+      <ul>
+        <li>Diện tích: 3.194,72 km² (xếp hạng 33/34)</li>
+        <li>Dân số: 4.664.124 người (xếp hạng 4/34)</li>
+        <li>Bao gồm: Hải Phòng cũ + Hải Dương cũ</li>
+      </ul>
+      
+      <h3>Kinh tế</h3>
+      <p>Hải Phòng là trung tâm kinh tế biển mạnh với các chỉ số ấn tượng:</p>
+      <ul>
+        <li>GRDP 2024: 658,318,192 triệu đồng (xếp hạng 3/34)</li>
+        <li>Thu ngân sách: 148,383,113 triệu đồng (xếp hạng 3/34)</li>
+        <li>Thu nhập bình quân: 78.75 triệu đồng/năm</li>
+      </ul>
+      
+      <h3>Cảng biển và Logistics</h3>
+      <p>Cảng Hải Phòng là một trong những cảng container lớn nhất Đông Nam Á, đóng vai trò quan trọng trong thương mại quốc tế và logistics của Việt Nam.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/H%E1%BA%A3i_Ph%C3%B2ng" target="_blank">Wikipedia - Hải Phòng</a></li>
+        <li><a href="https://haiphong.gov.vn/" target="_blank">Cổng thông tin điện tử thành phố Hải Phòng</a></li>
+      </ul>
+    `
   },
   {
     id: 14,
@@ -245,10 +500,43 @@ export const citiesData: City[] = [
     region: 'Bắc Trung Bộ',
     coordinates: { x: 360, y: 260 },
     color: '#fdcb6e',
-    population: '3,640,000',
-    area: '11,132 km²',
+    population: '3,760,650',
+    area: '11,114.7 km²',
     description:
-      'Thanh Hóa là tỉnh có diện tích và dân số lớn nhất miền Bắc, có bờ biển dài với nhiều bãi tắm đẹp. Tỉnh là quê hương Chủ tịch Hồ Chí Minh với làng Sen - Kim Liên. Thanh Hóa có tiềm năng du lịch lớn với biển Sầm Sơn, Hồ Hàm Rồng và nhiều di tích lịch sử.'
+      'Thanh Hóa là tỉnh có diện tích và dân số lớn nhất miền Bắc, có bờ biển dài với nhiều bãi tắm đẹp. Tỉnh là quê hương Chủ tịch Hồ Chí Minh với làng Sen - Kim Liên.',
+    fullPageContent: `
+      <h2>Tỉnh Thanh Hóa - Trung tâm kinh tế miền Trung Bắc</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Thanh Hóa là một trong những trung tâm kinh tế quan trọng của miền Trung Bắc với GRDP đạt <strong>331,899,568 triệu đồng</strong>, xếp hạng <strong>5/34</strong> toàn quốc. Thu ngân sách đạt <strong>60,479,569 triệu đồng</strong>, xếp hạng <strong>5/34</strong>, cho thấy tiềm lực kinh tế mạnh mẽ của tỉnh.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>67.25 triệu đồng/năm</strong>, xếp hạng <strong>22/34</strong> toàn quốc. Với dân số <strong>3,760,650 người</strong> (xếp hạng <strong>3/34</strong>) và diện tích <strong>11,114.7 km²</strong> (xếp hạng <strong>5/34</strong>), Thanh Hóa là tỉnh có quy mô dân số và diện tích lớn nhất miền Bắc.</p>
+
+      <h3>Vị trí địa lý và lịch sử</h3>
+      <p>Thanh Hóa có lịch sử lâu đời với nhiều di tích quan trọng. Đây là quê hương Chủ tịch Hồ Chí Minh với làng Sen - Kim Liên, nơi Người sinh ra và lớn lên. Tỉnh có cả miền núi và ven biển với đường bờ biển dài 102km, tạo điều kiện phát triển đa dạng các ngành kinh tế.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Thanh Hóa sở hữu vị trí địa lý thuận lợi, là cửa ngõ kết nối miền Bắc với miền Trung. Tỉnh có nhiều tiềm năng phát triển du lịch với biển Sầm Sơn, Hồ Hàm Rồng, động Hoa Tiên và các khu công nghiệp hiện đại. Đây là trung tâm công nghiệp, nông nghiệp và du lịch quan trọng của vùng Bắc Trung Bộ.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 331,899,568 triệu đồng (Xếp hạng 5/34)</li>
+        <li>Thu ngân sách: 60,479,569 triệu đồng (Xếp hạng 5/34)</li>
+        <li>Thu nhập bình quân: 67.25 triệu đồng/năm (Xếp hạng 22/34)</li>
+        <li>Dân số: 3,760,650 người (Xếp hạng 3/34)</li>
+        <li>Diện tích: 11,114.7 km² (Xếp hạng 5/34)</li>
+        <li>Thủ phủ: Thành phố Thanh Hóa</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Thanh_H%C3%B3a" target="_blank">Wikipedia - Thanh Hóa</a></li>
+        <li><a href="http://thanhhoa.gov.vn/" target="_blank">Cổng thông tin tỉnh Thanh Hóa</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 17,
@@ -259,10 +547,43 @@ export const citiesData: City[] = [
     region: 'Bắc Trung Bộ',
     coordinates: { x: 360, y: 300 },
     color: '#e84393',
-    population: '3,100,000',
-    area: '16,490 km²',
+    population: '3,470,988',
+    area: '16,493.7 km²',
     description:
-      'Nghệ An là tỉnh có diện tích lớn nhất cả nước, có cả miền núi và ven biển. Tỉnh là quê hương của nhiều danh nhân lịch sử và có truyền thống cách mạng lâu đời. Nghệ An nổi tiếng với các sản phẩm nông nghiệp đặc trưng và có tiềm năng du lịch sinh thái lớn.'
+      'Nghệ An là tỉnh có diện tích lớn nhất cả nước, có cả miền núi và ven biển. Tỉnh là quê hương của nhiều danh nhân lịch sử và có truyền thống cách mạng lâu đời. Nghệ An nổi tiếng với các sản phẩm nông nghiệp đặc trưng và có tiềm năng du lịch sinh thái lớn.',
+    fullPageContent: `
+      <h2>Tỉnh Nghệ An - Vùng đất anh hùng và kinh tế quan trọng</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Nghệ An là một trong những trung tâm kinh tế lớn của miền Trung với GRDP đạt <strong>261,433,982 triệu đồng</strong>, xếp hạng <strong>6/34</strong> toàn quốc. Thu ngân sách đạt <strong>44,127,386 triệu đồng</strong>, xếp hạng <strong>7/34</strong>, thể hiện tiềm lực kinh tế đáng kể của tỉnh.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>57.38 triệu đồng/năm</strong>, xếp hạng <strong>29/34</strong> toàn quốc. Với dân số <strong>3,470,988 người</strong> (xếp hạng <strong>4/34</strong>) và diện tích <strong>16,493.7 km²</strong> (xếp hạng <strong>1/34</strong>), Nghệ An là tỉnh có diện tích lớn nhất và dân số đông thứ 4 cả nước.</p>
+
+      <h3>Vị trí địa lý và lịch sử</h3>
+      <p>Nghệ An có lịch sử lâu đời và vinh quang, là quê hương của nhiều danh nhân, anh hùng dân tộc. Đây là vùng đất có truyền thống cách mạng với nhiều phong trào đấu tranh anh dũng. Tỉnh có địa hình đa dạng từ miền núi cao đến ven biển, tạo điều kiện phát triển nhiều ngành kinh tế.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Với diện tích lớn nhất cả nước, Nghệ An có nhiều tiềm năng phát triển về nông nghiệp, công nghiệp và du lịch. Tỉnh có nhiều danh thắng như quê Bác, Khu di tích Kim Liên, biển Cửa Lò và các khu công nghiệp phát triển. Đây là trung tâm quan trọng của vùng Bắc Trung Bộ.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 261,433,982 triệu đồng (Xếp hạng 6/34)</li>
+        <li>Thu ngân sách: 44,127,386 triệu đồng (Xếp hạng 7/34)</li>
+        <li>Thu nhập bình quân: 57.38 triệu đồng/năm (Xếp hạng 29/34)</li>
+        <li>Dân số: 3,470,988 người (Xếp hạng 4/34)</li>
+        <li>Diện tích: 16,493.7 km² (Xếp hạng 1/34)</li>
+        <li>Thủ phủ: Thành phố Vinh</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/Ngh%E1%BB%87_An" target="_blank">Wikipedia - Nghệ An</a></li>
+        <li><a href="http://nghean.gov.vn/" target="_blank">Cổng thông tin tỉnh Nghệ An</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 18,
@@ -444,14 +765,45 @@ export const citiesData: City[] = [
     code: '75',
     name: 'Đồng Nai',
     slug: 'dong-nai',
-    oldNames: ['Đồng Nai', 'Bình Phước', 'Bình Dương'],
+    oldNames: ['Đồng Nai', 'Bình Phước'],
     region: 'Đông Nam Bộ',
     coordinates: { x: 500, y: 560 },
     color: '#00b894',
-    population: '3,240,000',
-    area: '5,907 km²',
+    population: '4,491,408',
+    area: '12,737.18 km²',
     description:
-      'Đồng Nai là tỉnh công nghiệp phát triển, giáp ranh với TP.HCM. Tỉnh có nhiều khu công nghiệp lớn và là trung tâm sản xuất quan trọng. Sau sáp nhập với Bình Phước và Bình Dương, Đồng Nai trở thành tỉnh có tiềm lực kinh tế mạnh nhất miền Đông Nam Bộ.'
+      'Đồng Nai là tỉnh công nghiệp phát triển sau sáp nhập với Bình Phước, giáp ranh với TP.HCM. Tỉnh có nhiều khu công nghiệp lớn và là trung tâm sản xuất quan trọng.',
+    fullPageContent: `
+      <h2>Đồng Nai</h2>
+      <p>Đồng Nai là tỉnh công nghiệp phát triển sau khi sáp nhập với Bình Phước, giáp ranh với TP.HCM. Tỉnh có nhiều khu công nghiệp lớn và là trung tâm sản xuất quan trọng của vùng kinh tế trọng điểm phía Nam.</p>
+      
+      <h3>Lịch sử và Sáp nhập</h3>
+      <p>Theo quy hoạch mới, Đồng Nai sáp nhập với Bình Phước tạo thành tỉnh với diện tích 12.737,18 km² và dân số 4.491.408 người, trở thành tỉnh có tiềm lực kinh tế mạnh nhất miền Đông Nam Bộ.</p>
+      
+      <h3>Địa lý và Dân số</h3>
+      <ul>
+        <li>Diện tích: 12.737,18 km² (xếp hạng 9/34)</li>
+        <li>Dân số: 4.491.408 người (xếp hạng 5/34)</li>
+        <li>Bao gồm: Đồng Nai cũ + Bình Phước cũ</li>
+      </ul>
+      
+      <h3>Kinh tế</h3>
+      <p>Đồng Nai có nền kinh tế công nghiệp mạnh với các chỉ số dẫn đầu:</p>
+      <ul>
+        <li>GRDP 2024: 609,176,602 triệu đồng (xếp hạng 4/34)</li>
+        <li>Thu ngân sách: 73,458,454 triệu đồng (xếp hạng 4/34)</li>
+        <li>Thu nhập bình quân: 78.04 triệu đồng/năm</li>
+      </ul>
+      
+      <h3>Công nghiệp và Sản xuất</h3>
+      <p>Tỉnh có nhiều khu công nghiệp lớn như Amata, Long Thành, Nhơn Trạch, là trung tâm sản xuất ô tô, điện tử, dệt may và chế biến nông sản của cả nước.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/%C4%90%E1%BB%93ng_Nai" target="_blank">Wikipedia - Đồng Nai</a></li>
+        <li><a href="http://dongnai.gov.vn/" target="_blank">Cổng thông tin tỉnh Đồng Nai</a></li>
+      </ul>
+    `
   },
   {
     id: 28,
@@ -473,17 +825,25 @@ export const citiesData: City[] = [
       <h3>Lịch sử và Sáp nhập</h3>
       <p>TP.HCM được thành lập từ việc sáp nhập Sài Gòn - Gia Định. Theo quy hoạch mới, thành phố sáp nhập với Bà Rịa - Vũng Tàu và Bình Dương tạo thành đô thị đặc biệt với diện tích 6.772,59 km² và dân số 14.002.598 người.</p>
       
-      <h3>Địa lý</h3>
-      <p>Thành phố có diện tích 6.772,59 km² với dân số 14.002.598 người. Đây là đô thị có mật độ dân số cao nhất Việt Nam và là trung tâm kinh tế lớn nhất.</p>
+      <h3>Địa lý và Dân số</h3>
       <ul>
-        <li>Diện tích: 6.772,59 km²</li>
-        <li>Dân số: 14.002.598 người</li>
+        <li>Diện tích: 6.772,59 km² (xếp hạng 22/34)</li>
+        <li>Dân số: 14.002.598 người (xếp hạng 1/34)</li>
         <li>Trung tâm: Quận 1</li>
         <li>Bao gồm: TP.HCM cũ + Bà Rịa - Vũng Tàu + Bình Dương</li>
       </ul>
       
       <h3>Kinh tế</h3>
-      <p>TP.HCM đóng góp khoảng 23% GDP cả nước, là trung tâm tài chính, thương mại, công nghiệp và dịch vụ lớn nhất Việt Nam. Thành phố có cảng Sài Gòn và nhiều khu công nghiệp phát triển.</p>
+      <p>TP.HCM là động lực kinh tế lớn nhất Việt Nam với các chỉ số dẫn đầu cả nước:</p>
+      <ul>
+        <li>GRDP 2024: 2,715,782,233 triệu đồng (xếp hạng 1/34)</li>
+        <li>Thu ngân sách: 681,935,856 triệu đồng (xếp hạng 1/34)</li>
+        <li>Thu nhập bình quân: 85.53 triệu đồng/năm</li>
+        <li>Đóng góp khoảng 23% GDP cả nước</li>
+      </ul>
+      
+      <h3>Thương mại và Công nghiệp</h3>
+      <p>Thành phố là trung tâm tài chính, thương mại, công nghiệp và dịch vụ lớn nhất Việt Nam. Có cảng Sài Gòn và nhiều khu công nghiệp phát triển.</p>
       
       <h3>Tham khảo</h3>
       <ul>
@@ -543,10 +903,35 @@ export const citiesData: City[] = [
     region: 'Đồng bằng sông Cửu Long',
     coordinates: { x: 420, y: 660 },
     color: '#00cec9',
-    population: '2,430,000',
-    area: '3,406 km²',
+    population: '4,952,238',
+    area: '9,888.91 km²',
     description:
-      'An Giang là tỉnh biên giới với Campuchia, có núi Sam và nhiều di tích Phật giáo cổ. Tỉnh nổi tiếng với lễ hội Ok Om Bok của đồng bào Khmer. Sau sáp nhập với Kiên Giang, An Giang có thêm vùng ven biển với đảo Phú Quốc nổi tiếng.'
+      'An Giang là tỉnh biên giới với Campuchia sau sáp nhập với Kiên Giang, có núi Sam và nhiều di tích Phật giáo cổ. Tỉnh có thêm vùng ven biển với đảo Phú Quốc nổi tiếng.',
+    fullPageContent: `
+      <h2>An Giang</h2>
+      <p>An Giang là tỉnh biên giới với Campuchia sau khi sáp nhập với Kiên Giang. Tỉnh có núi Sam và nhiều di tích Phật giáo cổ, cùng với vùng ven biển và đảo Phú Quốc nổi tiếng.</p>
+      
+      <h3>Lịch sử và Sáp nhập</h3>
+      <p>Theo quy hoạch mới, An Giang sáp nhập với Kiên Giang tạo thành tỉnh với diện tích 9.888,91 km² và dân số 4.952.238 người. Việc sáp nhập mang lại vùng ven biển với tiềm năng du lịch lớn.</p>
+      
+      <h3>Địa lý</h3>
+      <p>Tỉnh có diện tích 9.888,91 km² với dân số 4.952.238 người. An Giang có cả vùng đồng bằng sông Cửu Long và vùng ven biển với nhiều đảo.</p>
+      <ul>
+        <li>Diện tích: 9.888,91 km²</li>
+        <li>Dân số: 4.952.238 người</li>
+        <li>Thủ phủ: Thành phố Long Xuyên</li>
+        <li>Bao gồm: An Giang cũ + Kiên Giang cũ</li>
+      </ul>
+      
+      <h3>Văn hóa và Du lịch</h3>
+      <p>Tỉnh nổi tiếng với lễ hội Ok Om Bok của đồng bào Khmer, núi Sam với nhiều di tích Phật giáo. Đảo Phú Quốc là điểm đến du lịch hàng đầu với biển đẹp và rừng nguyên sinh.</p>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/An_Giang" target="_blank">Wikipedia - An Giang</a></li>
+        <li><a href="http://angiang.gov.vn/" target="_blank">Cổng thông tin tỉnh An Giang</a></li>
+      </ul>
+    `
   },
   {
     id: 33,
