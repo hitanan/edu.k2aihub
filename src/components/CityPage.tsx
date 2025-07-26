@@ -340,7 +340,7 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
               Địa Lý Việt Nam - Ứng Dụng Giáo Dục cho 34 Đơn Vị Hành Chính Cấp Tỉnh
             </p>
             <p className="text-sm text-gray-500">
-              Được xây dựng với Next.js, TypeScript và Tailwind CSS
+              © 2025 K2 AI Hub
             </p>
           </div>
         </div>

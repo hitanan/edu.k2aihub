@@ -96,7 +96,7 @@ export default function CityModule() {
                 href="/feedback"
                 className="px-3 py-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium"
               >
-                💬 Góp Ý
+                💬 Góp Ý & Phản Hồi
               </Link>
             </nav>
           </div>
@@ -184,7 +184,7 @@ export default function CityModule() {
               Địa Lý Việt Nam - Ứng Dụng Giáo Dục cho 34 Đơn Vị Hành Chính Cấp Tỉnh
             </p>
             <p className="text-sm text-gray-500">
-              Được xây dựng với Next.js, TypeScript và Tailwind CSS
+              © 2025 K2 AI Hub
             </p>
           </div>
         </div>

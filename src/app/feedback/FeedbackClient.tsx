@@ -17,7 +17,7 @@ export default function FeedbackClient() {
                   💬
                 </div>
                 <h1 className="text-xl font-bold text-gray-900">
-                  Góp Ý & Phản Hồi
+                  Liên Hệ Góp Ý
                 </h1>
               </Link>
               <nav className="hidden md:flex items-center gap-1 ml-6">
@@ -26,7 +26,7 @@ export default function FeedbackClient() {
                 </Link>
                 <span className="text-gray-300 mx-2">/</span>
                 <span className="text-gray-900 text-sm font-medium">
-                  Góp Ý
+                  Liên Hệ
                 </span>
               </nav>
             </div>

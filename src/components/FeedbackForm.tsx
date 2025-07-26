@@ -82,7 +82,7 @@ const FeedbackForm: React.FC = () => {
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Góp Ý</h2>
           <p className="text-gray-600">
-            Chúng tôi rất mong nhận được ý kiến và đề xuất của bạn về ứng dụng Địa Lý Việt Nam. 
+            Chúng tôi rất mong nhận được ý kiến và đề xuất của bạn về Thông Tin Thông Minh K2 AI Hub. 
             Góp ý của bạn giúp chúng tôi cải thiện trải nghiệm cho mọi người.
           </p>
         </div>
@@ -165,7 +165,7 @@ const FeedbackForm: React.FC = () => {
               className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-vertical text-black ${
                 errors.message ? 'border-red-500' : 'border-gray-300'
               }`}
-              placeholder="Vui lòng chia sẻ góp ý chi tiết, đề xuất hoặc câu hỏi của bạn về ứng dụng Địa Lý Việt Nam..."
+              placeholder="Vui lòng chia sẻ góp ý chi tiết, liên hệ, đề xuất hoặc câu hỏi của bạn ..."
             />
             {errors.message && (
               <p className="mt-1 text-sm text-red-600">{errors.message}</p>

@@ -96,7 +96,7 @@ export default function AIModule() {
                 href="/feedback"
                 className="px-3 py-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium"
               >
-                💬 Góp Ý
+                💬 Góp Ý & Phản Hồi
               </Link>
             </nav>
           </div>

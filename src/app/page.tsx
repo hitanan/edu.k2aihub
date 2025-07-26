@@ -174,14 +174,14 @@ export default function Home() {
                 href="/feedback"
                 className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
               >
-                💬 Góp Ý & Phản Hồi
+                💬 Góp Ý & Liên Hệ
               </Link>
             </div>
             
             <div className="flex justify-center space-x-6 text-sm text-gray-400">
-              <span>© 2025 Education Platform</span>
+              <span>© 2025 K2 AI Hub</span>
               <span>•</span>
-              <span>Được xây dựng với ❤️ và Next.js</span>
+              <span>Được xây dựng với ❤️ và K2</span>
             </div>
           </div>
         </div>
