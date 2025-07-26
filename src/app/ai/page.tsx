@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
+import { HomeIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "AI Của Tôi - Hướng Dẫn Sử Dụng AI Thực Tế",
@@ -75,7 +76,7 @@ export default function AIModule() {
             <div className="flex items-center gap-3">
               <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center text-white text-sm">
-                  🤖
+                  <HomeIcon />
                 </div>
                 <h1 className="text-xl font-bold text-gray-900">
                   AI Của Tôi

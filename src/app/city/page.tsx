@@ -8,6 +8,7 @@ import Search from '@/components/Search';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { City } from '@/types';
 import citiesData from '@/data/cities';
+import { HomeIcon } from "lucide-react";
 
 export default function CityModule() {
   const [cities, setCities] = useState<City[]>([]);
@@ -76,7 +77,7 @@ export default function CityModule() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
               <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-green-600 rounded-lg"></div>
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-green-600 rounded-lg"><HomeIcon /></div>
                 <h1 className="text-xl font-bold text-gray-900">
                   Địa Lý Việt Nam
                 </h1>

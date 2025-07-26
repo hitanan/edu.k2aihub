@@ -53,7 +53,8 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
   const handleBackToMap = () => {
     // Save the current city to localStorage before navigating back
     localStorage.setItem('selectedCityId', city.id.toString());
-    router.back();
+    // Navigate back to the map view
+    router.push('/city');
   };
 
   const handleShare = async () => {
