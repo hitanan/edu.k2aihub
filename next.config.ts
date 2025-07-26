@@ -1,24 +1,33 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Basic configuration without problematic exports
+  // GitHub Pages deployment
+  output: 'export',
+  trailingSlash: true,
+
+  // Basic configuration for static export
   images: {
     unoptimized: true
   },
+
   // Performance optimizations
   experimental: {
-    optimizePackageImports: ['@/components', '@/utils'],
+    optimizePackageImports: ['@/components', '@/utils']
   },
+
   // Build optimizations
   swcMinify: true,
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    removeConsole: process.env.NODE_ENV === 'production'
   },
+
   // Static generation optimizations
   generateStaticParams: true,
-  // Compression and caching
+
+  // Compression and performance
   compress: true,
-  poweredByHeader: false,
+  poweredByHeader: false
+
   // Bundle analyzer (optional - can be enabled when needed)
   // bundleAnalyzer: {
   //   enabled: process.env.ANALYZE === 'true',
