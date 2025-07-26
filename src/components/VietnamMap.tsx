@@ -71,12 +71,10 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
                 strokeWidth={getCityStrokeWidth(city)}
                 opacity={getCityOpacity(city)}
                 className="cursor-pointer transition-all duration-150 ease-out"
-                onMouseEnter={() => onCityHover(city)}
-                onMouseLeave={() => onCityHover(null)}
-                onClick={() => onCityClick(city)}
                 style={{
                   filter: isSelected ? 'brightness(1.2) drop-shadow(0 0 8px rgba(0,0,0,0.3))' : 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))',
                   transformOrigin: `${coords.x}px ${coords.y}px`,
+                  pointerEvents: 'none'
                 }}
               >
                 <title>{city.name}</title>
@@ -89,12 +87,11 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
                 r={15}
                 fill="transparent"
                 className="cursor-pointer"
+                style={{ pointerEvents: 'all' }}
                 onMouseEnter={() => onCityHover(city)}
                 onMouseLeave={() => onCityHover(null)}
                 onClick={() => onCityClick(city)}
-              >
-                <title>{city.name}</title>
-              </circle>
+              />
 
               {/* City labels for major cities */}
               {(city.name.includes('Thành phố') || isSelected) && (

@@ -629,14 +629,50 @@ export const citiesData: City[] = [
     code: '33',
     name: 'Hưng Yên',
     slug: 'hung-yen',
-    oldNames: ['Hưng Yên', 'Hà Nam'],
+    oldNames: ['Hưng Yên', 'Thái Bình'],
     region: 'Đồng bằng Bắc Bộ',
     coordinates: { x: 400, y: 200 },
     color: '#fd79a8',
-    population: '1,180,000',
-    area: '926 km²',
+    population: '3,567,943',
+    area: '2,514.81 km²',
     description:
-      'Hưng Yên là tỉnh nằm trong vùng kinh tế trọng điểm Bắc Bộ, có nhiều làng nghề truyền thống. Tỉnh nổi tiếng với nhãn lồng Hưng Yên và các sản phẩm nông nghiệp chất lượng cao. Sau sáp nhập với Hà Nam, tỉnh có diện tích và dân số lớn hơn đáng kể.'
+      'Hưng Yên là tỉnh nằm trong vùng kinh tế trọng điểm Bắc Bộ, có nhiều làng nghề truyền thống. Tỉnh nổi tiếng với nhãn lồng Hưng Yên và các sản phẩm nông nghiệp chất lượng cao. Sau sáp nhập với Thái Bình, tỉnh có diện tích và dân số lớn hơn đáng kể.',
+    fullPageContent: `
+      <h2>Tỉnh Hưng Yên - Trung tâm nông nghiệp và làng nghề</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Hưng Yên là một trong những trung tâm kinh tế quan trọng với GRDP đạt <strong>292,602,496 triệu đồng</strong>, xếp hạng <strong>12/34</strong> toàn quốc. Thu ngân sách đạt <strong>53,112,677 triệu đồng</strong>, xếp hạng <strong>10/34</strong>. Sau sáp nhập với Thái Bình, tỉnh có hiệu quả kinh tế cao với diện tích nhỏ nhất cả nước.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>69.93 triệu đồng/năm</strong>, xếp hạng <strong>6/34</strong> toàn quốc - trong top các tỉnh có thu nhập cao nhất. Với dân số <strong>3,567,943 người</strong> (xếp hạng <strong>16/34</strong>) và diện tích nhỏ nhất <strong>2,514.81 km²</strong> (xếp hạng <strong>34/34</strong>), Hưng Yên có mật độ dân số cao nhất cả nước.</p>
+
+      <h3>Vị trí và sáp nhập</h3>
+      <p>Hưng Yên nằm trong vùng kinh tế trọng điểm Bắc Bộ, có nhiều làng nghề truyền thống. Sau sáp nhập với Thái Bình, tỉnh mở rộng ra biển và có vị trí thuận lợi gần Hà Nội và Hải Phòng, tạo điều kiện phát triển công nghiệp và dịch vụ.</p>
+
+      <h3>Đặc sản và làng nghề</h3>
+      <p>Tỉnh nổi tiếng với nhãn lồng Hưng Yên và các sản phẩm nông nghiệp chất lượng cao. Nhiều làng nghề truyền thống như đúc đồng, chế biến nông sản, dệt may đã phát triển thành các ngành công nghiệp hiện đại.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Với vị trí địa lý thuận lợi, hạ tầng giao thông phát triển và nguồn nhân lực chất lượng cao, Hưng Yên có tiềm năng lớn phát triển thành trung tâm công nghiệp chế biến, logistics và dịch vụ của vùng kinh tế trọng điểm Bắc Bộ.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 292,602,496 triệu đồng (Xếp hạng 12/34)</li>
+        <li>Thu ngân sách: 53,112,677 triệu đồng (Xếp hạng 10/34)</li>
+        <li>Thu nhập bình quân: 69.93 triệu đồng/năm (Xếp hạng 6/34)</li>
+        <li>Dân số: 3,567,943 người (Xếp hạng 16/34)</li>
+        <li>Diện tích: 2,514.81 km² (Xếp hạng 34/34)</li>
+        <li>Thủ phủ: Thành phố Hưng Yên</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/H%C6%B0ng_Y%C3%AAn" target="_blank">Wikipedia - Hưng Yên</a></li>
+        <li><a href="http://hungyen.gov.vn/" target="_blank">Cổng thông tin tỉnh Hưng Yên</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 15,
@@ -1325,28 +1361,100 @@ export const citiesData: City[] = [
     code: '82',
     name: 'Đồng Tháp',
     slug: 'dong-thap',
-    oldNames: ['Đồng Tháp', 'Long An'],
+    oldNames: ['Đồng Tháp', 'Tiền Giang'],
     region: 'Đồng bằng sông Cửu Long',
     coordinates: { x: 440, y: 620 },
     color: '#74b9ff',
-    population: '1,830,000',
-    area: '3,238 km²',
+    population: '4,370,046',
+    area: '5,938.64 km²',
     description:
-      'Đồng Tháp là tỉnh đồng bằng sông Cửu Long, nổi tiếng với vườn quốc gia Tràm Chim. Tỉnh có nền nông nghiệp phát triển với sản lượng lúa cao. Sau sáp nhập với Long An, Đồng Tháp có vị trí giao thông quan trọng gần TP.HCM và biên giới Campuchia.'
+      'Đồng Tháp là tỉnh đồng bằng sông Cửu Long, nổi tiếng với vườn quốc gia Tràm Chim. Tỉnh có nền nông nghiệp phát triển với sản lượng lúa cao. Sau sáp nhập với Tiền Giang, Đồng Tháp có vị trí giao thông quan trọng gần TP.HCM.',
+    fullPageContent: `
+      <h2>Tỉnh Đồng Tháp - Vựa lúa đồng bằng sông Cửu Long</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Đồng Tháp là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>249,534,461 triệu đồng</strong>, xếp hạng <strong>18/34</strong> toàn quốc. Thu ngân sách đạt <strong>21,630,027 triệu đồng</strong>, xếp hạng <strong>21/34</strong>. Sau sáp nhập với Tiền Giang, tỉnh có quy mô kinh tế lớn hơn với nền nông nghiệp phát triển.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>61.58 triệu đồng/năm</strong>, xếp hạng <strong>17/34</strong> toàn quốc. Với dân số <strong>4,370,046 người</strong> (xếp hạng <strong>7/34</strong>) và diện tích <strong>5,938.64 km²</strong> (xếp hạng <strong>28/34</strong>), Đồng Tháp có mật độ dân số cao.</p>
+
+      <h3>Vị trí và sáp nhập</h3>
+      <p>Đồng Tháp là tỉnh đồng bằng sông Cửu Long, nổi tiếng với vườn quốc gia Tràm Chim - khu dự trữ sinh quyển thế giới. Sau sáp nhập với Tiền Giang, tỉnh có vị trí giao thông quan trọng gần TP.HCM với hệ thống sông ngòi chằng chịt.</p>
+
+      <h3>Nông nghiệp và sinh thái</h3>
+      <p>Tỉnh có nền nông nghiệp phát triển với sản lượng lúa cao, là một trong những vựa lúa lớn nhất đồng bằng sông Cửu Long. Vườn quốc gia Tràm Chim bảo tồn hệ sinh thái đất ngập nước và các loài chim quý hiếm.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Với lợi thế về nông nghiệp, du lịch sinh thái và vị trí gần TP.HCM, Đồng Tháp có tiềm năng phát triển công nghiệp chế biến nông sản, du lịch sinh thái và logistics. Tỉnh đang chuyển dịch cơ cấu kinh tế theo hướng hiện đại hóa nông nghiệp.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 249,534,461 triệu đồng (Xếp hạng 18/34)</li>
+        <li>Thu ngân sách: 21,630,027 triệu đồng (Xếp hạng 21/34)</li>
+        <li>Thu nhập bình quân: 61.58 triệu đồng/năm (Xếp hạng 17/34)</li>
+        <li>Dân số: 4,370,046 người (Xếp hạng 7/34)</li>
+        <li>Diện tích: 5,938.64 km² (Xếp hạng 28/34)</li>
+        <li>Thủ phủ: Thành phố Cao Lãnh</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/%C4%90%E1%BB%93ng_Th%C3%A1p" target="_blank">Wikipedia - Đồng Tháp</a></li>
+        <li><a href="http://dongthap.gov.vn/" target="_blank">Cổng thông tin tỉnh Đồng Tháp</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 31,
     code: '86',
     name: 'Vĩnh Long',
     slug: 'vinh-long',
-    oldNames: ['Vĩnh Long', 'Tiền Giang', 'Bến Tre'],
+    oldNames: ['Vĩnh Long', 'Bến Tre', 'Trà Vinh'],
     region: 'Đồng bằng sông Cửu Long',
     coordinates: { x: 460, y: 640 },
     color: '#fd79a8',
-    population: '2,120,000',
-    area: '2,367 km²',
+    population: '4,257,581',
+    area: '6,296.20 km²',
     description:
-      'Vĩnh Long là tỉnh nằm giữa lòng đồng bằng sông Cửu Long, có hệ thống sông ngòi chằng chịt. Tỉnh nổi tiếng với du lịch sinh thái sông nước và các sản phẩm nông nghiệp đặc trưng. Sau sáp nhập với Tiền Giang và Bến Tre, Vĩnh Long trở thành trung tâm nông nghiệp quan trọng của ĐBSCL.'
+      'Vĩnh Long là tỉnh nằm giữa lòng đồng bằng sông Cửu Long, có hệ thống sông ngòi chằng chịt. Tỉnh nổi tiếng với du lịch sinh thái sông nước và các sản phẩm nông nghiệp đặc trưng. Sau sáp nhập với Bến Tre và Trà Vinh, Vĩnh Long trở thành trung tâm nông nghiệp quan trọng của ĐBSCL.',
+    fullPageContent: `
+      <h2>Tỉnh Vĩnh Long - Trung tâm du lịch sinh thái sông nước</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Vĩnh Long là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>254,479,941 triệu đồng</strong>, xếp hạng <strong>17/34</strong> toàn quốc. Thu ngân sách đạt <strong>21,789,629 triệu đồng</strong>, xếp hạng <strong>20/34</strong>. Sau sáp nhập với Bến Tre và Trà Vinh, tỉnh có quy mô kinh tế lớn hơn với thế mạnh về nông nghiệp và du lịch sinh thái.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>50.75 triệu đồng/năm</strong>, xếp hạng <strong>22/34</strong> toàn quốc. Với dân số <strong>4,257,581 người</strong> (xếp hạng <strong>9/34</strong>) và diện tích <strong>6,296.20 km²</strong> (xếp hạng <strong>25/34</strong>), Vĩnh Long có mật độ dân số khá cao.</p>
+
+      <h3>Vị trí và sáp nhập</h3>
+      <p>Vĩnh Long nằm giữa lòng đồng bằng sông Cửu Long, có hệ thống sông ngòi chằng chịt. Sau sáp nhập với Bến Tre và Trà Vinh, tỉnh mở rộng ra biển và có thêm các sản phẩm đặc trưng như dừa, muối và các sản phẩm thủy sản.</p>
+
+      <h3>Du lịch sinh thái và nông nghiệp</h3>
+      <p>Tỉnh nổi tiếng với du lịch sinh thái sông nước, các vườn cây trái, làng nghề truyền thống và các sản phẩm nông nghiệp đặc trưng. Du lịch miệt vườn, chợ nổi và văn hóa đồng bằng sông Cửu Long là những điểm mạnh của tỉnh.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Với lợi thế về du lịch sinh thái, nông nghiệp và thủy sản, Vĩnh Long có tiềm năng phát triển du lịch văn hóa, công nghiệp chế biến nông sản và thủy sản. Tỉnh đang tập trung phát triển du lịch bền vững và nông nghiệp công nghệ cao.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 254,479,941 triệu đồng (Xếp hạng 17/34)</li>
+        <li>Thu ngân sách: 21,789,629 triệu đồng (Xếp hạng 20/34)</li>
+        <li>Thu nhập bình quân: 50.75 triệu đồng/năm (Xếp hạng 22/34)</li>
+        <li>Dân số: 4,257,581 người (Xếp hạng 9/34)</li>
+        <li>Diện tích: 6,296.20 km² (Xếp hạng 25/34)</li>
+        <li>Thủ phủ: Thành phố Vĩnh Long</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/V%C4%A9nh_Long" target="_blank">Wikipedia - Vĩnh Long</a></li>
+        <li><a href="http://vinhlong.gov.vn/" target="_blank">Cổng thông tin tỉnh Vĩnh Long</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   },
   {
     id: 32,
@@ -1362,29 +1470,42 @@ export const citiesData: City[] = [
     description:
       'An Giang là tỉnh biên giới với Campuchia sau sáp nhập với Kiên Giang, có núi Sam và nhiều di tích Phật giáo cổ. Tỉnh có thêm vùng ven biển với đảo Phú Quốc nổi tiếng.',
     fullPageContent: `
-      <h2>An Giang</h2>
-      <p>An Giang là tỉnh biên giới với Campuchia sau khi sáp nhập với Kiên Giang. Tỉnh có núi Sam và nhiều di tích Phật giáo cổ, cùng với vùng ven biển và đảo Phú Quốc nổi tiếng.</p>
+      <h2>Tỉnh An Giang - Trung tâm biên giới và du lịch biển đảo</h2>
       
-      <h3>Lịch sử và Sáp nhập</h3>
-      <p>Theo quy hoạch mới, An Giang sáp nhập với Kiên Giang tạo thành tỉnh với diện tích 9.888,91 km² và dân số 4.952.238 người. Việc sáp nhập mang lại vùng ven biển với tiềm năng du lịch lớn.</p>
-      
-      <h3>Địa lý</h3>
-      <p>Tỉnh có diện tích 9.888,91 km² với dân số 4.952.238 người. An Giang có cả vùng đồng bằng sông Cửu Long và vùng ven biển với nhiều đảo.</p>
+      <h3>Tổng quan kinh tế</h3>
+      <p>An Giang là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>271,345,883 triệu đồng</strong>, xếp hạng <strong>16/34</strong> toàn quốc. Thu ngân sách đạt <strong>26,279,135 triệu đồng</strong>, xếp hạng <strong>15/34</strong>. Sau sáp nhập với Kiên Giang, tỉnh có quy mô kinh tế lớn với thế mạnh về du lịch biển và nông nghiệp.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>55.22 triệu đồng/năm</strong>, xếp hạng <strong>24/34</strong> toàn quốc. Với dân số <strong>4,952,238 người</strong> (xếp hạng <strong>3/34</strong>) và diện tích <strong>9,888.91 km²</strong> (xếp hạng <strong>13/34</strong>), An Giang có dân số đông thứ 3 cả nước.</p>
+
+      <h3>Vị trí địa lý và sáp nhập</h3>
+      <p>An Giang là tỉnh biên giới với Campuchia sau khi sáp nhập với Kiên Giang. Tỉnh có núi Sam và nhiều di tích Phật giáo cổ, cùng với vùng ven biển và đảo Phú Quốc nổi tiếng. Việc sáp nhập mang lại vùng ven biển với tiềm năng du lịch lớn và đa dạng địa hình từ đồng bằng đến biển đảo.</p>
+
+      <h3>Du lịch và văn hóa đa dân tộc</h3>
+      <p>Tỉnh nổi tiếng với lễ hội Ok Om Bok của đồng bào Khmer, núi Sam với nhiều di tích Phật giáo cổ. Đảo Phú Quốc là điểm đến du lịch hàng đầu Việt Nam với biển đẹp, rừng nguyên sinh và các resort cao cấp, được mệnh danh là "đảo ngọc".</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Với lợi thế về du lịch biển đảo, vị trí biên giới quan trọng và nền nông nghiệp phát triển, An Giang có tiềm năng lớn phát triển du lịch nghỉ dưỡng cao cấp, thương mại biên giới và chế biến nông thủy sản. Đảo Phú Quốc đang trở thành trung tâm du lịch quốc tế hàng đầu.</p>
+
+      <h3>Thông tin cơ bản</h3>
       <ul>
-        <li>Diện tích: 9.888,91 km²</li>
-        <li>Dân số: 4.952.238 người</li>
+        <li>GRDP: 271,345,883 triệu đồng (Xếp hạng 16/34)</li>
+        <li>Thu ngân sách: 26,279,135 triệu đồng (Xếp hạng 15/34)</li>
+        <li>Thu nhập bình quân: 55.22 triệu đồng/năm (Xếp hạng 24/34)</li>
+        <li>Dân số: 4,952,238 người (Xếp hạng 3/34)</li>
+        <li>Diện tích: 9,888.91 km² (Xếp hạng 13/34)</li>
         <li>Thủ phủ: Thành phố Long Xuyên</li>
-        <li>Bao gồm: An Giang cũ + Kiên Giang cũ</li>
+        <li>Trước sáp nhập: An Giang + Kiên Giang</li>
       </ul>
-      
-      <h3>Văn hóa và Du lịch</h3>
-      <p>Tỉnh nổi tiếng với lễ hội Ok Om Bok của đồng bào Khmer, núi Sam với nhiều di tích Phật giáo. Đảo Phú Quốc là điểm đến du lịch hàng đầu với biển đẹp và rừng nguyên sinh.</p>
       
       <h3>Tham khảo</h3>
       <ul>
         <li><a href="https://vi.wikipedia.org/wiki/An_Giang" target="_blank">Wikipedia - An Giang</a></li>
         <li><a href="http://angiang.gov.vn/" target="_blank">Cổng thông tin tỉnh An Giang</a></li>
+        <li><a href="https://vi.wikipedia.org/wiki/Ph%C3%BA_Qu%E1%BB%91c" target="_blank">Wikipedia - Phú Quốc</a></li>
       </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
     `
   },
   {
@@ -1444,10 +1565,48 @@ export const citiesData: City[] = [
     region: 'Đồng bằng sông Cửu Long',
     coordinates: { x: 460, y: 720 },
     color: '#e17055',
-    population: '1,640,000',
-    area: '5,294 km²',
+    population: '2,606,672',
+    area: '7,942.39 km²',
     description:
-      'Cà Mau là tỉnh cực Nam của Việt Nam, có vị trí địa lý đặc biệt ở mũi Cà Mau. Tỉnh có rừng U Minh Hạ và nhiều khu bảo tồn thiên nhiên quý hiếm. Sau sáp nhập với Bạc Liêu, Cà Mau có thêm tiềm năng phát triển năng lượng gió và du lịch sinh thái.'
+      'Cà Mau là tỉnh cực Nam của Việt Nam, có vị trí địa lý đặc biệt ở mũi Cà Mau. Tỉnh có rừng U Minh Hạ và nhiều khu bảo tồn thiên nhiên quý hiếm. Sau sáp nhập với Bạc Liêu, Cà Mau có thêm tiềm năng phát triển năng lượng gió và du lịch sinh thái.',
+    fullPageContent: `
+      <h2>Tỉnh Cà Mau - Vùng đất cực Nam và năng lượng tái tạo</h2>
+      
+      <h3>Tổng quan kinh tế</h3>
+      <p>Cà Mau là tỉnh có tiềm năng kinh tế với GRDP đạt <strong>279,735,681 triệu đồng</strong>, xếp hạng <strong>15/34</strong> toàn quốc. Thu ngân sách đạt <strong>10,481,971 triệu đồng</strong>, xếp hạng <strong>29/34</strong>. Sau sáp nhập với Bạc Liêu, tỉnh có quy mô kinh tế lớn với thế mạnh về năng lượng tái tạo và thủy sản.</p>
+
+      <h3>Chỉ tiêu kinh tế và xã hội</h3>
+      <p>Thu nhập bình quân đầu người đạt <strong>59.35 triệu đồng/năm</strong>, xếp hạng <strong>21/34</strong> toàn quốc. Với dân số <strong>2,606,672 người</strong> (xếp hạng <strong>20/34</strong>) và diện tích <strong>7,942.39 km²</strong> (xếp hạng <strong>21/34</strong>), Cà Mau có mật độ dân số thấp.</p>
+
+      <h3>Vị trí địa lý đặc biệt</h3>
+      <p>Cà Mau là tỉnh cực Nam của Việt Nam, có vị trí địa lý đặc biệt ở mũi Cà Mau - điểm cực Nam của đất liền Việt Nam. Tỉnh có rừng U Minh Hạ và nhiều khu bảo tồn thiên nhiên quý hiếm, là nơi giao thoa giữa nước ngọt và nước mặn.</p>
+
+      <h3>Tiềm năng năng lượng và sinh thái</h3>
+      <p>Sau sáp nhập với Bạc Liêu, Cà Mau có thêm tiềm năng lớn phát triển năng lượng gió với các trang trại gió lớn. Tỉnh có hệ sinh thái đa dạng với rừng ngập mặn, khu bảo tồn sinh quyển và các sản phẩm thủy sản đặc trưng.</p>
+
+      <h3>Tiềm năng phát triển</h3>
+      <p>Với lợi thế về năng lượng tái tạo, thủy sản và du lịch sinh thái, Cà Mau có tiềm năng phát triển thành trung tâm năng lượng sạch của miền Nam. Tỉnh đang đầu tư mạnh vào các dự án năng lượng gió, nuôi trồng thủy sản và du lịch sinh thái đặc thù vùng cực Nam.</p>
+
+      <h3>Thông tin cơ bản</h3>
+      <ul>
+        <li>GRDP: 279,735,681 triệu đồng (Xếp hạng 15/34)</li>
+        <li>Thu ngân sách: 10,481,971 triệu đồng (Xếp hạng 29/34)</li>
+        <li>Thu nhập bình quân: 59.35 triệu đồng/năm (Xếp hạng 21/34)</li>
+        <li>Dân số: 2,606,672 người (Xếp hạng 20/34)</li>
+        <li>Diện tích: 7,942.39 km² (Xếp hạng 21/34)</li>
+        <li>Thủ phủ: Thành phố Cà Mau</li>
+        <li>Trước sáp nhập: Cà Mau + Bạc Liêu</li>
+      </ul>
+      
+      <h3>Tham khảo</h3>
+      <ul>
+        <li><a href="https://vi.wikipedia.org/wiki/C%C3%A0_Mau" target="_blank">Wikipedia - Cà Mau</a></li>
+        <li><a href="http://camau.gov.vn/" target="_blank">Cổng thông tin tỉnh Cà Mau</a></li>
+        <li><a href="https://vi.wikipedia.org/wiki/M%C5%A9i_C%C3%A0_Mau" target="_blank">Wikipedia - Mũi Cà Mau</a></li>
+      </ul>
+
+      <p><em>Nguồn: Bảng xếp hạng kinh tế 34 tỉnh thành Việt Nam</em></p>
+    `
   }
 ];
 

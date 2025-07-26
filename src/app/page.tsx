@@ -169,7 +169,7 @@ export default function Home() {
                 <div className="text-sm text-gray-600">Đơn Vị Cấp Tỉnh</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">5</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">6</div>
                 <div className="text-sm text-gray-600">Thành Phố Lớn</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
@@ -177,7 +177,7 @@ export default function Home() {
                 <div className="text-sm text-gray-600">Vùng Miền</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
-                <div className="text-3xl font-bold text-orange-600 mb-2">96M+</div>
+                <div className="text-3xl font-bold text-orange-600 mb-2">102 Triệu</div>
                 <div className="text-sm text-gray-600">Tổng Dân Số</div>
               </div>
             </div>

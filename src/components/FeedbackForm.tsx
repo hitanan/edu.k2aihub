@@ -63,7 +63,6 @@ const FeedbackForm: React.FC = () => {
     setTimeout(() => {
       setForm({ name: '', email: '', subject: '', message: '' });
       setIsSubmitting(false);
-      alert('Cảm ơn bạn đã gửi góp ý! Ứng dụng email của bạn sẽ mở với nội dung góp ý sẵn sàng để gửi.');
     }, 1000);
   };
 
@@ -199,7 +198,7 @@ const FeedbackForm: React.FC = () => {
               )}
             </button>
             <p className="mt-2 text-xs text-gray-500 text-center">
-              Thao tác này sẽ mở ứng dụng email của bạn với nội dung góp ý sẵn sàng gửi tới jobtimeseo@gmail.com
+              Thao tác này sẽ mở ứng dụng email của bạn với nội dung góp ý sẵn sàng gửi tới chúng tôi
             </p>
           </div>
         </form>
