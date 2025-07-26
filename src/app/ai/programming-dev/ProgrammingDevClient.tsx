@@ -434,7 +434,7 @@ Suggest refactoring strategies for each issue found."`,
                     <div className="bg-gray-50 p-6 rounded-lg">
                       <h3 className="text-xl font-bold text-gray-900 mb-4">So Sánh Chi Tiết</h3>
                       <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
+                        <table className="w-full text-sm text-gray-900">
                           <thead>
                             <tr className="border-b border-gray-300">
                               <th className="text-left py-2 px-3">Tiêu chí</th>
