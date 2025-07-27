@@ -57,7 +57,7 @@ export default function Home() {
       href: '/city',
       icon: '🗺️',
       color: 'from-blue-600 to-green-600',
-      stats: ['34 Tỉnh Thành', '8 Vùng Miền', '102 Triệu Dân']
+      stats: ['34 Tỉnh Thành', '9 Vùng Miền', '102 Triệu Dân']
     },
     {
       title: 'AI Của Tôi',

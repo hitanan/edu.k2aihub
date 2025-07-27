@@ -116,14 +116,6 @@ export default function CityModule() {
                 </span>
               </nav>
             </div>
-            <nav className="flex items-center gap-6">
-              <Link
-                href="/feedback"
-                className="px-3 py-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium"
-              >
-                💬 Góp Ý & Phản Hồi
-              </Link>
-            </nav>
           </div>
         </div>
       </header>
@@ -191,7 +183,7 @@ export default function CityModule() {
             <div className="text-sm text-gray-600">Thành Phố Lớn</div>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">8</div>
+            <div className="text-3xl font-bold text-purple-600 mb-2">9</div>
             <div className="text-sm text-gray-600">Vùng Miền</div>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">

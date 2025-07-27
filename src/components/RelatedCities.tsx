@@ -4,6 +4,7 @@
 
 import Link from 'next/link';
 import { City } from '@/types';
+import { createRegionSlug } from '@/utils/slug';
 
 interface RelatedCitiesProps {
   currentCity: City;
@@ -80,7 +81,12 @@ export default function RelatedCities({ currentCity, allCities, className = '' }
                   {city.name}
                 </h3>
                 <p className="text-sm text-gray-600 mb-2">
-                  {city.region}
+                  <Link 
+                    href={`/region/${createRegionSlug(city.region)}`}
+                    className="text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    {city.region}
+                  </Link>
                 </p>
                 <div className="text-xs text-gray-500">
                   <div>Dân số: {city.population}</div>
@@ -115,7 +121,7 @@ export default function RelatedCities({ currentCity, allCities, className = '' }
           với nhiều danh lam thắng cảnh và nét văn hóa đặc sắc.
         </p>
         <Link
-          href={`/#${currentCity.region.toLowerCase().replace(/\s+/g, '-')}`}
+          href={`/region/${createRegionSlug(currentCity.region)}`}
           className="inline-block mt-2 text-blue-600 hover:text-blue-800 text-sm font-medium"
         >
           Xem tất cả tỉnh thành {currentCity.region} →

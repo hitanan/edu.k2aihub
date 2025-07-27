@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
       links: [
         { name: 'Gửi Phản Hồi', href: '/feedback' },
         { name: 'Email', href: 'mailto:jobtimeseo@gmail.com' },
-        { name: 'GitHub', href: 'https://github.com/phamthainb/k2aihub' },
+        { name: 'GitHub', href: 'https://github.com/hitanan/k2aihub' },
       ],
     },
   ];

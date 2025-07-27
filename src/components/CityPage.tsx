@@ -3,11 +3,12 @@
 import React, { memo, useMemo, lazy, Suspense, useEffect } from 'react';
 import Link from 'next/link';
 import { City } from '@/types';
-import { createSlug } from '@/utils/slug';
+import { createSlug, createRegionSlug } from '@/utils/slug';
 import { useRouter } from 'next/navigation';
 import { preloadCriticalResources, optimizeImageLoading } from '@/utils/performance';
 import CityStructuredData from '@/components/CityStructuredData';
 import TouristAttractionsSlider from '@/components/TouristAttractionsSlider';
+import ShareButton from '@/components/ShareButton';
 
 // Lazy load the VietnamMap component for better performance
 const VietnamMap = lazy(() => import('@/components/VietnamMap'));
@@ -33,13 +34,6 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
       .filter(c => c.region === city.region && c.id !== city.id)
       .slice(0, 6);
   }, [allCities, city.region, city.id]);
-  
-  // Memoize share data
-  const shareData = useMemo(() => ({
-    title: `${city.name} - Địa Lý Việt Nam`,
-    text: `Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`,
-    url: typeof window !== 'undefined' ? window.location.href : ''
-  }), [city.name, city.description]);
   const handleCityClick = (newCity: City) => {
     setSelectedCity(newCity);
     // Navigate to the new city page using slug
@@ -56,61 +50,6 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
     localStorage.setItem('selectedCityId', city.id.toString());
     // Navigate back to the map view
     router.push('/city');
-  };
-
-  const handleShare = async () => {
-    try {
-      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
-        await navigator.share(shareData);
-      } else {
-        // Fallback to copying URL with better mobile support
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(shareData.url);
-          // Show a toast notification instead of alert for better UX
-          if (window.innerWidth <= 768) {
-            // Mobile-optimized notification
-            const toast = document.createElement('div');
-            toast.textContent = 'Đã sao chép liên kết!';
-            toast.style.cssText = `
-              position: fixed;
-              bottom: 20px;
-              left: 50%;
-              transform: translateX(-50%);
-              background: #10b981;
-              color: white;
-              padding: 12px 24px;
-              border-radius: 8px;
-              font-size: 14px;
-              font-weight: 500;
-              z-index: 1000;
-              box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            `;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-          } else {
-            alert('Đã sao chép liên kết vào clipboard!');
-          }
-        } else {
-          // Final fallback for older browsers
-          const textArea = document.createElement('textarea');
-          textArea.value = shareData.url;
-          document.body.appendChild(textArea);
-          textArea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textArea);
-          alert('Đã sao chép liên kết!');
-        }
-      }
-    } catch (error) {
-      console.error('Error sharing:', error);
-      // Fallback if sharing fails
-      try {
-        await navigator.clipboard.writeText(shareData.url);
-        alert('Đã sao chép liên kết!');
-      } catch (clipboardError) {
-        console.error('Clipboard error:', clipboardError);
-      }
-    }
   };
 
   const paragraphs = city.description.split('. ');
@@ -135,6 +74,15 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
             </li>
             <li>/</li>
             <li>
+              <Link 
+                href={`/region/${createRegionSlug(city.region)}`}
+                className="hover:text-gray-700"
+              >
+                {city.region}
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
               <span className="text-gray-900 font-medium">{city.name}</span>
             </li>
           </ol>
@@ -151,7 +99,12 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
                 />
                 <span className="text-sm text-gray-500">Mã đơn vị hành chính: {city.code}</span>
                 <span className="text-sm text-gray-500">•</span>
-                <span className="text-sm text-gray-500">{city.region}</span>
+                <Link 
+                  href={`/region/${createRegionSlug(city.region)}`}
+                  className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                >
+                  {city.region}
+                </Link>
               </div>
               <h1 className="text-4xl font-bold text-gray-800 mb-4">
                 {city.name}
@@ -255,12 +208,13 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
 
             <div className="mt-8 pt-6 border-t border-gray-200">
               <div className="flex gap-3">
-                <button
-                  onClick={handleShare}
-                  className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
-                >
-                  Chia Sẻ Thành Phố Này
-                </button>
+                <div className="flex-1">
+                  <ShareButton 
+                    title={`${city.name} - Địa Lý Việt Nam | K2AiHub`}
+                    description={`Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`}
+                    url={typeof window !== 'undefined' ? window.location.href : ''}
+                  />
+                </div>
                 <button
                   onClick={handleBackToMap}
                   className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 font-medium text-center"
@@ -282,7 +236,12 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
         {/* Related Cities */}
         <div className="mt-12">
           <h2 className="text-xl font-semibold text-gray-800 mb-6">
-            Các Thành Phố Khác trong {city.region}
+            Các Thành Phố Khác trong <Link 
+              href={`/region/${createRegionSlug(city.region)}`}
+              className="text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {city.region}
+            </Link>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {relatedCities.map((relatedCity) => (

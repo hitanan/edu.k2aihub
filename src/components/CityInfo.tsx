@@ -1,8 +1,11 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { City } from '@/types';
+import { createRegionSlug } from '@/utils/slug';
+import ShareButton from '@/components/ShareButton';
 
 interface CityInfoProps {
   city: City | null;
@@ -10,69 +13,6 @@ interface CityInfoProps {
 
 const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
   const router = useRouter();
-
-  const handleShare = async () => {
-    if (!city) return;
-    
-    const shareData = {
-      title: `${city.name} - Địa Lý Việt Nam`,
-      text: `Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`,
-      url: `${window.location.origin}/city/${city.slug}`
-    };
-
-    try {
-      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
-        await navigator.share(shareData);
-      } else {
-        // Fallback to copying URL with better mobile support
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(shareData.url);
-          // Show a toast notification instead of alert for better UX
-          if (window.innerWidth <= 768) {
-            // Mobile-optimized notification
-            const toast = document.createElement('div');
-            toast.textContent = 'Đã sao chép liên kết!';
-            toast.style.cssText = `
-              position: fixed;
-              bottom: 20px;
-              left: 50%;
-              transform: translateX(-50%);
-              background: #10b981;
-              color: white;
-              padding: 12px 24px;
-              border-radius: 8px;
-              font-size: 14px;
-              font-weight: 500;
-              z-index: 1000;
-              box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            `;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-          } else {
-            alert('Đã sao chép liên kết vào clipboard!');
-          }
-        } else {
-          // Final fallback for older browsers
-          const textArea = document.createElement('textarea');
-          textArea.value = shareData.url;
-          document.body.appendChild(textArea);
-          textArea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textArea);
-          alert('Đã sao chép liên kết!');
-        }
-      }
-    } catch (error) {
-      console.error('Error sharing:', error);
-      // Fallback if sharing fails
-      try {
-        await navigator.clipboard.writeText(shareData.url);
-        alert('Đã sao chép liên kết!');
-      } catch (clipboardError) {
-        console.error('Clipboard error:', clipboardError);
-      }
-    }
-  };
 
   const handleViewFullPage = () => {
     if (!city) return;
@@ -129,18 +69,14 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
             {city.name}
           </h1>
           <p className="text-gray-600">
-            Vùng miền: {city.region}
+            Vùng miền: <Link 
+              href={`/region/${createRegionSlug(city.region)}`}
+              className="text-blue-600 hover:text-blue-800 hover:underline"
+            >
+              {city.region}
+            </Link>
           </p>
         </div>
-        <button
-          onClick={handleShare}
-          className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
-          title="Chia sẻ thành phố này"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-          </svg>
-        </button>
       </div>
 
       {/* Stats */}
@@ -206,12 +142,11 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
           >
             Xem Trang Đầy Đủ
           </button>
-          <button
-            onClick={handleShare}
-            className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 font-medium"
-          >
-            Chia Sẻ
-          </button>
+          <ShareButton 
+            title={`${city.name} - Địa Lý Việt Nam | K2AiHub`}
+            description={`Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`}
+            url={typeof window !== 'undefined' ? `${window.location.origin}/city/${city.slug}` : ''}
+          />
         </div>
       </div>
     </div>
