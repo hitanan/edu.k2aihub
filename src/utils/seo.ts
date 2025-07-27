@@ -80,9 +80,9 @@ export function createOrganizationStructuredData() {
     name: SITE_NAME,
     description:
       'Nền tảng thông tin tương tác về địa lý Việt Nam và hướng dẫn AI thực tế',
-    url: 'https://k2aihub.github.io',
-    logo: 'https://k2aihub.github.io/logo.png',
-    sameAs: ['https://github.com/k2aihub'],
+    url: 'https://k2aihub.com',
+    logo: 'https://k2aihub.com/logo.png',
+    sameAs: ['https://k2aihub.com'],
     areaServed: 'VN',
     inLanguage: 'vi'
   };
@@ -171,19 +171,19 @@ export function createBreadcrumbStructuredData(city: City) {
         '@type': 'ListItem',
         position: 1,
         name: 'Trang chủ',
-        item: 'https://k2aihub.github.io'
+        item: 'https://k2aihub.com'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Địa lý Việt Nam',
-        item: 'https://k2aihub.github.io/#geography'
+        item: 'https://k2aihub.com/#geography'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: city.region,
-        item: `https://k2aihub.github.io/#${city.region
+        item: `https://k2aihub.com/#${city.region
           .toLowerCase()
           .replace(/\s+/g, '-')}`
       },
@@ -191,7 +191,7 @@ export function createBreadcrumbStructuredData(city: City) {
         '@type': 'ListItem',
         position: 4,
         name: city.name,
-        item: `https://k2aihub.github.io/city/${city.slug}`
+        item: `https://k2aihub.com/city/${city.slug}`
       }
     ]
   };

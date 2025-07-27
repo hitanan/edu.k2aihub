@@ -15,7 +15,7 @@ interface SocialSharingProps {
 export default function SocialSharing({ city, className = '' }: SocialSharingProps) {
   const [copied, setCopied] = useState(false);
 
-  const currentUrl = `https://k2aihub.github.io/city/${city.slug}`;
+  const currentUrl = `https://k2aihub.com/city/${city.slug}`;
   const shareTitle = `${city.name} - Khám phá ${city.region} | K2AiHub`;
   const shareDescription = `Tìm hiểu về ${city.name}: dân số ${city.population}, diện tích ${city.area}. Khám phá các điểm du lịch và văn hóa đặc sắc.`;
 

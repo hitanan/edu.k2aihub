@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://k2aihub.github.io';
+  const baseUrl = 'https://k2aihub.com';
 
   // Static pages
   const staticPages = [

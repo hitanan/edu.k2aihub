@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     const educationalData = createEducationalContentStructuredData(
       `${city.name} - ${city.region}`,
       enhancedDescription,
-      `https://k2aihub.github.io/city/${city.slug}`
+      `https://k2aihub.com/city/${city.slug}`
     );
 
     const faqData = createFAQStructuredData(city);
@@ -130,7 +130,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
       openGraph: {
         type: 'article',
         locale: 'vi_VN',
-        url: `https://k2aihub.github.io/city/${city.slug}`,
+        url: `https://k2aihub.com/city/${city.slug}`,
         title: createTitle(`${city.name} - Khám Phá ${city.region}`),
         description: createDescription(city.description),
         siteName: 'K2AiHub',
@@ -150,7 +150,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
         images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')],
       },
       alternates: {
-        canonical: `https://k2aihub.github.io/city/${city.slug}`,
+        canonical: `https://k2aihub.com/city/${city.slug}`,
       },
       other: {
         'structured-data': JSON.stringify(combinedStructuredData),

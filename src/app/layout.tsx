@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false
   },
-  metadataBase: new URL('https://k2aihub.github.io'),
+  metadataBase: new URL('https://k2aihub.com'),
   alternates: {
     canonical: '/'
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: createDescription(
       'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
     ),
-    url: 'https://k2aihub.github.io',
+    url: 'https://k2aihub.com',
     siteName: 'K2AiHub',
     locale: 'vi_VN',
     type: 'website',
@@ -82,7 +82,7 @@ export default function RootLayout({
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#3b82f6" />
-        <link rel="canonical" href="https://k2aihub.github.io" />
+        <link rel="canonical" href="https://k2aihub.com" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}

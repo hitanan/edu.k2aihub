@@ -11,9 +11,9 @@ export default function Home() {
     "name": "K2AiHub",
     "alternateName": "K2 AI Hub - Nền Tảng Giáo Dục Tương Tác",
     "description": "Nền tảng giáo dục tương tác với hai module chính: Địa Lý Việt Nam (34 tỉnh thành) và AI Của Tôi (hướng dẫn sử dụng AI thực tế)",
-    "url": "https://k2aihub.github.io",
+    "url": "https://k2aihub.com",
     "sameAs": [
-      "https://github.com/k2aihub"
+      "https://k2aihub.com"
     ],
     "educationalUse": ["learning", "research", "reference"],
     "audience": {
