@@ -12,11 +12,7 @@ const getBasePath = () => {
     return '';
   }
 
-  // Default GitHub Pages case
-  if (process.env.NODE_ENV === 'production') {
-    return '/k2aihub';
-  }
-
+  // Default GitHub Pages case with no custom domain
   // Development
   return '';
 };
