@@ -70,7 +70,7 @@ function getCitiesByRegion(regionName: string) {
   return citiesData.filter(city => city.region === regionName);
 }
 
-type Props = {
+type RegionPageProps = {
   params: Promise<{ slug: string }>;
 };
 
@@ -80,7 +80,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: RegionPageProps): Promise<Metadata> {
   const { slug } = await params;
   const region = getRegionBySlug(slug);
   
@@ -126,8 +126,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function RegionPage({ params }: Props) {
-  const region = getRegionBySlug(params.slug);
+export default async function RegionPage({ params }: RegionPageProps) {
+  const { slug } = await params;
+  const region = getRegionBySlug(slug);
   
   if (!region) {
     notFound();
