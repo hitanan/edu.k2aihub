@@ -83,7 +83,7 @@ export default function Home() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              K2AIHUB
+              K2AI HUB
               <span className="block text-blue-300">Nền Tảng Thông Tin Tương Tác</span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">

@@ -160,6 +160,7 @@ src/
 - **Accessibility**: WCAG compliance and keyboard navigation
 - **Mobile-First**: Responsive design across all devices
 - **SEO Optimization**: Implement dynamic metadata (createTitle, createDescription, createKeywords), structured data, and social sharing
+- **Next.js**: Follow best practices for routing and static generation and Next.js code standards, e.g. put all city components in the `src/components/city` directory.
 
 ### Navigation:
 

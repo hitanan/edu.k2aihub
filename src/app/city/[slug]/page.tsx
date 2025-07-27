@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import Link from 'next/link';
-import CityPage from '@/components/CityPage';
+import CityPage from '@/components/city/CityPage';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { City } from '@/types';
 import { findCityBySlug } from '@/utils/slug';

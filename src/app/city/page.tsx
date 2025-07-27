@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import VietnamMap from '@/components/VietnamMap';
-import CityInfo from '@/components/CityInfo';
-import Search from '@/components/Search';
+import VietnamMap from '@/components/city/VietnamMap';
+import CityInfo from '@/components/city/CityInfo';
+import Search from '@/components/city/Search';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import FAQ from '@/components/FAQ';
 import { City } from '@/types';
@@ -138,7 +138,7 @@ export default function CityModule() {
                 Bản Đồ Tương Tác 34 Đơn Vị Hành Chính Cấp Tỉnh Việt Nam
               </h2>
               <p className="text-sm text-gray-600">
-                Nhấp vào bất kỳ thành phố nào để tìm hiểu thêm thông tin. 
+                Nhấp vào thành phố để tìm hiểu thêm thông tin. 
                 {hoveredCity && (
                   <span className="ml-2 font-medium text-blue-600">
                     Đang di chuột: {hoveredCity.name}

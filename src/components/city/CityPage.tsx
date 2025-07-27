@@ -6,12 +6,12 @@ import { City } from '@/types';
 import { createSlug, createRegionSlug } from '@/utils/slug';
 import { useRouter } from 'next/navigation';
 import { preloadCriticalResources, optimizeImageLoading } from '@/utils/performance';
-import CityStructuredData from '@/components/CityStructuredData';
-import TouristAttractionsSlider from '@/components/TouristAttractionsSlider';
+import CityStructuredData from '@/components/city/CityStructuredData';
+import TouristAttractionsSlider from '@/components/city/TouristAttractionsSlider';
 import ShareButton from '@/components/ShareButton';
 
 // Lazy load the VietnamMap component for better performance
-const VietnamMap = lazy(() => import('@/components/VietnamMap'));
+const VietnamMap = lazy(() => import('@/components/city/VietnamMap'));
 
 interface CityPageProps {
   city: City;

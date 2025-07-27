@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: createTitle("Nền Tảng Thông Tin Tương Tác, Địa Lý Việt Nam, AI Của Tôi", true),
   description: createDescription("Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và thông tin chi tiết về kinh tế, văn hóa, lịch sử. AI Của Tôi giúp bạn hiểu và áp dụng AI trong công việc và cuộc sống hàng ngày"),
   keywords: createKeywords(["giáo dục trực tuyến", "bản đồ Việt Nam", "34 tỉnh thành", "hướng dẫn AI"]),
-  authors: [{ name: "K2AIHUB" }],
+  authors: [{ name: "K2AI HUB" }],
   robots: {
     index: true,
     follow: true,
