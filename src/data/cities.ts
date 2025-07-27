@@ -861,8 +861,6 @@ export const citiesData: City[] = [
         location: 'Huyện Hiệp Hòa'
       }
     ],
-    description:
-      'Bắc Ninh sau sáp nhập với Bắc Giang trở thành tỉnh có mật độ dân số cao, nổi tiếng với làng quan họ và các khu công nghiệp. Tỉnh có truyền thống văn hóa dân gian phong phú và là trung tâm công nghiệp quan trọng.',
     fullPageContent: `
       <h2>Tỉnh Bắc Ninh - Trung tâm công nghiệp công nghệ cao</h2>
       
@@ -1019,8 +1017,6 @@ export const citiesData: City[] = [
         location: 'Quận Lê Chân'
       }
     ],
-    description:
-      'Hải Phòng sau sáp nhập với Hải Dương trở thành thành phố trực thuộc Trung ương lớn nhất miền Bắc, là cảng biển quan trọng và trung tâm công nghiệp. Thành phố có lịch sử lâu đời và nhiều di tích văn hóa.',
     fullPageContent: `
       <h2>Thành phố Hải Phòng</h2>
       <p>Hải Phòng là thành phố cảng lớn nhất miền Bắc Việt Nam sau khi sáp nhập với Hải Dương, là cửa ngõ ra biển quan trọng của cả nước với hệ thống cảng hiện đại.</p>
