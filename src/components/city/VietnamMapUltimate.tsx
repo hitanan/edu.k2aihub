@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { City } from '@/types';
+import { fetchAsset } from '@/utils/assets';
 
 interface VietnamMapUltimateProps {
   cities: City[];
@@ -34,7 +35,7 @@ const VietnamMapUltimate: React.FC<VietnamMapUltimateProps> = ({
   React.useEffect(() => {
     const loadSvg = async () => {
       try {
-        const response = await fetch('/Vietnam.svg');
+        const response = await fetchAsset('/vietnam.svg');
         const content = await response.text();
         setSvgContent(content);
         console.log('SVG loaded successfully, length:', content.length);

@@ -14,6 +14,7 @@ import {
   createBreadcrumbStructuredData,
   createPlaceStructuredData
 } from '@/utils/seo';
+import { getAbsoluteAssetUrl } from '@/utils/assets';
 import citiesData from '@/data/cities';
 
 interface CityPageProps {
@@ -135,7 +136,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
         siteName: 'K2AiHub',
         images: [
           {
-            url: 'https://k2aihub.github.io/ban-do-viet-nam-34-tinh.jpg',
+            url: getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg'),
             width: 1200,
             height: 630,
             alt: `Địa Lý Việt Nam - Vị trí ${city.name} | K2AiHub`,
@@ -146,7 +147,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
         card: 'summary_large_image',
         title: createTitle(`${city.name} - ${city.region}`),
         description: createDescription(city.description.substring(0, 150)),
-        images: ['https://k2aihub.github.io/ban-do-viet-nam-34-tinh.jpg'],
+        images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')],
       },
       alternates: {
         canonical: `https://k2aihub.github.io/city/${city.slug}`,

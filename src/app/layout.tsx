@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { createTitle, createDescription, createKeywords, defaultOpenGraph, createOrganizationStructuredData } from "@/utils/seo";
+import type { Metadata } from 'next';
+import {Geist, Geist_Mono} from 'next/font/google';
+import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { createTitle, createDescription, createKeywords, createOrganizationStructuredData } from '@/utils/seo';
+import { getAbsoluteAssetUrl } from '@/utils/assets';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,47 +17,51 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  title: createTitle('Interactive Information Platform for Vietnamese Education'),
+  description: createDescription(
+    'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+  ),
+  keywords: createKeywords([
+    'Vietnam geography',
+    'AI guide',
+    'educational platform',
+    'interactive learning',
+    'K2AiHub',
+    'vietnamese education',
+    'practical AI',
+    'interactive map'
+  ]),
+  authors: [{ name: 'K2AiHub Team' }],
+  creator: 'K2AiHub',
+  publisher: 'K2AiHub',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  },
   metadataBase: new URL('https://k2aihub.github.io'),
-  title: createTitle("Nền Tảng Thông Tin Tương Tác, Địa Lý Việt Nam, AI Của Tôi", true),
-  description: createDescription("Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và thông tin chi tiết về kinh tế, văn hóa, lịch sử. AI Của Tôi giúp bạn hiểu và áp dụng AI trong công việc và cuộc sống hàng ngày"),
-  keywords: createKeywords(["giáo dục trực tuyến", "bản đồ Việt Nam", "34 tỉnh thành", "hướng dẫn AI"]),
-  authors: [{ name: "K2AI HUB" }],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+  alternates: {
+    canonical: '/'
   },
   openGraph: {
-    ...defaultOpenGraph,
-    title: createTitle("Nền Tảng Thông Tin Tương Tác, Địa Lý Việt Nam, AI Của Tôi"),
-    description: createDescription("Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và thông tin chi tiết về kinh tế, văn hóa, lịch sử. AI Của Tôi giúp bạn hiểu và áp dụng AI trong công việc và cuộc sống hàng ngày"),
-    images: [
-      {
-        url: '/ban-do-viet-nam-34-tinh.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Bản đồ 34 tỉnh thành Việt Nam - K2AiHub',
-      },
-    ],
+    title: createTitle('Interactive Information Platform for Vietnamese Education'),
+    description: createDescription(
+      'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+    ),
+    url: 'https://k2aihub.github.io',
+    siteName: 'K2AiHub',
+    locale: 'vi_VN',
+    type: 'website',
+    images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')]
   },
   twitter: {
     card: 'summary_large_image',
-    title: createTitle("Nền Tảng Thông Tin Tương Tác, Địa Lý Việt Nam, AI Của Tôi"),
-    description: createDescription("Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác"),
-    images: ['/ban-do-viet-nam-34-tinh.jpg'],
-  },
-  alternates: {
-    canonical: 'https://k2aihub.github.io',
-  },
-  verification: {
-    google: 'google-verification-code', // Replace with actual verification code
-  },
+    title: createTitle('Interactive Information Platform for Vietnamese Education'),
+    description: createDescription(
+      'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+    ),
+    images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')]
+  }
 };
 
 export default function RootLayout({

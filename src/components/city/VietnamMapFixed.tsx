@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { City } from '@/types';
+import { fetchAsset } from '@/utils/assets';
 
 interface VietnamMapProps {
   cities: City[];
@@ -35,7 +36,7 @@ const VietnamMapFixed: React.FC<VietnamMapProps> = ({
   useEffect(() => {
     const loadSvg = async () => {
       try {
-        const response = await fetch('/Vietnam.svg');
+        const response = await fetchAsset('/vietnam.svg');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

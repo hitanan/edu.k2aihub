@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { City } from '@/types';
+import { fetchAsset } from '@/utils/assets';
 
 interface VietnamMapProps {
   cities: City[];
@@ -42,7 +43,8 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
   React.useEffect(() => {
     const loadSvg = async () => {
       try {
-        const response = await fetch('/Vietnam.svg');
+        // Use the asset utility for deployment-safe path resolution
+        const response = await fetchAsset('/vietnam.svg');
         const content = await response.text();
         setSvgContent(content);
       } catch (error) {

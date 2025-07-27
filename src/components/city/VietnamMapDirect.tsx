@@ -84,7 +84,8 @@ const VietnamMapDirect: React.FC<VietnamMapDirectProps> = ({
 
     const loadSVG = async () => {
       try {
-        const response = await fetch('/vietnam.svg');
+        const { fetchAsset } = await import('@/utils/assets');
+        const response = await fetchAsset('/vietnam.svg');
         const svgText = await response.text();
         
         // Parse the SVG content

@@ -1,4 +1,5 @@
 // Performance utilities for city pages
+import { getAssetPath } from './assets';
 
 // Preload critical resources
 export function preloadCriticalResources(): void {
@@ -6,7 +7,7 @@ export function preloadCriticalResources(): void {
 
   // Preload the map image
   const mapImage = new Image();
-  mapImage.src = '/ban-do-viet-nam-34-tinh.jpg';
+  mapImage.src = getAssetPath('/ban-do-viet-nam-34-tinh.jpg');
 
   // Preload critical fonts if using custom fonts
   // This helps prevent layout shift

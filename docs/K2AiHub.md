@@ -181,7 +181,6 @@ src/
 │   ├── Breadcrumb.tsx         # SEO breadcrumb navigation
 │   ├── TableOfContents.tsx    # AI page navigation
 │   ├── StructuredData.tsx     # JSON-LD structured data
-│   ├── PerformanceOptimizer.tsx# Performance monitoring
 │   ├── SocialSharing.tsx      # Social media sharing
 │   └── RelatedCities.tsx      # City recommendation engine
 ├── data/                       # Static data management
