@@ -52,7 +52,7 @@ const FeedbackForm: React.FC = () => {
     // Create mailto link
     const subject = encodeURIComponent(`Góp Ý: ${form.subject}`);
     const body = encodeURIComponent(
-      `Tên: ${form.name}\nEmail: ${form.email}\n\nNội dung:\n${form.message}\n\n---\nGửi từ Nền Tảng Thông Minh`
+      `Tên: ${form.name}\nEmail: ${form.email}\n\nNội dung:\n${form.message}\n\n---\nGửi từ K2AiHub`
     );
     const mailtoLink = `mailto:jobtimeseo@gmail.com?subject=${subject}&body=${body}`;
 

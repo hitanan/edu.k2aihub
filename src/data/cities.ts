@@ -18,26 +18,34 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Hoàng Thành Thăng Long',
-        description: 'Di sản văn hóa thế giới UNESCO, nơi từng là trung tâm quyền lực của các triều đại phong kiến Việt Nam trong hơn 1.000 năm.',
-        imageUrl: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Di sản văn hóa thế giới UNESCO, nơi từng là trung tâm quyền lực của các triều đại phong kiến Việt Nam trong hơn 1.000 năm.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Ba Đình, Hà Nội'
       },
       {
         name: 'Văn Miếu - Quốc Tử Giám',
-        description: 'Ngôi đền Khổng Tử đầu tiên của Việt Nam và trường đại học đầu tiên của Việt Nam, được xây dựng từ năm 1070.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Ngôi đền Khổng Tử đầu tiên của Việt Nam và trường đại học đầu tiên của Việt Nam, được xây dựng từ năm 1070.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Đống Đa, Hà Nội'
       },
       {
         name: 'Hồ Hoàn Kiếm',
-        description: 'Biểu tượng của Hà Nội với tháp Rùa và đền Ngọc Sơn, nơi lưu giữ truyền thuyết thanh gươm thiêng.',
-        imageUrl: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Biểu tượng của Hà Nội với tháp Rùa và đền Ngọc Sơn, nơi lưu giữ truyền thuyết thanh gươm thiêng.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Hoàn Kiếm, Hà Nội'
       },
       {
         name: 'Phố Cổ Hà Nội',
-        description: 'Khu phố cổ với 36 phố phường truyền thống, là trung tâm thương mại và văn hóa lâu đời của Hà Nội.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Khu phố cổ với 36 phố phường truyền thống, là trung tâm thương mại và văn hóa lâu đời của Hà Nội.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Hoàn Kiếm, Hà Nội'
       }
     ],
@@ -91,26 +99,34 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Thác Bản Giốc',
-        description: 'Thác nước lớn nhất Việt Nam với chiều cao 53m, nằm trên biên giới Việt Nam - Trung Quốc, một trong những thác đẹp nhất thế giới.',
-        imageUrl: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Thác nước lớn nhất Việt Nam với chiều cao 53m, nằm trên biên giới Việt Nam - Trung Quốc, một trong những thác đẹp nhất thế giới.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Xã Đàm Thủy, huyện Trùng Khánh'
       },
       {
         name: 'Hang Pác Bó',
-        description: 'Nơi Chủ tịch Hồ Chí Minh sống và làm việc khi trở về nước năm 1941, là căn cứ địa cách mạng quan trọng.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Nơi Chủ tịch Hồ Chí Minh sống và làm việc khi trở về nước năm 1941, là căn cứ địa cách mạng quan trọng.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Xã Trường Hà, huyện Hà Quảng'
       },
       {
         name: 'Động Ngườm Ngao',
-        description: 'Động ngầm dài 2.144m với hệ thống thạch nhũ tuyệt đẹp, được mệnh danh là "cung điện dưới lòng đất".',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Động ngầm dài 2.144m với hệ thống thạch nhũ tuyệt đẹp, được mệnh danh là "cung điện dưới lòng đất".',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Xã Gun, huyện Trà Lĩnh'
       },
       {
         name: 'Phia Oắc - Phia Đén',
-        description: 'Công viên quốc gia với hệ sinh thái núi đá vôi nhiệt đới, là nơi bảo tồn đa dạng sinh học quý hiếm.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Công viên quốc gia với hệ sinh thái núi đá vôi nhiệt đới, là nơi bảo tồn đa dạng sinh học quý hiếm.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Các xã thuộc huyện Hà Quảng và Trà Lĩnh'
       }
     ],
@@ -169,25 +185,29 @@ export const citiesData: City[] = [
       {
         name: 'Khu Di tích Tân Trào',
         description: 'Nơi diễn ra Quốc hội đầu tiên của Việt Nam năm 1945',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Sơn Dương'
       },
       {
         name: 'Hồ Na Hang',
         description: 'Hồ nhân tạo đẹp với nhiều đảo nhỏ và cảnh quan hùng vĩ',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Na Hang'
       },
       {
         name: 'Công viên địa chất Đồng Văn',
         description: 'Khu vực địa chất đặc biệt với cảnh quan đá vôi hùng vĩ',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Đồng Văn'
       },
       {
         name: 'Lũng Cú',
         description: 'Cột mốc địa đầu Tổ quốc, điểm cực Bắc của Việt Nam',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Đồng Văn'
       }
     ],
@@ -243,25 +263,29 @@ export const citiesData: City[] = [
       {
         name: 'Di tích Chiến trường Điện Biên Phủ',
         description: 'Nơi diễn ra chiến thắng lịch sử năm 1954',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Điện Biên Phủ'
       },
       {
         name: 'Đồi A1',
         description: 'Địa điểm quan trọng trong chiến dịch Điện Biên Phủ',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Thành phố Điện Biên Phủ'
       },
       {
         name: 'Thung lũng Mường Thanh',
         description: 'Thung lũng đẹp với những cánh đồng lúa bao la',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Thành phố Điện Biên Phủ'
       },
       {
         name: 'Bản Phủ',
         description: 'Làng văn hóa truyền thống của dân tộc Thái',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Điện Biên'
       }
     ],
@@ -316,25 +340,29 @@ export const citiesData: City[] = [
       {
         name: 'Đèo Ô Quy Hồ',
         description: 'Đèo dài và đẹp nhất Việt Nam với cảnh quan hùng vĩ',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Tam Đường'
       },
       {
         name: 'Thị trấn Tam Đường',
         description: 'Thị trấn ở độ cao 900m với khí hậu mát mẻ quanh năm',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Tam Đường'
       },
       {
         name: 'Bản Hồ',
         description: 'Làng dân tộc Thái với văn hóa truyền thống độc đáo',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Sìn Hồ'
       },
       {
         name: 'Thung lũng Mường Tè',
         description: 'Thung lũng biên giới tuyệt đẹp giáp Trung Quốc',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Mường Tè'
       }
     ],
@@ -392,25 +420,29 @@ export const citiesData: City[] = [
       {
         name: 'Nhà tù Sơn La',
         description: 'Di tích lịch sử quan trọng thời kỳ đấu tranh cách mạng',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Sơn La'
       },
       {
         name: 'Thác Đăk',
         description: 'Thác nước đẹp với cảnh quan thiên nhiên hoang sơ',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Mường Lay'
       },
       {
         name: 'Hồ thủy điện Sơn La',
         description: 'Hồ nhân tạo lớn nhất Đông Nam Á với cảnh quan hùng vĩ',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Mường La'
       },
       {
         name: 'Cầu kính Bạch Long',
         description: 'Cầu kính dài nhất thế giới với tầm nhìn nspectacular',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Mộc Châu'
       }
     ],
@@ -464,32 +496,42 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Sa Pa',
-        description: 'Thị trấn du lịch nổi tiếng thế giới với khí hậu mát mẻ, ruộng bậc thang tuyệt đẹp và văn hóa dân tộc H\'Mông, Dao.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          "Thị trấn du lịch nổi tiếng thế giới với khí hậu mát mẻ, ruộng bậc thang tuyệt đẹp và văn hóa dân tộc H'Mông, Dao.",
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Sa Pa, Lào Cai'
       },
       {
         name: 'Đỉnh Fansipan',
-        description: 'Nóc nhà Đông Dương cao 3.143m, có thể chinh phục bằng cáp treo hoặc trekking, ngắm toàn cảnh núi rừng Tây Bắc.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Nóc nhà Đông Dương cao 3.143m, có thể chinh phục bằng cáp treo hoặc trekking, ngắm toàn cảnh núi rừng Tây Bắc.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Sa Pa, Lào Cai'
       },
       {
         name: 'Thung Lũng Mường Hoa',
-        description: 'Thung lũng với những ruộng bậc thang đẹp nhất Việt Nam, là bối cảnh sống của đồng bào H\'Mông, Dao.',
-        imageUrl: 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          "Thung lũng với những ruộng bậc thang đẹp nhất Việt Nam, là bối cảnh sống của đồng bào H'Mông, Dao.",
+        imageUrl:
+          'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Sa Pa, Lào Cai'
       },
       {
         name: 'Bản Cát Cát',
-        description: 'Làng văn hóa du lịch của người H\'Mông với những ngôi nhà sàn truyền thống và thác nước Cát Cát.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          "Làng văn hóa du lịch của người H'Mông với những ngôi nhà sàn truyền thống và thác nước Cát Cát.",
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Sa Pa, Lào Cai'
       },
       {
         name: 'Cầu Kính Rồng Mây',
-        description: 'Cây cầu kính dài 60m bắc qua thung lũng sâu, mang lại trải nghiệm mạo hiểm giữa núi rừng Sa Pa.',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Cây cầu kính dài 60m bắc qua thung lũng sâu, mang lại trải nghiệm mạo hiểm giữa núi rừng Sa Pa.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Sa Pa, Lào Cai'
       }
     ],
@@ -545,25 +587,29 @@ export const citiesData: City[] = [
       {
         name: 'Hồ Núi Cốc',
         description: 'Hồ nhân tạo tuyệt đẹp với cảnh quan hoang sơ',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Đại Từ'
       },
       {
         name: 'Bảo tàng Văn hóa các dân tộc Việt Nam',
         description: 'Bảo tàng trưng bày văn hóa 54 dân tộc Việt Nam',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Thái Nguyên'
       },
       {
         name: 'Khu di tích ATK Định Hóa',
         description: 'Căn cứ kháng chiến lịch sử của Đảng và Chính phủ',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Định Hóa'
       },
       {
         name: 'Động Phượng Hoàng',
         description: 'Động đá vôi với những khối thạch nhũ đẹp mắt',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Đông Hy'
       }
     ],
@@ -619,25 +665,29 @@ export const citiesData: City[] = [
       {
         name: 'Cửa khẩu Đồng Đăng',
         description: 'Cửa khẩu quốc tế lớn nhất phía Bắc Việt Nam',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Đồng Đăng'
       },
       {
         name: 'Động Tam Thanh',
         description: 'Hang động đá vôi tuyệt đẹp với thạch nhũ đa dạng',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Thành phố Lạng Sơn'
       },
       {
         name: 'Thành cổ Cây Thị',
         description: 'Di tích lịch sử từ thời Lý - Trần',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Văn Quan'
       },
       {
         name: 'Khu du lịch Mẫu Sơn',
         description: 'Khu du lịch cao nguyên với khí hậu mát mẻ',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Lộc Bình'
       }
     ],
@@ -694,32 +744,42 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Vịnh Hạ Long',
-        description: 'Di sản thiên nhiên thế giới UNESCO với hàng nghìn đảo đá vôi kỳ thú, hang động tuyệt đẹp và cảnh quan hùng vĩ.',
-        imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Di sản thiên nhiên thế giới UNESCO với hàng nghìn đảo đá vôi kỳ thú, hang động tuyệt đẹp và cảnh quan hùng vĩ.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'TP Hạ Long, Quảng Ninh'
       },
       {
         name: 'Đảo Cát Bà',
-        description: 'Hòn đảo lớn nhất vịnh Hạ Long với công viên quốc gia, bãi biển đẹp và làng chài truyền thống.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Hòn đảo lớn nhất vịnh Hạ Long với công viên quốc gia, bãi biển đẹp và làng chài truyền thống.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Huyện Cát Hải, Quảng Ninh'
       },
       {
         name: 'Hang Sửng Sốt',
-        description: 'Hang động lớn nhất vịnh Hạ Long với nhũ đá tuyệt đẹp và không gian rộng lớn kỳ thú.',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Hang động lớn nhất vịnh Hạ Long với nhũ đá tuyệt đẹp và không gian rộng lớn kỳ thú.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Vịnh Hạ Long, Quảng Ninh'
       },
       {
         name: 'Làng Chài Cửa Vạn',
-        description: 'Làng chài cổ với lịch sử hơn 200 năm, nơi ngư dân sống trên những ngôi nhà nổi truyền thống.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Làng chài cổ với lịch sử hơn 200 năm, nơi ngư dân sống trên những ngôi nhà nổi truyền thống.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Vân Đồn, Quảng Ninh'
       },
       {
         name: 'Công Viên Quốc Gia Cát Bà',
-        description: 'Khu bảo tồn sinh thái với rừng nguyên sinh và loài voọc Cát Bà quý hiếm, nằm trong quần đảo Cát Bà.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Khu bảo tồn sinh thái với rừng nguyên sinh và loài voọc Cát Bà quý hiếm, nằm trong quần đảo Cát Bà.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Đảo Cát Bà, Quảng Ninh'
       }
     ],
@@ -773,26 +833,31 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Đền Đô',
-        description: 'Đền thờ 8 vị vua nhà Lý, kiến trúc cổ kính và linh thiêng',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        description:
+          'Đền thờ 8 vị vua nhà Lý, kiến trúc cổ kính và linh thiêng',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Bắc Ninh'
       },
       {
         name: 'Làng Quan họ Bắc Ninh',
         description: 'Nôi của dân ca quan họ - di sản văn hóa phi vật thể',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Gia Bình'
       },
       {
         name: 'Chùa Dâu',
         description: 'Ngôi chùa cổ nhất Việt Nam, trung tâm Phật giáo',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Thuận Thành'
       },
       {
         name: 'Đền Kiếp Bạc',
         description: 'Đền thờ Trần Hưng Đạo, anh hùng dân tộc',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Hiệp Hòa'
       }
     ],
@@ -850,25 +915,29 @@ export const citiesData: City[] = [
       {
         name: 'Đền Hùng',
         description: 'Nơi thờ tổ tiên dân tộc Việt Nam - các vua Hùng',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Phú Ninh'
       },
       {
         name: 'Khu di tích Hùng Vương',
         description: 'Khu vực linh thiêng với nhiều đền, đình, chùa cổ',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Phú Ninh'
       },
       {
         name: 'Xuân Sơn',
         description: 'Vườn quốc gia với hệ sinh thái đa dạng',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Tân Sơn'
       },
       {
         name: 'Hồ Hòa Bình',
         description: 'Hồ nhân tạo lớn với cảnh quan thiên nhiên tuyệt đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Thành phố Hòa Bình'
       }
     ],
@@ -924,25 +993,29 @@ export const citiesData: City[] = [
       {
         name: 'Bãi Cháy',
         description: 'Bãi biển đẹp và sạch với nhiều hoạt động giải trí',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Quận Đồ Sơn'
       },
       {
         name: 'Đảo Cát Bà',
         description: 'Đảo lớn nhất trong vịnh Lan Hạ với cảnh đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Cát Hải'
       },
       {
         name: 'Nhà hát lớn Hải Phòng',
         description: 'Kiến trúc Pháp cổ điển, trung tâm văn hóa nghệ thuật',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Quận Hồng Bàng'
       },
       {
         name: 'Cầu Bính',
         description: 'Cầu xoay độc đáo, biểu tượng của thành phố cảng',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Quận Lê Chân'
       }
     ],
@@ -999,25 +1072,29 @@ export const citiesData: City[] = [
       {
         name: 'Đền Chu Đồng Tử',
         description: 'Đền thờ Chu Đồng Tử - người anh hùng trong truyền thuyết',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Văn Lâm'
       },
       {
         name: 'Phố Hiến',
         description: 'Phố cổ với kiến trúc truyền thống và lịch sử lâu đời',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Thành phố Hưng Yên'
       },
       {
         name: 'Làng nghề Đức Hòa',
         description: 'Làng nghề truyền thống nổi tiếng về sản xuất đồ gỗ',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Kim Động'
       },
       {
         name: 'Vườn nhãn Hưng Yên',
         description: 'Vườn nhãn lồng nổi tiếng với trái ngọt thơm đặc trưng',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Văn Giang'
       }
     ],
@@ -1074,26 +1151,31 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Tràng An',
-        description: 'Di sản thiên nhiên và văn hóa thế giới với hang động kỳ thú',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        description:
+          'Di sản thiên nhiên và văn hóa thế giới với hang động kỳ thú',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Hoa Lư'
       },
       {
         name: 'Tam Cốc - Bích Động',
         description: 'Du thuyền trên sông với cảnh núi đá vôi tuyệt đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Hoa Lư'
       },
       {
         name: 'Cố đô Hoa Lư',
         description: 'Thủ đô cổ của Việt Nam thời Đinh - Lê',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Hoa Lư'
       },
       {
         name: 'Chùa Bái Đính',
         description: 'Chùa lớn nhất Việt Nam với kiến trúc hoành tráng',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Gia Viễn'
       }
     ],
@@ -1119,25 +1201,29 @@ export const citiesData: City[] = [
       {
         name: 'Biển Sầm Sơn',
         description: 'Bãi biển nổi tiếng với cát trắng và sóng êm',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Thành phố Sầm Sơn'
       },
       {
         name: 'Hố Chúa',
         description: 'Khe suối trong xanh giữa núi rừng nguyên sinh',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Cẩm Thủy'
       },
       {
         name: 'Đền Trần',
         description: 'Khu di tích lịch sử thờ các vua nhà Trần',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Đông Sơn'
       },
       {
         name: 'Công viên Quốc gia Bến En',
         description: 'Khu bảo tồn thiên nhiên với hồ và núi đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Nông Cống'
       }
     ],
@@ -1192,25 +1278,29 @@ export const citiesData: City[] = [
       {
         name: 'Làng Sen - Kim Liên',
         description: 'Quê hương của Chủ tịch Hồ Chí Minh',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Nam Đàn'
       },
       {
         name: 'Biển Cửa Lò',
         description: 'Bãi biển đẹp với cát trắng và sóng xanh',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Thành phố Cửa Lò'
       },
       {
         name: 'Công viên Quốc gia Pù Mát',
         description: 'Khu bảo tồn thiên nhiên với hệ sinh thái đa dạng',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Con Cuông'
       },
       {
         name: 'Động Thần Phong',
         description: 'Hang động đá vôi với thạch nhũ tuyệt đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Anh Sơn'
       }
     ],
@@ -1265,25 +1355,29 @@ export const citiesData: City[] = [
       {
         name: 'Làng Hoàng Trù',
         description: 'Quê ngoại của Chủ tịch Hồ Chí Minh',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Đức Thọ'
       },
       {
         name: 'Biển Thiên Cầm',
         description: 'Bãi biển hoang sơ với cảnh đẹp tự nhiên',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Cẩm Xuyên'
       },
       {
         name: 'Hang Rái',
         description: 'Khu du lịch sinh thái với hang động và suối đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Thạch Hà'
       },
       {
         name: 'Đầm Nại',
         description: 'Phá đẹp với hệ sinh thái đa dạng',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Nghi Xuân'
       }
     ],
@@ -1337,26 +1431,31 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Vườn Quốc gia Phong Nha - Kẻ Bàng',
-        description: 'Di sản thiên nhiên thế giới với hang động lớn nhất thế giới',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        description:
+          'Di sản thiên nhiên thế giới với hang động lớn nhất thế giới',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Bố Trạch'
       },
       {
         name: 'Cửa khẩu Lao Bảo',
         description: 'Cửa khẩu quốc tế với Lào, có ý nghĩa lịch sử quan trọng',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Hướng Hóa'
       },
       {
         name: 'Di tích Đường mòn Hồ Chí Minh',
         description: 'Tuyến đường vận chuyển quan trọng thời kháng chiến',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Hướng Hóa'
       },
       {
         name: 'Hang Én',
         description: 'Hang động lớn thứ 3 thế giới với cảnh quan tuyệt đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Bố Trạch'
       }
     ],
@@ -1411,32 +1510,42 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Hoàng Thành Huế',
-        description: 'Di sản văn hóa thế giới UNESCO, cung điện hoàng gia của 13 vị vua triều Nguyễn với kiến trúc cung đình độc đáo.',
-        imageUrl: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Di sản văn hóa thế giới UNESCO, cung điện hoàng gia của 13 vị vua triều Nguyễn với kiến trúc cung đình độc đáo.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Phường Thuận Thành, TP Huế'
       },
       {
         name: 'Lăng Khải Định',
-        description: 'Lăng mộ vua Khải Định với kiến trúc pha trộn phương Đông và phương Tây độc đáo, nổi tiếng với nghệ thuật khảm sành.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Lăng mộ vua Khải Định với kiến trúc pha trộn phương Đông và phương Tây độc đáo, nổi tiếng với nghệ thuật khảm sành.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Thủy Bằng, Hương Thủy, Huế'
       },
       {
         name: 'Chùa Thiên Mụ',
-        description: 'Ngôi chùa cổ nhất của Huế được xây dựng từ năm 1601, biểu tượng của cố đô với tháp Phước Duyên cao 21m.',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Ngôi chùa cổ nhất của Huế được xây dựng từ năm 1601, biểu tượng của cố đô với tháp Phước Duyên cao 21m.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Kim Long, TP Huế'
       },
       {
         name: 'Sông Hương - Đầm Chuồn',
-        description: 'Dòng sông thơ mộng chảy qua Huế, nơi có du thuyền rồng nghe ca Huế và thưởng thức ẩm thực cung đình.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Dòng sông thơ mộng chảy qua Huế, nơi có du thuyền rồng nghe ca Huế và thưởng thức ẩm thực cung đình.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Trung tâm TP Huế'
       },
       {
         name: 'Lăng Tự Đức',
-        description: 'Lăng mộ lớn nhất và đẹp nhất trong các lăng tẩm triều Nguyễn, thể hiện tài năng kiến trúc và thơ văn của vua Tự Đức.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Lăng mộ lớn nhất và đẹp nhất trong các lăng tẩm triều Nguyễn, thể hiện tài năng kiến trúc và thơ văn của vua Tự Đức.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Thủy Xuân, Hương Thủy, Huế'
       }
     ],
@@ -1494,32 +1603,42 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Phố Cổ Hội An',
-        description: 'Di sản văn hóa thế giới UNESCO với kiến trúc cổ kính độc đáo, là cảng thương mại quốc tế quan trọng từ thế kỷ 15-19.',
-        imageUrl: 'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Di sản văn hóa thế giới UNESCO với kiến trúc cổ kính độc đáo, là cảng thương mại quốc tế quan trọng từ thế kỷ 15-19.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Thành phố Hội An'
       },
       {
         name: 'Thánh Địa Mỹ Sơn',
-        description: 'Quần thể đền tháp Cham cổ từ thế kỷ 4-14, di sản văn hóa thế giới UNESCO thể hiện nền văn minh Champa cổ.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Quần thể đền tháp Cham cổ từ thế kỷ 4-14, di sản văn hóa thế giới UNESCO thể hiện nền văn minh Champa cổ.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Huyện Duy Xuyên'
       },
       {
         name: 'Bãi Biển Mỹ Khê',
-        description: 'Một trong những bãi biển đẹp nhất thế giới với cát trắng mịn và nước biển trong xanh, được Forbes bình chọn.',
-        imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Một trong những bãi biển đẹp nhất thế giới với cát trắng mịn và nước biển trong xanh, được Forbes bình chọn.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Ngũ Hành Sơn, Đà Nẵng'
       },
       {
         name: 'Ngũ Hành Sơn',
-        description: 'Quần thể năm ngọn núi đá vôi với nhiều chùa chiền, động tự nhiên và điêu khắc nghệ thuật tinh xảo.',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Quần thể năm ngọn núi đá vôi với nhiều chùa chiền, động tự nhiên và điêu khắc nghệ thuật tinh xảo.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Ngũ Hành Sơn, Đà Nẵng'
       },
       {
         name: 'Cầu Rồng',
-        description: 'Cây cầu biểu tượng của Đà Nẵng với thiết kế hình rồng độc đáo, có thể phun lửa và nước vào cuối tuần.',
-        imageUrl: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Cây cầu biểu tượng của Đà Nẵng với thiết kế hình rồng độc đáo, có thể phun lửa và nước vào cuối tuần.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Hải Châu, Đà Nẵng'
       }
     ],
@@ -1574,26 +1693,31 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Đảo Lý Sơn',
-        description: 'Đảo núi lửa với cảnh quan độc đáo và tỏi Lý Sơn nổi tiếng',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        description:
+          'Đảo núi lửa với cảnh quan độc đáo và tỏi Lý Sơn nổi tiếng',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện đảo Lý Sơn'
       },
       {
         name: 'Biển Sa Huỳnh',
         description: 'Bãi biển đẹp với cát trắng và nước biển trong xanh',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Thị xã Đức Phổ'
       },
       {
         name: 'Di tích Mỹ Lai',
         description: 'Địa điểm lịch sử quan trọng với ý nghĩa giáo dục',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Sơn Tịnh'
       },
       {
         name: 'Núi Thành',
         description: 'Núi thiêng với nhiều di tích lịch sử và cảnh đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Thị xã Đức Phổ'
       }
     ],
@@ -1649,25 +1773,29 @@ export const citiesData: City[] = [
       {
         name: 'Biển Quy Nhơn',
         description: 'Bãi biển đẹp với cát vàng và nước trong xanh',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Thành phố Quy Nhơn'
       },
       {
         name: 'Tháp Đôi',
         description: 'Di tích Chăm cổ với kiến trúc độc đáo',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Quy Nhơn'
       },
       {
         name: 'Kon Tum',
         description: 'Vùng đất của các dân tộc thiểu số với văn hóa độc đáo',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Thành phố Kon Tum'
       },
       {
         name: 'Biển Kỳ Co',
         description: 'Vịnh đẹp như thiên đường với nước biển trong veo',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Nhơn Lý'
       }
     ],
@@ -1722,32 +1850,42 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Bãi Biển Nha Trang',
-        description: 'Một trong những bãi biển đẹp nhất Việt Nam với cát trắng mịn, nước trong xanh và hạ tầng du lịch hiện đại.',
-        imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Một trong những bãi biển đẹp nhất Việt Nam với cát trắng mịn, nước trong xanh và hạ tầng du lịch hiện đại.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'TP Nha Trang, Khánh Hòa'
       },
       {
         name: 'Đảo Hòn Tre',
-        description: 'Hòn đảo lớn nhất vịnh Nha Trang với khu nghỉ dưỡng VinWonders và cáp treo vượt biển dài nhất thế giới.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Hòn đảo lớn nhất vịnh Nha Trang với khu nghỉ dưỡng VinWonders và cáp treo vượt biển dài nhất thế giới.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'TP Nha Trang, Khánh Hòa'
       },
       {
         name: 'Tháp Bà Ponagar',
-        description: 'Quần thể tháp Chăm cổ được xây dựng từ thế kỷ 7-12, thờ nữ thần Thiên Y Thánh Mẫu của người Chăm.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Quần thể tháp Chăm cổ được xây dựng từ thế kỷ 7-12, thờ nữ thần Thiên Y Thánh Mẫu của người Chăm.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'TP Nha Trang, Khánh Hòa'
       },
       {
         name: 'Vinpearl Land',
-        description: 'Khu vui chơi giải trí lớn trên đảo Hòn Tre với nhiều trò chơi hiện đại và thế giới biển VinWonders.',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Khu vui chơi giải trí lớn trên đảo Hòn Tre với nhiều trò chơi hiện đại và thế giới biển VinWonders.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Đảo Hòn Tre, Nha Trang'
       },
       {
         name: 'Suối Nước Nóng Tháp Bà',
-        description: 'Khu du lịch nghỉ dưỡng với suối nước nóng tự nhiên, bùn khoáng và không gian thiên nhiên trong lành.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Khu du lịch nghỉ dưỡng với suối nước nóng tự nhiên, bùn khoáng và không gian thiên nhiên trong lành.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'TP Nha Trang, Khánh Hòa'
       }
     ],
@@ -1803,25 +1941,29 @@ export const citiesData: City[] = [
       {
         name: 'Thác Dray Nur',
         description: 'Thác nước hùng vĩ với ba tầng đẹp nhất Tây Nguyên',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Krông Ana'
       },
       {
         name: 'Vườn quốc gia Yok Đôn',
         description: 'Khu bảo tồn thiên nhiên lớn nhất Việt Nam',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Krông Na'
       },
       {
         name: 'Làng cổ Ako Dhong',
         description: 'Làng văn hóa dân tộc Ede với nhà dài truyền thống',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Buôn Ma Thuột'
       },
       {
         name: 'Biển Tuy Hòa',
         description: 'Bãi biển đẹp với cát vàng và sóng êm',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Thành phố Tuy Hòa'
       }
     ],
@@ -1877,25 +2019,29 @@ export const citiesData: City[] = [
       {
         name: 'Thành phố Đà Lạt',
         description: 'Thành phố ngàn hoa với khí hậu mát mẻ quanh năm',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Đà Lạt'
       },
       {
         name: 'Thác Pongour',
         description: 'Thác nước 7 tầng đẹp như tranh vẽ',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Đức Trọng'
       },
       {
         name: 'Biển Mũi Né',
         description: 'Bãi biển nổi tiếng với đồi cát bay và resort cao cấp',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Thành phố Phan Thiết'
       },
       {
         name: 'Hồ Tuyền Lâm',
         description: 'Hồ nhân tạo đẹp nhất Đà Lạt với cảnh sắc thơ mộng',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Thành phố Đà Lạt'
       }
     ],
@@ -1951,25 +2097,29 @@ export const citiesData: City[] = [
       {
         name: 'Vườn quốc gia Cát Tiên',
         description: 'Khu bảo tồn thiên nhiên lớn với hệ sinh thái đa dạng',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Tân Phú'
       },
       {
         name: 'Núi Dinh',
         description: 'Núi thiêng với cảnh quan đẹp và không khí trong lành',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Thành phố Bà Rịa'
       },
       {
         name: 'Làng gốm Thanh Hà',
         description: 'Làng nghề truyền thống sản xuất gốm sứ',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Long Thành'
       },
       {
         name: 'Khu du lịch Trảng Bom',
         description: 'Khu sinh thái với nhiều hoạt động giải trí',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Trảng Bom'
       }
     ],
@@ -2027,38 +2177,50 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Dinh Độc Lập',
-        description: 'Cung điện Tổng thống Việt Nam Cộng Hòa, nơi diễn ra sự kiện lịch sử thống nhất đất nước ngày 30/4/1975.',
-        imageUrl: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Cung điện Tổng thống Việt Nam Cộng Hòa, nơi diễn ra sự kiện lịch sử thống nhất đất nước ngày 30/4/1975.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận 1, TP.HCM'
       },
       {
         name: 'Nhà Thờ Đức Bà Sài Gòn',
-        description: 'Công trình kiến trúc Gothic nổi tiếng được xây dựng từ năm 1863-1880, biểu tượng của TP.HCM.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Công trình kiến trúc Gothic nổi tiếng được xây dựng từ năm 1863-1880, biểu tượng của TP.HCM.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận 1, TP.HCM'
       },
       {
         name: 'Bưu Điện Trung Tâm Sài Gòn',
-        description: 'Công trình kiến trúc Pháp độc đáo được thiết kế bởi Gustave Eiffel, vẫn hoạt động đến ngày nay.',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Công trình kiến trúc Pháp độc đáo được thiết kế bởi Gustave Eiffel, vẫn hoạt động đến ngày nay.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận 1, TP.HCM'
       },
       {
         name: 'Chợ Bến Thành',
-        description: 'Khu chợ truyền thống nổi tiếng với đồng hồ biểu tượng, trung tâm mua sắm và ẩm thực của TP.HCM.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Khu chợ truyền thống nổi tiếng với đồng hồ biểu tượng, trung tâm mua sắm và ẩm thực của TP.HCM.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận 1, TP.HCM'
       },
       {
         name: 'Địa Đạo Củ Chi',
-        description: 'Hệ thống đường hầm lịch sử dài hơn 250km, là biểu tượng của ý chí kiên cường trong chiến tranh.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Hệ thống đường hầm lịch sử dài hơn 250km, là biểu tượng của ý chí kiên cường trong chiến tranh.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Huyện Củ Chi'
       },
       {
         name: 'Bãi Biển Vũng Tàu',
-        description: 'Bãi biển gần TP.HCM với bãi Sau và bãi Trước nổi tiếng, điểm nghỉ dưỡng cuối tuần lý tưởng.',
-        imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Bãi biển gần TP.HCM với bãi Sau và bãi Trước nổi tiếng, điểm nghỉ dưỡng cuối tuần lý tưởng.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Thành phố Vũng Tàu'
       }
     ],
@@ -2117,25 +2279,29 @@ export const citiesData: City[] = [
       {
         name: 'Núi Bà Đen',
         description: 'Ngọn núi thiêng cao nhất Nam Bộ với tầm nhìn panorama',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Dương Minh Châu'
       },
       {
         name: 'Tòa thánh Cao Đài',
         description: 'Trung tâm tâm linh của đạo Cao Đài tại Tây Ninh',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Tây Ninh'
       },
       {
         name: 'Địa đạo Củ Chi',
         description: 'Hệ thống địa đạo lịch sử thời kháng chiến',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Củ Chi'
       },
       {
         name: 'Khu di tích lịch sử Địa đạo Bến Đình',
         description: 'Di tích kháng chiến quan trọng với hệ thống hầm ngầm',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Bến Cầu'
       }
     ],
@@ -2191,25 +2357,29 @@ export const citiesData: City[] = [
       {
         name: 'Vườn quốc gia Tràm Chim',
         description: 'Khu bảo tồn đa dạng sinh học với hệ thức vật đặc trưng',
-        imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Tam Nông'
       },
       {
         name: 'Cánh đồng hoa sen Đồng Tháp Mười',
         description: 'Cánh đồng sen đẹp nhất Việt Nam vào mùa nở hoa',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện Tháp Mười'
       },
       {
         name: 'Làng hoa Sa Đéc',
         description: 'Làng trồng hoa nổi tiếng với nhiều loại hoa kiểng',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Sa Đéc'
       },
       {
         name: 'Chợ nổi Cái Răng',
         description: 'Chợ nổi lớn nhất miền Tây với văn hóa đặc trưng',
-        imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
+        imageUrl:
+          'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Thành phố Mỹ Tho'
       }
     ],
@@ -2264,25 +2434,30 @@ export const citiesData: City[] = [
       {
         name: 'Chợ nổi Cái Bè',
         description: 'Chợ nổi truyền thống với các sản phẩm địa phương đa dạng',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400',
         location: 'Cái Bè, Vĩnh Long'
       },
       {
         name: 'Cồn Tân Phong',
-        description: 'Đảo sinh thái với vườn cây trái và làng nghề truyền thống',
-        imageUrl: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400',
+        description:
+          'Đảo sinh thái với vườn cây trái và làng nghề truyền thống',
+        imageUrl:
+          'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400',
         location: 'An Bình, Vĩnh Long'
       },
       {
         name: 'Làng nghề kẹo dừa Bến Tre',
         description: 'Làng nghề sản xuất kẹo dừa truyền thống nổi tiếng',
-        imageUrl: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400',
+        imageUrl:
+          'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400',
         location: 'Bến Tre, Vĩnh Long'
       },
       {
         name: 'Cánh đồng sen Đồng Tháp Mười',
         description: 'Cánh đồng sen tuyệt đẹp với màu hồng rực rỡ',
-        imageUrl: 'https://images.unsplash.com/photo-1594736797933-d0ace2a4d5f8?w=400',
+        imageUrl:
+          'https://images.unsplash.com/photo-1594736797933-d0ace2a4d5f8?w=400',
         location: 'Trà Vinh, Vĩnh Long'
       }
     ],
@@ -2343,32 +2518,42 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Đảo Phú Quốc',
-        description: 'Hòn đảo ngọc lớn nhất Việt Nam với bãi biển đẹp, rừng nguyên sinh và nhiều khu nghỉ dưỡng cao cấp.',
-        imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Hòn đảo ngọc lớn nhất Việt Nam với bãi biển đẹp, rừng nguyên sinh và nhiều khu nghỉ dưỡng cao cấp.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Phú Quốc, Kiên Giang'
       },
       {
         name: 'Núi Sam',
-        description: 'Ngọn núi thiêng với nhiều đền chùa cổ, là trung tâm tín ngưỡng của người dân An Giang và vùng ĐBSCL.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Ngọn núi thiêng với nhiều đền chùa cổ, là trung tâm tín ngưỡng của người dân An Giang và vùng ĐBSCL.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Châu Đốc, An Giang'
       },
       {
         name: 'Cáp Treo Hòn Thơm',
-        description: 'Cáp treo dài nhất thế giới băng qua biển với chiều dài 7.899m, kết nối Phú Quốc với đảo Hòn Thơm.',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Cáp treo dài nhất thế giới băng qua biển với chiều dài 7.899m, kết nối Phú Quốc với đảo Hòn Thơm.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Phú Quốc, Kiên Giang'
       },
       {
         name: 'Rừng Quốc Gia Phú Quốc',
-        description: 'Khu rừng nguyên sinh với hệ sinh thái đa dạng, là nơi bảo tồn nhiều loài động thực vật quý hiếm.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Khu rừng nguyên sinh với hệ sinh thái đa dạng, là nơi bảo tồn nhiều loài động thực vật quý hiếm.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Phú Quốc, Kiên Giang'
       },
       {
         name: 'Chợ Nổi Long Xuyên',
-        description: 'Chợ nổi truyền thống trên sông Hậu với không khí mua bán sầm uất và đặc sản miền Tây.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Chợ nổi truyền thống trên sông Hậu với không khí mua bán sầm uất và đặc sản miền Tây.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Long Xuyên, An Giang'
       }
     ],
@@ -2427,32 +2612,42 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Chợ Nổi Cái Răng',
-        description: 'Chợ nổi lớn nhất miền Tây, nơi giao thương sầm uất trên sông với đặc sản trái cây ĐBSCL.',
-        imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Chợ nổi lớn nhất miền Tây, nơi giao thương sầm uất trên sông với đặc sản trái cây ĐBSCL.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Cái Răng, Cần Thơ'
       },
       {
         name: 'Vườn Cò Bằng Lăng',
-        description: 'Khu du lịch sinh thái với hàng nghìn con cò trắng về đậu, tạo cảnh quan độc đáo giữa cánh đồng xanh.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Khu du lịch sinh thái với hàng nghìn con cò trắng về đậu, tạo cảnh quan độc đáo giữa cánh đồng xanh.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Huyện Thốt Nốt, Cần Thơ'
       },
       {
         name: 'Nhà Cổ Bình Thủy',
-        description: 'Ngôi nhà cổ 100 tuổi kiến trúc Pháp - Việt kết hợp, nơi quay phim "Người Tình".',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Ngôi nhà cổ 100 tuổi kiến trúc Pháp - Việt kết hợp, nơi quay phim "Người Tình".',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Bình Thủy, Cần Thơ'
       },
       {
         name: 'Vườn Trái Cây Mỹ Khánh',
-        description: 'Khu du lịch sinh thái với vườn trái cây nhiệt đới, trải nghiệm đời sống nông thôn ĐBSCL.',
-        imageUrl: 'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Khu du lịch sinh thái với vườn trái cây nhiệt đới, trải nghiệm đời sống nông thôn ĐBSCL.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Huyện Phong Điền, Cần Thơ'
       },
       {
         name: 'Cồn Sơn',
-        description: 'Đảo nhỏ giữa sông Hậu với làng nghề truyền thống, du lịch cộng đồng độc đáo.',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        description:
+          'Đảo nhỏ giữa sông Hậu với làng nghề truyền thống, du lịch cộng đồng độc đáo.',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Huyện Thốt Nốt, Cần Thơ'
       }
     ],
@@ -2503,26 +2698,34 @@ export const citiesData: City[] = [
     touristAttractions: [
       {
         name: 'Mũi Cà Mau',
-        description: 'Điểm cực Nam của đất liền Việt Nam với cột mốc chủ quyền và cảnh quan tuyệt đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400',
+        description:
+          'Điểm cực Nam của đất liền Việt Nam với cột mốc chủ quyền và cảnh quan tuyệt đẹp',
+        imageUrl:
+          'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400',
         location: 'Ngọc Hiển, Cà Mau'
       },
       {
         name: 'Rừng U Minh Hạ',
-        description: 'Khu rừng ngập nước độc đáo với hệ sinh thái đa dạng và quý hiếm',
-        imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400',
+        description:
+          'Khu rừng ngập nước độc đáo với hệ sinh thái đa dạng và quý hiếm',
+        imageUrl:
+          'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400',
         location: 'Trần Văn Thời, Cà Mau'
       },
       {
         name: 'Trang trại gió Bạc Liêu',
-        description: 'Cánh đồng quạt gió hiện đại tạo năng lượng sạch cho vùng đất cực Nam',
-        imageUrl: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?w=400',
+        description:
+          'Cánh đồng quạt gió hiện đại tạo năng lượng sạch cho vùng đất cực Nam',
+        imageUrl:
+          'https://images.unsplash.com/photo-1548337138-e87d889cc369?w=400',
         location: 'Bạc Liêu, Cà Mau'
       },
       {
         name: 'Vườn chim Bạc Liêu',
-        description: 'Khu bảo tồn với hàng ngàn loài chim quý hiếm và cảnh quan thiên nhiên tuyệt đẹp',
-        imageUrl: 'https://images.unsplash.com/photo-1444927714506-8492d94b5ba0?w=400',
+        description:
+          'Khu bảo tồn với hàng ngàn loài chim quý hiếm và cảnh quan thiên nhiên tuyệt đẹp',
+        imageUrl:
+          'https://images.unsplash.com/photo-1444927714506-8492d94b5ba0?w=400',
         location: 'Bạc Liêu, Cà Mau'
       }
     ],

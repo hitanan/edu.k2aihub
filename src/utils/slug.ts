@@ -23,7 +23,7 @@ let citySlugMap: Map<string, City> | null = null;
 function initializeCitySlugMap(cities: City[]): Map<string, City> {
   if (!citySlugMap) {
     citySlugMap = new Map();
-    cities.forEach(city => {
+    cities.forEach((city) => {
       citySlugMap!.set(city.slug, city);
     });
   }

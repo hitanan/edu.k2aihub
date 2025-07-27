@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 
   const navigation = [
     { name: 'Trang Chủ', href: '/', icon: '🏠' },
-    { name: 'Bản Đồ Việt Nam', href: '/city', icon: '🗺️' },
+    { name: 'Địa Lý Việt Nam', href: '/city', icon: '🗺️' },
     { name: 'AI Của Tôi', href: '/ai', icon: '🤖' },
     { name: 'Phản Hồi', href: '/feedback', icon: '💬' },
   ];

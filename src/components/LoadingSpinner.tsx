@@ -15,7 +15,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ message = 'Đang tải.
           <div className="absolute inset-0 rounded-full h-12 w-12 border-t-2 border-green-600 mx-auto animate-ping opacity-20"></div>
         </div>
         <p className="text-gray-600 text-lg font-medium">{message}</p>
-        <p className="text-gray-500 text-sm mt-2">Nền Tảng Thông Minh</p>
+        <p className="text-gray-500 text-sm mt-2">K2AiHub</p>
       </div>
     </div>
   );

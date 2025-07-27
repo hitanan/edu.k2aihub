@@ -16,10 +16,10 @@ export function preloadCriticalResources(): void {
   link.type = 'font/woff2';
   link.crossOrigin = 'anonymous';
   // Add specific font URLs if you have custom fonts
-  
+
   // Prefetch common navigation targets
   const prefetchUrls = ['/city', '/feedback', '/ai'];
-  prefetchUrls.forEach(url => {
+  prefetchUrls.forEach((url) => {
     const linkElement = document.createElement('link');
     linkElement.rel = 'prefetch';
     linkElement.href = url;
@@ -51,7 +51,9 @@ export function measurePagePerformance(): void {
     console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
 
     // Measure specific metrics
-    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const navigation = performance.getEntriesByType(
+      'navigation'
+    )[0] as PerformanceNavigationTiming;
     if (navigation) {
       const metrics = {
         dns: navigation.domainLookupEnd - navigation.domainLookupStart,
@@ -59,9 +61,9 @@ export function measurePagePerformance(): void {
         request: navigation.responseStart - navigation.requestStart,
         response: navigation.responseEnd - navigation.responseStart,
         dom: navigation.domContentLoadedEventEnd - navigation.responseEnd,
-        load: navigation.loadEventEnd - navigation.loadEventStart,
+        load: navigation.loadEventEnd - navigation.loadEventStart
       };
-      
+
       console.log('Performance metrics:', metrics);
     }
   });
@@ -79,8 +81,11 @@ export function optimizeMemoryUsage(): void {
 }
 
 // Lazy load components that are not immediately visible
-export function createIntersectionObserver(callback: () => void): IntersectionObserver | null {
-  if (typeof window === 'undefined' || !window.IntersectionObserver) return null;
+export function createIntersectionObserver(
+  callback: () => void
+): IntersectionObserver | null {
+  if (typeof window === 'undefined' || !window.IntersectionObserver)
+    return null;
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -93,7 +98,7 @@ export function createIntersectionObserver(callback: () => void): IntersectionOb
     },
     {
       rootMargin: '50px',
-      threshold: 0.1,
+      threshold: 0.1
     }
   );
 

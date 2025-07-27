@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       title: 'Nền Tảng',
       links: [
         { name: 'Trang Chủ', href: '/' },
-        { name: 'Bản Đồ Việt Nam', href: '/city' },
+        { name: 'Địa Lý Việt Nam', href: '/city' },
         { name: 'AI Của Tôi', href: '/ai' },
         { name: 'Phản Hồi', href: '/feedback' },
       ],
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
           <div className="text-center md:text-right text-sm text-gray-400">
             <p>© {currentYear} K2 AI HUB. Tất cả quyền được bảo lưu.</p>
             <p className="mt-1">
-              Nền tảng thông tin tương tác về địa lý Việt Nam và AI
+              Nền tảng thông tin tương tác về địa lý Việt Nam và AI, ..
             </p>
           </div>
         </div>

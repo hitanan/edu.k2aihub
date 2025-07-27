@@ -44,7 +44,7 @@ export default function FeedbackClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <p className="text-gray-600 mb-2">
-              Nền Tảng Thông Tin Tương Tác - Góp Ý & Phản Hồi
+              K2AiHub - Góp Ý & Phản Hồi
             </p>
             <p className="text-sm text-gray-500">
               Chúng tôi luôn lắng nghe và cải thiện dựa trên ý kiến của bạn

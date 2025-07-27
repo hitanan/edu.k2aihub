@@ -35,8 +35,8 @@ export default function Home() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Nền Tảng Thông Tin
-              <span className="block text-blue-300">Tương Tác</span>
+              K2AIHUB
+              <span className="block text-blue-300">Nền Tảng Thông Tin Tương Tác</span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
               Khám phá kiến thức qua các module học tập hiện đại, tương tác và thú vị. 
@@ -162,7 +162,7 @@ export default function Home() {
                 📚
               </div>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Nền Tảng Thông Tin Tương Tác</h3>
+            <h3 className="text-2xl font-bold mb-4">K2AiHub</h3>
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
               Xây dựng tương lai giáo dục với công nghệ hiện đại và phương pháp giảng dạy tiên tiến. 
               Học tập không giới hạn, khám phá không ngừng.

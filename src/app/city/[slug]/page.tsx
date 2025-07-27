@@ -5,6 +5,15 @@ import CityPage from '@/components/CityPage';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { City } from '@/types';
 import { findCityBySlug } from '@/utils/slug';
+import { 
+  createTitle, 
+  createDescription, 
+  createKeywords, 
+  createEducationalContentStructuredData,
+  createFAQStructuredData,
+  createBreadcrumbStructuredData,
+  createPlaceStructuredData
+} from '@/utils/seo';
 import citiesData from '@/data/cities';
 
 interface CityPageProps {
@@ -34,8 +43,8 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     
     if (!city) {
       return {
-        title: 'Không Tìm Thấy Thành Phố - Địa Lý Việt Nam',
-        description: 'Không thể tìm thấy thành phố được yêu cầu.',
+        title: createTitle('Không Tìm Thấy Thành Phố - Địa Lý Việt Nam'),
+        description: createDescription('Không thể tìm thấy thành phố được yêu cầu'),
         robots: {
           index: false,
           follow: false,
@@ -43,66 +52,64 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
       };
     }
 
-    // Create comprehensive keywords
-    const keywords = [
+    // Create comprehensive keywords with city-specific terms
+    const cityKeywords = [
       city.name,
       ...city.oldNames,
       city.region,
-      'Việt Nam',
-      'địa lý',
-      'tỉnh thành',
-      'hành chính',
+      'du lịch',
+      'văn hóa',
+      'kinh tế',
       'dân số',
       'diện tích',
-      'kinh tế',
-      'du lịch',
-      'văn hóa'
-    ].join(', ');
+      'hành chính'
+    ];
 
-    // Enhanced description with key statistics
-    const enhancedDescription = `${city.description} Diện tích: ${city.area}, Dân số: ${city.population}. Khám phá lịch sử, văn hóa và kinh tế của ${city.name}.`;
+    // Add tourist attraction keywords if they exist
+    if (city.touristAttractions && city.touristAttractions.length > 0) {
+      cityKeywords.push(
+        ...city.touristAttractions.map(attraction => attraction.name),
+        'điểm du lịch',
+        'danh thắng'
+      );
+    }
+
+    // Enhanced description with key statistics and tourist attractions
+    let enhancedDescription = `${city.description} Diện tích: ${city.area}, Dân số: ${city.population}.`;
     
-    // Create structured data for better SEO
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@type': 'Place',
-      name: city.name,
-      description: city.description,
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: city.coordinates.y, 
-        longitude: city.coordinates.x
-      },
-      containedInPlace: {
-        '@type': 'Country',
-        name: 'Việt Nam'
-      },
-      additionalProperty: [
-        {
-          '@type': 'PropertyValue',
-          name: 'Dân số',
-          value: city.population
-        },
-        {
-          '@type': 'PropertyValue', 
-          name: 'Diện tích',
-          value: city.area
-        },
-        {
-          '@type': 'PropertyValue',
-          name: 'Vùng miền',
-          value: city.region
-        }
-      ]
-    };
+    if (city.touristAttractions && city.touristAttractions.length > 0) {
+      const attractionNames = city.touristAttractions.slice(0, 3).map(a => a.name).join(', ');
+      enhancedDescription += ` Khám phá các điểm du lịch nổi tiếng: ${attractionNames}.`;
+    }
+    
+    enhancedDescription += ` Tìm hiểu lịch sử, văn hóa và kinh tế của ${city.name}`;
+
+    // Create enhanced structured data for better SEO
+    const educationalData = createEducationalContentStructuredData(
+      `${city.name} - ${city.region}`,
+      enhancedDescription,
+      `https://k2aihub.github.io/city/${city.slug}`
+    );
+
+    const faqData = createFAQStructuredData(city);
+    const breadcrumbData = createBreadcrumbStructuredData(city);
+    const placeData = createPlaceStructuredData(city);
+
+    // Combine all structured data
+    const combinedStructuredData = [
+      educationalData,
+      faqData,
+      breadcrumbData,
+      placeData
+    ];
 
     return {
-      title: `${city.name} - Địa Lý Việt Nam | ${city.region}`,
-      description: enhancedDescription.length > 160 ? enhancedDescription.substring(0, 157) + '...' : enhancedDescription,
-      keywords,
-      authors: [{ name: 'Địa Lý Việt Nam Team' }],
-      creator: 'Nền Tảng Thông Tin Tương Tác',
-      publisher: 'Địa Lý Việt Nam',
+      title: createTitle(`${city.name} - ${city.region} | Địa Lý Việt Nam`),
+      description: createDescription(enhancedDescription.length > 150 ? enhancedDescription.substring(0, 147) + '...' : enhancedDescription),
+      keywords: createKeywords(cityKeywords),
+      authors: [{ name: 'K2AiHub Team' }],
+      creator: 'K2AiHub',
+      publisher: 'K2AiHub',
       formatDetection: {
         email: false,
         address: false,
@@ -122,30 +129,30 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
       openGraph: {
         type: 'article',
         locale: 'vi_VN',
-        url: `/city/${city.slug}`,
-        title: `${city.name} - Khám Phá ${city.region}`,
-        description: city.description,
-        siteName: 'Địa Lý Việt Nam',
+        url: `https://k2aihub.github.io/city/${city.slug}`,
+        title: createTitle(`${city.name} - Khám Phá ${city.region}`),
+        description: createDescription(city.description),
+        siteName: 'K2AiHub',
         images: [
           {
-            url: '/ban-do-viet-nam-34-tinh.jpg',
+            url: 'https://k2aihub.github.io/ban-do-viet-nam-34-tinh.jpg',
             width: 1200,
             height: 630,
-            alt: `Bản đồ Việt Nam - Vị trí ${city.name}`,
+            alt: `Địa Lý Việt Nam - Vị trí ${city.name} | K2AiHub`,
           },
         ],
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${city.name} - ${city.region}`,
-        description: city.description.substring(0, 200),
-        images: ['/ban-do-viet-nam-34-tinh.jpg'],
+        title: createTitle(`${city.name} - ${city.region}`),
+        description: createDescription(city.description.substring(0, 150)),
+        images: ['https://k2aihub.github.io/ban-do-viet-nam-34-tinh.jpg'],
       },
       alternates: {
-        canonical: `/city/${city.slug}`,
+        canonical: `https://k2aihub.github.io/city/${city.slug}`,
       },
       other: {
-        'structured-data': JSON.stringify(structuredData),
+        'structured-data': JSON.stringify(combinedStructuredData),
       },
     };
   } catch (error) {
