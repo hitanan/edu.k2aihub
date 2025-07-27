@@ -21,7 +21,7 @@ export const citiesData: City[] = [
         description:
           'Di sản văn hóa thế giới UNESCO, nơi từng là trung tâm quyền lực của các triều đại phong kiến Việt Nam trong hơn 1.000 năm.',
         imageUrl:
-          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Ba Đình, Hà Nội'
       },
       {
@@ -37,8 +37,8 @@ export const citiesData: City[] = [
         description:
           'Biểu tượng của Hà Nội với tháp Rùa và đền Ngọc Sơn, nơi lưu giữ truyền thuyết thanh gươm thiêng.',
         imageUrl:
-          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-        location: 'Quận Hoàn Kiếm, Hà Nội'
+          'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        location: 'Quận Hoàn Kiếm, Hà Nối'
       },
       {
         name: 'Phố Cổ Hà Nội',
@@ -1513,7 +1513,7 @@ export const citiesData: City[] = [
         description:
           'Di sản văn hóa thế giới UNESCO, cung điện hoàng gia của 13 vị vua triều Nguyễn với kiến trúc cung đình độc đáo.',
         imageUrl:
-          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Phường Thuận Thành, TP Huế'
       },
       {
@@ -1638,7 +1638,7 @@ export const citiesData: City[] = [
         description:
           'Cây cầu biểu tượng của Đà Nẵng với thiết kế hình rồng độc đáo, có thể phun lửa và nước vào cuối tuần.',
         imageUrl:
-          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Hải Châu, Đà Nẵng'
       }
     ],
@@ -2180,7 +2180,7 @@ export const citiesData: City[] = [
         description:
           'Cung điện Tổng thống Việt Nam Cộng Hòa, nơi diễn ra sự kiện lịch sử thống nhất đất nước ngày 30/4/1975.',
         imageUrl:
-          'https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận 1, TP.HCM'
       },
       {

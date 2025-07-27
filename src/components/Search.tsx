@@ -186,9 +186,10 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
                         <div className="flex items-center gap-2">
                           <span className="font-medium text-gray-900">{city.name}</span>
                           <span className="text-xs text-gray-500">#{city.code}</span>
+                          <span className="text-xs text-gray-500">{ `- Vùng ${city.region}`}</span>
                         </div>
                         <div className="text-sm text-gray-600 mt-1">
-                          {city.region}
+                          
                           {city.oldNames.length > 1 && (
                             <span className="ml-2 text-gray-400">
                               • Bao gồm: {city.oldNames.slice(1).join(', ')}
