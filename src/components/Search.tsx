@@ -34,11 +34,21 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
     }
 
     const filtered = cities.filter(city => {
-      return (
+      // Search in city name, old names, and region
+      const basicMatches = (
         matchVietnameseText(city.name, searchTerm) ||
         city.oldNames.some(oldName => matchVietnameseText(oldName, searchTerm)) ||
         matchVietnameseText(city.region, searchTerm)
       );
+
+      // Search in tourist attractions
+      const attractionMatches = city.touristAttractions?.some(attraction => 
+        matchVietnameseText(attraction.name, searchTerm) ||
+        matchVietnameseText(attraction.description, searchTerm) ||
+        (attraction.location && matchVietnameseText(attraction.location, searchTerm))
+      ) || false;
+
+      return basicMatches || attractionMatches;
     });
 
     setFilteredCities(filtered);
@@ -100,12 +110,24 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
   };
 
   const displayCities = searchTerm.trim() === '' ? cities : filteredCities;
-  const resultText = searchTerm.trim() === '' 
+  
+  // Check if search results include attraction matches
+  const hasAttractionMatches = searchTerm.trim() !== '' && filteredCities.some(city => 
+    city.touristAttractions?.some(attraction => 
+      matchVietnameseText(attraction.name, searchTerm) ||
+      matchVietnameseText(attraction.description, searchTerm) ||
+      (attraction.location && matchVietnameseText(attraction.location, searchTerm))
+    )
+  );
+
+  const enhancedResultText = searchTerm.trim() === '' 
     ? `Tất cả ${cities.length} tỉnh thành` 
-    : `Tìm thấy ${filteredCities.length} kết quả`;
+    : hasAttractionMatches 
+      ? `Tìm thấy ${filteredCities.length} kết quả (bao gồm địa điểm du lịch)`
+      : `Tìm thấy ${filteredCities.length} kết quả`;
 
   return (
-    <div ref={containerRef} className="relative md:w-1/3">
+    <div ref={containerRef} className="relative">
       {/* Search Input */}
       <div className="relative">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -116,7 +138,7 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
         <input
           ref={inputRef}
           type="text"
-          placeholder="Tìm kiếm thành phố, vùng miền hoặc tên cũ..."
+          placeholder="Tìm kiếm thành phố, địa điểm du lịch, vùng miền..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={handleInputFocus}
@@ -141,7 +163,7 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
           {displayCities.length > 0 ? (
             <div className="py-2">
               <div className="px-4 py-2 text-sm text-gray-500 border-b border-gray-100 sticky top-0 bg-white">
-                {resultText}
+                {enhancedResultText}
                 {searchTerm.trim() === '' && (
                   <span className="ml-2 text-blue-600 font-medium">
                     (Nhấp để chọn thành phố)
@@ -176,6 +198,29 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
                         <div className="text-xs text-gray-500 mt-1">
                           Dân số: {city.population} • Diện tích: {city.area}
                         </div>
+                        {/* Tourist Attractions */}
+                        {city.touristAttractions && city.touristAttractions.length > 0 && (
+                          <div className="mt-2 pt-2 border-t border-gray-100">
+                            <div className="text-xs text-blue-600 font-medium mb-1">
+                              🏛️ Địa điểm nổi tiếng ({city.touristAttractions.length}):
+                            </div>
+                            <div className="flex flex-wrap gap-1">
+                              {city.touristAttractions.slice(0, 3).map((attraction, index) => (
+                                <span 
+                                  key={index}
+                                  className="inline-block text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full border border-blue-200"
+                                >
+                                  {attraction.name}
+                                </span>
+                              ))}
+                              {city.touristAttractions.length > 3 && (
+                                <span className="inline-block text-xs text-gray-500 px-2 py-1">
+                                  +{city.touristAttractions.length - 3} khác
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </button>
@@ -188,7 +233,7 @@ const Search: React.FC<SearchProps> = ({ cities, onFilterChange, onCitySelect })
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.034 0-3.9.785-5.291 2.09m6.582 0A7.962 7.962 0 0118 15c2.034 0 3.9.785 5.291 2.09M15 11V9a6 6 0 00-12 0v2c0 .558.45 1.01 1 1.01h10c.55 0 1-.452 1-1.01z" />
               </svg>
               <p>Không tìm thấy thành phố nào với từ khóa &quot;{searchTerm}&quot;</p>
-              <p className="text-sm mt-1">Thử tìm kiếm tên thành phố, vùng miền hoặc tên tỉnh cũ</p>
+              <p className="text-sm mt-1">Thử tìm kiếm tên thành phố, địa điểm du lịch, vùng miền hoặc tên tỉnh cũ</p>
             </div>
           )}
         </div>

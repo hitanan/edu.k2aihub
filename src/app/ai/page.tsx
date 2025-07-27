@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
-import { HomeIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "AI Của Tôi - Hướng Dẫn Sử Dụng AI Thực Tế",
@@ -69,41 +68,6 @@ export default function AIModule() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-3">
-              <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center text-white text-sm">
-                  <HomeIcon />
-                </div>
-                <h1 className="text-xl font-bold text-gray-900">
-                  AI Của Tôi
-                </h1>
-              </Link>
-              <nav className="hidden md:flex items-center gap-1 ml-6">
-                <Link href="/" className="text-gray-500 hover:text-gray-700 text-sm">
-                  Trang Chủ
-                </Link>
-                <span className="text-gray-300 mx-2">/</span>
-                <span className="text-gray-900 text-sm font-medium">
-                  AI Của Tôi
-                </span>
-              </nav>
-            </div>
-            <nav className="flex items-center gap-6">
-              <Link
-                href="/feedback"
-                className="px-3 py-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium"
-              >
-                💬 Góp Ý & Phản Hồi
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -230,29 +194,6 @@ export default function AIModule() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl flex items-center justify-center text-xl">
-                🤖
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold mb-4">AI Của Tôi</h3>
-            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              Cung cấp kiến thức và hướng dẫn thực tế để bạn có thể tận dụng tối đa sức mạnh của AI 
-              trong công việc và cuộc sống hàng ngày.
-            </p>
-            <div className="flex justify-center space-x-6 text-sm text-gray-400">
-              <span>© 2025 AI Của Tôi</span>
-              <span>•</span>
-              <span>Hướng dẫn thực hành AI cho người Việt</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -1,3 +1,10 @@
+export interface TouristAttraction {
+  name: string;
+  description: string;
+  imageUrl: string;
+  location?: string;
+}
+
 export interface City {
   id: number;
   code: string;
@@ -14,6 +21,7 @@ export interface City {
   area: string;
   description: string;
   fullPageContent?: string;
+  touristAttractions?: TouristAttraction[];
 }
 
 export interface ContactForm {

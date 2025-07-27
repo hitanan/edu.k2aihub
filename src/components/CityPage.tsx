@@ -7,6 +7,7 @@ import { createSlug } from '@/utils/slug';
 import { useRouter } from 'next/navigation';
 import { preloadCriticalResources, optimizeImageLoading } from '@/utils/performance';
 import CityStructuredData from '@/components/CityStructuredData';
+import TouristAttractionsSlider from '@/components/TouristAttractionsSlider';
 
 // Lazy load the VietnamMap component for better performance
 const VietnamMap = lazy(() => import('@/components/VietnamMap'));
@@ -122,36 +123,6 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
       {/* Structured Data for SEO */}
       <CityStructuredData city={city} />
       
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-3">
-              <button onClick={handleBackToMap} className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-green-600 rounded-lg"></div>
-                <h1 className="text-xl font-bold text-gray-900">
-                  Địa Lý Việt Nam
-                </h1>
-              </button>
-            </div>
-            <nav className="flex items-center gap-4">
-              <button
-                onClick={handleBackToMap}
-                className="px-3 py-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium"
-              >
-                ← Về Bản Đồ
-              </button>
-              <button
-                onClick={handleShare}
-                className="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
-              >
-                Chia Sẻ
-              </button>
-            </nav>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
@@ -301,6 +272,13 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
           </div>
         </div>
 
+        {/* Tourist Attractions */}
+        {city.touristAttractions && city.touristAttractions.length > 0 && (
+          <div className="mt-8">
+            <TouristAttractionsSlider attractions={city.touristAttractions} />
+          </div>
+        )}
+
         {/* Related Cities */}
         <div className="mt-12">
           <h2 className="text-xl font-semibold text-gray-800 mb-6">
@@ -332,20 +310,6 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center">
-            <p className="text-gray-600 mb-2">
-              Địa Lý Việt Nam - Ứng Dụng Giáo Dục cho 34 Đơn Vị Hành Chính Cấp Tỉnh
-            </p>
-            <p className="text-sm text-gray-500">
-              © 2025 K2 AI Hub
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 });
