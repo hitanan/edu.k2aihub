@@ -2,8 +2,54 @@
 
 import React from 'react';
 import Link from 'next/link';
+import StructuredData from '@/components/StructuredData';
 
 export default function Home() {
+  const websiteStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "K2AiHub",
+    "alternateName": "K2 AI Hub - Nền Tảng Giáo Dục Tương Tác",
+    "description": "Nền tảng giáo dục tương tác với hai module chính: Địa Lý Việt Nam (34 tỉnh thành) và AI Của Tôi (hướng dẫn sử dụng AI thực tế)",
+    "url": "https://k2aihub.github.io",
+    "sameAs": [
+      "https://github.com/k2aihub"
+    ],
+    "educationalUse": ["learning", "research", "reference"],
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "student"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "K2AiHub Team"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Educational Modules",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "name": "Địa Lý Việt Nam",
+          "description": "Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác",
+          "provider": {
+            "@type": "Organization", 
+            "name": "K2AiHub"
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "AI Của Tôi",
+          "description": "Hướng dẫn sử dụng AI hiệu quả trong công việc và cuộc sống hàng ngày",
+          "provider": {
+            "@type": "Organization",
+            "name": "K2AiHub"
+          }
+        }
+      ]
+    }
+  };
+
   const modules = [
     {
       title: 'Địa Lý Việt Nam',
@@ -25,6 +71,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <StructuredData data={websiteStructuredData} />
+      
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

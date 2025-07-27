@@ -43,7 +43,6 @@ export default function PerformanceOptimizer({
         ))}
 
         {/* Critical resource hints */}
-        <link rel="preload" href="/ban-do-34-tinh-thanh.jpg" as="image" />
         <link rel="preload" href="/ban-do-viet-nam-34-tinh.jpg" as="image" />
         
         {/* Performance hints for images */}

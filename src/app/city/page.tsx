@@ -6,9 +6,11 @@ import VietnamMap from '@/components/VietnamMap';
 import CityInfo from '@/components/CityInfo';
 import Search from '@/components/Search';
 import LoadingSpinner from '@/components/LoadingSpinner';
+import FAQ from '@/components/FAQ';
 import { City } from '@/types';
 import citiesData from '@/data/cities';
 import { HomeIcon } from "lucide-react";
+
 
 export default function CityModule() {
   const [cities, setCities] = useState<City[]>([]);
@@ -16,6 +18,29 @@ export default function CityModule() {
   const [hoveredCity, setHoveredCity] = useState<City | null>(null);
   const [filteredCities, setFilteredCities] = useState<City[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const faqItems = [
+    {
+      question: "Việt Nam có bao nhiều tỉnh thành?",
+      answer: "Việt Nam hiện có 34 đơn vị hành chính cấp tỉnh, bao gồm 19 tỉnh và 15 thành phố trực thuộc trung ương. Đây là kết quả sau quá trình sắp xếp lại đơn vị hành chính."
+    },
+    {
+      question: "Làm thế nào để tìm kiếm thông tin về một tỉnh thành?",
+      answer: "Bạn có thể sử dụng thanh tìm kiếm ở trên để nhập tên tỉnh thành hoặc nhấp trực tiếp vào bản đồ tương tác. Hệ thống hỗ trợ tìm kiếm cả tên hiện tại và tên cũ của các tỉnh thành."
+    },
+    {
+      question: "Thông tin trên trang web này có chính xác không?",
+      answer: "Tất cả thông tin được thu thập từ các nguồn chính thức và cập nhật thường xuyên. Chúng tôi luôn nỗ lực đảm bảo độ chính xác cao nhất cho dữ liệu về dân số, diện tích và các thông tin khác."
+    },
+    {
+      question: "Có thể tải xuống thông tin này không?",
+      answer: "Hiện tại chúng tôi cung cấp tính năng chia sẻ thông tin qua các nền tảng xã hội. Tính năng tải xuống dữ liệu sẽ được cập nhật trong phiên bản tiếp theo."
+    },
+    {
+      question: "Làm thế nào để góp ý hoặc báo lỗi?",
+      answer: "Bạn có thể sử dụng trang 'Góp Ý & Phản Hồi' để gửi ý kiến, đề xuất hoặc báo cáo lỗi. Chúng tôi rất trân trọng mọi phản hồi từ người dùng."
+    }
+  ];
 
   useEffect(() => {
     // Use static data instead of dynamic imports
@@ -77,7 +102,6 @@ export default function CityModule() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
               <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-green-600 rounded-lg"><HomeIcon /></div>
                 <h1 className="text-xl font-bold text-gray-900">
                   Địa Lý Việt Nam
                 </h1>
@@ -174,6 +198,14 @@ export default function CityModule() {
             <div className="text-3xl font-bold text-orange-600 mb-2">102 Triệu</div>
             <div className="text-sm text-gray-600">Tổng Dân Số</div>
           </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-16">
+          <FAQ 
+            items={faqItems}
+            title="Câu Hỏi Thường Gặp về Địa Lý Việt Nam"
+          />
         </div>
       </main>
 

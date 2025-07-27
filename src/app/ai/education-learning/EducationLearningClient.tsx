@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import ShareButton from '@/components/ShareButton';
 
 export default function EducationLearningClient() {
   const [activeSection, setActiveSection] = useState('chatgpt-learning');
@@ -300,6 +301,10 @@ Provide:
                 </span>
               </nav>
             </div>
+            <ShareButton 
+              title="AI cho Giáo Dục & Học Tập | K2AiHub"
+              description="ChatGPT làm gia sư cá nhân, AI research assistant, kỹ thuật học tập và chuẩn bị thi cử với AI"
+            />
           </div>
         </div>
       </header>

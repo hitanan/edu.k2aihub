@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
+import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 
 export const metadata: Metadata = {
-  title: "AI Của Tôi - Hướng Dẫn Sử Dụng AI Thực Tế",
-  description: "Học cách sử dụng AI hiệu quả trong công việc và cuộc sống. Hướng dẫn chi tiết về ChatGPT, Midjourney, GitHub Copilot và các công cụ AI phổ biến khác.",
-  keywords: "AI, trí tuệ nhân tạo, ChatGPT, Midjourney, GitHub Copilot, AI tools, hướng dẫn AI, AI Việt Nam",
-  authors: [{ name: "AI Của Tôi Team" }],
+  title: createTitle("AI Của Tôi - Hướng Dẫn Sử Dụng AI Thực Tế"),
+  description: createDescription("Học cách sử dụng AI hiệu quả trong công việc và cuộc sống. Hướng dẫn chi tiết về ChatGPT, Midjourney, GitHub Copilot và các công cụ AI phổ biến khác"),
+  keywords: createKeywords(["AI", "trí tuệ nhân tạo", "ChatGPT", "Midjourney", "GitHub Copilot", "AI tools", "hướng dẫn AI", "AI Việt Nam"]),
+  authors: [{ name: "K2AiHub Team" }],
   openGraph: {
-    title: "AI Của Tôi - Hướng Dẫn AI Thực Tế",
-    description: "Khám phá và học cách sử dụng AI trong 6 lĩnh vực: Công việc, Sáng tạo, Giáo dục, Kinh doanh, Đời sống và Lập trình",
+    title: createTitle("AI Của Tôi - Hướng Dẫn AI Thực Tế"),
+    description: createDescription("Khám phá và học cách sử dụng AI trong 6 lĩnh vực: Công việc, Sáng tạo, Giáo dục, Kinh doanh, Đời sống và Lập trình"),
     type: "website",
   },
 };

@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import ShareButton from '@/components/ShareButton';
 
 export default function ProgrammingDevClient() {
   const [activeSection, setActiveSection] = useState('ai-tools-comparison');
@@ -334,6 +335,10 @@ Suggest refactoring strategies for each issue found."`,
                 </span>
               </nav>
             </div>
+            <ShareButton 
+              title="AI cho Lập Trình & Phát Triển | K2AiHub"
+              description="So sánh GitHub Copilot, Cursor IDE, ChatGPT và các AI coding tools. Kỹ thuật nâng cao cho senior developers"
+            />
           </div>
         </div>
       </header>

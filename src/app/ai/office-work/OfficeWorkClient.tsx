@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import ShareButton from '@/components/ShareButton';
 
 export default function OfficeWorkClient() {
   const [activeSection, setActiveSection] = useState('chatgpt-email');
@@ -168,6 +169,10 @@ export default function OfficeWorkClient() {
                 </span>
               </nav>
             </div>
+            <ShareButton 
+              title="AI cho Văn Phòng & Công Việc | K2AiHub"
+              description="ChatGPT cho email chuyên nghiệp, Excel automation với AI, AI-powered presentations và smart time management"
+            />
           </div>
         </div>
       </header>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import ShareButton from '@/components/ShareButton';
 
 export default function BusinessMarketingClient() {
   const [activeSection, setActiveSection] = useState('content-marketing');
@@ -369,6 +370,10 @@ Include persuasive language and risk mitigation."`
                 </span>
               </nav>
             </div>
+            <ShareButton 
+              title="AI cho Kinh Doanh & Marketing | K2AiHub"
+              description="Ứng dụng AI trong marketing và kinh doanh: tạo content marketing, AI customer service, market research và sales optimization với công cụ AI"
+            />
           </div>
         </div>
       </header>

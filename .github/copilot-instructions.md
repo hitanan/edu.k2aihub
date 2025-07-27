@@ -2,6 +2,10 @@
 
 A modern, professional Next.js educational platform featuring two comprehensive modules: **Vietnam Geography** and **AI Của Tôi** (Practical AI Guide).
 
+## 📚 Complete Documentation
+
+**Primary Documentation**: [**K2AiHub.md**](../docs/K2AiHub.md) - The comprehensive source of truth for all features, technical specifications, and development guidelines.
+
 ## Project Overview
 
 This is a complete educational web application with two main modules designed to provide interactive learning experiences using modern technology.
@@ -18,11 +22,14 @@ An interactive educational tool covering Vietnam's administrative restructuring 
 - ✅ Comprehensive city information with statistics and historical data
 - ✅ Share functionality for each city
 - ✅ Mobile-responsive design with touch interactions
+- ✅ Regional exploration pages (9 regions)
+- ✅ FAQ system with structured data
 
 #### Technical Implementation:
 
 - **Map Component**: `src/components/VietnamMap.tsx` - Interactive SVG with state management
 - **City Pages**: `src/app/city/[slug]/page.tsx` - Dynamic routing with static generation
+- **Region Pages**: `src/app/region/[slug]/page.tsx` - Regional exploration and statistics
 - **Search**: `src/components/Search.tsx` - Real-time filtering with auto-close functionality
 - **Data**: `src/data/cities.ts` - Comprehensive city database with merger information
 - **Performance**: O(1) city lookups, lazy loading, memoization, static generation
@@ -152,12 +159,13 @@ src/
 - **Performance**: Optimize bundle size and loading times
 - **Accessibility**: WCAG compliance and keyboard navigation
 - **Mobile-First**: Responsive design across all devices
+- **SEO Optimization**: Implement dynamic metadata (createTitle, createDescription, createKeywords), structured data, and social sharing
 
 ### Navigation:
 
 - **Next.js Router**: Use `useRouter` for client-side navigation
 - **Static Links**: Use Next.js `Link` component for optimal performance
-- **SEO URLs**: Implement proper slug generation for city pages
+- **SEO URLs**: Implement proper slug generation for dynamic pages
 
 ## Deployment Configuration
 
@@ -171,7 +179,7 @@ src/
 ### Build Process:
 
 ```bash
-npm run build    # Production build with static generation
+npm run build    # Production build with static generation, must set NODE_ENV=production before running
 npm run start    # Production server (for testing)
 npm run dev      # Development with turbopack
 npm run lint     # Code quality checks
@@ -206,9 +214,10 @@ npm run lint     # Code quality checks
 
 1. **Maintain Current Architecture**: Keep server/client component separation
 2. **Performance First**: Always consider loading times and bundle size
-3. **SEO Optimization**: Ensure all new pages have proper metadata
+3. **SEO Optimization**: Ensure all new pages have proper dynamic metadata (createTitle, createDescription, createKeywords)
 4. **Mobile Experience**: Test all features on mobile devices
 5. **Type Safety**: Use TypeScript for all new components
 6. **Error Handling**: Implement proper error boundaries and fallbacks
+7. **Documentation Requirement**: **ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.**
 
 This is a production-ready application optimized for GitHub Pages deployment with comprehensive educational content, modern performance optimizations, and excellent SEO implementation.

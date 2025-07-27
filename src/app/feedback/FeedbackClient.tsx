@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import FeedbackForm from '@/components/FeedbackForm';
+import ShareButton from '@/components/ShareButton';
 
 export default function FeedbackClient() {
   return (
@@ -30,6 +31,10 @@ export default function FeedbackClient() {
                 </span>
               </nav>
             </div>
+            <ShareButton 
+              title="Góp Ý & Phản Hồi | K2AiHub"
+              description="Gửi góp ý, đề xuất và phản hồi để chúng tôi cải thiện nền tảng giáo dục K2AiHub"
+            />
           </div>
         </div>
       </header>

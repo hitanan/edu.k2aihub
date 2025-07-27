@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import ShareButton from '@/components/ShareButton';
 
 export default function CreativeDesignClient() {
   const [activeSection, setActiveSection] = useState('midjourney-basics');
@@ -236,6 +237,10 @@ Creative applications: social media, presentations, marketing`
                 </span>
               </nav>
             </div>
+            <ShareButton 
+              title="AI cho Sáng Tạo & Thiết Kế | K2AiHub"
+              description="Midjourney cho image generation, Canva AI Magic Studio, AI content writing và photo editing với AI"
+            />
           </div>
         </div>
       </header>

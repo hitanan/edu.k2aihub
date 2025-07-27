@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import ShareButton from '@/components/ShareButton';
 
 
 export default function DailyLifeClient() {
@@ -385,6 +386,10 @@ Create:
                 </span>
               </nav>
             </div>
+            <ShareButton 
+              title="AI cho Cuộc Sống Hàng Ngày | K2AiHub"
+              description="Lập kế hoạch ăn uống, quản lý nhà cửa, lên kế hoạch du lịch và quản lý tài chính cá nhân với AI"
+            />
           </div>
         </div>
       </header>

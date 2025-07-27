@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: createDescription("Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và thông tin chi tiết về kinh tế, văn hóa, lịch sử. AI Của Tôi giúp bạn hiểu và áp dụng AI trong công việc và cuộc sống hàng ngày"),
     images: [
       {
-        url: '/ban-do-34-tinh-thanh.jpg',
+        url: '/ban-do-viet-nam-34-tinh.jpg',
         width: 1200,
         height: 630,
         alt: 'Bản đồ 34 tỉnh thành Việt Nam - K2AiHub',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: createTitle("Nền Tảng Thông Tin Tương Tác, Địa Lý Việt Nam, AI Của Tôi"),
     description: createDescription("Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác"),
-    images: ['/ban-do-34-tinh-thanh.jpg'],
+    images: ['/ban-do-viet-nam-34-tinh.jpg'],
   },
   alternates: {
     canonical: 'https://k2aihub.github.io',
