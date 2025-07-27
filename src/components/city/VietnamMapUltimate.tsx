@@ -8,7 +8,6 @@ interface VietnamMapUltimateProps {
   selectedCity: City | null;
   onCityClick: (city: City) => void;
   onCityHover: (city: City | null) => void;
-  filteredCities: City[];
 }
 
 const VietnamMapUltimate: React.FC<VietnamMapUltimateProps> = ({
@@ -16,7 +15,6 @@ const VietnamMapUltimate: React.FC<VietnamMapUltimateProps> = ({
   selectedCity,
   onCityClick,
   onCityHover,
-  filteredCities
 }) => {
   const [svgContent, setSvgContent] = React.useState<string>('');
   const [processedSvgContent, setProcessedSvgContent] = React.useState<string>('');

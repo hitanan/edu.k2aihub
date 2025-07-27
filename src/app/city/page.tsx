@@ -166,7 +166,7 @@ export default function CityModule() {
 
           {/* Info Section */}
           <div>
-            <CityInfo city={selectedCity} />
+            <CityInfo city={selectedCity} hoveredCity={hoveredCity} />
           </div>
         </div>
 
@@ -180,10 +180,13 @@ export default function CityModule() {
             <div className="text-3xl font-bold text-green-600 mb-2">6</div>
             <div className="text-sm text-gray-600">Thành Phố Lớn</div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">9</div>
-            <div className="text-sm text-gray-600">Vùng Miền</div>
-          </div>
+          <Link href="/region" className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-md hover:border-purple-300 transition-all duration-200 group">
+            <div className="text-3xl font-bold text-purple-600 mb-2 group-hover:text-purple-700">9</div>
+            <div className="text-sm text-gray-600 group-hover:text-purple-600 font-medium">Vùng Miền</div>
+            <div className="text-xs text-purple-500 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              Khám phá các vùng →
+            </div>
+          </Link>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
             <div className="text-3xl font-bold text-orange-600 mb-2">102 Triệu</div>
             <div className="text-sm text-gray-600">Tổng Dân Số</div>
@@ -198,20 +201,20 @@ export default function CityModule() {
           />
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center">
-            <p className="text-gray-600 mb-2">
-              Địa Lý Việt Nam - Ứng Dụng Giáo Dục cho 34 Đơn Vị Hành Chính Cấp Tỉnh
-            </p>
-            <p className="text-sm text-gray-500">
-              © 2025 K2 AI Hub
-            </p>
-          </div>
+       {/* Additional info */}
+        <div className="mt-8 pt-8 text-center text-xs text-gray-500">
+          <p>
+            Dữ liệu địa lý được cập nhật theo{' '}
+            <Link
+              href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300"
+            >
+              sáp nhập tỉnh thành 2025
+            </Link>
+          </p>
         </div>
-      </footer>
     </div>
   );
 }

@@ -53,24 +53,25 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
     loadSvg();
   }, []);
 
-  // Get path color based on state and filters
+  // Simplified color mapping for better visual appeal
   const getPathColor = React.useCallback((citySlug: string): string => {
     const city = cityLookup.get(citySlug);
     if (!city) return '#9CA3AF';
 
     if (selectedCity?.slug === citySlug) {
-      return '#D97706'; // Yellow-brown for selected
+      return '#DC2626'; // Vibrant red for selected
     }
     
     if (hoveredCity === citySlug) {
-      return '#FCD34D'; // Yellow for hover
+      return '#F59E0B'; // Bright amber for hover
     }
     
     if (filteredCities.length > 0 && !isHighlighted(city)) {
-      return '#E5E7EB'; // Light gray for non-highlighted when filtering
+      return '#F3F4F6'; // Very light gray for non-highlighted when filtering
     }
     
-    return '#6B7280'; // Default gray
+    // Simple default color scheme
+    return '#6B7280'; // Clean gray for all cities
   }, [selectedCity, hoveredCity, filteredCities, cityLookup, isHighlighted]);
 
   // Process SVG content with DOM parsing and reordering
@@ -198,8 +199,8 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
           onCityHover(city);
           
           // Apply hover styling
-          target.setAttribute('fill', '#FCD34D');
-          target.setAttribute('stroke', '#F59E0B');
+          target.setAttribute('fill', '#F59E0B');
+          target.setAttribute('stroke', '#D97706');
           target.setAttribute('stroke-width', '1.5');
         }
       }
@@ -209,14 +210,15 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
       const target = event.target as SVGElement;
       if (target.tagName === 'path' && target.hasAttribute('data-city-slug')) {
         const citySlug = target.getAttribute('data-city-slug')!;
+        
         setHoveredCity(null);
         onCityHover(null);
         
         // Reset styling
         const isSelected = selectedCity?.slug === citySlug;
         if (isSelected) {
-          target.setAttribute('fill', '#D97706');
-          target.setAttribute('stroke', '#B45309');
+          target.setAttribute('fill', '#DC2626');
+          target.setAttribute('stroke', '#B91C1C');
           target.setAttribute('stroke-width', '2');
         } else {
           target.setAttribute('fill', getPathColor(citySlug));

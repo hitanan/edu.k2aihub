@@ -87,18 +87,14 @@ export default function Home() {
               <span className="block text-blue-300">Nền Tảng Thông Tin Tương Tác</span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Khám phá kiến thức qua các module học tập hiện đại, tương tác và thú vị. 
-              Học tập không còn là gánh nặng mà trở thành niềm đam mê.
+              Khám phá kiến thức qua các module học tập hiện đại, thú vị.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
                 ✨ Tương Tác Cao
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-                🎯 Học Theo Cấp Độ
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-                📱 Responsive Design
+                🎯 Nội dung Đa Dạng 
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
                 🚀 Công Nghệ Hiện Đại
@@ -110,16 +106,6 @@ export default function Home() {
 
       {/* Modules Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Các Module Học Tập
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Chọn module phù hợp với nhu cầu học tập của bạn. Mỗi module được thiết kế 
-            với phương pháp giảng dạy hiện đại và công nghệ tương tác cao.
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {modules.map((module, index) => (
             <div key={index} className="group relative">
@@ -135,11 +121,29 @@ export default function Home() {
                     {module.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {module.stats.map((stat, statIndex) => (
-                      <span key={statIndex} className="bg-blue-50 text-blue-600 text-sm px-3 py-1 rounded-full">
-                        {stat}
-                      </span>
-                    ))}
+                    {module.stats.map((stat, statIndex) => {
+                      // Make "9 Vùng Miền" clickable for Vietnam Geography module
+                      if (stat === '9 Vùng Miền' && module.href === '/city') {
+                        return (
+                          <button 
+                            key={statIndex} 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              e.preventDefault();
+                              window.location.href = '/region';
+                            }}
+                            className="bg-purple-50 text-purple-600 text-sm px-3 py-1 rounded-full hover:bg-purple-100 hover:text-purple-700 transition-colors duration-200 cursor-pointer"
+                          >
+                            {stat} →
+                          </button>
+                        );
+                      }
+                      return (
+                        <span key={statIndex} className="bg-blue-50 text-blue-600 text-sm px-3 py-1 rounded-full">
+                          {stat}
+                        </span>
+                      );
+                    })}
                   </div>
                   <div className={`bg-gradient-to-r ${module.color} text-white px-6 py-3 rounded-xl text-center font-semibold group-hover:shadow-lg transition-shadow duration-300`}>
                     Khám Phá Ngay →
@@ -180,10 +184,10 @@ export default function Home() {
                 📊
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Theo Dõi Tiến Độ
+                Công Nghệ Hiện Đại
               </h3>
               <p className="text-gray-600">
-                Hệ thống theo dõi học tập chi tiết giúp bạn nắm rõ tiến độ và kế hoạch học tập hiệu quả
+                Sử dụng công nghệ AI và dữ liệu lớn để cá nhân hóa trải nghiệm học tập, giúp bạn học hiệu quả hơn
               </p>
             </div>
             <div className="text-center">

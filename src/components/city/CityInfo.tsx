@@ -9,9 +9,10 @@ import ShareButton from '@/components/ShareButton';
 
 interface CityInfoProps {
   city: City | null;
+  hoveredCity?: City | null;
 }
 
-const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
+const CityInfo: React.FC<CityInfoProps> = ({ city, hoveredCity }) => {
   const router = useRouter();
 
   const handleViewFullPage = () => {
@@ -19,7 +20,10 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
     router.push(`/city/${city.slug}`);
   };
 
-  if (!city) {
+  // Show hovered city info if hovering, otherwise show selected city
+  const displayCity = hoveredCity || city;
+
+  if (!displayCity) {
     return (
       <div className="p-6 bg-white rounded-lg shadow-sm border border-gray-200">
         <div className="text-center py-12">
@@ -48,32 +52,44 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
     );
   }
 
-  const paragraphs = city.description.split('. ');
+  const paragraphs = displayCity.description.split('. ');
   const para1 = paragraphs.slice(0, Math.ceil(paragraphs.length / 3)).join('. ');
   const para2 = paragraphs.slice(Math.ceil(paragraphs.length / 3), Math.ceil(2 * paragraphs.length / 3)).join('. ');
   const para3 = paragraphs.slice(Math.ceil(2 * paragraphs.length / 3)).join('. ');
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+      {/* Hover indicator */}
+      {hoveredCity && (
+        <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-amber-700">
+              Đang xem thông tin: {hoveredCity.name}
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div className="flex items-start justify-between mb-6">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
             <div 
               className="w-4 h-4 rounded-full" 
-              style={{ backgroundColor: city.color }}
+              style={{ backgroundColor: displayCity.color }}
             />
-            <span className="text-sm text-gray-500">Mã đơn vị hành chính: {city.code}</span>
+            <span className="text-sm text-gray-500">Mã đơn vị hành chính: {displayCity.code}</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-800 mb-1 hover:text-blue-800 cursor-pointer" onClick={handleViewFullPage}>
-            {city.name}
+            {displayCity.name}
           </h1>
           <p className="text-gray-600">
             Vùng miền: <Link 
-              href={`/region/${createRegionSlug(city.region)}`}
+              href={`/region/${createRegionSlug(displayCity.region)}`}
               className="text-blue-600 hover:text-blue-800 hover:underline"
             >
-              {city.region}
+              {displayCity.region}
             </Link>
           </p>
         </div>
@@ -88,7 +104,7 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
             </svg>
             <span className="text-sm font-medium text-blue-800">Dân số</span>
           </div>
-          <p className="text-lg font-bold text-blue-900">{city.population}</p>
+          <p className="text-lg font-bold text-blue-900">{displayCity.population}</p>
         </div>
         <div className="bg-green-50 p-4 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
@@ -97,18 +113,18 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
             </svg>
             <span className="text-sm font-medium text-green-800">Diện tích</span>
           </div>
-          <p className="text-lg font-bold text-green-900">{city.area}</p>
+          <p className="text-lg font-bold text-green-900">{displayCity.area}</p>
         </div>
       </div>
 
       {/* Former names */}
-      {city.oldNames.length > 0 && (
+      {displayCity.oldNames.length > 0 && (
         <div className="mb-6">
           <h3 className="text-sm font-semibold text-gray-700 mb-2">
             Bao gồm các tỉnh cũ:
           </h3>
           <div className="flex flex-wrap gap-2">
-            {city.oldNames.map((name, index) => (
+            {displayCity.oldNames.map((name, index) => (
               <span
                 key={index}
                 className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
@@ -123,7 +139,7 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
       {/* Description */}
       <div className="space-y-4">
         <h3 className="text-lg font-semibold text-gray-800">
-          Về {city.name}
+          Về {displayCity.name}
         </h3>
         
         <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -133,22 +149,24 @@ const CityInfo: React.FC<CityInfoProps> = ({ city }) => {
         </div>
       </div>
 
-      {/* Action buttons */}
-      <div className="mt-6 pt-6 border-t border-gray-200">
-        <div className="flex gap-3">
-          <button
-            onClick={handleViewFullPage}
-            className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium cursor-pointer"
-          >
-            Xem Trang Đầy Đủ
-          </button>
-          <ShareButton 
-            title={`${city.name} - Địa Lý Việt Nam | K2AiHub`}
-            description={`Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`}
-            url={typeof window !== 'undefined' ? `${window.location.origin}/city/${city.slug}` : ''}
-          />
+      {/* Action buttons - only show for selected city, not hovered */}
+      {!hoveredCity && city && (
+        <div className="mt-6 pt-6 border-t border-gray-200">
+          <div className="flex gap-3">
+            <button
+              onClick={handleViewFullPage}
+              className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium cursor-pointer"
+            >
+              Xem Trang Đầy Đủ
+            </button>
+            <ShareButton 
+              title={`${city.name} - Địa Lý Việt Nam | K2AiHub`}
+              description={`Tìm hiểu về ${city.name} - ${city.description.substring(0, 100)}...`}
+              url={typeof window !== 'undefined' ? `${window.location.origin}/city/${city.slug}` : ''}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

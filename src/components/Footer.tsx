@@ -18,10 +18,8 @@ const Footer: React.FC = () => {
       title: 'Địa Lý Việt Nam',
       links: [
         { name: '34 Tỉnh Thành', href: '/city' },
-        { name: 'Vùng Bắc Bộ', href: '/city?region=Bắc Bộ' },
-        { name: 'Vùng Trung Bộ', href: '/city?region=Trung Bộ' },
-        { name: 'Vùng Nam Bộ', href: '/city?region=Nam Bộ' },
-      ],
+        { name: '9 Vùng Miền', href: '/region' }
+      ]
     },
     {
       title: 'AI Của Tôi',
@@ -84,21 +82,6 @@ const Footer: React.FC = () => {
               Nền tảng thông tin tương tác về địa lý Việt Nam và AI, ..
             </p>
           </div>
-        </div>
-
-        {/* Additional info */}
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-          <p>
-            Dữ liệu địa lý được cập nhật theo{' '}
-            <Link
-              href="https://vi.wikipedia.org/wiki/S%C3%A1p_nh%E1%BA%ADp_t%E1%BB%89nh,_th%C3%A0nh_Vi%E1%BB%87t_Nam_2025"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300"
-            >
-              sáp nhập tỉnh thành 2025
-            </Link>
-          </p>
         </div>
       </div>
     </footer>
