@@ -9,8 +9,6 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import FAQ from '@/components/FAQ';
 import { City } from '@/types';
 import citiesData from '@/data/cities';
-import { HomeIcon } from "lucide-react";
-
 
 export default function CityModule() {
   const [cities, setCities] = useState<City[]>([]);

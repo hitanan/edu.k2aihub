@@ -71,7 +71,7 @@ function getCitiesByRegion(regionName: string) {
 }
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
@@ -81,7 +81,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const region = getRegionBySlug(params.slug);
+  const { slug } = await params;
+  const region = getRegionBySlug(slug);
   
   if (!region) {
     return {
