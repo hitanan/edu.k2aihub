@@ -3,6 +3,7 @@ export interface TouristAttraction {
   description: string;
   imageUrl: string;
   location?: string;
+  url?: string;
 }
 
 export interface City {

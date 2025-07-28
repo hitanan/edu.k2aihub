@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { TouristAttraction } from '@/types';
 
@@ -11,6 +11,12 @@ interface TouristAttractionsSliderProps {
 const TouristAttractionsSlider: React.FC<TouristAttractionsSliderProps> = ({ attractions }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  // Touch navigation constants
+  const minSwipeDistance = 50;
 
   useEffect(() => {
     if (!isAutoPlaying || attractions.length <= 1) return;
@@ -44,6 +50,31 @@ const TouristAttractionsSlider: React.FC<TouristAttractionsSliderProps> = ({ att
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
+  // Touch event handlers for mobile swipe navigation
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && attractions.length > 1) {
+      goToNext();
+    }
+    if (isRightSwipe && attractions.length > 1) {
+      goToPrevious();
+    }
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="p-6">
@@ -54,31 +85,75 @@ const TouristAttractionsSlider: React.FC<TouristAttractionsSliderProps> = ({ att
         
         <div className="relative">
           {/* Main slider */}
-          <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
+          <div 
+            className="relative h-64 md:h-80 rounded-lg overflow-hidden"
+            ref={sliderRef}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div 
               className="flex transition-transform duration-500 ease-in-out h-full"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {attractions.map((attraction, index) => (
                 <div key={index} className="min-w-full h-full relative">
-                  <Image
-                    src={attraction.imageUrl}
-                    alt={attraction.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/placeholder-attraction.svg';
-                    }}
-                  />
+                  {attraction.url ? (
+                    <a
+                      href={attraction.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <Image
+                        src={attraction.imageUrl}
+                        alt={attraction.name}
+                        fill
+                        className="object-cover transition-transform duration-300 hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/placeholder-attraction.svg';
+                        }}
+                      />
+                    </a>
+                  ) : (
+                    <Image
+                      src={attraction.imageUrl}
+                      alt={attraction.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = '/placeholder-attraction.svg';
+                      }}
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                    <h4 className="text-xl font-bold mb-2">{attraction.name}</h4>
-                    <p className="text-sm opacity-90 line-clamp-3">{attraction.description}</p>
-                    {attraction.location && (
-                      <p className="text-xs mt-1 opacity-75">📍 {attraction.location}</p>
-                    )}
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="text-xl font-bold mb-2">{attraction.name}</h4>
+                        <p className="text-sm opacity-90 line-clamp-3">{attraction.description}</p>
+                        {attraction.location && (
+                          <p className="text-xs mt-1 opacity-75">📍 {attraction.location}</p>
+                        )}
+                      </div>
+                      {attraction.url && (
+                        <a
+                          href={attraction.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-200"
+                          aria-label="Xem thêm thông tin"
+                        >
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -139,11 +214,29 @@ const TouristAttractionsSlider: React.FC<TouristAttractionsSliderProps> = ({ att
                 }`}
                 onClick={() => goToSlide(index)}
               >
-                <h5 className="font-semibold text-gray-800 mb-1">{attraction.name}</h5>
-                <p className="text-sm text-gray-600 line-clamp-2">{attraction.description}</p>
-                {attraction.location && (
-                  <p className="text-xs text-gray-500 mt-1">📍 {attraction.location}</p>
-                )}
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h5 className="font-semibold text-gray-800 mb-1">{attraction.name}</h5>
+                    <p className="text-sm text-gray-600 line-clamp-2">{attraction.description}</p>
+                    {attraction.location && (
+                      <p className="text-xs text-gray-500 mt-1">📍 {attraction.location}</p>
+                    )}
+                  </div>
+                  {attraction.url && (
+                    <a
+                      href={attraction.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-2 text-blue-600 hover:text-blue-800 p-1"
+                      aria-label="Xem thêm thông tin"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>

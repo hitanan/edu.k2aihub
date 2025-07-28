@@ -121,7 +121,7 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
         pathElement.setAttribute('fill', fillColor);
         pathElement.setAttribute('fill-opacity', opacity);
         pathElement.setAttribute('stroke', '#FFFFFF');
-        pathElement.setAttribute('stroke-width', '0.5');
+        pathElement.setAttribute('stroke-width', '1'); // Increased from 0.5 to match hover visibility
         pathElement.setAttribute('opacity', '1');
         pathElement.setAttribute('cursor', 'pointer');
         pathElement.setAttribute('data-city-slug', citySlug);
@@ -219,14 +219,44 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
         // Reset styling with consistent boundary handling
         const isSelected = selectedCity?.slug === citySlug;
         if (isSelected) {
-          target.setAttribute('fill', '#DC2626');
+          target.setAttribute('fill', '#D97706'); // Yellow-brown for selected
           target.setAttribute('stroke', '#FFFFFF'); // Keep white stroke for visibility
-          target.setAttribute('stroke-width', '1'); // Reduce stroke width to preserve boundary
+          target.setAttribute('stroke-width', '1.2'); // Slightly thicker for selected
         } else {
           target.setAttribute('fill', getPathColor(citySlug));
           target.setAttribute('stroke', '#FFFFFF');
-          target.setAttribute('stroke-width', '0.5');
+          target.setAttribute('stroke-width', '1'); // Thicker default stroke
         }
+      }
+    };
+
+    // Global mouse leave handler for the entire SVG container
+    const handleContainerMouseLeave = (event: MouseEvent) => {
+      // Check if mouse is really leaving the container (not just moving between child elements)
+      const rect = svgContainer.getBoundingClientRect();
+      const { clientX, clientY } = event;
+      
+      if (clientX < rect.left || clientX > rect.right || 
+          clientY < rect.top || clientY > rect.bottom) {
+        setHoveredCity(null);
+        onCityHover(null);
+        
+        // Reset all hover states
+        const allPaths = svgElement.querySelectorAll('path[data-city-slug]');
+        allPaths.forEach(path => {
+          const citySlug = path.getAttribute('data-city-slug')!;
+          const isSelected = selectedCity?.slug === citySlug;
+          
+          if (isSelected) {
+            path.setAttribute('fill', '#D97706'); // Yellow-brown for selected
+            path.setAttribute('stroke', '#FFFFFF');
+            path.setAttribute('stroke-width', '1.2'); // Thicker for selected
+          } else {
+            path.setAttribute('fill', getPathColor(citySlug));
+            path.setAttribute('stroke', '#FFFFFF');
+            path.setAttribute('stroke-width', '1'); // Thicker default stroke
+          }
+        });
       }
     };
 
@@ -234,11 +264,13 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
     svgElement.addEventListener('click', handleClick, true);
     svgElement.addEventListener('mouseover', handleMouseOver, true);
     svgElement.addEventListener('mouseout', handleMouseOut, true);
+    svgContainer.addEventListener('mouseleave', handleContainerMouseLeave, true);
 
     return () => {
       svgElement.removeEventListener('click', handleClick, true);
       svgElement.removeEventListener('mouseover', handleMouseOver, true);
       svgElement.removeEventListener('mouseout', handleMouseOut, true);
+      svgContainer.removeEventListener('mouseleave', handleContainerMouseLeave, true);
     };
   }, [processedSvgContent, cityLookup, onCityClick, onCityHover, selectedCity, getPathColor]);
 
@@ -258,11 +290,11 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
       if (isSelected) {
         path.setAttribute('fill', '#D97706'); // Yellow-brown for selected
         path.setAttribute('stroke', '#FFFFFF'); // White stroke for clear boundary
-        path.setAttribute('stroke-width', '1'); // Consistent stroke width to preserve boundary
+        path.setAttribute('stroke-width', '1.2'); // Thicker stroke for selected
       } else {
         path.setAttribute('fill', getPathColor(citySlug));
         path.setAttribute('stroke', '#FFFFFF');
-        path.setAttribute('stroke-width', '0.5');
+        path.setAttribute('stroke-width', '1'); // Thicker default stroke
       }
     });
   }, [selectedCity, getPathColor]);
