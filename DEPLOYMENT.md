@@ -1,6 +1,6 @@
 # Deployment Guide for GitHub Pages
 
-This guide will help you deploy the K2 AI Hub to GitHub Pages.
+This guide will help you deploy the K2AI Hub to GitHub Pages.
 
 ## Prerequisites
 

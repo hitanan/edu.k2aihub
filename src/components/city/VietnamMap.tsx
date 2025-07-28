@@ -61,7 +61,7 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
     if (!city) return '#9CA3AF';
 
     if (selectedCity?.slug === citySlug) {
-      return '#DC2626'; // Vibrant red for selected
+      return '#D97706'; // Yellow-brown for selected (consistent with styling)
     }
     
     if (hoveredCity === citySlug) {
@@ -216,12 +216,12 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
         setHoveredCity(null);
         onCityHover(null);
         
-        // Reset styling
+        // Reset styling with consistent boundary handling
         const isSelected = selectedCity?.slug === citySlug;
         if (isSelected) {
           target.setAttribute('fill', '#DC2626');
-          target.setAttribute('stroke', '#B91C1C');
-          target.setAttribute('stroke-width', '2');
+          target.setAttribute('stroke', '#FFFFFF'); // Keep white stroke for visibility
+          target.setAttribute('stroke-width', '1'); // Reduce stroke width to preserve boundary
         } else {
           target.setAttribute('fill', getPathColor(citySlug));
           target.setAttribute('stroke', '#FFFFFF');
@@ -249,16 +249,16 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
     const svgElement = svgRef.current.querySelector('svg');
     if (!svgElement) return;
 
-    // Reset all path styles
+    // Reset all path styles with consistent boundary preservation
     const allPaths = svgElement.querySelectorAll('path[data-city-slug]');
     allPaths.forEach(path => {
       const citySlug = path.getAttribute('data-city-slug')!;
       const isSelected = selectedCity?.slug === citySlug;
       
       if (isSelected) {
-        path.setAttribute('fill', '#D97706');
-        path.setAttribute('stroke', '#B45309');
-        path.setAttribute('stroke-width', '2');
+        path.setAttribute('fill', '#D97706'); // Yellow-brown for selected
+        path.setAttribute('stroke', '#FFFFFF'); // White stroke for clear boundary
+        path.setAttribute('stroke-width', '1'); // Consistent stroke width to preserve boundary
       } else {
         path.setAttribute('fill', getPathColor(citySlug));
         path.setAttribute('stroke', '#FFFFFF');

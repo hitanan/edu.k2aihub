@@ -138,7 +138,7 @@ export default function CityModule() {
                 Bản Đồ Tương Tác 34 Đơn Vị Hành Chính Cấp Tỉnh Việt Nam
               </h2>
               <p className="text-sm text-gray-600">
-                Nhấp vào thành phố để tìm hiểu thêm thông tin. 
+                Nhấp vào để xem thông tin. 
                 {hoveredCity && (
                   <span className="ml-2 font-medium text-blue-600">
                     Đang di chuột: {hoveredCity.name}

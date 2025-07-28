@@ -9,16 +9,18 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "K2AiHub",
-    "alternateName": "K2 AI Hub - Nền Tảng Giáo Dục Tương Tác",
+    "alternateName": "K2AI Hub - Nền Tảng Thông Tin Tương Tác",
     "description": "Nền tảng giáo dục tương tác với hai module chính: Địa Lý Việt Nam (34 tỉnh thành) và AI Của Tôi (hướng dẫn sử dụng AI thực tế)",
     "url": "https://k2aihub.com",
     "sameAs": [
       "https://k2aihub.com"
     ],
-    "educationalUse": ["learning", "research", "reference"],
+    "educationalUse": ["learning", "research", "reference", "interactive"],
+    "learningResourceType": ["interactive resource", "educational game", "tutorial"],
     "audience": {
       "@type": "EducationalAudience",
-      "educationalRole": "student"
+      "educationalRole": "student",
+      "audienceType": "general public"
     },
     "provider": {
       "@type": "Organization",
@@ -35,6 +37,27 @@ export default function Home() {
           "provider": {
             "@type": "Organization", 
             "name": "K2AiHub"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "Educational",
+            "price": "0",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "description": "Khóa học miễn phí về địa lý Việt Nam với bản đồ tương tác"
+          },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "courseWorkload": "PT2H",
+            "instructor": {
+              "@type": "Organization",
+              "name": "K2AiHub Team"
+            },
+            "teaches": "Địa lý Việt Nam, 34 tỉnh thành, văn hóa, kinh tế",
+            "inLanguage": "vi",
+            "isAccessibleForFree": true
           }
         },
         {
@@ -44,6 +67,27 @@ export default function Home() {
           "provider": {
             "@type": "Organization",
             "name": "K2AiHub"
+          },
+          "offers": {
+            "@type": "Offer",
+            "category": "Educational",
+            "price": "0",
+            "priceCurrency": "VND",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2024-01-01",
+            "description": "Khóa học miễn phí về ứng dụng AI thực tế trong cuộc sống"
+          },
+          "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "courseWorkload": "PT3H",
+            "instructor": {
+              "@type": "Organization",
+              "name": "K2AiHub Team"
+            },
+            "teaches": "AI thực tế, ChatGPT, công cụ AI, ứng dụng AI trong công việc",
+            "inLanguage": "vi",
+            "isAccessibleForFree": true
           }
         }
       ]
@@ -231,7 +275,7 @@ export default function Home() {
             </div>
             
             <div className="flex justify-center space-x-6 text-sm text-gray-400">
-              <span>© 2025 K2 AI Hub</span>
+              <span>© 2025 K2AI Hub</span>
               <span>•</span>
               <span>Được xây dựng với ❤️ và K2</span>
             </div>

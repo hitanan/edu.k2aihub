@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: createTitle('Interactive Information Platform for Vietnamese Education'),
+  title: createTitle('Nền Tảng Thông Tin Tương Tác K2AI'),
   description: createDescription(
     'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
   ),
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: createTitle('Interactive Information Platform for Vietnamese Education'),
+    title: createTitle('Nền Tảng Thông Tin Tương Tác K2AI'),
     description: createDescription(
       'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
     ),
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: createTitle('Interactive Information Platform for Vietnamese Education'),
+    title: createTitle('Nền Tảng Thông Tin Tương Tác K2AI'),
     description: createDescription(
       'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
     ),

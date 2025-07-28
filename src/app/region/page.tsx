@@ -89,7 +89,7 @@ export default function RegionsPage() {
                 <div className="text-sm">Tỉnh thành</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold">97M+</div>
+                <div className="text-3xl font-bold">102 Triệu+</div>
                 <div className="text-sm">Dân số</div>
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function RegionsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/"
+              href="/city"
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               🗺️ Xem Bản Đồ Tương Tác

@@ -1,6 +1,20 @@
 # Interactive Information Platform for Vietnamese Education
 
-A modern, professional Next.js educational platform featuring two comprehensive modules: **Vietnam Geography** and **AI Của Tôi** (Practical AI Guide).
+The project called "Nền Tảng Thông Tin Tương Tác K2AI" is a modern, professional Next.js educational platform featuring two comprehensive modules: **Vietnam Geography** and **AI Của Tôi** (Practical AI Guide).
+
+## 🌏 CRITICAL LANGUAGE REQUIREMENTS
+
+**ALL content, metadata, titles, and user-facing text MUST be in Vietnamese language.**
+
+- **Application Title**: ALWAYS use "Nền Tảng Thông Tin Tương Tác K2AI" (NEVER translate to English)
+- **Module Names**: 
+  - "Địa Lý Việt Nam" (Vietnam Geography) 
+  - "AI Của Tôi" (My AI Guide)
+- **All UI Text**: Buttons, labels, navigation, error messages in Vietnamese
+- **SEO Metadata**: Vietnamese titles, descriptions, keywords only
+- **Content**: All descriptions, help text, and user documentation in Vietnamese
+
+**Exception**: Technical code comments and developer documentation may be in English.
 
 ## 📚 Complete Documentation
 
@@ -219,6 +233,12 @@ npm run lint     # Code quality checks
 4. **Mobile Experience**: Test all features on mobile devices
 5. **Type Safety**: Use TypeScript for all new components
 6. **Error Handling**: Implement proper error boundaries and fallbacks
-7. **Documentation Requirement**: **ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.**
+7. **Vietnamese Language Requirements**: 
+   - **ALWAYS use Vietnamese for all user-facing content**
+   - **Application title MUST be "Nền Tảng Thông Tin Tương Tác K2AI"**
+   - **Module names: "Địa Lý Việt Nam" and "AI Của Tôi"**
+   - **All metadata, UI text, error messages in Vietnamese**
+   - **SEO content must be in Vietnamese for local search optimization**
+8. **Documentation Requirement**: **ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.**
 
 This is a production-ready application optimized for GitHub Pages deployment with comprehensive educational content, modern performance optimizations, and excellent SEO implementation.

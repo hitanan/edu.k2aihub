@@ -41,6 +41,8 @@ export default function RegionClient({ region, cities }: RegionClientProps) {
               <nav className="text-sm text-gray-500 mb-2">
                 <Link href="/" className="hover:text-blue-600">Trang chủ</Link>
                 <span className="mx-2">›</span>
+                <Link href="/region" className="hover:text-blue-600">Các vùng miền</Link>
+                <span className="mx-2">›</span>
                 <span>Vùng {region.name}</span>
               </nav>
               <h1 className="text-3xl font-bold text-gray-900">

@@ -4,11 +4,27 @@ _The comprehensive source of truth for K2AiHub development and features_
 
 ## 🌟 Project Overview
 
-K2AiHub is a modern, professional Next.js educational platform featuring two comprehensive modules designed to provide interactive learning experiences using cutting-edge technology.
+K2AI HUB (Nền Tảng Thông Tin Tương Tác K2AI) is a modern, professional Next.js educational platform featuring two comprehensive modules designed to provide interactive learning experiences using cutting-edge technology.
 
 ### 🎯 Mission Statement
 
 To democratize access to quality educational content through interactive, engaging, and technically excellent web applications that make learning enjoyable and effective.
+
+### 🌏 Language and Localization Standards
+
+**CRITICAL: All content, metadata, titles, and user-facing text MUST be in Vietnamese language.**
+
+- **Application Title**: Always use "Nền Tảng Thông Tin Tương Tác K2AI" (never translate to English)
+- **Module Names**: 
+  - "Địa Lý Việt Nam" (Vietnam Geography)
+  - "AI Của Tôi" (My AI / Practical AI Guide)
+- **Content Language**: All descriptions, metadata, and user interface text in Vietnamese
+- **SEO Metadata**: Vietnamese titles, descriptions, and keywords for better local search
+- **Error Messages**: All error messages and system feedback in Vietnamese
+- **Navigation**: Menu items, buttons, and labels in Vietnamese
+- **Documentation**: User-facing documentation and help text in Vietnamese
+
+**Exception**: Technical documentation (like this K2AiHub.md file) and code comments may be in English for developer clarity.
 
 ---
 
@@ -406,6 +422,11 @@ The project is optimized for GitHub Pages deployment with:
 - **SEO**: Implement proper metadata for all new pages
 - **Accessibility**: Follow WCAG guidelines
 - **Mobile-First**: Design and test mobile experience first
+- **Vietnamese Language**: All user-facing content MUST be in Vietnamese
+  - Use "Nền Tảng Thông Tin Tương Tác K2AI" as the official application title
+  - Module names: "Địa Lý Việt Nam" and "AI Của Tôi"
+  - All metadata, descriptions, and UI text in Vietnamese
+  - Error messages and system feedback in Vietnamese
 
 ### Component Development:
 
