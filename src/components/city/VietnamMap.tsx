@@ -176,8 +176,8 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
     const svgElement = svgContainer.querySelector('svg');
     if (!svgElement) return;
 
-    // Click handler
-    const handleClick = (event: MouseEvent) => {
+    // Click handler with improved mobile support
+    const handleClick = (event: MouseEvent | TouchEvent) => {
       event.preventDefault();
       const target = event.target as SVGElement;
       
@@ -185,22 +185,56 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
         const citySlug = target.getAttribute('data-city-slug')!;
         const city = cityLookup.get(citySlug);
         if (city) {
+          // Clear any hover states on click (especially important for mobile)
+          setHoveredCity(null);
+          onCityHover(null);
+          
+          // Handle city selection
           onCityClick(city);
+          
+          // Force update selected styling immediately
+          const allPaths = svgElement.querySelectorAll('path[data-city-slug]');
+          allPaths.forEach(path => {
+            const pathCitySlug = path.getAttribute('data-city-slug')!;
+            if (pathCitySlug === citySlug) {
+              // Apply selected styling immediately
+              path.setAttribute('fill', '#D97706');
+              path.setAttribute('stroke', '#FFFFFF');
+              path.setAttribute('stroke-width', '1.2');
+            } else {
+              // Reset other paths
+              path.setAttribute('fill', getPathColor(pathCitySlug));
+              path.setAttribute('stroke', '#FFFFFF');
+              path.setAttribute('stroke-width', '1');
+            }
+          });
         }
       }
     };
 
-    // Hover handlers
+    // Touch handlers for mobile devices
+    const handleTouchStart = (event: TouchEvent) => {
+      const target = event.target as SVGElement;
+      if (target.tagName === 'path' && target.hasAttribute('data-city-slug')) {
+        // Prevent hover states on touch devices
+        event.preventDefault();
+      }
+    };
+
+    // Hover handlers for desktop
     const handleMouseOver = (event: MouseEvent) => {
+      // Only apply hover effects on non-touch devices
+      if ('ontouchstart' in window) return;
+      
       const target = event.target as SVGElement;
       if (target.tagName === 'path' && target.hasAttribute('data-city-slug')) {
         const citySlug = target.getAttribute('data-city-slug')!;
         const city = cityLookup.get(citySlug);
-        if (city) {
+        if (city && selectedCity?.slug !== citySlug) {
           setHoveredCity(citySlug);
           onCityHover(city);
           
-          // Apply hover styling
+          // Apply hover styling only if not selected
           target.setAttribute('fill', '#F59E0B');
           target.setAttribute('stroke', '#D97706');
           target.setAttribute('stroke-width', '1.5');
@@ -209,6 +243,9 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
     };
 
     const handleMouseOut = (event: MouseEvent) => {
+      // Only handle mouse out on non-touch devices
+      if ('ontouchstart' in window) return;
+      
       const target = event.target as SVGElement;
       if (target.tagName === 'path' && target.hasAttribute('data-city-slug')) {
         const citySlug = target.getAttribute('data-city-slug')!;
@@ -230,14 +267,23 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
       }
     };
 
-    // Global mouse leave handler for the entire SVG container
+    // Enhanced global mouse leave handler
     const handleContainerMouseLeave = (event: MouseEvent) => {
-      // Check if mouse is really leaving the container (not just moving between child elements)
+      // Only handle on non-touch devices
+      if ('ontouchstart' in window) return;
+      
+      // More reliable boundary detection
       const rect = svgContainer.getBoundingClientRect();
       const { clientX, clientY } = event;
       
-      if (clientX < rect.left || clientX > rect.right || 
-          clientY < rect.top || clientY > rect.bottom) {
+      // Add buffer zone to prevent premature clearing
+      const buffer = 10;
+      const isOutside = clientX < rect.left - buffer || 
+                       clientX > rect.right + buffer || 
+                       clientY < rect.top - buffer || 
+                       clientY > rect.bottom + buffer;
+      
+      if (isOutside) {
         setHoveredCity(null);
         onCityHover(null);
         
@@ -260,19 +306,58 @@ const VietnamMap: React.FC<VietnamMapProps> = ({
       }
     };
 
+    // Document-level mouse leave handler for better coverage
+    const handleDocumentMouseMove = (event: MouseEvent) => {
+      if ('ontouchstart' in window) return;
+      
+      const rect = svgContainer.getBoundingClientRect();
+      const { clientX, clientY } = event;
+      
+      // Large buffer zone to ensure hover clears when mouse is far from map
+      const buffer = 50;
+      const isVeryFarOutside = clientX < rect.left - buffer || 
+                              clientX > rect.right + buffer || 
+                              clientY < rect.top - buffer || 
+                              clientY > rect.bottom + buffer;
+      
+      if (isVeryFarOutside && hoveredCity) {
+        setHoveredCity(null);
+        onCityHover(null);
+        
+        // Reset hover states
+        const allPaths = svgElement.querySelectorAll('path[data-city-slug]');
+        allPaths.forEach(path => {
+          const citySlug = path.getAttribute('data-city-slug')!;
+          const isSelected = selectedCity?.slug === citySlug;
+          
+          if (!isSelected) {
+            path.setAttribute('fill', getPathColor(citySlug));
+            path.setAttribute('stroke', '#FFFFFF');
+            path.setAttribute('stroke-width', '1');
+          }
+        });
+      }
+    };
+
     // Add event listeners
     svgElement.addEventListener('click', handleClick, true);
+    svgElement.addEventListener('touchstart', handleTouchStart, true);
+    svgElement.addEventListener('touchend', handleClick, true);
     svgElement.addEventListener('mouseover', handleMouseOver, true);
     svgElement.addEventListener('mouseout', handleMouseOut, true);
     svgContainer.addEventListener('mouseleave', handleContainerMouseLeave, true);
+    document.addEventListener('mousemove', handleDocumentMouseMove);
 
     return () => {
       svgElement.removeEventListener('click', handleClick, true);
+      svgElement.removeEventListener('touchstart', handleTouchStart, true);
+      svgElement.removeEventListener('touchend', handleClick, true);
       svgElement.removeEventListener('mouseover', handleMouseOver, true);
       svgElement.removeEventListener('mouseout', handleMouseOut, true);
       svgContainer.removeEventListener('mouseleave', handleContainerMouseLeave, true);
+      document.removeEventListener('mousemove', handleDocumentMouseMove);
     };
-  }, [processedSvgContent, cityLookup, onCityClick, onCityHover, selectedCity, getPathColor]);
+  }, [processedSvgContent, cityLookup, onCityClick, onCityHover, selectedCity, getPathColor, hoveredCity]);
 
   // Update selected city styling when selectedCity changes
   React.useEffect(() => {

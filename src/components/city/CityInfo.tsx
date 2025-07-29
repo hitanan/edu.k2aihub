@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { City } from '@/types';
 import { createRegionSlug } from '@/utils/slug';
 import ShareButton from '@/components/ShareButton';
+import TouristAttractionsSlider from '@/components/city/TouristAttractionsSlider';
 
 interface CityInfoProps {
   city: City | null;
@@ -148,6 +149,13 @@ const CityInfo: React.FC<CityInfoProps> = ({ city, hoveredCity }) => {
           {para3 && <p>{para3}{para3.endsWith('.') ? '' : '.'}</p>}
         </div>
       </div>
+
+      {/* Tourist Attractions Slider - only show for selected city, not hovered */}
+      {!hoveredCity && city && city.touristAttractions && city.touristAttractions.length > 0 && (
+        <div className="mt-6">
+          <TouristAttractionsSlider attractions={city.touristAttractions} />
+        </div>
+      )}
 
       {/* Action buttons - only show for selected city, not hovered */}
       {!hoveredCity && city && (

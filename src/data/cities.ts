@@ -195,28 +195,32 @@ export const citiesData: City[] = [
         description: 'Nơi diễn ra Quốc hội đầu tiên của Việt Nam năm 1945',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Huyện Sơn Dương'
+        location: 'Huyện Sơn Dương',
+        url: 'https://vi.wikipedia.org/wiki/T%C3%A2n_Tr%C3%A0o'
       },
       {
         name: 'Hồ Na Hang',
         description: 'Hồ nhân tạo đẹp với nhiều đảo nhỏ và cảnh quan hùng vĩ',
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
-        location: 'Huyện Na Hang'
+        location: 'Huyện Na Hang',
+        url: 'https://vi.wikipedia.org/wiki/H%E1%BB%93_Na_Hang'
       },
       {
         name: 'Công viên địa chất Đồng Văn',
         description: 'Khu vực địa chất đặc biệt với cảnh quan đá vôi hùng vĩ',
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
-        location: 'Huyện Đồng Văn'
+        location: 'Huyện Đồng Văn',
+        url: 'https://vi.wikipedia.org/wiki/C%C3%B4ng_vi%C3%AAn_%C4%91%E1%BB%8Ba_ch%E1%BA%A5t_%C4%90%E1%BB%93ng_V%C4%83n'
       },
       {
         name: 'Lũng Cú',
         description: 'Cột mốc địa đầu Tổ quốc, điểm cực Bắc của Việt Nam',
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
-        location: 'Huyện Đồng Văn'
+        location: 'Huyện Đồng Văn',
+        url: 'https://vi.wikipedia.org/wiki/L%C5%A9ng_C%C3%BA'
       }
     ],
     fullPageContent: `
@@ -289,14 +293,16 @@ export const citiesData: City[] = [
         description: 'Thung lũng đẹp với những cánh đồng lúa bao la',
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
-        location: 'Thành phố Điện Biên Phủ'
+        location: 'Thành phố Điện Biên Phủ',
+        url: 'https://vi.wikipedia.org/wiki/M%C6%B0%E1%BB%9Dng_Thanh'
       },
       {
         name: 'Bản Phủ',
         description: 'Làng văn hóa truyền thống của dân tộc Thái',
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
-        location: 'Huyện Điện Biên'
+        location: 'Huyện Điện Biên',
+        url: 'https://vi.wikipedia.org/wiki/B%E1%BA%A3n_Ph%E1%BB%A7'
       }
     ],
     fullPageContent: `
@@ -352,28 +358,32 @@ export const citiesData: City[] = [
         description: 'Đèo dài và đẹp nhất Việt Nam với cảnh quan hùng vĩ',
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
-        location: 'Huyện Tam Đường'
+        location: 'Huyện Tam Đường',
+        url: 'https://vi.wikipedia.org/wiki/Ho%C3%A0ng_th%C3%A0nh_Th%C4%83ng_Long'
       },
       {
         name: 'Thị trấn Tam Đường',
         description: 'Thị trấn ở độ cao 900m với khí hậu mát mẻ quanh năm',
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
-        location: 'Huyện Tam Đường'
+        location: 'Huyện Tam Đường',
+        url: 'https://vi.wikipedia.org/wiki/Th%C3%A1c_B%E1%BA%A3n_Gi%E1%BB%91c'
       },
       {
         name: 'Bản Hồ',
         description: 'Làng dân tộc Thái với văn hóa truyền thống độc đáo',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Huyện Sìn Hồ'
+        location: 'Huyện Sìn Hồ',
+        url: 'https://vi.wikipedia.org/wiki/Chi%E1%BA%BFn_d%E1%BB%8Bch_%C4%90i%E1%BB%87n_Bi%C3%AAn_Ph%E1%BB%A7'
       },
       {
         name: 'Thung lũng Mường Tè',
         description: 'Thung lũng biên giới tuyệt đẹp giáp Trung Quốc',
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
-        location: 'Huyện Mường Tè'
+        location: 'Huyện Mường Tè',
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%C3%A8o_%C3%94_Quy_H%E1%BB%93'
       }
     ],
     fullPageContent: `
@@ -432,7 +442,8 @@ export const citiesData: City[] = [
         description: 'Di tích lịch sử quan trọng thời kỳ đấu tranh cách mạng',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Thành phố Sơn La'
+        location: 'Thành phố Sơn La',
+        url: 'https://vi.wikipedia.org/wiki/Nh%C3%A0_t%C3%B9_S%C6%A1n_La'
       },
       {
         name: 'Thác Đăk',
@@ -528,7 +539,8 @@ export const citiesData: City[] = [
           "Thung lũng với những ruộng bậc thang đẹp nhất Việt Nam, là bối cảnh sống của đồng bào H'Mông, Dao.",
         imageUrl:
           'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        location: 'Sa Pa, Lào Cai'
+        location: 'Sa Pa, Lào Cai',
+        url: 'https://vi.wikipedia.org/wiki/Sa_Pa'
       },
       {
         name: 'Bản Cát Cát',
@@ -601,7 +613,8 @@ export const citiesData: City[] = [
         description: 'Hồ nhân tạo tuyệt đẹp với cảnh quan hoang sơ',
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
-        location: 'Huyện Đại Từ'
+        location: 'Huyện Đại Từ',
+        url: 'https://vi.wikipedia.org/wiki/H%E1%BB%93_N%C3%BAi_C%E1%BB%91c'
       },
       {
         name: 'Bảo tàng Văn hóa các dân tộc Việt Nam',
@@ -679,7 +692,8 @@ export const citiesData: City[] = [
         description: 'Cửa khẩu quốc tế lớn nhất phía Bắc Việt Nam',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Thành phố Đồng Đăng'
+        location: 'Thành phố Đồng Đăng',
+        url: 'https://vi.wikipedia.org/wiki/C%E1%BB%ADa_kh%E1%BA%A9u_%C4%90%E1%BB%93ng_%C4%90%C4%83ng'
       },
       {
         name: 'Động Tam Thanh',
@@ -787,7 +801,8 @@ export const citiesData: City[] = [
           'Làng chài cổ với lịch sử hơn 200 năm, nơi ngư dân sống trên những ngôi nhà nổi truyền thống.',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        location: 'Vân Đồn, Quảng Ninh'
+        location: 'Vân Đồn, Quảng Ninh',
+        url: 'https://vi.wikipedia.org/wiki/V%E1%BB%8Bnh_H%E1%BA%A1_Long'
       },
       {
         name: 'Công Viên Quốc Gia Cát Bà',
@@ -852,14 +867,16 @@ export const citiesData: City[] = [
           'Đền thờ 8 vị vua nhà Lý, kiến trúc cổ kính và linh thiêng',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Thành phố Bắc Ninh'
+        location: 'Thành phố Bắc Ninh',
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_%C4%90%C3%B4'
       },
       {
         name: 'Làng Quan họ Bắc Ninh',
         description: 'Nôi của dân ca quan họ - di sản văn hóa phi vật thể',
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
-        location: 'Huyện Gia Bình'
+        location: 'Huyện Gia Bình',
+        url: 'https://vi.wikipedia.org/wiki/Quan_h%E1%BB%8D_B%E1%BA%AFc_Ninh'
       },
       {
         name: 'Chùa Dâu',
@@ -873,7 +890,8 @@ export const citiesData: City[] = [
         description: 'Đền thờ Trần Hưng Đạo, anh hùng dân tộc',
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
-        location: 'Huyện Hiệp Hòa'
+        location: 'Huyện Hiệp Hòa',
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_Ki%E1%BA%BFp_B%E1%BA%A1c'
       }
     ],
     fullPageContent: `
@@ -930,7 +948,8 @@ export const citiesData: City[] = [
         description: 'Nơi thờ tổ tiên dân tộc Việt Nam - các vua Hùng',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Huyện Phú Ninh'
+        location: 'Huyện Phú Ninh',
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_H%C3%B9ng'
       },
       {
         name: 'Khu di tích Hùng Vương',
@@ -1008,7 +1027,8 @@ export const citiesData: City[] = [
         description: 'Bãi biển đẹp và sạch với nhiều hoạt động giải trí',
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
-        location: 'Quận Đồ Sơn'
+        location: 'Quận Đồ Sơn',
+        url: 'https://vi.wikipedia.org/wiki/B%C3%A3i_Ch%C3%A1y'
       },
       {
         name: 'Đảo Cát Bà',
@@ -1234,14 +1254,16 @@ export const citiesData: City[] = [
         description: 'Khu di tích lịch sử thờ các vua nhà Trần',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Huyện Đông Sơn'
+        location: 'Huyện Đông Sơn',
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_Tr%C3%A2n'
       },
       {
         name: 'Công viên Quốc gia Bến En',
         description: 'Khu bảo tồn thiên nhiên với hồ và núi đẹp',
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
-        location: 'Huyện Nông Cống'
+        location: 'Huyện Nông Cống',
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_Tr%C3%A2n_Th%C3%A1i_B%C3%ACnh'
       }
     ],
     fullPageContent: `
@@ -1297,7 +1319,8 @@ export const citiesData: City[] = [
         description: 'Quê hương của Chủ tịch Hồ Chí Minh',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Huyện Nam Đàn'
+        location: 'Huyện Nam Đàn',
+        url: 'https://vi.wikipedia.org/wiki/Kim_Li%C3%AAn'
       },
       {
         name: 'Biển Cửa Lò',
@@ -1390,7 +1413,8 @@ export const citiesData: City[] = [
         description: 'Khu du lịch sinh thái với hang động và suối đẹp',
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
-        location: 'Huyện Thạch Hà'
+        location: 'Huyện Thạch Hà',
+        url: 'https://vi.wikipedia.org/wiki/Thi%C3%AAn_C%E1%BA%A7m'
       },
       {
         name: 'Đầm Nại',
@@ -1567,7 +1591,8 @@ export const citiesData: City[] = [
           'Lăng mộ lớn nhất và đẹp nhất trong các lăng tẩm triều Nguyễn, thể hiện tài năng kiến trúc và thơ văn của vua Tự Đức.',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        location: 'Thủy Xuân, Hương Thủy, Huế'
+        location: 'Thủy Xuân, Hương Thủy, Huế',
+        url: 'https://vi.wikipedia.org/wiki/L%C4%83ng_T%E1%BB%B1_%C4%90%E1%BB%A9c'
       }
     ],
     fullPageContent: `
@@ -1904,7 +1929,8 @@ export const citiesData: City[] = [
           'Khu vui chơi giải trí lớn trên đảo Hòn Tre với nhiều trò chơi hiện đại và thế giới biển VinWonders.',
         imageUrl:
           'https://images.unsplash.com/photo-1551524164-6cf2ac240e5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        location: 'Đảo Hòn Tre, Nha Trang'
+        location: 'Đảo Hòn Tre, Nha Trang',
+        url: 'https://vi.wikipedia.org/wiki/Vinpearl'
       },
       {
         name: 'Suối Nước Nóng Tháp Bà',
@@ -1969,7 +1995,8 @@ export const citiesData: City[] = [
         description: 'Thác nước hùng vĩ với ba tầng đẹp nhất Tây Nguyên',
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
-        location: 'Huyện Krông Ana'
+        location: 'Huyện Krông Ana',
+        url: 'https://vi.wikipedia.org/wiki/Th%C3%A1c_Dray_Nur'
       },
       {
         name: 'Vườn quốc gia Yok Đôn',
@@ -2309,7 +2336,8 @@ export const citiesData: City[] = [
         description: 'Ngọn núi thiêng cao nhất Nam Bộ với tầm nhìn panorama',
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
-        location: 'Huyện Dương Minh Châu'
+        location: 'Huyện Dương Minh Châu',
+        url: 'https://vi.wikipedia.org/wiki/N%C3%BAi_B%C3%A0_%C4%90en'
       },
       {
         name: 'Tòa thánh Cao Đài',
@@ -2323,7 +2351,8 @@ export const citiesData: City[] = [
         description: 'Hệ thống địa đạo lịch sử thời kháng chiến',
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
-        location: 'Huyện Củ Chi'
+        location: 'Huyện Củ Chi',
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Ba_%C4%91%E1%BA%A1o_C%E1%BB%A7_Chi'
       },
       {
         name: 'Khu di tích lịch sử Địa đạo Bến Đình',
@@ -2387,7 +2416,8 @@ export const citiesData: City[] = [
         description: 'Khu bảo tồn đa dạng sinh học với hệ thức vật đặc trưng',
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
-        location: 'Huyện Tam Nông'
+        location: 'Huyện Tam Nông',
+        url: 'https://vi.wikipedia.org/wiki/V%C6%B0%E1%BB%9Dn_qu%E1%BB%91c_gia_Tr%C3%A0m_Chim'
       },
       {
         name: 'Cánh đồng hoa sen Đồng Tháp Mười',
@@ -2401,7 +2431,8 @@ export const citiesData: City[] = [
         description: 'Làng trồng hoa nổi tiếng với nhiều loại hoa kiểng',
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
-        location: 'Thành phố Sa Đéc'
+        location: 'Thành phố Sa Đéc',
+        url: 'https://vi.wikipedia.org/wiki/Sa_%C4%90%C3%A9c'
       },
       {
         name: 'Chợ nổi Cái Răng',
@@ -2733,7 +2764,8 @@ export const citiesData: City[] = [
           'Điểm cực Nam của đất liền Việt Nam với cột mốc chủ quyền và cảnh quan tuyệt đẹp',
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400',
-        location: 'Ngọc Hiển, Cà Mau'
+        location: 'Ngọc Hiển, Cà Mau',
+        url: 'https://vi.wikipedia.org/wiki/M%C5%A9i_C%C3%A0_Mau'
       },
       {
         name: 'Rừng U Minh Hạ',

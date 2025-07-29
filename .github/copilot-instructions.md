@@ -7,8 +7,8 @@ The project called "Nền Tảng Thông Tin Tương Tác K2AI" is a modern, prof
 **ALL content, metadata, titles, and user-facing text MUST be in Vietnamese language.**
 
 - **Application Title**: ALWAYS use "Nền Tảng Thông Tin Tương Tác K2AI" (NEVER translate to English)
-- **Module Names**: 
-  - "Địa Lý Việt Nam" (Vietnam Geography) 
+- **Module Names**:
+  - "Địa Lý Việt Nam" (Vietnam Geography)
   - "AI Của Tôi" (My AI Guide)
 - **All UI Text**: Buttons, labels, navigation, error messages in Vietnamese
 - **SEO Metadata**: Vietnamese titles, descriptions, keywords only
@@ -45,7 +45,7 @@ An interactive educational tool covering Vietnam's administrative restructuring 
 - **City Pages**: `src/app/city/[slug]/page.tsx` - Dynamic routing with static generation
 - **Region Pages**: `src/app/region/[slug]/page.tsx` - Regional exploration and statistics
 - **Search**: `src/components/Search.tsx` - Real-time filtering with auto-close functionality
-- **Data**: `src/data/cities.ts` - Comprehensive city database with merger information
+- **Data**: `src/data/cities.ts` - Comprehensive city database with merger information, script to add more tourist attractions urls in `src/utils/add_urls.js`
 - **Performance**: O(1) city lookups, lazy loading, memoization, static generation
 
 ### Module 2: AI Của Tôi - Practical AI Guide
@@ -233,7 +233,7 @@ npm run lint     # Code quality checks
 4. **Mobile Experience**: Test all features on mobile devices
 5. **Type Safety**: Use TypeScript for all new components
 6. **Error Handling**: Implement proper error boundaries and fallbacks
-7. **Vietnamese Language Requirements**: 
+7. **Vietnamese Language Requirements**:
    - **ALWAYS use Vietnamese for all user-facing content**
    - **Application title MUST be "Nền Tảng Thông Tin Tương Tác K2AI"**
    - **Module names: "Địa Lý Việt Nam" and "AI Của Tôi"**
