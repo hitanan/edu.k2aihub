@@ -9,8 +9,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "K2AiHub",
-    "alternateName": "K2AI Hub - Nền Tảng Thông Tin Tương Tác",
-    "description": "Nền tảng giáo dục tương tác với hai module chính: Địa Lý Việt Nam (34 tỉnh thành) và AI Của Tôi (hướng dẫn sử dụng AI thực tế)",
+    "alternateName": "K2AI Hub - Học tập thông minh – Công nghệ AI dẫn lối",
+    "description": "Nền tảng công nghệ AI dẫn lối với hai module chính: Địa Lý Việt Nam (34 tỉnh thành) và AI Của Tôi (hướng dẫn sử dụng AI thực tế)",
     "url": "https://k2aihub.com",
     "sameAs": [
       "https://k2aihub.com"
@@ -128,7 +128,7 @@ export default function Home() {
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               K2AI HUB
-              <span className="block text-blue-300">Nền Tảng Thông Tin Tương Tác</span>
+              <span className="block text-blue-300">Học tập thông minh – Công nghệ AI dẫn lối</span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
               Khám phá kiến thức qua các module học tập hiện đại, thú vị.

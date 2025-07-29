@@ -4,7 +4,7 @@ _The comprehensive source of truth for K2AiHub development and features_
 
 ## 🌟 Project Overview
 
-K2AI HUB (Nền Tảng Thông Tin Tương Tác K2AI) is a modern, professional Next.js educational platform featuring two comprehensive modules designed to provide interactive learning experiences using cutting-edge technology.
+K2AI HUB (K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối) is a modern, professional Next.js educational platform featuring two comprehensive modules designed to provide interactive learning experiences using cutting-edge technology.
 
 ### 🎯 Mission Statement
 
@@ -14,8 +14,8 @@ To democratize access to quality educational content through interactive, engagi
 
 **CRITICAL: All content, metadata, titles, and user-facing text MUST be in Vietnamese language.**
 
-- **Application Title**: Always use "Nền Tảng Thông Tin Tương Tác K2AI" (never translate to English)
-- **Module Names**: 
+- **Application Title**: Always use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" (never translate to English)
+- **Module Names**:
   - "Địa Lý Việt Nam" (Vietnam Geography)
   - "AI Của Tôi" (My AI / Practical AI Guide)
 - **Content Language**: All descriptions, metadata, and user interface text in Vietnamese
@@ -423,7 +423,7 @@ The project is optimized for GitHub Pages deployment with:
 - **Accessibility**: Follow WCAG guidelines
 - **Mobile-First**: Design and test mobile experience first
 - **Vietnamese Language**: All user-facing content MUST be in Vietnamese
-  - Use "Nền Tảng Thông Tin Tương Tác K2AI" as the official application title
+  - Use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" as the official application title
   - Module names: "Địa Lý Việt Nam" and "AI Của Tôi"
   - All metadata, descriptions, and UI text in Vietnamese
   - Error messages and system feedback in Vietnamese

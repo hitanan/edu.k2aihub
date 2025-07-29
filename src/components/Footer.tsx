@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
           <div className="text-center md:text-right text-sm text-gray-400">
             <p>© {currentYear} K2AI HUB. Tất cả quyền được bảo lưu.</p>
             <p className="mt-1">
-              Nền tảng thông tin tương tác về địa lý Việt Nam và AI, ..
+              Học tập thông minh – Công nghệ AI dẫn lối về địa lý Việt Nam và AI, ..
             </p>
           </div>
         </div>

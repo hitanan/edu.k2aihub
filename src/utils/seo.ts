@@ -6,7 +6,7 @@
 import { City, TouristAttraction } from '@/types';
 
 const SITE_NAME = 'K2AiHub';
-const SITE_TAGLINE = 'Nền Tảng Thông Tin Tương Tác Việt Nam';
+const SITE_TAGLINE = 'Học tập thông minh – Công nghệ AI dẫn lối Việt Nam';
 
 /**
  * Creates a properly formatted title with K2AiHub branding
@@ -79,7 +79,7 @@ export function createOrganizationStructuredData() {
     '@type': 'Organization',
     name: SITE_NAME,
     description:
-      'Nền tảng thông tin tương tác về địa lý Việt Nam và hướng dẫn AI thực tế',
+      'Học tập thông minh – Công nghệ AI dẫn lối về địa lý Việt Nam và hướng dẫn AI thực tế',
     url: 'https://k2aihub.com',
     logo: 'https://k2aihub.com/logo.png',
     sameAs: ['https://k2aihub.com'],

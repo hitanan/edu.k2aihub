@@ -16,14 +16,14 @@ export default function ShareButton({
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [copied, setCopied] = useState(false);
   const [shareData, setShareData] = useState({
-    title: 'K2AiHub - Nền Tảng Giáo Dục Tương Tác',
+    title: 'K2AiHub - Nền tảng công nghệ AI dẫn lối',
     description: 'Khám phá Việt Nam và AI thực tế cùng K2AiHub',
     url: ''
   });
 
   useEffect(() => {
     setShareData({
-      title: title || (typeof document !== 'undefined' ? document.title : 'K2AiHub - Nền Tảng Giáo Dục Tương Tác'),
+      title: title || (typeof document !== 'undefined' ? document.title : 'K2AiHub - Nền tảng công nghệ AI dẫn lối'),
       description: description || 'Khám phá Việt Nam và AI thực tế cùng K2AiHub',
       url: url || (typeof window !== 'undefined' ? window.location.href : '')
     });

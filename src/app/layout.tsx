@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: createTitle('Nền Tảng Thông Tin Tương Tác K2AI'),
+  title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
   description: createDescription(
-    'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+    'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
   ),
   keywords: createKeywords([
     'Vietnam geography',
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: createTitle('Nền Tảng Thông Tin Tương Tác K2AI'),
+    title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
     description: createDescription(
-      'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
     ),
     url: 'https://k2aihub.com',
     siteName: 'K2AiHub',
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: createTitle('Nền Tảng Thông Tin Tương Tác K2AI'),
+    title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
     description: createDescription(
-      'K2AiHub là nền tảng giáo dục tương tác hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
     ),
     images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')]
   }

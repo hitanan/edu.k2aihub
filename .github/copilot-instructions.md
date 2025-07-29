@@ -1,12 +1,12 @@
 # Interactive Information Platform for Vietnamese Education
 
-The project called "Nền Tảng Thông Tin Tương Tác K2AI" is a modern, professional Next.js educational platform featuring two comprehensive modules: **Vietnam Geography** and **AI Của Tôi** (Practical AI Guide).
+The project called "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a modern, professional Next.js educational platform featuring two comprehensive modules: **Vietnam Geography** and **AI Của Tôi** (Practical AI Guide).
 
 ## 🌏 CRITICAL LANGUAGE REQUIREMENTS
 
 **ALL content, metadata, titles, and user-facing text MUST be in Vietnamese language.**
 
-- **Application Title**: ALWAYS use "Nền Tảng Thông Tin Tương Tác K2AI" (NEVER translate to English)
+- **Application Title**: ALWAYS use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" (NEVER translate to English)
 - **Module Names**:
   - "Địa Lý Việt Nam" (Vietnam Geography)
   - "AI Của Tôi" (My AI Guide)
@@ -237,7 +237,7 @@ npm run lint     # Code quality checks
 6. **Error Handling**: Implement proper error boundaries and fallbacks
 7. **Vietnamese Language Requirements**:
    - **ALWAYS use Vietnamese for all user-facing content**
-   - **Application title MUST be "Nền Tảng Thông Tin Tương Tác K2AI"**
+   - **Application title MUST be "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối"**
    - **Module names: "Địa Lý Việt Nam" and "AI Của Tôi"**
    - **All metadata, UI text, error messages in Vietnamese**
    - **SEO content must be in Vietnamese for local search optimization**

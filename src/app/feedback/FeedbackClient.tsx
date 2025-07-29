@@ -33,7 +33,7 @@ export default function FeedbackClient() {
             </div>
             <ShareButton 
               title="Góp Ý & Phản Hồi | K2AiHub"
-              description="Gửi góp ý, đề xuất và phản hồi để chúng tôi cải thiện nền tảng giáo dục K2AiHub"
+              description="Gửi góp ý, đề xuất và phản hồi để chúng tôi cải thiện K2AI - Nền tảng Học tập thông minh, Công nghệ AI dẫn lối K2AiHub"
             />
           </div>
         </div>
