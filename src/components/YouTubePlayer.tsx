@@ -41,9 +41,9 @@ export function YouTubePlayer({ videoUrl, title = "Video hướng dẫn", classN
       </div>
 
       {/* Video Player */}
-      <div className="relative w-full" style={{ paddingBottom: '56.25%' /* 16:9 aspect ratio */ }}>
+      <div className={`relative w-full ${className.includes('h-') ? '' : 'pb-[56.25%]'}`} style={className.includes('h-') ? {} : { paddingBottom: '56.25%' /* 16:9 aspect ratio */ }}>
         <iframe
-          className="absolute top-0 left-0 w-full h-full"
+          className={`absolute top-0 left-0 w-full ${className.includes('h-') ? 'h-full' : 'h-full'}`}
           src={embedUrl}
           title={title}
           frameBorder="0"

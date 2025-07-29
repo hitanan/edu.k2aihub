@@ -111,7 +111,7 @@ export default function PythonIntroductionPage() {
                     <div className="bg-blue-50 p-6 rounded-lg">
                       <h3 className="text-lg font-semibold text-blue-800 mb-3">Bước 1: Tải Python</h3>
                       <p className="text-gray-700 mb-3">
-                        Truy cập <a href="https://python.org" className="text-blue-600 underline">python.org</a> và 
+                        Truy cập <a href="https://python.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">python.org</a> và 
                         tải phiên bản Python mới nhất cho hệ điều hành của bạn.
                       </p>
                       <div className="bg-white p-3 rounded border">
@@ -377,6 +377,8 @@ export default function PythonIntroductionPage() {
           <h2 className="text-xl font-bold text-gray-800 mb-4">📚 Tài liệu tham khảo</h2>
           <div className="grid md:grid-cols-2 gap-4">
             <a href="https://docs.python.org/3/" 
+               target="_blank"
+               rel="noopener noreferrer"
                className="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition-colors">
               <ExternalLink className="w-5 h-5 text-blue-500 mr-3" />
               <div>
@@ -385,6 +387,8 @@ export default function PythonIntroductionPage() {
               </div>
             </a>
             <a href="https://www.python.org/about/gettingstarted/" 
+               target="_blank"
+               rel="noopener noreferrer"
                className="flex items-center p-4 border rounded-lg hover:bg-gray-50 transition-colors">
               <ExternalLink className="w-5 h-5 text-green-500 mr-3" />
               <div>

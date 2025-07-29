@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { aiLearningApps, aiAppCategories, learningPathways } from '@/data/aiLearningApps';
+import YouTubePlayer from '@/components/YouTubePlayer';
 
 export const metadata: Metadata = {
   title: createTitle("AI Hỗ Trợ Học Tập - Ứng Dụng AI Cho Giáo Dục"),
@@ -184,14 +185,11 @@ export default function AIAppsModule() {
 
               {app.videoDemo && (
                 <div className="mb-4">
-                  <a 
-                    href={app.videoDemo} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-xs text-red-300 hover:text-red-200 transition-colors"
-                  >
-                    🎥 Xem video demo
-                  </a>
+                  <YouTubePlayer 
+                    videoUrl={app.videoDemo} 
+                    title={`${app.name} - Demo`}
+                    className="h-40"
+                  />
                 </div>
               )}
 

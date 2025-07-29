@@ -173,7 +173,7 @@ src/
 - **Performance**: Optimize bundle size and loading times
 - **Accessibility**: WCAG compliance and keyboard navigation
 - **Mobile-First**: Responsive design across all devices
-- **SEO Optimization**: Implement dynamic metadata (createTitle, createDescription, createKeywords), structured data, and social sharing
+- **SEO Optimization**: Implement dynamic metadata (createTitle, createDescription, createKeywords), structured data, and social sharing, external links must be _blank_ target and use rel="noopener noreferrer" for security
 - **Next.js**: Follow best practices for routing and static generation and Next.js code standards, e.g. put all city components in the `src/components/city` directory.
 - **Documentation**: All new features and changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md)
 - **AI Agent utils scripts**: When AI agent create utilities to process on your request, ensure the script is efficient and follows best practices for performance and maintainability and can be reused. Put it under folder `src/utils` like `src/utils/add_urls.js` if you think if can be reused.
