@@ -13,6 +13,10 @@ const TouristAttractionsSlider: React.FC<TouristAttractionsSliderProps> = ({ att
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState<number | null>(null);
+  const [currentX, setCurrentX] = useState<number | null>(null);
+  const [dragOffset, setDragOffset] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
 
   // Touch navigation constants
@@ -75,6 +79,54 @@ const TouristAttractionsSlider: React.FC<TouristAttractionsSliderProps> = ({ att
     }
   };
 
+  // Mouse/click drag handlers for desktop
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (attractions.length <= 1) return;
+    setIsDragging(true);
+    setStartX(e.clientX);
+    setCurrentX(e.clientX);
+    setIsAutoPlaying(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !startX) return;
+    
+    e.preventDefault();
+    setCurrentX(e.clientX);
+    const diffX = e.clientX - startX;
+    setDragOffset(diffX);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging || !startX || !currentX) return;
+    
+    setIsDragging(false);
+    const diffX = currentX - startX;
+    
+    // Determine if the drag was significant enough to change slides
+    if (Math.abs(diffX) > minSwipeDistance) {
+      if (diffX > 0) {
+        goToPrevious();
+      } else {
+        goToNext();
+      }
+    }
+    
+    // Reset drag state
+    setStartX(null);
+    setCurrentX(null);
+    setDragOffset(0);
+    
+    // Resume auto-play after 10 seconds
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      handleMouseUp();
+    }
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="p-6">
@@ -86,15 +138,26 @@ const TouristAttractionsSlider: React.FC<TouristAttractionsSliderProps> = ({ att
         <div className="relative">
           {/* Main slider */}
           <div 
-            className="relative h-64 md:h-80 rounded-lg overflow-hidden"
+            className="relative h-64 md:h-80 rounded-lg overflow-hidden cursor-grab active:cursor-grabbing"
             ref={sliderRef}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            style={{ userSelect: 'none' }}
           >
             <div 
               className="flex transition-transform duration-500 ease-in-out h-full"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{ 
+                transform: `translateX(-${currentIndex * 100}%)`,
+                ...(isDragging && { 
+                  transform: `translateX(calc(-${currentIndex * 100}% + ${dragOffset}px))`,
+                  transition: 'none' 
+                })
+              }}
             >
               {attractions.map((attraction, index) => (
                 <div key={index} className="min-w-full h-full relative">
