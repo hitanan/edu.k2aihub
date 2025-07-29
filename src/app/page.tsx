@@ -110,6 +110,38 @@ export default function Home() {
       icon: '🤖',
       color: 'from-purple-600 to-pink-600',
       stats: ['Hướng Dẫn Thực Hành', 'Công Cụ AI', 'Ứng Dụng Thực Tế']
+    },
+    {
+      title: 'Lập Trình Python',
+      description: 'Học lập trình Python từ cơ bản đến nâng cao với các bài toán thực tế và dự án ứng dụng trong đời sống.',
+      href: '/python',
+      icon: '🐍',
+      color: 'from-yellow-600 to-blue-600',
+      stats: ['8 Bài Học', '4 Dự Án', 'Code Thực Hành']
+    },
+    {
+      title: 'Arduino & IoT',
+      description: 'Khám phá thế giới Arduino và Internet of Things. Học cách tạo ra các thiết bị thông minh và kết nối.',
+      href: '/arduino',
+      icon: '🔧',
+      color: 'from-green-600 to-blue-600',
+      stats: ['5 Dự Án', 'Thực Hành', 'IoT Solutions']
+    },
+    {
+      title: 'Robotics',
+      description: 'Tìm hiểu về robotics từ cơ bản đến nâng cao. Thiết kế, lập trình và điều khiển robot thông minh.',
+      href: '/robotics',
+      icon: '🤖',
+      color: 'from-purple-600 to-red-600',
+      stats: ['6 Bài Học', 'Robot Thực Tế', 'AI Integration']
+    },
+    {
+      title: 'Scratch Programming',
+      description: 'Học lập trình một cách trực quan với Scratch. Tạo game, animation và ứng dụng tương tác thú vị.',
+      href: '/scratch',
+      icon: '🐱',
+      color: 'from-orange-600 to-yellow-600',
+      stats: ['5 Bài Học', 'Game Development', 'Visual Programming']
     }
   ];
 
@@ -150,7 +182,7 @@ export default function Home() {
 
       {/* Modules Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {modules.map((module, index) => (
             <div key={index} className="group relative">
               <Link href={module.href}>

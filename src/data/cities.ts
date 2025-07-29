@@ -59,7 +59,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Ba Đình, Hà Nội',
-        url: 'https://hanoi.gov.vn/vi-VN/1/3034/17/231/tintuc/chua-mot-cot.aspx'
+        url: 'https://vi.wikipedia.org/wiki/Ch%C3%B9a_M%E1%BB%99t_C%E1%BB%99t'
       },
       {
         name: 'Lăng Chủ tịch Hồ Chí Minh',
@@ -68,7 +68,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Ba Đình, Hà Nội',
-        url: 'https://bqllang.gov.vn/'
+        url: 'https://vi.wikipedia.org/wiki/L%C4%83ng_B%C3%A1c'
       }
     ],
     fullPageContent: `
@@ -911,7 +911,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Thuận Thành',
-        url: 'https://bacninh.gov.vn/vi-VN/1/3034/17/231/tintuc/chua-dau.aspx'
+        url: 'https://vi.wikipedia.org/wiki/Ch%C3%B9a_D%C3%A2u'
       },
       {
         name: 'Đền Kiếp Bạc',
@@ -985,7 +985,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Huyện Phú Ninh',
-        url: 'https://phutho.gov.vn/vi-VN/1/3034/17/231/tintuc/khu-di-tich-hung-vuong.aspx'
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BB%81n_H%C3%B9ng'
       },
       {
         name: 'Xuân Sơn',
@@ -1241,7 +1241,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Huyện Hoa Lư',
-        url: 'https://ninhbinh.gov.vn/vi-VN/1/3034/17/231/tintuc/co-do-hoa-lu.aspx'
+        url: 'https://vi.wikipedia.org/wiki/Hoa_L%C6%B0'
       },
       {
         name: 'Chùa Bái Đính',
@@ -1521,7 +1521,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Huyện Bố Trạch',
-        url: 'https://phongnhakebang.com.vn/'
+        url: 'https://vi.wikipedia.org/wiki/V%C6%B0%E1%BB%9Dn_qu%E1%BB%91c_gia_Phong_Nha-K%E1%BA%BB_B%C3%A0ng'
       },
       {
         name: 'Cửa khẩu Lao Bảo',
@@ -1604,7 +1604,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Phường Thuận Thành, TP Huế',
-        url: 'https://www.hueworldheritage.org.vn/'
+        url: 'https://vi.wikipedia.org/wiki/Ho%C3%A0ng_th%C3%A0nh_Hu%E1%BA%BF'
       },
       {
         name: 'Lăng Khải Định',
@@ -1702,7 +1702,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Thành phố Hội An',
-        url: 'https://www.hoianworldheritage.org.vn/'
+        url: 'https://vi.wikipedia.org/wiki/H%E1%BB%99i_An'
       },
       {
         name: 'Thánh Địa Mỹ Sơn',
@@ -1711,7 +1711,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Huyện Duy Xuyên',
-        url: 'https://www.mysonworldheritage.com.vn/'
+        url: 'https://vi.wikipedia.org/wiki/M%E1%BB%B9_S%C6%A1n'
       },
       {
         name: 'Bãi Biển Mỹ Khê',
@@ -1738,7 +1738,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Hải Châu, Đà Nẵng',
-        url: 'https://danang.gov.vn/vi-VN/1/3034/17/231/tintuc/cau-rong.aspx'
+        url: 'https://vi.wikipedia.org/wiki/C%E1%BA%A7u_R%E1%BB%93ng'
       },
       {
         name: 'Khu phố đèn lồng Hội An',
@@ -1815,7 +1815,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Huyện đảo Lý Sơn',
-        url: 'https://quangngai.gov.vn/vi-VN/1/3034/17/231/tintuc/dao-ly-son.aspx'
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BA%A3o_L%C3%BD_S%C6%A1n'
       },
       {
         name: 'Biển Sa Huỳnh',
@@ -1897,7 +1897,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
         location: 'Thành phố Quy Nhơn',
-        url: 'https://binhdinh.gov.vn/vi-VN/1/3034/17/231/tintuc/bien-quy-nhon.aspx'
+        url: 'https://vi.wikipedia.org/wiki/Quy_Nh%C6%A1n'
       },
       {
         name: 'Tháp Đôi',
@@ -1905,7 +1905,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Quy Nhơn',
-        url: 'https://binhdinh.gov.vn/vi-VN/1/3034/17/231/tintuc/thap-doi.aspx'
+        url: 'https://vi.wikipedia.org/wiki/Th%C3%A1p_%C4%90%C3%B4i'
       },
       {
         name: 'Kon Tum',
@@ -2156,7 +2156,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Đà Lạt',
-        url: 'https://lamdong.gov.vn/vi-VN/1/3034/17/231/tintuc/thanh-pho-da-lat.aspx'
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%C3%A0_L%E1%BA%A1t'
       },
       {
         name: 'Thác Pongour',
@@ -2172,7 +2172,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1520637836862-4d197d17c15a?w=600&h=400&fit=crop',
         location: 'Thành phố Phan Thiết',
-        url: 'https://binhthuan.gov.vn/vi-VN/1/3034/17/231/tintuc/bien-mui-ne.aspx'
+        url: 'https://vi.wikipedia.org/wiki/M%C5%A9i_N%C3%A9'
       },
       {
         name: 'Hồ Tuyền Lâm',
@@ -2198,7 +2198,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Phan Rang, Ninh Thuận',
-        url: 'https://ninhthuan.gov.vn/vi-VN/1/3034/17/231/tintuc/thap-cham-po-klong-garai.aspx'
+        url: 'https://vi.wikipedia.org/wiki/Po_Klong_Garai'
       }
     ],
     fullPageContent: `
@@ -2351,7 +2351,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận 1, TP.HCM',
-        url: 'https://www.hochiminhcity.gov.vn/vi-VN/1/3034/17/231/tintuc/nha-tho-duc-ba-sai-gon.aspx'
+        url: 'https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_%C4%90%E1%BB%A9c_B%C3%A0_S%C3%A0i_G%C3%B2n'
       },
       {
         name: 'Bưu Điện Trung Tâm Sài Gòn',
@@ -2360,7 +2360,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận 1, TP.HCM',
-        url: 'https://www.hochiminhcity.gov.vn/vi-VN/1/3034/17/231/tintuc/buu-dien-trung-tam-sai-gon.aspx'
+        url: 'https://vi.wikipedia.org/wiki/B%C6%B0u_%C4%91i%E1%BB%87n_trung_t%C3%A2m_S%C3%A0i_G%C3%B2n'
       },
       {
         name: 'Chợ Bến Thành',
@@ -2378,7 +2378,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Huyện Củ Chi',
-        url: 'https://www.hochiminhcity.gov.vn/vi-VN/1/3034/17/231/tintuc/dia-dao-cu-chi.aspx'
+        url: 'https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Ba_%C4%91%E1%BA%A1o_C%E1%BB%A7_Chi'
       },
       {
         name: 'Bãi Biển Vũng Tàu',
@@ -2387,7 +2387,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Thành phố Vũng Tàu',
-        url: 'https://bariavungtau.gov.vn/vi-VN/1/3034/17/231/tintuc/bai-bien-vung-tau.aspx'
+        url: 'https://vi.wikipedia.org/wiki/V%C5%A9ng_T%C3%A0u'
       }
     ],
     fullPageContent: `
@@ -2456,7 +2456,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop',
         location: 'Thành phố Tây Ninh',
-        url: 'https://tayninh.gov.vn/vi-VN/1/3034/17/231/tintuc/toa-thanh-cao-dai.aspx'
+        url: 'https://vi.wikipedia.org/wiki/T%C3%B2a_th%C3%A1nh_Cao_%C4%90%C3%A0i'
       },
       {
         name: 'Địa đạo Củ Chi',
@@ -2727,7 +2727,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Phú Quốc, Kiên Giang',
-        url: 'https://phuquoc.gov.vn/vi-VN/1/3034/17/231/tintuc/rung-quoc-gia-phu-quoc.aspx'
+        url: 'https://vi.wikipedia.org/wiki/V%C6%B0%E1%BB%9Dn_qu%E1%BB%91c_gia_Ph%C3%BA_Qu%E1%BB%91c'
       },
       {
         name: 'Chợ Nổi Long Xuyên',
@@ -2799,7 +2799,7 @@ export const citiesData: City[] = [
         imageUrl:
           'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         location: 'Quận Cái Răng, Cần Thơ',
-        url: 'https://cantho.gov.vn/vi-VN/1/3034/17/231/tintuc/cho-noi-cai-rang.aspx'
+        url: 'https://vi.wikipedia.org/wiki/Ch%E1%BB%A3_n%E1%BB%95i_C%C3%A1i_R%C4%83ng'
       },
       {
         name: 'Vườn Cò Bằng Lăng',

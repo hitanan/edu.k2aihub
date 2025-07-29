@@ -6,7 +6,7 @@
 import { City, TouristAttraction } from '@/types';
 
 const SITE_NAME = 'K2AiHub';
-const SITE_TAGLINE = 'Học tập thông minh – Công nghệ AI dẫn lối Việt Nam';
+const SITE_TAGLINE = 'Học tập thông minh - Công nghệ AI dẫn lối Việt Nam';
 
 /**
  * Creates a properly formatted title with K2AiHub branding

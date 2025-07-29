@@ -12,6 +12,10 @@ const Header: React.FC = () => {
     { name: 'Trang Chủ', href: '/', icon: '🏠' },
     { name: 'Địa Lý Việt Nam', href: '/city', icon: '🗺️' },
     { name: 'AI Của Tôi', href: '/ai', icon: '🤖' },
+    { name: 'Python', href: '/python', icon: '🐍' },
+    { name: 'Arduino', href: '/arduino', icon: '🔧' },
+    { name: 'Robotics', href: '/robotics', icon: '🤖' },
+    { name: 'Scratch', href: '/scratch', icon: '🎨' },
     { name: 'Phản Hồi', href: '/feedback', icon: '💬' },
   ];
 

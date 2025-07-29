@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities';
+import { arduinoLessons } from '@/data/arduino';
+import { roboticsLessons } from '@/data/robotics';
+import { scratchLessons } from '@/data/scratch';
 
 // Utility to automatically generate sitemap entries for all pages
 const baseUrl = 'https://k2aihub.com';
@@ -20,6 +23,10 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const
     },
     { url: `${baseUrl}/ai`, priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: `${baseUrl}/python`, priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: `${baseUrl}/arduino`, priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: `${baseUrl}/robotics`, priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: `${baseUrl}/scratch`, priority: 0.8, changeFrequency: 'weekly' as const },
     {
       url: `${baseUrl}/feedback`,
       priority: 0.5,
@@ -34,13 +41,57 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     'education-learning',
     'business-marketing',
     'daily-life',
-    'programming-dev'
+    'programming-dev',
+    'ai-apps'
   ];
 
   const aiPages = aiCategories.map((category) => ({
     url: `${baseUrl}/ai/${category}`,
     lastModified,
     changeFrequency: 'weekly' as const,
+    priority: 0.7
+  }));
+
+  // Python lesson pages - sử dụng lesson IDs thực tế từ data file
+  const pythonLessonIds = [
+    'python-introduction',
+    'variables-data-types', 
+    'control-structures',
+    'functions',
+    'lists-tuples',
+    'dictionaries',
+    'file-handling',
+    'oop-basics'
+  ];
+
+  const pythonPages = pythonLessonIds.map((lessonId) => ({
+    url: `${baseUrl}/python/${lessonId}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // Arduino lesson pages
+  const arduinoPages = arduinoLessons.map((lesson) => ({
+    url: `${baseUrl}/arduino/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // Robotics lesson pages
+  const roboticsPages = roboticsLessons.map((lesson) => ({
+    url: `${baseUrl}/robotics/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // Scratch lesson pages
+  const scratchPages = scratchLessons.map((lesson) => ({
+    url: `${baseUrl}/scratch/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
     priority: 0.7
   }));
 
@@ -76,6 +127,10 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
   const allPages = [
     ...corePages.map((page) => ({ ...page, lastModified })),
     ...aiPages,
+    ...pythonPages,
+    ...arduinoPages,
+    ...roboticsPages,
+    ...scratchPages,
     ...regionPages,
     ...cityPages
   ];

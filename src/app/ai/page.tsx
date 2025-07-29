@@ -18,6 +18,14 @@ export const metadata: Metadata = {
 export default function AIModule() {
   const aiCategories = [
     {
+      title: 'AI Apps - Ứng Dụng AI Thực Tế',
+      description: 'Khám phá các ứng dụng AI thực tế trong đời sống và công việc hàng ngày. Từ tự động hóa email đến quản lý thời gian, chúng tôi cung cấp hướng dẫn chi tiết để bạn có thể áp dụng AI một cách hiệu quả.',
+      href: '/ai/ai-apps',
+      icon: '💼',
+      color: 'from-indigo-600 to-green-600',
+      topics: ['ChatGPT cho Email', 'Tự động hóa Excel', 'Trình bày với AI', 'Quản lý thời gian']
+    },
+    {
       title: 'AI cho Văn Phòng & Công Việc',
       description: 'Tận dụng AI để tăng hiệu suất làm việc, tự động hóa công việc văn phòng và cải thiện quy trình nghiệp vụ.',
       href: '/ai/office-work',
@@ -64,6 +72,41 @@ export default function AIModule() {
       icon: '💻',
       color: 'from-slate-600 to-blue-600',
       topics: ['GitHub Copilot', 'Code Review AI', 'No-Code AI', 'Debugging thông minh']
+    }
+  ];
+
+  const educationTechModules = [
+    {
+      title: 'Học Robotics Cơ Bản',
+      description: 'Khám phá thế giới robotics từ cơ bản đến nâng cao. Học cách thiết kế, lập trình và điều khiển robot.',
+      href: '/robotics',
+      icon: '🤖',
+      color: 'from-red-600 to-orange-600',
+      topics: ['Arduino Programming', 'Cảm biến & Motor', 'Robot Di động', 'IoT Robotics']
+    },
+    {
+      title: 'Lập Trình Scratch',
+      description: 'Học lập trình một cách trực quan với Scratch. Tạo games, animations và interactive stories.',
+      href: '/scratch',
+      icon: '🐱',
+      color: 'from-yellow-600 to-amber-600',
+      topics: ['Visual Programming', 'Game Development', 'Animation', 'Interactive Stories']
+    },
+    {
+      title: 'Arduino & IoT',
+      description: 'Làm quen với Arduino và Internet of Things. Tạo các dự án thông minh kết nối internet.',
+      href: '/arduino',
+      icon: '⚡',
+      color: 'from-blue-600 to-cyan-600',
+      topics: ['Electronics Basics', 'Sensor Networks', 'WiFi Projects', 'Smart Home']
+    },
+    {
+      title: 'Lập Trình Python',
+      description: 'Học Python qua các bài toán cơ bản. Từ syntax đến thuật toán và xử lý dữ liệu.',
+      href: '/python',
+      icon: '�',
+      color: 'from-green-600 to-emerald-600',
+      topics: ['Python Basics', 'Data Structures', 'Algorithms', 'Projects']
     }
   ];
 
@@ -143,6 +186,48 @@ export default function AIModule() {
               </div>
             </Link>
           ))}
+        </div>
+      </div>
+
+      {/* Education Technology Modules Section */}
+      <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              🎓 Công Nghệ Giáo Dục
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Khám phá thế giới công nghệ giáo dục. Học robotics, lập trình và làm quen với các công cụ AI hỗ trợ học tập hiệu quả.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {educationTechModules.map((module, index) => (
+              <Link key={index} href={module.href}>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 hover:bg-white/20 hover:scale-105 cursor-pointer group border border-white/20">
+                  <div className={`w-14 h-14 bg-gradient-to-br ${module.color} rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    {module.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors duration-300">
+                    {module.title}
+                  </h3>
+                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                    {module.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-4">
+                    {module.topics.map((topic, topicIndex) => (
+                      <span key={topicIndex} className="bg-white/20 text-white text-xs px-2 py-1 rounded-full">
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="text-yellow-300 font-semibold text-sm">
+                    Khám Phá →
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 
