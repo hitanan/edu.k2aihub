@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { roboticsLessons } from '@/data/robotics';
 
 export const metadata: Metadata = {
   title: createTitle("Học Robotics - Từ Cơ Bản Đến Nâng Cao"),
-  description: createDescription("Khóa học robotics toàn diện với 6 bài học từ cơ bản đến nâng cao. Học cách thiết kế, lập trình và điều khiển robot thông minh"),
+  description: createDescription("Khóa học robotics toàn diện với các bài học từ cơ bản đến nâng cao. Học cách thiết kế, lập trình và điều khiển robot thông minh"),
   keywords: createKeywords(["robotics", "robot", "lập trình robot", "arduino robot", "cảm biến", "động cơ servo", "IoT robot"]),
   authors: [{ name: "K2AiHub Team" }],
   openGraph: {
@@ -24,53 +25,17 @@ export default function RoboticsModule() {
     duration: '24 giờ học',
   };
 
-  const roboticsLessons = [
-    {
-      id: 'basic-robotics-intro',
-      title: 'Giới Thiệu Robotics Cơ Bản',
-      description: 'Khái niệm cơ bản về robotics, các thành phần chính của robot và ứng dụng trong đời sống',
-      icon: '🤖',
-      difficulty: 'Cơ bản',
-      duration: '45 phút',
-      href: '/robotics/robotics-intro',
-      objectives: [
-        'Hiểu khái niệm robot và robotics',
-        'Nhận biết các thành phần chính của robot',
-        'Phân biệt các loại robot khác nhau'
-      ],
-      topics: ['Robot cơ bản', 'Thành phần', 'Ứng dụng', 'Lý thuyết']
-    },
-    {
-      id: 'basic-electronics',
-      title: 'Điện Tử Cơ Bản',
-      description: 'Kiến thức điện tử cần thiết để hiểu cách robot hoạt động: LED, nút nhấn, cảm biến',
-      icon: '�',
-      difficulty: 'Cơ bản',
-      duration: '60 phút',
-      href: '/robotics/basic-electronics',
-      objectives: [
-        'Hiểu các linh kiện điện tử cơ bản',
-        'Đọc và vẽ sơ đồ mạch đơn giản',
-        'Kết nối mạch cơ bản trên breadboard'
-      ],
-      topics: ['LED', 'Điện trở', 'Breadboard', 'Mạch điện']
-    },
-    {
-      id: 'microcontroller-basics',
-      title: 'Vi Điều Khiển Cơ Bản',
-      description: 'Làm quen với Arduino và các vi điều khiển cơ bản, cách lập trình và kết nối phần cứng',
-      icon: '🧠',
-      difficulty: 'Trung bình',
-      duration: '90 phút',
-      href: '/robotics/microcontroller-basics',
-      objectives: [
-        'Hiểu cách hoạt động của vi điều khiển',
-        'Cài đặt và sử dụng Arduino IDE',
-        'Viết chương trình Arduino cơ bản'
-      ],
-      topics: ['Arduino', 'IDE', 'Programming', 'C++']
-    }
-  ];
+  const roboticsLessonsList = roboticsLessons.map((lesson) => ({
+    id: lesson.id,
+    title: lesson.title,
+    description: lesson.description,
+    icon: lesson.icon || '🤖',
+    difficulty: lesson.difficulty,
+    duration: lesson.duration,
+    href: `/robotics/${lesson.id}`,
+    objectives: lesson.objectives.slice(0, 3),
+    topics: lesson.topics || ['Robotics', 'Programming', 'Hardware']
+  }));
 
   const realWorldApplications = [
     {
@@ -135,7 +100,7 @@ export default function RoboticsModule() {
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <span className="bg-white/10 px-3 py-1 rounded-full">🎯 {difficulty}</span>
               <span className="bg-white/10 px-3 py-1 rounded-full">⏱️ {duration}</span>
-              <span className="bg-white/10 px-3 py-1 rounded-full">📚 {roboticsLessons.length} bài học</span>
+              <span className="bg-white/10 px-3 py-1 rounded-full">📚 {roboticsLessonsList.length} bài học</span>
             </div>
           </div>
         </div>
@@ -153,7 +118,7 @@ export default function RoboticsModule() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {roboticsLessons.map((lesson, index) => (
+          {roboticsLessonsList.map((lesson, index) => (
             <Link key={index} href={lesson.href}>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 hover:bg-white/20 hover:scale-105 border border-white/20 cursor-pointer group">
                 <div className="text-4xl mb-4">{lesson.icon}</div>

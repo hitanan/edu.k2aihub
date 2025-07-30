@@ -6,8 +6,8 @@ export const revalidate = false;
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'K2AiHub - Học tập thông minh – Công nghệ AI dẫn lối Việt Nam',
-    short_name: 'K2AiHub',
+    name: 'K2AI - Học tập thông minh, Công nghệ AI dẫn lối Việt Nam',
+    short_name: 'K2AI',
     description:
       'Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và hướng dẫn AI thực tế',
     start_url: '/',

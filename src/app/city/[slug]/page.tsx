@@ -108,9 +108,9 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
       title: createTitle(`${city.name} - ${city.region} | Địa Lý Việt Nam`),
       description: createDescription(enhancedDescription.length > 150 ? enhancedDescription.substring(0, 147) + '...' : enhancedDescription),
       keywords: createKeywords(cityKeywords),
-      authors: [{ name: 'K2AiHub Team' }],
-      creator: 'K2AiHub',
-      publisher: 'K2AiHub',
+      authors: [{ name: 'K2AI Team' }],
+      creator: 'K2AI',
+      publisher: 'K2AI',
       formatDetection: {
         email: false,
         address: false,

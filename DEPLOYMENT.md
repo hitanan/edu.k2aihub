@@ -132,7 +132,6 @@ For issues or questions:
 
 - Check the GitHub Actions logs for deployment errors
 - Review the README.md for detailed project information
-- Contact: jobtimeseo@gmail.com
 
 ## Next Steps After Deployment
 

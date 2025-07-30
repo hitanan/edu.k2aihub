@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     'AI guide',
     'educational platform',
     'interactive learning',
-    'K2AiHub',
+    'K2AI',
     'vietnamese education',
     'practical AI',
     'interactive map'
   ]),
-  authors: [{ name: 'K2AiHub Team' }],
-  creator: 'K2AiHub',
-  publisher: 'K2AiHub',
+  authors: [{ name: 'K2AI Team' }],
+  creator: 'K2AI',
+  publisher: 'K2AI',
   formatDetection: {
     email: false,
     address: false,

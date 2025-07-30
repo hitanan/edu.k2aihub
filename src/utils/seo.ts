@@ -49,7 +49,7 @@ export const commonKeywords = [
   'ai',
   'trí tuệ nhân tạo',
   'học tập',
-  'K2AiHub'
+  'K2AI'
 ];
 
 /**
@@ -79,7 +79,7 @@ export function createOrganizationStructuredData() {
     '@type': 'Organization',
     name: SITE_NAME,
     description:
-      'Học tập thông minh – Công nghệ AI dẫn lối về địa lý Việt Nam và hướng dẫn AI thực tế',
+      'Học tập thông minh - Công nghệ AI dẫn lối về địa lý Việt Nam và hướng dẫn AI thực tế',
     url: 'https://k2aihub.com',
     logo: 'https://k2aihub.com/logo.png',
     sameAs: ['https://k2aihub.com'],

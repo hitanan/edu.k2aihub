@@ -71,14 +71,14 @@ const Footer: React.FC = () => {
             </div>
             <div>
               <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                K2AI HUB
+                K2AI
               </span>
               <p className="text-xs text-gray-400">Nền tảng học tập thông minh</p>
             </div>
           </div>
 
           <div className="text-center md:text-right text-sm text-gray-400">
-            <p>© {currentYear} K2AI HUB. Phát triển với ❤️ cho giáo dục Việt Nam</p>
+            <p>© {currentYear} K2AI - Phát triển với ❤️ cho giáo dục Việt Nam</p>
             <p className="mt-1 text-xs">
               � Nền tảng học tập thông minh - Công nghệ AI dẫn lối
             </p>

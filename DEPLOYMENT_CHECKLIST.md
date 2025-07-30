@@ -98,7 +98,6 @@ git push origin main
 
 - **Technical Issues**: Check GitHub Actions logs
 - **Content Updates**: Edit files and push to main branch
-- **Feature Requests**: Contact jobtimeseo@gmail.com
 
 ## 🔍 Quick Links After Deployment
 

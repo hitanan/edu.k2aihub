@@ -7,6 +7,7 @@ A modern, professional Next.js educational platform featuring two comprehensive 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+
 - npm or yarn package manager
 
@@ -24,19 +25,22 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 ## 🌟 Key Features
 
 ### 📍 Vietnam Geography Module
+
 - Interactive SVG map of 34 administrative units
 - Smart search with historical province names
 - SEO-optimized individual city pages
 - Comprehensive regional exploration (9 regions)
 - Share functionality and FAQ system
 
-### 🤖 AI Guide Module  
+### 🤖 AI Guide Module
+
 - 6 specialized AI categories (Office, Creative, Education, Business, Daily Life, Programming)
 - Step-by-step tutorials and practical examples
 - Tool comparisons and recommendations
 - Interactive navigation and mobile optimization
 
 ### � Global Features
+
 - Universal share button system (6 social platforms)
 - Standalone feedback system
 - Comprehensive SEO with structured data
@@ -67,7 +71,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## 🌐 Live Demo
 
-**GitHub Pages**: [Coming Soon - Deployment in Progress]
+**K2AI**: [https://k2aihub.com](https://k2aihub.com)
 
 ## 📝 Development
 
@@ -92,11 +96,10 @@ npm run lint     # Code linting
 ## 📞 Support
 
 - **Feedback System**: Use the integrated `/feedback` page
-- **Email**: jobtimeseo@gmail.com
 - **Documentation**: [K2AiHub.md](./docs/K2AiHub.md)
 
 ---
 
 **Built with ❤️ using Next.js 15, TypeScript, and Tailwind CSS**
 
-*For complete technical documentation, feature specifications, and development guidelines, see [K2AiHub.md](./docs/K2AiHub.md)*
+_For complete technical documentation, feature specifications, and development guidelines, see [K2AiHub.md](./docs/K2AiHub.md)_

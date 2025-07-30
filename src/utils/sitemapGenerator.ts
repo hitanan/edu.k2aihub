@@ -104,8 +104,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   // Arduino lesson pages - include all lessons from data and additional manual pages
   const additionalArduinoPages = [
-    'arduino-basics', // Manually added page
-    'sensors-analog' // Additional page found in workspace
+    'arduino-basics' // Manually added page
   ];
 
   const arduinoPages = [

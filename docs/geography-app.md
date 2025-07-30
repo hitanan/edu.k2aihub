@@ -10,7 +10,7 @@ CORE FEATURES:
 - The map is rendered in SVG format. When a user hovers over a city, it becomes highlighted. Clicking on a city also highlights it and displays relevant information about that city.
 - Filter city by name, this name is before the merger and the current name, (e.g. filter Quang Nam should return for Da Nang), highlight filtered city
 - Data persistence using json files and image if needed, localStorage for other
-- Feedback form from users, submit button to open mailto:jobtimeseo@gmail.com
+- Feedback form from users, submit button to open mail app
 
 TECHNICAL REQUIREMENTS:
 

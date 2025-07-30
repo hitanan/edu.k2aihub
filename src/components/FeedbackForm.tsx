@@ -82,7 +82,7 @@ const FeedbackForm: React.FC = () => {
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Góp Ý</h2>
           <p className="text-gray-600">
-            Chúng tôi rất mong nhận được ý kiến và đề xuất của bạn về Thông Tin Thông Minh K2AI Hub. 
+            Chúng tôi rất mong nhận được ý kiến và đề xuất của bạn về K2AI. 
             Góp ý của bạn giúp chúng tôi cải thiện trải nghiệm cho mọi người.
           </p>
         </div>

@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { roboticsLessons } from '@/data/robotics';
+import { getModuleNavigation, getNavigationConfig } from '@/utils/moduleNavigation';
 
 export const metadata: Metadata = {
   title: createTitle("Bài 3: Vi Điều Khiển Cơ Bản - Robotics"),
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
 
 export default function MicrocontrollerBasicsLesson() {
   const lesson = roboticsLessons.find(l => l.id === 'microcontroller-basics');
+  const navigation = getModuleNavigation('robotics', 'microcontroller-basics');
+  const navConfig = navigation ? getNavigationConfig(navigation, '/robotics') : null;
   
   if (!lesson) {
     return <div>Lesson not found</div>;
@@ -32,6 +35,11 @@ export default function MicrocontrollerBasicsLesson() {
             <Link href="/robotics" className="text-blue-400 hover:text-blue-300 transition-colors duration-300">
               ← Quay lại Robotics
             </Link>
+             {navConfig && (
+              <div className="ml-auto text-sm text-gray-400">
+                Bài {navConfig.progress.current} / {navConfig.progress.total}
+              </div>
+            )}
           </div>
           
           <div className="text-center">

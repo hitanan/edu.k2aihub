@@ -90,36 +90,6 @@ export default function ArduinoModule() {
       topics: ['DHT22', 'LDR', 'Ultrasonic', 'Serial Communication', 'Data Processing']
     },
     {
-      id: 'led-digital-outputs',
-      title: 'LED và Digital Outputs',
-      description: 'Học cách điều khiển LED và các digital outputs',
-      icon: '💡',
-      difficulty: 'Cơ bản',
-      duration: '75 phút',
-      href: '/arduino/led-digital-outputs',
-      objectives: [
-        'Điều khiển LED và PWM',
-        'Sử dụng điện trở và mạch cơ bản',
-        'Tạo hiệu ứng LED'
-      ],
-      topics: ['Digital Output', 'PWM', 'LED Control', 'Effects']
-    },
-    {
-      id: 'sensors-analog',
-      title: 'Sensors và Analog Inputs',
-      description: 'Làm việc với analog sensors và đọc dữ liệu chính xác',
-      icon: '�',
-      difficulty: 'Trung bình',
-      duration: '90 phút',
-      href: '/arduino/sensors-analog',
-      objectives: [
-        'Hiểu về analog vs digital',
-        'Đọc dữ liệu từ potentiometer',
-        'Xử lý và calibrate sensor data'
-      ],
-      topics: ['Analog Read', 'Potentiometer', 'Calibration', 'Data Processing']
-    },
-    {
       id: 'arduino-advanced-projects',
       title: 'Advanced Arduino Projects',
       description: 'Xây dựng các dự án Arduino phức tạp và thực tế với tích hợp IoT',

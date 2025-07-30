@@ -27,6 +27,7 @@ export interface ScratchExercise {
   requiredBlocks: string[];
   expectedBehavior: string;
   hints: string[];
+  steps?: string[];
   scratchUrl?: string;
 }
 
@@ -34,7 +35,8 @@ export const scratchLessons: ScratchLesson[] = [
   {
     id: 'scratch-introduction',
     title: 'Giới Thiệu Scratch',
-    description: 'Làm quen với giao diện Scratch và các khái niệm lập trình cơ bản qua kéo thả',
+    description:
+      'Làm quen với giao diện Scratch và các khái niệm lập trình cơ bản qua kéo thả',
     difficulty: 'Cơ bản',
     duration: '45 phút',
     category: 'basics',
@@ -49,7 +51,8 @@ export const scratchLessons: ScratchLesson[] = [
       'Tài khoản Scratch (tùy chọn)',
       'Kết nối Internet'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=jXUZaf5D12A',
     scratchProjectUrl: 'https://scratch.mit.edu/projects/editor/',
     codeBlocks: [
@@ -65,7 +68,8 @@ export const scratchLessons: ScratchLesson[] = [
       {
         id: 'ex1-first-animation',
         title: 'Hoạt Cảnh Đầu Tiên',
-        description: 'Tạo hoạt cảnh đơn giản cho mèo Scratch di chuyển và nói chào',
+        description:
+          'Tạo hoạt cảnh đơn giản cho mèo Scratch di chuyển và nói chào',
         difficulty: 'Dễ',
         requiredBlocks: [
           'when green flag clicked',
@@ -119,7 +123,8 @@ export const scratchLessons: ScratchLesson[] = [
   {
     id: 'scratch-sprites-sounds',
     title: 'Sprites và Âm Thanh',
-    description: 'Tìm hiểu cách sử dụng nhiều sprites, thêm âm thanh và tạo tương tác',
+    description:
+      'Tìm hiểu cách sử dụng nhiều sprites, thêm âm thanh và tạo tương tác',
     difficulty: 'Cơ bản',
     duration: '60 phút',
     category: 'animation',
@@ -134,7 +139,8 @@ export const scratchLessons: ScratchLesson[] = [
       'File âm thanh (tùy chọn)',
       'Hình ảnh sprites tùy chỉnh (tùy chọn)'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=3mGpHfPj4J8',
     codeBlocks: [
       'when this sprite clicked',
@@ -206,7 +212,8 @@ export const scratchLessons: ScratchLesson[] = [
   {
     id: 'scratch-variables-logic',
     title: 'Biến và Logic',
-    description: 'Sử dụng biến để lưu trữ dữ liệu và câu lệnh điều kiện để tạo logic phức tạp',
+    description:
+      'Sử dụng biến để lưu trữ dữ liệu và câu lệnh điều kiện để tạo logic phức tạp',
     difficulty: 'Trung bình',
     duration: '75 phút',
     category: 'interactive',
@@ -221,7 +228,8 @@ export const scratchLessons: ScratchLesson[] = [
       'Notebook để ghi chú logic',
       'Ý tưởng cho game đơn giản'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1509048191080-d2e2678e67b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1509048191080-d2e2678e67b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=G6N9RNqiJyE',
     codeBlocks: [
       'set score to 0',
@@ -295,7 +303,8 @@ export const scratchLessons: ScratchLesson[] = [
   {
     id: 'scratch-game-development',
     title: 'Phát Triển Game',
-    description: 'Tạo game hoàn chỉnh với collision detection, power-ups và multiple levels',
+    description:
+      'Tạo game hoàn chỉnh với collision detection, power-ups và multiple levels',
     difficulty: 'Nâng cao',
     duration: '120 phút',
     category: 'games',
@@ -312,8 +321,9 @@ export const scratchLessons: ScratchLesson[] = [
       'Sound effects',
       'Game design document'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=FLO8ukSNr4U',
+    imageUrl:
+      'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    videoUrl: 'https://www.youtube.com/watch?v=-4ItfZH06Yk',
     codeBlocks: [
       'when green flag clicked',
       'if touching "enemy" then',
@@ -388,7 +398,8 @@ export const scratchLessons: ScratchLesson[] = [
   {
     id: 'scratch-advanced-features',
     title: 'Tính Năng Nâng Cao',
-    description: 'Khám phá các tính năng nâng cao như custom blocks, clones và pen graphics',
+    description:
+      'Khám phá các tính năng nâng cao như custom blocks, clones và pen graphics',
     difficulty: 'Nâng cao',
     duration: '90 phút',
     category: 'advanced',
@@ -404,7 +415,8 @@ export const scratchLessons: ScratchLesson[] = [
       'Music extension (tùy chọn)',
       'Video sensing extension (tùy chọn)'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=uaU5PW6dF1w',
     codeBlocks: [
       'define draw circle',
@@ -492,20 +504,17 @@ export const scratchQuizzes = [
       'forever'
     ],
     correctAnswer: 1,
-    explanation: 'Khối "when green flag clicked" được sử dụng để bắt đầu chương trình khi người dùng click vào lá cờ xanh.'
+    explanation:
+      'Khối "when green flag clicked" được sử dụng để bắt đầu chương trình khi người dùng click vào lá cờ xanh.'
   },
   {
     id: 'quiz-scratch-2',
     lessonId: 'scratch-sprites-sounds',
     question: 'Để gửi tin nhắn giữa các sprites, chúng ta sử dụng khối nào?',
-    options: [
-      'say',
-      'broadcast',
-      'ask',
-      'think'
-    ],
+    options: ['say', 'broadcast', 'ask', 'think'],
     correctAnswer: 1,
-    explanation: 'Khối "broadcast" được sử dụng để gửi tin nhắn đến tất cả sprites trong dự án.'
+    explanation:
+      'Khối "broadcast" được sử dụng để gửi tin nhắn đến tất cả sprites trong dự án.'
   },
   {
     id: 'quiz-scratch-3',
@@ -518,7 +527,8 @@ export const scratchQuizzes = [
       'Thay đổi costume'
     ],
     correctAnswer: 1,
-    explanation: 'Biến được sử dụng để lưu trữ dữ liệu như điểm số, tên người chơi, hoặc bất kỳ giá trị nào cần thay đổi trong chương trình.'
+    explanation:
+      'Biến được sử dụng để lưu trữ dữ liệu như điểm số, tên người chơi, hoặc bất kỳ giá trị nào cần thay đổi trong chương trình.'
   },
   {
     id: 'quiz-scratch-4',
@@ -531,7 +541,8 @@ export const scratchQuizzes = [
       'key pressed?'
     ],
     correctAnswer: 2,
-    explanation: 'Khối "touching [sprite name]?" kiểm tra xem sprite hiện tại có chạm vào sprite khác hay không.'
+    explanation:
+      'Khối "touching [sprite name]?" kiểm tra xem sprite hiện tại có chạm vào sprite khác hay không.'
   }
 ];
 

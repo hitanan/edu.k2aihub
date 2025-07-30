@@ -4,7 +4,7 @@ _The comprehensive source of truth for K2AiHub development and features_
 
 ## 🌟 Project Overview
 
-K2AI HUB (K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối) is a modern, professional Next.js educational platform featuring two comprehensive modules designed to provide interactive learning experiences using cutting-edge technology.
+K2AI - "Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a modern, professional Next.js educational platform featuring two comprehensive modules designed to provide interactive learning experiences using cutting-edge technology.
 
 ### 🎯 Mission Statement
 
@@ -271,7 +271,7 @@ src/
 - ✅ **Standalone Feedback System** (`/feedback`)
 
   - Form validation with error handling
-  - Email integration (mailto:jobtimeseo@gmail.com)
+  - Email integration (mailto:)
   - Accessible from all modules
   - SEO-optimized feedback pages
 
@@ -469,7 +469,6 @@ The project is optimized for GitHub Pages deployment with:
 
 ### Technical Support:
 
-- **Email**: jobtimeseo@gmail.com
 - **Feedback System**: `/feedback` page within the application
 - **GitHub Issues**: For technical bugs and feature requests
 

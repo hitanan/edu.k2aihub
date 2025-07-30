@@ -8,8 +8,8 @@ export default function Home() {
   const websiteStructuredData = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    "name": "K2AiHub",
-    "alternateName": "K2AI Hub - Học tập thông minh – Công nghệ AI dẫn lối",
+    "name": "K2AI",
+    "alternateName": "K2AI - Học tập thông minh, Công nghệ AI dẫn lối",
     "description": "Nền tảng công nghệ AI dẫn lối với hai module chính: Địa Lý Việt Nam (34 tỉnh thành) và AI Của Tôi (hướng dẫn sử dụng AI thực tế)",
     "url": "https://k2aihub.com",
     "sameAs": [
@@ -159,8 +159,8 @@ export default function Home() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              K2AI HUB
-              <span className="block text-blue-300">Học tập thông minh – Công nghệ AI dẫn lối</span>
+              K2AI
+              <span className="block text-blue-300">Học tập thông minh - Công nghệ AI dẫn lối</span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
               Khám phá kiến thức qua các module học tập hiện đại, thú vị.
@@ -307,9 +307,9 @@ export default function Home() {
             </div>
             
             <div className="flex justify-center space-x-6 text-sm text-gray-400">
-              <span>© 2025 K2AI Hub</span>
+              <span>© 2025 K2AI</span>
               <span>•</span>
-              <span>Được xây dựng với ❤️ và K2</span>
+              <span>Được xây dựng với ❤️ và K2AI</span>
             </div>
           </div>
         </div>

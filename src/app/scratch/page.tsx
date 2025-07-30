@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { scratchLessons } from '@/data/scratch';
 
 export const metadata: Metadata = {
   title: createTitle("Học Lập Trình Scratch - Coding Cho Trẻ Em"),
@@ -24,54 +25,41 @@ export default function ScratchModule() {
     duration: '15 giờ học',
   };
 
-  const scratchLessons = [
-    {
-      id: 'scratch-introduction',
-      title: 'Giới Thiệu Scratch',
-      description: 'Làm quen với giao diện Scratch và các khái niệm lập trình cơ bản qua kéo thả',
-      icon: '🌟',
-      difficulty: 'Cơ bản',
-      duration: '45 phút',
-      href: '/scratch/scratch-intro',
-      objectives: [
-        'Hiểu giao diện Scratch và các thành phần chính',
-        'Tạo dự án Scratch đầu tiên',
-        'Sử dụng blocks cơ bản để điều khiển Sprite'
-      ],
-      topics: ['Giao diện', 'Sprite', 'Stage', 'Blocks']
-    },
-    {
-      id: 'scratch-sprites-sounds',
-      title: 'Sprites và Âm Thanh',
-      description: 'Tìm hiểu cách sử dụng nhiều sprites, thêm âm thanh và tạo tương tác',
-      icon: '🎵',
-      difficulty: 'Cơ bản',
-      duration: '60 phút',
-      href: '/scratch/sound-effects',
-      objectives: [
-        'Thêm và tùy chỉnh nhiều sprites',
-        'Sử dụng âm thanh trong dự án',
-        'Tạo tương tác giữa các sprites'
-      ],
-      topics: ['Sprites', 'Sound', 'Broadcasting', 'Interaction']
-    },
-    {
-      id: 'scratch-variables-logic',
-      title: 'Animation và Chuyển Động',
-      description: 'Sử dụng biến để lưu trữ dữ liệu và câu lệnh điều kiện để tạo logic phức tạp',
-      icon: '�',
-      difficulty: 'Trung bình',
-      duration: '75 phút',
-      href: '/scratch/animation-movement',
-      objectives: [
-        'Điều khiển chuyển động Sprite',
-        'Tạo hiệu ứng animation mượt mà',
-        'Sử dụng biến và logic điều kiện'
-      ],
-      topics: ['Animation', 'Variables', 'Logic', 'Movement']
+  // Map scratch lessons with proper href based on existing pages
+  const scratchLessonsList = scratchLessons.map((lesson) => {
+    let href = `/scratch/${lesson.id}`;
+    
+    // Map specific lesson IDs to existing pages
+    if (lesson.id === 'scratch-introduction') {
+      href = '/scratch/scratch-intro';
+    } else if (lesson.id === 'scratch-sprites-sounds') {
+      href = '/scratch/sound-effects';
     }
-  ];
+    
+    return {
+      id: lesson.id,
+      title: lesson.title,
+      description: lesson.description,
+      icon: getIconForCategory(lesson.category),
+      difficulty: lesson.difficulty,
+      duration: lesson.duration,
+      href,
+      objectives: lesson.objectives.slice(0, 3),
+      topics: lesson.codeBlocks?.slice(0, 4) || ['Scratch', 'Programming', 'Visual', 'Logic']
+    };
+  });
 
+  function getIconForCategory(category: string) {
+    switch (category) {
+      case 'basics': return '🌟';
+      case 'animation': return '🎬';
+      case 'games': return '🎮';
+      case 'interactive': return '🎵';
+      case 'advanced': return '🚀';
+      default: return '🎨';
+    }
+  }
+   
   const scratchFeatures = [
     {
       title: 'Lập Trình Trực Quan',
@@ -138,7 +126,7 @@ export default function ScratchModule() {
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <span className="bg-white/10 px-3 py-1 rounded-full">🎯 {difficulty}</span>
               <span className="bg-white/10 px-3 py-1 rounded-full">⏱️ {duration}</span>
-              <span className="bg-white/10 px-3 py-1 rounded-full">📚 {scratchLessons.length} bài học</span>
+              <span className="bg-white/10 px-3 py-1 rounded-full">📚 {scratchLessonsList.length} bài học</span>
             </div>
           </div>
         </div>
@@ -156,7 +144,7 @@ export default function ScratchModule() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {scratchLessons.map((lesson, index) => (
+          {scratchLessonsList.map((lesson, index) => (
             <Link key={index} href={lesson.href}>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 hover:bg-white/20 hover:scale-105 border border-white/20 cursor-pointer group">
                 <div className="text-4xl mb-4">{lesson.icon}</div>

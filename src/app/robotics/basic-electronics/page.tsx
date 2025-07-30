@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { roboticsLessons } from '@/data/robotics';
+import { getModuleNavigation, getNavigationConfig } from '@/utils/moduleNavigation';
 
 export const metadata: Metadata = {
   title: createTitle("Bài 2: Điện Tử Cơ Bản - Robotics"),
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
 
 export default function BasicElectronicsLesson() {
   const lesson = roboticsLessons.find(l => l.id === 'basic-electronics');
+  const navigation = getModuleNavigation('robotics', 'basic-electronics');
+  const navConfig = navigation ? getNavigationConfig(navigation, '/robotics') : null;
   
   if (!lesson) {
     return <div>Lesson not found</div>;
@@ -116,6 +119,11 @@ export default function BasicElectronicsLesson() {
             <Link href="/robotics" className="text-purple-400 hover:text-purple-300 transition-colors duration-300">
               ← Quay lại Robotics
             </Link>
+            {navConfig && (
+              <div className="ml-auto text-sm text-gray-400">
+                Bài {navConfig.progress.current} / {navConfig.progress.total}
+              </div>
+            )}
           </div>
           
           <div className="text-center">
@@ -322,21 +330,23 @@ export default function BasicElectronicsLesson() {
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center">
-          <Link 
-            href="/robotics/robotics-intro"
-            className="inline-flex items-center px-6 py-3 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
-          >
-            ← Bài trước: Giới thiệu
-          </Link>
-          
-          <Link 
-            href="/robotics/microcontroller-basics"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
-          >
-            Bài tiếp theo: Vi điều khiển →
-          </Link>
-        </div>
+        {navConfig && (
+          <div className="flex justify-between items-center">
+            <Link 
+              href={navConfig.previous.href}
+              className="inline-flex items-center px-6 py-3 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
+            >
+              {navConfig.previous.label}
+            </Link>
+            
+            <Link 
+              href={navConfig.next.href}
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
+            >
+              {navConfig.next.label}
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

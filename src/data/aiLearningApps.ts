@@ -34,7 +34,8 @@ export const aiLearningApps: AILearningApp[] = [
   {
     id: 'photomath',
     name: 'PhotoMath',
-    description: 'Ứng dụng AI giải toán bằng cách chụp ảnh, có thể giải từ số học cơ bản đến giải tích nâng cao với lời giải chi tiết từng bước.',
+    description:
+      'Ứng dụng AI giải toán bằng cách chụp ảnh, có thể giải từ số học cơ bản đến giải tích nâng cao với lời giải chi tiết từng bước.',
     category: 'math',
     platform: 'Both',
     pricing: 'Freemium',
@@ -66,7 +67,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 1,
         title: 'Tải và Cài Đặt App',
-        description: 'Download PhotoMath từ App Store hoặc Google Play Store, tạo tài khoản miễn phí',
+        description:
+          'Download PhotoMath từ App Store hoặc Google Play Store, tạo tài khoản miễn phí',
         tips: [
           'Cho phép quyền truy cập camera',
           'Đăng ký tài khoản để sync dữ liệu',
@@ -76,7 +78,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 2,
         title: 'Chụp Ảnh Bài Toán',
-        description: 'Đưa camera đến phương trình cần giải, đảm bảo ảnh rõ nét và đúng focus',
+        description:
+          'Đưa camera đến phương trình cần giải, đảm bảo ảnh rõ nét và đúng focus',
         tips: [
           'Giữ camera ổn định',
           'Đảm bảo ánh sáng đủ',
@@ -87,7 +90,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 3,
         title: 'Xem Kết Quả và Lời Giải',
-        description: 'App sẽ hiển thị đáp án ngay lập tức, tap vào "Steps" để xem lời giải chi tiết',
+        description:
+          'App sẽ hiển thị đáp án ngay lập tức, tap vào "Steps" để xem lời giải chi tiết',
         tips: [
           'Đọc kỹ từng bước giải',
           'Hiểu logic đằng sau mỗi bước',
@@ -98,7 +102,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 4,
         title: 'Sử Dụng Tính Năng Nâng Cao',
-        description: 'Khám phá đồ thị tương tác, calculator và lịch sử bài giải',
+        description:
+          'Khám phá đồ thị tương tác, calculator và lịch sử bài giải',
         tips: [
           'Sử dụng đồ thị để hiểu hàm số',
           'Lưu bài giải quan trọng',
@@ -107,9 +112,10 @@ export const aiLearningApps: AILearningApp[] = [
         ]
       }
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=T10d28lhVnc',
+    videoDemo: 'https://www.youtube.com/watch?v=pyjZ58tTWUI',
     websiteUrl: 'https://photomath.com/',
-    imageUrl: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     rating: 4.8,
     downloads: '100M+',
     languages: ['Tiếng Việt', 'English', '60+ languages'],
@@ -119,7 +125,8 @@ export const aiLearningApps: AILearningApp[] = [
   {
     id: 'gauth',
     name: 'Gauth (Gauthmath)',
-    description: 'AI tutor giải toán 24/7 với camera và kết nối với giáo viên thật. Hỗ trợ từ toán cơ bản đến toán đại học.',
+    description:
+      'AI tutor giải toán 24/7 với camera và kết nối với giáo viên thật. Hỗ trợ từ toán cơ bản đến toán đại học.',
     category: 'math',
     platform: 'Both',
     pricing: 'Freemium',
@@ -162,7 +169,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 2,
         title: 'Chụp Ảnh Hoặc Nhập Câu Hỏi',
-        description: 'Sử dụng camera để chụp bài toán hoặc type câu hỏi trực tiếp',
+        description:
+          'Sử dụng camera để chụp bài toán hoặc type câu hỏi trực tiếp',
         tips: [
           'Ensure good lighting cho camera',
           'Crop ảnh chỉ chứa question cần thiết',
@@ -173,7 +181,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 3,
         title: 'Nhận AI Solution',
-        description: 'AI sẽ analyze và provide detailed solution trong vài giây',
+        description:
+          'AI sẽ analyze và provide detailed solution trong vài giây',
         tips: [
           'Review step-by-step carefully',
           'Understand reasoning behind each step',
@@ -184,7 +193,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 4,
         title: 'Kết Nối Với Tutor (Nếu Cần)',
-        description: 'Nếu AI solution không đủ, connect với live tutor để giải thích chi tiết',
+        description:
+          'Nếu AI solution không đủ, connect với live tutor để giải thích chi tiết',
         tips: [
           'Prepare specific questions',
           'Be ready với pen và paper',
@@ -193,9 +203,10 @@ export const aiLearningApps: AILearningApp[] = [
         ]
       }
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=mGSKaCvTOf4',
+    videoDemo: 'https://www.youtube.com/watch?v=Slqw4wC_ZN4',
     websiteUrl: 'https://www.gauthmath.com/',
-    imageUrl: 'https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     rating: 4.6,
     downloads: '50M+',
     languages: ['English', 'Español', 'Português', 'हिन्दी'],
@@ -205,7 +216,8 @@ export const aiLearningApps: AILearningApp[] = [
   {
     id: 'socratic',
     name: 'Socratic by Google',
-    description: 'AI-powered homework helper cho nhiều môn học. Sử dụng camera và voice để giải thích concepts bằng cách dễ hiểu.',
+    description:
+      'AI-powered homework helper cho nhiều môn học. Sử dụng camera và voice để giải thích concepts bằng cách dễ hiểu.',
     category: 'general',
     platform: 'Mobile',
     pricing: 'Free',
@@ -237,7 +249,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 1,
         title: 'Install và Setup',
-        description: 'Download Socratic từ App Store/Play Store và đăng nhập bằng Google account',
+        description:
+          'Download Socratic từ App Store/Play Store và đăng nhập bằng Google account',
         tips: [
           'Allow camera và microphone permissions',
           'Choose subjects bạn đang học',
@@ -259,7 +272,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 3,
         title: 'Explore Results',
-        description: 'Browse through explanations, videos, và related resources',
+        description:
+          'Browse through explanations, videos, và related resources',
         tips: [
           'Start với overview explanation',
           'Watch videos for complex topics',
@@ -279,19 +293,30 @@ export const aiLearningApps: AILearningApp[] = [
         ]
       }
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=8bKBKKglCn8',
+    videoDemo: 'https://www.youtube.com/watch?v=vZ1tQZ8glXg',
     websiteUrl: 'https://socratic.org/',
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     rating: 4.5,
     downloads: '10M+',
     languages: ['English'],
     ageGroup: '13-18 tuổi',
-    subjects: ['Math', 'Science', 'History', 'English', 'Chemistry', 'Biology', 'Physics', 'Literature']
+    subjects: [
+      'Math',
+      'Science',
+      'History',
+      'English',
+      'Chemistry',
+      'Biology',
+      'Physics',
+      'Literature'
+    ]
   },
   {
     id: 'grammarly',
     name: 'Grammarly',
-    description: 'AI writing assistant giúp cải thiện grammar, spelling, style và tone. Essential tool cho academic writing và professional communication.',
+    description:
+      'AI writing assistant giúp cải thiện grammar, spelling, style và tone. Essential tool cho academic writing và professional communication.',
     category: 'writing',
     platform: 'Both',
     pricing: 'Freemium',
@@ -323,7 +348,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 1,
         title: 'Sign Up và Install',
-        description: 'Tạo Grammarly account và install browser extension hoặc mobile app',
+        description:
+          'Tạo Grammarly account và install browser extension hoặc mobile app',
         tips: [
           'Install browser extension for seamless integration',
           'Download desktop app for offline use',
@@ -334,7 +360,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 2,
         title: 'Set Writing Goals',
-        description: 'Configure audience, formality, domain, và intent cho writing project',
+        description:
+          'Configure audience, formality, domain, và intent cho writing project',
         tips: [
           'Choose appropriate audience (general, knowledgeable, expert)',
           'Set formality level (informal, neutral, formal)',
@@ -345,9 +372,10 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 3,
         title: 'Write và Review Suggestions',
-        description: 'Viết content và review real-time suggestions từ Grammarly AI',
+        description:
+          'Viết content và review real-time suggestions từ Grammarly AI',
         tips: [
-          'Don\'t accept all suggestions blindly',
+          "Don't accept all suggestions blindly",
           'Understand WHY each correction is suggested',
           'Learn from explanations để improve',
           'Keep your unique voice và style'
@@ -356,7 +384,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 4,
         title: 'Analyze Performance',
-        description: 'Review writing performance insights và track improvement over time',
+        description:
+          'Review writing performance insights và track improvement over time',
         tips: [
           'Check weekly writing reports',
           'Monitor accuracy trends',
@@ -365,19 +394,26 @@ export const aiLearningApps: AILearningApp[] = [
         ]
       }
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=OJgTJaIqe1w',
+    videoDemo: 'https://www.youtube.com/watch?v=FJ_ZWAUO78s',
     websiteUrl: 'https://www.grammarly.com/',
-    imageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     rating: 4.6,
     downloads: '50M+',
     languages: ['English'],
     ageGroup: '16+ tuổi',
-    subjects: ['English Writing', 'Academic Writing', 'Business Communication', 'Creative Writing']
+    subjects: [
+      'English Writing',
+      'Academic Writing',
+      'Business Communication',
+      'Creative Writing'
+    ]
   },
   {
     id: 'questionai',
     name: 'Question.AI',
-    description: 'AI-powered homework solver và tutor cho tất cả subjects. Upload ảnh câu hỏi và nhận detailed explanations với multiple solution methods.',
+    description:
+      'AI-powered homework solver và tutor cho tất cả subjects. Upload ảnh câu hỏi và nhận detailed explanations với multiple solution methods.',
     category: 'general',
     platform: 'Both',
     pricing: 'Freemium',
@@ -413,7 +449,7 @@ export const aiLearningApps: AILearningApp[] = [
         tips: [
           'Use school email nếu có student discount',
           'Complete profile for better recommendations',
-          'Choose subjects you\'re studying',
+          "Choose subjects you're studying",
           'Set notification preferences'
         ]
       },
@@ -451,9 +487,10 @@ export const aiLearningApps: AILearningApp[] = [
         ]
       }
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=AI_QuestionDemo',
+    videoDemo: 'https://www.youtube.com/shorts/EJxCDJmuMYY',
     websiteUrl: 'https://www.question.ai/',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     rating: 4.3,
     downloads: '5M+',
     languages: ['English', 'Español', 'Français'],
@@ -463,7 +500,8 @@ export const aiLearningApps: AILearningApp[] = [
   {
     id: 'duolingo',
     name: 'Duolingo',
-    description: 'AI-powered language learning platform với personalized lessons, speech recognition, và gamification. World\'s most popular language learning app.',
+    description:
+      "AI-powered language learning platform với personalized lessons, speech recognition, và gamification. World's most popular language learning app.",
     category: 'language',
     platform: 'Both',
     pricing: 'Freemium',
@@ -506,7 +544,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 2,
         title: 'Complete Daily Lessons',
-        description: 'Practice với varied exercise types: matching, speaking, listening',
+        description:
+          'Practice với varied exercise types: matching, speaking, listening',
         tips: [
           'Focus on pronunciation exercises',
           'Use hints sparingly để challenge yourself',
@@ -517,7 +556,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 3,
         title: 'Engage With Stories',
-        description: 'Read interactive stories để improve comprehension và vocabulary',
+        description:
+          'Read interactive stories để improve comprehension và vocabulary',
         tips: [
           'Read stories aloud pentru pronunciation',
           'Look up unfamiliar words',
@@ -528,7 +568,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 4,
         title: 'Practice Speaking',
-        description: 'Use speaking exercises và conversation features để improve fluency',
+        description:
+          'Use speaking exercises và conversation features để improve fluency',
         tips: [
           'Practice într-un quiet environment',
           'Repeat sentences multiple times',
@@ -537,19 +578,30 @@ export const aiLearningApps: AILearningApp[] = [
         ]
       }
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=iBMkN6r-2KI',
+    videoDemo: 'https://www.youtube.com/watch?v=P3ZTxke4AOU',
     websiteUrl: 'https://www.duolingo.com/',
-    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     rating: 4.7,
     downloads: '500M+',
     languages: ['40+ languages including Vietnamese'],
     ageGroup: '8+ tuổi',
-    subjects: ['Foreign Languages', 'English', 'Spanish', 'French', 'German', 'Japanese', 'Korean', 'Chinese']
+    subjects: [
+      'Foreign Languages',
+      'English',
+      'Spanish',
+      'French',
+      'German',
+      'Japanese',
+      'Korean',
+      'Chinese'
+    ]
   },
   {
     id: 'github-copilot',
     name: 'GitHub Copilot',
-    description: 'AI pair programmer powered by OpenAI Codex. Provides code suggestions, completes functions, và explains code trong real-time.',
+    description:
+      'AI pair programmer powered by OpenAI Codex. Provides code suggestions, completes functions, và explains code trong real-time.',
     category: 'coding',
     platform: 'Web',
     pricing: 'Paid',
@@ -581,7 +633,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 1,
         title: 'Setup GitHub Copilot',
-        description: 'Install extension trong preferred IDE và authenticate với GitHub account',
+        description:
+          'Install extension trong preferred IDE và authenticate với GitHub account',
         tips: [
           'Available pentru VS Code, Visual Studio, Neovim, JetBrains',
           'Sign up for student discount nếu eligible',
@@ -592,7 +645,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 2,
         title: 'Write Code Comments',
-        description: 'Describe what you want to achieve trong natural language comments',
+        description:
+          'Describe what you want to achieve trong natural language comments',
         tips: [
           'Be specific despre function requirements',
           'Include input/output examples',
@@ -603,9 +657,10 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 3,
         title: 'Review Suggestions',
-        description: 'Examine Copilot\'s code suggestions và choose appropriate ones',
+        description:
+          "Examine Copilot's code suggestions và choose appropriate ones",
         tips: [
-          'Don\'t accept suggestions blindly',
+          "Don't accept suggestions blindly",
           'Understand what the code does',
           'Test suggested code thoroughly',
           'Modify suggestions to fit your needs'
@@ -614,7 +669,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 4,
         title: 'Learn From Code',
-        description: 'Study generated code để understand patterns và improve skills',
+        description:
+          'Study generated code để understand patterns và improve skills',
         tips: [
           'Ask Copilot to explain complex code',
           'Learn new language features',
@@ -623,19 +679,27 @@ export const aiLearningApps: AILearningApp[] = [
         ]
       }
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=St2CMvK4hK0',
+    videoDemo: 'https://www.youtube.com/watch?v=EPyyyB23NUU',
     websiteUrl: 'https://github.com/features/copilot',
-    imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     rating: 4.5,
     downloads: 'N/A (Extension)',
     languages: ['All programming languages'],
     ageGroup: '16+ tuổi',
-    subjects: ['Computer Science', 'Software Engineering', 'Web Development', 'Data Science', 'Machine Learning']
+    subjects: [
+      'Computer Science',
+      'Software Engineering',
+      'Web Development',
+      'Data Science',
+      'Machine Learning'
+    ]
   },
   {
     id: 'quillbot',
     name: 'QuillBot',
-    description: 'AI-powered paraphrasing tool và writing assistant. Helps improve clarity, avoid plagiarism, và enhance academic writing style.',
+    description:
+      'AI-powered paraphrasing tool và writing assistant. Helps improve clarity, avoid plagiarism, và enhance academic writing style.',
     category: 'writing',
     platform: 'Both',
     pricing: 'Freemium',
@@ -667,7 +731,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 1,
         title: 'Select Paraphrasing Mode',
-        description: 'Choose appropriate mode: Standard, Fluency, Formal, Simple, Creative, Expand, Shorten',
+        description:
+          'Choose appropriate mode: Standard, Fluency, Formal, Simple, Creative, Expand, Shorten',
         tips: [
           'Standard: balanced changes',
           'Formal: academic tone',
@@ -680,7 +745,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 2,
         title: 'Input Text',
-        description: 'Paste or type text you want to paraphrase (up to word limit)',
+        description:
+          'Paste or type text you want to paraphrase (up to word limit)',
         tips: [
           'Break long texts into smaller chunks',
           'Ensure original text is grammatically correct',
@@ -691,7 +757,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 3,
         title: 'Review Results',
-        description: 'Examine paraphrased text và make manual adjustments nếu needed',
+        description:
+          'Examine paraphrased text và make manual adjustments nếu needed',
         tips: [
           'Compare cu original meaning',
           'Check for factual accuracy',
@@ -702,7 +769,8 @@ export const aiLearningApps: AILearningApp[] = [
       {
         step: 4,
         title: 'Use Additional Tools',
-        description: 'Leverage Grammar Checker, Plagiarism Detector, và Citation Generator',
+        description:
+          'Leverage Grammar Checker, Plagiarism Detector, và Citation Generator',
         tips: [
           'Run grammar check after paraphrasing',
           'Verify originality cu plagiarism detector',
@@ -711,14 +779,20 @@ export const aiLearningApps: AILearningApp[] = [
         ]
       }
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=XcNj1zt8ZQk',
+    videoDemo: 'https://www.youtube.com/watch?v=jasrI4XUcNU',
     websiteUrl: 'https://quillbot.com/',
-    imageUrl: 'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     rating: 4.4,
     downloads: '10M+',
     languages: ['English (primary)', '30+ languages for translation'],
     ageGroup: '16+ tuổi',
-    subjects: ['Academic Writing', 'Content Creation', 'Research', 'English Language Learning']
+    subjects: [
+      'Academic Writing',
+      'Content Creation',
+      'Research',
+      'English Language Learning'
+    ]
   }
 ];
 
