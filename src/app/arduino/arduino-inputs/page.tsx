@@ -304,10 +304,10 @@ export default function ArduinoInputsLesson() {
         {/* Navigation */}
         <div className="flex justify-between items-center">
           <Link 
-            href="/arduino/arduino-setup"
+            href="/arduino/led-digital-outputs"
             className="inline-flex items-center px-6 py-3 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
           >
-            ← Bài trước: Arduino Setup
+            ← Bài trước: LED & Digital Outputs
           </Link>
           
           <Link 

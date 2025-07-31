@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { arduinoLessons } from '@/data/arduino';
 
 export const metadata: Metadata = {
   title: createTitle("Học Arduino & IoT - Lập Trình Phần Cứng"),
@@ -24,88 +25,26 @@ export default function ArduinoModule() {
     duration: '20 giờ học',
   };
 
-  const arduinoLessons = [
-    {
-      id: 'arduino-basics',
-      title: 'Làm Quen Với Arduino',
-      description: 'Giới thiệu về Arduino, thiết lập môi trường phát triển và chương trình đầu tiên',
-      icon: '🔧',
-      difficulty: 'Cơ bản',
-      duration: '60 phút',
-      href: '/arduino/arduino-basics',
-      objectives: [
-        'Hiểu về bo mạch Arduino và các thành phần',
-        'Cài đặt và sử dụng Arduino IDE',
-        'Viết và upload chương trình đầu tiên',
-        'Hiểu cấu trúc cơ bản của Arduino sketch'
-      ],
-      topics: ['Arduino IDE', 'Hardware', 'Setup', 'Blink LED']
-    },
-    {
-      id: 'arduino-setup',
-      title: 'Cài Đặt và Cấu Hình Arduino',
-      description: 'Hướng dẫn chi tiết cài đặt Arduino IDE, drivers và cấu hình môi trường phát triển',
-      icon: '⚙️',
-      difficulty: 'Cơ bản',
-      duration: '45 phút',
-      href: '/arduino/arduino-setup',
-      objectives: [
-        'Cài đặt Arduino IDE thành công',
-        'Hiểu cấu trúc của Arduino board',
-        'Kết nối Arduino với máy tính',
-        'Upload chương trình đầu tiên'
-      ],
-      topics: ['IDE Installation', 'Drivers', 'Board Configuration', 'First Upload']
-    },
-    {
-      id: 'arduino-communication',
-      title: 'Giao Tiếp và Networking',
-      description: 'Serial, I2C, SPI communication và kết nối WiFi/Bluetooth với Arduino',
-      icon: '🌐',
-      difficulty: 'Trung bình',
-      duration: '120 phút',
-      href: '/arduino/arduino-communication',
-      objectives: [
-        'Hiểu các giao thức giao tiếp',
-        'Sử dụng Serial, I2C, SPI',
-        'Kết nối WiFi với ESP32',
-        'Xây dựng web server đơn giản'
-      ],
-      topics: ['Serial Communication', 'I2C', 'SPI', 'WiFi', 'Web Server']
-    },
-    {
-      id: 'arduino-sensors',
-      title: 'Sensors và Data Processing',
-      description: 'Kết nối và xử lý dữ liệu từ các loại sensor phổ biến',
-      icon: '�',
-      difficulty: 'Trung bình',
-      duration: '90 phút',
-      href: '/arduino/arduino-sensors',
-      objectives: [
-        'Kết nối cảm biến nhiệt độ, độ ẩm',
-        'Đọc và xử lý dữ liệu analog/digital',
-        'Hiển thị dữ liệu trên Serial Monitor',
-        'Tích hợp nhiều sensor trong một dự án'
-      ],
-      topics: ['DHT22', 'LDR', 'Ultrasonic', 'Serial Communication', 'Data Processing']
-    },
-    {
-      id: 'arduino-advanced-projects',
-      title: 'Advanced Arduino Projects',
-      description: 'Xây dựng các dự án Arduino phức tạp và thực tế với tích hợp IoT',
-      icon: '🚀',
-      difficulty: 'Nâng cao',
-      duration: '180 phút',
-      href: '/arduino/arduino-advanced-projects',
-      objectives: [
-        'Tích hợp nhiều cảm biến và actuator',
-        'Tạo dashboard web với real-time data',
-        'Xây dựng hệ thống cảnh báo thông minh',
-        'Kết nối cloud và mobile app'
-      ],
-      topics: ['System Integration', 'Dashboard', 'Alert System', 'IoT', 'Cloud Connectivity']
-    }
-  ];
+  // Map Arduino lessons to display format
+  const displayLessons = arduinoLessons.map((lesson, index) => ({
+    id: lesson.id,
+    title: lesson.title,
+    description: lesson.description,
+    icon: index === 0 ? '🔧' : 
+          index === 1 ? '💡' :
+          index === 2 ? '🎛️' :
+          index === 3 ? '📡' :
+          index === 4 ? '🌐' :
+          '🚀',
+    difficulty: lesson.difficulty,
+    duration: lesson.duration,
+    href: `/arduino/${lesson.id}`,
+    objectives: lesson.objectives,
+    topics: lesson.category === 'basics' ? ['Setup', 'Programming', 'Hardware'] :
+            lesson.category === 'sensors' ? ['Sensors', 'Data Processing', 'Serial'] :
+            lesson.category === 'communication' ? ['WiFi', 'IoT', 'Web Server'] :
+            ['Advanced', 'Projects', 'Integration']
+  }));
 
   const arduinoProjects = [
     {
@@ -180,7 +119,7 @@ export default function ArduinoModule() {
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
               <span className="bg-white/10 px-3 py-1 rounded-full">🎯 {difficulty}</span>
               <span className="bg-white/10 px-3 py-1 rounded-full">⏱️ {duration}</span>
-              <span className="bg-white/10 px-3 py-1 rounded-full">📚 {arduinoLessons.length} bài học</span>
+              <span className="bg-white/10 px-3 py-1 rounded-full">📚 {displayLessons.length} bài học</span>
             </div>
           </div>
         </div>
@@ -198,7 +137,7 @@ export default function ArduinoModule() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {arduinoLessons.map((lesson, index) => (
+          {displayLessons.map((lesson, index) => (
             <Link key={index} href={lesson.href}>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 hover:bg-white/20 hover:scale-105 border border-white/20 cursor-pointer group">
                 <div className="text-4xl mb-4">{lesson.icon}</div>

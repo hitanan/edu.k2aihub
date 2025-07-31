@@ -158,6 +158,63 @@ A comprehensive educational module covering STEM/STEAM disciplines through inter
 - **YouTube Integration**: Validated video tutorials for each lesson
 - **Navigation System**: Dynamic lesson navigation with progress tracking
 
+### Module 4: Arduino & IoT Programming
+
+A comprehensive hands-on programming module covering Arduino development from basics to advanced IoT projects.
+
+#### Arduino Lessons Implemented:
+
+1. **🔧 Arduino Setup** (`/arduino/arduino-setup`)
+
+   - Arduino IDE installation and configuration
+   - Board connection and driver setup
+   - First program upload and testing
+   - Understanding Arduino hardware basics
+
+2. **💡 LED & Digital Outputs** (`/arduino/led-digital-outputs`)
+
+   - LED basics and digital output concepts
+   - Circuit design with resistor calculations
+   - LED effects: blink, fade, chase, RGB color cycling
+   - Multiple LED control and shift registers
+   - 7-segment displays and LED matrices
+
+3. **🎛️ Arduino Inputs** (`/arduino/arduino-inputs`)
+
+   - Digital and analog input fundamentals
+   - Button handling with pull-up resistors
+   - Potentiometer and sensor reading
+   - Input validation and debouncing techniques
+
+4. **📡 Sensors & Data Processing** (`/arduino/arduino-sensors`)
+
+   - Temperature, humidity, and environmental sensors
+   - Analog and digital sensor integration
+   - Data processing and Serial communication
+   - Multi-sensor projects and data logging
+
+5. **🌐 Communication & Networking** (`/arduino/arduino-communication`)
+
+   - Serial, I2C, and SPI communication protocols
+   - WiFi and Bluetooth connectivity with ESP32
+   - Web server development and IoT dashboards
+   - Cloud integration and remote monitoring
+
+6. **🚀 Advanced Arduino Projects** (`/arduino/arduino-advanced-projects`)
+
+   - Complex multi-sensor IoT systems
+   - Real-time data dashboards and visualization
+   - Smart home automation projects
+   - Industrial monitoring and control systems
+
+#### Technical Implementation:
+
+- **Architecture**: Progressive curriculum with hands-on projects
+- **Hardware Focus**: Real circuit diagrams and component guides
+- **Code Examples**: Complete, tested Arduino sketches
+- **Troubleshooting**: Common issues and debugging techniques
+- **Real-world Applications**: IoT projects and industry use cases
+
 ### Global Features Implemented:
 
 #### Standalone Feedback System (`/feedback`)
@@ -201,6 +258,11 @@ src/
 │   ├── page.tsx           # Homepage with module selection
 │   ├── city/              # Vietnam Geography Module
 │   ├── ai/                # AI Guide Module
+│   ├── stem/              # STEM Education Module
+│   ├── arduino/           # Arduino & IoT Programming Module
+│   ├── python/            # Python Programming Module
+│   ├── robotics/          # Robotics Module
+│   ├── scratch/           # Scratch Programming Module
 │   └── feedback/          # Global Feedback System
 ├── components/            # Reusable components
 ├── data/                  # Static data files

@@ -1,23 +1,8 @@
-# K2AiHub - Interactive Information### 🤖 AI Guide Module
-
-- 6 specialized AI categories (Office, Creative, Education, Business, Daily Life, Programming)
-- Step-by-step tutorials and practical examples
-- Tool comparisons and recommendations
-- Interactive navigation and mobile optimization
-
-### 🔬 STEM Education Module
-
-- 7 comprehensive STEM/STEAM lessons covering all disciplines
-- Interactive experiments and hands-on projects
-- Real-world applications and famous scientists/engineers
-- Step-by-step tutorials with YouTube video integration
-- Focus on practical learning and critical thinking
-
-### 🌐 Global Featuresrm
+# K2AiHub - Interactive Information Platform
 
 > **📚 Complete Documentation**: See [**K2AiHub.md**](./docs/K2AiHub.md) for comprehensive feature documentation, technical specifications, and development guidelines.
 
-A modern, professional Next.js educational platform featuring three comprehensive modules: **Vietnam Geography** (34 Provincial Administrative Units), **AI Của Tôi** (Practical AI Guide), and **STEM Education** (Science, Technology, Engineering, Arts & Mathematics).
+A modern, professional Next.js educational platform featuring five comprehensive modules: **Vietnam Geography** (34 Provincial Administrative Units), **AI Của Tôi** (Practical AI Guide), **STEM Education** (Science, Technology, Engineering, Arts & Mathematics), **Arduino & IoT Programming**, and **Python Programming**.
 
 ## 🚀 Quick Start
 
@@ -54,7 +39,31 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 - Tool comparisons and recommendations
 - Interactive navigation and mobile optimization
 
-### � Global Features
+### 🔬 STEM Education Module
+
+- 7 comprehensive STEM/STEAM lessons covering all disciplines
+- Interactive experiments and hands-on projects
+- Real-world applications and famous scientists/engineers
+- Step-by-step tutorials with YouTube video integration
+- Focus on practical learning and critical thinking
+
+### ⚡ Arduino & IoT Module
+
+- Complete Arduino programming curriculum from basics to advanced IoT projects
+- 6 progressive lessons: Setup, LED & Digital Outputs, Inputs, Sensors, Communication, Advanced Projects
+- Hands-on projects with real circuit diagrams and code examples
+- Hardware component guides and troubleshooting tips
+- Real-world applications from home automation to industrial IoT
+
+### 🐍 Python Programming Module
+
+- Progressive Python curriculum for beginners to advanced
+- Interactive coding exercises and projects
+- Data science and AI integration tutorials
+- Web development with Python frameworks
+- Real-world project-based learning approach
+
+### 🌐 Global Features
 
 - Universal share button system (6 social platforms)
 - Standalone feedback system
@@ -62,7 +71,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 - Performance optimizations (<3s load time)
 - Mobile-first responsive design
 
-## � Technology Stack
+## 🛠 Technology Stack
 
 - **Framework**: Next.js 15 with App Router
 - **Language**: TypeScript with strict type checking
@@ -71,7 +80,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 - **SEO**: Dynamic metadata, JSON-LD structured data, OpenGraph
 - **Deployment**: GitHub Pages with static export
 
-## � Performance Metrics
+## 📊 Performance Metrics
 
 - **First Load Time**: <3 seconds ✅
 - **Navigation Speed**: <500ms ✅

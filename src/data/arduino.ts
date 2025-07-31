@@ -178,6 +178,173 @@ void loop() {
     ]
   },
   {
+    id: 'led-digital-outputs',
+    title: 'LED và Digital Outputs',
+    description:
+      'Khám phá thế giới điều khiển LED! Học cách tạo hiệu ứng ánh sáng đẹp mắt, điều khiển nhiều LED cùng lúc, và hiểu sâu về digital outputs. Từ LED đơn giản đến RGB và matrix LED.',
+    difficulty: 'Cơ bản',
+    duration: '90 phút',
+    category: 'basics',
+    objectives: [
+      'Hiểu cách hoạt động của LED và digital outputs',
+      'Tính toán điện trở phù hợp cho LED',
+      'Tạo hiệu ứng LED: blink, fade, chase, RGB',
+      'Điều khiển nhiều LED với shift register',
+      'Troubleshoot các vấn đề thường gặp với LED'
+    ],
+    materials: [
+      'Arduino Uno',
+      'LED đơn sắc x8',
+      'RGB LED x2',
+      'Điện trở 220Ω x10',
+      'Shift register 74HC595',
+      'Breadboard và jumper wires',
+      '7-segment display (tùy chọn)'
+    ],
+    imageUrl:
+      'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    videoUrl: 'https://www.youtube.com/watch?v=kWmjNVESHaU',
+    codeExample: `/*
+  RGB LED Color Cycling
+  Tạo hiệu ứng đổi màu với RGB LED
+*/
+
+int redPin = 9;    // Pin PWM cho màu đỏ
+int greenPin = 10; // Pin PWM cho màu xanh lá
+int bluePin = 11;  // Pin PWM cho màu xanh dương
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+  Serial.begin(9600);
+  Serial.println("RGB LED Color Cycling Started!");
+}
+
+void setColor(int red, int green, int blue) {
+  analogWrite(redPin, red);
+  analogWrite(greenPin, green);
+  analogWrite(bluePin, blue);
+}
+
+void loop() {
+  // Red to Green transition
+  for(int i = 0; i < 255; i++) {
+    setColor(255-i, i, 0);
+    delay(10);
+  }
+  
+  // Green to Blue transition
+  for(int i = 0; i < 255; i++) {
+    setColor(0, 255-i, i);
+    delay(10);
+  }
+  
+  // Blue to Red transition
+  for(int i = 0; i < 255; i++) {
+    setColor(i, 0, 255-i);
+    delay(10);
+  }
+}`,
+    exercises: [
+      {
+        id: 'ex1-led-blink-pattern',
+        title: 'LED Pattern Generator',
+        description: 'Tạo pattern LED tuần tự với 5 LED',
+        difficulty: 'Dễ',
+        code: `int ledPins[] = {2, 3, 4, 5, 6};
+int numLeds = 5;
+
+void setup() {
+  for(int i = 0; i < numLeds; i++) {
+    pinMode(ledPins[i], OUTPUT);
+  }
+}
+
+void loop() {
+  // Knight Rider effect
+  for(int i = 0; i < numLeds; i++) {
+    digitalWrite(ledPins[i], HIGH);
+    delay(100);
+    digitalWrite(ledPins[i], LOW);
+  }
+  
+  for(int i = numLeds-2; i > 0; i--) {
+    digitalWrite(ledPins[i], HIGH);
+    delay(100);
+    digitalWrite(ledPins[i], LOW);
+  }
+}`,
+        expectedOutput: 'LED chạy qua lại như trong Knight Rider',
+        hints: [
+          'Sử dụng mảng để quản lý nhiều pin',
+          'Vòng lặp for để điều khiển tuần tự',
+          'Delay phù hợp để thấy hiệu ứng'
+        ],
+        troubleshooting: [
+          'LED không sáng: kiểm tra kết nối và điện trở',
+          'Pattern không smooth: điều chỉnh delay time',
+          'Arduino reset: kiểm tra tổng dòng điện tiêu thụ'
+        ]
+      },
+      {
+        id: 'ex2-rgb-mood-light',
+        title: 'RGB Mood Light',
+        description: 'Tạo đèn tâm trạng đổi màu tự động',
+        difficulty: 'Trung bình',
+        code: `int redPin = 9, greenPin = 10, bluePin = 11;
+
+void setColor(int r, int g, int b) {
+  analogWrite(redPin, r);
+  analogWrite(greenPin, g);
+  analogWrite(bluePin, b);
+}
+
+void fadeColor(int fromR, int fromG, int fromB, 
+               int toR, int toG, int toB, int steps) {
+  for(int i = 0; i <= steps; i++) {
+    int r = fromR + (toR - fromR) * i / steps;
+    int g = fromG + (toG - fromG) * i / steps;
+    int b = fromB + (toB - fromB) * i / steps;
+    setColor(r, g, b);
+    delay(50);
+  }
+}
+
+void loop() {
+  fadeColor(255, 0, 0, 0, 255, 0, 50);   // Red to Green
+  fadeColor(0, 255, 0, 0, 0, 255, 50);   // Green to Blue
+  fadeColor(0, 0, 255, 255, 0, 0, 50);   // Blue to Red
+}`,
+        expectedOutput: 'RGB LED chuyển màu mượt mà giữa các màu chính',
+        hints: [
+          'PWM pins (~) cho analog output',
+          'Tính toán interpolation cho smooth transition',
+          'Common cathode vs common anode RGB LED'
+        ],
+        troubleshooting: [
+          'Màu không chính xác: kiểm tra loại RGB LED',
+          'Không có PWM: sử dụng pin có dấu ~',
+          'Flickering: giảm delay trong fade function'
+        ]
+      }
+    ],
+    realWorldApplications: [
+      'Status indicators cho thiết bị điện tử',
+      'Decorative lighting và entertainment',
+      'Traffic light và safety systems',
+      'Display screens và information boards',
+      'Art installations và interactive exhibits'
+    ],
+    competitions: [
+      'LED Art Competition',
+      'Arduino Light Show Contest',
+      'Interactive Installation Awards',
+      'Maker Faire LED Projects',
+      'Student Innovation Challenge'
+    ]
+  },
+  {
     id: 'arduino-inputs',
     title: 'Đọc Input và Điều Khiển',
     description:

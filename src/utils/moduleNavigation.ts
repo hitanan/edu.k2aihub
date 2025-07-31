@@ -27,6 +27,7 @@ export interface ModuleNavigation {
 const pageMapping = {
   // Arduino mappings
   'arduino-setup': '/arduino/arduino-setup',
+  'led-digital-outputs': '/arduino/led-digital-outputs',
   'arduino-inputs': '/arduino/arduino-inputs',
   'arduino-sensors': '/arduino/arduino-sensors',
   'arduino-communication': '/arduino/arduino-communication',
