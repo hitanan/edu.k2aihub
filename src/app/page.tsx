@@ -112,6 +112,14 @@ export default function Home() {
       stats: ['Hướng Dẫn Thực Hành', 'Công Cụ AI', 'Ứng Dụng Thực Tế']
     },
     {
+      title: 'STEM & STEAM',
+      description: 'Khám phá khoa học, công nghệ, kỹ thuật, toán học và nghệ thuật qua các bài học thực hành thú vị và sáng tạo.',
+      href: '/stem',
+      icon: '🧪',
+      color: 'from-green-600 to-blue-600',
+      stats: ['7 Bài Học', '5 Lĩnh Vực', 'Thí Nghiệm Thực Tế']
+    },
+    {
       title: 'Lập Trình Python',
       description: 'Học lập trình Python từ cơ bản đến nâng cao với các bài toán thực tế và dự án ứng dụng trong đời sống.',
       href: '/python',

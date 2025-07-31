@@ -4,6 +4,7 @@
 import { arduinoLessons } from '@/data/arduino';
 import { roboticsLessons } from '@/data/robotics';
 import { scratchLessons } from '@/data/scratch';
+import { stemLessons } from '@/data/stem';
 
 export interface NavigationLink {
   href: string;
@@ -45,11 +46,20 @@ const pageMapping = {
   'scratch-sprites-sounds': '/scratch/sound-effects',
   'scratch-variables-logic': '/scratch/animation-movement',
   'scratch-game-development': '/scratch/game-development',
-  'scratch-advanced-features': '/scratch/advanced-features'
+  'scratch-advanced-features': '/scratch/advanced-features',
+
+  // STEM mappings
+  'stem-introduction': '/stem/stem-introduction',
+  'fun-physics-experiments': '/stem/fun-physics-experiments',
+  'coding-for-kids': '/stem/coding-for-kids',
+  'engineering-challenges': '/stem/engineering-challenges',
+  'math-in-real-life': '/stem/math-in-real-life',
+  'art-meets-science': '/stem/art-meets-science',
+  'environmental-solutions': '/stem/environmental-solutions'
 };
 
 export function getModuleNavigation(
-  module: 'arduino' | 'robotics' | 'scratch',
+  module: 'arduino' | 'robotics' | 'scratch' | 'stem',
   currentLessonId: string
 ): ModuleNavigation | null {
   let lessons;
@@ -67,6 +77,10 @@ export function getModuleNavigation(
     case 'scratch':
       lessons = scratchLessons;
       moduleBasePath = '/scratch';
+      break;
+    case 'stem':
+      lessons = stemLessons;
+      moduleBasePath = '/stem';
       break;
     default:
       return null;
@@ -123,7 +137,7 @@ export function getModuleNavigation(
 
 // Helper function to get lesson by ID
 export function getLessonById(
-  module: 'arduino' | 'robotics' | 'scratch',
+  module: 'arduino' | 'robotics' | 'scratch' | 'stem',
   lessonId: string
 ) {
   let lessons;
@@ -137,6 +151,9 @@ export function getLessonById(
       break;
     case 'scratch':
       lessons = scratchLessons;
+      break;
+    case 'stem':
+      lessons = stemLessons;
       break;
     default:
       return null;

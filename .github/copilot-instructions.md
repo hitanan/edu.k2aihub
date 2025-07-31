@@ -1,6 +1,6 @@
 # Interactive Information Platform for Vietnamese Education
 
-The project called "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a modern, professional Next.js educational platform featuring two comprehensive modules: **Vietnam Geography** and **AI Của Tôi** (Practical AI Guide).
+The project called "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a modern, professional Next.js educational platform featuring three comprehensive modules: **Vietnam Geography**, **AI Của Tôi** (Practical AI Guide), and **STEM Education** (Science, Technology, Engineering, Arts & Mathematics).
 
 ## 🌏 CRITICAL LANGUAGE REQUIREMENTS
 
@@ -101,6 +101,62 @@ A comprehensive guide for using AI tools effectively across 6 major life and wor
 - **SEO**: Individual metadata for each AI category
 - **Interactive Content**: Section-based navigation with state management
 - **Performance**: Code splitting and lazy loading
+
+### Module 3: STEM Education - Science, Technology, Engineering, Arts & Mathematics
+
+A comprehensive educational module covering STEM/STEAM disciplines through interactive, hands-on learning experiences.
+
+#### STEM Lessons Implemented:
+
+1. **🔬 STEM Introduction** (`/stem/stem-introduction`)
+
+   - What is STEM/STEAM and why it matters
+   - Career paths and real-world applications
+   - Interactive introduction to scientific thinking
+
+2. **⚗️ Fun Physics Experiments** (`/stem/fun-physics-experiments`)
+
+   - Basic physics principles through experiments
+   - Hands-on activities with household materials
+   - Understanding forces, motion, and energy
+
+3. **💻 Coding for Kids** (`/stem/coding-for-kids`)
+
+   - Introduction to programming with Scratch
+   - Visual programming concepts
+   - Creating games and animations
+
+4. **🏗️ Engineering Challenges** (`/stem/engineering-challenges`)
+
+   - Basic engineering principles
+   - Design thinking and problem solving
+   - Building challenges and prototyping
+
+5. **🔢 Math in Real Life** (`/stem/math-in-real-life`)
+
+   - Practical mathematics applications
+   - Math in cooking, shopping, sports, and arts
+   - Making math relevant and fun
+
+6. **🎨 Art Meets Science** (`/stem/art-meets-science`)
+
+   - Integration of arts and sciences
+   - Color theory, sound physics, and geometry
+   - Creative projects combining both disciplines
+
+7. **🌍 Environmental Solutions** (`/stem/environmental-solutions`)
+   - Environmental challenges and scientific solutions
+   - Renewable energy and sustainability
+   - Climate change and green technology
+
+#### Technical Implementation:
+
+- **Architecture**: Server/Client component separation for Next.js App Router
+- **SEO**: Individual metadata for each STEM lesson
+- **Interactive Content**: Step-by-step tutorials with video integration
+- **Performance**: Code splitting and lazy loading
+- **YouTube Integration**: Validated video tutorials for each lesson
+- **Navigation System**: Dynamic lesson navigation with progress tracking
 
 ### Global Features Implemented:
 
@@ -223,6 +279,7 @@ npm run lint     # Code quality checks
 
 - ✅ All 34 cities with individual pages
 - ✅ All 6 AI categories with comprehensive content
+- ✅ All 7 STEM lessons with hands-on experiments
 - ✅ Global feedback system
 - ✅ Search functionality with historical name support
 - ✅ Interactive map with performance optimization
@@ -238,7 +295,7 @@ npm run lint     # Code quality checks
 7. **Vietnamese Language Requirements**:
    - **ALWAYS use Vietnamese for all user-facing content**
    - **Application title MUST be "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối"**
-   - **Module names: "Địa Lý Việt Nam" and "AI Của Tôi"**
+   - **Module names: "Địa Lý Việt Nam", "AI Của Tôi", and "STEM Education"**
    - **All metadata, UI text, error messages in Vietnamese**
    - **SEO content must be in Vietnamese for local search optimization**
 8. **Documentation Requirement**: **ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.**

@@ -1,8 +1,23 @@
-# K2AiHub - Interactive Information Platform
+# K2AiHub - Interactive Information### 🤖 AI Guide Module
+
+- 6 specialized AI categories (Office, Creative, Education, Business, Daily Life, Programming)
+- Step-by-step tutorials and practical examples
+- Tool comparisons and recommendations
+- Interactive navigation and mobile optimization
+
+### 🔬 STEM Education Module
+
+- 7 comprehensive STEM/STEAM lessons covering all disciplines
+- Interactive experiments and hands-on projects
+- Real-world applications and famous scientists/engineers
+- Step-by-step tutorials with YouTube video integration
+- Focus on practical learning and critical thinking
+
+### 🌐 Global Featuresrm
 
 > **📚 Complete Documentation**: See [**K2AiHub.md**](./docs/K2AiHub.md) for comprehensive feature documentation, technical specifications, and development guidelines.
 
-A modern, professional Next.js educational platform featuring two comprehensive modules: **Vietnam Geography** (34 Provincial Administrative Units) and **AI Của Tôi** (Practical AI Guide).
+A modern, professional Next.js educational platform featuring three comprehensive modules: **Vietnam Geography** (34 Provincial Administrative Units), **AI Của Tôi** (Practical AI Guide), and **STEM Education** (Science, Technology, Engineering, Arts & Mathematics).
 
 ## 🚀 Quick Start
 

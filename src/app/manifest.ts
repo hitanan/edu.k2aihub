@@ -17,7 +17,27 @@ export default function manifest(): MetadataRoute.Manifest {
     orientation: 'portrait',
     scope: '/',
     lang: 'vi',
-    categories: ['education', 'reference', 'geography'],
+    categories: [
+      'giáo dục',
+      'tham khảo',
+      'địa lý',
+      'công nghệ AI',
+      'học tập tương tác',
+      'bản đồ',
+      'hướng dẫn AI',
+      'ứng dụng di động',
+      'học tập trực tuyến',
+      'python',
+      'arduino',
+      'robotics',
+      'bán dẫn',
+      'IoT',
+      'Địa Lý Việt Nam',
+      'Scratch',
+      'lập trình',
+      'khoa học máy tính',
+      'giáo dục STEM'
+    ],
     icons: [
       {
         src: '/icon-192x192.png',

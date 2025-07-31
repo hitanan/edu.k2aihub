@@ -34,7 +34,8 @@ export const arduinoLessons: ArduinoLesson[] = [
   {
     id: 'arduino-setup',
     title: 'Cài Đặt và Làm Quen Arduino',
-    description: 'Hướng dẫn cài đặt Arduino IDE, kết nối board và chạy chương trình đầu tiên',
+    description:
+      'Bước đầu khám phá thế giới Arduino! Bạn sẽ tự tay cài đặt phần mềm, kết nối board, làm LED nhấp nháy và cảm nhận niềm vui lập trình phần cứng. Bài học này giúp bạn tự tin bắt đầu mọi dự án sáng tạo với Arduino.',
     difficulty: 'Cơ bản',
     duration: '60 phút',
     category: 'basics',
@@ -53,9 +54,11 @@ export const arduinoLessons: ArduinoLesson[] = [
       'Breadboard',
       'Dây nối jumper'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1553406830-ef2513450d76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1553406830-ef2513450d76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=nL34zDTPkcs',
-    circuitDiagram: 'https://www.arduino.cc/en/uploads/Tutorial/ExampleCircuit_bb.png',
+    circuitDiagram:
+      'https://www.arduino.cc/en/uploads/Tutorial/ExampleCircuit_bb.png',
     codeExample: `/*
   Blink - Chương trình Arduino cơ bản nhất
   Làm LED nhấp nháy mỗi giây
@@ -177,7 +180,8 @@ void loop() {
   {
     id: 'arduino-inputs',
     title: 'Đọc Input và Điều Khiển',
-    description: 'Học cách đọc tín hiệu từ buttons, potentiometer và cảm biến để điều khiển output',
+    description:
+      'Trải nghiệm điều khiển thiết bị bằng nút nhấn, biến trở và cảm biến! Bạn sẽ học cách tương tác với thế giới thực, tạo hiệu ứng thú vị và xây dựng hệ thống thông minh chỉ với vài dòng code.',
     difficulty: 'Cơ bản',
     duration: '75 phút',
     category: 'basics',
@@ -196,7 +200,8 @@ void loop() {
       'LED RGB',
       'Breadboard và jumper wires'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=6WReFkfrUIk',
     codeExample: `/*
   Button và LED Control
@@ -230,7 +235,8 @@ void loop() {
       {
         id: 'ex1-button-counter',
         title: 'Đếm Số Lần Nhấn Button',
-        description: 'Tạo counter đếm số lần nhấn button và hiển thị trên Serial Monitor',
+        description:
+          'Tạo counter đếm số lần nhấn button và hiển thị trên Serial Monitor',
         difficulty: 'Trung bình',
         code: `int buttonPin = 2;
 int counter = 0;
@@ -331,7 +337,8 @@ void loop() {
   {
     id: 'arduino-sensors',
     title: 'Làm Việc Với Cảm Biến',
-    description: 'Tích hợp các cảm biến phổ biến như nhiệt độ, ánh sáng, và chuyển động',
+    description:
+      'Khám phá bí mật của môi trường xung quanh qua các cảm biến hiện đại! Đo nhiệt độ, độ ẩm, ánh sáng, chuyển động... và biến dữ liệu thành giải pháp thông minh cho nhà ở, nông nghiệp, an ninh.',
     difficulty: 'Trung bình',
     duration: '90 phút',
     category: 'sensors',
@@ -351,8 +358,8 @@ void loop() {
       '10kΩ resistors',
       '16x2 LCD display (optional)'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=4f6UMl8hgkA',
+    imageUrl:
+      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     codeExample: `/*
   Multi-Sensor System
   Đọc nhiệt độ, độ ẩm và ánh sáng
@@ -509,7 +516,8 @@ void loop() {
   
   delay(100);
 }`,
-        expectedOutput: 'LED tự động bật khi tối và có chuyển động, tự tắt sau 10s',
+        expectedOutput:
+          'LED tự động bật khi tối và có chuyển động, tự tắt sau 10s',
         hints: [
           'millis() để theo dõi thời gian',
           'Combine multiple sensor inputs with logic',
@@ -542,7 +550,8 @@ void loop() {
   {
     id: 'arduino-communication',
     title: 'Giao Tiếp và Networking',
-    description: 'Serial, I2C, SPI communication và kết nối WiFi/Bluetooth',
+    description:
+      'Kết nối Arduino với thế giới! Học cách truyền nhận dữ liệu qua Serial, I2C, SPI, xây dựng web server, gửi dữ liệu lên cloud và điều khiển thiết bị từ xa qua WiFi/Bluetooth. Mở rộng khả năng sáng tạo không giới hạn.',
     difficulty: 'Nâng cao',
     duration: '120 phút',
     category: 'communication',
@@ -561,8 +570,8 @@ void loop() {
       'Breadboard và jumper wires',
       'WiFi access point'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=O3XmMQqJ-3w',
+    imageUrl:
+      'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     codeExample: `/*
   ESP32 Web Server với Sensor Data
   Tạo web interface để hiển thị dữ liệu sensors
@@ -819,7 +828,8 @@ void loop() {
   {
     id: 'arduino-advanced-projects',
     title: 'Dự Án Arduino Nâng Cao',
-    description: 'Tích hợp tất cả kiến thức để tạo ra các dự án thực tế và phức tạp',
+    description:
+      'Khám phá sức mạnh thực sự của Arduino qua dự án IoT thông minh! Tự tay thiết kế trạm giám sát môi trường hiện đại, kết nối nhiều cảm biến, truyền dữ liệu lên cloud, xử lý realtime, tạo giao diện trực quan và điều khiển thiết bị từ xa. Làm chủ công nghệ, sáng tạo giải pháp phục vụ cuộc sống và chinh phục các cuộc thi lớn! 🚀',
     difficulty: 'Nâng cao',
     duration: '180 phút',
     category: 'projects',
@@ -839,7 +849,8 @@ void loop() {
       'RTC module',
       'Power supply và battery backup'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=7vhvnaWUZjE',
     codeExample: `/*
   Smart Environmental Monitoring Station
@@ -1201,7 +1212,8 @@ export const arduinoQuizzes = [
       'init() và main()'
     ],
     correctAnswer: 1,
-    explanation: 'setup() chạy một lần khi Arduino khởi động, loop() chạy liên tục sau đó.'
+    explanation:
+      'setup() chạy một lần khi Arduino khởi động, loop() chạy liên tục sau đó.'
   },
   {
     id: 'quiz-arduino-2',
@@ -1214,18 +1226,14 @@ export const arduinoQuizzes = [
       'Tăng tốc độ đọc'
     ],
     correctAnswer: 1,
-    explanation: 'INPUT_PULLUP kích hoạt điện trở kéo lên 20kΩ nội bộ, giúp pin đọc trạng thái button chính xác.'
+    explanation:
+      'INPUT_PULLUP kích hoạt điện trở kéo lên 20kΩ nội bộ, giúp pin đọc trạng thái button chính xác.'
   },
   {
     id: 'quiz-arduino-3',
     lessonId: 'arduino-sensors',
     question: 'Hàm nào được sử dụng để đọc giá trị analog?',
-    options: [
-      'digitalRead()',
-      'analogRead()',
-      'pinMode()',
-      'digitalWrite()'
-    ],
+    options: ['digitalRead()', 'analogRead()', 'pinMode()', 'digitalWrite()'],
     correctAnswer: 1,
     explanation: 'analogRead() đọc giá trị từ 0-1023 từ các pin analog A0-A5.'
   },
@@ -1233,14 +1241,10 @@ export const arduinoQuizzes = [
     id: 'quiz-arduino-4',
     lessonId: 'arduino-communication',
     question: 'Giao thức nào thường được sử dụng cho OLED display?',
-    options: [
-      'UART',
-      'SPI',
-      'I2C',
-      'USB'
-    ],
+    options: ['UART', 'SPI', 'I2C', 'USB'],
     correctAnswer: 2,
-    explanation: 'I2C (Inter-Integrated Circuit) thường được sử dụng cho OLED displays vì chỉ cần 2 dây (SDA và SCL).'
+    explanation:
+      'I2C (Inter-Integrated Circuit) thường được sử dụng cho OLED displays vì chỉ cần 2 dây (SDA và SCL).'
   }
 ];
 

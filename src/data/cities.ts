@@ -1799,7 +1799,7 @@ export const citiesData: City[] = [
     code: '51',
     name: 'Quảng Ngãi',
     slug: 'quang-ngai',
-    oldNames: ['Quảng Ngãi'],
+    oldNames: ['Quảng Ngãi', 'Kon Tum'],
     region: 'Nam Trung Bộ',
     coordinates: { x: 420, y: 400 },
     color: '#74b9ff',
@@ -1840,6 +1840,96 @@ export const citiesData: City[] = [
           'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&h=400&fit=crop',
         location: 'Thị xã Đức Phổ',
         url: 'https://quangngai.gov.vn/vi-VN/1/3034/17/231/tintuc/nui-thanh.aspx'
+      },
+      {
+        name: 'Nhà thờ chính tòa Kon Tum (Nhà thờ gỗ)',
+        description:
+          'Kiến trúc Roman kết hợp nhà sàn Ba Na, xây dựng năm 1913, biểu tượng văn hóa Kon Tum.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/2/2a/Nh%C3%A0_th%E1%BB%9D_g%E1%BB%97_Kon_Tum.jpg',
+        location: 'TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/Nh%C3%A0_th%E1%BB%9D_ch%C3%ADnh_t%C3%B2a_Kon_Tum'
+      },
+      {
+        name: 'Tòa Giám mục Kon Tum',
+        description:
+          'Tiểu Chủng viện Thừa sai, kiến trúc pha trộn bản địa và phương Tây, xây dựng 1935-1938.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/7/7e/Bishop_of_Kontum_Building%2C_Kon_Tum_City%2C_Viet_Nam.jpg',
+        location: 'TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/T%E1%BA%A1p_tin:Bishop_of_Kontum_Building%2C_Kon_Tum_City%2C_Viet_Nam.jpg'
+      },
+      {
+        name: 'Chùa Bác Ái',
+        description:
+          'Chùa cổ xây năm 1932, được vua Bảo Đại ban biển Sắc tứ Bác Ái Tự năm 1933.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/2/2b/Bac_Ai_Pagoda_Kon_Tum.jpg',
+        location: 'TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/T%E1%BA%A1p_tin:Bac_Ai_Pagoda_Kon_Tum.jpg'
+      },
+      {
+        name: 'Khu di tích lịch sử cách mạng Ngục Kon Tum',
+        description:
+          'Quần thể nhà lao giam giữ chiến sĩ cách mạng thời Pháp, bên bờ sông Đăk Bla.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/6/6e/Nguc_Kon_Tum.jpg',
+        location: 'TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/Ng%E1%BB%A5c_Kon_Tum'
+      },
+      {
+        name: 'Cầu treo Kon Klor',
+        description:
+          'Cầu treo nổi tiếng bắc qua sông Đăk Bla, biểu tượng giao thông Kon Tum.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/3/3e/Cau_treo_Kon_Klor.jpg',
+        location: 'TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/C%E1%BA%A7u_treo_Kon_Klor'
+      },
+      {
+        name: 'Cầu Đăk Bla',
+        description:
+          'Cầu lớn bắc qua sông Đăk Bla, điểm ngắm cảnh đẹp thành phố.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/4/4e/Cau_Dak_Bla_Kon_Tum.jpg',
+        location: 'TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/C%E1%BA%A7u_%C4%90%C4%83k_Bla'
+      },
+      {
+        name: 'Hồ thủy điện Yali',
+        description:
+          'Hồ nước lớn phục vụ thủy điện, cảnh quan thiên nhiên hùng vĩ.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/5/5e/Yali_Dam_Kon_Tum.jpg',
+        location: 'Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/H%E1%BB%93_th%E1%BB%A7y_%C4%91i%E1%BB%87n_Yali'
+      },
+      {
+        name: 'Nhà rông Ba Na',
+        description:
+          'Nhà rông truyền thống của người Ba Na, biểu tượng văn hóa Tây Nguyên.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/6/6a/Nha_rong_Ba_Na_Kon_Tum.jpg',
+        location: 'Ven TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/Nh%C3%A0_r%C3%B4ng'
+      },
+      {
+        name: 'Sông Đăk Bla',
+        description:
+          'Dòng sông lớn uốn quanh thành phố Kon Tum, cảnh quan thơ mộng.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/8/8e/Dak_Bla_River_Kon_Tum.jpg',
+        location: 'TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/S%C3%B4ng_%C4%90%C4%83k_Bla'
+      },
+      {
+        name: 'Dãy núi Chư Hreng',
+        description:
+          'Dãy núi nổi tiếng phía tây Kon Tum, điểm trekking và ngắm cảnh đẹp.',
+        imageUrl:
+          'https://upload.wikimedia.org/wikipedia/commons/9/9e/Chu_Hreng_Mountain_Kon_Tum.jpg',
+        location: 'Phía tây TP Kon Tum',
+        url: 'https://vi.wikipedia.org/wiki/Ch%C6%B0_Hreng'
       }
     ],
     fullPageContent: `

@@ -34,7 +34,8 @@ export const roboticsLessons: RoboticsLesson[] = [
   {
     id: 'basic-robotics-intro',
     title: 'Giới Thiệu Robotics Cơ Bản',
-    description: 'Khái niệm cơ bản về robotics, các thành phần chính của robot và ứng dụng trong đời sống',
+    description:
+      'Khái niệm cơ bản về robotics, các thành phần chính của robot và ứng dụng trong đời sống',
     difficulty: 'Cơ bản',
     duration: '45 phút',
     category: 'theory',
@@ -51,13 +52,15 @@ export const roboticsLessons: RoboticsLesson[] = [
       'Video demo các loại robot',
       'Tài liệu tham khảo'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=gfOIs0gHC6M',
     exercises: [
       {
         id: 'ex1-robot-types',
         title: 'Phân Loại Robot',
-        description: 'Phân loại các robot trong video theo chức năng và hình dạng',
+        description:
+          'Phân loại các robot trong video theo chức năng và hình dạng',
         difficulty: 'Dễ',
         hints: [
           'Quan sát hình dạng và chức năng của robot',
@@ -68,7 +71,8 @@ export const roboticsLessons: RoboticsLesson[] = [
       {
         id: 'ex2-robot-components',
         title: 'Xác Định Thành Phần Robot',
-        description: 'Chỉ ra các thành phần chính trong hình ảnh robot: cảm biến, bộ điều khiển, động cơ',
+        description:
+          'Chỉ ra các thành phần chính trong hình ảnh robot: cảm biến, bộ điều khiển, động cơ',
         difficulty: 'Trung bình',
         hints: [
           'Tìm phần "mắt" của robot (camera, cảm biến)',
@@ -95,7 +99,8 @@ export const roboticsLessons: RoboticsLesson[] = [
   {
     id: 'basic-electronics',
     title: 'Điện Tử Cơ Bản Cho Robotics',
-    description: 'Kiến thức điện tử cần thiết để hiểu cách robot hoạt động: LED, nút nhấn, cảm biến',
+    description:
+      'Kiến thức điện tử cần thiết để hiểu cách robot hoạt động: LED, nút nhấn, cảm biến',
     difficulty: 'Cơ bản',
     duration: '60 phút',
     category: 'hardware',
@@ -113,7 +118,8 @@ export const roboticsLessons: RoboticsLesson[] = [
       'Pin 9V',
       'Dây nối'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=6WReFkfrUIk',
     exercises: [
       {
@@ -157,7 +163,8 @@ export const roboticsLessons: RoboticsLesson[] = [
   {
     id: 'microcontroller-basics',
     title: 'Vi Điều Khiển Cơ Bản',
-    description: 'Làm quen với Arduino và các vi điều khiển cơ bản, cách lập trình và kết nối phần cứng',
+    description:
+      'Làm quen với Arduino và các vi điều khiển cơ bản, cách lập trình và kết nối phần cứng',
     difficulty: 'Trung bình',
     duration: '90 phút',
     category: 'programming',
@@ -175,7 +182,8 @@ export const roboticsLessons: RoboticsLesson[] = [
       'Cảm biến siêu âm',
       'Servo motor'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1553406830-ef2513450d76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1553406830-ef2513450d76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=nL34zDTPkcs',
     codeExample: `// Chương trình nhấp nháy LED
 int ledPin = 13;
@@ -261,7 +269,8 @@ void loop() {
   {
     id: 'sensors-actuators',
     title: 'Cảm Biến và Động Cơ',
-    description: 'Tìm hiểu các loại cảm biến và động cơ thường dùng trong robotics',
+    description:
+      'Tìm hiểu các loại cảm biến và động cơ thường dùng trong robotics',
     difficulty: 'Trung bình',
     duration: '75 phút',
     category: 'hardware',
@@ -279,7 +288,8 @@ void loop() {
       'DC Motor với driver L298N',
       'Arduino Uno'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=4f6UMl8hgkA',
     codeExample: `// Đọc khoảng cách từ cảm biến siêu âm
 int trigPin = 9;
@@ -415,7 +425,8 @@ void loop() {
       'Pin lithium',
       'Breadboard và dây nối'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=7vhvnaWUZjE',
     codeExample: `// Robot tránh vật cản cơ bản
 #include <NewPing.h>
@@ -579,7 +590,8 @@ void findBestPath() {
   {
     id: 'iot-robotics',
     title: 'IoT và Robotics',
-    description: 'Kết nối robot với Internet để điều khiển từ xa và thu thập dữ liệu',
+    description:
+      'Kết nối robot với Internet để điều khiển từ xa và thu thập dữ liệu',
     difficulty: 'Nâng cao',
     duration: '90 phút',
     category: 'programming',
@@ -596,8 +608,8 @@ void findBestPath() {
       'Smartphone với app Blynk',
       'Mạng WiFi'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=O3XmMQqJ-3w',
+    imageUrl:
+      'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     codeExample: `// Robot IoT với ESP32 và Blynk
 #define BLYNK_TEMPLATE_ID "YourTemplateID"
 #define BLYNK_DEVICE_NAME "Robot IoT"
@@ -764,7 +776,8 @@ export const roboticsQuizzes = [
       'Máy móc thay thế con người hoàn toàn'
     ],
     correctAnswer: 1,
-    explanation: 'Robot là thiết bị tự động có khả năng cảm nhận môi trường, xử lý thông tin và thực hiện hành động dựa trên lập trình.'
+    explanation:
+      'Robot là thiết bị tự động có khả năng cảm nhận môi trường, xử lý thông tin và thực hiện hành động dựa trên lập trình.'
   },
   {
     id: 'quiz-basic-2',
@@ -777,27 +790,26 @@ export const roboticsQuizzes = [
       'Để LED có thể đổi màu'
     ],
     correctAnswer: 1,
-    explanation: 'Điện trở giới hạn dòng điện chạy qua LED, bảo vệ LED khỏi bị hỏng do dòng điện quá lớn.'
+    explanation:
+      'Điện trở giới hạn dòng điện chạy qua LED, bảo vệ LED khỏi bị hỏng do dòng điện quá lớn.'
   },
   {
     id: 'quiz-programming-1',
     lessonId: 'microcontroller-basics',
-    question: 'Hàm nào được sử dụng để đặt trạng thái chân digital trong Arduino?',
-    options: [
-      'analogWrite()',
-      'digitalWrite()',
-      'digitalRead()',
-      'pinMode()'
-    ],
+    question:
+      'Hàm nào được sử dụng để đặt trạng thái chân digital trong Arduino?',
+    options: ['analogWrite()', 'digitalWrite()', 'digitalRead()', 'pinMode()'],
     correctAnswer: 1,
-    explanation: 'digitalWrite() được sử dụng để đặt trạng thái HIGH hoặc LOW cho chân digital output.'
+    explanation:
+      'digitalWrite() được sử dụng để đặt trạng thái HIGH hoặc LOW cho chân digital output.'
   }
 ];
 
 const realWorldApplications = [
   {
     title: 'Y Tế',
-    description: 'Robot phẫu thuật, robot chăm sóc người bệnh, protêt thông minh',
+    description:
+      'Robot phẫu thuật, robot chăm sóc người bệnh, protêt thông minh',
     icon: '🏥'
   },
   {

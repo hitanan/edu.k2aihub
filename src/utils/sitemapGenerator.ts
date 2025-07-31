@@ -3,6 +3,7 @@ import citiesData from '@/data/cities';
 import { arduinoLessons } from '@/data/arduino';
 import { roboticsLessons } from '@/data/robotics';
 import { scratchLessons } from '@/data/scratch';
+import { stemLessons } from '@/data/stem';
 
 // Utility to automatically generate sitemap entries for all pages
 const baseUrl = 'https://k2aihub.com';
@@ -40,6 +41,11 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/scratch`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/stem`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     },
@@ -138,6 +144,14 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
+  // STEM lesson pages
+  const stemPages = stemLessons.map((lesson) => ({
+    url: `${baseUrl}/stem/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
   // Region pages
   const regionSlugs = [
     'bac-bo',
@@ -205,6 +219,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     ...arduinoPages,
     ...roboticsPages,
     ...scratchPages,
+    ...stemPages,
     ...regionPages,
     ...majorCityPages, // High priority cities first
     ...regularCityPages // Regular cities

@@ -36,7 +36,7 @@ export const scratchLessons: ScratchLesson[] = [
     id: 'scratch-introduction',
     title: 'Giới Thiệu Scratch',
     description:
-      'Làm quen với giao diện Scratch và các khái niệm lập trình cơ bản qua kéo thả',
+      'Khám phá thế giới sáng tạo với Scratch! Bạn sẽ làm quen giao diện trực quan, tự tay kéo thả các khối lệnh để tạo ra hoạt cảnh, game và câu chuyện tương tác. Bài học này giúp bạn khởi đầu hành trình lập trình đầy màu sắc và vui nhộn.',
     difficulty: 'Cơ bản',
     duration: '45 phút',
     category: 'basics',
@@ -124,7 +124,7 @@ export const scratchLessons: ScratchLesson[] = [
     id: 'scratch-sprites-sounds',
     title: 'Sprites và Âm Thanh',
     description:
-      'Tìm hiểu cách sử dụng nhiều sprites, thêm âm thanh và tạo tương tác',
+      'Thỏa sức sáng tạo với nhiều nhân vật và âm thanh sống động! Bạn sẽ học cách thêm sprites, tạo hiệu ứng âm thanh, xây dựng tương tác giữa các nhân vật để dự án Scratch trở nên hấp dẫn và cuốn hút.',
     difficulty: 'Cơ bản',
     duration: '60 phút',
     category: 'animation',
@@ -213,7 +213,7 @@ export const scratchLessons: ScratchLesson[] = [
     id: 'scratch-variables-logic',
     title: 'Biến và Logic',
     description:
-      'Sử dụng biến để lưu trữ dữ liệu và câu lệnh điều kiện để tạo logic phức tạp',
+      'Làm chủ tư duy logic với Scratch! Bạn sẽ sử dụng biến để lưu trữ điểm số, tạo điều kiện if-else để xây dựng game tương tác, và phát triển các chương trình thông minh, phản hồi linh hoạt với người dùng.',
     difficulty: 'Trung bình',
     duration: '75 phút',
     category: 'interactive',
@@ -304,7 +304,7 @@ export const scratchLessons: ScratchLesson[] = [
     id: 'scratch-game-development',
     title: 'Phát Triển Game',
     description:
-      'Tạo game hoàn chỉnh với collision detection, power-ups và multiple levels',
+      'Trở thành nhà phát triển game nhí! Bạn sẽ tự tay thiết kế gameplay, xây dựng hệ thống level, thêm hiệu ứng đặc biệt và kiểm tra va chạm để tạo ra những trò chơi hấp dẫn, thử thách bạn bè.',
     difficulty: 'Nâng cao',
     duration: '120 phút',
     category: 'games',
@@ -399,7 +399,7 @@ export const scratchLessons: ScratchLesson[] = [
     id: 'scratch-advanced-features',
     title: 'Tính Năng Nâng Cao',
     description:
-      'Khám phá các tính năng nâng cao như custom blocks, clones và pen graphics',
+      'Chinh phục Scratch với các tính năng nâng cao! Bạn sẽ tạo custom blocks, sử dụng clone để tạo hiệu ứng đặc biệt, vẽ hình nghệ thuật với pen extension và kết hợp mọi kỹ năng để xây dựng dự án phức tạp, sáng tạo không giới hạn.',
     difficulty: 'Nâng cao',
     duration: '90 phút',
     category: 'advanced',

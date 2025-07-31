@@ -17,6 +17,45 @@ export const metadata: Metadata = {
 
 const aiApps = [
   {
+    category: "Education & Learning",
+    icon: "📚",
+    href: '/ai/ai-apps/education-learning',
+    apps: [
+      {
+        name: "Khan Academy AI",
+        description: "AI tutor cá nhân cho học tập",
+        features: ["Personalized learning", "Practice problems", "Progress tracking", "Multiple subjects"],
+        link: "https://khanacademy.org/ai",
+        pricing: "Free",
+        icon: "🎓"
+      },
+      {
+        name: "Duolingo",
+        description: "AI-powered language learning",
+        features: ["Adaptive lessons", "Speech recognition", "Personalized review", "Gamification"],
+        link: "https://duolingo.com",
+        pricing: "Freemium",
+        icon: "🗣️"
+      },
+      {
+        name: "Coursera AI",
+        description: "AI trong online courses",
+        features: ["Course recommendations", "Auto-grading", "Personalized feedback", "Career guidance"],
+        link: "https://coursera.org",
+        pricing: "Freemium",
+        icon: "📖"
+      },
+      {
+        name: "Quizlet AI",
+        description: "AI study tools và flashcards",
+        features: ["Smart study modes", "Auto-generated questions", "Spaced repetition", "Progress analytics"],
+        link: "https://quizlet.com",
+        pricing: "Freemium",
+        icon: "🃏"
+      }
+    ]
+  },
+  {
     category: "Productivity & Work",
     icon: "💼",
     apps: [
@@ -165,45 +204,6 @@ const aiApps = [
         link: "https://salesforce.com/einstein",
         pricing: "Enterprise",
         icon: "⚡"
-      }
-    ]
-  },
-  {
-    category: "Education & Learning",
-    icon: "📚",
-    href: '/ai/ai-apps/education-learning',
-    apps: [
-      {
-        name: "Khan Academy AI",
-        description: "AI tutor cá nhân cho học tập",
-        features: ["Personalized learning", "Practice problems", "Progress tracking", "Multiple subjects"],
-        link: "https://khanacademy.org/ai",
-        pricing: "Free",
-        icon: "🎓"
-      },
-      {
-        name: "Duolingo",
-        description: "AI-powered language learning",
-        features: ["Adaptive lessons", "Speech recognition", "Personalized review", "Gamification"],
-        link: "https://duolingo.com",
-        pricing: "Freemium",
-        icon: "🗣️"
-      },
-      {
-        name: "Coursera AI",
-        description: "AI trong online courses",
-        features: ["Course recommendations", "Auto-grading", "Personalized feedback", "Career guidance"],
-        link: "https://coursera.org",
-        pricing: "Freemium",
-        icon: "📖"
-      },
-      {
-        name: "Quizlet AI",
-        description: "AI study tools và flashcards",
-        features: ["Smart study modes", "Auto-generated questions", "Spaced repetition", "Progress analytics"],
-        link: "https://quizlet.com",
-        pricing: "Freemium",
-        icon: "🃏"
       }
     ]
   },

@@ -8,6 +8,7 @@ export interface PythonLesson {
   prerequisites: string[];
   exercises: Exercise[];
   realWorldApplications: string[];
+  videoUrl: string;
 }
 
 interface Exercise {
@@ -23,7 +24,9 @@ export const pythonLessons: PythonLesson[] = [
   {
     id: 'python-introduction',
     title: 'Bài 1: Giới thiệu Python',
-    description: 'Làm quen với Python, cài đặt và viết chương trình đầu tiên',
+    description:
+      'Khám phá thế giới lập trình với Python! Bạn sẽ tự tay cài đặt phần mềm, viết chương trình đầu tiên và trải nghiệm cảm giác "Hello World" đầy hứng khởi. Bài học này giúp bạn tự tin bắt đầu mọi dự án sáng tạo với Python.',
+    videoUrl: 'https://www.youtube.com/watch?v=_uQrJ0TkZlc',
     difficulty: 'Dễ',
     duration: '60 phút',
     objectives: [
@@ -66,7 +69,9 @@ print("Chào mừng bạn đến với Python!")`,
   {
     id: 'variables-data-types',
     title: 'Bài 2: Variables và Data Types',
-    description: 'Học về biến, kiểu dữ liệu và cách sử dụng chúng trong Python',
+    description:
+      'Biến hóa dữ liệu như một nhà ảo thuật! Bạn sẽ học cách lưu trữ, xử lý và chuyển đổi thông tin với các kiểu dữ liệu đa dạng. Từ số, chuỗi đến logic, mọi thứ đều nằm trong tầm tay bạn.',
+    videoUrl: 'https://www.youtube.com/watch?v=khKv-8q7YmY',
     difficulty: 'Dễ',
     duration: '90 phút',
     objectives: [
@@ -164,7 +169,9 @@ print(f"Ngược lại: {reversed_text}")`,
   {
     id: 'control-structures',
     title: 'Bài 3: Control Structures',
-    description: 'Học về if/else, loops và cách điều khiển luồng chương trình',
+    description:
+      'Làm chủ luồng chương trình với các cấu trúc điều khiển! Bạn sẽ biết cách ra quyết định, lặp lại thao tác và xây dựng logic thông minh cho mọi ứng dụng Python.',
+    videoUrl: 'https://www.youtube.com/watch?v=VchuKL44s6E',
     difficulty: 'Trung bình',
     duration: '120 phút',
     objectives: [
@@ -239,7 +246,9 @@ else:
   {
     id: 'functions',
     title: 'Bài 4: Functions',
-    description: 'Tạo và sử dụng functions để tổ chức code hiệu quả',
+    description:
+      'Tổ chức code như một chuyên gia! Học cách tạo hàm, tái sử dụng logic, xử lý dữ liệu linh hoạt và xây dựng thư viện cá nhân. Functions giúp bạn tiết kiệm thời gian và tăng hiệu quả lập trình.',
+    videoUrl: 'https://www.youtube.com/watch?v=9Os0o3wzS_I',
     difficulty: 'Trung bình',
     duration: '120 phút',
     objectives: [
@@ -336,7 +345,9 @@ while True:
   {
     id: 'lists-tuples',
     title: 'Bài 5: Lists và Tuples',
-    description: 'Làm việc với collections - lists và tuples trong Python',
+    description:
+      'Quản lý dữ liệu như một chuyên gia! Bạn sẽ học cách lưu trữ, sắp xếp và thao tác với danh sách, tuple để xây dựng ứng dụng thực tế, từ quản lý công việc đến xử lý dữ liệu lớn.',
+    videoUrl: 'https://www.youtube.com/watch?v=W8KRzm-HUcc',
     difficulty: 'Trung bình',
     duration: '100 phút',
     objectives: [
@@ -435,7 +446,9 @@ while True:
   {
     id: 'dictionaries',
     title: 'Bài 6: Dictionaries',
-    description: 'Sử dụng dictionaries để lưu trữ key-value data',
+    description:
+      'Lưu trữ thông tin thông minh với dictionaries! Bạn sẽ biết cách quản lý dữ liệu dạng key-value, xây dựng hệ thống quản lý học sinh, cấu hình phần mềm và nhiều ứng dụng thực tế khác.',
+    videoUrl: 'https://www.youtube.com/watch?v=daefaLgNkw0',
     difficulty: 'Trung bình',
     duration: '100 phút',
     objectives: [
@@ -539,7 +552,9 @@ def list_all_students():
   {
     id: 'file-handling',
     title: 'Bài 7: File Handling',
-    description: 'Đọc và ghi files, xử lý dữ liệu từ file',
+    description:
+      'Khai phá dữ liệu từ file! Học cách đọc, ghi, phân tích và tạo báo cáo từ file văn bản, CSV, log... Mở rộng khả năng tự động hóa và xử lý dữ liệu chuyên nghiệp với Python.',
+    videoUrl: 'https://www.youtube.com/watch?v=Uh2ebFW8OYM',
     difficulty: 'Khó',
     duration: '120 phút',
     objectives: [
@@ -675,7 +690,9 @@ elif choice == "2":
   {
     id: 'oop-basics',
     title: 'Bài 8: Object-Oriented Programming',
-    description: 'Học lập trình hướng đối tượng với classes và objects',
+    description:
+      'Làm chủ lập trình hướng đối tượng! Tạo class, object, kế thừa, đóng gói dữ liệu và xây dựng hệ thống phần mềm chuyên nghiệp. Đây là chìa khóa để phát triển ứng dụng lớn và hiện đại.',
+    videoUrl: 'https://www.youtube.com/watch?v=JeznW_7DlB0',
     difficulty: 'Khó',
     duration: '150 phút',
     objectives: [
