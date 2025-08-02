@@ -135,7 +135,7 @@ export default function Home() {
       description: 'Học Digital Marketing toàn diện, từ Social Media đến Content Creation và kiếm tiền online',
       level: 'Trung bình',
       duration: '12-15 giờ',
-      href: '/digital-marketing',
+      href: '/learning/digital-marketing',
       color: 'from-pink-600 to-purple-600',
       category: 'professional',
       features: ['8 bài học marketing', 'Creator Economy', 'Social Media', 'Analytics & ROI'],
@@ -161,7 +161,7 @@ export default function Home() {
       description: 'Khám phá renewable energy, smart cities và sustainable solutions cho tương lai xanh',
       level: 'Trung bình',
       duration: '10-12 giờ',
-      href: '/green-technology',
+      href: '/learning/green-technology',
       color: 'from-green-600 to-emerald-600',
       category: 'professional',
       features: ['Renewable Energy', 'Smart Cities IoT', 'Sustainability', 'Environmental Tech'],
@@ -232,7 +232,7 @@ export default function Home() {
       description: 'Học lập trình trực quan với Scratch, tạo game và animation đầu tiên',
       level: 'Cơ bản',
       duration: '6-8 giờ',
-      href: '/scratch',
+      href: '/learning/scratch',
       color: 'from-orange-600 to-red-600',
       category: 'programming',
       features: ['Lập trình kéo thả', 'Tạo game', 'Animation', '5 bài học'],
@@ -245,7 +245,7 @@ export default function Home() {
       description: 'Từ cơ bản đến nâng cao, làm chủ Python cho AI và phân tích dữ liệu',
       level: 'Trung bình',
       duration: '15-20 giờ',
-      href: '/python',
+      href: '/learning/python',
       color: 'from-blue-600 to-cyan-600',
       category: 'programming',
       features: ['Syntax cơ bản', 'OOP', 'Data handling', 'AI ready'],
@@ -260,7 +260,7 @@ export default function Home() {
       description: 'Thí nghiệm vật lý, toán học thực tế và kỹ thuật sáng tạo',
       level: 'Cơ bản',
       duration: '8-10 giờ',
-      href: '/stem',
+      href: '/learning/stem',
       color: 'from-teal-600 to-green-600',
       category: 'stem',
       features: ['7 chủ đề STEM', 'Thí nghiệm thực tế', 'Toán đời sống', 'Dự án sáng tạo'],
@@ -273,7 +273,7 @@ export default function Home() {
       description: 'Xây dựng hệ thống IoT thông minh với Arduino từ cơ bản đến nâng cao',
       level: 'Nâng cao',
       duration: '12-15 giờ',
-      href: '/arduino',
+      href: '/learning/arduino',
       color: 'from-cyan-600 to-blue-600',
       category: 'stem',
       features: ['6 bài học Arduino', 'Dự án IoT', 'Sensors & Actuators', 'Smart Home'],
@@ -286,7 +286,7 @@ export default function Home() {
       description: 'Thiết kế và lập trình robot, từ cơ bản đến AI robotics',
       level: 'Nâng cao',
       duration: '10-12 giờ',
-      href: '/robotics',
+      href: '/learning/robotics',
       color: 'from-purple-600 to-pink-600',
       category: 'stem',
       features: ['Cơ khí robot', 'Lập trình chuyển động', 'AI robotics', 'Autonomous systems'],
@@ -466,7 +466,7 @@ export default function Home() {
               🤖 Học AI ngay
             </Link>
             <Link 
-              href="/digital-marketing"
+              href="/learning/digital-marketing"
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold rounded-xl hover:from-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
             >
               📱 Digital Marketing

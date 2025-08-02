@@ -32,38 +32,43 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     },
     { url: `${baseUrl}/ai`, priority: 0.8, changeFrequency: 'weekly' as const },
     {
-      url: `${baseUrl}/python`,
+      url: `${baseUrl}/feedback`,
+      priority: 0.5,
+      changeFrequency: 'monthly' as const
+    },
+    // All Learning Modules now under /learning/ path
+    {
+      url: `${baseUrl}/learning/python`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     },
     {
-      url: `${baseUrl}/arduino`,
+      url: `${baseUrl}/learning/arduino`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     },
     {
-      url: `${baseUrl}/robotics`,
+      url: `${baseUrl}/learning/robotics`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     },
     {
-      url: `${baseUrl}/scratch`,
+      url: `${baseUrl}/learning/scratch`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     },
     {
-      url: `${baseUrl}/stem`,
-      priority: 0.8,
-      changeFrequency: 'weekly' as const
-    },
-    // New Learning Modules
-    {
-      url: `${baseUrl}/digital-marketing`,
+      url: `${baseUrl}/learning/stem`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     },
     {
-      url: `${baseUrl}/green-technology`,
+      url: `${baseUrl}/learning/digital-marketing`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/green-technology`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     },
@@ -91,26 +96,6 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
       url: `${baseUrl}/learning/biotechnology`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
-    },
-    {
-      url: `${baseUrl}/education`,
-      priority: 0.8,
-      changeFrequency: 'weekly' as const
-    },
-    {
-      url: `${baseUrl}/education/arduino`,
-      priority: 0.7,
-      changeFrequency: 'weekly' as const
-    },
-    {
-      url: `${baseUrl}/education/scratch`,
-      priority: 0.7,
-      changeFrequency: 'weekly' as const
-    },
-    {
-      url: `${baseUrl}/feedback`,
-      priority: 0.5,
-      changeFrequency: 'monthly' as const
     }
   ];
 
@@ -145,7 +130,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
   ];
 
   const pythonPages = pythonLessonIds.map((lessonId) => ({
-    url: `${baseUrl}/python/${lessonId}`,
+    url: `${baseUrl}/learning/python/${lessonId}`,
     lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7
@@ -158,13 +143,13 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   const arduinoPages = [
     ...arduinoLessons.map((lesson) => ({
-      url: `${baseUrl}/arduino/${lesson.id}`,
+      url: `${baseUrl}/learning/arduino/${lesson.id}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7
     })),
     ...additionalArduinoPages.map((pageId) => ({
-      url: `${baseUrl}/arduino/${pageId}`,
+      url: `${baseUrl}/learning/arduino/${pageId}`,
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7
@@ -173,7 +158,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   // Robotics lesson pages
   const roboticsPages = roboticsLessons.map((lesson) => ({
-    url: `${baseUrl}/robotics/${lesson.id}`,
+    url: `${baseUrl}/learning/robotics/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7
@@ -181,7 +166,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   // Scratch lesson pages
   const scratchPages = scratchLessons.map((lesson) => ({
-    url: `${baseUrl}/scratch/${lesson.id}`,
+    url: `${baseUrl}/learning/scratch/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7
@@ -189,7 +174,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   // STEM lesson pages
   const stemPages = stemLessons.map((lesson) => ({
-    url: `${baseUrl}/stem/${lesson.id}`,
+    url: `${baseUrl}/learning/stem/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7
@@ -197,7 +182,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   // Digital Marketing lesson pages
   const digitalMarketingPages = digitalMarketingLessons.map((lesson) => ({
-    url: `${baseUrl}/digital-marketing/${lesson.id}`,
+    url: `${baseUrl}/learning/digital-marketing/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7
@@ -205,7 +190,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   // Green Technology lesson pages
   const greenTechPages = greenTechLessons.map((lesson) => ({
-    url: `${baseUrl}/green-technology/${lesson.id}`,
+    url: `${baseUrl}/learning/green-technology/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7

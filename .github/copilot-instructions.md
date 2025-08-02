@@ -20,9 +20,39 @@ The project called "K2AI - Nền tảng học tập thông minh, Công nghệ AI
 
 **Primary Documentation**: [**K2AiHub.md**](../docs/K2AiHub.md) - The comprehensive source of truth for all features, technical specifications, and development guidelines.
 
-## 🛠 Dynamic Module Page Template
+## 🛠 Dynamic Module Page Template System
 
-**For creating lesson pages across all learning modules, use the standardized template:**
+**For creating both main module pages and lesson pages across all learning modules, use the standardized templates:**
+
+### Module Main Page Template
+
+```typescript
+// Standard module main page structure - place in /src/app/learning/[module-name]/page.tsx
+import { ModulePageTemplate } from '@/components/learning/ModulePageTemplate'
+import { [MODULE_NAME]Lessons } from '@/data/[module-name]'
+
+export default function ModuleMainPage() {
+  const moduleConfig = {
+    title: 'Module Title in Vietnamese',
+    subtitle: 'Brief subtitle',
+    description: 'Comprehensive description in Vietnamese',
+    lessons: [MODULE_NAME]Lessons,
+    primaryColor: 'emerald',
+    gradientColors: 'from-slate-900 via-emerald-900 to-slate-900',
+    basePath: '/learning/module-name',
+    statsConfig: {
+      lessons: `${[MODULE_NAME]Lessons.length}+`,
+      duration: '15-20 giờ',
+      level: 'Trung bình',
+      projects: '10+'
+    }
+  }
+
+  return <ModulePageTemplate config={moduleConfig} />
+}
+```
+
+### Dynamic Lesson Page Template ([lessonId]/page.tsx)
 
 ```typescript
 // Import the reusable template
@@ -40,7 +70,7 @@ export async function generateMetadata({ params }: { params: { lessonId: string 
 }
 
 // Page component
-export default async function ModuleLessonPage({ params }: { params: { lessonId: string } }) {
+export default function ModuleLessonPage({ params }: { params: { lessonId: string } }) {
   const config: LessonPageConfig<ModuleLessonType> = {
     moduleName: 'module-name',
     moduleTitle: 'Module Title in Vietnamese', 
@@ -58,6 +88,21 @@ export default async function ModuleLessonPage({ params }: { params: { lessonId:
 }
 ```
 
+### Module Structure Convention
+
+**Learning Modules Path Structure:**
+```
+src/app/learning/[module-name]/
+├── page.tsx                    # Main module page
+├── [lessonId]/
+│   └── page.tsx               # Dynamic lesson pages
+└── components/                # Module-specific components (optional)
+```
+
+**Core Modules (Special Cases):**
+- Geography: `/city/` (not in learning folder)
+- AI Guide: `/ai/` (not in learning folder)
+
 **Template Features:**
 - **Standardized Layout**: Consistent UI across all modules
 - **Vietnamese Language**: All text in Vietnamese
@@ -65,6 +110,7 @@ export default async function ModuleLessonPage({ params }: { params: { lessonId:
 - **Responsive Design**: Mobile-optimized layout
 - **SEO Optimization**: Proper metadata generation
 - **Customizable**: Module-specific icons, colors, and sidebar content
+- **Auto-generated Static Params**: For optimal performance
 
 ## Project Overview
 
