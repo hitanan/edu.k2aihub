@@ -32,8 +32,6 @@ export default function ScratchModule() {
     // Map specific lesson IDs to existing pages
     if (lesson.id === 'scratch-introduction') {
       href = '/scratch/scratch-intro';
-    } else if (lesson.id === 'scratch-sprites-sounds') {
-      href = '/scratch/sound-effects';
     }
     
     return {
@@ -250,6 +248,56 @@ export default function ScratchModule() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Cross-Module Links */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-12">
+          🔗 Khám Phá Thêm
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Link 
+            href="/stem/coding-for-kids"
+            className="group bg-gradient-to-br from-green-600/20 to-teal-600/20 rounded-2xl p-8 border border-green-500/20 hover:border-green-400/40 transition-all duration-300 transform hover:scale-105"
+          >
+            <div className="text-4xl mb-4">💻</div>
+            <h3 className="text-xl font-bold text-white mb-2">STEM - Coding for Kids</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Tìm hiểu thêm về lập trình và tư duy khoa học công nghệ qua các hoạt động STEM thú vị
+            </p>
+            <div className="text-green-400 text-sm font-semibold group-hover:text-green-300">
+              Khám phá ngay →
+            </div>
+          </Link>
+
+          <Link 
+            href="/python"
+            className="group bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 transform hover:scale-105"
+          >
+            <div className="text-4xl mb-4">🐍</div>
+            <h3 className="text-xl font-bold text-white mb-2">Python Programming</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Nâng cao kỹ năng lập trình với Python - ngôn ngữ mạnh mẽ cho AI và phát triển web
+            </p>
+            <div className="text-blue-400 text-sm font-semibold group-hover:text-blue-300">
+              Học Python →
+            </div>
+          </Link>
+
+          <Link 
+            href="/robotics"
+            className="group bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl p-8 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 transform hover:scale-105"
+          >
+            <div className="text-4xl mb-4">🤖</div>
+            <h3 className="text-xl font-bold text-white mb-2">Robotics</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Ứng dụng lập trình vào thế giới thực với robotics và các dự án IoT hấp dẫn
+            </p>
+            <div className="text-purple-400 text-sm font-semibold group-hover:text-purple-300">
+              Khám phá Robotics →
+            </div>
+          </Link>
         </div>
       </div>
 

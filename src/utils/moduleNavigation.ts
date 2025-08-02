@@ -44,10 +44,10 @@ const pageMapping = {
 
   // Scratch mappings
   'scratch-introduction': '/scratch/scratch-intro',
-  'scratch-sprites-sounds': '/scratch/sound-effects',
-  'scratch-variables-logic': '/scratch/animation-movement',
-  'scratch-game-development': '/scratch/game-development',
-  'scratch-advanced-features': '/scratch/advanced-features',
+  'scratch-sprites-sounds': '/scratch/scratch-sprites-sounds',
+  'scratch-variables-logic': '/scratch/scratch-variables-logic',
+  'scratch-game-development': '/scratch/scratch-game-development',
+  'scratch-advanced-features': '/scratch/scratch-advanced-features',
 
   // STEM mappings
   'stem-introduction': '/stem/stem-introduction',

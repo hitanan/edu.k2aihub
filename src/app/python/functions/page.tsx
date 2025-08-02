@@ -1,9 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
 export default function FunctionsPage() {
+  // Image URL cho lesson này
+  const imageUrl = "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=400&fit=crop";
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100">
       <div className="container mx-auto px-4 py-8">
@@ -17,7 +21,19 @@ export default function FunctionsPage() {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6">
             <div className="flex items-center">
-              <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center text-3xl mr-4">📦</div>
+              <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mr-4 overflow-hidden">
+                {imageUrl ? (
+                  <Image 
+                    src={imageUrl} 
+                    alt="Python Functions"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-3xl">📦</span>
+                )}
+              </div>
               <div>
                 <h1 className="text-3xl font-bold">Functions</h1>
                 <p className="text-purple-100 mt-2">Tạo và sử dụng functions để tổ chức code hiệu quả</p>

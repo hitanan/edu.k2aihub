@@ -1,9 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
 export default function OOPBasicsPage() {
+  // Image URL cho lesson này
+  const imageUrl = "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=400&h=400&fit=crop";
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-100">
       <div className="container mx-auto px-4 py-8">
@@ -17,7 +21,19 @@ export default function OOPBasicsPage() {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-6">
             <div className="flex items-center">
-              <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center text-3xl mr-4">🏗️</div>
+              <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mr-4 overflow-hidden">
+                {imageUrl ? (
+                  <Image 
+                    src={imageUrl} 
+                    alt="Python OOP Basics"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-3xl">🏗️</span>
+                )}
+              </div>
               <div>
                 <h1 className="text-3xl font-bold">OOP Cơ Bản</h1>
                 <p className="text-indigo-100 mt-2">Học lập trình hướng đối tượng với classes và objects</p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { roboticsLessons } from '@/data/robotics';
 
@@ -204,6 +205,17 @@ export default function RoboticsIntroLesson() {
           </div>
           
           <div className="text-center">
+            {lesson.imageUrl && (
+              <div className="mb-6">
+                <Image 
+                  src={lesson.imageUrl} 
+                  alt={lesson.title}
+                  width={128}
+                  height={128}
+                  className="w-32 h-32 rounded-2xl object-cover mx-auto shadow-lg border border-white/20"
+                />
+              </div>
+            )}
             <div className="text-5xl mb-4">🤖</div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {lesson.title}

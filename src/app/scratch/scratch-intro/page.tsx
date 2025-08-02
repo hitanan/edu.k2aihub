@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { scratchLessons } from '@/data/scratch';
+import { getModuleNavigation, getNavigationConfig } from '@/utils/moduleNavigation';
+import YouTubePlayer from '@/components/YouTubePlayer';
+import ModuleNavigation from '@/components/ModuleNavigation';
 
 export const metadata: Metadata = {
   title: createTitle("Bài 1: Giới Thiệu Scratch - Lập Trình Kéo Thả"),
@@ -16,18 +21,13 @@ export const metadata: Metadata = {
 };
 
 export default function ScratchIntroLesson() {
-  const lessonContent = {
-    title: 'Bài 1: Giới Thiệu Scratch',
-    description: 'Khám phá thế giới lập trình với Scratch - ngôn ngữ lập trình trực quan và thú vị',
-    duration: '60 phút',
-    difficulty: 'Cơ bản',
-    objectives: [
-      'Hiểu về Scratch và lập trình kéo thả',
-      'Làm quen với giao diện Scratch',
-      'Tạo chương trình đầu tiên',
-      'Nắm vững khái niệm sprite và backdrop'
-    ]
-  };
+  const lesson = scratchLessons.find(l => l.id === 'scratch-introduction');
+  const navigation = getModuleNavigation('scratch', 'scratch-introduction');
+  const navConfig = navigation ? getNavigationConfig(navigation, '/scratch') : null;
+  
+  if (!lesson) {
+    return <div>Lesson not found</div>;
+  }
 
   const scratchFeatures = [
     {
@@ -224,23 +224,39 @@ export default function ScratchIntroLesson() {
             <Link href="/scratch" className="text-orange-400 hover:text-orange-300 transition-colors duration-300">
               ← Quay lại Scratch
             </Link>
+            {navConfig && (
+              <div className="ml-auto text-sm text-gray-400">
+                Bài {navConfig.progress.current} / {navConfig.progress.total}
+              </div>
+            )}
           </div>
           
           <div className="text-center">
+            {lesson.imageUrl && (
+              <div className="mb-6">
+                <Image 
+                  src={lesson.imageUrl} 
+                  alt={lesson.title}
+                  width={128}
+                  height={128}
+                  className="w-32 h-32 rounded-2xl object-cover mx-auto shadow-lg border border-white/20"
+                />
+              </div>
+            )}
             <div className="text-5xl mb-4">🐱</div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {lessonContent.title}
+              {lesson.title}
             </h1>
             <p className="text-lg text-gray-300 mb-6 max-w-3xl mx-auto">
-              {lessonContent.description}
+              {lesson.description}
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <span className="bg-orange-500/20 text-orange-200 px-3 py-1 rounded-full">
-                ⏱️ {lessonContent.duration}
+                ⏱️ {lesson.duration}
               </span>
               <span className="bg-yellow-500/20 text-yellow-200 px-3 py-1 rounded-full">
-                🎯 {lessonContent.difficulty}
+                🎯 {lesson.difficulty}
               </span>
             </div>
           </div>
@@ -254,7 +270,7 @@ export default function ScratchIntroLesson() {
             🎯 Mục Tiêu Bài Học
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {lessonContent.objectives.map((objective, index) => (
+            {lesson.objectives.map((objective, index) => (
               <li key={index} className="flex items-start text-gray-300">
                 <span className="text-orange-400 mr-3 mt-1">✓</span>
                 {objective}
@@ -262,6 +278,19 @@ export default function ScratchIntroLesson() {
             ))}
           </ul>
         </div>
+
+        {/* Video Tutorial */}
+        {lesson.videoUrl && (
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              🎬 Video Hướng Dẫn
+            </h2>
+            <YouTubePlayer 
+              videoUrl={lesson.videoUrl} 
+              title={`${lesson.title} - Video Tutorial`}
+            />
+          </div>
+        )}
 
         {/* What is Scratch */}
         <div className="mb-12">
@@ -497,21 +526,9 @@ export default function ScratchIntroLesson() {
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center">
-          <Link 
-            href="/scratch"
-            className="inline-flex items-center px-6 py-3 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
-          >
-            ← Quay lại Scratch
-          </Link>
-          
-          <Link 
-            href="/scratch/animation-movement"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-600 to-yellow-600 text-white font-semibold rounded-xl hover:from-orange-700 hover:to-yellow-700 transition-all duration-300"
-          >
-            Bài tiếp theo: Animation →
-          </Link>
-        </div>
+        {navConfig && (
+          <ModuleNavigation navConfig={navConfig} />
+        )}
       </div>
     </div>
   );

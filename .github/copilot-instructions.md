@@ -295,12 +295,16 @@ src/
 - **Next.js**: Follow best practices for routing and static generation and Next.js code standards, e.g. put all city components in the `src/components/city` directory.
 - **Documentation**: All new features and changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md)
 - **AI Agent utils scripts**: When AI agent create utilities to process on your request, ensure the script is efficient and follows best practices for performance and maintainability and can be reused. Put it under folder `src/utils` like `src/utils/add_urls.js` if you think if can be reused.
+- **Code block**: Always ensure code blocks are WCAG compliant and support keyboard navigation for accessibility. All code blocks should be properly formatted and include language identifiers for syntax highlighting.
+- **DRY Principle**: Avoid code duplication, use utility functions and components where possible
 
 ### Navigation:
 
 - **Next.js Router**: Use `useRouter` for client-side navigation
 - **Static Links**: Use Next.js `Link` component for optimal performance
 - **SEO URLs**: Implement proper slug generation for dynamic pages
+- **Breadcrumbs**: Implement breadcrumbs for better navigation and SEO
+- **Navigation generation**: navigation should be generated dynamically based on the module structure, data in `src/data` for better user experience and SEO
 
 ## Deployment Configuration
 

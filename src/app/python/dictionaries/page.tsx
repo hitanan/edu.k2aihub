@@ -1,9 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
 export default function DictionariesPage() {
+  // Image URL cho lesson này
+  const imageUrl = "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400&h=400&fit=crop";
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100">
       <div className="container mx-auto px-4 py-8">
@@ -17,7 +21,19 @@ export default function DictionariesPage() {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white p-6">
             <div className="flex items-center">
-              <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center text-3xl mr-4">🗂️</div>
+              <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mr-4 overflow-hidden">
+                {imageUrl ? (
+                  <Image 
+                    src={imageUrl} 
+                    alt="Python Dictionaries"
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-3xl">🗂️</span>
+                )}
+              </div>
               <div>
                 <h1 className="text-3xl font-bold">Dictionaries</h1>
                 <p className="text-amber-100 mt-2">Sử dụng dictionaries để lưu trữ key-value data</p>

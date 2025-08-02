@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { arduinoLessons } from '@/data/arduino';
 import YouTubePlayer from '@/components/YouTubePlayer';
+import ModuleNavigation from '@/components/ModuleNavigation';
+import { getModuleNavigation, getNavigationConfig } from '@/utils/moduleNavigation';
 
 export const metadata: Metadata = {
   title: createTitle("Bài 2: Đọc Input và Điều Khiển - Arduino"),
@@ -23,6 +26,9 @@ export default function ArduinoInputsLesson() {
   if (!lesson) {
     return <div>Lesson not found</div>;
   }
+
+  const navigation = getModuleNavigation('arduino', 'arduino-inputs');
+  const navConfig = navigation ? getNavigationConfig(navigation, '/arduino') : null;
 
   const inputTypes = [
     {
@@ -77,6 +83,17 @@ export default function ArduinoInputsLesson() {
           </div>
           
           <div className="text-center">
+            {lesson.imageUrl && (
+              <div className="mb-6">
+                <Image 
+                  src={lesson.imageUrl} 
+                  alt={lesson.title}
+                  width={128}
+                  height={128}
+                  className="w-32 h-32 rounded-2xl object-cover mx-auto shadow-lg border border-white/20"
+                />
+              </div>
+            )}
             <div className="text-5xl mb-4">🎛️</div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {lesson.title}
@@ -302,21 +319,9 @@ export default function ArduinoInputsLesson() {
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center">
-          <Link 
-            href="/arduino/led-digital-outputs"
-            className="inline-flex items-center px-6 py-3 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
-          >
-            ← Bài trước: LED & Digital Outputs
-          </Link>
-          
-          <Link 
-            href="/arduino/arduino-sensors"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-xl hover:from-green-700 hover:to-blue-700 transition-all duration-300"
-          >
-            Bài tiếp theo: Cảm biến →
-          </Link>
-        </div>
+        {navConfig && (
+          <ModuleNavigation navConfig={navConfig} />
+        )}
       </div>
     </div>
   );

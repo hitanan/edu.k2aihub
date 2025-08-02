@@ -446,6 +446,56 @@ export default function PythonModule() {
         </div>
       </div>
 
+      {/* Cross-Module Links */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-12">
+          🔗 Khám Phá Thêm
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Link 
+            href="/stem/coding-for-kids"
+            className="group bg-gradient-to-br from-green-600/20 to-teal-600/20 rounded-2xl p-8 border border-green-500/20 hover:border-green-400/40 transition-all duration-300 transform hover:scale-105"
+          >
+            <div className="text-4xl mb-4">💻</div>
+            <h3 className="text-xl font-bold text-white mb-2">STEM - Coding for Kids</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Hiểu cơ bản về lập trình và tư duy khoa học công nghệ qua hoạt động STEM
+            </p>
+            <div className="text-green-400 text-sm font-semibold group-hover:text-green-300">
+              Khám phá STEM →
+            </div>
+          </Link>
+
+          <Link 
+            href="/scratch"
+            className="group bg-gradient-to-br from-orange-600/20 to-red-600/20 rounded-2xl p-8 border border-orange-500/20 hover:border-orange-400/40 transition-all duration-300 transform hover:scale-105"
+          >
+            <div className="text-4xl mb-4">🎨</div>
+            <h3 className="text-xl font-bold text-white mb-2">Scratch Programming</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Bắt đầu với lập trình trực quan dễ hiểu trước khi chuyển sang Python
+            </p>
+            <div className="text-orange-400 text-sm font-semibold group-hover:text-orange-300">
+              Học Scratch →
+            </div>
+          </Link>
+
+          <Link 
+            href="/arduino"
+            className="group bg-gradient-to-br from-cyan-600/20 to-blue-600/20 rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 transform hover:scale-105"
+          >
+            <div className="text-4xl mb-4">⚡</div>
+            <h3 className="text-xl font-bold text-white mb-2">Arduino IoT</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Ứng dụng Python trong các dự án phần cứng và IoT với Arduino
+            </p>
+            <div className="text-cyan-400 text-sm font-semibold group-hover:text-cyan-300">
+              Khám phá Arduino →
+            </div>
+          </Link>
+        </div>
+      </div>
+
       {/* Call to Action */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl p-12 border border-white/20">
