@@ -3,6 +3,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { defaultImage } from "@/utils/image";
+import { YouTubePlayer } from "@/components/YouTubePlayer";
 
 export const metadata: Metadata = {
   title: createTitle("Bài 1: Biến và Kiểu Dữ Liệu Python - Lập Trình Python Cơ Bản"),
@@ -27,7 +29,9 @@ export default function PythonVariablesLesson() {
       'Nắm vững các kiểu dữ liệu cơ bản',
       'Thực hiện chuyển đổi kiểu dữ liệu',
       'Áp dụng vào bài toán thực tế'
-    ]
+    ],
+    imageUrl: defaultImage,
+    videoUrl: 'https://www.youtube.com/watch?v=K3luFZD91VA',
   };
 
   const dataTypes = [
@@ -224,11 +228,11 @@ print(f"Xếp loại: {xep_loai}")`,
           </div>
           
           <div className="text-center">
-            {lesson.imageUrl && (
+            {lessonContent.imageUrl && (
               <div className="mb-6">
                 <Image 
-                  src={lesson.imageUrl} 
-                  alt={lesson.title}
+                  src={lessonContent.imageUrl} 
+                  alt={lessonContent.title}
                   width={128}
                   height={128}
                   className="w-32 h-32 rounded-2xl object-cover mx-auto shadow-lg border border-white/20"
@@ -270,6 +274,19 @@ print(f"Xếp loại: {xep_loai}")`,
             ))}
           </ul>
         </div>
+
+        {/* Video Tutorial */}
+        {lessonContent.videoUrl && (
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              🎬 Video Hướng Dẫn
+            </h2>
+            <YouTubePlayer 
+              videoUrl={lessonContent.videoUrl} 
+              title={`${lessonContent.title} - Video Tutorial`}
+            />
+          </div>
+        )}
 
         {/* Data Types Overview */}
         <div className="mb-12">

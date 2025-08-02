@@ -4,6 +4,13 @@ import { arduinoLessons } from '@/data/arduino';
 import { roboticsLessons } from '@/data/robotics';
 import { scratchLessons } from '@/data/scratch';
 import { stemLessons } from '@/data/stem';
+import { digitalMarketingLessons } from '@/data/digital-marketing';
+import { greenTechLessons } from '@/data/green-technology';
+import { financialLiteracyLessons } from '@/data/financial-literacy';
+import { gameDevLessons } from '@/data/game-development';
+import { aiArtLessons } from '@/data/ai-art-creative-tech';
+import { cyberSecurityLessons } from '@/data/cybersecurity';
+import { biotechnologyLessons } from '@/data/biotechnology';
 
 // Utility to automatically generate sitemap entries for all pages
 const baseUrl = 'https://k2aihub.com';
@@ -46,6 +53,42 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/stem`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    // New Learning Modules
+    {
+      url: `${baseUrl}/digital-marketing`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/green-technology`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/financial-literacy`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/game-development`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/ai-art-creative-tech`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/cybersecurity`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/biotechnology`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     },
@@ -152,6 +195,62 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
+  // Digital Marketing lesson pages
+  const digitalMarketingPages = digitalMarketingLessons.map((lesson) => ({
+    url: `${baseUrl}/digital-marketing/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // Green Technology lesson pages
+  const greenTechPages = greenTechLessons.map((lesson) => ({
+    url: `${baseUrl}/green-technology/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // Financial Literacy lesson pages
+  const finLitPages = financialLiteracyLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/financial-literacy/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // Game Development lesson pages
+  const gameDevPages = gameDevLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/game-development/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // AI Art lesson pages
+  const aiArtPages = aiArtLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/ai-art-creative-tech/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // Cybersecurity lesson pages
+  const cyberSecurityPages = cyberSecurityLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/cybersecurity/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  // Biotechnology lesson pages
+  const biotechnologyPages = biotechnologyLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/biotechnology/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
   // Region pages
   const regionSlugs = [
     'bac-bo',
@@ -220,6 +319,13 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     ...roboticsPages,
     ...scratchPages,
     ...stemPages,
+    ...digitalMarketingPages,
+    ...greenTechPages,
+    ...finLitPages,
+    ...gameDevPages,
+    ...aiArtPages,
+    ...cyberSecurityPages,
+    ...biotechnologyPages,
     ...regionPages,
     ...majorCityPages, // High priority cities first
     ...regularCityPages // Regular cities
@@ -277,8 +383,9 @@ export function validateSitemapEntry(url: string): boolean {
 // Function to generate RSS feed metadata (for future implementation)
 export function generateRSSMetadata() {
   return {
-    title: 'K2AiHub - Nền tảng học tập thông minh',
-    description: 'Cập nhật mới nhất từ K2AiHub - Địa lý Việt Nam và AI của tôi',
+    title: 'K2AI - Nền tảng học tập thông minh',
+    description:
+      'Cập nhật mới nhất từ K2AI - 14 module giáo dục: Địa lý Việt Nam, AI, Digital Marketing, Financial Literacy, Green Technology, Game Development, AI Art, Cybersecurity, Biotechnology, STEM, Programming và nhiều hơn nữa',
     link: baseUrl,
     language: 'vi-VN',
     managingEditor: 'info@k2aihub.com',

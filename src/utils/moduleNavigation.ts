@@ -61,14 +61,17 @@ const pageMapping = {
   'environmental-solutions': '/stem/environmental-solutions',
 
   // Digital Marketing mappings
-  'digital-marketing-fundamentals': '/digital-marketing/digital-marketing-fundamentals',
+  'digital-marketing-fundamentals':
+    '/digital-marketing/digital-marketing-fundamentals',
   'social-media-marketing': '/digital-marketing/social-media-marketing',
   'content-marketing-strategy': '/digital-marketing/content-marketing-strategy',
   'seo-search-marketing': '/digital-marketing/seo-search-marketing',
   'paid-advertising': '/digital-marketing/paid-advertising',
   'email-marketing-automation': '/digital-marketing/email-marketing-automation',
-  'analytics-data-driven-marketing': '/digital-marketing/analytics-data-driven-marketing',
-  'creator-economy-monetization': '/digital-marketing/creator-economy-monetization',
+  'analytics-data-driven-marketing':
+    '/digital-marketing/analytics-data-driven-marketing',
+  'creator-economy-monetization':
+    '/digital-marketing/creator-economy-monetization',
 
   // Green Technology mappings
   'renewable-energy-basics': '/green-technology/renewable-energy-basics',
@@ -76,7 +79,13 @@ const pageMapping = {
 };
 
 export function getModuleNavigation(
-  module: 'arduino' | 'robotics' | 'scratch' | 'stem' | 'digital-marketing' | 'green-technology',
+  module:
+    | 'arduino'
+    | 'robotics'
+    | 'scratch'
+    | 'stem'
+    | 'digital-marketing'
+    | 'green-technology',
   currentLessonId: string
 ): ModuleNavigation | null {
   let lessons;

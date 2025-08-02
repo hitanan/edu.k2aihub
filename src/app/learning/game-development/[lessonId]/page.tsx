@@ -2,16 +2,47 @@ import { gameDevLessons } from '@/data/game-development';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PageProps } from '@/types';
 
-interface PageProps {
-  params: {
-    lessonId: string;
+export async function generateStaticParams() {
+  return gameDevLessons.map((lesson) => ({
+    lessonId: lesson.id,
+  }));
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { lessonId } = await params;
+  const lesson = gameDevLessons.find(l => l.id === lessonId);
+
+  if (!lesson) {
+    return {
+      title: 'Bài học không tìm thấy',
+      description: 'Không thể tìm thấy bài học yêu cầu trong khóa học phát triển game.',
+    };
+  }
+
+  return {
+    title: lesson.title,
+    description: lesson.description,
+    openGraph: {
+      title: lesson.title,
+      description: lesson.description,
+      images: [
+        {
+          url: lesson.imageUrl || 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop',
+          width: 1200,
+          height: 630,
+          alt: lesson.title,
+        },
+      ],
+    },
   };
 }
 
-export default function GameDevelopmentLessonPage({ params }: PageProps) {
-  const lesson = gameDevLessons.find(l => l.id === params.lessonId);
-  
+export default async function GameDevelopmentLessonPage({ params }: PageProps) {
+  const { lessonId } = await params;
+  const lesson = gameDevLessons.find(l => l.id === lessonId);
+
   if (!lesson) {
     notFound();
   }
@@ -78,7 +109,13 @@ export default function GameDevelopmentLessonPage({ params }: PageProps) {
               </svg>
               <span className="font-semibold text-gray-800">Game Type</span>
             </div>
-            <p className="text-gray-600">{lesson.gameType}</p>
+            <div className="flex flex-wrap gap-1 mb-4">
+                {lesson.gameGenres.map((topic, topicIndex) => (
+                    <span key={topicIndex} className="bg-purple-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+                    {topic}
+                    </span>
+                ))}
+            </div>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-lg">
@@ -170,8 +207,8 @@ export default function GameDevelopmentLessonPage({ params }: PageProps) {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="font-semibold text-gray-800 mb-2">Developer</h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.developer}</p>
+                    <h3 className="font-semibold text-gray-800 mb-2">Studio</h3>
+                    <p className="text-gray-600 mb-4">{caseStudy.studio}</p>
                     
                     <h3 className="font-semibold text-gray-800 mb-2">Challenge</h3>
                     <p className="text-gray-600 mb-4">{caseStudy.challenge}</p>

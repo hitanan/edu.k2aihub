@@ -4,12 +4,7 @@ import Link from 'next/link'
 import { Clock, Target, User, Play, ChevronLeft, ChevronRight, Shield, Bug, AlertTriangle, Eye, Server, Book, ExternalLink, CheckCircle, Lightbulb, Users } from 'lucide-react'
 import { cyberSecurityLessons } from '@/data/cybersecurity'
 import { createTitle, createDescription } from '@/utils/seo'
-
-interface PageProps {
-  params: {
-    lessonId: string
-  }
-}
+import { PageProps } from '@/types'
 
 export async function generateStaticParams() {
   return cyberSecurityLessons.map((lesson) => ({
@@ -18,8 +13,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const lesson = cyberSecurityLessons.find(l => l.id === params.lessonId)
-  
+  const { lessonId } = await params;
+  const lesson = cyberSecurityLessons.find(l => l.id === lessonId)
+
   if (!lesson) {
     return {
       title: 'Lesson Not Found | K2AiHub',
@@ -38,14 +34,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function CyberSecurityLessonPage({ params }: PageProps) {
-  const lesson = cyberSecurityLessons.find(l => l.id === params.lessonId)
-  
+export default async function CyberSecurityLessonPage({ params }: PageProps) {
+  const { lessonId } = await params;
+  const lesson = cyberSecurityLessons.find(l => l.id === lessonId)
+
   if (!lesson) {
     notFound()
   }
 
-  const currentIndex = cyberSecurityLessons.findIndex(l => l.id === params.lessonId)
+  const currentIndex = cyberSecurityLessons.findIndex(l => l.id === lessonId)
   const previousLesson = currentIndex > 0 ? cyberSecurityLessons[currentIndex - 1] : null
   const nextLesson = currentIndex < cyberSecurityLessons.length - 1 ? cyberSecurityLessons[currentIndex + 1] : null
 

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from 'next/image';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { digitalMarketingLessons } from '@/data/digital-marketing';
-import { getModuleNavigation } from '@/utils/moduleNavigation';
+import { getModuleNavigation, ModuleNavigation } from '@/utils/moduleNavigation';
+import { defaultImage } from "@/utils/image";
 
 export const metadata: Metadata = {
   title: createTitle("Social Media Marketing - Chiến Lược Marketing Mạng Xã Hội"),
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
 };
 
 const lesson = digitalMarketingLessons.find(l => l.id === 'social-media-marketing')!;
-const imageUrl = "/api/placeholder/800/400";
+const imageUrl = defaultImage;
 
 export default function SocialMediaMarketingPage() {
-  const navConfig = getModuleNavigation('digital-marketing', 'social-media-marketing');
+  const navConfig = getModuleNavigation('digital-marketing', 'social-media-marketing') ?? {} as ModuleNavigation;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-900 via-purple-900 to-indigo-900">
@@ -31,12 +32,12 @@ export default function SocialMediaMarketingPage() {
             </div>
             
             <div className="flex items-center space-x-4">
-              {navConfig.prev && (
+              {navConfig.previous && (
                 <a 
-                  href={navConfig.prev.href}
+                  href={navConfig.previous.href}
                   className="text-sm text-gray-400 hover:text-white transition-colors"
                 >
-                  ← {navConfig.prev.title}
+                  ← {navConfig.previous.title}
                 </a>
               )}
               {navConfig.next && (
@@ -70,9 +71,6 @@ export default function SocialMediaMarketingPage() {
               </span>
               <span className="bg-purple-500/20 text-purple-200 px-4 py-2 rounded-full">
                 🎯 {lesson.difficulty}
-              </span>
-              <span className="bg-indigo-500/20 text-indigo-200 px-4 py-2 rounded-full">
-                📊 {lesson.businessImpact}
               </span>
             </div>
           </div>

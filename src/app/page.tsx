@@ -10,11 +10,11 @@ export default function Home() {
     "@type": "EducationalOrganization",
     "name": "K2AI",
     "alternateName": "K2AI - Học tập thông minh, Công nghệ AI dẫn lối",
-    "description": "Nền tảng giáo dục toàn diện với 7 module chính: Địa Lý Việt Nam, AI, STEM, Lập trình Scratch, Python, Arduino IoT và Robotics",
+    "description": "Nền tảng giáo dục toàn diện với 14 module chính: Địa Lý Việt Nam, AI, Digital Marketing, Financial Literacy, Green Technology, Game Development, AI Art, Cybersecurity, Biotechnology, STEM, Scratch, Python, Arduino IoT và Robotics",
     "url": "https://k2aihub.com",
     "sameAs": ["https://k2aihub.com"],
     "educationalUse": ["learning", "research", "reference", "interactive"],
-    "learningResourceType": ["interactive resource", "educational game", "tutorial", "programming course"],
+    "learningResourceType": ["interactive resource", "educational game", "tutorial", "programming course", "professional development", "career skills"],
     "audience": {
       "@type": "EducationalAudience",
       "educationalRole": "student",
@@ -23,7 +23,79 @@ export default function Home() {
     "provider": {
       "@type": "Organization",
       "name": "K2AiHub Team"
-    }
+    },
+    "hasCourse": [
+      {
+        "@type": "Course",
+        "name": "Địa Lý Việt Nam",
+        "description": "Interactive Vietnam geography with 34 provinces"
+      },
+      {
+        "@type": "Course",
+        "name": "AI Của Tôi",
+        "description": "Practical AI applications for daily life"
+      },
+      {
+        "@type": "Course",
+        "name": "Digital Marketing & Creator Economy",
+        "description": "Comprehensive digital marketing and content creation"
+      },
+      {
+        "@type": "Course",
+        "name": "Financial Literacy & FinTech",
+        "description": "Personal finance and financial technology"
+      },
+      {
+        "@type": "Course",
+        "name": "Green Technology & Sustainability",
+        "description": "Renewable energy and environmental technology"
+      },
+      {
+        "@type": "Course",
+        "name": "Game Development & Interactive Media",
+        "description": "Game creation with Unity and Unreal Engine"
+      },
+      {
+        "@type": "Course",
+        "name": "AI Art & Creative Technology",
+        "description": "AI-powered creative tools and workflows"
+      },
+      {
+        "@type": "Course",
+        "name": "Cybersecurity & Ethical Hacking",
+        "description": "Network security and penetration testing"
+      },
+      {
+        "@type": "Course",
+        "name": "Biotechnology & Life Sciences",
+        "description": "Genetic engineering and medical biotechnology"
+      },
+      {
+        "@type": "Course",
+        "name": "STEM Education",
+        "description": "Science, technology, engineering and mathematics"
+      },
+      {
+        "@type": "Course",
+        "name": "Scratch Programming",
+        "description": "Visual programming for beginners"
+      },
+      {
+        "@type": "Course",
+        "name": "Python Programming",
+        "description": "Python for AI and data science"
+      },
+      {
+        "@type": "Course",
+        "name": "Arduino & IoT",
+        "description": "Hardware programming and IoT systems"
+      },
+      {
+        "@type": "Course",
+        "name": "Robotics",
+        "description": "Robot design and autonomous systems"
+      }
+    ]
   };
 
   const modules = [
@@ -54,6 +126,8 @@ export default function Home() {
       features: ['6 lĩnh vực ứng dụng', 'Hướng dẫn chi tiết', 'Ví dụ thực tế', 'Cập nhật liên tục'],
       icon: '🤖'
     },
+
+    // Professional Skills - Career Development
     {
       id: 'digital-marketing',
       title: 'Digital Marketing',
@@ -63,9 +137,22 @@ export default function Home() {
       duration: '12-15 giờ',
       href: '/digital-marketing',
       color: 'from-pink-600 to-purple-600',
-      category: 'foundation',
+      category: 'professional',
       features: ['8 bài học marketing', 'Creator Economy', 'Social Media', 'Analytics & ROI'],
       icon: '📱'
+    },
+    {
+      id: 'financial-literacy',
+      title: 'Financial Literacy & FinTech',
+      subtitle: 'Quản lý tài chính thông minh',
+      description: 'Master personal finance, investment và FinTech tools để xây dựng tương lai tài chính bền vững',
+      level: 'Trung bình',
+      duration: '10-12 giờ',
+      href: '/learning/financial-literacy',
+      color: 'from-amber-600 to-orange-600',
+      category: 'professional',
+      features: ['Personal Finance', 'Investment Strategy', 'FinTech Tools', 'Cryptocurrency'],
+      icon: '💰'
     },
     {
       id: 'green-technology',
@@ -76,9 +163,65 @@ export default function Home() {
       duration: '10-12 giờ',
       href: '/green-technology',
       color: 'from-green-600 to-emerald-600',
-      category: 'foundation',
+      category: 'professional',
       features: ['Renewable Energy', 'Smart Cities IoT', 'Sustainability', 'Environmental Tech'],
       icon: '🌱'
+    },
+
+    // Creative & Technology - Modern Skills
+    {
+      id: 'game-development',
+      title: 'Game Development & Interactive Media',
+      subtitle: 'Phát triển game & multimedia',
+      description: 'Tạo game với Unity/Unreal, learn game design, animation và interactive storytelling',
+      level: 'Trung bình',
+      duration: '15-18 giờ',
+      href: '/learning/game-development',
+      color: 'from-purple-600 to-pink-600',
+      category: 'creative',
+      features: ['Unity & Unreal Engine', 'Game Design', '2D/3D Animation', 'Publishing Strategy'],
+      icon: '🎮'
+    },
+    {
+      id: 'ai-art',
+      title: 'AI Art & Creative Technology',
+      subtitle: 'AI sáng tạo nội dung',
+      description: 'Master AI tools như Midjourney, DALL-E, Stable Diffusion để tạo artwork và video đẳng cấp',
+      level: 'Trung bình',
+      duration: '8-10 giờ',
+      href: '/learning/ai-art-creative-tech',
+      color: 'from-pink-600 to-rose-600',
+      category: 'creative',
+      features: ['Midjourney Pro', 'Video Generation', 'Creative Workflows', 'Commercial Applications'],
+      icon: '🎨'
+    },
+
+    // Security & Science - Advanced Topics
+    {
+      id: 'cybersecurity',
+      title: 'Cybersecurity & Ethical Hacking',
+      subtitle: 'An ninh mạng & hacking đạo đức',
+      description: 'Học penetration testing, incident response và defense strategies để bảo vệ hệ thống',
+      level: 'Nâng cao',
+      duration: '20-25 giờ',
+      href: '/learning/cybersecurity',
+      color: 'from-red-600 to-orange-600',
+      category: 'security',
+      features: ['Penetration Testing', 'SIEM Systems', 'Incident Response', 'Threat Hunting'],
+      icon: '🔒'
+    },
+    {
+      id: 'biotechnology',
+      title: 'Biotechnology & Life Sciences',
+      subtitle: 'Công nghệ sinh học & y sinh',
+      description: 'Khám phá genetic engineering, drug discovery và medical biotechnology cho tương lai y tế',
+      level: 'Nâng cao',
+      duration: '18-22 giờ',
+      href: '/learning/biotechnology',
+      color: 'from-emerald-600 to-teal-600',
+      category: 'science',
+      features: ['CRISPR Technology', 'Drug Discovery', 'Medical Devices', 'Bioethics'],
+      icon: '🧬'
     },
     
     // Programming Level - Learn to Code
@@ -157,6 +300,16 @@ export default function Home() {
       description: 'Dành cho người mới bắt đầu',
       modules: modules.filter(m => m.category === 'foundation')
     },
+    professional: {
+      title: '💼 Kỹ Năng Nghề Nghiệp',
+      description: 'Phát triển sự nghiệp và kinh doanh',
+      modules: modules.filter(m => m.category === 'professional')
+    },
+    creative: {
+      title: '🎨 Sáng Tạo & Công Nghệ',
+      description: 'Game development và AI creative tools',
+      modules: modules.filter(m => m.category === 'creative')
+    },
     programming: {
       title: '💻 Lập Trình',
       description: 'Học coding từ cơ bản đến nâng cao',
@@ -166,6 +319,16 @@ export default function Home() {
       title: '🚀 STEM & Hardware',
       description: 'Khoa học, công nghệ và robot',
       modules: modules.filter(m => m.category === 'stem')
+    },
+    security: {
+      title: '🔒 An Ninh & Bảo Mật',
+      description: 'Cybersecurity và ethical hacking',
+      modules: modules.filter(m => m.category === 'security')
+    },
+    science: {
+      title: '🧬 Khoa Học Đời Sống',
+      description: 'Biotechnology và life sciences',
+      modules: modules.filter(m => m.category === 'science')
     }
   };
 
@@ -200,8 +363,9 @@ export default function Home() {
             
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-                Khám phá thế giới học tập hiện đại với <strong className="text-white">7 module toàn diện</strong>: 
-                Từ địa lý Việt Nam, ứng dụng AI thực tế đến lập trình, STEM và robotics. 
+                Khám phá thế giới học tập hiện đại với <strong className="text-white">14 module toàn diện</strong>: 
+                Từ địa lý Việt Nam, ứng dụng AI thực tế, digital marketing, financial literacy, green technology, 
+                game development, AI art, cybersecurity, biotechnology đến lập trình, STEM và robotics. 
                 <span className="text-blue-300"> Miễn phí và dễ tiếp cận cho mọi lứa tuổi!</span>
               </p>
               
@@ -302,10 +466,16 @@ export default function Home() {
               🤖 Học AI ngay
             </Link>
             <Link 
-              href="/scratch"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-xl hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105"
+              href="/digital-marketing"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold rounded-xl hover:from-pink-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
             >
-              🎨 Lập trình Scratch
+              📱 Digital Marketing
+            </Link>
+            <Link 
+              href="/learning/game-development"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
+            >
+              🎮 Game Development
             </Link>
           </div>
         </div>
@@ -316,7 +486,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-gray-400 mb-4">
-              © 2025 K2AiHub. Nền tảng học tập thông minh, công nghệ AI dẫn lối.
+              © 2025 K2AI. Nền tảng học tập thông minh, công nghệ AI dẫn lối.
             </p>
             <div className="flex justify-center gap-6">
               <Link href="/feedback" className="text-blue-400 hover:text-blue-300 transition-colors">

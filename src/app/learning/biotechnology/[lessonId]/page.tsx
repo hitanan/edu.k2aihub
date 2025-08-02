@@ -1,15 +1,10 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { Clock, Target, User, Play, ChevronLeft, ChevronRight, Dna, Flask, Microscope, Heart, Leaf, Book, ExternalLink, CheckCircle, Lightbulb, Users } from 'lucide-react'
+import { Clock, Target, User, Play, ChevronLeft, ChevronRight, Dna, TestTube, Microscope, Heart, Leaf, Book, ExternalLink, CheckCircle, Lightbulb, Users, FlaskConical } from 'lucide-react'
 import { biotechnologyLessons } from '@/data/biotechnology'
 import { createTitle, createDescription } from '@/utils/seo'
-
-interface PageProps {
-  params: {
-    lessonId: string
-  }
-}
+import { PageProps } from '@/types'
 
 export async function generateStaticParams() {
   return biotechnologyLessons.map((lesson) => ({
@@ -18,7 +13,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const lesson = biotechnologyLessons.find(l => l.id === params.lessonId)
+  const { lessonId } = await params;
+  const lesson = await biotechnologyLessons.find(l => l.id === lessonId);
   
   if (!lesson) {
     return {
@@ -38,14 +34,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function BiotechnologyLessonPage({ params }: PageProps) {
-  const lesson = biotechnologyLessons.find(l => l.id === params.lessonId)
-  
+export default async function BiotechnologyLessonPage({ params }: PageProps) {
+  const { lessonId } = await params;
+  const lesson = biotechnologyLessons.find(l => l.id === lessonId);
+
   if (!lesson) {
     notFound()
   }
 
-  const currentIndex = biotechnologyLessons.findIndex(l => l.id === params.lessonId)
+  const currentIndex = biotechnologyLessons.findIndex(l => l.id === lessonId)
   const previousLesson = currentIndex > 0 ? biotechnologyLessons[currentIndex - 1] : null
   const nextLesson = currentIndex < biotechnologyLessons.length - 1 ? biotechnologyLessons[currentIndex + 1] : null
 
@@ -58,7 +55,7 @@ export default function BiotechnologyLessonPage({ params }: PageProps) {
       case 'agricultural biotechnology':
         return <Leaf className="w-5 h-5" />
       case 'industrial biotechnology':
-        return <Flask className="w-5 h-5" />
+        return <TestTube className="w-5 h-5" />
       default:
         return <Microscope className="w-5 h-5" />
     }
@@ -346,7 +343,7 @@ export default function BiotechnologyLessonPage({ params }: PageProps) {
             {/* Lab Techniques */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-6 sticky top-24">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                <Flask className="w-5 h-5 mr-2 text-emerald-400" />
+                <FlaskConical className="w-5 h-5 mr-2 text-emerald-400" />
                 Lab Techniques
               </h3>
               <div className="space-y-2">

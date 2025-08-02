@@ -1,13 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Dna, Microscope, Flask, Heart, Leaf, Zap, ChevronRight, Play, Clock, Target, TrendingUp, Users, Atom } from 'lucide-react'
+import { Dna, Microscope, FlaskConical, Heart, Leaf, Zap, ChevronRight, Play, Clock, Target, TrendingUp, Users, Atom } from 'lucide-react'
 import { biotechnologyLessons } from '@/data/biotechnology'
 import { createTitle, createDescription, createKeywords } from '@/utils/seo'
 
 export const metadata: Metadata = {
   title: createTitle('Biotechnology & Life Sciences - Công nghệ sinh học'),
   description: createDescription('Master biotechnology và life sciences với genetic engineering, drug discovery, medical applications. Học CRISPR, protein engineering, bioinformatics.'),
-  keywords: createKeywords('biotechnology, life sciences, genetic engineering, CRISPR, drug discovery, bioinformatics, molecular biology, biomedical research'),
+  keywords: createKeywords(['biotechnology', 'life sciences', 'genetic engineering', 'CRISPR', 'drug discovery', 'bioinformatics', 'molecular biology', 'biomedical research']),
   openGraph: {
     title: 'Biotechnology & Life Sciences | K2AiHub',
     description: 'Comprehensive biotechnology education từ genetic engineering đến drug discovery',
@@ -52,7 +52,7 @@ export default function BiotechnologyPage() {
     },
     {
       title: 'Industrial Biotechnology',
-      icon: <Flask className="w-8 h-8" />,
+  icon: <FlaskConical className="w-8 h-8" />,
       color: 'from-blue-500 to-cyan-500',
       applications: [
         { name: 'Biofuels', impact: 'Renewable energy', market: '$218B by 2030' },
@@ -158,7 +158,7 @@ export default function BiotechnologyPage() {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { label: 'Lab Techniques', value: '100+', icon: <Flask className="w-6 h-6" /> },
+              { label: 'Lab Techniques', value: '100+', icon: <FlaskConical className="w-6 h-6" /> },
               { label: 'Research Projects', value: '50+', icon: <Microscope className="w-6 h-6" /> },
               { label: 'Industry Growth', value: '+15%', icon: <TrendingUp className="w-6 h-6" /> },
               { label: 'Avg Salary', value: '$140K', icon: <Zap className="w-6 h-6" /> }

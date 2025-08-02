@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from 'next/image';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { digitalMarketingLessons } from '@/data/digital-marketing';
-import { getModuleNavigation } from '@/utils/moduleNavigation';
+import { getModuleNavigation, ModuleNavigation } from '@/utils/moduleNavigation';
+import { defaultImage } from "@/utils/image";
 
 export const metadata: Metadata = {
   title: createTitle("Content Marketing Strategy - Chiến Lược Content Marketing"),
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
 };
 
 const lesson = digitalMarketingLessons.find(l => l.id === 'content-marketing-strategy')!;
-const imageUrl = "/api/placeholder/800/400";
+const imageUrl = defaultImage;
 
 export default function ContentMarketingStrategyPage() {
-  const navConfig = getModuleNavigation('digital-marketing', 'content-marketing-strategy');
+  const navConfig = getModuleNavigation('digital-marketing', 'content-marketing-strategy')?? {} as ModuleNavigation;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-900 via-red-900 to-pink-900">
@@ -31,12 +32,12 @@ export default function ContentMarketingStrategyPage() {
             </div>
             
             <div className="flex items-center space-x-4">
-              {navConfig.prev && (
+              {navConfig.previous && (
                 <a 
-                  href={navConfig.prev.href}
+                  href={navConfig.previous.href}
                   className="text-sm text-gray-400 hover:text-white transition-colors"
                 >
-                  ← {navConfig.prev.title}
+                  ← {navConfig.previous.title}
                 </a>
               )}
               {navConfig.next && (
@@ -70,9 +71,6 @@ export default function ContentMarketingStrategyPage() {
               </span>
               <span className="bg-red-500/20 text-red-200 px-4 py-2 rounded-full">
                 🎯 {lesson.difficulty}
-              </span>
-              <span className="bg-pink-500/20 text-pink-200 px-4 py-2 rounded-full">
-                📊 {lesson.businessImpact}
               </span>
             </div>
           </div>

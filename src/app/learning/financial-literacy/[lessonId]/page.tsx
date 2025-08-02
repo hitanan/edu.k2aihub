@@ -2,16 +2,42 @@ import { financialLiteracyLessons } from '@/data/financial-literacy';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PageProps } from '@/types';
+import { createDescription, createTitle } from '@/utils/seo';
 
-interface PageProps {
-  params: {
-    lessonId: string;
-  };
+export async function generateStaticParams() {
+  return financialLiteracyLessons.map((lesson) => ({
+    lessonId: lesson.id,
+  }))
 }
 
-export default function FinancialLiteracyLessonPage({ params }: PageProps) {
-  const lesson = financialLiteracyLessons.find(l => l.id === params.lessonId);
-  
+export async function generateMetadata({ params }: PageProps) {
+  const { lessonId } = await params;
+  const lesson = financialLiteracyLessons.find(l => l.id === lessonId)
+
+  if (!lesson) {
+    return {
+      title: 'Lesson Not Found | K2AiHub',
+      description: 'The requested Financial Literacy lesson could not be found.',
+    }
+  }
+
+  return {
+    title: createTitle(lesson.title),
+    description: createDescription(lesson.description),
+    openGraph: {
+      title: lesson.title,
+      description: lesson.description,
+      images: lesson.imageUrl ? [{ url: lesson.imageUrl }] : [],
+    },
+  }
+}
+
+
+export default async function FinancialLiteracyLessonPage({ params }: PageProps) {
+  const { lessonId } = await params;
+  const lesson = financialLiteracyLessons.find(l => l.id === lessonId);
+
   if (!lesson) {
     notFound();
   }
@@ -171,7 +197,7 @@ export default function FinancialLiteracyLessonPage({ params }: PageProps) {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2">Client Profile</h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.client}</p>
+                    <p className="text-gray-600 mb-4">{caseStudy.person}</p>
                     
                     <h3 className="font-semibold text-gray-800 mb-2">Challenge</h3>
                     <p className="text-gray-600 mb-4">{caseStudy.challenge}</p>
@@ -207,7 +233,7 @@ export default function FinancialLiteracyLessonPage({ params }: PageProps) {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Financial Tools Used</h3>
               <div className="space-y-2">
-                {lesson.tools.map((tool) => (
+                {lesson.technologies.map((tool) => (
                   <div key={tool} className="bg-amber-50 text-amber-700 px-3 py-2 rounded-lg text-sm">
                     {tool}
                   </div>

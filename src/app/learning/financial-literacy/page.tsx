@@ -170,16 +170,16 @@ export default function FinancialLiteracyPage() {
                   <p className="text-gray-600 mb-4 line-clamp-3">{lesson.description}</p>
                   
                   <div className="mb-4">
-                    <h4 className="font-semibold text-gray-800 mb-2">Financial Tools:</h4>
+                    <h4 className="font-semibold text-gray-800 mb-2">Financial Technologies or Tools:</h4>
                     <div className="flex flex-wrap gap-2">
-                      {lesson.tools.slice(0, 3).map((tool) => (
+                      {lesson.technologies.slice(0, 3).map((tool) => (
                         <span key={tool} className="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs">
                           {tool}
                         </span>
                       ))}
-                      {lesson.tools.length > 3 && (
+                      {lesson.technologies.length > 3 && (
                         <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
-                          +{lesson.tools.length - 3} more
+                          +{lesson.technologies.length - 3} more
                         </span>
                       )}
                     </div>

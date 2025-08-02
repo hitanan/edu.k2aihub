@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { greenTechLessons } from '@/data/green-technology';
 import { getModuleNavigation, ModuleNavigation } from '@/utils/moduleNavigation';
+import { defaultImage } from "@/utils/image";
 
 export const metadata: Metadata = {
   title: createTitle("Renewable Energy Basics - Nền Tảng Năng Lượng Tái Tạo"),
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const lesson = greenTechLessons.find(l => l.id === 'renewable-energy-basics')!;
-const imageUrl = "/api/placeholder/800/400";
+const imageUrl = defaultImage;
 
 export default function RenewableEnergyBasicsPage() {
   const navConfig = getModuleNavigation('green-technology', 'renewable-energy-basics') ?? {} as ModuleNavigation;

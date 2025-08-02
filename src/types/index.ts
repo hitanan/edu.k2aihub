@@ -31,3 +31,7 @@ export interface ContactForm {
   subject: string;
   message: string;
 }
+
+export interface PageProps {
+  params: Promise<{ lessonId: string }>;
+}

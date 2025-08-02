@@ -10,23 +10,25 @@
  */
 export function getAssetPath(assetPath: string): string {
   // Ensure the asset path starts with a slash
-  const normalizedPath = assetPath.startsWith('/') ? assetPath : `/${assetPath}`;
-  
+  const normalizedPath = assetPath.startsWith('/')
+    ? assetPath
+    : `/${assetPath}`;
+
   // In development, always use the asset path as-is
   if (process.env.NODE_ENV === 'development') {
     return normalizedPath;
   }
-  
+
   // In production, detect the deployment scenario
   if (typeof window !== 'undefined') {
     // Client-side: Use the current origin and path to determine base path
     const { origin, pathname } = window.location;
-    
+
     // Custom domain case (e.g., k2aihub.com, example.com)
     if (!origin.includes('github.io')) {
       return normalizedPath;
     }
-    
+
     // GitHub Pages case (e.g., username.github.io/repo-name)
     const pathSegments = pathname.split('/').filter(Boolean);
     if (pathSegments.length > 0 && !pathname.startsWith('/k2aihub')) {
@@ -35,22 +37,22 @@ export function getAssetPath(assetPath: string): string {
       const potentialBasePath = `/${pathSegments[0]}`;
       return `${potentialBasePath}${normalizedPath}`;
     }
-    
+
     // Default GitHub Pages with k2aihub
     if (pathname.includes('/k2aihub') || origin.includes('/k2aihub')) {
       return `/k2aihub${normalizedPath}`;
     }
-    
+
     // Fallback for GitHub Pages
     return normalizedPath;
   }
-  
+
   // Server-side: Use environment variables or fallback logic
   const customBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
   if (customBasePath) {
     return `${customBasePath}${normalizedPath}`;
   }
-  
+
   // Default production behavior for GitHub Pages
   const basePath = '/k2aihub';
   return `${basePath}${normalizedPath}`;
@@ -65,43 +67,43 @@ export function getBasePath(): string {
   if (process.env.NODE_ENV === 'development') {
     return '';
   }
-  
+
   // Check for custom base path from environment
   const customBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
   if (customBasePath) {
     return customBasePath;
   }
-  
+
   if (typeof window !== 'undefined') {
     // Client-side: detect from current URL
     const { origin, pathname } = window.location;
-    
+
     // Custom domain case
     if (!origin.includes('github.io')) {
       return '';
     }
-    
+
     // GitHub Pages case - try to detect base path
     const pathSegments = pathname.split('/').filter(Boolean);
     if (pathSegments.length > 0) {
       // If we're in a subdirectory, use the first segment as base path
       const potentialBasePath = `/${pathSegments[0]}`;
-      
+
       // Validate that this looks like a repo name (not a page route)
       if (!['city', 'ai', 'region', 'feedback'].includes(pathSegments[0])) {
         return potentialBasePath;
       }
     }
-    
+
     // Check if URL contains k2aihub
     if (pathname.includes('/k2aihub') || origin.includes('k2aihub')) {
       return '/k2aihub';
     }
-    
+
     // Fallback for GitHub Pages
     return '';
   }
-  
+
   // Server-side fallback
   return '/k2aihub';
 }
@@ -126,11 +128,13 @@ export function getAbsoluteAssetUrl(assetPath: string): string {
     const assetFullPath = getAssetPath(assetPath);
     return new URL(assetFullPath, window.location.origin).href;
   }
-  
+
   // Server-side: construct URL based on environment
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://hitanan.github.io';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://k2aihub.com';
   const basePath = getBasePath();
-  const normalizedPath = assetPath.startsWith('/') ? assetPath : `/${assetPath}`;
-  
+  const normalizedPath = assetPath.startsWith('/')
+    ? assetPath
+    : `/${assetPath}`;
+
   return `${baseUrl}${basePath}${normalizedPath}`;
 }

@@ -7,7 +7,7 @@ import { createTitle, createDescription, createKeywords } from '@/utils/seo'
 export const metadata: Metadata = {
   title: createTitle('Cybersecurity & Ethical Hacking - Bảo mật và An ninh mạng'),
   description: createDescription('Master cybersecurity và ethical hacking với penetration testing, incident response, threat hunting. Học security defense strategies và vulnerability assessment.'),
-  keywords: createKeywords('cybersecurity, ethical hacking, penetration testing, security, incident response, threat hunting, vulnerability assessment, malware analysis, network security'),
+  keywords: createKeywords(['cybersecurity', 'ethical hacking', 'penetration testing', 'security', 'incident response', 'threat hunting', 'vulnerability assessment', 'malware analysis', 'network security']),
   openGraph: {
     title: 'Cybersecurity & Ethical Hacking | K2AiHub',
     description: 'Comprehensive cybersecurity education từ ethical hacking đến advanced defense strategies',

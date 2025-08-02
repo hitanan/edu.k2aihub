@@ -46,9 +46,11 @@ export const greenTechLessons: GreenTechLesson[] = [
   {
     id: 'renewable-energy-basics',
     title: 'Bài 1: Cơ Bản Năng Lượng Tái Tạo',
-    description: 'Tìm hiểu về năng lượng mặt trời, gió, nước và các công nghệ xanh hiện đại. Học cách tính toán hiệu quả và ROI của hệ thống năng lượng tái tạo.',
+    description:
+      'Tìm hiểu về năng lượng mặt trời, gió, nước và các công nghệ xanh hiện đại. Học cách tính toán hiệu quả và ROI của hệ thống năng lượng tái tạo.',
     videoUrl: 'https://www.youtube.com/watch?v=eJcgPi6ZZIM',
-    imageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop',
+    imageUrl:
+      'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '90 phút',
     environmentalImpact: 'Giảm 50-80% khí thải CO2 so với năng lượng hóa thạch',
@@ -71,7 +73,8 @@ export const greenTechLessons: GreenTechLesson[] = [
     exercises: [
       {
         title: 'Thiết kế hệ thống năng lượng mặt trời cho gia đình',
-        description: 'Tính toán và thiết kế complete solar system cho một gia đình 4 người ở TP.HCM',
+        description:
+          'Tính toán và thiết kế complete solar system cho một gia đình 4 người ở TP.HCM',
         difficulty: 'Trung bình',
         solution: `# Thiết kế Hệ Thống Năng Lượng Mặt Trời - Gia Đình 4 Người
 
@@ -175,7 +178,8 @@ export const greenTechLessons: GreenTechLesson[] = [
           'Consider peak vs average loads khi sizing inverter',
           'Factor in battery degradation và maintenance costs'
         ],
-        expectedOutput: 'Complete system design với specifications, costs, và timeline implementation'
+        expectedOutput:
+          'Complete system design với specifications, costs, và timeline implementation'
       }
     ],
     realWorldApplications: [
@@ -203,9 +207,12 @@ export const greenTechLessons: GreenTechLesson[] = [
       {
         title: 'Sunseap largest floating solar farm ở Singapore',
         company: 'Sunseap Group',
-        challenge: 'Limited land space cho large-scale solar installations trong dense urban environment',
-        solution: 'Developed 60MW floating solar farm trên reservoir với innovative cooling technology',
-        results: '60MW capacity, 15% higher efficiency due to water cooling, powers 16,000 homes',
+        challenge:
+          'Limited land space cho large-scale solar installations trong dense urban environment',
+        solution:
+          'Developed 60MW floating solar farm trên reservoir với innovative cooling technology',
+        results:
+          '60MW capacity, 15% higher efficiency due to water cooling, powers 16,000 homes',
         insights: [
           'Floating solar addresses land scarcity issues trong urban areas',
           'Water cooling increases panel efficiency by 10-15%',
@@ -215,14 +222,17 @@ export const greenTechLessons: GreenTechLesson[] = [
     ]
   },
   {
-    id: 'smart-city-iot',
+    id: 'smart-city-iot-solutions',
     title: 'Bài 2: Smart City & IoT Solutions',
-    description: 'Xây dựng hệ thống thành phố thông minh với IoT sensors, data analytics và AI để giải quyết các vấn đề đô thị.',
+    description:
+      'Xây dựng hệ thống thành phố thông minh với IoT sensors, data analytics và AI để giải quyết các vấn đề đô thị.',
     videoUrl: 'https://www.youtube.com/watch?v=QXRLi_W3L8Q',
-    imageUrl: 'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=400&h=400&fit=crop',
+    imageUrl:
+      'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '120 phút',
-    environmentalImpact: 'Giảm 20-30% tiêu thụ năng lượng đô thị, cải thiện chất lượng không khí',
+    environmentalImpact:
+      'Giảm 20-30% tiêu thụ năng lượng đô thị, cải thiện chất lượng không khí',
     objectives: [
       'Thiết kế IoT sensor networks cho smart cities',
       'Phát triển real-time monitoring và analytics systems',
@@ -230,7 +240,11 @@ export const greenTechLessons: GreenTechLesson[] = [
       'Xây dựng environmental monitoring solutions',
       'Tạo citizen engagement platforms'
     ],
-    prerequisites: ['Kiến thức IoT cơ bản', 'Programming experience', 'Database fundamentals'],
+    prerequisites: [
+      'Kiến thức IoT cơ bản',
+      'Programming experience',
+      'Database fundamentals'
+    ],
     technologies: [
       'IoT Sensors (Air Quality, Noise, Traffic)',
       'LoRaWAN Networks',
@@ -242,7 +256,8 @@ export const greenTechLessons: GreenTechLesson[] = [
     exercises: [
       {
         title: 'Smart Traffic Management System',
-        description: 'Thiết kế hệ thống quản lý giao thông thông minh cho một khu vực đô thị',
+        description:
+          'Thiết kế hệ thống quản lý giao thông thông minh cho một khu vực đô thị',
         difficulty: 'Nâng cao',
         solution: `# Smart Traffic Management System Design
 
@@ -425,7 +440,8 @@ class DynamicRouting:
           'Plan for data privacy và security from the start',
           'Include citizen engagement features trong system design'
         ],
-        expectedOutput: 'Complete smart city system architecture với technical specifications và implementation roadmap'
+        expectedOutput:
+          'Complete smart city system architecture với technical specifications và implementation roadmap'
       }
     ],
     realWorldApplications: [
@@ -440,16 +456,20 @@ class DynamicRouting:
         title: 'Smart Cities Council',
         url: 'https://smartcitiescouncil.com',
         type: 'article',
-        description: 'Best practices và case studies cho smart city implementations'
+        description:
+          'Best practices và case studies cho smart city implementations'
       }
     ],
     caseStudies: [
       {
         title: 'Singapore Smart Nation initiative',
         company: 'Singapore Government',
-        challenge: 'Transform entire nation into smart city với limited land và high population density',
-        solution: 'Comprehensive IoT deployment, AI-powered services, và citizen-centric digital platforms',
-        results: '25% reduction in traffic congestion, 30% improvement in air quality, 95% citizen satisfaction',
+        challenge:
+          'Transform entire nation into smart city với limited land và high population density',
+        solution:
+          'Comprehensive IoT deployment, AI-powered services, và citizen-centric digital platforms',
+        results:
+          '25% reduction in traffic congestion, 30% improvement in air quality, 95% citizen satisfaction',
         insights: [
           'Comprehensive government support essential cho large-scale smart city success',
           'Citizen engagement và privacy protection crucial cho acceptance',

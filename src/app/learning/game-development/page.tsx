@@ -162,8 +162,15 @@ export default function GameDevelopmentPage() {
                       <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m-9-2h10a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2a2 2 0 012-2z" />
                       </svg>
-                      {lesson.gameType}
+                      <span className="flex flex-wrap gap-1 mb-4">
+                        {lesson.gameGenres.map((topic, topicIndex) => (
+                            <span key={topicIndex} className="bg-purple-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+                            {topic}
+                            </span>
+                        ))}
                     </span>
+                    </span>
+                    
                   </div>
                   
                   <h3 className="text-xl font-bold text-gray-800 mb-3">{lesson.title}</h3>

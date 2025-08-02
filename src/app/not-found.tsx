@@ -17,7 +17,7 @@ export default function NotFound() {
             Return to Home
           </Link>
           <div className="text-sm text-gray-400">
-            <p>Vietnam Geography - 34 Provincial Administrative Units</p>
+            <p>K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối</p>
           </div>
         </div>
       </div>

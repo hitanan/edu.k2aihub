@@ -23,13 +23,17 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'digital-marketing',
     title: 'Digital Marketing & SEO',
-    description: 'Master digital marketing strategies, SEO optimization, social media marketing, và content creation cho modern businesses',
+    description:
+      'Master digital marketing strategies, SEO optimization, social media marketing, và content creation cho modern businesses',
     category: 'Business & Marketing',
     icon: 'TrendingUp',
     color: 'from-blue-500 to-indigo-500',
     totalDuration: '480 phút',
     difficulty: 'Trung bình',
-    prerequisites: ['Basic computer skills', 'Understanding của internet và web browsers'],
+    prerequisites: [
+      'Basic computer skills',
+      'Understanding của internet và web browsers'
+    ],
     lessons: [
       {
         id: 'seo-fundamentals',
@@ -60,13 +64,18 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'green-technology',
     title: 'Green Technology & Sustainability',
-    description: 'Explore sustainable technology solutions, renewable energy systems, environmental engineering, và clean tech innovations',
+    description:
+      'Explore sustainable technology solutions, renewable energy systems, environmental engineering, và clean tech innovations',
     category: 'Technology & Environment',
     icon: 'Leaf',
     color: 'from-green-500 to-emerald-500',
     totalDuration: '360 phút',
     difficulty: 'Trung bình',
-    prerequisites: ['Basic science knowledge', 'Environmental awareness', 'Problem-solving mindset'],
+    prerequisites: [
+      'Basic science knowledge',
+      'Environmental awareness',
+      'Problem-solving mindset'
+    ],
     lessons: [
       {
         id: 'renewable-energy-systems',
@@ -91,13 +100,18 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'mental-health-tech',
     title: 'Mental Health Technology',
-    description: 'Digital mental health solutions, therapeutic apps, AI-powered wellness platforms, và technology-assisted therapy approaches',
+    description:
+      'Digital mental health solutions, therapeutic apps, AI-powered wellness platforms, và technology-assisted therapy approaches',
     category: 'Healthcare Technology',
     icon: 'Brain',
     color: 'from-purple-500 to-pink-500',
     totalDuration: '300 phút',
     difficulty: 'Trung bình',
-    prerequisites: ['Basic psychology understanding', 'Technology literacy', 'Empathy và communication skills'],
+    prerequisites: [
+      'Basic psychology understanding',
+      'Technology literacy',
+      'Empathy và communication skills'
+    ],
     lessons: [
       {
         id: 'digital-therapy-platforms',
@@ -116,13 +130,18 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'financial-literacy',
     title: 'Financial Literacy & FinTech',
-    description: 'Personal finance management, investment strategies, cryptocurrency understanding, và modern financial technology applications',
+    description:
+      'Personal finance management, investment strategies, cryptocurrency understanding, và modern financial technology applications',
     category: 'Finance & Technology',
     icon: 'DollarSign',
     color: 'from-amber-500 to-orange-500',
     totalDuration: '330 phút',
     difficulty: 'Trung bình',
-    prerequisites: ['Basic math skills', 'Understanding của money và banking', 'Computer literacy'],
+    prerequisites: [
+      'Basic math skills',
+      'Understanding của money và banking',
+      'Computer literacy'
+    ],
     lessons: [
       {
         id: 'personal-finance-budgeting',
@@ -141,13 +160,19 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'game-development',
     title: 'Game Development & Interactive Media',
-    description: 'Game design principles, development frameworks, interactive storytelling, và modern game development technologies',
+    description:
+      'Game design principles, development frameworks, interactive storytelling, và modern game development technologies',
     category: 'Creative Technology',
     icon: 'Gamepad2',
     color: 'from-purple-500 to-indigo-500',
     totalDuration: '360 phút',
     difficulty: 'Nâng cao',
-    prerequisites: ['Programming basics', 'Creative thinking', 'Problem-solving skills', 'Design fundamentals'],
+    prerequisites: [
+      'Programming basics',
+      'Creative thinking',
+      'Problem-solving skills',
+      'Design fundamentals'
+    ],
     lessons: [
       {
         id: 'game-design-unity-basics',
@@ -166,13 +191,18 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'ai-art-creative-tech',
     title: 'AI Art & Creative Technology',
-    description: 'AI-powered creative tools, digital art generation, creative workflows, và emerging technologies trong art và design',
+    description:
+      'AI-powered creative tools, digital art generation, creative workflows, và emerging technologies trong art và design',
     category: 'Creative Technology',
     icon: 'Palette',
     color: 'from-pink-500 to-purple-500',
     totalDuration: '270 phút',
     difficulty: 'Trung bình',
-    prerequisites: ['Basic computer skills', 'Creative interest', 'Understanding của digital media'],
+    prerequisites: [
+      'Basic computer skills',
+      'Creative interest',
+      'Understanding của digital media'
+    ],
     lessons: [
       {
         id: 'ai-image-generation-fundamentals',
@@ -191,13 +221,18 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'cybersecurity',
     title: 'Cybersecurity & Ethical Hacking',
-    description: 'Cybersecurity fundamentals, ethical hacking techniques, penetration testing, và advanced security defense strategies',
+    description:
+      'Cybersecurity fundamentals, ethical hacking techniques, penetration testing, và advanced security defense strategies',
     category: 'Security & Technology',
     icon: 'Shield',
     color: 'from-red-500 to-orange-500',
     totalDuration: '380 phút',
     difficulty: 'Nâng cao',
-    prerequisites: ['Network fundamentals', 'Linux command line', 'Understanding của security concepts'],
+    prerequisites: [
+      'Network fundamentals',
+      'Linux command line',
+      'Understanding của security concepts'
+    ],
     lessons: [
       {
         id: 'ethical-hacking-fundamentals',
@@ -216,13 +251,18 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'biotechnology',
     title: 'Biotechnology & Life Sciences',
-    description: 'Genetic engineering, medical biotechnology, drug discovery, và cutting-edge life sciences applications',
+    description:
+      'Genetic engineering, medical biotechnology, drug discovery, và cutting-edge life sciences applications',
     category: 'Life Sciences & Technology',
     icon: 'Dna',
     color: 'from-emerald-500 to-teal-500',
     totalDuration: '330 phút',
     difficulty: 'Nâng cao',
-    prerequisites: ['Biology fundamentals', 'Chemistry basics', 'Scientific method understanding'],
+    prerequisites: [
+      'Biology fundamentals',
+      'Chemistry basics',
+      'Scientific method understanding'
+    ],
     lessons: [
       {
         id: 'biotech-fundamentals-genetic-engineering',
@@ -242,47 +282,65 @@ export const moduleNavigation: ModuleNavigation[] = [
 
 // Helper functions cho navigation
 export function getModuleById(id: string): ModuleNavigation | undefined {
-  return moduleNavigation.find(module => module.id === id);
+  return moduleNavigation.find((module) => module.id === id);
 }
 
-export function getLessonById(moduleId: string, lessonId: string): LessonNavigation | undefined {
+export function getLessonById(
+  moduleId: string,
+  lessonId: string
+): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
-  return moduleData?.lessons.find(lesson => lesson.id === lessonId);
+  return moduleData?.lessons.find((lesson) => lesson.id === lessonId);
 }
 
 export function getModulesByCategory(category: string): ModuleNavigation[] {
-  return moduleNavigation.filter(moduleData => moduleData.category === category);
+  return moduleNavigation.filter(
+    (moduleData) => moduleData.category === category
+  );
 }
 
 export function getAllCategories(): string[] {
-  const categories = moduleNavigation.map(moduleData => moduleData.category);
+  const categories = moduleNavigation.map((moduleData) => moduleData.category);
   return Array.from(new Set(categories));
 }
 
-export function getNextLesson(moduleId: string, currentLessonId: string): LessonNavigation | undefined {
+export function getNextLesson(
+  moduleId: string,
+  currentLessonId: string
+): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
   if (!moduleData) return undefined;
-  
-  const currentIndex = moduleData.lessons.findIndex(lesson => lesson.id === currentLessonId);
-  if (currentIndex === -1 || currentIndex === moduleData.lessons.length - 1) return undefined;
-  
+
+  const currentIndex = moduleData.lessons.findIndex(
+    (lesson) => lesson.id === currentLessonId
+  );
+  if (currentIndex === -1 || currentIndex === moduleData.lessons.length - 1)
+    return undefined;
+
   return moduleData.lessons[currentIndex + 1];
 }
 
-export function getPreviousLesson(moduleId: string, currentLessonId: string): LessonNavigation | undefined {
+export function getPreviousLesson(
+  moduleId: string,
+  currentLessonId: string
+): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
   if (!moduleData) return undefined;
-  
-  const currentIndex = moduleData.lessons.findIndex(lesson => lesson.id === currentLessonId);
+
+  const currentIndex = moduleData.lessons.findIndex(
+    (lesson) => lesson.id === currentLessonId
+  );
   if (currentIndex <= 0) return undefined;
-  
+
   return moduleData.lessons[currentIndex - 1];
 }
 
 export function calculateModuleProgress(moduleId: string): number {
   const moduleData = getModuleById(moduleId);
   if (!moduleData) return 0;
-  
-  const completedLessons = moduleData.lessons.filter(lesson => lesson.completed).length;
+
+  const completedLessons = moduleData.lessons.filter(
+    (lesson) => lesson.completed
+  ).length;
   return Math.round((completedLessons / moduleData.lessons.length) * 100);
 }

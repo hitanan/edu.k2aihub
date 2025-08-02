@@ -2,15 +2,17 @@ import { mentalHealthLessons } from '@/data/mental-health-tech';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PageProps } from '@/types';
 
-interface PageProps {
-  params: {
-    lessonId: string;
-  };
+export async function generateStaticParams() {
+  return mentalHealthLessons.map((lesson) => ({
+    lessonId: lesson.id,
+  }))
 }
 
-export default function MentalHealthLessonPage({ params }: PageProps) {
-  const lesson = mentalHealthLessons.find(l => l.id === params.lessonId);
+export default async function MentalHealthLessonPage({ params }: PageProps) {
+  const { lessonId } = await params;
+  const lesson = mentalHealthLessons.find(l => l.id === lessonId);
   
   if (!lesson) {
     notFound();
