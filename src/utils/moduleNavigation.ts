@@ -5,6 +5,8 @@ import { arduinoLessons } from '@/data/arduino';
 import { roboticsLessons } from '@/data/robotics';
 import { scratchLessons } from '@/data/scratch';
 import { stemLessons } from '@/data/stem';
+import { digitalMarketingLessons } from '@/data/digital-marketing';
+import { greenTechLessons } from '@/data/green-technology';
 
 export interface NavigationLink {
   href: string;
@@ -56,11 +58,25 @@ const pageMapping = {
   'engineering-challenges': '/stem/engineering-challenges',
   'math-in-real-life': '/stem/math-in-real-life',
   'art-meets-science': '/stem/art-meets-science',
-  'environmental-solutions': '/stem/environmental-solutions'
+  'environmental-solutions': '/stem/environmental-solutions',
+
+  // Digital Marketing mappings
+  'digital-marketing-fundamentals': '/digital-marketing/digital-marketing-fundamentals',
+  'social-media-marketing': '/digital-marketing/social-media-marketing',
+  'content-marketing-strategy': '/digital-marketing/content-marketing-strategy',
+  'seo-search-marketing': '/digital-marketing/seo-search-marketing',
+  'paid-advertising': '/digital-marketing/paid-advertising',
+  'email-marketing-automation': '/digital-marketing/email-marketing-automation',
+  'analytics-data-driven-marketing': '/digital-marketing/analytics-data-driven-marketing',
+  'creator-economy-monetization': '/digital-marketing/creator-economy-monetization',
+
+  // Green Technology mappings
+  'renewable-energy-basics': '/green-technology/renewable-energy-basics',
+  'smart-city-iot-solutions': '/green-technology/smart-city-iot-solutions'
 };
 
 export function getModuleNavigation(
-  module: 'arduino' | 'robotics' | 'scratch' | 'stem',
+  module: 'arduino' | 'robotics' | 'scratch' | 'stem' | 'digital-marketing' | 'green-technology',
   currentLessonId: string
 ): ModuleNavigation | null {
   let lessons;
@@ -82,6 +98,14 @@ export function getModuleNavigation(
     case 'stem':
       lessons = stemLessons;
       moduleBasePath = '/stem';
+      break;
+    case 'digital-marketing':
+      lessons = digitalMarketingLessons;
+      moduleBasePath = '/digital-marketing';
+      break;
+    case 'green-technology':
+      lessons = greenTechLessons;
+      moduleBasePath = '/green-technology';
       break;
     default:
       return null;

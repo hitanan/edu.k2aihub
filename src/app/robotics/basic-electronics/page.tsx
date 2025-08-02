@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { roboticsLessons } from '@/data/robotics';
 import { getModuleNavigation, getNavigationConfig } from '@/utils/moduleNavigation';
+import ModuleNavigation from "@/components/ModuleNavigation";
 
 export const metadata: Metadata = {
   title: createTitle("Bài 2: Điện Tử Cơ Bản - Robotics"),

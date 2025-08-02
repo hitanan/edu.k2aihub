@@ -54,6 +54,32 @@ export default function Home() {
       features: ['6 lĩnh vực ứng dụng', 'Hướng dẫn chi tiết', 'Ví dụ thực tế', 'Cập nhật liên tục'],
       icon: '🤖'
     },
+    {
+      id: 'digital-marketing',
+      title: 'Digital Marketing',
+      subtitle: 'Marketing & Creator Economy',
+      description: 'Học Digital Marketing toàn diện, từ Social Media đến Content Creation và kiếm tiền online',
+      level: 'Trung bình',
+      duration: '12-15 giờ',
+      href: '/digital-marketing',
+      color: 'from-pink-600 to-purple-600',
+      category: 'foundation',
+      features: ['8 bài học marketing', 'Creator Economy', 'Social Media', 'Analytics & ROI'],
+      icon: '📱'
+    },
+    {
+      id: 'green-technology',
+      title: 'Green Technology',
+      subtitle: 'Công nghệ xanh & Sustainability',
+      description: 'Khám phá renewable energy, smart cities và sustainable solutions cho tương lai xanh',
+      level: 'Trung bình',
+      duration: '10-12 giờ',
+      href: '/green-technology',
+      color: 'from-green-600 to-emerald-600',
+      category: 'foundation',
+      features: ['Renewable Energy', 'Smart Cities IoT', 'Sustainability', 'Environmental Tech'],
+      icon: '🌱'
+    },
     
     // Programming Level - Learn to Code
     {
