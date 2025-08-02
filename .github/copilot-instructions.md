@@ -20,6 +20,52 @@ The project called "K2AI - Nền tảng học tập thông minh, Công nghệ AI
 
 **Primary Documentation**: [**K2AiHub.md**](../docs/K2AiHub.md) - The comprehensive source of truth for all features, technical specifications, and development guidelines.
 
+## 🛠 Dynamic Module Page Template
+
+**For creating lesson pages across all learning modules, use the standardized template:**
+
+```typescript
+// Import the reusable template
+import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
+import { [MODULE_NAME]Lessons } from '@/data/[module-name]'
+
+// Generate static params
+export async function generateStaticParams() {
+  return generateLessonStaticParams([MODULE_NAME]Lessons)
+}
+
+// Generate metadata
+export async function generateMetadata({ params }: { params: { lessonId: string } }) {
+  return generateLessonMetadata(params.lessonId, [MODULE_NAME]Lessons)
+}
+
+// Page component
+export default async function ModuleLessonPage({ params }: { params: { lessonId: string } }) {
+  const config: LessonPageConfig<ModuleLessonType> = {
+    moduleName: 'module-name',
+    moduleTitle: 'Module Title in Vietnamese', 
+    modulePath: '/learning/module-name',
+    lessons: [MODULE_NAME]Lessons,
+    primaryColor: 'emerald',
+    secondaryColor: 'teal', 
+    gradientColors: 'from-slate-900 via-emerald-900 to-slate-900',
+    getFieldIcon: (field: string) => <IconComponent className="w-5 h-5" />,
+    getFieldValue: (lesson) => lesson.specificField,
+    sidebarContent: (lesson) => <CustomSidebarContent lesson={lesson} />
+  }
+
+  return <LessonPageTemplate lessonId={params.lessonId} config={config} />
+}
+```
+
+**Template Features:**
+- **Standardized Layout**: Consistent UI across all modules
+- **Vietnamese Language**: All text in Vietnamese
+- **Dynamic Navigation**: Previous/Next lesson navigation
+- **Responsive Design**: Mobile-optimized layout
+- **SEO Optimization**: Proper metadata generation
+- **Customizable**: Module-specific icons, colors, and sidebar content
+
 ## Project Overview
 
 This is a complete educational web application with two main modules designed to provide interactive learning experiences using modern technology.

@@ -122,7 +122,7 @@ const CityInfo: React.FC<CityInfoProps> = ({ city, hoveredCity }) => {
       {displayCity.oldNames.length > 0 && (
         <div className="mb-6">
           <h3 className="text-sm font-semibold text-gray-700 mb-2">
-            Bao gồm các tỉnh cũ:
+            Bao gồm các tỉnh / thành phố cũ:
           </h3>
           <div className="flex flex-wrap gap-2">
             {displayCity.oldNames.map((name, index) => (

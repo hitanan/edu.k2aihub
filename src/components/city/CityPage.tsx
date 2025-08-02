@@ -138,7 +138,7 @@ const CityPage: React.FC<CityPageProps> = memo(({ city, allCities }) => {
           {city.oldNames.length > 0 && (
             <div className="mb-6">
               <h3 className="text-sm font-semibold text-gray-700 mb-3">
-                Bao gồm các tỉnh cũ:
+                Bao gồm các tỉnh / thành phố cũ:
               </h3>
               <div className="flex flex-wrap gap-2">
                 {city.oldNames.map((name, index) => (
