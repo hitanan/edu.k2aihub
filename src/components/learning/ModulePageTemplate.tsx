@@ -1,42 +1,63 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Clock, Target, Users, TrendingUp, Play, ChevronRight, Star, Award, Lightbulb } from 'lucide-react'
-
-interface ModuleData {
-  id: string
+import { BaseLessonData } from './LessonPageTemplate'
+export interface ModuleData {
+  id?: string
   title: string
   subtitle: string
   description: string
-  level: string
-  duration: string
-  category: string
-  features: string[]
-  icon: string
-  color: string
-  objectives: string[]
-  prerequisites: string[]
-  careerOutcomes: string[]
-  industryApplications: string[]
+  level?: string
+  duration?: string
+  category?: string
+  features?: string[]
+  icon?: string
+  color?: string
+  objectives?: string[]
+  prerequisites?: string[]
+  careerOutcomes?: string[]
+  industryApplications?: string[]
   marketDemand?: {
     averageSalary: string
     jobGrowth: string
     hireDemand: string
   }
-}
-
-interface Lesson {
-  id: string
-  title: string
-  description: string
-  duration: string
-  difficulty: string
-  objectives?: string[]
-  [key: string]: unknown
+  primaryColor?: string
+  gradientColors?: string
+  basePath?: string
+  statsConfig?: {
+    lessons: string
+    duration: string
+    level: string
+    projects: string
+  }
+  marketData?: {
+    marketSize: string
+    marketNote: string
+    jobGrowth: string
+    jobNote: string
+    reduction: string
+    reductionNote: string
+    startups: string
+    startupsNote: string
+  }
+  careerPaths?: string[]
+  technicalHighlights?: Array<{
+    title: string
+    icon: string
+    items: string[]
+  }>
+  relatedModules?: Array<{
+    href: string
+    icon: string
+    title: string
+    description: string
+  }>
 }
 
 interface ModulePageTemplateProps {
   moduleData: ModuleData
-  lessons: Lesson[]
+  lessons: BaseLessonData[]
   heroImageUrl?: string
   additionalStats?: Array<{
     label: string
@@ -57,29 +78,37 @@ export default function ModulePageTemplate({
     title,
     subtitle,
     description,
-    level,
-    duration,
-    features,
-    icon,
-    color,
-    objectives,
-    prerequisites,
-    careerOutcomes,
-    industryApplications,
-    marketDemand
-  } = moduleData
+    level = 'Trung bình',
+    duration = '10-15 giờ',
+    features = [],
+    icon = '📚',
+    color = 'from-blue-600 to-purple-600',
+    objectives = [],
+    prerequisites = [],
+    careerOutcomes = [],
+    industryApplications = [],
+    marketDemand,
+    primaryColor = 'blue',
+    gradientColors,
+    basePath,
+    statsConfig,
+    marketData,
+    careerPaths,
+    technicalHighlights,
+    relatedModules
+  } = moduleData;
 
   const defaultStats = [
-    { label: 'Số bài học', value: `${lessons.length}+`, icon: <Play className="w-6 h-6" /> },
-    { label: 'Thời gian học', value: duration, icon: <Clock className="w-6 h-6" /> },
-    { label: 'Độ khó', value: level, icon: <Target className="w-6 h-6" /> },
-    { label: 'Học viên', value: '1000+', icon: <Users className="w-6 h-6" /> }
-  ]
+    { label: 'Số bài học', value: statsConfig?.lessons || `${lessons.length}+`, icon: <Play className="w-6 h-6" /> },
+    { label: 'Thời gian học', value: statsConfig?.duration || duration, icon: <Clock className="w-6 h-6" /> },
+    { label: 'Độ khó', value: statsConfig?.level || level, icon: <Target className="w-6 h-6" /> },
+    { label: 'Dự án', value: statsConfig?.projects || '5+', icon: <Users className="w-6 h-6" /> }
+  ];
 
-  const stats = [...defaultStats, ...additionalStats]
+  const stats = [...defaultStats, ...additionalStats];
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br ${color}`}>
+    <div className={`min-h-screen bg-gradient-to-br ${gradientColors || color}`}>
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -110,7 +139,7 @@ export default function ModulePageTemplate({
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
-              href={`/learning/${moduleData.id}/${lessons[0]?.id || ''}`}
+              href={`${basePath || `/learning/${moduleData.id || ''}`}/${lessons[0]?.id || ''}`}
               className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               <Play className="w-5 h-5 mr-2" />
@@ -142,149 +171,262 @@ export default function ModulePageTemplate({
       </section>
 
       {/* Key Features */}
-      <section className="py-16 px-4 bg-black/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Tại sao chọn {title}?
-            </h2>
-            <p className="text-xl text-gray-200">
-              Những điểm nổi bật của chương trình học
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white mb-4">
-                  <Star className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{feature}</h3>
-                <div className="w-full h-1 bg-white/20 rounded-full">
-                  <div className="h-full bg-white/60 rounded-full" style={{ width: `${Math.min(90 + index * 2, 100)}%` }}></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Learning Objectives */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-                <Target className="w-8 h-8 mr-3" />
-                Mục tiêu học tập
-              </h2>
-              <div className="space-y-4">
-                {objectives.map((objective, index) => (
-                  <div key={index} className="flex items-start p-4 bg-white/10 rounded-xl border border-white/20">
-                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0 mt-0.5">
-                      ✓
-                    </div>
-                    <span className="text-gray-200">{objective}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-                <Lightbulb className="w-8 h-8 mr-3" />
-                Kiến thức cần có
-              </h2>
-              <div className="space-y-4">
-                {prerequisites.map((prereq, index) => (
-                  <div key={index} className="flex items-start p-4 bg-white/10 rounded-xl border border-white/20">
-                    <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0 mt-0.5">
-                      !
-                    </div>
-                    <span className="text-gray-200">{prereq}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Market Demand & Career */}
-      {marketDemand && (
+      {features.length > 0 && (
         <section className="py-16 px-4 bg-black/10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Cơ hội nghề nghiệp
+                Tại sao chọn {title}?
               </h2>
               <p className="text-xl text-gray-200">
-                Thị trường việc làm và mức lương hấp dẫn
+                Những điểm nổi bật của chương trình học
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
-                <TrendingUp className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Mức lương</h3>
-                <p className="text-3xl font-bold text-green-400">{marketDemand.averageSalary}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
-                <Award className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Tăng trưởng</h3>
-                <p className="text-3xl font-bold text-blue-400">{marketDemand.jobGrowth}</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
-                <Users className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-white mb-2">Nhu cầu tuyển dụng</h3>
-                <p className="text-3xl font-bold text-purple-400">{marketDemand.hireDemand}</p>
-              </div>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-6">Các vị trí nghề nghiệp</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {careerOutcomes.map((career, index) => (
-                  <div key={index} className="flex items-center p-3 bg-white/10 rounded-lg border border-white/20">
-                    <Award className="w-5 h-5 text-yellow-400 mr-3" />
-                    <span className="text-gray-200">{career}</span>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {features.map((feature, index) => (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105">
+                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white mb-4">
+                    <Star className="w-6 h-6" />
                   </div>
-                ))}
-              </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{feature}</h3>
+                  <div className="w-full h-1 bg-white/20 rounded-full">
+                    <div className="h-full bg-white/60 rounded-full" style={{ width: `${Math.min(90 + index * 2, 100)}%` }}></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* Industry Applications */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ứng dụng thực tế
-            </h2>
-            <p className="text-xl text-gray-200">
-              Các lĩnh vực áp dụng kiến thức từ chương trình học
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industryApplications.map((application, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white mb-4">
-                  {index + 1}
+      {/* Learning Objectives */}
+      {(objectives.length > 0 || prerequisites.length > 0) && (
+        <section className="py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {objectives.length > 0 && (
+                <div>
+                  <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
+                    <Target className="w-8 h-8 mr-3" />
+                    Mục tiêu học tập
+                  </h2>
+                  <div className="space-y-4">
+                    {objectives.map((objective, index) => (
+                      <div key={index} className="flex items-start p-4 bg-white/10 rounded-xl border border-white/20">
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0 mt-0.5">
+                          ✓
+                        </div>
+                        <span className="text-gray-200">{objective}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{application}</h3>
-              </div>
-            ))}
+              )}
+
+              {prerequisites.length > 0 && (
+                <div>
+                  <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
+                    <Lightbulb className="w-8 h-8 mr-3" />
+                    Kiến thức cần có
+                  </h2>
+                  <div className="space-y-4">
+                    {prerequisites.map((prereq, index) => (
+                      <div key={index} className="flex items-start p-4 bg-white/10 rounded-xl border border-white/20">
+                        <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0 mt-0.5">
+                          !
+                        </div>
+                        <span className="text-gray-200">{prereq}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Market Data & Career */}
+      {(marketData || marketDemand) && (
+        <section className="py-16 px-4 bg-black/10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Thị trường & Cơ hội nghề nghiệp
+              </h2>
+              <p className="text-xl text-gray-200">
+                Dữ liệu thị trường việc làm và mức lương hấp dẫn
+              </p>
+            </div>
+
+            {/* Market Data Grid */}
+            {marketData && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:scale-105 transition-transform duration-300">
+                  <TrendingUp className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-white mb-2">Quy mô thị trường</h3>
+                  <p className="text-2xl font-bold text-green-400 mb-1">{marketData.marketSize}</p>
+                  <p className="text-sm text-gray-300">{marketData.marketNote}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:scale-105 transition-transform duration-300">
+                  <Award className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-white mb-2">Tăng trưởng việc làm</h3>
+                  <p className="text-2xl font-bold text-blue-400 mb-1">{marketData.jobGrowth}</p>
+                  <p className="text-sm text-gray-300">{marketData.jobNote}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:scale-105 transition-transform duration-300">
+                  <Users className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-white mb-2">Lợi thế cạnh tranh</h3>
+                  <p className="text-2xl font-bold text-purple-400 mb-1">{marketData.reduction}</p>
+                  <p className="text-sm text-gray-300">{marketData.reductionNote}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:scale-105 transition-transform duration-300">
+                  <Star className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-bold text-white mb-2">Cơ hội startup</h3>
+                  <p className="text-2xl font-bold text-yellow-400 mb-1">{marketData.startups}</p>
+                  <p className="text-sm text-gray-300">{marketData.startupsNote}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Legacy Market Demand Support */}
+            {marketDemand && !marketData && (
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
+                  <TrendingUp className="w-12 h-12 text-green-400 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Mức lương</h3>
+                  <p className="text-3xl font-bold text-green-400">{marketDemand.averageSalary}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
+                  <Award className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Tăng trưởng</h3>
+                  <p className="text-3xl font-bold text-blue-400">{marketDemand.jobGrowth}</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
+                  <Users className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Nhu cầu tuyển dụng</h3>
+                  <p className="text-3xl font-bold text-purple-400">{marketDemand.hireDemand}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Career Paths */}
+            {((careerPaths && careerPaths.length > 0) || (careerOutcomes && careerOutcomes.length > 0)) && (
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">Các vị trí nghề nghiệp</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {(careerPaths || careerOutcomes || []).map((career, index) => (
+                    <div key={index} className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20 hover:border-white/40 transition-all duration-300">
+                      <Award className="w-5 h-5 text-yellow-400 mr-3 flex-shrink-0" />
+                      <span className="text-gray-200">{career}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Industry Applications */}
+      {industryApplications.length > 0 && (
+        <section className="py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ứng dụng thực tế
+              </h2>
+              <p className="text-xl text-gray-200">
+                Các lĩnh vực áp dụng kiến thức từ chương trình học
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {industryApplications.map((application, index) => (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white mb-4">
+                    {index + 1}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{application}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Technical Highlights */}
+      {technicalHighlights && technicalHighlights.length > 0 && (
+        <section className="py-16 px-4 bg-black/10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Công nghệ & Kỹ thuật
+              </h2>
+              <p className="text-xl text-gray-200">
+                Các công nghệ chính được sử dụng trong khóa học
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {technicalHighlights.map((tech, index) => (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    <span className="text-3xl mr-3">{tech.icon}</span>
+                    <h3 className="text-xl font-bold text-white">{tech.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {tech.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="text-gray-300 flex items-center">
+                        <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Special Sections */}
       {specialSections.map((section, index) => (
         <div key={index}>{section}</div>
       ))}
+
+      {/* Related Modules */}
+      {relatedModules && relatedModules.length > 0 && (
+        <section className="py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Khóa học liên quan
+              </h2>
+              <p className="text-xl text-gray-200">
+                Mở rộng kiến thức với các khóa học bổ trợ
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {relatedModules.map((module, index) => (
+                <Link
+                  key={index}
+                  href={module.href}
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 group"
+                >
+                  <div className="flex items-center mb-4">
+                    <span className="text-3xl mr-3">{module.icon}</span>
+                    <h3 className="text-xl font-bold text-white group-hover:text-gray-200">{module.title}</h3>
+                  </div>
+                  <p className="text-gray-300">{module.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Course Curriculum */}
       <section id="curriculum" className="py-16 px-4 bg-black/10">
@@ -302,7 +444,7 @@ export default function ModulePageTemplate({
             {lessons.map((lesson, index) => (
               <Link
                 key={lesson.id}
-                href={`/learning/${moduleData.id}/${lesson.id}`}
+                href={`${basePath || `/learning/${moduleData.id || ''}`}/${lesson.id}`}
                 className="block bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] group"
               >
                 <div className="flex items-start justify-between">
@@ -366,7 +508,7 @@ export default function ModulePageTemplate({
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href={`/learning/${moduleData.id}/${lessons[0]?.id || ''}`}
+                href={`${basePath || `/learning/${moduleData.id || ''}`}/${lessons[0]?.id || ''}`}
                 className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 <Play className="w-5 h-5 mr-2" />

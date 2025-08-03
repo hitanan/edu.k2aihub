@@ -1,340 +1,124 @@
-import type { Metadata } from "next";
-import React from 'react';
-import Link from 'next/link';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
-import { scratchLessons } from '@/data/scratch';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
+import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { scratchLessons, type ScratchLesson } from '@/data/scratch';
 
-export const metadata: Metadata = {
-  title: createTitle("Học Lập Trình Scratch - Coding Cho Trẻ Em"),
-  description: createDescription("Khóa học lập trình Scratch dành cho trẻ em và người mới bắt đầu. Học cách tạo game, animation và ứng dụng tương tác một cách thú vị"),
-  keywords: createKeywords(["scratch", "lập trình trẻ em", "visual programming", "coding for kids", "game development", "animation"]),
-  authors: [{ name: "K2AiHub Team" }],
-  openGraph: {
-    title: createTitle("Học Lập Trình Scratch - K2AiHub"),
-    description: createDescription("Khám phá thế giới lập trình với Scratch - ngôn ngữ lập trình trực quan dành cho trẻ em"),
-    type: "website",
-  },
-};
-
-export default function ScratchModule() {
-  const moduleInfo = {
-    title: '🎨 Lập Trình Scratch',
-    description: 'Học lập trình một cách trực quan và thú vị với Scratch. Tạo ra các trò chơi và ứng dụng đầu tiên của bạn.',
-    icon: '🎨',
-    difficulty: 'Dành cho người mới bắt đầu',
-    duration: '15 giờ học',
-  };
-
-  // Map scratch lessons with proper href based on existing pages
-  const scratchLessonsList = scratchLessons.map((lesson) => {
-    let href = `/scratch/${lesson.id}`;
-    
-    // Map specific lesson IDs to existing pages
-    if (lesson.id === 'scratch-introduction') {
-      href = '/scratch/scratch-intro';
-    }
-    
-    return {
-      id: lesson.id,
-      title: lesson.title,
-      description: lesson.description,
-      icon: getIconForCategory(lesson.category),
-      difficulty: lesson.difficulty,
-      duration: lesson.duration,
-      href,
-      objectives: lesson.objectives.slice(0, 3),
-      topics: lesson.codeBlocks?.slice(0, 4) || ['Scratch', 'Programming', 'Visual', 'Logic']
-    };
-  });
-
-  function getIconForCategory(category: string) {
-    switch (category) {
-      case 'basics': return '🌟';
-      case 'animation': return '🎬';
-      case 'games': return '🎮';
-      case 'interactive': return '🎵';
-      case 'advanced': return '🚀';
-      default: return '🎨';
-    }
+// Convert ScratchLesson to BaseLessonData interface
+function convertToLesson(scratchLesson: ScratchLesson): BaseLessonData {
+  return {
+    id: scratchLesson.id,
+    title: scratchLesson.title,
+    description: scratchLesson.description,
+    duration: scratchLesson.duration,
+    difficulty: scratchLesson.difficulty,
+    category: 'Visual Programming',
+    imageUrl: scratchLesson.imageUrl || '/default-lesson.jpg',
+    videoUrl: scratchLesson.videoUrl,
+    objectives: scratchLesson.objectives,
+    prerequisites: ['Computer basics', 'Mouse and keyboard skills'],
+    exercises: scratchLesson.exercises?.map(ex => ({
+      title: ex.title,
+      description: ex.description,
+      difficulty: ex.difficulty,
+      materials: scratchLesson.materials || [],
+      procedure: ex.steps || [ex.description],
+      expectedResults: ex.expectedBehavior || 'Project hoạt động như mong đợi',
+      solution: ex.scratchUrl || 'Solution provided in lesson'
+    })) || [],
+    resources: [],
+    tools: scratchLesson.codeBlocks || ['Scratch Blocks', 'Motion', 'Looks', 'Events'],
+    realWorldApplications: scratchLesson.realWorldApplications || [],
+    caseStudies: []
   }
-   
-  const scratchFeatures = [
-    {
-      title: 'Lập Trình Trực Quan',
-      description: 'Kéo thả các khối lệnh thay vì gõ code phức tạp',
-      icon: '🧩'
+}
+
+export default function ScratchPage() {
+  // Convert lessons to base interface
+  const convertedLessons = scratchLessons.map(convertToLesson);
+
+  const moduleConfig: ModuleData = {
+    title: 'Scratch Programming',
+    subtitle: 'Lập Trình Trực Quan Cho Trẻ Em',
+    description: 'Khám phá thế giới lập trình với Scratch - ngôn ngữ lập trình trực quan hoàn hảo cho trẻ em và người mới bắt đầu. Tạo game, animation và ứng dụng tương tác một cách thú vị.',
+    primaryColor: 'orange',
+    gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
+    basePath: '/learning/scratch',
+    statsConfig: {
+      lessons: `${scratchLessons.length}+ bài`,
+      duration: '15-20 giờ',
+      level: 'Dành cho trẻ em',
+      projects: '10+ dự án thú vị'
     },
-    {
-      title: 'Sáng Tạo Không Giới Hạn',
-      description: 'Tạo game, animation, story và nhiều project thú vị khác',
-      icon: '🚀'
+    marketData: {
+      marketSize: '70 Million',
+      marketNote: 'Active Scratch users worldwide',
+      jobGrowth: '22% Growth',
+      jobNote: 'Programming jobs by 2030',
+      reduction: '90% Easier',
+      reductionNote: 'Learning programming with visual blocks',
+      startups: '1000+ Schools',
+      startupsNote: 'Teaching Scratch globally'
     },
-    {
-      title: 'Cộng Đồng Toàn Cầu',
-      description: 'Chia sẻ và học hỏi từ hàng triệu project trên thế giới',
-      icon: '🌟'
-    },
-    {
-      title: 'Miễn Phí 100%',
-      description: 'Hoàn toàn miễn phí và chạy trực tiếp trên trình duyệt',
-      icon: '💎'
-    }
-  ];
+    careerPaths: [
+      'Game Developer',
+      'Animation Artist',
+      'Programming Teacher',
+      'Software Engineer',
+      'UX/UI Designer',
+      'Creative Technologist'
+    ],
+    technicalHighlights: [
+      {
+        title: 'Visual Programming',
+        icon: '🧩',
+        items: ['Drag & Drop Blocks', 'No Text Coding', 'Visual Logic', 'Color-coded Commands']
+      },
+      {
+        title: 'Creative Projects',
+        icon: '🎨',
+        items: ['Games & Stories', 'Animation & Art', 'Interactive Music', 'Digital Storytelling']
+      },
+      {
+        title: 'Programming Concepts',
+        icon: '💻',
+        items: ['Loops & Conditions', 'Variables & Events', 'Functions & Logic', 'Problem Solving']
+      },
+      {
+        title: 'Sharing Platform',
+        icon: '🌍',
+        items: ['Global Community', 'Project Sharing', 'Remix & Learn', 'Collaborative Learning']
+      },
+      {
+        title: 'Educational Benefits',
+        icon: '📚',
+        items: ['Computational Thinking', 'Creative Expression', 'Logical Reasoning', 'STEM Learning']
+      },
+      {
+        title: 'Real Skills',
+        icon: '🚀',
+        items: ['Algorithm Design', 'Debugging Skills', 'Project Planning', 'Digital Literacy']
+      }
+    ],
+    relatedModules: [
+      {
+        href: '/stem/coding-for-kids',
+        icon: '🔬',
+        title: 'STEM - Coding for Kids',
+        description: 'Advanced Coding Concepts'
+      },
+      {
+        href: '/learning/python',
+        icon: '🐍',
+        title: 'Python Programming',
+        description: 'Next Level Programming'
+      },
+      {
+        href: '/learning/game-development',
+        icon: '🎮',
+        title: 'Game Development',
+        description: 'Professional Game Creation'
+      }
+    ]
+  }
 
-  const sampleProjects = [
-    {
-      name: 'Mèo Nhảy',
-      description: 'Game đầu tiên với mèo Scratch nhảy qua các chướng ngại vật',
-      icon: '🐱',
-      difficulty: 'Dễ làm',
-      color: 'green'
-    },
-    {
-      name: 'Vẽ Tranh Tự Động',
-      description: 'Tạo chương trình vẽ tranh tự động với nhiều màu sắc đẹp mắt',
-      icon: '🎨',
-      difficulty: 'Thú vị',
-      color: 'yellow'
-    },
-    {
-      name: 'Tàu Vũ Trụ',
-      description: 'Game bắn súng trong không gian với hiệu ứng và âm thanh',
-      icon: '🚀',
-      difficulty: 'Thách thức',
-      color: 'purple'
-    }
-  ];
-
-  const { title, description, icon, difficulty, duration } = moduleInfo;
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 via-red-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <div className="text-6xl mb-6">{icon}</div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">
-              {title}
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              {description}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-              <span className="bg-white/10 px-3 py-1 rounded-full">🎯 {difficulty}</span>
-              <span className="bg-white/10 px-3 py-1 rounded-full">⏱️ {duration}</span>
-              <span className="bg-white/10 px-3 py-1 rounded-full">📚 {scratchLessonsList.length} bài học</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Lessons Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            📚 Nội Dung Khóa Học
-          </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Từng bước khám phá thế giới lập trình với Scratch - từ cơ bản đến tạo game hoàn chỉnh
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {scratchLessonsList.map((lesson, index) => (
-            <Link key={index} href={lesson.href}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transition-all duration-300 hover:bg-white/20 hover:scale-105 border border-white/20 cursor-pointer group">
-                <div className="text-4xl mb-4">{lesson.icon}</div>
-                
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors duration-300">
-                  Bài {index + 1}: {lesson.title}
-                </h3>
-                
-                <p className="text-gray-300 mb-4 leading-relaxed">
-                  {lesson.description}
-                </p>
-
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-yellow-300 mb-2">🎯 Mục tiêu:</h4>
-                  <ul className="text-sm text-gray-300 space-y-1">
-                    {lesson.objectives.map((objective, objIndex) => (
-                      <li key={objIndex} className="flex items-start">
-                        <span className="text-green-400 mr-2">•</span>
-                        {objective}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-orange-300 mb-2">📋 Nội dung:</h4>
-                  <div className="flex flex-wrap gap-1">
-                    {lesson.topics.map((topic, topicIndex) => (
-                      <span key={topicIndex} className="bg-orange-500/20 text-orange-200 text-xs px-2 py-1 rounded-full">
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center text-sm text-gray-400">
-                  <span>⏱️ {lesson.duration}</span>
-                  <span>🔧 {lesson.difficulty}</span>
-                </div>
-
-                <div className="mt-4 text-orange-300 font-semibold text-sm group-hover:text-orange-200 transition-colors duration-300">
-                  Bắt Đầu Học →
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              ⭐ Tại Sao Chọn Scratch?
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Scratch là ngôn ngữ lập trình hoàn hảo để bắt đầu hành trình coding
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {scratchFeatures.map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-300 text-sm">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Sample Projects */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            🎮 Dự Án Mẫu
-          </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Một số project thú vị bạn sẽ tạo ra trong khóa học Scratch
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {sampleProjects.map((project, index) => (
-            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <div className="text-4xl mb-4 text-center">{project.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-3 text-center">{project.name}</h3>
-              <p className="text-gray-300 text-center mb-4">
-                {project.description}
-              </p>
-              <div className="text-center">
-                <span className={`${
-                  project.color === 'green' ? 'bg-green-500/20 text-green-200' :
-                  project.color === 'yellow' ? 'bg-yellow-500/20 text-yellow-200' :
-                  'bg-purple-500/20 text-purple-200'
-                } text-xs px-3 py-1 rounded-full`}>
-                  ✅ {project.difficulty}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Cross-Module Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-bold text-white text-center mb-12">
-          🔗 Khám Phá Thêm
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Link 
-            href="/stem/coding-for-kids"
-            className="group bg-gradient-to-br from-green-600/20 to-teal-600/20 rounded-2xl p-8 border border-green-500/20 hover:border-green-400/40 transition-all duration-300 transform hover:scale-105"
-          >
-            <div className="text-4xl mb-4">💻</div>
-            <h3 className="text-xl font-bold text-white mb-2">STEM - Coding for Kids</h3>
-            <p className="text-gray-300 text-sm mb-4">
-              Tìm hiểu thêm về lập trình và tư duy khoa học công nghệ qua các hoạt động STEM thú vị
-            </p>
-            <div className="text-green-400 text-sm font-semibold group-hover:text-green-300">
-              Khám phá ngay →
-            </div>
-          </Link>
-
-          <Link 
-            href="/python"
-            className="group bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 transform hover:scale-105"
-          >
-            <div className="text-4xl mb-4">🐍</div>
-            <h3 className="text-xl font-bold text-white mb-2">Python Programming</h3>
-            <p className="text-gray-300 text-sm mb-4">
-              Nâng cao kỹ năng lập trình với Python - ngôn ngữ mạnh mẽ cho AI và phát triển web
-            </p>
-            <div className="text-blue-400 text-sm font-semibold group-hover:text-blue-300">
-              Học Python →
-            </div>
-          </Link>
-
-          <Link 
-            href="/robotics"
-            className="group bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl p-8 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 transform hover:scale-105"
-          >
-            <div className="text-4xl mb-4">🤖</div>
-            <h3 className="text-xl font-bold text-white mb-2">Robotics</h3>
-            <p className="text-gray-300 text-sm mb-4">
-              Ứng dụng lập trình vào thế giới thực với robotics và các dự án IoT hấp dẫn
-            </p>
-            <div className="text-purple-400 text-sm font-semibold group-hover:text-purple-300">
-              Khám phá Robotics →
-            </div>
-          </Link>
-        </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <div className="bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-3xl p-12 border border-white/20">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            🎨 Sẵn Sàng Tạo Game Đầu Tiên?
-          </h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Bắt đầu hành trình lập trình với Scratch ngay hôm nay. Miễn phí, dễ học và cực kỳ thú vị!
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              href="/"
-              className="inline-flex items-center px-6 py-3 bg-white/10 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20"
-            >
-              ← Trang Chủ
-            </Link>
-            <a
-              href="https://scratch.mit.edu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-xl hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105"
-            >
-              🚀 Bắt Đầu Với Scratch
-              <span className="ml-2">↗</span>
-            </a>
-            <Link 
-              href="/python"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-            >
-              🐍 Tiếp Theo: Python →
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
 }

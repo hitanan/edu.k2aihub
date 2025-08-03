@@ -1,239 +1,193 @@
-import { financialLiteracyLessons } from '@/data/financial-literacy';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { Metadata } from "next";
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
+import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { financialLiteracyLessons, type FinancialLiteracyLessons } from '@/data/financial-literacy';
+import { createTitle, createDescription } from '@/utils/seo';
+
+export const metadata: Metadata = {
+  title: createTitle("Financial Literacy & FinTech - Kiến Thức Tài Chính"),
+  description: createDescription("Khóa học Financial Literacy và FinTech toàn diện. Từ personal finance đến investment strategies, cryptocurrency và digital banking"),
+  keywords: ["financial literacy", "fintech", "investment", "cryptocurrency", "personal finance", "digital banking", "k2aihub"],
+  authors: [{ name: "K2AiHub Team" }],
+  openGraph: {
+    title: "Financial Literacy & FinTech",
+    description: "Nắm vững kiến thức tài chính và công nghệ FinTech với K2AiHub",
+    type: "website",
+  },
+};
+
+// Convert FinancialLiteracyLessons to BaseLessonData interface
+function convertToLesson(financialLiteracyLesson: FinancialLiteracyLessons): BaseLessonData {
+  return {
+    id: financialLiteracyLesson.id,
+    title: financialLiteracyLesson.title,
+    description: financialLiteracyLesson.description,
+    duration: financialLiteracyLesson.duration,
+    difficulty: financialLiteracyLesson.difficulty,
+    category: 'Financial Technology',
+    imageUrl: financialLiteracyLesson.imageUrl || '/default-lesson.jpg',
+    videoUrl: financialLiteracyLesson.videoUrl,
+    objectives: financialLiteracyLesson.objectives,
+    prerequisites: financialLiteracyLesson.prerequisites || ['Basic math skills', 'Interest in finance'],
+    exercises: financialLiteracyLesson.exercises?.map(ex => ({
+      title: ex.title,
+      description: ex.description,
+      difficulty: ex.difficulty,
+      materials: ex.requirements || [],
+      procedure: ex.hints || [ex.description],
+      expectedResults: ex.expectedOutput || 'Financial calculation completed',
+      solution: ex.solution || 'Follow financial best practices'
+    })) || [],
+    resources: financialLiteracyLesson.resources || [],
+    tools: financialLiteracyLesson.technologies || ['Excel', 'Banking Apps', 'Investment Platforms', 'Budgeting Tools'],
+    realWorldApplications: financialLiteracyLesson.realWorldApplications || [],
+    caseStudies: financialLiteracyLesson.caseStudies?.map(cs => ({
+      title: cs.title,
+      organization: cs.person,
+      problem: cs.challenge,
+      solution: cs.solution,
+      impact: cs.results,
+      innovations: cs.insights || []
+    })) || []
+  }
+}
 
 export default function FinancialLiteracyPage() {
+  // Convert lessons to base interface
+  const convertedLessons = financialLiteracyLessons.map(convertToLesson);
+
+  const moduleData: ModuleData = {
+    id: 'financial-literacy',
+    title: 'Financial Literacy & FinTech',
+    subtitle: 'Kiến thức tài chính & công nghệ FinTech',
+    description: 'Nắm vững kiến thức tài chính cá nhân và khám phá thế giới FinTech. Từ budgeting đến investment, cryptocurrency và digital banking - trở thành chuyên gia tài chính trong thời đại số.',
+    level: 'Cơ bản đến Nâng cao',
+    duration: '18-22 giờ',
+    category: 'Finance & Technology',
+    primaryColor: 'green',
+    gradientColors: 'from-slate-900 via-green-900 to-emerald-900',
+    basePath: '/learning/financial-literacy',
+    features: [
+      'Personal Finance Management và Budgeting',
+      'Investment Strategies và Portfolio Management',
+      'Cryptocurrency và Blockchain Technology',
+      'Digital Banking và FinTech Applications',
+      'Risk Management và Insurance Planning',
+      'Retirement Planning và Wealth Building',
+      'Tax Planning và Optimization',
+      'Financial Analysis và Decision Making'
+    ],
+    icon: '💰',
+    statsConfig: {
+      lessons: `${financialLiteracyLessons.length}+ bài`,
+      duration: '18-22 giờ',
+      level: 'Cơ bản đến Nâng cao',
+      projects: '10+ tình huống thực tế'
+    },
+    marketData: {
+      marketSize: '$26.5 Trillion',
+      marketNote: 'Global FinTech market by 2026',
+      jobGrowth: '20% Growth',
+      jobNote: 'FinTech jobs by 2030',
+      reduction: '40% Lower',
+      reductionNote: 'Cost with digital banking',
+      startups: '26000+ Companies',
+      startupsNote: 'FinTech companies worldwide'
+    },
+    objectives: [
+      'Quản lý tài chính cá nhân và xây dựng budget hiệu quả',
+      'Hiểu và áp dụng các chiến lược đầu tư thông minh',
+      'Nắm vững cryptocurrency và blockchain technology',
+      'Sử dụng thành thạo các ứng dụng FinTech hiện đại',
+      'Phân tích risk và lập kế hoạch bảo hiểm phù hợp',
+      'Xây dựng kế hoạch retirement và wealth building'
+    ],
+    prerequisites: [
+      'Kỹ năng toán học cơ bản và logic tính toán',
+      'Hiểu biết về tiền tệ và hệ thống ngân hàng',
+      'Sử dụng thành thạo smartphone và computer',
+      'Quan tâm đến thị trường tài chính và đầu tư'
+    ],
+    careerPaths: [
+      'Financial Advisor (15-35 triệu VNĐ)',
+      'FinTech Product Manager (25-50 triệu VNĐ)',
+      'Investment Analyst (18-40 triệu VNĐ)',
+      'Digital Banking Specialist (20-38 triệu VNĐ)',
+      'Cryptocurrency Trader (10-100+ triệu VNĐ)',
+      'Risk Management Analyst (22-42 triệu VNĐ)',
+      'Financial Technology Consultant (28-55 triệu VNĐ)',
+      'Personal Finance Coach (12-30 triệu VNĐ)'
+    ],
+    industryApplications: [
+      'Banking và financial institutions',
+      'Investment management firms',
+      'Insurance companies',
+      'FinTech startups và technology',
+      'Cryptocurrency exchanges',
+      'Real estate và property investment',
+      'Government financial agencies',
+      'Corporate finance departments',
+      'Financial consulting services',
+      'Educational institutions'
+    ],
+    technicalHighlights: [
+      {
+        title: 'Personal Finance',
+        icon: '📊',
+        items: ['Budgeting Apps', 'Expense Tracking', 'Goal Setting', 'Cash Flow Analysis']
+      },
+      {
+        title: 'Investment Tools',
+        icon: '📈',
+        items: ['Portfolio Management', 'Stock Analysis', 'Robo-Advisors', 'Trading Platforms']
+      },
+      {
+        title: 'Cryptocurrency',
+        icon: '₿',
+        items: ['Blockchain Technology', 'Digital Wallets', 'DeFi Protocols', 'NFT Marketplace']
+      },
+      {
+        title: 'Digital Banking',
+        icon: '🏦',
+        items: ['Mobile Banking', 'Digital Payments', 'Online Lending', 'Open Banking APIs']
+      },
+      {
+        title: 'Risk Management',
+        icon: '🛡️',
+        items: ['Insurance Planning', 'Credit Scoring', 'Market Analysis', 'Portfolio Diversification']
+      },
+      {
+        title: 'Financial Analysis',
+        icon: '🔍',
+        items: ['Excel Modeling', 'Financial Ratios', 'Valuation Methods', 'Data Visualization']
+      }
+    ],
+    relatedModules: [
+      {
+        href: '/learning/digital-marketing',
+        icon: '📱',
+        title: 'Digital Marketing',
+        description: 'Financial Marketing & Sales'
+      },
+      {
+        href: '/learning/python',
+        icon: '🐍',
+        title: 'Python Programming',
+        description: 'Financial Data Analysis'
+      },
+      {
+        href: '/learning/ai-art-creative-tech',
+        icon: '🤖',
+        title: 'AI & Creative Tech',
+        description: 'AI in Financial Services'
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-6">
-            <div className="p-4 bg-amber-100 rounded-full">
-              <svg className="w-12 h-12 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-              </svg>
-            </div>
-          </div>
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">Financial Literacy & FinTech</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Học cách quản lý tài chính cá nhân và khám phá công nghệ FinTech. Từ budgeting cơ bản đến investment strategies, 
-            cryptocurrency và digital banking cho tương lai tài chính bền vững.
-          </p>
-        </div>
-
-        {/* Course Overview Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mb-12">
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center border-l-4 border-amber-500">
-            <div className="text-3xl font-bold text-amber-600 mb-2">{financialLiteracyLessons.length}</div>
-            <div className="text-gray-600">Comprehensive Lessons</div>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center border-l-4 border-orange-500">
-            <div className="text-3xl font-bold text-orange-600 mb-2">100%</div>
-            <div className="text-gray-600">Practical Application</div>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center border-l-4 border-yellow-500">
-            <div className="text-3xl font-bold text-yellow-600 mb-2">Real</div>
-            <div className="text-gray-600">Financial Tools</div>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center border-l-4 border-red-500">
-            <div className="text-3xl font-bold text-red-600 mb-2">Expert</div>
-            <div className="text-gray-600">FinTech Insights</div>
-          </div>
-        </div>
-
-        {/* Key Benefits */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Tại sao học Financial Literacy?</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Wealth Building</h3>
-              <p className="text-gray-600">
-                Master personal finance fundamentals và build long-term wealth through smart investing và planning.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">FinTech Innovation</h3>
-              <p className="text-gray-600">
-                Explore cutting-edge financial technology, cryptocurrency, và digital banking solutions.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Financial Security</h3>
-              <p className="text-gray-600">
-                Build emergency funds, understand insurance, và create comprehensive financial protection plans.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Financial Tools & Platforms */}
-        <div className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl shadow-xl p-8 mb-12 text-white">
-          <h2 className="text-3xl font-bold mb-8 text-center">Tools & Platforms</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-              <h3 className="font-semibold mb-3">Budgeting Apps</h3>
-              <ul className="space-y-2 text-sm">
-                <li>• YNAB (You Need A Budget)</li>
-                <li>• Mint Personal Finance</li>
-                <li>• PocketGuard</li>
-                <li>• Goodbudget Envelope</li>
-              </ul>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-              <h3 className="font-semibold mb-3">Investment Platforms</h3>
-              <ul className="space-y-2 text-sm">
-                <li>• Robinhood Trading</li>
-                <li>• E*TRADE Portfolio</li>
-                <li>• Fidelity Investments</li>
-                <li>• Vanguard Index Funds</li>
-              </ul>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-              <h3 className="font-semibold mb-3">Cryptocurrency</h3>
-              <ul className="space-y-2 text-sm">
-                <li>• Coinbase Exchange</li>
-                <li>• Binance Trading</li>
-                <li>• MetaMask Wallet</li>
-                <li>• CoinTracker Portfolio</li>
-              </ul>
-            </div>
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6">
-              <h3 className="font-semibold mb-3">Financial Planning</h3>
-              <ul className="space-y-2 text-sm">
-                <li>• Personal Capital</li>
-                <li>• Quicken Premier</li>
-                <li>• Tiller Money Spreadsheets</li>
-                <li>• FutureAdvisor Robo</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Lessons Grid */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Course Curriculum</h2>
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-            {financialLiteracyLessons.map((lesson, index) => (
-              <div key={lesson.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48">
-                  <Image
-                    src={lesson.imageUrl || 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=400&fit=crop'}
-                    alt={lesson.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Bài {index + 1}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-white/90 backdrop-blur text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
-                      {lesson.difficulty}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center gap-4 mb-3">
-                    <span className="flex items-center text-gray-500 text-sm">
-                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {lesson.duration}
-                    </span>
-                    <span className="flex items-center text-gray-500 text-sm">
-                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                      </svg>
-                      {lesson.financialImpact}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">{lesson.title}</h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{lesson.description}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-800 mb-2">Financial Technologies or Tools:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {lesson.technologies.slice(0, 3).map((tool) => (
-                        <span key={tool} className="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs">
-                          {tool}
-                        </span>
-                      ))}
-                      {lesson.technologies.length > 3 && (
-                        <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
-                          +{lesson.technologies.length - 3} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-800 mb-2">Learning Outcomes:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      {lesson.objectives.slice(0, 2).map((objective, i) => (
-                        <li key={i} className="flex items-start">
-                          <span className="text-amber-500 mr-2">•</span>
-                          {objective}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <Link
-                    href={`/learning/financial-literacy/${lesson.id}`}
-                    className="inline-flex items-center justify-center w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white px-6 py-3 rounded-lg hover:from-amber-600 hover:to-orange-700 transition-all duration-200 font-medium"
-                  >
-                    Bắt đầu học
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="bg-gradient-to-r from-amber-600 to-orange-700 rounded-2xl shadow-xl p-8 text-white text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Master Your Finances?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Join thousands của individuals building wealth và financial security through smart money management.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/learning/financial-literacy/personal-budgeting-fundamentals"
-              className="bg-white text-amber-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold"
-            >
-              Start Learning Now
-            </Link>
-            <Link
-              href="/projects"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors duration-200 font-semibold"
-            >
-              View Projects
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ModulePageTemplate
+      moduleData={moduleData}
+      lessons={convertedLessons}
+    />
   );
 }

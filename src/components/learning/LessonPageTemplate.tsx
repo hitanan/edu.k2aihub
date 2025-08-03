@@ -15,6 +15,10 @@ export interface BaseLessonData {
   imageUrl?: string;
   objectives: string[];
   prerequisites: string[];
+  tools?: string[];
+  tags?: string[];
+  category?: string;
+  concepts?: string[];
   exercises: Array<{
     title: string;
     description: string;
@@ -23,8 +27,10 @@ export interface BaseLessonData {
     procedure?: string[];
     expectedResults?: string;
     solution?: string;
+    hints?: string[];
   }>;
   realWorldApplications: string[];
+  environmentalImpact?: string;
   caseStudies?: Array<{
     title: string;
     organization: string;
@@ -143,6 +149,13 @@ export function LessonPageTemplate<T extends BaseLessonData>({
               <div className={`px-3 py-1 bg-gradient-to-r ${getDifficultyColor(lesson.difficulty)} rounded-full text-white text-sm font-medium`}>
                 {lesson.difficulty}
               </div>
+              {lesson.environmentalImpact  && (
+                <div className={`flex items-center px-3 py-1 bg-gradient-to-r ${config.primaryColor} to-${config.secondaryColor} rounded-full text-white text-sm`}>
+                  <span className="bg-teal-500/20 text-teal-200 px-4 py-2 rounded-full">
+                  🌱 {lesson.environmentalImpact}
+                </span>
+                </div>
+              )}
             </div>
           </div>
         </div>

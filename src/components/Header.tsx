@@ -3,20 +3,65 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ChevronDown, Menu, X, Home, Globe, Brain, Code } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLearningDropdownOpen, setIsLearningDropdownOpen] = useState(false);
   const pathname = usePathname();
 
-  const navigation = [
-    { name: 'Trang Chủ', href: '/', icon: '🏠' },
-    { name: 'Địa Lý Việt Nam', href: '/city', icon: '🗺️' },
-    { name: 'AI Của Tôi', href: '/ai', icon: '🤖' },
-    { name: 'STEM Education', href: '/stem', icon: '🔬' },
-    { name: 'Python', href: '/python', icon: '🐍' },
-    { name: 'Arduino', href: '/arduino', icon: '🔧' },
-    { name: 'Robotics', href: '/robotics', icon: '🤖' },
-    { name: 'Scratch', href: '/scratch', icon: '🎨' },
+  // Core modules - always visible
+  const coreModules = [
+    { name: 'Trang Chủ', href: '/', icon: <Home className="w-4 h-4" /> },
+    { name: 'Địa Lý Việt Nam', href: '/city', icon: <Globe className="w-4 h-4" /> },
+    { name: 'AI Của Tôi', href: '/ai', icon: <Brain className="w-4 h-4" /> },
+  ];
+
+  // Learning modules - grouped by category
+  const learningModules = [
+    {
+      category: 'Professional Skills',
+      icon: '💼',
+      modules: [
+        { name: 'Digital Marketing', href: '/learning/digital-marketing', icon: '📱' },
+        { name: 'Financial Literacy', href: '/learning/financial-literacy', icon: '💰' },
+        { name: 'Green Technology', href: '/learning/green-technology', icon: '🌱' },
+      ]
+    },
+    {
+      category: 'Creative & Technology',
+      icon: '🎨',
+      modules: [
+        { name: 'Game Development', href: '/learning/game-development', icon: '🎮' },
+        { name: 'AI Art & Creative Tech', href: '/learning/ai-art-creative-tech', icon: '🎨' },
+      ]
+    },
+    {
+      category: 'Security & Science',
+      icon: '🔬',
+      modules: [
+        { name: 'Cybersecurity', href: '/learning/cybersecurity', icon: '🔒' },
+        { name: 'Biotechnology', href: '/learning/biotechnology', icon: '🧬' },
+      ]
+    },
+    {
+      category: 'Programming',
+      icon: '💻',
+      modules: [
+        { name: 'Python Programming', href: '/learning/python', icon: '🐍' },
+        { name: 'Arduino & IoT', href: '/learning/arduino', icon: '⚡' },
+        { name: 'Robotics', href: '/learning/robotics', icon: '🤖' },
+        { name: 'Scratch Programming', href: '/learning/scratch', icon: '�' },
+      ]
+    },
+    {
+      category: 'STEM Foundation',
+      icon: '🔬',
+      modules: [
+        { name: 'STEM Education', href: '/learning/stem', icon: '🔬' },
+        { name: 'Mental Health Tech', href: '/learning/mental-health-tech', icon: '🧠' },
+      ]
+    }
   ];
 
   const isActive = (href: string) => {
@@ -27,97 +72,158 @@ const Header: React.FC = () => {
     return pathname.startsWith(href);
   };
 
+  const isLearningActive = () => {
+    return pathname?.startsWith('/learning') || false;
+  };
+
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <header className="bg-white/95 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-shadow duration-300">
               <span className="text-white font-bold text-sm">K2</span>
             </div>
-            <span className="text-xl font-bold text-gray-900 hidden sm:block">
-              K2AI
-            </span>
+            <div className="hidden sm:block">
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                K2AI
+              </span>
+              <p className="text-xs text-gray-500 -mt-1">Học tập thông minh</p>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-1">
-            {navigation.map((item) => (
+          <nav className="hidden lg:flex items-center space-x-2">
+            {/* Core modules */}
+            {coreModules.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center space-x-2 ${
+                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center space-x-2 ${
                   isActive(item.href)
-                    ? 'bg-blue-100 text-blue-700'
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                 }`}
               >
-                <span>{item.icon}</span>
+                {item.icon}
                 <span>{item.name}</span>
               </Link>
             ))}
+
+            {/* Learning dropdown */}
+            <div className="relative">
+              <button
+                type="button"
+                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center space-x-2 ${
+                  isLearningActive()
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                }`}
+                onMouseEnter={() => setIsLearningDropdownOpen(true)}
+                onMouseLeave={() => setIsLearningDropdownOpen(false)}
+              >
+                <Code className="w-4 h-4" />
+                <span>Learning Modules</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {/* Dropdown content */}
+              {isLearningDropdownOpen && (
+                <div 
+                  className="absolute top-full left-0 mt-2 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden z-50"
+                  onMouseEnter={() => setIsLearningDropdownOpen(true)}
+                  onMouseLeave={() => setIsLearningDropdownOpen(false)}
+                >
+                  <div className="p-6 max-h-96 overflow-y-auto">
+                    {learningModules.map((category, index) => (
+                      <div key={category.category} className={index > 0 ? 'mt-6' : ''}>
+                        <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center space-x-2">
+                          <span>{category.icon}</span>
+                          <span>{category.category}</span>
+                        </h3>
+                        <div className="grid grid-cols-1 gap-2">
+                          {category.modules.map((module) => (
+                            <Link
+                              key={module.name}
+                              href={module.href}
+                              className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200 group"
+                              onClick={() => setIsLearningDropdownOpen(false)}
+                            >
+                              <span className="text-lg">{module.icon}</span>
+                              <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
+                                {module.name}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            className="lg:hidden inline-flex items-center justify-center p-2 rounded-xl text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <span className="sr-only">Mở menu</span>
-            {/* Hamburger icon */}
-            <svg
-              className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-            {/* Close icon */}
-            <svg
-              className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-              {navigation.map((item) => (
+          <div className="lg:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-md">
+            <div className="px-2 pt-4 pb-6 space-y-2">
+              {/* Core modules */}
+              {coreModules.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 flex items-center space-x-2 ${
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
                     isActive(item.href)
-                      ? 'bg-blue-100 text-blue-700'
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span>{item.icon}</span>
+                  {item.icon}
                   <span>{item.name}</span>
                 </Link>
               ))}
+
+              {/* Learning modules */}
+              <div className="pt-4">
+                <h3 className="px-4 text-sm font-semibold text-gray-900 mb-3">Learning Modules</h3>
+                {learningModules.map((category) => (
+                  <div key={category.category} className="mb-4">
+                    <h4 className="px-4 text-xs font-medium text-gray-500 mb-2 flex items-center space-x-2">
+                      <span>{category.icon}</span>
+                      <span>{category.category}</span>
+                    </h4>
+                    {category.modules.map((module) => (
+                      <Link
+                        key={module.name}
+                        href={module.href}
+                        className="flex items-center space-x-3 px-6 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg mx-2 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <span>{module.icon}</span>
+                        <span>{module.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
