@@ -127,6 +127,101 @@ export default function Home() {
       icon: '🤖'
     },
 
+    // 2025 Trending - High Demand Skills
+    {
+      id: 'content-creator',
+      title: 'Content Creator Academy',
+      subtitle: 'Thành công với Social Media',
+      description: 'Học từ A-Z cách trở thành content creator thành công trên TikTok, YouTube, Instagram với thu nhập 15-100 triệu VNĐ/tháng',
+      level: 'Cơ bản đến Nâng cao',
+      duration: '18-22 giờ',
+      href: '/learning/content-creator',
+      color: 'from-pink-600 to-purple-600',
+      category: 'trending',
+      features: ['Personal Branding', 'Video Production', 'Monetization', 'Brand Partnerships'],
+      icon: '📱'
+    },
+    {
+      id: 'teen-wellness',
+      title: 'Teen Wellness & Mental Health',
+      subtitle: 'Sức khỏe tinh thần tuổi teen',
+      description: 'Chương trình toàn diện về sức khỏe tinh thần cho teenagers, quản lý stress, anxiety và xây dựng mối quan hệ tích cực',
+      level: 'Cơ bản',
+      duration: '12-15 giờ',
+      href: '/learning/teen-wellness',
+      color: 'from-green-600 to-teal-600',
+      category: 'trending',
+      features: ['Stress Management', 'Mindfulness', 'Digital Wellness', 'Healthy Relationships'],
+      icon: '🧘'
+    },
+    {
+      id: 'young-entrepreneur',
+      title: 'Young Entrepreneur Bootcamp',
+      subtitle: 'Khởi nghiệp từ tuổi teen',
+      description: 'Bootcamp toàn diện cho GenZ muốn khởi nghiệp: từ ý tưởng, MVP, gọi vốn đến scale business. Case study từ startup unicorn Việt Nam',
+      level: 'Trung bình',
+      duration: '25-30 giờ',
+      href: '/learning/young-entrepreneur',
+      color: 'from-orange-600 to-red-600',
+      category: 'trending',
+      features: ['Startup Mindset', 'Business Model', 'Fundraising', 'Team Building'],
+      icon: '🚀'
+    },
+
+    // Vietnamese Market - Cultural & Business
+    {
+      id: 'vietnamese-business',
+      title: 'Vietnamese Business & Entrepreneurship',
+      subtitle: 'Kinh doanh và khởi nghiệp Việt Nam',
+      description: 'Học cách navigate startup ecosystem, pháp luật doanh nghiệp và phát triển business trong thị trường Việt Nam',
+      level: 'Trung bình',
+      duration: '12-15 giờ',
+      href: '/learning/vietnamese-business',
+      color: 'from-emerald-600 to-green-600',
+      category: 'vietnamese',
+      features: ['Startup Ecosystem VN', 'Legal Compliance', 'FinTech Development', 'E-commerce Strategy'],
+      icon: '🏢'
+    },
+    {
+      id: 'vietnamese-culture',
+      title: 'Vietnamese Culture & Heritage',
+      subtitle: 'Văn hóa và di sản Việt Nam',
+      description: 'Số hóa và bảo tồn di sản văn hóa Việt Nam, phát triển tourism technology và cultural experience platforms',
+      level: 'Trung bình',
+      duration: '8-10 giờ',
+      href: '/learning/vietnamese-culture',
+      color: 'from-yellow-600 to-orange-600',
+      category: 'vietnamese',
+      features: ['Digital Heritage', 'VR Museums', 'Tourism Tech', 'Cultural Documentation'],
+      icon: '🏛️'
+    },
+    {
+      id: 'vietnamese-healthcare',
+      title: 'Vietnamese Healthcare Technology',
+      subtitle: 'Công nghệ y tế Việt Nam',
+      description: 'Phát triển digital health systems, AI medical imaging và telemedicine solutions cho healthcare Việt Nam',
+      level: 'Nâng cao',
+      duration: '10-12 giờ',
+      href: '/learning/vietnamese-healthcare',
+      color: 'from-cyan-600 to-teal-600',
+      category: 'vietnamese',
+      features: ['Digital Health Systems', 'AI Medical Imaging', 'Telemedicine', 'EHR Platforms'],
+      icon: '🏥'
+    },
+    {
+      id: 'vietnamese-language-tech',
+      title: 'Vietnamese Language Technology',
+      subtitle: 'Công nghệ ngôn ngữ Việt',
+      description: 'Phát triển NLP, chatbot AI và voice technology cho tiếng Việt với các ứng dụng thực tế',
+      level: 'Nâng cao',
+      duration: '12-15 giờ',
+      href: '/learning/vietnamese-language-tech',
+      color: 'from-violet-600 to-purple-600',
+      category: 'vietnamese',
+      features: ['Vietnamese NLP', 'AI Chatbot', 'Voice Recognition', 'Speech Synthesis'],
+      icon: '💬'
+    },
+
     // Professional Skills - Career Development
     {
       id: 'digital-marketing',
@@ -295,10 +390,20 @@ export default function Home() {
   ];
 
   const categories = {
+    trending: {
+      title: '🚀 2025 Trending',
+      description: 'Xu hướng kỹ năng hot nhất năm 2025',
+      modules: modules.filter(m => m.category === 'trending')
+    },
     foundation: {
       title: '🌟 Khởi Đầu',
       description: 'Dành cho người mới bắt đầu',
       modules: modules.filter(m => m.category === 'foundation')
+    },
+    vietnamese: {
+      title: '🇻🇳 Thị Trường Việt Nam',
+      description: 'Chuyên sâu về business, văn hóa và công nghệ Việt Nam',
+      modules: modules.filter(m => m.category === 'vietnamese')
     },
     professional: {
       title: '💼 Kỹ Năng Nghề Nghiệp',

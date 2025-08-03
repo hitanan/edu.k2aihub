@@ -21,6 +21,15 @@ const Header: React.FC = () => {
   // Learning modules - grouped by category
   const learningModules = [
     {
+      category: '2025 Trending',
+      icon: '🚀',
+      modules: [
+        { name: 'Content Creator Academy', href: '/learning/content-creator', icon: '📱' },
+        { name: 'Teen Wellness & Mental Health', href: '/learning/teen-wellness', icon: '🧘' },
+        { name: 'Young Entrepreneur Bootcamp', href: '/learning/young-entrepreneur', icon: '🚀' },
+      ]
+    },
+    {
       category: 'Vietnamese-Specific',
       icon: '🇻🇳',
       modules: [

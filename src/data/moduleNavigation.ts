@@ -1,6 +1,7 @@
 export interface ModuleNavigation {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
   category: string;
   icon: string;
@@ -8,6 +9,11 @@ export interface ModuleNavigation {
   lessons: LessonNavigation[];
   totalDuration: string;
   difficulty: string;
+  level?: string;
+  duration?: string;
+  href?: string;
+  features?: string[];
+  tags?: string[];
   prerequisites: string[];
   coreModule?: boolean;
 }
@@ -47,20 +53,27 @@ export const K2Module = {
   DigitalGovernment: 'digital-government',
   VietnameseLanguageTech: 'vietnamese-language-tech',
   VietnameseCulture: 'vietnamese-culture',
-  VietnameseHealthcare: 'vietnamese-healthcare'
+  VietnameseHealthcare: 'vietnamese-healthcare',
+
+  // 2025 Trend-Based Modules
+  ContentCreator: 'content-creator',
+  TeenWellness: 'teen-wellness',
+  YoungEntrepreneur: 'young-entrepreneur'
 };
 export const moduleNavigation: ModuleNavigation[] = [
   // Core Modules (outside /learning/ folder)
   {
     id: K2Module.City,
     title: 'Địa Lý Việt Nam',
-    description:
-      'Khám phá 34 tỉnh thành Việt Nam qua bản đồ tương tác, tìm hiểu văn hóa, lịch sử và địa lý của từng vùng miền',
-    category: 'Địa Lý & Văn Hóa',
+    description: 'Khám phá 34 tỉnh thành Việt Nam qua bản đồ tương tác, tìm hiểu văn hóa, lịch sử và địa lý của từng vùng miền',
+    category: 'foundation',
     icon: '🗺️',
     color: 'from-emerald-500 to-teal-500',
     totalDuration: 'Không giới hạn',
     difficulty: 'Tất cả mức độ',
+    href: '/city',
+    features: ['Interactive Map', 'Province Search', 'Historical Data', 'Cultural Information'],
+    tags: ['geography', 'vietnam', 'interactive', 'culture'],
     prerequisites: [],
     lessons: [],
     coreModule: true
@@ -68,33 +81,176 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: K2Module.AI,
     title: 'AI Của Tôi',
-    description:
-      'Hướng dẫn thực hành sử dụng AI trong công việc, học tập và cuộc sống hàng ngày với 6 danh mục chính',
-    category: 'Trí Tuệ Nhân Tạo',
+    subtitle: 'Hướng dẫn AI thực hành',
+    description: 'Hướng dẫn thực hành sử dụng AI trong công việc, học tập và cuộc sống hàng ngày với 6 danh mục chính',
+    category: 'foundation',
     icon: '🤖',
     color: 'from-blue-500 to-indigo-500',
     totalDuration: 'Không giới hạn',
     difficulty: 'Tất cả mức độ',
+    href: '/ai',
+    features: ['Office & Work', 'Creative & Design', 'Education & Learning', 'Business & Marketing'],
+    tags: ['ai', 'practical', 'work', 'creativity'],
     prerequisites: [],
     lessons: [],
     coreModule: true
   },
 
-  // Professional Learning Modules (in /learning/ folder)
+  // Vietnamese Market Modules
+  {
+    id: K2Module.VietnameseBusiness,
+    title: 'Vietnamese Business & Entrepreneurship',
+    subtitle: 'Kinh doanh và khởi nghiệp Việt Nam',
+    description: 'Navigate startup ecosystem, pháp luật doanh nghiệp và phát triển business trong thị trường Việt Nam',
+    category: 'vietnamese',
+    icon: '🏢',
+    color: 'from-emerald-600 to-green-600',
+    totalDuration: '12-15 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '12-15 giờ',
+    href: '/learning/vietnamese-business',
+    features: ['Startup Ecosystem', 'Legal Compliance', 'FinTech Development', 'E-commerce Strategy'],
+    tags: ['business', 'startup', 'vietnam', 'fintech'],
+    prerequisites: ['Basic business understanding', 'Vietnamese market knowledge', 'Technology literacy'],
+    lessons: [
+      {
+        id: 'vietnamese-startup-ecosystem',
+        title: 'Vietnamese Startup Ecosystem & Legal Framework',
+        duration: '140 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'vietnamese-fintech-solutions',
+        title: 'Vietnamese FinTech & Payment Solutions',
+        duration: '140 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'vietnamese-ecommerce-platforms',
+        title: 'Vietnamese E-commerce & Digital Marketplace Development',
+        duration: '140 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: K2Module.VietnameseCulture,
+    title: 'Vietnamese Culture & Heritage',
+    subtitle: 'Văn hóa và di sản Việt Nam',
+    description: 'Số hóa và bảo tồn di sản văn hóa Việt Nam, phát triển tourism technology',
+    category: 'vietnamese',
+    icon: '🏛️',
+    color: 'from-yellow-600 to-orange-600',
+    totalDuration: '8-10 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '8-10 giờ',
+    href: '/learning/vietnamese-culture',
+    features: ['Digital Heritage', 'VR Museums', 'Tourism Tech', 'Cultural Documentation'],
+    tags: ['culture', 'heritage', 'tourism', 'vietnam'],
+    prerequisites: ['Vietnamese cultural knowledge', 'Digital media understanding', 'Basic web development'],
+    lessons: [
+      {
+        id: 'digital-heritage-preservation',
+        title: 'Digital Heritage Preservation & Cultural Documentation',
+        duration: '150 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'tourism-technology',
+        title: 'Tourism Technology & Cultural Experience Platforms',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: K2Module.VietnameseHealthcare,
+    title: 'Vietnamese Healthcare Technology',
+    subtitle: 'Công nghệ y tế Việt Nam',
+    description: 'Phát triển digital health systems, AI medical imaging cho healthcare Việt Nam',
+    category: 'vietnamese',
+    icon: '🏥',
+    color: 'from-cyan-600 to-teal-600',
+    totalDuration: '10-12 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '10-12 giờ',
+    href: '/learning/vietnamese-healthcare',
+    features: ['Digital Health', 'AI Medical Imaging', 'Telemedicine', 'EHR Systems'],
+    tags: ['healthcare', 'medical', 'ai', 'vietnam'],
+    prerequisites: ['Healthcare system understanding', 'Medical terminology knowledge', 'Technology development experience'],
+    lessons: [
+      {
+        id: 'digital-health-vietnam',
+        title: 'Digital Health Infrastructure cho Việt Nam',
+        duration: '160 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'ai-medical-imaging',
+        title: 'AI Medical Imaging cho Vietnamese Healthcare',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: K2Module.VietnameseLanguageTech,
+    title: 'Vietnamese Language Technology',
+    subtitle: 'Công nghệ ngôn ngữ Việt',
+    description: 'Phát triển NLP, chatbot AI và voice technology cho tiếng Việt',
+    category: 'vietnamese',
+    icon: '💬',
+    color: 'from-violet-600 to-purple-600',
+    totalDuration: '12-15 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '12-15 giờ',
+    href: '/learning/vietnamese-language-tech',
+    features: ['Vietnamese NLP', 'AI Chatbot', 'Voice Recognition', 'Speech Synthesis'],
+    tags: ['nlp', 'ai', 'chatbot', 'voice', 'vietnamese'],
+    prerequisites: ['Programming fundamentals', 'Understanding of Vietnamese language', 'Basic machine learning concepts'],
+    lessons: [
+      {
+        id: 'vietnamese-nlp-fundamentals',
+        title: 'Vietnamese NLP Fundamentals & PhoBERT Integration',
+        duration: '150 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'vietnamese-chatbot-development',
+        title: 'Vietnamese Chatbot Development & Conversational AI',
+        duration: '150 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'vietnamese-voice-ai-systems',
+        title: 'Vietnamese Voice AI & Speech Recognition Systems',
+        duration: '150 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+
+  // Professional Skills Modules
   {
     id: K2Module.DigitalMarketing,
-    title: 'Digital Marketing & SEO',
-    description:
-      'Master digital marketing strategies, SEO optimization, social media marketing, và content creation cho modern businesses',
-    category: 'Business & Marketing',
-    icon: '📈',
-    color: 'from-blue-500 to-indigo-500',
-    totalDuration: '480 phút',
+    title: 'Digital Marketing & Creator Economy',
+    subtitle: 'Marketing và Creator Economy',
+    description: 'Học Digital Marketing toàn diện, từ Social Media đến Content Creation',
+    category: 'professional',
+    icon: '📱',
+    color: 'from-pink-600 to-purple-600',
+    totalDuration: '12-15 giờ',
     difficulty: 'Trung bình',
-    prerequisites: [
-      'Basic computer skills',
-      'Understanding của internet và web browsers'
-    ],
+    level: 'Trung bình',
+    duration: '12-15 giờ',
+    href: '/learning/digital-marketing',
+    features: ['Social Media Marketing', 'Content Strategy', 'Analytics & ROI', 'Creator Economy'],
+    tags: ['marketing', 'social media', 'content', 'creator'],
+    prerequisites: ['Basic computer skills', 'Understanding của internet và web browsers'],
     lessons: [
       {
         id: 'seo-fundamentals',
@@ -123,20 +279,52 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
+    id: K2Module.FinancialLiteracy,
+    title: 'Financial Literacy & FinTech',
+    subtitle: 'Quản lý tài chính thông minh',
+    description: 'Master personal finance, investment và FinTech tools',
+    category: 'professional',
+    icon: '💰',
+    color: 'from-amber-600 to-orange-600',
+    totalDuration: '10-12 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '10-12 giờ',
+    href: '/learning/financial-literacy',
+    features: ['Personal Finance', 'Investment Strategy', 'FinTech Tools', 'Cryptocurrency'],
+    tags: ['finance', 'investment', 'fintech', 'money'],
+    prerequisites: ['Basic math skills', 'Understanding của money và banking', 'Computer literacy'],
+    lessons: [
+      {
+        id: 'personal-finance-budgeting',
+        title: 'Personal Finance & Smart Budgeting Strategies',
+        duration: '150 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'investment-cryptocurrency-fintech',
+        title: 'Investment Strategies & Cryptocurrency FinTech',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
     id: K2Module.GreenTechnology,
     title: 'Green Technology & Sustainability',
-    description:
-      'Explore sustainable technology solutions, renewable energy systems, environmental engineering, và clean tech innovations',
-    category: 'Technology & Environment',
+    subtitle: 'Công nghệ xanh',
+    description: 'Khám phá renewable energy, smart cities và sustainable solutions',
+    category: 'professional',
     icon: '🌱',
-    color: 'from-green-500 to-emerald-500',
-    totalDuration: '360 phút',
+    color: 'from-green-600 to-emerald-600',
+    totalDuration: '10-12 giờ',
     difficulty: 'Trung bình',
-    prerequisites: [
-      'Basic science knowledge',
-      'Environmental awareness',
-      'Problem-solving mindset'
-    ],
+    level: 'Trung bình',
+    duration: '10-12 giờ',
+    href: '/learning/green-technology',
+    features: ['Renewable Energy', 'Smart Cities', 'Sustainability', 'Environmental Tech'],
+    tags: ['green', 'renewable', 'sustainability', 'environment'],
+    prerequisites: ['Basic science knowledge', 'Environmental awareness', 'Problem-solving mindset'],
     lessons: [
       {
         id: 'renewable-energy-systems',
@@ -158,82 +346,24 @@ export const moduleNavigation: ModuleNavigation[] = [
       }
     ]
   },
-  {
-    id: K2Module.MentalHealthTech,
-    title: 'Mental Health Technology',
-    description:
-      'Digital mental health solutions, therapeutic apps, AI-powered wellness platforms, và technology-assisted therapy approaches',
-    category: 'Healthcare Technology',
-    icon: '🧠',
-    color: 'from-purple-500 to-pink-500',
-    totalDuration: '300 phút',
-    difficulty: 'Trung bình',
-    prerequisites: [
-      'Basic psychology understanding',
-      'Technology literacy',
-      'Empathy và communication skills'
-    ],
-    lessons: [
-      {
-        id: 'digital-therapy-platforms',
-        title: 'Digital Therapy Platforms & Teletherapy Solutions',
-        duration: '150 phút',
-        difficulty: 'Trung bình'
-      },
-      {
-        id: 'ai-mental-health-applications',
-        title: 'AI Mental Health Applications & Wellness Tech',
-        duration: '150 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
-  },
-  {
-    id: K2Module.FinancialLiteracy,
-    title: 'Financial Literacy & FinTech',
-    description:
-      'Personal finance management, investment strategies, cryptocurrency understanding, và modern financial technology applications',
-    category: 'Finance & Technology',
-    icon: '💰',
-    color: 'from-amber-500 to-orange-500',
-    totalDuration: '330 phút',
-    difficulty: 'Trung bình',
-    prerequisites: [
-      'Basic math skills',
-      'Understanding của money và banking',
-      'Computer literacy'
-    ],
-    lessons: [
-      {
-        id: 'personal-finance-budgeting',
-        title: 'Personal Finance & Smart Budgeting Strategies',
-        duration: '150 phút',
-        difficulty: 'Cơ bản'
-      },
-      {
-        id: 'investment-cryptocurrency-fintech',
-        title: 'Investment Strategies & Cryptocurrency FinTech',
-        duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
-  },
+
+  // Creative & Technology Modules
   {
     id: K2Module.GameDevelopment,
     title: 'Game Development & Interactive Media',
-    description:
-      'Game design principles, development frameworks, interactive storytelling, và modern game development technologies',
-    category: 'Creative Technology',
+    subtitle: 'Phát triển game',
+    description: 'Tạo game với Unity/Unreal, game design và interactive storytelling',
+    category: 'creative',
     icon: '🎮',
-    color: 'from-purple-500 to-indigo-500',
-    totalDuration: '360 phút',
-    difficulty: 'Nâng cao',
-    prerequisites: [
-      'Programming basics',
-      'Creative thinking',
-      'Problem-solving skills',
-      'Design fundamentals'
-    ],
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '15-18 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '15-18 giờ',
+    href: '/learning/game-development',
+    features: ['Unity & Unreal', 'Game Design', '2D/3D Animation', 'Publishing'],
+    tags: ['game', 'unity', 'unreal', 'design', 'animation'],
+    prerequisites: ['Programming basics', 'Creative thinking', 'Problem-solving skills', 'Design fundamentals'],
     lessons: [
       {
         id: 'game-design-unity-basics',
@@ -252,18 +382,19 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: K2Module.AIArtCreativeTech,
     title: 'AI Art & Creative Technology',
-    description:
-      'AI-powered creative tools, digital art generation, creative workflows, và emerging technologies trong art và design',
-    category: 'Creative Technology',
+    subtitle: 'AI sáng tạo',
+    description: 'Master AI tools như Midjourney, DALL-E, Stable Diffusion',
+    category: 'creative',
     icon: '🎨',
-    color: 'from-pink-500 to-purple-500',
-    totalDuration: '270 phút',
+    color: 'from-pink-600 to-rose-600',
+    totalDuration: '8-10 giờ',
     difficulty: 'Trung bình',
-    prerequisites: [
-      'Basic computer skills',
-      'Creative interest',
-      'Understanding của digital media'
-    ],
+    level: 'Trung bình',
+    duration: '8-10 giờ',
+    href: '/learning/ai-art-creative-tech',
+    features: ['Midjourney Pro', 'Video Generation', 'Creative Workflows', 'Commercial Use'],
+    tags: ['ai', 'art', 'midjourney', 'creative', 'design'],
+    prerequisites: ['Basic computer skills', 'Creative interest', 'Understanding của digital media'],
     lessons: [
       {
         id: 'ai-image-generation-fundamentals',
@@ -279,21 +410,24 @@ export const moduleNavigation: ModuleNavigation[] = [
       }
     ]
   },
+
+  // Security & Science Modules
   {
     id: K2Module.Cybersecurity,
     title: 'Cybersecurity & Ethical Hacking',
-    description:
-      'Cybersecurity fundamentals, ethical hacking techniques, penetration testing, và advanced security defense strategies',
-    category: 'Security & Technology',
-    icon: '🛡️',
-    color: 'from-red-500 to-orange-500',
-    totalDuration: '380 phút',
+    subtitle: 'An ninh mạng',
+    description: 'Học penetration testing, incident response và defense strategies',
+    category: 'security',
+    icon: '🔒',
+    color: 'from-red-600 to-orange-600',
+    totalDuration: '20-25 giờ',
     difficulty: 'Nâng cao',
-    prerequisites: [
-      'Network fundamentals',
-      'Linux command line',
-      'Understanding của security concepts'
-    ],
+    level: 'Nâng cao',
+    duration: '20-25 giờ',
+    href: '/learning/cybersecurity',
+    features: ['Penetration Testing', 'SIEM Systems', 'Incident Response', 'Threat Hunting'],
+    tags: ['security', 'hacking', 'penetration', 'network'],
+    prerequisites: ['Network fundamentals', 'Linux command line', 'Understanding của security concepts'],
     lessons: [
       {
         id: 'ethical-hacking-fundamentals',
@@ -312,18 +446,19 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: K2Module.Biotechnology,
     title: 'Biotechnology & Life Sciences',
-    description:
-      'Genetic engineering, medical biotechnology, drug discovery, và cutting-edge life sciences applications',
-    category: 'Life Sciences & Technology',
+    subtitle: 'Công nghệ sinh học',
+    description: 'Khám phá genetic engineering, drug discovery và medical biotechnology',
+    category: 'science',
     icon: '🧬',
-    color: 'from-emerald-500 to-teal-500',
-    totalDuration: '330 phút',
+    color: 'from-emerald-600 to-teal-600',
+    totalDuration: '18-22 giờ',
     difficulty: 'Nâng cao',
-    prerequisites: [
-      'Biology fundamentals',
-      'Chemistry basics',
-      'Scientific method understanding'
-    ],
+    level: 'Nâng cao',
+    duration: '18-22 giờ',
+    href: '/learning/biotechnology',
+    features: ['CRISPR Technology', 'Drug Discovery', 'Medical Devices', 'Bioethics'],
+    tags: ['biotech', 'genetics', 'medical', 'crispr'],
+    prerequisites: ['Biology fundamentals', 'Chemistry basics', 'Scientific method understanding'],
     lessons: [
       {
         id: 'biotech-fundamentals-genetic-engineering',
@@ -340,22 +475,23 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
 
-  // Programming & STEM Modules (in /learning/ folder)
+  // Programming Modules
   {
     id: K2Module.Python,
     title: 'Python Programming',
-    description:
-      'Học lập trình Python từ cơ bản đến nâng cao, ứng dụng trong data science, web development và AI',
-    category: 'Programming & Development',
+    subtitle: 'Ngôn ngữ AI & Data',
+    description: 'Từ cơ bản đến nâng cao, làm chủ Python cho AI và data science',
+    category: 'programming',
     icon: '🐍',
-    color: 'from-yellow-500 to-green-500',
-    totalDuration: '600 phút',
+    color: 'from-blue-600 to-cyan-600',
+    totalDuration: '15-20 giờ',
     difficulty: 'Cơ bản đến Nâng cao',
-    prerequisites: [
-      'Basic computer skills',
-      'Logical thinking',
-      'Problem-solving mindset'
-    ],
+    level: 'Trung bình',
+    duration: '15-20 giờ',
+    href: '/learning/python',
+    features: ['Syntax cơ bản', 'OOP', 'Data handling', 'AI libraries'],
+    tags: ['python', 'programming', 'ai', 'data science'],
+    prerequisites: ['Basic computer skills', 'Logical thinking', 'Problem-solving mindset'],
     lessons: [
       {
         id: 'python-basics',
@@ -384,20 +520,66 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
+    id: K2Module.Scratch,
+    title: 'Scratch Programming',
+    subtitle: 'Lập trình trực quan',
+    description: 'Học lập trình với Scratch, tạo game và animation',
+    category: 'programming',
+    icon: '🎨',
+    color: 'from-orange-600 to-red-600',
+    totalDuration: '6-8 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '6-8 giờ',
+    href: '/learning/scratch',
+    features: ['Drag & Drop', 'Game Creation', 'Animation', 'Logic Thinking'],
+    tags: ['scratch', 'visual programming', 'kids', 'beginner'],
+    prerequisites: ['Basic computer skills', 'Creative thinking', 'Problem-solving interest'],
+    lessons: [
+      {
+        id: 'scratch-introduction',
+        title: 'Scratch Introduction & Visual Programming Concepts',
+        duration: '60 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'animation-storytelling',
+        title: 'Animation & Interactive Storytelling',
+        duration: '90 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'game-development-scratch',
+        title: 'Game Development with Scratch',
+        duration: '120 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'advanced-scratch-projects',
+        title: 'Advanced Scratch Projects & Sharing',
+        duration: '30 phút',
+        difficulty: 'Trung bình'
+      }
+    ]
+  },
+
+  // STEM & Hardware Modules
+  {
     id: K2Module.Arduino,
     title: 'Arduino & IoT Programming',
-    description:
-      'Lập trình Arduino và phát triển hệ thống IoT, từ cơ bản đến các dự án thông minh phức tạp',
-    category: 'Programming & Development',
+    subtitle: 'Lập trình phần cứng',
+    description: 'Xây dựng hệ thống IoT thông minh với Arduino',
+    category: 'stem',
     icon: '⚡',
-    color: 'from-cyan-500 to-blue-500',
-    totalDuration: '420 phút',
+    color: 'from-cyan-600 to-blue-600',
+    totalDuration: '12-15 giờ',
     difficulty: 'Trung bình',
-    prerequisites: [
-      'Basic electronics knowledge',
-      'Programming fundamentals',
-      'Problem-solving skills'
-    ],
+    level: 'Nâng cao',
+    duration: '12-15 giờ',
+    href: '/learning/arduino',
+    features: ['Arduino Programming', 'IoT Projects', 'Sensors', 'Smart Home'],
+    tags: ['arduino', 'iot', 'hardware', 'sensors'],
+    prerequisites: ['Basic electronics knowledge', 'Programming fundamentals', 'Problem-solving skills'],
     lessons: [
       {
         id: 'arduino-setup',
@@ -432,62 +614,64 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: K2Module.Scratch,
-    title: 'Scratch Programming',
-    description:
-      'Lập trình trực quan với Scratch, tạo game và ứng dụng tương tác cho người mới bắt đầu',
-    category: 'Programming & Development',
-    icon: '🧩',
-    color: 'from-orange-500 to-red-500',
-    totalDuration: '300 phút',
-    difficulty: 'Cơ bản',
-    prerequisites: [
-      'Basic computer skills',
-      'Creative thinking',
-      'Problem-solving interest'
-    ],
+    id: K2Module.Robotics,
+    title: 'Robotics & Autonomous Systems',
+    subtitle: 'Robot tự động',
+    description: 'Thiết kế và lập trình robot từ cơ bản đến AI robotics',
+    category: 'stem',
+    icon: '🤖',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '10-12 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '10-12 giờ',
+    href: '/learning/robotics',
+    features: ['Robot Design', 'Motion Control', 'AI Integration', 'Autonomous Navigation'],
+    tags: ['robotics', 'ai', 'automation', 'control'],
+    prerequisites: ['Programming fundamentals', 'Basic electronics', 'Mathematical thinking', 'Problem-solving skills'],
     lessons: [
       {
-        id: 'scratch-introduction',
-        title: 'Scratch Introduction & Visual Programming Concepts',
-        duration: '60 phút',
-        difficulty: 'Cơ bản'
-      },
-      {
-        id: 'animation-storytelling',
-        title: 'Animation & Interactive Storytelling',
-        duration: '90 phút',
-        difficulty: 'Cơ bản'
-      },
-      {
-        id: 'game-development-scratch',
-        title: 'Game Development with Scratch',
+        id: 'robotics-fundamentals',
+        title: 'Robotics Fundamentals & Components',
         duration: '120 phút',
         difficulty: 'Trung bình'
       },
       {
-        id: 'advanced-scratch-projects',
-        title: 'Advanced Scratch Projects & Sharing',
-        duration: '30 phút',
-        difficulty: 'Trung bình'
+        id: 'robot-programming-control',
+        title: 'Robot Programming & Motion Control',
+        duration: '150 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'sensors-computer-vision',
+        title: 'Sensors & Computer Vision in Robotics',
+        duration: '150 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'autonomous-navigation-ai',
+        title: 'Autonomous Navigation & AI Integration',
+        duration: '120 phút',
+        difficulty: 'Nâng cao'
       }
     ]
   },
   {
     id: K2Module.STEM,
     title: 'STEM Education',
-    description:
-      'Khoa học, Công nghệ, Kỹ thuật và Toán học thông qua các thí nghiệm thực hành và dự án sáng tạo',
-    category: 'STEM & Science',
+    subtitle: 'Khoa học ứng dụng',
+    description: 'Thí nghiệm vật lý, toán học thực tế và engineering',
+    category: 'stem',
     icon: '🔬',
-    color: 'from-purple-500 to-pink-500',
-    totalDuration: '480 phút',
+    color: 'from-teal-600 to-green-600',
+    totalDuration: '8-10 giờ',
     difficulty: 'Cơ bản đến Trung bình',
-    prerequisites: [
-      'Curiosity and interest in science',
-      'Basic math skills',
-      'Safety awareness'
-    ],
+    level: 'Cơ bản',
+    duration: '8-10 giờ',
+    href: '/learning/stem',
+    features: ['Physics Experiments', 'Math Applications', 'Engineering Design', 'Science Projects'],
+    tags: ['stem', 'science', 'math', 'engineering'],
+    prerequisites: ['Curiosity and interest in science', 'Basic math skills', 'Safety awareness'],
     lessons: [
       {
         id: 'stem-introduction',
@@ -527,216 +711,196 @@ export const moduleNavigation: ModuleNavigation[] = [
       }
     ]
   },
+
+  // 2025 Trend-Based Modules - High Priority
   {
-    id: K2Module.Robotics,
-    title: 'Robotics',
-    description:
-      'Thiết kế và lập trình robot, từ robot đơn giản đến hệ thống robot thông minh và tự động',
-    category: 'Programming & Development',
-    icon: '🤖',
-    color: 'from-indigo-500 to-purple-500',
-    totalDuration: '540 phút',
-    difficulty: 'Nâng cao',
-    prerequisites: [
-      'Programming fundamentals',
-      'Basic electronics',
-      'Mathematical thinking',
-      'Problem-solving skills'
-    ],
+    id: K2Module.ContentCreator,
+    title: 'Content Creator Academy',
+    subtitle: 'Thành công với Social Media',
+    description: 'Học từ A-Z cách trở thành content creator thành công trên TikTok, YouTube, Instagram. Từ xây dựng personal brand đến monetization.',
+    category: 'trending',
+    icon: '📱',
+    color: 'from-pink-600 to-purple-600',
+    totalDuration: '18-22 giờ',
+    difficulty: 'Cơ bản đến Nâng cao',
+    level: 'Trung bình',
+    duration: '18-22 giờ',
+    href: '/learning/content-creator',
+    features: ['Personal Branding', 'Video Production', 'Live Streaming', 'Monetization', 'Analytics'],
+    tags: ['content creator', 'social media', 'youtube', 'tiktok', 'monetization'],
+    prerequisites: ['Smartphone với camera tốt', 'Tư duy sáng tạo', 'Khả năng storytelling', 'Consistency mindset'],
     lessons: [
       {
-        id: 'robotics-fundamentals',
-        title: 'Robotics Fundamentals & Components',
-        duration: '120 phút',
+        id: 'social-media-personal-branding',
+        title: 'Social Media Strategy & Personal Branding',
+        duration: '180 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'video-production-editing-mastery',
+        title: 'Video Production & Editing Mastery',
+        duration: '240 phút',
         difficulty: 'Trung bình'
       },
       {
-        id: 'robot-programming-control',
-        title: 'Robot Programming & Motion Control',
-        duration: '150 phút',
+        id: 'livestreaming-community-building',
+        title: 'Livestreaming & Community Building',
+        duration: '200 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'monetization-strategies',
+        title: 'Monetization Strategies (YouTube, TikTok, Facebook)',
+        duration: '220 phút',
         difficulty: 'Nâng cao'
       },
       {
-        id: 'sensors-computer-vision',
-        title: 'Sensors & Computer Vision in Robotics',
-        duration: '150 phút',
+        id: 'brand-partnerships-sponsorships',
+        title: 'Brand Partnerships & Sponsorship Deals',
+        duration: '180 phút',
         difficulty: 'Nâng cao'
       },
       {
-        id: 'autonomous-navigation-ai',
-        title: 'Autonomous Navigation & AI Integration',
+        id: 'content-calendar-consistency',
+        title: 'Content Calendar & Consistency Systems',
+        duration: '160 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'analytics-growth-optimization',
+        title: 'Analytics & Growth Optimization',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'legal-business-content-creation',
+        title: 'Legal & Business Aspects of Content Creation',
+        duration: '150 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: K2Module.TeenWellness,
+    title: 'Teen Wellness & Mental Health',
+    subtitle: 'Sức khỏe tinh thần tuổi teen',
+    description: 'Chương trình toàn diện về sức khỏe tinh thần cho teenagers. Học cách quản lý stress, anxiety, xây dựng mối quan hệ tích cực và phát triển emotional intelligence.',
+    category: 'trending',
+    icon: '🧘',
+    color: 'from-green-600 to-teal-600',
+    totalDuration: '12-15 giờ',
+    difficulty: 'Cơ bản đến Nâng cao',
+    level: 'Cơ bản',
+    duration: '12-15 giờ',
+    href: '/learning/teen-wellness',
+    features: ['Stress & Anxiety Management', 'Mindfulness & Meditation', 'Digital Wellness', 'Healthy Relationships', 'Crisis Support'],
+    tags: ['teen wellness', 'mental health', 'stress management', 'mindfulness', 'emotional intelligence'],
+    prerequisites: ['Sự cởi mở về cảm xúc', 'Cam kết thực hành hàng ngày', 'Hỗ trợ từ người lớn', 'Môi trường an toàn'],
+    lessons: [
+      {
+        id: 'understanding-stress-anxiety',
+        title: 'Understanding Stress & Anxiety Management',
         duration: '120 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'mindfulness-meditation-techniques',
+        title: 'Mindfulness & Meditation Techniques',
+        duration: '90 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'digital-wellness-screen-time',
+        title: 'Digital Wellness & Screen Time Balance',
+        duration: '100 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'building-healthy-relationships',
+        title: 'Building Healthy Relationships',
+        duration: '110 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'study-life-balance',
+        title: 'Study-Life Balance Strategies',
+        duration: '95 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'emotional-intelligence-development',
+        title: 'Emotional Intelligence Development',
+        duration: '105 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'crisis-support-help-seeking',
+        title: 'Crisis Support & When to Seek Help',
+        duration: '75 phút',
         difficulty: 'Nâng cao'
       }
     ]
   },
 
-  // Vietnamese-Specific Learning Modules (in /learning/ folder)
+  // Young Entrepreneur Bootcamp - 2025 Trending
   {
-    id: K2Module.VietnameseLanguageTech,
-    title: 'Vietnamese Language & NLP Technology',
-    description:
-      'Phát triển technology solutions cho Vietnamese natural language processing, chatbots, và voice recognition systems',
-    category: 'Vietnamese-Specific Technology',
-    icon: '🗣️',
-    color: 'from-blue-500 to-indigo-500',
-    totalDuration: '450 phút',
-    difficulty: 'Nâng cao',
-    prerequisites: [
-      'Programming fundamentals',
-      'Understanding of Vietnamese language',
-      'Basic machine learning concepts'
-    ],
+    id: K2Module.YoungEntrepreneur,
+    title: 'Young Entrepreneur Bootcamp',
+    subtitle: 'Khởi nghiệp thành công từ tuổi teen',
+    description: 'Bootcamp toàn diện cho thế hệ GenZ muốn khởi nghiệp: từ ý tưởng, xây dựng MVP, gọi vốn đến scale business với focus đặc biệt vào thị trường Việt Nam',
+    category: 'trending',
+    icon: '🚀',
+    color: 'from-orange-600 to-red-600',
+    totalDuration: '25-30 giờ',
+    difficulty: 'Cơ bản đến Nâng cao',
+    level: 'Trung bình',
+    duration: '25-30 giờ',
+    href: '/learning/young-entrepreneur',
+    features: ['Startup Mindset', 'Business Model Design', 'MVP Development', 'Fundraising', 'Team Building', 'Growth Hacking', 'Legal Compliance'],
+    tags: ['startup', 'entrepreneurship', 'business model', 'mvp', 'fundraising', 'young entrepreneur', 'vietnam startup'],
+    prerequisites: ['Tư duy logic và sáng tạo', 'Đam mê kinh doanh', 'Kỹ năng học hỏi nhanh', 'Tinh thần chấp nhận thử thách'],
     lessons: [
       {
-        id: 'vietnamese-nlp-fundamentals',
-        title: 'Vietnamese NLP Fundamentals & PhoBERT Integration',
-        duration: '150 phút',
-        difficulty: 'Trung bình'
-      },
-      {
-        id: 'vietnamese-chatbot-development',
-        title: 'Vietnamese Chatbot Development & Conversational AI',
-        duration: '150 phút',
-        difficulty: 'Nâng cao'
-      },
-      {
-        id: 'vietnamese-voice-ai-systems',
-        title: 'Vietnamese Voice AI & Speech Recognition Systems',
-        duration: '150 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
-  },
-  {
-    id: K2Module.VietnameseBusiness,
-    title: 'Vietnamese Business & Entrepreneurship',
-    description:
-      'Phát triển business technology solutions cho Vietnamese market, startup ecosystem, và e-commerce platforms',
-    category: 'Vietnamese-Specific Technology',
-    icon: '🏢',
-    color: 'from-green-500 to-emerald-500',
-    totalDuration: '420 phút',
-    difficulty: 'Trung bình',
-    prerequisites: [
-      'Basic business understanding',
-      'Vietnamese market knowledge',
-      'Technology literacy'
-    ],
-    lessons: [
-      {
-        id: 'vietnamese-startup-ecosystem',
-        title: 'Vietnamese Startup Ecosystem & Legal Framework',
-        duration: '140 phút',
-        difficulty: 'Trung bình'
-      },
-      {
-        id: 'vietnamese-fintech-solutions',
-        title: 'Vietnamese FinTech & Payment Solutions',
-        duration: '140 phút',
-        difficulty: 'Nâng cao'
-      },
-      {
-        id: 'vietnamese-ecommerce-platforms',
-        title: 'Vietnamese E-commerce & Digital Marketplace Development',
-        duration: '140 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
-  },
-  {
-    id: K2Module.DigitalGovernment,
-    title: 'Digital Government & Civic Technology',
-    description:
-      'Phát triển civic technology solutions, smart city systems, và digital government platforms cho Vietnamese public sector',
-    category: 'Vietnamese-Specific Technology',
-    icon: '🏛️',
-    color: 'from-purple-500 to-indigo-500',
-    totalDuration: '390 phút',
-    difficulty: 'Nâng cao',
-    prerequisites: [
-      'Understanding of government processes',
-      'Public policy awareness',
-      'Technology development experience'
-    ],
-    lessons: [
-      {
-        id: 'smart-city-iot-systems',
-        title: 'Smart City IoT Systems & Urban Technology',
-        duration: '130 phút',
-        difficulty: 'Nâng cao'
-      },
-      {
-        id: 'egovernance-platforms',
-        title: 'E-Governance Platforms & Digital Public Services',
-        duration: '130 phút',
-        difficulty: 'Nâng cao'
-      },
-      {
-        id: 'civic-engagement-technology',
-        title: 'Civic Engagement Technology & Citizen Participation',
-        duration: '130 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
-  },
-  {
-    id: K2Module.VietnameseCulture,
-    title: 'Vietnamese Culture & Digital Heritage',
-    description:
-      'Số hóa và bảo tồn di sản văn hóa Việt Nam, phát triển tourism technology và cultural experience platforms',
-    category: 'Vietnamese-Specific Technology',
-    icon: '🏛️',
-    color: 'from-yellow-500 to-orange-500',
-    totalDuration: '330 phút',
-    difficulty: 'Trung bình',
-    prerequisites: [
-      'Vietnamese cultural knowledge',
-      'Digital media understanding',
-      'Basic web development'
-    ],
-    lessons: [
-      {
-        id: 'digital-heritage-preservation',
-        title: 'Digital Heritage Preservation & Cultural Documentation',
-        duration: '150 phút',
-        difficulty: 'Trung bình'
-      },
-      {
-        id: 'tourism-technology',
-        title: 'Tourism Technology & Cultural Experience Platforms',
+        id: 'startup-mindset-fundamentals',
+        title: 'Tư Duy Khởi Nghiệp & Cơ Hội Thị Trường',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
-  },
-  {
-    id: K2Module.VietnameseHealthcare,
-    title: 'Vietnamese Healthcare Technology',
-    description:
-      'Phát triển healthcare technology solutions cho Vietnamese medical system, telemedicine, và AI medical imaging',
-    category: 'Vietnamese-Specific Technology',
-    icon: '🏥',
-    color: 'from-emerald-500 to-teal-500',
-    totalDuration: '360 phút',
-    difficulty: 'Nâng cao',
-    prerequisites: [
-      'Healthcare system understanding',
-      'Medical terminology knowledge',
-      'Technology development experience'
-    ],
-    lessons: [
+        difficulty: 'Cơ bản'
+      },
       {
-        id: 'digital-health-vietnam',
-        title: 'Digital Health Infrastructure cho Việt Nam',
-        duration: '160 phút',
+        id: 'business-model-validation',
+        title: 'Xây Dựng & Kiểm Chứng Business Model',
+        duration: '210 phút',
         difficulty: 'Trung bình'
       },
       {
-        id: 'ai-medical-imaging',
-        title: 'AI Medical Imaging cho Vietnamese Healthcare',
-        duration: '200 phút',
+        id: 'digital-marketing-growth',
+        title: 'Digital Marketing & Growth Hacking cho Startup',
+        duration: '195 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'funding-investment-preparation',
+        title: 'Gọi Vốn & Chuẩn Bị Đầu Tư',
+        duration: '240 phút',
         difficulty: 'Nâng cao'
+      },
+      {
+        id: 'team-building-leadership',
+        title: 'Xây Dựng Đội Ngũ & Leadership Skills',
+        duration: '180 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'scaling-operations',
+        title: 'Scale Operations & Business Growth',
+        duration: '225 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'startup-legal-compliance',
+        title: 'Pháp Lý & Compliance cho Startup',
+        duration: '165 phút',
+        difficulty: 'Trung bình'
       }
     ]
   }

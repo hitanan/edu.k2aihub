@@ -1,0 +1,721 @@
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+
+export interface TeenWellnessLessonData extends BaseLessonData {
+  mentalHealthAreas?: string[];
+  wellnessTechniques?: string[];
+  supportResources?: string[];
+  ageGroup?: string;
+  urgencyLevel?: 'Low' | 'Medium' | 'High' | 'Critical';
+  professionalSupport?: boolean;
+}
+
+export const teenWellnessLessons: TeenWellnessLessonData[] = [
+  {
+    id: 'understanding-stress-anxiety',
+    title: 'Understanding Stress & Anxiety Management',
+    description: 'Hiểu rõ về stress và anxiety ở tuổi teen, nhận biết dấu hiệu và học các kỹ thuật quản lý hiệu quả để duy trì sức khỏe tinh thần tích cực.',
+    duration: '120 phút',
+    difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    imageUrl: '/images/teen-wellness/stress-anxiety.jpg',
+    mentalHealthAreas: ['Stress Management', 'Anxiety Control', 'Emotional Regulation'],
+    wellnessTechniques: ['Deep Breathing', '4-7-8 Technique', 'Progressive Muscle Relaxation', 'Mindful Observation'],
+    supportResources: ['School Counselor', 'Online Support Groups', 'Mental Health Apps', 'Family Support'],
+    ageGroup: '13-18 tuổi',
+    urgencyLevel: 'High',
+    professionalSupport: true,
+    objectives: [
+      'Nhận biết các dấu hiệu và triệu chứng của stress và anxiety',
+      'Hiểu rõ tác động của stress lên cơ thể và tâm lý của teen',
+      'Học các kỹ thuật thở sâu và thư giãn cơ bắp để giảm căng thẳng',
+      'Phát triển cách tư duy tích cực và reframing negative thoughts',
+      'Xây dựng hệ thống hỗ trợ personal và professional'
+    ],
+    prerequisites: [
+      'Sự cởi mở và sẵn sàng chia sẻ về cảm xúc',
+      'Cam kết thực hành các bài tập wellness hàng ngày',
+      'Khả năng self-reflection và honest về mental state',
+      'Có adult trusted để hỗ trợ khi cần thiết'
+    ],
+    exercises: [
+      {
+        title: 'Stress Diary & Pattern Recognition',
+        description: 'Theo dõi và phân tích patterns của stress để hiểu triggers và responses',
+        difficulty: 'Cơ bản',
+        materials: ['Journal hoặc app tracking', 'Stress level scale 1-10', 'Weekly review template'],
+        procedure: [
+          'Record daily stress levels và specific triggers mỗi ngày',
+          'Note physical symptoms: headaches, tension, sleep issues',
+          'Track emotional responses và coping strategies đã sử dụng',
+          'Identify patterns: times of day, specific situations, people involved',
+          'Rate effectiveness của different coping methods',
+          'Weekly review với trusted adult hoặc counselor',
+          'Develop personalized stress prevention plan',
+          'Create emergency coping kit cho high-stress situations'
+        ],
+        expectedResults: 'Clear understanding của personal stress patterns và effective coping strategies',
+        solution: 'Focus on prevention rather than just reaction - identify early warning signs và intervene quickly'
+      },
+      {
+        title: 'Anxiety Coping Toolkit Development',
+        description: 'Xây dựng comprehensive toolkit để manage anxiety attacks và daily anxiety',
+        difficulty: 'Trung bình',
+        materials: ['Mobile phone với apps', 'Portable comfort items', 'Emergency contact list'],
+        procedure: [
+          'Learn 4-7-8 breathing technique và practice daily',
+          'Create grounding kit: 5 things to see, 4 to touch, 3 to hear, 2 to smell, 1 to taste',
+          'Develop positive affirmations và record trong own voice',
+          'Practice progressive muscle relaxation sequence',
+          'Set up anxiety management apps với reminders',
+          'Create comfort playlist với calming music',
+          'Establish emergency contact protocol với family/friends',
+          'Practice techniques trong low-stress situations first'
+        ],
+        expectedResults: 'Ready-to-use anxiety management toolkit effective trong real situations',
+        solution: 'Practice techniques when calm so they\'re automatic when needed - muscle memory is key'
+      },
+      {
+        title: 'Building Support Network',
+        description: 'Phát triển strong support system với peers, family, và professionals',
+        difficulty: 'Trung bình',
+        materials: ['Contact information', 'Communication preferences', 'Support network map'],
+        procedure: [
+          'Identify trusted adults: parents, teachers, relatives, counselors',
+          'Map peer support: friends who understand và can help',
+          'Research professional resources: school counselor, therapists, hotlines',
+          'Practice asking for help với low-stakes situations',
+          'Establish check-in routines với support people',
+          'Learn how to be supportive friend cho others',
+          'Create emergency support plan với multiple contact options',
+          'Join support groups hoặc communities (online/offline)'
+        ],
+        expectedResults: 'Strong support network ready to help during difficult times',
+        solution: 'Quality over quantity - better to have few close, trusted supporters than many superficial ones'
+      }
+    ],
+    realWorldApplications: [
+      'Improved academic performance through better stress management',
+      'Healthier relationships với family và friends',
+      'Better preparation cho college và career challenges',
+      'Reduced risk của mental health crises trong adulthood',
+      'Leadership skills để help peers với similar challenges',
+      'Foundation cho lifelong mental wellness practices'
+    ],
+    caseStudies: [
+      {
+        title: 'High School Student Stress Recovery',
+        organization: 'Vietnamese Public High School',
+        problem: 'Student experiencing severe academic stress, anxiety attacks before exams, sleep issues',
+        solution: 'Implemented daily mindfulness practice, stress diary tracking, family communication improvement, study schedule restructuring',
+        impact: 'Reduced anxiety attacks by 80%, improved sleep quality, better academic performance, stronger family relationships',
+        innovations: ['Peer support buddy system', 'Family stress education', 'Academic load balancing']
+      },
+      {
+        title: 'Social Anxiety Transformation',
+        organization: 'Vietnamese Teen Support Group',
+        problem: 'Teenager with severe social anxiety affecting school participation và friendships',
+        solution: 'Gradual exposure therapy, confidence-building exercises, communication skills training, peer mentoring',
+        impact: 'Increased school participation, developed close friendships, improved self-confidence, leadership roles',
+        innovations: ['Online-to-offline transition support', 'Confidence milestone system', 'Peer mentoring program']
+      }
+    ],
+    resources: [
+      {
+        title: 'Headspace for Teens',
+        url: 'https://headspace.com/teens',
+        type: 'Tool'
+      },
+      {
+        title: 'Vietnam National Mental Health Hotline',
+        url: 'tel:18001567',
+        type: 'Support'
+      },
+      {
+        title: 'Teen Mental Health First Aid Guide',
+        url: 'https://mhfa.org.au/sites/default/files/teen_mhfa_guidelines.pdf',
+        type: 'Documentation'
+      }
+    ]
+  },
+  {
+    id: 'mindfulness-meditation-techniques',
+    title: 'Mindfulness & Meditation Techniques',
+    description: 'Khám phá các kỹ thuật mindfulness và meditation phù hợp với teenagers, học cách sống trong hiện tại và phát triển awareness để improve mental clarity.',
+    duration: '90 phút',
+    difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    imageUrl: '/images/teen-wellness/mindfulness-meditation.jpg',
+    mentalHealthAreas: ['Mindfulness', 'Meditation', 'Present Moment Awareness', 'Mental Clarity'],
+    wellnessTechniques: ['Breath Awareness', 'Body Scan', 'Walking Meditation', 'Mindful Eating'],
+    supportResources: ['Meditation Apps', 'Online Communities', 'Local Meditation Groups'],
+    ageGroup: '13-18 tuổi',
+    urgencyLevel: 'Medium',
+    professionalSupport: false,
+    objectives: [
+      'Hiểu cơ bản về mindfulness và benefits cho teen mental health',
+      'Học basic meditation techniques phù hợp với busy teen lifestyle',
+      'Develop ability to stay present và reduce worry về future/past',
+      'Practice mindful activities trong daily routine',
+      'Build habit của regular mindfulness practice'
+    ],
+    prerequisites: [
+      'Open mind về meditation và mindfulness practices',
+      '10-15 phút free time mỗi ngày cho practice',
+      'Quiet space để practice meditation',
+      'Patience với learning process và self-compassion'
+    ],
+    exercises: [
+      {
+        title: 'Beginner Meditation Routine',
+        description: 'Establish sustainable daily meditation practice từ 5 phút đến 20 phút',
+        difficulty: 'Cơ bản',
+        materials: ['Timer hoặc meditation app', 'Comfortable sitting space', 'Quiet environment'],
+        procedure: [
+          'Start với 5-minute guided breathing meditation',
+          'Focus on natural breath without trying to change it',
+          'When mind wanders, gently return attention to breath',
+          'Gradually increase duration by 2-3 minutes weekly',
+          'Try different meditation styles: breath, body scan, loving-kindness',
+          'Set consistent time: morning hoặc before bed',
+          'Track progress trong meditation journal',
+          'Join online meditation communities cho support'
+        ],
+        expectedResults: 'Established meditation habit với improved focus và emotional regulation',
+        solution: 'Consistency over duration - better to meditate 5 minutes daily than 30 minutes occasionally'
+      },
+      {
+        title: 'Mindful Daily Activities',
+        description: 'Transform routine activities thành mindfulness practice opportunities',
+        difficulty: 'Cơ bản',
+        materials: ['Daily routine activities', 'Mindfulness reminders', 'Practice log'],
+        procedure: [
+          'Choose 3 daily activities để practice mindfulness: eating, walking, brushing teeth',
+          'During mindful eating: taste, texture, smell, chewing slowly',
+          'Mindful walking: feel feet touching ground, notice surroundings',
+          'Mindful listening: full attention to sounds without judgment',
+          'Use phone reminders để prompt mindful moments',
+          'Practice single-tasking instead của multitasking',
+          'Notice when mind is on autopilot và gently return to present',
+          'End day với gratitude reflection về mindful moments'
+        ],
+        expectedResults: 'Increased present-moment awareness throughout the day',
+        solution: 'Start small with one activity, master it, then gradually add more mindful moments'
+      }
+    ],
+    realWorldApplications: [
+      'Better focus during studying và test-taking',
+      'Improved emotional regulation during conflicts',
+      'Enhanced creativity và problem-solving abilities',
+      'Better sleep quality through relaxation techniques',
+      'Stronger relationships through mindful communication',
+      'Reduced reactivity to social media và peer pressure'
+    ],
+    caseStudies: [
+      {
+        title: 'Academic Focus Improvement',
+        organization: 'Vietnamese High School Meditation Program',
+        problem: 'Students struggling với concentration, distracted by phones và social pressures',
+        solution: 'Daily 10-minute mindfulness sessions before classes, mindful study techniques, phone-free meditation periods',
+        impact: 'Improved test scores by average 15%, reduced classroom disruptions, better teacher-student relationships',
+        innovations: ['Group meditation sessions', 'Mindful exam preparation', 'Teacher mindfulness training']
+      }
+    ],
+    resources: [
+      {
+        title: 'Insight Timer - Free Meditation App',
+        url: 'https://insighttimer.com',
+        type: 'Tool'
+      },
+      {
+        title: 'Mindfulness for Teens Guidebook',
+        url: 'https://www.mindfulnessforteens.com',
+        type: 'Documentation'
+      }
+    ]
+  },
+  {
+    id: 'digital-wellness-screen-time',
+    title: 'Digital Wellness & Screen Time Balance',
+    description: 'Phát triển healthy relationship với technology, manage screen time effectively, và create boundaries cho social media để protect mental health.',
+    duration: '100 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    imageUrl: '/images/teen-wellness/digital-wellness.jpg',
+    mentalHealthAreas: ['Digital Addiction', 'Social Media Anxiety', 'FOMO', 'Sleep Hygiene'],
+    wellnessTechniques: ['Digital Detox', 'Mindful Tech Use', 'Boundary Setting', 'Alternative Activities'],
+    supportResources: ['Screen Time Apps', 'Digital Wellness Communities', 'Family Support'],
+    ageGroup: '13-18 tuổi',
+    urgencyLevel: 'High',
+    professionalSupport: false,
+    objectives: [
+      'Understand impact của excessive screen time lên teen mental và physical health',
+      'Develop awareness về own digital habits và patterns',
+      'Learn strategies để reduce screen time và increase real-world activities',
+      'Create healthy boundaries với social media platforms',
+      'Establish tech-free zones và times trong daily routine'
+    ],
+    prerequisites: [
+      'Willingness để examine và change digital habits',
+      'Access to screen time tracking tools',
+      'Family support cho digital wellness goals',
+      'Alternative activities để replace excessive screen time'
+    ],
+    exercises: [
+      {
+        title: 'Digital Audit & Goal Setting',
+        description: 'Analyze current digital habits và set realistic goals cho healthy tech use',
+        difficulty: 'Trung bình',
+        materials: ['Screen time tracking apps', 'Digital habits journal', 'Goal-setting worksheet'],
+        procedure: [
+          'Track screen time cho 1 week without changing habits',
+          'Identify most-used apps và time spent on each',
+          'Note emotional state before và after device use',
+          'Recognize triggers cho excessive device use',
+          'Set specific, measurable goals: reduce social media by 30%',
+          'Choose alternative activities cho freed-up time',
+          'Implement gradual changes rather than drastic cuts',
+          'Weekly review và adjust goals based on progress'
+        ],
+        expectedResults: 'Clear understanding của digital habits với actionable plan for improvement',
+        solution: 'Focus on adding positive activities rather than just restricting - replace don\'t just remove'
+      },
+      {
+        title: 'Social Media Detox Challenge',
+        description: 'Structured approach để reduce social media dependency và improve mental health',
+        difficulty: 'Nâng cao',
+        materials: ['Social media apps', 'Alternative activity list', 'Support buddy'],
+        procedure: [
+          'Start với 24-hour social media break',
+          'Remove social media apps từ home screen',
+          'Turn off all non-essential notifications',
+          'Plan specific times để check social media (e.g., 30 min after school)',
+          'Find accountability partner cho mutual support',
+          'Engage trong real-world activities: sports, hobbies, face-to-face socializing',
+          'Practice mindful social media use: intentional, time-limited',
+          'Gradually extend break periods: 2 days, 1 week, longer'
+        ],
+        expectedResults: 'Reduced social media dependency với improved mood và real-world engagement',
+        solution: 'Gradual reduction works better than complete elimination - build sustainable habits'
+      }
+    ],
+    realWorldApplications: [
+      'Better sleep quality through reduced evening screen time',
+      'Improved face-to-face communication skills',
+      'Enhanced creativity through boredom và unstructured time',
+      'Better academic performance với fewer digital distractions',
+      'Stronger family relationships through tech-free family time',
+      'Reduced anxiety và FOMO từ social media comparison'
+    ],
+    caseStudies: [
+      {
+        title: 'Smartphone Addiction Recovery',
+        organization: 'Vietnamese Teen Digital Wellness Program',
+        problem: 'Student using phone 8+ hours daily, affecting sleep, grades, và family relationships',
+        solution: 'Gradual screen time reduction, phone-free bedroom policy, family digital detox weekends, alternative hobby development',
+        impact: 'Reduced daily phone use to 3 hours, improved sleep by 2 hours nightly, better grades, stronger family bonds',
+        innovations: ['Family digital contracts', 'Phone-free meal times', 'Outdoor activity challenges']
+      }
+    ],
+    resources: [
+      {
+        title: 'Screen Time - iOS/Android Built-in Tracking',
+        url: 'https://support.apple.com/en-us/HT208982',
+        type: 'Tool'
+      },
+      {
+        title: 'Digital Wellness Institute',
+        url: 'https://digitalwellnessinstitute.org',
+        type: 'Documentation'
+      }
+    ]
+  },
+  {
+    id: 'building-healthy-relationships',
+    title: 'Building Healthy Relationships',
+    description: 'Học cách xây dựng và duy trì healthy relationships với peers, family, và romantic partners. Develop communication skills và set appropriate boundaries.',
+    duration: '110 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    imageUrl: '/images/teen-wellness/healthy-relationships.jpg',
+    mentalHealthAreas: ['Communication Skills', 'Boundary Setting', 'Conflict Resolution', 'Emotional Intelligence'],
+    wellnessTechniques: ['Active Listening', 'Assertive Communication', 'Empathy Building', 'Conflict De-escalation'],
+    supportResources: ['School Counselors', 'Peer Mediation', 'Family Therapy', 'Relationship Education'],
+    ageGroup: '14-18 tuổi',
+    urgencyLevel: 'Medium',
+    professionalSupport: true,
+    objectives: [
+      'Understand characteristics của healthy vs unhealthy relationships',
+      'Develop effective communication skills cho different relationships',
+      'Learn to set và maintain appropriate boundaries',
+      'Practice conflict resolution và problem-solving techniques',
+      'Build emotional intelligence và empathy skills'
+    ],
+    prerequisites: [
+      'Basic understanding về emotions và social dynamics',
+      'Willingness để self-reflect về own relationship patterns',
+      'Openness to feedback và constructive criticism',
+      'Commitment to practice new communication skills'
+    ],
+    exercises: [
+      {
+        title: 'Relationship Health Assessment',
+        description: 'Evaluate current relationships để identify strengths và areas for improvement',
+        difficulty: 'Trung bình',
+        materials: ['Relationship assessment worksheet', 'Trusted adult guidance', 'Reflection journal'],
+        procedure: [
+          'List important relationships: family, friends, romantic, mentors',
+          'Rate each relationship on trust, respect, communication, support',
+          'Identify red flags: controlling behavior, disrespect, manipulation',
+          'Recognize green flags: mutual respect, healthy communication, support',
+          'Assess own contribution to relationship dynamics',
+          'Discuss findings với trusted adult',
+          'Create action plan cho improving unhealthy relationships',
+          'Set goals cho strengthening healthy relationships'
+        ],
+        expectedResults: 'Clear understanding của relationship quality với plan for improvement',
+        solution: 'Focus on what you can control - your own communication và boundaries, not others\' behavior'
+      },
+      {
+        title: 'Communication Skills Practice',
+        description: 'Develop active listening và assertive communication through role-playing',
+        difficulty: 'Trung bình',
+        materials: ['Role-play scenarios', 'Communication feedback forms', 'Practice partner'],
+        procedure: [
+          'Learn "I" statements: "I feel..." instead của "You always..."',
+          'Practice active listening: eye contact, summarizing, asking questions',
+          'Role-play difficult conversations với family hoặc friends',
+          'Learn to express needs và boundaries clearly',
+          'Practice saying "no" respectfully but firmly',
+          'Develop conflict de-escalation techniques',
+          'Get feedback on communication style từ trusted peers',
+          'Apply new skills trong real conversations gradually'
+        ],
+        expectedResults: 'Improved communication skills leading to stronger, healthier relationships',
+        solution: 'Practice in low-stakes situations first, then gradually apply to more challenging conversations'
+      }
+    ],
+    realWorldApplications: [
+      'Stronger friendships built on trust và mutual respect',
+      'Better family relationships với less conflict',
+      'Healthier romantic relationships với clear boundaries',
+      'Improved teamwork skills cho group projects',
+      'Better conflict resolution trong school và social settings',
+      'Leadership skills through positive relationship modeling'
+    ],
+    caseStudies: [
+      {
+        title: 'Family Communication Improvement',
+        organization: 'Vietnamese Family Counseling Center',
+        problem: 'Teenager và parents having frequent conflicts, poor communication, growing distance',
+        solution: 'Family communication workshops, individual counseling, structured family meetings, conflict resolution training',
+        impact: 'Reduced family conflicts by 70%, improved understanding between generations, stronger family bonds',
+        innovations: ['Cultural bridge communication', 'Generation gap workshops', 'Family goal setting']
+      }
+    ],
+    resources: [
+      {
+        title: 'Gottman Institute - Relationship Research',
+        url: 'https://gottman.com',
+        type: 'Documentation'
+      },
+      {
+        title: 'Teen Dating Violence Prevention',
+        url: 'https://loveisrespect.org',
+        type: 'Support'
+      }
+    ]
+  },
+  {
+    id: 'study-life-balance',
+    title: 'Study-Life Balance Strategies',
+    description: 'Phát triển sustainable approach để balance academic responsibilities với personal wellbeing, social life, và hobbies để avoid burnout.',
+    duration: '95 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    imageUrl: '/images/teen-wellness/study-life-balance.jpg',
+    mentalHealthAreas: ['Academic Stress', 'Time Management', 'Burnout Prevention', 'Work-Life Balance'],
+    wellnessTechniques: ['Time Blocking', 'Priority Setting', 'Energy Management', 'Recovery Planning'],
+    supportResources: ['Academic Advisors', 'Study Groups', 'Time Management Apps', 'Peer Support'],
+    ageGroup: '15-18 tuổi',
+    urgencyLevel: 'High',
+    professionalSupport: false,
+    objectives: [
+      'Understand importance của balance cho sustainable academic success',
+      'Develop effective time management và priority-setting skills',
+      'Learn to recognize và prevent academic burnout',
+      'Create personalized study schedule incorporating breaks và fun activities',
+      'Build habits that support both academic performance và mental health'
+    ],
+    prerequisites: [
+      'Current academic responsibilities và commitments',
+      'Willingness để examine và modify study habits',
+      'Basic understanding về personal energy patterns',
+      'Support system cho accountability và encouragement'
+    ],
+    exercises: [
+      {
+        title: 'Personal Energy Audit',
+        description: 'Identify peak energy times và optimize study schedule accordingly',
+        difficulty: 'Cơ bản',
+        materials: ['Energy tracking sheet', 'Weekly schedule template', 'Activity log'],
+        procedure: [
+          'Track energy levels hourly cho 1 week (1-10 scale)',
+          'Note activities that boost vs drain energy',
+          'Identify peak performance times cho different types của tasks',
+          'Map current commitments: classes, homework, extracurriculars, social',
+          'Schedule most challenging work during peak energy times',
+          'Plan recovery activities after draining tasks',
+          'Create buffer time cho unexpected events',
+          'Test new schedule và adjust based on results'
+        ],
+        expectedResults: 'Optimized daily schedule aligned với natural energy patterns',
+        solution: 'Work with your natural rhythms rather than against them - schedule important tasks when you\'re naturally most alert'
+      },
+      {
+        title: 'Burnout Prevention Plan',
+        description: 'Develop strategies để recognize early signs của burnout và prevent academic overwhelm',
+        difficulty: 'Trung bình',
+        materials: ['Burnout assessment checklist', 'Recovery activity list', 'Support network contact'],
+        procedure: [
+          'Learn early warning signs: chronic fatigue, irritability, declining performance',
+          'Create warning system với trusted friend hoặc family member',
+          'Develop non-negotiable self-care activities: sleep, exercise, fun',
+          'Practice saying no to excessive commitments',
+          'Build regular breaks into daily schedule',
+          'Plan seasonal recovery periods: winter break, summer vacation',
+          'Create emergency stress management protocol',
+          'Regular check-ins với mental health - weekly self-assessment'
+        ],
+        expectedResults: 'Proactive burnout prevention system với early intervention strategies',
+        solution: 'Prevention is easier than recovery - build sustainable habits rather than pushing until breaking point'
+      }
+    ],
+    realWorldApplications: [
+      'Sustainable academic performance without burnout',
+      'Better preparation cho college workload management',
+      'Improved decision-making về extracurricular commitments',
+      'Stronger relationships maintained despite academic pressure',
+      'Better physical health through balanced lifestyle',
+      'Enhanced creativity và problem-solving through rest và recreation'
+    ],
+    caseStudies: [
+      {
+        title: 'Academic Pressure Recovery',
+        organization: 'Vietnamese International School',
+        problem: 'High-achieving student experiencing burnout, declining grades despite increased study time',
+        solution: 'Restructured study schedule, mandatory breaks, hobby reintroduction, sleep improvement, stress management',
+        impact: 'Improved grades with 30% less study time, better mood, renewed interest in learning, stronger friendships',
+        innovations: ['Efficiency-focused study methods', 'Peer support groups', 'Faculty wellness check-ins']
+      }
+    ],
+    resources: [
+      {
+        title: 'Forest - Focus & Productivity App',
+        url: 'https://forestapp.cc',
+        type: 'Tool'
+      },
+      {
+        title: 'Academic Success Resources',
+        url: 'https://academicsuccess.org',
+        type: 'Documentation'
+      }
+    ]
+  },
+  {
+    id: 'emotional-intelligence-development',
+    title: 'Emotional Intelligence Development',
+    description: 'Phát triển khả năng recognize, understand, và manage emotions effectively. Build empathy và social awareness cho better relationships.',
+    duration: '105 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    imageUrl: '/images/teen-wellness/emotional-intelligence.jpg',
+    mentalHealthAreas: ['Emotional Awareness', 'Self-Regulation', 'Empathy', 'Social Skills'],
+    wellnessTechniques: ['Emotion Labeling', 'Impulse Control', 'Perspective Taking', 'Social Reading'],
+    supportResources: ['EQ Assessment Tools', 'Counseling Support', 'Peer Learning Groups'],
+    ageGroup: '13-18 tuổi',
+    urgencyLevel: 'Medium',
+    professionalSupport: false,
+    objectives: [
+      'Develop accurate emotion recognition trong self và others',
+      'Learn effective strategies cho managing intense emotions',
+      'Build empathy và perspective-taking abilities',
+      'Improve social awareness và relationship skills',
+      'Practice emotional regulation techniques cho daily life'
+    ],
+    prerequisites: [
+      'Willingness để explore và discuss emotions openly',
+      'Basic self-reflection capabilities',
+      'Commitment to practicing emotional skills daily',
+      'Safe environment để process difficult emotions'
+    ],
+    exercises: [
+      {
+        title: 'Emotion Tracking & Labeling',
+        description: 'Develop precise emotional vocabulary và awareness through daily tracking',
+        difficulty: 'Cơ bản',
+        materials: ['Emotion wheel', 'Daily tracking app/journal', 'Emotion intensity scale'],
+        procedure: [
+          'Learn expanded emotional vocabulary beyond happy/sad/angry',
+          'Use emotion wheel để identify specific feelings',
+          'Track emotions 3x daily với intensity rating 1-10',
+          'Note triggers that lead to different emotional states',
+          'Practice naming emotions without judgment',
+          'Identify physical sensations associated với each emotion',
+          'Share findings với trusted friend hoặc counselor',
+          'Develop personal emotion patterns awareness'
+        ],
+        expectedResults: 'Enhanced emotional awareness với precise emotion labeling abilities',
+        solution: 'Specificity helps with regulation - "frustrated about math homework" is easier to address than "upset"'
+      },
+      {
+        title: 'Empathy Building Practice',
+        description: 'Strengthen ability to understand và connect với others\' emotional experiences',
+        difficulty: 'Trung bình',
+        materials: ['Perspective-taking scenarios', 'Role-play situations', 'Empathy reflection journal'],
+        procedure: [
+          'Practice perspective-taking với different viewpoints on same situation',
+          'Listen to others\' stories without immediately offering solutions',
+          'Notice non-verbal emotional cues: body language, tone, facial expressions',
+          'Ask questions to understand others\' experiences better',
+          'Practice reflecting back what you hear: "It sounds like you feel..."',
+          'Challenge assumptions about others\' motivations',
+          'Volunteer để help others và gain perspective',
+          'Reflect on empathy experiences trong daily journal'
+        ],
+        expectedResults: 'Increased empathy và stronger connections với family, friends, và community',
+        solution: 'Empathy is a skill that improves with practice - actively seek opportunities to understand others\' perspectives'
+      }
+    ],
+    realWorldApplications: [
+      'Better conflict resolution trong family và peer relationships',
+      'Enhanced leadership abilities through understanding others',
+      'Improved academic collaboration và teamwork',
+      'Stronger romantic relationships với better emotional connection',
+      'Better decision-making through emotional awareness',
+      'Increased resilience during challenging times'
+    ],
+    caseStudies: [
+      {
+        title: 'Social Skills Transformation',
+        organization: 'Vietnamese Youth Development Program',
+        problem: 'Shy teenager struggling với peer relationships, low self-confidence, difficulty expressing emotions',
+        solution: 'Emotional intelligence training, peer mentoring, gradual social exposure, confidence-building activities',
+        impact: 'Developed close friendships, improved self-confidence, became peer mentor for other shy students',
+        innovations: ['Gradual social challenges', 'Emotion buddy system', 'Confidence milestone celebrations']
+      }
+    ],
+    resources: [
+      {
+        title: 'Mood Meter - Emotional Intelligence App',
+        url: 'https://moodmeterapp.org',
+        type: 'Tool'
+      },
+      {
+        title: 'Yale Center for Emotional Intelligence',
+        url: 'https://ei.yale.edu',
+        type: 'Documentation'
+      }
+    ]
+  },
+  {
+    id: 'crisis-support-help-seeking',
+    title: 'Crisis Support & When to Seek Help',
+    description: 'Học cách recognize mental health crises, understand khi nào cần professional help, và access appropriate support resources safely.',
+    duration: '75 phút',
+    difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    imageUrl: '/images/teen-wellness/crisis-support.jpg',
+    mentalHealthAreas: ['Crisis Recognition', 'Help-Seeking', 'Suicide Prevention', 'Emergency Response'],
+    wellnessTechniques: ['Safety Planning', 'Resource Navigation', 'Crisis Communication', 'Peer Support'],
+    supportResources: ['Crisis Hotlines', 'Emergency Services', 'Mental Health Professionals', 'School Counselors'],
+    ageGroup: '15-18 tuổi',
+    urgencyLevel: 'Critical',
+    professionalSupport: true,
+    objectives: [
+      'Recognize warning signs của mental health crises trong self và others',
+      'Understand when situations require immediate professional intervention',
+      'Learn how to access emergency mental health services',
+      'Develop safety planning skills cho crisis situations',
+      'Build confidence trong helping friends during difficult times'
+    ],
+    prerequisites: [
+      'Mature understanding về mental health issues',
+      'Ability to handle serious và potentially triggering content',
+      'Adult support system available for discussion',
+      'Commitment to seeking help when needed'
+    ],
+    exercises: [
+      {
+        title: 'Crisis Recognition Training',
+        description: 'Learn to identify warning signs requiring immediate professional intervention',
+        difficulty: 'Nâng cao',
+        materials: ['Crisis warning signs checklist', 'Emergency contact information', 'Professional guidance'],
+        procedure: [
+          'Learn warning signs: talk of suicide, sudden mood changes, social withdrawal',
+          'Understand difference between crisis và regular difficult times',
+          'Practice asking direct questions: "Are you thinking of hurting yourself?"',
+          'Learn immediate safety assessment: means, plan, intent',
+          'Understand mandatory reporting requirements',
+          'Practice staying calm during crisis conversations',
+          'Know when to involve adults immediately',
+          'Review emergency contact procedures regularly'
+        ],
+        expectedResults: 'Ability to recognize crises và take appropriate immediate action',
+        solution: 'When in doubt about safety, always involve adults - better safe than sorry'
+      },
+      {
+        title: 'Safety Planning Basics',
+        description: 'Create personal safety plan cho managing difficult emotions và thoughts',
+        difficulty: 'Nâng cao',
+        materials: ['Safety plan template', 'Emergency contact list', 'Coping strategies inventory'],
+        procedure: [
+          'Identify personal warning signs của emotional distress',
+          'List healthy coping strategies that work for you',
+          'Identify supportive people to contact in order of preference',
+          'Remove hoặc limit access to harmful means during crisis',
+          'Create environmental safety plan: safe spaces, calming objects',
+          'Practice using safety plan during lower-level stress',
+          'Share safety plan với trusted adult',
+          'Review và update safety plan regularly'
+        ],
+        expectedResults: 'Comprehensive safety plan ready for use during emotional crises',
+        solution: 'Safety planning works best when created during calm times và practiced regularly'
+      }
+    ],
+    realWorldApplications: [
+      'Life-saving intervention cho self hoặc friends during crisis',
+      'Reduced stigma about seeking mental health help',
+      'Better preparation cho supporting others trong distress',
+      'Increased confidence trong handling emotional emergencies',
+      'Foundation cho possible mental health advocacy hoặc career',
+      'Enhanced community safety through educated bystanders'
+    ],
+    caseStudies: [
+      {
+        title: 'Peer Crisis Intervention Success',
+        organization: 'Vietnamese High School Peer Support Program',
+        problem: 'Student trained in crisis recognition helped friend who was experiencing suicidal thoughts',
+        solution: 'Immediate adult notification, professional counseling connection, ongoing peer support, family involvement',
+        impact: 'Friend received appropriate treatment, made full recovery, became mental health advocate',
+        innovations: ['Teen crisis response training', 'Peer support networks', 'Follow-up care protocols']
+      }
+    ],
+    resources: [
+      {
+        title: 'Vietnam National Suicide Prevention Hotline',
+        url: 'tel:18001567',
+        type: 'Support'
+      },
+      {
+        title: 'Crisis Text Line',
+        url: 'https://crisistextline.org',
+        type: 'Support'
+      },
+      {
+        title: 'Teen Mental Health Crisis Resources',
+        url: 'https://teenmhfa.org',
+        type: 'Documentation'
+      }
+    ]
+  }
+];
