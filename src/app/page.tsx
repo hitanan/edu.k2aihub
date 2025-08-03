@@ -139,71 +139,104 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
+    <div className="min-h-screen bg-black overflow-hidden">
       <StructuredData data={structuredData} />
       
-      {/* Hero Section - Modern coral-teal design */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-500 via-cyan-500 to-blue-500 py-20">
-        {/* Animated background elements */}
+      {/* Hero Section - Dramatic neon-tech design */}
+      <section className="relative min-h-screen bg-gradient-to-br from-black via-slate-900 to-black py-20">
+        {/* Animated cyber grid background */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-rose-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-transparent to-violet-500/10"></div>
+          {/* Animated floating elements */}
+          <div className="absolute top-20 left-10 w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-2 h-2 bg-violet-400 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-32 left-1/4 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
+          <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-rose-400 rounded-full animate-pulse"></div>
+          
+          {/* Cyber grid lines */}
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-emerald-400/50 to-transparent"></div>
+            <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-violet-400/50 to-transparent"></div>
+            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
+            <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-rose-400/50 to-transparent"></div>
+          </div>
         </div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-rose-300 to-orange-300 bg-clip-text text-transparent">
-                K2AI Learning
-              </span>
-              <span className="block text-white mt-2">Thông Minh & Hiện Đại</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto">
-              Nền tảng giáo dục tương tác với công nghệ AI tiên tiến - 
-              <span className="text-rose-200 font-semibold"> Miễn phí hoàn toàn</span>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex items-center min-h-screen">
+          <div className="w-full">
+            {/* Glitch-style title */}
+            <div className="relative mb-8">
+              <h1 className="text-5xl md:text-8xl font-black text-white mb-4 relative">
+                <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent animate-pulse">
+                  K2AI
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 bg-clip-text text-transparent opacity-75 animate-ping">
+                  K2AI
+                </div>
+              </h1>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-300 mb-6">
+                <span className="text-emerald-400">Tương Lai</span> • 
+                <span className="text-cyan-400">Học Tập</span> • 
+                <span className="text-violet-400">Thông Minh</span>
+              </h2>
+            </div>
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Khám phá thế giới học tập <span className="text-emerald-400 font-bold">không giới hạn</span> với 
+              <span className="text-cyan-400 font-bold"> công nghệ AI tiên tiến</span> - 
+              <span className="text-violet-400 font-bold">hoàn toàn miễn phí</span>
             </p>
             
-            {/* Modern Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {/* Neo-tech Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
-                  <div className="text-3xl font-bold text-white">{stat.number}</div>
-                  <div className="text-sm text-white/80">{stat.label}</div>
+                <div key={index} className="relative group">
+                  <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/20 hover:border-emerald-400/50 transition-all duration-300 group-hover:scale-105">
+                    <div className="text-5xl mb-3 group-hover:animate-bounce">{stat.icon}</div>
+                    <div className="text-3xl font-black text-emerald-400 mb-1">{stat.number}</div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  </div>
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-emerald-400/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               ))}
             </div>
             
-            <div className="flex flex-wrap justify-center gap-4">
+            {/* Action buttons with neon effects */}
+            <div className="flex flex-wrap justify-center gap-6">
               <a 
                 href="#featured-modules" 
-                className="bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden"
               >
-                🚀 Bắt Đầu Học Ngay
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-black font-black">🚀 BẮT ĐẦU HỌC NGAY</span>
               </a>
               <a 
                 href="#learning-paths" 
-                className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 backdrop-blur-md border border-white/30"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border-2 border-violet-400"
               >
-                📈 Xem Lộ Trình Học
+                <div className="absolute inset-0 bg-violet-400/10 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-violet-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-violet-400 font-black">� XEM LỘ TRÌNH</span>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Modules - Modern card design */}
-      <section id="featured-modules" className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
+      {/* Featured Modules - Cyber-punk card design */}
+      <section id="featured-modules" className="py-20 bg-gradient-to-br from-slate-900 via-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                Khóa Học Nổi Bật
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                KHÓA HỌC
               </span>
+              <span className="block text-violet-400 mt-2">NỔI BẬT</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Các khóa học được thiết kế hiện đại, dễ học và áp dụng ngay vào thực tế
+              Khóa học được thiết kế với công nghệ tiên tiến, cập nhật liên tục theo xu hướng thị trường
             </p>
           </div>
           
@@ -212,29 +245,34 @@ export default function HomePage() {
               <Link 
                 key={module.id} 
                 href={module.href}
-                className="group relative bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                className="group relative"
               >
-                {/* Modern highlight badge */}
-                <div className="absolute -top-3 left-6 bg-gradient-to-r from-rose-500 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                  {module.highlight}
-                </div>
-                
-                {/* Glassmorphism icon container */}
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${module.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  {module.icon}
-                </div>
-                
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">{module.title}</h3>
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{module.description}</p>
-                
-                <div className="flex justify-between items-center text-sm text-gray-400 mb-4">
-                  <span className="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full border border-teal-500/30">{module.difficulty}</span>
-                  <span className="text-rose-300">{module.time}</span>
-                </div>
-                
-                <div className="text-teal-400 font-semibold group-hover:text-teal-300 transition-colors flex items-center">
-                  <span>Học ngay</span>
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/30 hover:border-emerald-400/50 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  {/* Neon highlight badge */}
+                  <div className="absolute -top-3 left-6 bg-gradient-to-r from-rose-500 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg shadow-rose-500/30">
+                    {module.highlight}
+                  </div>
+                  
+                  {/* Cyber glow icon */}
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${module.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-emerald-500/30`}>
+                    {module.icon}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">{module.title}</h3>
+                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">{module.description}</p>
+                  
+                  <div className="flex justify-between items-center text-sm text-gray-400 mb-4">
+                    <span className="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/30 font-bold">{module.difficulty}</span>
+                    <span className="text-violet-300 font-bold">{module.time}</span>
+                  </div>
+                  
+                  <div className="text-cyan-400 font-bold group-hover:text-cyan-300 transition-colors flex items-center">
+                    <span>HỌC NGAY</span>
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </div>
+                  
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-violet-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               </Link>
             ))}
@@ -242,17 +280,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Learning Paths - Enhanced with modern styling */}
-      <section id="learning-paths" className="py-20 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-800">
+      {/* Learning Paths - Matrix-style design */}
+      <section id="learning-paths" className="py-20 bg-gradient-to-br from-black via-slate-800 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              <span className="bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent">
-                Lộ Trình Dành Cho Bạn
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              <span className="bg-gradient-to-r from-violet-400 to-rose-400 bg-clip-text text-transparent">
+                LỘ TRÌNH
               </span>
+              <span className="block text-emerald-400 mt-2">DÀNH CHO BẠN</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Chọn con đường học tập phù hợp với mục tiêu và đam mê của bạn
+              Tùy chỉnh hành trình học tập phù hợp với mục tiêu và đam mê cá nhân
             </p>
           </div>
           
@@ -261,27 +300,32 @@ export default function HomePage() {
               <Link 
                 key={index} 
                 href={path.href}
-                className="group bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 hover:bg-white/10"
+                className="group relative"
               >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${path.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  {path.icon}
-                </div>
-                
-                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">{path.title}</h3>
-                <p className="text-lg text-rose-300 mb-4 font-medium">{path.subtitle}</p>
-                <p className="text-gray-300 mb-6 leading-relaxed">{path.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {path.modules.map((module, idx) => (
-                    <span key={idx} className="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-sm border border-teal-500/30">
-                      {module}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="text-teal-400 font-semibold group-hover:text-teal-300 transition-colors flex items-center">
-                  <span>Khám phá lộ trình</span>
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <div className="relative bg-gradient-to-br from-slate-800/20 to-slate-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/30 hover:border-violet-400/50 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${path.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-violet-500/30`}>
+                    {path.icon}
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-300 transition-colors">{path.title}</h3>
+                  <p className="text-lg text-rose-300 mb-4 font-bold">{path.subtitle}</p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{path.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {path.modules.map((module, idx) => (
+                      <span key={idx} className="bg-violet-500/20 text-violet-300 px-3 py-1 rounded-full text-sm border border-violet-500/30 font-bold">
+                        {module}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="text-emerald-400 font-bold group-hover:text-emerald-300 transition-colors flex items-center">
+                    <span>KHÁM PHÁ LỘ TRÌNH</span>
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  </div>
+                  
+                  {/* Matrix rain effect hint */}
+                  <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-emerald-400/50 to-transparent opacity-20 group-hover:opacity-60 transition-opacity duration-300"></div>
                 </div>
               </Link>
             ))}
@@ -289,40 +333,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section - Modern coral-teal gradient */}
-      <section className="py-20 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600 relative overflow-hidden">
-        {/* Background decoration */}
+      {/* CTA Section - Futuristic finale */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-emerald-900/20 to-violet-900/20 relative overflow-hidden">
+        {/* Cyber particles */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-rose-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 left-10 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
+          <div className="absolute top-20 right-20 w-3 h-3 bg-violet-400 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 left-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-32 right-1/3 w-2 h-2 bg-rose-400 rounded-full animate-ping"></div>
         </div>
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              🎯 Sẵn Sàng Thay Đổi Tương Lai?
+          <div className="bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-3xl p-12 border border-emerald-400/30 shadow-2xl">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              🎯 <span className="bg-gradient-to-r from-emerald-400 to-violet-400 bg-clip-text text-transparent">THAY ĐỔI TƯƠNG LAI</span>
             </h2>
-            <p className="text-xl text-white/90 mb-8">
-              Tham gia cộng đồng học tập thông minh và khởi đầu hành trình phát triển bản thân
+            <p className="text-xl text-gray-300 mb-8">
+              Gia nhập cộng đồng học tập <span className="text-emerald-400 font-bold">tiên phong</span> và 
+              <span className="text-violet-400 font-bold"> định hình tương lai</span> của chính bạn
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-6">
               <Link 
                 href="/city" 
-                className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 backdrop-blur-md border border-white/30 hover:scale-105"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border-2 border-emerald-400"
               >
-                🌏 Khám Phá Việt Nam
+                <div className="absolute inset-0 bg-emerald-400/10 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-emerald-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-emerald-400 font-black">🌏 KHÁM PHÁ VIỆT NAM</span>
               </Link>
               <Link 
                 href="/ai" 
-                className="bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden"
               >
-                🤖 Học AI Ngay
+                <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-orange-500 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-rose-400 to-orange-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-black font-black">🤖 HỌC AI NGAY</span>
               </Link>
               <Link 
                 href="/learning" 
-                className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border-2 border-violet-400"
               >
-                📚 Tất Cả Khóa Học
+                <div className="absolute inset-0 bg-violet-400/10 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-violet-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-violet-400 font-black">📚 TẤT CẢ KHÓA HỌC</span>
               </Link>
             </div>
           </div>

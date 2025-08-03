@@ -46,7 +46,10 @@ const Header: React.FC = () => {
     
     moduleNavigation.forEach(module => {
       if (!module.coreModule && module.href?.startsWith('/learning/')) {
-        const categoryKey = module.category;
+        let categoryKey = module.category;
+        if (typeof categoryKey === 'string') {
+          categoryKey = [categoryKey];
+        }
         const categoryNames: Record<string, string> = {
           'trending': '🚀 2025 Trending',
           'vietnamese': '🇻🇳 Vietnamese Market', 
@@ -57,18 +60,28 @@ const Header: React.FC = () => {
           'stem': '🔬 STEM Foundation'
         };
 
-        if (!categoryMap[categoryKey]) {
-          categoryMap[categoryKey] = {
-            category: categoryNames[categoryKey] || categoryKey,
-            icon: module.icon,
-            modules: []
-          };
-        }
+        categoryKey.forEach((key) => {
+          if (!categoryMap[key]) {
+            categoryMap[key] = {
+              category: categoryNames[key] || key,
+              icon: module.icon,
+              modules: []
+            };
+          }
 
-        categoryMap[categoryKey].modules.push({
-          name: module.title,
-          href: module.href,
-          icon: module.icon
+          if (categoryMap[key]) {
+            categoryMap[key].modules.push({
+              name: module.title,
+              href: module.href || `/learning/${module.id}`,
+              icon: module.icon
+            });
+          }
+
+          categoryMap[key].modules.push({
+            name: module.title,
+            href: module.href || `/learning/${module.id}`,
+            icon: module.icon
+          });
         });
       }
     });
@@ -144,9 +157,9 @@ const Header: React.FC = () => {
                 <ChevronDown className="w-4 h-4" />
               </button>
 
-              {/* Improved dropdown with bridge area - no gap */}
+              {/* Improved dropdown with proper positioning */}
               {isLearningDropdownOpen && (
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-7xl z-50">
+                <div className="absolute top-full right-0 w-[90vw] max-w-5xl z-50">
                   {/* Invisible bridge to prevent dropdown from closing */}
                   <div className="h-2 bg-transparent" />
                   
@@ -157,8 +170,8 @@ const Header: React.FC = () => {
                         <p className="text-sm text-gray-600">Khám phá các khóa học công nghệ và kỹ năng chuyên môn</p>
                       </div>
                       
-                      {/* Wider grid layout for laptop screens */}
-                      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                      {/* Responsive grid layout */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {learningModules.map((category) => (
                           <div key={category.category} className="space-y-2">
                             <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center space-x-1 border-b border-gray-100 pb-1">

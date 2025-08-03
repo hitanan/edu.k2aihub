@@ -18,22 +18,38 @@ const allLearningModules = moduleNavigation
     duration: module.duration || module.totalDuration,
     href: module.href || `/learning/${module.id}`,
     color: module.color,
-    category: module.category,
+    category: module.category, // Now supports both string and string[]
     lessons: module.lessons.length,
     features: module.features || [],
     icon: module.icon,
     tags: module.tags || []
   }));
 
+// Helper function to get all categories for a module
+const getModuleCategories = (module: { category: string | string[] }): string[] => {
+  return Array.isArray(module.category) ? module.category : [module.category];
+};
+
+// Helper function to check if module belongs to category
+const moduleInCategory = (module: { category: string | string[] }, category: string): boolean => {
+  const moduleCategories = getModuleCategories(module);
+  return moduleCategories.includes(category);
+};
+
+// Count modules per category (supporting multi-category)
+const countModulesInCategory = (category: string): number => {
+  return allLearningModules.filter(module => moduleInCategory(module, category)).length;
+};
+
 const categories = {
-  trending: { title: '🔥 Xu Hướng 2025', count: allLearningModules.filter(m => m.category === 'trending').length },
-  vietnamese: { title: '🇻🇳 Thị Trường Việt Nam', count: allLearningModules.filter(m => m.category === 'vietnamese').length },
-  professional: { title: '💼 Kỹ Năng Nghề Nghiệp', count: allLearningModules.filter(m => m.category === 'professional').length },
-  creative: { title: '🎨 Sáng Tạo & Công Nghệ', count: allLearningModules.filter(m => m.category === 'creative').length },
-  security: { title: '🔒 An Ninh Mạng', count: allLearningModules.filter(m => m.category === 'security').length },
-  science: { title: '🧬 Khoa Học Đời Sống', count: allLearningModules.filter(m => m.category === 'science').length },
-  programming: { title: '💻 Lập Trình', count: allLearningModules.filter(m => m.category === 'programming').length },
-  stem: { title: '🚀 STEM & Hardware', count: allLearningModules.filter(m => m.category === 'stem').length }
+  trending: { title: '🔥 Xu Hướng 2025', count: countModulesInCategory('trending') },
+  vietnamese: { title: '🇻🇳 Thị Trường Việt Nam', count: countModulesInCategory('vietnamese') },
+  professional: { title: '💼 Kỹ Năng Nghề Nghiệp', count: countModulesInCategory('professional') },
+  creative: { title: '🎨 Sáng Tạo & Công Nghệ', count: countModulesInCategory('creative') },
+  security: { title: '🔒 An Ninh Mạng', count: countModulesInCategory('security') },
+  science: { title: '🧬 Khoa Học Đời Sống', count: countModulesInCategory('science') },
+  programming: { title: '💻 Lập Trình', count: countModulesInCategory('programming') },
+  stem: { title: '🚀 STEM & Hardware', count: countModulesInCategory('stem') }
 };
 
 const levels = ['Tất cả', 'Cơ bản', 'Trung bình', 'Nâng cao'];
@@ -114,7 +130,7 @@ export default function AllLearningPageClient() {
                          module.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          module.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     
-    const matchesCategory = selectedCategory === 'all' || module.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || moduleInCategory(module, selectedCategory);
     const matchesLevel = selectedLevel === 'Tất cả' || module.level === selectedLevel;
     
     return matchesSearch && matchesCategory && matchesLevel;
@@ -230,9 +246,18 @@ export default function AllLearningPageClient() {
                 
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded-full text-xs">
-                      {categories[module.category as keyof typeof categories]?.title.split(' ')[1] || module.category}
-                    </span>
+                    <div className="flex flex-wrap gap-1">
+                      {getModuleCategories(module).slice(0, 2).map((cat, idx) => (
+                        <span key={idx} className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded-full text-xs">
+                          {categories[cat as keyof typeof categories]?.title.split(' ')[1] || cat}
+                        </span>
+                      ))}
+                      {getModuleCategories(module).length > 2 && (
+                        <span className="bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full text-xs">
+                          +{getModuleCategories(module).length - 2}
+                        </span>
+                      )}
+                    </div>
                     <span className="text-gray-400 text-sm">{module.lessons} bài học</span>
                   </div>
                   

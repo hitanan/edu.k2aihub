@@ -3,7 +3,7 @@ export interface ModuleNavigation {
   title: string;
   subtitle?: string;
   description: string;
-  category: string;
+  category: string[] | string; // Support both single and multiple categories
   icon: string;
   color: string;
   lessons: LessonNavigation[];
@@ -65,14 +65,20 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: K2Module.City,
     title: 'Địa Lý Việt Nam',
-    description: 'Khám phá 34 tỉnh thành Việt Nam qua bản đồ tương tác, tìm hiểu văn hóa, lịch sử và địa lý của từng vùng miền',
+    description:
+      'Khám phá 34 tỉnh thành Việt Nam qua bản đồ tương tác, tìm hiểu văn hóa, lịch sử và địa lý của từng vùng miền',
     category: 'foundation',
     icon: '🗺️',
     color: 'from-emerald-500 to-teal-500',
     totalDuration: 'Không giới hạn',
     difficulty: 'Tất cả mức độ',
     href: '/city',
-    features: ['Interactive Map', 'Province Search', 'Historical Data', 'Cultural Information'],
+    features: [
+      'Interactive Map',
+      'Province Search',
+      'Historical Data',
+      'Cultural Information'
+    ],
     tags: ['geography', 'vietnam', 'interactive', 'culture'],
     prerequisites: [],
     lessons: [],
@@ -82,14 +88,20 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.AI,
     title: 'AI Của Tôi',
     subtitle: 'Hướng dẫn AI thực hành',
-    description: 'Hướng dẫn thực hành sử dụng AI trong công việc, học tập và cuộc sống hàng ngày với các AI tools phổ biến',
+    description:
+      'Hướng dẫn thực hành sử dụng AI trong công việc, học tập và cuộc sống hàng ngày với các AI tools phổ biến',
     category: 'foundation',
     icon: '🤖',
     color: 'from-blue-500 to-indigo-500',
     totalDuration: 'Không giới hạn',
     difficulty: 'Tất cả mức độ',
     href: '/ai',
-    features: ['Featured AI Apps', 'Practical Guides', 'Step-by-step Tutorials', 'Real-world Applications'],
+    features: [
+      'Featured AI Apps',
+      'Practical Guides',
+      'Step-by-step Tutorials',
+      'Real-world Applications'
+    ],
     tags: ['ai', 'practical', 'work', 'creativity'],
     prerequisites: [],
     lessons: [],
@@ -101,126 +113,285 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: 'ai-office-work',
     title: 'AI cho Văn Phòng & Công Việc',
     subtitle: 'Tăng hiệu suất với AI',
-    description: 'Học cách sử dụng AI để tự động hóa công việc văn phòng, viết email chuyên nghiệp và quản lý thời gian hiệu quả',
-    category: 'professional',
+    description:
+      'Học cách sử dụng AI để tự động hóa công việc văn phòng, viết email chuyên nghiệp và quản lý thời gian hiệu quả',
+    category: ['professional', 'trending'], // Multiple categories
     icon: '💼',
     color: 'from-blue-600 to-indigo-600',
     totalDuration: '4-6 giờ',
     difficulty: 'Cơ bản đến Trung bình',
     href: '/learning/ai/office-work',
-    features: ['ChatGPT cho Email', 'Excel thông minh', 'Thuyết trình AI', 'Quản lý thời gian'],
+    features: [
+      'ChatGPT cho Email',
+      'Excel thông minh',
+      'Thuyết trình AI',
+      'Quản lý thời gian'
+    ],
     tags: ['office', 'productivity', 'email', 'automation'],
     prerequisites: ['Kỹ năng máy tính cơ bản', 'Hiểu biết về Microsoft Office'],
     lessons: [
-      { id: 'email-automation', title: 'Tự động hóa Email với AI', duration: '45 phút', difficulty: 'Cơ bản' },
-      { id: 'excel-ai', title: 'Excel thông minh với AI', duration: '60 phút', difficulty: 'Trung bình' },
-      { id: 'presentation-ai', title: 'Tạo bài thuyết trình với AI', duration: '50 phút', difficulty: 'Cơ bản' },
-      { id: 'time-management', title: 'Quản lý thời gian với AI', duration: '40 phút', difficulty: 'Cơ bản' }
+      {
+        id: 'email-automation',
+        title: 'Tự động hóa Email với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'excel-ai',
+        title: 'Excel thông minh với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'presentation-ai',
+        title: 'Tạo bài thuyết trình với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'time-management',
+        title: 'Quản lý thời gian với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản'
+      }
     ]
   },
   {
     id: 'ai-creative-design',
     title: 'AI cho Sáng Tạo & Thiết Kế',
     subtitle: 'Sáng tạo nội dung với AI',
-    description: 'Khám phá cách sử dụng Midjourney, DALL-E, Canva AI để tạo ra nội dung sáng tạo và thiết kế chuyên nghiệp',
-    category: 'creative',
+    description:
+      'Khám phá cách sử dụng Midjourney, DALL-E, Canva AI để tạo ra nội dung sáng tạo và thiết kế chuyên nghiệp',
+    category: ['creative', 'trending'], // Multiple categories
     icon: '🎨',
     color: 'from-purple-600 to-pink-600',
     totalDuration: '5-7 giờ',
     difficulty: 'Cơ bản đến Nâng cao',
     href: '/learning/ai/creative-design',
-    features: ['Midjourney mastery', 'Canva AI Studio', 'Content creation', 'Visual design'],
+    features: [
+      'Midjourney mastery',
+      'Canva AI Studio',
+      'Content creation',
+      'Visual design'
+    ],
     tags: ['design', 'creativity', 'art', 'visual'],
-    prerequisites: ['Hiểu biết cơ bản về design', 'Sử dụng máy tính thành thạo'],
+    prerequisites: [
+      'Hiểu biết cơ bản về design',
+      'Sử dụng máy tính thành thạo'
+    ],
     lessons: [
-      { id: 'midjourney-basics', title: 'Midjourney cơ bản', duration: '60 phút', difficulty: 'Cơ bản' },
-      { id: 'advanced-prompting', title: 'Prompt engineering nâng cao', duration: '75 phút', difficulty: 'Nâng cao' },
-      { id: 'canva-ai', title: 'Canva AI Magic Studio', duration: '50 phút', difficulty: 'Trung bình' },
-      { id: 'content-creation', title: 'Tạo nội dung với AI', duration: '45 phút', difficulty: 'Trung bình' }
+      {
+        id: 'midjourney-basics',
+        title: 'Midjourney cơ bản',
+        duration: '60 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'advanced-prompting',
+        title: 'Prompt engineering nâng cao',
+        duration: '75 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'canva-ai',
+        title: 'Canva AI Magic Studio',
+        duration: '50 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'content-creation',
+        title: 'Tạo nội dung với AI',
+        duration: '45 phút',
+        difficulty: 'Trung bình'
+      }
     ]
   },
   {
     id: 'ai-education-learning',
     title: 'AI cho Giáo Dục & Học Tập',
     subtitle: 'Học tập thông minh với AI',
-    description: 'Sử dụng AI như một gia sư cá nhân, hỗ trợ nghiên cứu, học ngôn ngữ và tóm tắt tài liệu hiệu quả',
-    category: 'professional',
+    description:
+      'Sử dụng AI như một gia sư cá nhân, hỗ trợ nghiên cứu, học ngôn ngữ và tóm tắt tài liệu hiệu quả',
+    category: ['professional', 'stem'], // Multiple categories
     icon: '📚',
     color: 'from-green-600 to-teal-600',
     totalDuration: '4-5 giờ',
     difficulty: 'Cơ bản đến Trung bình',
     href: '/learning/ai/education-learning',
-    features: ['AI Tutor', 'Research assistance', 'Language learning', 'Document summarization'],
+    features: [
+      'AI Tutor',
+      'Research assistance',
+      'Language learning',
+      'Document summarization'
+    ],
     tags: ['education', 'learning', 'research', 'study'],
     prerequisites: ['Kỹ năng học tập cơ bản'],
     lessons: [
-      { id: 'ai-tutor', title: 'AI như gia sư cá nhân', duration: '50 phút', difficulty: 'Cơ bản' },
-      { id: 'research-ai', title: 'Nghiên cứu với AI', duration: '60 phút', difficulty: 'Trung bình' },
-      { id: 'language-learning', title: 'Học ngôn ngữ với AI', duration: '45 phút', difficulty: 'Cơ bản' },
-      { id: 'document-summary', title: 'Tóm tắt tài liệu với AI', duration: '40 phút', difficulty: 'Cơ bản' }
+      {
+        id: 'ai-tutor',
+        title: 'AI như gia sư cá nhân',
+        duration: '50 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'research-ai',
+        title: 'Nghiên cứu với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'language-learning',
+        title: 'Học ngôn ngữ với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'document-summary',
+        title: 'Tóm tắt tài liệu với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản'
+      }
     ]
   },
   {
     id: 'ai-business-marketing',
     title: 'AI cho Kinh Doanh & Marketing',
     subtitle: 'Marketing thông minh với AI',
-    description: 'Ứng dụng AI trong marketing, phân tích khách hàng, tạo chatbot và tối ưu hóa SEO cho doanh nghiệp',
-    category: 'professional',
+    description:
+      'Ứng dụng AI trong marketing, phân tích khách hàng, tạo chatbot và tối ưu hóa SEO cho doanh nghiệp',
+    category: ['professional', 'trending'], // Multiple categories
     icon: '📈',
     color: 'from-orange-600 to-red-600',
     totalDuration: '6-8 giờ',
     difficulty: 'Trung bình đến Nâng cao',
     href: '/learning/ai/business-marketing',
-    features: ['Marketing automation', 'Customer analytics', 'Chatbot development', 'SEO optimization'],
+    features: [
+      'Marketing automation',
+      'Customer analytics',
+      'Chatbot development',
+      'SEO optimization'
+    ],
     tags: ['marketing', 'business', 'analytics', 'automation'],
     prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm kinh doanh'],
     lessons: [
-      { id: 'marketing-automation', title: 'Tự động hóa Marketing', duration: '70 phút', difficulty: 'Trung bình' },
-      { id: 'customer-analytics', title: 'Phân tích khách hàng với AI', duration: '80 phút', difficulty: 'Nâng cao' },
-      { id: 'chatbot-development', title: 'Phát triển Chatbot', duration: '60 phút', difficulty: 'Trung bình' },
-      { id: 'seo-ai', title: 'SEO tối ưu với AI', duration: '50 phút', difficulty: 'Trung bình' }
+      {
+        id: 'marketing-automation',
+        title: 'Tự động hóa Marketing',
+        duration: '70 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'customer-analytics',
+        title: 'Phân tích khách hàng với AI',
+        duration: '80 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'chatbot-development',
+        title: 'Phát triển Chatbot',
+        duration: '60 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'seo-ai',
+        title: 'SEO tối ưu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình'
+      }
     ]
   },
   {
     id: 'ai-daily-life',
     title: 'AI cho Đời Sống Hàng Ngày',
     subtitle: 'AI trong cuộc sống',
-    description: 'Khám phá cách AI có thể hỗ trợ cuộc sống hàng ngày từ quản lý tài chính, sức khỏe đến du lịch thông minh',
-    category: 'professional',
+    description:
+      'Khám phá cách AI có thể hỗ trợ cuộc sống hàng ngày từ quản lý tài chính, sức khỏe đến du lịch thông minh',
+    category: ['professional', 'trending'], // Multiple categories
     icon: '🏠',
     color: 'from-emerald-600 to-cyan-600',
     totalDuration: '3-4 giờ',
     difficulty: 'Cơ bản',
     href: '/learning/ai/daily-life',
-    features: ['Personal AI assistant', 'Financial management', 'Health & fitness', 'Smart travel'],
+    features: [
+      'Personal AI assistant',
+      'Financial management',
+      'Health & fitness',
+      'Smart travel'
+    ],
     tags: ['lifestyle', 'personal', 'health', 'finance'],
     prerequisites: ['Sử dụng smartphone/máy tính'],
     lessons: [
-      { id: 'personal-assistant', title: 'Trợ lý AI cá nhân', duration: '45 phút', difficulty: 'Cơ bản' },
-      { id: 'financial-ai', title: 'Quản lý tài chính với AI', duration: '50 phút', difficulty: 'Cơ bản' },
-      { id: 'health-fitness', title: 'Sức khỏe & Fitness AI', duration: '40 phút', difficulty: 'Cơ bản' },
-      { id: 'travel-ai', title: 'Du lịch thông minh với AI', duration: '35 phút', difficulty: 'Cơ bản' }
+      {
+        id: 'personal-assistant',
+        title: 'Trợ lý AI cá nhân',
+        duration: '45 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'financial-ai',
+        title: 'Quản lý tài chính với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'health-fitness',
+        title: 'Sức khỏe & Fitness AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'travel-ai',
+        title: 'Du lịch thông minh với AI',
+        duration: '35 phút',
+        difficulty: 'Cơ bản'
+      }
     ]
   },
   {
     id: 'ai-programming-dev',
     title: 'AI cho Lập Trình & Phát Triển',
     subtitle: 'Code thông minh với AI',
-    description: 'Tìm hiểu GitHub Copilot, AI code review và các công cụ AI hỗ trợ lập trình để tăng hiệu suất coding',
-    category: 'programming',
+    description:
+      'Tìm hiểu GitHub Copilot, AI code review và các công cụ AI hỗ trợ lập trình để tăng hiệu suất coding',
+    category: ['programming', 'trending'], // Multiple categories
     icon: '💻',
     color: 'from-slate-600 to-blue-600',
     totalDuration: '7-9 giờ',
     difficulty: 'Trung bình đến Nâng cao',
     href: '/learning/ai/programming-dev',
-    features: ['GitHub Copilot', 'AI code review', 'Automated testing', 'Documentation generation'],
+    features: [
+      'GitHub Copilot',
+      'AI code review',
+      'Automated testing',
+      'Documentation generation'
+    ],
     tags: ['programming', 'coding', 'development', 'automation'],
     prerequisites: ['Kiến thức lập trình cơ bản', 'Sử dụng Git/GitHub'],
     lessons: [
-      { id: 'github-copilot', title: 'GitHub Copilot mastery', duration: '90 phút', difficulty: 'Trung bình' },
-      { id: 'ai-code-review', title: 'AI Code Review', duration: '70 phút', difficulty: 'Nâng cao' },
-      { id: 'automated-testing', title: 'Testing tự động với AI', duration: '60 phút', difficulty: 'Trung bình' },
-      { id: 'documentation-ai', title: 'Tạo tài liệu với AI', duration: '50 phút', difficulty: 'Trung bình' }
+      {
+        id: 'github-copilot',
+        title: 'GitHub Copilot mastery',
+        duration: '90 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'ai-code-review',
+        title: 'AI Code Review',
+        duration: '70 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'automated-testing',
+        title: 'Testing tự động với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'documentation-ai',
+        title: 'Tạo tài liệu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình'
+      }
     ]
   },
 
@@ -229,7 +400,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.VietnameseBusiness,
     title: 'Vietnamese Business & Entrepreneurship',
     subtitle: 'Kinh doanh và khởi nghiệp Việt Nam',
-    description: 'Navigate startup ecosystem, pháp luật doanh nghiệp và phát triển business trong thị trường Việt Nam',
+    description:
+      'Navigate startup ecosystem, pháp luật doanh nghiệp và phát triển business trong thị trường Việt Nam',
     category: 'vietnamese',
     icon: '🏢',
     color: 'from-emerald-600 to-green-600',
@@ -238,9 +410,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '12-15 giờ',
     href: '/learning/vietnamese-business',
-    features: ['Startup Ecosystem', 'Legal Compliance', 'FinTech Development', 'E-commerce Strategy'],
+    features: [
+      'Startup Ecosystem',
+      'Legal Compliance',
+      'FinTech Development',
+      'E-commerce Strategy'
+    ],
     tags: ['business', 'startup', 'vietnam', 'fintech'],
-    prerequisites: ['Basic business understanding', 'Vietnamese market knowledge', 'Technology literacy'],
+    prerequisites: [
+      'Basic business understanding',
+      'Vietnamese market knowledge',
+      'Technology literacy'
+    ],
     lessons: [
       {
         id: 'vietnamese-startup-ecosystem',
@@ -266,7 +447,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.VietnameseCulture,
     title: 'Vietnamese Culture & Heritage',
     subtitle: 'Văn hóa và di sản Việt Nam',
-    description: 'Số hóa và bảo tồn di sản văn hóa Việt Nam, phát triển tourism technology',
+    description:
+      'Số hóa và bảo tồn di sản văn hóa Việt Nam, phát triển tourism technology',
     category: 'vietnamese',
     icon: '🏛️',
     color: 'from-yellow-600 to-orange-600',
@@ -275,9 +457,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '8-10 giờ',
     href: '/learning/vietnamese-culture',
-    features: ['Digital Heritage', 'VR Museums', 'Tourism Tech', 'Cultural Documentation'],
+    features: [
+      'Digital Heritage',
+      'VR Museums',
+      'Tourism Tech',
+      'Cultural Documentation'
+    ],
     tags: ['culture', 'heritage', 'tourism', 'vietnam'],
-    prerequisites: ['Vietnamese cultural knowledge', 'Digital media understanding', 'Basic web development'],
+    prerequisites: [
+      'Vietnamese cultural knowledge',
+      'Digital media understanding',
+      'Basic web development'
+    ],
     lessons: [
       {
         id: 'digital-heritage-preservation',
@@ -297,7 +488,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.VietnameseHealthcare,
     title: 'Vietnamese Healthcare Technology',
     subtitle: 'Công nghệ y tế Việt Nam',
-    description: 'Phát triển digital health systems, AI medical imaging cho healthcare Việt Nam',
+    description:
+      'Phát triển digital health systems, AI medical imaging cho healthcare Việt Nam',
     category: 'vietnamese',
     icon: '🏥',
     color: 'from-cyan-600 to-teal-600',
@@ -306,9 +498,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Nâng cao',
     duration: '10-12 giờ',
     href: '/learning/vietnamese-healthcare',
-    features: ['Digital Health', 'AI Medical Imaging', 'Telemedicine', 'EHR Systems'],
+    features: [
+      'Digital Health',
+      'AI Medical Imaging',
+      'Telemedicine',
+      'EHR Systems'
+    ],
     tags: ['healthcare', 'medical', 'ai', 'vietnam'],
-    prerequisites: ['Healthcare system understanding', 'Medical terminology knowledge', 'Technology development experience'],
+    prerequisites: [
+      'Healthcare system understanding',
+      'Medical terminology knowledge',
+      'Technology development experience'
+    ],
     lessons: [
       {
         id: 'digital-health-vietnam',
@@ -328,7 +529,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.VietnameseLanguageTech,
     title: 'Vietnamese Language Technology',
     subtitle: 'Công nghệ ngôn ngữ Việt',
-    description: 'Phát triển NLP, chatbot AI và voice technology cho tiếng Việt',
+    description:
+      'Phát triển NLP, chatbot AI và voice technology cho tiếng Việt',
     category: 'vietnamese',
     icon: '💬',
     color: 'from-violet-600 to-purple-600',
@@ -337,9 +539,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Nâng cao',
     duration: '12-15 giờ',
     href: '/learning/vietnamese-language-tech',
-    features: ['Vietnamese NLP', 'AI Chatbot', 'Voice Recognition', 'Speech Synthesis'],
+    features: [
+      'Vietnamese NLP',
+      'AI Chatbot',
+      'Voice Recognition',
+      'Speech Synthesis'
+    ],
     tags: ['nlp', 'ai', 'chatbot', 'voice', 'vietnamese'],
-    prerequisites: ['Programming fundamentals', 'Understanding of Vietnamese language', 'Basic machine learning concepts'],
+    prerequisites: [
+      'Programming fundamentals',
+      'Understanding of Vietnamese language',
+      'Basic machine learning concepts'
+    ],
     lessons: [
       {
         id: 'vietnamese-nlp-fundamentals',
@@ -367,7 +578,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.DigitalMarketing,
     title: 'Digital Marketing & Creator Economy',
     subtitle: 'Marketing và Creator Economy',
-    description: 'Học Digital Marketing toàn diện, từ Social Media đến Content Creation',
+    description:
+      'Học Digital Marketing toàn diện, từ Social Media đến Content Creation',
     category: 'professional',
     icon: '📱',
     color: 'from-pink-600 to-purple-600',
@@ -376,9 +588,17 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '12-15 giờ',
     href: '/learning/digital-marketing',
-    features: ['Social Media Marketing', 'Content Strategy', 'Analytics & ROI', 'Creator Economy'],
+    features: [
+      'Social Media Marketing',
+      'Content Strategy',
+      'Analytics & ROI',
+      'Creator Economy'
+    ],
     tags: ['marketing', 'social media', 'content', 'creator'],
-    prerequisites: ['Basic computer skills', 'Understanding của internet và web browsers'],
+    prerequisites: [
+      'Basic computer skills',
+      'Understanding của internet và web browsers'
+    ],
     lessons: [
       {
         id: 'seo-fundamentals',
@@ -419,9 +639,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '10-12 giờ',
     href: '/learning/financial-literacy',
-    features: ['Personal Finance', 'Investment Strategy', 'FinTech Tools', 'Cryptocurrency'],
+    features: [
+      'Personal Finance',
+      'Investment Strategy',
+      'FinTech Tools',
+      'Cryptocurrency'
+    ],
     tags: ['finance', 'investment', 'fintech', 'money'],
-    prerequisites: ['Basic math skills', 'Understanding của money và banking', 'Computer literacy'],
+    prerequisites: [
+      'Basic math skills',
+      'Understanding của money và banking',
+      'Computer literacy'
+    ],
     lessons: [
       {
         id: 'personal-finance-budgeting',
@@ -441,7 +670,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.GreenTechnology,
     title: 'Green Technology & Sustainability',
     subtitle: 'Công nghệ xanh',
-    description: 'Khám phá renewable energy, smart cities và sustainable solutions',
+    description:
+      'Khám phá renewable energy, smart cities và sustainable solutions',
     category: 'professional',
     icon: '🌱',
     color: 'from-green-600 to-emerald-600',
@@ -450,9 +680,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '10-12 giờ',
     href: '/learning/green-technology',
-    features: ['Renewable Energy', 'Smart Cities', 'Sustainability', 'Environmental Tech'],
+    features: [
+      'Renewable Energy',
+      'Smart Cities',
+      'Sustainability',
+      'Environmental Tech'
+    ],
     tags: ['green', 'renewable', 'sustainability', 'environment'],
-    prerequisites: ['Basic science knowledge', 'Environmental awareness', 'Problem-solving mindset'],
+    prerequisites: [
+      'Basic science knowledge',
+      'Environmental awareness',
+      'Problem-solving mindset'
+    ],
     lessons: [
       {
         id: 'renewable-energy-systems',
@@ -480,7 +719,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.GameDevelopment,
     title: 'Game Development & Interactive Media',
     subtitle: 'Phát triển game',
-    description: 'Tạo game với Unity/Unreal, game design và interactive storytelling',
+    description:
+      'Tạo game với Unity/Unreal, game design và interactive storytelling',
     category: 'creative',
     icon: '🎮',
     color: 'from-purple-600 to-pink-600',
@@ -489,9 +729,19 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '15-18 giờ',
     href: '/learning/game-development',
-    features: ['Unity & Unreal', 'Game Design', '2D/3D Animation', 'Publishing'],
+    features: [
+      'Unity & Unreal',
+      'Game Design',
+      '2D/3D Animation',
+      'Publishing'
+    ],
     tags: ['game', 'unity', 'unreal', 'design', 'animation'],
-    prerequisites: ['Programming basics', 'Creative thinking', 'Problem-solving skills', 'Design fundamentals'],
+    prerequisites: [
+      'Programming basics',
+      'Creative thinking',
+      'Problem-solving skills',
+      'Design fundamentals'
+    ],
     lessons: [
       {
         id: 'game-design-unity-basics',
@@ -520,9 +770,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '8-10 giờ',
     href: '/learning/ai-art-creative-tech',
-    features: ['Midjourney Pro', 'Video Generation', 'Creative Workflows', 'Commercial Use'],
+    features: [
+      'Midjourney Pro',
+      'Video Generation',
+      'Creative Workflows',
+      'Commercial Use'
+    ],
     tags: ['ai', 'art', 'midjourney', 'creative', 'design'],
-    prerequisites: ['Basic computer skills', 'Creative interest', 'Understanding của digital media'],
+    prerequisites: [
+      'Basic computer skills',
+      'Creative interest',
+      'Understanding của digital media'
+    ],
     lessons: [
       {
         id: 'ai-image-generation-fundamentals',
@@ -544,7 +803,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.Cybersecurity,
     title: 'Cybersecurity & Ethical Hacking',
     subtitle: 'An ninh mạng',
-    description: 'Học penetration testing, incident response và defense strategies',
+    description:
+      'Học penetration testing, incident response và defense strategies',
     category: 'security',
     icon: '🔒',
     color: 'from-red-600 to-orange-600',
@@ -553,9 +813,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Nâng cao',
     duration: '20-25 giờ',
     href: '/learning/cybersecurity',
-    features: ['Penetration Testing', 'SIEM Systems', 'Incident Response', 'Threat Hunting'],
+    features: [
+      'Penetration Testing',
+      'SIEM Systems',
+      'Incident Response',
+      'Threat Hunting'
+    ],
     tags: ['security', 'hacking', 'penetration', 'network'],
-    prerequisites: ['Network fundamentals', 'Linux command line', 'Understanding của security concepts'],
+    prerequisites: [
+      'Network fundamentals',
+      'Linux command line',
+      'Understanding của security concepts'
+    ],
     lessons: [
       {
         id: 'ethical-hacking-fundamentals',
@@ -575,7 +844,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.Biotechnology,
     title: 'Biotechnology & Life Sciences',
     subtitle: 'Công nghệ sinh học',
-    description: 'Khám phá genetic engineering, drug discovery và medical biotechnology',
+    description:
+      'Khám phá genetic engineering, drug discovery và medical biotechnology',
     category: 'science',
     icon: '🧬',
     color: 'from-emerald-600 to-teal-600',
@@ -584,9 +854,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Nâng cao',
     duration: '18-22 giờ',
     href: '/learning/biotechnology',
-    features: ['CRISPR Technology', 'Drug Discovery', 'Medical Devices', 'Bioethics'],
+    features: [
+      'CRISPR Technology',
+      'Drug Discovery',
+      'Medical Devices',
+      'Bioethics'
+    ],
     tags: ['biotech', 'genetics', 'medical', 'crispr'],
-    prerequisites: ['Biology fundamentals', 'Chemistry basics', 'Scientific method understanding'],
+    prerequisites: [
+      'Biology fundamentals',
+      'Chemistry basics',
+      'Scientific method understanding'
+    ],
     lessons: [
       {
         id: 'biotech-fundamentals-genetic-engineering',
@@ -608,8 +887,9 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.Python,
     title: 'Python Programming',
     subtitle: 'Ngôn ngữ AI & Data',
-    description: 'Từ cơ bản đến nâng cao, làm chủ Python cho AI và data science',
-    category: 'programming',
+    description:
+      'Từ cơ bản đến nâng cao, làm chủ Python cho AI và data science',
+    category: ['programming', 'stem'], // Multiple categories - programming and STEM
     icon: '🐍',
     color: 'from-blue-600 to-cyan-600',
     totalDuration: '15-20 giờ',
@@ -619,7 +899,11 @@ export const moduleNavigation: ModuleNavigation[] = [
     href: '/learning/python',
     features: ['Syntax cơ bản', 'OOP', 'Data handling', 'AI libraries'],
     tags: ['python', 'programming', 'ai', 'data science'],
-    prerequisites: ['Basic computer skills', 'Logical thinking', 'Problem-solving mindset'],
+    prerequisites: [
+      'Basic computer skills',
+      'Logical thinking',
+      'Problem-solving mindset'
+    ],
     lessons: [
       {
         id: 'python-basics',
@@ -652,7 +936,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     title: 'Scratch Programming',
     subtitle: 'Lập trình trực quan',
     description: 'Học lập trình với Scratch, tạo game và animation',
-    category: 'programming',
+    category: ['programming', 'stem', 'creative'], // Multiple categories
     icon: '🎨',
     color: 'from-orange-600 to-red-600',
     totalDuration: '6-8 giờ',
@@ -662,7 +946,11 @@ export const moduleNavigation: ModuleNavigation[] = [
     href: '/learning/scratch',
     features: ['Drag & Drop', 'Game Creation', 'Animation', 'Logic Thinking'],
     tags: ['scratch', 'visual programming', 'kids', 'beginner'],
-    prerequisites: ['Basic computer skills', 'Creative thinking', 'Problem-solving interest'],
+    prerequisites: [
+      'Basic computer skills',
+      'Creative thinking',
+      'Problem-solving interest'
+    ],
     lessons: [
       {
         id: 'scratch-introduction',
@@ -707,7 +995,11 @@ export const moduleNavigation: ModuleNavigation[] = [
     href: '/learning/arduino',
     features: ['Arduino Programming', 'IoT Projects', 'Sensors', 'Smart Home'],
     tags: ['arduino', 'iot', 'hardware', 'sensors'],
-    prerequisites: ['Basic electronics knowledge', 'Programming fundamentals', 'Problem-solving skills'],
+    prerequisites: [
+      'Basic electronics knowledge',
+      'Programming fundamentals',
+      'Problem-solving skills'
+    ],
     lessons: [
       {
         id: 'arduino-setup',
@@ -754,9 +1046,19 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Nâng cao',
     duration: '10-12 giờ',
     href: '/learning/robotics',
-    features: ['Robot Design', 'Motion Control', 'AI Integration', 'Autonomous Navigation'],
+    features: [
+      'Robot Design',
+      'Motion Control',
+      'AI Integration',
+      'Autonomous Navigation'
+    ],
     tags: ['robotics', 'ai', 'automation', 'control'],
-    prerequisites: ['Programming fundamentals', 'Basic electronics', 'Mathematical thinking', 'Problem-solving skills'],
+    prerequisites: [
+      'Programming fundamentals',
+      'Basic electronics',
+      'Mathematical thinking',
+      'Problem-solving skills'
+    ],
     lessons: [
       {
         id: 'robotics-fundamentals',
@@ -797,9 +1099,18 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Cơ bản',
     duration: '8-10 giờ',
     href: '/learning/stem',
-    features: ['Physics Experiments', 'Math Applications', 'Engineering Design', 'Science Projects'],
+    features: [
+      'Physics Experiments',
+      'Math Applications',
+      'Engineering Design',
+      'Science Projects'
+    ],
     tags: ['stem', 'science', 'math', 'engineering'],
-    prerequisites: ['Curiosity and interest in science', 'Basic math skills', 'Safety awareness'],
+    prerequisites: [
+      'Curiosity and interest in science',
+      'Basic math skills',
+      'Safety awareness'
+    ],
     lessons: [
       {
         id: 'stem-introduction',
@@ -845,7 +1156,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.ContentCreator,
     title: 'Content Creator Academy',
     subtitle: 'Thành công với Social Media',
-    description: 'Học từ A-Z cách trở thành content creator thành công trên TikTok, YouTube, Instagram. Từ xây dựng personal brand đến monetization.',
+    description:
+      'Học từ A-Z cách trở thành content creator thành công trên TikTok, YouTube, Instagram. Từ xây dựng personal brand đến monetization.',
     category: 'trending',
     icon: '📱',
     color: 'from-pink-600 to-purple-600',
@@ -854,9 +1166,26 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '18-22 giờ',
     href: '/learning/content-creator',
-    features: ['Personal Branding', 'Video Production', 'Live Streaming', 'Monetization', 'Analytics'],
-    tags: ['content creator', 'social media', 'youtube', 'tiktok', 'monetization'],
-    prerequisites: ['Smartphone với camera tốt', 'Tư duy sáng tạo', 'Khả năng storytelling', 'Consistency mindset'],
+    features: [
+      'Personal Branding',
+      'Video Production',
+      'Live Streaming',
+      'Monetization',
+      'Analytics'
+    ],
+    tags: [
+      'content creator',
+      'social media',
+      'youtube',
+      'tiktok',
+      'monetization'
+    ],
+    prerequisites: [
+      'Smartphone với camera tốt',
+      'Tư duy sáng tạo',
+      'Khả năng storytelling',
+      'Consistency mindset'
+    ],
     lessons: [
       {
         id: 'social-media-personal-branding',
@@ -912,7 +1241,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.TeenWellness,
     title: 'Teen Wellness & Mental Health',
     subtitle: 'Sức khỏe tinh thần tuổi teen',
-    description: 'Chương trình toàn diện về sức khỏe tinh thần cho teenagers. Học cách quản lý stress, anxiety, xây dựng mối quan hệ tích cực và phát triển emotional intelligence.',
+    description:
+      'Chương trình toàn diện về sức khỏe tinh thần cho teenagers. Học cách quản lý stress, anxiety, xây dựng mối quan hệ tích cực và phát triển emotional intelligence.',
     category: 'trending',
     icon: '🧘',
     color: 'from-green-600 to-teal-600',
@@ -921,9 +1251,26 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Cơ bản',
     duration: '12-15 giờ',
     href: '/learning/teen-wellness',
-    features: ['Stress & Anxiety Management', 'Mindfulness & Meditation', 'Digital Wellness', 'Healthy Relationships', 'Crisis Support'],
-    tags: ['teen wellness', 'mental health', 'stress management', 'mindfulness', 'emotional intelligence'],
-    prerequisites: ['Sự cởi mở về cảm xúc', 'Cam kết thực hành hàng ngày', 'Hỗ trợ từ người lớn', 'Môi trường an toàn'],
+    features: [
+      'Stress & Anxiety Management',
+      'Mindfulness & Meditation',
+      'Digital Wellness',
+      'Healthy Relationships',
+      'Crisis Support'
+    ],
+    tags: [
+      'teen wellness',
+      'mental health',
+      'stress management',
+      'mindfulness',
+      'emotional intelligence'
+    ],
+    prerequisites: [
+      'Sự cởi mở về cảm xúc',
+      'Cam kết thực hành hàng ngày',
+      'Hỗ trợ từ người lớn',
+      'Môi trường an toàn'
+    ],
     lessons: [
       {
         id: 'understanding-stress-anxiety',
@@ -975,7 +1322,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.YoungEntrepreneur,
     title: 'Young Entrepreneur Bootcamp',
     subtitle: 'Khởi nghiệp thành công từ tuổi teen',
-    description: 'Bootcamp toàn diện cho thế hệ GenZ muốn khởi nghiệp: từ ý tưởng, xây dựng MVP, gọi vốn đến scale business với focus đặc biệt vào thị trường Việt Nam',
+    description:
+      'Bootcamp toàn diện cho thế hệ GenZ muốn khởi nghiệp: từ ý tưởng, xây dựng MVP, gọi vốn đến scale business với focus đặc biệt vào thị trường Việt Nam',
     category: 'trending',
     icon: '🚀',
     color: 'from-orange-600 to-red-600',
@@ -984,9 +1332,30 @@ export const moduleNavigation: ModuleNavigation[] = [
     level: 'Trung bình',
     duration: '25-30 giờ',
     href: '/learning/young-entrepreneur',
-    features: ['Startup Mindset', 'Business Model Design', 'MVP Development', 'Fundraising', 'Team Building', 'Growth Hacking', 'Legal Compliance'],
-    tags: ['startup', 'entrepreneurship', 'business model', 'mvp', 'fundraising', 'young entrepreneur', 'vietnam startup'],
-    prerequisites: ['Tư duy logic và sáng tạo', 'Đam mê kinh doanh', 'Kỹ năng học hỏi nhanh', 'Tinh thần chấp nhận thử thách'],
+    features: [
+      'Startup Mindset',
+      'Business Model Design',
+      'MVP Development',
+      'Fundraising',
+      'Team Building',
+      'Growth Hacking',
+      'Legal Compliance'
+    ],
+    tags: [
+      'startup',
+      'entrepreneurship',
+      'business model',
+      'mvp',
+      'fundraising',
+      'young entrepreneur',
+      'vietnam startup'
+    ],
+    prerequisites: [
+      'Tư duy logic và sáng tạo',
+      'Đam mê kinh doanh',
+      'Kỹ năng học hỏi nhanh',
+      'Tinh thần chấp nhận thử thách'
+    ],
     lessons: [
       {
         id: 'startup-mindset-fundamentals',
@@ -1048,13 +1417,23 @@ export function getLessonById(
 }
 
 export function getModulesByCategory(category: string): ModuleNavigation[] {
-  return moduleNavigation.filter(
-    (moduleData) => moduleData.category === category
-  );
+  return moduleNavigation.filter((moduleData) => {
+    const moduleCategories = Array.isArray(moduleData.category)
+      ? moduleData.category
+      : [moduleData.category];
+    return moduleCategories.includes(category);
+  });
 }
 
 export function getAllCategories(): string[] {
-  const categories = moduleNavigation.map((moduleData) => moduleData.category);
+  const categories: string[] = [];
+  moduleNavigation.forEach((moduleData) => {
+    if (Array.isArray(moduleData.category)) {
+      categories.push(...moduleData.category);
+    } else {
+      categories.push(moduleData.category);
+    }
+  });
   return Array.from(new Set(categories));
 }
 

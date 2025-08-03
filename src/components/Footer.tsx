@@ -41,25 +41,30 @@ const Footer: React.FC = () => {
 
     moduleNavigation.forEach(module => {
       if (!module.coreModule && module.category) {
-        const categoryKey = module.category;
-        const categoryInfo = categoryNames[categoryKey];
-        
-        if (categoryInfo && !categoryMap[categoryKey]) {
-          categoryMap[categoryKey] = {
-            title: categoryInfo.title,
-            icon: categoryInfo.icon,
-            color: categoryInfo.color,
-            modules: []
-          };
+        let categoryKey = module.category;
+        if (typeof categoryKey === 'string') {
+          categoryKey = [categoryKey];
         }
+        categoryKey.forEach((key) => {
+          const categoryInfo = categoryNames[key];
+          if (categoryInfo && !categoryMap[key]) {
+            categoryMap[key] = {
+              title: categoryInfo.title,
+              icon: categoryInfo.icon,
+              color: categoryInfo.color,
+              modules: []
+            };
+          }
 
-        if (categoryMap[categoryKey]) {
-          categoryMap[categoryKey].modules.push({
-            name: module.title,
-            href: module.href || `/learning/${module.id}`,
-            icon: module.icon
-          });
-        }
+          if (categoryMap[key]) {
+            categoryMap[key].modules.push({
+              name: module.title,
+              href: module.href || `/learning/${module.id}`,
+              icon: module.icon
+            });
+          }
+          
+        });
       }
     });
 
@@ -75,7 +80,7 @@ const Footer: React.FC = () => {
 
   const quickLinks = [
     { name: 'Trang Chủ', href: '/', icon: '🏠' },
-    { name: 'Tất Cả Khóa Học', href: '/learning', icon: '�' },
+    { name: 'Tất Cả Khóa Học', href: '/learning', icon: '📚' },
     { name: 'Phản Hồi', href: '/feedback', icon: '💬' },
     { name: 'Về Chúng Tôi', href: '/about', icon: 'ℹ️' },
   ];
