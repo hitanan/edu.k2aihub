@@ -116,7 +116,7 @@ export async function generateMetadata() {
   return {
     title: createTitle('Module Title in Vietnamese'),
     description: createDescription('Comprehensive module description in Vietnamese'),
-    keywords: ['keyword1', 'keyword2', 'vietnamese-learning', 'k2aihub'],
+    keywords: ['keyword1', 'keyword2', 'vietnamese-learning', 'K2AI'],
     openGraph: {
       title: 'Module Title in Vietnamese',
       description: 'Module description for social sharing',
@@ -165,7 +165,12 @@ export default function ModuleMainPage() {
       averageSalary: '15-30 triệu VNĐ',
       jobGrowth: '+25%',
       hireDemand: 'Cao'
-    }
+    },
+    relatedModules: [
+      K2Module.Module1,
+      K2Module.Module2,
+      K2Module.Module3
+    ]
   };
 
   return (
