@@ -57,6 +57,7 @@ export default function RoboticsPage() {
     primaryColor: 'purple',
     gradientColors: 'from-slate-900 via-purple-900 to-blue-900',
     basePath: '/learning/robotics',
+    heroImageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${roboticsLessons.length}+ bài`,
       duration: '20-25 giờ',

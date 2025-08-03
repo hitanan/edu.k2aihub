@@ -56,6 +56,7 @@ export default function AiArtCreativeTechPage() {
     primaryColor: 'pink',
     gradientColors: 'from-pink-900 via-purple-900 to-indigo-900',
     basePath: '/learning/ai-art-creative-tech',
+    heroImageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${aiArtLessons.length}+ bài`,
       duration: '8-12 giờ',

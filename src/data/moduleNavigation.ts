@@ -55,6 +55,11 @@ export const K2Module = {
   VietnameseCulture: 'vietnamese-culture',
   VietnameseHealthcare: 'vietnamese-healthcare',
 
+  // 2025 High-Demand Modules (Tier 1)
+  SemiconductorTechnology: 'semiconductor-technology',
+  RenewableEnergy: 'renewable-energy',
+  AdvancedAI: 'advanced-ai',
+
   // 2025 Trend-Based Modules
   ContentCreator: 'content-creator',
   TeenWellness: 'teen-wellness',
@@ -877,6 +882,191 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'medical-biotechnology-drug-discovery',
         title: 'Medical Biotechnology & Drug Discovery Pipeline',
         duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+
+  // High-Demand University Modules (Tier 1 - Based on 2025 Market Analysis)
+  {
+    id: K2Module.SemiconductorTechnology,
+    title: 'Semiconductor Technology',
+    subtitle: 'Công nghệ bán dẫn tiên tiến',
+    description:
+      'Master semiconductor physics, IC design và fabrication technology. Essential cho Vietnam\'s growing electronics manufacturing và FDI from Samsung, Intel.',
+    category: 'professional',
+    icon: '💎',
+    color: 'from-indigo-600 to-purple-600',
+    totalDuration: '18-22 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '18-22 giờ',
+    href: '/learning/semiconductor-technology',
+    features: [
+      'Silicon Physics & Doping',
+      'IC Design & VLSI',
+      'Fabrication Process',
+      'Advanced Nodes (3nm, 5nm)',
+      'Industry Applications'
+    ],
+    tags: ['semiconductor', 'ic design', 'vlsi', 'electronics', 'manufacturing'],
+    prerequisites: [
+      'Physics fundamentals: quantum mechanics, solid state',
+      'Mathematics: calculus, linear algebra, statistics',
+      'Electrical engineering basics',
+      'Chemistry: materials science basics'
+    ],
+    lessons: [
+      {
+        id: 'semiconductor-fundamentals',
+        title: 'Semiconductor Physics & Materials Fundamentals',
+        duration: '180 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'ic-design-vlsi',
+        title: 'Integrated Circuit Design & VLSI Technology',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'fabrication-cleanroom',
+        title: 'Fabrication Process & Cleanroom Technology',
+        duration: '190 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'advanced-nodes-ai-chips',
+        title: 'Advanced Process Nodes & AI Chip Architecture',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'industry-career-vietnam',
+        title: 'Industry Applications & Career Opportunities in Vietnam',
+        duration: '150 phút',
+        difficulty: 'Trung bình'
+      }
+    ]
+  },
+  {
+    id: K2Module.RenewableEnergy,
+    title: 'Renewable Energy Systems',
+    subtitle: 'Hệ thống năng lượng tái tạo',
+    description:
+      'Comprehensive renewable energy education từ solar photovoltaics đến wind turbines và energy storage. Supporting Vietnam Net Zero 2050 commitment.',
+    category: 'professional',
+    icon: '⚡',
+    color: 'from-green-600 to-emerald-600',
+    totalDuration: '12-15 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '12-15 giờ',
+    href: '/learning/renewable-energy',
+    features: [
+      'Solar PV Systems',
+      'Wind Power Technology', 
+      'Energy Storage & Smart Grid',
+      'Hydroelectric Systems',
+      'Economics & Policy'
+    ],
+    tags: ['renewable energy', 'solar', 'wind', 'energy storage', 'smart grid'],
+    prerequisites: [
+      'Basic electrical engineering',
+      'Physics principles: mechanics, thermodynamics',
+      'Mathematics: algebra, basic calculus',
+      'Environmental awareness'
+    ],
+    lessons: [
+      {
+        id: 'solar-energy-fundamentals',
+        title: 'Solar Energy Systems & Photovoltaic Technology',
+        duration: '180 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'wind-power-technology',
+        title: 'Wind Power Systems & Turbine Technology',
+        duration: '200 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'energy-storage-systems',
+        title: 'Energy Storage & Smart Grid Integration',
+        duration: '160 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'hydroelectric-systems',
+        title: 'Hydroelectric Power & Small-Scale Hydro',
+        duration: '170 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'renewable-economics-policy',
+        title: 'Renewable Energy Economics & Policy in Vietnam',
+        duration: '140 phút',
+        difficulty: 'Trung bình'
+      }
+    ]
+  },
+  {
+    id: K2Module.AdvancedAI,
+    title: 'Advanced AI & Machine Learning',
+    subtitle: 'Trí tuệ nhân tạo nâng cao',
+    description:
+      'Master cutting-edge AI technologies: Deep Learning, Computer Vision, NLP, Reinforcement Learning với focus trên Vietnamese market applications.',
+    category: 'professional',
+    icon: '🧠',
+    color: 'from-purple-600 to-indigo-600',
+    totalDuration: '18-22 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '18-22 giờ',
+    href: '/learning/advanced-ai',
+    features: [
+      'Deep Learning & Neural Networks',
+      'Computer Vision Applications',
+      'Vietnamese NLP & Language Models',
+      'Reinforcement Learning Systems',
+      'AI Ethics & Responsible Deployment'
+    ],
+    tags: ['ai', 'deep learning', 'computer vision', 'nlp', 'reinforcement learning'],
+    prerequisites: [
+      'Strong Python programming skills',
+      'Linear algebra và calculus knowledge',
+      'Machine learning fundamentals',
+      'Cloud platforms experience (AWS/GCP)'
+    ],
+    lessons: [
+      {
+        id: 'deep-learning-foundations',
+        title: 'Deep Learning & Neural Network Architectures',
+        duration: '240 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'computer-vision-applications',
+        title: 'Computer Vision & Image Processing Applications',
+        duration: '220 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'nlp-language-models',
+        title: 'Natural Language Processing & Large Language Models',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'reinforcement-learning-systems',
+        title: 'Reinforcement Learning & Autonomous Systems',
+        duration: '190 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'ai-ethics-deployment',
+        title: 'AI Ethics, Bias & Production Deployment',
+        duration: '170 phút',
         difficulty: 'Nâng cao'
       }
     ]

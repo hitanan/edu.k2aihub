@@ -57,6 +57,7 @@ export default function ArduinoPage() {
     primaryColor: 'cyan',
     gradientColors: 'from-slate-900 via-cyan-900 to-blue-900',
     basePath: '/learning/arduino',
+    heroImageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${arduinoLessons.length}+ bài`,
       duration: '15-20 giờ',

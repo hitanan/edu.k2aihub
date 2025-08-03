@@ -64,6 +64,25 @@ export default function AllLearningPageClient() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLevel, setSelectedLevel] = useState('Tất cả');
   const [sortBy, setSortBy] = useState('popular'); // popular, duration, newest
+  const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
+
+  // Popular search terms and suggestions
+  const popularSearchTerms = [
+    'Python', 'AI', 'Machine Learning', 'Marketing', 'Lập trình', 
+    'Web Development', 'Data Science', 'Blockchain', 'Game Development',
+    'Arduino', 'IoT', 'Cybersecurity', 'Startup', 'Business', 'Fintech'
+  ];
+
+  const searchSuggestions = [
+    { term: 'lập trình Python', category: 'programming', description: 'Học Python từ cơ bản đến nâng cao' },
+    { term: 'AI và Machine Learning', category: 'trending', description: 'Trí tuệ nhân tạo và học máy' },
+    { term: 'Digital Marketing', category: 'professional', description: 'Marketing và quảng cáo số' },
+    { term: 'Startup và Khởi nghiệp', category: 'vietnamese', description: 'Xây dựng startup thành công' },
+    { term: 'Cybersecurity', category: 'security', description: 'An ninh mạng và bảo mật' },
+    { term: 'Game Development', category: 'creative', description: 'Phát triển game và ứng dụng' },
+    { term: 'Arduino và IoT', category: 'stem', description: 'Lập trình phần cứng và IoT' },
+    { term: 'Blockchain và Crypto', category: 'trending', description: 'Công nghệ Blockchain và tiền số' }
+  ];
 
   // Effect to read URL parameters on mount
   useEffect(() => {
@@ -124,16 +143,78 @@ export default function AllLearningPageClient() {
     updateURL(selectedCategory, selectedLevel, searchTerm, sort);
   };
 
-  // Filter modules based on search and filters
+  // Filter modules based on search and filters with enhanced search
   const filteredModules = allLearningModules.filter(module => {
-    const matchesSearch = module.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         module.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         module.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    const searchLower = searchTerm.toLowerCase();
     
-    const matchesCategory = selectedCategory === 'all' || moduleInCategory(module, selectedCategory);
-    const matchesLevel = selectedLevel === 'Tất cả' || module.level === selectedLevel;
+    // Basic search across module info
+    const matchesBasicSearch = module.title.toLowerCase().includes(searchLower) ||
+                               module.description.toLowerCase().includes(searchLower) ||
+                               module.subtitle.toLowerCase().includes(searchLower) ||
+                               module.tags.some(tag => tag.toLowerCase().includes(searchLower));
     
-    return matchesSearch && matchesCategory && matchesLevel;
+    // Enhanced search through features and extended content
+    const matchesFeatures = module.features.some(feature => 
+      feature.toLowerCase().includes(searchLower)
+    );
+    
+    // Search in categories for better discoverability
+    const matchesCategory = getModuleCategories(module).some(cat => {
+      const categoryTitle = categories[cat as keyof typeof categories]?.title.toLowerCase() || '';
+      return categoryTitle.includes(searchLower) || cat.toLowerCase().includes(searchLower);
+    });
+    
+    // Search in level/difficulty
+    const matchesLevel = module.level?.toLowerCase().includes(searchLower);
+    
+    // Additional Vietnamese keyword matching
+    const vietnameseKeywords: { [key: string]: string[] } = {
+      'lập trình': ['programming', 'code', 'dev', 'developer'],
+      'ai': ['artificial intelligence', 'machine learning', 'trí tuệ nhân tạo'],
+      'marketing': ['quảng cáo', 'tiếp thị', 'digital marketing'],
+      'kinh doanh': ['business', 'doanh nghiệp', 'startup'],
+      'tài chính': ['finance', 'financial', 'fintech', 'tiền'],
+      'an ninh': ['security', 'cybersecurity', 'bảo mật'],
+      'khoa học': ['science', 'sinh học', 'biotechnology'],
+      'robot': ['robotics', 'arduino', 'iot'],
+      'game': ['gaming', 'phát triển game', 'unity'],
+      'web': ['website', 'web development', 'html', 'css', 'javascript'],
+      'mobile': ['app', 'điện thoại', 'android', 'ios'],
+      'data': ['dữ liệu', 'data science', 'analytics'],
+      'blockchain': ['crypto', 'bitcoin', 'defi'],
+      'design': ['thiết kế', 'ui', 'ux', 'graphic'],
+      'content': ['nội dung', 'creator', 'youtube', 'social media']
+    };
+    
+    // Check Vietnamese keyword matching
+    const matchesVietnameseKeywords = Object.entries(vietnameseKeywords).some(([vn, en]) => {
+      if (vn.includes(searchLower)) {
+        return en.some(keyword => 
+          module.title.toLowerCase().includes(keyword) ||
+          module.description.toLowerCase().includes(keyword) ||
+          module.features.some(feature => feature.toLowerCase().includes(keyword))
+        );
+      }
+      if (en.some(keyword => keyword.includes(searchLower))) {
+        return module.title.toLowerCase().includes(vn) ||
+               module.description.toLowerCase().includes(vn) ||
+               module.features.some(feature => feature.toLowerCase().includes(vn));
+      }
+      return false;
+    });
+    
+    // Combine all search criteria
+    const matchesSearch = searchTerm === '' || 
+                         matchesBasicSearch || 
+                         matchesFeatures || 
+                         matchesCategory || 
+                         matchesLevel ||
+                         matchesVietnameseKeywords;
+    
+    const matchesCategoryFilter = selectedCategory === 'all' || moduleInCategory(module, selectedCategory);
+    const matchesLevelFilter = selectedLevel === 'Tất cả' || module.level === selectedLevel;
+    
+    return matchesSearch && matchesCategoryFilter && matchesLevelFilter;
   });
 
   // Sort modules
@@ -169,11 +250,55 @@ export default function AllLearningPageClient() {
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Tìm kiếm khóa học, kỹ năng hoặc công nghệ..."
+                  placeholder="Tìm kiếm khóa học, kỹ năng, công nghệ, bài học... (VD: 'lập trình', 'AI', 'marketing', 'Python')"
                   value={searchTerm}
                   onChange={(e) => handleSearchChange(e.target.value)}
+                  onFocus={() => setShowSearchSuggestions(true)}
+                  onBlur={() => setTimeout(() => setShowSearchSuggestions(false), 200)}
                   className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
                 />
+                
+                {/* Search Suggestions */}
+                {showSearchSuggestions && searchTerm === '' && (
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-2xl p-4 z-50">
+                    <div className="mb-3">
+                      <h4 className="text-white font-medium mb-2">🔥 Tìm kiếm phổ biến:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {popularSearchTerms.map((term) => (
+                          <button
+                            key={term}
+                            onClick={() => {
+                              handleSearchChange(term);
+                              setShowSearchSuggestions(false);
+                            }}
+                            className="px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full text-sm hover:bg-blue-500/30 transition-colors"
+                          >
+                            {term}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-white font-medium mb-2">💡 Gợi ý khóa học:</h4>
+                      <div className="space-y-2">
+                        {searchSuggestions.slice(0, 4).map((suggestion) => (
+                          <button
+                            key={suggestion.term}
+                            onClick={() => {
+                              handleSearchChange(suggestion.term);
+                              setShowSearchSuggestions(false);
+                            }}
+                            className="w-full text-left p-2 hover:bg-white/10 rounded-lg transition-colors"
+                          >
+                            <div className="text-white font-medium">{suggestion.term}</div>
+                            <div className="text-gray-400 text-sm">{suggestion.description}</div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

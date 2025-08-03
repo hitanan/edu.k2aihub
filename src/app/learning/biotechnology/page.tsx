@@ -68,6 +68,7 @@ export default function BiotechnologyPage() {
     primaryColor: 'emerald',
     gradientColors: 'from-slate-900 via-emerald-900 to-teal-900',
     basePath: '/learning/biotechnology',
+    heroImageUrl: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&h=600&fit=crop',
     features: [
       'CRISPR và Gene Editing techniques',
       'Phát triển thuốc và Medical Applications',

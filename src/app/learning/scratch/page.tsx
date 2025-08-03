@@ -43,6 +43,7 @@ export default function ScratchPage() {
     primaryColor: 'orange',
     gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
     basePath: '/learning/scratch',
+    heroImageUrl: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${scratchLessons.length}+ bài`,
       duration: '15-20 giờ',

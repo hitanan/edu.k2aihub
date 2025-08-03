@@ -51,7 +51,7 @@ export default function TeenWellnessPage() {
     level: 'Cơ bản đến Nâng cao',
     duration: '12-15 giờ',
     category: 'Youth Development & Mental Health',
-    heroImageUrl: '/images/teen-wellness/teen-wellness-hero.jpg',
+    heroImageUrl: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1200&h=600&fit=crop',
     features: [
       '🧠 Stress & Anxiety Management cho áp lực học tập',
       '🧘 Mindfulness & Meditation techniques phù hợp với teen',

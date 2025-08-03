@@ -52,7 +52,7 @@ export default function ContentCreatorPage() {
     level: 'Cơ bản đến Nâng cao',
     duration: '18-22 giờ',
     category: 'Creator Economy & Digital Media',
-    heroImageUrl: '/images/content-creator/content-creator-hero.jpg',
+    heroImageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop',
     features: [
       '🎬 Video Production & Editing chuyên nghiệp với smartphone',
       '💡 Personal Branding & Content Strategy độc đáo',

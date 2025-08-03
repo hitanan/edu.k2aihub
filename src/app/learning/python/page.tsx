@@ -57,6 +57,7 @@ export default function PythonPage() {
     primaryColor: 'yellow',
     gradientColors: 'from-slate-900 via-yellow-900 to-green-900',
     basePath: '/learning/python',
+    heroImageUrl: 'https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${pythonLessons.length}+ bài`,
       duration: '25-30 giờ',

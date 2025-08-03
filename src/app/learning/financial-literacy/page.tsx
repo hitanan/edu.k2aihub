@@ -68,6 +68,7 @@ export default function FinancialLiteracyPage() {
     primaryColor: 'green',
     gradientColors: 'from-slate-900 via-green-900 to-emerald-900',
     basePath: '/learning/financial-literacy',
+    heroImageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=600&fit=crop',
     features: [
       'Personal Finance Management và Budgeting',
       'Investment Strategies và Portfolio Management',

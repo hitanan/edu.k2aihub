@@ -43,6 +43,7 @@ export default function STEMPage() {
     primaryColor: 'green',
     gradientColors: 'from-slate-900 via-green-900 to-blue-900',
     basePath: '/learning/stem',
+    heroImageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${stemLessons.length}+ bài`,
       duration: '25-30 giờ',

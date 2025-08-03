@@ -229,11 +229,11 @@ export default function HomePage() {
       <section id="featured-modules" className="py-20 bg-gradient-to-br from-slate-900 via-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent font-black">
                 KHÓA HỌC
               </span>
-              <span className="block text-violet-400 mt-2">NỔI BẬT</span>
+              <span className="block text-violet-400 mt-2 font-black">NỔI BẬT</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Khóa học được thiết kế với công nghệ tiên tiến, cập nhật liên tục theo xu hướng thị trường
@@ -284,11 +284,11 @@ export default function HomePage() {
       <section id="learning-paths" className="py-20 bg-gradient-to-br from-black via-slate-800 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              <span className="bg-gradient-to-r from-violet-400 to-rose-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-violet-400 to-rose-400 bg-clip-text text-transparent font-black">
                 LỘ TRÌNH
               </span>
-              <span className="block text-emerald-400 mt-2">DÀNH CHO BẠN</span>
+              <span className="block text-emerald-400 mt-2 font-black">DÀNH CHO BẠN</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Tùy chỉnh hành trình học tập phù hợp với mục tiêu và đam mê cá nhân
@@ -345,8 +345,8 @@ export default function HomePage() {
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-3xl p-12 border border-emerald-400/30 shadow-2xl">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              🎯 <span className="bg-gradient-to-r from-emerald-400 to-violet-400 bg-clip-text text-transparent">THAY ĐỔI TƯƠNG LAI</span>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+              🎯 <span className="bg-gradient-to-r from-emerald-400 to-violet-400 bg-clip-text text-transparent font-black">THAY ĐỔI TƯƠNG LAI</span>
             </h2>
             <p className="text-xl text-gray-300 mb-8">
               Gia nhập cộng đồng học tập <span className="text-emerald-400 font-bold">tiên phong</span> và 
@@ -359,7 +359,7 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 bg-emerald-400/10 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-emerald-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-emerald-400 font-black">🌏 KHÁM PHÁ VIỆT NAM</span>
+                <span className="relative text-black font-black">🌏 KHÁM PHÁ VIỆT NAM</span>
               </Link>
               <Link 
                 href="/ai" 

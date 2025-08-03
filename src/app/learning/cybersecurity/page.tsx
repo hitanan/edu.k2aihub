@@ -68,6 +68,7 @@ export default function CybersecurityPage() {
     primaryColor: 'red',
     gradientColors: 'from-slate-900 via-red-900 to-orange-900',
     basePath: '/learning/cybersecurity',
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     features: [
       'Penetration Testing và Vulnerability Assessment',
       'Network Security và Firewall Configuration',
