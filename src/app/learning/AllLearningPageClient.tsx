@@ -6,8 +6,6 @@ import { Search, Clock, Star, ChevronRight, Filter } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { 
-  enhancedVietnameseSearch, 
-  getVietnameseSearchSuggestions,
   searchModulesVietnamese 
 } from '@/utils/vietnameseSearch';
 
@@ -208,56 +206,67 @@ export default function AllLearningPageClient() {
                 />
                 
                 {/* Enhanced Search Suggestions with Vietnamese support */}
-                {showSearchSuggestions && searchTerm === '' && (
+                {showSearchSuggestions && (
                   <div className="absolute top-full left-0 right-0 mt-2 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-2xl p-4 z-50">
-                    <div className="mb-3">
-                      <h4 className="text-white font-medium mb-2">🔥 Tìm kiếm phổ biến:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {popularSearchTerms.map((term) => (
-                          <button
-                            key={term}
-                            onClick={() => {
-                              handleSearchChange(term);
-                              setShowSearchSuggestions(false);
-                            }}
-                            className="px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full text-sm hover:bg-blue-500/30 transition-colors"
-                          >
-                            {term}
-                          </button>
-                        ))}
+                    {searchTerm === '' ? (
+                      <>
+                        <div className="mb-3">
+                          <h4 className="text-white font-medium mb-2">🔥 Tìm kiếm phổ biến:</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {popularSearchTerms.map((term) => (
+                              <button
+                                key={term}
+                                onClick={() => {
+                                  handleSearchChange(term);
+                                  setShowSearchSuggestions(false);
+                                }}
+                                className="px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full text-sm hover:bg-blue-500/30 transition-colors"
+                              >
+                                {term}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div className="mb-3">
+                          <h4 className="text-green-300 font-medium mb-2">🇻🇳 Hỗ trợ tiếng Việt không dấu:</h4>
+                          <p className="text-gray-400 text-sm mb-2">
+                            Bạn có thể tìm kiếm bằng tiếng Việt có dấu hoặc không dấu. Ví dụ:
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;lập trình&rdquo; = &ldquo;lap trinh&rdquo;</span>
+                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;trí tuệ nhân tạo&rdquo; = &ldquo;tri tue nhan tao&rdquo;</span>
+                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;an ninh mạng&rdquo; = &ldquo;an ninh mang&rdquo;</span>
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <h4 className="text-white font-medium mb-2">💡 Gợi ý khóa học:</h4>
+                          <div className="space-y-2">
+                            {searchSuggestions.slice(0, 6).map((suggestion) => (
+                              <button
+                                key={suggestion.term}
+                                onClick={() => {
+                                  handleSearchChange(suggestion.term);
+                                  setShowSearchSuggestions(false);
+                                }}
+                                className="w-full text-left p-2 hover:bg-white/10 rounded-lg transition-colors"
+                              >
+                                <div className="text-white font-medium">{suggestion.term}</div>
+                                <div className="text-gray-400 text-sm">{suggestion.description}</div>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <div>
+                        <h4 className="text-white font-medium mb-2">🔍 Kết quả tìm kiếm cho &ldquo;{searchTerm}&rdquo;</h4>
+                        <p className="text-gray-300 text-sm">
+                          Tìm thấy {filteredModules.length} khóa học phù hợp. Nhấn Enter hoặc click bên ngoài để xem kết quả.
+                        </p>
                       </div>
-                    </div>
-                    
-                    <div className="mb-3">
-                      <h4 className="text-green-300 font-medium mb-2">🇻🇳 Hỗ trợ tiếng Việt không dấu:</h4>
-                      <p className="text-gray-400 text-sm mb-2">
-                        Bạn có thể tìm kiếm bằng tiếng Việt có dấu hoặc không dấu. Ví dụ:
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;lập trình&rdquo; = &ldquo;lap trinh&rdquo;</span>
-                        <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;trí tuệ nhân tạo&rdquo; = &ldquo;tri tue nhan tao&rdquo;</span>
-                        <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;an ninh mạng&rdquo; = &ldquo;an ninh mang&rdquo;</span>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-white font-medium mb-2">💡 Gợi ý khóa học:</h4>
-                      <div className="space-y-2">
-                        {searchSuggestions.slice(0, 6).map((suggestion) => (
-                          <button
-                            key={suggestion.term}
-                            onClick={() => {
-                              handleSearchChange(suggestion.term);
-                              setShowSearchSuggestions(false);
-                            }}
-                            className="w-full text-left p-2 hover:bg-white/10 rounded-lg transition-colors"
-                          >
-                            <div className="text-white font-medium">{suggestion.term}</div>
-                            <div className="text-gray-400 text-sm">{suggestion.description}</div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+                    )}
                   </div>
                 )}
               </div>

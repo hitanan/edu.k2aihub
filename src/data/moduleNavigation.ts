@@ -904,7 +904,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     title: 'Semiconductor Technology',
     subtitle: 'Công nghệ bán dẫn tiên tiến',
     description:
-      'Master semiconductor physics, IC design và fabrication technology. Essential cho Vietnam\'s growing electronics manufacturing và FDI from Samsung, Intel.',
+      "Master semiconductor physics, IC design và fabrication technology. Essential cho Vietnam's growing electronics manufacturing và FDI from Samsung, Intel.",
     category: 'professional',
     icon: '💎',
     color: 'from-indigo-600 to-purple-600',
@@ -920,7 +920,13 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Advanced Nodes (3nm, 5nm)',
       'Industry Applications'
     ],
-    tags: ['semiconductor', 'ic design', 'vlsi', 'electronics', 'manufacturing'],
+    tags: [
+      'semiconductor',
+      'ic design',
+      'vlsi',
+      'electronics',
+      'manufacturing'
+    ],
     prerequisites: [
       'Physics fundamentals: quantum mechanics, solid state',
       'Mathematics: calculus, linear algebra, statistics',
@@ -976,7 +982,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     href: '/learning/renewable-energy',
     features: [
       'Solar PV Systems',
-      'Wind Power Technology', 
+      'Wind Power Technology',
       'Energy Storage & Smart Grid',
       'Hydroelectric Systems',
       'Economics & Policy'
@@ -1027,7 +1033,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     subtitle: 'Trí tuệ nhân tạo nâng cao',
     description:
       'Master cutting-edge AI technologies: Deep Learning, Computer Vision, NLP, Reinforcement Learning với focus trên Vietnamese market applications.',
-    category: 'professional',
+    category: ['professional', 'programming'],
     icon: '🧠',
     color: 'from-purple-600 to-indigo-600',
     totalDuration: '18-22 giờ',
@@ -1042,7 +1048,13 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Reinforcement Learning Systems',
       'AI Ethics & Responsible Deployment'
     ],
-    tags: ['ai', 'deep learning', 'computer vision', 'nlp', 'reinforcement learning'],
+    tags: [
+      'ai',
+      'deep learning',
+      'computer vision',
+      'nlp',
+      'reinforcement learning'
+    ],
     prerequisites: [
       'Strong Python programming skills',
       'Linear algebra và calculus knowledge',
@@ -1104,7 +1116,13 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Charging Infrastructure',
       'Manufacturing & Quality Control'
     ],
-    tags: ['electric vehicle', 'ev', 'automotive', 'vinfast', 'battery technology'],
+    tags: [
+      'electric vehicle',
+      'ev',
+      'automotive',
+      'vinfast',
+      'battery technology'
+    ],
     prerequisites: [
       'Electrical engineering fundamentals',
       'Automotive systems knowledge',
@@ -1159,7 +1177,14 @@ export const moduleNavigation: ModuleNavigation[] = [
       'NFT & Metaverse Applications',
       'Regulatory Compliance'
     ],
-    tags: ['blockchain', 'defi', 'smart contracts', 'cryptocurrency', 'nft', 'fintech'],
+    tags: [
+      'blockchain',
+      'defi',
+      'smart contracts',
+      'cryptocurrency',
+      'nft',
+      'fintech'
+    ],
     prerequisites: [
       'Programming experience (Solidity, JavaScript)',
       'Cryptography basics',
@@ -1220,7 +1245,13 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Surgical Robotics',
       'Healthcare Technology'
     ],
-    tags: ['biomedical engineering', 'medical devices', 'healthcare', 'biosignals', 'surgical robotics'],
+    tags: [
+      'biomedical engineering',
+      'medical devices',
+      'healthcare',
+      'biosignals',
+      'surgical robotics'
+    ],
     prerequisites: [
       'Engineering fundamentals',
       'Biology và anatomy knowledge',
@@ -1276,7 +1307,13 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Remote Sensing & GIS',
       'Environmental Machine Learning'
     ],
-    tags: ['environmental science', 'data science', 'climate', 'remote sensing', 'gis'],
+    tags: [
+      'environmental science',
+      'data science',
+      'climate',
+      'remote sensing',
+      'gis'
+    ],
     prerequisites: [
       'Data science fundamentals',
       'Python programming',
@@ -1330,7 +1367,13 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Molecular Gastronomy',
       'Sustainable Food Production'
     ],
-    tags: ['food technology', 'food safety', 'fermentation', 'molecular gastronomy', 'sustainability'],
+    tags: [
+      'food technology',
+      'food safety',
+      'fermentation',
+      'molecular gastronomy',
+      'sustainability'
+    ],
     prerequisites: [
       'Chemistry fundamentals',
       'Microbiology basics',
@@ -1384,7 +1427,13 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Space Mission Planning',
       'Avionics & Flight Control'
     ],
-    tags: ['aerospace engineering', 'aviation', 'satellite', 'space', 'avionics'],
+    tags: [
+      'aerospace engineering',
+      'aviation',
+      'satellite',
+      'space',
+      'avionics'
+    ],
     prerequisites: [
       'Engineering fundamentals',
       'Physics và mathematics',
@@ -1438,7 +1487,13 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Biomedical Nanotechnology',
       'Environmental Applications'
     ],
-    tags: ['nanotechnology', 'nanomaterials', 'quantum devices', 'nanoelectronics', 'biomedical'],
+    tags: [
+      'nanotechnology',
+      'nanomaterials',
+      'quantum devices',
+      'nanoelectronics',
+      'biomedical'
+    ],
     prerequisites: [
       'Chemistry và physics fundamentals',
       'Materials science knowledge',
