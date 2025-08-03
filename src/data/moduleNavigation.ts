@@ -60,6 +60,17 @@ export const K2Module = {
   RenewableEnergy: 'renewable-energy',
   AdvancedAI: 'advanced-ai',
 
+  // 2025 High-Demand Modules (Tier 2)
+  ElectricVehicleTech: 'electric-vehicle-tech',
+  BlockchainDeFi: 'blockchain-defi',
+  BiomedicalEngineering: 'biomedical-engineering',
+
+  // 2025 High-Demand Modules (Tier 3)
+  EnvironmentalDataScience: 'environmental-data-science',
+  FoodTechnology: 'food-technology',
+  AerospaceEngineering: 'aerospace-engineering',
+  Nanotechnology: 'nanotechnology',
+
   // 2025 Trend-Based Modules
   ContentCreator: 'content-creator',
   TeenWellness: 'teen-wellness',
@@ -1068,6 +1079,396 @@ export const moduleNavigation: ModuleNavigation[] = [
         title: 'AI Ethics, Bias & Production Deployment',
         duration: '170 phút',
         difficulty: 'Nâng cao'
+      }
+    ]
+  },
+
+  // 2025 High-Demand University Modules (Tier 2 - Triển khai Q2 2025)
+  {
+    id: K2Module.ElectricVehicleTech,
+    title: 'Electric Vehicle Technology',
+    subtitle: 'Công nghệ xe điện tiên tiến',
+    description:
+      'Comprehensive EV technology education với focus trên VinFast ecosystem. Cover powertrain systems, autonomous driving, charging infrastructure và manufacturing quality control.',
+    category: 'professional',
+    icon: '⚡',
+    color: 'from-yellow-600 to-amber-600',
+    totalDuration: '15-18 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '15-18 giờ',
+    href: '/learning/electric-vehicle-tech',
+    features: [
+      'EV Powertrain Design',
+      'Autonomous Driving Systems',
+      'Charging Infrastructure',
+      'Manufacturing & Quality Control'
+    ],
+    tags: ['electric vehicle', 'ev', 'automotive', 'vinfast', 'battery technology'],
+    prerequisites: [
+      'Electrical engineering fundamentals',
+      'Automotive systems knowledge',
+      'Battery technology basics',
+      'Control systems understanding'
+    ],
+    lessons: [
+      {
+        id: 'ev-powertrain-battery-systems',
+        title: 'EV Powertrain & Battery Management Systems',
+        duration: '220 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'autonomous-driving-vietnamese-roads',
+        title: 'Autonomous Driving Technology for Vietnamese Roads',
+        duration: '240 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'ev-charging-infrastructure-v2g',
+        title: 'EV Charging Infrastructure & Vehicle-to-Grid Technology',
+        duration: '200 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'ev-manufacturing-quality-control',
+        title: 'EV Manufacturing & Quality Control Systems',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: K2Module.BlockchainDeFi,
+    title: 'Blockchain & DeFi Development',
+    subtitle: 'Blockchain và tài chính phi tập trung',
+    description:
+      'Master blockchain technology từ fundamentals đến DeFi applications. Cover smart contracts, cryptocurrency, NFT và regulatory compliance cho Vietnamese fintech market.',
+    category: 'professional',
+    icon: '⛓️',
+    color: 'from-orange-600 to-yellow-600',
+    totalDuration: '18-22 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '18-22 giờ',
+    href: '/learning/blockchain-defi',
+    features: [
+      'Blockchain Fundamentals',
+      'Smart Contract Development',
+      'DeFi Protocol Design',
+      'NFT & Metaverse Applications',
+      'Regulatory Compliance'
+    ],
+    tags: ['blockchain', 'defi', 'smart contracts', 'cryptocurrency', 'nft', 'fintech'],
+    prerequisites: [
+      'Programming experience (Solidity, JavaScript)',
+      'Cryptography basics',
+      'Financial technology understanding',
+      'Web3 development concepts'
+    ],
+    lessons: [
+      {
+        id: 'blockchain-fundamentals-cryptocurrency',
+        title: 'Blockchain Fundamentals & Cryptocurrency Technology',
+        duration: '200 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'smart-contracts-ethereum-development',
+        title: 'Smart Contracts & Ethereum Development',
+        duration: '240 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'defi-protocols-yield-farming',
+        title: 'DeFi Protocols & Yield Farming Strategies',
+        duration: '220 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'nft-metaverse-applications',
+        title: 'NFT Development & Metaverse Applications',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'blockchain-regulatory-compliance',
+        title: 'Blockchain Regulatory Compliance & Vietnamese Fintech',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: K2Module.BiomedicalEngineering,
+    title: 'Biomedical Engineering & Medical Devices',
+    subtitle: 'Kỹ thuật y sinh & thiết bị y tế',
+    description:
+      'Advanced biomedical engineering với focus trên medical device development, biosignal processing, regenerative medicine và surgical robotics cho Vietnamese healthcare.',
+    category: 'professional',
+    icon: '🫀',
+    color: 'from-red-600 to-pink-600',
+    totalDuration: '16-20 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '16-20 giờ',
+    href: '/learning/biomedical-engineering',
+    features: [
+      'Medical Device Design',
+      'Biosignal Processing',
+      'Regenerative Medicine',
+      'Surgical Robotics',
+      'Healthcare Technology'
+    ],
+    tags: ['biomedical engineering', 'medical devices', 'healthcare', 'biosignals', 'surgical robotics'],
+    prerequisites: [
+      'Engineering fundamentals',
+      'Biology và anatomy knowledge',
+      'Signal processing basics',
+      'Medical device regulations understanding'
+    ],
+    lessons: [
+      {
+        id: 'medical-device-design-development',
+        title: 'Medical Device Design & Development Process',
+        duration: '240 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'biosignal-processing-analysis',
+        title: 'Biosignal Processing & Medical Data Analysis',
+        duration: '220 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'regenerative-medicine-tissue-engineering',
+        title: 'Regenerative Medicine & Tissue Engineering',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'surgical-robotics-automation',
+        title: 'Surgical Robotics & Medical Automation Systems',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+
+  // 2025 High-Demand University Modules (Tier 3 - Triển khai Q3-Q4 2025)
+  {
+    id: K2Module.EnvironmentalDataScience,
+    title: 'Environmental Data Science',
+    subtitle: 'Khoa học dữ liệu môi trường',
+    description:
+      'Apply data science cho environmental challenges trong Vietnamese context. Cover climate data analysis, pollution monitoring, remote sensing và environmental modeling.',
+    category: 'professional',
+    icon: '🌍',
+    color: 'from-green-600 to-emerald-600',
+    totalDuration: '14-16 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '14-16 giờ',
+    href: '/learning/environmental-data-science',
+    features: [
+      'Climate Data Analysis',
+      'Environmental Monitoring',
+      'Remote Sensing & GIS',
+      'Environmental Machine Learning'
+    ],
+    tags: ['environmental science', 'data science', 'climate', 'remote sensing', 'gis'],
+    prerequisites: [
+      'Data science fundamentals',
+      'Python programming',
+      'Statistics và machine learning',
+      'Environmental science basics'
+    ],
+    lessons: [
+      {
+        id: 'climate-data-analysis-modeling',
+        title: 'Climate Data Analysis & Environmental Modeling',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'air-water-quality-monitoring',
+        title: 'Air & Water Quality Monitoring Systems',
+        duration: '220 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'satellite-remote-sensing-gis',
+        title: 'Satellite Remote Sensing & GIS Applications',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'environmental-machine-learning',
+        title: 'Machine Learning for Environmental Prediction',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: K2Module.FoodTechnology,
+    title: 'Food Technology & Innovation',
+    subtitle: 'Công nghệ thực phẩm và đổi mới',
+    description:
+      'Advanced food technology với focus trên Vietnamese food industry modernization. Cover food safety, fermentation technology, molecular gastronomy và sustainable food production.',
+    category: 'professional',
+    icon: '🍜',
+    color: 'from-amber-600 to-orange-600',
+    totalDuration: '12-15 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '12-15 giờ',
+    href: '/learning/food-technology',
+    features: [
+      'Food Safety & Quality Control',
+      'Fermentation Technology',
+      'Molecular Gastronomy',
+      'Sustainable Food Production'
+    ],
+    tags: ['food technology', 'food safety', 'fermentation', 'molecular gastronomy', 'sustainability'],
+    prerequisites: [
+      'Chemistry fundamentals',
+      'Microbiology basics',
+      'Food science knowledge',
+      'Quality control understanding'
+    ],
+    lessons: [
+      {
+        id: 'food-safety-quality-control',
+        title: 'Food Safety & Quality Control Systems',
+        duration: '180 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'fermentation-technology-vietnamese-foods',
+        title: 'Fermentation Technology & Traditional Vietnamese Foods',
+        duration: '200 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'molecular-gastronomy-food-innovation',
+        title: 'Molecular Gastronomy & Food Innovation',
+        duration: '160 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'sustainable-food-production',
+        title: 'Sustainable Food Production & Supply Chain',
+        duration: '180 phút',
+        difficulty: 'Trung bình'
+      }
+    ]
+  },
+  {
+    id: K2Module.AerospaceEngineering,
+    title: 'Aerospace Engineering & Avionics',
+    subtitle: 'Kỹ thuật hàng không vũ trụ',
+    description:
+      'Comprehensive aerospace engineering education với focus trên Vietnamese aviation industry development. Cover aircraft design, satellite systems, space missions và avionics.',
+    category: 'professional',
+    icon: '✈️',
+    color: 'from-sky-600 to-blue-600',
+    totalDuration: '16-20 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '16-20 giờ',
+    href: '/learning/aerospace-engineering',
+    features: [
+      'Aircraft Design & Aerodynamics',
+      'Satellite Technology',
+      'Space Mission Planning',
+      'Avionics & Flight Control'
+    ],
+    tags: ['aerospace engineering', 'aviation', 'satellite', 'space', 'avionics'],
+    prerequisites: [
+      'Engineering fundamentals',
+      'Physics và mathematics',
+      'Fluid dynamics understanding',
+      'Control systems knowledge'
+    ],
+    lessons: [
+      {
+        id: 'aircraft-design-aerodynamics',
+        title: 'Aircraft Design & Aerodynamics Engineering',
+        duration: '240 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'satellite-technology-communication',
+        title: 'Satellite Technology & Communication Systems',
+        duration: '220 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'space-mission-planning-systems',
+        title: 'Space Mission Planning & Systems Engineering',
+        duration: '200 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'avionics-flight-control-systems',
+        title: 'Avionics & Flight Control Systems',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: K2Module.Nanotechnology,
+    title: 'Công Nghệ Nano & Vật Liệu Tiên Tiến',
+    subtitle: 'Nanotechnology và advanced materials',
+    description:
+      'Khám phá thế giới công nghệ nano với các ứng dụng tiên tiến trong y học, điện tử, môi trường và năng lượng. Học cách tổng hợp vật liệu nano, phát triển thiết bị quantum và tạo ra các giải pháp bền vững.',
+    category: 'professional',
+    icon: '⚛️',
+    color: 'from-purple-600 to-violet-600',
+    totalDuration: '18-22 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '18-22 giờ',
+    href: '/learning/nanotechnology',
+    features: [
+      'Nanomaterials Synthesis',
+      'Nanoelectronics & Quantum Devices',
+      'Biomedical Nanotechnology',
+      'Environmental Applications'
+    ],
+    tags: ['nanotechnology', 'nanomaterials', 'quantum devices', 'nanoelectronics', 'biomedical'],
+    prerequisites: [
+      'Chemistry và physics fundamentals',
+      'Materials science knowledge',
+      'Quantum mechanics basics',
+      'Laboratory safety protocols'
+    ],
+    lessons: [
+      {
+        id: 'nanomaterials-synthesis-characterization',
+        title: 'Nanomaterials Synthesis & Characterization',
+        duration: '195 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'nanoelectronics-quantum-devices',
+        title: 'Nanoelectronics & Quantum Devices',
+        duration: '210 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'biomedical-nanotechnology',
+        title: 'Biomedical Nanotechnology & Drug Delivery',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'environmental-nanotechnology',
+        title: 'Environmental Nanotechnology & Sustainable Applications',
+        duration: '165 phút',
+        difficulty: 'Trung bình'
       }
     ]
   },

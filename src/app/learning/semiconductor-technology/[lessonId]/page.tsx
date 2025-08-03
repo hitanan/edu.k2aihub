@@ -1,6 +1,7 @@
 import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
 import { semiconductorLessons, SemiconductorLesson } from '@/data/semiconductor-technology'
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { PageProps } from '@/types';
 
 // Convert SemiconductorLesson to BaseLessonData
 function convertToLesson(semiconductorLesson: SemiconductorLesson): BaseLessonData {
@@ -46,13 +47,13 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: { lessonId: string } }) {
+export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
   return generateLessonMetadata(lessonId, convertedLessons);
 }
 
 // Page component with standardized config
-export default async function SemiconductorLessonPage({ params }: { params: { lessonId: string } }) {
+export default async function SemiconductorLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'semiconductor-technology',
     moduleTitle: 'Semiconductor Technology & Microchip Design',

@@ -34,7 +34,6 @@ Location: `src/components/learning/ModulePageTemplate.tsx`
 interface ModulePageTemplateProps {
   moduleData: ModuleData;
   lessons: Lesson[];
-  heroImageUrl?: string;
   additionalStats?: Array<{
     label: string;
     value: string;
@@ -215,7 +214,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: PageProps }) {
+export async function generateMetadata({ params }: PageProps) {
   return generateLessonMetadata(params.lessonId, [MODULE_NAME]Lessons);
 }
 

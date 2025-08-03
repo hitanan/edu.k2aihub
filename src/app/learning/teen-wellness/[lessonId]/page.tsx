@@ -1,5 +1,6 @@
 import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
 import { teenWellnessLessons, TeenWellnessLessonData } from '@/data/teen-wellness'
+import { PageProps } from '@/types';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -7,13 +8,13 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
   return generateLessonMetadata(lessonId, teenWellnessLessons);
 }
 
 // Page component with standardized config
-export default async function TeenWellnessLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+export default async function TeenWellnessLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<TeenWellnessLessonData> = {
     moduleName: 'teen-wellness',
     moduleTitle: 'Teen Wellness & Mental Health',

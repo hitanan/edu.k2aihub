@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
   return generateLessonMetadata(lessonId, youngEntrepreneurLessons);
 }

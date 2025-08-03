@@ -1,11 +1,11 @@
 import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai'
+import { electricVehicleLessons, type ElectricVehicleLesson } from '@/data/electric-vehicle-tech'
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { Brain, Eye, MessageSquare, Target, Shield } from 'lucide-react';
+import { Car, Battery, Zap, Settings } from 'lucide-react';
 
-// Convert AdvancedAILesson to BaseLessonData
-function convertToLesson(lesson: AdvancedAILesson): BaseLessonData {
+// Convert ElectricVehicleLesson to BaseLessonData
+function convertToLesson(lesson: ElectricVehicleLesson): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -21,7 +21,7 @@ function convertToLesson(lesson: AdvancedAILesson): BaseLessonData {
     caseStudies: lesson.caseStudies?.map((study) => ({
       title: study.title,
       organization: study.company || 'Organization',
-      problem: study.problem,
+      problem: study.challenge,
       solution: study.solution,
       impact: study.impact,
       innovations: study.technologies || []
@@ -31,7 +31,7 @@ function convertToLesson(lesson: AdvancedAILesson): BaseLessonData {
 }
 
 // Convert all lessons to BaseLessonData format
-const convertedLessons = advancedAILessons.map(convertToLesson);
+const convertedLessons = electricVehicleLessons.map(convertToLesson);
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -44,42 +44,40 @@ export async function generateMetadata({ params }: PageProps) {
   return generateLessonMetadata(lessonId, convertedLessons);
 }
 
-// Get icon for AI domain field
-function getAIDomainIcon(aiDomain: string) {
-  switch (aiDomain) {
-    case 'Deep Learning':
-      return <Brain className="w-5 h-5 text-purple-500" />;
-    case 'Computer Vision':
-      return <Eye className="w-5 h-5 text-blue-500" />;
-    case 'Natural Language Processing':
-      return <MessageSquare className="w-5 h-5 text-green-500" />;
-    case 'Reinforcement Learning':
-      return <Target className="w-5 h-5 text-orange-500" />;
-    case 'AI Ethics':
-      return <Shield className="w-5 h-5 text-red-500" />;
+// Get icon for vehicle type field
+function getVehicleTypeIcon(vehicleType: string) {
+  switch (vehicleType) {
+    case 'Electric Vehicle':
+      return <Car className="w-5 h-5 text-blue-500" />;
+    case 'Autonomous Vehicle':
+      return <Car className="w-5 h-5 text-purple-500" />;
+    case 'Infrastructure':
+      return <Zap className="w-5 h-5 text-yellow-500" />;
+    case 'Manufacturing':
+      return <Settings className="w-5 h-5 text-gray-500" />;
     default:
-      return <Brain className="w-5 h-5 text-indigo-500" />;
+      return <Battery className="w-5 h-5 text-green-500" />;
   }
 }
 
 // Page component with standardized config
-export default async function AdvancedAILessonPage({ params }: PageProps) {
+export default async function ElectricVehicleLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<BaseLessonData> = {
-    moduleName: 'advanced-ai',
-    moduleTitle: 'Advanced AI & Machine Learning',
-    modulePath: '/learning/advanced-ai',
+    moduleName: 'electric-vehicle-tech',
+    moduleTitle: 'Electric Vehicle Technology',
+    modulePath: '/learning/electric-vehicle-tech',
     lessons: convertedLessons,
-    primaryColor: 'purple',
-    secondaryColor: 'indigo',
-    gradientColors: 'from-slate-900 via-purple-900 to-slate-900',
+    primaryColor: 'blue',
+    secondaryColor: 'cyan',
+    gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
     getFieldIcon: (field: string) => {
-      if (field === 'aiDomain') return getAIDomainIcon('default');
-      return <Brain className="w-5 h-5" />;
+      if (field === 'vehicleType') return getVehicleTypeIcon('default');
+      return <Car className="w-5 h-5" />;
     },
     getFieldValue: (lesson) => {
-      // Find original lesson to get aiDomain
-      const originalLesson = advancedAILessons.find(l => l.id === lesson.id);
-      return originalLesson?.aiDomain || 'Advanced AI';
+      // Find original lesson to get vehicleType
+      const originalLesson = electricVehicleLessons.find(l => l.id === lesson.id);
+      return originalLesson?.vehicleType || 'EV Technology';
     }
   }
   

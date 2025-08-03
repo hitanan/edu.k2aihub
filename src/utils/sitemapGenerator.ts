@@ -13,6 +13,15 @@ import { aiArtLessons } from '@/data/ai-art-creative-tech';
 import { cyberSecurityLessons } from '@/data/cybersecurity';
 import { biotechnologyLessons } from '@/data/biotechnology';
 
+// Import NEW MODULES (Tier 2 & Tier 3)
+import { electricVehicleLessons } from '@/data/electric-vehicle-tech';
+import { blockchainLessons } from '@/data/blockchain-defi';
+import { biomedicalEngineeringLessons } from '@/data/biomedical-engineering';
+import { environmentalDataScienceLessons } from '@/data/environmental-data-science';
+import { foodTechnologyLessons } from '@/data/food-technology';
+import { aerospaceEngineeringLessons } from '@/data/aerospace-engineering';
+import { nanotechnologyLessons } from '@/data/nanotechnology';
+
 // Utility to automatically generate sitemap entries for all pages
 const baseUrl = 'https://k2aihub.com';
 export function generateSitemapEntries(): MetadataRoute.Sitemap {
@@ -95,6 +104,42 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/learning/biotechnology`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    // New 2025 High-Demand Modules (Tier 2 & Tier 3)
+    {
+      url: `${baseUrl}/learning/electric-vehicle-tech`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/blockchain-defi`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/biomedical-engineering`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/environmental-data-science`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/food-technology`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/aerospace-engineering`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const
+    },
+    {
+      url: `${baseUrl}/learning/nanotechnology`,
       priority: 0.8,
       changeFrequency: 'weekly' as const
     }
@@ -226,6 +271,56 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
+  // NEW 2025 High-Demand Modules (Tier 2 & Tier 3) lesson pages
+  const electricVehiclePages = electricVehicleLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/electric-vehicle-tech/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  const blockchainPages = blockchainLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/blockchain-defi/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  const biomedicalEngineeringPages = biomedicalEngineeringLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/biomedical-engineering/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  const environmentalDataSciencePages = environmentalDataScienceLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/environmental-data-science/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  const foodTechnologyPages = foodTechnologyLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/food-technology/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  const aerospaceEngineeringPages = aerospaceEngineeringLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/aerospace-engineering/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  const nanotechnologyPages = nanotechnologyLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/nanotechnology/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
   // Region pages
   const regionSlugs = [
     'bac-bo',
@@ -301,6 +396,14 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     ...aiArtPages,
     ...cyberSecurityPages,
     ...biotechnologyPages,
+    // NEW 2025 High-Demand Modules
+    ...electricVehiclePages,
+    ...blockchainPages,
+    ...biomedicalEngineeringPages,
+    ...environmentalDataSciencePages,
+    ...foodTechnologyPages,
+    ...aerospaceEngineeringPages,
+    ...nanotechnologyPages,
     ...regionPages,
     ...majorCityPages, // High priority cities first
     ...regularCityPages // Regular cities
@@ -360,7 +463,7 @@ export function generateRSSMetadata() {
   return {
     title: 'K2AI - Nền tảng học tập thông minh',
     description:
-      'Cập nhật mới nhất từ K2AI - 14 module giáo dục: Địa lý Việt Nam, AI, Digital Marketing, Financial Literacy, Green Technology, Game Development, AI Art, Cybersecurity, Biotechnology, STEM, Programming và nhiều hơn nữa',
+      'Cập nhật mới nhất từ K2AI - 21 module giáo dục: Địa lý Việt Nam, AI, Digital Marketing, Financial Literacy, Green Technology, Game Development, AI Art, Cybersecurity, Biotechnology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering, Environmental Data Science, Food Technology, Aerospace Engineering, Nanotechnology, STEM, Programming và nhiều hơn nữa',
     link: baseUrl,
     language: 'vi-VN',
     managingEditor: 'info@k2aihub.com',

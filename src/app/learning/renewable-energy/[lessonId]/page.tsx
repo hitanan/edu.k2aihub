@@ -39,8 +39,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: PageProps }) {
-  const { lessonId } = await params.params;
+export async function generateMetadata({ params }: PageProps) {
+  const { lessonId } = await params;
   return generateLessonMetadata(lessonId, convertedLessons);
 }
 
@@ -61,7 +61,7 @@ function getEnergyTypeIcon(energyType: string) {
 }
 
 // Page component with standardized config
-export default async function RenewableEnergyLessonPage({ params }: { params: PageProps }) {
+export default async function RenewableEnergyLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'renewable-energy',
     moduleTitle: 'Năng Lượng Tái Tạo',
@@ -81,6 +81,6 @@ export default async function RenewableEnergyLessonPage({ params }: { params: Pa
     }
   }
   
-  const { lessonId } = await params.params;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -5,6 +5,11 @@ import Link from 'next/link';
 import { Search, Clock, Star, ChevronRight, Filter } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
+import { 
+  enhancedVietnameseSearch, 
+  getVietnameseSearchSuggestions,
+  searchModulesVietnamese 
+} from '@/utils/vietnameseSearch';
 
 // Transform moduleNavigation data to match AllLearningPageClient format
 const allLearningModules = moduleNavigation
@@ -66,22 +71,31 @@ export default function AllLearningPageClient() {
   const [sortBy, setSortBy] = useState('popular'); // popular, duration, newest
   const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
 
-  // Popular search terms and suggestions
+  // Popular search terms and suggestions with Vietnamese support
   const popularSearchTerms = [
     'Python', 'AI', 'Machine Learning', 'Marketing', 'Lập trình', 
     'Web Development', 'Data Science', 'Blockchain', 'Game Development',
-    'Arduino', 'IoT', 'Cybersecurity', 'Startup', 'Business', 'Fintech'
+    'Arduino', 'IoT', 'Cybersecurity', 'Startup', 'Business', 'Fintech',
+    'lap trinh', 'tri tue nhan tao', 'kinh doanh', 'an ninh mang'
   ];
 
   const searchSuggestions = [
     { term: 'lập trình Python', category: 'programming', description: 'Học Python từ cơ bản đến nâng cao' },
+    { term: 'lap trinh python', category: 'programming', description: 'Học Python từ cơ bản đến nâng cao (không dấu)' },
     { term: 'AI và Machine Learning', category: 'trending', description: 'Trí tuệ nhân tạo và học máy' },
+    { term: 'tri tue nhan tao', category: 'trending', description: 'Trí tuệ nhân tạo (không dấu)' },
     { term: 'Digital Marketing', category: 'professional', description: 'Marketing và quảng cáo số' },
     { term: 'Startup và Khởi nghiệp', category: 'vietnamese', description: 'Xây dựng startup thành công' },
+    { term: 'khoi nghiep', category: 'vietnamese', description: 'Khởi nghiệp (không dấu)' },
     { term: 'Cybersecurity', category: 'security', description: 'An ninh mạng và bảo mật' },
+    { term: 'an ninh mang', category: 'security', description: 'An ninh mạng (không dấu)' },
     { term: 'Game Development', category: 'creative', description: 'Phát triển game và ứng dụng' },
+    { term: 'phat trien game', category: 'creative', description: 'Phát triển game (không dấu)' },
     { term: 'Arduino và IoT', category: 'stem', description: 'Lập trình phần cứng và IoT' },
-    { term: 'Blockchain và Crypto', category: 'trending', description: 'Công nghệ Blockchain và tiền số' }
+    { term: 'Blockchain và Crypto', category: 'trending', description: 'Công nghệ Blockchain và tiền số' },
+    { term: 'cong nghe nano', category: 'professional', description: 'Công nghệ nano và vật liệu tiên tiến' },
+    { term: 'y te so', category: 'vietnamese', description: 'Y tế số và công nghệ y tế' },
+    { term: 'moi truong', category: 'professional', description: 'Khoa học môi trường và bền vững' }
   ];
 
   // Effect to read URL parameters on mount
@@ -143,78 +157,12 @@ export default function AllLearningPageClient() {
     updateURL(selectedCategory, selectedLevel, searchTerm, sort);
   };
 
-  // Filter modules based on search and filters with enhanced search
-  const filteredModules = allLearningModules.filter(module => {
-    const searchLower = searchTerm.toLowerCase();
-    
-    // Basic search across module info
-    const matchesBasicSearch = module.title.toLowerCase().includes(searchLower) ||
-                               module.description.toLowerCase().includes(searchLower) ||
-                               module.subtitle.toLowerCase().includes(searchLower) ||
-                               module.tags.some(tag => tag.toLowerCase().includes(searchLower));
-    
-    // Enhanced search through features and extended content
-    const matchesFeatures = module.features.some(feature => 
-      feature.toLowerCase().includes(searchLower)
-    );
-    
-    // Search in categories for better discoverability
-    const matchesCategory = getModuleCategories(module).some(cat => {
-      const categoryTitle = categories[cat as keyof typeof categories]?.title.toLowerCase() || '';
-      return categoryTitle.includes(searchLower) || cat.toLowerCase().includes(searchLower);
-    });
-    
-    // Search in level/difficulty
-    const matchesLevel = module.level?.toLowerCase().includes(searchLower);
-    
-    // Additional Vietnamese keyword matching
-    const vietnameseKeywords: { [key: string]: string[] } = {
-      'lập trình': ['programming', 'code', 'dev', 'developer'],
-      'ai': ['artificial intelligence', 'machine learning', 'trí tuệ nhân tạo'],
-      'marketing': ['quảng cáo', 'tiếp thị', 'digital marketing'],
-      'kinh doanh': ['business', 'doanh nghiệp', 'startup'],
-      'tài chính': ['finance', 'financial', 'fintech', 'tiền'],
-      'an ninh': ['security', 'cybersecurity', 'bảo mật'],
-      'khoa học': ['science', 'sinh học', 'biotechnology'],
-      'robot': ['robotics', 'arduino', 'iot'],
-      'game': ['gaming', 'phát triển game', 'unity'],
-      'web': ['website', 'web development', 'html', 'css', 'javascript'],
-      'mobile': ['app', 'điện thoại', 'android', 'ios'],
-      'data': ['dữ liệu', 'data science', 'analytics'],
-      'blockchain': ['crypto', 'bitcoin', 'defi'],
-      'design': ['thiết kế', 'ui', 'ux', 'graphic'],
-      'content': ['nội dung', 'creator', 'youtube', 'social media']
-    };
-    
-    // Check Vietnamese keyword matching
-    const matchesVietnameseKeywords = Object.entries(vietnameseKeywords).some(([vn, en]) => {
-      if (vn.includes(searchLower)) {
-        return en.some(keyword => 
-          module.title.toLowerCase().includes(keyword) ||
-          module.description.toLowerCase().includes(keyword) ||
-          module.features.some(feature => feature.toLowerCase().includes(keyword))
-        );
-      }
-      if (en.some(keyword => keyword.includes(searchLower))) {
-        return module.title.toLowerCase().includes(vn) ||
-               module.description.toLowerCase().includes(vn) ||
-               module.features.some(feature => feature.toLowerCase().includes(vn));
-      }
-      return false;
-    });
-    
-    // Combine all search criteria
-    const matchesSearch = searchTerm === '' || 
-                         matchesBasicSearch || 
-                         matchesFeatures || 
-                         matchesCategory || 
-                         matchesLevel ||
-                         matchesVietnameseKeywords;
-    
+  // Filter modules based on search and filters with enhanced Vietnamese search
+  const filteredModules = searchModulesVietnamese(allLearningModules, searchTerm).filter(module => {
     const matchesCategoryFilter = selectedCategory === 'all' || moduleInCategory(module, selectedCategory);
     const matchesLevelFilter = selectedLevel === 'Tất cả' || module.level === selectedLevel;
     
-    return matchesSearch && matchesCategoryFilter && matchesLevelFilter;
+    return matchesCategoryFilter && matchesLevelFilter;
   });
 
   // Sort modules
@@ -240,7 +188,8 @@ export default function AllLearningPageClient() {
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Khám phá <strong className="text-blue-300">{allLearningModules.length} khóa học chuyên sâu</strong> từ 
-              Vietnamese business, AI technology đến programming và science. 
+              Vietnamese business, AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering, 
+              Environmental Data Science, Food Technology, Aerospace Engineering, Nanotechnology đến programming và science. 
               Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.
             </p>
             
@@ -250,7 +199,7 @@ export default function AllLearningPageClient() {
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Tìm kiếm khóa học, kỹ năng, công nghệ, bài học... (VD: 'lập trình', 'AI', 'marketing', 'Python')"
+                  placeholder="Tìm kiếm khóa học... (Hỗ trợ tiếng Việt có dấu và không dấu - VD: 'lập trình', 'lap trinh', 'AI', 'marketing')"
                   value={searchTerm}
                   onChange={(e) => handleSearchChange(e.target.value)}
                   onFocus={() => setShowSearchSuggestions(true)}
@@ -258,7 +207,7 @@ export default function AllLearningPageClient() {
                   className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
                 />
                 
-                {/* Search Suggestions */}
+                {/* Enhanced Search Suggestions with Vietnamese support */}
                 {showSearchSuggestions && searchTerm === '' && (
                   <div className="absolute top-full left-0 right-0 mt-2 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-2xl p-4 z-50">
                     <div className="mb-3">
@@ -279,10 +228,22 @@ export default function AllLearningPageClient() {
                       </div>
                     </div>
                     
+                    <div className="mb-3">
+                      <h4 className="text-green-300 font-medium mb-2">🇻🇳 Hỗ trợ tiếng Việt không dấu:</h4>
+                      <p className="text-gray-400 text-sm mb-2">
+                        Bạn có thể tìm kiếm bằng tiếng Việt có dấu hoặc không dấu. Ví dụ:
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;lập trình&rdquo; = &ldquo;lap trinh&rdquo;</span>
+                        <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;trí tuệ nhân tạo&rdquo; = &ldquo;tri tue nhan tao&rdquo;</span>
+                        <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;an ninh mạng&rdquo; = &ldquo;an ninh mang&rdquo;</span>
+                      </div>
+                    </div>
+                    
                     <div>
                       <h4 className="text-white font-medium mb-2">💡 Gợi ý khóa học:</h4>
                       <div className="space-y-2">
-                        {searchSuggestions.slice(0, 4).map((suggestion) => (
+                        {searchSuggestions.slice(0, 6).map((suggestion) => (
                           <button
                             key={suggestion.term}
                             onClick={() => {

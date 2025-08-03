@@ -88,6 +88,7 @@ export default function AdvancedAIPage() {
     industryApplications: [
       'VinAI Research developing Vietnamese language models và computer vision',
       'FPT AI building smart city solutions cho traffic monitoring và urban planning',
+      'DataHouse real-world client projects in domains such as ERP, healthcare, internal chatbot',
       'Banking sector using AI cho fraud detection và risk assessment',
       'Healthcare AI cho medical imaging và diagnosis assistance',
       'E-commerce platforms với recommendation systems và chatbots',
