@@ -20,12 +20,24 @@ const Header: React.FC = () => {
   // Learning modules - grouped by category
   const learningModules = [
     {
+      category: 'Vietnamese-Specific',
+      icon: '🇻🇳',
+      modules: [
+        { name: 'Vietnamese Language Tech', href: '/learning/vietnamese-language-tech', icon: '🇻🇳' },
+        { name: 'Vietnamese Business', href: '/learning/vietnamese-business', icon: '🏪' },
+        { name: 'Digital Government', href: '/learning/digital-government', icon: '🏛️' },
+        { name: 'Vietnamese Culture', href: '/learning/vietnamese-culture', icon: '🏛️' },
+        { name: 'Vietnamese Healthcare', href: '/learning/vietnamese-healthcare', icon: '🏥' },
+      ]
+    },
+    {
       category: 'Professional Skills',
       icon: '💼',
       modules: [
         { name: 'Digital Marketing', href: '/learning/digital-marketing', icon: '📱' },
         { name: 'Financial Literacy', href: '/learning/financial-literacy', icon: '💰' },
         { name: 'Green Technology', href: '/learning/green-technology', icon: '🌱' },
+        { name: 'Mental Health Tech', href: '/learning/mental-health-tech', icon: '🧠' },
       ]
     },
     {
@@ -59,7 +71,6 @@ const Header: React.FC = () => {
       icon: '🔬',
       modules: [
         { name: 'STEM Education', href: '/learning/stem', icon: '🔬' },
-        { name: 'Mental Health Tech', href: '/learning/mental-health-tech', icon: '🧠' },
       ]
     }
   ];
@@ -112,7 +123,11 @@ const Header: React.FC = () => {
             ))}
 
             {/* Learning dropdown */}
-            <div className="relative">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsLearningDropdownOpen(true)}
+              onMouseLeave={() => setIsLearningDropdownOpen(false)}
+            >
               <button
                 type="button"
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center space-x-2 ${
@@ -120,8 +135,6 @@ const Header: React.FC = () => {
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                 }`}
-                onMouseEnter={() => setIsLearningDropdownOpen(true)}
-                onMouseLeave={() => setIsLearningDropdownOpen(false)}
               >
                 <Code className="w-4 h-4" />
                 <span>Learning Modules</span>
@@ -130,11 +143,7 @@ const Header: React.FC = () => {
 
               {/* Dropdown content */}
               {isLearningDropdownOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden z-50"
-                  onMouseEnter={() => setIsLearningDropdownOpen(true)}
-                  onMouseLeave={() => setIsLearningDropdownOpen(false)}
-                >
+                <div className="absolute top-full left-0 mt-1 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden z-50">
                   <div className="p-6 max-h-96 overflow-y-auto">
                     {learningModules.map((category, index) => (
                       <div key={category.category} className={index > 0 ? 'mt-6' : ''}>
@@ -182,8 +191,8 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200/50 bg-white/95 backdrop-blur-md">
-            <div className="px-2 pt-4 pb-6 space-y-2">
+          <div className="lg:hidden fixed inset-x-0 top-16 bg-white/95 backdrop-blur-md border-b border-gray-200/50 shadow-lg z-40">
+            <div className="px-2 pt-4 pb-6 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
               {/* Core modules */}
               {coreModules.map((item) => (
                 <Link

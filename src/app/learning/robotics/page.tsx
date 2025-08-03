@@ -3,6 +3,7 @@ import { roboticsLessons, RoboticsLesson } from '@/data/robotics'
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate'
 import { createTitle, createDescription, createKeywords } from '@/utils/seo'
 import type { Metadata } from "next";
+import { K2Module } from '@/data/moduleNavigation';
 
 export const metadata: Metadata = {
   title: createTitle("Học Robotics - Từ Cơ Bản Đến Nâng Cao"),
@@ -112,26 +113,7 @@ export default function RoboticsPage() {
         items: ['Industrial Automation', 'Medical Robotics', 'Home Assistants', 'Space Exploration']
       }
     ],
-    relatedModules: [
-      {
-        href: '/learning/arduino',
-        icon: '⚡',
-        title: 'Arduino & IoT',
-        description: 'Hardware Programming Foundation'
-      },
-      {
-        href: '/learning/python',
-        icon: '🐍',
-        title: 'Python Programming',
-        description: 'AI & Control Algorithms'
-      },
-      {
-        href: '/stem',
-        icon: '🔬',
-        title: 'STEM Education',
-        description: 'Engineering Fundamentals'
-      }
-    ]
+    relatedModules: [K2Module.Arduino, K2Module.Python, K2Module.STEM]
   }
 
   return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />

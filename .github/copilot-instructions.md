@@ -316,6 +316,17 @@ src/
 - **Breadcrumbs**: Implement breadcrumbs for better navigation and SEO
 - **Navigation generation**: navigation should be generated dynamically based on the module structure, data in `src/data` for better user experience and SEO
 
+## Test and quick check to see all the issue
+
+When you run and build any comment below please wait until it complete, do not try to do the same another only after for a short time
+
+```bash
+npx tsc --noEmit # TypeScript type checking
+npm run lint     # Code quality checks
+npm run dev      # Development with turbopack
+npm run build    # Production build with static generation, must set NODE_ENV=production before running
+```
+
 ## Deployment Configuration
 
 ### GitHub Pages Setup:
@@ -327,13 +338,12 @@ src/
 
 ### Build Process:
 
-When run build please wait until the build completes
-
 ```bash
 npm run build    # Production build with static generation, must set NODE_ENV=production before running
 npm run start    # Production server (for testing)
 npm run dev      # Development with turbopack
 npm run lint     # Code quality checks
+
 ```
 
 ## Quality Assurance

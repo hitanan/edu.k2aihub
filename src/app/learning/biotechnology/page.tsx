@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { biotechnologyLessons, type BiotechnologyLesson } from '@/data/biotechnology';
+import { K2Module } from '@/data/moduleNavigation';
 import { createTitle, createDescription } from '@/utils/seo';
 
 export const metadata: Metadata = {
@@ -163,24 +164,9 @@ export default function BiotechnologyPage() {
       }
     ],
     relatedModules: [
-      {
-        href: '/learning/ai-art-creative-tech',
-        icon: '🤖',
-        title: 'AI & Creative Tech',
-        description: 'AI in Drug Discovery'
-      },
-      {
-        href: '/learning/cybersecurity',
-        icon: '🔒',
-        title: 'Cybersecurity',
-        description: 'Biodata Security'
-      },
-      {
-        href: '/stem',
-        icon: '🔬',
-        title: 'STEM Education',
-        description: 'Science Fundamentals'
-      }
+      K2Module.AIArtCreativeTech,
+      K2Module.Cybersecurity,
+      K2Module.STEM
     ]
   };
 

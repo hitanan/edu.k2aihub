@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { cyberSecurityLessons, type CyberSecurityLesson } from '@/data/cybersecurity';
+import { K2Module } from '@/data/moduleNavigation';
 import { createTitle, createDescription } from '@/utils/seo';
 
 export const metadata: Metadata = {
@@ -163,24 +164,9 @@ export default function CybersecurityPage() {
       }
     ],
     relatedModules: [
-      {
-        href: '/learning/python',
-        icon: '🐍',
-        title: 'Python Programming',
-        description: 'Security Scripting & Automation'
-      },
-      {
-        href: '/learning/arduino',
-        icon: '⚡',
-        title: 'Arduino & IoT',
-        description: 'IoT Security & Hardware'
-      },
-      {
-        href: '/learning/biotechnology',
-        icon: '🧬',
-        title: 'Biotechnology',
-        description: 'Biodata Security'
-      }
+      K2Module.Python,
+      K2Module.Arduino,
+      K2Module.Biotechnology
     ]
   };
 

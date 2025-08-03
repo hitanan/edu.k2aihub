@@ -26,6 +26,7 @@ Location: `src/components/learning/ModulePageTemplate.tsx`
 - Interactive lesson grid with difficulty indicators
 - Industry applications showcase
 - Call-to-action sections
+- Related modules showcase
 
 **Required Props**:
 

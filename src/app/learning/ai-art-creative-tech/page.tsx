@@ -3,6 +3,7 @@ import { aiArtLessons, AiArtLesson } from '@/data/ai-art-creative-tech'
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate'
 import { createTitle, createDescription, createKeywords } from '@/utils/seo'
 import type { Metadata } from "next";
+import { K2Module } from '@/data/moduleNavigation';
 
 export const metadata: Metadata = {
   title: createTitle("AI Art & Creative Technology - Sáng Tạo Nghệ Thuật AI"),
@@ -111,26 +112,7 @@ export default function AiArtCreativeTechPage() {
         items: ['Client Workflows', 'Production Pipelines', 'Creative Teams', 'Commercial Applications']
       }
     ],
-    relatedModules: [
-      {
-        href: '/ai/creative-design',
-        icon: '🎨',
-        title: 'AI Creative Design',
-        description: 'Practical AI Tools for Design'
-      },
-      {
-        href: '/learning/digital-marketing',
-        icon: '📱',
-        title: 'Digital Marketing',
-        description: 'Visual Content Strategy'
-      },
-      {
-        href: '/learning/game-development',
-        icon: '🎮',
-        title: 'Game Development',
-        description: 'Game Art & Visual Design'
-      }
-    ]
+    relatedModules: [ K2Module.AI, K2Module.DigitalMarketing, K2Module.GameDevelopment ],
   }
 
   return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />

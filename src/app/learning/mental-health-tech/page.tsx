@@ -70,6 +70,7 @@ export default function MentalHealthTechPage() {
     icon: '🧠',
     color: 'from-blue-600 to-indigo-600',
     gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
+    heroImageUrl: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop",
     objectives: [
       'Hiểu relationship giữa technology và mental health',
       'Implement digital wellness strategies và stress management',
@@ -116,7 +117,6 @@ export default function MentalHealthTechPage() {
     <ModulePageTemplate
       moduleData={moduleData}
       lessons={convertedLessons}
-      heroImageUrl="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop"
     />
   );
 }

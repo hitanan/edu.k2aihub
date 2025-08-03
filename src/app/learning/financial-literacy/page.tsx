@@ -3,6 +3,7 @@ import ModulePageTemplate, { type ModuleData } from '@/components/learning/Modul
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { financialLiteracyLessons, type FinancialLiteracyLessons } from '@/data/financial-literacy';
 import { createTitle, createDescription } from '@/utils/seo';
+import { K2Module } from "@/data/moduleNavigation";
 
 export const metadata: Metadata = {
   title: createTitle("Financial Literacy & FinTech - Kiến Thức Tài Chính"),
@@ -162,26 +163,7 @@ export default function FinancialLiteracyPage() {
         items: ['Excel Modeling', 'Financial Ratios', 'Valuation Methods', 'Data Visualization']
       }
     ],
-    relatedModules: [
-      {
-        href: '/learning/digital-marketing',
-        icon: '📱',
-        title: 'Digital Marketing',
-        description: 'Financial Marketing & Sales'
-      },
-      {
-        href: '/learning/python',
-        icon: '🐍',
-        title: 'Python Programming',
-        description: 'Financial Data Analysis'
-      },
-      {
-        href: '/learning/ai-art-creative-tech',
-        icon: '🤖',
-        title: 'AI & Creative Tech',
-        description: 'AI in Financial Services'
-      }
-    ]
+    relatedModules: [K2Module.DigitalMarketing, K2Module.Python, K2Module.AIArtCreativeTech]
   };
 
   return (

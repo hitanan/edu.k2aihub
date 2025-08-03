@@ -3,6 +3,7 @@ import { arduinoLessons, ArduinoLesson } from '@/data/arduino'
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate'
 import { createTitle, createDescription, createKeywords } from '@/utils/seo'
 import type { Metadata } from "next";
+import { K2Module } from '@/data/moduleNavigation';
 
 export const metadata: Metadata = {
   title: createTitle("Học Arduino & IoT - Lập Trình Phần Cứng"),
@@ -112,26 +113,7 @@ export default function ArduinoPage() {
         items: ['Industrial IoT', 'Smart Agriculture', 'Health Monitoring', 'Environmental Sensing']
       }
     ],
-    relatedModules: [
-      {
-        href: '/learning/python',
-        icon: '🐍',
-        title: 'Python Programming',
-        description: 'Data Processing for IoT'
-      },
-      {
-        href: '/learning/robotics',
-        icon: '🤖',
-        title: 'Robotics',
-        description: 'Advanced Arduino Applications'
-      },
-      {
-        href: '/stem',
-        icon: '🔬',
-        title: 'STEM Education',
-        description: 'Electronics & Engineering'
-      }
-    ]
+    relatedModules: [ K2Module.Python, K2Module.Robotics, K2Module.STEM ]
   }
 
   return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />

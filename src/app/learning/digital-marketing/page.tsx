@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { digitalMarketingLessons, type DigitalMarketingLesson } from '@/data/digital-marketing';
+import { K2Module } from '@/data/moduleNavigation';
 import { createTitle, createDescription } from '@/utils/seo';
 
 export const metadata: Metadata = {
@@ -67,6 +68,7 @@ export default function DigitalMarketingPage() {
     primaryColor: 'blue',
     gradientColors: 'from-slate-900 via-blue-900 to-purple-900',
     basePath: '/learning/digital-marketing',
+    heroImageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
     features: [
       'Chiến lược Digital Marketing toàn diện',
       'Social Media Marketing chuyên nghiệp',
@@ -164,24 +166,9 @@ export default function DigitalMarketingPage() {
       }
     ],
     relatedModules: [
-      {
-        href: '/learning/ai-art-creative-tech',
-        icon: '🎨',
-        title: 'AI Art & Creative Tech',
-        description: 'AI-powered Content Creation'
-      },
-      {
-        href: '/learning/financial-literacy',
-        icon: '💰',
-        title: 'Financial Literacy',
-        description: 'Business & Money Management'
-      },
-      {
-        href: '/learning/game-development',
-        icon: '🎮',
-        title: 'Game Development',
-        description: 'Interactive Content Creation'
-      }
+      K2Module.AIArtCreativeTech,
+      K2Module.FinancialLiteracy,
+      K2Module.GameDevelopment
     ]
   };
 

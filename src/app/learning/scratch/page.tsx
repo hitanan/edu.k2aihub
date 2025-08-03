@@ -1,6 +1,7 @@
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { scratchLessons, type ScratchLesson } from '@/data/scratch';
+import { K2Module } from '@/data/moduleNavigation';
 
 // Convert ScratchLesson to BaseLessonData interface
 function convertToLesson(scratchLesson: ScratchLesson): BaseLessonData {
@@ -98,26 +99,7 @@ export default function ScratchPage() {
         items: ['Algorithm Design', 'Debugging Skills', 'Project Planning', 'Digital Literacy']
       }
     ],
-    relatedModules: [
-      {
-        href: '/stem/coding-for-kids',
-        icon: '🔬',
-        title: 'STEM - Coding for Kids',
-        description: 'Advanced Coding Concepts'
-      },
-      {
-        href: '/learning/python',
-        icon: '🐍',
-        title: 'Python Programming',
-        description: 'Next Level Programming'
-      },
-      {
-        href: '/learning/game-development',
-        icon: '🎮',
-        title: 'Game Development',
-        description: 'Professional Game Creation'
-      }
-    ]
+    relatedModules: [K2Module.STEM, K2Module.Python, K2Module.GameDevelopment]
   }
 
   return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />

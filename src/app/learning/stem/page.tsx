@@ -1,6 +1,7 @@
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { stemLessons, type STEMLesson } from '@/data/stem';
+import { K2Module } from '@/data/moduleNavigation';
 
 // Convert STEMLesson to BaseLessonData interface
 function convertToLesson(stemLesson: STEMLesson): BaseLessonData {
@@ -98,26 +99,7 @@ export default function STEMPage() {
         items: ['Environmental Solutions', 'Medical Technology', 'Space Exploration', 'Smart Cities']
       }
     ],
-    relatedModules: [
-      {
-        href: '/learning/scratch',
-        icon: '🎨',
-        title: 'Scratch Programming',
-        description: 'Visual Programming for Kids'
-      },
-      {
-        href: '/learning/python',
-        icon: '🐍',
-        title: 'Python Programming',
-        description: 'Data Science & AI Foundation'
-      },
-      {
-        href: '/learning/arduino',
-        icon: '⚡',
-        title: 'Arduino & IoT',
-        description: 'Hardware & Electronics'
-      }
-    ]
+    relatedModules: [K2Module.Scratch, K2Module.Python, K2Module.Arduino]
   }
 
   return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />

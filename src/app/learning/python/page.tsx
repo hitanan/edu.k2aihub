@@ -3,6 +3,7 @@ import { pythonLessons, PythonLesson } from '@/data/python'
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate'
 import { createTitle, createDescription, createKeywords } from '@/utils/seo'
 import type { Metadata } from "next";
+import { K2Module } from '@/data/moduleNavigation';
 
 export const metadata: Metadata = {
   title: createTitle("Học Lập Trình Python - Bài Toán Cơ Bản"),
@@ -112,26 +113,7 @@ export default function PythonPage() {
         items: ['Calculator Apps', 'Data Analysis', 'Game Development', 'Automation Scripts']
       }
     ],
-    relatedModules: [
-      {
-        href: '/learning/arduino',
-        icon: '⚡',
-        title: 'Arduino & IoT',
-        description: 'Hardware Programming with Python'
-      },
-      {
-        href: '/stem',
-        icon: '🔬',
-        title: 'STEM Education',
-        description: 'Coding for Kids Foundation'
-      },
-      {
-        href: '/scratch',
-        icon: '🎨',
-        title: 'Scratch Programming',
-        description: 'Visual Programming Basics'
-      }
-    ]
+    relatedModules: [K2Module.Arduino, K2Module.STEM, K2Module.Scratch],
   }
 
   return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />

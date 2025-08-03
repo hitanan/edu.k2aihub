@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Clock, Target, Users, TrendingUp, Play, ChevronRight, Star, Award, Lightbulb } from 'lucide-react'
 import { BaseLessonData } from './LessonPageTemplate'
+import { ModuleNavigation, moduleNavigation } from '@/data/moduleNavigation'
 export interface ModuleData {
   id?: string
   title: string
@@ -13,6 +14,7 @@ export interface ModuleData {
   features?: string[]
   icon?: string
   color?: string
+  heroImageUrl?: string
   objectives?: string[]
   prerequisites?: string[]
   careerOutcomes?: string[]
@@ -47,18 +49,12 @@ export interface ModuleData {
     icon: string
     items: string[]
   }>
-  relatedModules?: Array<{
-    href: string
-    icon: string
-    title: string
-    description: string
-  }>
+  relatedModules?: Array<string>
 }
 
 interface ModulePageTemplateProps {
   moduleData: ModuleData
   lessons: BaseLessonData[]
-  heroImageUrl?: string
   additionalStats?: Array<{
     label: string
     value: string
@@ -70,7 +66,6 @@ interface ModulePageTemplateProps {
 export default function ModulePageTemplate({
   moduleData,
   lessons,
-  heroImageUrl,
   additionalStats = [],
   specialSections = []
 }: ModulePageTemplateProps) {
@@ -83,12 +78,12 @@ export default function ModulePageTemplate({
     features = [],
     icon = '📚',
     color = 'from-blue-600 to-purple-600',
+    heroImageUrl,
     objectives = [],
     prerequisites = [],
     careerOutcomes = [],
     industryApplications = [],
     marketDemand,
-    primaryColor = 'blue',
     gradientColors,
     basePath,
     statsConfig,
@@ -97,6 +92,12 @@ export default function ModulePageTemplate({
     technicalHighlights,
     relatedModules
   } = moduleData;
+
+  // Get relatedModules data from moduleNavigation
+  const relatedModulesData = relatedModules?.map((moduleId) => {
+    const mod = moduleNavigation.find((mod) => mod.id === moduleId) || {} as ModuleNavigation;
+    return { href: mod.coreModule ? `/${mod.id}` : `/learning/${mod.id}`, icon: mod.icon, title: mod.title, description: mod.description } ;
+  });
 
   const defaultStats = [
     { label: 'Số bài học', value: statsConfig?.lessons || `${lessons.length}+`, icon: <Play className="w-6 h-6" /> },
@@ -397,7 +398,7 @@ export default function ModulePageTemplate({
       ))}
 
       {/* Related Modules */}
-      {relatedModules && relatedModules.length > 0 && (
+      {relatedModulesData && relatedModulesData.length > 0 && (
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -410,7 +411,7 @@ export default function ModulePageTemplate({
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {relatedModules.map((module, index) => (
+              {relatedModulesData.map((module, index) => (
                 <Link
                   key={index}
                   href={module.href}

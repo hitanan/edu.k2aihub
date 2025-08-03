@@ -9,6 +9,7 @@ export interface ModuleNavigation {
   totalDuration: string;
   difficulty: string;
   prerequisites: string[];
+  coreModule?: boolean;
 }
 
 export interface LessonNavigation {
@@ -19,6 +20,35 @@ export interface LessonNavigation {
   completed?: boolean;
 }
 
+export const K2Module = {
+  // Core Modules
+  City: 'city',
+  AI: 'ai',
+
+  // Professional Learning Modules
+  DigitalMarketing: 'digital-marketing',
+  GreenTechnology: 'green-technology',
+  MentalHealthTech: 'mental-health-tech',
+  FinancialLiteracy: 'financial-literacy',
+  GameDevelopment: 'game-development',
+  AIArtCreativeTech: 'ai-art-creative-tech',
+  Cybersecurity: 'cybersecurity',
+  Biotechnology: 'biotechnology',
+
+  // Programming & STEM Modules
+  Python: 'python',
+  Arduino: 'arduino',
+  Scratch: 'scratch',
+  STEM: 'stem',
+  Robotics: 'robotics',
+
+  // Vietnamese-Specific Modules
+  VietnameseBusiness: 'vietnamese-business',
+  DigitalGovernment: 'digital-government',
+  VietnameseLanguageTech: 'vietnamese-language-tech',
+  VietnameseCulture: 'vietnamese-culture',
+  VietnameseHealthcare: 'vietnamese-healthcare'
+};
 export const moduleNavigation: ModuleNavigation[] = [
   // Core Modules (outside /learning/ folder)
   {
@@ -27,12 +57,13 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Khám phá 34 tỉnh thành Việt Nam qua bản đồ tương tác, tìm hiểu văn hóa, lịch sử và địa lý của từng vùng miền',
     category: 'Địa Lý & Văn Hóa',
-    icon: 'MapPin',
+    icon: '🗺️',
     color: 'from-emerald-500 to-teal-500',
     totalDuration: 'Không giới hạn',
     difficulty: 'Tất cả mức độ',
     prerequisites: [],
-    lessons: []
+    lessons: [],
+    coreModule: true
   },
   {
     id: 'ai',
@@ -40,14 +71,15 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Hướng dẫn thực hành sử dụng AI trong công việc, học tập và cuộc sống hàng ngày với 6 danh mục chính',
     category: 'Trí Tuệ Nhân Tạo',
-    icon: 'Brain',
+    icon: '🤖',
     color: 'from-blue-500 to-indigo-500',
     totalDuration: 'Không giới hạn',
     difficulty: 'Tất cả mức độ',
     prerequisites: [],
-    lessons: []
+    lessons: [],
+    coreModule: true
   },
-  
+
   // Professional Learning Modules (in /learning/ folder)
   {
     id: 'digital-marketing',
@@ -55,7 +87,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Master digital marketing strategies, SEO optimization, social media marketing, và content creation cho modern businesses',
     category: 'Business & Marketing',
-    icon: 'TrendingUp',
+    icon: '📈',
     color: 'from-blue-500 to-indigo-500',
     totalDuration: '480 phút',
     difficulty: 'Trung bình',
@@ -96,7 +128,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Explore sustainable technology solutions, renewable energy systems, environmental engineering, và clean tech innovations',
     category: 'Technology & Environment',
-    icon: 'Leaf',
+    icon: '🌱',
     color: 'from-green-500 to-emerald-500',
     totalDuration: '360 phút',
     difficulty: 'Trung bình',
@@ -132,7 +164,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Digital mental health solutions, therapeutic apps, AI-powered wellness platforms, và technology-assisted therapy approaches',
     category: 'Healthcare Technology',
-    icon: 'Brain',
+    icon: '🧠',
     color: 'from-purple-500 to-pink-500',
     totalDuration: '300 phút',
     difficulty: 'Trung bình',
@@ -162,7 +194,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Personal finance management, investment strategies, cryptocurrency understanding, và modern financial technology applications',
     category: 'Finance & Technology',
-    icon: 'DollarSign',
+    icon: '💰',
     color: 'from-amber-500 to-orange-500',
     totalDuration: '330 phút',
     difficulty: 'Trung bình',
@@ -192,7 +224,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Game design principles, development frameworks, interactive storytelling, và modern game development technologies',
     category: 'Creative Technology',
-    icon: 'Gamepad2',
+    icon: '🎮',
     color: 'from-purple-500 to-indigo-500',
     totalDuration: '360 phút',
     difficulty: 'Nâng cao',
@@ -223,7 +255,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'AI-powered creative tools, digital art generation, creative workflows, và emerging technologies trong art và design',
     category: 'Creative Technology',
-    icon: 'Palette',
+    icon: '🎨',
     color: 'from-pink-500 to-purple-500',
     totalDuration: '270 phút',
     difficulty: 'Trung bình',
@@ -253,7 +285,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Cybersecurity fundamentals, ethical hacking techniques, penetration testing, và advanced security defense strategies',
     category: 'Security & Technology',
-    icon: 'Shield',
+    icon: '🛡️',
     color: 'from-red-500 to-orange-500',
     totalDuration: '380 phút',
     difficulty: 'Nâng cao',
@@ -283,7 +315,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Genetic engineering, medical biotechnology, drug discovery, và cutting-edge life sciences applications',
     category: 'Life Sciences & Technology',
-    icon: 'Dna',
+    icon: '🧬',
     color: 'from-emerald-500 to-teal-500',
     totalDuration: '330 phút',
     difficulty: 'Nâng cao',
@@ -307,7 +339,7 @@ export const moduleNavigation: ModuleNavigation[] = [
       }
     ]
   },
-  
+
   // Programming & STEM Modules (in /learning/ folder)
   {
     id: 'python',
@@ -315,7 +347,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Học lập trình Python từ cơ bản đến nâng cao, ứng dụng trong data science, web development và AI',
     category: 'Programming & Development',
-    icon: 'Code',
+    icon: '🐍',
     color: 'from-yellow-500 to-green-500',
     totalDuration: '600 phút',
     difficulty: 'Cơ bản đến Nâng cao',
@@ -357,7 +389,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Lập trình Arduino và phát triển hệ thống IoT, từ cơ bản đến các dự án thông minh phức tạp',
     category: 'Programming & Development',
-    icon: 'Cpu',
+    icon: '⚡',
     color: 'from-cyan-500 to-blue-500',
     totalDuration: '420 phút',
     difficulty: 'Trung bình',
@@ -405,7 +437,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Lập trình trực quan với Scratch, tạo game và ứng dụng tương tác cho người mới bắt đầu',
     category: 'Programming & Development',
-    icon: 'Blocks',
+    icon: '🧩',
     color: 'from-orange-500 to-red-500',
     totalDuration: '300 phút',
     difficulty: 'Cơ bản',
@@ -447,7 +479,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Khoa học, Công nghệ, Kỹ thuật và Toán học thông qua các thí nghiệm thực hành và dự án sáng tạo',
     category: 'STEM & Science',
-    icon: 'TestTube',
+    icon: '🔬',
     color: 'from-purple-500 to-pink-500',
     totalDuration: '480 phút',
     difficulty: 'Cơ bản đến Trung bình',
@@ -501,7 +533,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     description:
       'Thiết kế và lập trình robot, từ robot đơn giản đến hệ thống robot thông minh và tự động',
     category: 'Programming & Development',
-    icon: 'Bot',
+    icon: '🤖',
     color: 'from-indigo-500 to-purple-500',
     totalDuration: '540 phút',
     difficulty: 'Nâng cao',
@@ -534,6 +566,176 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'autonomous-navigation-ai',
         title: 'Autonomous Navigation & AI Integration',
         duration: '120 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+
+  // Vietnamese-Specific Learning Modules (in /learning/ folder)
+  {
+    id: 'vietnamese-language-tech',
+    title: 'Vietnamese Language & NLP Technology',
+    description:
+      'Phát triển technology solutions cho Vietnamese natural language processing, chatbots, và voice recognition systems',
+    category: 'Vietnamese-Specific Technology',
+    icon: '🗣️',
+    color: 'from-blue-500 to-indigo-500',
+    totalDuration: '450 phút',
+    difficulty: 'Nâng cao',
+    prerequisites: [
+      'Programming fundamentals',
+      'Understanding of Vietnamese language',
+      'Basic machine learning concepts'
+    ],
+    lessons: [
+      {
+        id: 'vietnamese-nlp-fundamentals',
+        title: 'Vietnamese NLP Fundamentals & PhoBERT Integration',
+        duration: '150 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'vietnamese-chatbot-development',
+        title: 'Vietnamese Chatbot Development & Conversational AI',
+        duration: '150 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'vietnamese-voice-ai-systems',
+        title: 'Vietnamese Voice AI & Speech Recognition Systems',
+        duration: '150 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: 'vietnamese-business',
+    title: 'Vietnamese Business & Entrepreneurship',
+    description:
+      'Phát triển business technology solutions cho Vietnamese market, startup ecosystem, và e-commerce platforms',
+    category: 'Vietnamese-Specific Technology',
+    icon: '🏢',
+    color: 'from-green-500 to-emerald-500',
+    totalDuration: '420 phút',
+    difficulty: 'Trung bình',
+    prerequisites: [
+      'Basic business understanding',
+      'Vietnamese market knowledge',
+      'Technology literacy'
+    ],
+    lessons: [
+      {
+        id: 'vietnamese-startup-ecosystem',
+        title: 'Vietnamese Startup Ecosystem & Legal Framework',
+        duration: '140 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'vietnamese-fintech-solutions',
+        title: 'Vietnamese FinTech & Payment Solutions',
+        duration: '140 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'vietnamese-ecommerce-platforms',
+        title: 'Vietnamese E-commerce & Digital Marketplace Development',
+        duration: '140 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: 'digital-government',
+    title: 'Digital Government & Civic Technology',
+    description:
+      'Phát triển civic technology solutions, smart city systems, và digital government platforms cho Vietnamese public sector',
+    category: 'Vietnamese-Specific Technology',
+    icon: '🏛️',
+    color: 'from-purple-500 to-indigo-500',
+    totalDuration: '390 phút',
+    difficulty: 'Nâng cao',
+    prerequisites: [
+      'Understanding of government processes',
+      'Public policy awareness',
+      'Technology development experience'
+    ],
+    lessons: [
+      {
+        id: 'smart-city-iot-systems',
+        title: 'Smart City IoT Systems & Urban Technology',
+        duration: '130 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'egovernance-platforms',
+        title: 'E-Governance Platforms & Digital Public Services',
+        duration: '130 phút',
+        difficulty: 'Nâng cao'
+      },
+      {
+        id: 'civic-engagement-technology',
+        title: 'Civic Engagement Technology & Citizen Participation',
+        duration: '130 phút',
+        difficulty: 'Trung bình'
+      }
+    ]
+  },
+  {
+    id: 'vietnamese-culture',
+    title: 'Vietnamese Culture & Digital Heritage',
+    description:
+      'Số hóa và bảo tồn di sản văn hóa Việt Nam, phát triển tourism technology và cultural experience platforms',
+    category: 'Vietnamese-Specific Technology',
+    icon: '🏛️',
+    color: 'from-yellow-500 to-orange-500',
+    totalDuration: '330 phút',
+    difficulty: 'Trung bình',
+    prerequisites: [
+      'Vietnamese cultural knowledge',
+      'Digital media understanding',
+      'Basic web development'
+    ],
+    lessons: [
+      {
+        id: 'digital-heritage-preservation',
+        title: 'Digital Heritage Preservation & Cultural Documentation',
+        duration: '150 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'tourism-technology',
+        title: 'Tourism Technology & Cultural Experience Platforms',
+        duration: '180 phút',
+        difficulty: 'Nâng cao'
+      }
+    ]
+  },
+  {
+    id: 'vietnamese-healthcare',
+    title: 'Vietnamese Healthcare Technology',
+    description:
+      'Phát triển healthcare technology solutions cho Vietnamese medical system, telemedicine, và AI medical imaging',
+    category: 'Vietnamese-Specific Technology',
+    icon: '🏥',
+    color: 'from-emerald-500 to-teal-500',
+    totalDuration: '360 phút',
+    difficulty: 'Nâng cao',
+    prerequisites: [
+      'Healthcare system understanding',
+      'Medical terminology knowledge',
+      'Technology development experience'
+    ],
+    lessons: [
+      {
+        id: 'digital-health-vietnam',
+        title: 'Digital Health Infrastructure cho Việt Nam',
+        duration: '160 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'ai-medical-imaging',
+        title: 'AI Medical Imaging cho Vietnamese Healthcare',
+        duration: '200 phút',
         difficulty: 'Nâng cao'
       }
     ]

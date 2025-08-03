@@ -70,6 +70,7 @@ export default function GreenTechnologyPage() {
     icon: '🌱',
     color: 'from-green-600 to-emerald-600',
     gradientColors: 'from-slate-900 via-green-900 to-slate-900',
+    heroImageUrl: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=600&fit=crop",
     objectives: [
       'Design và implement renewable energy systems',
       'Develop smart city solutions với IoT và environmental monitoring',
@@ -116,7 +117,6 @@ export default function GreenTechnologyPage() {
     <ModulePageTemplate
       moduleData={moduleData}
       lessons={convertedLessons}
-      heroImageUrl="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=600&fit=crop"
     />
   );
 }
