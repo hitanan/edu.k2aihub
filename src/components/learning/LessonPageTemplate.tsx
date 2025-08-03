@@ -72,7 +72,7 @@ export function generateLessonMetadata<T extends BaseLessonData>(
   
   if (!lesson) {
     return {
-      title: 'Bài học không tìm thấy | K2AiHub',
+      title: 'Bài học không tìm thấy | K2AI',
       description: 'Không thể tìm thấy bài học yêu cầu.',
     }
   }

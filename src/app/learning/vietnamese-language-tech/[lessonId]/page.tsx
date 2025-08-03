@@ -1,16 +1,16 @@
 import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig, BaseLessonData } from '@/components/learning/LessonPageTemplate'
-import { vietnameseCultureLessons } from '@/data/vietnamese-culture'
+import { vietnameseLangTechLessons } from '@/data/vietnamese-language-tech'
 import { PageProps } from '@/types';
-import { Landmark } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
 // Extend lesson interface
-interface ExtendedVietnameseCultureLesson extends BaseLessonData {
-  culturalAspects: string[];
+interface ExtendedVietnameseLangTechLesson extends BaseLessonData {
   technologies: string[];
+  languageFeatures: string[];
 }
 
 // Transform lessons to match BaseLessonData interface
-const transformedLessons: ExtendedVietnameseCultureLesson[] = vietnameseCultureLessons.map(lesson => ({
+const transformedLessons: ExtendedVietnameseLangTechLesson[] = vietnameseLangTechLessons.map(lesson => ({
   ...lesson,
   exercises: lesson.exercises.map(exercise => ({
     ...exercise,
@@ -21,10 +21,10 @@ const transformedLessons: ExtendedVietnameseCultureLesson[] = vietnameseCultureL
   caseStudies: lesson.caseStudies?.map(cs => ({
     title: cs.title,
     organization: cs.organization,
-    problem: cs.problem,
+    problem: cs.challenge,
     solution: cs.solution,
-    impact: cs.impact,
-    innovations: cs.innovations || []
+    impact: cs.results,
+    innovations: cs.insights || []
   })) || []
 }));
 
@@ -37,33 +37,33 @@ export async function generateMetadata({ params }: PageProps) {
   return generateLessonMetadata(lessonId, transformedLessons);
 }
 
-export default async function VietnameseCultureLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<ExtendedVietnameseCultureLesson> = {
-    moduleName: 'vietnamese-culture',
-    moduleTitle: 'Văn Hóa Việt Nam & Di Sản Số',
-    modulePath: '/learning/vietnamese-culture',
+export default async function VietnameseLangTechLessonPage({ params }: PageProps) {
+  const config: LessonPageConfig<ExtendedVietnameseLangTechLesson> = {
+    moduleName: 'vietnamese-language-tech',
+    moduleTitle: 'Vietnamese Language Technology',
+    modulePath: '/learning/vietnamese-language-tech',
     lessons: transformedLessons,
-    primaryColor: 'yellow',
-    secondaryColor: 'orange',
-    gradientColors: 'from-slate-900 via-yellow-900 to-slate-900',
-    getFieldIcon: () => <Landmark className="w-5 h-5" />,
-    getFieldValue: (lesson) => lesson.culturalAspects?.[0] || 'Culture',
+    primaryColor: 'violet',
+    secondaryColor: 'purple',
+    gradientColors: 'from-slate-900 via-violet-900 to-slate-900',
+    getFieldIcon: () => <MessageSquare className="w-5 h-5" />,
+    getFieldValue: (lesson) => lesson.languageFeatures?.[0] || 'Language Tech',
     sidebarContent: (lesson) => (
       <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-6">
-        <h4 className="font-semibold text-white mb-3">Cultural Aspects</h4>
+        <h4 className="font-semibold text-white mb-3">Technologies</h4>
         <div className="space-y-2">
-          {lesson.culturalAspects?.map((aspect, index) => (
-            <div key={index} className="text-sm text-gray-300 bg-yellow-500/10 p-2 rounded border border-yellow-500/20">
-              {aspect}
+          {lesson.technologies?.map((tech, index) => (
+            <div key={index} className="text-sm text-gray-300 bg-violet-500/10 p-2 rounded border border-violet-500/20">
+              {tech}
             </div>
           ))}
         </div>
         
-        <h4 className="font-semibold text-white mb-3 mt-4">Technologies</h4>
+        <h4 className="font-semibold text-white mb-3 mt-4">Language Features</h4>
         <div className="space-y-2">
-          {lesson.technologies?.map((tech, index) => (
+          {lesson.languageFeatures?.map((feature, index) => (
             <div key={index} className="text-xs text-gray-400 bg-white/5 p-2 rounded border border-white/10">
-              {tech}
+              {feature}
             </div>
           ))}
         </div>

@@ -52,7 +52,7 @@ export const K2Module = {
 export const moduleNavigation: ModuleNavigation[] = [
   // Core Modules (outside /learning/ folder)
   {
-    id: 'city',
+    id: K2Module.City,
     title: 'Địa Lý Việt Nam',
     description:
       'Khám phá 34 tỉnh thành Việt Nam qua bản đồ tương tác, tìm hiểu văn hóa, lịch sử và địa lý của từng vùng miền',
@@ -66,7 +66,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     coreModule: true
   },
   {
-    id: 'ai',
+    id: K2Module.AI,
     title: 'AI Của Tôi',
     description:
       'Hướng dẫn thực hành sử dụng AI trong công việc, học tập và cuộc sống hàng ngày với 6 danh mục chính',
@@ -82,7 +82,7 @@ export const moduleNavigation: ModuleNavigation[] = [
 
   // Professional Learning Modules (in /learning/ folder)
   {
-    id: 'digital-marketing',
+    id: K2Module.DigitalMarketing,
     title: 'Digital Marketing & SEO',
     description:
       'Master digital marketing strategies, SEO optimization, social media marketing, và content creation cho modern businesses',
@@ -123,7 +123,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'green-technology',
+    id: K2Module.GreenTechnology,
     title: 'Green Technology & Sustainability',
     description:
       'Explore sustainable technology solutions, renewable energy systems, environmental engineering, và clean tech innovations',
@@ -159,7 +159,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'mental-health-tech',
+    id: K2Module.MentalHealthTech,
     title: 'Mental Health Technology',
     description:
       'Digital mental health solutions, therapeutic apps, AI-powered wellness platforms, và technology-assisted therapy approaches',
@@ -189,7 +189,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'financial-literacy',
+    id: K2Module.FinancialLiteracy,
     title: 'Financial Literacy & FinTech',
     description:
       'Personal finance management, investment strategies, cryptocurrency understanding, và modern financial technology applications',
@@ -219,7 +219,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'game-development',
+    id: K2Module.GameDevelopment,
     title: 'Game Development & Interactive Media',
     description:
       'Game design principles, development frameworks, interactive storytelling, và modern game development technologies',
@@ -250,7 +250,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'ai-art-creative-tech',
+    id: K2Module.AIArtCreativeTech,
     title: 'AI Art & Creative Technology',
     description:
       'AI-powered creative tools, digital art generation, creative workflows, và emerging technologies trong art và design',
@@ -280,7 +280,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'cybersecurity',
+    id: K2Module.Cybersecurity,
     title: 'Cybersecurity & Ethical Hacking',
     description:
       'Cybersecurity fundamentals, ethical hacking techniques, penetration testing, và advanced security defense strategies',
@@ -310,7 +310,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'biotechnology',
+    id: K2Module.Biotechnology,
     title: 'Biotechnology & Life Sciences',
     description:
       'Genetic engineering, medical biotechnology, drug discovery, và cutting-edge life sciences applications',
@@ -342,7 +342,7 @@ export const moduleNavigation: ModuleNavigation[] = [
 
   // Programming & STEM Modules (in /learning/ folder)
   {
-    id: 'python',
+    id: K2Module.Python,
     title: 'Python Programming',
     description:
       'Học lập trình Python từ cơ bản đến nâng cao, ứng dụng trong data science, web development và AI',
@@ -384,7 +384,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'arduino',
+    id: K2Module.Arduino,
     title: 'Arduino & IoT Programming',
     description:
       'Lập trình Arduino và phát triển hệ thống IoT, từ cơ bản đến các dự án thông minh phức tạp',
@@ -432,7 +432,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'scratch',
+    id: K2Module.Scratch,
     title: 'Scratch Programming',
     description:
       'Lập trình trực quan với Scratch, tạo game và ứng dụng tương tác cho người mới bắt đầu',
@@ -474,7 +474,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'stem',
+    id: K2Module.STEM,
     title: 'STEM Education',
     description:
       'Khoa học, Công nghệ, Kỹ thuật và Toán học thông qua các thí nghiệm thực hành và dự án sáng tạo',
@@ -528,7 +528,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'robotics',
+    id: K2Module.Robotics,
     title: 'Robotics',
     description:
       'Thiết kế và lập trình robot, từ robot đơn giản đến hệ thống robot thông minh và tự động',
@@ -573,7 +573,7 @@ export const moduleNavigation: ModuleNavigation[] = [
 
   // Vietnamese-Specific Learning Modules (in /learning/ folder)
   {
-    id: 'vietnamese-language-tech',
+    id: K2Module.VietnameseLanguageTech,
     title: 'Vietnamese Language & NLP Technology',
     description:
       'Phát triển technology solutions cho Vietnamese natural language processing, chatbots, và voice recognition systems',
@@ -609,7 +609,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'vietnamese-business',
+    id: K2Module.VietnameseBusiness,
     title: 'Vietnamese Business & Entrepreneurship',
     description:
       'Phát triển business technology solutions cho Vietnamese market, startup ecosystem, và e-commerce platforms',
@@ -645,7 +645,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'digital-government',
+    id: K2Module.DigitalGovernment,
     title: 'Digital Government & Civic Technology',
     description:
       'Phát triển civic technology solutions, smart city systems, và digital government platforms cho Vietnamese public sector',
@@ -681,7 +681,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'vietnamese-culture',
+    id: K2Module.VietnameseCulture,
     title: 'Vietnamese Culture & Digital Heritage',
     description:
       'Số hóa và bảo tồn di sản văn hóa Việt Nam, phát triển tourism technology và cultural experience platforms',
@@ -711,7 +711,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ]
   },
   {
-    id: 'vietnamese-healthcare',
+    id: K2Module.VietnameseHealthcare,
     title: 'Vietnamese Healthcare Technology',
     description:
       'Phát triển healthcare technology solutions cho Vietnamese medical system, telemedicine, và AI medical imaging',

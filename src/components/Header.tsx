@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Menu, X, Home, Globe, Brain, Code } from 'lucide-react';
+import { ChevronDown, Menu, X, Home, Globe, Brain, Code, Heart } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +15,7 @@ const Header: React.FC = () => {
     { name: 'Trang Chủ', href: '/', icon: <Home className="w-4 h-4" /> },
     { name: 'Địa Lý Việt Nam', href: '/city', icon: <Globe className="w-4 h-4" /> },
     { name: 'AI Của Tôi', href: '/ai', icon: <Brain className="w-4 h-4" /> },
+    { name: 'Về Chúng Tôi', href: '/about', icon: <Heart className="w-4 h-4" /> },
   ];
 
   // Learning modules - grouped by category
@@ -141,33 +142,62 @@ const Header: React.FC = () => {
                 <ChevronDown className="w-4 h-4" />
               </button>
 
-              {/* Dropdown content */}
+              {/* Full-width dropdown content */}
               {isLearningDropdownOpen && (
-                <div className="absolute top-full left-0 mt-1 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden z-50">
-                  <div className="p-6 max-h-96 overflow-y-auto">
-                    {learningModules.map((category, index) => (
-                      <div key={category.category} className={index > 0 ? 'mt-6' : ''}>
-                        <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center space-x-2">
-                          <span>{category.icon}</span>
-                          <span>{category.category}</span>
-                        </h3>
-                        <div className="grid grid-cols-1 gap-2">
-                          {category.modules.map((module) => (
-                            <Link
-                              key={module.name}
-                              href={module.href}
-                              className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 transition-colors duration-200 group"
-                              onClick={() => setIsLearningDropdownOpen(false)}
-                            >
-                              <span className="text-lg">{module.icon}</span>
-                              <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                                {module.name}
-                              </span>
-                            </Link>
-                          ))}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 w-screen max-w-6xl bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden z-50">
+                  <div className="p-8">
+                    <div className="mb-6">
+                      <h2 className="text-2xl font-bold text-gray-900 mb-2">Learning Modules</h2>
+                      <p className="text-gray-600">Khám phá các khóa học công nghệ và kỹ năng chuyên môn</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {learningModules.map((category) => (
+                        <div key={category.category} className="space-y-4">
+                          <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center space-x-2 border-b border-gray-100 pb-2">
+                            <span className="text-2xl">{category.icon}</span>
+                            <span>{category.category}</span>
+                          </h3>
+                          <div className="space-y-2">
+                            {category.modules.map((module) => (
+                              <Link
+                                key={module.name}
+                                href={module.href}
+                                className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 transition-all duration-200 group border border-transparent hover:border-blue-100"
+                                onClick={() => setIsLearningDropdownOpen(false)}
+                              >
+                                <span className="text-xl">{module.icon}</span>
+                                <div className="flex-1">
+                                  <span className="text-sm font-medium text-gray-700 group-hover:text-blue-600 block">
+                                    {module.name}
+                                  </span>
+                                </div>
+                                <ChevronDown className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transform rotate-[-90deg]" />
+                              </Link>
+                            ))}
+                          </div>
                         </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-gray-100">
+                      <div className="flex flex-wrap justify-center gap-4">
+                        <Link 
+                          href="/learning" 
+                          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                          onClick={() => setIsLearningDropdownOpen(false)}
+                        >
+                          📚 Tất Cả Khóa Học
+                        </Link>
+                        <Link 
+                          href="/feedback" 
+                          className="inline-flex items-center px-6 py-3 bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-300"
+                          onClick={() => setIsLearningDropdownOpen(false)}
+                        >
+                          💬 Phản Hồi
+                        </Link>
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </div>
               )}
