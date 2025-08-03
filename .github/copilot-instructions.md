@@ -389,7 +389,7 @@ npm run lint     # Code quality checks
 8. **Documentation Requirement**: ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.
 9. **Image Url**: incase you done have the image url, use import { defaultImage } from "@/utils/image"; to ensure all images are properly accessible.
 10. **Module data**: when generate module pages, Prefer to create data and then to use it to create a dynamic pages with slug is `lessonId`, ensure use PageProps to get lessonId (import { PageProps } from '@/types').
-11. **Module integration**: After module created, add it to all related part in application: Homepage, header navigation, footer, moduleNavigation.ts, sitemap, ..
+11. **Module integration**: After module created, add it to all related part in application to moduleNavigation.ts, and Use data from moduleNavigation.ts to update Homepage, header navigation, footer, sitemap, ...
 
 ## Notes:
 

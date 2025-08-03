@@ -110,11 +110,11 @@ export default function AllLearningPageClient() {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400"
+                className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
-                <option value="all">Tất cả danh mục</option>
+                <option value="all" className="bg-gray-800 text-white">Tất cả danh mục</option>
                 {Object.entries(categories).map(([key, cat]) => (
-                  <option key={key} value={key}>{cat.title}</option>
+                  <option key={key} value={key} className="bg-gray-800 text-white">{cat.title}</option>
                 ))}
               </select>
             </div>
@@ -125,10 +125,10 @@ export default function AllLearningPageClient() {
               <select
                 value={selectedLevel}
                 onChange={(e) => setSelectedLevel(e.target.value)}
-                className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400"
+                className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
                 {levels.map(level => (
-                  <option key={level} value={level}>{level}</option>
+                  <option key={level} value={level} className="bg-gray-800 text-white">{level}</option>
                 ))}
               </select>
             </div>
@@ -139,11 +139,11 @@ export default function AllLearningPageClient() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400"
+                className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
-                <option value="popular">Phổ biến</option>
-                <option value="duration">Thời lượng</option>
-                <option value="newest">Mới nhất</option>
+                <option value="popular" className="bg-gray-800 text-white">Phổ biến</option>
+                <option value="duration" className="bg-gray-800 text-white">Thời lượng</option>
+                <option value="newest" className="bg-gray-800 text-white">Mới nhất</option>
               </select>
             </div>
 
