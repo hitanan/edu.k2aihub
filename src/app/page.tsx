@@ -139,58 +139,71 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
       <StructuredData data={structuredData} />
       
-      {/* Hero Section - Student-focused */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Hero Section - Modern coral-teal design */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-teal-500 via-cyan-500 to-blue-500 py-20">
+        {/* Animated background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-rose-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl"></div>
+        </div>
+        
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Học Tập Thông Minh
-            <span className="block text-yellow-400 mt-2">Cùng Công Nghệ AI</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto">
-            Nền tảng giáo dục tương tác miễn phí với AI, giúp bạn nắm vững kiến thức từ cơ bản đến nâng cao
-          </p>
-          
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-2xl font-bold text-white">{stat.number}</div>
-                <div className="text-sm text-gray-200">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-4">
-            <a 
-              href="#featured-modules" 
-              className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200"
-            >
-              Bắt Đầu Học Ngay
-            </a>
-            <a 
-              href="#learning-paths" 
-              className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200 backdrop-blur-sm"
-            >
-              Xem Lộ Trình Học
-            </a>
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-rose-300 to-orange-300 bg-clip-text text-transparent">
+                K2AI Learning
+              </span>
+              <span className="block text-white mt-2">Thông Minh & Hiện Đại</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto">
+              Nền tảng giáo dục tương tác với công nghệ AI tiên tiến - 
+              <span className="text-rose-200 font-semibold"> Miễn phí hoàn toàn</span>
+            </p>
+            
+            {/* Modern Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+              {stats.map((stat, index) => (
+                <div key={index} className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
+                  <div className="text-3xl font-bold text-white">{stat.number}</div>
+                  <div className="text-sm text-white/80">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <a 
+                href="#featured-modules" 
+                className="bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                🚀 Bắt Đầu Học Ngay
+              </a>
+              <a 
+                href="#learning-paths" 
+                className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 backdrop-blur-md border border-white/30"
+              >
+                📈 Xem Lộ Trình Học
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Modules - Curated selection */}
-      <section id="featured-modules" className="py-20 bg-white">
+      {/* Featured Modules - Modern card design */}
+      <section id="featured-modules" className="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Khóa Học Nổi Bật
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Khóa Học Nổi Bật
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Các khóa học được yêu thích nhất, phù hợp cho người mới bắt đầu và có thể áp dụng ngay
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Các khóa học được thiết kế hiện đại, dễ học và áp dụng ngay vào thực tế
             </p>
           </div>
           
@@ -199,28 +212,29 @@ export default function HomePage() {
               <Link 
                 key={module.id} 
                 href={module.href}
-                className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200"
+                className="group relative bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 hover:bg-white/10"
               >
-                {/* Highlight badge */}
-                <div className="absolute -top-3 left-6 bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                {/* Modern highlight badge */}
+                <div className="absolute -top-3 left-6 bg-gradient-to-r from-rose-500 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
                   {module.highlight}
                 </div>
                 
-                {/* Icon and gradient */}
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${module.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                {/* Glassmorphism icon container */}
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${module.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {module.icon}
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{module.title}</h3>
-                <p className="text-gray-600 mb-4 text-sm">{module.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">{module.title}</h3>
+                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{module.description}</p>
                 
-                <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
-                  <span className="bg-gray-100 px-3 py-1 rounded-full">{module.difficulty}</span>
-                  <span>{module.time}</span>
+                <div className="flex justify-between items-center text-sm text-gray-400 mb-4">
+                  <span className="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full border border-teal-500/30">{module.difficulty}</span>
+                  <span className="text-rose-300">{module.time}</span>
                 </div>
                 
-                <div className="text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
-                  Học ngay →
+                <div className="text-teal-400 font-semibold group-hover:text-teal-300 transition-colors flex items-center">
+                  <span>Học ngay</span>
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </div>
               </Link>
             ))}
@@ -228,15 +242,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Learning Paths - Student categories */}
-      <section id="learning-paths" className="py-20 bg-gray-50">
+      {/* Learning Paths - Enhanced with modern styling */}
+      <section id="learning-paths" className="py-20 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Lộ Trình Học Cho Bạn
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <span className="bg-gradient-to-r from-rose-400 to-orange-400 bg-clip-text text-transparent">
+                Lộ Trình Dành Cho Bạn
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Chọn lộ trình phù hợp với trình độ và mục tiêu của bạn
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Chọn con đường học tập phù hợp với mục tiêu và đam mê của bạn
             </p>
           </div>
           
@@ -245,26 +261,27 @@ export default function HomePage() {
               <Link 
                 key={index} 
                 href={path.href}
-                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 hover:bg-white/10"
               >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${path.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${path.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {path.icon}
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{path.title}</h3>
-                <p className="text-lg text-gray-600 mb-4">{path.subtitle}</p>
-                <p className="text-gray-600 mb-6">{path.description}</p>
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-teal-300 transition-colors">{path.title}</h3>
+                <p className="text-lg text-rose-300 mb-4 font-medium">{path.subtitle}</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">{path.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {path.modules.map((module, idx) => (
-                    <span key={idx} className="bg-gray-100 px-3 py-1 rounded-full text-sm text-gray-700">
+                    <span key={idx} className="bg-teal-500/20 text-teal-300 px-3 py-1 rounded-full text-sm border border-teal-500/30">
                       {module}
                     </span>
                   ))}
                 </div>
                 
-                <div className="text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
-                  Khám phá lộ trình →
+                <div className="text-teal-400 font-semibold group-hover:text-teal-300 transition-colors flex items-center">
+                  <span>Khám phá lộ trình</span>
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </div>
               </Link>
             ))}
@@ -272,34 +289,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Sẵn Sàng Bắt Đầu Hành Trình Học Tập?
-          </h2>
-          <p className="text-xl text-gray-200 mb-8">
-            Tham gia hàng nghìn học viên đang học tập và phát triển cùng K2AiHub
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              href="/city" 
-              className="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-200"
-            >
-              🌏 Khám Phá Việt Nam
-            </Link>
-            <Link 
-              href="/ai" 
-              className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200"
-            >
-              🤖 Học AI Ngay
-            </Link>
-            <Link 
-              href="/learning" 
-              className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200"
-            >
-              📚 Tất Cả Khóa Học
-            </Link>
+      {/* CTA Section - Modern coral-teal gradient */}
+      <section className="py-20 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-72 h-72 bg-rose-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 shadow-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              🎯 Sẵn Sàng Thay Đổi Tương Lai?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Tham gia cộng đồng học tập thông minh và khởi đầu hành trình phát triển bản thân
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link 
+                href="/city" 
+                className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 backdrop-blur-md border border-white/30 hover:scale-105"
+              >
+                🌏 Khám Phá Việt Nam
+              </Link>
+              <Link 
+                href="/ai" 
+                className="bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                🤖 Học AI Ngay
+              </Link>
+              <Link 
+                href="/learning" 
+                className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                📚 Tất Cả Khóa Học
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -9,6 +9,23 @@ import { moduleNavigation } from '@/data/moduleNavigation';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLearningDropdownOpen, setIsLearningDropdownOpen] = useState(false);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  // Improved mouse handlers for dropdown
+  const handleDropdownEnter = () => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+      setDropdownTimeout(null);
+    }
+    setIsLearningDropdownOpen(true);
+  };
+
+  const handleDropdownLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsLearningDropdownOpen(false);
+    }, 150);
+    setDropdownTimeout(timeout);
+  };
   const pathname = usePathname();
 
   // Core modules - always visible
@@ -108,11 +125,11 @@ const Header: React.FC = () => {
               </Link>
             ))}
 
-            {/* Learning dropdown */}
+            {/* Learning dropdown with improved UX */}
             <div 
               className="relative"
-              onMouseEnter={() => setIsLearningDropdownOpen(true)}
-              onMouseLeave={() => setIsLearningDropdownOpen(false)}
+              onMouseEnter={handleDropdownEnter}
+              onMouseLeave={handleDropdownLeave}
             >
               <button
                 type="button"
@@ -127,60 +144,65 @@ const Header: React.FC = () => {
                 <ChevronDown className="w-4 h-4" />
               </button>
 
-              {/* Improved dropdown - wider and lower height */}
+              {/* Improved dropdown with bridge area - no gap */}
               {isLearningDropdownOpen && (
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-1 w-screen max-w-7xl bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden z-50">
-                  <div className="p-6">
-                    <div className="mb-4">
-                      <h2 className="text-xl font-bold text-gray-900 mb-1">Learning Modules</h2>
-                      <p className="text-sm text-gray-600">Khám phá các khóa học công nghệ và kỹ năng chuyên môn</p>
-                    </div>
-                    
-                    {/* Wider grid layout for laptop screens */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                      {learningModules.map((category) => (
-                        <div key={category.category} className="space-y-2">
-                          <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center space-x-1 border-b border-gray-100 pb-1">
-                            <span className="text-base">{category.icon}</span>
-                            <span className="text-xs">{category.category}</span>
-                          </h3>
-                          <div className="space-y-1">
-                            {category.modules.map((module) => (
-                              <Link
-                                key={module.name}
-                                href={module.href}
-                                className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-all duration-200 group border border-transparent hover:border-blue-100"
-                                onClick={() => setIsLearningDropdownOpen(false)}
-                              >
-                                <span className="text-sm">{module.icon}</span>
-                                <div className="flex-1">
-                                  <span className="text-xs font-medium text-gray-700 group-hover:text-blue-600 block leading-tight">
-                                    {module.name}
-                                  </span>
-                                </div>
-                              </Link>
-                            ))}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-screen max-w-7xl z-50">
+                  {/* Invisible bridge to prevent dropdown from closing */}
+                  <div className="h-2 bg-transparent" />
+                  
+                  <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden">
+                    <div className="p-6">
+                      <div className="mb-4">
+                        <h2 className="text-xl font-bold text-gray-900 mb-1">Learning Modules</h2>
+                        <p className="text-sm text-gray-600">Khám phá các khóa học công nghệ và kỹ năng chuyên môn</p>
+                      </div>
+                      
+                      {/* Wider grid layout for laptop screens */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                        {learningModules.map((category) => (
+                          <div key={category.category} className="space-y-2">
+                            <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center space-x-1 border-b border-gray-100 pb-1">
+                              <span className="text-base">{category.icon}</span>
+                              <span className="text-xs">{category.category}</span>
+                            </h3>
+                            <div className="space-y-1">
+                              {category.modules.map((module) => (
+                                <Link
+                                  key={module.name}
+                                  href={module.href}
+                                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-all duration-200 group border border-transparent hover:border-blue-100"
+                                  onClick={() => setIsLearningDropdownOpen(false)}
+                                >
+                                  <span className="text-sm">{module.icon}</span>
+                                  <div className="flex-1">
+                                    <span className="text-xs font-medium text-gray-700 group-hover:text-blue-600 block leading-tight">
+                                      {module.name}
+                                    </span>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                    </div>
+                        ))}
+                      </div>
 
-                    <div className="mt-6 pt-4 border-t border-gray-100">
-                      <div className="flex flex-wrap justify-center gap-3">
-                        <Link 
-                          href="/learning" 
-                          className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-sm"
-                          onClick={() => setIsLearningDropdownOpen(false)}
-                        >
-                          📚 Tất Cả Khóa Học
-                        </Link>
-                        <Link 
-                          href="/feedback" 
-                          className="inline-flex items-center px-4 py-2 bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-300 text-sm"
-                          onClick={() => setIsLearningDropdownOpen(false)}
-                        >
-                          💬 Phản Hồi
-                        </Link>
+                      <div className="mt-6 pt-4 border-t border-gray-100">
+                        <div className="flex flex-wrap justify-center gap-3">
+                          <Link 
+                            href="/learning" 
+                            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-sm"
+                            onClick={() => setIsLearningDropdownOpen(false)}
+                          >
+                            📚 Tất Cả Khóa Học
+                          </Link>
+                          <Link 
+                            href="/feedback" 
+                            className="inline-flex items-center px-4 py-2 bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-300 text-sm"
+                            onClick={() => setIsLearningDropdownOpen(false)}
+                          >
+                            💬 Phản Hồi
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>

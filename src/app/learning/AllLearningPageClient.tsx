@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, Clock, Star, ChevronRight, Filter } from 'lucide-react';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
 
 // Transform moduleNavigation data to match AllLearningPageClient format
@@ -38,10 +39,74 @@ const categories = {
 const levels = ['Tất cả', 'Cơ bản', 'Trung bình', 'Nâng cao'];
 
 export default function AllLearningPageClient() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  
+  // Initialize state from URL parameters
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLevel, setSelectedLevel] = useState('Tất cả');
   const [sortBy, setSortBy] = useState('popular'); // popular, duration, newest
+
+  // Effect to read URL parameters on mount
+  useEffect(() => {
+    if (!searchParams) return;
+    
+    const categoryFromUrl = searchParams.get('category');
+    const levelFromUrl = searchParams.get('level');
+    const searchFromUrl = searchParams.get('search');
+    const sortFromUrl = searchParams.get('sort');
+
+    if (categoryFromUrl && Object.keys(categories).includes(categoryFromUrl)) {
+      setSelectedCategory(categoryFromUrl);
+    }
+    if (levelFromUrl && levels.includes(levelFromUrl)) {
+      setSelectedLevel(levelFromUrl);
+    }
+    if (searchFromUrl) {
+      setSearchTerm(searchFromUrl);
+    }
+    if (sortFromUrl && ['popular', 'duration', 'newest'].includes(sortFromUrl)) {
+      setSortBy(sortFromUrl);
+    }
+  }, [searchParams]);
+
+  // Function to update URL when filters change
+  const updateURL = (newCategory: string, newLevel: string, newSearch: string, newSort: string) => {
+    if (!pathname) return;
+    
+    const params = new URLSearchParams();
+    
+    if (newCategory !== 'all') params.set('category', newCategory);
+    if (newLevel !== 'Tất cả') params.set('level', newLevel);
+    if (newSearch) params.set('search', newSearch);
+    if (newSort !== 'popular') params.set('sort', newSort);
+    
+    const newUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname;
+    router.replace(newUrl, { scroll: false });
+  };
+
+  // Updated handlers to sync with URL
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    updateURL(category, selectedLevel, searchTerm, sortBy);
+  };
+
+  const handleLevelChange = (level: string) => {
+    setSelectedLevel(level);
+    updateURL(selectedCategory, level, searchTerm, sortBy);
+  };
+
+  const handleSearchChange = (search: string) => {
+    setSearchTerm(search);
+    updateURL(selectedCategory, selectedLevel, search, sortBy);
+  };
+
+  const handleSortChange = (sort: string) => {
+    setSortBy(sort);
+    updateURL(selectedCategory, selectedLevel, searchTerm, sort);
+  };
 
   // Filter modules based on search and filters
   const filteredModules = allLearningModules.filter(module => {
@@ -90,7 +155,7 @@ export default function AllLearningPageClient() {
                   type="text"
                   placeholder="Tìm kiếm khóa học, kỹ năng hoặc công nghệ..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={(e) => handleSearchChange(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
                 />
               </div>
@@ -109,7 +174,7 @@ export default function AllLearningPageClient() {
               <span className="text-white font-medium">Danh mục:</span>
               <select
                 value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
+                onChange={(e) => handleCategoryChange(e.target.value)}
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
                 <option value="all" className="bg-gray-800 text-white">Tất cả danh mục</option>
@@ -124,7 +189,7 @@ export default function AllLearningPageClient() {
               <span className="text-white font-medium">Cấp độ:</span>
               <select
                 value={selectedLevel}
-                onChange={(e) => setSelectedLevel(e.target.value)}
+                onChange={(e) => handleLevelChange(e.target.value)}
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
                 {levels.map(level => (
@@ -138,7 +203,7 @@ export default function AllLearningPageClient() {
               <span className="text-white font-medium">Sắp xếp:</span>
               <select
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
+                onChange={(e) => handleSortChange(e.target.value)}
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
                 <option value="popular" className="bg-gray-800 text-white">Phổ biến</option>
@@ -228,9 +293,10 @@ export default function AllLearningPageClient() {
             </p>
             <button
               onClick={() => {
-                setSearchTerm('');
-                setSelectedCategory('all');
-                setSelectedLevel('Tất cả');
+                handleSearchChange('');
+                handleCategoryChange('all');
+                handleLevelChange('Tất cả');
+                handleSortChange('popular');
               }}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
             >
@@ -252,8 +318,8 @@ export default function AllLearningPageClient() {
             <button
               key={key}
               onClick={() => {
-                setSelectedCategory(key);
-                setSearchTerm('');
+                handleCategoryChange(key);
+                handleSearchChange('');
               }}
               className={`p-4 rounded-xl border transition-all duration-300 ${
                 selectedCategory === key

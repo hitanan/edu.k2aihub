@@ -82,18 +82,146 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.AI,
     title: 'AI Của Tôi',
     subtitle: 'Hướng dẫn AI thực hành',
-    description: 'Hướng dẫn thực hành sử dụng AI trong công việc, học tập và cuộc sống hàng ngày với 6 danh mục chính',
+    description: 'Hướng dẫn thực hành sử dụng AI trong công việc, học tập và cuộc sống hàng ngày với các AI tools phổ biến',
     category: 'foundation',
     icon: '🤖',
     color: 'from-blue-500 to-indigo-500',
     totalDuration: 'Không giới hạn',
     difficulty: 'Tất cả mức độ',
     href: '/ai',
-    features: ['Office & Work', 'Creative & Design', 'Education & Learning', 'Business & Marketing'],
+    features: ['Featured AI Apps', 'Practical Guides', 'Step-by-step Tutorials', 'Real-world Applications'],
     tags: ['ai', 'practical', 'work', 'creativity'],
     prerequisites: [],
     lessons: [],
     coreModule: true
+  },
+
+  // AI Learning Modules (under /learning/ai/)
+  {
+    id: 'ai-office-work',
+    title: 'AI cho Văn Phòng & Công Việc',
+    subtitle: 'Tăng hiệu suất với AI',
+    description: 'Học cách sử dụng AI để tự động hóa công việc văn phòng, viết email chuyên nghiệp và quản lý thời gian hiệu quả',
+    category: 'professional',
+    icon: '💼',
+    color: 'from-blue-600 to-indigo-600',
+    totalDuration: '4-6 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/office-work',
+    features: ['ChatGPT cho Email', 'Excel thông minh', 'Thuyết trình AI', 'Quản lý thời gian'],
+    tags: ['office', 'productivity', 'email', 'automation'],
+    prerequisites: ['Kỹ năng máy tính cơ bản', 'Hiểu biết về Microsoft Office'],
+    lessons: [
+      { id: 'email-automation', title: 'Tự động hóa Email với AI', duration: '45 phút', difficulty: 'Cơ bản' },
+      { id: 'excel-ai', title: 'Excel thông minh với AI', duration: '60 phút', difficulty: 'Trung bình' },
+      { id: 'presentation-ai', title: 'Tạo bài thuyết trình với AI', duration: '50 phút', difficulty: 'Cơ bản' },
+      { id: 'time-management', title: 'Quản lý thời gian với AI', duration: '40 phút', difficulty: 'Cơ bản' }
+    ]
+  },
+  {
+    id: 'ai-creative-design',
+    title: 'AI cho Sáng Tạo & Thiết Kế',
+    subtitle: 'Sáng tạo nội dung với AI',
+    description: 'Khám phá cách sử dụng Midjourney, DALL-E, Canva AI để tạo ra nội dung sáng tạo và thiết kế chuyên nghiệp',
+    category: 'creative',
+    icon: '🎨',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '5-7 giờ',
+    difficulty: 'Cơ bản đến Nâng cao',
+    href: '/learning/ai/creative-design',
+    features: ['Midjourney mastery', 'Canva AI Studio', 'Content creation', 'Visual design'],
+    tags: ['design', 'creativity', 'art', 'visual'],
+    prerequisites: ['Hiểu biết cơ bản về design', 'Sử dụng máy tính thành thạo'],
+    lessons: [
+      { id: 'midjourney-basics', title: 'Midjourney cơ bản', duration: '60 phút', difficulty: 'Cơ bản' },
+      { id: 'advanced-prompting', title: 'Prompt engineering nâng cao', duration: '75 phút', difficulty: 'Nâng cao' },
+      { id: 'canva-ai', title: 'Canva AI Magic Studio', duration: '50 phút', difficulty: 'Trung bình' },
+      { id: 'content-creation', title: 'Tạo nội dung với AI', duration: '45 phút', difficulty: 'Trung bình' }
+    ]
+  },
+  {
+    id: 'ai-education-learning',
+    title: 'AI cho Giáo Dục & Học Tập',
+    subtitle: 'Học tập thông minh với AI',
+    description: 'Sử dụng AI như một gia sư cá nhân, hỗ trợ nghiên cứu, học ngôn ngữ và tóm tắt tài liệu hiệu quả',
+    category: 'professional',
+    icon: '📚',
+    color: 'from-green-600 to-teal-600',
+    totalDuration: '4-5 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/education-learning',
+    features: ['AI Tutor', 'Research assistance', 'Language learning', 'Document summarization'],
+    tags: ['education', 'learning', 'research', 'study'],
+    prerequisites: ['Kỹ năng học tập cơ bản'],
+    lessons: [
+      { id: 'ai-tutor', title: 'AI như gia sư cá nhân', duration: '50 phút', difficulty: 'Cơ bản' },
+      { id: 'research-ai', title: 'Nghiên cứu với AI', duration: '60 phút', difficulty: 'Trung bình' },
+      { id: 'language-learning', title: 'Học ngôn ngữ với AI', duration: '45 phút', difficulty: 'Cơ bản' },
+      { id: 'document-summary', title: 'Tóm tắt tài liệu với AI', duration: '40 phút', difficulty: 'Cơ bản' }
+    ]
+  },
+  {
+    id: 'ai-business-marketing',
+    title: 'AI cho Kinh Doanh & Marketing',
+    subtitle: 'Marketing thông minh với AI',
+    description: 'Ứng dụng AI trong marketing, phân tích khách hàng, tạo chatbot và tối ưu hóa SEO cho doanh nghiệp',
+    category: 'professional',
+    icon: '📈',
+    color: 'from-orange-600 to-red-600',
+    totalDuration: '6-8 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/business-marketing',
+    features: ['Marketing automation', 'Customer analytics', 'Chatbot development', 'SEO optimization'],
+    tags: ['marketing', 'business', 'analytics', 'automation'],
+    prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm kinh doanh'],
+    lessons: [
+      { id: 'marketing-automation', title: 'Tự động hóa Marketing', duration: '70 phút', difficulty: 'Trung bình' },
+      { id: 'customer-analytics', title: 'Phân tích khách hàng với AI', duration: '80 phút', difficulty: 'Nâng cao' },
+      { id: 'chatbot-development', title: 'Phát triển Chatbot', duration: '60 phút', difficulty: 'Trung bình' },
+      { id: 'seo-ai', title: 'SEO tối ưu với AI', duration: '50 phút', difficulty: 'Trung bình' }
+    ]
+  },
+  {
+    id: 'ai-daily-life',
+    title: 'AI cho Đời Sống Hàng Ngày',
+    subtitle: 'AI trong cuộc sống',
+    description: 'Khám phá cách AI có thể hỗ trợ cuộc sống hàng ngày từ quản lý tài chính, sức khỏe đến du lịch thông minh',
+    category: 'professional',
+    icon: '🏠',
+    color: 'from-emerald-600 to-cyan-600',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    href: '/learning/ai/daily-life',
+    features: ['Personal AI assistant', 'Financial management', 'Health & fitness', 'Smart travel'],
+    tags: ['lifestyle', 'personal', 'health', 'finance'],
+    prerequisites: ['Sử dụng smartphone/máy tính'],
+    lessons: [
+      { id: 'personal-assistant', title: 'Trợ lý AI cá nhân', duration: '45 phút', difficulty: 'Cơ bản' },
+      { id: 'financial-ai', title: 'Quản lý tài chính với AI', duration: '50 phút', difficulty: 'Cơ bản' },
+      { id: 'health-fitness', title: 'Sức khỏe & Fitness AI', duration: '40 phút', difficulty: 'Cơ bản' },
+      { id: 'travel-ai', title: 'Du lịch thông minh với AI', duration: '35 phút', difficulty: 'Cơ bản' }
+    ]
+  },
+  {
+    id: 'ai-programming-dev',
+    title: 'AI cho Lập Trình & Phát Triển',
+    subtitle: 'Code thông minh với AI',
+    description: 'Tìm hiểu GitHub Copilot, AI code review và các công cụ AI hỗ trợ lập trình để tăng hiệu suất coding',
+    category: 'programming',
+    icon: '💻',
+    color: 'from-slate-600 to-blue-600',
+    totalDuration: '7-9 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/programming-dev',
+    features: ['GitHub Copilot', 'AI code review', 'Automated testing', 'Documentation generation'],
+    tags: ['programming', 'coding', 'development', 'automation'],
+    prerequisites: ['Kiến thức lập trình cơ bản', 'Sử dụng Git/GitHub'],
+    lessons: [
+      { id: 'github-copilot', title: 'GitHub Copilot mastery', duration: '90 phút', difficulty: 'Trung bình' },
+      { id: 'ai-code-review', title: 'AI Code Review', duration: '70 phút', difficulty: 'Nâng cao' },
+      { id: 'automated-testing', title: 'Testing tự động với AI', duration: '60 phút', difficulty: 'Trung bình' },
+      { id: 'documentation-ai', title: 'Tạo tài liệu với AI', duration: '50 phút', difficulty: 'Trung bình' }
+    ]
   },
 
   // Vietnamese Market Modules
