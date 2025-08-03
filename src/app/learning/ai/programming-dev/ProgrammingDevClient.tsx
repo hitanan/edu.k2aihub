@@ -25,55 +25,128 @@ export default function ProgrammingDevClient() {
             rating: '9/10'
           },
           {
+            name: 'Claude 3.5 Sonnet (Anthropic)',
+            price: '$20/tháng (Pro), API pricing riêng',
+            strengths: ['Reasoning logic xuất sắc', 'Code analysis chuyên sâu', 'Artifact creation', 'Safety-focused', 'Context window 200K tokens'],
+            weaknesses: ['Không tích hợp trực tiếp IDE', 'Cần copy-paste code', 'Rate limit nghiêm ngặt'],
+            bestFor: 'Code review, architecture design, complex debugging',
+            rating: '9.2/10'
+          },
+          {
             name: 'Cursor IDE',
             price: '$20/tháng (Pro)',
-            strengths: ['AI native editor', 'Chat với codebase', 'Multi-file editing', 'Codebase understanding'],
+            strengths: ['AI native editor', 'Chat với codebase', 'Multi-file editing', 'Codebase understanding', 'Claude integration'],
             weaknesses: ['Còn mới, ít stable', 'Learning curve cao', 'Giá cao'],
             bestFor: 'Senior developers, complex refactoring',
             rating: '8.5/10'
           },
           {
-            name: 'ChatGPT Code Interpreter',
-            price: '$20/tháng (Plus)',
-            strengths: ['Explain code rất tốt', 'Debug assistance', 'Architecture planning', 'Free tier available'],
+            name: 'ChatGPT o1 & GPT-4',
+            price: '$20/tháng (Plus), API pricing riêng',
+            strengths: ['Explain code rất tốt', 'Debug assistance', 'Architecture planning', 'o1 reasoning mạnh'],
             weaknesses: ['Không tích hợp trực tiếp IDE', 'Context window giới hạn', 'Không realtime'],
-            bestFor: 'Learning, debugging, code review',
-            rating: '8/10'
+            bestFor: 'Learning, debugging, code review, algorithm design',
+            rating: '8.5/10'
           },
           {
-            name: 'Tabnine',
-            price: '$12/tháng (Pro)',
-            strengths: ['Privacy-focused', 'On-premise option', 'Fast completion', 'Team models'],
-            weaknesses: ['Suggestion quality thấp hơn Copilot', 'UI/UX chưa smooth'],
-            bestFor: 'Companies cần privacy, enterprise',
+            name: 'JetBrains AI Assistant',
+            price: 'Tích hợp trong JetBrains IDEs subscription',
+            strengths: ['Deep IDE integration', 'Context từ project structure', 'Multi-language support', 'Refactoring suggestions'],
+            weaknesses: ['Chỉ cho JetBrains IDEs', 'Còn beta', 'Performance chưa ổn định'],
+            bestFor: 'JetBrains users, Java/Kotlin developers',
+            rating: '7.8/10'
+          },
+          {
+            name: 'Windsurf IDE (Codeium)',
+            price: 'Free (cá nhân), $12/tháng (team)',
+            strengths: ['AI-first flow', 'Agentic coding', 'Multi-file editing', 'Free tier generous'],
+            weaknesses: ['Còn mới, ít tài liệu', 'Community nhỏ', 'Feature chưa đầy đủ'],
+            bestFor: 'Individual developers, experimental workflows',
             rating: '7.5/10'
           },
           {
-            name: 'Codeium',
-            price: 'Free (cá nhân), $12/tháng (team)',
-            strengths: ['Free tier generous', 'Fast performance', 'Good language support', 'Chat features'],
-            weaknesses: ['Ít feature hơn Copilot', 'Community nhỏ hơn'],
-            bestFor: 'Individual developers, startups',
-            rating: '7.8/10'
+            name: 'Amazon CodeWhisperer (Q Developer)',
+            price: 'Free (cá nhân), Enterprise pricing',
+            strengths: ['AWS integration mạnh', 'Security scanning', 'Free tier', 'Multi-language'],
+            weaknesses: ['Suggestion quality thấp hơn Copilot', 'Bias toward AWS services'],
+            bestFor: 'AWS developers, security-conscious teams',
+            rating: '7.2/10'
+          },
+          {
+            name: 'Replit Agent',
+            price: 'Tích hợp trong Replit subscription',
+            strengths: ['Full-stack development', 'Deploy tự động', 'Beginner-friendly', 'Browser-based'],
+            weaknesses: ['Giới hạn trong Replit ecosystem', 'Không suitable cho enterprise'],
+            bestFor: 'Prototyping, learning, quick demos',
+            rating: '7.0/10'
           }
         ],
         comparison: {
           categories: [
             {
               name: 'Code Completion',
-              scores: { 'GitHub Copilot': 9, 'Cursor': 9, 'ChatGPT': 7, 'Tabnine': 7, 'Codeium': 8 }
+              scores: { 
+                'GitHub Copilot': 9, 
+                'Claude 3.5': 8, 
+                'Cursor': 9, 
+                'ChatGPT o1': 7, 
+                'JetBrains AI': 8,
+                'Windsurf': 7,
+                'CodeWhisperer': 7,
+                'Replit Agent': 6
+              }
             },
             {
               name: 'Context Understanding',
-              scores: { 'GitHub Copilot': 8, 'Cursor': 10, 'ChatGPT': 9, 'Tabnine': 6, 'Codeium': 7 }
+              scores: { 
+                'GitHub Copilot': 8, 
+                'Claude 3.5': 10, 
+                'Cursor': 10, 
+                'ChatGPT o1': 9, 
+                'JetBrains AI': 8,
+                'Windsurf': 7,
+                'CodeWhisperer': 6,
+                'Replit Agent': 6
+              }
             },
             {
               name: 'IDE Integration',
-              scores: { 'GitHub Copilot': 10, 'Cursor': 10, 'ChatGPT': 5, 'Tabnine': 8, 'Codeium': 8 }
+              scores: { 
+                'GitHub Copilot': 10, 
+                'Claude 3.5': 4, 
+                'Cursor': 10, 
+                'ChatGPT o1': 5, 
+                'JetBrains AI': 10,
+                'Windsurf': 9,
+                'CodeWhisperer': 8,
+                'Replit Agent': 10
+              }
             },
             {
               name: 'Price Value',
-              scores: { 'GitHub Copilot': 8, 'Cursor': 6, 'ChatGPT': 8, 'Tabnine': 7, 'Codeium': 10 }
+              scores: { 
+                'GitHub Copilot': 8, 
+                'Claude 3.5': 7, 
+                'Cursor': 6, 
+                'ChatGPT o1': 8, 
+                'JetBrains AI': 8,
+                'Windsurf': 10,
+                'CodeWhisperer': 9,
+                'Replit Agent': 8
+              }
+            },
+            {
+              name: 'Code Quality',
+              scores: { 
+                'GitHub Copilot': 8, 
+                'Claude 3.5': 9, 
+                'Cursor': 8, 
+                'ChatGPT o1': 9, 
+                'JetBrains AI': 7,
+                'Windsurf': 7,
+                'CodeWhisperer': 7,
+                'Replit Agent': 6
+              }
             }
           ]
         }

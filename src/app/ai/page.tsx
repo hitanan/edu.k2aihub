@@ -27,6 +27,26 @@ const featuredAIApps = [
     color: "from-green-500 to-blue-500"
   },
   {
+    name: "Claude 3.5 Sonnet",
+    description: "AI assistant từ Anthropic cho phân tích và reasoning",
+    category: "Analysis",
+    features: ["Phân tích văn bản dài", "Reasoning logic mạnh", "Code review chuyên sâu", "Artifacts creation"],
+    link: "https://claude.ai",
+    pricing: "Freemium",
+    icon: "🧠",
+    color: "from-indigo-500 to-purple-500"
+  },
+  {
+    name: "Cursor IDE",
+    description: "AI-native code editor cho developers",
+    category: "Development",
+    features: ["AI pair programming", "Codebase chat", "Multi-file editing", "Claude integration"],
+    link: "https://cursor.com",
+    pricing: "Freemium",
+    icon: "💻",
+    color: "from-purple-500 to-blue-500"
+  },
+  {
     name: "Midjourney",
     description: "Tạo ảnh nghệ thuật từ text prompts",
     category: "Creative",
@@ -35,6 +55,16 @@ const featuredAIApps = [
     pricing: "Subscription",
     icon: "🎨",
     color: "from-purple-500 to-pink-500"
+  },
+  {
+    name: "Perplexity AI",
+    description: "AI search engine với citations và real-time data",
+    category: "Research",
+    features: ["Real-time web search", "Source citations", "Academic research", "Follow-up questions"],
+    link: "https://perplexity.ai",
+    pricing: "Freemium",
+    icon: "🔍",
+    color: "from-cyan-500 to-blue-500"
   },
   {
     name: "GitHub Copilot",
@@ -57,24 +87,24 @@ const featuredAIApps = [
     color: "from-orange-500 to-red-500"
   },
   {
-    name: "Grammarly",
-    description: "AI kiểm tra ngữ pháp và cải thiện văn phong",
-    category: "Writing",
-    features: ["Sửa lỗi ngữ pháp", "Cải thiện văn phong", "Plagiarism detection", "Writing insights"],
-    link: "https://grammarly.com",
+    name: "Windsurf IDE",
+    description: "AI-first code editor với agentic workflows",
+    category: "Development",
+    features: ["Agentic coding", "Multi-file awareness", "Natural language commands", "Free tier"],
+    link: "https://codeium.com/windsurf",
     pricing: "Freemium",
-    icon: "✍️",
-    color: "from-emerald-500 to-teal-500"
+    icon: "🌊",
+    color: "from-teal-500 to-green-500"
   },
   {
-    name: "Claude",
-    description: "AI assistant từ Anthropic cho phân tích và viết lách",
-    category: "Analysis",
-    features: ["Phân tích văn bản dài", "Viết content chất lượng", "Research assistance", "Safe AI"],
-    link: "https://claude.ai",
-    pricing: "Freemium",
-    icon: "🧠",
-    color: "from-indigo-500 to-purple-500"
+    name: "NotebookLM",
+    description: "AI research assistant từ Google",
+    category: "Research",
+    features: ["Document analysis", "Podcast generation", "Source grounding", "Note organization"],
+    link: "https://notebooklm.google.com",
+    pricing: "Free",
+    icon: "📚",
+    color: "from-amber-500 to-orange-500"
   }
 ];
 

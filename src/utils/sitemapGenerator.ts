@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities';
+import { pythonLessons } from '@/data/python';
 import { arduinoLessons } from '@/data/arduino';
 import { roboticsLessons } from '@/data/robotics';
 import { scratchLessons } from '@/data/scratch';
@@ -117,20 +118,9 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
-  // Python lesson pages - sử dụng lesson IDs thực tế từ data file
-  const pythonLessonIds = [
-    'python-introduction',
-    'variables-data-types',
-    'control-structures',
-    'functions',
-    'lists-tuples',
-    'dictionaries',
-    'file-handling',
-    'oop-basics'
-  ];
-
-  const pythonPages = pythonLessonIds.map((lessonId) => ({
-    url: `${baseUrl}/learning/python/${lessonId}`,
+  // Python lesson pages - using actual data from python.ts
+  const pythonPages = pythonLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/python/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7
