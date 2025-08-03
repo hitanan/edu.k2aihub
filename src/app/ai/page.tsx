@@ -155,104 +155,151 @@ const quickStartSteps = [
 
 export default function AIModule() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
+    <div className="min-h-screen bg-black overflow-hidden">
+      {/* Hero Section - Cyber AI theme */}
+      <section className="relative min-h-screen bg-gradient-to-br from-black via-purple-900 to-black py-20">
+        {/* Animated AI grid background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-purple-500/10"></div>
+          {/* AI particles */}
+          <div className="absolute top-20 left-10 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-2 h-2 bg-purple-400 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-32 left-1/4 w-4 h-4 bg-cyan-400 rounded-full animate-ping"></div>
+          <div className="absolute bottom-20 right-1/3 w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+          
+          {/* Neural network lines */}
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/50 to-transparent"></div>
+            <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-purple-400/50 to-transparent"></div>
+            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
+            <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-400/50 to-transparent"></div>
+          </div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex items-center min-h-screen">
+          <div className="w-full">
+            {/* AI Brain icon */}
             <div className="flex items-center justify-center mb-8">
-              <div className="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-4xl">
+              <div className="w-32 h-32 bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 rounded-full flex items-center justify-center text-6xl shadow-2xl shadow-blue-500/30 animate-pulse">
                 🤖
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              AI Của Tôi
-              <span className="block text-purple-300 mt-2">Ứng Dụng AI Thực Tế</span>
+            
+            <h1 className="text-5xl md:text-8xl font-black text-white mb-6">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                AI CỦA TÔI
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-purple-100 mb-8 max-w-4xl mx-auto">
-              Khám phá cách sử dụng AI hiệu quả trong công việc và cuộc sống hàng ngày. 
-              Từ ChatGPT đến Midjourney, học cách tận dụng sức mạnh của AI một cách thực tế.
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-300 mb-8">
+              <span className="text-blue-400">Thực Tế</span> • 
+              <span className="text-purple-400">Ứng Dụng</span> • 
+              <span className="text-pink-400">Hiệu Quả</span>
+            </h2>
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Khám phá sức mạnh của <span className="text-blue-400 font-bold">AI thực tế</span> trong 
+              <span className="text-purple-400 font-bold"> công việc hàng ngày</span> - từ 
+              <span className="text-pink-400 font-bold">ChatGPT đến Midjourney</span>
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                🎯 100+ AI Tools
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                📝 Hướng dẫn thực hành
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
-                🚀 Cập nhật liên tục
-              </div>
+            {/* AI Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-4xl mx-auto">
+              {[
+                { number: '100+', label: 'AI Tools', icon: '🔧' },
+                { number: '6', label: 'Lĩnh Vực', icon: '📊' },
+                { number: '∞', label: 'Ứng Dụng', icon: '🚀' },
+                { number: '100%', label: 'Thực Tế', icon: '✨' }
+              ].map((stat, index) => (
+                <div key={index} className="relative group">
+                  <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-blue-400/20 hover:border-blue-400/50 transition-all duration-300 group-hover:scale-105">
+                    <div className="text-5xl mb-3 group-hover:animate-bounce">{stat.icon}</div>
+                    <div className="text-3xl font-black text-blue-400 mb-1">{stat.number}</div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  </div>
+                  <div className="absolute inset-0 bg-blue-400/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                </div>
+              ))}
             </div>
-
-            <div className="flex flex-wrap justify-center gap-4">
+            
+            {/* Action buttons */}
+            <div className="flex flex-wrap justify-center gap-6">
               <a 
                 href="#featured-apps" 
-                className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden"
               >
-                Bắt Đầu Ngay
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-black font-black">🚀 BẮT ĐẦU NGAY</span>
               </a>
               <a 
                 href="#ai-categories" 
-                className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200 backdrop-blur-sm"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border-2 border-pink-400"
               >
-                Khám Phá AI
+                <div className="absolute inset-0 bg-pink-400/10 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-pink-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-pink-400 font-black">🎯 KHÁM PHÁ AI</span>
               </a>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Featured AI Apps */}
-      <section id="featured-apps" className="py-20 bg-white">
+      {/* Featured AI Apps - Neon cards */}
+      <section id="featured-apps" className="py-20 bg-gradient-to-br from-slate-900 via-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              AI Tools Phổ Biến Nhất
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                AI TOOLS
+              </span>
+              <span className="block text-pink-400 mt-2">PHỔ BIẾN</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Những công cụ AI được sử dụng nhiều nhất hiện nay, từ miễn phí đến trả phí
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Những công cụ AI được sử dụng nhiều nhất hiện nay, từ miễn phí đến chuyên nghiệp
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredAIApps.map((app, index) => (
-              <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group">
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${app.color} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300`}>
-                    {app.icon}
-                  </div>
-                  <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
-                    app.pricing === 'Free' ? 'bg-green-100 text-green-700' :
-                    app.pricing === 'Freemium' ? 'bg-blue-100 text-blue-700' :
-                    'bg-yellow-100 text-yellow-700'
+              <div key={index} className="group relative">
+                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/30 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  {/* Pricing badge */}
+                  <div className={`absolute -top-3 left-6 px-4 py-2 rounded-full text-sm font-bold shadow-lg ${
+                    app.pricing === 'Free' ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-green-500/30' :
+                    app.pricing === 'Freemium' ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-blue-500/30' :
+                    'bg-gradient-to-r from-yellow-500 to-orange-500 text-black shadow-yellow-500/30'
                   }`}>
                     {app.pricing}
-                  </span>
-                </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{app.name}</h3>
-                <p className="text-gray-600 mb-4 text-sm">{app.description}</p>
-                
-                <div className="space-y-2 mb-6">
-                  {app.features.slice(0, 3).map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-sm text-gray-500">
-                      <span className="text-green-500 mr-2">✓</span>
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="flex gap-3">
+                  </div>
+                  
+                  {/* App icon */}
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${app.color} flex items-center justify-center text-2xl mb-6 mt-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/30`}>
+                    {app.icon}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{app.name}</h3>
+                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">{app.description}</p>
+                  
+                  <div className="space-y-2 mb-6">
+                    {app.features.slice(0, 3).map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-gray-300 text-sm">
+                        <span className="text-green-400 mr-2">✓</span>
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                  
                   <a 
                     href={app.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-gray-900 text-white text-center py-3 rounded-xl font-semibold hover:bg-gray-800 transition-colors duration-200"
+                    className="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-3 rounded-xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
                   >
-                    Dùng thử →
+                    DÙNG THỬ →
                   </a>
+                  
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-400/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </div>
               </div>
             ))}
@@ -260,39 +307,47 @@ export default function AIModule() {
         </div>
       </section>
 
-      {/* AI Categories */}
-      <section id="ai-categories" className="py-20 bg-gray-50">
+      {/* AI Categories - Matrix style */}
+      <section id="ai-categories" className="py-20 bg-gradient-to-br from-black via-slate-800 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Học AI Theo Lĩnh Vực
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                HỌC AI
+              </span>
+              <span className="block text-blue-400 mt-2">THEO LĨNH VỰC</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Chọn lĩnh vực bạn quan tâm để học cách áp dụng AI một cách hiệu quả
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Chọn lĩnh vực bạn quan tâm để học cách áp dụng AI một cách hiệu quả nhất
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {aiCategories.map((category, index) => (
-              <Link key={index} href={category.href}>
-                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <Link key={index} href={category.href} className="group relative">
+                <div className="relative bg-gradient-to-br from-slate-800/20 to-slate-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/30 hover:border-purple-400/50 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30`}>
                     {category.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
-                    {category.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6">{category.description}</p>
+                  
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">{category.title}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{category.description}</p>
+                  
                   <div className="flex flex-wrap gap-2 mb-6">
                     {category.topics.map((topic, topicIndex) => (
-                      <span key={topicIndex} className="bg-purple-50 text-purple-600 text-sm px-3 py-1 rounded-full">
+                      <span key={topicIndex} className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm border border-purple-500/30">
                         {topic}
                       </span>
                     ))}
                   </div>
-                  <div className="text-purple-600 font-semibold group-hover:text-purple-700 transition-colors">
-                    Học ngay →
+                  
+                  <div className="text-blue-400 font-bold group-hover:text-blue-300 transition-colors flex items-center">
+                    <span>HỌC NGAY</span>
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </div>
+                  
+                  {/* Matrix effect hint */}
+                  <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-blue-400/50 to-transparent opacity-20 group-hover:opacity-60 transition-opacity duration-300"></div>
                 </div>
               </Link>
             ))}
@@ -300,14 +355,17 @@ export default function AIModule() {
         </div>
       </section>
 
-      {/* Quick Start Guide */}
-      <section className="py-20 bg-white">
+      {/* Quick Start Guide - Futuristic design */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900/20 to-purple-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Bắt Đầu Với AI
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                BẮT ĐẦU
+              </span>
+              <span className="block text-purple-400 mt-2">VỚI AI</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               3 bước đơn giản để bắt đầu hành trình AI của bạn
             </p>
           </div>
@@ -315,16 +373,16 @@ export default function AIModule() {
           <div className="grid md:grid-cols-3 gap-8">
             {quickStartSteps.map((step, index) => (
               <div key={index} className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-blue-500/30">
                   {step.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
-                <p className="text-gray-600 mb-6">{step.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">{step.title}</h3>
+                <p className="text-gray-300 mb-6 leading-relaxed">{step.description}</p>
                 <a 
                   href={step.link}
                   target={step.link.startsWith('http') ? '_blank' : '_self'}
                   rel={step.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="inline-block bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition-colors duration-200"
+                  className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-2xl font-bold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   {step.action}
                 </a>
@@ -334,30 +392,45 @@ export default function AIModule() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Sẵn Sàng Thành Thạo AI?
-          </h2>
-          <p className="text-xl text-gray-200 mb-8">
-            Bắt đầu với những AI tools miễn phí và từ từ mở rộng khi bạn đã thành thạo
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a 
-              href="https://chat.openai.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-200"
-            >
-              🤖 Thử ChatGPT Ngay
-            </a>
-            <Link 
-              href="/learning/ai/office-work"
-              className="bg-yellow-500 hover:bg-yellow-400 text-black px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200"
-            >
-              📚 Học AI Từ Cơ Bản
-            </Link>
+      {/* CTA Section - AI finale */}
+      <section className="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-black relative overflow-hidden">
+        {/* AI particles */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+          <div className="absolute top-20 right-20 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 left-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-32 right-1/3 w-2 h-2 bg-pink-400 rounded-full animate-ping"></div>
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-3xl p-12 border border-blue-400/30 shadow-2xl">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
+              🎯 <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">THÀNH THẠO AI</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Bắt đầu với <span className="text-blue-400 font-bold">AI tools miễn phí</span> và 
+              <span className="text-purple-400 font-bold"> nâng cao dần kỹ năng</span> của bạn
+            </p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <a 
+                href="https://chat.openai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border-2 border-blue-400"
+              >
+                <div className="absolute inset-0 bg-blue-400/10 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-blue-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-blue-400 font-black">🤖 THỬ CHATGPT</span>
+              </a>
+              <Link 
+                href="/learning/ai/office-work"
+                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative text-black font-black">📚 HỌC AI CƠ BẢN</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

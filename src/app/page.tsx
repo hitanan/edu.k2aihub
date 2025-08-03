@@ -247,26 +247,26 @@ export default function HomePage() {
                 href={module.href}
                 className="group relative"
               >
-                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/30 hover:border-emerald-400/50 transition-all duration-300 hover:scale-105 overflow-hidden">
+                <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/30 hover:border-emerald-400/50 transition-all duration-300 hover:scale-105 overflow-hidden min-h-[420px]">
                   {/* Neon highlight badge */}
-                  <div className="absolute -top-3 left-6 bg-gradient-to-r from-rose-500 to-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg shadow-rose-500/30">
+                  <div className="absolute -top-1 left-6 bg-gradient-to-r from-rose-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-rose-500/30 z-10">
                     {module.highlight}
                   </div>
                   
                   {/* Cyber glow icon */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${module.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-emerald-500/30`}>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${module.color} flex items-center justify-center text-2xl mb-6 mt-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-emerald-500/30`}>
                     {module.icon}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">{module.title}</h3>
-                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">{module.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors leading-tight">{module.title}</h3>
+                  <p className="text-gray-300 mb-4 text-sm leading-relaxed min-h-[60px]">{module.description}</p>
                   
                   <div className="flex justify-between items-center text-sm text-gray-400 mb-4">
-                    <span className="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/30 font-bold">{module.difficulty}</span>
-                    <span className="text-violet-300 font-bold">{module.time}</span>
+                    <span className="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/30 font-bold text-xs">{module.difficulty}</span>
+                    <span className="text-violet-300 font-bold text-xs">{module.time}</span>
                   </div>
                   
-                  <div className="text-cyan-400 font-bold group-hover:text-cyan-300 transition-colors flex items-center">
+                  <div className="text-cyan-400 font-bold group-hover:text-cyan-300 transition-colors flex items-center mt-auto">
                     <span>HỌC NGAY</span>
                     <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </div>

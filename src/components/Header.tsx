@@ -69,14 +69,6 @@ const Header: React.FC = () => {
             };
           }
 
-          if (categoryMap[key]) {
-            categoryMap[key].modules.push({
-              name: module.title,
-              href: module.href || `/learning/${module.id}`,
-              icon: module.icon
-            });
-          }
-
           categoryMap[key].modules.push({
             name: module.title,
             href: module.href || `/learning/${module.id}`,
@@ -86,7 +78,14 @@ const Header: React.FC = () => {
       }
     });
 
-    return Object.values(categoryMap);
+    // Limit to 4 modules per category and add "See All" link
+    return Object.entries(categoryMap).map(([categoryKey, categoryData]) => ({
+      ...categoryData,
+      categoryKey,
+      modules: categoryData.modules.slice(0, 4), // Limit to 4 modules
+      hasMore: categoryData.modules.length > 4, // Check if there are more modules
+      totalCount: categoryData.modules.length
+    }));
   };
 
   const learningModules = getLearningModulesByCategory();
@@ -165,18 +164,16 @@ const Header: React.FC = () => {
                   
                   <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden">
                     <div className="p-6">
-                      <div className="mb-4">
-                        <h2 className="text-xl font-bold text-gray-900 mb-1">Learning Modules</h2>
-                        <p className="text-sm text-gray-600">Khám phá các khóa học công nghệ và kỹ năng chuyên môn</p>
-                      </div>
-                      
                       {/* Responsive grid layout */}
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {learningModules.map((category) => (
                           <div key={category.category} className="space-y-2">
-                            <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center space-x-1 border-b border-gray-100 pb-1">
-                              <span className="text-base">{category.icon}</span>
-                              <span className="text-xs">{category.category}</span>
+                            <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center justify-between border-b border-gray-100 pb-1">
+                              <div className="flex items-center space-x-1">
+                                <span className="text-base">{category.icon}</span>
+                                <span className="text-xs">{category.category}</span>
+                              </div>
+                              <span className="text-xs text-gray-500">({category.totalCount})</span>
                             </h3>
                             <div className="space-y-1">
                               {category.modules.map((module) => (
@@ -194,6 +191,20 @@ const Header: React.FC = () => {
                                   </div>
                                 </Link>
                               ))}
+                              {category.hasMore && (
+                                <Link
+                                  href={`/learning?category=${category.categoryKey}`}
+                                  className="flex items-center space-x-2 p-2 rounded-lg bg-blue-50 hover:bg-blue-100 transition-all duration-200 group border border-blue-200"
+                                  onClick={() => setIsLearningDropdownOpen(false)}
+                                >
+                                  <span className="text-sm">👀</span>
+                                  <div className="flex-1">
+                                    <span className="text-xs font-medium text-blue-600 group-hover:text-blue-800 block leading-tight">
+                                      Xem tất cả +{category.totalCount - 4}
+                                    </span>
+                                  </div>
+                                </Link>
+                              )}
                             </div>
                           </div>
                         ))}
@@ -207,13 +218,6 @@ const Header: React.FC = () => {
                             onClick={() => setIsLearningDropdownOpen(false)}
                           >
                             📚 Tất Cả Khóa Học
-                          </Link>
-                          <Link 
-                            href="/feedback" 
-                            className="inline-flex items-center px-4 py-2 bg-white text-gray-700 font-semibold rounded-xl border border-gray-200 hover:bg-gray-50 transition-all duration-300 text-sm"
-                            onClick={() => setIsLearningDropdownOpen(false)}
-                          >
-                            💬 Phản Hồi
                           </Link>
                         </div>
                       </div>
