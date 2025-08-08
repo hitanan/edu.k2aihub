@@ -12,13 +12,18 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
   {
     id: 'social-media-personal-branding',
     title: 'Social Media Strategy & Personal Branding',
-    description: 'Xây dựng thương hiệu cá nhân mạnh mẽ trên các nền tảng social media, phát triển voice và aesthetic riêng biệt để thu hút audience.',
+    description:
+      'Xây dựng thương hiệu cá nhân mạnh mẽ trên các nền tảng social media, phát triển voice và aesthetic riêng biệt để thu hút audience.',
     duration: '180 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     imageUrl: '/images/content-creator/personal-branding.jpg',
     platforms: ['Instagram', 'TikTok', 'Facebook', 'YouTube', 'LinkedIn'],
-    monetizationMethods: ['Brand partnerships', 'Affiliate marketing', 'Product placement'],
+    monetizationMethods: [
+      'Brand partnerships',
+      'Affiliate marketing',
+      'Product placement',
+    ],
     toolsRequired: ['Canva', 'Buffer', 'Hootsuite', 'Analytics tools'],
     averageIncome: '5-20 triệu VNĐ/tháng',
     timeToMaster: '2-3 tháng',
@@ -27,18 +32,19 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Tạo content strategy hiệu quả cho từng platform',
       'Phát triển visual aesthetic nhất quán',
       'Xây dựng engagement strategy và community building',
-      'Hiểu rõ algorithm của các platform chính'
+      'Hiểu rõ algorithm của các platform chính',
     ],
     prerequisites: [
       'Hiểu biết cơ bản về social media platforms',
       'Khả năng sử dụng smartphone để chụp ảnh/quay video',
       'Tư duy sáng tạo và khả năng storytelling',
-      'Kiên nhẫn và consistency trong content creation'
+      'Kiên nhẫn và consistency trong content creation',
     ],
     exercises: [
       {
         title: 'Brand Identity Canvas Creation',
-        description: 'Tạo brand identity canvas hoàn chỉnh cho personal brand của bạn',
+        description:
+          'Tạo brand identity canvas hoàn chỉnh cho personal brand của bạn',
         difficulty: 'Cơ bản',
         materials: ['Canva account', 'Notebook', 'Reference images'],
         procedure: [
@@ -49,16 +55,22 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Viết brand manifesto và core messages',
           'Tạo content pillars (3-5 chủ đề chính)',
           'Design logo/avatar và cover images cho tất cả platforms',
-          'Viết bio templates cho từng platform'
+          'Viết bio templates cho từng platform',
         ],
-        expectedResults: 'Brand identity package hoàn chỉnh ready để implement across platforms',
-        solution: 'Sử dụng framework: WHO (audience) + WHAT (value) + HOW (unique approach) + WHY (mission)'
+        expectedResults:
+          'Brand identity package hoàn chỉnh ready để implement across platforms',
+        solution:
+          'Sử dụng framework: WHO (audience) + WHAT (value) + HOW (unique approach) + WHY (mission)',
       },
       {
         title: 'Content Strategy Development',
         description: 'Phát triển content strategy 30 ngày với posting schedule',
         difficulty: 'Trung bình',
-        materials: ['Content calendar template', 'Analytics access', 'Competitor research'],
+        materials: [
+          'Content calendar template',
+          'Analytics access',
+          'Competitor research',
+        ],
         procedure: [
           'Research trending hashtags và keywords trong niche',
           'Analyze competitor content performance và timing',
@@ -67,16 +79,22 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Develop caption templates và engagement hooks',
           'Set up analytics tracking và KPI measurements',
           'Create batch content creation workflow',
-          'Plan cross-platform content adaptation strategies'
+          'Plan cross-platform content adaptation strategies',
         ],
-        expectedResults: '30-day content calendar với measured engagement improvements',
-        solution: 'Use data-driven approach: test posting times, analyze engagement patterns, optimize based on platform-specific best practices'
+        expectedResults:
+          '30-day content calendar với measured engagement improvements',
+        solution:
+          'Use data-driven approach: test posting times, analyze engagement patterns, optimize based on platform-specific best practices',
       },
       {
         title: 'Community Engagement Mastery',
         description: 'Xây dựng engaged community với authentic interactions',
         difficulty: 'Trung bình',
-        materials: ['Social media accounts', 'Engagement tracking tools', 'Community guidelines'],
+        materials: [
+          'Social media accounts',
+          'Engagement tracking tools',
+          'Community guidelines',
+        ],
         procedure: [
           'Develop authentic voice và conversation style',
           'Create engagement strategies: questions, polls, user-generated content',
@@ -85,66 +103,84 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Organize virtual events: live streams, Q&As, challenges',
           'Create exclusive content cho loyal followers',
           'Implement feedback loops để improve content',
-          'Track engagement metrics và community growth'
+          'Track engagement metrics và community growth',
         ],
         expectedResults: 'Highly engaged community với 15%+ engagement rate',
-        solution: 'Focus on authenticity over perfection, respond personally to comments, create inside jokes and community culture'
-      }
+        solution:
+          'Focus on authenticity over perfection, respond personally to comments, create inside jokes and community culture',
+      },
     ],
     realWorldApplications: [
       'Freelance social media manager cho small businesses (15-25 triệu VNĐ/tháng)',
       'Personal brand development cho entrepreneurs và professionals',
       'Content creation cho e-commerce businesses và startups',
       'Digital marketing consultant với social media expertise',
-      'Influencer marketing coordinator cho agencies'
+      'Influencer marketing coordinator cho agencies',
     ],
     caseStudies: [
       {
         title: 'Từ 0 đến 100K followers trong 6 tháng',
         organization: 'Vietnamese Food Blogger',
         problem: 'Starting with zero followers and no clear niche',
-        solution: 'Focused on authentic Vietnamese cooking tutorials with family stories, consistent posting schedule, engagement with food community',
-        impact: '100K+ followers, 5+ brand partnerships monthly, 25 triệu VNĐ income',
-        innovations: ['Behind-the-scenes family content', 'Interactive cooking challenges', 'Local ingredient spotlights']
+        solution:
+          'Focused on authentic Vietnamese cooking tutorials with family stories, consistent posting schedule, engagement with food community',
+        impact:
+          '100K+ followers, 5+ brand partnerships monthly, 25 triệu VNĐ income',
+        innovations: [
+          'Behind-the-scenes family content',
+          'Interactive cooking challenges',
+          'Local ingredient spotlights',
+        ],
       },
       {
         title: 'Tech Creator Success trong Vietnamese Market',
         organization: 'Young Vietnamese Tech Reviewer',
         problem: 'Competing with established international tech channels',
-        solution: 'Vietnamese-language tech reviews focusing on budget devices and local market needs',
+        solution:
+          'Vietnamese-language tech reviews focusing on budget devices and local market needs',
         impact: '200K+ YouTube subscribers, partnerships với major tech brands',
-        innovations: ['Budget device comparisons', 'Vietnamese market-specific reviews', 'Community Q&A sessions']
-      }
+        innovations: [
+          'Budget device comparisons',
+          'Vietnamese market-specific reviews',
+          'Community Q&A sessions',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Later - Social Media Scheduling',
         url: 'https://later.com',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'Canva - Design Platform',
         url: 'https://canva.com',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'Social Media Examiner',
         url: 'https://socialmediaexaminer.com',
-        type: 'Documentation'
-      }
-    ]
+        type: 'Documentation',
+      },
+    ],
   },
   {
     id: 'video-production-editing-mastery',
     title: 'Video Production & Editing Mastery',
-    description: 'Master video production từ concept đến final edit, sử dụng tools professional và techniques để tạo high-quality content.',
+    description:
+      'Master video production từ concept đến final edit, sử dụng tools professional và techniques để tạo high-quality content.',
     duration: '240 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     imageUrl: '/images/content-creator/video-production.jpg',
     platforms: ['YouTube', 'TikTok', 'Instagram Reels', 'Facebook Videos'],
     monetizationMethods: ['Ad revenue', 'Sponsored content', 'Course sales'],
-    toolsRequired: ['CapCut', 'DaVinci Resolve', 'Adobe Premiere Pro', 'Smartphone camera'],
+    toolsRequired: [
+      'CapCut',
+      'DaVinci Resolve',
+      'Adobe Premiere Pro',
+      'Smartphone camera',
+    ],
     averageIncome: '10-50 triệu VNĐ/tháng',
     timeToMaster: '3-6 tháng',
     objectives: [
@@ -152,20 +188,25 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Master editing techniques và storytelling qua video',
       'Tạo professional-quality videos với budget equipment',
       'Hiểu rõ platform-specific video requirements và optimization',
-      'Develop efficient workflow từ concept đến publishing'
+      'Develop efficient workflow từ concept đến publishing',
     ],
     prerequisites: [
       'Smartphone hoặc camera cơ bản',
       'Computer với software editing capabilities',
       'Hiểu biết cơ bản về storytelling',
-      'Kiên nhẫn với quá trình learning curve của editing'
+      'Kiên nhẫn với quá trình learning curve của editing',
     ],
     exercises: [
       {
         title: 'Smartphone Cinematography Fundamentals',
-        description: 'Master các techniques chụp video professional với smartphone',
+        description:
+          'Master các techniques chụp video professional với smartphone',
         difficulty: 'Cơ bản',
-        materials: ['Smartphone', 'Tripod hoặc stabilizer', 'External microphone'],
+        materials: [
+          'Smartphone',
+          'Tripod hoặc stabilizer',
+          'External microphone',
+        ],
         procedure: [
           'Learn composition rules: rule of thirds, leading lines, symmetry',
           'Practice camera movements: panning, tilting, tracking shots',
@@ -174,14 +215,17 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Shooting different angles và perspectives cho variety',
           'B-roll footage collection cho storytelling enhancement',
           'Color correction và exposure adjustment techniques',
-          'File organization và backup strategies'
+          'File organization và backup strategies',
         ],
-        expectedResults: 'Professional-looking footage shot entirely on smartphone',
-        solution: 'Focus on lighting và audio quality - these make bigger impact than expensive equipment'
+        expectedResults:
+          'Professional-looking footage shot entirely on smartphone',
+        solution:
+          'Focus on lighting và audio quality - these make bigger impact than expensive equipment',
       },
       {
         title: 'Video Editing Workflow Mastery',
-        description: 'Develop efficient editing workflow from raw footage to final video',
+        description:
+          'Develop efficient editing workflow from raw footage to final video',
         difficulty: 'Trung bình',
         materials: ['Video editing software', 'Raw footage', 'Music library'],
         procedure: [
@@ -192,29 +236,38 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Transition effects và when to use them appropriately',
           'Text overlays, graphics, và motion design basics',
           'Export optimization cho different platforms',
-          'Create reusable templates và presets cho efficiency'
+          'Create reusable templates và presets cho efficiency',
         ],
-        expectedResults: 'Streamlined editing process reducing production time by 50%',
-        solution: 'Create templates và shortcuts for repetitive tasks, batch similar editing operations'
+        expectedResults:
+          'Streamlined editing process reducing production time by 50%',
+        solution:
+          'Create templates và shortcuts for repetitive tasks, batch similar editing operations',
       },
       {
         title: 'Storytelling Through Video',
-        description: 'Apply storytelling frameworks để create compelling video narratives',
+        description:
+          'Apply storytelling frameworks để create compelling video narratives',
         difficulty: 'Nâng cao',
-        materials: ['Storyboard templates', 'Script writing tools', 'Reference videos'],
+        materials: [
+          'Storyboard templates',
+          'Script writing tools',
+          'Reference videos',
+        ],
         procedure: [
-          'Study storytelling frameworks: 3-act structure, hero\'s journey',
+          "Study storytelling frameworks: 3-act structure, hero's journey",
           'Create compelling hooks trong first 3 seconds',
           'Develop narrative arc với clear beginning, middle, end',
           'Use visual metaphors và symbolism effectively',
           'Implement pacing techniques để maintain audience attention',
           'Create emotional connections through personal stories',
           'Add call-to-action strategies seamlessly',
-          'Test different narrative approaches và analyze performance'
+          'Test different narrative approaches và analyze performance',
         ],
-        expectedResults: 'Videos với significantly higher retention rates và engagement',
-        solution: 'Start with strong hook, maintain clear narrative thread, end với memorable moment hoặc call-to-action'
-      }
+        expectedResults:
+          'Videos với significantly higher retention rates và engagement',
+        solution:
+          'Start with strong hook, maintain clear narrative thread, end với memorable moment hoặc call-to-action',
+      },
     ],
     realWorldApplications: [
       'Video production services cho businesses (20-100 triệu VNĐ/project)',
@@ -222,42 +275,66 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Social media content creation cho brands',
       'Wedding và event videography',
       'Online course creation với video content',
-      'Corporate training video development'
+      'Corporate training video development',
     ],
     caseStudies: [
       {
         title: 'Vietnamese Travel Vlogger Success',
         organization: 'Independent Travel Creator',
-        problem: 'Low-quality videos với poor engagement despite interesting destinations',
-        solution: 'Invested in learning cinematography và storytelling, focused on emotional connections rather than just showing places',
-        impact: 'Tripled subscriber growth, secured tourism board partnerships worth 50+ triệu VNĐ',
-        innovations: ['Local story integration', 'Cultural sensitivity approach', 'Interactive travel tips']
-      }
+        problem:
+          'Low-quality videos với poor engagement despite interesting destinations',
+        solution:
+          'Invested in learning cinematography và storytelling, focused on emotional connections rather than just showing places',
+        impact:
+          'Tripled subscriber growth, secured tourism board partnerships worth 50+ triệu VNĐ',
+        innovations: [
+          'Local story integration',
+          'Cultural sensitivity approach',
+          'Interactive travel tips',
+        ],
+      },
     ],
     resources: [
       {
         title: 'DaVinci Resolve - Free Professional Editor',
         url: 'https://blackmagicdesign.com/products/davinciresolve',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'Peter McKinnon Photography & Video',
         url: 'https://youtube.com/petermckinnon',
-        type: 'Tutorial'
-      }
-    ]
+        type: 'Tutorial',
+      },
+    ],
   },
   {
     id: 'livestreaming-community-building',
     title: 'Livestreaming & Community Building',
-    description: 'Xây dựng loyal community qua livestreaming, master engagement techniques và monetize live content effectively.',
+    description:
+      'Xây dựng loyal community qua livestreaming, master engagement techniques và monetize live content effectively.',
     duration: '200 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     imageUrl: '/images/content-creator/livestreaming.jpg',
-    platforms: ['Facebook Live', 'YouTube Live', 'TikTok Live', 'Instagram Live', 'Twitch'],
-    monetizationMethods: ['Super chats', 'Gifts', 'Sponsorships', 'Product sales'],
-    toolsRequired: ['OBS Studio', 'Streamlabs', 'Good webcam', 'Quality microphone'],
+    platforms: [
+      'Facebook Live',
+      'YouTube Live',
+      'TikTok Live',
+      'Instagram Live',
+      'Twitch',
+    ],
+    monetizationMethods: [
+      'Super chats',
+      'Gifts',
+      'Sponsorships',
+      'Product sales',
+    ],
+    toolsRequired: [
+      'OBS Studio',
+      'Streamlabs',
+      'Good webcam',
+      'Quality microphone',
+    ],
     averageIncome: '8-30 triệu VNĐ/tháng',
     timeToMaster: '2-4 tháng',
     objectives: [
@@ -265,20 +342,26 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Master live engagement techniques và audience interaction',
       'Build loyal community qua consistent live content',
       'Monetize livestreams through various revenue streams',
-      'Handle technical challenges và maintain stream quality'
+      'Handle technical challenges và maintain stream quality',
     ],
     prerequisites: [
       'Comfortable speaking on camera',
       'Reliable internet connection (minimum 10 Mbps upload)',
       'Basic understanding của chosen streaming platform',
-      'Consistent schedule availability cho regular streaming'
+      'Consistent schedule availability cho regular streaming',
     ],
     exercises: [
       {
         title: 'Live Setup Optimization',
-        description: 'Create professional livestreaming setup với available equipment',
+        description:
+          'Create professional livestreaming setup với available equipment',
         difficulty: 'Cơ bản',
-        materials: ['Computer/smartphone', 'Camera', 'Microphone', 'Lighting equipment'],
+        materials: [
+          'Computer/smartphone',
+          'Camera',
+          'Microphone',
+          'Lighting equipment',
+        ],
         procedure: [
           'Test internet connection stability và upload speed',
           'Set up optimal camera positioning và framing',
@@ -287,16 +370,23 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Background setup: clean, branded, distraction-free',
           'Software configuration: OBS scenes, overlays, alerts',
           'Test stream trên different platforms để understand requirements',
-          'Create backup plans cho technical failures'
+          'Create backup plans cho technical failures',
         ],
-        expectedResults: 'Professional-quality livestream setup với consistent technical performance',
-        solution: 'Prioritize audio quality over video quality - viewers will tolerate poor video but not poor audio'
+        expectedResults:
+          'Professional-quality livestream setup với consistent technical performance',
+        solution:
+          'Prioritize audio quality over video quality - viewers will tolerate poor video but not poor audio',
       },
       {
         title: 'Community Engagement Strategies',
-        description: 'Develop techniques để maintain high engagement during live streams',
+        description:
+          'Develop techniques để maintain high engagement during live streams',
         difficulty: 'Trung bình',
-        materials: ['Live streaming platform', 'Prepared talking points', 'Interactive elements'],
+        materials: [
+          'Live streaming platform',
+          'Prepared talking points',
+          'Interactive elements',
+        ],
         procedure: [
           'Create welcome rituals cho new viewers',
           'Develop signature catchphrases và running jokes',
@@ -305,16 +395,23 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Create loyalty programs với rewards cho regular viewers',
           'Plan variety content: tutorials, behind-scenes, casual chats',
           'Handle difficult viewers và maintain positive atmosphere',
-          'Build relationships với other streamers cho cross-promotion'
+          'Build relationships với other streamers cho cross-promotion',
         ],
-        expectedResults: 'Highly engaged live community với regular returning viewers',
-        solution: 'Acknowledge every comment personally, create inside jokes và community culture, maintain consistent personality'
+        expectedResults:
+          'Highly engaged live community với regular returning viewers',
+        solution:
+          'Acknowledge every comment personally, create inside jokes và community culture, maintain consistent personality',
       },
       {
         title: 'Monetization Strategy Implementation',
-        description: 'Develop multiple income streams từ livestreaming activities',
+        description:
+          'Develop multiple income streams từ livestreaming activities',
         difficulty: 'Nâng cao',
-        materials: ['Established audience', 'Products/services to promote', 'Analytics tools'],
+        materials: [
+          'Established audience',
+          'Products/services to promote',
+          'Analytics tools',
+        ],
         procedure: [
           'Set up platform-native monetization: super chats, subscriptions, gifts',
           'Create exclusive content cho paying supporters',
@@ -323,11 +420,13 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Implement affiliate marketing seamlessly',
           'Create tiered supporter programs với different benefits',
           'Track revenue performance across different streams',
-          'Scale successful monetization methods'
+          'Scale successful monetization methods',
         ],
-        expectedResults: 'Multiple revenue streams generating consistent income từ live content',
-        solution: 'Balance monetization với value delivery - always provide more value than you ask for in return'
-      }
+        expectedResults:
+          'Multiple revenue streams generating consistent income từ live content',
+        solution:
+          'Balance monetization với value delivery - always provide more value than you ask for in return',
+      },
     ],
     realWorldApplications: [
       'Gaming streaming cho Vietnamese gaming community',
@@ -335,42 +434,60 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Cooking shows với real-time interaction',
       'Fitness classes và wellness coaching',
       'Business consulting và Q&A sessions',
-      'Product demonstrations cho e-commerce'
+      'Product demonstrations cho e-commerce',
     ],
     caseStudies: [
       {
         title: 'Vietnamese Gaming Streamer Breakthrough',
         organization: 'Independent Gaming Content Creator',
-        problem: 'Struggling to monetize gaming content với small Vietnamese audience',
-        solution: 'Focused on Vietnamese-language commentary, community building through regular interaction, collaborative streams với other creators',
-        impact: 'Built loyal fanbase của 50K+ followers, earning 20+ triệu VNĐ monthly through donations và sponsorships',
-        innovations: ['Vietnamese gaming culture integration', 'Educational gaming content', 'Community tournaments']
-      }
+        problem:
+          'Struggling to monetize gaming content với small Vietnamese audience',
+        solution:
+          'Focused on Vietnamese-language commentary, community building through regular interaction, collaborative streams với other creators',
+        impact:
+          'Built loyal fanbase của 50K+ followers, earning 20+ triệu VNĐ monthly through donations và sponsorships',
+        innovations: [
+          'Vietnamese gaming culture integration',
+          'Educational gaming content',
+          'Community tournaments',
+        ],
+      },
     ],
     resources: [
       {
         title: 'OBS Studio - Free Streaming Software',
         url: 'https://obsproject.com',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'Streamlabs - Stream Enhancement Tools',
         url: 'https://streamlabs.com',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'monetization-strategies',
     title: 'Monetization Strategies (YouTube, TikTok, Facebook)',
-    description: 'Deep dive vào monetization opportunities across platforms, optimize revenue streams và build sustainable income from content creation.',
+    description:
+      'Deep dive vào monetization opportunities across platforms, optimize revenue streams và build sustainable income from content creation.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     imageUrl: '/images/content-creator/monetization.jpg',
     platforms: ['YouTube', 'TikTok', 'Facebook', 'Instagram'],
-    monetizationMethods: ['Ad revenue', 'Sponsored content', 'Affiliate marketing', 'Digital products', 'Memberships'],
-    toolsRequired: ['Analytics tools', 'Payment processors', 'Content management systems'],
+    monetizationMethods: [
+      'Ad revenue',
+      'Sponsored content',
+      'Affiliate marketing',
+      'Digital products',
+      'Memberships',
+    ],
+    toolsRequired: [
+      'Analytics tools',
+      'Payment processors',
+      'Content management systems',
+    ],
     averageIncome: '15-100 triệu VNĐ/tháng',
     timeToMaster: '6-12 tháng',
     objectives: [
@@ -378,20 +495,25 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Develop multiple income streams để reduce dependency on single source',
       'Optimize content strategy để maximize revenue potential',
       'Build long-term financial sustainability from content creation',
-      'Navigate Vietnamese tax và business requirements cho content creators'
+      'Navigate Vietnamese tax và business requirements cho content creators',
     ],
     prerequisites: [
       'Established audience on at least one platform',
       'Consistent content creation track record',
       'Basic understanding của business và finance',
-      'Legal entity setup để receive payments properly'
+      'Legal entity setup để receive payments properly',
     ],
     exercises: [
       {
         title: 'Revenue Stream Diversification',
-        description: 'Create comprehensive monetization plan với multiple income sources',
+        description:
+          'Create comprehensive monetization plan với multiple income sources',
         difficulty: 'Nâng cao',
-        materials: ['Audience analytics', 'Platform monetization tools', 'Business planning template'],
+        materials: [
+          'Audience analytics',
+          'Platform monetization tools',
+          'Business planning template',
+        ],
         procedure: [
           'Analyze current audience demographics và interests',
           'Research monetization requirements cho each platform',
@@ -400,16 +522,23 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Develop pricing strategies cho different offerings',
           'Create content calendar integrating monetization opportunities',
           'Set up tracking systems cho revenue attribution',
-          'Plan scaling strategies cho growing income streams'
+          'Plan scaling strategies cho growing income streams',
         ],
-        expectedResults: 'Diversified income portfolio với at least 3-5 revenue streams',
-        solution: 'Start với platform-native monetization, then expand to external revenue streams based on audience needs'
+        expectedResults:
+          'Diversified income portfolio với at least 3-5 revenue streams',
+        solution:
+          'Start với platform-native monetization, then expand to external revenue streams based on audience needs',
       },
       {
         title: 'Brand Partnership Strategy',
-        description: 'Build systematic approach để attract và manage brand partnerships',
+        description:
+          'Build systematic approach để attract và manage brand partnerships',
         difficulty: 'Nâng cao',
-        materials: ['Media kit template', 'Portfolio của previous work', 'Rate card'],
+        materials: [
+          'Media kit template',
+          'Portfolio của previous work',
+          'Rate card',
+        ],
         procedure: [
           'Create professional media kit với audience insights',
           'Develop pricing structure cho different types của collaborations',
@@ -418,16 +547,23 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Negotiate contracts để protect your interests',
           'Deliver high-quality sponsored content maintaining audience trust',
           'Track performance metrics để demonstrate ROI to brands',
-          'Build long-term relationships cho recurring partnerships'
+          'Build long-term relationships cho recurring partnerships',
         ],
-        expectedResults: 'Steady pipeline của brand partnerships generating predictable income',
-        solution: 'Focus on brands that align với your audience values, maintain transparency về sponsorships, deliver measurable results'
+        expectedResults:
+          'Steady pipeline của brand partnerships generating predictable income',
+        solution:
+          'Focus on brands that align với your audience values, maintain transparency về sponsorships, deliver measurable results',
       },
       {
         title: 'Digital Product Development',
-        description: 'Create và launch digital products leveraging your expertise',
+        description:
+          'Create và launch digital products leveraging your expertise',
         difficulty: 'Nâng cao',
-        materials: ['Course creation platform', 'Payment processor', 'Marketing materials'],
+        materials: [
+          'Course creation platform',
+          'Payment processor',
+          'Marketing materials',
+        ],
         procedure: [
           'Identify knowledge gaps trong your audience',
           'Validate product ideas through surveys và engagement',
@@ -436,53 +572,73 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Set up sales funnel từ free content to paid products',
           'Launch với strategic marketing campaign',
           'Gather feedback để improve product offering',
-          'Scale successful products và discontinue unsuccessful ones'
+          'Scale successful products và discontinue unsuccessful ones',
         ],
-        expectedResults: 'Profitable digital product business complementing content creation',
-        solution: 'Start với solving specific problems your audience faces, price fairly for value provided, invest in quality production'
-      }
+        expectedResults:
+          'Profitable digital product business complementing content creation',
+        solution:
+          'Start với solving specific problems your audience faces, price fairly for value provided, invest in quality production',
+      },
     ],
     realWorldApplications: [
       'Full-time content creation career với sustainable income',
       'Supplementary income stream cho existing professionals',
       'Business development để transition into consulting',
       'Product-based business growth through content marketing',
-      'Agency services offering based on content creation expertise'
+      'Agency services offering based on content creation expertise',
     ],
     caseStudies: [
       {
         title: 'Vietnamese Beauty Creator Multi-Stream Success',
         organization: 'Independent Beauty Content Creator',
-        problem: 'Relying solely on platform ad revenue với inconsistent income',
-        solution: 'Diversified into affiliate marketing, online courses, brand partnerships, và own product line',
-        impact: 'Achieved stable 50+ triệu VNĐ monthly income across multiple streams',
-        innovations: ['Vietnamese beauty routines focus', 'Budget-friendly product recommendations', 'Interactive beauty consultations']
-      }
+        problem:
+          'Relying solely on platform ad revenue với inconsistent income',
+        solution:
+          'Diversified into affiliate marketing, online courses, brand partnerships, và own product line',
+        impact:
+          'Achieved stable 50+ triệu VNĐ monthly income across multiple streams',
+        innovations: [
+          'Vietnamese beauty routines focus',
+          'Budget-friendly product recommendations',
+          'Interactive beauty consultations',
+        ],
+      },
     ],
     resources: [
       {
         title: 'YouTube Creator Academy',
         url: 'https://creatoracademy.youtube.com',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Facebook Creator Bonus Program',
         url: 'https://www.facebook.com/creators',
-        type: 'Documentation'
-      }
-    ]
+        type: 'Documentation',
+      },
+    ],
   },
   {
     id: 'brand-partnerships-sponsorships',
     title: 'Brand Partnerships & Sponsorship Deals',
-    description: 'Negotiate win-win partnerships với brands, create authentic sponsored content, và build long-term relationships trong industry.',
+    description:
+      'Negotiate win-win partnerships với brands, create authentic sponsored content, và build long-term relationships trong industry.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     imageUrl: '/images/content-creator/brand-partnerships.jpg',
     platforms: ['All social media platforms'],
-    monetizationMethods: ['Sponsored posts', 'Product placement', 'Brand ambassadorships', 'Event partnerships'],
-    toolsRequired: ['Email templates', 'Media kit', 'Contract templates', 'Analytics dashboard'],
+    monetizationMethods: [
+      'Sponsored posts',
+      'Product placement',
+      'Brand ambassadorships',
+      'Event partnerships',
+    ],
+    toolsRequired: [
+      'Email templates',
+      'Media kit',
+      'Contract templates',
+      'Analytics dashboard',
+    ],
     averageIncome: '5-50 triệu VNĐ per partnership',
     timeToMaster: '3-6 tháng',
     objectives: [
@@ -490,20 +646,25 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Negotiate fair compensation và contract terms',
       'Create authentic sponsored content maintaining audience trust',
       'Build long-term relationships với brands và agencies',
-      'Understand legal requirements và disclosure regulations'
+      'Understand legal requirements và disclosure regulations',
     ],
     prerequisites: [
       'Established audience và engagement metrics',
       'Portfolio của high-quality content',
       'Professional communication skills',
-      'Understanding của your audience demographics'
+      'Understanding của your audience demographics',
     ],
     exercises: [
       {
         title: 'Brand Outreach Campaign',
-        description: 'Systematically reach out to relevant brands cho partnership opportunities',
+        description:
+          'Systematically reach out to relevant brands cho partnership opportunities',
         difficulty: 'Trung bình',
-        materials: ['Media kit', 'Email templates', 'Brand research spreadsheet'],
+        materials: [
+          'Media kit',
+          'Email templates',
+          'Brand research spreadsheet',
+        ],
         procedure: [
           'Research brands that align với your audience interests',
           'Analyze competitor partnerships để understand market rates',
@@ -512,16 +673,23 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Follow up professionally với non-responsive brands',
           'Track outreach success rates và optimize approach',
           'Build relationships với brand managers và marketing teams',
-          'Maintain database của potential partnership opportunities'
+          'Maintain database của potential partnership opportunities',
         ],
-        expectedResults: 'Positive response rate của 10-20% leading to partnership discussions',
-        solution: 'Focus on mutual benefit rather than just asking cho money - show how you can solve brand\'s marketing challenges'
+        expectedResults:
+          'Positive response rate của 10-20% leading to partnership discussions',
+        solution:
+          "Focus on mutual benefit rather than just asking cho money - show how you can solve brand's marketing challenges",
       },
       {
         title: 'Authentic Sponsored Content Creation',
-        description: 'Create sponsored content that maintains authenticity while delivering brand value',
+        description:
+          'Create sponsored content that maintains authenticity while delivering brand value',
         difficulty: 'Nâng cao',
-        materials: ['Brand guidelines', 'Content creation tools', 'Disclosure templates'],
+        materials: [
+          'Brand guidelines',
+          'Content creation tools',
+          'Disclosure templates',
+        ],
         procedure: [
           'Understand brand messaging và campaign objectives',
           'Integrate product naturally into your content style',
@@ -530,53 +698,67 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Create content that provides value beyond product promotion',
           'Test different sponsored content formats',
           'Measure engagement và conversion metrics cho brand',
-          'Get feedback từ both audience và brand partners'
+          'Get feedback từ both audience và brand partners',
         ],
-        expectedResults: 'Sponsored content performing comparably to organic content in engagement',
-        solution: 'Only partner với brands you genuinely would use, be transparent về sponsorship, focus on storytelling rather than direct selling'
-      }
+        expectedResults:
+          'Sponsored content performing comparably to organic content in engagement',
+        solution:
+          'Only partner với brands you genuinely would use, be transparent về sponsorship, focus on storytelling rather than direct selling',
+      },
     ],
     realWorldApplications: [
       'Influencer marketing career với brand agencies',
       'Brand ambassador roles với long-term partnerships',
       'Product launch campaigns cho startups',
       'Tourism promotion cho destinations',
-      'Technology product reviews và recommendations'
+      'Technology product reviews và recommendations',
     ],
     caseStudies: [
       {
         title: 'Tech Reviewer Brand Partnership Success',
         organization: 'Vietnamese Tech Content Creator',
-        problem: 'Difficulty securing tech brand partnerships trong competitive market',
-        solution: 'Specialized trong budget tech reviews relevant to Vietnamese consumers, built reputation cho honest reviews',
-        impact: 'Secured partnerships với major brands: Samsung, Xiaomi, ASUS worth 30+ triệu VNĐ quarterly',
-        innovations: ['Vietnamese market-specific reviews', 'Budget comparison focus', 'Local availability information']
-      }
+        problem:
+          'Difficulty securing tech brand partnerships trong competitive market',
+        solution:
+          'Specialized trong budget tech reviews relevant to Vietnamese consumers, built reputation cho honest reviews',
+        impact:
+          'Secured partnerships với major brands: Samsung, Xiaomi, ASUS worth 30+ triệu VNĐ quarterly',
+        innovations: [
+          'Vietnamese market-specific reviews',
+          'Budget comparison focus',
+          'Local availability information',
+        ],
+      },
     ],
     resources: [
       {
         title: 'AspireIQ - Influencer Marketing Platform',
         url: 'https://aspireiq.com',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'FTC Guidelines for Social Media',
         url: 'https://ftc.gov/business-guidance/resources/ftcs-endorsement-guides',
-        type: 'Documentation'
-      }
-    ]
+        type: 'Documentation',
+      },
+    ],
   },
   {
     id: 'content-calendar-consistency',
     title: 'Content Calendar & Consistency Systems',
-    description: 'Build sustainable content production systems, automate workflows, và maintain consistent posting schedule để grow audience effectively.',
+    description:
+      'Build sustainable content production systems, automate workflows, và maintain consistent posting schedule để grow audience effectively.',
     duration: '160 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     imageUrl: '/images/content-creator/content-calendar.jpg',
     platforms: ['All platforms'],
     monetizationMethods: ['Indirect through improved consistency và growth'],
-    toolsRequired: ['Content planning tools', 'Scheduling software', 'Project management systems'],
+    toolsRequired: [
+      'Content planning tools',
+      'Scheduling software',
+      'Project management systems',
+    ],
     averageIncome: 'Foundation cho sustainable income growth',
     timeToMaster: '1-2 tháng',
     objectives: [
@@ -584,20 +766,25 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Develop efficient workflows để maintain consistency',
       'Balance quality với quantity trong content creation',
       'Build content systems that scale với growing audience',
-      'Maintain creative inspiration while meeting production demands'
+      'Maintain creative inspiration while meeting production demands',
     ],
     prerequisites: [
       'Basic understanding của content creation process',
       'Familiarity với social media platforms',
       'Time management skills',
-      'Access to content planning tools'
+      'Access to content planning tools',
     ],
     exercises: [
       {
         title: 'Content System Development',
-        description: 'Create comprehensive content production system từ ideation to publishing',
+        description:
+          'Create comprehensive content production system từ ideation to publishing',
         difficulty: 'Trung bình',
-        materials: ['Content calendar template', 'Project management tool', 'Analytics access'],
+        materials: [
+          'Content calendar template',
+          'Project management tool',
+          'Analytics access',
+        ],
         procedure: [
           'Audit current content creation process để identify bottlenecks',
           'Create content pillar framework cho consistent themes',
@@ -606,16 +793,23 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Implement quality control checkpoints',
           'Create posting schedules optimized cho each platform',
           'Set up performance tracking và optimization loops',
-          'Build backup content queue cho emergency situations'
+          'Build backup content queue cho emergency situations',
         ],
-        expectedResults: 'Streamlined content system reducing creation time by 40% while maintaining quality',
-        solution: 'Focus on batch creation và templates để achieve efficiency without sacrificing creativity'
+        expectedResults:
+          'Streamlined content system reducing creation time by 40% while maintaining quality',
+        solution:
+          'Focus on batch creation và templates để achieve efficiency without sacrificing creativity',
       },
       {
         title: 'Automation Implementation',
-        description: 'Automate repetitive tasks trong content creation và distribution',
+        description:
+          'Automate repetitive tasks trong content creation và distribution',
         difficulty: 'Nâng cao',
-        materials: ['Automation tools', 'Scheduling platforms', 'Analytics dashboards'],
+        materials: [
+          'Automation tools',
+          'Scheduling platforms',
+          'Analytics dashboards',
+        ],
         procedure: [
           'Identify repetitive tasks suitable cho automation',
           'Set up social media scheduling tools',
@@ -624,53 +818,69 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Implement content backup và archive systems',
           'Set up automated cross-platform content adaptation',
           'Create workflow triggers cho different content types',
-          'Monitor automation performance và adjust as needed'
+          'Monitor automation performance và adjust as needed',
         ],
-        expectedResults: 'Automated workflow handling 60%+ của routine content tasks',
-        solution: 'Automate distribution và tracking, keep creative aspects human-driven'
-      }
+        expectedResults:
+          'Automated workflow handling 60%+ của routine content tasks',
+        solution:
+          'Automate distribution và tracking, keep creative aspects human-driven',
+      },
     ],
     realWorldApplications: [
       'Social media management cho businesses',
       'Content strategy consulting services',
       'Personal brand development cho professionals',
       'Scalable content production cho agencies',
-      'Systematic approach cho growing audiences'
+      'Systematic approach cho growing audiences',
     ],
     caseStudies: [
       {
         title: 'Lifestyle Creator Consistency Transformation',
         organization: 'Vietnamese Lifestyle Influencer',
-        problem: 'Inconsistent posting leading to audience drop-off và missed opportunities',
-        solution: 'Implemented batch content creation system, automated scheduling, performance tracking',
-        impact: 'Increased posting consistency to 95%, grew audience by 200% trong 6 months',
-        innovations: ['Content batching on weekends', 'Template-based creation', 'Performance-based optimization']
-      }
+        problem:
+          'Inconsistent posting leading to audience drop-off và missed opportunities',
+        solution:
+          'Implemented batch content creation system, automated scheduling, performance tracking',
+        impact:
+          'Increased posting consistency to 95%, grew audience by 200% trong 6 months',
+        innovations: [
+          'Content batching on weekends',
+          'Template-based creation',
+          'Performance-based optimization',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Buffer - Social Media Scheduling',
         url: 'https://buffer.com',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'Notion - Content Planning',
         url: 'https://notion.so',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'analytics-growth-optimization',
     title: 'Analytics & Growth Optimization',
-    description: 'Master data-driven content strategy, analyze performance metrics, và optimize growth through systematic testing và iteration.',
+    description:
+      'Master data-driven content strategy, analyze performance metrics, và optimize growth through systematic testing và iteration.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     imageUrl: '/images/content-creator/analytics-optimization.jpg',
     platforms: ['All platforms'],
-    monetizationMethods: ['Optimized content leads to higher monetization rates'],
-    toolsRequired: ['Analytics platforms', 'Data visualization tools', 'A/B testing tools'],
+    monetizationMethods: [
+      'Optimized content leads to higher monetization rates',
+    ],
+    toolsRequired: [
+      'Analytics platforms',
+      'Data visualization tools',
+      'A/B testing tools',
+    ],
     averageIncome: 'Multiplier effect on all other income streams',
     timeToMaster: '3-6 tháng',
     objectives: [
@@ -678,20 +888,25 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Implement data-driven decision making trong content strategy',
       'Optimize content cho maximum reach và engagement',
       'Identify growth opportunities through data analysis',
-      'Build systematic testing culture cho continuous improvement'
+      'Build systematic testing culture cho continuous improvement',
     ],
     prerequisites: [
       'Established content creation track record',
       'Access to platform analytics tools',
       'Basic understanding của statistics và data interpretation',
-      'Willingness to experiment với content approaches'
+      'Willingness to experiment với content approaches',
     ],
     exercises: [
       {
         title: 'Comprehensive Analytics Audit',
-        description: 'Analyze current performance across all platforms để identify optimization opportunities',
+        description:
+          'Analyze current performance across all platforms để identify optimization opportunities',
         difficulty: 'Trung bình',
-        materials: ['Platform analytics access', 'Data analysis spreadsheet', 'Competitor research'],
+        materials: [
+          'Platform analytics access',
+          'Data analysis spreadsheet',
+          'Competitor research',
+        ],
         procedure: [
           'Collect 3-6 months của performance data across platforms',
           'Identify top-performing content types và themes',
@@ -700,16 +915,23 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Identify content gaps và missed opportunities',
           'Map audience journey across different content types',
           'Calculate ROI cho different content investments',
-          'Create actionable insights report với specific recommendations'
+          'Create actionable insights report với specific recommendations',
         ],
-        expectedResults: 'Comprehensive understanding của content performance với clear optimization roadmap',
-        solution: 'Focus on patterns rather than individual posts - look cho systemic insights that can guide strategy'
+        expectedResults:
+          'Comprehensive understanding của content performance với clear optimization roadmap',
+        solution:
+          'Focus on patterns rather than individual posts - look cho systemic insights that can guide strategy',
       },
       {
         title: 'Growth Experimentation Framework',
-        description: 'Implement systematic testing approach để optimize content performance',
+        description:
+          'Implement systematic testing approach để optimize content performance',
         difficulty: 'Nâng cao',
-        materials: ['Testing plan template', 'Performance tracking tools', 'Statistical analysis tools'],
+        materials: [
+          'Testing plan template',
+          'Performance tracking tools',
+          'Statistical analysis tools',
+        ],
         procedure: [
           'Design controlled experiments cho content variables',
           'Test posting times, content formats, engagement strategies',
@@ -718,53 +940,68 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Document learnings và apply successful strategies systematically',
           'Scale winning approaches across content production',
           'Create continuous experimentation pipeline',
-          'Share learnings với team hoặc community'
+          'Share learnings với team hoặc community',
         ],
-        expectedResults: 'Data-proven strategies resulting trong 25%+ improvement trong key metrics',
-        solution: 'Test one variable at a time, ensure sufficient sample size, wait cho statistical significance before drawing conclusions'
-      }
+        expectedResults:
+          'Data-proven strategies resulting trong 25%+ improvement trong key metrics',
+        solution:
+          'Test one variable at a time, ensure sufficient sample size, wait cho statistical significance before drawing conclusions',
+      },
     ],
     realWorldApplications: [
       'Growth hacking consulting cho content creators',
       'Social media analytics services cho businesses',
       'Content strategy optimization roles',
       'Performance marketing với focus on content',
-      'Data analyst roles trong creator economy companies'
+      'Data analyst roles trong creator economy companies',
     ],
     caseStudies: [
       {
         title: 'Data-Driven Growth Success',
         organization: 'Educational Vietnamese YouTuber',
         problem: 'Plateau trong growth despite consistent content creation',
-        solution: 'Implemented systematic analytics review, A/B tested thumbnails và titles, optimized posting schedule',
-        impact: 'Broke growth plateau, achieved 300% increase trong monthly views',
-        innovations: ['Vietnamese-specific keyword optimization', 'Cultural timing adjustments', 'Local trend integration']
-      }
+        solution:
+          'Implemented systematic analytics review, A/B tested thumbnails và titles, optimized posting schedule',
+        impact:
+          'Broke growth plateau, achieved 300% increase trong monthly views',
+        innovations: [
+          'Vietnamese-specific keyword optimization',
+          'Cultural timing adjustments',
+          'Local trend integration',
+        ],
+      },
     ],
     resources: [
       {
         title: 'YouTube Analytics Academy',
         url: 'https://creatoracademy.youtube.com/page/course/analytics-series',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Social Blade - Analytics Tracking',
         url: 'https://socialblade.com',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'legal-business-content-creation',
     title: 'Legal & Business Aspects of Content Creation',
-    description: 'Navigate legal requirements, business registration, taxes, và intellectual property protection trong Vietnamese content creator landscape.',
+    description:
+      'Navigate legal requirements, business registration, taxes, và intellectual property protection trong Vietnamese content creator landscape.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     imageUrl: '/images/content-creator/legal-business.jpg',
     platforms: ['All platforms'],
-    monetizationMethods: ['Proper business setup enables all monetization methods'],
-    toolsRequired: ['Legal consultation', 'Accounting software', 'Business registration documents'],
+    monetizationMethods: [
+      'Proper business setup enables all monetization methods',
+    ],
+    toolsRequired: [
+      'Legal consultation',
+      'Accounting software',
+      'Business registration documents',
+    ],
     averageIncome: 'Foundation cho legitimate business operations',
     timeToMaster: '2-3 tháng',
     objectives: [
@@ -772,20 +1009,25 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Set up proper business entity cho content creation income',
       'Navigate tax obligations và deductions',
       'Protect intellectual property và handle copyright issues',
-      'Understand platform terms of service và compliance requirements'
+      'Understand platform terms of service và compliance requirements',
     ],
     prerequisites: [
       'Generating income từ content creation',
       'Basic understanding của business concepts',
       'Willingness to invest trong legal và accounting setup',
-      'Understanding của Vietnamese business landscape'
+      'Understanding của Vietnamese business landscape',
     ],
     exercises: [
       {
         title: 'Business Entity Setup',
-        description: 'Establish legal business structure cho content creation activities',
+        description:
+          'Establish legal business structure cho content creation activities',
         difficulty: 'Nâng cao',
-        materials: ['Legal consultation', 'Business registration documents', 'Tax registration'],
+        materials: [
+          'Legal consultation',
+          'Business registration documents',
+          'Tax registration',
+        ],
         procedure: [
           'Research business entity options trong Vietnam: sole proprietorship, LLC, company',
           'Consult với lawyer familiar với content creator business',
@@ -794,58 +1036,73 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
           'Implement proper bookkeeping system',
           'Understand tax obligations và quarterly reporting',
           'Set up contracts templates cho brand partnerships',
-          'Establish intellectual property protection strategies'
+          'Establish intellectual property protection strategies',
         ],
-        expectedResults: 'Legally compliant business structure ready cho scaling content operations',
-        solution: 'Start với simplest structure that meets your needs, upgrade as business grows'
+        expectedResults:
+          'Legally compliant business structure ready cho scaling content operations',
+        solution:
+          'Start với simplest structure that meets your needs, upgrade as business grows',
       },
       {
         title: 'Copyright and IP Management',
-        description: 'Protect your content và respect others\' intellectual property rights',
+        description:
+          "Protect your content và respect others' intellectual property rights",
         difficulty: 'Trung bình',
-        materials: ['Copyright registration resources', 'Content licensing information'],
+        materials: [
+          'Copyright registration resources',
+          'Content licensing information',
+        ],
         procedure: [
           'Understand Vietnamese copyright law basics',
           'Implement content watermarking và protection strategies',
-          'Learn fair use guidelines cho using others\' content',
+          "Learn fair use guidelines cho using others' content",
           'Set up DMCA takedown procedures cho stolen content',
           'Create licensing agreements cho your content use by others',
           'Understand music licensing requirements cho video content',
           'Document content creation process cho IP protection',
-          'Build relationships với IP lawyers familiar với digital content'
+          'Build relationships với IP lawyers familiar với digital content',
         ],
-        expectedResults: 'Protected intellectual property với clear usage rights và revenue opportunities',
-        solution: 'Document everything, use royalty-free resources, respect others\' IP, register important works'
-      }
+        expectedResults:
+          'Protected intellectual property với clear usage rights và revenue opportunities',
+        solution:
+          "Document everything, use royalty-free resources, respect others' IP, register important works",
+      },
     ],
     realWorldApplications: [
       'Legal content creator business setup',
       'IP protection consulting cho creators',
       'Business advisory services cho digital entrepreneurs',
       'Compliance consulting cho growing creator businesses',
-      'Legal education services cho creator community'
+      'Legal education services cho creator community',
     ],
     caseStudies: [
       {
         title: 'Creator Business Legitimization Success',
         organization: 'Vietnamese Food Content Creator',
-        problem: 'Informal income reporting và potential legal issues với growing revenue',
-        solution: 'Established proper business entity, implemented professional accounting, set up IP protection',
-        impact: 'Transformed hobby into legitimate business generating 40+ triệu VNĐ monthly legally',
-        innovations: ['Creator-specific business structure', 'IP monetization strategy', 'Professional brand development']
-      }
+        problem:
+          'Informal income reporting và potential legal issues với growing revenue',
+        solution:
+          'Established proper business entity, implemented professional accounting, set up IP protection',
+        impact:
+          'Transformed hobby into legitimate business generating 40+ triệu VNĐ monthly legally',
+        innovations: [
+          'Creator-specific business structure',
+          'IP monetization strategy',
+          'Professional brand development',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Vietnam Ministry of Planning and Investment',
         url: 'https://mpi.gov.vn',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Vietnam IP Office',
         url: 'http://ipvietnam.gov.vn',
-        type: 'Documentation'
-      }
-    ]
-  }
+        type: 'Documentation',
+      },
+    ],
+  },
 ];

@@ -24,20 +24,37 @@ function convertToBaseLessonData(lesson: AdvancedAILesson): BaseLessonData {
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.technologies || []
+      innovations: study.technologies || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
 export async function generateMetadata() {
   return {
-    title: createTitle('Advanced AI & Machine Learning - Trí Tuệ Nhân Tạo Nâng Cao'),
-    description: createDescription('Master advanced AI techniques: Deep Learning, Computer Vision, NLP, Reinforcement Learning. Phát triển AI systems production-ready cho Vietnamese market với focus trên ethics và cultural sensitivity.'),
-    keywords: ['advanced ai', 'deep learning', 'machine learning', 'computer vision', 'nlp', 'reinforcement learning', 'ai ethics', 'vietnamese ai', 'production ai', 'K2AI'],
+    title: createTitle(
+      'Advanced AI & Machine Learning - Trí Tuệ Nhân Tạo Nâng Cao',
+    ),
+    description: createDescription(
+      'Master advanced AI techniques: Deep Learning, Computer Vision, NLP, Reinforcement Learning. Phát triển AI systems production-ready cho Vietnamese market với focus trên ethics và cultural sensitivity.',
+    ),
+    keywords: [
+      'advanced ai',
+      'deep learning',
+      'machine learning',
+      'computer vision',
+      'nlp',
+      'reinforcement learning',
+      'ai ethics',
+      'vietnamese ai',
+      'production ai',
+      'K2AI',
+    ],
     openGraph: {
-      title: 'Advanced AI & Machine Learning - Trí Tuệ Nhân Tạo Nâng Cao | K2AI',
-      description: 'Master cutting-edge AI technologies và deploy production systems trong Vietnamese market. Deep Learning, Computer Vision, NLP, RL.',
+      title:
+        'Advanced AI & Machine Learning - Trí Tuệ Nhân Tạo Nâng Cao | K2AI',
+      description:
+        'Master cutting-edge AI technologies và deploy production systems trong Vietnamese market. Deep Learning, Computer Vision, NLP, RL.',
       type: 'website',
     },
   };
@@ -48,7 +65,8 @@ export default function AdvancedAIPage() {
     id: 'advanced-ai',
     title: 'Advanced AI & Machine Learning',
     subtitle: 'Trí Tuệ Nhân Tạo Nâng Cao',
-    description: 'Master cutting-edge artificial intelligence technologies từ deep learning và computer vision đến natural language processing và reinforcement learning. Phát triển production-ready AI systems với focus đặc biệt trên Vietnamese market applications và ethical AI practices.',
+    description:
+      'Master cutting-edge artificial intelligence technologies từ deep learning và computer vision đến natural language processing và reinforcement learning. Phát triển production-ready AI systems với focus đặc biệt trên Vietnamese market applications và ethical AI practices.',
     level: 'Nâng cao',
     duration: '18-22 giờ',
     category: 'Advanced Technology',
@@ -57,24 +75,25 @@ export default function AdvancedAIPage() {
       'Advanced Computer Vision: object detection, segmentation, facial recognition',
       'Natural Language Processing cho Vietnamese language với PhoBERT và custom models',
       'Reinforcement Learning cho autonomous systems và optimization',
-      'AI Ethics và bias mitigation với cultural sensitivity cho Vietnamese market'
+      'AI Ethics và bias mitigation với cultural sensitivity cho Vietnamese market',
     ],
     icon: '🧠',
     color: 'from-purple-600 to-indigo-600',
-    heroImageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl:
+      'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master deep learning architectures: CNN, RNN, Transformers cho production applications',
       'Develop advanced computer vision systems cho real-world Vietnamese applications',
       'Implement sophisticated NLP solutions cho Vietnamese language processing',
       'Build reinforcement learning systems cho autonomous vehicles và smart cities',
-      'Deploy ethical AI systems với bias detection và cultural sensitivity'
+      'Deploy ethical AI systems với bias detection và cultural sensitivity',
     ],
     prerequisites: [
       'Strong programming skills trong Python và machine learning libraries',
       'Solid understanding của linear algebra, calculus, statistics',
       'Experience với basic machine learning concepts và algorithms',
       'Familiarity với cloud platforms AWS/GCP cho model training',
-      'Understanding của software engineering principles cho production deployment'
+      'Understanding của software engineering principles cho production deployment',
     ],
     careerOutcomes: [
       'AI Research Engineer (40-80 triệu VNĐ/tháng)',
@@ -83,7 +102,7 @@ export default function AdvancedAIPage() {
       'NLP Engineer (36-72 triệu VNĐ/tháng)',
       'AI Product Manager (45-85 triệu VNĐ/tháng)',
       'AI Ethics Specialist (30-60 triệu VNĐ/tháng)',
-      'Principal AI Architect (60-120 triệu VNĐ/tháng)'
+      'Principal AI Architect (60-120 triệu VNĐ/tháng)',
     ],
     industryApplications: [
       'VinAI Research developing Vietnamese language models và computer vision',
@@ -93,28 +112,25 @@ export default function AdvancedAIPage() {
       'Healthcare AI cho medical imaging và diagnosis assistance',
       'E-commerce platforms với recommendation systems và chatbots',
       'Autonomous vehicle development cho Vietnamese traffic conditions',
-      'Agricultural AI cho crop monitoring và precision farming trong Mekong Delta'
+      'Agricultural AI cho crop monitoring và precision farming trong Mekong Delta',
     ],
     marketDemand: {
       averageSalary: '35-120 triệu VNĐ',
       jobGrowth: '+65%',
-      hireDemand: 'Cực cao'
+      hireDemand: 'Cực cao',
     },
     relatedModules: [
       K2Module.Python,
       K2Module.SemiconductorTechnology,
       K2Module.RenewableEnergy,
-      K2Module.Cybersecurity
-    ]
+      K2Module.Cybersecurity,
+    ],
   };
 
   // Convert lessons to BaseLessonData format
   const convertedLessons = advancedAILessons.map(convertToBaseLessonData);
 
   return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={convertedLessons}
-    />
+    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
   );
 }

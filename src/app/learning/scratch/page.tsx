@@ -1,4 +1,6 @@
-import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, {
+  type ModuleData,
+} from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { scratchLessons, type ScratchLesson } from '@/data/scratch';
 import { K2Module } from '@/data/moduleNavigation';
@@ -16,20 +18,27 @@ function convertToLesson(scratchLesson: ScratchLesson): BaseLessonData {
     videoUrl: scratchLesson.videoUrl,
     objectives: scratchLesson.objectives,
     prerequisites: ['Computer basics', 'Mouse and keyboard skills'],
-    exercises: scratchLesson.exercises?.map(ex => ({
-      title: ex.title,
-      description: ex.description,
-      difficulty: ex.difficulty,
-      materials: scratchLesson.materials || [],
-      procedure: ex.steps || [ex.description],
-      expectedResults: ex.expectedBehavior || 'Project hoạt động như mong đợi',
-      solution: ex.scratchUrl || 'Solution provided in lesson'
-    })) || [],
+    exercises:
+      scratchLesson.exercises?.map((ex) => ({
+        title: ex.title,
+        description: ex.description,
+        difficulty: ex.difficulty,
+        materials: scratchLesson.materials || [],
+        procedure: ex.steps || [ex.description],
+        expectedResults:
+          ex.expectedBehavior || 'Project hoạt động như mong đợi',
+        solution: ex.scratchUrl || 'Solution provided in lesson',
+      })) || [],
     resources: [],
-    tools: scratchLesson.codeBlocks || ['Scratch Blocks', 'Motion', 'Looks', 'Events'],
+    tools: scratchLesson.codeBlocks || [
+      'Scratch Blocks',
+      'Motion',
+      'Looks',
+      'Events',
+    ],
     realWorldApplications: scratchLesson.realWorldApplications || [],
-    caseStudies: []
-  }
+    caseStudies: [],
+  };
 }
 
 export default function ScratchPage() {
@@ -39,16 +48,18 @@ export default function ScratchPage() {
   const moduleConfig: ModuleData = {
     title: 'Scratch Programming',
     subtitle: 'Lập Trình Trực Quan Cho Trẻ Em',
-    description: 'Khám phá thế giới lập trình với Scratch - ngôn ngữ lập trình trực quan hoàn hảo cho trẻ em và người mới bắt đầu. Tạo game, animation và ứng dụng tương tác một cách thú vị.',
+    description:
+      'Khám phá thế giới lập trình với Scratch - ngôn ngữ lập trình trực quan hoàn hảo cho trẻ em và người mới bắt đầu. Tạo game, animation và ứng dụng tương tác một cách thú vị.',
     primaryColor: 'orange',
     gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
     basePath: '/learning/scratch',
-    heroImageUrl: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=1200&h=600&fit=crop',
+    heroImageUrl:
+      'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${scratchLessons.length}+ bài`,
       duration: '15-20 giờ',
       level: 'Dành cho trẻ em',
-      projects: '10+ dự án thú vị'
+      projects: '10+ dự án thú vị',
     },
     marketData: {
       marketSize: '70 Million',
@@ -58,7 +69,7 @@ export default function ScratchPage() {
       reduction: '90% Easier',
       reductionNote: 'Learning programming with visual blocks',
       startups: '1000+ Schools',
-      startupsNote: 'Teaching Scratch globally'
+      startupsNote: 'Teaching Scratch globally',
     },
     careerPaths: [
       'Game Developer',
@@ -66,42 +77,74 @@ export default function ScratchPage() {
       'Programming Teacher',
       'Software Engineer',
       'UX/UI Designer',
-      'Creative Technologist'
+      'Creative Technologist',
     ],
     technicalHighlights: [
       {
         title: 'Visual Programming',
         icon: '🧩',
-        items: ['Drag & Drop Blocks', 'No Text Coding', 'Visual Logic', 'Color-coded Commands']
+        items: [
+          'Drag & Drop Blocks',
+          'No Text Coding',
+          'Visual Logic',
+          'Color-coded Commands',
+        ],
       },
       {
         title: 'Creative Projects',
         icon: '🎨',
-        items: ['Games & Stories', 'Animation & Art', 'Interactive Music', 'Digital Storytelling']
+        items: [
+          'Games & Stories',
+          'Animation & Art',
+          'Interactive Music',
+          'Digital Storytelling',
+        ],
       },
       {
         title: 'Programming Concepts',
         icon: '💻',
-        items: ['Loops & Conditions', 'Variables & Events', 'Functions & Logic', 'Problem Solving']
+        items: [
+          'Loops & Conditions',
+          'Variables & Events',
+          'Functions & Logic',
+          'Problem Solving',
+        ],
       },
       {
         title: 'Sharing Platform',
         icon: '🌍',
-        items: ['Global Community', 'Project Sharing', 'Remix & Learn', 'Collaborative Learning']
+        items: [
+          'Global Community',
+          'Project Sharing',
+          'Remix & Learn',
+          'Collaborative Learning',
+        ],
       },
       {
         title: 'Educational Benefits',
         icon: '📚',
-        items: ['Computational Thinking', 'Creative Expression', 'Logical Reasoning', 'STEM Learning']
+        items: [
+          'Computational Thinking',
+          'Creative Expression',
+          'Logical Reasoning',
+          'STEM Learning',
+        ],
       },
       {
         title: 'Real Skills',
         icon: '🚀',
-        items: ['Algorithm Design', 'Debugging Skills', 'Project Planning', 'Digital Literacy']
-      }
+        items: [
+          'Algorithm Design',
+          'Debugging Skills',
+          'Project Planning',
+          'Digital Literacy',
+        ],
+      },
     ],
-    relatedModules: [K2Module.STEM, K2Module.Python, K2Module.GameDevelopment]
-  }
+    relatedModules: [K2Module.STEM, K2Module.Python, K2Module.GameDevelopment],
+  };
 
-  return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
+  return (
+    <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
+  );
 }

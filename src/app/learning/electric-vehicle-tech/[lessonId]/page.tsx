@@ -1,5 +1,13 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { electricVehicleLessons, type ElectricVehicleLesson } from '@/data/electric-vehicle-tech'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  electricVehicleLessons,
+  type ElectricVehicleLesson,
+} from '@/data/electric-vehicle-tech';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Car, Battery, Zap, Settings } from 'lucide-react';
@@ -24,9 +32,9 @@ function convertToLesson(lesson: ElectricVehicleLesson): BaseLessonData {
       problem: study.challenge,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.technologies || []
+      innovations: study.technologies || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
@@ -76,11 +84,13 @@ export default async function ElectricVehicleLessonPage({ params }: PageProps) {
     },
     getFieldValue: (lesson) => {
       // Find original lesson to get vehicleType
-      const originalLesson = electricVehicleLessons.find(l => l.id === lesson.id);
+      const originalLesson = electricVehicleLessons.find(
+        (l) => l.id === lesson.id,
+      );
       return originalLesson?.vehicleType || 'EV Technology';
-    }
-  }
-  
+    },
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

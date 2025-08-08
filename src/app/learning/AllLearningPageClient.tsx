@@ -5,14 +5,12 @@ import Link from 'next/link';
 import { Search, Clock, Star, ChevronRight, Filter } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
-import { 
-  searchModulesVietnamese 
-} from '@/utils/vietnameseSearch';
+import { searchModulesVietnamese } from '@/utils/vietnameseSearch';
 
 // Transform moduleNavigation data to match AllLearningPageClient format
 const allLearningModules = moduleNavigation
-  .filter(module => !module.coreModule) // Exclude core modules (City, AI)
-  .map(module => ({
+  .filter((module) => !module.coreModule) // Exclude core modules (City, AI)
+  .map((module) => ({
     id: module.id,
     title: module.title,
     subtitle: module.subtitle || '',
@@ -25,34 +23,62 @@ const allLearningModules = moduleNavigation
     lessons: module.lessons.length,
     features: module.features || [],
     icon: module.icon,
-    tags: module.tags || []
+    tags: module.tags || [],
   }));
 
 // Helper function to get all categories for a module
-const getModuleCategories = (module: { category: string | string[] }): string[] => {
+const getModuleCategories = (module: {
+  category: string | string[];
+}): string[] => {
   return Array.isArray(module.category) ? module.category : [module.category];
 };
 
 // Helper function to check if module belongs to category
-const moduleInCategory = (module: { category: string | string[] }, category: string): boolean => {
+const moduleInCategory = (
+  module: { category: string | string[] },
+  category: string,
+): boolean => {
   const moduleCategories = getModuleCategories(module);
   return moduleCategories.includes(category);
 };
 
 // Count modules per category (supporting multi-category)
 const countModulesInCategory = (category: string): number => {
-  return allLearningModules.filter(module => moduleInCategory(module, category)).length;
+  return allLearningModules.filter((module) =>
+    moduleInCategory(module, category),
+  ).length;
 };
 
 const categories = {
-  trending: { title: '🔥 Xu Hướng 2025', count: countModulesInCategory('trending') },
-  vietnamese: { title: '🇻🇳 Thị Trường Việt Nam', count: countModulesInCategory('vietnamese') },
-  professional: { title: '💼 Kỹ Năng Nghề Nghiệp', count: countModulesInCategory('professional') },
-  creative: { title: '🎨 Sáng Tạo & Công Nghệ', count: countModulesInCategory('creative') },
-  security: { title: '🔒 An Ninh Mạng', count: countModulesInCategory('security') },
-  science: { title: '🧬 Khoa Học Đời Sống', count: countModulesInCategory('science') },
-  programming: { title: '💻 Lập Trình', count: countModulesInCategory('programming') },
-  stem: { title: '🚀 STEM & Hardware', count: countModulesInCategory('stem') }
+  trending: {
+    title: '🔥 Xu Hướng 2025',
+    count: countModulesInCategory('trending'),
+  },
+  vietnamese: {
+    title: '🇻🇳 Thị Trường Việt Nam',
+    count: countModulesInCategory('vietnamese'),
+  },
+  professional: {
+    title: '💼 Kỹ Năng Nghề Nghiệp',
+    count: countModulesInCategory('professional'),
+  },
+  creative: {
+    title: '🎨 Sáng Tạo & Công Nghệ',
+    count: countModulesInCategory('creative'),
+  },
+  security: {
+    title: '🔒 An Ninh Mạng',
+    count: countModulesInCategory('security'),
+  },
+  science: {
+    title: '🧬 Khoa Học Đời Sống',
+    count: countModulesInCategory('science'),
+  },
+  programming: {
+    title: '💻 Lập Trình',
+    count: countModulesInCategory('programming'),
+  },
+  stem: { title: '🚀 STEM & Hardware', count: countModulesInCategory('stem') },
 };
 
 const levels = ['Tất cả', 'Cơ bản', 'Trung bình', 'Nâng cao'];
@@ -61,7 +87,7 @@ export default function AllLearningPageClient() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  
+
   // Initialize state from URL parameters
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -71,35 +97,114 @@ export default function AllLearningPageClient() {
 
   // Popular search terms and suggestions with Vietnamese support
   const popularSearchTerms = [
-    'Python', 'AI', 'Machine Learning', 'Marketing', 'Lập trình', 
-    'Web Development', 'Data Science', 'Blockchain', 'Game Development',
-    'Arduino', 'IoT', 'Cybersecurity', 'Startup', 'Business', 'Fintech',
-    'lap trinh', 'tri tue nhan tao', 'kinh doanh', 'an ninh mang'
+    'Python',
+    'AI',
+    'Machine Learning',
+    'Marketing',
+    'Lập trình',
+    'Web Development',
+    'Data Science',
+    'Blockchain',
+    'Game Development',
+    'Arduino',
+    'IoT',
+    'Cybersecurity',
+    'Startup',
+    'Business',
+    'Fintech',
+    'lap trinh',
+    'tri tue nhan tao',
+    'kinh doanh',
+    'an ninh mang',
   ];
 
   const searchSuggestions = [
-    { term: 'lập trình Python', category: 'programming', description: 'Học Python từ cơ bản đến nâng cao' },
-    { term: 'lap trinh python', category: 'programming', description: 'Học Python từ cơ bản đến nâng cao (không dấu)' },
-    { term: 'AI và Machine Learning', category: 'trending', description: 'Trí tuệ nhân tạo và học máy' },
-    { term: 'tri tue nhan tao', category: 'trending', description: 'Trí tuệ nhân tạo (không dấu)' },
-    { term: 'Digital Marketing', category: 'professional', description: 'Marketing và quảng cáo số' },
-    { term: 'Startup và Khởi nghiệp', category: 'vietnamese', description: 'Xây dựng startup thành công' },
-    { term: 'khoi nghiep', category: 'vietnamese', description: 'Khởi nghiệp (không dấu)' },
-    { term: 'Cybersecurity', category: 'security', description: 'An ninh mạng và bảo mật' },
-    { term: 'an ninh mang', category: 'security', description: 'An ninh mạng (không dấu)' },
-    { term: 'Game Development', category: 'creative', description: 'Phát triển game và ứng dụng' },
-    { term: 'phat trien game', category: 'creative', description: 'Phát triển game (không dấu)' },
-    { term: 'Arduino và IoT', category: 'stem', description: 'Lập trình phần cứng và IoT' },
-    { term: 'Blockchain và Crypto', category: 'trending', description: 'Công nghệ Blockchain và tiền số' },
-    { term: 'cong nghe nano', category: 'professional', description: 'Công nghệ nano và vật liệu tiên tiến' },
-    { term: 'y te so', category: 'vietnamese', description: 'Y tế số và công nghệ y tế' },
-    { term: 'moi truong', category: 'professional', description: 'Khoa học môi trường và bền vững' }
+    {
+      term: 'lập trình Python',
+      category: 'programming',
+      description: 'Học Python từ cơ bản đến nâng cao',
+    },
+    {
+      term: 'lap trinh python',
+      category: 'programming',
+      description: 'Học Python từ cơ bản đến nâng cao (không dấu)',
+    },
+    {
+      term: 'AI và Machine Learning',
+      category: 'trending',
+      description: 'Trí tuệ nhân tạo và học máy',
+    },
+    {
+      term: 'tri tue nhan tao',
+      category: 'trending',
+      description: 'Trí tuệ nhân tạo (không dấu)',
+    },
+    {
+      term: 'Digital Marketing',
+      category: 'professional',
+      description: 'Marketing và quảng cáo số',
+    },
+    {
+      term: 'Startup và Khởi nghiệp',
+      category: 'vietnamese',
+      description: 'Xây dựng startup thành công',
+    },
+    {
+      term: 'khoi nghiep',
+      category: 'vietnamese',
+      description: 'Khởi nghiệp (không dấu)',
+    },
+    {
+      term: 'Cybersecurity',
+      category: 'security',
+      description: 'An ninh mạng và bảo mật',
+    },
+    {
+      term: 'an ninh mang',
+      category: 'security',
+      description: 'An ninh mạng (không dấu)',
+    },
+    {
+      term: 'Game Development',
+      category: 'creative',
+      description: 'Phát triển game và ứng dụng',
+    },
+    {
+      term: 'phat trien game',
+      category: 'creative',
+      description: 'Phát triển game (không dấu)',
+    },
+    {
+      term: 'Arduino và IoT',
+      category: 'stem',
+      description: 'Lập trình phần cứng và IoT',
+    },
+    {
+      term: 'Blockchain và Crypto',
+      category: 'trending',
+      description: 'Công nghệ Blockchain và tiền số',
+    },
+    {
+      term: 'cong nghe nano',
+      category: 'professional',
+      description: 'Công nghệ nano và vật liệu tiên tiến',
+    },
+    {
+      term: 'y te so',
+      category: 'vietnamese',
+      description: 'Y tế số và công nghệ y tế',
+    },
+    {
+      term: 'moi truong',
+      category: 'professional',
+      description: 'Khoa học môi trường và bền vững',
+    },
   ];
 
   // Effect to read URL parameters on mount
   useEffect(() => {
     if (!searchParams) return;
-    
+
     const categoryFromUrl = searchParams.get('category');
     const levelFromUrl = searchParams.get('level');
     const searchFromUrl = searchParams.get('search');
@@ -114,23 +219,33 @@ export default function AllLearningPageClient() {
     if (searchFromUrl) {
       setSearchTerm(searchFromUrl);
     }
-    if (sortFromUrl && ['popular', 'duration', 'newest'].includes(sortFromUrl)) {
+    if (
+      sortFromUrl &&
+      ['popular', 'duration', 'newest'].includes(sortFromUrl)
+    ) {
       setSortBy(sortFromUrl);
     }
   }, [searchParams]);
 
   // Function to update URL when filters change
-  const updateURL = (newCategory: string, newLevel: string, newSearch: string, newSort: string) => {
+  const updateURL = (
+    newCategory: string,
+    newLevel: string,
+    newSearch: string,
+    newSort: string,
+  ) => {
     if (!pathname) return;
-    
+
     const params = new URLSearchParams();
-    
+
     if (newCategory !== 'all') params.set('category', newCategory);
     if (newLevel !== 'Tất cả') params.set('level', newLevel);
     if (newSearch) params.set('search', newSearch);
     if (newSort !== 'popular') params.set('sort', newSort);
-    
-    const newUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname;
+
+    const newUrl = params.toString()
+      ? `${pathname}?${params.toString()}`
+      : pathname;
     router.replace(newUrl, { scroll: false });
   };
 
@@ -156,10 +271,15 @@ export default function AllLearningPageClient() {
   };
 
   // Filter modules based on search and filters with enhanced Vietnamese search
-  const filteredModules = searchModulesVietnamese(allLearningModules, searchTerm).filter(module => {
-    const matchesCategoryFilter = selectedCategory === 'all' || moduleInCategory(module, selectedCategory);
-    const matchesLevelFilter = selectedLevel === 'Tất cả' || module.level === selectedLevel;
-    
+  const filteredModules = searchModulesVietnamese(
+    allLearningModules,
+    searchTerm,
+  ).filter((module) => {
+    const matchesCategoryFilter =
+      selectedCategory === 'all' || moduleInCategory(module, selectedCategory);
+    const matchesLevelFilter =
+      selectedLevel === 'Tất cả' || module.level === selectedLevel;
+
     return matchesCategoryFilter && matchesLevelFilter;
   });
 
@@ -178,19 +298,24 @@ export default function AllLearningPageClient() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+      <div className="relative overflow-x-hidden bg-gradient-to-r from-blue-600/20 to-purple-600/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               📚 Tất Cả Khóa Học
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Khám phá <strong className="text-blue-300">{allLearningModules.length} khóa học chuyên sâu</strong> từ 
-              Vietnamese business, AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering, 
-              Environmental Data Science, Food Technology, Aerospace Engineering, Nanotechnology đến programming và science. 
-              Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.
+              Khám phá{' '}
+              <strong className="text-blue-300">
+                {allLearningModules.length} khóa học chuyên sâu
+              </strong>{' '}
+              từ Vietnamese business, AI technology, Electric Vehicle Tech,
+              Blockchain & DeFi, Biomedical Engineering, Environmental Data
+              Science, Food Technology, Aerospace Engineering, Nanotechnology
+              đến programming và science. Tất cả miễn phí và được thiết kế cho
+              thị trường Việt Nam.
             </p>
-            
+
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto relative">
               <div className="relative">
@@ -201,18 +326,22 @@ export default function AllLearningPageClient() {
                   value={searchTerm}
                   onChange={(e) => handleSearchChange(e.target.value)}
                   onFocus={() => setShowSearchSuggestions(true)}
-                  onBlur={() => setTimeout(() => setShowSearchSuggestions(false), 200)}
+                  onBlur={() =>
+                    setTimeout(() => setShowSearchSuggestions(false), 200)
+                  }
                   className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
                 />
-                
+
                 {/* Enhanced Search Suggestions with Vietnamese support */}
                 {showSearchSuggestions && (
-                  <div className="absolute top-full left-0 right-0 mt-2 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-2xl p-4 z-50">
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-slate-800/95 backdrop-blur-sm border border-white/20 rounded-2xl p-4 z-50 max-h-96 overflow-y-auto">
                     {searchTerm === '' ? (
                       <>
-                        <div className="mb-3">
-                          <h4 className="text-white font-medium mb-2">🔥 Tìm kiếm phổ biến:</h4>
-                          <div className="flex flex-wrap gap-2">
+                        <div className="mb-4">
+                          <h4 className="text-white font-medium mb-3">
+                            🔥 Tìm kiếm phổ biến:
+                          </h4>
+                          <div className="flex flex-wrap gap-2 max-h-24 overflow-y-auto">
                             {popularSearchTerms.map((term) => (
                               <button
                                 key={term}
@@ -220,28 +349,41 @@ export default function AllLearningPageClient() {
                                   handleSearchChange(term);
                                   setShowSearchSuggestions(false);
                                 }}
-                                className="px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full text-sm hover:bg-blue-500/30 transition-colors"
+                                className="flex-shrink-0 px-3 py-2 bg-blue-500/20 text-blue-200 rounded-full text-sm hover:bg-blue-500/30 transition-colors border border-blue-500/30 hover:border-blue-400"
                               >
                                 {term}
                               </button>
                             ))}
                           </div>
                         </div>
-                        
-                        <div className="mb-3">
-                          <h4 className="text-green-300 font-medium mb-2">🇻🇳 Hỗ trợ tiếng Việt không dấu:</h4>
+
+                        <div className="mb-4">
+                          <h4 className="text-green-300 font-medium mb-2">
+                            🇻🇳 Hỗ trợ tiếng Việt không dấu:
+                          </h4>
                           <p className="text-gray-400 text-sm mb-2">
-                            Bạn có thể tìm kiếm bằng tiếng Việt có dấu hoặc không dấu. Ví dụ:
+                            Bạn có thể tìm kiếm bằng tiếng Việt có dấu hoặc
+                            không dấu. Ví dụ:
                           </p>
                           <div className="flex flex-wrap gap-2">
-                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;lập trình&rdquo; = &ldquo;lap trinh&rdquo;</span>
-                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;trí tuệ nhân tạo&rdquo; = &ldquo;tri tue nhan tao&rdquo;</span>
-                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs">&ldquo;an ninh mạng&rdquo; = &ldquo;an ninh mang&rdquo;</span>
+                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs border border-green-500/30">
+                              &ldquo;lập trình&rdquo; = &ldquo;lap trinh&rdquo;
+                            </span>
+                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs border border-green-500/30">
+                              &ldquo;trí tuệ nhân tạo&rdquo; = &ldquo;tri tue
+                              nhan tao&rdquo;
+                            </span>
+                            <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs border border-green-500/30">
+                              &ldquo;an ninh mạng&rdquo; = &ldquo;an ninh
+                              mang&rdquo;
+                            </span>
                           </div>
                         </div>
-                        
+
                         <div>
-                          <h4 className="text-white font-medium mb-2">💡 Gợi ý khóa học:</h4>
+                          <h4 className="text-white font-medium mb-2">
+                            💡 Gợi ý khóa học:
+                          </h4>
                           <div className="space-y-2">
                             {searchSuggestions.slice(0, 6).map((suggestion) => (
                               <button
@@ -252,8 +394,12 @@ export default function AllLearningPageClient() {
                                 }}
                                 className="w-full text-left p-2 hover:bg-white/10 rounded-lg transition-colors"
                               >
-                                <div className="text-white font-medium">{suggestion.term}</div>
-                                <div className="text-gray-400 text-sm">{suggestion.description}</div>
+                                <div className="text-white font-medium">
+                                  {suggestion.term}
+                                </div>
+                                <div className="text-gray-400 text-sm">
+                                  {suggestion.description}
+                                </div>
                               </button>
                             ))}
                           </div>
@@ -261,9 +407,12 @@ export default function AllLearningPageClient() {
                       </>
                     ) : (
                       <div>
-                        <h4 className="text-white font-medium mb-2">🔍 Kết quả tìm kiếm cho &ldquo;{searchTerm}&rdquo;</h4>
+                        <h4 className="text-white font-medium mb-2">
+                          🔍 Kết quả tìm kiếm cho &ldquo;{searchTerm}&rdquo;
+                        </h4>
                         <p className="text-gray-300 text-sm">
-                          Tìm thấy {filteredModules.length} khóa học phù hợp. Nhấn Enter hoặc click bên ngoài để xem kết quả.
+                          Tìm thấy {filteredModules.length} khóa học phù hợp.
+                          Nhấn Enter hoặc click bên ngoài để xem kết quả.
                         </p>
                       </div>
                     )}
@@ -288,9 +437,17 @@ export default function AllLearningPageClient() {
                 onChange={(e) => handleCategoryChange(e.target.value)}
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
-                <option value="all" className="bg-gray-800 text-white">Tất cả danh mục</option>
+                <option value="all" className="bg-gray-800 text-white">
+                  Tất cả danh mục
+                </option>
                 {Object.entries(categories).map(([key, cat]) => (
-                  <option key={key} value={key} className="bg-gray-800 text-white">{cat.title}</option>
+                  <option
+                    key={key}
+                    value={key}
+                    className="bg-gray-800 text-white"
+                  >
+                    {cat.title}
+                  </option>
                 ))}
               </select>
             </div>
@@ -303,8 +460,14 @@ export default function AllLearningPageClient() {
                 onChange={(e) => handleLevelChange(e.target.value)}
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
-                {levels.map(level => (
-                  <option key={level} value={level} className="bg-gray-800 text-white">{level}</option>
+                {levels.map((level) => (
+                  <option
+                    key={level}
+                    value={level}
+                    className="bg-gray-800 text-white"
+                  >
+                    {level}
+                  </option>
                 ))}
               </select>
             </div>
@@ -317,15 +480,25 @@ export default function AllLearningPageClient() {
                 onChange={(e) => handleSortChange(e.target.value)}
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
-                <option value="popular" className="bg-gray-800 text-white">Phổ biến</option>
-                <option value="duration" className="bg-gray-800 text-white">Thời lượng</option>
-                <option value="newest" className="bg-gray-800 text-white">Mới nhất</option>
+                <option value="popular" className="bg-gray-800 text-white">
+                  Phổ biến
+                </option>
+                <option value="duration" className="bg-gray-800 text-white">
+                  Thời lượng
+                </option>
+                <option value="newest" className="bg-gray-800 text-white">
+                  Mới nhất
+                </option>
               </select>
             </div>
 
             {/* Results count */}
             <div className="ml-auto text-gray-300">
-              Tìm thấy <span className="text-blue-300 font-semibold">{filteredModules.length}</span> khóa học
+              Tìm thấy{' '}
+              <span className="text-blue-300 font-semibold">
+                {filteredModules.length}
+              </span>{' '}
+              khóa học
             </div>
           </div>
         </div>
@@ -335,40 +508,51 @@ export default function AllLearningPageClient() {
           {sortedModules.map((module) => (
             <Link key={module.id} href={module.href}>
               <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 cursor-pointer h-full">
-                <div className={`w-16 h-16 bg-gradient-to-br ${module.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`w-16 h-16 bg-gradient-to-br ${module.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
                   {module.icon}
                 </div>
-                
+
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex flex-wrap gap-1">
-                      {getModuleCategories(module).slice(0, 2).map((cat, idx) => (
-                        <span key={idx} className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded-full text-xs">
-                          {categories[cat as keyof typeof categories]?.title.split(' ')[1] || cat}
-                        </span>
-                      ))}
+                      {getModuleCategories(module)
+                        .slice(0, 2)
+                        .map((cat, idx) => (
+                          <span
+                            key={idx}
+                            className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded-full text-xs"
+                          >
+                            {categories[
+                              cat as keyof typeof categories
+                            ]?.title.split(' ')[1] || cat}
+                          </span>
+                        ))}
                       {getModuleCategories(module).length > 2 && (
                         <span className="bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full text-xs">
                           +{getModuleCategories(module).length - 2}
                         </span>
                       )}
                     </div>
-                    <span className="text-gray-400 text-sm">{module.lessons} bài học</span>
+                    <span className="text-gray-400 text-sm">
+                      {module.lessons} bài học
+                    </span>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
                     {module.title}
                   </h3>
-                  
+
                   <p className="text-blue-300 mb-3 font-medium">
                     {module.subtitle}
                   </p>
                 </div>
-                
+
                 <p className="text-gray-300 mb-6 leading-relaxed line-clamp-3">
                   {module.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   <span className="bg-purple-500/20 text-purple-200 px-2 py-1 rounded-full text-xs flex items-center">
                     <Star className="w-3 h-3 mr-1" />
@@ -379,10 +563,13 @@ export default function AllLearningPageClient() {
                     {module.duration}
                   </span>
                 </div>
-                
+
                 <div className="space-y-1 mb-6">
                   {module.features.slice(0, 3).map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center text-gray-300 text-sm">
+                    <div
+                      key={featureIndex}
+                      className="flex items-center text-gray-300 text-sm"
+                    >
                       <span className="text-green-400 mr-2">✓</span>
                       {feature}
                     </div>
@@ -393,7 +580,7 @@ export default function AllLearningPageClient() {
                     </div>
                   )}
                 </div>
-                
+
                 <div className="flex items-center justify-between text-blue-300 font-semibold group-hover:text-blue-200 transition-colors duration-300">
                   <span>Bắt đầu học</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -407,7 +594,9 @@ export default function AllLearningPageClient() {
         {filteredModules.length === 0 && (
           <div className="text-center py-16">
             <div className="text-6xl mb-6">🔍</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Không tìm thấy khóa học phù hợp</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Không tìm thấy khóa học phù hợp
+            </h3>
             <p className="text-gray-300 mb-6">
               Thử thay đổi từ khóa tìm kiếm hoặc bộ lọc để tìm khóa học khác
             </p>
@@ -429,10 +618,12 @@ export default function AllLearningPageClient() {
       {/* Popular Categories */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">🔥 Danh Mục Phổ Biến</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            🔥 Danh Mục Phổ Biến
+          </h2>
           <p className="text-gray-300">Khám phá theo chủ đề yêu thích</p>
         </div>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
           {Object.entries(categories).map(([key, category]) => (
             <button
@@ -447,9 +638,15 @@ export default function AllLearningPageClient() {
                   : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
               }`}
             >
-              <div className="text-2xl mb-2">{category.title.split(' ')[0]}</div>
-              <div className="text-sm font-medium mb-1">{category.title.split(' ').slice(1).join(' ')}</div>
-              <div className="text-xs text-gray-400">{category.count} khóa học</div>
+              <div className="text-2xl mb-2">
+                {category.title.split(' ')[0]}
+              </div>
+              <div className="text-sm font-medium mb-1">
+                {category.title.split(' ').slice(1).join(' ')}
+              </div>
+              <div className="text-xs text-gray-400">
+                {category.count} khóa học
+              </div>
             </button>
           ))}
         </div>
@@ -462,22 +659,23 @@ export default function AllLearningPageClient() {
             🎯 Chưa biết bắt đầu từ đâu?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Hãy bắt đầu với các khóa học cơ bản hoặc khám phá theo lĩnh vực yêu thích!
+            Hãy bắt đầu với các khóa học cơ bản hoặc khám phá theo lĩnh vực yêu
+            thích!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link 
+            <Link
               href="/city"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-700 hover:to-emerald-700 transition-all duration-300"
             >
               🌏 Bắt đầu với Địa Lý Việt Nam
             </Link>
-            <Link 
+            <Link
               href="/ai"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300"
             >
               🤖 Khám phá AI
             </Link>
-            <Link 
+            <Link
               href="/learning/vietnamese-business"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-green-700 transition-all duration-300"
             >

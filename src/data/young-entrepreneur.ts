@@ -11,7 +11,8 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
   {
     id: 'startup-mindset-fundamentals',
     title: 'Tư Duy Khởi Nghiệp & Cơ Hội Thị Trường',
-    description: 'Xây dựng tư duy khởi nghiệp, nhận diện cơ hội kinh doanh và hiểu rõ thị trường Việt Nam cho thế hệ GenZ',
+    description:
+      'Xây dựng tư duy khởi nghiệp, nhận diện cơ hội kinh doanh và hiểu rõ thị trường Việt Nam cho thế hệ GenZ',
     duration: '180 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://youtube.com/watch?v=startup-mindset-vietnam',
@@ -20,114 +21,132 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Phát triển tư duy khởi nghiệp và nhận diện cơ hội',
       'Hiểu rõ đặc điểm thị trường Việt Nam cho startup',
       'Xây dựng vision và mission cho dự án kinh doanh',
-      'Áp dụng Design Thinking vào giải quyết vấn đề'
+      'Áp dụng Design Thinking vào giải quyết vấn đề',
     ],
     prerequisites: [
       'Sự tò mò và đam mê tìm hiểu',
       'Khả năng quan sát và tư duy logic',
-      'Hiểu biết cơ bản về xã hội và công nghệ'
+      'Hiểu biết cơ bản về xã hội và công nghệ',
     ],
     exercises: [
       {
         title: 'Bản đồ cơ hội kinh doanh GenZ Vietnam',
-        description: 'Nghiên cứu và tạo bản đồ các cơ hội kinh doanh phù hợp với thế hệ GenZ Việt Nam',
+        description:
+          'Nghiên cứu và tạo bản đồ các cơ hội kinh doanh phù hợp với thế hệ GenZ Việt Nam',
         difficulty: 'Cơ bản',
         materials: [
           'Khảo sát thị trường online',
           'Phỏng vấn 10 bạn đồng trang lứa',
           'Nghiên cứu report về GenZ Vietnam',
-          'Canvas Business Model'
+          'Canvas Business Model',
         ],
         procedure: [
           'Khảo sát nhu cầu và pain point của GenZ (16-25 tuổi)',
           'Phân tích xu hướng tiêu dùng và công nghệ',
           'Nhận diện 5 cơ hội kinh doanh tiềm năng',
           'Đánh giá tính khả thi và quy mô thị trường',
-          'Tạo Business Model Canvas cho 1 ý tưởng'
+          'Tạo Business Model Canvas cho 1 ý tưởng',
         ],
-        expectedResults: 'Bản đồ cơ hội với 5 ý tưởng kinh doanh cụ thể và 1 Business Model Canvas hoàn chỉnh',
-        solution: 'Tập trung vào các lĩnh vực: EdTech, Social Commerce, Sustainable Lifestyle, Digital Services, Content Creation'
+        expectedResults:
+          'Bản đồ cơ hội với 5 ý tưởng kinh doanh cụ thể và 1 Business Model Canvas hoàn chỉnh',
+        solution:
+          'Tập trung vào các lĩnh vực: EdTech, Social Commerce, Sustainable Lifestyle, Digital Services, Content Creation',
       },
       {
         title: 'Workshop Design Thinking cho Startup',
-        description: 'Áp dụng phương pháp Design Thinking để giải quyết một vấn đề thực tế',
+        description:
+          'Áp dụng phương pháp Design Thinking để giải quyết một vấn đề thực tế',
         difficulty: 'Trung bình',
         materials: [
           'Design Thinking Toolkit',
           'Post-it notes và marker',
           'Template Empathy Map',
-          'Prototype materials'
+          'Prototype materials',
         ],
         procedure: [
           'Empathize: Phỏng vấn và quan sát người dùng',
           'Define: Xác định problem statement cụ thể',
           'Ideate: Brainstorm 50+ ý tưởng giải pháp',
           'Prototype: Tạo MVP đơn giản',
-          'Test: Thu thập feedback và cải thiện'
+          'Test: Thu thập feedback và cải thiện',
         ],
-        expectedResults: 'Một prototype giải pháp và plan cải thiện dựa trên user feedback'
-      }
+        expectedResults:
+          'Một prototype giải pháp và plan cải thiện dựa trên user feedback',
+      },
     ],
     realWorldApplications: [
       'Khởi nghiệp công nghệ với vốn tự có dưới 50 triệu',
       'Tìm kiếm cơ hội kinh doanh trong các ngành trending',
       'Phát triển sản phẩm/dịch vụ phù hợp với GenZ Vietnam',
-      'Ứng dụng Design Thinking trong giải quyết vấn đề xã hội'
+      'Ứng dụng Design Thinking trong giải quyết vấn đề xã hội',
     ],
     caseStudies: [
       {
         title: 'Thành công của Startup Tiki',
         organization: 'Tiki.vn - Trần Ngọc Thái Sơn',
-        problem: 'E-commerce Việt Nam chưa phát triển, người dùng ngại mua hàng online',
-        solution: 'Xây dựng platform với focus vào trải nghiệm người dùng và giao hàng nhanh',
+        problem:
+          'E-commerce Việt Nam chưa phát triển, người dùng ngại mua hàng online',
+        solution:
+          'Xây dựng platform với focus vào trải nghiệm người dùng và giao hàng nhanh',
         impact: 'Trở thành Top 3 e-commerce Vietnam, định giá $800M năm 2021',
-        innovations: ['2-hour delivery trong TP.HCM', 'TikiNow - logistics riêng', 'Tiki Smartbooks - AI recommendation']
+        innovations: [
+          '2-hour delivery trong TP.HCM',
+          'TikiNow - logistics riêng',
+          'Tiki Smartbooks - AI recommendation',
+        ],
       },
       {
         title: 'Base.vn - Startup EdTech từ sinh viên',
         organization: 'Base.vn - Nguyễn Hữu Tuấn',
-        problem: 'Sinh viên khó tiếp cận kiến thức thực tế và skill nghề nghiệp',
-        solution: 'Platform học online với focus vào practical skills và mentorship',
+        problem:
+          'Sinh viên khó tiếp cận kiến thức thực tế và skill nghề nghiệp',
+        solution:
+          'Platform học online với focus vào practical skills và mentorship',
         impact: 'Hơn 100,000 học viên, huy động vốn Series A thành công',
-        innovations: ['Learning path cá nhân hóa', '1-on-1 mentorship', 'Project-based learning']
-      }
+        innovations: [
+          'Learning path cá nhân hóa',
+          '1-on-1 mentorship',
+          'Project-based learning',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Vietnam Startup Ecosystem Report 2024',
         url: 'https://startup.gov.vn/ecosystem-report',
-        type: 'Research'
+        type: 'Research',
       },
       {
         title: 'Design Thinking Toolkit - IDEO',
         url: 'https://designthinking.ideo.com',
-        type: 'Tool'
-      }
+        type: 'Tool',
+      },
     ],
     businessTools: [
       'Business Model Canvas',
       'Design Thinking Framework',
       'Market Research Tools',
-      'SWOT Analysis'
+      'SWOT Analysis',
     ],
     vietnameseMarketFocus: [
       'Đặc điểm tiêu dùng GenZ Việt Nam',
       'Hệ sinh thái startup Việt Nam',
       'Chính sách hỗ trợ khởi nghiệp',
-      'Xu hướng đầu tư venture capital'
+      'Xu hướng đầu tư venture capital',
     ],
     ageGroup: '16-25 tuổi',
     successMetrics: [
       'Tạo được Business Model Canvas hoàn chỉnh',
       'Nhận diện được 5+ cơ hội kinh doanh',
       'Áp dụng được Design Thinking',
-      'Hiểu rõ thị trường startup Việt Nam'
-    ]
+      'Hiểu rõ thị trường startup Việt Nam',
+    ],
   },
   {
     id: 'business-model-validation',
     title: 'Xây Dựng & Kiểm Chứng Business Model',
-    description: 'Học cách xây dựng business model bền vững, tạo MVP và validate ý tưởng kinh doanh với thị trường thực tế',
+    description:
+      'Học cách xây dựng business model bền vững, tạo MVP và validate ý tưởng kinh doanh với thị trường thực tế',
     duration: '210 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://youtube.com/watch?v=business-model-mvp',
@@ -136,33 +155,35 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Thiết kế Business Model Canvas chi tiết',
       'Xây dựng MVP (Minimum Viable Product)',
       'Kiểm chứng ý tưởng với khách hàng thực tế',
-      'Phân tích competitive landscape Vietnam'
+      'Phân tích competitive landscape Vietnam',
     ],
     prerequisites: [
       'Hiểu biết cơ bản về tư duy khởi nghiệp',
       'Có ý tưởng kinh doanh cụ thể',
-      'Kỹ năng nghiên cứu và phân tích'
+      'Kỹ năng nghiên cứu và phân tích',
     ],
     exercises: [
       {
         title: 'Business Model Canvas cho Startup Việt Nam',
-        description: 'Thiết kế business model hoàn chỉnh cho ý tưởng startup của bạn',
+        description:
+          'Thiết kế business model hoàn chỉnh cho ý tưởng startup của bạn',
         difficulty: 'Trung bình',
         materials: [
           'Business Model Canvas template',
           'Market research data',
           'Competitor analysis',
-          'Financial modeling tools'
+          'Financial modeling tools',
         ],
         procedure: [
           'Xác định Value Proposition cốt lõi',
           'Mapping Customer Segments chi tiết',
           'Thiết kế Customer Journey và Channels',
           'Xây dựng Revenue Streams và Cost Structure',
-          'Validate từng component với data thực tế'
+          'Validate từng component với data thực tế',
         ],
         expectedResults: 'Business Model Canvas hoàn chỉnh với data validation',
-        solution: 'Focus vào differentiation rõ ràng và sustainable competitive advantage'
+        solution:
+          'Focus vào differentiation rõ ràng và sustainable competitive advantage',
       },
       {
         title: 'MVP Development & Testing',
@@ -172,23 +193,24 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
           'No-code tools (Figma, Webflow)',
           'Survey tools (Google Forms)',
           'Analytics (Google Analytics)',
-          'A/B testing platform'
+          'A/B testing platform',
         ],
         procedure: [
           'Xác định core features cho MVP',
           'Tạo prototype với no-code tools',
           'Setup tracking và analytics',
           'Recruit 50+ beta users',
-          'Phân tích usage data và feedback'
+          'Phân tích usage data và feedback',
         ],
-        expectedResults: 'MVP với validated features và clear product-market fit signals'
-      }
+        expectedResults:
+          'MVP với validated features và clear product-market fit signals',
+      },
     ],
     realWorldApplications: [
       'Validate ý tưởng startup trước khi đầu tư lớn',
       'Xây dựng sản phẩm đáp ứng nhu cầu thực tế',
       'Tối ưu hóa business model cho thị trường Việt Nam',
-      'Chuẩn bị pitch deck cho nhà đầu tư'
+      'Chuẩn bị pitch deck cho nhà đầu tư',
     ],
     caseStudies: [
       {
@@ -197,45 +219,50 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         problem: 'C2C marketplace chưa phát triển tại Việt Nam',
         solution: 'MVP tập trung vào mobile-first và sellers nhỏ lẻ',
         impact: 'IPO thành công, hơn 1M sellers active',
-        innovations: ['Mobile-first approach', 'Seller support program', 'Logistics integration']
-      }
+        innovations: [
+          'Mobile-first approach',
+          'Seller support program',
+          'Logistics integration',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Lean Startup Methodology',
         url: 'http://theleanstartup.com/principles',
-        type: 'Methodology'
+        type: 'Methodology',
       },
       {
         title: 'Vietnam E-commerce Report 2024',
         url: 'https://e-commerce.gov.vn/report',
-        type: 'Research'
-      }
+        type: 'Research',
+      },
     ],
     businessTools: [
       'Lean Canvas',
       'MVP Development',
       'A/B Testing',
-      'Customer Validation'
+      'Customer Validation',
     ],
     vietnameseMarketFocus: [
       'Payment methods phổ biến tại VN',
       'Logistics và fulfillment challenges',
       'Consumer behavior trong online shopping',
-      'Regulatory requirements cho startup'
+      'Regulatory requirements cho startup',
     ],
     ageGroup: '18-25 tuổi',
     successMetrics: [
       'Business Model validated với 50+ customers',
       'MVP có traction metrics tích cực',
       'Clear competitive differentiation',
-      'Roadmap phát triển 6-12 tháng'
-    ]
+      'Roadmap phát triển 6-12 tháng',
+    ],
   },
   {
     id: 'digital-marketing-growth',
     title: 'Digital Marketing & Growth Hacking cho Startup',
-    description: 'Chiến lược marketing cost-effective, growth hacking và xây dựng brand awareness với budget hạn chế',
+    description:
+      'Chiến lược marketing cost-effective, growth hacking và xây dựng brand awareness với budget hạn chế',
     duration: '195 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://youtube.com/watch?v=startup-growth-hacking',
@@ -244,40 +271,42 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Thiết kế growth marketing strategy',
       'Thực hiện growth hacking campaigns',
       'Xây dựng organic social media presence',
-      'Tối ưu hóa conversion funnel'
+      'Tối ưu hóa conversion funnel',
     ],
     prerequisites: [
       'Hiểu biết cơ bản về digital marketing',
       'Có MVP hoặc sản phẩm để marketing',
-      'Kỹ năng sử dụng social media'
+      'Kỹ năng sử dụng social media',
     ],
     exercises: [
       {
         title: 'Growth Hacking Campaign cho Startup Vietnam',
-        description: 'Thiết kế và thực hiện campaign growth hacking với budget dưới 5 triệu VNĐ',
+        description:
+          'Thiết kế và thực hiện campaign growth hacking với budget dưới 5 triệu VNĐ',
         difficulty: 'Nâng cao',
         materials: [
           'Facebook Ads Manager',
           'Google Analytics',
           'Content creation tools',
-          'Referral tracking system'
+          'Referral tracking system',
         ],
         procedure: [
           'Phân tích customer acquisition cost (CAC)',
           'Thiết kế viral mechanics và referral program',
           'Tạo content viral trên TikTok/YouTube Shorts',
           'Setup tracking cho mọi touchpoint',
-          'Optimize campaigns dựa trên data'
+          'Optimize campaigns dựa trên data',
         ],
-        expectedResults: 'Campaign với CAC < 50,000 VNĐ và viral coefficient > 1.2',
-        solution: 'Focus vào user-generated content và community building'
-      }
+        expectedResults:
+          'Campaign với CAC < 50,000 VNĐ và viral coefficient > 1.2',
+        solution: 'Focus vào user-generated content và community building',
+      },
     ],
     realWorldApplications: [
       'Tăng user acquisition với budget hạn chế',
       'Xây dựng brand awareness cho startup mới',
       'Tối ưu hóa funnel conversion cho e-commerce',
-      'Viral marketing campaigns trên social media'
+      'Viral marketing campaigns trên social media',
     ],
     caseStudies: [
       {
@@ -286,40 +315,45 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         problem: 'Thị trường ride-hailing chưa phát triển ở SEA',
         solution: 'Growth hacking với referral program và localization',
         impact: 'Dominant market share trong 8 countries SEA',
-        innovations: ['MyTeksi rebrand thành Grab', 'Driver incentive programs', 'Super app strategy']
-      }
+        innovations: [
+          'MyTeksi rebrand thành Grab',
+          'Driver incentive programs',
+          'Super app strategy',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Growth Hacking Handbook',
         url: 'https://growthhackers.com/handbook',
-        type: 'Guide'
-      }
+        type: 'Guide',
+      },
     ],
     businessTools: [
       'Growth Analytics',
       'A/B Testing Platforms',
       'Social Media Management',
-      'Email Marketing'
+      'Email Marketing',
     ],
     vietnameseMarketFocus: [
       'Social media platforms phổ biến tại VN',
       'Influencer marketing ecosystem',
       'Mobile-first marketing approach',
-      'Cross-platform attribution'
+      'Cross-platform attribution',
     ],
     ageGroup: '18-25 tuổi',
     successMetrics: [
       'CAC reduction 30%+',
       'Viral coefficient > 1.0',
       'Organic traffic tăng 200%+',
-      'Social media engagement > 5%'
-    ]
+      'Social media engagement > 5%',
+    ],
   },
   {
     id: 'funding-investment-preparation',
     title: 'Gọi Vốn & Chuẩn Bị Đầu Tư',
-    description: 'Chuẩn bị pitch deck, tìm kiếm nhà đầu tư và negotiate terms để gọi vốn thành công cho startup',
+    description:
+      'Chuẩn bị pitch deck, tìm kiếm nhà đầu tư và negotiate terms để gọi vốn thành công cho startup',
     duration: '240 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://youtube.com/watch?v=startup-funding-vietnam',
@@ -328,13 +362,13 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Tạo pitch deck chuyên nghiệp',
       'Hiểu rõ ecosystem đầu tư Việt Nam',
       'Valuation và negotiate investment terms',
-      'Chuẩn bị due diligence process'
+      'Chuẩn bị due diligence process',
     ],
     prerequisites: [
       'Có business model validated',
       'Traction metrics và growth potential',
       'Hiểu biết về tài chính cơ bản',
-      'Business plan chi tiết'
+      'Business plan chi tiết',
     ],
     exercises: [
       {
@@ -345,43 +379,46 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
           'Pitch deck templates',
           'Financial modeling tools',
           'Market research data',
-          'Traction metrics'
+          'Traction metrics',
         ],
         procedure: [
           'Craft compelling problem-solution narrative',
           'Prepare market size và TAM analysis',
           'Develop financial projections 3-5 năm',
           'Create demo và product showcase',
-          'Practice pitch delivery và Q&A'
+          'Practice pitch delivery và Q&A',
         ],
-        expectedResults: 'Pitch deck 10-12 slides với clear ask và compelling story',
-        solution: 'Focus vào traction, team expertise, và scalable business model'
+        expectedResults:
+          'Pitch deck 10-12 slides với clear ask và compelling story',
+        solution:
+          'Focus vào traction, team expertise, và scalable business model',
       },
       {
         title: 'Mock Investor Meeting',
-        description: 'Simulation meeting với investor và negotiate investment terms',
+        description:
+          'Simulation meeting với investor và negotiate investment terms',
         difficulty: 'Nâng cao',
         materials: [
           'Term sheet templates',
           'Due diligence checklist',
           'Legal documents',
-          'Valuation models'
+          'Valuation models',
         ],
         procedure: [
           'Research target investors và portfolio',
           'Prepare Q&A cho common investor questions',
           'Practice term sheet negotiation',
           'Role-play investment meeting',
-          'Follow-up strategy và next steps'
+          'Follow-up strategy và next steps',
         ],
-        expectedResults: 'Successful mock pitch với positive investor feedback'
-      }
+        expectedResults: 'Successful mock pitch với positive investor feedback',
+      },
     ],
     realWorldApplications: [
       'Gọi vốn seed funding từ 2-20 tỷ VNĐ',
       'Negotiate với VC funds và angel investors',
       'Chuẩn bị cho Series A funding round',
-      'Strategic partnership với corporate ventures'
+      'Strategic partnership với corporate ventures',
     ],
     caseStudies: [
       {
@@ -390,7 +427,11 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         problem: 'Gaming và internet services market chưa mature tại VN',
         solution: 'Multiple funding rounds với focus vào mobile gaming',
         impact: 'Trở thành tech unicorn đầu tiên của VN',
-        innovations: ['Zalo super app', 'VNG Cloud services', 'International expansion']
+        innovations: [
+          'Zalo super app',
+          'VNG Cloud services',
+          'International expansion',
+        ],
       },
       {
         title: 'Momo - Fintech Unicorn Journey',
@@ -398,45 +439,50 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         problem: 'Digital payment adoption thấp tại Việt Nam',
         solution: 'Series funding để scale mobile wallet',
         impact: 'Unicorn valuation $2B, hàng triệu users',
-        innovations: ['QR payment ecosystem', 'Super app model', 'Financial inclusion']
-      }
+        innovations: [
+          'QR payment ecosystem',
+          'Super app model',
+          'Financial inclusion',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Vietnam Venture Capital Report 2024',
         url: 'https://vietnam-vc.com/report',
-        type: 'Research'
+        type: 'Research',
       },
       {
         title: 'Pitch Deck Examples - Series A',
         url: 'https://piktochart.com/pitch-deck-examples',
-        type: 'Template'
-      }
+        type: 'Template',
+      },
     ],
     businessTools: [
       'Pitch Deck Creation',
       'Financial Modeling',
       'Due Diligence Management',
-      'CRM for Investors'
+      'CRM for Investors',
     ],
     vietnameseMarketFocus: [
       'VC ecosystem và major funds tại VN',
       'Government support programs',
       'Angel investor networks',
-      'Corporate venture arms'
+      'Corporate venture arms',
     ],
     ageGroup: '20-25 tuổi',
     successMetrics: [
       'Pitch deck score > 8/10 từ mentors',
       'Secured meetings với 5+ investors',
       'Term sheet negotiations',
-      'Due diligence completion'
-    ]
+      'Due diligence completion',
+    ],
   },
   {
     id: 'team-building-leadership',
     title: 'Xây Dựng Đội Ngũ & Leadership Skills',
-    description: 'Phát triển kỹ năng lãnh đạo, recruiting talent, xây dựng culture và quản lý team hiệu quả',
+    description:
+      'Phát triển kỹ năng lãnh đạo, recruiting talent, xây dựng culture và quản lý team hiệu quả',
     duration: '180 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://youtube.com/watch?v=startup-leadership',
@@ -445,12 +491,12 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Phát triển leadership skills cho founders trẻ',
       'Recruit và retain top talent',
       'Xây dựng company culture mạnh mẽ',
-      'Quản lý team performance hiệu quả'
+      'Quản lý team performance hiệu quả',
     ],
     prerequisites: [
       'Có team hoặc chuẩn bị build team',
       'Kỹ năng giao tiếp cơ bản',
-      'Hiểu biết về psychology'
+      'Hiểu biết về psychology',
     ],
     exercises: [
       {
@@ -461,24 +507,25 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
           'Culture assessment tools',
           'Values definition workshop',
           'Employee handbook template',
-          'Feedback systems'
+          'Feedback systems',
         ],
         procedure: [
           'Define core values và mission alignment',
           'Design onboarding experience',
           'Create feedback và recognition systems',
           'Establish communication protocols',
-          'Plan culture reinforcement activities'
+          'Plan culture reinforcement activities',
         ],
-        expectedResults: 'Complete culture playbook với clear values và practices',
-        solution: 'Focus vào psychological safety và growth mindset'
-      }
+        expectedResults:
+          'Complete culture playbook với clear values và practices',
+        solution: 'Focus vào psychological safety và growth mindset',
+      },
     ],
     realWorldApplications: [
       'Build high-performing startup teams',
       'Attract top talent với limited budget',
       'Scale company culture trong growth phase',
-      'Manage remote/hybrid team effectively'
+      'Manage remote/hybrid team effectively',
     ],
     caseStudies: [
       {
@@ -487,40 +534,45 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         problem: 'Cạnh tranh khốc liệt trong e-commerce SEA',
         solution: 'Strong culture focus với "Serve Buyers, Empower Sellers"',
         impact: 'Dominant market share trong 7 countries',
-        innovations: ['Culture-driven hiring', 'Cross-country collaboration', 'Innovation mindset']
-      }
+        innovations: [
+          'Culture-driven hiring',
+          'Cross-country collaboration',
+          'Innovation mindset',
+        ],
+      },
     ],
     resources: [
       {
         title: 'First-Time Manager Guide',
         url: 'https://firsttimemanagers.com',
-        type: 'Guide'
-      }
+        type: 'Guide',
+      },
     ],
     businessTools: [
       'Team Assessment',
       'Performance Management',
       'Culture Surveys',
-      'Communication Tools'
+      'Communication Tools',
     ],
     vietnameseMarketFocus: [
       'Hiring practices tại Vietnam',
       'Remote work culture',
       'Compensation benchmarks',
-      'Employee retention strategies'
+      'Employee retention strategies',
     ],
     ageGroup: '20-25 tuổi',
     successMetrics: [
       'Team engagement score > 8/10',
       'Employee retention > 90%',
       'Clear career progression paths',
-      'Strong culture metrics'
-    ]
+      'Strong culture metrics',
+    ],
   },
   {
     id: 'scaling-operations',
     title: 'Scale Operations & Business Growth',
-    description: 'Học cách scale business operations, optimize processes và maintain quality trong quá trình tăng trưởng nhanh',
+    description:
+      'Học cách scale business operations, optimize processes và maintain quality trong quá trình tăng trưởng nhanh',
     duration: '225 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://youtube.com/watch?v=scaling-startup-ops',
@@ -529,12 +581,12 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Thiết kế scalable business processes',
       'Implement automation và efficiency tools',
       'Manage rapid growth challenges',
-      'Build sustainable competitive advantages'
+      'Build sustainable competitive advantages',
     ],
     prerequisites: [
       'Có business với initial traction',
       'Hiểu biết về operations management',
-      'Experience với tools và technology'
+      'Experience với tools và technology',
     ],
     exercises: [
       {
@@ -545,24 +597,25 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
           'Process mapping tools',
           'Automation platforms (Zapier)',
           'CRM systems',
-          'Analytics dashboards'
+          'Analytics dashboards',
         ],
         procedure: [
           'Map toàn bộ business processes',
           'Identify automation opportunities',
           'Implement workflow automation',
           'Setup monitoring và optimization',
-          'Train team trên new processes'
+          'Train team trên new processes',
         ],
-        expectedResults: 'Automated workflows với 70% reduction trong manual work',
-        solution: 'Focus vào repetitive tasks và customer-facing processes'
-      }
+        expectedResults:
+          'Automated workflows với 70% reduction trong manual work',
+        solution: 'Focus vào repetitive tasks và customer-facing processes',
+      },
     ],
     realWorldApplications: [
       'Scale startup từ 10 đến 100+ employees',
       'Maintain quality trong rapid growth',
       'Optimize unit economics và profitability',
-      'Expand sang new markets efficiently'
+      'Expand sang new markets efficiently',
     ],
     caseStudies: [
       {
@@ -571,40 +624,45 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         problem: 'Scale e-commerce platform across diverse SEA markets',
         solution: 'Standardized operations với local customization',
         impact: 'Leading e-commerce platform trong 6 countries',
-        innovations: ['Unified logistics network', 'Local payment integration', 'Cross-border commerce']
-      }
+        innovations: [
+          'Unified logistics network',
+          'Local payment integration',
+          'Cross-border commerce',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Scaling Up Business Guide',
         url: 'https://scalingup.com',
-        type: 'Methodology'
-      }
+        type: 'Methodology',
+      },
     ],
     businessTools: [
       'Process Automation',
       'Performance Dashboards',
       'Quality Management',
-      'Scaling Frameworks'
+      'Scaling Frameworks',
     ],
     vietnameseMarketFocus: [
       'Multi-city expansion strategies',
       'Supply chain optimization',
       'Regulatory compliance scaling',
-      'Local partnerships'
+      'Local partnerships',
     ],
     ageGroup: '22-25 tuổi',
     successMetrics: [
       '3x revenue growth với same headcount',
       'Process automation > 70%',
       'Customer satisfaction maintained',
-      'Profitable unit economics'
-    ]
+      'Profitable unit economics',
+    ],
   },
   {
     id: 'startup-legal-compliance',
     title: 'Pháp Lý & Compliance cho Startup',
-    description: 'Hiểu rõ khung pháp lý, intellectual property, contracts và compliance requirements cho startup tại Việt Nam',
+    description:
+      'Hiểu rõ khung pháp lý, intellectual property, contracts và compliance requirements cho startup tại Việt Nam',
     duration: '165 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://youtube.com/watch?v=startup-legal-vietnam',
@@ -613,40 +671,41 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Hiểu framework pháp lý cho startup VN',
       'Protect intellectual property',
       'Draft contracts và legal documents',
-      'Ensure compliance với regulations'
+      'Ensure compliance với regulations',
     ],
     prerequisites: [
       'Có startup hoặc business idea',
       'Hiểu biết cơ bản về business law',
-      'Access đến legal consultation'
+      'Access đến legal consultation',
     ],
     exercises: [
       {
         title: 'Startup Legal Compliance Audit',
-        description: 'Comprehensive audit legal requirements cho startup Việt Nam',
+        description:
+          'Comprehensive audit legal requirements cho startup Việt Nam',
         difficulty: 'Trung bình',
         materials: [
           'Legal compliance checklist',
           'Template contracts',
           'IP registration guides',
-          'Government resources'
+          'Government resources',
         ],
         procedure: [
           'Review current legal structure',
           'Audit IP và trademark protection',
           'Review contracts và agreements',
           'Check regulatory compliance',
-          'Create legal roadmap'
+          'Create legal roadmap',
         ],
         expectedResults: 'Complete legal compliance report với action plan',
-        solution: 'Partner với legal experts và use standard templates'
-      }
+        solution: 'Partner với legal experts và use standard templates',
+      },
     ],
     realWorldApplications: [
       'Setup legal structure cho startup',
       'Protect IP và trade secrets',
       'Draft employment và vendor contracts',
-      'Ensure data privacy compliance'
+      'Ensure data privacy compliance',
     ],
     caseStudies: [
       {
@@ -655,36 +714,40 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         problem: 'Protect automotive IP trong competitive market',
         solution: 'Comprehensive IP strategy với international protection',
         impact: 'Successful global expansion với protected technology',
-        innovations: ['Patent portfolio development', 'Trade secret management', 'International compliance']
-      }
+        innovations: [
+          'Patent portfolio development',
+          'Trade secret management',
+          'International compliance',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Vietnam Business Law Guide',
         url: 'https://business-law.vn',
-        type: 'Legal'
-      }
+        type: 'Legal',
+      },
     ],
     businessTools: [
       'Legal Document Management',
       'IP Management Systems',
       'Compliance Tracking',
-      'Contract Management'
+      'Contract Management',
     ],
     vietnameseMarketFocus: [
       'Vietnam business registration',
       'Tax obligations cho startup',
       'Labor law compliance',
-      'Foreign investment regulations'
+      'Foreign investment regulations',
     ],
     ageGroup: '20-25 tuổi',
     successMetrics: [
       '100% legal compliance achieved',
       'IP protection strategy implemented',
       'Standard contracts established',
-      'Legal risk mitigation'
-    ]
-  }
+      'Legal risk mitigation',
+    ],
+  },
 ];
 
 export default youngEntrepreneurLessons;

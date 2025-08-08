@@ -1,5 +1,13 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { renewableEnergyLessons, type RenewableEnergyLesson } from '@/data/renewable-energy'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  renewableEnergyLessons,
+  type RenewableEnergyLesson,
+} from '@/data/renewable-energy';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Battery, Zap, Sun, Wind } from 'lucide-react';
@@ -24,9 +32,9 @@ function convertToLesson(lesson: RenewableEnergyLesson): BaseLessonData {
       problem: study.challenge || 'Problem',
       solution: study.solution,
       impact: study.impact,
-      innovations: study.insights || []
+      innovations: study.insights || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
@@ -76,11 +84,13 @@ export default async function RenewableEnergyLessonPage({ params }: PageProps) {
     },
     getFieldValue: (lesson) => {
       // Find original lesson to get energyType
-      const originalLesson = renewableEnergyLessons.find(l => l.id === lesson.id);
+      const originalLesson = renewableEnergyLessons.find(
+        (l) => l.id === lesson.id,
+      );
       return originalLesson?.energyType || 'Green Technology';
-    }
-  }
-  
+    },
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

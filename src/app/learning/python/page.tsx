@@ -1,19 +1,33 @@
-import ModulePageTemplate, { ModuleData } from '@/components/learning/ModulePageTemplate'
-import { pythonLessons, PythonLesson } from '@/data/python'
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate'
-import { createTitle, createDescription, createKeywords } from '@/utils/seo'
-import type { Metadata } from "next";
+import ModulePageTemplate, {
+  ModuleData,
+} from '@/components/learning/ModulePageTemplate';
+import { pythonLessons, PythonLesson } from '@/data/python';
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import type { Metadata } from 'next';
 import { K2Module } from '@/data/moduleNavigation';
 
 export const metadata: Metadata = {
-  title: createTitle("Học Lập Trình Python - Bài Toán Cơ Bản"),
-  description: createDescription("Khóa học Python cơ bản với các bài toán thực tế dành cho học sinh. Từ biến số, vòng lặp đến thuật toán và xử lý dữ liệu"),
-  keywords: createKeywords(["python", "lập trình python", "python cơ bản", "bài toán python", "thuật toán", "học sinh", "programming"]),
-  authors: [{ name: "K2AiHub Team" }],
+  title: createTitle('Học Lập Trình Python - Bài Toán Cơ Bản'),
+  description: createDescription(
+    'Khóa học Python cơ bản với các bài toán thực tế dành cho học sinh. Từ biến số, vòng lặp đến thuật toán và xử lý dữ liệu',
+  ),
+  keywords: createKeywords([
+    'python',
+    'lập trình python',
+    'python cơ bản',
+    'bài toán python',
+    'thuật toán',
+    'học sinh',
+    'programming',
+  ]),
+  authors: [{ name: 'K2AiHub Team' }],
   openGraph: {
-    title: createTitle("Học Lập Trình Python - K2AiHub"),
-    description: createDescription("Khám phá Python qua các bài toán thực tế và ví dụ dễ hiểu"),
-    type: "website",
+    title: createTitle('Học Lập Trình Python - Bài Toán Cơ Bản'),
+    description: createDescription(
+      'Khám phá Python qua các bài toán thực tế và ví dụ dễ hiểu',
+    ),
+    type: 'website',
   },
 };
 
@@ -29,21 +43,26 @@ function convertToLesson(pythonLesson: PythonLesson): BaseLessonData {
     imageUrl: '/default-lesson.jpg',
     videoUrl: pythonLesson.videoUrl,
     objectives: pythonLesson.objectives,
-    prerequisites: pythonLesson.prerequisites || ['Basic computer skills', 'Logical thinking', 'Problem-solving mindset'],
-    exercises: pythonLesson.exercises?.map(ex => ({
-      title: ex.title,
-      description: ex.description,
-      difficulty: ex.difficulty,
-      materials: ex.requirements || [],
-      procedure: [ex.solution],
-      expectedResults: 'Chương trình chạy thành công và cho kết quả đúng',
-      solution: ex.solution
-    })) || [],
+    prerequisites: pythonLesson.prerequisites || [
+      'Basic computer skills',
+      'Logical thinking',
+      'Problem-solving mindset',
+    ],
+    exercises:
+      pythonLesson.exercises?.map((ex) => ({
+        title: ex.title,
+        description: ex.description,
+        difficulty: ex.difficulty,
+        materials: ex.requirements || [],
+        procedure: [ex.solution],
+        expectedResults: 'Chương trình chạy thành công và cho kết quả đúng',
+        solution: ex.solution,
+      })) || [],
     resources: [],
     tools: ['Python 3.x', 'IDE (PyCharm, VS Code)', 'Terminal/Command Prompt'],
     realWorldApplications: pythonLesson.realWorldApplications || [],
-    caseStudies: []
-  }
+    caseStudies: [],
+  };
 }
 
 export default function PythonPage() {
@@ -53,16 +72,18 @@ export default function PythonPage() {
   const moduleConfig: ModuleData = {
     title: 'Python Programming',
     subtitle: 'Lập Trình Python Cơ Bản',
-    description: 'Học Python qua các bài toán cơ bản và thực tế. Từ syntax cơ bản đến giải thuật và xử lý dữ liệu - nền tảng vững chắc cho lập trình viên tương lai.',
+    description:
+      'Học Python qua các bài toán cơ bản và thực tế. Từ syntax cơ bản đến giải thuật và xử lý dữ liệu - nền tảng vững chắc cho lập trình viên tương lai.',
     primaryColor: 'yellow',
     gradientColors: 'from-slate-900 via-yellow-900 to-green-900',
     basePath: '/learning/python',
-    heroImageUrl: 'https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?w=1200&h=600&fit=crop',
+    heroImageUrl:
+      'https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${pythonLessons.length}+ bài`,
       duration: '25-30 giờ',
       level: 'Cơ bản → Trung bình',
-      projects: '8+ dự án thực hành'
+      projects: '8+ dự án thực hành',
     },
     marketData: {
       marketSize: '#1 Language',
@@ -72,50 +93,67 @@ export default function PythonPage() {
       reduction: '60% Faster',
       reductionNote: 'Development time vs other languages',
       startups: '85% Usage',
-      startupsNote: 'Tech companies use Python'
+      startupsNote: 'Tech companies use Python',
     },
     careerPaths: [
       'Python Developer',
-      'Data Scientist', 
+      'Data Scientist',
       'Web Developer (Django/Flask)',
       'AI/ML Engineer',
       'Automation Engineer',
-      'Software Developer'
+      'Software Developer',
     ],
     technicalHighlights: [
       {
         title: 'Python Fundamentals',
         icon: '🐍',
-        items: ['Syntax & Variables', 'Data Types', 'Control Structures', 'Functions']
+        items: [
+          'Syntax & Variables',
+          'Data Types',
+          'Control Structures',
+          'Functions',
+        ],
       },
       {
         title: 'Data Structures',
         icon: '📊',
-        items: ['Lists & Tuples', 'Dictionaries', 'Sets', 'List Comprehensions']
+        items: [
+          'Lists & Tuples',
+          'Dictionaries',
+          'Sets',
+          'List Comprehensions',
+        ],
       },
       {
         title: 'Problem Solving',
         icon: '🧩',
-        items: ['Algorithms', 'Logic Building', 'Debugging', 'Testing']
+        items: ['Algorithms', 'Logic Building', 'Debugging', 'Testing'],
       },
       {
         title: 'File Handling',
         icon: '📄',
-        items: ['File I/O', 'CSV Processing', 'JSON Data', 'Error Handling']
+        items: ['File I/O', 'CSV Processing', 'JSON Data', 'Error Handling'],
       },
       {
         title: 'OOP Basics',
         icon: '🏗️',
-        items: ['Classes & Objects', 'Inheritance', 'Encapsulation', 'Methods']
+        items: ['Classes & Objects', 'Inheritance', 'Encapsulation', 'Methods'],
       },
       {
         title: 'Real Applications',
         icon: '🚀',
-        items: ['Calculator Apps', 'Data Analysis', 'Game Development', 'Automation Scripts']
-      }
+        items: [
+          'Calculator Apps',
+          'Data Analysis',
+          'Game Development',
+          'Automation Scripts',
+        ],
+      },
     ],
     relatedModules: [K2Module.Arduino, K2Module.STEM, K2Module.Scratch],
-  }
+  };
 
-  return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
+  return (
+    <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
+  );
 }

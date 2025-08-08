@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Brain, Eye, MessageSquare, Target, Shield } from 'lucide-react';
@@ -24,9 +29,9 @@ function convertToLesson(lesson: AdvancedAILesson): BaseLessonData {
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.technologies || []
+      innovations: study.technologies || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
@@ -78,11 +83,11 @@ export default async function AdvancedAILessonPage({ params }: PageProps) {
     },
     getFieldValue: (lesson) => {
       // Find original lesson to get aiDomain
-      const originalLesson = advancedAILessons.find(l => l.id === lesson.id);
+      const originalLesson = advancedAILessons.find((l) => l.id === lesson.id);
       return originalLesson?.aiDomain || 'Advanced AI';
-    }
-  }
-  
+    },
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

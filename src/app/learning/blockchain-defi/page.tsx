@@ -1,5 +1,8 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { blockchainLessons, type BlockchainLesson } from '@/data/blockchain-defi';
+import {
+  blockchainLessons,
+  type BlockchainLesson,
+} from '@/data/blockchain-defi';
 import { createTitle, createDescription } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
@@ -24,20 +27,35 @@ function convertToBaseLessonData(lesson: BlockchainLesson): BaseLessonData {
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.technologies || []
+      innovations: study.technologies || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
 export async function generateMetadata() {
   return {
     title: createTitle('Blockchain & DeFi Technology - Công Nghệ Blockchain'),
-    description: createDescription('Master blockchain development và DeFi protocols. Smart contracts, cryptocurrency, NFT, stablecoin development với Vietnamese market focus. Solidity, Web3, regulatory compliance.'),
-    keywords: ['blockchain', 'defi', 'smart contracts', 'cryptocurrency', 'nft', 'solidity', 'web3', 'fintech', 'vietnam blockchain', 'digital currency', 'K2AI'],
+    description: createDescription(
+      'Master blockchain development và DeFi protocols. Smart contracts, cryptocurrency, NFT, stablecoin development với Vietnamese market focus. Solidity, Web3, regulatory compliance.',
+    ),
+    keywords: [
+      'blockchain',
+      'defi',
+      'smart contracts',
+      'cryptocurrency',
+      'nft',
+      'solidity',
+      'web3',
+      'fintech',
+      'vietnam blockchain',
+      'digital currency',
+      'K2AI',
+    ],
     openGraph: {
       title: 'Blockchain & DeFi Technology - Công Nghệ Blockchain | K2AI',
-      description: 'Master blockchain development và DeFi protocols cho Vietnamese market. Smart contracts, NFT, cryptocurrency development.',
+      description:
+        'Master blockchain development và DeFi protocols cho Vietnamese market. Smart contracts, NFT, cryptocurrency development.',
       type: 'website',
     },
   };
@@ -48,7 +66,8 @@ export default function BlockchainDeFiPage() {
     id: 'blockchain-defi',
     title: 'Blockchain & DeFi Technology',
     subtitle: 'Công Nghệ Blockchain & Tài Chính Phi Tập Trung',
-    description: 'Comprehensive blockchain development education từ fundamentals đến advanced DeFi protocols. Master smart contract development, cryptocurrency systems, NFT technology, và regulatory compliance với focus đặc biệt trên Vietnamese fintech ecosystem.',
+    description:
+      'Comprehensive blockchain development education từ fundamentals đến advanced DeFi protocols. Master smart contract development, cryptocurrency systems, NFT technology, và regulatory compliance với focus đặc biệt trên Vietnamese fintech ecosystem.',
     level: 'Nâng cao',
     duration: '15-20 giờ',
     category: 'Advanced Technology',
@@ -57,24 +76,25 @@ export default function BlockchainDeFiPage() {
       'Smart Contract Development với Solidity và Web3 integration',
       'DeFi Protocols: DEXs, lending, yield farming với Vietnamese market applications',
       'NFT Technology và Metaverse development cho cultural preservation',
-      'Regulatory Compliance và Security best practices cho Vietnamese legal framework'
+      'Regulatory Compliance và Security best practices cho Vietnamese legal framework',
     ],
     icon: '⛓️',
     color: 'from-orange-600 to-red-600',
-    heroImageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl:
+      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master blockchain architecture và cryptographic principles cho secure systems',
       'Develop production-ready smart contracts với Solidity và security best practices',
       'Build DeFi protocols: AMMs, lending platforms, yield farming strategies',
       'Create NFT platforms và metaverse applications cho Vietnamese cultural preservation',
-      'Implement regulatory compliance systems cho Vietnamese cryptocurrency legal framework'
+      'Implement regulatory compliance systems cho Vietnamese cryptocurrency legal framework',
     ],
     prerequisites: [
       'Strong programming skills trong JavaScript/TypeScript hoặc Python',
       'Understanding của web development và APIs',
       'Basic knowledge của finance và economic principles',
       'Familiarity với cryptography concepts và security practices',
-      'Interest trong decentralized systems và financial innovation'
+      'Interest trong decentralized systems và financial innovation',
     ],
     careerOutcomes: [
       'Blockchain Developer (35-80 triệu VNĐ/tháng)',
@@ -83,7 +103,7 @@ export default function BlockchainDeFiPage() {
       'Blockchain Security Auditor (50-120 triệu VNĐ/tháng)',
       'Cryptocurrency Exchange Engineer (38-85 triệu VNĐ/tháng)',
       'NFT Platform Developer (32-70 triệu VNĐ/tháng)',
-      'Blockchain Product Manager (50-110 triệu VNĐ/tháng)'
+      'Blockchain Product Manager (50-110 triệu VNĐ/tháng)',
     ],
     industryApplications: [
       'Cryptocurrency exchanges và digital wallet development trong Vietnam',
@@ -92,28 +112,25 @@ export default function BlockchainDeFiPage() {
       'DeFi platforms serving Vietnamese SMEs và individuals',
       'NFT marketplaces preserving Vietnamese cultural heritage',
       'Government blockchain applications cho transparency và efficiency',
-      'Trade finance solutions cho Vietnamese import/export businesses'
+      'Trade finance solutions cho Vietnamese import/export businesses',
     ],
     marketDemand: {
       averageSalary: '32-120 triệu VNĐ',
       jobGrowth: '+120%',
-      hireDemand: 'Cao'
+      hireDemand: 'Cao',
     },
     relatedModules: [
       K2Module.AdvancedAI,
       K2Module.Cybersecurity,
       K2Module.FinancialLiteracy,
-      K2Module.Python
-    ]
+      K2Module.Python,
+    ],
   };
 
   // Convert lessons to BaseLessonData format
   const convertedLessons = blockchainLessons.map(convertToBaseLessonData);
 
   return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={convertedLessons}
-    />
+    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
   );
 }

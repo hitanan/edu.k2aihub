@@ -1,19 +1,28 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig, BaseLessonData } from '@/components/learning/LessonPageTemplate'
-import { digitalMarketingLessons, DigitalMarketingLesson } from '@/data/digital-marketing'
-import { PageProps } from '@/types'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+  BaseLessonData,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  digitalMarketingLessons,
+  DigitalMarketingLesson,
+} from '@/data/digital-marketing';
+import { PageProps } from '@/types';
 import { Palette } from 'lucide-react';
 
 // Generate static params
 export async function generateStaticParams() {
-  const convertedLessons = digitalMarketingLessons.map(convertToLesson)
-  return generateLessonStaticParams(convertedLessons)
+  const convertedLessons = digitalMarketingLessons.map(convertToLesson);
+  return generateLessonStaticParams(convertedLessons);
 }
 
 // Generate metadata
-export async function generateMetadata({ params }: PageProps ) {
+export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  const convertedLessons = digitalMarketingLessons.map(convertToLesson)
-  return generateLessonMetadata(lessonId, convertedLessons)
+  const convertedLessons = digitalMarketingLessons.map(convertToLesson);
+  return generateLessonMetadata(lessonId, convertedLessons);
 }
 
 // Convert DigitalMarketingLesson to Lesson interface
@@ -32,37 +41,45 @@ function convertToLesson(dmLesson: DigitalMarketingLesson): BaseLessonData {
     resources: dmLesson.resources || [],
     tools: dmLesson.tools || [],
     realWorldApplications: dmLesson.realWorldApplications || [],
-    caseStudies: []
-  }
+    caseStudies: [],
+  };
 }
 
 // Page component
-export default async function DigitalMarketingLessonPage({ params }: PageProps) {
+export default async function DigitalMarketingLessonPage({
+  params,
+}: PageProps) {
   const { lessonId } = await params;
   // Convert lessons to base Lesson interface
-  const convertedLessons = digitalMarketingLessons.map(convertToLesson)
-  
+  const convertedLessons = digitalMarketingLessons.map(convertToLesson);
+
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'digital-marketing',
-    moduleTitle: 'Digital Marketing & Creator Economy', 
+    moduleTitle: 'Digital Marketing & Creator Economy',
     modulePath: '/learning/digital-marketing',
     lessons: convertedLessons,
     primaryColor: 'blue',
-    secondaryColor: 'purple', 
+    secondaryColor: 'purple',
     gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
     getFieldIcon: (field: string) => {
       switch (field) {
-        case 'category': return <span className="w-5 h-5">📱</span>
-        case 'duration': return <span className="w-5 h-5">⏱️</span>
-        case 'difficulty': return <span className="w-5 h-5">🎯</span>
-        case 'tools': return <span className="w-5 h-5">🛠️</span>
-        case 'estimatedTime': return <span className="w-5 h-5">📅</span>
-        default: return <span className="w-5 h-5">📊</span>
+        case 'category':
+          return <span className="w-5 h-5">📱</span>;
+        case 'duration':
+          return <span className="w-5 h-5">⏱️</span>;
+        case 'difficulty':
+          return <span className="w-5 h-5">🎯</span>;
+        case 'tools':
+          return <span className="w-5 h-5">🛠️</span>;
+        case 'estimatedTime':
+          return <span className="w-5 h-5">📅</span>;
+        default:
+          return <span className="w-5 h-5">📊</span>;
       }
     },
     getFieldValue: (lesson) => {
       // Return category as the main field value for display
-      return lesson.category || 'Digital Marketing'
+      return lesson.category || 'Digital Marketing';
     },
     sidebarContent: (lesson) => (
       <div className="space-y-6">
@@ -79,7 +96,7 @@ export default async function DigitalMarketingLessonPage({ params }: PageProps) 
               </span>
             </div>
             <div className="w-full bg-gray-700 rounded-full h-2">
-              <div 
+              <div
                 className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
                 style={{ width: `${Math.floor(Math.random() * 30 + 20)}%` }}
               />
@@ -89,15 +106,17 @@ export default async function DigitalMarketingLessonPage({ params }: PageProps) 
 
         {/* Tools & Technologies */}
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+          <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
             <Palette className="w-5 h-5 text-purple-400 mr-2" />
             Công cụ cần thiết
-            </h3>
-            <ul className="space-y-2">
+          </h3>
+          <ul className="space-y-2">
             {lesson.tools?.map((tool, index) => (
-                <li key={index} className="text-gray-300 text-sm">• {tool}</li>
+              <li key={index} className="text-gray-300 text-sm">
+                • {tool as string}
+              </li>
             ))}
-            </ul>
+          </ul>
         </div>
 
         {/* Marketing Metrics */}
@@ -131,7 +150,7 @@ export default async function DigitalMarketingLessonPage({ params }: PageProps) 
               {lesson.tools.slice(0, 5).map((tool, index) => (
                 <div key={index} className="flex items-center text-sm">
                   <span className="text-blue-400 mr-2">•</span>
-                  <span className="text-gray-300">{tool}</span>
+                  <span className="text-gray-300">{tool as string}</span>
                 </div>
               ))}
               {lesson.tools.length > 5 && (
@@ -168,8 +187,8 @@ export default async function DigitalMarketingLessonPage({ params }: PageProps) 
           </div>
         </div>
       </div>
-    )
-  }
+    ),
+  };
 
-  return <LessonPageTemplate lessonId={lessonId} config={config} />
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

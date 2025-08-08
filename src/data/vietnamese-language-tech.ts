@@ -57,18 +57,18 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
       'Dấu thanh',
       'Từ ghép',
       'Ngữ pháp isolating',
-      'Không có dấu cách từ'
+      'Không có dấu cách từ',
     ],
     objectives: [
       'Hiểu đặc điểm ngôn ngữ học của tiếng Việt trong NLP',
       'Thực hiện word segmentation và tokenization cho tiếng Việt',
       'Xử lý dấu thanh và chuẩn hóa text tiếng Việt',
-      'Build basic text processing pipeline cho Vietnamese text'
+      'Build basic text processing pipeline cho Vietnamese text',
     ],
     prerequisites: [
       'Kiến thức Python cơ bản',
       'Hiểu biết về regular expressions',
-      'Kiến thức cơ bản về NLP'
+      'Kiến thức cơ bản về NLP',
     ],
     technologies: [
       'Python',
@@ -76,7 +76,7 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
       'VnCoreNLP',
       'spaCy',
       'NLTK',
-      'Underthesea'
+      'Underthesea',
     ],
     exercises: [
       {
@@ -88,19 +88,19 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
         hints: [
           'Sử dụng Unicode normalization cho dấu thanh',
           'Handle các trường hợp dấu thanh kết hợp và riêng biệt',
-          'Test với các văn bản có nhiều loại dấu thanh khác nhau'
+          'Test với các văn bản có nhiều loại dấu thanh khác nhau',
         ],
         expectedOutput:
           'Function chuẩn hóa text tiếng Việt với độ chính xác > 95%',
         solution:
-          'Implement using unicodedata.normalize() và custom rules cho Vietnamese'
-      }
+          'Implement using unicodedata.normalize() và custom rules cho Vietnamese',
+      },
     ],
     realWorldApplications: [
       'Chatbot tiếng Việt cho customer service',
       'Vietnamese document analysis và classification',
       'Social media monitoring và sentiment analysis',
-      'Voice-to-text applications cho tiếng Việt'
+      'Voice-to-text applications cho tiếng Việt',
     ],
     caseStudies: [
       {
@@ -113,24 +113,24 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
         insights: [
           'Vietnamese tone marks require special handling',
           'Context is crucial for word segmentation',
-          'Domain-specific vocabulary needs custom training'
-        ]
-      }
+          'Domain-specific vocabulary needs custom training',
+        ],
+      },
     ],
     resources: [
       {
         title: 'PyVi - Vietnamese Text Processing',
         url: 'https://github.com/trungtv/pyvi',
         type: 'library',
-        description: 'Python library for Vietnamese NLP tasks'
+        description: 'Python library for Vietnamese NLP tasks',
       },
       {
         title: 'VnCoreNLP',
         url: 'https://github.com/vncorenlp/VnCoreNLP',
         type: 'tool',
-        description: 'Fast Vietnamese NLP annotation pipeline'
-      }
-    ]
+        description: 'Fast Vietnamese NLP annotation pipeline',
+      },
+    ],
   },
   {
     id: 'vietnamese-ai-chatbot',
@@ -146,18 +146,18 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
       'Intent classification',
       'Entity recognition',
       'Context understanding',
-      'Vietnamese grammar'
+      'Vietnamese grammar',
     ],
     objectives: [
       'Thiết kế conversation flow cho Vietnamese chatbot',
       'Implement intent recognition cho câu hỏi tiếng Việt',
       'Build entity extraction system cho Vietnamese entities',
-      'Deploy chatbot integration với popular Vietnamese platforms'
+      'Deploy chatbot integration với popular Vietnamese platforms',
     ],
     prerequisites: [
       'Hoàn thành Vietnamese NLP Fundamentals',
       'Kiến thức về machine learning cơ bản',
-      'Quen thuộc với API development'
+      'Quen thuộc với API development',
     ],
     technologies: [
       'Rasa',
@@ -165,7 +165,7 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
       'Transformers',
       'FastAPI',
       'Zalo API',
-      'Facebook Messenger'
+      'Facebook Messenger',
     ],
     exercises: [
       {
@@ -176,24 +176,24 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
         requirements: [
           'Rasa framework',
           'Vietnamese training data',
-          'Classification metrics'
+          'Classification metrics',
         ],
         hints: [
           'Collect diverse Vietnamese conversation data',
           'Use pre-trained Vietnamese embeddings',
-          'Handle informal Vietnamese (teen speak, abbreviations)'
+          'Handle informal Vietnamese (teen speak, abbreviations)',
         ],
         expectedOutput:
           'Intent classifier với accuracy > 85% trên Vietnamese test set',
         solution:
-          'Fine-tune PhoBERT model cho intent classification với Vietnamese data'
-      }
+          'Fine-tune PhoBERT model cho intent classification với Vietnamese data',
+      },
     ],
     realWorldApplications: [
       'Customer service automation cho Vietnamese businesses',
       'E-commerce product recommendation',
       'Banking và financial services chatbots',
-      'Educational support chatbots cho học sinh'
+      'Educational support chatbots cho học sinh',
     ],
     caseStudies: [
       {
@@ -205,18 +205,18 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
         insights: [
           'Vietnamese customers prefer formal language in banking',
           'Regional dialects need special handling',
-          'Financial terminology requires domain expertise'
-        ]
-      }
+          'Financial terminology requires domain expertise',
+        ],
+      },
     ],
     resources: [
       {
         title: 'PhoBERT Vietnamese Language Model',
         url: 'https://github.com/VinAIResearch/PhoBERT',
         type: 'library',
-        description: 'Pre-trained Vietnamese BERT model'
-      }
-    ]
+        description: 'Pre-trained Vietnamese BERT model',
+      },
+    ],
   },
   {
     id: 'vietnamese-voice-ai',
@@ -232,18 +232,18 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
       'Tonal pronunciation',
       'Regional accents',
       'Speech patterns',
-      'Voice synthesis'
+      'Voice synthesis',
     ],
     objectives: [
       'Implement Vietnamese speech recognition với high accuracy',
       'Build natural Vietnamese text-to-speech system',
       'Create voice assistant hiểu lệnh tiếng Việt',
-      'Optimize cho Vietnamese pronunciation và accents'
+      'Optimize cho Vietnamese pronunciation và accents',
     ],
     prerequisites: [
       'Hoàn thành Vietnamese NLP và Chatbot lessons',
       'Kiến thức về signal processing',
-      'Experience với audio processing libraries'
+      'Experience với audio processing libraries',
     ],
     technologies: [
       'Wav2Vec2',
@@ -251,7 +251,7 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
       'TTS',
       'PyAudio',
       'Librosa',
-      'FastSpeech2'
+      'FastSpeech2',
     ],
     exercises: [
       {
@@ -262,22 +262,23 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
         requirements: [
           'Wav2Vec2 model',
           'Vietnamese audio dataset',
-          'Audio preprocessing'
+          'Audio preprocessing',
         ],
         hints: [
           'Use Vietnamese pre-trained Wav2Vec2 model',
           'Handle different Vietnamese regional accents',
-          'Implement noise reduction for better accuracy'
+          'Implement noise reduction for better accuracy',
         ],
         expectedOutput: 'STT system với WER < 15% trên Vietnamese speech',
-        solution: 'Fine-tune Wav2Vec2-vietnamese model với domain-specific data'
-      }
+        solution:
+          'Fine-tune Wav2Vec2-vietnamese model với domain-specific data',
+      },
     ],
     realWorldApplications: [
       'Vietnamese voice assistants cho smart homes',
       'Voice navigation cho Vietnamese drivers',
       'Accessibility tools cho Vietnamese users',
-      'Language learning applications'
+      'Language learning applications',
     ],
     caseStudies: [
       {
@@ -290,9 +291,9 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
         insights: [
           'Car noise requires specialized acoustic models',
           'Vietnamese tone recognition is crucial for accuracy',
-          'Local traffic and location names need special handling'
-        ]
-      }
+          'Local traffic and location names need special handling',
+        ],
+      },
     ],
     resources: [
       {
@@ -303,8 +304,8 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
 - Clean audio
 - Noise audio
 - Conversation
-- Multi-gender and dialects`
-      }
-    ]
-  }
+- Multi-gender and dialects`,
+      },
+    ],
+  },
 ];

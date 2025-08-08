@@ -1,5 +1,11 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig, BaseLessonData } from '@/components/learning/LessonPageTemplate'
-import { vietnameseHealthcareLessons } from '@/data/vietnamese-healthcare'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+  BaseLessonData,
+} from '@/components/learning/LessonPageTemplate';
+import { vietnameseHealthcareLessons } from '@/data/vietnamese-healthcare';
 import { PageProps } from '@/types';
 import { Activity } from 'lucide-react';
 
@@ -10,23 +16,25 @@ interface ExtendedVietnameseHealthcareLesson extends BaseLessonData {
 }
 
 // Transform lessons to match BaseLessonData interface
-const transformedLessons: ExtendedVietnameseHealthcareLesson[] = vietnameseHealthcareLessons.map(lesson => ({
-  ...lesson,
-  exercises: lesson.exercises.map(exercise => ({
-    ...exercise,
-    materials: exercise.requirements || [],
-    procedure: exercise.procedure || [],
-    expectedResults: exercise.expectedResults || '',
-  })),
-  caseStudies: lesson.caseStudies?.map(cs => ({
-    title: cs.title,
-    organization: cs.organization,
-    problem: cs.problem,
-    solution: cs.solution,
-    impact: cs.impact,
-    innovations: cs.innovations || []
-  })) || []
-}));
+const transformedLessons: ExtendedVietnameseHealthcareLesson[] =
+  vietnameseHealthcareLessons.map((lesson) => ({
+    ...lesson,
+    exercises: lesson.exercises.map((exercise) => ({
+      ...exercise,
+      materials: exercise.requirements || [],
+      procedure: exercise.procedure || [],
+      expectedResults: exercise.expectedResults || '',
+    })),
+    caseStudies:
+      lesson.caseStudies?.map((cs) => ({
+        title: cs.title,
+        organization: cs.organization,
+        problem: cs.problem,
+        solution: cs.solution,
+        impact: cs.impact,
+        innovations: cs.innovations || [],
+      })) || [],
+  }));
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(transformedLessons);
@@ -37,7 +45,9 @@ export async function generateMetadata({ params }: PageProps) {
   return generateLessonMetadata(lessonId, transformedLessons);
 }
 
-export default async function VietnameseHealthcareLessonPage({ params }: PageProps) {
+export default async function VietnameseHealthcareLessonPage({
+  params,
+}: PageProps) {
   const config: LessonPageConfig<ExtendedVietnameseHealthcareLesson> = {
     moduleName: 'vietnamese-healthcare',
     moduleTitle: 'Công Nghệ Y Tế Việt Nam',
@@ -54,19 +64,22 @@ export default async function VietnameseHealthcareLessonPage({ params }: PagePro
         <div className="text-sm text-gray-300 bg-cyan-500/10 p-2 rounded border border-cyan-500/20 mb-4">
           {lesson.medicalField}
         </div>
-        
+
         <h4 className="font-semibold text-white mb-3">Technologies</h4>
         <div className="space-y-2">
           {lesson.technologies?.map((tech, index) => (
-            <div key={index} className="text-xs text-gray-400 bg-white/5 p-2 rounded border border-white/10">
+            <div
+              key={index}
+              className="text-xs text-gray-400 bg-white/5 p-2 rounded border border-white/10"
+            >
               {tech}
             </div>
           ))}
         </div>
       </div>
-    )
-  }
-  
+    ),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

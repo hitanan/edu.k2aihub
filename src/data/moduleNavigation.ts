@@ -74,7 +74,7 @@ export const K2Module = {
   // 2025 Trend-Based Modules
   ContentCreator: 'content-creator',
   TeenWellness: 'teen-wellness',
-  YoungEntrepreneur: 'young-entrepreneur'
+  YoungEntrepreneur: 'young-entrepreneur',
 };
 export const moduleNavigation: ModuleNavigation[] = [
   // Core Modules (outside /learning/ folder)
@@ -93,12 +93,12 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Interactive Map',
       'Province Search',
       'Historical Data',
-      'Cultural Information'
+      'Cultural Information',
     ],
     tags: ['geography', 'vietnam', 'interactive', 'culture'],
     prerequisites: [],
     lessons: [],
-    coreModule: true
+    coreModule: true,
   },
   {
     id: K2Module.AI,
@@ -116,12 +116,12 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Featured AI Apps',
       'Practical Guides',
       'Step-by-step Tutorials',
-      'Real-world Applications'
+      'Real-world Applications',
     ],
     tags: ['ai', 'practical', 'work', 'creativity'],
     prerequisites: [],
     lessons: [],
-    coreModule: true
+    coreModule: true,
   },
 
   // AI Learning Modules (under /learning/ai/)
@@ -141,7 +141,7 @@ export const moduleNavigation: ModuleNavigation[] = [
       'ChatGPT cho Email',
       'Excel thông minh',
       'Thuyết trình AI',
-      'Quản lý thời gian'
+      'Quản lý thời gian',
     ],
     tags: ['office', 'productivity', 'email', 'automation'],
     prerequisites: ['Kỹ năng máy tính cơ bản', 'Hiểu biết về Microsoft Office'],
@@ -150,27 +150,27 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'email-automation',
         title: 'Tự động hóa Email với AI',
         duration: '45 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'excel-ai',
         title: 'Excel thông minh với AI',
         duration: '60 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'presentation-ai',
         title: 'Tạo bài thuyết trình với AI',
         duration: '50 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'time-management',
         title: 'Quản lý thời gian với AI',
         duration: '40 phút',
-        difficulty: 'Cơ bản'
-      }
-    ]
+        difficulty: 'Cơ bản',
+      },
+    ],
   },
   {
     id: 'ai-creative-design',
@@ -188,39 +188,39 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Midjourney mastery',
       'Canva AI Studio',
       'Content creation',
-      'Visual design'
+      'Visual design',
     ],
     tags: ['design', 'creativity', 'art', 'visual'],
     prerequisites: [
       'Hiểu biết cơ bản về design',
-      'Sử dụng máy tính thành thạo'
+      'Sử dụng máy tính thành thạo',
     ],
     lessons: [
       {
         id: 'midjourney-basics',
         title: 'Midjourney cơ bản',
         duration: '60 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'advanced-prompting',
         title: 'Prompt engineering nâng cao',
         duration: '75 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'canva-ai',
         title: 'Canva AI Magic Studio',
         duration: '50 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'content-creation',
         title: 'Tạo nội dung với AI',
         duration: '45 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
   {
     id: 'ai-education-learning',
@@ -238,7 +238,7 @@ export const moduleNavigation: ModuleNavigation[] = [
       'AI Tutor',
       'Research assistance',
       'Language learning',
-      'Document summarization'
+      'Document summarization',
     ],
     tags: ['education', 'learning', 'research', 'study'],
     prerequisites: ['Kỹ năng học tập cơ bản'],
@@ -247,27 +247,27 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'ai-tutor',
         title: 'AI như gia sư cá nhân',
         duration: '50 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'research-ai',
         title: 'Nghiên cứu với AI',
         duration: '60 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'language-learning',
         title: 'Học ngôn ngữ với AI',
         duration: '45 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'document-summary',
         title: 'Tóm tắt tài liệu với AI',
         duration: '40 phút',
-        difficulty: 'Cơ bản'
-      }
-    ]
+        difficulty: 'Cơ bản',
+      },
+    ],
   },
   {
     id: 'ai-business-marketing',
@@ -285,7 +285,7 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Marketing automation',
       'Customer analytics',
       'Chatbot development',
-      'SEO optimization'
+      'SEO optimization',
     ],
     tags: ['marketing', 'business', 'analytics', 'automation'],
     prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm kinh doanh'],
@@ -294,27 +294,27 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'marketing-automation',
         title: 'Tự động hóa Marketing',
         duration: '70 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'customer-analytics',
         title: 'Phân tích khách hàng với AI',
         duration: '80 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'chatbot-development',
         title: 'Phát triển Chatbot',
         duration: '60 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'seo-ai',
         title: 'SEO tối ưu với AI',
         duration: '50 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
   {
     id: 'ai-daily-life',
@@ -332,7 +332,7 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Personal AI assistant',
       'Financial management',
       'Health & fitness',
-      'Smart travel'
+      'Smart travel',
     ],
     tags: ['lifestyle', 'personal', 'health', 'finance'],
     prerequisites: ['Sử dụng smartphone/máy tính'],
@@ -341,27 +341,27 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'personal-assistant',
         title: 'Trợ lý AI cá nhân',
         duration: '45 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'financial-ai',
         title: 'Quản lý tài chính với AI',
         duration: '50 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'health-fitness',
         title: 'Sức khỏe & Fitness AI',
         duration: '40 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'travel-ai',
         title: 'Du lịch thông minh với AI',
         duration: '35 phút',
-        difficulty: 'Cơ bản'
-      }
-    ]
+        difficulty: 'Cơ bản',
+      },
+    ],
   },
   {
     id: 'ai-programming-dev',
@@ -379,7 +379,7 @@ export const moduleNavigation: ModuleNavigation[] = [
       'GitHub Copilot',
       'AI code review',
       'Automated testing',
-      'Documentation generation'
+      'Documentation generation',
     ],
     tags: ['programming', 'coding', 'development', 'automation'],
     prerequisites: ['Kiến thức lập trình cơ bản', 'Sử dụng Git/GitHub'],
@@ -388,27 +388,27 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'github-copilot',
         title: 'GitHub Copilot mastery',
         duration: '90 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'ai-code-review',
         title: 'AI Code Review',
         duration: '70 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'automated-testing',
         title: 'Testing tự động với AI',
         duration: '60 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'documentation-ai',
         title: 'Tạo tài liệu với AI',
         duration: '50 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
 
   // Vietnamese Market Modules
@@ -430,34 +430,34 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Startup Ecosystem',
       'Legal Compliance',
       'FinTech Development',
-      'E-commerce Strategy'
+      'E-commerce Strategy',
     ],
     tags: ['business', 'startup', 'vietnam', 'fintech'],
     prerequisites: [
       'Basic business understanding',
       'Vietnamese market knowledge',
-      'Technology literacy'
+      'Technology literacy',
     ],
     lessons: [
       {
         id: 'vietnamese-startup-ecosystem',
         title: 'Vietnamese Startup Ecosystem & Legal Framework',
         duration: '140 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'vietnamese-fintech-solutions',
         title: 'Vietnamese FinTech & Payment Solutions',
         duration: '140 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'vietnamese-ecommerce-platforms',
         title: 'Vietnamese E-commerce & Digital Marketplace Development',
         duration: '140 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.VietnameseCulture,
@@ -477,28 +477,28 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Digital Heritage',
       'VR Museums',
       'Tourism Tech',
-      'Cultural Documentation'
+      'Cultural Documentation',
     ],
     tags: ['culture', 'heritage', 'tourism', 'vietnam'],
     prerequisites: [
       'Vietnamese cultural knowledge',
       'Digital media understanding',
-      'Basic web development'
+      'Basic web development',
     ],
     lessons: [
       {
         id: 'digital-heritage-preservation',
         title: 'Digital Heritage Preservation & Cultural Documentation',
         duration: '150 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'tourism-technology',
         title: 'Tourism Technology & Cultural Experience Platforms',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.VietnameseHealthcare,
@@ -518,28 +518,28 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Digital Health',
       'AI Medical Imaging',
       'Telemedicine',
-      'EHR Systems'
+      'EHR Systems',
     ],
     tags: ['healthcare', 'medical', 'ai', 'vietnam'],
     prerequisites: [
       'Healthcare system understanding',
       'Medical terminology knowledge',
-      'Technology development experience'
+      'Technology development experience',
     ],
     lessons: [
       {
         id: 'digital-health-vietnam',
         title: 'Digital Health Infrastructure cho Việt Nam',
         duration: '160 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'ai-medical-imaging',
         title: 'AI Medical Imaging cho Vietnamese Healthcare',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.VietnameseLanguageTech,
@@ -559,34 +559,34 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Vietnamese NLP',
       'AI Chatbot',
       'Voice Recognition',
-      'Speech Synthesis'
+      'Speech Synthesis',
     ],
     tags: ['nlp', 'ai', 'chatbot', 'voice', 'vietnamese'],
     prerequisites: [
       'Programming fundamentals',
       'Understanding of Vietnamese language',
-      'Basic machine learning concepts'
+      'Basic machine learning concepts',
     ],
     lessons: [
       {
         id: 'vietnamese-nlp-fundamentals',
         title: 'Vietnamese NLP Fundamentals & PhoBERT Integration',
         duration: '150 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'vietnamese-chatbot-development',
         title: 'Vietnamese Chatbot Development & Conversational AI',
         duration: '150 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'vietnamese-voice-ai-systems',
         title: 'Vietnamese Voice AI & Speech Recognition Systems',
         duration: '150 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
 
   // Professional Skills Modules
@@ -608,39 +608,39 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Social Media Marketing',
       'Content Strategy',
       'Analytics & ROI',
-      'Creator Economy'
+      'Creator Economy',
     ],
     tags: ['marketing', 'social media', 'content', 'creator'],
     prerequisites: [
       'Basic computer skills',
-      'Understanding của internet và web browsers'
+      'Understanding của internet và web browsers',
     ],
     lessons: [
       {
         id: 'seo-fundamentals',
         title: 'SEO Fundamentals & Keyword Research',
         duration: '120 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'content-marketing-strategy',
         title: 'Content Marketing & Strategy Development',
         duration: '120 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'social-media-marketing',
         title: 'Social Media Marketing & Influencer Partnerships',
         duration: '120 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'digital-advertising-analytics',
         title: 'Digital Advertising & Analytics Mastery',
         duration: '120 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.FinancialLiteracy,
@@ -659,28 +659,28 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Personal Finance',
       'Investment Strategy',
       'FinTech Tools',
-      'Cryptocurrency'
+      'Cryptocurrency',
     ],
     tags: ['finance', 'investment', 'fintech', 'money'],
     prerequisites: [
       'Basic math skills',
       'Understanding của money và banking',
-      'Computer literacy'
+      'Computer literacy',
     ],
     lessons: [
       {
         id: 'personal-finance-budgeting',
         title: 'Personal Finance & Smart Budgeting Strategies',
         duration: '150 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'investment-cryptocurrency-fintech',
         title: 'Investment Strategies & Cryptocurrency FinTech',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.GreenTechnology,
@@ -700,34 +700,34 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Renewable Energy',
       'Smart Cities',
       'Sustainability',
-      'Environmental Tech'
+      'Environmental Tech',
     ],
     tags: ['green', 'renewable', 'sustainability', 'environment'],
     prerequisites: [
       'Basic science knowledge',
       'Environmental awareness',
-      'Problem-solving mindset'
+      'Problem-solving mindset',
     ],
     lessons: [
       {
         id: 'renewable-energy-systems',
         title: 'Renewable Energy Systems & Solar Technology',
         duration: '120 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'sustainable-engineering-design',
         title: 'Sustainable Engineering & Green Building Design',
         duration: '120 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'environmental-monitoring-iot',
         title: 'Environmental Monitoring & IoT Solutions',
         duration: '120 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
 
   // Creative & Technology Modules
@@ -749,29 +749,29 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Unity & Unreal',
       'Game Design',
       '2D/3D Animation',
-      'Publishing'
+      'Publishing',
     ],
     tags: ['game', 'unity', 'unreal', 'design', 'animation'],
     prerequisites: [
       'Programming basics',
       'Creative thinking',
       'Problem-solving skills',
-      'Design fundamentals'
+      'Design fundamentals',
     ],
     lessons: [
       {
         id: 'game-design-unity-basics',
         title: 'Game Design Fundamentals & Unity Engine Basics',
         duration: '180 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'advanced-game-development',
         title: 'Advanced Game Development & Publishing Strategies',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.AIArtCreativeTech,
@@ -790,28 +790,28 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Midjourney Pro',
       'Video Generation',
       'Creative Workflows',
-      'Commercial Use'
+      'Commercial Use',
     ],
     tags: ['ai', 'art', 'midjourney', 'creative', 'design'],
     prerequisites: [
       'Basic computer skills',
       'Creative interest',
-      'Understanding của digital media'
+      'Understanding của digital media',
     ],
     lessons: [
       {
         id: 'ai-image-generation-fundamentals',
         title: 'AI Image Generation Fundamentals & Prompt Engineering',
         duration: '135 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'creative-video-ai-production',
         title: 'Creative Video AI Production & Advanced Workflows',
         duration: '135 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
 
   // Security & Science Modules
@@ -833,28 +833,28 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Penetration Testing',
       'SIEM Systems',
       'Incident Response',
-      'Threat Hunting'
+      'Threat Hunting',
     ],
     tags: ['security', 'hacking', 'penetration', 'network'],
     prerequisites: [
       'Network fundamentals',
       'Linux command line',
-      'Understanding của security concepts'
+      'Understanding của security concepts',
     ],
     lessons: [
       {
         id: 'ethical-hacking-fundamentals',
         title: 'Ethical Hacking & Penetration Testing Fundamentals',
         duration: '180 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'cybersecurity-defense-strategies',
         title: 'Advanced Cybersecurity Defense & Incident Response',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.Biotechnology,
@@ -874,28 +874,28 @@ export const moduleNavigation: ModuleNavigation[] = [
       'CRISPR Technology',
       'Drug Discovery',
       'Medical Devices',
-      'Bioethics'
+      'Bioethics',
     ],
     tags: ['biotech', 'genetics', 'medical', 'crispr'],
     prerequisites: [
       'Biology fundamentals',
       'Chemistry basics',
-      'Scientific method understanding'
+      'Scientific method understanding',
     ],
     lessons: [
       {
         id: 'biotech-fundamentals-genetic-engineering',
         title: 'Biotechnology Fundamentals & Genetic Engineering',
         duration: '150 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'medical-biotechnology-drug-discovery',
         title: 'Medical Biotechnology & Drug Discovery Pipeline',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
 
   // High-Demand University Modules (Tier 1 - Based on 2025 Market Analysis)
@@ -918,53 +918,53 @@ export const moduleNavigation: ModuleNavigation[] = [
       'IC Design & VLSI',
       'Fabrication Process',
       'Advanced Nodes (3nm, 5nm)',
-      'Industry Applications'
+      'Industry Applications',
     ],
     tags: [
       'semiconductor',
       'ic design',
       'vlsi',
       'electronics',
-      'manufacturing'
+      'manufacturing',
     ],
     prerequisites: [
       'Physics fundamentals: quantum mechanics, solid state',
       'Mathematics: calculus, linear algebra, statistics',
       'Electrical engineering basics',
-      'Chemistry: materials science basics'
+      'Chemistry: materials science basics',
     ],
     lessons: [
       {
         id: 'semiconductor-fundamentals',
         title: 'Semiconductor Physics & Materials Fundamentals',
         duration: '180 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'ic-design-vlsi',
         title: 'Integrated Circuit Design & VLSI Technology',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'fabrication-cleanroom',
         title: 'Fabrication Process & Cleanroom Technology',
         duration: '190 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'advanced-nodes-ai-chips',
         title: 'Advanced Process Nodes & AI Chip Architecture',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'industry-career-vietnam',
         title: 'Industry Applications & Career Opportunities in Vietnam',
         duration: '150 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
   {
     id: K2Module.RenewableEnergy,
@@ -985,47 +985,47 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Wind Power Technology',
       'Energy Storage & Smart Grid',
       'Hydroelectric Systems',
-      'Economics & Policy'
+      'Economics & Policy',
     ],
     tags: ['renewable energy', 'solar', 'wind', 'energy storage', 'smart grid'],
     prerequisites: [
       'Basic electrical engineering',
       'Physics principles: mechanics, thermodynamics',
       'Mathematics: algebra, basic calculus',
-      'Environmental awareness'
+      'Environmental awareness',
     ],
     lessons: [
       {
         id: 'solar-energy-fundamentals',
         title: 'Solar Energy Systems & Photovoltaic Technology',
         duration: '180 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'wind-power-technology',
         title: 'Wind Power Systems & Turbine Technology',
         duration: '200 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'energy-storage-systems',
         title: 'Energy Storage & Smart Grid Integration',
         duration: '160 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'hydroelectric-systems',
         title: 'Hydroelectric Power & Small-Scale Hydro',
         duration: '170 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'renewable-economics-policy',
         title: 'Renewable Energy Economics & Policy in Vietnam',
         duration: '140 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
   {
     id: K2Module.AdvancedAI,
@@ -1046,53 +1046,53 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Computer Vision Applications',
       'Vietnamese NLP & Language Models',
       'Reinforcement Learning Systems',
-      'AI Ethics & Responsible Deployment'
+      'AI Ethics & Responsible Deployment',
     ],
     tags: [
       'ai',
       'deep learning',
       'computer vision',
       'nlp',
-      'reinforcement learning'
+      'reinforcement learning',
     ],
     prerequisites: [
       'Strong Python programming skills',
       'Linear algebra và calculus knowledge',
       'Machine learning fundamentals',
-      'Cloud platforms experience (AWS/GCP)'
+      'Cloud platforms experience (AWS/GCP)',
     ],
     lessons: [
       {
         id: 'deep-learning-foundations',
         title: 'Deep Learning & Neural Network Architectures',
         duration: '240 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'computer-vision-applications',
         title: 'Computer Vision & Image Processing Applications',
         duration: '220 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'nlp-language-models',
         title: 'Natural Language Processing & Large Language Models',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'reinforcement-learning-systems',
         title: 'Reinforcement Learning & Autonomous Systems',
         duration: '190 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'ai-ethics-deployment',
         title: 'AI Ethics, Bias & Production Deployment',
         duration: '170 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
 
   // 2025 High-Demand University Modules (Tier 2 - Triển khai Q2 2025)
@@ -1114,47 +1114,47 @@ export const moduleNavigation: ModuleNavigation[] = [
       'EV Powertrain Design',
       'Autonomous Driving Systems',
       'Charging Infrastructure',
-      'Manufacturing & Quality Control'
+      'Manufacturing & Quality Control',
     ],
     tags: [
       'electric vehicle',
       'ev',
       'automotive',
       'vinfast',
-      'battery technology'
+      'battery technology',
     ],
     prerequisites: [
       'Electrical engineering fundamentals',
       'Automotive systems knowledge',
       'Battery technology basics',
-      'Control systems understanding'
+      'Control systems understanding',
     ],
     lessons: [
       {
         id: 'ev-powertrain-battery-systems',
         title: 'EV Powertrain & Battery Management Systems',
         duration: '220 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'autonomous-driving-vietnamese-roads',
         title: 'Autonomous Driving Technology for Vietnamese Roads',
         duration: '240 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'ev-charging-infrastructure-v2g',
         title: 'EV Charging Infrastructure & Vehicle-to-Grid Technology',
         duration: '200 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'ev-manufacturing-quality-control',
         title: 'EV Manufacturing & Quality Control Systems',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.BlockchainDeFi,
@@ -1175,7 +1175,7 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Smart Contract Development',
       'DeFi Protocol Design',
       'NFT & Metaverse Applications',
-      'Regulatory Compliance'
+      'Regulatory Compliance',
     ],
     tags: [
       'blockchain',
@@ -1183,46 +1183,46 @@ export const moduleNavigation: ModuleNavigation[] = [
       'smart contracts',
       'cryptocurrency',
       'nft',
-      'fintech'
+      'fintech',
     ],
     prerequisites: [
       'Programming experience (Solidity, JavaScript)',
       'Cryptography basics',
       'Financial technology understanding',
-      'Web3 development concepts'
+      'Web3 development concepts',
     ],
     lessons: [
       {
         id: 'blockchain-fundamentals-cryptocurrency',
         title: 'Blockchain Fundamentals & Cryptocurrency Technology',
         duration: '200 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'smart-contracts-ethereum-development',
         title: 'Smart Contracts & Ethereum Development',
         duration: '240 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'defi-protocols-yield-farming',
         title: 'DeFi Protocols & Yield Farming Strategies',
         duration: '220 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'nft-metaverse-applications',
         title: 'NFT Development & Metaverse Applications',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'blockchain-regulatory-compliance',
         title: 'Blockchain Regulatory Compliance & Vietnamese Fintech',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.BiomedicalEngineering,
@@ -1243,47 +1243,47 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Biosignal Processing',
       'Regenerative Medicine',
       'Surgical Robotics',
-      'Healthcare Technology'
+      'Healthcare Technology',
     ],
     tags: [
       'biomedical engineering',
       'medical devices',
       'healthcare',
       'biosignals',
-      'surgical robotics'
+      'surgical robotics',
     ],
     prerequisites: [
       'Engineering fundamentals',
       'Biology và anatomy knowledge',
       'Signal processing basics',
-      'Medical device regulations understanding'
+      'Medical device regulations understanding',
     ],
     lessons: [
       {
         id: 'medical-device-design-development',
         title: 'Medical Device Design & Development Process',
         duration: '240 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'biosignal-processing-analysis',
         title: 'Biosignal Processing & Medical Data Analysis',
         duration: '220 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'regenerative-medicine-tissue-engineering',
         title: 'Regenerative Medicine & Tissue Engineering',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'surgical-robotics-automation',
         title: 'Surgical Robotics & Medical Automation Systems',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
 
   // 2025 High-Demand University Modules (Tier 3 - Triển khai Q3-Q4 2025)
@@ -1305,47 +1305,47 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Climate Data Analysis',
       'Environmental Monitoring',
       'Remote Sensing & GIS',
-      'Environmental Machine Learning'
+      'Environmental Machine Learning',
     ],
     tags: [
       'environmental science',
       'data science',
       'climate',
       'remote sensing',
-      'gis'
+      'gis',
     ],
     prerequisites: [
       'Data science fundamentals',
       'Python programming',
       'Statistics và machine learning',
-      'Environmental science basics'
+      'Environmental science basics',
     ],
     lessons: [
       {
         id: 'climate-data-analysis-modeling',
         title: 'Climate Data Analysis & Environmental Modeling',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'air-water-quality-monitoring',
         title: 'Air & Water Quality Monitoring Systems',
         duration: '220 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'satellite-remote-sensing-gis',
         title: 'Satellite Remote Sensing & GIS Applications',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'environmental-machine-learning',
         title: 'Machine Learning for Environmental Prediction',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.FoodTechnology,
@@ -1365,47 +1365,47 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Food Safety & Quality Control',
       'Fermentation Technology',
       'Molecular Gastronomy',
-      'Sustainable Food Production'
+      'Sustainable Food Production',
     ],
     tags: [
       'food technology',
       'food safety',
       'fermentation',
       'molecular gastronomy',
-      'sustainability'
+      'sustainability',
     ],
     prerequisites: [
       'Chemistry fundamentals',
       'Microbiology basics',
       'Food science knowledge',
-      'Quality control understanding'
+      'Quality control understanding',
     ],
     lessons: [
       {
         id: 'food-safety-quality-control',
         title: 'Food Safety & Quality Control Systems',
         duration: '180 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'fermentation-technology-vietnamese-foods',
         title: 'Fermentation Technology & Traditional Vietnamese Foods',
         duration: '200 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'molecular-gastronomy-food-innovation',
         title: 'Molecular Gastronomy & Food Innovation',
         duration: '160 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'sustainable-food-production',
         title: 'Sustainable Food Production & Supply Chain',
         duration: '180 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
   {
     id: K2Module.AerospaceEngineering,
@@ -1425,47 +1425,47 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Aircraft Design & Aerodynamics',
       'Satellite Technology',
       'Space Mission Planning',
-      'Avionics & Flight Control'
+      'Avionics & Flight Control',
     ],
     tags: [
       'aerospace engineering',
       'aviation',
       'satellite',
       'space',
-      'avionics'
+      'avionics',
     ],
     prerequisites: [
       'Engineering fundamentals',
       'Physics và mathematics',
       'Fluid dynamics understanding',
-      'Control systems knowledge'
+      'Control systems knowledge',
     ],
     lessons: [
       {
         id: 'aircraft-design-aerodynamics',
         title: 'Aircraft Design & Aerodynamics Engineering',
         duration: '240 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'satellite-technology-communication',
         title: 'Satellite Technology & Communication Systems',
         duration: '220 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'space-mission-planning-systems',
         title: 'Space Mission Planning & Systems Engineering',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'avionics-flight-control-systems',
         title: 'Avionics & Flight Control Systems',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.Nanotechnology,
@@ -1485,47 +1485,47 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Nanomaterials Synthesis',
       'Nanoelectronics & Quantum Devices',
       'Biomedical Nanotechnology',
-      'Environmental Applications'
+      'Environmental Applications',
     ],
     tags: [
       'nanotechnology',
       'nanomaterials',
       'quantum devices',
       'nanoelectronics',
-      'biomedical'
+      'biomedical',
     ],
     prerequisites: [
       'Chemistry và physics fundamentals',
       'Materials science knowledge',
       'Quantum mechanics basics',
-      'Laboratory safety protocols'
+      'Laboratory safety protocols',
     ],
     lessons: [
       {
         id: 'nanomaterials-synthesis-characterization',
         title: 'Nanomaterials Synthesis & Characterization',
         duration: '195 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'nanoelectronics-quantum-devices',
         title: 'Nanoelectronics & Quantum Devices',
         duration: '210 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'biomedical-nanotechnology',
         title: 'Biomedical Nanotechnology & Drug Delivery',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'environmental-nanotechnology',
         title: 'Environmental Nanotechnology & Sustainable Applications',
         duration: '165 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
 
   // Programming Modules
@@ -1548,34 +1548,34 @@ export const moduleNavigation: ModuleNavigation[] = [
     prerequisites: [
       'Basic computer skills',
       'Logical thinking',
-      'Problem-solving mindset'
+      'Problem-solving mindset',
     ],
     lessons: [
       {
         id: 'python-basics',
         title: 'Python Basics & Syntax Fundamentals',
         duration: '120 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'data-structures-algorithms',
         title: 'Data Structures & Algorithms in Python',
         duration: '180 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'web-development-flask',
         title: 'Web Development with Flask & Django',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'data-science-ai-applications',
         title: 'Data Science & AI Applications with Python',
         duration: '120 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.Scratch,
@@ -1595,34 +1595,34 @@ export const moduleNavigation: ModuleNavigation[] = [
     prerequisites: [
       'Basic computer skills',
       'Creative thinking',
-      'Problem-solving interest'
+      'Problem-solving interest',
     ],
     lessons: [
       {
         id: 'scratch-introduction',
         title: 'Scratch Introduction & Visual Programming Concepts',
         duration: '60 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'animation-storytelling',
         title: 'Animation & Interactive Storytelling',
         duration: '90 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'game-development-scratch',
         title: 'Game Development with Scratch',
         duration: '120 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'advanced-scratch-projects',
         title: 'Advanced Scratch Projects & Sharing',
         duration: '30 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
 
   // STEM & Hardware Modules
@@ -1644,40 +1644,40 @@ export const moduleNavigation: ModuleNavigation[] = [
     prerequisites: [
       'Basic electronics knowledge',
       'Programming fundamentals',
-      'Problem-solving skills'
+      'Problem-solving skills',
     ],
     lessons: [
       {
         id: 'arduino-setup',
         title: 'Arduino Setup & Development Environment',
         duration: '60 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'led-digital-outputs',
         title: 'LED Control & Digital Outputs',
         duration: '90 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'arduino-inputs',
         title: 'Arduino Inputs & Sensor Integration',
         duration: '90 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'arduino-sensors',
         title: 'Advanced Sensors & Data Processing',
         duration: '90 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'arduino-communication',
         title: 'Communication & Networking Protocols',
         duration: '90 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.Robotics,
@@ -1696,41 +1696,41 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Robot Design',
       'Motion Control',
       'AI Integration',
-      'Autonomous Navigation'
+      'Autonomous Navigation',
     ],
     tags: ['robotics', 'ai', 'automation', 'control'],
     prerequisites: [
       'Programming fundamentals',
       'Basic electronics',
       'Mathematical thinking',
-      'Problem-solving skills'
+      'Problem-solving skills',
     ],
     lessons: [
       {
         id: 'robotics-fundamentals',
         title: 'Robotics Fundamentals & Components',
         duration: '120 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'robot-programming-control',
         title: 'Robot Programming & Motion Control',
         duration: '150 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'sensors-computer-vision',
         title: 'Sensors & Computer Vision in Robotics',
         duration: '150 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'autonomous-navigation-ai',
         title: 'Autonomous Navigation & AI Integration',
         duration: '120 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.STEM,
@@ -1749,52 +1749,52 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Physics Experiments',
       'Math Applications',
       'Engineering Design',
-      'Science Projects'
+      'Science Projects',
     ],
     tags: ['stem', 'science', 'math', 'engineering'],
     prerequisites: [
       'Curiosity and interest in science',
       'Basic math skills',
-      'Safety awareness'
+      'Safety awareness',
     ],
     lessons: [
       {
         id: 'stem-introduction',
         title: 'STEM Introduction & Scientific Method',
         duration: '60 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'fun-physics-experiments',
         title: 'Fun Physics Experiments & Principles',
         duration: '120 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'coding-for-kids',
         title: 'Coding for Kids & Computational Thinking',
         duration: '90 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'engineering-challenges',
         title: 'Engineering Challenges & Design Thinking',
         duration: '120 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'math-in-real-life',
         title: 'Math in Real Life Applications',
         duration: '60 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'art-meets-science',
         title: 'Art Meets Science Creative Projects',
         duration: '60 phút',
-        difficulty: 'Cơ bản'
-      }
-    ]
+        difficulty: 'Cơ bản',
+      },
+    ],
   },
 
   // 2025 Trend-Based Modules - High Priority
@@ -1817,71 +1817,71 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Video Production',
       'Live Streaming',
       'Monetization',
-      'Analytics'
+      'Analytics',
     ],
     tags: [
       'content creator',
       'social media',
       'youtube',
       'tiktok',
-      'monetization'
+      'monetization',
     ],
     prerequisites: [
       'Smartphone với camera tốt',
       'Tư duy sáng tạo',
       'Khả năng storytelling',
-      'Consistency mindset'
+      'Consistency mindset',
     ],
     lessons: [
       {
         id: 'social-media-personal-branding',
         title: 'Social Media Strategy & Personal Branding',
         duration: '180 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'video-production-editing-mastery',
         title: 'Video Production & Editing Mastery',
         duration: '240 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'livestreaming-community-building',
         title: 'Livestreaming & Community Building',
         duration: '200 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'monetization-strategies',
         title: 'Monetization Strategies (YouTube, TikTok, Facebook)',
         duration: '220 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'brand-partnerships-sponsorships',
         title: 'Brand Partnerships & Sponsorship Deals',
         duration: '180 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'content-calendar-consistency',
         title: 'Content Calendar & Consistency Systems',
         duration: '160 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'analytics-growth-optimization',
         title: 'Analytics & Growth Optimization',
         duration: '200 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'legal-business-content-creation',
         title: 'Legal & Business Aspects of Content Creation',
         duration: '150 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: K2Module.TeenWellness,
@@ -1902,68 +1902,446 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Mindfulness & Meditation',
       'Digital Wellness',
       'Healthy Relationships',
-      'Crisis Support'
+      'Crisis Support',
     ],
     tags: [
       'teen wellness',
       'mental health',
       'stress management',
       'mindfulness',
-      'emotional intelligence'
+      'emotional intelligence',
     ],
     prerequisites: [
       'Sự cởi mở về cảm xúc',
       'Cam kết thực hành hàng ngày',
       'Hỗ trợ từ người lớn',
-      'Môi trường an toàn'
+      'Môi trường an toàn',
     ],
     lessons: [
       {
         id: 'understanding-stress-anxiety',
         title: 'Understanding Stress & Anxiety Management',
         duration: '120 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'mindfulness-meditation-techniques',
         title: 'Mindfulness & Meditation Techniques',
         duration: '90 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'digital-wellness-screen-time',
         title: 'Digital Wellness & Screen Time Balance',
         duration: '100 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'building-healthy-relationships',
         title: 'Building Healthy Relationships',
         duration: '110 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'study-life-balance',
         title: 'Study-Life Balance Strategies',
         duration: '95 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'emotional-intelligence-development',
         title: 'Emotional Intelligence Development',
         duration: '105 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'crisis-support-help-seeking',
         title: 'Crisis Support & When to Seek Help',
         duration: '75 phút',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
 
-  // Young Entrepreneur Bootcamp - 2025 Trending
+  // Recently Created High-Demand Learning Modules (2025)
+  {
+    id: 'ai-machine-learning',
+    title: 'AI & Machine Learning',
+    subtitle: 'Trí tuệ nhân tạo và học máy',
+    description:
+      'Tìm hiểu AI/ML từ cơ bản đến nâng cao với TensorFlow, PyTorch và neural networks',
+    category: ['professional', 'programming'],
+    icon: '🧠',
+    color: 'from-purple-600 to-indigo-600',
+    totalDuration: '16-20 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    level: 'Trung bình',
+    duration: '16-20 giờ',
+    href: '/learning/ai-machine-learning',
+    features: [
+      'Machine Learning Algorithms',
+      'Neural Networks',
+      'Computer Vision',
+      'AI Ethics',
+    ],
+    tags: ['ai', 'machine learning', 'tensorflow', 'neural networks'],
+    prerequisites: [
+      'Python programming basics',
+      'Statistics fundamentals',
+      'Linear algebra knowledge',
+      'Mathematical thinking',
+    ],
+    lessons: [
+      {
+        id: 'ai-ml-fundamentals',
+        title: 'AI & Machine Learning Fundamentals',
+        duration: '180 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'neural-networks-deep-learning',
+        title: 'Neural Networks & Deep Learning',
+        duration: '200 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'computer-vision-nlp',
+        title: 'Computer Vision & Natural Language Processing',
+        duration: '200 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'ai-ethics-future-trends',
+        title: 'AI Ethics & Future Trends',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'quantum-computing',
+    title: 'Quantum Computing',
+    subtitle: 'Máy tính lượng tử',
+    description:
+      'Khám phá thế giới quantum computing với Qiskit, quantum algorithms và cryptography',
+    category: ['professional', 'programming'],
+    icon: '⚛️',
+    color: 'from-cyan-600 to-blue-600',
+    totalDuration: '14-18 giờ',
+    difficulty: 'Nâng cao',
+    level: 'Nâng cao',
+    duration: '14-18 giờ',
+    href: '/learning/quantum-computing',
+    features: [
+      'Quantum Fundamentals',
+      'Qiskit Programming',
+      'Quantum Algorithms',
+      'Quantum Cryptography',
+    ],
+    tags: ['quantum', 'qiskit', 'cryptography', 'algorithms'],
+    prerequisites: [
+      'Linear algebra và complex numbers',
+      'Python programming',
+      'Basic physics knowledge',
+      'Mathematical reasoning',
+    ],
+    lessons: [
+      {
+        id: 'quantum-fundamentals',
+        title: 'Quantum Computing Fundamentals',
+        duration: '160 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'quantum-algorithms',
+        title: 'Quantum Algorithms & Implementations',
+        duration: '180 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'quantum-cryptography',
+        title: 'Quantum Cryptography & Security',
+        duration: '160 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'quantum-future',
+        title: 'Future of Quantum Computing',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'blockchain-technology',
+    title: 'Blockchain Technology',
+    subtitle: 'Công nghệ chuỗi khối',
+    description:
+      'Học blockchain từ fundamentals đến smart contracts và DeFi applications',
+    category: ['professional', 'programming'],
+    icon: '⛓️',
+    color: 'from-orange-600 to-yellow-600',
+    totalDuration: '16-20 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    level: 'Trung bình',
+    duration: '16-20 giờ',
+    href: '/learning/blockchain-technology',
+    features: [
+      'Blockchain Fundamentals',
+      'Smart Contracts',
+      'DeFi Protocols',
+      'Enterprise Applications',
+    ],
+    tags: ['blockchain', 'smart contracts', 'defi', 'ethereum'],
+    prerequisites: [
+      'Programming experience (JavaScript/Solidity)',
+      'Basic cryptography understanding',
+      'Web development knowledge',
+      'Financial concepts awareness',
+    ],
+    lessons: [
+      {
+        id: 'blockchain-fundamentals',
+        title: 'Blockchain Fundamentals & Architecture',
+        duration: '180 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'smart-contracts-development',
+        title: 'Smart Contracts Development',
+        duration: '200 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'defi-protocols',
+        title: 'DeFi Protocols & Applications',
+        duration: '180 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'enterprise-blockchain',
+        title: 'Enterprise Blockchain Solutions',
+        duration: '160 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'climate-science',
+    title: 'Climate Science & Environmental Solutions',
+    subtitle: 'Khoa học khí hậu',
+    description:
+      'Tìm hiểu climate change, environmental modeling và green technology solutions',
+    category: ['professional', 'science'],
+    icon: '🌍',
+    color: 'from-green-600 to-emerald-600',
+    totalDuration: '12-15 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '12-15 giờ',
+    href: '/learning/climate-science',
+    features: [
+      'Climate Fundamentals',
+      'Data Analysis',
+      'Green Technology',
+      'Environmental Policy',
+    ],
+    tags: ['climate', 'environment', 'sustainability', 'green tech'],
+    prerequisites: [
+      'Basic science knowledge',
+      'Data analysis skills',
+      'Environmental awareness',
+      'Statistical understanding',
+    ],
+    lessons: [
+      {
+        id: 'climate-science-fundamentals',
+        title: 'Climate Science Fundamentals',
+        duration: '160 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'climate-data-analysis',
+        title: 'Climate Data Analysis & Modeling',
+        duration: '180 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'green-technology-solutions',
+        title: 'Green Technology Solutions',
+        duration: '160 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'environmental-policy',
+        title: 'Environmental Policy & Action',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'data-science',
+    title: 'Data Science & Analytics',
+    subtitle: 'Khoa học dữ liệu',
+    description:
+      'Master data science pipeline từ data collection đến machine learning và visualization',
+    category: ['professional', 'programming'],
+    icon: '📊',
+    color: 'from-blue-600 to-purple-600',
+    totalDuration: '18-22 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    level: 'Trung bình',
+    duration: '18-22 giờ',
+    href: '/learning/data-science',
+    features: [
+      'Data Analysis',
+      'Machine Learning',
+      'Big Data',
+      'Data Visualization',
+    ],
+    tags: ['data science', 'analytics', 'python', 'machine learning'],
+    prerequisites: [
+      'Python programming',
+      'Statistics và probability',
+      'SQL database knowledge',
+      'Mathematical foundations',
+    ],
+    lessons: [
+      {
+        id: 'data-science-fundamentals',
+        title: 'Data Science Fundamentals & Python Stack',
+        duration: '200 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'machine-learning-algorithms',
+        title: 'Machine Learning Algorithms & Implementation',
+        duration: '220 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'big-data-technologies',
+        title: 'Big Data Technologies & Distributed Computing',
+        duration: '200 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'data-visualization-storytelling',
+        title: 'Data Visualization & Storytelling',
+        duration: '180 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'space-exploration',
+    title: 'Space Exploration & Technology',
+    subtitle: 'Khám phá vũ trụ',
+    description:
+      'Tìm hiểu space science, rocket engineering và satellite technology',
+    category: ['science', 'professional'],
+    icon: '🚀',
+    color: 'from-indigo-600 to-purple-600',
+    totalDuration: '12-15 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '12-15 giờ',
+    href: '/learning/space-exploration',
+    features: [
+      'Space Fundamentals',
+      'Rocket Science',
+      'Satellite Technology',
+      'Space Colonization',
+    ],
+    tags: ['space', 'rockets', 'satellites', 'astronomy'],
+    prerequisites: [
+      'Physics fundamentals',
+      'Mathematics: calculus',
+      'Engineering principles',
+      'Scientific curiosity',
+    ],
+    lessons: [
+      {
+        id: 'space-exploration-fundamentals',
+        title: 'Cơ bản về Khám phá Vũ trụ',
+        duration: '160 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'rocket-science-propulsion',
+        title: 'Rocket Science và Propulsion Systems',
+        duration: '180 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'satellite-technology',
+        title: 'Satellite Technology và Applications',
+        duration: '150 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'space-colonization',
+        title: 'Space Colonization và Future Missions',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'programming-robotics',
+    title: 'Programming & Robotics',
+    subtitle: 'Lập trình và robot học',
+    description:
+      'Kết hợp programming skills với robotics engineering để tạo autonomous systems',
+    category: ['programming', 'stem'],
+    icon: '🤖',
+    color: 'from-gray-600 to-blue-600',
+    totalDuration: '16-20 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    level: 'Trung bình',
+    duration: '16-20 giờ',
+    href: '/learning/programming-robotics',
+    features: [
+      'Programming Fundamentals',
+      'Robotics Engineering',
+      'AI Integration',
+      'Advanced Applications',
+    ],
+    tags: ['programming', 'robotics', 'ai', 'automation'],
+    prerequisites: [
+      'Programming fundamentals',
+      'Basic electronics',
+      'Mathematical thinking',
+      'Problem-solving skills',
+    ],
+    lessons: [
+      {
+        id: 'programming-fundamentals',
+        title: 'Programming Fundamentals cho Robotics',
+        duration: '180 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'robotics-engineering',
+        title: 'Robotics Engineering và Design',
+        duration: '200 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'ai-robotics-integration',
+        title: 'AI Integration trong Robotics',
+        duration: '160 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'advanced-robotics-applications',
+        title: 'Advanced Robotics Applications',
+        duration: '140 phút',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
   {
     id: K2Module.YoungEntrepreneur,
     title: 'Young Entrepreneur Bootcamp',
@@ -1985,7 +2363,7 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Fundraising',
       'Team Building',
       'Growth Hacking',
-      'Legal Compliance'
+      'Legal Compliance',
     ],
     tags: [
       'startup',
@@ -1994,59 +2372,59 @@ export const moduleNavigation: ModuleNavigation[] = [
       'mvp',
       'fundraising',
       'young entrepreneur',
-      'vietnam startup'
+      'vietnam startup',
     ],
     prerequisites: [
       'Tư duy logic và sáng tạo',
       'Đam mê kinh doanh',
       'Kỹ năng học hỏi nhanh',
-      'Tinh thần chấp nhận thử thách'
+      'Tinh thần chấp nhận thử thách',
     ],
     lessons: [
       {
         id: 'startup-mindset-fundamentals',
         title: 'Tư Duy Khởi Nghiệp & Cơ Hội Thị Trường',
         duration: '180 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'business-model-validation',
         title: 'Xây Dựng & Kiểm Chứng Business Model',
         duration: '210 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'digital-marketing-growth',
         title: 'Digital Marketing & Growth Hacking cho Startup',
         duration: '195 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'funding-investment-preparation',
         title: 'Gọi Vốn & Chuẩn Bị Đầu Tư',
         duration: '240 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'team-building-leadership',
         title: 'Xây Dựng Đội Ngũ & Leadership Skills',
         duration: '180 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'scaling-operations',
         title: 'Scale Operations & Business Growth',
         duration: '225 phút',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         id: 'startup-legal-compliance',
         title: 'Pháp Lý & Compliance cho Startup',
         duration: '165 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
-  }
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
 ];
 
 // Helper functions cho navigation
@@ -2056,7 +2434,7 @@ export function getModuleById(id: string): ModuleNavigation | undefined {
 
 export function getLessonById(
   moduleId: string,
-  lessonId: string
+  lessonId: string,
 ): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
   return moduleData?.lessons.find((lesson) => lesson.id === lessonId);
@@ -2085,13 +2463,13 @@ export function getAllCategories(): string[] {
 
 export function getNextLesson(
   moduleId: string,
-  currentLessonId: string
+  currentLessonId: string,
 ): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
   if (!moduleData) return undefined;
 
   const currentIndex = moduleData.lessons.findIndex(
-    (lesson) => lesson.id === currentLessonId
+    (lesson) => lesson.id === currentLessonId,
   );
   if (currentIndex === -1 || currentIndex === moduleData.lessons.length - 1)
     return undefined;
@@ -2101,13 +2479,13 @@ export function getNextLesson(
 
 export function getPreviousLesson(
   moduleId: string,
-  currentLessonId: string
+  currentLessonId: string,
 ): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
   if (!moduleData) return undefined;
 
   const currentIndex = moduleData.lessons.findIndex(
-    (lesson) => lesson.id === currentLessonId
+    (lesson) => lesson.id === currentLessonId,
   );
   if (currentIndex <= 0) return undefined;
 
@@ -2119,7 +2497,7 @@ export function calculateModuleProgress(moduleId: string): number {
   if (!moduleData) return 0;
 
   const completedLessons = moduleData.lessons.filter(
-    (lesson) => lesson.completed
+    (lesson) => lesson.completed,
   ).length;
   return Math.round((completedLessons / moduleData.lessons.length) * 100);
 }

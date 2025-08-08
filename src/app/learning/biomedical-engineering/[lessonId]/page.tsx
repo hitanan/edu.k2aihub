@@ -1,11 +1,21 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { biomedicalEngineeringLessons, type BiomedicalEngineeringLesson } from '@/data/biomedical-engineering'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  biomedicalEngineeringLessons,
+  type BiomedicalEngineeringLesson,
+} from '@/data/biomedical-engineering';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Heart, Brain, Dna, Bot, Shield, Activity } from 'lucide-react';
 
 // Convert BiomedicalEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(lesson: BiomedicalEngineeringLesson): BaseLessonData {
+function convertToBaseLessonData(
+  lesson: BiomedicalEngineeringLesson,
+): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -24,14 +34,16 @@ function convertToBaseLessonData(lesson: BiomedicalEngineeringLesson): BaseLesso
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.innovations || []
+      innovations: study.innovations || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
 // Convert lessons to BaseLessonData format
-const convertedLessons = biomedicalEngineeringLessons.map(convertToBaseLessonData);
+const convertedLessons = biomedicalEngineeringLessons.map(
+  convertToBaseLessonData,
+);
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -47,21 +59,23 @@ export async function generateMetadata({ params }: PageProps) {
 // Icon mapping function for biomedical engineering fields
 function getBiomedicalIcon(field: string) {
   const iconMap: Record<string, React.ReactNode> = {
-    'device': <Heart className="w-5 h-5" />,
-    'signal': <Activity className="w-5 h-5" />,
-    'imaging': <Brain className="w-5 h-5" />,
-    'regenerative': <Dna className="w-5 h-5" />,
-    'robotics': <Bot className="w-5 h-5" />,
-    'safety': <Shield className="w-5 h-5" />,
-    'regulatory': <Shield className="w-5 h-5" />,
-    'clinical': <Heart className="w-5 h-5" />
+    device: <Heart className="w-5 h-5" />,
+    signal: <Activity className="w-5 h-5" />,
+    imaging: <Brain className="w-5 h-5" />,
+    regenerative: <Dna className="w-5 h-5" />,
+    robotics: <Bot className="w-5 h-5" />,
+    safety: <Shield className="w-5 h-5" />,
+    regulatory: <Shield className="w-5 h-5" />,
+    clinical: <Heart className="w-5 h-5" />,
   };
-  
+
   return iconMap[field] || <Heart className="w-5 h-5" />;
 }
 
 // Page component with standardized config
-export default async function BiomedicalEngineeringLessonPage({ params }: PageProps) {
+export default async function BiomedicalEngineeringLessonPage({
+  params,
+}: PageProps) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'biomedical-engineering',
     moduleTitle: 'Biomedical Engineering',
@@ -70,9 +84,9 @@ export default async function BiomedicalEngineeringLessonPage({ params }: PagePr
     primaryColor: 'teal',
     secondaryColor: 'cyan',
     gradientColors: 'from-slate-900 via-teal-900 to-slate-900',
-    getFieldIcon: (field: string) => getBiomedicalIcon(field)
-  }
-  
+    getFieldIcon: (field: string) => getBiomedicalIcon(field),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

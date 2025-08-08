@@ -16,37 +16,50 @@ function convertGreenTechToBase(lesson: GreenTechLesson): BaseLessonData {
     imageUrl: lesson.imageUrl,
     objectives: lesson.objectives,
     prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises.map(exercise => ({
+    exercises: lesson.exercises.map((exercise) => ({
       title: exercise.title,
       description: exercise.description,
       difficulty: exercise.difficulty,
       solution: exercise.solution,
       materials: exercise.requirements,
       procedure: exercise.hints,
-      expectedResults: exercise.expectedOutput
+      expectedResults: exercise.expectedOutput,
     })),
     realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies.map(caseStudy => ({
+    caseStudies: lesson.caseStudies.map((caseStudy) => ({
       title: caseStudy.title,
       organization: caseStudy.company,
       problem: caseStudy.challenge,
       solution: caseStudy.solution,
       impact: caseStudy.results,
-      innovations: caseStudy.insights
+      innovations: caseStudy.insights,
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
 // Generate metadata
 export async function generateMetadata() {
   return {
-    title: createTitle('Green Technology & Sustainability - Công nghệ Xanh và Phát triển Bền vững'),
-    description: createDescription('Khóa học công nghệ xanh: năng lượng tái tạo, smart cities, carbon footprint và sustainable development. Xây dựng tương lai bền vững với K2AiHub.'),
-    keywords: ['công nghệ xanh', 'green technology', 'năng lượng tái tạo', 'sustainable development', 'smart cities', 'renewable energy', 'K2AiHub'],
+    title: createTitle(
+      'Green Technology & Sustainability - Công nghệ Xanh và Phát triển Bền vững',
+    ),
+    description: createDescription(
+      'Khóa học công nghệ xanh: năng lượng tái tạo, smart cities, carbon footprint và sustainable development. Xây dựng tương lai bền vững với K2AiHub.',
+    ),
+    keywords: [
+      'công nghệ xanh',
+      'green technology',
+      'năng lượng tái tạo',
+      'sustainable development',
+      'smart cities',
+      'renewable energy',
+      'K2AiHub',
+    ],
     openGraph: {
       title: 'Green Technology & Sustainability - K2AiHub',
-      description: 'Học công nghệ xanh và phát triển bền vững để xây dựng tương lai tốt đẹp hơn',
+      description:
+        'Học công nghệ xanh và phát triển bền vững để xây dựng tương lai tốt đẹp hơn',
       type: 'website',
     },
   };
@@ -57,7 +70,8 @@ export default function GreenTechnologyPage() {
     id: 'green-technology',
     title: 'Green Technology & Sustainability',
     subtitle: 'Công nghệ Xanh và Phát triển Bền vững',
-    description: 'Khóa học toàn diện về công nghệ xanh và phát triển bền vững. Học năng lượng tái tạo, smart cities, carbon footprint management và sustainable solutions để xây dựng tương lai xanh cho thế hệ tương lai.',
+    description:
+      'Khóa học toàn diện về công nghệ xanh và phát triển bền vững. Học năng lượng tái tạo, smart cities, carbon footprint management và sustainable solutions để xây dựng tương lai xanh cho thế hệ tương lai.',
     level: 'Trung bình',
     duration: '18-22 giờ',
     category: 'Science & Research',
@@ -65,39 +79,40 @@ export default function GreenTechnologyPage() {
       'Renewable Energy Systems (solar, wind, hydro) và grid integration',
       'Smart Cities Technology và IoT environmental monitoring',
       'Carbon Footprint Management và sustainability metrics',
-      'Circular Economy Models và waste-to-energy solutions'
+      'Circular Economy Models và waste-to-energy solutions',
     ],
     icon: '🌱',
     color: 'from-green-600 to-emerald-600',
     gradientColors: 'from-slate-900 via-green-900 to-slate-900',
-    heroImageUrl: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=600&fit=crop",
+    heroImageUrl:
+      'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=600&fit=crop',
     objectives: [
       'Design và implement renewable energy systems',
       'Develop smart city solutions với IoT và environmental monitoring',
       'Calculate và reduce carbon footprint cho organizations',
-      'Create sustainable business models và circular economy strategies'
+      'Create sustainable business models và circular economy strategies',
     ],
     prerequisites: [
       'Kiến thức cơ bản về physics và engineering principles',
       'Hiểu biết về environmental science và climate change',
-      'Quen thuộc với data analysis và IoT concepts'
+      'Quen thuộc với data analysis và IoT concepts',
     ],
     careerOutcomes: [
       'Renewable Energy Engineer và Sustainability Consultant',
       'Smart City Solutions Architect và Environmental Data Scientist',
       'CleanTech Entrepreneur và Carbon Footprint Analyst',
-      'Green Building Designer và Environmental Policy Specialist'
+      'Green Building Designer và Environmental Policy Specialist',
     ],
     industryApplications: [
       'Renewable Energy Industry và Power Generation',
       'Smart Cities Development và Urban Planning',
       'Corporate Sustainability Programs và ESG Reporting',
-      'Environmental Consulting và CleanTech Startups'
+      'Environmental Consulting và CleanTech Startups',
     ],
     marketDemand: {
       averageSalary: '25-45 triệu VNĐ',
       jobGrowth: '+31%',
-      hireDemand: 'Rất cao'
+      hireDemand: 'Rất cao',
     },
     marketData: {
       marketSize: '$2.5T',
@@ -107,16 +122,13 @@ export default function GreenTechnologyPage() {
       reduction: '80%',
       reductionNote: 'CO2 Emissions Reduction Target',
       startups: '1.5K+',
-      startupsNote: 'CleanTech Startups Worldwide'
-    }
+      startupsNote: 'CleanTech Startups Worldwide',
+    },
   };
 
   const convertedLessons = greenTechLessons.map(convertGreenTechToBase);
 
   return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={convertedLessons}
-    />
+    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
   );
 }

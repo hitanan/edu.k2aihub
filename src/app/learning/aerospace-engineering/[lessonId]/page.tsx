@@ -1,11 +1,21 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { aerospaceEngineeringLessons, type AerospaceEngineeringLesson } from '@/data/aerospace-engineering'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  aerospaceEngineeringLessons,
+  type AerospaceEngineeringLesson,
+} from '@/data/aerospace-engineering';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Plane, Satellite, Rocket, Cog, Navigation, Radar } from 'lucide-react';
 
 // Convert AerospaceEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(lesson: AerospaceEngineeringLesson): BaseLessonData {
+function convertToBaseLessonData(
+  lesson: AerospaceEngineeringLesson,
+): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -24,14 +34,16 @@ function convertToBaseLessonData(lesson: AerospaceEngineeringLesson): BaseLesson
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.innovations || []
+      innovations: study.innovations || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
 // Convert lessons to BaseLessonData format
-const convertedLessons = aerospaceEngineeringLessons.map(convertToBaseLessonData);
+const convertedLessons = aerospaceEngineeringLessons.map(
+  convertToBaseLessonData,
+);
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -47,19 +59,21 @@ export async function generateMetadata({ params }: PageProps) {
 // Icon mapping function for aerospace engineering fields
 function getAerospaceIcon(field: string) {
   const iconMap: Record<string, React.ReactNode> = {
-    'aircraft': <Plane className="w-5 h-5" />,
-    'satellite': <Satellite className="w-5 h-5" />,
-    'space': <Rocket className="w-5 h-5" />,
-    'avionics': <Cog className="w-5 h-5" />,
-    'navigation': <Navigation className="w-5 h-5" />,
-    'systems': <Radar className="w-5 h-5" />
+    aircraft: <Plane className="w-5 h-5" />,
+    satellite: <Satellite className="w-5 h-5" />,
+    space: <Rocket className="w-5 h-5" />,
+    avionics: <Cog className="w-5 h-5" />,
+    navigation: <Navigation className="w-5 h-5" />,
+    systems: <Radar className="w-5 h-5" />,
   };
-  
+
   return iconMap[field] || <Plane className="w-5 h-5" />;
 }
 
 // Page component with standardized config
-export default async function AerospaceEngineeringLessonPage({ params }: PageProps) {
+export default async function AerospaceEngineeringLessonPage({
+  params,
+}: PageProps) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'aerospace-engineering',
     moduleTitle: 'Aerospace Engineering',
@@ -68,9 +82,9 @@ export default async function AerospaceEngineeringLessonPage({ params }: PagePro
     primaryColor: 'blue',
     secondaryColor: 'indigo',
     gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
-    getFieldIcon: (field: string) => getAerospaceIcon(field)
-  }
-  
+    getFieldIcon: (field: string) => getAerospaceIcon(field),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

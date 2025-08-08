@@ -1,70 +1,95 @@
-import { notFound } from 'next/navigation'
-import { createTitle, createDescription } from '@/utils/seo'
-import { aiArtLessons } from '@/data/ai-art-creative-tech'
-import Link from 'next/link'
-import { Clock, Target, User, Play, ChevronLeft, ChevronRight, Palette, CheckCircle, Youtube, Lightbulb, ExternalLink } from 'lucide-react'
-import { PageProps } from '@/types'
+import { notFound } from 'next/navigation';
+import { createTitle, createDescription } from '@/utils/seo';
+import { aiArtLessons } from '@/data/ai-art-creative-tech';
+import Link from 'next/link';
+import {
+  Clock,
+  Target,
+  User,
+  Play,
+  ChevronLeft,
+  ChevronRight,
+  Palette,
+  CheckCircle,
+  Youtube,
+  Lightbulb,
+  ExternalLink,
+} from 'lucide-react';
+import { PageProps } from '@/types';
 
 // Generate static params
 export async function generateStaticParams() {
   return aiArtLessons.map((lesson) => ({
     lessonId: lesson.id,
-  }))
+  }));
 }
 
 // Generate metadata
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  const lesson = aiArtLessons.find((l) => l.id === lessonId)
+  const lesson = aiArtLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     return {
       title: createTitle('Bài học không tìm thấy'),
-      description: createDescription('Bài học AI Art này không tồn tại.')
-    }
+      description: createDescription('Bài học AI Art này không tồn tại.'),
+    };
   }
 
   return {
     title: createTitle(lesson.title),
     description: createDescription(lesson.description),
     keywords: `AI Art, ${lesson.title}, creative technology, digital art, ${lesson.difficulty}, ${lesson.artType}`,
-  }
+  };
 }
 
 // Page component
 export default async function AiArtLessonPage({ params }: PageProps) {
   const { lessonId } = await params;
-  const lesson = aiArtLessons.find((l) => l.id === lessonId)
+  const lesson = aiArtLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
-    notFound()
+    notFound();
   }
 
-  const currentIndex = aiArtLessons.findIndex((l) => l.id === lessonId)
-  const previousLesson = currentIndex > 0 ? aiArtLessons[currentIndex - 1] : null
-  const nextLesson = currentIndex < aiArtLessons.length - 1 ? aiArtLessons[currentIndex + 1] : null
+  const currentIndex = aiArtLessons.findIndex((l) => l.id === lessonId);
+  const previousLesson =
+    currentIndex > 0 ? aiArtLessons[currentIndex - 1] : null;
+  const nextLesson =
+    currentIndex < aiArtLessons.length - 1
+      ? aiArtLessons[currentIndex + 1]
+      : null;
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'Dễ': return 'bg-green-500/20 text-green-200'
-      case 'Trung bình': return 'bg-yellow-500/20 text-yellow-200'
-      case 'Khó': return 'bg-red-500/20 text-red-200'
-      default: return 'bg-gray-500/20 text-gray-200'
+      case 'Dễ':
+        return 'bg-green-500/20 text-green-200';
+      case 'Trung bình':
+        return 'bg-yellow-500/20 text-yellow-200';
+      case 'Khó':
+        return 'bg-red-500/20 text-red-200';
+      default:
+        return 'bg-gray-500/20 text-gray-200';
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
         {/* Breadcrumb */}
         <nav className="mb-8">
           <div className="flex items-center space-x-3 text-sm">
-            <Link href="/" className="text-purple-400 hover:text-purple-300 transition-colors">
+            <Link
+              href="/"
+              className="text-purple-400 hover:text-purple-300 transition-colors"
+            >
               Trang chủ
             </Link>
             <span className="text-gray-400">/</span>
-            <Link href="/learning/ai-art-creative-tech" className="text-purple-400 hover:text-purple-300 transition-colors">
+            <Link
+              href="/learning/ai-art-creative-tech"
+              className="text-purple-400 hover:text-purple-300 transition-colors"
+            >
               AI Art & Creative Technology
             </Link>
             <span className="text-gray-400">/</span>
@@ -74,41 +99,51 @@ export default async function AiArtLessonPage({ params }: PageProps) {
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-4 gap-8">
-          
           {/* Main Lesson Content */}
           <div className="lg:col-span-3 space-y-8">
-            
             {/* Lesson Header */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <div className="flex items-center space-x-3 mb-4">
                 <Palette className="w-6 h-6 text-purple-400" />
-                <span className="text-purple-400 font-medium">{lesson.artType}</span>
+                <span className="text-purple-400 font-medium">
+                  {lesson.artType}
+                </span>
               </div>
-              
-              <h1 className="text-4xl font-bold text-white mb-4">{lesson.title}</h1>
+
+              <h1 className="text-4xl font-bold text-white mb-4">
+                {lesson.title}
+              </h1>
               <p className="text-xl text-gray-200 mb-6">{lesson.description}</p>
-              
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <Clock className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">{lesson.duration}</div>
+                  <div className="text-white font-semibold">
+                    {lesson.duration}
+                  </div>
                   <div className="text-sm text-gray-300">Thời gian</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <Target className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                  <div className={`text-sm font-semibold px-2 py-1 rounded ${getDifficultyColor(lesson.difficulty)}`}>
+                  <div
+                    className={`text-sm font-semibold px-2 py-1 rounded ${getDifficultyColor(lesson.difficulty)}`}
+                  >
                     {lesson.difficulty}
                   </div>
                   <div className="text-sm text-gray-300 mt-1">Độ khó</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <User className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">{lesson.objectives.length}</div>
+                  <div className="text-white font-semibold">
+                    {lesson.objectives.length}
+                  </div>
                   <div className="text-sm text-gray-300">Mục tiêu</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <Play className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">{lesson.exercises.length}</div>
+                  <div className="text-white font-semibold">
+                    {lesson.exercises.length}
+                  </div>
                   <div className="text-sm text-gray-300">Bài tập</div>
                 </div>
               </div>
@@ -150,24 +185,40 @@ export default async function AiArtLessonPage({ params }: PageProps) {
 
             {/* Exercises */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h2 className="text-2xl font-bold text-white mb-6">Bài tập thực hành</h2>
+              <h2 className="text-2xl font-bold text-white mb-6">
+                Bài tập thực hành
+              </h2>
               <div className="space-y-6">
                 {lesson.exercises.map((exercise, index) => (
-                  <div key={index} className="border border-white/20 rounded-lg p-6">
+                  <div
+                    key={index}
+                    className="border border-white/20 rounded-lg p-6"
+                  >
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-semibold text-white">{exercise.title}</h3>
-                      <span className={`text-sm font-semibold px-3 py-1 rounded ${getDifficultyColor(exercise.difficulty)}`}>
+                      <h3 className="text-xl font-semibold text-white">
+                        {exercise.title}
+                      </h3>
+                      <span
+                        className={`text-sm font-semibold px-3 py-1 rounded ${getDifficultyColor(exercise.difficulty)}`}
+                      >
                         {exercise.difficulty}
                       </span>
                     </div>
                     <p className="text-gray-200 mb-4">{exercise.description}</p>
-                    
+
                     {exercise.requirements.length > 0 && (
                       <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
-                        <h4 className="text-blue-300 font-semibold mb-2">📋 Yêu cầu:</h4>
+                        <h4 className="text-blue-300 font-semibold mb-2">
+                          📋 Yêu cầu:
+                        </h4>
                         <ul className="space-y-1">
                           {exercise.requirements.map((req, reqIndex) => (
-                            <li key={reqIndex} className="text-gray-300 text-sm">• {req}</li>
+                            <li
+                              key={reqIndex}
+                              className="text-gray-300 text-sm"
+                            >
+                              • {req}
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -181,15 +232,24 @@ export default async function AiArtLessonPage({ params }: PageProps) {
                         </h4>
                         <ul className="space-y-1">
                           {exercise.hints.map((hint, hintIndex) => (
-                            <li key={hintIndex} className="text-gray-300 text-sm">• {hint}</li>
+                            <li
+                              key={hintIndex}
+                              className="text-gray-300 text-sm"
+                            >
+                              • {hint}
+                            </li>
                           ))}
                         </ul>
                       </div>
                     )}
 
                     <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
-                      <h4 className="text-green-300 font-semibold mb-2">🎯 Kết quả mong đợi:</h4>
-                      <p className="text-gray-300 text-sm">{exercise.expectedOutput}</p>
+                      <h4 className="text-green-300 font-semibold mb-2">
+                        🎯 Kết quả mong đợi:
+                      </h4>
+                      <p className="text-gray-300 text-sm">
+                        {exercise.expectedOutput}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -198,7 +258,9 @@ export default async function AiArtLessonPage({ params }: PageProps) {
 
             {/* Real World Applications */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h2 className="text-2xl font-bold text-white mb-6">Ứng dụng thực tế</h2>
+              <h2 className="text-2xl font-bold text-white mb-6">
+                Ứng dụng thực tế
+              </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {lesson.realWorldApplications.map((application, index) => (
                   <div key={index} className="bg-white/10 rounded-lg p-4">
@@ -211,21 +273,47 @@ export default async function AiArtLessonPage({ params }: PageProps) {
             {/* Case Studies */}
             {lesson.caseStudies.length > 0 && (
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <h2 className="text-2xl font-bold text-white mb-6">Case Studies</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Case Studies
+                </h2>
                 <div className="space-y-6">
                   {lesson.caseStudies.map((caseStudy, index) => (
-                    <div key={index} className="border border-white/20 rounded-lg p-6">
-                      <h3 className="text-xl font-semibold text-white mb-2">{caseStudy.title}</h3>
-                      <p className="text-gray-300 mb-2"><span className="font-semibold">Artist:</span> {caseStudy.artist}</p>
-                      <p className="text-gray-300 mb-2"><span className="font-semibold">Challenge:</span> {caseStudy.challenge}</p>
-                      <p className="text-gray-300 mb-2"><span className="font-semibold">Solution:</span> {caseStudy.solution}</p>
-                      <p className="text-gray-200 mb-4"><span className="font-semibold">Results:</span> {caseStudy.results}</p>
+                    <div
+                      key={index}
+                      className="border border-white/20 rounded-lg p-6"
+                    >
+                      <h3 className="text-xl font-semibold text-white mb-2">
+                        {caseStudy.title}
+                      </h3>
+                      <p className="text-gray-300 mb-2">
+                        <span className="font-semibold">Artist:</span>{' '}
+                        {caseStudy.artist}
+                      </p>
+                      <p className="text-gray-300 mb-2">
+                        <span className="font-semibold">Challenge:</span>{' '}
+                        {caseStudy.challenge}
+                      </p>
+                      <p className="text-gray-300 mb-2">
+                        <span className="font-semibold">Solution:</span>{' '}
+                        {caseStudy.solution}
+                      </p>
+                      <p className="text-gray-200 mb-4">
+                        <span className="font-semibold">Results:</span>{' '}
+                        {caseStudy.results}
+                      </p>
                       {caseStudy.insights.length > 0 && (
                         <div>
-                          <p className="text-purple-400 font-semibold mb-2">💡 Key Insights:</p>
+                          <p className="text-purple-400 font-semibold mb-2">
+                            💡 Key Insights:
+                          </p>
                           <ul className="space-y-1">
                             {caseStudy.insights.map((insight, insightIndex) => (
-                              <li key={insightIndex} className="text-gray-300 text-sm">• {insight}</li>
+                              <li
+                                key={insightIndex}
+                                className="text-gray-300 text-sm"
+                              >
+                                • {insight}
+                              </li>
                             ))}
                           </ul>
                         </div>
@@ -239,7 +327,6 @@ export default async function AiArtLessonPage({ params }: PageProps) {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-6">
-            
             {/* Tools & Technologies */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
@@ -248,7 +335,9 @@ export default async function AiArtLessonPage({ params }: PageProps) {
               </h3>
               <ul className="space-y-2">
                 {lesson.tools.map((tool, index) => (
-                  <li key={index} className="text-gray-300 text-sm">• {tool}</li>
+                  <li key={index} className="text-gray-300 text-sm">
+                    • {tool}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -261,7 +350,9 @@ export default async function AiArtLessonPage({ params }: PageProps) {
               </h3>
               <ul className="space-y-2">
                 {lesson.prerequisites.map((prerequisite, index) => (
-                  <li key={index} className="text-gray-300 text-sm">• {prerequisite}</li>
+                  <li key={index} className="text-gray-300 text-sm">
+                    • {prerequisite}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -269,11 +360,13 @@ export default async function AiArtLessonPage({ params }: PageProps) {
             {/* Resources */}
             {lesson.resources.length > 0 && (
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-4">📚 Tài liệu tham khảo</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">
+                  📚 Tài liệu tham khảo
+                </h3>
                 <ul className="space-y-3">
                   {lesson.resources.map((resource, index) => (
                     <li key={index}>
-                      <a 
+                      <a
                         href={resource.url}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -290,7 +383,9 @@ export default async function AiArtLessonPage({ params }: PageProps) {
 
             {/* Quick Tips */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <h3 className="text-lg font-semibold text-white mb-4">💡 Lời khuyên</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">
+                💡 Lời khuyên
+              </h3>
               <ul className="space-y-3 text-sm text-gray-300">
                 <li>• Thử nghiệm với nhiều prompt khác nhau</li>
                 <li>• Tham khảo work của artist khác</li>
@@ -305,14 +400,16 @@ export default async function AiArtLessonPage({ params }: PageProps) {
         {/* Navigation */}
         <div className="flex justify-between items-center mt-12 pt-8 border-t border-white/20">
           {previousLesson ? (
-            <Link 
+            <Link
               href={`/learning/ai-art-creative-tech/${previousLesson.id}`}
               className="flex items-center space-x-3 bg-white/10 hover:bg-white/20 rounded-lg p-4 transition-all duration-200"
             >
               <ChevronLeft className="w-5 h-5 text-purple-400" />
               <div>
                 <div className="text-sm text-gray-400">Bài trước</div>
-                <div className="text-white font-medium">{previousLesson.title}</div>
+                <div className="text-white font-medium">
+                  {previousLesson.title}
+                </div>
               </div>
             </Link>
           ) : (
@@ -320,7 +417,7 @@ export default async function AiArtLessonPage({ params }: PageProps) {
           )}
 
           {nextLesson && (
-            <Link 
+            <Link
               href={`/learning/ai-art-creative-tech/${nextLesson.id}`}
               className="flex items-center space-x-3 bg-white/10 hover:bg-white/20 rounded-lg p-4 transition-all duration-200"
             >
@@ -334,5 +431,5 @@ export default async function AiArtLessonPage({ params }: PageProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

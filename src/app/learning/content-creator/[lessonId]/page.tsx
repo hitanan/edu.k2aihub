@@ -1,5 +1,13 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { contentCreatorLessons, ContentCreatorLessonData } from '@/data/content-creator'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  contentCreatorLessons,
+  ContentCreatorLessonData,
+} from '@/data/content-creator';
 import { PageProps } from '@/types';
 
 // Generate static params for all lessons
@@ -29,7 +37,7 @@ export default async function ContentCreatorLessonPage({ params }: PageProps) {
         monetizationMethods: '💰',
         toolsRequired: '🛠️',
         averageIncome: '💵',
-        timeToMaster: '⏰'
+        timeToMaster: '⏰',
       };
       return <span className="text-lg">{icons[field] || '📌'}</span>;
     },
@@ -61,41 +69,47 @@ export default async function ContentCreatorLessonPage({ params }: PageProps) {
             </h4>
             <div className="flex flex-wrap gap-2">
               {lesson.platforms.map((platform, index) => (
-                <span key={index} className="px-3 py-1 bg-pink-500/20 text-pink-200 rounded-full text-sm">
+                <span
+                  key={index}
+                  className="px-3 py-1 bg-pink-500/20 text-pink-200 rounded-full text-sm"
+                >
                   {platform}
                 </span>
               ))}
             </div>
           </div>
         )}
-        
-        {lesson.monetizationMethods && lesson.monetizationMethods.length > 0 && (
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-            <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
-              <span className="text-lg mr-2">💰</span>
-              Thu nhập từ
-            </h4>
-            <div className="space-y-2">
-              {lesson.monetizationMethods.map((method, index) => (
-                <div key={index} className="flex items-center text-gray-300">
-                  <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                  {method}
-                </div>
-              ))}
+
+        {lesson.monetizationMethods &&
+          lesson.monetizationMethods.length > 0 && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+              <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
+                <span className="text-lg mr-2">💰</span>
+                Thu nhập từ
+              </h4>
+              <div className="space-y-2">
+                {lesson.monetizationMethods.map((method, index) => (
+                  <div key={index} className="flex items-center text-gray-300">
+                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                    {method}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
-        
+          )}
+
         {lesson.averageIncome && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
             <h4 className="text-lg font-semibold text-white mb-2 flex items-center">
               <span className="text-lg mr-2">💵</span>
               Thu nhập tiềm năng
             </h4>
-            <p className="text-2xl font-bold text-green-400">{lesson.averageIncome}</p>
+            <p className="text-2xl font-bold text-green-400">
+              {lesson.averageIncome}
+            </p>
           </div>
         )}
-        
+
         {lesson.timeToMaster && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
             <h4 className="text-lg font-semibold text-white mb-2 flex items-center">
@@ -105,7 +119,7 @@ export default async function ContentCreatorLessonPage({ params }: PageProps) {
             <p className="text-xl text-purple-300">{lesson.timeToMaster}</p>
           </div>
         )}
-        
+
         {lesson.toolsRequired && lesson.toolsRequired.length > 0 && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
             <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
@@ -123,9 +137,9 @@ export default async function ContentCreatorLessonPage({ params }: PageProps) {
           </div>
         )}
       </div>
-    )
-  }
-  
+    ),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

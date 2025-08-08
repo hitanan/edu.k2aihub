@@ -1,7 +1,13 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig, BaseLessonData } from '@/components/learning/LessonPageTemplate'
-import { greenTechLessons, GreenTechLesson } from '@/data/green-technology'
-import { PageProps } from '@/types'
-import { Palette } from 'lucide-react'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+  BaseLessonData,
+} from '@/components/learning/LessonPageTemplate';
+import { greenTechLessons, GreenTechLesson } from '@/data/green-technology';
+import { PageProps } from '@/types';
+import { Palette } from 'lucide-react';
 
 // Convert GreenTechLesson to BaseLessonData interface
 function convertToLesson(gtLesson: GreenTechLesson): BaseLessonData {
@@ -15,71 +21,77 @@ function convertToLesson(gtLesson: GreenTechLesson): BaseLessonData {
     videoUrl: gtLesson.videoUrl,
     objectives: gtLesson.objectives,
     prerequisites: gtLesson.prerequisites || [],
-    exercises: (gtLesson.exercises || []).map(ex => ({
+    exercises: (gtLesson.exercises || []).map((ex) => ({
       title: ex.title,
       description: ex.description,
       difficulty: ex.difficulty,
       materials: [],
       procedure: [],
-      expectedResults:  '',
-      solution: ex.solution || ''
+      expectedResults: '',
+      solution: ex.solution || '',
     })),
-    resources: (gtLesson.resources || []).map(res => ({
+    resources: (gtLesson.resources || []).map((res) => ({
       title: res.title || 'Resource',
       url: res.url || '#',
-      type: res.type || 'external'
+      type: res.type || 'external',
     })),
     realWorldApplications: gtLesson.realWorldApplications || [],
-    caseStudies: (gtLesson.caseStudies || []).map(cs => ({
+    caseStudies: (gtLesson.caseStudies || []).map((cs) => ({
       title: cs.title,
       organization: cs.company || 'Unknown Organization',
       problem: cs.challenge || 'Challenge not specified',
       solution: cs.solution,
       impact: cs.results || 'Impact not specified',
-      innovations: cs.insights || []
-    }))
-  }
+      innovations: cs.insights || [],
+    })),
+  };
 }
 
 // Generate static params
 export async function generateStaticParams() {
-  const convertedLessons = greenTechLessons.map(convertToLesson)
-  return generateLessonStaticParams(convertedLessons)
+  const convertedLessons = greenTechLessons.map(convertToLesson);
+  return generateLessonStaticParams(convertedLessons);
 }
 
 // Generate metadata
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  const convertedLessons = greenTechLessons.map(convertToLesson)
-  return generateLessonMetadata(lessonId, convertedLessons)
+  const convertedLessons = greenTechLessons.map(convertToLesson);
+  return generateLessonMetadata(lessonId, convertedLessons);
 }
 
 // Page component
 export default async function GreenTechnologyLessonPage({ params }: PageProps) {
   const { lessonId } = await params;
   // Convert lessons to base interface
-  const convertedLessons = greenTechLessons.map(convertToLesson)
+  const convertedLessons = greenTechLessons.map(convertToLesson);
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'green-technology',
-    moduleTitle: 'Green Technology & Sustainability', 
+    moduleTitle: 'Green Technology & Sustainability',
     modulePath: '/learning/green-technology',
     lessons: convertedLessons,
     primaryColor: 'emerald',
-    secondaryColor: 'green', 
+    secondaryColor: 'green',
     gradientColors: 'from-green-900 via-emerald-900 to-teal-900',
     getFieldIcon: (field: string) => {
       switch (field) {
-        case 'category': return <span className="w-5 h-5">🌱</span>
-        case 'duration': return <span className="w-5 h-5">⏱️</span>
-        case 'difficulty': return <span className="w-5 h-5">🎯</span>
-        case 'tools': return <span className="w-5 h-5">🛠️</span>
-        case 'environmentalImpact': return <span className="w-5 h-5">🌍</span>
-        default: return <span className="w-5 h-5">🌿</span>
+        case 'category':
+          return <span className="w-5 h-5">🌱</span>;
+        case 'duration':
+          return <span className="w-5 h-5">⏱️</span>;
+        case 'difficulty':
+          return <span className="w-5 h-5">🎯</span>;
+        case 'tools':
+          return <span className="w-5 h-5">🛠️</span>;
+        case 'environmentalImpact':
+          return <span className="w-5 h-5">🌍</span>;
+        default:
+          return <span className="w-5 h-5">🌿</span>;
       }
     },
     getFieldValue: () => {
       // Return a generic field value for green technology
-      return 'Sustainable Impact'
+      return 'Sustainable Impact';
     },
     sidebarContent: (lesson) => (
       <div className="space-y-6">
@@ -110,17 +122,19 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
           </div>
         </div>
 
-         {/* Tools & Technologies */}
+        {/* Tools & Technologies */}
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+          <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
             <Palette className="w-5 h-5 text-purple-400 mr-2" />
             Công cụ cần thiết
-            </h3>
-            <ul className="space-y-2">
+          </h3>
+          <ul className="space-y-2">
             {lesson.tools?.map((tool, index) => (
-                <li key={index} className="text-gray-300 text-sm">• {tool}</li>
+              <li key={index} className="text-gray-300 text-sm">
+                • {tool as string}
+              </li>
             ))}
-            </ul>
+          </ul>
         </div>
 
         {/* Green Tech Metrics */}
@@ -135,7 +149,9 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-300">Job Creation</span>
-              <span className="text-emerald-400 font-semibold">42M by 2030</span>
+              <span className="text-emerald-400 font-semibold">
+                42M by 2030
+              </span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-300">Investment ROI</span>
@@ -195,8 +211,8 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
           </div>
         </div>
       </div>
-    )
-  }
+    ),
+  };
 
-  return <LessonPageTemplate lessonId={lessonId} config={config} />
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

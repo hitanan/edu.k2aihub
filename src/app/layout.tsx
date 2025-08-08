@@ -1,25 +1,33 @@
 import type { Metadata } from 'next';
-import {Geist, Geist_Mono} from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { createTitle, createDescription, createKeywords, createOrganizationStructuredData } from '@/utils/seo';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
+import {
+  createTitle,
+  createDescription,
+  createKeywords,
+  createOrganizationStructuredData,
+} from '@/utils/seo';
 import { getAbsoluteAssetUrl } from '@/utils/assets';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
+  title: createTitle(
+    'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
+  ),
   description: createDescription(
-    'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+    'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
   ),
   keywords: createKeywords([
     'Vietnam geography',
@@ -29,7 +37,7 @@ export const metadata: Metadata = {
     'K2AI',
     'vietnamese education',
     'practical AI',
-    'interactive map'
+    'interactive map',
   ]),
   authors: [{ name: 'K2AI Team' }],
   creator: 'K2AI',
@@ -37,31 +45,35 @@ export const metadata: Metadata = {
   formatDetection: {
     email: false,
     address: false,
-    telephone: false
+    telephone: false,
   },
   metadataBase: new URL('https://k2aihub.com'),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   openGraph: {
-    title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
+    title: createTitle(
+      'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
+    ),
     description: createDescription(
-      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
     ),
     url: 'https://k2aihub.com',
     siteName: 'K2AiHub',
     locale: 'vi_VN',
     type: 'website',
-    images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')]
+    images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')],
   },
   twitter: {
     card: 'summary_large_image',
-    title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
-    description: createDescription(
-      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.'
+    title: createTitle(
+      'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
     ),
-    images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')]
-  }
+    description: createDescription(
+      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
+    ),
+    images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')],
+  },
 };
 
 export default function RootLayout({
@@ -88,10 +100,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
         suppressHydrationWarning={true}
       >
+        {/* Google Analytics */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics
+            measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          />
+        )}
+
         <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

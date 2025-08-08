@@ -1,8 +1,23 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { foodTechnologyLessons, type FoodTechnologyLesson } from '@/data/food-technology'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  foodTechnologyLessons,
+  type FoodTechnologyLesson,
+} from '@/data/food-technology';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { Shield, FlaskConical, ChefHat, Leaf, Utensils, Beaker } from 'lucide-react';
+import {
+  Shield,
+  FlaskConical,
+  ChefHat,
+  Leaf,
+  Utensils,
+  Beaker,
+} from 'lucide-react';
 
 // Convert FoodTechnologyLesson to BaseLessonData
 function convertToBaseLessonData(lesson: FoodTechnologyLesson): BaseLessonData {
@@ -24,9 +39,9 @@ function convertToBaseLessonData(lesson: FoodTechnologyLesson): BaseLessonData {
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.innovations || []
+      innovations: study.innovations || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
@@ -47,14 +62,14 @@ export async function generateMetadata({ params }: PageProps) {
 // Icon mapping function for food technology fields
 function getFoodTechIcon(field: string) {
   const iconMap: Record<string, React.ReactNode> = {
-    'safety': <Shield className="w-5 h-5" />,
-    'fermentation': <FlaskConical className="w-5 h-5" />,
-    'molecular': <ChefHat className="w-5 h-5" />,
-    'sustainable': <Leaf className="w-5 h-5" />,
-    'processing': <Utensils className="w-5 h-5" />,
-    'biotechnology': <Beaker className="w-5 h-5" />
+    safety: <Shield className="w-5 h-5" />,
+    fermentation: <FlaskConical className="w-5 h-5" />,
+    molecular: <ChefHat className="w-5 h-5" />,
+    sustainable: <Leaf className="w-5 h-5" />,
+    processing: <Utensils className="w-5 h-5" />,
+    biotechnology: <Beaker className="w-5 h-5" />,
   };
-  
+
   return iconMap[field] || <Utensils className="w-5 h-5" />;
 }
 
@@ -68,9 +83,9 @@ export default async function FoodTechnologyLessonPage({ params }: PageProps) {
     primaryColor: 'amber',
     secondaryColor: 'orange',
     gradientColors: 'from-slate-900 via-amber-900 to-slate-900',
-    getFieldIcon: (field: string) => getFoodTechIcon(field)
-  }
-  
+    getFieldIcon: (field: string) => getFoodTechIcon(field),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

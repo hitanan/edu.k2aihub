@@ -1,5 +1,13 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { blockchainLessons, type BlockchainLesson } from '@/data/blockchain-defi'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  blockchainLessons,
+  type BlockchainLesson,
+} from '@/data/blockchain-defi';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Cpu, Shield, Coins, Palette, Scale } from 'lucide-react';
@@ -24,9 +32,9 @@ function convertToBaseLessonData(lesson: BlockchainLesson): BaseLessonData {
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.technologies || []
+      innovations: study.technologies || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
@@ -47,15 +55,15 @@ export async function generateMetadata({ params }: PageProps) {
 // Icon mapping function for blockchain-specific fields
 function getBlockchainIcon(field: string) {
   const iconMap: Record<string, React.ReactNode> = {
-    'cryptography': <Shield className="w-5 h-5" />,
-    'consensus': <Cpu className="w-5 h-5" />,
-    'defi': <Coins className="w-5 h-5" />,
-    'nft': <Palette className="w-5 h-5" />,
-    'regulatory': <Scale className="w-5 h-5" />,
-    'security': <Shield className="w-5 h-5" />,
-    'development': <Cpu className="w-5 h-5" />
+    cryptography: <Shield className="w-5 h-5" />,
+    consensus: <Cpu className="w-5 h-5" />,
+    defi: <Coins className="w-5 h-5" />,
+    nft: <Palette className="w-5 h-5" />,
+    regulatory: <Scale className="w-5 h-5" />,
+    security: <Shield className="w-5 h-5" />,
+    development: <Cpu className="w-5 h-5" />,
   };
-  
+
   return iconMap[field] || <Cpu className="w-5 h-5" />;
 }
 
@@ -69,9 +77,9 @@ export default async function BlockchainLessonPage({ params }: PageProps) {
     primaryColor: 'orange',
     secondaryColor: 'red',
     gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
-    getFieldIcon: (field: string) => getBlockchainIcon(field)
-  }
-  
+    getFieldIcon: (field: string) => getBlockchainIcon(field),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -8,38 +8,56 @@ const Footer: React.FC = () => {
 
   // Generate categories dynamically from moduleNavigation
   const getCategorizedModules = () => {
-    const categoryMap: Record<string, {
-      title: string;
-      icon: string;
-      color: string;
-      modules: Array<{name: string; href: string; icon: string}>;
-    }> = {};
+    const categoryMap: Record<
+      string,
+      {
+        title: string;
+        icon: string;
+        color: string;
+        modules: Array<{ name: string; href: string; icon: string }>;
+      }
+    > = {};
 
     // Core modules
-    const coreModules = moduleNavigation.filter(module => module.coreModule);
+    const coreModules = moduleNavigation.filter((module) => module.coreModule);
     if (coreModules.length > 0) {
       categoryMap['core'] = {
         title: 'Core Modules',
         icon: '🌟',
         color: 'text-blue-400',
-        modules: coreModules.map(module => ({
+        modules: coreModules.map((module) => ({
           name: module.title,
           href: module.href || '/',
-          icon: module.icon
-        }))
+          icon: module.icon,
+        })),
       };
     }
 
     // Learning modules by category
-    const categoryNames: Record<string, {title: string; icon: string; color: string}> = {
-      'trending': { title: '2025 Trending', icon: '🚀', color: 'text-purple-400' },
-      'professional': { title: 'Professional Skills', icon: '💼', color: 'text-emerald-400' },
-      'creative': { title: 'Creative & Tech', icon: '🎨', color: 'text-pink-400' },
-      'programming': { title: 'Programming', icon: '💻', color: 'text-cyan-400' },
-      'stem': { title: 'STEM & Hardware', icon: '🔬', color: 'text-orange-400' }
+    const categoryNames: Record<
+      string,
+      { title: string; icon: string; color: string }
+    > = {
+      trending: {
+        title: '2025 Trending',
+        icon: '🚀',
+        color: 'text-purple-400',
+      },
+      professional: {
+        title: 'Professional Skills',
+        icon: '💼',
+        color: 'text-emerald-400',
+      },
+      creative: {
+        title: 'Creative & Tech',
+        icon: '🎨',
+        color: 'text-pink-400',
+      },
+      programming: { title: 'Programming', icon: '💻', color: 'text-cyan-400' },
+      stem: { title: 'STEM & Hardware', icon: '🔬', color: 'text-orange-400' },
     };
 
-    moduleNavigation.forEach(module => {
+    moduleNavigation.forEach((module) => {
       if (!module.coreModule && module.category) {
         let categoryKey = module.category;
         if (typeof categoryKey === 'string') {
@@ -52,7 +70,7 @@ const Footer: React.FC = () => {
               title: categoryInfo.title,
               icon: categoryInfo.icon,
               color: categoryInfo.color,
-              modules: []
+              modules: [],
             };
           }
 
@@ -60,16 +78,15 @@ const Footer: React.FC = () => {
             categoryMap[key].modules.push({
               name: module.title,
               href: module.href || `/learning/${module.id}`,
-              icon: module.icon
+              icon: module.icon,
             });
           }
-          
         });
       }
     });
 
     // Limit to 3-4 modules per category for footer
-    Object.keys(categoryMap).forEach(key => {
+    Object.keys(categoryMap).forEach((key) => {
       categoryMap[key].modules = categoryMap[key].modules.slice(0, 4);
     });
 
@@ -94,7 +111,6 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
         {/* Top section - Brand and stats */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
           {/* Brand */}
@@ -111,7 +127,8 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 max-w-md text-sm">
-              Nền tảng giáo dục với 14+ module chuyên sâu cho tương lai công nghệ.
+              Nền tảng giáo dục với 14+ module chuyên sâu cho tương lai công
+              nghệ.
             </p>
           </div>
 
@@ -131,7 +148,9 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {modulesByCategory.map((category, index) => (
             <div key={index} className="space-y-3">
-              <h3 className={`font-semibold ${category.color} flex items-center space-x-2`}>
+              <h3
+                className={`font-semibold ${category.color} flex items-center space-x-2`}
+              >
                 <span>{category.icon}</span>
                 <span className="text-sm">{category.title}</span>
               </h3>

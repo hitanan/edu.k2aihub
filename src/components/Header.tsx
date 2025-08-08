@@ -3,13 +3,24 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Menu, X, Home, Globe, Brain, Code, Heart } from 'lucide-react';
+import {
+  ChevronDown,
+  Menu,
+  X,
+  Home,
+  Globe,
+  Brain,
+  Code,
+  Heart,
+} from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLearningDropdownOpen, setIsLearningDropdownOpen] = useState(false);
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(
+    null,
+  );
 
   // Improved mouse handlers for dropdown
   const handleDropdownEnter = () => {
@@ -31,33 +42,54 @@ const Header: React.FC = () => {
   // Core modules - always visible
   const coreModules = [
     { name: 'Trang Chủ', href: '/', icon: <Home className="w-4 h-4" /> },
-    { name: 'Địa Lý Việt Nam', href: '/city', icon: <Globe className="w-4 h-4" /> },
+    {
+      name: 'Địa Lý Việt Nam',
+      href: '/city',
+      icon: <Globe className="w-4 h-4" />,
+    },
     { name: 'AI Của Tôi', href: '/ai', icon: <Brain className="w-4 h-4" /> },
-    { name: 'Về Chúng Tôi', href: '/about', icon: <Heart className="w-4 h-4" /> },
+    {
+      name: 'Trò Chơi Giáo Dục',
+      href: '/games',
+      icon: <span className="w-4 h-4 text-center">🎮</span>,
+    },
+    {
+      name: 'Hồ Sơ',
+      href: '/profile',
+      icon: <span className="w-4 h-4 text-center">👤</span>,
+    },
+    {
+      name: 'Về Chúng Tôi',
+      href: '/about',
+      icon: <Heart className="w-4 h-4" />,
+    },
   ];
 
   // Learning modules - dynamically generated from moduleNavigation
   const getLearningModulesByCategory = () => {
-    const categoryMap: Record<string, { 
-      category: string; 
-      icon: string; 
-      modules: Array<{name: string; href: string; icon: string}> 
-    }> = {};
-    
-    moduleNavigation.forEach(module => {
+    const categoryMap: Record<
+      string,
+      {
+        category: string;
+        icon: string;
+        modules: Array<{ name: string; href: string; icon: string }>;
+      }
+    > = {};
+
+    moduleNavigation.forEach((module) => {
       if (!module.coreModule && module.href?.startsWith('/learning/')) {
         let categoryKey = module.category;
         if (typeof categoryKey === 'string') {
           categoryKey = [categoryKey];
         }
         const categoryNames: Record<string, string> = {
-          'trending': '🚀 2025 Trending',
-          'vietnamese': '🇻🇳 Vietnamese Market', 
-          'professional': '💼 Professional Skills',
-          'creative': '🎨 Creative & Technology',
-          'security': '🔒 Security & Science',
-          'programming': '💻 Programming',
-          'stem': '🔬 STEM Foundation'
+          trending: '🚀 2025 Trending',
+          vietnamese: '🇻🇳 Vietnamese Market',
+          professional: '💼 Professional Skills',
+          creative: '🎨 Creative & Technology',
+          security: '🔒 Security & Science',
+          programming: '💻 Programming',
+          stem: '🔬 STEM Foundation',
         };
 
         categoryKey.forEach((key) => {
@@ -65,14 +97,14 @@ const Header: React.FC = () => {
             categoryMap[key] = {
               category: categoryNames[key] || key,
               icon: module.icon,
-              modules: []
+              modules: [],
             };
           }
 
           categoryMap[key].modules.push({
             name: module.title,
             href: module.href || `/learning/${module.id}`,
-            icon: module.icon
+            icon: module.icon,
           });
         });
       }
@@ -84,7 +116,7 @@ const Header: React.FC = () => {
       categoryKey,
       modules: categoryData.modules.slice(0, 4), // Limit to 4 modules
       hasMore: categoryData.modules.length > 4, // Check if there are more modules
-      totalCount: categoryData.modules.length
+      totalCount: categoryData.modules.length,
     }));
   };
 
@@ -138,7 +170,7 @@ const Header: React.FC = () => {
             ))}
 
             {/* Learning dropdown with improved UX */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={handleDropdownEnter}
               onMouseLeave={handleDropdownLeave}
@@ -161,7 +193,7 @@ const Header: React.FC = () => {
                 <div className="absolute top-full right-0 w-[90vw] max-w-5xl z-50">
                   {/* Invisible bridge to prevent dropdown from closing */}
                   <div className="h-2 bg-transparent" />
-                  
+
                   <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden">
                     <div className="p-6">
                       {/* Responsive grid layout */}
@@ -170,10 +202,16 @@ const Header: React.FC = () => {
                           <div key={category.category} className="space-y-2">
                             <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center justify-between border-b border-gray-100 pb-1">
                               <div className="flex items-center space-x-1">
-                                <span className="text-base">{category.icon}</span>
-                                <span className="text-xs">{category.category}</span>
+                                <span className="text-base">
+                                  {category.icon}
+                                </span>
+                                <span className="text-xs">
+                                  {category.category}
+                                </span>
                               </div>
-                              <span className="text-xs text-gray-500">({category.totalCount})</span>
+                              <span className="text-xs text-gray-500">
+                                ({category.totalCount})
+                              </span>
                             </h3>
                             <div className="space-y-1">
                               {category.modules.map((module) => (
@@ -181,7 +219,9 @@ const Header: React.FC = () => {
                                   key={module.name}
                                   href={module.href}
                                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-all duration-200 group border border-transparent hover:border-blue-100"
-                                  onClick={() => setIsLearningDropdownOpen(false)}
+                                  onClick={() =>
+                                    setIsLearningDropdownOpen(false)
+                                  }
                                 >
                                   <span className="text-sm">{module.icon}</span>
                                   <div className="flex-1">
@@ -195,7 +235,9 @@ const Header: React.FC = () => {
                                 <Link
                                   href={`/learning?category=${category.categoryKey}`}
                                   className="flex items-center space-x-2 p-2 rounded-lg bg-blue-50 hover:bg-blue-100 transition-all duration-200 group border border-blue-200"
-                                  onClick={() => setIsLearningDropdownOpen(false)}
+                                  onClick={() =>
+                                    setIsLearningDropdownOpen(false)
+                                  }
                                 >
                                   <span className="text-sm">👀</span>
                                   <div className="flex-1">
@@ -212,8 +254,8 @@ const Header: React.FC = () => {
 
                       <div className="mt-6 pt-4 border-t border-gray-100">
                         <div className="flex flex-wrap justify-center gap-3">
-                          <Link 
-                            href="/learning" 
+                          <Link
+                            href="/learning"
                             className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-sm"
                             onClick={() => setIsLearningDropdownOpen(false)}
                           >
@@ -235,7 +277,11 @@ const Header: React.FC = () => {
               className="p-2 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -259,7 +305,7 @@ const Header: React.FC = () => {
                   <span>{item.name}</span>
                 </Link>
               ))}
-              
+
               <Link
                 href="/learning"
                 className={`flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${

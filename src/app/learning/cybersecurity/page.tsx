@@ -1,74 +1,105 @@
-import type { Metadata } from "next";
-import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
+import type { Metadata } from 'next';
+import ModulePageTemplate, {
+  type ModuleData,
+} from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { cyberSecurityLessons, type CyberSecurityLesson } from '@/data/cybersecurity';
+import {
+  CybersecurityLessonData,
+  CybersecurityLessons,
+} from '@/data/cybersecurity';
 import { K2Module } from '@/data/moduleNavigation';
 import { createTitle, createDescription } from '@/utils/seo';
 
 export const metadata: Metadata = {
-  title: createTitle("Cybersecurity & Ethical Hacking - An Ninh Mạng"),
-  description: createDescription("Khóa học Cybersecurity và Ethical Hacking chuyên sâu. Từ penetration testing đến security operations, bảo vệ hệ thống và dữ liệu khỏi các mối đe dọa"),
-  keywords: ["cybersecurity", "ethical hacking", "penetration testing", "network security", "incident response", "security operations", "k2aihub"],
-  authors: [{ name: "K2AiHub Team" }],
+  title: createTitle('Cybersecurity & Ethical Hacking - An Ninh Mạng'),
+  description: createDescription(
+    'Khóa học Cybersecurity và Ethical Hacking chuyên sâu. Từ penetration testing đến security operations, bảo vệ hệ thống và dữ liệu khỏi các mối đe dọa',
+  ),
+  keywords: [
+    'cybersecurity',
+    'ethical hacking',
+    'penetration testing',
+    'network security',
+    'incident response',
+    'security operations',
+    'k2aihub',
+  ],
+  authors: [{ name: 'K2AiHub Team' }],
   openGraph: {
-    title: "Cybersecurity & Ethical Hacking",
-    description: "Trở thành chuyên gia an ninh mạng với khóa học thực tế từ K2AiHub",
-    type: "website",
+    title: 'Cybersecurity & Ethical Hacking',
+    description:
+      'Trở thành chuyên gia an ninh mạng với khóa học thực tế từ K2AiHub',
+    type: 'website',
   },
 };
 
 // Convert CyberSecurityLesson to BaseLessonData interface
-function convertToLesson(cyberSecurityLesson: CyberSecurityLesson): BaseLessonData {
+function convertToLesson(
+  cyberSecurityLesson: CybersecurityLessonData,
+): BaseLessonData {
   return {
     id: cyberSecurityLesson.id,
     title: cyberSecurityLesson.title,
     description: cyberSecurityLesson.description,
     duration: cyberSecurityLesson.duration,
     difficulty: cyberSecurityLesson.difficulty,
-    category: cyberSecurityLesson.securityDomain || 'Cybersecurity',
+    category: cyberSecurityLesson.category,
     imageUrl: cyberSecurityLesson.imageUrl || '/default-lesson.jpg',
     videoUrl: cyberSecurityLesson.videoUrl,
     objectives: cyberSecurityLesson.objectives,
-    prerequisites: cyberSecurityLesson.prerequisites || ['Basic networking', 'Computer fundamentals'],
-    exercises: cyberSecurityLesson.exercises?.map(ex => ({
-      title: ex.title,
-      description: ex.description,
-      difficulty: ex.difficulty,
-      materials: ex.requirements || [],
-      procedure: ex.hints || [ex.description],
-      expectedResults: ex.expectedOutput || 'Security test completed successfully',
-      solution: ex.solution || 'Follow security best practices'
-    })) || [],
+    prerequisites: cyberSecurityLesson.prerequisites || [
+      'Basic networking',
+      'Computer fundamentals',
+    ],
+    exercises:
+      cyberSecurityLesson.exercises?.map((ex) => ({
+        title: ex.title,
+        description: ex.description,
+        difficulty: ex.difficulty,
+        materials: ex.materials || [],
+        procedure: ex.hints || [ex.description],
+        expectedResults:
+          ex.expectedResults || 'Security test completed successfully',
+        solution: ex.solution || 'Follow security best practices',
+      })) || [],
     resources: cyberSecurityLesson.resources || [],
-    tools: cyberSecurityLesson.tools || ['Kali Linux', 'Metasploit', 'Wireshark', 'Nmap'],
+    tools: cyberSecurityLesson.tools || [
+      'Kali Linux',
+      'Metasploit',
+      'Wireshark',
+      'Nmap',
+    ],
     realWorldApplications: cyberSecurityLesson.realWorldApplications || [],
-    caseStudies: cyberSecurityLesson.caseStudies?.map(cs => ({
-      title: cs.title,
-      organization: cs.organization,
-      problem: cs.challenge,
-      solution: cs.solution,
-      impact: cs.results,
-      innovations: cs.insights || []
-    })) || []
-  }
+    caseStudies:
+      cyberSecurityLesson.caseStudies?.map((cs) => ({
+        title: cs.title,
+        organization: cs.organization,
+        problem: cs.problem,
+        solution: cs.solution,
+        impact: cs.impact,
+        innovations: cs.innovations || [],
+      })) || [],
+  };
 }
 
 export default function CybersecurityPage() {
   // Convert lessons to base interface
-  const convertedLessons = cyberSecurityLessons.map(convertToLesson);
+  const convertedLessons = CybersecurityLessons.map(convertToLesson);
 
   const moduleData: ModuleData = {
     id: 'cybersecurity',
     title: 'Cybersecurity & Ethical Hacking',
     subtitle: 'An ninh mạng & Ethical Hacking',
-    description: 'Trở thành chuyên gia bảo mật thông tin với các kỹ thuật ethical hacking và cybersecurity hiện đại. Học cách bảo vệ hệ thống, phát hiện và ngăn chặn các cuộc tấn công mạng.',
+    description:
+      'Trở thành chuyên gia bảo mật thông tin với các kỹ thuật ethical hacking và cybersecurity hiện đại. Học cách bảo vệ hệ thống, phát hiện và ngăn chặn các cuộc tấn công mạng.',
     level: 'Trung bình đến Nâng cao',
     duration: '25-30 giờ',
     category: 'Security & Technology',
     primaryColor: 'red',
     gradientColors: 'from-slate-900 via-red-900 to-orange-900',
     basePath: '/learning/cybersecurity',
-    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
+    heroImageUrl:
+      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     features: [
       'Penetration Testing và Vulnerability Assessment',
       'Network Security và Firewall Configuration',
@@ -77,14 +108,14 @@ export default function CybersecurityPage() {
       'Social Engineering và Security Awareness',
       'Cryptography và Data Protection',
       'Security Operations Center (SOC)',
-      'Compliance và Risk Management'
+      'Compliance và Risk Management',
     ],
     icon: '🔒',
     statsConfig: {
-      lessons: `${cyberSecurityLessons.length}+ bài`,
+      lessons: `${CybersecurityLessons.length}+ bài`,
       duration: '25-30 giờ',
       level: 'Trung bình đến Nâng cao',
-      projects: '15+ bài lab thực hành'
+      projects: '15+ bài lab thực hành',
     },
     marketData: {
       marketSize: '$345 Billion',
@@ -94,7 +125,7 @@ export default function CybersecurityPage() {
       reduction: '95% Threat',
       reductionNote: 'Detection with proper security',
       startups: '3.5 Million',
-      startupsNote: 'Unfilled cybersecurity jobs'
+      startupsNote: 'Unfilled cybersecurity jobs',
     },
     objectives: [
       'Thực hiện penetration testing và vulnerability assessment',
@@ -102,13 +133,13 @@ export default function CybersecurityPage() {
       'Phân tích và respond to security incidents',
       'Áp dụng các phương pháp ethical hacking một cách có trách nhiệm',
       'Hiểu và implement các security frameworks và standards',
-      'Phát triển kỹ năng digital forensics và malware analysis'
+      'Phát triển kỹ năng digital forensics và malware analysis',
     ],
     prerequisites: [
       'Kiến thức cơ bản về networking và operating systems',
       'Hiểu biết về TCP/IP và các protocols mạng',
       'Kỹ năng sử dụng command line và scripting',
-      'Tư duy logic và khả năng phân tích'
+      'Tư duy logic và khả năng phân tích',
     ],
     careerPaths: [
       'Cybersecurity Analyst (18-35 triệu VNĐ)',
@@ -118,7 +149,7 @@ export default function CybersecurityPage() {
       'Digital Forensics Investigator (22-40 triệu VNĐ)',
       'Chief Information Security Officer (CISO) (60-150 triệu VNĐ)',
       'Security Consultant (28-50 triệu VNĐ)',
-      'Incident Response Specialist (20-38 triệu VNĐ)'
+      'Incident Response Specialist (20-38 triệu VNĐ)',
     ],
     industryApplications: [
       'Banking và financial services',
@@ -130,51 +161,69 @@ export default function CybersecurityPage() {
       'Education và research institutions',
       'Telecommunications',
       'Critical infrastructure',
-      'Cybersecurity consulting firms'
+      'Cybersecurity consulting firms',
     ],
     technicalHighlights: [
       {
         title: 'Penetration Testing',
         icon: '🎯',
-        items: ['Web App Testing', 'Network Scanning', 'Vulnerability Assessment', 'Exploitation Techniques']
+        items: [
+          'Web App Testing',
+          'Network Scanning',
+          'Vulnerability Assessment',
+          'Exploitation Techniques',
+        ],
       },
       {
         title: 'Security Tools',
         icon: '🛠️',
-        items: ['Kali Linux', 'Metasploit', 'Burp Suite', 'Wireshark']
+        items: ['Kali Linux', 'Metasploit', 'Burp Suite', 'Wireshark'],
       },
       {
         title: 'Incident Response',
         icon: '🚨',
-        items: ['Threat Detection', 'Digital Forensics', 'Malware Analysis', 'Recovery Procedures']
+        items: [
+          'Threat Detection',
+          'Digital Forensics',
+          'Malware Analysis',
+          'Recovery Procedures',
+        ],
       },
       {
         title: 'Network Security',
         icon: '🌐',
-        items: ['Firewall Configuration', 'IDS/IPS Systems', 'VPN Setup', 'Network Monitoring']
+        items: [
+          'Firewall Configuration',
+          'IDS/IPS Systems',
+          'VPN Setup',
+          'Network Monitoring',
+        ],
       },
       {
         title: 'Cryptography',
         icon: '🔐',
-        items: ['Encryption Algorithms', 'Digital Signatures', 'PKI Systems', 'Hash Functions']
+        items: [
+          'Encryption Algorithms',
+          'Digital Signatures',
+          'PKI Systems',
+          'Hash Functions',
+        ],
       },
       {
         title: 'Compliance',
         icon: '📋',
-        items: ['ISO 27001', 'NIST Framework', 'GDPR Compliance', 'Risk Assessment']
-      }
+        items: [
+          'ISO 27001',
+          'NIST Framework',
+          'GDPR Compliance',
+          'Risk Assessment',
+        ],
+      },
     ],
-    relatedModules: [
-      K2Module.Python,
-      K2Module.Arduino,
-      K2Module.Biotechnology
-    ]
+    relatedModules: [K2Module.Python, K2Module.Arduino, K2Module.Biotechnology],
   };
 
   return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={convertedLessons}
-    />
+    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
   );
 }

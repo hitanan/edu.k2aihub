@@ -1,6 +1,12 @@
 import { Building } from 'lucide-react';
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig, BaseLessonData } from '@/components/learning/LessonPageTemplate'
-import { vietnameseBusinessLessons } from '@/data/vietnamese-business'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+  BaseLessonData,
+} from '@/components/learning/LessonPageTemplate';
+import { vietnameseBusinessLessons } from '@/data/vietnamese-business';
 import { PageProps } from '@/types';
 
 // Extend VietnameseBusinessLesson to be compatible with BaseLessonData
@@ -10,25 +16,27 @@ interface ExtendedVietnameseBusinessLesson extends BaseLessonData {
 }
 
 // Transform the lessons to match BaseLessonData interface
-const transformedLessons: ExtendedVietnameseBusinessLesson[] = vietnameseBusinessLessons.map(lesson => ({
-  ...lesson,
-  // Ensure all required BaseLessonData fields are present
-  exercises: lesson.exercises.map(exercise => ({
-    ...exercise,
-    materials: exercise.requirements || [],
-    procedure: exercise.hints || [],
-    expectedResults: exercise.expectedOutput || '',
-  })),
-  // Map caseStudies to match expected format
-  caseStudies: lesson.caseStudies?.map(cs => ({
-    title: cs.title,
-    organization: cs.company,
-    problem: cs.challenge,
-    solution: cs.solution,
-    impact: cs.results,
-    innovations: cs.insights || []
-  })) || []
-}));
+const transformedLessons: ExtendedVietnameseBusinessLesson[] =
+  vietnameseBusinessLessons.map((lesson) => ({
+    ...lesson,
+    // Ensure all required BaseLessonData fields are present
+    exercises: lesson.exercises.map((exercise) => ({
+      ...exercise,
+      materials: exercise.requirements || [],
+      procedure: exercise.hints || [],
+      expectedResults: exercise.expectedOutput || '',
+    })),
+    // Map caseStudies to match expected format
+    caseStudies:
+      lesson.caseStudies?.map((cs) => ({
+        title: cs.title,
+        organization: cs.company,
+        problem: cs.challenge,
+        solution: cs.solution,
+        impact: cs.results,
+        innovations: cs.insights || [],
+      })) || [],
+  }));
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -42,7 +50,9 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function VietnameseBusinessLessonPage({ params }: PageProps) {
+export default async function VietnameseBusinessLessonPage({
+  params,
+}: PageProps) {
   const config: LessonPageConfig<ExtendedVietnameseBusinessLesson> = {
     moduleName: 'vietnamese-business',
     moduleTitle: 'Vietnamese Business Development',
@@ -58,23 +68,29 @@ export default async function VietnameseBusinessLessonPage({ params }: PageProps
         <h4 className="font-semibold text-white mb-3">Business Topics</h4>
         <div className="space-y-2">
           {lesson.businessTopics?.map((topic, index) => (
-            <div key={index} className="text-sm text-gray-300 bg-emerald-500/10 p-2 rounded border border-emerald-500/20">
+            <div
+              key={index}
+              className="text-sm text-gray-300 bg-emerald-500/10 p-2 rounded border border-emerald-500/20"
+            >
               {topic}
             </div>
           ))}
         </div>
-        
+
         <h4 className="font-semibold text-white mb-3 mt-4">Key Regulations</h4>
         <div className="space-y-2">
           {lesson.regulations?.map((regulation, index) => (
-            <div key={index} className="text-xs text-gray-400 bg-white/5 p-2 rounded border border-white/10">
+            <div
+              key={index}
+              className="text-xs text-gray-400 bg-white/5 p-2 rounded border border-white/10"
+            >
               {regulation}
             </div>
           ))}
         </div>
       </div>
-    )
-  }
+    ),
+  };
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

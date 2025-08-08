@@ -1,5 +1,8 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { foodTechnologyLessons, type FoodTechnologyLesson } from '@/data/food-technology';
+import {
+  foodTechnologyLessons,
+  type FoodTechnologyLesson,
+} from '@/data/food-technology';
 import { createTitle, createDescription } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
@@ -24,20 +27,33 @@ function convertToBaseLessonData(lesson: FoodTechnologyLesson): BaseLessonData {
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.innovations || []
+      innovations: study.innovations || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
 export async function generateMetadata() {
   return {
     title: createTitle('Food Technology - Công Nghệ Thực Phẩm'),
-    description: createDescription('Master food technology: food safety, fermentation, molecular gastronomy, sustainable production. Vietnamese food industry modernization với traditional focus.'),
-    keywords: ['food technology', 'food safety', 'fermentation', 'molecular gastronomy', 'vietnamese food', 'nuoc mam', 'food processing', 'sustainability', 'K2AI'],
+    description: createDescription(
+      'Master food technology: food safety, fermentation, molecular gastronomy, sustainable production. Vietnamese food industry modernization với traditional focus.',
+    ),
+    keywords: [
+      'food technology',
+      'food safety',
+      'fermentation',
+      'molecular gastronomy',
+      'vietnamese food',
+      'nuoc mam',
+      'food processing',
+      'sustainability',
+      'K2AI',
+    ],
     openGraph: {
       title: 'Food Technology - Công Nghệ Thực Phẩm | K2AI',
-      description: 'Master food technology với Vietnamese food industry focus: HACCP, fermentation, molecular gastronomy.',
+      description:
+        'Master food technology với Vietnamese food industry focus: HACCP, fermentation, molecular gastronomy.',
       type: 'website',
     },
   };
@@ -48,7 +64,8 @@ export default function FoodTechnologyPage() {
     id: 'food-technology',
     title: 'Food Technology',
     subtitle: 'Công Nghệ Thực Phẩm - Hiện Đại Hóa Ẩm Thực Việt',
-    description: 'Comprehensive food technology education covering food safety systems, fermentation biotechnology, molecular gastronomy, và sustainable production. Specialized focus trên Vietnamese food industry modernization including traditional fermented foods, export quality standards, và culinary innovation.',
+    description:
+      'Comprehensive food technology education covering food safety systems, fermentation biotechnology, molecular gastronomy, và sustainable production. Specialized focus trên Vietnamese food industry modernization including traditional fermented foods, export quality standards, và culinary innovation.',
     level: 'Trung bình',
     duration: '12-15 giờ',
     category: 'Food Science',
@@ -57,24 +74,25 @@ export default function FoodTechnologyPage() {
       'Fermentation Technology & Food Biotechnology cho traditional Vietnamese foods',
       'Molecular Gastronomy & Food Innovation modernizing Vietnamese cuisine',
       'Sustainable Food Production & Supply Chain optimization',
-      'Vietnamese Food Industry Focus với traditional và modern techniques'
+      'Vietnamese Food Industry Focus với traditional và modern techniques',
     ],
     icon: '🍜',
     color: 'from-amber-600 to-orange-600',
-    heroImageUrl: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl:
+      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master food safety management systems including HACCP và Vietnamese regulations',
       'Understand fermentation biotechnology với focus trên traditional Vietnamese fermented foods',
       'Apply molecular gastronomy techniques để modernize Vietnamese cuisine',
       'Design sustainable food production systems minimizing environmental impact',
-      'Navigate Vietnamese food industry landscape và international export requirements'
+      'Navigate Vietnamese food industry landscape và international export requirements',
     ],
     prerequisites: [
       'Basic understanding của food science principles và microbiology',
       'Knowledge của Vietnamese culinary traditions và food culture',
       'Familiarity với chemistry, biology, và manufacturing processes',
       'Interest trong food innovation và sustainable production practices',
-      'Understanding của quality management và regulatory compliance'
+      'Understanding của quality management và regulatory compliance',
     ],
     careerOutcomes: [
       'Food Technologist (20-45 triệu VNĐ/tháng)',
@@ -83,7 +101,7 @@ export default function FoodTechnologyPage() {
       'R&D Food Scientist (28-60 triệu VNĐ/tháng)',
       'Production Manager (30-65 triệu VNĐ/tháng)',
       'Food Innovation Consultant (35-70 triệu VNĐ/tháng)',
-      'Molecular Gastronomy Chef (25-80 triệu VNĐ/tháng)'
+      'Molecular Gastronomy Chef (25-80 triệu VNĐ/tháng)',
     ],
     industryApplications: [
       'Vietnamese food manufacturers: Quality systems và export standards',
@@ -92,28 +110,25 @@ export default function FoodTechnologyPage() {
       'Export companies: International food safety compliance',
       'Agricultural cooperatives: Value-added food processing',
       'Culinary schools: Modern Vietnamese culinary arts education',
-      'Food startups: Product development và market entry strategies'
+      'Food startups: Product development và market entry strategies',
     ],
     marketDemand: {
       averageSalary: '20-80 triệu VNĐ',
       jobGrowth: '+45%',
-      hireDemand: 'Trung bình - Cao'
+      hireDemand: 'Trung bình - Cao',
     },
     relatedModules: [
       K2Module.GreenTechnology,
       K2Module.Python,
       K2Module.DigitalMarketing,
-      K2Module.Biotechnology
-    ]
+      K2Module.Biotechnology,
+    ],
   };
 
   // Convert lessons to BaseLessonData format
   const convertedLessons = foodTechnologyLessons.map(convertToBaseLessonData);
 
   return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={convertedLessons}
-    />
+    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
   );
 }

@@ -65,35 +65,30 @@ A comprehensive guide for using AI tools effectively across 6 major life and wor
 #### AI Categories Implemented:
 
 1. **💼 Office & Work** (`/ai/office-work`)
-
    - ChatGPT for professional emails
    - Excel automation with AI
    - AI-powered presentations
    - Smart time management
 
 2. **🎨 Creative & Design** (`/ai/creative-design`)
-
    - Midjourney for image generation
    - Canva AI Magic Studio
    - AI content writing
    - Photo editing with AI
 
 3. **📚 Education & Learning** (`/ai/education-learning`)
-
    - AI tutoring and assistance
    - Research with AI tools
    - Language learning
    - Document summarization
 
 4. **📈 Business & Marketing** (`/ai/business-marketing`)
-
    - Marketing automation
    - Data analysis with AI
    - Chatbot development
    - SEO optimization
 
 5. **🌱 Daily Life** (`/ai/daily-life`)
-
    - Personal productivity
    - Health and fitness
    - Financial management
@@ -119,37 +114,31 @@ A comprehensive educational module covering STEM/STEAM disciplines through inter
 #### STEM Lessons Implemented:
 
 1. **🔬 STEM Introduction** (`/stem/stem-introduction`)
-
    - What is STEM/STEAM and why it matters
    - Career paths and real-world applications
    - Interactive introduction to scientific thinking
 
 2. **⚗️ Fun Physics Experiments** (`/stem/fun-physics-experiments`)
-
    - Basic physics principles through experiments
    - Hands-on activities with household materials
    - Understanding forces, motion, and energy
 
 3. **💻 Coding for Kids** (`/stem/coding-for-kids`)
-
    - Introduction to programming with Scratch
    - Visual programming concepts
    - Creating games and animations
 
 4. **🏗️ Engineering Challenges** (`/stem/engineering-challenges`)
-
    - Basic engineering principles
    - Design thinking and problem solving
    - Building challenges and prototyping
 
 5. **🔢 Math in Real Life** (`/stem/math-in-real-life`)
-
    - Practical mathematics applications
    - Math in cooking, shopping, sports, and arts
    - Making math relevant and fun
 
 6. **🎨 Art Meets Science** (`/stem/art-meets-science`)
-
    - Integration of arts and sciences
    - Color theory, sound physics, and geometry
    - Creative projects combining both disciplines
@@ -175,14 +164,12 @@ A comprehensive hands-on programming module covering Arduino development from ba
 #### Arduino Lessons Implemented:
 
 1. **🔧 Arduino Setup** (`/arduino/arduino-setup`)
-
    - Arduino IDE installation and configuration
    - Board connection and driver setup
    - First program upload and testing
    - Understanding Arduino hardware basics
 
 2. **💡 LED & Digital Outputs** (`/arduino/led-digital-outputs`)
-
    - LED basics and digital output concepts
    - Circuit design with resistor calculations
    - LED effects: blink, fade, chase, RGB color cycling
@@ -190,28 +177,24 @@ A comprehensive hands-on programming module covering Arduino development from ba
    - 7-segment displays and LED matrices
 
 3. **🎛️ Arduino Inputs** (`/arduino/arduino-inputs`)
-
    - Digital and analog input fundamentals
    - Button handling with pull-up resistors
    - Potentiometer and sensor reading
    - Input validation and debouncing techniques
 
 4. **📡 Sensors & Data Processing** (`/arduino/arduino-sensors`)
-
    - Temperature, humidity, and environmental sensors
    - Analog and digital sensor integration
    - Data processing and Serial communication
    - Multi-sensor projects and data logging
 
 5. **🌐 Communication & Networking** (`/arduino/arduino-communication`)
-
    - Serial, I2C, and SPI communication protocols
    - WiFi and Bluetooth connectivity with ESP32
    - Web server development and IoT dashboards
    - Cloud integration and remote monitoring
 
 6. **🚀 Advanced Arduino Projects** (`/arduino/arduino-advanced-projects`)
-
    - Complex multi-sensor IoT systems
    - Real-time data dashboards and visualization
    - Smart home automation projects
@@ -298,6 +281,7 @@ src/
 ### Code Standards:
 
 - **TypeScript**: Strict type checking enabled
+- **Lint**: Strict linting rules enabled, code format enforced with Prettier
 - **Performance**: Optimize bundle size and loading times
 - **Accessibility**: WCAG compliance and keyboard navigation
 - **Mobile-First**: Responsive design across all devices

@@ -1,5 +1,13 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { teenWellnessLessons, TeenWellnessLessonData } from '@/data/teen-wellness'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import {
+  teenWellnessLessons,
+  TeenWellnessLessonData,
+} from '@/data/teen-wellness';
 import { PageProps } from '@/types';
 
 // Generate static params for all lessons
@@ -30,7 +38,7 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
         supportResources: '🤝',
         ageGroup: '👥',
         urgencyLevel: '⚠️',
-        professionalSupport: '👨‍⚕️'
+        professionalSupport: '👨‍⚕️',
       };
       return <span className="text-lg">{icons[field] || '💚'}</span>;
     },
@@ -50,8 +58,13 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
       if ('urgencyLevel' in lesson && lesson.urgencyLevel) {
         return lesson.urgencyLevel;
       }
-      if ('professionalSupport' in lesson && lesson.professionalSupport !== undefined) {
-        return lesson.professionalSupport ? 'Có thể cần thiết' : 'Không bắt buộc';
+      if (
+        'professionalSupport' in lesson &&
+        lesson.professionalSupport !== undefined
+      ) {
+        return lesson.professionalSupport
+          ? 'Có thể cần thiết'
+          : 'Không bắt buộc';
       }
       return '';
     },
@@ -66,7 +79,7 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
             <p className="text-xl text-green-300">{lesson.ageGroup}</p>
           </div>
         )}
-        
+
         {lesson.urgencyLevel && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
             <h4 className="text-lg font-semibold text-white mb-2 flex items-center">
@@ -74,18 +87,23 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
               Mức độ ưu tiên
             </h4>
             <div className="flex items-center">
-              <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                lesson.urgencyLevel === 'Critical' ? 'bg-red-500/20 text-red-200' :
-                lesson.urgencyLevel === 'High' ? 'bg-orange-500/20 text-orange-200' :
-                lesson.urgencyLevel === 'Medium' ? 'bg-yellow-500/20 text-yellow-200' :
-                'bg-green-500/20 text-green-200'
-              }`}>
+              <span
+                className={`px-3 py-1 rounded-full text-sm font-medium ${
+                  lesson.urgencyLevel === 'Critical'
+                    ? 'bg-red-500/20 text-red-200'
+                    : lesson.urgencyLevel === 'High'
+                      ? 'bg-orange-500/20 text-orange-200'
+                      : lesson.urgencyLevel === 'Medium'
+                        ? 'bg-yellow-500/20 text-yellow-200'
+                        : 'bg-green-500/20 text-green-200'
+                }`}
+              >
                 {lesson.urgencyLevel}
               </span>
             </div>
           </div>
         )}
-        
+
         {lesson.professionalSupport !== undefined && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
             <h4 className="text-lg font-semibold text-white mb-2 flex items-center">
@@ -93,17 +111,21 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
               Hỗ trợ chuyên nghiệp
             </h4>
             <div className="flex items-center">
-              <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                lesson.professionalSupport 
-                  ? 'bg-blue-500/20 text-blue-200' 
-                  : 'bg-gray-500/20 text-gray-200'
-              }`}>
-                {lesson.professionalSupport ? 'Có thể cần thiết' : 'Không bắt buộc'}
+              <span
+                className={`px-3 py-1 rounded-full text-sm font-medium ${
+                  lesson.professionalSupport
+                    ? 'bg-blue-500/20 text-blue-200'
+                    : 'bg-gray-500/20 text-gray-200'
+                }`}
+              >
+                {lesson.professionalSupport
+                  ? 'Có thể cần thiết'
+                  : 'Không bắt buộc'}
               </span>
             </div>
           </div>
         )}
-        
+
         {lesson.mentalHealthAreas && lesson.mentalHealthAreas.length > 0 && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
             <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
@@ -112,14 +134,17 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
             </h4>
             <div className="flex flex-wrap gap-2">
               {lesson.mentalHealthAreas.map((area, index) => (
-                <span key={index} className="px-3 py-1 bg-green-500/20 text-green-200 rounded-full text-sm">
+                <span
+                  key={index}
+                  className="px-3 py-1 bg-green-500/20 text-green-200 rounded-full text-sm"
+                >
                   {area}
                 </span>
               ))}
             </div>
           </div>
         )}
-        
+
         {lesson.wellnessTechniques && lesson.wellnessTechniques.length > 0 && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
             <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
@@ -136,7 +161,7 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
             </div>
           </div>
         )}
-        
+
         {lesson.supportResources && lesson.supportResources.length > 0 && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
             <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
@@ -154,9 +179,9 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
           </div>
         )}
       </div>
-    )
-  }
-  
+    ),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

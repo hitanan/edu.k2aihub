@@ -1,11 +1,16 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { renewableEnergyLessons, type RenewableEnergyLesson } from '@/data/renewable-energy';
+import {
+  renewableEnergyLessons,
+  type RenewableEnergyLesson,
+} from '@/data/renewable-energy';
 import { createTitle, createDescription } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 // Convert RenewableEnergyLesson to BaseLessonData
-function convertToBaseLessonData(lesson: RenewableEnergyLesson): BaseLessonData {
+function convertToBaseLessonData(
+  lesson: RenewableEnergyLesson,
+): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -24,20 +29,34 @@ function convertToBaseLessonData(lesson: RenewableEnergyLesson): BaseLessonData 
       problem: study.challenge || 'Problem',
       solution: study.solution,
       impact: study.impact,
-      innovations: study.insights || []
+      innovations: study.insights || [],
     })),
-    resources: lesson.resources
+    resources: lesson.resources,
   };
 }
 
 export async function generateMetadata() {
   return {
     title: createTitle('Năng Lượng Tái Tạo - Công Nghệ Xanh Cho Tương Lai'),
-    description: createDescription('Khám phá công nghệ năng lượng tái tạo từ solar, wind đến energy storage. Học thiết kế hệ thống renewable energy cho Vietnam Net Zero 2050. Bao gồm wind turbines, photovoltaic systems, battery storage và smart grid technology.'),
-    keywords: ['năng lượng tái tạo', 'solar energy', 'wind power', 'energy storage', 'smart grid', 'vietnam renewable', 'net zero 2050', 'green technology', 'sustainable energy', 'K2AI'],
+    description: createDescription(
+      'Khám phá công nghệ năng lượng tái tạo từ solar, wind đến energy storage. Học thiết kế hệ thống renewable energy cho Vietnam Net Zero 2050. Bao gồm wind turbines, photovoltaic systems, battery storage và smart grid technology.',
+    ),
+    keywords: [
+      'năng lượng tái tạo',
+      'solar energy',
+      'wind power',
+      'energy storage',
+      'smart grid',
+      'vietnam renewable',
+      'net zero 2050',
+      'green technology',
+      'sustainable energy',
+      'K2AI',
+    ],
     openGraph: {
       title: 'Năng Lượng Tái Tạo - Công Nghệ Xanh Cho Tương Lai | K2AI',
-      description: 'Master renewable energy technologies và contribute to Vietnam Net Zero 2050 goals. Từ solar farms đến offshore wind, smart grid integration.',
+      description:
+        'Master renewable energy technologies và contribute to Vietnam Net Zero 2050 goals. Từ solar farms đến offshore wind, smart grid integration.',
       type: 'website',
     },
   };
@@ -48,7 +67,8 @@ export default function RenewableEnergyPage() {
     id: 'renewable-energy',
     title: 'Năng Lượng Tái Tạo',
     subtitle: 'Công Nghệ Xanh Cho Tương Lai Bền Vững',
-    description: 'Khám phá comprehensive renewable energy technologies từ solar photovoltaics và wind turbines đến advanced energy storage systems. Master thiết kế và implementation của sustainable energy solutions supporting Vietnam\'s Net Zero 2050 commitment.',
+    description:
+      "Khám phá comprehensive renewable energy technologies từ solar photovoltaics và wind turbines đến advanced energy storage systems. Master thiết kế và implementation của sustainable energy solutions supporting Vietnam's Net Zero 2050 commitment.",
     level: 'Trung bình',
     duration: '12-15 giờ',
     category: 'Green Technology',
@@ -57,23 +77,24 @@ export default function RenewableEnergyPage() {
       'Wind power technology với focus trên offshore wind potential',
       'Advanced energy storage: batteries, pumped hydro, smart grid integration',
       'Hydroelectric systems từ large dams đến micro-hydro applications',
-      'Economic analysis và policy framework cho renewable energy investment'
+      'Economic analysis và policy framework cho renewable energy investment',
     ],
     icon: '⚡',
     color: 'from-green-600 to-emerald-600',
-    heroImageUrl: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl:
+      'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master solar photovoltaic system design và installation best practices',
       'Understand wind turbine technology và offshore wind farm development',
       'Design energy storage systems cho grid stabilization và renewable integration',
       'Analyze hydroelectric power options suitable cho Vietnam geography',
-      'Navigate renewable energy economics, policy incentives và project financing'
+      'Navigate renewable energy economics, policy incentives và project financing',
     ],
     prerequisites: [
       'Basic electrical engineering concepts và circuit analysis',
       'Understanding của physics principles: mechanics, thermodynamics, electromagnetism',
       'Mathematics skills including algebra và basic calculus',
-      'Environmental awareness và sustainability principles'
+      'Environmental awareness và sustainability principles',
     ],
     careerOutcomes: [
       'Renewable Energy Systems Engineer (25-45 triệu VNĐ/tháng)',
@@ -81,7 +102,7 @@ export default function RenewableEnergyPage() {
       'Energy Storage Systems Specialist (35-60 triệu VNĐ/tháng)',
       'Grid Integration Engineer (28-50 triệu VNĐ/tháng)',
       'Renewable Energy Policy Analyst (22-40 triệu VNĐ/tháng)',
-      'Sustainability Consultant (25-45 triệu VNĐ/tháng)'
+      'Sustainability Consultant (25-45 triệu VNĐ/tháng)',
     ],
     industryApplications: [
       'Offshore wind farms trong South China Sea waters',
@@ -89,28 +110,25 @@ export default function RenewableEnergyPage() {
       'Grid-scale energy storage systems cho renewable integration',
       'Smart grid development trong major Vietnamese cities',
       'Rural electrification projects using micro-hydro và distributed solar',
-      'Industrial energy management với renewable energy integration'
+      'Industrial energy management với renewable energy integration',
     ],
     marketDemand: {
       averageSalary: '25-60 triệu VNĐ',
       jobGrowth: '+45%',
-      hireDemand: 'Rất cao'
+      hireDemand: 'Rất cao',
     },
     relatedModules: [
       K2Module.GreenTechnology,
       K2Module.RenewableEnergy,
       K2Module.DigitalMarketing,
-      K2Module.Python
-    ]
+      K2Module.Python,
+    ],
   };
 
   // Convert lessons to BaseLessonData format
   const convertedLessons = renewableEnergyLessons.map(convertToBaseLessonData);
 
   return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={convertedLessons}
-    />
+    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
   );
 }

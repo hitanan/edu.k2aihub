@@ -12,6 +12,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      NEXT_PUBLIC_GA_MEASUREMENT_ID: 'G-J8JXSFDF0G'
+
     permissions:
       contents: read
       pages: write
