@@ -58,11 +58,6 @@ const Header: React.FC = () => {
       href: '/profile',
       icon: <span className="w-4 h-4 text-center">👤</span>,
     },
-    {
-      name: 'Về Chúng Tôi',
-      href: '/about',
-      icon: <Heart className="w-4 h-4" />,
-    },
   ];
 
   // Learning modules - dynamically generated from moduleNavigation

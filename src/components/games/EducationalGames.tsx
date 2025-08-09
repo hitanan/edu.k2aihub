@@ -221,14 +221,7 @@ export function EducationalGamesShowcase({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {games.map((game) => (
-          <GameCard
-            key={game.id}
-            game={game}
-            onPlay={() => {
-              // Handle internal game play
-              console.log(`Playing game: ${game.id}`);
-            }}
-          />
+          <GameCard key={game.id} game={game} />
         ))}
       </div>
 

@@ -409,7 +409,8 @@ export type GameDataType =
   | ChemistryLabGameData
   | BiologyEcosystemGameData
   | HistoryTimelineGameData
-  | RobotNavigationGameData;
+  | RobotNavigationGameData
+  | RobotNavigation3DGameData;
 
 export const GAME_DATA: Record<string, GameDataType> = {
   'vietnam-geography-quiz': {
@@ -2091,65 +2092,164 @@ void loop() {
     ],
   },
   'robot-navigation-3d': {
-    mazes: [
+    levels: [
       {
-        name: 'Khởi động - Đường thẳng',
-        grid: [
-          [0, 0, 0, 1, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 1, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 2]
+        id: 1,
+        name: 'Mê cung cơ bản 3D',
+        description: 'Học cách điều hướng robot trong không gian 3 chiều đơn giản',
+        difficulty: 'Cơ bản',
+        dimensions: { width: 8, height: 3, depth: 8 },
+        start: { x: 0, y: 0, z: 0 },
+        goal: { x: 7, y: 0, z: 7 },
+        obstacles: [
+          { x: 2, y: 0, z: 1, type: 'wall' },
+          { x: 2, y: 0, z: 2, type: 'wall' },
+          { x: 4, y: 0, z: 3, type: 'wall' },
+          { x: 4, y: 0, z: 4, type: 'wall' },
+          { x: 6, y: 0, z: 5, type: 'wall' },
+          { x: 1, y: 1, z: 6, type: 'barrier' },
+          { x: 5, y: 1, z: 2, type: 'barrier' }
         ],
-        start: [0, 0],
-        end: [7, 7],
-        commands: ['⬆️ Lên', '⬇️ Xuống', '⬅️ Trái', '➡️ Phải', '🔄 Xoay trái', '🔄 Xoay phải'],
-        solution: ['➡️', '➡️', '⬇️', '⬇️', '➡️', '➡️', '⬇️', '⬇️', '➡️', '➡️', '⬇️', '⬇️', '➡️', '⬇️']
+        collectibles: [
+          { x: 3, y: 0, z: 1, type: 'coin' },
+          { x: 5, y: 0, z: 4, type: 'coin' },
+          { x: 6, y: 1, z: 6, type: 'energy' }
+        ],
+        movingObstacles: [],
+        timeLimit: 120,
+        targetScore: 100,
+        educational: {
+          concept: 'Tìm đường cơ bản trong không gian 3D',
+          algorithmFocus: 'A* algorithm với heuristic Manhattan',
+          learningGoal: 'Hiểu khái niệm pathfinding và coordinate 3D'
+        }
       },
       {
-        name: 'Vượt chướng ngại vật',
-        grid: [
-          [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 1, 1, 1, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 3, 3, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 0, 2]
+        id: 2,
+        name: 'Thử thách nhiều tầng',
+        description: 'Robot phải di chuyển qua nhiều tầng với cầu thang và thang máy',
+        difficulty: 'Trung bình',
+        dimensions: { width: 10, height: 5, depth: 10 },
+        start: { x: 0, y: 0, z: 0 },
+        goal: { x: 9, y: 4, z: 9 },
+        obstacles: [
+          { x: 3, y: 0, z: 3, type: 'wall' },
+          { x: 4, y: 0, z: 3, type: 'wall' },
+          { x: 5, y: 0, z: 3, type: 'wall' },
+          { x: 7, y: 0, z: 5, type: 'wall' },
+          { x: 8, y: 0, z: 5, type: 'wall' },
+          { x: 2, y: 2, z: 6, type: 'wall' },
+          { x: 3, y: 2, z: 6, type: 'wall' },
+          { x: 6, y: 2, z: 2, type: 'barrier' },
+          { x: 6, y: 2, z: 3, type: 'barrier' },
+          { x: 1, y: 3, z: 8, type: 'wall' },
+          { x: 2, y: 3, z: 8, type: 'wall' },
+          { x: 7, y: 4, z: 1, type: 'barrier' }
         ],
-        start: [0, 0],
-        end: [9, 9],
-        commands: ['⬆️ Lên', '⬇️ Xuống', '⬅️ Trái', '➡️ Phải', '🔍 Tìm đường'],
-        solution: ['➡️', '⬇️', '⬇️', '⬇️', '⬇️', '➡️', '➡️', '➡️', '⬇️', '⬇️', '⬇️', '➡️', '➡️', '➡️', '➡️', '⬇️', '⬇️', '➡️']
+        collectibles: [
+          { x: 2, y: 0, z: 2, type: 'coin' },
+          { x: 6, y: 1, z: 4, type: 'coin' },
+          { x: 4, y: 2, z: 7, type: 'data' },
+          { x: 8, y: 3, z: 3, type: 'energy' },
+          { x: 5, y: 4, z: 8, type: 'data' }
+        ],
+        movingObstacles: [
+          { x: 5, y: 1, z: 5, pattern: 'circular', speed: 1.0, range: 2 }
+        ],
+        timeLimit: 180,
+        targetScore: 200,
+        educational: {
+          concept: 'Điều hướng đa tầng và tối ưu hóa đường đi',
+          algorithmFocus: 'A* 3D với chi phí di chuyển giữa các tầng',
+          learningGoal: 'Quản lý không gian 3D phức tạp và tối ưu hóa chi phí'
+        }
       },
       {
-        name: 'Mê cung phức tạp',
-        grid: [
-          [0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-          [0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0],
-          [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
-          [1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-          [0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1],
-          [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-          [1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0],
-          [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
-          [0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0],
-          [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-          [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 2]
+        id: 3,
+        name: 'Mê cung động 3D',
+        description: 'Thách thức cao nhất với chướng ngại vật di chuyển và mê cung thay đổi',
+        difficulty: 'Nâng cao',
+        dimensions: { width: 12, height: 6, depth: 12 },
+        start: { x: 0, y: 0, z: 0 },
+        goal: { x: 11, y: 5, z: 11 },
+        obstacles: [
+          { x: 2, y: 0, z: 1, type: 'wall' }, { x: 2, y: 0, z: 2, type: 'wall' },
+          { x: 2, y: 0, z: 3, type: 'wall' }, { x: 5, y: 0, z: 2, type: 'wall' },
+          { x: 6, y: 0, z: 2, type: 'wall' }, { x: 7, y: 0, z: 2, type: 'wall' },
+          { x: 4, y: 1, z: 5, type: 'wall' }, { x: 4, y: 1, z: 6, type: 'wall' },
+          { x: 9, y: 1, z: 4, type: 'wall' }, { x: 9, y: 1, z: 5, type: 'wall' },
+          { x: 3, y: 2, z: 8, type: 'barrier' }, { x: 4, y: 2, z: 8, type: 'barrier' },
+          { x: 7, y: 2, z: 9, type: 'barrier' }, { x: 8, y: 2, z: 9, type: 'barrier' },
+          { x: 1, y: 3, z: 10, type: 'wall' }, { x: 2, y: 3, z: 10, type: 'wall' },
+          { x: 10, y: 3, z: 3, type: 'wall' }, { x: 10, y: 3, z: 4, type: 'wall' },
+          { x: 5, y: 4, z: 6, type: 'barrier' }, { x: 6, y: 4, z: 6, type: 'barrier' },
+          { x: 8, y: 5, z: 2, type: 'wall' }, { x: 9, y: 5, z: 2, type: 'wall' }
         ],
-        start: [0, 0],
-        end: [11, 11],
-        commands: ['⬆️ Lên', '⬇️ Xuống', '⬅️ Trái', '➡️ Phải', '🤖 A* Algorithm', '🧠 Smart Path'],
-        solution: ['⬇️', '⬇️', '⬇️', '⬇️', '⬇️', '⬇️', '➡️', '➡️', '➡️', '➡️', '➡️', '➡️', '⬇️', '⬇️', '⬇️', '⬇️', '⬇️', '➡️', '➡️', '➡️', '➡️', '➡️']
+        collectibles: [
+          { x: 1, y: 0, z: 4, type: 'coin' }, { x: 3, y: 0, z: 6, type: 'coin' },
+          { x: 8, y: 1, z: 1, type: 'coin' }, { x: 6, y: 1, z: 8, type: 'data' },
+          { x: 2, y: 2, z: 5, type: 'energy' }, { x: 9, y: 2, z: 7, type: 'coin' },
+          { x: 5, y: 3, z: 3, type: 'data' }, { x: 7, y: 3, z: 10, type: 'energy' },
+          { x: 3, y: 4, z: 9, type: 'coin' }, { x: 10, y: 4, z: 5, type: 'data' },
+          { x: 4, y: 5, z: 7, type: 'energy' }, { x: 8, y: 5, z: 8, type: 'data' }
+        ],
+        movingObstacles: [
+          { x: 6, y: 0, z: 6, pattern: 'circular', speed: 1.2, range: 3 },
+          { x: 3, y: 2, z: 3, pattern: 'linear', speed: 0.8, range: 4 },
+          { x: 9, y: 3, z: 8, pattern: 'random', speed: 1.5, range: 2 },
+          { x: 2, y: 4, z: 2, pattern: 'circular', speed: 1.0, range: 2 }
+        ],
+        timeLimit: 300,
+        targetScore: 350,
+        educational: {
+          concept: 'Pathfinding động với chướng ngại vật di chuyển',
+          algorithmFocus: 'A* động với re-planning và collision avoidance',
+          learningGoal: 'Xử lý môi trường động và tối ưu hóa real-time'
+        }
       }
-    ]
+    ],
+    robot: {
+      model: 'Explorer-3D v2.0',
+      capabilities: [
+        'Di chuyển 6 hướng (X, Y, Z)',
+        'Phát hiện chướng ngại vật',
+        'Thu thập vật phẩm',
+        'Lên/xuống giữa các tầng',
+        'Tránh chướng ngại vật di chuyển'
+      ],
+      sensors: [
+        'LIDAR 360° 3D',
+        'Camera RGB-D',
+        'IMU (Inertial Measurement Unit)',
+        'Proximity sensors',
+        'GPS indoor positioning'
+      ],
+      maxSpeed: 2.5,
+      batteryLife: 100
+    },
+    algorithms: [
+      {
+        name: 'A* (A-Star) 3D',
+        description: 'Thuật toán tìm đường tối ưu trong không gian 3 chiều',
+        complexity: 'O(b^d) với b là branching factor, d là depth',
+        advantages: [
+          'Đảm bảo tìm được đường đi tối ưu',
+          'Hiệu quả với heuristic tốt',
+          'Linh hoạt với các loại terrain khác nhau'
+        ],
+        disadvantages: [
+          'Tốn bộ nhớ khi không gian lớn',
+          'Phức tạp khi có chướng ngại vật động',
+          'Cần tính toán lại khi môi trường thay đổi'
+        ]
+      }
+    ],
+    gameSettings: {
+      enableHints: true,
+      showPathVisualization: true,
+      allowAlgorithmSwitching: true,
+      difficultyScaling: true
+    }
   },
 };
 
@@ -2453,4 +2553,247 @@ export const robotNavigationGameData: RobotNavigationGameData = {
     'Xử lý các tình huống động trong robotics',
     'Áp dụng heuristic function để tăng hiệu quả tìm kiếm'
   ]
+};
+
+// Robot Navigation 3D Game Data
+export interface RobotNavigation3DGameData {
+  levels: Array<{
+    id: number;
+    name: string;
+    description: string;
+    difficulty: string;
+    dimensions: { width: number; height: number; depth: number };
+    start: { x: number; y: number; z: number };
+    goal: { x: number; y: number; z: number };
+    obstacles: Array<{ x: number; y: number; z: number; type: 'wall' | 'barrier' | 'moving' }>;
+    collectibles: Array<{ x: number; y: number; z: number; type: 'coin' | 'data' | 'energy' }>;
+    movingObstacles: Array<{
+      x: number; y: number; z: number;
+      pattern: 'linear' | 'circular' | 'random';
+      speed: number;
+      range: number;
+    }>;
+    timeLimit: number;
+    targetScore: number;
+    educational: {
+      concept: string;
+      algorithmFocus: string;
+      learningGoal: string;
+    };
+  }>;
+  robot: {
+    model: string;
+    capabilities: string[];
+    sensors: string[];
+    maxSpeed: number;
+    batteryLife: number;
+  };
+  algorithms: Array<{
+    name: string;
+    description: string;
+    complexity: string;
+    advantages: string[];
+    disadvantages: string[];
+  }>;
+  gameSettings: {
+    enableHints: boolean;
+    showPathVisualization: boolean;
+    allowAlgorithmSwitching: boolean;
+    difficultyScaling: boolean;
+  };
+}
+
+export const robotNavigation3DGameData: RobotNavigation3DGameData = {
+  levels: [
+    {
+      id: 1,
+      name: 'Mê cung cơ bản 3D',
+      description: 'Học cách điều hướng robot trong không gian 3 chiều đơn giản',
+      difficulty: 'Cơ bản',
+      dimensions: { width: 8, height: 3, depth: 8 },
+      start: { x: 0, y: 0, z: 0 },
+      goal: { x: 7, y: 0, z: 7 },
+      obstacles: [
+        { x: 2, y: 0, z: 1, type: 'wall' },
+        { x: 2, y: 0, z: 2, type: 'wall' },
+        { x: 4, y: 0, z: 3, type: 'wall' },
+        { x: 4, y: 0, z: 4, type: 'wall' },
+        { x: 6, y: 0, z: 5, type: 'wall' },
+        { x: 1, y: 1, z: 6, type: 'barrier' },
+        { x: 5, y: 1, z: 2, type: 'barrier' }
+      ],
+      collectibles: [
+        { x: 3, y: 0, z: 1, type: 'coin' },
+        { x: 5, y: 0, z: 4, type: 'coin' },
+        { x: 6, y: 1, z: 6, type: 'energy' }
+      ],
+      movingObstacles: [],
+      timeLimit: 120,
+      targetScore: 100,
+      educational: {
+        concept: 'Tìm đường cơ bản trong không gian 3D',
+        algorithmFocus: 'A* algorithm với heuristic Manhattan',
+        learningGoal: 'Hiểu khái niệm pathfinding và coordinate 3D'
+      }
+    },
+    {
+      id: 2,
+      name: 'Thử thách nhiều tầng',
+      description: 'Robot phải di chuyển qua nhiều tầng với cầu thang và thang máy',
+      difficulty: 'Trung bình',
+      dimensions: { width: 10, height: 5, depth: 10 },
+      start: { x: 0, y: 0, z: 0 },
+      goal: { x: 9, y: 4, z: 9 },
+      obstacles: [
+        // Tầng 1
+        { x: 3, y: 0, z: 3, type: 'wall' },
+        { x: 4, y: 0, z: 3, type: 'wall' },
+        { x: 5, y: 0, z: 3, type: 'wall' },
+        { x: 7, y: 0, z: 5, type: 'wall' },
+        { x: 8, y: 0, z: 5, type: 'wall' },
+        // Tầng 2
+        { x: 2, y: 2, z: 6, type: 'wall' },
+        { x: 3, y: 2, z: 6, type: 'wall' },
+        { x: 6, y: 2, z: 2, type: 'barrier' },
+        { x: 6, y: 2, z: 3, type: 'barrier' },
+        // Tầng 3-4
+        { x: 1, y: 3, z: 8, type: 'wall' },
+        { x: 2, y: 3, z: 8, type: 'wall' },
+        { x: 7, y: 4, z: 1, type: 'barrier' }
+      ],
+      collectibles: [
+        { x: 2, y: 0, z: 2, type: 'coin' },
+        { x: 6, y: 1, z: 4, type: 'coin' },
+        { x: 4, y: 2, z: 7, type: 'data' },
+        { x: 8, y: 3, z: 3, type: 'energy' },
+        { x: 5, y: 4, z: 8, type: 'data' }
+      ],
+      movingObstacles: [
+        { x: 5, y: 1, z: 5, pattern: 'circular', speed: 1.0, range: 2 }
+      ],
+      timeLimit: 180,
+      targetScore: 200,
+      educational: {
+        concept: 'Điều hướng đa tầng và tối ưu hóa đường đi',
+        algorithmFocus: 'A* 3D với chi phí di chuyển giữa các tầng',
+        learningGoal: 'Quản lý không gian 3D phức tạp và tối ưu hóa chi phí'
+      }
+    },
+    {
+      id: 3,
+      name: 'Mê cung động 3D',
+      description: 'Thách thức cao nhất với chướng ngại vật di chuyển và mê cung thay đổi',
+      difficulty: 'Nâng cao',
+      dimensions: { width: 12, height: 6, depth: 12 },
+      start: { x: 0, y: 0, z: 0 },
+      goal: { x: 11, y: 5, z: 11 },
+      obstacles: [
+        // Static walls - complex maze structure
+        { x: 2, y: 0, z: 1, type: 'wall' }, { x: 2, y: 0, z: 2, type: 'wall' },
+        { x: 2, y: 0, z: 3, type: 'wall' }, { x: 5, y: 0, z: 2, type: 'wall' },
+        { x: 6, y: 0, z: 2, type: 'wall' }, { x: 7, y: 0, z: 2, type: 'wall' },
+        { x: 4, y: 1, z: 5, type: 'wall' }, { x: 4, y: 1, z: 6, type: 'wall' },
+        { x: 9, y: 1, z: 4, type: 'wall' }, { x: 9, y: 1, z: 5, type: 'wall' },
+        { x: 3, y: 2, z: 8, type: 'barrier' }, { x: 4, y: 2, z: 8, type: 'barrier' },
+        { x: 7, y: 2, z: 9, type: 'barrier' }, { x: 8, y: 2, z: 9, type: 'barrier' },
+        { x: 1, y: 3, z: 10, type: 'wall' }, { x: 2, y: 3, z: 10, type: 'wall' },
+        { x: 10, y: 3, z: 3, type: 'wall' }, { x: 10, y: 3, z: 4, type: 'wall' },
+        { x: 5, y: 4, z: 6, type: 'barrier' }, { x: 6, y: 4, z: 6, type: 'barrier' },
+        { x: 8, y: 5, z: 2, type: 'wall' }, { x: 9, y: 5, z: 2, type: 'wall' }
+      ],
+      collectibles: [
+        { x: 1, y: 0, z: 4, type: 'coin' }, { x: 3, y: 0, z: 6, type: 'coin' },
+        { x: 8, y: 1, z: 1, type: 'coin' }, { x: 6, y: 1, z: 8, type: 'data' },
+        { x: 2, y: 2, z: 5, type: 'energy' }, { x: 9, y: 2, z: 7, type: 'coin' },
+        { x: 5, y: 3, z: 3, type: 'data' }, { x: 7, y: 3, z: 10, type: 'energy' },
+        { x: 3, y: 4, z: 9, type: 'coin' }, { x: 10, y: 4, z: 5, type: 'data' },
+        { x: 4, y: 5, z: 7, type: 'energy' }, { x: 8, y: 5, z: 8, type: 'data' }
+      ],
+      movingObstacles: [
+        { x: 6, y: 0, z: 6, pattern: 'circular', speed: 1.2, range: 3 },
+        { x: 3, y: 2, z: 3, pattern: 'linear', speed: 0.8, range: 4 },
+        { x: 9, y: 3, z: 8, pattern: 'random', speed: 1.5, range: 2 },
+        { x: 2, y: 4, z: 2, pattern: 'circular', speed: 1.0, range: 2 }
+      ],
+      timeLimit: 300,
+      targetScore: 350,
+      educational: {
+        concept: 'Pathfinding động với chướng ngại vật di chuyển',
+        algorithmFocus: 'A* động với re-planning và collision avoidance',
+        learningGoal: 'Xử lý môi trường động và tối ưu hóa real-time'
+      }
+    }
+  ],
+  robot: {
+    model: 'Explorer-3D v2.0',
+    capabilities: [
+      'Di chuyển 6 hướng (X, Y, Z)',
+      'Phát hiện chướng ngại vật',
+      'Thu thập vật phẩm',
+      'Lên/xuống giữa các tầng',
+      'Tránh chướng ngại vật di chuyển'
+    ],
+    sensors: [
+      'LIDAR 360° 3D',
+      'Camera RGB-D',
+      'IMU (Inertial Measurement Unit)',
+      'Proximity sensors',
+      'GPS indoor positioning'
+    ],
+    maxSpeed: 2.5,
+    batteryLife: 100
+  },
+  algorithms: [
+    {
+      name: 'A* (A-Star) 3D',
+      description: 'Thuật toán tìm đường tối ưu trong không gian 3 chiều',
+      complexity: 'O(b^d) với b là branching factor, d là depth',
+      advantages: [
+        'Đảm bảo tìm được đường đi tối ưu',
+        'Hiệu quả với heuristic tốt',
+        'Linh hoạt với các loại terrain khác nhau'
+      ],
+      disadvantages: [
+        'Tốn bộ nhớ khi không gian lớn',
+        'Phức tạp khi có chướng ngại vật động',
+        'Cần tính toán lại khi môi trường thay đổi'
+      ]
+    },
+    {
+      name: 'Dijkstra 3D',
+      description: 'Thuật toán tìm đường ngắn nhất không có heuristic',
+      complexity: 'O((V + E) log V)',
+      advantages: [
+        'Đảm bảo đường đi ngắn nhất',
+        'Không cần heuristic function',
+        'Ổn định với mọi loại graph'
+      ],
+      disadvantages: [
+        'Chậm hơn A* đáng kể',
+        'Khám phá nhiều node không cần thiết',
+        'Không phù hợp với real-time applications'
+      ]
+    },
+    {
+      name: 'BFS 3D',
+      description: 'Breadth-First Search trong không gian 3D',
+      complexity: 'O(b^d)',
+      advantages: [
+        'Đơn giản để implement',
+        'Tìm được đường đi (không nhất thiết tối ưu)',
+        'Hoạt động tốt với unweighted graphs'
+      ],
+      disadvantages: [
+        'Không tối ưu cho weighted graphs',
+        'Tốn nhiều bộ nhớ',
+        'Chậm với không gian lớn'
+      ]
+    }
+  ],
+  gameSettings: {
+    enableHints: true,
+    showPathVisualization: true,
+    allowAlgorithmSwitching: true,
+    difficultyScaling: true
+  }
 };
