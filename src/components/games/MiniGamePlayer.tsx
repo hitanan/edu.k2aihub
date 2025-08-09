@@ -581,12 +581,22 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
 
 // Individual game components
 function GeographyQuizGame({ gameData, onComplete, timeLeft, onRestart }: any) {
+  // Shuffle questions for randomization
+  const [shuffledQuestions] = useState(() => {
+    const questions = [...gameData.questions];
+    for (let i = questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+    return questions;
+  });
+  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
 
-  const question = gameData.questions[currentQuestion];
+  const question = shuffledQuestions[currentQuestion];
 
   const handleAnswer = (answerIndex: number) => {
     setSelectedAnswer(answerIndex);
@@ -597,7 +607,7 @@ function GeographyQuizGame({ gameData, onComplete, timeLeft, onRestart }: any) {
     }
 
     setTimeout(() => {
-      if (currentQuestion < gameData.questions.length - 1) {
+      if (currentQuestion < shuffledQuestions.length - 1) {
         setCurrentQuestion((prev) => prev + 1);
         setSelectedAnswer(null);
         setShowExplanation(false);
@@ -618,7 +628,7 @@ function GeographyQuizGame({ gameData, onComplete, timeLeft, onRestart }: any) {
       <div className="mb-4">
         <div className="flex justify-between text-sm text-gray-400 mb-2">
           <span>
-            Câu {currentQuestion + 1}/{gameData.questions.length}
+            Câu {currentQuestion + 1}/{shuffledQuestions.length}
           </span>
           <span>Điểm: {score}</span>
         </div>
@@ -626,7 +636,7 @@ function GeographyQuizGame({ gameData, onComplete, timeLeft, onRestart }: any) {
           <div
             className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full transition-all duration-300"
             style={{
-              width: `${(currentQuestion / gameData.questions.length) * 100}%`,
+              width: `${(currentQuestion / shuffledQuestions.length) * 100}%`,
             }}
           />
         </div>
@@ -1136,6 +1146,7 @@ function RoboticsNavigationGame({
   const [commands, setCommands] = useState<string[]>([]);
   const [isRunning, setIsRunning] = useState(false);
   const [score, setScore] = useState(0);
+  const [totalScore, setTotalScore] = useState(0);
   const [pathHistory, setPathHistory] = useState<[number, number][]>([]);
   const [algorithmVisualization, setAlgorithmVisualization] = useState<{
     openSet: [number, number][];
@@ -1143,10 +1154,126 @@ function RoboticsNavigationGame({
     path: [number, number][];
   }>({ openSet: [], closedSet: [], path: [] });
   const [showAlgorithm, setShowAlgorithm] = useState(false);
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState<'A*' | 'Dijkstra' | 'BFS'>('A*');
+  const [movingObstacles, setMovingObstacles] = useState<Array<{position: [number, number], originalPos: [number, number], pattern: string, speed: number}>>([]);
+  const [levelStartTime, setLevelStartTime] = useState(Date.now());
 
-  const maze = gameData.mazes[currentLevel];
+  // Import robotics levels data
+  const ROBOTICS_LEVELS = [
+    {
+      id: 1,
+      name: "Bước đầu tiên",
+      difficulty: 'Dễ',
+      algorithm: 'BFS',
+      grid: Array(5).fill(null).map(() => Array(5).fill(0)),
+      start: [0, 0],
+      end: [4, 4],
+      timeLimit: 60,
+      minMoves: 8,
+      description: "Di chuyển robot từ góc trái trên xuống góc phải dưới",
+      tips: ["Sử dụng các mũi tên để điều khiển", "BFS tìm đường ngắn nhất"],
+      pointValue: 10
+    },
+    {
+      id: 2,
+      name: "Tránh vật cản đơn giản",
+      difficulty: 'Dễ',
+      algorithm: 'BFS',
+      grid: (() => {
+        const grid = Array(6).fill(null).map(() => Array(6).fill(0));
+        [[2, 2], [2, 3], [3, 2], [3, 3]].forEach(([x, y]) => grid[x][y] = 1);
+        return grid;
+      })(),
+      start: [0, 0],
+      end: [5, 5],
+      timeLimit: 90,
+      minMoves: 10,
+      description: "Tránh khối vật cản 2x2 ở giữa",
+      tips: ["Đi vòng quanh vật cản", "Lập kế hoạch trước khi di chuyển"],
+      pointValue: 15
+    },
+    {
+      id: 3,
+      name: "Hành lang hẹp",
+      difficulty: 'Dễ',
+      algorithm: 'BFS',
+      grid: (() => {
+        const grid = Array(7).fill(null).map(() => Array(7).fill(0));
+        [[1, 1], [1, 2], [1, 4], [1, 5], [2, 1], [2, 5], [3, 1], [3, 5], [4, 1], [4, 5], [5, 1], [5, 2], [5, 4], [5, 5]].forEach(([x, y]) => grid[x][y] = 1);
+        return grid;
+      })(),
+      start: [0, 3],
+      end: [6, 3],
+      timeLimit: 120,
+      minMoves: 12,
+      description: "Di chuyển qua hành lang hẹp",
+      tips: ["Giữ đúng hướng trong hành lang", "Không thể quay đầu"],
+      pointValue: 20
+    }
+  ];
 
-  // A* Algorithm implementation for path finding
+  // Add more levels up to 100 with increasing difficulty
+  for (let i = 4; i <= 100; i++) {
+    const size = Math.min(6 + Math.floor(i / 10), 20);
+    const difficulty = i <= 10 ? 'Dễ' : i <= 30 ? 'Trung bình' : i <= 70 ? 'Khó' : 'Chuyên gia';
+    const algorithm = ['A*', 'Dijkstra', 'BFS'][i % 3] as 'A*' | 'Dijkstra' | 'BFS';
+    
+    const grid = Array(size).fill(null).map(() => Array(size).fill(0));
+    const wallCount = Math.floor((size * size) * (0.15 + (i / 100) * 0.25));
+    
+    // Generate random walls
+    for (let w = 0; w < wallCount; w++) {
+      const x = Math.floor(Math.random() * size);
+      const y = Math.floor(Math.random() * size);
+      if ((x !== 0 || y !== 0) && (x !== size - 1 || y !== size - 1)) {
+        grid[x][y] = 1;
+      }
+    }
+    
+    ROBOTICS_LEVELS.push({
+      id: i,
+      name: `Thử thách ${i}`,
+      difficulty: difficulty as any,
+      algorithm,
+      grid,
+      start: [0, 0],
+      end: [size - 1, size - 1],
+      timeLimit: 60 + (i * 5),
+      minMoves: Math.floor(size * 1.5),
+      description: `Level ${i} - ${difficulty}`,
+      tips: ["Sử dụng thuật toán phù hợp", "Lập kế hoạch cẩn thận"],
+      pointValue: 10 + (i * 2)
+    });
+  }
+
+  const currentLevelData = ROBOTICS_LEVELS[currentLevel];
+  const maze = {
+    grid: currentLevelData.grid,
+    start: currentLevelData.start,
+    end: currentLevelData.end
+  };
+
+  // Initialize robot position when level changes
+  useEffect(() => {
+    setRobotPosition([currentLevelData.start[0], currentLevelData.start[1]]);
+    setCommands([]);
+    setPathHistory([]);
+    setAlgorithmVisualization({ openSet: [], closedSet: [], path: [] });
+    setShowAlgorithm(false);
+    setLevelStartTime(Date.now());
+    
+    // Initialize moving obstacles if any
+    if (currentLevelData.movingObstacles) {
+      setMovingObstacles(currentLevelData.movingObstacles.map(obs => ({
+        ...obs,
+        originalPos: [...obs.position] as [number, number]
+      })));
+    } else {
+      setMovingObstacles([]);
+    }
+  }, [currentLevel]);
+
+  // A* Algorithm implementation
   const calculateAStar = (start: [number, number], end: [number, number]) => {
     const openSet: Array<{
       pos: [number, number];
@@ -1172,7 +1299,6 @@ function RoboticsNavigationGame({
     const steps = [];
 
     while (openSet.length > 0) {
-      // Find node with lowest f score
       openSet.sort((a, b) => a.f - b.f);
       const current = openSet.shift()!;
 
@@ -1183,24 +1309,35 @@ function RoboticsNavigationGame({
       });
 
       if (current.pos[0] === end[0] && current.pos[1] === end[1]) {
-        // Reconstruct path
         const path: [number, number][] = [];
         let node: any = current;
+        const parentMap = new Map();
+        
+        // Build parent map
+        steps.forEach(step => {
+          const curr = step.current;
+          openSet.forEach(n => {
+            if (n.parent) {
+              parentMap.set(`${n.pos[0]},${n.pos[1]}`, n.parent);
+            }
+          });
+        });
+        
+        // Reconstruct path
         while (node) {
           path.unshift(node.pos);
-          node = openSet.find(
-            (n) =>
-              n.pos[0] === node.parent?.[0] && n.pos[1] === node.parent?.[1],
-          ) || { pos: node.parent, parent: null };
-          if (!node.parent) break;
+          const parentKey = `${node.pos[0]},${node.pos[1]}`;
+          const parent = parentMap.get(parentKey);
+          if (!parent) break;
+          node = { pos: parent };
         }
-        return { steps, path };
+        
+        return { steps, path, algorithm: 'A*' };
       }
 
       closedSet.push(current.pos);
       visited.add(`${current.pos[0]},${current.pos[1]}`);
 
-      // Check neighbors
       const neighbors = [
         [current.pos[0] - 1, current.pos[1]],
         [current.pos[0] + 1, current.pos[1]],
@@ -1211,18 +1348,15 @@ function RoboticsNavigationGame({
       for (const neighbor of neighbors) {
         const [x, y] = neighbor;
 
-        if (x < 0 || x >= maze.grid.length || y < 0 || y >= maze.grid[0].length)
-          continue;
-        if (maze.grid[x][y] === 1) continue; // Wall
+        if (x < 0 || x >= maze.grid.length || y < 0 || y >= maze.grid[0].length) continue;
+        if (maze.grid[x][y] === 1) continue;
         if (visited.has(`${x},${y}`)) continue;
 
         const g = current.g + 1;
         const h = heuristic(neighbor, end);
         const f = g + h;
 
-        const existingNode = openSet.find(
-          (n) => n.pos[0] === x && n.pos[1] === y,
-        );
+        const existingNode = openSet.find((n) => n.pos[0] === x && n.pos[1] === y);
         if (!existingNode || g < existingNode.g) {
           if (existingNode) {
             existingNode.g = g;
@@ -1241,7 +1375,251 @@ function RoboticsNavigationGame({
       }
     }
 
-    return { steps, path: [] };
+    return { steps, path: [], algorithm: 'A*' };
+  };
+
+  // Dijkstra Algorithm implementation
+  const calculateDijkstra = (start: [number, number], end: [number, number]) => {
+    const distances = new Map<string, number>();
+    const previous = new Map<string, [number, number] | null>();
+    const unvisited = new Set<string>();
+    const steps = [];
+
+    // Initialize distances
+    for (let i = 0; i < maze.grid.length; i++) {
+      for (let j = 0; j < maze.grid[0].length; j++) {
+        if (maze.grid[i][j] === 0) {
+          const key = `${i},${j}`;
+          distances.set(key, i === start[0] && j === start[1] ? 0 : Infinity);
+          previous.set(key, null);
+          unvisited.add(key);
+        }
+      }
+    }
+
+    while (unvisited.size > 0) {
+      // Find unvisited node with minimum distance
+      let currentKey = '';
+      let minDistance = Infinity;
+      
+      for (const key of unvisited) {
+        const dist = distances.get(key) || Infinity;
+        if (dist < minDistance) {
+          minDistance = dist;
+          currentKey = key;
+        }
+      }
+
+      if (currentKey === '' || minDistance === Infinity) break;
+
+      const [currentX, currentY] = currentKey.split(',').map(Number) as [number, number];
+      unvisited.delete(currentKey);
+
+      steps.push({
+        current: [currentX, currentY] as [number, number],
+        visited: Array.from(distances.keys()).filter(k => !unvisited.has(k)).map(k => k.split(',').map(Number) as [number, number]),
+        distances: new Map(distances)
+      });
+
+      if (currentX === end[0] && currentY === end[1]) {
+        // Reconstruct path
+        const path: [number, number][] = [];
+        let current: [number, number] | null = [currentX, currentY];
+        
+        while (current) {
+          path.unshift(current);
+          current = previous.get(`${current[0]},${current[1]}`) || null;
+        }
+        
+        return { steps, path, algorithm: 'Dijkstra' };
+      }
+
+      // Check neighbors
+      const neighbors = [
+        [currentX - 1, currentY],
+        [currentX + 1, currentY],
+        [currentX, currentY - 1],
+        [currentX, currentY + 1],
+      ] as [number, number][];
+
+      for (const [nx, ny] of neighbors) {
+        const neighborKey = `${nx},${ny}`;
+        
+        if (nx >= 0 && nx < maze.grid.length && ny >= 0 && ny < maze.grid[0].length && 
+            maze.grid[nx][ny] === 0 && unvisited.has(neighborKey)) {
+          
+          const altDistance = minDistance + 1;
+          const currentDistance = distances.get(neighborKey) || Infinity;
+          
+          if (altDistance < currentDistance) {
+            distances.set(neighborKey, altDistance);
+            previous.set(neighborKey, [currentX, currentY]);
+          }
+        }
+      }
+    }
+
+    return { steps, path: [], algorithm: 'Dijkstra' };
+  };
+
+  // BFS Algorithm implementation
+  const calculateBFS = (start: [number, number], end: [number, number]) => {
+    const queue: Array<{pos: [number, number], path: [number, number][]}> = [];
+    const visited = new Set<string>();
+    const steps = [];
+
+    queue.push({ pos: start, path: [start] });
+    visited.add(`${start[0]},${start[1]}`);
+
+    while (queue.length > 0) {
+      const current = queue.shift()!;
+      const [x, y] = current.pos;
+
+      steps.push({
+        current: current.pos,
+        queue: queue.map(q => q.pos),
+        visited: Array.from(visited).map(v => v.split(',').map(Number) as [number, number]),
+        currentPath: current.path
+      });
+
+      if (x === end[0] && y === end[1]) {
+        return { steps, path: current.path, algorithm: 'BFS' };
+      }
+
+      const neighbors = [
+        [x - 1, y],
+        [x + 1, y],
+        [x, y - 1],
+        [x, y + 1],
+      ] as [number, number][];
+
+      for (const [nx, ny] of neighbors) {
+        const neighborKey = `${nx},${ny}`;
+        
+        if (nx >= 0 && nx < maze.grid.length && ny >= 0 && ny < maze.grid[0].length && 
+            maze.grid[nx][ny] === 0 && !visited.has(neighborKey)) {
+          
+          visited.add(neighborKey);
+          queue.push({
+            pos: [nx, ny],
+            path: [...current.path, [nx, ny]]
+          });
+        }
+      }
+    }
+
+    return { steps, path: [], algorithm: 'BFS' };
+  };
+
+  // Execute selected algorithm
+  const executePathfinding = () => {
+    const start = robotPosition;
+    const end = [maze.end[0], maze.end[1]] as [number, number];
+    
+    let result;
+    switch (selectedAlgorithm) {
+      case 'A*':
+        result = calculateAStar(start, end);
+        break;
+      case 'Dijkstra':
+        result = calculateDijkstra(start, end);
+        break;
+      case 'BFS':
+        result = calculateBFS(start, end);
+        break;
+      default:
+        result = calculateAStar(start, end);
+    }
+
+    if (result.path.length > 0) {
+      setAlgorithmVisualization({
+        openSet: [],
+        closedSet: result.steps.length > 0 ? (result.steps[result.steps.length - 1] as any).visited || [] : [],
+        path: result.path,
+      });
+      setShowAlgorithm(true);
+      
+      // Auto-execute the found path
+      setTimeout(() => {
+        executeAutoPath(result.path);
+      }, 1000);
+    }
+  };
+
+  const executeAutoPath = (path: [number, number][]) => {
+    if (path.length < 2) return;
+    
+    setIsRunning(true);
+    let currentIndex = 0;
+    
+    const executeNextMove = () => {
+      if (currentIndex < path.length - 1) {
+        const currentPos = path[currentIndex];
+        const nextPos = path[currentIndex + 1];
+        
+        setRobotPosition(nextPos);
+        setPathHistory(prev => [...prev, nextPos]);
+        
+        currentIndex++;
+        setTimeout(executeNextMove, 300);
+      } else {
+        setIsRunning(false);
+        checkLevelComplete();
+      }
+    };
+    
+    executeNextMove();
+  };
+
+  const checkLevelComplete = () => {
+    const [endX, endY] = maze.end;
+    const [robotX, robotY] = robotPosition;
+    
+    if (robotX === endX && robotY === robotY) {
+      const timeUsed = Date.now() - levelStartTime;
+      const timeBonus = Math.max(0, (currentLevelData.timeLimit * 1000 - timeUsed) / 1000);
+      const moveBonus = Math.max(0, (currentLevelData.minMoves - commands.length) * 5);
+      const levelScore = currentLevelData.pointValue + Math.floor(timeBonus) + moveBonus;
+      
+      setScore(levelScore);
+      setTotalScore(prev => prev + levelScore);
+      
+      if (currentLevel < ROBOTICS_LEVELS.length - 1) {
+        setTimeout(() => {
+          setCurrentLevel(prev => prev + 1);
+          setScore(0);
+        }, 2000);
+      } else {
+        // Game complete
+        onComplete(true, totalScore + levelScore);
+      }
+    }
+  };
+
+  const resetLevel = () => {
+    setRobotPosition([currentLevelData.start[0], currentLevelData.start[1]]);
+    setCommands([]);
+    setPathHistory([]);
+    setIsRunning(false);
+    setAlgorithmVisualization({ openSet: [], closedSet: [], path: [] });
+    setShowAlgorithm(false);
+    setLevelStartTime(Date.now());
+  };
+
+  const skipToLevel = (levelId: number) => {
+    if (levelId >= 0 && levelId < ROBOTICS_LEVELS.length) {
+      setCurrentLevel(levelId);
+    }
+  };
+
+  const getLevelColor = (difficulty: string) => {
+    switch (difficulty) {
+      case 'Dễ': return 'text-green-400';
+      case 'Trung bình': return 'text-yellow-400';
+      case 'Khó': return 'text-orange-400';
+      case 'Chuyên gia': return 'text-red-400';
+      default: return 'text-gray-400';
+    }
   };
 
   const addCommand = (command: string) => {
@@ -1428,160 +1806,228 @@ function RoboticsNavigationGame({
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <div className="flex justify-between items-center mb-2">
-          <h3 className="text-xl font-bold text-white">
-            🤖 Điều hướng Robot 3D
-          </h3>
-          <div className="text-sm text-gray-300">
-            Cấp độ {currentLevel + 1}/{gameData.mazes.length}
-          </div>
-        </div>
-        <h4 className="text-lg text-cyan-400 mb-2">{maze.name}</h4>
-        <p className="text-gray-300">
-          Lập trình robot thông minh di chuyển từ vị trí xuất phát 🟢 đến đích
-          🎯 sử dụng thuật toán tối ưu
-        </p>
-
-        {showAlgorithm && (
-          <div className="mt-3 p-3 bg-yellow-900/30 rounded-lg border border-yellow-500/50">
-            <div className="text-yellow-300 text-sm">
-              <strong>🧠 A* Algorithm đang hoạt động:</strong>
-              <div className="mt-1 grid grid-cols-3 gap-2 text-xs">
-                <div>🟢 Open Set: {algorithmVisualization.openSet.length}</div>
-                <div>
-                  🔴 Closed Set: {algorithmVisualization.closedSet.length}
-                </div>
-                <div>🟡 Optimal Path: {algorithmVisualization.path.length}</div>
-              </div>
+        <div className="flex justify-between items-center mb-4">
+          <div>
+            <h3 className="text-xl font-bold text-white">
+              🤖 Level {currentLevel + 1}: {currentLevelData.name}
+            </h3>
+            <div className="flex items-center gap-4 mt-2">
+              <span className={`font-medium ${getLevelColor(currentLevelData.difficulty)}`}>
+                {currentLevelData.difficulty}
+              </span>
+              <span className="text-blue-400">
+                Algorithm: {currentLevelData.algorithm}
+              </span>
+              <span className="text-purple-400">
+                Score: {totalScore + score}
+              </span>
             </div>
           </div>
-        )}
+          
+          <div className="text-right">
+            <div className="text-gray-300 text-sm">
+              Thời gian: {Math.max(0, Math.floor(currentLevelData.timeLimit - (Date.now() - levelStartTime) / 1000))}s
+            </div>
+            <div className="text-gray-300 text-sm">
+              Moves: {commands.length}/{currentLevelData.minMoves}
+            </div>
+          </div>
+        </div>
+
+        <p className="text-gray-300 text-sm mb-2">{currentLevelData.description}</p>
+        
+        <div className="flex flex-wrap gap-2 mb-4">
+          {currentLevelData.tips.map((tip, index) => (
+            <span key={index} className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">
+              💡 {tip}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
-          <div className="flex justify-between items-center mb-3">
-            <h4 className="text-white font-medium">🗺️ Mê cung 3D:</h4>
-            <div className="text-xs text-gray-400">
-              {maze.grid.length}×{maze.grid[0]?.length} grid
+          <h4 className="text-white font-medium mb-3">Maze Navigation:</h4>
+          <div className="bg-gray-900/50 rounded-lg p-4 mb-4">
+            <div className="grid gap-1" style={{ 
+              gridTemplateColumns: `repeat(${maze.grid[0]?.length || 1}, 1fr)`,
+              maxWidth: '300px',
+              aspectRatio: '1'
+            }}>
+              {maze.grid.map((row, i) =>
+                row.map((cell, j) => {
+                  const isStart = i === maze.start[0] && j === maze.start[1];
+                  const isEnd = i === maze.end[0] && j === maze.end[1];
+                  const isRobot = i === robotPosition[0] && j === robotPosition[1];
+                  const isPath = pathHistory.some(([x, y]) => x === i && y === j);
+                  const isAlgorithmPath = showAlgorithm && algorithmVisualization.path.some(([x, y]) => x === i && y === j);
+                  const isOpenSet = showAlgorithm && algorithmVisualization.openSet.some(([x, y]) => x === i && y === j);
+                  const isClosedSet = showAlgorithm && algorithmVisualization.closedSet.some(([x, y]) => x === i && y === j);
+
+                  let bgColor = 'bg-gray-800';
+                  if (cell === 1) bgColor = 'bg-gray-600'; // Wall
+                  if (isStart) bgColor = 'bg-green-500';
+                  if (isEnd) bgColor = 'bg-red-500';
+                  if (isOpenSet) bgColor = 'bg-yellow-400/50';
+                  if (isClosedSet) bgColor = 'bg-blue-400/50';
+                  if (isAlgorithmPath) bgColor = 'bg-purple-500/70';
+                  if (isPath) bgColor = 'bg-cyan-400/70';
+                  if (isRobot) bgColor = 'bg-orange-500';
+
+                  return (
+                    <div
+                      key={`${i}-${j}`}
+                      className={`${bgColor} border border-gray-700 flex items-center justify-center text-xs font-bold`}
+                      style={{ aspectRatio: '1' }}
+                    >
+                      {isRobot && '🤖'}
+                      {isStart && !isRobot && '🟢'}
+                      {isEnd && !isRobot && '🎯'}
+                    </div>
+                  );
+                })
+              )}
             </div>
           </div>
 
-          <div
-            className="inline-block p-2 bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg shadow-2xl border border-white/10"
-            style={{
-              perspective: '1000px',
-              transform: 'rotateX(5deg) rotateY(-5deg)',
-            }}
-          >
-            <div
-              className="grid gap-1"
-              style={{
-                gridTemplateColumns: `repeat(${maze.grid[0]?.length || 8}, minmax(0, 1fr))`,
-                transform: 'translateZ(20px)',
-              }}
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            <button
+              onClick={() => addCommand('⬆️ Lên')}
+              disabled={isRunning}
+              className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-medium disabled:opacity-50"
             >
-              {maze.grid.map((row: number[], i: number) =>
-                row.map((cell: number, j: number) => (
-                  <div
-                    key={`${i}-${j}`}
-                    className={getCellStyle(i, j)}
-                    title={`Position: (${i}, ${j})`}
-                  >
-                    {getCellContent(i, j)}
-                  </div>
-                )),
-              )}
-            </div>
+              ⬆️ Lên
+            </button>
+            <button
+              onClick={() => addCommand('⬇️ Xuống')}
+              disabled={isRunning}
+              className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-medium disabled:opacity-50"
+            >
+              ⬇️ Xuống
+            </button>
+            <button
+              onClick={() => addCommand('⬅️ Trái')}
+              disabled={isRunning}
+              className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-medium disabled:opacity-50"
+            >
+              ⬅️ Trái
+            </button>
+            <button
+              onClick={() => addCommand('➡️ Phải')}
+              disabled={isRunning}
+              className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded font-medium disabled:opacity-50"
+            >
+              ➡️ Phải
+            </button>
           </div>
-
-          {pathHistory.length > 0 && (
-            <div className="mt-3 text-sm text-gray-400">
-              📊 Đường đi: {pathHistory.length} bước | 🎯 Hiệu quả:{' '}
-              {Math.round(
-                (1 -
-                  (pathHistory.length - maze.solution.length) /
-                    maze.solution.length) *
-                  100,
-              )}
-              %
-            </div>
-          )}
         </div>
 
         <div>
-          <h4 className="text-white font-medium mb-3">🎮 Lệnh điều khiển:</h4>
-          <div className="grid grid-cols-2 gap-2 mb-4">
-            {maze.commands.map((command: string, index: number) => (
-              <button
-                key={index}
-                onClick={() => addCommand(command)}
+          <h4 className="text-white font-medium mb-3">Algorithm Control:</h4>
+          
+          <div className="bg-gray-800/50 rounded-lg p-4 mb-4">
+            <div className="mb-3">
+              <label className="text-white text-sm mb-2 block">Select Algorithm:</label>
+              <select
+                value={selectedAlgorithm}
+                onChange={(e) => setSelectedAlgorithm(e.target.value as any)}
+                className="w-full bg-gray-700 text-white rounded px-3 py-2"
                 disabled={isRunning}
-                className="p-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 rounded hover:from-cyan-500/30 hover:to-blue-500/30 transition-all disabled:opacity-50 text-sm font-medium border border-cyan-500/30"
               >
-                {command}
+                <option value="A*">A* - Optimal + Fast</option>
+                <option value="Dijkstra">Dijkstra - Guaranteed Optimal</option>
+                <option value="BFS">BFS - Shortest Path</option>
+              </select>
+            </div>
+
+            <button
+              onClick={executePathfinding}
+              disabled={isRunning}
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded font-medium mb-2 disabled:opacity-50"
+            >
+              🔍 Find Path ({selectedAlgorithm})
+            </button>
+
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={runCommands}
+                disabled={isRunning || commands.length === 0}
+                className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded font-medium disabled:opacity-50"
+              >
+                ▶️ Run
               </button>
-            ))}
+              <button
+                onClick={resetLevel}
+                disabled={isRunning}
+                className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded font-medium disabled:opacity-50"
+              >
+                🔄 Reset
+              </button>
+            </div>
           </div>
 
-          <div className="mb-4">
-            <h5 className="text-white text-sm mb-2">
-              📋 Chuỗi lệnh ({commands.length}):
-            </h5>
-            <div className="bg-gradient-to-r from-slate-800 to-slate-900 p-3 rounded-lg min-h-[50px] text-sm text-gray-300 border border-white/10 max-h-32 overflow-y-auto">
-              {commands.length > 0 ? (
-                <div className="space-y-1">
-                  {commands.map((cmd, idx) => (
-                    <div key={idx} className="flex items-center">
-                      <span className="text-cyan-400 mr-2">{idx + 1}.</span>
-                      <span>{cmd}</span>
-                    </div>
+          <div className="bg-gray-800/50 rounded-lg p-4 mb-4">
+            <h5 className="text-white font-medium mb-2">Commands Queue:</h5>
+            <div className="bg-gray-900/50 rounded p-2 min-h-16 max-h-24 overflow-y-auto">
+              {commands.length === 0 ? (
+                <p className="text-gray-400 text-sm">No commands yet</p>
+              ) : (
+                <div className="flex flex-wrap gap-1">
+                  {commands.map((cmd, index) => (
+                    <span key={index} className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs">
+                      {cmd}
+                    </span>
                   ))}
                 </div>
-              ) : (
-                <div className="text-gray-500 italic">Chưa có lệnh nào...</div>
               )}
             </div>
           </div>
 
-          <div className="space-y-3">
-            <button
-              onClick={runCommands}
-              disabled={isRunning || commands.length === 0}
-              className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 px-4 rounded-lg font-medium hover:from-green-600 hover:to-emerald-600 transition-all duration-200 disabled:opacity-50 shadow-lg transform hover:scale-105"
-            >
-              {isRunning ? '🚀 Đang thực thi...' : '▶️ Chạy chương trình'}
-            </button>
-
-            <button
-              onClick={resetRobot}
-              disabled={isRunning}
-              className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 px-4 rounded-lg font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-200 disabled:opacity-50"
-            >
-              🔄 Reset Robot
-            </button>
-
-            <button
-              onClick={() => setShowAlgorithm(!showAlgorithm)}
-              className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-indigo-600 transition-all duration-200"
-            >
-              {showAlgorithm ? '🔍 Ẩn thuật toán' : '🧠 Hiển thị A*'}
-            </button>
-          </div>
-
-          <div className="mt-4 text-xs text-gray-400 space-y-1">
-            <div>
-              💡 <strong>Mẹo:</strong> Sử dụng &quot;🤖 A* Algorithm&quot; để
-              xem đường đi tối ưu
+          <div className="bg-gray-800/50 rounded-lg p-4">
+            <h5 className="text-white font-medium mb-2">Level Progress:</h5>
+            <div className="text-sm space-y-1">
+              <div className="flex justify-between">
+                <span className="text-gray-300">Current Level:</span>
+                <span className="text-white">{currentLevel + 1}/100</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-300">Difficulty:</span>
+                <span className={getLevelColor(currentLevelData.difficulty)}>
+                  {currentLevelData.difficulty}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-300">Points Available:</span>
+                <span className="text-yellow-400">{currentLevelData.pointValue}</span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
+                <div 
+                  className="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full transition-all duration-300"
+                  style={{ width: `${((currentLevel + 1) / 100) * 100}%` }}
+                />
+              </div>
             </div>
-            <div>
-              🎯 <strong>Mục tiêu:</strong> Hoàn thành với ít bước nhất để được
-              điểm cao
-            </div>
-            <div>
-              ⚡ <strong>Điểm số:</strong> {score} | Cấp độ hiện tại:{' '}
-              {currentLevel + 1}
-            </div>
+
+            {currentLevel < 10 && (
+              <div className="mt-3">
+                <label className="text-white text-sm mb-2 block">Quick Level Select (1-10):</label>
+                <div className="grid grid-cols-5 gap-1">
+                  {Array.from({length: 10}, (_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => skipToLevel(i)}
+                      className={`px-2 py-1 rounded text-xs ${
+                        currentLevel === i 
+                          ? 'bg-blue-500 text-white' 
+                          : 'bg-gray-600 hover:bg-gray-500 text-gray-300'
+                      }`}
+                    >
+                      {i + 1}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -3774,7 +4220,7 @@ function RobotNavigation3DGame({
                       className += 'bg-gray-700/20 ';
                     }
 
-                    const scale = 25; // Larger pixel size for better visibility
+                    const scale = 30; // Optimized pixel size for better 3D visibility
                     const xOffset = x * scale;
                     const yOffset = y * scale;
                     const zOffset = z * scale;
@@ -3786,14 +4232,17 @@ function RobotNavigation3DGame({
                         style={{
                           width: `${scale}px`,
                           height: `${scale}px`,
-                          left: `${xOffset + zOffset * 0.5}px`,
-                          top: `${yOffset - zOffset * 0.5}px`,
+                          transform: `translate3d(${xOffset + zOffset * 0.7}px, ${yOffset - zOffset * 0.7}px, ${zOffset}px)`,
                           transformOrigin: 'center center',
-                          fontSize: '14px',
+                          fontSize: '16px',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           zIndex: isRobot ? 100 : isGoal ? 90 : 10,
+                          position: 'absolute',
+                          boxShadow: isRobot || isGoal 
+                            ? '0 4px 12px rgba(0,0,0,0.6)' 
+                            : '0 2px 6px rgba(0,0,0,0.3)',
                         }}
                       >
                         {content}
