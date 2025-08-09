@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -12,6 +12,7 @@ import {
   Brain,
   Code,
   Heart,
+  BookOpen,
 } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 
@@ -21,6 +22,31 @@ const Header: React.FC = () => {
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(
     null,
   );
+  const [continueSession, setContinueSession] = useState<{
+    title: string;
+    href: string;
+    moduleIcon: string;
+  } | null>(null);
+
+  // Load continue session from localStorage
+  useEffect(() => {
+    const lastVisited = localStorage.getItem('k2ai_last_visited_lesson');
+    if (lastVisited) {
+      try {
+        const sessionData = JSON.parse(lastVisited);
+        setContinueSession(sessionData);
+      } catch (error) {
+        console.error('Error loading continue session:', error);
+      }
+    }
+  }, []);
+
+  // Save visited lesson to localStorage
+  const saveVisitedLesson = (title: string, href: string, moduleIcon: string) => {
+    const sessionData = { title, href, moduleIcon, timestamp: Date.now() };
+    localStorage.setItem('k2ai_last_visited_lesson', JSON.stringify(sessionData));
+    setContinueSession(sessionData);
+  };
 
   // Improved mouse handlers for dropdown
   const handleDropdownEnter = () => {
@@ -59,6 +85,15 @@ const Header: React.FC = () => {
       icon: <span className="w-4 h-4 text-center">👤</span>,
     },
   ];
+
+  // Add continue session to core modules if available
+  if (continueSession) {
+    coreModules.splice(1, 0, {
+      name: 'Tiếp tục học tập',
+      href: continueSession.href,
+      icon: <BookOpen className="w-4 h-4" />,
+    });
+  }
 
   // Learning modules - dynamically generated from moduleNavigation
   const getLearningModulesByCategory = () => {

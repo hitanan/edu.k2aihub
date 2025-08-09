@@ -71,25 +71,9 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       const timer = setInterval(() => {
         setTimeLeft((prev) => {
           if (prev <= 1) {
-            // Time's up, end game
-            const elapsedTime = Date.now() - startTime;
-            const timeBonus = getTimeBonus();
-            const streakBonus = maxStreak * 10;
-            const perfectBonus = lives === 3 ? 25 : 0;
-            const finalScore = Math.round(
-              score + timeBonus + streakBonus + perfectBonus,
-            );
-
-            GAME_PROGRESS.saveProgress(game.id, {
-              score: finalScore,
-              accuracy: Math.max(0, score),
-              timeMs: elapsedTime,
-              completed: score > 50,
-              lastPlayed: Date.now(),
-            });
-
-            setCurrentGameState('results');
-            onComplete(finalScore);
+            // Time's up, show timeout message and return to menu
+            setIsTimerActive(false);
+            setCurrentGameState('timeout');
             return 120;
           }
           return prev - 1;
@@ -401,6 +385,42 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             >
               Quay lại
             </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (currentGameState === 'timeout') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-red-900 via-slate-900 to-red-900 flex items-center justify-center p-4">
+        <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 max-w-md w-full border border-red-500/20">
+          <div className="text-center">
+            <Clock className="w-16 h-16 mx-auto mb-4 text-red-400" />
+            <h2 className="text-2xl font-bold text-white mb-2">
+              Hết thời gian!
+            </h2>
+            <p className="text-gray-300 mb-2">Thời gian chơi đã kết thúc.</p>
+            <p className="text-sm text-gray-400 mb-6">
+              Điểm số hiện tại: {score} điểm
+            </p>
+
+            <div className="space-y-3">
+              <button
+                onClick={() => setCurrentGameState('menu')}
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-xl font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-200 flex items-center justify-center"
+              >
+                <RotateCcw className="w-5 h-5 mr-2" />
+                Chơi lại
+              </button>
+
+              <button
+                onClick={onExit}
+                className="w-full bg-white/10 text-white py-3 px-6 rounded-xl font-medium hover:bg-white/20 transition-all duration-200"
+              >
+                Thoát
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -845,57 +865,33 @@ function ArduinoCircuitGame({
   onRestart,
 }: any) {
   const [currentCircuit, setCurrentCircuit] = useState(0);
-  const [draggedComponent, setDraggedComponent] = useState<string | null>(null);
   const [placedComponents, setPlacedComponents] = useState<
     Record<string, boolean>
   >({});
   const [score, setScore] = useState(0);
-  const [isDropZoneActive, setIsDropZoneActive] = useState(false);
 
-  const circuit = gameData.circuits[currentCircuit];
+  const circuit = gameData?.circuits?.[currentCircuit];
 
-  const handleDragStart = (component: string) => {
-    setDraggedComponent(component);
-  };
-
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDropZoneActive(true);
-  };
-
-  const handleDragLeave = () => {
-    setIsDropZoneActive(false);
-  };
-
-  const handleDrop = (e: React.DragEvent | null, component?: string) => {
-    if (e) {
-      e.preventDefault();
+  useEffect(() => {
+    if (!circuit) {
+      console.warn('Circuit data not available:', gameData);
     }
-
-    const componentToDrop = component || draggedComponent;
-    if (componentToDrop) {
-      setPlacedComponents((prev) => ({
-        ...prev,
-        [componentToDrop]: true,
-      }));
-      setScore((prevScore) => prevScore + 10); // Add points for each component placed
-    }
-
-    setDraggedComponent(null);
-    setIsDropZoneActive(false);
-  };
+  }, [circuit, gameData]);
 
   const checkCircuit = () => {
-    const allPlaced = circuit.components.every(
-      (comp: string) => placedComponents[comp],
-    );
+    if (!circuit || !circuit.components) return;
+
+    const allPlaced = circuit.components.every((comp: any) => {
+      const componentKey = comp.id || comp.name || comp;
+      return placedComponents[componentKey];
+    });
     if (allPlaced) {
       const completionBonus = 25;
       const finalScore = score + completionBonus;
       setScore(finalScore);
 
       setTimeout(() => {
-        if (currentCircuit < gameData.circuits.length - 1) {
+        if (currentCircuit < (gameData?.circuits?.length || 0) - 1) {
           setCurrentCircuit((prev) => prev + 1);
           setPlacedComponents({});
         } else {
@@ -911,6 +907,22 @@ function ArduinoCircuitGame({
     }
   }, [timeLeft, onRestart]);
 
+  if (!circuit) {
+    return (
+      <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+        <div className="text-center text-white">
+          <p className="mb-4">Không thể tải dữ liệu mạch điện.</p>
+          <button
+            onClick={onRestart}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+          >
+            Thử lại
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
@@ -923,89 +935,73 @@ function ArduinoCircuitGame({
         <div>
           <h4 className="text-white font-medium mb-3">Linh kiện:</h4>
           <div className="space-y-2">
-            {circuit.components.map((component: string, index: number) => (
-              <div
-                key={index}
-                draggable={!placedComponents[component]}
-                onDragStart={() => handleDragStart(component)}
-                className={`p-3 rounded-lg border transition-all duration-200 cursor-pointer ${
-                  placedComponents[component]
-                    ? 'bg-green-500/20 border-green-500/50 text-green-300'
-                    : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:scale-105'
-                } ${draggedComponent === component ? 'opacity-50 scale-95' : ''}`}
-                onClick={() =>
-                  !placedComponents[component] && handleDrop(null, component)
-                }
-              >
-                <div className="flex items-center justify-between">
-                  <span>{component}</span>
-                  {placedComponents[component] && (
-                    <span className="text-green-400">✓</span>
-                  )}
-                  {!placedComponents[component] && (
-                    <span className="text-gray-500">⋮⋮</span>
-                  )}
+            {circuit.components?.map((component: any, index: number) => {
+              const componentKey = component.id || component.name || component;
+              const componentName = component.name || component;
+              return (
+                <div
+                  key={index}
+                  className={`p-3 rounded-lg border cursor-pointer transition-all ${
+                    placedComponents[componentKey]
+                      ? 'bg-green-500/20 border-green-500/50 text-green-300'
+                      : 'bg-gray-700/50 border-gray-600 text-gray-300 hover:bg-gray-600/50'
+                  }`}
+                  onClick={() => {
+                    if (!placedComponents[componentKey]) {
+                      setPlacedComponents((prev) => ({
+                        ...prev,
+                        [componentKey]: true,
+                      }));
+                      setScore((prev) => prev + 10);
+                      checkCircuit();
+                    }
+                  }}
+                >
+                  <div className="flex items-center justify-between">
+                    <span>{componentName}</span>
+                    {placedComponents[componentKey] && (
+                      <span className="text-green-400">✓</span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
         <div>
-          <h4 className="text-white font-medium mb-3">Bảng mạch:</h4>
-          <div
-            className={`min-h-48 p-4 rounded-lg border-2 border-dashed transition-all duration-200 ${
-              isDropZoneActive
-                ? 'border-blue-400 bg-blue-400/10'
-                : 'border-gray-600 bg-gray-800/50'
-            }`}
-            onDragOver={handleDragOver}
-            onDragLeave={handleDragLeave}
-            onDrop={handleDrop}
-          >
-            <div className="text-center text-gray-400 mb-4">
-              {isDropZoneActive
-                ? 'Thả linh kiện vào đây'
-                : 'Kéo thả hoặc click linh kiện'}
-            </div>
-
-            <div className="space-y-2">
-              <h5 className="text-white text-sm font-medium">Kết nối:</h5>
-              {circuit.connections.map((connection: string, index: number) => (
-                <div
-                  key={index}
-                  className="p-2 bg-gray-700 rounded text-sm text-gray-300 border border-gray-600"
-                >
-                  {connection}
-                </div>
-              ))}
+          <h4 className="text-white font-medium mb-3">Workspace:</h4>
+          <div className="bg-gray-800/50 rounded-lg p-4 min-h-48 border-2 border-dashed border-gray-600">
+            <p className="text-gray-400 text-center mb-4">
+              Nhấp vào linh kiện để đặt vào workspace
+            </p>
+            <div className="grid grid-cols-2 gap-2">
+              {Object.entries(placedComponents).map(([key, placed]) =>
+                placed ? (
+                  <div
+                    key={key}
+                    className="bg-blue-500/20 border border-blue-400 rounded p-2 text-center text-xs text-blue-300"
+                  >
+                    {key}
+                  </div>
+                ) : null,
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-6">
-        <h4 className="text-white font-medium mb-2">Code Arduino:</h4>
-        <pre className="bg-gray-800 p-3 rounded text-green-400 text-sm overflow-x-auto border border-gray-700">
-          {circuit.code}
-        </pre>
-      </div>
-
-      <button
-        onClick={checkCircuit}
-        disabled={
-          !circuit.components.every((comp: string) => placedComponents[comp])
-        }
-        className="w-full mt-6 bg-gradient-to-r from-orange-500 to-red-500 text-white py-3 px-6 rounded-xl font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {circuit.components.every((comp: string) => placedComponents[comp])
-          ? 'Kiểm tra mạch ✓'
-          : `Kiểm tra mạch (${Object.keys(placedComponents).length}/${circuit.components.length})`}
-      </button>
+      {circuit.code && (
+        <div className="mt-6 p-4 bg-gray-800/50 rounded-lg">
+          <h4 className="text-white font-medium mb-3">Code Arduino:</h4>
+          <pre className="bg-gray-900 p-4 rounded text-green-400 text-sm overflow-x-auto">
+            {circuit.code}
+          </pre>
+        </div>
+      )}
     </div>
   );
 }
-
 function STEMExperimentGame({
   gameData,
   onComplete,
@@ -2044,195 +2040,1313 @@ function MathPuzzleGame({ gameData, onComplete, timeLeft, onRestart }: any) {
   );
 }
 
-// Placeholder components for other games
+// Interactive Game Components
 function BlockchainExplorerGame({ onComplete, timeLeft, onRestart }: any) {
+  const [currentBlock, setCurrentBlock] = useState(0);
+  const [score, setScore] = useState(0);
+  const [verifiedTransactions, setVerifiedTransactions] = useState<Set<number>>(new Set());
+
+  const blocks = [
+    {
+      id: 1,
+      hash: "0x1a2b3c...",
+      previousHash: "0x000000...",
+      transactions: [
+        { id: 1, from: "Alice", to: "Bob", amount: 10, fee: 0.1 },
+        { id: 2, from: "Charlie", to: "David", amount: 5.5, fee: 0.05 },
+        { id: 3, from: "Eve", to: "Frank", amount: 2.3, fee: 0.02 }
+      ],
+      nonce: 12345,
+      timestamp: "2024-01-01 10:30:00"
+    },
+    {
+      id: 2,
+      hash: "0x4d5e6f...",
+      previousHash: "0x1a2b3c...",
+      transactions: [
+        { id: 4, from: "Bob", to: "Grace", amount: 8.7, fee: 0.08 },
+        { id: 5, from: "Henry", to: "Alice", amount: 12.0, fee: 0.12 }
+      ],
+      nonce: 67890,
+      timestamp: "2024-01-01 10:35:00"
+    }
+  ];
+
+  const currentBlockData = blocks[currentBlock];
+
+  const verifyTransaction = (transactionId: number) => {
+    if (!verifiedTransactions.has(transactionId)) {
+      setVerifiedTransactions(prev => new Set([...prev, transactionId]));
+      setScore(prev => prev + 15);
+    }
+  };
+
+  const nextBlock = () => {
+    if (currentBlock < blocks.length - 1) {
+      setCurrentBlock(prev => prev + 1);
+    } else {
+      onComplete(true, score);
+    }
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">Blockchain Explorer</h3>
-      <p className="text-gray-300 mb-6">
-        Khám phá cách thức hoạt động của blockchain...
-      </p>
-      <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-medium"
-      >
-        Hoàn thành
-      </button>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">
+          🔗 Blockchain Explorer - Block #{currentBlockData.id}
+        </h3>
+        <div className="text-blue-400 font-medium">Điểm: {score}</div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-white font-medium mb-3">Block Information:</h4>
+          <div className="bg-gray-800/50 rounded-lg p-4 space-y-2">
+            <div className="flex justify-between">
+              <span className="text-gray-400">Hash:</span>
+              <span className="text-cyan-400 font-mono text-sm">{currentBlockData.hash}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-400">Previous Hash:</span>
+              <span className="text-gray-400 font-mono text-sm">{currentBlockData.previousHash}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-400">Nonce:</span>
+              <span className="text-yellow-400">{currentBlockData.nonce}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-400">Timestamp:</span>
+              <span className="text-green-400">{currentBlockData.timestamp}</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-white font-medium mb-3">Transactions ({currentBlockData.transactions.length}):</h4>
+          <div className="space-y-2">
+            {currentBlockData.transactions.map((tx) => (
+              <div
+                key={tx.id}
+                className={`p-3 rounded-lg border cursor-pointer transition-all ${
+                  verifiedTransactions.has(tx.id)
+                    ? 'bg-green-500/20 border-green-500/50'
+                    : 'bg-gray-800/50 border-gray-600 hover:bg-gray-700/50'
+                }`}
+                onClick={() => verifyTransaction(tx.id)}
+              >
+                <div className="flex justify-between items-center">
+                  <div>
+                    <div className="text-white text-sm">
+                      {tx.from} → {tx.to}
+                    </div>
+                    <div className="text-gray-400 text-xs">
+                      Amount: {tx.amount} | Fee: {tx.fee}
+                    </div>
+                  </div>
+                  {verifiedTransactions.has(tx.id) && (
+                    <span className="text-green-400">✓</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {verifiedTransactions.size === currentBlockData.transactions.length && (
+        <button
+          onClick={nextBlock}
+          className="w-full mt-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-200"
+        >
+          {currentBlock < blocks.length - 1 ? 'Next Block →' : 'Complete Blockchain ✓'}
+        </button>
+      )}
     </div>
   );
 }
 
 function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
+  const [currentYear, setCurrentYear] = useState(2020);
+  const [co2Level, setCo2Level] = useState(415);
+  const [temperature, setTemperature] = useState(1.1);
+  const [policies, setPolicies] = useState<string[]>([]);
+  const [score, setScore] = useState(0);
+
+  const policyOptions = [
+    { id: 'renewable', name: 'Năng lượng tái tạo', impact: { co2: -5, temp: -0.1 }, cost: 20 },
+    { id: 'forest', name: 'Trồng rừng', impact: { co2: -3, temp: -0.05 }, cost: 15 },
+    { id: 'electric', name: 'Xe điện', impact: { co2: -4, temp: -0.08 }, cost: 25 },
+    { id: 'industry', name: 'Công nghệ sạch', impact: { co2: -6, temp: -0.12 }, cost: 30 }
+  ];
+
+  const advanceYear = () => {
+    let newCo2 = co2Level + 2; // Base increase
+    let newTemp = temperature + 0.02; // Base increase
+    let yearCost = 0;
+
+    policies.forEach(policyId => {
+      const policy = policyOptions.find(p => p.id === policyId);
+      if (policy) {
+        newCo2 += policy.impact.co2;
+        newTemp += policy.impact.temp;
+        yearCost += policy.cost;
+      }
+    });
+
+    setCo2Level(Math.max(350, newCo2));
+    setTemperature(Math.max(0.5, newTemp));
+    setCurrentYear(prev => prev + 1);
+
+    // Calculate score based on climate improvement
+    const climateScore = Math.max(0, 500 - (newCo2 - 350) - (newTemp - 0.5) * 100);
+    setScore(climateScore);
+
+    if (currentYear >= 2030) {
+      const finalScore = climateScore + (newTemp < 1.5 ? 100 : 0); // Paris Agreement bonus
+      onComplete(true, finalScore);
+    }
+  };
+
+  const togglePolicy = (policyId: string) => {
+    setPolicies(prev => 
+      prev.includes(policyId) 
+        ? prev.filter(p => p !== policyId)
+        : [...prev, policyId]
+    );
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">Mô hình khí hậu</h3>
-      <p className="text-gray-300 mb-6">
-        Tìm hiểu về tác động của biến đổi khí hậu...
-      </p>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">
+          🌍 Mô hình khí hậu - Năm {currentYear}
+        </h3>
+        <div className="text-green-400 font-medium">Điểm: {score}</div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-white font-medium mb-3">Chỉ số khí hậu:</h4>
+          <div className="space-y-4">
+            <div className="bg-gray-800/50 rounded-lg p-4">
+              <div className="flex justify-between mb-2">
+                <span className="text-gray-300">CO₂ (ppm):</span>
+                <span className={`font-bold ${co2Level > 450 ? 'text-red-400' : co2Level > 400 ? 'text-yellow-400' : 'text-green-400'}`}>
+                  {co2Level.toFixed(1)}
+                </span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2">
+                <div 
+                  className={`h-2 rounded-full transition-all duration-300 ${co2Level > 450 ? 'bg-red-500' : co2Level > 400 ? 'bg-yellow-500' : 'bg-green-500'}`}
+                  style={{ width: `${Math.min(100, (co2Level - 300) / 2)}%` }}
+                />
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 rounded-lg p-4">
+              <div className="flex justify-between mb-2">
+                <span className="text-gray-300">Nhiệt độ (°C):</span>
+                <span className={`font-bold ${temperature > 2 ? 'text-red-400' : temperature > 1.5 ? 'text-yellow-400' : 'text-green-400'}`}>
+                  +{temperature.toFixed(2)}
+                </span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2">
+                <div 
+                  className={`h-2 rounded-full transition-all duration-300 ${temperature > 2 ? 'bg-red-500' : temperature > 1.5 ? 'bg-yellow-500' : 'bg-green-500'}`}
+                  style={{ width: `${Math.min(100, temperature * 25)}%` }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-white font-medium mb-3">Chính sách khí hậu:</h4>
+          <div className="space-y-2">
+            {policyOptions.map((policy) => (
+              <div
+                key={policy.id}
+                className={`p-3 rounded-lg border cursor-pointer transition-all ${
+                  policies.includes(policy.id)
+                    ? 'bg-green-500/20 border-green-500/50'
+                    : 'bg-gray-800/50 border-gray-600 hover:bg-gray-700/50'
+                }`}
+                onClick={() => togglePolicy(policy.id)}
+              >
+                <div className="flex justify-between items-center">
+                  <div>
+                    <div className="text-white font-medium">{policy.name}</div>
+                    <div className="text-gray-400 text-sm">
+                      CO₂: {policy.impact.co2} ppm | Temp: {policy.impact.temp}°C
+                    </div>
+                    <div className="text-yellow-400 text-sm">Chi phí: ${policy.cost}B</div>
+                  </div>
+                  {policies.includes(policy.id) && (
+                    <span className="text-green-400">✓</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-green-500 to-teal-500 text-white py-3 px-6 rounded-lg font-medium"
+        onClick={advanceYear}
+        className="w-full mt-6 bg-gradient-to-r from-green-500 to-teal-500 text-white py-3 px-6 rounded-lg font-medium hover:from-green-600 hover:to-teal-600 transition-all duration-200"
       >
-        Hoàn thành
+        Tiến tới năm {currentYear + 1} →
       </button>
     </div>
   );
 }
 
 function CybersecurityDefenseGame({ onComplete, timeLeft, onRestart }: any) {
+  const [threats, setThreats] = useState([
+    { id: 1, type: 'malware', name: 'Trojan.exe', severity: 'high', blocked: false },
+    { id: 2, type: 'phishing', name: 'Fake Email', severity: 'medium', blocked: false },
+    { id: 3, type: 'ddos', name: 'DDoS Attack', severity: 'critical', blocked: false },
+    { id: 4, type: 'ransomware', name: 'CryptoLocker', severity: 'critical', blocked: false }
+  ]);
+  const [securityLevel, setSecurityLevel] = useState(60);
+  const [score, setScore] = useState(0);
+
+  const blockThreat = (threatId: number) => {
+    setThreats(prev => prev.map(threat => 
+      threat.id === threatId ? { ...threat, blocked: true } : threat
+    ));
+    setSecurityLevel(prev => Math.min(100, prev + 10));
+    
+    const threat = threats.find(t => t.id === threatId);
+    const points = threat?.severity === 'critical' ? 30 : threat?.severity === 'high' ? 20 : 15;
+    setScore(prev => prev + points);
+  };
+
+  const allThreatsBlocked = threats.every(threat => threat.blocked);
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
+  useEffect(() => {
+    if (allThreatsBlocked) {
+      setTimeout(() => onComplete(true, score + 50), 1000);
+    }
+  }, [allThreatsBlocked, score, onComplete]);
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">
-        Phòng thủ An ninh mạng
-      </h3>
-      <p className="text-gray-300 mb-6">
-        Học cách bảo vệ hệ thống khỏi các cuộc tấn công...
-      </p>
-      <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-red-500 to-pink-500 text-white py-3 px-6 rounded-lg font-medium"
-      >
-        Hoàn thành
-      </button>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">🛡️ Phòng thủ An ninh mạng</h3>
+        <div className="flex justify-between">
+          <div className="text-red-400 font-medium">Điểm: {score}</div>
+          <div className={`font-medium ${securityLevel > 80 ? 'text-green-400' : securityLevel > 60 ? 'text-yellow-400' : 'text-red-400'}`}>
+            Bảo mật: {securityLevel}%
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <h4 className="text-white font-medium mb-3">Mối đe dọa được phát hiện:</h4>
+        <div className="space-y-3">
+          {threats.map((threat) => (
+            <div
+              key={threat.id}
+              className={`p-4 rounded-lg border transition-all ${
+                threat.blocked
+                  ? 'bg-green-500/20 border-green-500/50'
+                  : threat.severity === 'critical'
+                  ? 'bg-red-500/20 border-red-500/50'
+                  : threat.severity === 'high'
+                  ? 'bg-orange-500/20 border-orange-500/50'
+                  : 'bg-yellow-500/20 border-yellow-500/50'
+              }`}
+            >
+              <div className="flex justify-between items-center">
+                <div>
+                  <div className="text-white font-medium">{threat.name}</div>
+                  <div className="text-gray-400 text-sm">
+                    Type: {threat.type} | Severity: {threat.severity}
+                  </div>
+                </div>
+                {threat.blocked ? (
+                  <span className="text-green-400 font-bold">BLOCKED ✓</span>
+                ) : (
+                  <button
+                    onClick={() => blockThreat(threat.id)}
+                    className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                  >
+                    Block
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {allThreatsBlocked && (
+        <div className="text-center p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
+          <div className="text-green-400 font-bold text-lg">🎉 All Threats Blocked!</div>
+          <div className="text-gray-300">System Security: 100%</div>
+        </div>
+      )}
     </div>
   );
 }
 
 function DataVisualizationGame({ onComplete, timeLeft, onRestart }: any) {
+  const [selectedChart, setSelectedChart] = useState<string | null>(null);
+  const [dataSet, setDataSet] = useState('sales');
+  const [score, setScore] = useState(0);
+
+  const data = {
+    sales: [
+      { month: 'Jan', value: 120 },
+      { month: 'Feb', value: 150 },
+      { month: 'Mar', value: 180 },
+      { month: 'Apr', value: 200 },
+      { month: 'May', value: 220 }
+    ],
+    users: [
+      { category: 'Desktop', value: 45 },
+      { category: 'Mobile', value: 35 },
+      { category: 'Tablet', value: 20 }
+    ]
+  };
+
+  const chartTypes = [
+    { id: 'bar', name: 'Bar Chart', bestFor: 'sales', points: 20 },
+    { id: 'line', name: 'Line Chart', bestFor: 'sales', points: 25 },
+    { id: 'pie', name: 'Pie Chart', bestFor: 'users', points: 25 },
+    { id: 'scatter', name: 'Scatter Plot', bestFor: 'none', points: 10 }
+  ];
+
+  const selectChart = (chartId: string) => {
+    setSelectedChart(chartId);
+    const chart = chartTypes.find(c => c.id === chartId);
+    const isOptimal = chart?.bestFor === dataSet;
+    const points = isOptimal ? chart.points : Math.floor(chart?.points / 2) || 5;
+    setScore(prev => prev + points);
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">
-        Trực quan hóa dữ liệu
-      </h3>
-      <p className="text-gray-300 mb-6">
-        Tạo các biểu đồ và trực quan hóa dữ liệu...
-      </p>
-      <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-3 px-6 rounded-lg font-medium"
-      >
-        Hoàn thành
-      </button>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">📊 Trực quan hóa dữ liệu</h3>
+        <div className="text-indigo-400 font-medium">Điểm: {score}</div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-white font-medium mb-3">Chọn loại dữ liệu:</h4>
+          <div className="space-y-2 mb-4">
+            <button
+              onClick={() => setDataSet('sales')}
+              className={`w-full p-3 rounded-lg text-left transition-all ${
+                dataSet === 'sales'
+                  ? 'bg-blue-500/20 border-blue-500/50 border'
+                  : 'bg-gray-800/50 border border-gray-600 hover:bg-gray-700/50'
+              }`}
+            >
+              <div className="text-white font-medium">Sales Data</div>
+              <div className="text-gray-400 text-sm">Monthly sales figures</div>
+            </button>
+            <button
+              onClick={() => setDataSet('users')}
+              className={`w-full p-3 rounded-lg text-left transition-all ${
+                dataSet === 'users'
+                  ? 'bg-blue-500/20 border-blue-500/50 border'
+                  : 'bg-gray-800/50 border border-gray-600 hover:bg-gray-700/50'
+              }`}
+            >
+              <div className="text-white font-medium">User Data</div>
+              <div className="text-gray-400 text-sm">Device usage breakdown</div>
+            </button>
+          </div>
+
+          <h4 className="text-white font-medium mb-3">Dữ liệu hiện tại:</h4>
+          <div className="bg-gray-800/50 rounded-lg p-4">
+            <pre className="text-gray-300 text-sm">
+              {JSON.stringify(data[dataSet as keyof typeof data], null, 2)}
+            </pre>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-white font-medium mb-3">Chọn loại biểu đồ:</h4>
+          <div className="space-y-2">
+            {chartTypes.map((chart) => (
+              <button
+                key={chart.id}
+                onClick={() => selectChart(chart.id)}
+                disabled={selectedChart === chart.id}
+                className={`w-full p-3 rounded-lg text-left transition-all ${
+                  selectedChart === chart.id
+                    ? 'bg-green-500/20 border-green-500/50 border'
+                    : chart.bestFor === dataSet
+                    ? 'bg-indigo-500/20 border-indigo-500/50 border hover:bg-indigo-500/30'
+                    : 'bg-gray-800/50 border border-gray-600 hover:bg-gray-700/50'
+                } disabled:opacity-50 disabled:cursor-not-allowed`}
+              >
+                <div className="flex justify-between items-center">
+                  <div>
+                    <div className="text-white font-medium">{chart.name}</div>
+                    <div className="text-gray-400 text-sm">
+                      {chart.bestFor === dataSet ? '✓ Optimal for this data' : 'Available option'}
+                    </div>
+                  </div>
+                  <div className="text-yellow-400">{chart.points} pts</div>
+                </div>
+                {selectedChart === chart.id && (
+                  <div className="mt-2 text-green-400 text-sm">Selected ✓</div>
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {selectedChart && (
+        <button
+          onClick={() => onComplete(true, score)}
+          className="w-full mt-6 bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-3 px-6 rounded-lg font-medium hover:from-indigo-600 hover:to-blue-600 transition-all duration-200"
+        >
+          Complete Visualization ✓
+        </button>
+      )}
     </div>
   );
 }
 
 function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
+  const [currentMission, setCurrentMission] = useState(0);
+  const [fuel, setFuel] = useState(100);
+  const [oxygen, setOxygen] = useState(100);
+  const [samples, setSamples] = useState(0);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [score, setScore] = useState(0);
+
+  const missions = [
+    {
+      name: "Mars Sample Collection",
+      objective: "Collect 3 soil samples from different locations",
+      targetSamples: 3,
+      environment: "Mars Surface"
+    },
+    {
+      name: "Asteroid Mining",
+      objective: "Extract valuable minerals from asteroid belt",
+      targetSamples: 2,
+      environment: "Asteroid Belt"
+    }
+  ];
+
+  const currentMissionData = missions[currentMission];
+
+  const moveSpacecraft = (direction: string) => {
+    if (fuel <= 0) return;
+
+    let newPos = { ...position };
+    switch (direction) {
+      case 'up': newPos.y = Math.max(-3, newPos.y - 1); break;
+      case 'down': newPos.y = Math.min(3, newPos.y + 1); break;
+      case 'left': newPos.x = Math.max(-3, newPos.x - 1); break;
+      case 'right': newPos.x = Math.min(3, newPos.x + 1); break;
+    }
+
+    setPosition(newPos);
+    setFuel(prev => Math.max(0, prev - 5));
+    setOxygen(prev => Math.max(0, prev - 2));
+  };
+
+  const collectSample = () => {
+    if (position.x !== 0 || position.y !== 0) {
+      setSamples(prev => prev + 1);
+      setScore(prev => prev + 25);
+    }
+  };
+
+  const refuel = () => {
+    setFuel(100);
+    setOxygen(100);
+    setScore(prev => Math.max(0, prev - 10));
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
+  useEffect(() => {
+    if (samples >= currentMissionData.targetSamples) {
+      if (currentMission < missions.length - 1) {
+        setCurrentMission(prev => prev + 1);
+        setSamples(0);
+        setPosition({ x: 0, y: 0 });
+      } else {
+        onComplete(true, score + 100);
+      }
+    }
+  }, [samples, currentMissionData.targetSamples, currentMission, missions.length, score, onComplete]);
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">Khám phá Vũ trụ</h3>
-      <p className="text-gray-300 mb-6">
-        Lên kế hoạch cho các sứ mệnh không gian...
-      </p>
-      <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-3 px-6 rounded-lg font-medium"
-      >
-        Hoàn thành
-      </button>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">🚀 {currentMissionData.name}</h3>
+        <p className="text-gray-300 text-sm">{currentMissionData.objective}</p>
+        <div className="text-purple-400 font-medium">Điểm: {score}</div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-white font-medium mb-3">Không gian: {currentMissionData.environment}</h4>
+          <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-lg p-4 relative" style={{height: '200px'}}>
+            {/* Grid representation */}
+            {Array.from({length: 7}, (_, i) => 
+              Array.from({length: 7}, (_, j) => {
+                const x = j - 3;
+                const y = i - 3;
+                const isSpacecraft = position.x === x && position.y === y;
+                const isHome = x === 0 && y === 0;
+                return (
+                  <div
+                    key={`${i}-${j}`}
+                    className={`absolute border border-gray-600/30 ${
+                      isSpacecraft ? 'bg-cyan-400' : 
+                      isHome ? 'bg-green-400/50' : 
+                      'bg-gray-800/20'
+                    }`}
+                    style={{
+                      width: '20px',
+                      height: '20px',
+                      left: `${j * 22 + 10}px`,
+                      top: `${i * 22 + 10}px`,
+                    }}
+                  >
+                    {isSpacecraft && <span className="text-xs">🚀</span>}
+                    {isHome && <span className="text-xs">🏠</span>}
+                  </div>
+                );
+              })
+            )}
+          </div>
+
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            <div></div>
+            <button
+              onClick={() => moveSpacecraft('up')}
+              disabled={fuel <= 0}
+              className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded disabled:opacity-50"
+            >
+              ⬆️
+            </button>
+            <div></div>
+            <button
+              onClick={() => moveSpacecraft('left')}
+              disabled={fuel <= 0}
+              className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded disabled:opacity-50"
+            >
+              ⬅️
+            </button>
+            <button
+              onClick={collectSample}
+              disabled={position.x === 0 && position.y === 0}
+              className="bg-yellow-600 hover:bg-yellow-700 text-white p-2 rounded text-sm disabled:opacity-50"
+            >
+              📦 Collect
+            </button>
+            <button
+              onClick={() => moveSpacecraft('right')}
+              disabled={fuel <= 0}
+              className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded disabled:opacity-50"
+            >
+              ➡️
+            </button>
+            <div></div>
+            <button
+              onClick={() => moveSpacecraft('down')}
+              disabled={fuel <= 0}
+              className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded disabled:opacity-50"
+            >
+              ⬇️
+            </button>
+            <div></div>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-white font-medium mb-3">Spacecraft Status:</h4>
+          <div className="space-y-3">
+            <div className="bg-gray-800/50 rounded-lg p-3">
+              <div className="flex justify-between mb-1">
+                <span className="text-gray-300">Fuel:</span>
+                <span className={fuel > 20 ? 'text-green-400' : 'text-red-400'}>{fuel}%</span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2">
+                <div 
+                  className={`h-2 rounded-full transition-all duration-300 ${fuel > 20 ? 'bg-green-500' : 'bg-red-500'}`}
+                  style={{ width: `${fuel}%` }}
+                />
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 rounded-lg p-3">
+              <div className="flex justify-between mb-1">
+                <span className="text-gray-300">Oxygen:</span>
+                <span className={oxygen > 20 ? 'text-blue-400' : 'text-red-400'}>{oxygen}%</span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2">
+                <div 
+                  className={`h-2 rounded-full transition-all duration-300 ${oxygen > 20 ? 'bg-blue-500' : 'bg-red-500'}`}
+                  style={{ width: `${oxygen}%` }}
+                />
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 rounded-lg p-3">
+              <div className="flex justify-between">
+                <span className="text-gray-300">Samples Collected:</span>
+                <span className="text-yellow-400">{samples}/{currentMissionData.targetSamples}</span>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 rounded-lg p-3">
+              <div className="flex justify-between">
+                <span className="text-gray-300">Position:</span>
+                <span className="text-cyan-400">({position.x}, {position.y})</span>
+              </div>
+            </div>
+          </div>
+
+          <button
+            onClick={refuel}
+            className="w-full mt-4 bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 px-4 rounded-lg font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-200"
+          >
+            🔋 Emergency Refuel (-10 pts)
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
 
 function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: any) {
+  const [layers, setLayers] = useState([
+    { id: 1, type: 'input', neurons: 3, name: 'Input Layer' },
+    { id: 2, type: 'output', neurons: 1, name: 'Output Layer' }
+  ]);
+  const [currentAccuracy, setCurrentAccuracy] = useState(45);
+  const [trainingEpochs, setTrainingEpochs] = useState(0);
+  const [score, setScore] = useState(0);
+
+  const addHiddenLayer = () => {
+    const newLayer = {
+      id: layers.length + 1,
+      type: 'hidden',
+      neurons: 4,
+      name: `Hidden Layer ${layers.filter(l => l.type === 'hidden').length + 1}`
+    };
+    
+    const newLayers = [...layers];
+    newLayers.splice(-1, 0, newLayer); // Insert before output layer
+    setLayers(newLayers);
+    setCurrentAccuracy(prev => Math.min(95, prev + 15));
+  };
+
+  const adjustNeurons = (layerId: number, change: number) => {
+    setLayers(prev => prev.map(layer => 
+      layer.id === layerId 
+        ? { ...layer, neurons: Math.max(1, Math.min(10, layer.neurons + change)) }
+        : layer
+    ));
+    setCurrentAccuracy(prev => Math.min(95, prev + Math.random() * 5));
+  };
+
+  const trainNetwork = () => {
+    setTrainingEpochs(prev => prev + 10);
+    const improvement = Math.random() * 10;
+    setCurrentAccuracy(prev => Math.min(98, prev + improvement));
+    setScore(prev => prev + Math.floor(improvement * 2));
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">
-        Xây dựng mạng Neural
-      </h3>
-      <p className="text-gray-300 mb-6">
-        Thiết kế và huấn luyện mạng neural...
-      </p>
-      <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-pink-500 to-rose-500 text-white py-3 px-6 rounded-lg font-medium"
-      >
-        Hoàn thành
-      </button>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">🧠 Neural Network Builder</h3>
+        <div className="flex justify-between">
+          <div className="text-pink-400 font-medium">Điểm: {score}</div>
+          <div className={`font-medium ${currentAccuracy > 90 ? 'text-green-400' : currentAccuracy > 70 ? 'text-yellow-400' : 'text-red-400'}`}>
+            Accuracy: {currentAccuracy.toFixed(1)}%
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-white font-medium mb-3">Network Architecture:</h4>
+          <div className="space-y-3">
+            {layers.map((layer, index) => (
+              <div
+                key={layer.id}
+                className={`p-4 rounded-lg border ${
+                  layer.type === 'input' ? 'bg-blue-500/20 border-blue-500/50' :
+                  layer.type === 'hidden' ? 'bg-purple-500/20 border-purple-500/50' :
+                  'bg-green-500/20 border-green-500/50'
+                }`}
+              >
+                <div className="flex justify-between items-center">
+                  <div>
+                    <div className="text-white font-medium">{layer.name}</div>
+                    <div className="text-gray-400 text-sm">Neurons: {layer.neurons}</div>
+                  </div>
+                  {layer.type === 'hidden' && (
+                    <div className="flex gap-1">
+                      <button
+                        onClick={() => adjustNeurons(layer.id, -1)}
+                        className="bg-red-600 hover:bg-red-700 text-white w-8 h-8 rounded text-sm"
+                      >
+                        -
+                      </button>
+                      <button
+                        onClick={() => adjustNeurons(layer.id, 1)}
+                        className="bg-green-600 hover:bg-green-700 text-white w-8 h-8 rounded text-sm"
+                      >
+                        +
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={addHiddenLayer}
+            disabled={layers.filter(l => l.type === 'hidden').length >= 3}
+            className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            + Add Hidden Layer
+          </button>
+        </div>
+
+        <div>
+          <h4 className="text-white font-medium mb-3">Training Control:</h4>
+          <div className="space-y-4">
+            <div className="bg-gray-800/50 rounded-lg p-4">
+              <div className="flex justify-between mb-2">
+                <span className="text-gray-300">Training Progress:</span>
+                <span className="text-blue-400">{trainingEpochs} epochs</span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
+                  style={{ width: `${Math.min(100, trainingEpochs)}%` }}
+                />
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 rounded-lg p-4">
+              <div className="flex justify-between mb-2">
+                <span className="text-gray-300">Model Accuracy:</span>
+                <span className={currentAccuracy > 90 ? 'text-green-400' : currentAccuracy > 70 ? 'text-yellow-400' : 'text-red-400'}>
+                  {currentAccuracy.toFixed(1)}%
+                </span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2">
+                <div 
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    currentAccuracy > 90 ? 'bg-green-500' : 
+                    currentAccuracy > 70 ? 'bg-yellow-500' : 'bg-red-500'
+                  }`}
+                  style={{ width: `${currentAccuracy}%` }}
+                />
+              </div>
+            </div>
+
+            <button
+              onClick={trainNetwork}
+              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-4 rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200"
+            >
+              🔄 Train Network (+10 epochs)
+            </button>
+
+            {currentAccuracy > 90 && (
+              <button
+                onClick={() => onComplete(true, score + 100)}
+                className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 px-4 rounded-lg font-medium hover:from-green-600 hover:to-emerald-600 transition-all duration-200"
+              >
+                🎯 Deploy Model (90%+ accuracy!)
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 function ChemistryLabGame({ onComplete, timeLeft, onRestart }: any) {
+  const [currentExperiment, setCurrentExperiment] = useState(0);
+  const [selectedCompounds, setSelectedCompounds] = useState<string[]>([]);
+  const [temperature, setTemperature] = useState(25);
+  const [experimentResult, setExperimentResult] = useState<string | null>(null);
+  const [score, setScore] = useState(0);
+
+  const experiments = [
+    {
+      name: "Acid-Base Reaction",
+      description: "Mix acid and base to create salt and water",
+      requiredCompounds: ["HCl", "NaOH"],
+      optimalTemp: 25,
+      result: "NaCl + H2O",
+      points: 30
+    },
+    {
+      name: "Combustion Reaction", 
+      description: "Burn methane in oxygen",
+      requiredCompounds: ["CH4", "O2"],
+      optimalTemp: 500,
+      result: "CO2 + H2O + Energy",
+      points: 40
+    }
+  ];
+
+  const availableCompounds = ["HCl", "NaOH", "CH4", "O2", "H2O", "NaCl", "CO2"];
+  const currentExp = experiments[currentExperiment];
+
+  const selectCompound = (compound: string) => {
+    if (!selectedCompounds.includes(compound)) {
+      setSelectedCompounds(prev => [...prev, compound]);
+    }
+  };
+
+  const removeCompound = (compound: string) => {
+    setSelectedCompounds(prev => prev.filter(c => c !== compound));
+  };
+
+  const runExperiment = () => {
+    const hasRequiredCompounds = currentExp.requiredCompounds.every(
+      comp => selectedCompounds.includes(comp)
+    );
+    const isOptimalTemp = Math.abs(temperature - currentExp.optimalTemp) < 50;
+
+    if (hasRequiredCompounds && isOptimalTemp) {
+      setExperimentResult(`Success! Produced: ${currentExp.result}`);
+      setScore(prev => prev + currentExp.points);
+      
+      setTimeout(() => {
+        if (currentExperiment < experiments.length - 1) {
+          setCurrentExperiment(prev => prev + 1);
+          setSelectedCompounds([]);
+          setTemperature(25);
+          setExperimentResult(null);
+        } else {
+          onComplete(true, score + currentExp.points);
+        }
+      }, 2000);
+    } else {
+      setExperimentResult("Experiment failed! Check compounds and temperature.");
+    }
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">
-        Phòng thí nghiệm Hóa học
-      </h3>
-      <p className="text-gray-300 mb-6">
-        Thực hiện các thí nghiệm hóa học an toàn...
-      </p>
-      <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 text-white py-3 px-6 rounded-lg font-medium"
-      >
-        Hoàn thành
-      </button>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">⚗️ {currentExp.name}</h3>
+        <p className="text-gray-300 text-sm">{currentExp.description}</p>
+        <div className="text-emerald-400 font-medium">Điểm: {score}</div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-white font-medium mb-3">Available Compounds:</h4>
+          <div className="grid grid-cols-2 gap-2 mb-4">
+            {availableCompounds.map((compound) => (
+              <button
+                key={compound}
+                onClick={() => selectCompound(compound)}
+                disabled={selectedCompounds.includes(compound)}
+                className="p-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white hover:bg-gray-700/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {compound}
+              </button>
+            ))}
+          </div>
+
+          <h4 className="text-white font-medium mb-3">Temperature Control:</h4>
+          <div className="bg-gray-800/50 rounded-lg p-4">
+            <div className="flex justify-between mb-2">
+              <span className="text-gray-300">Temperature:</span>
+              <span className="text-orange-400">{temperature}°C</span>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="1000"
+              value={temperature}
+              onChange={(e) => setTemperature(Number(e.target.value))}
+              className="w-full"
+            />
+            <div className="flex justify-between text-xs text-gray-400 mt-1">
+              <span>0°C</span>
+              <span>500°C</span>
+              <span>1000°C</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-white font-medium mb-3">Reaction Chamber:</h4>
+          <div className="bg-gradient-to-br from-emerald-900/50 to-cyan-900/50 rounded-lg p-4 min-h-32 border-2 border-dashed border-gray-600">
+            <div className="text-center mb-4">
+              <div className="text-gray-400 text-sm">Selected Compounds:</div>
+              {selectedCompounds.length === 0 ? (
+                <div className="text-gray-500 italic">No compounds selected</div>
+              ) : (
+                <div className="flex flex-wrap gap-2 justify-center mt-2">
+                  {selectedCompounds.map((compound, index) => (
+                    <span
+                      key={index}
+                      onClick={() => removeCompound(compound)}
+                      className="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full text-sm cursor-pointer hover:bg-emerald-500/30 transition-colors"
+                    >
+                      {compound} ×
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {experimentResult && (
+              <div className={`text-center p-3 rounded-lg ${
+                experimentResult.includes('Success') 
+                  ? 'bg-green-500/20 text-green-400' 
+                  : 'bg-red-500/20 text-red-400'
+              }`}>
+                {experimentResult}
+              </div>
+            )}
+          </div>
+
+          <div className="mt-4">
+            <div className="text-white text-sm mb-2">Experiment Requirements:</div>
+            <div className="bg-gray-800/50 rounded-lg p-3 text-sm">
+              <div className="text-gray-300">Required: {currentExp.requiredCompounds.join(" + ")}</div>
+              <div className="text-gray-300">Optimal temp: {currentExp.optimalTemp}°C</div>
+              <div className="text-yellow-400">Expected: {currentExp.result}</div>
+            </div>
+          </div>
+
+          <button
+            onClick={runExperiment}
+            disabled={selectedCompounds.length === 0}
+            className="w-full mt-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white py-3 px-4 rounded-lg font-medium hover:from-emerald-600 hover:to-cyan-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            🧪 Run Experiment
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
 
 function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: any) {
+  const [ecosystem, setEcosystem] = useState({
+    plants: 50,
+    herbivores: 30,
+    carnivores: 10,
+    decomposers: 20
+  });
+  const [events, setEvents] = useState<string[]>([]);
+  const [score, setScore] = useState(0);
+  const [year, setYear] = useState(1);
+
+  const addOrganism = (type: keyof typeof ecosystem) => {
+    setEcosystem(prev => ({
+      ...prev,
+      [type]: prev[type] + 5
+    }));
+  };
+
+  const simulateYear = () => {
+    let newEcosystem = { ...ecosystem };
+    let eventLog: string[] = [];
+
+    // Natural growth and interactions
+    if (newEcosystem.plants > 30) {
+      newEcosystem.herbivores = Math.min(60, newEcosystem.herbivores + 2);
+      eventLog.push("🌿 Abundant plants support herbivore growth");
+    }
+
+    if (newEcosystem.herbivores > 40) {
+      newEcosystem.carnivores = Math.min(30, newEcosystem.carnivores + 1);
+      eventLog.push("🐰 Herbivore abundance attracts carnivores");
+    }
+
+    if (newEcosystem.carnivores > 20) {
+      newEcosystem.herbivores = Math.max(10, newEcosystem.herbivores - 3);
+      eventLog.push("🦅 Carnivores reduce herbivore population");
+    }
+
+    // Random events
+    const randomEvent = Math.random();
+    if (randomEvent < 0.3) {
+      newEcosystem.plants = Math.max(20, newEcosystem.plants - 10);
+      eventLog.push("🌪️ Natural disaster affects plant population");
+    } else if (randomEvent < 0.6) {
+      newEcosystem.decomposers = Math.min(40, newEcosystem.decomposers + 5);
+      eventLog.push("🍄 Favorable conditions boost decomposer growth");
+    }
+
+    // Calculate balance score
+    const total = Object.values(newEcosystem).reduce((a, b) => a + b, 0);
+    const balance = 1 - Math.abs(0.5 - newEcosystem.plants / total) - 
+                        Math.abs(0.3 - newEcosystem.herbivores / total) -
+                        Math.abs(0.1 - newEcosystem.carnivores / total) -
+                        Math.abs(0.1 - newEcosystem.decomposers / total);
+    
+    setScore(prev => prev + Math.floor(balance * 50));
+    setEcosystem(newEcosystem);
+    setEvents(eventLog);
+    setYear(prev => prev + 1);
+
+    if (year >= 10) {
+      onComplete(true, score + Math.floor(balance * 50));
+    }
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
+  const total = Object.values(ecosystem).reduce((a, b) => a + b, 0);
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">
-        Hệ sinh thái Sinh học
-      </h3>
-      <p className="text-gray-300 mb-6">
-        Khám phá chuỗi thức ăn và hệ sinh thái...
-      </p>
-      <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-lime-500 to-green-500 text-white py-3 px-6 rounded-lg font-medium"
-      >
-        Hoàn thành
-      </button>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">🌿 Ecosystem Simulation - Year {year}</h3>
+        <div className="text-lime-400 font-medium">Balance Score: {score}</div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-white font-medium mb-3">Population Control:</h4>
+          <div className="space-y-3">
+            {Object.entries(ecosystem).map(([type, count]) => (
+              <div key={type} className="bg-gray-800/50 rounded-lg p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-white capitalize">{type}:</span>
+                  <span className="text-green-400 font-bold">{count}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <div className="w-full bg-gray-700 rounded-full h-2 mr-3">
+                    <div 
+                      className="bg-gradient-to-r from-green-400 to-lime-400 h-2 rounded-full transition-all duration-300"
+                      style={{ width: `${(count / total) * 100}%` }}
+                    />
+                  </div>
+                  <button
+                    onClick={() => addOrganism(type as keyof typeof ecosystem)}
+                    className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm"
+                  >
+                    +5
+                  </button>
+                </div>
+                <div className="text-gray-400 text-xs mt-1">
+                  {((count / total) * 100).toFixed(1)}% of ecosystem
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-white font-medium mb-3">Ecosystem Status:</h4>
+          <div className="bg-gray-800/50 rounded-lg p-4 mb-4">
+            <div className="text-center mb-4">
+              <div className="text-4xl mb-2">🌍</div>
+              <div className="text-white">Total Population: {total}</div>
+            </div>
+            
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <span className="text-gray-300">🌿 Plants:</span>
+                <span className="text-green-400">{ecosystem.plants} ({((ecosystem.plants/total)*100).toFixed(1)}%)</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-300">🐰 Herbivores:</span>
+                <span className="text-yellow-400">{ecosystem.herbivores} ({((ecosystem.herbivores/total)*100).toFixed(1)}%)</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-300">🦅 Carnivores:</span>
+                <span className="text-red-400">{ecosystem.carnivores} ({((ecosystem.carnivores/total)*100).toFixed(1)}%)</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-300">🍄 Decomposers:</span>
+                <span className="text-orange-400">{ecosystem.decomposers} ({((ecosystem.decomposers/total)*100).toFixed(1)}%)</span>
+              </div>
+            </div>
+          </div>
+
+          {events.length > 0 && (
+            <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4 mb-4">
+              <h5 className="text-blue-400 font-medium mb-2">Recent Events:</h5>
+              <div className="space-y-1">
+                {events.map((event, index) => (
+                  <div key={index} className="text-gray-300 text-sm">{event}</div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <button
+            onClick={simulateYear}
+            disabled={year >= 10}
+            className="w-full bg-gradient-to-r from-lime-500 to-green-500 text-white py-3 px-4 rounded-lg font-medium hover:from-lime-600 hover:to-green-600 transition-all duration-200 disabled:opacity-50"
+          >
+            {year < 10 ? `⏭️ Advance to Year ${year + 1}` : '🎯 Simulation Complete'}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
 
 function HistoryTimelineGame({ onComplete, timeLeft, onRestart }: any) {
+  const [events] = useState([
+    { id: 1, year: 1945, event: "Tuyên bố Độc lập", placed: false },
+    { id: 2, year: 1975, event: "Thống nhất đất nước", placed: false },
+    { id: 3, year: 1986, event: "Đổi mới", placed: false },
+    { id: 4, year: 2007, event: "Gia nhập WTO", placed: false },
+    { id: 5, year: 1954, event: "Chiến thắng Điện Biên Phủ", placed: false }
+  ]);
+  
+  const [timeline, setTimeline] = useState<Array<{id: number, year: number, event: string}>>([]);
+  const [score, setScore] = useState(0);
+  const [gameComplete, setGameComplete] = useState(false);
+
+  const addToTimeline = (eventId: number) => {
+    const event = events.find(e => e.id === eventId);
+    if (!event || timeline.find(t => t.id === eventId)) return;
+
+    const newTimeline = [...timeline, event].sort((a, b) => a.year - b.year);
+    setTimeline(newTimeline);
+
+    // Check if correctly placed
+    const correctOrder = events.slice().sort((a, b) => a.year - b.year);
+    const currentIndex = newTimeline.length - 1;
+    const isCorrect = newTimeline[currentIndex].id === correctOrder[currentIndex].id;
+    
+    if (isCorrect) {
+      setScore(prev => prev + 20);
+    } else {
+      setScore(prev => Math.max(0, prev - 10));
+    }
+
+    if (newTimeline.length === events.length) {
+      const finalScore = score + (isCorrect ? 20 : -10);
+      setGameComplete(true);
+      setTimeout(() => onComplete(true, finalScore), 1500);
+    }
+  };
+
+  const removeFromTimeline = (eventId: number) => {
+    setTimeline(prev => prev.filter(t => t.id !== eventId));
+  };
+
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
+
+  const unplacedEvents = events.filter(e => !timeline.find(t => t.id === e.id));
+
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <h3 className="text-xl font-bold text-white mb-4">
-        Dòng thời gian Lịch sử
-      </h3>
-      <p className="text-gray-300 mb-6">
-        Sắp xếp các sự kiện lịch sử theo thứ tự...
-      </p>
-      <button
-        onClick={() => onComplete(true, 50)}
-        className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 text-white py-3 px-6 rounded-lg font-medium"
-      >
-        Hoàn thành
-      </button>
+      <div className="mb-6">
+        <h3 className="text-xl font-bold text-white mb-2">📚 Vietnam History Timeline</h3>
+        <div className="text-amber-400 font-medium">Điểm: {score}</div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div>
+          <h4 className="text-white font-medium mb-3">Historical Events:</h4>
+          <div className="space-y-2">
+            {unplacedEvents.map((event) => (
+              <button
+                key={event.id}
+                onClick={() => addToTimeline(event.id)}
+                className="w-full p-3 bg-amber-500/20 border border-amber-500/50 rounded-lg text-left hover:bg-amber-500/30 transition-all"
+              >
+                <div className="text-white font-medium">{event.event}</div>
+                <div className="text-amber-400 text-sm">{event.year}</div>
+              </button>
+            ))}
+          </div>
+
+          {unplacedEvents.length === 0 && !gameComplete && (
+            <div className="text-center p-4 bg-blue-500/20 border border-blue-500/50 rounded-lg">
+              <div className="text-blue-400">All events placed!</div>
+            </div>
+          )}
+        </div>
+
+        <div>
+          <h4 className="text-white font-medium mb-3">Timeline (Chronological Order):</h4>
+          <div className="space-y-2">
+            {timeline.length === 0 ? (
+              <div className="text-center p-8 border-2 border-dashed border-gray-600 rounded-lg">
+                <div className="text-gray-400">Drag events here to build timeline</div>
+              </div>
+            ) : (
+              timeline.map((event, index) => (
+                <div
+                  key={event.id}
+                  className="p-3 bg-gray-800/50 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700/50"
+                  onClick={() => removeFromTimeline(event.id)}
+                >
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <div className="text-white font-medium">{event.event}</div>
+                      <div className="text-gray-400 text-sm">Position {index + 1}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-yellow-400 font-bold">{event.year}</div>
+                      <div className="text-gray-500 text-xs">Click to remove</div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+
+          {gameComplete && (
+            <div className="mt-4 text-center p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
+              <div className="text-green-400 font-bold text-lg">🎉 Timeline Complete!</div>
+              <div className="text-gray-300">Great job learning Vietnam history!</div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
@@ -2588,13 +3702,15 @@ function RobotNavigation3DGame({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* 3D Visualization */}
+      <div className="space-y-6">
+        {/* 3D Visualization - Full Width */}
         <div>
-          <h4 className="text-white font-medium mb-3">🎮 Môi trường 3D:</h4>
+          <h4 className="text-white font-medium mb-3">
+            🎮 Môi trường 3D Robot Navigation:
+          </h4>
           <div
-            className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-4 relative overflow-hidden"
-            style={{ height: '400px', perspective: '1000px' }}
+            className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-6 relative overflow-hidden"
+            style={{ height: '500px', perspective: '1200px' }}
           >
             {/* 3D Grid Visualization */}
             <div
@@ -2658,7 +3774,7 @@ function RobotNavigation3DGame({
                       className += 'bg-gray-700/20 ';
                     }
 
-                    const scale = 20; // Pixel size per grid unit
+                    const scale = 25; // Larger pixel size for better visibility
                     const xOffset = x * scale;
                     const yOffset = y * scale;
                     const zOffset = z * scale;
@@ -2673,7 +3789,7 @@ function RobotNavigation3DGame({
                           left: `${xOffset + zOffset * 0.5}px`,
                           top: `${yOffset - zOffset * 0.5}px`,
                           transformOrigin: 'center center',
-                          fontSize: '12px',
+                          fontSize: '14px',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -2688,152 +3804,185 @@ function RobotNavigation3DGame({
               )}
             </div>
 
-            {/* Controls Overlay */}
+            {/* Enhanced Controls Overlay */}
             <div className="absolute bottom-4 left-4 right-4">
-              <div className="grid grid-cols-3 gap-2 mb-2">
-                <button
-                  onClick={() => moveRobot('y+')}
-                  disabled={isMoving}
-                  className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded text-sm disabled:opacity-50"
-                >
-                  ⬆️ Y+
-                </button>
-                <button
-                  onClick={() => moveRobot('z-')}
-                  disabled={isMoving}
-                  className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded text-sm disabled:opacity-50"
-                >
-                  🔺 Z-
-                </button>
-                <button
-                  onClick={() => moveRobot('z+')}
-                  disabled={isMoving}
-                  className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded text-sm disabled:opacity-50"
-                >
-                  🔻 Z+
-                </button>
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                <button
-                  onClick={() => moveRobot('y-')}
-                  disabled={isMoving}
-                  className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded text-sm disabled:opacity-50"
-                >
-                  ⬇️ Y-
-                </button>
-                <button
-                  onClick={() => moveRobot('x-')}
-                  disabled={isMoving}
-                  className="bg-green-600 hover:bg-green-700 text-white p-2 rounded text-sm disabled:opacity-50"
-                >
-                  ⬅️ X-
-                </button>
-                <button
-                  onClick={() => moveRobot('x+')}
-                  disabled={isMoving}
-                  className="bg-green-600 hover:bg-green-700 text-white p-2 rounded text-sm disabled:opacity-50"
-                >
-                  ➡️ X+
-                </button>
+              <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-white text-sm mb-3 text-center font-medium">
+                  🕹️ Điều khiển Robot (Góc nhìn 3D)
+                </div>
+
+                {/* Y (Height) Controls - Corrected for 3D perspective */}
+                <div className="grid grid-cols-3 gap-2 mb-2">
+                  <div></div>
+                  <button
+                    onClick={() => moveRobot('y-')}
+                    disabled={isMoving}
+                    className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    title="Lên cao (từ góc nhìn 3D)"
+                  >
+                    ⬆️ Cao
+                  </button>
+                  <div></div>
+                </div>
+
+                {/* Z and X Controls */}
+                <div className="grid grid-cols-3 gap-2 mb-2">
+                  <button
+                    onClick={() => moveRobot('z-')}
+                    disabled={isMoving}
+                    className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    title="Lui (Z-)"
+                  >
+                    🔺 Lui
+                  </button>
+                  <button
+                    onClick={() => moveRobot('x-')}
+                    disabled={isMoving}
+                    className="bg-green-600 hover:bg-green-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    title="Trái (X-)"
+                  >
+                    ⬅️ Trái
+                  </button>
+                  <button
+                    onClick={() => moveRobot('x+')}
+                    disabled={isMoving}
+                    className="bg-green-600 hover:bg-green-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    title="Phải (X+)"
+                  >
+                    ➡️ Phải
+                  </button>
+                </div>
+
+                {/* Bottom Row */}
+                <div className="grid grid-cols-3 gap-2">
+                  <div></div>
+                  <button
+                    onClick={() => moveRobot('y+')}
+                    disabled={isMoving}
+                    className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    title="Xuống thấp (từ góc nhìn 3D)"
+                  >
+                    ⬇️ Thấp
+                  </button>
+                  <button
+                    onClick={() => moveRobot('z+')}
+                    disabled={isMoving}
+                    className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    title="Tới (Z+)"
+                  >
+                    🔻 Tới
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Controls and Info */}
-        <div>
-          <h4 className="text-white font-medium mb-3">🎛️ Điều khiển:</h4>
+        {/* Controls and Info - Full Width */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Algorithm Controls */}
+          <div>
+            <h4 className="text-white font-medium mb-3">🎛️ Điều khiển:</h4>
 
-          {/* Algorithm Selection */}
-          <div className="mb-4">
-            <label className="text-white text-sm mb-2 block">Thuật toán:</label>
-            <select
-              value={selectedAlgorithm}
-              onChange={(e) => setSelectedAlgorithm(e.target.value)}
-              className="w-full bg-gray-800 text-white p-2 rounded border border-gray-600"
-            >
-              <option value="astar">A* (Tối ưu)</option>
-              <option value="dijkstra">Dijkstra (Đảm bảo)</option>
-              <option value="bfs">BFS (Đơn giản)</option>
-            </select>
-          </div>
+            {/* Algorithm Selection */}
+            <div className="mb-4">
+              <label className="text-white text-sm mb-2 block">
+                Thuật toán:
+              </label>
+              <select
+                value={selectedAlgorithm}
+                onChange={(e) => setSelectedAlgorithm(e.target.value)}
+                className="w-full bg-gray-800 text-white p-2 rounded border border-gray-600"
+              >
+                <option value="astar">A* (Tối ưu)</option>
+                <option value="dijkstra">Dijkstra (Đảm bảo)</option>
+                <option value="bfs">BFS (Đơn giản)</option>
+              </select>
+            </div>
 
-          {/* Auto Navigation */}
-          <div className="space-y-2 mb-4">
-            <button
-              onClick={autoNavigate}
-              disabled={isMoving || isCalculatingPath}
-              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-4 rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 disabled:opacity-50"
-            >
-              {isCalculatingPath
-                ? 'Đang tính toán...'
-                : '🤖 Tự động điều hướng'}
-            </button>
+            {/* Auto Navigation */}
+            <div className="space-y-2">
+              <button
+                onClick={autoNavigate}
+                disabled={isMoving || isCalculatingPath}
+                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-4 rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 disabled:opacity-50"
+              >
+                {isCalculatingPath
+                  ? 'Đang tính toán...'
+                  : '🤖 Tự động điều hướng'}
+              </button>
 
-            <button
-              onClick={() => setShowPath(!showPath)}
-              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-200"
-            >
-              {showPath ? '👁️ Ẩn đường đi' : '👁️ Hiện đường đi'}
-            </button>
+              <button
+                onClick={() => setShowPath(!showPath)}
+                className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-200"
+              >
+                {showPath ? '👁️ Ẩn đường đi' : '👁️ Hiện đường đi'}
+              </button>
 
-            <button
-              onClick={resetLevel}
-              className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 px-4 rounded-lg font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-200"
-            >
-              🔄 Khởi động lại
-            </button>
+              <button
+                onClick={resetLevel}
+                className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 px-4 rounded-lg font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-200"
+              >
+                🔄 Khởi động lại
+              </button>
+            </div>
           </div>
 
           {/* Game Stats */}
-          <div className="bg-gray-800/50 rounded-lg p-4 mb-4">
-            <h5 className="text-white font-medium mb-2">📊 Thống kê:</h5>
-            <div className="space-y-1 text-sm">
-              <div className="flex justify-between text-gray-300">
-                <span>Vị trí hiện tại:</span>
-                <span className="text-cyan-400">
-                  ({robotPosition.x}, {robotPosition.y}, {robotPosition.z})
-                </span>
-              </div>
-              <div className="flex justify-between text-gray-300">
-                <span>Mục tiêu:</span>
-                <span className="text-green-400">
-                  ({goalPosition.x}, {goalPosition.y}, {goalPosition.z})
-                </span>
-              </div>
-              <div className="flex justify-between text-gray-300">
-                <span>Số bước đã đi:</span>
-                <span className="text-yellow-400">
-                  {pathHistory.length - 1}
-                </span>
-              </div>
-              <div className="flex justify-between text-gray-300">
-                <span>Vật phẩm thu thập:</span>
-                <span className="text-purple-400">
-                  {collectedItems.size}/{level.collectibles?.length || 0}
-                </span>
-              </div>
-              <div className="flex justify-between text-gray-300">
-                <span>Thời gian còn lại:</span>
-                <span className="text-red-400">{Math.max(0, timeLeft)}s</span>
+          <div>
+            <h5 className="text-white font-medium mb-3">📊 Thống kê:</h5>
+            <div className="bg-gray-800/50 rounded-lg p-4">
+              <div className="space-y-1 text-sm">
+                <div className="flex justify-between text-gray-300">
+                  <span>Vị trí hiện tại:</span>
+                  <span className="text-cyan-400">
+                    ({robotPosition.x}, {robotPosition.y}, {robotPosition.z})
+                  </span>
+                </div>
+                <div className="flex justify-between text-gray-300">
+                  <span>Mục tiêu:</span>
+                  <span className="text-green-400">
+                    ({goalPosition.x}, {goalPosition.y}, {goalPosition.z})
+                  </span>
+                </div>
+                <div className="flex justify-between text-gray-300">
+                  <span>Số bước đã đi:</span>
+                  <span className="text-yellow-400">
+                    {pathHistory.length - 1}
+                  </span>
+                </div>
+                <div className="flex justify-between text-gray-300">
+                  <span>Vật phẩm thu thập:</span>
+                  <span className="text-purple-400">
+                    {collectedItems.size}/{level.collectibles?.length || 0}
+                  </span>
+                </div>
+                <div className="flex justify-between text-gray-300">
+                  <span>Thuật toán:</span>
+                  <span className="text-blue-400 capitalize">
+                    {selectedAlgorithm}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Level Progress */}
-          <div className="bg-gradient-to-r from-green-900/30 to-blue-900/30 rounded-lg p-4">
-            <h5 className="text-white font-medium mb-2">🎯 Tiến độ:</h5>
-            <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
-              <div
-                className="bg-gradient-to-r from-green-400 to-blue-400 h-2 rounded-full transition-all duration-300"
-                style={{
-                  width: `${((currentLevel + 1) / (gameData?.levels?.length || 1)) * 100}%`,
-                }}
-              />
+          {/* Progress */}
+          <div>
+            <h5 className="text-white font-medium mb-3">🎯 Tiến độ:</h5>
+            <div className="bg-gray-800/50 rounded-lg p-4">
+              <div className="w-full bg-gray-700 rounded-full h-3 mb-3">
+                <div
+                  className="bg-gradient-to-r from-green-400 to-blue-400 h-3 rounded-full transition-all duration-300"
+                  style={{
+                    width: `${((currentLevel + 1) / (gameData?.levels?.length || 1)) * 100}%`,
+                  }}
+                />
+              </div>
+              <p className="text-gray-300 text-sm text-center">
+                Cấp độ {currentLevel + 1} / {gameData?.levels?.length || 1}
+              </p>
             </div>
-            <p className="text-gray-300 text-sm">
-              Cấp độ {currentLevel + 1} / {gameData?.levels?.length || 1}
-            </p>
           </div>
         </div>
       </div>
