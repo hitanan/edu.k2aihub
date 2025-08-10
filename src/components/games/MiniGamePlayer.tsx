@@ -590,7 +590,6 @@ function GeographyQuizGame({ gameData, onComplete, timeLeft, onRestart }: any) {
     }
     return questions;
   });
-  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -1142,7 +1141,7 @@ function RoboticsNavigationGame({
   onRestart,
 }: any) {
   const [currentLevel, setCurrentLevel] = useState(0);
-  const [robotPosition, setRobotPosition] = useState([0, 0]);
+  const [robotPosition, setRobotPosition] = useState<[number, number]>([0, 0]);
   const [commands, setCommands] = useState<string[]>([]);
   const [isRunning, setIsRunning] = useState(false);
   const [score, setScore] = useState(0);
@@ -1154,73 +1153,114 @@ function RoboticsNavigationGame({
     path: [number, number][];
   }>({ openSet: [], closedSet: [], path: [] });
   const [showAlgorithm, setShowAlgorithm] = useState(false);
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState<'A*' | 'Dijkstra' | 'BFS'>('A*');
-  const [movingObstacles, setMovingObstacles] = useState<Array<{position: [number, number], originalPos: [number, number], pattern: string, speed: number}>>([]);
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState<
+    'A*' | 'Dijkstra' | 'BFS'
+  >('A*');
+  const [movingObstacles, setMovingObstacles] = useState<
+    Array<{
+      position: [number, number];
+      originalPos: [number, number];
+      pattern: string;
+      speed: number;
+    }>
+  >([]);
   const [levelStartTime, setLevelStartTime] = useState(Date.now());
 
   // Import robotics levels data
   const ROBOTICS_LEVELS = [
     {
       id: 1,
-      name: "Bước đầu tiên",
+      name: 'Bước đầu tiên',
       difficulty: 'Dễ',
       algorithm: 'BFS',
-      grid: Array(5).fill(null).map(() => Array(5).fill(0)),
+      grid: Array(5)
+        .fill(null)
+        .map(() => Array(5).fill(0)),
       start: [0, 0],
       end: [4, 4],
       timeLimit: 60,
       minMoves: 8,
-      description: "Di chuyển robot từ góc trái trên xuống góc phải dưới",
-      tips: ["Sử dụng các mũi tên để điều khiển", "BFS tìm đường ngắn nhất"],
-      pointValue: 10
+      description: 'Di chuyển robot từ góc trái trên xuống góc phải dưới',
+      tips: ['Sử dụng các mũi tên để điều khiển', 'BFS tìm đường ngắn nhất'],
+      pointValue: 10,
     },
     {
       id: 2,
-      name: "Tránh vật cản đơn giản",
+      name: 'Tránh vật cản đơn giản',
       difficulty: 'Dễ',
       algorithm: 'BFS',
       grid: (() => {
-        const grid = Array(6).fill(null).map(() => Array(6).fill(0));
-        [[2, 2], [2, 3], [3, 2], [3, 3]].forEach(([x, y]) => grid[x][y] = 1);
+        const grid = Array(6)
+          .fill(null)
+          .map(() => Array(6).fill(0));
+        [
+          [2, 2],
+          [2, 3],
+          [3, 2],
+          [3, 3],
+        ].forEach(([x, y]) => (grid[x][y] = 1));
         return grid;
       })(),
       start: [0, 0],
       end: [5, 5],
       timeLimit: 90,
       minMoves: 10,
-      description: "Tránh khối vật cản 2x2 ở giữa",
-      tips: ["Đi vòng quanh vật cản", "Lập kế hoạch trước khi di chuyển"],
-      pointValue: 15
+      description: 'Tránh khối vật cản 2x2 ở giữa',
+      tips: ['Đi vòng quanh vật cản', 'Lập kế hoạch trước khi di chuyển'],
+      pointValue: 15,
     },
     {
       id: 3,
-      name: "Hành lang hẹp",
+      name: 'Hành lang hẹp',
       difficulty: 'Dễ',
       algorithm: 'BFS',
       grid: (() => {
-        const grid = Array(7).fill(null).map(() => Array(7).fill(0));
-        [[1, 1], [1, 2], [1, 4], [1, 5], [2, 1], [2, 5], [3, 1], [3, 5], [4, 1], [4, 5], [5, 1], [5, 2], [5, 4], [5, 5]].forEach(([x, y]) => grid[x][y] = 1);
+        const grid = Array(7)
+          .fill(null)
+          .map(() => Array(7).fill(0));
+        [
+          [1, 1],
+          [1, 2],
+          [1, 4],
+          [1, 5],
+          [2, 1],
+          [2, 5],
+          [3, 1],
+          [3, 5],
+          [4, 1],
+          [4, 5],
+          [5, 1],
+          [5, 2],
+          [5, 4],
+          [5, 5],
+        ].forEach(([x, y]) => (grid[x][y] = 1));
         return grid;
       })(),
       start: [0, 3],
       end: [6, 3],
       timeLimit: 120,
       minMoves: 12,
-      description: "Di chuyển qua hành lang hẹp",
-      tips: ["Giữ đúng hướng trong hành lang", "Không thể quay đầu"],
-      pointValue: 20
-    }
+      description: 'Di chuyển qua hành lang hẹp',
+      tips: ['Giữ đúng hướng trong hành lang', 'Không thể quay đầu'],
+      pointValue: 20,
+    },
   ];
 
   // Add more levels up to 100 with increasing difficulty
   for (let i = 4; i <= 100; i++) {
     const size = Math.min(6 + Math.floor(i / 10), 20);
-    const difficulty = i <= 10 ? 'Dễ' : i <= 30 ? 'Trung bình' : i <= 70 ? 'Khó' : 'Chuyên gia';
-    const algorithm = ['A*', 'Dijkstra', 'BFS'][i % 3] as 'A*' | 'Dijkstra' | 'BFS';
-    
-    const grid = Array(size).fill(null).map(() => Array(size).fill(0));
-    const wallCount = Math.floor((size * size) * (0.15 + (i / 100) * 0.25));
-    
+    const difficulty =
+      i <= 10 ? 'Dễ' : i <= 30 ? 'Trung bình' : i <= 70 ? 'Khó' : 'Chuyên gia';
+    const algorithm = ['A*', 'Dijkstra', 'BFS'][i % 3] as
+      | 'A*'
+      | 'Dijkstra'
+      | 'BFS';
+
+    const grid = Array(size)
+      .fill(null)
+      .map(() => Array(size).fill(0));
+    const wallCount = Math.floor(size * size * (0.15 + (i / 100) * 0.25));
+
     // Generate random walls
     for (let w = 0; w < wallCount; w++) {
       const x = Math.floor(Math.random() * size);
@@ -1229,7 +1269,7 @@ function RoboticsNavigationGame({
         grid[x][y] = 1;
       }
     }
-    
+
     ROBOTICS_LEVELS.push({
       id: i,
       name: `Thử thách ${i}`,
@@ -1238,11 +1278,11 @@ function RoboticsNavigationGame({
       grid,
       start: [0, 0],
       end: [size - 1, size - 1],
-      timeLimit: 60 + (i * 5),
+      timeLimit: 60 + i * 5,
       minMoves: Math.floor(size * 1.5),
       description: `Level ${i} - ${difficulty}`,
-      tips: ["Sử dụng thuật toán phù hợp", "Lập kế hoạch cẩn thận"],
-      pointValue: 10 + (i * 2)
+      tips: ['Sử dụng thuật toán phù hợp', 'Lập kế hoạch cẩn thận'],
+      pointValue: 10 + i * 2,
     });
   }
 
@@ -1250,28 +1290,8 @@ function RoboticsNavigationGame({
   const maze = {
     grid: currentLevelData.grid,
     start: currentLevelData.start,
-    end: currentLevelData.end
+    end: currentLevelData.end,
   };
-
-  // Initialize robot position when level changes
-  useEffect(() => {
-    setRobotPosition([currentLevelData.start[0], currentLevelData.start[1]]);
-    setCommands([]);
-    setPathHistory([]);
-    setAlgorithmVisualization({ openSet: [], closedSet: [], path: [] });
-    setShowAlgorithm(false);
-    setLevelStartTime(Date.now());
-    
-    // Initialize moving obstacles if any
-    if (currentLevelData.movingObstacles) {
-      setMovingObstacles(currentLevelData.movingObstacles.map(obs => ({
-        ...obs,
-        originalPos: [...obs.position] as [number, number]
-      })));
-    } else {
-      setMovingObstacles([]);
-    }
-  }, [currentLevel]);
 
   // A* Algorithm implementation
   const calculateAStar = (start: [number, number], end: [number, number]) => {
@@ -1312,17 +1332,17 @@ function RoboticsNavigationGame({
         const path: [number, number][] = [];
         let node: any = current;
         const parentMap = new Map();
-        
+
         // Build parent map
-        steps.forEach(step => {
+        steps.forEach((step) => {
           const curr = step.current;
-          openSet.forEach(n => {
+          openSet.forEach((n) => {
             if (n.parent) {
               parentMap.set(`${n.pos[0]},${n.pos[1]}`, n.parent);
             }
           });
         });
-        
+
         // Reconstruct path
         while (node) {
           path.unshift(node.pos);
@@ -1331,7 +1351,7 @@ function RoboticsNavigationGame({
           if (!parent) break;
           node = { pos: parent };
         }
-        
+
         return { steps, path, algorithm: 'A*' };
       }
 
@@ -1348,7 +1368,8 @@ function RoboticsNavigationGame({
       for (const neighbor of neighbors) {
         const [x, y] = neighbor;
 
-        if (x < 0 || x >= maze.grid.length || y < 0 || y >= maze.grid[0].length) continue;
+        if (x < 0 || x >= maze.grid.length || y < 0 || y >= maze.grid[0].length)
+          continue;
         if (maze.grid[x][y] === 1) continue;
         if (visited.has(`${x},${y}`)) continue;
 
@@ -1356,7 +1377,9 @@ function RoboticsNavigationGame({
         const h = heuristic(neighbor, end);
         const f = g + h;
 
-        const existingNode = openSet.find((n) => n.pos[0] === x && n.pos[1] === y);
+        const existingNode = openSet.find(
+          (n) => n.pos[0] === x && n.pos[1] === y,
+        );
         if (!existingNode || g < existingNode.g) {
           if (existingNode) {
             existingNode.g = g;
@@ -1379,7 +1402,10 @@ function RoboticsNavigationGame({
   };
 
   // Dijkstra Algorithm implementation
-  const calculateDijkstra = (start: [number, number], end: [number, number]) => {
+  const calculateDijkstra = (
+    start: [number, number],
+    end: [number, number],
+  ) => {
     const distances = new Map<string, number>();
     const previous = new Map<string, [number, number] | null>();
     const unvisited = new Set<string>();
@@ -1401,7 +1427,7 @@ function RoboticsNavigationGame({
       // Find unvisited node with minimum distance
       let currentKey = '';
       let minDistance = Infinity;
-      
+
       for (const key of unvisited) {
         const dist = distances.get(key) || Infinity;
         if (dist < minDistance) {
@@ -1412,25 +1438,30 @@ function RoboticsNavigationGame({
 
       if (currentKey === '' || minDistance === Infinity) break;
 
-      const [currentX, currentY] = currentKey.split(',').map(Number) as [number, number];
+      const [currentX, currentY] = currentKey.split(',').map(Number) as [
+        number,
+        number,
+      ];
       unvisited.delete(currentKey);
 
       steps.push({
         current: [currentX, currentY] as [number, number],
-        visited: Array.from(distances.keys()).filter(k => !unvisited.has(k)).map(k => k.split(',').map(Number) as [number, number]),
-        distances: new Map(distances)
+        visited: Array.from(distances.keys())
+          .filter((k) => !unvisited.has(k))
+          .map((k) => k.split(',').map(Number) as [number, number]),
+        distances: new Map(distances),
       });
 
       if (currentX === end[0] && currentY === end[1]) {
         // Reconstruct path
         const path: [number, number][] = [];
         let current: [number, number] | null = [currentX, currentY];
-        
+
         while (current) {
           path.unshift(current);
           current = previous.get(`${current[0]},${current[1]}`) || null;
         }
-        
+
         return { steps, path, algorithm: 'Dijkstra' };
       }
 
@@ -1444,13 +1475,18 @@ function RoboticsNavigationGame({
 
       for (const [nx, ny] of neighbors) {
         const neighborKey = `${nx},${ny}`;
-        
-        if (nx >= 0 && nx < maze.grid.length && ny >= 0 && ny < maze.grid[0].length && 
-            maze.grid[nx][ny] === 0 && unvisited.has(neighborKey)) {
-          
+
+        if (
+          nx >= 0 &&
+          nx < maze.grid.length &&
+          ny >= 0 &&
+          ny < maze.grid[0].length &&
+          maze.grid[nx][ny] === 0 &&
+          unvisited.has(neighborKey)
+        ) {
           const altDistance = minDistance + 1;
           const currentDistance = distances.get(neighborKey) || Infinity;
-          
+
           if (altDistance < currentDistance) {
             distances.set(neighborKey, altDistance);
             previous.set(neighborKey, [currentX, currentY]);
@@ -1464,7 +1500,8 @@ function RoboticsNavigationGame({
 
   // BFS Algorithm implementation
   const calculateBFS = (start: [number, number], end: [number, number]) => {
-    const queue: Array<{pos: [number, number], path: [number, number][]}> = [];
+    const queue: Array<{ pos: [number, number]; path: [number, number][] }> =
+      [];
     const visited = new Set<string>();
     const steps = [];
 
@@ -1477,9 +1514,11 @@ function RoboticsNavigationGame({
 
       steps.push({
         current: current.pos,
-        queue: queue.map(q => q.pos),
-        visited: Array.from(visited).map(v => v.split(',').map(Number) as [number, number]),
-        currentPath: current.path
+        queue: queue.map((q) => q.pos),
+        visited: Array.from(visited).map(
+          (v) => v.split(',').map(Number) as [number, number],
+        ),
+        currentPath: current.path,
       });
 
       if (x === end[0] && y === end[1]) {
@@ -1495,14 +1534,19 @@ function RoboticsNavigationGame({
 
       for (const [nx, ny] of neighbors) {
         const neighborKey = `${nx},${ny}`;
-        
-        if (nx >= 0 && nx < maze.grid.length && ny >= 0 && ny < maze.grid[0].length && 
-            maze.grid[nx][ny] === 0 && !visited.has(neighborKey)) {
-          
+
+        if (
+          nx >= 0 &&
+          nx < maze.grid.length &&
+          ny >= 0 &&
+          ny < maze.grid[0].length &&
+          maze.grid[nx][ny] === 0 &&
+          !visited.has(neighborKey)
+        ) {
           visited.add(neighborKey);
           queue.push({
             pos: [nx, ny],
-            path: [...current.path, [nx, ny]]
+            path: [...current.path, [nx, ny]],
           });
         }
       }
@@ -1515,7 +1559,7 @@ function RoboticsNavigationGame({
   const executePathfinding = () => {
     const start = robotPosition;
     const end = [maze.end[0], maze.end[1]] as [number, number];
-    
+
     let result;
     switch (selectedAlgorithm) {
       case 'A*':
@@ -1534,11 +1578,14 @@ function RoboticsNavigationGame({
     if (result.path.length > 0) {
       setAlgorithmVisualization({
         openSet: [],
-        closedSet: result.steps.length > 0 ? (result.steps[result.steps.length - 1] as any).visited || [] : [],
+        closedSet:
+          result.steps.length > 0
+            ? (result.steps[result.steps.length - 1] as any).visited || []
+            : [],
         path: result.path,
       });
       setShowAlgorithm(true);
-      
+
       // Auto-execute the found path
       setTimeout(() => {
         executeAutoPath(result.path);
@@ -1548,18 +1595,18 @@ function RoboticsNavigationGame({
 
   const executeAutoPath = (path: [number, number][]) => {
     if (path.length < 2) return;
-    
+
     setIsRunning(true);
     let currentIndex = 0;
-    
+
     const executeNextMove = () => {
       if (currentIndex < path.length - 1) {
         const currentPos = path[currentIndex];
         const nextPos = path[currentIndex + 1];
-        
+
         setRobotPosition(nextPos);
-        setPathHistory(prev => [...prev, nextPos]);
-        
+        setPathHistory((prev) => [...prev, nextPos]);
+
         currentIndex++;
         setTimeout(executeNextMove, 300);
       } else {
@@ -1567,26 +1614,33 @@ function RoboticsNavigationGame({
         checkLevelComplete();
       }
     };
-    
+
     executeNextMove();
   };
 
   const checkLevelComplete = () => {
     const [endX, endY] = maze.end;
     const [robotX, robotY] = robotPosition;
-    
+
     if (robotX === endX && robotY === robotY) {
       const timeUsed = Date.now() - levelStartTime;
-      const timeBonus = Math.max(0, (currentLevelData.timeLimit * 1000 - timeUsed) / 1000);
-      const moveBonus = Math.max(0, (currentLevelData.minMoves - commands.length) * 5);
-      const levelScore = currentLevelData.pointValue + Math.floor(timeBonus) + moveBonus;
-      
+      const timeBonus = Math.max(
+        0,
+        (currentLevelData.timeLimit * 1000 - timeUsed) / 1000,
+      );
+      const moveBonus = Math.max(
+        0,
+        (currentLevelData.minMoves - commands.length) * 5,
+      );
+      const levelScore =
+        currentLevelData.pointValue + Math.floor(timeBonus) + moveBonus;
+
       setScore(levelScore);
-      setTotalScore(prev => prev + levelScore);
-      
+      setTotalScore((prev) => prev + levelScore);
+
       if (currentLevel < ROBOTICS_LEVELS.length - 1) {
         setTimeout(() => {
-          setCurrentLevel(prev => prev + 1);
+          setCurrentLevel((prev) => prev + 1);
           setScore(0);
         }, 2000);
       } else {
@@ -1614,11 +1668,16 @@ function RoboticsNavigationGame({
 
   const getLevelColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'Dễ': return 'text-green-400';
-      case 'Trung bình': return 'text-yellow-400';
-      case 'Khó': return 'text-orange-400';
-      case 'Chuyên gia': return 'text-red-400';
-      default: return 'text-gray-400';
+      case 'Dễ':
+        return 'text-green-400';
+      case 'Trung bình':
+        return 'text-yellow-400';
+      case 'Khó':
+        return 'text-orange-400';
+      case 'Chuyên gia':
+        return 'text-red-400';
+      default:
+        return 'text-gray-400';
     }
   };
 
@@ -1812,7 +1871,9 @@ function RoboticsNavigationGame({
               🤖 Level {currentLevel + 1}: {currentLevelData.name}
             </h3>
             <div className="flex items-center gap-4 mt-2">
-              <span className={`font-medium ${getLevelColor(currentLevelData.difficulty)}`}>
+              <span
+                className={`font-medium ${getLevelColor(currentLevelData.difficulty)}`}
+              >
                 {currentLevelData.difficulty}
               </span>
               <span className="text-blue-400">
@@ -1823,10 +1884,18 @@ function RoboticsNavigationGame({
               </span>
             </div>
           </div>
-          
+
           <div className="text-right">
             <div className="text-gray-300 text-sm">
-              Thời gian: {Math.max(0, Math.floor(currentLevelData.timeLimit - (Date.now() - levelStartTime) / 1000))}s
+              Thời gian:{' '}
+              {Math.max(
+                0,
+                Math.floor(
+                  currentLevelData.timeLimit -
+                    (Date.now() - levelStartTime) / 1000,
+                ),
+              )}
+              s
             </div>
             <div className="text-gray-300 text-sm">
               Moves: {commands.length}/{currentLevelData.minMoves}
@@ -1834,11 +1903,16 @@ function RoboticsNavigationGame({
           </div>
         </div>
 
-        <p className="text-gray-300 text-sm mb-2">{currentLevelData.description}</p>
-        
+        <p className="text-gray-300 text-sm mb-2">
+          {currentLevelData.description}
+        </p>
+
         <div className="flex flex-wrap gap-2 mb-4">
           {currentLevelData.tips.map((tip, index) => (
-            <span key={index} className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">
+            <span
+              key={index}
+              className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded"
+            >
               💡 {tip}
             </span>
           ))}
@@ -1849,20 +1923,38 @@ function RoboticsNavigationGame({
         <div>
           <h4 className="text-white font-medium mb-3">Maze Navigation:</h4>
           <div className="bg-gray-900/50 rounded-lg p-4 mb-4">
-            <div className="grid gap-1" style={{ 
-              gridTemplateColumns: `repeat(${maze.grid[0]?.length || 1}, 1fr)`,
-              maxWidth: '300px',
-              aspectRatio: '1'
-            }}>
+            <div
+              className="grid gap-1"
+              style={{
+                gridTemplateColumns: `repeat(${maze.grid[0]?.length || 1}, 1fr)`,
+                maxWidth: '300px',
+                aspectRatio: '1',
+              }}
+            >
               {maze.grid.map((row, i) =>
                 row.map((cell, j) => {
                   const isStart = i === maze.start[0] && j === maze.start[1];
                   const isEnd = i === maze.end[0] && j === maze.end[1];
-                  const isRobot = i === robotPosition[0] && j === robotPosition[1];
-                  const isPath = pathHistory.some(([x, y]) => x === i && y === j);
-                  const isAlgorithmPath = showAlgorithm && algorithmVisualization.path.some(([x, y]) => x === i && y === j);
-                  const isOpenSet = showAlgorithm && algorithmVisualization.openSet.some(([x, y]) => x === i && y === j);
-                  const isClosedSet = showAlgorithm && algorithmVisualization.closedSet.some(([x, y]) => x === i && y === j);
+                  const isRobot =
+                    i === robotPosition[0] && j === robotPosition[1];
+                  const isPath = pathHistory.some(
+                    ([x, y]) => x === i && y === j,
+                  );
+                  const isAlgorithmPath =
+                    showAlgorithm &&
+                    algorithmVisualization.path.some(
+                      ([x, y]) => x === i && y === j,
+                    );
+                  const isOpenSet =
+                    showAlgorithm &&
+                    algorithmVisualization.openSet.some(
+                      ([x, y]) => x === i && y === j,
+                    );
+                  const isClosedSet =
+                    showAlgorithm &&
+                    algorithmVisualization.closedSet.some(
+                      ([x, y]) => x === i && y === j,
+                    );
 
                   let bgColor = 'bg-gray-800';
                   if (cell === 1) bgColor = 'bg-gray-600'; // Wall
@@ -1885,7 +1977,7 @@ function RoboticsNavigationGame({
                       {isEnd && !isRobot && '🎯'}
                     </div>
                   );
-                })
+                }),
               )}
             </div>
           </div>
@@ -1924,10 +2016,12 @@ function RoboticsNavigationGame({
 
         <div>
           <h4 className="text-white font-medium mb-3">Algorithm Control:</h4>
-          
+
           <div className="bg-gray-800/50 rounded-lg p-4 mb-4">
             <div className="mb-3">
-              <label className="text-white text-sm mb-2 block">Select Algorithm:</label>
+              <label className="text-white text-sm mb-2 block">
+                Select Algorithm:
+              </label>
               <select
                 value={selectedAlgorithm}
                 onChange={(e) => setSelectedAlgorithm(e.target.value as any)}
@@ -1974,7 +2068,10 @@ function RoboticsNavigationGame({
               ) : (
                 <div className="flex flex-wrap gap-1">
                   {commands.map((cmd, index) => (
-                    <span key={index} className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs">
+                    <span
+                      key={index}
+                      className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs"
+                    >
                       {cmd}
                     </span>
                   ))}
@@ -1998,10 +2095,12 @@ function RoboticsNavigationGame({
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">Points Available:</span>
-                <span className="text-yellow-400">{currentLevelData.pointValue}</span>
+                <span className="text-yellow-400">
+                  {currentLevelData.pointValue}
+                </span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
-                <div 
+                <div
                   className="bg-gradient-to-r from-green-400 to-blue-500 h-2 rounded-full transition-all duration-300"
                   style={{ width: `${((currentLevel + 1) / 100) * 100}%` }}
                 />
@@ -2010,15 +2109,17 @@ function RoboticsNavigationGame({
 
             {currentLevel < 10 && (
               <div className="mt-3">
-                <label className="text-white text-sm mb-2 block">Quick Level Select (1-10):</label>
+                <label className="text-white text-sm mb-2 block">
+                  Quick Level Select (1-10):
+                </label>
                 <div className="grid grid-cols-5 gap-1">
-                  {Array.from({length: 10}, (_, i) => (
+                  {Array.from({ length: 10 }, (_, i) => (
                     <button
                       key={i}
                       onClick={() => skipToLevel(i)}
                       className={`px-2 py-1 rounded text-xs ${
-                        currentLevel === i 
-                          ? 'bg-blue-500 text-white' 
+                        currentLevel === i
+                          ? 'bg-blue-500 text-white'
                           : 'bg-gray-600 hover:bg-gray-500 text-gray-300'
                       }`}
                     >
@@ -2490,46 +2591,48 @@ function MathPuzzleGame({ gameData, onComplete, timeLeft, onRestart }: any) {
 function BlockchainExplorerGame({ onComplete, timeLeft, onRestart }: any) {
   const [currentBlock, setCurrentBlock] = useState(0);
   const [score, setScore] = useState(0);
-  const [verifiedTransactions, setVerifiedTransactions] = useState<Set<number>>(new Set());
+  const [verifiedTransactions, setVerifiedTransactions] = useState<Set<number>>(
+    new Set(),
+  );
 
   const blocks = [
     {
       id: 1,
-      hash: "0x1a2b3c...",
-      previousHash: "0x000000...",
+      hash: '0x1a2b3c...',
+      previousHash: '0x000000...',
       transactions: [
-        { id: 1, from: "Alice", to: "Bob", amount: 10, fee: 0.1 },
-        { id: 2, from: "Charlie", to: "David", amount: 5.5, fee: 0.05 },
-        { id: 3, from: "Eve", to: "Frank", amount: 2.3, fee: 0.02 }
+        { id: 1, from: 'Alice', to: 'Bob', amount: 10, fee: 0.1 },
+        { id: 2, from: 'Charlie', to: 'David', amount: 5.5, fee: 0.05 },
+        { id: 3, from: 'Eve', to: 'Frank', amount: 2.3, fee: 0.02 },
       ],
       nonce: 12345,
-      timestamp: "2024-01-01 10:30:00"
+      timestamp: '2024-01-01 10:30:00',
     },
     {
       id: 2,
-      hash: "0x4d5e6f...",
-      previousHash: "0x1a2b3c...",
+      hash: '0x4d5e6f...',
+      previousHash: '0x1a2b3c...',
       transactions: [
-        { id: 4, from: "Bob", to: "Grace", amount: 8.7, fee: 0.08 },
-        { id: 5, from: "Henry", to: "Alice", amount: 12.0, fee: 0.12 }
+        { id: 4, from: 'Bob', to: 'Grace', amount: 8.7, fee: 0.08 },
+        { id: 5, from: 'Henry', to: 'Alice', amount: 12.0, fee: 0.12 },
       ],
       nonce: 67890,
-      timestamp: "2024-01-01 10:35:00"
-    }
+      timestamp: '2024-01-01 10:35:00',
+    },
   ];
 
   const currentBlockData = blocks[currentBlock];
 
   const verifyTransaction = (transactionId: number) => {
     if (!verifiedTransactions.has(transactionId)) {
-      setVerifiedTransactions(prev => new Set([...prev, transactionId]));
-      setScore(prev => prev + 15);
+      setVerifiedTransactions((prev) => new Set([...prev, transactionId]));
+      setScore((prev) => prev + 15);
     }
   };
 
   const nextBlock = () => {
     if (currentBlock < blocks.length - 1) {
-      setCurrentBlock(prev => prev + 1);
+      setCurrentBlock((prev) => prev + 1);
     } else {
       onComplete(true, score);
     }
@@ -2554,11 +2657,15 @@ function BlockchainExplorerGame({ onComplete, timeLeft, onRestart }: any) {
           <div className="bg-gray-800/50 rounded-lg p-4 space-y-2">
             <div className="flex justify-between">
               <span className="text-gray-400">Hash:</span>
-              <span className="text-cyan-400 font-mono text-sm">{currentBlockData.hash}</span>
+              <span className="text-cyan-400 font-mono text-sm">
+                {currentBlockData.hash}
+              </span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Previous Hash:</span>
-              <span className="text-gray-400 font-mono text-sm">{currentBlockData.previousHash}</span>
+              <span className="text-gray-400 font-mono text-sm">
+                {currentBlockData.previousHash}
+              </span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Nonce:</span>
@@ -2566,13 +2673,17 @@ function BlockchainExplorerGame({ onComplete, timeLeft, onRestart }: any) {
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Timestamp:</span>
-              <span className="text-green-400">{currentBlockData.timestamp}</span>
+              <span className="text-green-400">
+                {currentBlockData.timestamp}
+              </span>
             </div>
           </div>
         </div>
 
         <div>
-          <h4 className="text-white font-medium mb-3">Transactions ({currentBlockData.transactions.length}):</h4>
+          <h4 className="text-white font-medium mb-3">
+            Transactions ({currentBlockData.transactions.length}):
+          </h4>
           <div className="space-y-2">
             {currentBlockData.transactions.map((tx) => (
               <div
@@ -2608,7 +2719,9 @@ function BlockchainExplorerGame({ onComplete, timeLeft, onRestart }: any) {
           onClick={nextBlock}
           className="w-full mt-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-200"
         >
-          {currentBlock < blocks.length - 1 ? 'Next Block →' : 'Complete Blockchain ✓'}
+          {currentBlock < blocks.length - 1
+            ? 'Next Block →'
+            : 'Complete Blockchain ✓'}
         </button>
       )}
     </div>
@@ -2623,10 +2736,30 @@ function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
   const [score, setScore] = useState(0);
 
   const policyOptions = [
-    { id: 'renewable', name: 'Năng lượng tái tạo', impact: { co2: -5, temp: -0.1 }, cost: 20 },
-    { id: 'forest', name: 'Trồng rừng', impact: { co2: -3, temp: -0.05 }, cost: 15 },
-    { id: 'electric', name: 'Xe điện', impact: { co2: -4, temp: -0.08 }, cost: 25 },
-    { id: 'industry', name: 'Công nghệ sạch', impact: { co2: -6, temp: -0.12 }, cost: 30 }
+    {
+      id: 'renewable',
+      name: 'Năng lượng tái tạo',
+      impact: { co2: -5, temp: -0.1 },
+      cost: 20,
+    },
+    {
+      id: 'forest',
+      name: 'Trồng rừng',
+      impact: { co2: -3, temp: -0.05 },
+      cost: 15,
+    },
+    {
+      id: 'electric',
+      name: 'Xe điện',
+      impact: { co2: -4, temp: -0.08 },
+      cost: 25,
+    },
+    {
+      id: 'industry',
+      name: 'Công nghệ sạch',
+      impact: { co2: -6, temp: -0.12 },
+      cost: 30,
+    },
   ];
 
   const advanceYear = () => {
@@ -2634,8 +2767,8 @@ function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
     let newTemp = temperature + 0.02; // Base increase
     let yearCost = 0;
 
-    policies.forEach(policyId => {
-      const policy = policyOptions.find(p => p.id === policyId);
+    policies.forEach((policyId) => {
+      const policy = policyOptions.find((p) => p.id === policyId);
       if (policy) {
         newCo2 += policy.impact.co2;
         newTemp += policy.impact.temp;
@@ -2645,10 +2778,13 @@ function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
 
     setCo2Level(Math.max(350, newCo2));
     setTemperature(Math.max(0.5, newTemp));
-    setCurrentYear(prev => prev + 1);
+    setCurrentYear((prev) => prev + 1);
 
     // Calculate score based on climate improvement
-    const climateScore = Math.max(0, 500 - (newCo2 - 350) - (newTemp - 0.5) * 100);
+    const climateScore = Math.max(
+      0,
+      500 - (newCo2 - 350) - (newTemp - 0.5) * 100,
+    );
     setScore(climateScore);
 
     if (currentYear >= 2030) {
@@ -2658,10 +2794,10 @@ function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
   };
 
   const togglePolicy = (policyId: string) => {
-    setPolicies(prev => 
-      prev.includes(policyId) 
-        ? prev.filter(p => p !== policyId)
-        : [...prev, policyId]
+    setPolicies((prev) =>
+      prev.includes(policyId)
+        ? prev.filter((p) => p !== policyId)
+        : [...prev, policyId],
     );
   };
 
@@ -2685,12 +2821,14 @@ function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
             <div className="bg-gray-800/50 rounded-lg p-4">
               <div className="flex justify-between mb-2">
                 <span className="text-gray-300">CO₂ (ppm):</span>
-                <span className={`font-bold ${co2Level > 450 ? 'text-red-400' : co2Level > 400 ? 'text-yellow-400' : 'text-green-400'}`}>
+                <span
+                  className={`font-bold ${co2Level > 450 ? 'text-red-400' : co2Level > 400 ? 'text-yellow-400' : 'text-green-400'}`}
+                >
                   {co2Level.toFixed(1)}
                 </span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
-                <div 
+                <div
                   className={`h-2 rounded-full transition-all duration-300 ${co2Level > 450 ? 'bg-red-500' : co2Level > 400 ? 'bg-yellow-500' : 'bg-green-500'}`}
                   style={{ width: `${Math.min(100, (co2Level - 300) / 2)}%` }}
                 />
@@ -2700,12 +2838,14 @@ function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
             <div className="bg-gray-800/50 rounded-lg p-4">
               <div className="flex justify-between mb-2">
                 <span className="text-gray-300">Nhiệt độ (°C):</span>
-                <span className={`font-bold ${temperature > 2 ? 'text-red-400' : temperature > 1.5 ? 'text-yellow-400' : 'text-green-400'}`}>
+                <span
+                  className={`font-bold ${temperature > 2 ? 'text-red-400' : temperature > 1.5 ? 'text-yellow-400' : 'text-green-400'}`}
+                >
                   +{temperature.toFixed(2)}
                 </span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
-                <div 
+                <div
                   className={`h-2 rounded-full transition-all duration-300 ${temperature > 2 ? 'bg-red-500' : temperature > 1.5 ? 'bg-yellow-500' : 'bg-green-500'}`}
                   style={{ width: `${Math.min(100, temperature * 25)}%` }}
                 />
@@ -2731,9 +2871,12 @@ function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
                   <div>
                     <div className="text-white font-medium">{policy.name}</div>
                     <div className="text-gray-400 text-sm">
-                      CO₂: {policy.impact.co2} ppm | Temp: {policy.impact.temp}°C
+                      CO₂: {policy.impact.co2} ppm | Temp: {policy.impact.temp}
+                      °C
                     </div>
-                    <div className="text-yellow-400 text-sm">Chi phí: ${policy.cost}B</div>
+                    <div className="text-yellow-400 text-sm">
+                      Chi phí: ${policy.cost}B
+                    </div>
                   </div>
                   {policies.includes(policy.id) && (
                     <span className="text-green-400">✓</span>
@@ -2757,26 +2900,57 @@ function ClimateModelingGame({ onComplete, timeLeft, onRestart }: any) {
 
 function CybersecurityDefenseGame({ onComplete, timeLeft, onRestart }: any) {
   const [threats, setThreats] = useState([
-    { id: 1, type: 'malware', name: 'Trojan.exe', severity: 'high', blocked: false },
-    { id: 2, type: 'phishing', name: 'Fake Email', severity: 'medium', blocked: false },
-    { id: 3, type: 'ddos', name: 'DDoS Attack', severity: 'critical', blocked: false },
-    { id: 4, type: 'ransomware', name: 'CryptoLocker', severity: 'critical', blocked: false }
+    {
+      id: 1,
+      type: 'malware',
+      name: 'Trojan.exe',
+      severity: 'high',
+      blocked: false,
+    },
+    {
+      id: 2,
+      type: 'phishing',
+      name: 'Fake Email',
+      severity: 'medium',
+      blocked: false,
+    },
+    {
+      id: 3,
+      type: 'ddos',
+      name: 'DDoS Attack',
+      severity: 'critical',
+      blocked: false,
+    },
+    {
+      id: 4,
+      type: 'ransomware',
+      name: 'CryptoLocker',
+      severity: 'critical',
+      blocked: false,
+    },
   ]);
   const [securityLevel, setSecurityLevel] = useState(60);
   const [score, setScore] = useState(0);
 
   const blockThreat = (threatId: number) => {
-    setThreats(prev => prev.map(threat => 
-      threat.id === threatId ? { ...threat, blocked: true } : threat
-    ));
-    setSecurityLevel(prev => Math.min(100, prev + 10));
-    
-    const threat = threats.find(t => t.id === threatId);
-    const points = threat?.severity === 'critical' ? 30 : threat?.severity === 'high' ? 20 : 15;
-    setScore(prev => prev + points);
+    setThreats((prev) =>
+      prev.map((threat) =>
+        threat.id === threatId ? { ...threat, blocked: true } : threat,
+      ),
+    );
+    setSecurityLevel((prev) => Math.min(100, prev + 10));
+
+    const threat = threats.find((t) => t.id === threatId);
+    const points =
+      threat?.severity === 'critical'
+        ? 30
+        : threat?.severity === 'high'
+          ? 20
+          : 15;
+    setScore((prev) => prev + points);
   };
 
-  const allThreatsBlocked = threats.every(threat => threat.blocked);
+  const allThreatsBlocked = threats.every((threat) => threat.blocked);
 
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
@@ -2791,17 +2965,23 @@ function CybersecurityDefenseGame({ onComplete, timeLeft, onRestart }: any) {
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">🛡️ Phòng thủ An ninh mạng</h3>
+        <h3 className="text-xl font-bold text-white mb-2">
+          🛡️ Phòng thủ An ninh mạng
+        </h3>
         <div className="flex justify-between">
           <div className="text-red-400 font-medium">Điểm: {score}</div>
-          <div className={`font-medium ${securityLevel > 80 ? 'text-green-400' : securityLevel > 60 ? 'text-yellow-400' : 'text-red-400'}`}>
+          <div
+            className={`font-medium ${securityLevel > 80 ? 'text-green-400' : securityLevel > 60 ? 'text-yellow-400' : 'text-red-400'}`}
+          >
             Bảo mật: {securityLevel}%
           </div>
         </div>
       </div>
 
       <div className="mb-6">
-        <h4 className="text-white font-medium mb-3">Mối đe dọa được phát hiện:</h4>
+        <h4 className="text-white font-medium mb-3">
+          Mối đe dọa được phát hiện:
+        </h4>
         <div className="space-y-3">
           {threats.map((threat) => (
             <div
@@ -2810,10 +2990,10 @@ function CybersecurityDefenseGame({ onComplete, timeLeft, onRestart }: any) {
                 threat.blocked
                   ? 'bg-green-500/20 border-green-500/50'
                   : threat.severity === 'critical'
-                  ? 'bg-red-500/20 border-red-500/50'
-                  : threat.severity === 'high'
-                  ? 'bg-orange-500/20 border-orange-500/50'
-                  : 'bg-yellow-500/20 border-yellow-500/50'
+                    ? 'bg-red-500/20 border-red-500/50'
+                    : threat.severity === 'high'
+                      ? 'bg-orange-500/20 border-orange-500/50'
+                      : 'bg-yellow-500/20 border-yellow-500/50'
               }`}
             >
               <div className="flex justify-between items-center">
@@ -2841,7 +3021,9 @@ function CybersecurityDefenseGame({ onComplete, timeLeft, onRestart }: any) {
 
       {allThreatsBlocked && (
         <div className="text-center p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
-          <div className="text-green-400 font-bold text-lg">🎉 All Threats Blocked!</div>
+          <div className="text-green-400 font-bold text-lg">
+            🎉 All Threats Blocked!
+          </div>
           <div className="text-gray-300">System Security: 100%</div>
         </div>
       )}
@@ -2860,28 +3042,30 @@ function DataVisualizationGame({ onComplete, timeLeft, onRestart }: any) {
       { month: 'Feb', value: 150 },
       { month: 'Mar', value: 180 },
       { month: 'Apr', value: 200 },
-      { month: 'May', value: 220 }
+      { month: 'May', value: 220 },
     ],
     users: [
       { category: 'Desktop', value: 45 },
       { category: 'Mobile', value: 35 },
-      { category: 'Tablet', value: 20 }
-    ]
+      { category: 'Tablet', value: 20 },
+    ],
   };
 
   const chartTypes = [
     { id: 'bar', name: 'Bar Chart', bestFor: 'sales', points: 20 },
     { id: 'line', name: 'Line Chart', bestFor: 'sales', points: 25 },
     { id: 'pie', name: 'Pie Chart', bestFor: 'users', points: 25 },
-    { id: 'scatter', name: 'Scatter Plot', bestFor: 'none', points: 10 }
+    { id: 'scatter', name: 'Scatter Plot', bestFor: 'none', points: 10 },
   ];
 
   const selectChart = (chartId: string) => {
     setSelectedChart(chartId);
-    const chart = chartTypes.find(c => c.id === chartId);
+    const chart = chartTypes.find((c) => c.id === chartId);
     const isOptimal = chart?.bestFor === dataSet;
-    const points = isOptimal ? chart.points : Math.floor(chart?.points / 2) || 5;
-    setScore(prev => prev + points);
+    const points = isOptimal
+      ? chart.points
+      : Math.floor(chart?.points ?? 0 / 2) || 5;
+    setScore((prev) => prev + points);
   };
 
   useEffect(() => {
@@ -2891,7 +3075,9 @@ function DataVisualizationGame({ onComplete, timeLeft, onRestart }: any) {
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">📊 Trực quan hóa dữ liệu</h3>
+        <h3 className="text-xl font-bold text-white mb-2">
+          📊 Trực quan hóa dữ liệu
+        </h3>
         <div className="text-indigo-400 font-medium">Điểm: {score}</div>
       </div>
 
@@ -2919,7 +3105,9 @@ function DataVisualizationGame({ onComplete, timeLeft, onRestart }: any) {
               }`}
             >
               <div className="text-white font-medium">User Data</div>
-              <div className="text-gray-400 text-sm">Device usage breakdown</div>
+              <div className="text-gray-400 text-sm">
+                Device usage breakdown
+              </div>
             </button>
           </div>
 
@@ -2943,15 +3131,17 @@ function DataVisualizationGame({ onComplete, timeLeft, onRestart }: any) {
                   selectedChart === chart.id
                     ? 'bg-green-500/20 border-green-500/50 border'
                     : chart.bestFor === dataSet
-                    ? 'bg-indigo-500/20 border-indigo-500/50 border hover:bg-indigo-500/30'
-                    : 'bg-gray-800/50 border border-gray-600 hover:bg-gray-700/50'
+                      ? 'bg-indigo-500/20 border-indigo-500/50 border hover:bg-indigo-500/30'
+                      : 'bg-gray-800/50 border border-gray-600 hover:bg-gray-700/50'
                 } disabled:opacity-50 disabled:cursor-not-allowed`}
               >
                 <div className="flex justify-between items-center">
                   <div>
                     <div className="text-white font-medium">{chart.name}</div>
                     <div className="text-gray-400 text-sm">
-                      {chart.bestFor === dataSet ? '✓ Optimal for this data' : 'Available option'}
+                      {chart.bestFor === dataSet
+                        ? '✓ Optimal for this data'
+                        : 'Available option'}
                     </div>
                   </div>
                   <div className="text-yellow-400">{chart.points} pts</div>
@@ -2987,17 +3177,17 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
 
   const missions = [
     {
-      name: "Mars Sample Collection",
-      objective: "Collect 3 soil samples from different locations",
+      name: 'Mars Sample Collection',
+      objective: 'Collect 3 soil samples from different locations',
       targetSamples: 3,
-      environment: "Mars Surface"
+      environment: 'Mars Surface',
     },
     {
-      name: "Asteroid Mining",
-      objective: "Extract valuable minerals from asteroid belt",
+      name: 'Asteroid Mining',
+      objective: 'Extract valuable minerals from asteroid belt',
       targetSamples: 2,
-      environment: "Asteroid Belt"
-    }
+      environment: 'Asteroid Belt',
+    },
   ];
 
   const currentMissionData = missions[currentMission];
@@ -3005,30 +3195,38 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
   const moveSpacecraft = (direction: string) => {
     if (fuel <= 0) return;
 
-    let newPos = { ...position };
+    const newPos = { ...position };
     switch (direction) {
-      case 'up': newPos.y = Math.max(-3, newPos.y - 1); break;
-      case 'down': newPos.y = Math.min(3, newPos.y + 1); break;
-      case 'left': newPos.x = Math.max(-3, newPos.x - 1); break;
-      case 'right': newPos.x = Math.min(3, newPos.x + 1); break;
+      case 'up':
+        newPos.y = Math.max(-3, newPos.y - 1);
+        break;
+      case 'down':
+        newPos.y = Math.min(3, newPos.y + 1);
+        break;
+      case 'left':
+        newPos.x = Math.max(-3, newPos.x - 1);
+        break;
+      case 'right':
+        newPos.x = Math.min(3, newPos.x + 1);
+        break;
     }
 
     setPosition(newPos);
-    setFuel(prev => Math.max(0, prev - 5));
-    setOxygen(prev => Math.max(0, prev - 2));
+    setFuel((prev) => Math.max(0, prev - 5));
+    setOxygen((prev) => Math.max(0, prev - 2));
   };
 
   const collectSample = () => {
     if (position.x !== 0 || position.y !== 0) {
-      setSamples(prev => prev + 1);
-      setScore(prev => prev + 25);
+      setSamples((prev) => prev + 1);
+      setScore((prev) => prev + 25);
     }
   };
 
   const refuel = () => {
     setFuel(100);
     setOxygen(100);
-    setScore(prev => Math.max(0, prev - 10));
+    setScore((prev) => Math.max(0, prev - 10));
   };
 
   useEffect(() => {
@@ -3038,30 +3236,44 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
   useEffect(() => {
     if (samples >= currentMissionData.targetSamples) {
       if (currentMission < missions.length - 1) {
-        setCurrentMission(prev => prev + 1);
+        setCurrentMission((prev) => prev + 1);
         setSamples(0);
         setPosition({ x: 0, y: 0 });
       } else {
         onComplete(true, score + 100);
       }
     }
-  }, [samples, currentMissionData.targetSamples, currentMission, missions.length, score, onComplete]);
+  }, [
+    samples,
+    currentMissionData.targetSamples,
+    currentMission,
+    missions.length,
+    score,
+    onComplete,
+  ]);
 
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">🚀 {currentMissionData.name}</h3>
+        <h3 className="text-xl font-bold text-white mb-2">
+          🚀 {currentMissionData.name}
+        </h3>
         <p className="text-gray-300 text-sm">{currentMissionData.objective}</p>
         <div className="text-purple-400 font-medium">Điểm: {score}</div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
-          <h4 className="text-white font-medium mb-3">Không gian: {currentMissionData.environment}</h4>
-          <div className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-lg p-4 relative" style={{height: '200px'}}>
+          <h4 className="text-white font-medium mb-3">
+            Không gian: {currentMissionData.environment}
+          </h4>
+          <div
+            className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-lg p-4 relative"
+            style={{ height: '200px' }}
+          >
             {/* Grid representation */}
-            {Array.from({length: 7}, (_, i) => 
-              Array.from({length: 7}, (_, j) => {
+            {Array.from({ length: 7 }, (_, i) =>
+              Array.from({ length: 7 }, (_, j) => {
                 const x = j - 3;
                 const y = i - 3;
                 const isSpacecraft = position.x === x && position.y === y;
@@ -3070,9 +3282,11 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
                   <div
                     key={`${i}-${j}`}
                     className={`absolute border border-gray-600/30 ${
-                      isSpacecraft ? 'bg-cyan-400' : 
-                      isHome ? 'bg-green-400/50' : 
-                      'bg-gray-800/20'
+                      isSpacecraft
+                        ? 'bg-cyan-400'
+                        : isHome
+                          ? 'bg-green-400/50'
+                          : 'bg-gray-800/20'
                     }`}
                     style={{
                       width: '20px',
@@ -3085,7 +3299,7 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
                     {isHome && <span className="text-xs">🏠</span>}
                   </div>
                 );
-              })
+              }),
             )}
           </div>
 
@@ -3138,10 +3352,12 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
             <div className="bg-gray-800/50 rounded-lg p-3">
               <div className="flex justify-between mb-1">
                 <span className="text-gray-300">Fuel:</span>
-                <span className={fuel > 20 ? 'text-green-400' : 'text-red-400'}>{fuel}%</span>
+                <span className={fuel > 20 ? 'text-green-400' : 'text-red-400'}>
+                  {fuel}%
+                </span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
-                <div 
+                <div
                   className={`h-2 rounded-full transition-all duration-300 ${fuel > 20 ? 'bg-green-500' : 'bg-red-500'}`}
                   style={{ width: `${fuel}%` }}
                 />
@@ -3151,10 +3367,14 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
             <div className="bg-gray-800/50 rounded-lg p-3">
               <div className="flex justify-between mb-1">
                 <span className="text-gray-300">Oxygen:</span>
-                <span className={oxygen > 20 ? 'text-blue-400' : 'text-red-400'}>{oxygen}%</span>
+                <span
+                  className={oxygen > 20 ? 'text-blue-400' : 'text-red-400'}
+                >
+                  {oxygen}%
+                </span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
-                <div 
+                <div
                   className={`h-2 rounded-full transition-all duration-300 ${oxygen > 20 ? 'bg-blue-500' : 'bg-red-500'}`}
                   style={{ width: `${oxygen}%` }}
                 />
@@ -3164,14 +3384,18 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
             <div className="bg-gray-800/50 rounded-lg p-3">
               <div className="flex justify-between">
                 <span className="text-gray-300">Samples Collected:</span>
-                <span className="text-yellow-400">{samples}/{currentMissionData.targetSamples}</span>
+                <span className="text-yellow-400">
+                  {samples}/{currentMissionData.targetSamples}
+                </span>
               </div>
             </div>
 
             <div className="bg-gray-800/50 rounded-lg p-3">
               <div className="flex justify-between">
                 <span className="text-gray-300">Position:</span>
-                <span className="text-cyan-400">({position.x}, {position.y})</span>
+                <span className="text-cyan-400">
+                  ({position.x}, {position.y})
+                </span>
               </div>
             </div>
           </div>
@@ -3191,7 +3415,7 @@ function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: any) {
 function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: any) {
   const [layers, setLayers] = useState([
     { id: 1, type: 'input', neurons: 3, name: 'Input Layer' },
-    { id: 2, type: 'output', neurons: 1, name: 'Output Layer' }
+    { id: 2, type: 'output', neurons: 1, name: 'Output Layer' },
   ]);
   const [currentAccuracy, setCurrentAccuracy] = useState(45);
   const [trainingEpochs, setTrainingEpochs] = useState(0);
@@ -3202,29 +3426,34 @@ function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: any) {
       id: layers.length + 1,
       type: 'hidden',
       neurons: 4,
-      name: `Hidden Layer ${layers.filter(l => l.type === 'hidden').length + 1}`
+      name: `Hidden Layer ${layers.filter((l) => l.type === 'hidden').length + 1}`,
     };
-    
+
     const newLayers = [...layers];
     newLayers.splice(-1, 0, newLayer); // Insert before output layer
     setLayers(newLayers);
-    setCurrentAccuracy(prev => Math.min(95, prev + 15));
+    setCurrentAccuracy((prev) => Math.min(95, prev + 15));
   };
 
   const adjustNeurons = (layerId: number, change: number) => {
-    setLayers(prev => prev.map(layer => 
-      layer.id === layerId 
-        ? { ...layer, neurons: Math.max(1, Math.min(10, layer.neurons + change)) }
-        : layer
-    ));
-    setCurrentAccuracy(prev => Math.min(95, prev + Math.random() * 5));
+    setLayers((prev) =>
+      prev.map((layer) =>
+        layer.id === layerId
+          ? {
+              ...layer,
+              neurons: Math.max(1, Math.min(10, layer.neurons + change)),
+            }
+          : layer,
+      ),
+    );
+    setCurrentAccuracy((prev) => Math.min(95, prev + Math.random() * 5));
   };
 
   const trainNetwork = () => {
-    setTrainingEpochs(prev => prev + 10);
+    setTrainingEpochs((prev) => prev + 10);
     const improvement = Math.random() * 10;
-    setCurrentAccuracy(prev => Math.min(98, prev + improvement));
-    setScore(prev => prev + Math.floor(improvement * 2));
+    setCurrentAccuracy((prev) => Math.min(98, prev + improvement));
+    setScore((prev) => prev + Math.floor(improvement * 2));
   };
 
   useEffect(() => {
@@ -3234,10 +3463,14 @@ function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: any) {
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">🧠 Neural Network Builder</h3>
+        <h3 className="text-xl font-bold text-white mb-2">
+          🧠 Neural Network Builder
+        </h3>
         <div className="flex justify-between">
           <div className="text-pink-400 font-medium">Điểm: {score}</div>
-          <div className={`font-medium ${currentAccuracy > 90 ? 'text-green-400' : currentAccuracy > 70 ? 'text-yellow-400' : 'text-red-400'}`}>
+          <div
+            className={`font-medium ${currentAccuracy > 90 ? 'text-green-400' : currentAccuracy > 70 ? 'text-yellow-400' : 'text-red-400'}`}
+          >
             Accuracy: {currentAccuracy.toFixed(1)}%
           </div>
         </div>
@@ -3251,15 +3484,19 @@ function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: any) {
               <div
                 key={layer.id}
                 className={`p-4 rounded-lg border ${
-                  layer.type === 'input' ? 'bg-blue-500/20 border-blue-500/50' :
-                  layer.type === 'hidden' ? 'bg-purple-500/20 border-purple-500/50' :
-                  'bg-green-500/20 border-green-500/50'
+                  layer.type === 'input'
+                    ? 'bg-blue-500/20 border-blue-500/50'
+                    : layer.type === 'hidden'
+                      ? 'bg-purple-500/20 border-purple-500/50'
+                      : 'bg-green-500/20 border-green-500/50'
                 }`}
               >
                 <div className="flex justify-between items-center">
                   <div>
                     <div className="text-white font-medium">{layer.name}</div>
-                    <div className="text-gray-400 text-sm">Neurons: {layer.neurons}</div>
+                    <div className="text-gray-400 text-sm">
+                      Neurons: {layer.neurons}
+                    </div>
                   </div>
                   {layer.type === 'hidden' && (
                     <div className="flex gap-1">
@@ -3284,7 +3521,7 @@ function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: any) {
 
           <button
             onClick={addHiddenLayer}
-            disabled={layers.filter(l => l.type === 'hidden').length >= 3}
+            disabled={layers.filter((l) => l.type === 'hidden').length >= 3}
             className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             + Add Hidden Layer
@@ -3300,7 +3537,7 @@ function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: any) {
                 <span className="text-blue-400">{trainingEpochs} epochs</span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
-                <div 
+                <div
                   className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
                   style={{ width: `${Math.min(100, trainingEpochs)}%` }}
                 />
@@ -3310,15 +3547,26 @@ function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: any) {
             <div className="bg-gray-800/50 rounded-lg p-4">
               <div className="flex justify-between mb-2">
                 <span className="text-gray-300">Model Accuracy:</span>
-                <span className={currentAccuracy > 90 ? 'text-green-400' : currentAccuracy > 70 ? 'text-yellow-400' : 'text-red-400'}>
+                <span
+                  className={
+                    currentAccuracy > 90
+                      ? 'text-green-400'
+                      : currentAccuracy > 70
+                        ? 'text-yellow-400'
+                        : 'text-red-400'
+                  }
+                >
                   {currentAccuracy.toFixed(1)}%
                 </span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
-                <div 
+                <div
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    currentAccuracy > 90 ? 'bg-green-500' : 
-                    currentAccuracy > 70 ? 'bg-yellow-500' : 'bg-red-500'
+                    currentAccuracy > 90
+                      ? 'bg-green-500'
+                      : currentAccuracy > 70
+                        ? 'bg-yellow-500'
+                        : 'bg-red-500'
                   }`}
                   style={{ width: `${currentAccuracy}%` }}
                 />
@@ -3356,49 +3604,49 @@ function ChemistryLabGame({ onComplete, timeLeft, onRestart }: any) {
 
   const experiments = [
     {
-      name: "Acid-Base Reaction",
-      description: "Mix acid and base to create salt and water",
-      requiredCompounds: ["HCl", "NaOH"],
+      name: 'Acid-Base Reaction',
+      description: 'Mix acid and base to create salt and water',
+      requiredCompounds: ['HCl', 'NaOH'],
       optimalTemp: 25,
-      result: "NaCl + H2O",
-      points: 30
+      result: 'NaCl + H2O',
+      points: 30,
     },
     {
-      name: "Combustion Reaction", 
-      description: "Burn methane in oxygen",
-      requiredCompounds: ["CH4", "O2"],
+      name: 'Combustion Reaction',
+      description: 'Burn methane in oxygen',
+      requiredCompounds: ['CH4', 'O2'],
       optimalTemp: 500,
-      result: "CO2 + H2O + Energy",
-      points: 40
-    }
+      result: 'CO2 + H2O + Energy',
+      points: 40,
+    },
   ];
 
-  const availableCompounds = ["HCl", "NaOH", "CH4", "O2", "H2O", "NaCl", "CO2"];
+  const availableCompounds = ['HCl', 'NaOH', 'CH4', 'O2', 'H2O', 'NaCl', 'CO2'];
   const currentExp = experiments[currentExperiment];
 
   const selectCompound = (compound: string) => {
     if (!selectedCompounds.includes(compound)) {
-      setSelectedCompounds(prev => [...prev, compound]);
+      setSelectedCompounds((prev) => [...prev, compound]);
     }
   };
 
   const removeCompound = (compound: string) => {
-    setSelectedCompounds(prev => prev.filter(c => c !== compound));
+    setSelectedCompounds((prev) => prev.filter((c) => c !== compound));
   };
 
   const runExperiment = () => {
-    const hasRequiredCompounds = currentExp.requiredCompounds.every(
-      comp => selectedCompounds.includes(comp)
+    const hasRequiredCompounds = currentExp.requiredCompounds.every((comp) =>
+      selectedCompounds.includes(comp),
     );
     const isOptimalTemp = Math.abs(temperature - currentExp.optimalTemp) < 50;
 
     if (hasRequiredCompounds && isOptimalTemp) {
       setExperimentResult(`Success! Produced: ${currentExp.result}`);
-      setScore(prev => prev + currentExp.points);
-      
+      setScore((prev) => prev + currentExp.points);
+
       setTimeout(() => {
         if (currentExperiment < experiments.length - 1) {
-          setCurrentExperiment(prev => prev + 1);
+          setCurrentExperiment((prev) => prev + 1);
           setSelectedCompounds([]);
           setTemperature(25);
           setExperimentResult(null);
@@ -3407,7 +3655,9 @@ function ChemistryLabGame({ onComplete, timeLeft, onRestart }: any) {
         }
       }, 2000);
     } else {
-      setExperimentResult("Experiment failed! Check compounds and temperature.");
+      setExperimentResult(
+        'Experiment failed! Check compounds and temperature.',
+      );
     }
   };
 
@@ -3418,7 +3668,9 @@ function ChemistryLabGame({ onComplete, timeLeft, onRestart }: any) {
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">⚗️ {currentExp.name}</h3>
+        <h3 className="text-xl font-bold text-white mb-2">
+          ⚗️ {currentExp.name}
+        </h3>
         <p className="text-gray-300 text-sm">{currentExp.description}</p>
         <div className="text-emerald-400 font-medium">Điểm: {score}</div>
       </div>
@@ -3467,7 +3719,9 @@ function ChemistryLabGame({ onComplete, timeLeft, onRestart }: any) {
             <div className="text-center mb-4">
               <div className="text-gray-400 text-sm">Selected Compounds:</div>
               {selectedCompounds.length === 0 ? (
-                <div className="text-gray-500 italic">No compounds selected</div>
+                <div className="text-gray-500 italic">
+                  No compounds selected
+                </div>
               ) : (
                 <div className="flex flex-wrap gap-2 justify-center mt-2">
                   {selectedCompounds.map((compound, index) => (
@@ -3484,22 +3738,32 @@ function ChemistryLabGame({ onComplete, timeLeft, onRestart }: any) {
             </div>
 
             {experimentResult && (
-              <div className={`text-center p-3 rounded-lg ${
-                experimentResult.includes('Success') 
-                  ? 'bg-green-500/20 text-green-400' 
-                  : 'bg-red-500/20 text-red-400'
-              }`}>
+              <div
+                className={`text-center p-3 rounded-lg ${
+                  experimentResult.includes('Success')
+                    ? 'bg-green-500/20 text-green-400'
+                    : 'bg-red-500/20 text-red-400'
+                }`}
+              >
                 {experimentResult}
               </div>
             )}
           </div>
 
           <div className="mt-4">
-            <div className="text-white text-sm mb-2">Experiment Requirements:</div>
+            <div className="text-white text-sm mb-2">
+              Experiment Requirements:
+            </div>
             <div className="bg-gray-800/50 rounded-lg p-3 text-sm">
-              <div className="text-gray-300">Required: {currentExp.requiredCompounds.join(" + ")}</div>
-              <div className="text-gray-300">Optimal temp: {currentExp.optimalTemp}°C</div>
-              <div className="text-yellow-400">Expected: {currentExp.result}</div>
+              <div className="text-gray-300">
+                Required: {currentExp.requiredCompounds.join(' + ')}
+              </div>
+              <div className="text-gray-300">
+                Optimal temp: {currentExp.optimalTemp}°C
+              </div>
+              <div className="text-yellow-400">
+                Expected: {currentExp.result}
+              </div>
             </div>
           </div>
 
@@ -3521,60 +3785,62 @@ function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: any) {
     plants: 50,
     herbivores: 30,
     carnivores: 10,
-    decomposers: 20
+    decomposers: 20,
   });
   const [events, setEvents] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [year, setYear] = useState(1);
 
   const addOrganism = (type: keyof typeof ecosystem) => {
-    setEcosystem(prev => ({
+    setEcosystem((prev) => ({
       ...prev,
-      [type]: prev[type] + 5
+      [type]: prev[type] + 5,
     }));
   };
 
   const simulateYear = () => {
-    let newEcosystem = { ...ecosystem };
-    let eventLog: string[] = [];
+    const newEcosystem = { ...ecosystem };
+    const eventLog: string[] = [];
 
     // Natural growth and interactions
     if (newEcosystem.plants > 30) {
       newEcosystem.herbivores = Math.min(60, newEcosystem.herbivores + 2);
-      eventLog.push("🌿 Abundant plants support herbivore growth");
+      eventLog.push('🌿 Abundant plants support herbivore growth');
     }
 
     if (newEcosystem.herbivores > 40) {
       newEcosystem.carnivores = Math.min(30, newEcosystem.carnivores + 1);
-      eventLog.push("🐰 Herbivore abundance attracts carnivores");
+      eventLog.push('🐰 Herbivore abundance attracts carnivores');
     }
 
     if (newEcosystem.carnivores > 20) {
       newEcosystem.herbivores = Math.max(10, newEcosystem.herbivores - 3);
-      eventLog.push("🦅 Carnivores reduce herbivore population");
+      eventLog.push('🦅 Carnivores reduce herbivore population');
     }
 
     // Random events
     const randomEvent = Math.random();
     if (randomEvent < 0.3) {
       newEcosystem.plants = Math.max(20, newEcosystem.plants - 10);
-      eventLog.push("🌪️ Natural disaster affects plant population");
+      eventLog.push('🌪️ Natural disaster affects plant population');
     } else if (randomEvent < 0.6) {
       newEcosystem.decomposers = Math.min(40, newEcosystem.decomposers + 5);
-      eventLog.push("🍄 Favorable conditions boost decomposer growth");
+      eventLog.push('🍄 Favorable conditions boost decomposer growth');
     }
 
     // Calculate balance score
     const total = Object.values(newEcosystem).reduce((a, b) => a + b, 0);
-    const balance = 1 - Math.abs(0.5 - newEcosystem.plants / total) - 
-                        Math.abs(0.3 - newEcosystem.herbivores / total) -
-                        Math.abs(0.1 - newEcosystem.carnivores / total) -
-                        Math.abs(0.1 - newEcosystem.decomposers / total);
-    
-    setScore(prev => prev + Math.floor(balance * 50));
+    const balance =
+      1 -
+      Math.abs(0.5 - newEcosystem.plants / total) -
+      Math.abs(0.3 - newEcosystem.herbivores / total) -
+      Math.abs(0.1 - newEcosystem.carnivores / total) -
+      Math.abs(0.1 - newEcosystem.decomposers / total);
+
+    setScore((prev) => prev + Math.floor(balance * 50));
     setEcosystem(newEcosystem);
     setEvents(eventLog);
-    setYear(prev => prev + 1);
+    setYear((prev) => prev + 1);
 
     if (year >= 10) {
       onComplete(true, score + Math.floor(balance * 50));
@@ -3590,7 +3856,9 @@ function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: any) {
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">🌿 Ecosystem Simulation - Year {year}</h3>
+        <h3 className="text-xl font-bold text-white mb-2">
+          🌿 Ecosystem Simulation - Year {year}
+        </h3>
         <div className="text-lime-400 font-medium">Balance Score: {score}</div>
       </div>
 
@@ -3606,7 +3874,7 @@ function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: any) {
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="w-full bg-gray-700 rounded-full h-2 mr-3">
-                    <div 
+                    <div
                       className="bg-gradient-to-r from-green-400 to-lime-400 h-2 rounded-full transition-all duration-300"
                       style={{ width: `${(count / total) * 100}%` }}
                     />
@@ -3633,23 +3901,35 @@ function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: any) {
               <div className="text-4xl mb-2">🌍</div>
               <div className="text-white">Total Population: {total}</div>
             </div>
-            
+
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span className="text-gray-300">🌿 Plants:</span>
-                <span className="text-green-400">{ecosystem.plants} ({((ecosystem.plants/total)*100).toFixed(1)}%)</span>
+                <span className="text-green-400">
+                  {ecosystem.plants} (
+                  {((ecosystem.plants / total) * 100).toFixed(1)}%)
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">🐰 Herbivores:</span>
-                <span className="text-yellow-400">{ecosystem.herbivores} ({((ecosystem.herbivores/total)*100).toFixed(1)}%)</span>
+                <span className="text-yellow-400">
+                  {ecosystem.herbivores} (
+                  {((ecosystem.herbivores / total) * 100).toFixed(1)}%)
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">🦅 Carnivores:</span>
-                <span className="text-red-400">{ecosystem.carnivores} ({((ecosystem.carnivores/total)*100).toFixed(1)}%)</span>
+                <span className="text-red-400">
+                  {ecosystem.carnivores} (
+                  {((ecosystem.carnivores / total) * 100).toFixed(1)}%)
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">🍄 Decomposers:</span>
-                <span className="text-orange-400">{ecosystem.decomposers} ({((ecosystem.decomposers/total)*100).toFixed(1)}%)</span>
+                <span className="text-orange-400">
+                  {ecosystem.decomposers} (
+                  {((ecosystem.decomposers / total) * 100).toFixed(1)}%)
+                </span>
               </div>
             </div>
           </div>
@@ -3659,7 +3939,9 @@ function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: any) {
               <h5 className="text-blue-400 font-medium mb-2">Recent Events:</h5>
               <div className="space-y-1">
                 {events.map((event, index) => (
-                  <div key={index} className="text-gray-300 text-sm">{event}</div>
+                  <div key={index} className="text-gray-300 text-sm">
+                    {event}
+                  </div>
                 ))}
               </div>
             </div>
@@ -3670,7 +3952,9 @@ function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: any) {
             disabled={year >= 10}
             className="w-full bg-gradient-to-r from-lime-500 to-green-500 text-white py-3 px-4 rounded-lg font-medium hover:from-lime-600 hover:to-green-600 transition-all duration-200 disabled:opacity-50"
           >
-            {year < 10 ? `⏭️ Advance to Year ${year + 1}` : '🎯 Simulation Complete'}
+            {year < 10
+              ? `⏭️ Advance to Year ${year + 1}`
+              : '🎯 Simulation Complete'}
           </button>
         </div>
       </div>
@@ -3680,20 +3964,22 @@ function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: any) {
 
 function HistoryTimelineGame({ onComplete, timeLeft, onRestart }: any) {
   const [events] = useState([
-    { id: 1, year: 1945, event: "Tuyên bố Độc lập", placed: false },
-    { id: 2, year: 1975, event: "Thống nhất đất nước", placed: false },
-    { id: 3, year: 1986, event: "Đổi mới", placed: false },
-    { id: 4, year: 2007, event: "Gia nhập WTO", placed: false },
-    { id: 5, year: 1954, event: "Chiến thắng Điện Biên Phủ", placed: false }
+    { id: 1, year: 1945, event: 'Tuyên bố Độc lập', placed: false },
+    { id: 2, year: 1975, event: 'Thống nhất đất nước', placed: false },
+    { id: 3, year: 1986, event: 'Đổi mới', placed: false },
+    { id: 4, year: 2007, event: 'Gia nhập WTO', placed: false },
+    { id: 5, year: 1954, event: 'Chiến thắng Điện Biên Phủ', placed: false },
   ]);
-  
-  const [timeline, setTimeline] = useState<Array<{id: number, year: number, event: string}>>([]);
+
+  const [timeline, setTimeline] = useState<
+    Array<{ id: number; year: number; event: string }>
+  >([]);
   const [score, setScore] = useState(0);
   const [gameComplete, setGameComplete] = useState(false);
 
   const addToTimeline = (eventId: number) => {
-    const event = events.find(e => e.id === eventId);
-    if (!event || timeline.find(t => t.id === eventId)) return;
+    const event = events.find((e) => e.id === eventId);
+    if (!event || timeline.find((t) => t.id === eventId)) return;
 
     const newTimeline = [...timeline, event].sort((a, b) => a.year - b.year);
     setTimeline(newTimeline);
@@ -3701,12 +3987,13 @@ function HistoryTimelineGame({ onComplete, timeLeft, onRestart }: any) {
     // Check if correctly placed
     const correctOrder = events.slice().sort((a, b) => a.year - b.year);
     const currentIndex = newTimeline.length - 1;
-    const isCorrect = newTimeline[currentIndex].id === correctOrder[currentIndex].id;
-    
+    const isCorrect =
+      newTimeline[currentIndex].id === correctOrder[currentIndex].id;
+
     if (isCorrect) {
-      setScore(prev => prev + 20);
+      setScore((prev) => prev + 20);
     } else {
-      setScore(prev => Math.max(0, prev - 10));
+      setScore((prev) => Math.max(0, prev - 10));
     }
 
     if (newTimeline.length === events.length) {
@@ -3717,19 +4004,23 @@ function HistoryTimelineGame({ onComplete, timeLeft, onRestart }: any) {
   };
 
   const removeFromTimeline = (eventId: number) => {
-    setTimeline(prev => prev.filter(t => t.id !== eventId));
+    setTimeline((prev) => prev.filter((t) => t.id !== eventId));
   };
 
   useEffect(() => {
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
 
-  const unplacedEvents = events.filter(e => !timeline.find(t => t.id === e.id));
+  const unplacedEvents = events.filter(
+    (e) => !timeline.find((t) => t.id === e.id),
+  );
 
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">📚 Vietnam History Timeline</h3>
+        <h3 className="text-xl font-bold text-white mb-2">
+          📚 Vietnam History Timeline
+        </h3>
         <div className="text-amber-400 font-medium">Điểm: {score}</div>
       </div>
 
@@ -3757,11 +4048,15 @@ function HistoryTimelineGame({ onComplete, timeLeft, onRestart }: any) {
         </div>
 
         <div>
-          <h4 className="text-white font-medium mb-3">Timeline (Chronological Order):</h4>
+          <h4 className="text-white font-medium mb-3">
+            Timeline (Chronological Order):
+          </h4>
           <div className="space-y-2">
             {timeline.length === 0 ? (
               <div className="text-center p-8 border-2 border-dashed border-gray-600 rounded-lg">
-                <div className="text-gray-400">Drag events here to build timeline</div>
+                <div className="text-gray-400">
+                  Drag events here to build timeline
+                </div>
               </div>
             ) : (
               timeline.map((event, index) => (
@@ -3772,12 +4067,20 @@ function HistoryTimelineGame({ onComplete, timeLeft, onRestart }: any) {
                 >
                   <div className="flex justify-between items-center">
                     <div>
-                      <div className="text-white font-medium">{event.event}</div>
-                      <div className="text-gray-400 text-sm">Position {index + 1}</div>
+                      <div className="text-white font-medium">
+                        {event.event}
+                      </div>
+                      <div className="text-gray-400 text-sm">
+                        Position {index + 1}
+                      </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-yellow-400 font-bold">{event.year}</div>
-                      <div className="text-gray-500 text-xs">Click to remove</div>
+                      <div className="text-yellow-400 font-bold">
+                        {event.year}
+                      </div>
+                      <div className="text-gray-500 text-xs">
+                        Click to remove
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -3787,8 +4090,12 @@ function HistoryTimelineGame({ onComplete, timeLeft, onRestart }: any) {
 
           {gameComplete && (
             <div className="mt-4 text-center p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
-              <div className="text-green-400 font-bold text-lg">🎉 Timeline Complete!</div>
-              <div className="text-gray-300">Great job learning Vietnam history!</div>
+              <div className="text-green-400 font-bold text-lg">
+                🎉 Timeline Complete!
+              </div>
+              <div className="text-gray-300">
+                Great job learning Vietnam history!
+              </div>
             </div>
           )}
         </div>
@@ -4240,9 +4547,10 @@ function RobotNavigation3DGame({
                           justifyContent: 'center',
                           zIndex: isRobot ? 100 : isGoal ? 90 : 10,
                           position: 'absolute',
-                          boxShadow: isRobot || isGoal 
-                            ? '0 4px 12px rgba(0,0,0,0.6)' 
-                            : '0 2px 6px rgba(0,0,0,0.3)',
+                          boxShadow:
+                            isRobot || isGoal
+                              ? '0 4px 12px rgba(0,0,0,0.6)'
+                              : '0 2px 6px rgba(0,0,0,0.3)',
                         }}
                       >
                         {content}
