@@ -1,0 +1,197 @@
+export interface MemoryMatchGameData {
+  themes: Array<{
+    name: string;
+    difficulty: string;
+    estimatedTime: string;
+    gridSize: { rows: number; cols: number };
+    cards: Array<{
+      id: string;
+      frontImage: string;
+      backImage: string;
+      category: string;
+      description: string;
+      educationalNote: string;
+    }>;
+    timeLimit?: number;
+    maxAttempts?: number;
+    hints: string[];
+    learningObjectives: string[];
+  }>;
+  gameConfig: {
+    flipDuration: number;
+    matchDelay: number;
+    shuffleAnimationTime: number;
+    scoreMultiplier: {
+      perfect: number;
+      good: number;
+      average: number;
+    };
+  };
+}
+
+export const MEMORY_MATCH_DATA: MemoryMatchGameData = {
+  themes: [
+    {
+      name: "Động Vật Việt Nam",
+      difficulty: "Cơ bản",
+      estimatedTime: "5 phút",
+      gridSize: { rows: 3, cols: 4 },
+      cards: [
+        {
+          id: "buffalo",
+          frontImage: "/images/animals/buffalo.jpg",
+          backImage: "/images/cards/back-blue.svg",
+          category: "domestic",
+          description: "Trâu - Gia súc quan trọng ở nông thôn Việt Nam",
+          educationalNote: "Trâu giúp cày ruộng và cung cấp sữa, thịt cho con người"
+        },
+        {
+          id: "elephant",
+          frontImage: "/images/animals/elephant.jpg",
+          backImage: "/images/cards/back-blue.svg",
+          category: "wild",
+          description: "Voi - Động vật có vú lớn nhất châu Á",
+          educationalNote: "Voi Á có tai nhỏ hơn voi Phi và sống ở rừng nhiệt đới"
+        },
+        {
+          id: "monkey",
+          frontImage: "/images/animals/monkey.jpg",
+          backImage: "/images/cards/back-blue.svg",
+          category: "wild",
+          description: "Khỉ - Linh trưởng thông minh sống trên cây",
+          educationalNote: "Khỉ có vai trò quan trọng trong hệ sinh thái rừng"
+        },
+        {
+          id: "bird",
+          frontImage: "/images/animals/bird.jpg",
+          backImage: "/images/cards/back-blue.svg",
+          category: "wild",
+          description: "Chim - Động vật có cánh bay lượn trên trời",
+          educationalNote: "Chim giúp thụ phấn cho cây và kiểm soát côn trùng"
+        },
+        {
+          id: "fish",
+          frontImage: "/images/animals/fish.jpg",
+          backImage: "/images/cards/back-blue.svg",
+          category: "aquatic",
+          description: "Cá - Động vật sống trong nước",
+          educationalNote: "Cá là nguồn protein quan trọng và chỉ thị chất lượng nước"
+        },
+        {
+          id: "tiger",
+          frontImage: "/images/animals/tiger.jpg",
+          backImage: "/images/cards/back-blue.svg",
+          category: "wild",
+          description: "Hổ - Loài mèo lớn quý hiếm của Việt Nam",
+          educationalNote: "Hổ Đông Dương là phân loài hổ đang bị đe dọa tuyệt chủng"
+        }
+      ],
+      timeLimit: 300,
+      maxAttempts: 20,
+      hints: [
+        "Chú ý đến màu sắc và hình dạng đặc biệt của từng động vật",
+        "Nhớ vị trí các thẻ đã lật để ghép cặp hiệu quả",
+        "Bắt đầu từ góc để dễ nhớ vị trí"
+      ],
+      learningObjectives: [
+        "Nhận biết các loài động vật bản địa Việt Nam",
+        "Hiểu vai trò của động vật trong hệ sinh thái",
+        "Phát triển trí nhớ và khả năng quan sát"
+      ]
+    },
+    {
+      name: "Các Nguyên Tố Hóa Học",
+      difficulty: "Trung bình",
+      estimatedTime: "8 phút",
+      gridSize: { rows: 4, cols: 4 },
+      cards: [
+        {
+          id: "hydrogen",
+          frontImage: "/images/elements/hydrogen.svg",
+          backImage: "/images/cards/back-green.svg",
+          category: "nonmetal",
+          description: "H - Hydrogen (Hiđro)",
+          educationalNote: "Nguyên tố nhẹ nhất, thành phần chính của nước (H2O)"
+        },
+        {
+          id: "helium",
+          frontImage: "/images/elements/helium.svg",
+          backImage: "/images/cards/back-green.svg",
+          category: "noble-gas",
+          description: "He - Helium (Heli)",
+          educationalNote: "Khí trơ, được dùng trong bóng bay và làm lạnh"
+        },
+        {
+          id: "carbon",
+          frontImage: "/images/elements/carbon.svg",
+          backImage: "/images/cards/back-green.svg",
+          category: "nonmetal",
+          description: "C - Carbon (Cacbon)",
+          educationalNote: "Nền tảng của tất cả sự sống, có trong kim cương và than chì"
+        },
+        {
+          id: "oxygen",
+          frontImage: "/images/elements/oxygen.svg",
+          backImage: "/images/cards/back-green.svg",
+          category: "nonmetal",
+          description: "O - Oxygen (Oxi)",
+          educationalNote: "Cần thiết cho hô hấp, chiếm 21% khí quyển"
+        },
+        {
+          id: "iron",
+          frontImage: "/images/elements/iron.svg",
+          backImage: "/images/cards/back-green.svg",
+          category: "metal",
+          description: "Fe - Iron (Sắt)",
+          educationalNote: "Kim loại quan trọng trong máu và công nghiệp"
+        },
+        {
+          id: "gold",
+          frontImage: "/images/elements/gold.svg",
+          backImage: "/images/cards/back-green.svg",
+          category: "metal",
+          description: "Au - Gold (Vàng)",
+          educationalNote: "Kim loại quý, không bị oxi hóa và dẫn điện tốt"
+        },
+        {
+          id: "sodium",
+          frontImage: "/images/elements/sodium.svg",
+          backImage: "/images/cards/back-green.svg",
+          category: "metal",
+          description: "Na - Sodium (Natri)",
+          educationalNote: "Kim loại kiềm, thành phần của muối ăn (NaCl)"
+        },
+        {
+          id: "chlorine",
+          frontImage: "/images/elements/chlorine.svg",
+          backImage: "/images/cards/back-green.svg",
+          category: "halogen",
+          description: "Cl - Chlorine (Clo)",
+          educationalNote: "Halogen độc, dùng khử trùng nước và tạo muối ăn"
+        }
+      ],
+      timeLimit: 480,
+      maxAttempts: 25,
+      hints: [
+        "Nhóm các nguyên tố theo tính chất: kim loại, phi kim, khí trơ",
+        "Chú ý màu sắc đặc trưng của từng nguyên tố",
+        "Nhớ vị trí trong bảng tuần hoàn nếu biết"
+      ],
+      learningObjectives: [
+        "Nhận biết các nguyên tố hóa học cơ bản",
+        "Hiểu tính chất và ứng dụng của từng nguyên tố",
+        "Ghi nhớ ký hiệu hóa học quốc tế"
+      ]
+    }
+  ],
+  gameConfig: {
+    flipDuration: 600,
+    matchDelay: 1000,
+    shuffleAnimationTime: 2000,
+    scoreMultiplier: {
+      perfect: 3.0,
+      good: 2.0,
+      average: 1.0
+    }
+  }
+};

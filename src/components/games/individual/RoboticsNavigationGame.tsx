@@ -615,6 +615,7 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft, onRestart
   };
 
   const resetRobot = useCallback(() => {
+    if (!maze) return;
     setRobotPosition([maze.start[0], maze.start[1]]);
     setCommands([]);
     setIsRunning(false);
@@ -623,9 +624,17 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft, onRestart
     setShowAlgorithm(false);
   }, [maze]);
 
+  // Reset robot when level changes
   useEffect(() => {
-    resetRobot();
-  }, [currentLevel, resetRobot]);
+    if (maze) {
+      setRobotPosition([maze.start[0], maze.start[1]]);
+      setCommands([]);
+      setIsRunning(false);
+      setPathHistory([]);
+      setAlgorithmVisualization({ openSet: [], closedSet: [], path: [] });
+      setShowAlgorithm(false);
+    }
+  }, [currentLevel, maze]); // Dependencies: level change or maze change
 
   useEffect(() => {
     if (timeLeft <= 0) {
