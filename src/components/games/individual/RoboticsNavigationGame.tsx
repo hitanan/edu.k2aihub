@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 interface RoboticsNavigationGameProps {
   onComplete: (success: boolean, score: number) => void;
@@ -28,14 +28,6 @@ export default function RoboticsNavigationGame({
   const [selectedAlgorithm, setSelectedAlgorithm] = useState<
     'A*' | 'Dijkstra' | 'BFS'
   >('A*');
-  const [movingObstacles, setMovingObstacles] = useState<
-    Array<{
-      position: [number, number];
-      originalPos: [number, number];
-      pattern: string;
-      speed: number;
-    }>
-  >([]);
   const [levelStartTime, setLevelStartTime] = useState(Date.now());
 
   // Import robotics levels data
@@ -145,7 +137,7 @@ export default function RoboticsNavigationGame({
     ROBOTICS_LEVELS.push({
       id: i,
       name: `Thử thách ${i}`,
-      difficulty: difficulty as any,
+      difficulty: difficulty as string,
       algorithm,
       grid,
       start: [0, 0],
@@ -159,11 +151,11 @@ export default function RoboticsNavigationGame({
   }
 
   const currentLevelData = ROBOTICS_LEVELS[currentLevel];
-  const maze = {
+  const maze = useMemo(() => ({
     grid: currentLevelData.grid,
     start: currentLevelData.start,
     end: currentLevelData.end,
-  };
+  }), [currentLevelData]);
 
   // A* Algorithm implementation
   const calculateAStar = (start: [number, number], end: [number, number]) => {
@@ -202,12 +194,17 @@ export default function RoboticsNavigationGame({
 
       if (current.pos[0] === end[0] && current.pos[1] === end[1]) {
         const path: [number, number][] = [];
-        let node: any = current;
+        let node: {
+          pos: [number, number];
+          f: number;
+          g: number;
+          h: number;
+          parent: [number, number] | null;
+        } = current;
         const parentMap = new Map();
 
         // Build parent map
-        steps.forEach((step) => {
-          const curr = step.current;
+        steps.forEach(() => {
           openSet.forEach((n) => {
             if (n.parent) {
               parentMap.set(`${n.pos[0]},${n.pos[1]}`, n.parent);
@@ -216,12 +213,12 @@ export default function RoboticsNavigationGame({
         });
 
         // Reconstruct path
-        while (node) {
+        while (node && node.pos) {
           path.unshift(node.pos);
           const parentKey = `${node.pos[0]},${node.pos[1]}`;
           const parent = parentMap.get(parentKey);
           if (!parent) break;
-          node = { pos: parent };
+          node = { pos: parent, f: 0, g: 0, h: 0, parent: null };
         }
 
         return { steps, path, algorithm: 'A*' };
@@ -452,7 +449,7 @@ export default function RoboticsNavigationGame({
         openSet: [],
         closedSet:
           result.steps.length > 0
-            ? (result.steps[result.steps.length - 1] as any).visited || []
+            ? (result.steps[result.steps.length - 1] as { openSet: [number, number][]; closedSet: [number, number][]; current: [number, number] }).closedSet || []
             : [],
         path: result.path,
       });
@@ -845,7 +842,7 @@ export default function RoboticsNavigationGame({
               </label>
               <select
                 value={selectedAlgorithm}
-                onChange={(e) => setSelectedAlgorithm(e.target.value as any)}
+                onChange={(e) => setSelectedAlgorithm(e.target.value as 'A*' | 'Dijkstra' | 'BFS')}
                 className="w-full bg-gray-700 text-white rounded px-3 py-2"
                 disabled={isRunning}
               >

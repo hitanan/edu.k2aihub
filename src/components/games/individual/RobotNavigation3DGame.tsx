@@ -37,7 +37,7 @@ interface GameData {
 }
 
 interface RobotNavigation3DGameProps {
-  gameData: GameData;
+  gameData?: GameData;
   onComplete: (success: boolean, score: number) => void;
   timeLeft: number;
   onRestart: () => void;
@@ -58,6 +58,48 @@ export function RobotNavigation3DGame({
   timeLeft,
   onRestart,
 }: RobotNavigation3DGameProps) {
+  // Default levels if no gameData provided
+  const defaultGameData: GameData = {
+    levels: [
+      {
+        name: "Cấp độ cơ bản",
+        description: "Học cách điều hướng robot trong không gian 3D",
+        dimensions: { width: 8, height: 3, depth: 8 },
+        start: { x: 0, y: 0, z: 0 },
+        goal: { x: 7, y: 0, z: 7 },
+        obstacles: [
+          { x: 2, y: 0, z: 2 },
+          { x: 3, y: 0, z: 4 },
+          { x: 5, y: 0, z: 3 }
+        ],
+        educational: {
+          concept: "Thuật toán A*",
+          algorithmFocus: "Pathfinding cơ bản",
+          learningGoal: "Hiểu cách robot tìm đường"
+        }
+      },
+      {
+        name: "Cấp độ trung bình",
+        description: "Thử thách với nhiều chướng ngại vật hơn",
+        dimensions: { width: 8, height: 3, depth: 8 },
+        start: { x: 0, y: 0, z: 0 },
+        goal: { x: 7, y: 2, z: 7 },
+        obstacles: [
+          { x: 1, y: 0, z: 1 }, { x: 2, y: 0, z: 1 },
+          { x: 3, y: 0, z: 2 }, { x: 4, y: 0, z: 3 },
+          { x: 5, y: 0, z: 4 }, { x: 6, y: 0, z: 5 }
+        ],
+        educational: {
+          concept: "Pathfinding 3D",
+          algorithmFocus: "Tối ưu hóa đường đi",
+          learningGoal: "Xử lý không gian phức tạp"
+        }
+      }
+    ]
+  };
+
+  const effectiveGameData = gameData || defaultGameData;
+  
   const [currentLevel, setCurrentLevel] = useState(0);
   const [robotPosition, setRobotPosition] = useState({ x: 0, y: 0, z: 0 });
   const [goalPosition, setGoalPosition] = useState({ x: 7, y: 0, z: 7 });
@@ -74,7 +116,7 @@ export function RobotNavigation3DGame({
     Array<{ x: number; y: number; z: number }>
   >([]);
 
-  const level = gameData?.levels?.[currentLevel];
+  const level = effectiveGameData?.levels?.[currentLevel];
 
   useEffect(() => {
     if (level) {
@@ -303,7 +345,7 @@ export function RobotNavigation3DGame({
         const finalScore =
           score + timeBonus + pathEfficiency + collectibleBonus;
 
-        if (currentLevel < gameData?.levels?.length - 1) {
+        if (currentLevel < effectiveGameData.levels.length - 1) {
           setCurrentLevel((prev) => prev + 1);
           setScore(finalScore);
         } else {
@@ -672,12 +714,12 @@ export function RobotNavigation3DGame({
                 <div
                   className="bg-gradient-to-r from-green-400 to-blue-400 h-3 rounded-full transition-all duration-300"
                   style={{
-                    width: `${((currentLevel + 1) / (gameData?.levels?.length || 1)) * 100}%`,
+                    width: `${((currentLevel + 1) / effectiveGameData.levels.length) * 100}%`,
                   }}
                 />
               </div>
               <p className="text-gray-300 text-sm text-center">
-                Cấp độ {currentLevel + 1} / {gameData?.levels?.length || 1}
+                Cấp độ {currentLevel + 1} / {effectiveGameData.levels.length}
               </p>
             </div>
           </div>
