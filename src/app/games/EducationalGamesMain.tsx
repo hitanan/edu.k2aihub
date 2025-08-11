@@ -3,11 +3,10 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
-import {
-  useEducationalGames,
-  GameCard,
-} from '@/components/games/EducationalGames';
+import { useEducationalGames, GameCard } from '@/components/games/EducationalGames';
 import { PageTracker } from '@/components/gamification/VisitTracker';
+import { gameDataExternalPlatforms } from '@/data/games/gameDataExternalPlatforms';
+import ExternalGameCard from './ExternalGameCard';
 
 export default function EducationalGamesMain() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,14 +19,10 @@ export default function EducationalGamesMain() {
     const matchesSearch =
       game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       game.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      game.skills.some((skill) =>
-        skill.toLowerCase().includes(searchTerm.toLowerCase()),
-      );
+      game.skills.some((skill) => skill.toLowerCase().includes(searchTerm.toLowerCase()));
 
-    const matchesCategory =
-      selectedCategory === 'all' || game.category === selectedCategory;
-    const matchesDifficulty =
-      selectedDifficulty === 'all' || game.difficulty === selectedDifficulty;
+    const matchesCategory = selectedCategory === 'all' || game.category === selectedCategory;
+    const matchesDifficulty = selectedDifficulty === 'all' || game.difficulty === selectedDifficulty;
 
     return matchesSearch && matchesCategory && matchesDifficulty;
   });
@@ -47,32 +42,27 @@ export default function EducationalGamesMain() {
     {
       value: 'puzzle',
       label: '🧩 Puzzle',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'puzzle')
-        .length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'puzzle').length,
     },
     {
       value: 'simulation',
       label: '🎮 Mô phỏng',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'simulation')
-        .length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'simulation').length,
     },
     {
       value: 'coding',
       label: '💻 Lập trình',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'coding')
-        .length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'coding').length,
     },
     {
       value: 'memory',
       label: '🧠 Trí nhớ',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'memory')
-        .length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'memory').length,
     },
     {
       value: 'strategy',
       label: '🎯 Chiến lược',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'strategy')
-        .length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'strategy').length,
     },
   ];
 
@@ -85,47 +75,31 @@ export default function EducationalGamesMain() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <PageTracker
-        path="/games"
-        title="Trò Chơi Giáo Dục"
-        moduleType="learning"
-      />
+      <PageTracker path="/games" title="Trò Chơi Giáo Dục" moduleType="learning" />
 
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-pink-600/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              🎮 Trò Chơi Giáo Dục
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">🎮 Trò Chơi Giáo Dục</h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Khám phá{' '}
-              <strong className="text-purple-300">
-                {totalGames} trò chơi học tập
-              </strong>{' '}
-              thú vị từ quiz địa lý, thử thách AI, puzzle lập trình đến mô phỏng
-              khoa học. Học tập hiệu quả qua trải nghiệm chơi game!
+              Khám phá <strong className="text-purple-300">{totalGames} trò chơi học tập</strong> thú vị từ quiz địa lý,
+              thử thách AI, puzzle lập trình đến mô phỏng khoa học. Học tập hiệu quả qua trải nghiệm chơi game!
             </p>
 
             {/* Progress Stats */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 max-w-4xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400">
-                    {totalGames}
-                  </div>
+                  <div className="text-3xl font-bold text-purple-400">{totalGames}</div>
                   <div className="text-sm text-gray-300">Tổng số game</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400">
-                    {completedCount}
-                  </div>
+                  <div className="text-3xl font-bold text-green-400">{completedCount}</div>
                   <div className="text-sm text-gray-300">Đã hoàn thành</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">
-                    {progressPercentage}%
-                  </div>
+                  <div className="text-3xl font-bold text-blue-400">{progressPercentage}%</div>
                   <div className="text-sm text-gray-300">Tiến độ</div>
                 </div>
                 <div className="text-center">
@@ -186,9 +160,7 @@ export default function EducationalGamesMain() {
               </select>
             </div>
 
-            <div className="ml-auto text-white">
-              Tìm thấy {filteredGames.length} trò chơi
-            </div>
+            <div className="ml-auto text-white">Tìm thấy {filteredGames.length} trò chơi</div>
           </div>
         </div>
 
@@ -202,25 +174,31 @@ export default function EducationalGamesMain() {
         {filteredGames.length === 0 && (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">🎮</div>
-            <h3 className="text-2xl font-bold text-white mb-2">
-              Không tìm thấy trò chơi
-            </h3>
-            <p className="text-gray-400">
-              Hãy thử thay đổi bộ lọc hoặc từ khóa tìm kiếm
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-2">Không tìm thấy trò chơi</h3>
+            <p className="text-gray-400">Hãy thử thay đổi bộ lọc hoặc từ khóa tìm kiếm</p>
           </div>
         )}
+      </div>
+
+      {/* External Game Platforms */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4">🌐 Nền tảng Game Giáo dục Bên ngoài</h2>
+          <p className="text-gray-300">Khám phá các trang web và ứng dụng game giáo dục hàng đầu thế giới</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {gameDataExternalPlatforms.map((platform) => (
+            <ExternalGameCard key={platform.id} platform={platform} />
+          ))}
+        </div>
       </div>
 
       {/* Featured Categories */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Danh mục phổ biến
-          </h2>
-          <p className="text-gray-300">
-            Khám phá các loại trò chơi học tập khác nhau
-          </p>
+          <h2 className="text-3xl font-bold text-white mb-4">Danh mục phổ biến</h2>
+          <p className="text-gray-300">Khám phá các loại trò chơi học tập khác nhau</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -234,12 +212,8 @@ export default function EducationalGamesMain() {
                   : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
               }`}
             >
-              <div className="text-3xl mb-3">
-                {category.label.split(' ')[0]}
-              </div>
-              <h3 className="text-lg font-semibold mb-2">
-                {category.label.split(' ').slice(1).join(' ')}
-              </h3>
+              <div className="text-3xl mb-3">{category.label.split(' ')[0]}</div>
+              <h3 className="text-lg font-semibold mb-2">{category.label.split(' ').slice(1).join(' ')}</h3>
               <p className="text-sm opacity-80">{category.count} trò chơi</p>
             </button>
           ))}
