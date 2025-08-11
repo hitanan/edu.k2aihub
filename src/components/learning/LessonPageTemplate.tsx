@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { createTitle, createDescription } from '@/utils/seo';
 import { LessonAnalytics } from './LessonAnalytics';
+import { EducationalGamesShowcase } from '@/components/games/EducationalGames';
 
 export interface BaseLessonData {
   id: string;
@@ -435,6 +436,11 @@ export function LessonPageTemplate<T extends BaseLessonData>({
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Educational Games Section */}
+            <div className="mb-6 sm:mb-8">
+              <EducationalGamesShowcase moduleType={config.moduleName} limit={3} />
             </div>
 
             {/* Case Studies */}

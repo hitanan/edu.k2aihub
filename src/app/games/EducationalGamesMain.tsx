@@ -1,18 +1,29 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 import { useEducationalGames, GameCard } from '@/components/games/EducationalGames';
 import { PageTracker } from '@/components/gamification/VisitTracker';
 import { gameDataExternalPlatforms } from '@/data/games/gameDataExternalPlatforms';
 import ExternalGameCard from './ExternalGameCard';
+import { GameCardSkeleton } from '@/components/LoadingSpinner';
 
 export default function EducationalGamesMain() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
-  const { completedGames } = useEducationalGames();
+  const [isLoading, setIsLoading] = useState(true);
+  const { completedGames, isLoaded } = useEducationalGames();
+
+  // Add loading simulation for better UX
+  useEffect(() => {
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800); // Simulate loading time
+
+    return () => clearTimeout(loadingTimer);
+  }, []);
 
   // Filter games
   const filteredGames = EDUCATIONAL_GAMES_DATA.filter((game) => {
@@ -72,6 +83,82 @@ export default function EducationalGamesMain() {
     { value: 'Trung bình', label: '🟡 Trung bình' },
     { value: 'Nâng cao', label: '🔴 Nâng cao' },
   ];
+
+  // Show loading skeleton while loading
+  if (isLoading || !isLoaded) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <PageTracker path="/games" title="Trò Chơi Giáo Dục" moduleType="learning" />
+
+        {/* Hero Section */}
+        <div className="relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-pink-600/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">🎮 Trò Chơi Giáo Dục</h1>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Khám phá <strong className="text-purple-300">{totalGames} trò chơi học tập</strong> thú vị từ quiz địa lý,
+                thử thách AI, puzzle lập trình đến mô phỏng khoa học. Học tập hiệu quả qua trải nghiệm chơi game!
+              </p>
+
+              {/* Loading Progress Stats */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <div className="text-center">
+                    <div className="w-12 h-8 bg-gray-600 animate-pulse rounded mx-auto mb-2"></div>
+                    <div className="text-sm text-gray-300">Tổng số game</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-8 h-8 bg-gray-600 animate-pulse rounded mx-auto mb-2"></div>
+                    <div className="text-sm text-gray-300">Đã hoàn thành</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-8 bg-gray-600 animate-pulse rounded mx-auto mb-2"></div>
+                    <div className="text-sm text-gray-300">Tiến độ</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-400">⭐</div>
+                    <div className="text-sm text-gray-300">Điểm thưởng</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto relative mb-8">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <div className="w-full h-16 bg-gray-700/50 animate-pulse rounded-2xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Loading Filters */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-8">
+            <div className="flex flex-wrap gap-6 items-center">
+              <div className="w-32 h-10 bg-gray-700/50 animate-pulse rounded-lg"></div>
+              <div className="w-32 h-10 bg-gray-700/50 animate-pulse rounded-lg"></div>
+              <div className="ml-auto w-24 h-6 bg-gray-700/50 animate-pulse rounded"></div>
+            </div>
+          </div>
+
+          {/* Loading Games Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <GameCardSkeleton key={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Loading Message */}
+        <div className="text-center py-8">
+          <div className="inline-flex items-center text-gray-400">
+            <div className="w-5 h-5 border-2 border-purple-500 border-t-transparent rounded-full animate-spin mr-3"></div>
+            Đang tải trò chơi...
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">

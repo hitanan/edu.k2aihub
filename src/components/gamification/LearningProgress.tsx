@@ -46,8 +46,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     description: 'Hoàn thành bài học đầu tiên',
     icon: '🎯',
     points: 10,
-    condition: (progress) =>
-      progress.some((p) => p.lessonsCompleted.length > 0),
+    condition: (progress) => progress.some((p) => p.lessonsCompleted.length > 0),
   },
   {
     id: 'module_master',
@@ -55,8 +54,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     description: 'Hoàn thành 100% một module',
     icon: '🏆',
     points: 50,
-    condition: (progress) =>
-      progress.some((p) => p.completionPercentage === 100),
+    condition: (progress) => progress.some((p) => p.completionPercentage === 100),
   },
   {
     id: 'speed_learner',
@@ -108,12 +106,7 @@ export function useLearningProgress() {
       if (savedProgress) {
         const parsedProgress = JSON.parse(savedProgress);
         setProgress(parsedProgress);
-        setTotalPoints(
-          parsedProgress.reduce(
-            (sum: number, p: LearningProgress) => sum + p.points,
-            0,
-          ),
-        );
+        setTotalPoints(parsedProgress.reduce((sum: number, p: LearningProgress) => sum + p.points, 0));
       }
 
       if (savedAchievements) {
@@ -125,28 +118,19 @@ export function useLearningProgress() {
   // Save progress to localStorage
   const saveProgress = (newProgress: LearningProgress[]) => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem(
-        'k2ai_learning_progress',
-        JSON.stringify(newProgress),
-      );
+      localStorage.setItem('k2ai_learning_progress', JSON.stringify(newProgress));
       setProgress(newProgress);
       setTotalPoints(newProgress.reduce((sum, p) => sum + p.points, 0));
     }
   };
 
   // Track lesson completion
-  const completLesson = (
-    moduleName: string,
-    lessonId: string,
-    timeSpent: number,
-  ) => {
+  const completLesson = (moduleName: string, lessonId: string, timeSpent: number) => {
     const userId = 'user_' + Date.now(); // Simple user ID for demo
     const now = new Date().toISOString();
 
     setProgress((prevProgress) => {
-      const moduleProgress = prevProgress.find(
-        (p) => p.moduleName === moduleName,
-      );
+      const moduleProgress = prevProgress.find((p) => p.moduleName === moduleName);
       const newProgress = [...prevProgress];
 
       if (moduleProgress) {
@@ -154,9 +138,7 @@ export function useLearningProgress() {
         if (!moduleProgress.lessonsCompleted.includes(lessonId)) {
           moduleProgress.lessonsCompleted.push(lessonId);
           moduleProgress.completionPercentage = Math.round(
-            (moduleProgress.lessonsCompleted.length /
-              moduleProgress.totalLessons) *
-              100,
+            (moduleProgress.lessonsCompleted.length / moduleProgress.totalLessons) * 100,
           );
           moduleProgress.points += 10; // Points per lesson
         }
@@ -166,9 +148,7 @@ export function useLearningProgress() {
         // Update streak
         const lastAccess = new Date(moduleProgress.lastAccessDate);
         const today = new Date();
-        const daysDiff = Math.floor(
-          (today.getTime() - lastAccess.getTime()) / (1000 * 60 * 60 * 24),
-        );
+        const daysDiff = Math.floor((today.getTime() - lastAccess.getTime()) / (1000 * 60 * 60 * 24));
 
         if (daysDiff === 1) {
           moduleProgress.streak += 1;
@@ -202,18 +182,12 @@ export function useLearningProgress() {
   // Check for new achievements
   const checkAchievements = (currentProgress: LearningProgress[]) => {
     const newAchievements = ACHIEVEMENTS.filter((achievement) => {
-      return (
-        !achievements.some((a) => a.id === achievement.id) &&
-        achievement.condition(currentProgress)
-      );
+      return !achievements.some((a) => a.id === achievement.id) && achievement.condition(currentProgress);
     });
 
     if (newAchievements.length > 0) {
       setAchievements((prev) => [...prev, ...newAchievements]);
-      localStorage.setItem(
-        'k2ai_achievements',
-        JSON.stringify([...achievements, ...newAchievements]),
-      );
+      localStorage.setItem('k2ai_achievements', JSON.stringify([...achievements, ...newAchievements]));
 
       // Show achievement notification
       newAchievements.forEach((achievement) => {
@@ -240,28 +214,21 @@ export function useLearningProgress() {
   // Calculate total completion percentage
   const getTotalCompletionPercentage = (): number => {
     if (progress.length === 0) return 0;
-    const totalPercentage = progress.reduce(
-      (sum, p) => sum + p.completionPercentage,
-      0,
-    );
+    const totalPercentage = progress.reduce((sum, p) => sum + p.completionPercentage, 0);
     return Math.round(totalPercentage / progress.length);
   };
 
   // Track page visit (for integration with VisitTracker)
   const trackVisit = (moduleName: string, timeSpent: number = 5) => {
     setProgress((prevProgress) => {
-      const moduleProgress = prevProgress.find(
-        (p) => p.moduleName === moduleName,
-      );
+      const moduleProgress = prevProgress.find((p) => p.moduleName === moduleName);
       const newProgress = [...prevProgress];
 
       if (moduleProgress) {
         moduleProgress.visits += 1;
         moduleProgress.timeSpent += timeSpent;
         moduleProgress.lastAccessDate = new Date().toISOString();
-        moduleProgress.averageSessionTime = Math.round(
-          moduleProgress.timeSpent / moduleProgress.visits,
-        );
+        moduleProgress.averageSessionTime = Math.round(moduleProgress.timeSpent / moduleProgress.visits);
       }
 
       saveProgress(newProgress);
@@ -272,10 +239,7 @@ export function useLearningProgress() {
   // Get learning stats
   const getLearningStats = () => {
     const totalTimeSpent = progress.reduce((sum, p) => sum + p.timeSpent, 0);
-    const totalLessonsCompleted = progress.reduce(
-      (sum, p) => sum + p.lessonsCompleted.length,
-      0,
-    );
+    const totalLessonsCompleted = progress.reduce((sum, p) => sum + p.lessonsCompleted.length, 0);
     const longestStreak = Math.max(...progress.map((p) => p.streak), 0);
     const totalVisits = progress.reduce((sum, p) => sum + p.visits, 0);
 
@@ -286,8 +250,7 @@ export function useLearningProgress() {
       modulesStarted: progress.length,
       completionPercentage: getTotalCompletionPercentage(),
       totalVisits,
-      averageSessionTime:
-        totalVisits > 0 ? Math.round(totalTimeSpent / totalVisits) : 0,
+      averageSessionTime: totalVisits > 0 ? Math.round(totalTimeSpent / totalVisits) : 0,
     };
   };
 
@@ -320,8 +283,7 @@ export function useLearningProgress() {
 
 // Progress Dashboard Component
 export function ProgressDashboard() {
-  const { progress, achievements, totalPoints, getLearningStats } =
-    useLearningProgress();
+  const { progress, achievements, totalPoints, getLearningStats } = useLearningProgress();
 
   const stats = getLearningStats();
 
@@ -335,25 +297,19 @@ export function ProgressDashboard() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-blue-500/20 rounded-xl p-4 text-center">
           <BookOpen className="w-8 h-8 mx-auto mb-2 text-blue-400" />
-          <div className="text-2xl font-bold text-white">
-            {stats.totalLessonsCompleted}
-          </div>
+          <div className="text-2xl font-bold text-white">{stats.totalLessonsCompleted}</div>
           <div className="text-xs text-gray-300">Bài học</div>
         </div>
 
         <div className="bg-green-500/20 rounded-xl p-4 text-center">
           <Clock className="w-8 h-8 mx-auto mb-2 text-green-400" />
-          <div className="text-2xl font-bold text-white">
-            {Math.round(stats.totalTimeSpent / 60)}h
-          </div>
+          <div className="text-2xl font-bold text-white">{Math.round(stats.totalTimeSpent / 60)}h</div>
           <div className="text-xs text-gray-300">Thời gian</div>
         </div>
 
         <div className="bg-purple-500/20 rounded-xl p-4 text-center">
           <TrendingUp className="w-8 h-8 mx-auto mb-2 text-purple-400" />
-          <div className="text-2xl font-bold text-white">
-            {stats.longestStreak}
-          </div>
+          <div className="text-2xl font-bold text-white">{stats.longestStreak}</div>
           <div className="text-xs text-gray-300">Chuỗi ngày</div>
         </div>
 
@@ -367,9 +323,7 @@ export function ProgressDashboard() {
       {/* Recent Achievements */}
       {achievements.length > 0 && (
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-white mb-3">
-            Thành tích gần đây
-          </h4>
+          <h4 className="text-lg font-semibold text-white mb-3">Thành tích gần đây</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {achievements.slice(-4).map((achievement) => (
               <div
@@ -379,12 +333,8 @@ export function ProgressDashboard() {
                 <div className="flex items-center">
                   <span className="text-2xl mr-3">{achievement.icon}</span>
                   <div>
-                    <div className="font-semibold text-white text-sm">
-                      {achievement.title}
-                    </div>
-                    <div className="text-xs text-gray-300">
-                      {achievement.description}
-                    </div>
+                    <div className="font-semibold text-white text-sm">{achievement.title}</div>
+                    <div className="text-xs text-gray-300">{achievement.description}</div>
                   </div>
                   <div className="ml-auto bg-yellow-500/30 text-yellow-200 px-2 py-1 rounded text-xs">
                     +{achievement.points}
@@ -399,32 +349,22 @@ export function ProgressDashboard() {
       {/* Module Progress */}
       {progress.length > 0 && (
         <div>
-          <h4 className="text-lg font-semibold text-white mb-3">
-            Tiến độ modules
-          </h4>
+          <h4 className="text-lg font-semibold text-white mb-3">Tiến độ modules</h4>
           <div className="space-y-3">
             {progress.map((moduleProgress) => (
-              <div
-                key={moduleProgress.moduleName}
-                className="bg-white/5 rounded-lg p-3"
-              >
+              <div key={moduleProgress.moduleName} className="bg-white/5 rounded-lg p-3">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-white font-medium">
-                    {moduleProgress.moduleName}
-                  </span>
-                  <span className="text-gray-300 text-sm">
-                    {moduleProgress.completionPercentage}%
-                  </span>
+                  <span className="text-white font-medium">{moduleProgress.moduleName}</span>
+                  <span className="text-gray-300 text-sm">{Math.min(100, moduleProgress.completionPercentage)}%</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-2">
                   <div
                     className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
-                    style={{ width: `${moduleProgress.completionPercentage}%` }}
+                    style={{ width: `${Math.min(100, moduleProgress.completionPercentage)}%` }}
                   ></div>
                 </div>
                 <div className="text-xs text-gray-400 mt-1">
-                  {moduleProgress.lessonsCompleted.length}/
-                  {moduleProgress.totalLessons} bài học
+                  {moduleProgress.lessonsCompleted.length}/{moduleProgress.totalLessons} bài học
                 </div>
               </div>
             ))}

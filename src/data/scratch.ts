@@ -17,6 +17,12 @@ export interface ScratchLesson {
   exercises: ScratchExercise[];
   realWorldApplications: string[];
   competitions: string[];
+  relatedGames?: Array<{
+    gameId: string;
+    title: string;
+    connection: string;
+    difficulty: string;
+  }>;
 }
 
 export interface ScratchExercise {
@@ -118,6 +124,26 @@ export const scratchLessons: ScratchLesson[] = [
       'MIT Scratch Competition',
       'Vietnam Programming Contest for Students',
       'Creative Computing Challenge'
+    ],
+    relatedGames: [
+      {
+        gameId: 'scratch-animation-studio',
+        title: 'Scratch Animation Studio',
+        connection: 'Thực hành tạo animation và hoạt cảnh với Scratch',
+        difficulty: 'Cơ bản'
+      },
+      {
+        gameId: 'creative-storytelling',
+        title: 'Kể Chuyện Sáng Tạo',
+        connection: 'Ứng dụng Scratch để tạo những câu chuyện tương tác',
+        difficulty: 'Trung bình'
+      },
+      {
+        gameId: 'memory-match',
+        title: 'Trò Chơi Ghép Cặp',
+        connection: 'Tạo game logic và tương tác người dùng với Scratch',
+        difficulty: 'Trung bình'
+      }
     ]
   },
   {

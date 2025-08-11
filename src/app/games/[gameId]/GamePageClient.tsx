@@ -296,6 +296,49 @@ export default function GamePageClient({ game }: GamePageClientProps) {
           </div>
         </div>
 
+        {/* Related Lessons */}
+        {game.relatedLessons && game.relatedLessons.length > 0 && (
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              📚 Bài học liên quan
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {game.relatedLessons.map((lesson, index) => (
+                <Link
+                  key={index}
+                  href={`/learning/${lesson.moduleId}/${lesson.lessonId}`}
+                  className="block bg-gradient-to-br from-blue-500/10 to-purple-500/10 hover:from-blue-500/20 hover:to-purple-500/20 border border-blue-500/20 hover:border-blue-400/40 rounded-xl p-4 transition-all duration-300 group"
+                >
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
+                        📖
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-white font-medium text-sm mb-1 group-hover:text-blue-200 transition-colors">
+                        {lesson.title}
+                      </h3>
+                      <p className="text-gray-400 text-xs mb-2 line-clamp-2">
+                        {lesson.connection}
+                      </p>
+                      <div className="flex items-center text-xs text-blue-300">
+                        <span>Học ngay</span>
+                        <ArrowLeft className="w-3 h-3 ml-1 rotate-180 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-gray-400 text-sm">
+                💡 Hoàn thành các bài học này để hiểu sâu hơn về chủ đề trong trò chơi
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Related Games */}
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
           <h2 className="text-2xl font-bold text-white mb-6">

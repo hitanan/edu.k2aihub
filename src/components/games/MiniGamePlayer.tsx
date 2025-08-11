@@ -57,21 +57,24 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
 
   // Enhanced timer with visual feedback
   useEffect(() => {
-    if (currentGameState === 'playing' && timeLeft > 0 && isTimerActive) {
-      const timer = setInterval(() => {
-        setTimeLeft((prev) => {
-          if (prev <= 1) {
-            // Time's up, show timeout message and return to menu
-            setIsTimerActive(false);
-            setCurrentGameState('timeout');
-            return 120;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-      return () => clearInterval(timer);
+    if (currentGameState !== 'playing' || !isTimerActive) {
+      return;
     }
-  }, [currentGameState, timeLeft, isTimerActive, score, maxStreak, lives, game.id, onComplete, getTimeBonus]);
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          // Time's up, show timeout message and return to menu
+          setIsTimerActive(false);
+          setCurrentGameState('timeout');
+          return 0; // Set to 0 instead of resetting to 120
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, [currentGameState, isTimerActive]); // Remove dependencies that change on every render
 
   const endGame = (success: boolean, rawScore: number = score) => {
     setIsTimerActive(false);
@@ -140,13 +143,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
           />
         );
       case 'robotics-navigation':
-        return (
-          <RoboticsNavigationGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
-        );
+        return <RoboticsNavigationGame onComplete={endGame} timeLeft={timeLeft} />;
       case 'ai-ethics-dilemma':
         return (
           <AIEthicsGame

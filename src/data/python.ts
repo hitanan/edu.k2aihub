@@ -9,6 +9,12 @@ export interface PythonLesson {
   exercises: Exercise[];
   realWorldApplications: string[];
   videoUrl: string;
+  relatedGames?: Array<{
+    gameId: string;
+    title: string;
+    connection: string;
+    difficulty: string;
+  }>;
 }
 
 interface Exercise {
@@ -164,6 +170,26 @@ print(f"Ngược lại: {reversed_text}")`,
       'User input handling',
       'Data type conversion in APIs',
       'Financial calculations'
+    ],
+    relatedGames: [
+      {
+        gameId: 'typing-speed-challenge',
+        title: 'Thử Thách Tốc Độ Gõ',
+        connection: 'Luyện tập tốc độ gõ code Python nhanh và chính xác',
+        difficulty: 'Cơ bản'
+      },
+      {
+        gameId: 'python-coding-puzzle',
+        title: 'Python Coding Puzzle',
+        connection: 'Áp dụng kiến thức Python cơ bản để giải các puzzle lập trình',
+        difficulty: 'Cơ bản'
+      },
+      {
+        gameId: 'word-builder',
+        title: 'Xây Dựng Từ',
+        connection: 'Thực hành xử lý string và input/output trong Python',
+        difficulty: 'Cơ bản'
+      }
     ]
   },
   {

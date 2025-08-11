@@ -399,15 +399,15 @@ export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestar
         <div>
           <h4 className="text-white font-medium mb-3">🎮 Môi trường 3D Robot Navigation:</h4>
           <div
-            className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-6 relative overflow-hidden"
-            style={{ height: '500px', perspective: '1200px' }}
+            className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-xl p-6 relative overflow-hidden border border-blue-500/20"
+            style={{ height: '480px', perspective: '1000px' }}
           >
             {/* 3D Grid Visualization */}
             <div
-              className="relative w-full h-full"
+              className="absolute inset-0 flex items-center justify-center"
               style={{
                 transformStyle: 'preserve-3d',
-                transform: 'rotateX(45deg) rotateY(30deg)',
+                transform: 'rotateX(-10deg) rotateY(20deg)',
               }}
             >
               {/* Render 3D Grid */}
@@ -425,31 +425,45 @@ export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestar
                     const isCollected = collectedItems.has(`${x},${y},${z}`);
                     const isInPath = currentPath.some((pos) => pos.x === x && pos.y === y && pos.z === z);
 
-                    let className = 'absolute border border-gray-600/30 transition-all duration-300 ';
+                    let className = 'absolute transition-all duration-300 rounded-lg border-2 ';
                     let content = '';
+                    let gradient = '';
 
                     if (isRobot) {
-                      className += 'bg-cyan-500 border-cyan-300 shadow-lg shadow-cyan-500/50 ';
+                      className += 'border-cyan-400 shadow-lg shadow-cyan-500/60 ';
+                      gradient = 'linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%)';
                       content = '🤖';
                     } else if (isGoal) {
-                      className += 'bg-green-500 border-green-300 shadow-lg shadow-green-500/50 ';
+                      className += 'border-green-400 shadow-lg shadow-green-500/60 ';
+                      gradient = 'linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)';
                       content = '🎯';
                     } else if (isObstacle) {
-                      className += 'bg-red-500 border-red-300 opacity-80 ';
+                      className += 'border-red-400 shadow-lg shadow-red-500/40 ';
+                      gradient = 'linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%)';
                       content = '🧱';
                     } else if (collectible && !isCollected) {
-                      className += 'bg-yellow-500 border-yellow-300 opacity-80 ';
+                      className += 'border-yellow-400 shadow-lg shadow-yellow-500/40 ';
+                      gradient = 'linear-gradient(135deg, #eab308 0%, #ca8a04 50%, #a16207 100%)';
                       content = collectible.type === 'energy' ? '⚡' : collectible.type === 'data' ? '💾' : '💰';
                     } else if (isInPath && showPath) {
-                      className += 'bg-blue-400/50 border-blue-300 ';
+                      className += 'border-blue-400/60 shadow-md shadow-blue-500/30 ';
+                      gradient = 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%)';
                     } else {
-                      className += 'bg-gray-700/20 ';
+                      className += 'border-gray-500/30 shadow-sm ';
+                      gradient = 'linear-gradient(135deg, #374151 0%, #4b5563 50%, #6b7280 100%)';
                     }
 
-                    const scale = 30; // Optimized pixel size for better 3D visibility
-                    const xOffset = x * scale;
-                    const yOffset = y * scale;
-                    const zOffset = z * scale;
+                    const scale = 32; // Larger cubes for better visibility
+                    const spacing = 38; // More spacing between cubes
+                    
+                    // Center the grid properly
+                    const centerX = (level.dimensions.width - 1) * spacing / 2;
+                    const centerY = (level.dimensions.height - 1) * spacing / 2;
+                    const centerZ = (level.dimensions.depth - 1) * spacing / 2;
+                    
+                    const xOffset = x * spacing - centerX;
+                    const yOffset = y * spacing - centerY;
+                    const zOffset = z * spacing - centerZ;
 
                     return (
                       <div
@@ -458,18 +472,19 @@ export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestar
                         style={{
                           width: `${scale}px`,
                           height: `${scale}px`,
-                          transform: `translate3d(${xOffset + zOffset * 0.7}px, ${yOffset - zOffset * 0.7}px, ${zOffset}px)`,
-                          transformOrigin: 'center center',
-                          fontSize: '16px',
+                          background: gradient,
+                          transform: `translate3d(${xOffset}px, ${yOffset}px, ${zOffset}px)`,
+                          transformStyle: 'preserve-3d',
+                          fontSize: '14px',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          zIndex: isRobot ? 100 : isGoal ? 90 : 10,
+                          zIndex: isRobot ? 100 : isGoal ? 90 : isObstacle ? 80 : 10,
                           position: 'absolute',
-                          boxShadow: isRobot || isGoal ? '0 4px 12px rgba(0,0,0,0.6)' : '0 2px 6px rgba(0,0,0,0.3)',
+                          filter: isRobot || isGoal ? 'brightness(1.2)' : 'brightness(0.9)',
                         }}
                       >
-                        {content}
+                        <span className="drop-shadow-lg">{content}</span>
                       </div>
                     );
                   }),
@@ -479,67 +494,85 @@ export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestar
 
             {/* Enhanced Controls Overlay */}
             <div className="absolute bottom-4 left-4 right-4">
-              <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-white text-sm mb-3 text-center font-medium">🕹️ Điều khiển Robot (Góc nhìn 3D)</div>
+              <div className="bg-black/70 backdrop-blur-md rounded-xl p-4 border border-white/10">
+                <div className="text-white text-sm mb-3 text-center font-bold">🕹️ Điều khiển Robot 3D</div>
 
-                {/* Y (Height) Controls - Corrected for 3D perspective */}
-                <div className="grid grid-cols-3 gap-2 mb-2">
+                {/* Y (Height) Controls */}
+                <div className="grid grid-cols-3 gap-3 mb-3">
                   <div></div>
                   <button
                     onClick={() => moveRobot('y-')}
                     disabled={isMoving}
-                    className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
-                    title="Lên cao (từ góc nhìn 3D)"
+                    className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-blue-400/30"
+                    title="Lên cao"
+                    style={{
+                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(59, 130, 246, 0.4)',
+                    }}
                   >
                     ⬆️ Cao
                   </button>
                   <div></div>
                 </div>
 
-                {/* Z and X Controls */}
-                <div className="grid grid-cols-3 gap-2 mb-2">
+                {/* X and Z Controls */}
+                <div className="grid grid-cols-3 gap-3 mb-3">
                   <button
                     onClick={() => moveRobot('z-')}
                     disabled={isMoving}
-                    className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    className="bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 hover:from-purple-400 hover:via-purple-500 hover:to-purple-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-purple-400/30"
                     title="Lui (Z-)"
+                    style={{
+                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(147, 51, 234, 0.4)',
+                    }}
                   >
                     🔺 Lui
                   </button>
                   <button
                     onClick={() => moveRobot('x-')}
                     disabled={isMoving}
-                    className="bg-green-600 hover:bg-green-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    className="bg-gradient-to-br from-green-500 via-green-600 to-green-700 hover:from-green-400 hover:via-green-500 hover:to-green-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-green-400/30"
                     title="Trái (X-)"
+                    style={{
+                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(34, 197, 94, 0.4)',
+                    }}
                   >
                     ⬅️ Trái
                   </button>
                   <button
                     onClick={() => moveRobot('x+')}
                     disabled={isMoving}
-                    className="bg-green-600 hover:bg-green-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    className="bg-gradient-to-br from-green-500 via-green-600 to-green-700 hover:from-green-400 hover:via-green-500 hover:to-green-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-green-400/30"
                     title="Phải (X+)"
+                    style={{
+                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(34, 197, 94, 0.4)',
+                    }}
                   >
                     ➡️ Phải
                   </button>
                 </div>
 
                 {/* Bottom Row */}
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-3">
                   <div></div>
                   <button
                     onClick={() => moveRobot('y+')}
                     disabled={isMoving}
-                    className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
-                    title="Xuống thấp (từ góc nhìn 3D)"
+                    className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-blue-400/30"
+                    title="Xuống thấp"
+                    style={{
+                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(59, 130, 246, 0.4)',
+                    }}
                   >
                     ⬇️ Thấp
                   </button>
                   <button
                     onClick={() => moveRobot('z+')}
                     disabled={isMoving}
-                    className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded text-sm disabled:opacity-50 font-medium"
+                    className="bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 hover:from-purple-400 hover:via-purple-500 hover:to-purple-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-purple-400/30"
                     title="Tới (Z+)"
+                    style={{
+                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(147, 51, 234, 0.4)',
+                    }}
                   >
                     🔻 Tới
                   </button>
@@ -570,25 +603,34 @@ export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestar
             </div>
 
             {/* Auto Navigation */}
-            <div className="space-y-2">
+            <div className="space-y-3">
               <button
                 onClick={autoNavigate}
                 disabled={isMoving || isCalculatingPath}
-                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-4 rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 disabled:opacity-50"
+                className="w-full bg-gradient-to-br from-cyan-500 via-cyan-600 to-blue-600 hover:from-cyan-400 hover:via-cyan-500 hover:to-blue-500 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-cyan-400/30"
+                style={{
+                  boxShadow: isMoving || isCalculatingPath ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(6, 182, 212, 0.4)',
+                }}
               >
-                {isCalculatingPath ? 'Đang tính toán...' : '🤖 Tự động điều hướng'}
+                {isCalculatingPath ? '🧠 Đang tính toán...' : '🤖 Tự động điều hướng'}
               </button>
 
               <button
                 onClick={() => setShowPath(!showPath)}
-                className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-200"
+                className="w-full bg-gradient-to-br from-purple-500 via-purple-600 to-pink-600 hover:from-purple-400 hover:via-purple-500 hover:to-pink-500 text-white py-3 px-4 rounded-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 border border-purple-400/30"
+                style={{
+                  boxShadow: '0 4px 12px rgba(147, 51, 234, 0.4)',
+                }}
               >
                 {showPath ? '👁️ Ẩn đường đi' : '👁️ Hiện đường đi'}
               </button>
 
               <button
                 onClick={resetLevel}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white py-2 px-4 rounded-lg font-medium hover:from-orange-600 hover:to-red-600 transition-all duration-200"
+                className="w-full bg-gradient-to-br from-orange-500 via-red-500 to-red-600 hover:from-orange-400 hover:via-red-400 hover:to-red-500 text-white py-3 px-4 rounded-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 border border-orange-400/30"
+                style={{
+                  boxShadow: '0 4px 12px rgba(234, 88, 12, 0.4)',
+                }}
               >
                 🔄 Khởi động lại
               </button>
@@ -598,33 +640,33 @@ export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestar
           {/* Game Stats */}
           <div>
             <h5 className="text-white font-medium mb-3">📊 Thống kê:</h5>
-            <div className="bg-gray-800/50 rounded-lg p-4">
-              <div className="space-y-1 text-sm">
+            <div className="bg-gradient-to-br from-gray-800/70 via-gray-900/70 to-black/70 rounded-xl p-4 border border-gray-600/30 backdrop-blur-sm">
+              <div className="space-y-2 text-sm">
                 <div className="flex justify-between text-gray-300">
-                  <span>Vị trí hiện tại:</span>
-                  <span className="text-cyan-400">
+                  <span>🎯 Vị trí hiện tại:</span>
+                  <span className="text-cyan-400 font-bold">
                     ({robotPosition.x}, {robotPosition.y}, {robotPosition.z})
                   </span>
                 </div>
                 <div className="flex justify-between text-gray-300">
-                  <span>Mục tiêu:</span>
-                  <span className="text-green-400">
+                  <span>🚩 Mục tiêu:</span>
+                  <span className="text-green-400 font-bold">
                     ({goalPosition.x}, {goalPosition.y}, {goalPosition.z})
                   </span>
                 </div>
                 <div className="flex justify-between text-gray-300">
-                  <span>Số bước đã đi:</span>
-                  <span className="text-yellow-400">{pathHistory.length - 1}</span>
+                  <span>👣 Số bước đã đi:</span>
+                  <span className="text-yellow-400 font-bold">{pathHistory.length - 1}</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
-                  <span>Vật phẩm thu thập:</span>
-                  <span className="text-purple-400">
+                  <span>💎 Vật phẩm thu thập:</span>
+                  <span className="text-purple-400 font-bold">
                     {collectedItems.size}/{level.collectibles?.length || 0}
                   </span>
                 </div>
                 <div className="flex justify-between text-gray-300">
-                  <span>Thuật toán:</span>
-                  <span className="text-blue-400 capitalize">{selectedAlgorithm}</span>
+                  <span>🧠 Thuật toán:</span>
+                  <span className="text-blue-400 font-bold capitalize">{selectedAlgorithm}</span>
                 </div>
               </div>
             </div>
@@ -633,16 +675,17 @@ export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestar
           {/* Progress */}
           <div>
             <h5 className="text-white font-medium mb-3">🎯 Tiến độ:</h5>
-            <div className="bg-gray-800/50 rounded-lg p-4">
-              <div className="w-full bg-gray-700 rounded-full h-3 mb-3">
+            <div className="bg-gradient-to-br from-gray-800/70 via-gray-900/70 to-black/70 rounded-xl p-4 border border-gray-600/30 backdrop-blur-sm">
+              <div className="w-full bg-gray-700/50 rounded-full h-4 mb-3 overflow-hidden">
                 <div
-                  className="bg-gradient-to-r from-green-400 to-blue-400 h-3 rounded-full transition-all duration-300"
+                  className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 h-4 rounded-full transition-all duration-500 shadow-lg"
                   style={{
                     width: `${((currentLevel + 1) / effectiveGameData.levels.length) * 100}%`,
+                    boxShadow: '0 0 10px rgba(59, 130, 246, 0.6)',
                   }}
                 />
               </div>
-              <p className="text-gray-300 text-sm text-center">
+              <p className="text-gray-300 text-sm text-center font-medium">
                 Cấp độ {currentLevel + 1} / {effectiveGameData.levels.length}
               </p>
             </div>

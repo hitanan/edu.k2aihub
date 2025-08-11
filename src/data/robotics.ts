@@ -18,6 +18,12 @@ export interface RoboticsLesson {
   competitions: string[];
   icon?: string;
   topics?: string[];
+  relatedGames?: Array<{
+    gameId: string;
+    title: string;
+    connection: string;
+    difficulty: string;
+  }>;
 }
 
 export interface Exercise {
@@ -158,6 +164,26 @@ export const roboticsLessons: RoboticsLesson[] = [
       'Micro:bit Challenge',
       'Arduino Day Vietnam',
       'Maker Faire Vietnam'
+    ],
+    relatedGames: [
+      {
+        gameId: 'robotics-navigation',
+        title: 'Robot Navigation',
+        connection: 'Áp dụng kiến thức điều khiển robot và thuật toán navigation',
+        difficulty: 'Trung bình'
+      },
+      {
+        gameId: 'circuit-builder',
+        title: 'Xây Dựng Mạch Điện',
+        connection: 'Thực hành thiết kế mạch điện cho robot',
+        difficulty: 'Cơ bản'
+      },
+      {
+        gameId: 'arduino-circuit-builder',
+        title: 'Arduino Circuit Builder',
+        connection: 'Tích hợp Arduino vào các dự án robotics',
+        difficulty: 'Trung bình'
+      }
     ]
   },
   {

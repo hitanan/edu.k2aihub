@@ -226,19 +226,6 @@ const Header: React.FC = () => {
 
                   <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden">
                     <div className="p-6">
-                      {/* Tất Cả Khóa Học Button - Moved to Top */}
-                      <div className="mb-6 pb-4 border-b border-gray-100">
-                        <div className="flex justify-center">
-                          <Link
-                            href="/learning"
-                            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-base"
-                            onClick={() => setIsLearningDropdownOpen(false)}
-                          >
-                            📚 Tất Cả Khóa Học
-                          </Link>
-                        </div>
-                      </div>
-
                       {/* Responsive grid layout */}
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {learningModules.map((category) => (
@@ -293,6 +280,20 @@ const Header: React.FC = () => {
                             </div>
                           </div>
                         ))}
+                      </div>
+
+                      {/* Tất Cả Khóa Học Button - Moved to Bottom for Better UX */}
+                      <div className="mt-6 pt-4 border-t border-gray-100">
+                        <div className="flex justify-center">
+                          <Link
+                            href="/learning"
+                            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-base group"
+                            onClick={() => setIsLearningDropdownOpen(false)}
+                          >
+                            📚 Tất Cả Khóa Học
+                            <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>

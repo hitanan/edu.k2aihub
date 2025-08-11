@@ -17,6 +17,12 @@ export interface ArduinoLesson {
   exercises: ArduinoExercise[];
   realWorldApplications: string[];
   competitions: string[];
+  relatedGames?: Array<{
+    gameId: string;
+    title: string;
+    connection: string;
+    difficulty: string;
+  }>;
 }
 
 export interface ArduinoExercise {
@@ -175,6 +181,26 @@ void loop() {
       'IoT Challenge Competition',
       'Smart City Innovation Contest',
       'Young Inventor Awards'
+    ],
+    relatedGames: [
+      {
+        gameId: 'typing-speed-challenge',
+        title: 'Thử Thách Tốc Độ Gõ',
+        connection: 'Luyện tập tốc độ gõ code Arduino nhanh và chính xác',
+        difficulty: 'Cơ bản'
+      },
+      {
+        gameId: 'robotics-navigation',
+        title: 'Robot Navigation 3D',
+        connection: 'Ứng dụng Arduino trong điều khiển robot navigation',
+        difficulty: 'Nâng cao'
+      },
+      {
+        gameId: 'circuit-builder',
+        title: 'Xây Dựng Mạch Điện',
+        connection: 'Thực hành thiết kế mạch Arduino cơ bản',
+        difficulty: 'Trung bình'
+      }
     ]
   },
   {
@@ -342,6 +368,26 @@ void loop() {
       'Interactive Installation Awards',
       'Maker Faire LED Projects',
       'Student Innovation Challenge'
+    ],
+    relatedGames: [
+      {
+        gameId: 'color-memory-game',
+        title: 'Trò Chơi Nhớ Màu',
+        connection: 'Áp dụng kiến thức LED và RGB để tạo game nhớ màu',
+        difficulty: 'Trung bình'
+      },
+      {
+        gameId: 'circuit-builder',
+        title: 'Xây Dựng Mạch Điện',
+        connection: 'Thiết kế mạch LED với digital outputs',
+        difficulty: 'Trung bình'
+      },
+      {
+        gameId: 'rhythm-game',
+        title: 'Trò Chơi Âm Nhạc',
+        connection: 'Sử dụng LED tạo hiệu ứng ánh sáng theo nhạc',
+        difficulty: 'Nâng cao'
+      }
     ]
   },
   {
@@ -499,6 +545,26 @@ void loop() {
       'Smart Home Automation',
       'Accessibility Technology Awards',
       'Human-Computer Interaction Contest'
+    ],
+    relatedGames: [
+      {
+        gameId: 'reaction-time-test',
+        title: 'Kiểm Tra Phản Xạ',
+        connection: 'Áp dụng kiến thức đọc input từ nút nhấn và xử lý tín hiệu',
+        difficulty: 'Cơ bản'
+      },
+      {
+        gameId: 'simon-says',
+        title: 'Simon Says',
+        connection: 'Kết hợp input từ nút nhấn và output LED để tạo game tương tác',
+        difficulty: 'Trung bình'
+      },
+      {
+        gameId: 'puzzle-solver',
+        title: 'Giải Đố Logic',
+        connection: 'Sử dụng input analog và digital để điều khiển game logic',
+        difficulty: 'Nâng cao'
+      }
     ]
   },
   {

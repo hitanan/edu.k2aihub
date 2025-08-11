@@ -6,6 +6,7 @@ import { Search, Clock, Star, ChevronRight, Filter } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { searchModulesVietnamese } from '@/utils/vietnameseSearch';
+import { ContentLoadingPlaceholder } from '@/components/LoadingSpinner';
 
 // Transform moduleNavigation data to match AllLearningPageClient format
 const allLearningModules = moduleNavigation
@@ -94,6 +95,16 @@ export default function AllLearningPageClient() {
   const [selectedLevel, setSelectedLevel] = useState('Tất cả');
   const [sortBy, setSortBy] = useState('popular'); // popular, duration, newest
   const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Add loading simulation for better UX
+  useEffect(() => {
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 600); // Simulate loading time
+
+    return () => clearTimeout(loadingTimer);
+  }, []);
 
   // Popular search terms and suggestions with Vietnamese support
   const popularSearchTerms = [
@@ -294,6 +305,78 @@ export default function AllLearningPageClient() {
         return b.lessons - a.lessons;
     }
   });
+
+  // Show loading skeleton while loading
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+        {/* Hero Section */}
+        <div className="relative overflow-x-hidden bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                📚 Tất Cả Khóa Học
+              </h1>
+              <div className="w-3/4 h-6 bg-gray-600/50 animate-pulse rounded mx-auto mb-8"></div>
+
+              {/* Loading Search Bar */}
+              <div className="max-w-2xl mx-auto relative">
+                <div className="w-full h-16 bg-gray-700/50 animate-pulse rounded-2xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Loading Filters */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-8">
+            <div className="flex flex-wrap gap-6 items-center">
+              <div className="w-32 h-10 bg-gray-700/50 animate-pulse rounded-lg"></div>
+              <div className="w-32 h-10 bg-gray-700/50 animate-pulse rounded-lg"></div>
+              <div className="w-32 h-10 bg-gray-700/50 animate-pulse rounded-lg"></div>
+              <div className="ml-auto w-24 h-6 bg-gray-700/50 animate-pulse rounded"></div>
+            </div>
+          </div>
+
+          {/* Loading Modules Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 animate-pulse">
+                <div className="w-16 h-16 bg-gray-600/50 rounded-2xl mb-6"></div>
+                <div className="mb-4">
+                  <div className="flex gap-2 mb-2">
+                    <div className="w-20 h-6 bg-gray-600/50 rounded-full"></div>
+                    <div className="w-16 h-6 bg-gray-600/50 rounded-full"></div>
+                  </div>
+                  <div className="w-3/4 h-6 bg-gray-600/50 rounded mb-2"></div>
+                  <div className="w-1/2 h-4 bg-gray-600/30 rounded"></div>
+                </div>
+                <ContentLoadingPlaceholder lines={3} className="mb-6" />
+                <div className="flex gap-2 mb-4">
+                  <div className="w-16 h-6 bg-gray-600/30 rounded-full"></div>
+                  <div className="w-20 h-6 bg-gray-600/30 rounded-full"></div>
+                </div>
+                <div className="space-y-2 mb-6">
+                  <div className="w-full h-4 bg-gray-600/30 rounded"></div>
+                  <div className="w-5/6 h-4 bg-gray-600/30 rounded"></div>
+                  <div className="w-4/5 h-4 bg-gray-600/30 rounded"></div>
+                </div>
+                <div className="w-full h-6 bg-gray-600/30 rounded"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Loading Message */}
+        <div className="text-center py-8">
+          <div className="inline-flex items-center text-gray-400">
+            <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin mr-3"></div>
+            Đang tải khóa học...
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">

@@ -1,32 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Play, Trophy, Target, Brain, Zap, Star } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import {
-  EducationalGame,
-  EDUCATIONAL_GAMES_DATA,
-} from '@/data/educationalGames';
+import { EducationalGame, EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 
 // Custom hook for game management
 export function useEducationalGames() {
-  const [completedGames, setCompletedGames] = useState<string[]>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('k2ai_completed_games');
-      return saved ? JSON.parse(saved) : [];
+  const [completedGames, setCompletedGames] = useState<string[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Only load from localStorage on client side
+    const saved = localStorage.getItem('k2ai_completed_games');
+    if (saved) {
+      try {
+        setCompletedGames(JSON.parse(saved));
+      } catch (error) {
+        console.error('Error loading completed games:', error);
+        setCompletedGames([]);
+      }
     }
-    return [];
-  });
+    setIsLoaded(true);
+  }, []);
 
   const markGameCompleted = (gameId: string, score?: number) => {
     if (!completedGames.includes(gameId)) {
       const newCompleted = [...completedGames, gameId];
       setCompletedGames(newCompleted);
-      localStorage.setItem(
-        'k2ai_completed_games',
-        JSON.stringify(newCompleted),
-      );
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('k2ai_completed_games', JSON.stringify(newCompleted));
+      }
 
       // Track game completion for analytics
       if (typeof window !== 'undefined' && window.gtag) {
@@ -40,15 +45,11 @@ export function useEducationalGames() {
   };
 
   const getGamesForModule = (moduleType: string): EducationalGame[] => {
-    return EDUCATIONAL_GAMES_DATA.filter(
-      (game) => game.moduleType === moduleType,
-    );
+    return EDUCATIONAL_GAMES_DATA.filter((game) => game.moduleType === moduleType);
   };
 
   const getRecommendedGames = (limit = 6): EducationalGame[] => {
-    return EDUCATIONAL_GAMES_DATA.filter(
-      (game) => !completedGames.includes(game.id),
-    )
+    return EDUCATIONAL_GAMES_DATA.filter((game) => !completedGames.includes(game.id))
       .sort((a, b) => b.points - a.points)
       .slice(0, limit);
   };
@@ -58,20 +59,15 @@ export function useEducationalGames() {
     markGameCompleted,
     getGamesForModule,
     getRecommendedGames,
+    isLoaded,
   };
 }
 
 // Game card component
-export function GameCard({
-  game,
-  onPlay,
-}: {
-  game: EducationalGame;
-  onPlay?: () => void;
-}) {
-  const { completedGames } = useEducationalGames();
+export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () => void }) {
+  const { completedGames, isLoaded } = useEducationalGames();
   const router = useRouter();
-  const isCompleted = completedGames.includes(game.id);
+  const isCompleted = isLoaded && completedGames.includes(game.id);
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -120,9 +116,7 @@ export function GameCard({
   };
 
   return (
-    <div
-      className={`bg-gradient-to-r ${game.color} rounded-xl p-1 ${isCompleted ? 'opacity-75' : ''}`}
-    >
+    <div className={`bg-gradient-to-r ${game.color} rounded-xl p-1 ${isCompleted ? 'opacity-75' : ''}`}>
       <div className="bg-black/40 backdrop-blur-sm rounded-lg p-4 h-full">
         <div className="flex items-start justify-between mb-3">
           <span className="text-2xl">{game.icon}</span>
@@ -134,14 +128,10 @@ export function GameCard({
         </div>
 
         <h3 className="text-lg font-bold text-white mb-2">{game.title}</h3>
-        <p className="text-gray-300 text-sm mb-3 leading-relaxed">
-          {game.description}
-        </p>
+        <p className="text-gray-300 text-sm mb-3 leading-relaxed">{game.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-3">
-          <span
-            className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(game.difficulty)}`}
-          >
+          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(game.difficulty)}`}>
             {game.difficulty}
           </span>
           <span className="bg-white/10 text-gray-300 px-2 py-1 rounded-full text-xs font-medium flex items-center">
@@ -152,19 +142,14 @@ export function GameCard({
 
         <div className="text-xs text-gray-400 mb-3">
           ⏱️ {game.estimatedTime}
-          {game.isInternal && game.points > 0 && (
-            <span className="ml-2">🏆 {game.points} điểm</span>
-          )}
+          {game.isInternal && game.points > 0 && <span className="ml-2">🏆 {game.points} điểm</span>}
         </div>
 
         <div className="mb-4">
           <div className="text-xs text-gray-400 mb-1">Kỹ năng:</div>
           <div className="flex flex-wrap gap-1">
             {game.skills.slice(0, 3).map((skill, index) => (
-              <span
-                key={index}
-                className="bg-white/5 text-gray-300 px-2 py-0.5 rounded text-xs"
-              >
+              <span key={index} className="bg-white/5 text-gray-300 px-2 py-0.5 rounded text-xs">
                 {skill}
               </span>
             ))}
@@ -186,9 +171,7 @@ export function GameCard({
                 </Link>
               ))}
               {game.relatedLessons.length > 2 && (
-                <div className="text-xs text-gray-500">
-                  +{game.relatedLessons.length - 2} bài học khác
-                </div>
+                <div className="text-xs text-gray-500">+{game.relatedLessons.length - 2} bài học khác</div>
               )}
             </div>
           </div>
@@ -196,10 +179,10 @@ export function GameCard({
 
         <button
           onClick={handlePlay}
-          className="w-full bg-white/10 hover:bg-white/20 text-white rounded-lg py-2 px-4 transition-colors duration-200 flex items-center justify-center font-medium"
+          className="w-full bg-white/10 hover:bg-white/20 text-white rounded-lg py-2 px-4 transition-colors duration-200 flex items-center justify-center font-medium cursor-pointer"
         >
           <Play className="w-4 h-4 mr-2" />
-          {game.isInternal ? 'Chơi ngay' : 'Mở game'}
+          {game.isInternal ? 'Chơi ngay' : 'Mở trò chơi'}
         </button>
       </div>
     </div>
@@ -207,18 +190,10 @@ export function GameCard({
 }
 
 // Games showcase component
-export function EducationalGamesShowcase({
-  moduleType,
-  limit = 6,
-}: {
-  moduleType?: string;
-  limit?: number;
-}) {
+export function EducationalGamesShowcase({ moduleType, limit = 6 }: { moduleType?: string; limit?: number }) {
   const { getGamesForModule, getRecommendedGames } = useEducationalGames();
 
-  const games = moduleType
-    ? getGamesForModule(moduleType).slice(0, limit)
-    : getRecommendedGames(limit);
+  const games = moduleType ? getGamesForModule(moduleType).slice(0, limit) : getRecommendedGames(limit);
 
   if (games.length === 0) {
     return null;
@@ -304,8 +279,7 @@ export function QuizGame({
         <Trophy className="w-16 h-16 mx-auto mb-4 text-yellow-400" />
         <h3 className="text-2xl font-bold text-white mb-2">Hoàn thành!</h3>
         <p className="text-gray-300 mb-4">
-          Điểm số: {score}/{questions.length} (
-          {Math.round((score / questions.length) * 100)}%)
+          Điểm số: {score}/{questions.length} ({Math.round((score / questions.length) * 100)}%)
         </p>
       </div>
     );
@@ -323,15 +297,13 @@ export function QuizGame({
         <div className="w-full bg-gray-700 rounded-full h-2">
           <div
             className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
-            style={{ width: `${(currentQuestion / questions.length) * 100}%` }}
+            style={{ width: `${Math.min(100, (currentQuestion / questions.length) * 100)}%` }}
           />
         </div>
       </div>
 
       <div className="bg-white/5 rounded-xl p-6 mb-6">
-        <h3 className="text-xl font-bold text-white mb-4">
-          {questions[currentQuestion].question}
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-4">{questions[currentQuestion].question}</h3>
 
         <div className="space-y-3">
           {questions[currentQuestion].options.map((option, index) => (
@@ -344,8 +316,7 @@ export function QuizGame({
                   ? index === questions[currentQuestion].correct
                     ? 'bg-green-500/20 border-green-500/50 text-green-300'
                     : 'bg-red-500/20 border-red-500/50 text-red-300'
-                  : selectedAnswer !== null &&
-                      index === questions[currentQuestion].correct
+                  : selectedAnswer !== null && index === questions[currentQuestion].correct
                     ? 'bg-green-500/20 border-green-500/50 text-green-300'
                     : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/30'
               }`}
