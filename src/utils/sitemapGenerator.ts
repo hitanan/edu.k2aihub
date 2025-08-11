@@ -25,6 +25,20 @@ import { DataScienceLessons } from '@/data/data-science';
 import { SpaceLessons } from '@/data/space-exploration';
 import { ProgrammingRoboticsLessons } from '@/data/programming-robotics';
 
+// Import 2025 TRENDING MODULES (Social Media & Academic)
+import { aiContentCreatorLessons } from '@/data/ai-content-creator';
+import { tiktokSocialCommerceLessons } from '@/data/tiktok-social-commerce';
+import { genZMarketingLessons } from '@/data/genz-marketing';
+import { shortVideoMasteryLessons } from '@/data/short-video-mastery';
+import { liveCommerceLessons } from '@/data/live-commerce-streaming';
+import { microInfluencerLessons } from '@/data/micro-influencer-economy';
+import { socialListeningLessons } from '@/data/social-listening-crisis';
+import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
+import { crossPlatformStrategyLessons } from '@/data/cross-platform-strategy';
+import { dataDrivenAnalyticsLessons } from '@/data/data-driven-analytics';
+import { dataScienceLessons } from '@/data/data-science-analytics';
+import { environmentalScienceLessons } from '@/data/environmental-science-climate';
+
 // Utility to automatically generate sitemap entries for all pages
 const baseUrl = 'https://k2aihub.com';
 export function generateSitemapEntries(): MetadataRoute.Sitemap {
@@ -143,6 +157,68 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/learning/programming-robotics`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    // 2025 Trending Social Media Modules
+    {
+      url: `${baseUrl}/learning/ai-content-creator`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/tiktok-social-commerce`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/genz-marketing`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/short-video-mastery`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/live-commerce-streaming`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/micro-influencer-economy`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/social-listening-crisis`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/ethical-marketing-purpose`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/cross-platform-strategy`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/data-driven-analytics`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    // 2025 Academic Specialized Modules
+    {
+      url: `${baseUrl}/learning/data-science-analytics`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/environmental-science-climate`,
       priority: 0.8,
       changeFrequency: 'weekly' as const,
     },
@@ -342,6 +418,92 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // 2025 Trending Social Media Modules lesson pages
+  const aiContentCreatorPages = aiContentCreatorLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/ai-content-creator/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const tiktokSocialCommercePages = tiktokSocialCommerceLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/tiktok-social-commerce/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const genZMarketingPages = genZMarketingLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/genz-marketing/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const shortVideoMasteryPages = shortVideoMasteryLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/short-video-mastery/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const liveCommerceStreamingPages = liveCommerceLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/live-commerce-streaming/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const microInfluencerEconomyPages = microInfluencerLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/micro-influencer-economy/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const socialListeningCrisisPages = socialListeningLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/social-listening-crisis/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const ethicalMarketingPurposePages = ethicalMarketingLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/ethical-marketing-purpose/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const crossPlatformStrategyPages = crossPlatformStrategyLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/cross-platform-strategy/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const dataDrivenAnalyticsPages = dataDrivenAnalyticsLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/data-driven-analytics/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // 2025 Academic Specialized Modules lesson pages  
+  const dataScienceAnalyticsPages = dataScienceLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/data-science-analytics/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const environmentalScienceClimatePages = environmentalScienceLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/environmental-science-climate/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   // Region pages
   const regionSlugs = [
     'bac-bo',
@@ -426,6 +588,20 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     ...dataSciencePages,
     ...spaceExplorationPages,
     ...programmingRoboticsPages,
+    // 2025 Trending Social Media Modules
+    ...aiContentCreatorPages,
+    ...tiktokSocialCommercePages,
+    ...genZMarketingPages,
+    ...shortVideoMasteryPages,
+    ...liveCommerceStreamingPages,
+    ...microInfluencerEconomyPages,
+    ...socialListeningCrisisPages,
+    ...ethicalMarketingPurposePages,
+    ...crossPlatformStrategyPages,
+    ...dataDrivenAnalyticsPages,
+    // 2025 Academic Specialized Modules
+    ...dataScienceAnalyticsPages,
+    ...environmentalScienceClimatePages,
     ...regionPages,
     ...majorCityPages, // High priority cities first
     ...regularCityPages, // Regular cities

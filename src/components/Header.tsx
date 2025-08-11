@@ -3,25 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  ChevronDown,
-  Menu,
-  X,
-  Home,
-  Globe,
-  Brain,
-  Code,
-  Heart,
-  BookOpen,
-} from 'lucide-react';
+import { ChevronDown, Menu, X, Home, Globe, Brain, Code, BookOpen } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLearningDropdownOpen, setIsLearningDropdownOpen] = useState(false);
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(
-    null,
-  );
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
   const [continueSession, setContinueSession] = useState<{
     title: string;
     href: string;
@@ -40,13 +28,6 @@ const Header: React.FC = () => {
       }
     }
   }, []);
-
-  // Save visited lesson to localStorage
-  const saveVisitedLesson = (title: string, href: string, moduleIcon: string) => {
-    const sessionData = { title, href, moduleIcon, timestamp: Date.now() };
-    localStorage.setItem('k2ai_last_visited_lesson', JSON.stringify(sessionData));
-    setContinueSession(sessionData);
-  };
 
   // Improved mouse handlers for dropdown
   const handleDropdownEnter = () => {
@@ -200,11 +181,7 @@ const Header: React.FC = () => {
             ))}
 
             {/* Learning dropdown with improved UX */}
-            <div
-              className="relative"
-              onMouseEnter={handleDropdownEnter}
-              onMouseLeave={handleDropdownLeave}
-            >
+            <div className="relative" onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
               <button
                 type="button"
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center space-x-2 ${
@@ -232,16 +209,10 @@ const Header: React.FC = () => {
                           <div key={category.category} className="space-y-2">
                             <h3 className="text-sm font-semibold text-gray-900 mb-2 flex items-center justify-between border-b border-gray-100 pb-1">
                               <div className="flex items-center space-x-1">
-                                <span className="text-base">
-                                  {category.icon}
-                                </span>
-                                <span className="text-xs">
-                                  {category.category}
-                                </span>
+                                <span className="text-base">{category.icon}</span>
+                                <span className="text-xs">{category.category}</span>
                               </div>
-                              <span className="text-xs text-gray-500">
-                                ({category.totalCount})
-                              </span>
+                              <span className="text-xs text-gray-500">({category.totalCount})</span>
                             </h3>
                             <div className="space-y-1">
                               {category.modules.map((module) => (
@@ -249,9 +220,7 @@ const Header: React.FC = () => {
                                   key={module.name}
                                   href={module.href}
                                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-all duration-200 group border border-transparent hover:border-blue-100"
-                                  onClick={() =>
-                                    setIsLearningDropdownOpen(false)
-                                  }
+                                  onClick={() => setIsLearningDropdownOpen(false)}
                                 >
                                   <span className="text-sm">{module.icon}</span>
                                   <div className="flex-1">
@@ -265,9 +234,7 @@ const Header: React.FC = () => {
                                 <Link
                                   href={`/learning?category=${category.categoryKey}`}
                                   className="flex items-center space-x-2 p-2 rounded-lg bg-blue-50 hover:bg-blue-100 transition-all duration-200 group border border-blue-200"
-                                  onClick={() =>
-                                    setIsLearningDropdownOpen(false)
-                                  }
+                                  onClick={() => setIsLearningDropdownOpen(false)}
                                 >
                                   <span className="text-sm">👀</span>
                                   <div className="flex-1">
@@ -309,11 +276,7 @@ const Header: React.FC = () => {
               className="p-2 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
