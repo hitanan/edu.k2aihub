@@ -11,5 +11,10 @@ export { GeographyQuizGame } from './GeographyQuizGame';
 export { AIPromptGame } from './AIPromptGame';
 export { PythonCodingGame } from './PythonCodingGame';
 export { ArduinoCircuitGame } from './ArduinoCircuitGame';
-
-// We'll add more exports as we extract more components
+export { default as STEMExperimentGame } from './STEMExperimentGame';
+export { default as AIEthicsGame } from './AIEthicsGame';
+export { default as MathPuzzleGame } from './MathPuzzleGame';
+export { default as QuantumBasicsGame } from './QuantumBasicsGame';
+export { default as BlockchainExplorerGame } from './BlockchainExplorerGame';
+export { default as ClimateModelingGame } from './ClimateModelingGame';
+export { default as CybersecurityDefenseGame } from './CybersecurityDefenseGame';
