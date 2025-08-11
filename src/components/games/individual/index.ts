@@ -6,5 +6,10 @@ export { default as RoboticsNavigationGame } from './RoboticsNavigationGame';
 export { RobotNavigation3DGame } from './RobotNavigation3DGame';
 export { NeuralNetworkBuilderGame } from './NeuralNetworkBuilderGame';
 export { SpaceExplorationGame } from './SpaceExplorationGame';
+export { DataVisualizationGame } from './DataVisualizationGame';
+export { GeographyQuizGame } from './GeographyQuizGame';
+export { AIPromptGame } from './AIPromptGame';
+export { PythonCodingGame } from './PythonCodingGame';
+export { ArduinoCircuitGame } from './ArduinoCircuitGame';
 
 // We'll add more exports as we extract more components

@@ -19,7 +19,12 @@ import {
   RoboticsNavigationGame,
   RobotNavigation3DGame,
   NeuralNetworkBuilderGame,
-  SpaceExplorationGame
+  SpaceExplorationGame,
+  DataVisualizationGame,
+  GeographyQuizGame,
+  AIPromptGame,
+  PythonCodingGame,
+  ArduinoCircuitGame
 } from './individual';
 
 interface MiniGameProps {
@@ -116,7 +121,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'vietnam-geography-quiz':
         return (
           <GeographyQuizGame
-            gameData={GAME_DATA[game.id]}
+            gameData={GAME_DATA[game.id] as any}
             onComplete={endGame}
             timeLeft={timeLeft}
             onRestart={() => setCurrentGameState('playing')}
@@ -125,7 +130,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'ai-prompt-challenge':
         return (
           <AIPromptGame
-            gameData={GAME_DATA[game.id]}
+            gameData={GAME_DATA[game.id] as any}
             onComplete={endGame}
             timeLeft={timeLeft}
             onRestart={() => setCurrentGameState('playing')}
@@ -134,7 +139,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'python-coding-puzzle':
         return (
           <PythonCodingGame
-            gameData={GAME_DATA[game.id]}
+            gameData={GAME_DATA[game.id] as any}
             onComplete={endGame}
             timeLeft={timeLeft}
             onRestart={() => setCurrentGameState('playing')}
@@ -143,7 +148,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'arduino-circuit-builder':
         return (
           <ArduinoCircuitGame
-            gameData={GAME_DATA[game.id]}
+            gameData={GAME_DATA[game.id] as any}
             onComplete={endGame}
             timeLeft={timeLeft}
             onRestart={() => setCurrentGameState('playing')}
@@ -214,7 +219,6 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'data-visualization':
         return (
           <DataVisualizationGame
-            gameData={GAME_DATA[game.id]}
             onComplete={endGame}
             timeLeft={timeLeft}
             onRestart={() => setCurrentGameState('playing')}
@@ -471,437 +475,13 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
 }
 
 // Individual game components
-function GeographyQuizGame({ gameData, onComplete, timeLeft, onRestart }: any) {
-  // Shuffle questions for randomization
-  const [shuffledQuestions] = useState(() => {
-    const questions = [...gameData.questions];
-    for (let i = questions.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [questions[i], questions[j]] = [questions[j], questions[i]];
-    }
-    return questions;
-  });
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [score, setScore] = useState(0);
-  const [showExplanation, setShowExplanation] = useState(false);
 
-  const question = shuffledQuestions[currentQuestion];
 
-  const handleAnswer = (answerIndex: number) => {
-    setSelectedAnswer(answerIndex);
-    setShowExplanation(true);
 
-    if (answerIndex === question.correct) {
-      setScore((prev) => prev + 20);
-    }
 
-    setTimeout(() => {
-      if (currentQuestion < shuffledQuestions.length - 1) {
-        setCurrentQuestion((prev) => prev + 1);
-        setSelectedAnswer(null);
-        setShowExplanation(false);
-      } else {
-        onComplete(true, score + (answerIndex === question.correct ? 20 : 0));
-      }
-    }, 2000);
-  };
 
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      onRestart();
-    }
-  }, [timeLeft, onRestart]);
 
-  return (
-    <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <div className="mb-4">
-        <div className="flex justify-between text-sm text-gray-400 mb-2">
-          <span>
-            Câu {currentQuestion + 1}/{shuffledQuestions.length}
-          </span>
-          <span>Điểm: {score}</span>
-        </div>
-        <div className="w-full bg-gray-700 rounded-full h-2">
-          <div
-            className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full transition-all duration-300"
-            style={{
-              width: `${(currentQuestion / shuffledQuestions.length) * 100}%`,
-            }}
-          />
-        </div>
-      </div>
 
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-4">
-          {question.question}
-        </h3>
-
-        <div className="space-y-3">
-          {question.options.map((option: string, index: number) => (
-            <button
-              key={index}
-              onClick={() => handleAnswer(index)}
-              disabled={selectedAnswer !== null}
-              className={`w-full p-4 text-left rounded-lg border transition-all duration-200 ${
-                selectedAnswer === index
-                  ? index === question.correct
-                    ? 'bg-green-500/20 border-green-500/50 text-green-300'
-                    : 'bg-red-500/20 border-red-500/50 text-red-300'
-                  : selectedAnswer !== null && index === question.correct
-                    ? 'bg-green-500/20 border-green-500/50 text-green-300'
-                    : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/30'
-              }`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-
-        {showExplanation && (
-          <div className="mt-4 p-4 bg-blue-500/20 border border-blue-500/30 rounded-lg">
-            <div className="flex items-start">
-              <Lightbulb className="w-5 h-5 text-blue-400 mr-2 mt-0.5" />
-              <div>
-                <p className="text-blue-300 font-medium mb-1">Giải thích:</p>
-                <p className="text-gray-300 text-sm">{question.explanation}</p>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function AIPromptGame({ gameData, onComplete, timeLeft, onRestart }: any) {
-  const [currentScenario, setCurrentScenario] = useState(0);
-  const [selectedPrompt, setSelectedPrompt] = useState<number | null>(null);
-  const [score, setScore] = useState(0);
-  const [showHints, setShowHints] = useState(false);
-
-  const scenario = gameData.scenarios[currentScenario];
-
-  const handlePromptSelect = (promptIndex: number) => {
-    setSelectedPrompt(promptIndex);
-
-    if (promptIndex === scenario.correct) {
-      setScore((prev) => prev + 25);
-    }
-
-    setTimeout(() => {
-      if (currentScenario < gameData.scenarios.length - 1) {
-        setCurrentScenario((prev) => prev + 1);
-        setSelectedPrompt(null);
-        setShowHints(false);
-      } else {
-        onComplete(true, score + (promptIndex === scenario.correct ? 25 : 0));
-      }
-    }, 2000);
-  };
-
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      onRestart();
-    }
-  }, [timeLeft, onRestart]);
-
-  return (
-    <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">Tình huống:</h3>
-        <p className="text-gray-300 text-lg">{scenario.situation}</p>
-      </div>
-
-      {!showHints && (
-        <button
-          onClick={() => setShowHints(true)}
-          className="mb-4 text-yellow-400 hover:text-yellow-300 transition-colors flex items-center"
-        >
-          <Lightbulb className="w-4 h-4 mr-1" />
-          Xem gợi ý
-        </button>
-      )}
-
-      {showHints && (
-        <div className="mb-6 p-4 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
-          <p className="text-yellow-300 font-medium mb-2">Gợi ý:</p>
-          <ul className="text-gray-300 text-sm space-y-1">
-            {scenario.hints.map((hint: string, index: number) => (
-              <li key={index}>• {hint}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      <div className="mb-6">
-        <h4 className="text-white font-medium mb-3">Chọn prompt tốt nhất:</h4>
-        <div className="space-y-3">
-          {scenario.examples.map((example: string, index: number) => (
-            <button
-              key={index}
-              onClick={() => handlePromptSelect(index)}
-              disabled={selectedPrompt !== null}
-              className={`w-full p-4 text-left rounded-lg border transition-all duration-200 ${
-                selectedPrompt === index
-                  ? index === scenario.correct
-                    ? 'bg-green-500/20 border-green-500/50 text-green-300'
-                    : 'bg-red-500/20 border-red-500/50 text-red-300'
-                  : selectedPrompt !== null && index === scenario.correct
-                    ? 'bg-green-500/20 border-green-500/50 text-green-300'
-                    : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/30'
-              }`}
-            >
-              {example}
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function PythonCodingGame({ gameData, onComplete, timeLeft, onRestart }: any) {
-  const [currentChallenge, setCurrentChallenge] = useState(0);
-  const [userCode, setUserCode] = useState('');
-  const [showSolution, setShowSolution] = useState(false);
-  const [score, setScore] = useState(0);
-
-  const challenge = gameData.challenges[currentChallenge];
-
-  const checkSolution = () => {
-    // Simple check if user code contains key elements
-    const solutionKeywords = challenge.solution.toLowerCase().split(/\s+/);
-    const userKeywords = userCode.toLowerCase().split(/\s+/);
-
-    let matches = 0;
-    solutionKeywords.forEach((keyword: string) => {
-      if (userKeywords.includes(keyword)) matches++;
-    });
-
-    const accuracy = matches / solutionKeywords.length;
-
-    if (accuracy > 0.6) {
-      setScore((prev) => prev + 30);
-      setTimeout(() => {
-        if (currentChallenge < gameData.challenges.length - 1) {
-          setCurrentChallenge((prev) => prev + 1);
-          setUserCode('');
-          setShowSolution(false);
-        } else {
-          onComplete(true, score + 30);
-        }
-      }, 2000);
-    } else {
-      setShowSolution(true);
-    }
-  };
-
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      onRestart();
-    }
-  }, [timeLeft, onRestart]);
-
-  return (
-    <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">{challenge.title}</h3>
-        <p className="text-gray-300 mb-2">{challenge.description}</p>
-        <p className="text-yellow-300 text-sm">💡 {challenge.hint}</p>
-      </div>
-
-      <div className="mb-6">
-        <h4 className="text-white font-medium mb-2">Viết code Python:</h4>
-        <textarea
-          value={userCode}
-          onChange={(e) => setUserCode(e.target.value)}
-          className="w-full h-32 bg-gray-800 text-green-400 p-3 rounded-lg border border-gray-600 focus:border-blue-400 focus:outline-none font-mono text-sm"
-          placeholder="# Viết code của bạn ở đây..."
-        />
-      </div>
-
-      <div className="mb-6">
-        <h4 className="text-white font-medium mb-2">Test cases:</h4>
-        {challenge.testCases.map(
-          (testCase: { input: any; output: any }, index: number) => (
-            <div key={index} className="bg-gray-800 p-2 rounded mb-2 text-sm">
-              <span className="text-blue-300">
-                Input: {JSON.stringify(testCase.input)}
-              </span>
-              <span className="text-green-300 ml-4">
-                Output: {JSON.stringify(testCase.output)}
-              </span>
-            </div>
-          ),
-        )}
-      </div>
-
-      {!showSolution && (
-        <button
-          onClick={checkSolution}
-          className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 px-6 rounded-xl font-medium hover:from-green-600 hover:to-emerald-600 transition-all duration-200"
-        >
-          Kiểm tra
-        </button>
-      )}
-
-      {showSolution && (
-        <div className="mt-4 p-4 bg-blue-500/20 border border-blue-500/30 rounded-lg">
-          <p className="text-blue-300 font-medium mb-2">Đáp án:</p>
-          <pre className="bg-gray-800 p-3 rounded text-green-400 text-sm overflow-x-auto">
-            {challenge.solution}
-          </pre>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function ArduinoCircuitGame({
-  gameData,
-  onComplete,
-  timeLeft,
-  onRestart,
-}: any) {
-  const [currentCircuit, setCurrentCircuit] = useState(0);
-  const [placedComponents, setPlacedComponents] = useState<
-    Record<string, boolean>
-  >({});
-  const [score, setScore] = useState(0);
-
-  const circuit = gameData?.circuits?.[currentCircuit];
-
-  useEffect(() => {
-    if (!circuit) {
-      console.warn('Circuit data not available:', gameData);
-    }
-  }, [circuit, gameData]);
-
-  const checkCircuit = () => {
-    if (!circuit || !circuit.components) return;
-
-    const allPlaced = circuit.components.every((comp: any) => {
-      const componentKey = comp.id || comp.name || comp;
-      return placedComponents[componentKey];
-    });
-    if (allPlaced) {
-      const completionBonus = 25;
-      const finalScore = score + completionBonus;
-      setScore(finalScore);
-
-      setTimeout(() => {
-        if (currentCircuit < (gameData?.circuits?.length || 0) - 1) {
-          setCurrentCircuit((prev) => prev + 1);
-          setPlacedComponents({});
-        } else {
-          onComplete(true, finalScore);
-        }
-      }, 2000);
-    }
-  };
-
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      onRestart();
-    }
-  }, [timeLeft, onRestart]);
-
-  if (!circuit) {
-    return (
-      <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-        <div className="text-center text-white">
-          <p className="mb-4">Không thể tải dữ liệu mạch điện.</p>
-          <button
-            onClick={onRestart}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
-          >
-            Thử lại
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">{circuit.name}</h3>
-        <p className="text-gray-300 mb-4">{circuit.explanation}</p>
-        <div className="text-blue-400 font-medium">Điểm: {score}</div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <h4 className="text-white font-medium mb-3">Linh kiện:</h4>
-          <div className="space-y-2">
-            {circuit.components?.map((component: any, index: number) => {
-              const componentKey = component.id || component.name || component;
-              const componentName = component.name || component;
-              return (
-                <div
-                  key={index}
-                  className={`p-3 rounded-lg border cursor-pointer transition-all ${
-                    placedComponents[componentKey]
-                      ? 'bg-green-500/20 border-green-500/50 text-green-300'
-                      : 'bg-gray-700/50 border-gray-600 text-gray-300 hover:bg-gray-600/50'
-                  }`}
-                  onClick={() => {
-                    if (!placedComponents[componentKey]) {
-                      setPlacedComponents((prev) => ({
-                        ...prev,
-                        [componentKey]: true,
-                      }));
-                      setScore((prev) => prev + 10);
-                      checkCircuit();
-                    }
-                  }}
-                >
-                  <div className="flex items-center justify-between">
-                    <span>{componentName}</span>
-                    {placedComponents[componentKey] && (
-                      <span className="text-green-400">✓</span>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-white font-medium mb-3">Workspace:</h4>
-          <div className="bg-gray-800/50 rounded-lg p-4 min-h-48 border-2 border-dashed border-gray-600">
-            <p className="text-gray-400 text-center mb-4">
-              Nhấp vào linh kiện để đặt vào workspace
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              {Object.entries(placedComponents).map(([key, placed]) =>
-                placed ? (
-                  <div
-                    key={key}
-                    className="bg-blue-500/20 border border-blue-400 rounded p-2 text-center text-xs text-blue-300"
-                  >
-                    {key}
-                  </div>
-                ) : null,
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {circuit.code && (
-        <div className="mt-6 p-4 bg-gray-800/50 rounded-lg">
-          <h4 className="text-white font-medium mb-3">Code Arduino:</h4>
-          <pre className="bg-gray-900 p-4 rounded text-green-400 text-sm overflow-x-auto">
-            {circuit.code}
-          </pre>
-        </div>
-      )}
-    </div>
-  );
-}
 function STEMExperimentGame({
   gameData,
   onComplete,
@@ -1730,138 +1310,4 @@ function CybersecurityDefenseGame({ onComplete, timeLeft, onRestart }: any) {
   );
 }
 
-function DataVisualizationGame({ onComplete, timeLeft, onRestart }: any) {
-  const [selectedChart, setSelectedChart] = useState<string | null>(null);
-  const [dataSet, setDataSet] = useState('sales');
-  const [score, setScore] = useState(0);
 
-  const data = {
-    sales: [
-      { month: 'Jan', value: 120 },
-      { month: 'Feb', value: 150 },
-      { month: 'Mar', value: 180 },
-      { month: 'Apr', value: 200 },
-      { month: 'May', value: 220 },
-    ],
-    users: [
-      { category: 'Desktop', value: 45 },
-      { category: 'Mobile', value: 35 },
-      { category: 'Tablet', value: 20 },
-    ],
-  };
-
-  const chartTypes = [
-    { id: 'bar', name: 'Bar Chart', bestFor: 'sales', points: 20 },
-    { id: 'line', name: 'Line Chart', bestFor: 'sales', points: 25 },
-    { id: 'pie', name: 'Pie Chart', bestFor: 'users', points: 25 },
-    { id: 'scatter', name: 'Scatter Plot', bestFor: 'none', points: 10 },
-  ];
-
-  const selectChart = (chartId: string) => {
-    setSelectedChart(chartId);
-    const chart = chartTypes.find((c) => c.id === chartId);
-    const isOptimal = chart?.bestFor === dataSet;
-    const points = isOptimal
-      ? chart.points
-      : Math.floor(chart?.points ?? 0 / 2) || 5;
-    setScore((prev) => prev + points);
-  };
-
-  useEffect(() => {
-    if (timeLeft <= 0) onRestart();
-  }, [timeLeft, onRestart]);
-
-  return (
-    <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          📊 Trực quan hóa dữ liệu
-        </h3>
-        <div className="text-indigo-400 font-medium">Điểm: {score}</div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div>
-          <h4 className="text-white font-medium mb-3">Chọn loại dữ liệu:</h4>
-          <div className="space-y-2 mb-4">
-            <button
-              onClick={() => setDataSet('sales')}
-              className={`w-full p-3 rounded-lg text-left transition-all ${
-                dataSet === 'sales'
-                  ? 'bg-blue-500/20 border-blue-500/50 border'
-                  : 'bg-gray-800/50 border border-gray-600 hover:bg-gray-700/50'
-              }`}
-            >
-              <div className="text-white font-medium">Sales Data</div>
-              <div className="text-gray-400 text-sm">Monthly sales figures</div>
-            </button>
-            <button
-              onClick={() => setDataSet('users')}
-              className={`w-full p-3 rounded-lg text-left transition-all ${
-                dataSet === 'users'
-                  ? 'bg-blue-500/20 border-blue-500/50 border'
-                  : 'bg-gray-800/50 border border-gray-600 hover:bg-gray-700/50'
-              }`}
-            >
-              <div className="text-white font-medium">User Data</div>
-              <div className="text-gray-400 text-sm">
-                Device usage breakdown
-              </div>
-            </button>
-          </div>
-
-          <h4 className="text-white font-medium mb-3">Dữ liệu hiện tại:</h4>
-          <div className="bg-gray-800/50 rounded-lg p-4">
-            <pre className="text-gray-300 text-sm">
-              {JSON.stringify(data[dataSet as keyof typeof data], null, 2)}
-            </pre>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-white font-medium mb-3">Chọn loại biểu đồ:</h4>
-          <div className="space-y-2">
-            {chartTypes.map((chart) => (
-              <button
-                key={chart.id}
-                onClick={() => selectChart(chart.id)}
-                disabled={selectedChart === chart.id}
-                className={`w-full p-3 rounded-lg text-left transition-all ${
-                  selectedChart === chart.id
-                    ? 'bg-green-500/20 border-green-500/50 border'
-                    : chart.bestFor === dataSet
-                      ? 'bg-indigo-500/20 border-indigo-500/50 border hover:bg-indigo-500/30'
-                      : 'bg-gray-800/50 border border-gray-600 hover:bg-gray-700/50'
-                } disabled:opacity-50 disabled:cursor-not-allowed`}
-              >
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="text-white font-medium">{chart.name}</div>
-                    <div className="text-gray-400 text-sm">
-                      {chart.bestFor === dataSet
-                        ? '✓ Optimal for this data'
-                        : 'Available option'}
-                    </div>
-                  </div>
-                  <div className="text-yellow-400">{chart.points} pts</div>
-                </div>
-                {selectedChart === chart.id && (
-                  <div className="mt-2 text-green-400 text-sm">Selected ✓</div>
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {selectedChart && (
-        <button
-          onClick={() => onComplete(true, score)}
-          className="w-full mt-6 bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-3 px-6 rounded-lg font-medium hover:from-indigo-600 hover:to-blue-600 transition-all duration-200"
-        >
-          Complete Visualization ✓
-        </button>
-      )}
-    </div>
-  );
-}
