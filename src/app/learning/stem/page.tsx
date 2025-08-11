@@ -28,9 +28,9 @@ function convertToLesson(stemLesson: STEMLesson): BaseLessonData {
         description: ex.description,
         difficulty: ex.difficulty,
         materials: ex.materials || stemLesson.materials || [],
-        procedure: ex.steps || [ex.description],
+        procedure: ex.procedure || [ex.description],
         expectedResults:
-          ex.expectedResult || 'Successful completion of experiment',
+          ex.expectedResults || 'Successful completion of experiment',
         solution: ex.hints?.join(' ') || 'Follow the procedure carefully',
       })) || [],
     resources: [],

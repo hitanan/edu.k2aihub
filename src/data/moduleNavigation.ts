@@ -126,7 +126,70 @@ export const moduleNavigation: ModuleNavigation[] = [
 
   // AI Learning Modules (under /learning/ai/)
   {
-    id: 'ai-office-work',
+    id: 'ai',
+    title: 'AI Của Tôi - Learning',
+    subtitle: 'Khóa học AI thực tế',
+    description:
+      'Khóa học AI thực tế với 6 chuyên đề: Văn phòng, Sáng tạo, Giáo dục, Kinh doanh, Cuộc sống và Lập trình',
+    category: 'artificial-intelligence',
+    icon: '🤖',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '25-30 giờ',
+    difficulty: 'Trung bình',
+    href: '/learning/ai',
+    features: [
+      'Hướng dẫn 6 lĩnh vực AI ứng dụng',
+      'Thực hành với các tool AI hàng đầu',
+      'Prompt engineering chuyên sâu',
+      'Ứng dụng thực tế trong công việc',
+    ],
+    tags: ['ai', 'chatgpt', 'midjourney', 'practical', 'productivity'],
+    prerequisites: [
+      'Sử dụng máy tính và internet cơ bản',
+      'Tiếng Anh đọc hiểu (để sử dụng AI tools)',
+      'Tư duy sáng tạo và ham học hỏi',
+    ],
+    lessons: [
+      {
+        id: 'office-work',
+        title: 'AI cho Văn Phòng & Công Việc',
+        duration: '4 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'creative-design',
+        title: 'AI cho Sáng Tạo & Thiết Kế',
+        duration: '5 giờ',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'education-learning',
+        title: 'AI cho Giáo Dục & Học Tập',
+        duration: '3 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'business-marketing',
+        title: 'AI cho Kinh Doanh & Marketing',
+        duration: '6 giờ',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'daily-life',
+        title: 'AI cho Cuộc Sống Hàng Ngày',
+        duration: '2 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'programming-dev',
+        title: 'AI cho Lập Trình & Phát Triển',
+        duration: '5 giờ',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
+  {
+    id: 'office-work',
     title: 'AI cho Văn Phòng & Công Việc',
     subtitle: 'Tăng hiệu suất với AI',
     description:
@@ -173,7 +236,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
   },
   {
-    id: 'ai-creative-design',
+    id: 'creative-design',
     title: 'AI cho Sáng Tạo & Thiết Kế',
     subtitle: 'Sáng tạo nội dung với AI',
     description:
@@ -223,7 +286,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
   },
   {
-    id: 'ai-education-learning',
+    id: 'education-learning',
     title: 'AI cho Giáo Dục & Học Tập',
     subtitle: 'Học tập thông minh với AI',
     description:
@@ -270,7 +333,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
   },
   {
-    id: 'ai-business-marketing',
+    id: 'business-marketing',
     title: 'AI cho Kinh Doanh & Marketing',
     subtitle: 'Marketing thông minh với AI',
     description:
@@ -317,7 +380,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
   },
   {
-    id: 'ai-daily-life',
+    id: 'daily-life',
     title: 'AI cho Đời Sống Hàng Ngày',
     subtitle: 'AI trong cuộc sống',
     description:
@@ -364,7 +427,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
   },
   {
-    id: 'ai-programming-dev',
+    id: 'programming-dev',
     title: 'AI cho Lập Trình & Phát Triển',
     subtitle: 'Code thông minh với AI',
     description:
@@ -1552,27 +1615,51 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
     lessons: [
       {
-        id: 'python-basics',
-        title: 'Python Basics & Syntax Fundamentals',
-        duration: '120 phút',
+        id: 'python-introduction',
+        title: 'Giới thiệu Python',
+        duration: '60 phút',
         difficulty: 'Cơ bản',
       },
       {
-        id: 'data-structures-algorithms',
-        title: 'Data Structures & Algorithms in Python',
-        duration: '180 phút',
+        id: 'python-variables-operations',
+        title: 'Biến và Phép tính',
+        duration: '90 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'python-control-structures',
+        title: 'Cấu trúc điều khiển',
+        duration: '120 phút',
         difficulty: 'Trung bình',
       },
       {
-        id: 'web-development-flask',
-        title: 'Web Development with Flask & Django',
-        duration: '180 phút',
+        id: 'python-functions-modules',
+        title: 'Functions và Modules',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'python-data-structures',
+        title: 'Cấu trúc dữ liệu',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'python-file-exception-handling',
+        title: 'File và Exception Handling',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'python-oop',
+        title: 'Object-Oriented Programming',
+        duration: '150 phút',
         difficulty: 'Nâng cao',
       },
       {
-        id: 'data-science-ai-applications',
-        title: 'Data Science & AI Applications with Python',
-        duration: '120 phút',
+        id: 'algorithms-data-structures',
+        title: 'Thuật toán & Cấu trúc dữ liệu',
+        duration: '180 phút',
         difficulty: 'Nâng cao',
       },
     ],

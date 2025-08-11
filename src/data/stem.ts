@@ -9,26 +9,26 @@ export interface STEMLesson {
   duration: string;
   category: 'science' | 'technology' | 'engineering' | 'mathematics' | 'arts';
   objectives: string[];
+  prerequisites: string[]; // Required for BaseLessonData compatibility
   materials: string[];
   codeExample?: string;
   videoUrl?: string;
   imageUrl: string;
-  exercises: STEMExercise[];
+  exercises: Array<{
+    id?: string;
+    title: string;
+    description: string;
+    difficulty: string;
+    materials?: string[];
+    procedure?: string[];
+    expectedResults?: string;
+    solution?: string;
+    hints?: string[];
+  }>;
   realWorldApplications: string[];
   competitions: string[];
   icon?: string;
   topics?: string[];
-}
-
-export interface STEMExercise {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: 'Dễ' | 'Trung bình' | 'Khó';
-  steps: string[];
-  expectedResult: string;
-  hints: string[];
-  materials?: string[];
 }
 
 export const stemLessons: STEMLesson[] = [
@@ -48,6 +48,10 @@ export const stemLessons: STEMLesson[] = [
       'Phát triển tư duy khoa học và sáng tạo',
       'Thấy được ứng dụng STEM trong đời sống'
     ],
+    prerequisites: [
+      'Không yêu cầu kiến thức trước',
+      'Tò mò và hứng thú học tập'
+    ],
     materials: [
       'Giấy và bút màu',
       'Vật liệu tái chế',
@@ -64,13 +68,13 @@ export const stemLessons: STEMLesson[] = [
         description:
           'Tìm và phân loại các ví dụ STEM trong cuộc sống hàng ngày',
         difficulty: 'Dễ',
-        steps: [
+        procedure: [
           'Quan sát xung quanh nhà/lớp học trong 10 phút',
           'Ghi chép ít nhất 10 vật dụng/hiện tượng',
           'Phân loại theo S-T-E-M',
           'Thảo luận với bạn bè về các phát hiện'
         ],
-        expectedResult:
+        expectedResults:
           'Danh sách phân loại 10+ ví dụ STEM với giải thích ngắn',
         hints: [
           'Science: các hiện tượng tự nhiên (ánh sáng, âm thanh)',
@@ -84,14 +88,14 @@ export const stemLessons: STEMLesson[] = [
         title: 'Phát Minh Nhỏ',
         description: 'Thiết kế giải pháp cho một vấn đề đơn giản',
         difficulty: 'Trung bình',
-        steps: [
+        procedure: [
           'Xác định một vấn đề nhỏ trong cuộc sống (VD: bút chì thường rơi)',
           'Động não 5 giải pháp khác nhau',
           'Chọn giải pháp tốt nhất và vẽ thiết kế',
           'Làm mô hình đơn giản bằng vật liệu sẵn có',
           'Thử nghiệm và cải tiến'
         ],
-        expectedResult:
+        expectedResults:
           'Một mô hình/nguyên mẫu đơn giản giải quyết vấn đề đã chọn',
         hints: [
           'Bắt đầu với vấn đề rất nhỏ và cụ thể',
@@ -137,6 +141,10 @@ export const stemLessons: STEMLesson[] = [
       'Học cách đặt giả thuyết và kiểm chứng',
       'Tạo hứng thú với khoa học tự nhiên'
     ],
+    prerequisites: [
+      'Hiểu biết cơ bản về STEM',
+      'Khả năng quan sát và mô tả'
+    ],
     materials: [
       'Nước, dầu ăn, mật ong',
       'Bóng bay, khăn giấy',
@@ -153,14 +161,14 @@ export const stemLessons: STEMLesson[] = [
         title: 'Tháp Mật Độ Cầu Vồng',
         description: 'Tạo tháp chất lỏng nhiều tầng với các mật độ khác nhau',
         difficulty: 'Dễ',
-        steps: [
+        procedure: [
           'Chuẩn bị cốc thủy tinh cao và 4 chất lỏng: mật ong, nước có màu, dầu ăn, xà phòng rửa chén',
           'Đổ từ từ mật ong vào đáy cốc',
           'Dùng thìa đổ nhẹ nhàng nước có màu lên trên',
           'Tiếp tục với dầu ăn và xà phòng',
           'Quan sát và ghi chép hiện tượng'
         ],
-        expectedResult: 'Tháp chất lỏng 4 tầng rõ ràng, không trộn lẫn',
+        expectedResults: 'Tháp chất lỏng 4 tầng rõ ràng, không trộn lẫn',
         hints: [
           'Đổ chậm và nhẹ nhàng để tránh trộn lẫn',
           'Mật độ cao hơn sẽ chìm xuống dưới',
@@ -174,14 +182,14 @@ export const stemLessons: STEMLesson[] = [
         description:
           'Khám phá hiện tượng điện tĩnh qua các thí nghiệm vui nhộn',
         difficulty: 'Trung bình',
-        steps: [
+        procedure: [
           'Thí nghiệm 1: Cọ bóng bay vào tóc, sau đó đưa gần giấy vụn',
           'Thí nghiệm 2: Cọ lược nhựa vào vải, đưa gần tia nước nhỏ',
           'Thí nghiệm 3: Làm "tóc dựng đứng" bằng máy tạo điện tĩnh',
           'Ghi chép quan sát cho mỗi thí nghiệm',
           'Giải thích hiện tượng bằng lời của mình'
         ],
-        expectedResult:
+        expectedResults:
           'Quan sát thấy các hiện tượng hút, đẩy và chuyển động do điện tĩnh',
         hints: [
           'Thời tiết khô hanh sẽ cho kết quả tốt hơn',
@@ -222,6 +230,10 @@ export const stemLessons: STEMLesson[] = [
       'Phát triển tư duy logic và giải quyết vấn đề',
       'Tạo ra sản phẩm sáng tạo đầu tiên'
     ],
+    prerequisites: [
+      'Biết sử dụng máy tính cơ bản',
+      'Khả năng đọc hiểu tiếng Việt'
+    ],
     materials: [
       'Máy tính/tablet có kết nối internet',
       'Tài khoản Scratch (miễn phí)',
@@ -237,7 +249,7 @@ export const stemLessons: STEMLesson[] = [
         title: 'Câu Chuyện Hoạt Hình',
         description: 'Tạo một câu chuyện hoạt hình ngắn với nhiều nhân vật',
         difficulty: 'Dễ',
-        steps: [
+        procedure: [
           'Mở Scratch và tạo project mới',
           'Chọn 2-3 nhân vật (sprites) yêu thích',
           'Thiết kế background phù hợp với câu chuyện',
@@ -245,7 +257,7 @@ export const stemLessons: STEMLesson[] = [
           'Thêm âm thanh và hiệu ứng',
           'Chia sẻ project với bạn bè'
         ],
-        expectedResult:
+        expectedResults:
           'Câu chuyện hoạt hình 30-60 giây với thoại và chuyển động',
         hints: [
           'Bắt đầu với câu chuyện đơn giản: gặp gỡ, chào hỏi',
@@ -259,7 +271,7 @@ export const stemLessons: STEMLesson[] = [
         title: 'Game Đơn Giản',
         description: 'Tạo game bắt vật phẩm hoặc tránh chướng ngại vật',
         difficulty: 'Trung bình',
-        steps: [
+        procedure: [
           'Thiết kế nhân vật chính điều khiển bằng phím mũi tên',
           'Tạo vật phẩm di chuyển ngẫu nhiên',
           'Lập trình hệ thống điểm số',
@@ -267,7 +279,7 @@ export const stemLessons: STEMLesson[] = [
           'Tạo màn hình "Game Over"',
           'Test và cải tiến game'
         ],
-        expectedResult:
+        expectedResults:
           'Game hoàn chỉnh có thể chơi được với hệ thống tính điểm',
         hints: [
           'Dùng khối "if touching" để kiểm tra va chạm',
@@ -308,6 +320,10 @@ export const stemLessons: STEMLesson[] = [
       'Học cách làm việc với ràng buộc và giới hạn',
       'Trải nghiệm chu trình thiết kế-test-cải tiến'
     ],
+    prerequisites: [
+      'Kiến thức cơ bản về STEM',
+      'Kỹ năng làm việc tay cơ bản'
+    ],
     materials: [
       'Giấy A4, giấy carton',
       'Keo dán, băng keo',
@@ -325,7 +341,7 @@ export const stemLessons: STEMLesson[] = [
         description:
           'Thiết kế cầu từ giấy có thể chịu được trọng lượng lớn nhất',
         difficulty: 'Trung bình',
-        steps: [
+        procedure: [
           'Nghiên cứu các loại cầu trong thực tế (treo, dầm, vòm)',
           'Vẽ thiết kế cầu trên giấy với kích thước cụ thể',
           'Xây dựng cầu bằng giấy A4 (tối đa 5 tờ)',
@@ -333,7 +349,7 @@ export const stemLessons: STEMLesson[] = [
           'Ghi chép kết quả và cải tiến thiết kế',
           'So sánh với các bạn xem ai làm được cầu mạnh nhất'
         ],
-        expectedResult:
+        expectedResults:
           'Cầu giấy có thể chịu được ít nhất 500g mà không bị gãy',
         hints: [
           'Hình tam giác là hình mạnh nhất trong kỹ thuật',
@@ -347,7 +363,7 @@ export const stemLessons: STEMLesson[] = [
         title: 'Tháp Chống Động Đất',
         description: 'Xây tháp cao có thể sống sót qua "động đất" mô phỏng',
         difficulty: 'Khó',
-        steps: [
+        procedure: [
           'Nghiên cứu về các kỹ thuật chống động đất',
           'Thiết kế tháp cao từ 50cm bằng ống hút và kẹo dẻo',
           'Xây dựng theo thiết kế đã vẽ',
@@ -355,7 +371,7 @@ export const stemLessons: STEMLesson[] = [
           'Cải tiến để tháp vừa cao vừa ổn định',
           'Thi thố với bạn bè xem ai xây tháp cao và ổn định nhất'
         ],
-        expectedResult:
+        expectedResults:
           'Tháp cao ít nhất 50cm và không đổ khi rung bàn 10 giây',
         hints: [
           'Nền móng rộng sẽ giúp tháp ổn định hơn',
@@ -396,6 +412,10 @@ export const stemLessons: STEMLesson[] = [
       'Phát triển tư duy logic và phân tích',
       'Tạo hứng thú với toán học qua ứng dụng'
     ],
+    prerequisites: [
+      'Toán học cơ bản (cộng, trừ, nhân, chia)',
+      'Khái niệm cơ bản về tỷ lệ'
+    ],
     materials: [
       'Nguyên liệu nấu ăn (bột, đường, sữa)',
       'Cân nhà bếp, cốc đo lường',
@@ -412,14 +432,14 @@ export const stemLessons: STEMLesson[] = [
         title: 'Toán Học Trong Nấu Ăn',
         description: 'Học tỷ lệ và phân số qua việc làm bánh pancake',
         difficulty: 'Dễ',
-        steps: [
+        procedure: [
           'Chuẩn bị công thức pancake cho 4 người (1 cốc bột, 1 quả trứng, 1 cốc sữa)',
           'Tính toán nguyên liệu cần thiết cho 6 người',
           'Tính toán cho 2 người',
           'Thực hành làm bánh với tỷ lệ đã tính',
           'Ghi chép kết quả và rút kinh nghiệm'
         ],
-        expectedResult: 'Bánh pancake ngon với đúng tỷ lệ nguyên liệu',
+        expectedResults: 'Bánh pancake ngon với đúng tỷ lệ nguyên liệu',
         hints: [
           '6 người = 4 người × 1.5, nên nhân tất cả nguyên liệu với 1.5',
           '2 người = 4 người ÷ 2, nên chia tất cả nguyên liệu cho 2',
@@ -432,14 +452,14 @@ export const stemLessons: STEMLesson[] = [
         title: 'Xác Suất Qua Trò Chơi',
         description: 'Khám phá xác suất qua tung đồng xu và tung xúc xắc',
         difficulty: 'Trung bình',
-        steps: [
+        procedure: [
           'Dự đoán kết quả khi tung đồng xu 20 lần',
           'Thực hiện tung và ghi chép kết quả',
           'So sánh kết quả thực tế với dự đoán',
           'Lặp lại với xúc xắc (dự đoán số lần ra mỗi mặt)',
           'Phân tích tại sao có sự khác biệt'
         ],
-        expectedResult: 'Hiểu được khái niệm xác suất và sự ngẫu nhiên',
+        expectedResults: 'Hiểu được khái niệm xác suất và sự ngẫu nhiên',
         hints: [
           'Về lý thuyết, xác suất ngửa/sấp của đồng xu là 50%',
           'Với ít lần tung, kết quả có thể khác xa lý thuyết',
@@ -479,6 +499,10 @@ export const stemLessons: STEMLesson[] = [
       'Phát triển kỹ năng thiết kế và thẩm mỹ',
       'Tạo ra sản phẩm nghệ thuật có cơ sở khoa học'
     ],
+    prerequisites: [
+      'Kiến thức cơ bản về STEM',
+      'Kỹ năng vẽ và tô màu cơ bản'
+    ],
     materials: [
       'Màu nước, cọ vẽ, giấy vẽ',
       'Baking soda, giấm, màu thực phẩm',
@@ -495,7 +519,7 @@ export const stemLessons: STEMLesson[] = [
         title: 'Hóa Học Tạo Màu',
         description: 'Tạo ra màu sắc tự nhiên từ các phản ứng hóa học',
         difficulty: 'Trung bình',
-        steps: [
+        procedure: [
           'Pha dung dịch baking soda với nước',
           'Thêm màu thực phẩm để tạo màu cơ bản',
           'Nhỏ giấm vào để tạo phản ứng sủi bọt',
@@ -503,7 +527,7 @@ export const stemLessons: STEMLesson[] = [
           'Thử nghiệm với tỷ lệ khác nhau để tạo hiệu ứng đẹp',
           'Vẽ tranh bằng những màu đã tạo'
         ],
-        expectedResult: 'Bức tranh đầy màu sắc được tạo từ phản ứng hóa học',
+        expectedResults: 'Bức tranh đầy màu sắc được tạo từ phản ứng hóa học',
         hints: [
           'Phản ứng acid-base tạo CO2 và hiệu ứng sủi bọt',
           'Thử các tỷ lệ khác nhau để có màu sắc đa dạng',
@@ -517,7 +541,7 @@ export const stemLessons: STEMLesson[] = [
         description:
           'Tạo ra pattern nghệ thuật dựa trên các nguyên tắc toán học',
         difficulty: 'Trung bình',
-        steps: [
+        procedure: [
           'Học về tỷ lệ vàng và cách vẽ hình xoắn ốc',
           'Vẽ hình xoắn ốc Fibonacci trên giấy graph',
           'Tạo pattern mandala dựa trên đối xứng',
@@ -525,7 +549,7 @@ export const stemLessons: STEMLesson[] = [
           'Tô màu theo pattern toán học',
           'Kết hợp nhiều pattern để tạo tác phẩm hoàn chỉnh'
         ],
-        expectedResult:
+        expectedResults:
           'Tác phẩm nghệ thuật kết hợp hình học và màu sắc hài hòa',
         hints: [
           'Tỷ lệ vàng ≈ 1.618 tạo ra vẻ đẹp tự nhiên',
@@ -566,6 +590,10 @@ export const stemLessons: STEMLesson[] = [
       'Phát triển ý thức bảo vệ môi trường',
       'Tạo ra nguyên mẫu giải pháp thực tế'
     ],
+    prerequisites: [
+      'Hiểu biết về khoa học và kỹ thuật cơ bản',
+      'Ý thức về vấn đề môi trường'
+    ],
     materials: [
       'Chai nhựa, cát, sỏi, vải',
       'Bông, than hoạt tính',
@@ -583,7 +611,7 @@ export const stemLessons: STEMLesson[] = [
         description:
           'Thiết kế và chế tạo bộ lọc nước hiệu quả từ vật liệu tự nhiên',
         difficulty: 'Trung bình',
-        steps: [
+        procedure: [
           'Nghiên cứu về ô nhiễm nước và phương pháp lọc',
           'Thiết kế bộ lọc nhiều tầng bằng chai nhựa',
           'Xếp các lớp: vải, cát mịn, cát thô, sỏi từ trên xuống',
@@ -591,7 +619,7 @@ export const stemLessons: STEMLesson[] = [
           'Test bằng nước bẩn (đất + nước) và quan sát kết quả',
           'Cải tiến thiết kế để tăng hiệu quả lọc'
         ],
-        expectedResult: 'Nước đầu ra trong hơn đáng kể so với nước đầu vào',
+        expectedResults: 'Nước đầu ra trong hơn đáng kể so với nước đầu vào',
         hints: [
           'Các lớp lọc hoạt động từ thô đến mịn',
           'Than hoạt tính hấp thụ mùi và hóa chất',
@@ -605,7 +633,7 @@ export const stemLessons: STEMLesson[] = [
         description:
           'Xây dựng lò nướng sử dụng năng lượng mặt trời để nấu chín thức ăn',
         difficulty: 'Khó',
-        steps: [
+        procedure: [
           'Nghiên cứu nguyên lý hoạt động của năng lượng mặt trời',
           'Thiết kế hộp cách nhiệt bằng carton và giấy bạc',
           'Tạo góc phản xạ tối ưu để tập trung ánh sáng',
@@ -613,7 +641,7 @@ export const stemLessons: STEMLesson[] = [
           'Test bằng cách làm nóng nước hoặc nướng marshmallow',
           'Đo nhiệt độ và ghi chép hiệu suất'
         ],
-        expectedResult: 'Đạt nhiệt độ 60-80°C và có thể làm nóng thức ăn',
+        expectedResults: 'Đạt nhiệt độ 60-80°C và có thể làm nóng thức ăn',
         hints: [
           'Màu đen hấp thụ nhiệt tốt nhất',
           'Kính hoặc plastic trong tạo hiệu ứng nhà kính',
