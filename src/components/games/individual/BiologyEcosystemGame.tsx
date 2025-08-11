@@ -8,11 +8,7 @@ interface BiologyEcosystemGameProps {
   onRestart: () => void;
 }
 
-export function BiologyEcosystemGame({ 
-  onComplete, 
-  timeLeft, 
-  onRestart
-}: BiologyEcosystemGameProps) {
+export function BiologyEcosystemGame({ onComplete, timeLeft, onRestart }: BiologyEcosystemGameProps) {
   const [ecosystem, setEcosystem] = useState({
     plants: 50,
     herbivores: 30,
@@ -88,9 +84,7 @@ export function BiologyEcosystemGame({
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          🌿 Ecosystem Simulation - Year {year}
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">🌿 Ecosystem Simulation - Year {year}</h3>
         <div className="text-lime-400 font-medium">Balance Score: {score}</div>
       </div>
 
@@ -118,9 +112,7 @@ export function BiologyEcosystemGame({
                     +5
                   </button>
                 </div>
-                <div className="text-gray-400 text-xs mt-1">
-                  {((count / total) * 100).toFixed(1)}% of ecosystem
-                </div>
+                <div className="text-gray-400 text-xs mt-1">{((count / total) * 100).toFixed(1)}% of ecosystem</div>
               </div>
             ))}
           </div>
@@ -138,29 +130,25 @@ export function BiologyEcosystemGame({
               <div className="flex justify-between">
                 <span className="text-gray-300">🌿 Plants:</span>
                 <span className="text-green-400">
-                  {ecosystem.plants} (
-                  {((ecosystem.plants / total) * 100).toFixed(1)}%)
+                  {ecosystem.plants} ({((ecosystem.plants / total) * 100).toFixed(1)}%)
                 </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">🐰 Herbivores:</span>
                 <span className="text-yellow-400">
-                  {ecosystem.herbivores} (
-                  {((ecosystem.herbivores / total) * 100).toFixed(1)}%)
+                  {ecosystem.herbivores} ({((ecosystem.herbivores / total) * 100).toFixed(1)}%)
                 </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">🦅 Carnivores:</span>
                 <span className="text-red-400">
-                  {ecosystem.carnivores} (
-                  {((ecosystem.carnivores / total) * 100).toFixed(1)}%)
+                  {ecosystem.carnivores} ({((ecosystem.carnivores / total) * 100).toFixed(1)}%)
                 </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">🍄 Decomposers:</span>
                 <span className="text-orange-400">
-                  {ecosystem.decomposers} (
-                  {((ecosystem.decomposers / total) * 100).toFixed(1)}%)
+                  {ecosystem.decomposers} ({((ecosystem.decomposers / total) * 100).toFixed(1)}%)
                 </span>
               </div>
             </div>
@@ -184,9 +172,7 @@ export function BiologyEcosystemGame({
             disabled={year >= 10}
             className="w-full bg-gradient-to-r from-lime-500 to-green-500 text-white py-3 px-4 rounded-lg font-medium hover:from-lime-600 hover:to-green-600 transition-all duration-200 disabled:opacity-50"
           >
-            {year < 10
-              ? `⏭️ Advance to Year ${year + 1}`
-              : '🎯 Simulation Complete'}
+            {year < 10 ? `⏭️ Advance to Year ${year + 1}` : '🎯 Simulation Complete'}
           </button>
         </div>
       </div>

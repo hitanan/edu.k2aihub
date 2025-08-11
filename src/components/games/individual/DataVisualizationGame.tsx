@@ -6,11 +6,7 @@ interface DataVisualizationGameProps {
   onRestart: () => void;
 }
 
-export function DataVisualizationGame({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: DataVisualizationGameProps) {
+export function DataVisualizationGame({ onComplete, timeLeft, onRestart }: DataVisualizationGameProps) {
   const [selectedChart, setSelectedChart] = useState<string | null>(null);
   const [dataSet, setDataSet] = useState('sales');
   const [score, setScore] = useState(0);
@@ -41,9 +37,7 @@ export function DataVisualizationGame({
     setSelectedChart(chartId);
     const chart = chartTypes.find((c) => c.id === chartId);
     const isOptimal = chart?.bestFor === dataSet;
-    const points = isOptimal
-      ? chart.points
-      : Math.floor(chart?.points ?? 0 / 2) || 5;
+    const points = isOptimal ? chart.points : Math.floor(chart?.points ?? 0 / 2) || 5;
     setScore((prev) => prev + points);
   };
 
@@ -54,9 +48,7 @@ export function DataVisualizationGame({
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          📊 Trực quan hóa dữ liệu
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">📊 Trực quan hóa dữ liệu</h3>
         <div className="text-indigo-400 font-medium">Điểm: {score}</div>
       </div>
 
@@ -84,17 +76,13 @@ export function DataVisualizationGame({
               }`}
             >
               <div className="text-white font-medium">User Data</div>
-              <div className="text-gray-400 text-sm">
-                Device usage breakdown
-              </div>
+              <div className="text-gray-400 text-sm">Device usage breakdown</div>
             </button>
           </div>
 
           <h4 className="text-white font-medium mb-3">Dữ liệu hiện tại:</h4>
           <div className="bg-gray-800/50 rounded-lg p-4">
-            <pre className="text-gray-300 text-sm">
-              {JSON.stringify(data[dataSet as keyof typeof data], null, 2)}
-            </pre>
+            <pre className="text-gray-300 text-sm">{JSON.stringify(data[dataSet as keyof typeof data], null, 2)}</pre>
           </div>
         </div>
 
@@ -118,16 +106,12 @@ export function DataVisualizationGame({
                   <div>
                     <div className="text-white font-medium">{chart.name}</div>
                     <div className="text-gray-400 text-sm">
-                      {chart.bestFor === dataSet
-                        ? '✓ Optimal for this data'
-                        : 'Available option'}
+                      {chart.bestFor === dataSet ? '✓ Optimal for this data' : 'Available option'}
                     </div>
                   </div>
                   <div className="text-yellow-400">{chart.points} pts</div>
                 </div>
-                {selectedChart === chart.id && (
-                  <div className="mt-2 text-green-400 text-sm">Selected ✓</div>
-                )}
+                {selectedChart === chart.id && <div className="mt-2 text-green-400 text-sm">Selected ✓</div>}
               </button>
             ))}
           </div>

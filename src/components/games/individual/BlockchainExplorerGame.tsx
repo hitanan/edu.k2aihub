@@ -10,9 +10,7 @@ interface BlockchainExplorerGameProps {
 export default function BlockchainExplorerGame({ onComplete, timeLeft, onRestart }: BlockchainExplorerGameProps) {
   const [currentBlock, setCurrentBlock] = useState(0);
   const [score, setScore] = useState(0);
-  const [verifiedTransactions, setVerifiedTransactions] = useState<Set<number>>(
-    new Set(),
-  );
+  const [verifiedTransactions, setVerifiedTransactions] = useState<Set<number>>(new Set());
 
   const blocks = blockchainBlocks;
   const currentBlockData = blocks[currentBlock];
@@ -39,9 +37,7 @@ export default function BlockchainExplorerGame({ onComplete, timeLeft, onRestart
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          🔗 Blockchain Explorer - Block #{currentBlockData.id}
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">🔗 Blockchain Explorer - Block #{currentBlockData.id}</h3>
         <div className="text-blue-400 font-medium">Điểm: {score}</div>
       </div>
 
@@ -51,15 +47,11 @@ export default function BlockchainExplorerGame({ onComplete, timeLeft, onRestart
           <div className="bg-gray-800/50 rounded-lg p-4 space-y-2">
             <div className="flex justify-between">
               <span className="text-gray-400">Hash:</span>
-              <span className="text-cyan-400 font-mono text-sm">
-                {currentBlockData.hash}
-              </span>
+              <span className="text-cyan-400 font-mono text-sm">{currentBlockData.hash}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Previous Hash:</span>
-              <span className="text-gray-400 font-mono text-sm">
-                {currentBlockData.previousHash}
-              </span>
+              <span className="text-gray-400 font-mono text-sm">{currentBlockData.previousHash}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Nonce:</span>
@@ -67,17 +59,13 @@ export default function BlockchainExplorerGame({ onComplete, timeLeft, onRestart
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Timestamp:</span>
-              <span className="text-green-400">
-                {currentBlockData.timestamp}
-              </span>
+              <span className="text-green-400">{currentBlockData.timestamp}</span>
             </div>
           </div>
         </div>
 
         <div>
-          <h4 className="text-white font-medium mb-3">
-            Transactions ({currentBlockData.transactions.length}):
-          </h4>
+          <h4 className="text-white font-medium mb-3">Transactions ({currentBlockData.transactions.length}):</h4>
           <div className="space-y-2">
             {currentBlockData.transactions.map((tx) => (
               <div
@@ -98,9 +86,7 @@ export default function BlockchainExplorerGame({ onComplete, timeLeft, onRestart
                       Amount: {tx.amount} | Fee: {tx.fee}
                     </div>
                   </div>
-                  {verifiedTransactions.has(tx.id) && (
-                    <span className="text-green-400">✓</span>
-                  )}
+                  {verifiedTransactions.has(tx.id) && <span className="text-green-400">✓</span>}
                 </div>
               </div>
             ))}
@@ -113,9 +99,7 @@ export default function BlockchainExplorerGame({ onComplete, timeLeft, onRestart
           onClick={nextBlock}
           className="w-full mt-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-200"
         >
-          {currentBlock < blocks.length - 1
-            ? 'Next Block →'
-            : 'Complete Blockchain ✓'}
+          {currentBlock < blocks.length - 1 ? 'Next Block →' : 'Complete Blockchain ✓'}
         </button>
       )}
     </div>

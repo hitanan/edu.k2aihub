@@ -7,11 +7,7 @@ interface RoboticsNavigationGameProps {
   onRestart: () => void;
 }
 
-export default function RoboticsNavigationGame({
-  onComplete,
-  timeLeft,
-  onRestart,
-}: RoboticsNavigationGameProps) {
+export default function RoboticsNavigationGame({ onComplete, timeLeft, onRestart }: RoboticsNavigationGameProps) {
   const [currentLevel, setCurrentLevel] = useState(0);
   const [robotPosition, setRobotPosition] = useState<[number, number]>([0, 0]);
   const [commands, setCommands] = useState<string[]>([]);
@@ -25,9 +21,7 @@ export default function RoboticsNavigationGame({
     path: [number, number][];
   }>({ openSet: [], closedSet: [], path: [] });
   const [showAlgorithm, setShowAlgorithm] = useState(false);
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState<
-    'A*' | 'Dijkstra' | 'BFS'
-  >('A*');
+  const [selectedAlgorithm, setSelectedAlgorithm] = useState<'A*' | 'Dijkstra' | 'BFS'>('A*');
   const [levelStartTime, setLevelStartTime] = useState(Date.now());
 
   // Import robotics levels data
@@ -113,12 +107,8 @@ export default function RoboticsNavigationGame({
   // Add more levels up to 100 with increasing difficulty
   for (let i = 4; i <= 100; i++) {
     const size = Math.min(6 + Math.floor(i / 10), 20);
-    const difficulty =
-      i <= 10 ? 'Dễ' : i <= 30 ? 'Trung bình' : i <= 70 ? 'Khó' : 'Chuyên gia';
-    const algorithm = ['A*', 'Dijkstra', 'BFS'][i % 3] as
-      | 'A*'
-      | 'Dijkstra'
-      | 'BFS';
+    const difficulty = i <= 10 ? 'Dễ' : i <= 30 ? 'Trung bình' : i <= 70 ? 'Khó' : 'Chuyên gia';
+    const algorithm = ['A*', 'Dijkstra', 'BFS'][i % 3] as 'A*' | 'Dijkstra' | 'BFS';
 
     const grid = Array(size)
       .fill(null)
@@ -151,11 +141,14 @@ export default function RoboticsNavigationGame({
   }
 
   const currentLevelData = ROBOTICS_LEVELS[currentLevel];
-  const maze = useMemo(() => ({
-    grid: currentLevelData.grid,
-    start: currentLevelData.start,
-    end: currentLevelData.end,
-  }), [currentLevelData]);
+  const maze = useMemo(
+    () => ({
+      grid: currentLevelData.grid,
+      start: currentLevelData.start,
+      end: currentLevelData.end,
+    }),
+    [currentLevelData],
+  );
 
   // A* Algorithm implementation
   const calculateAStar = (start: [number, number], end: [number, number]) => {
@@ -169,8 +162,7 @@ export default function RoboticsNavigationGame({
     const closedSet: [number, number][] = [];
     const visited = new Set<string>();
 
-    const heuristic = (a: [number, number], b: [number, number]) =>
-      Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]);
+    const heuristic = (a: [number, number], b: [number, number]) => Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]);
 
     openSet.push({
       pos: start,
@@ -237,8 +229,7 @@ export default function RoboticsNavigationGame({
       for (const neighbor of neighbors) {
         const [x, y] = neighbor;
 
-        if (x < 0 || x >= maze.grid.length || y < 0 || y >= maze.grid[0].length)
-          continue;
+        if (x < 0 || x >= maze.grid.length || y < 0 || y >= maze.grid[0].length) continue;
         if (maze.grid[x][y] === 1) continue;
         if (visited.has(`${x},${y}`)) continue;
 
@@ -246,9 +237,7 @@ export default function RoboticsNavigationGame({
         const h = heuristic(neighbor, end);
         const f = g + h;
 
-        const existingNode = openSet.find(
-          (n) => n.pos[0] === x && n.pos[1] === y,
-        );
+        const existingNode = openSet.find((n) => n.pos[0] === x && n.pos[1] === y);
         if (!existingNode || g < existingNode.g) {
           if (existingNode) {
             existingNode.g = g;
@@ -271,10 +260,7 @@ export default function RoboticsNavigationGame({
   };
 
   // Dijkstra Algorithm implementation
-  const calculateDijkstra = (
-    start: [number, number],
-    end: [number, number],
-  ) => {
+  const calculateDijkstra = (start: [number, number], end: [number, number]) => {
     const distances = new Map<string, number>();
     const previous = new Map<string, [number, number] | null>();
     const unvisited = new Set<string>();
@@ -307,10 +293,7 @@ export default function RoboticsNavigationGame({
 
       if (currentKey === '' || minDistance === Infinity) break;
 
-      const [currentX, currentY] = currentKey.split(',').map(Number) as [
-        number,
-        number,
-      ];
+      const [currentX, currentY] = currentKey.split(',').map(Number) as [number, number];
       unvisited.delete(currentKey);
 
       steps.push({
@@ -369,8 +352,7 @@ export default function RoboticsNavigationGame({
 
   // BFS Algorithm implementation
   const calculateBFS = (start: [number, number], end: [number, number]) => {
-    const queue: Array<{ pos: [number, number]; path: [number, number][] }> =
-      [];
+    const queue: Array<{ pos: [number, number]; path: [number, number][] }> = [];
     const visited = new Set<string>();
     const steps = [];
 
@@ -384,9 +366,7 @@ export default function RoboticsNavigationGame({
       steps.push({
         current: current.pos,
         queue: queue.map((q) => q.pos),
-        visited: Array.from(visited).map(
-          (v) => v.split(',').map(Number) as [number, number],
-        ),
+        visited: Array.from(visited).map((v) => v.split(',').map(Number) as [number, number]),
         currentPath: current.path,
       });
 
@@ -449,7 +429,13 @@ export default function RoboticsNavigationGame({
         openSet: [],
         closedSet:
           result.steps.length > 0
-            ? (result.steps[result.steps.length - 1] as { openSet: [number, number][]; closedSet: [number, number][]; current: [number, number] }).closedSet || []
+            ? (
+                result.steps[result.steps.length - 1] as {
+                  openSet: [number, number][];
+                  closedSet: [number, number][];
+                  current: [number, number];
+                }
+              ).closedSet || []
             : [],
         path: result.path,
       });
@@ -492,16 +478,9 @@ export default function RoboticsNavigationGame({
 
     if (robotX === endX && robotY === maze.end[1]) {
       const timeUsed = Date.now() - levelStartTime;
-      const timeBonus = Math.max(
-        0,
-        (currentLevelData.timeLimit * 1000 - timeUsed) / 1000,
-      );
-      const moveBonus = Math.max(
-        0,
-        (currentLevelData.minMoves - commands.length) * 5,
-      );
-      const levelScore =
-        currentLevelData.pointValue + Math.floor(timeBonus) + moveBonus;
+      const timeBonus = Math.max(0, (currentLevelData.timeLimit * 1000 - timeUsed) / 1000);
+      const moveBonus = Math.max(0, (currentLevelData.minMoves - commands.length) * 5);
+      const levelScore = currentLevelData.pointValue + Math.floor(timeBonus) + moveBonus;
 
       setScore(levelScore);
       setTotalScore((prev) => prev + levelScore);
@@ -568,52 +547,36 @@ export default function RoboticsNavigationGame({
         switch (command) {
           case '⬆️ Lên':
           case 'UP':
-            if (
-              currentPos[0] > 0 &&
-              maze.grid[currentPos[0] - 1][currentPos[1]] !== 1
-            ) {
+            if (currentPos[0] > 0 && maze.grid[currentPos[0] - 1][currentPos[1]] !== 1) {
               newPos[0]--;
             }
             break;
           case '⬇️ Xuống':
           case 'DOWN':
-            if (
-              currentPos[0] < maze.grid.length - 1 &&
-              maze.grid[currentPos[0] + 1][currentPos[1]] !== 1
-            ) {
+            if (currentPos[0] < maze.grid.length - 1 && maze.grid[currentPos[0] + 1][currentPos[1]] !== 1) {
               newPos[0]++;
             }
             break;
           case '⬅️ Trái':
           case 'LEFT':
-            if (
-              currentPos[1] > 0 &&
-              maze.grid[currentPos[0]][currentPos[1] - 1] !== 1
-            ) {
+            if (currentPos[1] > 0 && maze.grid[currentPos[0]][currentPos[1] - 1] !== 1) {
               newPos[1]--;
             }
             break;
           case '➡️ Phải':
           case 'RIGHT':
-            if (
-              currentPos[1] < maze.grid[0].length - 1 &&
-              maze.grid[currentPos[0]][currentPos[1] + 1] !== 1
-            ) {
+            if (currentPos[1] < maze.grid[0].length - 1 && maze.grid[currentPos[0]][currentPos[1] + 1] !== 1) {
               newPos[1]++;
             }
             break;
           case '🔍 Tìm đường':
           case '🤖 A* Algorithm':
-            const result = calculateAStar(currentPos, [
-              maze.end[0],
-              maze.end[1],
-            ]);
+            const result = calculateAStar(currentPos, [maze.end[0], maze.end[1]]);
             if (result.path.length > 0) {
               newPos = result.path[1] || newPos; // Move to next step in optimal path
               setAlgorithmVisualization({
                 openSet: result.steps[result.steps.length - 1]?.openSet || [],
-                closedSet:
-                  result.steps[result.steps.length - 1]?.closedSet || [],
+                closedSet: result.steps[result.steps.length - 1]?.closedSet || [],
                 path: result.path,
               });
               setShowAlgorithm(true);
@@ -689,31 +652,17 @@ export default function RoboticsNavigationGame({
               🤖 Level {currentLevel + 1}: {currentLevelData.name}
             </h3>
             <div className="flex items-center gap-4 mt-2">
-              <span
-                className={`font-medium ${getLevelColor(currentLevelData.difficulty)}`}
-              >
+              <span className={`font-medium ${getLevelColor(currentLevelData.difficulty)}`}>
                 {currentLevelData.difficulty}
               </span>
-              <span className="text-blue-400">
-                Algorithm: {currentLevelData.algorithm}
-              </span>
-              <span className="text-purple-400">
-                Score: {totalScore + score}
-              </span>
+              <span className="text-blue-400">Algorithm: {currentLevelData.algorithm}</span>
+              <span className="text-purple-400">Score: {totalScore + score}</span>
             </div>
           </div>
 
           <div className="text-right">
             <div className="text-gray-300 text-sm">
-              Thời gian:{' '}
-              {Math.max(
-                0,
-                Math.floor(
-                  currentLevelData.timeLimit -
-                    (Date.now() - levelStartTime) / 1000,
-                ),
-              )}
-              s
+              Thời gian: {Math.max(0, Math.floor(currentLevelData.timeLimit - (Date.now() - levelStartTime) / 1000))}s
             </div>
             <div className="text-gray-300 text-sm">
               Moves: {commands.length}/{currentLevelData.minMoves}
@@ -721,16 +670,11 @@ export default function RoboticsNavigationGame({
           </div>
         </div>
 
-        <p className="text-gray-300 text-sm mb-2">
-          {currentLevelData.description}
-        </p>
+        <p className="text-gray-300 text-sm mb-2">{currentLevelData.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {currentLevelData.tips.map((tip, index) => (
-            <span
-              key={index}
-              className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded"
-            >
+            <span key={index} className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">
               💡 {tip}
             </span>
           ))}
@@ -753,26 +697,14 @@ export default function RoboticsNavigationGame({
                 row.map((cell, j) => {
                   const isStart = i === maze.start[0] && j === maze.start[1];
                   const isEnd = i === maze.end[0] && j === maze.end[1];
-                  const isRobot =
-                    i === robotPosition[0] && j === robotPosition[1];
-                  const isPath = pathHistory.some(
-                    ([x, y]) => x === i && y === j,
-                  );
+                  const isRobot = i === robotPosition[0] && j === robotPosition[1];
+                  const isPath = pathHistory.some(([x, y]) => x === i && y === j);
                   const isAlgorithmPath =
-                    showAlgorithm &&
-                    algorithmVisualization.path.some(
-                      ([x, y]) => x === i && y === j,
-                    );
+                    showAlgorithm && algorithmVisualization.path.some(([x, y]) => x === i && y === j);
                   const isOpenSet =
-                    showAlgorithm &&
-                    algorithmVisualization.openSet.some(
-                      ([x, y]) => x === i && y === j,
-                    );
+                    showAlgorithm && algorithmVisualization.openSet.some(([x, y]) => x === i && y === j);
                   const isClosedSet =
-                    showAlgorithm &&
-                    algorithmVisualization.closedSet.some(
-                      ([x, y]) => x === i && y === j,
-                    );
+                    showAlgorithm && algorithmVisualization.closedSet.some(([x, y]) => x === i && y === j);
 
                   let bgColor = 'bg-gray-800';
                   if (cell === 1) bgColor = 'bg-gray-600'; // Wall
@@ -837,9 +769,7 @@ export default function RoboticsNavigationGame({
 
           <div className="bg-gray-800/50 rounded-lg p-4 mb-4">
             <div className="mb-3">
-              <label className="text-white text-sm mb-2 block">
-                Select Algorithm:
-              </label>
+              <label className="text-white text-sm mb-2 block">Select Algorithm:</label>
               <select
                 value={selectedAlgorithm}
                 onChange={(e) => setSelectedAlgorithm(e.target.value as 'A*' | 'Dijkstra' | 'BFS')}
@@ -886,10 +816,7 @@ export default function RoboticsNavigationGame({
               ) : (
                 <div className="flex flex-wrap gap-1">
                   {commands.map((cmd, index) => (
-                    <span
-                      key={index}
-                      className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs"
-                    >
+                    <span key={index} className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs">
                       {cmd}
                     </span>
                   ))}
@@ -907,15 +834,11 @@ export default function RoboticsNavigationGame({
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">Difficulty:</span>
-                <span className={getLevelColor(currentLevelData.difficulty)}>
-                  {currentLevelData.difficulty}
-                </span>
+                <span className={getLevelColor(currentLevelData.difficulty)}>{currentLevelData.difficulty}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">Points Available:</span>
-                <span className="text-yellow-400">
-                  {currentLevelData.pointValue}
-                </span>
+                <span className="text-yellow-400">{currentLevelData.pointValue}</span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
                 <div
@@ -927,18 +850,14 @@ export default function RoboticsNavigationGame({
 
             {currentLevel < 10 && (
               <div className="mt-3">
-                <label className="text-white text-sm mb-2 block">
-                  Quick Level Select (1-10):
-                </label>
+                <label className="text-white text-sm mb-2 block">Quick Level Select (1-10):</label>
                 <div className="grid grid-cols-5 gap-1">
                   {Array.from({ length: 10 }, (_, i) => (
                     <button
                       key={i}
                       onClick={() => skipToLevel(i)}
                       className={`px-2 py-1 rounded text-xs ${
-                        currentLevel === i
-                          ? 'bg-blue-500 text-white'
-                          : 'bg-gray-600 hover:bg-gray-500 text-gray-300'
+                        currentLevel === i ? 'bg-blue-500 text-white' : 'bg-gray-600 hover:bg-gray-500 text-gray-300'
                       }`}
                     >
                       {i + 1}

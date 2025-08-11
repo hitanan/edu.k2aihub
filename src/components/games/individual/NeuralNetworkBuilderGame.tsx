@@ -13,11 +13,7 @@ interface NeuralNetworkBuilderGameProps {
   onRestart: () => void;
 }
 
-export function NeuralNetworkBuilderGame({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: NeuralNetworkBuilderGameProps) {
+export function NeuralNetworkBuilderGame({ onComplete, timeLeft, onRestart }: NeuralNetworkBuilderGameProps) {
   const [layers, setLayers] = useState<Layer[]>([
     { id: 1, type: 'input', neurons: 3, name: 'Input Layer' },
     { id: 2, type: 'output', neurons: 1, name: 'Output Layer' },
@@ -68,9 +64,7 @@ export function NeuralNetworkBuilderGame({
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          🧠 Neural Network Builder
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">🧠 Neural Network Builder</h3>
         <div className="flex justify-between">
           <div className="text-pink-400 font-medium">Điểm: {score}</div>
           <div
@@ -99,9 +93,7 @@ export function NeuralNetworkBuilderGame({
                 <div className="flex justify-between items-center">
                   <div>
                     <div className="text-white font-medium">{layer.name}</div>
-                    <div className="text-gray-400 text-sm">
-                      Neurons: {layer.neurons}
-                    </div>
+                    <div className="text-gray-400 text-sm">Neurons: {layer.neurons}</div>
                   </div>
                   {layer.type === 'hidden' && (
                     <div className="flex gap-1">
@@ -154,11 +146,7 @@ export function NeuralNetworkBuilderGame({
                 <span className="text-gray-300">Model Accuracy:</span>
                 <span
                   className={
-                    currentAccuracy > 90
-                      ? 'text-green-400'
-                      : currentAccuracy > 70
-                        ? 'text-yellow-400'
-                        : 'text-red-400'
+                    currentAccuracy > 90 ? 'text-green-400' : currentAccuracy > 70 ? 'text-yellow-400' : 'text-red-400'
                   }
                 >
                   {currentAccuracy.toFixed(1)}%
@@ -167,11 +155,7 @@ export function NeuralNetworkBuilderGame({
               <div className="w-full bg-gray-700 rounded-full h-2">
                 <div
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    currentAccuracy > 90
-                      ? 'bg-green-500'
-                      : currentAccuracy > 70
-                        ? 'bg-yellow-500'
-                        : 'bg-red-500'
+                    currentAccuracy > 90 ? 'bg-green-500' : currentAccuracy > 70 ? 'bg-yellow-500' : 'bg-red-500'
                   }`}
                   style={{ width: `${currentAccuracy}%` }}
                 />

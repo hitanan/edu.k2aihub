@@ -37,12 +37,7 @@ interface PythonCodingGameProps {
   onRestart: () => void;
 }
 
-export function PythonCodingGame({ 
-  gameData, 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: PythonCodingGameProps) {
+export function PythonCodingGame({ gameData, onComplete, timeLeft, onRestart }: PythonCodingGameProps) {
   const [currentChallenge, setCurrentChallenge] = useState(0);
   const [userCode, setUserCode] = useState('');
   const [showSolution, setShowSolution] = useState(false);
@@ -105,14 +100,13 @@ export function PythonCodingGame({
       <div className="mb-6">
         <h4 className="text-white font-medium mb-2">Test cases:</h4>
         {challenge.testCases.map(
-          (testCase: { input: any; output: any; description?: string }, index: number) => ( // eslint-disable-line @typescript-eslint/no-explicit-any
+          (
+            testCase: { input: any; output: any; description?: string }, // eslint-disable-line @typescript-eslint/no-explicit-any
+            index: number,
+          ) => (
             <div key={index} className="bg-gray-800 p-2 rounded mb-2 text-sm">
-              <span className="text-blue-300">
-                Input: {JSON.stringify(testCase.input)}
-              </span>
-              <span className="text-green-300 ml-4">
-                Output: {JSON.stringify(testCase.output)}
-              </span>
+              <span className="text-blue-300">Input: {JSON.stringify(testCase.input)}</span>
+              <span className="text-green-300 ml-4">Output: {JSON.stringify(testCase.output)}</span>
             </div>
           ),
         )}
@@ -130,9 +124,7 @@ export function PythonCodingGame({
       {showSolution && (
         <div className="mt-4 p-4 bg-blue-500/20 border border-blue-500/30 rounded-lg">
           <p className="text-blue-300 font-medium mb-2">Đáp án:</p>
-          <pre className="bg-gray-800 p-3 rounded text-green-400 text-sm overflow-x-auto">
-            {challenge.solution}
-          </pre>
+          <pre className="bg-gray-800 p-3 rounded text-green-400 text-sm overflow-x-auto">{challenge.solution}</pre>
         </div>
       )}
     </div>

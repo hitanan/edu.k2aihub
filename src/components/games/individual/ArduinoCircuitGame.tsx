@@ -5,10 +5,13 @@ interface ArduinoCircuitGameProps {
     circuits: Array<{
       name: string;
       explanation: string;
-      components: Array<{
-        id?: string;
-        name?: string;
-      } | string>;
+      components: Array<
+        | {
+            id?: string;
+            name?: string;
+          }
+        | string
+      >;
       code?: string;
     }>;
   };
@@ -17,16 +20,9 @@ interface ArduinoCircuitGameProps {
   onRestart: () => void;
 }
 
-export function ArduinoCircuitGame({
-  gameData,
-  onComplete,
-  timeLeft,
-  onRestart,
-}: ArduinoCircuitGameProps) {
+export function ArduinoCircuitGame({ gameData, onComplete, timeLeft, onRestart }: ArduinoCircuitGameProps) {
   const [currentCircuit, setCurrentCircuit] = useState(0);
-  const [placedComponents, setPlacedComponents] = useState<
-    Record<string, boolean>
-  >({});
+  const [placedComponents, setPlacedComponents] = useState<Record<string, boolean>>({});
   const [score, setScore] = useState(0);
 
   const circuit = gameData?.circuits?.[currentCircuit];
@@ -72,10 +68,7 @@ export function ArduinoCircuitGame({
       <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
         <div className="text-center text-white">
           <p className="mb-4">Không thể tải dữ liệu mạch điện.</p>
-          <button
-            onClick={onRestart}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
-          >
+          <button onClick={onRestart} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">
             Thử lại
           </button>
         </div>
@@ -120,9 +113,7 @@ export function ArduinoCircuitGame({
                 >
                   <div className="flex items-center justify-between">
                     <span>{componentName}</span>
-                    {placedComponents[componentKey] && (
-                      <span className="text-green-400">✓</span>
-                    )}
+                    {placedComponents[componentKey] && <span className="text-green-400">✓</span>}
                   </div>
                 </div>
               );
@@ -133,9 +124,7 @@ export function ArduinoCircuitGame({
         <div>
           <h4 className="text-white font-medium mb-3">Workspace:</h4>
           <div className="bg-gray-800/50 rounded-lg p-4 min-h-48 border-2 border-dashed border-gray-600">
-            <p className="text-gray-400 text-center mb-4">
-              Nhấp vào linh kiện để đặt vào workspace
-            </p>
+            <p className="text-gray-400 text-center mb-4">Nhấp vào linh kiện để đặt vào workspace</p>
             <div className="grid grid-cols-2 gap-2">
               {Object.entries(placedComponents).map(([key, placed]) =>
                 placed ? (
@@ -155,9 +144,7 @@ export function ArduinoCircuitGame({
       {circuit.code && (
         <div className="mt-6 p-4 bg-gray-800/50 rounded-lg">
           <h4 className="text-white font-medium mb-3">Code Arduino:</h4>
-          <pre className="bg-gray-900 p-4 rounded text-green-400 text-sm overflow-x-auto">
-            {circuit.code}
-          </pre>
+          <pre className="bg-gray-900 p-4 rounded text-green-400 text-sm overflow-x-auto">{circuit.code}</pre>
         </div>
       )}
     </div>

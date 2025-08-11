@@ -14,12 +14,7 @@ interface AIEthicsGameProps {
   onRestart: () => void;
 }
 
-export default function AIEthicsGame({ 
-  gameData, 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: AIEthicsGameProps) {
+export default function AIEthicsGame({ gameData, onComplete, timeLeft, onRestart }: AIEthicsGameProps) {
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -49,9 +44,7 @@ export default function AIEthicsGame({
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-4">
-          Tình huống đạo đức AI
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-4">Tình huống đạo đức AI</h3>
         <div className="text-blue-400 font-medium">Điểm: {score}</div>
       </div>
 

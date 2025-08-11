@@ -8,11 +8,7 @@ interface ChemistryLabGameProps {
   onRestart: () => void;
 }
 
-export function ChemistryLabGame({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: ChemistryLabGameProps) {
+export function ChemistryLabGame({ onComplete, timeLeft, onRestart }: ChemistryLabGameProps) {
   const [currentExperiment, setCurrentExperiment] = useState(0);
   const [selectedCompounds, setSelectedCompounds] = useState<string[]>([]);
   const [temperature, setTemperature] = useState(25);
@@ -52,9 +48,7 @@ export function ChemistryLabGame({
   };
 
   const runExperiment = () => {
-    const hasRequiredCompounds = currentExp.requiredCompounds.every((comp) =>
-      selectedCompounds.includes(comp),
-    );
+    const hasRequiredCompounds = currentExp.requiredCompounds.every((comp) => selectedCompounds.includes(comp));
     const isOptimalTemp = Math.abs(temperature - currentExp.optimalTemp) < 50;
 
     if (hasRequiredCompounds && isOptimalTemp) {
@@ -72,9 +66,7 @@ export function ChemistryLabGame({
         }
       }, 2000);
     } else {
-      setExperimentResult(
-        'Experiment failed! Check compounds and temperature.',
-      );
+      setExperimentResult('Experiment failed! Check compounds and temperature.');
     }
   };
 
@@ -85,9 +77,7 @@ export function ChemistryLabGame({
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          ⚗️ {currentExp.name}
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">⚗️ {currentExp.name}</h3>
         <p className="text-gray-300 text-sm">{currentExp.description}</p>
         <div className="text-emerald-400 font-medium">Điểm: {score}</div>
       </div>
@@ -136,9 +126,7 @@ export function ChemistryLabGame({
             <div className="text-center mb-4">
               <div className="text-gray-400 text-sm">Selected Compounds:</div>
               {selectedCompounds.length === 0 ? (
-                <div className="text-gray-500 italic">
-                  No compounds selected
-                </div>
+                <div className="text-gray-500 italic">No compounds selected</div>
               ) : (
                 <div className="flex flex-wrap gap-2 justify-center mt-2">
                   {selectedCompounds.map((compound, index) => (
@@ -157,9 +145,7 @@ export function ChemistryLabGame({
             {experimentResult && (
               <div
                 className={`text-center p-3 rounded-lg ${
-                  experimentResult.includes('Success')
-                    ? 'bg-green-500/20 text-green-400'
-                    : 'bg-red-500/20 text-red-400'
+                  experimentResult.includes('Success') ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
                 }`}
               >
                 {experimentResult}
@@ -168,19 +154,11 @@ export function ChemistryLabGame({
           </div>
 
           <div className="mt-4">
-            <div className="text-white text-sm mb-2">
-              Experiment Requirements:
-            </div>
+            <div className="text-white text-sm mb-2">Experiment Requirements:</div>
             <div className="bg-gray-800/50 rounded-lg p-3 text-sm">
-              <div className="text-gray-300">
-                Required: {currentExp.requiredCompounds.join(' + ')}
-              </div>
-              <div className="text-gray-300">
-                Optimal temp: {currentExp.optimalTemp}°C
-              </div>
-              <div className="text-yellow-400">
-                Expected: {currentExp.result}
-              </div>
+              <div className="text-gray-300">Required: {currentExp.requiredCompounds.join(' + ')}</div>
+              <div className="text-gray-300">Optimal temp: {currentExp.optimalTemp}°C</div>
+              <div className="text-yellow-400">Expected: {currentExp.result}</div>
             </div>
           </div>
 

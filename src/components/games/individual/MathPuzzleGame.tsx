@@ -15,12 +15,7 @@ interface MathPuzzleGameProps {
   onRestart: () => void;
 }
 
-export default function MathPuzzleGame({ 
-  gameData, 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: MathPuzzleGameProps) {
+export default function MathPuzzleGame({ gameData, onComplete, timeLeft, onRestart }: MathPuzzleGameProps) {
   const [currentPuzzle, setCurrentPuzzle] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
@@ -29,8 +24,7 @@ export default function MathPuzzleGame({
   const puzzle = gameData.puzzles[currentPuzzle];
 
   const handleSubmit = () => {
-    const isCorrect =
-      userAnswer.toLowerCase().trim() === String(puzzle.answer).toLowerCase();
+    const isCorrect = userAnswer.toLowerCase().trim() === String(puzzle.answer).toLowerCase();
     const points = isCorrect ? 25 : 0;
     setScore((prev) => prev + points);
     setShowResult(true);
@@ -96,24 +90,19 @@ export default function MathPuzzleGame({
           {showResult && (
             <div
               className={`p-4 rounded-lg ${
-                userAnswer.toLowerCase().trim() ===
-                String(puzzle.answer).toLowerCase()
+                userAnswer.toLowerCase().trim() === String(puzzle.answer).toLowerCase()
                   ? 'bg-green-500/10 border border-green-500/20'
                   : 'bg-red-500/10 border border-red-500/20'
               }`}
             >
               <p
                 className={`font-medium mb-2 ${
-                  userAnswer.toLowerCase().trim() ===
-                  String(puzzle.answer).toLowerCase()
+                  userAnswer.toLowerCase().trim() === String(puzzle.answer).toLowerCase()
                     ? 'text-green-300'
                     : 'text-red-300'
                 }`}
               >
-                {userAnswer.toLowerCase().trim() ===
-                String(puzzle.answer).toLowerCase()
-                  ? 'Chính xác!'
-                  : 'Sai rồi!'}
+                {userAnswer.toLowerCase().trim() === String(puzzle.answer).toLowerCase() ? 'Chính xác!' : 'Sai rồi!'}
               </p>
               <p className="text-gray-300 mb-2">Đáp án đúng: {puzzle.answer}</p>
               <p className="text-gray-300">{puzzle.explanation}</p>

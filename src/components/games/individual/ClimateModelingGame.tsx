@@ -33,10 +33,7 @@ export default function ClimateModelingGame({ onComplete, timeLeft, onRestart }:
     setCurrentYear((prev) => prev + 1);
 
     // Calculate score based on climate improvement
-    const climateScore = Math.max(
-      0,
-      500 - (newCo2 - 350) - (newTemp - 0.5) * 100,
-    );
+    const climateScore = Math.max(0, 500 - (newCo2 - 350) - (newTemp - 0.5) * 100);
     setScore(climateScore);
 
     if (currentYear >= 2030) {
@@ -46,11 +43,7 @@ export default function ClimateModelingGame({ onComplete, timeLeft, onRestart }:
   };
 
   const togglePolicy = (policyId: string) => {
-    setPolicies((prev) =>
-      prev.includes(policyId)
-        ? prev.filter((p) => p !== policyId)
-        : [...prev, policyId],
-    );
+    setPolicies((prev) => (prev.includes(policyId) ? prev.filter((p) => p !== policyId) : [...prev, policyId]));
   };
 
   useEffect(() => {
@@ -60,9 +53,7 @@ export default function ClimateModelingGame({ onComplete, timeLeft, onRestart }:
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          🌍 Mô hình khí hậu - Năm {currentYear}
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">🌍 Mô hình khí hậu - Năm {currentYear}</h3>
         <div className="text-green-400 font-medium">Điểm: {score}</div>
       </div>
 
@@ -126,13 +117,9 @@ export default function ClimateModelingGame({ onComplete, timeLeft, onRestart }:
                       CO₂: {policy.impact.co2} ppm | Temp: {policy.impact.temp}
                       °C
                     </div>
-                    <div className="text-yellow-400 text-sm">
-                      Chi phí: ${policy.cost}B
-                    </div>
+                    <div className="text-yellow-400 text-sm">Chi phí: ${policy.cost}B</div>
                   </div>
-                  {policies.includes(policy.id) && (
-                    <span className="text-green-400">✓</span>
-                  )}
+                  {policies.includes(policy.id) && <span className="text-green-400">✓</span>}
                 </div>
               </div>
             ))}

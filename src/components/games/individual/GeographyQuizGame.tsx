@@ -15,12 +15,7 @@ interface GeographyQuizGameProps {
   onRestart: () => void;
 }
 
-export function GeographyQuizGame({ 
-  gameData, 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: GeographyQuizGameProps) {
+export function GeographyQuizGame({ gameData, onComplete, timeLeft, onRestart }: GeographyQuizGameProps) {
   // Shuffle questions for randomization
   const [shuffledQuestions] = useState(() => {
     const questions = [...gameData.questions];
@@ -82,9 +77,7 @@ export function GeographyQuizGame({
       </div>
 
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-4">
-          {question.question}
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-4">{question.question}</h3>
 
         <div className="space-y-3">
           {question.options.map((option: string, index: number) => (

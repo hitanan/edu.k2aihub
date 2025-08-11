@@ -8,11 +8,7 @@ interface HistoryTimelineGameProps {
   onRestart: () => void;
 }
 
-export function HistoryTimelineGame({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: HistoryTimelineGameProps) {
+export function HistoryTimelineGame({ onComplete, timeLeft, onRestart }: HistoryTimelineGameProps) {
   const [events] = useState([
     { id: 1, year: 1945, event: 'Tuyên bố Độc lập', placed: false },
     { id: 2, year: 1975, event: 'Thống nhất đất nước', placed: false },
@@ -21,9 +17,7 @@ export function HistoryTimelineGame({
     { id: 5, year: 1954, event: 'Chiến thắng Điện Biên Phủ', placed: false },
   ]);
 
-  const [timeline, setTimeline] = useState<
-    Array<{ id: number; year: number; event: string }>
-  >([]);
+  const [timeline, setTimeline] = useState<Array<{ id: number; year: number; event: string }>>([]);
   const [score, setScore] = useState(0);
   const [gameComplete, setGameComplete] = useState(false);
 
@@ -37,8 +31,7 @@ export function HistoryTimelineGame({
     // Check if correctly placed
     const correctOrder = events.slice().sort((a, b) => a.year - b.year);
     const currentIndex = newTimeline.length - 1;
-    const isCorrect =
-      newTimeline[currentIndex].id === correctOrder[currentIndex].id;
+    const isCorrect = newTimeline[currentIndex].id === correctOrder[currentIndex].id;
 
     if (isCorrect) {
       setScore((prev) => prev + 20);
@@ -61,16 +54,12 @@ export function HistoryTimelineGame({
     if (timeLeft <= 0) onRestart();
   }, [timeLeft, onRestart]);
 
-  const unplacedEvents = events.filter(
-    (e) => !timeline.find((t) => t.id === e.id),
-  );
+  const unplacedEvents = events.filter((e) => !timeline.find((t) => t.id === e.id));
 
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          📚 Vietnam History Timeline
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">📚 Vietnam History Timeline</h3>
         <div className="text-amber-400 font-medium">Điểm: {score}</div>
       </div>
 
@@ -98,15 +87,11 @@ export function HistoryTimelineGame({
         </div>
 
         <div>
-          <h4 className="text-white font-medium mb-3">
-            Timeline (Chronological Order):
-          </h4>
+          <h4 className="text-white font-medium mb-3">Timeline (Chronological Order):</h4>
           <div className="space-y-2">
             {timeline.length === 0 ? (
               <div className="text-center p-8 border-2 border-dashed border-gray-600 rounded-lg">
-                <div className="text-gray-400">
-                  Drag events here to build timeline
-                </div>
+                <div className="text-gray-400">Drag events here to build timeline</div>
               </div>
             ) : (
               timeline.map((event, index) => (
@@ -117,20 +102,12 @@ export function HistoryTimelineGame({
                 >
                   <div className="flex justify-between items-center">
                     <div>
-                      <div className="text-white font-medium">
-                        {event.event}
-                      </div>
-                      <div className="text-gray-400 text-sm">
-                        Position {index + 1}
-                      </div>
+                      <div className="text-white font-medium">{event.event}</div>
+                      <div className="text-gray-400 text-sm">Position {index + 1}</div>
                     </div>
                     <div className="text-right">
-                      <div className="text-yellow-400 font-bold">
-                        {event.year}
-                      </div>
-                      <div className="text-gray-500 text-xs">
-                        Click to remove
-                      </div>
+                      <div className="text-yellow-400 font-bold">{event.year}</div>
+                      <div className="text-gray-500 text-xs">Click to remove</div>
                     </div>
                   </div>
                 </div>
@@ -140,12 +117,8 @@ export function HistoryTimelineGame({
 
           {gameComplete && (
             <div className="mt-4 text-center p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
-              <div className="text-green-400 font-bold text-lg">
-                🎉 Timeline Complete!
-              </div>
-              <div className="text-gray-300">
-                Great job learning Vietnam history!
-              </div>
+              <div className="text-green-400 font-bold text-lg">🎉 Timeline Complete!</div>
+              <div className="text-gray-300">Great job learning Vietnam history!</div>
             </div>
           )}
         </div>

@@ -13,20 +13,11 @@ export default function CybersecurityDefenseGame({ onComplete, timeLeft, onResta
   const [score, setScore] = useState(0);
 
   const blockThreat = (threatId: number) => {
-    setThreats((prev) =>
-      prev.map((threat) =>
-        threat.id === threatId ? { ...threat, blocked: true } : threat,
-      ),
-    );
+    setThreats((prev) => prev.map((threat) => (threat.id === threatId ? { ...threat, blocked: true } : threat)));
     setSecurityLevel((prev) => Math.min(100, prev + 10));
 
     const threat = threats.find((t) => t.id === threatId);
-    const points =
-      threat?.severity === 'critical'
-        ? 30
-        : threat?.severity === 'high'
-          ? 20
-          : 15;
+    const points = threat?.severity === 'critical' ? 30 : threat?.severity === 'high' ? 20 : 15;
     setScore((prev) => prev + points);
   };
 
@@ -45,9 +36,7 @@ export default function CybersecurityDefenseGame({ onComplete, timeLeft, onResta
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          🛡️ Phòng thủ An ninh mạng
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">🛡️ Phòng thủ An ninh mạng</h3>
         <div className="flex justify-between">
           <div className="text-red-400 font-medium">Điểm: {score}</div>
           <div
@@ -59,9 +48,7 @@ export default function CybersecurityDefenseGame({ onComplete, timeLeft, onResta
       </div>
 
       <div className="mb-6">
-        <h4 className="text-white font-medium mb-3">
-          Mối đe dọa được phát hiện:
-        </h4>
+        <h4 className="text-white font-medium mb-3">Mối đe dọa được phát hiện:</h4>
         <div className="space-y-3">
           {threats.map((threat) => (
             <div
@@ -101,9 +88,7 @@ export default function CybersecurityDefenseGame({ onComplete, timeLeft, onResta
 
       {allThreatsBlocked && (
         <div className="text-center p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
-          <div className="text-green-400 font-bold text-lg">
-            🎉 All Threats Blocked!
-          </div>
+          <div className="text-green-400 font-bold text-lg">🎉 All Threats Blocked!</div>
           <div className="text-gray-300">System Security: 100%</div>
         </div>
       )}

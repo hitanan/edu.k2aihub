@@ -18,11 +18,7 @@ interface SpaceExplorationGameProps {
   onRestart: () => void;
 }
 
-export function SpaceExplorationGame({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: SpaceExplorationGameProps) {
+export function SpaceExplorationGame({ onComplete, timeLeft, onRestart }: SpaceExplorationGameProps) {
   const [currentMission, setCurrentMission] = useState(0);
   const [fuel, setFuel] = useState(100);
   const [oxygen, setOxygen] = useState(100);
@@ -98,30 +94,19 @@ export function SpaceExplorationGame({
         onComplete(true, score + 100);
       }
     }
-  }, [
-    samples,
-    currentMissionData.targetSamples,
-    currentMission,
-    missions.length,
-    score,
-    onComplete,
-  ]);
+  }, [samples, currentMissionData.targetSamples, currentMission, missions.length, score, onComplete]);
 
   return (
     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
       <div className="mb-6">
-        <h3 className="text-xl font-bold text-white mb-2">
-          🚀 {currentMissionData.name}
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">🚀 {currentMissionData.name}</h3>
         <p className="text-gray-300 text-sm">{currentMissionData.objective}</p>
         <div className="text-purple-400 font-medium">Điểm: {score}</div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
-          <h4 className="text-white font-medium mb-3">
-            Không gian: {currentMissionData.environment}
-          </h4>
+          <h4 className="text-white font-medium mb-3">Không gian: {currentMissionData.environment}</h4>
           <div
             className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-lg p-4 relative"
             style={{ height: '200px' }}
@@ -137,11 +122,7 @@ export function SpaceExplorationGame({
                   <div
                     key={`${i}-${j}`}
                     className={`absolute border border-gray-600/30 ${
-                      isSpacecraft
-                        ? 'bg-cyan-400'
-                        : isHome
-                          ? 'bg-green-400/50'
-                          : 'bg-gray-800/20'
+                      isSpacecraft ? 'bg-cyan-400' : isHome ? 'bg-green-400/50' : 'bg-gray-800/20'
                     }`}
                     style={{
                       width: '20px',
@@ -207,9 +188,7 @@ export function SpaceExplorationGame({
             <div className="bg-gray-800/50 rounded-lg p-3">
               <div className="flex justify-between mb-1">
                 <span className="text-gray-300">Fuel:</span>
-                <span className={fuel > 20 ? 'text-green-400' : 'text-red-400'}>
-                  {fuel}%
-                </span>
+                <span className={fuel > 20 ? 'text-green-400' : 'text-red-400'}>{fuel}%</span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
                 <div
@@ -222,11 +201,7 @@ export function SpaceExplorationGame({
             <div className="bg-gray-800/50 rounded-lg p-3">
               <div className="flex justify-between mb-1">
                 <span className="text-gray-300">Oxygen:</span>
-                <span
-                  className={oxygen > 20 ? 'text-blue-400' : 'text-red-400'}
-                >
-                  {oxygen}%
-                </span>
+                <span className={oxygen > 20 ? 'text-blue-400' : 'text-red-400'}>{oxygen}%</span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
                 <div

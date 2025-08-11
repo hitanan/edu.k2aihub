@@ -61,19 +61,14 @@ export default function QuantumBasicsGame({ gameData, onComplete, timeLeft, onRe
 
         <div className="flex flex-wrap gap-2 mb-6">
           {concept.states.map((state: string, index: number) => (
-            <span
-              key={index}
-              className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm"
-            >
+            <span key={index} className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">
               {state}
             </span>
           ))}
         </div>
 
         <div className="bg-white/5 rounded-lg p-4">
-          <h5 className="text-white font-medium mb-3">
-            {concept.quiz.question}
-          </h5>
+          <h5 className="text-white font-medium mb-3">{concept.quiz.question}</h5>
           <div className="space-y-2">
             {concept.quiz.options.map((option: string, index: number) => (
               <button

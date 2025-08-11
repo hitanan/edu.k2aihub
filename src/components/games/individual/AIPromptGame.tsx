@@ -16,12 +16,7 @@ interface AIPromptGameProps {
   onRestart: () => void;
 }
 
-export function AIPromptGame({ 
-  gameData, 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: AIPromptGameProps) {
+export function AIPromptGame({ gameData, onComplete, timeLeft, onRestart }: AIPromptGameProps) {
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedPrompt, setSelectedPrompt] = useState<number | null>(null);
   const [score, setScore] = useState(0);

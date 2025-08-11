@@ -52,69 +52,63 @@ interface PathNode {
 }
 
 // Robot Navigation 3D Game Component
-export function RobotNavigation3DGame({
-  gameData,
-  onComplete,
-  timeLeft,
-  onRestart,
-}: RobotNavigation3DGameProps) {
+export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestart }: RobotNavigation3DGameProps) {
   // Default levels if no gameData provided
   const defaultGameData: GameData = {
     levels: [
       {
-        name: "Cấp độ cơ bản",
-        description: "Học cách điều hướng robot trong không gian 3D",
+        name: 'Cấp độ cơ bản',
+        description: 'Học cách điều hướng robot trong không gian 3D',
         dimensions: { width: 8, height: 3, depth: 8 },
         start: { x: 0, y: 0, z: 0 },
         goal: { x: 7, y: 0, z: 7 },
         obstacles: [
           { x: 2, y: 0, z: 2 },
           { x: 3, y: 0, z: 4 },
-          { x: 5, y: 0, z: 3 }
+          { x: 5, y: 0, z: 3 },
         ],
         educational: {
-          concept: "Thuật toán A*",
-          algorithmFocus: "Pathfinding cơ bản",
-          learningGoal: "Hiểu cách robot tìm đường"
-        }
+          concept: 'Thuật toán A*',
+          algorithmFocus: 'Pathfinding cơ bản',
+          learningGoal: 'Hiểu cách robot tìm đường',
+        },
       },
       {
-        name: "Cấp độ trung bình",
-        description: "Thử thách với nhiều chướng ngại vật hơn",
+        name: 'Cấp độ trung bình',
+        description: 'Thử thách với nhiều chướng ngại vật hơn',
         dimensions: { width: 8, height: 3, depth: 8 },
         start: { x: 0, y: 0, z: 0 },
         goal: { x: 7, y: 2, z: 7 },
         obstacles: [
-          { x: 1, y: 0, z: 1 }, { x: 2, y: 0, z: 1 },
-          { x: 3, y: 0, z: 2 }, { x: 4, y: 0, z: 3 },
-          { x: 5, y: 0, z: 4 }, { x: 6, y: 0, z: 5 }
+          { x: 1, y: 0, z: 1 },
+          { x: 2, y: 0, z: 1 },
+          { x: 3, y: 0, z: 2 },
+          { x: 4, y: 0, z: 3 },
+          { x: 5, y: 0, z: 4 },
+          { x: 6, y: 0, z: 5 },
         ],
         educational: {
-          concept: "Pathfinding 3D",
-          algorithmFocus: "Tối ưu hóa đường đi",
-          learningGoal: "Xử lý không gian phức tạp"
-        }
-      }
-    ]
+          concept: 'Pathfinding 3D',
+          algorithmFocus: 'Tối ưu hóa đường đi',
+          learningGoal: 'Xử lý không gian phức tạp',
+        },
+      },
+    ],
   };
 
   const effectiveGameData = gameData || defaultGameData;
-  
+
   const [currentLevel, setCurrentLevel] = useState(0);
   const [robotPosition, setRobotPosition] = useState({ x: 0, y: 0, z: 0 });
   const [goalPosition, setGoalPosition] = useState({ x: 7, y: 0, z: 7 });
   const [isMoving, setIsMoving] = useState(false);
   const [score, setScore] = useState(0);
   const [collectedItems, setCollectedItems] = useState<Set<string>>(new Set());
-  const [pathHistory, setPathHistory] = useState<
-    Array<{ x: number; y: number; z: number }>
-  >([]);
+  const [pathHistory, setPathHistory] = useState<Array<{ x: number; y: number; z: number }>>([]);
   const [showPath, setShowPath] = useState(false);
   const [selectedAlgorithm, setSelectedAlgorithm] = useState('astar');
   const [isCalculatingPath, setIsCalculatingPath] = useState(false);
-  const [currentPath, setCurrentPath] = useState<
-    Array<{ x: number; y: number; z: number }>
-  >([]);
+  const [currentPath, setCurrentPath] = useState<Array<{ x: number; y: number; z: number }>>([]);
 
   const level = effectiveGameData?.levels?.[currentLevel];
 
@@ -136,10 +130,7 @@ export function RobotNavigation3DGame({
 
   // A* pathfinding algorithm for 3D space
   const calculatePath = useCallback(
-    (
-      start: { x: number; y: number; z: number },
-      goal: { x: number; y: number; z: number },
-    ) => {
+    (start: { x: number; y: number; z: number }, goal: { x: number; y: number; z: number }) => {
       if (!level) return [];
 
       setIsCalculatingPath(true);
@@ -148,17 +139,12 @@ export function RobotNavigation3DGame({
       const openSet: PathNode[] = [];
       const closedSet: Set<string> = new Set();
 
-      const heuristic = (
-        a: Position3D,
-        b: Position3D,
-      ) => {
+      const heuristic = (a: Position3D, b: Position3D) => {
         return Math.abs(a.x - b.x) + Math.abs(a.y - b.y) + Math.abs(a.z - b.z);
       };
 
       const isObstacle = (pos: Position3D) => {
-        return level.obstacles.some(
-          (obs: Position3D) => obs.x === pos.x && obs.y === pos.y && obs.z === pos.z,
-        );
+        return level.obstacles.some((obs: Position3D) => obs.x === pos.x && obs.y === pos.y && obs.z === pos.z);
       };
 
       const isInBounds = (pos: Position3D) => {
@@ -184,8 +170,7 @@ export function RobotNavigation3DGame({
       while (openSet.length > 0) {
         // Find node with lowest f score
         const currentIndex = openSet.reduce(
-          (minIndex, node, index) =>
-            node.f < openSet[minIndex].f ? index : minIndex,
+          (minIndex, node, index) => (node.f < openSet[minIndex].f ? index : minIndex),
           0,
         );
         const current = openSet.splice(currentIndex, 1)[0];
@@ -194,11 +179,7 @@ export function RobotNavigation3DGame({
         closedSet.add(currentKey);
 
         // Check if we reached the goal
-        if (
-          current.pos.x === goal.x &&
-          current.pos.y === goal.y &&
-          current.pos.z === goal.z
-        ) {
+        if (current.pos.x === goal.x && current.pos.y === goal.y && current.pos.z === goal.z) {
           const path: Position3D[] = [];
           let node: PathNode | undefined = current;
           while (node) {
@@ -222,21 +203,14 @@ export function RobotNavigation3DGame({
         for (const neighbor of neighbors) {
           const neighborKey = `${neighbor.x},${neighbor.y},${neighbor.z}`;
 
-          if (
-            !isInBounds(neighbor) ||
-            isObstacle(neighbor) ||
-            closedSet.has(neighborKey)
-          ) {
+          if (!isInBounds(neighbor) || isObstacle(neighbor) || closedSet.has(neighborKey)) {
             continue;
           }
 
           const tentativeG = current.g + 1;
 
           const existingNode = openSet.find(
-            (node) =>
-              node.pos.x === neighbor.x &&
-              node.pos.y === neighbor.y &&
-              node.pos.z === neighbor.z,
+            (node) => node.pos.x === neighbor.x && node.pos.y === neighbor.y && node.pos.z === neighbor.z,
           );
 
           if (!existingNode) {
@@ -302,8 +276,7 @@ export function RobotNavigation3DGame({
 
     // Check obstacles
     const isObstacle = level.obstacles.some(
-      (obs: Position3D) =>
-        obs.x === newPos.x && obs.y === newPos.y && obs.z === newPos.z,
+      (obs: Position3D) => obs.x === newPos.x && obs.y === newPos.y && obs.z === newPos.z,
     );
     if (isObstacle) return;
 
@@ -314,36 +287,22 @@ export function RobotNavigation3DGame({
 
       // Check for collectibles
       const collectible = level.collectibles?.find(
-        (item: Collectible) =>
-          item.x === newPos.x && item.y === newPos.y && item.z === newPos.z,
+        (item: Collectible) => item.x === newPos.x && item.y === newPos.y && item.z === newPos.z,
       );
       if (collectible) {
         const itemKey = `${newPos.x},${newPos.y},${newPos.z}`;
         if (!collectedItems.has(itemKey)) {
           setCollectedItems((prev) => new Set([...prev, itemKey]));
-          setScore(
-            (prev) =>
-              prev +
-              (collectible.type === 'energy'
-                ? 50
-                : collectible.type === 'data'
-                  ? 30
-                  : 10),
-          );
+          setScore((prev) => prev + (collectible.type === 'energy' ? 50 : collectible.type === 'data' ? 30 : 10));
         }
       }
 
       // Check if reached goal
-      if (
-        newPos.x === goalPosition.x &&
-        newPos.y === goalPosition.y &&
-        newPos.z === goalPosition.z
-      ) {
+      if (newPos.x === goalPosition.x && newPos.y === goalPosition.y && newPos.z === goalPosition.z) {
         const timeBonus = Math.max(0, timeLeft * 2);
         const pathEfficiency = Math.max(0, 100 - pathHistory.length);
         const collectibleBonus = collectedItems.size * 20;
-        const finalScore =
-          score + timeBonus + pathEfficiency + collectibleBonus;
+        const finalScore = score + timeBonus + pathEfficiency + collectibleBonus;
 
         if (currentLevel < effectiveGameData.levels.length - 1) {
           setCurrentLevel((prev) => prev + 1);
@@ -415,9 +374,7 @@ export function RobotNavigation3DGame({
             <p className="text-gray-300 text-sm">{level.description}</p>
           </div>
           <div className="text-right">
-            <div className="text-cyan-400 font-bold">
-              Cấp độ {currentLevel + 1}
-            </div>
+            <div className="text-cyan-400 font-bold">Cấp độ {currentLevel + 1}</div>
             <div className="text-yellow-400">Điểm: {score}</div>
           </div>
         </div>
@@ -440,9 +397,7 @@ export function RobotNavigation3DGame({
       <div className="space-y-6">
         {/* 3D Visualization - Full Width */}
         <div>
-          <h4 className="text-white font-medium mb-3">
-            🎮 Môi trường 3D Robot Navigation:
-          </h4>
+          <h4 className="text-white font-medium mb-3">🎮 Môi trường 3D Robot Navigation:</h4>
           <div
             className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-6 relative overflow-hidden"
             style={{ height: '500px', perspective: '1200px' }}
@@ -459,50 +414,32 @@ export function RobotNavigation3DGame({
               {Array.from({ length: level.dimensions.depth }, (_, z) =>
                 Array.from({ length: level.dimensions.width }, (_, x) =>
                   Array.from({ length: level.dimensions.height }, (_, y) => {
-                    const isRobot =
-                      robotPosition.x === x &&
-                      robotPosition.y === y &&
-                      robotPosition.z === z;
-                    const isGoal =
-                      goalPosition.x === x &&
-                      goalPosition.y === y &&
-                      goalPosition.z === z;
+                    const isRobot = robotPosition.x === x && robotPosition.y === y && robotPosition.z === z;
+                    const isGoal = goalPosition.x === x && goalPosition.y === y && goalPosition.z === z;
                     const isObstacle = level.obstacles.some(
                       (obs: Position3D) => obs.x === x && obs.y === y && obs.z === z,
                     );
                     const collectible = level.collectibles?.find(
-                      (item: Collectible) =>
-                        item.x === x && item.y === y && item.z === z,
+                      (item: Collectible) => item.x === x && item.y === y && item.z === z,
                     );
                     const isCollected = collectedItems.has(`${x},${y},${z}`);
-                    const isInPath = currentPath.some(
-                      (pos) => pos.x === x && pos.y === y && pos.z === z,
-                    );
+                    const isInPath = currentPath.some((pos) => pos.x === x && pos.y === y && pos.z === z);
 
-                    let className =
-                      'absolute border border-gray-600/30 transition-all duration-300 ';
+                    let className = 'absolute border border-gray-600/30 transition-all duration-300 ';
                     let content = '';
 
                     if (isRobot) {
-                      className +=
-                        'bg-cyan-500 border-cyan-300 shadow-lg shadow-cyan-500/50 ';
+                      className += 'bg-cyan-500 border-cyan-300 shadow-lg shadow-cyan-500/50 ';
                       content = '🤖';
                     } else if (isGoal) {
-                      className +=
-                        'bg-green-500 border-green-300 shadow-lg shadow-green-500/50 ';
+                      className += 'bg-green-500 border-green-300 shadow-lg shadow-green-500/50 ';
                       content = '🎯';
                     } else if (isObstacle) {
                       className += 'bg-red-500 border-red-300 opacity-80 ';
                       content = '🧱';
                     } else if (collectible && !isCollected) {
-                      className +=
-                        'bg-yellow-500 border-yellow-300 opacity-80 ';
-                      content =
-                        collectible.type === 'energy'
-                          ? '⚡'
-                          : collectible.type === 'data'
-                            ? '💾'
-                            : '💰';
+                      className += 'bg-yellow-500 border-yellow-300 opacity-80 ';
+                      content = collectible.type === 'energy' ? '⚡' : collectible.type === 'data' ? '💾' : '💰';
                     } else if (isInPath && showPath) {
                       className += 'bg-blue-400/50 border-blue-300 ';
                     } else {
@@ -529,10 +466,7 @@ export function RobotNavigation3DGame({
                           justifyContent: 'center',
                           zIndex: isRobot ? 100 : isGoal ? 90 : 10,
                           position: 'absolute',
-                          boxShadow:
-                            isRobot || isGoal
-                              ? '0 4px 12px rgba(0,0,0,0.6)'
-                              : '0 2px 6px rgba(0,0,0,0.3)',
+                          boxShadow: isRobot || isGoal ? '0 4px 12px rgba(0,0,0,0.6)' : '0 2px 6px rgba(0,0,0,0.3)',
                         }}
                       >
                         {content}
@@ -546,9 +480,7 @@ export function RobotNavigation3DGame({
             {/* Enhanced Controls Overlay */}
             <div className="absolute bottom-4 left-4 right-4">
               <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-white text-sm mb-3 text-center font-medium">
-                  🕹️ Điều khiển Robot (Góc nhìn 3D)
-                </div>
+                <div className="text-white text-sm mb-3 text-center font-medium">🕹️ Điều khiển Robot (Góc nhìn 3D)</div>
 
                 {/* Y (Height) Controls - Corrected for 3D perspective */}
                 <div className="grid grid-cols-3 gap-2 mb-2">
@@ -625,9 +557,7 @@ export function RobotNavigation3DGame({
 
             {/* Algorithm Selection */}
             <div className="mb-4">
-              <label className="text-white text-sm mb-2 block">
-                Thuật toán:
-              </label>
+              <label className="text-white text-sm mb-2 block">Thuật toán:</label>
               <select
                 value={selectedAlgorithm}
                 onChange={(e) => setSelectedAlgorithm(e.target.value)}
@@ -646,9 +576,7 @@ export function RobotNavigation3DGame({
                 disabled={isMoving || isCalculatingPath}
                 className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-4 rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 disabled:opacity-50"
               >
-                {isCalculatingPath
-                  ? 'Đang tính toán...'
-                  : '🤖 Tự động điều hướng'}
+                {isCalculatingPath ? 'Đang tính toán...' : '🤖 Tự động điều hướng'}
               </button>
 
               <button
@@ -686,9 +614,7 @@ export function RobotNavigation3DGame({
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Số bước đã đi:</span>
-                  <span className="text-yellow-400">
-                    {pathHistory.length - 1}
-                  </span>
+                  <span className="text-yellow-400">{pathHistory.length - 1}</span>
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Vật phẩm thu thập:</span>
@@ -698,9 +624,7 @@ export function RobotNavigation3DGame({
                 </div>
                 <div className="flex justify-between text-gray-300">
                   <span>Thuật toán:</span>
-                  <span className="text-blue-400 capitalize">
-                    {selectedAlgorithm}
-                  </span>
+                  <span className="text-blue-400 capitalize">{selectedAlgorithm}</span>
                 </div>
               </div>
             </div>

@@ -2,19 +2,19 @@
 
 'use client';
 import { useState, useEffect, useCallback } from 'react';
+import { Trophy, Clock, X, ArrowLeft, RotateCcw } from 'lucide-react';
 import {
-  Trophy,
-  Clock,
-  X,
-  ArrowLeft,
-  RotateCcw,
-} from 'lucide-react';
-import { GAME_DATA, STEMExperimentLabGameData, AIEthicsDilemmaGameData, QuantumBasicsGameData, MathPuzzleGameData } from '@/data/games/gameData';
+  GAME_DATA,
+  STEMExperimentLabGameData,
+  AIEthicsDilemmaGameData,
+  QuantumBasicsGameData,
+  MathPuzzleGameData,
+} from '@/data/games/gameData';
 import { GAME_PROGRESS } from '@/data/gameData';
 import { EducationalGame } from '@/data/educationalGames';
-import { 
-  BiologyEcosystemGame, 
-  HistoryTimelineGame, 
+import {
+  BiologyEcosystemGame,
+  HistoryTimelineGame,
   ChemistryLabGame,
   RoboticsNavigationGame,
   RobotNavigation3DGame,
@@ -31,7 +31,7 @@ import {
   QuantumBasicsGame,
   BlockchainExplorerGame,
   ClimateModelingGame,
-  CybersecurityDefenseGame
+  CybersecurityDefenseGame,
 } from './individual';
 
 interface MiniGameProps {
@@ -71,26 +71,14 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       }, 1000);
       return () => clearInterval(timer);
     }
-  }, [
-    currentGameState,
-    timeLeft,
-    isTimerActive,
-    score,
-    maxStreak,
-    lives,
-    game.id,
-    onComplete,
-    getTimeBonus,
-  ]);
+  }, [currentGameState, timeLeft, isTimerActive, score, maxStreak, lives, game.id, onComplete, getTimeBonus]);
 
   const endGame = (success: boolean, rawScore: number = score) => {
     setIsTimerActive(false);
     const timeBonus = getTimeBonus();
     const streakBonus = maxStreak * 10;
     const perfectBonus = lives === 3 ? 25 : 0;
-    const finalScore = Math.round(
-      rawScore + timeBonus + streakBonus + perfectBonus,
-    );
+    const finalScore = Math.round(rawScore + timeBonus + streakBonus + perfectBonus);
 
     GAME_PROGRESS.saveProgress(game.id, {
       score: finalScore,
@@ -236,11 +224,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         );
       case 'chemistry-lab':
         return (
-          <ChemistryLabGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
+          <ChemistryLabGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => setCurrentGameState('playing')} />
         );
       case 'biology-ecosystem':
         return (
@@ -277,13 +261,9 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 max-w-md w-full border border-red-500/20">
           <div className="text-center">
             <Clock className="w-16 h-16 mx-auto mb-4 text-red-400" />
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Hết thời gian!
-            </h2>
+            <h2 className="text-2xl font-bold text-white mb-2">Hết thời gian!</h2>
             <p className="text-gray-300 mb-2">Thời gian chơi đã kết thúc.</p>
-            <p className="text-sm text-gray-400 mb-6">
-              Điểm số hiện tại: {score} điểm
-            </p>
+            <p className="text-sm text-gray-400 mb-6">Điểm số hiện tại: {score} điểm</p>
 
             <div className="space-y-3">
               <button
@@ -313,9 +293,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 max-w-md w-full border border-red-500/20">
           <div className="text-center">
             <X className="w-16 h-16 mx-auto mb-4 text-red-400" />
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Hết thời gian!
-            </h2>
+            <h2 className="text-2xl font-bold text-white mb-2">Hết thời gian!</h2>
             <p className="text-gray-300 mb-6">Đừng lo, hãy thử lại!</p>
 
             <div className="space-y-3">
@@ -373,8 +351,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
               >
                 <Clock className="w-5 h-5" />
                 <span className="font-bold text-lg">
-                  {Math.floor(timeLeft / 60)}:
-                  {(timeLeft % 60).toString().padStart(2, '0')}
+                  {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
                 </span>
               </div>
 
@@ -424,9 +401,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
                 style={{ width: `${(timeLeft / 120) * 100}%` }}
               />
               {/* Pulse effect for low time */}
-              {timeLeft <= 30 && (
-                <div className="absolute inset-0 bg-red-400/30 animate-pulse rounded-full"></div>
-              )}
+              {timeLeft <= 30 && <div className="absolute inset-0 bg-red-400/30 animate-pulse rounded-full"></div>}
             </div>
           </div>
 
@@ -458,4 +433,3 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
     </div>
   );
 }
-
