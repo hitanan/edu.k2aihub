@@ -215,13 +215,13 @@ export default async function STEMLessonPage({ params }: PageProps) {
                     </h3>
                     <p className="text-gray-200 mb-4">{exercise.description}</p>
 
-                    {exercise.steps && exercise.steps.length > 0 && (
+                    {exercise.procedure && exercise.procedure.length > 0 && (
                       <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
                         <h4 className="text-blue-300 font-semibold mb-2">
                           📋 Các bước thực hiện:
                         </h4>
                         <ol className="space-y-2">
-                          {exercise.steps.map((step, stepIndex) => (
+                          {exercise.procedure.map((step, stepIndex) => (
                             <li
                               key={stepIndex}
                               className="text-gray-300 text-sm"
@@ -236,7 +236,7 @@ export default async function STEMLessonPage({ params }: PageProps) {
                       </div>
                     )}
 
-                    {exercise.hints.length > 0 && (
+                    {exercise.hints && exercise.hints.length > 0 && (
                       <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 mb-4">
                         <h4 className="text-yellow-300 font-semibold mb-2 flex items-center">
                           <Lightbulb className="w-4 h-4 mr-2" />
@@ -260,7 +260,7 @@ export default async function STEMLessonPage({ params }: PageProps) {
                         🎯 Kết quả mong đợi:
                       </h4>
                       <p className="text-gray-300 text-sm">
-                        {exercise.expectedResult}
+                        {exercise.expectedResults}
                       </p>
                     </div>
                   </div>

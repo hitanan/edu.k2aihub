@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -12,6 +12,7 @@ import {
   Brain,
   Code,
   Heart,
+  BookOpen,
 } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 
@@ -21,6 +22,31 @@ const Header: React.FC = () => {
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(
     null,
   );
+  const [continueSession, setContinueSession] = useState<{
+    title: string;
+    href: string;
+    moduleIcon: string;
+  } | null>(null);
+
+  // Load continue session from localStorage
+  useEffect(() => {
+    const lastVisited = localStorage.getItem('k2ai_last_visited_lesson');
+    if (lastVisited) {
+      try {
+        const sessionData = JSON.parse(lastVisited);
+        setContinueSession(sessionData);
+      } catch (error) {
+        console.error('Error loading continue session:', error);
+      }
+    }
+  }, []);
+
+  // Save visited lesson to localStorage
+  const saveVisitedLesson = (title: string, href: string, moduleIcon: string) => {
+    const sessionData = { title, href, moduleIcon, timestamp: Date.now() };
+    localStorage.setItem('k2ai_last_visited_lesson', JSON.stringify(sessionData));
+    setContinueSession(sessionData);
+  };
 
   // Improved mouse handlers for dropdown
   const handleDropdownEnter = () => {
@@ -58,12 +84,16 @@ const Header: React.FC = () => {
       href: '/profile',
       icon: <span className="w-4 h-4 text-center">👤</span>,
     },
-    {
-      name: 'Về Chúng Tôi',
-      href: '/about',
-      icon: <Heart className="w-4 h-4" />,
-    },
   ];
+
+  // Add continue session to core modules if available
+  if (continueSession) {
+    coreModules.splice(1, 0, {
+      name: 'Tiếp tục học tập',
+      href: continueSession.href,
+      icon: <BookOpen className="w-4 h-4" />,
+    });
+  }
 
   // Learning modules - dynamically generated from moduleNavigation
   const getLearningModulesByCategory = () => {
@@ -196,6 +226,19 @@ const Header: React.FC = () => {
 
                   <div className="bg-white rounded-2xl shadow-2xl border border-gray-200/50 backdrop-blur-md overflow-hidden">
                     <div className="p-6">
+                      {/* Tất Cả Khóa Học Button - Moved to Top */}
+                      <div className="mb-6 pb-4 border-b border-gray-100">
+                        <div className="flex justify-center">
+                          <Link
+                            href="/learning"
+                            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-base"
+                            onClick={() => setIsLearningDropdownOpen(false)}
+                          >
+                            📚 Tất Cả Khóa Học
+                          </Link>
+                        </div>
+                      </div>
+
                       {/* Responsive grid layout */}
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                         {learningModules.map((category) => (
@@ -250,18 +293,6 @@ const Header: React.FC = () => {
                             </div>
                           </div>
                         ))}
-                      </div>
-
-                      <div className="mt-6 pt-4 border-t border-gray-100">
-                        <div className="flex flex-wrap justify-center gap-3">
-                          <Link
-                            href="/learning"
-                            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-sm"
-                            onClick={() => setIsLearningDropdownOpen(false)}
-                          >
-                            📚 Tất Cả Khóa Học
-                          </Link>
-                        </div>
                       </div>
                     </div>
                   </div>

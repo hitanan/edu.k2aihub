@@ -36,6 +36,20 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 50,
     icon: '🗺️',
     color: 'from-green-500 to-emerald-500',
+    relatedLessons: [
+      {
+        moduleId: 'city',
+        lessonId: 'vietnam-regions',
+        title: 'Vùng Miền Việt Nam',
+        connection: 'Áp dụng kiến thức về 8 vùng kinh tế và đặc điểm địa lý từng vùng',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'environmental-solutions',
+        title: 'Giải Pháp Môi Trường',
+        connection: 'Hiểu về địa lý tự nhiên và tác động môi trường của con người',
+      },
+    ],
   },
   {
     id: 'ai-prompt-challenge',
@@ -50,6 +64,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 75,
     icon: '🤖',
     color: 'from-blue-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'ai',
+        lessonId: 'office-work',
+        title: 'AI Văn Phòng & Công Việc',
+        connection: 'Thực hành viết prompt hiệu quả cho ChatGPT và công cụ AI văn phòng',
+      },
+      {
+        moduleId: 'ai',
+        lessonId: 'creative-design',
+        title: 'AI Sáng Tạo & Thiết Kế',
+        connection: 'Học cách tạo prompt cho Midjourney và các công cụ AI sáng tạo',
+      },
+      {
+        moduleId: 'ai',
+        lessonId: 'office-work',
+        title: 'Kỹ Thuật Prompt AI',
+        connection: 'Nắm vững các kỹ thuật prompt engineering chuyên sâu',
+      },
+    ],
   },
   {
     id: 'python-coding-puzzle',
@@ -69,15 +103,15 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         moduleId: 'python',
         lessonId: 'python-basics',
         title: 'Python Cơ Bản',
-        connection: 'Áp dụng cú pháp Python cơ bản để giải các bài toán thực tế'
+        connection: 'Áp dụng cú pháp Python cơ bản để giải các bài toán thực tế',
       },
       {
         moduleId: 'python',
         lessonId: 'data-structures',
         title: 'Cấu Trúc Dữ Liệu Python',
-        connection: 'Sử dụng lists, dicts và sets để giải quyết puzzle phức tạp'
-      }
-    ]
+        connection: 'Sử dụng lists, dicts và sets để giải quyết puzzle phức tạp',
+      },
+    ],
   },
   {
     id: 'arduino-circuit-builder',
@@ -97,15 +131,21 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         moduleId: 'arduino',
         lessonId: 'arduino-setup',
         title: 'Cài Đặt Arduino',
-        connection: 'Thiết lập môi trường phát triển và kết nối phần cứng'
+        connection: 'Thiết lập môi trường phát triển và kết nối phần cứng',
       },
       {
         moduleId: 'arduino',
         lessonId: 'led-digital-outputs',
         title: 'LED & Đầu Ra Số',
-        connection: 'Xây dựng mạch LED cơ bản và lập trình điều khiển'
-      }
-    ]
+        connection: 'Xây dựng mạch LED cơ bản và lập trình điều khiển',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Cảm Biến & Xử Lý Dữ Liệu',
+        connection: 'Tích hợp cảm biến và xử lý dữ liệu trong mạch IoT',
+      },
+    ],
   },
   {
     id: 'stem-experiment-lab',
@@ -120,6 +160,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 75,
     icon: '🔬',
     color: 'from-teal-500 to-cyan-500',
+    relatedLessons: [
+      {
+        moduleId: 'stem',
+        lessonId: 'fun-physics-experiments',
+        title: 'Thí Nghiệm Vật Lý Thú Vị',
+        connection: 'Áp dụng kiến thức vật lý cơ bản qua các thí nghiệm tương tác',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'environmental-solutions',
+        title: 'Giải Pháp Môi Trường',
+        connection: 'Thực hành nghiên cứu khoa học để giải quyết vấn đề môi trường',
+      },
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'lab-techniques',
+        title: 'Kỹ Thuật Phòng Thí Nghiệm',
+        connection: 'Làm quen với quy trình và kỹ thuật thí nghiệm chuyên nghiệp',
+      },
+    ],
   },
   {
     id: 'robotics-navigation',
@@ -134,6 +194,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 150,
     icon: '🤖',
     color: 'from-indigo-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'robotics',
+        lessonId: 'autonomous-navigation',
+        title: 'Điều Hướng Tự Động',
+        connection: 'Thuật toán A* và pathfinding trong robotics thực tế',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'algorithms-data-structures',
+        title: 'Thuật Toán & Cấu Trúc Dữ Liệu',
+        connection: 'Cài đặt thuật toán tìm kiếm và tối ưu hóa đường đi',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-advanced-projects',
+        title: 'Dự Án Arduino Nâng Cao',
+        connection: 'Tích hợp cảm biến và motor để điều khiển robot thực tế',
+      },
+    ],
   },
   {
     id: 'scratch-animation-studio',
@@ -148,6 +228,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 60,
     icon: '🎬',
     color: 'from-pink-500 to-rose-500',
+    relatedLessons: [
+      {
+        moduleId: 'scratch',
+        lessonId: 'scratch-basics',
+        title: 'Scratch Cơ Bản',
+        connection: 'Làm quen với giao diện và khối lệnh cơ bản trong Scratch',
+      },
+      {
+        moduleId: 'scratch',
+        lessonId: 'scratch-animation',
+        title: 'Hoạt Hình Scratch',
+        connection: 'Tạo hoạt hình và điều khiển sprite với các khối lệnh',
+      },
+      {
+        moduleId: 'game-development',
+        lessonId: 'game-mechanics-design',
+        title: 'Thiết Kế Cơ Chế Game',
+        connection: 'Hiểu về logic game và cách tạo tương tác trong game',
+      },
+    ],
   },
   {
     id: 'ai-ethics-dilemma',
@@ -162,6 +262,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 100,
     icon: '⚖️',
     color: 'from-gray-500 to-slate-500',
+    relatedLessons: [
+      {
+        moduleId: 'ai-art-creative-tech',
+        lessonId: 'ai-ethics-society',
+        title: 'Đạo Đức AI & Xã Hội',
+        connection: 'Hiểu về tác động xã hội và trách nhiệm đạo đức khi sử dụng AI',
+      },
+      {
+        moduleId: 'cybersecurity',
+        lessonId: 'ai-security-ethics',
+        title: 'Bảo Mật AI & Đạo Đức',
+        connection: 'Phân tích rủi ro bảo mật và vấn đề đạo đức trong AI',
+      },
+      {
+        moduleId: 'advanced-ai',
+        lessonId: 'responsible-ai',
+        title: 'AI Có Trách Nhiệm',
+        connection: 'Phát triển và triển khai AI một cách có trách nhiệm',
+      },
+    ],
   },
   {
     id: 'quantum-basics',
@@ -176,6 +296,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 125,
     icon: '⚛️',
     color: 'from-purple-500 to-pink-500',
+    relatedLessons: [
+      {
+        moduleId: 'advanced-ai',
+        lessonId: 'quantum-computing',
+        title: 'Máy Tính Lượng Tử',
+        connection: 'Hiểu nguyên lý vật lý lượng tử ứng dụng trong máy tính',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'fun-physics-experiments',
+        title: 'Thí Nghiệm Vật Lý Thú Vị',
+        connection: 'Khám phá các hiện tượng vật lý cơ bản dẫn đến lượng tử',
+      },
+      {
+        moduleId: 'nanotechnology',
+        lessonId: 'quantum-effects',
+        title: 'Hiệu Ứng Lượng Tử',
+        connection: 'Ứng dụng hiệu ứng lượng tử trong công nghệ nano',
+      },
+    ],
   },
   {
     id: 'blockchain-explorer',
@@ -190,6 +330,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 100,
     icon: '🔗',
     color: 'from-blue-500 to-indigo-500',
+    relatedLessons: [
+      {
+        moduleId: 'blockchain-defi',
+        lessonId: 'blockchain-fundamentals',
+        title: 'Cơ Bản Blockchain',
+        connection: 'Hiểu nguyên lý hoạt động và cấu trúc của blockchain',
+      },
+      {
+        moduleId: 'cybersecurity',
+        lessonId: 'cryptography-blockchain',
+        title: 'Mật Mã Học & Blockchain',
+        connection: 'Tìm hiểu về mã hóa và bảo mật trong blockchain',
+      },
+      {
+        moduleId: 'financial-literacy',
+        lessonId: 'cryptocurrency-investment',
+        title: 'Đầu Tư Tiền Mã Hóa',
+        connection: 'Ứng dụng blockchain trong tài chính và đầu tư',
+      },
+    ],
   },
   {
     id: 'climate-modeling',
@@ -204,6 +364,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 90,
     icon: '🌍',
     color: 'from-green-500 to-emerald-500',
+    relatedLessons: [
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'climate-change-modeling',
+        title: 'Mô Hình Biến Đổi Khí Hậu',
+        connection: 'Sử dụng dữ liệu khoa học để mô hình hóa biến đổi khí hậu',
+      },
+      {
+        moduleId: 'green-technology',
+        lessonId: 'renewable-energy-systems',
+        title: 'Hệ Thống Năng Lượng Tái Tạo',
+        connection: 'Hiểu tác động của năng lượng tái tạo đối với khí hậu',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'environmental-solutions',
+        title: 'Giải Pháp Môi Trường',
+        connection: 'Nghiên cứu khoa học để tìm giải pháp cho vấn đề khí hậu',
+      },
+    ],
   },
   {
     id: 'cybersecurity-defense',
@@ -218,6 +398,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 150,
     icon: '🛡️',
     color: 'from-red-500 to-pink-500',
+    relatedLessons: [
+      {
+        moduleId: 'cybersecurity',
+        lessonId: 'penetration-testing',
+        title: 'Kiểm Thử Xâm Nhập',
+        connection: 'Học cách phòng thủ bằng cách hiểu phương thức tấn công',
+      },
+      {
+        moduleId: 'cybersecurity',
+        lessonId: 'network-security',
+        title: 'Bảo Mật Mạng',
+        connection: 'Thiết lập và duy trì hệ thống bảo mật mạng hiệu quả',
+      },
+      {
+        moduleId: 'advanced-ai',
+        lessonId: 'ai-security',
+        title: 'Bảo Mật AI',
+        connection: 'Ứng dụng AI trong phát hiện và phòng chống tấn công mạng',
+      },
+    ],
   },
   {
     id: 'data-visualization',
@@ -232,6 +432,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 100,
     icon: '📊',
     color: 'from-indigo-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'data-visualization',
+        title: 'Trực Quan Hóa Dữ Liệu Môi Trường',
+        connection: 'Tạo biểu đồ và báo cáo từ dữ liệu môi trường thực tế',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'data-science-python',
+        title: 'Khoa Học Dữ Liệu Python',
+        connection: 'Sử dụng Python và các thư viện để trực quan hóa dữ liệu',
+      },
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'marketing-analytics',
+        title: 'Phân Tích Marketing',
+        connection: 'Trực quan hóa dữ liệu marketing để ra quyết định kinh doanh',
+      },
+    ],
   },
   {
     id: 'space-exploration',
@@ -246,6 +466,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 120,
     icon: '🚀',
     color: 'from-purple-500 to-indigo-500',
+    relatedLessons: [
+      {
+        moduleId: 'aerospace-engineering',
+        lessonId: 'spacecraft-design',
+        title: 'Thiết Kế Tàu Vũ Trụ',
+        connection: 'Hiểu nguyên lý thiết kế và vận hành tàu vũ trụ',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'fun-physics-experiments',
+        title: 'Thí Nghiệm Vật Lý Thú Vị',
+        connection: 'Áp dụng nguyên lý vật lý trong việc khám phá vũ trụ',
+      },
+      {
+        moduleId: 'robotics',
+        lessonId: 'space-robotics',
+        title: 'Robot Vũ Trụ',
+        connection: 'Thiết kế robot phục vụ các nhiệm vụ không gian',
+      },
+    ],
   },
   {
     id: 'neural-network-builder',
@@ -260,6 +500,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 175,
     icon: '🧠',
     color: 'from-pink-500 to-rose-500',
+    relatedLessons: [
+      {
+        moduleId: 'advanced-ai',
+        lessonId: 'neural-networks',
+        title: 'Mạng Neural Nhân Tạo',
+        connection: 'Hiểu cấu trúc và cách hoạt động của mạng neural',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'machine-learning-python',
+        title: 'Machine Learning Python',
+        connection: 'Cài đặt mạng neural bằng Python và TensorFlow',
+      },
+      {
+        moduleId: 'ai-art-creative-tech',
+        lessonId: 'ai-image-generation',
+        title: 'Tạo Ảnh AI',
+        connection: 'Ứng dụng mạng neural trong việc tạo ảnh và nghệ thuật',
+      },
+    ],
   },
   {
     id: 'math-puzzle',
@@ -274,6 +534,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 80,
     icon: '🔢',
     color: 'from-yellow-500 to-orange-500',
+    relatedLessons: [
+      {
+        moduleId: 'stem',
+        lessonId: 'math-in-real-life',
+        title: 'Toán Học Trong Đời Sống',
+        connection: 'Áp dụng toán học để giải quyết vấn đề thực tế hàng ngày',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'algorithms-data-structures',
+        title: 'Thuật Toán & Cấu Trúc Dữ Liệu',
+        connection: 'Sử dụng toán học trong lập trình và thuật toán',
+      },
+      {
+        moduleId: 'financial-literacy',
+        lessonId: 'financial-calculations',
+        title: 'Tính Toán Tài Chính',
+        connection: 'Ứng dụng toán học trong đầu tư và quản lý tài chính',
+      },
+    ],
   },
   {
     id: 'chemistry-lab',
@@ -288,6 +568,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 95,
     icon: '⚗️',
     color: 'from-emerald-500 to-cyan-500',
+    relatedLessons: [
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'medical-biotechnology-drug-discovery',
+        title: 'Hóa Sinh Học',
+        connection: 'Hiểu các phản ứng hóa học trong sinh vật và ứng dụng',
+      },
+      {
+        moduleId: 'nanotechnology',
+        lessonId: 'nanomaterials-synthesis-characterization',
+        title: 'Tổng Hợp Hóa Học',
+        connection: 'Sử dụng hóa học để tạo ra vật liệu nano',
+      },
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'air-water-quality-monitoring',
+        title: 'Hóa Học Môi Trường',
+        connection: 'Phân tích tác động hóa học đối với môi trường',
+      },
+    ],
   },
   {
     id: 'biology-ecosystem',
@@ -302,6 +602,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 70,
     icon: '🌿',
     color: 'from-lime-500 to-green-500',
+    relatedLessons: [
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'ecology-conservation',
+        title: 'Sinh Thái & Bảo Tồn',
+        connection: 'Hiểu hệ sinh thái và các phương pháp bảo tồn đa dạng sinh học',
+      },
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'biodiversity-analysis',
+        title: 'Phân Tích Đa Dạng Sinh Học',
+        connection: 'Sử dụng dữ liệu để nghiên cứu và bảo vệ đa dạng sinh học',
+      },
+      {
+        moduleId: 'green-technology',
+        lessonId: 'sustainable-ecosystems',
+        title: 'Hệ Sinh Thái Bền Vững',
+        connection: 'Công nghệ xanh và phát triển bền vững với hệ sinh thái',
+      },
+    ],
   },
   {
     id: 'history-timeline',
@@ -316,6 +636,26 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     points: 60,
     icon: '📚',
     color: 'from-amber-500 to-yellow-500',
+    relatedLessons: [
+      {
+        moduleId: 'vietnamese-culture',
+        lessonId: 'vietnamese-history',
+        title: 'Lịch Sử Việt Nam',
+        connection: 'Tìm hiểu các mốc thời gian quan trọng trong lịch sử Việt Nam',
+      },
+      {
+        moduleId: 'digital-government',
+        lessonId: 'government-history',
+        title: 'Lịch Sử Chính Phủ Số',
+        connection: 'Sự phát triển của chính phủ số qua các thời kỳ',
+      },
+      {
+        moduleId: 'vietnamese-business',
+        lessonId: 'business-history',
+        title: 'Lịch Sử Kinh Doanh Việt Nam',
+        connection: 'Những mốc son trong phát triển kinh tế Việt Nam',
+      },
+    ],
   },
   {
     id: 'robot-navigation-3d',
@@ -335,20 +675,20 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         moduleId: 'robotics',
         lessonId: 'autonomous-navigation',
         title: 'Điều Hướng Tự Động',
-        connection: 'Thuật toán A* và pathfinding trong robotics thực tế'
+        connection: 'Thuật toán A* và pathfinding trong robotics thực tế',
       },
       {
         moduleId: 'python',
         lessonId: 'algorithms-data-structures',
         title: 'Thuật Toán & Cấu Trúc Dữ Liệu',
-        connection: 'Cài đặt thuật toán tìm kiếm và tối ưu hóa đường đi'
+        connection: 'Cài đặt thuật toán tìm kiếm và tối ưu hóa đường đi',
       },
       {
-        moduleId: 'learning',
-        lessonId: 'ai-art',
+        moduleId: 'ai',
+        lessonId: 'creative-design/',
         title: 'AI & Công Nghệ Sáng Tạo',
-        connection: 'Ứng dụng AI trong game và mô phỏng 3D'
-      }
-    ]
+        connection: 'Ứng dụng AI trong game và mô phỏng 3D',
+      },
+    ],
   },
 ];

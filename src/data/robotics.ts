@@ -714,11 +714,13 @@ WebServer server(80);
 void handleRoot() {
   String html = "<html><body>";
   html += "<h1>Robot Control</h1>";
-  html += "<button onclick=\"location.href='/forward'\">Forward</button><br>";
-  html += "<button onclick=\"location.href='/backward'\">Backward</button><br>";
-  html += "<button onclick=\"location.href='/left'\">Left</button>";
-  html += "<button onclick=\"location.href='/right'\">Right</button><br>";
-  html += "<button onclick=\"location.href='/stop'\">Stop</button>";
+  html += "<form method='GET'>";
+  html += "<button type='submit' formaction='/forward'>Forward</button><br>";
+  html += "<button type='submit' formaction='/backward'>Backward</button><br>";
+  html += "<button type='submit' formaction='/left'>Left</button>";
+  html += "<button type='submit' formaction='/right'>Right</button><br>";
+  html += "<button type='submit' formaction='/stop'>Stop</button>";
+  html += "</form>";
   html += "</body></html>";
   server.send(200, "text/html", html);
 }

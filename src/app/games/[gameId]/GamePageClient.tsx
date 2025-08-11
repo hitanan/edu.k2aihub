@@ -23,6 +23,7 @@ interface GamePageClientProps {
 
 export default function GamePageClient({ game }: GamePageClientProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { completedGames, markGameCompleted } = useEducationalGames();
   const { completLesson } = useLearningProgress();
   const isCompleted = completedGames.includes(game.id);
@@ -61,7 +62,12 @@ export default function GamePageClient({ game }: GamePageClientProps) {
 
   const handlePlay = () => {
     if (game.isInternal) {
-      setIsPlaying(true);
+      setIsLoading(true);
+      // Simulate loading time for better UX
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsPlaying(true);
+      }, 500);
     } else if (game.url) {
       window.open(game.url, '_blank', 'noopener,noreferrer');
       // Track external game play
@@ -156,16 +162,21 @@ export default function GamePageClient({ game }: GamePageClientProps) {
 
                 <button
                   onClick={handlePlay}
-                  disabled={isPlaying}
+                  disabled={isPlaying || isLoading}
                   className={`inline-flex items-center px-8 py-4 rounded-2xl font-semibold transition-all duration-300 ${
-                    isPlaying
+                    isPlaying || isLoading
                       ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
                       : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transform hover:scale-105'
                   }`}
                 >
-                  {isPlaying ? (
+                  {isLoading ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+                      Đang tải...
+                    </>
+                  ) : isPlaying ? (
+                    <>
+                      <div className="animate-pulse h-5 w-5 bg-white/50 rounded mr-3"></div>
                       Đang chơi...
                     </>
                   ) : (

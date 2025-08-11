@@ -171,6 +171,29 @@ export function GameCard({
           </div>
         </div>
 
+        {/* Related Lessons */}
+        {game.relatedLessons && game.relatedLessons.length > 0 && (
+          <div className="mb-4">
+            <div className="text-xs text-gray-400 mb-2">Bài học liên quan:</div>
+            <div className="space-y-1 max-h-20 overflow-y-auto">
+              {game.relatedLessons.slice(0, 2).map((lesson, index) => (
+                <Link
+                  key={index}
+                  href={`/learning/${lesson.moduleId}/${lesson.lessonId}`}
+                  className="block bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 hover:text-blue-200 px-2 py-1 rounded text-xs transition-colors duration-200"
+                >
+                  📚 {lesson.title}
+                </Link>
+              ))}
+              {game.relatedLessons.length > 2 && (
+                <div className="text-xs text-gray-500">
+                  +{game.relatedLessons.length - 2} bài học khác
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         <button
           onClick={handlePlay}
           className="w-full bg-white/10 hover:bg-white/20 text-white rounded-lg py-2 px-4 transition-colors duration-200 flex items-center justify-center font-medium"
@@ -221,14 +244,7 @@ export function EducationalGamesShowcase({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {games.map((game) => (
-          <GameCard
-            key={game.id}
-            game={game}
-            onPlay={() => {
-              // Handle internal game play
-              console.log(`Playing game: ${game.id}`);
-            }}
-          />
+          <GameCard key={game.id} game={game} />
         ))}
       </div>
 

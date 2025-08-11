@@ -12,6 +12,9 @@ import { gameDevLessons } from '@/data/game-development';
 import { aiArtLessons } from '@/data/ai-art-creative-tech';
 import { biotechnologyLessons } from '@/data/biotechnology';
 
+// Import Educational Games Data
+import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
+
 // Import NEW MODULES (Recently Created)
 import { AIMLLessons } from '@/data/ai-machine-learning';
 import { QuantumLessons } from '@/data/quantum-computing';
@@ -143,6 +146,24 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
       priority: 0.8,
       changeFrequency: 'weekly' as const,
     },
+  ];
+
+  // Educational Games pages
+  const gamesPages = [
+    // Main games page
+    {
+      url: `${baseUrl}/games`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+      lastModified,
+    },
+    // Individual game pages
+    ...EDUCATIONAL_GAMES_DATA.map((game) => ({
+      url: `${baseUrl}/games/${game.id}`,
+      priority: 0.7,
+      changeFrequency: 'monthly' as const,
+      lastModified,
+    })),
   ];
 
   // AI module pages
@@ -383,6 +404,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
   // Combine all pages with proper prioritization
   const allPages = [
     ...corePages.map((page) => ({ ...page, lastModified })),
+    ...gamesPages, // Educational games pages
     ...aiPages,
     ...pythonPages,
     ...arduinoPages,

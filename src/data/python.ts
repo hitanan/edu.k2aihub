@@ -826,6 +826,464 @@ demo_bank_system()`,
       'API client libraries',
       'GUI application structure'
     ]
+  },
+  {
+    id: 'algorithms-data-structures',
+    title: 'Bài 8: Thuật toán & Cấu trúc dữ liệu',
+    description:
+      'Khám phá trái tim của lập trình - thuật toán và cấu trúc dữ liệu! Từ tìm kiếm nhị phân đến sắp xếp nhanh, từ stack/queue đến cây nhị phân. Bạn sẽ hiểu cách máy tính "suy nghĩ" và tối ưu hóa hiệu suất chương trình.',
+    videoUrl: 'https://www.youtube.com/watch?v=8hly31xKli0',
+    difficulty: 'Nâng cao',
+    duration: '180 phút',
+    objectives: [
+      'Hiểu khái niệm độ phức tạp thời gian Big O',
+      'Implement các thuật toán tìm kiếm và sắp xếp',
+      'Sử dụng Stack, Queue, Linked List',
+      'Làm việc với Binary Tree và Graph',
+      'Áp dụng Dynamic Programming cơ bản',
+      'Phân tích và tối ưu hóa thuật toán'
+    ],
+    prerequisites: [
+      'Thành thạo functions và classes',
+      'Hiểu recursion cơ bản',
+      'Kiến thức toán học trung học'
+    ],
+    exercises: [
+      {
+        title: 'Binary Search Implementation',
+        description: 'Implement thuật toán tìm kiếm nhị phân và so sánh hiệu suất với linear search',
+        difficulty: 'Trung bình',
+        solution: `import time
+import random
+
+def linear_search(arr, target):
+    """Tìm kiếm tuyến tính - O(n)"""
+    for i, value in enumerate(arr):
+        if value == target:
+            return i
+    return -1
+
+def binary_search(arr, target):
+    """Tìm kiếm nhị phân - O(log n)"""
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return -1
+
+def binary_search_recursive(arr, target, left=0, right=None):
+    """Binary search với recursion"""
+    if right is None:
+        right = len(arr) - 1
+    
+    if left > right:
+        return -1
+    
+    mid = (left + right) // 2
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        return binary_search_recursive(arr, target, mid + 1, right)
+    else:
+        return binary_search_recursive(arr, target, left, mid - 1)
+
+# Performance comparison
+def compare_search_algorithms():
+    # Tạo sorted array lớn
+    size = 100000
+    arr = sorted([random.randint(1, 1000000) for _ in range(size)])
+    target = arr[size//2]  # Target ở giữa
+    
+    # Test linear search
+    start = time.time()
+    result1 = linear_search(arr, target)
+    linear_time = time.time() - start
+    
+    # Test binary search
+    start = time.time()
+    result2 = binary_search(arr, target)
+    binary_time = time.time() - start
+    
+    print(f"Array size: {size}")
+    print(f"Linear Search: {linear_time:.6f}s - Result: {result1}")
+    print(f"Binary Search: {binary_time:.6f}s - Result: {result2}")
+    print(f"Speed up: {linear_time/binary_time:.2f}x faster")
+
+compare_search_algorithms()`,
+        requirements: [
+          'Implement cả iterative và recursive binary search',
+          'Performance comparison với timing',
+          'Handles edge cases (empty array, not found)',
+          'Clear documentation và comments',
+          'Test với different array sizes'
+        ],
+        hints: [
+          'Array phải được sort trước',
+          'Dùng time.time() để measure performance',
+          'Mid = (left + right) // 2 tránh overflow',
+          'Test với arrays có size khác nhau'
+        ]
+      },
+      {
+        title: 'Stack & Queue Implementation',
+        description: 'Tạo Stack và Queue từ đầu, implement các operations cơ bản',
+        difficulty: 'Trung bình',
+        solution: `class Stack:
+    """Stack implementation - LIFO (Last In, First Out)"""
+    
+    def __init__(self):
+        self.items = []
+    
+    def push(self, item):
+        """Thêm element vào top"""
+        self.items.append(item)
+    
+    def pop(self):
+        """Remove và return top element"""
+        if self.is_empty():
+            raise IndexError("Stack is empty")
+        return self.items.pop()
+    
+    def peek(self):
+        """Xem top element không remove"""
+        if self.is_empty():
+            raise IndexError("Stack is empty")
+        return self.items[-1]
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def size(self):
+        return len(self.items)
+    
+    def __str__(self):
+        return f"Stack: {self.items}"
+
+class Queue:
+    """Queue implementation - FIFO (First In, First Out)"""
+    
+    def __init__(self):
+        self.items = []
+    
+    def enqueue(self, item):
+        """Thêm element vào rear"""
+        self.items.append(item)
+    
+    def dequeue(self):
+        """Remove và return front element"""
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        return self.items.pop(0)
+    
+    def front(self):
+        """Xem front element"""
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        return self.items[0]
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def size(self):
+        return len(self.items)
+    
+    def __str__(self):
+        return f"Queue: {self.items}"
+
+# Undo/Redo system using Stack
+class UndoRedoSystem:
+    def __init__(self):
+        self.undo_stack = Stack()
+        self.redo_stack = Stack()
+        self.current_state = ""
+    
+    def execute_command(self, command):
+        """Execute command và save state for undo"""
+        self.undo_stack.push(self.current_state)
+        self.current_state = command
+        # Clear redo stack khi có command mới
+        self.redo_stack = Stack()
+        print(f"Executed: {command}")
+    
+    def undo(self):
+        """Undo last command"""
+        if not self.undo_stack.is_empty():
+            self.redo_stack.push(self.current_state)
+            self.current_state = self.undo_stack.pop()
+            print(f"Undid to: {self.current_state}")
+        else:
+            print("Nothing to undo")
+    
+    def redo(self):
+        """Redo last undone command"""
+        if not self.redo_stack.is_empty():
+            self.undo_stack.push(self.current_state)
+            self.current_state = self.redo_stack.pop()
+            print(f"Redid to: {self.current_state}")
+        else:
+            print("Nothing to redo")
+
+# Demo Stack & Queue
+def demo_stack_queue():
+    print("=== STACK DEMO ===")
+    stack = Stack()
+    stack.push("First")
+    stack.push("Second")
+    stack.push("Third")
+    print(stack)
+    print(f"Pop: {stack.pop()}")  # Third
+    print(f"Peek: {stack.peek()}")  # Second
+    print(stack)
+    
+    print("\\n=== QUEUE DEMO ===")
+    queue = Queue()
+    queue.enqueue("First")
+    queue.enqueue("Second") 
+    queue.enqueue("Third")
+    print(queue)
+    print(f"Dequeue: {queue.dequeue()}")  # First
+    print(f"Front: {queue.front()}")  # Second
+    print(queue)
+    
+    print("\\n=== UNDO/REDO DEMO ===")
+    editor = UndoRedoSystem()
+    editor.execute_command("Type 'Hello'")
+    editor.execute_command("Type ' World'")
+    editor.execute_command("Delete 'World'")
+    editor.undo()  # Back to "Type ' World'"
+    editor.undo()  # Back to "Type 'Hello'"
+    editor.redo()  # Forward to "Type ' World'"
+
+demo_stack_queue()`,
+        requirements: [
+          'Complete Stack class với error handling',
+          'Complete Queue class với all operations',
+          'Real-world example (Undo/Redo system)',
+          'Proper exception handling',
+          'Demo function showing usage'
+        ],
+        hints: [
+          'List.append() và list.pop() cho Stack',
+          'List.append() và list.pop(0) cho Queue',
+          'Check empty trước khi pop/dequeue',
+          'Undo/Redo cần 2 stacks'
+        ]
+      },
+      {
+        title: 'Binary Tree & Tree Traversal',
+        description: 'Implement Binary Tree với các phương pháp duyệt khác nhau',
+        difficulty: 'Nâng cao',
+        solution: `class TreeNode:
+    """Node trong Binary Tree"""
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+    
+    def __str__(self):
+        return str(self.value)
+
+class BinaryTree:
+    """Binary Tree implementation với traversal methods"""
+    
+    def __init__(self):
+        self.root = None
+    
+    def insert(self, value):
+        """Insert value vào Binary Search Tree"""
+        if self.root is None:
+            self.root = TreeNode(value)
+        else:
+            self._insert_recursive(self.root, value)
+    
+    def _insert_recursive(self, node, value):
+        if value < node.value:
+            if node.left is None:
+                node.left = TreeNode(value)
+            else:
+                self._insert_recursive(node.left, value)
+        else:
+            if node.right is None:
+                node.right = TreeNode(value)
+            else:
+                self._insert_recursive(node.right, value)
+    
+    def inorder_traversal(self, node=None, result=None):
+        """Left -> Root -> Right (sorted order cho BST)"""
+        if result is None:
+            result = []
+        if node is None:
+            node = self.root
+        
+        if node:
+            self.inorder_traversal(node.left, result)
+            result.append(node.value)
+            self.inorder_traversal(node.right, result)
+        
+        return result
+    
+    def preorder_traversal(self, node=None, result=None):
+        """Root -> Left -> Right"""
+        if result is None:
+            result = []
+        if node is None:
+            node = self.root
+        
+        if node:
+            result.append(node.value)
+            self.preorder_traversal(node.left, result)
+            self.preorder_traversal(node.right, result)
+        
+        return result
+    
+    def postorder_traversal(self, node=None, result=None):
+        """Left -> Right -> Root"""
+        if result is None:
+            result = []
+        if node is None:
+            node = self.root
+        
+        if node:
+            self.postorder_traversal(node.left, result)
+            self.postorder_traversal(node.right, result)
+            result.append(node.value)
+        
+        return result
+    
+    def level_order_traversal(self):
+        """Breadth-First traversal using Queue"""
+        if not self.root:
+            return []
+        
+        result = []
+        queue = [self.root]
+        
+        while queue:
+            node = queue.pop(0)
+            result.append(node.value)
+            
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        
+        return result
+    
+    def search(self, value, node=None):
+        """Tìm kiếm value trong BST"""
+        if node is None:
+            node = self.root
+        
+        if node is None or node.value == value:
+            return node
+        
+        if value < node.value:
+            return self.search(value, node.left)
+        else:
+            return self.search(value, node.right)
+    
+    def height(self, node=None):
+        """Tính chiều cao của tree"""
+        if node is None:
+            node = self.root
+        
+        if node is None:
+            return 0
+        
+        left_height = self.height(node.left)
+        right_height = self.height(node.right)
+        
+        return 1 + max(left_height, right_height)
+    
+    def count_nodes(self, node=None):
+        """Đếm tổng số nodes"""
+        if node is None:
+            node = self.root
+        
+        if node is None:
+            return 0
+        
+        return 1 + self.count_nodes(node.left) + self.count_nodes(node.right)
+    
+    def visualize(self, node=None, level=0, prefix="Root: "):
+        """Simple tree visualization"""
+        if node is None:
+            node = self.root
+        
+        if node is not None:
+            print(" " * (level * 4) + prefix + str(node.value))
+            if node.left or node.right:
+                if node.left:
+                    self.visualize(node.left, level + 1, "L--- ")
+                else:
+                    print(" " * ((level + 1) * 4) + "L--- None")
+                
+                if node.right:
+                    self.visualize(node.right, level + 1, "R--- ")
+                else:
+                    print(" " * ((level + 1) * 4) + "R--- None")
+
+# Demo Binary Tree
+def demo_binary_tree():
+    print("=== BINARY TREE DEMO ===")
+    tree = BinaryTree()
+    
+    # Insert values
+    values = [50, 30, 70, 20, 40, 60, 80]
+    for value in values:
+        tree.insert(value)
+    
+    print(f"Inserted values: {values}")
+    print(f"Tree height: {tree.height()}")
+    print(f"Total nodes: {tree.count_nodes()}")
+    
+    print("\\n=== TREE TRAVERSALS ===")
+    print(f"Inorder (sorted): {tree.inorder_traversal()}")
+    print(f"Preorder: {tree.preorder_traversal()}")
+    print(f"Postorder: {tree.postorder_traversal()}")
+    print(f"Level order: {tree.level_order_traversal()}")
+    
+    print("\\n=== SEARCH TEST ===")
+    search_value = 40
+    found = tree.search(search_value)
+    print(f"Search for {search_value}: {'Found' if found else 'Not found'}")
+    
+    print("\\n=== TREE VISUALIZATION ===")
+    tree.visualize()
+
+demo_binary_tree()`,
+        requirements: [
+          'Complete TreeNode và BinaryTree classes',
+          'All 4 traversal methods (inorder, preorder, postorder, level-order)',
+          'Search, height, count_nodes methods',
+          'Tree visualization method',
+          'Comprehensive demo với test cases'
+        ],
+        hints: [
+          'Recursion là key cho tree operations',
+          'Inorder traversal cho BST = sorted order',
+          'Level order cần queue',
+          'Height = 1 + max(left_height, right_height)'
+        ]
+      }
+    ],
+    realWorldApplications: [
+      'Database indexing và optimization',
+      'Search engines và information retrieval',
+      'Game AI và pathfinding algorithms',
+      'Compiler design và parsing',
+      'Network routing protocols',
+      'Machine learning feature selection',
+      'Financial algorithmic trading',
+      'Data compression algorithms'
+    ]
   }
 ];
 
