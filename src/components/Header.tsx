@@ -87,7 +87,7 @@ const Header: React.FC = () => {
       }
     > = {};
 
-    moduleNavigation.forEach((module) => {
+    moduleNavigation.slice(0, 40).forEach((module) => {
       if (!module.coreModule && module.href?.startsWith('/learning/')) {
         let categoryKey = module.category;
         if (typeof categoryKey === 'string') {

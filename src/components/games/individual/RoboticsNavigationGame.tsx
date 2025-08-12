@@ -88,7 +88,7 @@ const ROBOTICS_LEVELS = (() => {
       .map(() => Array(size).fill(0));
 
     // Add random obstacles (more for higher levels)
-    const obstacleCount = Math.floor((size * size) * (0.1 + (i / 10) * 0.2));
+    const obstacleCount = Math.floor(size * size * (0.1 + (i / 10) * 0.2));
     for (let j = 0; j < obstacleCount; j++) {
       const row = Math.floor(Math.random() * size);
       const col = Math.floor(Math.random() * size);
@@ -121,16 +121,8 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft }: Robotic
   const [robotPosition, setRobotPosition] = useState<[number, number]>([0, 0]);
   const [commands, setCommands] = useState<string[]>([]);
   const [isRunning, setIsRunning] = useState(false);
-  const [score, setScore] = useState(0);
   const [totalScore, setTotalScore] = useState(0);
   const [pathHistory, setPathHistory] = useState<[number, number][]>([]);
-  const [algorithmVisualization, setAlgorithmVisualization] = useState<{
-    openSet: [number, number][];
-    closedSet: [number, number][];
-    path: [number, number][];
-  }>({ openSet: [], closedSet: [], path: [] });
-  const [showAlgorithm, setShowAlgorithm] = useState(false);
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState<'A*' | 'Dijkstra' | 'BFS'>('A*');
   const [levelStartTime, setLevelStartTime] = useState(Date.now());
   const [completedLevels, setCompletedLevels] = useState<number[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -183,8 +175,6 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft }: Robotic
       setCommands([]);
       setIsRunning(false);
       setPathHistory([]);
-      setAlgorithmVisualization({ openSet: [], closedSet: [], path: [] });
-      setShowAlgorithm(false);
     }
   }, [currentLevel, maze]);
 
@@ -196,78 +186,101 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft }: Robotic
       setCommands([]);
       setIsRunning(false);
       setPathHistory([]);
-      setAlgorithmVisualization({ openSet: [], closedSet: [], path: [] });
-      setShowAlgorithm(false);
     }
   }, [timeLeft, currentLevelData]);
 
-  const moveRobot = useCallback((direction: string) => {
-    if (isRunning) return;
+  const moveRobot = useCallback(
+    (direction: string) => {
+      if (isRunning) return;
 
-    const [x, y] = robotPosition;
-    let newX = x, newY = y;
+      const [x, y] = robotPosition;
+      let newX = x,
+        newY = y;
 
-    switch (direction) {
-      case 'up':
-        newX = Math.max(0, x - 1);
-        break;
-      case 'down':
-        newX = Math.min(maze.grid.length - 1, x + 1);
-        break;
-      case 'left':
-        newY = Math.max(0, y - 1);
-        break;
-      case 'right':
-        newY = Math.min(maze.grid[0].length - 1, y + 1);
-        break;
-    }
-
-    // Check if new position is valid (not a wall)
-    if (maze.grid[newX] && maze.grid[newX][newY] === 0) {
-      setRobotPosition([newX, newY]);
-      setCommands(prev => [...prev, direction]);
-      setPathHistory(prev => [...prev, [newX, newY]]);
-
-      // Check if reached goal
-      if (newX === maze.end[0] && newY === maze.end[1]) {
-        const timeBonus = Math.max(0, currentLevelData.timeLimit - Math.floor((Date.now() - levelStartTime) / 1000));
-        const moveBonus = Math.max(0, (currentLevelData.minMoves - commands.length - 1) * 5);
-        const levelScore = currentLevelData.pointValue + timeBonus + moveBonus;
-        
-        setScore(levelScore);
-        const newTotalScore = totalScore + levelScore;
-        setTotalScore(newTotalScore);
-
-        // Mark level as completed and save progress
-        const newCompletedLevels = [...new Set([...completedLevels, currentLevel])];
-        setCompletedLevels(newCompletedLevels);
-        saveProgress(newCompletedLevels, currentLevel, newTotalScore);
-        
-        onComplete(true, newTotalScore);
+      switch (direction) {
+        case 'up':
+          newX = Math.max(0, x - 1);
+          break;
+        case 'down':
+          newX = Math.min(maze.grid.length - 1, x + 1);
+          break;
+        case 'left':
+          newY = Math.max(0, y - 1);
+          break;
+        case 'right':
+          newY = Math.min(maze.grid[0].length - 1, y + 1);
+          break;
       }
-    }
-  }, [robotPosition, isRunning, maze, commands.length, currentLevelData, levelStartTime, onComplete, totalScore, completedLevels, currentLevel, saveProgress]);
+
+      // Check if new position is valid (not a wall)
+      if (maze.grid[newX] && maze.grid[newX][newY] === 0) {
+        setRobotPosition([newX, newY]);
+        setCommands((prev) => [...prev, direction]);
+        setPathHistory((prev) => [...prev, [newX, newY]]);
+
+        // Check if reached goal
+        if (newX === maze.end[0] && newY === maze.end[1]) {
+          const timeBonus = Math.max(0, currentLevelData.timeLimit - Math.floor((Date.now() - levelStartTime) / 1000));
+          const moveBonus = Math.max(0, (currentLevelData.minMoves - commands.length - 1) * 5);
+          const levelScore = currentLevelData.pointValue + timeBonus + moveBonus;
+
+          const newTotalScore = totalScore + levelScore;
+          setTotalScore(newTotalScore);
+
+          // Mark level as completed and save progress
+          const newCompletedLevels = [...new Set([...completedLevels, currentLevel])];
+          setCompletedLevels(newCompletedLevels);
+
+          // Update currentLevel for next time if not last level
+          const nextLevelIndex = currentLevel < ROBOTICS_LEVELS.length - 1 ? currentLevel + 1 : currentLevel;
+          saveProgress(newCompletedLevels, nextLevelIndex, newTotalScore);
+
+          // Auto advance to next level after 2 seconds if not last level
+          if (currentLevel < ROBOTICS_LEVELS.length - 1) {
+            setTimeout(() => {
+              setCurrentLevel((prev) => prev + 1);
+              setLevelStartTime(Date.now());
+            }, 2000);
+          } else {
+            // Game completed - all levels done
+            onComplete(true, newTotalScore);
+          }
+        }
+      }
+    },
+    [
+      robotPosition,
+      isRunning,
+      maze,
+      commands.length,
+      currentLevelData,
+      levelStartTime,
+      onComplete,
+      totalScore,
+      completedLevels,
+      currentLevel,
+      saveProgress,
+    ],
+  );
 
   const resetLevel = () => {
     setRobotPosition([maze.start[0], maze.start[1]]);
     setCommands([]);
     setIsRunning(false);
     setPathHistory([]);
-    setAlgorithmVisualization({ openSet: [], closedSet: [], path: [] });
-    setShowAlgorithm(false);
     setLevelStartTime(Date.now());
   };
 
   const nextLevel = () => {
     if (currentLevel < ROBOTICS_LEVELS.length - 1) {
-      setCurrentLevel(prev => prev + 1);
+      setCurrentLevel((prev) => prev + 1);
       setLevelStartTime(Date.now());
     }
   };
 
   const previousLevel = () => {
     if (currentLevel > 0) {
-      setCurrentLevel(prev => prev - 1);
+      setCurrentLevel((prev) => prev - 1);
       setLevelStartTime(Date.now());
     }
   };
@@ -292,7 +305,7 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft }: Robotic
             Level {currentLevel + 1}/{ROBOTICS_LEVELS.length}
           </div>
         </div>
-        
+
         <div className="bg-gray-800/50 rounded-xl p-4 mb-4">
           <h4 className="text-white font-semibold mb-2">
             {currentLevelData.name}
@@ -333,7 +346,7 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft }: Robotic
                 {maze.end[0] === rowIndex && maze.end[1] === colIndex && robotPosition[0] !== rowIndex && '🎯'}
                 {cell === 1 && '🧱'}
               </div>
-            ))
+            )),
           )}
         </div>
       </div>

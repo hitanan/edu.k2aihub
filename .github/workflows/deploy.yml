@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NEXT_PUBLIC_GA_MEASUREMENT_ID: 'G-J8JXSFDF0G'
+      NEXT_PUBLIC_GA_MEASUREMENT_ID: 'GTM-WCJ93MW8'
 
     permissions:
       contents: read

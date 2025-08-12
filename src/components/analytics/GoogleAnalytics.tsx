@@ -6,16 +6,10 @@ interface GoogleAnalyticsProps {
   measurementId: string;
 }
 
-export default function GoogleAnalytics({
-  measurementId,
-}: GoogleAnalyticsProps) {
+export default function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        strategy="afterInteractive"
-        async
-      />
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} strategy="afterInteractive" async />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -27,18 +21,18 @@ export default function GoogleAnalytics({
           });
         `}
       </Script>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1050674312023873"
+        crossOrigin="anonymous"
+      ></Script>
     </>
   );
 }
 
 // Custom hook for tracking events
 export function useGoogleAnalytics() {
-  const trackEvent = (
-    action: string,
-    category: string,
-    label?: string,
-    value?: number,
-  ) => {
+  const trackEvent = (action: string, category: string, label?: string, value?: number) => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', action, {
         event_category: category,
@@ -57,26 +51,13 @@ export function useGoogleAnalytics() {
     }
   };
 
-  const trackLessonStart = (
-    moduleName: string,
-    lessonId: string,
-    lessonTitle: string,
-  ) => {
+  const trackLessonStart = (moduleName: string, lessonId: string, lessonTitle: string) => {
     trackEvent('lesson_start', 'engagement', `${moduleName}/${lessonId}`, 1);
     trackEvent('lesson_view', 'education', lessonTitle);
   };
 
-  const trackLessonComplete = (
-    moduleName: string,
-    lessonId: string,
-    timeSpent: number,
-  ) => {
-    trackEvent(
-      'lesson_complete',
-      'engagement',
-      `${moduleName}/${lessonId}`,
-      timeSpent,
-    );
+  const trackLessonComplete = (moduleName: string, lessonId: string, timeSpent: number) => {
+    trackEvent('lesson_complete', 'engagement', `${moduleName}/${lessonId}`, timeSpent);
   };
 
   const trackModuleView = (moduleName: string, moduleTitle: string) => {
@@ -88,68 +69,28 @@ export function useGoogleAnalytics() {
     trackEvent('search', 'user_interaction', query, resultsCount);
   };
 
-  const trackResourceClick = (
-    resourceType: string,
-    resourceTitle: string,
-    moduleName: string,
-  ) => {
-    trackEvent(
-      'resource_click',
-      'engagement',
-      `${moduleName}/${resourceType}/${resourceTitle}`,
-    );
+  const trackResourceClick = (resourceType: string, resourceTitle: string, moduleName: string) => {
+    trackEvent('resource_click', 'engagement', `${moduleName}/${resourceType}/${resourceTitle}`);
   };
 
-  const trackVideoPlay = (
-    videoTitle: string,
-    moduleName: string,
-    lessonId: string,
-  ) => {
-    trackEvent(
-      'video_play',
-      'engagement',
-      `${moduleName}/${lessonId}/${videoTitle}`,
-    );
+  const trackVideoPlay = (videoTitle: string, moduleName: string, lessonId: string) => {
+    trackEvent('video_play', 'engagement', `${moduleName}/${lessonId}/${videoTitle}`);
   };
 
-  const trackExerciseStart = (
-    exerciseTitle: string,
-    moduleName: string,
-    lessonId: string,
-  ) => {
-    trackEvent(
-      'exercise_start',
-      'engagement',
-      `${moduleName}/${lessonId}/${exerciseTitle}`,
-    );
+  const trackExerciseStart = (exerciseTitle: string, moduleName: string, lessonId: string) => {
+    trackEvent('exercise_start', 'engagement', `${moduleName}/${lessonId}/${exerciseTitle}`);
   };
 
-  const trackSolutionView = (
-    exerciseTitle: string,
-    moduleName: string,
-    lessonId: string,
-  ) => {
-    trackEvent(
-      'solution_view',
-      'engagement',
-      `${moduleName}/${lessonId}/${exerciseTitle}`,
-    );
+  const trackSolutionView = (exerciseTitle: string, moduleName: string, lessonId: string) => {
+    trackEvent('solution_view', 'engagement', `${moduleName}/${lessonId}/${exerciseTitle}`);
   };
 
   const trackCityView = (cityName: string, regionName: string) => {
     trackEvent('city_view', 'geography', `${regionName}/${cityName}`);
   };
 
-  const trackShare = (
-    shareType: string,
-    contentType: string,
-    contentTitle: string,
-  ) => {
-    trackEvent(
-      'share',
-      'social',
-      `${shareType}/${contentType}/${contentTitle}`,
-    );
+  const trackShare = (shareType: string, contentType: string, contentTitle: string) => {
+    trackEvent('share', 'social', `${shareType}/${contentType}/${contentTitle}`);
   };
 
   return {

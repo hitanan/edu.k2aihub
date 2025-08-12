@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import AllLearningPageClient from './AllLearningPageClient';
+import { moduleNavigation } from '@/data/moduleNavigation';
 
 export const metadata: Metadata = {
-  title: createTitle('Tất Cả Khóa Học - 21 Modules Chuyên Sâu'),
+  title: createTitle(`Tất Cả Khóa Học - ${moduleNavigation.length} Modules Chuyên Sâu`),
   description: createDescription(
-    'Khám phá 21 khóa học chuyên sâu từ Vietnamese business, AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering, Environmental Data Science, Food Technology, Aerospace Engineering, Nanotechnology đến programming và science. Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.',
+    `Khám phá ${moduleNavigation.length} khóa học chuyên sâu từ Vietnamese business, AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering, Environmental Data Science, Food Technology, Aerospace Engineering, Nanotechnology đến programming và science. Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.`,
   ),
   keywords: createKeywords([
     'khóa học',
@@ -37,16 +38,14 @@ export const metadata: Metadata = {
   ]),
   openGraph: {
     title: 'Tất Cả Khóa Học - K2AI Learning Platform',
-    description:
-      'Khám phá 21 khóa học chuyên sâu từ Vietnamese business đến AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering và các công nghệ tiên tiến. Miễn phí cho thị trường Việt Nam.',
+    description: `Khám phá ${moduleNavigation.length} khóa học chuyên sâu từ Vietnamese business đến AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering và các công nghệ tiên tiến. Miễn phí cho thị trường Việt Nam.`,
     type: 'website',
     locale: 'vi_VN',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Tất Cả Khóa Học - K2AI Learning Platform',
-    description:
-      'Khám phá 21 khóa học chuyên sâu từ Vietnamese business đến AI technology và các công nghệ tiên tiến.',
+    description: `Khám phá ${moduleNavigation.length} khóa học chuyên sâu từ Vietnamese business đến AI technology và các công nghệ tiên tiến.`,
   },
   alternates: {
     canonical: '/learning',

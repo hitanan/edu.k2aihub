@@ -12,6 +12,7 @@ import {
 } from '@/data/games/gameData';
 import { GAME_PROGRESS } from '@/data/gameData';
 import { EducationalGame } from '@/data/educationalGames';
+import GameCompletionCelebration from './GameCompletionCelebration';
 import {
   BiologyEcosystemGame,
   HistoryTimelineGame,
@@ -48,6 +49,10 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
   const [streak, setStreak] = useState<number>(0);
   const [maxStreak, setMaxStreak] = useState<number>(0);
   const [isTimerActive, setIsTimerActive] = useState<boolean>(true);
+  const [showCelebration, setShowCelebration] = useState<boolean>(false);
+  const [finalScore, setFinalScore] = useState<number>(0);
+  const [completionTime, setCompletionTime] = useState<number>(0);
+  const [achievements, setAchievements] = useState<string[]>([]);
 
   const getTimeBonus = useCallback(() => {
     const timeUsed = 120 - timeLeft;
@@ -81,18 +86,32 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
     const timeBonus = getTimeBonus();
     const streakBonus = maxStreak * 10;
     const perfectBonus = lives === 3 ? 25 : 0;
-    const finalScore = Math.round(rawScore + timeBonus + streakBonus + perfectBonus);
+    const calculatedFinalScore = Math.round(rawScore + timeBonus + streakBonus + perfectBonus);
+    const gameCompletionTime = 120 - timeLeft;
+
+    // Calculate achievements
+    const gameAchievements: string[] = [];
+    if (lives === 3) gameAchievements.push('🏃 Hoàn hảo - Không mất mạng nào!');
+    if (timeLeft > 60) gameAchievements.push('⚡ Tốc độ - Hoàn thành nhanh!');
+    if (maxStreak >= 5) gameAchievements.push('🔥 Chuỗi thắng - ' + maxStreak + ' điểm liên tiếp!');
+    if (calculatedFinalScore >= 100) gameAchievements.push('🏆 Điểm cao - Điểm số xuất sắc!');
+    if (success && gameCompletionTime <= 30) gameAchievements.push('🚀 Siêu tốc - Hoàn thành trong 30 giây!');
 
     GAME_PROGRESS.saveProgress(game.id, {
-      score: finalScore,
+      score: calculatedFinalScore,
       accuracy: success ? Math.min(100, rawScore) : Math.max(0, rawScore),
-      timeMs: (120 - timeLeft) * 1000,
+      timeMs: gameCompletionTime * 1000,
       completed: success || rawScore > 50,
       lastPlayed: Date.now(),
     });
 
-    setCurrentGameState('results');
-    onComplete(finalScore);
+    // Set celebration data
+    setFinalScore(calculatedFinalScore);
+    setCompletionTime(gameCompletionTime);
+    setAchievements(gameAchievements);
+    setShowCelebration(true);
+
+    onComplete(calculatedFinalScore);
   };
 
   const renderGameContent = () => {
@@ -427,6 +446,34 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
 
       {/* Game Content */}
       <div className="max-w-4xl mx-auto">{renderGameContent()}</div>
+
+      {/* Game Completion Celebration */}
+      <GameCompletionCelebration
+        isVisible={showCelebration}
+        gameName={game.title}
+        finalScore={finalScore}
+        achievements={achievements}
+        completionTime={completionTime}
+        onClose={() => {
+          setShowCelebration(false);
+          onExit();
+        }}
+        onPlayAgain={() => {
+          setShowCelebration(false);
+          // Reset game state
+          setCurrentGameState('playing');
+          setTimeLeft(120);
+          setScore(0);
+          setLives(3);
+          setStreak(0);
+          setMaxStreak(0);
+          setIsTimerActive(true);
+        }}
+        onNextGame={() => {
+          setShowCelebration(false);
+          onExit(); // This should trigger navigation to next game
+        }}
+      />
     </div>
   );
 }
