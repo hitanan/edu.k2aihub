@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { DigitalArtsLessons, DigitalArtsLessonType } from '@/data/digital-arts-creative-tech'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { DigitalArtsLessons, DigitalArtsLessonType } from '@/data/digital-arts-creative-tech';
 import { PageProps } from '@/types';
 import { Palette, Video, Sparkles } from 'lucide-react';
 
@@ -10,7 +15,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  return generateLessonMetadata(params.lessonId, DigitalArtsLessons);
+  const { lessonId } = await params;
+  return generateLessonMetadata(lessonId, DigitalArtsLessons);
 }
 
 // Page component with standardized config
@@ -37,12 +43,12 @@ export default async function DigitalArtsLessonPage({ params }: PageProps) {
     },
     getFieldValue: (lesson) => {
       if (lesson.tools) return lesson.tools.join(', ');
-      if (lesson.techniques) return lesson.techniques.join(', ');
-      if (lesson.aiPrompts) return lesson.aiPrompts.slice(0, 2).join(', ') + '...';
+      if (lesson.technologies) return lesson.technologies.join(', ');
+      if (lesson.creativeFocus) return lesson.creativeFocus.slice(0, 2).join(', ') + '...';
       return 'Không có thông tin';
-    }
-  }
-  
+    },
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

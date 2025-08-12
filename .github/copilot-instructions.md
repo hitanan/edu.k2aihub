@@ -372,7 +372,7 @@ npm run lint     # Code quality checks
    - **SEO content must be in Vietnamese for local search optimization**
 8. **Documentation Requirement**: ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.
 9. **Image Url**: incase you done have the image url, use import { defaultImage } from "@/utils/image"; to ensure all images are properly accessible.
-10. **Module data**: when generate module pages, Prefer to create data and then to use it to create a dynamic pages with slug is `lessonId`, ensure use PageProps to get lessonId (import { PageProps } from '@/types').
+10. **Module data**: when generate module pages, Prefer to create data and then to use it to create a dynamic pages with slug is `lessonId`, ensure use PageProps to get lessonId (import { PageProps } from '@/types'). In ModuleMainPage function, moduledata must use ModuleData type, has heroImageUrl property
 11. **Module integration**: After module created, add it to all related part in application to moduleNavigation.ts, and Use data from moduleNavigation.ts to update Homepage, header navigation, footer, sitemap, ...
 12. **Lesson and Game integration**: After lesson created, add it to all related part in gameData.ts, and vise versa, when adding a game, ensure to link to the lessons accordingly by relatedLessons attribute.
 

@@ -21,7 +21,7 @@ const allLearningModules = moduleNavigation
     href: module.href || `/learning/${module.id}`,
     color: module.color,
     category: module.category, // Now supports both string and string[]
-    lessons: module.lessons.length,
+  lessons: Array.isArray(module.lessons) ? module.lessons.length : 0,
     features: module.features || [],
     icon: module.icon,
     tags: module.tags || [],
@@ -302,7 +302,7 @@ export default function AllLearningPageClient() {
       case 'newest':
         return b.id.localeCompare(a.id);
       default: // popular
-        return b.lessons - a.lessons;
+  return (b.lessons ?? 0) - (a.lessons ?? 0);
     }
   });
 
@@ -619,7 +619,7 @@ export default function AllLearningPageClient() {
                       )}
                     </div>
                     <span className="text-gray-400 text-sm">
-                      {module.lessons} bài học
+                      {(module.lessons ?? 0)} bài học
                     </span>
                   </div>
 

@@ -6,7 +6,7 @@ export interface ModuleNavigation {
   category: string[] | string; // Support both single and multiple categories
   icon: string;
   color: string;
-  lessons: LessonNavigation[];
+  lessons?: LessonNavigation[]; // Make lessons optional for dynamic loading
   totalDuration: string;
   difficulty: string;
   level?: string;
@@ -40,6 +40,8 @@ export const K2Module = {
   AIArtCreativeTech: 'ai-art-creative-tech',
   Cybersecurity: 'cybersecurity',
   Biotechnology: 'biotechnology',
+  MCP: 'mcp',
+  AIApplications: 'ai-applications',
 
   // Programming & STEM Modules
   Python: 'python',
@@ -977,6 +979,126 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'medical-biotechnology-drug-discovery',
         title: 'Medical Biotechnology & Drug Discovery Pipeline',
         duration: '180 phút',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
+  {
+    id: K2Module.MCP,
+    title: 'MCP - Model Context Protocol',
+    subtitle: 'Tích hợp AI Tools với Enterprise Systems',
+    description:
+      'Học cách sử dụng Model Context Protocol để kết nối AI assistants với Atlassian Jira, Confluence và office productivity tools',
+    category: 'professional',
+    icon: '🔗',
+    color: 'from-indigo-600 to-purple-600',
+    totalDuration: '12-15 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '12-15 giờ',
+    href: '/learning/mcp',
+    features: [
+      'Atlassian Integration',
+      'VS Code Setup',
+      'Office Automation',
+      'Enterprise Security',
+    ],
+    tags: ['mcp', 'atlassian', 'jira', 'automation', 'ai-integration'],
+    prerequisites: [
+      'Kinh nghiệm với Jira/Confluence',
+      'Basic programming knowledge',
+      'Understanding của API và OAuth',
+      'Familiarity với AI tools',
+    ],
+    lessons: [
+      {
+        id: 'mcp-fundamentals',
+        title: 'MCP Fundamentals & Architecture',
+        duration: '120 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'jira-integration-development',
+        title: 'Jira Integration for Developers',
+        duration: '180 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'office-productivity-integration',
+        title: 'MCP for Office Productivity',
+        duration: '150 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'advanced-mcp-automation',
+        title: 'Advanced MCP Automation & Custom Solutions',
+        duration: '200 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'mcp-troubleshooting-optimization',
+        title: 'MCP Troubleshooting & Performance Optimization',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: K2Module.AIApplications,
+    title: 'AI Applications',
+    subtitle: 'Ứng dụng AI thực tế cho cuộc sống',
+    description:
+      'Khám phá cách áp dụng AI vào các tình huống thực tế: du học, business automation, content creation, healthcare và financial planning',
+    category: 'professional',
+    icon: '🤖',
+    color: 'from-purple-600 to-blue-600',
+    totalDuration: '15-18 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '15-18 giờ',
+    href: '/learning/ai-applications',
+    features: [
+      'Study Abroad AI Coaching',
+      'Business Automation',
+      'Content Monetization',
+      'Healthcare Optimization',
+    ],
+    tags: ['ai-applications', 'practical-ai', 'automation', 'real-world'],
+    prerequisites: [
+      'Basic AI tools familiarity',
+      'Understanding of personal goals',
+      'Access to AI platforms',
+      'Willingness to experiment',
+    ],
+    lessons: [
+      {
+        id: 'ai-for-study-abroad',
+        title: 'AI cho Du học - Chuẩn bị hồ sơ và IELTS',
+        duration: '180 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'ai-business-automation',
+        title: 'AI Business Automation - Tự động hóa quy trình kinh doanh',
+        duration: '200 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'ai-content-creation-monetization',
+        title: 'AI Content Creation & Monetization',
+        duration: '220 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'ai-healthcare-wellness',
+        title: 'AI for Healthcare & Personal Wellness',
+        duration: '160 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'ai-financial-planning-investment',
+        title: 'AI Financial Planning & Investment',
+        duration: '190 phút',
         difficulty: 'Nâng cao',
       },
     ],
@@ -3316,7 +3438,7 @@ export function getLessonById(
   lessonId: string,
 ): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
-  return moduleData?.lessons.find((lesson) => lesson.id === lessonId);
+  return moduleData?.lessons?.find((lesson) => lesson.id === lessonId);
 }
 
 export function getModulesByCategory(category: string): ModuleNavigation[] {
@@ -3345,7 +3467,7 @@ export function getNextLesson(
   currentLessonId: string,
 ): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
-  if (!moduleData) return undefined;
+  if (!moduleData || !moduleData.lessons) return undefined;
 
   const currentIndex = moduleData.lessons.findIndex(
     (lesson) => lesson.id === currentLessonId,
@@ -3361,7 +3483,7 @@ export function getPreviousLesson(
   currentLessonId: string,
 ): LessonNavigation | undefined {
   const moduleData = getModuleById(moduleId);
-  if (!moduleData) return undefined;
+  if (!moduleData || !moduleData.lessons) return undefined;
 
   const currentIndex = moduleData.lessons.findIndex(
     (lesson) => lesson.id === currentLessonId,
@@ -3373,7 +3495,7 @@ export function getPreviousLesson(
 
 export function calculateModuleProgress(moduleId: string): number {
   const moduleData = getModuleById(moduleId);
-  if (!moduleData) return 0;
+  if (!moduleData || !moduleData.lessons) return 0;
 
   const completedLessons = moduleData.lessons.filter(
     (lesson) => lesson.completed,
