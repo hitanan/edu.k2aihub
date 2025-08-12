@@ -18,7 +18,7 @@ import {
   HistoryTimelineGame,
   ChemistryLabGame,
   RoboticsNavigationGame,
-  RobotNavigation3DGame,
+  TreasureHuntGame,
   NeuralNetworkBuilderGame,
   SpaceExplorationGame,
   DataVisualizationGame,
@@ -258,9 +258,9 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             onRestart={() => setCurrentGameState('playing')}
           />
         );
-      case 'robot-navigation-3d':
+      case 'treasure-hunt-adventure':
         return (
-          <RobotNavigation3DGame
+          <TreasureHuntGame
             onComplete={endGame}
             timeLeft={timeLeft}
             onRestart={() => setCurrentGameState('playing')}

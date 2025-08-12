@@ -91,6 +91,11 @@ export const K2Module = {
   // 2025 Academic Specialized Modules
   DataScienceAnalytics: 'data-science-analytics',
   EnvironmentalScienceClimate: 'environmental-science-climate',
+
+  // 2025+ Trending Experimental Modules
+  MetaverseVREducation: 'metaverse-vr-education',
+  SpaceTechnology: 'space-technology',
+  DigitalArtsCreativeTech: 'digital-arts-creative-tech',
 };
 export const moduleNavigation: ModuleNavigation[] = [
   // Core Modules (outside /learning/ folder)
@@ -3121,6 +3126,181 @@ export const moduleNavigation: ModuleNavigation[] = [
         title: 'Ecosystem Restoration & Biodiversity Conservation',
         duration: '160 phút',
         difficulty: 'Nâng cao',
+      },
+    ],
+  },
+
+  // 2025+ Trending Experimental Modules for Vietnamese Students
+  {
+    id: K2Module.MetaverseVREducation,
+    title: 'Metaverse & Giáo Dục VR',
+    subtitle: 'Tương lai của học tập immersive',
+    description:
+      'Khám phá công nghệ Metaverse, VR/AR trong giáo dục và cơ hội nghề nghiệp trong kỷ nguyên thực tế ảo',
+    category: ['experimental', 'technology', 'future-skills'],
+    icon: '🥽',
+    color: 'from-purple-500 to-pink-500',
+    totalDuration: '8-10 giờ',
+    difficulty: 'Trung bình',
+    features: [
+      'VR Content Creation',
+      'Metaverse Business Models',
+      'AR Mobile Apps',
+      'Social VR Collaboration',
+      'Virtual Economy',
+    ],
+    tags: ['metaverse', 'vr', 'ar', 'immersive', 'education', 'future'],
+    prerequisites: [
+      'Kiến thức cơ bản về technology',
+      'Hiểu biết về internet và social media',
+      'Không cần kinh nghiệm VR trước đó',
+    ],
+    lessons: [
+      {
+        id: 'metaverse-fundamentals',
+        title: 'Cơ Bản Về Metaverse và Thực Tế Ảo',
+        duration: '90 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'vr-content-creation',
+        title: 'Tạo Nội Dung VR Giáo Dục',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'ar-mobile-applications',
+        title: 'Ứng Dụng AR Trên Mobile',
+        duration: '100 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'social-vr-collaboration',
+        title: 'Hợp Tác Xã Hội Trong VR',
+        duration: '80 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'metaverse-business-economics',
+        title: 'Kinh Tế Metaverse & Cơ Hội Kinh Doanh',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+
+  {
+    id: K2Module.SpaceTechnology,
+    title: 'Công Nghệ Vũ Trụ',
+    subtitle: 'Khám phá không gian cho Việt Nam',
+    description:
+      'Tìm hiểu về space technology, satellite systems và cơ hội cho Việt Nam trong kỷ nguyên khám phá không gian',
+    category: ['experimental', 'technology', 'engineering'],
+    icon: '🚀',
+    color: 'from-indigo-500 to-purple-500',
+    totalDuration: '10-12 giờ',
+    difficulty: 'Trung bình',
+    features: [
+      'Satellite Technology',
+      'Space Mission Engineering',
+      'CubeSat Development',
+      'Space Entrepreneurship',
+      'Vietnam Space Strategy',
+    ],
+    tags: ['space', 'satellite', 'aerospace', 'vietnam', 'engineering'],
+    prerequisites: [
+      'Kiến thức cơ bản về physics và mathematics',
+      'Hiểu biết về technology và engineering',
+      'Interest trong science và exploration',
+    ],
+    lessons: [
+      {
+        id: 'space-exploration-fundamentals',
+        title: 'Cơ Bản Khám Phá Không Gian',
+        duration: '100 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'satellite-technology-applications',
+        title: 'Công Nghệ Vệ Tinh & Ứng Dụng',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'space-mission-engineering',
+        title: 'Kỹ Thuật Sứ Mệnh Không Gian',
+        duration: '150 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'space-entrepreneurship-economics',
+        title: 'Kinh Doanh Không Gian & Kinh Tế Vũ Trụ',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'space-careers-future',
+        title: 'Nghề Nghiệp Vũ Trụ & Tương Lai',
+        duration: '75 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+
+  {
+    id: K2Module.DigitalArtsCreativeTech,
+    title: 'Nghệ Thuật Số & Công Nghệ Sáng Tạo',
+    subtitle: 'Creative technology cho thế hệ mới',
+    description:
+      'Master digital art, motion graphics, AI art generation và immersive media cho creative careers',
+    category: ['experimental', 'creative', 'technology'],
+    icon: '🎨',
+    color: 'from-pink-500 to-rose-500',
+    totalDuration: '10-12 giờ',
+    difficulty: 'Trung bình',
+    features: [
+      'Digital Art Mastery',
+      'AI Art Generation',
+      'Motion Graphics',
+      'VR/AR Content',
+      'Creative Business',
+    ],
+    tags: ['digital-art', 'ai-art', 'creative', 'design', 'technology'],
+    prerequisites: [
+      'Basic understanding của art principles',
+      'Access to digital art software hoặc tablet',
+      'Interest in visual arts và creativity',
+    ],
+    lessons: [
+      {
+        id: 'digital-art-fundamentals',
+        title: 'Cơ Bản Nghệ Thuật Số',
+        duration: '100 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'motion-graphics-animation',
+        title: 'Motion Graphics & Animation',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'generative-ai-art',
+        title: 'Nghệ Thuật AI Tạo Sinh',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'immersive-media-production',
+        title: 'Sản Xuất Media Nhập Vai',
+        duration: '130 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'creative-technology-business',
+        title: 'Kinh Doanh Công Nghệ Sáng Tạo',
+        duration: '100 phút',
+        difficulty: 'Trung bình',
       },
     ],
   },

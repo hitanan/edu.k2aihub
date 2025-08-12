@@ -60,19 +60,26 @@ const ROBOTICS_LEVELS = (() => {
       grid: (() => {
         const grid = Array(7)
           .fill(null)
-          .map(() => Array(7).fill(1));
-        // Create narrow corridor
+          .map(() => Array(7).fill(0)); // Fill with 0 (walkable) first
+        // Add obstacles to create narrow corridor
         for (let i = 0; i < 7; i++) {
-          grid[3][i] = 0;
+          for (let j = 0; j < 7; j++) {
+            if (j !== 3) { // Keep row 3 as corridor
+              grid[i][j] = 1; // Add obstacles
+            }
+          }
         }
+        // Make sure start and end are walkable
+        grid[0][3] = 0;
+        grid[6][3] = 0;
         return grid;
       })(),
       start: [0, 3],
       end: [6, 3],
       timeLimit: 120,
-      minMoves: 12,
+      minMoves: 6,
       description: 'Di chuyển qua hành lang hẹp',
-      tips: ['Giữ đúng hướng trong hành lang', 'Không thể quay đầu'],
+      tips: ['Đi thẳng qua hành lang giữa', 'Chỉ có 1 đường duy nhất'],
       pointValue: 20,
     },
   ];

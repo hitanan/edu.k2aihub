@@ -1,0 +1,546 @@
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+
+export interface SpaceTechnologyLessonType extends BaseLessonData {
+  spaceLevel: string;
+  technologies: string[];
+  missions: string[];
+  vietnamRelevance: string;
+}
+
+export const SpaceTechnologyLessons: SpaceTechnologyLessonType[] = [
+  {
+    id: 'space-exploration-fundamentals',
+    title: 'Cơ Bản Khám Phá Không Gian',
+    description: 'Tìm hiểu về công nghệ vũ trụ, vệ tinh, và cơ hội cho Việt Nam trong kỷ nguyên không gian mới',
+    duration: '100 phút',
+    difficulty: 'Cơ bản',
+    spaceLevel: 'Introduction',
+    technologies: ['Satellite Technology', 'Rocket Engineering', 'Space Communications', 'Earth Observation'],
+    missions: ['VINASAT', 'International Space Station', 'Mars Exploration', 'Lunar Missions'],
+    vietnamRelevance: 'Vietnam Space Technology Development Strategy và regional opportunities',
+    videoUrl: 'https://www.youtube.com/watch?v=th5A6ZQ28pE',
+    imageUrl: '/images/space-exploration-fundamentals.jpg',
+    objectives: [
+      'Hiểu được history và current state của space exploration',
+      'Nắm rõ các loại spacecraft và satellite technologies',
+      'Khám phá opportunities cho Vietnam trong space industry',
+      'Học về space mission planning và execution',
+      'Nhận biết career paths trong aerospace engineering'
+    ],
+    prerequisites: [
+      'Kiến thức cơ bản về physics và mathematics',
+      'Hiểu biết về technology và engineering concepts',
+      'Interest trong science và exploration'
+    ],
+    exercises: [
+      {
+        title: 'Virtual Satellite Mission Planning',
+        description: 'Thiết kế và plan một Earth observation mission cho Vietnam',
+        difficulty: 'Trung bình',
+        materials: ['Satellite mission planning software', 'Vietnam geographical data', 'Orbital mechanics tools'],
+        procedure: [
+          'Research Vietnam\'s current space capabilities và needs',
+          'Define mission objectives (weather, agriculture, disaster monitoring)',
+          'Design satellite specifications và orbit parameters',
+          'Calculate mission costs và timeline',
+          'Plan ground station requirements trong Vietnam',
+          'Develop data processing và distribution strategy',
+          'Create mission proposal presentation',
+          'Present to peers cho feedback và improvement'
+        ],
+        expectedResults: 'Complete satellite mission proposal ready cho evaluation',
+        solution: 'Mission planning template với Vietnam-specific considerations'
+      },
+      {
+        title: 'Rocket Launch Simulation',
+        description: 'Simulate rocket launch và understand orbital mechanics',
+        difficulty: 'Nâng cao',
+        materials: ['Kerbal Space Program hoặc similar simulator', 'Physics calculation tools', 'Mission planning software'],
+        procedure: [
+          'Learn basic orbital mechanics và rocket science',
+          'Design rocket với appropriate stages và fuel',
+          'Plan launch trajectory để achieve target orbit',
+          'Execute simulated launch với real-time adjustments',
+          'Troubleshoot failures và optimize design',
+          'Calculate delta-v requirements và efficiency',
+          'Document lessons learned và best practices',
+          'Compare simulation với real rocket launches'
+        ],
+        expectedResults: 'Successful simulated rocket launch với technical understanding',
+        solution: 'Rocket design guide với physics principles explanation'
+      }
+    ],
+    realWorldApplications: [
+      'Weather forecasting và climate monitoring cho Vietnam',
+      'Agricultural monitoring và crop yield prediction',
+      'Disaster response và emergency communications',
+      'Maritime surveillance cho South China Sea',
+      'Urban planning và development monitoring',
+      'Environmental protection và deforestation tracking',
+      'Navigation systems và GPS services'
+    ],
+    caseStudies: [
+      {
+        title: 'VINASAT Satellite Program',
+        organization: 'Vietnam Posts and Telecommunications Group',
+        problem: 'Vietnam needing independent satellite communication capabilities',
+        solution: 'Launch of VINASAT-1 và VINASAT-2 communication satellites',
+        impact: 'Enhanced communication infrastructure, reduced dependency',
+        innovations: ['Domestic satellite control', 'Multi-purpose communication', 'Disaster response capability', 'Regional coverage']
+      },
+      {
+        title: 'VNREDSat-1 Earth Observation',
+        organization: 'Vietnam National Satellite Center',
+        problem: 'Need for domestic Earth observation capabilities',
+        solution: 'Development và launch của VNREDSat-1 imaging satellite',
+        impact: 'Independent Earth monitoring, disaster management improvement',
+        innovations: ['High-resolution imaging', 'Rapid disaster response', 'Agricultural applications', 'Technology transfer']
+      }
+    ],
+    resources: [
+      {
+        title: 'NASA Space Technology Mission Directorate',
+        url: 'https://www.nasa.gov/directorates/spacetech/',
+        type: 'Documentation'
+      },
+      {
+        title: 'ESA Educational Resources',
+        url: 'https://www.esa.int/Education',
+        type: 'Tutorial'
+      },
+      {
+        title: 'Kerbal Space Program Educational Version',
+        url: 'https://www.kerbalspaceprogram.com/ksp-enhanced-edition-educational-version/',
+        type: 'Tool'
+      }
+    ]
+  },
+  {
+    id: 'satellite-technology-applications',
+    title: 'Công Nghệ Vệ Tinh & Ứng Dụng',
+    description: 'Khám phá satellite systems, Earth observation, và practical applications cho Vietnam',
+    duration: '120 phút',
+    difficulty: 'Trung bình',
+    spaceLevel: 'Intermediate',
+    technologies: ['CubeSat', 'Earth Observation', 'GPS/GNSS', 'Satellite Internet', 'Remote Sensing'],
+    missions: ['Planet Labs', 'Starlink', 'Landsat', 'SPOT', 'Sentinel'],
+    vietnamRelevance: 'Mekong Delta monitoring, South China Sea surveillance, disaster management',
+    videoUrl: 'https://www.youtube.com/watch?v=PVTC7_1J81g',
+    imageUrl: '/images/satellite-technology.jpg',
+    objectives: [
+      'Design và build CubeSat prototype',
+      'Understand satellite data analysis techniques',
+      'Apply remote sensing cho environmental monitoring',
+      'Learn satellite communication protocols',
+      'Develop satellite-based solutions cho Vietnamese challenges'
+    ],
+    prerequisites: [
+      'Completed space exploration fundamentals',
+      'Basic electronics và programming knowledge',
+      'Understanding của data analysis concepts'
+    ],
+    exercises: [
+      {
+        title: 'CubeSat Design Project',
+        description: 'Thiết kế và prototype một CubeSat cho Vietnamese university',
+        difficulty: 'Nâng cao',
+        materials: ['CubeSat development kit', 'Arduino/Raspberry Pi', 'Sensors', '3D printing materials'],
+        procedure: [
+          'Research CubeSat standards và regulations',
+          'Define mission objectives (education, research, communication)',
+          'Design satellite structure với 3D modeling',
+          'Select và integrate appropriate sensors',
+          'Program flight computer và data systems',
+          'Design communication system với ground station',
+          'Build physical prototype và test subsystems',
+          'Prepare launch proposal và documentation'
+        ],
+        expectedResults: 'Functional CubeSat prototype với complete documentation',
+        solution: 'CubeSat development guide với component specifications'
+      },
+      {
+        title: 'Mekong Delta Environmental Monitoring',
+        description: 'Use satellite data để monitor environmental changes trong Mekong Delta',
+        difficulty: 'Trung bình',
+        materials: ['Satellite imagery datasets', 'GIS software', 'Python với remote sensing libraries', 'Environmental data'],
+        procedure: [
+          'Acquire historical satellite data cho Mekong Delta region',
+          'Learn image processing techniques cho land use analysis',
+          'Identify changes trong agriculture, water levels, urbanization',
+          'Create time-series analysis của environmental trends',
+          'Correlate satellite data với ground-based measurements',
+          'Develop predictive models cho environmental changes',
+          'Create visualizations và reports cho stakeholders',
+          'Present findings to environmental agencies'
+        ],
+        expectedResults: 'Comprehensive environmental monitoring report với actionable insights',
+        solution: 'Remote sensing analysis toolkit với Mekong Delta focus'
+      }
+    ],
+    realWorldApplications: [
+      'Precision agriculture optimization cho Vietnamese farmers',
+      'Flood prediction và early warning systems',
+      'Urban planning và smart city development',
+      'Maritime domain awareness trong South China Sea',
+      'Forest conservation và illegal logging detection',
+      'Air quality monitoring cho major Vietnamese cities',
+      'Supply chain tracking và logistics optimization'
+    ],
+    caseStudies: [
+      {
+        title: 'Can Tho University CubeSat Program',
+        organization: 'Can Tho University & JAXA',
+        problem: 'Building space technology expertise in Vietnamese universities',
+        solution: 'Student-led CubeSat development và launch program',
+        impact: 'Enhanced STEM education, international collaboration',
+        innovations: ['Student satellite design', 'Ground station development', 'International partnerships', 'Technology transfer']
+      },
+      {
+        title: 'Vietnam Disaster Monitoring Network',
+        organization: 'Ministry of Natural Resources và Environment',
+        problem: 'Need for real-time disaster monitoring và response',
+        solution: 'Integrated satellite-based disaster monitoring system',
+        impact: 'Improved disaster response times, reduced damage',
+        innovations: ['Multi-satellite integration', 'AI-powered analysis', 'Mobile alerts', 'Community engagement']
+      }
+    ],
+    resources: [
+      {
+        title: 'CubeSat 101 - Basic Concepts',
+        url: 'https://www.cubesat.org/cubesatinfo',
+        type: 'Documentation'
+      },
+      {
+        title: 'Google Earth Engine',
+        url: 'https://earthengine.google.com/',
+        type: 'Tool'
+      },
+      {
+        title: 'QGIS Remote Sensing Tutorial',
+        url: 'https://docs.qgis.org/3.22/en/docs/training_manual/',
+        type: 'Tutorial'
+      }
+    ]
+  },
+  {
+    id: 'space-mission-engineering',
+    title: 'Kỹ Thuật Sứ Mệnh Không Gian',
+    description: 'Learn mission design, system engineering, và project management cho space missions',
+    duration: '150 phút',
+    difficulty: 'Nâng cao',
+    spaceLevel: 'Advanced',
+    technologies: ['Mission Design', 'Systems Engineering', 'Launch Vehicles', 'Deep Space Communication'],
+    missions: ['Mars Sample Return', 'Artemis Moon Program', 'James Webb Space Telescope', 'Parker Solar Probe'],
+    vietnamRelevance: 'Vietnam Space Technology Master Plan 2030, international collaboration opportunities',
+    videoUrl: 'https://www.youtube.com/watch?v=_Ca_dhfg6Ps',
+    imageUrl: '/images/space-mission-engineering.jpg',
+    objectives: [
+      'Master mission design process từ concept đến execution',
+      'Understand system engineering principles cho space applications',
+      'Learn project management techniques cho complex space missions',
+      'Apply risk assessment và reliability engineering',
+      'Develop international cooperation strategies'
+    ],
+    prerequisites: [
+      'Strong engineering background',
+      'Completed satellite technology course',
+      'Project management experience preferred'
+    ],
+    exercises: [
+      {
+        title: 'Lunar Mission Design Challenge',
+        description: 'Design complete lunar mission cho scientific research',
+        difficulty: 'Nâng cao',
+        materials: ['Mission design software', 'Lunar environment data', 'Budget planning tools', 'Technical specifications'],
+        procedure: [
+          'Define scientific objectives và mission requirements',
+          'Design spacecraft architecture và subsystems',
+          'Plan launch window và trajectory optimization',
+          'Calculate mass budgets và power requirements',
+          'Design lunar landing sequence và operations',
+          'Plan science operations và data return',
+          'Develop risk mitigation strategies',
+          'Create comprehensive mission proposal'
+        ],
+        expectedResults: 'Professional-grade lunar mission proposal',
+        solution: 'Mission design framework với detailed technical specifications'
+      },
+      {
+        title: 'International Space Collaboration Project',
+        description: 'Develop collaboration proposal giữa Vietnam và international space agencies',
+        difficulty: 'Nâng cao',
+        materials: ['International space agreements', 'Collaboration frameworks', 'Technical capability assessments'],
+        procedure: [
+          'Research international space collaboration models',
+          'Assess Vietnam\'s current space capabilities',
+          'Identify potential international partners',
+          'Define mutual benefits và value propositions',
+          'Design collaborative mission concepts',
+          'Develop technology transfer agreements',
+          'Create implementation timeline và milestones',
+          'Present proposal to government stakeholders'
+        ],
+        expectedResults: 'Strategic collaboration proposal ready cho government review',
+        solution: 'International cooperation framework với legal và technical considerations'
+      }
+    ],
+    realWorldApplications: [
+      'Space mission management cho government agencies',
+      'Aerospace industry project leadership',
+      'International space cooperation negotiations',
+      'Space technology commercialization',
+      'Defense và security space applications',
+      'Academic research mission development',
+      'Space startup venture planning'
+    ],
+    caseStudies: [
+      {
+        title: 'Vietnam Space Technology Master Plan',
+        organization: 'Ministry of Science and Technology',
+        problem: 'Developing national space strategy và capabilities',
+        solution: 'Comprehensive 20-year space technology development plan',
+        impact: 'Clear roadmap for Vietnam space development',
+        innovations: ['Public-private partnerships', 'International collaborations', 'Human resource development', 'Industrial development']
+      },
+      {
+        title: 'ASEAN Space Technology Initiative',
+        organization: 'ASEAN Space Technology Network',
+        problem: 'Coordinating space development across ASEAN countries',
+        solution: 'Regional space cooperation framework và joint missions',
+        impact: 'Enhanced regional capabilities, cost sharing',
+        innovations: ['Multi-country missions', 'Technology sharing', 'Joint training programs', 'Standardization efforts']
+      }
+    ],
+    resources: [
+      {
+        title: 'NASA Systems Engineering Handbook',
+        url: 'https://www.nasa.gov/connect/ebooks/nasa-systems-engineering-handbook',
+        type: 'Documentation'
+      },
+      {
+        title: 'ECSS Standards for Space Engineering',
+        url: 'https://ecss.nl/',
+        type: 'Reference'
+      },
+      {
+        title: 'STK (Systems Tool Kit) for Mission Analysis',
+        url: 'https://www.ansys.com/products/missions/ansys-stk',
+        type: 'Tool'
+      }
+    ]
+  },
+  {
+    id: 'space-entrepreneurship-economics',
+    title: 'Kinh Doanh Không Gian & Kinh Tế Vũ Trụ',
+    description: 'Explore commercial space industry, space economy, và entrepreneurship opportunities',
+    duration: '90 phút',
+    difficulty: 'Trung bình',
+    spaceLevel: 'Business',
+    technologies: ['Commercial Launch', 'Space Tourism', 'Asteroid Mining', 'Space Manufacturing'],
+    missions: ['SpaceX Falcon Heavy', 'Blue Origin New Shepard', 'Virgin Galactic', 'Planetary Resources'],
+    vietnamRelevance: 'Vietnam space startup ecosystem, regional market opportunities',
+    videoUrl: 'https://www.youtube.com/watch?v=zX2K8yxhG9E',
+    imageUrl: '/images/space-entrepreneurship.jpg',
+    objectives: [
+      'Understand the growing commercial space economy',
+      'Identify business opportunities trong space industry',
+      'Learn venture capital và funding strategies cho space startups',
+      'Develop business plans cho space-related ventures',
+      'Understand regulatory và legal aspects của space business'
+    ],
+    prerequisites: [
+      'Basic business và economics knowledge',
+      'Understanding của space technology fundamentals',
+      'Entrepreneurial mindset'
+    ],
+    exercises: [
+      {
+        title: 'Space Startup Business Plan',
+        description: 'Develop comprehensive business plan cho Vietnamese space startup',
+        difficulty: 'Trung bình',
+        materials: ['Business planning templates', 'Market research data', 'Financial modeling tools', 'Legal requirements'],
+        procedure: [
+          'Identify market opportunity trong space economy',
+          'Research target customers và value proposition',
+          'Analyze competition và market positioning',
+          'Develop technology roadmap và IP strategy',
+          'Create financial projections và funding requirements',
+          'Plan go-to-market strategy và partnerships',
+          'Address regulatory compliance và legal issues',
+          'Pitch business plan to investors hoặc mentors'
+        ],
+        expectedResults: 'Investment-ready business plan với clear value proposition',
+        solution: 'Space startup business plan template với Vietnamese market focus'
+      },
+      {
+        title: 'Space Economy Market Analysis',
+        description: 'Analyze opportunities cho Vietnam trong global space economy',
+        difficulty: 'Nâng cao',
+        materials: ['Industry reports', 'Economic data', 'Government policies', 'Competitive analysis tools'],
+        procedure: [
+          'Research global space economy trends và projections',
+          'Analyze Vietnam\'s competitive advantages',
+          'Identify potential market niches cho Vietnamese companies',
+          'Study successful space economies (US, China, India)',
+          'Evaluate government policies và support mechanisms',
+          'Assess infrastructure requirements và gaps',
+          'Develop recommendations cho policymakers',
+          'Present findings to government agencies'
+        ],
+        expectedResults: 'Comprehensive market analysis với strategic recommendations',
+        solution: 'Market analysis framework với policy recommendations'
+      }
+    ],
+    realWorldApplications: [
+      'Space technology startup founding và management',
+      'Investment analysis cho space ventures',
+      'Government space policy development',
+      'International space trade negotiations',
+      'Space insurance và risk assessment',
+      'Space law và regulatory consulting',
+      'Academic research on space economics'
+    ],
+    caseStudies: [
+      {
+        title: 'VietSpace Technology Company',
+        organization: 'Hypothetical Vietnamese Space Startup',
+        problem: 'Lack of Vietnamese presence trong commercial space market',
+        solution: 'Small satellite manufacturing và services company',
+        impact: 'Technology development, job creation, export potential',
+        innovations: ['Low-cost satellite platforms', 'Regional service focus', 'Government partnerships', 'International collaborations']
+      },
+      {
+        title: 'Regional Space Service Hub',
+        organization: 'ASEAN Space Consortium',
+        problem: 'Fragmented space capabilities across ASEAN',
+        solution: 'Vietnam as regional hub cho space services và manufacturing',
+        impact: 'Regional leadership, economic diversification',
+        innovations: ['Shared infrastructure', 'Technology transfer', 'Joint ventures', 'Training programs']
+      }
+    ],
+    resources: [
+      {
+        title: 'Space Foundation Industry Report',
+        url: 'https://www.spacefoundation.org/space_brief/',
+        type: 'Reference'
+      },
+      {
+        title: 'Commercial Space Transportation Association',
+        url: 'https://www.faa.gov/space/commercial_space_transportation',
+        type: 'Documentation'
+      },
+      {
+        title: 'Space Angels Investment Database',
+        url: 'https://www.spaceangels.com/',
+        type: 'Tool'
+      }
+    ]
+  },
+  {
+    id: 'space-careers-future',
+    title: 'Nghề Nghiệp Vũ Trụ & Tương Lai',
+    description: 'Career opportunities trong space industry và preparing for the future of space exploration',
+    duration: '75 phút',
+    difficulty: 'Cơ bản',
+    spaceLevel: 'Career',
+    technologies: ['Career Development', 'Skill Assessment', 'Professional Networks', 'Continuing Education'],
+    missions: ['Artemis Human Landing', 'Mars Human Mission', 'Space Colonies', 'Interstellar Exploration'],
+    vietnamRelevance: 'Building Vietnamese space workforce, international opportunities',
+    videoUrl: 'https://www.youtube.com/watch?v=b-q5oDNzwp0',
+    imageUrl: '/images/space-careers.jpg',
+    objectives: [
+      'Identify space career opportunities cho Vietnamese professionals',
+      'Understand skill requirements cho different space roles',
+      'Build professional network trong space industry',
+      'Plan education pathway cho space careers',
+      'Prepare for future space exploration challenges'
+    ],
+    prerequisites: [
+      'Completion of other space technology courses',
+      'Interest in space career development',
+      'Basic understanding của professional development'
+    ],
+    exercises: [
+      {
+        title: 'Space Career Portfolio Development',
+        description: 'Build comprehensive portfolio showcasing space-related skills',
+        difficulty: 'Trung bình',
+        materials: ['Portfolio website tools', 'Project documentation', 'Professional development resources'],
+        procedure: [
+          'Assess current skills và identify career interests',
+          'Complete space-related projects demonstrating capabilities',
+          'Document projects với technical details và outcomes',
+          'Create professional online presence (LinkedIn, GitHub)',
+          'Build portfolio website showcasing space work',
+          'Network với space professionals và organizations',
+          'Apply for internships hoặc entry-level positions',
+          'Continuously update portfolio với new experiences'
+        ],
+        expectedResults: 'Professional portfolio ready cho space industry applications',
+        solution: 'Portfolio development guide với space industry focus'
+      },
+      {
+        title: 'Future Space Mission Scenario Planning',
+        description: 'Plan career development cho future space exploration scenarios',
+        difficulty: 'Nâng cao',
+        materials: ['Future scenario analysis tools', 'Career planning resources', 'Industry trend data'],
+        procedure: [
+          'Research projected space industry developments',
+          'Identify emerging roles và skill requirements',
+          'Analyze Vietnam\'s potential role trong future space economy',
+          'Develop multiple career pathway scenarios',
+          'Plan skill development cho different scenarios',
+          'Create contingency plans cho career pivots',
+          'Network với international space professionals',
+          'Present career strategy to mentors'
+        ],
+        expectedResults: 'Flexible career strategy adapted to space industry evolution',
+        solution: 'Future-focused career planning framework'
+      }
+    ],
+    realWorldApplications: [
+      'Aerospace engineer designing spacecraft systems',
+      'Mission operations specialist managing satellite fleets',
+      'Space policy analyst advising government decisions',
+      'Space entrepreneur building commercial ventures',
+      'Astrobiologist searching for extraterrestrial life',
+      'Space lawyer handling international agreements',
+      'Space educator inspiring next generation'
+    ],
+    caseStudies: [
+      {
+        title: 'Vietnamese Space Professional Network',
+        organization: 'Vietnam Space Association',
+        problem: 'Limited career guidance cho space-interested Vietnamese students',
+        solution: 'Professional mentorship network và career development program',
+        impact: 'Increased space career awareness, international placements',
+        innovations: ['Mentorship matching', 'International exchanges', 'Industry partnerships', 'Career fairs']
+      },
+      {
+        title: 'ASEAN Space Talent Exchange',
+        organization: 'ASEAN Space Agencies Network',
+        problem: 'Need for regional space talent development',
+        solution: 'Cross-border internship và exchange programs',
+        impact: 'Regional expertise sharing, career opportunities',
+        innovations: ['Multi-country programs', 'Skill standardization', 'Cultural exchange', 'Professional certification']
+      }
+    ],
+    resources: [
+      {
+        title: 'Space Careers Website',
+        url: 'https://www.spacecareers.org/',
+        type: 'Tool'
+      },
+      {
+        title: 'International Astronautical Congress',
+        url: 'https://www.iafastro.org/',
+        type: 'Tool'
+      },
+      {
+        title: 'NASA Career Development',
+        url: 'https://www.nasa.gov/careers',
+        type: 'Documentation'
+      }
+    ]
+  }
+];

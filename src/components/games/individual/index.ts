@@ -3,7 +3,7 @@ export { BiologyEcosystemGame } from './BiologyEcosystemGame';
 export { HistoryTimelineGame } from './HistoryTimelineGame';
 export { ChemistryLabGame } from './ChemistryLabGame';
 export { default as RoboticsNavigationGame } from './RoboticsNavigationGame';
-export { RobotNavigation3DGame } from './RobotNavigation3DGame';
+export { TreasureHuntGame } from './TreasureHuntGame';
 export { NeuralNetworkBuilderGame } from './NeuralNetworkBuilderGame';
 export { SpaceExplorationGame } from './SpaceExplorationGame';
 export { DataVisualizationGame } from './DataVisualizationGame';
