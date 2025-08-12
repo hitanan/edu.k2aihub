@@ -47,103 +47,103 @@ interface TreasureHuntGameProps {
   onRestart?: () => void;
 }
 
-export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHuntGameProps) {
-  const levels: Level[] = [
-    {
-      id: 1,
-      name: 'Kho báu cổ đại',
-      description: 'Khám phá ngôi đền cổ và thu thập kho báu',
-      dimensions: { width: 8, height: 6 },
-      playerStart: { x: 0, y: 0 },
-      exit: { x: 7, y: 5 },
-      treasures: [
-        { x: 2, y: 1, type: 'gold', value: 20, collected: false },
-        { x: 4, y: 2, type: 'gem', value: 30, collected: false },
-        { x: 6, y: 3, type: 'artifact', value: 50, collected: false },
-      ],
-      enemies: [
-        { x: 3, y: 2, type: 'trap', damage: 10 },
-        { x: 5, y: 4, type: 'guard', damage: 15, pattern: 'patrol' },
-      ],
-      walls: [
-        { x: 1, y: 2 }, { x: 2, y: 2 }, { x: 1, y: 3 },
-        { x: 4, y: 1 }, { x: 5, y: 1 }, { x: 6, y: 1 },
-      ],
-      timeLimit: 120,
-      minTreasures: 2,
-      educational: {
-        concept: 'Pathfinding & Strategy',
-        skill: 'Tư duy logic và lập kế hoạch',
-        lesson: 'Học cách tối ưu hóa đường đi và quản lý rủi ro',
-      },
+const levels: Level[] = [
+  {
+    id: 1,
+    name: 'Kho báu cổ đại',
+    description: 'Khám phá ngôi đền cổ và thu thập kho báu',
+    dimensions: { width: 8, height: 6 },
+    playerStart: { x: 0, y: 0 },
+    exit: { x: 7, y: 5 },
+    treasures: [
+      { x: 2, y: 1, type: 'gold', value: 20, collected: false },
+      { x: 4, y: 2, type: 'gem', value: 30, collected: false },
+      { x: 6, y: 3, type: 'artifact', value: 50, collected: false },
+    ],
+    enemies: [
+      { x: 3, y: 2, type: 'trap', damage: 10 },
+      { x: 5, y: 4, type: 'guard', damage: 15, pattern: 'patrol' },
+    ],
+    walls: [
+      { x: 1, y: 2 }, { x: 2, y: 2 }, { x: 1, y: 3 },
+      { x: 4, y: 1 }, { x: 5, y: 1 }, { x: 6, y: 1 },
+    ],
+    timeLimit: 120,
+    minTreasures: 2,
+    educational: {
+      concept: 'Pathfinding & Strategy',
+      skill: 'Tư duy logic và lập kế hoạch',
+      lesson: 'Học cách tối ưu hóa đường đi và quản lý rủi ro',
     },
-    {
-      id: 2,
-      name: 'Hang động bí ẩn',
-      description: 'Thám hiểm hang động đầy nguy hiểm',
-      dimensions: { width: 10, height: 8 },
-      playerStart: { x: 0, y: 3 },
-      exit: { x: 9, y: 4 },
-      treasures: [
-        { x: 2, y: 1, type: 'key', value: 40, collected: false },
-        { x: 4, y: 6, type: 'gold', value: 25, collected: false },
-        { x: 6, y: 2, type: 'gem', value: 35, collected: false },
-        { x: 7, y: 6, type: 'artifact', value: 60, collected: false },
-      ],
-      enemies: [
-        { x: 3, y: 3, type: 'monster', damage: 20 },
-        { x: 5, y: 4, type: 'trap', damage: 15 },
-        { x: 7, y: 2, type: 'guard', damage: 18, pattern: 'circle' },
-      ],
-      walls: [
-        { x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 1 },
-        { x: 4, y: 3 }, { x: 5, y: 2 }, { x: 6, y: 4 },
-        { x: 2, y: 5 }, { x: 3, y: 6 }, { x: 4, y: 5 },
-      ],
-      timeLimit: 180,
-      minTreasures: 3,
-      educational: {
-        concept: 'Risk Management',
-        skill: 'Đánh giá rủi ro và ra quyết định',
-        lesson: 'Cân bằng giữa phần thưởng và rủi ro',
-      },
+  },
+  {
+    id: 2,
+    name: 'Hang động bí ẩn',
+    description: 'Thám hiểm hang động đầy nguy hiểm',
+    dimensions: { width: 10, height: 8 },
+    playerStart: { x: 0, y: 3 },
+    exit: { x: 9, y: 4 },
+    treasures: [
+      { x: 2, y: 1, type: 'key', value: 40, collected: false },
+      { x: 4, y: 6, type: 'gold', value: 25, collected: false },
+      { x: 6, y: 2, type: 'gem', value: 35, collected: false },
+      { x: 7, y: 6, type: 'artifact', value: 60, collected: false },
+    ],
+    enemies: [
+      { x: 3, y: 3, type: 'monster', damage: 20 },
+      { x: 5, y: 4, type: 'trap', damage: 15 },
+      { x: 7, y: 2, type: 'guard', damage: 18, pattern: 'circle' },
+    ],
+    walls: [
+      { x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 1 },
+      { x: 4, y: 3 }, { x: 5, y: 2 }, { x: 6, y: 4 },
+      { x: 2, y: 5 }, { x: 3, y: 6 }, { x: 4, y: 5 },
+    ],
+    timeLimit: 180,
+    minTreasures: 3,
+    educational: {
+      concept: 'Risk Management',
+      skill: 'Đánh giá rủi ro và ra quyết định',
+      lesson: 'Cân bằng giữa phần thưởng và rủi ro',
     },
-    {
-      id: 3,
-      name: 'Lâu đài ma quái',
-      description: 'Chinh phục lâu đài đầy thử thách',
-      dimensions: { width: 12, height: 10 },
-      playerStart: { x: 0, y: 5 },
-      exit: { x: 11, y: 5 },
-      treasures: [
-        { x: 2, y: 2, type: 'gold', value: 30, collected: false },
-        { x: 4, y: 7, type: 'key', value: 50, collected: false },
-        { x: 6, y: 1, type: 'gem', value: 40, collected: false },
-        { x: 8, y: 8, type: 'artifact', value: 70, collected: false },
-        { x: 10, y: 3, type: 'gold', value: 35, collected: false },
-      ],
-      enemies: [
-        { x: 3, y: 4, type: 'guard', damage: 25, pattern: 'zigzag' },
-        { x: 5, y: 5, type: 'monster', damage: 30 },
-        { x: 7, y: 3, type: 'trap', damage: 20 },
-        { x: 9, y: 6, type: 'guard', damage: 22, pattern: 'patrol' },
-      ],
-      walls: [
-        { x: 1, y: 1 }, { x: 2, y: 1 }, { x: 3, y: 2 },
-        { x: 4, y: 3 }, { x: 5, y: 1 }, { x: 6, y: 2 },
-        { x: 2, y: 7 }, { x: 3, y: 8 }, { x: 4, y: 9 },
-        { x: 7, y: 7 }, { x: 8, y: 6 }, { x: 9, y: 7 },
-      ],
-      timeLimit: 240,
-      minTreasures: 4,
-      educational: {
-        concept: 'Advanced Strategy',
-        skill: 'Chiến lược phức tạp và thích ứng',
-        lesson: 'Xử lý tình huống phức tạp và đa mục tiêu',
-      },
+  },
+  {
+    id: 3,
+    name: 'Lâu đài ma quái',
+    description: 'Chinh phục lâu đài đầy thử thách',
+    dimensions: { width: 12, height: 10 },
+    playerStart: { x: 0, y: 5 },
+    exit: { x: 11, y: 5 },
+    treasures: [
+      { x: 2, y: 2, type: 'gold', value: 30, collected: false },
+      { x: 4, y: 7, type: 'key', value: 50, collected: false },
+      { x: 6, y: 1, type: 'gem', value: 40, collected: false },
+      { x: 8, y: 8, type: 'artifact', value: 70, collected: false },
+      { x: 10, y: 3, type: 'gold', value: 35, collected: false },
+    ],
+    enemies: [
+      { x: 3, y: 4, type: 'guard', damage: 25, pattern: 'zigzag' },
+      { x: 5, y: 5, type: 'monster', damage: 30 },
+      { x: 7, y: 3, type: 'trap', damage: 20 },
+      { x: 9, y: 6, type: 'guard', damage: 22, pattern: 'patrol' },
+    ],
+    walls: [
+      { x: 1, y: 1 }, { x: 2, y: 1 }, { x: 3, y: 2 },
+      { x: 4, y: 3 }, { x: 5, y: 1 }, { x: 6, y: 2 },
+      { x: 2, y: 7 }, { x: 3, y: 8 }, { x: 4, y: 9 },
+      { x: 7, y: 7 }, { x: 8, y: 6 }, { x: 9, y: 7 },
+    ],
+    timeLimit: 240,
+    minTreasures: 4,
+    educational: {
+      concept: 'Advanced Strategy',
+      skill: 'Chiến lược phức tạp và thích ứng',
+      lesson: 'Xử lý tình huống phức tạp và đa mục tiêu',
     },
-  ];
+  },
+];
 
+export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHuntGameProps) {
   const [currentLevel, setCurrentLevel] = useState(0);
   const [playerPosition, setPlayerPosition] = useState<Position>({ x: 0, y: 0 });
   const [playerHealth, setPlayerHealth] = useState(100);
@@ -166,7 +166,7 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
       setMoves(0);
       setMessage('Tìm kho báu và thoát khỏi mê cung!');
     }
-  }, [currentLevel, level]);
+  }, [level]);
 
   // Check time limit
   useEffect(() => {
@@ -188,18 +188,27 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
       const healthBonus = Math.max(0, (playerHealth - 50) * 2);
       const finalScore = score + levelBonus + timeBonus + healthBonus;
       
+      console.log('Level completed:', currentLevel + 1, 'of', levels.length);
+      
       if (currentLevel < levels.length - 1) {
         setTimeout(() => {
           setCurrentLevel(prev => prev + 1);
           setScore(finalScore);
+          setGameState('playing'); // Reset game state for next level
         }, 2000);
       } else {
+        console.log('All levels completed! Calling onComplete with score:', finalScore);
         setTimeout(() => {
           onComplete(true, finalScore);
         }, 2000);
       }
+    } else if (gameState === 'lost') {
+      console.log('Game lost! Calling onComplete with score:', score);
+      setTimeout(() => {
+        onComplete(false, score);
+      }, 1000);
     }
-  }, [gameState, currentLevel, levels.length, score, timeLeft, playerHealth, onComplete]);
+  }, [gameState, currentLevel, score, timeLeft, playerHealth, onComplete]);
 
   const isValidMove = useCallback((newPos: Position) => {
     if (newPos.x < 0 || newPos.x >= level.dimensions.width || 

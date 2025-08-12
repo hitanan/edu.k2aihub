@@ -1,5 +1,5 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { dataScienceLessons } from '@/data/data-science-analytics';
+import { DataScienceLessons } from '@/data/data-science';
 import { createTitle, createDescription } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
@@ -74,7 +74,7 @@ export default function DataScienceAnalyticsPage() {
   return (
     <ModulePageTemplate
       moduleData={moduleData}
-      lessons={dataScienceLessons}
+      lessons={DataScienceLessons}
     />
   );
 }
