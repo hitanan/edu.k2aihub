@@ -25,6 +25,10 @@ import { DataScienceLessons } from '@/data/data-science';
 import { SpaceLessons } from '@/data/space-exploration';
 import { ProgrammingRoboticsLessons } from '@/data/programming-robotics';
 
+// Import 2025 Vietnam Niche Market Research Modules
+import { blueEconomyLessons } from '@/data/blue-economy';
+import { smartManufacturingLessons } from '@/data/smart-manufacturing';
+
 // Import 2025 TRENDING MODULES (Social Media & Academic)
 import { aiContentCreatorLessons } from '@/data/ai-content-creator';
 import { tiktokSocialCommerceLessons } from '@/data/tiktok-social-commerce';
@@ -219,6 +223,17 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/learning/environmental-science-climate`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    // 2025 Vietnam Niche Market Research Modules
+    {
+      url: `${baseUrl}/learning/blue-economy`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/smart-manufacturing`,
       priority: 0.8,
       changeFrequency: 'weekly' as const,
     },
@@ -504,6 +519,21 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // 2025 Vietnam Niche Market Research Modules lesson pages
+  const blueEconomyPages = blueEconomyLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/blue-economy/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const smartManufacturingPages = smartManufacturingLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/smart-manufacturing/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   // Region pages
   const regionSlugs = [
     'bac-bo',
@@ -602,6 +632,9 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     // 2025 Academic Specialized Modules
     ...dataScienceAnalyticsPages,
     ...environmentalScienceClimatePages,
+    // 2025 Vietnam Niche Market Research Modules
+    ...blueEconomyPages,
+    ...smartManufacturingPages,
     ...regionPages,
     ...majorCityPages, // High priority cities first
     ...regularCityPages, // Regular cities

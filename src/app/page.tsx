@@ -10,6 +10,7 @@ import {
 import { ProgressDashboard } from '@/components/gamification/LearningProgress';
 import { EducationalGamesShowcase } from '@/components/games/EducationalGames';
 import { createTitle, createDescription } from '@/utils/seo';
+import { moduleStats } from '@/utils/moduleStats';
 
 export const metadata: Metadata = {
   title: createTitle('Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
@@ -163,9 +164,9 @@ export default function HomePage() {
 
   // Stats to show impact
   const stats = [
-    { number: '14+', label: 'Learning Modules', icon: '📚' },
-    { number: '100+', label: 'Bài Học Tương Tác', icon: '🎯' },
-    { number: '200+', label: 'Giờ Học Chất Lượng', icon: '⏰' },
+    { number: `${moduleStats.totalModules}+`, label: 'Learning Modules', icon: '📚' },
+    { number: `${moduleStats.totalLessons}+`, label: 'Bài Học Tương Tác', icon: '🎯' },
+    { number: `${moduleStats.totalHours}+`, label: 'Giờ Học Chất Lượng', icon: '⏰' },
     { number: '100%', label: 'Miễn Phí', icon: '✨' },
   ];
 

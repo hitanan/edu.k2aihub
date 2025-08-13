@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from 'react';
 import { climateModelingGame } from '@/data/climateModelingGame';
 import { Clock, ThermometerSun, Waves, TreePine, Factory, Zap, Award, RotateCcw } from 'lucide-react';
@@ -34,7 +34,7 @@ const gameActions: GameAction[] = [
     tempImpact: -0.1,
     renewableBoost: 10,
     description: 'Đầu tư vào trang trại năng lượng mặt trời để giảm phụ thuộc fossil fuels',
-    icon: <Zap className="w-5 h-5" />
+    icon: <Zap className="w-5 h-5" />,
   },
   {
     id: 'reforestation',
@@ -44,7 +44,7 @@ const gameActions: GameAction[] = [
     tempImpact: -0.05,
     renewableBoost: 0,
     description: 'Trồng cây để hấp thụ CO2 và cải thiện hệ sinh thái',
-    icon: <TreePine className="w-5 h-5" />
+    icon: <TreePine className="w-5 h-5" />,
   },
   {
     id: 'ev-incentives',
@@ -54,7 +54,7 @@ const gameActions: GameAction[] = [
     tempImpact: -0.03,
     renewableBoost: 5,
     description: 'Chính sách hỗ trợ chuyển đổi sang xe điện',
-    icon: <Factory className="w-5 h-5" />
+    icon: <Factory className="w-5 h-5" />,
   },
   {
     id: 'carbon-tax',
@@ -64,8 +64,8 @@ const gameActions: GameAction[] = [
     tempImpact: -0.08,
     renewableBoost: 8,
     description: 'Áp thuế carbon để khuyến khích giảm phát thải',
-    icon: <ThermometerSun className="w-5 h-5" />
-  }
+    icon: <ThermometerSun className="w-5 h-5" />,
+  },
 ];
 
 export default function ClimateModelingGameComponent() {
@@ -77,7 +77,7 @@ export default function ClimateModelingGameComponent() {
     airQuality: 60,
     biodiversity: 70,
     renewableEnergy: 12,
-    score: 0
+    score: 0,
   });
 
   const [budget, setBudget] = useState(100);
@@ -91,9 +91,9 @@ export default function ClimateModelingGameComponent() {
     const co2Score = Math.max(0, 100 - (gameState.co2Level - 350) * 0.5);
     const renewableScore = gameState.renewableEnergy;
     const finalScore = Math.round((tempScore + co2Score + renewableScore) / 3);
-    
-    setGameState(prev => ({ ...prev, score: finalScore }));
-    
+
+    setGameState((prev) => ({ ...prev, score: finalScore }));
+
     if (finalScore >= 80) {
       setGameMessage('🏆 Xuất sắc! Bạn đã cứu được hành tinh!');
     } else if (finalScore >= 60) {
@@ -107,17 +107,17 @@ export default function ClimateModelingGameComponent() {
   useEffect(() => {
     if (isGameRunning && gameYear < 20) {
       const timer = setTimeout(() => {
-        setGameState(prev => {
+        setGameState((prev) => {
           // Natural CO2 increase if no action
           const naturalCO2Increase = 2;
           const newCO2 = Math.max(350, prev.co2Level + naturalCO2Increase);
           const newTemp = prev.temperature + (newCO2 - 350) * 0.002;
           const newSeaLevel = prev.seaLevel + newTemp * 0.1;
-          
+
           // Air quality and biodiversity degradation
           const newAirQuality = Math.max(20, prev.airQuality - 1);
           const newBiodiversity = Math.max(30, prev.biodiversity - 0.5);
-          
+
           return {
             ...prev,
             year: prev.year + 1,
@@ -125,13 +125,13 @@ export default function ClimateModelingGameComponent() {
             temperature: newTemp,
             seaLevel: newSeaLevel,
             airQuality: newAirQuality,
-            biodiversity: newBiodiversity
+            biodiversity: newBiodiversity,
           };
         });
-        
-        setGameYear(prev => prev + 1);
-        setBudget(prev => prev + 20); // Annual budget refresh
-        
+
+        setGameYear((prev) => prev + 1);
+        setBudget((prev) => prev + 20); // Annual budget refresh
+
         if (gameYear === 19) {
           setIsGameRunning(false);
           calculateFinalScore();
@@ -144,16 +144,16 @@ export default function ClimateModelingGameComponent() {
 
   const executeAction = (action: GameAction) => {
     if (budget >= action.cost) {
-      setBudget(prev => prev - action.cost);
-      
-      setGameState(prev => ({
+      setBudget((prev) => prev - action.cost);
+
+      setGameState((prev) => ({
         ...prev,
         co2Level: Math.max(350, prev.co2Level + action.co2Impact),
         temperature: Math.max(0, prev.temperature + action.tempImpact),
         renewableEnergy: Math.min(100, prev.renewableEnergy + action.renewableBoost),
         airQuality: Math.min(100, prev.airQuality + Math.abs(action.co2Impact) * 0.5),
         biodiversity: Math.min(100, prev.biodiversity + Math.abs(action.tempImpact) * 5),
-        score: prev.score + 10
+        score: prev.score + 10,
       }));
 
       setGameMessage(`✅ ${action.name} đã được thực hiện!`);
@@ -182,7 +182,7 @@ export default function ClimateModelingGameComponent() {
       airQuality: 60,
       biodiversity: 70,
       renewableEnergy: 12,
-      score: 0
+      score: 0,
     });
     setGameMessage('');
   };
@@ -204,9 +204,7 @@ export default function ClimateModelingGameComponent() {
       <div className="max-w-6xl mx-auto">
         {/* Game Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4">
-            🌍 Climate Modeling Simulator
-          </h1>
+          <h1 className="text-4xl font-bold mb-4">🌍 Climate Modeling Simulator</h1>
           <p className="text-gray-300 text-lg">
             Mô phỏng biến đổi khí hậu qua 20 năm. Thực hiện các hành động để cứu hành tinh!
           </p>
@@ -222,7 +220,7 @@ export default function ClimateModelingGameComponent() {
               </div>
               <div className="text-2xl font-bold text-blue-400">{gameState.year}</div>
             </div>
-            
+
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <ThermometerSun className="w-5 h-5 text-red-400" />
@@ -248,9 +246,7 @@ export default function ClimateModelingGameComponent() {
                 <Waves className="w-5 h-5 text-cyan-400" />
                 <span className="text-sm text-gray-300">Mực nước biển</span>
               </div>
-              <div className="text-2xl font-bold text-cyan-400">
-                +{gameState.seaLevel.toFixed(1)}mm/yr
-              </div>
+              <div className="text-2xl font-bold text-cyan-400">+{gameState.seaLevel.toFixed(1)}mm/yr</div>
             </div>
 
             <div className="text-center">
@@ -258,9 +254,7 @@ export default function ClimateModelingGameComponent() {
                 <Zap className="w-5 h-5 text-green-400" />
                 <span className="text-sm text-gray-300">Renewable</span>
               </div>
-              <div className="text-2xl font-bold text-green-400">
-                {Math.round(gameState.renewableEnergy)}%
-              </div>
+              <div className="text-2xl font-bold text-green-400">{Math.round(gameState.renewableEnergy)}%</div>
             </div>
 
             <div className="text-center">
@@ -281,7 +275,7 @@ export default function ClimateModelingGameComponent() {
               <span className="text-sm font-semibold">{Math.round(gameState.airQuality)}%</span>
             </div>
             <div className="w-full bg-gray-700 rounded-full h-2">
-              <div 
+              <div
                 className="bg-gradient-to-r from-red-500 to-green-500 h-2 rounded-full transition-all duration-500"
                 style={{ width: `${gameState.airQuality}%` }}
               />
@@ -294,7 +288,7 @@ export default function ClimateModelingGameComponent() {
               <span className="text-sm font-semibold">{Math.round(gameState.biodiversity)}%</span>
             </div>
             <div className="w-full bg-gray-700 rounded-full h-2">
-              <div 
+              <div
                 className="bg-gradient-to-r from-red-500 to-green-500 h-2 rounded-full transition-all duration-500"
                 style={{ width: `${gameState.biodiversity}%` }}
               />
@@ -307,7 +301,7 @@ export default function ClimateModelingGameComponent() {
               <span className="text-sm font-semibold">{gameState.score}/100</span>
             </div>
             <div className="w-full bg-gray-700 rounded-full h-2">
-              <div 
+              <div
                 className="bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 h-2 rounded-full transition-all duration-500"
                 style={{ width: `${gameState.score}%` }}
               />
@@ -352,7 +346,7 @@ export default function ClimateModelingGameComponent() {
               <p className="text-blue-300">{gameMessage}</p>
             </div>
           )}
-          
+
           <div className="flex justify-center gap-4">
             {!isGameRunning ? (
               <button
@@ -362,11 +356,9 @@ export default function ClimateModelingGameComponent() {
                 🚀 Start Simulation
               </button>
             ) : (
-              <div className="text-gray-300">
-                Simulation running... Year {gameYear + 1}/20
-              </div>
+              <div className="text-gray-300">Simulation running... Year {gameYear + 1}/20</div>
             )}
-            
+
             <button
               onClick={resetGame}
               className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2"

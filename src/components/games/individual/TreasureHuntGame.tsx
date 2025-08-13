@@ -20,6 +20,7 @@ interface Enemy {
   type: 'guard' | 'trap' | 'monster';
   damage: number;
   pattern?: string; // Movement pattern for guards
+  defeated?: boolean; // Add defeated state
 }
 
 interface Level {
@@ -149,12 +150,13 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
   const [playerHealth, setPlayerHealth] = useState(100);
   const [score, setScore] = useState(0);
   const [treasures, setTreasures] = useState<Treasure[]>([]);
+  const [enemies, setEnemies] = useState<Enemy[]>([]);
   const [gameState, setGameState] = useState<'playing' | 'won' | 'lost'>('playing');
   const [moves, setMoves] = useState(0);
   const [message, setMessage] = useState('');
   const [isMoving, setIsMoving] = useState(false);
 
-  const level = levels[currentLevel];
+  const level = levels[currentLevel] || levels[0]; // Fallback to first level if currentLevel is invalid
 
   // Initialize level
   useEffect(() => {
@@ -162,9 +164,10 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
       setPlayerPosition(level.playerStart);
       setPlayerHealth(100);
       setTreasures(level.treasures.map(t => ({ ...t, collected: false })));
+      setEnemies(level.enemies.map(e => ({ ...e, defeated: false })));
       setGameState('playing');
       setMoves(0);
-      setMessage('Tìm kho báu và thoát khỏi mê cung!');
+      setMessage('Tìm kho báu và thoát khỏi mê cung! Space = tấn công');
     }
   }, [level]);
 
@@ -244,19 +247,25 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
     }
     
     // Check enemies
-    const enemy = level.enemies.find(e => e.x === pos.x && e.y === pos.y);
-    if (enemy) {
+    const enemyIndex = enemies.findIndex(e => !e.defeated && e.x === pos.x && e.y === pos.y);
+    if (enemyIndex >= 0) {
+      const enemy = enemies[enemyIndex];
       setPlayerHealth(prev => {
         const newHealth = Math.max(0, prev - enemy.damage);
         if (newHealth <= 0) {
           setGameState('lost');
           setMessage('Bạn đã bị tiêu diệt!');
+          setTimeout(() => {
+            if (onRestart) onRestart();
+            else onComplete(false, score);
+          }, 2000);
         } else {
-          setMessage(`Bị tấn công! -${enemy.damage} HP`);
-          setTimeout(() => setMessage(''), 2000);
+          setMessage(`Bị tấn công bởi ${enemy.type}! -${enemy.damage} HP (Nhấn Space để chiến đấu)`);
+          setTimeout(() => setMessage(''), 3000);
         }
         return newHealth;
       });
+      return; // Stop further processing when hit by enemy
     }
     
     // Check exit
@@ -270,7 +279,26 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
         setTimeout(() => setMessage(''), 3000);
       }
     }
-  }, [treasures, level]);
+  }, [treasures, enemies, level]);
+
+  const attackEnemy = useCallback(() => {
+    const { x, y } = playerPosition;
+    const enemyIndex = enemies.findIndex(e => !e.defeated && e.x === x && e.y === y);
+    
+    if (enemyIndex >= 0) {
+      setEnemies(prev => {
+        const newEnemies = [...prev];
+        newEnemies[enemyIndex].defeated = true;
+        return newEnemies;
+      });
+      
+      const enemy = enemies[enemyIndex];
+      const points = enemy.type === 'monster' ? 50 : enemy.type === 'guard' ? 30 : 20;
+      setScore(prev => prev + points);
+      setMessage(`Đánh bại ${enemy.type}! +${points} điểm`);
+      setTimeout(() => setMessage(''), 2000);
+    }
+  }, [playerPosition, enemies]);
 
   const movePlayer = useCallback((direction: 'up' | 'down' | 'left' | 'right') => {
     if (isMoving || gameState !== 'playing') return;
@@ -323,12 +351,16 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
           e.preventDefault();
           movePlayer('right');
           break;
+        case ' ': // Space bar for attack
+          e.preventDefault();
+          attackEnemy();
+          break;
       }
     };
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [movePlayer]);
+  }, [movePlayer, attackEnemy]);
 
   const getCellContent = (x: number, y: number) => {
     if (playerPosition.x === x && playerPosition.y === y) {
@@ -357,13 +389,20 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
       };
     }
     
-    const enemy = level.enemies.find(e => e.x === x && e.y === y);
+    const enemy = enemies.find(e => e.x === x && e.y === y);
     if (enemy) {
-      const icons = { guard: '⚔️', trap: '🕳️', monster: '👹' };
-      return { 
-        content: icons[enemy.type], 
-        className: 'bg-red-500 animate-bounce' 
-      };
+      if (enemy.defeated) {
+        return { 
+          content: '💀', 
+          className: 'bg-gray-500/50' 
+        };
+      } else {
+        const icons = { guard: '⚔️', trap: '🕳️', monster: '👹' };
+        return { 
+          content: icons[enemy.type], 
+          className: 'bg-red-500 animate-bounce' 
+        };
+      }
     }
     
     return { content: '', className: 'bg-gray-200/20' };
@@ -514,7 +553,10 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
                 <span className="text-gray-300">Lối ra (bị khóa)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span>🪙💎🏺🗝️</span>
+                <span className="text-yellow-400">�</span>
+                <span className="text-purple-400">�💎</span>
+                <span className="text-orange-400">🏺</span>
+                <span className="text-yellow-300">�</span>
                 <span className="text-gray-300">Kho báu</span>
               </div>
               <div className="flex items-center gap-2">

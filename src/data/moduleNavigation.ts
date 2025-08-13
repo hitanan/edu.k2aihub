@@ -73,6 +73,17 @@ export const K2Module = {
   AerospaceEngineering: 'aerospace-engineering',
   Nanotechnology: 'nanotechnology',
 
+  // 2025 Vietnam Niche Market Research Modules
+  BlueEconomy: 'blue-economy',
+  SmartManufacturing: 'smart-manufacturing',
+  AgriTech: 'agritech',
+  DigitalHealth: 'digital-health',
+  EdTech: 'edtech',
+  SmartCity: 'smart-city',
+  PropTech: 'proptech',
+  CircularEconomy: 'circular-economy',
+  ElectricVehicle: 'electric-vehicle',
+
   // 2025 Trend-Based Modules
   ContentCreator: 'content-creator',
   TeenWellness: 'teen-wellness',
@@ -3425,6 +3436,55 @@ export const moduleNavigation: ModuleNavigation[] = [
         difficulty: 'Trung bình',
       },
     ],
+  },
+
+  // 2025 Vietnam Niche Market Research Modules
+  {
+    id: K2Module.BlueEconomy,
+    title: 'Kinh Tế Biển Xanh & Công Nghệ Biển',
+    subtitle: 'Khai thác tiềm năng 3.200km bờ biển Việt Nam',
+    description: 'Phát triển kinh tế biển bền vững với công nghệ thông minh, từ nuôi trồng thủy sản đến năng lượng tái tạo biển',
+    category: ['ocean-tech', 'sustainable-economy', 'marine-science'],
+    icon: '🌊',
+    color: 'from-blue-600 to-cyan-600',
+    totalDuration: '8-12 giờ',
+    difficulty: 'Trung bình',
+    features: [
+      'Smart Aquaculture với IoT & AI',
+      'Marine Renewable Energy',
+      'Ocean Data Analytics',
+      'Sustainable Fisheries Management'
+    ],
+    tags: ['blue-economy', 'marine-tech', 'aquaculture', 'renewable-energy', 'sustainability'],
+    prerequisites: [
+      'Kiến thức cơ bản về kinh tế học',
+      'Hiểu biết về môi trường biển',
+      'IoT và cảm biến cơ bản'
+    ]
+  },
+
+  {
+    id: K2Module.SmartManufacturing,
+    title: 'Sản Xuất Thông Minh & Công Nghiệp 4.0',
+    subtitle: 'Chuyển đổi số trong sản xuất - Cơ hội từ China+1 strategy',
+    description: 'Nắm vững công nghệ Công nghiệp 4.0 để tận dụng làn sóng chuyển dịch sản xuất từ Trung Quốc sang Việt Nam',
+    category: ['industry-4.0', 'automation', 'smart-factory'],
+    icon: '🏭',
+    color: 'from-orange-600 to-red-600',
+    totalDuration: '10-15 giờ',
+    difficulty: 'Trung bình',
+    features: [
+      'Factory Automation Systems',
+      'Predictive Maintenance AI',
+      'Supply Chain Optimization',
+      'Quality Control với Computer Vision'
+    ],
+    tags: ['industry-4.0', 'automation', 'iot', 'ai', 'manufacturing'],
+    prerequisites: [
+      'Kiến thức điện tử cơ bản',
+      'Lập trình cơ bản',
+      'Hiểu biết về quy trình sản xuất'
+    ]
   },
 ];
 
