@@ -18,3 +18,4 @@ export { default as QuantumBasicsGame } from './QuantumBasicsGame';
 export { default as BlockchainExplorerGame } from './BlockchainExplorerGame';
 export { default as ClimateModelingGame } from './ClimateModelingGame';
 export { default as CybersecurityDefenseGame } from './CybersecurityDefenseGame';
+export { default as ScratchAnimationStudioGame } from './ScratchAnimationStudioGame';

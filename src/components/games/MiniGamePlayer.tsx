@@ -33,6 +33,7 @@ import {
   BlockchainExplorerGame,
   ClimateModelingGame,
   CybersecurityDefenseGame,
+  ScratchAnimationStudioGame,
 } from './individual';
 
 interface MiniGameProps {
@@ -261,6 +262,14 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'treasure-hunt-adventure':
         return (
           <TreasureHuntGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={() => setCurrentGameState('playing')}
+          />
+        );
+      case 'scratch-animation-studio':
+        return (
+          <ScratchAnimationStudioGame
             onComplete={endGame}
             timeLeft={timeLeft}
             onRestart={() => setCurrentGameState('playing')}
