@@ -2,11 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import StructuredData from '@/components/StructuredData';
 import ClientOnly from '@/components/ClientOnly';
-import {
-  LastVisitCard,
-  LearningRecommendations,
-  PageTracker,
-} from '@/components/gamification/VisitTracker';
+import { LastVisitCard, LearningRecommendations, PageTracker } from '@/components/gamification/VisitTracker';
 import { ProgressDashboard } from '@/components/gamification/LearningProgress';
 import { EducationalGamesShowcase } from '@/components/games/EducationalGames';
 import { createTitle, createDescription } from '@/utils/seo';
@@ -15,7 +11,7 @@ import { moduleStats } from '@/utils/moduleStats';
 export const metadata: Metadata = {
   title: createTitle('Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
   description: createDescription(
-    'K2AI - Nền tảng giáo dục tương tác miễn phí với AI, giúp bạn nắm vững kiến thức từ cơ bản đến nâng cao. 14 modules học tập chất lượng cao.',
+    'K2AI - Nền tảng giáo dục tương tác miễn phí với AI, giúp bạn nắm vững kiến thức từ cơ bản đến nâng cao. 64+ modules học tập chất lượng cao.',
   ),
   keywords: [
     'K2AI',
@@ -33,14 +29,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
-    description:
-      'Nền tảng giáo dục tương tác miễn phí với 14 modules học tập chất lượng cao từ cơ bản đến nâng cao.',
+    description: 'Nền tảng giáo dục tương tác miễn phí với 64+ modules học tập chất lượng cao từ cơ bản đến nâng cao.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'K2AI - Nền tảng học tập thông minh',
-    description: 'Học tập miễn phí với AI - 14 modules chất lượng cao',
+    description: 'Học tập miễn phí với AI - 64+ modules chất lượng cao',
   },
 };
 
@@ -74,8 +69,7 @@ export default function HomePage() {
       id: 'geography',
       title: 'Địa Lý Việt Nam',
       subtitle: 'Khám phá quê hương',
-      description:
-        'Bản đồ tương tác 34 tỉnh thành với thông tin văn hóa và kinh tế',
+      description: 'Bản đồ tương tác 34 tỉnh thành với thông tin văn hóa và kinh tế',
       href: '/city',
       color: 'from-green-500 to-emerald-500',
       icon: '🌏',
@@ -87,8 +81,7 @@ export default function HomePage() {
       id: 'ai',
       title: 'AI Của Tôi',
       subtitle: 'AI trong cuộc sống',
-      description:
-        'Học cách sử dụng ChatGPT, Midjourney hiệu quả trong học tập và công việc',
+      description: 'Học cách sử dụng ChatGPT, Midjourney hiệu quả trong học tập và công việc',
       href: '/ai',
       color: 'from-purple-500 to-indigo-500',
       icon: '🤖',
@@ -112,8 +105,7 @@ export default function HomePage() {
       id: 'python',
       title: 'Lập Trình Python',
       subtitle: 'Ngôn ngữ của AI',
-      description:
-        'Học Python từ cơ bản đến AI và Data Science - ngôn ngữ quan trọng nhất',
+      description: 'Học Python từ cơ bản đến AI và Data Science - ngôn ngữ quan trọng nhất',
       href: '/learning/python',
       color: 'from-blue-500 to-cyan-500',
       icon: '🐍',
@@ -138,14 +130,8 @@ export default function HomePage() {
     {
       title: 'Sinh Viên',
       subtitle: 'Kỹ năng thực tế',
-      description:
-        'Các khóa học nâng cao giúp sinh viên có lợi thế trong tìm việc và phát triển sự nghiệp',
-      modules: [
-        '📱 Digital Marketing',
-        '💰 Tài chính',
-        '🎮 Game Dev',
-        '🔒 Security',
-      ],
+      description: 'Các khóa học nâng cao giúp sinh viên có lợi thế trong tìm việc và phát triển sự nghiệp',
+      modules: ['📱 Digital Marketing', '💰 Tài chính', '🎮 Game Dev', '🔒 Security'],
       color: 'from-purple-400 to-pink-400',
       icon: '🎓',
       href: '/learning?category=professional',
@@ -153,8 +139,7 @@ export default function HomePage() {
     {
       title: 'Người Đi Làm',
       subtitle: 'Nâng cao nghề nghiệp',
-      description:
-        'Học thêm kỹ năng mới để thăng tiến trong công việc hoặc chuyển đổi nghề nghiệp',
+      description: 'Học thêm kỹ năng mới để thăng tiến trong công việc hoặc chuyển đổi nghề nghiệp',
       modules: ['🚀 Khởi nghiệp', '🧬 Biotech', '🌱 Green Tech', '💻 Python'],
       color: 'from-orange-400 to-red-400',
       icon: '💼',
@@ -207,24 +192,15 @@ export default function HomePage() {
                 </div>
               </h1>
               <h2 className="text-2xl md:text-4xl font-bold text-gray-300 mb-6">
-                <span className="text-emerald-400">Tương Lai</span> •
-                <span className="text-cyan-400">Học Tập</span> •
+                <span className="text-emerald-400">Tương Lai</span> •<span className="text-cyan-400">Học Tập</span> •
                 <span className="text-violet-400">Thông Minh</span>
               </h2>
             </div>
 
             <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Khám phá thế giới học tập{' '}
-              <span className="text-emerald-400 font-bold">không giới hạn</span>{' '}
-              với
-              <span className="text-cyan-400 font-bold">
-                {' '}
-                công nghệ AI tiên tiến
-              </span>{' '}
-              -
-              <span className="text-violet-400 font-bold">
-                hoàn toàn miễn phí
-              </span>
+              Khám phá thế giới học tập <span className="text-emerald-400 font-bold">không giới hạn</span> với
+              <span className="text-cyan-400 font-bold"> công nghệ AI tiên tiến</span> -
+              <span className="text-violet-400 font-bold">hoàn toàn miễn phí</span>
             </p>
 
             {/* Neo-tech Stats */}
@@ -232,12 +208,8 @@ export default function HomePage() {
               {stats.map((stat, index) => (
                 <div key={index} className="relative group">
                   <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-emerald-400/20 hover:border-emerald-400/50 transition-all duration-300 group-hover:scale-105">
-                    <div className="text-5xl mb-3 group-hover:animate-bounce">
-                      {stat.icon}
-                    </div>
-                    <div className="text-3xl font-black text-emerald-400 mb-1">
-                      {stat.number}
-                    </div>
+                    <div className="text-5xl mb-3 group-hover:animate-bounce">{stat.icon}</div>
+                    <div className="text-3xl font-black text-emerald-400 mb-1">{stat.number}</div>
                     <div className="text-sm text-gray-400">{stat.label}</div>
                   </div>
                   {/* Glow effect */}
@@ -254,9 +226,7 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-black font-black">
-                  🚀 BẮT ĐẦU HỌC NGAY
-                </span>
+                <span className="relative text-black font-black">🚀 BẮT ĐẦU HỌC NGAY</span>
               </a>
               <a
                 href="#learning-paths"
@@ -264,9 +234,7 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 bg-violet-400/10 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-violet-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-violet-400 font-black">
-                  🗺️ XEM LỘ TRÌNH
-                </span>
+                <span className="relative text-violet-400 font-black">🗺️ XEM LỘ TRÌNH</span>
               </a>
             </div>
           </div>
@@ -313,7 +281,7 @@ export default function HomePage() {
               </div>
             }
           >
-            <EducationalGamesShowcase limit={6} />
+            <EducationalGamesShowcase limit={30} />
           </ClientOnly>
         </div>
       </section>
@@ -324,33 +292,23 @@ export default function HomePage() {
       </ClientOnly>
 
       {/* Featured Modules - Cyber-punk card design */}
-      <section
-        id="featured-modules"
-        className="py-20 bg-gradient-to-br from-slate-900 via-black to-slate-900"
-      >
+      <section id="featured-modules" className="py-20 bg-gradient-to-br from-slate-900 via-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
               <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent font-black">
                 KHÓA HỌC
               </span>
-              <span className="block text-violet-400 mt-2 font-black">
-                NỔI BẬT
-              </span>
+              <span className="block text-violet-400 mt-2 font-black">NỔI BẬT</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Khóa học được thiết kế với công nghệ tiên tiến, cập nhật liên tục
-              theo xu hướng thị trường
+              Khóa học được thiết kế với công nghệ tiên tiến, cập nhật liên tục theo xu hướng thị trường
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredModules.map((module) => (
-              <Link
-                key={module.id}
-                href={module.href}
-                className="group relative"
-              >
+              <Link key={module.id} href={module.href} className="group relative">
                 <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/30 hover:border-emerald-400/50 transition-all duration-300 hover:scale-105 overflow-hidden min-h-[420px]">
                   {/* Neon highlight badge */}
                   <div className="absolute -top-1 left-6 bg-gradient-to-r from-rose-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-rose-500/30 z-10">
@@ -367,24 +325,18 @@ export default function HomePage() {
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors leading-tight">
                     {module.title}
                   </h3>
-                  <p className="text-gray-300 mb-4 text-sm leading-relaxed min-h-[60px]">
-                    {module.description}
-                  </p>
+                  <p className="text-gray-300 mb-4 text-sm leading-relaxed min-h-[60px]">{module.description}</p>
 
                   <div className="flex justify-between items-center text-sm text-gray-400 mb-4">
                     <span className="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/30 font-bold text-xs">
                       {module.difficulty}
                     </span>
-                    <span className="text-violet-300 font-bold text-xs">
-                      {module.time}
-                    </span>
+                    <span className="text-violet-300 font-bold text-xs">{module.time}</span>
                   </div>
 
                   <div className="text-cyan-400 font-bold group-hover:text-cyan-300 transition-colors flex items-center mt-auto">
                     <span>HỌC NGAY</span>
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
-                      →
-                    </span>
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </div>
 
                   {/* Glow effect */}
@@ -397,23 +349,17 @@ export default function HomePage() {
       </section>
 
       {/* Learning Paths - Matrix-style design */}
-      <section
-        id="learning-paths"
-        className="py-20 bg-gradient-to-br from-black via-slate-800 to-black"
-      >
+      <section id="learning-paths" className="py-20 bg-gradient-to-br from-black via-slate-800 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
               <span className="bg-gradient-to-r from-violet-400 to-rose-400 bg-clip-text text-transparent font-black">
                 LỘ TRÌNH
               </span>
-              <span className="block text-emerald-400 mt-2 font-black">
-                DÀNH CHO BẠN
-              </span>
+              <span className="block text-emerald-400 mt-2 font-black">DÀNH CHO BẠN</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Tùy chỉnh hành trình học tập phù hợp với mục tiêu và đam mê cá
-              nhân
+              Tùy chỉnh hành trình học tập phù hợp với mục tiêu và đam mê cá nhân
             </p>
           </div>
 
@@ -430,12 +376,8 @@ export default function HomePage() {
                   <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-300 transition-colors">
                     {path.title}
                   </h3>
-                  <p className="text-lg text-rose-300 mb-4 font-bold">
-                    {path.subtitle}
-                  </p>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {path.description}
-                  </p>
+                  <p className="text-lg text-rose-300 mb-4 font-bold">{path.subtitle}</p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{path.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {path.modules.map((module, idx) => (
@@ -450,9 +392,7 @@ export default function HomePage() {
 
                   <div className="text-emerald-400 font-bold group-hover:text-emerald-300 transition-colors flex items-center">
                     <span>KHÁM PHÁ LỘ TRÌNH</span>
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
-                      →
-                    </span>
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </div>
 
                   {/* Matrix rain effect hint */}
@@ -483,13 +423,8 @@ export default function HomePage() {
               </span>
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Gia nhập cộng đồng học tập{' '}
-              <span className="text-emerald-400 font-bold">tiên phong</span> và
-              <span className="text-violet-400 font-bold">
-                {' '}
-                định hình tương lai
-              </span>{' '}
-              của chính bạn
+              Gia nhập cộng đồng học tập <span className="text-emerald-400 font-bold">tiên phong</span> và
+              <span className="text-violet-400 font-bold"> định hình tương lai</span> của chính bạn
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link
@@ -498,9 +433,7 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 bg-emerald-400/10 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-emerald-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-black font-black">
-                  🌏 KHÁM PHÁ VIỆT NAM
-                </span>
+                <span className="relative text-black font-black">🌏 KHÁM PHÁ VIỆT NAM</span>
               </Link>
               <Link
                 href="/ai"
@@ -508,9 +441,7 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-orange-500 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-rose-400 to-orange-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-black font-black">
-                  🤖 HỌC AI NGAY
-                </span>
+                <span className="relative text-black font-black">🤖 HỌC AI NGAY</span>
               </Link>
               <Link
                 href="/learning"
@@ -518,9 +449,7 @@ export default function HomePage() {
               >
                 <div className="absolute inset-0 bg-violet-400/10 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-violet-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-violet-400 font-black">
-                  📚 TẤT CẢ KHÓA HỌC
-                </span>
+                <span className="relative text-violet-400 font-black">📚 TẤT CẢ KHÓA HỌC</span>
               </Link>
             </div>
           </div>

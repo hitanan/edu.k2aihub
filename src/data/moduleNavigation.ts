@@ -83,6 +83,7 @@ export const K2Module = {
   PropTech: 'proptech',
   CircularEconomy: 'circular-economy',
   ElectricVehicle: 'electric-vehicle',
+  CrossBorderEcommerce: 'cross-border-ecommerce',
 
   // 2025 Trend-Based Modules
   ContentCreator: 'content-creator',

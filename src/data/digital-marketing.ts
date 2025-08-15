@@ -1,18 +1,9 @@
-export interface DigitalMarketingLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
+import { BaseLessonData } from "@/components/learning/LessonPageTemplate";
+
+export interface DigitalMarketingLesson extends BaseLessonData {
   videoUrl: string;
-  imageUrl?: string;
   tools: string[];
   resources: Resource[];
-  caseStudies: CaseStudy[];
 }
 
 interface Exercise {
@@ -20,25 +11,17 @@ interface Exercise {
   description: string;
   difficulty: string;
   solution: string;
-  requirements: string[];
-  hints: string[];
-  expectedOutput: string;
+  materials?: string[];
+  procedure?: string[];
+  expectedResults?: string;
+  hints?: string[];
 }
 
 interface Resource {
   title: string;
   url: string;
   type: 'article' | 'tool' | 'video' | 'book';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  company: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  insights: string[];
+  description?: string;
 }
 
 export const digitalMarketingLessons: DigitalMarketingLesson[] = [
@@ -48,8 +31,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     description:
       'Tìm hiểu khái niệm Digital Marketing, các kênh chính và cách xây dựng chiến lược marketing toàn diện cho doanh nghiệp.',
     videoUrl: 'https://www.youtube.com/watch?v=bELBQqF8dCE',
-    imageUrl:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '90 phút',
     objectives: [
@@ -57,20 +39,10 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Nắm vững các kênh Digital Marketing chính',
       'Học cách xây dựng buyer persona',
       'Tạo customer journey map',
-      'Xây dựng chiến lược marketing 360 độ'
+      'Xây dựng chiến lược marketing 360 độ',
     ],
-    prerequisites: [
-      'Kiến thức cơ bản về marketing',
-      'Hiểu biết về internet và social media'
-    ],
-    tools: [
-      'Google Analytics',
-      'Facebook Business Manager',
-      'Google Ads',
-      'Canva',
-      'HubSpot',
-      'Mailchimp'
-    ],
+    prerequisites: ['Kiến thức cơ bản về marketing', 'Hiểu biết về internet và social media'],
+    tools: ['Google Analytics', 'Facebook Business Manager', 'Google Ads', 'Canva', 'HubSpot', 'Mailchimp'],
     exercises: [
       {
         title: 'Xây dựng Buyer Persona',
@@ -99,18 +71,17 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - LinkedIn, Facebook Groups
 - Marketing blogs, webinars
 - Industry events và conferences`,
-        requirements: [
+        materials: [
           'Research đối tượng khách hàng thực tế',
           'Sử dụng dữ liệu demographics và psychographics',
-          'Xác định pain points và goals cụ thể'
+          'Xác định pain points và goals cụ thể',
         ],
         hints: [
           'Phỏng vấn khách hàng hiện tại để thu thập insights',
           'Sử dụng Google Analytics để phân tích audience',
-          'Tham khảo các nghiên cứu thị trường trong ngành'
+          'Tham khảo các nghiên cứu thị trường trong ngành',
         ],
-        expectedOutput:
-          'Một buyer persona hoàn chỉnh với ảnh đại diện, thông tin chi tiết và kế hoạch tiếp cận'
+        expectedResults: 'Một buyer persona hoàn chỉnh với ảnh đại diện, thông tin chi tiết và kế hoạch tiếp cận',
       },
       {
         title: 'Customer Journey Mapping',
@@ -141,65 +112,61 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 **Customer Actions:** Sử dụng sản phẩm, đánh giá
 **Emotions:** Hài lòng hoặc thất vọng
 **Opportunities:** Follow-up emails, loyalty programs`,
-        requirements: [
+        materials: [
           'Xác định các touchpoints chính',
           'Mô tả customer actions tại mỗi stage',
           'Phân tích emotions và pain points',
-          'Đề xuất optimization opportunities'
+          'Đề xuất optimization opportunities',
         ],
         hints: [
           'Sử dụng thực tế từ một website bán hàng cụ thể',
           'Thu thập feedback từ khách hàng thực tế',
-          'Áp dụng analytics data để validate journey'
+          'Áp dụng analytics data để validate journey',
         ],
-        expectedOutput:
-          'Journey map trực quan với các insights và action items cụ thể'
-      }
+        expectedResults: 'Journey map trực quan với các insights và action items cụ thể',
+      },
     ],
     realWorldApplications: [
       'Xây dựng chiến lược marketing cho startup công nghệ',
       'Tối ưu hóa funnel bán hàng cho e-commerce',
       'Phát triển content strategy cho B2B company',
       'Thiết kế customer experience cho mobile app',
-      'Xây dựng brand awareness cho local business'
+      'Xây dựng brand awareness cho local business',
     ],
     resources: [
       {
         title: 'Google Digital Marketing Course',
         url: 'https://skillshop.withgoogle.com',
         type: 'tool',
-        description: 'Khóa học miễn phí từ Google về digital marketing'
+        description: 'Khóa học miễn phí từ Google về digital marketing',
       },
       {
         title: 'HubSpot Marketing Hub',
         url: 'https://hubspot.com',
         type: 'tool',
-        description: 'Platform marketing automation toàn diện'
+        description: 'Platform marketing automation toàn diện',
       },
       {
         title: 'Digital Marketing Trends 2024',
         url: 'https://blog.hubspot.com/marketing/digital-marketing-trends',
         type: 'article',
-        description: 'Xu hướng marketing mới nhất'
-      }
+        description: 'Xu hướng marketing mới nhất',
+      },
     ],
     caseStudies: [
       {
         title: 'Tiki tăng 300% traffic từ SEO',
-        company: 'Tiki.vn',
-        challenge:
-          'Cạnh tranh gay gắt với Shopee và Lazada trong thị trường e-commerce Việt Nam',
-        solution:
-          'Tối ưu SEO content, xây dựng backlink strategy và cải thiện user experience',
-        results:
-          'Tăng 300% organic traffic, cải thiện 45% conversion rate, tăng 120% revenue từ organic search',
-        insights: [
+        organization: 'Tiki.vn',
+        problem: 'Cạnh tranh gay gắt với Shopee và Lazada trong thị trường e-commerce Việt Nam',
+        solution: 'Tối ưu SEO content, xây dựng backlink strategy và cải thiện user experience',
+        impact: 'Tăng 300% organic traffic, cải thiện 45% conversion rate, tăng 120% revenue từ organic search',
+        innovations: [
           'Long-tail keywords quan trọng hơn generic keywords',
           'User experience directly impact search rankings',
-          'Content quality là yếu tố then chốt cho SEO success'
-        ]
-      }
-    ]
+          'Content quality là yếu tố then chốt cho SEO success',
+        ],
+      },
+    ],
   },
   {
     id: 'social-media-marketing',
@@ -207,8 +174,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     description:
       'Chinh phục các nền tảng mạng xã hội với chiến lược content hiệu quả, community building và social commerce.',
     videoUrl: 'https://www.youtube.com/watch?v=MfBHmNECGSE',
-    imageUrl:
-      'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '100 phút',
     objectives: [
@@ -216,7 +182,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Xây dựng content strategy hiệu quả',
       'Học cách tạo content viral và engaging',
       'Quản lý community và customer service',
-      'Đo lường và phân tích hiệu quả social media'
+      'Đo lường và phân tích hiệu quả social media',
     ],
     prerequisites: ['Hiểu biết cơ bản về social media', 'Kỹ năng viết content'],
     tools: [
@@ -226,13 +192,12 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Buffer',
       'Hootsuite',
       'Canva',
-      'Adobe Creative Suite'
+      'Adobe Creative Suite',
     ],
     exercises: [
       {
         title: 'Content Calendar Planning',
-        description:
-          'Tạo content calendar 1 tháng cho fanpage Facebook của một thương hiệu',
+        description: 'Tạo content calendar 1 tháng cho fanpage Facebook của một thương hiệu',
         difficulty: 'Cơ bản',
         solution: `# Content Calendar Template - Tháng 1/2024
 
@@ -265,58 +230,55 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - 30% Product-focused content  
 - 20% Entertainment content
 - 10% Promotional content`,
-        requirements: [
+        materials: [
           'Lên kế hoạch content cho 4 tuần',
           'Cân bằng các loại content khác nhau',
           'Xác định optimal posting times',
-          'Include call-to-actions cho mỗi post'
+          'Include call-to-actions cho mỗi post',
         ],
         hints: [
           'Research audience insights để xác định best posting times',
           'Áp dụng 80/20 rule: 80% value content, 20% promotional',
-          'Plan content around holidays và trending topics'
+          'Plan content around holidays và trending topics',
         ],
-        expectedOutput:
-          'Content calendar chi tiết với descriptions, hashtags và posting schedule'
-      }
+        expectedResults: 'Content calendar chi tiết với descriptions, hashtags và posting schedule',
+      },
     ],
     realWorldApplications: [
       'Xây dựng thương hiệu cá nhân trên LinkedIn',
       'Phát triển fanpage Facebook cho local business',
       'Tạo viral marketing campaigns trên TikTok',
       'Quản lý social commerce trên Instagram',
-      'Crisis management trong social media'
+      'Crisis management trong social media',
     ],
     resources: [
       {
         title: 'Facebook Blueprint',
         url: 'https://www.facebook.com/business/learn',
         type: 'tool',
-        description: 'Khóa học chính thức từ Facebook về social media marketing'
+        description: 'Khóa học chính thức từ Facebook về social media marketing',
       },
       {
         title: 'Later Social Media Calendar',
         url: 'https://later.com',
         type: 'tool',
-        description: 'Tool lập kế hoạch và đăng bài tự động'
-      }
+        description: 'Tool lập kế hoạch và đăng bài tự động',
+      },
     ],
     caseStudies: [
       {
         title: 'Highlands Coffee viral TikTok campaign',
-        company: 'Highlands Coffee',
-        challenge: 'Tiếp cận Gen Z và tạo buzz cho sản phẩm mới',
-        solution:
-          'Tạo TikTok challenge với hashtag branded và collaborate với influencers',
-        results:
-          '10M+ views, 50K+ user-generated videos, tăng 25% sales trong tháng campaign',
-        insights: [
+        organization: 'Highlands Coffee',
+        problem: 'Tiếp cận Gen Z và tạo buzz cho sản phẩm mới',
+        solution: 'Tạo TikTok challenge với hashtag branded và collaborate với influencers',
+        impact: '10M+ views, 50K+ user-generated videos, tăng 25% sales trong tháng campaign',
+        innovations: [
           'Gen Z responds well to authentic, user-generated content',
           'Hashtag challenges can create massive organic reach',
-          'Influencer collaboration amplifies campaign effectiveness'
-        ]
-      }
-    ]
+          'Influencer collaboration amplifies campaign effectiveness',
+        ],
+      },
+    ],
   },
   {
     id: 'content-marketing-strategy',
@@ -324,8 +286,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     description:
       'Học nghệ thuật kể chuyện và tạo nội dung hấp dẫn. Từ blog posts đến video content, master các format content khác nhau.',
     videoUrl: 'https://www.youtube.com/watch?v=_Cvg39QN0dI',
-    imageUrl:
-      'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '120 phút',
     objectives: [
@@ -333,18 +294,10 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Học storytelling techniques và brand narrative',
       'Tạo content cho different stages of buyer journey',
       'Optimize content cho SEO và user engagement',
-      'Đo lường content performance và ROI'
+      'Đo lường content performance và ROI',
     ],
     prerequisites: ['Kỹ năng viết cơ bản', 'Hiểu về target audience'],
-    tools: [
-      'WordPress',
-      'Google Docs',
-      'Grammarly',
-      'BuzzSumo',
-      'CoSchedule',
-      'Yoast SEO',
-      'Google Trends'
-    ],
+    tools: ['WordPress', 'Google Docs', 'Grammarly', 'BuzzSumo', 'CoSchedule', 'Yoast SEO', 'Google Trends'],
     exercises: [
       {
         title: 'Brand Storytelling Framework',
@@ -382,57 +335,55 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - Social media content series
 - PR and media interviews
 - Employee onboarding materials`,
-        requirements: [
+        materials: [
           "Sử dụng hero's journey structure",
           'Include personal và emotional elements',
           'Connect đến larger purpose và mission',
-          'Make it relatable cho target audience'
+          'Make it relatable cho target audience',
         ],
         hints: [
           'Start with a relatable moment hoặc challenge',
           'Use specific details để make story memorable',
-          'End with forward-looking vision'
+          'End with forward-looking vision',
         ],
-        expectedOutput:
-          'Complete brand story với clear narrative arc và emotional connection'
-      }
+        expectedResults: 'Complete brand story với clear narrative arc và emotional connection',
+      },
     ],
     realWorldApplications: [
       'Xây dựng content strategy cho B2B SaaS company',
       'Tạo blog content series để nurture leads',
       'Phát triển video content cho YouTube channel',
       'Viết case studies và customer success stories',
-      'Tạo email marketing campaigns với storytelling'
+      'Tạo email marketing campaigns với storytelling',
     ],
     resources: [
       {
         title: 'StoryBrand Framework',
         url: 'https://storybrand.com',
         type: 'book',
-        description: "Framework tạo brand story theo hero's journey"
+        description: "Framework tạo brand story theo hero's journey",
       },
       {
         title: 'Content Marketing Institute',
         url: 'https://contentmarketinginstitute.com',
         type: 'article',
-        description: 'Resource hub cho content marketing best practices'
-      }
+        description: 'Resource hub cho content marketing best practices',
+      },
     ],
     caseStudies: [
       {
         title: 'Dollar Shave Club viral video success',
-        company: 'Dollar Shave Club',
-        challenge: 'Compete với Gillette trong thị trường razor đã saturated',
+        organization: 'Dollar Shave Club',
+        problem: 'Compete với Gillette trong thị trường razor đã saturated',
         solution: 'Tạo viral launch video với humor và clear value proposition',
-        results:
-          '26M+ views, 12,000 orders trong 48 giờ đầu, $1B acquisition bởi Unilever',
-        insights: [
+        impact: '26M+ views, 12,000 orders trong 48 giờ đầu, $1B acquisition bởi Unilever',
+        innovations: [
           'Humor can be powerful differentiator trong commodity market',
           'Clear value proposition delivered entertainingly',
-          'Authentic founder storytelling builds trust'
-        ]
-      }
-    ]
+          'Authentic founder storytelling builds trust',
+        ],
+      },
+    ],
   },
   {
     id: 'seo-search-marketing',
@@ -440,8 +391,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     description:
       'Chinh phục Google với SEO strategies hiện đại. Từ keyword research đến technical SEO và link building.',
     videoUrl: 'https://www.youtube.com/watch?v=xsVTqzratPs',
-    imageUrl:
-      'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '130 phút',
     objectives: [
@@ -449,12 +399,9 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Thực hiện keyword research và competitive analysis',
       'Optimize on-page và technical SEO',
       'Xây dựng backlink strategy và domain authority',
-      'Track SEO performance và ROI'
+      'Track SEO performance và ROI',
     ],
-    prerequisites: [
-      'Hiểu biết về websites và HTML cơ bản',
-      'Kỹ năng phân tích dữ liệu'
-    ],
+    prerequisites: ['Hiểu biết về websites và HTML cơ bản', 'Kỹ năng phân tích dữ liệu'],
     tools: [
       'Google Search Console',
       'Google Analytics',
@@ -462,13 +409,12 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Ahrefs',
       'Screaming Frog',
       'Yoast SEO',
-      'Google Keyword Planner'
+      'Google Keyword Planner',
     ],
     exercises: [
       {
         title: 'SEO Audit & Strategy',
-        description:
-          'Thực hiện SEO audit toàn diện cho một website thương mại điện tử',
+        description: 'Thực hiện SEO audit toàn diện cho một website thương mại điện tử',
         difficulty: 'Nâng cao',
         solution: `# SEO Audit Report: TechStore.vn
 
@@ -542,59 +488,55 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - 25% improvement in average ranking position
 - 60% increase in organic conversions
 - ROI: 300% within 6 months`,
-        requirements: [
+        materials: [
           'Analyze technical SEO factors',
           'Review on-page optimization',
           'Assess backlink profile quality',
-          'Create prioritized action plan'
+          'Create prioritized action plan',
         ],
         hints: [
           'Use multiple SEO tools để get comprehensive view',
           'Focus on quick wins trước khi tackle long-term strategies',
-          'Quantify potential impact cho each recommendation'
+          'Quantify potential impact cho each recommendation',
         ],
-        expectedOutput:
-          'Detailed SEO audit report với actionable recommendations và timeline'
-      }
+        expectedResults: 'Detailed SEO audit report với actionable recommendations và timeline',
+      },
     ],
     realWorldApplications: [
       'Tăng organic traffic cho e-commerce website',
       'Local SEO cho multi-location business',
       'SEO cho SaaS product pages',
       'Enterprise SEO strategy development',
-      'SEO crisis management và penalty recovery'
+      'SEO crisis management và penalty recovery',
     ],
     resources: [
       {
         title: 'Google Search Central',
         url: 'https://developers.google.com/search',
         type: 'article',
-        description: 'Official SEO guidelines từ Google'
+        description: 'Official SEO guidelines từ Google',
       },
       {
         title: 'Ahrefs SEO Toolset',
         url: 'https://ahrefs.com',
         type: 'tool',
-        description: 'Comprehensive SEO analysis và research tool'
-      }
+        description: 'Comprehensive SEO analysis và research tool',
+      },
     ],
     caseStudies: [
       {
         title: 'Shopee SEO domination in Vietnam',
-        company: 'Shopee Vietnam',
-        challenge:
-          'Compete với Lazada và established local players trong Vietnamese e-commerce',
-        solution:
-          'Aggressive SEO strategy focusing on long-tail product keywords và local search optimization',
-        results:
-          '500% increase in organic traffic, #1 rankings cho 10,000+ product keywords',
-        insights: [
+        organization: 'Shopee Vietnam',
+        problem: 'Compete với Lazada và established local players trong Vietnamese e-commerce',
+        solution: 'Aggressive SEO strategy focusing on long-tail product keywords và local search optimization',
+        impact: '500% increase in organic traffic, #1 rankings cho 10,000+ product keywords',
+        innovations: [
           'Long-tail keywords có less competition nhưng higher conversion rates',
           'Local language optimization crucial cho emerging markets',
-          'Product page SEO can drive massive e-commerce growth'
-        ]
-      }
-    ]
+          'Product page SEO can drive massive e-commerce growth',
+        ],
+      },
+    ],
   },
   {
     id: 'paid-advertising',
@@ -602,8 +544,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     description:
       'Master Google Ads, Facebook Ads và các nền tảng quảng cáo trả phí. Tối ưu ROI và scale campaigns hiệu quả.',
     videoUrl: 'https://www.youtube.com/watch?v=lwW_1KsLCko',
-    imageUrl:
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '150 phút',
     objectives: [
@@ -611,12 +552,9 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Tạo Facebook Ads hiệu quả với targeting chính xác',
       'Optimize ad copy, landing pages và conversion funnels',
       'Phân tích performance data và adjust strategies',
-      'Scale profitable campaigns và manage budgets'
+      'Scale profitable campaigns và manage budgets',
     ],
-    prerequisites: [
-      'Hiểu biết về digital marketing funnel',
-      'Kỹ năng phân tích dữ liệu cơ bản'
-    ],
+    prerequisites: ['Hiểu biết về digital marketing funnel', 'Kỹ năng phân tích dữ liệu cơ bản'],
     tools: [
       'Google Ads',
       'Facebook Ads Manager',
@@ -624,13 +562,12 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Facebook Pixel',
       'Unbounce',
       'Hotjar',
-      'Google Tag Manager'
+      'Google Tag Manager',
     ],
     exercises: [
       {
         title: 'Google Ads Campaign Setup',
-        description:
-          'Tạo complete Google Ads campaign cho một online course business',
+        description: 'Tạo complete Google Ads campaign cho một online course business',
         difficulty: 'Nâng cao',
         solution: `# Google Ads Campaign: "Digital Marketing Mastery Course"
 
@@ -727,59 +664,55 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - Conversion Rate: >5%
 - Cost per Acquisition: <$25
 - Return on Ad Spend: >400%`,
-        requirements: [
+        materials: [
           'Set up campaign structure với proper targeting',
           'Create compelling ad copy với local relevance',
           'Design conversion tracking strategy',
-          'Plan optimization và scaling roadmap'
+          'Plan optimization và scaling roadmap',
         ],
         hints: [
           'Use local language và cultural references trong ad copy',
           'Set up proper conversion tracking trước khi launch',
-          'Start với exact match keywords để control costs'
+          'Start với exact match keywords để control costs',
         ],
-        expectedOutput:
-          'Complete Google Ads campaign setup với detailed strategy và optimization plan'
-      }
+        expectedResults: 'Complete Google Ads campaign setup với detailed strategy và optimization plan',
+      },
     ],
     realWorldApplications: [
       'Lead generation cho B2B SaaS companies',
       'E-commerce product promotion campaigns',
       'App install campaigns cho mobile apps',
       'Local business advertising strategies',
-      'Multi-channel attribution và campaign optimization'
+      'Multi-channel attribution và campaign optimization',
     ],
     resources: [
       {
         title: 'Google Ads Skillshop',
         url: 'https://skillshop.withgoogle.com',
         type: 'tool',
-        description: 'Official Google Ads certification courses'
+        description: 'Official Google Ads certification courses',
       },
       {
         title: 'Facebook Blueprint',
         url: 'https://www.facebook.com/business/learn',
         type: 'tool',
-        description: 'Facebook advertising certification platform'
-      }
+        description: 'Facebook advertising certification platform',
+      },
     ],
     caseStudies: [
       {
         title: 'Grab tripled driver acquisition với targeted ads',
-        company: 'Grab Vietnam',
-        challenge:
-          'Scale driver acquisition trong competitive ride-hailing market',
-        solution:
-          'Hyper-targeted Facebook và Google ads focusing trên specific demographics và locations',
-        results:
-          '300% increase in qualified driver signups, 40% lower cost per acquisition',
-        insights: [
+        organization: 'Grab Vietnam',
+        problem: 'Scale driver acquisition trong competitive ride-hailing market với thách thức về cost efficiency và quality của drivers',
+        solution: 'Hyper-targeted Facebook và Google ads focusing trên specific demographics và locations với advanced audience segmentation và creative testing',
+        impact: '300% increase in qualified driver signups, 40% lower cost per acquisition, improved driver retention rates',
+        innovations: [
           'Micro-targeting based on location và demographics dramatically improves performance',
           'Creative testing essential cho ad fatigue prevention',
-          'Landing page optimization can 2x conversion rates'
-        ]
-      }
-    ]
+          'Landing page optimization can 2x conversion rates',
+        ],
+      },
+    ],
   },
   {
     id: 'email-marketing-automation',
@@ -787,8 +720,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     description:
       'Xây dựng email marketing systems tự động hóa customer journey. Từ welcome series đến advanced segmentation.',
     videoUrl: 'https://www.youtube.com/watch?v=gXR5F2L3RcE',
-    imageUrl:
-      'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '110 phút',
     objectives: [
@@ -796,23 +728,14 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Tạo compelling email content và subject lines',
       'Implement segmentation và personalization strategies',
       'Optimize email deliverability và engagement rates',
-      'Measure email marketing ROI và performance'
+      'Measure email marketing ROI và performance',
     ],
     prerequisites: ['Hiểu customer journey', 'Kỹ năng copywriting cơ bản'],
-    tools: [
-      'Mailchimp',
-      'HubSpot',
-      'ActiveCampaign',
-      'ConvertKit',
-      'Klaviyo',
-      'Litmus',
-      'Canva'
-    ],
+    tools: ['Mailchimp', 'HubSpot', 'ActiveCampaign', 'ConvertKit', 'Klaviyo', 'Litmus', 'Canva'],
     exercises: [
       {
         title: 'Email Automation Workflow',
-        description:
-          'Thiết kế complete email automation cho SaaS product trial users',
+        description: 'Thiết kế complete email automation cho SaaS product trial users',
         difficulty: 'Trung bình',
         solution: `# SaaS Trial User Email Automation Workflow
 
@@ -909,58 +832,55 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - Click-through Rate: >5%
 - Trial-to-Paid Conversion: >15%
 - Email Attribution Revenue: >$50 per trial user`,
-        requirements: [
+        materials: [
           'Map complete email sequence với clear goals',
           'Include personalization và segmentation logic',
           'Design compelling subject lines và content',
-          'Set measurable performance targets'
+          'Set measurable performance targets',
         ],
         hints: [
           'Focus on value delivery trong mỗi email',
           'Use behavioral triggers để personalize experience',
-          'Test subject lines và send times regularly'
+          'Test subject lines và send times regularly',
         ],
-        expectedOutput:
-          'Complete email automation workflow với content examples và performance metrics'
-      }
+        expectedResults: 'Complete email automation workflow với content examples và performance metrics',
+      },
     ],
     realWorldApplications: [
       'E-commerce abandoned cart recovery campaigns',
       'B2B lead nurturing sequences',
       'Customer onboarding automation',
       'Re-engagement campaigns cho dormant users',
-      'Post-purchase follow-up sequences'
+      'Post-purchase follow-up sequences',
     ],
     resources: [
       {
         title: 'Really Good Emails',
         url: 'https://reallygoodemails.com',
         type: 'article',
-        description: 'Curated collection of well-designed email examples'
+        description: 'Curated collection of well-designed email examples',
       },
       {
         title: 'Klaviyo Email Marketing Guide',
         url: 'https://www.klaviyo.com/marketing-resources',
         type: 'tool',
-        description: 'Comprehensive email marketing resources và templates'
-      }
+        description: 'Comprehensive email marketing resources và templates',
+      },
     ],
     caseStudies: [
       {
         title: 'Haravan 5x email revenue với personalization',
-        company: 'Haravan',
-        challenge: 'Improve email marketing ROI cho e-commerce platform users',
-        solution:
-          'Implemented advanced segmentation và personalized product recommendations trong email campaigns',
-        results:
-          '500% increase in email revenue, 40% higher open rates, 60% better click-through rates',
-        insights: [
+        organization: 'Haravan',
+        problem: 'Improve email marketing ROI cho e-commerce platform users với challenges về low engagement và conversion rates',
+        solution: 'Implemented advanced segmentation và personalized product recommendations trong email campaigns với behavioral targeting',
+        impact: '500% increase in email revenue, 40% higher open rates, 60% better click-through rates, improved customer retention',
+        innovations: [
           'Personalized product recommendations dramatically increase email revenue',
           'Behavioral segmentation outperforms demographic segmentation',
-          'Mobile-optimized emails essential cho Vietnamese market'
-        ]
-      }
-    ]
+          'Mobile-optimized emails essential cho Vietnamese market',
+        ],
+      },
+    ],
   },
   {
     id: 'analytics-data-driven-marketing',
@@ -968,8 +888,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     description:
       'Transform data thành actionable insights. Master Google Analytics, tracking setups và performance optimization.',
     videoUrl: 'https://www.youtube.com/watch?v=gBeMELnKdvY',
-    imageUrl:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '140 phút',
     objectives: [
@@ -977,12 +896,9 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Create custom reports và dashboards',
       'Analyze customer behavior và conversion funnels',
       'Implement A/B testing và experimentation',
-      'Make data-driven marketing decisions'
+      'Make data-driven marketing decisions',
     ],
-    prerequisites: [
-      'Hiểu biết về digital marketing metrics',
-      'Kỹ năng Excel/Google Sheets cơ bản'
-    ],
+    prerequisites: ['Hiểu biết về digital marketing metrics', 'Kỹ năng Excel/Google Sheets cơ bản'],
     tools: [
       'Google Analytics 4',
       'Google Tag Manager',
@@ -990,13 +906,12 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Hotjar',
       'Mixpanel',
       'Optimizely',
-      'Facebook Analytics'
+      'Facebook Analytics',
     ],
     exercises: [
       {
         title: 'Marketing Analytics Dashboard',
-        description:
-          'Tạo comprehensive marketing dashboard cho e-commerce business',
+        description: 'Tạo comprehensive marketing dashboard cho e-commerce business',
         difficulty: 'Nâng cao',
         solution: `# E-commerce Marketing Analytics Dashboard
 
@@ -1137,59 +1052,55 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - **Weekly:** Conversion funnel, top products, campaign performance  
 - **Monthly:** Full dashboard review, strategy adjustments
 - **Quarterly:** Customer segmentation analysis, channel attribution modeling`,
-        requirements: [
+        materials: [
           'Include traffic acquisition và conversion metrics',
           'Analyze customer behavior patterns',
           'Calculate ROI cho different marketing channels',
-          'Provide actionable insights và recommendations'
+          'Provide actionable insights và recommendations',
         ],
         hints: [
           'Focus on metrics that directly impact business goals',
           'Use data visualization để make insights clear',
-          'Include both performance tracking và predictive insights'
+          'Include both performance tracking và predictive insights',
         ],
-        expectedOutput:
-          'Comprehensive marketing dashboard với key metrics, analysis và actionable recommendations'
-      }
+        expectedResults: 'Comprehensive marketing dashboard với key metrics, analysis và actionable recommendations',
+      },
     ],
     realWorldApplications: [
       'Multi-channel attribution modeling cho complex customer journeys',
       'A/B testing programs cho website optimization',
       'Predictive analytics cho customer churn prevention',
       'Marketing mix modeling cho budget allocation',
-      'Real-time performance monitoring và alerting systems'
+      'Real-time performance monitoring và alerting systems',
     ],
     resources: [
       {
         title: 'Google Analytics Academy',
         url: 'https://analytics.google.com/analytics/academy/',
         type: 'tool',
-        description: 'Free comprehensive Google Analytics training'
+        description: 'Free comprehensive Google Analytics training',
       },
       {
         title: 'Google Data Studio Templates',
         url: 'https://datastudio.google.com/gallery',
         type: 'tool',
-        description: 'Pre-built dashboard templates cho marketing analytics'
-      }
+        description: 'Pre-built dashboard templates cho marketing analytics',
+      },
     ],
     caseStudies: [
       {
         title: 'VinFast data-driven marketing optimization',
-        company: 'VinFast',
-        challenge:
-          'Optimize marketing spend across channels cho electric vehicle launch campaign',
-        solution:
-          'Implemented advanced attribution modeling và real-time performance tracking across all digital channels',
-        results:
-          '35% improvement in marketing efficiency, $2M cost savings, 50% better lead quality',
-        insights: [
+        organization: 'VinFast',
+        problem: 'Optimize marketing spend across channels cho electric vehicle launch campaign với challenge về ROI measurement và channel attribution',
+        solution: 'Implemented advanced attribution modeling và real-time performance tracking across all digital channels với sophisticated data analytics platform',
+        impact: '35% improvement in marketing efficiency, $2M cost savings, 50% better lead quality, enhanced customer acquisition strategy',
+        innovations: [
           'Multi-touch attribution reveals true channel performance',
           'Real-time optimization prevents budget waste',
-          'Customer journey analytics improve lead scoring accuracy'
-        ]
-      }
-    ]
+          'Customer journey analytics improve lead scoring accuracy',
+        ],
+      },
+    ],
   },
   {
     id: 'creator-economy-monetization',
@@ -1197,8 +1108,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     description:
       'Kiếm tiền từ content creation và personal branding. Từ influencer marketing đến building personal brand empire.',
     videoUrl: 'https://www.youtube.com/watch?v=1NNTw4f0uW4',
-    imageUrl:
-      'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '120 phút',
     objectives: [
@@ -1206,12 +1116,9 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Hiểu creator economy landscape và opportunities',
       'Develop multiple revenue streams từ content',
       'Master influencer marketing và partnerships',
-      'Scale personal brand thành business empire'
+      'Scale personal brand thành business empire',
     ],
-    prerequisites: [
-      'Hiểu social media platforms',
-      'Content creation experience'
-    ],
+    prerequisites: ['Hiểu social media platforms', 'Content creation experience'],
     tools: [
       'Instagram Creator Studio',
       'YouTube Studio',
@@ -1219,13 +1126,12 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Patreon',
       'Gumroad',
       'LinkTree',
-      'Later'
+      'Later',
     ],
     exercises: [
       {
         title: 'Personal Brand Strategy',
-        description:
-          'Develop comprehensive personal brand strategy cho tech entrepreneur',
+        description: 'Develop comprehensive personal brand strategy cho tech entrepreneur',
         difficulty: 'Trung bình',
         solution: `# Personal Brand Strategy: "TechMinh" - Vietnam Tech Entrepreneur
 
@@ -1417,58 +1323,54 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - **Month 12:** 50K total followers, $5K monthly revenue
 - **Month 18:** 100K total followers, $15K monthly revenue
 - **Month 24:** 200K total followers, $30K monthly revenue, successful product launch`,
-        requirements: [
+        materials: [
           'Define clear brand positioning và target audience',
           'Create content strategy với multiple pillars',
           'Design multi-platform distribution approach',
-          'Plan monetization roadmap với timeline'
+          'Plan monetization roadmap với timeline',
         ],
         hints: [
           'Focus on authentic storytelling rather than generic advice',
           'Choose platforms where your audience actually spends time',
-          'Start with one revenue stream và expand gradually'
+          'Start with one revenue stream và expand gradually',
         ],
-        expectedOutput:
-          'Comprehensive personal brand strategy với actionable implementation plan'
-      }
+        expectedResults: 'Comprehensive personal brand strategy với actionable implementation plan',
+      },
     ],
     realWorldApplications: [
       'Building thought leadership trong B2B industries',
       'Monetizing expertise through online courses và coaching',
       'Creating subscription-based content businesses',
       'Developing influencer partnerships và collaborations',
-      'Scaling personal brands into media companies'
+      'Scaling personal brands into media companies',
     ],
     resources: [
       {
         title: 'Creator Economy Report 2024',
         url: 'https://creatoreconomy.so/report',
         type: 'article',
-        description: 'Annual report về creator economy trends và opportunities'
+        description: 'Annual report về creator economy trends và opportunities',
       },
       {
         title: 'ConvertKit Creator Toolkit',
         url: 'https://convertkit.com/creator-toolkit',
         type: 'tool',
-        description: 'Free tools và resources cho content creators'
-      }
+        description: 'Free tools và resources cho content creators',
+      },
     ],
     caseStudies: [
       {
         title: 'Khoai Lang Thang built media empire từ travel content',
-        company: 'Khoai Lang Thang',
-        challenge:
-          'Monetize travel content creation trong competitive Vietnamese YouTube market',
-        solution:
-          'Diversified revenue streams: YouTube ads, brand partnerships, merchandise, tourism services',
-        results:
-          '1M+ YouTube subscribers, $50K+ monthly revenue, successful tourism business',
-        insights: [
+        organization: 'Khoai Lang Thang',
+        problem: 'Monetize travel content creation trong competitive Vietnamese YouTube market với challenges về sustainable revenue và audience engagement',
+        solution: 'Diversified revenue streams: YouTube ads, brand partnerships, merchandise, tourism services với focus trên authentic storytelling',
+        impact: '1M+ YouTube subscribers, $50K+ monthly revenue, successful tourism business, strong brand recognition',
+        innovations: [
           'Authentic storytelling resonates strongly với Vietnamese audience',
           'Multiple revenue streams provide stability cho creators',
-          'Building community around shared values drives long-term success'
-        ]
-      }
-    ]
-  }
+          'Building community around shared values drives long-term success',
+        ],
+      },
+    ],
+  },
 ];

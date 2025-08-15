@@ -192,10 +192,8 @@ export default function AIArtStudioGame() {
 
         // Check challenge requirements
         if (currentChallenge) {
-          let matches = 0;
           currentChallenge.requiredElements.forEach((element) => {
             if (fullPrompt.toLowerCase().includes(element.toLowerCase())) {
-              matches++;
               accuracy += 10;
             }
           });

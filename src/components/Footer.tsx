@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Mail, Heart, Star } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
+import { moduleStats } from '@/utils/moduleStats';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -34,10 +35,7 @@ const Footer: React.FC = () => {
     }
 
     // Learning modules by category
-    const categoryNames: Record<
-      string,
-      { title: string; icon: string; color: string }
-    > = {
+    const categoryNames: Record<string, { title: string; icon: string; color: string }> = {
       trending: {
         title: '2025 Trending',
         icon: '🚀',
@@ -98,14 +96,15 @@ const Footer: React.FC = () => {
   const quickLinks = [
     { name: 'Trang Chủ', href: '/', icon: '🏠' },
     { name: 'Tất Cả Khóa Học', href: '/learning', icon: '📚' },
-    { name: 'Phản Hồi', href: '/feedback', icon: '💬' },
+    { name: 'Chính Sách Bảo Mật', href: '/privacy', icon: '🔒' },
     { name: 'Về Chúng Tôi', href: '/about', icon: 'ℹ️' },
   ];
 
   const stats = [
-    { label: 'Learning Modules', value: '14+', icon: '📚' },
-    { label: 'Interactive Lessons', value: '100+', icon: '🎯' },
-    { label: 'Study Hours', value: '200+', icon: '⏰' },
+    { label: 'Learning Modules', value: `${moduleStats.totalModules}+`, icon: '📚' },
+    { label: 'Interactive Lessons', value: `${moduleStats.totalLessons}+`, icon: '🎯' },
+    { label: 'Study Hours', value: `${moduleStats.totalHours}+`, icon: '⏰' },
+    { label: 'Educational Games', value: '25+', icon: '🎮' },
   ];
 
   return (
@@ -127,8 +126,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 max-w-md text-sm">
-              Nền tảng giáo dục với 14+ module chuyên sâu cho tương lai công
-              nghệ.
+              Nền tảng giáo dục với 14+ module chuyên sâu cho tương lai công nghệ.
             </p>
           </div>
 
@@ -148,9 +146,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {modulesByCategory.map((category, index) => (
             <div key={index} className="space-y-3">
-              <h3
-                className={`font-semibold ${category.color} flex items-center space-x-2`}
-              >
+              <h3 className={`font-semibold ${category.color} flex items-center space-x-2`}>
                 <span>{category.icon}</span>
                 <span className="text-sm">{category.title}</span>
               </h3>
@@ -182,9 +178,7 @@ const Footer: React.FC = () => {
               href={link.href}
               className="flex items-center space-x-2 p-2 rounded-lg hover:bg-white/5 transition-all duration-200 group"
             >
-              <span className="group-hover:scale-110 transition-transform duration-200">
-                {link.icon}
-              </span>
+              <span className="group-hover:scale-110 transition-transform duration-200">{link.icon}</span>
               <span className="text-sm text-gray-300 group-hover:text-white transition-colors duration-200">
                 {link.name}
               </span>

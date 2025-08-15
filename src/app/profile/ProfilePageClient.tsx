@@ -46,6 +46,7 @@ function generateUserId(): string {
 
 export default function ProfilePageClient() {
   const [userId, setUserId] = useState('');
+  const [isClient, setIsClient] = useState(false);
   const [activeTab, setActiveTab] = useState<
     'overview' | 'achievements' | 'progress' | 'stats'
   >('overview');
@@ -62,8 +63,21 @@ export default function ProfilePageClient() {
   const { getVisitHistory } = useVisitTracker();
 
   useEffect(() => {
+    setIsClient(true);
     setUserId(generateUserId());
   }, []);
+
+  // Prevent hydration mismatch by showing loading state on server
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center">
+        <div className="text-white text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <p>Đang tải hồ sơ...</p>
+        </div>
+      </div>
+    );
+  }
 
   const stats = getLearningStats();
   const userLevel = getUserLevel();

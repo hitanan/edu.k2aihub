@@ -34,6 +34,38 @@ import {
   ClimateModelingGame,
   CybersecurityDefenseGame,
   ScratchAnimationStudioGame,
+  GlobalMarketplaceSimulatorGame,
+  AquacultureIoTManagerGame,
+  SmartFarmingSimulatorGame,
+  DroneCropMonitoringGame,
+  FactoryAutomationSimulatorGame,
+  SupplyChainOptimizationChallengeGame,
+  OffshoreWindPlannerGame,
+  BlueCarbonTrackerGame,
+  TrafficManagementSimulatorGame,
+  VirtualClassroomManagerGame,
+  SmartParkingPuzzleGame,
+  FoodTechInnovatorGame,
+  DigitalMarketingCampaignGame,
+  BiotechLabSimulationGame,
+  EGovernmentPortalGame,
+  MLModelBuilderGame,
+  CulturalLocalizationChallengeGame,
+  GameDevStudioGame,
+  MedicalDeviceDesignerGame,
+  NanoLabExplorerGame,
+  EVChargingNetworkGame,
+  MentalHealthAppGame,
+  ClimateDataAnalystGame,
+  AIResearchLabGame,
+  ContentCreatorStudioGame,
+  VietnameseHeritageExplorerGame,
+  CurrencyExchangePuzzleGame,
+  AILanguageTutorGame,
+  SmartHomeDesignerGame,
+  VirtualPropertyTourGame,
+  RecyclingPlantManagerGame,
+  WasteToEnergyPuzzleGame,
 } from './individual';
 
 interface MiniGameProps {
@@ -78,9 +110,10 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return prev - 1;
       });
     }, 1000);
-    
+
     return () => clearInterval(timer);
   }, [currentGameState, isTimerActive]); // Remove dependencies that change on every render
+  const handleGameComplete = (score: number): void => endGame(true, score);
 
   const endGame = (success: boolean, rawScore: number = score) => {
     setIsTimerActive(false);
@@ -115,6 +148,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
     onComplete(calculatedFinalScore);
   };
 
+  const setCurrentGameStatePlaying = () => setCurrentGameState('playing');
   const renderGameContent = () => {
     switch (game.id) {
       case 'vietnam-geography-quiz':
@@ -123,7 +157,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             gameData={GAME_DATA[game.id] as any}
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
         );
       case 'ai-prompt-challenge':
@@ -132,7 +166,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             gameData={GAME_DATA[game.id] as any}
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
         );
       case 'python-coding-puzzle':
@@ -141,7 +175,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             gameData={GAME_DATA[game.id] as any}
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
         );
       case 'arduino-circuit-builder':
@@ -150,7 +184,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             gameData={GAME_DATA[game.id] as any}
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
         );
       case 'stem-experiment-lab':
@@ -159,7 +193,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             gameData={GAME_DATA[game.id] as STEMExperimentLabGameData}
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
         );
       case 'robotics-navigation':
@@ -170,7 +204,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             gameData={GAME_DATA[game.id] as AIEthicsDilemmaGameData}
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
         );
       case 'quantum-basics':
@@ -179,56 +213,28 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             gameData={GAME_DATA[game.id] as QuantumBasicsGameData}
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
         );
       case 'blockchain-explorer':
         return (
-          <BlockchainExplorerGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
+          <BlockchainExplorerGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
         );
       case 'climate-modeling':
-        return (
-          <ClimateModelingGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
-        );
+        return <ClimateModelingGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
       case 'cybersecurity-defense':
         return (
-          <CybersecurityDefenseGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
+          <CybersecurityDefenseGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
         );
       case 'data-visualization':
         return (
-          <DataVisualizationGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
+          <DataVisualizationGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
         );
       case 'space-exploration':
-        return (
-          <SpaceExplorationGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
-        );
+        return <SpaceExplorationGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
       case 'neural-network-builder':
         return (
-          <NeuralNetworkBuilderGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
+          <NeuralNetworkBuilderGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
         );
       case 'math-puzzle':
         return (
@@ -236,44 +242,144 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             gameData={GAME_DATA[game.id] as MathPuzzleGameData}
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
         );
       case 'chemistry-lab':
-        return (
-          <ChemistryLabGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => setCurrentGameState('playing')} />
-        );
+        return <ChemistryLabGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
       case 'biology-ecosystem':
-        return (
-          <BiologyEcosystemGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
-        );
+        return <BiologyEcosystemGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
       case 'history-timeline':
-        return (
-          <HistoryTimelineGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
-        );
+        return <HistoryTimelineGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
       case 'treasure-hunt-adventure':
-        return (
-          <TreasureHuntGame
-            onComplete={endGame}
-            timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
-          />
-        );
+        return <TreasureHuntGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
       case 'scratch-animation-studio':
         return (
-          <ScratchAnimationStudioGame
+          <ScratchAnimationStudioGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'global-marketplace-simulator':
+        return (
+          <GlobalMarketplaceSimulatorGame
             onComplete={endGame}
             timeLeft={timeLeft}
-            onRestart={() => setCurrentGameState('playing')}
+            onRestart={setCurrentGameStatePlaying}
           />
+        );
+      case 'aquaculture-iot-manager':
+        return (
+          <AquacultureIoTManagerGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'smart-farming-simulator':
+        return (
+          <SmartFarmingSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'drone-crop-monitoring':
+        return (
+          <DroneCropMonitoringGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'factory-automation-simulator':
+        return (
+          <FactoryAutomationSimulatorGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={setCurrentGameStatePlaying}
+          />
+        );
+      case 'supply-chain-optimization-challenge':
+        return (
+          <SupplyChainOptimizationChallengeGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={setCurrentGameStatePlaying}
+          />
+        );
+      case 'offshore-wind-planner':
+        return (
+          <OffshoreWindPlannerGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'blue-carbon-tracker':
+        return (
+          <BlueCarbonTrackerGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'traffic-management-simulator':
+        return <TrafficManagementSimulatorGame onComplete={endGame} />;
+      case 'virtual-classroom-manager':
+        return <VirtualClassroomManagerGame onComplete={endGame} />;
+      case 'smart-parking-puzzle':
+        return <SmartParkingPuzzleGame onComplete={endGame} />;
+      case 'food-tech-innovator':
+        return <FoodTechInnovatorGame onComplete={endGame} />;
+      case 'digital-marketing-campaign':
+        return <DigitalMarketingCampaignGame onComplete={handleGameComplete} />;
+      case 'biotech-lab-simulation':
+        return <BiotechLabSimulationGame onComplete={handleGameComplete} />;
+      case 'e-government-portal':
+        return (
+          <EGovernmentPortalGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'ml-model-builder':
+        return <MLModelBuilderGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
+      case 'cultural-localization-challenge':
+        return (
+          <CulturalLocalizationChallengeGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={setCurrentGameStatePlaying}
+          />
+        );
+      case 'game-dev-studio':
+        return <GameDevStudioGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
+      case 'medical-device-designer':
+        return (
+          <MedicalDeviceDesignerGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'nano-lab-explorer':
+        return <NanoLabExplorerGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
+      case 'ev-charging-network':
+        return (
+          <EVChargingNetworkGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'mental-health-app':
+        return <MentalHealthAppGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
+      case 'climate-data-analyst':
+        return (
+          <ClimateDataAnalystGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'ai-research-lab':
+        return <AIResearchLabGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
+      case 'content-creator-studio':
+        return (
+          <ContentCreatorStudioGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'vietnamese-heritage-explorer':
+        return (
+          <VietnameseHeritageExplorerGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={setCurrentGameStatePlaying}
+          />
+        );
+      case 'currency-exchange-puzzle':
+        return (
+          <CurrencyExchangePuzzleGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'ai-language-tutor':
+        return <AILanguageTutorGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />;
+      case 'smart-home-designer':
+        return (
+          <SmartHomeDesignerGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'virtual-property-tour':
+        return (
+          <VirtualPropertyTourGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'recycling-plant-manager':
+        return (
+          <RecyclingPlantManagerGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
+        );
+      case 'waste-to-energy-puzzle':
+        return (
+          <WasteToEnergyPuzzleGame onComplete={endGame} timeLeft={timeLeft} onRestart={setCurrentGameStatePlaying} />
         );
       default:
         return <div className="text-white">Game not implemented yet!</div>;

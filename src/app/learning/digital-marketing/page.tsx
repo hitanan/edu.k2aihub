@@ -56,9 +56,9 @@ function convertToLesson(
         title: ex.title,
         description: ex.description,
         difficulty: ex.difficulty,
-        materials: ex.requirements || [],
+        materials: ex.materials || [],
         procedure: ex.hints || [ex.description],
-        expectedResults: ex.expectedOutput || 'Campaign setup successfully',
+        expectedResults: ex.expectedResults || 'Campaign setup successfully',
         solution: ex.solution || 'Follow the marketing best practices',
       })) || [],
     resources: digitalMarketingLesson.resources || [],
@@ -72,11 +72,11 @@ function convertToLesson(
     caseStudies:
       digitalMarketingLesson.caseStudies?.map((cs) => ({
         title: cs.title,
-        organization: cs.company,
-        problem: cs.challenge,
+        organization: cs.organization,
+        problem: cs.problem,
         solution: cs.solution,
-        impact: cs.results,
-        innovations: cs.insights || [],
+        impact: cs.impact,
+        innovations: cs.innovations || [],
       })) || [],
   };
 }

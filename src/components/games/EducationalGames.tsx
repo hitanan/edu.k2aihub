@@ -63,6 +63,72 @@ export function useEducationalGames() {
   };
 }
 
+// Compact game card component for homepage showcase
+export function CompactGameCard({ game }: { game: EducationalGame }) {
+  const { completedGames, isLoaded } = useEducationalGames();
+  const router = useRouter();
+  const isCompleted = isLoaded && completedGames.includes(game.id);
+
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case 'Cơ bản':
+        return 'bg-green-500/20 text-green-400';
+      case 'Trung bình':
+        return 'bg-yellow-500/20 text-yellow-400';
+      case 'Nâng cao':
+        return 'bg-red-500/20 text-red-400';
+      default:
+        return 'bg-blue-500/20 text-blue-400';
+    }
+  };
+
+  const handlePlay = () => {
+    if (game.isInternal) {
+      if (typeof window !== 'undefined') {
+        router.push(`/games/${game.id}`);
+      }
+    } else if (game.url) {
+      window.open(game.url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  return (
+    <div className={`bg-gradient-to-r ${game.color} rounded-lg p-0.5 ${isCompleted ? 'opacity-75' : ''}`}>
+      <div className="bg-black/40 backdrop-blur-sm rounded-md p-3 h-full">
+        <div className="flex items-start justify-between mb-2">
+          <span className="text-lg">{game.icon}</span>
+          {isCompleted && (
+            <div className="bg-green-500/20 text-green-400 px-1.5 py-0.5 rounded-full text-xs">
+              ✓
+            </div>
+          )}
+        </div>
+
+        <h4 className="text-sm font-bold text-white mb-1 line-clamp-2">{game.title}</h4>
+        
+        <div className="flex items-center gap-1 mb-2">
+          <span className={`px-1.5 py-0.5 rounded-full text-xs ${getDifficultyColor(game.difficulty)}`}>
+            {game.difficulty}
+          </span>
+          {game.isInternal && game.points > 0 && (
+            <span className="text-xs text-yellow-400">🏆 {game.points}</span>
+          )}
+        </div>
+
+        <div className="text-xs text-gray-400 mb-2">⏱️ {game.estimatedTime}</div>
+
+        <button
+          onClick={handlePlay}
+          className="w-full bg-white/10 hover:bg-white/20 text-white rounded text-xs py-1.5 px-2 transition-colors duration-200 flex items-center justify-center font-medium cursor-pointer"
+        >
+          <Play className="w-3 h-3 mr-1" />
+          Chơi
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // Game card component
 export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () => void }) {
   const { completedGames, isLoaded } = useEducationalGames();
@@ -190,7 +256,7 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
 }
 
 // Games showcase component
-export function EducationalGamesShowcase({ moduleType, limit = 6 }: { moduleType?: string; limit?: number }) {
+export function EducationalGamesShowcase({ moduleType, limit = 9 }: { moduleType?: string; limit?: number }) {
   const { getGamesForModule, getRecommendedGames } = useEducationalGames();
 
   const games = moduleType ? getGamesForModule(moduleType).slice(0, limit) : getRecommendedGames(limit);
@@ -217,9 +283,9 @@ export function EducationalGamesShowcase({ moduleType, limit = 6 }: { moduleType
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
         {games.map((game) => (
-          <GameCard key={game.id} game={game} />
+          <CompactGameCard key={game.id} game={game} />
         ))}
       </div>
 

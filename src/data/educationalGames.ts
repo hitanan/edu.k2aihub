@@ -943,4 +943,1161 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
     ],
   },
+  // New games for modules without coverage
+  {
+    id: 'digital-marketing-campaign',
+    title: 'Chiến Dịch Marketing Số',
+    description: 'Thiết kế và quản lý chiến dịch marketing trên các nền tảng số',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-30 phút',
+    skills: ['Marketing Số', 'Quản lý Chiến dịch', 'Phân tích ROI'],
+    moduleType: 'digital-marketing',
+    isInternal: true,
+    points: 120,
+    icon: '📱',
+    color: 'from-blue-500 to-indigo-500',
+    relatedLessons: [
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'digital-marketing-fundamentals',
+        title: 'Cơ Bản Marketing Số',
+        connection: 'Áp dụng các nguyên tắc cơ bản trong thực tế',
+      },
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'social-media-marketing-mastery',
+        title: 'Thành Thạo Marketing Mạng Xã Hội',
+        connection: 'Quản lý chiến dịch trên các nền tảng mạng xã hội',
+      },
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'analytics-roi-optimization',
+        title: 'Tối Ưu Analytics và ROI',
+        connection: 'Đo lường và tối ưu hóa hiệu quả chiến dịch',
+      }
+    ]
+  },
+  {
+    id: 'biotech-lab-simulation',
+    title: 'Phòng Thí Nghiệm Công Nghệ Sinh Học',
+    description: 'Mô phỏng các thí nghiệm CRISPR và kỹ thuật gen',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '30-35 phút',
+    skills: ['Công nghệ Sinh học', 'CRISPR', 'Kỹ thuật Gen'],
+    moduleType: 'biotechnology',
+    isInternal: true,
+    points: 150,
+    icon: '🧬',
+    color: 'from-green-500 to-teal-500',
+    relatedLessons: [
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'biotech-fundamentals-genetic-engineering',
+        title: 'Cơ Bản Công Nghệ Sinh Học & Kỹ Thuật Gen',
+        connection: 'Thực hành các kỹ thuật cơ bản trong phòng thí nghiệm ảo',
+      },
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'crispr-gene-editing-applications',
+        title: 'Ứng Dụng CRISPR và Chỉnh Sửa Gen',
+        connection: 'Mô phỏng quá trình chỉnh sửa gen bằng CRISPR',
+      },
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'personalized-medicine-genomics',
+        title: 'Y Học Cá Nhân Hóa và Genomics',
+        connection: 'Phân tích dữ liệu gen để tạo phương pháp điều trị cá nhân',
+      }
+    ]
+  },
+  {
+    id: 'game-dev-studio',
+    title: 'Studio Phát Triển Game',
+    description: 'Thiết kế và lập trình game từ ý tưởng đến sản phẩm hoàn chỉnh',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '35-40 phút',
+    skills: ['Phát triển Game', 'Unity', 'Thiết kế Game'],
+    moduleType: 'game-development',
+    isInternal: true,
+    points: 160,
+    icon: '🎮',
+    color: 'from-purple-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'game-development',
+        lessonId: 'game-development-fundamentals',
+        title: 'Cơ Bản Phát Triển Game',
+        connection: 'Áp dụng nguyên tắc thiết kế game trong dự án thực tế',
+      },
+      {
+        moduleId: 'game-development',
+        lessonId: 'unity-unreal-engine-mastery',
+        title: 'Thành Thạo Unity và Unreal Engine',
+        connection: 'Sử dụng Unity để tạo game hoàn chỉnh',
+      },
+      {
+        moduleId: 'game-development',
+        lessonId: 'game-monetization-publishing',
+        title: 'Kiếm Tiền và Xuất Bản Game',
+        connection: 'Học cách xuất bản và kiếm tiền từ game',
+      }
+    ]
+  },
+  {
+    id: 'ml-model-builder',
+    title: 'Xây Dựng Mô Hình Machine Learning',
+    description: 'Tạo và huấn luyện các mô hình AI/ML cho các bài toán thực tế',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '30-35 phút',
+    skills: ['Machine Learning', 'Python', 'Mô hình AI'],
+    moduleType: 'ai-machine-learning',
+    isInternal: true,
+    points: 140,
+    icon: '🤖',
+    color: 'from-red-500 to-orange-500',
+    relatedLessons: [
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'machine-learning-fundamentals',
+        title: 'Cơ Bản Machine Learning',
+        connection: 'Xây dựng mô hình ML đầu tiên với các thuật toán cơ bản',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'deep-learning-neural-networks',
+        title: 'Deep Learning và Mạng Neural',
+        connection: 'Tạo mạng neural sâu cho các bài toán phức tạp',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'ai-deployment-production',
+        title: 'Triển Khai AI trong Sản Xuất',
+        connection: 'Triển khai mô hình AI vào ứng dụng thực tế',
+      }
+    ]
+  },
+  {
+    id: 'aerospace-mission-control',
+    title: 'Trung Tâm Điều Khiển Hàng Không Vũ Trụ',
+    description: 'Mô phỏng nhiệm vụ không gian và điều khiển tàu vũ trụ',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '40-45 phút',
+    skills: ['Kỹ thuật Hàng không', 'Điều khiển', 'Vật lý Không gian'],
+    moduleType: 'aerospace-engineering',
+    isInternal: true,
+    points: 180,
+    icon: '🚀',
+    color: 'from-blue-600 to-purple-600',
+    relatedLessons: [
+      {
+        moduleId: 'aerospace-engineering',
+        lessonId: 'aerospace-fundamentals-flight-dynamics',
+        title: 'Cơ Bản Hàng Không và Động Lực Học Bay',
+        connection: 'Áp dụng nguyên lý bay trong điều khiển tàu vũ trụ',
+      },
+      {
+        moduleId: 'aerospace-engineering',
+        lessonId: 'satellite-technology-operations',
+        title: 'Công Nghệ và Vận Hành Vệ Tinh',
+        connection: 'Điều khiển và giám sát hệ thống vệ tinh',
+      },
+      {
+        moduleId: 'aerospace-engineering',
+        lessonId: 'space-mission-planning',
+        title: 'Lập Kế Hoạch Nhiệm Vụ Không Gian',
+        connection: 'Thiết kế và thực hiện nhiệm vụ không gian phức tạp',
+      }
+    ]
+  },
+  {
+    id: 'medical-device-designer',
+    title: 'Thiết Kế Thiết Bị Y Tế',
+    description: 'Thiết kế và thử nghiệm các thiết bị y tế sinh học',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '35-40 phút',
+    skills: ['Kỹ thuật Y sinh', 'Thiết kế', 'An toàn Y tế'],
+    moduleType: 'biomedical-engineering',
+    isInternal: true,
+    points: 150,
+    icon: '🏥',
+    color: 'from-green-600 to-blue-600',
+    relatedLessons: [
+      {
+        moduleId: 'biomedical-engineering',
+        lessonId: 'biomedical-fundamentals-medical-devices',
+        title: 'Cơ Bản Kỹ Thuật Y Sinh và Thiết Bị Y Tế',
+        connection: 'Thiết kế thiết bị y tế theo tiêu chuẩn an toàn',
+      },
+      {
+        moduleId: 'biomedical-engineering',
+        lessonId: 'prosthetics-rehabilitation-engineering',
+        title: 'Kỹ Thuật Phục Hồi và Chân Tay Giả',
+        connection: 'Phát triển thiết bị hỗ trợ và phục hồi chức năng',
+      },
+      {
+        moduleId: 'biomedical-engineering',
+        lessonId: 'biomedical-imaging-diagnostics',
+        title: 'Hình Ảnh Y Sinh và Chẩn Đoán',
+        connection: 'Tạo hệ thống chẩn đoán hình ảnh tiên tiến',
+      }
+    ]
+  },
+  {
+    id: 'food-tech-innovator',
+    title: 'Đổi Mới Công Nghệ Thực Phẩm',
+    description: 'Phát triển công nghệ thực phẩm và an toàn thực phẩm',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-30 phút',
+    skills: ['Công nghệ Thực phẩm', 'An toàn', 'Dinh dưỡng'],
+    moduleType: 'food-technology',
+    isInternal: true,
+    points: 110,
+    icon: '🍚',
+    color: 'from-orange-500 to-yellow-500',
+    relatedLessons: [
+      {
+        moduleId: 'food-technology',
+        lessonId: 'food-technology-fundamentals',
+        title: 'Cơ Bản Công Nghệ Thực Phẩm',
+        connection: 'Áp dụng nguyên lý bảo quản và chế biến thực phẩm',
+      },
+      {
+        moduleId: 'food-technology',
+        lessonId: 'food-safety-quality-control',
+        title: 'An Toàn và Kiểm Soát Chất Lượng Thực Phẩm',
+        connection: 'Thiết kế hệ thống đảm bảo an toàn thực phẩm',
+      },
+      {
+        moduleId: 'food-technology',
+        lessonId: 'sustainable-food-systems',
+        title: 'Hệ Thống Thực Phẩm Bền Vững',
+        connection: 'Phát triển giải pháp thực phẩm thân thiện môi trường',
+      }
+    ]
+  },
+  {
+    id: 'nano-lab-explorer',
+    title: 'Khám Phá Phòng Thí Nghiệm Nano',
+    description: 'Thao tác và thiết kế cấu trúc ở quy mô nano',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '30-35 phút',
+    skills: ['Công nghệ Nano', 'Vật liệu', 'Khoa học Cơ bản'],
+    moduleType: 'nanotechnology',
+    isInternal: true,
+    points: 160,
+    icon: '🔬',
+    color: 'from-purple-600 to-pink-600',
+    relatedLessons: [
+      {
+        moduleId: 'nanotechnology',
+        lessonId: 'nanotechnology-fundamentals',
+        title: 'Cơ Bản Công Nghệ Nano',
+        connection: 'Khám phá thế giới nano và các ứng dụng cơ bản',
+      },
+      {
+        moduleId: 'nanotechnology',
+        lessonId: 'nanomaterials-synthesis-characterization',
+        title: 'Tổng Hợp và Đặc Tính Vật Liệu Nano',
+        connection: 'Tạo và phân tích tính chất vật liệu nano',
+      },
+      {
+        moduleId: 'nanotechnology',
+        lessonId: 'nanoelectronics-quantum-devices',
+        title: 'Nanoelectronics và Thiết Bị Lượng Tử',
+        connection: 'Thiết kế thiết bị điện tử quy mô nano',
+      }
+    ]
+  },
+  {
+    id: 'ev-charging-network',
+    title: 'Mạng Lưới Sạc Xe Điện',
+    description: 'Thiết kế và quản lý hệ thống sạc xe điện thông minh',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-30 phút',
+    skills: ['Xe điện', 'Năng lượng', 'Hệ thống Thông minh'],
+    moduleType: 'electric-vehicle-tech',
+    isInternal: true,
+    points: 120,
+    icon: '⚡',
+    color: 'from-green-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'electric-vehicle-tech',
+        lessonId: 'electric-vehicle-fundamentals',
+        title: 'Cơ Bản Công Nghệ Xe Điện',
+        connection: 'Hiểu về hệ thống động cơ và pin xe điện',
+      },
+      {
+        moduleId: 'electric-vehicle-tech',
+        lessonId: 'battery-technology-management',
+        title: 'Công Nghệ và Quản Lý Pin',
+        connection: 'Tối ưu hóa hiệu suất sạc và quản lý pin',
+      },
+      {
+        moduleId: 'electric-vehicle-tech',
+        lessonId: 'smart-charging-infrastructure',
+        title: 'Hạ Tầng Sạc Thông Minh',
+        connection: 'Xây dựng mạng lưới sạc hiệu quả và thông minh',
+      }
+    ]
+  },
+  {
+    id: 'mental-health-app',
+    title: 'Ứng Dụng Sức Khỏe Tâm Thần',
+    description: 'Phát triển ứng dụng hỗ trợ sức khỏe tâm thần và AI trị liệu',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-30 phút',
+    skills: ['Sức khỏe Tâm thần', 'AI Trị liệu', 'Ứng dụng Y tế'],
+    moduleType: 'mental-health-tech',
+    isInternal: true,
+    points: 110,
+    icon: '🧠',
+    color: 'from-blue-500 to-green-500',
+    relatedLessons: [
+      {
+        moduleId: 'mental-health-tech',
+        lessonId: 'mental-health-tech-fundamentals',
+        title: 'Cơ Bản Công Nghệ Sức Khỏe Tâm Thần',
+        connection: 'Phát triển giải pháp công nghệ cho sức khỏe tâm thần',
+      },
+      {
+        moduleId: 'mental-health-tech',
+        lessonId: 'ai-therapy-chatbot-development',
+        title: 'Phát Triển Chatbot AI Trị Liệu',
+        connection: 'Tạo chatbot AI hỗ trợ tâm lý và trị liệu',
+      },
+      {
+        moduleId: 'mental-health-tech',
+        lessonId: 'digital-wellness-platforms',
+        title: 'Nền Tảng Sức Khỏe Số',
+        connection: 'Xây dựng nền tảng chăm sóc sức khỏe tâm thần toàn diện',
+      }
+    ]
+  },
+  {
+    id: 'e-government-portal',
+    title: 'Cổng Dịch Vụ Chính Phủ Điện Tử',
+    description: 'Thiết kế hệ thống chính phủ điện tử hiệu quả cho Việt Nam',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '30-35 phút',
+    skills: ['Chính phủ Điện tử', 'Dịch vụ Công', 'An ninh Mạng'],
+    moduleType: 'digital-government',
+    isInternal: true,
+    points: 130,
+    icon: '🏛️',
+    color: 'from-red-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'digital-government',
+        lessonId: 'digital-government-fundamentals',
+        title: 'Cơ Bản Chính Phủ Điện Tử',
+        connection: 'Thiết kế dịch vụ công trực tuyến hiệu quả',
+      },
+      {
+        moduleId: 'digital-government',
+        lessonId: 'e-governance-citizen-services',
+        title: 'Quản Trị Điện Tử và Dịch Vụ Công Dân',
+        connection: 'Xây dựng hệ thống phục vụ nhu cầu công dân',
+      },
+      {
+        moduleId: 'digital-government',
+        lessonId: 'smart-city-integration',
+        title: 'Tích Hợp Thành Phố Thông Minh',
+        connection: 'Kết nối dịch vụ chính phủ với hệ thống thành phố thông minh',
+      }
+    ]
+  },
+  {
+    id: 'climate-data-analyst',
+    title: 'Chuyên Gia Phân Tích Dữ Liệu Khí Hậu',
+    description: 'Phân tích dữ liệu môi trường và dự báo biến đổi khí hậu',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '35-40 phút',
+    skills: ['Dữ liệu Môi trường', 'Phân tích', 'Dự báo Khí hậu'],
+    moduleType: 'environmental-data-science',
+    isInternal: true,
+    points: 150,
+    icon: '🌡️',
+    color: 'from-green-600 to-teal-600',
+    relatedLessons: [
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'environmental-data-collection-analysis',
+        title: 'Thu Thập và Phân Tích Dữ Liệu Môi Trường',
+        connection: 'Thu thập và xử lý dữ liệu từ các nguồn môi trường',
+      },
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'climate-data-analysis-modeling',
+        title: 'Phân Tích Dữ Liệu Khí Hậu và Mô Hình Hóa',
+        connection: 'Xây dựng mô hình dự báo khí hậu chính xác',
+      },
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'gis-remote-sensing-applications',
+        title: 'Ứng Dụng GIS và Viễn Thám',
+        connection: 'Sử dụng GIS để phân tích không gian dữ liệu môi trường',
+      }
+    ]
+  },
+  {
+    id: 'ai-research-lab',
+    title: 'Phòng Nghiên Cứu AI Tiên Tiến',
+    description: 'Nghiên cứu và phát triển các thuật toán AI tiên tiến',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '40-45 phút',
+    skills: ['AI Tiên tiến', 'Nghiên cứu', 'Thuật toán'],
+    moduleType: 'advanced-ai',
+    isInternal: true,
+    points: 180,
+    icon: '🔬',
+    color: 'from-purple-600 to-red-600',
+    relatedLessons: [
+      {
+        moduleId: 'advanced-ai',
+        lessonId: 'advanced-ai-research-trends',
+        title: 'Xu Hướng Nghiên Cứu AI Tiên Tiến',
+        connection: 'Khám phá các hướng nghiên cứu AI mới nhất',
+      },
+      {
+        moduleId: 'advanced-ai',
+        lessonId: 'agi-consciousness-ethics',
+        title: 'AGI, Ý Thức và Đạo Đức AI',
+        connection: 'Nghiên cứu về trí tuệ nhân tạo tổng quát và đạo đức',
+      },
+      {
+        moduleId: 'advanced-ai',
+        lessonId: 'quantum-ai-computing',
+        title: 'Điện Toán Lượng Tử và AI',
+        connection: 'Kết hợp AI với điện toán lượng tử',
+      }
+    ]
+  },
+  {
+    id: 'content-creator-studio',
+    title: 'Studio Sáng Tạo Nội Dung',
+    description: 'Tạo nội dung đa phương tiện và xây dựng thương hiệu cá nhân',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-30 phút',
+    skills: ['Sáng tạo Nội dung', 'Thương hiệu', 'Đa phương tiện'],
+    moduleType: 'content-creator',
+    isInternal: true,
+    points: 100,
+    icon: '📹',
+    color: 'from-pink-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'content-creator',
+        lessonId: 'content-creation-fundamentals',
+        title: 'Cơ Bản Sáng Tạo Nội Dung',
+        connection: 'Học các kỹ thuật cơ bản để tạo nội dung hấp dẫn',
+      },
+      {
+        moduleId: 'content-creator',
+        lessonId: 'personal-branding-social-media',
+        title: 'Xây Dựng Thương Hiệu Cá Nhân và Mạng Xã Hội',
+        connection: 'Phát triển thương hiệu cá nhân trên các nền tảng',
+      },
+      {
+        moduleId: 'content-creator',
+        lessonId: 'monetization-audience-growth',
+        title: 'Kiếm Tiền và Phát Triển Khán Giả',
+        connection: 'Xây dựng và kiếm tiền từ cộng đồng khán giả',
+      }
+    ]
+  },
+  {
+    id: 'vietnamese-heritage-explorer',
+    title: 'Khám Phá Di Sản Việt Nam',
+    description: 'Bảo tồn và số hóa di sản văn hóa Việt Nam',
+    category: 'simulation',
+    difficulty: 'Cơ bản',
+    estimatedTime: '20-25 phút',
+    skills: ['Văn hóa Việt Nam', 'Bảo tồn', 'Số hóa Di sản'],
+    moduleType: 'vietnamese-culture',
+    isInternal: true,
+    points: 90,
+    icon: '🏮',
+    color: 'from-red-500 to-yellow-500',
+    relatedLessons: [
+      {
+        moduleId: 'vietnamese-culture',
+        lessonId: 'cultural-heritage-preservation',
+        title: 'Bảo Tồn Di Sản Văn Hóa',
+        connection: 'Học cách bảo tồn và truyền bá văn hóa truyền thống',
+      },
+      {
+        moduleId: 'vietnamese-culture',
+        lessonId: 'digital-heritage-preservation',
+        title: 'Số Hóa Di Sản',
+        connection: 'Sử dụng công nghệ để số hóa di sản văn hóa',
+      },
+      {
+        moduleId: 'vietnamese-culture',
+        lessonId: 'traditional-arts-modern-applications',
+        title: 'Nghệ Thuật Truyền Thống trong Ứng Dụng Hiện Đại',
+        connection: 'Kết hợp nghệ thuật truyền thống với công nghệ hiện đại',
+      }
+    ]
+  },
+  {
+    id: 'global-marketplace-simulator',
+    title: 'Mô Phỏng Thương Mại Quốc Tế',
+    description: 'Quản lý store đa nền tảng và logistics xuyên biên giới',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-30 phút',
+    skills: ['E-commerce', 'Logistics', 'Multi-platform Management', 'Cross-border Trade'],
+    moduleType: 'cross-border-ecommerce',
+    isInternal: true,
+    points: 100,
+    icon: '🌐',
+    color: 'from-emerald-500 to-green-500',
+    relatedLessons: [
+      {
+        moduleId: 'cross-border-ecommerce',
+        lessonId: 'ecommerce-fundamentals',
+        title: 'Cơ bản Thương mại Điện tử Xuyên biên giới',
+        connection: 'Áp dụng kiến thức về cross-border business models',
+      },
+      {
+        moduleId: 'cross-border-ecommerce',
+        lessonId: 'international-platforms',
+        title: 'Nền tảng Thương mại Quốc tế',
+        connection: 'Thực hành quản lý store trên nhiều platform',
+      },
+      {
+        moduleId: 'cross-border-ecommerce',
+        lessonId: 'cross-border-logistics',
+        title: 'Logistics và Vận chuyển Quốc tế',
+        connection: 'Tối ưu hóa chuỗi cung ứng và delivery',
+      }
+    ]
+  },
+  {
+    id: 'aquaculture-iot-manager',
+    title: 'Quản lý Nuôi trồng Thủy sản IoT',
+    description: 'Sử dụng hệ thống IoT để quản lý trang trại nuôi tôm, cá với sensors nhiệt độ, oxy, pH tự động',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '12-18 phút',
+    skills: ['IoT', 'Aquaculture', 'Sensors', 'Automation'],
+    moduleType: 'agritech-precision-farming',
+    isInternal: true,
+    points: 120,
+    icon: '🐟',
+    color: 'from-blue-500 to-cyan-500',
+    relatedLessons: [
+      {
+        moduleId: 'agritech-precision-farming',
+        lessonId: 'smart-farming-fundamentals',
+        title: 'Cơ bản Nông nghiệp Thông minh',
+        connection: 'Áp dụng IoT trong nuôi trồng thủy sản',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Cảm Biến & Xử Lý Dữ Liệu',
+        connection: 'Sử dụng sensors giám sát môi trường nước',
+      }
+    ]
+  },
+  {
+    id: 'smart-farming-simulator',
+    title: 'Mô phỏng Nông trại Thông minh',
+    description: 'Quản lý nông trại IoT với sensors độ ẩm, nhiệt độ, pH. Tối ưu hóa tưới tiêu và dinh dưỡng tự động',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '15-20 phút',
+    skills: ['Smart Farming', 'IoT', 'Agriculture', 'Precision Farming'],
+    moduleType: 'agritech-precision-farming',
+    isInternal: true,
+    points: 150,
+    icon: '🌱',
+    color: 'from-green-500 to-emerald-500',
+    relatedLessons: [
+      {
+        moduleId: 'agritech-precision-farming',
+        lessonId: 'smart-farming-fundamentals',
+        title: 'Cơ bản Nông nghiệp Thông minh',
+        connection: 'Triển khai hệ thống IoT nông nghiệp',
+      },
+      {
+        moduleId: 'agritech-precision-farming',
+        lessonId: 'smart-irrigation-systems',
+        title: 'Hệ thống Tưới tiêu Thông minh',
+        connection: 'Tự động hóa tưới tiêu dựa trên dữ liệu sensors',
+      }
+    ]
+  },
+  {
+    id: 'drone-crop-monitoring',
+    title: 'Giám sát Cây trồng bằng Drone',
+    description: 'Điều khiển drone nông nghiệp để khảo sát ruộng, phát hiện sâu bệnh và phân tích NDVI',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '12-15 phút',
+    skills: ['Drone', 'Precision Agriculture', 'NDVI', 'Computer Vision'],
+    moduleType: 'agritech-precision-farming',
+    isInternal: true,
+    points: 200,
+    icon: '🚁',
+    color: 'from-blue-600 to-indigo-600',
+    relatedLessons: [
+      {
+        moduleId: 'agritech-precision-farming',
+        lessonId: 'drone-crop-monitoring',
+        title: 'Giám sát Cây trồng bằng Drone',
+        connection: 'Thực hành điều khiển drone nông nghiệp',
+      },
+      {
+        moduleId: 'agritech-precision-farming',
+        lessonId: 'ai-pest-disease-detection',
+        title: 'AI Phát hiện Sâu bệnh Cây trồng',
+        connection: 'Phân tích hình ảnh từ drone để detect vấn đề',
+      }
+    ]
+  },
+  {
+    id: 'currency-exchange-puzzle',
+    title: 'Giải Đố Tỷ Giá và Thanh Toán',
+    description: 'Tối ưu hóa thanh toán đa tiền tệ và currency hedging',
+    category: 'puzzle',
+    difficulty: 'Nâng cao',
+    estimatedTime: '15-20 phút',
+    skills: ['Financial Management', 'Currency Exchange', 'Risk Management'],
+    moduleType: 'cross-border-ecommerce',
+    isInternal: true,
+    points: 80,
+    icon: '💱',
+    color: 'from-blue-500 to-cyan-500',
+    relatedLessons: [
+      {
+        moduleId: 'cross-border-ecommerce',
+        lessonId: 'payment-solutions',
+        title: 'Giải pháp Thanh toán Xuyên biên giới',
+        connection: 'Thực hành với payment gateways và currency conversion',
+      },
+      {
+        moduleId: 'financial-literacy',
+        lessonId: 'international-finance',
+        title: 'Tài chính Quốc tế',
+        connection: 'Hiểu về foreign exchange và international payments',
+      }
+    ]
+  },
+  {
+    id: 'cultural-localization-challenge',
+    title: 'Thách Thức Localization Văn Hóa',
+    description: 'Thích ứng marketing và sản phẩm với văn hóa địa phương',
+    category: 'strategy',
+    difficulty: 'Nâng cao',
+    estimatedTime: '20-25 phút',
+    skills: ['Cultural Intelligence', 'Marketing Adaptation', 'Global Communication'],
+    moduleType: 'cross-border-ecommerce',
+    isInternal: true,
+    points: 90,
+    icon: '🌍',
+    color: 'from-purple-500 to-pink-500',
+    relatedLessons: [
+      {
+        moduleId: 'cross-border-ecommerce',
+        lessonId: 'cultural-localization',
+        title: 'Localization và Marketing Văn hóa',
+        connection: 'Áp dụng chiến lược localization cho từng thị trường',
+      },
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'global-marketing-strategies',
+        title: 'Chiến Lược Marketing Toàn Cầu',
+        connection: 'Phát triển campaigns phù hợp với đa văn hóa',
+      }
+    ]
+  },
+  {
+    id: 'marine-ecosystem-iot-manager',
+    title: 'Quản Lý Nuôi Trồng IoT',
+    description: 'Điều khiển hệ thống nuôi tôm thông minh với sensors và AI',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '20-30 phút',
+    skills: ['IoT Systems', 'Aquaculture', 'Data Analytics', 'Environmental Monitoring'],
+    moduleType: 'blue-economy',
+    isInternal: true,
+    points: 95,
+    icon: '🦐',
+    color: 'from-cyan-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'blue-economy',
+        lessonId: 'smart-aquaculture',
+        title: 'Nuôi trồng Thủy sản Thông minh',
+        connection: 'Thực hành với IoT sensors và automated systems',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Sensors và Data Processing',
+        connection: 'Ứng dụng Arduino sensors trong aquaculture monitoring',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-communication',
+        title: 'Communication & Networking',
+        connection: 'Xây dựng IoT networks cho smart farming',
+      }
+    ]
+  },
+  {
+    id: 'offshore-wind-planner',
+    title: 'Quy Hoạch Điện Gió Biển',
+    description: 'Thiết kế và tối ưu hóa wind farms ngoài khơi',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '25-35 phút',
+    skills: ['Renewable Energy', 'Marine Engineering', 'Environmental Impact', 'Project Planning'],
+    moduleType: 'blue-economy',
+    isInternal: true,
+    points: 120,
+    icon: '🌊',
+    color: 'from-teal-500 to-green-500',
+    relatedLessons: [
+      {
+        moduleId: 'blue-economy',
+        lessonId: 'marine-renewable-energy',
+        title: 'Năng lượng Tái tạo Biển',
+        connection: 'Thiết kế và đánh giá wind farm projects',
+      },
+      {
+        moduleId: 'renewable-energy',
+        lessonId: 'wind-energy-systems',
+        title: 'Hệ Thống Năng Lượng Gió',
+        connection: 'Hiểu về wind turbine technology và grid integration',
+      },
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'environmental-impact-assessment',
+        title: 'Đánh Giá Tác Động Môi Trường',
+        connection: 'Phân tích environmental impact của renewable projects',
+      }
+    ]
+  },
+  {
+    id: 'blue-carbon-tracker',
+    title: 'Theo Dõi Carbon Xanh',
+    description: 'Quản lý dự án carbon sequestration từ mangroves và seagrass',
+    category: 'strategy',
+    difficulty: 'Nâng cao',
+    estimatedTime: '20-25 phút',
+    skills: ['Carbon Management', 'Ecosystem Restoration', 'Environmental Finance', 'Sustainability'],
+    moduleType: 'blue-economy',
+    isInternal: true,
+    points: 100,
+    icon: '🌱',
+    color: 'from-green-500 to-emerald-500',
+    relatedLessons: [
+      {
+        moduleId: 'blue-economy',
+        lessonId: 'blue-carbon-management',
+        title: 'Quản lý Carbon Xanh Biển',
+        connection: 'Tính toán và quản lý blue carbon credits',
+      },
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'carbon-footprint-calculation',
+        title: 'Tính Toán Dấu Chân Carbon',
+        connection: 'Áp dụng methods để measure carbon sequestration',
+      },
+      {
+        moduleId: 'green-technology',
+        lessonId: 'carbon-capture-storage',
+        title: 'Thu Giữ và Lưu Trữ Carbon',
+        connection: 'Hiểu về natural carbon capture processes',
+      }
+    ]
+  },
+  {
+    id: 'factory-automation-simulator',
+    title: 'Mô Phỏng Tự Động Hóa Nhà Máy',
+    description: 'Thiết kế và quản lý hệ thống tự động hóa trong nhà máy thông minh với IoT và AI',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '25-30 phút',
+    skills: ['Industry 4.0', 'IoT Systems', 'Production Optimization', 'Quality Control'],
+    moduleType: 'smart-manufacturing',
+    isInternal: true,
+    points: 120,
+    icon: '🏭',
+    color: 'from-gray-600 to-slate-600',
+    relatedLessons: [
+      {
+        moduleId: 'smart-manufacturing',
+        lessonId: 'iot-sensor-networks',
+        title: 'Mạng Cảm Biến IoT',
+        connection: 'Triển khai sensor networks để monitor production lines',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Cảm Biến Arduino',
+        connection: 'Hiểu về sensor technology trong industrial applications',
+      },
+      {
+        moduleId: 'robotics',
+        lessonId: 'industrial-automation',
+        title: 'Tự Động Hóa Công Nghiệp',
+        connection: 'Lập trình robot arms và automation systems',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'predictive-maintenance',
+        title: 'Bảo Trì Dự Đoán',
+        connection: 'Sử dụng AI để predict equipment failures',
+      }
+    ]
+  },
+  {
+    id: 'supply-chain-optimization-challenge',
+    title: 'Thách Thức Tối Ưu Chuỗi Cung Ứng',
+    description: 'Quản lý và tối ưu hóa chuỗi cung ứng toàn cầu với digital twin technology',
+    category: 'strategy',
+    difficulty: 'Nâng cao',
+    estimatedTime: '20-25 phút',
+    skills: ['Supply Chain Management', 'Digital Twin', 'Logistics Optimization', 'Data Analytics'],
+    moduleType: 'smart-manufacturing',
+    isInternal: true,
+    points: 110,
+    icon: '📦',
+    color: 'from-blue-600 to-indigo-600',
+    relatedLessons: [
+      {
+        moduleId: 'smart-manufacturing',
+        lessonId: 'digital-twin-modeling',
+        title: 'Mô Hình Digital Twin',
+        connection: 'Tạo digital twin cho supply chain visualization',
+      },
+      {
+        moduleId: 'data-science',
+        lessonId: 'predictive-analytics',
+        title: 'Phân Tích Dự Đoán',
+        connection: 'Dự đoán demand và optimize inventory levels',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'optimization-algorithms',
+        title: 'Thuật Toán Tối Ưu',
+        connection: 'Áp dụng AI để optimize routing và scheduling',
+      }
+    ]
+  },
+  {
+    id: 'virtual-classroom-manager',
+    title: 'Quản Lý Lớp Học Ảo',
+    description: 'Thiết kế và quản lý môi trường học tập ảo với AI tutoring và adaptive learning',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '18-22 phút',
+    skills: ['Educational Technology', 'AI Tutoring', 'Learning Analytics', 'Student Engagement'],
+    moduleType: 'edtech',
+    isInternal: true,
+    points: 90,
+    icon: '👩‍🏫',
+    color: 'from-purple-600 to-pink-600',
+    relatedLessons: [
+      {
+        moduleId: 'edtech',
+        lessonId: 'ai-personalized-learning',
+        title: 'Học Tập Cá Nhân Hóa AI',
+        connection: 'Thiết kế AI systems để personalize learning paths',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'natural-language-processing',
+        title: 'Xử Lý Ngôn Ngữ Tự Nhiên',
+        connection: 'Phát triển AI chatbots cho educational support',
+      },
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'user-experience-design',
+        title: 'Thiết Kế Trải Nghiệm Người Dùng',
+        connection: 'Tạo engaging học tập interfaces',
+      }
+    ]
+  },
+  {
+    id: 'ai-language-tutor',
+    title: 'Gia Sư Ngôn Ngữ AI',
+    description: 'Phát triển AI tutoring system cho việc học ngôn ngữ với speech recognition và feedback',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '22-28 phút',
+    skills: ['AI Development', 'Speech Recognition', 'Language Learning', 'Adaptive Systems'],
+    moduleType: 'edtech',
+    isInternal: true,
+    points: 115,
+    icon: '🤖',
+    color: 'from-green-600 to-teal-600',
+    relatedLessons: [
+      {
+        moduleId: 'edtech',
+        lessonId: 'adaptive-learning-systems',
+        title: 'Hệ Thống Học Thích Ứng',
+        connection: 'Xây dựng adaptive algorithms cho language learning',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'speech-recognition',
+        title: 'Nhận Dạng Giọng Nói',
+        connection: 'Implement speech recognition cho pronunciation feedback',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'machine-learning-applications',
+        title: 'Ứng Dụng Machine Learning',
+        connection: 'Code AI models cho language processing',
+      }
+    ]
+  },
+  {
+    id: 'traffic-management-simulator',
+    title: 'Mô Phỏng Quản Lý Giao Thông',
+    description: 'Quản lý hệ thống giao thông thông minh với AI optimization và real-time monitoring',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '25-30 phút',
+    skills: ['Traffic Optimization', 'IoT Networks', 'Real-time Systems', 'Urban Planning'],
+    moduleType: 'smart-city',
+    isInternal: true,
+    points: 125,
+    icon: '🚦',
+    color: 'from-yellow-500 to-orange-500',
+    relatedLessons: [
+      {
+        moduleId: 'smart-city',
+        lessonId: 'intelligent-transportation',
+        title: 'Giao Thông Thông Minh',
+        connection: 'Thiết kế intelligent traffic management systems',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'iot-sensor-networks',
+        title: 'Mạng Cảm Biến IoT',
+        connection: 'Deploy traffic sensors và monitoring devices',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'real-time-optimization',
+        title: 'Tối Ưu Thời Gian Thực',
+        connection: 'Optimize traffic flows sử dụng machine learning',
+      },
+      {
+        moduleId: 'data-science',
+        lessonId: 'geospatial-analysis',
+        title: 'Phân Tích Không Gian Địa Lý',
+        connection: 'Analyze traffic patterns và urban mobility data',
+      }
+    ]
+  },
+  {
+    id: 'smart-parking-puzzle',
+    title: 'Puzzle Bãi Đỗ Xe Thông Minh',
+    description: 'Thiết kế hệ thống bãi đỗ xe thông minh với sensors, mobile app và payment integration',
+    category: 'puzzle',
+    difficulty: 'Trung bình',
+    estimatedTime: '15-20 phút',
+    skills: ['Smart Parking', 'Mobile Integration', 'Payment Systems', 'Urban Solutions'],
+    moduleType: 'smart-city',
+    isInternal: true,
+    points: 85,
+    icon: '🅿️',
+    color: 'from-blue-500 to-cyan-500',
+    relatedLessons: [
+      {
+        moduleId: 'smart-city',
+        lessonId: 'smart-infrastructure',
+        title: 'Cơ Sở Hạ Tầng Thông Minh',
+        connection: 'Integrate parking systems với city infrastructure',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'sensor-integration',
+        title: 'Tích Hợp Cảm Biến',
+        connection: 'Build parking sensors và occupancy detection',
+      },
+      {
+        moduleId: 'fintech',
+        lessonId: 'mobile-payment-systems',
+        title: 'Hệ Thống Thanh Toán Di Động',
+        connection: 'Implement contactless payment cho parking',
+      }
+    ]
+  },
+  {
+    id: 'smart-home-designer',
+    title: 'Thiết Kế Nhà Thông Minh',
+    description: 'Thiết kế và cấu hình hệ thống nhà thông minh với IoT devices và automation',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '20-25 phút',
+    skills: ['Smart Home Technology', 'IoT Integration', 'Home Automation', 'Energy Efficiency'],
+    moduleType: 'proptech',
+    isInternal: true,
+    points: 95,
+    icon: '🏠',
+    color: 'from-green-500 to-emerald-500',
+    relatedLessons: [
+      {
+        moduleId: 'proptech',
+        lessonId: 'smart-home-systems',
+        title: 'Hệ Thống Nhà Thông Minh',
+        connection: 'Configure smart home devices và automation rules',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'home-automation',
+        title: 'Tự Động Hóa Nhà',
+        connection: 'Program Arduino-based home control systems',
+      },
+      {
+        moduleId: 'green-technology',
+        lessonId: 'energy-management-systems',
+        title: 'Hệ Thống Quản Lý Năng Lượng',
+        connection: 'Optimize home energy consumption với smart systems',
+      },
+      {
+        moduleId: 'cybersecurity',
+        lessonId: 'iot-security',
+        title: 'Bảo Mật IoT',
+        connection: 'Secure smart home networks và devices',
+      }
+    ]
+  },
+  {
+    id: 'virtual-property-tour',
+    title: 'Tour Bất Động Sản Ảo',
+    description: 'Tạo virtual reality property tours với 3D modeling và interactive features',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '22-28 phút',
+    skills: ['VR/AR Technology', '3D Modeling', 'Real Estate Tech', 'Interactive Design'],
+    moduleType: 'proptech',
+    isInternal: true,
+    points: 110,
+    icon: '🏢',
+    color: 'from-purple-600 to-violet-600',
+    relatedLessons: [
+      {
+        moduleId: 'proptech',
+        lessonId: 'virtual-reality-tours',
+        title: 'Tour Thực Tế Ảo',
+        connection: 'Develop immersive VR experiences cho real estate',
+      },
+      {
+        moduleId: 'game-development',
+        lessonId: '3d-modeling-animation',
+        title: 'Mô Hình 3D và Animation',
+        connection: 'Create realistic 3D property models',
+      },
+      {
+        moduleId: 'ai-art-creative-tech',
+        lessonId: 'procedural-generation',
+        title: 'Tạo Sinh Tự Động',
+        connection: 'Generate virtual property layouts và designs',
+      }
+    ]
+  },
+  {
+    id: 'recycling-plant-manager',
+    title: 'Quản Lý Nhà Máy Tái Chế',
+    description: 'Vận hành nhà máy tái chế với automated sorting, optimization và environmental monitoring',
+    category: 'strategy',
+    difficulty: 'Nâng cao',
+    estimatedTime: '25-30 phút',
+    skills: ['Waste Management', 'Automation Systems', 'Environmental Monitoring', 'Efficiency Optimization'],
+    moduleType: 'circular-economy',
+    isInternal: true,
+    points: 120,
+    icon: '♻️',
+    color: 'from-green-600 to-lime-600',
+    relatedLessons: [
+      {
+        moduleId: 'circular-economy',
+        lessonId: 'waste-to-resource-systems',
+        title: 'Hệ Thống Chuyển Đổi Chất Thải',
+        connection: 'Optimize waste processing và resource recovery',
+      },
+      {
+        moduleId: 'green-technology',
+        lessonId: 'recycling-technologies',
+        title: 'Công Nghệ Tái Chế',
+        connection: 'Implement advanced recycling processes',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'sensor-automation',
+        title: 'Tự Động Hóa Cảm Biến',
+        connection: 'Build automated sorting systems với sensors',
+      },
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'environmental-impact-assessment',
+        title: 'Đánh Giá Tác Động Môi Trường',
+        connection: 'Monitor environmental impact của recycling operations',
+      }
+    ]
+  },
+  {
+    id: 'waste-to-energy-puzzle',
+    title: 'Puzzle Chuyển Đổi Chất Thải Thành Năng Lượng',
+    description: 'Thiết kế hệ thống chuyển đổi waste-to-energy với optimal efficiency và minimal emissions',
+    category: 'puzzle',
+    difficulty: 'Nâng cao',
+    estimatedTime: '18-22 phút',
+    skills: ['Energy Conversion', 'Process Optimization', 'Emission Control', 'Circular Systems'],
+    moduleType: 'circular-economy',
+    isInternal: true,
+    points: 105,
+    icon: '⚡',
+    color: 'from-yellow-600 to-orange-600',
+    relatedLessons: [
+      {
+        moduleId: 'circular-economy',
+        lessonId: 'energy-recovery-systems',
+        title: 'Hệ Thống Thu Hồi Năng Lượng',
+        connection: 'Design efficient waste-to-energy conversion processes',
+      },
+      {
+        moduleId: 'renewable-energy',
+        lessonId: 'biomass-energy-systems',
+        title: 'Hệ Thống Năng Lượng Sinh Khối',
+        connection: 'Convert organic waste thành renewable energy',
+      },
+      {
+        moduleId: 'green-technology',
+        lessonId: 'emission-control-systems',
+        title: 'Hệ Thống Kiểm Soát Khí Thải',
+        connection: 'Minimize environmental impact của energy conversion',
+      },
+      {
+        moduleId: 'chemical-engineering',
+        lessonId: 'process-optimization',
+        title: 'Tối Ưu Hóa Quy Trình',
+        connection: 'Optimize chemical processes trong waste-to-energy plants',
+      }
+    ]
+  }
 ];

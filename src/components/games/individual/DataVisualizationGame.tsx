@@ -59,17 +59,26 @@ export function DataVisualizationGame({ onComplete, timeLeft, onRestart }: DataV
         return (
           <div className="bg-gray-800/50 rounded-lg p-4">
             <h5 className="text-white font-medium mb-4">Bar Chart - {dataSet === 'sales' ? 'Sales Data' : 'User Data'}</h5>
-            <div className="flex items-end justify-between h-32 gap-2">
-              {currentData.map((item, index) => (
-                <div key={index} className="flex flex-col items-center flex-1">
-                  <div
-                    className="bg-blue-500 w-full rounded-t transition-all duration-500"
-                    style={{ height: `${(item.value / maxValue) * 100}%` }}
-                  />
-                  <div className="text-gray-400 text-xs mt-2 text-center">{item.month || item.category}</div>
-                  <div className="text-blue-400 text-xs">{item.value}</div>
-                </div>
-              ))}
+            <div className="flex items-end justify-between h-48 gap-2 px-2">
+              {currentData.map((item, index) => {
+                const barHeight = Math.max((item.value / maxValue) * 80, 5); // Minimum 5% height
+                return (
+                  <div key={index} className="flex flex-col items-center flex-1">
+                    <div className="text-blue-400 text-xs mb-1">{item.value}</div>
+                    <div
+                      className="bg-gradient-to-t from-blue-600 to-blue-400 w-full rounded-t transition-all duration-500 min-h-[20px] flex items-end justify-center"
+                      style={{ height: `${barHeight}%` }}
+                    >
+                      <div className="text-white text-xs font-semibold mb-1">
+                        {item.value}
+                      </div>
+                    </div>
+                    <div className="text-gray-400 text-xs mt-2 text-center font-medium">
+                      {item.month || item.category}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         );

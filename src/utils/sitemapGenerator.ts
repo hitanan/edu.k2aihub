@@ -29,6 +29,20 @@ import { ProgrammingRoboticsLessons } from '@/data/programming-robotics';
 import { blueEconomyLessons } from '@/data/blue-economy';
 import { smartManufacturingLessons } from '@/data/smart-manufacturing';
 
+// Import Additional High-Priority Modules
+import { aerospaceEngineeringLessons } from '@/data/aerospace-engineering';
+import { biomedicalEngineeringLessons } from '@/data/biomedical-engineering';
+import { foodTechnologyLessons } from '@/data/food-technology';
+import { nanotechnologyLessons } from '@/data/nanotechnology';
+import { electricVehicleLessons } from '@/data/electric-vehicle-tech';
+import { mentalHealthLessons } from '@/data/mental-health-tech';
+import { digitalGovLessons } from '@/data/digital-government';
+import { environmentalDataScienceLessons } from '@/data/environmental-data-science';
+import { advancedAILessons } from '@/data/advanced-ai';
+import { contentCreatorLessons } from '@/data/content-creator';
+import { vietnameseCultureLessons } from '@/data/vietnamese-culture';
+import { crossBorderEcommerceLessons } from '@/data/cross-border-ecommerce';
+
 // Import 2025 TRENDING MODULES (Social Media & Academic)
 import { aiContentCreatorLessons } from '@/data/ai-content-creator';
 import { tiktokSocialCommerceLessons } from '@/data/tiktok-social-commerce';
@@ -234,6 +248,67 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/learning/smart-manufacturing`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    // Additional High-Priority Modules
+    {
+      url: `${baseUrl}/learning/aerospace-engineering`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/biomedical-engineering`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/food-technology`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/nanotechnology`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/electric-vehicle-tech`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/mental-health-tech`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/digital-government`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/environmental-data-science`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/advanced-ai`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/content-creator`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/vietnamese-culture`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/learning/cross-border-ecommerce`,
       priority: 0.8,
       changeFrequency: 'weekly' as const,
     },
@@ -504,7 +579,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // 2025 Academic Specialized Modules lesson pages  
+  // 2025 Academic Specialized Modules lesson pages
   const dataScienceAnalyticsPages = dataScienceLessons.map((lesson) => ({
     url: `${baseUrl}/learning/data-science-analytics/${lesson.id}`,
     lastModified,
@@ -534,6 +609,91 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Additional High-Priority Modules lesson pages
+  const aerospaceEngineeringPages = aerospaceEngineeringLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/aerospace-engineering/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const biomedicalEngineeringPages = biomedicalEngineeringLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/biomedical-engineering/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const foodTechnologyPages = foodTechnologyLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/food-technology/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const nanotechnologyPages = nanotechnologyLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/nanotechnology/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const electricVehicleTechPages = electricVehicleLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/electric-vehicle-tech/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const mentalHealthTechPages = mentalHealthLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/mental-health-tech/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const digitalGovernmentPages = digitalGovLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/digital-government/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const environmentalDataSciencePages = environmentalDataScienceLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/environmental-data-science/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const advancedAIPages = advancedAILessons.map((lesson) => ({
+    url: `${baseUrl}/learning/advanced-ai/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const contentCreatorPages = contentCreatorLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/content-creator/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const vietnameseCulturePages = vietnameseCultureLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/vietnamese-culture/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const crossBorderEcommercePages = crossBorderEcommerceLessons.map((lesson) => ({
+    url: `${baseUrl}/learning/cross-border-ecommerce/${lesson.id}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
   // Region pages
   const regionSlugs = [
     'bac-bo',
@@ -556,17 +716,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   // City pages - automatically generated from cities data with enhanced SEO
   const regularCityPages = citiesData
-    .filter(
-      (city) =>
-        ![
-          'ha-noi',
-          'ho-chi-minh',
-          'da-nang',
-          'hai-phong',
-          'can-tho',
-          'hue',
-        ].includes(city.slug),
-    )
+    .filter((city) => !['ha-noi', 'ho-chi-minh', 'da-nang', 'hai-phong', 'can-tho', 'hue'].includes(city.slug))
     .map((city) => ({
       url: `${baseUrl}/city/${city.slug}`,
       lastModified,
@@ -576,16 +726,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   // Add specific high-value city pages with higher priority
   const majorCityPages = citiesData
-    .filter((city) =>
-      [
-        'ha-noi',
-        'ho-chi-minh',
-        'da-nang',
-        'hai-phong',
-        'can-tho',
-        'hue',
-      ].includes(city.slug),
-    )
+    .filter((city) => ['ha-noi', 'ho-chi-minh', 'da-nang', 'hai-phong', 'can-tho', 'hue'].includes(city.slug))
     .map((city) => ({
       url: `${baseUrl}/city/${city.slug}`,
       lastModified,
@@ -635,6 +776,19 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     // 2025 Vietnam Niche Market Research Modules
     ...blueEconomyPages,
     ...smartManufacturingPages,
+    // Additional High-Priority Modules
+    ...aerospaceEngineeringPages,
+    ...biomedicalEngineeringPages,
+    ...foodTechnologyPages,
+    ...nanotechnologyPages,
+    ...electricVehicleTechPages,
+    ...mentalHealthTechPages,
+    ...digitalGovernmentPages,
+    ...environmentalDataSciencePages,
+    ...advancedAIPages,
+    ...contentCreatorPages,
+    ...vietnameseCulturePages,
+    ...crossBorderEcommercePages,
     ...regionPages,
     ...majorCityPages, // High priority cities first
     ...regularCityPages, // Regular cities
@@ -650,15 +804,7 @@ export function generateRobotsRules() {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/_next/',
-          '/admin/',
-          '*.json',
-          '/map-test/',
-          '/temp/',
-          '/private/',
-        ],
+        disallow: ['/api/', '/_next/', '/admin/', '*.json', '/map-test/', '/temp/', '/private/'],
         crawlDelay: 1, // Be nice to crawlers
       },
       {
@@ -694,7 +840,7 @@ export function generateRSSMetadata() {
   return {
     title: 'K2AI - Nền tảng học tập thông minh',
     description:
-      'Cập nhật mới nhất từ K2AI - 15+ module giáo dục: Địa lý Việt Nam, AI, Digital Marketing, Financial Literacy, Green Technology, Game Development, AI Art, Cybersecurity, Biotechnology, AI & Machine Learning, Quantum Computing, Blockchain Technology, Climate Science, Data Science, Space Exploration, Programming & Robotics, STEM, và nhiều hơn nữa',
+      'Cập nhật mới nhất từ K2AI - 50+ module giáo dục toàn diện: Địa lý Việt Nam, AI, Digital Marketing, Financial Literacy, Green Technology, Game Development, AI Art, Cybersecurity, Biotechnology, AI & Machine Learning, Quantum Computing, Blockchain Technology, Climate Science, Data Science, Space Exploration, Programming & Robotics, STEM, Aerospace Engineering, Biomedical Engineering, Food Technology, Nanotechnology, Electric Vehicle Tech, Mental Health Tech, Digital Government, Environmental Data Science, Advanced AI, Content Creator, Vietnamese Culture, Cross-border E-commerce, và nhiều module chuyên sâu khác',
     link: baseUrl,
     language: 'vi-VN',
     managingEditor: 'info@k2aihub.com',
