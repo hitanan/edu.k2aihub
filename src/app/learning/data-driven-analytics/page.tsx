@@ -66,6 +66,7 @@ export default function DataDrivenAnalyticsMainPage() {
       jobGrowth: '+25%',
       hireDemand: 'Cao'
     },
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     relatedModules: [
       K2Module.DigitalMarketing,
       K2Module.DataScienceAnalytics,

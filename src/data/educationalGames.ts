@@ -576,10 +576,22 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         connection: 'Thiết kế robot phục vụ các nhiệm vụ không gian',
       },
       {
-        moduleId: 'space-exploration',
-        lessonId: 'space-exploration-fundamentals',
-        title: 'Cơ Bản Khám Phá Vũ Trụ',
-        connection: 'Hiểu lịch sử và tương lai của khám phá vũ trụ',
+        moduleId: 'python',
+        lessonId: 'python-data-analysis',
+        title: 'Phân Tích Dữ Liệu với Python',
+        connection: 'Xử lý dữ liệu từ các nhiệm vụ thám hiểm vũ trụ',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Cảm Biến & Xử Lý Dữ Liệu Arduino',
+        connection: 'Lập trình điều khiển tàu vũ trụ và thu thập dữ liệu',
+      },
+      {
+        moduleId: 'ai-art-creative-tech',
+        lessonId: 'creative-ai-applications',
+        title: 'Ứng Dụng AI Sáng Tạo',
+        connection: 'Sử dụng AI để mô phỏng và thiết kế các nhiệm vụ vũ trụ',
       },
     ],
   },
@@ -2097,6 +2109,75 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'process-optimization',
         title: 'Tối Ưu Hóa Quy Trình',
         connection: 'Optimize chemical processes trong waste-to-energy plants',
+      }
+    ]
+  },
+
+  // 3D Robot Navigation Game - Advanced AI Pathfinding
+  {
+    id: 'robot-navigation-3d',
+    title: 'Robot Navigation 3D - Thế giới khối với AI dẫn đường',
+    description: 'Trải nghiệm game giáo dục 3D với robot thông minh sử dụng thuật toán A* pathfinding trong môi trường khối 3D tương tác như Minecraft.',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '45-60 phút',
+    skills: [
+      'Thuật toán A* pathfinding',
+      'Lập trình 3D với Three.js',
+      'Tư duy thuật toán',
+      'Không gian 3D và tọa độ',
+      'AI và robotics',
+      'WebGL rendering',
+      'Tối ưu hóa đường đi',
+      'Computer graphics'
+    ],
+    moduleType: 'Advanced Technology',
+    isInternal: true,
+    points: 150,
+    icon: '🤖',
+    color: 'from-blue-600 to-purple-600',
+    relatedLessons: [
+      {
+        moduleId: 'robotics',
+        lessonId: 'basic-robotics-intro',
+        title: 'Giới Thiệu Robotics Cơ Bản',
+        connection: 'Understand robot navigation fundamentals trong real-world applications',
+      },
+      {
+        moduleId: 'robotics', 
+        lessonId: 'robot-navigation-control',
+        title: 'Điều Khiển Và Dẫn Đường Robot',
+        connection: 'Learn pathfinding algorithms và obstacle avoidance trong robotics',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'ai-fundamentals',
+        title: 'AI Cơ Bản',
+        connection: 'Discover AI algorithms like A* used trong intelligent navigation systems',
+      },
+      {
+        moduleId: 'programming-robotics',
+        lessonId: 'advanced-algorithms',
+        title: 'Thuật Toán Nâng Cao',
+        connection: 'Implement pathfinding algorithms trong robotic systems',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'algorithms-data-structures',
+        title: 'Thuật Toán Và Cấu Trúc Dữ Liệu',
+        connection: 'Apply graph algorithms và heuristics trong navigation problems',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-advanced-projects',
+        title: 'Dự Án Arduino Nâng Cao',
+        connection: 'Create real-world robot navigation systems với microcontrollers',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'engineering-challenges',
+        title: 'Thách Thức Kỹ Thuật',
+        connection: 'Apply engineering design process trong autonomous robot development',
       }
     ]
   }

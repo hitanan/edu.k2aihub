@@ -8,6 +8,18 @@ applyTo: '**'
 
 This instruction guide provides comprehensive guidance for creating standardized, dynamic module pages using the K2AiHub template system. All learning modules MUST follow this architecture for consistency, maintainability, and optimal user experience.
 
+### 📺 Default Media Resources
+
+**Default YouTube Video**: `https://www.youtube.com/watch?v=vd2dtkMINIw` (Learning How to Learn by Barbara Oakley)
+- Use this video as default for all new lessons if no specific video is provided
+- This video is educational, widely applicable, and safe for all age groups
+- Content: Introduction to effective learning techniques and strategies
+
+**Default Hero Image**: `https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop`
+- Use this image as default heroImageUrl for all modules if not specified
+- Professional education/technology themed image
+- High quality and royalty-free from Unsplash
+
 ## 📚 Template Architecture
 
 ### Core Template Components

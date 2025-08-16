@@ -157,7 +157,7 @@ export const ROBOTICS_LEVELS: RoboticsLevel[] = [
     name: 'Hình chữ L',
     difficulty: 'Dễ',
     algorithm: 'BFS',
-    grid: createGrid(7, 5, [
+    grid: createGrid(5, 7, [
       [2, 0],
       [2, 1],
       [2, 2],

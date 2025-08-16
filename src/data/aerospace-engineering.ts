@@ -16,9 +16,8 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Comprehensive aircraft design principles, aerodynamic theory, và flight mechanics. Focus trên Vietnamese aviation industry development và opportunities với Vietnam Airlines, Vietjet, và emerging aerospace sector.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master fundamental aerodynamic principles và airflow analysis',
       'Understand aircraft design process từ conceptual design đến detailed engineering',
@@ -60,8 +59,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       },
       {
         title: 'UAV System Development for Vietnamese Applications',
-        description:
-          'Design unmanned aerial vehicle system cho Vietnamese agriculture monitoring và disaster response',
+        description: 'Design unmanned aerial vehicle system cho Vietnamese agriculture monitoring và disaster response',
         difficulty: 'Nâng cao',
         materials: [
           'UAV design platforms và simulation software',
@@ -78,8 +76,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
           'Test flight operations trong simulated Vietnamese environments',
           'Validate system performance cho operational deployment',
         ],
-        expectedResults:
-          'Functional UAV system ready cho Vietnamese agriculture và emergency response applications',
+        expectedResults: 'Functional UAV system ready cho Vietnamese agriculture và emergency response applications',
         solution:
           'Comprehensive UAV development addresses specific Vietnamese operational needs với reliable autonomous capabilities',
       },
@@ -171,9 +168,8 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Advanced satellite systems design, orbital mechanics, và space communication technology. Explore Vietnamese space program development và satellite applications cho telecommunications và Earth observation.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master satellite orbital mechanics và space mission design principles',
       'Understand satellite communication systems và signal processing',
@@ -275,8 +271,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
         organization: 'Vietnam Maritime Administration',
         problem:
           'Improving communication coverage cho Vietnamese fishing fleet và maritime safety trong South China Sea',
-        solution:
-          'Implemented satellite communication systems providing reliable connectivity cho maritime operations',
+        solution: 'Implemented satellite communication systems providing reliable connectivity cho maritime operations',
         impact:
           'Enhanced maritime safety, improved fisheries management, strengthened sovereignty monitoring capabilities',
         innovations: [
@@ -312,9 +307,8 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Comprehensive space mission design, systems engineering approach, và project management cho space programs. Focus trên Vietnamese space industry development và international collaboration opportunities.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master space mission design methodology và systems engineering principles',
       'Understand space project management và risk assessment techniques',
@@ -349,8 +343,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
           'Evaluate international partnership opportunities',
           'Assess technical readiness và required capability development',
         ],
-        expectedResults:
-          'Comprehensive feasibility analysis supporting Vietnamese space program strategic planning',
+        expectedResults: 'Comprehensive feasibility analysis supporting Vietnamese space program strategic planning',
         solution:
           'Systematic mission analysis provides roadmap cho Vietnamese lunar exploration capabilities development',
       },
@@ -374,8 +367,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
           'Develop ground segment infrastructure requirements',
           'Create mission operations concept và lifecycle management',
         ],
-        expectedResults:
-          'Complete microsatellite constellation mission design ready cho implementation',
+        expectedResults: 'Complete microsatellite constellation mission design ready cho implementation',
         solution:
           'Innovative constellation approach enables Vietnamese IoT connectivity với cost-effective space infrastructure',
       },
@@ -460,9 +452,8 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Advanced avionics systems design, flight control algorithms, và navigation technology. Cover modern aircraft systems integration, autonomous flight capabilities, và Vietnamese aviation technology development.',
     duration: '165 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master avionics systems architecture và integration principles',
       'Understand flight control system design và stability analysis',
@@ -479,8 +470,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
     exercises: [
       {
         title: 'Flight Management System Development',
-        description:
-          'Design advanced flight management system optimized cho Vietnamese regional aircraft operations',
+        description: 'Design advanced flight management system optimized cho Vietnamese regional aircraft operations',
         difficulty: 'Nâng cao',
         materials: [
           'Flight simulation software',
@@ -497,15 +487,12 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
           'Integrate autopilot và autothrottle control systems',
           'Validate system performance trong realistic flight scenarios',
         ],
-        expectedResults:
-          'Functional flight management system meeting Vietnamese aviation operational requirements',
-        solution:
-          'Integrated avionics approach enhances flight safety và efficiency cho Vietnamese regional aviation',
+        expectedResults: 'Functional flight management system meeting Vietnamese aviation operational requirements',
+        solution: 'Integrated avionics approach enhances flight safety và efficiency cho Vietnamese regional aviation',
       },
       {
         title: 'UAV Autonomous Flight Control System',
-        description:
-          'Develop autonomous flight control system cho Vietnamese agriculture monitoring UAV',
+        description: 'Develop autonomous flight control system cho Vietnamese agriculture monitoring UAV',
         difficulty: 'Nâng cao',
         materials: [
           'UAV flight control hardware',
@@ -522,8 +509,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
           'Integrate fail-safe systems và emergency procedures',
           'Test autonomous operations trong agricultural environments',
         ],
-        expectedResults:
-          'Reliable autonomous UAV system capable của independent agricultural monitoring missions',
+        expectedResults: 'Reliable autonomous UAV system capable của independent agricultural monitoring missions',
         solution:
           'Advanced autonomous capabilities enable efficient agricultural monitoring với minimal human intervention',
       },
@@ -546,8 +532,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       {
         title: 'Vietnam Airlines Avionics Modernization',
         organization: 'Vietnam Airlines Technical Company',
-        problem:
-          'Upgrading aging aircraft avionics systems để meet modern performance và safety requirements',
+        problem: 'Upgrading aging aircraft avionics systems để meet modern performance và safety requirements',
         solution:
           'Implemented comprehensive avionics modernization program với glass cockpit upgrades và enhanced navigation systems',
         impact:

@@ -1,298 +1,810 @@
-##. **🤖 Điều hướng Robot**
+# 🤖 3D Robot Navigation - Minecraft-Inspired Block World
 
-- **Khả năng 3D**: ⭐⭐⭐⭐⭐
-- **Lý do**: Robot di chuyển trong không gian 3D
-- **Công nghệ**: Three.js + A\* pathfinding
-- **Tính năng 3D**:
-  - Mê cung 3D với vật cản đa dạng
-  - Robot 3D với animation di chuyển
-  - Camera theo robot hoặc overview
-  - Particle effects khi robot thành công
-  - Multiple levels với độ khó tăng dần
-
-**Deliverables**:
-
-- 3D game framework reusable
-- 2 games hoàn chỉnh với mobile support
-- Performance benchmarks
-- User testing results
-
-## **Shared Technologies**:
-
-- **Game Engine**: React + TypeScript
-- **3D Graphics**: Three.js + React Three Fiber
-- **Animation**: Framer Motion
-- **State Management**: Zustand
-- **Audio**: Web Audio API
-- **Persistence**: LocalStorage + IndexedDB
-- **Analytics**: Custom game tracking
-
-### **Performance Standards**:
-
-- **Load Time**: <3 seconds trên 4G
-- **Frame Rate**: 60fps consistent
-- **Memory Usage**: <256MB trên mobile
-- **Offline Support**: Core gameplay available offline
+**Technical Foundation**: Three.js + React + TypeScript
+**Inspiration**: Minecraft block-based world with robotic AI pathfinding
 
 ---
 
-## 📊 Gamification System
+## 🎯 Project Overview
 
-### **Universal Progression**:
+### **Vision**
+Create an immersive 3D block-based world where students control robots to navigate complex terrains, solve puzzles, and learn pathfinding algorithms through hands-on interaction.
 
-- **XP System**: 100 XP per game completion
-- **Levels**: 50 levels, unlocking new games
-- **Badges**: 150+ achievements across all games
-- **Leaderboards**: Daily, weekly, monthly
-
-### **Engagement Features**:
-
-- **Daily Challenges**: Rotating across all games
-- **Streak Bonuses**: Login và completion streaks
-- **Seasonal Events**: Vietnamese holidays integration
-- **Social Features**: Share achievements, compete với friends
-
-### **Assessment Integration**:
-
-- **Competency Tracking**: Map to Vietnamese curriculum
-- **Teacher Dashboard**: Progress tracking for educators
-- **Parent Reports**: Weekly progress summary
-- **Adaptive Difficulty**: AI-powered difficulty adjustment
-
-### **Phase 2: Q2 2025 - Advanced Features (Tháng 4-6)**
-
-**Mục tiêu**: Nâng cao tính tương tác và realism
-
-**Games ưu tiên**: 3. **Xây dựng mạng Neural 3D** (5 tuần) 4. **Khám phá Vũ trụ 3D** (7 tuần)
-
-**Advanced Features**:
-
-- WebXR support (VR/AR ready)
-- Real-time multiplayer capability
-- Advanced physics simulation
-- AI-driven content generation
-
-### **Phase 3: Q3 2025 - Production & Scale (Tháng 7-9)**
-
-**Mục tiêu**: Production deployment và scale
-
-**Games ưu tiên**: 5. **Phòng thí nghiệm STEM 3D** (6 tuần) 6. **Mô hình khí hậu 3D** (6 tuần)
-
-**Production Features**:
-
-- CDN optimization for 3D assets
-- Progressive loading for mobile
-- Analytics và performance monitoring
-- A/B testing framework
-
-### **Phase 4: Q4 2025 - Innovation (Tháng 10-12)**
-
-**Mục tiêu**: Innovative features và market expansion
-
-**Features**:
-
-- AI-generated 3D content
-- Voice interaction trong VR
-- Haptic feedback support
-- Social features (multiplayer collaboration)
+### **Core Concept**
+- **3D Block World**: Minecraft-inspired voxel-based environment
+- **Intelligent Robots**: AI-powered characters with visible pathfinding
+- **Interactive Building**: Students can modify terrain and create challenges
+- **Real-time Physics**: Gravity, collision detection, and realistic movement
+- **Educational Focus**: Learn algorithms through visual, interactive gameplay
 
 ---
 
-## 🎯 Target Metrics (End of 2025)
+## 🔧 Technical Implementation Guide
 
-### **Technical Performance**:
+### **1. Initialize 3D Block Grid System**
 
-- **Load Time**: <5s on 4G mobile
-- **FPS**: 60fps on mid-range devices
-- **Memory Usage**: <512MB peak
-- **Battery Impact**: <20% increase
+#### **Grid Architecture**
+```javascript
+// Core 3D World Structure
+class BlockWorld {
+  constructor(width, height, depth) {
+    this.dimensions = { width, height, depth };
+    this.blocks = new Map(); // Sparse storage for efficiency
+    this.scene = new THREE.Scene();
+    this.camera = new THREE.PerspectiveCamera();
+    this.renderer = new THREE.WebGLRenderer();
+  }
 
-### **User Engagement**:
+  // Convert 3D coordinates to unique key
+  coordsToKey(x, y, z) {
+    return `${x},${y},${z}`;
+  }
 
-- **Session Time**: 15+ minutes average
-- **Return Rate**: 70% weekly return
-- **Completion Rate**: 85% game completion
-- **NPS Score**: 8.5+
+  // Add block at position
+  setBlock(x, y, z, blockType) {
+    const key = this.coordsToKey(x, y, z);
+    this.blocks.set(key, {
+      type: blockType,
+      position: { x, y, z },
+      mesh: this.createBlockMesh(blockType)
+    });
+  }
 
-### **Educational Impact**:
-
-- **Learning Retention**: +65% vs 2D
-- **Concept Understanding**: +40% improvement
-- **Student Satisfaction**: 90%+ positive feedback
-- **Teacher Adoption**: 500+ schools using
-
----
-
-## 🔧 Technical Implementation Strategy
-
-### **Architecture**:
-
-```
-src/
-├── components/
-│   └── games/
-│       └── 3d/
-│           ├── ThreeGameEngine.tsx     # Core 3D engine
-│           ├── PhysicsWorld.tsx        # Physics simulation
-│           ├── AssetsLoader.tsx        # 3D asset management
-│           └── PerformanceMonitor.tsx  # Performance tracking
-├── games/
-│   ├── robot-navigation-3d/           # Dedicated folder per game
-│   │   ├── components/
-│   │   ├── assets/
-│   │   ├── physics/
-│   │   └── game-logic/
-│   ├── arduino-circuit-3d/ # built later
-│   └── neural-network-3d/ # built later
-└── utils/
-    ├── 3d-helpers/
-    ├── performance/
-    └── analytics/
+  // Remove block
+  removeBlock(x, y, z) {
+    const key = this.coordsToKey(x, y, z);
+    const block = this.blocks.get(key);
+    if (block) {
+      this.scene.remove(block.mesh);
+      this.blocks.delete(key);
+    }
+  }
+}
 ```
 
-### **Performance Optimization**:
+#### **Block Types and Materials**
+```javascript
+// Block Material System
+const BLOCK_TYPES = {
+  AIR: { id: 0, color: 0x000000, transparent: true },
+  STONE: { id: 1, color: 0x808080, texture: 'stone.jpg' },
+  GRASS: { id: 2, color: 0x00ff00, texture: 'grass.jpg' },
+  WATER: { id: 3, color: 0x0066ff, transparent: true },
+  OBSTACLE: { id: 4, color: 0x654321, texture: 'wood.jpg' },
+  TARGET: { id: 5, color: 0xffff00, emissive: true }
+};
 
-- **Level-of-Detail (LOD)**: Automatic quality scaling
-- **Occlusion Culling**: Hide objects not in view
-- **Asset Streaming**: Progressive loading
-- **Mobile Optimization**: Reduced polygon count
-- **WebWorkers**: Physics calculation offloading
+function createBlockMesh(blockType) {
+  const geometry = new THREE.BoxGeometry(1, 1, 1);
+  const material = new THREE.MeshLambertMaterial({
+    color: blockType.color,
+    transparent: blockType.transparent || false,
+    opacity: blockType.transparent ? 0.7 : 1.0
+  });
+  
+  return new THREE.Mesh(geometry, material);
+}
+```
 
-### **Cross-Platform Strategy**:
+### **2. Character Movement and Camera Control**
 
-- **Desktop**: Full 3D experience với keyboard/mouse
-- **Mobile**: Touch-optimized 3D controls
+#### **Robot Character System**
+```javascript
+class Robot {
+  constructor(scene, startPosition) {
+    this.position = startPosition;
+    this.targetPosition = startPosition;
+    this.isMoving = false;
+    this.path = [];
+    this.currentPathIndex = 0;
+    
+    // Create 3D robot model
+    this.mesh = this.createRobotMesh();
+    scene.add(this.mesh);
+    
+    // Animation mixer for smooth movement
+    this.mixer = new THREE.AnimationMixer(this.mesh);
+  }
+
+  createRobotMesh() {
+    const group = new THREE.Group();
+    
+    // Robot body (blue cube)
+    const bodyGeometry = new THREE.BoxGeometry(0.6, 0.8, 0.4);
+    const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x0066ff });
+    const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+    body.position.y = 0.4;
+    group.add(body);
+    
+    // Robot head (smaller cube)
+    const headGeometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
+    const headMaterial = new THREE.MeshLambertMaterial({ color: 0x0088ff });
+    const head = new THREE.Mesh(headGeometry, headMaterial);
+    head.position.y = 1.0;
+    group.add(head);
+    
+    // Eyes (glowing spheres)
+    const eyeGeometry = new THREE.SphereGeometry(0.05);
+    const eyeMaterial = new THREE.MeshBasicMaterial({ 
+      color: 0xffffff, 
+      emissive: 0xffffff,
+      emissiveIntensity: 0.5 
+    });
+    
+    const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+    leftEye.position.set(-0.1, 1.05, 0.15);
+    group.add(leftEye);
+    
+    const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+    rightEye.position.set(0.1, 1.05, 0.15);
+    group.add(rightEye);
+    
+    return group;
+  }
+
+  // Smooth movement animation
+  moveTo(targetPosition, duration = 1000) {
+    if (this.isMoving) return false;
+    
+    this.isMoving = true;
+    this.targetPosition = targetPosition;
+    
+    // Create smooth movement tween
+    const startPosition = this.position.clone();
+    const tween = new TWEEN.Tween(startPosition)
+      .to(targetPosition, duration)
+      .easing(TWEEN.Easing.Quadratic.InOut)
+      .onUpdate((pos) => {
+        this.mesh.position.copy(pos);
+      })
+      .onComplete(() => {
+        this.position = targetPosition;
+        this.isMoving = false;
+      });
+    
+    tween.start();
+    return true;
+  }
+}
+```
+
+#### **3D Camera System**
+```javascript
+class CameraController {
+  constructor(camera, robot) {
+    this.camera = camera;
+    this.robot = robot;
+    this.mode = 'follow'; // 'follow', 'overview', 'first-person'
+    this.offset = new THREE.Vector3(5, 8, 5);
+  }
+
+  update() {
+    switch(this.mode) {
+      case 'follow':
+        // Camera follows robot with offset
+        const targetPos = this.robot.position.clone().add(this.offset);
+        this.camera.position.lerp(targetPos, 0.1);
+        this.camera.lookAt(this.robot.position);
+        break;
+        
+      case 'overview':
+        // Top-down overview of entire level
+        this.camera.position.set(0, 20, 0);
+        this.camera.lookAt(0, 0, 0);
+        break;
+        
+      case 'first-person':
+        // First-person view from robot
+        this.camera.position.copy(this.robot.position);
+        this.camera.position.y += 1.5;
+        break;
+    }
+  }
+}
+```
+
+### **3. Block Placement and Removal System**
+
+#### **Interactive Building System**
+```javascript
+class BuildingSystem {
+  constructor(world, camera, renderer) {
+    this.world = world;
+    this.camera = camera;
+    this.renderer = renderer;
+    this.raycaster = new THREE.Raycaster();
+    this.mouse = new THREE.Vector2();
+    this.selectedBlockType = BLOCK_TYPES.STONE;
+    
+    // Visual feedback for building
+    this.previewMesh = null;
+    this.initPreview();
+  }
+
+  initPreview() {
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.5
+    });
+    this.previewMesh = new THREE.Mesh(geometry, material);
+  }
+
+  onMouseMove(event) {
+    // Update mouse coordinates
+    this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    
+    // Raycast to find intersection
+    this.raycaster.setFromCamera(this.mouse, this.camera);
+    const intersects = this.raycaster.intersectObjects(this.world.scene.children);
+    
+    if (intersects.length > 0) {
+      const point = intersects[0].point;
+      const face = intersects[0].face;
+      
+      // Position preview at grid-aligned position
+      const gridPos = this.worldToGrid(point, face);
+      this.previewMesh.position.copy(gridPos);
+      this.world.scene.add(this.previewMesh);
+    }
+  }
+
+  onMouseClick(event) {
+    const intersects = this.raycaster.intersectObjects(this.world.scene.children);
+    
+    if (intersects.length > 0) {
+      const point = intersects[0].point;
+      const face = intersects[0].face;
+      const gridPos = this.worldToGrid(point, face);
+      
+      if (event.button === 0) { // Left click - place block
+        this.world.setBlock(gridPos.x, gridPos.y, gridPos.z, this.selectedBlockType);
+      } else if (event.button === 2) { // Right click - remove block
+        this.world.removeBlock(gridPos.x, gridPos.y, gridPos.z);
+      }
+      
+      // Recalculate pathfinding grid after modification
+      this.world.updatePathfindingGrid();
+    }
+  }
+
+  worldToGrid(worldPos, face) {
+    // Convert world position to grid coordinates
+    const gridPos = new THREE.Vector3(
+      Math.floor(worldPos.x + 0.5),
+      Math.floor(worldPos.y + 0.5),
+      Math.floor(worldPos.z + 0.5)
+    );
+    
+    // Offset based on face normal for placement
+    if (face) {
+      gridPos.add(face.normal);
+    }
+    
+    return gridPos;
+  }
+}
+```
+
+### **4. 3D Pathfinding Integration**
+
+#### **A* Algorithm for 3D Space**
+```javascript
+class Pathfinding3D {
+  constructor(world) {
+    this.world = world;
+    this.openSet = [];
+    this.closedSet = new Set();
+  }
+
+  findPath(start, goal) {
+    this.openSet = [start];
+    this.closedSet.clear();
+    
+    const gScore = new Map();
+    const fScore = new Map();
+    const cameFrom = new Map();
+    
+    gScore.set(this.coordKey(start), 0);
+    fScore.set(this.coordKey(start), this.heuristic(start, goal));
+    
+    while (this.openSet.length > 0) {
+      // Find node with lowest fScore
+      const current = this.openSet.reduce((a, b) => 
+        fScore.get(this.coordKey(a)) < fScore.get(this.coordKey(b)) ? a : b
+      );
+      
+      if (this.coordsEqual(current, goal)) {
+        return this.reconstructPath(cameFrom, current);
+      }
+      
+      this.openSet = this.openSet.filter(node => !this.coordsEqual(node, current));
+      this.closedSet.add(this.coordKey(current));
+      
+      // Check all neighbors (6 directions in 3D)
+      const neighbors = this.getNeighbors(current);
+      
+      for (const neighbor of neighbors) {
+        const neighborKey = this.coordKey(neighbor);
+        
+        if (this.closedSet.has(neighborKey)) continue;
+        if (!this.isWalkable(neighbor)) continue;
+        
+        const tentativeGScore = gScore.get(this.coordKey(current)) + 1;
+        
+        if (!this.openSet.some(node => this.coordsEqual(node, neighbor))) {
+          this.openSet.push(neighbor);
+        } else if (tentativeGScore >= gScore.get(neighborKey)) {
+          continue;
+        }
+        
+        cameFrom.set(neighborKey, current);
+        gScore.set(neighborKey, tentativeGScore);
+        fScore.set(neighborKey, tentativeGScore + this.heuristic(neighbor, goal));
+      }
+    }
+    
+    return []; // No path found
+  }
+
+  getNeighbors(pos) {
+    return [
+      { x: pos.x + 1, y: pos.y, z: pos.z },
+      { x: pos.x - 1, y: pos.y, z: pos.z },
+      { x: pos.x, y: pos.y + 1, z: pos.z },
+      { x: pos.x, y: pos.y - 1, z: pos.z },
+      { x: pos.x, y: pos.y, z: pos.z + 1 },
+      { x: pos.x, y: pos.y, z: pos.z - 1 }
+    ];
+  }
+
+  heuristic(a, b) {
+    // Manhattan distance in 3D
+    return Math.abs(a.x - b.x) + Math.abs(a.y - b.y) + Math.abs(a.z - b.z);
+  }
+
+  isWalkable(pos) {
+    const blockKey = this.world.coordsToKey(pos.x, pos.y, pos.z);
+    const block = this.world.blocks.get(blockKey);
+    return !block || block.type === BLOCK_TYPES.AIR;
+  }
+}
+```
+
+### **5. Advanced 3D Rendering Techniques**
+
+#### **Optimized Chunk System**
+```javascript
+class ChunkSystem {
+  constructor(world, chunkSize = 16) {
+    this.world = world;
+    this.chunkSize = chunkSize;
+    this.chunks = new Map();
+    this.visibleChunks = new Set();
+  }
+
+  // Generate optimized mesh for chunk using greedy meshing
+  generateChunkMesh(chunkCoords) {
+    const geometry = new THREE.BufferGeometry();
+    const vertices = [];
+    const indices = [];
+    const colors = [];
+    
+    // Greedy meshing algorithm to reduce polygon count
+    const faces = this.generateFaces(chunkCoords);
+    
+    faces.forEach((face, index) => {
+      const vertexOffset = vertices.length / 3;
+      
+      // Add face vertices
+      face.vertices.forEach(vertex => {
+        vertices.push(...vertex);
+        colors.push(...face.color);
+      });
+      
+      // Add face indices
+      indices.push(
+        vertexOffset, vertexOffset + 1, vertexOffset + 2,
+        vertexOffset + 2, vertexOffset + 3, vertexOffset
+      );
+    });
+    
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    geometry.setIndex(indices);
+    geometry.computeNormals();
+    
+    const material = new THREE.MeshLambertMaterial({ 
+      vertexColors: true,
+      transparent: true
+    });
+    
+    return new THREE.Mesh(geometry, material);
+  }
+
+  // Level-of-Detail (LOD) system
+  updateLOD(cameraPosition) {
+    this.chunks.forEach((chunk, key) => {
+      const distance = chunk.center.distanceTo(cameraPosition);
+      
+      if (distance < 50) {
+        chunk.lod = 0; // High detail
+      } else if (distance < 100) {
+        chunk.lod = 1; // Medium detail
+      } else {
+        chunk.lod = 2; // Low detail
+      }
+      
+      this.updateChunkMesh(key, chunk.lod);
+    });
+  }
+}
+```
+
+#### **Particle Effects and Visual Feedback**
+```javascript
+class ParticleSystem {
+  constructor(scene) {
+    this.scene = scene;
+    this.systems = [];
+  }
+
+  // Create path visualization particles
+  visualizePath(path) {
+    const geometry = new THREE.BufferGeometry();
+    const positions = [];
+    const colors = [];
+    
+    path.forEach((point, index) => {
+      positions.push(point.x, point.y + 0.5, point.z);
+      
+      // Color gradient from green to red
+      const t = index / path.length;
+      colors.push(1 - t, t, 0);
+    });
+    
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    
+    const material = new THREE.PointsMaterial({
+      size: 0.3,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.8
+    });
+    
+    const particles = new THREE.Points(geometry, material);
+    this.scene.add(particles);
+    
+    // Animate particles
+    this.animatePathParticles(particles);
+  }
+
+  // Success celebration effects
+  createSuccessEffect(position) {
+    const particleCount = 100;
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const velocities = new Float32Array(particleCount * 3);
+    
+    for (let i = 0; i < particleCount; i++) {
+      const i3 = i * 3;
+      positions[i3] = position.x;
+      positions[i3 + 1] = position.y;
+      positions[i3 + 2] = position.z;
+      
+      velocities[i3] = (Math.random() - 0.5) * 10;
+      velocities[i3 + 1] = Math.random() * 15;
+      velocities[i3 + 2] = (Math.random() - 0.5) * 10;
+    }
+    
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('velocity', new THREE.BufferAttribute(velocities, 3));
+    
+    const material = new THREE.PointsMaterial({
+      color: 0xffd700,
+      size: 0.2,
+      transparent: true
+    });
+    
+    const particles = new THREE.Points(geometry, material);
+    this.scene.add(particles);
+    
+    // Animate explosion
+    this.animateExplosion(particles);
+  }
+}
+```
+
+---
+
+## 🎮 Game Features Implementation
+
+### **Progressive Difficulty System**
+```javascript
+const LEVEL_PROGRESSION = {
+  BEGINNER: {
+    worldSize: { x: 8, y: 4, z: 8 },
+    obstacles: 15,
+    features: ['basic_navigation', 'simple_blocks']
+  },
+  INTERMEDIATE: {
+    worldSize: { x: 16, y: 8, z: 16 },
+    obstacles: 40,
+    features: ['moving_platforms', 'switches', 'keys']
+  },
+  ADVANCED: {
+    worldSize: { x: 32, y: 16, z: 32 },
+    obstacles: 100,
+    features: ['multiple_robots', 'collaborative_tasks', 'time_limits']
+  },
+  EXPERT: {
+    worldSize: { x: 64, y: 32, z: 64 },
+    obstacles: 250,
+    features: ['dynamic_environment', 'ai_opponents', 'resource_management']
+  }
+};
+```
+
+### **Crafting and Inventory System**
+```javascript
+class InventorySystem {
+  constructor() {
+    this.items = new Map();
+    this.recipes = new Map();
+    this.initializeRecipes();
+  }
+
+  initializeRecipes() {
+    // Robot upgrade recipes
+    this.recipes.set('speed_boost', {
+      ingredients: [
+        { type: 'energy_cell', count: 2 },
+        { type: 'circuit_board', count: 1 }
+      ],
+      result: { type: 'speed_module', properties: { speedMultiplier: 1.5 } }
+    });
+
+    this.recipes.set('pathfinding_upgrade', {
+      ingredients: [
+        { type: 'processor_chip', count: 1 },
+        { type: 'memory_stick', count: 2 }
+      ],
+      result: { type: 'ai_module', properties: { algorithmUpgrade: 'A*' } }
+    });
+  }
+
+  craft(recipeId) {
+    const recipe = this.recipes.get(recipeId);
+    if (!recipe) return false;
+
+    // Check if player has required ingredients
+    const hasIngredients = recipe.ingredients.every(ingredient => 
+      this.getItemCount(ingredient.type) >= ingredient.count
+    );
+
+    if (!hasIngredients) return false;
+
+    // Consume ingredients
+    recipe.ingredients.forEach(ingredient => 
+      this.removeItem(ingredient.type, ingredient.count)
+    );
+
+    // Add result to inventory
+    this.addItem(recipe.result.type, 1, recipe.result.properties);
+    return true;
+  }
+}
+```
+
+---
+
+## 🚀 Performance Optimization
+
+### **Efficient Rendering Pipeline**
+```javascript
+class RenderOptimizer {
+  constructor(renderer, scene, camera) {
+    this.renderer = renderer;
+    this.scene = scene;
+    this.camera = camera;
+    this.frustum = new THREE.Frustum();
+    this.cameraMatrix = new THREE.Matrix4();
+  }
+
+  // Frustum culling - only render visible objects
+  updateVisibility() {
+    this.cameraMatrix.multiplyMatrices(
+      this.camera.projectionMatrix, 
+      this.camera.matrixWorldInverse
+    );
+    this.frustum.setFromProjectionMatrix(this.cameraMatrix);
+
+    this.scene.traverse((object) => {
+      if (object.isMesh) {
+        object.visible = this.frustum.intersectsObject(object);
+      }
+    });
+  }
+
+  // Occlusion culling - hide objects behind others
+  performOcclusionCulling() {
+    // Simplified occlusion culling
+    const raycaster = new THREE.Raycaster();
+    
+    this.scene.children.forEach(object => {
+      if (object.isMesh && object.visible) {
+        const direction = object.position.clone().sub(this.camera.position).normalize();
+        raycaster.set(this.camera.position, direction);
+        
+        const intersects = raycaster.intersectObjects(this.scene.children);
+        object.visible = intersects.length === 0 || intersects[0].object === object;
+      }
+    });
+  }
+
+  // Dynamic LOD based on distance
+  updateLevelOfDetail() {
+    this.scene.children.forEach(object => {
+      if (object.userData.lodLevels) {
+        const distance = object.position.distanceTo(this.camera.position);
+        
+        let lodLevel = 0;
+        if (distance > 100) lodLevel = 2;
+        else if (distance > 50) lodLevel = 1;
+        
+        // Switch geometry based on LOD level
+        object.geometry = object.userData.lodLevels[lodLevel];
+      }
+    });
+  }
+}
+```
+
+### **Memory Management**
+```javascript
+class ResourceManager {
+  constructor() {
+    this.geometryCache = new Map();
+    this.materialCache = new Map();
+    this.textureCache = new Map();
+  }
+
+  // Geometry instancing for repeated blocks
+  getSharedGeometry(type) {
+    if (!this.geometryCache.has(type)) {
+      this.geometryCache.set(type, new THREE.BoxGeometry(1, 1, 1));
+    }
+    return this.geometryCache.get(type);
+  }
+
+  // Material sharing
+  getSharedMaterial(properties) {
+    const key = JSON.stringify(properties);
+    if (!this.materialCache.has(key)) {
+      this.materialCache.set(key, new THREE.MeshLambertMaterial(properties));
+    }
+    return this.materialCache.get(key);
+  }
+
+  // Cleanup unused resources
+  cleanup() {
+    this.geometryCache.forEach((geometry, key) => {
+      if (geometry.userData.refCount === 0) {
+        geometry.dispose();
+        this.geometryCache.delete(key);
+      }
+    });
+
+    this.materialCache.forEach((material, key) => {
+      if (material.userData.refCount === 0) {
+        material.dispose();
+        this.materialCache.delete(key);
+      }
+    });
+  }
+}
+```
+
+---
+
+## 🎯 Educational Integration
+
+### **Algorithm Visualization**
+- **Real-time pathfinding**: Show A*, Dijkstra, and BFS algorithms in action
+- **Performance comparison**: Visual metrics comparing algorithm efficiency
+- **Interactive debugging**: Step through algorithm execution
+- **Custom challenges**: Students create their own maze challenges
+
+### **Learning Outcomes**
+- **Spatial reasoning**: 3D navigation and orientation
+- **Problem-solving**: Complex maze navigation strategies  
+- **Programming concepts**: Algorithm understanding through visualization
+- **Physics principles**: Gravity, collision, and movement mechanics
+
+### **Assessment Tools**
+- **Performance metrics**: Track student progress and problem-solving speed
+- **Creative projects**: Students build and share custom 3D challenges
+- **Collaborative learning**: Team-based maze solving competitions
+- **Adaptive difficulty**: AI-powered adjustment based on student performance
+
+---
+
+## 📊 Technical Specifications
+
+### **Performance Targets**
+- **Frame Rate**: Consistent 60fps on mid-range devices
+- **Load Time**: <3 seconds for level initialization
+- **Memory Usage**: <512MB peak usage
+- **Polygon Count**: <50k triangles for mobile compatibility
+
+### **Platform Support**
+- **Desktop**: Full feature set with keyboard/mouse controls
+- **Mobile**: Touch-optimized interface with gesture controls
 - **Tablet**: Enhanced UI for larger screens
-- **VR Headsets**: Immersive WebXR experience
+- **WebXR**: VR/AR ready for immersive experience
+
+### **Browser Compatibility**
+- **Chrome 90+**: Full WebGL 2.0 support
+- **Firefox 88+**: Hardware acceleration enabled
+- **Safari 14+**: WebGL optimization for iOS
+- **Edge 90+**: Windows performance optimization
 
 ---
 
-## 📊 Market Research Insights
+## 🚀 Development Roadmap
 
-### **Competitor Analysis**:
+### **Phase 1: Foundation (4 weeks)**
+- Basic 3D block world with primitive shapes
+- Simple robot movement and pathfinding
+- Core camera system and controls
+- Performance baseline establishment
 
-1. **Khan Academy**: Chưa có 3D interactive games
-2. **Coursera**: Limited 3D visualization
-3. **Duolingo**: 2D games only
-4. **Brilliant**: Some 3D math visualization
+### **Phase 2: Interaction (6 weeks)**  
+- Interactive building system
+- Advanced pathfinding algorithms
+- Particle effects and visual feedback
+- Mobile touch controls implementation
 
-**Competitive Advantage**:
+### **Phase 3: Enhancement (8 weeks)**
+- Complex level generation system
+- Multiplayer collaborative features
+- Advanced graphics and shader effects
+- Educational content integration
 
-- First Vietnamese platform với comprehensive 3D educational games
-- Focus on STEM subjects với hands-on experience
-- Mobile-first 3D optimization
-- Integration với existing K2AI ecosystem
-
-### **User Research** (Survey 500 students):
-
-- **90%** muốn thử 3D educational games
-- **85%** cho rằng 3D giúp hiểu bài tốt hơn
-- **78%** sẵn sàng spend more time với 3D content
-- **82%** recommend 3D games cho bạn bè
-
----
-
-## 🎯 Success Criteria
-
-### **Phase 1 Success**:
-
-- [ ] 2 games 3D hoàn chỉnh và stable
-- [ ] Mobile performance đạt target
-- [ ] User feedback score >8.0/10
-- [ ] Technical framework reusable
-
-### **Year-end Success**:
-
-- [ ] 6 games 3D trong production
-- [ ] 10,000+ monthly active users
-- [ ] 500+ schools adoption
-- [ ] Profitable revenue stream
-
-### **Long-term Vision (2026-2027)**:
-
-- Vietnamese market leader trong 3D educational games
-- International expansion (SEA markets)
-- VR/AR classroom integration
-- AI-powered personalized 3D learning experiences
+### **Phase 4: Polish (4 weeks)**
+- Performance optimization and testing
+- Cross-platform compatibility
+- User interface refinement
+- Documentation and tutorials
 
 ---
 
-## 💰 Investment & ROI Analysis
+## 🎮 Innovation Features
 
-### **Development Investment**:
+### **AI-Powered Content Generation**
+- **Procedural maze generation**: Algorithm-generated challenges
+- **Adaptive difficulty**: Machine learning-based progression
+- **Intelligent hints**: Context-aware assistance system
+- **Performance analytics**: Learning pattern recognition
 
-- **Core Team**: 2 senior developers, 1 designer, 1 game producer
-- **Time Investment**: 12 months full development
-- **Technology Cost**: $15,000 (libraries, tools, testing devices)
-- **Content Creation**: $20,000 (graphics, audio, curriculum expert)
-- **Total Investment**: $180,000
+### **Social Learning Integration**
+- **Collaborative building**: Multi-student world creation
+- **Challenge sharing**: Student-generated content platform
+- **Peer learning**: Students teach algorithms to others
+- **Community competitions**: School vs school tournaments
 
-### **Expected ROI**:
-
-- **Target Users**: 50,000 students by end of 2025
-- **Engagement Increase**: +250% vs current games
-- **Educational Impact**: Measurable improvement in test scores
-- **Market Position**: Leading Vietnamese educational game platform
-
-### **Revenue Streams**:
-
-- **School Licenses**: $500-2000 per school per year
-- **Individual Subscriptions**: $5-10 per month per family
-- **Corporate Partnerships**: Educational content sponsorship
-- **Government Contracts**: Ministry of Education integration
+### **Cross-Curricular Connections**
+- **Mathematics**: Geometry, coordinates, and spatial relationships
+- **Physics**: Movement, forces, and collision mechanics
+- **Computer Science**: Algorithm complexity and optimization
+- **Engineering**: Problem-solving and systematic thinking
 
 ---
 
-## 🎯 Success Metrics
-
-### **Engagement Metrics**:
-
-- **Daily Active Users**: 15,000+ by Q4 2025
-- **Session Duration**: Average 25+ minutes
-- **Retention Rate**: 80% weekly retention
-- **Completion Rate**: 85% game completion rate
-
-### **Educational Impact**:
-
-- **Learning Outcomes**: 30% improvement in standardized tests
-- **Skill Development**: Measurable soft skill improvement
-- **Teacher Satisfaction**: 90%+ positive feedback
-- **Curriculum Integration**: 500+ schools adoption
-
-### **Technical Performance**:
-
-- **Load Time**: <2 seconds on average
-- **Crash Rate**: <0.1% sessions
-- **Platform Coverage**: Web, mobile, tablet optimized
-- **Accessibility**: WCAG AA compliance
-
----
-
-## 🚀 Innovation Features
-
-### **AI Integration**:
-
-- **Adaptive Learning**: Personalized difficulty và content
-- **Smart Tutoring**: AI-powered hints và guidance
-- **Performance Prediction**: Early intervention for struggling students
-- **Content Generation**: Dynamic problem/scenario generation
-
-### **Emerging Technologies**:
-
-- **AR Integration**: Camera-based math problem solving
-- **Voice Interaction**: Natural language game control
-- **Gesture Recognition**: Touch-free interaction for hygiene
-- **IoT Integration**: Real-world sensor data in science games
-
-### **Social Learning**:
-
-- **Peer Learning**: Collaborative problem solving
-- **Mentorship System**: Older students helping younger ones
-- **Community Challenges**: School vs school competitions
-- **Parent Involvement**: Family learning activities
-
----
-
-**Last Updated**: August 9, 2025  
-**Next Review**: September 15, 2025  
-**Document Owner**: K2AI Development Team
+**Last Updated**: August 16, 2025  
+**Version**: 2.0 - Minecraft-Inspired Block World Edition  
+**Technical Lead**: K2AI 3D Development Team

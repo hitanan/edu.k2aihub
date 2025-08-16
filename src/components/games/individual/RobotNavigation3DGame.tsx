@@ -1,697 +1,1047 @@
-import React, { useState, useEffect, useCallback } from 'react';
+'use client';
 
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import * as THREE from 'three';
+
+// Block Types for the 3D world
+export const BLOCK_TYPES = {
+  AIR: { id: 0, color: 0x000000, transparent: true, name: 'Air' },
+  STONE: { id: 1, color: 0x808080, name: 'Stone' },
+  GRASS: { id: 2, color: 0x00ff00, name: 'Grass' },
+  WATER: { id: 3, color: 0x0066ff, transparent: true, name: 'Water' },
+  OBSTACLE: { id: 4, color: 0x654321, name: 'Obstacle' },
+  TARGET: { id: 5, color: 0xffff00, name: 'Target' },
+  START: { id: 6, color: 0x00ff88, name: 'Start' }
+} as const;
+
+type BlockType = typeof BLOCK_TYPES[keyof typeof BLOCK_TYPES];
+
+// 3D World Position interface
 interface Position3D {
   x: number;
   y: number;
   z: number;
 }
 
-interface Collectible {
-  x: number;
-  y: number;
-  z: number;
-  type: 'energy' | 'data' | 'coin';
-}
-
-interface Level {
-  name: string;
-  description: string;
-  dimensions: {
-    width: number;
-    height: number;
-    depth: number;
-  };
-  start: Position3D;
-  goal: Position3D;
-  obstacles: Position3D[];
-  collectibles?: Collectible[];
-  educational: {
-    concept: string;
-    algorithmFocus: string;
-    learningGoal: string;
-  };
-}
-
-interface GameData {
-  levels: Level[];
+interface Block {
+  type: BlockType;
+  position: Position3D;
+  mesh: THREE.Mesh;
 }
 
 interface RobotNavigation3DGameProps {
-  gameData?: GameData;
+  gameData?: unknown;
   onComplete: (success: boolean, score: number) => void;
   timeLeft: number;
-  onRestart: () => void;
 }
 
-interface PathNode {
-  pos: Position3D;
-  f: number;
-  g: number;
-  h: number;
-  parent?: PathNode;
-}
+// Game Level Definitions
+const GAME_LEVELS = [
+  {
+    id: 1,
+    name: 'Basic Navigation',
+    description: 'Simple path from start to goal',
+    start: { x: -3, y: 0, z: -3 },
+    goal: { x: 3, y: 0, z: 3 },
+    obstacles: [
+      { x: 0, y: 0, z: 0 },
+      { x: 1, y: 0, z: 1 },
+      { x: -1, y: 0, z: -1 }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Maze Challenge',
+    description: 'Navigate through a complex maze',
+    start: { x: -4, y: 0, z: -4 },
+    goal: { x: 4, y: 0, z: 4 },
+    obstacles: [
+      { x: -2, y: 0, z: -2 }, { x: -1, y: 0, z: -2 }, { x: 0, y: 0, z: -2 },
+      { x: 2, y: 0, z: -1 }, { x: 2, y: 0, z: 0 }, { x: 2, y: 0, z: 1 },
+      { x: -2, y: 0, z: 2 }, { x: -1, y: 0, z: 2 }, { x: 0, y: 0, z: 2 },
+      { x: 1, y: 0, z: -3 }, { x: 3, y: 0, z: -1 }
+    ]
+  },
+  {
+    id: 3,
+    name: '3D Vertical Navigation',
+    description: 'Navigate in 3D space with height differences',
+    start: { x: -3, y: 0, z: -3 },
+    goal: { x: 3, y: 2, z: 3 },
+    obstacles: [
+      { x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 },
+      { x: 1, y: 0, z: 1 }, { x: 1, y: 1, z: 1 },
+      { x: -1, y: 0, z: -1 }, { x: 2, y: 1, z: 2 },
+      { x: 3, y: 0, z: 3 }, { x: 3, y: 1, z: 3 } // Platform stairs
+    ]
+  }
+];
 
-// Robot Navigation 3D Game Component
-export function RobotNavigation3DGame({ gameData, onComplete, timeLeft, onRestart }: RobotNavigation3DGameProps) {
-  // Default levels if no gameData provided
-  const defaultGameData: GameData = {
-    levels: [
-      {
-        name: 'Cấp độ cơ bản',
-        description: 'Học cách điều hướng robot trong không gian 3D',
-        dimensions: { width: 8, height: 3, depth: 8 },
-        start: { x: 0, y: 0, z: 0 },
-        goal: { x: 7, y: 0, z: 7 },
-        obstacles: [
-          { x: 2, y: 0, z: 2 },
-          { x: 3, y: 0, z: 4 },
-          { x: 5, y: 0, z: 3 },
-        ],
-        educational: {
-          concept: 'Thuật toán A*',
-          algorithmFocus: 'Pathfinding cơ bản',
-          learningGoal: 'Hiểu cách robot tìm đường',
-        },
-      },
-      {
-        name: 'Cấp độ trung bình',
-        description: 'Thử thách với nhiều chướng ngại vật hơn',
-        dimensions: { width: 8, height: 3, depth: 8 },
-        start: { x: 0, y: 0, z: 0 },
-        goal: { x: 7, y: 2, z: 7 },
-        obstacles: [
-          { x: 1, y: 0, z: 1 },
-          { x: 2, y: 0, z: 1 },
-          { x: 3, y: 0, z: 2 },
-          { x: 4, y: 0, z: 3 },
-          { x: 5, y: 0, z: 4 },
-          { x: 6, y: 0, z: 5 },
-        ],
-        educational: {
-          concept: 'Pathfinding 3D',
-          algorithmFocus: 'Tối ưu hóa đường đi',
-          learningGoal: 'Xử lý không gian phức tạp',
-        },
-      },
-    ],
-  };
+type GameMode = 'menu' | 'auto' | 'manual';
+type GameState = 'playing' | 'completed' | 'paused';
 
-  const effectiveGameData = gameData || defaultGameData;
+// Core 3D World Structure
+class BlockWorld {
+  public dimensions: { width: number; height: number; depth: number };
+  public blocks: Map<string, Block>;
+  public scene: THREE.Scene;
+  public camera: THREE.PerspectiveCamera;
+  public renderer: THREE.WebGLRenderer;
+  private ambientLight: THREE.AmbientLight;
+  private directionalLight: THREE.DirectionalLight;
 
-  const [currentLevel, setCurrentLevel] = useState(0);
-  const [robotPosition, setRobotPosition] = useState({ x: 0, y: 0, z: 0 });
-  const [goalPosition, setGoalPosition] = useState({ x: 7, y: 0, z: 7 });
-  const [isMoving, setIsMoving] = useState(false);
-  const [score, setScore] = useState(0);
-  const [collectedItems, setCollectedItems] = useState<Set<string>>(new Set());
-  const [pathHistory, setPathHistory] = useState<Array<{ x: number; y: number; z: number }>>([]);
-  const [showPath, setShowPath] = useState(false);
-  const [selectedAlgorithm, setSelectedAlgorithm] = useState('astar');
-  const [isCalculatingPath, setIsCalculatingPath] = useState(false);
-  const [currentPath, setCurrentPath] = useState<Array<{ x: number; y: number; z: number }>>([]);
-
-  const level = effectiveGameData?.levels?.[currentLevel];
-
-  useEffect(() => {
-    if (level) {
-      setRobotPosition(level.start);
-      setGoalPosition(level.goal);
-      setCollectedItems(new Set());
-      setPathHistory([level.start]);
-      setCurrentPath([]);
+  constructor(width: number, height: number, depth: number, container: HTMLElement) {
+    this.dimensions = { width, height, depth };
+    this.blocks = new Map();
+    
+    // Clear container first to prevent multiple canvases
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
     }
-  }, [level, currentLevel]);
+    
+    // Initialize Three.js scene
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color(0x87CEEB); // Sky blue background
+    
+    // Setup camera
+    this.camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+    this.camera.position.set(15, 20, 15);
+    this.camera.lookAt(0, 0, 0);
+    
+    // Setup renderer
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    this.renderer.setSize(container.offsetWidth, container.offsetHeight);
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.renderer.domElement.style.display = 'block';
+    container.appendChild(this.renderer.domElement);
+    
+    // Setup lighting
+    this.ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    this.scene.add(this.ambientLight);
+    
+    this.directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    this.directionalLight.position.set(20, 20, 10);
+    this.directionalLight.castShadow = true;
+    this.directionalLight.shadow.mapSize.width = 2048;
+    this.directionalLight.shadow.mapSize.height = 2048;
+    this.directionalLight.shadow.camera.near = 0.1;
+    this.directionalLight.shadow.camera.far = 100;
+    this.directionalLight.shadow.camera.left = -20;
+    this.directionalLight.shadow.camera.right = 20;
+    this.directionalLight.shadow.camera.top = 20;
+    this.directionalLight.shadow.camera.bottom = -20;
+    this.scene.add(this.directionalLight);
+    
+    // Create ground plane
+    this.createGround();
+    
+    // Add coordinate helper
+    this.addCoordinateHelper();
+  }
 
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      onRestart();
+  // Convert 3D coordinates to unique key
+  coordsToKey(x: number, y: number, z: number): string {
+    return `${x},${y},${z}`;
+  }
+
+  // Create block mesh based on type
+  createBlockMesh(blockType: BlockType): THREE.Mesh {
+    const geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2); // Increased size for better visibility on desktop
+    const material = new THREE.MeshLambertMaterial({
+      color: blockType.color,
+      transparent: 'transparent' in blockType ? blockType.transparent : false,
+      opacity: ('transparent' in blockType && blockType.transparent) ? 0.7 : 1.0
+    });
+    
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    
+    return mesh;
+  }
+
+  // Add block at position
+  setBlock(x: number, y: number, z: number, blockType: BlockType): void {
+    const key = this.coordsToKey(x, y, z);
+    
+    // Remove existing block if present
+    if (this.blocks.has(key)) {
+      const existingBlock = this.blocks.get(key);
+      if (existingBlock) {
+        this.scene.remove(existingBlock.mesh);
+      }
     }
-  }, [timeLeft, onRestart]);
+    
+    // Create new block
+    const mesh = this.createBlockMesh(blockType);
+    mesh.position.set(x, y, z);
+    
+    this.blocks.set(key, {
+      type: blockType,
+      position: { x, y, z },
+      mesh: mesh
+    });
+    
+    this.scene.add(mesh);
+  }
 
-  // A* pathfinding algorithm for 3D space
-  const calculatePath = useCallback(
-    (start: { x: number; y: number; z: number }, goal: { x: number; y: number; z: number }) => {
-      if (!level) return [];
+  // Remove block
+  removeBlock(x: number, y: number, z: number): void {
+    const key = this.coordsToKey(x, y, z);
+    const block = this.blocks.get(key);
+    if (block) {
+      this.scene.remove(block.mesh);
+      this.blocks.delete(key);
+    }
+  }
 
-      setIsCalculatingPath(true);
+  // Check if position is walkable
+  isWalkable(pos: Position3D): boolean {
+    // Check bounds
+    if (pos.x < -6 || pos.x > 6 || pos.z < -6 || pos.z > 6 || pos.y < 0 || pos.y > 5) {
+      return false;
+    }
+    
+    const blockKey = this.coordsToKey(pos.x, pos.y, pos.z);
+    const block = this.blocks.get(blockKey);
+    
+    // If no block, it's walkable (air)
+    if (!block) return true;
+    
+    // Check for non-walkable blocks
+    const isBlocked = block.type.id === BLOCK_TYPES.STONE.id || 
+                     block.type.id === BLOCK_TYPES.OBSTACLE.id ||
+                     block.type.id === BLOCK_TYPES.WATER.id;
+    
+    return !isBlocked;
+  }
 
-      // A* implementation
-      const openSet: PathNode[] = [];
-      const closedSet: Set<string> = new Set();
+  // Clear all blocks
+  clearLevel(): void {
+    this.blocks.forEach(block => {
+      this.scene.remove(block.mesh);
+    });
+    this.blocks.clear();
+  }
 
-      const heuristic = (a: Position3D, b: Position3D) => {
-        return Math.abs(a.x - b.x) + Math.abs(a.y - b.y) + Math.abs(a.z - b.z);
-      };
+  // Load level configuration
+  loadLevel(level: typeof GAME_LEVELS[0]): void {
+    this.clearLevel();
+    
+    // Create boundary walls
+    for (let x = -6; x <= 6; x++) {
+      this.setBlock(x, 0, -6, BLOCK_TYPES.STONE);
+      this.setBlock(x, 0, 6, BLOCK_TYPES.STONE);
+    }
+    
+    for (let z = -5; z <= 5; z++) {
+      this.setBlock(-6, 0, z, BLOCK_TYPES.STONE);
+      this.setBlock(6, 0, z, BLOCK_TYPES.STONE);
+    }
+    
+    // Add level obstacles
+    level.obstacles.forEach(pos => {
+      this.setBlock(pos.x, pos.y, pos.z, BLOCK_TYPES.OBSTACLE);
+    });
+    
+    // Add start and goal
+    this.setBlock(level.start.x, level.start.y, level.start.z, BLOCK_TYPES.START);
+    this.setBlock(level.goal.x, level.goal.y, level.goal.z, BLOCK_TYPES.TARGET);
+  }
 
-      const isObstacle = (pos: Position3D) => {
-        return level.obstacles.some((obs: Position3D) => obs.x === pos.x && obs.y === pos.y && obs.z === pos.z);
-      };
+  // Create ground plane
+  private createGround(): void {
+    const groundGeometry = new THREE.PlaneGeometry(60, 60);
+    const groundMaterial = new THREE.MeshLambertMaterial({ color: 0x90EE90 });
+    const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = -1;
+    ground.receiveShadow = true;
+    this.scene.add(ground);
+  }
 
-      const isInBounds = (pos: Position3D) => {
-        return (
-          pos.x >= 0 &&
-          pos.x < level.dimensions.width &&
-          pos.y >= 0 &&
-          pos.y < level.dimensions.height &&
-          pos.z >= 0 &&
-          pos.z < level.dimensions.depth
-        );
-      };
+  // Add coordinate helper
+  private addCoordinateHelper(): void {
+    const axesHelper = new THREE.AxesHelper(5);
+    this.scene.add(axesHelper);
+  }
 
-      const startNode: PathNode = {
-        pos: start,
-        g: 0,
-        h: heuristic(start, goal),
-        f: 0,
-      };
-      startNode.f = startNode.g + startNode.h;
-      openSet.push(startNode);
+  render(): void {
+    this.renderer.render(this.scene, this.camera);
+  }
 
-      while (openSet.length > 0) {
-        // Find node with lowest f score
-        const currentIndex = openSet.reduce(
-          (minIndex, node, index) => (node.f < openSet[minIndex].f ? index : minIndex),
-          0,
-        );
-        const current = openSet.splice(currentIndex, 1)[0];
+  resize(width: number, height: number): void {
+    this.camera.aspect = width / height;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(width, height);
+  }
 
-        const currentKey = `${current.pos.x},${current.pos.y},${current.pos.z}`;
-        closedSet.add(currentKey);
-
-        // Check if we reached the goal
-        if (current.pos.x === goal.x && current.pos.y === goal.y && current.pos.z === goal.z) {
-          const path: Position3D[] = [];
-          let node: PathNode | undefined = current;
-          while (node) {
-            path.unshift(node.pos);
-            node = node.parent;
-          }
-          setIsCalculatingPath(false);
-          return path;
-        }
-
-        // Check all 6 neighbors (3D movement)
-        const neighbors = [
-          { x: current.pos.x + 1, y: current.pos.y, z: current.pos.z },
-          { x: current.pos.x - 1, y: current.pos.y, z: current.pos.z },
-          { x: current.pos.x, y: current.pos.y + 1, z: current.pos.z },
-          { x: current.pos.x, y: current.pos.y - 1, z: current.pos.z },
-          { x: current.pos.x, y: current.pos.y, z: current.pos.z + 1 },
-          { x: current.pos.x, y: current.pos.y, z: current.pos.z - 1 },
-        ];
-
-        for (const neighbor of neighbors) {
-          const neighborKey = `${neighbor.x},${neighbor.y},${neighbor.z}`;
-
-          if (!isInBounds(neighbor) || isObstacle(neighbor) || closedSet.has(neighborKey)) {
-            continue;
-          }
-
-          const tentativeG = current.g + 1;
-
-          const existingNode = openSet.find(
-            (node) => node.pos.x === neighbor.x && node.pos.y === neighbor.y && node.pos.z === neighbor.z,
-          );
-
-          if (!existingNode) {
-            const neighborNode: PathNode = {
-              pos: neighbor,
-              g: tentativeG,
-              h: heuristic(neighbor, goal),
-              f: 0,
-              parent: current,
-            };
-            neighborNode.f = neighborNode.g + neighborNode.h;
-            openSet.push(neighborNode);
-          } else if (tentativeG < existingNode.g) {
-            existingNode.g = tentativeG;
-            existingNode.f = existingNode.g + existingNode.h;
-            existingNode.parent = current;
-          }
+  dispose(): void {
+    // Clean up all resources
+    this.blocks.forEach(block => {
+      this.scene.remove(block.mesh);
+      block.mesh.geometry.dispose();
+      if (block.mesh.material instanceof THREE.Material) {
+        block.mesh.material.dispose();
+      }
+    });
+    this.blocks.clear();
+    
+    // Clean up scene
+    while (this.scene.children.length > 0) {
+      const child = this.scene.children[0];
+      this.scene.remove(child);
+      if (child instanceof THREE.Mesh) {
+        child.geometry.dispose();
+        if (child.material instanceof THREE.Material) {
+          child.material.dispose();
         }
       }
-
-      setIsCalculatingPath(false);
-      return []; // No path found
-    },
-    [level],
-  );
-
-  const moveRobot = (direction: 'x+' | 'x-' | 'y+' | 'y-' | 'z+' | 'z-') => {
-    if (isMoving || !level) return;
-
-    const newPos = { ...robotPosition };
-    switch (direction) {
-      case 'x+':
-        newPos.x++;
-        break;
-      case 'x-':
-        newPos.x--;
-        break;
-      case 'y+':
-        newPos.y++;
-        break;
-      case 'y-':
-        newPos.y--;
-        break;
-      case 'z+':
-        newPos.z++;
-        break;
-      case 'z-':
-        newPos.z--;
-        break;
     }
+    
+    this.renderer.dispose();
+  }
+}
 
-    // Check bounds
-    if (
-      newPos.x < 0 ||
-      newPos.x >= level.dimensions.width ||
-      newPos.y < 0 ||
-      newPos.y >= level.dimensions.height ||
-      newPos.z < 0 ||
-      newPos.z >= level.dimensions.depth
-    ) {
+// Robot Character System
+class Robot {
+  public position: Position3D;
+  public isMoving: boolean = false;
+  public mesh: THREE.Group;
+  public path: Position3D[] = [];
+  private world: BlockWorld;
+
+  constructor(scene: THREE.Scene, startPosition: Position3D, world: BlockWorld) {
+    this.position = { ...startPosition };
+    this.world = world;
+    
+    // Create 3D robot model
+    this.mesh = this.createRobotMesh();
+    this.mesh.position.set(startPosition.x, startPosition.y + 0.5, startPosition.z);
+    scene.add(this.mesh);
+  }
+
+  private createRobotMesh(): THREE.Group {
+    const group = new THREE.Group();
+    
+    // Robot body (blue cube) - Increased size for better visibility
+    const bodyGeometry = new THREE.BoxGeometry(0.8, 1.0, 0.6); // Increased size
+    const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x0066ff });
+    const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+    body.position.y = 0.5; // Adjusted position
+    body.castShadow = true;
+    group.add(body);
+    
+    // Robot head (smaller cube) - Increased size
+    const headGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5); // Increased size
+    const headMaterial = new THREE.MeshLambertMaterial({ color: 0x0088ff });
+    const head = new THREE.Mesh(headGeometry, headMaterial);
+    head.position.y = 1.2; // Adjusted position
+    head.castShadow = true;
+    group.add(head);
+    
+    // Eyes (glowing spheres) - Slightly larger
+    const eyeGeometry = new THREE.SphereGeometry(0.08); // Increased size
+    const eyeMaterial = new THREE.MeshLambertMaterial({ 
+      color: 0xffffff,
+      emissive: 0x444444
+    });
+    
+    const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+    leftEye.position.set(-0.1, 1.05, 0.15);
+    group.add(leftEye);
+    
+    const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+    rightEye.position.set(0.1, 1.05, 0.15);
+    group.add(rightEye);
+    
+    return group;
+  }
+
+  // Move robot to specific direction
+  move(direction: 'forward' | 'backward' | 'left' | 'right' | 'up' | 'down'): boolean {
+    if (this.isMoving) return false;
+    
+    const newPosition = { ...this.position };
+    
+    switch (direction) {
+      case 'forward': newPosition.z -= 1; break;
+      case 'backward': newPosition.z += 1; break;
+      case 'left': newPosition.x -= 1; break;
+      case 'right': newPosition.x += 1; break;
+      case 'up': newPosition.y += 1; break;
+      case 'down': newPosition.y -= 1; break;
+    }
+    
+    // Check if new position is walkable
+    if (!this.world.isWalkable(newPosition)) {
+      console.log('❌ Cannot move to position:', newPosition);
+      return false;
+    }
+    
+    this.moveTo(newPosition);
+    return true;
+  }
+
+  // Move robot to target position with animation
+  moveTo(targetPosition: Position3D): void {
+    if (this.isMoving) return;
+    
+    console.log('🎯 Robot moving to:', targetPosition);
+    this.isMoving = true;
+    
+    const targetPos = { ...targetPosition };
+    
+    // Smooth animation
+    const animate = () => {
+      const dx = targetPos.x - this.position.x;
+      const dy = targetPos.y - this.position.y;
+      const dz = targetPos.z - this.position.z;
+      
+      const speed = 0.15;
+      
+      if (Math.abs(dx) > 0.05 || Math.abs(dy) > 0.05 || Math.abs(dz) > 0.05) {
+        this.position.x += dx * speed;
+        this.position.y += dy * speed;
+        this.position.z += dz * speed;
+        
+        this.mesh.position.set(this.position.x, this.position.y + 0.5, this.position.z);
+        requestAnimationFrame(animate);
+      } else {
+        this.position = { ...targetPos };
+        this.mesh.position.set(this.position.x, this.position.y + 0.5, this.position.z);
+        this.isMoving = false;
+        console.log('✅ Robot reached position:', this.position);
+      }
+    };
+    
+    animate();
+  }
+
+  // Follow path step by step
+  followPath(path: Position3D[]): void {
+    if (path.length === 0) return;
+    
+    console.log('🛤️ Robot following path with', path.length, 'steps');
+    this.path = [...path];
+    this.moveAlongPath();
+  }
+
+  private moveAlongPath(): void {
+    if (this.path.length === 0) {
+      console.log('✅ Robot finished following path');
       return;
     }
+    
+    const nextPosition = this.path.shift()!;
+    this.moveTo(nextPosition);
+    
+    const checkAndContinue = () => {
+      if (!this.isMoving && this.path.length > 0) {
+        this.moveAlongPath();
+      } else if (this.isMoving) {
+        setTimeout(checkAndContinue, 100);
+      }
+    };
+    
+    setTimeout(checkAndContinue, 300);
+  }
 
-    // Check obstacles
-    const isObstacle = level.obstacles.some(
-      (obs: Position3D) => obs.x === newPos.x && obs.y === newPos.y && obs.z === newPos.z,
-    );
-    if (isObstacle) return;
+  // Reset robot position
+  reset(position: Position3D): void {
+    this.position = { ...position };
+    this.mesh.position.set(position.x, position.y + 0.5, position.z);
+    this.isMoving = false;
+    this.path = [];
+  }
+}
 
-    setIsMoving(true);
-    setTimeout(() => {
-      setRobotPosition(newPos);
-      setPathHistory((prev) => [...prev, newPos]);
+// 3D Pathfinding using A* Algorithm
+class Pathfinding3D {
+  private world: BlockWorld;
 
-      // Check for collectibles
-      const collectible = level.collectibles?.find(
-        (item: Collectible) => item.x === newPos.x && item.y === newPos.y && item.z === newPos.z,
+  constructor(world: BlockWorld) {
+    this.world = world;
+  }
+
+  findPath(start: Position3D, goal: Position3D): Position3D[] {
+    console.log('🔍 Starting A* pathfinding from', start, 'to', goal);
+    
+    const openSet: Position3D[] = [start];
+    const closedSet = new Set<string>();
+    const gScore = new Map<string, number>();
+    const fScore = new Map<string, number>();
+    const cameFrom = new Map<string, Position3D>();
+    
+    gScore.set(this.coordKey(start), 0);
+    fScore.set(this.coordKey(start), this.heuristic(start, goal));
+    
+    let iterations = 0;
+    const maxIterations = 1000; // Prevent infinite loops
+    
+    while (openSet.length > 0 && iterations < maxIterations) {
+      iterations++;
+      
+      // Find node with lowest fScore
+      const current = openSet.reduce((a, b) => 
+        (fScore.get(this.coordKey(a)) || Infinity) < (fScore.get(this.coordKey(b)) || Infinity) ? a : b
       );
-      if (collectible) {
-        const itemKey = `${newPos.x},${newPos.y},${newPos.z}`;
-        if (!collectedItems.has(itemKey)) {
-          setCollectedItems((prev) => new Set([...prev, itemKey]));
-          setScore((prev) => prev + (collectible.type === 'energy' ? 50 : collectible.type === 'data' ? 30 : 10));
+      
+      if (this.coordsEqual(current, goal)) {
+        const path = this.reconstructPath(cameFrom, current);
+        console.log('🎉 Path found after', iterations, 'iterations, length:', path.length);
+        return path;
+      }
+      
+      const currentIndex = openSet.findIndex(node => this.coordsEqual(node, current));
+      openSet.splice(currentIndex, 1);
+      closedSet.add(this.coordKey(current));
+      
+      // Check all neighbors (6 directions in 3D)
+      const neighbors = this.getNeighbors(current);
+      
+      for (const neighbor of neighbors) {
+        const neighborKey = this.coordKey(neighbor);
+        
+        if (closedSet.has(neighborKey)) continue;
+        if (!this.world.isWalkable(neighbor)) continue;
+        
+        const tentativeGScore = (gScore.get(this.coordKey(current)) || 0) + 1;
+        
+        if (!openSet.some(node => this.coordsEqual(node, neighbor))) {
+          openSet.push(neighbor);
+        } else if (tentativeGScore >= (gScore.get(neighborKey) || Infinity)) {
+          continue;
         }
+        
+        cameFrom.set(neighborKey, current);
+        gScore.set(neighborKey, tentativeGScore);
+        fScore.set(neighborKey, tentativeGScore + this.heuristic(neighbor, goal));
+      }
+    }
+    
+    console.log('❌ No path found after', iterations, 'iterations');
+    console.log('Final openSet size:', openSet.length);
+    console.log('Final closedSet size:', closedSet.size);
+    return []; // No path found
+  }
+
+  private getNeighbors(pos: Position3D): Position3D[] {
+    return [
+      { x: pos.x + 1, y: pos.y, z: pos.z },
+      { x: pos.x - 1, y: pos.y, z: pos.z },
+      { x: pos.x, y: pos.y + 1, z: pos.z },
+      { x: pos.x, y: pos.y - 1, z: pos.z },
+      { x: pos.x, y: pos.y, z: pos.z + 1 },
+      { x: pos.x, y: pos.y, z: pos.z - 1 }
+    ];
+  }
+
+  private heuristic(a: Position3D, b: Position3D): number {
+    // Manhattan distance in 3D
+    return Math.abs(a.x - b.x) + Math.abs(a.y - b.y) + Math.abs(a.z - b.z);
+  }
+
+  private coordsEqual(a: Position3D, b: Position3D): boolean {
+    return a.x === b.x && a.y === b.y && a.z === b.z;
+  }
+
+  private coordKey(pos: Position3D): string {
+    return `${pos.x},${pos.y},${pos.z}`;
+  }
+
+  private reconstructPath(cameFrom: Map<string, Position3D>, current: Position3D): Position3D[] {
+    const path: Position3D[] = [current];
+    let currentKey = this.coordKey(current);
+    
+    while (cameFrom.has(currentKey)) {
+      current = cameFrom.get(currentKey)!;
+      path.unshift(current);
+      currentKey = this.coordKey(current);
+    }
+    
+    return path;
+  }
+}
+
+// Main Game Component
+export function RobotNavigation3DGame({ onComplete, timeLeft }: RobotNavigation3DGameProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [, setWorld] = useState<BlockWorld | null>(null);
+  const [robot, setRobot] = useState<Robot | null>(null);
+  const [pathfinding, setPathfinding] = useState<Pathfinding3D | null>(null);
+  const [gameMode, setGameMode] = useState<'menu' | 'auto' | 'manual' | 'hybrid'>('menu');
+  const [gameState, setGameState] = useState<'playing' | 'completed' | 'paused'>('playing');
+  const [currentLevel, setCurrentLevel] = useState(0);
+  const [score, setScore] = useState(0);
+  const [currentPath, setCurrentPath] = useState<Position3D[]>([]);
+  const animationRef = useRef<number | null>(null);
+
+  // Initialize the 3D world
+  useEffect(() => {
+    if (!containerRef.current || gameMode === 'menu') return;
+
+    let isMounted = true;
+
+    try {
+      const blockWorld = new BlockWorld(12, 6, 12, containerRef.current);
+      const level = GAME_LEVELS[currentLevel];
+      blockWorld.loadLevel(level);
+      
+      const robotInstance = new Robot(blockWorld.scene, level.start, blockWorld);
+      const pathfindingInstance = new Pathfinding3D(blockWorld);
+
+      if (isMounted) {
+        setWorld(blockWorld);
+        setRobot(robotInstance);
+        setPathfinding(pathfindingInstance);
+
+        // Animation loop
+        const animate = () => {
+          blockWorld.render();
+          if (isMounted) {
+            animationRef.current = requestAnimationFrame(animate);
+          }
+        };
+        animate();
+
+        // Handle window resize
+        const handleResize = () => {
+          if (containerRef.current && isMounted) {
+            blockWorld.resize(containerRef.current.offsetWidth, containerRef.current.offsetHeight);
+          }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+          isMounted = false;
+          window.removeEventListener('resize', handleResize);
+          if (animationRef.current) {
+            cancelAnimationFrame(animationRef.current);
+          }
+          blockWorld.dispose();
+        };
+      }
+    } catch (error) {
+      console.error('Error initializing 3D world:', error);
+    }
+
+    return () => {
+      isMounted = false;
+    };
+  }, [gameMode, currentLevel]);
+
+  // Global keyboard event prevention to stop page scrolling for arrow keys
+  useEffect(() => {
+    const handleGlobalKeyDown = (event: KeyboardEvent) => {
+      // Always prevent arrow keys from scrolling the page when this game component is active
+      const arrowKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+      
+      if (arrowKeys.includes(event.code)) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    };
+
+    // Use passive: false to ensure preventDefault works
+    document.addEventListener('keydown', handleGlobalKeyDown, { passive: false });
+    
+    return () => {
+      document.removeEventListener('keydown', handleGlobalKeyDown);
+    };
+  }, []); // No dependencies - always active when component is mounted
+
+  // Keyboard controls for manual mode
+  useEffect(() => {
+    if (gameMode !== 'manual' && gameMode !== 'hybrid') return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!robot || robot.isMoving) return;
+
+      // Prevent default for ALL navigation keys to stop page scrolling
+      const navigationKeys = [
+        'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+        'KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE',
+        'Space', 'Home', 'End', 'PageUp', 'PageDown'
+      ];
+      
+      if (navigationKeys.includes(event.code)) {
+        event.preventDefault();
+        event.stopPropagation();
       }
 
+      switch (event.code) {
+        case 'KeyW':
+        case 'ArrowUp':
+          event.preventDefault();
+          robot.move('forward');
+          break;
+        case 'KeyS':
+        case 'ArrowDown':
+          event.preventDefault();
+          robot.move('backward');
+          break;
+        case 'KeyA':
+        case 'ArrowLeft':
+          event.preventDefault();
+          robot.move('left');
+          break;
+        case 'KeyD':
+        case 'ArrowRight':
+          event.preventDefault();
+          robot.move('right');
+          break;
+        case 'KeyQ':
+          event.preventDefault();
+          robot.move('up');
+          break;
+        case 'KeyE':
+          event.preventDefault();
+          robot.move('down');
+          break;
+      }
+      
       // Check if reached goal
-      if (newPos.x === goalPosition.x && newPos.y === goalPosition.y && newPos.z === goalPosition.z) {
-        const timeBonus = Math.max(0, timeLeft * 2);
-        const pathEfficiency = Math.max(0, 100 - pathHistory.length);
-        const collectibleBonus = collectedItems.size * 20;
-        const finalScore = score + timeBonus + pathEfficiency + collectibleBonus;
-
-        if (currentLevel < effectiveGameData.levels.length - 1) {
-          setCurrentLevel((prev) => prev + 1);
+      if (robot) {
+        const level = GAME_LEVELS[currentLevel];
+        const distance = Math.abs(robot.position.x - level.goal.x) + 
+                        Math.abs(robot.position.y - level.goal.y) + 
+                        Math.abs(robot.position.z - level.goal.z);
+        if (distance < 1) {
+          setGameState('completed');
+          const finalScore = 1000 + Math.max(0, timeLeft * 10);
           setScore(finalScore);
-        } else {
           onComplete(true, finalScore);
         }
       }
+    };
 
-      setIsMoving(false);
-    }, 300);
-  };
+    const handleKeyUp = (event: KeyboardEvent) => {
+      // Also prevent default on key up for navigation keys
+      const navigationKeys = [
+        'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+        'KeyW', 'KeyA', 'KeyS', 'KeyD', 'KeyQ', 'KeyE'
+      ];
+      
+      if (navigationKeys.includes(event.code)) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    };
 
-  const autoNavigate = () => {
-    const path = calculatePath(robotPosition, goalPosition);
-    if (path.length > 1) {
+    // Use capture phase to ensure we catch events before they bubble
+    window.addEventListener('keydown', handleKeyDown, { capture: true });
+    window.addEventListener('keyup', handleKeyUp, { capture: true });
+    
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown, { capture: true });
+      window.removeEventListener('keyup', handleKeyUp, { capture: true });
+    };
+  }, [gameMode, robot, currentLevel, timeLeft, onComplete]);
+
+  // Auto pathfinding
+  const findPath = useCallback(() => {
+    if (!robot || !pathfinding) return;
+
+    const level = GAME_LEVELS[currentLevel];
+    const start = robot.position;
+    const goal = level.goal;
+
+    const path = pathfinding.findPath(start, goal);
+    
+    if (path.length > 0) {
       setCurrentPath(path);
-      setShowPath(true);
-
-      // Execute path step by step
-      let stepIndex = 1; // Skip first position (current)
-      const executeStep = () => {
-        if (stepIndex < path.length) {
-          const currentPos = path[stepIndex - 1];
-          const nextPos = path[stepIndex];
-
-          if (nextPos.x > currentPos.x) moveRobot('x+');
-          else if (nextPos.x < currentPos.x) moveRobot('x-');
-          else if (nextPos.y > currentPos.y) moveRobot('y+');
-          else if (nextPos.y < currentPos.y) moveRobot('y-');
-          else if (nextPos.z > currentPos.z) moveRobot('z+');
-          else if (nextPos.z < currentPos.z) moveRobot('z-');
-
-          stepIndex++;
-          setTimeout(executeStep, 500);
+      robot.followPath(path.slice(1)); // Skip current position
+      
+      setTimeout(() => {
+        const distance = Math.abs(robot.position.x - goal.x) + 
+                        Math.abs(robot.position.y - goal.y) + 
+                        Math.abs(robot.position.z - goal.z);
+        if (distance < 1) {
+          setGameState('completed');
+          const finalScore = 1000 + Math.max(0, timeLeft * 10);
+          setScore(finalScore);
+          onComplete(true, finalScore);
         }
-      };
-
-      setTimeout(executeStep, 500);
+      }, path.length * 400);
     }
-  };
+  }, [robot, pathfinding, currentLevel, timeLeft, onComplete]);
 
-  const resetLevel = () => {
-    if (level) {
-      setRobotPosition(level.start);
-      setCollectedItems(new Set());
-      setPathHistory([level.start]);
-      setCurrentPath([]);
-      setShowPath(false);
+  // Manual robot movement controls
+  const moveRobot = useCallback((direction: 'forward' | 'backward' | 'left' | 'right' | 'up' | 'down') => {
+    if (!robot || (gameMode !== 'manual' && gameMode !== 'hybrid')) return;
+    
+    const moved = robot.move(direction);
+    if (moved) {
+      const level = GAME_LEVELS[currentLevel];
+      const distance = Math.abs(robot.position.x - level.goal.x) + 
+                      Math.abs(robot.position.y - level.goal.y) + 
+                      Math.abs(robot.position.z - level.goal.z);
+      if (distance < 1) {
+        setGameState('completed');
+        const finalScore = 1000 + Math.max(0, timeLeft * 10);
+        setScore(finalScore);
+        onComplete(true, finalScore);
+      }
     }
-  };
+  }, [robot, gameMode, currentLevel, timeLeft, onComplete]);
 
-  if (!level) {
+  // Reset game
+  const resetGame = useCallback(() => {
+    if (!robot) return;
+    
+    const level = GAME_LEVELS[currentLevel];
+    robot.reset(level.start);
+    setGameState('playing');
+    setCurrentPath([]);
+    setScore(0);
+  }, [robot, currentLevel]);
+
+  // Start level
+  const startLevel = useCallback((levelIndex: number, mode: 'auto' | 'manual' | 'hybrid') => {
+    setCurrentLevel(levelIndex);
+    setGameMode(mode);
+    setGameState('playing');
+    setScore(0);
+    setCurrentPath([]);
+  }, []);
+
+  // Render level selection menu
+  if (gameMode === 'menu') {
     return (
-      <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-        <div className="text-center text-white">
-          <p>Đang tải dữ liệu game...</p>
+      <div className="w-full h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 flex items-center justify-center text-white">
+        <div className="max-w-4xl mx-auto p-8">
+          <h1 className="text-4xl font-bold mb-8 text-center text-yellow-400">🤖 3D Robot Navigation</h1>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {GAME_LEVELS.map((level, index) => (
+              <div key={level.id} className="bg-black bg-opacity-50 rounded-lg p-6">
+                <h2 className="text-xl font-bold mb-2 text-blue-300">Level {level.id}</h2>
+                <h3 className="text-lg font-semibold mb-3">{level.name}</h3>
+                <p className="text-sm text-gray-300 mb-4">{level.description}</p>
+                
+                <div className="space-y-2">
+                  <button
+                    onClick={() => startLevel(index, 'auto')}
+                    className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition-colors"
+                  >
+                    🎯 Auto Navigation
+                  </button>
+                  <button
+                    onClick={() => startLevel(index, 'manual')}
+                    className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-colors"
+                  >
+                    🎮 Manual Control
+                  </button>
+                  <button
+                    onClick={() => startLevel(index, 'hybrid')}
+                    className="w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold transition-colors"
+                  >
+                    🔄 Hybrid Mode
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <div className="bg-black bg-opacity-50 rounded-lg p-6 mb-4">
+              <h3 className="text-lg font-bold mb-3 text-yellow-300">Game Modes</h3>
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 className="font-semibold text-green-300 mb-2">🎯 Auto Navigation</h4>
+                  <p className="text-gray-300">Watch the robot use A* pathfinding algorithm to navigate automatically to the goal.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-blue-300 mb-2">🎮 Manual Control</h4>
+                  <p className="text-gray-300">Control the robot manually using WASD/Arrow keys. Q/E for up/down movement.</p>
+                </div>
+                <div className="md:col-span-2">
+                  <h4 className="font-semibold text-purple-300 mb-2">🔄 Hybrid Mode</h4>
+                  <p className="text-gray-300">Start with auto navigation, then switch to manual control anytime. Best of both worlds!</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 
+  // Render game interface
   return (
-    <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-      <div className="mb-6">
-        <div className="flex justify-between items-start mb-4">
-          <div>
-            <h3 className="text-xl font-bold text-white mb-2">{level.name}</h3>
-            <p className="text-gray-300 text-sm">{level.description}</p>
-          </div>
-          <div className="text-right">
-            <div className="text-cyan-400 font-bold">Cấp độ {currentLevel + 1}</div>
-            <div className="text-yellow-400">Điểm: {score}</div>
-          </div>
-        </div>
-
-        {/* Educational Info */}
-        <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-lg p-4 mb-4">
-          <h4 className="text-white font-semibold mb-2">📚 Kiến thức:</h4>
-          <p className="text-gray-300 text-sm mb-1">
-            <strong>Khái niệm:</strong> {level.educational.concept}
-          </p>
-          <p className="text-gray-300 text-sm mb-1">
-            <strong>Thuật toán:</strong> {level.educational.algorithmFocus}
-          </p>
-          <p className="text-gray-300 text-sm">
-            <strong>Mục tiêu:</strong> {level.educational.learningGoal}
-          </p>
+    <div className="w-full min-h-screen bg-gray-900 text-white relative">
+      {/* Game Header */}
+      <div className="absolute top-4 left-4 z-10 bg-black bg-opacity-90 rounded-lg p-4 max-w-xs backdrop-blur-sm">
+        <h1 className="text-xl font-bold mb-2 text-yellow-400">
+          Level {GAME_LEVELS[currentLevel].id}: {GAME_LEVELS[currentLevel].name}
+        </h1>
+        <div className="space-y-1 text-sm">
+          <div>Mode: {
+            gameMode === 'auto' ? '🎯 Auto' : 
+            gameMode === 'manual' ? '🎮 Manual' : 
+            '🔄 Hybrid'
+          }</div>
+          <div>Status: {gameState === 'completed' ? '✅ Completed!' : '🎮 Playing'}</div>
+          {(gameMode === 'auto' || gameMode === 'hybrid') && <div>Path Length: {currentPath.length} steps</div>}
+          <div>Robot: {robot ? `(${robot.position.x}, ${robot.position.y}, ${robot.position.z})` : 'Loading...'}</div>
+          <div>Score: {score}</div>
+          <div>Time: {timeLeft}s</div>
         </div>
       </div>
 
-      <div className="space-y-6">
-        {/* 3D Visualization - Full Width */}
-        <div>
-          <h4 className="text-white font-medium mb-3">🎮 Môi trường 3D Robot Navigation:</h4>
-          <div
-            className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-xl p-6 relative overflow-hidden border border-blue-500/20"
-            style={{ height: '480px', perspective: '1000px' }}
+      {/* Game Controls */}
+      <div className="absolute top-4 right-4 z-10 bg-black bg-opacity-90 rounded-lg p-4 backdrop-blur-sm">
+        <div className="flex flex-col gap-2 mb-4">
+          <button
+            onClick={() => setGameMode('menu')}
+            className="px-3 py-1 bg-gray-600 hover:bg-gray-700 rounded text-sm font-semibold"
           >
-            {/* 3D Grid Visualization */}
-            <div
-              className="absolute inset-0 flex items-center justify-center"
-              style={{
-                transformStyle: 'preserve-3d',
-                transform: 'rotateX(-10deg) rotateY(20deg)',
-              }}
+            📋 Level Menu
+          </button>
+          
+          {/* Mode Switch for Hybrid */}
+          {gameMode === 'hybrid' && (
+            <div className="flex gap-1">
+              <button
+                onClick={findPath}
+                disabled={gameState === 'completed' || !robot}
+                className="px-2 py-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 rounded text-xs font-semibold"
+              >
+                🎯 Auto
+              </button>
+              <span className="px-2 py-1 bg-purple-600 rounded text-xs font-semibold">🎮 Manual Ready</span>
+            </div>
+          )}
+          
+          {gameMode === 'auto' && (
+            <button
+              onClick={findPath}
+              disabled={gameState === 'completed' || !robot}
+              className="px-3 py-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 rounded text-sm font-semibold"
             >
-              {/* Render 3D Grid */}
-              {Array.from({ length: level.dimensions.depth }, (_, z) =>
-                Array.from({ length: level.dimensions.width }, (_, x) =>
-                  Array.from({ length: level.dimensions.height }, (_, y) => {
-                    const isRobot = robotPosition.x === x && robotPosition.y === y && robotPosition.z === z;
-                    const isGoal = goalPosition.x === x && goalPosition.y === y && goalPosition.z === z;
-                    const isObstacle = level.obstacles.some(
-                      (obs: Position3D) => obs.x === x && obs.y === y && obs.z === z,
-                    );
-                    const collectible = level.collectibles?.find(
-                      (item: Collectible) => item.x === x && item.y === y && item.z === z,
-                    );
-                    const isCollected = collectedItems.has(`${x},${y},${z}`);
-                    const isInPath = currentPath.some((pos) => pos.x === x && pos.y === y && pos.z === z);
-
-                    let className = 'absolute transition-all duration-300 rounded-lg border-2 ';
-                    let content = '';
-                    let gradient = '';
-
-                    if (isRobot) {
-                      className += 'border-cyan-400 shadow-lg shadow-cyan-500/60 ';
-                      gradient = 'linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%)';
-                      content = '🤖';
-                    } else if (isGoal) {
-                      className += 'border-green-400 shadow-lg shadow-green-500/60 ';
-                      gradient = 'linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)';
-                      content = '🎯';
-                    } else if (isObstacle) {
-                      className += 'border-red-400 shadow-lg shadow-red-500/40 ';
-                      gradient = 'linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%)';
-                      content = '🧱';
-                    } else if (collectible && !isCollected) {
-                      className += 'border-yellow-400 shadow-lg shadow-yellow-500/40 ';
-                      gradient = 'linear-gradient(135deg, #eab308 0%, #ca8a04 50%, #a16207 100%)';
-                      content = collectible.type === 'energy' ? '⚡' : collectible.type === 'data' ? '💾' : '💰';
-                    } else if (isInPath && showPath) {
-                      className += 'border-blue-400/60 shadow-md shadow-blue-500/30 ';
-                      gradient = 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%)';
-                    } else {
-                      className += 'border-gray-500/30 shadow-sm ';
-                      gradient = 'linear-gradient(135deg, #374151 0%, #4b5563 50%, #6b7280 100%)';
-                    }
-
-                    const scale = 32; // Larger cubes for better visibility
-                    const spacing = 38; // More spacing between cubes
-                    
-                    // Center the grid properly
-                    const centerX = (level.dimensions.width - 1) * spacing / 2;
-                    const centerY = (level.dimensions.height - 1) * spacing / 2;
-                    const centerZ = (level.dimensions.depth - 1) * spacing / 2;
-                    
-                    const xOffset = x * spacing - centerX;
-                    const yOffset = y * spacing - centerY;
-                    const zOffset = z * spacing - centerZ;
-
-                    return (
-                      <div
-                        key={`${x}-${y}-${z}`}
-                        className={className}
-                        style={{
-                          width: `${scale}px`,
-                          height: `${scale}px`,
-                          background: gradient,
-                          transform: `translate3d(${xOffset}px, ${yOffset}px, ${zOffset}px)`,
-                          transformStyle: 'preserve-3d',
-                          fontSize: '14px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          zIndex: isRobot ? 100 : isGoal ? 90 : isObstacle ? 80 : 10,
-                          position: 'absolute',
-                          filter: isRobot || isGoal ? 'brightness(1.2)' : 'brightness(0.9)',
-                        }}
-                      >
-                        <span className="drop-shadow-lg">{content}</span>
-                      </div>
-                    );
-                  }),
-                ),
-              )}
-            </div>
-
-            {/* Enhanced Controls Overlay */}
-            <div className="absolute bottom-4 left-4 right-4">
-              <div className="bg-black/70 backdrop-blur-md rounded-xl p-4 border border-white/10">
-                <div className="text-white text-sm mb-3 text-center font-bold">🕹️ Điều khiển Robot 3D</div>
-
-                {/* Y (Height) Controls */}
-                <div className="grid grid-cols-3 gap-3 mb-3">
-                  <div></div>
-                  <button
-                    onClick={() => moveRobot('y-')}
-                    disabled={isMoving}
-                    className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-blue-400/30"
-                    title="Lên cao"
-                    style={{
-                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(59, 130, 246, 0.4)',
-                    }}
-                  >
-                    ⬆️ Cao
-                  </button>
-                  <div></div>
-                </div>
-
-                {/* X and Z Controls */}
-                <div className="grid grid-cols-3 gap-3 mb-3">
-                  <button
-                    onClick={() => moveRobot('z-')}
-                    disabled={isMoving}
-                    className="bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 hover:from-purple-400 hover:via-purple-500 hover:to-purple-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-purple-400/30"
-                    title="Lui (Z-)"
-                    style={{
-                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(147, 51, 234, 0.4)',
-                    }}
-                  >
-                    🔺 Lui
-                  </button>
-                  <button
-                    onClick={() => moveRobot('x-')}
-                    disabled={isMoving}
-                    className="bg-gradient-to-br from-green-500 via-green-600 to-green-700 hover:from-green-400 hover:via-green-500 hover:to-green-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-green-400/30"
-                    title="Trái (X-)"
-                    style={{
-                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(34, 197, 94, 0.4)',
-                    }}
-                  >
-                    ⬅️ Trái
-                  </button>
-                  <button
-                    onClick={() => moveRobot('x+')}
-                    disabled={isMoving}
-                    className="bg-gradient-to-br from-green-500 via-green-600 to-green-700 hover:from-green-400 hover:via-green-500 hover:to-green-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-green-400/30"
-                    title="Phải (X+)"
-                    style={{
-                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(34, 197, 94, 0.4)',
-                    }}
-                  >
-                    ➡️ Phải
-                  </button>
-                </div>
-
-                {/* Bottom Row */}
-                <div className="grid grid-cols-3 gap-3">
-                  <div></div>
-                  <button
-                    onClick={() => moveRobot('y+')}
-                    disabled={isMoving}
-                    className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-blue-400/30"
-                    title="Xuống thấp"
-                    style={{
-                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(59, 130, 246, 0.4)',
-                    }}
-                  >
-                    ⬇️ Thấp
-                  </button>
-                  <button
-                    onClick={() => moveRobot('z+')}
-                    disabled={isMoving}
-                    className="bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 hover:from-purple-400 hover:via-purple-500 hover:to-purple-600 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg text-sm font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-purple-400/30"
-                    title="Tới (Z+)"
-                    style={{
-                      boxShadow: isMoving ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(147, 51, 234, 0.4)',
-                    }}
-                  >
-                    🔻 Tới
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+              🎯 Find Path
+            </button>
+          )}
+          
+          <button
+            onClick={resetGame}
+            className="px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded text-sm font-semibold"
+          >
+            🔄 Reset
+          </button>
         </div>
 
-        {/* Controls and Info - Full Width */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Algorithm Controls */}
-          <div>
-            <h4 className="text-white font-medium mb-3">🎛️ Điều khiển:</h4>
-
-            {/* Algorithm Selection */}
-            <div className="mb-4">
-              <label className="text-white text-sm mb-2 block">Thuật toán:</label>
-              <select
-                value={selectedAlgorithm}
-                onChange={(e) => setSelectedAlgorithm(e.target.value)}
-                className="w-full bg-gray-800 text-white p-2 rounded border border-gray-600"
-              >
-                <option value="astar">A* (Tối ưu)</option>
-                <option value="dijkstra">Dijkstra (Đảm bảo)</option>
-                <option value="bfs">BFS (Đơn giản)</option>
-              </select>
-            </div>
-
-            {/* Auto Navigation */}
-            <div className="space-y-3">
+        {/* Manual Controls */}
+        {(gameMode === 'manual' || gameMode === 'hybrid') && (
+          <div className="mb-4">
+            <h3 className="text-sm font-bold mb-2 text-blue-300">Manual Controls</h3>
+            <div className="grid grid-cols-3 gap-1 mb-2">
+              <div></div>
               <button
-                onClick={autoNavigate}
-                disabled={isMoving || isCalculatingPath}
-                className="w-full bg-gradient-to-br from-cyan-500 via-cyan-600 to-blue-600 hover:from-cyan-400 hover:via-cyan-500 hover:to-blue-500 disabled:from-gray-600 disabled:via-gray-700 disabled:to-gray-800 text-white py-3 px-4 rounded-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:scale-100 border border-cyan-400/30"
-                style={{
-                  boxShadow: isMoving || isCalculatingPath ? 'inset 0 2px 8px rgba(0,0,0,0.3)' : '0 4px 12px rgba(6, 182, 212, 0.4)',
-                }}
+                onClick={() => moveRobot('forward')}
+                className="px-2 py-1 bg-blue-500 hover:bg-blue-600 rounded text-xs"
+                disabled={!robot || robot.isMoving}
               >
-                {isCalculatingPath ? '🧠 Đang tính toán...' : '🤖 Tự động điều hướng'}
+                ↑
               </button>
-
+              <div></div>
               <button
-                onClick={() => setShowPath(!showPath)}
-                className="w-full bg-gradient-to-br from-purple-500 via-purple-600 to-pink-600 hover:from-purple-400 hover:via-purple-500 hover:to-pink-500 text-white py-3 px-4 rounded-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 border border-purple-400/30"
-                style={{
-                  boxShadow: '0 4px 12px rgba(147, 51, 234, 0.4)',
-                }}
+                onClick={() => moveRobot('left')}
+                className="px-2 py-1 bg-blue-500 hover:bg-blue-600 rounded text-xs"
+                disabled={!robot || robot.isMoving}
               >
-                {showPath ? '👁️ Ẩn đường đi' : '👁️ Hiện đường đi'}
+                ←
               </button>
-
               <button
-                onClick={resetLevel}
-                className="w-full bg-gradient-to-br from-orange-500 via-red-500 to-red-600 hover:from-orange-400 hover:via-red-400 hover:to-red-500 text-white py-3 px-4 rounded-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 border border-orange-400/30"
-                style={{
-                  boxShadow: '0 4px 12px rgba(234, 88, 12, 0.4)',
-                }}
+                onClick={() => moveRobot('down')}
+                className="px-2 py-1 bg-blue-500 hover:bg-blue-600 rounded text-xs"
+                disabled={!robot || robot.isMoving}
               >
-                🔄 Khởi động lại
+                ↓
+              </button>
+              <button
+                onClick={() => moveRobot('right')}
+                className="px-2 py-1 bg-blue-500 hover:bg-blue-600 rounded text-xs"
+                disabled={!robot || robot.isMoving}
+              >
+                →
               </button>
             </div>
-          </div>
-
-          {/* Game Stats */}
-          <div>
-            <h5 className="text-white font-medium mb-3">📊 Thống kê:</h5>
-            <div className="bg-gradient-to-br from-gray-800/70 via-gray-900/70 to-black/70 rounded-xl p-4 border border-gray-600/30 backdrop-blur-sm">
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between text-gray-300">
-                  <span>🎯 Vị trí hiện tại:</span>
-                  <span className="text-cyan-400 font-bold">
-                    ({robotPosition.x}, {robotPosition.y}, {robotPosition.z})
-                  </span>
-                </div>
-                <div className="flex justify-between text-gray-300">
-                  <span>🚩 Mục tiêu:</span>
-                  <span className="text-green-400 font-bold">
-                    ({goalPosition.x}, {goalPosition.y}, {goalPosition.z})
-                  </span>
-                </div>
-                <div className="flex justify-between text-gray-300">
-                  <span>👣 Số bước đã đi:</span>
-                  <span className="text-yellow-400 font-bold">{pathHistory.length - 1}</span>
-                </div>
-                <div className="flex justify-between text-gray-300">
-                  <span>💎 Vật phẩm thu thập:</span>
-                  <span className="text-purple-400 font-bold">
-                    {collectedItems.size}/{level.collectibles?.length || 0}
-                  </span>
-                </div>
-                <div className="flex justify-between text-gray-300">
-                  <span>🧠 Thuật toán:</span>
-                  <span className="text-blue-400 font-bold capitalize">{selectedAlgorithm}</span>
-                </div>
-              </div>
+            <div className="grid grid-cols-2 gap-1">
+              <button
+                onClick={() => moveRobot('up')}
+                className="px-2 py-1 bg-purple-500 hover:bg-purple-600 rounded text-xs"
+                disabled={!robot || robot.isMoving}
+              >
+                Up (Q)
+              </button>
+              <button
+                onClick={() => moveRobot('backward')}
+                className="px-2 py-1 bg-purple-500 hover:bg-purple-600 rounded text-xs"
+                disabled={!robot || robot.isMoving}
+              >
+                Down (E)
+              </button>
             </div>
+            <p className="text-xs text-gray-400 mt-2">Use WASD/Arrow keys or buttons</p>
           </div>
+        )}
 
-          {/* Progress */}
-          <div>
-            <h5 className="text-white font-medium mb-3">🎯 Tiến độ:</h5>
-            <div className="bg-gradient-to-br from-gray-800/70 via-gray-900/70 to-black/70 rounded-xl p-4 border border-gray-600/30 backdrop-blur-sm">
-              <div className="w-full bg-gray-700/50 rounded-full h-4 mb-3 overflow-hidden">
-                <div
-                  className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 h-4 rounded-full transition-all duration-500 shadow-lg"
-                  style={{
-                    width: `${((currentLevel + 1) / effectiveGameData.levels.length) * 100}%`,
-                    boxShadow: '0 0 10px rgba(59, 130, 246, 0.6)',
-                  }}
-                />
-              </div>
-              <p className="text-gray-300 text-sm text-center font-medium">
-                Cấp độ {currentLevel + 1} / {effectiveGameData.levels.length}
-              </p>
-            </div>
-          </div>
+        {/* Instructions */}
+        <div className="text-xs text-gray-300">
+          <p>• Green cube = Start 🟢</p>
+          <p>• Yellow cube = Target 🟡</p>
+          <p>• Brown cubes = Obstacles 🟫</p>
+          <p>• Gray cubes = Walls ⬜</p>
         </div>
       </div>
+
+      {/* 3D Game Container - Increased Size */}
+      <div 
+        ref={containerRef} 
+        className="w-full h-screen"
+        style={{ 
+          cursor: 'grab',
+          minHeight: '800px' // Minimum height for desktop
+        }}
+      />
+
+      {/* Success Modal */}
+      {gameState === 'completed' && (
+        <div className="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center z-20">
+          <div className="bg-gradient-to-br from-green-800 via-blue-800 to-purple-800 rounded-2xl p-8 max-w-md mx-4 border border-green-400/30">
+            <div className="text-center">
+              <div className="text-6xl mb-4">🎉</div>
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Xuất sắc!
+              </h2>
+              <p className="text-lg text-gray-300 mb-2">
+                Robot đã tìm được đường đi tối ưu!
+              </p>
+              <div className="text-2xl font-bold text-yellow-400 mb-6">
+                Điểm số: {score}
+              </div>
+              <div className="flex flex-col gap-3">
+                <button
+                  onClick={resetGame}
+                  className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-white transition-colors"
+                >
+                  🔄 Chơi lại
+                </button>
+                <button
+                  onClick={() => setGameMode('menu')}
+                  className="px-6 py-3 bg-gray-600 hover:bg-gray-700 rounded-lg font-semibold text-white transition-colors"
+                >
+                  📋 Chọn màn khác
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

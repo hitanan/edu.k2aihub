@@ -19,9 +19,8 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Comprehensive introduction to medical device design principles, từ concept đến clinical implementation. Cover FDA/CE marking requirements, ISO 13485 quality management, và Vietnamese medical device regulations.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Understand medical device classification systems và regulatory pathways',
       'Apply design controls và risk management (ISO 14971) trong device development',
@@ -55,15 +54,13 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Document risk management file theo regulatory requirements',
           'Create post-market surveillance plan cho ongoing risk monitoring',
         ],
-        expectedResults:
-          'Complete risk management file ready cho regulatory submission',
+        expectedResults: 'Complete risk management file ready cho regulatory submission',
         solution:
           'Systematic approach identifies 15-20 key risks với appropriate mitigation strategies, demonstrating compliance với international standards',
       },
       {
         title: 'Vietnamese Medical Device Registration',
-        description:
-          'Navigate Ministry of Health registration process cho innovative medical device',
+        description: 'Navigate Ministry of Health registration process cho innovative medical device',
         difficulty: 'Nâng cao',
         materials: [
           'MOH Circular 30/2015/TT-BYT guidelines',
@@ -79,8 +76,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Respond to MOH queries và inspection requirements',
           'Obtain Certificate of Free Sale for Vietnamese market',
         ],
-        expectedResults:
-          'Successful medical device registration approval from Vietnamese MOH',
+        expectedResults: 'Successful medical device registration approval from Vietnamese MOH',
         solution:
           'Comprehensive dossier preparation with proper classification leads to streamlined approval process within 6-12 months',
       },
@@ -165,9 +161,8 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Advanced techniques for processing biological signals và medical images. Cover ECG, EEG, EMG signal analysis, medical image processing algorithms, và AI applications trong diagnostic imaging.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master digital signal processing techniques cho biological signals',
       'Implement medical image analysis algorithms using MATLAB/Python',
@@ -184,8 +179,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
     exercises: [
       {
         title: 'ECG Arrhythmia Detection System',
-        description:
-          'Build automated arrhythmia detection system using machine learning với real ECG data',
+        description: 'Build automated arrhythmia detection system using machine learning với real ECG data',
         difficulty: 'Nâng cao',
         materials: [
           'MIT-BIH Arrhythmia Database',
@@ -201,15 +195,13 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Evaluate performance: sensitivity, specificity, accuracy metrics',
           'Deploy real-time detection system với clinical validation',
         ],
-        expectedResults:
-          'Arrhythmia detection system với >95% accuracy trên standard test datasets',
+        expectedResults: 'Arrhythmia detection system với >95% accuracy trên standard test datasets',
         solution:
           'Comprehensive approach combining advanced signal processing với machine learning achieves clinical-grade performance for automated cardiac monitoring',
       },
       {
         title: 'Medical Image Segmentation for Brain Tumors',
-        description:
-          'Develop deep learning model cho automated brain tumor segmentation from MRI images',
+        description: 'Develop deep learning model cho automated brain tumor segmentation from MRI images',
         difficulty: 'Nâng cao',
         materials: [
           'BraTS dataset (Brain Tumor Segmentation)',
@@ -225,8 +217,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Validate results với radiologist annotations using Dice coefficient',
           'Create clinical visualization tools cho treatment planning',
         ],
-        expectedResults:
-          'Brain tumor segmentation model với Dice score >0.85 cho enhancing tumor regions',
+        expectedResults: 'Brain tumor segmentation model với Dice score >0.85 cho enhancing tumor regions',
         solution:
           'Advanced deep learning approach enables precise tumor boundary detection, supporting clinical decision-making for neurosurgery planning',
       },
@@ -304,9 +295,8 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Advanced concepts trong tissue engineering, stem cell technology, và regenerative medicine applications. Cover biomaterials, 3D bioprinting, cell culture techniques, và clinical translation challenges.',
     duration: '240 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Understand fundamental principles của tissue engineering và regenerative medicine',
       'Master biomaterial selection và characterization cho tissue scaffolds',
@@ -323,8 +313,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
     exercises: [
       {
         title: '3D Bioprinting Laboratory Protocol',
-        description:
-          'Design và implement 3D bioprinting protocol cho cardiac tissue engineering using stem cells',
+        description: 'Design và implement 3D bioprinting protocol cho cardiac tissue engineering using stem cells',
         difficulty: 'Nâng cao',
         materials: [
           '3D bioprinter với temperature control',
@@ -341,15 +330,13 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Culture printed tissues trong bioreactor systems',
           'Analyze tissue development: viability, differentiation, functionality',
         ],
-        expectedResults:
-          'Functional cardiac tissue constructs với synchronized beating và proper cell organization',
+        expectedResults: 'Functional cardiac tissue constructs với synchronized beating và proper cell organization',
         solution:
           'Optimized bioprinting parameters enable creation of viable cardiac tissues với >90% cell viability và measurable contractile function',
       },
       {
         title: 'Stem Cell Therapy Development',
-        description:
-          'Develop mesenchymal stem cell therapy protocol cho orthopedic applications',
+        description: 'Develop mesenchymal stem cell therapy protocol cho orthopedic applications',
         difficulty: 'Nâng cao',
         materials: [
           'Mesenchymal stem cells (bone marrow-derived)',
@@ -366,8 +353,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Evaluate therapeutic efficacy trong animal models',
           'Prepare clinical trial protocol với regulatory considerations',
         ],
-        expectedResults:
-          'Validated stem cell therapy showing enhanced bone regeneration với minimal adverse effects',
+        expectedResults: 'Validated stem cell therapy showing enhanced bone regeneration với minimal adverse effects',
         solution:
           'Comprehensive development approach demonstrates therapeutic potential với clear pathway to clinical translation',
       },
@@ -397,8 +383,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       {
         title: 'Vinmec Stem Cell Institute Success Story',
         organization: 'Vinmec International Hospital',
-        problem:
-          'Developing autologous stem cell therapies cho Vietnamese patients với degenerative diseases',
+        problem: 'Developing autologous stem cell therapies cho Vietnamese patients với degenerative diseases',
         solution:
           'Established comprehensive stem cell program including isolation, expansion, và clinical application protocols',
         impact:
@@ -413,8 +398,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       {
         title: 'Vietnamese Spinal Cord Injury Research Program',
         organization: 'Ho Chi Minh City Medicine University',
-        problem:
-          'Addressing limited treatment options cho spinal cord injury patients trong Vietnam',
+        problem: 'Addressing limited treatment options cho spinal cord injury patients trong Vietnam',
         solution:
           'Developed neural stem cell therapy program với international collaboration và rigorous clinical protocols',
         impact:
@@ -459,9 +443,8 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Comprehensive exploration của medical robotics applications, từ surgical robots đến rehabilitation systems. Cover control systems, haptic feedback, computer vision, và safety considerations trong clinical environments.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Understand medical robotics systems design và control principles',
       'Master surgical robot kinematics và trajectory planning',
@@ -478,8 +461,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
     exercises: [
       {
         title: 'Surgical Robot Control System',
-        description:
-          'Design force-feedback control system cho robotic surgical instrument với haptic capabilities',
+        description: 'Design force-feedback control system cho robotic surgical instrument với haptic capabilities',
         difficulty: 'Nâng cao',
         materials: [
           'Robotic manipulator với force sensors',
@@ -521,8 +503,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Optimize processing pipeline cho real-time performance (<50ms latency)',
           'Validate tracking accuracy trong surgical simulation environment',
         ],
-        expectedResults:
-          'Real-time surgical navigation system với <2mm tracking accuracy và robust performance',
+        expectedResults: 'Real-time surgical navigation system với <2mm tracking accuracy và robust performance',
         solution:
           'Optimized computer vision pipeline enables precise surgical guidance với minimal latency for enhanced surgical precision',
       },
@@ -568,8 +549,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       {
         title: 'Vietnam National Rehabilitation Innovation',
         organization: 'National Rehabilitation Hospital',
-        problem:
-          'Improving rehabilitation outcomes cho stroke patients và spinal cord injury patients',
+        problem: 'Improving rehabilitation outcomes cho stroke patients và spinal cord injury patients',
         solution:
           'Implemented robot-assisted gait training systems và upper limb rehabilitation robots với personalized therapy protocols',
         impact:

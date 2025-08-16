@@ -65,6 +65,7 @@ export default function DigitalArtsCreativeTechMainPage() {
       jobGrowth: '+180%',
       hireDemand: 'Rất cao'
     },
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     relatedModules: [
       K2Module.AIArtCreativeTech,
       K2Module.MetaverseVREducation,

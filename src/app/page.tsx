@@ -281,7 +281,7 @@ export default function HomePage() {
               </div>
             }
           >
-            <EducationalGamesShowcase limit={30} />
+            <EducationalGamesShowcase limit={30} randomize={true} />
           </ClientOnly>
         </div>
       </section>

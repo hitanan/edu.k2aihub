@@ -256,10 +256,33 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
 }
 
 // Games showcase component
-export function EducationalGamesShowcase({ moduleType, limit = 9 }: { moduleType?: string; limit?: number }) {
+export function EducationalGamesShowcase({ 
+  moduleType, 
+  limit = 9, 
+  randomize = false 
+}: { 
+  moduleType?: string; 
+  limit?: number; 
+  randomize?: boolean;
+}) {
   const { getGamesForModule, getRecommendedGames } = useEducationalGames();
 
-  const games = moduleType ? getGamesForModule(moduleType).slice(0, limit) : getRecommendedGames(limit);
+  let games: EducationalGame[];
+  if (moduleType) {
+    games = getGamesForModule(moduleType).slice(0, limit);
+  } else {
+    games = getRecommendedGames(limit);
+    
+    // Shuffle games if randomize is enabled (for homepage)
+    if (randomize) {
+      const shuffled = [...games];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      games = shuffled.slice(0, limit);
+    }
+  }
 
   if (games.length === 0) {
     return null;

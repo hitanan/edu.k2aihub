@@ -323,10 +323,10 @@ npm run build    # Production build with static generation, must set NODE_ENV=pr
 ### Build Process:
 
 ```bash
-npm run build    # Production build with static generation, must set NODE_ENV=production before running
 npm run start    # Production server (for testing)
 npm run dev      # Development with turbopack
 npm run lint     # Code quality checks
+npm run build    # Production build with static generation, must set NODE_ENV=production before running
 
 ```
 

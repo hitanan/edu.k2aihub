@@ -238,7 +238,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'data-visualization':
         return <DataVisualizationGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'space-exploration':
-        return <SpaceExplorationGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
+        return <SpaceExplorationGame onComplete={endGame} timeLeft={timeLeft} />;
       case 'neural-network-builder':
         return <NeuralNetworkBuilderGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'math-puzzle':

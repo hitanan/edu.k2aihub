@@ -16,9 +16,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Comprehensive nanomaterials science covering synthesis methods, characterization techniques, và properties analysis. Focus trên Vietnamese research capabilities và applications trong electronics, energy, và environmental technology.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master nanomaterial synthesis techniques: top-down và bottom-up approaches',
       'Understand characterization methods: electron microscopy, spectroscopy, X-ray analysis',
@@ -34,8 +33,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
     ],
     exercises: [
       {
-        title:
-          'Gold Nanoparticle Synthesis for Vietnamese Medical Applications',
+        title: 'Gold Nanoparticle Synthesis for Vietnamese Medical Applications',
         description:
           'Synthesize và characterize gold nanoparticles optimized cho drug delivery applications trong Vietnamese healthcare system',
         difficulty: 'Nâng cao',
@@ -140,10 +138,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       {
         title: 'FPT University Nanoelectronics Development',
         organization: 'FPT University - Nanotechnology Research Center',
-        problem:
-          'Creating nanotechnology capabilities supporting Vietnamese electronics industry development',
-        solution:
-          'Built state-of-the-art nanofabrication facilities và developed industry-relevant research programs',
+        problem: 'Creating nanotechnology capabilities supporting Vietnamese electronics industry development',
+        solution: 'Built state-of-the-art nanofabrication facilities và developed industry-relevant research programs',
         impact:
           'Supported 10+ electronics companies, developed nanomaterial suppliers, enhanced Vietnamese technology capabilities',
         innovations: [
@@ -179,9 +175,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Advanced nanoelectronics covering quantum devices, molecular electronics, và next-generation computing technology. Explore applications trong Vietnamese semiconductor industry và emerging quantum technology.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Understand quantum mechanics principles trong nanoelectronic devices',
       'Master quantum device fabrication techniques và characterization',
@@ -198,8 +193,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
     exercises: [
       {
         title: 'Quantum Dot Solar Cell Development',
-        description:
-          'Design và fabricate quantum dot solar cells optimized cho Vietnamese solar energy applications',
+        description: 'Design và fabricate quantum dot solar cells optimized cho Vietnamese solar energy applications',
         difficulty: 'Nâng cao',
         materials: [
           'Quantum dot synthesis equipment',
@@ -216,15 +210,13 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
           'Measure photovoltaic performance: efficiency, stability',
           'Evaluate performance trong Vietnamese tropical climate conditions',
         ],
-        expectedResults:
-          'Quantum dot solar cells với >10% efficiency stable trong tropical conditions',
+        expectedResults: 'Quantum dot solar cells với >10% efficiency stable trong tropical conditions',
         solution:
           'Optimized quantum dot devices provide cost-effective solar energy solutions cho Vietnamese renewable energy market',
       },
       {
         title: 'Molecular Electronic Device Prototyping',
-        description:
-          'Develop molecular electronic switches và sensors cho Vietnamese IoT applications',
+        description: 'Develop molecular electronic switches và sensors cho Vietnamese IoT applications',
         difficulty: 'Nâng cao',
         materials: [
           'Molecular synthesis laboratory',
@@ -241,8 +233,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
           'Measure switching behavior và device stability',
           'Evaluate applications trong Vietnamese IoT sensor networks',
         ],
-        expectedResults:
-          'Functional molecular electronic devices demonstrating reliable switching behavior',
+        expectedResults: 'Functional molecular electronic devices demonstrating reliable switching behavior',
         solution:
           'Molecular electronics enables ultra-miniaturized sensors suitable cho Vietnamese smart city applications',
       },
@@ -272,12 +263,9 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       {
         title: 'Vietnam-Japan Quantum Technology Partnership',
         organization: 'Vietnam Academy of Science và RIKEN Japan',
-        problem:
-          'Developing Vietnamese capabilities trong quantum technology research và applications',
-        solution:
-          'Established joint research programs, technology transfer, và capability building initiatives',
-        impact:
-          'Created quantum research center, trained 30+ researchers, developed quantum sensor prototypes',
+        problem: 'Developing Vietnamese capabilities trong quantum technology research và applications',
+        solution: 'Established joint research programs, technology transfer, và capability building initiatives',
+        impact: 'Created quantum research center, trained 30+ researchers, developed quantum sensor prototypes',
         innovations: [
           'Quantum sensor development',
           'Quantum communication protocols',
@@ -288,10 +276,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       {
         title: 'Vietnamese Quantum Sensing Applications',
         organization: 'Vietnam Institute of Physics',
-        problem:
-          'Applying quantum sensing technology cho Vietnamese infrastructure monitoring và resource exploration',
-        solution:
-          'Developed quantum magnetometers và gravimeters cho geological surveys và infrastructure monitoring',
+        problem: 'Applying quantum sensing technology cho Vietnamese infrastructure monitoring và resource exploration',
+        solution: 'Developed quantum magnetometers và gravimeters cho geological surveys và infrastructure monitoring',
         impact:
           'Enhanced mineral exploration capabilities, improved infrastructure monitoring, supported environmental studies',
         innovations: [
@@ -334,9 +320,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Advanced biomedical applications của nanotechnology including drug delivery systems, diagnostic nanoparticles, và regenerative medicine. Focus trên Vietnamese healthcare applications và regulatory considerations.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master biomedical nanoparticle design và synthesis principles',
       'Understand drug delivery mechanisms và targeting strategies',
@@ -396,8 +381,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
           'Develop point-of-care testing protocols',
           'Validate performance trong field conditions',
         ],
-        expectedResults:
-          'Diagnostic nanoparticles detecting pathogens với >95% sensitivity và <5% false positive rate',
+        expectedResults: 'Diagnostic nanoparticles detecting pathogens với >95% sensitivity và <5% false positive rate',
         solution:
           'Rapid diagnostic tools enable early disease detection supporting Vietnamese public health initiatives',
       },
@@ -436,10 +420,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       {
         title: 'Vietnamese Tropical Disease Diagnostics',
         organization: 'National Institute of Hygiene và Epidemiology',
-        problem:
-          'Developing rapid diagnostic tools cho tropical diseases affecting Vietnamese population',
-        solution:
-          'Created nanoparticle-based diagnostic platforms enabling point-of-care testing trong remote areas',
+        problem: 'Developing rapid diagnostic tools cho tropical diseases affecting Vietnamese population',
+        solution: 'Created nanoparticle-based diagnostic platforms enabling point-of-care testing trong remote areas',
         impact:
           'Reduced disease diagnosis time from days to hours, improved patient outcomes, enhanced disease surveillance',
         innovations: [
@@ -475,9 +457,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Nanotechnology solutions cho environmental challenges including water treatment, air purification, và sustainable energy applications. Focus trên Vietnamese environmental issues và sustainability goals.',
     duration: '165 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Apply nanotechnology solutions cho water và air pollution treatment',
       'Understand environmental fate và transport của nanomaterials',
@@ -512,8 +493,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
           'Test treatment efficiency với real water samples',
           'Evaluate environmental impact và sustainability',
         ],
-        expectedResults:
-          'Water treatment system removing >95% pollutants while maintaining environmental safety',
+        expectedResults: 'Water treatment system removing >95% pollutants while maintaining environmental safety',
         solution:
           'Integrated nanotechnology approach provides sustainable water treatment cho Vietnamese agricultural communities',
       },
@@ -537,8 +517,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
           'Test durability trong tropical weather conditions',
           'Calculate environmental impact và cost-effectiveness',
         ],
-        expectedResults:
-          'Building coatings reducing local air pollution by 30-50% trong urban environments',
+        expectedResults: 'Building coatings reducing local air pollution by 30-50% trong urban environments',
         solution:
           'Smart building coatings contribute to cleaner air trong Vietnamese cities while providing aesthetic benefits',
       },
@@ -568,10 +547,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       {
         title: 'Mekong Delta Water Treatment Innovation',
         organization: 'Can Tho University - Environmental Engineering',
-        problem:
-          'Addressing water pollution trong Mekong Delta affecting agricultural productivity và public health',
-        solution:
-          'Developed nanotechnology-based water treatment systems specifically designed cho delta conditions',
+        problem: 'Addressing water pollution trong Mekong Delta affecting agricultural productivity và public health',
+        solution: 'Developed nanotechnology-based water treatment systems specifically designed cho delta conditions',
         impact:
           'Improved water quality cho 100,000+ residents, enhanced agricultural productivity, reduced waterborne diseases',
         innovations: [
@@ -588,8 +565,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
           'Implementing nanotechnology solutions cho urban air pollution reduction trong rapidly growing metropolis',
         solution:
           'Deployed photocatalytic building coatings và air purification systems throughout city infrastructure',
-        impact:
-          'Reduced particulate matter by 25%, improved air quality index, enhanced urban livability',
+        impact: 'Reduced particulate matter by 25%, improved air quality index, enhanced urban livability',
         innovations: [
           'Self-cleaning building facades',
           'Photocatalytic road surfaces',

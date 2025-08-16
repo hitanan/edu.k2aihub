@@ -26,6 +26,7 @@ export default function SpaceTechnologyMainPage() {
     level: 'Trung bình',
     duration: '10-12 giờ',
     category: 'Experimental Engineering',
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     features: [
       'Satellite technology và Earth observation',
       'CubeSat design và development',

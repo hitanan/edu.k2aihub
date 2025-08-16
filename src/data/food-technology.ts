@@ -19,9 +19,8 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       'Comprehensive food safety management using HACCP, ISO 22000, và Vietnamese food safety regulations. Focus trên Vietnamese food industry modernization và international export standards.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master HACCP principles và implementation trong food manufacturing',
       'Understand Vietnamese food safety regulations và international standards',
@@ -56,8 +55,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
           'Develop verification và record-keeping systems',
           'Create training program cho production workers',
         ],
-        expectedResults:
-          'Complete HACCP plan meeting Vietnamese export standards và international requirements',
+        expectedResults: 'Complete HACCP plan meeting Vietnamese export standards và international requirements',
         solution:
           'Systematic approach ensures traditional methods comply với modern safety standards while maintaining authentic flavor profiles',
       },
@@ -81,8 +79,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
           'Implement quality management system với ISO/IEC 17025 compliance',
           'Create cost-effective testing schedule optimizing safety và efficiency',
         ],
-        expectedResults:
-          'Fully functional QC lab capable của supporting international food exports',
+        expectedResults: 'Fully functional QC lab capable của supporting international food exports',
         solution:
           'Comprehensive lab design enables Vietnamese food companies to meet stringent international quality requirements',
       },
@@ -117,8 +114,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
           'Upgrading food safety systems để meet international export standards while maintaining traditional Vietnamese flavors',
         solution:
           'Implemented comprehensive HACCP systems across all production facilities với modern technology integration',
-        impact:
-          'Achieved FDA approval cho US market, increased exports by 150%, maintained authentic taste profiles',
+        impact: 'Achieved FDA approval cho US market, increased exports by 150%, maintained authentic taste profiles',
         innovations: [
           'Automated monitoring systems with IoT sensors',
           'Blockchain-based traceability systems',
@@ -129,12 +125,9 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       {
         title: 'Minh Phu Seafood Export Excellence',
         organization: 'Minh Phu Seafood Corporation',
-        problem:
-          'Meeting stringent EU food safety requirements cho large-scale shrimp export operations',
-        solution:
-          'Developed integrated quality management system từ farm to table với continuous monitoring',
-        impact:
-          'Became largest Vietnamese seafood exporter to EU, achieved zero food safety incidents over 5 years',
+        problem: 'Meeting stringent EU food safety requirements cho large-scale shrimp export operations',
+        solution: 'Developed integrated quality management system từ farm to table với continuous monitoring',
+        impact: 'Became largest Vietnamese seafood exporter to EU, achieved zero food safety incidents over 5 years',
         innovations: [
           'Integrated aquaculture monitoring systems',
           'Cold chain management technology',
@@ -168,9 +161,8 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       'Advanced fermentation processes cho traditional và modern food production. Cover Vietnamese fermented foods, probiotics, và biotechnology applications trong food industry.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master fermentation biochemistry và microbiology principles',
       'Understand traditional Vietnamese fermentation techniques và modernization approaches',
@@ -212,8 +204,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       },
       {
         title: 'Probiotic Vietnamese Yogurt Development',
-        description:
-          'Develop probiotic yogurt using Vietnamese indigenous lactic acid bacteria với coconut milk base',
+        description: 'Develop probiotic yogurt using Vietnamese indigenous lactic acid bacteria với coconut milk base',
         difficulty: 'Nâng cao',
         materials: [
           'Indigenous LAB strains từ Vietnamese fermented foods',
@@ -230,8 +221,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
           'Develop packaging systems cho probiotic stability',
           'Validate health benefits through preliminary studies',
         ],
-        expectedResults:
-          'Commercially viable probiotic yogurt với 10^8 CFU/mL viable probiotics after 21 days storage',
+        expectedResults: 'Commercially viable probiotic yogurt với 10^8 CFU/mL viable probiotics after 21 days storage',
         solution:
           'Innovation creates healthy, culturally appropriate probiotic food targeting Vietnamese market preferences',
       },
@@ -294,8 +284,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
         organization: 'Masan Consumer Holdings',
         problem:
           'Scaling traditional fermented condiment production while maintaining authentic flavors và improving food safety',
-        solution:
-          'Implemented controlled fermentation technology với traditional starter culture preservation',
+        solution: 'Implemented controlled fermentation technology với traditional starter culture preservation',
         impact:
           'Increased production capacity by 300%, maintained traditional taste profiles, achieved international export standards',
         innovations: [
@@ -331,9 +320,8 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       'Cutting-edge culinary science techniques combining chemistry, physics, và creativity. Modernize Vietnamese cuisine using molecular gastronomy principles while preserving traditional flavors.',
     duration: '165 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Master molecular gastronomy techniques và scientific principles',
       'Apply food chemistry knowledge cho innovative texture và flavor creation',
@@ -375,8 +363,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       },
       {
         title: 'Vietnamese Dessert Transformation',
-        description:
-          'Modernize traditional Vietnamese desserts (che, banh flan) using molecular gastronomy techniques',
+        description: 'Modernize traditional Vietnamese desserts (che, banh flan) using molecular gastronomy techniques',
         difficulty: 'Trung bình',
         materials: [
           'Traditional dessert ingredients: coconut, tropical fruits, beans',
@@ -395,8 +382,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
         ],
         expectedResults:
           'Modern Vietnamese dessert collection appealing to contemporary diners while respecting tradition',
-        solution:
-          'Balance của innovation và tradition creates new market opportunities cho Vietnamese culinary arts',
+        solution: 'Balance của innovation và tradition creates new market opportunities cho Vietnamese culinary arts',
       },
     ],
     realWorldApplications: [
@@ -472,9 +458,8 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       'Sustainable food systems design, supply chain optimization, và environmental impact reduction. Focus trên Vietnamese agriculture modernization và circular economy principles.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&h=600&fit=crop&auto=format',
     objectives: [
       'Understand sustainable food production principles và circular economy concepts',
       'Design efficient food supply chains minimizing waste và environmental impact',
@@ -509,8 +494,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
           'Develop traceability system enabling sustainable sourcing verification',
           'Calculate environmental và economic impacts của optimized system',
         ],
-        expectedResults:
-          'Sustainable supply chain reducing waste by 25% và carbon footprint by 30%',
+        expectedResults: 'Sustainable supply chain reducing waste by 25% và carbon footprint by 30%',
         solution:
           'Integrated approach balances environmental sustainability với economic viability for Vietnamese rice industry',
       },
@@ -534,8 +518,7 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
           'Create staff training programs promoting waste consciousness',
           'Measure environmental và economic benefits của reduction programs',
         ],
-        expectedResults:
-          'City-wide food waste reduction program decreasing waste by 40% và creating economic value',
+        expectedResults: 'City-wide food waste reduction program decreasing waste by 40% và creating economic value',
         solution:
           'Comprehensive approach transforms waste từ cost center to value creation opportunity for urban food systems',
       },

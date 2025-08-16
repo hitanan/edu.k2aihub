@@ -38,6 +38,7 @@ export default function DataScienceMainPage() {
     level: 'Trung bình',
     duration: '25-30 giờ',
     category: 'Data & Analytics',
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     features: [
       'CRISP-DM methodology và quy trình Data Science hoàn chỉnh',
       'Machine Learning algorithms từ cơ bản đến nâng cao',
