@@ -1369,7 +1369,7 @@ export const citiesData: City[] = [
     population: '1,622,901',
     area: '5,994.4 km²',
     description:
-      'Hà Tĩnh là tỉnh ven biển miền Trung, nổi tiếng là quê hương Chủ tịch Hồ Chí Minh. Tỉnh có nhiều di tích lịch sử quan trọng và phong cảnh thiên nhiên đẹp. Hà Tĩnh đang phát triển mạnh về công nghiệp với khu kinh tế Vũng Áng.',
+      'Hà Tĩnh là tỉnh ven biển miền Trung, có liên quan đến Chủ tịch Hồ Chí Minh qua quê ngoại của Người tại làng Hoàng Trù. Tỉnh có nhiều di tích lịch sử quan trọng và phong cảnh thiên nhiên đẹp. Hà Tĩnh đang phát triển mạnh về công nghiệp với khu kinh tế Vũng Áng.',
     touristAttractions: [
       {
         name: 'Làng Hoàng Trù',
@@ -1401,7 +1401,7 @@ export const citiesData: City[] = [
       },
     ],
     fullPageContent: `
-      <h2>Tỉnh Hà Tĩnh - Quê hương Bác Hồ và trung tâm công nghiệp nặng</h2>
+      <h2>Tỉnh Hà Tĩnh - Vùng đất có liên quan đến Bác Hồ và trung tâm công nghiệp nặng</h2>
       
       <h3>Tổng quan kinh tế</h3>
       <p>Hà Tĩnh là tỉnh có tiềm lực kinh tế quan trọng với GRDP đạt <strong>112,855,090 triệu đồng</strong>, xếp hạng <strong>27/34</strong> toàn quốc. Thu ngân sách đạt <strong>17,972,968 triệu đồng</strong>, xếp hạng <strong>23/34</strong>. Tỉnh đang có sự phát triển mạnh mẽ về công nghiệp nặng.</p>
@@ -1410,7 +1410,7 @@ export const citiesData: City[] = [
       <p>Thu nhập bình quân đầu người đạt <strong>51.60 triệu đồng/năm</strong>, xếp hạng <strong>28/34</strong> toàn quốc. Với dân số <strong>1,622,901 người</strong> (xếp hạng <strong>27/34</strong>) và diện tích <strong>5,994.4 km²</strong> (xếp hạng <strong>27/34</strong>), Hà Tĩnh có quy mô trung bình nhưng tiềm năng phát triển lớn.</p>
 
       <h3>Vị trí lịch sử và văn hóa</h3>
-      <p>Hà Tĩnh là tỉnh ven biển miền Trung, nổi tiếng là quê hương của Chủ tịch Hồ Chí Minh vĩ đại. Tỉnh có nhiều di tích lịch sử quan trọng như Làng Sen - Kim Liên, và phong cảnh thiên nhiên đẹp với bãi biển Thiên Cầm, vườn quốc gia Vũ Quang.</p>
+      <p>Hà Tĩnh là tỉnh ven biển miền Trung, có mối liên hệ với Chủ tịch Hồ Chí Minh qua quê ngoại của Người tại làng Hoàng Trù (Đức Thọ). Tỉnh có nhiều di tích lịch sử quan trọng và phong cảnh thiên nhiên đẹp với bãi biển Thiên Cầm, vườn quốc gia Vũ Quang.</p>
 
       <h3>Tiềm năng phát triển</h3>
       <p>Hà Tĩnh đang phát triển mạnh về công nghiệp nặng với khu kinh tế Vũng Áng - một trong những khu kinh tế trọng điểm quốc gia. Tỉnh có cảng nước sâu, hạ tầng công nghiệp hiện đại và nhiều dự án đầu tư lớn từ trong và ngoài nước, hứa hẹn trở thành trung tâm công nghiệp quan trọng của miền Trung.</p>

@@ -10,6 +10,7 @@ interface Vehicle {
   speed: number;
   type: 'car' | 'truck' | 'emergency';
   waitTime: number;
+  active: boolean;
 }
 
 interface TrafficLight {
@@ -18,36 +19,41 @@ interface TrafficLight {
   y: number;
   state: 'red' | 'yellow' | 'green';
   timer: number;
+  maxTimer: number;
 }
 
-interface TrafficManagementSimulatorGameProps {
-  onComplete: (success: boolean) => void;
+interface GameProps {
+  onComplete: (success: boolean, score: number) => void;
+  timeLeft: number;
+  onRestart: () => void;
 }
 
-const VEHICLES_DATA = [
-  { id: 'car1', x: 10, y: 50, direction: 'east' as const, speed: 2, type: 'car' as const, waitTime: 0 },
-  { id: 'car2', x: 50, y: 10, direction: 'south' as const, speed: 1.5, type: 'car' as const, waitTime: 0 },
-  { id: 'truck1', x: 90, y: 50, direction: 'west' as const, speed: 1, type: 'truck' as const, waitTime: 0 },
-  { id: 'emergency1', x: 30, y: 80, direction: 'north' as const, speed: 3, type: 'emergency' as const, waitTime: 0 },
-  { id: 'car3', x: 70, y: 90, direction: 'north' as const, speed: 2, type: 'car' as const, waitTime: 0 },
+const INITIAL_VEHICLES: Vehicle[] = [
+  { id: 'car1', x: 5, y: 45, direction: 'east', speed: 2, type: 'car', waitTime: 0, active: true },
+  { id: 'car2', x: 45, y: 5, direction: 'south', speed: 1.5, type: 'car', waitTime: 0, active: true },
+  { id: 'truck1', x: 95, y: 55, direction: 'west', speed: 1, type: 'truck', waitTime: 0, active: true },
+  { id: 'emergency1', x: 25, y: 95, direction: 'north', speed: 3, type: 'emergency', waitTime: 0, active: true },
+  { id: 'car3', x: 75, y: 95, direction: 'north', speed: 2, type: 'car', waitTime: 0, active: true },
+  { id: 'car4', x: 5, y: 25, direction: 'east', speed: 2.5, type: 'car', waitTime: 0, active: true },
 ];
 
-const TRAFFIC_LIGHTS_DATA = [
-  { id: 'light1', x: 35, y: 35, state: 'red' as const, timer: 30 },
-  { id: 'light2', x: 65, y: 35, state: 'green' as const, timer: 25 },
-  { id: 'light3', x: 35, y: 65, state: 'green' as const, timer: 20 },
-  { id: 'light4', x: 65, y: 65, state: 'red' as const, timer: 35 },
+const INITIAL_TRAFFIC_LIGHTS: TrafficLight[] = [
+  { id: 'light1', x: 30, y: 30, state: 'red', timer: 15, maxTimer: 30 },
+  { id: 'light2', x: 70, y: 30, state: 'green', timer: 20, maxTimer: 25 },
+  { id: 'light3', x: 30, y: 70, state: 'green', timer: 10, maxTimer: 20 },
+  { id: 'light4', x: 70, y: 70, state: 'red', timer: 25, maxTimer: 35 },
 ];
 
-export default function TrafficManagementSimulatorGame({ onComplete }: TrafficManagementSimulatorGameProps) {
+const TrafficManagementSimulatorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
   const [gamePhase, setGamePhase] = useState<'briefing' | 'playing' | 'results'>('briefing');
-  const [vehicles, setVehicles] = useState<Vehicle[]>(VEHICLES_DATA);
-  const [trafficLights, setTrafficLights] = useState<TrafficLight[]>(TRAFFIC_LIGHTS_DATA);
+  const [vehicles, setVehicles] = useState<Vehicle[]>(INITIAL_VEHICLES);
+  const [trafficLights, setTrafficLights] = useState<TrafficLight[]>(INITIAL_TRAFFIC_LIGHTS);
   const [score, setScore] = useState(0);
   const [totalWaitTime, setTotalWaitTime] = useState(0);
   const [gameTime, setGameTime] = useState(0);
   const [completedVehicles, setCompletedVehicles] = useState(0);
   const [accidents, setAccidents] = useState(0);
+  const [isSimulationRunning, setIsSimulationRunning] = useState(false);
 
   const startGame = () => {
     setGamePhase('playing');
@@ -56,8 +62,9 @@ export default function TrafficManagementSimulatorGame({ onComplete }: TrafficMa
     setGameTime(0);
     setCompletedVehicles(0);
     setAccidents(0);
-    setVehicles(VEHICLES_DATA);
-    setTrafficLights(TRAFFIC_LIGHTS_DATA);
+    setIsSimulationRunning(true);
+    setVehicles([...INITIAL_VEHICLES]);
+    setTrafficLights([...INITIAL_TRAFFIC_LIGHTS]);
   };
 
   const resetGame = () => {
@@ -67,8 +74,10 @@ export default function TrafficManagementSimulatorGame({ onComplete }: TrafficMa
     setGameTime(0);
     setCompletedVehicles(0);
     setAccidents(0);
-    setVehicles(VEHICLES_DATA);
-    setTrafficLights(TRAFFIC_LIGHTS_DATA);
+    setIsSimulationRunning(false);
+    setVehicles([...INITIAL_VEHICLES]);
+    setTrafficLights([...INITIAL_TRAFFIC_LIGHTS]);
+    onRestart();
   };
 
   const toggleTrafficLight = (lightId: string) => {
@@ -161,38 +170,66 @@ export default function TrafficManagementSimulatorGame({ onComplete }: TrafficMa
 
   // Game timer and vehicle movement
   useEffect(() => {
-    if (gamePhase !== 'playing') return;
+    if (gamePhase !== 'playing' || !isSimulationRunning) return;
 
     const timer = setInterval(() => {
-      setGameTime(prev => prev + 1);
-      
-      // Update traffic light timers
-      setTrafficLights(prev => prev.map(light => ({
-        ...light,
-        timer: Math.max(0, light.timer - 1)
-      })));
-      
-      // Move vehicles
-      moveVehicles();
-      
-      // Update total wait time
-      setTotalWaitTime(prev => {
-        const currentWait = vehicles.reduce((sum, vehicle) => sum + vehicle.waitTime, 0);
-        return prev + currentWait;
-      });
+      setGameTime(prev => {
+        const newGameTime = prev + 1;
+        
+        // Update traffic light timers and cycle states
+        setTrafficLights(prevLights => prevLights.map(light => {
+          const newTimer = light.timer - 1;
+          if (newTimer <= 0) {
+            let newState: 'red' | 'yellow' | 'green' = 'red';
+            if (light.state === 'red') newState = 'green';
+            else if (light.state === 'green') newState = 'yellow';
+            else newState = 'red';
+            
+            return { ...light, state: newState, timer: light.maxTimer };
+          }
+          return { ...light, timer: newTimer };
+        }));
+        
+        // Move vehicles
+        moveVehicles();
+        
+        // Update total wait time
+        setTotalWaitTime(prevWaitTime => {
+          const currentWait = vehicles.reduce((sum, vehicle) => sum + vehicle.waitTime, 0);
+          return prevWaitTime + currentWait;
+        });
 
-      // End game after 60 seconds or when all vehicles are done
-      if (gameTime >= 60 || (vehicles.length === 0 && completedVehicles > 0)) {
-        setGamePhase('results');
-        const efficiency = Math.max(0, 100 - (totalWaitTime / 10) - (accidents * 20));
-        const finalScore = Math.round(score + efficiency);
-        setScore(finalScore);
-        setTimeout(() => onComplete(finalScore > 500), 2000);
-      }
+        // Check end game conditions
+        if (newGameTime >= 60 || (vehicles.length === 0 && completedVehicles > 0)) {
+          setGamePhase('results');
+          setIsSimulationRunning(false);
+          setTotalWaitTime(currentTotalWait => {
+            const efficiency = Math.max(0, 100 - (currentTotalWait / 10) - (accidents * 20));
+            const finalScore = Math.round(score + efficiency);
+            setScore(finalScore);
+            setTimeout(() => onComplete(finalScore > 500, finalScore), 2000);
+            return currentTotalWait;
+          });
+        }
+        
+        return newGameTime;
+      });
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [gamePhase, gameTime, vehicles.length, completedVehicles, moveVehicles, totalWaitTime, score, accidents, onComplete]);
+  }, [gamePhase, vehicles, completedVehicles, moveVehicles, score, accidents, onComplete, isSimulationRunning]);
+
+  // Use timeLeft if provided
+  useEffect(() => {
+    if (timeLeft <= 0 && gamePhase === 'playing') {
+      setGamePhase('results');
+      setIsSimulationRunning(false);
+      const efficiency = Math.max(0, 100 - (totalWaitTime / 10) - (accidents * 20));
+      const finalScore = Math.round(score + efficiency);
+      setScore(finalScore);
+      setTimeout(() => onComplete(finalScore > 500, finalScore), 1000);
+    }
+  }, [timeLeft, gamePhase, totalWaitTime, accidents, score, onComplete]);
 
   const getVehicleIcon = (type: string) => {
     switch (type) {
@@ -344,7 +381,7 @@ export default function TrafficManagementSimulatorGame({ onComplete }: TrafficMa
               Chơi lại
             </button>
             <button
-              onClick={() => onComplete(score > 500)}
+              onClick={() => onComplete(score > 500, score)}
               className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-xl font-medium hover:from-blue-600 hover:to-indigo-600 transition-all duration-200"
             >
               Hoàn thành
@@ -492,4 +529,6 @@ export default function TrafficManagementSimulatorGame({ onComplete }: TrafficMa
       </div>
     </div>
   );
-}
+};
+
+export default TrafficManagementSimulatorGame;

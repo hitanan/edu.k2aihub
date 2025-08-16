@@ -363,12 +363,17 @@ const CurrencyExchangePuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft,
   };
 
   const getOverallScore = () => {
-    const baseScore = (profitLoss * 0.4 + riskManagement * 0.3 + timingAccuracy * 0.3);
+    const validProfitLoss = isNaN(profitLoss) ? 0 : profitLoss;
+    const validRiskManagement = isNaN(riskManagement) ? 0 : riskManagement;
+    const validTimingAccuracy = isNaN(timingAccuracy) ? 0 : timingAccuracy;
+    
+    const baseScore = (validProfitLoss * 0.4 + validRiskManagement * 0.3 + validTimingAccuracy * 0.3);
     const difficultyBonus = selectedScenario?.difficultyLevel === 'expert' ? 20 :
                            selectedScenario?.difficultyLevel === 'advanced' ? 15 :
                            selectedScenario?.difficultyLevel === 'intermediate' ? 10 : 5;
     
-    return Math.round(Math.min(100, baseScore + difficultyBonus));
+    const finalScore = Math.min(100, baseScore + difficultyBonus);
+    return isNaN(finalScore) ? 0 : Math.round(finalScore);
   };
 
   const startTrading = () => {
@@ -747,15 +752,15 @@ const CurrencyExchangePuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft,
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-green-400">Lợi nhuận:</span>
-                  <span className="text-white font-bold">{profitLoss}/100</span>
+                  <span className="text-white font-bold">{isNaN(profitLoss) ? 0 : profitLoss}/100</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-blue-400">Quản lý rủi ro:</span>
-                  <span className="text-white font-bold">{riskManagement}/100</span>
+                  <span className="text-white font-bold">{isNaN(riskManagement) ? 0 : riskManagement}/100</span>
                 </div>
                 <div className="flex justify-between border-t border-white/20 pt-2">
                   <span className="text-yellow-400">Thời điểm giao dịch:</span>
-                  <span className="text-white font-bold">{timingAccuracy}/100</span>
+                  <span className="text-white font-bold">{isNaN(timingAccuracy) ? 0 : timingAccuracy}/100</span>
                 </div>
               </div>
             </div>

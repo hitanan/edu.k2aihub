@@ -51,3 +51,4 @@ export { default as SmartHomeDesignerGame } from './SmartHomeDesignerGame';
 export { default as VirtualPropertyTourGame } from './VirtualPropertyTourGame';
 export { default as RecyclingPlantManagerGame } from './RecyclingPlantManagerGame';
 export { default as WasteToEnergyPuzzleGame } from './WasteToEnergyPuzzleGame';
+export { default as AerospaceMissionControlGame } from './AerospaceMissionControlGame';
