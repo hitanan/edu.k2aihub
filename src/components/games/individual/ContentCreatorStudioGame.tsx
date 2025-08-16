@@ -269,6 +269,25 @@ const ContentCreatorStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, o
   const [audienceReach, setAudienceReach] = useState(0);
   const [monetizationPotential, setMonetizationPotential] = useState(0);
 
+  // Reset game state when restart is called
+  const resetGameState = () => {
+    setGamePhase('briefing');
+    setSelectedNiche(null);
+    setSelectedEquipment([]);
+    setSelectedPlatforms([]);
+    setBudget(300);
+    setCreationProgress(0);
+    setIsCreating(false);
+    setContentQuality(0);
+    setAudienceReach(0);
+    setMonetizationPotential(0);
+  };
+
+  const handleRestart = () => {
+    resetGameState();
+    onRestart(); // Call parent restart function
+  };
+
   const totalCost = selectedEquipment.reduce((sum, e) => sum + e.cost, 0) + 
     selectedPlatforms.reduce((sum, p) => sum + p.cost, 0);
 
@@ -921,7 +940,7 @@ const ContentCreatorStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, o
 
           <div className="text-center space-x-4">
             <button
-              onClick={onRestart}
+              onClick={handleRestart}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
             >
               Tạo kênh mới

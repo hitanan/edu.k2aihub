@@ -317,6 +317,25 @@ const SmartHomeDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
   const [energyEfficiency, setEnergyEfficiency] = useState(0);
   const [userConvenience, setUserConvenience] = useState(0);
 
+  // Reset game state when restart is called
+  const resetGameState = () => {
+    setGamePhase('briefing');
+    setSelectedHome(null);
+    setSelectedDevices([]);
+    setSelectedScenarios([]);
+    setBudget(500);
+    setInstallationProgress(0);
+    setIsInstalling(false);
+    setSmartLevel(0);
+    setEnergyEfficiency(0);
+    setUserConvenience(0);
+  };
+
+  const handleRestart = () => {
+    resetGameState();
+    onRestart(); // Call parent restart function
+  };
+
   const totalInstallationCost = selectedDevices.reduce((sum, d) => sum + d.installation_cost, 0) + 
     selectedScenarios.reduce((sum, s) => sum + s.cost, 0);
   const monthlyOperatingCost = selectedDevices.reduce((sum, d) => sum + d.monthly_cost, 0);
@@ -1020,7 +1039,7 @@ const SmartHomeDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
 
           <div className="text-center space-x-4">
             <button
-              onClick={onRestart}
+              onClick={handleRestart}
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
             >
               Thiết kế nhà mới

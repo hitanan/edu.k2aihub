@@ -1684,7 +1684,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'renewable-energy',
-        lessonId: 'wind-energy-systems',
+        lessonId: 'wind-power-technology',
         title: 'Hệ Thống Năng Lượng Gió',
         connection: 'Hiểu về wind turbine technology và grid integration',
       },

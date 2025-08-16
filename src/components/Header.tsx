@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X, Home, Globe, Brain, Code, BookOpen } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
@@ -10,6 +11,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLearningDropdownOpen, setIsLearningDropdownOpen] = useState(false);
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [faviconError, setFaviconError] = useState(false);
   const [continueSession, setContinueSession] = useState<{
     title: string;
     href: string;
@@ -152,7 +154,18 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-shadow duration-300">
-              <span className="text-white font-bold text-sm">K2</span>
+              {!faviconError ? (
+                <Image 
+                  src="/favicon.ico" 
+                  alt="K2AI Logo" 
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                  onError={() => setFaviconError(true)}
+                />
+              ) : (
+                <span className="text-white font-bold text-sm">K2</span>
+              )}
             </div>
             <div className="hidden sm:block">
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">

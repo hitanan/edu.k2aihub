@@ -240,6 +240,26 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
   const [isDeveloping, setIsDeveloping] = useState(false);
   const [developmentProgress, setDevelopmentProgress] = useState(0);
 
+  // Reset game state when restart is called
+  const resetGameState = () => {
+    setGamePhase('briefing');
+    setSelectedGenre(null);
+    setSelectedTeam([]);
+    setSelectedTech([]);
+    setSpentBudget(0);
+    setGameQuality(0);
+    setMarketSuccess(0);
+    setTechnicalExcellence(0);
+    setStudioScore(0);
+    setIsDeveloping(false);
+    setDevelopmentProgress(0);
+  };
+
+  const handleRestart = () => {
+    resetGameState();
+    onRestart(); // Call parent restart function
+  };
+
   useEffect(() => {
     if (timeLeft <= 0 && gamePhase !== 'results') {
       calculateResults();
@@ -944,7 +964,7 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
 
         <div className="flex justify-center space-x-4">
           <button
-            onClick={onRestart}
+            onClick={handleRestart}
             className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 px-6 py-3 rounded-lg font-bold transition-all duration-200"
           >
             Tạo studio mới

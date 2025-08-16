@@ -327,6 +327,25 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
   const [environmentalScore, setEnvironmentalScore] = useState(0);
   const [economicViability, setEconomicViability] = useState(0);
 
+  // Reset game state when restart is called
+  const resetGameState = () => {
+    setGamePhase('briefing');
+    setSelectedWasteSources([]);
+    setSelectedTechnology(null);
+    setSelectedFeatures([]);
+    setBudget(500);
+    setOperationProgress(0);
+    setIsOperating(false);
+    setEnergyOutput(0);
+    setEnvironmentalScore(0);
+    setEconomicViability(0);
+  };
+
+  const handleRestart = () => {
+    resetGameState();
+    onRestart(); // Call parent restart function
+  };
+
   const calculateTotalCost = () => {
     const techCost = selectedTechnology ? selectedTechnology.investment_cost : 0;
     const featureCost = selectedFeatures.reduce((sum, f) => sum + f.cost, 0);
@@ -1052,7 +1071,7 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
 
           <div className="text-center space-x-4">
             <button
-              onClick={onRestart}
+              onClick={handleRestart}
               className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
             >
               Thiết kế nhà máy mới

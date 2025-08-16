@@ -1,11 +1,15 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Heart, Star } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { moduleStats } from '@/utils/moduleStats';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const [faviconError, setFaviconError] = useState(false);
 
   // Generate categories dynamically from moduleNavigation
   const getCategorizedModules = () => {
@@ -104,7 +108,7 @@ const Footer: React.FC = () => {
     { label: 'Learning Modules', value: `${moduleStats.totalModules}+`, icon: '📚' },
     { label: 'Interactive Lessons', value: `${moduleStats.totalLessons}+`, icon: '🎯' },
     { label: 'Study Hours', value: `${moduleStats.totalHours}+`, icon: '⏰' },
-    { label: 'Educational Games', value: '25+', icon: '🎮' },
+    { label: 'Educational Games', value: `57+`, icon: '🎮' },
   ];
 
   return (
@@ -116,7 +120,18 @@ const Footer: React.FC = () => {
           <div className="mb-6 lg:mb-0">
             <div className="flex items-center space-x-3 mb-3">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold">K2</span>
+                {!faviconError ? (
+                  <Image
+                    src="/favicon.ico"
+                    alt="K2AI Logo"
+                    width={20}
+                    height={20}
+                    className="object-contain"
+                    onError={() => setFaviconError(true)}
+                  />
+                ) : (
+                  <span className="text-white font-bold">K2</span>
+                )}
               </div>
               <div>
                 <h2 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">

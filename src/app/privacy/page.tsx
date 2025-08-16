@@ -156,10 +156,6 @@ export default function PrivacyPage() {
               </div>
               <div className="flex items-start">
                 <span className="text-yellow-400 mr-3">🛡️</span>
-                <span>Mã nguồn mở và minh bạch (có thể kiểm tra trên GitHub)</span>
-              </div>
-              <div className="flex items-start">
-                <span className="text-yellow-400 mr-3">🛡️</span>
                 <span>Hosting tĩnh - không có máy chủ xử lý dữ liệu cá nhân</span>
               </div>
               <div className="flex items-start">
@@ -233,10 +229,6 @@ export default function PrivacyPage() {
                     <Link href="/feedback" className="ml-2 text-blue-400 hover:text-blue-300 underline">
                       Gửi phản hồi
                     </Link>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-cyan-400 mr-3">�</span>
-                    <span className="font-medium">GitHub:</span>
                   </div>
                 </div>
               </div>
