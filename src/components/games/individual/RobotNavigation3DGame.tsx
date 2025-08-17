@@ -35,7 +35,7 @@ interface RobotNavigation3DGameProps {
   timeLeft: number;
 }
 
-// Game Level Definitions
+// Game Level Definitions - More challenging levels with larger scale
 const GAME_LEVELS = [
   {
     id: 1,
@@ -74,11 +74,151 @@ const GAME_LEVELS = [
       { x: -1, y: 0, z: -1 }, { x: 2, y: 1, z: 2 },
       { x: 3, y: 0, z: 3 }, { x: 3, y: 1, z: 3 } // Platform stairs
     ]
+  },
+  {
+    id: 4,
+    name: 'Spiral Tower',
+    description: 'Climb the spiral tower to reach the top',
+    start: { x: -5, y: 0, z: -5 },
+    goal: { x: 0, y: 4, z: 0 },
+    obstacles: [
+      // Level 0 - Base ring
+      { x: -2, y: 0, z: -3 }, { x: -1, y: 0, z: -3 }, { x: 0, y: 0, z: -3 }, { x: 1, y: 0, z: -3 }, { x: 2, y: 0, z: -3 },
+      { x: 3, y: 0, z: -2 }, { x: 3, y: 0, z: -1 }, { x: 3, y: 0, z: 0 }, { x: 3, y: 0, z: 1 }, { x: 3, y: 0, z: 2 },
+      { x: 2, y: 0, z: 3 }, { x: 1, y: 0, z: 3 }, { x: 0, y: 0, z: 3 }, { x: -1, y: 0, z: 3 }, { x: -2, y: 0, z: 3 },
+      { x: -3, y: 0, z: 2 }, { x: -3, y: 0, z: 1 }, { x: -3, y: 0, z: 0 }, { x: -3, y: 0, z: -1 }, { x: -3, y: 0, z: -2 },
+      
+      // Level 1 - Quarter spiral
+      { x: -2, y: 1, z: -2 }, { x: -1, y: 1, z: -2 }, { x: 0, y: 1, z: -2 }, { x: 1, y: 1, z: -2 },
+      { x: 2, y: 1, z: -1 }, { x: 2, y: 1, z: 0 }, { x: 2, y: 1, z: 1 },
+      
+      // Level 2 - Half spiral
+      { x: -1, y: 2, z: -1 }, { x: 0, y: 2, z: -1 }, { x: 1, y: 2, z: -1 },
+      { x: 1, y: 2, z: 0 }, { x: 1, y: 2, z: 1 },
+      
+      // Level 3 - Three-quarter spiral
+      { x: 0, y: 3, z: 0 }, // Center obstacle to force spiral movement
+      { x: -1, y: 3, z: 0 }, { x: 0, y: 3, z: -1 }
+    ]
+  },
+  {
+    id: 5,
+    name: 'Underground Cavern',
+    description: 'Navigate through underground cave system',
+    start: { x: -6, y: 0, z: -6 },
+    goal: { x: 6, y: -3, z: 6 },
+    obstacles: [
+      // Surface level obstacles
+      { x: -4, y: 0, z: -4 }, { x: -3, y: 0, z: -4 }, { x: -2, y: 0, z: -4 },
+      { x: 0, y: 0, z: -2 }, { x: 1, y: 0, z: -2 }, { x: 2, y: 0, z: -2 },
+      { x: 4, y: 0, z: 0 }, { x: 4, y: 0, z: 1 }, { x: 4, y: 0, z: 2 },
+      
+      // Level -1 - First underground
+      { x: -3, y: -1, z: -3 }, { x: -2, y: -1, z: -3 }, { x: -1, y: -1, z: -3 },
+      { x: 2, y: -1, z: -1 }, { x: 2, y: -1, z: 0 }, { x: 2, y: -1, z: 1 },
+      { x: 0, y: -1, z: 3 }, { x: 1, y: -1, z: 3 }, { x: 2, y: -1, z: 3 },
+      
+      // Level -2 - Deeper caves
+      { x: -2, y: -2, z: -2 }, { x: -1, y: -2, z: -2 },
+      { x: 1, y: -2, z: 0 }, { x: 2, y: -2, z: 0 },
+      { x: 3, y: -2, z: 2 }, { x: 4, y: -2, z: 2 },
+      
+      // Level -3 - Final chamber approach
+      { x: 4, y: -3, z: 4 }, { x: 5, y: -3, z: 4 }, { x: 5, y: -3, z: 5 }
+    ]
+  },
+  {
+    id: 6,
+    name: 'Sky Bridge Challenge',
+    description: 'Cross dangerous sky bridges at different heights',
+    start: { x: -7, y: 0, z: -7 },
+    goal: { x: 7, y: 5, z: 7 },
+    obstacles: [
+      // Ground level - Starting platform
+      { x: -6, y: 0, z: -6 }, { x: -5, y: 0, z: -6 }, { x: -6, y: 0, z: -5 },
+      
+      // Bridge 1 - Level 1 (narrow bridge)
+      { x: -4, y: 1, z: -4 }, { x: -3, y: 1, z: -4 }, { x: -2, y: 1, z: -4 },
+      
+      // Platform 1 - Level 1
+      { x: 0, y: 1, z: -3 }, { x: 1, y: 1, z: -3 }, { x: 0, y: 1, z: -2 }, { x: 1, y: 1, z: -2 },
+      
+      // Bridge 2 - Level 2 (diagonal bridge)
+      { x: 2, y: 2, z: -1 }, { x: 3, y: 2, z: 0 }, { x: 4, y: 2, z: 1 },
+      
+      // Platform 2 - Level 3
+      { x: 4, y: 3, z: 2 }, { x: 5, y: 3, z: 2 }, { x: 4, y: 3, z: 3 }, { x: 5, y: 3, z: 3 },
+      
+      // Final bridge - Level 4 (zigzag)
+      { x: 4, y: 4, z: 4 }, { x: 5, y: 4, z: 5 }, { x: 6, y: 4, z: 6 },
+      
+      // Final platform - Level 5
+      { x: 6, y: 5, z: 6 }, { x: 7, y: 5, z: 6 }, { x: 6, y: 5, z: 7 }
+    ]
+  },
+  {
+    id: 7,
+    name: 'Multi-Level Fortress',
+    description: 'Infiltrate the fortress through multiple security levels',
+    start: { x: -8, y: 0, z: 0 },
+    goal: { x: 8, y: 3, z: 0 },
+    obstacles: [
+      // Outer wall - Level 0
+      { x: -6, y: 0, z: -3 }, { x: -6, y: 0, z: -2 }, { x: -6, y: 0, z: -1 },
+      { x: -6, y: 0, z: 0 }, { x: -6, y: 0, z: 1 }, { x: -6, y: 0, z: 2 }, { x: -6, y: 0, z: 3 },
+      { x: -6, y: 1, z: -3 }, { x: -6, y: 1, z: -2 }, { x: -6, y: 1, z: -1 },
+      { x: -6, y: 1, z: 1 }, { x: -6, y: 1, z: 2 }, { x: -6, y: 1, z: 3 },
+      
+      // First courtyard obstacles
+      { x: -4, y: 0, z: -2 }, { x: -4, y: 0, z: 2 },
+      { x: -2, y: 0, z: 0 },
+      
+      // Middle wall - Level 1
+      { x: 0, y: 1, z: -2 }, { x: 0, y: 1, z: -1 }, { x: 0, y: 1, z: 1 }, { x: 0, y: 1, z: 2 },
+      { x: 0, y: 2, z: -2 }, { x: 0, y: 2, z: -1 }, { x: 0, y: 2, z: 1 }, { x: 0, y: 2, z: 2 },
+      
+      // Second courtyard
+      { x: 2, y: 1, z: -1 }, { x: 2, y: 1, z: 1 },
+      { x: 4, y: 1, z: 0 },
+      
+      // Inner fortress - Level 2
+      { x: 6, y: 2, z: -2 }, { x: 6, y: 2, z: -1 }, { x: 6, y: 2, z: 1 }, { x: 6, y: 2, z: 2 },
+      { x: 6, y: 3, z: -2 }, { x: 6, y: 3, z: -1 }, { x: 6, y: 3, z: 1 }, { x: 6, y: 3, z: 2 },
+      
+      // Final approach - Level 3
+      { x: 7, y: 3, z: -1 }, { x: 7, y: 3, z: 1 }
+    ]
+  },
+  {
+    id: 8,
+    name: 'Extreme Parkour',
+    description: 'Master the ultimate 3D parkour challenge',
+    start: { x: -9, y: 0, z: -9 },
+    goal: { x: 9, y: 6, z: 9 },
+    obstacles: [
+      // Starting area platforms
+      { x: -8, y: 0, z: -8 }, { x: -7, y: 0, z: -8 }, { x: -8, y: 0, z: -7 },
+      
+      // Jump section 1 - Ascending platforms
+      { x: -6, y: 1, z: -6 }, { x: -5, y: 2, z: -5 }, { x: -4, y: 3, z: -4 },
+      
+      // Mid-air platforms - challenging jumps
+      { x: -2, y: 4, z: -2 }, { x: 0, y: 4, z: 0 }, { x: 2, y: 4, z: 2 },
+      
+      // Descent and climb section
+      { x: 3, y: 3, z: 3 }, { x: 4, y: 2, z: 4 }, { x: 5, y: 3, z: 5 },
+      
+      // Final ascent - zigzag pattern
+      { x: 6, y: 4, z: 6 }, { x: 7, y: 5, z: 7 }, { x: 8, y: 6, z: 8 },
+      
+      // Additional challenge obstacles
+      { x: -3, y: 1, z: -7 }, { x: -7, y: 2, z: -3 },
+      { x: 1, y: 2, z: -1 }, { x: -1, y: 3, z: 1 },
+      { x: 3, y: 1, z: -3 }, { x: 7, y: 2, z: 3 },
+      { x: 5, y: 1, z: -5 }, { x: -5, y: 4, z: 5 }
+    ]
   }
 ];
-
-type GameMode = 'menu' | 'auto' | 'manual';
-type GameState = 'playing' | 'completed' | 'paused';
 
 // Core 3D World Structure
 class BlockWorld {
@@ -89,6 +229,7 @@ class BlockWorld {
   public renderer: THREE.WebGLRenderer;
   private ambientLight: THREE.AmbientLight;
   private directionalLight: THREE.DirectionalLight;
+  private cleanupMouseControls?: () => void;
 
   constructor(width: number, height: number, depth: number, container: HTMLElement) {
     this.dimensions = { width, height, depth };
@@ -103,9 +244,9 @@ class BlockWorld {
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x87CEEB); // Sky blue background
     
-    // Setup camera
+    // Setup camera - Better view for larger levels and underground areas
     this.camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
-    this.camera.position.set(15, 20, 15);
+    this.camera.position.set(25, 30, 25);
     this.camera.lookAt(0, 0, 0);
     
     // Setup renderer
@@ -116,28 +257,36 @@ class BlockWorld {
     this.renderer.domElement.style.display = 'block';
     container.appendChild(this.renderer.domElement);
     
-    // Setup lighting
-    this.ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    // Setup lighting - Enhanced for underground levels
+    this.ambientLight = new THREE.AmbientLight(0x404040, 0.8); // Increased ambient light
     this.scene.add(this.ambientLight);
     
-    this.directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    this.directionalLight = new THREE.DirectionalLight(0xffffff, 1.0); // Increased intensity
     this.directionalLight.position.set(20, 20, 10);
     this.directionalLight.castShadow = true;
     this.directionalLight.shadow.mapSize.width = 2048;
     this.directionalLight.shadow.mapSize.height = 2048;
     this.directionalLight.shadow.camera.near = 0.1;
     this.directionalLight.shadow.camera.far = 100;
-    this.directionalLight.shadow.camera.left = -20;
-    this.directionalLight.shadow.camera.right = 20;
-    this.directionalLight.shadow.camera.top = 20;
-    this.directionalLight.shadow.camera.bottom = -20;
+    this.directionalLight.shadow.camera.left = -30; // Expanded shadow range
+    this.directionalLight.shadow.camera.right = 30;
+    this.directionalLight.shadow.camera.top = 30;
+    this.directionalLight.shadow.camera.bottom = -30;
     this.scene.add(this.directionalLight);
+    
+    // Add additional light for underground areas
+    const undergroundLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    undergroundLight.position.set(-20, -10, -10); // From below and side
+    this.scene.add(undergroundLight);
     
     // Create ground plane
     this.createGround();
     
     // Add coordinate helper
     this.addCoordinateHelper();
+    
+    // Add mouse wheel zoom functionality
+    this.addMouseControls();
   }
 
   // Convert 3D coordinates to unique key
@@ -147,11 +296,22 @@ class BlockWorld {
 
   // Create block mesh based on type
   createBlockMesh(blockType: BlockType): THREE.Mesh {
-    const geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2); // Increased size for better visibility on desktop
+    let geometry: THREE.BufferGeometry;
+    
+    // Make TARGET blocks larger and more visible
+    if (blockType.id === BLOCK_TYPES.TARGET.id) {
+      geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5); // Larger target
+    } else if (blockType.id === BLOCK_TYPES.START.id) {
+      geometry = new THREE.BoxGeometry(1.4, 1.4, 1.4); // Slightly larger start
+    } else {
+      geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2); // Standard size for others
+    }
+    
     const material = new THREE.MeshLambertMaterial({
       color: blockType.color,
       transparent: 'transparent' in blockType ? blockType.transparent : false,
-      opacity: ('transparent' in blockType && blockType.transparent) ? 0.7 : 1.0
+      opacity: ('transparent' in blockType && blockType.transparent) ? 0.7 : 1.0,
+      emissive: blockType.id === BLOCK_TYPES.TARGET.id ? 0x404000 : 0x000000 // Add glow to target
     });
     
     const mesh = new THREE.Mesh(geometry, material);
@@ -198,8 +358,8 @@ class BlockWorld {
 
   // Check if position is walkable
   isWalkable(pos: Position3D): boolean {
-    // Check bounds
-    if (pos.x < -6 || pos.x > 6 || pos.z < -6 || pos.z > 6 || pos.y < 0 || pos.y > 5) {
+    // Check bounds - Allow underground levels (negative Y)
+    if (pos.x < -10 || pos.x > 10 || pos.z < -10 || pos.z > 10 || pos.y < -5 || pos.y > 8) {
       return false;
     }
     
@@ -229,15 +389,15 @@ class BlockWorld {
   loadLevel(level: typeof GAME_LEVELS[0]): void {
     this.clearLevel();
     
-    // Create boundary walls
-    for (let x = -6; x <= 6; x++) {
-      this.setBlock(x, 0, -6, BLOCK_TYPES.STONE);
-      this.setBlock(x, 0, 6, BLOCK_TYPES.STONE);
+    // Create boundary walls - Expanded for larger levels
+    for (let x = -10; x <= 10; x++) {
+      this.setBlock(x, 0, -10, BLOCK_TYPES.STONE);
+      this.setBlock(x, 0, 10, BLOCK_TYPES.STONE);
     }
     
-    for (let z = -5; z <= 5; z++) {
-      this.setBlock(-6, 0, z, BLOCK_TYPES.STONE);
-      this.setBlock(6, 0, z, BLOCK_TYPES.STONE);
+    for (let z = -9; z <= 9; z++) {
+      this.setBlock(-10, 0, z, BLOCK_TYPES.STONE);
+      this.setBlock(10, 0, z, BLOCK_TYPES.STONE);
     }
     
     // Add level obstacles
@@ -252,7 +412,7 @@ class BlockWorld {
 
   // Create ground plane
   private createGround(): void {
-    const groundGeometry = new THREE.PlaneGeometry(60, 60);
+    const groundGeometry = new THREE.PlaneGeometry(100, 100);
     const groundMaterial = new THREE.MeshLambertMaterial({ color: 0x90EE90 });
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.rotation.x = -Math.PI / 2;
@@ -267,6 +427,99 @@ class BlockWorld {
     this.scene.add(axesHelper);
   }
 
+  // Add mouse controls for camera zoom and rotation
+  private addMouseControls(): void {
+    let isDragging = false;
+    const previousMousePosition = { x: 0, y: 0 };
+    const cameraDistance = { value: 40 }; // Current camera distance from center
+    const minDistance = 10;
+    const maxDistance = 100;
+
+    // Mouse wheel zoom
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      
+      const zoomSpeed = 0.1;
+      const delta = event.deltaY > 0 ? 1 : -1;
+      
+      cameraDistance.value += delta * zoomSpeed * cameraDistance.value;
+      cameraDistance.value = Math.max(minDistance, Math.min(maxDistance, cameraDistance.value));
+      
+      // Update camera position maintaining the current angle
+      const currentPosition = this.camera.position;
+      const center = new THREE.Vector3(0, 0, 0);
+      const direction = currentPosition.clone().sub(center).normalize();
+      this.camera.position.copy(direction.multiplyScalar(cameraDistance.value));
+      this.camera.lookAt(center);
+    };
+
+    // Mouse drag for camera rotation
+    const handleMouseDown = (event: MouseEvent) => {
+      if (event.button === 0) { // Left mouse button
+        isDragging = true;
+        previousMousePosition.x = event.clientX;
+        previousMousePosition.y = event.clientY;
+      }
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (!isDragging) return;
+      
+      const deltaX = event.clientX - previousMousePosition.x;
+      const deltaY = event.clientY - previousMousePosition.y;
+      
+      const rotationSpeed = 0.01;
+      
+      // Get current spherical coordinates
+      const center = new THREE.Vector3(0, 0, 0);
+      const offset = this.camera.position.clone().sub(center);
+      
+      // Convert to spherical coordinates
+      const spherical = new THREE.Spherical();
+      spherical.setFromVector3(offset);
+      
+      // Update angles
+      spherical.theta -= deltaX * rotationSpeed;
+      spherical.phi += deltaY * rotationSpeed;
+      
+      // Constrain phi to prevent camera flipping
+      spherical.phi = Math.max(0.1, Math.min(Math.PI - 0.1, spherical.phi));
+      
+      // Convert back to cartesian and update camera
+      offset.setFromSpherical(spherical);
+      this.camera.position.copy(center).add(offset);
+      this.camera.lookAt(center);
+      
+      previousMousePosition.x = event.clientX;
+      previousMousePosition.y = event.clientY;
+    };
+
+    const handleMouseUp = () => {
+      isDragging = false;
+    };
+
+    // Add event listeners to the renderer's canvas
+    const canvas = this.renderer.domElement;
+    canvas.addEventListener('wheel', handleWheel, { passive: false });
+    canvas.addEventListener('mousedown', handleMouseDown);
+    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('mouseup', handleMouseUp);
+    canvas.addEventListener('mouseleave', handleMouseUp); // Stop dragging when mouse leaves canvas
+    
+    // Prevent context menu on right-click
+    canvas.addEventListener('contextmenu', (e) => e.preventDefault());
+    
+    // Store cleanup function
+    this.cleanupMouseControls = () => {
+      canvas.removeEventListener('wheel', handleWheel);
+      canvas.removeEventListener('mousedown', handleMouseDown);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('mouseup', handleMouseUp);
+      canvas.removeEventListener('mouseleave', handleMouseUp);
+      canvas.removeEventListener('contextmenu', (e) => e.preventDefault());
+    };
+  }
+
   render(): void {
     this.renderer.render(this.scene, this.camera);
   }
@@ -278,6 +531,9 @@ class BlockWorld {
   }
 
   dispose(): void {
+    // Clean up mouse controls
+    if (this.cleanupMouseControls) this.cleanupMouseControls();
+    
     // Clean up all resources
     this.blocks.forEach(block => {
       this.scene.remove(block.mesh);
@@ -326,35 +582,43 @@ class Robot {
     const group = new THREE.Group();
     
     // Robot body (blue cube) - Increased size for better visibility
-    const bodyGeometry = new THREE.BoxGeometry(0.8, 1.0, 0.6); // Increased size
+    const bodyGeometry = new THREE.BoxGeometry(1.2, 1.5, 0.9); // Significantly increased size
     const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x0066ff });
     const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
-    body.position.y = 0.5; // Adjusted position
+    body.position.y = 0.75; // Adjusted position for larger body
     body.castShadow = true;
     group.add(body);
     
     // Robot head (smaller cube) - Increased size
-    const headGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5); // Increased size
+    const headGeometry = new THREE.BoxGeometry(0.8, 0.8, 0.8); // Increased size
     const headMaterial = new THREE.MeshLambertMaterial({ color: 0x0088ff });
     const head = new THREE.Mesh(headGeometry, headMaterial);
-    head.position.y = 1.2; // Adjusted position
+    head.position.y = 1.8; // Adjusted position for larger body
     head.castShadow = true;
     group.add(head);
     
-    // Eyes (glowing spheres) - Slightly larger
-    const eyeGeometry = new THREE.SphereGeometry(0.08); // Increased size
+    // Eyes (glowing spheres) - Larger for better visibility
+    const eyeGeometry = new THREE.SphereGeometry(0.12); // Increased from 0.08
     const eyeMaterial = new THREE.MeshLambertMaterial({ 
       color: 0xffffff,
       emissive: 0x444444
     });
     
     const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
-    leftEye.position.set(-0.1, 1.05, 0.15);
+    leftEye.position.set(-0.15, 1.75, 0.25); // Adjusted for larger head
     group.add(leftEye);
     
     const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
-    rightEye.position.set(0.1, 1.05, 0.15);
+    rightEye.position.set(0.15, 1.75, 0.25); // Adjusted for larger head
     group.add(rightEye);
+    
+    // Add antenna for better identification
+    const antennaGeometry = new THREE.CylinderGeometry(0.05, 0.05, 0.6);
+    const antennaMaterial = new THREE.MeshLambertMaterial({ color: 0xff6600 });
+    const antenna = new THREE.Mesh(antennaGeometry, antennaMaterial);
+    antenna.position.set(0, 2.4, 0);
+    antenna.castShadow = true;
+    group.add(antenna);
     
     return group;
   }
@@ -570,6 +834,7 @@ export function RobotNavigation3DGame({ onComplete, timeLeft }: RobotNavigation3
   const containerRef = useRef<HTMLDivElement>(null);
   const [, setWorld] = useState<BlockWorld | null>(null);
   const [robot, setRobot] = useState<Robot | null>(null);
+  const [robotPosition, setRobotPosition] = useState<Position3D>({ x: 0, y: 0, z: 0 });
   const [pathfinding, setPathfinding] = useState<Pathfinding3D | null>(null);
   const [gameMode, setGameMode] = useState<'menu' | 'auto' | 'manual' | 'hybrid'>('menu');
   const [gameState, setGameState] = useState<'playing' | 'completed' | 'paused'>('playing');
@@ -585,7 +850,7 @@ export function RobotNavigation3DGame({ onComplete, timeLeft }: RobotNavigation3
     let isMounted = true;
 
     try {
-      const blockWorld = new BlockWorld(12, 6, 12, containerRef.current);
+      const blockWorld = new BlockWorld(20, 12, 20, containerRef.current);
       const level = GAME_LEVELS[currentLevel];
       blockWorld.loadLevel(level);
       
@@ -600,6 +865,16 @@ export function RobotNavigation3DGame({ onComplete, timeLeft }: RobotNavigation3
         // Animation loop
         const animate = () => {
           blockWorld.render();
+          
+          // Update robot position state for UI
+          if (robotInstance && isMounted) {
+            setRobotPosition({
+              x: Math.round(robotInstance.position.x),
+              y: Math.round(robotInstance.position.y), 
+              z: Math.round(robotInstance.position.z)
+            });
+          }
+
           if (isMounted) {
             animationRef.current = requestAnimationFrame(animate);
           }
@@ -874,10 +1149,13 @@ export function RobotNavigation3DGame({ onComplete, timeLeft }: RobotNavigation3
   return (
     <div className="w-full min-h-screen bg-gray-900 text-white relative">
       {/* Game Header */}
-      <div className="absolute top-4 left-4 z-10 bg-black bg-opacity-90 rounded-lg p-4 max-w-xs backdrop-blur-sm">
+      <div className="absolute top-4 left-4 z-10 bg-black bg-opacity-90 rounded-lg p-4 max-w-sm backdrop-blur-sm">
         <h1 className="text-xl font-bold mb-2 text-yellow-400">
           Level {GAME_LEVELS[currentLevel].id}: {GAME_LEVELS[currentLevel].name}
         </h1>
+        <p className="text-sm text-gray-300 mb-3 italic">
+          {GAME_LEVELS[currentLevel].description}
+        </p>
         <div className="space-y-1 text-sm">
           <div>Mode: {
             gameMode === 'auto' ? '🎯 Auto' : 
@@ -886,7 +1164,7 @@ export function RobotNavigation3DGame({ onComplete, timeLeft }: RobotNavigation3
           }</div>
           <div>Status: {gameState === 'completed' ? '✅ Completed!' : '🎮 Playing'}</div>
           {(gameMode === 'auto' || gameMode === 'hybrid') && <div>Path Length: {currentPath.length} steps</div>}
-          <div>Robot: {robot ? `(${robot.position.x}, ${robot.position.y}, ${robot.position.z})` : 'Loading...'}</div>
+          <div>Robot: {robot ? `(${robotPosition.x}, ${robotPosition.y}, ${robotPosition.z})` : 'Loading...'}</div>
           <div>Score: {score}</div>
           <div>Time: {timeLeft}s</div>
         </div>

@@ -2479,10 +2479,10 @@ export const moduleNavigation: ModuleNavigation[] = [
   {
     id: 'space-exploration',
     title: 'Space Exploration & Technology',
-    subtitle: 'Khám phá vũ trụ',
+    subtitle: 'Khám phá vũ trụ 3D',
     description:
       'Tìm hiểu space science, rocket engineering và satellite technology',
-    category: ['science', 'professional'],
+    category: ['science', 'professional', '3D'],
     icon: '🚀',
     color: 'from-indigo-600 to-purple-600',
     totalDuration: '12-15 giờ',

@@ -1150,7 +1150,7 @@ void loop() {
         ],
         observation: 'Tia nước ở lỗ thấp nhất phun xa nhất (khoảng 30-40cm), tia nước ở lỗ cao nhất phun gần nhất (khoảng 10-15cm)',
         explanation: 'Áp suất nước tăng theo độ sâu do trọng lượng cột nước bên trên. Công thức: P = ρgh (ρ: khối lượng riêng, g: gia tốc trọng trường, h: độ sâu)',
-        videoUrl: 'https://www.youtube.com/watch?v=water-pressure-demo',
+        videoUrl: 'https://www.youtube.com/watch?v=w_3ZWZ4aLlk', // Water pressure physics demo
         difficulty: 'Cơ bản',
         estimatedTime: '15 phút',
         safetyTips: [
@@ -1184,7 +1184,7 @@ void loop() {
         ],
         observation: 'Khi có điện, đinh sắt hút được 8-12 kẹp giấy. Khi ngắt điện, không hút được kẹp giấy nào',
         explanation: 'Dòng điện chạy qua cuộn dây tạo ra từ trường xung quanh, biến đinh sắt thành nam châm điện. Khi ngắt điện, từ trường biến mất.',
-        videoUrl: 'https://www.youtube.com/watch?v=electromagnet-demo',
+        videoUrl: 'https://www.youtube.com/watch?v=liZX2UgzI1U', // Electromagnet physics demo
         difficulty: 'Trung bình',
         estimatedTime: '20 phút',
         safetyTips: [
@@ -1213,7 +1213,7 @@ void loop() {
         ],
         observation: 'Góc phản xạ luôn bằng góc tới trong tất cả các trường hợp: 30°=30°, 45°=45°, 60°=60°',
         explanation: 'Định luật phản xạ ánh sáng: góc tới bằng góc phản xạ, và tia tới, tia phản xạ cùng nằm trong một mặt phẳng với pháp tuyến.',
-        videoUrl: 'https://www.youtube.com/watch?v=light-reflection-demo',
+        videoUrl: 'https://www.youtube.com/watch?v=y9c62n6o6zM', // Light reflection physics demo
         difficulty: 'Cơ bản',
         estimatedTime: '25 phút',
         safetyTips: [
@@ -2796,4 +2796,725 @@ export const robotNavigation3DGameData: RobotNavigation3DGameData = {
     allowAlgorithmSwitching: true,
     difficultyScaling: true
   }
+};
+
+// Arduino Circuit Builder 3D Game Data
+export interface ArduinoCircuitBuilder3DGameData {
+  components: Array<{
+    id: string;
+    name: string;
+    type: 'microcontroller' | 'sensor' | 'actuator' | 'passive' | 'power' | 'wire';
+    description: string;
+    specifications: {
+      voltage?: string;
+      current?: string;
+      pins?: number;
+      resistance?: string;
+      power?: string;
+    };
+    vietnameseContext: string;
+    difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+    price?: string;
+    applications: string[];
+    safetyNotes: string[];
+  }>;
+  challenges: Array<{
+    id: string;
+    title: string;
+    description: string;
+    difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+    requiredComponents: string[];
+    validationRules: Array<{
+      type: 'connection' | 'voltage' | 'current' | 'power' | 'safety';
+      description: string;
+      importance: 'critical' | 'warning' | 'info';
+    }>;
+    vietnameseContext: string;
+    realWorldApplications: string[];
+    educationalObjectives: string[];
+    estimatedTime: string;
+    points: number;
+  }>;
+  validationSystem: {
+    circuitRules: Array<{
+      name: string;
+      description: string;
+      checkFunction: string; // Function name for validation
+      errorMessage: string;
+    }>;
+    safetyChecks: Array<{
+      name: string;
+      description: string;
+      severity: 'error' | 'warning' | 'info';
+    }>;
+  };
+  educationalContent: {
+    fundamentals: Array<{
+      topic: string;
+      explanation: string;
+      examples: string[];
+      vietnameseApplications: string[];
+    }>;
+    practicalSkills: Array<{
+      skill: string;
+      description: string;
+      difficulty: string;
+      prerequisites: string[];
+    }>;
+  };
+}
+
+export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
+  components: [
+    {
+      id: 'arduino-uno',
+      name: 'Arduino Uno R3',
+      type: 'microcontroller',
+      description: 'Vi điều khiển phổ biến nhất cho học tập và prototyping',
+      specifications: {
+        voltage: '5V',
+        current: '40mA per pin',
+        pins: 32
+      },
+      vietnameseContext: 'Được sử dụng rộng rãi trong các trường đại học Việt Nam và startup IoT',
+      difficulty: 'Cơ bản',
+      price: '200,000 - 300,000 VNĐ',
+      applications: [
+        'Home automation systems',
+        'Environmental monitoring',
+        'Agricultural sensors',
+        'Traffic light control'
+      ],
+      safetyNotes: [
+        'Không được vượt quá 5V input voltage',
+        'Tổng current không vượt quá 200mA',
+        'Cẩn thận với static electricity'
+      ]
+    },
+    {
+      id: 'led-5mm',
+      name: 'LED 5mm',
+      type: 'actuator',
+      description: 'Light Emitting Diode cơ bản cho hiển thị và báo hiệu',
+      specifications: {
+        voltage: '2.0-3.3V',
+        current: '20mA',
+        power: '0.1W'
+      },
+      vietnameseContext: 'Sử dụng trong đèn trang trí Tết và hệ thống chiếu sáng LED',
+      difficulty: 'Cơ bản',
+      price: '1,000 - 5,000 VNĐ',
+      applications: [
+        'Status indicators',
+        'Decorative lighting',
+        'Visual alarms',
+        'Display panels'
+      ],
+      safetyNotes: [
+        'Luôn dùng current limiting resistor',
+        'Chú ý polarity (anode/cathode)',
+        'Không vượt quá rated current'
+      ]
+    },
+    {
+      id: 'resistor-220ohm',
+      name: 'Điện Trở 220Ω',
+      type: 'passive',
+      description: 'Current limiting resistor cho LED protection',
+      specifications: {
+        resistance: '220Ω ±5%',
+        power: '0.25W',
+        voltage: '5V max'
+      },
+      vietnameseContext: 'Component cơ bản trong mọi mạch điện tử Việt Nam',
+      difficulty: 'Cơ bản',
+      price: '500 - 1,000 VNĐ',
+      applications: [
+        'LED current limiting',
+        'Pull-up/pull-down circuits',
+        'Voltage dividers',
+        'Signal conditioning'
+      ],
+      safetyNotes: [
+        'Kiểm tra power rating',
+        'Chú ý color code để đọc giá trị',
+        'Tránh overheating'
+      ]
+    },
+    {
+      id: 'temperature-sensor',
+      name: 'Cảm Biến Nhiệt Độ LM35',
+      type: 'sensor',
+      description: 'Analog temperature sensor với độ chính xác cao',
+      specifications: {
+        voltage: '4-30V',
+        current: '60μA',
+        pins: 3
+      },
+      vietnameseContext: 'Ứng dụng trong monitoring nhà kính và aquaculture tại Việt Nam',
+      difficulty: 'Trung bình',
+      price: '50,000 - 80,000 VNĐ',
+      applications: [
+        'Weather monitoring',
+        'HVAC control',
+        'Food storage monitoring',
+        'Industrial process control'
+      ],
+      safetyNotes: [
+        'Không vượt quá 150°C',
+        'Cẩn thận với ESD',
+        'Kiểm tra wiring trước khi power on'
+      ]
+    }
+  ],
+  challenges: [
+    {
+      id: 'basic-led-circuit',
+      title: 'Mạch LED Cơ Bản',
+      description: 'Tạo mạch LED đơn giản với Arduino và current limiting resistor',
+      difficulty: 'Cơ bản',
+      requiredComponents: ['arduino-uno', 'led-5mm', 'resistor-220ohm'],
+      validationRules: [
+        {
+          type: 'connection',
+          description: 'LED phải được kết nối với resistor để bảo vệ',
+          importance: 'critical'
+        },
+        {
+          type: 'voltage',
+          description: 'Điện áp qua LED phải trong khoảng an toàn (2.0-3.3V)',
+          importance: 'warning'
+        },
+        {
+          type: 'current',
+          description: 'Dòng điện không được vượt quá 20mA',
+          importance: 'critical'
+        }
+      ],
+      vietnameseContext: 'Giống như đèn LED trang trí trong dịp Tết Nguyên Đán',
+      realWorldApplications: [
+        'Đèn báo hiệu giao thông',
+        'Hệ thống chiếu sáng tiết kiệm năng lượng',
+        'Status indicators trong thiết bị điện tử'
+      ],
+      educationalObjectives: [
+        'Hiểu về Ohm\'s Law trong thực tế',
+        'Học cách tính toán current limiting resistance',
+        'Nắm vững về polarity và circuit safety'
+      ],
+      estimatedTime: '15-20 phút',
+      points: 100
+    },
+    {
+      id: 'traffic-light-system',
+      title: 'Hệ Thống Đèn Giao Thông',
+      description: 'Xây dựng traffic light system như tại các ngã tư ở Việt Nam',
+      difficulty: 'Trung bình',
+      requiredComponents: ['arduino-uno', 'led-5mm', 'led-5mm', 'led-5mm', 'resistor-220ohm'],
+      validationRules: [
+        {
+          type: 'connection',
+          description: 'Mỗi LED cần có điện trở bảo vệ riêng',
+          importance: 'critical'
+        },
+        {
+          type: 'power',
+          description: 'Tổng công suất không vượt quá khả năng Arduino',
+          importance: 'warning'
+        }
+      ],
+      vietnameseContext: 'Mô phỏng đèn giao thông tại ngã tư lớn ở Hà Nội và TP.HCM',
+      realWorldApplications: [
+        'Smart traffic management systems',
+        'Pedestrian crossing signals',
+        'Construction zone warning lights'
+      ],
+      educationalObjectives: [
+        'Multiple output control với Arduino',
+        'Timing và sequencing trong embedded systems',
+        'Power management cho multiple components'
+      ],
+      estimatedTime: '30-45 phút',
+      points: 200
+    },
+    {
+      id: 'temperature-monitoring',
+      title: 'Hệ Thống Giám Sát Nhiệt Độ',
+      description: 'Monitoring system với temperature sensor và LED warning',
+      difficulty: 'Nâng cao',
+      requiredComponents: ['arduino-uno', 'temperature-sensor', 'led-5mm', 'resistor-220ohm'],
+      validationRules: [
+        {
+          type: 'connection',
+          description: 'Temperature sensor phải kết nối đúng pins (VCC, GND, OUT)',
+          importance: 'critical'
+        },
+        {
+          type: 'voltage',
+          description: 'Analog input phải trong range 0-5V',
+          importance: 'warning'
+        }
+      ],
+      vietnameseContext: 'Ứng dụng trong nhà máy chế biến thực phẩm và nông nghiệp công nghệ cao',
+      realWorldApplications: [
+        'Industrial temperature monitoring',
+        'Greenhouse climate control',
+        'Cold chain management cho logistics'
+      ],
+      educationalObjectives: [
+        'Analog sensor interfacing',
+        'Data acquisition và processing',
+        'Threshold-based control systems'
+      ],
+      estimatedTime: '45-60 phút',
+      points: 300
+    }
+  ],
+  validationSystem: {
+    circuitRules: [
+      {
+        name: 'LED Protection Rule',
+        description: 'LEDs must have current limiting resistors',
+        checkFunction: 'checkLEDResistorConnection',
+        errorMessage: 'LED thiếu điện trở bảo vệ - có thể bị cháy!'
+      },
+      {
+        name: 'Power Supply Check',
+        description: 'Total current draw must not exceed Arduino limits',
+        checkFunction: 'checkCurrentDraw',
+        errorMessage: 'Tổng dòng điện vượt quá khả năng Arduino (200mA max)'
+      },
+      {
+        name: 'Voltage Compatibility',
+        description: 'All components must operate within voltage ranges',
+        checkFunction: 'checkVoltageCompatibility',
+        errorMessage: 'Có component không tương thích với 5V system'
+      }
+    ],
+    safetyChecks: [
+      {
+        name: 'Short Circuit Detection',
+        description: 'Check for potential short circuits',
+        severity: 'error'
+      },
+      {
+        name: 'Overload Warning',
+        description: 'Warn when approaching current limits',
+        severity: 'warning'
+      },
+      {
+        name: 'Best Practices',
+        description: 'Suggest improvements for better design',
+        severity: 'info'
+      }
+    ]
+  },
+  educationalContent: {
+    fundamentals: [
+      {
+        topic: 'Ohm\'s Law trong Electronics',
+        explanation: 'V = I × R - mối quan hệ cơ bản giữa điện áp, dòng điện và điện trở',
+        examples: [
+          'Tính điện trở cho LED 2V với dòng 20mA: R = (5V-2V)/0.02A = 150Ω',
+          'Voltage divider để đọc sensor: Vout = Vin × (R2/(R1+R2))'
+        ],
+        vietnameseApplications: [
+          'Thiết kế mạch điều khiển đèn LED cho buildings',
+          'Sensor calibration trong industrial automation',
+          'Power management cho IoT devices'
+        ]
+      },
+      {
+        topic: 'Digital vs Analog I/O',
+        explanation: 'Sự khác biệt giữa tín hiệu số (0/1) và tín hiệu tương tự (0-5V)',
+        examples: [
+          'Digital: Switch, button states (HIGH/LOW)',
+          'Analog: Temperature sensor, potentiometer values (0-1023 ADC)'
+        ],
+        vietnameseApplications: [
+          'Smart home control systems',
+          'Industrial sensor networks',
+          'Agricultural monitoring systems'
+        ]
+      }
+    ],
+    practicalSkills: [
+      {
+        skill: 'Circuit Breadboarding',
+        description: 'Kỹ năng lắp ráp circuit trên breadboard',
+        difficulty: 'Cơ bản',
+        prerequisites: ['Component identification', 'Basic electronics theory']
+      },
+      {
+        skill: 'Arduino Programming',
+        description: 'Viết code để điều khiển hardware',
+        difficulty: 'Trung bình',
+        prerequisites: ['C/C++ basics', 'Digital I/O understanding']
+      },
+      {
+        skill: 'Circuit Debugging',
+        description: 'Troubleshooting và sửa lỗi mạch điện',
+        difficulty: 'Nâng cao',
+        prerequisites: ['Multimeter usage', 'Circuit analysis skills']
+      }
+    ]
+  }
+};
+
+// Neural Network Builder 3D Game Data
+export interface NeuralNetworkBuilder3DGameData {
+  architectures: Array<{
+    id: string;
+    name: string;
+    description: string;
+    layers: Array<{
+      type: 'input' | 'hidden' | 'output';
+      neurons: number;
+      activationFunction: string;
+    }>;
+    difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+    applications: string[];
+    vietnameseContext: string;
+    estimatedAccuracy: string;
+    trainingTime: string;
+  }>;
+  datasets: Array<{
+    id: string;
+    name: string;
+    description: string;
+    type: 'classification' | 'regression';
+    features: number;
+    samples: number;
+    classes?: number;
+    vietnameseContext: string;
+    realWorldApplication: string;
+    difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+    preprocessingRequired: string[];
+  }>;
+  challenges: Array<{
+    id: string;
+    title: string;
+    description: string;
+    difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+    requiredArchitecture: number[];
+    targetDataset: string;
+    targetAccuracy: number;
+    educationalObjectives: string[];
+    vietnameseApplications: string[];
+    points: number;
+    estimatedTime: string;
+    hints: string[];
+  }>;
+  activationFunctions: Array<{
+    name: string;
+    formula: string;
+    description: string;
+    advantages: string[];
+    disadvantages: string[];
+    bestUseCases: string[];
+    vietnameseExample: string;
+  }>;
+  trainingConcepts: Array<{
+    concept: string;
+    explanation: string;
+    importance: 'critical' | 'important' | 'helpful';
+    examples: string[];
+    vietnameseApplications: string[];
+  }>;
+}
+
+export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
+  architectures: [
+    {
+      id: 'simple-perceptron',
+      name: 'Simple Perceptron',
+      description: 'Mạng neural đơn giản nhất với một lớp output',
+      layers: [
+        { type: 'input', neurons: 2, activationFunction: 'linear' },
+        { type: 'output', neurons: 1, activationFunction: 'sigmoid' }
+      ],
+      difficulty: 'Cơ bản',
+      applications: ['Binary classification', 'Linear separation problems'],
+      vietnameseContext: 'Phân loại khách hàng VIP/thường trong banking Việt Nam',
+      estimatedAccuracy: '70-85%',
+      trainingTime: '1-2 phút'
+    },
+    {
+      id: 'multilayer-perceptron',
+      name: 'Multi-layer Perceptron',
+      description: 'Mạng neural với hidden layers để giải quyết non-linear problems',
+      layers: [
+        { type: 'input', neurons: 4, activationFunction: 'linear' },
+        { type: 'hidden', neurons: 8, activationFunction: 'relu' },
+        { type: 'hidden', neurons: 6, activationFunction: 'relu' },
+        { type: 'output', neurons: 3, activationFunction: 'softmax' }
+      ],
+      difficulty: 'Trung bình',
+      applications: ['Multi-class classification', 'Pattern recognition'],
+      vietnameseContext: 'Phân loại sản phẩm nông nghiệp (lúa, ngô, cà phê) cho xuất khẩu',
+      estimatedAccuracy: '85-95%',
+      trainingTime: '3-5 phút'
+    },
+    {
+      id: 'deep-network',
+      name: 'Deep Neural Network',
+      description: 'Mạng neural sâu với nhiều hidden layers cho complex patterns',
+      layers: [
+        { type: 'input', neurons: 10, activationFunction: 'linear' },
+        { type: 'hidden', neurons: 64, activationFunction: 'relu' },
+        { type: 'hidden', neurons: 32, activationFunction: 'relu' },
+        { type: 'hidden', neurons: 16, activationFunction: 'relu' },
+        { type: 'output', neurons: 5, activationFunction: 'softmax' }
+      ],
+      difficulty: 'Nâng cao',
+      applications: ['Complex classification', 'Feature learning', 'Deep learning'],
+      vietnameseContext: 'Phân tích sentiment của review khách hàng trên Tiki, Shopee',
+      estimatedAccuracy: '90-98%',
+      trainingTime: '10-15 phút'
+    }
+  ],
+  datasets: [
+    {
+      id: 'xor-problem',
+      name: 'XOR Logic Gate',
+      description: 'Classic non-linear classification problem',
+      type: 'classification',
+      features: 2,
+      samples: 4,
+      classes: 2,
+      vietnameseContext: 'Nền tảng cho logic gates trong chip design tại Việt Nam',
+      realWorldApplication: 'Digital circuit design, Boolean logic trong embedded systems',
+      difficulty: 'Cơ bản',
+      preprocessingRequired: ['None - data already normalized']
+    },
+    {
+      id: 'vietnamese-house-prices',
+      name: 'Vietnam House Price Prediction',
+      description: 'Dự đoán giá nhà tại các thành phố lớn Việt Nam',
+      type: 'regression',
+      features: 5,
+      samples: 1000,
+      vietnameseContext: 'Hỗ trợ quyết định đầu tư bất động sản tại TP.HCM, Hà Nội, Đà Nẵng',
+      realWorldApplication: 'Real estate platforms như Batdongsan.com.vn, PropTech startups',
+      difficulty: 'Trung bình',
+      preprocessingRequired: ['Feature scaling', 'Location encoding', 'Price normalization']
+    },
+    {
+      id: 'vietnam-weather-prediction',
+      name: 'Vietnam Weather Classification',
+      description: 'Phân loại thời tiết cho nông nghiệp Việt Nam',
+      type: 'classification',
+      features: 8,
+      samples: 2000,
+      classes: 4,
+      vietnameseContext: 'Hỗ trợ nông dân dự báo thời tiết cho việc canh tác',
+      realWorldApplication: 'Agricultural planning, disaster prevention, smart farming',
+      difficulty: 'Nâng cao',
+      preprocessingRequired: ['Time series features', 'Geographic encoding', 'Seasonal normalization']
+    },
+    {
+      id: 'vietnamese-crop-classification',
+      name: 'Vietnamese Crop Disease Detection',
+      description: 'Phát hiện bệnh cây trồng qua ảnh lá',
+      type: 'classification',
+      features: 12,
+      samples: 5000,
+      classes: 6,
+      vietnameseContext: 'Ứng dụng AI trong nông nghiệp công nghệ cao Việt Nam',
+      realWorldApplication: 'Smart farming apps, agricultural extension services',
+      difficulty: 'Nâng cao',
+      preprocessingRequired: ['Image feature extraction', 'Color space conversion', 'Data augmentation']
+    }
+  ],
+  challenges: [
+    {
+      id: 'basic-perceptron-challenge',
+      title: 'Perceptron Đầu Tiên',
+      description: 'Xây dựng perceptron đơn giản để giải quyết linear classification',
+      difficulty: 'Cơ bản',
+      requiredArchitecture: [2, 1],
+      targetDataset: 'xor-problem',
+      targetAccuracy: 0.75,
+      educationalObjectives: [
+        'Hiểu về basic neuron structure',
+        'Học về activation functions',
+        'Nắm vững forward propagation'
+      ],
+      vietnameseApplications: [
+        'Phân loại email spam/không spam cho Zalo',
+        'Quyết định approve/reject loan trong fintech',
+        'Classifying high/low demand products trong e-commerce'
+      ],
+      points: 100,
+      estimatedTime: '10-15 phút',
+      hints: [
+        'XOR không thể giải quyết được với single perceptron',
+        'Cần hidden layer để học non-linear patterns',
+        'Thử với learning rate từ 0.01 đến 0.1'
+      ]
+    },
+    {
+      id: 'house-price-predictor',
+      title: 'Dự Đoán Giá Nhà Việt Nam',
+      description: 'Tạo regression model để predict house prices',
+      difficulty: 'Trung bình',
+      requiredArchitecture: [5, 8, 4, 1],
+      targetDataset: 'vietnamese-house-prices',
+      targetAccuracy: 0.85,
+      educationalObjectives: [
+        'Regression vs classification differences',
+        'Feature importance trong real estate',
+        'Model evaluation với RMSE và MAE'
+      ],
+      vietnameseApplications: [
+        'PropTech platforms như Rever, PropertyGuru',
+        'Bank loan assessment systems',
+        'Investment analysis tools cho real estate'
+      ],
+      points: 250,
+      estimatedTime: '20-30 phút',
+      hints: [
+        'Normalize price data trước khi training',
+        'Location features rất quan trọng ở Việt Nam',
+        'Consider using multiple hidden layers'
+      ]
+    },
+    {
+      id: 'weather-prediction-system',
+      title: 'Hệ Thống Dự Báo Thời Tiết',
+      description: 'Multi-class classification cho weather prediction',
+      difficulty: 'Nâng cao',
+      requiredArchitecture: [8, 16, 12, 4],
+      targetDataset: 'vietnam-weather-prediction',
+      targetAccuracy: 0.88,
+      educationalObjectives: [
+        'Multi-class classification strategies',
+        'Handling imbalanced weather data',
+        'Time series features engineering'
+      ],
+      vietnameseApplications: [
+        'Nông nghiệp thông minh trong Mekong Delta',
+        'Disaster early warning systems',
+        'Tourism planning apps cho Vietnam travel'
+      ],
+      points: 350,
+      estimatedTime: '30-45 phút',
+      hints: [
+        'Weather data có seasonal patterns',
+        'Use dropout để prevent overfitting',
+        'Geographic features quan trọng cho Vietnam climate'
+      ]
+    },
+    {
+      id: 'crop-disease-detector',
+      title: 'AI Phát Hiện Bệnh Cây Trồng',
+      description: 'Deep learning model cho agricultural disease detection',
+      difficulty: 'Nâng cao',
+      requiredArchitecture: [12, 32, 16, 8, 6],
+      targetDataset: 'vietnamese-crop-classification',
+      targetAccuracy: 0.92,
+      educationalObjectives: [
+        'Deep learning architecture design',
+        'Feature extraction từ image data',
+        'Model validation với agricultural data'
+      ],
+      vietnameseApplications: [
+        'Smart farming solutions cho rice cultivation',
+        'Mobile apps cho farmers ở rural Vietnam',
+        'Agricultural extension service automation'
+      ],
+      points: 450,
+      estimatedTime: '45-60 phút',
+      hints: [
+        'Deep networks cần careful initialization',
+        'Use batch normalization giữa layers',
+        'Agricultural data có high class imbalance'
+      ]
+    }
+  ],
+  activationFunctions: [
+    {
+      name: 'Sigmoid',
+      formula: '1 / (1 + e^(-x))',
+      description: 'S-shaped curve, outputs between 0 and 1',
+      advantages: ['Smooth gradient', 'Probabilistic output', 'Historically popular'],
+      disadvantages: ['Vanishing gradient problem', 'Not zero-centered', 'Computationally expensive'],
+      bestUseCases: ['Binary classification output layer', 'When need probability outputs'],
+      vietnameseExample: 'Xác suất khách hàng mua sản phẩm trong e-commerce Vietnam (0-1)'
+    },
+    {
+      name: 'ReLU',
+      formula: 'max(0, x)',
+      description: 'Rectified Linear Unit - simple và effective',
+      advantages: ['Fast computation', 'No vanishing gradient', 'Sparse activation'],
+      disadvantages: ['Dying ReLU problem', 'Not zero-centered', 'Unbounded output'],
+      bestUseCases: ['Hidden layers trong deep networks', 'Computer vision tasks'],
+      vietnameseExample: 'Intensity của traffic light detection trong smart city systems'
+    },
+    {
+      name: 'Tanh',
+      formula: '(e^x - e^(-x)) / (e^x + e^(-x))',
+      description: 'Hyperbolic tangent, outputs between -1 and 1',
+      advantages: ['Zero-centered', 'Strong gradients', 'Smooth function'],
+      disadvantages: ['Still has vanishing gradient', 'Computationally expensive'],
+      bestUseCases: ['RNN hidden states', 'When zero-centered output needed'],
+      vietnameseExample: 'Sentiment analysis của Vietnamese text: -1 (negative) to 1 (positive)'
+    },
+    {
+      name: 'Softmax',
+      formula: 'e^xi / Σ(e^xj)',
+      description: 'Converts logits to probability distribution',
+      advantages: ['Probability distribution', 'Good for multi-class', 'Interpretable output'],
+      disadvantages: ['Only for output layer', 'Can be unstable', 'Requires careful implementation'],
+      bestUseCases: ['Multi-class classification output', 'Attention mechanisms'],
+      vietnameseExample: 'Phân loại tỉnh/thành Việt Nam từ địa chỉ text input'
+    }
+  ],
+  trainingConcepts: [
+    {
+      concept: 'Learning Rate',
+      explanation: 'Tốc độ học của model - quyết định step size trong gradient descent',
+      importance: 'critical',
+      examples: [
+        'Learning rate quá cao: model không converge',
+        'Learning rate quá thấp: training chậm, có thể stuck ở local minimum',
+        'Adaptive learning rate: bắt đầu cao rồi giảm dần'
+      ],
+      vietnameseApplications: [
+        'Tối ưu hóa recommendation system cho Tiki/Shopee',
+        'Fine-tuning models cho Vietnamese language processing',
+        'Adjusting learning cho different phases của business cycle'
+      ]
+    },
+    {
+      concept: 'Overfitting vs Underfitting',
+      explanation: 'Balance giữa model complexity và generalization ability',
+      importance: 'critical',
+      examples: [
+        'Overfitting: high training accuracy, low test accuracy',
+        'Underfitting: poor performance trên cả training và test',
+        'Just right: good performance trên both datasets'
+      ],
+      vietnameseApplications: [
+        'Credit scoring models cho Vietnamese banks',
+        'Traffic prediction models cho TP.HCM rush hours',
+        'Crop yield prediction với limited historical data'
+      ]
+    },
+    {
+      concept: 'Gradient Descent',
+      explanation: 'Thuật toán optimization để minimize loss function',
+      importance: 'critical',
+      examples: [
+        'Batch gradient descent: use all data mỗi step',
+        'Stochastic: use 1 sample mỗi step',
+        'Mini-batch: compromise giữa stability và speed'
+      ],
+      vietnameseApplications: [
+        'Optimizing delivery routes cho Grab/Be trong Vietnam cities',
+        'Training recommendation engines với Vietnamese user behavior',
+        'Fraud detection models cho Vietnamese payment systems'
+      ]
+    }
+  ]
 };

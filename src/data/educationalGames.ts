@@ -3,7 +3,7 @@ export interface EducationalGame {
   id: string;
   title: string;
   description: string;
-  category: 'quiz' | 'puzzle' | 'simulation' | 'coding' | 'memory' | 'strategy';
+  category: 'quiz' | 'puzzle' | 'simulation' | 'coding' | 'memory' | 'strategy' | '3D';
   difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
   estimatedTime: string;
   skills: string[];
@@ -23,6 +23,114 @@ export interface EducationalGame {
 
 // Games array for static generation
 export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
+  // Priority 3D Games
+  {
+    id: 'arduino-circuit-builder-3d',
+    title: 'Arduino Circuit Builder 3D',
+    description: 'Build và test Arduino circuits trong virtual 3D environment với realistic component physics',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '30-45 phút',
+    skills: ['Arduino Programming', 'Circuit Design', 'Electronics', '3D Visualization', 'Engineering'],
+    moduleType: 'arduino',
+    isInternal: true,
+    points: 150,
+    icon: '⚡',
+    color: 'from-blue-500 to-indigo-500',
+    relatedLessons: [
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-setup',
+        title: 'Arduino Setup',
+        connection: 'Practice hardware connections và circuit building fundamentals',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'led-digital-outputs',
+        title: 'LED & Digital Outputs',
+        connection: 'Build LED circuits với proper current limiting resistors',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-inputs',
+        title: 'Arduino Inputs',
+        connection: 'Connect sensors và input devices to Arduino',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Sensors & Data Processing',
+        connection: 'Integrate complex sensors into circuit designs',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'engineering-challenges',
+        title: 'Engineering Challenges',
+        connection: 'Apply engineering design principles to electronic systems',
+      },
+      {
+        moduleId: 'robotics',
+        lessonId: 'robot-sensors-integration',
+        title: 'Robot Sensors Integration',
+        connection: 'Understanding sensor integration for robotics applications',
+      },
+    ],
+  },
+
+  {
+    id: 'neural-network-builder-3d',
+    title: 'Neural Network Builder 3D',
+    description:
+      'Build, train, và visualize neural networks trong interactive 3D environment với real-time training visualization',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '45-60 phút',
+    skills: ['Machine Learning', 'Neural Networks', 'AI Architecture', '3D Visualization', 'Data Science'],
+    moduleType: 'ai-machine-learning',
+    isInternal: true,
+    points: 200,
+    icon: '🧠',
+    color: 'from-purple-500 to-pink-500',
+    relatedLessons: [
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'ml-fundamentals',
+        title: 'Machine Learning Fundamentals',
+        connection: 'Visualize machine learning concepts với interactive neural network building',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'neural-network-architecture',
+        title: 'Neural Network Architecture',
+        connection: 'Build và experiment với different network architectures',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'deep-learning-applications',
+        title: 'Deep Learning Applications',
+        connection: 'Practice deep learning concepts với hands-on network construction',
+      },
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'ai-model-optimization',
+        title: 'AI Model Optimization',
+        connection: 'Optimize network performance through architecture design',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'python-data-analysis',
+        title: 'Python Data Analysis',
+        connection: 'Understanding data processing for neural network training',
+      },
+      {
+        moduleId: 'ai-art-creative-tech',
+        lessonId: 'ai-image-generation',
+        title: 'AI Image Generation',
+        connection: 'Learn neural network architecture behind AI art generation',
+      },
+    ],
+  },
+
   {
     id: 'vietnam-geography-quiz',
     title: 'Quiz Địa lý Việt Nam',
@@ -544,8 +652,42 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     ],
   },
   {
+    id: 'space-exploration-3d',
+    title: 'Khám Phá Vũ Trụ 3D (2)',
+    description: 'Điều khiển tàu vũ trụ trong môi trường 3D thực tế, khám phá hành tinh và thực hiện nhiệm vụ không gian phức tạp',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '35-50 phút',
+    skills: ['Vật lý vũ trụ', 'Điều hướng 3D', 'Quỹ đạo thiên thể', 'Mission Planning', 'Space Physics'],
+    moduleType: 'space',
+    isInternal: true,
+    points: 220,
+    icon: '🚀',
+    color: 'from-purple-600 to-indigo-600',
+    relatedLessons: [
+      {
+        moduleId: 'aerospace-engineering',
+        lessonId: 'aircraft-design-aerodynamics',
+        title: 'Thiết Kế Máy Bay & Khí Động Lực Học',
+        connection: 'Áp dụng nguyên lý khí động lực học trong môi trường không gian',
+      },
+      {
+        moduleId: 'space-technology',
+        lessonId: 'space-mission-design-orbital-mechanics',
+        title: 'Thiết Kế Sứ Mệnh Vũ Trụ & Cơ Học Quỹ Đạo',
+        connection: 'Thực hành điều khiển quỹ đạo và lập kế hoạch nhiệm vụ không gian',
+      },
+      {
+        moduleId: 'robotics',
+        lessonId: 'autonomous-navigation-mapping',
+        title: 'Điều Hướng Tự Động & Mapping',
+        connection: 'Ứng dụng thuật toán điều hướng cho tàu vũ trụ tự động',
+      },
+    ],
+  },
+  {
     id: 'space-exploration',
-    title: 'Khám phá Vũ trụ',
+    title: 'Khám phá Vũ trụ 3D',
     description: 'Lên kế hoạch cho các sứ mệnh không gian',
     category: 'simulation',
     difficulty: 'Trung bình',
@@ -672,6 +814,40 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'quantum-algorithms',
         title: 'Thuật Toán Lượng Tử',
         connection: 'Toán học cao cấp trong máy tính lượng tử',
+      },
+    ],
+  },
+  {
+    id: 'virtual-chemistry-lab-3d',
+    title: 'Virtual Chemistry Lab 3D',
+    description: 'Tạo phân tử H2O, CO2, NH4 và các hợp chất khác trong phòng thí nghiệm 3D tương tác với physics engine thực tế',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '30-45 phút',
+    skills: ['Hóa học phân tử', 'Liên kết hóa học', 'Cấu trúc 3D', 'Thí nghiệm ảo', 'Chemistry Visualization'],
+    moduleType: 'chemistry',
+    isInternal: true,
+    points: 180,
+    icon: '🧪',
+    color: 'from-green-500 to-emerald-500',
+    relatedLessons: [
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'medical-biotechnology-drug-discovery',
+        title: 'Công Nghệ Sinh Học Y Tế & Khám Phá Thuốc',
+        connection: 'Hiểu cấu trúc phân tử và liên kết trong các hợp chất sinh học',
+      },
+      {
+        moduleId: 'nanotechnology',
+        lessonId: 'nanomaterials-synthesis-characterization',
+        title: 'Tổng Hợp & Đặc Tính Hóa Nanomaterials',
+        connection: 'Áp dụng kiến thức về liên kết phân tử trong tạo nanomaterials',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'fun-physics-experiments',
+        title: 'Thí Nghiệm Vật Lý Thú Vị',
+        connection: 'Kết hợp hóa học với vật lý để hiểu tương tác phân tử',
       },
     ],
   },
@@ -987,8 +1163,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'analytics-roi-optimization',
         title: 'Tối Ưu Analytics và ROI',
         connection: 'Đo lường và tối ưu hóa hiệu quả chiến dịch',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'biotech-lab-simulation',
@@ -1021,8 +1197,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'personalized-medicine-genomics',
         title: 'Y Học Cá Nhân Hóa và Genomics',
         connection: 'Phân tích dữ liệu gen để tạo phương pháp điều trị cá nhân',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'game-dev-studio',
@@ -1055,8 +1231,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'game-monetization-publishing',
         title: 'Kiếm Tiền và Xuất Bản Game',
         connection: 'Học cách xuất bản và kiếm tiền từ game',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'ml-model-builder',
@@ -1089,8 +1265,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'ai-deployment-production',
         title: 'Triển Khai AI trong Sản Xuất',
         connection: 'Triển khai mô hình AI vào ứng dụng thực tế',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'aerospace-mission-control',
@@ -1123,8 +1299,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'space-mission-planning',
         title: 'Lập Kế Hoạch Nhiệm Vụ Không Gian',
         connection: 'Thiết kế và thực hiện nhiệm vụ không gian phức tạp',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'medical-device-designer',
@@ -1157,8 +1333,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'biomedical-imaging-diagnostics',
         title: 'Hình Ảnh Y Sinh và Chẩn Đoán',
         connection: 'Tạo hệ thống chẩn đoán hình ảnh tiên tiến',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'food-tech-innovator',
@@ -1191,8 +1367,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'sustainable-food-systems',
         title: 'Hệ Thống Thực Phẩm Bền Vững',
         connection: 'Phát triển giải pháp thực phẩm thân thiện môi trường',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'nano-lab-explorer',
@@ -1225,8 +1401,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'nanoelectronics-quantum-devices',
         title: 'Nanoelectronics và Thiết Bị Lượng Tử',
         connection: 'Thiết kế thiết bị điện tử quy mô nano',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'ev-charging-network',
@@ -1259,8 +1435,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'smart-charging-infrastructure',
         title: 'Hạ Tầng Sạc Thông Minh',
         connection: 'Xây dựng mạng lưới sạc hiệu quả và thông minh',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'mental-health-app',
@@ -1293,8 +1469,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'digital-wellness-platforms',
         title: 'Nền Tảng Sức Khỏe Số',
         connection: 'Xây dựng nền tảng chăm sóc sức khỏe tâm thần toàn diện',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'e-government-portal',
@@ -1327,8 +1503,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'smart-city-integration',
         title: 'Tích Hợp Thành Phố Thông Minh',
         connection: 'Kết nối dịch vụ chính phủ với hệ thống thành phố thông minh',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'climate-data-analyst',
@@ -1361,8 +1537,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'gis-remote-sensing-applications',
         title: 'Ứng Dụng GIS và Viễn Thám',
         connection: 'Sử dụng GIS để phân tích không gian dữ liệu môi trường',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'ai-research-lab',
@@ -1395,8 +1571,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'quantum-ai-computing',
         title: 'Điện Toán Lượng Tử và AI',
         connection: 'Kết hợp AI với điện toán lượng tử',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'content-creator-studio',
@@ -1429,8 +1605,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'monetization-audience-growth',
         title: 'Kiếm Tiền và Phát Triển Khán Giả',
         connection: 'Xây dựng và kiếm tiền từ cộng đồng khán giả',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'vietnamese-heritage-explorer',
@@ -1463,8 +1639,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'traditional-arts-modern-applications',
         title: 'Nghệ Thuật Truyền Thống trong Ứng Dụng Hiện Đại',
         connection: 'Kết hợp nghệ thuật truyền thống với công nghệ hiện đại',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'global-marketplace-simulator',
@@ -1497,8 +1673,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'cross-border-logistics',
         title: 'Logistics và Vận chuyển Quốc tế',
         connection: 'Tối ưu hóa chuỗi cung ứng và delivery',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'aquaculture-iot-manager',
@@ -1525,8 +1701,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'arduino-sensors',
         title: 'Cảm Biến & Xử Lý Dữ Liệu',
         connection: 'Sử dụng sensors giám sát môi trường nước',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'smart-farming-simulator',
@@ -1553,8 +1729,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'smart-irrigation-systems',
         title: 'Hệ thống Tưới tiêu Thông minh',
         connection: 'Tự động hóa tưới tiêu dựa trên dữ liệu sensors',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'drone-crop-monitoring',
@@ -1581,8 +1757,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'ai-pest-disease-detection',
         title: 'AI Phát hiện Sâu bệnh Cây trồng',
         connection: 'Phân tích hình ảnh từ drone để detect vấn đề',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'currency-exchange-puzzle',
@@ -1609,8 +1785,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'international-finance',
         title: 'Tài chính Quốc tế',
         connection: 'Hiểu về foreign exchange và international payments',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'cultural-localization-challenge',
@@ -1637,8 +1813,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'global-marketing-strategies',
         title: 'Chiến Lược Marketing Toàn Cầu',
         connection: 'Phát triển campaigns phù hợp với đa văn hóa',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'marine-ecosystem-iot-manager',
@@ -1671,8 +1847,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'arduino-communication',
         title: 'Communication & Networking',
         connection: 'Xây dựng IoT networks cho smart farming',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'offshore-wind-planner',
@@ -1705,8 +1881,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'environmental-impact-assessment',
         title: 'Đánh Giá Tác Động Môi Trường',
         connection: 'Phân tích environmental impact của renewable projects',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'blue-carbon-tracker',
@@ -1739,8 +1915,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'carbon-capture-storage',
         title: 'Thu Giữ và Lưu Trữ Carbon',
         connection: 'Hiểu về natural carbon capture processes',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'factory-automation-simulator',
@@ -1779,8 +1955,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'predictive-maintenance',
         title: 'Bảo Trì Dự Đoán',
         connection: 'Sử dụng AI để predict equipment failures',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'supply-chain-optimization-challenge',
@@ -1813,8 +1989,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'optimization-algorithms',
         title: 'Thuật Toán Tối Ưu',
         connection: 'Áp dụng AI để optimize routing và scheduling',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'virtual-classroom-manager',
@@ -1847,8 +2023,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'user-experience-design',
         title: 'Thiết Kế Trải Nghiệm Người Dùng',
         connection: 'Tạo engaging học tập interfaces',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'ai-language-tutor',
@@ -1881,8 +2057,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'machine-learning-applications',
         title: 'Ứng Dụng Machine Learning',
         connection: 'Code AI models cho language processing',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'traffic-management-simulator',
@@ -1921,8 +2097,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'geospatial-analysis',
         title: 'Phân Tích Không Gian Địa Lý',
         connection: 'Analyze traffic patterns và urban mobility data',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'smart-parking-puzzle',
@@ -1955,8 +2131,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'mobile-payment-systems',
         title: 'Hệ Thống Thanh Toán Di Động',
         connection: 'Implement contactless payment cho parking',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'smart-home-designer',
@@ -1995,8 +2171,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'iot-security',
         title: 'Bảo Mật IoT',
         connection: 'Secure smart home networks và devices',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'virtual-property-tour',
@@ -2029,8 +2205,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'procedural-generation',
         title: 'Tạo Sinh Tự Động',
         connection: 'Generate virtual property layouts và designs',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'recycling-plant-manager',
@@ -2069,8 +2245,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'environmental-impact-assessment',
         title: 'Đánh Giá Tác Động Môi Trường',
         connection: 'Monitor environmental impact của recycling operations',
-      }
-    ]
+      },
+    ],
   },
   {
     id: 'waste-to-energy-puzzle',
@@ -2109,15 +2285,16 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'process-optimization',
         title: 'Tối Ưu Hóa Quy Trình',
         connection: 'Optimize chemical processes trong waste-to-energy plants',
-      }
-    ]
+      },
+    ],
   },
 
   // 3D Robot Navigation Game - Advanced AI Pathfinding
   {
     id: 'robot-navigation-3d',
     title: 'Robot Navigation 3D - Thế giới khối với AI dẫn đường',
-    description: 'Trải nghiệm game giáo dục 3D với robot thông minh sử dụng thuật toán A* pathfinding trong môi trường khối 3D tương tác như Minecraft.',
+    description:
+      'Trải nghiệm game giáo dục 3D với robot thông minh sử dụng thuật toán A* pathfinding trong môi trường khối 3D tương tác như Minecraft.',
     category: 'simulation',
     difficulty: 'Nâng cao',
     estimatedTime: '45-60 phút',
@@ -2129,7 +2306,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       'AI và robotics',
       'WebGL rendering',
       'Tối ưu hóa đường đi',
-      'Computer graphics'
+      'Computer graphics',
     ],
     moduleType: 'Advanced Technology',
     isInternal: true,
@@ -2144,7 +2321,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         connection: 'Understand robot navigation fundamentals trong real-world applications',
       },
       {
-        moduleId: 'robotics', 
+        moduleId: 'robotics',
         lessonId: 'robot-navigation-control',
         title: 'Điều Khiển Và Dẫn Đường Robot',
         connection: 'Learn pathfinding algorithms và obstacle avoidance trong robotics',
@@ -2178,7 +2355,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'engineering-challenges',
         title: 'Thách Thức Kỹ Thuật',
         connection: 'Apply engineering design process trong autonomous robot development',
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];

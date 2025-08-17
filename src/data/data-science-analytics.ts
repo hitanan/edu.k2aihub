@@ -15,7 +15,7 @@ export const dataScienceLessons: DataScienceLessonType[] = [
     description: 'Master data science fundamentals sử dụng Python, từ data manipulation đến statistical analysis và visualization.',
     duration: '240 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://youtube.com/watch?v=DATA_SCIENCE_PYTHON',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/lessons/data-science-python.jpg',
     objectives: [
       'Master Python cho data science workflows',
@@ -172,7 +172,7 @@ export const dataScienceLessons: DataScienceLessonType[] = [
     description: 'Master big data processing techniques và advanced machine learning applications cho enterprise-scale solutions.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=BIG_DATA_ML',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/lessons/big-data-ml.jpg',
     objectives: [
       'Understand big data processing architectures',
@@ -289,7 +289,7 @@ export const dataScienceLessons: DataScienceLessonType[] = [
     description: 'Transform data insights thành compelling business stories và drive strategic decision-making trong organizations.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=BI_DATA_STORYTELLING',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/lessons/data-storytelling.jpg',
     objectives: [
       'Master data storytelling techniques',

@@ -67,6 +67,8 @@ import {
   RecyclingPlantManagerGame,
   WasteToEnergyPuzzleGame,
   AerospaceMissionControlGame,
+  VirtualChemistryLab3D,
+  SpaceExploration3DGame,
 } from './individual';
 
 interface MiniGameProps {
@@ -328,6 +330,10 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <WasteToEnergyPuzzleGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'aerospace-mission-control':
         return <AerospaceMissionControlGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
+      case 'virtual-chemistry-lab-3d':
+        return <VirtualChemistryLab3D onComplete={(success, score) => endGame(success, score)}  />;
+      case 'space-exploration-3d':
+        return <SpaceExploration3DGame onComplete={(success, score) => endGame(success, score)} timeLeft={timeLeft} />;
       default:
         return <div className="text-white">Game not implemented yet!</div>;
     }

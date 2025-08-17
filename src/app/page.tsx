@@ -46,8 +46,8 @@ export default function HomePage() {
     '@type': 'EducationalOrganization',
     name: 'K2AI',
     description: 'Nền tảng học tập thông minh với công nghệ AI',
-    url: 'https://k2aihub.github.io',
-    logo: 'https://k2aihub.github.io/logo.png',
+    url: 'https://k2aihub.com',
+    logo: 'https://k2aihub.com/favicon.ico',
     foundingDate: '2025',
     hasCourse: [
       {

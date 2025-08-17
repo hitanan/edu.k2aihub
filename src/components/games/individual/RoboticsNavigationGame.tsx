@@ -270,13 +270,13 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft }: Robotic
     ],
   );
 
-  const resetLevel = () => {
+  const resetLevel = useCallback(() => {
     setRobotPosition([maze.start[0], maze.start[1]]);
     setCommands([]);
     setIsRunning(false);
     setPathHistory([]);
     setLevelStartTime(Date.now());
-  };
+  }, [maze]);
 
   const nextLevel = () => {
     if (currentLevel < ROBOTICS_LEVELS.length - 1) {
@@ -291,6 +291,44 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft }: Robotic
       setLevelStartTime(Date.now());
     }
   };
+
+  // Keyboard controls
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      // Prevent default behavior for arrow keys and WASD to avoid page scrolling
+      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'KeyW', 'KeyA', 'KeyS', 'KeyD'].includes(event.code)) {
+        event.preventDefault();
+      }
+
+      switch (event.code) {
+        case 'ArrowUp':
+        case 'KeyW':
+          moveRobot('up');
+          break;
+        case 'ArrowDown':
+        case 'KeyS':
+          moveRobot('down');
+          break;
+        case 'ArrowLeft':
+        case 'KeyA':
+          moveRobot('left');
+          break;
+        case 'ArrowRight':
+        case 'KeyD':
+          moveRobot('right');
+          break;
+        case 'KeyR':
+          resetLevel();
+          break;
+        case 'Escape':
+          // Future: Can be used to pause/unpause if needed
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [moveRobot, resetLevel]);
 
   if (!maze) {
     return (
@@ -400,6 +438,15 @@ export default function RoboticsNavigationGame({ onComplete, timeLeft }: Robotic
             ↓
           </button>
           <div></div>
+        </div>
+
+        {/* Keyboard Instructions */}
+        <div className="bg-gray-900/50 rounded-lg p-3 text-xs text-center">
+          <p className="text-gray-300 mb-1">⌨️ Điều khiển bàn phím:</p>
+          <div className="flex justify-center gap-4 text-gray-400">
+            <span>↑↓←→ hoặc WASD</span>
+            <span>R: Reset</span>
+          </div>
         </div>
 
         {/* Level Navigation */}

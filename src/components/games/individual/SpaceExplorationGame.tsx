@@ -256,16 +256,22 @@ class SpaceWorld {
   }
 
   setupLighting() {
-    // Ambient light (space environment)
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
+    // Ambient light (space environment) - increased intensity
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
     this.scene.add(ambientLight);
 
-    // Sun light (directional)
-    const sunLight = new THREE.DirectionalLight(0xffffcc, 1);
-    sunLight.position.set(0, 10, 0);
+    // Sun light (directional) - enhanced lighting
+    const sunLight = new THREE.DirectionalLight(0xffffcc, 1.2);
+    sunLight.position.set(50, 50, 50);
     sunLight.castShadow = true;
     sunLight.shadow.mapSize.width = 2048;
     sunLight.shadow.mapSize.height = 2048;
+    sunLight.shadow.camera.near = 0.5;
+    sunLight.shadow.camera.far = 200;
+    sunLight.shadow.camera.left = -100;
+    sunLight.shadow.camera.right = 100;
+    sunLight.shadow.camera.top = 100;
+    sunLight.shadow.camera.bottom = -100;
     this.scene.add(sunLight);
 
     // Add colorful space lights for magic effect
@@ -277,7 +283,7 @@ class SpaceWorld {
     ];
 
     colorLights.forEach((light) => {
-      const pointLight = new THREE.PointLight(light.color, 0.5, 50);
+      const pointLight = new THREE.PointLight(light.color, 0.8, 100);
       pointLight.position.set(light.position[0], light.position[1], light.position[2]);
       this.scene.add(pointLight);
     });
@@ -314,10 +320,13 @@ class SpaceWorld {
     // Create planets
     level.planets.forEach((planet) => {
       const geometry = new THREE.SphereGeometry(planet.size, 32, 32);
-      const material = new THREE.MeshLambertMaterial({
+      const material = new THREE.MeshPhongMaterial({
         color: planet.color,
         emissive: planet.color,
-        emissiveIntensity: 0.1,
+        emissiveIntensity: 0.2,
+        shininess: 30,
+        transparent: false,
+        opacity: 1.0
       });
 
       const mesh = new THREE.Mesh(geometry, material);
@@ -333,7 +342,7 @@ class SpaceWorld {
       const ringMaterial = new THREE.MeshBasicMaterial({
         color: planet.color,
         transparent: true,
-        opacity: 0.3,
+        opacity: 0.4,
         side: THREE.DoubleSide,
       });
       const ring = new THREE.Mesh(ringGeometry, ringMaterial);
@@ -345,7 +354,12 @@ class SpaceWorld {
     // Create asteroids
     level.asteroids.forEach((asteroidPos) => {
       const geometry = new THREE.DodecahedronGeometry(0.5 + Math.random() * 0.5);
-      const material = new THREE.MeshLambertMaterial({ color: 0x8b4513 });
+      const material = new THREE.MeshPhongMaterial({ 
+        color: 0x8b4513,
+        shininess: 10,
+        transparent: false,
+        opacity: 1.0
+      });
 
       const mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(asteroidPos.x, asteroidPos.y, asteroidPos.z);
@@ -367,12 +381,14 @@ class SpaceWorld {
           Math.pow(spaceshipPos.z - mesh.position.z, 2),
       );
 
-      if (distance < planet.size + 2) {
+      // Tăng discovery radius để dễ tiếp cận hành tinh hơn
+      const discoveryRadius = planet.size + 4; // Tăng từ 2 lên 4
+      if (distance < discoveryRadius) {
         // Discovery radius
         planet.discovered = true;
 
-        // Add discovery effect
-        const geometry = new THREE.SphereGeometry(planet.size + 2, 16, 16);
+        // Add discovery effect với larger radius
+        const geometry = new THREE.SphereGeometry(planet.size + 3, 16, 16);
         const material = new THREE.MeshBasicMaterial({
           color: 0xffff00,
           transparent: true,
@@ -447,7 +463,12 @@ class Spaceship {
 
     // Main body (colorful rocket)
     const bodyGeometry = new THREE.ConeGeometry(1, 3, 8);
-    const bodyMaterial = new THREE.MeshLambertMaterial({ color: 0x00ff7f });
+    const bodyMaterial = new THREE.MeshPhongMaterial({ 
+      color: 0x00ff7f,
+      shininess: 100,
+      transparent: false,
+      opacity: 1.0
+    });
     const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
     body.rotation.x = -Math.PI / 2; // Point forward
     body.castShadow = true;
@@ -456,7 +477,10 @@ class Spaceship {
     // Wings (triangles)
     for (let i = 0; i < 4; i++) {
       const wingGeometry = new THREE.ConeGeometry(0.3, 1, 3);
-      const wingMaterial = new THREE.MeshLambertMaterial({ color: 0xff69b4 });
+      const wingMaterial = new THREE.MeshPhongMaterial({ 
+        color: 0xff69b4,
+        shininess: 50
+      });
       const wing = new THREE.Mesh(wingGeometry, wingMaterial);
 
       const angle = (i / 4) * Math.PI * 2;
@@ -473,7 +497,7 @@ class Spaceship {
     const glowMaterial = new THREE.MeshBasicMaterial({
       color: 0xff4500,
       transparent: true,
-      opacity: 0.6,
+      opacity: 0.8,
     });
     const glow = new THREE.Mesh(glowGeometry, glowMaterial);
     glow.position.y = -2;
@@ -481,10 +505,11 @@ class Spaceship {
 
     // Cockpit window
     const windowGeometry = new THREE.SphereGeometry(0.4, 8, 8);
-    const windowMaterial = new THREE.MeshLambertMaterial({
+    const windowMaterial = new THREE.MeshPhongMaterial({
       color: 0x87ceeb,
       transparent: true,
-      opacity: 0.8,
+      opacity: 0.9,
+      shininess: 200
     });
     const cockpit = new THREE.Mesh(windowGeometry, windowMaterial);
     cockpit.position.y = 1;
@@ -803,7 +828,7 @@ export function SpaceExplorationGame({ onComplete, timeLeft }: SpaceExplorationG
       <div className="w-full h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-black flex items-center justify-center text-white">
         <div className="max-w-6xl mx-auto p-8">
           <h1 className="text-5xl font-bold mb-8 text-center">
-            🌍 <span className="text-yellow-300">Khám phá Vũ trụ</span>
+            🌍 <span className="text-yellow-300">Khám phá Vũ trụ 3D</span>
           </h1>
 
           <div className="grid md:grid-cols-3 gap-8 mb-8">

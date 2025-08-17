@@ -15,7 +15,7 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
     description: 'Học cách setup và optimize TikTok Shop để tối đa hóa doanh số. Từ product listing đến livestream selling strategies.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://youtube.com/watch?v=TIKTOK_SHOP_SETUP',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/lessons/tiktok-shop-setup.jpg',
     objectives: [
       'Setup TikTok Shop account và verify business',
@@ -153,7 +153,7 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
     description: 'Master nghệ thuật livestream selling trên multiple platforms. Học cách engage audience và convert viewers thành customers.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=LIVESTREAM_SELLING',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/lessons/livestream-selling.jpg',
     objectives: [
       'Develop captivating livestream presentation skills',
@@ -254,7 +254,7 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
     description: 'Phát triển cohesive strategy across multiple platforms để maximize reach và revenue trong social commerce ecosystem.',
     duration: '120 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=CROSS_PLATFORM_COMMERCE',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/lessons/cross-platform-commerce.jpg',
     objectives: [
       'Develop integrated strategy across major platforms',

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
-import { digitalMarketingLessons } from '@/data/digital-marketing';
+import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
 import { K2Module } from '@/data/moduleNavigation';
 import { createTitle, createDescription } from '@/utils/seo';
 
@@ -54,7 +54,7 @@ export default function EthicalMarketingPurposePage() {
     icon: '🌱',
     color: 'from-green-600 to-emerald-600',
     statsConfig: {
-      lessons: `${digitalMarketingLessons.length}+ bài`,
+      lessons: `${ethicalMarketingLessons.length}+ bài`,
       duration: '18-24 giờ',
       level: 'Nâng cao',
       projects: '12+ ethical campaigns',
@@ -140,5 +140,5 @@ export default function EthicalMarketingPurposePage() {
     relatedModules: [K2Module.DigitalMarketing, K2Module.GreenTechnology, K2Module.ContentCreator],
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={digitalMarketingLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={ethicalMarketingLessons} />;
 }

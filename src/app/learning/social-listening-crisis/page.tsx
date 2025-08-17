@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
-import { contentCreatorLessons } from '@/data/content-creator';
+import { socialListeningLessons } from '@/data/social-listening-crisis';
 import { K2Module } from '@/data/moduleNavigation';
 import { createTitle, createDescription } from '@/utils/seo';
 
@@ -58,7 +58,7 @@ export default function SocialListeningCrisisPage() {
     icon: '🚨',
     color: 'from-red-600 to-rose-600',
     statsConfig: {
-      lessons: `${contentCreatorLessons.length}+ bài`,
+      lessons: `${socialListeningLessons.length}+ bài`,
       duration: '16-22 giờ',
       level: 'Nâng cao',
       projects: '10+ crisis scenarios',
@@ -179,6 +179,6 @@ export default function SocialListeningCrisisPage() {
   };
 
   return (
-    <ModulePageTemplate moduleData={moduleData} lessons={contentCreatorLessons} />
+    <ModulePageTemplate moduleData={moduleData} lessons={socialListeningLessons} />
   );
 }

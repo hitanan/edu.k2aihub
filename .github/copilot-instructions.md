@@ -311,6 +311,8 @@ npm run dev      # Development with turbopack
 npm run build    # Production build with static generation, must set NODE_ENV=production before running
 ```
 
+Do not try to `npm run build` and then `echo "Build completed - checking status"`, we have to wait the build until it has result, you can ask to run another task while waiting for build output and then back to check the build status
+
 ## Deployment Configuration
 
 ### GitHub Pages Setup:

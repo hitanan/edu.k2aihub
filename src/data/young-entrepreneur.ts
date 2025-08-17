@@ -15,7 +15,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Xây dựng tư duy khởi nghiệp, nhận diện cơ hội kinh doanh và hiểu rõ thị trường Việt Nam cho thế hệ GenZ',
     duration: '180 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://youtube.com/watch?v=startup-mindset-vietnam',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/young-entrepreneur/startup-mindset.jpg',
     objectives: [
       'Phát triển tư duy khởi nghiệp và nhận diện cơ hội',
@@ -149,7 +149,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Học cách xây dựng business model bền vững, tạo MVP và validate ý tưởng kinh doanh với thị trường thực tế',
     duration: '210 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://youtube.com/watch?v=business-model-mvp',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/young-entrepreneur/business-model.jpg',
     objectives: [
       'Thiết kế Business Model Canvas chi tiết',
@@ -265,7 +265,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Chiến lược marketing cost-effective, growth hacking và xây dựng brand awareness với budget hạn chế',
     duration: '195 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://youtube.com/watch?v=startup-growth-hacking',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/young-entrepreneur/growth-hacking.jpg',
     objectives: [
       'Thiết kế growth marketing strategy',
@@ -356,7 +356,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Chuẩn bị pitch deck, tìm kiếm nhà đầu tư và negotiate terms để gọi vốn thành công cho startup',
     duration: '240 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=startup-funding-vietnam',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/young-entrepreneur/funding.jpg',
     objectives: [
       'Tạo pitch deck chuyên nghiệp',
@@ -485,7 +485,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Phát triển kỹ năng lãnh đạo, recruiting talent, xây dựng culture và quản lý team hiệu quả',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://youtube.com/watch?v=startup-leadership',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/young-entrepreneur/leadership.jpg',
     objectives: [
       'Phát triển leadership skills cho founders trẻ',
@@ -575,7 +575,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Học cách scale business operations, optimize processes và maintain quality trong quá trình tăng trưởng nhanh',
     duration: '225 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=scaling-startup-ops',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/young-entrepreneur/scaling.jpg',
     objectives: [
       'Thiết kế scalable business processes',
@@ -665,7 +665,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Hiểu rõ khung pháp lý, intellectual property, contracts và compliance requirements cho startup tại Việt Nam',
     duration: '165 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://youtube.com/watch?v=startup-legal-vietnam',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/young-entrepreneur/legal.jpg',
     objectives: [
       'Hiểu framework pháp lý cho startup VN',

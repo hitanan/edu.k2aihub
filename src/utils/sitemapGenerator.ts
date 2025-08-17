@@ -16,7 +16,8 @@ import { biotechnologyLessons } from '@/data/biotechnology';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 
 // Import NEW MODULES (Recently Created)
-import { AIMLLessons } from '@/data/ai-machine-learning';
+import { aiMachineLearningLessons, AIMachineLearningLessonType } from '@/data/ai-machine-learning';
+import { environmentalClimateLessons, EnvironmentalClimateLessonType } from '@/data/environmental-science-climate';
 import { QuantumLessons } from '@/data/quantum-computing';
 import { BlockchainLessons } from '@/data/blockchain-technology';
 import { ClimateLessons } from '@/data/climate-science';
@@ -55,7 +56,6 @@ import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
 import { crossPlatformStrategyLessons } from '@/data/cross-platform-strategy';
 import { dataDrivenAnalyticsLessons } from '@/data/data-driven-analytics';
 import { dataScienceLessons } from '@/data/data-science-analytics';
-import { environmentalScienceLessons } from '@/data/environmental-science-climate';
 
 // Utility to automatically generate sitemap entries for all pages
 const baseUrl = 'https://k2aihub.com';
@@ -459,7 +459,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
   }));
 
   // Recently created lesson pages
-  const aiMachineLearningPages = AIMLLessons.map((lesson) => ({
+  const aiMachineLearningPages = aiMachineLearningLessons.map((lesson: AIMachineLearningLessonType) => ({
     url: `${baseUrl}/learning/ai-machine-learning/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
@@ -587,7 +587,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const environmentalScienceClimatePages = environmentalScienceLessons.map((lesson) => ({
+  const environmentalScienceClimatePages = environmentalClimateLessons.map((lesson: EnvironmentalClimateLessonType) => ({
     url: `${baseUrl}/learning/environmental-science-climate/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,

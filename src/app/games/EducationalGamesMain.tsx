@@ -75,6 +75,11 @@ export default function EducationalGamesMain() {
       label: '🎯 Chiến lược',
       count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'strategy').length,
     },
+    {
+      value: '3d',
+      label: '🎮 3D',
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === '3D').length,
+    },
   ];
 
   const difficulties = [
@@ -96,8 +101,8 @@ export default function EducationalGamesMain() {
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">🎮 Trò Chơi Giáo Dục</h1>
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Khám phá <strong className="text-purple-300">{totalGames} trò chơi học tập</strong> thú vị từ quiz địa lý,
-                thử thách AI, puzzle lập trình đến mô phỏng khoa học. Học tập hiệu quả qua trải nghiệm chơi game!
+                Khám phá <strong className="text-purple-300">{totalGames} trò chơi học tập</strong> thú vị từ quiz địa
+                lý, thử thách AI, puzzle lập trình đến mô phỏng khoa học. Học tập hiệu quả qua trải nghiệm chơi game!
               </p>
 
               {/* Loading Progress Stats */}

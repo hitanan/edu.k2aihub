@@ -112,44 +112,124 @@ export const gameDataRobotNavigation3D = {
     },
     {
       id: 5,
-      name: 'Thử thách cuối - Mê cung 3D',
-      description: 'Vượt qua mê cung phức tạp với nhiều tầng và cơ chế đặc biệt',
-      gridSize: { width: 16, height: 3, depth: 16 },
-      startPosition: { x: 0, y: 0, z: 0 },
-      endPosition: { x: 15, y: 2, z: 15 },
+      name: 'Thử thách cuối - Hang động ngầm',
+      description: 'Khám phá hang động ngầm với địa hình phức tạp, cơ chế thang máy và bẫy nguy hiểm',
+      gridSize: { width: 20, height: 4, depth: 20 },
+      startPosition: { x: 1, y: 0, z: 1 },
+      endPosition: { x: 18, y: 3, z: 18 },
       obstacles: [
-        // Tầng 1 - Mê cung cơ bản
-        { x: 2, y: 0, z: 2, type: 'wall' },
+        // Tầng 0 - Lối vào hang động
         { x: 3, y: 0, z: 2, type: 'wall' },
-        { x: 5, y: 0, z: 1, type: 'wall' },
+        { x: 4, y: 0, z: 2, type: 'wall' },
         { x: 5, y: 0, z: 2, type: 'wall' },
-        { x: 7, y: 0, z: 4, type: 'wall' },
-        { x: 8, y: 0, z: 4, type: 'wall' },
-        // Tầng 2 - Chướng ngại vật nâng cao
-        { x: 3, y: 1, z: 7, type: 'pit' },
-        { x: 4, y: 1, z: 7, type: 'pit' },
-        { x: 9, y: 1, z: 3, type: 'barrier' },
-        { x: 10, y: 1, z: 3, type: 'barrier' },
-        // Tầng 3 - Đích cuối
-        { x: 13, y: 2, z: 13, type: 'wall' },
-        { x: 14, y: 2, z: 13, type: 'wall' },
+        { x: 6, y: 0, z: 2, type: 'wall' },
+        { x: 7, y: 0, z: 2, type: 'wall' },
+        { x: 2, y: 0, z: 5, type: 'pit' },
+        { x: 3, y: 0, z: 5, type: 'pit' },
+        { x: 4, y: 0, z: 5, type: 'pit' },
+        { x: 8, y: 0, z: 6, type: 'wall' },
+        { x: 9, y: 0, z: 6, type: 'wall' },
+        { x: 10, y: 0, z: 6, type: 'wall' },
+        { x: 11, y: 0, z: 6, type: 'wall' },
+        { x: 12, y: 0, z: 8, type: 'pit' },
+        { x: 13, y: 0, z: 8, type: 'pit' },
+        { x: 14, y: 0, z: 8, type: 'pit' },
+        { x: 15, y: 0, z: 10, type: 'wall' },
+        { x: 16, y: 0, z: 10, type: 'wall' },
+        { x: 17, y: 0, z: 10, type: 'wall' },
+
+        // Tầng 1 - Hang động chính
+        { x: 2, y: 1, z: 3, type: 'wall' },
+        { x: 3, y: 1, z: 3, type: 'wall' },
+        { x: 4, y: 1, z: 3, type: 'wall' },
+        { x: 7, y: 1, z: 5, type: 'pit' },
+        { x: 8, y: 1, z: 5, type: 'pit' },
+        { x: 9, y: 1, z: 5, type: 'pit' },
+        { x: 10, y: 1, z: 5, type: 'pit' },
+        { x: 12, y: 1, z: 7, type: 'barrier' },
+        { x: 13, y: 1, z: 7, type: 'barrier' },
+        { x: 14, y: 1, z: 7, type: 'barrier' },
+        { x: 5, y: 1, z: 12, type: 'wall' },
+        { x: 6, y: 1, z: 12, type: 'wall' },
+        { x: 7, y: 1, z: 12, type: 'wall' },
+        { x: 8, y: 1, z: 12, type: 'wall' },
+        { x: 15, y: 1, z: 13, type: 'pit' },
+        { x: 16, y: 1, z: 13, type: 'pit' },
+        { x: 17, y: 1, z: 13, type: 'pit' },
+
+        // Tầng 2 - Hang động sâu
+        { x: 4, y: 2, z: 4, type: 'wall' },
+        { x: 5, y: 2, z: 4, type: 'wall' },
+        { x: 6, y: 2, z: 4, type: 'wall' },
+        { x: 7, y: 2, z: 4, type: 'wall' },
+        { x: 9, y: 2, z: 6, type: 'pit' },
+        { x: 10, y: 2, z: 6, type: 'pit' },
+        { x: 11, y: 2, z: 6, type: 'pit' },
+        { x: 12, y: 2, z: 6, type: 'pit' },
+        { x: 13, y: 2, z: 6, type: 'pit' },
+        { x: 3, y: 2, z: 9, type: 'barrier' },
+        { x: 4, y: 2, z: 9, type: 'barrier' },
+        { x: 5, y: 2, z: 9, type: 'barrier' },
+        { x: 14, y: 2, z: 11, type: 'wall' },
+        { x: 15, y: 2, z: 11, type: 'wall' },
+        { x: 16, y: 2, z: 11, type: 'wall' },
+        { x: 6, y: 2, z: 15, type: 'pit' },
+        { x: 7, y: 2, z: 15, type: 'pit' },
+        { x: 8, y: 2, z: 15, type: 'pit' },
+
+        // Tầng 3 - Đỉnh hang động (đích cuối)
+        { x: 10, y: 3, z: 8, type: 'wall' },
+        { x: 11, y: 3, z: 8, type: 'wall' },
+        { x: 12, y: 3, z: 8, type: 'wall' },
+        { x: 13, y: 3, z: 8, type: 'wall' },
+        { x: 8, y: 3, z: 12, type: 'pit' },
+        { x: 9, y: 3, z: 12, type: 'pit' },
+        { x: 10, y: 3, z: 12, type: 'pit' },
+        { x: 15, y: 3, z: 15, type: 'barrier' },
+        { x: 16, y: 3, z: 15, type: 'barrier' },
+        { x: 17, y: 3, z: 15, type: 'barrier' },
       ],
       collectibles: [
-        { x: 7, y: 0, z: 7, type: 'key' }, // Chìa khóa tầng 1
-        { x: 8, y: 1, z: 8, type: 'key' }, // Chìa khóa tầng 2
-        { x: 2, y: 1, z: 14, type: 'gem' }, // Báu vật
-        { x: 14, y: 2, z: 2, type: 'data' }, // Dữ liệu cuối
+        // Chìa khóa và vật phẩm quan trọng
+        { x: 6, y: 0, z: 9, type: 'key' }, // Chìa khóa thang máy lên tầng 1
+        { x: 11, y: 1, z: 4, type: 'key' }, // Chìa khóa thang máy lên tầng 2
+        { x: 8, y: 2, z: 14, type: 'key' }, // Chìa khóa thang máy lên tầng 3
+        
+        // Báu vật và dữ liệu
+        { x: 17, y: 0, z: 3, type: 'gem' }, // Viên ngọc quý 1
+        { x: 2, y: 1, z: 16, type: 'gem' }, // Viên ngọc quý 2
+        { x: 16, y: 2, z: 7, type: 'gem' }, // Viên ngọc quý 3
+        { x: 5, y: 3, z: 17, type: 'gem' }, // Viên ngọc quý 4
+        
+        // Dữ liệu khoa học
+        { x: 14, y: 0, z: 15, type: 'data' }, // Dữ liệu địa chất 1
+        { x: 9, y: 1, z: 18, type: 'data' }, // Dữ liệu địa chất 2
+        { x: 1, y: 2, z: 12, type: 'data' }, // Dữ liệu địa chất 3
+        { x: 13, y: 3, z: 5, type: 'data' }, // Dữ liệu địa chất 4
+        
+        // Phần thưởng cuối cung
+        { x: 17, y: 3, z: 17, type: 'crystal' }, // Tinh thể năng lượng (mục tiêu cuối)
       ],
       movingObstacles: [
-        { x: 6, y: 1, z: 10, pattern: 'circular', speed: 0.8 },
-        { x: 12, y: 0, z: 6, pattern: 'horizontal', speed: 1.2 },
+        // Tảng đá lăn trong hang động
+        { x: 5, y: 0, z: 8, pattern: 'horizontal', speed: 0.7 },
+        { x: 13, y: 1, z: 5, pattern: 'vertical', speed: 0.9 },
+        { x: 7, y: 1, z: 16, pattern: 'circular', speed: 0.6 },
+        
+        // Thác nước nguy hiểm
+        { x: 2, y: 2, z: 6, pattern: 'vertical', speed: 1.1 },
+        { x: 12, y: 2, z: 13, pattern: 'horizontal', speed: 0.8 },
+        
+        // Khí độc di chuyển
+        { x: 8, y: 3, z: 10, pattern: 'circular', speed: 0.5 },
+        { x: 14, y: 3, z: 12, pattern: 'zigzag', speed: 0.4 },
       ],
-      timeLimit: 450,
-      par: 48,
+      timeLimit: 600, // 10 phút cho thử thách cuối
+      par: 65, // Yêu cầu kỹ năng cao
       educational: {
-        concept: 'Tìm kiếm trong không gian 3D',
-        explanation: 'Robot phải tìm đường trong không gian 3 chiều với nhiều tầng',
-        algorithmStep: 'A* 3D với heuristic Euclidean và quản lý trạng thái phức tạp',
+        concept: 'Khám phá không gian 3D phức tạp',
+        explanation: 'Robot phải điều hướng qua hang động nhiều tầng với địa hình phức tạp, thu thập đầy đủ vật phẩm và tránh các bẫy nguy hiểm',
+        algorithmStep: 'A* 3D nâng cao với quản lý trạng thái phức tạp, heuristic đa mục tiêu và tối ưu hóa đa ràng buộc',
       },
     },
   ],

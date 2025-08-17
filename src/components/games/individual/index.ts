@@ -52,3 +52,6 @@ export { default as VirtualPropertyTourGame } from './VirtualPropertyTourGame';
 export { default as RecyclingPlantManagerGame } from './RecyclingPlantManagerGame';
 export { default as WasteToEnergyPuzzleGame } from './WasteToEnergyPuzzleGame';
 export { default as AerospaceMissionControlGame } from './AerospaceMissionControlGame';
+export { default as VirtualChemistryLab3D } from './VirtualChemistryLab3D';
+export { default as SpaceExploration3DGame } from './SpaceExploration3DGame';
+export { RobotNavigation3DGame } from './RobotNavigation3DGame';

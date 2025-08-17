@@ -1,0 +1,78 @@
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { SpaceLessons, type SpaceLessonData } from '@/data/space-exploration';
+import { PageProps } from '@/types';
+import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { Rocket, Satellite, Globe, Star } from 'lucide-react';
+
+// Convert SpaceLessonData to BaseLessonData
+function convertToBaseLessonData(lesson: SpaceLessonData): BaseLessonData {
+  return {
+    id: lesson.id,
+    title: lesson.title,
+    description: lesson.description,
+    duration: lesson.duration,
+    difficulty: lesson.difficulty,
+    videoUrl: lesson.videoUrl,
+    imageUrl: lesson.imageUrl,
+    objectives: lesson.objectives,
+    prerequisites: lesson.prerequisites,
+    exercises: lesson.exercises,
+    realWorldApplications: lesson.realWorldApplications,
+    caseStudies: lesson.caseStudies?.map((study) => ({
+      title: study.title,
+      organization: study.organization,
+      problem: study.problem,
+      solution: study.solution,
+      impact: study.impact,
+      innovations: study.innovations || [],
+    })),
+    resources: lesson.resources,
+  };
+}
+
+// Convert lessons to BaseLessonData format
+const convertedLessons = SpaceLessons.map(convertToBaseLessonData);
+
+// Generate static params for all lessons
+export async function generateStaticParams() {
+  return generateLessonStaticParams(convertedLessons);
+}
+
+// Generate metadata for each lesson
+export async function generateMetadata({ params }: PageProps) {
+  const { lessonId } = await params;
+  return generateLessonMetadata(lessonId, convertedLessons);
+}
+
+// Icon mapping function for space exploration fields
+function getSpaceIcon(field: string) {
+  const iconMap: Record<string, React.ReactNode> = {
+    rocket: <Rocket className="w-5 h-5" />,
+    satellite: <Satellite className="w-5 h-5" />,
+    planetary: <Globe className="w-5 h-5" />,
+    astronomy: <Star className="w-5 h-5" />,
+  };
+  return iconMap[field] || <Rocket className="w-5 h-5" />;
+}
+
+// Page component with standardized config
+export default async function SpaceExplorationLessonPage({ params }: PageProps) {
+  const config: LessonPageConfig<BaseLessonData> = {
+    moduleName: 'space-exploration',
+    moduleTitle: 'Space Exploration',
+    modulePath: '/learning/space-exploration',
+    lessons: convertedLessons,
+    primaryColor: 'violet',
+    secondaryColor: 'purple',
+    gradientColors: 'from-slate-900 via-violet-900 to-slate-900',
+    getFieldIcon: (field: string) => getSpaceIcon(field),
+  };
+
+  const { lessonId } = await params;
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;
+}
