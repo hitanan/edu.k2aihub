@@ -64,6 +64,7 @@ const DEFAULT_ATOMS: Atom[] = [
   { id: 'C', symbol: 'C', name: 'Carbon', color: '#404040', radius: 0.7, valence: 4 },
   { id: 'O', symbol: 'O', name: 'Oxygen', color: '#ff0000', radius: 0.6, valence: 2 },
   { id: 'N', symbol: 'N', name: 'Nitrogen', color: '#0000ff', radius: 0.6, valence: 3 },
+  { id: 'Cl', symbol: 'Cl', name: 'Chlorine', color: '#00ff00', radius: 0.8, valence: 1 },
 ];
 
 // Atom component
@@ -235,7 +236,6 @@ function LabEquipmentComponent({ equipment, position, onClick, active }: LabEqui
   );
 }
 
-// Main game scene
 interface GameSceneProps {
   gameData: VirtualChemistryLab3DData;
   onScoreChange: (score: number) => void;
@@ -408,6 +408,9 @@ function GameScene({ gameData, onScoreChange, atomToAdd, onChallengeComplete, cu
           break;
         case 'KeyN':
           addAtom('N');
+          break;
+        case 'KeyL':
+          addAtom('Cl');
           break;
       }
     };
@@ -595,6 +598,8 @@ export default function VirtualChemistryLab3D({
   const [currentChallenge, setCurrentChallenge] = useState(0);
   const [completedChallenges, setCompletedChallenges] = useState<string[]>([]);
   const [showChallengeComplete, setShowChallengeComplete] = useState<string | null>(null);
+  const [gameKey, setGameKey] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleScoreChange = useCallback((newScore: number) => {
     setScore(newScore);
@@ -622,6 +627,8 @@ export default function VirtualChemistryLab3D({
         setShowChallengeComplete(null);
         if (currentChallenge < gameData.challenges.length - 1) {
           setCurrentChallenge(prev => prev + 1);
+          // Reset game for next challenge
+          setGameKey(prev => prev + 1);
         } else {
           // All challenges completed - call onComplete callback
           if (onComplete && challenge) {
@@ -631,6 +638,30 @@ export default function VirtualChemistryLab3D({
       }, 3000);
     }
   }, [completedChallenges, currentChallenge, gameData.challenges, onComplete, score]);
+
+  // Fullscreen functionality
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().then(() => {
+        setIsFullscreen(true);
+      }).catch((err) => {
+        console.log('Fullscreen not supported or denied:', err);
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullscreen(false);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   const getCurrentChallenge = () => {
     return gameData.challenges[currentChallenge];
@@ -790,6 +821,17 @@ export default function VirtualChemistryLab3D({
             </button>
           ))}
         </div>
+        
+        {/* Fullscreen button - only show on desktop */}
+        <div className="hidden md:block mt-3 pt-2 border-t border-gray-300">
+          <button
+            onClick={toggleFullscreen}
+            className="w-full px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded text-xs transition-colors"
+            title={isFullscreen ? 'Thoát fullscreen' : 'Chế độ toàn màn hình'}
+          >
+            {isFullscreen ? '🗗 Thoát fullscreen' : '⛶ Fullscreen'}
+          </button>
+        </div>
       </div>
 
       {/* Instructions */}
@@ -806,6 +848,7 @@ export default function VirtualChemistryLab3D({
       {/* 3D Canvas */}
       <Canvas camera={{ position: [5, 5, 5] }}>
         <GameScene 
+          key={gameKey}
           gameData={gameData} 
           onScoreChange={handleScoreChange}
           atomToAdd={atomToAdd}

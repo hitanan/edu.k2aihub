@@ -639,7 +639,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     description: 'Understand climate change science, environmental monitoring techniques và data analysis cho environmental research.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=EtW2rrLHs08', // Climate Change Explained
     imageUrl: '/images/lessons/climate-monitoring.jpg',
     objectives: [
       'Understand climate change mechanisms và impacts',

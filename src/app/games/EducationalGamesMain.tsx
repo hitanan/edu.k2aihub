@@ -76,7 +76,7 @@ export default function EducationalGamesMain() {
       count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'strategy').length,
     },
     {
-      value: '3d',
+      value: '3D',
       label: '🎮 3D',
       count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === '3D').length,
     },

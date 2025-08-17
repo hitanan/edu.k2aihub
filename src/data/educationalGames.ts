@@ -689,7 +689,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     id: 'space-exploration',
     title: 'Khám phá Vũ trụ 3D',
     description: 'Lên kế hoạch cho các sứ mệnh không gian',
-    category: 'simulation',
+    category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '20-30 phút',
     skills: ['Vũ trụ học', 'Vật lý', 'Khám phá'],
@@ -2295,7 +2295,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     title: 'Robot Navigation 3D - Thế giới khối với AI dẫn đường',
     description:
       'Trải nghiệm game giáo dục 3D với robot thông minh sử dụng thuật toán A* pathfinding trong môi trường khối 3D tương tác như Minecraft.',
-    category: 'simulation',
+    category: '3D',
     difficulty: 'Nâng cao',
     estimatedTime: '45-60 phút',
     skills: [

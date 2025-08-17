@@ -7,6 +7,19 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Hide header navigation when in fullscreen mode */
+:fullscreen header {
+  display: none !important;
+}
+
+/* Full screen styles for games */
+:fullscreen .game-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* Font weight adjustments for better rendering */
 .font-bold {
   font-weight: 700 !important;

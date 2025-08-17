@@ -53,6 +53,20 @@ export const VIRTUAL_CHEMISTRY_LAB_3D_DATA: VirtualChemistryLab3DGameData = {
       points: 100
     },
     {
+      id: 'chlorine',
+      name: 'Khí Chlorine (Cl₂)',
+      formula: 'Cl₂',
+      atoms: [
+        { element: 'Cl', position: { x: -1.2, y: 0, z: 0 } },
+        { element: 'Cl', position: { x: 1.2, y: 0, z: 0 } }
+      ],
+      bonds: [
+        { atom1: 0, atom2: 1, type: 'single' }
+      ],
+      description: 'Khí chlorine độc - dùng làm chất tẩy và khử trùng',
+      points: 95
+    },
+    {
       id: 'methane',
       name: 'Khí Methane (CH₄)',
       formula: 'CH₄',
@@ -105,6 +119,116 @@ export const VIRTUAL_CHEMISTRY_LAB_3D_DATA: VirtualChemistryLab3DGameData = {
       ],
       description: 'Phân tử ammonia với cấu trúc hình kim tự tháp',
       points: 130
+    },
+    {
+      id: 'oxygen',
+      name: 'Khí Oxygen (O₂)',
+      formula: 'O₂',
+      atoms: [
+        { element: 'O', position: { x: -1, y: 0, z: 0 } },
+        { element: 'O', position: { x: 1, y: 0, z: 0 } }
+      ],
+      bonds: [
+        { atom1: 0, atom2: 1, type: 'double' }
+      ],
+      description: 'Phân tử khí oxygen với liên kết đôi',
+      points: 90
+    },
+    {
+      id: 'hydrogen',
+      name: 'Khí Hydrogen (H₂)',
+      formula: 'H₂',
+      atoms: [
+        { element: 'H', position: { x: -0.5, y: 0, z: 0 } },
+        { element: 'H', position: { x: 0.5, y: 0, z: 0 } }
+      ],
+      bonds: [
+        { atom1: 0, atom2: 1, type: 'single' }
+      ],
+      description: 'Phân tử khí hydrogen đơn giản nhất',
+      points: 70
+    },
+    {
+      id: 'ethane',
+      name: 'Khí Ethane (C₂H₆)',
+      formula: 'C₂H₆',
+      atoms: [
+        { element: 'C', position: { x: -1, y: 0, z: 0 } },
+        { element: 'C', position: { x: 1, y: 0, z: 0 } },
+        { element: 'H', position: { x: -2, y: 1, z: 0 } },
+        { element: 'H', position: { x: -2, y: -1, z: 0 } },
+        { element: 'H', position: { x: -1, y: 0, z: 1.5 } },
+        { element: 'H', position: { x: 2, y: 1, z: 0 } },
+        { element: 'H', position: { x: 2, y: -1, z: 0 } },
+        { element: 'H', position: { x: 1, y: 0, z: 1.5 } }
+      ],
+      bonds: [
+        { atom1: 0, atom2: 1, type: 'single' },
+        { atom1: 0, atom2: 2, type: 'single' },
+        { atom1: 0, atom2: 3, type: 'single' },
+        { atom1: 0, atom2: 4, type: 'single' },
+        { atom1: 1, atom2: 5, type: 'single' },
+        { atom1: 1, atom2: 6, type: 'single' },
+        { atom1: 1, atom2: 7, type: 'single' }
+      ],
+      description: 'Hydrocarbon đơn giản với hai nguyên tử carbon',
+      points: 170
+    },
+    {
+      id: 'hcl',
+      name: 'Axit Hydrochloric (HCl)',
+      formula: 'HCl',
+      atoms: [
+        { element: 'H', position: { x: -1, y: 0, z: 0 } },
+        { element: 'Cl', position: { x: 1, y: 0, z: 0 } }
+      ],
+      bonds: [
+        { atom1: 0, atom2: 1, type: 'single' }
+      ],
+      description: 'Axit mạnh thường dùng trong phòng thí nghiệm',
+      points: 110
+    },
+    {
+      id: 'nacl',
+      name: 'Muối ăn (NaCl)',
+      formula: 'NaCl',
+      atoms: [
+        { element: 'Na', position: { x: -1.2, y: 0, z: 0 } },
+        { element: 'Cl', position: { x: 1.2, y: 0, z: 0 } }
+      ],
+      bonds: [
+        { atom1: 0, atom2: 1, type: 'single' }
+      ],
+      description: 'Muối ăn - hợp chất ion phổ biến',
+      points: 100
+    },
+    {
+      id: 'ethanol',
+      name: 'Ethanol (C₂H₅OH)',
+      formula: 'C₂H₅OH',
+      atoms: [
+        { element: 'C', position: { x: -2, y: 0, z: 0 } },
+        { element: 'C', position: { x: 0, y: 0, z: 0 } },
+        { element: 'O', position: { x: 2, y: 0, z: 0 } },
+        { element: 'H', position: { x: -3, y: 1, z: 0 } },
+        { element: 'H', position: { x: -3, y: -1, z: 0 } },
+        { element: 'H', position: { x: -2, y: 0, z: 1.5 } },
+        { element: 'H', position: { x: 0, y: 1.5, z: 0 } },
+        { element: 'H', position: { x: 0, y: -1.5, z: 0 } },
+        { element: 'H', position: { x: 3, y: 0, z: 0 } }
+      ],
+      bonds: [
+        { atom1: 0, atom2: 1, type: 'single' },
+        { atom1: 1, atom2: 2, type: 'single' },
+        { atom1: 0, atom2: 3, type: 'single' },
+        { atom1: 0, atom2: 4, type: 'single' },
+        { atom1: 0, atom2: 5, type: 'single' },
+        { atom1: 1, atom2: 6, type: 'single' },
+        { atom1: 1, atom2: 7, type: 'single' },
+        { atom1: 2, atom2: 8, type: 'single' }
+      ],
+      description: 'Rượu ethyl - alcohol phổ biến',
+      points: 180
     }
   ],
   equipment: [
@@ -160,6 +284,20 @@ export const VIRTUAL_CHEMISTRY_LAB_3D_DATA: VirtualChemistryLab3DGameData = {
   ],
   challenges: [
     {
+      id: 'build-chlorine',
+      title: 'Tạo khí Chlorine',
+      description: 'Xây dựng phân tử Cl₂ - khí độc màu xanh lục',
+      targetMolecule: 'chlorine',
+      difficulty: 'easy',
+      points: 95,
+      hints: [
+        'Hai nguyên tử chlorine liên kết với nhau',
+        'Chlorine có màu xanh lục đặc trưng',
+        'Sử dụng phím "L" để thêm nguyên tử Chlorine',
+        'Khí này rất độc, trong thực tế cần thận trọng!'
+      ]
+    },
+    {
       id: 'build-water',
       title: 'Tạo phân tử nước',
       description: 'Sử dụng 2 nguyên tử H và 1 nguyên tử O để tạo H₂O',
@@ -209,6 +347,84 @@ export const VIRTUAL_CHEMISTRY_LAB_3D_DATA: VirtualChemistryLab3DGameData = {
         'Nitrogen ở trung tâm',
         'Ba hydrogen tạo hình kim tự tháp',
         'Nitrogen có một cặp electron tự do'
+      ]
+    },
+    {
+      id: 'build-oxygen',
+      title: 'Tạo khí Oxygen',
+      description: 'Xây dựng phân tử O₂ với liên kết đôi',
+      targetMolecule: 'oxygen',
+      difficulty: 'easy',
+      points: 90,
+      hints: [
+        'Hai nguyên tử oxygen liên kết với nhau',
+        'Sử dụng liên kết đôi O=O',
+        'Oxygen là khí cần thiết cho hô hấp'
+      ]
+    },
+    {
+      id: 'build-hydrogen',
+      title: 'Tạo khí Hydrogen',
+      description: 'Xây dựng phân tử H₂ đơn giản nhất',
+      targetMolecule: 'hydrogen',
+      difficulty: 'easy',
+      points: 70,
+      hints: [
+        'Hai nguyên tử hydrogen liên kết đơn',
+        'Phân tử nhẹ nhất trong tự nhiên',
+        'Khí cháy được, tạo ra nước khi cháy'
+      ]
+    },
+    {
+      id: 'build-ethane',
+      title: 'Tạo khí Ethane',
+      description: 'Xây dựng C₂H₆ - hydrocarbon với 2 carbon',
+      targetMolecule: 'ethane',
+      difficulty: 'hard',
+      points: 170,
+      hints: [
+        'Hai carbon liên kết với nhau ở giữa',
+        'Mỗi carbon có 3 hydrogen',
+        'Cấu trúc đối xứng, có thể xoay quanh liên kết C-C'
+      ]
+    },
+    {
+      id: 'build-hcl',
+      title: 'Tạo axit Hydrochloric',
+      description: 'Xây dựng HCl - axit mạnh',
+      targetMolecule: 'hcl',
+      difficulty: 'easy',
+      points: 110,
+      hints: [
+        'Hydrogen liên kết với Chlorine',
+        'Liên kết cực tính mạnh',
+        'Tan trong nước tạo dung dịch axit mạnh'
+      ]
+    },
+    {
+      id: 'build-nacl',
+      title: 'Tạo muối ăn',
+      description: 'Xây dựng NaCl - hợp chất ion',
+      targetMolecule: 'nacl',
+      difficulty: 'medium',
+      points: 100,
+      hints: [
+        'Sodium (Na) và Chlorine (Cl)',
+        'Liên kết ion giữa kim loại và phi kim',
+        'Muối ăn hàng ngày chúng ta sử dụng'
+      ]
+    },
+    {
+      id: 'build-ethanol',
+      title: 'Tạo Ethanol',
+      description: 'Xây dựng C₂H₅OH - rượu ethyl',
+      targetMolecule: 'ethanol',
+      difficulty: 'hard',
+      points: 180,
+      hints: [
+        'Hai carbon liên kết, một nhóm -OH',
+        'Carbon đầu có 3 hydrogen, carbon thứ hai có 2 hydrogen',
+        'Nhóm hydroxyl (-OH) tạo tính chất của alcohol'
       ]
     }
   ]

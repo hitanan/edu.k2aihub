@@ -15,8 +15,11 @@ This instruction guide provides comprehensive guidance for creating standardized
 - Use this video as default for all new lessons if no specific video is provided
 - This video is educational, widely applicable, and safe for all age groups
 - Content: Introduction to effective learning techniques and strategies
+
+**Youtube VideoUrl Generation**
+
 - Try to search youtube to find the best VideoUrl for each lesson, use the Key `YOUR_API_KEY` in [.envy](../../.envy) file, and the search query should include the lesson title and relevant keywords.
-- When generating a Youtube VideoUrl, first check the video VIDEO_ID is available by check the response of https://www.googleapis.com/youtube/v3/videos?part=id&id=VIDEO_ID&key=YOUR_API_KEY, if the pageInfo.totalResults = 0, it means that the video is not available, please find another VIDEO_ID
+- When determining a Youtube VideoUrl, first check the video VIDEO_ID is available by check the response of https://www.googleapis.com/youtube/v3/videos?part=id&id=VIDEO_ID&key=YOUR_API_KEY, if the response for {pageInfo {totalResults :0}} is returned, it means that the video is not available, please find another VIDEO_ID
 
 **Default Hero Image**: `https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop`
 

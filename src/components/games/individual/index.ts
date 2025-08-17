@@ -53,5 +53,6 @@ export { default as RecyclingPlantManagerGame } from './RecyclingPlantManagerGam
 export { default as WasteToEnergyPuzzleGame } from './WasteToEnergyPuzzleGame';
 export { default as AerospaceMissionControlGame } from './AerospaceMissionControlGame';
 export { default as VirtualChemistryLab3D } from './VirtualChemistryLab3D';
+export { default as ArduinoCircuitBuilder3D } from './ArduinoCircuitBuilder3D';
 export { default as SpaceExploration3DGame } from './SpaceExploration3DGame';
 export { RobotNavigation3DGame } from './RobotNavigation3DGame';

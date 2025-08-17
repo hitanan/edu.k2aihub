@@ -243,7 +243,7 @@ class SpaceWorld {
     this.asteroids = [];
 
     this.renderer.setSize(width, height);
-    this.renderer.setClearColor(0x000011, 1);
+    this.renderer.setClearColor(0x000822, 1);
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -257,11 +257,11 @@ class SpaceWorld {
 
   setupLighting() {
     // Ambient light (space environment) - increased intensity
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.8);
     this.scene.add(ambientLight);
 
     // Sun light (directional) - enhanced lighting
-    const sunLight = new THREE.DirectionalLight(0xffffcc, 1.2);
+    const sunLight = new THREE.DirectionalLight(0xffffcc, 1.5);
     sunLight.position.set(50, 50, 50);
     sunLight.castShadow = true;
     sunLight.shadow.mapSize.width = 2048;
@@ -283,7 +283,7 @@ class SpaceWorld {
     ];
 
     colorLights.forEach((light) => {
-      const pointLight = new THREE.PointLight(light.color, 0.8, 100);
+      const pointLight = new THREE.PointLight(light.color, 1.2, 100);
       pointLight.position.set(light.position[0], light.position[1], light.position[2]);
       this.scene.add(pointLight);
     });
@@ -320,11 +320,10 @@ class SpaceWorld {
     // Create planets
     level.planets.forEach((planet) => {
       const geometry = new THREE.SphereGeometry(planet.size, 32, 32);
-      const material = new THREE.MeshPhongMaterial({
+      const material = new THREE.MeshLambertMaterial({
         color: planet.color,
         emissive: planet.color,
         emissiveIntensity: 0.2,
-        shininess: 30,
         transparent: false,
         opacity: 1.0
       });
@@ -342,7 +341,7 @@ class SpaceWorld {
       const ringMaterial = new THREE.MeshBasicMaterial({
         color: planet.color,
         transparent: true,
-        opacity: 0.4,
+        opacity: 0.6,
         side: THREE.DoubleSide,
       });
       const ring = new THREE.Mesh(ringGeometry, ringMaterial);
@@ -356,7 +355,9 @@ class SpaceWorld {
       const geometry = new THREE.DodecahedronGeometry(0.5 + Math.random() * 0.5);
       const material = new THREE.MeshPhongMaterial({ 
         color: 0x8b4513,
-        shininess: 10,
+        emissive: 0x2d1a08,
+        emissiveIntensity: 0.1,
+        shininess: 20,
         transparent: false,
         opacity: 1.0
       });
@@ -601,6 +602,7 @@ export function SpaceExplorationGame({ onComplete, timeLeft }: SpaceExplorationG
   const [score, setScore] = useState(0);
   const [discoveredPlanets, setDiscoveredPlanets] = useState<Planet[]>([]);
   const [currentPlanet, setCurrentPlanet] = useState<Planet | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const animationRef = useRef<number | null>(null);
 
   // Handle planet discovery logic
@@ -621,6 +623,30 @@ export function SpaceExplorationGame({ onComplete, timeLeft }: SpaceExplorationG
       return [...prevDiscovered, discoveredPlanet];
     });
   }, [currentLevel, score, timeLeft, onComplete]);
+
+  // Fullscreen functionality
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().then(() => {
+        setIsFullscreen(true);
+      }).catch((err) => {
+        console.log('Fullscreen not supported or denied:', err);
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullscreen(false);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   // Initialize the 3D space world
   useEffect(() => {
@@ -924,6 +950,15 @@ export function SpaceExplorationGame({ onComplete, timeLeft }: SpaceExplorationG
             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl text-sm font-bold transition-all"
           >
             🔄 Chơi lại
+          </button>
+
+          {/* Fullscreen button - only show on desktop */}
+          <button
+            onClick={toggleFullscreen}
+            className="hidden md:block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-xl text-sm font-bold transition-all"
+            title={isFullscreen ? 'Thoát fullscreen' : 'Chế độ toàn màn hình'}
+          >
+            {isFullscreen ? '🗗 Thoát FS' : '⛶ Fullscreen'}
           </button>
         </div>
 

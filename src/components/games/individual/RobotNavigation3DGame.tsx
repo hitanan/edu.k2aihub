@@ -841,7 +841,32 @@ export function RobotNavigation3DGame({ onComplete, timeLeft }: RobotNavigation3
   const [currentLevel, setCurrentLevel] = useState(0);
   const [score, setScore] = useState(0);
   const [currentPath, setCurrentPath] = useState<Position3D[]>([]);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const animationRef = useRef<number | null>(null);
+
+  // Fullscreen functionality
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().then(() => {
+        setIsFullscreen(true);
+      }).catch((err) => {
+        console.log('Fullscreen not supported or denied:', err);
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullscreen(false);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   // Initialize the 3D world
   useEffect(() => {
@@ -1178,6 +1203,15 @@ export function RobotNavigation3DGame({ onComplete, timeLeft }: RobotNavigation3
             className="px-3 py-1 bg-gray-600 hover:bg-gray-700 rounded text-sm font-semibold"
           >
             📋 Level Menu
+          </button>
+          
+          {/* Fullscreen button - only show on desktop */}
+          <button
+            onClick={toggleFullscreen}
+            className="hidden md:block px-3 py-1 bg-purple-600 hover:bg-purple-700 rounded text-sm font-semibold"
+            title={isFullscreen ? 'Thoát fullscreen' : 'Chế độ toàn màn hình'}
+          >
+            {isFullscreen ? '🗗 Thoát FS' : '⛶ Fullscreen'}
           </button>
           
           {/* Mode Switch for Hybrid */}
