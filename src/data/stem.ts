@@ -46,18 +46,10 @@ export const stemLessons: STEMLesson[] = [
       'Hiểu khái niệm STEM và STEAM',
       'Nhận biết các lĩnh vực trong STEM',
       'Phát triển tư duy khoa học và sáng tạo',
-      'Thấy được ứng dụng STEM trong đời sống'
+      'Thấy được ứng dụng STEM trong đời sống',
     ],
-    prerequisites: [
-      'Không yêu cầu kiến thức trước',
-      'Tò mò và hứng thú học tập'
-    ],
-    materials: [
-      'Giấy và bút màu',
-      'Vật liệu tái chế',
-      'Kính lúp',
-      'Máy tính hoặc tablet'
-    ],
+    prerequisites: ['Không yêu cầu kiến thức trước', 'Tò mò và hứng thú học tập'],
+    materials: ['Giấy và bút màu', 'Vật liệu tái chế', 'Kính lúp', 'Máy tính hoặc tablet'],
     imageUrl:
       'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=yOMbTJdbxA4',
@@ -65,23 +57,21 @@ export const stemLessons: STEMLesson[] = [
       {
         id: 'ex1-stem-around-us',
         title: 'STEM Xung Quanh Ta',
-        description:
-          'Tìm và phân loại các ví dụ STEM trong cuộc sống hàng ngày',
+        description: 'Tìm và phân loại các ví dụ STEM trong cuộc sống hàng ngày',
         difficulty: 'Dễ',
         procedure: [
           'Quan sát xung quanh nhà/lớp học trong 10 phút',
           'Ghi chép ít nhất 10 vật dụng/hiện tượng',
           'Phân loại theo S-T-E-M',
-          'Thảo luận với bạn bè về các phát hiện'
+          'Thảo luận với bạn bè về các phát hiện',
         ],
-        expectedResults:
-          'Danh sách phân loại 10+ ví dụ STEM với giải thích ngắn',
+        expectedResults: 'Danh sách phân loại 10+ ví dụ STEM với giải thích ngắn',
         hints: [
           'Science: các hiện tượng tự nhiên (ánh sáng, âm thanh)',
           'Technology: điện thoại, máy tính, tivi',
           'Engineering: cầu, toà nhà, máy móc',
-          'Math: đồng hồ, hình học trong kiến trúc'
-        ]
+          'Math: đồng hồ, hình học trong kiến trúc',
+        ],
       },
       {
         id: 'ex2-mini-inventor',
@@ -93,32 +83,31 @@ export const stemLessons: STEMLesson[] = [
           'Động não 5 giải pháp khác nhau',
           'Chọn giải pháp tốt nhất và vẽ thiết kế',
           'Làm mô hình đơn giản bằng vật liệu sẵn có',
-          'Thử nghiệm và cải tiến'
+          'Thử nghiệm và cải tiến',
         ],
-        expectedResults:
-          'Một mô hình/nguyên mẫu đơn giản giải quyết vấn đề đã chọn',
+        expectedResults: 'Một mô hình/nguyên mẫu đơn giản giải quyết vấn đề đã chọn',
         hints: [
           'Bắt đầu với vấn đề rất nhỏ và cụ thể',
           'Sử dụng vật liệu tái chế như hộp giấy, dây thun',
           'Không cần hoàn hảo, chỉ cần hoạt động',
-          'Hỏi ý kiến bạn bè để cải tiến'
-        ]
-      }
+          'Hỏi ý kiến bạn bè để cải tiến',
+        ],
+      },
     ],
     realWorldApplications: [
       'Thiết kế ứng dụng mobile giải quyết vấn đề xã hội',
       'Phát triển robot hỗ trợ người khuyết tật',
       'Tạo ra vật liệu mới từ rác thải nhựa',
       'Thiết kế trò chơi giáo dục cho trẻ em',
-      'Xây dựng hệ thống nông nghiệp thông minh'
+      'Xây dựng hệ thống nông nghiệp thông minh',
     ],
     competitions: [
       'Cuộc thi Khoa học Kỹ thuật Quốc gia',
       'STEAM for Vietnam Challenge',
       'Young Inventors Competition',
       'Science Fair Vietnam',
-      'Techfest Vietnam'
-    ]
+      'Techfest Vietnam',
+    ],
   },
   {
     id: 'fun-physics-experiments',
@@ -129,28 +118,20 @@ export const stemLessons: STEMLesson[] = [
     duration: '60 phút',
     category: 'science',
     icon: '⚡',
-    topics: [
-      'Vật lý',
-      'Thí nghiệm',
-      'Khoa học thực hành',
-      'Hiện tượng tự nhiên'
-    ],
+    topics: ['Vật lý', 'Thí nghiệm', 'Khoa học thực hành', 'Hiện tượng tự nhiên'],
     objectives: [
       'Hiểu các khái niệm vật lý cơ bản qua thực hành',
       'Phát triển kỹ năng quan sát và ghi chép khoa học',
       'Học cách đặt giả thuyết và kiểm chứng',
-      'Tạo hứng thú với khoa học tự nhiên'
+      'Tạo hứng thú với khoa học tự nhiên',
     ],
-    prerequisites: [
-      'Hiểu biết cơ bản về STEM',
-      'Khả năng quan sát và mô tả'
-    ],
+    prerequisites: ['Hiểu biết cơ bản về STEM', 'Khả năng quan sát và mô tả'],
     materials: [
       'Nước, dầu ăn, mật ong',
       'Bóng bay, khăn giấy',
       'Nam châm, vít sắt nhỏ',
       'Đèn pin, gương nhỏ',
-      'Muối, đường, bột màu thực phẩm'
+      'Muối, đường, bột màu thực phẩm',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1554475901-4538ddfbccc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -166,53 +147,51 @@ export const stemLessons: STEMLesson[] = [
           'Đổ từ từ mật ong vào đáy cốc',
           'Dùng thìa đổ nhẹ nhàng nước có màu lên trên',
           'Tiếp tục với dầu ăn và xà phòng',
-          'Quan sát và ghi chép hiện tượng'
+          'Quan sát và ghi chép hiện tượng',
         ],
         expectedResults: 'Tháp chất lỏng 4 tầng rõ ràng, không trộn lẫn',
         hints: [
           'Đổ chậm và nhẹ nhàng để tránh trộn lẫn',
           'Mật độ cao hơn sẽ chìm xuống dưới',
           'Có thể thêm màu thực phẩm để dễ quan sát',
-          'Thử thả các vật nhỏ xem chúng dừng ở tầng nào'
-        ]
+          'Thử thả các vật nhỏ xem chúng dừng ở tầng nào',
+        ],
       },
       {
         id: 'ex2-static-electricity',
         title: 'Điện Tĩnh Kỳ Diệu',
-        description:
-          'Khám phá hiện tượng điện tĩnh qua các thí nghiệm vui nhộn',
+        description: 'Khám phá hiện tượng điện tĩnh qua các thí nghiệm vui nhộn',
         difficulty: 'Trung bình',
         procedure: [
           'Thí nghiệm 1: Cọ bóng bay vào tóc, sau đó đưa gần giấy vụn',
           'Thí nghiệm 2: Cọ lược nhựa vào vải, đưa gần tia nước nhỏ',
           'Thí nghiệm 3: Làm "tóc dựng đứng" bằng máy tạo điện tĩnh',
           'Ghi chép quan sát cho mỗi thí nghiệm',
-          'Giải thích hiện tượng bằng lời của mình'
+          'Giải thích hiện tượng bằng lời của mình',
         ],
-        expectedResults:
-          'Quan sát thấy các hiện tượng hút, đẩy và chuyển động do điện tĩnh',
+        expectedResults: 'Quan sát thấy các hiện tượng hút, đẩy và chuyển động do điện tĩnh',
         hints: [
           'Thời tiết khô hanh sẽ cho kết quả tốt hơn',
           'Thử với nhiều vật liệu khác nhau: nhựa, thủy tinh, vải',
           'Chú ý an toàn, không làm gần thiết bị điện',
-          'Giải thích bằng khái niệm electron di chuyển'
-        ]
-      }
+          'Giải thích bằng khái niệm electron di chuyển',
+        ],
+      },
     ],
     realWorldApplications: [
       'Máy photocopy sử dụng điện tĩnh',
       'Màn hình cảm ứng hoạt động nhờ điện tích',
       'Tàu ngầm sử dụng nguyên lý mật độ',
       'Máy bay bay được nhờ hiểu về áp suất',
-      'GPS định vị dựa trên sóng điện từ'
+      'GPS định vị dựa trên sóng điện từ',
     ],
     competitions: [
       'Hội thi Khoa học Kỹ thuật Thanh thiếu niên',
       'Physics Olympiad Vietnam',
       'Young Scientist Competition',
       'International Science Fair',
-      'Vietnam National Science Fair'
-    ]
+      'Vietnam National Science Fair',
+    ],
   },
   {
     id: 'coding-for-kids',
@@ -228,17 +207,14 @@ export const stemLessons: STEMLesson[] = [
       'Hiểu khái niệm lập trình cơ bản',
       'Sử dụng thành thạo Scratch để tạo project',
       'Phát triển tư duy logic và giải quyết vấn đề',
-      'Tạo ra sản phẩm sáng tạo đầu tiên'
+      'Tạo ra sản phẩm sáng tạo đầu tiên',
     ],
-    prerequisites: [
-      'Biết sử dụng máy tính cơ bản',
-      'Khả năng đọc hiểu tiếng Việt'
-    ],
+    prerequisites: ['Biết sử dụng máy tính cơ bản', 'Khả năng đọc hiểu tiếng Việt'],
     materials: [
       'Máy tính/tablet có kết nối internet',
       'Tài khoản Scratch (miễn phí)',
       'Giấy và bút để vẽ ý tưởng',
-      'Microphone (tùy chọn)'
+      'Microphone (tùy chọn)',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -255,16 +231,15 @@ export const stemLessons: STEMLesson[] = [
           'Thiết kế background phù hợp với câu chuyện',
           'Lập trình cho nhân vật di chuyển và nói chuyện',
           'Thêm âm thanh và hiệu ứng',
-          'Chia sẻ project với bạn bè'
+          'Chia sẻ project với bạn bè',
         ],
-        expectedResults:
-          'Câu chuyện hoạt hình 30-60 giây với thoại và chuyển động',
+        expectedResults: 'Câu chuyện hoạt hình 30-60 giây với thoại và chuyển động',
         hints: [
           'Bắt đầu với câu chuyện đơn giản: gặp gỡ, chào hỏi',
           'Sử dụng khối "say" để nhân vật nói',
           'Dùng khối "move" để di chuyển',
-          'Thêm khối "wait" để tạo nhịp điệu'
-        ]
+          'Thêm khối "wait" để tạo nhịp điệu',
+        ],
       },
       {
         id: 'ex2-simple-game',
@@ -277,32 +252,31 @@ export const stemLessons: STEMLesson[] = [
           'Lập trình hệ thống điểm số',
           'Thêm âm thanh khi ăn được vật phẩm',
           'Tạo màn hình "Game Over"',
-          'Test và cải tiến game'
+          'Test và cải tiến game',
         ],
-        expectedResults:
-          'Game hoàn chỉnh có thể chơi được với hệ thống tính điểm',
+        expectedResults: 'Game hoàn chỉnh có thể chơi được với hệ thống tính điểm',
         hints: [
           'Dùng khối "if touching" để kiểm tra va chạm',
           'Biến "score" để lưu điểm số',
           'Khối "random" để tạo chuyển động ngẫu nhiên',
-          'Khối "broadcast" để thông báo sự kiện'
-        ]
-      }
+          'Khối "broadcast" để thông báo sự kiện',
+        ],
+      },
     ],
     realWorldApplications: [
       'Phát triển ứng dụng mobile và web',
       'Tạo game giáo dục cho trẻ em',
       'Lập trình robot và IoT',
       'Phân tích dữ liệu và AI',
-      'Thiết kế website và ứng dụng'
+      'Thiết kế website và ứng dụng',
     ],
     competitions: [
       'Scratch Programming Contest Vietnam',
       'Code.org Hour of Code',
       'Vietnam ICT Olympiad',
       'Asian Programming Contest',
-      'Global Game Jam'
-    ]
+      'Global Game Jam',
+    ],
   },
   {
     id: 'engineering-challenges',
@@ -318,28 +292,24 @@ export const stemLessons: STEMLesson[] = [
       'Hiểu quy trình thiết kế kỹ thuật',
       'Phát triển kỹ năng giải quyết vấn đề sáng tạo',
       'Học cách làm việc với ràng buộc và giới hạn',
-      'Trải nghiệm chu trình thiết kế-test-cải tiến'
+      'Trải nghiệm chu trình thiết kế-test-cải tiến',
     ],
-    prerequisites: [
-      'Kiến thức cơ bản về STEM',
-      'Kỹ năng làm việc tay cơ bản'
-    ],
+    prerequisites: ['Kiến thức cơ bản về STEM', 'Kỹ năng làm việc tay cơ bản'],
     materials: [
       'Giấy A4, giấy carton',
       'Keo dán, băng keo',
       'Ống hút nhựa, que tre',
       'Sợi dây, dây thun',
-      'Cân nhỏ, thước kẻ'
+      'Cân nhỏ, thước kẻ',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=TbF3vwuSDW8',
+    videoUrl: 'https://www.youtube.com/watch?v=0b_OUWfMU8E',
     exercises: [
       {
         id: 'ex1-paper-bridge',
         title: 'Cầu Giấy Siêu Mạnh',
-        description:
-          'Thiết kế cầu từ giấy có thể chịu được trọng lượng lớn nhất',
+        description: 'Thiết kế cầu từ giấy có thể chịu được trọng lượng lớn nhất',
         difficulty: 'Trung bình',
         procedure: [
           'Nghiên cứu các loại cầu trong thực tế (treo, dầm, vòm)',
@@ -347,16 +317,15 @@ export const stemLessons: STEMLesson[] = [
           'Xây dựng cầu bằng giấy A4 (tối đa 5 tờ)',
           'Test khả năng chịu tải bằng cách đặt sách/vật nặng',
           'Ghi chép kết quả và cải tiến thiết kế',
-          'So sánh với các bạn xem ai làm được cầu mạnh nhất'
+          'So sánh với các bạn xem ai làm được cầu mạnh nhất',
         ],
-        expectedResults:
-          'Cầu giấy có thể chịu được ít nhất 500g mà không bị gãy',
+        expectedResults: 'Cầu giấy có thể chịu được ít nhất 500g mà không bị gãy',
         hints: [
           'Hình tam giác là hình mạnh nhất trong kỹ thuật',
           'Cuộn giấy thành ống sẽ chịu lực tốt hơn',
           'Phân bổ trọng lượng đều trên nhiều điểm',
-          'Test từ từ, từng chút một để quan sát'
-        ]
+          'Test từ từ, từng chút một để quan sát',
+        ],
       },
       {
         id: 'ex2-earthquake-tower',
@@ -369,32 +338,31 @@ export const stemLessons: STEMLesson[] = [
           'Xây dựng theo thiết kế đã vẽ',
           'Test độ ổn định bằng cách rung bàn nhẹ',
           'Cải tiến để tháp vừa cao vừa ổn định',
-          'Thi thố với bạn bè xem ai xây tháp cao và ổn định nhất'
+          'Thi thố với bạn bè xem ai xây tháp cao và ổn định nhất',
         ],
-        expectedResults:
-          'Tháp cao ít nhất 50cm và không đổ khi rung bàn 10 giây',
+        expectedResults: 'Tháp cao ít nhất 50cm và không đổ khi rung bàn 10 giây',
         hints: [
           'Nền móng rộng sẽ giúp tháp ổn định hơn',
           'Cấu trúc hình kim tự tháp chống lật tốt',
           'Liên kết chéo tăng độ cứng của cấu trúc',
-          'Test thường xuyên trong quá trình xây'
-        ]
-      }
+          'Test thường xuyên trong quá trình xây',
+        ],
+      },
     ],
     realWorldApplications: [
       'Thiết kế cầu và đường cao tốc',
       'Xây dựng nhà chống động đất',
       'Thiết kế máy bay và ô tô',
       'Kỹ thuật xây dựng không gian',
-      'Robot và máy móc tự động'
+      'Robot và máy móc tự động',
     ],
     competitions: [
       'Cuộc thi Kỹ thuật Trẻ Vietnam',
       'Engineering Olympics',
       'Bridge Building Challenge',
       'Seismic Design Competition',
-      'Future Engineers Competition'
-    ]
+      'Future Engineers Competition',
+    ],
   },
   {
     id: 'math-in-real-life',
@@ -410,22 +378,19 @@ export const stemLessons: STEMLesson[] = [
       'Nhận ra toán học trong các hoạt động hàng ngày',
       'Áp dụng toán học để giải quyết vấn đề thực tế',
       'Phát triển tư duy logic và phân tích',
-      'Tạo hứng thú với toán học qua ứng dụng'
+      'Tạo hứng thú với toán học qua ứng dụng',
     ],
-    prerequisites: [
-      'Toán học cơ bản (cộng, trừ, nhân, chia)',
-      'Khái niệm cơ bản về tỷ lệ'
-    ],
+    prerequisites: ['Toán học cơ bản (cộng, trừ, nhân, chia)', 'Khái niệm cơ bản về tỷ lệ'],
     materials: [
       'Nguyên liệu nấu ăn (bột, đường, sữa)',
       'Cân nhà bếp, cốc đo lường',
       'Giấy graph, thước kẻ, compa',
       'Đồng xu, xúc xắc',
-      'Kẹo hoặc đồ vật nhỏ để đếm'
+      'Kẹo hoặc đồ vật nhỏ để đếm',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=X_xR5Kes4Rs',
+    videoUrl: 'https://www.youtube.com/watch?v=DGRo1INls2s',
     exercises: [
       {
         id: 'ex1-cooking-ratios',
@@ -437,15 +402,15 @@ export const stemLessons: STEMLesson[] = [
           'Tính toán nguyên liệu cần thiết cho 6 người',
           'Tính toán cho 2 người',
           'Thực hành làm bánh với tỷ lệ đã tính',
-          'Ghi chép kết quả và rút kinh nghiệm'
+          'Ghi chép kết quả và rút kinh nghiệm',
         ],
         expectedResults: 'Bánh pancake ngon với đúng tỷ lệ nguyên liệu',
         hints: [
           '6 người = 4 người × 1.5, nên nhân tất cả nguyên liệu với 1.5',
           '2 người = 4 người ÷ 2, nên chia tất cả nguyên liệu cho 2',
           'Viết dưới dạng phân số để dễ tính',
-          'Nếm thử và điều chỉnh theo khẩu vị'
-        ]
+          'Nếm thử và điều chỉnh theo khẩu vị',
+        ],
       },
       {
         id: 'ex2-probability-games',
@@ -457,31 +422,31 @@ export const stemLessons: STEMLesson[] = [
           'Thực hiện tung và ghi chép kết quả',
           'So sánh kết quả thực tế với dự đoán',
           'Lặp lại với xúc xắc (dự đoán số lần ra mỗi mặt)',
-          'Phân tích tại sao có sự khác biệt'
+          'Phân tích tại sao có sự khác biệt',
         ],
         expectedResults: 'Hiểu được khái niệm xác suất và sự ngẫu nhiên',
         hints: [
           'Về lý thuyết, xác suất ngửa/sấp của đồng xu là 50%',
           'Với ít lần tung, kết quả có thể khác xa lý thuyết',
           'Càng tung nhiều lần, càng gần với xác suất lý thuyết',
-          'Ghi chép chính xác để phân tích'
-        ]
-      }
+          'Ghi chép chính xác để phân tích',
+        ],
+      },
     ],
     realWorldApplications: [
       'Quản lý tài chính cá nhân và đầu tư',
       'Phân tích dữ liệu và thống kê',
       'Thiết kế kiến trúc và nghệ thuật',
       'Dự báo thời tiết và khí hậu',
-      'Phát triển thuật toán máy tính'
+      'Phát triển thuật toán máy tính',
     ],
     competitions: [
       'Olympic Toán học Quốc tế',
       'Cuộc thi Toán học Kangaroo',
       'Vietnam Mathematical Olympiad',
       'IMAS (International Mathematics Assessments)',
-      'Math League Competitions'
-    ]
+      'Math League Competitions',
+    ],
   },
   {
     id: 'art-meets-science',
@@ -497,22 +462,19 @@ export const stemLessons: STEMLesson[] = [
       'Kết hợp nghệ thuật với khoa học một cách sáng tạo',
       'Hiểu về màu sắc, ánh sáng và hình học trong nghệ thuật',
       'Phát triển kỹ năng thiết kế và thẩm mỹ',
-      'Tạo ra sản phẩm nghệ thuật có cơ sở khoa học'
+      'Tạo ra sản phẩm nghệ thuật có cơ sở khoa học',
     ],
-    prerequisites: [
-      'Kiến thức cơ bản về STEM',
-      'Kỹ năng vẽ và tô màu cơ bản'
-    ],
+    prerequisites: ['Kiến thức cơ bản về STEM', 'Kỹ năng vẽ và tô màu cơ bản'],
     materials: [
       'Màu nước, cọ vẽ, giấy vẽ',
       'Baking soda, giấm, màu thực phẩm',
       'Dây, compa, thước kẻ',
       'Đèn LED nhiều màu',
-      'Giấy trong suốt, kính lúp'
+      'Giấy trong suốt, kính lúp',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=fOJ8WNXIBYg',
+    videoUrl: 'https://www.youtube.com/watch?v=v71epQfbXlQ',
     exercises: [
       {
         id: 'ex1-color-chemistry',
@@ -525,21 +487,20 @@ export const stemLessons: STEMLesson[] = [
           'Nhỏ giấm vào để tạo phản ứng sủi bọt',
           'Quan sát sự thay đổi màu sắc',
           'Thử nghiệm với tỷ lệ khác nhau để tạo hiệu ứng đẹp',
-          'Vẽ tranh bằng những màu đã tạo'
+          'Vẽ tranh bằng những màu đã tạo',
         ],
         expectedResults: 'Bức tranh đầy màu sắc được tạo từ phản ứng hóa học',
         hints: [
           'Phản ứng acid-base tạo CO2 và hiệu ứng sủi bọt',
           'Thử các tỷ lệ khác nhau để có màu sắc đa dạng',
           'Có thể thêm chút muối để tạo hiệu ứng lấp lánh',
-          'Vẽ nhanh khi còn phản ứng để có hiệu ứng động'
-        ]
+          'Vẽ nhanh khi còn phản ứng để có hiệu ứng động',
+        ],
       },
       {
         id: 'ex2-geometric-art',
         title: 'Nghệ Thuật Hình Học',
-        description:
-          'Tạo ra pattern nghệ thuật dựa trên các nguyên tắc toán học',
+        description: 'Tạo ra pattern nghệ thuật dựa trên các nguyên tắc toán học',
         difficulty: 'Trung bình',
         procedure: [
           'Học về tỷ lệ vàng và cách vẽ hình xoắn ốc',
@@ -547,32 +508,31 @@ export const stemLessons: STEMLesson[] = [
           'Tạo pattern mandala dựa trên đối xứng',
           'Sử dụng compa để vẽ các hình tròn đồng tâm',
           'Tô màu theo pattern toán học',
-          'Kết hợp nhiều pattern để tạo tác phẩm hoàn chỉnh'
+          'Kết hợp nhiều pattern để tạo tác phẩm hoàn chỉnh',
         ],
-        expectedResults:
-          'Tác phẩm nghệ thuật kết hợp hình học và màu sắc hài hòa',
+        expectedResults: 'Tác phẩm nghệ thuật kết hợp hình học và màu sắc hài hòa',
         hints: [
           'Tỷ lệ vàng ≈ 1.618 tạo ra vẻ đẹp tự nhiên',
           'Đối xứng quay tạo pattern mandala đẹp',
           'Dùng nhiều màu tương phản để làm nổi bật pattern',
-          'Kiên nhẫn và tỉ mỉ để có kết quả đẹp'
-        ]
-      }
+          'Kiên nhẫn và tỉ mỉ để có kết quả đẹp',
+        ],
+      },
     ],
     realWorldApplications: [
       'Thiết kế đồ họa và giao diện người dùng',
       'Kiến trúc và thiết kế nội thất',
       'Phim hoạt hình và hiệu ứng đặc biệt',
       'Thiết kế thời trang và trang sức',
-      'Nghệ thuật số và media tương tác'
+      'Nghệ thuật số và media tương tác',
     ],
     competitions: [
       'STEAM Art Competition Vietnam',
       'International Science Art Contest',
       'Digital Art Challenge',
       'Creative Technology Awards',
-      'Young Artists Meet Science'
-    ]
+      'Young Artists Meet Science',
+    ],
   },
   {
     id: 'environmental-solutions',
@@ -588,28 +548,24 @@ export const stemLessons: STEMLesson[] = [
       'Hiểu các vấn đề môi trường hiện tại',
       'Áp dụng STEM để tìm giải pháp môi trường',
       'Phát triển ý thức bảo vệ môi trường',
-      'Tạo ra nguyên mẫu giải pháp thực tế'
+      'Tạo ra nguyên mẫu giải pháp thực tế',
     ],
-    prerequisites: [
-      'Hiểu biết về khoa học và kỹ thuật cơ bản',
-      'Ý thức về vấn đề môi trường'
-    ],
+    prerequisites: ['Hiểu biết về khoa học và kỹ thuật cơ bản', 'Ý thức về vấn đề môi trường'],
     materials: [
       'Chai nhựa, cát, sỏi, vải',
       'Bông, than hoạt tính',
       'Pin mặt trời mini, LED',
       'Hộp carton, giấy bạc',
-      'Bột nong, tinh bột'
+      'Bột nong, tinh bột',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=RSQd4xNzU3k',
+    videoUrl: 'https://www.youtube.com/watch?v=BFwC72Tu-3A',
     exercises: [
       {
         id: 'ex1-water-filter',
         title: 'Bộ Lọc Nước Tự Làm',
-        description:
-          'Thiết kế và chế tạo bộ lọc nước hiệu quả từ vật liệu tự nhiên',
+        description: 'Thiết kế và chế tạo bộ lọc nước hiệu quả từ vật liệu tự nhiên',
         difficulty: 'Trung bình',
         procedure: [
           'Nghiên cứu về ô nhiễm nước và phương pháp lọc',
@@ -617,21 +573,20 @@ export const stemLessons: STEMLesson[] = [
           'Xếp các lớp: vải, cát mịn, cát thô, sỏi từ trên xuống',
           'Thêm tầng than hoạt tính để hấp thụ tạp chất',
           'Test bằng nước bẩn (đất + nước) và quan sát kết quả',
-          'Cải tiến thiết kế để tăng hiệu quả lọc'
+          'Cải tiến thiết kế để tăng hiệu quả lọc',
         ],
         expectedResults: 'Nước đầu ra trong hơn đáng kể so với nước đầu vào',
         hints: [
           'Các lớp lọc hoạt động từ thô đến mịn',
           'Than hoạt tính hấp thụ mùi và hóa chất',
           'Lưu lượng chậm sẽ lọc sạch hơn',
-          'Test nhiều lần với nước bẩn khác nhau'
-        ]
+          'Test nhiều lần với nước bẩn khác nhau',
+        ],
       },
       {
         id: 'ex2-solar-oven',
         title: 'Lò Nướng Năng Lượng Mặt Trời',
-        description:
-          'Xây dựng lò nướng sử dụng năng lượng mặt trời để nấu chín thức ăn',
+        description: 'Xây dựng lò nướng sử dụng năng lượng mặt trời để nấu chín thức ăn',
         difficulty: 'Khó',
         procedure: [
           'Nghiên cứu nguyên lý hoạt động của năng lượng mặt trời',
@@ -639,32 +594,32 @@ export const stemLessons: STEMLesson[] = [
           'Tạo góc phản xạ tối ưu để tập trung ánh sáng',
           'Đặt nồi nhỏ màu đen bên trong để hấp thụ nhiệt',
           'Test bằng cách làm nóng nước hoặc nướng marshmallow',
-          'Đo nhiệt độ và ghi chép hiệu suất'
+          'Đo nhiệt độ và ghi chép hiệu suất',
         ],
         expectedResults: 'Đạt nhiệt độ 60-80°C và có thể làm nóng thức ăn',
         hints: [
           'Màu đen hấp thụ nhiệt tốt nhất',
           'Kính hoặc plastic trong tạo hiệu ứng nhà kính',
           'Cách nhiệt giúp giữ nhiệt lâu hơn',
-          'Hướng lò về phía mặt trời để tối ưu'
-        ]
-      }
+          'Hướng lò về phía mặt trời để tối ưu',
+        ],
+      },
     ],
     realWorldApplications: [
       'Hệ thống lọc nước cho vùng nông thôn',
       'Nhà thông minh tiết kiệm năng lượng',
       'Túi sinh học thay thế túi nhựa',
       'Trang trại năng lượng mặt trời',
-      'Hệ thống tái chế rác thải tự động'
+      'Hệ thống tái chế rác thải tự động',
     ],
     competitions: [
       'Green Tech Challenge Vietnam',
       'Environmental Innovation Contest',
       'Clean Energy Competition',
       'Sustainable Design Awards',
-      'Eco-Friendly Solutions Challenge'
-    ]
-  }
+      'Eco-Friendly Solutions Challenge',
+    ],
+  },
 ];
 
 // STEM quiz questions
@@ -677,11 +632,11 @@ export const stemQuizzes = [
       'Science, Technology, Engineering, Mathematics',
       'Study, Technology, Engineering, Mathematics',
       'Science, Teaching, Engineering, Music',
-      'Science, Technology, English, Mathematics'
+      'Science, Technology, English, Mathematics',
     ],
     correctAnswer: 0,
     explanation:
-      'STEM là viết tắt của Science (Khoa học), Technology (Công nghệ), Engineering (Kỹ thuật), Mathematics (Toán học).'
+      'STEM là viết tắt của Science (Khoa học), Technology (Công nghệ), Engineering (Kỹ thuật), Mathematics (Toán học).',
   },
   {
     id: 'quiz-physics-1',
@@ -689,8 +644,7 @@ export const stemQuizzes = [
     question: 'Trong thí nghiệm tháp mật độ, chất nào sẽ ở dưới cùng?',
     options: ['Dầu ăn', 'Nước', 'Mật ong', 'Xà phòng'],
     correctAnswer: 2,
-    explanation:
-      'Mật ong có mật độ cao nhất nên sẽ chìm xuống dưới cùng trong thí nghiệm tháp mật độ.'
+    explanation: 'Mật ong có mật độ cao nhất nên sẽ chìm xuống dưới cùng trong thí nghiệm tháp mật độ.',
   },
   {
     id: 'quiz-coding-1',
@@ -700,17 +654,16 @@ export const stemQuizzes = [
       'Một trò chơi điện tử',
       'Ngôn ngữ lập trình trực quan cho trẻ em',
       'Phần mềm vẽ tranh',
-      'Ứng dụng học toán'
+      'Ứng dụng học toán',
     ],
     correctAnswer: 1,
-    explanation:
-      'Scratch là ngôn ngữ lập trình trực quan được thiết kế đặc biệt cho trẻ em học lập trình.'
-  }
+    explanation: 'Scratch là ngôn ngữ lập trình trực quan được thiết kế đặc biệt cho trẻ em học lập trình.',
+  },
 ];
 
 const stemData = {
   stemLessons,
-  stemQuizzes
+  stemQuizzes,
 };
 
 export default stemData;

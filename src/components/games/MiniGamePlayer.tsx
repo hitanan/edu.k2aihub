@@ -69,6 +69,7 @@ import {
   AerospaceMissionControlGame,
   VirtualChemistryLab3D,
   SpaceExploration3DGame,
+  RobotNavigation3DGame,
 } from './individual';
 
 interface MiniGameProps {
@@ -148,7 +149,10 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
     setAchievements(gameAchievements);
     setShowCelebration(true);
 
-    onComplete(calculatedFinalScore);
+    // Add delay before calling onComplete to let user see celebration
+    setTimeout(() => {
+      onComplete(calculatedFinalScore);
+    }, 3000); // 3 second delay
   };
 
   const restartGame = () => {
@@ -213,6 +217,8 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         );
       case 'robotics-navigation':
         return <RoboticsNavigationGame onComplete={endGame} timeLeft={timeLeft} />;
+      case 'robot-navigation-3d':
+        return <RobotNavigation3DGame onComplete={endGame} timeLeft={timeLeft} />;
       case 'ai-ethics-dilemma':
         return (
           <AIEthicsGame

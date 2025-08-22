@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Text, Sphere, Box } from '@react-three/drei';
+import { Maximize, Minimize } from 'lucide-react';
 import * as THREE from 'three';
 
 // Game interfaces
@@ -322,6 +323,34 @@ export default function SpaceExploration3DGame({ onComplete, timeLeft }: SpaceEx
   const [score, setScore] = useState(0);
   const [gameStatus, setGameStatus] = useState<'playing' | 'completed' | 'failed'>('playing');
   const [targetPosition, setTargetPosition] = useState<Position3D | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Fullscreen functionality
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().then(() => {
+        setIsFullscreen(true);
+      }).catch(() => {
+        // Fullscreen failed, ignore
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        setIsFullscreen(false);
+      }).catch(() => {
+        // Exit fullscreen failed, ignore
+      });
+    }
+  }, []);
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   // Handle planet selection
   const handlePlanetClick = useCallback((planetId: string) => {
@@ -433,6 +462,19 @@ export default function SpaceExploration3DGame({ onComplete, timeLeft }: SpaceEx
           targetPosition={targetPosition}
         />
       </Canvas>
+
+      {/* Fullscreen Button */}
+      <button
+        onClick={toggleFullscreen}
+        className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm rounded-lg p-3 text-white hover:bg-black/90 transition-colors z-10"
+        title={isFullscreen ? "Thoát toàn màn hình" : "Toàn màn hình"}
+      >
+        {isFullscreen ? (
+          <Minimize className="w-5 h-5" />
+        ) : (
+          <Maximize className="w-5 h-5" />
+        )}
+      </button>
 
       {/* UI Overlays */}
       <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-sm rounded-lg p-4 text-white">

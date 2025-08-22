@@ -25,6 +25,19 @@ export function createTitle(
 }
 
 /**
+ * Creates a properly formatted OpenGraph title that matches the page title
+ * @param title - The main title content
+ * @param includeTagline - Whether to include the site tagline (default: false)
+ * @returns Formatted OpenGraph title string
+ */
+export function createOpenGraphTitle(
+  title: string,
+  includeTagline: boolean = false
+): string {
+  return createTitle(title, includeTagline);
+}
+
+/**
  * Creates a consistent description with K2AiHub branding
  * @param description - The main description content
  * @returns Formatted description string

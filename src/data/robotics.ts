@@ -40,8 +40,7 @@ export const roboticsLessons: RoboticsLesson[] = [
   {
     id: 'basic-robotics-intro',
     title: 'Giới Thiệu Robotics Cơ Bản',
-    description:
-      'Khái niệm cơ bản về robotics, các thành phần chính của robot và ứng dụng trong đời sống',
+    description: 'Khái niệm cơ bản về robotics, các thành phần chính của robot và ứng dụng trong đời sống',
     difficulty: 'Cơ bản',
     duration: '45 phút',
     category: 'theory',
@@ -51,62 +50,55 @@ export const roboticsLessons: RoboticsLesson[] = [
       'Hiểu khái niệm robot và robotics',
       'Nhận biết các thành phần chính của robot',
       'Phân biệt các loại robot khác nhau',
-      'Hiểu ứng dụng robotics trong cuộc sống'
+      'Hiểu ứng dụng robotics trong cuộc sống',
     ],
-    materials: [
-      'Slides giới thiệu robotics',
-      'Video demo các loại robot',
-      'Tài liệu tham khảo'
-    ],
+    materials: ['Slides giới thiệu robotics', 'Video demo các loại robot', 'Tài liệu tham khảo'],
     imageUrl:
       'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=gfOIs0gHC6M',
+    videoUrl: 'https://www.youtube.com/watch?v=srIpWN5TVKc',
     exercises: [
       {
         id: 'ex1-robot-types',
         title: 'Phân Loại Robot',
-        description:
-          'Phân loại các robot trong video theo chức năng và hình dạng',
+        description: 'Phân loại các robot trong video theo chức năng và hình dạng',
         difficulty: 'Dễ',
         hints: [
           'Quan sát hình dạng và chức năng của robot',
           'Nhóm theo ứng dụng: công nghiệp, gia đình, y tế...',
-          'Phân biệt robot di động và robot cố định'
-        ]
+          'Phân biệt robot di động và robot cố định',
+        ],
       },
       {
         id: 'ex2-robot-components',
         title: 'Xác Định Thành Phần Robot',
-        description:
-          'Chỉ ra các thành phần chính trong hình ảnh robot: cảm biến, bộ điều khiển, động cơ',
+        description: 'Chỉ ra các thành phần chính trong hình ảnh robot: cảm biến, bộ điều khiển, động cơ',
         difficulty: 'Trung bình',
         hints: [
           'Tìm phần "mắt" của robot (camera, cảm biến)',
           'Xác định phần "não" (vi xử lý)',
-          'Nhận biết phần chuyển động (motor, bánh xe)'
-        ]
-      }
+          'Nhận biết phần chuyển động (motor, bánh xe)',
+        ],
+      },
     ],
     realWorldApplications: [
       'Robot hút bụi thông minh (Roomba)',
       'Robot phẫu thuật trong y tế (Da Vinci)',
       'Robot sản xuất ô tô',
       'Robot giao hàng (Amazon Prime Air)',
-      'Robot giúp việc gia đình'
+      'Robot giúp việc gia đình',
     ],
     competitions: [
       'Cuộc thi Robot Việt Nam',
       'WRO (World Robot Olympiad)',
       'VEX Robotics Competition',
       'FIRST Robotics Competition',
-      'RoboCup Junior'
-    ]
+      'RoboCup Junior',
+    ],
   },
   {
     id: 'basic-electronics',
     title: 'Điện Tử Cơ Bản Cho Robotics',
-    description:
-      'Kiến thức điện tử cần thiết để hiểu cách robot hoạt động: LED, nút nhấn, cảm biến',
+    description: 'Kiến thức điện tử cần thiết để hiểu cách robot hoạt động: LED, nút nhấn, cảm biến',
     difficulty: 'Cơ bản',
     duration: '60 phút',
     category: 'hardware',
@@ -114,19 +106,12 @@ export const roboticsLessons: RoboticsLesson[] = [
       'Hiểu các linh kiện điện tử cơ bản',
       'Đọc và vẽ sơ đồ mạch đơn giản',
       'Tính toán điện trở và điện áp',
-      'Kết nối mạch cơ bản trên breadboard'
+      'Kết nối mạch cơ bản trên breadboard',
     ],
-    materials: [
-      'Breadboard',
-      'LED các màu',
-      'Điện trở',
-      'Nút nhấn',
-      'Pin 9V',
-      'Dây nối'
-    ],
+    materials: ['Breadboard', 'LED các màu', 'Điện trở', 'Nút nhấn', 'Pin 9V', 'Dây nối'],
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=6WReFkfrUIk',
+    videoUrl: 'https://www.youtube.com/watch?v=9cQm-6YTOko',
     exercises: [
       {
         id: 'ex1-led-circuit',
@@ -136,8 +121,8 @@ export const roboticsLessons: RoboticsLesson[] = [
         hints: [
           'LED có cực dương (+) và cực âm (-)',
           'Điện trở bảo vệ để LED không bị cháy',
-          'Kiểm tra kết nối trước khi cấp điện'
-        ]
+          'Kiểm tra kết nối trước khi cấp điện',
+        ],
       },
       {
         id: 'ex2-button-led',
@@ -147,50 +132,49 @@ export const roboticsLessons: RoboticsLesson[] = [
         hints: [
           'Nút nhấn hoạt động như công tắc',
           'Sử dụng pull-up hoặc pull-down resistor',
-          'Kiểm tra trạng thái nút nhấn'
-        ]
-      }
+          'Kiểm tra trạng thái nút nhấn',
+        ],
+      },
     ],
     realWorldApplications: [
       'Đèn LED báo hiệu trong robot',
       'Nút khẩn cấp dừng robot',
       'Cảm biến ánh sáng tự động',
       'Màn hình hiển thị trạng thái robot',
-      'Hệ thống cảnh báo an toàn'
+      'Hệ thống cảnh báo an toàn',
     ],
     competitions: [
       'Cuộc thi Robot Line Following',
       'Sumo Robot Competition',
       'Micro:bit Challenge',
       'Arduino Day Vietnam',
-      'Maker Faire Vietnam'
+      'Maker Faire Vietnam',
     ],
     relatedGames: [
       {
         gameId: 'robotics-navigation',
         title: 'Robot Navigation',
         connection: 'Áp dụng kiến thức điều khiển robot và thuật toán navigation',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         gameId: 'circuit-builder',
         title: 'Xây Dựng Mạch Điện',
         connection: 'Thực hành thiết kế mạch điện cho robot',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         gameId: 'arduino-circuit-builder',
         title: 'Arduino Circuit Builder',
         connection: 'Tích hợp Arduino vào các dự án robotics',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
   {
     id: 'microcontroller-basics',
     title: 'Vi Điều Khiển Cơ Bản',
-    description:
-      'Làm quen với Arduino và các vi điều khiển cơ bản, cách lập trình và kết nối phần cứng',
+    description: 'Làm quen với Arduino và các vi điều khiển cơ bản, cách lập trình và kết nối phần cứng',
     difficulty: 'Trung bình',
     duration: '90 phút',
     category: 'programming',
@@ -198,19 +182,12 @@ export const roboticsLessons: RoboticsLesson[] = [
       'Hiểu cách hoạt động của vi điều khiển',
       'Cài đặt và sử dụng Arduino IDE',
       'Viết chương trình Arduino cơ bản',
-      'Kết nối và điều khiển LED, cảm biến'
+      'Kết nối và điều khiển LED, cảm biến',
     ],
-    materials: [
-      'Arduino Uno',
-      'Cáp USB',
-      'Breadboard',
-      'LED, điện trở',
-      'Cảm biến siêu âm',
-      'Servo motor'
-    ],
+    materials: ['Arduino Uno', 'Cáp USB', 'Breadboard', 'LED, điện trở', 'Cảm biến siêu âm', 'Servo motor'],
     imageUrl:
       'https://images.unsplash.com/photo-1553406830-ef2513450d76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=nL34zDTPkcs',
+    videoUrl: 'https://www.youtube.com/watch?v=n39P6laHSXU',
     codeExample: `// Chương trình nhấp nháy LED
 int ledPin = 13;
 
@@ -246,8 +223,8 @@ void loop() {
         hints: [
           'Sử dụng hàm digitalWrite() để bật/tắt LED',
           'delay() để tạo khoảng thời gian chờ',
-          'Thử thay đổi thời gian delay để LED nhấp nháy nhanh/chậm hơn'
-        ]
+          'Thử thay đổi thời gian delay để LED nhấp nháy nhanh/chậm hơn',
+        ],
       },
       {
         id: 'ex2-button-control',
@@ -273,30 +250,29 @@ void loop() {
         hints: [
           'INPUT_PULLUP giúp đọc trạng thái nút nhấn chính xác',
           'Khi nhấn nút, giá trị đọc được là LOW',
-          'Sử dụng điều kiện if để kiểm tra trạng thái nút'
-        ]
-      }
+          'Sử dụng điều kiện if để kiểm tra trạng thái nút',
+        ],
+      },
     ],
     realWorldApplications: [
       'Hệ thống tưới cây tự động',
       'Đèn cảm ứng chuyển động',
       'Chuông cửa thông minh',
       'Hệ thống báo động',
-      'Robot dọn dẹp tự động'
+      'Robot dọn dẹp tự động',
     ],
     competitions: [
       'Arduino Day Vietnam',
       'IoT Challenge Vietnam',
       'Smart City Hackathon',
       'Techcombank CodeTour',
-      'VNG Zalo AI Challenge'
-    ]
+      'VNG Zalo AI Challenge',
+    ],
   },
   {
     id: 'sensors-actuators',
     title: 'Cảm Biến và Động Cơ',
-    description:
-      'Tìm hiểu các loại cảm biến và động cơ thường dùng trong robotics',
+    description: 'Tìm hiểu các loại cảm biến và động cơ thường dùng trong robotics',
     difficulty: 'Trung bình',
     duration: '75 phút',
     category: 'hardware',
@@ -304,7 +280,7 @@ void loop() {
       'Hiểu nguyên lý hoạt động của các cảm biến',
       'Kết nối và đọc dữ liệu từ cảm biến',
       'Điều khiển servo motor và DC motor',
-      'Tích hợp cảm biến và động cơ trong dự án'
+      'Tích hợp cảm biến và động cơ trong dự án',
     ],
     materials: [
       'Cảm biến siêu âm HC-SR04',
@@ -312,11 +288,11 @@ void loop() {
       'Cảm biến nhiệt độ DHT22',
       'Servo motor SG90',
       'DC Motor với driver L298N',
-      'Arduino Uno'
+      'Arduino Uno',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=4f6UMl8hgkA',
+    videoUrl: 'https://www.youtube.com/watch?v=XqABZKnnyBU',
     codeExample: `// Đọc khoảng cách từ cảm biến siêu âm
 int trigPin = 9;
 int echoPin = 10;
@@ -376,8 +352,8 @@ void loop() {
         hints: [
           'Cảm biến siêu âm hoạt động như dơi - phát và nhận sóng âm',
           'Thời gian sóng âm đi và về tỷ lệ với khoảng cách',
-          'Công thức: khoảng cách = thời gian × tốc độ âm / 2'
-        ]
+          'Công thức: khoảng cách = thời gian × tốc độ âm / 2',
+        ],
       },
       {
         id: 'ex2-servo-control',
@@ -409,24 +385,24 @@ void loop() {
         hints: [
           'Servo motor có thể quay chính xác đến góc mong muốn',
           'Sử dụng thư viện Servo để điều khiển dễ dàng',
-          'Delay giữa các bước để servo có thời gian di chuyển'
-        ]
-      }
+          'Delay giữa các bước để servo có thời gian di chuyển',
+        ],
+      },
     ],
     realWorldApplications: [
       'Robot tránh vật cản',
       'Hệ thống đậu xe tự động',
       'Robot dọn dẹp nhà',
       'Máy bay không người lái',
-      'Cánh tay robot công nghiệp'
+      'Cánh tay robot công nghiệp',
     ],
     competitions: [
       'Robot Sumo Wrestling',
       'Line Following Robot',
       'Obstacle Avoidance Challenge',
       'Robot Soccer Competition',
-      'Autonomous Vehicle Challenge'
-    ]
+      'Autonomous Vehicle Challenge',
+    ],
   },
   {
     id: 'mobile-robots',
@@ -439,7 +415,7 @@ void loop() {
       'Thiết kế khung robot di động',
       'Lập trình điều khiển bánh xe',
       'Tích hợp cảm biến tránh vật cản',
-      'Kiểm thử và tối ưu hóa robot'
+      'Kiểm thử và tối ưu hóa robot',
     ],
     materials: [
       'Khung robot (acrylic hoặc 3D printed)',
@@ -449,11 +425,11 @@ void loop() {
       'Bánh xe',
       'Cảm biến siêu âm',
       'Pin lithium',
-      'Breadboard và dây nối'
+      'Breadboard và dây nối',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=7vhvnaWUZjE',
+    videoUrl: 'https://www.youtube.com/watch?v=BCv3OgNw6Nk',
     codeExample: `// Robot tránh vật cản cơ bản
 #include <NewPing.h>
 
@@ -546,8 +522,8 @@ void loop() {
         hints: [
           'Hai motor quay cùng chiều để robot đi thẳng',
           'Hai motor quay ngược chiều để robot xoay',
-          'Điều chỉnh thời gian delay để robot rẽ đúng góc'
-        ]
+          'Điều chỉnh thời gian delay để robot rẽ đúng góc',
+        ],
       },
       {
         id: 'ex2-obstacle-avoidance',
@@ -594,30 +570,29 @@ void findBestPath() {
         hints: [
           'Sử dụng servo để quay cảm biến quét xung quanh',
           'So sánh khoảng cách các hướng để chọn đường đi',
-          'Robot sẽ chọn hướng có không gian rộng nhất'
-        ]
-      }
+          'Robot sẽ chọn hướng có không gian rộng nhất',
+        ],
+      },
     ],
     realWorldApplications: [
       'Robot hút bụi thông minh (Roomba)',
       'Xe tự lái (Tesla Autopilot)',
       'Robot giao hàng (Amazon Scout)',
       'Robot tuần tra an ninh',
-      'Robot khám phá sao Hỏa (Perseverance)'
+      'Robot khám phá sao Hỏa (Perseverance)',
     ],
     competitions: [
       'World Robot Olympiad (WRO)',
       'VEX Robotics Competition',
       'FIRST Robotics Competition',
       'RoboCup Rescue',
-      'National Robotics Challenge'
-    ]
+      'National Robotics Challenge',
+    ],
   },
   {
     id: 'iot-robotics',
     title: 'IoT và Robotics',
-    description:
-      'Kết nối robot với Internet để điều khiển từ xa và thu thập dữ liệu',
+    description: 'Kết nối robot với Internet để điều khiển từ xa và thu thập dữ liệu',
     difficulty: 'Nâng cao',
     duration: '90 phút',
     category: 'programming',
@@ -625,17 +600,18 @@ void findBestPath() {
       'Hiểu khái niệm Internet of Things (IoT)',
       'Kết nối robot với WiFi',
       'Điều khiển robot qua ứng dụng mobile',
-      'Thu thập và gửi dữ liệu lên cloud'
+      'Thu thập và gửi dữ liệu lên cloud',
     ],
     materials: [
       'ESP32 hoặc NodeMCU',
       'Robot đã làm trước đó',
       'Cảm biến nhiệt độ độ ẩm',
       'Smartphone với app Blynk',
-      'Mạng WiFi'
+      'Mạng WiFi',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    videoUrl: 'https://www.youtube.com/watch?v=WH4m6dRa5Yc',
     codeExample: `// Robot IoT với ESP32 và Blynk
 #define BLYNK_TEMPLATE_ID "YourTemplateID"
 #define BLYNK_DEVICE_NAME "Robot IoT"
@@ -724,8 +700,8 @@ void loop() {
         hints: [
           'Đảm bảo tên WiFi và mật khẩu chính xác',
           'WiFi.status() trả về trạng thái kết nối',
-          'WiFi.localIP() hiển thị địa chỉ IP được cấp phát'
-        ]
+          'WiFi.localIP() hiển thị địa chỉ IP được cấp phát',
+        ],
       },
       {
         id: 'ex2-remote-control',
@@ -770,25 +746,25 @@ void loop() {
         hints: [
           'WebServer tạo server HTTP trên ESP32',
           'Mỗi route (đường dẫn) có một hàm xử lý riêng',
-          'HTML đơn giản tạo giao diện điều khiển'
-        ]
-      }
+          'HTML đơn giản tạo giao diện điều khiển',
+        ],
+      },
     ],
     realWorldApplications: [
       'Robot giám sát từ xa',
       'Hệ thống nhà thông minh',
       'Robot giao hàng tự động',
       'Thiết bị IoT nông nghiệp',
-      'Robot an ninh thông minh'
+      'Robot an ninh thông minh',
     ],
     competitions: [
       'IoT Challenge Vietnam',
       'Hackathon IoT Solutions',
       'Smart City Innovation',
       'AI + IoT Vietnam Competition',
-      'Digital Transformation Challenge'
-    ]
-  }
+      'Digital Transformation Challenge',
+    ],
+  },
 ];
 
 // Quiz questions for robotics assessment
@@ -801,11 +777,11 @@ export const roboticsQuizzes = [
       'Máy tính có thể lập trình',
       'Thiết bị tự động có thể cảm nhận, xử lý và hành động',
       'Chỉ là đồ chơi cho trẻ em',
-      'Máy móc thay thế con người hoàn toàn'
+      'Máy móc thay thế con người hoàn toàn',
     ],
     correctAnswer: 1,
     explanation:
-      'Robot là thiết bị tự động có khả năng cảm nhận môi trường, xử lý thông tin và thực hiện hành động dựa trên lập trình.'
+      'Robot là thiết bị tự động có khả năng cảm nhận môi trường, xử lý thông tin và thực hiện hành động dựa trên lập trình.',
   },
   {
     id: 'quiz-basic-2',
@@ -815,46 +791,42 @@ export const roboticsQuizzes = [
       'Để LED sáng hơn',
       'Để bảo vệ LED khỏi bị cháy do dòng điện quá lớn',
       'Để tiết kiệm pin',
-      'Để LED có thể đổi màu'
+      'Để LED có thể đổi màu',
     ],
     correctAnswer: 1,
-    explanation:
-      'Điện trở giới hạn dòng điện chạy qua LED, bảo vệ LED khỏi bị hỏng do dòng điện quá lớn.'
+    explanation: 'Điện trở giới hạn dòng điện chạy qua LED, bảo vệ LED khỏi bị hỏng do dòng điện quá lớn.',
   },
   {
     id: 'quiz-programming-1',
     lessonId: 'microcontroller-basics',
-    question:
-      'Hàm nào được sử dụng để đặt trạng thái chân digital trong Arduino?',
+    question: 'Hàm nào được sử dụng để đặt trạng thái chân digital trong Arduino?',
     options: ['analogWrite()', 'digitalWrite()', 'digitalRead()', 'pinMode()'],
     correctAnswer: 1,
-    explanation:
-      'digitalWrite() được sử dụng để đặt trạng thái HIGH hoặc LOW cho chân digital output.'
-  }
+    explanation: 'digitalWrite() được sử dụng để đặt trạng thái HIGH hoặc LOW cho chân digital output.',
+  },
 ];
 
 const realWorldApplications = [
   {
     title: 'Y Tế',
-    description:
-      'Robot phẫu thuật, robot chăm sóc người bệnh, protêt thông minh',
-    icon: '🏥'
+    description: 'Robot phẫu thuật, robot chăm sóc người bệnh, protêt thông minh',
+    icon: '🏥',
   },
   {
     title: 'Sản Xuất',
     description: 'Robot công nghiệp, tự động hóa dây chuyền sản xuất',
-    icon: '🏭'
+    icon: '🏭',
   },
   {
     title: 'Gia Đình',
     description: 'Robot hút bụi, robot nấu ăn, robot giúp việc gia đình',
-    icon: '🏠'
+    icon: '🏠',
   },
   {
     title: 'Vũ Trụ',
     description: 'Robot thám hiểm sao Hỏa, robot bảo trì trạm vũ trụ',
-    icon: '🚀'
-  }
+    icon: '🚀',
+  },
 ];
 
 const competitions = [
@@ -862,27 +834,27 @@ const competitions = [
     name: 'Robocon Vietnam',
     description: 'Cuộc thi robotics lớn nhất Việt Nam dành cho sinh viên',
     categories: ['Tự động', 'Bán tự động', 'Sáng tạo'],
-    icon: '🏆'
+    icon: '🏆',
   },
   {
     name: 'FLL (First Lego League)',
     description: 'Cuộc thi robotics quốc tế dành cho học sinh THCS',
     categories: ['Robot Mission', 'Innovation Project', 'Core Values'],
-    icon: '🥇'
+    icon: '🥇',
   },
   {
     name: 'VEX Robotics',
     description: 'Hệ thống cuộc thi robotics phổ biến trên toàn thế giới',
     categories: ['VRC', 'VEX IQ', 'VEX GO'],
-    icon: '🤖'
-  }
+    icon: '🤖',
+  },
 ];
 
 const roboticsData = {
   roboticsLessons,
   roboticsQuizzes,
   realWorldApplications,
-  competitions
+  competitions,
 };
 
 export default roboticsData;

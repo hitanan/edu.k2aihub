@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createTitle, createDescription, createOpenGraphTitle } from '@/utils/seo';
 import GamePageClient from './GamePageClient';
 import { PageProps } from '@/types';
 
@@ -31,7 +31,7 @@ export async function generateMetadata({
     description: createDescription(game.description),
     keywords: [game.title, ...game.skills, 'trò chơi giáo dục', 'K2AI'],
     openGraph: {
-      title: `${game.title} - Trò Chơi Giáo Dục | K2AiHub`,
+      title: createOpenGraphTitle(`${game.title} - Trò Chơi Giáo Dục`),
       description: game.description,
       type: 'website',
     },
