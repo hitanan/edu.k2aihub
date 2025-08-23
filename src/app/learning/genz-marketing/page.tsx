@@ -9,11 +9,19 @@ export async function generateMetadata() {
     title: createTitle('Gen Z Marketing & Authentic Branding'),
     description: createDescription('Hiểu sâu về tâm lý Gen Z và develop authentic marketing strategies resonate với thế hệ digital natives.'),
     keywords: ['gen z marketing', 'authentic branding', 'inclusive marketing', 'brand activism', 'K2AI', 'học tập thông minh'],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'Gen Z Marketing & Authentic Branding | K2AiHub',
       description: 'Marketing cho thế hệ Gen Z với authentic branding strategies',
       type: 'website',
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 

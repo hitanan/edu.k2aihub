@@ -17,9 +17,32 @@ export const metadata: Metadata = {
     'K2AI'
   ],
   openGraph: {
-    title: 'Biotech Lab Simulation 3D - Mô Phỏng Phòng Thí Nghiệm Sinh Học | K2AiHub',
-    description: 'Trải nghiệm phòng thí nghiệm sinh học 3D với thiết bị chuyên nghiệp và thí nghiệm an toàn.',
+    title: createTitle('Biotech Lab Simulation 3D - Mô Phỏng Phòng Thí Nghiệm Sinh Học 3D'),
+    description: createDescription(
+      'Trải nghiệm phòng thí nghiệm sinh học 3D với các thiết bị chuyên nghiệp, thực hiện thí nghiệm CRISPR, phát triển thuốc và nghiên cứu y sinh học trong môi trường ảo an toàn.'
+    ),
     type: 'website',
+    url: 'https://k2aihub.com/games/biotech-lab-simulation-3d',
+    siteName: 'K2AiHub',
+    locale: 'vi_VN',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&h=600&fit=crop',
+        width: 1200,
+        height: 600,
+        alt: 'Biotech Lab Simulation 3D - K2AiHub',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('Biotech Lab Simulation 3D - Mô Phỏng Phòng Thí Nghiệm Sinh Học 3D'),
+    description: createDescription(
+      'Trải nghiệm phòng thí nghiệm sinh học 3D với các thiết bị chuyên nghiệp, thực hiện thí nghiệm CRISPR, phát triển thuốc và nghiên cứu y sinh học trong môi trường ảo an toàn.'
+    ),
+    images: [
+      'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&h=600&fit=crop',
+    ],
   },
 };
 

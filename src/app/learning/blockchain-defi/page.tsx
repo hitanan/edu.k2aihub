@@ -52,12 +52,20 @@ export async function generateMetadata() {
       'digital currency',
       'K2AI',
     ],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'Blockchain & DeFi Technology - Công Nghệ Blockchain | K2AI',
       description:
         'Master blockchain development và DeFi protocols cho Vietnamese market. Smart contracts, NFT, cryptocurrency development.',
       type: 'website',
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 

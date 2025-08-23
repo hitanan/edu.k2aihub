@@ -9,11 +9,19 @@ export async function generateMetadata() {
     title: createTitle('Data Science & Big Data Analytics'),
     description: createDescription('Master data science fundamentals với Python, big data processing, machine learning applications và business intelligence.'),
     keywords: ['data science', 'machine learning', 'big data', 'business intelligence', 'python', 'K2AI', 'học tập thông minh'],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'Data Science & Big Data Analytics | K2AiHub',
       description: 'Advanced data analysis & ML cho business intelligence và decision making',
       type: 'website',
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 

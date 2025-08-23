@@ -9,11 +9,19 @@ export async function generateMetadata() {
     title: createTitle('AI Content Creator Academy'),
     description: createDescription('Học cách sử dụng AI để tạo content viral trên TikTok, YouTube, Instagram với tools như ChatGPT, RunwayML, Midjourney.'),
     keywords: ['ai content creation', 'social media automation', 'viral marketing', 'content strategy', 'K2AI', 'học tập thông minh'],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'AI Content Creator Academy | K2AiHub',
       description: 'Master AI tools cho content creation viral trên social media platforms',
       type: 'website',
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 

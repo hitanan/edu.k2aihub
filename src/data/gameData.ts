@@ -28,9 +28,9 @@ export interface PythonCodingPuzzleGameData {
     estimatedTime: string;
     hint: string;
     solution: string;
-    testCases: Array<{ 
-      input: any; 
-      output: any; 
+    testCases: Array<{
+      input: any;
+      output: any;
       description?: string;
     }>;
     functionName: string;
@@ -57,6 +57,8 @@ export interface PythonCodingPuzzleGameData {
     securityLevel: 'strict' | 'moderate' | 'relaxed';
   };
 }
+
+export type Vector3Array =  [x: number, y: number, z: number];
 
 export interface ArduinoCircuitBuilderGameData {
   circuits: Array<{
@@ -174,17 +176,17 @@ export interface ScratchAnimationStudioGameData {
     };
   }>;
   blockLibrary: {
-    motion: Array<{ id: string; name: string; code: string; shape: string; color: string; }>;
-    looks: Array<{ id: string; name: string; code: string; shape: string; color: string; }>;
-    control: Array<{ id: string; name: string; code: string; shape: string; color: string; }>;
-    sensing: Array<{ id: string; name: string; code: string; shape: string; color: string; }>;
-    operators: Array<{ id: string; name: string; code: string; shape: string; color: string; }>;
-    variables: Array<{ id: string; name: string; code: string; shape: string; color: string; }>;
+    motion: Array<{ id: string; name: string; code: string; shape: string; color: string }>;
+    looks: Array<{ id: string; name: string; code: string; shape: string; color: string }>;
+    control: Array<{ id: string; name: string; code: string; shape: string; color: string }>;
+    sensing: Array<{ id: string; name: string; code: string; shape: string; color: string }>;
+    operators: Array<{ id: string; name: string; code: string; shape: string; color: string }>;
+    variables: Array<{ id: string; name: string; code: string; shape: string; color: string }>;
   };
   dragDropConfig: {
     snapDistance: number;
     blockSpacing: number;
-    canvasSize: { width: number; height: number; };
+    canvasSize: { width: number; height: number };
     spriteLibrary: string[];
   };
 }
@@ -357,11 +359,7 @@ export interface BiologyEcosystemGameData {
     name: string;
     organisms: Array<{
       name: string;
-      type:
-        | 'producer'
-        | 'primary_consumer'
-        | 'secondary_consumer'
-        | 'decomposer';
+      type: 'producer' | 'primary_consumer' | 'secondary_consumer' | 'decomposer';
       energy: number;
     }>;
     food_chains: string[][];
@@ -371,6 +369,40 @@ export interface BiologyEcosystemGameData {
       correct: number;
     }>;
   }>;
+}
+
+export interface AquacultureIoTGameData {
+  fishSpecies: Array<{
+    id: string;
+    name: string;
+    nameEn: string;
+    optimalTemp: [number, number];
+    optimalPH: [number, number];
+    optimalO2: [number, number];
+    value: number;
+    growthRate: number;
+    description: string;
+  }>;
+  iotSensors: Array<{
+    id: string;
+    name: string;
+    nameVi: string;
+    unit: string;
+    optimalRange: [number, number];
+    alertThreshold: [number, number];
+    description: string;
+  }>;
+  managementActions: Array<{
+    id: string;
+    name: string;
+    description: string;
+    effect: string;
+    cost: number;
+  }>;
+  category: string;
+  title: string;
+  description: string;
+  features: string[];
 }
 
 export interface HistoryTimelineGameData {
@@ -408,6 +440,7 @@ export type GameDataType =
   | MathPuzzleGameData
   | ChemistryLabGameData
   | BiologyEcosystemGameData
+  | AquacultureIoTGameData
   | HistoryTimelineGameData
   | RobotNavigationGameData
   | RobotNavigation3DGameData;
@@ -437,18 +470,11 @@ export const GAME_DATA: Record<string, GameDataType> = {
         question: 'Tỉnh nào giáp biên giới với nhiều nước nhất?',
         options: ['Lào Cai', 'Quảng Ninh', 'An Giang', 'Điện Biên'],
         correct: 0,
-        explanation:
-          'Lào Cai giáp với Trung Quốc và có đường biên giới dài nhất.',
+        explanation: 'Lào Cai giáp với Trung Quốc và có đường biên giới dài nhất.',
       },
       {
-        question:
-          'Vịnh nào được UNESCO công nhận là di sản thiên nhiên thế giới?',
-        options: [
-          'Vịnh Nha Trang',
-          'Vịnh Hạ Long',
-          'Vịnh Cửa Lò',
-          'Vịnh Xuân Đài',
-        ],
+        question: 'Vịnh nào được UNESCO công nhận là di sản thiên nhiên thế giới?',
+        options: ['Vịnh Nha Trang', 'Vịnh Hạ Long', 'Vịnh Cửa Lò', 'Vịnh Xuân Đài'],
         correct: 1,
         explanation: 'Vịnh Hạ Long được UNESCO công nhận năm 1994.',
       },
@@ -456,17 +482,11 @@ export const GAME_DATA: Record<string, GameDataType> = {
         question: 'Sông nào dài nhất Việt Nam?',
         options: ['Sông Cửu Long', 'Sông Hồng', 'Sông Đồng Nai', 'Sông Mã'],
         correct: 0,
-        explanation:
-          'Sông Cửu Long (Mekong) dài 4.350 km, đoạn chảy qua Việt Nam dài 230 km.',
+        explanation: 'Sông Cửu Long (Mekong) dài 4.350 km, đoạn chảy qua Việt Nam dài 230 km.',
       },
       {
         question: 'Cao nguyên nào lớn nhất Việt Nam?',
-        options: [
-          'Cao nguyên Đắk Lắk',
-          'Cao nguyên Lâm Viên',
-          'Cao nguyên Kon Tum',
-          'Cao nguyên Mộc Châu',
-        ],
+        options: ['Cao nguyên Đắk Lắk', 'Cao nguyên Lâm Viên', 'Cao nguyên Kon Tum', 'Cao nguyên Mộc Châu'],
         correct: 1,
         explanation: 'Cao nguyên Lâm Viên có diện tích khoảng 3.500 km².',
       },
@@ -483,8 +503,7 @@ export const GAME_DATA: Record<string, GameDataType> = {
       {
         situation: 'Viết email xin nghỉ phép',
         hints: ['Lịch sự', 'Lý do rõ ràng', 'Thời gian cụ thể'],
-        targetPrompt:
-          'Viết email xin nghỉ phép 3 ngày để đi du lịch, gửi sếp, lịch sự và chuyên nghiệp',
+        targetPrompt: 'Viết email xin nghỉ phép 3 ngày để đi du lịch, gửi sếp, lịch sự và chuyên nghiệp',
         examples: [
           'Tôi muốn nghỉ phép',
           'Viết email xin nghỉ phép 3 ngày để đi du lịch, gửi sếp, lịch sự và chuyên nghiệp',
@@ -496,8 +515,7 @@ export const GAME_DATA: Record<string, GameDataType> = {
       {
         situation: 'Tạo kế hoạch học tập',
         hints: ['Mục tiêu rõ ràng', 'Thời gian', 'Phương pháp'],
-        targetPrompt:
-          'Tạo kế hoạch học tiếng Anh trong 3 tháng cho người mới bắt đầu, bao gồm lộ trình và phương pháp',
+        targetPrompt: 'Tạo kế hoạch học tiếng Anh trong 3 tháng cho người mới bắt đầu, bao gồm lộ trình và phương pháp',
         examples: [
           'Học tiếng Anh',
           'Tạo kế hoạch học tiếng Anh trong 3 tháng cho người mới bắt đầu, bao gồm lộ trình và phương pháp',
@@ -522,8 +540,7 @@ export const GAME_DATA: Record<string, GameDataType> = {
       {
         situation: 'Phân tích dữ liệu',
         hints: ['Loại dữ liệu', 'Phương pháp phân tích', 'Kết quả mong muốn'],
-        targetPrompt:
-          'Phân tích dữ liệu bán hàng theo tháng, tìm xu hướng và đưa ra khuyến nghị cải thiện',
+        targetPrompt: 'Phân tích dữ liệu bán hàng theo tháng, tìm xu hướng và đưa ra khuyến nghị cải thiện',
         examples: [
           'Phân tích bán hàng',
           'Phân tích dữ liệu bán hàng theo tháng, tìm xu hướng và đưa ra khuyến nghị cải thiện',
@@ -542,22 +559,23 @@ export const GAME_DATA: Record<string, GameDataType> = {
         difficulty: 'Cơ bản',
         estimatedTime: '10 phút',
         hint: 'Sử dụng vòng lặp và ghép chuỗi từ cuối về đầu',
-        solution: 'def reverse_string(s):\n    result = ""\n    for i in range(len(s)-1, -1, -1):\n        result += s[i]\n    return result',
+        solution:
+          'def reverse_string(s):\n    result = ""\n    for i in range(len(s)-1, -1, -1):\n        result += s[i]\n    return result',
         testCases: [
-          { 
-            input: 'hello', 
+          {
+            input: 'hello',
             output: 'olleh',
-            description: 'Đảo ngược chuỗi "hello" thành "olleh"'
+            description: 'Đảo ngược chuỗi "hello" thành "olleh"',
           },
-          { 
-            input: 'python', 
+          {
+            input: 'python',
             output: 'nohtyp',
-            description: 'Đảo ngược chuỗi "python" thành "nohtyp"'
+            description: 'Đảo ngược chuỗi "python" thành "nohtyp"',
           },
-          { 
-            input: 'K2AI', 
+          {
+            input: 'K2AI',
             output: 'IA2K',
-            description: 'Đảo ngược chuỗi "K2AI" thành "IA2K"'
+            description: 'Đảo ngược chuỗi "K2AI" thành "IA2K"',
           },
         ],
         functionName: 'reverse_string',
@@ -565,8 +583,8 @@ export const GAME_DATA: Record<string, GameDataType> = {
           {
             name: 's',
             type: 'str',
-            description: 'Chuỗi cần đảo ngược'
-          }
+            description: 'Chuỗi cần đảo ngược',
+          },
         ],
         returnType: 'str',
         codeTemplate: 'def reverse_string(s):\n    # Viết code ở đây\n    pass',
@@ -574,14 +592,14 @@ export const GAME_DATA: Record<string, GameDataType> = {
           forbiddenKeywords: ['[::-1]', '.reverse()', 'reversed('],
           requiredKeywords: ['for', 'range'],
           maxLines: 10,
-          allowBuiltins: false
+          allowBuiltins: false,
         },
         explanation: 'Sử dụng vòng lặp để duyệt chuỗi từ cuối về đầu và ghép các ký tự vào chuỗi kết quả.',
         tips: [
           'Sử dụng range(len(s)-1, -1, -1) để duyệt ngược',
           'Khởi tạo chuỗi kết quả rỗng và ghép từng ký tự',
-          'Có thể dùng toán tử += để ghép chuỗi'
-        ]
+          'Có thể dùng toán tử += để ghép chuỗi',
+        ],
       },
       {
         title: 'Tìm số lớn nhất',
@@ -589,22 +607,23 @@ export const GAME_DATA: Record<string, GameDataType> = {
         difficulty: 'Cơ bản',
         estimatedTime: '8 phút',
         hint: 'Duyệt qua tất cả phần tử và so sánh với giá trị lớn nhất hiện tại',
-        solution: 'def find_max(numbers):\n    max_num = numbers[0]\n    for num in numbers:\n        if num > max_num:\n            max_num = num\n    return max_num',
+        solution:
+          'def find_max(numbers):\n    max_num = numbers[0]\n    for num in numbers:\n        if num > max_num:\n            max_num = num\n    return max_num',
         testCases: [
-          { 
-            input: [1, 5, 3, 9, 2], 
+          {
+            input: [1, 5, 3, 9, 2],
             output: 9,
-            description: 'Số lớn nhất trong [1, 5, 3, 9, 2] là 9'
+            description: 'Số lớn nhất trong [1, 5, 3, 9, 2] là 9',
           },
-          { 
-            input: [-1, -5, -2], 
+          {
+            input: [-1, -5, -2],
             output: -1,
-            description: 'Số lớn nhất trong [-1, -5, -2] là -1'
+            description: 'Số lớn nhất trong [-1, -5, -2] là -1',
           },
-          { 
-            input: [100, 200, 50], 
+          {
+            input: [100, 200, 50],
             output: 200,
-            description: 'Số lớn nhất trong [100, 200, 50] là 200'
+            description: 'Số lớn nhất trong [100, 200, 50] là 200',
           },
         ],
         functionName: 'find_max',
@@ -612,8 +631,8 @@ export const GAME_DATA: Record<string, GameDataType> = {
           {
             name: 'numbers',
             type: 'list',
-            description: 'Danh sách các số cần tìm max'
-          }
+            description: 'Danh sách các số cần tìm max',
+          },
         ],
         returnType: 'int | float',
         codeTemplate: 'def find_max(numbers):\n    # Viết code ở đây\n    pass',
@@ -621,14 +640,14 @@ export const GAME_DATA: Record<string, GameDataType> = {
           forbiddenKeywords: ['max(', 'sorted(', '.sort()'],
           requiredKeywords: ['for'],
           maxLines: 8,
-          allowBuiltins: false
+          allowBuiltins: false,
         },
         explanation: 'Khởi tạo biến max_num bằng phần tử đầu tiên, sau đó duyệt và so sánh với từng phần tử.',
         tips: [
           'Khởi tạo max_num = numbers[0]',
           'Duyệt qua từng số và so sánh với max_num',
-          'Cập nhật max_num nếu tìm thấy số lớn hơn'
-        ]
+          'Cập nhật max_num nếu tìm thấy số lớn hơn',
+        ],
       },
       {
         title: 'Kiểm tra số nguyên tố',
@@ -636,27 +655,28 @@ export const GAME_DATA: Record<string, GameDataType> = {
         difficulty: 'Trung bình',
         estimatedTime: '15 phút',
         hint: 'Chia thử từ 2 đến căn bậc 2 của số đó, nếu chia hết thì không phải số nguyên tố',
-        solution: 'def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True',
+        solution:
+          'def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True',
         testCases: [
-          { 
-            input: 17, 
+          {
+            input: 17,
             output: true,
-            description: '17 là số nguyên tố'
+            description: '17 là số nguyên tố',
           },
-          { 
-            input: 4, 
+          {
+            input: 4,
             output: false,
-            description: '4 không phải số nguyên tố (4 = 2 × 2)'
+            description: '4 không phải số nguyên tố (4 = 2 × 2)',
           },
-          { 
-            input: 2, 
+          {
+            input: 2,
             output: true,
-            description: '2 là số nguyên tố nhỏ nhất'
+            description: '2 là số nguyên tố nhỏ nhất',
           },
-          { 
-            input: 1, 
+          {
+            input: 1,
             output: false,
-            description: '1 không được coi là số nguyên tố'
+            description: '1 không được coi là số nguyên tố',
           },
         ],
         functionName: 'is_prime',
@@ -664,8 +684,8 @@ export const GAME_DATA: Record<string, GameDataType> = {
           {
             name: 'n',
             type: 'int',
-            description: 'Số cần kiểm tra'
-          }
+            description: 'Số cần kiểm tra',
+          },
         ],
         returnType: 'bool',
         codeTemplate: 'def is_prime(n):\n    # Viết code ở đây\n    pass',
@@ -673,14 +693,15 @@ export const GAME_DATA: Record<string, GameDataType> = {
           forbiddenKeywords: [],
           requiredKeywords: ['for', 'range'],
           maxLines: 12,
-          allowBuiltins: true
+          allowBuiltins: true,
         },
-        explanation: 'Số nguyên tố chỉ chia hết cho 1 và chính nó. Kiểm tra bằng cách chia thử các số từ 2 đến căn bậc 2.',
+        explanation:
+          'Số nguyên tố chỉ chia hết cho 1 và chính nó. Kiểm tra bằng cách chia thử các số từ 2 đến căn bậc 2.',
         tips: [
           'Số < 2 không phải số nguyên tố',
           'Chỉ cần kiểm tra đến int(n**0.5) + 1',
-          'Nếu tìm thấy ước số thì return False ngay'
-        ]
+          'Nếu tìm thấy ước số thì return False ngay',
+        ],
       },
       {
         title: 'Tính số Fibonacci',
@@ -688,27 +709,28 @@ export const GAME_DATA: Record<string, GameDataType> = {
         difficulty: 'Trung bình',
         estimatedTime: '12 phút',
         hint: 'Sử dụng công thức F(n) = F(n-1) + F(n-2), với F(0)=0, F(1)=1',
-        solution: 'def fibonacci(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b',
+        solution:
+          'def fibonacci(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b',
         testCases: [
-          { 
-            input: 5, 
+          {
+            input: 5,
             output: 5,
-            description: 'Fibonacci thứ 5: 0,1,1,2,3,5'
+            description: 'Fibonacci thứ 5: 0,1,1,2,3,5',
           },
-          { 
-            input: 10, 
+          {
+            input: 10,
             output: 55,
-            description: 'Fibonacci thứ 10: 55'
+            description: 'Fibonacci thứ 10: 55',
           },
-          { 
-            input: 0, 
+          {
+            input: 0,
             output: 0,
-            description: 'Fibonacci thứ 0: 0'
+            description: 'Fibonacci thứ 0: 0',
           },
-          { 
-            input: 1, 
+          {
+            input: 1,
             output: 1,
-            description: 'Fibonacci thứ 1: 1'
+            description: 'Fibonacci thứ 1: 1',
           },
         ],
         functionName: 'fibonacci',
@@ -716,8 +738,8 @@ export const GAME_DATA: Record<string, GameDataType> = {
           {
             name: 'n',
             type: 'int',
-            description: 'Vị trí trong dãy Fibonacci'
-          }
+            description: 'Vị trí trong dãy Fibonacci',
+          },
         ],
         returnType: 'int',
         codeTemplate: 'def fibonacci(n):\n    # Viết code ở đây\n    pass',
@@ -725,14 +747,14 @@ export const GAME_DATA: Record<string, GameDataType> = {
           forbiddenKeywords: [],
           requiredKeywords: [],
           maxLines: 10,
-          allowBuiltins: true
+          allowBuiltins: true,
         },
         explanation: 'Dãy Fibonacci: mỗi số bằng tổng hai số trước đó. Dùng iterative approach hiệu quả hơn recursive.',
         tips: [
           'Xử lý trường hợp base: n <= 1',
           'Dùng hai biến a,b để lưu hai số Fibonacci liền kề',
-          'Cập nhật a,b trong vòng lặp: a,b = b, a+b'
-        ]
+          'Cập nhật a,b trong vòng lặp: a,b = b, a+b',
+        ],
       },
       {
         title: 'Đếm từ trong chuỗi',
@@ -740,17 +762,18 @@ export const GAME_DATA: Record<string, GameDataType> = {
         difficulty: 'Nâng cao',
         estimatedTime: '18 phút',
         hint: 'Tách chuỗi thành các từ và sử dụng dictionary để đếm',
-        solution: 'def count_words(text):\n    words = text.lower().split()\n    word_count = {}\n    for word in words:\n        word_count[word] = word_count.get(word, 0) + 1\n    return word_count',
+        solution:
+          'def count_words(text):\n    words = text.lower().split()\n    word_count = {}\n    for word in words:\n        word_count[word] = word_count.get(word, 0) + 1\n    return word_count',
         testCases: [
-          { 
-            input: 'hello world hello', 
-            output: {'hello': 2, 'world': 1},
-            description: 'Đếm từ trong "hello world hello"'
+          {
+            input: 'hello world hello',
+            output: { hello: 2, world: 1 },
+            description: 'Đếm từ trong "hello world hello"',
           },
-          { 
-            input: 'Python is great Python', 
-            output: {'python': 2, 'is': 1, 'great': 1},
-            description: 'Đếm từ (case-insensitive)'
+          {
+            input: 'Python is great Python',
+            output: { python: 2, is: 1, great: 1 },
+            description: 'Đếm từ (case-insensitive)',
           },
         ],
         functionName: 'count_words',
@@ -758,8 +781,8 @@ export const GAME_DATA: Record<string, GameDataType> = {
           {
             name: 'text',
             type: 'str',
-            description: 'Chuỗi văn bản cần đếm từ'
-          }
+            description: 'Chuỗi văn bản cần đếm từ',
+          },
         ],
         returnType: 'dict',
         codeTemplate: 'def count_words(text):\n    # Viết code ở đây\n    pass',
@@ -767,22 +790,23 @@ export const GAME_DATA: Record<string, GameDataType> = {
           forbiddenKeywords: ['Counter', 'collections'],
           requiredKeywords: ['split', 'for'],
           maxLines: 15,
-          allowBuiltins: true
+          allowBuiltins: true,
         },
-        explanation: 'Sử dụng dictionary để lưu số lần xuất hiện của mỗi từ. Chuyển về lowercase để không phân biệt hoa thường.',
+        explanation:
+          'Sử dụng dictionary để lưu số lần xuất hiện của mỗi từ. Chuyển về lowercase để không phân biệt hoa thường.',
         tips: [
           'Dùng .lower() để chuyển về chữ thường',
           'Dùng .split() để tách thành các từ',
-          'Dùng dict.get(key, default) để lấy giá trị an toàn'
-        ]
-      }
+          'Dùng dict.get(key, default) để lấy giá trị an toàn',
+        ],
+      },
     ],
     codeVerificationConfig: {
       timeoutMs: 5000,
       maxOutputLength: 1000,
       allowedImports: ['math', 'random', 'string'],
-      securityLevel: 'strict'
-    }
+      securityLevel: 'strict',
+    },
   },
   'arduino-circuit-builder': {
     circuits: [
@@ -798,7 +822,7 @@ export const GAME_DATA: Record<string, GameDataType> = {
             image: '/images/components/arduino-uno.png',
             pins: ['5V', 'GND', 'D13', 'D12', 'D11', 'D10', 'D9', 'D8', 'D7', 'D6', 'D5', 'D4', 'D3', 'D2', 'TX', 'RX'],
             connections: [],
-            position: { x: 100, y: 100 }
+            position: { x: 100, y: 100 },
           },
           {
             id: 'led-red',
@@ -807,7 +831,7 @@ export const GAME_DATA: Record<string, GameDataType> = {
             image: '/images/components/led-red.png',
             pins: ['anode', 'cathode'],
             connections: [],
-            position: { x: 300, y: 200 }
+            position: { x: 300, y: 200 },
           },
           {
             id: 'resistor-220',
@@ -816,22 +840,22 @@ export const GAME_DATA: Record<string, GameDataType> = {
             image: '/images/components/resistor-220.png',
             pins: ['pin1', 'pin2'],
             connections: [],
-            position: { x: 400, y: 250 }
+            position: { x: 400, y: 250 },
           },
           {
             id: 'breadboard',
             name: 'Breadboard',
             type: 'connector',
             image: '/images/components/breadboard.png',
-            pins: Array.from({length: 60}, (_, i) => `hole-${i}`),
+            pins: Array.from({ length: 60 }, (_, i) => `hole-${i}`),
             connections: [],
-            position: { x: 200, y: 300 }
-          }
+            position: { x: 200, y: 300 },
+          },
         ],
         targetConnections: [
           { from: 'arduino-uno:D13', to: 'led-red:anode', wire: 'red' },
           { from: 'led-red:cathode', to: 'resistor-220:pin1', wire: 'black' },
-          { from: 'resistor-220:pin2', to: 'arduino-uno:GND', wire: 'black' }
+          { from: 'resistor-220:pin2', to: 'arduino-uno:GND', wire: 'black' },
         ],
         code: `void setup() {
   pinMode(13, OUTPUT);
@@ -843,17 +867,18 @@ void loop() {
   digitalWrite(13, LOW);   // Tắt LED
   delay(1000);             // Chờ 1 giây
 }`,
-        explanation: 'Mạch cơ bản làm LED nhấp nháy mỗi giây. Pin 13 của Arduino điều khiển LED, điện trở 220Ω bảo vệ LED khỏi bị cháy.',
+        explanation:
+          'Mạch cơ bản làm LED nhấp nháy mỗi giây. Pin 13 của Arduino điều khiển LED, điện trở 220Ω bảo vệ LED khỏi bị cháy.',
         tips: [
           'LED có cực tính: chân dài là anode (+), chân ngắn là cathode (-)',
           'Điện trở bảo vệ LED, không nối trực tiếp LED vào Arduino',
-          'Pin 13 có LED built-in, dễ kiểm tra khi lập trình'
+          'Pin 13 có LED built-in, dễ kiểm tra khi lập trình',
         ],
         troubleshooting: [
           'LED không sáng: Kiểm tra cực tính LED và kết nối',
           'LED sáng yếu: Kiểm tra giá trị điện trở',
-          'Không nhấp nháy: Kiểm tra code và kết nối pin 13'
-        ]
+          'Không nhấp nháy: Kiểm tra code và kết nối pin 13',
+        ],
       },
       {
         name: 'Đọc cảm biến nhiệt độ',
@@ -867,7 +892,7 @@ void loop() {
             image: '/images/components/arduino-uno.png',
             pins: ['5V', 'GND', 'D2', 'D3', 'D4', 'A0', 'A1'],
             connections: [],
-            position: { x: 100, y: 100 }
+            position: { x: 100, y: 100 },
           },
           {
             id: 'dht11',
@@ -876,22 +901,22 @@ void loop() {
             image: '/images/components/dht11.png',
             pins: ['VCC', 'DATA', 'GND'],
             connections: [],
-            position: { x: 350, y: 150 }
+            position: { x: 350, y: 150 },
           },
           {
             id: 'breadboard',
             name: 'Breadboard',
             type: 'connector',
             image: '/images/components/breadboard.png',
-            pins: Array.from({length: 60}, (_, i) => `hole-${i}`),
+            pins: Array.from({ length: 60 }, (_, i) => `hole-${i}`),
             connections: [],
-            position: { x: 200, y: 300 }
-          }
+            position: { x: 200, y: 300 },
+          },
         ],
         targetConnections: [
           { from: 'dht11:VCC', to: 'arduino-uno:5V', wire: 'red' },
           { from: 'dht11:GND', to: 'arduino-uno:GND', wire: 'black' },
-          { from: 'dht11:DATA', to: 'arduino-uno:D2', wire: 'yellow' }
+          { from: 'dht11:DATA', to: 'arduino-uno:D2', wire: 'yellow' },
         ],
         code: `#include <DHT.h>
 
@@ -924,17 +949,18 @@ void loop() {
   
   delay(2000);
 }`,
-        explanation: 'Đọc nhiệt độ và độ ẩm từ cảm biến DHT11, hiển thị qua Serial Monitor. Cảm biến giao tiếp digital với Arduino.',
+        explanation:
+          'Đọc nhiệt độ và độ ẩm từ cảm biến DHT11, hiển thị qua Serial Monitor. Cảm biến giao tiếp digital với Arduino.',
         tips: [
           'Cần cài thư viện DHT sensor library từ Library Manager',
           'DHT11 có độ chính xác ±2°C, phù hợp cho học tập',
-          'Đọc dữ liệu mỗi 2 giây để cảm biến hoạt động ổn định'
+          'Đọc dữ liệu mỗi 2 giây để cảm biến hoạt động ổn định',
         ],
         troubleshooting: [
           'Hiển thị "nan": Kiểm tra kết nối và nguồn điện',
           'Dữ liệu không đúng: Kiểm tra pin DATA và thư viện',
-          'Không có dữ liệu: Kiểm tra Serial Monitor baud rate 9600'
-        ]
+          'Không có dữ liệu: Kiểm tra Serial Monitor baud rate 9600',
+        ],
       },
       {
         name: 'Servo Motor điều khiển',
@@ -948,7 +974,7 @@ void loop() {
             image: '/images/components/arduino-uno.png',
             pins: ['5V', 'GND', 'D9', 'A0'],
             connections: [],
-            position: { x: 100, y: 100 }
+            position: { x: 100, y: 100 },
           },
           {
             id: 'servo-sg90',
@@ -957,7 +983,7 @@ void loop() {
             image: '/images/components/servo-sg90.png',
             pins: ['VCC', 'GND', 'SIGNAL'],
             connections: [],
-            position: { x: 350, y: 120 }
+            position: { x: 350, y: 120 },
           },
           {
             id: 'potentiometer',
@@ -966,8 +992,8 @@ void loop() {
             image: '/images/components/potentiometer.png',
             pins: ['pin1', 'wiper', 'pin2'],
             connections: [],
-            position: { x: 300, y: 280 }
-          }
+            position: { x: 300, y: 280 },
+          },
         ],
         targetConnections: [
           { from: 'servo-sg90:VCC', to: 'arduino-uno:5V', wire: 'red' },
@@ -975,7 +1001,7 @@ void loop() {
           { from: 'servo-sg90:SIGNAL', to: 'arduino-uno:D9', wire: 'orange' },
           { from: 'potentiometer:pin1', to: 'arduino-uno:5V', wire: 'red' },
           { from: 'potentiometer:pin2', to: 'arduino-uno:GND', wire: 'black' },
-          { from: 'potentiometer:wiper', to: 'arduino-uno:A0', wire: 'blue' }
+          { from: 'potentiometer:wiper', to: 'arduino-uno:A0', wire: 'blue' },
         ],
         code: `#include <Servo.h>
 
@@ -999,17 +1025,18 @@ void loop() {
   
   delay(15);
 }`,
-        explanation: 'Điều khiển góc quay servo motor (0-180°) bằng potentiometer. Hàm map() chuyển đổi giá trị analog (0-1023) thành góc (0-180°).',
+        explanation:
+          'Điều khiển góc quay servo motor (0-180°) bằng potentiometer. Hàm map() chuyển đổi giá trị analog (0-1023) thành góc (0-180°).',
         tips: [
           'Servo SG90 hoạt động với tín hiệu PWM từ pin có dấu ~ (PWM)',
           'Potentiometer tạo ra điện áp thay đổi khi xoay núm',
-          'Hàm map() rất hữu ích để chuyển đổi giá trị giữa các khoảng'
+          'Hàm map() rất hữu ích để chuyển đổi giá trị giữa các khoảng',
         ],
         troubleshooting: [
           'Servo không quay: Kiểm tra nguồn 5V và pin tín hiệu',
           'Quay giật: Kiểm tra delay và kết nối potentiometer',
-          'Không đúng góc: Kiểm tra calibration và hàm map()'
-        ]
+          'Không đúng góc: Kiểm tra calibration và hàm map()',
+        ],
       },
       {
         name: 'Hệ thống báo động',
@@ -1023,7 +1050,7 @@ void loop() {
             image: '/images/components/arduino-uno.png',
             pins: ['5V', 'GND', 'D2', 'D8', 'D12', 'A0'],
             connections: [],
-            position: { x: 100, y: 100 }
+            position: { x: 100, y: 100 },
           },
           {
             id: 'ultrasonic-hc-sr04',
@@ -1032,7 +1059,7 @@ void loop() {
             image: '/images/components/hc-sr04.png',
             pins: ['VCC', 'TRIG', 'ECHO', 'GND'],
             connections: [],
-            position: { x: 350, y: 150 }
+            position: { x: 350, y: 150 },
           },
           {
             id: 'buzzer',
@@ -1041,7 +1068,7 @@ void loop() {
             image: '/images/components/buzzer.png',
             pins: ['positive', 'negative'],
             connections: [],
-            position: { x: 300, y: 250 }
+            position: { x: 300, y: 250 },
           },
           {
             id: 'led-red',
@@ -1050,8 +1077,8 @@ void loop() {
             image: '/images/components/led-red.png',
             pins: ['anode', 'cathode'],
             connections: [],
-            position: { x: 400, y: 200 }
-          }
+            position: { x: 400, y: 200 },
+          },
         ],
         targetConnections: [
           { from: 'ultrasonic-hc-sr04:VCC', to: 'arduino-uno:5V', wire: 'red' },
@@ -1061,7 +1088,7 @@ void loop() {
           { from: 'buzzer:positive', to: 'arduino-uno:D12', wire: 'yellow' },
           { from: 'buzzer:negative', to: 'arduino-uno:GND', wire: 'black' },
           { from: 'led-red:anode', to: 'arduino-uno:D13', wire: 'red' },
-          { from: 'led-red:cathode', to: 'arduino-uno:GND', wire: 'black' }
+          { from: 'led-red:cathode', to: 'arduino-uno:GND', wire: 'black' },
         ],
         code: `#define TRIG_PIN 8
 #define ECHO_PIN 2
@@ -1108,32 +1135,44 @@ void loop() {
   
   delay(100);
 }`,
-        explanation: 'Hệ thống báo động sử dụng cảm biến siêu âm để phát hiện vật thể. Khi có vật thể trong phạm vi 20cm, LED nhấp nháy và còi kêu.',
+        explanation:
+          'Hệ thống báo động sử dụng cảm biến siêu âm để phát hiện vật thể. Khi có vật thể trong phạm vi 20cm, LED nhấp nháy và còi kêu.',
         tips: [
           'Cảm biến HC-SR04 đo khoảng cách bằng sóng siêu âm',
           'Tính khoảng cách: distance = (duration × 0.034) / 2',
-          'Có thể điều chỉnh ngưỡng cảnh báo trong code'
+          'Có thể điều chỉnh ngưỡng cảnh báo trong code',
         ],
         troubleshooting: [
           'Đọc khoảng cách không chính xác: Kiểm tra TRIG và ECHO pins',
           'Còi không kêu: Kiểm tra nguồn và pin buzzer',
-          'LED không sáng: Kiểm tra kết nối LED và GND'
-        ]
-      }
+          'LED không sáng: Kiểm tra kết nối LED và GND',
+        ],
+      },
     ],
     dragDropConfig: {
       componentLibrary: [
-        'Arduino Uno', 'LED Đỏ', 'LED Xanh', 'LED Vàng',
-        'Điện trở 220Ω', 'Điện trở 1kΩ', 'Điện trở 10kΩ',
-        'Breadboard', 'Cảm biến DHT11', 'Servo SG90',
-        'Potentiometer', 'Cảm biến HC-SR04', 'Còi báo động',
-        'Nút nhấn', 'Tụ điện', 'Dây nối'
+        'Arduino Uno',
+        'LED Đỏ',
+        'LED Xanh',
+        'LED Vàng',
+        'Điện trở 220Ω',
+        'Điện trở 1kΩ',
+        'Điện trở 10kΩ',
+        'Breadboard',
+        'Cảm biến DHT11',
+        'Servo SG90',
+        'Potentiometer',
+        'Cảm biến HC-SR04',
+        'Còi báo động',
+        'Nút nhấn',
+        'Tụ điện',
+        'Dây nối',
       ],
       wireColors: ['red', 'black', 'blue', 'green', 'yellow', 'orange', 'purple', 'white'],
       snapDistance: 20,
       gridSize: 10,
-      zoomRange: [0.5, 2.0]
-    }
+      zoomRange: [0.5, 2.0],
+    },
   },
   'stem-experiment-lab': {
     experiments: [
@@ -1148,8 +1187,10 @@ void loop() {
           'Đo khoảng cách nước phun được từ mỗi lỗ',
           'Ghi chép kết quả và so sánh',
         ],
-        observation: 'Tia nước ở lỗ thấp nhất phun xa nhất (khoảng 30-40cm), tia nước ở lỗ cao nhất phun gần nhất (khoảng 10-15cm)',
-        explanation: 'Áp suất nước tăng theo độ sâu do trọng lượng cột nước bên trên. Công thức: P = ρgh (ρ: khối lượng riêng, g: gia tốc trọng trường, h: độ sâu)',
+        observation:
+          'Tia nước ở lỗ thấp nhất phun xa nhất (khoảng 30-40cm), tia nước ở lỗ cao nhất phun gần nhất (khoảng 10-15cm)',
+        explanation:
+          'Áp suất nước tăng theo độ sâu do trọng lượng cột nước bên trên. Công thức: P = ρgh (ρ: khối lượng riêng, g: gia tốc trọng trường, h: độ sâu)',
         videoUrl: 'https://www.youtube.com/watch?v=w_3ZWZ4aLlk', // Water pressure physics demo
         difficulty: 'Cơ bản',
         estimatedTime: '15 phút',
@@ -1160,19 +1201,21 @@ void loop() {
         ],
         quiz: {
           question: 'Tại sao tia nước ở lỗ thấp phun xa hơn?',
-          options: [
-            'Lỗ to hơn',
-            'Áp suất cao hơn do độ sâu',
-            'Nước trong hơn',
-            'Ngẫu nhiên',
-          ],
+          options: ['Lỗ to hơn', 'Áp suất cao hơn do độ sâu', 'Nước trong hơn', 'Ngẫu nhiên'],
           correct: 1,
-          explanation: 'Áp suất chất lỏng tăng theo độ sâu, nên lỗ càng sâu thì áp suất càng lớn, làm nước phun xa hơn.',
+          explanation:
+            'Áp suất chất lỏng tăng theo độ sâu, nên lỗ càng sâu thì áp suất càng lớn, làm nước phun xa hơn.',
         },
       },
       {
         name: 'Thí nghiệm về điện từ - Nam châm điện',
-        materials: ['Pin AA (1.5V)', 'Dây đồng có bọc cách điện (1m)', 'Đinh sắt lớn', 'Kẹp giấy nhỏ (10-15 cái)', 'Băng keo'],
+        materials: [
+          'Pin AA (1.5V)',
+          'Dây đồng có bọc cách điện (1m)',
+          'Đinh sắt lớn',
+          'Kẹp giấy nhỏ (10-15 cái)',
+          'Băng keo',
+        ],
         procedure: [
           'Quấn dây đồng quanh đinh sắt 30-40 vòng, để lại 2 đầu dây dài khoảng 10cm',
           'Cố định cuộn dây bằng băng keo',
@@ -1183,7 +1226,8 @@ void loop() {
           'Ngắt kết nối pin và thử lại',
         ],
         observation: 'Khi có điện, đinh sắt hút được 8-12 kẹp giấy. Khi ngắt điện, không hút được kẹp giấy nào',
-        explanation: 'Dòng điện chạy qua cuộn dây tạo ra từ trường xung quanh, biến đinh sắt thành nam châm điện. Khi ngắt điện, từ trường biến mất.',
+        explanation:
+          'Dòng điện chạy qua cuộn dây tạo ra từ trường xung quanh, biến đinh sắt thành nam châm điện. Khi ngắt điện, từ trường biến mất.',
         videoUrl: 'https://www.youtube.com/watch?v=liZX2UgzI1U', // Electromagnet physics demo
         difficulty: 'Trung bình',
         estimatedTime: '20 phút',
@@ -1212,7 +1256,8 @@ void loop() {
           'Ghi chép và so sánh kết quả',
         ],
         observation: 'Góc phản xạ luôn bằng góc tới trong tất cả các trường hợp: 30°=30°, 45°=45°, 60°=60°',
-        explanation: 'Định luật phản xạ ánh sáng: góc tới bằng góc phản xạ, và tia tới, tia phản xạ cùng nằm trong một mặt phẳng với pháp tuyến.',
+        explanation:
+          'Định luật phản xạ ánh sáng: góc tới bằng góc phản xạ, và tia tới, tia phản xạ cùng nằm trong một mặt phẳng với pháp tuyến.',
         videoUrl: 'https://www.youtube.com/watch?v=y9c62n6o6zM', // Light reflection physics demo
         difficulty: 'Cơ bản',
         estimatedTime: '25 phút',
@@ -1225,7 +1270,8 @@ void loop() {
           question: 'Nếu góc tới là 45°, góc phản xạ sẽ là bao nhiêu?',
           options: ['30°', '45°', '60°', '90°'],
           correct: 1,
-          explanation: 'Theo định luật phản xạ, góc phản xạ luôn bằng góc tới, vì vậy nếu góc tới là 45° thì góc phản xạ cũng là 45°.',
+          explanation:
+            'Theo định luật phản xạ, góc phản xạ luôn bằng góc tới, vì vậy nếu góc tới là 45° thì góc phản xạ cũng là 45°.',
         },
       },
     ],
@@ -1260,15 +1306,7 @@ void loop() {
         start: [1, 1],
         end: [5, 1],
         commands: ['MOVE_UP', 'MOVE_DOWN', 'MOVE_LEFT', 'MOVE_RIGHT'],
-        solution: [
-          'MOVE_DOWN',
-          'MOVE_DOWN',
-          'MOVE_RIGHT',
-          'MOVE_RIGHT',
-          'MOVE_DOWN',
-          'MOVE_LEFT',
-          'MOVE_LEFT',
-        ],
+        solution: ['MOVE_DOWN', 'MOVE_DOWN', 'MOVE_RIGHT', 'MOVE_RIGHT', 'MOVE_DOWN', 'MOVE_LEFT', 'MOVE_LEFT'],
       },
     ],
   },
@@ -1289,8 +1327,8 @@ void loop() {
               size: 100,
               direction: 90,
               visible: true,
-              draggable: true
-            }
+              draggable: true,
+            },
           },
           {
             id: 'forest-bg',
@@ -1302,9 +1340,9 @@ void loop() {
               size: 100,
               direction: 0,
               visible: true,
-              draggable: false
-            }
-          }
+              draggable: false,
+            },
+          },
         ],
         availableBlocks: [
           {
@@ -1315,9 +1353,9 @@ void loop() {
                 name: 'when green flag clicked',
                 code: 'when flag clicked',
                 shape: 'hat',
-                color: '#FFAB19'
-              }
-            ]
+                color: '#FFAB19',
+              },
+            ],
           },
           {
             category: 'control',
@@ -1327,9 +1365,9 @@ void loop() {
                 name: 'forever',
                 code: 'forever',
                 shape: 'stack',
-                color: '#FFAB19'
-              }
-            ]
+                color: '#FFAB19',
+              },
+            ],
           },
           {
             category: 'motion',
@@ -1340,17 +1378,17 @@ void loop() {
                 code: 'move {} steps',
                 inputs: [{ type: 'number', placeholder: '10' }],
                 shape: 'stack',
-                color: '#4C97FF'
+                color: '#4C97FF',
               },
               {
                 id: 'bounce-edge',
                 name: 'if on edge, bounce',
                 code: 'if on edge, bounce',
                 shape: 'stack',
-                color: '#4C97FF'
-              }
-            ]
-          }
+                color: '#4C97FF',
+              },
+            ],
+          },
         ],
         targetScript: [
           {
@@ -1361,34 +1399,31 @@ void loop() {
                 children: [
                   {
                     blockId: 'forever',
-                    children: [
-                      { blockId: 'move-steps', inputs: [10] },
-                      { blockId: 'bounce-edge' }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
+                    children: [{ blockId: 'move-steps', inputs: [10] }, { blockId: 'bounce-edge' }],
+                  },
+                ],
+              },
+            ],
+          },
         ],
         challenge: 'Tạo hoạt hình mèo chạy qua lại màn hình bằng cách kéo thả các khối lệnh',
         steps: [
           'Kéo khối "when green flag clicked" vào vùng script',
           'Kéo khối "forever" nối vào bên dưới',
           'Trong khối forever, kéo "move 10 steps"',
-          'Kéo tiếp "if on edge, bounce" để mèo không chạy ra ngoài màn hình'
+          'Kéo tiếp "if on edge, bounce" để mèo không chạy ra ngoài màn hình',
         ],
         tips: [
           'Các khối phải nối chặt để tạo thành script hoàn chỉnh',
           'Khối "forever" sẽ lặp lại mãi mãi',
-          'Thử thay đổi số bước di chuyển để xem hiệu ứng'
+          'Thử thay đổi số bước di chuyển để xem hiệu ứng',
         ],
         expectedOutput: 'Mèo chạy qua lại màn hình liên tục khi nhấn cờ xanh',
         validationRules: {
           requiredBlocks: ['when-flag-clicked', 'forever', 'move-steps', 'bounce-edge'],
           minimumBlocks: 4,
-          mustUseSprites: ['cat-sprite']
-        }
+          mustUseSprites: ['cat-sprite'],
+        },
       },
       {
         name: 'Trò chơi đuổi bắt',
@@ -1405,8 +1440,8 @@ void loop() {
               size: 80,
               direction: 90,
               visible: true,
-              draggable: true
-            }
+              draggable: true,
+            },
           },
           {
             id: 'mouse-sprite',
@@ -1418,8 +1453,8 @@ void loop() {
               size: 60,
               direction: 90,
               visible: true,
-              draggable: true
-            }
+              draggable: true,
+            },
           },
           {
             id: 'cheese-sprite',
@@ -1431,9 +1466,9 @@ void loop() {
               size: 50,
               direction: 0,
               visible: true,
-              draggable: true
-            }
-          }
+              draggable: true,
+            },
+          },
         ],
         availableBlocks: [
           {
@@ -1444,9 +1479,9 @@ void loop() {
                 name: 'when green flag clicked',
                 code: 'when flag clicked',
                 shape: 'hat',
-                color: '#FFAB19'
-              }
-            ]
+                color: '#FFAB19',
+              },
+            ],
           },
           {
             category: 'motion',
@@ -1457,7 +1492,7 @@ void loop() {
                 code: 'point towards {}',
                 inputs: [{ type: 'dropdown', options: ['mouse-sprite', 'cheese-sprite'] }],
                 shape: 'stack',
-                color: '#4C97FF'
+                color: '#4C97FF',
               },
               {
                 id: 'move-steps',
@@ -1465,9 +1500,9 @@ void loop() {
                 code: 'move {} steps',
                 inputs: [{ type: 'number', placeholder: '5' }],
                 shape: 'stack',
-                color: '#4C97FF'
-              }
-            ]
+                color: '#4C97FF',
+              },
+            ],
           },
           {
             category: 'control',
@@ -1477,7 +1512,7 @@ void loop() {
                 name: 'forever',
                 code: 'forever',
                 shape: 'stack',
-                color: '#FFAB19'
+                color: '#FFAB19',
               },
               {
                 id: 'if-then',
@@ -1485,9 +1520,9 @@ void loop() {
                 code: 'if {} then',
                 inputs: [{ type: 'boolean_input' }],
                 shape: 'stack',
-                color: '#FFAB19'
-              }
-            ]
+                color: '#FFAB19',
+              },
+            ],
           },
           {
             category: 'sensing',
@@ -1498,9 +1533,9 @@ void loop() {
                 code: 'touching {}?',
                 inputs: [{ type: 'dropdown', options: ['cheese-sprite'] }],
                 shape: 'boolean',
-                color: '#5CB1D6'
-              }
-            ]
+                color: '#5CB1D6',
+              },
+            ],
           },
           {
             category: 'variables',
@@ -1511,13 +1546,13 @@ void loop() {
                 code: 'change {} by {}',
                 inputs: [
                   { type: 'dropdown', options: ['score'] },
-                  { type: 'number', placeholder: '1' }
+                  { type: 'number', placeholder: '1' },
                 ],
                 shape: 'stack',
-                color: '#FF8C1A'
-              }
-            ]
-          }
+                color: '#FF8C1A',
+              },
+            ],
+          },
         ],
         targetScript: [
           {
@@ -1534,83 +1569,113 @@ void loop() {
                       {
                         blockId: 'if-then',
                         inputs: [{ blockId: 'touching-sprite', inputs: ['cheese-sprite'] }],
-                        children: [
-                          { blockId: 'change-score', inputs: ['score', 1] }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
+                        children: [{ blockId: 'change-score', inputs: ['score', 1] }],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
         ],
         challenge: 'Tạo game mèo đuổi chuột để ăn phô mai và ghi điểm',
         steps: [
           'Lập trình mèo: when flag clicked -> forever',
           'Trong forever: point towards mouse, move 5 steps',
           'Thêm điều kiện: if touching cheese then change score by 1',
-          'Chạy thử và điều chỉnh tốc độ di chuyển'
+          'Chạy thử và điều chỉnh tốc độ di chuyển',
         ],
         tips: [
           'Mèo sẽ tự động đuổi theo chuột',
           'Khi mèo chạm phô mai sẽ được điểm',
-          'Có thể thêm âm thanh khi ăn phô mai'
+          'Có thể thêm âm thanh khi ăn phô mai',
         ],
         expectedOutput: 'Mèo đuổi theo chuột, ghi điểm khi chạm phô mai',
         validationRules: {
-          requiredBlocks: ['when-flag-clicked', 'forever', 'point-towards', 'move-steps', 'if-then', 'touching-sprite', 'change-score'],
+          requiredBlocks: [
+            'when-flag-clicked',
+            'forever',
+            'point-towards',
+            'move-steps',
+            'if-then',
+            'touching-sprite',
+            'change-score',
+          ],
           minimumBlocks: 7,
-          mustUseSprites: ['cat-sprite', 'mouse-sprite', 'cheese-sprite']
-        }
-      }
+          mustUseSprites: ['cat-sprite', 'mouse-sprite', 'cheese-sprite'],
+        },
+      },
     ],
     blockLibrary: {
       motion: [
         { id: 'move-steps', name: 'move 10 steps', code: 'move {} steps', shape: 'stack', color: '#4C97FF' },
-        { id: 'turn-right', name: 'turn right 15 degrees', code: 'turn right {} degrees', shape: 'stack', color: '#4C97FF' },
-        { id: 'turn-left', name: 'turn left 15 degrees', code: 'turn left {} degrees', shape: 'stack', color: '#4C97FF' },
+        {
+          id: 'turn-right',
+          name: 'turn right 15 degrees',
+          code: 'turn right {} degrees',
+          shape: 'stack',
+          color: '#4C97FF',
+        },
+        {
+          id: 'turn-left',
+          name: 'turn left 15 degrees',
+          code: 'turn left {} degrees',
+          shape: 'stack',
+          color: '#4C97FF',
+        },
         { id: 'point-towards', name: 'point towards', code: 'point towards {}', shape: 'stack', color: '#4C97FF' },
-        { id: 'bounce-edge', name: 'if on edge, bounce', code: 'if on edge, bounce', shape: 'stack', color: '#4C97FF' }
+        { id: 'bounce-edge', name: 'if on edge, bounce', code: 'if on edge, bounce', shape: 'stack', color: '#4C97FF' },
       ],
       looks: [
         { id: 'say-hello', name: 'say Hello!', code: 'say {} for {} seconds', shape: 'stack', color: '#9966FF' },
         { id: 'change-costume', name: 'next costume', code: 'next costume', shape: 'stack', color: '#9966FF' },
         { id: 'change-size', name: 'change size by 10', code: 'change size by {}', shape: 'stack', color: '#9966FF' },
         { id: 'show', name: 'show', code: 'show', shape: 'stack', color: '#9966FF' },
-        { id: 'hide', name: 'hide', code: 'hide', shape: 'stack', color: '#9966FF' }
+        { id: 'hide', name: 'hide', code: 'hide', shape: 'stack', color: '#9966FF' },
       ],
       control: [
-        { id: 'when-flag-clicked', name: 'when green flag clicked', code: 'when flag clicked', shape: 'hat', color: '#FFAB19' },
+        {
+          id: 'when-flag-clicked',
+          name: 'when green flag clicked',
+          code: 'when flag clicked',
+          shape: 'hat',
+          color: '#FFAB19',
+        },
         { id: 'forever', name: 'forever', code: 'forever', shape: 'stack', color: '#FFAB19' },
         { id: 'repeat', name: 'repeat 10', code: 'repeat {}', shape: 'stack', color: '#FFAB19' },
         { id: 'if-then', name: 'if then', code: 'if {} then', shape: 'stack', color: '#FFAB19' },
-        { id: 'wait', name: 'wait 1 seconds', code: 'wait {} seconds', shape: 'stack', color: '#FFAB19' }
+        { id: 'wait', name: 'wait 1 seconds', code: 'wait {} seconds', shape: 'stack', color: '#FFAB19' },
       ],
       sensing: [
         { id: 'touching-sprite', name: 'touching sprite?', code: 'touching {}?', shape: 'boolean', color: '#5CB1D6' },
         { id: 'key-pressed', name: 'key space pressed?', code: 'key {} pressed?', shape: 'boolean', color: '#5CB1D6' },
         { id: 'mouse-x', name: 'mouse x', code: 'mouse x', shape: 'reporter', color: '#5CB1D6' },
-        { id: 'mouse-y', name: 'mouse y', code: 'mouse y', shape: 'reporter', color: '#5CB1D6' }
+        { id: 'mouse-y', name: 'mouse y', code: 'mouse y', shape: 'reporter', color: '#5CB1D6' },
       ],
       operators: [
         { id: 'add', name: '+ ', code: '{} + {}', shape: 'reporter', color: '#59C059' },
         { id: 'subtract', name: '- ', code: '{} - {}', shape: 'reporter', color: '#59C059' },
         { id: 'multiply', name: '* ', code: '{} * {}', shape: 'reporter', color: '#59C059' },
-        { id: 'divide', name: '/ ', code: '{} / {}', shape: 'reporter', color: '#59C059' }
+        { id: 'divide', name: '/ ', code: '{} / {}', shape: 'reporter', color: '#59C059' },
       ],
       variables: [
         { id: 'set-variable', name: 'set score to 0', code: 'set {} to {}', shape: 'stack', color: '#FF8C1A' },
         { id: 'change-variable', name: 'change score by 1', code: 'change {} by {}', shape: 'stack', color: '#FF8C1A' },
-        { id: 'show-variable', name: 'show variable score', code: 'show variable {}', shape: 'stack', color: '#FF8C1A' }
-      ]
+        {
+          id: 'show-variable',
+          name: 'show variable score',
+          code: 'show variable {}',
+          shape: 'stack',
+          color: '#FF8C1A',
+        },
+      ],
     },
     dragDropConfig: {
       snapDistance: 15,
       blockSpacing: 5,
       canvasSize: { width: 800, height: 600 },
-      spriteLibrary: ['Cat', 'Dog', 'Mouse', 'Bird', 'Fish', 'Ball', 'Apple', 'Cheese', 'Star']
-    }
+      spriteLibrary: ['Cat', 'Dog', 'Mouse', 'Bird', 'Fish', 'Ball', 'Apple', 'Cheese', 'Star'],
+    },
   },
   'ai-ethics-dilemma': {
     scenarios: [
@@ -1622,14 +1687,9 @@ void loop() {
           'Để người dùng tự quyết định trước',
           'Chọn ngẫu nhiên để công bằng',
         ],
-        considerations: [
-          'Trách nhiệm pháp lý',
-          'Giá trị sống người',
-          'Quyền lựa chọn',
-        ],
+        considerations: ['Trách nhiệm pháp lý', 'Giá trị sống người', 'Quyền lựa chọn'],
         correctApproach: 1,
-        explanation:
-          'Việc cứu nhiều người nhất là nguyên tắc utilitarian được nhiều nhà đạo đức học ủng hộ.',
+        explanation: 'Việc cứu nhiều người nhất là nguyên tắc utilitarian được nhiều nhà đạo đức học ủng hộ.',
       },
       {
         dilemma: 'AI nhận diện khuôn mặt có nên được sử dụng ở trường học?',
@@ -1641,8 +1701,7 @@ void loop() {
         ],
         considerations: ['An ninh học sinh', 'Quyền riêng tư', 'Sự đồng ý'],
         correctApproach: 2,
-        explanation:
-          'Cân bằng giữa an ninh và quyền riêng tư, chỉ sử dụng khi thực sự cần thiết.',
+        explanation: 'Cân bằng giữa an ninh và quyền riêng tư, chỉ sử dụng khi thực sự cần thiết.',
       },
     ],
   },
@@ -1661,8 +1720,7 @@ void loop() {
             'Tốc độ nhanh hơn',
           ],
           correct: 1,
-          explanation:
-            'Qubit có thể ở trạng thái chồng chất của cả 0 và 1 đồng thời.',
+          explanation: 'Qubit có thể ở trạng thái chồng chất của cả 0 và 1 đồng thời.',
         },
       },
       {
@@ -1678,8 +1736,7 @@ void loop() {
             'Không thể đo được hai qubit',
           ],
           correct: 1,
-          explanation:
-            'Khi đo một qubit entangled, trạng thái của qubit kia thay đổi ngay lập tức.',
+          explanation: 'Khi đo một qubit entangled, trạng thái của qubit kia thay đổi ngay lập tức.',
         },
       },
     ],
@@ -1727,31 +1784,18 @@ void loop() {
       {
         name: 'Tăng CO2 10%',
         parameters: { co2: 410, temperature: 1.2, seaLevel: 20 },
-        effects: [
-          'Tăng nhiệt độ 0.3°C',
-          'Băng tan nhanh hơn',
-          'Thời tiết cực đoan',
-        ],
+        effects: ['Tăng nhiệt độ 0.3°C', 'Băng tan nhanh hơn', 'Thời tiết cực đoan'],
         solutions: ['Năng lượng tái tạo', 'Trồng rừng', 'Giảm phát thải'],
         quiz: {
           question: 'Tác động chính của việc tăng CO2 là gì?',
-          options: [
-            'Giảm nhiệt độ',
-            'Tăng nhiệt độ',
-            'Không thay đổi',
-            'Giảm mực nước biển',
-          ],
+          options: ['Giảm nhiệt độ', 'Tăng nhiệt độ', 'Không thay đổi', 'Giảm mực nước biển'],
           correct: 1,
         },
       },
       {
         name: 'Phá rừng Amazon 50%',
         parameters: { co2: 450, temperature: 2.0, seaLevel: 30 },
-        effects: [
-          'Mất đa dạng sinh học',
-          'Tăng CO2',
-          'Thay đổi khí hậu khu vực',
-        ],
+        effects: ['Mất đa dạng sinh học', 'Tăng CO2', 'Thay đổi khí hậu khu vực'],
         solutions: ['Bảo vệ rừng', 'Trồng rừng mới', 'Phát triển bền vững'],
         quiz: {
           question: 'Rừng Amazon quan trọng vì lý do gì?',
@@ -1773,11 +1817,7 @@ void loop() {
       {
         type: 'Ransomware',
         indicators: ['File encryption', 'Ransom message', 'System slowdown'],
-        defense: [
-          'Regular backups',
-          'Updated antivirus',
-          'Network segmentation',
-        ],
+        defense: ['Regular backups', 'Updated antivirus', 'Network segmentation'],
         severity: 'Nghiêm trọng',
         description: 'Mã độc mã hóa dữ liệu để đòi tiền chuộc',
       },
@@ -1793,12 +1833,7 @@ void loop() {
       {
         scenario: 'Công ty nhận được email nghi ngờ với file đính kèm .exe',
         threats: ['Malware', 'Phishing', 'Social Engineering'],
-        solutions: [
-          'Không mở file',
-          'Kiểm tra với IT',
-          'Scan virus',
-          'Báo cáo sự cố',
-        ],
+        solutions: ['Không mở file', 'Kiểm tra với IT', 'Scan virus', 'Báo cáo sự cố'],
         correct: [0, 1, 2, 3],
       },
     ],
@@ -1826,22 +1861,15 @@ void loop() {
           { year: 2024, temp: 15 },
           { year: 2024, temp: 10 },
         ],
-        description:
-          'Tỷ lệ các nguồn năng lượng: Hóa thạch, Mặt trời, Gió, Nước, Khác',
+        description: 'Tỷ lệ các nguồn năng lượng: Hóa thạch, Mặt trời, Gió, Nước, Khác',
         type: 'pie',
       },
     ],
     challenges: [
       {
-        question:
-          'Biểu đồ nào phù hợp nhất để hiển thị xu hướng nhiệt độ theo thời gian?',
+        question: 'Biểu đồ nào phù hợp nhất để hiển thị xu hướng nhiệt độ theo thời gian?',
         dataset: 'Global Temperature',
-        options: [
-          'Biểu đồ cột',
-          'Biểu đồ đường',
-          'Biểu đồ tròn',
-          'Biểu đồ điểm',
-        ],
+        options: ['Biểu đồ cột', 'Biểu đồ đường', 'Biểu đồ tròn', 'Biểu đồ điểm'],
         correct: 1,
       },
     ],
@@ -1870,11 +1898,7 @@ void loop() {
         destination: 'Jupiter',
         distance: '628 million km',
         duration: '6 years',
-        challenges: [
-          'Extreme radiation',
-          'Communication delay',
-          'Fuel requirements',
-        ],
+        challenges: ['Extreme radiation', 'Communication delay', 'Fuel requirements'],
         cost: '$3.2 billion',
         crew: 0,
         success: true,
@@ -1885,8 +1909,7 @@ void loop() {
         question: 'Thử thách lớn nhất khi du hành đến sao Hỏa là gì?',
         options: ['Khoảng cách', 'Bức xạ', 'Thời gian', 'Tất cả các đáp án'],
         correct: 3,
-        explanation:
-          'Du hành sao Hỏa phải đối mặt với nhiều thử thách phức tạp.',
+        explanation: 'Du hành sao Hỏa phải đối mặt với nhiều thử thách phức tạp.',
       },
     ],
   },
@@ -1922,11 +1945,7 @@ void loop() {
     challenges: [
       {
         problem: 'Nhận diện khuôn mặt',
-        requirements: [
-          'Input: 64x64 pixel image',
-          'Output: Person identity',
-          'Hidden layers needed',
-        ],
+        requirements: ['Input: 64x64 pixel image', 'Output: Person identity', 'Hidden layers needed'],
         solution: 'CNN with convolutional and pooling layers',
         architecture: 'Convolutional Neural Network',
         quiz: {
@@ -1938,11 +1957,7 @@ void loop() {
       },
       {
         problem: 'Dự đoán giá cổ phiếu',
-        requirements: [
-          'Input: Historical stock prices',
-          'Output: Next day price',
-          'Time series data',
-        ],
+        requirements: ['Input: Historical stock prices', 'Output: Next day price', 'Time series data'],
         solution: 'LSTM/GRU neural network',
         architecture: 'Recurrent Neural Network',
         quiz: {
@@ -1988,8 +2003,7 @@ void loop() {
       },
       {
         title: 'Bài toán logic',
-        question:
-          'Nếu tất cả chim đều bay được, và chim cánh cụt là chim, thì chim cánh cụt có bay được không?',
+        question: 'Nếu tất cả chim đều bay được, và chim cánh cụt là chim, thì chim cánh cụt có bay được không?',
         type: 'logic',
         answer: 'Không',
         explanation: 'Mệnh đề đầu tiên sai vì chim cánh cụt không bay được',
@@ -2010,19 +2024,10 @@ void loop() {
         ],
         reaction: 'HCl + NaOH → NaCl + H₂O',
         observation: 'Dung dịch chuyển từ không màu sang hồng nhạt',
-        safety: [
-          'Đeo kính bảo hộ',
-          'Đeo găng tay',
-          'Sử dụng trong phòng thông gió',
-        ],
+        safety: ['Đeo kính bảo hộ', 'Đeo găng tay', 'Sử dụng trong phòng thông gió'],
         quiz: {
           question: 'Tại sao dung dịch đổi màu?',
-          options: [
-            'pH thay đổi',
-            'Nhiệt độ tăng',
-            'Có khí thoát ra',
-            'Tạo kết tủa',
-          ],
+          options: ['pH thay đổi', 'Nhiệt độ tăng', 'Có khí thoát ra', 'Tạo kết tủa'],
           correct: 0,
         },
       },
@@ -2108,12 +2113,12 @@ void loop() {
           { x: 4, y: 0, z: 4, type: 'wall' },
           { x: 6, y: 0, z: 5, type: 'wall' },
           { x: 1, y: 1, z: 6, type: 'barrier' },
-          { x: 5, y: 1, z: 2, type: 'barrier' }
+          { x: 5, y: 1, z: 2, type: 'barrier' },
         ],
         collectibles: [
           { x: 3, y: 0, z: 1, type: 'coin' },
           { x: 5, y: 0, z: 4, type: 'coin' },
-          { x: 6, y: 1, z: 6, type: 'energy' }
+          { x: 6, y: 1, z: 6, type: 'energy' },
         ],
         movingObstacles: [],
         timeLimit: 120,
@@ -2121,8 +2126,8 @@ void loop() {
         educational: {
           concept: 'Tìm đường cơ bản trong không gian 3D',
           algorithmFocus: 'A* algorithm với heuristic Manhattan',
-          learningGoal: 'Hiểu khái niệm pathfinding và coordinate 3D'
-        }
+          learningGoal: 'Hiểu khái niệm pathfinding và coordinate 3D',
+        },
       },
       {
         id: 2,
@@ -2144,25 +2149,23 @@ void loop() {
           { x: 6, y: 2, z: 3, type: 'barrier' },
           { x: 1, y: 3, z: 8, type: 'wall' },
           { x: 2, y: 3, z: 8, type: 'wall' },
-          { x: 7, y: 4, z: 1, type: 'barrier' }
+          { x: 7, y: 4, z: 1, type: 'barrier' },
         ],
         collectibles: [
           { x: 2, y: 0, z: 2, type: 'coin' },
           { x: 6, y: 1, z: 4, type: 'coin' },
           { x: 4, y: 2, z: 7, type: 'data' },
           { x: 8, y: 3, z: 3, type: 'energy' },
-          { x: 5, y: 4, z: 8, type: 'data' }
+          { x: 5, y: 4, z: 8, type: 'data' },
         ],
-        movingObstacles: [
-          { x: 5, y: 1, z: 5, pattern: 'circular', speed: 1.0, range: 2 }
-        ],
+        movingObstacles: [{ x: 5, y: 1, z: 5, pattern: 'circular', speed: 1.0, range: 2 }],
         timeLimit: 180,
         targetScore: 200,
         educational: {
           concept: 'Điều hướng đa tầng và tối ưu hóa đường đi',
           algorithmFocus: 'A* 3D với chi phí di chuyển giữa các tầng',
-          learningGoal: 'Quản lý không gian 3D phức tạp và tối ưu hóa chi phí'
-        }
+          learningGoal: 'Quản lý không gian 3D phức tạp và tối ưu hóa chi phí',
+        },
       },
       {
         id: 3,
@@ -2173,40 +2176,57 @@ void loop() {
         start: { x: 0, y: 0, z: 0 },
         goal: { x: 11, y: 5, z: 11 },
         obstacles: [
-          { x: 2, y: 0, z: 1, type: 'wall' }, { x: 2, y: 0, z: 2, type: 'wall' },
-          { x: 2, y: 0, z: 3, type: 'wall' }, { x: 5, y: 0, z: 2, type: 'wall' },
-          { x: 6, y: 0, z: 2, type: 'wall' }, { x: 7, y: 0, z: 2, type: 'wall' },
-          { x: 4, y: 1, z: 5, type: 'wall' }, { x: 4, y: 1, z: 6, type: 'wall' },
-          { x: 9, y: 1, z: 4, type: 'wall' }, { x: 9, y: 1, z: 5, type: 'wall' },
-          { x: 3, y: 2, z: 8, type: 'barrier' }, { x: 4, y: 2, z: 8, type: 'barrier' },
-          { x: 7, y: 2, z: 9, type: 'barrier' }, { x: 8, y: 2, z: 9, type: 'barrier' },
-          { x: 1, y: 3, z: 10, type: 'wall' }, { x: 2, y: 3, z: 10, type: 'wall' },
-          { x: 10, y: 3, z: 3, type: 'wall' }, { x: 10, y: 3, z: 4, type: 'wall' },
-          { x: 5, y: 4, z: 6, type: 'barrier' }, { x: 6, y: 4, z: 6, type: 'barrier' },
-          { x: 8, y: 5, z: 2, type: 'wall' }, { x: 9, y: 5, z: 2, type: 'wall' }
+          { x: 2, y: 0, z: 1, type: 'wall' },
+          { x: 2, y: 0, z: 2, type: 'wall' },
+          { x: 2, y: 0, z: 3, type: 'wall' },
+          { x: 5, y: 0, z: 2, type: 'wall' },
+          { x: 6, y: 0, z: 2, type: 'wall' },
+          { x: 7, y: 0, z: 2, type: 'wall' },
+          { x: 4, y: 1, z: 5, type: 'wall' },
+          { x: 4, y: 1, z: 6, type: 'wall' },
+          { x: 9, y: 1, z: 4, type: 'wall' },
+          { x: 9, y: 1, z: 5, type: 'wall' },
+          { x: 3, y: 2, z: 8, type: 'barrier' },
+          { x: 4, y: 2, z: 8, type: 'barrier' },
+          { x: 7, y: 2, z: 9, type: 'barrier' },
+          { x: 8, y: 2, z: 9, type: 'barrier' },
+          { x: 1, y: 3, z: 10, type: 'wall' },
+          { x: 2, y: 3, z: 10, type: 'wall' },
+          { x: 10, y: 3, z: 3, type: 'wall' },
+          { x: 10, y: 3, z: 4, type: 'wall' },
+          { x: 5, y: 4, z: 6, type: 'barrier' },
+          { x: 6, y: 4, z: 6, type: 'barrier' },
+          { x: 8, y: 5, z: 2, type: 'wall' },
+          { x: 9, y: 5, z: 2, type: 'wall' },
         ],
         collectibles: [
-          { x: 1, y: 0, z: 4, type: 'coin' }, { x: 3, y: 0, z: 6, type: 'coin' },
-          { x: 8, y: 1, z: 1, type: 'coin' }, { x: 6, y: 1, z: 8, type: 'data' },
-          { x: 2, y: 2, z: 5, type: 'energy' }, { x: 9, y: 2, z: 7, type: 'coin' },
-          { x: 5, y: 3, z: 3, type: 'data' }, { x: 7, y: 3, z: 10, type: 'energy' },
-          { x: 3, y: 4, z: 9, type: 'coin' }, { x: 10, y: 4, z: 5, type: 'data' },
-          { x: 4, y: 5, z: 7, type: 'energy' }, { x: 8, y: 5, z: 8, type: 'data' }
+          { x: 1, y: 0, z: 4, type: 'coin' },
+          { x: 3, y: 0, z: 6, type: 'coin' },
+          { x: 8, y: 1, z: 1, type: 'coin' },
+          { x: 6, y: 1, z: 8, type: 'data' },
+          { x: 2, y: 2, z: 5, type: 'energy' },
+          { x: 9, y: 2, z: 7, type: 'coin' },
+          { x: 5, y: 3, z: 3, type: 'data' },
+          { x: 7, y: 3, z: 10, type: 'energy' },
+          { x: 3, y: 4, z: 9, type: 'coin' },
+          { x: 10, y: 4, z: 5, type: 'data' },
+          { x: 4, y: 5, z: 7, type: 'energy' },
+          { x: 8, y: 5, z: 8, type: 'data' },
         ],
         movingObstacles: [
           { x: 6, y: 0, z: 6, pattern: 'circular', speed: 1.2, range: 3 },
           { x: 3, y: 2, z: 3, pattern: 'linear', speed: 0.8, range: 4 },
           { x: 9, y: 3, z: 8, pattern: 'random', speed: 1.5, range: 2 },
-          { x: 2, y: 4, z: 2, pattern: 'circular', speed: 1.0, range: 2 }
+          { x: 2, y: 4, z: 2, pattern: 'circular', speed: 1.0, range: 2 },
         ],
         timeLimit: 300,
         targetScore: 350,
         educational: {
           concept: 'Pathfinding động với chướng ngại vật di chuyển',
           algorithmFocus: 'A* động với re-planning và collision avoidance',
-          learningGoal: 'Xử lý môi trường động và tối ưu hóa real-time'
-        }
-      }
+          learningGoal: 'Xử lý môi trường động và tối ưu hóa real-time',
+        },
+      },
     ],
     robot: {
       model: 'Explorer-3D v2.0',
@@ -2215,17 +2235,17 @@ void loop() {
         'Phát hiện chướng ngại vật',
         'Thu thập vật phẩm',
         'Lên/xuống giữa các tầng',
-        'Tránh chướng ngại vật di chuyển'
+        'Tránh chướng ngại vật di chuyển',
       ],
       sensors: [
         'LIDAR 360° 3D',
         'Camera RGB-D',
         'IMU (Inertial Measurement Unit)',
         'Proximity sensors',
-        'GPS indoor positioning'
+        'GPS indoor positioning',
       ],
       maxSpeed: 2.5,
-      batteryLife: 100
+      batteryLife: 100,
     },
     algorithms: [
       {
@@ -2235,21 +2255,136 @@ void loop() {
         advantages: [
           'Đảm bảo tìm được đường đi tối ưu',
           'Hiệu quả với heuristic tốt',
-          'Linh hoạt với các loại terrain khác nhau'
+          'Linh hoạt với các loại terrain khác nhau',
         ],
         disadvantages: [
           'Tốn bộ nhớ khi không gian lớn',
           'Phức tạp khi có chướng ngại vật động',
-          'Cần tính toán lại khi môi trường thay đổi'
-        ]
-      }
+          'Cần tính toán lại khi môi trường thay đổi',
+        ],
+      },
     ],
     gameSettings: {
       enableHints: true,
       showPathVisualization: true,
       allowAlgorithmSwitching: true,
-      difficultyScaling: true
-    }
+      difficultyScaling: true,
+    },
+  },
+  // Aquaculture IoT Manager 3D Game
+  aquacultureIoTGame: {
+    category: 'Smart Agriculture',
+    title: 'Aquaculture IoT Manager 3D',
+    description: 'Quản lý trang trại nuôi trồng thủy sản thông minh với hệ thống IoT sensors và monitoring',
+    features: [
+      'Môi trường 3D underwater với hệ sinh thái cá',
+      'Hệ thống IoT sensors theo dõi thời gian thực',
+      'Quản lý chất lượng nước và dinh dưỡng',
+      'Tối ưu hóa sản xuất và hiệu quả kinh tế',
+    ],
+    fishSpecies: [
+      {
+        id: 'ca-tra',
+        name: 'Cá Tra',
+        nameEn: 'Basa Fish',
+        optimalTemp: [26, 30],
+        optimalPH: [6.5, 8.0],
+        optimalO2: [4, 8],
+        value: 50000,
+        growthRate: 0.02,
+        description: 'Loài cá nước ngọt phổ biến trong nuôi trồng thủy sản Việt Nam',
+      },
+      {
+        id: 'tom-su',
+        name: 'Tôm Sú',
+        nameEn: 'Black Tiger Shrimp',
+        optimalTemp: [26, 32],
+        optimalPH: [7.0, 8.5],
+        optimalO2: [5, 9],
+        value: 120000,
+        growthRate: 0.03,
+        description: 'Tôm biển có giá trị kinh tế cao, yêu cầu môi trường nước chất lượng',
+      },
+      {
+        id: 'ca-ro-phi',
+        name: 'Cá Rô Phi',
+        nameEn: 'Tilapia',
+        optimalTemp: [24, 32],
+        optimalPH: [6.0, 9.0],
+        optimalO2: [3, 7],
+        value: 30000,
+        growthRate: 0.025,
+        description: 'Loài cá dễ nuôi, thích ứng tốt với nhiều môi trường nước',
+      },
+    ],
+    iotSensors: [
+      {
+        id: 'temp',
+        name: 'Temperature Sensor',
+        nameVi: 'Cảm biến nhiệt độ',
+        unit: '°C',
+        optimalRange: [24, 32],
+        alertThreshold: [20, 35],
+        description: 'Theo dõi nhiệt độ nước để đảm bảo môi trường sống tối ưu',
+      },
+      {
+        id: 'ph',
+        name: 'pH Sensor',
+        nameVi: 'Cảm biến độ pH',
+        unit: 'pH',
+        optimalRange: [6.5, 8.5],
+        alertThreshold: [5.5, 9.5],
+        description: 'Kiểm soát độ axit-bazơ của nước',
+      },
+      {
+        id: 'oxygen',
+        name: 'Dissolved Oxygen Sensor',
+        nameVi: 'Cảm biến oxy hòa tan',
+        unit: 'mg/L',
+        optimalRange: [4, 8],
+        alertThreshold: [2, 12],
+        description: 'Đo lượng oxy trong nước, quan trọng cho sự sống của cá',
+      },
+      {
+        id: 'turbidity',
+        name: 'Turbidity Sensor',
+        nameVi: 'Cảm biến độ đục',
+        unit: 'NTU',
+        optimalRange: [0, 10],
+        alertThreshold: [15, 50],
+        description: 'Theo dõi độ trong của nước, chỉ báo chất lượng môi trường',
+      },
+    ],
+    managementActions: [
+      {
+        id: 'feed',
+        name: 'Cho ăn',
+        description: 'Cung cấp thức ăn cho cá, tăng tốc độ phát triển',
+        effect: 'Tăng sức khỏe cá +5%, tăng tốc độ tăng trưởng',
+        cost: 10000,
+      },
+      {
+        id: 'aerate',
+        name: 'Sục khí',
+        description: 'Tăng nồng độ oxy trong nước',
+        effect: 'Oxy +2 mg/L, cải thiện môi trường sống',
+        cost: 5000,
+      },
+      {
+        id: 'clean',
+        name: 'Làm sạch nước',
+        description: 'Giảm độ đục và cải thiện chất lượng nước',
+        effect: 'Độ đục -3 NTU, môi trường sạch hơn',
+        cost: 15000,
+      },
+      {
+        id: 'adjust',
+        name: 'Điều chỉnh pH',
+        description: 'Cân bằng độ axit-bazơ của nước',
+        effect: 'pH về mức tối ưu 7.0±0.5',
+        cost: 8000,
+      },
+    ],
   },
 };
 
@@ -2274,9 +2409,7 @@ export interface GamePerformance {
 export const GAME_PROGRESS = {
   saveProgress: (gameId: string, progress: Partial<GameProgress>) => {
     if (typeof window !== 'undefined') {
-      const saved = JSON.parse(
-        localStorage.getItem('k2ai_game_progress') || '{}',
-      );
+      const saved = JSON.parse(localStorage.getItem('k2ai_game_progress') || '{}');
       saved[gameId] = {
         ...progress,
         lastPlayed: Date.now(),
@@ -2287,9 +2420,7 @@ export const GAME_PROGRESS = {
 
   loadProgress: (gameId: string): GameProgress | null => {
     if (typeof window !== 'undefined') {
-      const saved = JSON.parse(
-        localStorage.getItem('k2ai_game_progress') || '{}',
-      );
+      const saved = JSON.parse(localStorage.getItem('k2ai_game_progress') || '{}');
       return saved[gameId] || null;
     }
     return null;
@@ -2314,11 +2445,7 @@ export const GAME_PROGRESS = {
       'Nâng cao': 1.5,
     };
 
-    return Math.round(
-      baseScore *
-        multiplier *
-        (difficultyMultipliers[performance.difficulty] || 1),
-    );
+    return Math.round(baseScore * multiplier * (difficultyMultipliers[performance.difficulty] || 1));
   },
 };
 
@@ -2341,7 +2468,9 @@ export interface RobotNavigationGameData {
     obstacles: Array<{ x: number; y: number; z: number; type: 'wall' | 'pit' | 'barrier' }>;
     collectibles?: Array<{ x: number; y: number; z: number; type: 'gem' | 'key' | 'data' }>;
     movingObstacles?: Array<{
-      x: number; y: number; z: number;
+      x: number;
+      y: number;
+      z: number;
       pattern: 'horizontal' | 'vertical' | 'circular';
       speed: number;
     }>;
@@ -2388,8 +2517,8 @@ export const robotNavigationGameData: RobotNavigationGameData = {
       educational: {
         concept: 'Đường đi ngắn nhất',
         explanation: 'Robot cần tìm đường đi ngắn nhất từ điểm xuất phát đến đích',
-        algorithmStep: 'Sử dụng khoảng cách Manhattan để ước tính chi phí'
-      }
+        algorithmStep: 'Sử dụng khoảng cách Manhattan để ước tính chi phí',
+      },
     },
     {
       id: 2,
@@ -2413,8 +2542,8 @@ export const robotNavigationGameData: RobotNavigationGameData = {
       educational: {
         concept: 'Tránh chướng ngại vật',
         explanation: 'Robot phải tìm đường đi quanh các vật cản, không thể đi thẳng',
-        algorithmStep: 'Thuật toán A* đánh giá nhiều đường đi khả thi'
-      }
+        algorithmStep: 'Thuật toán A* đánh giá nhiều đường đi khả thi',
+      },
     },
     {
       id: 3,
@@ -2441,8 +2570,8 @@ export const robotNavigationGameData: RobotNavigationGameData = {
       educational: {
         concept: 'Bài toán TSP đơn giản',
         explanation: 'Robot phải tối ưu hóa thứ tự thu thập để tổng quãng đường ngắn nhất',
-        algorithmStep: 'Kết hợp A* với lập kế hoạch đa điểm đến'
-      }
+        algorithmStep: 'Kết hợp A* với lập kế hoạch đa điểm đến',
+      },
     },
     {
       id: 4,
@@ -2472,8 +2601,8 @@ export const robotNavigationGameData: RobotNavigationGameData = {
       educational: {
         concept: 'Lập kế hoạch động',
         explanation: 'Robot phải dự đoán vị trí chướng ngại vật và điều chỉnh đường đi',
-        algorithmStep: 'A* động với dự đoán trạng thái tương lai'
-      }
+        algorithmStep: 'A* động với dự đoán trạng thái tương lai',
+      },
     },
     {
       id: 5,
@@ -2484,19 +2613,25 @@ export const robotNavigationGameData: RobotNavigationGameData = {
       endPosition: { x: 15, y: 2, z: 15 },
       obstacles: [
         // Tầng 1 - Mê cung cơ bản
-        { x: 2, y: 0, z: 2, type: 'wall' }, { x: 3, y: 0, z: 2, type: 'wall' },
-        { x: 5, y: 0, z: 1, type: 'wall' }, { x: 5, y: 0, z: 2, type: 'wall' },
-        { x: 7, y: 0, z: 4, type: 'wall' }, { x: 8, y: 0, z: 4, type: 'wall' },
+        { x: 2, y: 0, z: 2, type: 'wall' },
+        { x: 3, y: 0, z: 2, type: 'wall' },
+        { x: 5, y: 0, z: 1, type: 'wall' },
+        { x: 5, y: 0, z: 2, type: 'wall' },
+        { x: 7, y: 0, z: 4, type: 'wall' },
+        { x: 8, y: 0, z: 4, type: 'wall' },
         // Tầng 2 - Chướng ngại vật nâng cao
-        { x: 3, y: 1, z: 7, type: 'pit' }, { x: 4, y: 1, z: 7, type: 'pit' },
-        { x: 9, y: 1, z: 3, type: 'barrier' }, { x: 10, y: 1, z: 3, type: 'barrier' },
+        { x: 3, y: 1, z: 7, type: 'pit' },
+        { x: 4, y: 1, z: 7, type: 'pit' },
+        { x: 9, y: 1, z: 3, type: 'barrier' },
+        { x: 10, y: 1, z: 3, type: 'barrier' },
         // Tầng 3 - Đích cuối
-        { x: 13, y: 2, z: 13, type: 'wall' }, { x: 14, y: 2, z: 13, type: 'wall' },
+        { x: 13, y: 2, z: 13, type: 'wall' },
+        { x: 14, y: 2, z: 13, type: 'wall' },
       ],
       collectibles: [
-        { x: 7, y: 0, z: 7, type: 'key' },   // Chìa khóa tầng 1
-        { x: 8, y: 1, z: 8, type: 'key' },   // Chìa khóa tầng 2
-        { x: 2, y: 1, z: 14, type: 'gem' },  // Báu vật
+        { x: 7, y: 0, z: 7, type: 'key' }, // Chìa khóa tầng 1
+        { x: 8, y: 1, z: 8, type: 'key' }, // Chìa khóa tầng 2
+        { x: 2, y: 1, z: 14, type: 'gem' }, // Báu vật
         { x: 14, y: 2, z: 2, type: 'data' }, // Dữ liệu cuối
       ],
       movingObstacles: [
@@ -2508,9 +2643,9 @@ export const robotNavigationGameData: RobotNavigationGameData = {
       educational: {
         concept: 'Tìm kiếm trong không gian 3D',
         explanation: 'Robot phải tìm đường trong không gian 3 chiều với nhiều tầng',
-        algorithmStep: 'A* 3D với heuristic Euclidean và quản lý trạng thái phức tạp'
-      }
-    }
+        algorithmStep: 'A* 3D với heuristic Euclidean và quản lý trạng thái phức tạp',
+      },
+    },
   ],
   algorithms: [
     {
@@ -2522,8 +2657,8 @@ export const robotNavigationGameData: RobotNavigationGameData = {
         'Lặp: Chọn node có f(n) = g(n) + h(n) nhỏ nhất',
         'Mở rộng: Kiểm tra tất cả node láng giềng',
         'Cập nhật: Tính toán chi phí và thêm vào Open List',
-        'Kết thúc: Khi tìm thấy đích hoặc Open List rỗng'
-      ]
+        'Kết thúc: Khi tìm thấy đích hoặc Open List rỗng',
+      ],
     },
     {
       name: 'Dijkstra',
@@ -2533,9 +2668,9 @@ export const robotNavigationGameData: RobotNavigationGameData = {
         'Khởi tạo: Đặt khoảng cách tất cả node = ∞, trừ node xuất phát = 0',
         'Lặp: Chọn node chưa thăm có khoảng cách nhỏ nhất',
         'Cập nhật: Cải thiện khoảng cách của các node láng giềng',
-        'Kết thúc: Khi tất cả node đã được thăm'
-      ]
-    }
+        'Kết thúc: Khi tất cả node đã được thăm',
+      ],
+    },
   ],
   tips: [
     '🎯 Quan sát toàn bộ map trước khi bắt đầu để lập kế hoạch tổng thể',
@@ -2543,7 +2678,7 @@ export const robotNavigationGameData: RobotNavigationGameData = {
     '💎 Ưu tiên thu thập các vật phẩm gần đường đi chính',
     '⚡ Sử dụng algorithm A* để tối ưu hóa đường đi',
     '🧠 Học cách đọc visualization để hiểu thuật toán hoạt động',
-    '🎮 Thử nghiệm với các thuật toán khác nhau để so sánh hiệu quả'
+    '🎮 Thử nghiệm với các thuật toán khác nhau để so sánh hiệu quả',
   ],
   learningObjectives: [
     'Hiểu và áp dụng thuật toán A* cho bài toán tìm đường',
@@ -2551,8 +2686,8 @@ export const robotNavigationGameData: RobotNavigationGameData = {
     'Tối ưu hóa đường đi trong môi trường có chướng ngại vật',
     'Lập kế hoạch trong không gian 3 chiều',
     'Xử lý các tình huống động trong robotics',
-    'Áp dụng heuristic function để tăng hiệu quả tìm kiếm'
-  ]
+    'Áp dụng heuristic function để tăng hiệu quả tìm kiếm',
+  ],
 };
 
 // Robot Navigation 3D Game Data
@@ -2568,7 +2703,9 @@ export interface RobotNavigation3DGameData {
     obstacles: Array<{ x: number; y: number; z: number; type: 'wall' | 'barrier' | 'moving' }>;
     collectibles: Array<{ x: number; y: number; z: number; type: 'coin' | 'data' | 'energy' }>;
     movingObstacles: Array<{
-      x: number; y: number; z: number;
+      x: number;
+      y: number;
+      z: number;
       pattern: 'linear' | 'circular' | 'random';
       speed: number;
       range: number;
@@ -2620,12 +2757,12 @@ export const robotNavigation3DGameData: RobotNavigation3DGameData = {
         { x: 4, y: 0, z: 4, type: 'wall' },
         { x: 6, y: 0, z: 5, type: 'wall' },
         { x: 1, y: 1, z: 6, type: 'barrier' },
-        { x: 5, y: 1, z: 2, type: 'barrier' }
+        { x: 5, y: 1, z: 2, type: 'barrier' },
       ],
       collectibles: [
         { x: 3, y: 0, z: 1, type: 'coin' },
         { x: 5, y: 0, z: 4, type: 'coin' },
-        { x: 6, y: 1, z: 6, type: 'energy' }
+        { x: 6, y: 1, z: 6, type: 'energy' },
       ],
       movingObstacles: [],
       timeLimit: 120,
@@ -2633,8 +2770,8 @@ export const robotNavigation3DGameData: RobotNavigation3DGameData = {
       educational: {
         concept: 'Tìm đường cơ bản trong không gian 3D',
         algorithmFocus: 'A* algorithm với heuristic Manhattan',
-        learningGoal: 'Hiểu khái niệm pathfinding và coordinate 3D'
-      }
+        learningGoal: 'Hiểu khái niệm pathfinding và coordinate 3D',
+      },
     },
     {
       id: 2,
@@ -2659,25 +2796,23 @@ export const robotNavigation3DGameData: RobotNavigation3DGameData = {
         // Tầng 3-4
         { x: 1, y: 3, z: 8, type: 'wall' },
         { x: 2, y: 3, z: 8, type: 'wall' },
-        { x: 7, y: 4, z: 1, type: 'barrier' }
+        { x: 7, y: 4, z: 1, type: 'barrier' },
       ],
       collectibles: [
         { x: 2, y: 0, z: 2, type: 'coin' },
         { x: 6, y: 1, z: 4, type: 'coin' },
         { x: 4, y: 2, z: 7, type: 'data' },
         { x: 8, y: 3, z: 3, type: 'energy' },
-        { x: 5, y: 4, z: 8, type: 'data' }
+        { x: 5, y: 4, z: 8, type: 'data' },
       ],
-      movingObstacles: [
-        { x: 5, y: 1, z: 5, pattern: 'circular', speed: 1.0, range: 2 }
-      ],
+      movingObstacles: [{ x: 5, y: 1, z: 5, pattern: 'circular', speed: 1.0, range: 2 }],
       timeLimit: 180,
       targetScore: 200,
       educational: {
         concept: 'Điều hướng đa tầng và tối ưu hóa đường đi',
         algorithmFocus: 'A* 3D với chi phí di chuyển giữa các tầng',
-        learningGoal: 'Quản lý không gian 3D phức tạp và tối ưu hóa chi phí'
-      }
+        learningGoal: 'Quản lý không gian 3D phức tạp và tối ưu hóa chi phí',
+      },
     },
     {
       id: 3,
@@ -2689,40 +2824,57 @@ export const robotNavigation3DGameData: RobotNavigation3DGameData = {
       goal: { x: 11, y: 5, z: 11 },
       obstacles: [
         // Static walls - complex maze structure
-        { x: 2, y: 0, z: 1, type: 'wall' }, { x: 2, y: 0, z: 2, type: 'wall' },
-        { x: 2, y: 0, z: 3, type: 'wall' }, { x: 5, y: 0, z: 2, type: 'wall' },
-        { x: 6, y: 0, z: 2, type: 'wall' }, { x: 7, y: 0, z: 2, type: 'wall' },
-        { x: 4, y: 1, z: 5, type: 'wall' }, { x: 4, y: 1, z: 6, type: 'wall' },
-        { x: 9, y: 1, z: 4, type: 'wall' }, { x: 9, y: 1, z: 5, type: 'wall' },
-        { x: 3, y: 2, z: 8, type: 'barrier' }, { x: 4, y: 2, z: 8, type: 'barrier' },
-        { x: 7, y: 2, z: 9, type: 'barrier' }, { x: 8, y: 2, z: 9, type: 'barrier' },
-        { x: 1, y: 3, z: 10, type: 'wall' }, { x: 2, y: 3, z: 10, type: 'wall' },
-        { x: 10, y: 3, z: 3, type: 'wall' }, { x: 10, y: 3, z: 4, type: 'wall' },
-        { x: 5, y: 4, z: 6, type: 'barrier' }, { x: 6, y: 4, z: 6, type: 'barrier' },
-        { x: 8, y: 5, z: 2, type: 'wall' }, { x: 9, y: 5, z: 2, type: 'wall' }
+        { x: 2, y: 0, z: 1, type: 'wall' },
+        { x: 2, y: 0, z: 2, type: 'wall' },
+        { x: 2, y: 0, z: 3, type: 'wall' },
+        { x: 5, y: 0, z: 2, type: 'wall' },
+        { x: 6, y: 0, z: 2, type: 'wall' },
+        { x: 7, y: 0, z: 2, type: 'wall' },
+        { x: 4, y: 1, z: 5, type: 'wall' },
+        { x: 4, y: 1, z: 6, type: 'wall' },
+        { x: 9, y: 1, z: 4, type: 'wall' },
+        { x: 9, y: 1, z: 5, type: 'wall' },
+        { x: 3, y: 2, z: 8, type: 'barrier' },
+        { x: 4, y: 2, z: 8, type: 'barrier' },
+        { x: 7, y: 2, z: 9, type: 'barrier' },
+        { x: 8, y: 2, z: 9, type: 'barrier' },
+        { x: 1, y: 3, z: 10, type: 'wall' },
+        { x: 2, y: 3, z: 10, type: 'wall' },
+        { x: 10, y: 3, z: 3, type: 'wall' },
+        { x: 10, y: 3, z: 4, type: 'wall' },
+        { x: 5, y: 4, z: 6, type: 'barrier' },
+        { x: 6, y: 4, z: 6, type: 'barrier' },
+        { x: 8, y: 5, z: 2, type: 'wall' },
+        { x: 9, y: 5, z: 2, type: 'wall' },
       ],
       collectibles: [
-        { x: 1, y: 0, z: 4, type: 'coin' }, { x: 3, y: 0, z: 6, type: 'coin' },
-        { x: 8, y: 1, z: 1, type: 'coin' }, { x: 6, y: 1, z: 8, type: 'data' },
-        { x: 2, y: 2, z: 5, type: 'energy' }, { x: 9, y: 2, z: 7, type: 'coin' },
-        { x: 5, y: 3, z: 3, type: 'data' }, { x: 7, y: 3, z: 10, type: 'energy' },
-        { x: 3, y: 4, z: 9, type: 'coin' }, { x: 10, y: 4, z: 5, type: 'data' },
-        { x: 4, y: 5, z: 7, type: 'energy' }, { x: 8, y: 5, z: 8, type: 'data' }
+        { x: 1, y: 0, z: 4, type: 'coin' },
+        { x: 3, y: 0, z: 6, type: 'coin' },
+        { x: 8, y: 1, z: 1, type: 'coin' },
+        { x: 6, y: 1, z: 8, type: 'data' },
+        { x: 2, y: 2, z: 5, type: 'energy' },
+        { x: 9, y: 2, z: 7, type: 'coin' },
+        { x: 5, y: 3, z: 3, type: 'data' },
+        { x: 7, y: 3, z: 10, type: 'energy' },
+        { x: 3, y: 4, z: 9, type: 'coin' },
+        { x: 10, y: 4, z: 5, type: 'data' },
+        { x: 4, y: 5, z: 7, type: 'energy' },
+        { x: 8, y: 5, z: 8, type: 'data' },
       ],
       movingObstacles: [
         { x: 6, y: 0, z: 6, pattern: 'circular', speed: 1.2, range: 3 },
         { x: 3, y: 2, z: 3, pattern: 'linear', speed: 0.8, range: 4 },
         { x: 9, y: 3, z: 8, pattern: 'random', speed: 1.5, range: 2 },
-        { x: 2, y: 4, z: 2, pattern: 'circular', speed: 1.0, range: 2 }
+        { x: 2, y: 4, z: 2, pattern: 'circular', speed: 1.0, range: 2 },
       ],
       timeLimit: 300,
       targetScore: 350,
       educational: {
         concept: 'Pathfinding động với chướng ngại vật di chuyển',
         algorithmFocus: 'A* động với re-planning và collision avoidance',
-        learningGoal: 'Xử lý môi trường động và tối ưu hóa real-time'
-      }
-    }
+        learningGoal: 'Xử lý môi trường động và tối ưu hóa real-time',
+      },
+    },
   ],
   robot: {
     model: 'Explorer-3D v2.0',
@@ -2731,17 +2883,17 @@ export const robotNavigation3DGameData: RobotNavigation3DGameData = {
       'Phát hiện chướng ngại vật',
       'Thu thập vật phẩm',
       'Lên/xuống giữa các tầng',
-      'Tránh chướng ngại vật di chuyển'
+      'Tránh chướng ngại vật di chuyển',
     ],
     sensors: [
       'LIDAR 360° 3D',
       'Camera RGB-D',
       'IMU (Inertial Measurement Unit)',
       'Proximity sensors',
-      'GPS indoor positioning'
+      'GPS indoor positioning',
     ],
     maxSpeed: 2.5,
-    batteryLife: 100
+    batteryLife: 100,
   },
   algorithms: [
     {
@@ -2751,28 +2903,24 @@ export const robotNavigation3DGameData: RobotNavigation3DGameData = {
       advantages: [
         'Đảm bảo tìm được đường đi tối ưu',
         'Hiệu quả với heuristic tốt',
-        'Linh hoạt với các loại terrain khác nhau'
+        'Linh hoạt với các loại terrain khác nhau',
       ],
       disadvantages: [
         'Tốn bộ nhớ khi không gian lớn',
         'Phức tạp khi có chướng ngại vật động',
-        'Cần tính toán lại khi môi trường thay đổi'
-      ]
+        'Cần tính toán lại khi môi trường thay đổi',
+      ],
     },
     {
       name: 'Dijkstra 3D',
       description: 'Thuật toán tìm đường ngắn nhất không có heuristic',
       complexity: 'O((V + E) log V)',
-      advantages: [
-        'Đảm bảo đường đi ngắn nhất',
-        'Không cần heuristic function',
-        'Ổn định với mọi loại graph'
-      ],
+      advantages: ['Đảm bảo đường đi ngắn nhất', 'Không cần heuristic function', 'Ổn định với mọi loại graph'],
       disadvantages: [
         'Chậm hơn A* đáng kể',
         'Khám phá nhiều node không cần thiết',
-        'Không phù hợp với real-time applications'
-      ]
+        'Không phù hợp với real-time applications',
+      ],
     },
     {
       name: 'BFS 3D',
@@ -2781,21 +2929,17 @@ export const robotNavigation3DGameData: RobotNavigation3DGameData = {
       advantages: [
         'Đơn giản để implement',
         'Tìm được đường đi (không nhất thiết tối ưu)',
-        'Hoạt động tốt với unweighted graphs'
+        'Hoạt động tốt với unweighted graphs',
       ],
-      disadvantages: [
-        'Không tối ưu cho weighted graphs',
-        'Tốn nhiều bộ nhớ',
-        'Chậm với không gian lớn'
-      ]
-    }
+      disadvantages: ['Không tối ưu cho weighted graphs', 'Tốn nhiều bộ nhớ', 'Chậm với không gian lớn'],
+    },
   ],
   gameSettings: {
     enableHints: true,
     showPathVisualization: true,
     allowAlgorithmSwitching: true,
-    difficultyScaling: true
-  }
+    difficultyScaling: true,
+  },
 };
 
 // Arduino Circuit Builder 3D Game Data
@@ -2874,7 +3018,7 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
       specifications: {
         voltage: '5V',
         current: '40mA per pin',
-        pins: 32
+        pins: 32,
       },
       vietnameseContext: 'Được sử dụng rộng rãi trong các trường đại học Việt Nam và startup IoT',
       difficulty: 'Cơ bản',
@@ -2883,13 +3027,13 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
         'Home automation systems',
         'Environmental monitoring',
         'Agricultural sensors',
-        'Traffic light control'
+        'Traffic light control',
       ],
       safetyNotes: [
         'Không được vượt quá 5V input voltage',
         'Tổng current không vượt quá 200mA',
-        'Cẩn thận với static electricity'
-      ]
+        'Cẩn thận với static electricity',
+      ],
     },
     {
       id: 'led-5mm',
@@ -2899,22 +3043,17 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
       specifications: {
         voltage: '2.0-3.3V',
         current: '20mA',
-        power: '0.1W'
+        power: '0.1W',
       },
       vietnameseContext: 'Sử dụng trong đèn trang trí Tết và hệ thống chiếu sáng LED',
       difficulty: 'Cơ bản',
       price: '1,000 - 5,000 VNĐ',
-      applications: [
-        'Status indicators',
-        'Decorative lighting',
-        'Visual alarms',
-        'Display panels'
-      ],
+      applications: ['Status indicators', 'Decorative lighting', 'Visual alarms', 'Display panels'],
       safetyNotes: [
         'Luôn dùng current limiting resistor',
         'Chú ý polarity (anode/cathode)',
-        'Không vượt quá rated current'
-      ]
+        'Không vượt quá rated current',
+      ],
     },
     {
       id: 'resistor-220ohm',
@@ -2924,22 +3063,13 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
       specifications: {
         resistance: '220Ω ±5%',
         power: '0.25W',
-        voltage: '5V max'
+        voltage: '5V max',
       },
       vietnameseContext: 'Component cơ bản trong mọi mạch điện tử Việt Nam',
       difficulty: 'Cơ bản',
       price: '500 - 1,000 VNĐ',
-      applications: [
-        'LED current limiting',
-        'Pull-up/pull-down circuits',
-        'Voltage dividers',
-        'Signal conditioning'
-      ],
-      safetyNotes: [
-        'Kiểm tra power rating',
-        'Chú ý color code để đọc giá trị',
-        'Tránh overheating'
-      ]
+      applications: ['LED current limiting', 'Pull-up/pull-down circuits', 'Voltage dividers', 'Signal conditioning'],
+      safetyNotes: ['Kiểm tra power rating', 'Chú ý color code để đọc giá trị', 'Tránh overheating'],
     },
     {
       id: 'temperature-sensor',
@@ -2949,23 +3079,14 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
       specifications: {
         voltage: '4-30V',
         current: '60μA',
-        pins: 3
+        pins: 3,
       },
       vietnameseContext: 'Ứng dụng trong monitoring nhà kính và aquaculture tại Việt Nam',
       difficulty: 'Trung bình',
       price: '50,000 - 80,000 VNĐ',
-      applications: [
-        'Weather monitoring',
-        'HVAC control',
-        'Food storage monitoring',
-        'Industrial process control'
-      ],
-      safetyNotes: [
-        'Không vượt quá 150°C',
-        'Cẩn thận với ESD',
-        'Kiểm tra wiring trước khi power on'
-      ]
-    }
+      applications: ['Weather monitoring', 'HVAC control', 'Food storage monitoring', 'Industrial process control'],
+      safetyNotes: ['Không vượt quá 150°C', 'Cẩn thận với ESD', 'Kiểm tra wiring trước khi power on'],
+    },
   ],
   challenges: [
     {
@@ -2978,32 +3099,32 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
         {
           type: 'connection',
           description: 'LED phải được kết nối với resistor để bảo vệ',
-          importance: 'critical'
+          importance: 'critical',
         },
         {
           type: 'voltage',
           description: 'Điện áp qua LED phải trong khoảng an toàn (2.0-3.3V)',
-          importance: 'warning'
+          importance: 'warning',
         },
         {
           type: 'current',
           description: 'Dòng điện không được vượt quá 20mA',
-          importance: 'critical'
-        }
+          importance: 'critical',
+        },
       ],
       vietnameseContext: 'Giống như đèn LED trang trí trong dịp Tết Nguyên Đán',
       realWorldApplications: [
         'Đèn báo hiệu giao thông',
         'Hệ thống chiếu sáng tiết kiệm năng lượng',
-        'Status indicators trong thiết bị điện tử'
+        'Status indicators trong thiết bị điện tử',
       ],
       educationalObjectives: [
-        'Hiểu về Ohm\'s Law trong thực tế',
+        "Hiểu về Ohm's Law trong thực tế",
         'Học cách tính toán current limiting resistance',
-        'Nắm vững về polarity và circuit safety'
+        'Nắm vững về polarity và circuit safety',
       ],
       estimatedTime: '15-20 phút',
-      points: 100
+      points: 100,
     },
     {
       id: 'traffic-light-system',
@@ -3015,27 +3136,27 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
         {
           type: 'connection',
           description: 'Mỗi LED cần có điện trở bảo vệ riêng',
-          importance: 'critical'
+          importance: 'critical',
         },
         {
           type: 'power',
           description: 'Tổng công suất không vượt quá khả năng Arduino',
-          importance: 'warning'
-        }
+          importance: 'warning',
+        },
       ],
       vietnameseContext: 'Mô phỏng đèn giao thông tại ngã tư lớn ở Hà Nội và TP.HCM',
       realWorldApplications: [
         'Smart traffic management systems',
         'Pedestrian crossing signals',
-        'Construction zone warning lights'
+        'Construction zone warning lights',
       ],
       educationalObjectives: [
         'Multiple output control với Arduino',
         'Timing và sequencing trong embedded systems',
-        'Power management cho multiple components'
+        'Power management cho multiple components',
       ],
       estimatedTime: '30-45 phút',
-      points: 200
+      points: 200,
     },
     {
       id: 'temperature-monitoring',
@@ -3047,28 +3168,28 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
         {
           type: 'connection',
           description: 'Temperature sensor phải kết nối đúng pins (VCC, GND, OUT)',
-          importance: 'critical'
+          importance: 'critical',
         },
         {
           type: 'voltage',
           description: 'Analog input phải trong range 0-5V',
-          importance: 'warning'
-        }
+          importance: 'warning',
+        },
       ],
       vietnameseContext: 'Ứng dụng trong nhà máy chế biến thực phẩm và nông nghiệp công nghệ cao',
       realWorldApplications: [
         'Industrial temperature monitoring',
         'Greenhouse climate control',
-        'Cold chain management cho logistics'
+        'Cold chain management cho logistics',
       ],
       educationalObjectives: [
         'Analog sensor interfacing',
         'Data acquisition và processing',
-        'Threshold-based control systems'
+        'Threshold-based control systems',
       ],
       estimatedTime: '45-60 phút',
-      points: 300
-    }
+      points: 300,
+    },
   ],
   validationSystem: {
     circuitRules: [
@@ -3076,89 +3197,89 @@ export const arduinoCircuitBuilder3DData: ArduinoCircuitBuilder3DGameData = {
         name: 'LED Protection Rule',
         description: 'LEDs must have current limiting resistors',
         checkFunction: 'checkLEDResistorConnection',
-        errorMessage: 'LED thiếu điện trở bảo vệ - có thể bị cháy!'
+        errorMessage: 'LED thiếu điện trở bảo vệ - có thể bị cháy!',
       },
       {
         name: 'Power Supply Check',
         description: 'Total current draw must not exceed Arduino limits',
         checkFunction: 'checkCurrentDraw',
-        errorMessage: 'Tổng dòng điện vượt quá khả năng Arduino (200mA max)'
+        errorMessage: 'Tổng dòng điện vượt quá khả năng Arduino (200mA max)',
       },
       {
         name: 'Voltage Compatibility',
         description: 'All components must operate within voltage ranges',
         checkFunction: 'checkVoltageCompatibility',
-        errorMessage: 'Có component không tương thích với 5V system'
-      }
+        errorMessage: 'Có component không tương thích với 5V system',
+      },
     ],
     safetyChecks: [
       {
         name: 'Short Circuit Detection',
         description: 'Check for potential short circuits',
-        severity: 'error'
+        severity: 'error',
       },
       {
         name: 'Overload Warning',
         description: 'Warn when approaching current limits',
-        severity: 'warning'
+        severity: 'warning',
       },
       {
         name: 'Best Practices',
         description: 'Suggest improvements for better design',
-        severity: 'info'
-      }
-    ]
+        severity: 'info',
+      },
+    ],
   },
   educationalContent: {
     fundamentals: [
       {
-        topic: 'Ohm\'s Law trong Electronics',
+        topic: "Ohm's Law trong Electronics",
         explanation: 'V = I × R - mối quan hệ cơ bản giữa điện áp, dòng điện và điện trở',
         examples: [
           'Tính điện trở cho LED 2V với dòng 20mA: R = (5V-2V)/0.02A = 150Ω',
-          'Voltage divider để đọc sensor: Vout = Vin × (R2/(R1+R2))'
+          'Voltage divider để đọc sensor: Vout = Vin × (R2/(R1+R2))',
         ],
         vietnameseApplications: [
           'Thiết kế mạch điều khiển đèn LED cho buildings',
           'Sensor calibration trong industrial automation',
-          'Power management cho IoT devices'
-        ]
+          'Power management cho IoT devices',
+        ],
       },
       {
         topic: 'Digital vs Analog I/O',
         explanation: 'Sự khác biệt giữa tín hiệu số (0/1) và tín hiệu tương tự (0-5V)',
         examples: [
           'Digital: Switch, button states (HIGH/LOW)',
-          'Analog: Temperature sensor, potentiometer values (0-1023 ADC)'
+          'Analog: Temperature sensor, potentiometer values (0-1023 ADC)',
         ],
         vietnameseApplications: [
           'Smart home control systems',
           'Industrial sensor networks',
-          'Agricultural monitoring systems'
-        ]
-      }
+          'Agricultural monitoring systems',
+        ],
+      },
     ],
     practicalSkills: [
       {
         skill: 'Circuit Breadboarding',
         description: 'Kỹ năng lắp ráp circuit trên breadboard',
         difficulty: 'Cơ bản',
-        prerequisites: ['Component identification', 'Basic electronics theory']
+        prerequisites: ['Component identification', 'Basic electronics theory'],
       },
       {
         skill: 'Arduino Programming',
         description: 'Viết code để điều khiển hardware',
         difficulty: 'Trung bình',
-        prerequisites: ['C/C++ basics', 'Digital I/O understanding']
+        prerequisites: ['C/C++ basics', 'Digital I/O understanding'],
       },
       {
         skill: 'Circuit Debugging',
         description: 'Troubleshooting và sửa lỗi mạch điện',
         difficulty: 'Nâng cao',
-        prerequisites: ['Multimeter usage', 'Circuit analysis skills']
-      }
-    ]
-  }
+        prerequisites: ['Multimeter usage', 'Circuit analysis skills'],
+      },
+    ],
+  },
 };
 
 // Neural Network Builder 3D Game Data
@@ -3231,13 +3352,13 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       description: 'Mạng neural đơn giản nhất với một lớp output',
       layers: [
         { type: 'input', neurons: 2, activationFunction: 'linear' },
-        { type: 'output', neurons: 1, activationFunction: 'sigmoid' }
+        { type: 'output', neurons: 1, activationFunction: 'sigmoid' },
       ],
       difficulty: 'Cơ bản',
       applications: ['Binary classification', 'Linear separation problems'],
       vietnameseContext: 'Phân loại khách hàng VIP/thường trong banking Việt Nam',
       estimatedAccuracy: '70-85%',
-      trainingTime: '1-2 phút'
+      trainingTime: '1-2 phút',
     },
     {
       id: 'multilayer-perceptron',
@@ -3247,13 +3368,13 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
         { type: 'input', neurons: 4, activationFunction: 'linear' },
         { type: 'hidden', neurons: 8, activationFunction: 'relu' },
         { type: 'hidden', neurons: 6, activationFunction: 'relu' },
-        { type: 'output', neurons: 3, activationFunction: 'softmax' }
+        { type: 'output', neurons: 3, activationFunction: 'softmax' },
       ],
       difficulty: 'Trung bình',
       applications: ['Multi-class classification', 'Pattern recognition'],
       vietnameseContext: 'Phân loại sản phẩm nông nghiệp (lúa, ngô, cà phê) cho xuất khẩu',
       estimatedAccuracy: '85-95%',
-      trainingTime: '3-5 phút'
+      trainingTime: '3-5 phút',
     },
     {
       id: 'deep-network',
@@ -3264,14 +3385,14 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
         { type: 'hidden', neurons: 64, activationFunction: 'relu' },
         { type: 'hidden', neurons: 32, activationFunction: 'relu' },
         { type: 'hidden', neurons: 16, activationFunction: 'relu' },
-        { type: 'output', neurons: 5, activationFunction: 'softmax' }
+        { type: 'output', neurons: 5, activationFunction: 'softmax' },
       ],
       difficulty: 'Nâng cao',
       applications: ['Complex classification', 'Feature learning', 'Deep learning'],
       vietnameseContext: 'Phân tích sentiment của review khách hàng trên Tiki, Shopee',
       estimatedAccuracy: '90-98%',
-      trainingTime: '10-15 phút'
-    }
+      trainingTime: '10-15 phút',
+    },
   ],
   datasets: [
     {
@@ -3285,7 +3406,7 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       vietnameseContext: 'Nền tảng cho logic gates trong chip design tại Việt Nam',
       realWorldApplication: 'Digital circuit design, Boolean logic trong embedded systems',
       difficulty: 'Cơ bản',
-      preprocessingRequired: ['None - data already normalized']
+      preprocessingRequired: ['None - data already normalized'],
     },
     {
       id: 'vietnamese-house-prices',
@@ -3297,7 +3418,7 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       vietnameseContext: 'Hỗ trợ quyết định đầu tư bất động sản tại TP.HCM, Hà Nội, Đà Nẵng',
       realWorldApplication: 'Real estate platforms như Batdongsan.com.vn, PropTech startups',
       difficulty: 'Trung bình',
-      preprocessingRequired: ['Feature scaling', 'Location encoding', 'Price normalization']
+      preprocessingRequired: ['Feature scaling', 'Location encoding', 'Price normalization'],
     },
     {
       id: 'vietnam-weather-prediction',
@@ -3310,7 +3431,7 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       vietnameseContext: 'Hỗ trợ nông dân dự báo thời tiết cho việc canh tác',
       realWorldApplication: 'Agricultural planning, disaster prevention, smart farming',
       difficulty: 'Nâng cao',
-      preprocessingRequired: ['Time series features', 'Geographic encoding', 'Seasonal normalization']
+      preprocessingRequired: ['Time series features', 'Geographic encoding', 'Seasonal normalization'],
     },
     {
       id: 'vietnamese-crop-classification',
@@ -3323,8 +3444,8 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       vietnameseContext: 'Ứng dụng AI trong nông nghiệp công nghệ cao Việt Nam',
       realWorldApplication: 'Smart farming apps, agricultural extension services',
       difficulty: 'Nâng cao',
-      preprocessingRequired: ['Image feature extraction', 'Color space conversion', 'Data augmentation']
-    }
+      preprocessingRequired: ['Image feature extraction', 'Color space conversion', 'Data augmentation'],
+    },
   ],
   challenges: [
     {
@@ -3338,20 +3459,20 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       educationalObjectives: [
         'Hiểu về basic neuron structure',
         'Học về activation functions',
-        'Nắm vững forward propagation'
+        'Nắm vững forward propagation',
       ],
       vietnameseApplications: [
         'Phân loại email spam/không spam cho Zalo',
         'Quyết định approve/reject loan trong fintech',
-        'Classifying high/low demand products trong e-commerce'
+        'Classifying high/low demand products trong e-commerce',
       ],
       points: 100,
       estimatedTime: '10-15 phút',
       hints: [
         'XOR không thể giải quyết được với single perceptron',
         'Cần hidden layer để học non-linear patterns',
-        'Thử với learning rate từ 0.01 đến 0.1'
-      ]
+        'Thử với learning rate từ 0.01 đến 0.1',
+      ],
     },
     {
       id: 'house-price-predictor',
@@ -3364,20 +3485,20 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       educationalObjectives: [
         'Regression vs classification differences',
         'Feature importance trong real estate',
-        'Model evaluation với RMSE và MAE'
+        'Model evaluation với RMSE và MAE',
       ],
       vietnameseApplications: [
         'PropTech platforms như Rever, PropertyGuru',
         'Bank loan assessment systems',
-        'Investment analysis tools cho real estate'
+        'Investment analysis tools cho real estate',
       ],
       points: 250,
       estimatedTime: '20-30 phút',
       hints: [
         'Normalize price data trước khi training',
         'Location features rất quan trọng ở Việt Nam',
-        'Consider using multiple hidden layers'
-      ]
+        'Consider using multiple hidden layers',
+      ],
     },
     {
       id: 'weather-prediction-system',
@@ -3390,20 +3511,20 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       educationalObjectives: [
         'Multi-class classification strategies',
         'Handling imbalanced weather data',
-        'Time series features engineering'
+        'Time series features engineering',
       ],
       vietnameseApplications: [
         'Nông nghiệp thông minh trong Mekong Delta',
         'Disaster early warning systems',
-        'Tourism planning apps cho Vietnam travel'
+        'Tourism planning apps cho Vietnam travel',
       ],
       points: 350,
       estimatedTime: '30-45 phút',
       hints: [
         'Weather data có seasonal patterns',
         'Use dropout để prevent overfitting',
-        'Geographic features quan trọng cho Vietnam climate'
-      ]
+        'Geographic features quan trọng cho Vietnam climate',
+      ],
     },
     {
       id: 'crop-disease-detector',
@@ -3416,21 +3537,21 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       educationalObjectives: [
         'Deep learning architecture design',
         'Feature extraction từ image data',
-        'Model validation với agricultural data'
+        'Model validation với agricultural data',
       ],
       vietnameseApplications: [
         'Smart farming solutions cho rice cultivation',
         'Mobile apps cho farmers ở rural Vietnam',
-        'Agricultural extension service automation'
+        'Agricultural extension service automation',
       ],
       points: 450,
       estimatedTime: '45-60 phút',
       hints: [
         'Deep networks cần careful initialization',
         'Use batch normalization giữa layers',
-        'Agricultural data có high class imbalance'
-      ]
-    }
+        'Agricultural data có high class imbalance',
+      ],
+    },
   ],
   activationFunctions: [
     {
@@ -3440,7 +3561,7 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       advantages: ['Smooth gradient', 'Probabilistic output', 'Historically popular'],
       disadvantages: ['Vanishing gradient problem', 'Not zero-centered', 'Computationally expensive'],
       bestUseCases: ['Binary classification output layer', 'When need probability outputs'],
-      vietnameseExample: 'Xác suất khách hàng mua sản phẩm trong e-commerce Vietnam (0-1)'
+      vietnameseExample: 'Xác suất khách hàng mua sản phẩm trong e-commerce Vietnam (0-1)',
     },
     {
       name: 'ReLU',
@@ -3449,7 +3570,7 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       advantages: ['Fast computation', 'No vanishing gradient', 'Sparse activation'],
       disadvantages: ['Dying ReLU problem', 'Not zero-centered', 'Unbounded output'],
       bestUseCases: ['Hidden layers trong deep networks', 'Computer vision tasks'],
-      vietnameseExample: 'Intensity của traffic light detection trong smart city systems'
+      vietnameseExample: 'Intensity của traffic light detection trong smart city systems',
     },
     {
       name: 'Tanh',
@@ -3458,7 +3579,7 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       advantages: ['Zero-centered', 'Strong gradients', 'Smooth function'],
       disadvantages: ['Still has vanishing gradient', 'Computationally expensive'],
       bestUseCases: ['RNN hidden states', 'When zero-centered output needed'],
-      vietnameseExample: 'Sentiment analysis của Vietnamese text: -1 (negative) to 1 (positive)'
+      vietnameseExample: 'Sentiment analysis của Vietnamese text: -1 (negative) to 1 (positive)',
     },
     {
       name: 'Softmax',
@@ -3467,8 +3588,8 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       advantages: ['Probability distribution', 'Good for multi-class', 'Interpretable output'],
       disadvantages: ['Only for output layer', 'Can be unstable', 'Requires careful implementation'],
       bestUseCases: ['Multi-class classification output', 'Attention mechanisms'],
-      vietnameseExample: 'Phân loại tỉnh/thành Việt Nam từ địa chỉ text input'
-    }
+      vietnameseExample: 'Phân loại tỉnh/thành Việt Nam từ địa chỉ text input',
+    },
   ],
   trainingConcepts: [
     {
@@ -3478,13 +3599,13 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       examples: [
         'Learning rate quá cao: model không converge',
         'Learning rate quá thấp: training chậm, có thể stuck ở local minimum',
-        'Adaptive learning rate: bắt đầu cao rồi giảm dần'
+        'Adaptive learning rate: bắt đầu cao rồi giảm dần',
       ],
       vietnameseApplications: [
         'Tối ưu hóa recommendation system cho Tiki/Shopee',
         'Fine-tuning models cho Vietnamese language processing',
-        'Adjusting learning cho different phases của business cycle'
-      ]
+        'Adjusting learning cho different phases của business cycle',
+      ],
     },
     {
       concept: 'Overfitting vs Underfitting',
@@ -3493,13 +3614,13 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       examples: [
         'Overfitting: high training accuracy, low test accuracy',
         'Underfitting: poor performance trên cả training và test',
-        'Just right: good performance trên both datasets'
+        'Just right: good performance trên both datasets',
       ],
       vietnameseApplications: [
         'Credit scoring models cho Vietnamese banks',
         'Traffic prediction models cho TP.HCM rush hours',
-        'Crop yield prediction với limited historical data'
-      ]
+        'Crop yield prediction với limited historical data',
+      ],
     },
     {
       concept: 'Gradient Descent',
@@ -3508,13 +3629,203 @@ export const neuralNetworkBuilder3DData: NeuralNetworkBuilder3DGameData = {
       examples: [
         'Batch gradient descent: use all data mỗi step',
         'Stochastic: use 1 sample mỗi step',
-        'Mini-batch: compromise giữa stability và speed'
+        'Mini-batch: compromise giữa stability và speed',
       ],
       vietnameseApplications: [
         'Optimizing delivery routes cho Grab/Be trong Vietnam cities',
         'Training recommendation engines với Vietnamese user behavior',
-        'Fraud detection models cho Vietnamese payment systems'
-      ]
-    }
-  ]
+        'Fraud detection models cho Vietnamese payment systems',
+      ],
+    },
+  ],
 };
+
+// Vietnamese Heritage Explorer 3D Game Data
+export interface VietnameseHeritageGameData {
+  sites: Array<{
+    id: string;
+    name: string;
+    nameEn: string;
+    location: string;
+    year: number;
+    description: string;
+    quiz: {
+      question: string;
+      options: string[];
+      correct: number;
+    };
+  }>;
+  gameMode: '3d-exploration';
+  difficulty: 'medium';
+  estimatedTime: '15-20 minutes';
+}
+
+export const vietnameseHeritageGame = {
+  id: 'vietnamese-heritage-explorer-3d',
+  title: 'Vietnamese Heritage Explorer 3D',
+  titleVietnamese: 'Khám phá Di sản Việt Nam 3D',
+  description: 'Khám phá các di tích lịch sử và địa danh văn hóa Việt Nam qua trải nghiệm 3D tương tác.',
+  category: 'cultural-education',
+  difficulty: 'medium',
+  estimatedTime: '15-20 phút',
+  ageGroup: '12+',
+  gameplayType: '3d-exploration',
+  skills: ['Lịch sử Việt Nam', 'Văn hóa', 'Địa lý', 'Tư duy phê phán'],
+  objectives: [
+    'Tìm hiểu về 9 di sản văn hóa UNESCO của Việt Nam',
+    'Nắm vững kiến thức lịch sử và văn hóa dân tộc',
+    'Phát triển khả năng quan sát và ghi nhớ thông tin',
+    'Nâng cao ý thức bảo tồn di sản văn hóa',
+  ],
+  features: [
+    'Môi trường 3D tương tác với 9 di tích UNESCO',
+    'Hệ thống quiz kiến thức về từng di sản',
+    'Animation và hiệu ứng thị giác sinh động',
+    'Thống kê tiến độ và điểm số chi tiết',
+  ],
+  component: 'VietnameseHeritageExplorer3D',
+  relatedLessons: [
+    {
+      moduleId: 'vietnamese-culture',
+      lessonId: 'vietnamese-heritage-sites',
+      title: 'Di sản văn hóa Việt Nam',
+      connection: 'Khám phá chi tiết các di tích lịch sử trong game',
+    },
+    {
+      moduleId: 'vietnamese-culture',
+      lessonId: 'unesco-world-heritage',
+      title: 'Di sản thế giới UNESCO',
+      connection: 'Tìm hiểu về tiêu chí và giá trị của di sản UNESCO',
+    },
+    {
+      moduleId: 'geography',
+      lessonId: 'vietnam-geography',
+      title: 'Địa lý Việt Nam',
+      connection: 'Vị trí địa lý của các di tích trong cả nước',
+    },
+  ],
+  gameData: {
+    sites: [
+      {
+        id: 'van-mieu',
+        name: 'Văn Miếu Quốc Tử Giám',
+        nameEn: 'Temple of Literature',
+        location: 'Hà Nội',
+        year: 1070,
+        description: 'Ngôi đền đầu tiên của Việt Nam dành cho Khổng Tử và các bậc hiền tài.',
+        quiz: {
+          question: 'Văn Miếu được xây dựng vào năm nào?',
+          options: ['1070', '1080', '1090', '1100'],
+          correct: 0,
+        },
+      },
+      {
+        id: 'chua-mot-cot',
+        name: 'Chùa Một Cột',
+        nameEn: 'One Pillar Pagoda',
+        location: 'Hà Nội',
+        year: 1049,
+        description: 'Chùa có kiến trúc độc đáo, tượng trưng cho hoa sen nở trên mặt nước.',
+        quiz: {
+          question: 'Chùa Một Cột được xây dựng dưới triều đại nào?',
+          options: ['Lý Thái Tông', 'Lý Thánh Tông', 'Trần Thái Tông', 'Lê Thánh Tông'],
+          correct: 0,
+        },
+      },
+      {
+        id: 'hoang-thanh',
+        name: 'Hoàng Thành Thăng Long',
+        nameEn: 'Imperial Citadel of Thang Long',
+        location: 'Hà Nội',
+        year: 1010,
+        description: 'Trung tâm chính trị của Việt Nam qua nhiều triều đại phong kiến.',
+        quiz: {
+          question: 'Hoàng Thành Thăng Long được UNESCO công nhận là Di sản thế giới vào năm nào?',
+          options: ['2008', '2009', '2010', '2011'],
+          correct: 2,
+        },
+      },
+      {
+        id: 'ha-long-bay',
+        name: 'Vịnh Hạ Long',
+        nameEn: 'Ha Long Bay',
+        location: 'Quảng Ninh',
+        year: 1994,
+        description: 'Kỳ quan thiên nhiên thế giới với hàng nghìn đảo đá vôi.',
+        quiz: {
+          question: 'Vịnh Hạ Long có khoảng bao nhiêu đảo đá vôi?',
+          options: ['1600', '1800', '2000', '2200'],
+          correct: 0,
+        },
+      },
+      {
+        id: 'hoi-an',
+        name: 'Phố Cổ Hội An',
+        nameEn: 'Hoi An Ancient Town',
+        location: 'Quảng Nam',
+        year: 1999,
+        description: 'Thành phố cổ với kiến trúc độc đáo, là cảng thương mại quốc tế.',
+        quiz: {
+          question: 'Hội An được UNESCO công nhận là Di sản thế giới vào năm nào?',
+          options: ['1998', '1999', '2000', '2001'],
+          correct: 1,
+        },
+      },
+      {
+        id: 'my-son',
+        name: 'Thánh Địa Mỹ Sơn',
+        nameEn: 'My Son Sanctuary',
+        location: 'Quảng Nam',
+        year: 1999,
+        description: 'Quần thể đền tháp Chăm Pa cổ, trung tâm tôn giáo Hindu.',
+        quiz: {
+          question: 'Mỹ Sơn là di tích của nền văn minh nào?',
+          options: ['Chăm Pa', 'Óc Eo', 'Đông Sơn', 'Sa Huỳnh'],
+          correct: 0,
+        },
+      },
+      {
+        id: 'hue-citadel',
+        name: 'Kinh Thành Huế',
+        nameEn: 'Hue Imperial City',
+        location: 'Thừa Thiên Huế',
+        year: 1993,
+        description: 'Cố đô của triều Nguyễn, biểu tượng văn hóa hoàng gia Việt Nam.',
+        quiz: {
+          question: 'Kinh Thành Huế là cố đô của triều đại nào?',
+          options: ['Trần', 'Lê', 'Nguyễn', 'Lý'],
+          correct: 2,
+        },
+      },
+      {
+        id: 'phong-nha',
+        name: 'Phong Nha - Kẻ Bàng',
+        nameEn: 'Phong Nha-Ke Bang National Park',
+        location: 'Quảng Bình',
+        year: 2003,
+        description: 'Công viên quốc gia với hệ thống hang động kỳ vĩ nhất thế giới.',
+        quiz: {
+          question: 'Hang Sơn Trà nằm trong khu vực nào?',
+          options: ['Phong Nha - Kẻ Bàng', 'Hạ Long', 'Cát Bà', 'Ba Bể'],
+          correct: 0,
+        },
+      },
+      {
+        id: 'trang-an',
+        name: 'Quần Thể Tràng An',
+        nameEn: 'Trang An Landscape Complex',
+        location: 'Ninh Bình',
+        year: 2014,
+        description: 'Di sản hỗn hợp văn hóa và thiên nhiên với cảnh quan karst.',
+        quiz: {
+          question: 'Tràng An là di sản hỗn hợp, kết hợp giữa hai yếu tố nào?',
+          options: ['Văn hóa và Thiên nhiên', 'Lịch sử và Kiến trúc', 'Tôn giáo và Nghệ thuật', 'Cổ học và Địa chất'],
+          correct: 0,
+        },
+      },
+    ],
+  } as VietnameseHeritageGameData,
+};
+
+// Export aquaculture game for direct access
+export const aquacultureIoTGameData = GAME_DATA.aquacultureIoTGame;

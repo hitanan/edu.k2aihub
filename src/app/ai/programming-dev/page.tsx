@@ -8,7 +8,9 @@ export const metadata: Metadata = {
   description: createDescription("So sánh chi tiết GitHub Copilot, Cursor IDE, ChatGPT và các AI coding tools. Kỹ thuật nâng cao, workflow productivity và xu hướng AI programming 2024-2025"),
   keywords: createKeywords(["AI coding", "GitHub Copilot", "Cursor IDE", "ChatGPT programming", "AI tools comparison", "prompt engineering", "senior developer tools", "AI workflow", "coding productivity"]),
   authors: [{ name: "K2AiHub Team" }],
-  openGraph: {
+  openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
     title: createTitle("AI cho Lập Trình & Phát Triển - So Sánh Công Cụ AI Coding"),
     description: createDescription("Hướng dẫn toàn diện về AI trong lập trình: từ GitHub Copilot đến advanced techniques mà senior developers đang sử dụng"),
     type: "article",

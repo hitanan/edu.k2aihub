@@ -29,7 +29,8 @@ export async function generateMetadata() {
       'youth mental health',
       'K2AI',
     ]),
-    openGraph: {
+    openGraph: {    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'Teen Wellness & Mental Health - K2AI Learning Platform',
       description:
         'Chương trình toàn diện về sức khỏe tinh thần cho teenagers. Quản lý stress, anxiety và phát triển emotional intelligence.',

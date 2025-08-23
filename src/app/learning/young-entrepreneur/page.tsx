@@ -26,7 +26,9 @@ export async function generateMetadata() {
       'teenage entrepreneur',
       'vietnam startup ecosystem',
     ],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title:
         'Young Entrepreneur Bootcamp - Khởi nghiệp thành công từ tuổi teen',
       description:

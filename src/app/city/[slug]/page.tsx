@@ -5,14 +5,14 @@ import CityPage from '@/components/city/CityPage';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { City } from '@/types';
 import { findCityBySlug } from '@/utils/slug';
-import { 
-  createTitle, 
-  createDescription, 
-  createKeywords, 
+import {
+  createTitle,
+  createDescription,
+  createKeywords,
   createEducationalContentStructuredData,
   createFAQStructuredData,
   createBreadcrumbStructuredData,
-  createPlaceStructuredData
+  createPlaceStructuredData,
 } from '@/utils/seo';
 import { getAbsoluteAssetUrl } from '@/utils/assets';
 import citiesData from '@/data/cities';
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   try {
     const { slug } = await params;
     const city = findCityBySlug(citiesData, slug);
-    
+
     if (!city) {
       return {
         title: createTitle('Không Tìm Thấy Thành Phố - Địa Lý Việt Nam'),
@@ -63,33 +63,32 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
       'kinh tế',
       'dân số',
       'diện tích',
-      'hành chính'
+      'hành chính',
     ];
 
     // Add tourist attraction keywords if they exist
     if (city.touristAttractions && city.touristAttractions.length > 0) {
-      cityKeywords.push(
-        ...city.touristAttractions.map(attraction => attraction.name),
-        'điểm du lịch',
-        'danh thắng'
-      );
+      cityKeywords.push(...city.touristAttractions.map((attraction) => attraction.name), 'điểm du lịch', 'danh thắng');
     }
 
     // Enhanced description with key statistics and tourist attractions
     let enhancedDescription = `${city.description} Diện tích: ${city.area}, Dân số: ${city.population}.`;
-    
+
     if (city.touristAttractions && city.touristAttractions.length > 0) {
-      const attractionNames = city.touristAttractions.slice(0, 3).map(a => a.name).join(', ');
+      const attractionNames = city.touristAttractions
+        .slice(0, 3)
+        .map((a) => a.name)
+        .join(', ');
       enhancedDescription += ` Khám phá các điểm du lịch nổi tiếng: ${attractionNames}.`;
     }
-    
+
     enhancedDescription += ` Tìm hiểu lịch sử, văn hóa và kinh tế của ${city.name}`;
 
     // Create enhanced structured data for better SEO
     const educationalData = createEducationalContentStructuredData(
       `${city.name} - ${city.region}`,
       enhancedDescription,
-      `https://k2aihub.com/city/${city.slug}`
+      `https://k2aihub.com/city/${city.slug}`,
     );
 
     const faqData = createFAQStructuredData(city);
@@ -97,16 +96,13 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
     const placeData = createPlaceStructuredData(city);
 
     // Combine all structured data
-    const combinedStructuredData = [
-      educationalData,
-      faqData,
-      breadcrumbData,
-      placeData
-    ];
+    const combinedStructuredData = [educationalData, faqData, breadcrumbData, placeData];
 
     return {
       title: createTitle(`${city.name} - ${city.region} | Địa Lý Việt Nam`),
-      description: createDescription(enhancedDescription.length > 150 ? enhancedDescription.substring(0, 147) + '...' : enhancedDescription),
+      description: createDescription(
+        enhancedDescription.length > 150 ? enhancedDescription.substring(0, 147) + '...' : enhancedDescription,
+      ),
       keywords: createKeywords(cityKeywords),
       authors: [{ name: 'K2AI Team' }],
       creator: 'K2AI',
@@ -133,7 +129,7 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
         url: `https://k2aihub.com/city/${city.slug}`,
         title: createTitle(`${city.name} - Khám Phá ${city.region}`),
         description: createDescription(city.description),
-        siteName: 'K2AiHub',
+        siteName: 'K2AiHub - Nền tảng học tập thông minh',
         images: [
           {
             url: getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg'),

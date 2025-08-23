@@ -30,7 +30,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 1: Cơ Bản Digital Marketing',
     description:
       'Tìm hiểu khái niệm Digital Marketing, các kênh chính và cách xây dựng chiến lược marketing toàn diện cho doanh nghiệp.',
-    videoUrl: 'https://www.youtube.com/watch?v=bELBQqF8dCE',
+    videoUrl: 'https://www.youtube.com/watch?v=HjUJf5bKCpU', // GaryVee Social Media Marketing Strategy
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '90 phút',

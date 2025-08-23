@@ -19,7 +19,7 @@ export const BlockchainLessons: BlockchainLessonData[] = [
       'Tìm hiểu công nghệ blockchain từ cơ bản đến nâng cao, bao gồm Bitcoin, Ethereum và các ứng dụng thực tế.',
     duration: '150 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=G44e7j6CX8Q',
+    videoUrl: 'https://www.youtube.com/watch?v=yubzJw0uiE4', // Blockchain In 7 Minutes - Simplilearn
     imageUrl: '/images/blockchain-fundamentals.jpg',
     objectives: [
       'Hiểu cấu trúc và hoạt động của blockchain',

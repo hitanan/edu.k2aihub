@@ -28,7 +28,8 @@ export async function generateMetadata() {
       'creator economy',
       'K2AI',
     ]),
-    openGraph: {
+    openGraph: {    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'Content Creator Academy - K2AI Learning Platform',
       description:
         'Học từ A-Z cách trở thành content creator thành công. Thu nhập 15-100 triệu VNĐ/tháng từ social media.',

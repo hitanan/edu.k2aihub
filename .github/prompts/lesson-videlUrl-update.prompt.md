@@ -25,10 +25,14 @@ Quy tắc xử lý
 4. Nếu bài học có trường videoUrl:
    - Thay giá trị videoUrl bằng newVideoUrl nếu có, ngược lại dùng suggestedVideoUrl.
    - Nếu newVideoUrl/suggestedVideoUrl là YouTube, bạn có thể chuẩn hoá thành dạng https://www.youtube.com/watch?v=VIDEO_ID (không bắt buộc nhưng khuyến nghị).
-5. Nếu input có videoDetails.thumbnail:
+5. Nếu bài học có trường duration:
+
+- Thay giá trị duration bằng duration nếu có
+
+6. Nếu input có videoDetails.thumbnail:
    - Cập nhật trường imageUrl của bài học bằng giá trị videoDetails.thumbnail nếu trường tồn tại.
-6. Chỉ thay đổi các giá trị của thuộc tính videoUrl và imageUrl trong đối tượng bài học; không thay đổi phần khác của file.
-7. Sau cập nhật, giữ nguyên định dạng TypeScript; đảm bảo không phá vỡ cú pháp.
+7. Chỉ thay đổi các giá trị của thuộc tính videoUrl và imageUrl trong đối tượng bài học; không thay đổi phần khác của file.
+8. Sau cập nhật, giữ nguyên định dạng TypeScript; đảm bảo không phá vỡ cú pháp.
 
 Regex gợi ý để trích videoId (nếu cần):
 

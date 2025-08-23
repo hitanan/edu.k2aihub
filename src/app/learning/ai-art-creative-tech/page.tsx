@@ -23,12 +23,20 @@ export const metadata: Metadata = {
     'prompt engineering',
   ]),
   authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {
+  openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
     title: createTitle('AI Art & Creative Technology - Sáng Tạo Nghệ Thuật AI'),
     description: createDescription(
       'Master AI art generation và creative technology với các công cụ hàng đầu',
     ),
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
   },
 };
 

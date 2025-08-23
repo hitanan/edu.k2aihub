@@ -26,11 +26,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: createTitle(lesson.title),
     description: createDescription(lesson.description),
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: lesson.title,
       description: lesson.description,
       images: lesson.imageUrl ? [{ url: lesson.imageUrl }] : [],
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   }
 }
 

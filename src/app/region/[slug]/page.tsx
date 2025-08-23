@@ -105,7 +105,9 @@ export async function generateMetadata({ params }: RegionPageProps): Promise<Met
       ...cities.map(city => city.name)
     ]),
     authors: [{ name: "K2AiHub Team" }],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: createTitle(`Vùng ${region.name} - Khám Phá ${cities.length} Tỉnh Thành`),
       description: createDescription(`${region.description} Cùng khám phá các tỉnh thành: ${cities.slice(0, 3).map(c => c.name).join(', ')}...`),
       type: "article",

@@ -16,10 +16,18 @@ export const metadata: Metadata = {
     'nông nghiệp thông minh',
     'K2AI'
   ],
-  openGraph: {
+  openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
     title: 'Drone Crop Monitoring 3D - Mô Phỏng Drone Nông Nghiệp | K2AiHub',
     description: 'Điều khiển drone nông nghiệp 3D cho precision farming và giám sát cây trồng thông minh.',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
   },
 };
 

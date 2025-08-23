@@ -22,12 +22,20 @@ export const metadata: Metadata = {
     'IoT robot',
   ]),
   authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {
+  openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
     title: createTitle('Học Robotics - Từ Cơ Bản Đến Nâng Cao'),
     description: createDescription(
       'Khám phá thế giới robotics với các bài học thực hành và dự án thú vị',
     ),
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
   },
 };
 

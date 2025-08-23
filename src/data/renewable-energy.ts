@@ -45,6 +45,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     duration: '180 phút',
     difficulty: 'Cơ bản',
     energyType: 'Solar Power',
+    videoUrl: 'https://www.youtube.com/watch?v=xy9nj94xvKA', // How do wind turbines work? - TED-Ed
     objectives: [
       'Hiểu photovoltaic effect và cách solar cells convert sunlight thành electricity',
       'Learn về different types của solar panels: monocrystalline, polycrystalline, thin-film',

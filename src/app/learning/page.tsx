@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     description: `Khám phá ${moduleNavigation.length} khóa học chuyên sâu từ Vietnamese business đến AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering và các công nghệ tiên tiến. Miễn phí cho thị trường Việt Nam.`,
     type: 'website',
     locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
   },
   twitter: {
     card: 'summary_large_image',

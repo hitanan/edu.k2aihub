@@ -26,10 +26,32 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'K2AiHub Team' }],
   openGraph: {
-    title: 'Digital Marketing & Creator Economy',
-    description:
-      'Trở thành chuyên gia Digital Marketing và Creator với khóa học thực tế từ K2AiHub',
+    title: createTitle('Digital Marketing & Creator Economy - Học Marketing Số'),
+    description: createDescription(
+      'Khóa học Digital Marketing toàn diện từ cơ bản đến nâng cao, bao gồm Creator Economy, Social Media Marketing, Content Marketing và Analytics',
+    ),
     type: 'website',
+    url: 'https://k2aihub.com/learning/digital-marketing',
+    siteName: 'K2AiHub',
+    locale: 'vi_VN',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
+        width: 1200,
+        height: 600,
+        alt: 'Digital Marketing & Creator Economy - K2AiHub',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('Digital Marketing & Creator Economy - Học Marketing Số'),
+    description: createDescription(
+      'Khóa học Digital Marketing toàn diện từ cơ bản đến nâng cao, bao gồm Creator Economy, Social Media Marketing, Content Marketing và Analytics',
+    ),
+    images: [
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
+    ],
   },
 };
 

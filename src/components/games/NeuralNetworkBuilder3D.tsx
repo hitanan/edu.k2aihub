@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useMemo } from 'react';
 import { Brain, Play, Square, RotateCcw, Settings, CheckCircle, TrendingUp } from 'lucide-react';
 
@@ -51,14 +51,24 @@ const DATASETS: TrainingData[] = [
   {
     name: 'XOR Problem',
     description: 'Classic XOR logic gate problem',
-    inputs: [[0, 0], [0, 1], [1, 0], [1, 1]],
-    outputs: [[0], [1], [1], [0]]
+    inputs: [
+      [0, 0],
+      [0, 1],
+      [1, 0],
+      [1, 1],
+    ],
+    outputs: [[0], [1], [1], [0]],
   },
   {
     name: 'Linear Classification',
     description: 'Simple binary classification',
-    inputs: [[0, 0], [0, 1], [1, 0], [1, 1]],
-    outputs: [[0], [0], [0], [1]]
+    inputs: [
+      [0, 0],
+      [0, 1],
+      [1, 0],
+      [1, 1],
+    ],
+    outputs: [[0], [0], [0], [1]],
   },
   {
     name: 'Iris Classification',
@@ -69,24 +79,18 @@ const DATASETS: TrainingData[] = [
       [7.0, 3.2, 4.7, 1.4],
       [6.4, 3.2, 4.5, 1.5],
       [6.3, 3.3, 6.0, 2.5],
-      [5.8, 2.7, 5.1, 1.9]
+      [5.8, 2.7, 5.1, 1.9],
     ],
-    outputs: [[1, 0, 0], [1, 0, 0], [0, 1, 0], [0, 1, 0], [0, 0, 1], [0, 0, 1]]
-  }
+    outputs: [
+      [1, 0, 0],
+      [1, 0, 0],
+      [0, 1, 0],
+      [0, 1, 0],
+      [0, 0, 1],
+      [0, 0, 1],
+    ],
+  },
 ];
-
-// Activation functions
-const ACTIVATION_FUNCTIONS = {
-  sigmoid: (x: number) => 1 / (1 + Math.exp(-x)),
-  relu: (x: number) => Math.max(0, x),
-  tanh: (x: number) => Math.tanh(x),
-  softmax: (x: number[]) => {
-    const max = Math.max(...x);
-    const exp = x.map(val => Math.exp(val - max));
-    const sum = exp.reduce((acc, val) => acc + val, 0);
-    return exp.map(val => val / sum);
-  }
-};
 
 // Network challenges for progressive learning
 const CHALLENGES = [
@@ -98,7 +102,7 @@ const CHALLENGES = [
     dataset: 'Linear Classification',
     targetAccuracy: 0.75,
     points: 100,
-    level: 1
+    level: 1,
   },
   {
     id: 'xor-solver',
@@ -108,7 +112,7 @@ const CHALLENGES = [
     dataset: 'XOR Problem',
     targetAccuracy: 0.95,
     points: 200,
-    level: 2
+    level: 2,
   },
   {
     id: 'multi-class',
@@ -116,9 +120,9 @@ const CHALLENGES = [
     description: 'Build network for 3-class Iris classification',
     requirements: ['4 input neurons', 'Hidden layer(s)', '3 output neurons'],
     dataset: 'Iris Classification',
-    targetAccuracy: 0.80,
+    targetAccuracy: 0.8,
     points: 300,
-    level: 3
+    level: 3,
   },
   {
     id: 'deep-network',
@@ -126,24 +130,24 @@ const CHALLENGES = [
     description: 'Build deep network với multiple hidden layers',
     requirements: ['4+ input neurons', '2+ hidden layers', 'Multiple outputs'],
     dataset: 'Iris Classification',
-    targetAccuracy: 0.90,
+    targetAccuracy: 0.9,
     points: 400,
-    level: 4
-  }
+    level: 4,
+  },
 ];
 
 const NeuralNetworkBuilder3D: React.FC = () => {
   const [network, setNetwork] = useState<NetworkArchitecture>({
     layers: [
       { id: 'input', type: 'input', neuronCount: 2, activationFunction: 'sigmoid', color: '#3b82f6' },
-      { id: 'output', type: 'output', neuronCount: 1, activationFunction: 'sigmoid', color: '#ef4444' }
+      { id: 'output', type: 'output', neuronCount: 1, activationFunction: 'sigmoid', color: '#ef4444' },
     ],
     neurons: [],
     connections: [],
     learningRate: 0.1,
     epochs: 100,
     loss: 0,
-    accuracy: 0
+    accuracy: 0,
   });
 
   const [selectedDataset, setSelectedDataset] = useState<TrainingData>(DATASETS[0]);
@@ -162,7 +166,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
 
     network.layers.forEach((layer, idx) => {
       const layerZ = (idx - network.layers.length / 2) * 100;
-      
+
       for (let i = 0; i < layer.neuronCount; i++) {
         const neuron: NeuronNode = {
           id: `${layer.id}-${i}`,
@@ -170,16 +174,13 @@ const NeuralNetworkBuilder3D: React.FC = () => {
           position: {
             x: (i - (layer.neuronCount - 1) / 2) * 80,
             y: 0,
-            z: layerZ
+            z: layerZ,
           },
           activation: Math.random(),
           bias: (Math.random() - 0.5) * 2,
           type: layer.type,
-          label: layer.type === 'input' 
-            ? `Input ${i + 1}` 
-            : layer.type === 'output' 
-            ? `Output ${i + 1}` 
-            : `Hidden ${i + 1}`
+          label:
+            layer.type === 'input' ? `Input ${i + 1}` : layer.type === 'output' ? `Output ${i + 1}` : `Hidden ${i + 1}`,
         };
         neurons.push(neuron);
       }
@@ -192,24 +193,24 @@ const NeuralNetworkBuilder3D: React.FC = () => {
   // Generate connections between layers
   const generateConnections = useMemo(() => {
     const connections: Connection[] = [];
-    
+
     for (let i = 0; i < network.layers.length - 1; i++) {
-      const currentLayerNeurons = generateNeurons.filter(n => n.layer === i);
-      const nextLayerNeurons = generateNeurons.filter(n => n.layer === i + 1);
-      
-      currentLayerNeurons.forEach(fromNeuron => {
-        nextLayerNeurons.forEach(toNeuron => {
+      const currentLayerNeurons = generateNeurons.filter((n) => n.layer === i);
+      const nextLayerNeurons = generateNeurons.filter((n) => n.layer === i + 1);
+
+      currentLayerNeurons.forEach((fromNeuron) => {
+        nextLayerNeurons.forEach((toNeuron) => {
           connections.push({
             id: `${fromNeuron.id}-${toNeuron.id}`,
             fromNeuron: fromNeuron.id,
             toNeuron: toNeuron.id,
             weight: (Math.random() - 0.5) * 2,
-            animated: false
+            animated: false,
           });
         });
       });
     }
-    
+
     return connections;
   }, [generateNeurons, network.layers]);
 
@@ -220,7 +221,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
       type,
       neuronCount,
       activationFunction,
-      color: '#8b5cf6'
+      color: '#8b5cf6',
     };
 
     const newLayers = [...network.layers];
@@ -228,7 +229,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
 
     setNetwork({
       ...network,
-      layers: newLayers
+      layers: newLayers,
     });
     setScore(score + 20);
   };
@@ -239,7 +240,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
 
     setNetwork({
       ...network,
-      layers: network.layers.filter(l => l.id !== layerId)
+      layers: network.layers.filter((l) => l.id !== layerId),
     });
   };
 
@@ -247,9 +248,9 @@ const NeuralNetworkBuilder3D: React.FC = () => {
   const updateLayerNeuronCount = (layerId: string, count: number) => {
     setNetwork({
       ...network,
-      layers: network.layers.map(layer => 
-        layer.id === layerId ? { ...layer, neuronCount: Math.max(1, count) } : layer
-      )
+      layers: network.layers.map((layer) =>
+        layer.id === layerId ? { ...layer, neuronCount: Math.max(1, count) } : layer,
+      ),
     });
   };
 
@@ -262,38 +263,38 @@ const NeuralNetworkBuilder3D: React.FC = () => {
 
     // Simulate training epochs
     for (let epoch = 0; epoch < network.epochs; epoch++) {
-      await new Promise(resolve => setTimeout(resolve, 50));
-      
+      await new Promise((resolve) => setTimeout(resolve, 50));
+
       // Update progress
       setTrainingProgress((epoch + 1) / network.epochs);
-      
+
       // Simulate loss reduction
       const loss = Math.max(0.01, 1 - (epoch / network.epochs) * 0.8 + Math.random() * 0.1);
       const accuracy = Math.min(0.99, (epoch / network.epochs) * 0.9 + Math.random() * 0.1);
-      
-      setNetwork(prev => ({
+
+      setNetwork((prev) => ({
         ...prev,
         loss,
         accuracy,
-        connections: prev.connections.map(conn => ({
+        connections: prev.connections.map((conn) => ({
           ...conn,
-          animated: Math.random() > 0.7
-        }))
+          animated: Math.random() > 0.7,
+        })),
       }));
     }
 
     // Check for completed challenges
     const currentAccuracy = network.accuracy;
-    CHALLENGES.forEach(challenge => {
+    CHALLENGES.forEach((challenge) => {
       if (challenge.level <= level + 1 && !completedChallenges.includes(challenge.id)) {
         const meetsRequirements = checkChallengeRequirements();
         const correctDataset = selectedDataset.name === challenge.dataset;
         const meetsAccuracy = currentAccuracy >= challenge.targetAccuracy;
-        
+
         if (meetsRequirements && correctDataset && meetsAccuracy) {
           setCompletedChallenges([...completedChallenges, challenge.id]);
           setScore(score + challenge.points);
-          
+
           if (challenge.level > level) {
             setLevel(challenge.level);
           }
@@ -306,8 +307,8 @@ const NeuralNetworkBuilder3D: React.FC = () => {
 
   // Check if network meets challenge requirements
   const checkChallengeRequirements = (): boolean => {
-    const inputLayer = network.layers.find(l => l.type === 'input');
-    const outputLayer = network.layers.find(l => l.type === 'output');
+    const inputLayer = network.layers.find((l) => l.type === 'input');
+    const outputLayer = network.layers.find((l) => l.type === 'output');
 
     // This is a simplified check - in real implementation, you&apos;d parse requirements more thoroughly
     return inputLayer !== undefined && outputLayer !== undefined;
@@ -318,14 +319,14 @@ const NeuralNetworkBuilder3D: React.FC = () => {
     setNetwork({
       layers: [
         { id: 'input', type: 'input', neuronCount: 2, activationFunction: 'sigmoid', color: '#3b82f6' },
-        { id: 'output', type: 'output', neuronCount: 1, activationFunction: 'sigmoid', color: '#ef4444' }
+        { id: 'output', type: 'output', neuronCount: 1, activationFunction: 'sigmoid', color: '#ef4444' },
       ],
       neurons: [],
       connections: [],
       learningRate: 0.1,
       epochs: 100,
       loss: 0,
-      accuracy: 0
+      accuracy: 0,
     });
     setIsTraining(false);
     setTrainingProgress(0);
@@ -333,9 +334,9 @@ const NeuralNetworkBuilder3D: React.FC = () => {
 
   // Render 3D neuron
   const render3DNeuron = (neuron: NeuronNode) => {
-    const layer = network.layers.find(l => l.id.split('-')[0] === neuron.type);
+    const layer = network.layers.find((l) => l.id.split('-')[0] === neuron.type);
     const isSelected = selectedNeuron?.id === neuron.id;
-    
+
     return (
       <div
         key={neuron.id}
@@ -360,7 +361,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
           style={{
             backgroundColor: layer?.color || '#6b7280',
             opacity: 0.7 + neuron.activation * 0.3,
-            boxShadow: `0 ${neuron.position.z * 0.1}px ${neuron.position.z * 0.2}px rgba(0,0,0,0.3)`
+            boxShadow: `0 ${neuron.position.z * 0.1}px ${neuron.position.z * 0.2}px rgba(0,0,0,0.3)`,
           }}
         >
           <div className="text-center">
@@ -383,7 +384,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
           <p className="text-xl text-gray-300 mb-6">
             Build, train, và visualize neural networks trong interactive 3D environment
           </p>
-          
+
           {/* Game Stats */}
           <div className="flex justify-center gap-8 mb-6">
             <div className="bg-purple-800/50 px-4 py-2 rounded-lg">
@@ -413,7 +414,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                 <Settings className="w-5 h-5 mr-2" />
                 Network Architecture
               </h3>
-              
+
               {/* Layer Configuration */}
               <div className="space-y-4">
                 {network.layers.map((layer) => (
@@ -429,7 +430,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                         </button>
                       )}
                     </div>
-                    
+
                     <div className="flex items-center gap-2 mb-2">
                       <label className="text-xs text-gray-400">Neurons:</label>
                       <input
@@ -442,17 +443,17 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                         disabled={isTraining}
                       />
                     </div>
-                    
+
                     <select
                       value={layer.activationFunction}
                       onChange={(e) => {
                         setNetwork({
                           ...network,
-                          layers: network.layers.map(l => 
-                            l.id === layer.id 
-                              ? { ...l, activationFunction: e.target.value as Layer['activationFunction'] } 
-                              : l
-                          )
+                          layers: network.layers.map((l) =>
+                            l.id === layer.id
+                              ? { ...l, activationFunction: e.target.value as Layer['activationFunction'] }
+                              : l,
+                          ),
                         });
                       }}
                       className="w-full px-2 py-1 bg-gray-600 rounded text-xs"
@@ -465,7 +466,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                     </select>
                   </div>
                 ))}
-                
+
                 {/* Add Hidden Layer */}
                 <button
                   onClick={() => addLayer('hidden', 4, 'relu')}
@@ -480,20 +481,20 @@ const NeuralNetworkBuilder3D: React.FC = () => {
             {/* Training Configuration */}
             <div className="bg-gray-800/50 rounded-lg p-4 mb-6">
               <h3 className="text-lg font-bold mb-4">Training</h3>
-              
+
               <div className="space-y-3">
                 <div>
                   <label className="block text-sm text-gray-400 mb-1">Dataset</label>
                   <select
                     value={selectedDataset.name}
                     onChange={(e) => {
-                      const dataset = DATASETS.find(d => d.name === e.target.value);
+                      const dataset = DATASETS.find((d) => d.name === e.target.value);
                       if (dataset) setSelectedDataset(dataset);
                     }}
                     className="w-full px-3 py-2 bg-gray-600 rounded"
                     disabled={isTraining}
                   >
-                    {DATASETS.map(dataset => (
+                    {DATASETS.map((dataset) => (
                       <option key={dataset.name} value={dataset.name}>
                         {dataset.name}
                       </option>
@@ -501,7 +502,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                   </select>
                   <div className="text-xs text-gray-400 mt-1">{selectedDataset.description}</div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm text-gray-400 mb-1">Learning Rate</label>
                   <input
@@ -515,7 +516,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                     disabled={isTraining}
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm text-gray-400 mb-1">Epochs</label>
                   <input
@@ -539,9 +540,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                   onClick={trainNetwork}
                   disabled={isTraining || generateNeurons.length === 0}
                   className={`w-full p-3 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center ${
-                    isTraining
-                      ? 'bg-orange-600 cursor-not-allowed'
-                      : 'bg-green-600 hover:bg-green-700'
+                    isTraining ? 'bg-orange-600 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
                   }`}
                 >
                   {isTraining ? (
@@ -556,7 +555,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                     </>
                   )}
                 </button>
-                
+
                 <button
                   onClick={clearNetwork}
                   className="w-full p-3 bg-gray-600 hover:bg-gray-700 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center"
@@ -570,7 +569,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
               {isTraining && (
                 <div className="mt-4">
                   <div className="bg-gray-600 rounded-full h-2">
-                    <div 
+                    <div
                       className="bg-green-500 h-2 rounded-full transition-all duration-300"
                       style={{ width: `${trainingProgress * 100}%` }}
                     />
@@ -585,17 +584,15 @@ const NeuralNetworkBuilder3D: React.FC = () => {
             <div className="bg-gray-800/30 rounded-lg p-4 h-[600px] relative overflow-hidden">
               <div className="absolute top-4 left-4 z-10">
                 <h3 className="text-lg font-bold mb-2">Neural Network Visualization</h3>
-                <div className="text-sm text-gray-400">
-                  Drag to rotate, click neurons to inspect
-                </div>
+                <div className="text-sm text-gray-400">Drag to rotate, click neurons to inspect</div>
               </div>
-              
+
               {/* 3D Perspective Container */}
-              <div 
+              <div
                 className="w-full h-full relative"
-                style={{ 
+                style={{
                   perspective: '1000px',
-                  perspectiveOrigin: 'center center'
+                  perspectiveOrigin: 'center center',
                 }}
                 onMouseMove={(e) => {
                   // Only update rotation if mouse is not over a neuron
@@ -603,21 +600,21 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                   if (target.closest('.neuron-node')) {
                     return; // Don't rotate when hovering over neurons
                   }
-                  
+
                   const rect = e.currentTarget.getBoundingClientRect();
                   const centerX = rect.width / 2;
                   const centerY = rect.height / 2;
                   const mouseX = e.clientX - rect.left;
                   const mouseY = e.clientY - rect.top;
-                  
+
                   setRotation({
                     x: ((mouseY - centerY) / centerY) * 20,
-                    y: ((mouseX - centerX) / centerX) * 20
+                    y: ((mouseX - centerX) / centerX) * 20,
                   });
                 }}
               >
                 {/* 3D Grid Background */}
-                <div 
+                <div
                   className="absolute inset-0 opacity-10"
                   style={{
                     backgroundImage: `
@@ -625,33 +622,33 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                       linear-gradient(90deg, rgba(147, 51, 234, 0.3) 1px, transparent 1px)
                     `,
                     backgroundSize: '50px 50px',
-                    transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
+                    transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
                   }}
                 />
-                
+
                 {/* 3D Neurons */}
-                <div 
+                <div
                   className="absolute inset-0"
-                  style={{ 
+                  style={{
                     transformStyle: 'preserve-3d',
-                    transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
+                    transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
                   }}
                 >
-                  {generateNeurons.map(neuron => render3DNeuron(neuron))}
+                  {generateNeurons.map((neuron) => render3DNeuron(neuron))}
                 </div>
 
                 {/* Connection Wires */}
                 <svg className="absolute inset-0 pointer-events-none">
                   {generateConnections.map((connection) => {
-                    const fromNeuron = generateNeurons.find(n => n.id === connection.fromNeuron);
-                    const toNeuron = generateNeurons.find(n => n.id === connection.toNeuron);
-                    
+                    const fromNeuron = generateNeurons.find((n) => n.id === connection.fromNeuron);
+                    const toNeuron = generateNeurons.find((n) => n.id === connection.toNeuron);
+
                     if (!fromNeuron || !toNeuron) return null;
-                    
+
                     const opacity = Math.abs(connection.weight) / 2;
                     const strokeWidth = Math.abs(connection.weight) * 2 + 1;
                     const color = connection.weight > 0 ? '#10b981' : '#ef4444';
-                    
+
                     return (
                       <line
                         key={connection.id}
@@ -679,7 +676,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                 <Brain className="w-5 h-5 mr-2" />
                 Network Stats
               </h3>
-              
+
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-gray-400">Layers:</span>
@@ -722,11 +719,21 @@ const NeuralNetworkBuilder3D: React.FC = () => {
               <div className="bg-gray-800/50 rounded-lg p-4 mb-6">
                 <h3 className="text-lg font-bold mb-4">Neuron Details</h3>
                 <div className="space-y-2">
-                  <div><strong>ID:</strong> {selectedNeuron.id}</div>
-                  <div><strong>Type:</strong> {selectedNeuron.type}</div>
-                  <div><strong>Activation:</strong> {selectedNeuron.activation.toFixed(4)}</div>
-                  <div><strong>Bias:</strong> {selectedNeuron.bias.toFixed(4)}</div>
-                  <div><strong>Layer:</strong> {selectedNeuron.layer}</div>
+                  <div>
+                    <strong>ID:</strong> {selectedNeuron.id}
+                  </div>
+                  <div>
+                    <strong>Type:</strong> {selectedNeuron.type}
+                  </div>
+                  <div>
+                    <strong>Activation:</strong> {selectedNeuron.activation.toFixed(4)}
+                  </div>
+                  <div>
+                    <strong>Bias:</strong> {selectedNeuron.bias.toFixed(4)}
+                  </div>
+                  <div>
+                    <strong>Layer:</strong> {selectedNeuron.layer}
+                  </div>
                 </div>
               </div>
             )}
@@ -738,15 +745,15 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                 Challenges
               </h3>
               <div className="space-y-3 max-h-80 overflow-y-auto">
-                {CHALLENGES.filter(challenge => challenge.level <= level + 1).map(challenge => (
+                {CHALLENGES.filter((challenge) => challenge.level <= level + 1).map((challenge) => (
                   <div
                     key={challenge.id}
                     className={`p-3 rounded-lg border ${
                       completedChallenges.includes(challenge.id)
                         ? 'bg-green-800/30 border-green-600'
                         : challenge.level <= level
-                        ? 'bg-purple-800/30 border-purple-600'
-                        : 'bg-gray-700/30 border-gray-600'
+                          ? 'bg-purple-800/30 border-purple-600'
+                          : 'bg-gray-700/30 border-gray-600'
                     }`}
                   >
                     <div className="flex justify-between items-start mb-2">
@@ -754,9 +761,7 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                       <div className="text-xs text-gray-400">Lv.{challenge.level}</div>
                     </div>
                     <div className="text-xs text-gray-300 mb-2">{challenge.description}</div>
-                    <div className="text-xs text-gray-400 mb-2">
-                      Dataset: {challenge.dataset}
-                    </div>
+                    <div className="text-xs text-gray-400 mb-2">Dataset: {challenge.dataset}</div>
                     <div className="text-xs text-gray-400">
                       Target: {(challenge.targetAccuracy * 100).toFixed(0)}% accuracy
                     </div>

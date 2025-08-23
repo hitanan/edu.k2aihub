@@ -20,12 +20,20 @@ export async function generateMetadata() {
       'AI workflows',
       'K2AI',
     ],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'MCP - Model Context Protocol | K2AiHub',
       description:
         'Master Model Context Protocol để tích hợp AI tools với Atlassian Jira, VS Code, và office productivity platforms.',
       type: 'website',
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 

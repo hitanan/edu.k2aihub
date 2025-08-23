@@ -40,7 +40,9 @@ export async function generateMetadata({
   return {
     title: createTitle(lesson.title),
     description: createDescription(lesson.description),
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: lesson.title,
       description: lesson.description,
       images: lesson.imageUrl ? [{ url: lesson.imageUrl }] : []

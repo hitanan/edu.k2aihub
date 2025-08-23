@@ -50,13 +50,21 @@ export async function generateMetadata() {
       'production ai',
       'K2AI',
     ],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title:
         'Advanced AI & Machine Learning - Trí Tuệ Nhân Tạo Nâng Cao | K2AI',
       description:
         'Master cutting-edge AI technologies và deploy production systems trong Vietnamese market. Deep Learning, Computer Vision, NLP, RL.',
       type: 'website',
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 

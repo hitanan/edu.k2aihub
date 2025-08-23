@@ -9,11 +9,19 @@ export async function generateMetadata() {
     title: createTitle('Chiến Lược Đa Nền Tảng - Marketing Thống Nhất'),
     description: createDescription('Tối ưu hóa thương hiệu trên tất cả các nền tảng số. Học cách xây dựng chiến lược marketing đa nền tảng hiệu quả, tăng engagement và ROI.'),
     keywords: ['cross-platform strategy', 'multi-platform marketing', 'brand consistency', 'digital marketing', 'social media strategy', 'marketing tự động', 'K2AI'],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'Chiến Lược Đa Nền Tảng - Marketing Thống Nhất | K2AiHub',
       description: 'Tối ưu hóa thương hiệu trên tất cả các nền tảng số với chiến lược marketing đa nền tảng chuyên nghiệp',
       type: 'website',
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 

@@ -6,10 +6,18 @@ export const metadata: Metadata = {
   title: createTitle('Mô Phỏng Đầu Tư - Game Tài Chính'),
   description: createDescription('Học đầu tư thông minh qua game mô phỏng. Quản lý danh mục đầu tư, phân tích rủi ro và tối ưu hóa lợi nhuận trong môi trường thị trường thực tế.'),
   keywords: ['đầu tư', 'tài chính', 'chứng khoán', 'quản lý danh mục', 'fintech', 'game giáo dục'],
-  openGraph: {
+  openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
     title: 'Mô Phỏng Đầu Tư - Game Tài Chính',
     description: 'Master investment strategies through interactive simulation with real market scenarios.',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
   },
 };
 

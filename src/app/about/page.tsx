@@ -31,11 +31,19 @@ export const metadata: Metadata = {
     'học tập cá nhân hóa',
     'đổi mới giáo dục',
   ]),
-  openGraph: {
+  openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
     title: 'Về K2AI - Sứ Mệnh Dân Chủ Hóa Giáo Dục Thông Minh',
     description:
       'Khám phá sứ mệnh, phương pháp và cách tiếp cận độc đáo của K2AI trong việc cung cấp giáo dục chất lượng cao với công nghệ AI tiên tiến.',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
   },
 };
 

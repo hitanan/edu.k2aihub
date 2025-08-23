@@ -8,11 +8,19 @@ export const metadata: Metadata = {
     'Chính sách bảo mật của K2AiHub - Nền tảng học tập không thu thập dữ liệu cá nhân, mọi thông tin được lưu trữ tại trình duyệt.',
   ),
   keywords: ['chính sách bảo mật', 'quyền riêng tư', 'K2AiHub', 'không thu thập dữ liệu', 'local storage'],
-  openGraph: {
+  openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
     title: 'Chính Sách Bảo Mật | K2AiHub',
     description:
       'K2AiHub không thu thập bất kỳ dữ liệu cá nhân nào - mọi thông tin được lưu trữ tại trình duyệt của bạn.',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
   },
 };
 

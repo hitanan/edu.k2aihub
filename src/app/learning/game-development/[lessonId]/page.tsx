@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PageProps } from '@/types';
+import { createTitle, createDescription } from '@/utils/seo';
 
 export async function generateStaticParams() {
   return gameDevLessons.map((lesson) => ({
@@ -24,7 +25,9 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: lesson.title,
     description: lesson.description,
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: lesson.title,
       description: lesson.description,
       images: [
@@ -33,8 +36,14 @@ export async function generateMetadata({ params }: PageProps) {
           width: 1200,
           height: 630,
           alt: lesson.title,
-        },
+        }
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: createTitle('K2AiHub Educational Content'),
+      description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+      images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
     },
   };
 }

@@ -9,11 +9,19 @@ export async function generateMetadata() {
     title: createTitle('TikTok Shop & Social Commerce'),
     description: createDescription('Học cách setup và optimize TikTok Shop, livestream selling strategies và social commerce cho maximized revenue.'),
     keywords: ['tiktok shop', 'social commerce', 'livestream selling', 'e-commerce optimization', 'K2AI', 'học tập thông minh'],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'TikTok Shop & Social Commerce | K2AiHub',
       description: 'Master live selling và e-commerce optimization trên TikTok platform',
       type: 'website',
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 

@@ -59,7 +59,7 @@ export const scratchLessons: ScratchLesson[] = [
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=jXUZaf5D12A',
+    videoUrl: 'https://www.youtube.com/watch?v=D-nW4jvzRr8', // Beginners Guide To Scratch (VERY Simple)
     scratchProjectUrl: 'https://scratch.mit.edu/projects/editor/',
     codeBlocks: [
       'when green flag clicked',

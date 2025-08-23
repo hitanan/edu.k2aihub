@@ -21,7 +21,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       'Tìm hiểu các khái niệm cơ bản của khoa học dữ liệu, từ thu thập đến phân tích và trực quan hóa dữ liệu.',
     duration: '150 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://youtube.com/watch?v=ua-CiDNNj30',
+    videoUrl: 'https://www.youtube.com/watch?v=nS-z5JgqNe0', // Statistics Tutorial - NumPy Regression Analysis
     imageUrl: '/images/data-science-fundamentals.jpg',
     objectives: [
       'Hiểu quy trình Data Science lifecycle (CRISP-DM)',

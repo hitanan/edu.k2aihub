@@ -27,7 +27,9 @@ export const metadata: Metadata = {
     'biotechnology',
     'STEM',
   ],
-  openGraph: {
+  openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
     title: 'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
     description: 'Nền tảng giáo dục tương tác miễn phí với 64+ modules học tập chất lượng cao từ cơ bản đến nâng cao.',
     type: 'website',

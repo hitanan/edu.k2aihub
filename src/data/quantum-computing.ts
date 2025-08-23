@@ -19,7 +19,7 @@ export const QuantumLessons: QuantumLessonData[] = [
       'Khám phá thế giới kỳ diệu của máy tính lượng tử, từ các nguyên lý vật lý cơ bản đến tiềm năng ứng dụng.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://youtube.com/watch?v=JhHMJCUmq28',
+    videoUrl: 'https://www.youtube.com/watch?v=jHoEjvuPoB8', // Quantum Computers, Explained With Quantum Physics - Quanta Magazine
     imageUrl: '/images/quantum-fundamentals.jpg',
     objectives: [
       'Hiểu các nguyên lý vật lý lượng tử cơ bản',

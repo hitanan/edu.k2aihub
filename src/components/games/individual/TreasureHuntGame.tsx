@@ -51,25 +51,25 @@ interface TreasureHuntGameProps {
 // Generate 50 levels programmatically
 const generateLevels = (): Level[] => {
   const generatedLevels: Level[] = [];
-  
+
   for (let i = 1; i <= 50; i++) {
     const difficulty = Math.min(Math.floor(i / 10) + 1, 5); // Difficulty 1-5 based on level
     const baseWidth = Math.min(6 + Math.floor(i / 5), 15); // Gradually increase size
     const baseHeight = Math.min(5 + Math.floor(i / 8), 12);
-    
+
     const width = baseWidth + (i % 3); // Add some variation
     const height = baseHeight + (i % 2);
-    
+
     // Generate random positions with some logic
     const playerStart: Position = { x: 0, y: Math.floor(height / 2) };
     const exit: Position = { x: width - 1, y: Math.floor(height / 2) + (i % 2 === 0 ? 1 : -1) };
-    
+
     // Generate treasures based on difficulty
     const numTreasures = Math.min(2 + Math.floor(i / 3), 8);
     const treasures: Treasure[] = [];
     const treasureTypes: Array<'gold' | 'gem' | 'artifact' | 'key'> = ['gold', 'gem', 'artifact', 'key'];
-    const treasureValues = { gold: 20 + (i * 2), gem: 30 + (i * 3), artifact: 50 + (i * 5), key: 40 + (i * 4) };
-    
+    const treasureValues = { gold: 20 + i * 2, gem: 30 + i * 3, artifact: 50 + i * 5, key: 40 + i * 4 };
+
     for (let j = 0; j < numTreasures; j++) {
       const type = treasureTypes[j % treasureTypes.length];
       treasures.push({
@@ -77,79 +77,113 @@ const generateLevels = (): Level[] => {
         y: Math.floor(1 + Math.random() * (height - 2)),
         type,
         value: treasureValues[type],
-        collected: false
+        collected: false,
       });
     }
-    
+
     // Generate enemies based on difficulty
     const numEnemies = Math.min(1 + Math.floor(i / 4), 6);
     const enemies: Enemy[] = [];
     const enemyTypes: Array<'guard' | 'trap' | 'monster'> = ['guard', 'trap', 'monster'];
     const enemyPatterns = ['patrol', 'circle', 'random'];
-    
+
     for (let j = 0; j < numEnemies; j++) {
       const type = enemyTypes[j % enemyTypes.length];
-      const damage = 10 + (difficulty * 3) + Math.floor(Math.random() * 10);
+      const damage = 10 + difficulty * 3 + Math.floor(Math.random() * 10);
       enemies.push({
         x: Math.floor(1 + Math.random() * (width - 2)),
         y: Math.floor(1 + Math.random() * (height - 2)),
         type,
         damage,
         pattern: type === 'guard' ? enemyPatterns[j % enemyPatterns.length] : undefined,
-        defeated: false
+        defeated: false,
       });
     }
-    
+
     // Generate walls for maze complexity
-    const numWalls = Math.min(Math.floor((width * height) * 0.15) + Math.floor(i / 3), Math.floor((width * height) * 0.3));
+    const numWalls = Math.min(Math.floor(width * height * 0.15) + Math.floor(i / 3), Math.floor(width * height * 0.3));
     const walls: Position[] = [];
-    
+
     for (let j = 0; j < numWalls; j++) {
       const wallX = Math.floor(1 + Math.random() * (width - 2));
       const wallY = Math.floor(1 + Math.random() * (height - 2));
-      
+
       // Avoid placing walls on critical positions
-      if ((wallX !== playerStart.x || wallY !== playerStart.y) &&
-          (wallX !== exit.x || wallY !== exit.y) &&
-          !walls.some(w => w.x === wallX && w.y === wallY)) {
+      if (
+        (wallX !== playerStart.x || wallY !== playerStart.y) &&
+        (wallX !== exit.x || wallY !== exit.y) &&
+        !walls.some((w) => w.x === wallX && w.y === wallY)
+      ) {
         walls.push({ x: wallX, y: wallY });
       }
     }
-    
+
     // Educational concepts by level ranges
     const concepts = [
-      { range: [1, 10], concept: 'Basic Navigation', skill: 'Di chuyển cơ bản', lesson: 'Học cách điều khiển nhân vật và thu thập kho báu' },
-      { range: [11, 20], concept: 'Enemy Avoidance', skill: 'Tránh kẻ thù', lesson: 'Phát triển kỹ năng quan sát và tránh nguy hiểm' },
-      { range: [21, 30], concept: 'Strategic Planning', skill: 'Lập kế hoạch chiến lược', lesson: 'Lên kế hoạch tối ưu cho đường đi và thu thập kho báu' },
-      { range: [31, 40], concept: 'Risk Management', skill: 'Quản lý rủi ro', lesson: 'Đánh giá rủi ro và lợi ích của từng quyết định' },
-      { range: [41, 50], concept: 'Master Explorer', skill: 'Thám hiểm chuyên nghiệp', lesson: 'Thành thạo tất cả kỹ năng và chinh phục thử thách khó nhất' }
+      {
+        range: [1, 10],
+        concept: 'Basic Navigation',
+        skill: 'Di chuyển cơ bản',
+        lesson: 'Học cách điều khiển nhân vật và thu thập kho báu',
+      },
+      {
+        range: [11, 20],
+        concept: 'Enemy Avoidance',
+        skill: 'Tránh kẻ thù',
+        lesson: 'Phát triển kỹ năng quan sát và tránh nguy hiểm',
+      },
+      {
+        range: [21, 30],
+        concept: 'Strategic Planning',
+        skill: 'Lập kế hoạch chiến lược',
+        lesson: 'Lên kế hoạch tối ưu cho đường đi và thu thập kho báu',
+      },
+      {
+        range: [31, 40],
+        concept: 'Risk Management',
+        skill: 'Quản lý rủi ro',
+        lesson: 'Đánh giá rủi ro và lợi ích của từng quyết định',
+      },
+      {
+        range: [41, 50],
+        concept: 'Master Explorer',
+        skill: 'Thám hiểm chuyên nghiệp',
+        lesson: 'Thành thạo tất cả kỹ năng và chinh phục thử thách khó nhất',
+      },
     ];
-    
-    const educationalData = concepts.find(c => i >= c.range[0] && i <= c.range[1]) || concepts[0];
-    
+
+    const educationalData = concepts.find((c) => i >= c.range[0] && i <= c.range[1]) || concepts[0];
+
     generatedLevels.push({
       id: i,
       name: `Thử thách ${i}${i <= 5 ? ' (Dễ)' : i <= 15 ? ' (Trung bình)' : i <= 30 ? ' (Khó)' : i <= 45 ? ' (Rất khó)' : ' (Cực khó)'}`,
-      description: `Level ${i} - ${difficulty === 1 ? 'Khởi đầu đơn giản' : 
-                     difficulty === 2 ? 'Thử thách nhẹ nhàng' :
-                     difficulty === 3 ? 'Độ khó vừa phải' :
-                     difficulty === 4 ? 'Thách thức cao' : 'Thử thách tối thượng'}`,
+      description: `Level ${i} - ${
+        difficulty === 1
+          ? 'Khởi đầu đơn giản'
+          : difficulty === 2
+            ? 'Thử thách nhẹ nhàng'
+            : difficulty === 3
+              ? 'Độ khó vừa phải'
+              : difficulty === 4
+                ? 'Thách thức cao'
+                : 'Thử thách tối thượng'
+      }`,
       dimensions: { width, height },
       playerStart,
       exit,
       treasures,
       enemies,
       walls,
-      timeLimit: Math.min(60 + (i * 10) + (difficulty * 30), 600), // 60s to 10 minutes max
+      timeLimit: Math.min(60 + i * 10 + difficulty * 30, 600), // 60s to 10 minutes max
       minTreasures: Math.max(1, Math.floor(numTreasures * 0.6)), // Need to collect 60% of treasures
       educational: {
         concept: educationalData.concept,
         skill: educationalData.skill,
-        lesson: educationalData.lesson
-      }
+        lesson: educationalData.lesson,
+      },
     });
   }
-  
+
   return generatedLevels;
 };
 
@@ -164,7 +198,7 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
     }
     return 0;
   });
-  
+
   const [playerPosition, setPlayerPosition] = useState<Position>({ x: 0, y: 0 });
   const [playerHealth, setPlayerHealth] = useState(100);
   const [score, setScore] = useState(() => {
@@ -188,8 +222,8 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
     if (level) {
       setPlayerPosition(level.playerStart);
       setPlayerHealth(100);
-      setTreasures(level.treasures.map(t => ({ ...t, collected: false })));
-      setEnemies(level.enemies.map(e => ({ ...e, defeated: false })));
+      setTreasures(level.treasures.map((t) => ({ ...t, collected: false })));
+      setEnemies(level.enemies.map((e) => ({ ...e, defeated: false })));
       setGameState('playing');
       setMoves(0);
       setMessage('Tìm kho báu và thoát khỏi mê cung! Space = tấn công');
@@ -215,16 +249,16 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
       const timeBonus = Math.max(0, timeLeft * 2);
       const healthBonus = Math.max(0, (playerHealth - 50) * 2);
       const finalScore = score + levelBonus + timeBonus + healthBonus;
-      
+
       console.log('Level completed:', currentLevel + 1, 'of', levels.length);
-      
+
       if (currentLevel < levels.length - 1) {
         setTimeout(() => {
           const nextLevel = currentLevel + 1;
           setCurrentLevel(nextLevel);
           setScore(finalScore);
           setGameState('playing'); // Reset game state for next level
-          
+
           // Save progress to localStorage
           if (typeof window !== 'undefined') {
             localStorage.setItem('treasureHuntProgress', nextLevel.toString());
@@ -251,140 +285,154 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
     }
   }, [gameState, currentLevel, score, timeLeft, playerHealth, onComplete]);
 
-  const isValidMove = useCallback((newPos: Position) => {
-    if (newPos.x < 0 || newPos.x >= level.dimensions.width || 
-        newPos.y < 0 || newPos.y >= level.dimensions.height) {
-      return false;
-    }
-    
-    // Check walls
-    if (level.walls.some(wall => wall.x === newPos.x && wall.y === newPos.y)) {
-      return false;
-    }
-    
-    return true;
-  }, [level]);
+  const isValidMove = useCallback(
+    (newPos: Position) => {
+      if (newPos.x < 0 || newPos.x >= level.dimensions.width || newPos.y < 0 || newPos.y >= level.dimensions.height) {
+        return false;
+      }
 
-  const checkCollisions = useCallback((pos: Position) => {
-    // Check treasures
-    const treasureIndex = treasures.findIndex(
-      t => !t.collected && t.x === pos.x && t.y === pos.y
-    );
-    
-    if (treasureIndex >= 0) {
-      setTreasures(prev => {
-        const newTreasures = [...prev];
-        newTreasures[treasureIndex].collected = true;
-        return newTreasures;
-      });
-      
-      setScore(prev => prev + treasures[treasureIndex].value);
-      setMessage(`Tìm thấy ${treasures[treasureIndex].type}! +${treasures[treasureIndex].value} điểm`);
-      
-      setTimeout(() => setMessage(''), 2000);
-    }
-    
-    // Check enemies
-    const enemyIndex = enemies.findIndex(e => !e.defeated && e.x === pos.x && e.y === pos.y);
-    if (enemyIndex >= 0) {
-      const enemy = enemies[enemyIndex];
-      setPlayerHealth(prev => {
-        const newHealth = Math.max(0, prev - enemy.damage);
-        if (newHealth <= 0) {
-          setGameState('lost');
-          setMessage('Bạn đã bị tiêu diệt!');
-          setTimeout(() => {
-            if (onRestart) onRestart();
-            else onComplete(false, score);
-          }, 2000);
+      // Check walls
+      if (level.walls.some((wall) => wall.x === newPos.x && wall.y === newPos.y)) {
+        return false;
+      }
+
+      return true;
+    },
+    [level],
+  );
+
+  const checkCollisions = useCallback(
+    (pos: Position) => {
+      // Check treasures
+      const treasureIndex = treasures.findIndex((t) => !t.collected && t.x === pos.x && t.y === pos.y);
+
+      if (treasureIndex >= 0) {
+        setTreasures((prev) => {
+          const newTreasures = [...prev];
+          newTreasures[treasureIndex].collected = true;
+          return newTreasures;
+        });
+
+        setScore((prev) => prev + treasures[treasureIndex].value);
+        setMessage(`Tìm thấy ${treasures[treasureIndex].type}! +${treasures[treasureIndex].value} điểm`);
+
+        setTimeout(() => setMessage(''), 2000);
+      }
+
+      // Check enemies
+      const enemyIndex = enemies.findIndex((e) => !e.defeated && e.x === pos.x && e.y === pos.y);
+      if (enemyIndex >= 0) {
+        const enemy = enemies[enemyIndex];
+        setPlayerHealth((prev) => {
+          const newHealth = Math.max(0, prev - enemy.damage);
+          if (newHealth <= 0) {
+            setGameState('lost');
+            setMessage('Bạn đã bị thua!');
+            setTimeout(() => {
+              if (onRestart) onRestart();
+              else onComplete(false, score);
+            }, 2000);
+          } else {
+            setMessage(`Bị tấn công bởi ${enemy.type}! -${enemy.damage} HP (Nhấn Space để chiến đấu)`);
+            setTimeout(() => setMessage(''), 3000);
+          }
+          return newHealth;
+        });
+        return; // Stop further processing when hit by enemy
+      }
+
+      // Check exit
+      if (pos.x === level.exit.x && pos.y === level.exit.y) {
+        const collectedCount = treasures.filter((t) => t.collected).length;
+        if (collectedCount >= level.minTreasures) {
+          setGameState('won');
+          setMessage('Hoàn thành level!');
         } else {
-          setMessage(`Bị tấn công bởi ${enemy.type}! -${enemy.damage} HP (Nhấn Space để chiến đấu)`);
+          setMessage(`Cần thu thập thêm ${level.minTreasures - collectedCount} kho báu để mở khóa lối ra!`);
           setTimeout(() => setMessage(''), 3000);
         }
-        return newHealth;
-      });
-      return; // Stop further processing when hit by enemy
-    }
-    
-    // Check exit
-    if (pos.x === level.exit.x && pos.y === level.exit.y) {
-      const collectedCount = treasures.filter(t => t.collected).length;
-      if (collectedCount >= level.minTreasures) {
-        setGameState('won');
-        setMessage('Hoàn thành level!');
-      } else {
-        setMessage(`Cần thu thập thêm ${level.minTreasures - collectedCount} kho báu để mở khóa lối ra!`);
-        setTimeout(() => setMessage(''), 3000);
       }
-    }
-  }, [treasures, enemies, level]);
+    },
+    [treasures, enemies, level],
+  );
 
   const attackEnemy = useCallback(() => {
     const { x, y } = playerPosition;
-    const enemyIndex = enemies.findIndex(e => !e.defeated && e.x === x && e.y === y);
-    
+    const enemyIndex = enemies.findIndex((e) => !e.defeated && e.x === x && e.y === y);
+
     if (enemyIndex >= 0) {
-      setEnemies(prev => {
+      setEnemies((prev) => {
         const newEnemies = [...prev];
         newEnemies[enemyIndex].defeated = true;
         return newEnemies;
       });
-      
+
       const enemy = enemies[enemyIndex];
       const points = enemy.type === 'monster' ? 50 : enemy.type === 'guard' ? 30 : 20;
-      setScore(prev => prev + points);
+      setScore((prev) => prev + points);
       setMessage(`Đánh bại ${enemy.type}! +${points} điểm`);
       setTimeout(() => setMessage(''), 2000);
     }
   }, [playerPosition, enemies]);
 
-  const movePlayer = useCallback((direction: 'up' | 'down' | 'left' | 'right') => {
-    if (isMoving || gameState !== 'playing') return;
-    
-    setIsMoving(true);
-    const { x, y } = playerPosition;
-    const newPos = { x, y };
-    
-    switch (direction) {
-      case 'up': newPos.y = Math.max(0, y - 1); break;
-      case 'down': newPos.y = Math.min(level.dimensions.height - 1, y + 1); break;
-      case 'left': newPos.x = Math.max(0, x - 1); break;
-      case 'right': newPos.x = Math.min(level.dimensions.width - 1, x + 1); break;
-    }
-    
-    if (isValidMove(newPos)) {
-      setPlayerPosition(newPos);
-      setMoves(prev => prev + 1);
-      checkCollisions(newPos);
-    }
-    
-    setTimeout(() => setIsMoving(false), 200);
-  }, [playerPosition, isMoving, gameState, level, isValidMove, checkCollisions]);
+  const movePlayer = useCallback(
+    (direction: 'up' | 'down' | 'left' | 'right') => {
+      if (isMoving || gameState !== 'playing') return;
+
+      setIsMoving(true);
+      const { x, y } = playerPosition;
+      const newPos = { x, y };
+
+      switch (direction) {
+        case 'up':
+          newPos.y = Math.max(0, y - 1);
+          break;
+        case 'down':
+          newPos.y = Math.min(level.dimensions.height - 1, y + 1);
+          break;
+        case 'left':
+          newPos.x = Math.max(0, x - 1);
+          break;
+        case 'right':
+          newPos.x = Math.min(level.dimensions.width - 1, x + 1);
+          break;
+      }
+
+      if (isValidMove(newPos)) {
+        setPlayerPosition(newPos);
+        setMoves((prev) => prev + 1);
+        checkCollisions(newPos);
+      }
+
+      setTimeout(() => setIsMoving(false), 200);
+    },
+    [playerPosition, isMoving, gameState, level, isValidMove, checkCollisions],
+  );
 
   // Keyboard controls
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       switch (e.key) {
-        case 'ArrowUp': 
-        case 'w': 
-        case 'W': 
+        case 'ArrowUp':
+        case 'w':
+        case 'W':
           e.preventDefault();
           movePlayer('up');
           break;
-        case 'ArrowDown': 
-        case 's': 
+        case 'ArrowDown':
+        case 's':
         case 'S':
           e.preventDefault();
           movePlayer('down');
           break;
-        case 'ArrowLeft': 
-        case 'a': 
+        case 'ArrowLeft':
+        case 'a':
         case 'A':
           e.preventDefault();
           movePlayer('left');
           break;
-        case 'ArrowRight': 
-        case 'd': 
+        case 'ArrowRight':
+        case 'd':
         case 'D':
           e.preventDefault();
           movePlayer('right');
@@ -404,45 +452,45 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
     if (playerPosition.x === x && playerPosition.y === y) {
       return { content: '🧙‍♂️', className: 'bg-blue-500 animate-pulse' };
     }
-    
+
     if (level.exit.x === x && level.exit.y === y) {
-      const collectedCount = treasures.filter(t => t.collected).length;
+      const collectedCount = treasures.filter((t) => t.collected).length;
       const isUnlocked = collectedCount >= level.minTreasures;
-      return { 
-        content: isUnlocked ? '🚪' : '🔒', 
-        className: isUnlocked ? 'bg-green-500 animate-bounce' : 'bg-gray-600' 
+      return {
+        content: isUnlocked ? '🚪' : '🔒',
+        className: isUnlocked ? 'bg-green-500 animate-bounce' : 'bg-gray-600',
       };
     }
-    
-    if (level.walls.some(wall => wall.x === x && wall.y === y)) {
+
+    if (level.walls.some((wall) => wall.x === x && wall.y === y)) {
       return { content: '🧱', className: 'bg-gray-800' };
     }
-    
-    const treasure = treasures.find(t => !t.collected && t.x === x && t.y === y);
+
+    const treasure = treasures.find((t) => !t.collected && t.x === x && t.y === y);
     if (treasure) {
       const icons = { gold: '🪙', gem: '💎', artifact: '🏺', key: '🗝️' };
-      return { 
-        content: icons[treasure.type], 
-        className: 'bg-yellow-400 animate-pulse' 
+      return {
+        content: icons[treasure.type],
+        className: 'bg-yellow-400 animate-pulse',
       };
     }
-    
-    const enemy = enemies.find(e => e.x === x && e.y === y);
+
+    const enemy = enemies.find((e) => e.x === x && e.y === y);
     if (enemy) {
       if (enemy.defeated) {
-        return { 
-          content: '💀', 
-          className: 'bg-gray-500/50' 
+        return {
+          content: '💀',
+          className: 'bg-gray-500/50',
         };
       } else {
         const icons = { guard: '⚔️', trap: '🕳️', monster: '👹' };
-        return { 
-          content: icons[enemy.type], 
-          className: 'bg-red-500 animate-bounce' 
+        return {
+          content: icons[enemy.type],
+          className: 'bg-red-500 animate-bounce',
         };
       }
     }
-    
+
     return { content: '', className: 'bg-gray-200/20' };
   };
 
@@ -456,7 +504,7 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
             Level {currentLevel + 1}/{levels.length}
           </div>
         </div>
-        
+
         <div className="bg-gray-800/50 rounded-xl p-4 mb-4">
           <h4 className="text-white font-semibold mb-2">{level.name}</h4>
           <p className="text-gray-300 text-sm mb-2">{level.description}</p>
@@ -490,13 +538,11 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
         <div className="flex justify-between items-center mb-4">
           <div className="flex gap-4 text-sm">
             <span className="text-yellow-400">
-              🏆 Thu thập: {treasures.filter(t => t.collected).length}/{level.minTreasures}
+              🏆 Thu thập: {treasures.filter((t) => t.collected).length}/{level.minTreasures}
             </span>
           </div>
           {message && (
-            <div className="bg-blue-900/50 text-blue-200 px-3 py-1 rounded-lg text-sm animate-pulse">
-              {message}
-            </div>
+            <div className="bg-blue-900/50 text-blue-200 px-3 py-1 rounded-lg text-sm animate-pulse">{message}</div>
           )}
         </div>
       </div>
@@ -505,9 +551,12 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex-1">
           <div className="bg-gray-900/50 rounded-xl p-4 mb-4">
-            <div className="grid gap-1" style={{ 
-              gridTemplateColumns: `repeat(${level.dimensions.width}, minmax(0, 1fr))` 
-            }}>
+            <div
+              className="grid gap-1"
+              style={{
+                gridTemplateColumns: `repeat(${level.dimensions.width}, minmax(0, 1fr))`,
+              }}
+            >
               {Array.from({ length: level.dimensions.height }, (_, y) =>
                 Array.from({ length: level.dimensions.width }, (_, x) => {
                   const cellData = getCellContent(x, y);
@@ -523,7 +572,7 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
                       {cellData.content}
                     </div>
                   );
-                })
+                }),
               ).flat()}
             </div>
           </div>
@@ -569,9 +618,7 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
               </button>
               <div></div>
             </div>
-            <p className="text-gray-400 text-xs text-center mt-2">
-              Hoặc sử dụng phím mũi tên / WASD
-            </p>
+            <p className="text-gray-400 text-xs text-center mt-2">Hoặc sử dụng phím mũi tên / WASD</p>
           </div>
 
           {/* Legend */}

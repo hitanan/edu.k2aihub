@@ -7,12 +7,20 @@ export async function generateMetadata() {
     title: createTitle('AgriTech & Nông nghiệp Chính xác'),
     description: createDescription('Khóa học công nghệ nông nghiệp thông minh với IoT, AI, drone và blockchain. Thị trường $3-8 tỷ USD, tăng trưởng 40%/năm tại Việt Nam.'),
     keywords: ['agritech', 'nông nghiệp thông minh', 'precision farming', 'iot nông nghiệp', 'drone nông nghiệp', 'blockchain nông sản', 'vertical farming', 'K2AI'],
-    openGraph: {
+    openGraph: {    locale: 'vi_VN',
+    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+
       title: 'AgriTech & Nông nghiệp Chính xác | K2AiHub',
-      description: 'Nắm vững công nghệ nông nghiệp 4.0 với IoT, AI, drone. Thị trường $3-8 tỷ USD tại Việt Nam.',
+      description: 'Nắm vững công nghệ nông nghiệp 4.0 với IoT, AI, drone. Thị trường }-8 tỷ USD tại Việt Nam.',
       type: 'website',
       images: ['/images/agritech-hero.jpg'],
     },
+  twitter: {
+    card: 'summary_large_image',
+    title: createTitle('K2AiHub Educational Content'),
+    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
+    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
+  },
   };
 }
 
