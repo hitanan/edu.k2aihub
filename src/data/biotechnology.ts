@@ -158,7 +158,7 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
     title: 'Bài 2: Medical Biotechnology & Drug Discovery Pipeline',
     description:
       'Explore medical biotechnology applications, drug discovery processes, clinical trials, personalized medicine. Learn bioinformatics, molecular diagnostics, và therapeutic development.',
-    videoUrl: 'https://www.youtube.com/watch?v=YWcJ9-2cRAY',
+    videoUrl: 'https://www.youtube.com/watch?v=J79VQdIpTlE',
     imageUrl:
       'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',

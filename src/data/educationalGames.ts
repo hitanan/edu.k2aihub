@@ -2358,4 +2358,106 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
     ],
   },
+
+  // New Advanced 3D Biotechnology Game
+  {
+    id: 'biotech-lab-simulation-3d',
+    title: 'Biotech Lab Simulation 3D',
+    description: 'Immersive 3D biotechnology laboratory với real-time experiments, lab equipment simulation, và advanced safety protocols trong realistic virtual environment',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '45-60 phút',
+    skills: ['Biotechnology', '3D Simulation', 'Lab Safety', 'Scientific Method', 'Molecular Biology', 'Research Protocols'],
+    moduleType: 'biotechnology',
+    isInternal: true,
+    points: 300,
+    icon: '🧬',
+    color: 'from-green-500 to-emerald-500',
+    relatedLessons: [
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'genetic-engineering-crispr',
+        title: 'Genetic Engineering & CRISPR Technology',
+        connection: 'Practice CRISPR gene editing techniques trong safe virtual laboratory environment',
+      },
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'biomedical-applications',
+        title: 'Biomedical Applications & Drug Development',
+        connection: 'Simulate drug discovery process và biomedical device testing protocols',
+      },
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'synthetic-biology',
+        title: 'Synthetic Biology & Biodesign',
+        connection: 'Design và test synthetic biological systems trong controlled 3D environment',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'stem-introduction',
+        title: 'STEM Introduction',
+        connection: 'Apply scientific method và research protocols trong biotechnology experiments',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'data-analysis-visualization',
+        title: 'Data Analysis & Visualization',
+        connection: 'Analyze experimental data từ biotechnology experiments với Python',
+      },
+    ],
+  },
+
+  // New Advanced 3D Agricultural Technology Game
+  {
+    id: 'drone-crop-monitoring-3d',
+    title: 'Drone Crop Monitoring 3D',
+    description: 'Advanced 3D agricultural drone simulation với precision farming, crop health analysis, và real-time environmental monitoring trong realistic farmland environments',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '40-55 phút',
+    skills: ['Agricultural Technology', '3D Flight Control', 'Precision Farming', 'Data Analysis', 'Environmental Monitoring', 'Drone Operations'],
+    moduleType: 'agriculture',
+    isInternal: true,
+    points: 280,
+    icon: '🚁',
+    color: 'from-amber-500 to-orange-500',
+    relatedLessons: [
+      {
+        moduleId: 'green-technology',
+        lessonId: 'sustainable-agriculture-tech',
+        title: 'Sustainable Agriculture Technology',
+        connection: 'Use drone technology cho precision farming và sustainable agricultural practices',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Sensors & Data Processing',
+        connection: 'Understand sensor integration trong agricultural monitoring systems',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-communication',
+        title: 'Communication & Networking',
+        connection: 'Implement IoT communication cho real-time crop monitoring data transmission',
+      },
+      {
+        moduleId: 'robotics',
+        lessonId: 'autonomous-systems',
+        title: 'Autonomous Systems & AI Integration',
+        connection: 'Develop autonomous flight paths và AI-powered crop analysis systems',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'machine-learning-basics',
+        title: 'Machine Learning Basics',
+        connection: 'Apply machine learning cho crop health analysis từ drone imagery data',
+      },
+      {
+        moduleId: 'stem',
+        lessonId: 'environmental-solutions',
+        title: 'Environmental Solutions',
+        connection: 'Use technology solutions cho environmental monitoring và sustainable farming',
+      },
+    ],
+  },
 ];

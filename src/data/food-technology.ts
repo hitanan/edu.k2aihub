@@ -19,8 +19,8 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       'Comprehensive food safety management using HACCP, ISO 22000, và Vietnamese food safety regulations. Focus trên Vietnamese food industry modernization và international export standards.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=3xLHjXA1Sxw',
+    imageUrl: 'https://i.ytimg.com/vi/3xLHjXA1Sxw/hqdefault.jpg',
     objectives: [
       'Master HACCP principles và implementation trong food manufacturing',
       'Understand Vietnamese food safety regulations và international standards',
@@ -161,8 +161,8 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       'Advanced fermentation processes cho traditional và modern food production. Cover Vietnamese fermented foods, probiotics, và biotechnology applications trong food industry.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=jEv7dX8W-qg',
+    imageUrl: 'https://i.ytimg.com/vi/jEv7dX8W-qg/hqdefault.jpg',
     objectives: [
       'Master fermentation biochemistry và microbiology principles',
       'Understand traditional Vietnamese fermentation techniques và modernization approaches',
@@ -320,8 +320,8 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       'Cutting-edge culinary science techniques combining chemistry, physics, và creativity. Modernize Vietnamese cuisine using molecular gastronomy principles while preserving traditional flavors.',
     duration: '165 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=QoEHDVcIeW0',
+    imageUrl: 'https://i.ytimg.com/vi/QoEHDVcIeW0/hqdefault.jpg',
     objectives: [
       'Master molecular gastronomy techniques và scientific principles',
       'Apply food chemistry knowledge cho innovative texture và flavor creation',
@@ -458,8 +458,8 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
       'Sustainable food systems design, supply chain optimization, và environmental impact reduction. Focus trên Vietnamese agriculture modernization và circular economy principles.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=5whwqXjGCxc',
+    imageUrl: 'https://i.ytimg.com/vi/5whwqXjGCxc/hqdefault.jpg',
     objectives: [
       'Understand sustainable food production principles và circular economy concepts',
       'Design efficient food supply chains minimizing waste và environmental impact',

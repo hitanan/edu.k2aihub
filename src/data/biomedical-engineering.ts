@@ -19,8 +19,8 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Comprehensive introduction to medical device design principles, từ concept đến clinical implementation. Cover FDA/CE marking requirements, ISO 13485 quality management, và Vietnamese medical device regulations.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=ZqW4PS9-NIA',
+    imageUrl: 'https://i.ytimg.com/vi/ZqW4PS9-NIA/hqdefault.jpg',
     objectives: [
       'Understand medical device classification systems và regulatory pathways',
       'Apply design controls và risk management (ISO 14971) trong device development',
@@ -161,8 +161,8 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Advanced techniques for processing biological signals và medical images. Cover ECG, EEG, EMG signal analysis, medical image processing algorithms, và AI applications trong diagnostic imaging.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=l9GBf0sTk4s',
+    imageUrl: 'https://i.ytimg.com/vi/l9GBf0sTk4s/hqdefault.jpg',
     objectives: [
       'Master digital signal processing techniques cho biological signals',
       'Implement medical image analysis algorithms using MATLAB/Python',
@@ -295,8 +295,8 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Advanced concepts trong tissue engineering, stem cell technology, và regenerative medicine applications. Cover biomaterials, 3D bioprinting, cell culture techniques, và clinical translation challenges.',
     duration: '240 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=LT4cwXqwxm0',
+    imageUrl: 'https://i.ytimg.com/vi/LT4cwXqwxm0/hqdefault.jpg',
     objectives: [
       'Understand fundamental principles của tissue engineering và regenerative medicine',
       'Master biomaterial selection và characterization cho tissue scaffolds',
@@ -443,8 +443,8 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Comprehensive exploration của medical robotics applications, từ surgical robots đến rehabilitation systems. Cover control systems, haptic feedback, computer vision, và safety considerations trong clinical environments.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=RssggkQKqoY',
+    imageUrl: 'https://i.ytimg.com/vi/RssggkQKqoY/hqdefault.jpg',
     objectives: [
       'Understand medical robotics systems design và control principles',
       'Master surgical robot kinematics và trajectory planning',

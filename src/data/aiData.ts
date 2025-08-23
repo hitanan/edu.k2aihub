@@ -5,6 +5,7 @@ export interface AILessonType {
   duration: string;
   difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
   category: string;
+  videoUrl?: string;
   objectives: string[];
   prerequisites: string[];
   tools: string[];
@@ -31,6 +32,7 @@ export const aiLessons: AILessonType[] = [
     description:
       'Sử dụng AI để tối ưu hóa công việc văn phòng, từ viết email đến tạo báo cáo',
     duration: '4 giờ',
+  videoUrl: 'https://www.youtube.com/watch?v=TXxuccRXo-k',
     difficulty: 'Cơ bản',
     category: 'Productivity',
     objectives: [
@@ -92,6 +94,7 @@ export const aiLessons: AILessonType[] = [
     title: 'AI cho Sáng Tạo & Thiết Kế',
     description: 'Sử dụng AI để tạo nội dung sáng tạo, thiết kế và multimedia',
     duration: '5 giờ',
+  videoUrl: 'https://www.youtube.com/watch?v=Lm7qG6pzvmA',
     difficulty: 'Trung bình',
     category: 'Creative',
     objectives: [
@@ -139,6 +142,7 @@ export const aiLessons: AILessonType[] = [
     title: 'AI cho Giáo Dục & Học Tập',
     description: 'Áp dụng AI vào việc học tập, nghiên cứu và giảng dạy',
     duration: '3 giờ',
+  videoUrl: 'https://www.youtube.com/watch?v=TXxuccRXo-k',
     difficulty: 'Cơ bản',
     category: 'Education',
     objectives: [
@@ -177,6 +181,7 @@ export const aiLessons: AILessonType[] = [
     title: 'AI cho Kinh Doanh & Marketing',
     description: 'Ứng dụng AI trong marketing, sales và phát triển kinh doanh',
     duration: '6 giờ',
+  videoUrl: 'https://www.youtube.com/watch?v=Lm7qG6pzvmA',
     difficulty: 'Nâng cao',
     category: 'Business',
     objectives: [
@@ -225,6 +230,7 @@ export const aiLessons: AILessonType[] = [
     description:
       'Ứng dụng AI để cải thiện productivity và chất lượng cuộc sống',
     duration: '2 giờ',
+  videoUrl: 'https://www.youtube.com/watch?v=M5xe04_4YrU',
     difficulty: 'Cơ bản',
     category: 'Lifestyle',
     objectives: [
@@ -269,6 +275,7 @@ export const aiLessons: AILessonType[] = [
     title: 'AI cho Lập Trình & Phát Triển',
     description: 'Sử dụng AI để coding, debugging và phát triển phần mềm',
     duration: '5 giờ',
+  videoUrl: 'https://www.youtube.com/watch?v=CQqBQVH5PcI',
     difficulty: 'Nâng cao',
     category: 'Development',
     objectives: [

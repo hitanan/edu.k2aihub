@@ -96,7 +96,7 @@ export const CybersecurityLessons: CybersecurityLessonData[] = [
       'Học cách thực hiện kiểm tra bảo mật có đạo đức để phát hiện và khắc phục lỗ hổng.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=3Kq1MIfTWCE',
+    videoUrl: 'https://www.youtube.com/watch?v=fI5NcGvzQCw',
     objectives: [
       'Nắm vững penetration testing methodology',
       'Học cách sử dụng Kali Linux và security tools',

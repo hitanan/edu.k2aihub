@@ -62,7 +62,7 @@ export const arduinoLessons: ArduinoLesson[] = [
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1553406830-ef2513450d76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=nL34zDTPkcs',
+    videoUrl: 'https://www.youtube.com/watch?v=7tHm6_frc-o',
     circuitDiagram:
       'https://www.arduino.cc/en/uploads/Tutorial/ExampleCircuit_bb.png',
     codeExample: `/*
@@ -415,7 +415,7 @@ void loop() {
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=6WReFkfrUIk',
+    videoUrl: 'https://www.youtube.com/watch?v=0IFhkTDrXnQ',
     codeExample: `/*
   Button và LED Control
   Sử dụng button để điều khiển LED
@@ -1084,7 +1084,7 @@ void loop() {
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=7vhvnaWUZjE',
+    videoUrl: 'https://www.youtube.com/watch?v=HWrgKdOc5NA',
     codeExample: `/*
   Smart Environmental Monitoring Station
   Complete IoT project với multiple sensors và cloud integration

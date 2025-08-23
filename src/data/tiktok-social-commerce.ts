@@ -15,8 +15,8 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
     description: 'Học cách setup và optimize TikTok Shop để tối đa hóa doanh số. Từ product listing đến livestream selling strategies.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/tiktok-shop-setup.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=OJ-7rHKKlvU',
+    imageUrl: 'https://i.ytimg.com/vi/OJ-7rHKKlvU/hqdefault.jpg',
     objectives: [
       'Setup TikTok Shop account và verify business',
       'Optimize product listings cho maximum visibility',
@@ -153,8 +153,8 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
     description: 'Master nghệ thuật livestream selling trên multiple platforms. Học cách engage audience và convert viewers thành customers.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/livestream-selling.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=rcLOBdLGHIM',
+    imageUrl: 'https://i.ytimg.com/vi/rcLOBdLGHIM/hqdefault.jpg',
     objectives: [
       'Develop captivating livestream presentation skills',
       'Master real-time audience engagement techniques',
@@ -254,8 +254,8 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
     description: 'Phát triển cohesive strategy across multiple platforms để maximize reach và revenue trong social commerce ecosystem.',
     duration: '120 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/cross-platform-commerce.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=ol0v779BlAA',
+    imageUrl: 'https://i.ytimg.com/vi/ol0v779BlAA/hqdefault.jpg',
     objectives: [
       'Develop integrated strategy across major platforms',
       'Optimize content cho each platform\'s unique algorithm',

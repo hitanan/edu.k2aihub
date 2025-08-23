@@ -19,8 +19,8 @@ export const environmentalDataScienceLessons: EnvironmentalDataScienceLesson[] =
       'Advanced techniques cho analyzing climate data, weather patterns, và environmental trends. Focus trên Vietnamese climate data, monsoon patterns, và climate change impacts trên agriculture và coastal areas.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=0JFYbFpaMjU',
+    imageUrl: 'https://i.ytimg.com/vi/0JFYbFpaMjU/hqdefault.jpg',
     objectives: [
       'Master climate data collection, processing, và analysis techniques',
       'Understand Vietnamese climate patterns và seasonal variations',
@@ -162,8 +162,8 @@ export const environmentalDataScienceLessons: EnvironmentalDataScienceLesson[] =
       'Comprehensive environmental monitoring using IoT sensors, data analytics, và real-time reporting systems. Focus trên Vietnamese urban pollution, industrial waste monitoring, và water quality management.',
     duration: '165 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=kuFa_M52488',
+    imageUrl: 'https://i.ytimg.com/vi/kuFa_M52488/hqdefault.jpg',
     objectives: [
       'Design và deploy IoT sensor networks cho environmental monitoring',
       'Implement real-time data collection và analysis systems',
@@ -300,8 +300,8 @@ export const environmentalDataScienceLessons: EnvironmentalDataScienceLesson[] =
       'Advanced satellite imagery analysis cho environmental monitoring, land use change detection, và natural resource management. Specialized focus trên Vietnamese geography, deforestation monitoring, và coastal changes.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=VfDAd-MO94o',
+    imageUrl: 'https://i.ytimg.com/vi/VfDAd-MO94o/hqdefault.jpg',
     objectives: [
       'Master satellite image processing techniques và analysis workflows',
       'Implement change detection algorithms cho environmental monitoring',
@@ -444,8 +444,8 @@ export const environmentalDataScienceLessons: EnvironmentalDataScienceLesson[] =
       'Apply advanced machine learning techniques cho environmental prediction, ecological modeling, và sustainability optimization. Focus trên Vietnamese environmental challenges và data-driven solutions.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=B53q9i1qrz4',
+    imageUrl: 'https://i.ytimg.com/vi/B53q9i1qrz4/hqdefault.jpg',
     objectives: [
       'Master machine learning applications trong environmental science',
       'Develop predictive models cho environmental processes',

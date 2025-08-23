@@ -1,0 +1,890 @@
+{
+  "generatedAt": "2025-08-23T03:15:51.641Z",
+  "apiKey": "YouTube Data API v3 (Key from .envy file)",
+  "summary": {
+    "totalLessonsProcessed": 58,
+    "totalLessonsWithDefaultVideo": 58,
+    "totalVideoUrlsGenerated": 58,
+    "totalValidatedVideos": 58,
+    "successRate": "100.0%",
+    "failedSearchesCount": 0
+  },
+  "instructions": {
+    "usage": "Use the videoUpdates array below to update lesson videoUrl properties in data files",
+    "format": "Replace DEFAULT_VIDEO_URL with suggestedVideoUrl for each lesson",
+    "validation": "All suggested videos have been validated for availability"
+  },
+  "failedSearches": [],
+  "videoUpdates": [
+    {
+      "file": "aerospace-engineering.ts",
+      "lessonId": "aircraft-design-aerodynamics",
+      "lessonTitle": "Aircraft Design & Aerodynamics Fundamentals",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=AkC5xAy3WAY",
+      "videoDetails": {
+        "title": "Fundamentals of Aerodynamics . Introduction . Pitching Moment",
+        "channel": "AeroAcademy",
+        "publishedAt": "2020-10-11T03:32:16Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/AkC5xAy3WAY/hqdefault.jpg",
+        "searchQuery": "Aircraft Design & Aerodynamics Fundamentals học tập tutorial"
+      }
+    },
+    {
+      "file": "aerospace-engineering.ts",
+      "lessonId": "satellite-communication-systems",
+      "lessonTitle": "Satellite Technology & Communication Systems",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=_VJZQMGEG1k",
+      "videoDetails": {
+        "title": "Understanding GPS Links and Codes",
+        "channel": "Rohde & Schwarz",
+        "publishedAt": "2021-02-05T15:37:26Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/_VJZQMGEG1k/hqdefault.jpg",
+        "searchQuery": "Satellite Technology & Communication Systems học tập tutorial"
+      }
+    },
+    {
+      "file": "aerospace-engineering.ts",
+      "lessonId": "space-mission-planning",
+      "lessonTitle": "Space Mission Planning & Systems Engineering",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=jxT7_NPFjkA",
+      "videoDetails": {
+        "title": "NASA&#39;s Approach to Systems Engineering- Space Systems Engineering 101 w/ NASA",
+        "channel": "Saylor Academy",
+        "publishedAt": "2014-03-03T07:30:00Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/jxT7_NPFjkA/hqdefault.jpg",
+        "searchQuery": "Space Mission Planning & Systems học tập tutorial"
+      }
+    },
+    {
+      "file": "aerospace-engineering.ts",
+      "lessonId": "avionics-flight-systems",
+      "lessonTitle": "Avionics & Flight Control Systems",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=d5sXmNplQHw",
+      "videoDetails": {
+        "title": "Aircraft Systems - 08 - Electrical System",
+        "channel": "ERAU SpecialVFR",
+        "publishedAt": "2016-09-09T13:09:43Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/d5sXmNplQHw/hqdefault.jpg",
+        "searchQuery": "Avionics & Flight Control Systems học tập tutorial"
+      }
+    },
+    {
+      "file": "biomedical-engineering.ts",
+      "lessonId": "medical-device-design",
+      "lessonTitle": "Medical Device Design & Development",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=ZqW4PS9-NIA",
+      "videoDetails": {
+        "title": "Documentation for a medical device product development process (Part 1)",
+        "channel": "Medical Device HQ",
+        "publishedAt": "2021-11-11T08:30:17Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/ZqW4PS9-NIA/hqdefault.jpg",
+        "searchQuery": "Medical Device Design & Development học tập tutorial"
+      }
+    },
+    {
+      "file": "biomedical-engineering.ts",
+      "lessonId": "biosignal-processing",
+      "lessonTitle": "Biosignal Processing & Medical Imaging",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=l9GBf0sTk4s",
+      "videoDetails": {
+        "title": "Lecture 1 Introduction to Biomedical Signal Processing",
+        "channel": "Course on Biomedical Signal Processing",
+        "publishedAt": "2020-09-01T14:16:00Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/l9GBf0sTk4s/hqdefault.jpg",
+        "searchQuery": "Biosignal Processing & Medical Imaging học tập tutorial"
+      }
+    },
+    {
+      "file": "biomedical-engineering.ts",
+      "lessonId": "regenerative-medicine",
+      "lessonTitle": "Regenerative Medicine & Tissue Engineering",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=LT4cwXqwxm0",
+      "videoDetails": {
+        "title": "Tissue Engineering Basics Part1",
+        "channel": "Triya Saha",
+        "publishedAt": "2022-05-01T18:24:37Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/LT4cwXqwxm0/hqdefault.jpg",
+        "searchQuery": "Regenerative Medicine & Tissue Engineering học tập tutorial"
+      }
+    },
+    {
+      "file": "biomedical-engineering.ts",
+      "lessonId": "medical-robotics",
+      "lessonTitle": "Medical Robotics & Surgical Systems",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=RssggkQKqoY",
+      "videoDetails": {
+        "title": "ICRA23 paper 1238: Foot gestures to control the grasping of a surgical robot",
+        "channel": "Human Robotics Group at ICL",
+        "publishedAt": "2023-05-22T10:28:19Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/RssggkQKqoY/hqdefault.jpg",
+        "searchQuery": "Medical Robotics & Surgical Systems học tập tutorial"
+      }
+    },
+    {
+      "file": "content-creator.ts",
+      "lessonId": "social-media-personal-branding",
+      "lessonTitle": "Social Media Strategy & Personal Branding",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=mBy7PU1jTn4",
+      "videoDetails": {
+        "title": "How to Create a Social Media Strategy in 2022 (Step-by-Step Guide)",
+        "channel": "Later",
+        "publishedAt": "2021-12-02T19:29:00Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/mBy7PU1jTn4/hqdefault.jpg",
+        "searchQuery": "Social Media Strategy & Personal học tập tutorial"
+      }
+    },
+    {
+      "file": "content-creator.ts",
+      "lessonId": "video-production-editing-mastery",
+      "lessonTitle": "Video Production & Editing Mastery",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=apbZc_9XgNo",
+      "videoDetails": {
+        "title": "How I would learn video editing if I had to start over..",
+        "channel": "Vince Opra",
+        "publishedAt": "2023-11-22T21:14:42Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/apbZc_9XgNo/hqdefault.jpg",
+        "searchQuery": "Video Production & Editing Mastery học tập tutorial"
+      }
+    },
+    {
+      "file": "content-creator.ts",
+      "lessonId": "livestreaming-community-building",
+      "lessonTitle": "Livestreaming & Community Building",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=6ftDWN2DroQ",
+      "videoDetails": {
+        "title": "Người mới HỌC LIVESTREAM Cần biết | Kiến thức Livestream| Chuyên gia Nguyễn Văn Minh",
+        "channel": "Nguyễn Văn Minh - Mentor And Trainer ",
+        "publishedAt": "2023-07-05T13:00:05Z",
+        "language": "vi",
+        "thumbnail": "https://i.ytimg.com/vi/6ftDWN2DroQ/hqdefault.jpg",
+        "searchQuery": "Livestreaming & Community Building học tập tutorial"
+      }
+    },
+    {
+      "file": "content-creator.ts",
+      "lessonId": "monetization-strategies",
+      "lessonTitle": "Monetization Strategies (YouTube, TikTok, Facebook)",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=plCRQbAmPuY",
+      "videoDetails": {
+        "title": "YouTube Marketing – Monetization Techniques",
+        "channel": "TutorialsPoint",
+        "publishedAt": "2018-01-22T10:12:51Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/plCRQbAmPuY/hqdefault.jpg",
+        "searchQuery": "Monetization Strategies (YouTube, TikTok, Facebook) học tập tutorial"
+      }
+    },
+    {
+      "file": "content-creator.ts",
+      "lessonId": "brand-partnerships-sponsorships",
+      "lessonTitle": "Brand Partnerships & Sponsorship Deals",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=VzNi_LtjxsM",
+      "videoDetails": {
+        "title": "Sponsorship Lessons Learned from 1000+ Clients",
+        "channel": "The Sponsorship Collective",
+        "publishedAt": "2022-11-09T20:05:49Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/VzNi_LtjxsM/hqdefault.jpg",
+        "searchQuery": "Brand Partnerships & Sponsorship Deals học tập tutorial"
+      }
+    },
+    {
+      "file": "content-creator.ts",
+      "lessonId": "content-calendar-consistency",
+      "lessonTitle": "Content Calendar & Consistency Systems",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=bB5eKayGMvM",
+      "videoDetails": {
+        "title": "ADVICE For CONTENT CREATORS // my Notion system",
+        "channel": "Danny Talks Tech",
+        "publishedAt": "2020-11-24T12:10:59Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/bB5eKayGMvM/hqdefault.jpg",
+        "searchQuery": "Content Calendar & Consistency Systems học tập tutorial"
+      }
+    },
+    {
+      "file": "content-creator.ts",
+      "lessonId": "analytics-growth-optimization",
+      "lessonTitle": "Analytics & Growth Optimization",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=_g5roKHj95o",
+      "videoDetails": {
+        "title": "Master Data Analysis on Excel in Just 10 Minutes",
+        "channel": "Kenji Explains",
+        "publishedAt": "2023-02-26T18:45:01Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/_g5roKHj95o/hqdefault.jpg",
+        "searchQuery": "Analytics & Growth Optimization học tập tutorial"
+      }
+    },
+    {
+      "file": "content-creator.ts",
+      "lessonId": "legal-business-content-creation",
+      "lessonTitle": "Legal & Business Aspects of Content Creation",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=1-xiSOvgNvw",
+      "videoDetails": {
+        "title": "Legal Basics and Business Entity Formation: Crash Course Business Entrepreneurship #5",
+        "channel": "CrashCourse",
+        "publishedAt": "2019-09-11T21:30:01Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/1-xiSOvgNvw/hqdefault.jpg",
+        "searchQuery": "Legal & Business Aspects of học tập tutorial"
+      }
+    },
+    {
+      "file": "environmental-data-science.ts",
+      "lessonId": "climate-data-analysis",
+      "lessonTitle": "Climate Data Analysis & Modeling",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=0JFYbFpaMjU",
+      "videoDetails": {
+        "title": "Advanced Climate Data Analysis and Interpretation. Climate change and Environmental Science.",
+        "channel": "T Academy",
+        "publishedAt": "2023-06-19T16:53:59Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/0JFYbFpaMjU/hqdefault.jpg",
+        "searchQuery": "Climate Data Analysis & Modeling học tập tutorial"
+      }
+    },
+    {
+      "file": "environmental-data-science.ts",
+      "lessonId": "air-water-quality-monitoring",
+      "lessonTitle": "Air & Water Quality Monitoring Systems",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=kuFa_M52488",
+      "videoDetails": {
+        "title": "Water quality monitoring tutorial",
+        "channel": "The Rivers Trust",
+        "publishedAt": "2021-05-19T15:35:26Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/kuFa_M52488/hqdefault.jpg",
+        "searchQuery": "Air & Water Quality Monitoring học tập tutorial"
+      }
+    },
+    {
+      "file": "environmental-data-science.ts",
+      "lessonId": "satellite-remote-sensing",
+      "lessonTitle": "Satellite Remote Sensing & GIS Applications",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=VfDAd-MO94o",
+      "videoDetails": {
+        "title": "What is Remote Sensing and GIS?",
+        "channel": "Ecoresolve",
+        "publishedAt": "2021-01-01T21:29:19Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/VfDAd-MO94o/hqdefault.jpg",
+        "searchQuery": "Satellite Remote Sensing & GIS học tập tutorial"
+      }
+    },
+    {
+      "file": "environmental-data-science.ts",
+      "lessonId": "environmental-machine-learning",
+      "lessonTitle": "Environmental Machine Learning & Predictive Modeling",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=B53q9i1qrz4",
+      "videoDetails": {
+        "title": "Introduction to Environmental Engineering Applications Using AI Techniques",
+        "channel": "Prof. Asadi Srinivasulu",
+        "publishedAt": "2025-07-13T09:26:26Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/B53q9i1qrz4/hqdefault.jpg",
+        "searchQuery": "Environmental Machine Learning & Predictive học tập tutorial"
+      }
+    },
+    {
+      "file": "environmental-science-climate.ts",
+      "lessonId": "environmental-policy-sustainable-development",
+      "lessonTitle": "Environmental Policy & Sustainable Development",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=iSItxQ8Wm1Q",
+      "videoDetails": {
+        "title": "How to write an Environmental Policy",
+        "channel": "David Luke School Uniform",
+        "publishedAt": "2020-12-04T14:52:31Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/iSItxQ8Wm1Q/hqdefault.jpg",
+        "searchQuery": "Environmental Policy & Sustainable Development học tập tutorial"
+      }
+    },
+    {
+      "file": "environmental-science-climate.ts",
+      "lessonId": "ecosystem-restoration-biodiversity-conservation",
+      "lessonTitle": "Ecosystem Restoration & Biodiversity Conservation",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=9NRMbDel75A",
+      "videoDetails": {
+        "title": "Rapid Learning: Conservation Biology - What is Conservation?",
+        "channel": "RapidLearningCenter",
+        "publishedAt": "2011-07-08T21:02:14Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/9NRMbDel75A/hqdefault.jpg",
+        "searchQuery": "Ecosystem Restoration & Biodiversity Conservation học tập tutorial"
+      }
+    },
+    {
+      "file": "food-technology.ts",
+      "lessonId": "food-safety-quality-control",
+      "lessonTitle": "Food Safety & Quality Control Systems",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=3xLHjXA1Sxw",
+      "videoDetails": {
+        "title": "What is HACCP and what are the seven HACCP principles? HACCP Explained  │ Food Safety",
+        "channel": "Food Safety Training School",
+        "publishedAt": "2021-10-11T00:52:30Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/3xLHjXA1Sxw/hqdefault.jpg",
+        "searchQuery": "Food Safety & Quality Control học tập tutorial"
+      }
+    },
+    {
+      "file": "food-technology.ts",
+      "lessonId": "fermentation-biotechnology",
+      "lessonTitle": "Fermentation Technology & Food Biotechnology",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=jEv7dX8W-qg",
+      "videoDetails": {
+        "title": "Fermentation-Technology",
+        "channel": "Bioexpression and Fermentation Facility",
+        "publishedAt": "2020-03-25T16:59:27Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/jEv7dX8W-qg/hqdefault.jpg",
+        "searchQuery": "Fermentation Technology & Food Biotechnology học tập tutorial"
+      }
+    },
+    {
+      "file": "food-technology.ts",
+      "lessonId": "molecular-gastronomy",
+      "lessonTitle": "Molecular Gastronomy & Food Innovation",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=QoEHDVcIeW0",
+      "videoDetails": {
+        "title": "Molecular Gastronomy VIDEO 2",
+        "channel": "chef shailendra darekar",
+        "publishedAt": "2020-09-14T12:39:01Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/QoEHDVcIeW0/hqdefault.jpg",
+        "searchQuery": "Molecular Gastronomy & Food Innovation học tập tutorial"
+      }
+    },
+    {
+      "file": "food-technology.ts",
+      "lessonId": "sustainable-food-production",
+      "lessonTitle": "Sustainable Food Production & Supply Chain",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=5whwqXjGCxc",
+      "videoDetails": {
+        "title": "1a  Food Supply",
+        "channel": "Mrs Kennedy Biology",
+        "publishedAt": "2021-01-10T23:01:52Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/5whwqXjGCxc/hqdefault.jpg",
+        "searchQuery": "Sustainable Food Production & Supply học tập tutorial"
+      }
+    },
+    {
+      "file": "genz-marketing.ts",
+      "lessonId": "genz-psychology-authentic-marketing",
+      "lessonTitle": "Gen Z Psychology & Authentic Marketing Principles",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=vrU6YJle6Q4",
+      "videoDetails": {
+        "title": "What makes a good teacher great? | Azul Terronez | TEDxSantoDomingo",
+        "channel": "TEDx Talks",
+        "publishedAt": "2017-02-02T17:06:50Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/vrU6YJle6Q4/hqdefault.jpg",
+        "searchQuery": "Gen Z Psychology & Authentic học tập tutorial"
+      }
+    },
+    {
+      "file": "genz-marketing.ts",
+      "lessonId": "inclusive-diverse-brand-messaging",
+      "lessonTitle": "Inclusive & Diverse Brand Messaging",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=oYxOl9mZOaE",
+      "videoDetails": {
+        "title": "How to Audit for Inclusive Content - Presented by Emily Triplett Lentz",
+        "channel": "Moz",
+        "publishedAt": "2020-11-11T19:30:02Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/oYxOl9mZOaE/hqdefault.jpg",
+        "searchQuery": "Inclusive & Diverse Brand Messaging học tập tutorial"
+      }
+    },
+    {
+      "file": "genz-marketing.ts",
+      "lessonId": "purpose-driven-brand-activism",
+      "lessonTitle": "Purpose-Driven Brand Activism & Social Impact",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=4PRCDE4EWVY",
+      "videoDetails": {
+        "title": "How To Access A List of Thousands of People In NEED of Your Funnel Building &amp; Design Services",
+        "channel": "No Code Designer",
+        "publishedAt": "2019-09-25T04:08:04Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/4PRCDE4EWVY/hqdefault.jpg",
+        "searchQuery": "Purpose-Driven Brand Activism & Social học tập tutorial"
+      }
+    },
+    {
+      "file": "live-commerce-streaming.ts",
+      "lessonId": "live-streaming-sales-mastery",
+      "lessonTitle": "Live Streaming Sales Mastery",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=ZTxQ34KUBm0",
+      "videoDetails": {
+        "title": "LIVE COLD SALES CALL - LEARN, TRAINING &amp; MORE",
+        "channel": "Abu Musa",
+        "publishedAt": "2020-10-20T19:25:24Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/ZTxQ34KUBm0/hqdefault.jpg",
+        "searchQuery": "Live Streaming Sales Mastery học tập tutorial"
+      }
+    },
+    {
+      "file": "live-commerce-streaming.ts",
+      "lessonId": "interactive-live-streaming-technology",
+      "lessonTitle": "Interactive Live Streaming Technology & Tools",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=lj154A6QJk8",
+      "videoDetails": {
+        "title": "Make Interactive Texts, Webpages, and Videos with Actively Learn",
+        "channel": "New EdTech Classroom",
+        "publishedAt": "2021-02-21T14:00:10Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/lj154A6QJk8/hqdefault.jpg",
+        "searchQuery": "Interactive Live Streaming Technology & học tập tutorial"
+      }
+    },
+    {
+      "file": "live-commerce-streaming.ts",
+      "lessonId": "global-live-commerce-expansion",
+      "lessonTitle": "Global Live Commerce & Cross-Cultural Strategies",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=PYJlZclNkNc",
+      "videoDetails": {
+        "title": "365 Bài Đọc FULL Mọi Chủ Đề: Luyện Kĩ Năng Chống Liệt Tiếng Anh Phần Đọc Hiểu THPT Quốc Gia|Phần 8",
+        "channel": "Bài Giải Đến Rồi Chấm Com",
+        "publishedAt": "2020-03-01T14:51:26Z",
+        "language": "vi",
+        "thumbnail": "https://i.ytimg.com/vi/PYJlZclNkNc/hqdefault.jpg",
+        "searchQuery": "Global Live Commerce & Cross-Cultural học tập tutorial"
+      }
+    },
+    {
+      "file": "micro-influencer-economy.ts",
+      "lessonId": "micro-influencer-partnership-strategies",
+      "lessonTitle": "Micro-Influencer Partnership & Collaboration Strategies",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=ggEbz64X3lU",
+      "videoDetails": {
+        "title": "Top 5 Instagram Influencer Marketing Tactics to Drive Sales and Collaborate with Influencers",
+        "channel": "Learn With Shopify",
+        "publishedAt": "2021-11-02T14:00:30Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/ggEbz64X3lU/hqdefault.jpg",
+        "searchQuery": "Micro-Influencer Partnership & Collaboration Strategies học tập tutorial"
+      }
+    },
+    {
+      "file": "micro-influencer-economy.ts",
+      "lessonId": "authentic-influence-community-building",
+      "lessonTitle": "Authentic Influence & Community Building",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=Xz94wRwFOCI",
+      "videoDetails": {
+        "title": "College Essay Tips + Writing your Best College Essay | Real Advice from Harvard Admissions",
+        "channel": "Harvard College Admissions & Financial Aid",
+        "publishedAt": "2021-11-10T15:45:03Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/Xz94wRwFOCI/hqdefault.jpg",
+        "searchQuery": "Authentic Influence & Community Building học tập tutorial"
+      }
+    },
+    {
+      "file": "nanotechnology.ts",
+      "lessonId": "nanomaterials-synthesis-characterization",
+      "lessonTitle": "Nanomaterials Synthesis & Characterization",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=8DpZ1beHuK8",
+      "videoDetails": {
+        "title": "Nanoparticles Characterization Techniques Part 2",
+        "channel": "NANOTECHNOLOGY",
+        "publishedAt": "2021-04-26T07:00:03Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/8DpZ1beHuK8/hqdefault.jpg",
+        "searchQuery": "Nanomaterials Synthesis & Characterization học tập tutorial"
+      }
+    },
+    {
+      "file": "nanotechnology.ts",
+      "lessonId": "nanoelectronics-quantum-devices",
+      "lessonTitle": "Nanoelectronics & Quantum Devices",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=6SHv455QHlU",
+      "videoDetails": {
+        "title": "NANOELECTRONICS",
+        "channel": "CHEMATES",
+        "publishedAt": "2020-12-08T18:22:50Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/6SHv455QHlU/hqdefault.jpg",
+        "searchQuery": "Nanoelectronics & Quantum Devices học tập tutorial"
+      }
+    },
+    {
+      "file": "nanotechnology.ts",
+      "lessonId": "biomedical-nanotechnology",
+      "lessonTitle": "Biomedical Nanotechnology & Drug Delivery",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=rlv250ZdjaI",
+      "videoDetails": {
+        "title": "Drug Release Strategy for Nanogel",
+        "channel": "Knowledge Star",
+        "publishedAt": "2023-01-27T03:30:14Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/rlv250ZdjaI/hqdefault.jpg",
+        "searchQuery": "Biomedical Nanotechnology & Drug Delivery học tập tutorial"
+      }
+    },
+    {
+      "file": "nanotechnology.ts",
+      "lessonId": "environmental-nanotechnology",
+      "lessonTitle": "Environmental Nanotechnology & Sustainable Applications",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=EjZA-xfw8k8",
+      "videoDetails": {
+        "title": "Major Environmental Application of Nanotechnology",
+        "channel": "Garry Nabatilan",
+        "publishedAt": "2021-05-19T14:32:05Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/EjZA-xfw8k8/hqdefault.jpg",
+        "searchQuery": "Environmental Nanotechnology & Sustainable Applications học tập tutorial"
+      }
+    },
+    {
+      "file": "short-video-mastery.ts",
+      "lessonId": "viral-video-psychology-hooks",
+      "lessonTitle": "Viral Video Psychology & Hook Mastery",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=hNuAv-42jzY",
+      "videoDetails": {
+        "title": "Give me 9min, and I&#39;ll improve your storytelling skills by 176%",
+        "channel": "Philipp Humm",
+        "publishedAt": "2025-02-03T13:01:03Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/hNuAv-42jzY/hqdefault.jpg",
+        "searchQuery": "Viral Video Psychology & Hook học tập tutorial"
+      }
+    },
+    {
+      "file": "short-video-mastery.ts",
+      "lessonId": "advanced-video-editing-techniques",
+      "lessonTitle": "Advanced Video Editing & Visual Storytelling",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=XtZUcZeiZRE",
+      "videoDetails": {
+        "title": "5 Advanced Premiere Pro Editing Techniques Every Editor Should Know",
+        "channel": "Pond5",
+        "publishedAt": "2018-10-19T20:09:02Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/XtZUcZeiZRE/hqdefault.jpg",
+        "searchQuery": "Advanced Video Editing & Visual học tập tutorial"
+      }
+    },
+    {
+      "file": "short-video-mastery.ts",
+      "lessonId": "platform-optimization-algorithm-mastery",
+      "lessonTitle": "Platform Optimization & Algorithm Mastery",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=_s2h7X-c2jE",
+      "videoDetails": {
+        "title": "SEO in 2025: How I&#39;d Learn it if I Were Starting Over",
+        "channel": "Ahrefs",
+        "publishedAt": "2025-04-09T11:30:27Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/_s2h7X-c2jE/hqdefault.jpg",
+        "searchQuery": "Platform Optimization & Algorithm Mastery học tập tutorial"
+      }
+    },
+    {
+      "file": "teen-wellness.ts",
+      "lessonId": "understanding-stress-anxiety",
+      "lessonTitle": "Understanding Stress & Anxiety Management",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=eD1wliuHxHI",
+      "videoDetails": {
+        "title": "Brain Basics: Anxiety for Kids - with Lee Constable",
+        "channel": "Kids Helpline",
+        "publishedAt": "2021-06-02T00:09:37Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/eD1wliuHxHI/hqdefault.jpg",
+        "searchQuery": "Understanding Stress & Anxiety Management học tập tutorial"
+      }
+    },
+    {
+      "file": "teen-wellness.ts",
+      "lessonId": "mindfulness-meditation-techniques",
+      "lessonTitle": "Mindfulness & Meditation Techniques",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=sxh0JEeBswg",
+      "videoDetails": {
+        "title": "MINDFULNESS FOR KIDS 🧘‍♀️​ Bee Breathing 🐝​​ Mindfulness Techniques",
+        "channel": "Smile and Learn - English",
+        "publishedAt": "2024-04-16T15:30:25Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/sxh0JEeBswg/hqdefault.jpg",
+        "searchQuery": "Mindfulness & Meditation Techniques học tập tutorial"
+      }
+    },
+    {
+      "file": "teen-wellness.ts",
+      "lessonId": "digital-wellness-screen-time",
+      "lessonTitle": "Digital Wellness & Screen Time Balance",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=2jHJJotP-R0",
+      "videoDetails": {
+        "title": "Screen time Guidelines: IAP 2022",
+        "channel": "ENDEAVOUR FOR CHILD HEALTH",
+        "publishedAt": "2022-03-13T01:45:00Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/2jHJJotP-R0/hqdefault.jpg",
+        "searchQuery": "Digital Wellness & Screen Time học tập tutorial"
+      }
+    },
+    {
+      "file": "teen-wellness.ts",
+      "lessonId": "building-healthy-relationships",
+      "lessonTitle": "Building Healthy Relationships",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=NEzwDqZ6Th0",
+      "videoDetails": {
+        "title": "Teaching Tips from AE - Culturally Relevant Materials Part 1- Building Healthy Relationships",
+        "channel": "American English",
+        "publishedAt": "2016-05-26T13:32:41Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/NEzwDqZ6Th0/hqdefault.jpg",
+        "searchQuery": "Building Healthy Relationships học tập tutorial"
+      }
+    },
+    {
+      "file": "teen-wellness.ts",
+      "lessonId": "study-life-balance",
+      "lessonTitle": "Study-Life Balance Strategies",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=ifZWcPXDyFc",
+      "videoDetails": {
+        "title": "How I Routinely Study With a Full Time Job when I&#39;m TIRED",
+        "channel": "Koi",
+        "publishedAt": "2022-06-13T13:00:24Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/ifZWcPXDyFc/hqdefault.jpg",
+        "searchQuery": "Study-Life Balance Strategies học tập tutorial"
+      }
+    },
+    {
+      "file": "teen-wellness.ts",
+      "lessonId": "emotional-intelligence-development",
+      "lessonTitle": "Emotional Intelligence Development",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=-Qwaxv87Ews",
+      "videoDetails": {
+        "title": "What is Emotional Intelligence and 4 Tips For EQ Development",
+        "channel": "LeanVlog",
+        "publishedAt": "2021-01-24T18:37:51Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/-Qwaxv87Ews/hqdefault.jpg",
+        "searchQuery": "Emotional Intelligence Development học tập tutorial"
+      }
+    },
+    {
+      "file": "teen-wellness.ts",
+      "lessonId": "crisis-support-help-seeking",
+      "lessonTitle": "Crisis Support & When to Seek Help",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=KTUVdXI2vng",
+      "videoDetails": {
+        "title": "Crisis in the Foundation of Mathematics | Infinite Series",
+        "channel": "PBS Infinite Series",
+        "publishedAt": "2017-10-19T21:52:17Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/KTUVdXI2vng/hqdefault.jpg",
+        "searchQuery": "Crisis Support & When to học tập tutorial"
+      }
+    },
+    {
+      "file": "tiktok-social-commerce.ts",
+      "lessonId": "tiktok-shop-setup-mastery",
+      "lessonTitle": "TikTok Shop Setup & Optimization Mastery",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=OJ-7rHKKlvU",
+      "videoDetails": {
+        "title": "How to Run GMV Max Ads on TikTok Shop | Step-by-Step Tutorial 2025",
+        "channel": "Bilal Sirbuland",
+        "publishedAt": "2025-02-07T13:57:34Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/OJ-7rHKKlvU/hqdefault.jpg",
+        "searchQuery": "TikTok Shop Setup & Optimization học tập tutorial"
+      }
+    },
+    {
+      "file": "tiktok-social-commerce.ts",
+      "lessonId": "social-commerce-livestream-mastery",
+      "lessonTitle": "Social Commerce Livestream Selling Mastery",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=rcLOBdLGHIM",
+      "videoDetails": {
+        "title": "Facebook conversion ads 2021 | Facebook ads for beginners | Facebook ads  tutorial | Facebook ads",
+        "channel": "Mr. Tech",
+        "publishedAt": "2021-07-16T07:37:55Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/rcLOBdLGHIM/hqdefault.jpg",
+        "searchQuery": "Social Commerce Livestream Selling Mastery học tập tutorial"
+      }
+    },
+    {
+      "file": "tiktok-social-commerce.ts",
+      "lessonId": "cross-platform-social-commerce",
+      "lessonTitle": "Cross-Platform Social Commerce Strategy",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=ol0v779BlAA",
+      "videoDetails": {
+        "title": "How To Master Paid Social Media Advertising Like A Pro",
+        "channel": "HubSpot Marketing",
+        "publishedAt": "2022-01-09T13:30:24Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/ol0v779BlAA/hqdefault.jpg",
+        "searchQuery": "Cross-Platform Social Commerce Strategy học tập tutorial"
+      }
+    },
+    {
+      "file": "young-entrepreneur.ts",
+      "lessonId": "startup-mindset-fundamentals",
+      "lessonTitle": "Tư Duy Khởi Nghiệp & Cơ Hội Thị Trường",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=x2JRtPxGF7Y",
+      "videoDetails": {
+        "title": "90% Không Hiểu Gì Về Vốn Trong Kinh Doanh (Kể Cả bạn)",
+        "channel": "Web5ngay",
+        "publishedAt": "2018-04-07T12:00:05Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/x2JRtPxGF7Y/hqdefault.jpg",
+        "searchQuery": "Tư Duy Khởi Nghiệp & học tập tutorial"
+      }
+    },
+    {
+      "file": "young-entrepreneur.ts",
+      "lessonId": "business-model-validation",
+      "lessonTitle": "Xây Dựng & Kiểm Chứng Business Model",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=nkrJgHptrY8",
+      "videoDetails": {
+        "title": "C14 - Hướng dẫn xây dựng AI Agent trợ giảng tiếng Anh thương mại",
+        "channel": "AIEdu Best AI Training from 2025",
+        "publishedAt": "2025-03-27T10:57:48Z",
+        "language": "vi",
+        "thumbnail": "https://i.ytimg.com/vi/nkrJgHptrY8/hqdefault.jpg",
+        "searchQuery": "Xây Dựng & Kiểm Chứng học tập tutorial"
+      }
+    },
+    {
+      "file": "young-entrepreneur.ts",
+      "lessonId": "digital-marketing-growth",
+      "lessonTitle": "Digital Marketing & Growth Hacking cho Startup",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=2DQ5bq7if-Y",
+      "videoDetails": {
+        "title": "Khóa học Growth Hacking - Chiến lược cá chép hóa rồng [Teaser]",
+        "channel": "Kyna.vn",
+        "publishedAt": "2016-06-27T05:16:52Z",
+        "language": "vi",
+        "thumbnail": "https://i.ytimg.com/vi/2DQ5bq7if-Y/hqdefault.jpg",
+        "searchQuery": "Digital Marketing & Growth Hacking học tập tutorial"
+      }
+    },
+    {
+      "file": "young-entrepreneur.ts",
+      "lessonId": "funding-investment-preparation",
+      "lessonTitle": "Gọi Vốn & Chuẩn Bị Đầu Tư",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=x2JRtPxGF7Y",
+      "videoDetails": {
+        "title": "90% Không Hiểu Gì Về Vốn Trong Kinh Doanh (Kể Cả bạn)",
+        "channel": "Web5ngay",
+        "publishedAt": "2018-04-07T12:00:05Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/x2JRtPxGF7Y/hqdefault.jpg",
+        "searchQuery": "Gọi Vốn & Chuẩn Bị học tập tutorial"
+      }
+    },
+    {
+      "file": "young-entrepreneur.ts",
+      "lessonId": "team-building-leadership",
+      "lessonTitle": "Xây Dựng Đội Ngũ & Leadership Skills",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=anClAIcriq8",
+      "videoDetails": {
+        "title": "Hướng dẫn chơi team building | Thử Thách Quân Đội RẤT CHI DỮ DỘI | TCT Group",
+        "channel": "TCT Group",
+        "publishedAt": "2024-04-05T11:00:02Z",
+        "language": "vi",
+        "thumbnail": "https://i.ytimg.com/vi/anClAIcriq8/hqdefault.jpg",
+        "searchQuery": "Xây Dựng Đội Ngũ & học tập tutorial"
+      }
+    },
+    {
+      "file": "young-entrepreneur.ts",
+      "lessonId": "scaling-operations",
+      "lessonTitle": "Scale Operations & Business Growth",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=cIYmQeN62SA",
+      "videoDetails": {
+        "title": "How to Systemise Your Business for Faster Growth",
+        "channel": "CEO Entrepreneur",
+        "publishedAt": "2022-05-20T16:00:17Z",
+        "language": "unknown",
+        "thumbnail": "https://i.ytimg.com/vi/cIYmQeN62SA/hqdefault.jpg",
+        "searchQuery": "Scale Operations & Business Growth học tập tutorial"
+      }
+    },
+    {
+      "file": "young-entrepreneur.ts",
+      "lessonId": "startup-legal-compliance",
+      "lessonTitle": "Pháp Lý & Compliance cho Startup",
+      "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
+      "suggestedVideoUrl": "https://www.youtube.com/watch?v=n7O6IpKS7Ww",
+      "videoDetails": {
+        "title": "Improve Your Online Compliance Training With TalentLMS",
+        "channel": "TalentLMS",
+        "publishedAt": "2017-02-01T15:32:40Z",
+        "language": "en",
+        "thumbnail": "https://i.ytimg.com/vi/n7O6IpKS7Ww/hqdefault.jpg",
+        "searchQuery": "Pháp Lý & Compliance cho học tập tutorial"
+      }
+    }
+  ]
+}

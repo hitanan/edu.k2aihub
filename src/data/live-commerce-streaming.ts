@@ -561,8 +561,8 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Master nghệ thuật live streaming sales với psychological triggers, real-time engagement và proven conversion techniques.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/live-sales-mastery.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=ZTxQ34KUBm0',
+    imageUrl: 'https://i.ytimg.com/vi/ZTxQ34KUBm0/hqdefault.jpg',
     objectives: [
       'Master live selling psychological techniques',
       'Create compelling live shopping experiences',
@@ -710,8 +710,8 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Master technical aspects của live streaming với interactive features, multi-platform broadcasting và audience engagement tools.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/live-tech-setup.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=lj154A6QJk8',
+    imageUrl: 'https://i.ytimg.com/vi/lj154A6QJk8/hqdefault.jpg',
     objectives: [
       'Setup professional live streaming equipment',
       'Master multi-platform streaming strategies',
@@ -825,8 +825,8 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Expand live commerce operations globally với cultural adaptation, timezone optimization và international audience engagement.',
     duration: '120 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/global-live-commerce.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=PYJlZclNkNc',
+    imageUrl: 'https://i.ytimg.com/vi/PYJlZclNkNc/hqdefault.jpg',
     objectives: [
       'Understand global live commerce markets',
       'Adapt content cho different cultures',

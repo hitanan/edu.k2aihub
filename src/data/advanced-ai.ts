@@ -44,6 +44,7 @@ export const advancedAILessons: AdvancedAILesson[] = [
     description:
       'Master advanced deep learning concepts từ CNN, RNN đến Transformers. Hiểu về backpropagation, gradient descent và optimization techniques cho production AI systems.',
     duration: '240 phút',
+  videoUrl: 'https://www.youtube.com/watch?v=Nb3_rq5Xnic',
     difficulty: 'Nâng cao',
     aiDomain: 'Deep Learning',
     objectives: [
@@ -151,6 +152,7 @@ export const advancedAILessons: AdvancedAILesson[] = [
     description:
       'Advanced computer vision techniques cho real-world applications: object detection, semantic segmentation, facial recognition với focus trên Vietnam market applications.',
     duration: '220 phút',
+  videoUrl: 'https://www.youtube.com/watch?v=-Ig2ibBkc7Q',
     difficulty: 'Nâng cao',
     aiDomain: 'Computer Vision',
     objectives: [
@@ -247,6 +249,7 @@ export const advancedAILessons: AdvancedAILesson[] = [
     description:
       'Comprehensive NLP techniques từ traditional methods đến modern LLMs. Focus trên Vietnamese language processing và multilingual applications.',
     duration: '200 phút',
+  videoUrl: 'https://www.youtube.com/watch?v=Nb3_rq5Xnic',
     difficulty: 'Nâng cao',
     aiDomain: 'Natural Language Processing',
     objectives: [
@@ -348,6 +351,7 @@ export const advancedAILessons: AdvancedAILesson[] = [
     description:
       'Advanced reinforcement learning algorithms và applications trong autonomous systems, robotics, và game AI với practical Vietnamese applications.',
     duration: '190 phút',
+  videoUrl: 'https://www.youtube.com/watch?v=11Bkg32j_G4',
     difficulty: 'Nâng cao',
     aiDomain: 'Reinforcement Learning',
     objectives: [

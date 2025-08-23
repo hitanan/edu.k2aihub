@@ -48,7 +48,7 @@ export const aiArtLessons: AiArtLesson[] = [
     title: 'Bài 1: AI Image Generation & Prompt Engineering',
     description:
       'Master AI image generation với Midjourney, DALL-E, Stable Diffusion. Học prompt engineering techniques, style control, và advanced generation workflows.',
-    videoUrl: 'https://www.youtube.com/watch?v=2TgB3nXDlXM',
+    videoUrl: 'https://www.youtube.com/watch?v=V16QtZ1OjCQ',
     imageUrl:
       'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',

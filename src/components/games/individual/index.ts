@@ -56,3 +56,5 @@ export { default as VirtualChemistryLab3D } from './VirtualChemistryLab3D';
 export { default as ArduinoCircuitBuilder3D } from './ArduinoCircuitBuilder3D';
 export { default as SpaceExploration3DGame } from './SpaceExploration3DGame';
 export { RobotNavigation3DGame } from './RobotNavigation3DGame';
+export { default as BiotechLabSimulation3D } from './BiotechLabSimulation3D';
+export { default as DroneCropMonitoring3D } from './DroneCropMonitoring3D';

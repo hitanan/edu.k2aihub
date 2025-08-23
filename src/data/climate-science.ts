@@ -19,7 +19,7 @@ export const ClimateLessons: ClimateLessonData[] = [
       'Tìm hiểu các nguyên lý cơ bản của hệ thống khí hậu Trái Đất và biến đổi khí hậu.',
     duration: '140 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://youtube.com/watch?v=ffjIyms1BX4',
+    videoUrl: 'https://www.youtube.com/watch?v=xazZdTUPz0k',
     imageUrl: '/images/climate-fundamentals.jpg',
     objectives: [
       'Hiểu hệ thống khí hậu Trái Đất và các thành phần',
@@ -97,7 +97,7 @@ export const ClimateLessons: ClimateLessonData[] = [
       'Học cách sử dụng các mô hình khí hậu và phân tích big data để dự báo khí hậu.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=qo-H-47Eyz8',
+    videoUrl: 'https://www.youtube.com/watch?v=tVu8G_BoLQw',
     objectives: [
       'Hiểu các loại climate models: GCM, RCM, ESM',
       'Nắm vững data assimilation và ensemble methods',

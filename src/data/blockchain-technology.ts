@@ -19,7 +19,7 @@ export const BlockchainLessons: BlockchainLessonData[] = [
       'Tìm hiểu công nghệ blockchain từ cơ bản đến nâng cao, bao gồm Bitcoin, Ethereum và các ứng dụng thực tế.',
     duration: '150 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://youtube.com/watch?v=SSo_EIwHSd4',
+    videoUrl: 'https://www.youtube.com/watch?v=G44e7j6CX8Q',
     imageUrl: '/images/blockchain-fundamentals.jpg',
     objectives: [
       'Hiểu cấu trúc và hoạt động của blockchain',
@@ -97,7 +97,7 @@ export const BlockchainLessons: BlockchainLessonData[] = [
       'Học cách phát triển smart contracts và ứng dụng phi tập trung (DApps) trên Ethereum.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=M576WGiDBdQ',
+    videoUrl: 'https://www.youtube.com/watch?v=keI4tymfIbo',
     objectives: [
       'Nắm vững ngôn ngữ Solidity cho smart contracts',
       'Hiểu Ethereum Virtual Machine (EVM)',

@@ -15,8 +15,8 @@ export const shortVideoMasteryLessons: ShortVideoMasteryLessonType[] = [
     description: 'Master psychological triggers tạo viral videos và craft compelling hooks giữ chân viewers trong 3 giây đầu tiên.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/viral-psychology.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=hNuAv-42jzY',
+    imageUrl: 'https://i.ytimg.com/vi/hNuAv-42jzY/hqdefault.jpg',
     objectives: [
       'Understand psychology behind viral content',
       'Master 3-second hook creation techniques',
@@ -151,8 +151,8 @@ export const shortVideoMasteryLessons: ShortVideoMasteryLessonType[] = [
     description: 'Master advanced editing techniques tạo cinematic short-form content với professional production value.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/advanced-editing.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=XtZUcZeiZRE',
+    imageUrl: 'https://i.ytimg.com/vi/XtZUcZeiZRE/hqdefault.jpg',
     objectives: [
       'Master advanced editing transitions và effects',
       'Create cinematic looks với smartphone footage',
@@ -251,8 +251,8 @@ export const shortVideoMasteryLessons: ShortVideoMasteryLessonType[] = [
     description: 'Deep dive into từng platform\'s algorithm và optimize content strategies cho maximum reach và engagement.',
     duration: '120 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/algorithm-mastery.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=_s2h7X-c2jE',
+    imageUrl: 'https://i.ytimg.com/vi/_s2h7X-c2jE/hqdefault.jpg',
     objectives: [
       'Understand each platform\'s algorithm in depth',
       'Optimize posting times và frequency',

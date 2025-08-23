@@ -16,8 +16,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Comprehensive nanomaterials science covering synthesis methods, characterization techniques, và properties analysis. Focus trên Vietnamese research capabilities và applications trong electronics, energy, và environmental technology.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=8DpZ1beHuK8',
+    imageUrl: 'https://i.ytimg.com/vi/8DpZ1beHuK8/hqdefault.jpg',
     objectives: [
       'Master nanomaterial synthesis techniques: top-down và bottom-up approaches',
       'Understand characterization methods: electron microscopy, spectroscopy, X-ray analysis',
@@ -175,8 +175,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Advanced nanoelectronics covering quantum devices, molecular electronics, và next-generation computing technology. Explore applications trong Vietnamese semiconductor industry và emerging quantum technology.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=6SHv455QHlU',
+    imageUrl: 'https://i.ytimg.com/vi/6SHv455QHlU/hqdefault.jpg',
     objectives: [
       'Understand quantum mechanics principles trong nanoelectronic devices',
       'Master quantum device fabrication techniques và characterization',
@@ -320,8 +320,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Advanced biomedical applications của nanotechnology including drug delivery systems, diagnostic nanoparticles, và regenerative medicine. Focus trên Vietnamese healthcare applications và regulatory considerations.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=rlv250ZdjaI',
+    imageUrl: 'https://i.ytimg.com/vi/rlv250ZdjaI/hqdefault.jpg',
     objectives: [
       'Master biomedical nanoparticle design và synthesis principles',
       'Understand drug delivery mechanisms và targeting strategies',
@@ -457,8 +457,8 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Nanotechnology solutions cho environmental challenges including water treatment, air purification, và sustainable energy applications. Focus trên Vietnamese environmental issues và sustainability goals.',
     duration: '165 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=EjZA-xfw8k8',
+    imageUrl: 'https://i.ytimg.com/vi/EjZA-xfw8k8/hqdefault.jpg',
     objectives: [
       'Apply nanotechnology solutions cho water và air pollution treatment',
       'Understand environmental fate và transport của nanomaterials',

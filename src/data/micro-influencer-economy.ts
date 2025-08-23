@@ -637,8 +637,8 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Master micro-influencer partnerships với authentic collaborations, fair compensation và long-term relationship building.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/micro-influencer-partnerships.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=ggEbz64X3lU',
+    imageUrl: 'https://i.ytimg.com/vi/ggEbz64X3lU/hqdefault.jpg',
     objectives: [
       'Understand micro-influencer landscape và value',
       'Develop authentic partnership strategies',
@@ -742,8 +742,8 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Build genuine influence through authentic content, community engagement và value-driven approach to social media presence.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/authentic-influence.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=Xz94wRwFOCI',
+    imageUrl: 'https://i.ytimg.com/vi/Xz94wRwFOCI/hqdefault.jpg',
     objectives: [
       'Develop authentic personal brand',
       'Build engaged community around shared values',

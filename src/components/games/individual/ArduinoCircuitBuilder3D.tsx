@@ -17,6 +17,14 @@ interface ArduinoComponent {
   unlocked: boolean;
 }
 
+interface Connection {
+  id: string;
+  fromComponent: string;
+  fromPin: string;
+  toComponent: string;
+  toPin: string;
+}
+
 interface Level {
   id: number;
   title: string;
@@ -39,6 +47,9 @@ interface GameState {
   unlockedComponents: string[];
   completedLevels: number[];
   isGameStarted: boolean;
+  connections: Connection[];
+  selectedComponent: string | null;
+  selectedPin: string | null;
 }
 
 // Component Library
@@ -442,7 +453,10 @@ export default function ArduinoCircuitBuilder3D({ onComplete }: ArduinoCircuitBu
     score: 0,
     unlockedComponents: ['arduino_uno', 'ldr_sensor', 'led_red', 'resistor_220'],
     completedLevels: [],
-    isGameStarted: false
+    isGameStarted: false,
+    connections: [],
+    selectedComponent: null,
+    selectedPin: null,
   });
   
   const [selectedComponents, setSelectedComponents] = useState<string[]>([]);

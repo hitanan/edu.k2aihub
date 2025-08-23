@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
+import { useUnifiedScoring } from '@/utils/unifiedScoring';
 
 // Molecular game data interface
 interface Atom {
@@ -90,19 +91,9 @@ function AtomComponent({ atom, position, onClick, selected }: AtomComponentProps
     <group position={position} onClick={onClick}>
       <mesh ref={meshRef}>
         <sphereGeometry args={[atom.radius, 16, 16]} />
-        <meshPhongMaterial 
-          color={atom.color}
-          shininess={100}
-          emissive={selected ? 0x444444 : 0x000000}
-        />
+        <meshPhongMaterial color={atom.color} shininess={100} emissive={selected ? 0x444444 : 0x000000} />
       </mesh>
-      <Text
-        position={[0, atom.radius + 0.3, 0]}
-        fontSize={0.3}
-        color="#000000"
-        anchorX="center"
-        anchorY="middle"
-      >
+      <Text position={[0, atom.radius + 0.3, 0]} fontSize={0.3} color="#000000" anchorX="center" anchorY="middle">
         {atom.symbol}
       </Text>
       {selected && (
@@ -124,28 +115,18 @@ interface BondComponentProps {
 
 function BondComponent({ start, end, type }: BondComponentProps) {
   const bondRef = useRef<THREE.Mesh>(null);
-  
+
   useEffect(() => {
     if (bondRef.current) {
       const distance = Math.sqrt(
-        Math.pow(end[0] - start[0], 2) +
-        Math.pow(end[1] - start[1], 2) +
-        Math.pow(end[2] - start[2], 2)
+        Math.pow(end[0] - start[0], 2) + Math.pow(end[1] - start[1], 2) + Math.pow(end[2] - start[2], 2),
       );
-      
+
       bondRef.current.scale.y = distance;
-      bondRef.current.position.set(
-        (start[0] + end[0]) / 2,
-        (start[1] + end[1]) / 2,
-        (start[2] + end[2]) / 2
-      );
-      
-      const direction = new THREE.Vector3(
-        end[0] - start[0],
-        end[1] - start[1],
-        end[2] - start[2]
-      ).normalize();
-      
+      bondRef.current.position.set((start[0] + end[0]) / 2, (start[1] + end[1]) / 2, (start[2] + end[2]) / 2);
+
+      const direction = new THREE.Vector3(end[0] - start[0], end[1] - start[1], end[2] - start[2]).normalize();
+
       const up = new THREE.Vector3(0, 1, 0);
       const quaternion = new THREE.Quaternion().setFromUnitVectors(up, direction);
       bondRef.current.setRotationFromQuaternion(quaternion);
@@ -154,19 +135,27 @@ function BondComponent({ start, end, type }: BondComponentProps) {
 
   const getBondColor = () => {
     switch (type) {
-      case 'single': return '#888888';
-      case 'double': return '#666666';
-      case 'triple': return '#444444';
-      default: return '#888888';
+      case 'single':
+        return '#888888';
+      case 'double':
+        return '#666666';
+      case 'triple':
+        return '#444444';
+      default:
+        return '#888888';
     }
   };
 
   const getBondRadius = () => {
     switch (type) {
-      case 'single': return 0.05;
-      case 'double': return 0.08;
-      case 'triple': return 0.1;
-      default: return 0.05;
+      case 'single':
+        return 0.05;
+      case 'double':
+        return 0.08;
+      case 'triple':
+        return 0.1;
+      default:
+        return 0.05;
     }
   };
 
@@ -217,19 +206,9 @@ function LabEquipmentComponent({ equipment, position, onClick, active }: LabEqui
     <group ref={meshRef} position={position} onClick={onClick}>
       <mesh>
         {getEquipmentGeometry()}
-        <meshPhongMaterial 
-          color={getEquipmentColor()}
-          transparent 
-          opacity={active ? 1 : 0.7}
-        />
+        <meshPhongMaterial color={getEquipmentColor()} transparent opacity={active ? 1 : 0.7} />
       </mesh>
-      <Text
-        position={[0, -0.8, 0]}
-        fontSize={0.2}
-        color="#000000"
-        anchorX="center"
-        anchorY="middle"
-      >
+      <Text position={[0, -0.8, 0]} fontSize={0.2} color="#000000" anchorX="center" anchorY="middle">
         {equipment.name}
       </Text>
     </group>
@@ -245,49 +224,47 @@ interface GameSceneProps {
 }
 
 interface PlacedAtom {
-    atom: Atom;
-    position: [number, number, number];
-    id: string;
-    element: string;
+  atom: Atom;
+  position: [number, number, number];
+  id: string;
+  element: string;
 }
 
 function GameScene({ gameData, onScoreChange, atomToAdd, onChallengeComplete, currentChallenge }: GameSceneProps) {
   const [placedAtoms, setPlacedAtoms] = useState<Array<PlacedAtom>>([]);
 
   const [selectedAtoms, setSelectedAtoms] = useState<string[]>([]);
-  const [bonds, setBonds] = useState<Array<{
-    from: string;
-    to: string;
-    type: 'single' | 'double' | 'triple';
-  }>>([]);
-  
+  const [bonds, setBonds] = useState<
+    Array<{
+      from: string;
+      to: string;
+      type: 'single' | 'double' | 'triple';
+    }>
+  >([]);
+
   const [activeEquipment, setActiveEquipment] = useState<string | null>(null);
   const [score, setScore] = useState(0);
 
   // Add atom to the scene
   const addAtom = useCallback((atomSymbol: string) => {
-    const atom = DEFAULT_ATOMS.find(a => a.symbol === atomSymbol);
+    const atom = DEFAULT_ATOMS.find((a) => a.symbol === atomSymbol);
     if (!atom) return;
 
     const newAtom = {
       atom,
       element: atomSymbol,
-      position: [
-        Math.random() * 4 - 2,
-        Math.random() * 2,
-        Math.random() * 4 - 2
-      ] as [number, number, number],
-      id: `${atomSymbol}_${Date.now()}_${Math.random()}`
+      position: [Math.random() * 4 - 2, Math.random() * 2, Math.random() * 4 - 2] as [number, number, number],
+      id: `${atomSymbol}_${Date.now()}_${Math.random()}`,
     };
 
-    setPlacedAtoms(prev => [...prev, newAtom]);
+    setPlacedAtoms((prev) => [...prev, newAtom]);
   }, []);
 
   // Select atom
   const selectAtom = useCallback((atomId: string) => {
-    setSelectedAtoms(prev => {
+    setSelectedAtoms((prev) => {
       if (prev.includes(atomId)) {
-        return prev.filter(id => id !== atomId);
+        return prev.filter((id) => id !== atomId);
       } else if (prev.length < 2) {
         return [...prev, atomId];
       } else {
@@ -297,48 +274,55 @@ function GameScene({ gameData, onScoreChange, atomToAdd, onChallengeComplete, cu
   }, []);
 
   // Molecular validation function
-  const validateMolecule = useCallback((atoms: PlacedAtom[], currentBonds: typeof bonds) => {
-    if (!gameData.challenges || !gameData.challenges[currentChallenge]) return false;
-    
-    const challenge = gameData.challenges[currentChallenge];
-    const targetMolecule = gameData.molecules.find(m => m.id === challenge.targetMolecule);
-    if (!targetMolecule) return false;
+  const validateMolecule = useCallback(
+    (atoms: PlacedAtom[], currentBonds: typeof bonds) => {
+      if (!gameData.challenges || !gameData.challenges[currentChallenge]) return false;
 
-    // Count atoms by type
-    const atomCounts = atoms.reduce((acc, atom) => {
-      acc[atom.element] = (acc[atom.element] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
+      const challenge = gameData.challenges[currentChallenge];
+      const targetMolecule = gameData.molecules.find((m) => m.id === challenge.targetMolecule);
+      if (!targetMolecule) return false;
 
-    // Count target atoms
-    const targetAtomCounts = targetMolecule.atoms.reduce((acc, atom) => {
-      acc[atom.element] = (acc[atom.element] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
+      // Count atoms by type
+      const atomCounts = atoms.reduce(
+        (acc, atom) => {
+          acc[atom.element] = (acc[atom.element] || 0) + 1;
+          return acc;
+        },
+        {} as Record<string, number>,
+      );
 
-    // Check if atom counts match
-    const atomTypesMatch = Object.keys(targetAtomCounts).every(element => 
-      atomCounts[element] === targetAtomCounts[element]
-    ) && Object.keys(atomCounts).every(element => 
-      targetAtomCounts[element] === atomCounts[element]
-    );
+      // Count target atoms
+      const targetAtomCounts = targetMolecule.atoms.reduce(
+        (acc, atom) => {
+          acc[atom.element] = (acc[atom.element] || 0) + 1;
+          return acc;
+        },
+        {} as Record<string, number>,
+      );
 
-    if (!atomTypesMatch) return false;
+      // Check if atom counts match
+      const atomTypesMatch =
+        Object.keys(targetAtomCounts).every((element) => atomCounts[element] === targetAtomCounts[element]) &&
+        Object.keys(atomCounts).every((element) => targetAtomCounts[element] === atomCounts[element]);
 
-    // Check if we have the right number of bonds
-    const expectedBonds = targetMolecule.bonds.length;
-    if (currentBonds.length !== expectedBonds) return false;
+      if (!atomTypesMatch) return false;
 
-    // For simple validation, check if all atoms are connected properly
-    const bondedAtomIds = new Set<string>();
-    currentBonds.forEach(bond => {
-      bondedAtomIds.add(bond.from);
-      bondedAtomIds.add(bond.to);
-    });
+      // Check if we have the right number of bonds
+      const expectedBonds = targetMolecule.bonds.length;
+      if (currentBonds.length !== expectedBonds) return false;
 
-    // Simple connectivity check - all atoms should be bonded for small molecules
-    return bondedAtomIds.size >= Math.min(atoms.length, expectedBonds + 1);
-  }, [gameData.challenges, gameData.molecules, currentChallenge]);
+      // For simple validation, check if all atoms are connected properly
+      const bondedAtomIds = new Set<string>();
+      currentBonds.forEach((bond) => {
+        bondedAtomIds.add(bond.from);
+        bondedAtomIds.add(bond.to);
+      });
+
+      // Simple connectivity check - all atoms should be bonded for small molecules
+      return bondedAtomIds.size >= Math.min(atoms.length, expectedBonds + 1);
+    },
+    [gameData.challenges, gameData.molecules, currentChallenge],
+  );
 
   // Create bond between selected atoms
   const createBond = useCallback(() => {
@@ -346,16 +330,16 @@ function GameScene({ gameData, onScoreChange, atomToAdd, onChallengeComplete, cu
       const newBond = {
         from: selectedAtoms[0],
         to: selectedAtoms[1],
-        type: 'single' as const
+        type: 'single' as const,
       };
-      
+
       const newBonds = [...bonds, newBond];
       setBonds(newBonds);
       setSelectedAtoms([]);
       const newScore = score + 5;
       setScore(newScore);
       onScoreChange(newScore);
-      
+
       // Check if molecule is complete after creating bond
       if (validateMolecule(placedAtoms, newBonds)) {
         const challenge = gameData.challenges[currentChallenge];
@@ -364,7 +348,17 @@ function GameScene({ gameData, onScoreChange, atomToAdd, onChallengeComplete, cu
         }
       }
     }
-  }, [selectedAtoms, bonds, placedAtoms, score, validateMolecule, onScoreChange, gameData.challenges, onChallengeComplete, currentChallenge]);
+  }, [
+    selectedAtoms,
+    bonds,
+    placedAtoms,
+    score,
+    validateMolecule,
+    onScoreChange,
+    gameData.challenges,
+    onChallengeComplete,
+    currentChallenge,
+  ]);
 
   // Reset game
   const resetGame = useCallback(() => {
@@ -439,19 +433,12 @@ function GameScene({ gameData, onScoreChange, atomToAdd, onChallengeComplete, cu
 
       {/* Bonds */}
       {bonds.map((bond, index) => {
-        const fromAtom = placedAtoms.find(a => a.id === bond.from);
-        const toAtom = placedAtoms.find(a => a.id === bond.to);
-        
+        const fromAtom = placedAtoms.find((a) => a.id === bond.from);
+        const toAtom = placedAtoms.find((a) => a.id === bond.to);
+
         if (!fromAtom || !toAtom) return null;
-        
-        return (
-          <BondComponent
-            key={index}
-            start={fromAtom.position}
-            end={toAtom.position}
-            type={bond.type}
-          />
-        );
+
+        return <BondComponent key={index} start={fromAtom.position} end={toAtom.position} type={bond.type} />;
       })}
 
       {/* Lab Equipment */}
@@ -461,9 +448,9 @@ function GameScene({ gameData, onScoreChange, atomToAdd, onChallengeComplete, cu
           equipment={equipment}
           position={[4, 0, index * 2 - 3] as [number, number, number]}
           onClick={() => {
-            setActiveEquipment(prev => prev === equipment.id ? null : equipment.id);
+            setActiveEquipment((prev) => (prev === equipment.id ? null : equipment.id));
             if (equipment.id === 'burner') {
-              setScore(prev => {
+              setScore((prev) => {
                 const newScore = prev + 10;
                 onScoreChange(newScore);
                 return newScore;
@@ -481,13 +468,7 @@ function GameScene({ gameData, onScoreChange, atomToAdd, onChallengeComplete, cu
       </mesh>
 
       {/* Controls */}
-      <OrbitControls 
-        enablePan={true}
-        enableZoom={true}
-        enableRotate={true}
-        maxDistance={15}
-        minDistance={2}
-      />
+      <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} maxDistance={15} minDistance={2} />
     </>
   );
 }
@@ -510,14 +491,14 @@ const defaultGameData: VirtualChemistryLab3DData = {
       atoms: [
         { element: 'O', position: { x: 0, y: 0, z: 0 } },
         { element: 'H', position: { x: -1, y: 0.5, z: 0 } },
-        { element: 'H', position: { x: 1, y: 0.5, z: 0 } }
+        { element: 'H', position: { x: 1, y: 0.5, z: 0 } },
       ],
       bonds: [
         { atom1: 0, atom2: 1, type: 'single' },
-        { atom1: 0, atom2: 2, type: 'single' }
+        { atom1: 0, atom2: 2, type: 'single' },
       ],
       description: 'Water molecule',
-      points: 50
+      points: 50,
     },
     {
       id: 'co2',
@@ -526,14 +507,14 @@ const defaultGameData: VirtualChemistryLab3DData = {
       atoms: [
         { element: 'C', position: { x: 0, y: 0, z: 0 } },
         { element: 'O', position: { x: -1.5, y: 0, z: 0 } },
-        { element: 'O', position: { x: 1.5, y: 0, z: 0 } }
+        { element: 'O', position: { x: 1.5, y: 0, z: 0 } },
       ],
       bonds: [
         { atom1: 0, atom2: 1, type: 'double' },
-        { atom1: 0, atom2: 2, type: 'double' }
+        { atom1: 0, atom2: 2, type: 'double' },
       ],
       description: 'Carbon dioxide molecule',
-      points: 75
+      points: 75,
     },
     {
       id: 'nh3',
@@ -543,15 +524,15 @@ const defaultGameData: VirtualChemistryLab3DData = {
         { element: 'N', position: { x: 0, y: 0, z: 0 } },
         { element: 'H', position: { x: -1, y: 0.5, z: 0 } },
         { element: 'H', position: { x: 1, y: 0.5, z: 0 } },
-        { element: 'H', position: { x: 0, y: -1, z: 0 } }
+        { element: 'H', position: { x: 0, y: -1, z: 0 } },
       ],
       bonds: [
         { atom1: 0, atom2: 1, type: 'single' },
         { atom1: 0, atom2: 2, type: 'single' },
-        { atom1: 0, atom2: 3, type: 'single' }
+        { atom1: 0, atom2: 3, type: 'single' },
       ],
       description: 'Ammonia molecule',
-      points: 60
+      points: 60,
     },
     {
       id: 'ch4',
@@ -562,35 +543,73 @@ const defaultGameData: VirtualChemistryLab3DData = {
         { element: 'H', position: { x: -1, y: 0, z: 0 } },
         { element: 'H', position: { x: 1, y: 0, z: 0 } },
         { element: 'H', position: { x: 0, y: -1, z: 0 } },
-        { element: 'H', position: { x: 0, y: 1, z: 0 } }
+        { element: 'H', position: { x: 0, y: 1, z: 0 } },
       ],
       bonds: [
         { atom1: 0, atom2: 1, type: 'single' },
         { atom1: 0, atom2: 2, type: 'single' },
         { atom1: 0, atom2: 3, type: 'single' },
-        { atom1: 0, atom2: 4, type: 'single' }
+        { atom1: 0, atom2: 4, type: 'single' },
       ],
       description: 'Methane molecule',
-      points: 80
-    }
+      points: 80,
+    },
   ],
   equipment: [
     { id: 'beaker', name: 'Beaker', description: 'Glass container for mixing', model: 'beaker.obj', interactive: true },
-    { id: 'burner', name: 'Bunsen Burner', description: 'Heat source for reactions', model: 'burner.obj', interactive: true },
+    {
+      id: 'burner',
+      name: 'Bunsen Burner',
+      description: 'Heat source for reactions',
+      model: 'burner.obj',
+      interactive: true,
+    },
   ],
   challenges: [
-    { id: 'h2o', title: 'Create Water', description: 'Build H2O molecule', targetMolecule: 'h2o', difficulty: 'easy', points: 50, hints: ['Start with oxygen', 'Add two hydrogens'] },
-    { id: 'co2', title: 'Create Carbon Dioxide', description: 'Build CO2 molecule', targetMolecule: 'co2', difficulty: 'medium', points: 75, hints: ['Place carbon in center', 'Add oxygen atoms on sides'] },
-    { id: 'nh3', title: 'Create Ammonia', description: 'Build NH3 molecule', targetMolecule: 'nh3', difficulty: 'medium', points: 60, hints: ['Nitrogen needs 3 bonds', 'Arrange hydrogens around nitrogen'] },
-    { id: 'ch4', title: 'Create Methane', description: 'Build CH4 molecule', targetMolecule: 'ch4', difficulty: 'hard', points: 80, hints: ['Carbon in center', 'Four hydrogen atoms around'] },
-  ]
+    {
+      id: 'h2o',
+      title: 'Create Water',
+      description: 'Build H2O molecule',
+      targetMolecule: 'h2o',
+      difficulty: 'easy',
+      points: 50,
+      hints: ['Start with oxygen', 'Add two hydrogens'],
+    },
+    {
+      id: 'co2',
+      title: 'Create Carbon Dioxide',
+      description: 'Build CO2 molecule',
+      targetMolecule: 'co2',
+      difficulty: 'medium',
+      points: 75,
+      hints: ['Place carbon in center', 'Add oxygen atoms on sides'],
+    },
+    {
+      id: 'nh3',
+      title: 'Create Ammonia',
+      description: 'Build NH3 molecule',
+      targetMolecule: 'nh3',
+      difficulty: 'medium',
+      points: 60,
+      hints: ['Nitrogen needs 3 bonds', 'Arrange hydrogens around nitrogen'],
+    },
+    {
+      id: 'ch4',
+      title: 'Create Methane',
+      description: 'Build CH4 molecule',
+      targetMolecule: 'ch4',
+      difficulty: 'hard',
+      points: 80,
+      hints: ['Carbon in center', 'Four hydrogen atoms around'],
+    },
+  ],
 };
 
-export default function VirtualChemistryLab3D({ 
+export default function VirtualChemistryLab3D({
   gameData = defaultGameData,
   onComplete,
   // timeLeft = 300,
-  // onRestart 
+  // onRestart
 }: VirtualChemistryLab3DProps) {
   const [score, setScore] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
@@ -600,6 +619,8 @@ export default function VirtualChemistryLab3D({
   const [showChallengeComplete, setShowChallengeComplete] = useState<string | null>(null);
   const [gameKey, setGameKey] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const { recordGameScore } = useUnifiedScoring();
 
   const handleScoreChange = useCallback((newScore: number) => {
     setScore(newScore);
@@ -611,42 +632,52 @@ export default function VirtualChemistryLab3D({
     setTimeout(() => setAtomToAdd(null), 100);
   }, []);
 
-  const handleChallengeComplete = useCallback((challengeId: string) => {
-    if (!completedChallenges.includes(challengeId)) {
-      setCompletedChallenges(prev => [...prev, challengeId]);
-      setShowChallengeComplete(challengeId);
-      
-      // Find challenge and add bonus points
-      const challenge = gameData.challenges.find(c => c.id === challengeId);
-      if (challenge) {
-        setScore(prev => prev + challenge.points);
-      }
-      
-      // Auto-advance to next challenge after 3 seconds
-      setTimeout(() => {
-        setShowChallengeComplete(null);
-        if (currentChallenge < gameData.challenges.length - 1) {
-          setCurrentChallenge(prev => prev + 1);
-          // Reset game for next challenge
-          setGameKey(prev => prev + 1);
-        } else {
-          // All challenges completed - call onComplete callback
-          if (onComplete && challenge) {
-            onComplete(true, score + challenge.points);
-          }
+  const handleChallengeComplete = useCallback(
+    (challengeId: string) => {
+      if (!completedChallenges.includes(challengeId)) {
+        setCompletedChallenges((prev) => [...prev, challengeId]);
+        setShowChallengeComplete(challengeId);
+
+        // Find challenge and add bonus points
+        const challenge = gameData.challenges.find((c) => c.id === challengeId);
+        if (challenge) {
+          const newScore = challenge.points;
+          setScore((prev) => prev + newScore);
+
+          // Record score in unified system
+          recordGameScore('virtual-chemistry-lab-3d', newScore);
         }
-      }, 3000);
-    }
-  }, [completedChallenges, currentChallenge, gameData.challenges, onComplete, score]);
+
+        // Auto-advance to next challenge after 3 seconds
+        setTimeout(() => {
+          setShowChallengeComplete(null);
+          if (currentChallenge < gameData.challenges.length - 1) {
+            setCurrentChallenge((prev) => prev + 1);
+            // Reset game for next challenge
+            setGameKey((prev) => prev + 1);
+          } else {
+            // All challenges completed - call onComplete callback
+            if (onComplete && challenge) {
+              onComplete(true, score + challenge.points);
+            }
+          }
+        }, 3000);
+      }
+    },
+    [completedChallenges, currentChallenge, gameData.challenges, onComplete, score, recordGameScore],
+  );
 
   // Fullscreen functionality
   const toggleFullscreen = useCallback(() => {
     if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().then(() => {
-        setIsFullscreen(true);
-      }).catch((err) => {
-        console.log('Fullscreen not supported or denied:', err);
-      });
+      document.documentElement
+        .requestFullscreen()
+        .then(() => {
+          setIsFullscreen(true);
+        })
+        .catch((err) => {
+          console.log('Fullscreen not supported or denied:', err);
+        });
     } else {
       document.exitFullscreen().then(() => {
         setIsFullscreen(false);
@@ -669,7 +700,7 @@ export default function VirtualChemistryLab3D({
 
   const getTargetMolecule = () => {
     const challenge = getCurrentChallenge();
-    return gameData.molecules.find(m => m.id === challenge.targetMolecule);
+    return gameData.molecules.find((m) => m.id === challenge.targetMolecule);
   };
 
   if (!gameData) {
@@ -689,9 +720,10 @@ export default function VirtualChemistryLab3D({
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-lg text-center">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">🧪 Virtual Chemistry Lab 3D</h2>
           <p className="text-gray-600 mb-6">
-            Khám phá thế giới hóa học trong không gian 3D. Tạo các phân tử như H₂O, CO₂, NH₃ và hoàn thành thử thách từng bước!
+            Khám phá thế giới hóa học trong không gian 3D. Tạo các phân tử như H₂O, CO₂, NH₃ và hoàn thành thử thách
+            từng bước!
           </p>
-          
+
           <div className="bg-blue-50 p-4 rounded-lg mb-6">
             <h3 className="font-bold text-blue-800 mb-2">🎯 Mục tiêu học tập:</h3>
             <ul className="text-sm text-blue-700 space-y-1">
@@ -705,13 +737,21 @@ export default function VirtualChemistryLab3D({
           <div className="mb-6 text-sm text-gray-500 bg-gray-50 p-3 rounded">
             <p className="font-semibold mb-2">⌨️ Phím tắt:</p>
             <div className="grid grid-cols-2 gap-2 text-xs">
-              <p>• <kbd className="bg-gray-200 px-1 rounded">H, C, O, N</kbd> - Thêm nguyên tử</p>
-              <p>• <kbd className="bg-gray-200 px-1 rounded">Space</kbd> - Tạo liên kết</p>
-              <p>• <kbd className="bg-gray-200 px-1 rounded">Esc</kbd> - Bỏ chọn</p>
-              <p>• <kbd className="bg-gray-200 px-1 rounded">R</kbd> - Khởi động lại</p>
+              <p>
+                • <kbd className="bg-gray-200 px-1 rounded">H, C, O, N</kbd> - Thêm nguyên tử
+              </p>
+              <p>
+                • <kbd className="bg-gray-200 px-1 rounded">Space</kbd> - Tạo liên kết
+              </p>
+              <p>
+                • <kbd className="bg-gray-200 px-1 rounded">Esc</kbd> - Bỏ chọn
+              </p>
+              <p>
+                • <kbd className="bg-gray-200 px-1 rounded">R</kbd> - Khởi động lại
+              </p>
             </div>
           </div>
-          
+
           <button
             onClick={() => setGameStarted(true)}
             className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
@@ -731,24 +771,33 @@ export default function VirtualChemistryLab3D({
           <span className="text-2xl">🎯</span>
           <h3 className="text-lg font-bold text-gray-800">Thử thách hiện tại</h3>
         </div>
-        
+
         {getCurrentChallenge() && (
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-600">Bài {currentChallenge + 1}/{gameData.challenges.length}</span>
-              <span className={`text-xs px-2 py-1 rounded-full ${
-                getCurrentChallenge().difficulty === 'easy' ? 'bg-green-100 text-green-700' :
-                getCurrentChallenge().difficulty === 'medium' ? 'bg-yellow-100 text-yellow-700' :
-                'bg-red-100 text-red-700'
-              }`}>
-                {getCurrentChallenge().difficulty === 'easy' ? 'Dễ' :
-                 getCurrentChallenge().difficulty === 'medium' ? 'Trung bình' : 'Khó'}
+              <span className="text-sm text-gray-600">
+                Bài {currentChallenge + 1}/{gameData.challenges.length}
+              </span>
+              <span
+                className={`text-xs px-2 py-1 rounded-full ${
+                  getCurrentChallenge().difficulty === 'easy'
+                    ? 'bg-green-100 text-green-700'
+                    : getCurrentChallenge().difficulty === 'medium'
+                      ? 'bg-yellow-100 text-yellow-700'
+                      : 'bg-red-100 text-red-700'
+                }`}
+              >
+                {getCurrentChallenge().difficulty === 'easy'
+                  ? 'Dễ'
+                  : getCurrentChallenge().difficulty === 'medium'
+                    ? 'Trung bình'
+                    : 'Khó'}
               </span>
             </div>
-            
+
             <h4 className="font-semibold text-gray-800">{getCurrentChallenge().title}</h4>
             <p className="text-sm text-gray-600">{getCurrentChallenge().description}</p>
-            
+
             {getTargetMolecule() && (
               <div className="bg-blue-50 p-3 rounded-lg">
                 <div className="flex items-center gap-2 mb-1">
@@ -761,7 +810,7 @@ export default function VirtualChemistryLab3D({
                 </div>
               </div>
             )}
-            
+
             <div className="bg-yellow-50 p-2 rounded">
               <div className="flex items-center gap-1 mb-1">
                 <span className="text-sm">💡</span>
@@ -785,20 +834,31 @@ export default function VirtualChemistryLab3D({
           </div>
           <div className="flex justify-between">
             <span>Hoàn thành:</span>
-            <span className="font-bold text-green-600">{completedChallenges.length}/{gameData.challenges.length}</span>
+            <span className="font-bold text-green-600">
+              {completedChallenges.length}/{gameData.challenges.length}
+            </span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
+            <div
               className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-500"
               style={{ width: `${(completedChallenges.length / gameData.challenges.length) * 100}%` }}
             ></div>
           </div>
-          <button 
-            onClick={() => setGameStarted(false)} 
-            className="w-full px-2 py-1 bg-gray-500 hover:bg-gray-600 text-white rounded text-xs transition-colors"
-          >
-            📋 Quay lại menu
-          </button>
+          <div className="space-y-1">
+            <button
+              onClick={() => setGameKey(gameKey + 1)}
+              className="w-full px-2 py-1 bg-orange-500 hover:bg-orange-600 text-white rounded text-xs transition-colors"
+              title="Khởi động lại thử thách hiện tại"
+            >
+              🔄 Reset thử thách
+            </button>
+            <button
+              onClick={() => setGameStarted(false)}
+              className="w-full px-2 py-1 bg-gray-500 hover:bg-gray-600 text-white rounded text-xs transition-colors"
+            >
+              📋 Quay lại menu
+            </button>
+          </div>
         </div>
       </div>
 
@@ -806,22 +866,22 @@ export default function VirtualChemistryLab3D({
       <div className="absolute top-4 right-4 z-10 bg-white bg-opacity-90 rounded-lg p-4 shadow-lg">
         <h4 className="text-sm font-bold text-gray-800 mb-2">🧬 Nguyên tố</h4>
         <div className="grid grid-cols-2 gap-2">
-          {DEFAULT_ATOMS.map(atom => (
+          {DEFAULT_ATOMS.map((atom) => (
             <button
               key={atom.symbol}
               onClick={() => handleAddAtom(atom.symbol)}
               className="px-2 py-1 text-xs font-bold rounded transition-colors hover:opacity-80"
-              style={{ 
-                backgroundColor: atom.color + '40', 
+              style={{
+                backgroundColor: atom.color + '40',
                 border: `2px solid ${atom.color}`,
-                color: atom.color === '#ffffff' ? '#000000' : atom.color 
+                color: atom.color === '#ffffff' ? '#000000' : atom.color,
               }}
             >
               {atom.symbol}
             </button>
           ))}
         </div>
-        
+
         {/* Fullscreen button - only show on desktop */}
         <div className="hidden md:block mt-3 pt-2 border-t border-gray-300">
           <button
@@ -838,18 +898,24 @@ export default function VirtualChemistryLab3D({
       <div className="absolute bottom-4 left-4 z-10 bg-black bg-opacity-80 rounded-lg p-3 text-white text-xs">
         <div className="space-y-1">
           <p>• Click atoms to select (max 2)</p>
-          <p>• <kbd>Space</kbd> Create bond</p>
-          <p>• <kbd>Esc</kbd> Deselect all</p>
-          <p>• <kbd>R</kbd> Reset game</p>
+          <p>
+            • <kbd>Space</kbd> Create bond
+          </p>
+          <p>
+            • <kbd>Esc</kbd> Deselect all
+          </p>
+          <p>
+            • <kbd>R</kbd> Reset game
+          </p>
           <p>• Mouse: Rotate, zoom, pan</p>
         </div>
       </div>
 
       {/* 3D Canvas */}
       <Canvas camera={{ position: [5, 5, 5] }}>
-        <GameScene 
+        <GameScene
           key={gameKey}
-          gameData={gameData} 
+          gameData={gameData}
           onScoreChange={handleScoreChange}
           atomToAdd={atomToAdd}
           onChallengeComplete={handleChallengeComplete}
@@ -863,12 +929,8 @@ export default function VirtualChemistryLab3D({
           <div className="bg-white rounded-2xl p-8 max-w-md text-center transform animate-pulse">
             <div className="text-6xl mb-4">🎉</div>
             <h2 className="text-2xl font-bold text-green-600 mb-2">Thử thách hoàn thành!</h2>
-            <p className="text-gray-600 mb-4">
-              Bạn đã tạo thành công {getTargetMolecule()?.name}!
-            </p>
-            <div className="text-sm text-gray-500">
-              Tự động chuyển sang thử thách tiếp theo...
-            </div>
+            <p className="text-gray-600 mb-4">Bạn đã tạo thành công {getTargetMolecule()?.name}!</p>
+            <div className="text-sm text-gray-500">Tự động chuyển sang thử thách tiếp theo...</div>
           </div>
         </div>
       )}
@@ -884,7 +946,9 @@ export default function VirtualChemistryLab3D({
             </p>
             <div className="bg-green-50 p-4 rounded-lg mb-6">
               <div className="text-2xl font-bold text-green-700">Tổng điểm: {score}</div>
-              <div className="text-sm text-green-600">Hoàn thành: {completedChallenges.length}/{gameData.challenges.length} thử thách</div>
+              <div className="text-sm text-green-600">
+                Hoàn thành: {completedChallenges.length}/{gameData.challenges.length} thử thách
+              </div>
             </div>
             <button
               onClick={() => window.location.reload()}

@@ -360,13 +360,7 @@ export default function SpaceExploration3DGame({ onComplete, timeLeft }: SpaceEx
       setSpacecraft(prev => ({ ...prev, selectedTarget: planetId }));
       setTargetPosition(planet.position);
       
-      // Mark planet as discovered
-      if (!planet.discovered) {
-        setPlanets(prev => prev.map(p => 
-          p.id === planetId ? { ...p, discovered: true } : p
-        ));
-        setScore(prev => prev + planet.points);
-      }
+      // Don't mark as discovered immediately - wait until spacecraft reaches planet
     }
   }, [planets]);
 
@@ -413,23 +407,36 @@ export default function SpaceExploration3DGame({ onComplete, timeLeft }: SpaceEx
         const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
         if (distance < 0.5) {
+          // Reached target - mark planet as discovered if not already
+          const targetPlanet = planets.find(p => p.id === spacecraft.selectedTarget);
+          if (targetPlanet && !targetPlanet.discovered) {
+            setPlanets(prevPlanets => prevPlanets.map(p => 
+              p.id === spacecraft.selectedTarget ? { ...p, discovered: true } : p
+            ));
+            setScore(prevScore => prevScore + targetPlanet.points);
+          }
+          
           return prev; // Reached target
         }
 
         const speed = 0.05;
+        // Consume fuel while moving (0.1% per movement step)
+        const fuelConsumption = 0.1;
+        
         return {
           ...prev,
           position: {
             x: prev.position.x + (dx / distance) * speed,
             y: prev.position.y + (dy / distance) * speed,
             z: prev.position.z + (dz / distance) * speed
-          }
+          },
+          fuel: Math.max(0, prev.fuel - fuelConsumption) // Consume fuel during movement
         };
       });
     }, 50);
 
     return () => clearInterval(interval);
-  }, [targetPosition, spacecraft.selectedTarget]);
+  }, [targetPosition, spacecraft.selectedTarget, planets]);
 
   // Check win condition
   useEffect(() => {

@@ -798,8 +798,8 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     description: 'Understand environmental policy frameworks và sustainable development principles cho effective environmental governance.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/environmental-policy.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=iSItxQ8Wm1Q',
+    imageUrl: 'https://i.ytimg.com/vi/iSItxQ8Wm1Q/hqdefault.jpg',
     objectives: [
       'Understand environmental policy development processes',
       'Analyze sustainable development frameworks',
@@ -915,8 +915,8 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     description: 'Master ecosystem restoration techniques và biodiversity conservation strategies cho environmental rehabilitation.',
     duration: '160 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/ecosystem-restoration.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=9NRMbDel75A',
+    imageUrl: 'https://i.ytimg.com/vi/9NRMbDel75A/hqdefault.jpg',
     objectives: [
       'Understand ecosystem restoration principles',
       'Implement biodiversity conservation strategies',

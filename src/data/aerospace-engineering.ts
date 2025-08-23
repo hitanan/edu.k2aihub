@@ -16,8 +16,8 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Comprehensive aircraft design principles, aerodynamic theory, và flight mechanics. Focus trên Vietnamese aviation industry development và opportunities với Vietnam Airlines, Vietjet, và emerging aerospace sector.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=AkC5xAy3WAY',
+    imageUrl: 'https://i.ytimg.com/vi/AkC5xAy3WAY/hqdefault.jpg',
     objectives: [
       'Master fundamental aerodynamic principles và airflow analysis',
       'Understand aircraft design process từ conceptual design đến detailed engineering',
@@ -168,8 +168,8 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Advanced satellite systems design, orbital mechanics, và space communication technology. Explore Vietnamese space program development và satellite applications cho telecommunications và Earth observation.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=_VJZQMGEG1k',
+    imageUrl: 'https://i.ytimg.com/vi/_VJZQMGEG1k/hqdefault.jpg',
     objectives: [
       'Master satellite orbital mechanics và space mission design principles',
       'Understand satellite communication systems và signal processing',
@@ -307,8 +307,8 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Comprehensive space mission design, systems engineering approach, và project management cho space programs. Focus trên Vietnamese space industry development và international collaboration opportunities.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=jxT7_NPFjkA',
+    imageUrl: 'https://i.ytimg.com/vi/jxT7_NPFjkA/hqdefault.jpg',
     objectives: [
       'Master space mission design methodology và systems engineering principles',
       'Understand space project management và risk assessment techniques',
@@ -452,8 +452,8 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Advanced avionics systems design, flight control algorithms, và navigation technology. Cover modern aircraft systems integration, autonomous flight capabilities, và Vietnamese aviation technology development.',
     duration: '165 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&h=600&fit=crop&auto=format',
+    videoUrl: 'https://www.youtube.com/watch?v=d5sXmNplQHw',
+    imageUrl: 'https://i.ytimg.com/vi/d5sXmNplQHw/hqdefault.jpg',
     objectives: [
       'Master avionics systems architecture và integration principles',
       'Understand flight control system design và stability analysis',

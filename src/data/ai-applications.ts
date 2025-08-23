@@ -16,7 +16,7 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
       'Sử dụng AI để tối ưu hóa quá trình chuẩn bị du học: viết essay, luyện IELTS, research trường học và scholarships.',
     duration: '180 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=lVmu-byFqtI',
+    videoUrl: 'https://www.youtube.com/watch?v=gEMgnZYWL5s',
     imageUrl: '/images/ai-study-abroad.jpg',
     objectives: [
       'Master AI tools cho essay writing và SOP preparation',
@@ -132,7 +132,7 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
       'Implement AI automation cho business processes: customer service, sales, marketing campaigns, và operational efficiency.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=dCw4339xeQI',
+    videoUrl: 'https://www.youtube.com/watch?v=X8JlRDnECi8',
     objectives: [
       'Design automated customer service systems với AI chatbots',
       'Implement sales automation với AI lead qualification',
@@ -181,6 +181,7 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
     description:
       'Leverage AI để create và monetize content across platforms: YouTube, TikTok, Instagram, blogs, và online courses.',
     duration: '220 phút',
+  videoUrl: 'https://www.youtube.com/watch?v=tIXi1L9ek2U',
     difficulty: 'Trung bình',
     objectives: [
       'Master AI content generation cho multiple platforms',
@@ -230,6 +231,7 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
     description:
       'Apply AI trong healthcare và wellness: health monitoring, fitness planning, mental health support, và medical research.',
     duration: '160 phút',
+  videoUrl: 'https://www.youtube.com/watch?v=3Gkke_9WU10',
     difficulty: 'Trung bình',
     objectives: [
       'Implement AI-powered health monitoring systems',
@@ -279,6 +281,7 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
     description:
       'Sử dụng AI cho financial planning, investment strategies, risk assessment, và wealth building optimization.',
     duration: '190 phút',
+  videoUrl: 'https://www.youtube.com/watch?v=_N8C55pPbMI',
     difficulty: 'Nâng cao',
     objectives: [
       'Implement AI-driven investment portfolio management',

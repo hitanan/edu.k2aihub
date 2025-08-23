@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Trophy, BookOpen, Clock, TrendingUp, Star } from 'lucide-react';
+import { Trophy, BookOpen, Clock, TrendingUp, Star, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
+import { moduleNavigation } from '@/data/moduleNavigation';
+import { useUnifiedScoring } from '@/utils/unifiedScoring';
 
 // Learning progress types
 export interface LearningProgress {
@@ -35,7 +37,18 @@ export interface Achievement {
   description: string;
   icon: string;
   points: number;
-  condition: (progress: LearningProgress[]) => boolean;
+  unlockedAt?: string;
+  condition?: (progress: LearningProgress[]) => boolean;
+}
+
+export interface Progress {
+  userId: string;
+  moduleId: string;
+  moduleName: string;
+  lessonId: string;
+  points: number;
+  completed: boolean;
+  timestamp: string;
 }
 
 // Predefined achievements
@@ -182,7 +195,7 @@ export function useLearningProgress() {
   // Check for new achievements
   const checkAchievements = (currentProgress: LearningProgress[]) => {
     const newAchievements = ACHIEVEMENTS.filter((achievement) => {
-      return !achievements.some((a) => a.id === achievement.id) && achievement.condition(currentProgress);
+      return !achievements.some((a) => a.id === achievement.id) && achievement.condition?.(currentProgress);
     });
 
     if (newAchievements.length > 0) {
@@ -281,11 +294,13 @@ export function useLearningProgress() {
   };
 }
 
-// Progress Dashboard Component
+// Progress Dashboard Component with Global Ranking
 export function ProgressDashboard() {
   const { progress, achievements, totalPoints, getLearningStats } = useLearningProgress();
+  const { getGlobalStats } = useUnifiedScoring();
 
   const stats = getLearningStats();
+  const globalRanking = getGlobalStats();
 
   return (
     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-6">
@@ -294,7 +309,7 @@ export function ProgressDashboard() {
         Thống kê học tập
       </h3>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
         <div className="bg-blue-500/20 rounded-xl p-4 text-center">
           <BookOpen className="w-8 h-8 mx-auto mb-2 text-blue-400" />
           <div className="text-2xl font-bold text-white">{stats.totalLessonsCompleted}</div>
@@ -317,6 +332,13 @@ export function ProgressDashboard() {
           <Star className="w-8 h-8 mx-auto mb-2 text-yellow-400" />
           <div className="text-2xl font-bold text-white">{totalPoints}</div>
           <div className="text-xs text-gray-300">Điểm</div>
+        </div>
+
+        <div className="bg-orange-500/20 rounded-xl p-4 text-center">
+          <Trophy className="w-8 h-8 mx-auto mb-2 text-orange-400" />
+          <div className="text-lg font-bold text-white">{globalRanking.rank}</div>
+          <div className="text-xs text-gray-300">Xếp hạng</div>
+          <div className="text-xs text-orange-300 mt-1">{globalRanking.totalPoints} điểm tổng</div>
         </div>
       </div>
 
@@ -346,31 +368,147 @@ export function ProgressDashboard() {
         </div>
       )}
 
-      {/* Module Progress */}
-      {progress.length > 0 && (
-        <div>
-          <h4 className="text-lg font-semibold text-white mb-3">Tiến độ modules</h4>
-          <div className="space-y-3">
-            {progress.map((moduleProgress) => (
-              <div key={moduleProgress.moduleName} className="bg-white/5 rounded-lg p-3">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-white font-medium">{moduleProgress.moduleName}</span>
-                  <span className="text-gray-300 text-sm">{Math.min(100, moduleProgress.completionPercentage)}%</span>
-                </div>
-                <div className="w-full bg-gray-700 rounded-full h-2">
-                  <div
-                    className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
-                    style={{ width: `${Math.min(100, moduleProgress.completionPercentage)}%` }}
-                  ></div>
-                </div>
-                <div className="text-xs text-gray-400 mt-1">
-                  {moduleProgress.lessonsCompleted.length}/{moduleProgress.totalLessons} bài học
+      {/* Module Progress - Top 3 Most Complete (Collapsible) */}
+      {progress.length > 0 && <ModuleProgressSection progress={progress} />}
+    </div>
+  );
+}
+
+// Enhanced Module Progress Section Component
+interface ModuleProgressSectionProps {
+  progress: LearningProgress[];
+}
+
+function ModuleProgressSection({ progress }: ModuleProgressSectionProps) {
+  const [showAll, setShowAll] = useState(false);
+
+  // Sort by completion percentage and get top 3 most complete
+  const sortedProgress = [...progress].sort((a, b) => b.completionPercentage - a.completionPercentage);
+  const displayProgress = showAll ? sortedProgress : sortedProgress.slice(0, 3);
+
+  const getModuleInfo = (moduleName: string) => {
+    const moduleData = moduleNavigation.find((m) => m.title === moduleName || m.id === moduleName);
+    return {
+      title: moduleData?.title || moduleName,
+      href: moduleData?.href || `#${moduleName}`,
+      lessons: moduleData?.lessons || [],
+    };
+  };
+
+  const getLessonCompletedInfo = (moduleProgress: LearningProgress) => {
+    const moduleInfo = getModuleInfo(moduleProgress.moduleName);
+    const completedLessons = moduleProgress.lessonsCompleted || [];
+    const totalLessons = moduleInfo.lessons.length || moduleProgress.totalLessons || 0;
+
+    return {
+      completed: completedLessons,
+      total: totalLessons,
+      lessons: moduleInfo.lessons,
+    };
+  };
+
+  return (
+    <div>
+      <div className="flex justify-between items-center mb-3">
+        <h4 className="text-lg font-semibold text-white">Tiến độ modules</h4>
+        {progress.length > 3 && (
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="flex items-center text-blue-400 hover:text-blue-300 text-sm transition-colors"
+          >
+            {showAll ? (
+              <>
+                <ChevronUp className="w-4 h-4 mr-1" />
+                Thu gọn
+              </>
+            ) : (
+              <>
+                <ChevronDown className="w-4 h-4 mr-1" />
+                Xem tất cả ({progress.length})
+              </>
+            )}
+          </button>
+        )}
+      </div>
+
+      <div className="space-y-3">
+        {displayProgress.map((moduleProgress) => {
+          const moduleInfo = getModuleInfo(moduleProgress.moduleName);
+          const lessonInfo = getLessonCompletedInfo(moduleProgress);
+
+          return (
+            <div key={moduleProgress.moduleName} className="bg-white/5 rounded-lg p-3">
+              <div className="flex justify-between items-start mb-2">
+                <div className="flex-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-white font-medium">{moduleInfo.title}</span>
+                    <span className="text-gray-300 text-sm">{Math.min(100, moduleProgress.completionPercentage)}%</span>
+                  </div>
+                  <div className="flex items-center mt-1 space-x-2">
+                    <span className="text-xs text-gray-400">
+                      {lessonInfo.completed.length}/{lessonInfo.total} bài học
+                    </span>
+                    <a
+                      href={moduleInfo.href}
+                      className="inline-flex items-center text-blue-400 hover:text-blue-300 text-xs transition-colors"
+                    >
+                      <ExternalLink className="w-3 h-3 ml-1" />
+                    </a>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      )}
+
+              <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
+                <div
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-300"
+                  style={{ width: `${Math.min(100, moduleProgress.completionPercentage)}%` }}
+                />
+              </div>
+
+              {/* Show completed lessons with titles and links */}
+              {lessonInfo.completed.length > 0 && (
+                <div className="mt-2 p-2 bg-white/5 rounded text-xs">
+                  <div className="text-gray-300 mb-1">Bài học đã hoàn thành:</div>
+                  <div className="flex flex-wrap gap-1">
+                    {lessonInfo.completed.slice(0, 3).map((lessonId, index) => {
+                      const lesson = lessonInfo.lessons.find((l) => l.id === lessonId);
+                      const lessonTitle = lesson?.title || `Bài ${lessonId}`;
+
+                      return (
+                        <span
+                          key={index}
+                          className="inline-flex items-center px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs"
+                        >
+                          {lessonTitle}
+                        </span>
+                      );
+                    })}
+                    {lessonInfo.completed.length > 3 && (
+                      <span className="text-gray-400 text-xs">+{lessonInfo.completed.length - 3} khác</span>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Module stats */}
+              <div className="grid grid-cols-3 gap-2 mt-2 text-xs">
+                <div className="text-center">
+                  <div className="text-blue-400">{Math.round(moduleProgress.timeSpent / 60)}h</div>
+                  <div className="text-gray-500">Thời gian</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-purple-400">{moduleProgress.streak}</div>
+                  <div className="text-gray-500">Chuỗi ngày</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-yellow-400">{moduleProgress.points}</div>
+                  <div className="text-gray-500">Điểm</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

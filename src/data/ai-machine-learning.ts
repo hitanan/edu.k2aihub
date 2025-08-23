@@ -15,7 +15,7 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     description: 'Hiểu fundamental concepts của Artificial Intelligence và Machine Learning, từ basic algorithms đến practical applications trong real world.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=ad79nYk2keg', // AI and ML basics
+    videoUrl: 'https://www.youtube.com/watch?v=ADg3VdITIVs', // AI and ML basics
     imageUrl: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu AI và ML fundamental concepts',
@@ -93,7 +93,7 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     description: 'Deep dive vào neural networks architecture, backpropagation, và advanced deep learning techniques cho complex problem solving.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=CS4cs9xVecg', // Deep learning fundamentals
+    videoUrl: 'https://www.youtube.com/watch?v=9Ov6WSB2jV4', // Deep learning fundamentals
     imageUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop',
     objectives: [
       'Understand neural network architecture và components',
@@ -170,7 +170,7 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     description: 'Master computer vision techniques để analyze, process và understand visual content, từ basic image operations đến advanced object detection.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=01sAkU_NvOY', // Computer vision tutorial
+    videoUrl: 'https://www.youtube.com/watch?v=UdxRgZJf6dE', // Computer vision tutorial
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
     objectives: [
       'Master image preprocessing và enhancement techniques',
@@ -247,7 +247,7 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     description: 'Master NLP techniques specifically designed cho Vietnamese language, từ text preprocessing đến advanced language models.',
     duration: '190 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=8HyCNIVRbSU', // NLP fundamentals
+    videoUrl: 'https://www.youtube.com/watch?v=Y-I4pf6Bhas', // NLP fundamentals
     imageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop',
     objectives: [
       'Master Vietnamese text preprocessing techniques',
@@ -401,7 +401,7 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     description: 'Master MLOps practices để deploy, monitor và maintain ML models trong production environment efficiently và reliably.',
     duration: '175 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=6YePBJCEO8I', // MLOps introduction
+    videoUrl: 'https://www.youtube.com/watch?v=QtWFdWa9B44', // MLOps introduction
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     objectives: [
       'Understand MLOps lifecycle và best practices',
@@ -478,7 +478,7 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     description: 'Understand ethical considerations trong AI development, detect và mitigate bias, và build fair và responsible AI systems.',
     duration: '165 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=AaU6tI2pb3M', // AI ethics and fairness
+    videoUrl: 'https://www.youtube.com/watch?v=zYgkr0KfWM0', // AI ethics and fairness
     imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop',
     objectives: [
       'Understand AI ethics principles và frameworks',

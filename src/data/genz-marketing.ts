@@ -15,8 +15,8 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
     description: 'Hiểu sâu về tâm lý Gen Z và áp dụng authentic marketing principles để build genuine connections với thế hệ này.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/genz-psychology.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=vrU6YJle6Q4',
+    imageUrl: 'https://i.ytimg.com/vi/vrU6YJle6Q4/hqdefault.jpg',
     objectives: [
       'Hiểu generational characteristics và values của Gen Z',
       'Master authentic communication strategies',
@@ -157,8 +157,8 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
     description: 'Phát triển inclusive marketing strategy và diverse brand messaging resonates với Gen Z\'s values về equality và representation.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/inclusive-marketing.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=oYxOl9mZOaE',
+    imageUrl: 'https://i.ytimg.com/vi/oYxOl9mZOaE/hqdefault.jpg',
     objectives: [
       'Understand importance của representation trong marketing',
       'Develop inclusive content creation guidelines',
@@ -264,8 +264,8 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
     description: 'Học cách engage in meaningful brand activism và create social impact campaigns resonate với Gen Z\'s desire for change.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
-    imageUrl: '/images/lessons/brand-activism.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=4PRCDE4EWVY',
+    imageUrl: 'https://i.ytimg.com/vi/4PRCDE4EWVY/hqdefault.jpg',
     objectives: [
       'Understand difference between activism và performative action',
       'Identify authentic causes aligned với brand values',

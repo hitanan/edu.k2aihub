@@ -48,107 +48,132 @@ interface TreasureHuntGameProps {
   onRestart?: () => void;
 }
 
-const levels: Level[] = [
-  {
-    id: 1,
-    name: 'Kho báu cổ đại',
-    description: 'Khám phá ngôi đền cổ và thu thập kho báu',
-    dimensions: { width: 8, height: 6 },
-    playerStart: { x: 0, y: 0 },
-    exit: { x: 7, y: 5 },
-    treasures: [
-      { x: 2, y: 1, type: 'gold', value: 20, collected: false },
-      { x: 4, y: 2, type: 'gem', value: 30, collected: false },
-      { x: 6, y: 3, type: 'artifact', value: 50, collected: false },
-    ],
-    enemies: [
-      { x: 3, y: 2, type: 'trap', damage: 10 },
-      { x: 5, y: 4, type: 'guard', damage: 15, pattern: 'patrol' },
-    ],
-    walls: [
-      { x: 1, y: 2 }, { x: 2, y: 2 }, { x: 1, y: 3 },
-      { x: 4, y: 1 }, { x: 5, y: 1 }, { x: 6, y: 1 },
-    ],
-    timeLimit: 120,
-    minTreasures: 2,
-    educational: {
-      concept: 'Pathfinding & Strategy',
-      skill: 'Tư duy logic và lập kế hoạch',
-      lesson: 'Học cách tối ưu hóa đường đi và quản lý rủi ro',
-    },
-  },
-  {
-    id: 2,
-    name: 'Hang động bí ẩn',
-    description: 'Thám hiểm hang động đầy nguy hiểm',
-    dimensions: { width: 10, height: 8 },
-    playerStart: { x: 0, y: 3 },
-    exit: { x: 9, y: 4 },
-    treasures: [
-      { x: 2, y: 1, type: 'key', value: 40, collected: false },
-      { x: 4, y: 6, type: 'gold', value: 25, collected: false },
-      { x: 6, y: 2, type: 'gem', value: 35, collected: false },
-      { x: 7, y: 6, type: 'artifact', value: 60, collected: false },
-    ],
-    enemies: [
-      { x: 3, y: 3, type: 'monster', damage: 20 },
-      { x: 5, y: 4, type: 'trap', damage: 15 },
-      { x: 7, y: 2, type: 'guard', damage: 18, pattern: 'circle' },
-    ],
-    walls: [
-      { x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 1 },
-      { x: 4, y: 3 }, { x: 5, y: 2 }, { x: 6, y: 4 },
-      { x: 2, y: 5 }, { x: 3, y: 6 }, { x: 4, y: 5 },
-    ],
-    timeLimit: 180,
-    minTreasures: 3,
-    educational: {
-      concept: 'Risk Management',
-      skill: 'Đánh giá rủi ro và ra quyết định',
-      lesson: 'Cân bằng giữa phần thưởng và rủi ro',
-    },
-  },
-  {
-    id: 3,
-    name: 'Lâu đài ma quái',
-    description: 'Chinh phục lâu đài đầy thử thách',
-    dimensions: { width: 12, height: 10 },
-    playerStart: { x: 0, y: 5 },
-    exit: { x: 11, y: 5 },
-    treasures: [
-      { x: 2, y: 2, type: 'gold', value: 30, collected: false },
-      { x: 4, y: 7, type: 'key', value: 50, collected: false },
-      { x: 6, y: 1, type: 'gem', value: 40, collected: false },
-      { x: 8, y: 8, type: 'artifact', value: 70, collected: false },
-      { x: 10, y: 3, type: 'gold', value: 35, collected: false },
-    ],
-    enemies: [
-      { x: 3, y: 4, type: 'guard', damage: 25, pattern: 'zigzag' },
-      { x: 5, y: 5, type: 'monster', damage: 30 },
-      { x: 7, y: 3, type: 'trap', damage: 20 },
-      { x: 9, y: 6, type: 'guard', damage: 22, pattern: 'patrol' },
-    ],
-    walls: [
-      { x: 1, y: 1 }, { x: 2, y: 1 }, { x: 3, y: 2 },
-      { x: 4, y: 3 }, { x: 5, y: 1 }, { x: 6, y: 2 },
-      { x: 2, y: 7 }, { x: 3, y: 8 }, { x: 4, y: 9 },
-      { x: 7, y: 7 }, { x: 8, y: 6 }, { x: 9, y: 7 },
-    ],
-    timeLimit: 240,
-    minTreasures: 4,
-    educational: {
-      concept: 'Advanced Strategy',
-      skill: 'Chiến lược phức tạp và thích ứng',
-      lesson: 'Xử lý tình huống phức tạp và đa mục tiêu',
-    },
-  },
-];
+// Generate 50 levels programmatically
+const generateLevels = (): Level[] => {
+  const generatedLevels: Level[] = [];
+  
+  for (let i = 1; i <= 50; i++) {
+    const difficulty = Math.min(Math.floor(i / 10) + 1, 5); // Difficulty 1-5 based on level
+    const baseWidth = Math.min(6 + Math.floor(i / 5), 15); // Gradually increase size
+    const baseHeight = Math.min(5 + Math.floor(i / 8), 12);
+    
+    const width = baseWidth + (i % 3); // Add some variation
+    const height = baseHeight + (i % 2);
+    
+    // Generate random positions with some logic
+    const playerStart: Position = { x: 0, y: Math.floor(height / 2) };
+    const exit: Position = { x: width - 1, y: Math.floor(height / 2) + (i % 2 === 0 ? 1 : -1) };
+    
+    // Generate treasures based on difficulty
+    const numTreasures = Math.min(2 + Math.floor(i / 3), 8);
+    const treasures: Treasure[] = [];
+    const treasureTypes: Array<'gold' | 'gem' | 'artifact' | 'key'> = ['gold', 'gem', 'artifact', 'key'];
+    const treasureValues = { gold: 20 + (i * 2), gem: 30 + (i * 3), artifact: 50 + (i * 5), key: 40 + (i * 4) };
+    
+    for (let j = 0; j < numTreasures; j++) {
+      const type = treasureTypes[j % treasureTypes.length];
+      treasures.push({
+        x: Math.floor(1 + Math.random() * (width - 2)),
+        y: Math.floor(1 + Math.random() * (height - 2)),
+        type,
+        value: treasureValues[type],
+        collected: false
+      });
+    }
+    
+    // Generate enemies based on difficulty
+    const numEnemies = Math.min(1 + Math.floor(i / 4), 6);
+    const enemies: Enemy[] = [];
+    const enemyTypes: Array<'guard' | 'trap' | 'monster'> = ['guard', 'trap', 'monster'];
+    const enemyPatterns = ['patrol', 'circle', 'random'];
+    
+    for (let j = 0; j < numEnemies; j++) {
+      const type = enemyTypes[j % enemyTypes.length];
+      const damage = 10 + (difficulty * 3) + Math.floor(Math.random() * 10);
+      enemies.push({
+        x: Math.floor(1 + Math.random() * (width - 2)),
+        y: Math.floor(1 + Math.random() * (height - 2)),
+        type,
+        damage,
+        pattern: type === 'guard' ? enemyPatterns[j % enemyPatterns.length] : undefined,
+        defeated: false
+      });
+    }
+    
+    // Generate walls for maze complexity
+    const numWalls = Math.min(Math.floor((width * height) * 0.15) + Math.floor(i / 3), Math.floor((width * height) * 0.3));
+    const walls: Position[] = [];
+    
+    for (let j = 0; j < numWalls; j++) {
+      const wallX = Math.floor(1 + Math.random() * (width - 2));
+      const wallY = Math.floor(1 + Math.random() * (height - 2));
+      
+      // Avoid placing walls on critical positions
+      if ((wallX !== playerStart.x || wallY !== playerStart.y) &&
+          (wallX !== exit.x || wallY !== exit.y) &&
+          !walls.some(w => w.x === wallX && w.y === wallY)) {
+        walls.push({ x: wallX, y: wallY });
+      }
+    }
+    
+    // Educational concepts by level ranges
+    const concepts = [
+      { range: [1, 10], concept: 'Basic Navigation', skill: 'Di chuyển cơ bản', lesson: 'Học cách điều khiển nhân vật và thu thập kho báu' },
+      { range: [11, 20], concept: 'Enemy Avoidance', skill: 'Tránh kẻ thù', lesson: 'Phát triển kỹ năng quan sát và tránh nguy hiểm' },
+      { range: [21, 30], concept: 'Strategic Planning', skill: 'Lập kế hoạch chiến lược', lesson: 'Lên kế hoạch tối ưu cho đường đi và thu thập kho báu' },
+      { range: [31, 40], concept: 'Risk Management', skill: 'Quản lý rủi ro', lesson: 'Đánh giá rủi ro và lợi ích của từng quyết định' },
+      { range: [41, 50], concept: 'Master Explorer', skill: 'Thám hiểm chuyên nghiệp', lesson: 'Thành thạo tất cả kỹ năng và chinh phục thử thách khó nhất' }
+    ];
+    
+    const educationalData = concepts.find(c => i >= c.range[0] && i <= c.range[1]) || concepts[0];
+    
+    generatedLevels.push({
+      id: i,
+      name: `Thử thách ${i}${i <= 5 ? ' (Dễ)' : i <= 15 ? ' (Trung bình)' : i <= 30 ? ' (Khó)' : i <= 45 ? ' (Rất khó)' : ' (Cực khó)'}`,
+      description: `Level ${i} - ${difficulty === 1 ? 'Khởi đầu đơn giản' : 
+                     difficulty === 2 ? 'Thử thách nhẹ nhàng' :
+                     difficulty === 3 ? 'Độ khó vừa phải' :
+                     difficulty === 4 ? 'Thách thức cao' : 'Thử thách tối thượng'}`,
+      dimensions: { width, height },
+      playerStart,
+      exit,
+      treasures,
+      enemies,
+      walls,
+      timeLimit: Math.min(60 + (i * 10) + (difficulty * 30), 600), // 60s to 10 minutes max
+      minTreasures: Math.max(1, Math.floor(numTreasures * 0.6)), // Need to collect 60% of treasures
+      educational: {
+        concept: educationalData.concept,
+        skill: educationalData.skill,
+        lesson: educationalData.lesson
+      }
+    });
+  }
+  
+  return generatedLevels;
+};
+
+const levels: Level[] = generateLevels();
 
 export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHuntGameProps) {
-  const [currentLevel, setCurrentLevel] = useState(0);
+  // Load saved progress from localStorage
+  const [currentLevel, setCurrentLevel] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('treasureHuntProgress');
+      return saved ? Math.min(parseInt(saved, 10), 49) : 0; // Max level 49 (0-indexed)
+    }
+    return 0;
+  });
+  
   const [playerPosition, setPlayerPosition] = useState<Position>({ x: 0, y: 0 });
   const [playerHealth, setPlayerHealth] = useState(100);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('treasureHuntTotalScore');
+      return saved ? parseInt(saved, 10) : 0;
+    }
+    return 0;
+  });
   const [treasures, setTreasures] = useState<Treasure[]>([]);
   const [enemies, setEnemies] = useState<Enemy[]>([]);
   const [gameState, setGameState] = useState<'playing' | 'won' | 'lost'>('playing');
@@ -195,12 +220,25 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
       
       if (currentLevel < levels.length - 1) {
         setTimeout(() => {
-          setCurrentLevel(prev => prev + 1);
+          const nextLevel = currentLevel + 1;
+          setCurrentLevel(nextLevel);
           setScore(finalScore);
           setGameState('playing'); // Reset game state for next level
+          
+          // Save progress to localStorage
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('treasureHuntProgress', nextLevel.toString());
+            localStorage.setItem('treasureHuntTotalScore', finalScore.toString());
+          }
         }, 2000);
       } else {
         console.log('All levels completed! Calling onComplete with score:', finalScore);
+        // Save completion to localStorage
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('treasureHuntProgress', '50'); // Mark as completed all 50 levels
+          localStorage.setItem('treasureHuntTotalScore', finalScore.toString());
+          localStorage.setItem('treasureHuntCompleted', 'true');
+        }
         setTimeout(() => {
           onComplete(true, finalScore);
         }, 2000);

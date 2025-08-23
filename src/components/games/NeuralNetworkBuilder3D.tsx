@@ -339,13 +339,11 @@ const NeuralNetworkBuilder3D: React.FC = () => {
     return (
       <div
         key={neuron.id}
-        className="absolute cursor-pointer transition-all duration-300 hover:scale-110"
+        className="neuron-node absolute cursor-pointer transition-all duration-300 hover:scale-110"
         style={{
           left: `${neuron.position.x + 250}px`,
           top: `${neuron.position.y + 200}px`,
           transform: `
-            rotateX(${rotation.x}deg) 
-            rotateY(${rotation.y}deg) 
             translate3d(0, 0, ${neuron.position.z}px)
           `,
           transformStyle: 'preserve-3d',
@@ -600,6 +598,12 @@ const NeuralNetworkBuilder3D: React.FC = () => {
                   perspectiveOrigin: 'center center'
                 }}
                 onMouseMove={(e) => {
+                  // Only update rotation if mouse is not over a neuron
+                  const target = e.target as HTMLElement;
+                  if (target.closest('.neuron-node')) {
+                    return; // Don't rotate when hovering over neurons
+                  }
+                  
                   const rect = e.currentTarget.getBoundingClientRect();
                   const centerX = rect.width / 2;
                   const centerY = rect.height / 2;
