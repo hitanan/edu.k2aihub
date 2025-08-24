@@ -44,7 +44,7 @@ function Earth() {
   });
 
   return (
-    <mesh ref={meshRef} position={[0, -50, 0]}>
+    <mesh ref={meshRef} position={[0, -30, 0]}>
       <sphereGeometry args={[15, 32, 32]} />
       <meshStandardMaterial color="#4169E1" emissive="#001122" emissiveIntensity={0.1} />
     </mesh>
@@ -450,7 +450,7 @@ export default function SpaceStationBuilder3D() {
       />
 
       <Canvas
-        camera={{ position: [0, 10, 20], fov: 60 }}
+        camera={{ position: [0, 5, 15], fov: 75 }}
         gl={{ antialias: false, alpha: false }}
         dpr={[1, 1.5]}
         onClick={handleSpaceClick}

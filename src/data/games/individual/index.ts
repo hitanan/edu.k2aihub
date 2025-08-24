@@ -42,4 +42,4 @@ export { spaceExplorationGameData } from './spaceExplorationData';
 export { neuralNetworkBuilderGameData } from './neuralNetworkBuilderData';
 
 // Re-export everything from original gameData for backward compatibility
-export * from '../gameData';
+export * from '../../gameData';

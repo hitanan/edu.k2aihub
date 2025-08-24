@@ -335,6 +335,15 @@ function Fish({
               <sphereGeometry args={[species.size * size * 0.7, 16, 12]} />
               <meshStandardMaterial color={species.secondaryColor} transparent opacity={isHealthy ? 1 : 0.7} />
             </mesh>
+            {/* Eyes for catfish */}
+            <mesh position={[species.size * size * 1.8, species.size * size * 0.3, species.size * size * 0.4]}>
+              <sphereGeometry args={[species.size * size * 0.15]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[species.size * size * 1.8, species.size * size * 0.3, -species.size * size * 0.4]}>
+              <sphereGeometry args={[species.size * size * 0.15]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
             {/* Catfish whiskers/barbels */}
             {species.details?.hasWhiskers &&
               [
@@ -368,6 +377,15 @@ function Fish({
             <mesh position={[species.size * size * 1.8, 0, 0]} scale={[1.3, 0.9, 1.0]}>
               <coneGeometry args={[species.size * size * 0.6, species.size * size * 1.2]} />
               <meshStandardMaterial color={species.secondaryColor} />
+            </mesh>
+            {/* Eyes for snakehead - predatory eyes */}
+            <mesh position={[species.size * size * 2.2, species.size * size * 0.2, species.size * size * 0.3]}>
+              <sphereGeometry args={[species.size * size * 0.12]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[species.size * size * 2.2, species.size * size * 0.2, -species.size * size * 0.3]}>
+              <sphereGeometry args={[species.size * size * 0.12]} />
+              <meshStandardMaterial color="#000000" />
             </mesh>
             {/* Body stripes for snakehead */}
             {species.details?.hasStripes &&
@@ -404,6 +422,15 @@ function Fish({
             <mesh position={[species.size * size * 1.2, 0, 0]} scale={[1.1, 1.0, 1.0]}>
               <sphereGeometry args={[species.size * size * 0.8, 16, 12]} />
               <meshStandardMaterial color={species.secondaryColor} metalness={0.3} />
+            </mesh>
+            {/* Eyes for carp */}
+            <mesh position={[species.size * size * 1.7, species.size * size * 0.3, species.size * size * 0.5]}>
+              <sphereGeometry args={[species.size * size * 0.18]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[species.size * size * 1.7, species.size * size * 0.3, -species.size * size * 0.5]}>
+              <sphereGeometry args={[species.size * size * 0.18]} />
+              <meshStandardMaterial color="#000000" />
             </mesh>
             {/* Scale pattern effect */}
             {species.details?.hasScales &&
@@ -446,6 +473,15 @@ function Fish({
                 />
               </mesh>
             ))}
+            {/* Eyes for shrimp - compound eyes */}
+            <mesh position={[species.size * size * 0.4, species.size * size * 0.3, species.size * size * 0.2]}>
+              <sphereGeometry args={[species.size * size * 0.08]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[species.size * size * 0.4, species.size * size * 0.3, -species.size * size * 0.2]}>
+              <sphereGeometry args={[species.size * size * 0.08]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
             {/* Long antennae for shrimp */}
             {species.details?.hasAntenna &&
               [
@@ -499,6 +535,15 @@ function Fish({
               <sphereGeometry args={[species.size * size * 0.7, 16, 12]} />
               <meshStandardMaterial color={species.secondaryColor} />
             </mesh>
+            {/* Eyes for tilapia */}
+            <mesh position={[species.size * size * 1.4, species.size * size * 0.3, species.size * size * 0.4]}>
+              <sphereGeometry args={[species.size * size * 0.16]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[species.size * size * 1.4, species.size * size * 0.3, -species.size * size * 0.4]}>
+              <sphereGeometry args={[species.size * size * 0.16]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
             {/* Tilapia stripes */}
             {species.details?.stripes &&
               Array.from({ length: 6 }, (_, i) => (
@@ -538,10 +583,21 @@ function Fish({
 
       default:
         return (
-          <mesh scale={[1.2, 1, 1]}>
-            <sphereGeometry args={[species.size * size, 12, 8]} />
-            <meshStandardMaterial color={species.color} transparent opacity={isHealthy ? 1 : 0.7} />
-          </mesh>
+          <group>
+            <mesh scale={[1.2, 1, 1]}>
+              <sphereGeometry args={[species.size * size, 12, 8]} />
+              <meshStandardMaterial color={species.color} transparent opacity={isHealthy ? 1 : 0.7} />
+            </mesh>
+            {/* Eyes for default fish */}
+            <mesh position={[species.size * size * 1.0, species.size * size * 0.3, species.size * size * 0.4]}>
+              <sphereGeometry args={[species.size * size * 0.12]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[species.size * size * 1.0, species.size * size * 0.3, -species.size * size * 0.4]}>
+              <sphereGeometry args={[species.size * size * 0.12]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+          </group>
         );
     }
   };
@@ -558,6 +614,13 @@ function Fish({
             <boxGeometry args={[species.size * size, species.size * size * 0.6, 0.05]} />
             <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.8} />
           </mesh>
+          
+          {/* Anal fin */}
+          <mesh position={[-species.size * size * 0.3, -species.size * size * 0.6, 0]} scale={[1.2, 0.8, 0.15]}>
+            <boxGeometry args={[species.size * size * 0.6, species.size * size * 0.4, 0.03]} />
+            <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.7} />
+          </mesh>
+
           {/* Pectoral fins */}
           <mesh position={[species.size * size * 0.3, 0, species.size * size * 0.8]} scale={[0.8, 0.6, 0.1]}>
             <boxGeometry args={[species.size * size * 0.4, species.size * size * 0.3, 0.02]} />
@@ -567,6 +630,39 @@ function Fish({
             <boxGeometry args={[species.size * size * 0.4, species.size * size * 0.3, 0.02]} />
             <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.7} />
           </mesh>
+
+          {/* Pelvic fins */}
+          <mesh position={[-species.size * size * 0.2, -species.size * size * 0.4, species.size * size * 0.5]} scale={[0.6, 0.4, 0.08]}>
+            <boxGeometry args={[species.size * size * 0.3, species.size * size * 0.2, 0.02]} />
+            <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.6} />
+          </mesh>
+          <mesh position={[-species.size * size * 0.2, -species.size * size * 0.4, -species.size * size * 0.5]} scale={[0.6, 0.4, 0.08]}>
+            <boxGeometry args={[species.size * size * 0.3, species.size * size * 0.2, 0.02]} />
+            <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.6} />
+          </mesh>
+
+          {/* Gills */}
+          <mesh position={[species.size * size * 0.8, 0, species.size * size * 0.6]} scale={[0.3, 0.8, 0.1]}>
+            <boxGeometry args={[species.size * size * 0.15, species.size * size * 0.4, 0.01]} />
+            <meshStandardMaterial color="#8B4513" transparent opacity={0.8} />
+          </mesh>
+          <mesh position={[species.size * size * 0.8, 0, -species.size * size * 0.6]} scale={[0.3, 0.8, 0.1]}>
+            <boxGeometry args={[species.size * size * 0.15, species.size * size * 0.4, 0.01]} />
+            <meshStandardMaterial color="#8B4513" transparent opacity={0.8} />
+          </mesh>
+
+          {/* Mouth */}
+          <mesh position={[species.size * size * 1.8, -species.size * size * 0.1, 0]} scale={[0.3, 0.2, 0.5]}>
+            <sphereGeometry args={[species.size * size * 0.15]} />
+            <meshStandardMaterial color="#2C1810" />
+          </mesh>
+
+          {/* Lateral line */}
+          <mesh position={[0, 0, species.size * size * 0.9]} scale={[3, 0.05, 0.05]}>
+            <cylinderGeometry args={[species.size * size * 0.02, species.size * size * 0.02, species.size * size * 2]} />
+            <meshStandardMaterial color="#4A4A4A" transparent opacity={0.6} />
+          </mesh>
+
           {/* Tail fin */}
           <mesh ref={tailRef} position={[-species.size * size * 2.2, 0, 0]} rotation={[0, 0, Math.PI / 4]}>
             <coneGeometry args={[species.size * size * 0.8, species.size * size * 1.4, 6]} />

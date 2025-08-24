@@ -4,7 +4,6 @@ import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import * as THREE from 'three';
-import { Vector } from 'three/examples/jsm/Addons.js';
 import { Vector3Array } from '@/data/gameData';
 import { useGameStore } from '@/utils/gameStore';
 
@@ -348,24 +347,48 @@ function QuizModal({
   );
 }
 
-// Game Stats Component
+// Game Stats Component - Enhanced with store sync
 function GameStats({ visited, score, totalSites }: { visited: number; score: number; totalSites: number }) {
-  const progress = (visited / totalSites) * 100;
+  // Enhanced store integration for persistence
+  const { vietnameseHeritage } = useGameStore();
+  const [persistentVisited, setPersistentVisited] = useState(visited);
+  const [persistentScore, setPersistentScore] = useState(score);
+
+  // Always sync with store data for persistence
+  useEffect(() => {
+    // Use store data if it's more recent than component props
+    const storeVisited = vietnameseHeritage.visitedSites.length;
+    const storeScore = vietnameseHeritage.score;
+    
+    if (storeVisited >= visited) {
+      setPersistentVisited(storeVisited);
+    } else {
+      setPersistentVisited(visited);
+    }
+    
+    if (storeScore >= score) {
+      setPersistentScore(storeScore);
+    } else {
+      setPersistentScore(score);
+    }
+  }, [visited, score, vietnameseHeritage.visitedSites.length, vietnameseHeritage.score]);
+
+  const finalProgress = (persistentVisited / totalSites) * 100;
 
   return (
-    <div className="absolute top-4 left-4 bg-white bg-opacity-90 rounded-lg p-4 min-w-[250px]">
+    <div className="absolute top-4 left-4 bg-white bg-opacity-95 rounded-lg p-4 min-w-[250px] shadow-lg backdrop-blur-sm z-30">
       <h3 className="text-lg font-bold text-gray-800 mb-3">📊 Thống Kê Khám Phá</h3>
 
       <div className="space-y-3">
         <div>
           <div className="flex justify-between text-sm mb-1">
             <span>Tiến độ khám phá</span>
-            <span>{Math.round(progress)}%</span>
+            <span>{Math.round(finalProgress)}%</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <div
               className="bg-green-500 h-2 rounded-full transition-all duration-500"
-              style={{ width: `${progress}%` }}
+              style={{ width: `${finalProgress}%` }}
             ></div>
           </div>
         </div>
@@ -373,13 +396,18 @@ function GameStats({ visited, score, totalSites }: { visited: number; score: num
         <div className="flex justify-between">
           <span className="text-gray-600">🏛️ Đã thăm:</span>
           <span className="font-semibold">
-            {visited}/{totalSites}
+            {persistentVisited}/{totalSites}
           </span>
         </div>
 
         <div className="flex justify-between">
           <span className="text-gray-600">⭐ Điểm số:</span>
-          <span className="font-semibold text-blue-600">{score}</span>
+          <span className="font-semibold text-blue-600">{persistentScore}</span>
+        </div>
+
+        {/* Persistence indicator */}
+        <div className="text-xs text-gray-400 border-t pt-2">
+          💾 Tiến độ được lưu tự động
         </div>
       </div>
     </div>
@@ -442,7 +470,7 @@ function Instructions({ onStart }: { onStart: () => void }) {
 // Main Game Component
 export default function VietnameseHeritageExplorer3D() {
   // Store integration
-  const { vietnameseHeritage, setVietnameseHeritageState, resetVietnameseHeritage } = useGameStore();
+  const { vietnameseHeritage, setVietnameseHeritageState } = useGameStore();
 
   const [gameStarted, setGameStarted] = useState(false);
   const [selectedSite, setSelectedSite] = useState<string | null>(vietnameseHeritage.selectedSite);

@@ -485,6 +485,24 @@ const TrafficManagementSimulator3D: React.FC = () => {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
+  const handleTrafficLightSelect = (lightId: string) => {
+    const light = trafficLights.find(l => l.id === lightId);
+    if (!light) return;
+
+    setGameState(prev => ({ ...prev, selectedIntersection: light.intersection }));
+    
+    // Cycle through traffic light states
+    const newState = light.state === 'red' ? 'green' : light.state === 'green' ? 'yellow' : 'red';
+    const newTimer = newState === 'red' ? 30 : newState === 'green' ? 25 : 5;
+    
+    setTrafficLights(prev => prev.map(l => 
+      l.id === lightId ? { ...l, state: newState, timer: newTimer, maxTimer: newTimer } : l
+    ));
+
+    // Update score for traffic management
+    setScore(prev => prev + 10);
+  };
+
   return (
     <div className="w-full h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white relative overflow-hidden">
       {/* Background effects */}
@@ -780,7 +798,7 @@ const TrafficManagementSimulator3D: React.FC = () => {
             <TrafficLight3D
               key={light.id}
               light={light}
-              onSelect={(id) => console.log('Traffic light selected:', id)}
+              onSelect={handleTrafficLightSelect}
             />
           ))}
 

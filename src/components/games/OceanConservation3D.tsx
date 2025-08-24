@@ -147,11 +147,50 @@ function MarineAnimal({
               <sphereGeometry args={[1, 16, 12]} />
               <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
             </mesh>
+            {/* Whale eyes */}
+            <mesh position={[3.2, 0.4, 0.8]}>
+              <sphereGeometry args={[0.15, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[3.2, 0.4, -0.8]}>
+              <sphereGeometry args={[0.15, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            {/* Whale blowhole */}
+            <mesh position={[3, 0.8, 0]}>
+              <cylinderGeometry args={[0.1, 0.08, 0.2]} />
+              <meshStandardMaterial color="#222222" />
+            </mesh>
+            {/* Pectoral fins */}
+            <mesh position={[1, -0.3, 1.8]} rotation={[0, 0, -Math.PI / 6]} scale={[2, 0.3, 0.8]}>
+              <boxGeometry args={[0.8, 0.1, 0.4]} />
+              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            <mesh position={[1, -0.3, -1.8]} rotation={[0, 0, Math.PI / 6]} scale={[2, 0.3, 0.8]}>
+              <boxGeometry args={[0.8, 0.1, 0.4]} />
+              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            {/* Dorsal fin */}
+            <mesh position={[0, 1.2, 0]} scale={[1.5, 1, 0.3]}>
+              <coneGeometry args={[0.6, 0.8, 6]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
             {/* Whale tail */}
             <mesh ref={tailRef} position={[-4, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
               <coneGeometry args={[1.5, 2, 6]} />
               <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
             </mesh>
+            {/* Grooves on throat (whale feature) */}
+            {Array.from({ length: 6 }, (_, i) => (
+              <mesh
+                key={i}
+                position={[2.5 + i * 0.3, -0.6, 0]}
+                scale={[0.1, 0.05, 1]}
+              >
+                <cylinderGeometry args={[0.02, 0.02, 1.2]} />
+                <meshStandardMaterial color="#555555" transparent opacity={0.6} />
+              </mesh>
+            ))}
           </group>
         );
 
@@ -168,10 +207,43 @@ function MarineAnimal({
               <cylinderGeometry args={[0.2, 0.4, 1.5]} />
               <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
             </mesh>
+            {/* Dolphin eyes */}
+            <mesh position={[1.8, 0.3, 0.5]}>
+              <sphereGeometry args={[0.12, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[1.8, 0.3, -0.5]}>
+              <sphereGeometry args={[0.12, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            {/* Blowhole */}
+            <mesh position={[1.5, 0.6, 0]}>
+              <cylinderGeometry args={[0.08, 0.06, 0.15]} />
+              <meshStandardMaterial color="#222222" />
+            </mesh>
             {/* Dorsal fin */}
             <mesh position={[0, 1, 0]} scale={[0.8, 1.2, 0.2]}>
               <coneGeometry args={[0.5, 1, 6]} />
               <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            {/* Pectoral fins */}
+            <mesh position={[0.5, -0.2, 1.2]} rotation={[0, 0, -Math.PI / 4]} scale={[1.5, 0.3, 0.6]}>
+              <boxGeometry args={[0.6, 0.08, 0.3]} />
+              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            <mesh position={[0.5, -0.2, -1.2]} rotation={[0, 0, Math.PI / 4]} scale={[1.5, 0.3, 0.6]}>
+              <boxGeometry args={[0.6, 0.08, 0.3]} />
+              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            {/* Anal fin */}
+            <mesh position={[-1, -0.6, 0]} scale={[0.8, 0.6, 0.15]}>
+              <coneGeometry args={[0.3, 0.6, 6]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            {/* Melon (forehead bulge) */}
+            <mesh position={[1.8, 0.4, 0]} scale={[0.6, 0.5, 0.5]}>
+              <sphereGeometry args={[0.4, 8, 6]} />
+              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.1 + (health / 100) * 0.6} />
             </mesh>
             {/* Tail */}
             <mesh ref={tailRef} position={[-3, 0, 0]} rotation={[0, 0, Math.PI / 4]}>
@@ -189,12 +261,41 @@ function MarineAnimal({
               <sphereGeometry args={[1, 16, 12]} />
               <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
             </mesh>
+            {/* Shell pattern - hexagonal scutes */}
+            {Array.from({ length: 12 }, (_, i) => (
+              <mesh
+                key={i}
+                position={[
+                  (i % 3) * 0.4 - 0.4,
+                  0.35,
+                  Math.floor(i / 3) * 0.4 - 0.6,
+                ]}
+                scale={[0.3, 0.1, 0.3]}
+              >
+                <cylinderGeometry args={[0.15, 0.15, 0.05, 6]} />
+                <meshStandardMaterial color="#2F4F2F" transparent opacity={0.8} />
+              </mesh>
+            ))}
             {/* Turtle head */}
             <mesh position={[1.5, 0, 0]} scale={[0.6, 0.6, 0.6]}>
               <sphereGeometry args={[1, 12, 12]} />
               <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
             </mesh>
-            {/* Flippers */}
+            {/* Turtle eyes */}
+            <mesh position={[1.8, 0.3, 0.3]}>
+              <sphereGeometry args={[0.08, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[1.8, 0.3, -0.3]}>
+              <sphereGeometry args={[0.08, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            {/* Turtle beak/mouth */}
+            <mesh position={[2, 0, 0]} scale={[0.3, 0.2, 0.2]}>
+              <sphereGeometry args={[0.15, 8, 6]} />
+              <meshStandardMaterial color="#8B4513" />
+            </mesh>
+            {/* Flippers - more detailed */}
             {[
               { pos: [-0.5, 0, 1.2], rot: [0, 0, Math.PI / 6] },
               { pos: [-0.5, 0, -1.2], rot: [0, 0, -Math.PI / 6] },
@@ -211,6 +312,11 @@ function MarineAnimal({
                 <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
               </mesh>
             ))}
+            {/* Tail */}
+            <mesh position={[-1.2, 0, 0]} scale={[0.4, 0.3, 0.3]}>
+              <sphereGeometry args={[0.5, 8, 6]} />
+              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
           </group>
         );
 
@@ -227,9 +333,63 @@ function MarineAnimal({
               <coneGeometry args={[0.6, 1.2, 8]} />
               <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
             </mesh>
+            {/* Shark eyes */}
+            <mesh position={[2.2, 0.2, 0.4]}>
+              <sphereGeometry args={[0.1, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[2.2, 0.2, -0.4]}>
+              <sphereGeometry args={[0.1, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            {/* Shark mouth/jaw */}
+            <mesh position={[2.4, -0.2, 0]} scale={[0.6, 0.3, 0.8]}>
+              <sphereGeometry args={[0.2, 8, 6]} />
+              <meshStandardMaterial color="#2C1810" />
+            </mesh>
+            {/* Gills */}
+            {Array.from({ length: 5 }, (_, i) => (
+              <mesh
+                key={i}
+                position={[1 - i * 0.2, 0, 0.7]}
+                scale={[0.05, 0.8, 0.1]}
+              >
+                <boxGeometry args={[0.1, 0.4, 0.02]} />
+                <meshStandardMaterial color="#8B4513" transparent opacity={0.8} />
+              </mesh>
+            ))}
+            {Array.from({ length: 5 }, (_, i) => (
+              <mesh
+                key={i + 5}
+                position={[1 - i * 0.2, 0, -0.7]}
+                scale={[0.05, 0.8, 0.1]}
+              >
+                <boxGeometry args={[0.1, 0.4, 0.02]} />
+                <meshStandardMaterial color="#8B4513" transparent opacity={0.8} />
+              </mesh>
+            ))}
+            {/* Pectoral fins */}
+            <mesh position={[0.5, -0.3, 1.3]} rotation={[0, 0, -Math.PI / 6]} scale={[1.5, 0.3, 0.8]}>
+              <boxGeometry args={[0.8, 0.1, 0.4]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            <mesh position={[0.5, -0.3, -1.3]} rotation={[0, 0, Math.PI / 6]} scale={[1.5, 0.3, 0.8]}>
+              <boxGeometry args={[0.8, 0.1, 0.4]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
             {/* Dorsal fin */}
             <mesh position={[-0.5, 1.2, 0]}>
               <coneGeometry args={[0.4, 1.5, 6]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            {/* Second dorsal fin */}
+            <mesh position={[-1.5, 0.8, 0]} scale={[1, 0.6, 1]}>
+              <coneGeometry args={[0.3, 0.8, 6]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+            </mesh>
+            {/* Anal fin */}
+            <mesh position={[-1.2, -0.6, 0]} scale={[0.8, 0.6, 1]}>
+              <coneGeometry args={[0.25, 0.6, 6]} />
               <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
             </mesh>
             {/* Tail fin */}
@@ -1132,6 +1292,7 @@ export default function OceanConservation3D() {
         <directionalLight position={[10, 10, 5]} intensity={0.8} />
         <pointLight position={[0, 0, 0]} intensity={0.6} color="#87CEEB" />
 
+        <OceanFloor />
         <OceanEnvironment />
 
         {/* Render marine life */}

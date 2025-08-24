@@ -496,6 +496,28 @@ export default function MedicalDeviceDesigner3D() {
 
   return (
     <div className="w-full h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      {/* Completion Celebration Modal */}
+      {isCompleted && (
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-gradient-to-br from-green-900 to-emerald-900 p-8 rounded-2xl border border-green-500 text-center max-w-md mx-4">
+            <div className="text-6xl mb-4">🎉</div>
+            <h2 className="text-3xl font-bold text-green-400 mb-2">Thiết Kế Hoàn Thành!</h2>
+            <p className="text-green-200 mb-4">
+              Bạn đã đặt thành công tất cả {devices.length} thiết bị y tế!
+            </p>
+            <p className="text-green-300 text-sm mb-6">
+              Những thiết bị này sẽ giúp cải thiện chất lượng cuộc sống của bệnh nhân.
+            </p>
+            <button
+              onClick={resetDesign}
+              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-colors"
+            >
+              Thiết Kế Mới
+            </button>
+          </div>
+        </div>
+      )}
+
       <Canvas camera={{ position: [8, 4, 8], fov: 60 }} gl={{ antialias: true }} style={{ background: 'transparent' }}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />

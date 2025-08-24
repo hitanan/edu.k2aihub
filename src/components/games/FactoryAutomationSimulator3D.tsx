@@ -903,9 +903,9 @@ export default function FactoryAutomationSimulator3D() {
         <OrbitControls enablePan={true} maxPolarAngle={Math.PI / 2} minDistance={5} maxDistance={30} />
       </Canvas>
 
-      {/* Machine Details Panel */}
-      {selectedMachine && !isFullscreen && (
-        <div className="absolute top-4 right-4 bg-gray-900/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 max-w-sm z-10">
+      {/* Machine Details Panel - now available in fullscreen too */}
+      {selectedMachine && (
+        <div className={`absolute top-4 right-4 bg-gray-900/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 max-w-sm z-10 ${isFullscreen ? 'text-white' : ''}`}>
           <h4 className="text-white font-bold mb-2 flex items-center gap-2">🔧 {selectedMachine.id}</h4>
           <div className="space-y-2 text-sm">
             <div>
@@ -934,9 +934,87 @@ export default function FactoryAutomationSimulator3D() {
               Efficiency: <span className="font-bold text-yellow-400">{selectedMachine.efficiency}%</span>
             </div>
           </div>
+          
+          {/* Machine Controls */}
+          <div className="mt-4 space-y-2">
+            <button
+              onClick={() => {
+                // Toggle machine active state
+                const updatedMachines = selectedScenario.layout.machines.map(m => 
+                  m.id === selectedMachine.id 
+                    ? { ...m, isActive: !m.isActive, status: m.isActive ? 'idle' : 'working' }
+                    : m
+                );
+                setSelectedScenario({
+                  ...selectedScenario,
+                  layout: {
+                    ...selectedScenario.layout,
+                    machines: updatedMachines
+                  }
+                });
+                setSelectedMachine(updatedMachines.find(m => m.id === selectedMachine.id) || null);
+              }}
+              className={`w-full px-3 py-1 rounded text-xs font-semibold ${
+                selectedMachine.isActive 
+                  ? 'bg-red-600 hover:bg-red-700 text-white' 
+                  : 'bg-green-600 hover:bg-green-700 text-white'
+              }`}
+            >
+              {selectedMachine.isActive ? '⏹️ Stop Machine' : '▶️ Start Machine'}
+            </button>
+            
+            <button
+              onClick={() => {
+                // Adjust machine speed/efficiency
+                const updatedMachines = selectedScenario.layout.machines.map(m => 
+                  m.id === selectedMachine.id 
+                    ? { ...m, efficiency: Math.min(100, m.efficiency + 10) }
+                    : m
+                );
+                setSelectedScenario({
+                  ...selectedScenario,
+                  layout: {
+                    ...selectedScenario.layout,
+                    machines: updatedMachines
+                  }
+                });
+                setSelectedMachine(updatedMachines.find(m => m.id === selectedMachine.id) || null);
+              }}
+              className="w-full px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-semibold"
+            >
+              ⚡ Boost Efficiency (+10%)
+            </button>
+            
+            <button
+              onClick={() => {
+                // Maintenance mode
+                const updatedMachines = selectedScenario.layout.machines.map(m => 
+                  m.id === selectedMachine.id 
+                    ? { ...m, status: m.status === 'maintenance' ? 'idle' : 'maintenance' }
+                    : m
+                );
+                setSelectedScenario({
+                  ...selectedScenario,
+                  layout: {
+                    ...selectedScenario.layout,
+                    machines: updatedMachines
+                  }
+                });
+                setSelectedMachine(updatedMachines.find(m => m.id === selectedMachine.id) || null);
+              }}
+              className={`w-full px-3 py-1 rounded text-xs font-semibold ${
+                selectedMachine.status === 'maintenance'
+                  ? 'bg-gray-600 hover:bg-gray-700 text-white'
+                  : 'bg-yellow-600 hover:bg-yellow-700 text-white'
+              }`}
+            >
+              {selectedMachine.status === 'maintenance' ? '🔧 End Maintenance' : '🛠️ Start Maintenance'}
+            </button>
+          </div>
+
           <button
             onClick={() => setSelectedMachine(null)}
-            className="mt-3 px-3 py-1 bg-gray-600 hover:bg-gray-700 text-white rounded text-xs"
+            className="mt-3 px-3 py-1 bg-gray-600 hover:bg-gray-700 text-white rounded text-xs w-full"
           >
             Close
           </button>
