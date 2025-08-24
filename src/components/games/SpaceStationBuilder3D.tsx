@@ -91,7 +91,7 @@ function StationModule({
       const targetScale = isSelected ? 1.3 : hovered ? 1.1 : 1;
       meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
     }
-    
+
     if (meshRef.current && isDragging) {
       // Update mesh position during drag
       meshRef.current.position.set(...currentPosition);

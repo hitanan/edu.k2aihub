@@ -49,8 +49,7 @@ export function useEducationalGames() {
   };
 
   const getRecommendedGames = (limit = 6): EducationalGame[] => {
-    return EDUCATIONAL_GAMES_DATA
-      .slice()
+    return EDUCATIONAL_GAMES_DATA.slice()
       .reverse() // Show newest games first (from end of array)
       .filter((game) => !completedGames.includes(game.id))
       .sort((a, b) => b.points - a.points)
@@ -100,22 +99,16 @@ export function CompactGameCard({ game }: { game: EducationalGame }) {
       <div className="bg-black/40 backdrop-blur-sm rounded-md p-3 h-full">
         <div className="flex items-start justify-between mb-2">
           <span className="text-lg">{game.icon}</span>
-          {isCompleted && (
-            <div className="bg-green-500/20 text-green-400 px-1.5 py-0.5 rounded-full text-xs">
-              ✓
-            </div>
-          )}
+          {isCompleted && <div className="bg-green-500/20 text-green-400 px-1.5 py-0.5 rounded-full text-xs">✓</div>}
         </div>
 
         <h4 className="text-sm font-bold text-white mb-1 line-clamp-2">{game.title}</h4>
-        
+
         <div className="flex items-center gap-1 mb-2">
           <span className={`px-1.5 py-0.5 rounded-full text-xs ${getDifficultyColor(game.difficulty)}`}>
             {game.difficulty}
           </span>
-          {game.isInternal && game.points > 0 && (
-            <span className="text-xs text-yellow-400">🏆 {game.points}</span>
-          )}
+          {game.isInternal && game.points > 0 && <span className="text-xs text-yellow-400">🏆 {game.points}</span>}
         </div>
 
         <div className="text-xs text-gray-400 mb-2">⏱️ {game.estimatedTime}</div>
@@ -259,13 +252,13 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
 }
 
 // Games showcase component
-export function EducationalGamesShowcase({ 
-  moduleType, 
-  limit = 9, 
-  randomize = false 
-}: { 
-  moduleType?: string; 
-  limit?: number; 
+export function EducationalGamesShowcase({
+  moduleType,
+  limit = 9,
+  randomize = false,
+}: {
+  moduleType?: string;
+  limit?: number;
   randomize?: boolean;
 }) {
   const { getGamesForModule, getRecommendedGames } = useEducationalGames();
@@ -275,7 +268,7 @@ export function EducationalGamesShowcase({
     games = getGamesForModule(moduleType).slice(0, limit);
   } else {
     games = getRecommendedGames(limit);
-    
+
     // Shuffle games if randomize is enabled (for homepage)
     if (randomize) {
       const shuffled = [...games];

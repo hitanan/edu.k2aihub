@@ -27,23 +27,13 @@ export const QuantumLessons: QuantumLessonData[] = [
       'Phân biệt quantum computing với classical computing',
       'Tìm hiểu các quantum gates và quantum circuits',
     ],
-    prerequisites: [
-      'Toán học cơ bản: đại số tuyến tính',
-      'Vật lý đại cương',
-      'Hiểu biết về máy tính cổ điển',
-    ],
+    prerequisites: ['Toán học cơ bản: đại số tuyến tính', 'Vật lý đại cương', 'Hiểu biết về máy tính cổ điển'],
     exercises: [
       {
         title: 'Mô phỏng Quantum Circuit với Qiskit',
-        description:
-          'Xây dựng và mô phỏng quantum circuit đơn giản với IBM Qiskit',
+        description: 'Xây dựng và mô phỏng quantum circuit đơn giản với IBM Qiskit',
         difficulty: 'Cơ bản',
-        materials: [
-          'Python',
-          'Qiskit',
-          'Jupyter Notebook',
-          'IBM Quantum Experience',
-        ],
+        materials: ['Python', 'Qiskit', 'Jupyter Notebook', 'IBM Quantum Experience'],
         procedure: [
           'Cài đặt Qiskit: pip install qiskit qiskit-aer matplotlib',
           'Tạo quantum circuit với 2 qubits',
@@ -53,8 +43,7 @@ export const QuantumLessons: QuantumLessonData[] = [
           'Chạy mô phỏng trên local simulator',
           'Visualize kết quả với histogram',
         ],
-        expectedResults:
-          'Hiểu được cách quantum states hoạt động và tạo ra entanglement',
+        expectedResults: 'Hiểu được cách quantum states hoạt động và tạo ra entanglement',
         solution:
           '# Quantum Circuit cơ bản\nfrom qiskit import QuantumCircuit, Aer, execute\nfrom qiskit.visualization import plot_histogram\nimport matplotlib.pyplot as plt\n\n# Tạo quantum circuit\nqc = QuantumCircuit(2, 2)\n\n# Áp dụng Hadamard gate\nqc.h(0)\n\n# Tạo entanglement với CNOT\nqc.cx(0, 1)\n\n# Measurement\nqc.measure_all()\n\n# Mô phỏng\nsimulator = Aer.get_backend("qasm_simulator")\njob = execute(qc, simulator, shots=1024)\nresult = job.result()\ncounts = result.get_counts(qc)\n\n# Visualize\nprint("Measurement results:", counts)\nplot_histogram(counts)\nplt.show()',
       },
@@ -70,31 +59,18 @@ export const QuantumLessons: QuantumLessonData[] = [
       {
         title: 'Google Quantum Supremacy Achievement',
         organization: 'Google AI Quantum',
-        problem:
-          'Chứng minh quantum computer có thể vượt trội classical computer',
-        solution:
-          'Sử dụng chip Sycamore 53-qubit để giải bài toán random sampling',
+        problem: 'Chứng minh quantum computer có thể vượt trội classical computer',
+        solution: 'Sử dụng chip Sycamore 53-qubit để giải bài toán random sampling',
         impact: 'Hoàn thành trong 200 giây so với 10,000 năm của supercomputer',
-        innovations: [
-          'Superconducting qubits',
-          'Error correction',
-          'Quantum algorithms',
-        ],
+        innovations: ['Superconducting qubits', 'Error correction', 'Quantum algorithms'],
       },
     ],
-    quantumConcepts: [
-      'Superposition',
-      'Entanglement',
-      'Quantum Interference',
-      'Decoherence',
-      'Quantum Measurement',
-    ],
+    quantumConcepts: ['Superposition', 'Entanglement', 'Quantum Interference', 'Decoherence', 'Quantum Measurement'],
   },
   {
     id: 'quantum-algorithms',
     title: 'Thuật toán Quantum Computing',
-    description:
-      'Tìm hiểu các thuật toán lượng tử nổi tiếng và cách chúng tạo ra lợi thế tính toán.',
+    description: 'Tìm hiểu các thuật toán lượng tử nổi tiếng và cách chúng tạo ra lợi thế tính toán.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://youtube.com/watch?v=lvTqbM5Dq4Q',
@@ -112,8 +88,7 @@ export const QuantumLessons: QuantumLessonData[] = [
     exercises: [
       {
         title: 'Implement Grover Algorithm',
-        description:
-          'Cài đặt thuật toán Grover để tìm kiếm trong database không có cấu trúc',
+        description: 'Cài đặt thuật toán Grover để tìm kiếm trong database không có cấu trúc',
         difficulty: 'Nâng cao',
         materials: ['Qiskit', 'Python', 'Mathematical knowledge'],
         procedure: [
@@ -148,8 +123,7 @@ export const QuantumLessons: QuantumLessonData[] = [
   {
     id: 'quantum-cryptography',
     title: 'Quantum Cryptography và Bảo mật',
-    description:
-      'Khám phá cách quantum computing thay đổi bảo mật thông tin và mã hóa.',
+    description: 'Khám phá cách quantum computing thay đổi bảo mật thông tin và mã hóa.',
     duration: '120 phút',
     difficulty: 'Trung bình',
     objectives: [
@@ -158,11 +132,7 @@ export const QuantumLessons: QuantumLessonData[] = [
       'Tìm hiểu quantum-safe encryption methods',
       'Đánh giá tác động của quantum computing lên cybersecurity',
     ],
-    prerequisites: [
-      'Kiến thức mã hóa cổ điển',
-      'Quantum computing cơ bản',
-      'Network security',
-    ],
+    prerequisites: ['Kiến thức mã hóa cổ điển', 'Quantum computing cơ bản', 'Network security'],
     exercises: [
       {
         title: 'Mô phỏng BB84 Protocol',
@@ -190,8 +160,7 @@ export const QuantumLessons: QuantumLessonData[] = [
   {
     id: 'quantum-future',
     title: 'Tương lai của Quantum Computing',
-    description:
-      'Khám phá xu hướng phát triển và tác động tương lai của quantum computing.',
+    description: 'Khám phá xu hướng phát triển và tác động tương lai của quantum computing.',
     duration: '90 phút',
     difficulty: 'Cơ bản',
     objectives: [
@@ -204,8 +173,7 @@ export const QuantumLessons: QuantumLessonData[] = [
     exercises: [
       {
         title: 'Phân tích Quantum Ecosystem',
-        description:
-          'Nghiên cứu và so sánh các platform quantum computing hiện tại',
+        description: 'Nghiên cứu và so sánh các platform quantum computing hiện tại',
         difficulty: 'Cơ bản',
         procedure: [
           'Research IBM Quantum, Google Quantum AI, Amazon Braket',

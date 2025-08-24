@@ -318,12 +318,12 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
     score: 0,
     gameTime: 0,
   });
-  
+
   // Fullscreen toggle
   const toggleFullscreen = useCallback(() => {
-    setIsFullscreen(prev => !prev);
+    setIsFullscreen((prev) => !prev);
   }, []);
-  
+
   // Exit fullscreen on escape
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -331,11 +331,11 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
         setIsFullscreen(false);
       }
     };
-    
+
     if (isFullscreen) {
       document.addEventListener('keydown', handleEscape);
     }
-    
+
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isFullscreen]);
 
@@ -405,8 +405,8 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
           // All missions completed - calculate completion stats
           const totalDataCollected = gameState.dataCollected.length;
           const averageFieldHealth = CROP_FIELDS.reduce((sum, field) => sum + field.health, 0) / CROP_FIELDS.length;
-          const bestField = CROP_FIELDS.reduce((best, field) => field.health > best.health ? field : best);
-          const worstField = CROP_FIELDS.reduce((worst, field) => field.health < worst.health ? field : worst);
+          const bestField = CROP_FIELDS.reduce((best, field) => (field.health > best.health ? field : best));
+          const worstField = CROP_FIELDS.reduce((worst, field) => (field.health < worst.health ? field : worst));
           const efficiencyScore = Math.round((newScore / Math.max(1, 100 - gameState.droneEnergy)) * 100);
 
           setCompletionStats({
@@ -459,7 +459,7 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
         if (currentMission && field) {
           // Mark field as scanned
           field.scanned = true;
-          
+
           // Collect required data
           const newDataCollected: Array<{
             fieldId: string;
@@ -518,19 +518,19 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
 
   // Battery recharge functionality
   const rechargeBattery = useCallback(() => {
-    setGameState(prev => ({
+    setGameState((prev) => ({
       ...prev,
-      droneEnergy: 100
+      droneEnergy: 100,
     }));
   }, []);
 
   // Reset battery to full and reset game state
   const resetGame = useCallback(() => {
     // Reset all field scan status FIRST
-    CROP_FIELDS.forEach(field => {
+    CROP_FIELDS.forEach((field) => {
       field.scanned = false;
     });
-    
+
     setGameState({
       currentMission: 1,
       droneEnergy: 100,
@@ -546,17 +546,17 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
     setGameCompleted(false);
     setCompletionStats(null);
     setLastScanTime(0);
-    
+
     // Force re-render to update progress indicators
     setTimeout(() => {
-      setGameState(prev => ({ ...prev }));
+      setGameState((prev) => ({ ...prev }));
     }, 100);
   }, []);
 
   // Auto-scan behavior - only move to field, don't auto-scan unless explicitly triggered
   useEffect(() => {
     if (selectedField && !scanningField) {
-      const targetField = CROP_FIELDS.find(f => f.id === selectedField);
+      const targetField = CROP_FIELDS.find((f) => f.id === selectedField);
       if (targetField && !isMovingToField) {
         const targetPos: [number, number, number] = [targetField.position[0], 3, targetField.position[2]];
         droneTargetRef.current = targetPos;
@@ -583,59 +583,43 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
         case 'a':
         case 'A':
           event.preventDefault();
-          setDronePosition(prev => [
-            Math.max(prev[0] - 1, -8),
-            prev[1],
-            prev[2]
-          ]);
+          setDronePosition((prev) => [Math.max(prev[0] - 1, -8), prev[1], prev[2]]);
           break;
         case 'ArrowRight':
         case 'd':
         case 'D':
           event.preventDefault();
-          setDronePosition(prev => [
-            Math.min(prev[0] + 1, 8),
-            prev[1],
-            prev[2]
-          ]);
+          setDronePosition((prev) => [Math.min(prev[0] + 1, 8), prev[1], prev[2]]);
           break;
         case 'ArrowUp':
         case 'w':
         case 'W':
           event.preventDefault();
-          setDronePosition(prev => [
+          setDronePosition((prev) => [
             prev[0],
             prev[1],
-            Math.max(prev[2] - 1, -8) // Fixed: Move backward (decrease Z)
+            Math.max(prev[2] - 1, -8), // Fixed: Move backward (decrease Z)
           ]);
           break;
         case 'ArrowDown':
         case 's':
         case 'S':
           event.preventDefault();
-          setDronePosition(prev => [
+          setDronePosition((prev) => [
             prev[0],
             prev[1],
-            Math.min(prev[2] + 1, 8) // Fixed: Move forward (increase Z)
+            Math.min(prev[2] + 1, 8), // Fixed: Move forward (increase Z)
           ]);
           break;
         case 'q':
         case 'Q':
           event.preventDefault();
-          setDronePosition(prev => [
-            prev[0],
-            Math.min(prev[1] + 0.5, 10),
-            prev[2]
-          ]);
+          setDronePosition((prev) => [prev[0], Math.min(prev[1] + 0.5, 10), prev[2]]);
           break;
         case 'e':
         case 'E':
           event.preventDefault();
-          setDronePosition(prev => [
-            prev[0],
-            Math.max(prev[1] - 0.5, 1),
-            prev[2]
-          ]);
+          setDronePosition((prev) => [prev[0], Math.max(prev[1] - 0.5, 1), prev[2]]);
           break;
         case 'Enter':
         case ' ':
@@ -646,7 +630,7 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
             return; // Prevent scan if less than 1 second since last scan
           }
           setLastScanTime(now);
-          
+
           // Scan the closest field to drone position
           const closestField = findClosestField(dronePosition);
           if (closestField) {
@@ -665,18 +649,17 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
     const findClosestField = (dronePos: [number, number, number]): CropField | null => {
       let closestField: CropField | null = null;
       let minDistance = Infinity;
-      
-      CROP_FIELDS.forEach(field => {
+
+      CROP_FIELDS.forEach((field) => {
         const distance = Math.sqrt(
-          Math.pow(field.position[0] - dronePos[0], 2) + 
-          Math.pow(field.position[2] - dronePos[2], 2)
+          Math.pow(field.position[0] - dronePos[0], 2) + Math.pow(field.position[2] - dronePos[2], 2),
         );
         if (distance < minDistance) {
           minDistance = distance;
           closestField = field;
         }
       });
-      
+
       return closestField;
     };
 
@@ -812,70 +795,70 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
           }}
           style={{ width: '100%', height: '100%', position: isFullscreen ? 'absolute' : 'relative', top: 0, left: 0 }}
         >
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} />
+          <ambientLight intensity={0.4} />
+          <directionalLight position={[10, 10, 5]} intensity={1} />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} />
 
-        <Suspense fallback={null}>
-          {/* Ground */}
-          <Plane args={[40, 40]} rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
-            <meshStandardMaterial color="#2D5016" />
-          </Plane>
+          <Suspense fallback={null}>
+            {/* Ground */}
+            <Plane args={[40, 40]} rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
+              <meshStandardMaterial color="#2D5016" />
+            </Plane>
 
-          {/* Drone */}
-          <DroneModel
-            position={dronePosition}
-            rotation={[0, 0, 0]}
-            isActive={true}
-            batteryLevel={gameState.droneEnergy}
-          />
+            {/* Drone */}
+            <DroneModel
+              position={dronePosition}
+              rotation={[0, 0, 0]}
+              isActive={true}
+              batteryLevel={gameState.droneEnergy}
+            />
 
-          {/* Crop Fields */}
-          {CROP_FIELDS.map((field) => (
-            <group key={field.id}>
-              <CropFieldModel
-                field={field}
-                isSelected={selectedField === field.id}
-                isScanning={scanningField === field.id}
-              />
-              {/* Clickable area for field selection */}
-              <Plane
-                args={[field.size[0] + 2, field.size[1] + 2]}
-                position={field.position}
-                rotation={[-Math.PI / 2, 0, 0]}
-                onClick={() => {
-                  // Move drone to field and auto-start scanning
-                  setSelectedField(field.id);
-                  const targetPos: [number, number, number] = [field.position[0], 3, field.position[2]];
-                  droneTargetRef.current = targetPos;
-                  setIsMovingToField(true);
-                  
-                  // Start scanning automatically after drone reaches field
-                  setTimeout(() => {
-                    setDronePosition(targetPos);
-                    setIsMovingToField(false);
-                    // Auto-trigger scan when drone reaches the field
+            {/* Crop Fields */}
+            {CROP_FIELDS.map((field) => (
+              <group key={field.id}>
+                <CropFieldModel
+                  field={field}
+                  isSelected={selectedField === field.id}
+                  isScanning={scanningField === field.id}
+                />
+                {/* Clickable area for field selection */}
+                <Plane
+                  args={[field.size[0] + 2, field.size[1] + 2]}
+                  position={field.position}
+                  rotation={[-Math.PI / 2, 0, 0]}
+                  onClick={() => {
+                    // Move drone to field and auto-start scanning
+                    setSelectedField(field.id);
+                    const targetPos: [number, number, number] = [field.position[0], 3, field.position[2]];
+                    droneTargetRef.current = targetPos;
+                    setIsMovingToField(true);
+
+                    // Start scanning automatically after drone reaches field
                     setTimeout(() => {
-                      handleFieldScan(field.id);
-                    }, 500);
-                  }, 1500);
-                }}
-                onPointerOver={(e) => {
-                  e.stopPropagation();
-                  document.body.style.cursor = 'pointer';
-                }}
-                onPointerOut={() => {
-                  document.body.style.cursor = 'default';
-                }}
-              >
-                <meshStandardMaterial transparent opacity={0} />
-              </Plane>
-            </group>
-          ))}
+                      setDronePosition(targetPos);
+                      setIsMovingToField(false);
+                      // Auto-trigger scan when drone reaches the field
+                      setTimeout(() => {
+                        handleFieldScan(field.id);
+                      }, 500);
+                    }, 1500);
+                  }}
+                  onPointerOver={(e) => {
+                    e.stopPropagation();
+                    document.body.style.cursor = 'pointer';
+                  }}
+                  onPointerOut={() => {
+                    document.body.style.cursor = 'default';
+                  }}
+                >
+                  <meshStandardMaterial transparent opacity={0} />
+                </Plane>
+              </group>
+            ))}
 
-          <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} maxDistance={30} minDistance={5} />
-        </Suspense>
-      </Canvas>
+            <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} maxDistance={30} minDistance={5} />
+          </Suspense>
+        </Canvas>
       </div>
 
       {/* Bottom UI */}
@@ -889,7 +872,9 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
               </div>
               <div className="text-center">
                 <div className="text-gray-300 text-xs">Ruộng đã quét</div>
-                <div className="text-white font-semibold">{CROP_FIELDS.filter(f => f.scanned).length}/{CROP_FIELDS.length}</div>
+                <div className="text-white font-semibold">
+                  {CROP_FIELDS.filter((f) => f.scanned).length}/{CROP_FIELDS.length}
+                </div>
               </div>
             </div>
 
@@ -900,7 +885,9 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
                   <span className="text-blue-300">🚁 Đang di chuyển đến ruộng...</span>
                 ) : selectedField ? (
                   <>
-                    <span className="text-blue-300">⬅️➡️⬆️⬇️</span> Di chuyển | <span className="text-green-300">Enter/Space</span> Quét | <span className="text-red-300">Esc</span> Hủy
+                    <span className="text-blue-300">⬅️➡️⬆️⬇️</span> Di chuyển |{' '}
+                    <span className="text-green-300">Enter/Space</span> Quét | <span className="text-red-300">Esc</span>{' '}
+                    Hủy
                   </>
                 ) : (
                   'Nhấp vào ruộng hoặc dùng phím mũi tên'
@@ -945,7 +932,9 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-300">Sức khỏe TB:</span>
-                    <span className="text-green-300 font-semibold">{Math.round(completionStats.averageFieldHealth)}%</span>
+                    <span className="text-green-300 font-semibold">
+                      {Math.round(completionStats.averageFieldHealth)}%
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-300">Hiệu suất:</span>
@@ -972,11 +961,11 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
                   <div className="mt-3 p-2 bg-blue-900/50 rounded text-xs">
                     <div className="text-blue-200">💡 Gợi ý:</div>
                     <div className="text-gray-300">
-                      {completionStats.averageFieldHealth > 80 
+                      {completionStats.averageFieldHealth > 80
                         ? 'Cây trồng phát triển tốt! Duy trì chế độ chăm sóc hiện tại.'
                         : completionStats.averageFieldHealth > 60
-                        ? 'Cần tăng cường tưới nước và bón phân cho một số khu vực.'
-                        : 'Cần can thiệp khẩn cấp: kiểm tra hệ thống tưới và phòng trừ sâu bệnh.'}
+                          ? 'Cần tăng cường tưới nước và bón phân cho một số khu vực.'
+                          : 'Cần can thiệp khẩn cấp: kiểm tra hệ thống tưới và phòng trừ sâu bệnh.'}
                     </div>
                   </div>
                 </div>
@@ -987,10 +976,10 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
               <button
                 onClick={() => {
                   // Reset all field scan status first
-                  CROP_FIELDS.forEach(field => {
+                  CROP_FIELDS.forEach((field) => {
                     field.scanned = false;
                   });
-                  
+
                   setGameCompleted(false);
                   setCompletionStats(null);
                   setGameState({
@@ -1006,10 +995,10 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
                   setSelectedField(null);
                   setScanningField(null);
                   setLastScanTime(0);
-                  
+
                   // Force re-render to update progress indicators
                   setTimeout(() => {
-                    setGameState(prev => ({ ...prev }));
+                    setGameState((prev) => ({ ...prev }));
                   }, 100);
                 }}
                 className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold transition-colors"

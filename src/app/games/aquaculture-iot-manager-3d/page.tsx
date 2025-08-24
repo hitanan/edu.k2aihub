@@ -5,13 +5,13 @@ import AquacultureIoTManager3D from '@/components/games/AquacultureIoTManager3D'
 export const metadata: Metadata = {
   title: createTitle('Aquaculture IoT Manager 3D - Quản lý Nuôi trồng Thủy sản IoT'),
   description: createDescription(
-    'Quản lý hệ thống nuôi trồng thủy sản thông minh với IoT sensors trong môi trường 3D. Theo dõi chất lượng nước, cá và tối ưu hóa sản xuất.'
+    'Quản lý hệ thống nuôi trồng thủy sản thông minh với IoT sensors trong môi trường 3D. Theo dõi chất lượng nước, cá và tối ưu hóa sản xuất.',
   ),
   keywords: ['aquaculture', 'iot', '3d game', 'nuôi trồng thủy sản', 'smart farming', 'k2aihub'],
   openGraph: {
     title: createTitle('Aquaculture IoT Manager 3D - Quản lý Nuôi trồng Thủy sản IoT'),
     description: createDescription(
-      'Quản lý hệ thống nuôi trồng thủy sản thông minh với IoT sensors trong môi trường 3D'
+      'Quản lý hệ thống nuôi trồng thủy sản thông minh với IoT sensors trong môi trường 3D',
     ),
     type: 'website',
     siteName: 'K2AiHub - Nền tảng học tập thông minh',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: createTitle('Aquaculture IoT Manager 3D - Quản lý Nuôi trồng Thủy sản IoT'),
     description: createDescription(
-      'Quản lý hệ thống nuôi trồng thủy sản thông minh với IoT sensors trong môi trường 3D'
+      'Quản lý hệ thống nuôi trồng thủy sản thông minh với IoT sensors trong môi trường 3D',
     ),
     images: ['https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop'],
   },

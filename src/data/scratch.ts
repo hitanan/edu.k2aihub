@@ -50,13 +50,9 @@ export const scratchLessons: ScratchLesson[] = [
       'Hiểu giao diện Scratch và các thành phần chính',
       'Tạo dự án Scratch đầu tiên',
       'Sử dụng blocks cơ bản để điều khiển Sprite',
-      'Hiểu khái niệm sự kiện và lệnh'
+      'Hiểu khái niệm sự kiện và lệnh',
     ],
-    materials: [
-      'Máy tính với trình duyệt web',
-      'Tài khoản Scratch (tùy chọn)',
-      'Kết nối Internet'
-    ],
+    materials: ['Máy tính với trình duyệt web', 'Tài khoản Scratch (tùy chọn)', 'Kết nối Internet'],
     imageUrl:
       'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=D-nW4jvzRr8', // Beginners Guide To Scratch (VERY Simple)
@@ -68,83 +64,72 @@ export const scratchLessons: ScratchLesson[] = [
       'say "Hello!" for 2 seconds',
       'wait 1 seconds',
       'repeat 10',
-      'forever'
+      'forever',
     ],
     exercises: [
       {
         id: 'ex1-first-animation',
         title: 'Hoạt Cảnh Đầu Tiên',
-        description:
-          'Tạo hoạt cảnh đơn giản cho mèo Scratch di chuyển và nói chào',
+        description: 'Tạo hoạt cảnh đơn giản cho mèo Scratch di chuyển và nói chào',
         difficulty: 'Dễ',
-        requiredBlocks: [
-          'when green flag clicked',
-          'say "Xin chào!" for 2 seconds',
-          'move 10 steps',
-          'wait 1 seconds'
-        ],
+        requiredBlocks: ['when green flag clicked', 'say "Xin chào!" for 2 seconds', 'move 10 steps', 'wait 1 seconds'],
         expectedBehavior: 'Mèo nói "Xin chào!" rồi di chuyển sang phải',
         hints: [
           'Bắt đầu với khối "when green flag clicked"',
           'Sử dụng khối "say" để mèo nói chuyện',
           'Khối "move" để mèo di chuyển',
-          'Khối "wait" tạo khoảng dừng giữa các hành động'
-        ]
+          'Khối "wait" tạo khoảng dừng giữa các hành động',
+        ],
       },
       {
         id: 'ex2-simple-loop',
         title: 'Vòng Lặp Đơn Giản',
         description: 'Tạo chương trình mèo di chuyển trong hình vuông',
         difficulty: 'Trung bình',
-        requiredBlocks: [
-          'when green flag clicked',
-          'repeat 4',
-          'move 100 steps',
-          'turn 90 degrees'
-        ],
+        requiredBlocks: ['when green flag clicked', 'repeat 4', 'move 100 steps', 'turn 90 degrees'],
         expectedBehavior: 'Mèo di chuyển theo hình vuông',
         hints: [
           'Hình vuông có 4 cạnh bằng nhau',
           'Mỗi góc của hình vuông là 90 độ',
           'Sử dụng "repeat 4" để lặp lại 4 lần',
-          'Trong vòng lặp: di chuyển rồi quay'
-        ]
-      }
+          'Trong vòng lặp: di chuyển rồi quay',
+        ],
+      },
     ],
     realWorldApplications: [
       'Game giáo dục cho trẻ em',
       'Hoạt cảnh và storytelling',
       'Mô phỏng khái niệm khoa học',
       'Tạo presentations tương tác',
-      'Prototype ứng dụng đơn giản'
+      'Prototype ứng dụng đơn giản',
     ],
     competitions: [
       'Scratch Programming Contest',
       'Code.org Hour of Code',
       'MIT Scratch Competition',
       'Vietnam Programming Contest for Students',
-      'Creative Computing Challenge'
+      'Creative Computing Challenge',
     ],
     relatedGames: [
       {
         gameId: 'scratch-animation-studio',
         title: 'Scratch Animation Studio',
         connection: 'Thực hành tạo animation và hoạt cảnh với Scratch',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         gameId: 'creative-storytelling',
         title: 'Kể Chuyện Sáng Tạo',
         connection: 'Ứng dụng Scratch để tạo những câu chuyện tương tác',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         gameId: 'memory-match',
         title: 'Trò Chơi Ghép Cặp',
         connection: 'Tạo game logic và tương tác người dùng với Scratch',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
   {
     id: 'scratch-sprites-sounds',
@@ -158,13 +143,9 @@ export const scratchLessons: ScratchLesson[] = [
       'Thêm và tùy chỉnh nhiều sprites',
       'Sử dụng âm thanh trong dự án',
       'Tạo tương tác giữa các sprites',
-      'Hiểu khái niệm broadcasting và messaging'
+      'Hiểu khái niệm broadcasting và messaging',
     ],
-    materials: [
-      'Scratch editor',
-      'File âm thanh (tùy chọn)',
-      'Hình ảnh sprites tùy chỉnh (tùy chọn)'
-    ],
+    materials: ['Scratch editor', 'File âm thanh (tùy chọn)', 'Hình ảnh sprites tùy chỉnh (tùy chọn)'],
     imageUrl:
       'https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=3mGpHfPj4J8',
@@ -176,7 +157,7 @@ export const scratchLessons: ScratchLesson[] = [
       'when I receive "message1"',
       'set size to 150%',
       'show',
-      'hide'
+      'hide',
     ],
     exercises: [
       {
@@ -189,15 +170,15 @@ export const scratchLessons: ScratchLesson[] = [
           'say "Xin chào!" for 2 seconds',
           'broadcast "turn"',
           'when I receive "turn"',
-          'say "Chào bạn!" for 2 seconds'
+          'say "Chào bạn!" for 2 seconds',
         ],
         expectedBehavior: 'Mèo chào trước, rồi chó chào lại',
         hints: [
           'Mỗi sprite có script riêng',
           'Dùng broadcast để gửi tin nhắn',
           'Sprite khác nhận tin nhắn với "when I receive"',
-          'Đặt tên tin nhắn dễ hiểu'
-        ]
+          'Đặt tên tin nhắn dễ hiểu',
+        ],
       },
       {
         id: 'ex2-sound-interaction',
@@ -209,31 +190,31 @@ export const scratchLessons: ScratchLesson[] = [
           'play sound "C4"',
           'change color effect by 25',
           'wait 0.5 seconds',
-          'clear graphic effects'
+          'clear graphic effects',
         ],
         expectedBehavior: 'Click vào sprite phát âm và đổi màu',
         hints: [
           'Mỗi sprite như một phím đàn',
           'Gán âm thanh khác nhau cho mỗi sprite',
           'Hiệu ứng màu sắc khi click',
-          'Reset hiệu ứng sau khi phát âm'
-        ]
-      }
+          'Reset hiệu ứng sau khi phát âm',
+        ],
+      },
     ],
     realWorldApplications: [
       'Ứng dụng âm nhạc giáo dục',
       'Game tương tác đa nhân vật',
       'Mô phỏng hội thoại và giao tiếp',
       'Ứng dụng học ngôn ngữ',
-      'Interactive storytelling'
+      'Interactive storytelling',
     ],
     competitions: [
       'Scratch Animation Festival',
       'International Scratch Day',
       'Creative Expression Contest',
       'Educational Game Challenge',
-      'Digital Storytelling Awards'
-    ]
+      'Digital Storytelling Awards',
+    ],
   },
   {
     id: 'scratch-variables-logic',
@@ -247,13 +228,9 @@ export const scratchLessons: ScratchLesson[] = [
       'Hiểu khái niệm biến và cách sử dụng',
       'Sử dụng câu lệnh if-else',
       'Tạo chương trình tương tác với input',
-      'Xây dựng logic phức tạp với nhiều điều kiện'
+      'Xây dựng logic phức tạp với nhiều điều kiện',
     ],
-    materials: [
-      'Scratch editor',
-      'Notebook để ghi chú logic',
-      'Ý tưởng cho game đơn giản'
-    ],
+    materials: ['Scratch editor', 'Notebook để ghi chú logic', 'Ý tưởng cho game đơn giản'],
     imageUrl:
       'https://images.unsplash.com/photo-1509048191080-d2e2678e67b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=G6N9RNqiJyE',
@@ -266,7 +243,7 @@ export const scratchLessons: ScratchLesson[] = [
       'answer',
       'if answer = "yes" then',
       'else',
-      'random 1 to 10'
+      'random 1 to 10',
     ],
     exercises: [
       {
@@ -279,15 +256,15 @@ export const scratchLessons: ScratchLesson[] = [
           'set score to 0',
           'when this sprite clicked',
           'change score by 1',
-          'say "Score:" join score for 1 seconds'
+          'say "Score:" join score for 1 seconds',
         ],
         expectedBehavior: 'Click vào sprite để tăng điểm và hiển thị',
         hints: [
           'Tạo biến "score" trước khi sử dụng',
           'Khởi tạo điểm về 0 khi bắt đầu',
           'Tăng điểm khi click sprite',
-          'Hiển thị điểm hiện tại'
-        ]
+          'Hiển thị điểm hiện tại',
+        ],
       },
       {
         id: 'ex2-guessing-game',
@@ -300,31 +277,31 @@ export const scratchLessons: ScratchLesson[] = [
           'if answer = random number then',
           'say "Correct!" for 2 seconds',
           'else',
-          'say "Try again!" for 2 seconds'
+          'say "Try again!" for 2 seconds',
         ],
         expectedBehavior: 'Người chơi đoán số, chương trình phản hồi đúng/sai',
         hints: [
           'Tạo biến để lưu số ngẫu nhiên',
           'Sử dụng "random 1 to 10" tạo số bất kỳ',
           'So sánh câu trả lời với số đã tạo',
-          'Đưa ra phản hồi phù hợp'
-        ]
-      }
+          'Đưa ra phản hồi phù hợp',
+        ],
+      },
     ],
     realWorldApplications: [
       'Game giáo dục với scoring',
       'Quiz và assessment tools',
       'Calculator đơn giản',
       'Form nhập liệu tương tác',
-      'Simulation với parameter'
+      'Simulation với parameter',
     ],
     competitions: [
       'Logic Programming Challenge',
       'Educational Game Development',
       'Interactive Media Contest',
       'Problem Solving with Code',
-      'Youth Innovation Awards'
-    ]
+      'Youth Innovation Awards',
+    ],
   },
   {
     id: 'scratch-game-development',
@@ -338,14 +315,14 @@ export const scratchLessons: ScratchLesson[] = [
       'Thiết kế gameplay và game mechanics',
       'Implement collision detection',
       'Tạo hệ thống level và progression',
-      'Thêm power-ups và special effects'
+      'Thêm power-ups và special effects',
     ],
     materials: [
       'Scratch editor',
       'Sprites cho game (player, enemies, items)',
       'Background images',
       'Sound effects',
-      'Game design document'
+      'Game design document',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -359,7 +336,7 @@ export const scratchLessons: ScratchLesson[] = [
       'go to x: 0 y: 0',
       'point towards "player"',
       'move 2 steps',
-      'if on edge, bounce'
+      'if on edge, bounce',
     ],
     exercises: [
       {
@@ -373,15 +350,15 @@ export const scratchLessons: ScratchLesson[] = [
           'if key "left arrow" pressed?',
           'change x by -5',
           'if touching "enemy" then',
-          'say "Game Over!" for 2 seconds'
+          'say "Game Over!" for 2 seconds',
         ],
         expectedBehavior: 'Player điều khiển bằng phím mũi tên, tránh enemies',
         hints: [
           'Player di chuyển theo phím mũi tên',
           'Enemies di chuyển tự động',
           'Kiểm tra va chạm liên tục',
-          'Kết thúc game khi chạm enemy'
-        ]
+          'Kết thúc game khi chạm enemy',
+        ],
       },
       {
         id: 'ex2-platform-game',
@@ -395,31 +372,31 @@ export const scratchLessons: ScratchLesson[] = [
           'if touching color blue? then',
           'set gravity to 0',
           'if key "space" pressed? and touching color blue?',
-          'set gravity to 8'
+          'set gravity to 8',
         ],
         expectedBehavior: 'Player có thể nhảy và chịu tác động của trọng lực',
         hints: [
           'Gravity kéo player xuống liên tục',
           'Nền tảng ngăn player rơi',
           'Space bar để nhảy',
-          'Chỉ nhảy được khi đang đứng trên nền'
-        ]
-      }
+          'Chỉ nhảy được khi đang đứng trên nền',
+        ],
+      },
     ],
     realWorldApplications: [
       'Mobile game prototyping',
       'Educational game design',
       'Interactive learning tools',
       'Game mechanics testing',
-      'User experience prototyping'
+      'User experience prototyping',
     ],
     competitions: [
       'Scratch Game Jam',
       'Youth Game Development Challenge',
       'Educational Game Awards',
       'Indie Game Development Contest',
-      'Creative Programming Olympics'
-    ]
+      'Creative Programming Olympics',
+    ],
   },
   {
     id: 'scratch-advanced-features',
@@ -433,13 +410,13 @@ export const scratchLessons: ScratchLesson[] = [
       'Tạo và sử dụng custom blocks',
       'Sử dụng clones để tạo nhiều objects',
       'Vẽ graphics với pen extension',
-      'Kết hợp tất cả kỹ năng trong dự án phức tạp'
+      'Kết hợp tất cả kỹ năng trong dự án phức tạp',
     ],
     materials: [
       'Scratch editor với extensions',
       'Pen extension',
       'Music extension (tùy chọn)',
-      'Video sensing extension (tùy chọn)'
+      'Video sensing extension (tùy chọn)',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -452,7 +429,7 @@ export const scratchLessons: ScratchLesson[] = [
       'pen down',
       'pen up',
       'set pen color to red',
-      'change pen size by 1'
+      'change pen size by 1',
     ],
     exercises: [
       {
@@ -460,21 +437,14 @@ export const scratchLessons: ScratchLesson[] = [
         title: 'Custom Blocks cho Shapes',
         description: 'Tạo custom blocks để vẽ các hình học khác nhau',
         difficulty: 'Trung bình',
-        requiredBlocks: [
-          'define draw square',
-          'pen down',
-          'repeat 4',
-          'move 100 steps',
-          'turn 90 degrees',
-          'pen up'
-        ],
+        requiredBlocks: ['define draw square', 'pen down', 'repeat 4', 'move 100 steps', 'turn 90 degrees', 'pen up'],
         expectedBehavior: 'Custom block vẽ hình vuông khi gọi',
         hints: [
           'Tạo custom block trong "My Blocks"',
           'Đặt tên mô tả chức năng',
           'Sử dụng pen để vẽ',
-          'Có thể thêm parameters cho custom block'
-        ]
+          'Có thể thêm parameters cho custom block',
+        ],
       },
       {
         id: 'ex2-clone-system',
@@ -489,32 +459,32 @@ export const scratchLessons: ScratchLesson[] = [
           'point in direction random 1 to 360',
           'repeat 30',
           'move 5 steps',
-          'delete this clone'
+          'delete this clone',
         ],
         expectedBehavior: 'Tạo nhiều particles bay ra theo hướng ngẫu nhiên',
         hints: [
           'Master sprite tạo clones',
           'Mỗi clone có hành vi riêng',
           'Clones tự xóa sau khi hoàn thành',
-          'Giới hạn số lượng clones để tránh lag'
-        ]
-      }
+          'Giới hạn số lượng clones để tránh lag',
+        ],
+      },
     ],
     realWorldApplications: [
       'Advanced game development',
       'Data visualization',
       'Artistic programming',
       'Interactive art installations',
-      'Educational simulations'
+      'Educational simulations',
     ],
     competitions: [
       'Advanced Scratch Programming',
       'Creative Computing Showcase',
       'Digital Art with Code',
       'Innovation in Education Technology',
-      'International Programming Olympics'
-    ]
-  }
+      'International Programming Olympics',
+    ],
+  },
 ];
 
 // Scratch programming concepts quiz
@@ -523,15 +493,10 @@ export const scratchQuizzes = [
     id: 'quiz-scratch-1',
     lessonId: 'scratch-introduction',
     question: 'Trong Scratch, khối nào được sử dụng để bắt đầu chương trình?',
-    options: [
-      'when space key pressed',
-      'when green flag clicked',
-      'when this sprite clicked',
-      'forever'
-    ],
+    options: ['when space key pressed', 'when green flag clicked', 'when this sprite clicked', 'forever'],
     correctAnswer: 1,
     explanation:
-      'Khối "when green flag clicked" được sử dụng để bắt đầu chương trình khi người dùng click vào lá cờ xanh.'
+      'Khối "when green flag clicked" được sử dụng để bắt đầu chương trình khi người dùng click vào lá cờ xanh.',
   },
   {
     id: 'quiz-scratch-2',
@@ -539,37 +504,25 @@ export const scratchQuizzes = [
     question: 'Để gửi tin nhắn giữa các sprites, chúng ta sử dụng khối nào?',
     options: ['say', 'broadcast', 'ask', 'think'],
     correctAnswer: 1,
-    explanation:
-      'Khối "broadcast" được sử dụng để gửi tin nhắn đến tất cả sprites trong dự án.'
+    explanation: 'Khối "broadcast" được sử dụng để gửi tin nhắn đến tất cả sprites trong dự án.',
   },
   {
     id: 'quiz-scratch-3',
     lessonId: 'scratch-variables-logic',
     question: 'Biến trong Scratch được sử dụng để làm gì?',
-    options: [
-      'Chỉ để hiển thị text',
-      'Lưu trữ và thay đổi dữ liệu',
-      'Tạo âm thanh',
-      'Thay đổi costume'
-    ],
+    options: ['Chỉ để hiển thị text', 'Lưu trữ và thay đổi dữ liệu', 'Tạo âm thanh', 'Thay đổi costume'],
     correctAnswer: 1,
     explanation:
-      'Biến được sử dụng để lưu trữ dữ liệu như điểm số, tên người chơi, hoặc bất kỳ giá trị nào cần thay đổi trong chương trình.'
+      'Biến được sử dụng để lưu trữ dữ liệu như điểm số, tên người chơi, hoặc bất kỳ giá trị nào cần thay đổi trong chương trình.',
   },
   {
     id: 'quiz-scratch-4',
     lessonId: 'scratch-game-development',
     question: 'Để kiểm tra va chạm giữa sprites, ta sử dụng khối nào?',
-    options: [
-      'touching mouse-pointer?',
-      'touching edge?',
-      'touching [sprite name]?',
-      'key pressed?'
-    ],
+    options: ['touching mouse-pointer?', 'touching edge?', 'touching [sprite name]?', 'key pressed?'],
     correctAnswer: 2,
-    explanation:
-      'Khối "touching [sprite name]?" kiểm tra xem sprite hiện tại có chạm vào sprite khác hay không.'
-  }
+    explanation: 'Khối "touching [sprite name]?" kiểm tra xem sprite hiện tại có chạm vào sprite khác hay không.',
+  },
 ];
 
 // Popular Scratch project templates
@@ -585,9 +538,9 @@ export const scratchProjectTemplates = [
       'Gravity system',
       'Platform collision detection',
       'Scoring system',
-      'Basic enemy AI'
+      'Basic enemy AI',
     ],
-    scratchUrl: 'https://scratch.mit.edu/projects/platformer-template/'
+    scratchUrl: 'https://scratch.mit.edu/projects/platformer-template/',
   },
   {
     id: 'template-animation',
@@ -600,9 +553,9 @@ export const scratchProjectTemplates = [
       'Character dialogue',
       'Background music',
       'Smooth transitions',
-      'Interactive elements'
+      'Interactive elements',
     ],
-    scratchUrl: 'https://scratch.mit.edu/projects/animation-template/'
+    scratchUrl: 'https://scratch.mit.edu/projects/animation-template/',
   },
   {
     id: 'template-quiz',
@@ -610,21 +563,15 @@ export const scratchProjectTemplates = [
     description: 'Template cho tạo quiz tương tác với multiple choice',
     category: 'interactive',
     difficulty: 'Trung bình',
-    features: [
-      'Question database',
-      'Score tracking',
-      'Timer system',
-      'Feedback messages',
-      'Results screen'
-    ],
-    scratchUrl: 'https://scratch.mit.edu/projects/quiz-template/'
-  }
+    features: ['Question database', 'Score tracking', 'Timer system', 'Feedback messages', 'Results screen'],
+    scratchUrl: 'https://scratch.mit.edu/projects/quiz-template/',
+  },
 ];
 
 const scratchData = {
   scratchLessons,
   scratchQuizzes,
-  scratchProjectTemplates
+  scratchProjectTemplates,
 };
 
 export default scratchData;

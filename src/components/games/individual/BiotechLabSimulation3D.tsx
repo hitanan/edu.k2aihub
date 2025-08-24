@@ -67,7 +67,7 @@ const LAB_EQUIPMENT: LabEquipment[] = [
     name: 'Máy ly tâm',
     type: 'centrifuge',
     description: 'Tách các thành phần dựa trên khối lượng',
-    position: [2, 1.25, 2], // Moved above table surface  
+    position: [2, 1.25, 2], // Moved above table surface
     color: '#4A5568',
     size: [0.6, 0.8, 0.6],
     interactive: true,
@@ -444,8 +444,8 @@ function PetriDish3D({
   return (
     <group position={position}>
       {/* Clickable area - expanded for better interaction */}
-      <Box 
-        args={[0.3, 0.1, 0.3]} 
+      <Box
+        args={[0.3, 0.1, 0.3]}
         position={[0, 0.02, 0]}
         onClick={onClick}
         onPointerOver={(e) => {
@@ -458,7 +458,7 @@ function PetriDish3D({
       >
         <meshStandardMaterial transparent opacity={0} />
       </Box>
-      
+
       {/* Bottom dish */}
       <Cylinder args={[0.12, 0.12, 0.02]} position={[0, 0.01, 0]}>
         <meshStandardMaterial color="#68D391" transparent opacity={0.8} />
@@ -503,8 +503,8 @@ function Beaker3D({
   return (
     <group position={position}>
       {/* Main clickable wrapper - most important fix */}
-      <Box 
-        args={[0.25, 0.35, 0.25]} 
+      <Box
+        args={[0.25, 0.35, 0.25]}
         position={[0, 0.125, 0]}
         onClick={(e) => {
           e.stopPropagation();
@@ -526,31 +526,31 @@ function Beaker3D({
       <Cylinder args={[0.08, 0.1, 0.25]} position={[0, 0.125, 0]}>
         <meshStandardMaterial color="#63B3ED" transparent opacity={0.7} />
       </Cylinder>
-      
+
       {/* Liquid inside - Visual only, non-interactive */}
       <Cylinder args={[0.075, 0.095, 0.15]} position={[0, 0.075, 0]}>
         <meshStandardMaterial color={selected ? '#4299E1' : '#90CDF4'} transparent opacity={0.8} />
       </Cylinder>
-      
+
       {/* Graduations - Visual elements only */}
       {[0.05, 0.1, 0.15, 0.2].map((height, index) => (
         <Box key={index} args={[0.12, 0.002, 0.002]} position={[0, height, 0]}>
           <meshStandardMaterial color="#2D3748" />
         </Box>
       ))}
-      
+
       {/* Beaker rim - Visual only */}
       <Cylinder args={[0.1, 0.1, 0.02]} position={[0, 0.24, 0]}>
         <meshStandardMaterial color="#63B3ED" transparent opacity={0.9} />
       </Cylinder>
-      
+
       {/* Selection indicator */}
       {selected && (
         <Box args={[0.3, 0.4, 0.3]} position={[0, 0.125, 0]}>
           <meshStandardMaterial color="#4299E1" transparent opacity={0.2} emissive="#4299E1" emissiveIntensity={0.1} />
         </Box>
       )}
-      
+
       {/* Bubbling effect when selected */}
       {selected && (
         <>
@@ -570,10 +570,10 @@ function Beaker3D({
 }
 
 // Sample Animation Component for showing sample movement between equipment
-function SampleAnimation({ 
-  fromPosition, 
-  toPosition, 
-  sampleType = 'liquid'
+function SampleAnimation({
+  fromPosition,
+  toPosition,
+  sampleType = 'liquid',
 }: {
   fromPosition: [number, number, number];
   toPosition: [number, number, number];
@@ -586,15 +586,15 @@ function SampleAnimation({
       // Animate sample movement from source to destination with arc trajectory
       const time = (state.clock.elapsedTime % 3) / 3; // 3-second cycle
       const progress = Math.min(time, 1);
-      
+
       const currentPos = [
         fromPosition[0] + (toPosition[0] - fromPosition[0]) * progress,
         fromPosition[1] + (toPosition[1] - fromPosition[1]) * progress + Math.sin(progress * Math.PI) * 0.3,
-        fromPosition[2] + (toPosition[2] - fromPosition[2]) * progress
+        fromPosition[2] + (toPosition[2] - fromPosition[2]) * progress,
       ] as [number, number, number];
-      
+
       sampleRef.current.position.set(...currentPos);
-      
+
       // Add rotation for liquid samples
       if (sampleType === 'liquid') {
         sampleRef.current.rotation.z += 0.05;
@@ -617,19 +617,23 @@ function SampleAnimation({
 
   const getSampleColor = () => {
     switch (sampleType) {
-      case 'liquid': return '#4FC3F7';
-      case 'solid': return '#8BC34A';
-      case 'culture': return '#FF9800';
-      default: return '#4FC3F7';
+      case 'liquid':
+        return '#4FC3F7';
+      case 'solid':
+        return '#8BC34A';
+      case 'culture':
+        return '#FF9800';
+      default:
+        return '#4FC3F7';
     }
   };
 
   return (
     <mesh ref={sampleRef}>
       {getSampleGeometry()}
-      <meshPhongMaterial 
-        color={getSampleColor()} 
-        transparent 
+      <meshPhongMaterial
+        color={getSampleColor()}
+        transparent
         opacity={0.8}
         emissive={getSampleColor()}
         emissiveIntensity={0.1}
@@ -655,7 +659,7 @@ function GameScene({
 }) {
   // Get equipment positions for animation
   const getEquipmentPosition = (equipmentId: string): [number, number, number] => {
-    const equipment = LAB_EQUIPMENT.find(eq => eq.id === equipmentId);
+    const equipment = LAB_EQUIPMENT.find((eq) => eq.id === equipmentId);
     return equipment ? equipment.position : [0, 1, 0];
   };
 
@@ -883,10 +887,10 @@ export default function BiotechLabSimulation3D() {
       // Show sample animation between equipment for certain steps
       const currentStepText = currentExperiment.procedure[currentStep];
       const nextStepText = currentExperiment.procedure[currentStep + 1];
-      
+
       // Determine animation based on procedure text
       let sampleAnimation = null;
-      
+
       if (currentStepText.includes('slide') && nextStepText.includes('kính hiển vi')) {
         sampleAnimation = {
           isActive: true,
@@ -918,15 +922,15 @@ export default function BiotechLabSimulation3D() {
       }
 
       setCurrentStep((prev) => prev + 1);
-      setGameState((prev) => ({ 
-        ...prev, 
+      setGameState((prev) => ({
+        ...prev,
         score: prev.score + 10,
         sampleAnimation: sampleAnimation || {
           isActive: false,
           fromEquipment: null,
           toEquipment: null,
           sampleType: 'liquid',
-        }
+        },
       }));
 
       // Stop animation after 3 seconds
@@ -939,7 +943,7 @@ export default function BiotechLabSimulation3D() {
               fromEquipment: null,
               toEquipment: null,
               sampleType: 'liquid',
-            }
+            },
           }));
         }, 3000);
       }

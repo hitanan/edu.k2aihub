@@ -4,8 +4,21 @@ import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 
 export const metadata: Metadata = {
   title: createTitle('Ocean Conservation 3D - Game Bảo Vệ Đại Dương 3D'),
-  description: createDescription('Game mô phỏng 3D về bảo vệ đại dương với hệ sinh thái biển, dọn rác thải nhựa, và cứu hộ sinh vật biển. Học về môi trường biển và tác động của ô nhiễm nhựa.'),
-  keywords: createKeywords(['ocean conservation', 'marine ecosystem', 'plastic pollution', 'environmental game', '3D simulation', 'marine biology', 'sustainability', 'ocean cleanup', 'sea animals', 'underwater exploration']),
+  description: createDescription(
+    'Game mô phỏng 3D về bảo vệ đại dương với hệ sinh thái biển, dọn rác thải nhựa, và cứu hộ sinh vật biển. Học về môi trường biển và tác động của ô nhiễm nhựa.',
+  ),
+  keywords: createKeywords([
+    'ocean conservation',
+    'marine ecosystem',
+    'plastic pollution',
+    'environmental game',
+    '3D simulation',
+    'marine biology',
+    'sustainability',
+    'ocean cleanup',
+    'sea animals',
+    'underwater exploration',
+  ]),
   openGraph: {
     title: 'Ocean Conservation 3D - Game Bảo Vệ Đại Dương 3D',
     description: 'Trải nghiệm 3D tương tác về bảo vệ đại dương, dọn rác thải nhựa và cứu hộ sinh vật biển',

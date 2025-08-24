@@ -29,10 +29,9 @@ export const aiLessons: AILessonType[] = [
   {
     id: 'office-work',
     title: 'AI cho Văn Phòng & Công Việc',
-    description:
-      'Sử dụng AI để tối ưu hóa công việc văn phòng, từ viết email đến tạo báo cáo',
+    description: 'Sử dụng AI để tối ưu hóa công việc văn phòng, từ viết email đến tạo báo cáo',
     duration: '4 giờ',
-  videoUrl: 'https://www.youtube.com/watch?v=TXxuccRXo-k',
+    videoUrl: 'https://www.youtube.com/watch?v=TXxuccRXo-k',
     difficulty: 'Cơ bản',
     category: 'Productivity',
     objectives: [
@@ -41,22 +40,12 @@ export const aiLessons: AILessonType[] = [
       'Tạo presentations ấn tượng',
       'Quản lý thời gian hiệu quả',
     ],
-    prerequisites: [
-      'Sử dụng máy tính cơ bản',
-      'Microsoft Office hoặc Google Workspace',
-    ],
-    tools: [
-      'ChatGPT',
-      'Google Bard',
-      'Microsoft Copilot',
-      'Grammarly',
-      'Notion AI',
-    ],
+    prerequisites: ['Sử dụng máy tính cơ bản', 'Microsoft Office hoặc Google Workspace'],
+    tools: ['ChatGPT', 'Google Bard', 'Microsoft Copilot', 'Grammarly', 'Notion AI'],
     exercises: [
       {
         title: 'Viết email chuyên nghiệp với ChatGPT',
-        description:
-          'Học cách tạo email hiệu quả cho nhiều tình huống khác nhau',
+        description: 'Học cách tạo email hiệu quả cho nhiều tình huống khác nhau',
         difficulty: 'Cơ bản',
         steps: [
           'Truy cập ChatGPT và đăng nhập',
@@ -65,8 +54,7 @@ export const aiLessons: AILessonType[] = [
           'Review và chỉnh sửa kết quả',
           'Áp dụng vào email thực tế',
         ],
-        expectedResults:
-          'Email chuyên nghiệp, rõ ràng và phù hợp với từng đối tượng',
+        expectedResults: 'Email chuyên nghiệp, rõ ràng và phù hợp với từng đối tượng',
         tips: [
           'Luôn review và personalize nội dung AI tạo ra',
           'Cung cấp context chi tiết trong prompt',
@@ -94,7 +82,7 @@ export const aiLessons: AILessonType[] = [
     title: 'AI cho Sáng Tạo & Thiết Kế',
     description: 'Sử dụng AI để tạo nội dung sáng tạo, thiết kế và multimedia',
     duration: '5 giờ',
-  videoUrl: 'https://www.youtube.com/watch?v=Lm7qG6pzvmA',
+    videoUrl: 'https://www.youtube.com/watch?v=Lm7qG6pzvmA',
     difficulty: 'Trung bình',
     category: 'Creative',
     objectives: [
@@ -103,17 +91,8 @@ export const aiLessons: AILessonType[] = [
       'Thiết kế với Canva AI',
       'Chỉnh sửa ảnh với AI',
     ],
-    prerequisites: [
-      'Hiểu biết cơ bản về thiết kế',
-      'Tài khoản Discord (cho Midjourney)',
-    ],
-    tools: [
-      'Midjourney',
-      'DALL-E 3',
-      'Canva AI Magic Studio',
-      'Remove.bg',
-      'Jasper AI',
-    ],
+    prerequisites: ['Hiểu biết cơ bản về thiết kế', 'Tài khoản Discord (cho Midjourney)'],
+    tools: ['Midjourney', 'DALL-E 3', 'Canva AI Magic Studio', 'Remove.bg', 'Jasper AI'],
     exercises: [
       {
         title: 'Tạo logo brand với Midjourney',
@@ -142,7 +121,7 @@ export const aiLessons: AILessonType[] = [
     title: 'AI cho Giáo Dục & Học Tập',
     description: 'Áp dụng AI vào việc học tập, nghiên cứu và giảng dạy',
     duration: '3 giờ',
-  videoUrl: 'https://www.youtube.com/watch?v=TXxuccRXo-k',
+    videoUrl: 'https://www.youtube.com/watch?v=TXxuccRXo-k',
     difficulty: 'Cơ bản',
     category: 'Education',
     objectives: [
@@ -181,7 +160,7 @@ export const aiLessons: AILessonType[] = [
     title: 'AI cho Kinh Doanh & Marketing',
     description: 'Ứng dụng AI trong marketing, sales và phát triển kinh doanh',
     duration: '6 giờ',
-  videoUrl: 'https://www.youtube.com/watch?v=Lm7qG6pzvmA',
+    videoUrl: 'https://www.youtube.com/watch?v=Lm7qG6pzvmA',
     difficulty: 'Nâng cao',
     category: 'Business',
     objectives: [
@@ -190,10 +169,7 @@ export const aiLessons: AILessonType[] = [
       'Customer segmentation và targeting',
       'Sales forecasting và optimization',
     ],
-    prerequisites: [
-      'Hiểu biết cơ bản về marketing',
-      'Kinh nghiệm business operations',
-    ],
+    prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm business operations'],
     tools: [
       'HubSpot AI',
       'Salesforce Einstein',
@@ -227,10 +203,9 @@ export const aiLessons: AILessonType[] = [
   {
     id: 'daily-life',
     title: 'AI cho Cuộc Sống Hàng Ngày',
-    description:
-      'Ứng dụng AI để cải thiện productivity và chất lượng cuộc sống',
+    description: 'Ứng dụng AI để cải thiện productivity và chất lượng cuộc sống',
     duration: '2 giờ',
-  videoUrl: 'https://www.youtube.com/watch?v=M5xe04_4YrU',
+    videoUrl: 'https://www.youtube.com/watch?v=M5xe04_4YrU',
     difficulty: 'Cơ bản',
     category: 'Lifestyle',
     objectives: [
@@ -240,13 +215,7 @@ export const aiLessons: AILessonType[] = [
       'Entertainment và hobbies',
     ],
     prerequisites: ['Smartphone hoặc computer cơ bản'],
-    tools: [
-      'Siri/Google Assistant',
-      'IFTTT',
-      'Mint AI',
-      'MyFitnessPal AI',
-      'Spotify AI DJ',
-    ],
+    tools: ['Siri/Google Assistant', 'IFTTT', 'Mint AI', 'MyFitnessPal AI', 'Spotify AI DJ'],
     exercises: [
       {
         title: 'Setup smart home automation',
@@ -275,7 +244,7 @@ export const aiLessons: AILessonType[] = [
     title: 'AI cho Lập Trình & Phát Triển',
     description: 'Sử dụng AI để coding, debugging và phát triển phần mềm',
     duration: '5 giờ',
-  videoUrl: 'https://www.youtube.com/watch?v=CQqBQVH5PcI',
+    videoUrl: 'https://www.youtube.com/watch?v=CQqBQVH5PcI',
     difficulty: 'Nâng cao',
     category: 'Development',
     objectives: [
@@ -284,17 +253,8 @@ export const aiLessons: AILessonType[] = [
       'Documentation tự động',
       'Testing và optimization',
     ],
-    prerequisites: [
-      'Kiến thức lập trình cơ bản',
-      'Hiểu biết về software development',
-    ],
-    tools: [
-      'GitHub Copilot',
-      'ChatGPT Code Interpreter',
-      'Tabnine',
-      'DeepCode',
-      'Replit AI',
-    ],
+    prerequisites: ['Kiến thức lập trình cơ bản', 'Hiểu biết về software development'],
+    tools: ['GitHub Copilot', 'ChatGPT Code Interpreter', 'Tabnine', 'DeepCode', 'Replit AI'],
     exercises: [
       {
         title: 'Build web app với AI assistance',

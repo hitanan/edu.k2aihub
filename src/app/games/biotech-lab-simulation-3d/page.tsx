@@ -5,7 +5,7 @@ import BiotechLabSimulation3D from '@/components/games/individual/BiotechLabSimu
 export const metadata: Metadata = {
   title: createTitle('Biotech Lab Simulation 3D - Mô Phỏng Phòng Thí Nghiệm Sinh Học 3D'),
   description: createDescription(
-    'Trải nghiệm phòng thí nghiệm sinh học 3D với các thiết bị chuyên nghiệp, thực hiện thí nghiệm CRISPR, phát triển thuốc và nghiên cứu y sinh học trong môi trường ảo an toàn.'
+    'Trải nghiệm phòng thí nghiệm sinh học 3D với các thiết bị chuyên nghiệp, thực hiện thí nghiệm CRISPR, phát triển thuốc và nghiên cứu y sinh học trong môi trường ảo an toàn.',
   ),
   keywords: [
     'biotech lab simulation',
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     'CRISPR',
     'công nghệ sinh học',
     'thí nghiệm ảo',
-    'K2AI'
+    'K2AI',
   ],
   openGraph: {
     title: createTitle('Biotech Lab Simulation 3D - Mô Phỏng Phòng Thí Nghiệm Sinh Học 3D'),
     description: createDescription(
-      'Trải nghiệm phòng thí nghiệm sinh học 3D với các thiết bị chuyên nghiệp, thực hiện thí nghiệm CRISPR, phát triển thuốc và nghiên cứu y sinh học trong môi trường ảo an toàn.'
+      'Trải nghiệm phòng thí nghiệm sinh học 3D với các thiết bị chuyên nghiệp, thực hiện thí nghiệm CRISPR, phát triển thuốc và nghiên cứu y sinh học trong môi trường ảo an toàn.',
     ),
     type: 'website',
     url: 'https://k2aihub.com/games/biotech-lab-simulation-3d',
@@ -38,11 +38,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: createTitle('Biotech Lab Simulation 3D - Mô Phỏng Phòng Thí Nghiệm Sinh Học 3D'),
     description: createDescription(
-      'Trải nghiệm phòng thí nghiệm sinh học 3D với các thiết bị chuyên nghiệp, thực hiện thí nghiệm CRISPR, phát triển thuốc và nghiên cứu y sinh học trong môi trường ảo an toàn.'
+      'Trải nghiệm phòng thí nghiệm sinh học 3D với các thiết bị chuyên nghiệp, thực hiện thí nghiệm CRISPR, phát triển thuốc và nghiên cứu y sinh học trong môi trường ảo an toàn.',
     ),
-    images: [
-      'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&h=600&fit=crop',
-    ],
+    images: ['https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&h=600&fit=crop'],
   },
 };
 
@@ -53,12 +51,10 @@ export default function BiotechLabSimulation3DPage() {
         {/* Game Header */}
         <div className="text-center mb-8">
           <div className="text-6xl mb-4">🧬</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Biotech Lab Simulation 3D
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Biotech Lab Simulation 3D</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Khám phá thế giới công nghệ sinh học qua mô phỏng 3D tương tác. Thực hiện các thí nghiệm CRISPR, 
-            phát triển thuốc và nghiên cứu y sinh học trong môi trường phòng thí nghiệm ảo an toàn và chuyên nghiệp.
+            Khám phá thế giới công nghệ sinh học qua mô phỏng 3D tương tác. Thực hiện các thí nghiệm CRISPR, phát triển
+            thuốc và nghiên cứu y sinh học trong môi trường phòng thí nghiệm ảo an toàn và chuyên nghiệp.
           </p>
         </div>
 

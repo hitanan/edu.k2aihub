@@ -4,8 +4,21 @@ import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 
 export const metadata: Metadata = {
   title: createTitle('Space Station Builder 3D - Game Xây Dựng Trạm Vũ Trụ 3D'),
-  description: createDescription('Game mô phỏng 3D xây dựng trạm vũ trụ với hệ thống sống, năng lượng mặt trời, và khám phá không gian. Học về công nghệ vũ trụ và kỹ thuật hàng không.'),
-  keywords: createKeywords(['space station', 'space exploration', 'orbital mechanics', 'space engineering', '3D simulation', 'solar panels', 'life support', 'spacecraft', 'astronomy', 'space technology']),
+  description: createDescription(
+    'Game mô phỏng 3D xây dựng trạm vũ trụ với hệ thống sống, năng lượng mặt trời, và khám phá không gian. Học về công nghệ vũ trụ và kỹ thuật hàng không.',
+  ),
+  keywords: createKeywords([
+    'space station',
+    'space exploration',
+    'orbital mechanics',
+    'space engineering',
+    '3D simulation',
+    'solar panels',
+    'life support',
+    'spacecraft',
+    'astronomy',
+    'space technology',
+  ]),
   openGraph: {
     title: 'Space Station Builder 3D - Game Xây Dựng Trạm Vũ Trụ 3D',
     description: 'Trải nghiệm 3D tương tác xây dựng trạm vũ trụ với công nghệ tiên tiến và khám phá không gian',

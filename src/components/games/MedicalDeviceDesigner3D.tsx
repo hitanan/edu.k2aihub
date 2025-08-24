@@ -51,7 +51,7 @@ const ANATOMY_PARTS: AnatomyPart[] = [
     color: '#dc2626',
     function: 'Pumps blood throughout the body',
     compatibleDevices: ['pacemaker', 'heart-monitor', 'defibrillator'],
-    isHealthy: true
+    isHealthy: true,
   },
   {
     id: 'femur',
@@ -62,7 +62,7 @@ const ANATOMY_PARTS: AnatomyPart[] = [
     color: '#f3f4f6',
     function: 'Supports body weight and enables leg movement',
     compatibleDevices: ['hip-prosthetic', 'knee-prosthetic'],
-    isHealthy: false
+    isHealthy: false,
   },
   {
     id: 'coronary-artery',
@@ -73,7 +73,7 @@ const ANATOMY_PARTS: AnatomyPart[] = [
     color: '#ef4444',
     function: 'Supplies blood to heart muscle',
     compatibleDevices: ['stent', 'bypass-graft'],
-    isHealthy: false
+    isHealthy: false,
   },
   {
     id: 'skull',
@@ -84,8 +84,8 @@ const ANATOMY_PARTS: AnatomyPart[] = [
     color: '#e5e7eb',
     function: 'Protects brain and supports facial structure',
     compatibleDevices: ['brain-monitor', 'cochlear-implant'],
-    isHealthy: true
-  }
+    isHealthy: true,
+  },
 ];
 
 // Medical devices data
@@ -104,11 +104,11 @@ const MEDICAL_DEVICES: MedicalDevice[] = [
       material: 'Titanium alloy',
       power: '10-year battery life',
       lifespan: '8-10 years',
-      biocompatibility: 'ISO 10993 compliant'
+      biocompatibility: 'ISO 10993 compliant',
     },
     benefits: ['Prevents cardiac arrest', 'Improves quality of life', 'Remote monitoring'],
     risks: ['Infection risk', 'Lead displacement', 'Battery replacement'],
-    isPlaced: false
+    isPlaced: false,
   },
   {
     id: 'coronary-stent',
@@ -124,11 +124,11 @@ const MEDICAL_DEVICES: MedicalDevice[] = [
       material: 'Drug-eluting polymer',
       power: 'No power required',
       lifespan: 'Permanent implant',
-      biocompatibility: 'Biocompatible coating'
+      biocompatibility: 'Biocompatible coating',
     },
     benefits: ['Restores blood flow', 'Reduces chest pain', 'Prevents heart attack'],
     risks: ['Blood clots', 'Restenosis', 'Allergic reaction'],
-    isPlaced: false
+    isPlaced: false,
   },
   {
     id: 'hip-prosthetic',
@@ -144,11 +144,11 @@ const MEDICAL_DEVICES: MedicalDevice[] = [
       material: 'Ceramic and titanium',
       power: 'No power required',
       lifespan: '15-20 years',
-      biocompatibility: 'Osseointegration design'
+      biocompatibility: 'Osseointegration design',
     },
     benefits: ['Pain relief', 'Restored mobility', 'Improved quality of life'],
     risks: ['Dislocation', 'Wear and tear', 'Infection'],
-    isPlaced: false
+    isPlaced: false,
   },
   {
     id: 'cochlear-implant',
@@ -164,12 +164,12 @@ const MEDICAL_DEVICES: MedicalDevice[] = [
       material: 'Biocompatible silicone',
       power: 'External processor battery',
       lifespan: '20+ years internal, 5 years processor',
-      biocompatibility: 'MRI conditional'
+      biocompatibility: 'MRI conditional',
     },
     benefits: ['Hearing restoration', 'Speech development', 'Social integration'],
     risks: ['Surgical complications', 'Device failure', 'Infection'],
-    isPlaced: false
-  }
+    isPlaced: false,
+  },
 ];
 
 // 3D Anatomy Part Component
@@ -180,13 +180,13 @@ const AnatomyPart3D: React.FC<{
 }> = ({ part, isHighlighted, onClick }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   const [hovered, setHovered] = useState(false);
-  
+
   useFrame((state, delta) => {
     if (meshRef.current) {
       const targetOpacity = isHighlighted ? 0.9 : hovered ? 0.7 : 0.6;
       const material = meshRef.current.material as THREE.MeshPhongMaterial;
       material.opacity = THREE.MathUtils.lerp(material.opacity, targetOpacity, delta * 3);
-      
+
       if (isHighlighted) {
         meshRef.current.rotation.y += delta * 0.5;
       }
@@ -210,7 +210,7 @@ const AnatomyPart3D: React.FC<{
 
   return (
     <group position={part.position}>
-      <mesh 
+      <mesh
         ref={meshRef}
         scale={part.scale}
         onClick={onClick}
@@ -218,7 +218,7 @@ const AnatomyPart3D: React.FC<{
         onPointerOut={() => setHovered(false)}
       >
         {getGeometry()}
-        <meshPhongMaterial 
+        <meshPhongMaterial
           color={part.color}
           transparent
           opacity={0.6}
@@ -226,31 +226,23 @@ const AnatomyPart3D: React.FC<{
           emissiveIntensity={isHighlighted ? 0.2 : 0}
         />
       </mesh>
-      
+
       {/* Health indicator */}
       <mesh position={[0.8, 0.8, 0]} scale={0.2}>
         <sphereGeometry args={[0.2, 8, 8]} />
         <meshBasicMaterial color={part.isHealthy ? '#22c55e' : '#ef4444'} />
       </mesh>
-      
+
       {/* Part label */}
-      <Text
-        position={[0, -1, 0]}
-        fontSize={0.2}
-        color="#ffffff"
-        anchorX="center"
-        anchorY="middle"
-      >
+      <Text position={[0, -1, 0]} fontSize={0.2} color="#ffffff" anchorX="center" anchorY="middle">
         {part.nameVN}
       </Text>
-      
+
       {hovered && (
         <Html position={[1.5, 0, 0]} className="pointer-events-none">
           <div className="bg-gray-900/95 backdrop-blur-sm p-2 rounded border border-gray-600 max-w-xs">
             <p className="text-white text-xs">{part.function}</p>
-            <p className="text-gray-400 text-xs mt-1">
-              Status: {part.isHealthy ? 'Healthy' : 'Needs Treatment'}
-            </p>
+            <p className="text-gray-400 text-xs mt-1">Status: {part.isHealthy ? 'Healthy' : 'Needs Treatment'}</p>
           </div>
         </Html>
       )}
@@ -266,7 +258,7 @@ const MedicalDevice3D: React.FC<{
 }> = ({ device, isSelected, onSelect }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   const [hovered, setHovered] = useState(false);
-  
+
   useFrame((state, delta) => {
     if (meshRef.current) {
       if (isSelected && !device.isPlaced) {
@@ -294,7 +286,7 @@ const MedicalDevice3D: React.FC<{
 
   return (
     <group position={device.position}>
-      <mesh 
+      <mesh
         ref={meshRef}
         scale={device.scale}
         onClick={onSelect}
@@ -302,7 +294,7 @@ const MedicalDevice3D: React.FC<{
         onPointerOut={() => setHovered(false)}
       >
         {getDeviceGeometry()}
-        <meshPhongMaterial 
+        <meshPhongMaterial
           color={device.color}
           emissive={device.color}
           emissiveIntensity={isSelected ? 0.3 : hovered ? 0.1 : 0}
@@ -310,7 +302,7 @@ const MedicalDevice3D: React.FC<{
           opacity={device.isPlaced ? 0.9 : 0.8}
         />
       </mesh>
-      
+
       {/* Placement indicator */}
       {device.isPlaced && (
         <mesh position={[0, 0.5, 0]} scale={0.1}>
@@ -318,15 +310,9 @@ const MedicalDevice3D: React.FC<{
           <meshBasicMaterial color="#22c55e" />
         </mesh>
       )}
-      
+
       {/* Device label */}
-      <Text
-        position={[0, -0.4, 0]}
-        fontSize={0.15}
-        color="#ffffff"
-        anchorX="center"
-        anchorY="middle"
-      >
+      <Text position={[0, -0.4, 0]} fontSize={0.15} color="#ffffff" anchorX="center" anchorY="middle">
         {device.nameVN}
       </Text>
     </group>
@@ -345,9 +331,9 @@ const DeviceLibrary: React.FC<{
         <Heart className="w-4 h-4" />
         Medical Devices Library
       </h3>
-      
+
       <div className="space-y-2 max-h-80 overflow-y-auto">
-        {devices.map(device => (
+        {devices.map((device) => (
           <button
             key={device.id}
             onClick={() => onDeviceSelect(device)}
@@ -359,13 +345,11 @@ const DeviceLibrary: React.FC<{
           >
             <div className="flex justify-between items-start mb-1">
               <h4 className="text-white font-medium text-sm">{device.nameVN}</h4>
-              {device.isPlaced && (
-                <CheckCircle className="w-4 h-4 text-green-400" />
-              )}
+              {device.isPlaced && <CheckCircle className="w-4 h-4 text-green-400" />}
             </div>
             <p className="text-gray-400 text-xs mb-2">{device.function}</p>
             <div className="flex flex-wrap gap-1">
-              {device.anatomy.slice(0, 2).map(anat => (
+              {device.anatomy.slice(0, 2).map((anat) => (
                 <span key={anat} className="bg-red-600/60 text-white px-2 py-1 rounded text-xs">
                   {anat}
                 </span>
@@ -392,13 +376,13 @@ const DeviceDetailsPanel: React.FC<{
         <Activity className="w-5 h-5" />
         {device.nameVN}
       </h2>
-      
+
       <div className="space-y-4 text-sm">
         <div>
           <h3 className="text-blue-400 font-semibold mb-2">Function</h3>
           <p className="text-gray-300">{device.function}</p>
         </div>
-        
+
         <div>
           <h3 className="text-green-400 font-semibold mb-2">Specifications</h3>
           <div className="space-y-1 text-xs">
@@ -416,11 +400,11 @@ const DeviceDetailsPanel: React.FC<{
             </div>
           </div>
         </div>
-        
+
         <div>
           <h3 className="text-yellow-400 font-semibold mb-2">Benefits</h3>
           <ul className="space-y-1">
-            {device.benefits.map(benefit => (
+            {device.benefits.map((benefit) => (
               <li key={benefit} className="text-gray-300 text-xs flex items-start gap-2">
                 <span className="text-green-400">•</span>
                 {benefit}
@@ -428,11 +412,11 @@ const DeviceDetailsPanel: React.FC<{
             ))}
           </ul>
         </div>
-        
+
         <div>
           <h3 className="text-red-400 font-semibold mb-2">Risks</h3>
           <ul className="space-y-1">
-            {device.risks.map(risk => (
+            {device.risks.map((risk) => (
               <li key={risk} className="text-gray-300 text-xs flex items-start gap-2">
                 <span className="text-red-400">•</span>
                 {risk}
@@ -440,7 +424,7 @@ const DeviceDetailsPanel: React.FC<{
             ))}
           </ul>
         </div>
-        
+
         <button
           onClick={onPlace}
           disabled={!canPlace || device.isPlaced}
@@ -448,8 +432,8 @@ const DeviceDetailsPanel: React.FC<{
             device.isPlaced
               ? 'bg-green-600 text-white cursor-not-allowed'
               : canPlace
-              ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer'
-              : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                ? 'bg-blue-600 hover:bg-blue-700 text-white cursor-pointer'
+                : 'bg-gray-600 text-gray-400 cursor-not-allowed'
           }`}
         >
           {device.isPlaced ? (
@@ -492,15 +476,13 @@ export default function MedicalDeviceDesigner3D() {
 
   const handlePlaceDevice = () => {
     if (!selectedDevice || !canPlaceDevice()) return;
-    
-    setDevices(prev => prev.map(device => 
-      device.id === selectedDevice.id 
-        ? { ...device, isPlaced: true }
-        : device
-    ));
-    
+
+    setDevices((prev) =>
+      prev.map((device) => (device.id === selectedDevice.id ? { ...device, isPlaced: true } : device)),
+    );
+
     // Update selected device
-    setSelectedDevice(prev => prev ? { ...prev, isPlaced: true } : null);
+    setSelectedDevice((prev) => (prev ? { ...prev, isPlaced: true } : null));
   };
 
   const resetDesign = () => {
@@ -509,32 +491,22 @@ export default function MedicalDeviceDesigner3D() {
     setSelectedAnatomy(null);
   };
 
-  const placedDevicesCount = devices.filter(d => d.isPlaced).length;
+  const placedDevicesCount = devices.filter((d) => d.isPlaced).length;
   const isCompleted = placedDevicesCount === devices.length;
 
   return (
     <div className="w-full h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
-      <Canvas
-        camera={{ position: [8, 4, 8], fov: 60 }}
-        gl={{ antialias: true }}
-        style={{ background: 'transparent' }}
-      >
+      <Canvas camera={{ position: [8, 4, 8], fov: 60 }} gl={{ antialias: true }} style={{ background: 'transparent' }}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.4} />
           <directionalLight position={[10, 10, 10]} intensity={0.8} />
           <pointLight position={[5, 5, 5]} intensity={0.6} color="#ffffff" />
           <pointLight position={[-5, 5, -5]} intensity={0.4} color="#3b82f6" />
-          
-          <OrbitControls 
-            enablePan={true}
-            enableZoom={true}
-            enableRotate={true}
-            maxDistance={20}
-            minDistance={3}
-          />
-          
+
+          <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} maxDistance={20} minDistance={3} />
+
           {/* Human anatomy */}
-          {anatomyParts.map(part => (
+          {anatomyParts.map((part) => (
             <AnatomyPart3D
               key={part.id}
               part={part}
@@ -542,9 +514,9 @@ export default function MedicalDeviceDesigner3D() {
               onClick={() => handleAnatomySelect(part)}
             />
           ))}
-          
+
           {/* Medical devices */}
-          {devices.map(device => (
+          {devices.map((device) => (
             <MedicalDevice3D
               key={device.id}
               device={device}
@@ -552,28 +524,20 @@ export default function MedicalDeviceDesigner3D() {
               onSelect={() => handleDeviceSelect(device)}
             />
           ))}
-          
+
           {/* Floor grid */}
           <gridHelper args={[20, 20, '#444444', '#333333']} position={[0, -3, 0]} />
         </Suspense>
       </Canvas>
-      
+
       {/* Device Library */}
       {showLibrary && (
-        <DeviceLibrary
-          devices={devices}
-          selectedDevice={selectedDevice}
-          onDeviceSelect={handleDeviceSelect}
-        />
+        <DeviceLibrary devices={devices} selectedDevice={selectedDevice} onDeviceSelect={handleDeviceSelect} />
       )}
-      
+
       {/* Device Details Panel */}
-      <DeviceDetailsPanel
-        device={selectedDevice}
-        onPlace={handlePlaceDevice}
-        canPlace={canPlaceDevice()}
-      />
-      
+      <DeviceDetailsPanel device={selectedDevice} onPlace={handlePlaceDevice} canPlace={canPlaceDevice()} />
+
       {/* Bottom Controls */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-4">
         <button
@@ -583,7 +547,7 @@ export default function MedicalDeviceDesigner3D() {
           <RotateCcw className="w-4 h-4" />
           Reset Design
         </button>
-        
+
         <button
           onClick={() => setShowLibrary(!showLibrary)}
           className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center gap-2 transition-colors"
@@ -591,19 +555,22 @@ export default function MedicalDeviceDesigner3D() {
           <Search className="w-4 h-4" />
           {showLibrary ? 'Hide' : 'Show'} Library
         </button>
-        
-        <div className={`bg-gray-900/90 backdrop-blur-sm px-4 py-2 rounded-lg border ${isCompleted ? 'border-green-500' : 'border-gray-700'}`}>
+
+        <div
+          className={`bg-gray-900/90 backdrop-blur-sm px-4 py-2 rounded-lg border ${isCompleted ? 'border-green-500' : 'border-gray-700'}`}
+        >
           <span className={`text-sm ${isCompleted ? 'text-green-400 font-semibold' : 'text-gray-300'}`}>
             {isCompleted ? '🎉 Design Complete!' : `Placed Devices: ${placedDevicesCount}/${devices.length}`}
           </span>
         </div>
       </div>
-      
+
       {/* Instructions */}
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center">
         <div className="bg-gray-900/90 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-700">
           <p className="text-gray-300 text-sm">
-            Click on anatomy parts and devices to select • Choose compatible combinations • Place devices to help patients
+            Click on anatomy parts and devices to select • Choose compatible combinations • Place devices to help
+            patients
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { STEMExperimentLabGameData } from '@/data/games/gameData';
+import { STEMExperimentLabGameData } from '@/data/gameData';
 
 interface STEMExperimentGameProps {
   gameData: STEMExperimentLabGameData;
@@ -8,12 +8,7 @@ interface STEMExperimentGameProps {
   onRestart: () => void;
 }
 
-export default function STEMExperimentGame({
-  gameData,
-  onComplete,
-  timeLeft,
-  onRestart,
-}: STEMExperimentGameProps) {
+export default function STEMExperimentGame({ gameData, onComplete, timeLeft, onRestart }: STEMExperimentGameProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [experimentComplete, setExperimentComplete] = useState(false);
   const [score, setScore] = useState(0);
@@ -52,10 +47,7 @@ export default function STEMExperimentGame({
           <h4 className="text-white font-medium mb-2">Vật liệu cần thiết:</h4>
           <div className="flex flex-wrap gap-2">
             {experiment.materials.map((material: string, index: number) => (
-              <span
-                key={index}
-                className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm"
-              >
+              <span key={index} className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">
                 {material}
               </span>
             ))}
@@ -82,21 +74,15 @@ export default function STEMExperimentGame({
           </div>
 
           <div className="mb-6">
-            <h4 className="text-white font-medium mb-2">
-              Bước {currentStep + 1}:
-            </h4>
-            <p className="text-gray-300 text-lg">
-              {experiment.procedure[currentStep]}
-            </p>
+            <h4 className="text-white font-medium mb-2">Bước {currentStep + 1}:</h4>
+            <p className="text-gray-300 text-lg">{experiment.procedure[currentStep]}</p>
           </div>
 
           <button
             onClick={nextStep}
             className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-xl font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-200"
           >
-            {currentStep < experiment.procedure.length - 1
-              ? 'Bước tiếp theo'
-              : 'Hoàn thành thí nghiệm'}
+            {currentStep < experiment.procedure.length - 1 ? 'Bước tiếp theo' : 'Hoàn thành thí nghiệm'}
           </button>
         </div>
       ) : (
@@ -110,9 +96,7 @@ export default function STEMExperimentGame({
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-3">
-              {experiment.quiz.question}
-            </h4>
+            <h4 className="text-white font-medium mb-3">{experiment.quiz.question}</h4>
             <div className="space-y-3">
               {experiment.quiz.options.map((option: string, index: number) => (
                 <button

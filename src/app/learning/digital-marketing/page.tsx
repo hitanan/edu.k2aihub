@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import {
-  digitalMarketingLessons,
-  type DigitalMarketingLesson,
-} from '@/data/digital-marketing';
+import { digitalMarketingLessons, type DigitalMarketingLesson } from '@/data/digital-marketing';
 import { K2Module } from '@/data/moduleNavigation';
 import { createTitle, createDescription } from '@/utils/seo';
 
@@ -49,16 +44,12 @@ export const metadata: Metadata = {
     description: createDescription(
       'Khóa học Digital Marketing toàn diện từ cơ bản đến nâng cao, bao gồm Creator Economy, Social Media Marketing, Content Marketing và Analytics',
     ),
-    images: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
-    ],
+    images: ['https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop'],
   },
 };
 
 // Convert DigitalMarketingLesson to BaseLessonData interface
-function convertToLesson(
-  digitalMarketingLesson: DigitalMarketingLesson,
-): BaseLessonData {
+function convertToLesson(digitalMarketingLesson: DigitalMarketingLesson): BaseLessonData {
   return {
     id: digitalMarketingLesson.id,
     title: digitalMarketingLesson.title,
@@ -69,10 +60,7 @@ function convertToLesson(
     imageUrl: digitalMarketingLesson.imageUrl || '/default-lesson.jpg',
     videoUrl: digitalMarketingLesson.videoUrl,
     objectives: digitalMarketingLesson.objectives,
-    prerequisites: digitalMarketingLesson.prerequisites || [
-      'Basic internet knowledge',
-      'Social media familiarity',
-    ],
+    prerequisites: digitalMarketingLesson.prerequisites || ['Basic internet knowledge', 'Social media familiarity'],
     exercises:
       digitalMarketingLesson.exercises?.map((ex) => ({
         title: ex.title,
@@ -84,12 +72,7 @@ function convertToLesson(
         solution: ex.solution || 'Follow the marketing best practices',
       })) || [],
     resources: digitalMarketingLesson.resources || [],
-    tools: digitalMarketingLesson.tools || [
-      'Facebook Ads',
-      'Google Analytics',
-      'Canva',
-      'Hootsuite',
-    ],
+    tools: digitalMarketingLesson.tools || ['Facebook Ads', 'Google Analytics', 'Canva', 'Hootsuite'],
     realWorldApplications: digitalMarketingLesson.realWorldApplications || [],
     caseStudies:
       digitalMarketingLesson.caseStudies?.map((cs) => ({
@@ -119,8 +102,7 @@ export default function DigitalMarketingPage() {
     primaryColor: 'blue',
     gradientColors: 'from-slate-900 via-blue-900 to-purple-900',
     basePath: '/learning/digital-marketing',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
     features: [
       'Chiến lược Digital Marketing toàn diện',
       'Social Media Marketing chuyên nghiệp',
@@ -199,62 +181,31 @@ export default function DigitalMarketingPage() {
       {
         title: 'Content Creation',
         icon: '🎨',
-        items: [
-          'Visual Design',
-          'Video Production',
-          'Copywriting',
-          'Brand Storytelling',
-        ],
+        items: ['Visual Design', 'Video Production', 'Copywriting', 'Brand Storytelling'],
       },
       {
         title: 'Analytics & Optimization',
         icon: '📊',
-        items: [
-          'Google Analytics',
-          'A/B Testing',
-          'ROI Measurement',
-          'Performance Tracking',
-        ],
+        items: ['Google Analytics', 'A/B Testing', 'ROI Measurement', 'Performance Tracking'],
       },
       {
         title: 'Creator Economy',
         icon: '💰',
-        items: [
-          'Monetization Strategies',
-          'Brand Partnerships',
-          'Affiliate Marketing',
-          'Product Launches',
-        ],
+        items: ['Monetization Strategies', 'Brand Partnerships', 'Affiliate Marketing', 'Product Launches'],
       },
       {
         title: 'E-commerce Integration',
         icon: '🛒',
-        items: [
-          'Online Store Setup',
-          'Payment Processing',
-          'Customer Journey',
-          'Conversion Optimization',
-        ],
+        items: ['Online Store Setup', 'Payment Processing', 'Customer Journey', 'Conversion Optimization'],
       },
       {
         title: 'Automation Tools',
         icon: '🤖',
-        items: [
-          'Email Marketing',
-          'CRM Systems',
-          'Chatbots',
-          'Marketing Funnels',
-        ],
+        items: ['Email Marketing', 'CRM Systems', 'Chatbots', 'Marketing Funnels'],
       },
     ],
-    relatedModules: [
-      K2Module.AIArtCreativeTech,
-      K2Module.FinancialLiteracy,
-      K2Module.GameDevelopment,
-    ],
+    relatedModules: [K2Module.AIArtCreativeTech, K2Module.FinancialLiteracy, K2Module.GameDevelopment],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

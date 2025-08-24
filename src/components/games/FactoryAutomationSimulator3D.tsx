@@ -719,24 +719,37 @@ export default function FactoryAutomationSimulator3D() {
               <h2 className="text-3xl font-bold text-white mb-2">🏭 Factory Automation Simulator</h2>
               <p className="text-gray-300">Chào mừng đến với hệ thống mô phỏng nhà máy tự động hóa!</p>
             </div>
-            
+
             <div className="space-y-4 text-gray-300 mb-6">
               <div>
                 <h3 className="text-lg font-semibold text-white mb-2">📖 Cốt truyện:</h3>
-                <p>Bạn là kỹ sư trưởng của một nhà máy hiện đại. Nhiệm vụ của bạn là thiết kế và vận hành hệ thống sản xuất tự động để tối ưu hóa hiệu suất và chất lượng sản phẩm.</p>
+                <p>
+                  Bạn là kỹ sư trưởng của một nhà máy hiện đại. Nhiệm vụ của bạn là thiết kế và vận hành hệ thống sản
+                  xuất tự động để tối ưu hóa hiệu suất và chất lượng sản phẩm.
+                </p>
               </div>
-              
+
               <div>
                 <h3 className="text-lg font-semibold text-white mb-2">🎮 Cách chơi:</h3>
                 <ul className="list-disc list-inside space-y-1">
-                  <li><strong>Chọn kịch bản:</strong> Chọn loại nhà máy (Electronics, Automotive, Food)</li>
-                  <li><strong>Điều khiển máy móc:</strong> Click vào máy móc để xem thông tin và điều chỉnh</li>
-                  <li><strong>Bắt đầu sản xuất:</strong> Nhấn &ldquo;Start Production&rdquo; để khởi động dây chuyền</li>
-                  <li><strong>Theo dõi chỉ số:</strong> Giám sát hiệu suất, chất lượng và tỷ lệ lỗi</li>
-                  <li><strong>Tối ưu hóa:</strong> Điều chỉnh tốc độ và cấu hình để đạt hiệu quả tối đa</li>
+                  <li>
+                    <strong>Chọn kịch bản:</strong> Chọn loại nhà máy (Electronics, Automotive, Food)
+                  </li>
+                  <li>
+                    <strong>Điều khiển máy móc:</strong> Click vào máy móc để xem thông tin và điều chỉnh
+                  </li>
+                  <li>
+                    <strong>Bắt đầu sản xuất:</strong> Nhấn &ldquo;Start Production&rdquo; để khởi động dây chuyền
+                  </li>
+                  <li>
+                    <strong>Theo dõi chỉ số:</strong> Giám sát hiệu suất, chất lượng và tỷ lệ lỗi
+                  </li>
+                  <li>
+                    <strong>Tối ưu hóa:</strong> Điều chỉnh tốc độ và cấu hình để đạt hiệu quả tối đa
+                  </li>
                 </ul>
               </div>
-              
+
               <div>
                 <h3 className="text-lg font-semibold text-white mb-2">🎯 Mục tiêu:</h3>
                 <ul className="list-disc list-inside space-y-1">
@@ -747,7 +760,7 @@ export default function FactoryAutomationSimulator3D() {
                 </ul>
               </div>
             </div>
-            
+
             <div className="flex justify-center gap-4">
               <button
                 onClick={() => setShowInstructions(false)}

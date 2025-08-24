@@ -1,4 +1,4 @@
-import { BaseLessonData } from "@/components/learning/LessonPageTemplate";
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 export interface DigitalMarketingLesson extends BaseLessonData {
   videoUrl: string;
@@ -703,9 +703,12 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       {
         title: 'Grab tripled driver acquisition với targeted ads',
         organization: 'Grab Vietnam',
-        problem: 'Scale driver acquisition trong competitive ride-hailing market với thách thức về cost efficiency và quality của drivers',
-        solution: 'Hyper-targeted Facebook và Google ads focusing trên specific demographics và locations với advanced audience segmentation và creative testing',
-        impact: '300% increase in qualified driver signups, 40% lower cost per acquisition, improved driver retention rates',
+        problem:
+          'Scale driver acquisition trong competitive ride-hailing market với thách thức về cost efficiency và quality của drivers',
+        solution:
+          'Hyper-targeted Facebook và Google ads focusing trên specific demographics và locations với advanced audience segmentation và creative testing',
+        impact:
+          '300% increase in qualified driver signups, 40% lower cost per acquisition, improved driver retention rates',
         innovations: [
           'Micro-targeting based on location và demographics dramatically improves performance',
           'Creative testing essential cho ad fatigue prevention',
@@ -871,9 +874,12 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       {
         title: 'Haravan 5x email revenue với personalization',
         organization: 'Haravan',
-        problem: 'Improve email marketing ROI cho e-commerce platform users với challenges về low engagement và conversion rates',
-        solution: 'Implemented advanced segmentation và personalized product recommendations trong email campaigns với behavioral targeting',
-        impact: '500% increase in email revenue, 40% higher open rates, 60% better click-through rates, improved customer retention',
+        problem:
+          'Improve email marketing ROI cho e-commerce platform users với challenges về low engagement và conversion rates',
+        solution:
+          'Implemented advanced segmentation và personalized product recommendations trong email campaigns với behavioral targeting',
+        impact:
+          '500% increase in email revenue, 40% higher open rates, 60% better click-through rates, improved customer retention',
         innovations: [
           'Personalized product recommendations dramatically increase email revenue',
           'Behavioral segmentation outperforms demographic segmentation',
@@ -1091,9 +1097,12 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       {
         title: 'VinFast data-driven marketing optimization',
         organization: 'VinFast',
-        problem: 'Optimize marketing spend across channels cho electric vehicle launch campaign với challenge về ROI measurement và channel attribution',
-        solution: 'Implemented advanced attribution modeling và real-time performance tracking across all digital channels với sophisticated data analytics platform',
-        impact: '35% improvement in marketing efficiency, $2M cost savings, 50% better lead quality, enhanced customer acquisition strategy',
+        problem:
+          'Optimize marketing spend across channels cho electric vehicle launch campaign với challenge về ROI measurement và channel attribution',
+        solution:
+          'Implemented advanced attribution modeling và real-time performance tracking across all digital channels với sophisticated data analytics platform',
+        impact:
+          '35% improvement in marketing efficiency, $2M cost savings, 50% better lead quality, enhanced customer acquisition strategy',
         innovations: [
           'Multi-touch attribution reveals true channel performance',
           'Real-time optimization prevents budget waste',
@@ -1362,8 +1371,10 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       {
         title: 'Khoai Lang Thang built media empire từ travel content',
         organization: 'Khoai Lang Thang',
-        problem: 'Monetize travel content creation trong competitive Vietnamese YouTube market với challenges về sustainable revenue và audience engagement',
-        solution: 'Diversified revenue streams: YouTube ads, brand partnerships, merchandise, tourism services với focus trên authentic storytelling',
+        problem:
+          'Monetize travel content creation trong competitive Vietnamese YouTube market với challenges về sustainable revenue và audience engagement',
+        solution:
+          'Diversified revenue streams: YouTube ads, brand partnerships, merchandise, tourism services với focus trên authentic storytelling',
         impact: '1M+ YouTube subscribers, $50K+ monthly revenue, successful tourism business, strong brand recognition',
         innovations: [
           'Authentic storytelling resonates strongly với Vietnamese audience',

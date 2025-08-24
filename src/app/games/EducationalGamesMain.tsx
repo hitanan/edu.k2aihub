@@ -26,8 +26,7 @@ export default function EducationalGamesMain() {
   }, []);
 
   // Filter and order games (reverse order to show newest 3D games first)
-  const filteredGames = EDUCATIONAL_GAMES_DATA
-    .slice()
+  const filteredGames = EDUCATIONAL_GAMES_DATA.slice()
     .reverse() // Reverse to show games at bottom of array first (newest first)
     .filter((game) => {
       const matchesSearch =

@@ -9,8 +9,8 @@ import {
   AIEthicsDilemmaGameData,
   QuantumBasicsGameData,
   MathPuzzleGameData,
-} from '@/data/games/gameData';
-import { GAME_PROGRESS } from '@/data/gameData';
+  GAME_PROGRESS,
+} from '@/data/gameData';
 import { EducationalGame } from '@/data/educationalGames';
 import GameCompletionCelebration from './GameCompletionCelebration';
 import {
@@ -337,7 +337,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'aerospace-mission-control':
         return <AerospaceMissionControlGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'virtual-chemistry-lab-3d':
-        return <VirtualChemistryLab3D onComplete={(success, score) => endGame(success, score)}  />;
+        return <VirtualChemistryLab3D onComplete={(success, score) => endGame(success, score)} />;
       case 'space-exploration-3d':
         return <SpaceExploration3DGame onComplete={(success, score) => endGame(success, score)} timeLeft={timeLeft} />;
       default:

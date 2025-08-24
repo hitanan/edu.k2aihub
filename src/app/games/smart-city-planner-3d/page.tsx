@@ -5,7 +5,7 @@ import SmartCityPlanner3D from '@/components/games/SmartCityPlanner3D';
 export const metadata: Metadata = {
   title: createTitle('Smart City Planner 3D - Quy hoạch Thành phố Thông minh'),
   description: createDescription(
-    'Thiết kế và quy hoạch thành phố thông minh với công nghệ IoT, giao thông xanh và hạ tầng bền vững trong môi trường 3D.'
+    'Thiết kế và quy hoạch thành phố thông minh với công nghệ IoT, giao thông xanh và hạ tầng bền vững trong môi trường 3D.',
   ),
   keywords: ['smart city', '3d planning', 'urban development', 'quy hoạch đô thị', 'thành phố thông minh', 'k2aihub'],
   openGraph: {

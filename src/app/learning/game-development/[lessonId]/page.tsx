@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  const lesson = gameDevLessons.find(l => l.id === lessonId);
+  const lesson = gameDevLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     return {
@@ -25,8 +25,9 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: lesson.title,
     description: lesson.description,
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+    openGraph: {
+      locale: 'vi_VN',
+      siteName: 'K2AiHub - Nền tảng học tập thông minh',
 
       title: lesson.title,
       description: lesson.description,
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: PageProps) {
           width: 1200,
           height: 630,
           alt: lesson.title,
-        }
+        },
       ],
     },
     twitter: {
@@ -50,7 +51,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function GameDevelopmentLessonPage({ params }: PageProps) {
   const { lessonId } = await params;
-  const lesson = gameDevLessons.find(l => l.id === lessonId);
+  const lesson = gameDevLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     notFound();
@@ -61,11 +62,17 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
       <div className="container mx-auto px-4 py-8">
         {/* Navigation */}
         <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-8">
-          <Link href="/" className="hover:text-purple-600">Home</Link>
+          <Link href="/" className="hover:text-purple-600">
+            Home
+          </Link>
           <span>/</span>
-          <Link href="/learning" className="hover:text-purple-600">Learning</Link>
+          <Link href="/learning" className="hover:text-purple-600">
+            Learning
+          </Link>
           <span>/</span>
-          <Link href="/learning/game-development" className="hover:text-purple-600">Game Development</Link>
+          <Link href="/learning/game-development" className="hover:text-purple-600">
+            Game Development
+          </Link>
           <span>/</span>
           <span className="text-purple-600">{lesson.title}</span>
         </nav>
@@ -94,43 +101,63 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
           <div className="bg-white p-6 rounded-xl shadow-lg">
             <div className="flex items-center mb-2">
               <svg className="w-5 h-5 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
               </svg>
               <span className="font-semibold text-gray-800">Duration</span>
             </div>
             <p className="text-gray-600">{lesson.duration}</p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-xl shadow-lg">
             <div className="flex items-center mb-2">
               <svg className="w-5 h-5 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                />
               </svg>
               <span className="font-semibold text-gray-800">Difficulty</span>
             </div>
             <p className="text-gray-600">{lesson.difficulty}</p>
           </div>
-          
+
           <div className="bg-white p-6 rounded-xl shadow-lg">
             <div className="flex items-center mb-2">
               <svg className="w-5 h-5 text-pink-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m-9-2h10a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2a2 2 0 012-2z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m-9-2h10a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2a2 2 0 012-2z"
+                />
               </svg>
               <span className="font-semibold text-gray-800">Game Type</span>
             </div>
             <div className="flex flex-wrap gap-1 mb-4">
-                {lesson.gameGenres.map((topic, topicIndex) => (
-                    <span key={topicIndex} className="bg-purple-100 text-gray-600 text-xs px-2 py-1 rounded-full">
-                    {topic}
-                    </span>
-                ))}
+              {lesson.gameGenres.map((topic, topicIndex) => (
+                <span key={topicIndex} className="bg-purple-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+                  {topic}
+                </span>
+              ))}
             </div>
           </div>
-          
+
           <div className="bg-white p-6 rounded-xl shadow-lg">
             <div className="flex items-center mb-2">
               <svg className="w-5 h-5 text-violet-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
               </svg>
               <span className="font-semibold text-gray-800">Applications</span>
             </div>
@@ -178,9 +205,9 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
                     {exercise.difficulty}
                   </span>
                 </div>
-                
+
                 <p className="text-gray-600 mb-6">{exercise.description}</p>
-                
+
                 <div className="mb-6">
                   <h3 className="font-semibold text-gray-800 mb-3">Requirements:</h3>
                   <ul className="space-y-2">
@@ -196,9 +223,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
                 <div className="mb-6">
                   <h3 className="font-semibold text-gray-800 mb-3">Implementation Guide:</h3>
                   <div className="bg-gray-50 rounded-lg p-4">
-                    <pre className="whitespace-pre-wrap text-sm text-gray-700 overflow-x-auto">
-                      {exercise.solution}
-                    </pre>
+                    <pre className="whitespace-pre-wrap text-sm text-gray-700 overflow-x-auto">{exercise.solution}</pre>
                   </div>
                 </div>
 
@@ -213,25 +238,25 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
             {lesson.caseStudies.map((caseStudy, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Case Study: {caseStudy.title}</h2>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2">Studio</h3>
                     <p className="text-gray-600 mb-4">{caseStudy.studio}</p>
-                    
+
                     <h3 className="font-semibold text-gray-800 mb-2">Challenge</h3>
                     <p className="text-gray-600 mb-4">{caseStudy.challenge}</p>
                   </div>
-                  
+
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2">Solution</h3>
                     <p className="text-gray-600 mb-4">{caseStudy.solution}</p>
-                    
+
                     <h3 className="font-semibold text-gray-800 mb-2">Results</h3>
                     <p className="text-gray-600">{caseStudy.results}</p>
                   </div>
                 </div>
-                
+
                 <div className="mt-6 pt-6 border-t">
                   <h3 className="font-semibold text-gray-800 mb-3">Key Insights</h3>
                   <ul className="space-y-2">
@@ -292,7 +317,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
               <h3 className="text-xl font-bold text-gray-800 mb-4">Additional Resources</h3>
               <div className="space-y-3">
                 {lesson.resources.map((resource, index) => (
-                  <a 
+                  <a
                     key={index}
                     href={resource.url}
                     target="_blank"

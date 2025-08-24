@@ -144,8 +144,7 @@ export const useGameStore = create<GameStore>()(
             lastSaved: Date.now(),
           },
         })),
-      resetSpaceStation: () =>
-        set({ spaceStation: { ...initialSpaceStationState, lastSaved: Date.now() } }),
+      resetSpaceStation: () => set({ spaceStation: { ...initialSpaceStationState, lastSaved: Date.now() } }),
 
       // Smart City Planner
       smartCity: initialSmartCityState,
@@ -157,8 +156,7 @@ export const useGameStore = create<GameStore>()(
             lastSaved: Date.now(),
           },
         })),
-      resetSmartCity: () =>
-        set({ smartCity: { ...initialSmartCityState, lastSaved: Date.now() } }),
+      resetSmartCity: () => set({ smartCity: { ...initialSmartCityState, lastSaved: Date.now() } }),
 
       // Drone Crop Monitoring
       droneGame: initialDroneGameState,
@@ -170,8 +168,7 @@ export const useGameStore = create<GameStore>()(
             lastSaved: Date.now(),
           },
         })),
-      resetDroneGame: () =>
-        set({ droneGame: { ...initialDroneGameState, lastSaved: Date.now() } }),
+      resetDroneGame: () => set({ droneGame: { ...initialDroneGameState, lastSaved: Date.now() } }),
 
       // Vietnamese Heritage Explorer
       vietnameseHeritage: initialVietnameseHeritageState,
@@ -203,7 +200,7 @@ export const useGameStore = create<GameStore>()(
           { id: 'drone-game', lastSaved: state.droneGame.lastSaved },
           { id: 'vietnamese-heritage', lastSaved: state.vietnameseHeritage.lastSaved },
         ];
-        
+
         games.sort((a, b) => b.lastSaved - a.lastSaved);
         return games[0]?.id || null;
       },
@@ -242,6 +239,6 @@ export const useGameStore = create<GameStore>()(
         droneGame: state.droneGame,
         vietnameseHeritage: state.vietnameseHeritage,
       }),
-    }
-  )
+    },
+  ),
 );
