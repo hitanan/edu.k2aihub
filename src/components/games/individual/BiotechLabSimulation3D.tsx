@@ -502,36 +502,55 @@ function Beaker3D({
 }) {
   return (
     <group position={position}>
-      {/* Clickable area at the top - better for user interaction */}
-      <Cylinder 
-        args={[0.1, 0.1, 0.05]} 
-        position={[0, 0.22, 0]}
-        onClick={onClick}
+      {/* Main clickable wrapper - most important fix */}
+      <Box 
+        args={[0.25, 0.35, 0.25]} 
+        position={[0, 0.125, 0]}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick();
+        }}
         onPointerOver={(e) => {
           e.stopPropagation();
           document.body.style.cursor = 'pointer';
         }}
-        onPointerOut={() => {
+        onPointerOut={(e) => {
+          e.stopPropagation();
           document.body.style.cursor = 'default';
         }}
       >
         <meshStandardMaterial transparent opacity={0} />
-      </Cylinder>
+      </Box>
 
-      {/* Glass beaker */}
+      {/* Glass beaker body - Visual only, non-interactive */}
       <Cylinder args={[0.08, 0.1, 0.25]} position={[0, 0.125, 0]}>
         <meshStandardMaterial color="#63B3ED" transparent opacity={0.7} />
       </Cylinder>
-      {/* Liquid inside */}
+      
+      {/* Liquid inside - Visual only, non-interactive */}
       <Cylinder args={[0.075, 0.095, 0.15]} position={[0, 0.075, 0]}>
         <meshStandardMaterial color={selected ? '#4299E1' : '#90CDF4'} transparent opacity={0.8} />
       </Cylinder>
-      {/* Graduations */}
+      
+      {/* Graduations - Visual elements only */}
       {[0.05, 0.1, 0.15, 0.2].map((height, index) => (
         <Box key={index} args={[0.12, 0.002, 0.002]} position={[0, height, 0]}>
           <meshStandardMaterial color="#2D3748" />
         </Box>
       ))}
+      
+      {/* Beaker rim - Visual only */}
+      <Cylinder args={[0.1, 0.1, 0.02]} position={[0, 0.24, 0]}>
+        <meshStandardMaterial color="#63B3ED" transparent opacity={0.9} />
+      </Cylinder>
+      
+      {/* Selection indicator */}
+      {selected && (
+        <Box args={[0.3, 0.4, 0.3]} position={[0, 0.125, 0]}>
+          <meshStandardMaterial color="#4299E1" transparent opacity={0.2} emissive="#4299E1" emissiveIntensity={0.1} />
+        </Box>
+      )}
+      
       {/* Bubbling effect when selected */}
       {selected && (
         <>

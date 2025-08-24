@@ -25,18 +25,21 @@ export default function EducationalGamesMain() {
     return () => clearTimeout(loadingTimer);
   }, []);
 
-  // Filter games
-  const filteredGames = EDUCATIONAL_GAMES_DATA.filter((game) => {
-    const matchesSearch =
-      game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      game.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      game.skills.some((skill) => skill.toLowerCase().includes(searchTerm.toLowerCase()));
+  // Filter and order games (reverse order to show newest 3D games first)
+  const filteredGames = EDUCATIONAL_GAMES_DATA
+    .slice()
+    .reverse() // Reverse to show games at bottom of array first (newest first)
+    .filter((game) => {
+      const matchesSearch =
+        game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        game.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        game.skills.some((skill) => skill.toLowerCase().includes(searchTerm.toLowerCase()));
 
-    const matchesCategory = selectedCategory === 'all' || game.category === selectedCategory;
-    const matchesDifficulty = selectedDifficulty === 'all' || game.difficulty === selectedDifficulty;
+      const matchesCategory = selectedCategory === 'all' || game.category === selectedCategory;
+      const matchesDifficulty = selectedDifficulty === 'all' || game.difficulty === selectedDifficulty;
 
-    return matchesSearch && matchesCategory && matchesDifficulty;
-  });
+      return matchesSearch && matchesCategory && matchesDifficulty;
+    });
 
   // Statistics
   const totalGames = EDUCATIONAL_GAMES_DATA.length;

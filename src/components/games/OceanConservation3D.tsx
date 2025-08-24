@@ -245,27 +245,94 @@ function MarineAnimal({
       default:
         return (
           <group>
-            {/* Tropical fish body - colorful and compressed */}
-            <mesh scale={[1.2, 1.4, 0.6]}>
-              <sphereGeometry args={[1, 16, 12]} />
-              <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+            {/* Tropical fish body - colorful and compressed with enhanced realism */}
+            <mesh scale={[1.4, 1.6, 0.7]}>
+              <sphereGeometry args={[1, 24, 18]} />
+              <meshStandardMaterial
+                color={species.color}
+                transparent
+                opacity={0.2 + (health / 100) * 0.8}
+                roughness={0.3}
+                metalness={0.1}
+              />
             </mesh>
-            {/* Stripes for tropical fish */}
-            {[0, 0.3, 0.6].map((offset, index) => (
-              <mesh key={index} position={[offset - 0.3, 0, 0]} scale={[0.1, 1.6, 0.8]}>
-                <cylinderGeometry args={[0.5, 0.5, 0.1]} />
-                <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.3 + (health / 100) * 0.7} />
+
+            {/* Eyes with pupils */}
+            <mesh position={[1.2, 0.6, 0.4]} scale={[0.2, 0.2, 0.1]}>
+              <sphereGeometry args={[1, 12, 8]} />
+              <meshStandardMaterial color="#FFFFFF" />
+            </mesh>
+            <mesh position={[1.25, 0.62, 0.42]} scale={[0.12, 0.12, 0.06]}>
+              <sphereGeometry args={[1, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+            <mesh position={[1.2, 0.6, -0.4]} scale={[0.2, 0.2, 0.1]}>
+              <sphereGeometry args={[1, 12, 8]} />
+              <meshStandardMaterial color="#FFFFFF" />
+            </mesh>
+            <mesh position={[1.25, 0.62, -0.42]} scale={[0.12, 0.12, 0.06]}>
+              <sphereGeometry args={[1, 8, 6]} />
+              <meshStandardMaterial color="#000000" />
+            </mesh>
+
+            {/* Realistic stripes with varied opacity */}
+            {[0, 0.4, 0.8, 1.2].map((offset, index) => (
+              <mesh
+                key={index}
+                position={[offset - 0.6, 0, 0]}
+                scale={[0.12, 1.8, 0.9]}
+                rotation={[0, 0, Math.sin(index) * 0.1]}
+              >
+                <cylinderGeometry args={[0.8, 0.8, 0.1]} />
+                <meshStandardMaterial
+                  color={species.secondaryColor}
+                  transparent
+                  opacity={0.4 + (health / 100) * 0.6 - index * 0.05}
+                />
               </mesh>
             ))}
-            {/* Dorsal fin */}
-            <mesh position={[0, 1.2, 0]} scale={[1.5, 0.8, 0.2]}>
-              <boxGeometry args={[1, 0.8, 0.1]} />
-              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.2 + (health / 100) * 0.8} />
+
+            {/* Enhanced dorsal fin with more realistic shape */}
+            <mesh position={[0, 1.4, 0]} scale={[1.8, 1.2, 0.15]} rotation={[0, 0, -0.1]}>
+              <coneGeometry args={[0.8, 1.5, 10]} />
+              <meshStandardMaterial
+                color={species.secondaryColor}
+                transparent
+                opacity={0.3 + (health / 100) * 0.7}
+                side={2} // Double-sided for transparency
+              />
             </mesh>
-            {/* Tail fin */}
-            <mesh ref={tailRef} position={[-1.4, 0, 0]} rotation={[0, 0, Math.PI / 4]}>
-              <coneGeometry args={[0.7, 1, 8]} />
-              <meshStandardMaterial color={species.color} transparent opacity={0.2 + (health / 100) * 0.8} />
+
+            {/* Pectoral fins - side fins with animation */}
+            <mesh position={[0.3, 0, 0.8]} scale={[0.6, 0.4, 0.12]} rotation={[0, Math.PI / 3, Math.PI / 6]}>
+              <coneGeometry args={[0.7, 1.2, 8]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.4 + (health / 100) * 0.6} />
+            </mesh>
+            <mesh position={[0.3, 0, -0.8]} scale={[0.6, 0.4, 0.12]} rotation={[0, -Math.PI / 3, -Math.PI / 6]}>
+              <coneGeometry args={[0.7, 1.2, 8]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.4 + (health / 100) * 0.6} />
+            </mesh>
+
+            {/* Anal fin - bottom rear fin */}
+            <mesh position={[-0.3, -1.0, 0]} scale={[1.2, 0.8, 0.12]} rotation={[Math.PI, 0, 0.1]}>
+              <coneGeometry args={[0.5, 1.0, 8]} />
+              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.3 + (health / 100) * 0.7} />
+            </mesh>
+
+            {/* Enhanced tail fin with forked design */}
+            <mesh ref={tailRef} position={[-1.6, 0.2, 0]} rotation={[0, 0, Math.PI / 8]} scale={[0.4, 1.2, 0.8]}>
+              <coneGeometry args={[1.0, 1.8, 8]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.4 + (health / 100) * 0.6} />
+            </mesh>
+            <mesh ref={tailRef} position={[-1.6, -0.2, 0]} rotation={[0, 0, -Math.PI / 8]} scale={[0.4, 1.2, 0.8]}>
+              <coneGeometry args={[1.0, 1.8, 8]} />
+              <meshStandardMaterial color={species.color} transparent opacity={0.4 + (health / 100) * 0.6} />
+            </mesh>
+
+            {/* Mouth with slight opening */}
+            <mesh position={[1.5, 0.1, 0]} scale={[0.15, 0.08, 0.25]}>
+              <sphereGeometry args={[1, 8, 6]} />
+              <meshStandardMaterial color="#333333" />
             </mesh>
           </group>
         );
@@ -286,7 +353,7 @@ function MarineAnimal({
       {needsRescue && (
         <Html position={[0, 2, 0]} center>
           <div className="px-2 py-1 rounded text-xs font-bold text-white bg-red-600 animate-pulse">
-            🆘 Cứu tôi! {health}%
+            🆘 Cứu tôi! {health.toFixed(0)}%
           </div>
         </Html>
       )}
@@ -294,7 +361,7 @@ function MarineAnimal({
       {hovered && !needsRescue && (
         <Html position={[0, 2, 0]} center>
           <div className="px-2 py-1 rounded text-xs font-bold text-white bg-blue-600">
-            {species.name} - {health}% 💙
+            {species.name} - {health.toFixed(0)}% 💙
           </div>
         </Html>
       )}
@@ -302,7 +369,7 @@ function MarineAnimal({
   );
 }
 
-// Pollution object component
+// Pollution object component - ENHANCED with visible oil spills
 function PollutionObject({
   position,
   type,
@@ -327,16 +394,95 @@ function PollutionObject({
     }
   });
 
+  // Render different shapes for different pollution types
+  const renderPollutionShape = () => {
+    switch (type.id) {
+      case 'oil_spill':
+        return (
+          <group>
+            {/* Main oil spill - flat dark patch */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]}>
+              <circleGeometry args={[2, 16]} />
+              <meshStandardMaterial color={type.color} transparent opacity={0.8} roughness={0.1} metalness={0.3} />
+            </mesh>
+            {/* Oil spill spreading rings */}
+            {[1.2, 1.6, 2.2].map((radius, index) => (
+              <mesh key={index} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01 * (index + 1), 0]}>
+                <ringGeometry args={[radius - 0.2, radius, 12]} />
+                <meshStandardMaterial
+                  color={type.color}
+                  transparent
+                  opacity={0.4 - index * 0.1}
+                  roughness={0.1}
+                  metalness={0.2}
+                />
+              </mesh>
+            ))}
+            {/* Oil bubbles */}
+            {Array.from({ length: 8 }, (_, i) => (
+              <mesh
+                key={i}
+                position={[(Math.random() - 0.5) * 3, 0.1 + Math.random() * 0.3, (Math.random() - 0.5) * 3]}
+              >
+                <sphereGeometry args={[0.1 + Math.random() * 0.1, 8, 8]} />
+                <meshStandardMaterial color={type.color} transparent opacity={0.7} metalness={0.4} />
+              </mesh>
+            ))}
+          </group>
+        );
+
+      case 'plastic_bottle':
+        return (
+          <mesh>
+            <cylinderGeometry args={[0.2, 0.25, 1]} />
+            <meshStandardMaterial color={type.color} transparent opacity={0.9} />
+          </mesh>
+        );
+
+      case 'plastic_bag':
+        return (
+          <mesh rotation={[Math.random(), Math.random(), Math.random()]}>
+            <planeGeometry args={[0.8, 1]} />
+            <meshStandardMaterial color={type.color} transparent opacity={0.7} side={THREE.DoubleSide} />
+          </mesh>
+        );
+
+      case 'fishing_net':
+        return (
+          <group>
+            <mesh>
+              <torusGeometry args={[0.8, 0.1, 8, 16]} />
+              <meshStandardMaterial color={type.color} />
+            </mesh>
+            {/* Net mesh pattern */}
+            {Array.from({ length: 6 }, (_, i) => (
+              <mesh key={i} rotation={[0, (i * Math.PI) / 3, 0]}>
+                <planeGeometry args={[1.6, 0.05]} />
+                <meshStandardMaterial color={type.color} transparent opacity={0.8} />
+              </mesh>
+            ))}
+          </group>
+        );
+
+      default:
+        return (
+          <mesh>
+            <boxGeometry args={[0.5, 0.5, 0.5]} />
+            <meshStandardMaterial color={type.color} emissive={type.color} emissiveIntensity={0.2} />
+          </mesh>
+        );
+    }
+  };
+
   return (
-    <mesh
+    <group
       ref={meshRef}
       position={position}
       onClick={onCleanup}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <boxGeometry args={[0.5, 0.5, 0.5]} />
-      <meshStandardMaterial color={type.color} emissive={type.color} emissiveIntensity={0.2} />
+      {renderPollutionShape()}
 
       {hovered && (
         <Html position={[0, 1, 0]} center>
@@ -345,7 +491,7 @@ function PollutionObject({
           </div>
         </Html>
       )}
-    </mesh>
+    </group>
   );
 }
 
@@ -355,6 +501,77 @@ function OceanFloor() {
     <mesh position={[0, -8, 0]} rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[50, 50]} />
       <meshStandardMaterial color="#4682B4" transparent opacity={0.6} side={THREE.DoubleSide} />
+    </mesh>
+  );
+}
+
+// Ocean waves component with physics affecting boats and buoys
+function OceanWaves({
+  boatRef,
+  buoyRef,
+}: {
+  boatRef: React.RefObject<THREE.Group | null>;
+  buoyRef: React.RefObject<THREE.Mesh | null>;
+}) {
+  const waveRef = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
+    const time = state.clock.elapsedTime;
+
+    // Wave equation for ocean surface
+    const waveHeight = (x: number, z: number, t: number) => {
+      return (
+        Math.sin(x * 0.2 + t * 2) * 0.8 + Math.sin(z * 0.3 + t * 1.5) * 0.6 + Math.sin((x + z) * 0.15 + t * 1.8) * 0.4
+      );
+    };
+
+    // Apply wave motion to boat
+    if (boatRef.current) {
+      const boatPos = boatRef.current.position;
+      const newY = 2 + waveHeight(boatPos.x, boatPos.z, time);
+      boatRef.current.position.y = newY;
+
+      // Add realistic boat rotation based on waves
+      const tiltX = Math.sin(time * 1.2 + boatPos.x * 0.1) * 0.08;
+      const tiltZ = Math.sin(time * 0.8 + boatPos.z * 0.1) * 0.06;
+      boatRef.current.rotation.x = tiltX;
+      boatRef.current.rotation.z = tiltZ;
+    }
+
+    // Apply wave motion to buoy
+    if (buoyRef.current) {
+      const buoyPos = buoyRef.current.position;
+      const newY = 1.5 + waveHeight(buoyPos.x, buoyPos.z, time) * 0.7; // Buoys bob less than boats
+      buoyRef.current.position.y = newY;
+
+      // Buoy tilts with waves but less than boat
+      const tiltX = Math.sin(time * 1.5 + buoyPos.x * 0.15) * 0.05;
+      const tiltZ = Math.sin(time * 1.1 + buoyPos.z * 0.12) * 0.04;
+      buoyRef.current.rotation.x = tiltX;
+      buoyRef.current.rotation.z = tiltZ;
+    }
+
+    // Animate the ocean surface with waves
+    if (waveRef.current) {
+      const geometry = waveRef.current.geometry as THREE.PlaneGeometry;
+      const positions = geometry.attributes.position;
+
+      for (let i = 0; i < positions.count; i++) {
+        const x = positions.getX(i);
+        const z = positions.getZ(i);
+        const y = waveHeight(x, z, time) * 0.3; // Subtle wave animation for ocean surface
+        positions.setY(i, y);
+      }
+
+      positions.needsUpdate = true;
+      geometry.computeVertexNormals();
+    }
+  });
+
+  return (
+    <mesh ref={waveRef} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
+      <planeGeometry args={[200, 200, 50, 50]} />
+      <meshStandardMaterial color="#1E90FF" transparent opacity={0.7} roughness={0.1} metalness={0.1} />
     </mesh>
   );
 }
@@ -418,28 +635,101 @@ function OceanEnvironment() {
         </mesh>
       ))}
 
-      {/* Orange life buoy */}
-      <mesh position={[15, 1.5, 10]} rotation={[-Math.PI / 2, 0, 0]}>
+      {/* Orange life buoy floating horizontally - FIXED ORIENTATION */}
+      <mesh ref={buoyRef} position={[15, 1.5, 10]} rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[1.2, 0.3, 8, 16]} />
-        <meshStandardMaterial color="#FF6600" />
+        <meshStandardMaterial color="#FF6600" roughness={0.3} metalness={0.1} />
+        {/* White stripes for realism */}
+        <mesh rotation={[0, 0, 0]}>
+          <torusGeometry args={[1.25, 0.15, 8, 16]} />
+          <meshStandardMaterial color="#FFFFFF" transparent opacity={0.9} />
+        </mesh>
       </mesh>
 
-      {/* Small gray boat bobbing on waves */}
-      <group position={[-20, 2, 15]}>
+      {/* Realistic boat with detailed design */}
+      <group ref={boatRef} position={[-20, 2, 15]}>
+        {/* Hull - main body */}
         <mesh>
-          <boxGeometry args={[4, 1, 2]} />
-          <meshStandardMaterial color="#708090" />
+          <boxGeometry args={[6, 1.2, 3]} />
+          <meshStandardMaterial color="#2F4F4F" roughness={0.4} metalness={0.6} />
         </mesh>
-        {/* Boat mast */}
+
+        {/* Bow (front) */}
+        <mesh position={[3.2, 0, 0]} rotation={[0, Math.PI / 2, 0]}>
+          <coneGeometry args={[1.5, 1.2, 8]} />
+          <meshStandardMaterial color="#2F4F4F" roughness={0.4} metalness={0.6} />
+        </mesh>
+
+        {/* Stern (back) */}
+        <mesh position={[-3.2, 0, 0]}>
+          <boxGeometry args={[1, 1.2, 3]} />
+          <meshStandardMaterial color="#2F4F4F" roughness={0.4} metalness={0.6} />
+        </mesh>
+
+        {/* Deck */}
+        <mesh position={[0, 0.8, 0]}>
+          <boxGeometry args={[5.5, 0.2, 2.8]} />
+          <meshStandardMaterial color="#D2691E" roughness={0.8} />
+        </mesh>
+
+        {/* Cabin */}
         <mesh position={[0, 2, 0]}>
-          <cylinderGeometry args={[0.1, 0.1, 4]} />
-          <meshStandardMaterial color="#8B4513" />
+          <boxGeometry args={[3, 2, 2.5]} />
+          <meshStandardMaterial color="#F5F5DC" roughness={0.6} />
         </mesh>
-        {/* Small sail */}
-        <mesh position={[0.5, 3, 0]} rotation={[0, 0, Math.PI / 8]}>
-          <planeGeometry args={[2, 3]} />
-          <meshStandardMaterial color="#F5F5F5" side={THREE.DoubleSide} />
+
+        {/* Wheelhouse */}
+        <mesh position={[1, 3.2, 0]}>
+          <boxGeometry args={[1.5, 1, 2]} />
+          <meshStandardMaterial color="#F0F0F0" roughness={0.3} />
         </mesh>
+
+        {/* Windows */}
+        {[
+          { pos: [1.76, 3.2, 0.8], size: [0.02, 0.6, 0.4] },
+          { pos: [1.76, 3.2, -0.8], size: [0.02, 0.6, 0.4] },
+          { pos: [1.76, 3.2, 0], size: [0.02, 0.6, 0.8] },
+        ].map((window, index) => (
+          <mesh key={index} position={window.pos as [number, number, number]}>
+            <boxGeometry args={window.size as [number, number, number]} />
+            <meshStandardMaterial color="#87CEEB" transparent opacity={0.7} />
+          </mesh>
+        ))}
+
+        {/* Boat mast - taller and more realistic */}
+        <mesh position={[-1, 4.5, 0]}>
+          <cylinderGeometry args={[0.08, 0.12, 6]} />
+          <meshStandardMaterial color="#8B4513" roughness={0.8} />
+        </mesh>
+
+        {/* Main sail */}
+        <mesh position={[-0.3, 6, 0]} rotation={[0, 0, Math.PI / 12]}>
+          <planeGeometry args={[2.5, 4]} />
+          <meshStandardMaterial color="#F5F5F5" side={THREE.DoubleSide} transparent opacity={0.9} />
+        </mesh>
+
+        {/* Jib sail */}
+        <mesh position={[1.5, 5, 0]} rotation={[0, 0, -Math.PI / 8]}>
+          <planeGeometry args={[1.5, 2.5]} />
+          <meshStandardMaterial color="#FFFAF0" side={THREE.DoubleSide} transparent opacity={0.9} />
+        </mesh>
+
+        {/* Rigging lines */}
+        {[
+          { start: [-1, 7.5, 0], end: [2, 4, 0] },
+          { start: [-1, 7.5, 0], end: [-2, 4, 0] },
+          { start: [-1, 6, 0], end: [3, 2, 0] },
+        ].map((line, index) => {
+          const points = new Float32Array([...line.start, ...line.end]);
+          return (
+            <line key={index}>
+              <bufferGeometry>
+                <bufferAttribute attach="attributes-position" args={[points, 3]} />
+              </bufferGeometry>
+              <lineBasicMaterial color="#654321" />
+            </line>
+          );
+        })}
       </group>
 
       {/* Underwater coral formations */}
@@ -479,6 +769,9 @@ function OceanEnvironment() {
           <meshStandardMaterial color="white" transparent opacity={0.4} />
         </mesh>
       ))}
+
+      {/* Ocean waves with physics for boat and buoy movement */}
+      <OceanWaves boatRef={boatRef} buoyRef={buoyRef} />
     </group>
   );
 }
@@ -517,7 +810,7 @@ function GameUI({
   };
 
   return (
-    <div className="absolute top-4 right-4 bg-white bg-opacity-95 rounded-lg p-4 min-w-64">
+    <div className="absolute top-4 right-4 bg-white bg-opacity-95 rounded-lg p-4 min-w-64 z-50 shadow-xl">
       <h3 className="text-lg font-bold text-blue-800 mb-3">🌊 Ocean Conservation</h3>
 
       <div className="space-y-2 text-sm">

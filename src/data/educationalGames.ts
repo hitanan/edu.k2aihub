@@ -78,60 +78,6 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   },
 
   {
-    id: 'neural-network-builder-3d',
-    title: 'Neural Network Builder 3D',
-    description:
-      'Build, train, và visualize neural networks trong interactive 3D environment với real-time training visualization',
-    category: 'simulation',
-    difficulty: 'Nâng cao',
-    estimatedTime: '45-60 phút',
-    skills: ['Machine Learning', 'Neural Networks', 'AI Architecture', '3D Visualization', 'Data Science'],
-    moduleType: 'ai-machine-learning',
-    isInternal: true,
-    points: 200,
-    icon: '🧠',
-    color: 'from-purple-500 to-pink-500',
-    relatedLessons: [
-      {
-        moduleId: 'ai-machine-learning',
-        lessonId: 'ml-fundamentals',
-        title: 'Machine Learning Fundamentals',
-        connection: 'Visualize machine learning concepts với interactive neural network building',
-      },
-      {
-        moduleId: 'ai-machine-learning',
-        lessonId: 'neural-network-architecture',
-        title: 'Neural Network Architecture',
-        connection: 'Build và experiment với different network architectures',
-      },
-      {
-        moduleId: 'ai-machine-learning',
-        lessonId: 'deep-learning-applications',
-        title: 'Deep Learning Applications',
-        connection: 'Practice deep learning concepts với hands-on network construction',
-      },
-      {
-        moduleId: 'ai-machine-learning',
-        lessonId: 'ai-model-optimization',
-        title: 'AI Model Optimization',
-        connection: 'Optimize network performance through architecture design',
-      },
-      {
-        moduleId: 'python',
-        lessonId: 'python-data-analysis',
-        title: 'Python Data Analysis',
-        connection: 'Understanding data processing for neural network training',
-      },
-      {
-        moduleId: 'ai-art-creative-tech',
-        lessonId: 'ai-image-generation',
-        title: 'AI Image Generation',
-        connection: 'Learn neural network architecture behind AI art generation',
-      },
-    ],
-  },
-
-  {
     id: 'vietnam-geography-quiz',
     title: 'Quiz Địa lý Việt Nam',
     description: 'Kiểm tra kiến thức về 34 tỉnh thành Việt Nam',
@@ -654,7 +600,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'space-exploration-3d',
     title: 'Khám Phá Vũ Trụ 3D (2)',
-    description: 'Điều khiển tàu vũ trụ trong môi trường 3D thực tế, khám phá hành tinh và thực hiện nhiệm vụ không gian phức tạp',
+    description:
+      'Điều khiển tàu vũ trụ trong môi trường 3D thực tế, khám phá hành tinh và thực hiện nhiệm vụ không gian phức tạp',
     category: '3D',
     difficulty: 'Nâng cao',
     estimatedTime: '35-50 phút',
@@ -820,7 +767,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'virtual-chemistry-lab-3d',
     title: 'Virtual Chemistry Lab 3D',
-    description: 'Tạo phân tử H2O, CO2, NH4 và các hợp chất khác trong phòng thí nghiệm 3D tương tác với physics engine thực tế',
+    description:
+      'Tạo phân tử H2O, CO2, NH4 và các hợp chất khác trong phòng thí nghiệm 3D tương tác với physics engine thực tế',
     category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '30-45 phút',
@@ -2363,11 +2311,19 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'biotech-lab-simulation-3d',
     title: 'Biotech Lab Simulation 3D',
-    description: 'Immersive 3D biotechnology laboratory với real-time experiments, lab equipment simulation, và advanced safety protocols trong realistic virtual environment',
+    description:
+      'Immersive 3D biotechnology laboratory với real-time experiments, lab equipment simulation, và advanced safety protocols trong realistic virtual environment',
     category: '3D',
     difficulty: 'Nâng cao',
     estimatedTime: '45-60 phút',
-    skills: ['Biotechnology', '3D Simulation', 'Lab Safety', 'Scientific Method', 'Molecular Biology', 'Research Protocols'],
+    skills: [
+      'Biotechnology',
+      '3D Simulation',
+      'Lab Safety',
+      'Scientific Method',
+      'Molecular Biology',
+      'Research Protocols',
+    ],
     moduleType: 'biotechnology',
     isInternal: true,
     points: 300,
@@ -2411,11 +2367,19 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'drone-crop-monitoring-3d',
     title: 'Drone Crop Monitoring 3D',
-    description: 'Advanced 3D agricultural drone simulation với precision farming, crop health analysis, và real-time environmental monitoring trong realistic farmland environments',
+    description:
+      'Advanced 3D agricultural drone simulation với precision farming, crop health analysis, và real-time environmental monitoring trong realistic farmland environments',
     category: '3D',
     difficulty: 'Nâng cao',
     estimatedTime: '40-55 phút',
-    skills: ['Agricultural Technology', '3D Flight Control', 'Precision Farming', 'Data Analysis', 'Environmental Monitoring', 'Drone Operations'],
+    skills: [
+      'Agricultural Technology',
+      '3D Flight Control',
+      'Precision Farming',
+      'Data Analysis',
+      'Environmental Monitoring',
+      'Drone Operations',
+    ],
     moduleType: 'agriculture',
     isInternal: true,
     points: 280,
@@ -2465,11 +2429,19 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'vietnamese-heritage-explorer-3d',
     title: 'Vietnamese Heritage Explorer 3D',
-    description: 'Khám phá 9 di sản văn hóa thế giới của Việt Nam thông qua trải nghiệm 3D tương tác với kiến trúc chính xác và quiz lịch sử.',
+    description:
+      'Khám phá 9 di sản văn hóa thế giới của Việt Nam thông qua trải nghiệm 3D tương tác với kiến trúc chính xác và quiz lịch sử.',
     category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '30-45 phút',
-    skills: ['Văn hóa Việt Nam', '3D Exploration', 'Lịch sử Kiến trúc', 'Di sản UNESCO', 'Quiz tương tác', 'Khám phá văn hóa'],
+    skills: [
+      'Văn hóa Việt Nam',
+      '3D Exploration',
+      'Lịch sử Kiến trúc',
+      'Di sản UNESCO',
+      'Quiz tương tác',
+      'Khám phá văn hóa',
+    ],
     moduleType: 'vietnamese-culture',
     isInternal: true,
     points: 200,
@@ -2483,14 +2455,14 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         connection: 'Khám phá các công trình kiến trúc cổ và hiểu về lịch sử xây dựng',
       },
       {
-        moduleId: 'vietnamese-culture', 
+        moduleId: 'vietnamese-culture',
         lessonId: 'unesco-heritage-sites',
         title: 'Di Sản UNESCO Việt Nam',
         connection: 'Tìm hiểu sâu về các di sản thế giới của Việt Nam được UNESCO công nhận',
       },
       {
         moduleId: 'stem',
-        lessonId: 'art-meets-science', 
+        lessonId: 'art-meets-science',
         title: 'Nghệ Thuật Gặp Khoa Học',
         connection: 'Kết hợp nghệ thuật kiến trúc với công nghệ 3D và khoa học',
       },
@@ -2503,15 +2475,23 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     ],
   },
 
-  // Aquaculture IoT Manager 3D Game  
+  // Aquaculture IoT Manager 3D Game
   {
     id: 'aquaculture-iot-manager-3d',
     title: 'Aquaculture IoT Manager 3D',
-    description: 'Quản lý trang trại nuôi trồng thủy sản thông minh với hệ thống IoT sensors, monitoring 3D và tối ưu hóa sản xuất.',
+    description:
+      'Quản lý trang trại nuôi trồng thủy sản thông minh với hệ thống IoT sensors, monitoring 3D và tối ưu hóa sản xuất.',
     category: '3D',
     difficulty: 'Nâng cao',
-    estimatedTime: '40-55 phút', 
-    skills: ['IoT Systems', 'Smart Agriculture', '3D Simulation', 'Sensor Management', 'Aquaculture', 'Production Optimization'],
+    estimatedTime: '40-55 phút',
+    skills: [
+      'IoT Systems',
+      'Smart Agriculture',
+      '3D Simulation',
+      'Sensor Management',
+      'Aquaculture',
+      'Production Optimization',
+    ],
     moduleType: 'agriculture',
     isInternal: true,
     points: 250,
@@ -2527,7 +2507,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       {
         moduleId: 'arduino',
         lessonId: 'arduino-communication',
-        title: 'Communication & Networking', 
+        title: 'Communication & Networking',
         connection: 'Learn IoT communication protocols for remote aquaculture monitoring',
       },
       {
@@ -2555,11 +2535,19 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'smart-city-planner-3d',
     title: 'Smart City Planner 3D',
-    description: 'Xây dựng thành phố thông minh bền vững với công nghệ IoT, năng lượng sạch và hạ tầng hiện đại trong môi trường 3D tương tác.',
+    description:
+      'Xây dựng thành phố thông minh bền vững với công nghệ IoT, năng lượng sạch và hạ tầng hiện đại trong môi trường 3D tương tác.',
     category: '3D',
     difficulty: 'Trung bình',
-    estimatedTime: '35-50 phút', 
-    skills: ['Urban Planning', 'Smart City Technology', 'IoT Systems', 'Sustainability', '3D Design', 'Resource Management'],
+    estimatedTime: '35-50 phút',
+    skills: [
+      'Urban Planning',
+      'Smart City Technology',
+      'IoT Systems',
+      'Sustainability',
+      '3D Design',
+      'Resource Management',
+    ],
     moduleType: 'smart-city',
     isInternal: true,
     points: 200,
@@ -2603,10 +2591,11 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'ocean-conservation-3d',
     title: 'Ocean Conservation 3D',
-    description: 'Game mô phỏng 3D về bảo vệ đại dương với hệ sinh thái biển, dọn rác thải nhựa và cứu hộ sinh vật biển.',
+    description:
+      'Game mô phỏng 3D về bảo vệ đại dương với hệ sinh thái biển, dọn rác thải nhựa và cứu hộ sinh vật biển.',
     category: '3D',
     difficulty: 'Cơ bản',
-    estimatedTime: '25-35 phút', 
+    estimatedTime: '25-35 phút',
     skills: ['Marine Biology', 'Environmental Conservation', 'Ocean Ecosystem', '3D Simulation', 'Sustainability'],
     moduleType: 'environmental',
     isInternal: true,
@@ -2651,11 +2640,19 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'space-station-builder-3d',
     title: 'Space Station Builder 3D',
-    description: 'Xây dựng trạm vũ trụ hoành tráng với hệ thống sống, năng lượng mặt trời và khám phá không gian trong mô phỏng 3D.',
+    description:
+      'Xây dựng trạm vũ trụ hoành tráng với hệ thống sống, năng lượng mặt trời và khám phá không gian trong mô phỏng 3D.',
     category: '3D',
     difficulty: 'Nâng cao',
-    estimatedTime: '45-60 phút', 
-    skills: ['Space Engineering', 'Orbital Mechanics', 'Life Support Systems', '3D Design', 'Resource Management', 'Aerospace Technology'],
+    estimatedTime: '45-60 phút',
+    skills: [
+      'Space Engineering',
+      'Orbital Mechanics',
+      'Life Support Systems',
+      '3D Design',
+      'Resource Management',
+      'Aerospace Technology',
+    ],
     moduleType: 'space-technology',
     isInternal: true,
     points: 300,
@@ -2691,6 +2688,150 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'engineering-challenges',
         title: 'Engineering Challenges',
         connection: 'Solve complex engineering problems in space environment design',
+      },
+    ],
+  },
+
+  // Missing 3D Games - Factory Automation Simulator
+  {
+    id: 'factory-automation-simulator-3d',
+    title: 'Factory Automation Simulator 3D',
+    description: 'Thiết kế và quản lý hệ thống tự động hóa nhà máy với máy móc 3D và production lines',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '45-60 phút',
+    skills: ['Industrial Automation', 'Manufacturing', 'Engineering', 'Process Control', '3D Design'],
+    moduleType: 'engineering',
+    isInternal: true,
+    points: 200,
+    icon: '🏭',
+    color: 'from-gray-600 to-blue-600',
+    relatedLessons: [
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Sensors & Data Processing',
+        connection: 'Apply sensor data for industrial automation and monitoring systems',
+      },
+      {
+        moduleId: 'robotics',
+        lessonId: 'robotic-systems',
+        title: 'Robotic Systems',
+        connection: 'Program industrial robots for automated manufacturing processes',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'python-automation',
+        title: 'Python Automation',
+        connection: 'Use Python for factory control systems and process optimization',
+      },
+    ],
+  },
+
+  // Missing 3D Games - Medical Device Designer
+  {
+    id: 'medical-device-designer-3d',
+    title: 'Medical Device Designer 3D',
+    description: 'Thiết kế và test các thiết bị y tế trong môi trường 3D với patient simulation',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '40-55 phút',
+    skills: ['Biomedical Engineering', 'Medical Technology', '3D Modeling', 'Healthcare Innovation'],
+    moduleType: 'biotechnology',
+    isInternal: true,
+    points: 180,
+    icon: '🏥',
+    color: 'from-red-500 to-pink-500',
+    relatedLessons: [
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'medical-biotechnology',
+        title: 'Medical Biotechnology',
+        connection: 'Apply biomedical engineering principles to device design and testing',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-sensors',
+        title: 'Sensors & Data Processing',
+        connection: 'Use sensors for medical monitoring and diagnostic devices',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'python-data-analysis',
+        title: 'Python Data Analysis',
+        connection: 'Process medical data and implement device control algorithms',
+      },
+    ],
+  },
+
+  // Missing 3D Games - Neural Network Builder
+  {
+    id: 'neural-network-builder-3d',
+    title: 'Neural Network Builder 3D',
+    description: 'Xây dựng và train neural networks với 3D visualization của data flow và learning process',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '50-70 phút',
+    skills: ['Machine Learning', 'Neural Networks', 'AI Development', '3D Visualization', 'Deep Learning'],
+    moduleType: 'ai-machine-learning',
+    isInternal: true,
+    points: 220,
+    icon: '🧠',
+    color: 'from-purple-600 to-blue-600',
+    relatedLessons: [
+      {
+        moduleId: 'ai-machine-learning',
+        lessonId: 'neural-networks',
+        title: 'Neural Networks Fundamentals',
+        connection: 'Build and visualize neural network architectures and training processes',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'python-ai-ml',
+        title: 'Python AI & ML',
+        connection: 'Implement neural networks using Python libraries like TensorFlow and PyTorch',
+      },
+      {
+        moduleId: 'data-science',
+        lessonId: 'machine-learning-algorithms',
+        title: 'Machine Learning Algorithms',
+        connection: 'Apply deep learning algorithms for pattern recognition and prediction',
+      },
+    ],
+  },
+
+  // Missing 3D Games - Traffic Management Simulator
+  {
+    id: 'traffic-management-simulator-3d',
+    title: 'Traffic Management Simulator 3D',
+    description: 'Quản lý và tối ưu hóa hệ thống giao thông đô thị với smart traffic lights và real-time simulation',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '35-50 phút',
+    skills: ['Traffic Engineering', 'Urban Planning', 'Smart Cities', 'Optimization', '3D Simulation'],
+    moduleType: 'green-technology',
+    isInternal: true,
+    points: 160,
+    icon: '🚦',
+    color: 'from-green-500 to-teal-500',
+    relatedLessons: [
+      {
+        moduleId: 'green-technology',
+        lessonId: 'smart-cities-iot',
+        title: 'Smart Cities & IoT',
+        connection: 'Implement IoT sensors and smart systems for traffic optimization',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-communication',
+        title: 'Communication & Networking',
+        connection: 'Network traffic sensors and control systems for real-time management',
+      },
+      {
+        moduleId: 'python',
+        lessonId: 'python-algorithms',
+        title: 'Python Algorithms',
+        connection: 'Develop optimization algorithms for traffic flow and signal timing',
       },
     ],
   },

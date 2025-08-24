@@ -14,27 +14,11 @@ const SITE_TAGLINE = 'Học tập thông minh - Công nghệ AI dẫn lối Vi�
  * @param includeTagline - Whether to include the site tagline (default: false)
  * @returns Formatted title string
  */
-export function createTitle(
-  title: string,
-  includeTagline: boolean = false
-): string {
+export function createTitle(title: string, includeTagline: boolean = false): string {
   if (includeTagline) {
     return `${title} | ${SITE_TAGLINE} | ${SITE_NAME}`;
   }
   return `${title} | ${SITE_NAME}`;
-}
-
-/**
- * Creates a properly formatted OpenGraph title that matches the page title
- * @param title - The main title content
- * @param includeTagline - Whether to include the site tagline (default: false)
- * @returns Formatted OpenGraph title string
- */
-export function createOpenGraphTitle(
-  title: string,
-  includeTagline: boolean = false
-): string {
-  return createTitle(title, includeTagline);
 }
 
 /**
@@ -62,7 +46,7 @@ export const commonKeywords = [
   'ai',
   'trí tuệ nhân tạo',
   'học tập',
-  'K2AI'
+  'K2AI',
 ];
 
 /**
@@ -80,7 +64,7 @@ export function createKeywords(additionalKeywords: string[] = []): string {
 export const defaultOpenGraph = {
   type: 'website' as const,
   siteName: SITE_NAME,
-  locale: 'vi_VN'
+  locale: 'vi_VN',
 };
 
 /**
@@ -91,24 +75,19 @@ export function createOrganizationStructuredData() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_NAME,
-    description:
-      'Học tập thông minh - Công nghệ AI dẫn lối về địa lý Việt Nam và hướng dẫn AI thực tế',
+    description: 'Học tập thông minh - Công nghệ AI dẫn lối về địa lý Việt Nam và hướng dẫn AI thực tế',
     url: 'https://k2aihub.com',
     logo: 'https://k2aihub.com/logo.png',
     sameAs: ['https://k2aihub.com'],
     areaServed: 'VN',
-    inLanguage: 'vi'
+    inLanguage: 'vi',
   };
 }
 
 /**
  * Creates structured data for educational content
  */
-export function createEducationalContentStructuredData(
-  title: string,
-  description: string,
-  url: string
-) {
+export function createEducationalContentStructuredData(title: string, description: string, url: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'LearningResource',
@@ -119,12 +98,12 @@ export function createEducationalContentStructuredData(
     educationalLevel: 'Beginner to Advanced',
     audience: {
       '@type': 'EducationalAudience',
-      educationalRole: 'student'
+      educationalRole: 'student',
     },
     provider: {
       '@type': 'Organization',
-      name: SITE_NAME
-    }
+      name: SITE_NAME,
+    },
   };
 }
 
@@ -141,16 +120,16 @@ export function createFAQStructuredData(city: City) {
         name: `Dân số của ${city.name} là bao nhiêu?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Dân số của ${city.name} là ${city.population} người, xếp hạng trong top các tỉnh thành Việt Nam.`
-        }
+          text: `Dân số của ${city.name} là ${city.population} người, xếp hạng trong top các tỉnh thành Việt Nam.`,
+        },
       },
       {
         '@type': 'Question',
         name: `Diện tích của ${city.name} là bao nhiêu?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Diện tích của ${city.name} là ${city.area}, thuộc vùng ${city.region}.`
-        }
+          text: `Diện tích của ${city.name} là ${city.area}, thuộc vùng ${city.region}.`,
+        },
       },
       {
         '@type': 'Question',
@@ -159,16 +138,14 @@ export function createFAQStructuredData(city: City) {
           '@type': 'Answer',
           text:
             city.touristAttractions && city.touristAttractions.length > 0
-              ? `${
-                  city.name
-                } có các địa điểm du lịch nổi tiếng như: ${city.touristAttractions
+              ? `${city.name} có các địa điểm du lịch nổi tiếng như: ${city.touristAttractions
                   .slice(0, 3)
                   .map((a: TouristAttraction) => a.name)
                   .join(', ')}.`
-              : `${city.name} có nhiều danh lam thắng cảnh đẹp và các di tích lịch sử văn hóa quan trọng.`
-        }
-      }
-    ]
+              : `${city.name} có nhiều danh lam thắng cảnh đẹp và các di tích lịch sử văn hóa quan trọng.`,
+        },
+      },
+    ],
   };
 }
 
@@ -184,29 +161,27 @@ export function createBreadcrumbStructuredData(city: City) {
         '@type': 'ListItem',
         position: 1,
         name: 'Trang chủ',
-        item: 'https://k2aihub.com'
+        item: 'https://k2aihub.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Địa lý Việt Nam',
-        item: 'https://k2aihub.com/#geography'
+        item: 'https://k2aihub.com/#geography',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: city.region,
-        item: `https://k2aihub.com/#${city.region
-          .toLowerCase()
-          .replace(/\s+/g, '-')}`
+        item: `https://k2aihub.com/#${city.region.toLowerCase().replace(/\s+/g, '-')}`,
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: city.name,
-        item: `https://k2aihub.com/city/${city.slug}`
-      }
-    ]
+        item: `https://k2aihub.com/city/${city.slug}`,
+      },
+    ],
   };
 }
 
@@ -222,33 +197,33 @@ export function createPlaceStructuredData(city: City) {
     geo: {
       '@type': 'GeoCoordinates',
       latitude: city.coordinates.y,
-      longitude: city.coordinates.x
+      longitude: city.coordinates.x,
     },
     containedInPlace: {
       '@type': 'Country',
-      name: 'Việt Nam'
+      name: 'Việt Nam',
     },
     additionalProperty: [
       {
         '@type': 'PropertyValue',
         name: 'Dân số',
-        value: city.population
+        value: city.population,
       },
       {
         '@type': 'PropertyValue',
         name: 'Diện tích',
-        value: city.area
+        value: city.area,
       },
       {
         '@type': 'PropertyValue',
         name: 'Vùng miền',
-        value: city.region
+        value: city.region,
       },
       {
         '@type': 'PropertyValue',
         name: 'Mã tỉnh',
-        value: city.code
-      }
+        value: city.code,
+      },
     ],
     touristAttraction:
       city.touristAttractions?.map((attraction: TouristAttraction) => ({
@@ -258,9 +233,9 @@ export function createPlaceStructuredData(city: City) {
         image: attraction.imageUrl,
         containedInPlace: {
           '@type': 'Place',
-          name: city.name
-        }
-      })) || []
+          name: city.name,
+        },
+      })) || [],
   };
 }
 

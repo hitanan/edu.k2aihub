@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import * as THREE from 'three';
 import { Vector } from 'three/examples/jsm/Addons.js';
 import { Vector3Array } from '@/data/gameData';
+import { useGameStore } from '@/utils/gameStore';
 
 // Vietnamese Heritage Sites Data
 const HERITAGE_SITES = [
@@ -263,11 +264,20 @@ function QuizModal({ site, onAnswer, onClose }: {
   onAnswer: (correct: boolean) => void;
   onClose: () => void;
 }) {
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [showResult, setShowResult] = useState(false);
+
   if (!site) return null;
 
   const handleAnswer = (index: number) => {
+    setSelectedAnswer(index);
+    setShowResult(true);
     const correct = index === site.quiz.correct;
-    onAnswer(correct);
+    
+    // Show answer feedback for 2 seconds, then close
+    setTimeout(() => {
+      onAnswer(correct);
+    }, 2000);
   };
 
   return (
@@ -284,24 +294,61 @@ function QuizModal({ site, onAnswer, onClose }: {
         <div className="mb-6 p-4 bg-blue-50 rounded-lg">
           <h4 className="text-lg font-semibold text-blue-800 mb-4">{site.quiz.question}</h4>
           <div className="grid grid-cols-2 gap-3">
-            {site.quiz.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswer(index)}
-                className="p-3 bg-blue-100 hover:bg-blue-200 rounded-lg text-blue-800 font-medium transition-colors"
-              >
-                {option}
-              </button>
-            ))}
+            {site.quiz.options.map((option, index) => {
+              let buttonClass = "p-3 rounded-lg font-medium transition-colors ";
+              
+              if (showResult) {
+                if (index === site.quiz.correct) {
+                  buttonClass += "bg-green-500 text-white"; // Correct answer
+                } else if (index === selectedAnswer) {
+                  buttonClass += "bg-red-500 text-white"; // Wrong selected answer
+                } else {
+                  buttonClass += "bg-gray-100 text-gray-500"; // Other options
+                }
+              } else {
+                buttonClass += "bg-blue-100 hover:bg-blue-200 text-blue-800"; // Default state
+              }
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleAnswer(index)}
+                  disabled={showResult}
+                  className={buttonClass}
+                >
+                  {option}
+                </button>
+              );
+            })}
           </div>
+          
+          {/* Answer feedback */}
+          {showResult && (
+            <div className="mt-4 p-3 rounded-lg">
+              {selectedAnswer === site.quiz.correct ? (
+                <div className="text-green-600 font-bold">
+                  ✅ Chính xác! +100 điểm
+                </div>
+              ) : (
+                <div className="text-red-600 font-bold">
+                  ❌ Sai rồi! Đáp án đúng là: {site.quiz.options[site.quiz.correct]}
+                </div>
+              )}
+              <div className="text-sm text-gray-500 mt-2">
+                Đang chuyển sang di tích tiếp theo...
+              </div>
+            </div>
+          )}
         </div>
 
-        <button
-          onClick={onClose}
-          className="px-6 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
-        >
-          Đóng
-        </button>
+        {!showResult && (
+          <button
+            onClick={onClose}
+            className="px-6 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
+          >
+            Đóng
+          </button>
+        )}
       </div>
     </div>
   );
@@ -392,12 +439,28 @@ function Instructions({ onStart }: { onStart: () => void }) {
 
 // Main Game Component
 export default function VietnameseHeritageExplorer3D() {
+  // Store integration
+  const { vietnameseHeritage, setVietnameseHeritageState, resetVietnameseHeritage } = useGameStore();
+  
   const [gameStarted, setGameStarted] = useState(false);
-  const [selectedSite, setSelectedSite] = useState<string | null>(null);
+  const [selectedSite, setSelectedSite] = useState<string | null>(vietnameseHeritage.selectedSite);
   const [showQuiz, setShowQuiz] = useState(false);
-  const [visitedSites, setVisitedSites] = useState<Set<string>>(new Set());
-  const [score, setScore] = useState(0);
+  const [visitedSites, setVisitedSites] = useState<Set<string>>(new Set(vietnameseHeritage.visitedSites));
+  const [score, setScore] = useState(vietnameseHeritage.score);
   const [showResult, setShowResult] = useState(false);
+
+  // Track initialization to prevent infinite loops
+  const isInitialized = useRef(false);
+
+  // Initialize from store on mount - always sync with store
+  useEffect(() => {
+    if (!isInitialized.current) {
+      setVisitedSites(new Set(vietnameseHeritage.visitedSites));
+      setScore(vietnameseHeritage.score);
+      setSelectedSite(vietnameseHeritage.selectedSite);
+      isInitialized.current = true;
+    }
+  }, [vietnameseHeritage.visitedSites, vietnameseHeritage.score, vietnameseHeritage.selectedSite]);
 
   // Cleanup on unmount
   React.useEffect(() => {
@@ -420,10 +483,22 @@ export default function VietnameseHeritageExplorer3D() {
 
   const handleQuizAnswer = useCallback((correct: boolean) => {
     if (selectedSite) {
-      setVisitedSites(prev => new Set(prev).add(selectedSite));
+      const newVisitedSites = new Set(visitedSites).add(selectedSite);
+      setVisitedSites(newVisitedSites);
+      
+      let newScore = score;
       if (correct) {
-        setScore(prev => prev + 100);
+        newScore = score + 100;
+        setScore(newScore);
       }
+      
+      // Save to store
+      setVietnameseHeritageState({
+        visitedSites: Array.from(newVisitedSites),
+        score: newScore,
+        selectedSite: null,
+        gameTime: vietnameseHeritage.gameTime + 1,
+      });
     }
     setShowQuiz(false);
     setSelectedSite(null);
@@ -432,7 +507,7 @@ export default function VietnameseHeritageExplorer3D() {
     if (visitedSites.size === HERITAGE_SITES.length - 1) {
       setTimeout(() => setShowResult(true), 1000);
     }
-  }, [selectedSite, visitedSites.size]);
+  }, [selectedSite, visitedSites, score, setVietnameseHeritageState, vietnameseHeritage.gameTime]);
 
   const resetGame = () => {
     setSelectedSite(null);
@@ -440,6 +515,9 @@ export default function VietnameseHeritageExplorer3D() {
     setVisitedSites(new Set());
     setScore(0);
     setShowResult(false);
+    // Reset in store
+    const { resetVietnameseHeritage } = useGameStore.getState();
+    resetVietnameseHeritage();
   };
 
   if (!gameStarted) {
@@ -448,21 +526,25 @@ export default function VietnameseHeritageExplorer3D() {
 
   return (
     <div className="relative w-full h-screen bg-gradient-to-b from-blue-400 to-green-400">
-      {/* Game Stats */}
-      <GameStats 
-        visited={visitedSites.size}
-        score={score}
-        totalSites={HERITAGE_SITES.length}
-      />
+      {/* Game Stats - FIXED persistence */}
+      {gameStarted && (
+        <GameStats 
+          visited={visitedSites.size}
+          score={score}
+          totalSites={HERITAGE_SITES.length}
+        />
+      )}
 
-      {/* Controls Info */}
-      <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-lg p-3 text-sm">
-        <div className="text-gray-600 space-y-1">
-          <div>🖱️ Kéo: Xoay góc nhìn</div>
-          <div>🔍 Lăn: Zoom in/out</div>
-          <div>👆 Click: Chọn di tích</div>
+      {/* Controls Info - FIXED persistence */}
+      {gameStarted && (
+        <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-lg p-3 text-sm z-40">
+          <div className="text-gray-600 space-y-1">
+            <div>🖱️ Kéo: Xoay góc nhìn</div>
+            <div>🔍 Lăn: Zoom in/out</div>
+            <div>👆 Click: Chọn di tích</div>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* 3D Scene with enhanced WebGL context protection */}
       <Canvas 

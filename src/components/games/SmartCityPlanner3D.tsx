@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState, useCallback, useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, ThreeEvent } from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import * as THREE from 'three';
+import { useGameStore } from '@/utils/gameStore';
 
 // City building types
 const BUILDING_TYPES = [
@@ -24,10 +25,11 @@ const INFRASTRUCTURE = [
 ];
 
 // Building component
-function Building({ position, type, onSelect, isSelected }: {
+function Building({ position, type, onSelect, onDelete, isSelected }: {
   position: [number, number, number];
   type: typeof BUILDING_TYPES[0] | typeof INFRASTRUCTURE[0];
   onSelect: () => void;
+  onDelete: () => void;
   isSelected: boolean;
 }) {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -44,13 +46,23 @@ function Building({ position, type, onSelect, isSelected }: {
     }
   });
 
+  const handleClick = (e: ThreeEvent<MouseEvent>) => {
+    e.stopPropagation();
+    if (e.nativeEvent.shiftKey) {
+      // Shift+click to delete
+      onDelete();
+    } else {
+      onSelect();
+    }
+  };
+
   const height = type.id === 'park' ? 0.2 : type.id === 'hospital' ? 3 : 2;
 
   return (
     <mesh
       ref={meshRef}
       position={position}
-      onClick={onSelect}
+      onClick={handleClick}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
@@ -67,6 +79,7 @@ function Building({ position, type, onSelect, isSelected }: {
           isSelected ? 'bg-blue-600' : 'bg-gray-800'
         }`}>
           {type.name}
+          {hovered && <div className="text-xs mt-1">Shift+Click để xóa</div>}
         </div>
       </Html>
     </mesh>
@@ -158,7 +171,7 @@ function ControlPanel({
   budget: number;
 }) {
   return (
-    <div className="absolute top-4 left-4 bg-white bg-opacity-95 rounded-lg p-4 max-w-sm max-h-[80vh] overflow-y-auto">
+    <div className="absolute top-4 left-4 bg-white bg-opacity-95 rounded-lg p-4 max-w-sm max-h-[80vh] overflow-y-auto z-50 shadow-lg">
       <h3 className="text-lg font-bold text-gray-800 mb-4">🏙️ Smart City Builder</h3>
       
       {/* Budget and Stats */}
@@ -271,16 +284,14 @@ function Instructions({ onStart }: { onStart: () => void }) {
 
 // Main component
 export default function SmartCityPlanner3D() {
+  const { smartCity, setSmartCityState } = useGameStore();
   const [gameStarted, setGameStarted] = useState(true); // Start directly with the game
   const [selectedBuildingType, setSelectedBuildingType] = useState<string | null>('residential');
-  // Start with some demo buildings to show functionality
-  const [buildings, setBuildings] = useState<Building[]>([
-    { id: 'demo-1', type: 'residential', position: [-2, 0, -2] },
-    { id: 'demo-2', type: 'commercial', position: [0, 0, 0] },
-    { id: 'demo-3', type: 'park', position: [2, 0, 2] },
-  ]);
-  const [budget, setBudget] = useState(10000);
   const [selectedBuilding, setSelectedBuilding] = useState<string | null>(null);
+
+  // Use gameStore data
+  const buildings = smartCity.buildings;
+  const budget = smartCity.budget;
 
   const cityStats = useMemo(() => {
     return buildings.reduce((stats, building) => {
@@ -313,27 +324,44 @@ export default function SmartCityPlanner3D() {
     const newBuilding = {
       id: `${selectedBuildingType}-${Date.now()}`,
       type: selectedBuildingType,
-      position
+      position,
+      level: 1
     };
 
-    setBuildings(prev => [...prev, newBuilding]);
-    setBudget(prev => prev - type.cost);
-  }, [selectedBuildingType, budget, buildings]);
+    // Update gameStore with new building and reduced budget
+    setSmartCityState({
+      buildings: [...buildings, newBuilding],
+      budget: budget - type.cost,
+      lastSaved: Date.now(),
+    });
+  }, [selectedBuildingType, budget, buildings, setSmartCityState]);
 
   const handleBuildingSelect = useCallback((buildingId: string) => {
     setSelectedBuilding(buildingId === selectedBuilding ? null : buildingId);
   }, [selectedBuilding]);
 
-  // Generate income over time
+  const handleBuildingDelete = useCallback((buildingId: string) => {
+    const updatedBuildings = buildings.filter((b) => b.id !== buildingId);
+    setSmartCityState({
+      buildings: updatedBuildings,
+      lastSaved: Date.now(),
+    });
+    setSelectedBuilding(null);
+  }, [buildings, setSmartCityState]);
+
+  // Generate income over time - auto-save to gameStore
   React.useEffect(() => {
     if (!gameStarted) return;
 
     const interval = setInterval(() => {
-      setBudget(prev => prev + cityStats.income);
+      setSmartCityState({
+        budget: budget + cityStats.income,
+        lastSaved: Date.now(),
+      });
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [gameStarted, cityStats.income]);
+  }, [gameStarted, cityStats.income, budget, setSmartCityState]);
 
   if (!gameStarted) {
     return <Instructions onStart={() => setGameStarted(true)} />;
@@ -370,6 +398,7 @@ export default function SmartCityPlanner3D() {
               position={building.position}
               type={type}
               onSelect={() => handleBuildingSelect(building.id)}
+              onDelete={() => handleBuildingDelete(building.id)}
               isSelected={selectedBuilding === building.id}
             />
           );

@@ -299,6 +299,7 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
   const [selectedField, setSelectedField] = useState<string | null>(null);
   const [scanningField, setScanningField] = useState<string | null>(null);
   const [gameCompleted, setGameCompleted] = useState(false);
+  const [lastScanTime, setLastScanTime] = useState(0); // Add debouncing for scan triggers
   const [completionStats, setCompletionStats] = useState<{
     totalDataCollected: number;
     averageFieldHealth: number;
@@ -515,6 +516,43 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
     [gameState.currentMission, gameState.droneEnergy, checkMissionCompletion],
   );
 
+  // Battery recharge functionality
+  const rechargeBattery = useCallback(() => {
+    setGameState(prev => ({
+      ...prev,
+      droneEnergy: 100
+    }));
+  }, []);
+
+  // Reset battery to full and reset game state
+  const resetGame = useCallback(() => {
+    // Reset all field scan status FIRST
+    CROP_FIELDS.forEach(field => {
+      field.scanned = false;
+    });
+    
+    setGameState({
+      currentMission: 1,
+      droneEnergy: 100,
+      activeDrone: 'agri_pro',
+      dataCollected: [],
+      completedMissions: [],
+      score: 0,
+      gameTime: 0,
+    });
+    setDronePosition([0, 3, 0]);
+    setSelectedField(null);
+    setScanningField(null);
+    setGameCompleted(false);
+    setCompletionStats(null);
+    setLastScanTime(0);
+    
+    // Force re-render to update progress indicators
+    setTimeout(() => {
+      setGameState(prev => ({ ...prev }));
+    }, 100);
+  }, []);
+
   // Auto-scan behavior - only move to field, don't auto-scan unless explicitly triggered
   useEffect(() => {
     if (selectedField && !scanningField) {
@@ -568,7 +606,7 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
           setDronePosition(prev => [
             prev[0],
             prev[1],
-            Math.min(prev[2] + 1, 8)
+            Math.max(prev[2] - 1, -8) // Fixed: Move backward (decrease Z)
           ]);
           break;
         case 'ArrowDown':
@@ -578,7 +616,7 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
           setDronePosition(prev => [
             prev[0],
             prev[1],
-            Math.max(prev[2] - 1, -8)
+            Math.min(prev[2] + 1, 8) // Fixed: Move forward (increase Z)
           ]);
           break;
         case 'q':
@@ -602,6 +640,13 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
         case 'Enter':
         case ' ':
           event.preventDefault();
+          // Add debouncing to prevent double-triggering
+          const now = Date.now();
+          if (now - lastScanTime < 1000) {
+            return; // Prevent scan if less than 1 second since last scan
+          }
+          setLastScanTime(now);
+          
           // Scan the closest field to drone position
           const closestField = findClosestField(dronePosition);
           if (closestField) {
@@ -637,7 +682,7 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [gameCompleted, scanningField, dronePosition, handleFieldScan]);
+  }, [gameCompleted, scanningField, dronePosition, handleFieldScan, lastScanTime]);
 
   // Auto-select first field if none selected
   useEffect(() => {
@@ -698,6 +743,23 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
               >
                 {Math.round(gameState.droneEnergy)}%
               </div>
+              {/* Battery controls */}
+              <div className="flex gap-2 mt-1">
+                <button
+                  onClick={rechargeBattery}
+                  className="px-2 py-1 bg-green-600 hover:bg-green-700 text-white text-xs rounded transition-colors"
+                  title="Sạc pin đầy"
+                >
+                  ⚡ Sạc pin
+                </button>
+                <button
+                  onClick={resetGame}
+                  className="px-2 py-1 bg-red-600 hover:bg-red-700 text-white text-xs rounded transition-colors"
+                  title="Khởi động lại game"
+                >
+                  🔄 Reset
+                </button>
+              </div>
             </div>
             <div>
               <div className="text-gray-300">Điểm số:</div>
@@ -740,7 +802,7 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
       )}
 
       {/* 3D Scene */}
-      <div className={`${isFullscreen ? 'w-full h-full' : 'w-full h-full'}`}>
+      <div className={`${isFullscreen ? 'w-full h-full absolute inset-0' : 'w-full h-full'}`}>
         <Canvas
           camera={{
             position: [0, 15, 15],
@@ -748,7 +810,7 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
             near: 0.1,
             far: 1000,
           }}
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: '100%', height: '100%', position: isFullscreen ? 'absolute' : 'relative', top: 0, left: 0 }}
         >
         <ambientLight intensity={0.4} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
@@ -781,7 +843,23 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
                 args={[field.size[0] + 2, field.size[1] + 2]}
                 position={field.position}
                 rotation={[-Math.PI / 2, 0, 0]}
-                onClick={() => setSelectedField(field.id)}
+                onClick={() => {
+                  // Move drone to field and auto-start scanning
+                  setSelectedField(field.id);
+                  const targetPos: [number, number, number] = [field.position[0], 3, field.position[2]];
+                  droneTargetRef.current = targetPos;
+                  setIsMovingToField(true);
+                  
+                  // Start scanning automatically after drone reaches field
+                  setTimeout(() => {
+                    setDronePosition(targetPos);
+                    setIsMovingToField(false);
+                    // Auto-trigger scan when drone reaches the field
+                    setTimeout(() => {
+                      handleFieldScan(field.id);
+                    }, 500);
+                  }, 1500);
+                }}
                 onPointerOver={(e) => {
                   e.stopPropagation();
                   document.body.style.cursor = 'pointer';
@@ -908,17 +986,31 @@ export default function DroneCropMonitoring3D({ onComplete }: DroneCropMonitorin
             <div className="flex justify-center space-x-4">
               <button
                 onClick={() => {
+                  // Reset all field scan status first
+                  CROP_FIELDS.forEach(field => {
+                    field.scanned = false;
+                  });
+                  
                   setGameCompleted(false);
                   setCompletionStats(null);
                   setGameState({
                     currentMission: 1,
                     droneEnergy: 100,
-                    activeDrone: 'scout_1',
+                    activeDrone: 'agri_pro',
                     dataCollected: [],
                     completedMissions: [],
                     score: 0,
                     gameTime: 0,
                   });
+                  setDronePosition([0, 3, 0]);
+                  setSelectedField(null);
+                  setScanningField(null);
+                  setLastScanTime(0);
+                  
+                  // Force re-render to update progress indicators
+                  setTimeout(() => {
+                    setGameState(prev => ({ ...prev }));
+                  }, 100);
                 }}
                 className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold transition-colors"
               >

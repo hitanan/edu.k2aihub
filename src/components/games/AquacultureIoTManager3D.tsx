@@ -11,6 +11,7 @@ const FISH_SPECIES = [
     id: 'ca-tra',
     name: 'Cá Tra',
     nameEn: 'Basa Fish',
+    scientificName: 'Pangasius bocourti',
     optimalTemp: [26, 30],
     optimalPH: [6.5, 8.0],
     optimalO2: [4, 8],
@@ -24,12 +25,23 @@ const FISH_SPECIES = [
       hasWhiskers: true, // Catfish whiskers
       finShape: 'rounded',
       bodyRatio: [3, 1, 1.2], // length, height, width
+      marketWeight: '1-3 kg',
+      harvestTime: '8-12 months',
+      feedConversion: '1.6:1',
+      habitat: 'Mekong Delta freshwater',
+      characteristics: [
+        'Omnivorous bottom feeder',
+        'High disease resistance',
+        'Fast growth rate',
+        'Tolerates varying water conditions',
+      ],
     },
   },
   {
     id: 'tom-su',
     name: 'Tôm Sú',
     nameEn: 'Black Tiger Shrimp',
+    scientificName: 'Penaeus monodon',
     optimalTemp: [26, 32],
     optimalPH: [7.0, 8.5],
     optimalO2: [5, 9],
@@ -44,12 +56,23 @@ const FISH_SPECIES = [
       hasSegments: true, // Segmented body
       bodyRatio: [2, 0.8, 0.6], // curved elongated
       tailFan: true, // Fan-shaped tail
+      marketWeight: '30-40 pieces/kg',
+      harvestTime: '4-6 months',
+      feedConversion: '1.8:1',
+      habitat: 'Brackish water ponds',
+      characteristics: [
+        'High-value export species',
+        'Requires pristine water quality',
+        'Cannibalistic behavior',
+        'Sensitive to disease outbreaks',
+      ],
     },
   },
   {
     id: 'ca-ro-phi',
     name: 'Cá Rô Phi',
     nameEn: 'Tilapia',
+    scientificName: 'Oreochromis niloticus',
     optimalTemp: [24, 32],
     optimalPH: [6.0, 9.0],
     optimalO2: [3, 7],
@@ -64,6 +87,171 @@ const FISH_SPECIES = [
       bodyRatio: [1.5, 1.8, 1.2], // compressed laterally
       dorsalFin: true, // Large dorsal fin
       stripes: true, // Body stripes
+      marketWeight: '300-500g',
+      harvestTime: '6-8 months',
+      feedConversion: '1.4:1',
+      habitat: 'Freshwater ponds and cages',
+      characteristics: [
+        'Herbivorous filter feeder',
+        'Excellent survival rate',
+        'Adapts to various environments',
+        'Prolific breeding capability',
+      ],
+    },
+  },
+  {
+    id: 'ca-chep',
+    name: 'Cá Chép',
+    nameEn: 'Common Carp',
+    scientificName: 'Cyprinus carpio',
+    optimalTemp: [20, 28],
+    optimalPH: [6.5, 8.5],
+    optimalO2: [4, 8],
+    color: '#DAA520',
+    secondaryColor: '#FFD700',
+    size: 0.32,
+    growthRate: 0.018,
+    value: 35000,
+    bodyShape: 'torpedo',
+    details: {
+      hasScales: true,
+      finShape: 'pointed',
+      bodyRatio: [2.5, 1.2, 1.4],
+      dorsalFin: true,
+      marketWeight: '1-2 kg',
+      harvestTime: '12-18 months',
+      feedConversion: '2.2:1',
+      habitat: 'Freshwater ponds and rivers',
+      characteristics: [
+        'Hardy and adaptable',
+        'Traditional Vietnamese aquaculture',
+        'Omnivorous bottom feeder',
+        'Cold-weather tolerance',
+      ],
+    },
+  },
+  {
+    id: 'ca-loc',
+    name: 'Cá Lóc',
+    nameEn: 'Snakehead Fish',
+    scientificName: 'Channa striata',
+    optimalTemp: [26, 32],
+    optimalPH: [6.0, 7.5],
+    optimalO2: [3, 6], // Can breathe air
+    color: '#2F4F4F',
+    secondaryColor: '#708090',
+    size: 0.4,
+    growthRate: 0.022,
+    value: 80000,
+    bodyShape: 'snake-like',
+    details: {
+      hasStripes: true,
+      finShape: 'continuous',
+      bodyRatio: [4, 1, 1.2],
+      canBreatheAir: true, // Special ability
+      marketWeight: '0.8-1.5 kg',
+      harvestTime: '10-14 months',
+      feedConversion: '2.5:1',
+      habitat: 'Shallow freshwater with vegetation',
+      characteristics: [
+        'Carnivorous predator',
+        'Air-breathing capability',
+        'High protein content',
+        'Premium market price',
+      ],
+    },
+  },
+  {
+    id: 'ca-dieu-hong',
+    name: 'Cá Diêu Hồng',
+    nameEn: 'Red Tilapia',
+    scientificName: 'Oreochromis spp.',
+    optimalTemp: [25, 30],
+    optimalPH: [6.5, 8.5],
+    optimalO2: [4, 8],
+    color: '#DC143C',
+    secondaryColor: '#FF6B6B',
+    size: 0.3,
+    growthRate: 0.024,
+    value: 45000,
+    bodyShape: 'round',
+    details: {
+      finShape: 'large',
+      bodyRatio: [1.5, 1.8, 1.2],
+      dorsalFin: true,
+      colorPattern: 'solid',
+      marketWeight: '400-600g',
+      harvestTime: '6-8 months',
+      feedConversion: '1.5:1',
+      habitat: 'Freshwater and brackish ponds',
+      characteristics: [
+        'Colorful ornamental value',
+        'Good growth performance',
+        'Disease resistant',
+        'Market premium for color',
+      ],
+    },
+  },
+  {
+    id: 'ca-he',
+    name: 'Cá Hẻ',
+    nameEn: 'Clarias Catfish',
+    scientificName: 'Clarias gariepinus',
+    optimalTemp: [24, 30],
+    optimalPH: [6.0, 8.0],
+    optimalO2: [2, 6], // Very tolerant
+    color: '#444444',
+    secondaryColor: '#666666',
+    size: 0.38,
+    growthRate: 0.026,
+    value: 42000,
+    bodyShape: 'elongated',
+    details: {
+      hasWhiskers: true,
+      finShape: 'continuous',
+      bodyRatio: [3.2, 1, 1.3],
+      canBreatheAir: true,
+      marketWeight: '0.8-1.2 kg',
+      harvestTime: '6-8 months',
+      feedConversion: '1.2:1',
+      habitat: 'Dense stocking ponds',
+      characteristics: [
+        'Very high stocking density',
+        'Air breathing capability',
+        'Rapid growth rate',
+        'High feed conversion efficiency',
+      ],
+    },
+  },
+  {
+    id: 'ca-bong-lau',
+    name: 'Cá Bông Lau',
+    nameEn: 'Striped Catfish',
+    scientificName: 'Pangasius hypophthalmus',
+    optimalTemp: [26, 32],
+    optimalPH: [6.5, 8.0],
+    optimalO2: [4, 7],
+    color: '#4169E1',
+    secondaryColor: '#87CEEB',
+    size: 0.42,
+    growthRate: 0.028,
+    value: 48000,
+    bodyShape: 'elongated',
+    details: {
+      hasWhiskers: true,
+      finShape: 'pointed',
+      bodyRatio: [3.5, 1.1, 1.4],
+      stripes: true,
+      marketWeight: '1.5-2.5 kg',
+      harvestTime: '8-10 months',
+      feedConversion: '1.4:1',
+      habitat: 'Large-scale cage farming',
+      characteristics: [
+        'Export-oriented species',
+        'Large commercial farms',
+        'High market demand',
+        'Efficient feed conversion',
+      ],
     },
   },
 ];
@@ -128,7 +316,7 @@ function Fish({
   // Different body shapes for different species
   const renderFishBody = () => {
     switch (species.bodyShape) {
-      case 'elongated': // Catfish like
+      case 'elongated': // Catfish like (Cá Tra)
         return (
           <group>
             {/* Main body - elongated and streamlined */}
@@ -154,31 +342,89 @@ function Fish({
                 { pos: [species.size * size * 1.8, -0.1, 0.2], rot: [0, 0, -0.3] },
                 { pos: [species.size * size * 1.8, 0.1, -0.2], rot: [0, 0, 0.3] },
                 { pos: [species.size * size * 1.8, -0.1, -0.2], rot: [0, 0, -0.3] },
-              ].map((whisker, index) => (
-                <mesh
-                  key={index}
-                  position={whisker.pos as [number, number, number]}
-                  rotation={whisker.rot as [number, number, number]}
-                  scale={[0.8, 0.05, 0.05]}
-                >
-                  <boxGeometry args={[species.size * size * 0.8, 0.02, 0.02]} />
-                  <meshStandardMaterial color="#444444" />
+              ].map((whisker, i) => (
+                <mesh key={i} position={whisker.pos as Vector3Array} rotation={whisker.rot as Vector3Array}>
+                  <cylinderGeometry args={[0.003, 0.001, species.size * size * 0.6]} />
+                  <meshStandardMaterial color="#FFDDAA" />
                 </mesh>
               ))}
-            {/* Dorsal fin */}
-            <mesh position={[0, species.size * size * 0.8, 0]} scale={[1.5, 1, 0.2]}>
-              <boxGeometry args={[species.size * size, species.size * size * 0.6, 0.05]} />
-              <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.8} />
-            </mesh>
-            {/* Tail */}
-            <mesh ref={tailRef} position={[-species.size * size * 2.2, 0, 0]} rotation={[0, 0, Math.PI / 4]}>
-              <coneGeometry args={[species.size * size * 0.8, species.size * size * 1.4, 6]} />
-              <meshStandardMaterial color={species.color} transparent opacity={isHealthy ? 0.8 : 0.5} />
-            </mesh>
           </group>
         );
 
-      case 'shrimp': // Curved segmented body with details
+      case 'snake-like': // Snakehead (Cá Lóc)
+        return (
+          <group>
+            {/* Main body - very elongated */}
+            <mesh scale={(species.details?.bodyRatio || [4, 1, 1.2]) as Vector3Array}>
+              <cylinderGeometry args={[species.size * size, species.size * size * 0.8, species.size * size * 3]} />
+              <meshStandardMaterial
+                color={species.color}
+                transparent
+                opacity={isHealthy ? 1 : 0.7}
+                emissive={isHealthy ? '#000000' : '#220000'}
+              />
+            </mesh>
+            {/* Head - pointed and predatory */}
+            <mesh position={[species.size * size * 1.8, 0, 0]} scale={[1.3, 0.9, 1.0]}>
+              <coneGeometry args={[species.size * size * 0.6, species.size * size * 1.2]} />
+              <meshStandardMaterial color={species.secondaryColor} />
+            </mesh>
+            {/* Body stripes for snakehead */}
+            {species.details?.hasStripes &&
+              Array.from({ length: 8 }, (_, i) => (
+                <mesh
+                  key={i}
+                  position={[i * species.size * size * 0.4 - species.size * size * 1.4, 0, 0]}
+                  scale={[0.1, 1.2, 1.2]}
+                >
+                  <cylinderGeometry
+                    args={[species.size * size, species.size * size * 0.8, species.size * size * 0.3]}
+                  />
+                  <meshStandardMaterial color="#1A1A1A" transparent opacity={0.6} />
+                </mesh>
+              ))}
+          </group>
+        );
+
+      case 'torpedo': // Carp (Cá Chép)
+        return (
+          <group>
+            {/* Main body - torpedo shaped */}
+            <mesh scale={(species.details?.bodyRatio || [2.5, 1.2, 1.4]) as Vector3Array}>
+              <sphereGeometry args={[species.size * size, 16, 12]} />
+              <meshStandardMaterial
+                color={species.color}
+                transparent
+                opacity={isHealthy ? 1 : 0.7}
+                metalness={0.3}
+                roughness={0.7}
+              />
+            </mesh>
+            {/* Head */}
+            <mesh position={[species.size * size * 1.2, 0, 0]} scale={[1.1, 1.0, 1.0]}>
+              <sphereGeometry args={[species.size * size * 0.8, 16, 12]} />
+              <meshStandardMaterial color={species.secondaryColor} metalness={0.3} />
+            </mesh>
+            {/* Scale pattern effect */}
+            {species.details?.hasScales &&
+              Array.from({ length: 12 }, (_, i) => (
+                <mesh
+                  key={i}
+                  position={[
+                    (i % 4) * species.size * size * 0.3 - species.size * size * 0.5,
+                    Math.floor(i / 4) * species.size * size * 0.2 - species.size * size * 0.2,
+                    0,
+                  ]}
+                  scale={[0.8, 0.8, 0.1]}
+                >
+                  <sphereGeometry args={[species.size * size * 0.15]} />
+                  <meshStandardMaterial color="#FFE55C" transparent opacity={0.4} />
+                </mesh>
+              ))}
+          </group>
+        );
+
+      case 'shrimp': // Shrimp (Tôm Sú)
         return (
           <group>
             {/* Segmented body parts - more curved */}
@@ -234,31 +480,35 @@ function Fish({
             )}
           </group>
         );
-
-      case 'round': // Tilapia - round compressed with large fins
+      case 'round': // Tilapia (Cá Rô Phi)
         return (
           <group>
-            {/* Main body - round and laterally compressed */}
+            {/* Main body - laterally compressed */}
             <mesh scale={(species.details?.bodyRatio || [1.5, 1.8, 1.2]) as Vector3Array}>
               <sphereGeometry args={[species.size * size, 16, 12]} />
               <meshStandardMaterial
                 color={species.color}
                 transparent
                 opacity={isHealthy ? 1 : 0.7}
-                emissive={isHealthy ? '#000000' : '#330000'}
-                emissiveIntensity={isHealthy ? 0 : 0.2}
+                emissive={isHealthy ? '#002200' : '#330000'}
+                emissiveIntensity={0.1}
               />
             </mesh>
-            {/* Body stripes for tilapia */}
+            {/* Head - blunt and rounded */}
+            <mesh position={[species.size * size * 0.9, 0, 0]} scale={[1.0, 1.1, 1.0]}>
+              <sphereGeometry args={[species.size * size * 0.7, 16, 12]} />
+              <meshStandardMaterial color={species.secondaryColor} />
+            </mesh>
+            {/* Tilapia stripes */}
             {species.details?.stripes &&
-              [0, 1, 2].map((stripe) => (
+              Array.from({ length: 6 }, (_, i) => (
                 <mesh
-                  key={stripe}
-                  position={[(stripe - 1) * species.size * size * 0.3, 0, species.size * size * 0.75]}
-                  scale={[0.2, 1.6, 0.1]}
+                  key={i}
+                  position={[i * species.size * size * 0.2 - species.size * size * 0.5, 0, 0]}
+                  scale={[0.05, 1.9, 1.3]}
                 >
-                  <boxGeometry args={[species.size * size * 0.2, species.size * size * 1.4, 0.01]} />
-                  <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.6} />
+                  <sphereGeometry args={[species.size * size]} />
+                  <meshStandardMaterial color="#228B22" transparent opacity={0.4} />
                 </mesh>
               ))}
             {/* Large dorsal fin */}
@@ -283,18 +533,13 @@ function Fish({
                 <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.7} />
               </mesh>
             ))}
-            {/* Tail fin - fan shaped */}
-            <mesh ref={tailRef} position={[-species.size * size * 1.6, 0, 0]} rotation={[0, 0, Math.PI / 4]}>
-              <coneGeometry args={[species.size * size * 0.9, species.size * size * 1.2, 8]} />
-              <meshStandardMaterial color={species.color} transparent opacity={isHealthy ? 0.8 : 0.5} />
-            </mesh>
           </group>
         );
 
       default:
         return (
-          <mesh scale={[1, 0.6, 1.5]}>
-            <sphereGeometry args={[species.size * size, 16, 12]} />
+          <mesh scale={[1.2, 1, 1]}>
+            <sphereGeometry args={[species.size * size, 12, 8]} />
             <meshStandardMaterial color={species.color} transparent opacity={isHealthy ? 1 : 0.7} />
           </mesh>
         );
@@ -304,6 +549,49 @@ function Fish({
   return (
     <group ref={meshRef} position={position}>
       {renderFishBody()}
+
+      {/* Common fins for non-shrimp species */}
+      {species.bodyShape !== 'shrimp' && (
+        <>
+          {/* Dorsal fin */}
+          <mesh position={[0, species.size * size * 0.8, 0]} scale={[1.5, 1, 0.2]}>
+            <boxGeometry args={[species.size * size, species.size * size * 0.6, 0.05]} />
+            <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.8} />
+          </mesh>
+          {/* Pectoral fins */}
+          <mesh position={[species.size * size * 0.3, 0, species.size * size * 0.8]} scale={[0.8, 0.6, 0.1]}>
+            <boxGeometry args={[species.size * size * 0.4, species.size * size * 0.3, 0.02]} />
+            <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.7} />
+          </mesh>
+          <mesh position={[species.size * size * 0.3, 0, -species.size * size * 0.8]} scale={[0.8, 0.6, 0.1]}>
+            <boxGeometry args={[species.size * size * 0.4, species.size * size * 0.3, 0.02]} />
+            <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.7} />
+          </mesh>
+          {/* Tail fin */}
+          <mesh ref={tailRef} position={[-species.size * size * 2.2, 0, 0]} rotation={[0, 0, Math.PI / 4]}>
+            <coneGeometry args={[species.size * size * 0.8, species.size * size * 1.4, 6]} />
+            <meshStandardMaterial color={species.color} transparent opacity={isHealthy ? 0.8 : 0.5} />
+          </mesh>
+        </>
+      )}
+
+      {/* Health indicator - subtle glow around sick fish */}
+      {!isHealthy && (
+        <mesh scale={[1.5, 1.5, 1.5]}>
+          <sphereGeometry args={[species.size * size * 1.2, 8, 8]} />
+          <meshStandardMaterial color="#ff4444" transparent opacity={0.15} />
+        </mesh>
+      )}
+
+      {/* Species information display on hover (optional) */}
+      {species.scientificName && (
+        <Html position={[0, species.size * size * 1.5, 0]} className="pointer-events-none">
+          <div className="bg-black/80 text-white text-xs p-1 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+            <div className="font-semibold">{species.name}</div>
+            <div className="italic text-gray-300">{species.scientificName}</div>
+          </div>
+        </Html>
+      )}
     </group>
   );
 }
@@ -715,7 +1003,7 @@ export default function AquacultureIoTManager3D() {
 
         <WaterEnvironment quality={waterQuality} />
 
-        {/* Fish */}
+        {/* Fish - Always visible for debugging */}
         {fishData.map((fish) => (
           <Fish
             key={fish.id}

@@ -49,7 +49,10 @@ export function useEducationalGames() {
   };
 
   const getRecommendedGames = (limit = 6): EducationalGame[] => {
-    return EDUCATIONAL_GAMES_DATA.filter((game) => !completedGames.includes(game.id))
+    return EDUCATIONAL_GAMES_DATA
+      .slice()
+      .reverse() // Show newest games first (from end of array)
+      .filter((game) => !completedGames.includes(game.id))
       .sort((a, b) => b.points - a.points)
       .slice(0, limit);
   };
