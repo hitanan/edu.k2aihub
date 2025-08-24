@@ -50,6 +50,10 @@ export const K2Module = {
   STEM: 'stem',
   Robotics: 'robotics',
 
+  // Essential Skills Modules (New 2025)
+  CriticalThinking: 'critical-thinking',
+  CommunicationSkills: 'communication-skills',
+
   // Vietnamese-Specific Modules
   VietnameseBusiness: 'vietnamese-business',
   DigitalGovernment: 'digital-government',
@@ -682,6 +686,100 @@ export const moduleNavigation: ModuleNavigation[] = [
         id: 'vietnamese-voice-ai-systems',
         title: 'Vietnamese Voice AI & Speech Recognition Systems',
         duration: '150 phút',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
+
+  // Essential Skills Modules (New 2025)
+  {
+    id: K2Module.CriticalThinking,
+    title: 'Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo',
+    subtitle: 'Phát triển tư duy logic và sáng tạo',
+    description:
+      'Khóa học toàn diện về tư duy phê phán và giải quyết vấn đề sáng tạo, được thiết kế đặc biệt cho học sinh phổ thông Việt Nam với case studies thực tế.',
+    category: 'essential',
+    icon: '🧠',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '8-10 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '8-10 giờ',
+    href: '/learning/critical-thinking',
+    features: [
+      'Logical reasoning frameworks',
+      'Design thinking methodology',
+      'Case studies từ Việt Nam',
+      'Practical problem-solving exercises',
+    ],
+    tags: ['critical thinking', 'problem solving', 'logic', 'creativity'],
+    prerequisites: [
+      'Không có yêu cầu tiên quyết cụ thể',
+      'Có tinh thần mở và sẵn sàng challenge assumptions',
+    ],
+    lessons: [
+      {
+        id: 'critical-thinking-fundamentals',
+        title: 'Cơ Bản Tư Duy Phê Phán',
+        duration: '90 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'creative-problem-solving',
+        title: 'Giải Quyết Vấn Đề Sáng Tạo',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'systems-thinking',
+        title: 'Tư Duy Hệ Thống',
+        duration: '105 phút',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
+  {
+    id: K2Module.CommunicationSkills,
+    title: 'Kỹ Năng Giao Tiếp và Thuyết Trình',
+    subtitle: 'Phát triển kỹ năng giao tiếp hiệu quả trong thời đại số',
+    description:
+      'Khóa học comprehensive về kỹ năng giao tiếp và thuyết trình, từ active listening đến digital presentation mastery và cross-cultural communication.',
+    category: 'essential',
+    icon: '🗣️',
+    color: 'from-blue-600 to-cyan-600',
+    totalDuration: '9-11 giờ',
+    difficulty: 'Trung bình',
+    level: 'Trung bình',
+    duration: '9-11 giờ',
+    href: '/learning/communication-skills',
+    features: [
+      'Effective communication fundamentals',
+      'Digital presentation tools mastery',
+      'Cross-cultural communication skills',
+      'Public speaking confidence building',
+    ],
+    tags: ['communication', 'presentation', 'public speaking', 'digital'],
+    prerequisites: [
+      'Không có yêu cầu tiên quyết cụ thể',
+      'Sẵn sàng practice speaking và receive feedback',
+    ],
+    lessons: [
+      {
+        id: 'effective-communication-fundamentals',
+        title: 'Cơ Bản Giao Tiếp Hiệu Quả',
+        duration: '90 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'digital-presentation-mastery',
+        title: 'Thành Thạo Thuyết Trình Số',
+        duration: '120 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'cross-cultural-communication',
+        title: 'Giao Tiếp Đa Văn Hóa',
+        duration: '100 phút',
         difficulty: 'Nâng cao',
       },
     ],

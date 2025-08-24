@@ -942,7 +942,7 @@ export default function FactoryAutomationSimulator3D() {
                 // Toggle machine active state
                 const updatedMachines = selectedScenario.layout.machines.map(m => 
                   m.id === selectedMachine.id 
-                    ? { ...m, isActive: !m.isActive, status: m.isActive ? 'idle' : 'working' }
+                    ? { ...m, isActive: !m.isActive, status: (m.isActive ? 'idle' : 'working') as Machine['status'] }
                     : m
                 );
                 setSelectedScenario({
@@ -952,7 +952,7 @@ export default function FactoryAutomationSimulator3D() {
                     machines: updatedMachines
                   }
                 });
-                setSelectedMachine(updatedMachines.find(m => m.id === selectedMachine.id) || null);
+                setSelectedMachine((updatedMachines.find(m => m.id === selectedMachine.id) as Machine) || null);
               }}
               className={`w-full px-3 py-1 rounded text-xs font-semibold ${
                 selectedMachine.isActive 
@@ -978,7 +978,7 @@ export default function FactoryAutomationSimulator3D() {
                     machines: updatedMachines
                   }
                 });
-                setSelectedMachine(updatedMachines.find(m => m.id === selectedMachine.id) || null);
+                setSelectedMachine((updatedMachines.find(m => m.id === selectedMachine.id) as Machine) || null);
               }}
               className="w-full px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-semibold"
             >
@@ -1000,7 +1000,7 @@ export default function FactoryAutomationSimulator3D() {
                     machines: updatedMachines
                   }
                 });
-                setSelectedMachine(updatedMachines.find(m => m.id === selectedMachine.id) || null);
+                setSelectedMachine((updatedMachines.find(m => m.id === selectedMachine.id) as Machine) || null);
               }}
               className={`w-full px-3 py-1 rounded text-xs font-semibold ${
                 selectedMachine.status === 'maintenance'

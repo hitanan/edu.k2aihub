@@ -71,6 +71,8 @@ import {
   SpaceExploration3DGame,
   RobotNavigation3DGame,
 } from './individual';
+import LogicalFallacyDetector from './LogicalFallacyDetector';
+import PresentationMaster from './PresentationMaster';
 
 interface MiniGameProps {
   game: EducationalGame;
@@ -340,6 +342,10 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <VirtualChemistryLab3D onComplete={(success, score) => endGame(success, score)} />;
       case 'space-exploration-3d':
         return <SpaceExploration3DGame onComplete={(success, score) => endGame(success, score)} timeLeft={timeLeft} />;
+      case 'logical-fallacy-detector':
+        return <LogicalFallacyDetector />;
+      case 'presentation-master':
+        return <PresentationMaster />;
       default:
         return <div className="text-white">Game not implemented yet!</div>;
     }

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Search, Clock, Star, ChevronRight, Filter } from 'lucide-react';
+import { Search, Clock, Star, ChevronRight, Filter, Zap, TrendingUp } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { searchModulesVietnamese } from '@/utils/vietnameseSearch';
@@ -51,6 +51,10 @@ const countModulesInCategory = (category: string): number => {
 };
 
 const categories = {
+  essential: {
+    title: '⭐ Kỹ Năng Thiết Yếu',
+    count: countModulesInCategory('essential'),
+  },
   trending: {
     title: '🔥 Xu Hướng 2025',
     count: countModulesInCategory('trending'),
@@ -97,6 +101,16 @@ export default function AllLearningPageClient() {
   const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  // Scroll effect for background color transitions
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Add loading simulation for better UX
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
@@ -108,6 +122,10 @@ export default function AllLearningPageClient() {
 
   // Popular search terms and suggestions with Vietnamese support
   const popularSearchTerms = [
+    'Tư duy phê phán',
+    'Giao tiếp',
+    'Critical Thinking',
+    'Communication',
     'Python',
     'AI',
     'Machine Learning',
@@ -130,6 +148,26 @@ export default function AllLearningPageClient() {
   ];
 
   const searchSuggestions = [
+    {
+      term: 'Tư duy phê phán',
+      category: 'essential',
+      description: 'Phát triển kỹ năng tư duy logic và giải quyết vấn đề',
+    },
+    {
+      term: 'tu duy phe phan',
+      category: 'essential',
+      description: 'Tư duy phê phán (không dấu)',
+    },
+    {
+      term: 'Kỹ năng giao tiếp',
+      category: 'essential',
+      description: 'Thuyết trình và giao tiếp hiệu quả',
+    },
+    {
+      term: 'ky nang giao tiep',
+      category: 'essential',
+      description: 'Kỹ năng giao tiếp (không dấu)',
+    },
     {
       term: 'lập trình Python',
       category: 'programming',
@@ -379,17 +417,51 @@ export default function AllLearningPageClient() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      {/* Hero Section */}
-      <div className="relative overflow-x-hidden bg-gradient-to-r from-blue-600/20 to-purple-600/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div 
+      className="min-h-screen transition-all duration-1000 ease-out"
+      style={{
+        background: `linear-gradient(135deg, 
+          rgb(15, 23, 42) 0%, 
+          rgb(30, 58, 138) ${Math.min(50, scrollY * 0.1)}%, 
+          rgb(15, 23, 42) 100%)`
+      }}
+    >
+      {/* Enhanced Hero Section */}
+      <div className="relative overflow-hidden">
+        {/* Animated Background Pattern */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, #8b5cf6 0%, transparent 50%),
+              radial-gradient(circle at 75% 25%, #06b6d4 0%, transparent 50%),
+              radial-gradient(circle at 25% 75%, #10b981 0%, transparent 50%)
+            `,
+            backgroundSize: '400px 400px',
+            animation: 'float 20s ease-in-out infinite'
+          }}
+        />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 
+              className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight"
+              style={{
+                transform: `translateY(${scrollY * 0.2}px)`,
+                textShadow: '0 4px 20px rgba(59, 130, 246, 0.3)'
+              }}
+            >
               📚 Tất Cả Khóa Học
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p 
+              className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+              style={{
+                transform: `translateY(${scrollY * 0.1}px)`
+              }}
+            >
               Khám phá{' '}
-              <strong className="text-blue-300">
+              <strong className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
                 {allLearningModules.length} khóa học chuyên sâu
               </strong>{' '}
               từ Vietnamese business, AI technology, Electric Vehicle Tech,

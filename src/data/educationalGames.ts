@@ -2835,4 +2835,76 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
     ],
   },
+
+  // Critical Thinking Skills Games
+  {
+    id: 'logical-fallacy-detector',
+    title: 'Logical Fallacy Detector',
+    description: 'Phát triển kỹ năng tư duy phê phán bằng cách nhận biết các lỗi lập luận trong các tình huống thực tế tại Việt Nam',
+    category: 'puzzle',
+    difficulty: 'Trung bình',
+    estimatedTime: '20-30 phút',
+    skills: ['Critical Thinking', 'Logical Reasoning', 'Argument Analysis', 'Vietnamese Context', 'Problem Solving'],
+    moduleType: 'critical-thinking',
+    isInternal: true,
+    points: 120,
+    icon: '🧠',
+    color: 'from-purple-600 to-pink-600',
+    relatedLessons: [
+      {
+        moduleId: 'critical-thinking',
+        lessonId: 'critical-thinking-fundamentals',
+        title: 'Cơ Bản Tư Duy Phê Phán',
+        connection: 'Thực hành nhận biết logical fallacies và phân tích arguments trong real-world scenarios',
+      },
+      {
+        moduleId: 'critical-thinking',
+        lessonId: 'creative-problem-solving',
+        title: 'Giải Quyết Vấn Đề Sáng Tạo',
+        connection: 'Apply critical thinking skills để evaluate solutions và avoid biased reasoning',
+      },
+      {
+        moduleId: 'communication-skills',
+        lessonId: 'effective-communication-fundamentals',
+        title: 'Cơ Bản Giao Tiếp Hiệu Quả',
+        connection: 'Identify weak arguments và improve persuasion techniques in communication',
+      },
+    ],
+  },
+
+  // Communication & Presentation Skills Games
+  {
+    id: 'presentation-master',
+    title: 'Presentation Master',
+    description: 'Phát triển kỹ năng thuyết trình và presentation design bằng cách phân tích và cải thiện slides trong các scenarios thực tế',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-35 phút',
+    skills: ['Presentation Skills', 'Design Thinking', 'Visual Communication', 'Public Speaking', 'Slide Design'],
+    moduleType: 'communication-skills',
+    isInternal: true,
+    points: 140,
+    icon: '🎤',
+    color: 'from-blue-600 to-cyan-600',
+    relatedLessons: [
+      {
+        moduleId: 'communication-skills',
+        lessonId: 'digital-presentation-mastery',
+        title: 'Thành Thạo Thuyết Trình Số',
+        connection: 'Practice digital presentation design principles và improve slide effectiveness',
+      },
+      {
+        moduleId: 'communication-skills',
+        lessonId: 'effective-communication-fundamentals',
+        title: 'Cơ Bản Giao Tiếp Hiệu Quả',
+        connection: 'Apply communication fundamentals to create compelling presentations',
+      },
+      {
+        moduleId: 'critical-thinking',
+        lessonId: 'creative-problem-solving',
+        title: 'Giải Quyết Vấn Đề Sáng Tạo',
+        connection: 'Use design thinking methods để create innovative presentation solutions',
+      },
+    ],
+  },
 ];
