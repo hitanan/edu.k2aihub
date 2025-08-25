@@ -138,6 +138,7 @@ export const semiconductorLessons: SemiconductorLesson[] = [
     duration: '240 phút',
     difficulty: 'Trung bình',
     chipType: 'VLSI Design',
+    videoUrl: 'https://www.youtube.com/watch?v=9ZNi1YrCF5A',
     objectives: [
       'Master các bước trong IC design flow: specification → layout → verification',
       'Sử dụng thành thạo EDA tools như Cadence, Synopsys',
@@ -237,6 +238,7 @@ export const semiconductorLessons: SemiconductorLesson[] = [
     duration: '200 phút',
     difficulty: 'Trung bình',
     chipType: 'Manufacturing Process',
+    videoUrl: 'https://www.youtube.com/watch?v=WKHKy89QaV0',
     objectives: [
       'Hiểu complete fabrication flow từ wafer đến packaged chip',
       'Nắm vững photolithography process và pattern transfer',
@@ -332,6 +334,7 @@ export const semiconductorLessons: SemiconductorLesson[] = [
     duration: '220 phút',
     difficulty: 'Nâng cao',
     chipType: 'Advanced Technology & AI',
+    videoUrl: 'https://www.youtube.com/watch?v=LnfXBRZASUo',
     objectives: [
       'Hiểu challenges và solutions trong 3nm, 2nm nodes',
       'Learn về specialized AI accelerator architectures',
@@ -431,6 +434,7 @@ export const semiconductorLessons: SemiconductorLesson[] = [
     duration: '150 phút',
     difficulty: 'Cơ bản',
     chipType: 'Career Development',
+    videoUrl: 'https://www.youtube.com/watch?v=Vkmt5FWM18I',
     objectives: [
       'Understand different career paths trong semiconductor industry',
       'Learn về major companies và job opportunities tại Vietnam',

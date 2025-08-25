@@ -279,6 +279,55 @@ export default async function RoboticsLessonPage({ params }: PageProps) {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-6">
+            {/* Course Progress */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                <Bot className="w-5 h-5 text-purple-400 mr-2" />
+                Tiến độ khóa học
+              </h3>
+              <div className="space-y-3">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-300">Tiến độ</span>
+                  <span className="text-white font-semibold">
+                    {currentIndex + 1}/{roboticsLessons.length}
+                  </span>
+                </div>
+                <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div
+                    className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300"
+                    style={{
+                      width: `${((currentIndex + 1) / roboticsLessons.length) * 100}%`,
+                    }}
+                  ></div>
+                </div>
+                <div className="text-xs text-gray-400">
+                  {Math.round(((currentIndex + 1) / roboticsLessons.length) * 100)}% hoàn thành
+                </div>
+              </div>
+              
+              {/* Lesson List */}
+              <div className="mt-4 space-y-2 max-h-64 overflow-y-auto">
+                {roboticsLessons.map((lessonItem, index) => (
+                  <Link
+                    key={lessonItem.id}
+                    href={`/learning/robotics/${lessonItem.id}`}
+                    className={`block p-2 rounded-lg transition-all duration-200 text-sm ${
+                      lessonItem.id === lesson.id
+                        ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30'
+                        : 'text-gray-300 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                        index <= currentIndex ? 'bg-purple-400' : 'bg-gray-600'
+                      }`}></div>
+                      <span className="truncate">{lessonItem.title}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {/* Materials Needed */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">

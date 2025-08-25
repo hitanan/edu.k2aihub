@@ -57,3 +57,61 @@ export function createRegionSlug(regionName: string): string {
     .replace(/-+/g, '-')
     .trim();
 }
+
+// Create blog category slug
+export function createCategorySlug(category: string): string {
+  return category
+    .toLowerCase()
+    .replace(/[àáạảãâầấậẩẫăằắặẳẵ]/g, 'a')
+    .replace(/[èéẹẻẽêềếệểễ]/g, 'e')
+    .replace(/[ìíịỉĩ]/g, 'i')
+    .replace(/[òóọỏõôồốộổỗơờớợởỡ]/g, 'o')
+    .replace(/[ùúụủũưừứựửữ]/g, 'u')
+    .replace(/[ỳýỵỷỹ]/g, 'y')
+    .replace(/đ/g, 'd')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .trim();
+}
+
+// Create blog tag slug
+export function createTagSlug(tag: string): string {
+  return tag
+    .toLowerCase()
+    .replace(/[àáạảãâầấậẩẫăằắặẳẵ]/g, 'a')
+    .replace(/[èéẹẻẽêềếệểễ]/g, 'e')
+    .replace(/[ìíịỉĩ]/g, 'i')
+    .replace(/[òóọỏõôồốộổỗơờớợởỡ]/g, 'o')
+    .replace(/[ùúụủũưừứựửữ]/g, 'u')
+    .replace(/[ỳýỵỷỹ]/g, 'y')
+    .replace(/đ/g, 'd')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .trim();
+}
+
+// Reverse lookup functions
+export function getCategoryFromSlug(slug: string): string {
+  const categoryMap: { [key: string]: string } = {
+    'giao-duc': 'Giáo Dục',
+    'cong-nghe': 'Công Nghệ',
+    'phan-tich': 'Phân Tích',
+    'nghien-cuu': 'Nghiên Cứu',
+    'tro-choi': 'Trò Chơi',
+    'xu-huong': 'Xu Hướng',
+    'k2aihub': 'K2AiHub',
+    'trien-khai': 'Triển Khai',
+    'tong-hop': 'Tổng Hợp'
+  };
+  return categoryMap[slug] || slug;
+}
+
+export function getTagFromSlug(slug: string): string {
+  // This is a simplified version - in a real app you might want to store this mapping
+  return slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}

@@ -16,6 +16,7 @@ import {
   BarChart3,
   Rocket,
   CheckCircle,
+  Youtube,
 } from 'lucide-react';
 import { PageProps } from '@/types';
 
@@ -55,12 +56,8 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
   }
 
   const currentIndex = arduinoLessons.findIndex((l) => l.id === lessonId);
-  const previousLesson =
-    currentIndex > 0 ? arduinoLessons[currentIndex - 1] : null;
-  const nextLesson =
-    currentIndex < arduinoLessons.length - 1
-      ? arduinoLessons[currentIndex + 1]
-      : null;
+  const previousLesson = currentIndex > 0 ? arduinoLessons[currentIndex - 1] : null;
+  const nextLesson = currentIndex < arduinoLessons.length - 1 ? arduinoLessons[currentIndex + 1] : null;
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -98,17 +95,11 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
         {/* Breadcrumb */}
         <nav className="mb-8">
           <div className="flex items-center space-x-3 text-sm">
-            <Link
-              href="/"
-              className="text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
+            <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
               Trang chủ
             </Link>
             <span className="text-gray-400">/</span>
-            <Link
-              href="/learning/arduino"
-              className="text-cyan-400 hover:text-cyan-300 transition-colors"
-            >
+            <Link href="/learning/arduino" className="text-cyan-400 hover:text-cyan-300 transition-colors">
               Arduino & IoT Programming
             </Link>
             <span className="text-gray-400">/</span>
@@ -124,49 +115,55 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <div className="flex items-center space-x-3 mb-4">
                 {getCategoryIcon(lesson.category)}
-                <span className="text-cyan-400 font-medium capitalize">
-                  {lesson.category}
-                </span>
+                <span className="text-cyan-400 font-medium capitalize">{lesson.category}</span>
               </div>
 
-              <h1 className="text-4xl font-bold text-white mb-4">
-                {lesson.title}
-              </h1>
+              <h1 className="text-4xl font-bold text-white mb-4">{lesson.title}</h1>
               <p className="text-xl text-gray-200 mb-6">{lesson.description}</p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <Clock className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">
-                    {lesson.duration}
-                  </div>
+                  <div className="text-white font-semibold">{lesson.duration}</div>
                   <div className="text-sm text-gray-300">Thời gian</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <Target className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
-                  <div
-                    className={`text-sm font-semibold px-2 py-1 rounded ${getDifficultyColor(lesson.difficulty)}`}
-                  >
+                  <div className={`text-sm font-semibold px-2 py-1 rounded ${getDifficultyColor(lesson.difficulty)}`}>
                     {lesson.difficulty}
                   </div>
                   <div className="text-sm text-gray-300 mt-1">Độ khó</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <User className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">
-                    {lesson.objectives.length}
-                  </div>
+                  <div className="text-white font-semibold">{lesson.objectives.length}</div>
                   <div className="text-sm text-gray-300">Mục tiêu</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <Play className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">
-                    {lesson.exercises.length}
-                  </div>
+                  <div className="text-white font-semibold">{lesson.exercises.length}</div>
                   <div className="text-sm text-gray-300">Bài tập</div>
                 </div>
               </div>
             </div>
+
+            {/* Video Tutorial */}
+            {lesson.videoUrl && (
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Youtube className="w-6 h-6 text-red-400 mr-3" />
+                  Video Tutorial
+                </h2>
+                <div className="aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    src={lesson.videoUrl.replace('watch?v=', 'embed/')}
+                    title={lesson.title}
+                    className="w-full h-full"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            )}
 
             {/* Learning Objectives */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
@@ -186,9 +183,7 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
 
             {/* Code Example */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h2 className="text-2xl font-bold text-white mb-6">
-                Code Example
-              </h2>
+              <h2 className="text-2xl font-bold text-white mb-6">Code Example</h2>
               <div className="bg-black/50 rounded-lg p-6 overflow-x-auto">
                 <pre className="text-green-400 text-sm">
                   <code>{lesson.codeExample}</code>
@@ -198,31 +193,19 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
 
             {/* Exercises */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h2 className="text-2xl font-bold text-white mb-6">
-                Bài tập thực hành
-              </h2>
+              <h2 className="text-2xl font-bold text-white mb-6">Bài tập thực hành</h2>
               <div className="space-y-6">
                 {lesson.exercises.map((exercise, index) => (
-                  <div
-                    key={index}
-                    className="border border-white/20 rounded-lg p-6"
-                  >
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {exercise.title}
-                    </h3>
+                  <div key={index} className="border border-white/20 rounded-lg p-6">
+                    <h3 className="text-xl font-semibold text-white mb-2">{exercise.title}</h3>
                     <p className="text-gray-200 mb-4">{exercise.description}</p>
 
                     {exercise.hints.length > 0 && (
                       <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
-                        <h4 className="text-blue-300 font-semibold mb-2">
-                          💡 Gợi ý:
-                        </h4>
+                        <h4 className="text-blue-300 font-semibold mb-2">💡 Gợi ý:</h4>
                         <ul className="space-y-1">
                           {exercise.hints.map((hint, hintIndex) => (
-                            <li
-                              key={hintIndex}
-                              className="text-gray-300 text-sm"
-                            >
+                            <li key={hintIndex} className="text-gray-300 text-sm">
                               • {hint}
                             </li>
                           ))}
@@ -236,9 +219,7 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
 
             {/* Real World Applications */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <h2 className="text-2xl font-bold text-white mb-6">
-                Ứng dụng thực tế
-              </h2>
+              <h2 className="text-2xl font-bold text-white mb-6">Ứng dụng thực tế</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {lesson.realWorldApplications.map((application, index) => (
                   <div key={index} className="bg-white/10 rounded-lg p-4">
@@ -251,6 +232,57 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-6">
+            {/* Course Progress */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                <BarChart3 className="w-5 h-5 text-cyan-400 mr-2" />
+                Tiến độ khóa học
+              </h3>
+              <div className="space-y-3">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-300">Tiến độ</span>
+                  <span className="text-white font-semibold">
+                    {currentIndex + 1}/{arduinoLessons.length}
+                  </span>
+                </div>
+                <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div
+                    className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full transition-all duration-300"
+                    style={{
+                      width: `${((currentIndex + 1) / arduinoLessons.length) * 100}%`,
+                    }}
+                  ></div>
+                </div>
+                <div className="text-xs text-gray-400">
+                  {Math.round(((currentIndex + 1) / arduinoLessons.length) * 100)}% hoàn thành
+                </div>
+              </div>
+
+              {/* Lesson List */}
+              <div className="mt-4 space-y-2 max-h-64 overflow-y-auto">
+                {arduinoLessons.map((lessonItem, index) => (
+                  <Link
+                    key={lessonItem.id}
+                    href={`/learning/arduino/${lessonItem.id}`}
+                    className={`block p-2 rounded-lg transition-all duration-200 text-sm ${
+                      lessonItem.id === lesson.id
+                        ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
+                        : 'text-gray-300 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-2">
+                      <div
+                        className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                          index <= currentIndex ? 'bg-cyan-400' : 'bg-gray-600'
+                        }`}
+                      ></div>
+                      <span className="truncate">{lessonItem.title}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {/* Materials Needed */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
@@ -269,9 +301,7 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
             {/* Competition Info */}
             {lesson.competitions.length > 0 && (
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <h3 className="text-lg font-semibold text-white mb-4">
-                  🏆 Cuộc thi liên quan
-                </h3>
+                <h3 className="text-lg font-semibold text-white mb-4">🏆 Cuộc thi liên quan</h3>
                 <ul className="space-y-2">
                   {lesson.competitions.map((competition, index) => (
                     <li key={index} className="text-gray-300 text-sm">
@@ -294,9 +324,7 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
               <ChevronLeft className="w-5 h-5 text-cyan-400" />
               <div>
                 <div className="text-sm text-gray-400">Bài trước</div>
-                <div className="text-white font-medium">
-                  {previousLesson.title}
-                </div>
+                <div className="text-white font-medium">{previousLesson.title}</div>
               </div>
             </Link>
           ) : (

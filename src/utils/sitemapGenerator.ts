@@ -12,6 +12,9 @@ import { gameDevLessons } from '@/data/game-development';
 import { aiArtLessons } from '@/data/ai-art-creative-tech';
 import { biotechnologyLessons } from '@/data/biotechnology';
 
+// Import Blog utilities
+import { getBlogSlugs, getAllCategoriesSync } from '@/lib/blog';
+
 // Import Educational Games Data
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 
@@ -734,9 +737,38 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
       priority: 0.9, // Higher priority for major cities
     }));
 
+  // Blog pages - get all blog posts and categories
+  const blogSlugs = getBlogSlugs();
+  const blogCategories = getAllCategoriesSync();
+
+  const blogPages = [
+    // Main blog page
+    {
+      url: `${baseUrl}/blog`,
+      lastModified,
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    },
+    // Individual blog posts
+    ...blogSlugs.map((slug) => ({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+    // Blog category pages
+    ...blogCategories.map((category) => ({
+      url: `${baseUrl}/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    })),
+  ];
+
   // Combine all pages with proper prioritization
   const allPages = [
     ...corePages.map((page) => ({ ...page, lastModified })),
+    ...blogPages, // Blog content with high priority
     ...gamesPages, // Educational games pages
     ...aiPages,
     ...pythonPages,

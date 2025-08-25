@@ -1,3 +1,14 @@
+---
+title: "Phân Tích Xu Hướng Giáo Dục 2025 & Sở Thích Học Sinh Việt Nam K-12"
+description: "Phân tích chuyên sâu về xu hướng giáo dục 2025 và sở thích ưu tiên của học sinh Việt Nam từ cấp tiểu học đến trung học phổ thông."
+date: "2025-01-15"
+author: "K2AiHub Research Team"
+category: "Phân Tích"
+tags: ["xu hướng giáo dục", "học sinh Việt Nam", "K-12", "giáo dục số", "phân tích thị trường"]
+featured: true
+readingTime: "12 phút đọc"
+---
+
 # 2025 Education Trends & Vietnamese K-12 Student Interest Analysis
 
 ## 🇻🇳 **Vietnamese K-12 Student Priority Interests (2024-2025)**

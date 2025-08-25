@@ -141,7 +141,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 max-w-md text-sm">
-              Nền tảng giáo dục với 14+ module chuyên sâu cho tương lai công nghệ.
+              Nền tảng giáo dục với 66+ module chuyên sâu cho tương lai công nghệ.
             </p>
           </div>
 

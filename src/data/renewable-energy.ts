@@ -132,6 +132,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     duration: '200 phút',
     difficulty: 'Trung bình',
     energyType: 'Wind Power',
+    videoUrl: 'https://www.youtube.com/watch?v=fsNzBfZoV04',
     objectives: [
       'Understand wind turbine aerodynamics và blade design principles',
       'Learn về wind resource assessment và site selection',
@@ -224,6 +225,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     duration: '160 phút',
     difficulty: 'Nâng cao',
     energyType: 'Energy Storage',
+    videoUrl: 'https://www.youtube.com/watch?v=1MpWH6-xQqs',
     objectives: [
       'Compare different energy storage technologies: batteries, pumped hydro, compressed air',
       'Understand grid stabilization role của energy storage systems',
@@ -309,6 +311,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     duration: '170 phút',
     difficulty: 'Trung bình',
     energyType: 'Hydropower',
+    videoUrl: 'https://www.youtube.com/watch?v=wzc99DVGhcE',
     objectives: [
       'Understand hydro turbine types và selection criteria',
       'Learn về environmental impact assessment cho hydro projects',
@@ -384,6 +387,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     duration: '140 phút',
     difficulty: 'Trung bình',
     energyType: 'Economics & Policy',
+    videoUrl: 'https://www.youtube.com/watch?v=eFf4CnMqs40',
     objectives: [
       'Understand Vietnam renewable energy policies và incentives',
       'Learn về project financing và investment structures',

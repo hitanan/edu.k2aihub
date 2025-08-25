@@ -1,3 +1,14 @@
+---
+title: "Nghiên Cứu Thị Trường Giáo Dục Việt Nam & Module Học Tập Phù Hợp"
+description: "Nghiên cứu chuyên sâu về thị trường giáo dục Việt Nam, phân tích xu hướng học tập và đề xuất các module phù hợp với bối cảnh Việt Nam."
+date: "2024-12-20"
+author: "K2AiHub Market Research Team"
+category: "Nghiên Cứu"
+tags: ["thị trường Việt Nam", "giáo dục địa phương", "nghiên cứu thị trường", "module phù hợp", "bối cảnh Việt Nam"]
+featured: true
+readingTime: "20 phút đọc"
+---
+
 # Vietnamese Market-Specific Learning Modules Research
 
 _Nghiên cứu thị trường giáo dục Việt Nam và đề xuất các module học tập phù hợp_

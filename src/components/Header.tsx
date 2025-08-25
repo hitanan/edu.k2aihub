@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, Menu, X, Home, Globe, Brain, Code, BookOpen } from 'lucide-react';
+import { ChevronDown, Menu, X, Home, Globe, Brain, Code, BookOpen, FileText } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 
 const Header: React.FC = () => {
@@ -61,6 +61,11 @@ const Header: React.FC = () => {
       name: 'Trò Chơi Giáo Dục',
       href: '/games',
       icon: <span className="w-4 h-4 text-center">🎮</span>,
+    },
+    {
+      name: 'Blog',
+      href: '/blog',
+      icon: <FileText className="w-4 h-4" />,
     },
     {
       name: 'Hồ Sơ',

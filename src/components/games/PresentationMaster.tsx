@@ -29,6 +29,7 @@ const PresentationMaster: React.FC = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutes per challenge
   const [showTips, setShowTips] = useState(false);
+  const [shuffledImprovements, setShuffledImprovements] = useState<string[]>([]);
   const [completedSlides, setCompletedSlides] = useState<number[]>([]);
 
   const challenges: PresentationChallenge[] = [
@@ -165,6 +166,19 @@ const PresentationMaster: React.FC = () => {
       return () => clearTimeout(timer);
     }
   }, [timeLeft, gameStarted]);
+
+  // Create stable shuffled improvements when slide changes
+  useEffect(() => {
+    if (gameStarted && challenges[currentChallenge] && challenges[currentChallenge].slides[currentSlide]) {
+      const slide = challenges[currentChallenge].slides[currentSlide];
+      const allOptions = [
+        ...slide.improvements, 
+        ...slide.designIssues.map(issue => `Incorrect: ${issue.substring(0, 30)}...`)
+      ];
+      const shuffled = [...allOptions].sort(() => Math.random() - 0.5).slice(0, 6);
+      setShuffledImprovements(shuffled);
+    }
+  }, [currentChallenge, currentSlide, gameStarted]);
 
   const startGame = () => {
     setGameStarted(true);
@@ -373,20 +387,28 @@ const PresentationMaster: React.FC = () => {
             ✨ Chọn improvements tốt nhất:
           </h4>
           <div className="space-y-2">
-            {[...slide.improvements, ...slide.designIssues.map(issue => `Incorrect: ${issue.substring(0, 30)}...`)].sort(() => Math.random() - 0.5).slice(0, 6).map((improvement, index) => (
+            {shuffledImprovements.map((improvement, index) => (
               <button
                 key={index}
                 onClick={() => selectImprovement(improvement)}
-                className={`w-full text-left p-3 rounded-lg border text-sm transition-all ${
+                className={`w-full text-left p-3 rounded-lg border text-sm transition-all flex items-start gap-3 ${
                   selectedImprovements.includes(improvement)
                     ? 'bg-green-900/30 border-green-400/50 text-green-300'
                     : 'bg-blue-800/20 border-blue-400/30 text-gray-300 hover:bg-blue-700/30'
                 }`}
               >
-                <span className="mr-2">
-                  {selectedImprovements.includes(improvement) ? '✅' : '⬜'}
-                </span>
-                {improvement}
+                <div className={`w-5 h-5 rounded border-2 flex-shrink-0 mt-0.5 flex items-center justify-center ${
+                  selectedImprovements.includes(improvement)
+                    ? 'bg-green-500 border-green-500'
+                    : 'border-gray-400 bg-transparent'
+                }`}>
+                  {selectedImprovements.includes(improvement) && (
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  )}
+                </div>
+                <span className="flex-1">{improvement}</span>
               </button>
             ))}
           </div>

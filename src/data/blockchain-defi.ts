@@ -46,6 +46,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '200 phút',
     difficulty: 'Trung bình',
     blockchainType: 'Fundamentals',
+    videoUrl: 'https://www.youtube.com/watch?v=pcnB-nSYi_I',
     objectives: [
       'Master blockchain architecture: blocks, transactions, merkle trees, hashing',
       'Understand cryptographic principles: public-key cryptography, digital signatures',
@@ -156,6 +157,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '220 phút',
     difficulty: 'Nâng cao',
     blockchainType: 'Smart Contracts',
+    videoUrl: 'https://www.youtube.com/watch?v=wtsJTMJzBOc',
     objectives: [
       'Master Solidity programming language và smart contract development',
       'Implement common design patterns: proxy, factory, access control',
@@ -258,6 +260,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '190 phút',
     difficulty: 'Nâng cao',
     blockchainType: 'DeFi',
+    videoUrl: 'https://www.youtube.com/watch?v=GSgxmE5qWOg',
     objectives: [
       'Understand DeFi primitives: AMMs, lending/borrowing, derivatives',
       'Analyze yield farming strategies và risk management',
@@ -375,6 +378,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '180 phút',
     difficulty: 'Trung bình',
     blockchainType: 'NFT/Metaverse',
+    videoUrl: 'https://www.youtube.com/watch?v=iMHbIPiQS1c',
     objectives: [
       'Master NFT standards: ERC-721, ERC-1155, và advanced implementations',
       'Build NFT marketplaces với advanced features',
@@ -489,6 +493,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '170 phút',
     difficulty: 'Nâng cao',
     blockchainType: 'Security/Compliance',
+    videoUrl: 'https://www.youtube.com/watch?v=Juan9t1RzhU',
     objectives: [
       'Master blockchain security best practices và vulnerability assessment',
       'Understand regulatory frameworks: AML/KYC, securities law, tax implications',

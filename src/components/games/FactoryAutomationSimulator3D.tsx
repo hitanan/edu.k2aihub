@@ -581,6 +581,7 @@ export default function FactoryAutomationSimulator3D() {
   const [simulationTime, setSimulationTime] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showInstructions, setShowInstructions] = useState(true);
+  const [showControlPanel, setShowControlPanel] = useState(true);
   const [gameStarted, setGameStarted] = useState(false);
 
   // Production statistics
@@ -773,9 +774,18 @@ export default function FactoryAutomationSimulator3D() {
         </div>
       )}
       {/* Control Panel */}
-      {!isFullscreen && (
+      {!isFullscreen && showControlPanel && (
         <div className="absolute top-4 left-4 bg-gray-900/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 max-w-sm z-10">
-          <h3 className="text-white font-bold mb-3 flex items-center gap-2">🏭 Factory Control Center</h3>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-white font-bold flex items-center gap-2">🏭 Factory Control Center</h3>
+            <button
+              onClick={() => setShowControlPanel(false)}
+              className="text-gray-400 hover:text-white transition-colors p-1"
+              title="Đóng bảng điều khiển"
+            >
+              ✕
+            </button>
+          </div>
 
           {/* Scenario Selection */}
           <div className="mb-4">
@@ -844,6 +854,28 @@ export default function FactoryAutomationSimulator3D() {
                 {isFullscreen ? '📱 Exit Full' : '🖥️ Fullscreen'}
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Toggle Control Panel Button - Show when panel is hidden and not in fullscreen */}
+      {!isFullscreen && !showControlPanel && (
+        <div className="absolute top-4 left-4 z-10">
+          <div className="flex gap-2">
+            <button
+              onClick={() => setShowControlPanel(true)}
+              className="px-3 py-2 bg-gray-900/90 backdrop-blur-sm hover:bg-gray-800/90 text-white rounded-lg border border-white/20 transition-colors text-xs font-medium"
+              title="Mở bảng điều khiển"
+            >
+              🏭 Controls
+            </button>
+            <button
+              onClick={toggleFullscreen}
+              className="px-3 py-2 bg-indigo-600/90 backdrop-blur-sm hover:bg-indigo-700/90 text-white rounded-lg border border-white/20 transition-colors text-xs font-medium"
+              title="Chế độ toàn màn hình"
+            >
+              🖥️ Fullscreen
+            </button>
           </div>
         </div>
       )}

@@ -50,7 +50,7 @@ export const arduinoLessons: ArduinoLesson[] = [
       'Hiểu cấu trúc của Arduino board',
       'Kết nối Arduino với máy tính',
       'Upload chương trình đầu tiên',
-      'Hiểu cấu trúc basic của Arduino code'
+      'Hiểu cấu trúc basic của Arduino code',
     ],
     materials: [
       'Arduino Uno R3',
@@ -58,13 +58,12 @@ export const arduinoLessons: ArduinoLesson[] = [
       'Máy tính với Arduino IDE',
       'LED và điện trở 220Ω',
       'Breadboard',
-      'Dây nối jumper'
+      'Dây nối jumper',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1553406830-ef2513450d76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     videoUrl: 'https://www.youtube.com/watch?v=7tHm6_frc-o',
-    circuitDiagram:
-      'https://www.arduino.cc/en/uploads/Tutorial/ExampleCircuit_bb.png',
+    circuitDiagram: 'https://www.arduino.cc/en/uploads/Tutorial/ExampleCircuit_bb.png',
     codeExample: `/*
   Blink - Chương trình Arduino cơ bản nhất
   Làm LED nhấp nháy mỗi giây
@@ -113,14 +112,14 @@ void loop() {
           'delay() tính bằng milliseconds (1000ms = 1 giây)',
           'Giảm delay để LED nhấp nháy nhanh hơn',
           'HIGH = bật LED, LOW = tắt LED',
-          'pinMode() phải được gọi trong setup()'
+          'pinMode() phải được gọi trong setup()',
         ],
         troubleshooting: [
           'Nếu LED không sáng: kiểm tra kết nối dây',
           'Nếu upload lỗi: kiểm tra cổng COM và board type',
           'LED yếu: kiểm tra nguồn cung cấp',
-          'Code lỗi: kiểm tra syntax và dấu chấm phẩy'
-        ]
+          'Code lỗi: kiểm tra syntax và dấu chấm phẩy',
+        ],
       },
       {
         id: 'ex2-traffic-light',
@@ -158,50 +157,50 @@ void loop() {
           'Kết nối mỗi LED với một pin khác nhau',
           'Sử dụng điện trở cho mỗi LED',
           'Thời gian delay mô phỏng đèn giao thông thật',
-          'Tắt LED trước khi bật LED khác'
+          'Tắt LED trước khi bật LED khác',
         ],
         troubleshooting: [
           'LED cháy: kiểm tra điện trở bảo vệ',
           'LED không đúng màu: kiểm tra kết nối',
           'Timing sai: điều chỉnh delay',
-          'Nhiều LED sáng cùng lúc: logic tắt LED'
-        ]
-      }
+          'Nhiều LED sáng cùng lúc: logic tắt LED',
+        ],
+      },
     ],
     realWorldApplications: [
       'Hệ thống đèn LED thông minh',
       'Báo hiệu trạng thái thiết bị',
       'Đèn cảnh báo an toàn',
       'Decoration lights với pattern',
-      'Status indicators cho IoT devices'
+      'Status indicators cho IoT devices',
     ],
     competitions: [
       'Arduino Day Vietnam',
       'Maker Faire Vietnam',
       'IoT Challenge Competition',
       'Smart City Innovation Contest',
-      'Young Inventor Awards'
+      'Young Inventor Awards',
     ],
     relatedGames: [
       {
         gameId: 'typing-speed-challenge',
         title: 'Thử Thách Tốc Độ Gõ',
         connection: 'Luyện tập tốc độ gõ code Arduino nhanh và chính xác',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         gameId: 'robotics-navigation',
         title: 'Robot Navigation 3D',
         connection: 'Ứng dụng Arduino trong điều khiển robot navigation',
-        difficulty: 'Nâng cao'
+        difficulty: 'Nâng cao',
       },
       {
         gameId: 'circuit-builder',
         title: 'Xây Dựng Mạch Điện',
         connection: 'Thực hành thiết kế mạch Arduino cơ bản',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
   {
     id: 'led-digital-outputs',
@@ -216,7 +215,7 @@ void loop() {
       'Tính toán điện trở phù hợp cho LED',
       'Tạo hiệu ứng LED: blink, fade, chase, RGB',
       'Điều khiển nhiều LED với shift register',
-      'Troubleshoot các vấn đề thường gặp với LED'
+      'Troubleshoot các vấn đề thường gặp với LED',
     ],
     materials: [
       'Arduino Uno',
@@ -225,7 +224,7 @@ void loop() {
       'Điện trở 220Ω x10',
       'Shift register 74HC595',
       'Breadboard và jumper wires',
-      '7-segment display (tùy chọn)'
+      '7-segment display (tùy chọn)',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -305,13 +304,13 @@ void loop() {
         hints: [
           'Sử dụng mảng để quản lý nhiều pin',
           'Vòng lặp for để điều khiển tuần tự',
-          'Delay phù hợp để thấy hiệu ứng'
+          'Delay phù hợp để thấy hiệu ứng',
         ],
         troubleshooting: [
           'LED không sáng: kiểm tra kết nối và điện trở',
           'Pattern không smooth: điều chỉnh delay time',
-          'Arduino reset: kiểm tra tổng dòng điện tiêu thụ'
-        ]
+          'Arduino reset: kiểm tra tổng dòng điện tiêu thụ',
+        ],
       },
       {
         id: 'ex2-rgb-mood-light',
@@ -346,49 +345,49 @@ void loop() {
         hints: [
           'PWM pins (~) cho analog output',
           'Tính toán interpolation cho smooth transition',
-          'Common cathode vs common anode RGB LED'
+          'Common cathode vs common anode RGB LED',
         ],
         troubleshooting: [
           'Màu không chính xác: kiểm tra loại RGB LED',
           'Không có PWM: sử dụng pin có dấu ~',
-          'Flickering: giảm delay trong fade function'
-        ]
-      }
+          'Flickering: giảm delay trong fade function',
+        ],
+      },
     ],
     realWorldApplications: [
       'Status indicators cho thiết bị điện tử',
       'Decorative lighting và entertainment',
       'Traffic light và safety systems',
       'Display screens và information boards',
-      'Art installations và interactive exhibits'
+      'Art installations và interactive exhibits',
     ],
     competitions: [
       'LED Art Competition',
       'Arduino Light Show Contest',
       'Interactive Installation Awards',
       'Maker Faire LED Projects',
-      'Student Innovation Challenge'
+      'Student Innovation Challenge',
     ],
     relatedGames: [
       {
         gameId: 'color-memory-game',
         title: 'Trò Chơi Nhớ Màu',
         connection: 'Áp dụng kiến thức LED và RGB để tạo game nhớ màu',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         gameId: 'circuit-builder',
         title: 'Xây Dựng Mạch Điện',
         connection: 'Thiết kế mạch LED với digital outputs',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         gameId: 'rhythm-game',
         title: 'Trò Chơi Âm Nhạc',
         connection: 'Sử dụng LED tạo hiệu ứng ánh sáng theo nhạc',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: 'arduino-inputs',
@@ -403,7 +402,7 @@ void loop() {
       'Sử dụng pull-up resistor cho buttons',
       'Đọc giá trị từ potentiometer',
       'Kết hợp input và output trong chương trình',
-      'Debug và troubleshoot common input issues'
+      'Debug và troubleshoot common input issues',
     ],
     materials: [
       'Arduino Uno',
@@ -411,7 +410,7 @@ void loop() {
       'Potentiometer 10kΩ',
       '10kΩ resistors',
       'LED RGB',
-      'Breadboard và jumper wires'
+      'Breadboard và jumper wires',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -448,8 +447,7 @@ void loop() {
       {
         id: 'ex1-button-counter',
         title: 'Đếm Số Lần Nhấn Button',
-        description:
-          'Tạo counter đếm số lần nhấn button và hiển thị trên Serial Monitor',
+        description: 'Tạo counter đếm số lần nhấn button và hiển thị trên Serial Monitor',
         difficulty: 'Trung bình',
         code: `int buttonPin = 2;
 int counter = 0;
@@ -480,14 +478,14 @@ void loop() {
           'Edge detection: chỉ đếm khi button chuyển từ HIGH sang LOW',
           'Debouncing để tránh đếm nhiều lần trong một lần nhấn',
           'lastButtonState lưu trạng thái trước đó',
-          'Serial.println() để debug và kiểm tra'
+          'Serial.println() để debug và kiểm tra',
         ],
         troubleshooting: [
           'Đếm sai: kiểm tra debouncing delay',
           'Button không responsive: kiểm tra pull-up resistor',
           'Serial không hiển thị: kiểm tra baud rate',
-          'Counter reset: có thể do power fluctuation'
-        ]
+          'Counter reset: có thể do power fluctuation',
+        ],
       },
       {
         id: 'ex2-potentiometer-led',
@@ -522,50 +520,50 @@ void loop() {
           'analogRead() trả về giá trị 0-1023',
           'analogWrite() nhận giá trị 0-255',
           'map() function chuyển đổi scale',
-          'PWM pins (~) để điều khiển analog output'
+          'PWM pins (~) để điều khiển analog output',
         ],
         troubleshooting: [
           'LED không đổi độ sáng: kiểm tra PWM pin',
           'Giá trị không đúng: kiểm tra map() function',
           'Noise trong reading: thêm delay hoặc averaging',
-          'Potentiometer không hoạt động: kiểm tra wiring'
-        ]
-      }
+          'Potentiometer không hoạt động: kiểm tra wiring',
+        ],
+      },
     ],
     realWorldApplications: [
       'Volume control cho audio systems',
       'Dimmer switch cho đèn LED',
       'User interface controls',
       'Sensor calibration systems',
-      'Interactive art installations'
+      'Interactive art installations',
     ],
     competitions: [
       'Interactive Device Challenge',
       'User Interface Innovation',
       'Smart Home Automation',
       'Accessibility Technology Awards',
-      'Human-Computer Interaction Contest'
+      'Human-Computer Interaction Contest',
     ],
     relatedGames: [
       {
         gameId: 'reaction-time-test',
         title: 'Kiểm Tra Phản Xạ',
         connection: 'Áp dụng kiến thức đọc input từ nút nhấn và xử lý tín hiệu',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         gameId: 'simon-says',
         title: 'Simon Says',
         connection: 'Kết hợp input từ nút nhấn và output LED để tạo game tương tác',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         gameId: 'puzzle-solver',
         title: 'Giải Đố Logic',
         connection: 'Sử dụng input analog và digital để điều khiển game logic',
-        difficulty: 'Nâng cao'
-      }
-    ]
+        difficulty: 'Nâng cao',
+      },
+    ],
   },
   {
     id: 'arduino-sensors',
@@ -580,7 +578,7 @@ void loop() {
       'Đọc dữ liệu từ cảm biến nhiệt độ DHT22',
       'Sử dụng cảm biến ánh sáng LDR',
       'Kết hợp nhiều cảm biến trong một project',
-      'Xử lý và hiển thị dữ liệu sensor'
+      'Xử lý và hiển thị dữ liệu sensor',
     ],
     materials: [
       'Arduino Uno',
@@ -589,7 +587,7 @@ void loop() {
       'PIR motion sensor',
       'Ultrasonic sensor HC-SR04',
       '10kΩ resistors',
-      '16x2 LCD display (optional)'
+      '16x2 LCD display (optional)',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -690,14 +688,14 @@ void loop() {
           'Sử dụng #define để định nghĩa threshold',
           'isnan() kiểm tra sensor có hoạt động không',
           'tone() tạo âm thanh cảnh báo',
-          'Có thể điều chỉnh TEMP_THRESHOLD theo nhu cầu'
+          'Có thể điều chỉnh TEMP_THRESHOLD theo nhu cầu',
         ],
         troubleshooting: [
           'Sensor không đọc được: kiểm tra wiring và power',
           'False alarms: điều chỉnh threshold',
           'Buzzer không kêu: kiểm tra pin và connection',
-          'Readings không ổn định: thêm delay hoặc filtering'
-        ]
+          'Readings không ổn định: thêm delay hoặc filtering',
+        ],
       },
       {
         id: 'ex2-smart-lighting',
@@ -749,36 +747,35 @@ void loop() {
   
   delay(100);
 }`,
-        expectedOutput:
-          'LED tự động bật khi tối và có chuyển động, tự tắt sau 10s',
+        expectedOutput: 'LED tự động bật khi tối và có chuyển động, tự tắt sau 10s',
         hints: [
           'millis() để theo dõi thời gian',
           'Combine multiple sensor inputs with logic',
           'State machine để quản lý LED status',
-          'Threshold values có thể cần calibration'
+          'Threshold values có thể cần calibration',
         ],
         troubleshooting: [
           'PIR sensor quá nhạy: điều chỉnh sensitivity pot',
           'LED không tắt: kiểm tra timing logic',
           'LDR readings không chính xác: calibrate threshold',
-          'System lag: giảm delay time'
-        ]
-      }
+          'System lag: giảm delay time',
+        ],
+      },
     ],
     realWorldApplications: [
       'Smart home automation systems',
       'Energy-saving building controls',
       'Security and surveillance systems',
       'Agricultural monitoring systems',
-      'Environmental data logging'
+      'Environmental data logging',
     ],
     competitions: [
       'Smart Home Challenge',
       'Environmental Monitoring Contest',
       'Energy Efficiency Innovation',
       'IoT for Sustainability Awards',
-      'Sensor Network Competition'
-    ]
+      'Sensor Network Competition',
+    ],
   },
   {
     id: 'arduino-communication',
@@ -793,7 +790,7 @@ void loop() {
       'Giao tiếp với devices qua I2C',
       'Thiết lập WiFi communication với ESP32',
       'Tạo web server đơn giản',
-      'Gửi dữ liệu lên cloud platforms'
+      'Gửi dữ liệu lên cloud platforms',
     ],
     materials: [
       'ESP32 DevKit',
@@ -801,7 +798,7 @@ void loop() {
       'RTC Module DS3231',
       'MicroSD Card Module',
       'Breadboard và jumper wires',
-      'WiFi access point'
+      'WiFi access point',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -945,14 +942,14 @@ void loop() {
           'Wire.h cho I2C communication',
           'Adafruit libraries cho OLED control',
           'display.clearDisplay() trước khi viết mới',
-          'display.display() để update screen'
+          'display.display() để update screen',
         ],
         troubleshooting: [
           'OLED không hiển thị: kiểm tra I2C address',
           'Text bị cắt: kiểm tra cursor position',
           'Library errors: cài đặt correct libraries',
-          'I2C errors: kiểm tra SDA/SCL connections'
-        ]
+          'I2C errors: kiểm tra SDA/SCL connections',
+        ],
       },
       {
         id: 'ex2-iot-dashboard',
@@ -1033,30 +1030,30 @@ void loop() {
           'AsyncWebServer cho better performance',
           'HTML embedded trong code',
           'Mobile-responsive CSS design',
-          'State management cho UI updates'
+          'State management cho UI updates',
         ],
         troubleshooting: [
           'Mobile không load: kiểm tra same WiFi network',
           'Buttons không work: check route definitions',
           'CSS lỗi: validate HTML syntax',
-          'State không update: check replace() function'
-        ]
-      }
+          'State không update: check replace() function',
+        ],
+      },
     ],
     realWorldApplications: [
       'IoT device monitoring và control',
       'Remote sensor data collection',
       'Home automation systems',
       'Industrial monitoring solutions',
-      'Agricultural automation systems'
+      'Agricultural automation systems',
     ],
     competitions: [
       'IoT Innovation Challenge',
       'Smart City Solutions Contest',
       'Industrial IoT Competition',
       'Connected Device Awards',
-      'Wireless Innovation Challenge'
-    ]
+      'Wireless Innovation Challenge',
+    ],
   },
   {
     id: 'arduino-advanced-projects',
@@ -1071,7 +1068,7 @@ void loop() {
       'Tích hợp nhiều sensors và actuators',
       'Implement real-time data processing',
       'Tạo user interface professional',
-      'Deploy project với robust error handling'
+      'Deploy project với robust error handling',
     ],
     materials: [
       'ESP32 DevKit',
@@ -1080,7 +1077,7 @@ void loop() {
       'OLED display, LCD display',
       'MicroSD card module',
       'RTC module',
-      'Power supply và battery backup'
+      'Power supply và battery backup',
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -1317,14 +1314,14 @@ String predictWeather(float pressure) {
           'Combine multiple sensors cho comprehensive data',
           'Implement prediction algorithms',
           'Historical data tracking for trends',
-          'Weather API integration cho accuracy'
+          'Weather API integration cho accuracy',
         ],
         troubleshooting: [
           'Sensor conflicts: kiểm tra I2C addresses',
           'Prediction không chính xác: tune algorithms',
           'Data logging issues: implement error handling',
-          'Power consumption: optimize sleep modes'
-        ]
+          'Power consumption: optimize sleep modes',
+        ],
       },
       {
         id: 'ex2-smart-garden',
@@ -1405,31 +1402,31 @@ void autoLighting() {
           'Timing controls để tránh overwatering',
           'Light scheduling theo natural circadian rhythm',
           'Remote monitoring qua mobile app',
-          'Backup manual controls for emergency'
+          'Backup manual controls for emergency',
         ],
         troubleshooting: [
           'Pump không hoạt động: kiểm tra power và relay',
           'Overwatering: adjust moisture thresholds',
           'Light timing sai: check RTC accuracy',
-          'Connectivity issues: implement offline mode'
-        ]
-      }
+          'Connectivity issues: implement offline mode',
+        ],
+      },
     ],
     realWorldApplications: [
       'Agricultural automation systems',
       'Smart building management',
       'Environmental research stations',
       'Industrial process monitoring',
-      'Educational demonstration platforms'
+      'Educational demonstration platforms',
     ],
     competitions: [
       'Smart Agriculture Challenge',
       'Environmental Innovation Awards',
       'Sustainability Technology Contest',
       'IoT for Social Good',
-      'Engineering Design Competition'
-    ]
-  }
+      'Engineering Design Competition',
+    ],
+  },
 ];
 
 // Arduino programming concepts quiz
@@ -1438,29 +1435,17 @@ export const arduinoQuizzes = [
     id: 'quiz-arduino-1',
     lessonId: 'arduino-setup',
     question: 'Hai hàm bắt buộc trong mọi chương trình Arduino là gì?',
-    options: [
-      'begin() và end()',
-      'setup() và loop()',
-      'start() và stop()',
-      'init() và main()'
-    ],
+    options: ['begin() và end()', 'setup() và loop()', 'start() và stop()', 'init() và main()'],
     correctAnswer: 1,
-    explanation:
-      'setup() chạy một lần khi Arduino khởi động, loop() chạy liên tục sau đó.'
+    explanation: 'setup() chạy một lần khi Arduino khởi động, loop() chạy liên tục sau đó.',
   },
   {
     id: 'quiz-arduino-2',
     lessonId: 'arduino-inputs',
     question: 'INPUT_PULLUP được sử dụng để làm gì?',
-    options: [
-      'Tăng điện áp đầu vào',
-      'Kích hoạt điện trở kéo lên nội bộ',
-      'Giảm nhiễu điện',
-      'Tăng tốc độ đọc'
-    ],
+    options: ['Tăng điện áp đầu vào', 'Kích hoạt điện trở kéo lên nội bộ', 'Giảm nhiễu điện', 'Tăng tốc độ đọc'],
     correctAnswer: 1,
-    explanation:
-      'INPUT_PULLUP kích hoạt điện trở kéo lên 20kΩ nội bộ, giúp pin đọc trạng thái button chính xác.'
+    explanation: 'INPUT_PULLUP kích hoạt điện trở kéo lên 20kΩ nội bộ, giúp pin đọc trạng thái button chính xác.',
   },
   {
     id: 'quiz-arduino-3',
@@ -1468,7 +1453,7 @@ export const arduinoQuizzes = [
     question: 'Hàm nào được sử dụng để đọc giá trị analog?',
     options: ['digitalRead()', 'analogRead()', 'pinMode()', 'digitalWrite()'],
     correctAnswer: 1,
-    explanation: 'analogRead() đọc giá trị từ 0-1023 từ các pin analog A0-A5.'
+    explanation: 'analogRead() đọc giá trị từ 0-1023 từ các pin analog A0-A5.',
   },
   {
     id: 'quiz-arduino-4',
@@ -1476,14 +1461,13 @@ export const arduinoQuizzes = [
     question: 'Giao thức nào thường được sử dụng cho OLED display?',
     options: ['UART', 'SPI', 'I2C', 'USB'],
     correctAnswer: 2,
-    explanation:
-      'I2C (Inter-Integrated Circuit) thường được sử dụng cho OLED displays vì chỉ cần 2 dây (SDA và SCL).'
-  }
+    explanation: 'I2C (Inter-Integrated Circuit) thường được sử dụng cho OLED displays vì chỉ cần 2 dây (SDA và SCL).',
+  },
 ];
 
 const arduinoData = {
   arduinoLessons,
-  arduinoQuizzes
+  arduinoQuizzes,
 };
 
 export default arduinoData;

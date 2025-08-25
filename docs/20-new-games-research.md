@@ -1,3 +1,14 @@
+---
+title: "Nghiên Cứu & Phát Triển 20 Trò Chơi Giáo Dục Mới"
+description: "Kế hoạch nghiên cứu và phát triển 20 trò chơi giáo dục tương tác mới cho K2AiHub, tập trung vào gamification và trải nghiệm học tập hấp dẫn."
+date: "2025-01-05"
+author: "K2AiHub Game Development Team"
+category: "Nghiên Cứu"
+tags: ["trò chơi giáo dục", "gamification", "phát triển game", "học tập tương tác", "K2AiHub"]
+featured: true
+readingTime: "18 phút đọc"
+---
+
 # 20 New Educational Games Research & Development Plan
 
 ## 🎯 Mục tiêu và Đối tượng

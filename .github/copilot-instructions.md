@@ -374,10 +374,31 @@ npm run build    # Production build with static generation, must set NODE_ENV=pr
    - **SEO content must be in Vietnamese for local search optimization**
 8. **Documentation Requirement**: ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.
 9. **Image Url**: incase you done have the image url, use import { defaultImage } from "@/utils/image"; to ensure all images are properly accessible.
-10. **Module data**: when generate module pages, Prefer to create data and then to use it to create a dynamic pages with slug is `lessonId`, ensure use PageProps to get lessonId (import { PageProps } from '@/types'). In ModuleMainPage function, moduledata must use ModuleData type, has heroImageUrl property
-11. **Module integration**: After module created, add it to all related part in application to moduleNavigation.ts, and Use data from moduleNavigation.ts to update Homepage, header navigation, footer, sitemap, ...
-12. **Lesson and Game integration**: After lesson created, add it to all related part in gameData.ts, and vise versa, when adding a game, ensure to link to the lessons accordingly by relatedLessons attribute.
+10. **Module data**: when generate module pages, Prefer to create data and then to use it to create a dynamic pages with slug is `lessonId`, ensure use PageProps to get lessonId (import { PageProps } from '@/types'). In ModuleMainPage function, moduledata must use ModuleData type, has heroImageUrl property.
+11. **Module integration**: After module created, add it to all related part in application to moduleNavigation.ts, summary new module in /docs folder and Use data from moduleNavigation.ts to update Homepage, header navigation, footer, sitemap, ...
+12. **Lesson and Game integration**: After lesson created, add it to all related part in gameData.ts, summary new module in /docs folder, when adding a game, ensure to link to the lessons accordingly by relatedLessons attribute.
+13. ** Blog post**: When creating file in /docs folder, ensure to add with proper front matter including title, description, date (in ISO format), author, category, tags, featured like below, please also update src/lib/blog.ts to ensure it can be used in blog listing page, category page, tag page, ... Also ensure to add readingTime attribute to show how long it takes to read the post. All blog post must be in Vietnamese language.
+
+```markdown:
+
+---
+
+title: "Nghiên Cứu & Phát Triển 20 Trò Chơi Giáo Dục Mới"
+description: "Kế hoạch nghiên cứu và phát triển 20 trò chơi giáo dục tương tác mới cho K2AiHub, tập trung vào gamification và trải nghiệm học tập hấp dẫn."
+date: "2025-01-05"
+author: "K2AiHub Game Development Team"
+category: "Nghiên Cứu"
+tags: ["trò chơi giáo dục", "gamification", "phát triển game", "học tập tương tác", "K2AiHub"]
+featured: true
+readingTime: "18 phút đọc"
+
+---
+```
 
 ## Notes:
 
 This is a production-ready application optimized for GitHub Pages deployment with comprehensive educational content, modern performance optimizations, and excellent SEO implementation.
+
+```
+
+```

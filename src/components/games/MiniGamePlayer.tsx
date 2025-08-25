@@ -74,6 +74,14 @@ import {
 import LogicalFallacyDetector from './LogicalFallacyDetector';
 import PresentationMaster from './PresentationMaster';
 
+// Import 3D game components that exist as separate components
+import TrafficManagementSimulator3D from './TrafficManagementSimulator3D';
+import EnhancedSpaceStationBuilder3D from './EnhancedSpaceStationBuilder3D';
+import NeuralNetworkBuilder3D from './NeuralNetworkBuilder3D';
+import SmartCityPlanner3D from './SmartCityPlanner3D';
+import OceanConservation3D from './OceanConservation3D';
+import AquacultureIoTManager3D from './AquacultureIoTManager3D';
+
 interface MiniGameProps {
   game: EducationalGame;
   onComplete: (score: number) => void;
@@ -346,6 +354,18 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <LogicalFallacyDetector />;
       case 'presentation-master':
         return <PresentationMaster />;
+      case 'traffic-management-simulator-3d':
+        return <TrafficManagementSimulator3D />;
+      case 'neural-network-builder-3d':
+        return <NeuralNetworkBuilder3D />;
+      case 'space-station-builder-3d':
+        return <EnhancedSpaceStationBuilder3D />;
+      case 'smart-city-planner-3d':
+        return <SmartCityPlanner3D />;
+      case 'ocean-conservation-3d':
+        return <OceanConservation3D />;
+      case 'aquaculture-iot-manager-3d':
+        return <AquacultureIoTManager3D />;
       default:
         return <div className="text-white">Game not implemented yet!</div>;
     }
