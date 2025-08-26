@@ -15,7 +15,7 @@ export const communicationSkillsLessons: CommunicationSkillsLessonType[] = [
     description: 'Nắm vững các nguyên tắc cơ bản của giao tiếp hiệu quả, từ ngôn ngữ cơ thể đến kỹ năng lắng nghe tích cực.',
     duration: '90 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=HAnw168huqA', // The Power of Effective Communication - TED
     imageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu được các thành phần của communication process',
@@ -132,7 +132,7 @@ export const communicationSkillsLessons: CommunicationSkillsLessonType[] = [
     description: 'Học cách tạo và deliver presentations powerful sử dụng công nghệ hiện đại và digital tools.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=Iwpi1Lm6dFo', // How to Give a Great Presentation - TED
     imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop',
     objectives: [
       'Master các digital presentation tools (PowerPoint, Canva, Prezi)',
@@ -233,7 +233,7 @@ export const communicationSkillsLessons: CommunicationSkillsLessonType[] = [
     description: 'Phát triển kỹ năng giao tiếp hiệu quả trong môi trường đa văn hóa và quốc tế.',
     duration: '100 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=YMyofREc5Jk', // Cross-Cultural Communication - Harvard Business Review
     imageUrl: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu được cultural dimensions và impact on communication',

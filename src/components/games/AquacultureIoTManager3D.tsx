@@ -21,6 +21,7 @@ const FISH_SPECIES = [
     growthRate: 0.02,
     value: 50000,
     bodyShape: 'elongated', // Long streamlined body with barbels
+    finSwingSpeed: 8, // Moderate fin swing speed
     details: {
       hasWhiskers: true, // Catfish whiskers
       finShape: 'rounded',
@@ -51,6 +52,7 @@ const FISH_SPECIES = [
     growthRate: 0.03,
     value: 120000,
     bodyShape: 'shrimp', // Curved segmented body with antenna
+    finSwingSpeed: 15, // Very fast tail movement for shrimp
     details: {
       hasAntenna: true, // Long antenna
       hasSegments: true, // Segmented body
@@ -82,6 +84,7 @@ const FISH_SPECIES = [
     growthRate: 0.025,
     value: 30000,
     bodyShape: 'round', // Round compressed body with pronounced fins
+    finSwingSpeed: 6, // Slower fin swing speed for tilapia
     details: {
       finShape: 'large',
       bodyRatio: [1.5, 1.8, 1.2], // compressed laterally
@@ -113,6 +116,7 @@ const FISH_SPECIES = [
     growthRate: 0.018,
     value: 35000,
     bodyShape: 'torpedo',
+    finSwingSpeed: 5, // Slow steady fin movement for carp
     details: {
       hasScales: true,
       finShape: 'pointed',
@@ -144,6 +148,7 @@ const FISH_SPECIES = [
     growthRate: 0.022,
     value: 80000,
     bodyShape: 'snake-like',
+    finSwingSpeed: 10, // Fast predatory movement
     details: {
       hasStripes: true,
       finShape: 'continuous',
@@ -175,6 +180,7 @@ const FISH_SPECIES = [
     growthRate: 0.024,
     value: 45000,
     bodyShape: 'round',
+    finSwingSpeed: 7, // Moderate fin swing similar to tilapia
     details: {
       finShape: 'large',
       bodyRatio: [1.5, 1.8, 1.2],
@@ -206,6 +212,7 @@ const FISH_SPECIES = [
     growthRate: 0.026,
     value: 42000,
     bodyShape: 'elongated',
+    finSwingSpeed: 12, // Fast movement for active catfish
     details: {
       hasWhiskers: true,
       finShape: 'continuous',
@@ -237,6 +244,7 @@ const FISH_SPECIES = [
     growthRate: 0.028,
     value: 48000,
     bodyShape: 'elongated',
+    finSwingSpeed: 9, // Moderate to fast movement
     details: {
       hasWhiskers: true,
       finShape: 'pointed',
@@ -302,14 +310,14 @@ function Fish({
         setSwimDirection((prev) => [prev[0], prev[1], -prev[2]]);
       }
 
-      // Swimming motion - side to side
-      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 8) * 0.2;
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 6) * 0.1;
+      // Swimming motion - side to side with species-specific speed
+      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * species.finSwingSpeed) * 0.2;
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * (species.finSwingSpeed * 0.7)) * 0.1;
     }
 
-    // Tail wagging for fish (not shrimp)
+    // Tail wagging for fish with species-specific swing speed (not shrimp)
     if (tailRef.current && species.bodyShape !== 'shrimp') {
-      tailRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 12) * 0.4;
+      tailRef.current.rotation.y = Math.sin(state.clock.elapsedTime * (species.finSwingSpeed * 1.2)) * 0.4;
     }
   });
 
@@ -584,18 +592,29 @@ function Fish({
       default:
         return (
           <group>
+            {/* Main body */}
             <mesh scale={[1.2, 1, 1]}>
               <sphereGeometry args={[species.size * size, 12, 8]} />
               <meshStandardMaterial color={species.color} transparent opacity={isHealthy ? 1 : 0.7} />
             </mesh>
-            {/* Eyes for default fish */}
-            <mesh position={[species.size * size * 1.0, species.size * size * 0.3, species.size * size * 0.4]}>
+            {/* Head - slightly enlarged */}
+            <mesh position={[species.size * size * 0.8, 0, 0]} scale={[0.9, 0.9, 0.9]}>
+              <sphereGeometry args={[species.size * size * 0.6, 12, 8]} />
+              <meshStandardMaterial color={species.secondaryColor} />
+            </mesh>
+            {/* Eyes for default fish - positioned properly */}
+            <mesh position={[species.size * size * 1.2, species.size * size * 0.3, species.size * size * 0.4]}>
               <sphereGeometry args={[species.size * size * 0.12]} />
               <meshStandardMaterial color="#000000" />
             </mesh>
-            <mesh position={[species.size * size * 1.0, species.size * size * 0.3, -species.size * size * 0.4]}>
+            <mesh position={[species.size * size * 1.2, species.size * size * 0.3, -species.size * size * 0.4]}>
               <sphereGeometry args={[species.size * size * 0.12]} />
               <meshStandardMaterial color="#000000" />
+            </mesh>
+            {/* Mouth for default fish */}
+            <mesh position={[species.size * size * 1.4, -species.size * size * 0.1, 0]} scale={[0.3, 0.2, 0.5]}>
+              <sphereGeometry args={[species.size * size * 0.12]} />
+              <meshStandardMaterial color="#2C1810" />
             </mesh>
           </group>
         );

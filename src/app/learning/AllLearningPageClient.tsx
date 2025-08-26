@@ -1,12 +1,11 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, Clock, Star, ChevronRight, Filter, Zap, TrendingUp } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { searchModulesVietnamese } from '@/utils/vietnameseSearch';
-import { ContentLoadingPlaceholder } from '@/components/LoadingSpinner';
 
 // Transform moduleNavigation data to match AllLearningPageClient format
 const allLearningModules = moduleNavigation
@@ -101,7 +100,6 @@ export default function AllLearningPageClient() {
   const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
 
   // Scroll effect for background color transitions
@@ -376,30 +374,41 @@ export default function AllLearningPageClient() {
             </div>
           </div>
 
-          {/* Loading Modules Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 animate-pulse">
-                <div className="w-16 h-16 bg-gray-600/50 rounded-2xl mb-6"></div>
-                <div className="mb-4">
-                  <div className="flex gap-2 mb-2">
-                    <div className="w-20 h-6 bg-gray-600/50 rounded-full"></div>
-                    <div className="w-16 h-6 bg-gray-600/50 rounded-full"></div>
+          {/* Loading Modules Grid - Shorter cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10 animate-pulse">
+                {/* Compact header */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-gray-600/50 rounded-lg"></div>
+                  <div className="flex-1">
+                    <div className="w-16 h-4 bg-gray-600/50 rounded mb-1"></div>
+                    <div className="w-8 h-3 bg-gray-600/30 rounded"></div>
                   </div>
-                  <div className="w-3/4 h-6 bg-gray-600/50 rounded mb-2"></div>
-                  <div className="w-1/2 h-4 bg-gray-600/30 rounded"></div>
                 </div>
-                <ContentLoadingPlaceholder lines={3} className="mb-6" />
-                <div className="flex gap-2 mb-4">
-                  <div className="w-16 h-6 bg-gray-600/30 rounded-full"></div>
-                  <div className="w-20 h-6 bg-gray-600/30 rounded-full"></div>
+                {/* Title and subtitle */}
+                <div className="w-full h-5 bg-gray-600/50 rounded mb-1"></div>
+                <div className="w-3/4 h-4 bg-gray-600/30 rounded mb-2"></div>
+                {/* Description */}
+                <div className="space-y-1 mb-3">
+                  <div className="w-full h-3 bg-gray-600/30 rounded"></div>
+                  <div className="w-5/6 h-3 bg-gray-600/30 rounded"></div>
                 </div>
-                <div className="space-y-2 mb-6">
-                  <div className="w-full h-4 bg-gray-600/30 rounded"></div>
-                  <div className="w-5/6 h-4 bg-gray-600/30 rounded"></div>
-                  <div className="w-4/5 h-4 bg-gray-600/30 rounded"></div>
+                {/* Meta tags */}
+                <div className="flex gap-2 mb-3">
+                  <div className="w-16 h-5 bg-gray-600/30 rounded-full"></div>
+                  <div className="w-20 h-5 bg-gray-600/30 rounded-full"></div>
                 </div>
-                <div className="w-full h-6 bg-gray-600/30 rounded"></div>
+                {/* Features */}
+                <div className="space-y-1 mb-3">
+                  <div className="w-full h-3 bg-gray-600/30 rounded"></div>
+                  <div className="w-4/5 h-3 bg-gray-600/30 rounded"></div>
+                </div>
+                {/* CTA */}
+                <div className="flex justify-between items-center pt-2 border-t border-gray-600/20">
+                  <div className="w-20 h-4 bg-gray-600/30 rounded"></div>
+                  <div className="w-4 h-4 bg-gray-600/30 rounded"></div>
+                </div>
               </div>
             ))}
           </div>
@@ -658,87 +667,87 @@ export default function AllLearningPageClient() {
           </div>
         </div>
 
-        {/* Results */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Results - Redesigned with shorter cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {sortedModules.map((module) => (
             <Link key={module.id} href={module.href}>
-              <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 cursor-pointer h-full">
-                <div
-                  className={`w-16 h-16 bg-gradient-to-br ${module.color} rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {module.icon}
-                </div>
-
-                <div className="mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex flex-wrap gap-1">
+              <div className="group bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 cursor-pointer h-full">
+                {/* Compact Header */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div
+                    className={`w-10 h-10 bg-gradient-to-br ${module.color} rounded-lg flex items-center justify-center text-lg group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {module.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap gap-1 mb-1">
                       {getModuleCategories(module)
-                        .slice(0, 2)
+                        .slice(0, 1)
                         .map((cat, idx) => (
                           <span
                             key={idx}
-                            className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded-full text-xs"
+                            className="bg-blue-500/20 text-blue-200 px-2 py-0.5 rounded-full text-xs"
                           >
                             {categories[
                               cat as keyof typeof categories
                             ]?.title.split(' ')[1] || cat}
                           </span>
                         ))}
-                      {getModuleCategories(module).length > 2 && (
-                        <span className="bg-gray-500/20 text-gray-300 px-2 py-1 rounded-full text-xs">
-                          +{getModuleCategories(module).length - 2}
-                        </span>
-                      )}
+                      <span className="text-gray-400 text-xs ml-auto">
+                        {(module.lessons ?? 0)} bài
+                      </span>
                     </div>
-                    <span className="text-gray-400 text-sm">
-                      {(module.lessons ?? 0)} bài học
-                    </span>
                   </div>
-
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors duration-300">
-                    {module.title}
-                  </h3>
-
-                  <p className="text-blue-300 mb-3 font-medium">
-                    {module.subtitle}
-                  </p>
                 </div>
 
-                <p className="text-gray-300 mb-6 leading-relaxed line-clamp-3">
+                {/* Compact Title */}
+                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors duration-300 line-clamp-2">
+                  {module.title}
+                </h3>
+
+                <p className="text-blue-300 mb-2 font-medium text-sm line-clamp-1">
+                  {module.subtitle}
+                </p>
+
+                {/* Compact Description */}
+                <p className="text-gray-300 mb-3 text-sm leading-relaxed line-clamp-2">
                   {module.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-purple-500/20 text-purple-200 px-2 py-1 rounded-full text-xs flex items-center">
+                {/* Compact Meta Info */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="bg-purple-500/20 text-purple-200 px-2 py-0.5 rounded-full text-xs flex items-center">
                     <Star className="w-3 h-3 mr-1" />
                     {module.level}
                   </span>
-                  <span className="bg-green-500/20 text-green-200 px-2 py-1 rounded-full text-xs flex items-center">
+                  <span className="bg-green-500/20 text-green-200 px-2 py-0.5 rounded-full text-xs flex items-center">
                     <Clock className="w-3 h-3 mr-1" />
                     {module.duration}
                   </span>
                 </div>
 
-                <div className="space-y-1 mb-6">
-                  {module.features.slice(0, 3).map((feature, featureIndex) => (
+                {/* Compact Features - Only show 2 */}
+                <div className="space-y-1 mb-3">
+                  {module.features.slice(0, 2).map((feature, featureIndex) => (
                     <div
                       key={featureIndex}
-                      className="flex items-center text-gray-300 text-sm"
+                      className="flex items-center text-gray-300 text-xs"
                     >
-                      <span className="text-green-400 mr-2">✓</span>
-                      {feature}
+                      <span className="text-green-400 mr-1 text-xs">✓</span>
+                      <span className="line-clamp-1">{feature}</span>
                     </div>
                   ))}
-                  {module.features.length > 3 && (
-                    <div className="text-gray-400 text-sm">
-                      +{module.features.length - 3} tính năng khác
+                  {module.features.length > 2 && (
+                    <div className="text-gray-400 text-xs">
+                      +{module.features.length - 2} tính năng
                     </div>
                   )}
                 </div>
 
-                <div className="flex items-center justify-between text-blue-300 font-semibold group-hover:text-blue-200 transition-colors duration-300">
+                {/* Compact CTA */}
+                <div className="flex items-center justify-between text-blue-300 text-sm font-semibold group-hover:text-blue-200 transition-colors duration-300 pt-2 border-t border-white/10">
                   <span>Bắt đầu học</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
             </Link>

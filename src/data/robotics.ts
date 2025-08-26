@@ -31,6 +31,8 @@ export interface Exercise {
   title: string;
   description: string;
   difficulty: 'Dễ' | 'Trung bình' | 'Khó';
+  videoUrl?: string;
+  imageUrl?: string;
   code?: string;
   expectedOutput?: string;
   hints: string[];
@@ -207,6 +209,8 @@ void loop() {
         title: 'Nhấp Nháy LED',
         description: 'Lập trình Arduino để LED nhấp nháy theo chu kỳ',
         difficulty: 'Dễ',
+        videoUrl: 'https://www.youtube.com/watch?v=bQeiO-tEa9o',
+        imageUrl: 'https://i.ytimg.com/vi/bQeiO-tEa9o/hqdefault.jpg',
         code: `int ledPin = 13;
 
 void setup() {
@@ -329,6 +333,8 @@ void loop() {
         title: 'Đo Khoảng Cách Siêu Âm',
         description: 'Sử dụng cảm biến siêu âm để đo khoảng cách',
         difficulty: 'Trung bình',
+        videoUrl: 'https://www.youtube.com/watch?v=wFcj9ox4Zsk',
+        imageUrl: 'https://i.ytimg.com/vi/wFcj9ox4Zsk/hqdefault.jpg',
         code: `#include <NewPing.h>
 
 #define TRIGGER_PIN 12
@@ -494,6 +500,8 @@ void loop() {
         title: 'Điều Khiển Chuyển Động Cơ Bản',
         description: 'Lập trình robot di chuyển theo các hướng khác nhau',
         difficulty: 'Trung bình',
+        videoUrl: 'https://www.youtube.com/watch?v=h_-TdPTGgSo',
+        imageUrl: 'https://i.ytimg.com/vi/h_-TdPTGgSo/hqdefault.jpg',
         code: `void moveForward() {
   digitalWrite(leftMotor1, HIGH);
   digitalWrite(leftMotor2, LOW);
@@ -708,6 +716,8 @@ void loop() {
         title: 'Điều Khiển Robot Từ Xa',
         description: 'Tạo ứng dụng web đơn giản để điều khiển robot',
         difficulty: 'Khó',
+        videoUrl: 'https://www.youtube.com/watch?v=PV4viet-Qe8',
+        imageUrl: 'https://i.ytimg.com/vi/PV4viet-Qe8/hqdefault.jpg',
         code: `#include <WiFi.h>
 #include <WebServer.h>
 

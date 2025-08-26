@@ -366,6 +366,57 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <OceanConservation3D />;
       case 'aquaculture-iot-manager-3d':
         return <AquacultureIoTManager3D />;
+      
+      // NEW GAMES FROM 5 MODULE INTEGRATION - PLACEHOLDER IMPLEMENTATION
+      case 'digital-citizenship-ethics-simulator':
+        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🛡️ Digital Citizenship Ethics Simulator</h2><p>Interactive ethics scenarios coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'privacy-protection-challenge':
+        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🔐 Privacy Protection Challenge</h2><p>Privacy tools training coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'future-scenario-builder-3d':
+        return <div className="text-white bg-purple-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🔮 Future Scenario Builder 3D</h2><p>3D scenario planning coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-purple-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'trend-analysis-detective':
+        return <div className="text-white bg-indigo-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🕵️ Trend Analysis Detective</h2><p>Trend analysis game coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-indigo-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'ux-design-studio-3d':
+        return <div className="text-white bg-pink-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🎨 UX Design Studio 3D</h2><p>3D UX design environment coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-pink-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'interface-design-challenge':
+        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">📱 Interface Design Challenge</h2><p>UI design challenges coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'energy-optimization-simulator':
+        return <div className="text-white bg-yellow-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">⚡ Energy Optimization Simulator</h2><p>Personal energy management coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-yellow-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'stress-resilience-training':
+        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🧘 Stress Resilience Training</h2><p>Stress management training coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'cultural-intelligence-navigator-3d':
+        return <div className="text-white bg-teal-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🌍 Cultural Intelligence Navigator 3D</h2><p>3D cultural scenarios coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-teal-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'international-networking-challenge':
+        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🤝 International Networking Challenge</h2><p>Global networking simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'social-media-campaign-builder':
+        return <div className="text-white bg-purple-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">📱 Social Media Campaign Builder</h2><p>Campaign building simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-purple-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'seo-optimization-challenge':
+        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🔍 SEO Optimization Challenge</h2><p>SEO puzzle challenges coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+      
+      // ENHANCED EXISTING MODULE GAMES - PLACEHOLDER IMPLEMENTATION
+      case 'investment-portfolio-simulator':
+        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">📊 Investment Portfolio Simulator</h2><p>Portfolio management simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'crypto-defi-adventure':
+        return <div className="text-white bg-yellow-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">₿ Crypto & DeFi Adventure</h2><p>DeFi simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-yellow-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'renewable-energy-grid-manager':
+        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🔋 Renewable Energy Grid Manager</h2><p>Smart grid simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'game-design-studio-3d':
+        return <div className="text-white bg-purple-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🎮 Game Design Studio 3D</h2><p>3D game development coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-purple-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'ai-art-creation-lab':
+        return <div className="text-white bg-pink-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🎨 AI Art Creation Lab</h2><p>AI art tools simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-pink-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'ethical-hacking-simulator':
+        return <div className="text-white bg-red-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🛡️ Ethical Hacking Simulator</h2><p>Penetration testing simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-red-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'gene-editing-lab-3d':
+        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🧬 Gene Editing Lab 3D</h2><p>3D CRISPR simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'physics-experiment-lab-3d':
+        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">⚡ Physics Experiment Lab 3D</h2><p>3D physics lab coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'iot-smart-city-builder-3d':
+        return <div className="text-white bg-cyan-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🏙️ IoT Smart City Builder 3D</h2><p>3D smart city building coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-cyan-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'ai-python-coding-assistant':
+        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🐍 AI Python Coding Assistant</h2><p>AI-powered coding practice coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+      case 'autonomous-robot-mission-3d':
+        return <div className="text-white bg-gray-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🤖 Autonomous Robot Mission 3D</h2><p>3D robot programming coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-gray-600 px-4 py-2 rounded">Complete Game</button></div>;
+      
       default:
         return <div className="text-white">Game not implemented yet!</div>;
     }

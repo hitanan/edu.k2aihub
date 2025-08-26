@@ -4,7 +4,7 @@ export interface EducationalGame {
   title: string;
   description: string;
   category: 'quiz' | 'puzzle' | 'simulation' | 'coding' | 'memory' | 'strategy' | '3D';
-  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao' | 'Khó';
   estimatedTime: string;
   skills: string[];
   moduleType: string;
@@ -23,6 +23,122 @@ export interface EducationalGame {
 
 // Games array for static generation
 export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
+  // NEW: Advanced 3D Games - Priority Implementation August 2025
+  {
+    id: 'quantum-computing-visualizer-3d',
+    title: 'Quantum Computing Visualizer 3D',
+    description: 'Visualize qubits, quantum states, và quantum algorithms trong không gian 3D tương tác với superposition và entanglement',
+    category: '3D',
+    difficulty: 'Khó',
+    estimatedTime: '45-60 phút',
+    skills: ['Quantum Computing', 'Quantum Physics', 'Qubit Manipulation', '3D Visualization', 'Quantum Algorithms'],
+    moduleType: 'ai',
+    isInternal: true,
+    points: 200,
+    icon: '🔮',
+    color: 'from-purple-500 to-pink-500',
+    relatedLessons: [
+      {
+        moduleId: 'ai',
+        lessonId: 'quantum-computing-basics',
+        title: 'Quantum Computing Basics',
+        connection: 'Understand quantum computing principles through 3D qubit visualization',
+      },
+    ],
+  },
+
+  {
+    id: 'dna-sequencing-lab-3d',
+    title: 'DNA Sequencing Lab 3D',
+    description: 'Thao tác DNA, protein folding, và gene editing trong môi trường phòng thí nghiệm 3D với realistic molecular interactions',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '40-50 phút',
+    skills: ['Biotechnology', 'DNA Sequencing', 'Protein Folding', 'Genetic Engineering', '3D Molecular Visualization'],
+    moduleType: 'biology',
+    isInternal: true,
+    points: 180,
+    icon: '🧬',
+    color: 'from-green-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'biology',
+        lessonId: 'dna-structure-function',
+        title: 'DNA Structure & Function',
+        connection: 'Hands-on DNA manipulation and sequencing in 3D virtual lab',
+      },
+    ],
+  },
+
+  {
+    id: 'smart-home-iot-simulator-3d',
+    title: 'Smart Home IoT Simulator 3D',
+    description: 'Thiết kế và quản lý smart home với IoT devices trong ngôi nhà 3D với automation scenarios và energy management',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '35-45 phút',
+    skills: ['IoT Technology', 'Home Automation', 'Smart Devices', 'Energy Management', '3D Home Design'],
+    moduleType: 'iot',
+    isInternal: true,
+    points: 160,
+    icon: '🏠',
+    color: 'from-blue-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'iot',
+        lessonId: 'iot-home-automation',
+        title: 'IoT Home Automation',
+        connection: 'Build and control smart home systems in 3D environment',
+      },
+    ],
+  },
+
+  {
+    id: 'molecular-assembly-game-3d',
+    title: '3D Molecular Assembly Game',
+    description: 'Advanced chemistry với protein folding và complex molecular structures trong 3D molecular workspace',
+    category: '3D',
+    difficulty: 'Khó',
+    estimatedTime: '50-65 phút',
+    skills: ['Advanced Chemistry', 'Molecular Structure', 'Protein Folding', 'Chemical Bonding', '3D Molecular Modeling'],
+    moduleType: 'chemistry',
+    isInternal: true,
+    points: 220,
+    icon: '🧪',
+    color: 'from-purple-500 to-indigo-500',
+    relatedLessons: [
+      {
+        moduleId: 'chemistry',
+        lessonId: 'molecular-structure-bonding',
+        title: 'Molecular Structure & Bonding',
+        connection: 'Build complex molecules and understand chemical bonding in 3D space',
+      },
+    ],
+  },
+
+  {
+    id: 'virtual-physics-lab-3d',
+    title: 'Virtual Physics Lab 3D',
+    description: 'Physics experiments với mechanics, optics, và electromagnetic trong 3D laboratory với real-time measurements',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '40-55 phút',
+    skills: ['Physics Experiments', 'Mechanics', 'Optics', 'Electromagnetic', '3D Laboratory Skills'],
+    moduleType: 'physics',
+    isInternal: true,
+    points: 190,
+    icon: '⚗️',
+    color: 'from-blue-500 to-cyan-500',
+    relatedLessons: [
+      {
+        moduleId: 'physics',
+        lessonId: 'physics-experiments-lab',
+        title: 'Physics Experiments & Lab',
+        connection: 'Conduct physics experiments in safe 3D virtual laboratory environment',
+      },
+    ],
+  },
+
   // Priority 3D Games
   {
     id: 'arduino-circuit-builder-3d',
@@ -2904,6 +3020,639 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
         lessonId: 'creative-problem-solving',
         title: 'Giải Quyết Vấn Đề Sáng Tạo',
         connection: 'Use design thinking methods để create innovative presentation solutions',
+      },
+    ],
+  },
+
+  // NEW GAMES FOR 5 MISSING MODULES - Comprehensive Educational Gaming
+
+  // Digital Citizenship & AI Ethics Games
+  {
+    id: 'digital-citizenship-ethics-simulator',
+    title: 'Digital Citizenship Ethics Simulator',
+    description: 'Mô phỏng các tình huống thực tế về đạo đức số và AI ethics. Đưa ra quyết định trong môi trường mạng xã hội và AI.',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-35 phút',
+    skills: ['Digital Ethics', 'AI Ethics', 'Digital Citizenship', 'Ethical Decision Making', 'Privacy Protection'],
+    moduleType: 'digital-citizenship-ai-ethics',
+    isInternal: true,
+    points: 150,
+    icon: '🛡️',
+    color: 'from-blue-600 to-purple-600',
+    relatedLessons: [
+      {
+        moduleId: 'digital-citizenship-ai-ethics',
+        lessonId: 'digital-citizenship-fundamentals',
+        title: 'Công Dân Số Cơ Bản',
+        connection: 'Practice digital citizenship principles in realistic social media scenarios',
+      },
+      {
+        moduleId: 'digital-citizenship-ai-ethics',
+        lessonId: 'ai-ethics-responsible-ai',
+        title: 'Đạo Đức AI và Sử Dụng AI Có Trách Nhiệm',
+        connection: 'Apply AI ethics principles in practical AI tool usage scenarios',
+      },
+    ],
+  },
+
+  {
+    id: 'privacy-protection-challenge',
+    title: 'Privacy Protection Challenge',
+    description: 'Thử thách bảo vệ quyền riêng tư và dữ liệu cá nhân trong thế giới số. Học cách sử dụng các công cụ bảo mật.',
+    category: 'puzzle',
+    difficulty: 'Cơ bản',
+    estimatedTime: '20-30 phút',
+    skills: ['Privacy Protection', 'Data Security', 'Digital Tools', 'Risk Assessment', 'Information Security'],
+    moduleType: 'digital-citizenship-ai-ethics',
+    isInternal: true,
+    points: 120,
+    icon: '🔐',
+    color: 'from-green-600 to-blue-600',
+    relatedLessons: [
+      {
+        moduleId: 'digital-citizenship-ai-ethics',
+        lessonId: 'digital-wellness-privacy',
+        title: 'Digital Wellness và Bảo Vệ Quyền Riêng Tư',
+        connection: 'Hands-on practice with privacy tools and digital wellness strategies',
+      },
+    ],
+  },
+
+  // Future Thinking & Scenario Planning Games
+  {
+    id: 'future-scenario-builder-3d',
+    title: 'Future Scenario Builder 3D',
+    description: 'Xây dựng và khám phá các kịch bản tương lai trong môi trường 3D tương tác với trend analysis và impact modeling.',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '40-50 phút',
+    skills: ['Future Thinking', 'Scenario Planning', 'Trend Analysis', 'Strategic Planning', '3D Visualization'],
+    moduleType: 'future-thinking-scenario-planning',
+    isInternal: true,
+    points: 170,
+    icon: '🔮',
+    color: 'from-purple-500 to-pink-500',
+    relatedLessons: [
+      {
+        moduleId: 'future-thinking-scenario-planning',
+        lessonId: 'futures-thinking-fundamentals',
+        title: 'Tư Duy Tương Lai Cơ Bản',
+        connection: 'Build and explore future scenarios using systematic futures thinking methods',
+      },
+      {
+        moduleId: 'future-thinking-scenario-planning',
+        lessonId: 'scenario-planning-techniques',
+        title: 'Kỹ Thuật Lập Kịch Bản',
+        connection: 'Practice advanced scenario planning techniques in interactive 3D environment',
+      },
+    ],
+  },
+
+  {
+    id: 'trend-analysis-detective',
+    title: 'Trend Analysis Detective',
+    description: 'Trở thành thám tử xu hướng! Phân tích data patterns, identify emerging trends, và predict future developments.',
+    category: 'puzzle',
+    difficulty: 'Trung bình',
+    estimatedTime: '30-40 phút',
+    skills: ['Trend Analysis', 'Data Analysis', 'Pattern Recognition', 'Research Skills', 'Critical Thinking'],
+    moduleType: 'future-thinking-scenario-planning',
+    isInternal: true,
+    points: 140,
+    icon: '🕵️',
+    color: 'from-indigo-600 to-purple-600',
+    relatedLessons: [
+      {
+        moduleId: 'future-thinking-scenario-planning',
+        lessonId: 'personal-strategic-planning',
+        title: 'Lập Kế Hoạch Chiến Lược Cá Nhân',
+        connection: 'Use trend analysis skills to inform personal strategic planning decisions',
+      },
+    ],
+  },
+
+  // UX/UI Design Games
+  {
+    id: 'ux-design-studio-3d',
+    title: 'UX Design Studio 3D',
+    description: 'Thiết kế user experiences trong studio 3D với prototyping tools, user testing scenarios, và design thinking workshops.',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '45-55 phút',
+    skills: ['UX Design', 'User Research', 'Prototyping', 'Design Thinking', '3D Design Tools'],
+    moduleType: 'ux-ui-design-fundamentals',
+    isInternal: true,
+    points: 180,
+    icon: '🎨',
+    color: 'from-pink-500 to-rose-500',
+    relatedLessons: [
+      {
+        moduleId: 'ux-ui-design-fundamentals',
+        lessonId: 'ux-fundamentals',
+        title: 'UX Design Cơ Bản',
+        connection: 'Practice UX design fundamentals in hands-on 3D design studio environment',
+      },
+      {
+        moduleId: 'ux-ui-design-fundamentals',
+        lessonId: 'design-thinking-process',
+        title: 'Quy Trình Design Thinking',
+        connection: 'Apply design thinking process to solve complex UX challenges in interactive studio',
+      },
+    ],
+  },
+
+  {
+    id: 'interface-design-challenge',
+    title: 'Interface Design Challenge',
+    description: 'Thử thách thiết kế giao diện! Tạo ra UI designs cho các devices khác nhau với accessibility và usability principles.',
+    category: 'puzzle',
+    difficulty: 'Trung bình',
+    estimatedTime: '35-45 phút',
+    skills: ['UI Design', 'Visual Design', 'Accessibility', 'Responsive Design', 'Design Principles'],
+    moduleType: 'ux-ui-design-fundamentals',
+    isInternal: true,
+    points: 160,
+    icon: '📱',
+    color: 'from-blue-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'ux-ui-design-fundamentals',
+        lessonId: 'visual-design-ui-principles',
+        title: 'Thiết Kế Giao Diện và Nguyên Tắc UI',
+        connection: 'Apply visual design principles to create effective and beautiful user interfaces',
+      },
+    ],
+  },
+
+  // Personal Energy & Performance Management Games
+  {
+    id: 'energy-optimization-simulator',
+    title: 'Energy Optimization Simulator',
+    description: 'Mô phỏng và tối ưu hóa năng lượng cá nhân. Quản lý circadian rhythms, nutrition, exercise và cognitive performance.',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '30-40 phút',
+    skills: ['Energy Management', 'Performance Optimization', 'Health Tracking', 'Habit Formation', 'Self-Regulation'],
+    moduleType: 'personal-energy-performance-management',
+    isInternal: true,
+    points: 150,
+    icon: '⚡',
+    color: 'from-yellow-500 to-orange-500',
+    relatedLessons: [
+      {
+        moduleId: 'personal-energy-performance-management',
+        lessonId: 'energy-management-fundamentals',
+        title: 'Quản Lý Năng Lượng Cơ Bản',
+        connection: 'Practice energy management strategies through realistic daily life simulations',
+      },
+      {
+        moduleId: 'personal-energy-performance-management',
+        lessonId: 'cognitive-optimization',
+        title: 'Tối Ưu Hóa Nhận Thức và Hiệu Suất',
+        connection: 'Optimize cognitive performance using evidence-based strategies and tracking',
+      },
+    ],
+  },
+
+  {
+    id: 'stress-resilience-training',
+    title: 'Stress Resilience Training Game',
+    description: 'Training game để xây dựng khả năng chống chịu stress. Học cách manage pressure và maintain performance under stress.',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '25-35 phút',
+    skills: ['Stress Management', 'Resilience Building', 'Emotional Regulation', 'Mindfulness', 'Peak Performance'],
+    moduleType: 'personal-energy-performance-management',
+    isInternal: true,
+    points: 140,
+    icon: '🧘',
+    color: 'from-green-500 to-teal-500',
+    relatedLessons: [
+      {
+        moduleId: 'personal-energy-performance-management',
+        lessonId: 'stress-resilience-recovery',
+        title: 'Khả Năng Chống Chịu Stress và Phục Hồi',
+        connection: 'Build stress resilience through practical training scenarios and recovery techniques',
+      },
+    ],
+  },
+
+  // Cross-Cultural Intelligence Games
+  {
+    id: 'cultural-intelligence-navigator-3d',
+    title: 'Cultural Intelligence Navigator 3D',
+    description: 'Navigate complex cross-cultural scenarios trong thế giới 3D với cultural awareness challenges và communication simulations.',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '40-50 phút',
+    skills: ['Cultural Intelligence', 'Cross-Cultural Communication', 'Global Awareness', 'Empathy', 'Cultural Adaptation'],
+    moduleType: 'cross-cultural-intelligence',
+    isInternal: true,
+    points: 170,
+    icon: '🌍',
+    color: 'from-teal-500 to-cyan-500',
+    relatedLessons: [
+      {
+        moduleId: 'cross-cultural-intelligence',
+        lessonId: 'cultural-intelligence-fundamentals',
+        title: 'Trí Tuệ Văn Hóa Cơ Bản',
+        connection: 'Develop cultural intelligence through immersive cross-cultural scenarios and challenges',
+      },
+      {
+        moduleId: 'cross-cultural-intelligence',
+        lessonId: 'global-communication-skills',
+        title: 'Kỹ Năng Giao Tiếp Toàn Cầu',
+        connection: 'Practice global communication skills in realistic international business scenarios',
+      },
+    ],
+  },
+
+  {
+    id: 'international-networking-challenge',
+    title: 'International Networking Challenge',
+    description: 'Master the art of international networking! Build professional relationships across cultures và navigate global business etiquette.',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '35-45 phút',
+    skills: ['International Networking', 'Business Etiquette', 'Relationship Building', 'Professional Communication', 'Cultural Adaptation'],
+    moduleType: 'cross-cultural-intelligence',
+    isInternal: true,
+    points: 160,
+    icon: '🤝',
+    color: 'from-blue-600 to-indigo-600',
+    relatedLessons: [
+      {
+        moduleId: 'cross-cultural-intelligence',
+        lessonId: 'international-networking-collaboration',
+        title: 'Networking Quốc Tế và Hợp Tác',
+        connection: 'Practice international networking strategies and cross-cultural collaboration techniques',
+      },
+    ],
+  },
+
+  // Additional Multi-Module Games - Enhanced Cross-Curricular Integration
+  {
+    id: 'future-skills-integration-challenge',
+    title: 'Future Skills Integration Challenge',
+    description: 'Thử thách tích hợp tất cả future skills! Combine AI ethics, UX design, cultural intelligence và energy management trong complex scenarios.',
+    category: 'strategy',
+    difficulty: 'Nâng cao',
+    estimatedTime: '50-60 phút',
+    skills: ['Systems Thinking', 'Skill Integration', 'Complex Problem Solving', 'Future Planning', 'Holistic Thinking'],
+    moduleType: 'multi-module',
+    isInternal: true,
+    points: 200,
+    icon: '🎯',
+    color: 'from-gradient-start to-gradient-end',
+    relatedLessons: [
+      {
+        moduleId: 'digital-citizenship-ai-ethics',
+        lessonId: 'ai-ethics-responsible-ai',
+        title: 'Đạo Đức AI và Sử Dụng AI Có Trách Nhiệm',
+        connection: 'Apply AI ethics in complex multi-stakeholder scenarios',
+      },
+      {
+        moduleId: 'ux-ui-design-fundamentals',
+        lessonId: 'design-thinking-process',
+        title: 'Quy Trình Design Thinking',
+        connection: 'Use design thinking to solve complex future-oriented challenges',
+      },
+      {
+        moduleId: 'cross-cultural-intelligence',
+        lessonId: 'cultural-intelligence-fundamentals',
+        title: 'Trí Tuệ Văn Hóa Cơ Bản',
+        connection: 'Navigate cultural complexity in global future scenarios',
+      },
+      {
+        moduleId: 'personal-energy-performance-management',
+        lessonId: 'energy-management-fundamentals',
+        title: 'Quản Lý Năng Lượng Cơ Bản',
+        connection: 'Maintain peak performance while managing complex future challenges',
+      },
+    ],
+  },
+
+  // COMPREHENSIVE GAMES FOR ALL EXISTING MODULES
+
+  // Digital Marketing Games
+  {
+    id: 'social-media-campaign-builder',
+    title: 'Social Media Campaign Builder',
+    description: 'Xây dựng chiến dịch marketing hoàn chỉnh trên các platform social media với budget optimization và audience targeting.',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '35-45 phút',
+    skills: ['Digital Marketing', 'Social Media Marketing', 'Campaign Management', 'Budget Optimization', 'Audience Targeting'],
+    moduleType: 'digital-marketing',
+    isInternal: true,
+    points: 170,
+    icon: '📱',
+    color: 'from-pink-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'digital-marketing-fundamentals',
+        title: 'Cơ Bản Digital Marketing',
+        connection: 'Apply digital marketing fundamentals to create comprehensive social media campaigns',
+      },
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'social-media-marketing',
+        title: 'Social Media Marketing',
+        connection: 'Build practical social media marketing campaigns with real budget and audience targeting',
+      },
+    ],
+  },
+
+  {
+    id: 'seo-optimization-challenge',
+    title: 'SEO Optimization Challenge',
+    description: 'Tối ưu hóa website cho search engines với keyword research, on-page SEO, và link building strategies.',
+    category: 'puzzle',
+    difficulty: 'Trung bình',
+    estimatedTime: '40-50 phút',
+    skills: ['SEO', 'Keyword Research', 'Content Optimization', 'Link Building', 'Google Analytics'],
+    moduleType: 'digital-marketing',
+    isInternal: true,
+    points: 160,
+    icon: '🔍',
+    color: 'from-green-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'seo-content-marketing',
+        title: 'SEO và Content Marketing',
+        connection: 'Master SEO techniques through hands-on website optimization challenges',
+      },
+    ],
+  },
+
+  // Financial Literacy Games
+  {
+    id: 'investment-portfolio-simulator',
+    title: 'Investment Portfolio Simulator',
+    description: 'Quản lý portfolio đầu tư với real-time market data, risk assessment, và diversification strategies.',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '45-55 phút',
+    skills: ['Investment Strategy', 'Portfolio Management', 'Risk Assessment', 'Financial Analysis', 'Market Research'],
+    moduleType: 'financial-literacy',
+    isInternal: true,
+    points: 180,
+    icon: '📊',
+    color: 'from-green-600 to-emerald-600',
+    relatedLessons: [
+      {
+        moduleId: 'financial-literacy',
+        lessonId: 'investment-portfolio-building',
+        title: 'Xây Dựng Portfolio Đầu Tư',
+        connection: 'Practice portfolio building with realistic investment scenarios and market conditions',
+      },
+    ],
+  },
+
+  {
+    id: 'crypto-defi-adventure',
+    title: 'Crypto & DeFi Adventure',
+    description: 'Khám phá thế giới cryptocurrency và DeFi với trading simulations, yield farming, và blockchain technology.',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '50-60 phút',
+    skills: ['Cryptocurrency', 'DeFi', 'Blockchain Technology', 'Smart Contracts', 'Yield Farming'],
+    moduleType: 'financial-literacy',
+    isInternal: true,
+    points: 200,
+    icon: '₿',
+    color: 'from-yellow-500 to-orange-500',
+    relatedLessons: [
+      {
+        moduleId: 'financial-literacy',
+        lessonId: 'cryptocurrency-blockchain',
+        title: 'Cryptocurrency và Blockchain',
+        connection: 'Hands-on experience with crypto trading and DeFi protocols in safe simulation environment',
+      },
+    ],
+  },
+
+  // Green Technology Games
+  {
+    id: 'renewable-energy-grid-manager',
+    title: 'Renewable Energy Grid Manager',
+    description: 'Quản lý smart grid với renewable energy sources, energy storage, và optimization algorithms.',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '45-55 phút',
+    skills: ['Renewable Energy', 'Smart Grid', 'Energy Storage', 'Grid Optimization', 'Sustainability'],
+    moduleType: 'green-technology',
+    isInternal: true,
+    points: 190,
+    icon: '🔋',
+    color: 'from-green-500 to-teal-500',
+    relatedLessons: [
+      {
+        moduleId: 'green-technology',
+        lessonId: 'renewable-energy-systems',
+        title: 'Hệ Thống Năng Lượng Tái Tạo',
+        connection: 'Manage complex renewable energy systems and optimize grid performance',
+      },
+    ],
+  },
+
+  // Game Development Games  
+  {
+    id: 'game-design-studio-3d',
+    title: 'Game Design Studio 3D',
+    description: 'Thiết kế và develop games trong studio 3D với Unity tools, character design, và gameplay mechanics.',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '60-70 phút',
+    skills: ['Game Development', 'Unity', 'Game Design', 'Character Animation', '3D Modeling'],
+    moduleType: 'game-development',
+    isInternal: true,
+    points: 220,
+    icon: '🎮',
+    color: 'from-purple-500 to-indigo-500',
+    relatedLessons: [
+      {
+        moduleId: 'game-development',
+        lessonId: 'unity-game-development',
+        title: 'Phát Triển Game với Unity',
+        connection: 'Create complete games using Unity development tools and game design principles',
+      },
+    ],
+  },
+
+  // AI Art & Creative Technology Games
+  {
+    id: 'ai-art-creation-lab',
+    title: 'AI Art Creation Lab',
+    description: 'Tạo artwork với AI tools như Midjourney, DALL-E, và Stable Diffusion với advanced prompt engineering.',
+    category: 'simulation',
+    difficulty: 'Trung bình',
+    estimatedTime: '40-50 phút',
+    skills: ['AI Art', 'Prompt Engineering', 'Creative Technology', 'Digital Art', 'AI Tools'],
+    moduleType: 'ai-art',
+    isInternal: true,
+    points: 170,
+    icon: '🎨',
+    color: 'from-pink-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'ai-art',
+        lessonId: 'ai-image-generation',
+        title: 'Tạo Ảnh với AI',
+        connection: 'Master AI image generation with hands-on practice using professional AI art tools',
+      },
+    ],
+  },
+
+  // Cybersecurity Games
+  {
+    id: 'ethical-hacking-simulator',
+    title: 'Ethical Hacking Simulator',
+    description: 'Penetration testing simulation với real-world vulnerability scenarios và security assessment tools.',
+    category: 'simulation',
+    difficulty: 'Nâng cao',
+    estimatedTime: '50-60 phút',
+    skills: ['Ethical Hacking', 'Penetration Testing', 'Security Assessment', 'Vulnerability Analysis', 'Cybersecurity'],
+    moduleType: 'cybersecurity',
+    isInternal: true,
+    points: 200,
+    icon: '🛡️',
+    color: 'from-red-500 to-orange-500',
+    relatedLessons: [
+      {
+        moduleId: 'cybersecurity',
+        lessonId: 'ethical-hacking-penetration-testing',
+        title: 'Ethical Hacking và Penetration Testing',
+        connection: 'Practice ethical hacking techniques in controlled simulation environment',
+      },
+    ],
+  },
+
+  // Biotechnology Games
+  {
+    id: 'gene-editing-lab-3d',
+    title: 'Gene Editing Lab 3D',
+    description: 'CRISPR gene editing simulation trong 3D molecular lab với precision editing và genetic engineering.',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '55-65 phút',
+    skills: ['Biotechnology', 'Gene Editing', 'CRISPR', 'Molecular Biology', 'Genetic Engineering'],
+    moduleType: 'biotechnology',
+    isInternal: true,
+    points: 210,
+    icon: '🧬',
+    color: 'from-green-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'biotechnology',
+        lessonId: 'crispr-gene-editing',
+        title: 'CRISPR và Gene Editing',
+        connection: 'Perform gene editing procedures using CRISPR technology in realistic 3D lab environment',
+      },
+    ],
+  },
+
+  // Enhanced STEM Games with Better Connections
+  {
+    id: 'physics-experiment-lab-3d',
+    title: 'Physics Experiment Lab 3D',
+    description: 'Thực hiện physics experiments trong 3D virtual lab với realistic simulations và scientific method.',
+    category: '3D',
+    difficulty: 'Trung bình',
+    estimatedTime: '40-50 phút',
+    skills: ['Physics', 'Scientific Method', 'Experimental Design', 'Data Analysis', '3D Lab Simulation'],
+    moduleType: 'stem',
+    isInternal: true,
+    points: 180,
+    icon: '⚡',
+    color: 'from-blue-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'stem',
+        lessonId: 'fun-physics-experiments',
+        title: 'Thí Nghiệm Vật Lý Thú Vị',
+        connection: 'Conduct physics experiments with virtual lab equipment and real-time data collection',
+      },
+    ],
+  },
+
+  // Arduino Enhanced Games
+  {
+    id: 'iot-smart-city-builder-3d',
+    title: 'IoT Smart City Builder 3D',
+    description: 'Xây dựng smart city với Arduino IoT devices, sensor networks, và automation systems trong môi trường 3D.',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '60-70 phút',
+    skills: ['Arduino', 'IoT', 'Smart City', 'Sensor Networks', 'Automation'],
+    moduleType: 'arduino',
+    isInternal: true,
+    points: 220,
+    icon: '🏙️',
+    color: 'from-cyan-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-communication',
+        title: 'Communication & Networking',
+        connection: 'Build smart city infrastructure using Arduino communication and networking capabilities',
+      },
+      {
+        moduleId: 'arduino',
+        lessonId: 'arduino-advanced-projects',
+        title: 'Advanced Arduino Projects',
+        connection: 'Create complex IoT systems for smart city applications with advanced Arduino programming',
+      },
+    ],
+  },
+
+  // Python Enhanced Games with AI Focus
+  {
+    id: 'ai-python-coding-assistant',
+    title: 'AI Python Coding Assistant',
+    description: 'Code với AI assistance! Build machine learning models và AI applications với Python và modern AI libraries.',
+    category: 'coding',
+    difficulty: 'Nâng cao',
+    estimatedTime: '50-60 phút',
+    skills: ['Python Programming', 'Machine Learning', 'AI Development', 'Data Science', 'Neural Networks'],
+    moduleType: 'python',
+    isInternal: true,
+    points: 200,
+    icon: '🐍',
+    color: 'from-blue-600 to-purple-600',
+    relatedLessons: [
+      {
+        moduleId: 'python',
+        lessonId: 'python-ai-machine-learning',
+        title: 'Python cho AI và Machine Learning',
+        connection: 'Build AI applications and machine learning models using Python with hands-on coding practice',
+      },
+    ],
+  },
+
+  // Robotics Enhanced Games
+  {
+    id: 'autonomous-robot-mission-3d',
+    title: 'Autonomous Robot Mission 3D',
+    description: 'Program và control autonomous robots trong 3D missions với path planning, obstacle avoidance, và AI decision making.',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '55-65 phút',
+    skills: ['Robotics', 'Autonomous Systems', 'Path Planning', 'AI Programming', 'Robot Control'],
+    moduleType: 'robotics',
+    isInternal: true,
+    points: 210,
+    icon: '🤖',
+    color: 'from-gray-600 to-blue-600',
+    relatedLessons: [
+      {
+        moduleId: 'robotics',
+        lessonId: 'autonomous-systems-ai',
+        title: 'Hệ Thống Tự Động và AI',
+        connection: 'Program autonomous robots with AI capabilities for complex mission scenarios',
       },
     ],
   },

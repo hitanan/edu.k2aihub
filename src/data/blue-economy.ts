@@ -41,6 +41,8 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
     description: 'Hiểu về khái niệm kinh tế biển bền vững và tiềm năng 3.200km bờ biển Việt Nam',
     duration: '90 phút',
     difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=BONcmJeiBic',
+    imageUrl: 'https://i.ytimg.com/vi/BONcmJeiBic/hqdefault.jpg',
     objectives: [
       'Nắm vững khái niệm kinh tế biển xanh và các nguyên tắc bền vững',
       'Phân tích tiềm năng kinh tế biển của Việt Nam',
@@ -84,6 +86,8 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
     description: 'Ứng dụng IoT, AI trong nuôi trồng thủy sản - ngành thứ 3 thế giới của Việt Nam',
     duration: '120 phút',
     difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=Q7HnMqimzG4',
+    imageUrl: 'https://i.ytimg.com/vi/Q7HnMqimzG4/hqdefault.jpg',
     objectives: [
       'Thiết kế hệ thống IoT cho nuôi trồng thủy sản',
       'Áp dụng AI trong dự đoán và tối ưu hóa',
@@ -121,6 +125,8 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
     description: 'Phát triển năng lượng gió ngoài khơi và các công nghệ năng lượng biển khác',
     duration: '110 phút',
     difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=BONcmJeiBic',
+    imageUrl: 'https://i.ytimg.com/vi/BONcmJeiBic/hqdefault.jpg',
     objectives: [
       'Thiết kế hệ thống năng lượng gió ngoài khơi',
       'Đánh giá tiềm năng năng lượng sóng và thủy triều',
@@ -156,6 +162,8 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
     description: 'Ứng dụng sinh học biển trong dược phẩm và công nghiệp',
     duration: '100 phút',
     difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=BONcmJeiBic',
+    imageUrl: 'https://i.ytimg.com/vi/BONcmJeiBic/hqdefault.jpg',
     objectives: [
       'Khám phá tiềm năng sinh học của các loài biển Việt Nam',
       'Phát triển quy trình chiết xuất hợp chất sinh học',
@@ -191,6 +199,8 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
     description: 'Công nghệ và phương pháp quản lý nguồn lợi thủy sản bền vững',
     duration: '95 phút',
     difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=ZtHcKbCfbi8',
+    imageUrl: 'https://i.ytimg.com/vi/ZtHcKbCfbi8/hqdefault.jpg',
     objectives: [
       'Áp dụng công nghệ trong quản lý nghề cá',
       'Phát triển hệ thống truy xuất nguồn gốc',

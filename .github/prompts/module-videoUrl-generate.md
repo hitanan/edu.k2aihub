@@ -2,7 +2,7 @@
 mode: agent
 ---
 
-Mục tiêu: Cho mỗi bài học trong mỗi module đầu vào, nếu trường videoUrl theo yêu cầu hãy tìm và đề xuất một YouTube video phù hợp với nội dung bài học.
+Mục tiêu: Cho mỗi bài học trong mỗi module đầu vào, cầu hãy tìm và đề xuất một YouTube video phù hợp với nội dung bài học.
 
 Yêu cầu thực thi:
 
@@ -48,8 +48,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
 **Yêu cầu parsing:**
 
 - Parse toàn bộ array lessons, không chỉ lesson đầu tiên
-- Kiểm tra từng lesson: thiếu videoUrl hoặc có default video URL
-- Chỉ xử lý lessons cần cập nhật videoUrl
+- Xử lý tất cả lessons cần cập nhật videoUrl
 
   **OUTPUT FORMAT:** Trả về kết quả ở định dạng JSON (một mảng object). Mỗi object gồm:
 
@@ -60,7 +59,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     "lessonTitle": "Wind Power Systems & Turbine Technology",
     "currentVideoUrl": "undefined" | "https://www.youtube.com/watch?v=vd2dtkMINIw",
     "newVideoUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
-    "status": "updated" | "no_match" | "skipped" | "fallback",
+    "status": "updated" | "no_match" | "fallback",
     "searchQuery": "Wind Power Systems vietnamese english turbine technology tutorial",
     "duration": 120,
     "videoDetails": {
@@ -147,7 +146,6 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
 **Lưu ý quan trọng:**
 
 - **XỬ LÝ TẤT CẢ LESSONS:** Script phải duyệt qua toàn bộ array lessons trong mỗi module, không chỉ phần tử đầu tiên
-- **SELECTIVE UPDATE:** Chỉ tìm video cho lessons thiếu videoUrl hoặc có default video
 - **COMPREHENSIVE OUTPUT:** JSON kết quả phải bao gồm tất cả lessons (cả skipped và updated)
 
 Lưu ý bảo mật:

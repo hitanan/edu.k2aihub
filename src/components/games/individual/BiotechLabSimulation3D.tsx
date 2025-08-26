@@ -56,7 +56,7 @@ const LAB_EQUIPMENT: LabEquipment[] = [
     name: 'Kính hiển vi',
     type: 'microscope',
     description: 'Quan sát mẫu vật ở độ phân giải cao',
-    position: [-2, 1.5, 2], // Positioned above table surface (table at Y=0.9)
+    position: [-2, 0.9, 1], // Positioned properly on table: table at Y=0.975, microscope base height 0.6, so Y=1.575
     color: '#2D3748',
     size: [0.8, 1.2, 0.6],
     interactive: true,
@@ -67,7 +67,7 @@ const LAB_EQUIPMENT: LabEquipment[] = [
     name: 'Máy ly tâm',
     type: 'centrifuge',
     description: 'Tách các thành phần dựa trên khối lượng',
-    position: [2, 1.25, 2], // Moved above table surface
+    position: [2, 0.9, 1], // Table at Y=0.975, centrifuge base height 0.3, so Y=1.275
     color: '#4A5568',
     size: [0.6, 0.8, 0.6],
     interactive: true,
@@ -78,7 +78,7 @@ const LAB_EQUIPMENT: LabEquipment[] = [
     name: 'Tủ ấm',
     type: 'incubator',
     description: 'Nuôi cấy vi sinh vật trong điều kiện kiểm soát',
-    position: [0, 1.45, -2], // Moved above table surface, positioned in back area
+    position: [0, 1.2, -2], // Table at Y=0.975, incubator base height 0.5, so Y=1.475
     color: '#E53E3E',
     size: [1.2, 1.2, 0.8],
     interactive: true,
@@ -89,7 +89,7 @@ const LAB_EQUIPMENT: LabEquipment[] = [
     name: 'Máy PCR',
     type: 'pcr_machine',
     description: 'Nhân bản DNA bằng phản ứng chuỗi Polymerase',
-    position: [-2, 1.25, -2], // Moved above table surface, positioned in back area
+    position: [-2, 1.0, -2], // Table at Y=0.975, PCR base height 0.3, so Y=1.275
     color: '#38B2AC',
     size: [1.0, 0.8, 0.8],
     interactive: true,
@@ -111,7 +111,7 @@ const LAB_EQUIPMENT: LabEquipment[] = [
     name: 'Cốc thủy tinh 250ml',
     type: 'beaker',
     description: 'Chứa và pha trộn dung dịch',
-    position: [1, 1.15, 0], // Moved above table surface
+    position: [1, 1.1, 0], // Table at Y=0.975, beaker base height 0.125, so Y=1.1
     color: '#63B3ED',
     size: [0.2, 0.6, 0.2],
     interactive: true,
@@ -687,7 +687,7 @@ function GameScene({
       </Plane>
 
       {/* Main Lab Bench - Elevated for better visibility */}
-      <Box args={[8, 0.15, 4]} position={[0, 0.9, 0]} receiveShadow castShadow>
+      <Box args={[8, 0.15, 4]} position={[0, 0.8, 0]} receiveShadow castShadow>
         <meshStandardMaterial color="#E2E8F0" />
       </Box>
 
@@ -697,10 +697,10 @@ function GameScene({
       </Box>
 
       {/* Side benches for additional equipment */}
-      <Box args={[3, 0.1, 2]} position={[-4.5, 0.9, 1]} receiveShadow castShadow>
+      <Box args={[3, 0.1, 2]} position={[-4.5, 0.8, 1]} receiveShadow castShadow>
         <meshStandardMaterial color="#E2E8F0" />
       </Box>
-      <Box args={[3, 0.1, 2]} position={[4.5, 0.9, 1]} receiveShadow castShadow>
+      <Box args={[3, 0.1, 2]} position={[4.5, 0.8, 1]} receiveShadow castShadow>
         <meshStandardMaterial color="#E2E8F0" />
       </Box>
 

@@ -175,6 +175,8 @@ export const CybersecurityLessons: CybersecurityLessonData[] = [
       'Học cách ứng phó với các sự cố bảo mật và thu thập bằng chứng kỹ thuật số.',
     duration: '170 phút',
     difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=gqsE2coucjg',
+    imageUrl: 'https://i.ytimg.com/vi/gqsE2coucjg/hqdefault.jpg',
     objectives: [
       'Nắm vững incident response lifecycle',
       'Hiểu digital forensics procedures',
@@ -219,6 +221,8 @@ export const CybersecurityLessons: CybersecurityLessonData[] = [
       'Thiết kế và quản lý kiến trúc bảo mật tổng thể cho doanh nghiệp.',
     duration: '140 phút',
     difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=7vKf-OwDcrs',
+    imageUrl: 'https://i.ytimg.com/vi/7vKf-OwDcrs/hqdefault.jpg',
     objectives: [
       'Hiểu enterprise security architecture',
       'Nắm vững security governance frameworks',

@@ -16,6 +16,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { PageProps } from '@/types';
+import CourseProgress from '@/components/learning/CourseProgress';
 
 // Generate static params
 export async function generateStaticParams() {
@@ -327,6 +328,20 @@ export default async function AiArtLessonPage({ params }: PageProps) {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-6">
+            {/* Course Progress */}
+            <CourseProgress
+              lessons={aiArtLessons.map(lesson => ({
+                id: lesson.id,
+                title: lesson.title,
+                duration: lesson.duration,
+                difficulty: lesson.difficulty
+              }))}
+              currentLessonId={lesson.id}
+              moduleSlug="ai-art-creative-tech"
+              moduleTitle="AI Art & Creative Technology"
+              primaryColor="purple"
+            />
+
             {/* Tools & Technologies */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">

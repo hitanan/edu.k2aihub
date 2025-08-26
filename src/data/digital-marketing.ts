@@ -4,18 +4,24 @@ export interface DigitalMarketingLesson extends BaseLessonData {
   videoUrl: string;
   tools: string[];
   resources: Resource[];
+  relatedGames?: Array<{
+    gameId: string;
+    title: string;
+    connection: string;
+    difficulty: string;
+  }>;
 }
 
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  materials?: string[];
-  procedure?: string[];
-  expectedResults?: string;
-  hints?: string[];
-}
+// interface DigitalMarketingExercise {
+//   title: string;
+//   description: string;
+//   difficulty: string;
+//   solution: string;
+//   materials?: string[];
+//   procedure?: string[];
+//   expectedResults?: string;
+//   hints?: string[];
+// }
 
 interface Resource {
   title: string;
@@ -43,6 +49,14 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     ],
     prerequisites: ['Kiến thức cơ bản về marketing', 'Hiểu biết về internet và social media'],
     tools: ['Google Analytics', 'Facebook Business Manager', 'Google Ads', 'Canva', 'HubSpot', 'Mailchimp'],
+    relatedGames: [
+      {
+        gameId: 'social-media-campaign-builder',
+        title: 'Social Media Campaign Builder',
+        connection: 'Practice digital marketing fundamentals by building comprehensive social media campaigns',
+        difficulty: 'Trung bình',
+      },
+    ],
     exercises: [
       {
         title: 'Xây dựng Buyer Persona',
@@ -193,6 +207,14 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Hootsuite',
       'Canva',
       'Adobe Creative Suite',
+    ],
+    relatedGames: [
+      {
+        gameId: 'social-media-campaign-builder',
+        title: 'Social Media Campaign Builder',
+        connection: 'Build comprehensive social media campaigns across multiple platforms with real audience targeting',
+        difficulty: 'Trung bình',
+      },
     ],
     exercises: [
       {
@@ -410,6 +432,14 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Screaming Frog',
       'Yoast SEO',
       'Google Keyword Planner',
+    ],
+    relatedGames: [
+      {
+        gameId: 'seo-optimization-challenge',
+        title: 'SEO Optimization Challenge',
+        connection: 'Master SEO techniques through hands-on website optimization challenges with keyword research and technical SEO',
+        difficulty: 'Trung bình',
+      },
     ],
     exercises: [
       {

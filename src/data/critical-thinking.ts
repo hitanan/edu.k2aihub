@@ -20,7 +20,7 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
     description: 'Nắm vững các nguyên tắc cơ bản của tư duy phê phán, học cách đánh giá thông tin và đưa ra quyết định có căn cứ.',
     duration: '90 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=Cum3k-Wglfw', // What is Critical Thinking? - TED-Ed
     imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu được định nghĩa và tầm quan trọng của tư duy phê phán',
@@ -152,7 +152,7 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
     description: 'Học cách áp dụng design thinking và các phương pháp sáng tạo để giải quyết vấn đề phức tạp.',
     duration: '120 phút', 
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=_r0VX-aU_T8', // Design Thinking Process - IDEO
     imageUrl: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=600&fit=crop',
     objectives: [
       'Nắm vững quy trình Design Thinking 5 bước',
@@ -255,7 +255,7 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
     description: 'Phát triển khả năng nhìn nhận vấn đề từ góc độ tổng thể, hiểu được mối quan hệ giữa các yếu tố.',
     duration: '105 phút',
     difficulty: 'Nâng cao', 
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=GPW4v_7yuHg', // Systems Thinking - Peter Senge
     imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu được concept của systems thinking',

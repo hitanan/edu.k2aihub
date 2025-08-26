@@ -30,6 +30,8 @@ export interface ArduinoExercise {
   title: string;
   description: string;
   difficulty: 'Dễ' | 'Trung bình' | 'Khó';
+  videoUrl?: string;
+  imageUrl?: string;
   code: string;
   expectedOutput: string;
   hints: string[];
@@ -95,6 +97,8 @@ void loop() {
         title: 'LED Nhấp Nháy Cơ Bản',
         description: 'Tạo chương trình LED nhấp nháy với tốc độ khác nhau',
         difficulty: 'Dễ',
+        videoUrl: 'https://www.youtube.com/watch?v=bQeiO-tEa9o',
+        imageUrl: 'https://i.ytimg.com/vi/bQeiO-tEa9o/hqdefault.jpg',
         code: `int ledPin = 13;
 
 void setup() {
@@ -126,6 +130,8 @@ void loop() {
         title: 'Đèn Giao Thông Mini',
         description: 'Tạo hệ thống đèn giao thông với 3 LED màu đỏ, vàng, xanh',
         difficulty: 'Trung bình',
+        videoUrl: 'https://www.youtube.com/watch?v=kmcroP9nLvg',
+        imageUrl: 'https://i.ytimg.com/vi/kmcroP9nLvg/hqdefault.jpg',
         code: `int redPin = 11;
 int yellowPin = 12;
 int greenPin = 13;
@@ -492,6 +498,8 @@ void loop() {
         title: 'Điều Khiển Độ Sáng LED',
         description: 'Sử dụng potentiometer để điều chỉnh độ sáng LED',
         difficulty: 'Trung bình',
+        videoUrl: 'https://www.youtube.com/watch?v=DpqqG9uHf5c',
+        imageUrl: 'https://i.ytimg.com/vi/DpqqG9uHf5c/hqdefault.jpg',
         code: `int potPin = A0;
 int ledPin = 9;  // PWM pin
 int potValue = 0;

@@ -15,13 +15,7 @@ const MARINE_LIFE = [
     health: 100,
     size: 0.3,
     bodyShape: 'tropical',
-  },
-  {
-    color: '#FFD700',
-    secondaryColor: '#FFA500',
-    health: 100,
-    size: 0.3,
-    bodyShape: 'tropical',
+    finSwingSpeed: 8, // Fast tropical fish movement
   },
   {
     id: 'sea-turtle',
@@ -31,6 +25,7 @@ const MARINE_LIFE = [
     health: 100,
     size: 0.8,
     bodyShape: 'turtle',
+    finSwingSpeed: 2, // Very slow turtle movement
   },
   {
     id: 'coral-fish',
@@ -40,6 +35,7 @@ const MARINE_LIFE = [
     health: 100,
     size: 0.4,
     bodyShape: 'coral',
+    finSwingSpeed: 12, // Fast reef fish movement
   },
   {
     id: 'whale',
@@ -49,6 +45,7 @@ const MARINE_LIFE = [
     health: 100,
     size: 2.0,
     bodyShape: 'whale',
+    finSwingSpeed: 3, // Slow majestic whale movement
   },
   {
     id: 'dolphin',
@@ -58,6 +55,7 @@ const MARINE_LIFE = [
     health: 100,
     size: 1.2,
     bodyShape: 'dolphin',
+    finSwingSpeed: 6, // Medium playful dolphin movement
   },
   {
     id: 'shark',
@@ -67,6 +65,7 @@ const MARINE_LIFE = [
     health: 100,
     size: 1.5,
     bodyShape: 'shark',
+    finSwingSpeed: 5, // Medium predatory shark movement
   },
 ];
 
@@ -98,24 +97,25 @@ function MarineAnimal({
 
   useFrame((state) => {
     if (meshRef.current) {
-      // Swimming animation - different patterns for different species
+      // Swimming animation - different patterns for different species with individual fin swing speeds
       const timeOffset = position[2] * 0.5;
+      const baseSpeed = species.finSwingSpeed || 5; // Fallback to 5 if not defined
 
       if (species.bodyShape === 'whale' || species.bodyShape === 'dolphin') {
         // Large mammals - slower, graceful movement
-        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * 0.3 + timeOffset) * 3;
-        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.4 + timeOffset) * 1;
-        meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.2 + timeOffset) * 0.2;
+        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 3;
+        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.15) + timeOffset) * 1;
+        meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * (baseSpeed * 0.08) + timeOffset) * 0.2;
       } else if (species.bodyShape === 'turtle') {
-        // Turtle - very slow movement
-        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * 0.2 + timeOffset) * 1;
-        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.1 + timeOffset) * 0.5;
-        meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.1 + timeOffset) * 0.1;
+        // Turtle - very slow movement with slow fin swing
+        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 1;
+        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.05) + timeOffset) * 0.5;
+        meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * (baseSpeed * 0.05) + timeOffset) * 0.1;
       } else {
-        // Fish - faster, darting movement
-        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * 0.8 + timeOffset) * 2;
-        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 1.2 + timeOffset) * 0.8;
-        meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.6 + timeOffset) * 0.4;
+        // Fish - faster, darting movement with species-specific fin swing speeds
+        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 2;
+        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.15) + timeOffset) * 0.8;
+        meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * (baseSpeed * 0.075) + timeOffset) * 0.4;
       }
 
       // Scale based on health
@@ -123,9 +123,10 @@ function MarineAnimal({
       meshRef.current.scale.setScalar(species.size * healthScale * (hovered ? 1.2 : 1));
     }
 
-    // Tail animation for fish
+    // Tail animation for fish with species-specific swing speed (not turtle)
     if (tailRef.current && species.bodyShape !== 'turtle') {
-      tailRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 10) * 0.3;
+      const finSpeed = species.finSwingSpeed || 10;
+      tailRef.current.rotation.y = Math.sin(state.clock.elapsedTime * finSpeed) * 0.3;
     }
   });
 
