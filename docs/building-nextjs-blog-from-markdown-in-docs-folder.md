@@ -1,3 +1,14 @@
+---
+title: "Building Nextjs Blog From Markdown In Docs Folder"
+description: "Building a Next.js blog from Markdown files stored in a docs/ folder involves several key steps:"
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Tài Liệu"
+tags: ["K2AiHub", "trí tuệ nhân tạo", "module giáo dục"]
+featured: false
+readingTime: "2 phút đọc"
+---
+
 Building a Next.js blog from Markdown files stored in a docs/ folder involves several key steps:
 Project Setup:
 Initialize a Next.js project if you haven't already.

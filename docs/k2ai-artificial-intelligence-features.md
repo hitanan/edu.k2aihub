@@ -1,3 +1,14 @@
+---
+title: "K2AI Artificial Intelligence Features - Tính Năng AI Thông Minh"
+description: "**K2AI Platform** tích hợp trí tuệ nhân tạo một cách toàn diện để nâng cao trải nghiệm học tập, từ personalization content đến intelligent assessment và adap..."
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Tài Liệu"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "3D"]
+featured: true
+readingTime: "7 phút đọc"
+---
+
 # K2AI Artificial Intelligence Features - Tính Năng AI Thông Minh
 
 ## 🤖 Tổng Quan AI Integration trong K2AiHub

@@ -1,3 +1,14 @@
+---
+title: "10 Kỹ Năng Thiết Yếu Cho Học Sinh Phổ Thông Việt Nam 2025"
+description: "Xác định 10 kỹ năng quan trọng nhất mà học sinh phổ thông Việt Nam đang thiếu trong thời đại hiện tại, nhưng lại cực kỳ cần thiết cho tương lai. Những kỹ năn..."
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Tài Liệu"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "Việt Nam"]
+featured: true
+readingTime: "8 phút đọc"
+---
+
 # 10 Kỹ Năng Thiết Yếu Cho Học Sinh Phổ Thông Việt Nam 2025
 
 ## 🎯 Mục Tiêu Nghiên Cứu

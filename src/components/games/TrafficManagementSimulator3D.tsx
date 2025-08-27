@@ -586,6 +586,24 @@ const TrafficManagementSimulator3D: React.FC = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(59,130,246,0.3),transparent)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(16,185,129,0.3),transparent)] pointer-events-none" />
 
+      {/* Pause Overlay */}
+      {gameState.isPaused && gameState.isRunning && (
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-40">
+          <div className="bg-black/80 backdrop-blur rounded-xl p-8 text-center border border-yellow-500/30">
+            <Pause className="w-16 h-16 mx-auto mb-4 text-yellow-400" />
+            <h2 className="text-3xl font-bold text-white mb-2">Game Paused</h2>
+            <p className="text-gray-300 mb-4">Traffic simulation is temporarily stopped</p>
+            <button
+              onClick={handlePause}
+              className="px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg font-bold transition-all duration-200 flex items-center gap-2 mx-auto"
+            >
+              <Play className="w-5 h-5" />
+              Resume Game
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Instructions Overlay */}
       {showInstructions && (
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
@@ -752,10 +770,14 @@ const TrafficManagementSimulator3D: React.FC = () => {
         <button
           onClick={handlePause}
           disabled={!gameState.isRunning}
-          className="bg-yellow-600 hover:bg-yellow-700 disabled:bg-gray-600 px-4 py-2 rounded-lg font-bold transition-colors flex items-center gap-2"
+          className={`${
+            gameState.isPaused 
+              ? 'bg-green-600 hover:bg-green-700' 
+              : 'bg-yellow-600 hover:bg-yellow-700'
+          } disabled:bg-gray-600 px-4 py-2 rounded-lg font-bold transition-colors flex items-center gap-2`}
         >
-          <Pause className="w-4 h-4" />
-          Pause
+          {gameState.isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
+          {gameState.isPaused ? 'Resume' : 'Pause'}
         </button>
         <button
           onClick={handleReset}

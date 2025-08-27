@@ -1,3 +1,14 @@
+---
+title: "K2AI Learning Modules - Hệ Thống Học Tập Chuyên Nghiệp"
+description: "**K2AI Learning Modules** là tập hợp 14 module học tập chuyên sâu, được thiết kế để đào tạo kỹ năng công nghệ và nghề nghiệp cho thị trường lao động Việt Nam..."
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Học Tập"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "Việt Nam"]
+featured: true
+readingTime: "6 phút đọc"
+---
+
 # K2AI Learning Modules - Hệ Thống Học Tập Chuyên Nghiệp
 
 ## 🎓 Tổng Quan Về Hệ Thống Learning Modules

@@ -33,22 +33,141 @@ interface StationModule {
   position: [number, number, number];
 }
 
-// Earth component
+// Earth component with realistic appearance
 function Earth() {
   const meshRef = useRef<THREE.Mesh>(null);
+  const atmosphereRef = useRef<THREE.Mesh>(null);
+  const cloudsRef = useRef<THREE.Mesh>(null);
 
   useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.005;
     }
+    if (cloudsRef.current) {
+      cloudsRef.current.rotation.y += 0.003; // Clouds rotate slower
+    }
   });
 
+  // Create Earth texture with continents pattern
+  const earthTexture = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    
+    if (ctx) {
+      // Ocean base
+      ctx.fillStyle = '#1e40af'; // Deep blue ocean
+      ctx.fillRect(0, 0, 512, 256);
+      
+      // Draw continents in a simplified pattern
+      ctx.fillStyle = '#22c55e'; // Green continents
+      
+      // Africa and Europe
+      ctx.fillRect(250, 80, 60, 120);
+      ctx.fillRect(260, 60, 40, 30);
+      
+      // Asia
+      ctx.fillRect(320, 70, 120, 80);
+      ctx.fillRect(380, 50, 80, 40);
+      
+      // North America
+      ctx.fillRect(120, 40, 80, 100);
+      ctx.fillRect(100, 60, 40, 60);
+      
+      // South America
+      ctx.fillRect(140, 140, 50, 90);
+      
+      // Australia
+      ctx.fillRect(400, 160, 60, 40);
+      
+      // Add some variation with darker greens
+      ctx.fillStyle = '#16a34a';
+      ctx.fillRect(130, 70, 20, 40);
+      ctx.fillRect(270, 100, 25, 50);
+      ctx.fillRect(340, 80, 30, 30);
+      
+      // Ice caps (white)
+      ctx.fillStyle = '#f8fafc';
+      ctx.fillRect(0, 0, 512, 15); // North pole
+      ctx.fillRect(0, 241, 512, 15); // South pole
+    }
+    
+    return new THREE.CanvasTexture(canvas);
+  }, []);
+
   return (
-    <mesh ref={meshRef} position={[0, -30, 0]}>
-      <sphereGeometry args={[15, 32, 32]} />
-      <meshStandardMaterial color="#4169E1" emissive="#001122" emissiveIntensity={0.1} />
-    </mesh>
+    <group position={[0, -30, 0]}>
+      {/* Earth surface */}
+      <mesh ref={meshRef}>
+        <sphereGeometry args={[15, 64, 64]} />
+        <meshPhongMaterial
+          map={earthTexture}
+          shininess={100}
+          specular={new THREE.Color(0x4169e1)}
+          emissive={new THREE.Color(0x001122)}
+          emissiveIntensity={0.1}
+        />
+      </mesh>
+
+      {/* Cloud layer */}
+      <mesh ref={cloudsRef}>
+        <sphereGeometry args={[15.2, 32, 32]} />
+        <meshPhongMaterial
+          color={new THREE.Color(0xffffff)}
+          transparent
+          opacity={0.3}
+          alphaMap={createCloudTexture()}
+        />
+      </mesh>
+
+      {/* Atmospheric glow */}
+      <mesh ref={atmosphereRef}>
+        <sphereGeometry args={[15.5, 32, 32]} />
+        <meshBasicMaterial
+          color={new THREE.Color(0x87ceeb)}
+          transparent
+          opacity={0.1}
+          side={THREE.BackSide}
+        />
+      </mesh>
+    </group>
   );
+
+  function createCloudTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    
+    if (ctx) {
+      // Create cloud patterns
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, 512, 256);
+      
+      // Add random cloud formations
+      ctx.fillStyle = '#ffffff';
+      for (let i = 0; i < 50; i++) {
+        const x = Math.random() * 512;
+        const y = Math.random() * 256;
+        const size = Math.random() * 40 + 10;
+        
+        ctx.globalAlpha = Math.random() * 0.8 + 0.2;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Add some connected cloud formations
+        if (Math.random() > 0.7) {
+          ctx.beginPath();
+          ctx.arc(x + size, y, size * 0.7, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+    
+    return new THREE.CanvasTexture(canvas);
+  }
 }
 
 // Space station module component - ENHANCED with drag and delete

@@ -1,3 +1,14 @@
+---
+title: "🤖 3D Robot Navigation - Minecraft-Inspired Block World"
+description: "**Technical Foundation**: Three.js + React + TypeScript"
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Tài Liệu"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "3D"]
+featured: true
+readingTime: "13 phút đọc"
+---
+
 # 🤖 3D Robot Navigation - Minecraft-Inspired Block World
 
 **Technical Foundation**: Three.js + React + TypeScript

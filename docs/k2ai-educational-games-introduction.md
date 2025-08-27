@@ -1,3 +1,14 @@
+---
+title: "K2AI Educational Games - Hệ Thống Trò Chơi Giáo Dục Tương Tác"
+description: "**K2AI Educational Games** là bộ sưu tập 19 trò chơi giáo dục tương tác được thiết kế để kết hợp học tập và giải trí, giúp học sinh tiếp thu kiến thức một cá..."
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Trò Chơi"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "3D"]
+featured: true
+readingTime: "8 phút đọc"
+---
+
 # K2AI Educational Games - Hệ Thống Trò Chơi Giáo Dục Tương Tác
 
 ## 🎮 Tổng Quan Về Educational Games System

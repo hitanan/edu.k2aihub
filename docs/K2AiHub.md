@@ -1,3 +1,14 @@
+---
+title: "K2AiHub - Interactive Information Platform Documentation"
+description: "_The comprehensive source of truth for K2AiHub development and features_"
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Tài Liệu"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "3D"]
+featured: true
+readingTime: "20 phút đọc"
+---
+
 # K2AiHub - Interactive Information Platform Documentation
 
 _The comprehensive source of truth for K2AiHub development and features_

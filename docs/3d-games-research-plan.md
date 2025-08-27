@@ -1,3 +1,14 @@
+---
+title: "K2AI 3D Games Research & Development Plan"
+description: "_Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_"
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Nghiên Cứu"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "3D"]
+featured: true
+readingTime: "25 phút đọc"
+---
+
 # K2AI 3D Games Research & Development Plan
 
 _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_

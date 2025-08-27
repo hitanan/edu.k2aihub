@@ -1,3 +1,14 @@
+---
+title: "10 Kỹ Năng Thiết Yếu Cho Học Sinh Phổ Thông Việt Nam 2025 - Phần 2"
+description: "Tiếp nối nghiên cứu Phần 1, xác định 10 kỹ năng mới thiết yếu khác mà học sinh phổ thông Việt Nam cần trong bối cảnh tuyển sinh 2025 và những thay đổi mới nh..."
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Tài Liệu"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "Việt Nam"]
+featured: true
+readingTime: "9 phút đọc"
+---
+
 # 10 Kỹ Năng Thiết Yếu Cho Học Sinh Phổ Thông Việt Nam 2025 - Phần 2
 
 ## 🎯 Mục Tiêu Nghiên Cứu Phần 2

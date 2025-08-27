@@ -14,7 +14,8 @@ import {
   TestTube2,
   Gauge,
   Target,
-  CheckCircle2
+  CheckCircle2,
+  Clock
 } from 'lucide-react';
 
 interface PhysicsExperimentLab3DGameProps {

@@ -1,3 +1,14 @@
+---
+title: "Geography App"
+description: "I want you to create a modern, professional NextJS Vietnam geography. After the merger, Vietnam is expected to have 34 provincial-level administrative units...."
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Tài Liệu"
+tags: ["trí tuệ nhân tạo", "Việt Nam", "giáo dục", "địa lý"]
+featured: false
+readingTime: "2 phút đọc"
+---
+
 I want you to create a modern, professional NextJS Vietnam geography. After the merger, Vietnam is expected to have 34 provincial-level administrative units. Here's my vision:
 
 APPLICATION OVERVIEW:

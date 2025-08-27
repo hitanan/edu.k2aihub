@@ -1,3 +1,14 @@
+---
+title: "K2AI Geography Module - Khám Phá Địa Lý Việt Nam Thông Minh"
+description: "**K2AI Geography** là module tương tác tiên tiến giúp học sinh và người dùng khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam thông qua công nghệ hiện đại..."
+date: "2025-08-27"
+author: "K2AiHub Development Team"
+category: "Tài Liệu"
+tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "Việt Nam"]
+featured: true
+readingTime: "5 phút đọc"
+---
+
 # K2AI Geography Module - Khám Phá Địa Lý Việt Nam Thông Minh
 
 ## 🌍 Tổng Quan Về Module Địa Lý Việt Nam
