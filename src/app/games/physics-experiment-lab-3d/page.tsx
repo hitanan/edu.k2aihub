@@ -61,7 +61,7 @@ export default function PhysicsExperimentLab3DPage() {
                 <h4 className="font-bold mb-2">Classical Mechanics</h4>
                 <p className="text-sm text-gray-300 mb-3">Motion, forces và energy</p>
                 <div className="text-xs text-red-300">
-                  <div>• Newton's laws</div>
+                  <div>• Newton&apos;s laws</div>
                   <div>• Projectile motion</div>
                   <div>• Rotational dynamics</div>
                   <div>• Oscillations và waves</div>
@@ -153,7 +153,7 @@ export default function PhysicsExperimentLab3DPage() {
             <h3 className="text-2xl font-bold mb-6 text-center">🔬 Classic Physics Experiments</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-blue-600/20 p-6 rounded-lg">
-                <h4 className="text-xl font-bold mb-3">🍎 Galileo's Inclined Plane</h4>
+                <h4 className="text-xl font-bold mb-3">🍎 Galileo&apos;s Inclined Plane</h4>
                 <p className="text-gray-300 mb-4">Investigating acceleration và the nature of motion</p>
                 <div className="space-y-2 text-sm text-gray-400">
                   <div>• Uniform acceleration measurement</div>
@@ -195,12 +195,12 @@ export default function PhysicsExperimentLab3DPage() {
               </div>
               
               <div className="bg-purple-600/20 p-6 rounded-lg">
-                <h4 className="text-xl font-bold mb-3">🧲 Faraday's Electromagnetic Induction</h4>
+                <h4 className="text-xl font-bold mb-3">🧲 Faraday&apos;s Electromagnetic Induction</h4>
                 <p className="text-gray-300 mb-4">Discovering the relationship between electricity và magnetism</p>
                 <div className="space-y-2 text-sm text-gray-400">
                   <div>• Induced EMF measurement</div>
                   <div>• Magnetic flux changes</div>
-                  <div>• Lenz's law demonstration</div>
+                  <div>• Lenz&apos;s law demonstration</div>
                   <div>• Generator principle verification</div>
                 </div>
                 <div className="mt-3">

@@ -74,7 +74,7 @@ export default function AIArtCreationLabPage() {
               <div className="bg-green-600/20 p-6 rounded-lg text-center">
                 <div className="text-4xl mb-3">🖼️</div>
                 <h4 className="font-bold mb-2">DALL-E 3</h4>
-                <p className="text-sm text-gray-300 mb-3">OpenAI's advanced image generator</p>
+                <p className="text-sm text-gray-300 mb-3">OpenAI&apos;s advanced image generator</p>
                 <div className="text-xs text-green-300">
                   <div>• ChatGPT integration</div>
                   <div>• Natural language prompts</div>
@@ -255,7 +255,7 @@ export default function AIArtCreationLabPage() {
                     <li>• Book cover design</li>
                     <li>• Magazine illustrations</li>
                     <li>• Editorial graphics</li>
-                    <li>• Children's book art</li>
+                    <li>• Children&apos;s book art</li>
                     <li>• Self-publishing assets</li>
                   </ul>
                 </div>
@@ -324,7 +324,7 @@ export default function AIArtCreationLabPage() {
                 <div className="text-sm text-gray-400 space-y-1">
                   <div>• RTX 4090 GPU (24GB VRAM)</div>
                   <div>• 64GB RAM for large models</div>
-                  <div>• 27" 4K color-accurate monitor</div>
+                  <div>• 27&quot; 4K color-accurate monitor</div>
                   <div>• Wacom Cintiq drawing tablet</div>
                   <div>• High-speed SSD storage</div>
                 </div>

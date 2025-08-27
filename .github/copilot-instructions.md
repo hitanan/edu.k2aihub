@@ -308,7 +308,7 @@ When you run and build any comment below please wait until it complete, do not t
 npx tsc --noEmit # TypeScript type checking
 npm run lint     # Code quality checks
 npm run dev      # Development with turbopack
-npm run build    # Production build with static generation, must set NODE_ENV=production before running
+npm run build    # Production build with static generation
 ```
 
 Do not try to `npm run build` and then `echo "Build completed - checking status"`, we have to wait the build until it has result, you can ask to run another task while waiting for build output and then back to check the build status
@@ -328,7 +328,7 @@ Do not try to `npm run build` and then `echo "Build completed - checking status"
 npm run start    # Production server (for testing)
 npm run dev      # Development with turbopack
 npm run lint     # Code quality checks
-npm run build    # Production build with static generation, must set NODE_ENV=production before running
+npm run build    # Production build with static generation
 
 ```
 

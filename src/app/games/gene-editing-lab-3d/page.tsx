@@ -184,10 +184,10 @@ export default function GeneEditingLab3DPage() {
                 <h4 className="text-xl font-bold mb-3">🧠 Neurological Disorders</h4>
                 <p className="text-gray-300 mb-4">Central nervous system gene therapy</p>
                 <div className="space-y-2 text-sm text-gray-400">
-                  <div>• Huntington's disease</div>
-                  <div>• Alzheimer's prevention</div>
+                  <div>• Huntington&apos;s disease</div>
+                  <div>• Alzheimer&apos;s prevention</div>
                   <div>• Spinal muscular atrophy</div>
-                  <div>• Parkinson's disease therapy</div>
+                  <div>• Parkinson&apos;s disease therapy</div>
                 </div>
                 <div className="mt-3">
                   <span className="px-3 py-1 bg-yellow-500/30 rounded-full text-xs">Complex diseases</span>

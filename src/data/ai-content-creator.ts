@@ -149,7 +149,7 @@ export const aiContentCreatorLessons: AIContentCreatorLessonType[] = [
       'Tự động hóa toàn bộ quy trình social media từ content creation đến engagement với AI tools tiên tiến.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=SOCIAL_AUTOMATION',
+    videoUrl: 'https://www.youtube.com/watch?v=G25jxmtRjas',
     imageUrl: '/images/lessons/social-automation.jpg',
     objectives: [
       'Setup automation workflow cho multiple platforms',
@@ -243,7 +243,7 @@ export const aiContentCreatorLessons: AIContentCreatorLessonType[] = [
     description: 'Xây dựng personal brand mạnh mẽ và establish thought leadership với sức mạnh của AI tools.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://youtube.com/watch?v=AI_PERSONAL_BRAND',
+    videoUrl: 'https://www.youtube.com/watch?v=YN5nH_FbnJc',
     imageUrl: '/images/lessons/ai-personal-branding.jpg',
     objectives: [
       'Develop unique personal brand identity với AI insights',

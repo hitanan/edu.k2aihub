@@ -74,6 +74,30 @@ import {
 import LogicalFallacyDetector from './LogicalFallacyDetector';
 import PresentationMaster from './PresentationMaster';
 
+// Import newly created game components
+import DigitalCitizenshipEthicsSimulatorGame from './individual/DigitalCitizenshipEthicsSimulatorGame';
+import PrivacyProtectionChallengeGame from './individual/PrivacyProtectionChallengeGame';
+import AIArtCreationLabGame from './individual/AIArtCreationLabGame';
+import FutureScenarioBuilder3DGame from './individual/FutureScenarioBuilder3DGame';
+import AgileDevelopmentSimulatorGame from './individual/AgileDevelopmentSimulatorGame';
+import SEOOptimizationChallengeGame from './individual/SEOOptimizationChallengeGame';
+import TrendAnalysisDetectiveGame from './individual/TrendAnalysisDetectiveGame';
+import DigitalTransformationSimulatorGame from './individual/DigitalTransformationSimulatorGame';
+import InformationSecurityTrainingGame from './individual/InformationSecurityTrainingGame';
+import UXDesignStudio3DGame from './individual/UXDesignStudio3DGame';
+import InterfaceDesignChallengeGame from './individual/InterfaceDesignChallengeGame';
+import EnergyOptimizationSimulatorGame from './individual/EnergyOptimizationSimulatorGame';
+import StressResilienceTrainingGame from './individual/StressResilienceTrainingGame';
+import CulturalIntelligenceNavigator3DGame from './individual/CulturalIntelligenceNavigator3DGame';
+import InternationalNetworkingChallengeGame from './individual/InternationalNetworkingChallengeGame';
+import SocialMediaCampaignBuilderGame from './individual/SocialMediaCampaignBuilderGame';
+import InvestmentPortfolioSimulatorGame from './individual/InvestmentPortfolioSimulatorGame';
+import CryptoDeFiAdventureGame from './individual/CryptoDeFiAdventureGame';
+import RenewableEnergyGridManagerGame from './individual/RenewableEnergyGridManagerGame';
+import GameDesignStudio3DGame from './individual/GameDesignStudio3DGame';
+import EthicalHackingSimulatorGame from './individual/EthicalHackingSimulatorGame';
+import GeneEditingLab3DGame from './individual/GeneEditingLab3DGame';
+
 // Import 3D game components that exist as separate components
 import TrafficManagementSimulator3D from './TrafficManagementSimulator3D';
 import EnhancedSpaceStationBuilder3D from './EnhancedSpaceStationBuilder3D';
@@ -81,6 +105,10 @@ import NeuralNetworkBuilder3D from './NeuralNetworkBuilder3D';
 import SmartCityPlanner3D from './SmartCityPlanner3D';
 import OceanConservation3D from './OceanConservation3D';
 import AquacultureIoTManager3D from './AquacultureIoTManager3D';
+import PhysicsExperimentLab3DGame from './individual/PhysicsExperimentLab3DGame';
+import IoTSmartCityBuilder3DGame from './individual/IoTSmartCityBuilder3DGame';
+import AIPythonCodingAssistantGame from './individual/AIPythonCodingAssistantGame';
+import AutonomousRobotMission3DGame from './individual/AutonomousRobotMission3DGame';
 
 interface MiniGameProps {
   game: EducationalGame;
@@ -367,56 +395,217 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'aquaculture-iot-manager-3d':
         return <AquacultureIoTManager3D />;
       
-      // NEW GAMES FROM 5 MODULE INTEGRATION - PLACEHOLDER IMPLEMENTATION
+      // NEW GAMES FROM 5 MODULE INTEGRATION
       case 'digital-citizenship-ethics-simulator':
-        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🛡️ Digital Citizenship Ethics Simulator</h2><p>Interactive ethics scenarios coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <DigitalCitizenshipEthicsSimulatorGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'privacy-protection-challenge':
-        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🔐 Privacy Protection Challenge</h2><p>Privacy tools training coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <PrivacyProtectionChallengeGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'future-scenario-builder-3d':
-        return <div className="text-white bg-purple-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🔮 Future Scenario Builder 3D</h2><p>3D scenario planning coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-purple-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <FutureScenarioBuilder3DGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'trend-analysis-detective':
-        return <div className="text-white bg-indigo-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🕵️ Trend Analysis Detective</h2><p>Trend analysis game coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-indigo-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <TrendAnalysisDetectiveGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'ux-design-studio-3d':
-        return <div className="text-white bg-pink-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🎨 UX Design Studio 3D</h2><p>3D UX design environment coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-pink-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <UXDesignStudio3DGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'interface-design-challenge':
-        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">📱 Interface Design Challenge</h2><p>UI design challenges coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <InterfaceDesignChallengeGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'energy-optimization-simulator':
-        return <div className="text-white bg-yellow-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">⚡ Energy Optimization Simulator</h2><p>Personal energy management coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-yellow-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <EnergyOptimizationSimulatorGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'stress-resilience-training':
-        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🧘 Stress Resilience Training</h2><p>Stress management training coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <StressResilienceTrainingGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'cultural-intelligence-navigator-3d':
-        return <div className="text-white bg-teal-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🌍 Cultural Intelligence Navigator 3D</h2><p>3D cultural scenarios coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-teal-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <CulturalIntelligenceNavigator3DGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'international-networking-challenge':
-        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🤝 International Networking Challenge</h2><p>Global networking simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <InternationalNetworkingChallengeGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'social-media-campaign-builder':
-        return <div className="text-white bg-purple-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">📱 Social Media Campaign Builder</h2><p>Campaign building simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-purple-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <SocialMediaCampaignBuilderGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'seo-optimization-challenge':
-        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🔍 SEO Optimization Challenge</h2><p>SEO puzzle challenges coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <SEOOptimizationChallengeGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
+      case 'agile-development-simulator':
+        return (
+          <AgileDevelopmentSimulatorGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
+      case 'digital-transformation-simulator':
+        return (
+          <DigitalTransformationSimulatorGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
+      case 'information-security-training':
+        return (
+          <InformationSecurityTrainingGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       
-      // ENHANCED EXISTING MODULE GAMES - PLACEHOLDER IMPLEMENTATION
+      // ENHANCED EXISTING MODULE GAMES
       case 'investment-portfolio-simulator':
-        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">📊 Investment Portfolio Simulator</h2><p>Portfolio management simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <InvestmentPortfolioSimulatorGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'crypto-defi-adventure':
-        return <div className="text-white bg-yellow-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">₿ Crypto & DeFi Adventure</h2><p>DeFi simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-yellow-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <CryptoDeFiAdventureGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'renewable-energy-grid-manager':
-        return <div className="text-white bg-green-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🔋 Renewable Energy Grid Manager</h2><p>Smart grid simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-green-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <RenewableEnergyGridManagerGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'game-design-studio-3d':
-        return <div className="text-white bg-purple-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🎮 Game Design Studio 3D</h2><p>3D game development coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-purple-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <GameDesignStudio3DGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'ai-art-creation-lab':
-        return <div className="text-white bg-pink-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🎨 AI Art Creation Lab</h2><p>AI art tools simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-pink-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <AIArtCreationLabGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'ethical-hacking-simulator':
-        return <div className="text-white bg-red-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🛡️ Ethical Hacking Simulator</h2><p>Penetration testing simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-red-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <EthicalHackingSimulatorGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'gene-editing-lab-3d':
-        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🧬 Gene Editing Lab 3D</h2><p>3D CRISPR simulation coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
+        return (
+          <GeneEditingLab3DGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       case 'physics-experiment-lab-3d':
-        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">⚡ Physics Experiment Lab 3D</h2><p>3D physics lab coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
-      case 'iot-smart-city-builder-3d':
-        return <div className="text-white bg-cyan-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🏙️ IoT Smart City Builder 3D</h2><p>3D smart city building coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-cyan-600 px-4 py-2 rounded">Complete Game</button></div>;
-      case 'ai-python-coding-assistant':
-        return <div className="text-white bg-blue-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🐍 AI Python Coding Assistant</h2><p>AI-powered coding practice coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-blue-600 px-4 py-2 rounded">Complete Game</button></div>;
-      case 'autonomous-robot-mission-3d':
-        return <div className="text-white bg-gray-900 p-8 rounded-lg text-center"><h2 className="text-2xl mb-4">🤖 Autonomous Robot Mission 3D</h2><p>3D robot programming coming soon!</p><button onClick={() => endGame(true, 100)} className="mt-4 bg-gray-600 px-4 py-2 rounded">Complete Game</button></div>;
-      
+        return (
+          <PhysicsExperimentLab3DGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
+        case 'iot-smart-city-builder-3d':
+        return (
+          <IoTSmartCityBuilder3DGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
+        case 'ai-python-coding-assistant':
+        return (
+          <AIPythonCodingAssistantGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
+        case 'autonomous-robot-mission-3d':
+        return (
+          <AutonomousRobotMission3DGame 
+            onComplete={endGame} 
+            timeLeft={timeLeft} 
+            onRestart={() => restartGame()} 
+          />
+        );
       default:
         return <div className="text-white">Game not implemented yet!</div>;
     }

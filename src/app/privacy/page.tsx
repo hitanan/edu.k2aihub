@@ -30,7 +30,7 @@ export default function PrivacyPage() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-4">🔒 Chính Sách Bảo Mật</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">🔒 Privacy - Chính Sách Bảo Mật</h1>
           <p className="text-gray-300 text-lg">
             K2AiHub cam kết bảo vệ tuyệt đối quyền riêng tư của bạn - chúng tôi KHÔNG thu thập bất kỳ dữ liệu cá nhân
             nào.

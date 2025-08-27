@@ -168,7 +168,7 @@ export default function GameDesignStudio3DPage() {
               
               <div className="bg-blue-600/20 p-6 rounded-lg">
                 <h4 className="text-xl font-bold mb-3">🎯 Unreal Engine</h4>
-                <p className="text-gray-300 mb-4">Epic's AAA game engine với Blueprint visual scripting</p>
+                <p className="text-gray-300 mb-4">Epic&apos;s AAA game engine với Blueprint visual scripting</p>
                 <div className="space-y-2 text-sm text-gray-400">
                   <div>• Photorealistic graphics capabilities</div>
                   <div>• Blueprint visual programming</div>
@@ -326,7 +326,7 @@ export default function GameDesignStudio3DPage() {
             <h3 className="text-2xl font-bold mb-6 text-center">🎮 Studio Portfolio</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-red-600/20 p-6 rounded-lg">
-                <h5 className="font-bold mb-2 text-red-400">🗡️ "Shadow Realm"</h5>
+                <h5 className="font-bold mb-2 text-red-400">🗡️ &quot;Shadow Realm&quot;</h5>
                 <p className="text-sm text-gray-400 mb-2">Dark fantasy action-RPG</p>
                 <div className="text-xs text-gray-500 space-y-1">
                   <div>• 500K+ downloads</div>
@@ -337,7 +337,7 @@ export default function GameDesignStudio3DPage() {
               </div>
               
               <div className="bg-blue-600/20 p-6 rounded-lg">
-                <h5 className="font-bold mb-2 text-blue-400">🚀 "Stellar Drift"</h5>
+                <h5 className="font-bold mb-2 text-blue-400">🚀 &quot;Stellar Drift&quot;</h5>
                 <p className="text-sm text-gray-400 mb-2">Space exploration simulator</p>
                 <div className="text-xs text-gray-500 space-y-1">
                   <div>• 1.2M+ downloads</div>
@@ -348,7 +348,7 @@ export default function GameDesignStudio3DPage() {
               </div>
               
               <div className="bg-green-600/20 p-6 rounded-lg">
-                <h5 className="font-bold mb-2 text-green-400">🧩 "Mind Maze"</h5>
+                <h5 className="font-bold mb-2 text-green-400">🧩 &quot;Mind Maze&quot;</h5>
                 <p className="text-sm text-gray-400 mb-2">3D puzzle-adventure</p>
                 <div className="text-xs text-gray-500 space-y-1">
                   <div>• 800K+ downloads</div>

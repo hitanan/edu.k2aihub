@@ -98,7 +98,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Master technical aspects của live streaming, equipment selection, production workflows, và quality optimization cho professional live commerce.',
     duration: '195 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=ha5CyXxbFtc', // Live streaming setup
+    videoUrl: 'https://www.youtube.com/watch?v=EuSUPiPjRQs', // Live streaming setup
     imageUrl: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop',
     objectives: [
       'Master live streaming technical setup',

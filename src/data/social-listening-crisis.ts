@@ -15,7 +15,7 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
     description: 'Master social listening fundamentals để monitor brand mentions, track sentiment và proactively identify opportunities và threats online.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=NCvOyDyp9ik', // Social media monitoring
+    videoUrl: 'https://www.youtube.com/watch?v=DK2wjD7r38M', // Social Listening Strategy for Crisis Management
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu social listening concepts và importance',

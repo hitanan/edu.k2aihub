@@ -176,7 +176,7 @@ export default function CulturalIntelligenceNavigator3DPage() {
 
           {/* Cultural Competency Levels */}
           <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-center">📊 Cấp Độ Năng Lực Văn Hóa</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">📊 Cấp Độ Năng Lực Đa Văn Hóa</h3>
             <div className="space-y-4">
               <div className="bg-gradient-to-r from-red-600/20 to-orange-600/20 p-4 rounded-lg">
                 <div className="flex items-center justify-between mb-2">

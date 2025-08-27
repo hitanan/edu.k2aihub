@@ -226,7 +226,7 @@ export const greenTechLessons: GreenTechLesson[] = [
     title: 'Bài 2: Smart City & IoT Solutions',
     description:
       'Xây dựng hệ thống thành phố thông minh với IoT sensors, data analytics và AI để giải quyết các vấn đề đô thị.',
-    videoUrl: 'https://www.youtube.com/watch?v=QXRLi_W3L8Q',
+    videoUrl: 'https://www.youtube.com/watch?v=Qi6oLXzXWaE',
     imageUrl:
       'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
