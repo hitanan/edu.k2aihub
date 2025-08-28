@@ -989,7 +989,18 @@ function Instructions({ onStart }: { onStart: () => void }) {
 }
 
 // Main Game Component
-export default function AquacultureIoTManager3D() {
+// Main component props
+interface AquacultureIoTManager3DProps {
+  onComplete?: (success: boolean, rawScore?: number) => void;
+  timeLeft?: number;
+  onRestart?: () => void;
+}
+
+export default function AquacultureIoTManager3D({ 
+  onComplete, 
+  timeLeft, 
+  onRestart 
+}: AquacultureIoTManager3DProps = {}) {
   const [gameStarted, setGameStarted] = useState(false);
   const [sensors, setSensors] = useState({
     temp: 28,

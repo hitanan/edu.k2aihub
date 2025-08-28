@@ -1102,7 +1102,18 @@ function Instructions({ onStart }: { onStart: () => void }) {
 }
 
 // Main component with enhanced task tracking
-export default function OceanConservation3D() {
+// Main component props
+interface OceanConservation3DProps {
+  onComplete?: (success: boolean, rawScore?: number) => void;
+  timeLeft?: number;
+  onRestart?: () => void;
+}
+
+export default function OceanConservation3D({ 
+  onComplete, 
+  timeLeft, 
+  onRestart 
+}: OceanConservation3DProps = {}) {
   const [gameStarted, setGameStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [rescued, setRescued] = useState(0);

@@ -275,7 +275,18 @@ const Road3D: React.FC<{
 };
 
 // Main traffic management simulator component
-const TrafficManagementSimulator3D: React.FC = () => {
+// Component props
+interface TrafficManagementSimulator3DProps {
+  onComplete?: (success: boolean, rawScore?: number) => void;
+  timeLeft?: number;
+  onRestart?: () => void;
+}
+
+const TrafficManagementSimulator3D: React.FC<TrafficManagementSimulator3DProps> = ({ 
+  onComplete, 
+  timeLeft: gameTimeLeft, 
+  onRestart 
+}) => {
   // Instructions state
   const [showInstructions, setShowInstructions] = useState(true);
 

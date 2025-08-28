@@ -20,7 +20,18 @@ interface PresentationChallenge {
   learningObjectives: string[];
 }
 
-const PresentationMaster: React.FC = () => {
+// Component props
+interface PresentationMasterProps {
+  onComplete?: (success: boolean, rawScore?: number) => void;
+  timeLeft?: number;
+  onRestart?: () => void;
+}
+
+const PresentationMaster: React.FC<PresentationMasterProps> = ({ 
+  onComplete, 
+  timeLeft: gameTimeLeft, 
+  onRestart 
+}) => {
   const [currentChallenge, setCurrentChallenge] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImprovements, setSelectedImprovements] = useState<string[]>([]);

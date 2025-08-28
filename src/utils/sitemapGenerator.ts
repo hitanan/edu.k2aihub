@@ -590,12 +590,14 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const environmentalScienceClimatePages = environmentalClimateLessons.map((lesson: EnvironmentalClimateLessonType) => ({
-    url: `${baseUrl}/learning/environmental-science-climate/${lesson.id}`,
-    lastModified,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  const environmentalScienceClimatePages = environmentalClimateLessons.map(
+    (lesson: EnvironmentalClimateLessonType) => ({
+      url: `${baseUrl}/learning/environmental-science-climate/${lesson.id}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }),
+  );
 
   // 2025 Vietnam Niche Market Research Modules lesson pages
   const blueEconomyPages = blueEconomyLessons.map((lesson) => ({

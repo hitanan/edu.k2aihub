@@ -16,7 +16,18 @@ interface TrainingData {
   epoch: number;
 }
 
-export default function NeuralNetworkBuilder3D() {
+// Component props
+interface NeuralNetworkBuilder3DProps {
+  onComplete?: (success: boolean, rawScore?: number) => void;
+  timeLeft?: number;
+  onRestart?: () => void;
+}
+
+export default function NeuralNetworkBuilder3D({ 
+  onComplete, 
+  timeLeft: gameTimeLeft, 
+  onRestart 
+}: NeuralNetworkBuilder3DProps = {}) {
   const [started, setStarted] = useState(false);
   const [layers, setLayers] = useState<NetworkLayer[]>([
     { id: 'input', nodes: 3, activation: 'linear', name: 'Input Layer' },

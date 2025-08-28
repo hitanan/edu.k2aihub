@@ -390,8 +390,18 @@ function Instructions({ onStart }: { onStart: () => void }) {
   );
 }
 
-// Main component
-export default function SmartCityPlanner3D() {
+// Main component props
+interface SmartCityPlanner3DProps {
+  onComplete?: (success: boolean, rawScore?: number) => void;
+  timeLeft?: number;
+  onRestart?: () => void;
+}
+
+export default function SmartCityPlanner3D({ 
+  onComplete, 
+  timeLeft, 
+  onRestart 
+}: SmartCityPlanner3DProps = {}) {
   const { smartCity, setSmartCityState } = useGameStore();
   const [gameStarted, setGameStarted] = useState(true); // Start directly with the game
   const [selectedBuildingType, setSelectedBuildingType] = useState<string | null>('residential');

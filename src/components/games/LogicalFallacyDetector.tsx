@@ -22,7 +22,18 @@ interface Scenario {
   context: string;
 }
 
-const LogicalFallacyDetector: React.FC = () => {
+// Component props
+interface LogicalFallacyDetectorProps {
+  onComplete?: (success: boolean, rawScore?: number) => void;
+  timeLeft?: number;
+  onRestart?: () => void;
+}
+
+const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({ 
+  onComplete, 
+  timeLeft: gameTimeLeft, 
+  onRestart 
+}) => {
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedArgument, setSelectedArgument] = useState<number | null>(null);
   const [score, setScore] = useState(0);

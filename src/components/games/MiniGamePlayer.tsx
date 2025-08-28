@@ -379,21 +379,21 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'space-exploration-3d':
         return <SpaceExploration3DGame onComplete={(success, score) => endGame(success, score)} timeLeft={timeLeft} />;
       case 'logical-fallacy-detector':
-        return <LogicalFallacyDetector />;
+        return <LogicalFallacyDetector onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'presentation-master':
-        return <PresentationMaster />;
+        return <PresentationMaster onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'traffic-management-simulator-3d':
-        return <TrafficManagementSimulator3D />;
+        return <TrafficManagementSimulator3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'neural-network-builder-3d':
-        return <NeuralNetworkBuilder3D />;
+        return <NeuralNetworkBuilder3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'space-station-builder-3d':
-        return <EnhancedSpaceStationBuilder3D />;
+        return <EnhancedSpaceStationBuilder3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'smart-city-planner-3d':
-        return <SmartCityPlanner3D />;
+        return <SmartCityPlanner3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'ocean-conservation-3d':
-        return <OceanConservation3D />;
+        return <OceanConservation3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'aquaculture-iot-manager-3d':
-        return <AquacultureIoTManager3D />;
+        return <AquacultureIoTManager3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       
       // NEW GAMES FROM 5 MODULE INTEGRATION
       case 'digital-citizenship-ethics-simulator':

@@ -294,7 +294,18 @@ function EnhancedControlPanel({
 }
 
 // Main Enhanced Space Station Builder Component
-export default function EnhancedSpaceStationBuilder3D() {
+// Component props
+interface EnhancedSpaceStationBuilder3DProps {
+  onComplete?: (success: boolean, rawScore?: number) => void;
+  timeLeft?: number;
+  onRestart?: () => void;
+}
+
+export default function EnhancedSpaceStationBuilder3D({ 
+  onComplete, 
+  timeLeft: gameTimeLeft, 
+  onRestart 
+}: EnhancedSpaceStationBuilder3DProps = {}) {
   const { spaceStation, setSpaceStationState, resetSpaceStation } = useGameStore();
 
   // Local state

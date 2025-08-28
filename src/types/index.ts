@@ -25,6 +25,30 @@ export interface City {
   touristAttractions?: TouristAttraction[];
 }
 
+export interface ModuleData {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  level: string;
+  duration: string;
+  category: string;
+  features: string[];
+  icon: string;
+  color: string;
+  heroImageUrl?: string;
+  objectives: string[];
+  prerequisites: string[];
+  careerOutcomes: string[];
+  industryApplications: string[];
+  marketDemand: {
+    averageSalary: string;
+    jobGrowth: string;
+    hireDemand: string;
+  };
+  relatedModules: string[];
+}
+
 export interface ContactForm {
   name: string;
   email: string;
