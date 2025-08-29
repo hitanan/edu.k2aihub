@@ -23,11 +23,85 @@ export interface EducationalGame {
 
 // Games array for static generation
 export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
+  // ENHANCED 3D GAMES - Implemented Components
+  {
+    id: 'physics-experiment-lab-3d-enhanced',
+    title: 'Physics Experiment Lab 3D Enhanced',
+    description:
+      'Advanced physics experiments với pendulum simulation, electromagnetic fields, và wave interference trong 3D laboratory environment',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '45-60 phút',
+    skills: ['Physics Simulation', '3D Mechanics', 'Electromagnetic Fields', 'Wave Physics', 'Real-time Physics'],
+    moduleType: 'physics',
+    isInternal: true,
+    points: 200,
+    icon: '🔬',
+    color: 'from-cyan-500 to-blue-500',
+    relatedLessons: [
+      {
+        moduleId: 'stem',
+        lessonId: 'physics-experiments',
+        title: 'Physics Experiments',
+        connection: 'Conduct advanced physics experiments in 3D virtual laboratory',
+      },
+    ],
+  },
+
+  {
+    id: 'iot-smart-city-builder-3d-enhanced',
+    title: 'IoT Smart City Builder 3D Enhanced',
+    description:
+      'Build comprehensive smart city infrastructure với IoT systems, energy management, và citizen services trong 3D city environment',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '60-75 phút',
+    skills: ['Smart City Planning', 'IoT Integration', 'Urban Technology', 'Energy Management', '3D City Design'],
+    moduleType: 'iot',
+    isInternal: true,
+    points: 250,
+    icon: '🏙️',
+    color: 'from-blue-500 to-purple-500',
+    relatedLessons: [
+      {
+        moduleId: 'government-technology',
+        lessonId: 'smart-city-development',
+        title: 'Smart City Development',
+        connection: 'Design and manage smart city infrastructure with IoT integration',
+      },
+    ],
+  },
+
+  {
+    id: 'autonomous-robot-mission-3d-enhanced',
+    title: 'Autonomous Robot Mission 3D Enhanced',
+    description:
+      'Control autonomous robots through complex missions với pathfinding, obstacle avoidance, và sensor integration trong 3D environments',
+    category: '3D',
+    difficulty: 'Nâng cao',
+    estimatedTime: '50-65 phút',
+    skills: ['Robotics Control', 'Path Planning', 'Sensor Fusion', 'Autonomous Navigation', '3D Robot Simulation'],
+    moduleType: 'robotics',
+    isInternal: true,
+    points: 220,
+    icon: '🤖',
+    color: 'from-orange-500 to-red-500',
+    relatedLessons: [
+      {
+        moduleId: 'ai',
+        lessonId: 'robotics-navigation',
+        title: 'Robotics Navigation',
+        connection: 'Program autonomous robots for complex mission navigation',
+      },
+    ],
+  },
+
   // NEW: Advanced 3D Games - Priority Implementation August 2025
   {
     id: 'quantum-computing-visualizer-3d',
     title: 'Quantum Computing Visualizer 3D',
-    description: 'Visualize qubits, quantum states, và quantum algorithms trong không gian 3D tương tác với superposition và entanglement',
+    description:
+      'Visualize qubits, quantum states, và quantum algorithms trong không gian 3D tương tác với superposition và entanglement',
     category: '3D',
     difficulty: 'Khó',
     estimatedTime: '45-60 phút',
@@ -50,7 +124,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'dna-sequencing-lab-3d',
     title: 'DNA Sequencing Lab 3D',
-    description: 'Thao tác DNA, protein folding, và gene editing trong môi trường phòng thí nghiệm 3D với realistic molecular interactions',
+    description:
+      'Thao tác DNA, protein folding, và gene editing trong môi trường phòng thí nghiệm 3D với realistic molecular interactions',
     category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '40-50 phút',
@@ -73,7 +148,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'smart-home-iot-simulator-3d',
     title: 'Smart Home IoT Simulator 3D',
-    description: 'Thiết kế và quản lý smart home với IoT devices trong ngôi nhà 3D với automation scenarios và energy management',
+    description:
+      'Thiết kế và quản lý smart home với IoT devices trong ngôi nhà 3D với automation scenarios và energy management',
     category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '35-45 phút',
@@ -100,7 +176,13 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     category: '3D',
     difficulty: 'Khó',
     estimatedTime: '50-65 phút',
-    skills: ['Advanced Chemistry', 'Molecular Structure', 'Protein Folding', 'Chemical Bonding', '3D Molecular Modeling'],
+    skills: [
+      'Advanced Chemistry',
+      'Molecular Structure',
+      'Protein Folding',
+      'Chemical Bonding',
+      '3D Molecular Modeling',
+    ],
     moduleType: 'chemistry',
     isInternal: true,
     points: 220,
@@ -119,7 +201,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'virtual-physics-lab-3d',
     title: 'Virtual Physics Lab 3D',
-    description: 'Physics experiments với mechanics, optics, và electromagnetic trong 3D laboratory với real-time measurements',
+    description:
+      'Physics experiments với mechanics, optics, và electromagnetic trong 3D laboratory với real-time measurements',
     category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '40-55 phút',
@@ -2956,7 +3039,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'logical-fallacy-detector',
     title: 'Logical Fallacy Detector',
-    description: 'Phát triển kỹ năng tư duy phê phán bằng cách nhận biết các lỗi lập luận trong các tình huống thực tế tại Việt Nam',
+    description:
+      'Phát triển kỹ năng tư duy phê phán bằng cách nhận biết các lỗi lập luận trong các tình huống thực tế tại Việt Nam',
     category: 'puzzle',
     difficulty: 'Trung bình',
     estimatedTime: '20-30 phút',
@@ -2992,7 +3076,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'presentation-master',
     title: 'Presentation Master',
-    description: 'Phát triển kỹ năng thuyết trình và presentation design bằng cách phân tích và cải thiện slides trong các scenarios thực tế',
+    description:
+      'Phát triển kỹ năng thuyết trình và presentation design bằng cách phân tích và cải thiện slides trong các scenarios thực tế',
     category: 'simulation',
     difficulty: 'Trung bình',
     estimatedTime: '25-35 phút',
@@ -3030,7 +3115,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'digital-citizenship-ethics-simulator',
     title: 'Digital Citizenship Ethics Simulator',
-    description: 'Mô phỏng các tình huống thực tế về đạo đức số và AI ethics. Đưa ra quyết định trong môi trường mạng xã hội và AI.',
+    description:
+      'Mô phỏng các tình huống thực tế về đạo đức số và AI ethics. Đưa ra quyết định trong môi trường mạng xã hội và AI.',
     category: 'simulation',
     difficulty: 'Trung bình',
     estimatedTime: '25-35 phút',
@@ -3059,7 +3145,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'privacy-protection-challenge',
     title: 'Privacy Protection Challenge',
-    description: 'Thử thách bảo vệ quyền riêng tư và dữ liệu cá nhân trong thế giới số. Học cách sử dụng các công cụ bảo mật.',
+    description:
+      'Thử thách bảo vệ quyền riêng tư và dữ liệu cá nhân trong thế giới số. Học cách sử dụng các công cụ bảo mật.',
     category: 'puzzle',
     difficulty: 'Cơ bản',
     estimatedTime: '20-30 phút',
@@ -3083,7 +3170,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'future-scenario-builder-3d',
     title: 'Future Scenario Builder 3D',
-    description: 'Xây dựng và khám phá các kịch bản tương lai trong môi trường 3D tương tác với trend analysis và impact modeling.',
+    description:
+      'Xây dựng và khám phá các kịch bản tương lai trong môi trường 3D tương tác với trend analysis và impact modeling.',
     category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '40-50 phút',
@@ -3112,7 +3200,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'trend-analysis-detective',
     title: 'Trend Analysis Detective',
-    description: 'Trở thành thám tử xu hướng! Phân tích data patterns, identify emerging trends, và predict future developments.',
+    description:
+      'Trở thành thám tử xu hướng! Phân tích data patterns, identify emerging trends, và predict future developments.',
     category: 'puzzle',
     difficulty: 'Trung bình',
     estimatedTime: '30-40 phút',
@@ -3136,7 +3225,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'ux-design-studio-3d',
     title: 'UX Design Studio 3D',
-    description: 'Thiết kế user experiences trong studio 3D với prototyping tools, user testing scenarios, và design thinking workshops.',
+    description:
+      'Thiết kế user experiences trong studio 3D với prototyping tools, user testing scenarios, và design thinking workshops.',
     category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '45-55 phút',
@@ -3165,7 +3255,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'interface-design-challenge',
     title: 'Interface Design Challenge',
-    description: 'Thử thách thiết kế giao diện! Tạo ra UI designs cho các devices khác nhau với accessibility và usability principles.',
+    description:
+      'Thử thách thiết kế giao diện! Tạo ra UI designs cho các devices khác nhau với accessibility và usability principles.',
     category: 'puzzle',
     difficulty: 'Trung bình',
     estimatedTime: '35-45 phút',
@@ -3189,7 +3280,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'energy-optimization-simulator',
     title: 'Energy Optimization Simulator',
-    description: 'Mô phỏng và tối ưu hóa năng lượng cá nhân. Quản lý circadian rhythms, nutrition, exercise và cognitive performance.',
+    description:
+      'Mô phỏng và tối ưu hóa năng lượng cá nhân. Quản lý circadian rhythms, nutrition, exercise và cognitive performance.',
     category: 'simulation',
     difficulty: 'Trung bình',
     estimatedTime: '30-40 phút',
@@ -3218,7 +3310,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'stress-resilience-training',
     title: 'Stress Resilience Training Game',
-    description: 'Training game để xây dựng khả năng chống chịu stress. Học cách manage pressure và maintain performance under stress.',
+    description:
+      'Training game để xây dựng khả năng chống chịu stress. Học cách manage pressure và maintain performance under stress.',
     category: 'simulation',
     difficulty: 'Trung bình',
     estimatedTime: '25-35 phút',
@@ -3242,11 +3335,18 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'cultural-intelligence-navigator-3d',
     title: 'Cultural Intelligence Navigator 3D',
-    description: 'Navigate complex cross-cultural scenarios trong thế giới 3D với cultural awareness challenges và communication simulations.',
+    description:
+      'Navigate complex cross-cultural scenarios trong thế giới 3D với cultural awareness challenges và communication simulations.',
     category: '3D',
     difficulty: 'Trung bình',
     estimatedTime: '40-50 phút',
-    skills: ['Cultural Intelligence', 'Cross-Cultural Communication', 'Global Awareness', 'Empathy', 'Cultural Adaptation'],
+    skills: [
+      'Cultural Intelligence',
+      'Cross-Cultural Communication',
+      'Global Awareness',
+      'Empathy',
+      'Cultural Adaptation',
+    ],
     moduleType: 'cross-cultural-intelligence',
     isInternal: true,
     points: 170,
@@ -3271,11 +3371,18 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'international-networking-challenge',
     title: 'International Networking Challenge',
-    description: 'Master the art of international networking! Build professional relationships across cultures và navigate global business etiquette.',
+    description:
+      'Master the art of international networking! Build professional relationships across cultures và navigate global business etiquette.',
     category: 'simulation',
     difficulty: 'Trung bình',
     estimatedTime: '35-45 phút',
-    skills: ['International Networking', 'Business Etiquette', 'Relationship Building', 'Professional Communication', 'Cultural Adaptation'],
+    skills: [
+      'International Networking',
+      'Business Etiquette',
+      'Relationship Building',
+      'Professional Communication',
+      'Cultural Adaptation',
+    ],
     moduleType: 'cross-cultural-intelligence',
     isInternal: true,
     points: 160,
@@ -3295,11 +3402,18 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'future-skills-integration-challenge',
     title: 'Future Skills Integration Challenge',
-    description: 'Thử thách tích hợp tất cả future skills! Combine AI ethics, UX design, cultural intelligence và energy management trong complex scenarios.',
+    description:
+      'Thử thách tích hợp tất cả future skills! Combine AI ethics, UX design, cultural intelligence và energy management trong complex scenarios.',
     category: 'strategy',
     difficulty: 'Nâng cao',
     estimatedTime: '50-60 phút',
-    skills: ['Systems Thinking', 'Skill Integration', 'Complex Problem Solving', 'Future Planning', 'Holistic Thinking'],
+    skills: [
+      'Systems Thinking',
+      'Skill Integration',
+      'Complex Problem Solving',
+      'Future Planning',
+      'Holistic Thinking',
+    ],
     moduleType: 'multi-module',
     isInternal: true,
     points: 200,
@@ -3339,11 +3453,18 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'social-media-campaign-builder',
     title: 'Social Media Campaign Builder',
-    description: 'Xây dựng chiến dịch marketing hoàn chỉnh trên các platform social media với budget optimization và audience targeting.',
+    description:
+      'Xây dựng chiến dịch marketing hoàn chỉnh trên các platform social media với budget optimization và audience targeting.',
     category: 'simulation',
     difficulty: 'Trung bình',
     estimatedTime: '35-45 phút',
-    skills: ['Digital Marketing', 'Social Media Marketing', 'Campaign Management', 'Budget Optimization', 'Audience Targeting'],
+    skills: [
+      'Digital Marketing',
+      'Social Media Marketing',
+      'Campaign Management',
+      'Budget Optimization',
+      'Audience Targeting',
+    ],
     moduleType: 'digital-marketing',
     isInternal: true,
     points: 170,
@@ -3368,7 +3489,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'seo-optimization-challenge',
     title: 'SEO Optimization Challenge',
-    description: 'Tối ưu hóa website cho search engines với keyword research, on-page SEO, và link building strategies.',
+    description:
+      'Tối ưu hóa website cho search engines với keyword research, on-page SEO, và link building strategies.',
     category: 'puzzle',
     difficulty: 'Trung bình',
     estimatedTime: '40-50 phút',
@@ -3415,7 +3537,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'crypto-defi-adventure',
     title: 'Crypto & DeFi Adventure',
-    description: 'Khám phá thế giới cryptocurrency và DeFi với trading simulations, yield farming, và blockchain technology.',
+    description:
+      'Khám phá thế giới cryptocurrency và DeFi với trading simulations, yield farming, và blockchain technology.',
     category: 'simulation',
     difficulty: 'Nâng cao',
     estimatedTime: '50-60 phút',
@@ -3459,7 +3582,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     ],
   },
 
-  // Game Development Games  
+  // Game Development Games
   {
     id: 'game-design-studio-3d',
     title: 'Game Design Studio 3D',
@@ -3487,7 +3610,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'ai-art-creation-lab',
     title: 'AI Art Creation Lab',
-    description: 'Tạo artwork với AI tools như Midjourney, DALL-E, và Stable Diffusion với advanced prompt engineering.',
+    description:
+      'Tạo artwork với AI tools như Midjourney, DALL-E, và Stable Diffusion với advanced prompt engineering.',
     category: 'simulation',
     difficulty: 'Trung bình',
     estimatedTime: '40-50 phút',
@@ -3515,7 +3639,13 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     category: 'simulation',
     difficulty: 'Nâng cao',
     estimatedTime: '50-60 phút',
-    skills: ['Ethical Hacking', 'Penetration Testing', 'Security Assessment', 'Vulnerability Analysis', 'Cybersecurity'],
+    skills: [
+      'Ethical Hacking',
+      'Penetration Testing',
+      'Security Assessment',
+      'Vulnerability Analysis',
+      'Cybersecurity',
+    ],
     moduleType: 'cybersecurity',
     isInternal: true,
     points: 200,
@@ -3583,7 +3713,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'iot-smart-city-builder-3d',
     title: 'IoT Smart City Builder 3D',
-    description: 'Xây dựng smart city với Arduino IoT devices, sensor networks, và automation systems trong môi trường 3D.',
+    description:
+      'Xây dựng smart city với Arduino IoT devices, sensor networks, và automation systems trong môi trường 3D.',
     category: '3D',
     difficulty: 'Nâng cao',
     estimatedTime: '60-70 phút',
@@ -3613,7 +3744,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'ai-python-coding-assistant',
     title: 'AI Python Coding Assistant',
-    description: 'Code với AI assistance! Build machine learning models và AI applications với Python và modern AI libraries.',
+    description:
+      'Code với AI assistance! Build machine learning models và AI applications với Python và modern AI libraries.',
     category: 'coding',
     difficulty: 'Nâng cao',
     estimatedTime: '50-60 phút',
@@ -3637,7 +3769,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   {
     id: 'autonomous-robot-mission-3d',
     title: 'Autonomous Robot Mission 3D',
-    description: 'Program và control autonomous robots trong 3D missions với path planning, obstacle avoidance, và AI decision making.',
+    description:
+      'Program và control autonomous robots trong 3D missions với path planning, obstacle avoidance, và AI decision making.',
     category: '3D',
     difficulty: 'Nâng cao',
     estimatedTime: '55-65 phút',

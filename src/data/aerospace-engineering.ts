@@ -16,7 +16,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Comprehensive aircraft design principles, aerodynamic theory, và flight mechanics. Focus trên Vietnamese aviation industry development và opportunities với Vietnam Airlines, Vietjet, và emerging aerospace sector.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=AkC5xAy3WAY',
+videoUrl: 'https://www.youtube.com/watch?v=edLnZgF9mUg',
     imageUrl: 'https://i.ytimg.com/vi/AkC5xAy3WAY/hqdefault.jpg',
     objectives: [
       'Master fundamental aerodynamic principles và airflow analysis',
@@ -168,7 +168,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Advanced satellite systems design, orbital mechanics, và space communication technology. Explore Vietnamese space program development và satellite applications cho telecommunications và Earth observation.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=_VJZQMGEG1k',
+videoUrl: 'https://www.youtube.com/watch?v=a-1lZvvTNOs',
     imageUrl: 'https://i.ytimg.com/vi/_VJZQMGEG1k/hqdefault.jpg',
     objectives: [
       'Master satellite orbital mechanics và space mission design principles',
@@ -307,7 +307,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Comprehensive space mission design, systems engineering approach, và project management cho space programs. Focus trên Vietnamese space industry development và international collaboration opportunities.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=jxT7_NPFjkA',
+videoUrl: 'https://www.youtube.com/watch?v=a-1lZvvTNOs',
     imageUrl: 'https://i.ytimg.com/vi/jxT7_NPFjkA/hqdefault.jpg',
     objectives: [
       'Master space mission design methodology và systems engineering principles',
@@ -452,7 +452,7 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       'Advanced avionics systems design, flight control algorithms, và navigation technology. Cover modern aircraft systems integration, autonomous flight capabilities, và Vietnamese aviation technology development.',
     duration: '165 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=d5sXmNplQHw',
+videoUrl: 'https://www.youtube.com/watch?v=95uylXeWgng',
     imageUrl: 'https://i.ytimg.com/vi/d5sXmNplQHw/hqdefault.jpg',
     objectives: [
       'Master avionics systems architecture và integration principles',

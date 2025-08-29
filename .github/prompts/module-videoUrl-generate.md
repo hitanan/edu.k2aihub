@@ -2,7 +2,7 @@
 mode: agent
 ---
 
-Mục tiêu: Cho mỗi bài học trong mỗi module đầu vào, cầu hãy tìm và đề xuất một YouTube video phù hợp với nội dung bài học.
+Mục tiêu: Cho mỗi bài học trong mỗi module đầu vào, cầu hãy tìm và đề xuất một YouTube video phù hợp với nội dung bài học (không quan tâm videoUrl cũ).
 
 Yêu cầu thực thi:
 
@@ -57,8 +57,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     "filePath": "src/data/renewable-energy.ts",
     "lessonId": "wind-power-technology",
     "lessonTitle": "Wind Power Systems & Turbine Technology",
-    "currentVideoUrl": "undefined" | "https://www.youtube.com/watch?v=vd2dtkMINIw",
-    "newVideoUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
+    "videoUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
     "status": "updated" | "no_match" | "fallback",
     "searchQuery": "Wind Power Systems vietnamese english turbine technology tutorial",
     "duration": 120,
@@ -105,8 +104,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     "filePath": "src/data/renewable-energy.ts",
     "lessonId": "solar-energy-fundamentals",
     "lessonTitle": "Solar Energy Systems & Photovoltaic Technology",
-    "currentVideoUrl": "https://www.youtube.com/watch?v=xy9nj94xvKA",
-    "newVideoUrl": null,
+    "videoUrl": "https://www.youtube.com/watch?v=xy9nj94xvKA",
     "status": "skipped",
     "reason": "lesson already has valid video URL"
   },
@@ -114,8 +112,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     "filePath": "src/data/renewable-energy.ts",
     "lessonId": "wind-power-technology",
     "lessonTitle": "Wind Power Systems & Turbine Technology",
-    "currentVideoUrl": "undefined",
-    "newVideoUrl": "https://www.youtube.com/watch?v=qJom3l7vJWI",
+    "videoUrl": "https://www.youtube.com/watch?v=qJom3l7vJWI",
     "status": "updated",
     "duration": 240,
     "videoDetails": {
@@ -128,8 +125,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     "filePath": "src/data/renewable-energy.ts",
     "lessonId": "energy-storage-systems",
     "lessonTitle": "Energy Storage & Smart Grid Integration",
-    "currentVideoUrl": "https://www.youtube.com/watch?v=vd2dtkMINIw",
-    "newVideoUrl": "https://www.youtube.com/watch?v=5uz6xOFWi4A",
+    "videoUrl": "https://www.youtube.com/watch?v=5uz6xOFWi4A",
     "status": "updated",
     "duration": 180,
     "videoDetails": {

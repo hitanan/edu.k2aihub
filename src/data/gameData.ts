@@ -3827,5 +3827,2305 @@ export const vietnameseHeritageGame = {
   } as VietnameseHeritageGameData,
 };
 
+// Phase 2 Games - Supply Chain Logistics
+export interface SupplyChainLogisticsGameData {
+  id: string;
+  title: string;
+  titleVietnamese: string;
+  description: string;
+  category: 'supply-chain' | 'logistics' | 'operations';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  objectives: string[];
+  scenarios: Array<{
+    id: string;
+    name: string;
+    description: string;
+    setting: string;
+    vietnameseContext: string;
+    challenges: Array<{
+      id: string;
+      title: string;
+      type: 'optimization' | 'routing' | 'inventory' | 'forecasting' | 'risk-management';
+      difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+      parameters: {
+        locations: Array<{ name: string; coordinates: [number, number]; capacity: number; cost: number }>;
+        products: Array<{ id: string; name: string; demand: number; weight: number; value: number }>;
+        constraints: Array<{ type: string; description: string; limit: number }>;
+        timeFrame: string;
+      };
+      objectives: {
+        primary: string;
+        secondary: string[];
+        metrics: Array<{ name: string; target: number; weight: number }>;
+      };
+      validationRules: Array<{
+        rule: string;
+        importance: 'critical' | 'important' | 'optional';
+        penalty: number;
+      }>;
+      hints: string[];
+      points: number;
+      vietnameseApplications: string[];
+    }>;
+  }>;
+  technologies: Array<{
+    name: string;
+    description: string;
+    applications: string[];
+    advantages: string[];
+    challenges: string[];
+    vietnameseImplementation: string;
+  }>;
+  kpis: Array<{
+    name: string;
+    formula: string;
+    description: string;
+    benchmark: string;
+    vietnameseExample: string;
+  }>;
+}
+
+// Phase 2 Game Data Definitions (continued from above interfaces)
+
+const supplyChainLogisticsGameData: SupplyChainLogisticsGameData = {
+  id: 'supply-chain-logistics-simulator',
+  title: 'Supply Chain & Logistics Simulator',
+  titleVietnamese: 'Mô phỏng Chuỗi cung ứng & Logistics',
+  description: 'Quản lý và tối ưu hóa chuỗi cung ứng từ sản xuất đến người tiêu dùng với công nghệ hiện đại',
+  category: 'supply-chain',
+  difficulty: 'Nâng cao',
+  estimatedTime: '45-60 phút',
+  objectives: [
+    'Thiết kế và tối ưu hóa mạng lưới chuỗi cung ứng',
+    'Quản lý kho bãi và dự báo nhu cầu',
+    'Tối ưu hóa tuyến đường vận chuyển và chi phí logistics',
+    'Áp dụng công nghệ IoT và AI trong supply chain',
+    'Quản lý rủi ro và tính bền vững trong chuỗi cung ứng',
+  ],
+  scenarios: [
+    {
+      id: 'vietnam-export-scenario',
+      name: 'Xuất khẩu Nông sản Việt Nam',
+      description: 'Quản lý chuỗi cung ứng xuất khẩu cà phê từ Tây Nguyên đến thị trường quốc tế',
+      setting: 'Chuỗi cung ứng nông sản xuất khẩu',
+      vietnameseContext: 'Xuất khẩu cà phê Robusta từ Đắk Lắk qua cảng Sài Gòn đến EU và Mỹ',
+      challenges: [
+        {
+          id: 'coffee-export-optimization',
+          title: 'Tối ưu hóa xuất khẩu cà phê',
+          type: 'optimization',
+          difficulty: 'Nâng cao',
+          parameters: {
+            locations: [
+              { name: 'Trang trại Buôn Ma Thuột', coordinates: [108.0375, 12.6667], capacity: 10000, cost: 50000 },
+              { name: 'Nhà máy chế biến Đắk Lắk', coordinates: [108.1167, 12.7167], capacity: 5000, cost: 80000 },
+              { name: 'Kho trung chuyển TP.HCM', coordinates: [106.6297, 10.8231], capacity: 15000, cost: 120000 },
+              { name: 'Cảng Sài Gòn', coordinates: [106.7047, 10.7564], capacity: 20000, cost: 200000 },
+              { name: 'Cảng Hamburg (EU)', coordinates: [9.9937, 53.5511], capacity: 50000, cost: 500000 },
+              { name: 'Cảng Los Angeles (US)', coordinates: [-118.2437, 34.0522], capacity: 40000, cost: 600000 },
+            ],
+            products: [
+              { id: 'robusta-green', name: 'Cà phê Robusta xanh', demand: 8000, weight: 60, value: 35000 },
+              { id: 'robusta-roasted', name: 'Cà phê Robusta rang', demand: 2000, weight: 50, value: 85000 },
+              { id: 'arabica-premium', name: 'Cà phê Arabica cao cấp', demand: 1000, weight: 60, value: 120000 },
+            ],
+            constraints: [
+              { type: 'capacity', description: 'Công suất kho bãi tối đa', limit: 50000 },
+              { type: 'time', description: 'Thời gian giao hàng', limit: 30 },
+              { type: 'quality', description: 'Duy trì chất lượng sản phẩm', limit: 95 },
+              { type: 'cost', description: 'Ngân sách tối đa', limit: 2000000 },
+            ],
+            timeFrame: '3 tháng (Q1 2025)',
+          },
+          objectives: {
+            primary: 'Tối đa hóa lợi nhuận xuất khẩu',
+            secondary: [
+              'Giảm thiểu thời gian vận chuyển',
+              'Duy trì chất lượng sản phẩm',
+              'Tối ưu hóa chi phí logistics',
+              'Đảm bảo giao hàng đúng hẹn',
+            ],
+            metrics: [
+              { name: 'Profit Margin', target: 25, weight: 0.4 },
+              { name: 'On-time Delivery', target: 98, weight: 0.2 },
+              { name: 'Cost Efficiency', target: 85, weight: 0.2 },
+              { name: 'Quality Score', target: 95, weight: 0.2 },
+            ],
+          },
+          validationRules: [
+            { rule: 'Không vượt quá công suất kho', importance: 'critical', penalty: 50 },
+            { rule: 'Thời gian vận chuyển trong giới hạn', importance: 'critical', penalty: 30 },
+            { rule: 'Chất lượng sản phẩm đạt yêu cầu', importance: 'critical', penalty: 40 },
+            { rule: 'Tuân thủ quy định xuất khẩu', importance: 'important', penalty: 20 },
+          ],
+          hints: [
+            'Sử dụng container reefer để duy trì chất lượng cà phê',
+            'Kết hợp vận chuyển đường bộ và đường biển',
+            'Áp dụng IoT sensors để monitoring điều kiện vận chuyển',
+            'Đàm phán hợp đồng dài hạn để giảm chi phí',
+          ],
+          points: 400,
+          vietnameseApplications: [
+            'Vinacafe Biên Hòa - chuỗi cung ứng cà phê toàn cầu',
+            'Trung Nguyên Legend - xuất khẩu cà phê đặc biệt',
+            'Hapro Group - logistics nông sản xuất khẩu',
+            'Intimex Group - thương mại cà phê quốc tế',
+          ],
+        },
+        {
+          id: 'seasonal-demand-forecasting',
+          title: 'Dự báo nhu cầu theo mùa',
+          type: 'forecasting',
+          difficulty: 'Trung bình',
+          parameters: {
+            locations: [
+              { name: 'Miền Bắc (Hà Nội)', coordinates: [105.8542, 21.0285], capacity: 5000, cost: 100000 },
+              { name: 'Miền Trung (Đà Nẵng)', coordinates: [108.2208, 16.0471], capacity: 3000, cost: 80000 },
+              { name: 'Miền Nam (TP.HCM)', coordinates: [106.6297, 10.8231], capacity: 8000, cost: 120000 },
+            ],
+            products: [
+              { id: 'tet-coffee-gift', name: 'Set quà cà phê Tết', demand: 15000, weight: 2, value: 350000 },
+              { id: 'summer-ice-coffee', name: 'Cà phê đá mix', demand: 25000, weight: 1, value: 45000 },
+              { id: 'office-instant', name: 'Cà phê hòa tan văn phòng', demand: 40000, weight: 0.5, value: 25000 },
+            ],
+            constraints: [
+              { type: 'seasonality', description: 'Biến động theo mùa', limit: 200 },
+              { type: 'storage', description: 'Thời gian bảo quản', limit: 180 },
+              { type: 'temperature', description: 'Kiểm soát nhiệt độ', limit: 25 },
+            ],
+            timeFrame: '12 tháng (2025)',
+          },
+          objectives: {
+            primary: 'Tối ưu hóa inventory theo mùa',
+            secondary: [
+              'Giảm thiểu waste và expired products',
+              'Đáp ứng nhu cầu peak season',
+              'Cân bằng chi phí lưu kho',
+            ],
+            metrics: [
+              { name: 'Forecast Accuracy', target: 90, weight: 0.35 },
+              { name: 'Inventory Turnover', target: 8, weight: 0.25 },
+              { name: 'Service Level', target: 95, weight: 0.25 },
+              { name: 'Waste Reduction', target: 5, weight: 0.15 },
+            ],
+          },
+          validationRules: [
+            { rule: 'Accuracy dự báo >85%', importance: 'critical', penalty: 40 },
+            { rule: 'Stock-out <3%', importance: 'important', penalty: 25 },
+            { rule: 'Expired products <2%', importance: 'important', penalty: 20 },
+          ],
+          hints: [
+            'Phân tích data lịch sử 3-5 năm',
+            'Xem xét các yếu tố văn hóa (Tết, lễ hội)',
+            'Sử dụng machine learning cho pattern recognition',
+            'Kết hợp weather data và social trends',
+          ],
+          points: 300,
+          vietnameseApplications: [
+            'Highlands Coffee - dự báo nhu cầu seasonal drinks',
+            'Phúc Long Coffee & Tea - planning cho gift sets Tết',
+            'The Coffee House - inventory management chuỗi cửa hàng',
+            'Vinamilk - dự báo sản phẩm cà phê sữa',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'e-commerce-fulfillment',
+      name: 'E-commerce Fulfillment Center',
+      description: 'Vận hành trung tâm logistics cho sàn thương mại điện tử',
+      setting: 'Kho fulfillment tự động hóa',
+      vietnameseContext: 'Shopee/Tiki fulfillment center phục vụ miền Nam',
+      challenges: [
+        {
+          id: 'peak-season-management',
+          title: 'Quản lý mùa cao điểm (11.11, 12.12)',
+          type: 'optimization',
+          difficulty: 'Nâng cao',
+          parameters: {
+            locations: [
+              { name: 'FC Bình Dương', coordinates: [106.7580, 11.1004], capacity: 100000, cost: 500000 },
+              { name: 'FC Long An', coordinates: [106.2431, 10.6956], capacity: 80000, cost: 400000 },
+              { name: 'FC Đồng Nai', coordinates: [107.1676, 10.9045], capacity: 60000, cost: 350000 },
+            ],
+            products: [
+              { id: 'fashion-items', name: 'Thời trang', demand: 50000, weight: 0.5, value: 200000 },
+              { id: 'electronics', name: 'Điện tử', demand: 25000, weight: 2, value: 2000000 },
+              { id: 'home-garden', name: 'Nhà cửa & Đời sống', demand: 30000, weight: 3, value: 500000 },
+              { id: 'beauty-health', name: 'Sắc đẹp & Sức khỏe', demand: 40000, weight: 0.3, value: 150000 },
+            ],
+            constraints: [
+              { type: 'processing_time', description: 'Thời gian xử lý đơn hàng', limit: 24 },
+              { type: 'accuracy', description: 'Độ chính xác picking', limit: 99.5 },
+              { type: 'capacity_utilization', description: 'Sử dụng công suất', limit: 95 },
+            ],
+            timeFrame: '30 ngày peak season',
+          },
+          objectives: {
+            primary: 'Xử lý tối đa đơn hàng với chất lượng cao',
+            secondary: [
+              'Giảm thiểu thời gian xử lý',
+              'Tối ưu hóa công suất kho',
+              'Đảm bảo accuracy picking',
+              'Quản lý workforce hiệu quả',
+            ],
+            metrics: [
+              { name: 'Order Processing Rate', target: 50000, weight: 0.3 },
+              { name: 'Accuracy Rate', target: 99.5, weight: 0.25 },
+              { name: 'Throughput Efficiency', target: 90, weight: 0.25 },
+              { name: 'Cost per Order', target: 15000, weight: 0.2 },
+            ],
+          },
+          validationRules: [
+            { rule: 'Accuracy rate ≥99%', importance: 'critical', penalty: 60 },
+            { rule: 'Processing time ≤24h', importance: 'critical', penalty: 50 },
+            { rule: 'Capacity không vượt quá 95%', importance: 'important', penalty: 30 },
+          ],
+          hints: [
+            'Triển khai automation và robotics',
+            'Sử dụng AI để tối ưu slotting',
+            'Cross-docking cho fast-moving items',
+            'Flex workforce với part-time workers',
+          ],
+          points: 450,
+          vietnameseApplications: [
+            'Shopee FC - fulfillment automation',
+            'Tiki FC - same-day delivery operations',
+            'Lazada FC - cross-border logistics',
+            'Sendo FC - regional distribution',
+          ],
+        },
+      ],
+    },
+  ],
+  technologies: [
+    {
+      name: 'IoT Sensors & Tracking',
+      description: 'Cảm biến IoT và tracking real-time trong supply chain',
+      applications: [
+        'Temperature monitoring cho cold chain',
+        'GPS tracking cho vehicles',
+        'RFID/NFC cho inventory management',
+        'Condition monitoring cho equipment',
+      ],
+      advantages: [
+        'Real-time visibility',
+        'Proactive maintenance',
+        'Quality assurance',
+        'Theft prevention',
+      ],
+      challenges: [
+        'High initial investment',
+        'Data security concerns',
+        'Integration complexity',
+        'Battery life management',
+      ],
+      vietnameseImplementation: 'VinMart, Co.opMart áp dụng IoT tracking cho fresh products',
+    },
+    {
+      name: 'AI/ML for Demand Forecasting',
+      description: 'Machine Learning cho dự báo nhu cầu và optimization',
+      applications: [
+        'Demand planning và forecasting',
+        'Route optimization',
+        'Inventory optimization',
+        'Price optimization',
+      ],
+      advantages: [
+        'Higher forecast accuracy',
+        'Automated decision making',
+        'Pattern recognition',
+        'Continuous improvement',
+      ],
+      challenges: [
+        'Data quality requirements',
+        'Model training complexity',
+        'Interpretability issues',
+        'Change management',
+      ],
+      vietnameseImplementation: 'Tiki sử dụng ML để dự báo nhu cầu và tối ưu inventory',
+    },
+    {
+      name: 'Blockchain for Traceability',
+      description: 'Công nghệ Blockchain cho traceability và transparency',
+      applications: [
+        'Product authentication',
+        'Supply chain traceability',
+        'Smart contracts',
+        'Quality certification',
+      ],
+      advantages: [
+        'Immutable records',
+        'End-to-end traceability',
+        'Fraud prevention',
+        'Trust building',
+      ],
+      challenges: [
+        'Scalability limitations',
+        'Energy consumption',
+        'Technical complexity',
+        'Industry adoption',
+      ],
+      vietnameseImplementation: 'VinEco sử dụng blockchain để trace nông sản organic',
+    },
+  ],
+  kpis: [
+    {
+      name: 'Perfect Order Rate',
+      formula: '(Orders delivered complete, on-time, damage-free) / Total Orders × 100%',
+      description: 'Tỷ lệ đơn hàng hoàn hảo (đúng hàng, đúng hẹn, không hỏng)',
+      benchmark: '95-98% cho e-commerce, 90-95% cho B2B',
+      vietnameseExample: 'Shopee target 96% perfect order rate cho standard delivery',
+    },
+    {
+      name: 'Inventory Turnover',
+      formula: 'Cost of Goods Sold / Average Inventory Value',
+      description: 'Số lần quay vòng hàng tồn kho trong năm',
+      benchmark: '6-12 lần/năm tùy theo industry',
+      vietnameseExample: 'Điện máy Xanh đạt 8-10 lần/năm cho electronics',
+    },
+    {
+      name: 'Order Fulfillment Cycle Time',
+      formula: 'Total time from order receipt to delivery completion',
+      description: 'Thời gian hoàn thành đơn hàng từ nhận order đến giao xong',
+      benchmark: '24-48h cho e-commerce, 3-7 ngày cho B2B',
+      vietnameseExample: 'Tiki Now đạt <2h, Tiki standard 24-48h tại TP.HCM',
+    },
+    {
+      name: 'Transportation Cost as % of Sales',
+      formula: 'Total Transportation Costs / Total Sales Revenue × 100%',
+      description: 'Chi phí vận chuyển so với doanh thu',
+      benchmark: '3-8% tùy theo industry và geography',
+      vietnameseExample: 'Vinamilk duy trì 4-5% transportation cost ratio',
+    },
+  ],
+};
+
+// Phase 2 Games - Energy Management
+export interface EnergyManagementGameData {
+  id: string;
+  title: string;
+  titleVietnamese: string;
+  description: string;
+  category: 'energy-optimization' | 'renewable-energy' | 'smart-grid';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  objectives: string[];
+  scenarios: Array<{
+    id: string;
+    name: string;
+    description: string;
+    setting: string;
+    vietnameseContext: string;
+    energySources: Array<{
+      type: 'solar' | 'wind' | 'hydro' | 'coal' | 'gas' | 'nuclear';
+      capacity: number;
+      cost: number;
+      efficiency: number;
+      emissions: number;
+      availability: string;
+    }>;
+    challenges: Array<{
+      id: string;
+      title: string;
+      type: 'optimization' | 'planning' | 'emergency-response' | 'cost-reduction';
+      difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+      parameters: {
+        demand: Array<{ hour: number; load: number }>;
+        constraints: Array<{ type: string; limit: number; description: string }>;
+        budget: number;
+        timeline: string;
+        environmental: { co2_limit: number; renewable_target: number };
+      };
+      objectives: {
+        primary: string;
+        secondary: string[];
+        metrics: Array<{ name: string; target: number; unit: string }>;
+      };
+      points: number;
+      vietnameseApplications: string[];
+    }>;
+  }>;
+  technologies: Array<{
+    name: string;
+    description: string;
+    vietnameseImplementation: string;
+    benefits: string[];
+    challenges: string[];
+  }>;
+}
+
+const energyManagementGameData: EnergyManagementGameData = {
+  id: 'energy-management-simulator',
+  title: 'Energy Management & Smart Grid Simulator',
+  titleVietnamese: 'Mô phỏng Quản lý Năng lượng & Lưới điện Thông minh',
+  description: 'Tối ưu hóa hệ thống năng lượng, quản lý lưới điện và phát triển năng lượng tái tạo',
+  category: 'energy-optimization',
+  difficulty: 'Nâng cao',
+  estimatedTime: '40-50 phút',
+  objectives: [
+    'Thiết kế và vận hành hệ thống năng lượng hiệu quả',
+    'Tối ưu hóa mix năng lượng với renewable sources',
+    'Quản lý smart grid và demand response',
+    'Giảm thiểu chi phí và tác động môi trường',
+    'Đảm bảo độ tin cậy và an ninh năng lượng',
+  ],
+  scenarios: [
+    {
+      id: 'vietnam-national-grid',
+      name: 'Lưới điện Quốc gia Việt Nam 2030',
+      description: 'Quản lý và tối ưu hóa lưới điện quốc gia với mục tiêu carbon neutral',
+      setting: 'Hệ thống điện quốc gia quy mô lớn',
+      vietnameseContext: 'EVN - Electricity Vietnam với renewable target 20% năm 2030',
+      energySources: [
+        { type: 'coal', capacity: 25000, cost: 1200, efficiency: 38, emissions: 820, availability: '90%' },
+        { type: 'gas', capacity: 15000, cost: 1800, efficiency: 55, emissions: 490, availability: '85%' },
+        { type: 'hydro', capacity: 18000, cost: 800, efficiency: 90, emissions: 24, availability: '70%' },
+        { type: 'solar', capacity: 8000, cost: 1000, efficiency: 22, emissions: 41, availability: '25%' },
+        { type: 'wind', capacity: 6000, cost: 1200, efficiency: 35, emissions: 11, availability: '30%' },
+        { type: 'nuclear', capacity: 3000, cost: 5000, efficiency: 33, emissions: 12, availability: '92%' },
+      ],
+      challenges: [
+        {
+          id: 'renewable-transition-2030',
+          title: 'Chuyển đổi Năng lượng Tái tạo 2030',
+          type: 'planning',
+          difficulty: 'Nâng cao',
+          parameters: {
+            demand: [
+              { hour: 0, load: 25000 }, { hour: 6, load: 32000 }, { hour: 12, load: 45000 },
+              { hour: 18, load: 52000 }, { hour: 21, load: 48000 }, { hour: 23, load: 35000 },
+            ],
+            constraints: [
+              { type: 'renewable_minimum', limit: 20, description: 'Tối thiểu 20% năng lượng tái tạo' },
+              { type: 'grid_stability', limit: 95, description: 'Độ tin cậy lưới điện ≥95%' },
+              { type: 'peak_reserve', limit: 15, description: 'Dự phòng 15% cho peak demand' },
+            ],
+            budget: 50000000000, // 50 tỷ USD
+            timeline: '2025-2030',
+            environmental: { co2_limit: 150000000, renewable_target: 20 }, // 150M tấn CO2
+          },
+          objectives: {
+            primary: 'Đạt mục tiêu renewable 20% với chi phí tối ưu',
+            secondary: [
+              'Đảm bảo an ninh năng lượng',
+              'Giảm phát thải CO2',
+              'Tối ưu hóa chi phí vận hành',
+              'Phát triển công nghệ mới',
+            ],
+            metrics: [
+              { name: 'Renewable Share', target: 20, unit: '%' },
+              { name: 'Grid Reliability', target: 95, unit: '%' },
+              { name: 'CO2 Reduction', target: 25, unit: '%' },
+              { name: 'Cost Efficiency', target: 90, unit: '%' },
+            ],
+          },
+          points: 500,
+          vietnameseApplications: [
+            'EVN - National Power Development Plan VIII',
+            'PVN - Renewable energy expansion strategy',
+            'GENCO1,2,3 - Power generation portfolio optimization',
+            'Local governments - Provincial energy planning',
+          ],
+        },
+        {
+          id: 'smart-grid-hcm',
+          title: 'Smart Grid TP. Hồ Chí Minh',
+          type: 'optimization',
+          difficulty: 'Trung bình',
+          parameters: {
+            demand: [
+              { hour: 0, load: 3500 }, { hour: 6, load: 4200 }, { hour: 9, load: 5800 },
+              { hour: 12, load: 6500 }, { hour: 18, load: 7200 }, { hour: 22, load: 5000 },
+            ],
+            constraints: [
+              { type: 'transmission_limit', limit: 8000, description: 'Giới hạn truyền tải' },
+              { type: 'voltage_stability', limit: 220, description: 'Ổn định điện áp' },
+              { type: 'frequency_control', limit: 50, description: 'Kiểm soát tần số 50Hz' },
+            ],
+            budget: 2000000000, // 2 tỷ USD
+            timeline: '2025-2027',
+            environmental: { co2_limit: 8000000, renewable_target: 15 },
+          },
+          objectives: {
+            primary: 'Xây dựng smart grid cho TP.HCM',
+            secondary: [
+              'Tích hợp distributed energy resources',
+              'Demand response management',
+              'Grid modernization',
+              'Energy storage integration',
+            ],
+            metrics: [
+              { name: 'Smart Meter Coverage', target: 85, unit: '%' },
+              { name: 'Outage Reduction', target: 40, unit: '%' },
+              { name: 'Energy Efficiency', target: 12, unit: '%' },
+              { name: 'Customer Satisfaction', target: 90, unit: '%' },
+            ],
+          },
+          points: 350,
+          vietnameseApplications: [
+            'EVN HCMC - Smart grid pilot project',
+            'SCADA systems for distribution networks',
+            'AMI (Advanced Metering Infrastructure)',
+            'Distributed solar rooftop integration',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'industrial-energy-optimization',
+      name: 'Tối ưu hóa Năng lượng Công nghiệp',
+      description: 'Quản lý năng lượng cho khu công nghiệp và nhà máy lớn',
+      setting: 'Khu công nghiệp tích hợp',
+      vietnameseContext: 'VSIP, AMATA - Industrial parks energy management',
+      energySources: [
+        { type: 'solar', capacity: 20, cost: 1000, efficiency: 22, emissions: 41, availability: '25%' },
+        { type: 'gas', capacity: 50, cost: 1800, efficiency: 55, emissions: 490, availability: '95%' },
+        { type: 'coal', capacity: 100, cost: 1200, efficiency: 38, emissions: 820, availability: '90%' },
+      ],
+      challenges: [
+        {
+          id: 'manufacturing-energy-efficiency',
+          title: 'Hiệu quả Năng lượng Sản xuất',
+          type: 'cost-reduction',
+          difficulty: 'Trung bình',
+          parameters: {
+            demand: [
+              { hour: 6, load: 80 }, { hour: 8, load: 120 }, { hour: 12, load: 100 },
+              { hour: 14, load: 140 }, { hour: 18, load: 90 }, { hour: 22, load: 60 },
+            ],
+            constraints: [
+              { type: 'production_continuity', limit: 99, description: 'Không gián đoạn sản xuất' },
+              { type: 'power_quality', limit: 98, description: 'Chất lượng điện năng' },
+              { type: 'energy_cost', limit: 2500, description: 'Chi phí điện/MWh' },
+            ],
+            budget: 500000000, // 500M USD
+            timeline: '2025-2026',
+            environmental: { co2_limit: 200000, renewable_target: 25 },
+          },
+          objectives: {
+            primary: 'Giảm 30% chi phí năng lượng',
+            secondary: [
+              'Tăng hiệu suất thiết bị',
+              'Waste heat recovery',
+              'Cogeneration implementation',
+              'Energy monitoring & control',
+            ],
+            metrics: [
+              { name: 'Energy Cost Reduction', target: 30, unit: '%' },
+              { name: 'Equipment Efficiency', target: 85, unit: '%' },
+              { name: 'Waste Heat Recovery', target: 60, unit: '%' },
+              { name: 'Renewable Integration', target: 25, unit: '%' },
+            ],
+          },
+          points: 300,
+          vietnameseApplications: [
+            'Formosa Steel - Industrial energy optimization',
+            'Samsung Vietnam - Electronics manufacturing efficiency',
+            'VinGroup - Integrated energy management',
+            'Hoa Sen Group - Steel production energy saving',
+          ],
+        },
+      ],
+    },
+  ],
+  technologies: [
+    {
+      name: 'Smart Grid Technology',
+      description: 'Advanced grid infrastructure với bi-directional communication',
+      vietnameseImplementation: 'EVN triển khai AMI và SCADA systems tại các tỉnh thành chính',
+      benefits: [
+        'Real-time monitoring và control',
+        'Improved reliability và power quality',
+        'Integration of renewable sources',
+        'Demand response capabilities',
+      ],
+      challenges: [
+        'High investment costs',
+        'Cybersecurity risks',
+        'Technical complexity',
+        'Regulatory frameworks',
+      ],
+    },
+    {
+      name: 'Energy Storage Systems',
+      description: 'Battery và pumped hydro storage cho grid balancing',
+      vietnameseImplementation: 'Pumped storage tại Sơn La, Hòa Bình; Battery pilots tại rooftop solar',
+      benefits: [
+        'Grid stability và frequency regulation',
+        'Renewable energy integration',
+        'Peak shaving và load shifting',
+        'Backup power during outages',
+      ],
+      challenges: [
+        'High capital costs',
+        'Technology maturity',
+        'Environmental concerns',
+        'Market mechanisms',
+      ],
+    },
+    {
+      name: 'AI/ML for Energy Optimization',
+      description: 'Artificial Intelligence cho demand forecasting và grid optimization',
+      vietnameseImplementation: 'EVN sử dụng AI để dự báo tải và tối ưu vận hành',
+      benefits: [
+        'Accurate demand forecasting',
+        'Predictive maintenance',
+        'Optimal dispatch decisions',
+        'Anomaly detection',
+      ],
+      challenges: [
+        'Data quality và availability',
+        'Model interpretability',
+        'Integration complexity',
+        'Skills và training needs',
+      ],
+    },
+  ],
+};
+
+// Phase 2 Games - Psychology & Behavioral Science
+export interface PsychologyBehavioralGameData {
+  id: string;
+  title: string;
+  titleVietnamese: string;
+  description: string;
+  category: 'psychology-experiments' | 'behavioral-analysis' | 'social-psychology';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  objectives: string[];
+  experiments: Array<{
+    id: string;
+    name: string;
+    description: string;
+    type: 'cognitive' | 'social' | 'developmental' | 'clinical' | 'behavioral';
+    vietnameseContext: string;
+    methodology: {
+      participants: number;
+      duration: string;
+      variables: Array<{ name: string; type: 'independent' | 'dependent' | 'control'; description: string }>;
+      ethics: string[];
+    };
+    scenarios: Array<{
+      id: string;
+      title: string;
+      setup: string;
+      hypotheses: string[];
+      procedure: string[];
+      expectedOutcomes: Array<{ condition: string; result: string; interpretation: string }>;
+      vietnameseApplications: string[];
+      points: number;
+    }>;
+  }>;
+  therapeuticApproaches: Array<{
+    name: string;
+    description: string;
+    techniques: string[];
+    applications: string[];
+    vietnameseContext: string;
+    effectiveness: string;
+  }>;
+  assessmentTools: Array<{
+    name: string;
+    type: string;
+    description: string;
+    vietnameseValidation: string;
+    applications: string[];
+  }>;
+}
+
+const psychologyBehavioralGameData: PsychologyBehavioralGameData = {
+  id: 'psychology-behavioral-lab',
+  title: 'Psychology & Behavioral Science Laboratory',
+  titleVietnamese: 'Phòng thí nghiệm Tâm lý học & Khoa học Hành vi',
+  description: 'Thiết kế và thực hiện các thí nghiệm tâm lý, phân tích hành vi và ứng dụng liệu pháp',
+  category: 'psychology-experiments',
+  difficulty: 'Nâng cao',
+  estimatedTime: '35-45 phút',
+  objectives: [
+    'Thiết kế thí nghiệm tâm lý học theo chuẩn khoa học',
+    'Phân tích hành vi và các yếu tố tâm lý xã hội',
+    'Ứng dụng các liệu pháp tâm lý trong thực tế',
+    'Đánh giá và can thiệp tâm lý trong bối cảnh Việt Nam',
+    'Phát triển kỹ năng nghiên cứu và phân tích dữ liệu',
+  ],
+  experiments: [
+    {
+      id: 'vietnamese-learning-styles',
+      name: 'Phong cách Học tập của Sinh viên Việt Nam',
+      description: 'Nghiên cứu về phong cách học tập và nhận thức trong văn hóa Việt Nam',
+      type: 'cognitive',
+      vietnameseContext: 'Hệ thống giáo dục Việt Nam với đặc trưng văn hóa Á Đông',
+      methodology: {
+        participants: 200,
+        duration: '6 tháng',
+        variables: [
+          { name: 'Learning Style', type: 'independent', description: 'Visual, Auditory, Kinesthetic' },
+          { name: 'Academic Performance', type: 'dependent', description: 'GPA và test scores' },
+          { name: 'Cultural Background', type: 'control', description: 'Urban/Rural, SES' },
+        ],
+        ethics: [
+          'Informed consent từ participants',
+          'Confidentiality của dữ liệu cá nhân',
+          'Right to withdraw khỏi nghiên cứu',
+          'Debriefing sau khi hoàn thành',
+        ],
+      },
+      scenarios: [
+        {
+          id: 'visual-vs-traditional',
+          title: 'So sánh học tập Visual vs Traditional',
+          setup: 'Chia học sinh thành 2 nhóm: Visual learning tools vs Traditional lecture',
+          hypotheses: [
+            'Visual learners sẽ có performance tốt hơn với multimedia',
+            'Traditional method vẫn hiệu quả với Vietnamese students',
+            'Cultural factors ảnh hưởng đến preference',
+          ],
+          procedure: [
+            'Pre-test để đánh giá baseline knowledge',
+            'Randomized assignment vào 2 conditions',
+            'Teaching intervention trong 4 tuần',
+            'Post-test và retention test sau 1 tháng',
+            'Interview về learning experience',
+          ],
+          expectedOutcomes: [
+            {
+              condition: 'Visual Learning Group',
+              result: '15% improvement in comprehension',
+              interpretation: 'Visual aids enhance learning for Vietnamese students',
+            },
+            {
+              condition: 'Traditional Group',
+              result: '10% improvement, higher satisfaction',
+              interpretation: 'Familiarity với traditional methods tạo comfort',
+            },
+          ],
+          vietnameseApplications: [
+            'Đại học Y Hà Nội - Medical education innovation',
+            'ĐH Bách Khoa - Engineering pedagogy',
+            'Các trường THPT - Phương pháp giảng dạy mới',
+            'Online education platforms như Edumall, Unica',
+          ],
+          points: 300,
+        },
+        {
+          id: 'collectivism-learning-motivation',
+          title: 'Văn hóa Tập thể và Động lực Học tập',
+          setup: 'Nghiên cứu tác động của collectivism lên motivation trong learning',
+          hypotheses: [
+            'Group goals sẽ motivate Vietnamese students hơn individual goals',
+            'Family expectations có tác động mạnh lên academic performance',
+            'Social recognition quan trọng hơn personal achievement',
+          ],
+          procedure: [
+            'Survey về cultural values và family influence',
+            'Experimental manipulation: individual vs group goals',
+            'Measurement của effort, persistence, performance',
+            'Focus groups về motivation factors',
+          ],
+          expectedOutcomes: [
+            {
+              condition: 'Group Goal Condition',
+              result: '25% higher persistence, better collaboration',
+              interpretation: 'Collectivist values enhance group-oriented learning',
+            },
+            {
+              condition: 'Individual Goal Condition',
+              result: 'Lower motivation, increased anxiety',
+              interpretation: 'Individual competition conflicts với cultural norms',
+            },
+          ],
+          vietnameseApplications: [
+            'Corporate training programs tại Samsung, Intel Vietnam',
+            'Team-based learning tại các trường đại học',
+            'Cooperative learning trong THCS, THPT',
+            'Leadership development programs',
+          ],
+          points: 350,
+        },
+      ],
+    },
+    {
+      id: 'social-media-mental-health',
+      name: 'Mạng xã hội và Sức khỏe Tâm thần',
+      description: 'Tác động của social media lên mental health của giới trẻ Việt Nam',
+      type: 'social',
+      vietnameseContext: 'Facebook, Zalo, TikTok usage trong giới trẻ Việt Nam',
+      methodology: {
+        participants: 500,
+        duration: '12 tháng longitudinal study',
+        variables: [
+          { name: 'Social Media Usage', type: 'independent', description: 'Hours per day, platforms used' },
+          { name: 'Mental Health Indicators', type: 'dependent', description: 'Depression, Anxiety, Self-esteem' },
+          { name: 'Demographics', type: 'control', description: 'Age, Gender, SES, Location' },
+        ],
+        ethics: [
+          'Mental health screening và support referrals',
+          'Minimizing harm từ self-reporting negative feelings',
+          'Privacy protection cho sensitive data',
+          'Crisis intervention protocols',
+        ],
+      },
+      scenarios: [
+        {
+          id: 'facebook-depression-correlation',
+          title: 'Mối liên hệ Facebook và Trầm cảm',
+          setup: 'Tracking Facebook usage và depression symptoms over time',
+          hypotheses: [
+            'Excessive Facebook use correlates với increased depression',
+            'Social comparison trên Facebook gây negative impact',
+            'Vietnamese cultural factors moderate the relationship',
+          ],
+          procedure: [
+            'Baseline assessment: Depression scale, Facebook usage',
+            'Weekly ecological momentary assessment qua smartphone app',
+            'Monthly in-depth interviews về social media experience',
+            'Physiological measures: cortisol, sleep quality',
+          ],
+          expectedOutcomes: [
+            {
+              condition: 'Heavy Facebook Users (>3h/day)',
+              result: '30% higher depression scores, poorer sleep',
+              interpretation: 'Excessive usage negatively impacts mental health',
+            },
+            {
+              condition: 'Moderate Users (<1h/day)',
+              result: 'Stable mental health, better social connection',
+              interpretation: 'Moderate use có thể có benefits cho social support',
+            },
+          ],
+          vietnameseApplications: [
+            'Ministry of Health - Digital wellness campaigns',
+            'Schools - Social media literacy programs',
+            'Mental health apps như Docosan, Telemed',
+            'Corporate wellness programs',
+          ],
+          points: 400,
+        },
+      ],
+    },
+  ],
+  therapeuticApproaches: [
+    {
+      name: 'Cognitive Behavioral Therapy (CBT)',
+      description: 'Liệu pháp nhận thức hành vi được adapt cho Vietnamese culture',
+      techniques: [
+        'Thought challenging và cognitive restructuring',
+        'Behavioral activation cho depression',
+        'Exposure therapy cho anxiety disorders',
+        'Mindfulness integration với Buddhist concepts',
+      ],
+      applications: [
+        'Depression và anxiety treatment',
+        'PTSD recovery cho veterans',
+        'Addiction recovery programs',
+        'Workplace stress management',
+      ],
+      vietnameseContext: 'Bệnh viện Tâm thần Trung ương, các phòng khám tư nhân tại TP.HCM',
+      effectiveness: '70-80% improvement rate trong controlled studies tại Việt Nam',
+    },
+    {
+      name: 'Family Systems Therapy',
+      description: 'Liệu pháp gia đình phù hợp với văn hóa Việt Nam',
+      techniques: [
+        'Multi-generational perspective',
+        'Cultural genogram construction',
+        'Communication skills training',
+        'Intergenerational conflict resolution',
+      ],
+      applications: [
+        'Teenage behavioral problems',
+        'Marital therapy với extended family involvement',
+        'Elder care stress management',
+        'Immigration adjustment issues',
+      ],
+      vietnameseContext: 'Trung tâm Tâm lý gia đình, các bệnh viện đa khoa có khoa tâm lý',
+      effectiveness: '65-75% family satisfaction improvement',
+    },
+  ],
+  assessmentTools: [
+    {
+      name: 'Vietnam Depression Scale (VDS)',
+      type: 'Clinical Assessment',
+      description: 'Thang đo trầm cảm được validate cho population Việt Nam',
+      vietnameseValidation: 'Validated trên 2000+ participants, reliability α = 0.89',
+      applications: [
+        'Clinical diagnosis support',
+        'Treatment progress monitoring',
+        'Population health surveys',
+        'Research studies',
+      ],
+    },
+    {
+      name: 'Vietnamese Cultural Values Scale',
+      type: 'Cultural Assessment',
+      description: 'Đánh giá các giá trị văn hóa truyền thống và hiện đại',
+      vietnameseValidation: 'Factor analysis với 5 dimensions: Collectivism, Hierarchy, Face-saving, Family loyalty, Traditionalism',
+      applications: [
+        'Cross-cultural counseling',
+        'Organizational psychology',
+        'Immigration services',
+        'Educational planning',
+      ],
+    },
+  ],
+};
+
+// Phase 2 Games - Government Technology
+export interface GovernmentTechnologyGameData {
+  id: string;
+  title: string;
+  titleVietnamese: string;
+  description: string;
+  category: 'e-government' | 'digital-governance' | 'public-policy-tech';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  objectives: string[];
+  systems: Array<{
+    id: string;
+    name: string;
+    description: string;
+    type: 'citizen-services' | 'internal-operations' | 'transparency' | 'data-analytics';
+    vietnameseContext: string;
+    stakeholders: string[];
+    technologies: string[];
+    challenges: Array<{
+      id: string;
+      title: string;
+      scenario: string;
+      requirements: Array<{
+        type: 'functional' | 'technical' | 'security' | 'usability' | 'compliance';
+        description: string;
+        priority: 'high' | 'medium' | 'low';
+      }>;
+      constraints: Array<{
+        type: 'budget' | 'time' | 'technical' | 'political' | 'legal';
+        description: string;
+        impact: string;
+      }>;
+      success_metrics: Array<{ metric: string; target: number; unit: string }>;
+      points: number;
+      vietnameseApplications: string[];
+    }>;
+  }>;
+  digitalTransformation: Array<{
+    initiative: string;
+    description: string;
+    timeline: string;
+    budget: number;
+    expected_outcomes: string[];
+    risks: string[];
+    vietnameseExample: string;
+  }>;
+}
+
+const governmentTechnologyGameData: GovernmentTechnologyGameData = {
+  id: 'government-technology-simulator',
+  title: 'Government Technology & Digital Governance Simulator',
+  titleVietnamese: 'Mô phỏng Công nghệ Chính phủ & Quản trị Số',
+  description: 'Thiết kế và triển khai các hệ thống công nghệ cho chính phủ điện tử và quản trị công',
+  category: 'e-government',
+  difficulty: 'Nâng cao',
+  estimatedTime: '45-55 phút',
+  objectives: [
+    'Thiết kế hệ thống chính phủ điện tử hiệu quả',
+    'Tối ưu hóa quy trình hành chính và dịch vụ công',
+    'Đảm bảo an ninh thông tin và bảo vệ dữ liệu',
+    'Tăng cường minh bạch và tham gia của người dân',
+    'Phát triển chính phủ thông minh với AI và Big Data',
+  ],
+  systems: [
+    {
+      id: 'national-digital-id-system',
+      name: 'Hệ thống Định danh Điện tử Quốc gia',
+      description: 'Digital ID system cho toàn bộ công dân Việt Nam',
+      type: 'citizen-services',
+      vietnameseContext: 'Thẻ căn cước công dân gắn chip và eID của Bộ Công an',
+      stakeholders: [
+        'Bộ Công an - Cục Cảnh sát QLHC về TTXH',
+        'Bộ TT&TT - Cục An toàn thông tin',
+        'Các bộ, ngành sử dụng dịch vụ',
+        'Công dân và doanh nghiệp',
+      ],
+      technologies: [
+        'PKI (Public Key Infrastructure)',
+        'Biometric authentication (vân tay, khuôn mặt)',
+        'Blockchain cho immutable records',
+        'Mobile apps và web portals',
+        'API integration với các hệ thống',
+      ],
+      challenges: [
+        {
+          id: 'national-rollout-strategy',
+          title: 'Chiến lược Triển khai Toàn quốc',
+          scenario: 'Triển khai eID cho 95 triệu dân trong 3 năm với ngân sách 2 tỷ USD',
+          requirements: [
+            {
+              type: 'functional',
+              description: 'Support 10M concurrent users, 99.9% uptime',
+              priority: 'high',
+            },
+            {
+              type: 'security',
+              description: 'ISO 27001, Common Criteria EAL4+',
+              priority: 'high',
+            },
+            {
+              type: 'usability',
+              description: 'Accessible cho elderly và người khuyết tật',
+              priority: 'medium',
+            },
+            {
+              type: 'compliance',
+              description: 'GDPR-equivalent privacy protection',
+              priority: 'high',
+            },
+          ],
+          constraints: [
+            {
+              type: 'budget',
+              description: '2 tỷ USD cho toàn bộ project',
+              impact: 'Cần tối ưu hóa technology choices và phân bổ ngân sách',
+            },
+            {
+              type: 'technical',
+              description: 'Legacy systems integration tại 63 tỉnh thành',
+              impact: 'Phải maintain backward compatibility',
+            },
+            {
+              type: 'political',
+              description: 'Consent từ các ministry và provinces',
+              impact: 'Cần stakeholder management và change management',
+            },
+          ],
+          success_metrics: [
+            { metric: 'Citizen Adoption Rate', target: 85, unit: '%' },
+            { metric: 'Transaction Success Rate', target: 98, unit: '%' },
+            { metric: 'Average Processing Time', target: 30, unit: 'seconds' },
+            { metric: 'Security Incidents', target: 0, unit: 'critical incidents/year' },
+          ],
+          points: 500,
+          vietnameseApplications: [
+            'VNeID - National Digital Identity platform',
+            'DVC - Digital Government Services portal',
+            'Banking eKYC integration với major banks',
+            'Healthcare patient identification system',
+          ],
+        },
+        {
+          id: 'rural-digital-inclusion',
+          title: 'Hòa nhập Số cho Vùng nông thôn',
+          scenario: 'Đảm bảo vùng nông thôn, hải đảo có thể sử dụng dịch vụ eID',
+          requirements: [
+            {
+              type: 'technical',
+              description: 'Offline capability và sync khi có internet',
+              priority: 'high',
+            },
+            {
+              type: 'usability',
+              description: 'Simple interface, voice guidance bằng tiếng Việt',
+              priority: 'high',
+            },
+            {
+              type: 'functional',
+              description: 'Works với 2G/3G networks',
+              priority: 'medium',
+            },
+          ],
+          constraints: [
+            {
+              type: 'technical',
+              description: 'Limited internet connectivity ở remote areas',
+              impact: 'Cần offline-first architecture',
+            },
+            {
+              type: 'budget',
+              description: 'Cost per user cao hơn do infrastructure needs',
+              impact: 'ROI thấp hơn, cần subsidization',
+            },
+          ],
+          success_metrics: [
+            { metric: 'Rural Coverage', target: 95, unit: '%' },
+            { metric: 'Elderly Adoption', target: 60, unit: '%' },
+            { metric: 'Offline Transaction Success', target: 90, unit: '%' },
+          ],
+          points: 350,
+          vietnameseApplications: [
+            'Mobile service teams cho remote areas',
+            'Collaboration với Vietnam Post offices',
+            'Community centers như điểm digital access',
+            'Training programs cho elderly citizens',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'smart-city-management',
+      name: 'Hệ thống Quản lý Thành phố Thông minh',
+      description: 'Integrated platform cho smart city operations và services',
+      type: 'internal-operations',
+      vietnameseContext: 'Smart City projects tại TP.HCM, Hà Nội, Đà Nẵng',
+      stakeholders: [
+        'UBND thành phố và các sở, ban, ngành',
+        'Công ty công nghệ (FPT, Viettel, VNPT)',
+        'Người dân và doanh nghiệp',
+        'International partners (Singapore, Korea)',
+      ],
+      technologies: [
+        'IoT sensors và edge computing',
+        'Big Data analytics và AI/ML',
+        'GIS và mapping systems',
+        'Mobile apps và citizen portals',
+        'Integrated command centers',
+      ],
+      challenges: [
+        {
+          id: 'traffic-management-ai',
+          title: 'AI Traffic Management cho TP.HCM',
+          scenario: 'Giảm congestion 30% bằng AI traffic optimization',
+          requirements: [
+            {
+              type: 'functional',
+              description: 'Real-time traffic monitoring và adaptive signals',
+              priority: 'high',
+            },
+            {
+              type: 'technical',
+              description: 'Process data từ 2000+ cameras và sensors',
+              priority: 'high',
+            },
+            {
+              type: 'usability',
+              description: 'Public app cho traffic info và route optimization',
+              priority: 'medium',
+            },
+          ],
+          constraints: [
+            {
+              type: 'budget',
+              description: '500M USD cho 5 năm implementation',
+              impact: 'Phải prioritize high-impact intersections',
+            },
+            {
+              type: 'technical',
+              description: 'Integration với existing traffic infrastructure',
+              impact: 'Legacy system compatibility issues',
+            },
+          ],
+          success_metrics: [
+            { metric: 'Average Travel Time Reduction', target: 25, unit: '%' },
+            { metric: 'Accident Reduction', target: 40, unit: '%' },
+            { metric: 'Air Quality Improvement', target: 15, unit: '%' },
+            { metric: 'Citizen Satisfaction', target: 80, unit: '%' },
+          ],
+          points: 450,
+          vietnameseApplications: [
+            'TP.HCM Smart Traffic Management Center',
+            'Hanoi Intelligent Transportation System',
+            'Da Nang Smart City Command Center',
+            'Integration với Grab, Be cho ride optimization',
+          ],
+        },
+      ],
+    },
+  ],
+  digitalTransformation: [
+    {
+      initiative: 'National Digital Transformation 2025-2030',
+      description: 'Comprehensive digital transformation của government operations',
+      timeline: '5 năm (2025-2030)',
+      budget: 10000000000, // 10 tỷ USD
+      expected_outcomes: [
+        '100% dịch vụ công online',
+        '90% citizen adoption rate',
+        '50% reduction trong processing time',
+        '30% cost savings trong operations',
+      ],
+      risks: [
+        'Cybersecurity threats và data breaches',
+        'Digital divide giữa urban và rural',
+        'Resistance to change từ civil servants',
+        'Budget constraints và competing priorities',
+      ],
+      vietnameseExample: 'Chương trình Chuyển đổi số quốc gia của Chính phủ Việt Nam',
+    },
+    {
+      initiative: 'AI-Powered Government Services',
+      description: 'Sử dụng AI để tự động hóa và tối ưu government services',
+      timeline: '3 năm (2025-2028)',
+      budget: 2000000000, // 2 tỷ USD
+      expected_outcomes: [
+        'Chatbots xử lý 70% citizen inquiries',
+        'AI document processing giảm 80% manual work',
+        'Predictive analytics cho policy making',
+        'Fraud detection trong social services',
+      ],
+      risks: [
+        'Algorithm bias và fairness issues',
+        'Job displacement concerns',
+        'Data privacy và surveillance fears',
+        'Technical complexity và maintenance costs',
+      ],
+      vietnameseExample: 'VNeID chatbot, AI document processing tại Bộ Kế hoạch & Đầu tư',
+    },
+  ],
+};
+
+// Phase 2 Games - International Business
+export interface InternationalBusinessGameData {
+  id: string;
+  title: string;
+  titleVietnamese: string;
+  description: string;
+  category: 'global-trade' | 'market-entry' | 'supply-chain-global';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  objectives: string[];
+  scenarios: Array<{
+    id: string;
+    name: string;
+    description: string;
+    setting: string;
+    vietnameseContext: string;
+    markets: Array<{
+      country: string;
+      gdp_per_capita: number;
+      market_size: number;
+      ease_of_business: number;
+      cultural_distance: number;
+      trade_barriers: string[];
+    }>;
+    challenges: Array<{
+      id: string;
+      title: string;
+      type: 'market-entry' | 'cross-cultural' | 'regulatory' | 'financial' | 'logistics';
+      difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+      parameters: {
+        budget: number;
+        timeline: string;
+        success_criteria: string[];
+        constraints: string[];
+      };
+      decisions: Array<{
+        category: string;
+        options: Array<{ choice: string; cost: number; risk: number; potential_return: number }>;
+      }>;
+      points: number;
+      vietnameseApplications: string[];
+    }>;
+  }>;
+  tradingStrategies: Array<{
+    strategy: string;
+    description: string;
+    advantages: string[];
+    risks: string[];
+    vietnameseExample: string;
+  }>;
+}
+
+const internationalBusinessGameData: InternationalBusinessGameData = {
+  id: 'international-business-simulator',
+  title: 'International Business & Global Trade Simulator',
+  titleVietnamese: 'Mô phỏng Kinh doanh Quốc tế & Thương mại Toàn cầu',
+  description: 'Mở rộng kinh doanh ra thị trường quốc tế, quản lý thương mại toàn cầu và cross-cultural business',
+  category: 'global-trade',
+  difficulty: 'Nâng cao',
+  estimatedTime: '50-60 phút',
+  objectives: [
+    'Phân tích và lựa chọn thị trường xuất khẩu phù hợp',
+    'Phát triển chiến lược market entry và localization',
+    'Quản lý rủi ro trong kinh doanh quốc tế',
+    'Đàm phán và xây dựng quan hệ đối tác quốc tế',
+    'Tối ưu hóa supply chain và logistics toàn cầu',
+  ],
+  scenarios: [
+    {
+      id: 'vietnam-textile-global-expansion',
+      name: 'Mở rộng Toàn cầu - Dệt may Việt Nam',
+      description: 'Doanh nghiệp dệt may Việt Nam mở rộng từ OEM sang brand riêng',
+      setting: 'Textile & Apparel Industry - Brand Development',
+      vietnameseContext: 'May 10, TNG, Garment companies chuyển từ OEM sang ODM/OBM',
+      markets: [
+        {
+          country: 'United States',
+          gdp_per_capita: 70000,
+          market_size: 350000000,
+          ease_of_business: 85,
+          cultural_distance: 75,
+          trade_barriers: ['Tariffs 10-25%', 'Labor compliance', 'Quality standards'],
+        },
+        {
+          country: 'European Union',
+          gdp_per_capita: 45000,
+          market_size: 450000000,
+          ease_of_business: 80,
+          cultural_distance: 70,
+          trade_barriers: ['REACH regulation', 'Sustainability requirements', 'CE marking'],
+        },
+        {
+          country: 'Japan',
+          gdp_per_capita: 40000,
+          market_size: 125000000,
+          ease_of_business: 90,
+          cultural_distance: 45,
+          trade_barriers: ['High quality expectations', 'Relationship-based business', 'JIS standards'],
+        },
+        {
+          country: 'India',
+          gdp_per_capita: 2500,
+          market_size: 1400000000,
+          ease_of_business: 65,
+          cultural_distance: 30,
+          trade_barriers: ['Complex regulations', 'Local competition', 'Infrastructure challenges'],
+        },
+      ],
+      challenges: [
+        {
+          id: 'brand-localization-strategy',
+          title: 'Chiến lược Localization Brand',
+          type: 'market-entry',
+          difficulty: 'Nâng cao',
+          parameters: {
+            budget: 50000000, // 50M USD
+            timeline: '3 năm market entry',
+            success_criteria: [
+              '5% market share trong target segment',
+              'Break-even sau 24 tháng',
+              'Brand recognition >30%',
+            ],
+            constraints: [
+              'Limited international experience',
+              'Strong local competitors',
+              'Cultural adaptation requirements',
+            ],
+          },
+          decisions: [
+            {
+              category: 'Market Selection',
+              options: [
+                { choice: 'US Premium Market', cost: 20000000, risk: 8, potential_return: 15 },
+                { choice: 'EU Sustainable Fashion', cost: 15000000, risk: 6, potential_return: 12 },
+                { choice: 'Japan Quality Segment', cost: 12000000, risk: 5, potential_return: 10 },
+                { choice: 'India Volume Market', cost: 8000000, risk: 7, potential_return: 8 },
+              ],
+            },
+            {
+              category: 'Entry Strategy',
+              options: [
+                { choice: 'Direct Export', cost: 5000000, risk: 4, potential_return: 8 },
+                { choice: 'Local Partnership', cost: 8000000, risk: 6, potential_return: 12 },
+                { choice: 'Joint Venture', cost: 15000000, risk: 7, potential_return: 15 },
+                { choice: 'FDI - Own Subsidiary', cost: 25000000, risk: 9, potential_return: 20 },
+              ],
+            },
+            {
+              category: 'Brand Positioning',
+              options: [
+                { choice: 'Premium Vietnamese Heritage', cost: 10000000, risk: 6, potential_return: 14 },
+                { choice: 'Sustainable & Ethical', cost: 8000000, risk: 5, potential_return: 11 },
+                { choice: 'Fast Fashion Alternative', cost: 6000000, risk: 8, potential_return: 9 },
+                { choice: 'Technical Performance', cost: 12000000, risk: 7, potential_return: 13 },
+              ],
+            },
+          ],
+          points: 450,
+          vietnameseApplications: [
+            'May 10 Corporation - International brand development',
+            'TNG Holdings - Premium positioning strategy',
+            'Phong Phú Corporation - Market diversification',
+            'Nhà Bè Garment - EU market penetration',
+          ],
+        },
+        {
+          id: 'cross-cultural-negotiation',
+          title: 'Đàm phán Đa văn hóa',
+          type: 'cross-cultural',
+          difficulty: 'Trung bình',
+          parameters: {
+            budget: 5000000, // 5M USD deal value
+            timeline: '6 tháng negotiation process',
+            success_criteria: [
+              'Win-win agreement achieved',
+              'Long-term partnership established',
+              'Cultural sensitivity maintained',
+            ],
+            constraints: [
+              'Language barriers',
+              'Different business practices',
+              'Time zone coordination',
+            ],
+          },
+          decisions: [
+            {
+              category: 'Negotiation Style',
+              options: [
+                { choice: 'Direct Western Approach', cost: 0, risk: 8, potential_return: 10 },
+                { choice: 'Relationship-first Asian Style', cost: 1000000, risk: 4, potential_return: 12 },
+                { choice: 'Hybrid Adaptive Approach', cost: 500000, risk: 5, potential_return: 11 },
+              ],
+            },
+            {
+              category: 'Cultural Preparation',
+              options: [
+                { choice: 'Basic Cultural Training', cost: 100000, risk: 7, potential_return: 8 },
+                { choice: 'Expert Cultural Consultant', cost: 500000, risk: 4, potential_return: 12 },
+                { choice: 'Local Partner Mediation', cost: 1000000, risk: 3, potential_return: 13 },
+              ],
+            },
+          ],
+          points: 300,
+          vietnameseApplications: [
+            'Vietnam-Japan business negotiations',
+            'ASEAN business partnerships',
+            'US-Vietnam trade agreements',
+            'EU-Vietnam FTA implementations',
+          ],
+        },
+      ],
+    },
+  ],
+  tradingStrategies: [
+    {
+      strategy: 'Export-Led Growth',
+      description: 'Focus vào xuất khẩu để drive economic growth',
+      advantages: [
+        'Access to larger markets',
+        'Economics of scale',
+        'Technology transfer',
+        'Foreign currency earnings',
+      ],
+      risks: [
+        'Dependency trên external markets',
+        'Currency fluctuation exposure',
+        'Trade war impacts',
+        'Quality compliance challenges',
+      ],
+      vietnameseExample: 'Vietnam electronics exports (Samsung, Intel, Foxconn manufacturing)',
+    },
+    {
+      strategy: 'Market Diversification',
+      description: 'Đa dạng hóa thị trường để giảm rủi ro',
+      advantages: [
+        'Risk reduction',
+        'Stable revenue streams',
+        'Market learning opportunities',
+        'Counter-cyclical benefits',
+      ],
+      risks: [
+        'Resource spreading too thin',
+        'Increased complexity',
+        'Higher management costs',
+        'Cultural adaptation challenges',
+      ],
+      vietnameseExample: 'Vietnamese coffee exports to 80+ countries worldwide',
+    },
+  ],
+};
+
+// Phase 2 Games - Advanced Data Science
+export interface AdvancedDataScienceGameData {
+  id: string;
+  title: string;
+  titleVietnamese: string;
+  description: string;
+  category: 'machine-learning' | 'big-data' | 'ai-applications';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  objectives: string[];
+  projects: Array<{
+    id: string;
+    name: string;
+    description: string;
+    domain: string;
+    vietnameseContext: string;
+    datasets: Array<{
+      name: string;
+      size: string;
+      type: string;
+      description: string;
+      source: string;
+    }>;
+    challenges: Array<{
+      id: string;
+      title: string;
+      type: 'data-preprocessing' | 'model-development' | 'deployment' | 'ethics-ai';
+      difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+      tasks: string[];
+      success_criteria: Array<{ metric: string; target: number; unit: string }>;
+      tools: string[];
+      points: number;
+      vietnameseApplications: string[];
+    }>;
+  }>;
+  technologies: Array<{
+    name: string;
+    description: string;
+    use_cases: string[];
+    vietnameseAdoption: string;
+  }>;
+}
+
+const advancedDataScienceGameData: AdvancedDataScienceGameData = {
+  id: 'advanced-data-science-lab',
+  title: 'Advanced Data Science & AI Laboratory',
+  titleVietnamese: 'Phòng thí nghiệm Khoa học Dữ liệu & AI Nâng cao',
+  description: 'Phát triển các ứng dụng AI và Machine Learning cho các vấn đề thực tế tại Việt Nam',
+  category: 'ai-applications',
+  difficulty: 'Nâng cao',
+  estimatedTime: '60-75 phút',
+  objectives: [
+    'Xây dựng end-to-end ML pipelines cho production',
+    'Áp dụng Deep Learning cho computer vision và NLP',
+    'Phát triển recommender systems và time series forecasting',
+    'Implement AI ethics và responsible AI practices',
+    'Deploy ML models với cloud infrastructure',
+  ],
+  projects: [
+    {
+      id: 'vietnamese-nlp-sentiment-analysis',
+      name: 'Vietnamese NLP & Sentiment Analysis',
+      description: 'Phân tích sentiment và emotion trong văn bản tiếng Việt',
+      domain: 'Natural Language Processing',
+      vietnameseContext: 'Phân tích feedback khách hàng trên Shopee, Tiki, và social media',
+      datasets: [
+        {
+          name: 'Vietnamese Reviews Dataset',
+          size: '500K reviews',
+          type: 'Text data',
+          description: 'E-commerce product reviews in Vietnamese',
+          source: 'Crawled từ Shopee, Tiki, Lazada',
+        },
+        {
+          name: 'Vietnamese Social Media Dataset',
+          size: '1M posts',
+          type: 'Social media text',
+          description: 'Facebook, Zalo posts và comments',
+          source: 'Public APIs với user consent',
+        },
+      ],
+      challenges: [
+        {
+          id: 'vietnamese-word-segmentation',
+          title: 'Vietnamese Word Segmentation & Preprocessing',
+          type: 'data-preprocessing',
+          difficulty: 'Trung bình',
+          tasks: [
+            'Implement Vietnamese word segmentation với VnCoreNLP',
+            'Handle special characters, emojis, và slang',
+            'Normalize text với different encoding formats',
+            'Remove noise và spam content',
+          ],
+          success_criteria: [
+            { metric: 'Segmentation Accuracy', target: 95, unit: '%' },
+            { metric: 'Processing Speed', target: 1000, unit: 'docs/second' },
+            { metric: 'Clean Data Ratio', target: 90, unit: '%' },
+          ],
+          tools: ['VnCoreNLP', 'UndertheSea', 'PyVi', 'Pandas', 'NLTK'],
+          points: 250,
+          vietnameseApplications: [
+            'Tiki - Product review analysis',
+            'VCB - Customer feedback processing',
+            'VinID - Social listening platform',
+            'FPT.AI - Vietnamese chatbot development',
+          ],
+        },
+        {
+          id: 'deep-sentiment-model',
+          title: 'Deep Learning Sentiment Model',
+          type: 'model-development',
+          difficulty: 'Nâng cao',
+          tasks: [
+            'Build BERT-based model cho Vietnamese sentiment',
+            'Fine-tune PhoBERT với domain-specific data',
+            'Implement attention mechanisms for aspect-based sentiment',
+            'Handle class imbalance và rare sentiments',
+          ],
+          success_criteria: [
+            { metric: 'F1 Score', target: 88, unit: '%' },
+            { metric: 'Precision', target: 85, unit: '%' },
+            { metric: 'Recall', target: 90, unit: '%' },
+            { metric: 'Inference Speed', target: 100, unit: 'ms/doc' },
+          ],
+          tools: ['PyTorch', 'Transformers', 'PhoBERT', 'Weights & Biases', 'MLflow'],
+          points: 400,
+          vietnameseApplications: [
+            'Banking sentiment analysis cho loan applications',
+            'E-commerce recommendation personalization',
+            'Social media monitoring cho brands',
+            'Government policy feedback analysis',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'vietnam-agriculture-ai',
+      name: 'Vietnam Agriculture AI & Computer Vision',
+      description: 'AI applications cho nông nghiệp thông minh tại Việt Nam',
+      domain: 'Computer Vision & IoT',
+      vietnameseContext: 'Smart farming solutions cho rice, coffee, và aquaculture',
+      datasets: [
+        {
+          name: 'Rice Disease Image Dataset',
+          size: '100K images',
+          type: 'Image classification',
+          description: 'Images of healthy và diseased rice plants',
+          source: 'Vietnam National University Agriculture',
+        },
+        {
+          name: 'Weather & Yield Data',
+          size: '20 years historical data',
+          type: 'Time series',
+          description: 'Weather patterns và crop yield data',
+          source: 'Ministry of Agriculture & Rural Development',
+        },
+      ],
+      challenges: [
+        {
+          id: 'crop-disease-detection',
+          title: 'Crop Disease Detection với Computer Vision',
+          type: 'model-development',
+          difficulty: 'Nâng cao',
+          tasks: [
+            'Build CNN model cho rice disease classification',
+            'Implement data augmentation for limited dataset',
+            'Deploy model to mobile app cho farmers',
+            'Create explainable AI để hiểu disease patterns',
+          ],
+          success_criteria: [
+            { metric: 'Classification Accuracy', target: 92, unit: '%' },
+            { metric: 'Mobile App Response Time', target: 2, unit: 'seconds' },
+            { metric: 'Farmer Adoption Rate', target: 70, unit: '%' },
+          ],
+          tools: ['TensorFlow', 'OpenCV', 'Flutter', 'Firebase', 'LIME'],
+          points: 450,
+          vietnameseApplications: [
+            'FPT Smart Agriculture platform',
+            'VinEco organic farming monitoring',
+            'Can Tho University agriculture research',
+            'Mekong Delta smart farming initiatives',
+          ],
+        },
+      ],
+    },
+  ],
+  technologies: [
+    {
+      name: 'TensorFlow Extended (TFX)',
+      description: 'End-to-end platform cho production ML workflows',
+      use_cases: [
+        'Large-scale ML pipeline automation',
+        'Model versioning và monitoring',
+        'Data validation và preprocessing',
+        'Model serving với high throughput',
+      ],
+      vietnameseAdoption: 'VinAI, FPT.AI sử dụng cho production ML systems',
+    },
+    {
+      name: 'Apache Spark với MLlib',
+      description: 'Distributed computing cho big data machine learning',
+      use_cases: [
+        'Large dataset processing',
+        'Distributed model training',
+        'Real-time streaming analytics',
+        'Feature engineering at scale',
+      ],
+      vietnameseAdoption: 'Viettel, VNPT cho telecom data analytics',
+    },
+  ],
+};
+
+// Phase 2 Games - Event Management
+export interface EventManagementGameData {
+  id: string;
+  title: string;
+  titleVietnamese: string;
+  description: string;
+  category: 'event-planning' | 'venue-management' | 'digital-events';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  objectives: string[];
+  eventTypes: Array<{
+    type: string;
+    description: string;
+    vietnameseContext: string;
+    typical_size: string;
+    key_challenges: string[];
+  }>;
+  scenarios: Array<{
+    id: string;
+    name: string;
+    description: string;
+    event_type: string;
+    vietnameseContext: string;
+    constraints: Array<{
+      type: 'budget' | 'time' | 'venue' | 'legal' | 'weather';
+      description: string;
+      impact: string;
+    }>;
+    challenges: Array<{
+      id: string;
+      title: string;
+      phase: 'planning' | 'execution' | 'post-event';
+      difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+      tasks: string[];
+      success_metrics: Array<{ metric: string; target: number; unit: string }>;
+      points: number;
+      vietnameseApplications: string[];
+    }>;
+  }>;
+}
+
+const eventManagementGameData: EventManagementGameData = {
+  id: 'event-management-simulator',
+  title: 'Event Management & Experience Design Simulator',
+  titleVietnamese: 'Mô phỏng Quản lý Sự kiện & Thiết kế Trải nghiệm',
+  description: 'Lên kế hoạch, tổ chức và quản lý các sự kiện quy mô lớn với công nghệ hiện đại',
+  category: 'event-planning',
+  difficulty: 'Trung bình',
+  estimatedTime: '40-50 phút',
+  objectives: [
+    'Thiết kế và thực hiện event strategy hiệu quả',
+    'Quản lý logistics và vendor coordination',
+    'Tích hợp công nghệ digital trong events',
+    'Đảm bảo an toàn và tuân thủ quy định',
+    'Đo lường ROI và event success metrics',
+  ],
+  eventTypes: [
+    {
+      type: 'Corporate Conference',
+      description: 'Hội nghị doanh nghiệp và professional events',
+      vietnameseContext: 'Vietnam CEO Summit, FPT Techday, VinFast Launch',
+      typical_size: '500-5000 attendees',
+      key_challenges: ['Speaker management', 'Technology integration', 'Networking facilitation'],
+    },
+    {
+      type: 'Cultural Festival',
+      description: 'Lễ hội văn hóa và celebration events',
+      vietnameseContext: 'Tết Festival, Mid-Autumn Festival, Hue Festival',
+      typical_size: '10K-100K+ attendees',
+      key_challenges: ['Crowd management', 'Weather contingency', 'Cultural authenticity'],
+    },
+    {
+      type: 'Trade Exhibition',
+      description: 'Triển lãm thương mại và industry shows',
+      vietnameseContext: 'Vietnam Expo, FoodEx Vietnam, Vietnam AutoExpo',
+      typical_size: '20K-50K visitors',
+      key_challenges: ['Exhibitor management', 'Lead generation', 'International coordination'],
+    },
+  ],
+  scenarios: [
+    {
+      id: 'vietnam-tech-summit-2025',
+      name: 'Vietnam Tech Summit 2025',
+      description: 'Tổ chức hội nghị công nghệ quốc tế tại TP.HCM',
+      event_type: 'Corporate Conference',
+      vietnameseContext: 'Kết nối ecosystem startup Việt Nam với international investors',
+      constraints: [
+        {
+          type: 'budget',
+          description: '2M USD total budget',
+          impact: 'Must optimize vendor selection và prioritize high-impact elements',
+        },
+        {
+          type: 'time',
+          description: '6 tháng preparation time',
+          impact: 'Tight timeline for international speaker recruitment',
+        },
+        {
+          type: 'venue',
+          description: 'Limited premium venues in HCMC',
+          impact: 'Need backup options và flexible setup',
+        },
+      ],
+      challenges: [
+        {
+          id: 'hybrid-event-technology',
+          title: 'Hybrid Event Technology Integration',
+          phase: 'planning',
+          difficulty: 'Nâng cao',
+          tasks: [
+            'Setup live streaming với 4K quality cho global audience',
+            'Implement interactive features: Q&A, polls, networking',
+            'Ensure seamless experience cho both onsite và online attendees',
+            'Provide tech support cho speakers và participants',
+          ],
+          success_metrics: [
+            { metric: 'Stream Quality Uptime', target: 99, unit: '%' },
+            { metric: 'Online Engagement Rate', target: 75, unit: '%' },
+            { metric: 'Tech Issue Resolution Time', target: 2, unit: 'minutes' },
+          ],
+          points: 350,
+          vietnameseApplications: [
+            'FPT Techday hybrid events',
+            'Viettel 5G conferences',
+            'VinGroup innovation summits',
+            'HCMC startup pitch events',
+          ],
+        },
+        {
+          id: 'international-speaker-coordination',
+          title: 'International Speaker & Logistics Management',
+          phase: 'execution',
+          difficulty: 'Trung bình',
+          tasks: [
+            'Coordinate visa processing cho international speakers',
+            'Arrange airport transfers và luxury accommodation',
+            'Manage cultural preferences và dietary requirements',
+            'Provide local assistance và city tours',
+          ],
+          success_metrics: [
+            { metric: 'Speaker Satisfaction Score', target: 95, unit: '%' },
+            { metric: 'On-time Arrival Rate', target: 98, unit: '%' },
+            { metric: 'Cultural Incident Rate', target: 0, unit: 'incidents' },
+          ],
+          points: 300,
+          vietnameseApplications: [
+            'Vietnam CEO Summit international guests',
+            'APEC conferences in Vietnam',
+            'World Economic Forum events',
+            'Tech conferences với Silicon Valley speakers',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'tet-festival-hanoi-2025',
+      name: 'Tết Festival Hà Nội 2025',
+      description: 'Tổ chức lễ hội Tết truyền thống quy mô lớn tại Hà Nội',
+      event_type: 'Cultural Festival',
+      vietnameseContext: 'Bảo tồn và quảng bá văn hóa truyền thống Việt Nam',
+      constraints: [
+        {
+          type: 'weather',
+          description: 'Thời tiết lạnh và có thể mưa trong tháng 2',
+          impact: 'Cần contingency plans cho outdoor activities',
+        },
+        {
+          type: 'legal',
+          description: 'Strict permits cho large gatherings',
+          impact: 'Complex approval process với multiple authorities',
+        },
+      ],
+      challenges: [
+        {
+          id: 'crowd-safety-management',
+          title: 'Quản lý An toàn Đám đông',
+          phase: 'execution',
+          difficulty: 'Nâng cao',
+          tasks: [
+            'Design crowd flow patterns để prevent congestion',
+            'Deploy security personnel và medical stations',
+            'Implement emergency evacuation procedures',
+            'Monitor crowd density với IoT sensors',
+          ],
+          success_metrics: [
+            { metric: 'Zero Safety Incidents', target: 1, unit: 'goal achieved' },
+            { metric: 'Emergency Response Time', target: 3, unit: 'minutes' },
+            { metric: 'Visitor Satisfaction', target: 90, unit: '%' },
+          ],
+          points: 400,
+          vietnameseApplications: [
+            'Lễ hội Chùa Hương crowd management',
+            'Carnaval Hạ Long safety protocols',
+            'Festival Huế security coordination',
+            'New Year celebrations tại major cities',
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+// Phase 2 Games - Transportation Technology
+export interface TransportationTechnologyGameData {
+  id: string;
+  title: string;
+  titleVietnamese: string;
+  description: string;
+  category: 'smart-transportation' | 'logistics-tech' | 'autonomous-systems';
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  objectives: string[];
+  systems: Array<{
+    id: string;
+    name: string;
+    description: string;
+    technology: string;
+    vietnameseContext: string;
+    challenges: Array<{
+      id: string;
+      title: string;
+      type: 'optimization' | 'safety' | 'efficiency' | 'sustainability';
+      difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+      parameters: {
+        vehicles: number;
+        routes: number;
+        constraints: string[];
+        objectives: string[];
+      };
+      success_metrics: Array<{ metric: string; target: number; unit: string }>;
+      points: number;
+      vietnameseApplications: string[];
+    }>;
+  }>;
+  emergingTech: Array<{
+    technology: string;
+    description: string;
+    maturity: 'Research' | 'Pilot' | 'Commercial';
+    vietnameseAdoption: string;
+    potential_impact: string;
+  }>;
+}
+
+const transportationTechnologyGameData: TransportationTechnologyGameData = {
+  id: 'transportation-technology-lab',
+  title: 'Transportation Technology & Smart Mobility Lab',
+  titleVietnamese: 'Phòng thí nghiệm Công nghệ Giao thông & Di chuyển Thông minh',
+  description: 'Phát triển giải pháp giao thông thông minh, tối ưu hóa logistics và autonomous systems',
+  category: 'smart-transportation',
+  difficulty: 'Nâng cao',
+  estimatedTime: '45-55 phút',
+  objectives: [
+    'Thiết kế hệ thống giao thông thông minh hiệu quả',
+    'Tối ưu hóa tuyến đường và quản lý đội xe',
+    'Phát triển autonomous vehicle systems',
+    'Giảm thiểu tác động môi trường của transportation',
+    'Tích hợp IoT và AI trong mobility solutions',
+  ],
+  systems: [
+    {
+      id: 'smart-traffic-management-hcmc',
+      name: 'Smart Traffic Management TP.HCM',
+      description: 'Hệ thống quản lý giao thông thông minh cho thành phố lớn',
+      technology: 'AI Traffic Optimization, IoT Sensors, 5G Network',
+      vietnameseContext: 'Giải quyết ùn tắc giao thông tại TP.HCM với 10M dân',
+      challenges: [
+        {
+          id: 'adaptive-traffic-signals',
+          title: 'Adaptive Traffic Signal Optimization',
+          type: 'optimization',
+          difficulty: 'Nâng cao',
+          parameters: {
+            vehicles: 2000000,
+            routes: 5000,
+            constraints: [
+              'Peak hour congestion (7-9AM, 5-7PM)',
+              'Motorcycle integration (70% of vehicles)',
+              'Weather impact on traffic patterns',
+              'Construction và road maintenance',
+            ],
+            objectives: [
+              'Reduce average travel time by 30%',
+              'Minimize fuel consumption và emissions',
+              'Improve traffic safety',
+              'Optimize public transport integration',
+            ],
+          },
+          success_metrics: [
+            { metric: 'Travel Time Reduction', target: 25, unit: '%' },
+            { metric: 'Fuel Savings', target: 20, unit: '%' },
+            { metric: 'Accident Reduction', target: 40, unit: '%' },
+            { metric: 'System Uptime', target: 99, unit: '%' },
+          ],
+          points: 450,
+          vietnameseApplications: [
+            'TP.HCM Traffic Management Center modernization',
+            'Hanoi intelligent intersection systems',
+            'Da Nang smart city traffic pilot',
+            'Integration với Grab/Be ride-hailing platforms',
+          ],
+        },
+        {
+          id: 'electric-bus-fleet-optimization',
+          title: 'Electric Bus Fleet Optimization',
+          type: 'sustainability',
+          difficulty: 'Trung bình',
+          parameters: {
+            vehicles: 200,
+            routes: 50,
+            constraints: [
+              'Battery range limitations (250km)',
+              'Charging infrastructure availability',
+              'Passenger demand patterns',
+              'Maintenance scheduling requirements',
+            ],
+            objectives: [
+              'Maximize route coverage với minimum fleet size',
+              'Optimize charging schedules',
+              'Maintain service frequency standards',
+              'Minimize operational costs',
+            ],
+          },
+          success_metrics: [
+            { metric: 'Route Coverage', target: 95, unit: '%' },
+            { metric: 'Fleet Utilization', target: 85, unit: '%' },
+            { metric: 'Energy Efficiency', target: 120, unit: 'km/100kWh' },
+            { metric: 'Cost per km', target: 15000, unit: 'VND' },
+          ],
+          points: 350,
+          vietnameseApplications: [
+            'VinBus electric fleet expansion',
+            'Hanoi BRT electric transition',
+            'TP.HCM metro feeder bus electrification',
+            'Tourism bus electrification in Da Nang',
+          ],
+        },
+      ],
+    },
+    {
+      id: 'autonomous-delivery-system',
+      name: 'Autonomous Last-Mile Delivery',
+      description: 'Hệ thống giao hàng tự động cho urban logistics',
+      technology: 'Autonomous Vehicles, Computer Vision, Route Planning AI',
+      vietnameseContext: 'E-commerce delivery automation cho Shopee, Tiki, Grab',
+      challenges: [
+        {
+          id: 'urban-navigation-ai',
+          title: 'Urban Navigation AI Development',
+          type: 'safety',
+          difficulty: 'Nâng cao',
+          parameters: {
+            vehicles: 100,
+            routes: 1000,
+            constraints: [
+              'Complex traffic patterns với motorcycles',
+              'Narrow streets trong các quận cũ',
+              'Weather conditions affecting sensors',
+              'Regulatory compliance requirements',
+            ],
+            objectives: [
+              'Safe navigation in mixed traffic',
+              'Reliable package delivery',
+              'Minimal human intervention',
+              'Cost-effective operations',
+            ],
+          },
+          success_metrics: [
+            { metric: 'Safety Score', target: 99.9, unit: '%' },
+            { metric: 'Delivery Success Rate', target: 95, unit: '%' },
+            { metric: 'Autonomous Miles', target: 90, unit: '%' },
+            { metric: 'Customer Satisfaction', target: 85, unit: '%' },
+          ],
+          points: 500,
+          vietnameseApplications: [
+            'Grab autonomous delivery pilots',
+            'VinAI self-driving research',
+            'FPT autonomous vehicle development',
+            'University partnerships (HUST, UIT)',
+          ],
+        },
+      ],
+    },
+  ],
+  emergingTech: [
+    {
+      technology: 'Autonomous Vehicles',
+      description: 'Self-driving cars và delivery vehicles',
+      maturity: 'Pilot',
+      vietnameseAdoption: 'VinAI, Grab piloting autonomous vehicle technology',
+      potential_impact: 'Transform urban mobility, reduce accidents, optimize logistics',
+    },
+    {
+      technology: 'Electric Aviation',
+      description: 'eVTOL aircraft cho urban air mobility',
+      maturity: 'Research',
+      vietnameseAdoption: 'Research partnerships với international eVTOL companies',
+      potential_impact: 'Solve urban congestion, enable new transportation modes',
+    },
+    {
+      technology: 'Hyperloop Systems',
+      description: 'High-speed tube transportation',
+      maturity: 'Research',
+      vietnameseAdoption: 'Feasibility studies cho Hanoi-HCMC corridor',
+      potential_impact: 'Connect major cities with ultra-fast transport',
+    },
+  ],
+};
+
+// Update main GAME_DATA to include Phase 2 games
+Object.assign(GAME_DATA, {
+  // Supply Chain & Logistics Games
+  'supply-chain-optimization-simulator': {
+    ...supplyChainLogisticsGameData,
+    icon: '🚛',
+    category: 'business-simulation',
+    relatedLessons: [
+      {
+        moduleId: 'supply-chain-logistics',
+        lessonId: 'global-supply-chain-fundamentals',
+        title: 'Nguyên tắc Chuỗi cung ứng Toàn cầu',
+        connection: 'Áp dụng lý thuyết supply chain vào practice simulations',
+      },
+      {
+        moduleId: 'supply-chain-logistics',
+        lessonId: 'logistics-optimization-techniques',
+        title: 'Kỹ thuật Tối ưu hóa Logistics',
+        connection: 'Hands-on experience với route optimization algorithms',
+      },
+    ],
+  },
+
+  // Energy Management Games
+  'smart-energy-grid-manager': {
+    ...energyManagementGameData,
+    icon: '⚡',
+    category: 'engineering-simulation',
+    relatedLessons: [
+      {
+        moduleId: 'energy-management',
+        lessonId: 'renewable-energy-systems',
+        title: 'Hệ thống Năng lượng Tái tạo',
+        connection: 'Simulate renewable energy integration challenges',
+      },
+      {
+        moduleId: 'energy-management',
+        lessonId: 'smart-grid-technologies',
+        title: 'Công nghệ Lưới điện Thông minh',
+        connection: 'Interactive smart grid management experience',
+      },
+    ],
+  },
+
+  // Psychology & Behavioral Science Games
+  'psychology-experiment-designer': {
+    ...psychologyBehavioralGameData,
+    icon: '🧠',
+    category: 'scientific-research',
+    relatedLessons: [
+      {
+        moduleId: 'psychology-behavioral-science',
+        lessonId: 'research-methodology-psychology',
+        title: 'Phương pháp Nghiên cứu Tâm lý học',
+        connection: 'Design and conduct psychological experiments',
+      },
+      {
+        moduleId: 'psychology-behavioral-science',
+        lessonId: 'cultural-psychology-vietnam',
+        title: 'Tâm lý học Văn hóa Việt Nam',
+        connection: 'Explore Vietnamese cultural factors in psychology',
+      },
+    ],
+  },
+
+  // Government Technology Games
+  'digital-government-architect': {
+    ...governmentTechnologyGameData,
+    icon: '🏛️',
+    category: 'public-policy-tech',
+    relatedLessons: [
+      {
+        moduleId: 'government-technology',
+        lessonId: 'e-government-implementation',
+        title: 'Triển khai Chính phủ Điện tử',
+        connection: 'Build and deploy government digital services',
+      },
+      {
+        moduleId: 'government-technology',
+        lessonId: 'digital-transformation-public-sector',
+        title: 'Chuyển đổi Số Khu vực Công',
+        connection: 'Lead digital transformation initiatives',
+      },
+    ],
+  },
+
+  // International Business Games
+  'global-business-strategist': {
+    ...internationalBusinessGameData,
+    icon: '🌍',
+    category: 'business-strategy',
+    relatedLessons: [
+      {
+        moduleId: 'international-business',
+        lessonId: 'market-entry-strategies',
+        title: 'Chiến lược Thâm nhập Thị trường',
+        connection: 'Develop market entry plans for international expansion',
+      },
+      {
+        moduleId: 'international-business',
+        lessonId: 'cross-cultural-business-management',
+        title: 'Quản lý Kinh doanh Đa văn hóa',
+        connection: 'Navigate cross-cultural business scenarios',
+      },
+    ],
+  },
+
+  // Advanced Data Science Games
+  'ai-ml-research-lab': {
+    ...advancedDataScienceGameData,
+    icon: '🤖',
+    category: 'data-science',
+    relatedLessons: [
+      {
+        moduleId: 'advanced-data-science',
+        lessonId: 'deep-learning-applications',
+        title: 'Ứng dụng Deep Learning',
+        connection: 'Build production-ready deep learning models',
+      },
+      {
+        moduleId: 'advanced-data-science',
+        lessonId: 'ai-ethics-responsible-ai',
+        title: 'Đạo đức AI và AI Có trách nhiệm',
+        connection: 'Implement ethical AI practices in projects',
+      },
+    ],
+  },
+
+  // Event Management Games
+  'event-experience-designer': {
+    ...eventManagementGameData,
+    icon: '🎉',
+    category: 'project-management',
+    relatedLessons: [
+      {
+        moduleId: 'event-management',
+        lessonId: 'large-scale-event-planning',
+        title: 'Kế hoạch Sự kiện Quy mô lớn',
+        connection: 'Plan and execute major events with complex logistics',
+      },
+      {
+        moduleId: 'event-management',
+        lessonId: 'digital-event-technologies',
+        title: 'Công nghệ Sự kiện Số',
+        connection: 'Integrate digital technologies in event experiences',
+      },
+    ],
+  },
+
+  // Transportation Technology Games
+  'smart-mobility-system-designer': {
+    ...transportationTechnologyGameData,
+    icon: '🚗',
+    category: 'transportation-tech',
+    relatedLessons: [
+      {
+        moduleId: 'transportation-technology',
+        lessonId: 'autonomous-vehicle-systems',
+        title: 'Hệ thống Xe tự lái',
+        connection: 'Develop autonomous vehicle navigation systems',
+      },
+      {
+        moduleId: 'transportation-technology',
+        lessonId: 'smart-transportation-infrastructure',
+        title: 'Hạ tầng Giao thông Thông minh',
+        connection: 'Design smart transportation infrastructure',
+      },
+    ],
+  },
+});
+
+// Export individual Phase 2 game data for direct access
+export {
+  supplyChainLogisticsGameData,
+  energyManagementGameData,
+  psychologyBehavioralGameData,
+  governmentTechnologyGameData,
+  internationalBusinessGameData,
+  advancedDataScienceGameData,
+  eventManagementGameData,
+  transportationTechnologyGameData,
+};
+
 // Export aquaculture game for direct access
 export const aquacultureIoTGameData = GAME_DATA.aquacultureIoTGame;

@@ -16,7 +16,7 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
     description: 'Master advanced graphic design principles, brand identity development, và professional design workflow using industry-standard tools for Vietnamese creative market.',
     duration: '300 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=YqQx75OPRa0', // Default - needs replacement
+videoUrl: 'https://www.youtube.com/watch?v=y_2P5o_msuo', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop',
     creativeCategory: 'design',
     skillLevel: 'Advanced',
@@ -125,7 +125,7 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
     description: 'Advanced video production techniques, cinematic storytelling, và professional editing workflow cho content creators và businesses trong Vietnamese market.',
     duration: '280 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=YqQx75OPRa0', // Default - needs replacement
+videoUrl: 'https://www.youtube.com/watch?v=2-n_MWYrP68', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=600&fit=crop',
     creativeCategory: 'video',
     skillLevel: 'Advanced',
@@ -208,7 +208,7 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
     description: 'Professional audio production, podcast creation, và audio branding for Vietnamese content creators và businesses trong growing audio market.',
     duration: '240 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=YqQx75OPRa0', // Default - needs replacement
+videoUrl: 'https://www.youtube.com/watch?v=8UYbUsfbBW0', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1200&h=600&fit=crop',
     creativeCategory: 'audio',
     skillLevel: 'Intermediate',
@@ -281,7 +281,7 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
     description: 'Advanced content creation, copywriting techniques, và content strategy development for Vietnamese digital marketing và brand communication.',
     duration: '220 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=YqQx75OPRa0', // Default - needs replacement
+videoUrl: 'https://www.youtube.com/watch?v=O0UxbwFSF2E', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=600&fit=crop',
     creativeCategory: 'writing',
     skillLevel: 'Intermediate',
@@ -354,7 +354,7 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
     description: 'Advanced photography techniques, visual storytelling, và commercial photography for Vietnamese creative market và business applications.',
     duration: '260 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=YqQx75OPRa0', // Default - needs replacement
+videoUrl: 'https://www.youtube.com/watch?v=cQTb5TxTVu8', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=1200&h=600&fit=crop',
     creativeCategory: 'photography',
     skillLevel: 'Intermediate',

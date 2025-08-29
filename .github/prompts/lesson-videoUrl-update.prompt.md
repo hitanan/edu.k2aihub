@@ -11,8 +11,7 @@ Mỗi phần tử là object có tối thiểu:
 
 - filePath: đường dẫn tương đối tới file (ví dụ: "src/data/agritech-precision-farming.ts")
 - lessonId: id của bài học cần tìm (ví dụ: "agricultural-robotics")
-- originalVideoUrl: (tham khảo, không bắt buộc dùng)
-- newVideoUrl hoặc suggestedVideoUrl: URL YouTube mới muốn cập nhật
+- videoUrl: URL YouTube mới muốn cập nhật
 - status: "updated" | khác (nếu không có -> mặc định "updated")
 - optional: videoDetails: { thumbnail: string } (nếu có thì cập nhật imageUrl)
 
@@ -23,8 +22,8 @@ Quy tắc xử lý
 3. Tìm bài học có lesson.id === lessonId.
    - Nếu không tìm thấy -> báo "skipped" (không thay đổi file).
 4. Nếu bài học có trường videoUrl:
-   - Thay giá trị videoUrl bằng newVideoUrl nếu có, ngược lại dùng suggestedVideoUrl.
-   - Nếu newVideoUrl/suggestedVideoUrl là YouTube, bạn có thể chuẩn hoá thành dạng https://www.youtube.com/watch?v=VIDEO_ID (không bắt buộc nhưng khuyến nghị).
+   - Thay giá trị videoUrl bằng videoUrl nếu có, ngược lại dùng suggestedVideoUrl.
+   - Nếu videoUrl là YouTube, bạn có thể chuẩn hoá thành dạng https://www.youtube.com/watch?v=VIDEO_ID (không bắt buộc nhưng khuyến nghị).
 5. Nếu bài học có trường duration:
 
 - Thay giá trị duration bằng duration nếu có
