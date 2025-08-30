@@ -1,20 +1,8 @@
 import TrafficManagementSimulator3D from '@/components/games/TrafficManagementSimulator3D';
 import { Metadata } from 'next';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: 'Traffic Management Simulator 3D | K2AiHub',
-  description:
-    'Interactive 3D traffic management simulation. Học smart city technology, traffic optimization, và thiết kế hệ thống giao thông thông minh với AI.',
-  keywords: [
-    'traffic management',
-    'smart city',
-    'traffic optimization',
-    'IoT',
-    'urban planning',
-    '3D simulation',
-    'K2AI education',
-  ],
-};
+export const metadata: Metadata = createGameMetadata('traffic-management-simulator-3d');
 
 export default function TrafficManagementPage() {
   return (

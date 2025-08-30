@@ -1,42 +1,18 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { supplyChainLogisticsLessons } from '@/data/supply-chain-logistics';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Supply Chain & Logistics - Quản Lý Chuỗi Cung Ứng'),
-  description: createDescription(
-    'Master supply chain logistics management với advanced technology. Học optimization, inventory management và distribution trong global supply chains.',
-  ),
-  keywords: [
-    'supply chain',
-    'logistics',
-    'inventory management',
-    'distribution',
-    'supply chain optimization',
-    'warehouse management',
-    'vietnam logistics',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {
-    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-    title: 'Supply Chain & Logistics Management',
-    description:
-      'Master advanced supply chain optimization and logistics technology',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Supply Chain & Logistics - Quản Lý Chuỗi Cung Ứng',
+  'Master supply chain logistics management với advanced technology. Học optimization, inventory management và distribution trong global supply chains.',
+  ['supply chain', 'logistics', 'inventory management', 'distribution', 'supply chain optimization', 'warehouse management', 'vietnam logistics', 'k2aihub'],
+  'supply-chain-logistics'
+);
 
 export default function SupplyChainLogisticsPage() {
   const moduleData: ModuleData = {

@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('International Networking Challenge - Thử Thách Networking Quốc Tế'),
-  description: createDescription('Phát triển kỹ năng networking quốc tế thông qua các thử thách thực tế. Học cách xây dựng mối quan hệ chuyên nghiệp xuyên biên giới.'),
-  keywords: ['international networking', 'global connections', 'networking quốc tế', 'mối quan hệ kinh doanh', 'global business'],
-  openGraph: {
-    title: 'International Networking Challenge | K2AiHub',
-    description: 'Phát triển kỹ năng networking quốc tế với các thử thách thực tế',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('international-networking-challenge');
 
 export default function InternationalNetworkingChallengePage() {
   return (

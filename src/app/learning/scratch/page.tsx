@@ -1,9 +1,19 @@
+import type { Metadata } from 'next';
+
+import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { scratchLessons, type ScratchLesson } from '@/data/scratch';
 import { K2Module } from '@/data/moduleNavigation';
+
+export const metadata: Metadata = createModuleMetadata(
+  'Scratch Programming - Lập Trình Scratch',
+  'Học lập trình cơ bản với Scratch. Visual programming cho kids và beginners',
+  ['scratch programming', 'visual programming', 'kids coding', 'block programming', 'computational thinking'],
+  'scratch'
+);
 
 // Convert ScratchLesson to BaseLessonData interface
 function convertToLesson(scratchLesson: ScratchLesson): BaseLessonData {

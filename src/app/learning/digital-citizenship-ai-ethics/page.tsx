@@ -1,20 +1,15 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { digitalCitizenshipLessons } from '@/data/digital-citizenship-ai-ethics';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Công Dân Số và Đạo Đức AI'),
-    description: createDescription('Học cách trở thành công dân số có trách nhiệm, hiểu về đạo đức AI và bảo vệ quyền riêng tư trong thời đại kỹ thuật số.'),
-    keywords: ['công dân số', 'đạo đức AI', 'quyền riêng tư', 'digital wellness', 'AI ethics', 'K2AiHub'],
-    openGraph: {
-      title: 'Công Dân Số và Đạo Đức AI | K2AiHub',
-      description: 'Học cách trở thành công dân số có trách nhiệm, hiểu về đạo đức AI và bảo vệ quyền riêng tư trong thời đại kỹ thuật số.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Công Dân Số và Đạo Đức AI',
+  'Học cách trở thành công dân số có trách nhiệm, hiểu về đạo đức AI và bảo vệ quyền riêng tư trong thời đại kỹ thuật số.',
+  ['công dân số', 'đạo đức AI', 'quyền riêng tư', 'digital wellness', 'AI ethics', 'K2AiHub'],
+  'digital-citizenship-ai-ethics'
+);
 
 export default function DigitalCitizenshipMainPage() {
   const moduleData = {

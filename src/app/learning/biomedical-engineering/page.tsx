@@ -1,9 +1,11 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import {
   biomedicalEngineeringLessons,
   type BiomedicalEngineeringLesson,
 } from '@/data/biomedical-engineering';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
@@ -35,39 +37,22 @@ function convertToBaseLessonData(
   };
 }
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Biomedical Engineering - Kỹ Thuật Y Sinh'),
-    description: createDescription(
-      'Master biomedical engineering: medical device design, biosignal processing, regenerative medicine, surgical robotics. Vietnamese healthcare applications với FDA/MOH regulatory compliance.',
-    ),
-    keywords: [
-      'biomedical engineering',
-      'medical devices',
-      'biosignals',
-      'regenerative medicine',
-      'surgical robotics',
-      'vietnamese healthcare',
-      'FDA regulations',
-      'medical innovation',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Biomedical Engineering - Kỹ Thuật Y Sinh | K2AI',
-      description:
-        'Master medical device design, biosignal processing, regenerative medicine cho Vietnamese healthcare innovation.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Biomedical Engineering - Kỹ Thuật Y Sinh',
+  'Master biomedical engineering: medical device design, biosignal processing, regenerative medicine, surgical robotics. Vietnamese healthcare applications với FDA/MOH regulatory compliance.',
+  [
+    'biomedical engineering',
+    'medical devices',
+    'biosignals',
+    'regenerative medicine',
+    'surgical robotics',
+    'vietnamese healthcare',
+    'FDA regulations',
+    'medical innovation',
+    'K2AI',
+  ],
+  'biomedical-engineering'
+);
 
 export default function BiomedicalEngineeringPage() {
   const moduleData = {

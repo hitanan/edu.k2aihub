@@ -1,53 +1,16 @@
+import type { Metadata } from 'next';
+
+import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { teenWellnessLessons } from '@/data/teen-wellness';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Teen Wellness & Mental Health - Sức khỏe tinh thần tuổi teen',
-    ),
-    description: createDescription(
-      'Chương trình toàn diện về sức khỏe tinh thần cho teenagers. Học cách quản lý stress, anxiety, xây dựng mối quan hệ tích cực và phát triển emotional intelligence cho thế hệ trẻ Việt Nam.',
-    ),
-    keywords: createKeywords([
-      'teen wellness',
-      'mental health',
-      'sức khỏe tinh thần',
-      'tuổi teen',
-      'stress management',
-      'anxiety control',
-      'mindfulness',
-      'meditation',
-      'digital wellness',
-      'healthy relationships',
-      'emotional intelligence',
-      'study life balance',
-      'crisis support',
-      'vietnamese teenagers',
-      'youth mental health',
-      'K2AI',
-    ]),
-    openGraph: {    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Teen Wellness & Mental Health - K2AI Learning Platform',
-      description:
-        'Chương trình toàn diện về sức khỏe tinh thần cho teenagers. Quản lý stress, anxiety và phát triển emotional intelligence.',
-      type: 'website',
-      locale: 'vi_VN',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'Teen Wellness & Mental Health - Sức khỏe tinh thần tuổi teen',
-      description:
-        'Học cách quản lý stress, anxiety và xây dựng mối quan hệ tích cực cho thế hệ trẻ Việt Nam.',
-    },
-    alternates: {
-      canonical: '/learning/teen-wellness',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Teen Wellness & Mental Health - Sức khỏe tinh thần tuổi teen',
+  'Chương trình toàn diện về sức khỏe tinh thần cho teenagers. Học cách quản lý stress, anxiety, xây dựng mối quan hệ tích cực và phát triển emotional intelligence.',
+  ['teen wellness', 'mental health', 'sức khỏe tinh thần', 'tuổi teen', 'stress management', 'anxiety control', 'mindfulness'],
+  'teen-wellness'
+);
 
 export default function TeenWellnessPage() {
   const moduleData = {

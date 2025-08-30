@@ -1,29 +1,17 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { aiContentCreatorLessons } from '@/data/ai-content-creator';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('AI Content Creator Academy'),
-    description: createDescription('Học cách sử dụng AI để tạo content viral trên TikTok, YouTube, Instagram với tools như ChatGPT, RunwayML, Midjourney.'),
-    keywords: ['ai content creation', 'social media automation', 'viral marketing', 'content strategy', 'K2AI', 'học tập thông minh'],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'AI Content Creator Academy | K2AiHub',
-      description: 'Master AI tools cho content creation viral trên social media platforms',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'AI Content Creator - Sáng Tạo Nội Dung Với AI',
+  'Sáng tạo nội dung với AI tools. Video generation, copywriting và social media automation',
+  ["ai content creation","video generation","copywriting","social media automation","ai tools"],
+  'ai-content-creator'
+);
 
 export default function AIContentCreatorPage() {
   const moduleData = {

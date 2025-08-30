@@ -1,41 +1,16 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { AIApplicationLessons } from '@/data/ai-applications';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('AI Applications - Ứng dụng AI thực tế'),
-    description: createDescription(
-      'Học cách áp dụng AI vào cuộc sống: du học, kinh doanh, content creation, healthcare, financial planning với các use cases thực tế.'
-    ),
-    keywords: [
-      'AI applications',
-      'ứng dụng AI',
-      'AI thực tế',
-      'AI du học',
-      'AI business',
-      'AI content creation',
-      'AI healthcare',
-      'AI financial planning',
-      'K2AI'
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'AI Applications - Ứng dụng AI thực tế | K2AiHub',
-      description:
-        'Master practical AI applications cho study abroad, business automation, content creation, healthcare và financial planning.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'AI Applications - Ứng Dụng AI',
+  'Ứng dụng AI trong thực tế. Machine learning, computer vision và natural language processing',
+  ["ai applications","machine learning","computer vision","natural language processing","ai development"],
+  'ai-applications'
+);
 
 export default function AIApplicationsMainPage() {
   const moduleData = {

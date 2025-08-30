@@ -57,5 +57,5 @@ export interface ContactForm {
 }
 
 export interface PageProps {
-  params: Promise<{ lessonId: string; gameId?: string, slug: string, category: string }>;
+  params: Promise<{ lessonId: string; gameId?: string; slug: string; category: string }>;
 }

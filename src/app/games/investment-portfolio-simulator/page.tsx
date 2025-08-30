@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Investment Portfolio Simulator - Mô Phỏng Danh Mục Đầu Tư'),
-  description: createDescription('Mô phỏng đầu tư tài chính thực tế với dữ liệu thị trường real-time. Học cách xây dựng và quản lý danh mục đầu tư hiệu quả.'),
-  keywords: ['investment simulator', 'portfolio management', 'mô phỏng đầu tư', 'quản lý danh mục', 'financial planning'],
-  openGraph: {
-    title: 'Investment Portfolio Simulator | K2AiHub',
-    description: 'Mô phỏng đầu tư và quản lý danh mục với dữ liệu thị trường thực tế',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('investment-portfolio-simulator');
 
 export default function InvestmentPortfolioSimulatorPage() {
   return (

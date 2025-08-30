@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Cultural Intelligence Navigator 3D - Định Hướng Thông Minh Văn Hóa'),
-  description: createDescription('Khám phá và phát triển trí tuệ văn hóa thông qua trải nghiệm 3D tương tác. Học cách giao tiếp và làm việc hiệu quả trong môi trường đa văn hóa.'),
-  keywords: ['cultural intelligence', 'cross-cultural', 'trí tuệ văn hóa', 'giao tiếp đa văn hóa', '3D cultural experience'],
-  openGraph: {
-    title: 'Cultural Intelligence Navigator 3D | K2AiHub',
-    description: 'Phát triển trí tuệ văn hóa thông qua trải nghiệm 3D tương tác',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('cultural-intelligence-navigator-3d');
 
 export default function CulturalIntelligenceNavigator3DPage() {
   return (

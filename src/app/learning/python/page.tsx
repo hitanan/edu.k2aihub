@@ -1,43 +1,19 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { pythonLessons, PythonLesson } from '@/data/python';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
-import type { Metadata } from 'next';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export const metadata: Metadata = {
-  title: createTitle('Học Lập Trình Python - Bài Toán Cơ Bản'),
-  description: createDescription(
-    'Khóa học Python cơ bản với các bài toán thực tế dành cho học sinh. Từ biến số, vòng lặp đến thuật toán và xử lý dữ liệu',
-  ),
-  keywords: createKeywords([
-    'python',
-    'lập trình python',
-    'python cơ bản',
-    'bài toán python',
-    'thuật toán',
-    'học sinh',
-    'programming',
-  ]),
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: createTitle('Học Lập Trình Python - Bài Toán Cơ Bản'),
-    description: createDescription(
-      'Khám phá Python qua các bài toán thực tế và ví dụ dễ hiểu',
-    ),
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Python Programming - Lập Trình Python',
+  'Học Python từ cơ bản đến nâng cao. Data Science, Web Development và AI Programming',
+  ['python programming', 'data science', 'web development', 'machine learning', 'pandas', 'django'],
+  'python'
+);
 
 // Convert PythonLesson to BaseLessonData interface
 function convertToLesson(pythonLesson: PythonLesson): BaseLessonData {

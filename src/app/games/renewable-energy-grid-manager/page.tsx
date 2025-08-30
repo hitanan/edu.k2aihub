@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Renewable Energy Grid Manager - Quản Lý Lưới Điện Tái Tạo'),
-  description: createDescription('Thiết kế và vận hành hệ thống lưới điện thông minh với năng lượng tái tạo. Tối ưu hóa solar, wind power và energy storage.'),
-  keywords: ['năng lượng tái tạo', 'lưới điện thông minh', 'solar power', 'wind energy', 'energy storage'],
-  openGraph: {
-    title: 'Renewable Energy Grid Manager | K2AiHub',
-    description: 'Thiết kế và quản lý hệ thống lưới điện tái tạo thông minh',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('renewable-energy-grid-manager');
 
 export default function RenewableEnergyGridManagerPage() {
   return (

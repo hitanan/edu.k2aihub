@@ -15,7 +15,7 @@ import {
   Lightbulb,
   Users,
 } from 'lucide-react';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createDescription, createLessonMetadata, createTitle } from '@/utils/seo';
 import { LessonAnalytics } from './LessonAnalytics';
 import { EducationalGamesShowcase } from '@/components/games/EducationalGames';
 
@@ -88,17 +88,21 @@ export interface LessonPageTemplateProps<T extends BaseLessonData> {
 export function generateLessonMetadata<T extends BaseLessonData>(
   lessonId: string,
   lessons: T[],
+  moduleType: string = '',
 ): Metadata {
   const lesson = lessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
-    return {
-      title: 'Bài học không tìm thấy | K2AI',
-      description: 'Không thể tìm thấy bài học yêu cầu.',
-    };
+    return createLessonMetadata(
+      'Bài học không tìm thấy',
+      'Không thể tìm thấy bài học yêu cầu',
+      moduleType,
+      lessonId,
+      ['not found', 'error']
+    );
   }
-
-  return {
+  if (!moduleType) {
+      return {
     title: createTitle(lesson.title),
     description: createDescription(lesson.description),
     openGraph: {
@@ -107,6 +111,15 @@ export function generateLessonMetadata<T extends BaseLessonData>(
       images: lesson.imageUrl ? [{ url: lesson.imageUrl }] : [],
     },
   };
+  }
+
+  return createLessonMetadata(
+    lesson.title,
+    lesson.description,
+    moduleType,
+    lessonId,
+    lesson.objectives || []
+  );
 }
 
 export function generateLessonStaticParams<T extends BaseLessonData>(

@@ -1,29 +1,16 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { MetaverseVREducationLessons } from '@/data/metaverse-vr-education';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Metaverse & Giáo Dục VR'),
-    description: createDescription('Khám phá công nghệ Metaverse, VR/AR trong giáo dục và cơ hội nghề nghiệp trong kỷ nguyên thực tế ảo. Học tạo nội dung VR, phát triển ứng dụng AR và kinh doanh trong virtual economy.'),
-    keywords: ['metaverse', 'vr', 'ar', 'giáo dục', 'thực tế ảo', 'công nghệ', 'tương lai', 'K2AI'],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Metaverse & Giáo Dục VR - K2AiHub',
-      description: 'Khám phá tương lai của học tập immersive với công nghệ Metaverse và VR/AR',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Metaverse & Giáo Dục VR',
+  'Khám phá công nghệ Metaverse, VR/AR trong giáo dục và cơ hội nghề nghiệp trong kỷ nguyên thực tế ảo. Học tạo nội dung VR, phát triển ứng dụng AR và kinh doanh trong virtual economy.',
+  ['metaverse', 'vr', 'ar', 'giáo dục', 'thực tế ảo', 'công nghệ', 'tương lai', 'K2AI'],
+  'metaverse-vr-education'
+);
 
 export default function MetaverseVREducationMainPage() {
   const moduleData = {

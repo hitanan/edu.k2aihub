@@ -1,44 +1,19 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { aiArtLessons, AiArtLesson } from '@/data/ai-art-creative-tech';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
-import type { Metadata } from 'next';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export const metadata: Metadata = {
-  title: createTitle('AI Art & Creative Technology - Sáng Tạo Nghệ Thuật AI'),
-  description: createDescription(
-    'Khóa học AI Art và Creative Technology. Học Midjourney, DALL-E, Stable Diffusion, AI video generation và creative workflows',
-  ),
-  keywords: createKeywords([
-    'ai art',
-    'midjourney',
-    'dall-e',
-    'stable diffusion',
-    'ai video',
-    'creative technology',
-    'digital art',
-    'prompt engineering',
-  ]),
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: createTitle('AI Art & Creative Technology - Sáng Tạo Nghệ Thuật AI'),
-    description: createDescription(
-      'Master AI art generation và creative technology với các công cụ hàng đầu',
-    ),
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'AI Art & Creative Technology - Nghệ Thuật AI',
+  'Khóa học AI Art và Creative Technology. Từ Midjourney đến generative art',
+  ['ai art', 'generative art', 'midjourney', 'dall-e', 'creative technology', 'digital art'],
+  'ai-art-creative-tech'
+);
 
 // Convert AiArtLesson to BaseLessonData interface
 function convertToLesson(aiLesson: AiArtLesson): BaseLessonData {

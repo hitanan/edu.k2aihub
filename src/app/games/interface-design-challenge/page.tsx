@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Interface Design Challenge - Thử Thách Thiết Kế Giao Diện'),
-  description: createDescription('Thử thách thiết kế giao diện tương tác với các bài tập thực tế. Phát triển kỹ năng UI/UX qua các dự án từ cơ bản đến nâng cao.'),
-  keywords: ['interface design', 'UI challenge', 'thiết kế giao diện', 'UI/UX design', 'design challenge'],
-  openGraph: {
-    title: 'Interface Design Challenge | K2AiHub',
-    description: 'Thử thách thiết kế giao diện tương tác với dự án thực tế',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('interface-design-challenge');
 
 export default function InterfaceDesignChallengePage() {
   return (

@@ -1,6 +1,8 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
@@ -30,43 +32,12 @@ function convertToBaseLessonData(lesson: AdvancedAILesson): BaseLessonData {
   };
 }
 
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Advanced AI & Machine Learning - Trí Tuệ Nhân Tạo Nâng Cao',
-    ),
-    description: createDescription(
-      'Master advanced AI techniques: Deep Learning, Computer Vision, NLP, Reinforcement Learning. Phát triển AI systems production-ready cho Vietnamese market với focus trên ethics và cultural sensitivity.',
-    ),
-    keywords: [
-      'advanced ai',
-      'deep learning',
-      'machine learning',
-      'computer vision',
-      'nlp',
-      'reinforcement learning',
-      'ai ethics',
-      'vietnamese ai',
-      'production ai',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title:
-        'Advanced AI & Machine Learning - Trí Tuệ Nhân Tạo Nâng Cao | K2AI',
-      description:
-        'Master cutting-edge AI technologies và deploy production systems trong Vietnamese market. Deep Learning, Computer Vision, NLP, RL.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Advanced AI & Machine Learning - AI Nâng Cao',
+  'Khóa học AI và Machine Learning nâng cao. Deep Learning, Neural Networks và AI Applications',
+  ['advanced ai', 'machine learning', 'deep learning', 'neural networks', 'ai applications'],
+  'advanced-ai'
+);
 
 export default function AdvancedAIPage() {
   const moduleData = {

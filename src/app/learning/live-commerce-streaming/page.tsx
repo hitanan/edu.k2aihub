@@ -1,40 +1,16 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { liveCommerceStreamingLessons } from '@/data/live-commerce-streaming';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Live Commerce & Streaming - Bán Hàng Livestream'),
-  description: createDescription(
-    'Master live commerce & streaming strategies. Build successful livestream business trên TikTok, Facebook và các platforms khác.',
-  ),
-  keywords: [
-    'live commerce',
-    'livestream selling',
-    'social commerce',
-    'tiktok shop',
-    'facebook live',
-    'streaming business',
-    'vietnamese livestream',
-    'online selling',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Live Commerce & Streaming Mastery',
-    description: 'Complete guide to successful livestream selling business',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Live Commerce & Streaming - Bán Hàng Livestream',
+  'Master live commerce & streaming strategies. Build successful livestream business trên TikTok, Facebook và các platforms khác.',
+  ['live commerce', 'livestream selling', 'social commerce', 'tiktok shop', 'facebook live', 'streaming business', 'vietnamese livestream', 'online selling', 'k2aihub'],
+  'live-commerce-streaming'
+);
 
 export default function LiveCommerceStreamingPage() {
   const moduleData: ModuleData = {

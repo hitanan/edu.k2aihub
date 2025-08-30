@@ -19,7 +19,7 @@ import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 export const metadata: Metadata = {
   title: createTitle('Về Chúng Tôi - Sứ Mệnh và Phương Pháp Giáo Dục'),
   description: createDescription(
-    'Tìm hiểu về K2AI - nền tảng học tập thông minh với sứ mệnh dân chủ hóa giáo dục chất lượng cao qua công nghệ AI. Khám phá phương pháp giáo dục tiên tiến và cách tiếp cận unique của chúng tôi.',
+    'Tìm hiểu về K2AI - nền tảng học tập thông minh với sứ mệnh cung cấp nền tảng giáo dục chất lượng cao qua công nghệ AI. Khám phá phương pháp giáo dục tiên tiến và cách tiếp cận unique của chúng tôi.',
   ),
   keywords: createKeywords([
     'về K2AI',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     locale: 'vi_VN',
     siteName: 'K2AiHub - Nền tảng học tập thông minh',
 
-    title: 'Về K2AI - Sứ Mệnh Dân Chủ Hóa Giáo Dục Thông Minh',
+    title: 'Về K2AI - Sứ Mệnh cung cấp nền tảng Giáo Dục Thông Minh',
     description:
       'Khám phá sứ mệnh, phương pháp và cách tiếp cận độc đáo của K2AI trong việc cung cấp giáo dục chất lượng cao với công nghệ AI tiên tiến.',
     type: 'website',
@@ -161,8 +161,8 @@ const AboutPage = () => {
               <span className="bg-gradient-to-r from-yellow-400 to-pink-400 bg-clip-text text-transparent">K2AI</span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Nền tảng học tập thông minh với sứ mệnh <strong>dân chủ hóa giáo dục chất lượng cao</strong>
-              thông qua công nghệ AI tiên tiến và phương pháp giảng dạy đổi mới
+              Nền tảng học tập thông minh với sứ mệnh <strong>cung cấp nền tảng giáo dục chất lượng cao</strong> thông
+              qua công nghệ AI tiên tiến và phương pháp giảng dạy đổi mới
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

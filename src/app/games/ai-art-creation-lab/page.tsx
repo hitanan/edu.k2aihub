@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('AI Art Creation Lab - Phòng Thí Nghiệm Tạo Nghệ Thuật AI'),
-  description: createDescription('Sáng tạo nghệ thuật với AI tools - Midjourney, DALL-E, Stable Diffusion. Học prompt engineering và digital art techniques.'),
-  keywords: ['AI art', 'Midjourney', 'DALL-E', 'Stable Diffusion', 'prompt engineering', 'digital art'],
-  openGraph: {
-    title: 'AI Art Creation Lab | K2AiHub',
-    description: 'Phòng thí nghiệm sáng tạo nghệ thuật với AI công nghệ tiên tiến',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('ai-art-creation-lab');
 
 export default function AIArtCreationLabPage() {
   return (

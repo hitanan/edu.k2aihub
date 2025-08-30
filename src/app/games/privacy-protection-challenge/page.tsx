@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Privacy Protection Challenge - Trò Chơi Bảo Vệ Quyền Riêng Tư'),
-  description: createDescription('Thử thách bảo vệ quyền riêng tư trong thế giới số. Học cách cấu hình bảo mật, nhận biết rủi ro và bảo vệ thông tin cá nhân hiệu quả.'),
-  keywords: ['privacy protection', 'data security', 'bảo mật thông tin', 'quyền riêng tư', 'game bảo mật'],
-  openGraph: {
-    title: 'Privacy Protection Challenge | K2AiHub',
-    description: 'Thử thách bảo vệ quyền riêng tư trong thế giới số với các kịch bản thực tế',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('privacy-protection-challenge');
 
 export default function PrivacyProtectionChallengePage() {
   return (

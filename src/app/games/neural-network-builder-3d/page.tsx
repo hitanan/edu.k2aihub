@@ -1,26 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
 import NeuralNetworkBuilder3D from '@/components/games/NeuralNetworkBuilder3D';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Neural Network Builder 3D - Xây dựng mạng neural 3D tương tác'),
-  description: createDescription('Thiết kế, huấn luyện và visualize neural networks trong môi trường 3D. Từ perceptron cơ bản đến deep learning với datasets thực tế và Vietnamese AI applications.'),
-  keywords: ['neural network', '3D AI builder', 'machine learning', 'deep learning', 'AI education', 'artificial intelligence', 'Vietnamese AI', 'data science'],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Neural Network Builder 3D - Xây dựng mạng neural 3D',
-    description: 'Môi trường 3D để học AI và machine learning. Tạo neural networks với visualization thời gian thực.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createGameMetadata('neural-network-builder-3d');
 
 export default function NeuralNetworkBuilder3DGame() {
   return (

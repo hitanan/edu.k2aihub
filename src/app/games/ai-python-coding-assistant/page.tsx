@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('AI Python Coding Assistant - Trợ Lý Lập Trình Python AI'),
-  description: createDescription('Học Python programming với AI assistant. Code completion, debugging, optimization và advanced AI integration cho development.'),
-  keywords: ['Python programming', 'AI assistant', 'code completion', 'debugging', 'machine learning', 'development'],
-  openGraph: {
-    title: 'AI Python Coding Assistant | K2AiHub',
-    description: 'Trợ lý lập trình Python AI thông minh với code assistance',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('ai-python-coding-assistant');
 
 export default function AIPythonCodingAssistantPage() {
   return (

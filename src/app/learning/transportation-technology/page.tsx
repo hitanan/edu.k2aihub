@@ -1,42 +1,18 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { transportationTechnologyLessons } from '@/data/transportation-technology';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Transportation Technology - Công Nghệ Giao Thông'),
-  description: createDescription(
-    'Master smart transportation systems và autonomous vehicle technology. Học traffic optimization và mobility solutions trong smart cities.',
-  ),
-  keywords: [
-    'transportation technology',
-    'smart transportation',
-    'autonomous vehicles',
-    'traffic management',
-    'mobility solutions',
-    'logistics tech',
-    'vietnam transportation',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {
-    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-    title: 'Transportation Technology & Smart Mobility',
-    description:
-      'Master intelligent transportation systems and future mobility solutions',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Transportation Technology - Công Nghệ Giao Thông',
+  'Master smart transportation systems và autonomous vehicle technology. Học traffic optimization và mobility solutions trong smart cities.',
+  ['transportation technology', 'smart transportation', 'autonomous vehicles', 'traffic management', 'mobility solutions', 'logistics tech', 'vietnam transportation', 'k2aihub'],
+  'transportation-technology'
+);
 
 export default function TransportationTechnologyPage() {
   const moduleData: ModuleData = {

@@ -1,29 +1,9 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 import MedicalDeviceDesigner3D from '@/components/games/MedicalDeviceDesigner3D';
 import { Suspense } from 'react';
 
-export const metadata: Metadata = {
-  title: createTitle('Medical Device Designer 3D - Thiết Kế Thiết Bị Y Tế 3D'),
-  description: createDescription(
-    'Thiết kế và đặt các thiết bị y tế vào cơ thể người trong môi trường 3D. Học về công nghệ y sinh, kỹ thuật y học và các ứng dụng của thiết bị y tế hiện đại.',
-  ),
-  keywords: [
-    'medical device 3d',
-    'thiết bị y tế',
-    'biomedical engineering',
-    'medical technology',
-    'healthcare innovation',
-    'medical simulation',
-    'anatomy 3d',
-    'medical education Vietnam',
-  ],
-  openGraph: {
-    title: 'Medical Device Designer 3D - Thiết Kế Thiết Bị Y Tế 3D',
-    description: 'Trải nghiệm thiết kế và đặt thiết bị y tế trong môi trường 3D với mô hình cơ thể người chân thực',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('medical-device-designer-3d');
 
 export default function MedicalDeviceDesigner3DPage() {
   return (

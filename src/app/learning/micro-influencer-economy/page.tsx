@@ -1,39 +1,16 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { microInfluencerEconomyLessons } from '@/data/micro-influencer-economy';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Micro-Influencer Economy - Kinh Tế Micro-Influencer'),
-  description: createDescription(
-    'Master micro-influencer marketing strategies. Learn to build authentic partnerships và monetize personal brand effectively.',
-  ),
-  keywords: [
-    'micro influencer',
-    'influencer marketing',
-    'personal branding',
-    'social media monetization',
-    'creator economy',
-    'vietnamese influencers',
-    'brand partnerships',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Micro-Influencer Economy Master Course',
-    description: 'Build successful micro-influencer business và brand partnerships',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Micro-Influencer Economy - Kinh Tế Micro-Influencer',
+  'Master micro-influencer marketing strategies. Learn to build authentic partnerships và monetize personal brand effectively.',
+  ['micro influencer', 'influencer marketing', 'personal branding', 'social media monetization', 'creator economy', 'vietnamese influencers', 'brand partnerships', 'k2aihub'],
+  'micro-influencer-economy'
+);
 
 export default function MicroInfluencerEconomyPage() {
   const moduleData: ModuleData = {

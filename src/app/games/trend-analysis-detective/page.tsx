@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Trend Analysis Detective - Thám Tử Phân Tích Xu Hướng'),
-  description: createDescription('Trở thành thám tử phân tích xu hướng - khám phá và dự đoán các xu hướng công nghệ, xã hội thông qua điều tra và phân tích dữ liệu.'),
-  keywords: ['trend analysis', 'data detective', 'phân tích xu hướng', 'điều tra dữ liệu', 'market research'],
-  openGraph: {
-    title: 'Trend Analysis Detective | K2AiHub',
-    description: 'Khám phá và dự đoán xu hướng thông qua kỹ năng thám tử phân tích dữ liệu',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('trend-analysis-detective');
 
 export default function TrendAnalysisDetectivePage() {
   return (

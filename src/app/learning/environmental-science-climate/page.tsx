@@ -1,41 +1,16 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { environmentalClimateLessons } from '@/data/environmental-science-climate';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Environmental Science & Climate Change - Khoa Học Môi Trường'),
-  description: createDescription(
-    'Master environmental science & climate change solutions. Learn sustainable practices và green technology for Vietnam.',
-  ),
-  keywords: [
-    'environmental science',
-    'climate change',
-    'sustainability',
-    'green technology',
-    'renewable energy',
-    'vietnam environment',
-    'eco solutions',
-    'climate action',
-    'environmental conservation',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Environmental Science & Climate Solutions',
-    description: 'Comprehensive environmental education for sustainable future',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Environmental Science & Climate Change - Khoa Học Môi Trường',
+  'Master environmental science & climate change solutions. Learn sustainable practices và green technology for Vietnam.',
+  ['environmental science', 'climate change', 'sustainability', 'green technology', 'renewable energy', 'vietnam environment', 'eco solutions', 'climate action', 'environmental conservation', 'k2aihub'],
+  'environmental-science-climate'
+);
 
 export default function EnvironmentalScienceClimatePage() {
   const moduleData: ModuleData = {

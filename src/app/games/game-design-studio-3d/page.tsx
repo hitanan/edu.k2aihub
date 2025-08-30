@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Game Design Studio 3D - Studio Thiết Kế Game 3D'),
-  description: createDescription('Tạo ra những game 3D tuyệt vời với Unity, Unreal Engine. Học game design, programming, 3D modeling và level design.'),
-  keywords: ['game development', 'Unity', 'Unreal Engine', '3D modeling', 'game design', 'level design'],
-  openGraph: {
-    title: 'Game Design Studio 3D | K2AiHub',
-    description: 'Studio thiết kế và phát triển game 3D chuyên nghiệp',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('game-design-studio-3d');
 
 export default function GameDesignStudio3DPage() {
   return (

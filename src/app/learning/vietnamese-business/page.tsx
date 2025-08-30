@@ -1,7 +1,8 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { vietnameseBusinessLessons } from '@/data/vietnamese-business';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import type { VietnameseBusinessLesson } from '@/data/vietnamese-business';
 
@@ -42,39 +43,12 @@ function convertVietnameseBusinessToBase(
 }
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Vietnamese Business & Entrepreneurship - Kinh doanh và Khởi nghiệp Việt Nam',
-    ),
-    description: createDescription(
-      'Khóa học kinh doanh và khởi nghiệp tại Việt Nam: startup ecosystem, quy định pháp lý, FinTech và e-commerce strategies. Thành công trong thị trường Việt Nam.',
-    ),
-    keywords: [
-      'kinh doanh việt nam',
-      'startup vietnam',
-      'fintech vietnam',
-      'e-commerce vietnam',
-      'doanh nghiệp việt nam',
-      'đầu tư việt nam',
-      'K2AiHub',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Vietnamese Business & Entrepreneurship - K2AiHub',
-      description:
-        'Học cách thành công trong kinh doanh và khởi nghiệp tại thị trường Việt Nam',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Vietnamese Business & Entrepreneurship - K2AiHub',
+  'Khóa học kinh doanh và khởi nghiệp tại Việt Nam: startup ecosystem, quy định pháp lý, FinTech và e-commerce strategies. Thành công trong thị trường Việt Nam.',
+  ['kinh doanh việt nam', 'startup vietnam', 'fintech vietnam', 'e-commerce vietnam', 'doanh nghiệp việt nam', 'đầu tư việt nam', 'K2AiHub'],
+  'vietnamese-business'
+);
 
 export default function VietnameseBusinessPage() {
   const moduleData = {

@@ -1,41 +1,15 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { MCPLessons } from '@/data/mcp';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('MCP - Model Context Protocol'),
-    description: createDescription(
-      'Học cách tích hợp AI tools với Atlassian qua Model Context Protocol. Setup Jira automation, VS Code integration, và office productivity workflows với MCP.',
-    ),
-    keywords: [
-      'MCP',
-      'Model Context Protocol',
-      'Atlassian integration',
-      'Jira automation',
-      'VS Code AI',
-      'Cursor IDE',
-      'Office productivity',
-      'AI workflows',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'MCP - Model Context Protocol | K2AiHub',
-      description:
-        'Master Model Context Protocol để tích hợp AI tools với Atlassian Jira, VS Code, và office productivity platforms.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'MCP - Model Context Protocol',
+  'Học cách tích hợp AI tools với Atlassian qua Model Context Protocol. Setup Jira automation, VS Code integration, và office productivity workflows với MCP.',
+  ['MCP', 'Model Context Protocol', 'Atlassian integration', 'Jira automation', 'VS Code AI', 'Cursor IDE', 'Office productivity', 'AI workflows', 'K2AI'],
+  'mcp'
+);
 
 export default function MCPMainPage() {
   const moduleData = {

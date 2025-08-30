@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import {
   aiLearningApps,
   aiAppCategories,
@@ -9,12 +9,10 @@ import {
 } from '@/data/aiLearningApps';
 import YouTubePlayer from '@/components/YouTubePlayer';
 
-export const metadata: Metadata = {
-  title: createTitle('AI Hỗ Trợ Học Tập - Ứng Dụng AI Cho Giáo Dục'),
-  description: createDescription(
-    'Khám phá các ứng dụng AI hỗ trợ học tập hiệu quả. Từ PhotoMath, Gauth đến Duolingo - công cụ AI giúp học tập thông minh hơn',
-  ),
-  keywords: createKeywords([
+export const metadata: Metadata = createModuleMetadata(
+  'AI Hỗ Trợ Học Tập - Ứng Dụng AI Cho Giáo Dục',
+  'Khám phá các ứng dụng AI hỗ trợ học tập hiệu quả. Từ PhotoMath, Gauth đến Duolingo - công cụ AI giúp học tập thông minh hơn',
+  [
     'AI học tập',
     'PhotoMath',
     'Gauth',
@@ -22,24 +20,9 @@ export const metadata: Metadata = {
     'AI education',
     'study apps',
     'learning AI tools',
-  ]),
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: createTitle('AI Hỗ Trợ Học Tập - Ứng Dụng AI Cho Giáo Dục'),
-    description: createDescription(
-      'Tận dụng sức mạnh AI để học tập hiệu quả với các ứng dụng thông minh nhất',
-    ),
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+  ],
+  'ai/education-learning'
+);
 
 export default function AIAppsModule() {
   const moduleInfo = {

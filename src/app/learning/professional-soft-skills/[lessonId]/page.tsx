@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, professionalSoftSkillsLessons);
+  return generateLessonMetadata(lessonId, professionalSoftSkillsLessons, 'professional-soft-skills');
 }
 
 export default async function ProfessionalSoftSkillsLessonPage({ params }: PageProps) {

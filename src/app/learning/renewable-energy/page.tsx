@@ -1,9 +1,10 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import {
   renewableEnergyLessons,
   type RenewableEnergyLesson,
 } from '@/data/renewable-energy';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
@@ -35,40 +36,12 @@ function convertToBaseLessonData(
   };
 }
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Năng Lượng Tái Tạo - Công Nghệ Xanh Cho Tương Lai'),
-    description: createDescription(
-      'Khám phá công nghệ năng lượng tái tạo từ solar, wind đến energy storage. Học thiết kế hệ thống renewable energy cho Vietnam Net Zero 2050. Bao gồm wind turbines, photovoltaic systems, battery storage và smart grid technology.',
-    ),
-    keywords: [
-      'năng lượng tái tạo',
-      'solar energy',
-      'wind power',
-      'energy storage',
-      'smart grid',
-      'vietnam renewable',
-      'net zero 2050',
-      'green technology',
-      'sustainable energy',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Năng Lượng Tái Tạo - Công Nghệ Xanh Cho Tương Lai | K2AI',
-      description:
-        'Master renewable energy technologies và contribute to Vietnam Net Zero 2050 goals. Từ solar farms đến offshore wind, smart grid integration.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Năng Lượng Tái Tạo - Công Nghệ Xanh Cho Tương Lai',
+  'Khám phá công nghệ năng lượng tái tạo từ solar, wind đến energy storage. Học thiết kế hệ thống renewable energy cho Vietnam Net Zero 2050. Bao gồm wind turbines, photovoltaic systems, battery storage và smart grid technology.',
+  ['năng lượng tái tạo', 'solar energy', 'wind power', 'energy storage', 'smart grid', 'vietnam renewable', 'net zero 2050', 'green technology', 'sustainable energy', 'K2AI'],
+  'renewable-energy'
+);
 
 export default function RenewableEnergyPage() {
   const moduleData = {

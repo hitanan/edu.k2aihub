@@ -1,41 +1,18 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { ProgrammingRoboticsLessons } from '@/data/programming-robotics';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Programming & Robotics - Lập Trình Robot'),
-  description: createDescription(
-    'Học lập trình robot từ cơ bản đến nâng cao. Từ Python và C++ đến ROS và AI robotics, xây dựng robot thông minh.',
-  ),
-  keywords: [
-    'programming robotics',
-    'robot programming',
-    'ros programming',
-    'python robotics',
-    'c++ robotics',
-    'embedded systems',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Programming & Robotics',
-    description:
-      'Master robot programming from basics to advanced AI robotics',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Programming & Robotics - Lập Trình Robot',
+  'Học lập trình robot từ cơ bản đến nâng cao. Từ Python và C++ đến ROS và AI robotics, xây dựng robot thông minh.',
+  ['programming robotics', 'robot programming', 'ros programming', 'python robotics', 'c++ robotics', 'embedded systems', 'k2aihub'],
+  'programming-robotics'
+);
 
 export default function ProgrammingRoboticsPage() {
   const moduleData: ModuleData = {

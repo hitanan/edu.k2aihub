@@ -1,44 +1,19 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { arduinoLessons, ArduinoLesson } from '@/data/arduino';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
-import type { Metadata } from 'next';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export const metadata: Metadata = {
-  title: createTitle('Học Arduino & IoT - Lập Trình Phần Cứng'),
-  description: createDescription(
-    'Khóa học Arduino và IoT từ cơ bản đến nâng cao. Học cách lập trình vi điều khiển, kết nối cảm biến và xây dựng dự án IoT thông minh',
-  ),
-  keywords: createKeywords([
-    'arduino',
-    'IoT',
-    'vi điều khiển',
-    'cảm biến',
-    'lập trình phần cứng',
-    'electronics',
-    'ESP32',
-    'WiFi',
-  ]),
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: createTitle('Học Arduino & IoT - Lập Trình Phần Cứng'),
-    description: createDescription(
-      'Khám phá thế giới IoT và điện tử với Arduino - từ LED đơn giản đến hệ thống thông minh',
-    ),
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Arduino Programming - Lập Trình Arduino',
+  'Học lập trình Arduino từ cơ bản đến nâng cao. Tạo các project IoT, robotics và embedded systems',
+  ["arduino","programming","iot","embedded systems","microcontroller","sensors"],
+  'arduino'
+);
 
 // Convert ArduinoLesson to BaseLessonData interface
 function convertToLesson(arduinoLesson: ArduinoLesson): BaseLessonData {

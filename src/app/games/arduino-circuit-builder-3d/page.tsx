@@ -1,26 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
 import ArduinoCircuitBuilder3D from '@/components/games/ArduinoCircuitBuilder3D';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Arduino Circuit Builder 3D - Xây dựng mạch điện tử 3D tương tác'),
-  description: createDescription('Tạo và test các mạch Arduino trong môi trường 3D. Học điện tử thực hành với components ảo, validation mạch, và thử thách engineering từ cơ bản đến nâng cao.'),
-  keywords: ['Arduino', '3D circuit builder', 'electronics', 'điện tử', 'IoT', 'microcontroller', 'STEM education', 'engineering', 'maker'],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Arduino Circuit Builder 3D - Xây dựng mạch điện tử 3D',
-    description: 'Môi trường 3D tương tác để học Arduino và điện tử. Tạo mạch với validation thời gian thực.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createGameMetadata('arduino-circuit-builder-3d');
 
 export default function ArduinoCircuitBuilder3DGame() {
   return (

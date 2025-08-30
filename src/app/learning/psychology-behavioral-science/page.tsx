@@ -1,42 +1,18 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { psychologyBehavioralScienceLessons } from '@/data/psychology-behavioral-science';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Psychology & Behavioral Science - Tâm Lý Học Ứng Dụng'),
-  description: createDescription(
-    'Master behavioral psychology principles for technology design. Học user experience psychology và behavioral economics trong digital products.',
-  ),
-  keywords: [
-    'behavioral psychology',
-    'behavioral science',
-    'user psychology',
-    'behavioral economics',
-    'cognitive psychology',
-    'ux psychology',
-    'vietnam psychology',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {
-    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-    title: 'Psychology & Behavioral Science',
-    description:
-      'Master behavioral psychology for technology and business applications',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Psychology & Behavioral Science - Tâm Lý Học Ứng Dụng',
+  'Master behavioral psychology principles for technology design. Học user experience psychology và behavioral economics trong digital products.',
+  ['behavioral psychology', 'behavioral science', 'user psychology', 'behavioral economics', 'cognitive psychology', 'ux psychology', 'vietnam psychology', 'k2aihub'],
+  'psychology-behavioral-science'
+);
 
 export default function PsychologyBehavioralSciencePage() {
   const moduleData: ModuleData = {

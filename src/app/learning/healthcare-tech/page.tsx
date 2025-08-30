@@ -1,22 +1,17 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { healthcareTechLessons } from '@/data/healthcare-tech';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import { ModuleData } from '@/types';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Công Nghệ Y Tế & Sức Khỏe Số'),
-    description: createDescription('Khám phá công nghệ y tế tiên tiến từ telemedicine đến AI trong healthcare. Học cách ứng dụng digital health, data analytics và IoT để cải thiện chăm sóc sức khỏe.'),
-    keywords: createKeywords(['công nghệ y tế', 'sức khỏe số', 'telemedicine', 'health data analytics', 'IoT y tế', 'khởi nghiệp healthtech', 'sức khỏe tâm thần số', 'thiết bị y tế thông minh', 'chăm sóc từ xa', 'K2AI']),
-    openGraph: {
-      title: 'Công Nghệ Y Tế & Sức Khỏe Số | K2AI',
-      description: 'Nắm vững công nghệ y tế hiện đại từ telemedicine đến healthcare analytics. Phát triển kỹ năng chuyên môn trong lĩnh vực sức khỏe số tại Việt Nam.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Công Nghệ Y Tế & Sức Khỏe Số',
+  'Khám phá công nghệ y tế tiên tiến từ telemedicine đến AI trong healthcare. Học cách ứng dụng digital health, data analytics và IoT để cải thiện chăm sóc sức khỏe.',
+  ['công nghệ y tế', 'sức khỏe số', 'telemedicine', 'health data analytics', 'IoT y tế', 'khởi nghiệp healthtech', 'sức khỏe tâm thần số', 'thiết bị y tế thông minh', 'chăm sóc từ xa', 'K2AI'],
+  'healthcare-tech'
+);
 
 export default function HealthcareTechMainPage() {
   const moduleData: ModuleData = {

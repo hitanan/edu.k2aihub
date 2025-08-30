@@ -1,42 +1,18 @@
 import type { Metadata } from 'next';
+
+import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { socialListeningLessons } from '@/data/social-listening-crisis';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Social Listening & Crisis Management - Quản Lý Khủng Hoảng'),
-  description: createDescription(
-    'Master social listening và crisis management strategies. Học cách monitor brand reputation và handle PR crises effectively.',
-  ),
-  keywords: [
-    'social listening',
-    'crisis management',
-    'brand reputation',
-    'pr crisis',
-    'social media monitoring',
-    'damage control',
-    'vietnam social media',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Social Listening & Crisis Management',
-    description:
-      'Master reputation monitoring and crisis response in social media',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Social Listening & Crisis Management - Quản Lý Khủng Hoảng',
+  'Master social listening và crisis management strategies. Học cách monitor brand reputation và handle PR crises effectively.',
+  ['social listening', 'crisis management', 'brand reputation', 'pr crisis', 'social media monitoring', 'damage control', 'vietnam social media'],
+  'social-listening-crisis'
+);
 
 export default function SocialListeningCrisisPage() {
   const moduleData: ModuleData = {

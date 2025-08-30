@@ -1,19 +1,14 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate, { ModuleData } from '@/components/learning/ModulePageTemplate';
 import { criticalThinkingLessons } from '@/data/critical-thinking';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo'),
-    description: createDescription('Phát triển kỹ năng tư duy phê phán và giải quyết vấn đề sáng tạo - kỹ năng cần thiết cho thế hệ trẻ Việt Nam trong thời đại số hóa.'),
-    keywords: ['tư duy phê phán', 'giải quyết vấn đề', 'design thinking', 'critical thinking', 'sáng tạo', 'K2AI'],
-    openGraph: {
-      title: 'Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo | K2AiHub',
-      description: 'Phát triển kỹ năng tư duy phê phán và giải quyết vấn đề sáng tạo với phương pháp hiện đại, case studies Việt Nam và exercises thực tế.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo',
+  'Phát triển kỹ năng tư duy phê phán và giải quyết vấn đề sáng tạo - kỹ năng cần thiết cho thế hệ trẻ Việt Nam trong thời đại số hóa.',
+  ['tư duy phê phán', 'giải quyết vấn đề', 'design thinking', 'critical thinking', 'sáng tạo', 'K2AI'],
+  'critical-thinking'
+);
 
 export default function CriticalThinkingMainPage() {
   const moduleData: ModuleData = {

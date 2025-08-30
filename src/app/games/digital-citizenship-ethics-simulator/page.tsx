@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Digital Citizenship Ethics Simulator - Trò Chơi Giáo Dục'),
-  description: createDescription('Mô phỏng tình huống đạo đức công dân số thông qua các kịch bản tương tác thực tế. Học cách đưa ra quyết định có trách nhiệm trong thế giới số.'),
-  keywords: ['digital citizenship', 'ethics simulator', 'công dân số', 'đạo đức công nghệ', 'game giáo dục'],
-  openGraph: {
-    title: 'Digital Citizenship Ethics Simulator | K2AiHub',
-    description: 'Mô phỏng tình huống đạo đức công dân số qua các kịch bản tương tác thực tế',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('digital-citizenship-ethics-simulator');
 
 export default function DigitalCitizenshipEthicsSimulatorPage() {
   return (

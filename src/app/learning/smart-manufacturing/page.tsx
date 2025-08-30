@@ -1,29 +1,16 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { smartManufacturingLessons } from '@/data/smart-manufacturing';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Sản Xuất Thông Minh & Công Nghiệp 4.0'),
-    description: createDescription('Nắm vững công nghệ Công nghiệp 4.0 để tận dụng cơ hội chuyển dịch sản xuất từ Trung Quốc sang Việt Nam. Tự động hóa, AI, IoT trong sản xuất.'),
-    keywords: ['công nghiệp 4.0', 'sản xuất thông minh', 'tự động hóa', 'IoT', 'AI', 'smart factory'],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Sản Xuất Thông Minh & Công Nghiệp 4.0 - K2AiHub',
-      description: 'Học công nghệ Công nghiệp 4.0 để tận dụng cơ hội từ China+1 strategy.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Sản Xuất Thông Minh & Công Nghiệp 4.0',
+  'Nắm vững công nghệ Công nghiệp 4.0 để tận dụng cơ hội chuyển dịch sản xuất từ Trung Quốc sang Việt Nam. Tự động hóa, AI, IoT trong sản xuất.',
+  ['công nghiệp 4.0', 'sản xuất thông minh', 'tự động hóa', 'IoT', 'AI', 'smart factory'],
+  'smart-manufacturing'
+);
 
 export default function SmartManufacturingMainPage() {
   const moduleData = {

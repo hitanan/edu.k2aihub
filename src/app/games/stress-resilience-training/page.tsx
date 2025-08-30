@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Stress & Resilience Training - Huấn Luyện Quản Lý Căng Thẳng'),
-  description: createDescription('Chương trình huấn luyện quản lý căng thẳng và xây dựng sức bền tâm lý. Học các kỹ thuật thực tế để đối phó với áp lực cuộc sống.'),
-  keywords: ['stress management', 'resilience training', 'quản lý căng thẳng', 'sức khỏe tâm thần', 'mindfulness'],
-  openGraph: {
-    title: 'Stress & Resilience Training | K2AiHub',
-    description: 'Chương trình huấn luyện quản lý căng thẳng và xây dựng sức bền tâm lý',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('stress-resilience-training');
 
 export default function StressResilienceTrainingPage() {
   return (

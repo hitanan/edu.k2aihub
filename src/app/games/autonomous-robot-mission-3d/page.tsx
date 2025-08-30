@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Autonomous Robot Mission 3D - Nhiệm Vụ Robot Tự Động 3D'),
-  description: createDescription('Điều khiển robot autonomous trong missions 3D. Pathfinding, computer vision, sensor fusion và advanced AI navigation systems.'),
-  keywords: ['autonomous robot', 'robotics', '3D navigation', 'computer vision', 'AI pathfinding', 'sensor fusion'],
-  openGraph: {
-    title: 'Autonomous Robot Mission 3D | K2AiHub',
-    description: 'Robot tự động thực hiện missions trong môi trường 3D',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('autonomous-robot-mission-3d');
 
 export default function AutonomousRobotMission3DPage() {
   return (

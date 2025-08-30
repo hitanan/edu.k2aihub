@@ -1,39 +1,16 @@
+import type { Metadata } from 'next';
+
+import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { nanotechnologyLessons } from '@/data/nanotechnology';
-import { createTitle, createDescription } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-// Generate metadata for nanotechnology module
-export async function generateMetadata() {
-  return {
-    title: createTitle('Công Nghệ Nano & Vật Liệu Tiên Tiến'),
-    description: createDescription(
-      'Khám phá thế giới công nghệ nano với các ứng dụng tiên tiến trong y học, điện tử, môi trường và năng lượng. Học cách tổng hợp vật liệu nano, phát triển thiết bị quantum và tạo ra các giải pháp bền vững cho tương lai.',
-    ),
-    keywords: [
-      'công nghệ nano',
-      'vật liệu tiên tiến',
-      'nanomedicine',
-      'quantum devices',
-      'nanotechnology vietnam',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Công Nghệ Nano & Vật Liệu Tiên Tiến | K2AiHub',
-      description:
-        'Chương trình học công nghệ nano toàn diện với ứng dụng thực tế trong y học, điện tử và môi trường',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Công Nghệ Nano & Vật Liệu Tiên Tiến',
+  'Khám phá thế giới công nghệ nano với các ứng dụng tiên tiến trong y học, điện tử, môi trường và năng lượng. Học cách tổng hợp vật liệu nano.',
+  ['công nghệ nano', 'vật liệu tiên tiến', 'nanomedicine', 'quantum devices', 'nanotechnology vietnam', 'K2AI'],
+  'nanotechnology'
+);
 
 export default function NanotechnologyPage() {
   const moduleData = {

@@ -1,22 +1,17 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { legalTechLessons } from '@/data/legal-technology';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import { ModuleData } from '@/types';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Legal Technology - Công Nghệ Pháp Lý'),
-    description: createDescription('Ứng dụng công nghệ trong lĩnh vực pháp lý từ contract automation đến AI legal research. Tối ưu hóa quy trình pháp lý với legal tech solutions trong hệ thống luật Việt Nam.'),
-    keywords: createKeywords(['legal technology', 'công nghệ pháp lý', 'contract automation', 'legal research AI', 'case management', 'compliance technology', 'intellectual property management', 'legal tech vietnam', 'K2AI']),
-    openGraph: {
-      title: 'Legal Technology - Công Nghệ Pháp Lý | K2AI',
-      description: 'Khám phá và ứng dụng các giải pháp công nghệ tiên tiến trong lĩnh vực pháp lý. Từ tự động hóa hợp đồng đến AI research và compliance management.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Legal Technology - Công Nghệ Pháp Lý',
+  'Ứng dụng công nghệ trong lĩnh vực pháp lý từ contract automation đến AI legal research. Tối ưu hóa quy trình pháp lý với legal tech solutions trong hệ thống luật Việt Nam.',
+  ['legal technology', 'công nghệ pháp lý', 'contract automation', 'legal research AI', 'case management', 'compliance technology', 'intellectual property management', 'legal tech vietnam', 'K2AI'],
+  'legal-technology'
+);
 
 export default function LegalTechnologyMainPage() {
   const moduleData: ModuleData = {

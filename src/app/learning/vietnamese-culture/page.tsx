@@ -1,39 +1,16 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { K2Module } from '@/data/moduleNavigation';
 import { vietnameseCultureLessons } from '@/data/vietnamese-culture';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Văn Hóa Việt Nam & Di Sản Số'),
-    description: createDescription(
-      'Học cách số hóa và bảo tồn di sản văn hóa Việt Nam. Phát triển tourism technology và cultural experience platforms cho thị trường Việt Nam.',
-    ),
-    keywords: [
-      'văn hóa việt nam',
-      'di sản số',
-      'tourism technology',
-      'cultural preservation',
-      'digital heritage',
-      'vietnamese culture',
-      'k2aihub',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Văn Hóa Việt Nam & Di Sản Số | K2AiHub',
-      description:
-        'Khóa học toàn diện về digital heritage preservation và tourism technology cho thị trường Việt Nam',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Văn Hóa Việt Nam & Di Sản Số',
+  'Học cách số hóa và bảo tồn di sản văn hóa Việt Nam bằng công nghệ hiện đại',
+  ['văn hóa việt nam', 'di sản số', 'tourism technology', 'cultural preservation', 'digital heritage'],
+  'vietnamese-culture'
+);
 
 export default function VietnameseCulturePage() {
   const moduleData = {

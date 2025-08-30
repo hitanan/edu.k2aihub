@@ -1,42 +1,18 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { energyManagementLessons } from '@/data/energy-management-smart-grid';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Energy Management & Smart Grid - Quản Lý Năng Lượng Thông Minh'),
-  description: createDescription(
-    'Master smart grid technology và energy management systems. Học renewable energy integration và grid optimization trong sustainable future.',
-  ),
-  keywords: [
-    'energy management',
-    'smart grid',
-    'renewable energy',
-    'grid optimization',
-    'energy efficiency',
-    'sustainability',
-    'vietnam energy',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {
-    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-    title: 'Energy Management & Smart Grid',
-    description:
-      'Master renewable energy systems and smart grid technology',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Energy Management & Smart Grid - Quản Lý Năng Lượng Thông Minh',
+  'Master smart grid technology và energy management systems. Học renewable energy integration và grid optimization trong sustainable future.',
+  ['energy management', 'smart grid', 'renewable energy', 'grid optimization', 'energy efficiency', 'sustainability', 'vietnam energy', 'k2aihub'],
+  'energy-management-smart-grid'
+);
 
 export default function EnergyManagementSmartGridPage() {
   const moduleData: ModuleData = {

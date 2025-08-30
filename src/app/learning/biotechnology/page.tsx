@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
@@ -8,38 +9,14 @@ import {
   type BiotechnologyLesson,
 } from '@/data/biotechnology';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Biotechnology & Life Sciences - Công Nghệ Sinh Học'),
-  description: createDescription(
-    'Khóa học Biotechnology và Life Sciences chuyên sâu. Từ gene editing đến medical applications, khám phá tương lai của sinh học và y học',
-  ),
-  keywords: [
-    'biotechnology',
-    'gene editing',
-    'crispr',
-    'medical technology',
-    'life sciences',
-    'genetic engineering',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Biotechnology & Life Sciences',
-    description:
-      'Khám phá công nghệ sinh học hiện đại và ứng dụng trong y học với K2AiHub',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Biotechnology & Life Sciences - Công Nghệ Sinh Học',
+  'Khóa học Biotechnology và Life Sciences chuyên sâu. Từ gene editing đến medical applications, khám phá tương lai của sinh học và y học',
+  ['biotechnology', 'gene editing', 'crispr', 'medical technology', 'life sciences', 'genetic engineering'],
+  'biotechnology'
+);
 
 // Convert BiotechnologyLesson to BaseLessonData interface
 function convertToLesson(

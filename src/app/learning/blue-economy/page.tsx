@@ -1,29 +1,16 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { blueEconomyLessons } from '@/data/blue-economy';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Kinh Tế Biển Xanh & Công Nghệ Biển'),
-    description: createDescription('Khóa học toàn diện về kinh tế biển bền vững, từ nuôi trồng thủy sản thông minh đến năng lượng tái tạo biển. Khai thác tiềm năng 3.200km bờ biển Việt Nam.'),
-    keywords: ['kinh tế biển', 'nuôi trồng thủy sản', 'năng lượng biển', 'công nghệ biển', 'IoT', 'AI', 'bền vững'],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Kinh Tế Biển Xanh & Công Nghệ Biển - K2AiHub',
-      description: 'Học cách khai thác bền vững tiềm năng biển của Việt Nam với công nghệ thông minh.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Kinh Tế Biển Xanh & Công Nghệ Biển',
+  'Khóa học toàn diện về kinh tế biển bền vững, từ nuôi trồng thủy sản thông minh đến năng lượng tái tạo biển. Khai thác tiềm năng 3.200km bờ biển Việt Nam.',
+  ['kinh tế biển', 'nuôi trồng thủy sản', 'năng lượng biển', 'công nghệ biển', 'IoT', 'AI', 'bền vững'],
+  'blue-economy'
+);
 
 export default function BlueEconomyMainPage() {
   const moduleData = {

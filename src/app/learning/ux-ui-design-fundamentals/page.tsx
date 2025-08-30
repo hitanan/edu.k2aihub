@@ -1,20 +1,15 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { uxuiDesignLessons } from '@/data/ux-ui-design-fundamentals';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Cơ Bản Thiết Kế UX/UI'),
-    description: createDescription('Học các nguyên tắc thiết kế UX/UI, user research, visual design và design thinking để tạo ra sản phẩm số thân thiện người dùng.'),
-    keywords: ['ux design', 'ui design', 'user experience', 'design thinking', 'K2AiHub'],
-    openGraph: {
-      title: 'Cơ Bản Thiết Kế UX/UI | K2AiHub',
-      description: 'Học các nguyên tắc thiết kế UX/UI, user research, visual design và design thinking để tạo ra sản phẩm số thân thiện người dùng.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Cơ Bản Thiết Kế UX/UI',
+  'Học các nguyên tắc thiết kế UX/UI, user research, visual design và design thinking để tạo ra sản phẩm số thân thiện người dùng.',
+  ['ux design', 'ui design', 'user experience', 'design thinking', 'K2AiHub'],
+  'ux-ui-design-fundamentals'
+);
 
 export default function UXUIDesignMainPage() {
   const moduleData = {

@@ -1,9 +1,10 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import {
   environmentalDataScienceLessons,
   type EnvironmentalDataScienceLesson,
 } from '@/data/environmental-data-science';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
@@ -35,41 +36,12 @@ function convertToBaseLessonData(
   };
 }
 
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Environmental Data Science - Khoa Học Dữ Liệu Môi Trường',
-    ),
-    description: createDescription(
-      'Master environmental data science: climate analysis, air/water quality monitoring, satellite remote sensing, ML for environmental prediction. Vietnamese environmental applications.',
-    ),
-    keywords: [
-      'environmental data science',
-      'climate analysis',
-      'remote sensing',
-      'air quality monitoring',
-      'environmental machine learning',
-      'vietnamese environment',
-      'sustainability',
-      'GIS',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Environmental Data Science - Khoa Học Dữ Liệu Môi Trường | K2AI',
-      description:
-        'Master environmental data analysis, remote sensing, ML for Vietnamese environmental challenges.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Environmental Data Science - Khoa Học Dữ Liệu Môi Trường | K2AI',
+  'Master environmental data science: climate analysis, air/water quality monitoring, satellite remote sensing, ML for environmental prediction. Vietnamese environmental applications.',
+  ['environmental data science', 'climate analysis', 'remote sensing', 'air quality monitoring', 'environmental machine learning', 'vietnamese environment', 'sustainability', 'GIS', 'K2AI'],
+  'environmental-data-science'
+);
 
 export default function EnvironmentalDataSciencePage() {
   const moduleData = {

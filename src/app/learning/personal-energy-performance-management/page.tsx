@@ -1,20 +1,15 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { energyManagementLessons } from '@/data/personal-energy-performance-management';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Quản Lý Năng Lượng và Hiệu Suất Cá Nhân'),
-    description: createDescription('Học cách quản lý năng lượng cá nhân, optimize performance, xây dựng resilience và duy trì sức khỏe trong cuộc sống và công việc.'),
-    keywords: ['energy management', 'performance optimization', 'stress resilience', 'wellness', 'K2AiHub'],
-    openGraph: {
-      title: 'Quản Lý Năng Lượng và Hiệu Suất Cá Nhân | K2AiHub',
-      description: 'Học cách quản lý năng lượng cá nhân, optimize performance, xây dựng resilience và duy trì sức khỏe trong cuộc sống và công việc.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Quản Lý Năng Lượng và Hiệu Suất Cá Nhân',
+  'Học cách quản lý năng lượng cá nhân, optimize performance, xây dựng resilience và duy trì sức khỏe trong cuộc sống và công việc.',
+  ['energy management', 'performance optimization', 'stress resilience', 'wellness', 'K2AiHub'],
+  'personal-energy-performance-management'
+);
 
 export default function EnergyManagementMainPage() {
   const moduleData = {

@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Physics Experiment Lab 3D - Phòng Thí Nghiệm Vật Lý 3D'),
-  description: createDescription('Khám phá vật lý qua thí nghiệm 3D tương tác. Mechanics, thermodynamics, electromagnetism, quantum physics và modern physics.'),
-  keywords: ['physics experiments', 'vật lý 3D', 'mechanics', 'thermodynamics', 'quantum physics', 'virtual lab'],
-  openGraph: {
-    title: 'Physics Experiment Lab 3D | K2AiHub',
-    description: 'Phòng thí nghiệm vật lý 3D với thí nghiệm tương tác chân thực',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('physics-experiment-lab-3d');
 
 export default function PhysicsExperimentLab3DPage() {
   return (

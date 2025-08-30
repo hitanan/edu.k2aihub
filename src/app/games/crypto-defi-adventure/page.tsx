@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Crypto & DeFi Adventure - Cuộc Phiêu Lưu Crypto và DeFi'),
-  description: createDescription('Khám phá thế giới cryptocurrency và DeFi thông qua trải nghiệm tương tác. Học trading, staking, yield farming và blockchain technology.'),
-  keywords: ['cryptocurrency', 'DeFi', 'blockchain', 'crypto trading', 'yield farming', 'NFT'],
-  openGraph: {
-    title: 'Crypto & DeFi Adventure | K2AiHub',
-    description: 'Khám phá thế giới crypto và DeFi thông qua trải nghiệm tương tác',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('crypto-defi-adventure');
 
 export default function CryptoDeFiAdventurePage() {
   return (

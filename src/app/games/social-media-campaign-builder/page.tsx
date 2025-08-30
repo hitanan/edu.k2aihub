@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Social Media Campaign Builder - Xây Dựng Chiến Dịch Mạng Xã Hội'),
-  description: createDescription('Tạo và quản lý các chiến dịch marketing mạng xã hội thành công. Học strategy, content creation và analytics cho các nền tảng social media.'),
-  keywords: ['social media campaign', 'digital marketing', 'chiến dịch mạng xã hội', 'marketing content', 'social media strategy'],
-  openGraph: {
-    title: 'Social Media Campaign Builder | K2AiHub',
-    description: 'Xây dựng chiến dịch marketing mạng xã hội thành công từ A-Z',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('social-media-campaign-builder');
 
 export default function SocialMediaCampaignBuilderPage() {
   return (

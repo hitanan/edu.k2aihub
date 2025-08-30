@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('UX Design Studio 3D - Studio Thiết Kế Trải Nghiệm Người Dùng'),
-  description: createDescription('Studio thiết kế UX/UI 3D tương tác. Học cách tạo ra các giao diện và trải nghiệm người dùng xuất sắc thông qua mô phỏng thực tế.'),
-  keywords: ['UX design', 'UI design', 'user experience', 'thiết kế giao diện', '3D design studio'],
-  openGraph: {
-    title: 'UX Design Studio 3D | K2AiHub',
-    description: 'Studio thiết kế UX/UI 3D tương tác cho trải nghiệm học tập thực tế',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('ux-design-studio-3d');
 
 export default function UXDesignStudio3DPage() {
   return (

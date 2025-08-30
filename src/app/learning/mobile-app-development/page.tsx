@@ -1,22 +1,17 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { mobileAppLessons } from '@/data/mobile-app-development';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import { ModuleData } from '@/types';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Mobile App Development - Phát Triển Ứng Dụng Di Động'),
-    description: createDescription('Học phát triển ứng dụng mobile từ cơ bản đến nâng cao. Mastery React Native, iOS Swift, Android Kotlin, Flutter và App Store Optimization cho thị trường Việt Nam.'),
-    keywords: createKeywords(['mobile app development', 'react native', 'iOS swift', 'android kotlin', 'flutter', 'app store optimization', 'phát triển ứng dụng di động', 'lập trình mobile', 'K2AI']),
-    openGraph: {
-      title: 'Mobile App Development - Phát Triển Ứng Dụng Di Động | K2AI',
-      description: 'Nắm vững các công nghệ phát triển ứng dụng mobile hiện đại. Từ React Native đến native iOS/Android development và App Store optimization.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Mobile App Development - Phát Triển Ứng Dụng Di Động',
+  'Học phát triển ứng dụng mobile từ cơ bản đến nâng cao. Mastery React Native, iOS Swift, Android Kotlin, Flutter và App Store Optimization cho thị trường Việt Nam.',
+  ['mobile app development', 'react native', 'iOS swift', 'android kotlin', 'flutter', 'app store optimization', 'phát triển ứng dụng di động', 'lập trình mobile', 'K2AI'],
+  'mobile-app-development'
+);
 
 export default function MobileAppDevelopmentMainPage() {
   const moduleData: ModuleData = {

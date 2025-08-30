@@ -1,29 +1,16 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { dataDrivenAnalyticsLessons } from '@/data/data-driven-analytics';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Data-Driven Analytics'),
-    description: createDescription('Master advanced analytics techniques để extract actionable insights từ data và drive strategic business decisions. Học từ analytics fundamentals đến growth optimization.'),
-    keywords: ['data analytics', 'business intelligence', 'growth analytics', 'performance optimization', 'data visualization', 'phân tích dữ liệu', 'K2AI'],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Data-Driven Analytics - K2AiHub',
-      description: 'Advanced analytics cho strategic decision making và business growth',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Data-Driven Analytics',
+  'Master advanced analytics techniques để extract actionable insights từ data và drive strategic business decisions. Học từ analytics fundamentals đến growth optimization.',
+  ['data analytics', 'business intelligence', 'growth analytics', 'performance optimization', 'data visualization', 'phân tích dữ liệu', 'K2AI'],
+  'data-driven-analytics'
+);
 
 export default function DataDrivenAnalyticsMainPage() {
   const moduleData = {

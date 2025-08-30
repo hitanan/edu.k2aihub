@@ -1,9 +1,11 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import {
   aerospaceEngineeringLessons,
   type AerospaceEngineeringLesson,
 } from '@/data/aerospace-engineering';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
@@ -35,39 +37,12 @@ function convertToBaseLessonData(
   };
 }
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Aerospace Engineering - Kỹ Thuật Hàng Không Vũ Trụ'),
-    description: createDescription(
-      'Master aerospace engineering: aircraft design, satellite systems, space missions, avionics. Vietnamese aviation industry focus với Vietnam Airlines, Vietjet applications.',
-    ),
-    keywords: [
-      'aerospace engineering',
-      'aircraft design',
-      'satellite systems',
-      'space missions',
-      'avionics',
-      'vietnamese aviation',
-      'vietnam airlines',
-      'uav',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Aerospace Engineering - Kỹ Thuật Hàng Không Vũ Trụ | K2AI',
-      description:
-        'Master aerospace engineering cho Vietnamese aviation industry: aircraft design, satellite technology, space missions.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Aerospace Engineering - Kỹ Thuật Hàng Không',
+  'Khóa học Aerospace Engineering chuyên sâu. Aircraft design, propulsion systems và space technology',
+  ["aerospace engineering","aircraft design","propulsion systems","space technology","aviation"],
+  'aerospace-engineering'
+);
 
 export default function AerospaceEngineeringPage() {
   const moduleData = {

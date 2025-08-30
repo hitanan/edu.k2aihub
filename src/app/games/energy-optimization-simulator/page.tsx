@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Energy Optimization Simulator - Mô Phỏng Tối Ưu Hóa Năng Lượng'),
-  description: createDescription('Mô phỏng tối ưu hóa năng lượng thông minh. Học cách quản lý và tối ưu hóa tiêu thụ năng lượng trong các hệ thống phức tạp.'),
-  keywords: ['energy optimization', 'smart grid', 'tối ưu năng lượng', 'quản lý năng lượng', 'sustainability'],
-  openGraph: {
-    title: 'Energy Optimization Simulator | K2AiHub',
-    description: 'Mô phỏng tối ưu hóa năng lượng thông minh cho hệ thống bền vững',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('energy-optimization-simulator');
 
 export default function EnergyOptimizationSimulatorPage() {
   return (

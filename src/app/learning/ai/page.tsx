@@ -1,4 +1,6 @@
-import { createTitle, createDescription } from '@/utils/seo';
+import type { Metadata } from 'next';
+
+import { createModuleMetadata } from '@/utils/seo';
 import Link from 'next/link';
 import { 
   Briefcase, 
@@ -13,40 +15,12 @@ import {
   Users
 } from 'lucide-react';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('AI Của Tôi - Hướng dẫn AI thực tế'),
-    description: createDescription(
-      'Tổng quan toàn diện về 6 chuyên mục AI thực tế: Office & Work, Creative & Design, Education & Learning, Business & Marketing, Daily Life, Programming & Development.'
-    ),
-    keywords: [
-      'AI thực tế',
-      'hướng dẫn AI',
-      'ChatGPT',
-      'Midjourney',
-      'AI office',
-      'AI creative',
-      'AI education',
-      'AI business',
-      'AI programming',
-      'K2AI'
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'AI Của Tôi - Hướng dẫn AI thực tế | K2AiHub',
-      description:
-        'Khám phá 6 chuyên mục AI thực tế với hàng trăm use cases và step-by-step tutorials cho mọi lĩnh vực.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'AI Của Tôi - Hướng dẫn AI thực tế',
+  'Tổng quan toàn diện về 6 chuyên mục AI thực tế: Office & Work, Creative & Design, Education & Learning, Business & Marketing, Daily Life, Programming & Development.',
+  ['AI thực tế', 'hướng dẫn AI', 'ChatGPT', 'Midjourney', 'AI office', 'AI creative', 'AI education', 'AI business', 'AI programming'],
+  'ai'
+);
 
 const aiCategories = [
   {

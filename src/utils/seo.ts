@@ -1,9 +1,11 @@
 /**
- * SEO Utility Functions
+ * Enhanced SEO Utility Functions with Social Media Integration
  * Centralizes SEO-related functionality for consistency across the application
  */
 
 import { City, TouristAttraction } from '@/types';
+import { SocialSeoPresets } from './socialSeo';
+import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 
 const SITE_NAME = 'K2AiHub';
 const SITE_TAGLINE = 'Học tập thông minh - Công nghệ AI dẫn lối Việt Nam';
@@ -59,13 +61,141 @@ export function createKeywords(additionalKeywords: string[] = []): string {
 }
 
 /**
- * Default OpenGraph configuration
+ * Enhanced OpenGraph configuration with social sharing
  */
 export const defaultOpenGraph = {
   type: 'website' as const,
   siteName: SITE_NAME,
   locale: 'vi_VN',
 };
+
+/**
+ * Creates comprehensive metadata with social sharing for modules
+ */
+export function createModuleMetadata(title: string, description: string, keywords: string[] = [], moduleSlug?: string) {
+  const socialMeta = SocialSeoPresets.module(title, description, keywords);
+
+  return {
+    ...socialMeta,
+    alternates: {
+      canonical: moduleSlug ? `https://k2aihub.com/learning/${moduleSlug}/` : `https://k2aihub.com/learning/`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large' as const,
+        'max-snippet': -1,
+      },
+    },
+  };
+}
+
+/**
+ * Creates comprehensive metadata with social sharing for games
+ * @param gameId - The unique game identifier
+ * @returns Complete metadata object with social sharing
+ */
+export function createGameMetadata(gameId: string) {
+  // Extract game data from EDUCATIONAL_GAMES_DATA
+  const gameData = EDUCATIONAL_GAMES_DATA.find((game) => game.id === gameId);
+  if (!gameData) {
+    throw new Error(`Game not found: ${gameId}`);
+  }
+
+  // Extract metadata from game data
+  const title = gameData.title;
+  const description = gameData.description;
+  const keywords = gameData.skills;
+
+  // Create social media metadata
+  const socialMeta = SocialSeoPresets.game(title, description, keywords);
+
+  return {
+    ...socialMeta,
+    alternates: {
+      canonical: `https://k2aihub.com/games/${gameId}/`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large' as const,
+        'max-snippet': -1,
+      },
+    },
+  };
+}
+
+/**
+ * Creates comprehensive metadata with social sharing for lessons
+ */
+export function createLessonMetadata(
+  title: string,
+  description: string,
+  moduleType: string,
+  lessonId: string,
+  keywords: string[] = [],
+) {
+  // Create social media metadata
+  const socialMeta = SocialSeoPresets.lesson(title, description, moduleType, keywords);
+
+  return {
+    ...socialMeta,
+    alternates: {
+      canonical: `https://k2aihub.com/learning/${moduleType}/${lessonId}/`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large' as const,
+        'max-snippet': -1,
+      },
+    },
+  };
+}
+
+/**
+ * Creates comprehensive metadata with social sharing for articles/blog posts
+ */
+export function createArticleMetadata(
+  title: string,
+  description: string,
+  author: string,
+  publishedTime: string,
+  tags: string[] = [],
+) {
+  const socialMeta = SocialSeoPresets.article(title, description, author, publishedTime, tags);
+
+  return {
+    ...socialMeta,
+    authors: [{ name: author }],
+    alternates: {
+      canonical: `https://k2aihub.com/blog/`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large' as const,
+        'max-snippet': -1,
+      },
+    },
+  };
+}
 
 /**
  * Creates structured data for organization

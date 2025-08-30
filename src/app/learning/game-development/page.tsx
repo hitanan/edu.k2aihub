@@ -1,9 +1,11 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { gameDevLessons } from '@/data/game-development';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import type { GameDevLesson } from '@/data/game-development';
 import { K2Module } from '@/data/moduleNavigation';
+
 
 // Convert GameDevLesson to BaseLessonData
 function convertGameDevToBase(lesson: GameDevLesson): BaseLessonData {
@@ -39,42 +41,22 @@ function convertGameDevToBase(lesson: GameDevLesson): BaseLessonData {
   };
 }
 
-// Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Game Development & Interactive Media - Phát triển Game và Truyền thông Tương tác',
-    ),
-    description: createDescription(
-      'Khóa học phát triển game toàn diện từ Unity, Unreal Engine đến game design, storytelling và xuất bản. Tạo game 2D/3D chuyên nghiệp với K2AiHub.',
-    ),
-    keywords: [
-      'phát triển game',
-      'Unity',
-      'Unreal Engine',
-      'game design',
-      'lập trình game',
-      '2D game',
-      '3D game',
-      'interactive media',
-      'K2AiHub',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Game Development & Interactive Media - K2AiHub',
-      description:
-        'Học phát triển game từ cơ bản đến nâng cao với Unity, Unreal Engine và game design chuyên nghiệp',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Game Development & Interactive Media - Phát triển Game và Truyền thông Tương tác',
+  'Khóa học phát triển game toàn diện từ Unity, Unreal Engine đến game design, storytelling và xuất bản. Tạo game 2D/3D chuyên nghiệp với K2AiHub.',
+  [
+    'phát triển game',
+    'Unity',
+    'Unreal Engine',
+    'game design',
+    'lập trình game',
+    '2D game',
+    '3D game',
+    'interactive media',
+    'K2AiHub',
+  ],
+  'game-development'
+);
 
 export default function GameDevelopmentPage() {
   const moduleData = {

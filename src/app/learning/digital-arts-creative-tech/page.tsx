@@ -1,29 +1,16 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { DigitalArtsLessons } from '@/data/digital-arts-creative-tech';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Nghệ Thuật Số & Công Nghệ Sáng Tạo'),
-    description: createDescription('Master digital art, motion graphics, AI art generation và immersive media cho creative careers. Học từ digital painting đến VR content creation và creative business.'),
-    keywords: ['digital art', 'motion graphics', 'ai art', 'creative technology', 'vr content', 'nghệ thuật số', 'K2AI'],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Nghệ Thuật Số & Công Nghệ Sáng Tạo - K2AiHub',
-      description: 'Creative technology cho thế hệ mới - Từ digital art đến AI-powered creativity',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Nghệ Thuật Số & Công Nghệ Sáng Tạo',
+  'Master digital art, motion graphics, AI art generation và immersive media cho creative careers. Học từ digital painting đến VR content creation và creative business.',
+  ['digital art', 'motion graphics', 'ai art', 'creative technology', 'vr content', 'nghệ thuật số', 'K2AI'],
+  'digital-arts-creative-tech'
+);
 
 export default function DigitalArtsCreativeTechMainPage() {
   const moduleData = {

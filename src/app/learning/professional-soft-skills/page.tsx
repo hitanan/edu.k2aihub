@@ -1,20 +1,16 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { professionalSoftSkillsLessons } from '@/data/professional-soft-skills';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Kỹ Năng Mềm & Giao Tiếp Chuyên Nghiệp'),
-    description: createDescription('Phát triển kỹ năng mềm cần thiết cho thành công nghề nghiệp: thuyết trình, lãnh đạo, đàm phán, và quản lý thời gian hiệu quả trong môi trường doanh nghiệp Việt Nam.'),
-    keywords: ['kỹ năng mềm', 'giao tiếp chuyên nghiệp', 'lãnh đạo', 'thuyết trình', 'đàm phán', 'quản lý thời gian', 'soft skills', 'K2AiHub'],
-    openGraph: {
-      title: 'Kỹ Năng Mềm & Giao Tiếp Chuyên Nghiệp | K2AiHub',
-      description: 'Học kỹ năng mềm thiết yếu cho sự nghiệp: từ thuyết trình tự tin đến lãnh đạo hiệu quả và đàm phán thành công.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Kỹ Năng Mềm & Giao Tiếp Chuyên Nghiệp',
+  'Phát triển kỹ năng mềm cần thiết cho thành công nghề nghiệp: thuyết trình, lãnh đạo, đàm phán, và quản lý thời gian hiệu quả trong môi trường doanh nghiệp Việt Nam.',
+  ['kỹ năng mềm', 'giao tiếp chuyên nghiệp', 'lãnh đạo', 'thuyết trình', 'đàm phán', 'quản lý thời gian', 'soft skills'],
+  'professional-soft-skills'
+);
 
 export default function ProfessionalSoftSkillsMainPage() {
   const moduleData = {

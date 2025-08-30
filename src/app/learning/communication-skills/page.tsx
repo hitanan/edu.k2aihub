@@ -1,19 +1,14 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate, { ModuleData } from '@/components/learning/ModulePageTemplate';
 import { communicationSkillsLessons } from '@/data/communication-skills';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Kỹ Năng Giao Tiếp và Thuyết Trình'),
-    description: createDescription('Phát triển kỹ năng giao tiếp hiệu quả và thuyết trình chuyên nghiệp trong thời đại số - từ giao tiếp cơ bản đến thuyết trình đa văn hóa.'),
-    keywords: ['kỹ năng giao tiếp', 'thuyết trình', 'presentation skills', 'communication', 'digital presentation', 'K2AI'],
-    openGraph: {
-      title: 'Kỹ Năng Giao Tiếp và Thuyết Trình | K2AiHub',
-      description: 'Master kỹ năng giao tiếp và thuyết trình với phương pháp hiện đại, từ active listening đến cross-cultural communication.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Kỹ Năng Giao Tiếp và Thuyết Trình',
+  'Phát triển kỹ năng giao tiếp hiệu quả và thuyết trình chuyên nghiệp trong thời đại số - từ giao tiếp cơ bản đến thuyết trình đa văn hóa.',
+  ['kỹ năng giao tiếp', 'thuyết trình', 'presentation skills', 'communication', 'digital presentation', 'K2AI'],
+  'communication-skills'
+);
 
 export default function CommunicationSkillsMainPage() {
   const moduleData: ModuleData = {

@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('SEO Optimization Challenge - Thử Thách Tối Ưu SEO'),
-  description: createDescription('Thử thách tối ưu hóa SEO toàn diện. Học cách đưa website lên top Google qua các kỹ thuật SEO on-page, off-page và technical SEO.'),
-  keywords: ['SEO optimization', 'search engine', 'tối ưu SEO', 'Google ranking', 'digital marketing'],
-  openGraph: {
-    title: 'SEO Optimization Challenge | K2AiHub',
-    description: 'Thử thách tối ưu hóa SEO để đưa website lên top Google',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('seo-optimization-challenge');
 
 export default function SEOOptimizationChallengePage() {
   return (

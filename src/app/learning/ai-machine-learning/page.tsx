@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { aiMachineLearningLessons } from '@/data/ai-machine-learning';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('AI & Machine Learning - Trí Tuệ Nhân Tạo & Học Máy'),
-  description: createDescription(
-    'Master AI and Machine Learning from fundamentals to advanced applications. Build intelligent systems với Python, TensorFlow và PyTorch.',
-  ),
-  keywords: [
+export const metadata: Metadata = createModuleMetadata(
+  'AI & Machine Learning - Trí Tuệ Nhân Tạo & Học Máy',
+  'Master AI and Machine Learning from fundamentals to advanced applications. Build intelligent systems với Python, TensorFlow và PyTorch.',
+  [
     'artificial intelligence',
     'machine learning',
     'deep learning',
@@ -22,21 +21,8 @@ export const metadata: Metadata = {
     'vietnam ai education',
     'k2aihub',
   ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'AI & Machine Learning Master Course',
-    description: 'Complete AI/ML education from basics to advanced applications',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+  'ai-machine-learning'
+);
 
 export default function AIMachineLearningPage() {
   const moduleData: ModuleData = {

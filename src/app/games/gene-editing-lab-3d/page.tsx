@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Gene Editing Lab 3D - Phòng Thí Nghiệm Chỉnh Sửa Gen 3D'),
-  description: createDescription('Khám phá công nghệ chỉnh sửa gen CRISPR trong phòng thí nghiệm 3D. Học genetic engineering, biotechnology và synthetic biology.'),
-  keywords: ['CRISPR', 'gene editing', 'genetic engineering', 'biotechnology', 'synthetic biology', '3D lab'],
-  openGraph: {
-    title: 'Gene Editing Lab 3D | K2AiHub',
-    description: 'Phòng thí nghiệm chỉnh sửa gen 3D với công nghệ CRISPR',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('gene-editing-lab-3d');
 
 export default function GeneEditingLab3DPage() {
   return (

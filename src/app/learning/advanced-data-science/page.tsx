@@ -1,17 +1,16 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { advancedDataScienceLessons } from '@/data/advanced-data-science';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Advanced Data Science - Khoa Học Dữ Liệu Nâng Cao'),
-  description: createDescription(
-    'Master advanced data science techniques với machine learning, deep learning và big data analytics. Học cutting-edge AI applications.',
-  ),
-  keywords: [
+export const metadata: Metadata = createModuleMetadata(
+  'Advanced Data Science - Khoa Học Dữ Liệu Nâng Cao',
+  'Master advanced data science techniques với machine learning, deep learning và big data analytics. Học cutting-edge AI applications.',
+  [
     'advanced data science',
     'machine learning',
     'deep learning',
@@ -21,22 +20,8 @@ export const metadata: Metadata = {
     'vietnam data science',
     'k2aihub',
   ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {
-    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-    title: 'Advanced Data Science & Machine Learning',
-    description:
-      'Master cutting-edge data science and AI technologies',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+  'advanced-data-science'
+);
 
 export default function AdvancedDataSciencePage() {
   const moduleData: ModuleData = {

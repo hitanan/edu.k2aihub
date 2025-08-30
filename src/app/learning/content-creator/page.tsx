@@ -1,52 +1,15 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { contentCreatorLessons } from '@/data/content-creator';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Content Creator Academy - Thành công với Social Media'),
-    description: createDescription(
-      'Học từ A-Z cách trở thành content creator thành công trên TikTok, YouTube, Instagram. Từ xây dựng personal brand đến monetization với thu nhập 15-100 triệu VNĐ/tháng.',
-    ),
-    keywords: createKeywords([
-      'content creator',
-      'social media',
-      'youtube',
-      'tiktok',
-      'instagram',
-      'personal branding',
-      'video production',
-      'livestreaming',
-      'monetization',
-      'brand partnerships',
-      'influencer marketing',
-      'content strategy',
-      'vietnamese creators',
-      'social media marketing',
-      'digital marketing',
-      'creator economy',
-      'K2AI',
-    ]),
-    openGraph: {    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Content Creator Academy - K2AI Learning Platform',
-      description:
-        'Học từ A-Z cách trở thành content creator thành công. Thu nhập 15-100 triệu VNĐ/tháng từ social media.',
-      type: 'website',
-      locale: 'vi_VN',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'Content Creator Academy - Thành công với Social Media',
-      description:
-        'Học từ A-Z cách trở thành content creator thành công trên TikTok, YouTube, Instagram.',
-    },
-    alternates: {
-      canonical: '/learning/content-creator',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Content Creator Academy - Thành công với Social Media',
+  'Học từ A-Z cách trở thành content creator thành công. Thu nhập 15-100 triệu VNĐ/tháng từ social media.',
+  ['content creator', 'social media', 'youtube', 'tiktok', 'instagram', 'personal branding', 'video production', 'livestreaming', 'monetization', 'brand partnerships', 'influencer marketing', 'content strategy', 'vietnamese creators', 'social media marketing', 'digital marketing', 'creator economy', 'K2AI'],
+  'content-creator'
+);
 
 export default function ContentCreatorPage() {
   const moduleData = {

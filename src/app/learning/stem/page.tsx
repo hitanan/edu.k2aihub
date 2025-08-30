@@ -1,9 +1,19 @@
+import type { Metadata } from 'next';
+
+import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { stemLessons, type STEMLesson } from '@/data/stem';
 import { K2Module } from '@/data/moduleNavigation';
+
+export const metadata: Metadata = createModuleMetadata(
+  'STEM Education - Giáo Dục STEM',
+  'Khóa học STEM tích hợp. Science, Technology, Engineering và Mathematics cho kids và teens',
+  ['stem education', 'science', 'technology', 'engineering', 'mathematics', 'kids coding'],
+  'stem'
+);
 
 // Convert STEMLesson to BaseLessonData interface
 function convertToLesson(stemLesson: STEMLesson): BaseLessonData {

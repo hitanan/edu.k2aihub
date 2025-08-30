@@ -1,52 +1,17 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { digitalMarketingLessons, type DigitalMarketingLesson } from '@/data/digital-marketing';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Digital Marketing & Creator Economy - Học Marketing Số'),
-  description: createDescription(
-    'Khóa học Digital Marketing toàn diện từ cơ bản đến nâng cao, bao gồm Creator Economy, Social Media Marketing, Content Marketing và Analytics',
-  ),
-  keywords: [
-    'digital marketing',
-    'creator economy',
-    'social media marketing',
-    'content marketing',
-    'seo',
-    'google ads',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {
-    title: createTitle('Digital Marketing & Creator Economy - Học Marketing Số'),
-    description: createDescription(
-      'Khóa học Digital Marketing toàn diện từ cơ bản đến nâng cao, bao gồm Creator Economy, Social Media Marketing, Content Marketing và Analytics',
-    ),
-    type: 'website',
-    url: 'https://k2aihub.com/learning/digital-marketing',
-    siteName: 'K2AiHub',
-    locale: 'vi_VN',
-    images: [
-      {
-        url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
-        width: 1200,
-        height: 600,
-        alt: 'Digital Marketing & Creator Economy - K2AiHub',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('Digital Marketing & Creator Economy - Học Marketing Số'),
-    description: createDescription(
-      'Khóa học Digital Marketing toàn diện từ cơ bản đến nâng cao, bao gồm Creator Economy, Social Media Marketing, Content Marketing và Analytics',
-    ),
-    images: ['https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Digital Marketing & SEO - Marketing Số',
+  'Khóa học Digital Marketing toàn diện. Từ SEO, SEM đến Social Media Marketing và Content Strategy',
+  ['digital marketing', 'seo', 'social media marketing', 'content marketing', 'google ads', 'facebook ads'],
+  'digital-marketing'
+);
 
 // Convert DigitalMarketingLesson to BaseLessonData interface
 function convertToLesson(digitalMarketingLesson: DigitalMarketingLesson): BaseLessonData {

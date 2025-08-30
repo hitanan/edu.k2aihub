@@ -1,28 +1,15 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { crossBorderEcommerceLessons } from '@/data/cross-border-ecommerce';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Thương mại Điện tử Xuyên biên giới'),
-    description: createDescription('Học cách kinh doanh online quốc tế, từ thiết lập store đến logistics và marketing đa văn hóa. Khóa học thực tế với market size $5-12 tỷ USD.'),
-    keywords: ['cross-border-ecommerce', 'thuong-mai-dien-tu', 'kinh-doanh-quoc-te', 'ban-hang-online', 'logistics', 'payment-gateway', 'K2AI'],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Thương mại Điện tử Xuyên biên giới - K2AiHub',
-      description: 'Mở rộng kinh doanh ra thị trường quốc tế với thương mại điện tử xuyên biên giới. Học từ cơ bản đến nâng cao.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Thương mại Điện tử Xuyên biên giới',
+  'Học cách kinh doanh online quốc tế, từ thiết lập store đến logistics và marketing đa văn hóa. Khóa học thực tế với market size $5-12 tỷ USD.',
+  ['cross-border-ecommerce', 'thuong-mai-dien-tu', 'kinh-doanh-quoc-te', 'ban-hang-online', 'logistics', 'payment-gateway', 'K2AI'],
+  'cross-border-ecommerce'
+);
 
 export default function CrossBorderEcommerceMainPage() {
   const moduleData = {

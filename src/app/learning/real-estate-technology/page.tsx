@@ -1,33 +1,17 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { RealEstateTechnologyLessons } from '@/data/real-estate-technology';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import { ModuleData } from '@/types';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Công Nghệ Bất Động Sản - Real Estate Technology'),
-    description: createDescription('Master công nghệ bất động sản với PropTech, Virtual Tours 360°, Smart Buildings IoT, Real Estate Analytics AI và Blockchain. Khóa học toàn diện về digital transformation trong ngành bất động sản.'),
-    keywords: [
-      'công nghệ bất động sản',
-      'real estate technology',
-      'proptech',
-      'virtual tours',
-      'smart buildings',
-      'real estate analytics',
-      'blockchain real estate',
-      'property management',
-      'real estate ai',
-      'K2AI'
-    ],
-    openGraph: {
-      title: 'Công Nghệ Bất Động Sản - Real Estate Technology | K2AI',
-      description: 'Master công nghệ bất động sản với PropTech, Virtual Tours, Smart Buildings và Blockchain tại K2AI',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Công Nghệ Bất Động Sản - Real Estate Technology',
+  'Master công nghệ bất động sản với PropTech, Virtual Tours 360°, Smart Buildings IoT, Real Estate Analytics AI và Blockchain. Khóa học toàn diện về digital transformation trong ngành bất động sản.',
+  ['công nghệ bất động sản', 'real estate technology', 'proptech', 'virtual tours', 'smart buildings', 'real estate analytics', 'blockchain real estate', 'property management', 'real estate ai', 'K2AI'],
+  'real-estate-technology'
+);
 
 export default function RealEstateTechnologyPage() {
   const moduleData: ModuleData = {

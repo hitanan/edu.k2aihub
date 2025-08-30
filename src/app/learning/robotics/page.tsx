@@ -1,43 +1,19 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { roboticsLessons, RoboticsLesson } from '@/data/robotics';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
-import type { Metadata } from 'next';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export const metadata: Metadata = {
-  title: createTitle('Học Robotics - Từ Cơ Bản Đến Nâng Cao'),
-  description: createDescription(
-    'Khóa học robotics toàn diện với các bài học từ cơ bản đến nâng cao. Học cách thiết kế, lập trình và điều khiển robot thông minh',
-  ),
-  keywords: createKeywords([
-    'robotics',
-    'robot',
-    'lập trình robot',
-    'arduino robot',
-    'cảm biến',
-    'động cơ servo',
-    'IoT robot',
-  ]),
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: createTitle('Học Robotics - Từ Cơ Bản Đến Nâng Cao'),
-    description: createDescription(
-      'Khám phá thế giới robotics với các bài học thực hành và dự án thú vị',
-    ),
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Robotics & Automation - Robot và Tự Động Hóa',
+  'Khóa học Robotics toàn diện. Từ mechanical design đến AI control systems',
+  ['robotics', 'automation', 'mechanical engineering', 'ai control', 'sensors', 'actuators'],
+  'robotics'
+);
 
 // Convert RoboticsLesson to BaseLessonData interface
 function convertToLesson(roboticsLesson: RoboticsLesson): BaseLessonData {

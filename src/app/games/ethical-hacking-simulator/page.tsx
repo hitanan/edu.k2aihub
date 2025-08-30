@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Ethical Hacking Simulator - Mô Phỏng Ethical Hacking'),
-  description: createDescription('Học ethical hacking và penetration testing trong môi trường an toàn. Vulnerability assessment, security testing và cybersecurity skills.'),
-  keywords: ['ethical hacking', 'penetration testing', 'cybersecurity', 'vulnerability assessment', 'security testing'],
-  openGraph: {
-    title: 'Ethical Hacking Simulator | K2AiHub',
-    description: 'Mô phỏng ethical hacking và penetration testing an toàn',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('ethical-hacking-simulator');
 
 export default function EthicalHackingSimulatorPage() {
   return (

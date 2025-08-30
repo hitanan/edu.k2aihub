@@ -1,42 +1,18 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { BlockchainLessons } from '@/data/blockchain-technology';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Blockchain Technology & Development - Công Nghệ Blockchain'),
-  description: createDescription(
-    'Học công nghệ blockchain từ cơ bản đến nâng cao. Từ cryptocurrency đến smart contracts và DeFi applications.',
-  ),
-  keywords: [
-    'blockchain technology',
-    'cryptocurrency',
-    'smart contracts',
-    'web3 development',
-    'defi',
-    'nft',
-    'ethereum',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Blockchain Technology & Development',
-    description:
-      'Master blockchain development from basics to advanced DeFi applications',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Blockchain Technology & Development - Công Nghệ Blockchain',
+  'Học công nghệ blockchain từ cơ bản đến nâng cao. Từ cryptocurrency đến smart contracts và DeFi applications.',
+  ['blockchain technology', 'cryptocurrency', 'smart contracts', 'web3 development', 'defi', 'nft', 'ethereum', 'k2aihub'],
+  'blockchain-technology'
+);
 
 export default function BlockchainTechnologyPage() {
   const moduleData: ModuleData = {

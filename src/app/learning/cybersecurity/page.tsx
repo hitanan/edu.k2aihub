@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
@@ -8,38 +9,14 @@ import {
   CybersecurityLessons,
 } from '@/data/cybersecurity';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Cybersecurity & Ethical Hacking - An Ninh Mạng'),
-  description: createDescription(
-    'Khóa học Cybersecurity và Ethical Hacking chuyên sâu. Từ penetration testing đến security operations, bảo vệ hệ thống và dữ liệu khỏi các mối đe dọa',
-  ),
-  keywords: [
-    'cybersecurity',
-    'ethical hacking',
-    'penetration testing',
-    'network security',
-    'incident response',
-    'security operations',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Cybersecurity & Ethical Hacking',
-    description:
-      'Trở thành chuyên gia an ninh mạng với khóa học thực tế từ K2AiHub',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Cybersecurity & Ethical Hacking - An Ninh Mạng',
+  'Khóa học bảo mật mạng và ethical hacking toàn diện. Từ network security đến penetration testing',
+  ["cybersecurity","ethical hacking","network security","penetration testing","malware analysis"],
+  'cybersecurity'
+);
 
 // Convert CyberSecurityLesson to BaseLessonData interface
 function convertToLesson(

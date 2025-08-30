@@ -1,40 +1,15 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { DataScienceLessons } from '@/data/data-science';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Data Science - Khoa học dữ liệu toàn diện'),
-    description: createDescription(
-      'Khóa học Data Science chuyên sâu từ cơ bản đến nâng cao. Học Machine Learning, Big Data Analytics, Data Visualization và ứng dụng thực tế trong doanh nghiệp.',
-    ),
-    keywords: [
-      'data science',
-      'khoa học dữ liệu',
-      'machine learning',
-      'big data',
-      'data analytics',
-      'python',
-      'AI',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Data Science - Khoa học dữ liệu toàn diện | K2AiHub',
-      description:
-        'Khóa học Data Science chuyên sâu từ cơ bản đến nâng cao với Machine Learning, Big Data và ứng dụng thực tế.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Data Science - Khoa học dữ liệu toàn diện',
+  'Khóa học Data Science chuyên sâu từ cơ bản đến nâng cao. Học Machine Learning, Big Data Analytics, Data Visualization và ứng dụng thực tế trong doanh nghiệp.',
+  ['data science', 'khoa học dữ liệu', 'machine learning', 'big data', 'data analytics', 'python', 'AI', 'K2AI'],
+  'data-science'
+);
 
 export default function DataScienceMainPage() {
   const moduleData = {

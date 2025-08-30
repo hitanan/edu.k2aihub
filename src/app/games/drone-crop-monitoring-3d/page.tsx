@@ -1,35 +1,8 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 import DroneCropMonitoring3D from '@/components/games/individual/DroneCropMonitoring3D';
 
-export const metadata: Metadata = {
-  title: createTitle('Drone Crop Monitoring 3D - Mô Phỏng Drone Nông Nghiệp 3D'),
-  description: createDescription(
-    'Điều khiển drone nông nghiệp 3D để giám sát cây trồng, phân tích sức khỏe cây trồng và thực hiện nhiệm vụ precision farming trong môi trường trang trại chân thực.'
-  ),
-  keywords: [
-    'drone nông nghiệp',
-    'precision farming',
-    'mô phỏng 3D',
-    'giám sát cây trồng',
-    'công nghệ xanh',
-    'nông nghiệp thông minh',
-    'K2AI'
-  ],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Drone Crop Monitoring 3D - Mô Phỏng Drone Nông Nghiệp | K2AiHub',
-    description: 'Điều khiển drone nông nghiệp 3D cho precision farming và giám sát cây trồng thông minh.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createGameMetadata('drone-crop-monitoring-3d');
 
 export default function DroneCropMonitoring3DPage() {
   return (

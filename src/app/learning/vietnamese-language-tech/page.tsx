@@ -1,7 +1,8 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { vietnameseLangTechLessons } from '@/data/vietnamese-language-tech';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import type { VietnameseLangTechLesson } from '@/data/vietnamese-language-tech';
 
@@ -42,39 +43,12 @@ function convertVietnameseLangTechToBase(
 }
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Vietnamese Language Technology - Công nghệ Ngôn ngữ Tiếng Việt',
-    ),
-    description: createDescription(
-      'Khóa học công nghệ ngôn ngữ tiếng Việt: NLP, AI chatbot, voice technology và speech recognition. Phát triển ứng dụng AI hiểu tiếng Việt tự nhiên.',
-    ),
-    keywords: [
-      'vietnamese nlp',
-      'tiếng việt ai',
-      'chatbot tiếng việt',
-      'voice ai vietnam',
-      'vietnamese speech recognition',
-      'phobert',
-      'K2AiHub',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Vietnamese Language Technology - K2AiHub',
-      description:
-        'Học phát triển công nghệ AI hiểu và xử lý tiếng Việt tự nhiên',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Vietnamese Language Technology - K2AiHub',
+  'Khóa học công nghệ ngôn ngữ tiếng Việt: NLP, AI chatbot, voice technology và speech recognition. Phát triển ứng dụng AI hiểu tiếng Việt tự nhiên.',
+  ['vietnamese nlp', 'tiếng việt ai', 'chatbot tiếng việt', 'voice ai vietnam', 'vietnamese speech recognition', 'phobert', 'K2AiHub'],
+  'vietnamese-language-tech'
+);
 
 export default function VietnameseLanguageTechPage() {
   const moduleData = {

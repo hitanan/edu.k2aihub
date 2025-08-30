@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('IoT Smart City Builder 3D - Xây Dựng Thành Phố Thông Minh IoT 3D'),
-  description: createDescription('Thiết kế và quản lý thành phố thông minh với IoT sensors, smart infrastructure, và sustainable technology solutions.'),
-  keywords: ['IoT', 'smart city', 'thành phố thông minh', 'sensors', 'infrastructure', 'sustainability'],
-  openGraph: {
-    title: 'IoT Smart City Builder 3D | K2AiHub',
-    description: 'Xây dựng và quản lý thành phố thông minh IoT 3D',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('iot-smart-city-builder-3d');
 
 export default function IoTSmartCityBuilder3DPage() {
   return (

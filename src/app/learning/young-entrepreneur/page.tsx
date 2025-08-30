@@ -1,55 +1,16 @@
+import type { Metadata } from 'next';
+
+import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { youngEntrepreneurLessons } from '@/data/young-entrepreneur';
-import { createTitle, createDescription } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-// Generate metadata for SEO
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Young Entrepreneur Bootcamp - Khởi nghiệp thành công từ tuổi teen',
-    ),
-    description: createDescription(
-      'Bootcamp toàn diện cho thế hệ GenZ muốn khởi nghiệp: từ ý tưởng, xây dựng MVP, gọi vốn đến scale business với focus đặc biệt vào thị trường Việt Nam. Học từ các startup unicorn Việt Nam.',
-    ),
-    keywords: [
-      'young entrepreneur',
-      'startup vietnam',
-      'khởi nghiệp',
-      'business model',
-      'mvp development',
-      'fundraising',
-      'gọi vốn',
-      'startup ecosystem',
-      'K2AI',
-      'entrepreneur bootcamp',
-      'teenage entrepreneur',
-      'vietnam startup ecosystem',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title:
-        'Young Entrepreneur Bootcamp - Khởi nghiệp thành công từ tuổi teen',
-      description:
-        'Bootcamp toàn diện cho GenZ: từ ý tưởng đến startup thành công. Học từ ecosystem startup Việt Nam.',
-      type: 'website',
-      images: [
-        {
-          url: '/images/young-entrepreneur/young-entrepreneur-hero.jpg',
-          width: 1200,
-          height: 630,
-          alt: 'Young Entrepreneur Bootcamp - K2AI',
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'Young Entrepreneur Bootcamp - K2AI',
-      description: 'Bootcamp khởi nghiệp cho GenZ Việt Nam',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Young Entrepreneur Bootcamp - Khởi nghiệp thành công từ tuổi teen',
+  'Bootcamp toàn diện cho thế hệ GenZ muốn khởi nghiệp: từ ý tưởng, xây dựng MVP, gọi vốn đến scale business với focus đặc biệt vào thị trường Việt Nam.',
+  ['young entrepreneur', 'startup vietnam', 'khởi nghiệp', 'business model', 'mvp development', 'fundraising', 'gọi vốn'],
+  'young-entrepreneur'
+);
 
 export default function YoungEntrepreneurBootcampPage() {
   const moduleData = {

@@ -1,41 +1,11 @@
-import { createTitle, createDescription } from '@/utils/seo';
+import { Metadata } from 'next';
+import { createGameMetadata } from '@/utils/seo';
 import ClimateModelingGameComponent from '@/components/games/ClimateModelingGame';
 import { climateModelingGame } from '@/data/climateModelingGame';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, Lightbulb } from 'lucide-react';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Climate Modeling Simulator - Game mô phỏng biến đổi khí hậu'),
-    description: createDescription(
-      'Trải nghiệm game mô phỏng biến đổi khí hậu tương tác. Khám phá tác động môi trường, thực hiện giải pháp xanh và cứu hành tinh qua 20 năm simulation.'
-    ),
-    keywords: [
-      'climate modeling',
-      'biến đổi khí hậu',
-      'game mô phỏng',
-      'environmental simulation',
-      'green technology',
-      'sustainability',
-      'carbon reduction',
-      'renewable energy',
-      'K2AI'
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Climate Modeling Simulator | K2AiHub',
-      description: 'Interactive climate change simulation game. Explore environmental impact and green solutions.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createGameMetadata('climate-modeling');
 
 export default function ClimateModelingGamePage() {
   return (
@@ -44,14 +14,11 @@ export default function ClimateModelingGamePage() {
       <div className="bg-white/5 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <Link
-              href="/games"
-              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
-            >
+            <Link href="/games" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
               <ArrowLeft className="w-5 h-5" />
               <span>Quay lại Games</span>
             </Link>
-            
+
             <div className="flex items-center gap-4">
               <Link
                 href="/learning/green-technology"
@@ -72,9 +39,7 @@ export default function ClimateModelingGamePage() {
       <div className="bg-white/5 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              🎓 Kết nối với Curriculum
-            </h2>
+            <h2 className="text-3xl font-bold text-white mb-4">🎓 Kết nối với Curriculum</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
               Game này kết nối với nhiều modules học tập khác để tạo ra trải nghiệm giáo dục toàn diện.
             </p>
@@ -93,23 +58,17 @@ export default function ClimateModelingGamePage() {
                     <h3 className="font-semibold text-white group-hover:text-green-300 transition-colors">
                       {lesson.title}
                     </h3>
-                    <p className="text-sm text-green-400 capitalize">
-                      {lesson.moduleId.replace('-', ' ')}
-                    </p>
+                    <p className="text-sm text-green-400 capitalize">{lesson.moduleId.replace('-', ' ')}</p>
                   </div>
                 </div>
-                <p className="text-gray-300 text-sm">
-                  {lesson.connection}
-                </p>
+                <p className="text-gray-300 text-sm">{lesson.connection}</p>
               </Link>
             ))}
           </div>
 
           {/* Science Topics */}
           <div className="mt-12 bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">
-              🔬 Science Topics Covered
-            </h3>
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">🔬 Science Topics Covered</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="text-lg font-semibold mb-3 text-green-400">Climate Science</h4>
@@ -138,9 +97,7 @@ export default function ClimateModelingGamePage() {
 
           {/* Game Instructions */}
           <div className="mt-12 text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              🎮 How to Play
-            </h3>
+            <h3 className="text-2xl font-bold text-white mb-4">🎮 How to Play</h3>
             <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="text-3xl mb-2">🚀</div>
@@ -152,23 +109,17 @@ export default function ClimateModelingGamePage() {
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="text-3xl mb-2">🌱</div>
                 <h4 className="font-semibold text-white mb-2">Take Actions</h4>
-                <p className="text-gray-300 text-sm">
-                  Implement green solutions với budget hạn chế mỗi năm
-                </p>
+                <p className="text-gray-300 text-sm">Implement green solutions với budget hạn chế mỗi năm</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="text-3xl mb-2">📊</div>
                 <h4 className="font-semibold text-white mb-2">Monitor Impact</h4>
-                <p className="text-gray-300 text-sm">
-                  Track temperature, CO2, và environmental indicators
-                </p>
+                <p className="text-gray-300 text-sm">Track temperature, CO2, và environmental indicators</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="text-3xl mb-2">🏆</div>
                 <h4 className="font-semibold text-white mb-2">Achieve Goals</h4>
-                <p className="text-gray-300 text-sm">
-                  Aim for high climate score và sustainable future
-                </p>
+                <p className="text-gray-300 text-sm">Aim for high climate score và sustainable future</p>
               </div>
             </div>
           </div>

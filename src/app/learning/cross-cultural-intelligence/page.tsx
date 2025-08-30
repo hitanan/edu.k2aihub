@@ -1,23 +1,15 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { crossCulturalLessons } from '@/data/cross-cultural-intelligence';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Trí Tuệ Đa Văn Hóa'),
-    description: createDescription(
-      'Phát triển cultural intelligence để giao tiếp, hợp tác và lãnh đạo hiệu quả với người từ các nền văn hóa khác nhau trong thế giới toàn cầu.',
-    ),
-    keywords: ['cultural intelligence', 'cross-cultural communication', 'global leadership', 'diversity', 'K2AiHub'],
-    openGraph: {
-      title: 'Trí Tuệ Đa Văn Hóa | K2AiHub',
-      description:
-        'Phát triển cultural intelligence để giao tiếp, hợp tác và lãnh đạo hiệu quả với người từ các nền văn hóa khác nhau trong thế giới toàn cầu.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Trí Tuệ Đa Văn Hóa',
+  'Phát triển cultural intelligence để giao tiếp, hợp tác và lãnh đạo hiệu quả với người từ các nền văn hóa khác nhau trong thế giới toàn cầu.',
+  ['cultural intelligence', 'cross-cultural communication', 'global leadership', 'diversity', 'K2AiHub'],
+  'cross-cultural-intelligence'
+);
 
 export default function CrossCulturalMainPage() {
   const moduleData = {

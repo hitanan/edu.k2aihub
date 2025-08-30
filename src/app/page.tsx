@@ -5,16 +5,13 @@ import ClientOnly from '@/components/ClientOnly';
 import { LastVisitCard, LearningRecommendations, PageTracker } from '@/components/gamification/VisitTracker';
 import { ProgressDashboard } from '@/components/gamification/LearningProgress';
 import { EducationalGamesShowcase } from '@/components/games/EducationalGames';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { moduleStats } from '@/utils/moduleStats';
 
-export const metadata: Metadata = {
-  title: createTitle('Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
-  description: createDescription(
-    'K2AI - Nền tảng giáo dục tương tác miễn phí với AI, giúp bạn nắm vững kiến thức từ cơ bản đến nâng cao. 64+ modules học tập chất lượng cao.',
-  ),
-  keywords: [
-    'K2AI',
+export const metadata: Metadata = createModuleMetadata(
+  'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
+  'Nền tảng giáo dục tương tác miễn phí với AI, giúp bạn nắm vững kiến thức từ cơ bản đến nâng cao. 90+ modules học tập chất lượng cao với trò chơi giáo dục và AI thực tế.',
+  [
     'nền tảng học tập',
     'giáo dục AI',
     'học trực tuyến',
@@ -26,20 +23,10 @@ export const metadata: Metadata = {
     'cybersecurity',
     'biotechnology',
     'STEM',
+    'trò chơi giáo dục',
+    '3D learning',
   ],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
-    description: 'Nền tảng giáo dục tương tác miễn phí với 64+ modules học tập chất lượng cao từ cơ bản đến nâng cao.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'K2AI - Nền tảng học tập thông minh',
-    description: 'Học tập miễn phí với AI - 64+ modules chất lượng cao',
-  },
-};
+);
 
 export default function HomePage() {
   // Structured data for SEO

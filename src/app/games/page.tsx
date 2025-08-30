@@ -12,15 +12,17 @@ export const metadata: Metadata = {
     'game học tập',
     'quiz',
     'puzzle',
-    'K2AI',
+    '3D games',
+    'interactive learning',
+    'educational technology',
     'học qua chơi',
   ],
-  openGraph: {    locale: 'vi_VN',
+  openGraph: {
+    locale: 'vi_VN',
     siteName: 'K2AiHub - Nền tảng học tập thông minh',
 
     title: 'Trò Chơi Giáo Dục - Học Tập Qua Chơi | K2AiHub',
-    description:
-      'Khám phá bộ sưu tập trò chơi giáo dục đa dạng. Học tập hiệu quả qua trải nghiệm chơi game thú vị.',
+    description: 'Khám phá bộ sưu tập trò chơi giáo dục đa dạng. Học tập hiệu quả qua trải nghiệm chơi game thú vị.',
     type: 'website',
   },
   twitter: {

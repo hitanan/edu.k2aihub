@@ -1,8 +1,10 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { greenTechLessons } from '@/data/green-technology';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import type { GreenTechLesson } from '@/data/green-technology';
+
 
 // Convert GreenTechLesson to BaseLessonData
 function convertGreenTechToBase(lesson: GreenTechLesson): BaseLessonData {
@@ -38,40 +40,20 @@ function convertGreenTechToBase(lesson: GreenTechLesson): BaseLessonData {
   };
 }
 
-// Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Green Technology & Sustainability - Công nghệ Xanh và Phát triển Bền vững',
-    ),
-    description: createDescription(
-      'Khóa học công nghệ xanh: năng lượng tái tạo, smart cities, carbon footprint và sustainable development. Xây dựng tương lai bền vững với K2AiHub.',
-    ),
-    keywords: [
-      'công nghệ xanh',
-      'green technology',
-      'năng lượng tái tạo',
-      'sustainable development',
-      'smart cities',
-      'renewable energy',
-      'K2AiHub',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Green Technology & Sustainability - K2AiHub',
-      description:
-        'Học công nghệ xanh và phát triển bền vững để xây dựng tương lai tốt đẹp hơn',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Green Technology & Sustainability - Công nghệ Xanh và Phát triển Bền vững',
+  'Khóa học công nghệ xanh: năng lượng tái tạo, smart cities, carbon footprint và sustainable development. Xây dựng tương lai bền vững với K2AiHub.',
+  [
+    'công nghệ xanh',
+    'green technology',
+    'năng lượng tái tạo',
+    'sustainable development',
+    'smart cities',
+    'renewable energy',
+    'K2AiHub',
+  ],
+  'green-technology'
+);
 
 export default function GreenTechnologyPage() {
   const moduleData = {

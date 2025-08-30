@@ -1,16 +1,7 @@
 import { Metadata } from 'next';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Future Scenario Builder 3D - Xây Dựng Kịch Bản Tương Lai'),
-  description: createDescription('Khám phá và xây dựng các kịch bản tương lai thông qua mô phỏng 3D tương tác. Dự đoán xu hướng công nghệ và tác động xã hội.'),
-  keywords: ['future scenarios', 'technology trends', 'dự đoán tương lai', 'xu hướng công nghệ', '3D simulation'],
-  openGraph: {
-    title: 'Future Scenario Builder 3D | K2AiHub',
-    description: 'Xây dựng và khám phá các kịch bản tương lai thông qua mô phỏng 3D',
-    type: 'website',
-  },
-};
+export const metadata: Metadata = createGameMetadata('future-scenario-builder-3d');
 
 export default function FutureScenarioBuilder3DPage() {
   return (

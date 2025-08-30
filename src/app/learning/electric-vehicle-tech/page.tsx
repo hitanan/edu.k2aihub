@@ -1,9 +1,10 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import {
   electricVehicleLessons,
   type ElectricVehicleLesson,
 } from '@/data/electric-vehicle-tech';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
@@ -35,40 +36,12 @@ function convertToBaseLessonData(
   };
 }
 
-export async function generateMetadata() {
-  return {
-    title: createTitle('Electric Vehicle Technology - Công Nghệ Ô Tô Điện'),
-    description: createDescription(
-      'Master electric vehicle technology từ powertrain và battery systems đến autonomous driving và smart charging. VinFast case studies và Vietnamese market focus. EV manufacturing, charging infrastructure, V2G technology.',
-    ),
-    keywords: [
-      'electric vehicle',
-      'ev technology',
-      'battery systems',
-      'autonomous driving',
-      'charging infrastructure',
-      'vinfast',
-      'smart transportation',
-      'v2g technology',
-      'ev manufacturing',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Electric Vehicle Technology - Công Nghệ Ô Tô Điện | K2AI',
-      description:
-        'Master EV technology với VinFast case studies. Battery systems, autonomous driving, charging infrastructure cho Vietnamese market.',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Electric Vehicle Technology - Công Nghệ Ô Tô Điện',
+  'Master electric vehicle technology từ powertrain và battery systems đến autonomous driving và smart charging. VinFast case studies và Vietnamese market focus. EV manufacturing, charging infrastructure, V2G technology.',
+  ['electric vehicle', 'ev technology', 'battery systems', 'autonomous driving', 'charging infrastructure', 'vinfast', 'smart transportation', 'v2g technology', 'ev manufacturing', 'K2AI'],
+  'electric-vehicle-tech'
+);
 
 export default function ElectricVehiclePage() {
   const moduleData = {

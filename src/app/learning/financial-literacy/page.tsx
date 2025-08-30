@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
@@ -7,39 +8,15 @@ import {
   financialLiteracyLessons,
   type FinancialLiteracyLessons,
 } from '@/data/financial-literacy';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export const metadata: Metadata = {
-  title: createTitle('Financial Literacy & FinTech - Kiến Thức Tài Chính'),
-  description: createDescription(
-    'Khóa học Financial Literacy và FinTech toàn diện. Từ personal finance đến investment strategies, cryptocurrency và digital banking',
-  ),
-  keywords: [
-    'financial literacy',
-    'fintech',
-    'investment',
-    'cryptocurrency',
-    'personal finance',
-    'digital banking',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Financial Literacy & FinTech',
-    description:
-      'Nắm vững kiến thức tài chính và công nghệ FinTech với K2AiHub',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Financial Literacy - Kiến Thức Tài Chính',
+  'Học kiến thức tài chính cá nhân và đầu tư thông minh. Từ budgeting đến investment strategies',
+  ['financial literacy', 'personal finance', 'investment', 'budgeting', 'savings', 'financial planning'],
+  'financial-literacy'
+);
 
 // Convert FinancialLiteracyLessons to BaseLessonData interface
 function convertToLesson(

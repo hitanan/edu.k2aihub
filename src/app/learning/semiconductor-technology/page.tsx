@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   ModuleData,
 } from '@/components/learning/ModulePageTemplate';
@@ -6,47 +8,15 @@ import {
   SemiconductorLesson,
 } from '@/data/semiconductor-technology';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
-import type { Metadata } from 'next';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export const metadata: Metadata = {
-  title: createTitle(
-    'Semiconductor Technology & Microchip Design - Công nghệ Bán dẫn',
-  ),
-  description: createDescription(
-    'Khóa học Semiconductor Technology chuyên sâu từ cơ bản đến nâng cao. Học thiết kế chip, VLSI, fabrication process và career opportunities tại Samsung, Intel Vietnam',
-  ),
-  keywords: createKeywords([
-    'semiconductor',
-    'microchip design',
-    'VLSI',
-    'IC design',
-    'chip fabrication',
-    'samsung vietnam',
-    'intel vietnam',
-    'bán dẫn',
-    'thiết kế chip',
-  ]),
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: createTitle(
-      'Semiconductor Technology & Microchip Design - Công nghệ Bán dẫn',
-    ),
-    description: createDescription(
-      'Master công nghệ bán dẫn và thiết kế microchip với industry standards từ Samsung, Intel Vietnam',
-    ),
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Semiconductor Technology - Công Nghệ Bán Dẫn',
+  'Khóa học công nghệ bán dẫn chuyên sâu. Từ chip design đến manufacturing processes',
+  ['semiconductor', 'chip design', 'microprocessor', 'integrated circuits', 'fabrication', 'vlsi'],
+  'semiconductor-technology'
+);
 
 // Convert SemiconductorLesson to BaseLessonData interface
 function convertToLesson(

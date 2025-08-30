@@ -1,41 +1,18 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, {
   type ModuleData,
 } from '@/components/learning/ModulePageTemplate';
 import { SpaceLessons } from '@/data/space-exploration';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Space Technology & Exploration - Công Nghệ Vũ Trụ'),
-  description: createDescription(
-    'Khám phá công nghệ vũ trụ và tương lai của nhân loại trong không gian. Từ rocket science đến space missions và colonization.',
-  ),
-  keywords: [
-    'space technology',
-    'space exploration',
-    'rocket science',
-    'satellite technology',
-    'space missions',
-    'aerospace engineering',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Space Technology & Exploration',
-    description:
-      'Học công nghệ vũ trụ và khám phá tương lai của nhân loại trong không gian',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Space Technology & Exploration - Công Nghệ Vũ Trụ',
+  'Khám phá công nghệ vũ trụ và tương lai của nhân loại trong không gian. Từ rocket science đến space missions và colonization.',
+  ['space technology', 'space exploration', 'rocket science', 'satellite technology', 'space missions', 'aerospace engineering', 'k2aihub'],
+  'space-exploration'
+);
 
 export default function SpaceExplorationPage() {
   const moduleData: ModuleData = {

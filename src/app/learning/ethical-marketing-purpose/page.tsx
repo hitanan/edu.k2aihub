@@ -1,39 +1,16 @@
 import type { Metadata } from 'next';
+
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('Ethical Marketing & Purpose-Driven Brands - Marketing Đạo Đức'),
-  description: createDescription(
-    'Học cách xây dựng thương hiệu có mục đích cao cả và marketing strategies theo đạo đức. Tạo impact tích cực cho xã hội.',
-  ),
-  keywords: [
-    'ethical marketing',
-    'purpose-driven brands',
-    'sustainable marketing',
-    'social impact',
-    'conscious branding',
-    'vietnam marketing ethics',
-    'responsible advertising',
-    'k2aihub',
-  ],
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: 'Ethical Marketing & Purpose-Driven Brands',
-    description: 'Build purpose-driven brands with ethical marketing strategies',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+export const metadata: Metadata = createModuleMetadata(
+  'Ethical Marketing & Purpose-Driven Brands - Marketing Đạo Đức',
+  'Học cách xây dựng thương hiệu có mục đích cao cả và marketing strategies theo đạo đức. Tạo impact tích cực cho xã hội.',
+  ['ethical marketing', 'purpose-driven brands', 'sustainable marketing', 'social impact', 'conscious branding', 'vietnam marketing ethics', 'responsible advertising', 'k2aihub'],
+  'ethical-marketing-purpose'
+);
 
 export default function EthicalMarketingPurposePage() {
   const moduleData: ModuleData = {

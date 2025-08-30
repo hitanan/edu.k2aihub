@@ -1,7 +1,8 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { digitalGovLessons } from '@/data/digital-government';
 import { K2Module } from '@/data/moduleNavigation';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import type { DigitalGovLesson } from '@/data/digital-government';
 
@@ -40,39 +41,12 @@ function convertDigitalGovToBase(lesson: DigitalGovLesson): BaseLessonData {
 }
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle(
-      'Digital Government & Civic Technology - Chính phủ Điện tử và Công nghệ Công dân',
-    ),
-    description: createDescription(
-      'Khóa học chính phủ điện tử và công nghệ công dân: smart city, e-governance, IoT monitoring và civic engagement platforms. Xây dựng dịch vụ công kỹ thuật số.',
-    ),
-    keywords: [
-      'chính phủ điện tử',
-      'smart city vietnam',
-      'e governance',
-      'civic technology',
-      'dịch vụ công trực tuyến',
-      'công nghệ công dân',
-      'K2AiHub',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Digital Government & Civic Technology - K2AiHub',
-      description:
-        'Học phát triển công nghệ phục vụ chính phủ điện tử và smart city',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Digital Government & Civic Technology - K2AiHub',
+  'Khóa học chính phủ điện tử và công nghệ công dân: smart city, e-governance, IoT monitoring và civic engagement platforms. Xây dựng dịch vụ công kỹ thuật số.',
+  ['chính phủ điện tử', 'smart city vietnam', 'e governance', 'civic technology', 'dịch vụ công trực tuyến', 'công nghệ công dân', 'K2AiHub'],
+  'digital-government'
+);
 
 export default function DigitalGovernmentPage() {
   const moduleData = {

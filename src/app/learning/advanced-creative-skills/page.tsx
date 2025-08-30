@@ -1,22 +1,18 @@
+import type { Metadata } from 'next';
+
+import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { advancedCreativeLessons } from '@/data/advanced-creative-skills';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import { ModuleData } from '@/types';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Advanced Creative Skills - Kỹ Năng Sáng Tạo Nâng Cao'),
-    description: createDescription('Nâng cao kỹ năng sáng tạo chuyên nghiệp từ graphic design đến video production, audio creation và content writing. Phát triển career trong creative industry Việt Nam.'),
-    keywords: createKeywords(['kỹ năng sáng tạo', 'graphic design', 'video production', 'audio production', 'content writing', 'photography', 'creative skills', 'freelancing', 'creative industry vietnam', 'K2AI']),
-    openGraph: {
-      title: 'Advanced Creative Skills - Kỹ Năng Sáng Tạo Nâng Cao | K2AI',
-      description: 'Phát triển kỹ năng sáng tạo chuyên nghiệp trong các lĩnh vực design, video, audio, writing và photography. Xây dựng career thành công trong creative industry.',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Advanced Creative Skills - Kỹ Năng Sáng Tạo Nâng Cao',
+  'Phát triển kỹ năng sáng tạo nâng cao với AI tools và creative technology. Graphic design, video editing và digital art',
+  ["creative skills","graphic design","video editing","digital art","creative technology"],
+  'advanced-creative-skills'
+);
 
 export default function AdvancedCreativeSkillsMainPage() {
   const moduleData: ModuleData = {

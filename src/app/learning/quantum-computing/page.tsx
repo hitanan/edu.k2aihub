@@ -1,41 +1,16 @@
+import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { QuantumLessons } from '@/data/quantum-computing';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Quantum Computing - Máy Tính Lượng Tử'),
-    description: createDescription(
-      'Khám phá thế giới kỳ diệu của máy tính lượng tử từ nguyên lý cơ bản đến ứng dụng thực tế. Học quantum algorithms, cryptography và tương lai công nghệ.'
-    ),
-    keywords: [
-      'quantum computing',
-      'máy tính lượng tử',
-      'quantum algorithms',
-      'quantum cryptography',
-      'qiskit',
-      'quantum physics',
-      'vật lý lượng tử',
-      'công nghệ tương lai',
-      'K2AI',
-    ],
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-      title: 'Quantum Computing - Máy Tính Lượng Tử | K2AiHub',
-      description: 'Khám phá công nghệ máy tính lượng tử và ứng dụng thực tế trong tương lai',
-      type: 'website',
-    },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  'Quantum Computing - Máy Tính Lượng Tử',
+  'Khám phá thế giới kỳ diệu của máy tính lượng tử từ nguyên lý cơ bản đến ứng dụng thực tế. Học quantum algorithms, cryptography và tương lai công nghệ.',
+  ['quantum computing', 'máy tính lượng tử', 'quantum algorithms', 'quantum cryptography', 'qiskit', 'quantum physics', 'vật lý lượng tử', 'công nghệ tương lai', 'K2AI'],
+  'quantum-computing'
+);
 
 export default function QuantumComputingMainPage() {
   const moduleData = {
