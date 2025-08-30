@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  return generateLessonMetadata((await params).lessonId, RealEstateTechnologyLessons)
+  return generateLessonMetadata((await params).lessonId, RealEstateTechnologyLessons, 'real-estate-technology')
 }
 
 // Custom sidebar content for Real Estate Technology lessons

@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, AIApplicationLessons);
+  return generateLessonMetadata(lessonId, AIApplicationLessons, 'ai-applications');
 }
 
 // Custom icon mapping for AI Applications fields

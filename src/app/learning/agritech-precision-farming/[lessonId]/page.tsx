@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
     const { lessonId } = await params;
-    return generateLessonMetadata(lessonId, AgriTechLessons);
+    return generateLessonMetadata(lessonId, AgriTechLessons, 'agritech-precision-farming');
 }
 
 export default async function AgriTechLessonPage({ params }: PageProps) {

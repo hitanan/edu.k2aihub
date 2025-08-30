@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { smartManufacturingLessons, SmartManufacturingLessonType } from '@/data/smart-manufacturing'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { smartManufacturingLessons, SmartManufacturingLessonType } from '@/data/smart-manufacturing';
 import { PageProps } from '@/types';
 import { Factory, Cog, Zap } from 'lucide-react';
 
@@ -11,7 +16,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, smartManufacturingLessons);
+  return generateLessonMetadata(lessonId, smartManufacturingLessons, 'smart-manufacturing');
 }
 
 // Page component with standardized config
@@ -26,13 +31,16 @@ export default async function SmartManufacturingLessonPage({ params }: PageProps
     gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
     getFieldIcon: (field: string) => {
       switch (field) {
-        case 'automation': return <Cog className="w-5 h-5" />;
-        case 'energy': return <Zap className="w-5 h-5" />;
-        default: return <Factory className="w-5 h-5" />;
+        case 'automation':
+          return <Cog className="w-5 h-5" />;
+        case 'energy':
+          return <Zap className="w-5 h-5" />;
+        default:
+          return <Factory className="w-5 h-5" />;
       }
-    }
-  }
-  
+    },
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

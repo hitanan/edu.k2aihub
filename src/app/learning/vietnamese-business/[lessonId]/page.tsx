@@ -46,7 +46,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, transformedLessons);
+  return generateLessonMetadata(lessonId, transformedLessons, 'vietnamese-business');
 }
 
 // Page component with standardized config

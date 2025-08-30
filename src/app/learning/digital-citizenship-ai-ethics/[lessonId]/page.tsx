@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, digitalCitizenshipLessons);
+  return generateLessonMetadata(lessonId, digitalCitizenshipLessons, 'digital-citizenship-ai-ethics');
 }
 
 // Page component with standardized config

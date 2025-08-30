@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, crossBorderEcommerceLessons);
+  return generateLessonMetadata(lessonId, crossBorderEcommerceLessons, 'cross-border-ecommerce');
 }
 
 // Page component with standardized config

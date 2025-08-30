@@ -53,7 +53,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, convertedLessons);
+  return generateLessonMetadata(lessonId, convertedLessons, 'aerospace-engineering');
 }
 
 // Icon mapping function for aerospace engineering fields

@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, MetaverseVREducationLessons);
+  return generateLessonMetadata(lessonId, MetaverseVREducationLessons, 'metaverse-vr-education');
 }
 
 // Page component with standardized config

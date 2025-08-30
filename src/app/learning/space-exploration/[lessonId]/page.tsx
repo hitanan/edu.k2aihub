@@ -46,7 +46,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, convertedLessons);
+  return generateLessonMetadata(lessonId, convertedLessons, 'space-exploration');
 }
 
 // Icon mapping function for space exploration fields

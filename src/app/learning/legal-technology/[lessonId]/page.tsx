@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, legalTechLessons);
+  return generateLessonMetadata(lessonId, legalTechLessons, 'legal-technology');
 }
 
 // Page component with legal technology-specific configuration

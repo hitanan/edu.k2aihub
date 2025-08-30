@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, DigitalArtsLessons);
+  return generateLessonMetadata(lessonId, DigitalArtsLessons, 'digital-arts-creative-tech');
 }
 
 // Page component with standardized config

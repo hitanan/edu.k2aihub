@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { crossPlatformStrategyLessons, CrossPlatformStrategyLessonType } from '@/data/cross-platform-strategy'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { crossPlatformStrategyLessons, CrossPlatformStrategyLessonType } from '@/data/cross-platform-strategy';
 import { PageProps } from '@/types';
 import { Globe, Target, BarChart3, Settings } from 'lucide-react';
 
@@ -11,7 +16,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, crossPlatformStrategyLessons);
+  return generateLessonMetadata(lessonId, crossPlatformStrategyLessons, 'cross-platform-strategy');
 }
 
 // Page component with standardized config
@@ -26,15 +31,20 @@ export default async function CrossPlatformStrategyLessonPage({ params }: PagePr
     gradientColors: 'from-slate-900 via-purple-900 to-slate-900',
     getFieldIcon: (field: string) => {
       switch (field) {
-        case 'platformFeatures': return <Globe className="w-5 h-5" />;
-        case 'contentAdaptation': return <Target className="w-5 h-5" />;
-        case 'audienceSegmentation': return <BarChart3 className="w-5 h-5" />;
-        case 'automationTools': return <Settings className="w-5 h-5" />;
-        default: return <Globe className="w-5 h-5" />;
+        case 'platformFeatures':
+          return <Globe className="w-5 h-5" />;
+        case 'contentAdaptation':
+          return <Target className="w-5 h-5" />;
+        case 'audienceSegmentation':
+          return <BarChart3 className="w-5 h-5" />;
+        case 'automationTools':
+          return <Settings className="w-5 h-5" />;
+        default:
+          return <Globe className="w-5 h-5" />;
       }
-    }
-  }
-  
+    },
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

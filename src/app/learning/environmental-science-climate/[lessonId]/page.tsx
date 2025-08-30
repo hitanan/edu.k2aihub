@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const resolvedParams = await params;
-  return generateLessonMetadata(resolvedParams.lessonId, environmentalClimateLessons);
+  return generateLessonMetadata(resolvedParams.lessonId, environmentalClimateLessons, 'environmental-science-climate');
 }
 
 // Page component with standardized config

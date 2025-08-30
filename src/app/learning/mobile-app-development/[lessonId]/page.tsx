@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, mobileAppLessons);
+  return generateLessonMetadata(lessonId, mobileAppLessons, 'mobile-app-development');
 }
 
 // Page component with mobile app development-specific configuration

@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
   const convertedLessons = digitalMarketingLessons.map(convertToLesson);
-  return generateLessonMetadata(lessonId, convertedLessons);
+  return generateLessonMetadata(lessonId, convertedLessons, 'digital-marketing');
 }
 
 // Convert DigitalMarketingLesson to Lesson interface

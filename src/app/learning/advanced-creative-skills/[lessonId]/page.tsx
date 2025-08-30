@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, advancedCreativeLessons);
+  return generateLessonMetadata(lessonId, advancedCreativeLessons, 'advanced-creative-skills');
 }
 
 // Page component with advanced creative skills-specific configuration

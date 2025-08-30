@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, nanotechnologyLessons);
+  return generateLessonMetadata(lessonId, nanotechnologyLessons, 'nanotechnology');
 }
 
 // Page component with nanotechnology-specific configuration

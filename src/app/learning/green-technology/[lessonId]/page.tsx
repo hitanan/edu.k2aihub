@@ -57,7 +57,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
   const convertedLessons = greenTechLessons.map(convertToLesson);
-  return generateLessonMetadata(lessonId, convertedLessons);
+  return generateLessonMetadata(lessonId, convertedLessons, 'green-technology');
 }
 
 // Page component

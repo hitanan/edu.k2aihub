@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, healthcareTechLessons);
+  return generateLessonMetadata(lessonId, healthcareTechLessons, 'healthcare-tech');
 }
 
 // Page component with healthcare tech-specific configuration

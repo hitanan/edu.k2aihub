@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  return generateLessonMetadata((await params).lessonId, EducationTechnologyLessons)
+  return generateLessonMetadata((await params).lessonId, EducationTechnologyLessons, 'education-technology')
 }
 
 // Custom sidebar content for Education Technology lessons

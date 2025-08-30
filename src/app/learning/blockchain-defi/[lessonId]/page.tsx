@@ -4,10 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import {
-  blockchainLessons,
-  type BlockchainLesson,
-} from '@/data/blockchain-defi';
+import { blockchainLessons, type BlockchainLesson } from '@/data/blockchain-defi';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Cpu, Shield, Coins, Palette, Scale } from 'lucide-react';
@@ -49,7 +46,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, convertedLessons);
+  return generateLessonMetadata(lessonId, convertedLessons, 'blockchain-defi');
 }
 
 // Icon mapping function for blockchain-specific fields

@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, liveCommerceStreamingLessons);
+  return generateLessonMetadata(lessonId, liveCommerceStreamingLessons, 'live-commerce-streaming');
 }
 
 // Page component with standardized config

@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, criticalThinkingLessons);
+  return generateLessonMetadata(lessonId, criticalThinkingLessons, 'critical-thinking');
 }
 
 // Page component with standardized config
