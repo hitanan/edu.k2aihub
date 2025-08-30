@@ -1,6 +1,4 @@
-// Middleware disabled for static export compatibility
-// This file is kept for future use but all functionality is disabled
+// Middleware completely disabled for static export compatibility
+// This file exists but is intentionally empty to prevent middleware execution
 
-export const config = {
-  matcher: [], // Empty matcher to disable middleware for static export
-};
+// No exports to disable middleware entirely

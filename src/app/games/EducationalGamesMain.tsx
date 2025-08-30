@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 import { useEducationalGames, GameCard } from '@/components/games/EducationalGames';
 import { PageTracker } from '@/components/gamification/VisitTracker';
@@ -10,11 +11,61 @@ import ExternalGameCard from './ExternalGameCard';
 import { GameCardSkeleton } from '@/components/LoadingSpinner';
 
 export default function EducationalGamesMain() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  
+  // Get initial values from URL params
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
   const { completedGames, isLoaded } = useEducationalGames();
+
+  // Initialize state from URL parameters
+  useEffect(() => {
+    if (searchParams) {
+      const categoryParam = searchParams.get('category');
+      const difficultyParam = searchParams.get('difficulty');
+      const searchParam = searchParams.get('search');
+      
+      if (categoryParam) setSelectedCategory(categoryParam);
+      if (difficultyParam) setSelectedDifficulty(difficultyParam);
+      if (searchParam) setSearchTerm(searchParam);
+    }
+  }, [searchParams]);
+
+  // Function to update URL with current filter state
+  const updateURL = (newCategory: string, newDifficulty: string, newSearch: string) => {
+    const params = new URLSearchParams();
+    
+    if (newCategory && newCategory !== 'all') params.set('category', newCategory);
+    if (newDifficulty && newDifficulty !== 'all') params.set('difficulty', newDifficulty);
+    if (newSearch) params.set('search', newSearch);
+    
+    const queryString = params.toString();
+    const newUrl = queryString ? `/games?${queryString}` : '/games';
+    
+    // Use replace instead of push to avoid creating too many history entries
+    router.replace(newUrl, { scroll: false });
+  };
+
+  // Handle category change with URL update
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    updateURL(category, selectedDifficulty, searchTerm);
+  };
+
+  // Handle difficulty change with URL update
+  const handleDifficultyChange = (difficulty: string) => {
+    setSelectedDifficulty(difficulty);
+    updateURL(selectedCategory, difficulty, searchTerm);
+  };
+
+  // Handle search change with URL update
+  const handleSearchChange = (search: string) => {
+    setSearchTerm(search);
+    updateURL(selectedCategory, selectedDifficulty, search);
+  };
 
   // Add loading simulation for better UX
   useEffect(() => {
@@ -210,7 +261,7 @@ export default function EducationalGamesMain() {
                 type="text"
                 placeholder="Tìm kiếm trò chơi..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
               />
             </div>
@@ -227,7 +278,7 @@ export default function EducationalGamesMain() {
               <span className="text-white font-medium">Danh mục:</span>
               <select
                 value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
+                onChange={(e) => handleCategoryChange(e.target.value)}
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
               >
                 {categories.map((category) => (
@@ -243,7 +294,7 @@ export default function EducationalGamesMain() {
               <span className="text-white font-medium">Cấp độ:</span>
               <select
                 value={selectedDifficulty}
-                onChange={(e) => setSelectedDifficulty(e.target.value)}
+                onChange={(e) => handleDifficultyChange(e.target.value)}
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
               >
                 {difficulties.map((difficulty) => (
@@ -299,7 +350,7 @@ export default function EducationalGamesMain() {
           {categories.slice(1).map((category) => (
             <button
               key={category.value}
-              onClick={() => setSelectedCategory(category.value)}
+              onClick={() => handleCategoryChange(category.value)}
               className={`p-6 rounded-2xl border transition-all duration-300 hover:scale-105 ${
                 selectedCategory === category.value
                   ? 'bg-purple-500/20 border-purple-400 text-purple-300'
