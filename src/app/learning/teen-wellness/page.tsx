@@ -8,8 +8,16 @@ import { K2Module } from '@/data/moduleNavigation';
 export const metadata: Metadata = createModuleMetadata(
   'Teen Wellness & Mental Health - Sức khỏe tinh thần tuổi teen',
   'Chương trình toàn diện về sức khỏe tinh thần cho teenagers. Học cách quản lý stress, anxiety, xây dựng mối quan hệ tích cực và phát triển emotional intelligence.',
-  ['teen wellness', 'mental health', 'sức khỏe tinh thần', 'tuổi teen', 'stress management', 'anxiety control', 'mindfulness'],
-  'teen-wellness'
+  [
+    'teen wellness',
+    'mental health',
+    'sức khỏe tinh thần',
+    'tuổi teen',
+    'stress management',
+    'anxiety control',
+    'mindfulness',
+  ],
+  'teen-wellness',
 );
 
 export default function TeenWellnessPage() {
@@ -22,8 +30,7 @@ export default function TeenWellnessPage() {
     level: 'Cơ bản đến Nâng cao',
     duration: '12-15 giờ',
     category: 'Youth Development & Mental Health',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1200&h=600&fit=crop',
     features: [
       '🧠 Stress & Anxiety Management cho áp lực học tập',
       '🧘 Mindfulness & Meditation techniques phù hợp với teen',
@@ -109,11 +116,5 @@ export default function TeenWellnessPage() {
     },
   ];
 
-  return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={teenWellnessLessons}
-      additionalStats={additionalStats}
-    />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={teenWellnessLessons} additionalStats={additionalStats} />;
 }

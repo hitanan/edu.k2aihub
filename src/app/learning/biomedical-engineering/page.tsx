@@ -1,18 +1,13 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import {
-  biomedicalEngineeringLessons,
-  type BiomedicalEngineeringLesson,
-} from '@/data/biomedical-engineering';
+import { biomedicalEngineeringLessons, type BiomedicalEngineeringLesson } from '@/data/biomedical-engineering';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 // Convert BiomedicalEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(
-  lesson: BiomedicalEngineeringLesson,
-): BaseLessonData {
+function convertToBaseLessonData(lesson: BiomedicalEngineeringLesson): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -51,7 +46,7 @@ export const metadata: Metadata = createModuleMetadata(
     'medical innovation',
     'K2AI',
   ],
-  'biomedical-engineering'
+  'biomedical-engineering',
 );
 
 export default function BiomedicalEngineeringPage() {
@@ -73,8 +68,7 @@ export default function BiomedicalEngineeringPage() {
     ],
     icon: '🏥',
     color: 'from-teal-600 to-cyan-600',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Design và develop medical devices theo international regulatory standards',
       'Implement advanced biosignal processing algorithms cho diagnostic applications',
@@ -112,20 +106,11 @@ export default function BiomedicalEngineeringPage() {
       jobGrowth: '+85%',
       hireDemand: 'Cao',
     },
-    relatedModules: [
-      K2Module.AdvancedAI,
-      K2Module.Robotics,
-      K2Module.Arduino,
-      K2Module.Python,
-    ],
+    relatedModules: [K2Module.AdvancedAI, K2Module.Robotics, K2Module.Arduino, K2Module.Python],
   };
 
   // Convert lessons to BaseLessonData format
-  const convertedLessons = biomedicalEngineeringLessons.map(
-    convertToBaseLessonData,
-  );
+  const convertedLessons = biomedicalEngineeringLessons.map(convertToBaseLessonData);
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

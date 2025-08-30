@@ -9,8 +9,8 @@ import { K2Module } from '@/data/moduleNavigation';
 export const metadata: Metadata = createModuleMetadata(
   'AI Content Creator - Sáng Tạo Nội Dung Với AI',
   'Sáng tạo nội dung với AI tools. Video generation, copywriting và social media automation',
-  ["ai content creation","video generation","copywriting","social media automation","ai tools"],
-  'ai-content-creator'
+  ['ai content creation', 'video generation', 'copywriting', 'social media automation', 'ai tools'],
+  'ai-content-creator',
 );
 
 export default function AIContentCreatorPage() {
@@ -18,7 +18,8 @@ export default function AIContentCreatorPage() {
     id: 'ai-content-creator',
     title: 'AI Content Creator Academy',
     subtitle: 'Master AI tools cho content creation',
-    description: 'Học cách sử dụng AI để tạo content viral trên TikTok, YouTube, Instagram với tools như ChatGPT, RunwayML, Midjourney. Course này sẽ giúp bạn master AI-powered content creation từ video generation, social media automation đến personal branding với AI tools.',
+    description:
+      'Học cách sử dụng AI để tạo content viral trên TikTok, YouTube, Instagram với tools như ChatGPT, RunwayML, Midjourney. Course này sẽ giúp bạn master AI-powered content creation từ video generation, social media automation đến personal branding với AI tools.',
     level: 'Trung bình',
     duration: '8-10 giờ',
     category: 'Social Media & Creative Technology',
@@ -26,7 +27,7 @@ export default function AIContentCreatorPage() {
       'AI Video Creation với RunwayML và Midjourney',
       'Automated Social Media scheduling và content distribution',
       'Personal Branding optimization với AI Tools',
-      'Content Workflow tối ưu hóa cho productivity'
+      'Content Workflow tối ưu hóa cho productivity',
     ],
     icon: '🎬',
     color: 'from-purple-600 to-pink-600',
@@ -34,44 +35,39 @@ export default function AIContentCreatorPage() {
       'Master AI video creation tools như RunwayML cho viral content',
       'Develop automated social media systems cho consistent posting',
       'Build personal brand authority với AI-powered content strategy',
-      'Optimize content creation workflow cho maximum efficiency'
+      'Optimize content creation workflow cho maximum efficiency',
     ],
     prerequisites: [
       'Hiểu biết cơ bản về social media platforms (TikTok, YouTube, Instagram)',
       'Kỹ năng sử dụng máy tính và smartphone',
       'Tư duy sáng tạo và storytelling mindset',
-      'Willingness to experiment với new AI tools'
+      'Willingness to experiment với new AI tools',
     ],
     careerOutcomes: [
       'Content Creator chuyên nghiệp với AI expertise',
       'Social Media Manager với automation skills',
       'Digital Marketing Specialist focused trên AI tools',
-      'Personal Brand Coach và Consultant'
+      'Personal Brand Coach và Consultant',
     ],
     industryApplications: [
       'Entertainment industry và media production',
       'Digital marketing agencies và social media firms',
       'E-commerce brands và online businesses',
-      'Educational content và online learning platforms'
+      'Educational content và online learning platforms',
     ],
     marketDemand: {
       averageSalary: '20-45 triệu VNĐ',
       jobGrowth: '+35%',
-      hireDemand: 'Rất Cao'
+      hireDemand: 'Rất Cao',
     },
     heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     relatedModules: [
       K2Module.DigitalMarketing,
       K2Module.TikTokSocialCommerce,
       K2Module.ShortVideoMastery,
-      K2Module.ContentCreator
-    ]
+      K2Module.ContentCreator,
+    ],
   };
 
-  return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={aiContentCreatorLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={aiContentCreatorLessons} />;
 }

@@ -6,7 +6,6 @@ import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import type { GameDevLesson } from '@/data/game-development';
 import { K2Module } from '@/data/moduleNavigation';
 
-
 // Convert GameDevLesson to BaseLessonData
 function convertGameDevToBase(lesson: GameDevLesson): BaseLessonData {
   return {
@@ -55,7 +54,7 @@ export const metadata: Metadata = createModuleMetadata(
     'interactive media',
     'K2AiHub',
   ],
-  'game-development'
+  'game-development',
 );
 
 export default function GameDevelopmentPage() {
@@ -77,8 +76,7 @@ export default function GameDevelopmentPage() {
     icon: '🎮',
     color: 'from-purple-600 to-pink-600',
     gradientColors: 'from-slate-900 via-purple-900 to-slate-900',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200&h=600&fit=crop',
     objectives: [
       'Thành thạo Unity và Unreal Engine cho phát triển game 2D/3D',
       'Thiết kế game mechanics, level design và player experience',
@@ -117,16 +115,10 @@ export default function GameDevelopmentPage() {
       startups: '2.7K+',
       startupsNote: 'Game Studios Worldwide',
     },
-    relatedModules: [
-      K2Module.AIArtCreativeTech,
-      K2Module.DigitalMarketing,
-      K2Module.Python,
-    ],
+    relatedModules: [K2Module.AIArtCreativeTech, K2Module.DigitalMarketing, K2Module.Python],
   };
 
   const convertedLessons = gameDevLessons.map(convertGameDevToBase);
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

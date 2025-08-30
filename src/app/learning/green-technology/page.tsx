@@ -5,7 +5,6 @@ import { createModuleMetadata } from '@/utils/seo';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import type { GreenTechLesson } from '@/data/green-technology';
 
-
 // Convert GreenTechLesson to BaseLessonData
 function convertGreenTechToBase(lesson: GreenTechLesson): BaseLessonData {
   return {
@@ -52,7 +51,7 @@ export const metadata: Metadata = createModuleMetadata(
     'renewable energy',
     'K2AiHub',
   ],
-  'green-technology'
+  'green-technology',
 );
 
 export default function GreenTechnologyPage() {
@@ -74,8 +73,7 @@ export default function GreenTechnologyPage() {
     icon: '🌱',
     color: 'from-green-600 to-emerald-600',
     gradientColors: 'from-slate-900 via-green-900 to-slate-900',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&h=600&fit=crop',
     objectives: [
       'Design và implement renewable energy systems',
       'Develop smart city solutions với IoT và environmental monitoring',
@@ -118,7 +116,5 @@ export default function GreenTechnologyPage() {
 
   const convertedLessons = greenTechLessons.map(convertGreenTechToBase);
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

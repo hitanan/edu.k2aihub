@@ -9,7 +9,7 @@ export const metadata: Metadata = createModuleMetadata(
   'Công Nghệ Nano & Vật Liệu Tiên Tiến',
   'Khám phá thế giới công nghệ nano với các ứng dụng tiên tiến trong y học, điện tử, môi trường và năng lượng. Học cách tổng hợp vật liệu nano.',
   ['công nghệ nano', 'vật liệu tiên tiến', 'nanomedicine', 'quantum devices', 'nanotechnology vietnam', 'K2AI'],
-  'nanotechnology'
+  'nanotechnology',
 );
 
 export default function NanotechnologyPage() {
@@ -22,8 +22,7 @@ export default function NanotechnologyPage() {
     level: 'Nâng cao',
     duration: '25-30 giờ',
     category: 'Emerging Technology',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop&auto=format',
     features: [
       'Tổng hợp và đặc tính hóa vật liệu nano với các phương pháp tiên tiến',
       'Thiết kế thiết bị nanoelectronics và quantum computing',
@@ -62,12 +61,7 @@ export default function NanotechnologyPage() {
       jobGrowth: '+35%',
       hireDemand: 'Rất cao',
     },
-    relatedModules: [
-      K2Module.Biotechnology,
-      K2Module.Cybersecurity,
-      K2Module.GreenTechnology,
-      K2Module.AdvancedAI,
-    ],
+    relatedModules: [K2Module.Biotechnology, K2Module.Cybersecurity, K2Module.GreenTechnology, K2Module.AdvancedAI],
   };
 
   return (

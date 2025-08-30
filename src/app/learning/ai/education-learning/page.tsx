@@ -2,33 +2,20 @@ import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import { createModuleMetadata } from '@/utils/seo';
-import {
-  aiLearningApps,
-  aiAppCategories,
-  learningPathways,
-} from '@/data/aiLearningApps';
+import { aiLearningApps, aiAppCategories, learningPathways } from '@/data/aiLearningApps';
 import YouTubePlayer from '@/components/YouTubePlayer';
 
 export const metadata: Metadata = createModuleMetadata(
   'AI Hỗ Trợ Học Tập - Ứng Dụng AI Cho Giáo Dục',
   'Khám phá các ứng dụng AI hỗ trợ học tập hiệu quả. Từ PhotoMath, Gauth đến Duolingo - công cụ AI giúp học tập thông minh hơn',
-  [
-    'AI học tập',
-    'PhotoMath',
-    'Gauth',
-    'Duolingo',
-    'AI education',
-    'study apps',
-    'learning AI tools',
-  ],
-  'ai/education-learning'
+  ['AI học tập', 'PhotoMath', 'Gauth', 'Duolingo', 'AI education', 'study apps', 'learning AI tools'],
+  'ai/education-learning',
 );
 
 export default function AIAppsModule() {
   const moduleInfo = {
     title: '🧠 AI Hỗ Trợ Học Tập',
-    description:
-      'Khám phá các ứng dụng AI giúp học tập hiệu quả hơn. Từ giải toán đến học ngôn ngữ.',
+    description: 'Khám phá các ứng dụng AI giúp học tập hiệu quả hơn. Từ giải toán đến học ngôn ngữ.',
     icon: '🧠',
     difficulty: 'Cho mọi đối tượng',
     duration: 'Tự học linh hoạt',
@@ -37,14 +24,12 @@ export default function AIAppsModule() {
   const studyTips = [
     {
       title: 'Kết Hợp Nhiều Công Cụ',
-      description:
-        'Sử dụng PhotoMath cho toán, Duolingo cho ngoại ngữ, Grammarly cho viết',
+      description: 'Sử dụng PhotoMath cho toán, Duolingo cho ngoại ngữ, Grammarly cho viết',
       icon: '🔄',
     },
     {
       title: 'Đừng Phụ Thuộc Hoàn Toàn',
-      description:
-        'AI là công cụ hỗ trợ, không thay thế việc tư duy và học hiểu',
+      description: 'AI là công cụ hỗ trợ, không thay thế việc tư duy và học hiểu',
       icon: '⚖️',
     },
     {
@@ -54,8 +39,7 @@ export default function AIAppsModule() {
     },
     {
       title: 'Học Từ Quá Trình',
-      description:
-        'Tập trung vào cách giải thích và phương pháp, không chỉ kết quả',
+      description: 'Tập trung vào cách giải thích và phương pháp, không chỉ kết quả',
       icon: '🎯',
     },
   ];
@@ -73,19 +57,11 @@ export default function AIAppsModule() {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
               {title}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              {description}
-            </p>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">{description}</p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-              <span className="bg-white/10 px-3 py-1 rounded-full">
-                🎯 {difficulty}
-              </span>
-              <span className="bg-white/10 px-3 py-1 rounded-full">
-                ⏱️ {duration}
-              </span>
-              <span className="bg-white/10 px-3 py-1 rounded-full">
-                📱 {aiLearningApps.length} ứng dụng
-              </span>
+              <span className="bg-white/10 px-3 py-1 rounded-full">🎯 {difficulty}</span>
+              <span className="bg-white/10 px-3 py-1 rounded-full">⏱️ {duration}</span>
+              <span className="bg-white/10 px-3 py-1 rounded-full">📱 {aiLearningApps.length} ứng dụng</span>
             </div>
           </div>
         </div>
@@ -95,20 +71,11 @@ export default function AIAppsModule() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {aiAppCategories.map((category, index) => (
-            <div
-              key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20"
-            >
+            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
               <div className="text-2xl mb-2">{category.icon}</div>
-              <h3 className="text-sm font-bold text-white mb-1">
-                {category.name}
-              </h3>
+              <h3 className="text-sm font-bold text-white mb-1">{category.name}</h3>
               <p className="text-xs text-gray-400">
-                {
-                  aiLearningApps.filter((app) => app.category === category.id)
-                    .length
-                }{' '}
-                ứng dụng
+                {aiLearningApps.filter((app) => app.category === category.id).length} ứng dụng
               </p>
             </div>
           ))}
@@ -118,9 +85,7 @@ export default function AIAppsModule() {
       {/* Learning Pathways */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            🎯 Lộ Trình Học Tập
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">🎯 Lộ Trình Học Tập</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Các combo ứng dụng AI được gợi ý cho từng mục tiêu học tập cụ thể
           </p>
@@ -128,27 +93,17 @@ export default function AIAppsModule() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {learningPathways.map((pathway, index) => (
-            <div
-              key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
-            >
-              <h3 className="text-xl font-bold text-white mb-3">
-                {pathway.title}
-              </h3>
+            <div key={index} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <h3 className="text-xl font-bold text-white mb-3">{pathway.title}</h3>
               <p className="text-gray-300 mb-4">{pathway.description}</p>
 
               <div className="mb-4">
-                <h4 className="text-sm font-semibold text-yellow-300 mb-2">
-                  📱 Ứng dụng trong combo:
-                </h4>
+                <h4 className="text-sm font-semibold text-yellow-300 mb-2">📱 Ứng dụng trong combo:</h4>
                 <div className="flex flex-wrap gap-2">
                   {pathway.apps.map((appId, appIndex) => {
                     const app = aiLearningApps.find((a) => a.id === appId);
                     return app ? (
-                      <span
-                        key={appIndex}
-                        className="bg-purple-500/20 text-purple-200 text-xs px-2 py-1 rounded-full"
-                      >
+                      <span key={appIndex} className="bg-purple-500/20 text-purple-200 text-xs px-2 py-1 rounded-full">
                         {app.name}
                       </span>
                     ) : null;
@@ -158,12 +113,10 @@ export default function AIAppsModule() {
 
               <div className="text-xs text-gray-300">
                 <p>
-                  <strong className="text-green-300">👥 Phù hợp:</strong>{' '}
-                  {pathway.bestFor}
+                  <strong className="text-green-300">👥 Phù hợp:</strong> {pathway.bestFor}
                 </p>
                 <p className="mt-1">
-                  <strong className="text-blue-300">⏰ Thời gian:</strong>{' '}
-                  {pathway.estimatedTime}
+                  <strong className="text-blue-300">⏰ Thời gian:</strong> {pathway.estimatedTime}
                 </p>
               </div>
             </div>
@@ -174,9 +127,7 @@ export default function AIAppsModule() {
       {/* AI Apps Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            📱 Ứng Dụng AI Học Tập
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">📱 Ứng Dụng AI Học Tập</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Danh sách các ứng dụng AI hàng đầu giúp bạn học tập hiệu quả hơn
           </p>
@@ -204,28 +155,20 @@ export default function AIAppsModule() {
                 </div>
                 <div className="text-right">
                   <div className="text-xs text-purple-300 font-semibold">
-                    {aiAppCategories.find((cat) => cat.id === app.category)
-                      ?.name || app.category}
+                    {aiAppCategories.find((cat) => cat.id === app.category)?.name || app.category}
                   </div>
                   <div className="text-xs text-gray-400">{app.rating}/5</div>
                 </div>
               </div>
 
               <h3 className="text-xl font-bold text-white mb-2">{app.name}</h3>
-              <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                {app.description}
-              </p>
+              <p className="text-gray-300 mb-4 text-sm leading-relaxed">{app.description}</p>
 
               <div className="mb-4">
-                <h4 className="text-sm font-semibold text-yellow-300 mb-2">
-                  ✨ Tính năng chính:
-                </h4>
+                <h4 className="text-sm font-semibold text-yellow-300 mb-2">✨ Tính năng chính:</h4>
                 <div className="flex flex-wrap gap-1">
                   {app.features.slice(0, 3).map((feature, featIndex) => (
-                    <span
-                      key={featIndex}
-                      className="bg-purple-500/20 text-purple-200 text-xs px-2 py-1 rounded-full"
-                    >
+                    <span key={featIndex} className="bg-purple-500/20 text-purple-200 text-xs px-2 py-1 rounded-full">
                       {feature}
                     </span>
                   ))}
@@ -233,9 +176,7 @@ export default function AIAppsModule() {
               </div>
 
               <div className="mb-4">
-                <h4 className="text-sm font-semibold text-green-300 mb-2">
-                  🎯 Phù hợp cho:
-                </h4>
+                <h4 className="text-sm font-semibold text-green-300 mb-2">🎯 Phù hợp cho:</h4>
                 <ul className="text-xs text-gray-300 space-y-1">
                   {app.bestFor.slice(0, 2).map((useCase, caseIndex) => (
                     <li key={caseIndex} className="flex items-start">
@@ -248,19 +189,13 @@ export default function AIAppsModule() {
 
               {app.videoDemo && (
                 <div className="mb-4">
-                  <YouTubePlayer
-                    videoUrl={app.videoDemo}
-                    title={`${app.name} - Demo`}
-                    className="h-40"
-                  />
+                  <YouTubePlayer videoUrl={app.videoDemo} title={`${app.name} - Demo`} className="h-40" />
                 </div>
               )}
 
               <div className="flex justify-between items-center text-xs">
                 <div className="flex flex-wrap gap-1">
-                  <span className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded-full">
-                    {app.platform}
-                  </span>
+                  <span className="bg-blue-500/20 text-blue-200 px-2 py-1 rounded-full">{app.platform}</span>
                 </div>
                 <span
                   className={`px-2 py-1 rounded-full ${
@@ -296,9 +231,7 @@ export default function AIAppsModule() {
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              💡 Mẹo Sử Dụng AI Hiệu Quả
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">💡 Mẹo Sử Dụng AI Hiệu Quả</h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Cách sử dụng AI để hỗ trợ học tập một cách thông minh và hiệu quả
             </p>
@@ -311,9 +244,7 @@ export default function AIAppsModule() {
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20"
               >
                 <div className="text-3xl mb-4">{tip.icon}</div>
-                <h3 className="text-lg font-bold text-white mb-3">
-                  {tip.title}
-                </h3>
+                <h3 className="text-lg font-bold text-white mb-3">{tip.title}</h3>
                 <p className="text-gray-300 text-sm">{tip.description}</p>
               </div>
             ))}
@@ -324,12 +255,9 @@ export default function AIAppsModule() {
       {/* Call to Action */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-3xl p-12 border border-white/20">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            🚀 Bắt Đầu Học Thông Minh
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">🚀 Bắt Đầu Học Thông Minh</h2>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Tải ngay những ứng dụng AI này và trải nghiệm cách học tập hiệu quả
-            trong thời đại công nghệ!
+            Tải ngay những ứng dụng AI này và trải nghiệm cách học tập hiệu quả trong thời đại công nghệ!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

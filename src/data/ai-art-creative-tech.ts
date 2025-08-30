@@ -49,8 +49,7 @@ export const aiArtLessons: AiArtLesson[] = [
     description:
       'Master AI image generation với Midjourney, DALL-E, Stable Diffusion. Học prompt engineering techniques, style control, và advanced generation workflows.',
     videoUrl: 'https://www.youtube.com/watch?v=V16QtZ1OjCQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '150 phút',
     artType: 'Digital Art Generation',
@@ -59,13 +58,13 @@ export const aiArtLessons: AiArtLesson[] = [
       'Develop advanced prompt engineering skills cho consistent artistic output',
       'Understand style transfer, composition control, và image refinement techniques',
       'Create professional-quality artwork using AI-assisted workflows',
-      'Implement ethical AI art practices và copyright considerations'
+      'Implement ethical AI art practices và copyright considerations',
     ],
     prerequisites: [
       'Basic understanding của digital art concepts',
       'Access to AI art platforms (Midjourney, DALL-E, hoặc Stable Diffusion)',
       'Creative vision và artistic appreciation',
-      'Internet connection cho cloud-based AI services'
+      'Internet connection cho cloud-based AI services',
     ],
     tools: [
       'Midjourney (Discord-based AI art)',
@@ -73,7 +72,7 @@ export const aiArtLessons: AiArtLesson[] = [
       'Stable Diffusion (Open-source AI art)',
       'Adobe Photoshop (Post-processing)',
       'Figma (Design integration)',
-      'RunwayML (Video và advanced AI tools)'
+      'RunwayML (Video và advanced AI tools)',
     ],
     exercises: [
       {
@@ -88,40 +87,38 @@ export const aiArtLessons: AiArtLesson[] = [
           'Adobe Creative Suite subscription cho post-processing',
           'Understanding của brand development và visual identity',
           'Portfolio project từ concept to delivery',
-          'Documentation của complete creative process'
+          'Documentation của complete creative process',
         ],
         hints: [
           'Start với broad concepts, refine gradually',
           'Test prompts across multiple platforms for best results',
           'Build comprehensive prompt libraries for consistency',
-          'Always post-process AI output for professional quality'
+          'Always post-process AI output for professional quality',
         ],
         expectedOutput:
-          'Complete brand identity system created using AI art generation với professional quality deliverables và comprehensive documentation'
-      }
+          'Complete brand identity system created using AI art generation với professional quality deliverables và comprehensive documentation',
+      },
     ],
     realWorldApplications: [
       'Brand identity và logo design for startups và businesses',
       'Marketing campaign visuals và advertising creative',
       'Social media content creation và visual storytelling',
       'Product visualization và concept development',
-      'Entertainment industry concept art và storyboarding'
+      'Entertainment industry concept art và storyboarding',
     ],
     resources: [
       {
         title: 'Midjourney Official Documentation',
         url: 'https://docs.midjourney.com',
         type: 'platform',
-        description:
-          'Comprehensive guide to Midjourney features, commands, và best practices'
+        description: 'Comprehensive guide to Midjourney features, commands, và best practices',
       },
       {
         title: 'OpenAI DALL-E Platform',
         url: 'https://openai.com/dall-e-3',
         type: 'platform',
-        description:
-          'Access to DALL-E 3 image generation với advanced prompt capabilities'
-      }
+        description: 'Access to DALL-E 3 image generation với advanced prompt capabilities',
+      },
     ],
     caseStudies: [
       {
@@ -137,10 +134,10 @@ export const aiArtLessons: AiArtLesson[] = [
           'AI art generation enables rapid iteration và exploration impossible với traditional methods',
           'Multi-platform approach leverages unique strengths của different AI systems',
           'Professional post-processing essential for commercial-quality output',
-          'Comprehensive prompt engineering creates consistent brand aesthetics'
-        ]
-      }
-    ]
+          'Comprehensive prompt engineering creates consistent brand aesthetics',
+        ],
+      },
+    ],
   },
   {
     id: 'creative-video-ai-production',
@@ -148,8 +145,7 @@ export const aiArtLessons: AiArtLesson[] = [
     description:
       'Create stunning videos với AI tools. Master RunwayML, Pika Labs, Stable Video Diffusion cho video generation, motion graphics, và cinematic storytelling.',
     videoUrl: 'https://www.youtube.com/watch?v=LGD0EZhYU7A',
-    imageUrl:
-      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '180 phút',
     artType: 'Video & Motion Graphics',
@@ -158,13 +154,13 @@ export const aiArtLessons: AiArtLesson[] = [
       'Create professional motion graphics using AI-assisted workflows',
       'Develop video storytelling skills với AI-generated content',
       'Integrate AI video với traditional video production',
-      'Build scalable video content creation systems'
+      'Build scalable video content creation systems',
     ],
     prerequisites: [
       'Basic video editing experience (Premiere, After Effects)',
       'Understanding của video formats và compression',
       'Access to AI video platforms (RunwayML, Pika Labs)',
-      'Creative storytelling skills'
+      'Creative storytelling skills',
     ],
     tools: [
       'RunwayML (AI video generation)',
@@ -172,7 +168,7 @@ export const aiArtLessons: AiArtLesson[] = [
       'Stable Video Diffusion (Open-source)',
       'Adobe After Effects (Motion graphics)',
       'Adobe Premiere Pro (Video editing)',
-      'DaVinci Resolve (Color grading)'
+      'DaVinci Resolve (Color grading)',
     ],
     exercises: [
       {
@@ -187,40 +183,38 @@ export const aiArtLessons: AiArtLesson[] = [
           'Professional video editing software expertise',
           'Understanding của video marketing strategies',
           'Complete campaign video production project',
-          'Performance metrics tracking và analysis'
+          'Performance metrics tracking và analysis',
         ],
         hints: [
           'Plan storyboards carefully before AI generation',
           'Generate multiple versions for A/B testing',
           'Focus on seamless integration với live action',
-          'Optimize prompts for consistent visual style'
+          'Optimize prompts for consistent visual style',
         ],
         expectedOutput:
-          'Complete video marketing campaign với AI-generated content, professional post-production, và multi-platform optimization'
-      }
+          'Complete video marketing campaign với AI-generated content, professional post-production, và multi-platform optimization',
+      },
     ],
     realWorldApplications: [
       'Marketing campaign video production',
       'Social media content creation at scale',
       'Educational và training video development',
       'Entertainment industry concept visualization',
-      'Corporate communications và internal content'
+      'Corporate communications và internal content',
     ],
     resources: [
       {
         title: 'RunwayML Video Platform',
         url: 'https://runwayml.com',
         type: 'platform',
-        description:
-          'Advanced AI video generation with cinematic capabilities và professional tools'
+        description: 'Advanced AI video generation with cinematic capabilities và professional tools',
       },
       {
         title: 'Pika Labs Community',
         url: 'https://pika.art',
         type: 'platform',
-        description:
-          'Community-driven AI video generation platform với creative collaboration'
-      }
+        description: 'Community-driven AI video generation platform với creative collaboration',
+      },
     ],
     caseStudies: [
       {
@@ -236,9 +230,9 @@ export const aiArtLessons: AiArtLesson[] = [
           'AI video enables rapid iteration impossible với traditional production',
           'Multiple platform optimization crucial for viral success',
           'AI-generated content can outperform traditional production when properly executed',
-          'Cost savings allow for extensive A/B testing và optimization'
-        ]
-      }
-    ]
-  }
+          'Cost savings allow for extensive A/B testing và optimization',
+        ],
+      },
+    ],
+  },
 ];

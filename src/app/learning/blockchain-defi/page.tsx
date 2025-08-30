@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import {
-  blockchainLessons,
-  type BlockchainLesson,
-} from '@/data/blockchain-defi';
+import { blockchainLessons, type BlockchainLesson } from '@/data/blockchain-defi';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
@@ -51,7 +48,7 @@ export const metadata: Metadata = createModuleMetadata(
     'digital currency',
     'K2AI',
   ],
-  'blockchain-defi'
+  'blockchain-defi',
 );
 
 export default function BlockchainDeFiPage() {
@@ -73,8 +70,7 @@ export default function BlockchainDeFiPage() {
     ],
     icon: '⛓️',
     color: 'from-orange-600 to-red-600',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master blockchain architecture và cryptographic principles cho secure systems',
       'Develop production-ready smart contracts với Solidity và security best practices',
@@ -112,18 +108,11 @@ export default function BlockchainDeFiPage() {
       jobGrowth: '+120%',
       hireDemand: 'Cao',
     },
-    relatedModules: [
-      K2Module.AdvancedAI,
-      K2Module.Cybersecurity,
-      K2Module.FinancialLiteracy,
-      K2Module.Python,
-    ],
+    relatedModules: [K2Module.AdvancedAI, K2Module.Cybersecurity, K2Module.FinancialLiteracy, K2Module.Python],
   };
 
   // Convert lessons to BaseLessonData format
   const convertedLessons = blockchainLessons.map(convertToBaseLessonData);
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

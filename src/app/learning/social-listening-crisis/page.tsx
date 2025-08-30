@@ -1,17 +1,23 @@
 import type { Metadata } from 'next';
 
 import { createModuleMetadata } from '@/utils/seo';
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { socialListeningLessons } from '@/data/social-listening-crisis';
 import { K2Module } from '@/data/moduleNavigation';
 
 export const metadata: Metadata = createModuleMetadata(
   'Social Listening & Crisis Management - Quản Lý Khủng Hoảng',
   'Master social listening và crisis management strategies. Học cách monitor brand reputation và handle PR crises effectively.',
-  ['social listening', 'crisis management', 'brand reputation', 'pr crisis', 'social media monitoring', 'damage control', 'vietnam social media'],
-  'social-listening-crisis'
+  [
+    'social listening',
+    'crisis management',
+    'brand reputation',
+    'pr crisis',
+    'social media monitoring',
+    'damage control',
+    'vietnam social media',
+  ],
+  'social-listening-crisis',
 );
 
 export default function SocialListeningCrisisPage() {
@@ -27,8 +33,7 @@ export default function SocialListeningCrisisPage() {
     primaryColor: 'red',
     gradientColors: 'from-slate-900 via-red-900 to-rose-900',
     basePath: '/learning/social-listening-crisis',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop',
     features: [
       'Social Media Monitoring & Analytics',
       'Crisis Detection & Early Warning Systems',
@@ -97,72 +102,36 @@ export default function SocialListeningCrisisPage() {
       {
         title: 'Monitoring Tools',
         icon: '👁️',
-        items: [
-          'Hootsuite Insights',
-          'Sprout Social',
-          'Mention',
-          'Brand24',
-        ],
+        items: ['Hootsuite Insights', 'Sprout Social', 'Mention', 'Brand24'],
       },
       {
         title: 'Crisis Detection',
         icon: '🚨',
-        items: [
-          'Alert Systems',
-          'Sentiment Analysis',
-          'Trend Monitoring',
-          'Influencer Tracking',
-        ],
+        items: ['Alert Systems', 'Sentiment Analysis', 'Trend Monitoring', 'Influencer Tracking'],
       },
       {
         title: 'Response Strategy',
         icon: '💬',
-        items: [
-          'Message Templates',
-          'Escalation Protocols',
-          'Media Relations',
-          'Stakeholder Communication',
-        ],
+        items: ['Message Templates', 'Escalation Protocols', 'Media Relations', 'Stakeholder Communication'],
       },
       {
         title: 'Recovery Tactics',
         icon: '🔄',
-        items: [
-          'Reputation Repair',
-          'Trust Rebuilding',
-          'Content Strategy',
-          'Community Engagement',
-        ],
+        items: ['Reputation Repair', 'Trust Rebuilding', 'Content Strategy', 'Community Engagement'],
       },
       {
         title: 'Vietnamese Context',
         icon: '🇻🇳',
-        items: [
-          'Local Platform Dynamics',
-          'Cultural Sensitivities',
-          'Regulatory Compliance',
-          'Media Landscape',
-        ],
+        items: ['Local Platform Dynamics', 'Cultural Sensitivities', 'Regulatory Compliance', 'Media Landscape'],
       },
       {
         title: 'Analytics & Reporting',
         icon: '📊',
-        items: [
-          'Impact Measurement',
-          'Recovery Tracking',
-          'Performance Metrics',
-          'ROI Analysis',
-        ],
+        items: ['Impact Measurement', 'Recovery Tracking', 'Performance Metrics', 'ROI Analysis'],
       },
     ],
-    relatedModules: [
-      K2Module.DigitalMarketing,
-      K2Module.ContentCreator,
-      K2Module.EthicalMarketingPurpose,
-    ],
+    relatedModules: [K2Module.DigitalMarketing, K2Module.ContentCreator, K2Module.EthicalMarketingPurpose],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={socialListeningLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={socialListeningLessons} />;
 }

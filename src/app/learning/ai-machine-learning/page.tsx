@@ -21,7 +21,7 @@ export const metadata: Metadata = createModuleMetadata(
     'vietnam ai education',
     'k2aihub',
   ],
-  'ai-machine-learning'
+  'ai-machine-learning',
 );
 
 export default function AIMachineLearningPage() {

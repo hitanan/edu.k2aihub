@@ -8,8 +8,16 @@ import { K2Module } from '@/data/moduleNavigation';
 export const metadata: Metadata = createModuleMetadata(
   'Young Entrepreneur Bootcamp - Khởi nghiệp thành công từ tuổi teen',
   'Bootcamp toàn diện cho thế hệ GenZ muốn khởi nghiệp: từ ý tưởng, xây dựng MVP, gọi vốn đến scale business với focus đặc biệt vào thị trường Việt Nam.',
-  ['young entrepreneur', 'startup vietnam', 'khởi nghiệp', 'business model', 'mvp development', 'fundraising', 'gọi vốn'],
-  'young-entrepreneur'
+  [
+    'young entrepreneur',
+    'startup vietnam',
+    'khởi nghiệp',
+    'business model',
+    'mvp development',
+    'fundraising',
+    'gọi vốn',
+  ],
+  'young-entrepreneur',
 );
 
 export default function YoungEntrepreneurBootcampPage() {
@@ -22,8 +30,7 @@ export default function YoungEntrepreneurBootcampPage() {
     level: 'Trung bình',
     duration: '25-30 giờ',
     category: 'Entrepreneurship & Business',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=600&fit=crop',
     features: [
       'Phát triển tư duy khởi nghiệp và nhận diện cơ hội thị trường',
       'Xây dựng và validate Business Model Canvas',
@@ -102,10 +109,6 @@ export default function YoungEntrepreneurBootcampPage() {
   ];
 
   return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={youngEntrepreneurLessons}
-      additionalStats={additionalStats}
-    />
+    <ModulePageTemplate moduleData={moduleData} lessons={youngEntrepreneurLessons} additionalStats={additionalStats} />
   );
 }

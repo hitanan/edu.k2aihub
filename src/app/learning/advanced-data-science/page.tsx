@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { advancedDataScienceLessons } from '@/data/advanced-data-science';
 import { K2Module } from '@/data/moduleNavigation';
 import { createModuleMetadata } from '@/utils/seo';
@@ -20,7 +18,7 @@ export const metadata: Metadata = createModuleMetadata(
     'vietnam data science',
     'k2aihub',
   ],
-  'advanced-data-science'
+  'advanced-data-science',
 );
 
 export default function AdvancedDataSciencePage() {
@@ -36,8 +34,7 @@ export default function AdvancedDataSciencePage() {
     primaryColor: 'blue',
     gradientColors: 'from-slate-900 via-blue-900 to-cyan-900',
     basePath: '/learning/advanced-data-science',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
     features: [
       'Advanced Machine Learning Algorithms',
       'Deep Learning & Neural Networks',
@@ -106,42 +103,22 @@ export default function AdvancedDataSciencePage() {
       {
         title: 'ML Algorithms',
         icon: '⚙️',
-        items: [
-          'Ensemble Methods',
-          'Neural Networks',
-          'Clustering Algorithms',
-          'Dimensionality Reduction',
-        ],
+        items: ['Ensemble Methods', 'Neural Networks', 'Clustering Algorithms', 'Dimensionality Reduction'],
       },
       {
         title: 'Deep Learning',
         icon: '🧠',
-        items: [
-          'CNNs',
-          'RNNs/LSTMs',
-          'Transformers',
-          'GANs',
-        ],
+        items: ['CNNs', 'RNNs/LSTMs', 'Transformers', 'GANs'],
       },
       {
         title: 'Big Data Tools',
         icon: '💾',
-        items: [
-          'Apache Spark',
-          'Hadoop Ecosystem',
-          'Kafka Streaming',
-          'Cloud Platforms',
-        ],
+        items: ['Apache Spark', 'Hadoop Ecosystem', 'Kafka Streaming', 'Cloud Platforms'],
       },
       {
         title: 'MLOps Stack',
         icon: '🔄',
-        items: [
-          'Model Versioning',
-          'CI/CD Pipelines',
-          'Container Orchestration',
-          'Monitoring Systems',
-        ],
+        items: ['Model Versioning', 'CI/CD Pipelines', 'Container Orchestration', 'Monitoring Systems'],
       },
       {
         title: 'Vietnamese Context',
@@ -156,22 +133,11 @@ export default function AdvancedDataSciencePage() {
       {
         title: 'Emerging Tech',
         icon: '🚀',
-        items: [
-          'Quantum ML',
-          'Federated Learning',
-          'Edge AI',
-          'AutoML Systems',
-        ],
+        items: ['Quantum ML', 'Federated Learning', 'Edge AI', 'AutoML Systems'],
       },
     ],
-    relatedModules: [
-      K2Module.DataScienceAnalytics,
-      K2Module.AIApplications,
-      K2Module.DigitalCitizenship,
-    ],
+    relatedModules: [K2Module.DataScienceAnalytics, K2Module.AIApplications, K2Module.DigitalCitizenship],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={advancedDataScienceLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={advancedDataScienceLessons} />;
 }

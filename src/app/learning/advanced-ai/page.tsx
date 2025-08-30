@@ -36,7 +36,7 @@ export const metadata: Metadata = createModuleMetadata(
   'Advanced AI & Machine Learning - AI Nâng Cao',
   'Khóa học AI và Machine Learning nâng cao. Deep Learning, Neural Networks và AI Applications',
   ['advanced ai', 'machine learning', 'deep learning', 'neural networks', 'ai applications'],
-  'advanced-ai'
+  'advanced-ai',
 );
 
 export default function AdvancedAIPage() {
@@ -58,8 +58,7 @@ export default function AdvancedAIPage() {
     ],
     icon: '🧠',
     color: 'from-purple-600 to-indigo-600',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master deep learning architectures: CNN, RNN, Transformers cho production applications',
       'Develop advanced computer vision systems cho real-world Vietnamese applications',
@@ -109,7 +108,5 @@ export default function AdvancedAIPage() {
   // Convert lessons to BaseLessonData format
   const convertedLessons = advancedAILessons.map(convertToBaseLessonData);
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

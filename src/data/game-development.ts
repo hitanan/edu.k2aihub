@@ -50,8 +50,7 @@ export const gameDevLessons: GameDevLesson[] = [
     description:
       'Học cơ bản về game design: mechanics, dynamics, aesthetics. Thiết kế gameplay loops và player experience để tạo games hấp dẫn.',
     videoUrl: 'https://www.youtube.com/watch?v=zQvWMdWhFBs',
-    imageUrl:
-      'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '120 phút',
     gameGenres: ['Puzzle', 'Platform', 'Adventure', 'Action'],
@@ -60,13 +59,13 @@ export const gameDevLessons: GameDevLesson[] = [
       'Thiết kế engaging gameplay mechanics và systems',
       'Tạo balanced difficulty curves và progression systems',
       'Implement player feedback loops và rewards',
-      'Analyze successful games và extract design patterns'
+      'Analyze successful games và extract design patterns',
     ],
     prerequisites: [
       'Passion cho gaming và interactive experiences',
       'Basic creative thinking và problem-solving skills',
       'Understanding của player psychology',
-      'Familiarity với different game genres'
+      'Familiarity với different game genres',
     ],
     technologies: [
       'Game Design Documents (GDD)',
@@ -74,13 +73,12 @@ export const gameDevLessons: GameDevLesson[] = [
       'Digital Design Tools (Figma, Miro)',
       'Analytics Tools',
       'User Testing Platforms',
-      'Balancing Spreadsheets'
+      'Balancing Spreadsheets',
     ],
     exercises: [
       {
         title: 'Design a Mobile Puzzle Game',
-        description:
-          'Tạo complete game design cho mobile puzzle game với unique mechanics và monetization strategy',
+        description: 'Tạo complete game design cho mobile puzzle game với unique mechanics và monetization strategy',
         difficulty: 'Trung bình',
         solution:
           '# Mobile Puzzle Game Design: Crystal Cascade\\n\\n## 1. Game Concept & Core Loop\\n\\n### High Concept:\\nMatch-3 puzzle game với elemental magic theme, kết hợp strategic planning và quick reflexes.\\n\\n### Core Gameplay Loop (30-60 seconds):\\n1. **Scan Board:** Player observes current state\\n2. **Plan Moves:** Identify optimal match combinations\\n3. **Execute:** Make 3-5 moves creating cascades\\n4. **Collect Rewards:** Earn gems, power-ups, progress\\n5. **Assess Progress:** Check level completion status\\n\\n### Meta Progression Loop (5-10 minutes):\\n1. **Complete Levels:** Finish 3-5 puzzle levels\\n2. **Unlock Content:** New areas, characters, abilities\\n3. **Upgrade Systems:** Improve power-ups và stats\\n4. **Story Progress:** Advance narrative elements\\n5. **Social Features:** Share achievements, compete\\n\\n## 2. Game Mechanics Design\\n\\n### Primary Mechanics:\\n- **Match-3 Core:** Connect 3+ same-colored crystals\\n- **Elemental System:** Fire, Water, Earth, Air với type advantages\\n- **Cascade Reactions:** Matches trigger chain reactions\\n- **Power-up Creation:** 4+ matches create special crystals\\n- **Mana Collection:** Different elements charge different spells\\n\\n### Secondary Mechanics:\\n- **Limited Moves:** Each level has move constraints\\n- **Objectives Variety:** Clear elements, reach score, collect items\\n- **Obstacles:** Locked crystals, barriers, poison clouds\\n- **Boosters:** Pre-level và in-game power-ups\\n- **Lives System:** Energy regeneration over time',
@@ -89,24 +87,23 @@ export const gameDevLessons: GameDevLesson[] = [
           'Define core gameplay loop và meta progression',
           'Design balanced difficulty curve',
           'Plan monetization strategy',
-          'Include technical implementation roadmap'
+          'Include technical implementation roadmap',
         ],
         hints: [
           'Study successful puzzle games like Candy Crush, Bejeweled',
           'Focus on player psychology và motivation',
           'Balance challenge với achievability',
-          'Consider accessibility và inclusive design'
+          'Consider accessibility và inclusive design',
         ],
-        expectedOutput:
-          'Complete game design document với all systems defined và implementation plan'
-      }
+        expectedOutput: 'Complete game design document với all systems defined và implementation plan',
+      },
     ],
     realWorldApplications: [
       'Mobile game development studios',
       'Indie game creation và publishing',
       'Educational game design',
       'Gamification của business applications',
-      'Virtual reality experience design'
+      'Virtual reality experience design',
     ],
     careerOpportunities: [
       'Game Designer',
@@ -114,42 +111,38 @@ export const gameDevLessons: GameDevLesson[] = [
       'Narrative Designer',
       'Systems Designer',
       'UX Designer for Games',
-      'Game Producer'
+      'Game Producer',
     ],
     resources: [
       {
         title: 'The Art of Game Design by Jesse Schell',
         url: 'https://artofgamedesign.com',
         type: 'tutorial',
-        description:
-          'Comprehensive book covering all aspects của game design theory và practice'
+        description: 'Comprehensive book covering all aspects của game design theory và practice',
       },
       {
         title: "Game Maker's Toolkit",
         url: 'https://www.youtube.com/c/MarkBrownGMT',
         type: 'tutorial',
-        description:
-          'YouTube channel analyzing game design principles through popular games'
-      }
+        description: 'YouTube channel analyzing game design principles through popular games',
+      },
     ],
     caseStudies: [
       {
         title: 'Candy Crush Saga: Psychology-Driven Design',
         studio: 'King',
-        challenge:
-          'Create addictive yet fair match-3 game với sustainable monetization trong competitive market',
+        challenge: 'Create addictive yet fair match-3 game với sustainable monetization trong competitive market',
         solution:
           'Combined proven match-3 mechanics với psychological triggers: limited lives, social pressure, và carefully balanced difficulty spikes at monetization points',
-        results:
-          '$1.5B+ annual revenue, 250M+ monthly active users, top-grossing mobile game for 5+ years',
+        results: '$1.5B+ annual revenue, 250M+ monthly active users, top-grossing mobile game for 5+ years',
         insights: [
           'Player psychology understanding crucial cho retention và monetization',
           'Social features amplify engagement và viral growth',
           'Balanced difficulty prevents frustration while encouraging spending',
-          'Regular content updates maintain long-term player interest'
-        ]
-      }
-    ]
+          'Regular content updates maintain long-term player interest',
+        ],
+      },
+    ],
   },
   {
     id: 'unity-2d-development',
@@ -157,8 +150,7 @@ export const gameDevLessons: GameDevLesson[] = [
     description:
       'Hands-on Unity 2D development: sprites, animations, physics, UI systems. Tạo complete 2D platformer từ concept đến deployment.',
     videoUrl: 'https://www.youtube.com/watch?v=UbPiCgCkHTE',
-    imageUrl:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '180 phút',
     gameGenres: ['Platformer', 'Side-scroller', 'Puzzle-platformer'],
@@ -167,13 +159,13 @@ export const gameDevLessons: GameDevLesson[] = [
       'Implement character controller với smooth movement',
       'Create responsive camera system và parallax backgrounds',
       'Design interactive UI systems và menus',
-      'Build complete game với multiple levels và progression'
+      'Build complete game với multiple levels và progression',
     ],
     prerequisites: [
       'Basic programming concepts (variables, functions, loops)',
       'Unity installation và basic interface familiarity',
       'Understanding của 2D coordinate systems',
-      'Game design fundamentals từ previous lesson'
+      'Game design fundamentals từ previous lesson',
     ],
     technologies: [
       'Unity 2022.3 LTS',
@@ -181,13 +173,12 @@ export const gameDevLessons: GameDevLesson[] = [
       '2D Physics System',
       'Animation System',
       'UI Toolkit',
-      'Input System'
+      'Input System',
     ],
     exercises: [
       {
         title: 'Build 2D Platformer "Crystal Runner"',
-        description:
-          'Tạo complete 2D platformer với character movement, collectibles, enemies, và level progression',
+        description: 'Tạo complete 2D platformer với character movement, collectibles, enemies, và level progression',
         difficulty: 'Nâng cao',
         solution: `# Unity 2D Platformer Development: "Crystal Runner"
 
@@ -606,24 +597,23 @@ public class Crystal : MonoBehaviour
           'Implement smooth character controller với C#',
           'Create responsive camera system',
           'Design at least 3 complete levels',
-          'Add audio, animations, và visual polish'
+          'Add audio, animations, và visual polish',
         ],
         hints: [
           "Use Unity's built-in 2D physics system effectively",
           'Plan your code architecture before implementing',
           'Test player movement feel extensively',
-          'Study reference games for inspiration'
+          'Study reference games for inspiration',
         ],
-        expectedOutput:
-          'Playable 2D platformer với multiple levels, polished gameplay, và proper game feel'
-      }
+        expectedOutput: 'Playable 2D platformer với multiple levels, polished gameplay, và proper game feel',
+      },
     ],
     realWorldApplications: [
       '2D mobile game development',
       'Indie game publishing',
       'Educational interactive content',
       'Prototype development for larger projects',
-      'Portfolio pieces for game industry applications'
+      'Portfolio pieces for game industry applications',
     ],
     careerOpportunities: [
       'Unity Developer',
@@ -631,41 +621,37 @@ public class Crystal : MonoBehaviour
       'Indie Game Developer',
       'Mobile Game Developer',
       'Technical Game Designer',
-      'Tools Programmer'
+      'Tools Programmer',
     ],
     resources: [
       {
         title: 'Unity Learn Platform',
         url: 'https://learn.unity.com',
         type: 'tutorial',
-        description:
-          'Official Unity tutorials covering 2D development, C# scripting, và game design'
+        description: 'Official Unity tutorials covering 2D development, C# scripting, và game design',
       },
       {
         title: 'Brackeys YouTube Channel',
         url: 'https://www.youtube.com/c/Brackeys',
         type: 'tutorial',
-        description:
-          'High-quality Unity tutorials for beginners và intermediate developers'
-      }
+        description: 'High-quality Unity tutorials for beginners và intermediate developers',
+      },
     ],
     caseStudies: [
       {
         title: 'Hollow Knight: Polish & Atmosphere in 2D',
         studio: 'Team Cherry',
-        challenge:
-          'Create atmospheric 2D Metroidvania với limited budget và small team (3 people)',
+        challenge: 'Create atmospheric 2D Metroidvania với limited budget và small team (3 people)',
         solution:
           'Focused on exceptional art direction, tight controls, và atmospheric audio. Used hand-drawn animations và carefully crafted world design.',
-        results:
-          '3M+ copies sold, 97% positive Steam reviews, considered modern classic trong Metroidvania genre',
+        results: '3M+ copies sold, 97% positive Steam reviews, considered modern classic trong Metroidvania genre',
         insights: [
           'Polish và attention to detail can overcome budget limitations',
           'Strong art direction creates memorable experience',
           'Tight controls are foundation của great platformers',
-          'Atmospheric audio amplifies emotional impact significantly'
-        ]
-      }
-    ]
-  }
+          'Atmospheric audio amplifies emotional impact significantly',
+        ],
+      },
+    ],
+  },
 ];
