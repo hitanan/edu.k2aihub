@@ -21,7 +21,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Master live commerce basics, platform ecosystems, và market opportunities trong Vietnamese e-commerce landscape.',
     duration: '170 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=5YPJu4_0pCA', // Live commerce basics
+    videoUrl: 'https://www.youtube.com/watch?v=IXSQPJAg8ps', // Live commerce basics
     imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
     objectives: [
       'Understand live commerce ecosystem và opportunities',
@@ -98,7 +98,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Master technical aspects của live streaming, equipment selection, production workflows, và quality optimization cho professional live commerce.',
     duration: '195 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=EuSUPiPjRQs', // Live streaming setup
+    videoUrl: 'https://www.youtube.com/watch?v=rGqScj5IqwU', // Live streaming setup
     imageUrl: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop',
     objectives: [
       'Master live streaming technical setup',
@@ -175,7 +175,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Master advanced live selling techniques, psychological triggers, conversion strategies, và audience interaction methods cho maximizing sales performance.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=sBvEt-OzUJU', // Sales techniques
+    videoUrl: 'https://www.youtube.com/watch?v=9z9GiEM4uvA', // Sales techniques
     imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
     objectives: [
       'Master persuasive live selling techniques',
@@ -252,7 +252,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Learn advanced audience engagement strategies, community building techniques, và retention methods cho developing loyal live commerce followers.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=A6TmPJdkTvU', // Community building
+    videoUrl: 'https://www.youtube.com/watch?v=LL7_m_5VETs', // Community building
     imageUrl: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=600&fit=crop',
     objectives: [
       'Master real-time audience engagement techniques',
@@ -329,7 +329,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Master cross-platform live commerce strategies, platform optimization, content adaptation, và audience management across multiple streaming platforms.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=F4S2RQjMJog', // Multi-platform strategy
+    videoUrl: 'https://www.youtube.com/watch?v=HjUJf5bKCpU', // Multi-platform strategy
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Develop integrated multi-platform strategies',
@@ -483,7 +483,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
     description: 'Master Vietnamese-specific live commerce strategies, cultural nuances, local partnerships, và market penetration techniques cho dominating Vietnamese live commerce landscape.',
     duration: '185 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=dCFOgzTfhKE', // Vietnamese business culture
+    videoUrl: 'https://www.youtube.com/watch?v=xAFaDA1Nv1o', // Vietnamese business culture
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
     objectives: [
       'Understand Vietnamese consumer psychology deeply',

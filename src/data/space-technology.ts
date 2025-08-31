@@ -125,7 +125,7 @@ export const SpaceTechnologyLessons: SpaceTechnologyLessonType[] = [
     technologies: ['CubeSat', 'Earth Observation', 'GPS/GNSS', 'Satellite Internet', 'Remote Sensing'],
     missions: ['Planet Labs', 'Starlink', 'Landsat', 'SPOT', 'Sentinel'],
     vietnamRelevance: 'Mekong Delta monitoring, South China Sea surveillance, disaster management',
-    videoUrl: 'https://www.youtube.com/watch?v=PVTC7_1J81g',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/satellite-technology.jpg',
     objectives: [
       'Design và build CubeSat prototype',
@@ -232,7 +232,7 @@ export const SpaceTechnologyLessons: SpaceTechnologyLessonType[] = [
     technologies: ['Mission Design', 'Systems Engineering', 'Launch Vehicles', 'Deep Space Communication'],
     missions: ['Mars Sample Return', 'Artemis Moon Program', 'James Webb Space Telescope', 'Parker Solar Probe'],
     vietnamRelevance: 'Vietnam Space Technology Master Plan 2030, international collaboration opportunities',
-    videoUrl: 'https://www.youtube.com/watch?v=_Ca_dhfg6Ps',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/space-mission-engineering.jpg',
     objectives: [
       'Master mission design process từ concept đến execution',
@@ -339,7 +339,7 @@ export const SpaceTechnologyLessons: SpaceTechnologyLessonType[] = [
     technologies: ['Commercial Launch', 'Space Tourism', 'Asteroid Mining', 'Space Manufacturing'],
     missions: ['SpaceX Falcon Heavy', 'Blue Origin New Shepard', 'Virgin Galactic', 'Planetary Resources'],
     vietnamRelevance: 'Vietnam space startup ecosystem, regional market opportunities',
-    videoUrl: 'https://www.youtube.com/watch?v=zX2K8yxhG9E',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/space-entrepreneurship.jpg',
     objectives: [
       'Understand the growing commercial space economy',
@@ -446,7 +446,7 @@ export const SpaceTechnologyLessons: SpaceTechnologyLessonType[] = [
     technologies: ['Career Development', 'Skill Assessment', 'Professional Networks', 'Continuing Education'],
     missions: ['Artemis Human Landing', 'Mars Human Mission', 'Space Colonies', 'Interstellar Exploration'],
     vietnamRelevance: 'Building Vietnamese space workforce, international opportunities',
-    videoUrl: 'https://www.youtube.com/watch?v=b-q5oDNzwp0',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/space-careers.jpg',
     objectives: [
       'Identify space career opportunities cho Vietnamese professionals',

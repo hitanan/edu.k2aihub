@@ -15,7 +15,7 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
     description: 'Master social listening fundamentals để monitor brand mentions, track sentiment và proactively identify opportunities và threats online.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=DK2wjD7r38M', // Social Listening Strategy for Crisis Management
+    videoUrl: 'https://www.youtube.com/watch?v=PjOW1trH7yg', // Social Listening Strategy for Crisis Management
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu social listening concepts và importance',
@@ -90,7 +90,7 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
     description: 'Develop advanced crisis detection capabilities để identify potential issues before they escalate và implement effective early warning systems.',
     duration: '165 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=b1V8gWcI7vM', // Crisis management
+    videoUrl: 'https://www.youtube.com/watch?v=pYnEgD1r4EM', // Crisis management
     imageUrl: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=600&fit=crop',
     objectives: [
       'Identify early warning signals của potential crises',
@@ -165,7 +165,7 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
     description: 'Master rapid response communication techniques để effectively manage crises trong digital age với speed, accuracy và authenticity.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=8a6j9vVsYvs', // Crisis communication
+    videoUrl: 'https://www.youtube.com/watch?v=GwEjuhpo26o', // Crisis communication
     imageUrl: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop',
     objectives: [
       'Develop rapid response communication protocols',
@@ -242,7 +242,7 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
     description: 'Learn systematic approaches to recover từ reputation damage và rebuild trust through consistent, authentic long-term efforts.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=WP4eH7cN0I4', // Reputation management
+    videoUrl: 'https://www.youtube.com/watch?v=rJ4Hx0_cBLo', // Reputation management
     imageUrl: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop',
     objectives: [
       'Develop comprehensive reputation recovery plans',
@@ -319,7 +319,7 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
     description: 'Build strong community relationships để prevent crises và create network của advocates supporting brand during challenging times.',
     duration: '170 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=TH5YnNcr6ns', // Community engagement
+    videoUrl: 'https://www.youtube.com/watch?v=rgQvqi6aYD8', // Community engagement
     imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
     objectives: [
       'Build proactive community engagement strategies',
@@ -396,7 +396,7 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
     description: 'Develop comprehensive crisis prevention strategies through risk assessment, scenario planning và proactive mitigation measures.',
     duration: '160 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=PdnfOLZg7bM', // Risk management
+    videoUrl: 'https://www.youtube.com/watch?v=y-n1RUbYq6Q', // Risk management
     imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
     objectives: [
       'Conduct comprehensive brand risk assessments',
@@ -473,7 +473,7 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
     description: 'Master specialized techniques for managing crises trong social media environment với focus on speed, authenticity và multi-platform coordination.',
     duration: '175 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=3UW7G6w2UvM', // Social media crisis
+    videoUrl: 'https://www.youtube.com/watch?v=x47EcD3d0pA', // Social media crisis
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Navigate social media crisis dynamics',

@@ -48,7 +48,7 @@ export const greenTechLessons: GreenTechLesson[] = [
     title: 'Bài 1: Cơ Bản Năng Lượng Tái Tạo',
     description:
       'Tìm hiểu về năng lượng mặt trời, gió, nước và các công nghệ xanh hiện đại. Học cách tính toán hiệu quả và ROI của hệ thống năng lượng tái tạo.',
-    videoUrl: 'https://www.youtube.com/watch?v=eJcgPi6ZZIM',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
@@ -226,7 +226,7 @@ export const greenTechLessons: GreenTechLesson[] = [
     title: 'Bài 2: Smart City & IoT Solutions',
     description:
       'Xây dựng hệ thống thành phố thông minh với IoT sensors, data analytics và AI để giải quyết các vấn đề đô thị.',
-    videoUrl: 'https://www.youtube.com/watch?v=Qi6oLXzXWaE',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',

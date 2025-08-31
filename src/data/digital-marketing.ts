@@ -187,7 +187,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 2: Social Media Marketing',
     description:
       'Chinh phục các nền tảng mạng xã hội với chiến lược content hiệu quả, community building và social commerce.',
-    videoUrl: 'https://www.youtube.com/watch?v=MfBHmNECGSE',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '100 phút',
@@ -307,7 +307,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 3: Content Marketing & Storytelling',
     description:
       'Học nghệ thuật kể chuyện và tạo nội dung hấp dẫn. Từ blog posts đến video content, master các format content khác nhau.',
-    videoUrl: 'https://www.youtube.com/watch?v=_Cvg39QN0dI',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '120 phút',
@@ -573,7 +573,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 5: Paid Advertising & PPC',
     description:
       'Master Google Ads, Facebook Ads và các nền tảng quảng cáo trả phí. Tối ưu ROI và scale campaigns hiệu quả.',
-    videoUrl: 'https://www.youtube.com/watch?v=lwW_1KsLCko',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '150 phút',
@@ -752,7 +752,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 6: Email Marketing & Automation',
     description:
       'Xây dựng email marketing systems tự động hóa customer journey. Từ welcome series đến advanced segmentation.',
-    videoUrl: 'https://www.youtube.com/watch?v=gXR5F2L3RcE',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '110 phút',
@@ -923,7 +923,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 7: Analytics & Data-Driven Marketing',
     description:
       'Transform data thành actionable insights. Master Google Analytics, tracking setups và performance optimization.',
-    videoUrl: 'https://www.youtube.com/watch?v=gBeMELnKdvY',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '140 phút',
@@ -1146,7 +1146,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 8: Creator Economy & Monetization',
     description:
       'Kiếm tiền từ content creation và personal branding. Từ influencer marketing đến building personal brand empire.',
-    videoUrl: 'https://www.youtube.com/watch?v=1NNTw4f0uW4',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '120 phút',

@@ -15,7 +15,7 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
     description: 'Comprehensive smart mobility solutions including intelligent transportation systems, traffic optimization, shared mobility platforms, và urban transportation innovation.',
     duration: '220 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=7Ls1VsRdKQA', // Smart Mobility and Urban Transportation
+    videoUrl: 'https://www.youtube.com/watch?v=gmLb9SJHlgU', // Smart Mobility and Urban Transportation
     imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&h=600&fit=crop',
     transportationDomain: 'smart-mobility',
     technologyCategory: [
@@ -187,7 +187,7 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
     description: 'Advanced logistics optimization including route planning, warehouse automation, drone delivery systems, và supply chain visibility.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=ltwnoAvShcU', // Logistics and Supply Chain Optimization
+    videoUrl: 'https://www.youtube.com/watch?v=3n_dGeLJMXU', // Logistics and Supply Chain Optimization
     imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop',
     transportationDomain: 'logistics-optimization',
     technologyCategory: [
@@ -273,7 +273,7 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
     description: 'Sustainable transportation solutions including electric vehicles, renewable energy integration, carbon reduction strategies, và green infrastructure.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=RddyEjztvXE', // Sustainable Transportation and Green Mobility
+    videoUrl: 'https://www.youtube.com/watch?v=1f-x7aJLJ20', // Sustainable Transportation and Green Mobility
     imageUrl: 'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=1200&h=600&fit=crop',
     transportationDomain: 'sustainable-transport',
     technologyCategory: [
@@ -359,7 +359,7 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
     description: 'Integrated urban planning approach combining transportation, land use, technology, và sustainable development principles.',
     duration: '215 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=iNdKBAtNwUo', // Urban Planning and Mobility Integration
+    videoUrl: 'https://www.youtube.com/watch?v=44PfhYie52g', // Urban Planning and Mobility Integration
     imageUrl: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1f?w=1200&h=600&fit=crop',
     transportationDomain: 'urban-planning',
     technologyCategory: [

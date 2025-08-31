@@ -15,7 +15,7 @@ export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLessonType[] = [
     description: 'Master advanced analytics techniques để extract actionable insights từ social media data và drive strategic decisions.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=ADVANCED_ANALYTICS',
+    videoUrl: 'https://www.youtube.com/watch?v=HjUJf5bKCpU',
     imageUrl: '/images/lessons/advanced-analytics.jpg',
     objectives: [
       'Master advanced analytics tools và techniques',
@@ -124,7 +124,7 @@ export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLessonType[] = [
     description: 'Use predictive analytics để forecast social media trends, audience behavior và optimize content strategies proactively.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=PREDICTIVE_ANALYTICS',
+    videoUrl: 'https://www.youtube.com/watch?v=481lC6AeLIg',
     imageUrl: '/images/lessons/predictive-analytics.jpg',
     objectives: [
       'Implement predictive analytics models',

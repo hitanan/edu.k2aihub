@@ -41,7 +41,7 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
     description: 'Hiểu về khái niệm kinh tế biển bền vững và tiềm năng 3.200km bờ biển Việt Nam',
     duration: '90 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=Q8Wy-K6rlKs',
+    videoUrl: 'https://www.youtube.com/watch?v=K7o_prb_pY0',
     imageUrl: 'https://i.ytimg.com/vi/BONcmJeiBic/hqdefault.jpg',
     objectives: [
       'Nắm vững khái niệm kinh tế biển xanh và các nguyên tắc bền vững',

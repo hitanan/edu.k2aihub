@@ -53,7 +53,7 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
     title: 'Bài 1: Digital Health Infrastructure cho Việt Nam',
     description:
       'Phát triển hệ thống y tế số phù hợp với infrastructure và regulations của Việt Nam. Học Electronic Health Records, telemedicine platforms và health data management.',
-    videoUrl: 'https://www.youtube.com/watch?v=xqjJEx581_A',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
@@ -137,7 +137,7 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
     title: 'Bài 2: AI Medical Imaging cho Vietnamese Healthcare',
     description:
       'Phát triển AI medical imaging solutions phù hợp với Vietnamese medical practices. Học computer vision cho radiology, pathology và diagnostic assistance.',
-    videoUrl: 'https://www.youtube.com/watch?v=7gh6_U7Mreo',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',

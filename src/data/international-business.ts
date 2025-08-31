@@ -101,7 +101,7 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     description: 'Understand international trade mechanics, global supply chain management, trade finance, import/export regulations, và international logistics.',
     duration: '235 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=A2Gn7Cd8kjQ', // International Trade and Supply Chain
+    videoUrl: 'https://www.youtube.com/watch?v=OT3H6U2h0y8', // International Trade and Supply Chain
     imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop',
     businessDomain: 'international-trade',
     culturalRegions: [
@@ -187,7 +187,7 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     description: 'Develop global business strategies, international market analysis, competitive intelligence, và strategic planning for international expansion.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=jQUf-hBjMPM', // Global Business Strategy
+    videoUrl: 'https://www.youtube.com/watch?v=YiZn5fpPHgY', // Global Business Strategy
     imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop',
     businessDomain: 'global-strategy',
     culturalRegions: [
@@ -273,7 +273,7 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     description: 'Master international business negotiation tactics, cross-cultural communication skills, diplomatic business interactions, và relationship building.',
     duration: '190 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=guHkzHWxLwE', // International Business Negotiation
+    videoUrl: 'https://www.youtube.com/watch?v=iuYlGRnC7J8', // International Business Negotiation
     imageUrl: 'https://images.unsplash.com/photo-1560264280-88b68371db39?w=1200&h=600&fit=crop',
     businessDomain: 'cultural-intelligence',
     culturalRegions: [
@@ -359,7 +359,7 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     description: 'Develop global leadership competencies, international team management, cross-cultural leadership styles, và building global organizational culture.',
     duration: '205 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=x7s-6kGOoqE', // Global Leadership Development
+    videoUrl: 'https://www.youtube.com/watch?v=yENCsFO-1HQ', // Global Leadership Development
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
     businessDomain: 'global-leadership',
     culturalRegions: [

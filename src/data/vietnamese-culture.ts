@@ -48,7 +48,7 @@ export const vietnameseCultureLessons: VietnameseCultureLesson[] = [
     title: 'Bài 1: Digital Heritage Preservation và Cultural Documentation',
     description:
       'Học cách số hóa và bảo tồn di sản văn hóa Việt Nam bằng công nghệ hiện đại. Phát triển solutions cho museums, historical sites và cultural institutions.',
-    videoUrl: 'https://www.youtube.com/watch?v=9AHY92BmP2w',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
@@ -132,7 +132,7 @@ export const vietnameseCultureLessons: VietnameseCultureLesson[] = [
     title: 'Bài 2: Tourism Technology và Cultural Experience Platforms',
     description:
       'Phát triển tourism technology solutions cho Vietnamese destinations. Học smart tourism, mobile apps và cultural experience platforms.',
-    videoUrl: 'https://www.youtube.com/watch?v=4VHfE-4g2P4',
+    videoUrl: 'https://www.youtube.com/watch?v=HlB9YuyiwZk',
     imageUrl:
       'https://images.unsplash.com/photo-1578498185814-83c5e5e1e0d6?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',

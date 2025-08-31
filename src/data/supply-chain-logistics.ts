@@ -15,7 +15,7 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLesson[] = [
     description: 'Khám phá hệ thống quản lý chuỗi cung ứng toàn cầu với trọng tâm là vai trò của Việt Nam như một trung tâm sản xuất và xuất khẩu.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=MEoTHHdbtIE', // Supply Chain Management Explained
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Supply Chain Management Explained
     imageUrl: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1200&h=600&fit=crop',
     logisticsCategory: 'supply-chain',
     technologyLevel: 'Trung bình',
@@ -95,7 +95,7 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLesson[] = [
     description: 'Ứng dụng technology tiên tiến trong warehouse management và inventory optimization, từ WMS đến automated systems.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=RLKL8BHSyLM', // Modern Warehouse Technology
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Modern Warehouse Technology
     imageUrl: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&h=600&fit=crop',
     logisticsCategory: 'warehousing',
     technologyLevel: 'Trung bình',
@@ -175,7 +175,7 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLesson[] = [
     description: 'Optimize transportation networks và distribution strategies sử dụng advanced analytics, route optimization, và modern logistics technology.',
     duration: '190 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=WPhP1ws6iK8', // Transportation Optimization
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Transportation Optimization
     imageUrl: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&h=600&fit=crop',
     logisticsCategory: 'transportation',
     technologyLevel: 'Nâng cao',
@@ -256,7 +256,7 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLesson[] = [
     description: 'Sử dụng advanced analytics, AI và machine learning để optimize supply chain performance, demand forecasting, và strategic decision making.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=Qjl7WvqLYPw', // Supply Chain Analytics
+    videoUrl: 'https://www.youtube.com/watch?v=r05tMndo7-8', // Supply Chain Analytics
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
     logisticsCategory: 'analytics',
     technologyLevel: 'Nâng cao',
@@ -337,7 +337,7 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLesson[] = [
     description: 'Navigate complex world của international trade, customs regulations, trade compliance, và cross-border logistics với focus trên Vietnamese trade relationships.',
     duration: '170 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=9AzNKn_GrGQ', // International Trade Explained
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // International Trade Explained
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
     logisticsCategory: 'trade',
     technologyLevel: 'Trung bình',

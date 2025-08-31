@@ -48,7 +48,7 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
     title: 'Bài 1: Digital Wellness & Mental Health Technology',
     description:
       'Hiểu tác động của technology lên mental health. Học cách sử dụng apps, wearables và digital tools để improve wellbeing và manage stress.',
-    videoUrl: 'https://www.youtube.com/watch?v=6UF8_nKJhNA',
+    videoUrl: 'https://www.youtube.com/watch?v=gmLb9SJHlgU',
     imageUrl:
       'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
@@ -148,7 +148,7 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
     title: 'Bài 2: AI-Powered Mental Health Tools & Chatbot Therapy',
     description:
       'Explore AI applications trong mental health: chatbot therapy, personalized interventions, predictive analytics. Build AI tools cho mental wellness support.',
-    videoUrl: 'https://www.youtube.com/watch?v=7gZA4WuKAks',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',

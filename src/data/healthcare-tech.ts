@@ -15,7 +15,7 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     description: 'Khám phá công nghệ y tế từ xa và hệ thống sức khỏe số, từ platform setup đến patient care delivery trong bối cảnh Việt Nam.',
     duration: '180 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=YQyLh-0E2-g', // The Future of Telemedicine
+    videoUrl: 'https://www.youtube.com/watch?v=eORalU89N4Y', // The Future of Telemedicine
     imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&h=600&fit=crop',
     healthcareCategory: 'telemedicine',
     techProficiencyLevel: 'Cơ bản',
@@ -118,7 +118,7 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     description: 'Làm chủ việc thu thập, xử lý và phân tích big data trong healthcare để cải thiện patient outcomes và operational efficiency.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=rNjF_T92ZlI', // AI in Healthcare: Revolutionary Applications
+    videoUrl: 'https://www.youtube.com/watch?v=7rqfXuUoJB0', // AI in Healthcare: Revolutionary Applications
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
     healthcareCategory: 'data-analytics',
     techProficiencyLevel: 'Trung bình',
@@ -193,7 +193,7 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     description: 'Explore cutting-edge medical devices và IoT applications trong healthcare, từ wearables đến smart hospital infrastructure.',
     duration: '160 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=NaXtHH4l7bk', // IoT in Healthcare: Smart Medical Devices
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // IoT in Healthcare: Smart Medical Devices
     imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
     healthcareCategory: 'medical-devices',
     techProficiencyLevel: 'Trung bình',

@@ -15,7 +15,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     description: 'Comprehensive understanding của digital government transformation, e-government services implementation, và public sector digitalization trong Vietnamese government context.',
     duration: '210 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=tJpSfZJFY8k', // Digital Government Transformation
+    videoUrl: 'https://www.youtube.com/watch?v=0Bw4Tpy0JzE', // Digital Government Transformation
     imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop',
     governmentDomain: 'digital-government',
     technologyCategory: [
@@ -101,7 +101,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     description: 'Explore smart city technologies, urban IoT systems, data-driven city management, và sustainable urban development solutions.',
     duration: '225 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=Yxt72aDjx8E', // Smart City Technologies
+    videoUrl: 'https://www.youtube.com/watch?v=7BqYIi4__Ws', // Smart City Technologies
     imageUrl: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=600&fit=crop',
     governmentDomain: 'smart-city',
     technologyCategory: [
@@ -187,7 +187,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     description: 'Develop civic technology solutions that enhance citizen participation, government transparency, và democratic engagement trong Vietnamese political context.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=6p0mKUEUmwA', // Civic Technology and Democracy
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Civic Technology and Democracy
     imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop',
     governmentDomain: 'civic-engagement',
     technologyCategory: [
@@ -273,7 +273,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     description: 'Optimize public service delivery through technology, process improvement, data analytics, và citizen experience enhancement.',
     duration: '195 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=HuaRWObtWX0', // Public Service Innovation
+    videoUrl: 'https://www.youtube.com/watch?v=fhn6ZFh2dp4', // Public Service Innovation
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=600&fit=crop',
     governmentDomain: 'public-service-tech',
     technologyCategory: [
@@ -359,7 +359,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     description: 'Apply data analytics, evidence-based policy making, predictive modeling, và data-driven governance trong Vietnamese government context.',
     duration: '205 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=Zr02cxOhQGE', // Government Data Analytics
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Government Data Analytics
     imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop',
     governmentDomain: 'policy-tech',
     technologyCategory: [

@@ -48,7 +48,7 @@ export const digitalGovLessons: DigitalGovLesson[] = [
     title: 'Bài 1: Chính phủ Điện tử Việt Nam và Smart City Development',
     description:
       'Tìm hiểu chiến lược chính phủ điện tử của Việt Nam, các dịch vụ công trực tuyến và smart city initiatives. Học cách phát triển civic tech solutions.',
-    videoUrl: 'https://www.youtube.com/watch?v=Q8P1Jjm9zAg',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1573164713619-24c711fe7878?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
@@ -139,7 +139,7 @@ export const digitalGovLessons: DigitalGovLesson[] = [
     title: 'Bài 2: Smart City IoT Solutions và Environmental Monitoring',
     description:
       'Phát triển IoT systems cho smart city applications. Học air quality monitoring, traffic management, và waste management solutions cho Vietnamese cities.',
-    videoUrl: 'https://www.youtube.com/watch?v=BHZaKmNMVVo',
+    videoUrl: 'https://www.youtube.com/watch?v=8QbncQ3Hr-0',
     imageUrl:
       'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
@@ -224,7 +224,7 @@ export const digitalGovLessons: DigitalGovLesson[] = [
       'Bài 3: Civic Engagement Platforms và Citizen Participation Technology',
     description:
       'Xây dựng platforms để tăng cường sự tham gia của công dân vào quản lý đô thị. Học participatory budgeting, citizen reporting, và community engagement tools.',
-    videoUrl: 'https://www.youtube.com/watch?v=YHFMJkE3QLY',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',

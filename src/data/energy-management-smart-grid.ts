@@ -15,7 +15,7 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     description: 'Học cách thiết kế, phân tích và implement các hệ thống năng lượng tái tạo với focus trên solar, wind, và hybrid systems phù hợp với điều kiện Việt Nam.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=sjEMGgacFJw', // Renewable Energy Systems Design
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Renewable Energy Systems Design
     imageUrl: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&h=600&fit=crop',
     energyCategory: 'renewable',
     techComplexity: 'Nâng cao',
@@ -96,7 +96,7 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     description: 'Explore advanced smart grid technologies, demand response systems, và grid modernization strategies để optimize energy distribution và consumption.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=jdNDYBHW9is', // Smart Grid Technology Explained
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Smart Grid Technology Explained
     imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop',
     energyCategory: 'smart-grid',
     techComplexity: 'Nâng cao',
@@ -177,7 +177,7 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     description: 'Implement comprehensive energy management systems, conduct energy audits, và develop efficiency improvement strategies cho industrial và commercial facilities.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=RfDGw9VBFAQ', // Energy Efficiency Management
+    videoUrl: 'https://www.youtube.com/watch?v=JbuwkbIW9P8', // Energy Efficiency Management
     imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=600&fit=crop',
     energyCategory: 'efficiency',
     techComplexity: 'Trung bình',
@@ -258,7 +258,7 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     description: 'Navigate complex landscape của energy policy, regulations, và market mechanisms trong Vietnamese energy sector và international context.',
     duration: '160 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=Pt7H8pRpU_k', // Energy Policy and Markets
+    videoUrl: 'https://www.youtube.com/watch?v=G_q0m1bUwiI', // Energy Policy and Markets
     imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop',
     energyCategory: 'policy',
     techComplexity: 'Trung bình',
@@ -338,7 +338,7 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     description: 'Explore cutting-edge energy storage technologies, battery systems, và grid-scale storage applications để support renewable energy integration.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=Ofzi9UrWeqQ', // Energy Storage Technology
+    videoUrl: 'https://www.youtube.com/watch?v=qBgnzjfmhF0', // Energy Storage Technology
     imageUrl: 'https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=1200&h=600&fit=crop',
     energyCategory: 'storage',
     techComplexity: 'Nâng cao',

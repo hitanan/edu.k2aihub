@@ -109,7 +109,7 @@ export const professionalSoftSkillsLessons: ProfessionalSoftSkillsLesson[] = [
     description: 'Thành thạo kỹ năng viết email và văn bản kinh doanh hiệu quả, phù hợp với chuẩn quốc tế và văn hóa Việt Nam.',
     duration: '120 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=F1cWvwr85-4', // How to Write Professional Emails
+    videoUrl: 'https://www.youtube.com/watch?v=JZxrxoL9hv8', // How to Write Professional Emails
     imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&h=600&fit=crop',
     category: 'communication',
     skillLevel: 'Cơ bản',
@@ -165,7 +165,7 @@ export const professionalSoftSkillsLessons: ProfessionalSoftSkillsLesson[] = [
     description: 'Phát triển kỹ năng lãnh đạo hiệu quả và quản lý đội nhóm đa thế hệ trong bối cảnh doanh nghiệp Việt Nam hiện đại.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=VhJ_19xy4_0', // Leadership Skills: How to Be a Leader
+    videoUrl: 'https://www.youtube.com/watch?v=GbfrchiAmRE', // Leadership Skills: How to Be a Leader
     imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=600&fit=crop',
     category: 'leadership',
     skillLevel: 'Trung bình',
@@ -221,7 +221,7 @@ export const professionalSoftSkillsLessons: ProfessionalSoftSkillsLesson[] = [
     description: 'Nắm vững nghệ thuật đàm phán và kỹ thuật thuyết phục trong kinh doanh, từ psychology cơ bản đến advanced strategies.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=guUYP5E5WFM', // Negotiation Skills: The Science of Persuasion
+    videoUrl: 'https://www.youtube.com/watch?v=VdgBjYJ0sUo', // Negotiation Skills: The Science of Persuasion
     imageUrl: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1200&h=600&fit=crop',
     category: 'negotiation',
     skillLevel: 'Nâng cao',

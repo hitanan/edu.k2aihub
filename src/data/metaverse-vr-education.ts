@@ -330,7 +330,7 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
     technologyLevel: 'Intermediate',
     tools: ['VRChat', 'Mozilla Hubs', 'AltspaceVR', 'Horizon Workrooms', 'Spatial'],
     headsetCompatibility: ['Cross-platform: VR headsets và desktop/mobile'],
-    videoUrl: 'https://www.youtube.com/watch?v=c3leKh7QyIA',
+    videoUrl: 'https://www.youtube.com/watch?v=k_y8YYcGaZQ',
     imageUrl: '/images/social-vr-collaboration.jpg',
     objectives: [
       'Thiết kế effective virtual meeting spaces',
@@ -436,7 +436,7 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
     technologyLevel: 'Business-focused',
     tools: ['OpenSea', 'The Sandbox', 'Decentraland', 'Roblox Creator Studio', 'Crypto wallets'],
     headsetCompatibility: ['Desktop web browsers', 'Mobile devices', 'VR optional'],
-    videoUrl: 'https://www.youtube.com/watch?v=6Ssp3bGEGVQ',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/metaverse-business-economics.jpg',
     objectives: [
       'Hiểu virtual economy principles và tokenomics',

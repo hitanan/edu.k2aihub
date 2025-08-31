@@ -18,7 +18,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
     technologies: ['Photoshop', 'Illustrator', 'Procreate', 'Blender', 'After Effects'],
     creativeFocus: ['Digital Painting', 'Vector Art', 'Photo Manipulation', 'Concept Art'],
     vietnamCulture: 'Incorporating Vietnamese cultural elements into modern digital art',
-    videoUrl: 'https://www.youtube.com/watch?v=tYF_zXWdjYA',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/digital-art-fundamentals.jpg',
     objectives: [
       'Master digital art tools và software',
@@ -125,7 +125,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
     technologies: ['After Effects', 'Cinema 4D', 'Lottie', 'Principle', 'Rive'],
     creativeFocus: ['2D Animation', '3D Motion Graphics', 'UI Animation', 'Explainer Videos'],
     vietnamCulture: 'Creating animated content promoting Vietnamese businesses và tourism',
-    videoUrl: 'https://www.youtube.com/watch?v=dihfqK8Xarc',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/motion-graphics-animation.jpg',
     objectives: [
       'Master After Effects cho professional motion graphics',
@@ -339,7 +339,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
     technologies: ['Unity 3D', 'Unreal Engine', '360° Cameras', 'Spatial Audio', 'WebXR'],
     creativeFocus: ['VR Experiences', 'AR Applications', '360° Storytelling', 'Interactive Design'],
     vietnamCulture: 'Creating immersive experiences showcasing Vietnamese heritage và tourism',
-    videoUrl: 'https://www.youtube.com/watch?v=1MH5_SwmTsE',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/immersive-media.jpg',
     objectives: [
       'Produce professional VR/AR content',
@@ -446,7 +446,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
     technologies: ['Portfolio Platforms', 'E-commerce Tools', 'IP Management', 'Social Media Marketing'],
     creativeFocus: ['Business Development', 'Client Relations', 'Pricing Strategies', 'Market Positioning'],
     vietnamCulture: 'Building creative businesses serving Vietnamese market và international expansion',
-    videoUrl: 'https://www.youtube.com/watch?v=4J58c6WqNHY',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: '/images/creative-tech-business.jpg',
     objectives: [
       'Develop sustainable creative business models',

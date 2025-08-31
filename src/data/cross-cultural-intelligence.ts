@@ -22,7 +22,7 @@ export const crossCulturalLessons: CrossCulturalLessonType[] = [
       'Phát triển khả năng hiểu, giao tiếp và làm việc hiệu quả với người từ các nền văn hóa khác nhau trong thế giới toàn cầu.',
     duration: '140 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=q-1BEoIadCE', // Cultural Intelligence
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Cultural Intelligence
     imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu về Cultural Intelligence (CQ) và 4 dimensions',
@@ -222,7 +222,7 @@ export const crossCulturalLessons: CrossCulturalLessonType[] = [
       'Master advanced cross-cultural communication techniques để succeed trong international business và global collaboration.',
     duration: '160 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=PMcRhyn7Xn8', // Global Communication Skills
+    videoUrl: 'https://www.youtube.com/watch?v=rhTCudc9bgk', // Global Communication Skills
     imageUrl: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=600&fit=crop',
     objectives: [
       'Master high-context vs low-context communication',

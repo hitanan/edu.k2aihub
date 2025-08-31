@@ -137,7 +137,7 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
     title: 'Bài 2: Xây dựng AI Chatbot tiếng Việt thông minh',
     description:
       'Phát triển chatbot AI hiểu và trả lời tiếng Việt tự nhiên. Học intent recognition, entity extraction và conversation management cho tiếng Việt.',
-    videoUrl: 'https://www.youtube.com/watch?v=QhPnTb_dUH4',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl:
       'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',

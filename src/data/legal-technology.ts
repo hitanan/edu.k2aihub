@@ -15,7 +15,7 @@ export const legalTechLessons: LegalTechLesson[] = [
     description: 'Tự động hóa quy trình tạo tài liệu pháp lý, quản lý hợp đồng và contract lifecycle management trong hệ thống pháp luật Việt Nam.',
     duration: '260 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=U_nC1k6_5kA', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=ZXT6W8Nfs98', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1200&h=600&fit=crop',
     legalArea: 'contract-management',
     objectives: [
@@ -130,7 +130,7 @@ export const legalTechLessons: LegalTechLesson[] = [
     description: 'Leverage AI và machine learning cho legal research, case law analysis và precedent identification trong Vietnamese jurisprudence.',
     duration: '280 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=U_nC1k6_5kA', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=39zbC_PrNQs', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=600&fit=crop',
     legalArea: 'legal-research',
     objectives: [
@@ -216,7 +216,7 @@ export const legalTechLessons: LegalTechLesson[] = [
     description: 'Comprehensive case management, client relationship management, và practice optimization cho Vietnamese law firms và legal departments.',
     duration: '240 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=U_nC1k6_5kA', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=7bB8zX_2cIE', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
     legalArea: 'case-management',
     objectives: [
@@ -294,7 +294,7 @@ export const legalTechLessons: LegalTechLesson[] = [
     description: 'Technology solutions cho regulatory compliance, risk assessment, và automated compliance monitoring trong Vietnamese business environment.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=U_nC1k6_5kA', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=Sc7qx2lxGYM', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=600&fit=crop',
     legalArea: 'compliance',
     objectives: [
@@ -372,7 +372,7 @@ export const legalTechLessons: LegalTechLesson[] = [
     description: 'Digital tools và strategies cho IP portfolio management, trademark monitoring, và patent analysis trong Vietnamese IP ecosystem.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=U_nC1k6_5kA', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=UqZJPuyK9VY', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=600&fit=crop',
     legalArea: 'intellectual-property',
     objectives: [

@@ -20,7 +20,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Hiểu ecosystem của micro-influencer economy, từ defining micro-influencers đến understanding market opportunities trong Vietnamese context.',
     duration: '160 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=h4V_8i-BChM', // Influencer marketing basics
+    videoUrl: 'https://www.youtube.com/watch?v=3DdJ1JynG8M', // Influencer marketing basics
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Understand micro-influencer definition và market position',
@@ -97,7 +97,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Master niche selection strategies để find profitable micro-influencer opportunities và build strong personal brand positioning trong competitive market.',
     duration: '175 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=gOj_hXlQr4c', // Personal branding
+    videoUrl: 'https://www.youtube.com/watch?v=sO4te2QNsHY', // Personal branding
     imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
     objectives: [
       'Identify profitable niches trong Vietnamese market',
@@ -174,7 +174,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Master content creation workflows, từ ideation đến production, để consistently create engaging content that drives audience growth và brand partnerships.',
     duration: '190 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=6FiCiTQvKL0', // Content creation tips
+    videoUrl: 'https://www.youtube.com/watch?v=EvGP5mSrGHk', // Content creation tips
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Develop efficient content creation workflows',
@@ -251,7 +251,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Learn advanced strategies để grow authentic, engaged audiences và build loyal communities around your micro-influencer brand.',
     duration: '185 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=qFXYF1F4v4s', // Audience growth strategies
+    videoUrl: 'https://www.youtube.com/watch?v=XSMNLuUdVQY', // Audience growth strategies
     imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
     objectives: [
       'Master organic audience growth techniques',
@@ -328,7 +328,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Master brand partnership negotiations, relationship management, và advanced monetization strategies để maximize micro-influencer income.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=SQXBwjlTHdA', // Brand partnerships
+    videoUrl: 'https://www.youtube.com/watch?v=NwZy0evRnZs', // Brand partnerships
     imageUrl: 'https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&h=600&fit=crop',
     objectives: [
       'Master brand partnership negotiation tactics',
@@ -405,7 +405,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Master platform-specific algorithms và optimization techniques để maximize reach, engagement, và growth across major social media platforms.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=YECeOA4nM8k', // Social media algorithms
+    videoUrl: 'https://www.youtube.com/watch?v=oqyRjXsazIA', // Social media algorithms
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Understand algorithms của major social platforms',
@@ -482,7 +482,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Transform micro-influencer activities into scalable business system với automation, team building, và revenue diversification strategies.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=LU18LSEGDbk', // Creator business scaling
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Creator business scaling
     imageUrl: 'https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&h=600&fit=crop',
     objectives: [
       'Develop scalable micro-influencer business systems',
@@ -559,7 +559,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
     description: 'Master Vietnamese-specific micro-influencer strategies, cultural integration, và local market optimization cho authentic connection với Vietnamese audiences.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=7mWiMM3T0DQ', // Vietnamese culture and business
+    videoUrl: 'https://www.youtube.com/watch?v=o6gfe8bb11Y', // Vietnamese culture and business
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
     objectives: [
       'Understand Vietnamese social media culture deeply',

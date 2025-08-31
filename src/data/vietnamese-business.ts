@@ -48,7 +48,7 @@ export const vietnameseBusinessLessons: VietnameseBusinessLesson[] = [
     title: 'Bài 1: Hệ sinh thái Startup Việt Nam và Digital Transformation',
     description:
       'Khám phá startup ecosystem Việt Nam, các quy định pháp lý, funding sources và success strategies. Học cách navigate trong môi trường kinh doanh Việt Nam.',
-    videoUrl: 'https://www.youtube.com/watch?v=rK3Xx_4CVKE',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
@@ -138,7 +138,7 @@ export const vietnameseBusinessLessons: VietnameseBusinessLesson[] = [
     title: 'Bài 2: FinTech Business Development trong thị trường Việt Nam',
     description:
       'Phát triển FinTech solutions cho Vietnamese market. Học regulatory compliance, payment integration, và financial inclusion strategies.',
-    videoUrl: 'https://www.youtube.com/watch?v=8wMXxNLqVwE',
+    videoUrl: 'https://www.youtube.com/watch?v=3lO5zbxiXo4',
     imageUrl:
       'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
@@ -222,7 +222,7 @@ export const vietnameseBusinessLessons: VietnameseBusinessLesson[] = [
       'Bài 3: E-commerce Strategy và Digital Marketing cho thị trường Việt Nam',
     description:
       'Xây dựng e-commerce business strategy cho Vietnamese consumers. Học local marketplace dynamics, logistics, và customer behavior.',
-    videoUrl: 'https://www.youtube.com/watch?v=TMg2Eb8pQk8',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl:
       'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',

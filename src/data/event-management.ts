@@ -15,7 +15,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
     description: 'Comprehensive event production management covering digital event platforms, live streaming technology, hybrid events, và virtual reality experiences.',
     duration: '215 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=0MDCzFAH1Sk', // Digital Event Production
+    videoUrl: 'https://www.youtube.com/watch?v=hSD5qbG5jzU', // Digital Event Production
     imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=600&fit=crop',
     eventCategory: 'virtual-events',
     eventScale: 'large',
@@ -96,7 +96,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
     description: 'Advanced entertainment technology including sound systems, lighting design, stage automation, và immersive experience technologies.',
     duration: '235 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=8_g6NkJWZF4', // Entertainment Technology Systems
+    videoUrl: 'https://www.youtube.com/watch?v=aWRG367veTM', // Entertainment Technology Systems
     imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&h=600&fit=crop',
     eventCategory: 'entertainment-events',
     eventScale: 'mega',
@@ -177,7 +177,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
     description: 'Digital marketing strategies for events, social media engagement, influencer partnerships, và data-driven event promotion.',
     duration: '190 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=2qYJ-EcW7sQ', // Event Marketing and Digital Engagement
+    videoUrl: 'https://www.youtube.com/watch?v=UZY4fSIjKjs', // Event Marketing and Digital Engagement
     imageUrl: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=600&fit=crop',
     eventCategory: 'corporate-events',
     eventScale: 'medium',
@@ -258,7 +258,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
     description: 'Large-scale festival management including logistics coordination, vendor management, safety planning, và operational excellence.',
     duration: '225 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=GqO2NdJnFGc', // Festival Operations and Logistics
+    videoUrl: 'https://www.youtube.com/watch?v=OyLHB7A4b9I', // Festival Operations and Logistics
     imageUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=600&fit=crop',
     eventCategory: 'festival-management',
     eventScale: 'mega',
@@ -339,7 +339,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
     description: 'Data-driven event analysis, ROI measurement, attendee behavior analytics, và performance optimization strategies.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=BgnUUoaXhHY', // Event Analytics and ROI Measurement
+    videoUrl: 'https://www.youtube.com/watch?v=eqtcvmzyP1E', // Event Analytics and ROI Measurement
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
     eventCategory: 'corporate-events',
     eventScale: 'medium',

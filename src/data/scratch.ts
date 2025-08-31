@@ -148,7 +148,7 @@ export const scratchLessons: ScratchLesson[] = [
     materials: ['Scratch editor', 'File âm thanh (tùy chọn)', 'Hình ảnh sprites tùy chỉnh (tùy chọn)'],
     imageUrl:
       'https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=3mGpHfPj4J8',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     codeBlocks: [
       'when this sprite clicked',
       'play sound "meow"',
@@ -233,7 +233,7 @@ export const scratchLessons: ScratchLesson[] = [
     materials: ['Scratch editor', 'Notebook để ghi chú logic', 'Ý tưởng cho game đơn giản'],
     imageUrl:
       'https://images.unsplash.com/photo-1509048191080-d2e2678e67b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=G6N9RNqiJyE',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     codeBlocks: [
       'set score to 0',
       'change score by 1',
@@ -420,7 +420,7 @@ export const scratchLessons: ScratchLesson[] = [
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=uaU5PW6dF1w',
+    videoUrl: 'https://www.youtube.com/watch?v=S5TCrUGQASY',
     codeBlocks: [
       'define draw circle',
       'create clone of myself',

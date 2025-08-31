@@ -15,7 +15,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     description: 'Hiểu cách định nghĩa và phát triển purpose authentic cho thương hiệu, kết nối với values của target audience và tạo meaningful connection.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=StllwmMQEAk', // Purpose-driven brand building
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Purpose-driven brand building
     imageUrl: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=800&h=600&fit=crop',
     objectives: [
       'Định nghĩa brand purpose authentic và meaningful',
@@ -165,7 +165,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     description: 'Master các methods và tools để measure, track và communicate social impact của marketing activities và brand initiatives effectively.',
     duration: '165 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=nPe8kMVmBK0', // Social impact measurement
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Social impact measurement
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     objectives: [
       'Develop comprehensive social impact measurement framework',
@@ -315,7 +315,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     description: 'Master strategies to engage với conscious consumers, build authentic communities và foster long-term relationships based on shared values.',
     duration: '170 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=lB3ZiSdlJuU', // Conscious consumer engagement
+    videoUrl: 'https://www.youtube.com/watch?v=8LwveoDO_M8', // Conscious consumer engagement
     imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
     objectives: [
       'Understand conscious consumer behavior và motivations',
@@ -390,7 +390,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     description: 'Deep dive vào Vietnamese cultural values và cách integrate authentically into purpose-driven marketing strategies cho local relevance.',
     duration: '155 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=7mWiMM3T0DQ', // Vietnamese culture and business
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Vietnamese culture and business
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
     objectives: [
       'Understand core Vietnamese cultural values và traditions',
@@ -465,7 +465,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     description: 'Learn to develop comprehensive CSR strategies và communicate them through authentic storytelling that builds trust và engagement.',
     duration: '185 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=a3xwuHhJkmE', // CSR and storytelling
+    videoUrl: 'https://www.youtube.com/watch?v=jpt1TvdBmok', // CSR and storytelling
     imageUrl: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop',
     objectives: [
       'Develop comprehensive CSR strategy aligned với business goals',

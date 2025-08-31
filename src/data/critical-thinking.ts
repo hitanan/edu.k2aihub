@@ -255,7 +255,7 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
     description: 'Phát triển khả năng nhìn nhận vấn đề từ góc độ tổng thể, hiểu được mối quan hệ giữa các yếu tố.',
     duration: '105 phút',
     difficulty: 'Nâng cao', 
-    videoUrl: 'https://www.youtube.com/watch?v=GPW4v_7yuHg', // Systems Thinking - Peter Senge
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Systems Thinking - Peter Senge
     imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu được concept của systems thinking',

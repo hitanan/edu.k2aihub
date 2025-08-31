@@ -22,7 +22,7 @@ export const digitalCitizenshipLessons: DigitalCitizenshipLessonType[] = [
     description: 'Học cách trở thành công dân số có trách nhiệm trong thế giới kết nối. Hiểu quyền và nghĩa vụ trong không gian số.',
     duration: '120 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=u0o3wAHQrMc', // Digital Citizenship Explained
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Digital Citizenship Explained
     imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu được khái niệm công dân số và tầm quan trọng',
@@ -169,7 +169,7 @@ export const digitalCitizenshipLessons: DigitalCitizenshipLessonType[] = [
     description: 'Khám phá sâu các vấn đề đạo đức phức tạp trong AI, từ bias đến explainability và impact xã hội.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=AaAEaGrcTpY', // AI Ethics: Crash Course Philosophy
+    videoUrl: 'https://www.youtube.com/watch?v=KPSiXj9wTnM', // AI Ethics: Crash Course Philosophy
     imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop',
     objectives: [
       'Phân tích các vấn đề đạo đức phức tạp trong AI',

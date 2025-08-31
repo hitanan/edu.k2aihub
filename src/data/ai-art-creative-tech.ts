@@ -144,7 +144,7 @@ export const aiArtLessons: AiArtLesson[] = [
     title: 'Bài 2: AI Video Production & Motion Graphics',
     description:
       'Create stunning videos với AI tools. Master RunwayML, Pika Labs, Stable Video Diffusion cho video generation, motion graphics, và cinematic storytelling.',
-    videoUrl: 'https://www.youtube.com/watch?v=LGD0EZhYU7A',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '180 phút',

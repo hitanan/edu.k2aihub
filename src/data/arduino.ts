@@ -234,7 +234,7 @@ void loop() {
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=kWmjNVESHaU',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     codeExample: `/*
   RGB LED Color Cycling
   Tạo hiệu ứng đổi màu với RGB LED

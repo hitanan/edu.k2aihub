@@ -100,7 +100,7 @@ export const psychologyBehavioralScienceLessons: PsychologyBehavioralScienceLess
     description: 'Understand consumer psychology, decision-making processes, và behavioral triggers để create more effective marketing strategies cho Vietnamese market.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=8HzWLaPCEOQ', // Consumer Psychology
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Consumer Psychology
     imageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=600&fit=crop',
     psychologyCategory: 'consumer-behavior',
     applicationDomain: [

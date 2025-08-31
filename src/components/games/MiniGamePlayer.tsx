@@ -97,6 +97,7 @@ import RenewableEnergyGridManagerGame from './individual/RenewableEnergyGridMana
 import GameDesignStudio3DGame from './GameDesignStudio3DGame';
 import EthicalHackingSimulatorGame from './individual/EthicalHackingSimulatorGame';
 import GeneEditingLab3DGame from './GeneEditingLab3DGame';
+import FutureSkillsIntegrationChallengeGame from './individual/FutureSkillsIntegrationChallengeGame';
 
 // Import 3D game components that exist as separate components
 import TrafficManagementSimulator3D from './TrafficManagementSimulator3D';
@@ -500,6 +501,16 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         );
       case 'ai-art-creation-lab':
         return <AIArtCreationLabGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'future-skills-integration-challenge':
+        return <FutureSkillsIntegrationChallengeGame 
+          onComplete={(score: number) => {
+            // Determine success based on score
+            const success = score > 50; // Adjust threshold as needed
+            endGame(success, score);
+          }} 
+          timeLeft={timeLeft} 
+          onRestart={() => restartGame()} 
+        />;
       case 'ethical-hacking-simulator':
         return <EthicalHackingSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'gene-editing-lab-3d':

@@ -99,7 +99,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     description: 'Learn advanced environmental monitoring techniques, data collection methods, và comprehensive impact assessment approaches cho Vietnamese ecosystems.',
     duration: '195 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=2OEpTFOJ-Eo', // Environmental monitoring
+    videoUrl: 'https://www.youtube.com/watch?v=JyxGKJ13LUI', // Environmental monitoring
     imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop',
     objectives: [
       'Master environmental monitoring methodologies',
@@ -253,7 +253,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     description: 'Learn climate-smart agriculture techniques, sustainable farming practices, và adaptation strategies cho Vietnamese agricultural systems.',
     duration: '190 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=YvWB2cqb11s', // Sustainable agriculture
+    videoUrl: 'https://www.youtube.com/watch?v=fLY_adPizyw', // Sustainable agriculture
     imageUrl: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&h=600&fit=crop',
     objectives: [
       'Understand climate impacts on Vietnamese agriculture',
@@ -407,7 +407,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     description: 'Understand environmental policy development, governance structures, và implementation mechanisms trong Vietnamese administrative system.',
     duration: '185 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vBmp_-nNv0Y', // Environmental policy
+    videoUrl: 'https://www.youtube.com/watch?v=zx04Kl8y4dE', // Environmental policy
     imageUrl: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=600&fit=crop',
     objectives: [
       'Understand environmental policy frameworks',
@@ -484,7 +484,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     description: 'Master green technology development, innovation processes, và sustainable solution design cho addressing Vietnamese environmental challenges.',
     duration: '215 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=qUJRwbm-Y1s', // Green technology innovation
+    videoUrl: 'https://www.youtube.com/watch?v=zx04Kl8y4dE', // Green technology innovation
     imageUrl: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&h=600&fit=crop',
     objectives: [
       'Understand green technology innovation processes',
@@ -561,7 +561,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     description: 'Master environmental education strategies, science communication techniques, và public engagement approaches cho promoting environmental awareness trong Vietnamese society.',
     duration: '170 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=d7yj8RKWKBU', // Science communication
+    videoUrl: 'https://www.youtube.com/watch?v=yml8xrM5qCE', // Science communication
     imageUrl: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=600&fit=crop',
     objectives: [
       'Master environmental education principles',

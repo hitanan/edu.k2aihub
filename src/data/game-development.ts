@@ -49,7 +49,7 @@ export const gameDevLessons: GameDevLesson[] = [
     title: 'Bài 1: Game Design Fundamentals',
     description:
       'Học cơ bản về game design: mechanics, dynamics, aesthetics. Thiết kế gameplay loops và player experience để tạo games hấp dẫn.',
-    videoUrl: 'https://www.youtube.com/watch?v=zQvWMdWhFBs',
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
     imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '120 phút',

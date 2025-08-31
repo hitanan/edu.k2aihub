@@ -20,7 +20,7 @@ export const futureThinkingLessons: FutureThinkingLessonType[] = [
     description: 'Học cách tư duy về tương lai một cách có hệ thống, từ trend analysis đến scenario planning cho quyết định tốt hơn.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=sNNJKaWkA5M', // Futures Thinking and Strategic Planning
+    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Futures Thinking and Strategic Planning
     imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu về futures thinking và strategic foresight',
@@ -195,7 +195,7 @@ export const futureThinkingLessons: FutureThinkingLessonType[] = [
     description: 'Học cách nhận diện early signals của change và emerging trends trước khi chúng trở nên mainstream.',
     duration: '90 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=wJgla4vPVvs', // Trend Spotting and Weak Signals
+    videoUrl: 'https://www.youtube.com/watch?v=bbcOTT-1oWw', // Trend Spotting and Weak Signals
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu về weak signals và early indicators',
