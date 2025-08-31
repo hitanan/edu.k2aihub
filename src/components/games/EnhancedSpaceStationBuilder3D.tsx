@@ -140,7 +140,7 @@ function EnhancedStationModule({
   );
 }
 
-// Earth component
+// Earth component with detailed realistic appearance
 function Earth() {
   const meshRef = useRef<THREE.Mesh>(null);
 
@@ -150,11 +150,84 @@ function Earth() {
     }
   });
 
+  // Create earth texture with procedural approach
+  const earthTexture = useMemo(() => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return null;
+
+    // Create base earth colors
+    const gradient = ctx.createLinearGradient(0, 0, 0, 256);
+    gradient.addColorStop(0, '#1e3a8a'); // Deep blue (polar)
+    gradient.addColorStop(0.3, '#3b82f6'); // Ocean blue
+    gradient.addColorStop(0.5, '#22c55e'); // Land green
+    gradient.addColorStop(0.7, '#f59e0b'); // Desert yellow
+    gradient.addColorStop(1, '#ffffff'); // Ice white (polar)
+    
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 512, 256);
+
+    // Add continent-like shapes
+    ctx.fillStyle = '#166534'; // Darker green for continents
+    
+    // Simplified continent shapes
+    const continents = [
+      // Europe/Africa-like
+      { x: 120, y: 80, width: 60, height: 100 },
+      // Asia-like  
+      { x: 200, y: 60, width: 100, height: 80 },
+      // Americas-like
+      { x: 350, y: 70, width: 40, height: 120 },
+      // Australia-like
+      { x: 280, y: 140, width: 30, height: 25 }
+    ];
+
+    continents.forEach(continent => {
+      ctx.beginPath();
+      ctx.roundRect(continent.x, continent.y, continent.width, continent.height, 10);
+      ctx.fill();
+    });
+
+    // Add cloud layer
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+    for (let i = 0; i < 20; i++) {
+      const x = Math.random() * 512;
+      const y = Math.random() * 256;
+      const size = 20 + Math.random() * 40;
+      ctx.beginPath();
+      ctx.arc(x, y, size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    return new THREE.CanvasTexture(canvas);
+  }, []);
+
   return (
-    <mesh ref={meshRef} position={[0, -50, 0]}>
-      <sphereGeometry args={[15, 32, 32]} />
-      <meshStandardMaterial color="#4169E1" emissive="#001122" emissiveIntensity={0.1} />
-    </mesh>
+    <group position={[0, -50, 0]}>
+      <mesh ref={meshRef}>
+        <sphereGeometry args={[15, 64, 32]} />
+        <meshStandardMaterial 
+          map={earthTexture}
+          color="#ffffff"
+          emissive="#001122" 
+          emissiveIntensity={0.1}
+          roughness={0.8}
+          metalness={0.1}
+        />
+      </mesh>
+      {/* Atmosphere glow effect */}
+      <mesh scale={[1.05, 1.05, 1.05]}>
+        <sphereGeometry args={[15, 32, 16]} />
+        <meshBasicMaterial 
+          color="#4da6ff" 
+          transparent 
+          opacity={0.15}
+          side={THREE.BackSide}
+        />
+      </mesh>
+    </group>
   );
 }
 

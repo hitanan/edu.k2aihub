@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Search, Clock, Star, ChevronRight, Filter, Zap, TrendingUp } from 'lucide-react';
+import { Search, Clock, Star, ChevronRight, Filter } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { searchModulesVietnamese } from '@/utils/vietnameseSearch';
@@ -10,6 +10,7 @@ import { searchModulesVietnamese } from '@/utils/vietnameseSearch';
 // Transform moduleNavigation data to match AllLearningPageClient format
 const allLearningModules = moduleNavigation
   .filter((module) => !module.coreModule) // Exclude core modules (City, AI)
+  .reverse() // Show latest modules first
   .map((module) => ({
     id: module.id,
     title: module.title,

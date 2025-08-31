@@ -274,9 +274,15 @@ function SmartHomeControlPanel() {
       }
     ];
 
-    updateSmartHomeState({
-      scenarios: [...smartHome.scenarios, ...scenarios]
-    });
+    // Check if scenarios already exist to prevent duplicates
+    const existingIds = new Set(smartHome.scenarios.map(s => s.id));
+    const newScenarios = scenarios.filter(scenario => !existingIds.has(scenario.id));
+
+    if (newScenarios.length > 0) {
+      updateSmartHomeState({
+        scenarios: [...smartHome.scenarios, ...newScenarios]
+      });
+    }
   };
 
   return (

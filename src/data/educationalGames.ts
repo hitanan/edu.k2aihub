@@ -3438,7 +3438,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     isInternal: true,
     points: 200,
     icon: '🎯',
-    color: 'from-gradient-start to-gradient-end',
+    color: 'from-emeral-400 to-indigo-400',
     relatedLessons: [
       {
         moduleId: 'digital-citizenship-ai-ethics',

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, useRef, useMemo } from 'react';
+import React, { useState, useCallback, useRef, useMemo, useEffect } from 'react';
 import { Canvas, useFrame, ThreeEvent } from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import * as THREE from 'three';
@@ -406,10 +406,50 @@ export default function SmartCityPlanner3D({
   const [gameStarted, setGameStarted] = useState(true); // Start directly with the game
   const [selectedBuildingType, setSelectedBuildingType] = useState<string | null>('residential');
   const [selectedBuilding, setSelectedBuilding] = useState<string | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   // Use gameStore data
   const buildings = smartCity.buildings;
   const budget = smartCity.budget;
+
+  const toggleFullscreen = async () => {
+    if (!document.fullscreenElement) {
+      // Enter fullscreen
+      const gameContainer = document.getElementById('smart-city-game-container');
+      if (gameContainer) {
+        try {
+          await gameContainer.requestFullscreen();
+          setIsFullscreen(true);
+        } catch (error) {
+          console.error('Error entering fullscreen:', error);
+          // Fallback to CSS fullscreen
+          setIsFullscreen(true);
+        }
+      }
+    } else {
+      // Exit fullscreen
+      try {
+        await document.exitFullscreen();
+        setIsFullscreen(false);
+      } catch (error) {
+        console.error('Error exiting fullscreen:', error);
+        // Fallback to CSS fullscreen
+        setIsFullscreen(false);
+      }
+    }
+  };
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
 
   const cityStats = useMemo(() => {
     return buildings.reduce(
@@ -496,13 +536,24 @@ export default function SmartCityPlanner3D({
   }
 
   return (
-    <div className="relative w-full h-screen bg-gradient-to-b from-sky-200 to-green-200">
+    <div 
+      id="smart-city-game-container"
+      className={`relative w-full ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-b from-sky-200 to-green-200`}
+    >
       <ControlPanel
         selectedBuildingType={selectedBuildingType}
         onSelectBuildingType={setSelectedBuildingType}
         cityStats={cityStats}
         budget={budget}
       />
+
+      {/* Fullscreen button */}
+      <button
+        onClick={toggleFullscreen}
+        className="absolute top-4 right-4 bg-blue-600 hover:bg-blue-500 text-white px-3 py-2 rounded z-10"
+      >
+        {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+      </button>
 
       <Canvas camera={{ position: [15, 12, 15], fov: 60 }} gl={{ antialias: false, alpha: false }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.6} />

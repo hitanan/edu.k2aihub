@@ -201,6 +201,7 @@ interface GameStore {
   
   updateDNAState: (updates: Partial<DNAState>) => void;
   addDNAStrand: (sequence: string, position: [number, number, number]) => void;
+  removeDNAStrand: (strandId: string) => void;
   mutateDNA: (strandId: string, position: number, newBase: string) => void;
   
   updateSmartHomeState: (updates: Partial<SmartHomeState>) => void;
@@ -210,6 +211,7 @@ interface GameStore {
   updateMolecularState: (updates: Partial<MolecularAssemblyState>) => void;
   addAtom: (element: string, position: [number, number, number]) => void;
   createBond: (atom1Id: string, atom2Id: string, bondType: 'single' | 'double' | 'triple') => void;
+  removeAtom: (atomId: string) => void;
   
   updatePhysicsState: (updates: Partial<PhysicsLabState>) => void;
   startExperiment: (experimentId: string) => void;
@@ -424,6 +426,14 @@ export const useAdvancedGameStore = create<GameStore>()(
           }
         })),
 
+      removeDNAStrand: (strandId) =>
+        set((state) => ({
+          dna: {
+            ...state.dna,
+            dnaStrands: state.dna.dnaStrands.filter((strand) => strand.id !== strandId)
+          }
+        })),
+
       mutateDNA: (strandId, position, newBase) =>
         set((state) => ({
           dna: {
@@ -551,6 +561,20 @@ export const useAdvancedGameStore = create<GameStore>()(
               }
               return molecule;
             })
+          }
+        })),
+
+      removeAtom: (atomId: string) =>
+        set((state) => ({
+          molecular: {
+            ...state.molecular,
+            molecules: state.molecular.molecules.map((molecule) => ({
+              ...molecule,
+              atoms: molecule.atoms.filter((atom, index) => `${atom.element}-${index}` !== atomId),
+              bonds: molecule.bonds.filter(
+                (bond) => bond.atom1 !== atomId && bond.atom2 !== atomId
+              )
+            })).filter(molecule => molecule.atoms.length > 0) // Remove empty molecules
           }
         })),
 

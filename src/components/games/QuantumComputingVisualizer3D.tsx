@@ -295,7 +295,7 @@ export default function QuantumComputingVisualizer3D() {
     const handleKeyPress = (e: KeyboardEvent) => {
       switch (e.key.toLowerCase()) {
         case 'f':
-          setIsFullscreen(!isFullscreen);
+          setIsFullscreen(prev => !prev);
           break;
         case 'r':
           // Reset quantum state
@@ -305,7 +305,7 @@ export default function QuantumComputingVisualizer3D() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isFullscreen]);
+  }, []);
 
   const handleQubitClick = (qubitId: string) => {
     const qubit = quantum.qubits.find(q => q.id === qubitId);
@@ -314,6 +314,10 @@ export default function QuantumComputingVisualizer3D() {
                        qubit.state === '1' ? 'superposition' : '0';
       updateQubitState(qubitId, nextState);
     }
+  };
+
+  const toggleFullscreen = () => {
+    setIsFullscreen(prev => !prev);
   };
 
   return (
@@ -372,7 +376,7 @@ export default function QuantumComputingVisualizer3D() {
 
       {/* Fullscreen toggle */}
       <button
-        onClick={() => setIsFullscreen(!isFullscreen)}
+        onClick={toggleFullscreen}
         className="absolute top-4 right-4 bg-purple-600 hover:bg-purple-500 text-white px-3 py-2 rounded"
       >
         {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'} [F]

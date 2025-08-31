@@ -132,6 +132,7 @@ export const K2Module = {
   MetaverseVREducation: 'metaverse-vr-education',
   SpaceTechnology: 'space-technology',
   DigitalArtsCreativeTech: 'digital-arts-creative-tech',
+  QuantumComputingEducation: 'quantum-computing-education',
 };
 export const moduleNavigation: ModuleNavigation[] = [
   // Core Modules (outside /learning/ folder)
@@ -3660,6 +3661,66 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
     tags: ['cultural-intelligence', 'cross-cultural-communication', 'global-leadership', 'diversity'],
     prerequisites: ['Open mindset về cultural differences', 'Experience with multicultural environments preferred'],
+  },
+
+  {
+    id: K2Module.QuantumComputingEducation,
+    title: 'Quantum Computing Education',
+    subtitle: 'Giáo Dục Điện Toán Lượng Tử',
+    description:
+      'Khám phá thế giới quantum computing từ fundamentals đến business applications. Học quantum algorithms, programming với IBM Qiskit, và hiểu tác động revolutionary lên các ngành công nghiệp.',
+    category: ['Emerging Technology', 'Programming', 'Future Technology'],
+    icon: '⚛️',
+    color: 'from-purple-600 to-indigo-600',
+    totalDuration: '15-20 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/quantum-computing-education',
+    features: [
+      'Hands-on programming với IBM Qiskit framework',
+      'Quantum algorithms từ Shor đến Grover algorithms',
+      'Real-world case studies từ Google, IBM, và leading companies',
+      'Business applications và ROI analysis frameworks',
+      'Post-quantum cryptography và cybersecurity implications'
+    ],
+    tags: ['quantum-computing', 'quantum-algorithms', 'IBM-Qiskit', 'quantum-cryptography', 'future-technology'],
+    prerequisites: [
+      'Toán học đại học (linear algebra, probability)', 
+      'Programming experience (Python preferred)',
+      'Basic physics understanding',
+      'Interest in cutting-edge technology'
+    ],
+    lessons: [
+      {
+        id: 'quantum-fundamentals-introduction',
+        title: 'Quantum Computing Fundamentals',
+        duration: '120 phút',
+        difficulty: 'Cơ bản'
+      },
+      {
+        id: 'quantum-algorithms-basics',
+        title: 'Quantum Algorithms - Shor & Grover',
+        duration: '150 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'quantum-programming-qiskit',
+        title: 'Quantum Programming với IBM Qiskit',
+        duration: '200 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'quantum-cryptography-security',
+        title: 'Quantum Cryptography & Cybersecurity',
+        duration: '140 phút',
+        difficulty: 'Trung bình'
+      },
+      {
+        id: 'quantum-business-applications',
+        title: 'Quantum Business Applications & ROI',
+        duration: '160 phút',
+        difficulty: 'Trung bình'
+      }
+    ]
   },
 ];
 

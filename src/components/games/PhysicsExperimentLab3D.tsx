@@ -168,6 +168,121 @@ const PHYSICS_EXPERIMENTS: Experiment[] = [
     ],
     expectedResults: 'Xuất hiện các vân giao thoa với khoảng cách đều nhau',
     realWorldApplications: ['Holography', 'Interferometry', 'Noise cancellation']
+  },
+  {
+    id: 'double_slit',
+    name: 'Thí Nghiệm Khe Đôi Young',
+    description: 'Khám phá tính chất sóng-hạt của ánh sáng qua thí nghiệm kinh điển',
+    category: 'waves',
+    difficulty: 'Nâng cao',
+    equipment: ['Laser', 'Màn chắn khe đôi', 'Màn quan sát', 'Detector photon'],
+    procedure: [
+      'Chiếu tia laser qua khe đôi',
+      'Quan sát mẫu giao thoa trên màn',
+      'Đo khoảng cách giữa các vân sáng',
+      'Thay đổi khoảng cách giữa các khe',
+      'Phát hiện photon đơn lẻ'
+    ],
+    theory: 'Nguyên lý chồng chất quantum: |ψ⟩ = α|0⟩ + β|1⟩',
+    safetyTips: [
+      'Không nhìn trực tiếp vào tia laser',
+      'Đeo kính bảo vệ',
+      'Tránh phản xạ laser'
+    ],
+    expectedResults: 'Mẫu giao thoa xuất hiện ngay cả với photon đơn lẻ',
+    realWorldApplications: ['Quantum computing', 'Particle physics', 'Optical devices']
+  },
+  {
+    id: 'plasma_ball',
+    name: 'Quả Cầu Plasma',
+    description: 'Tạo và quan sát plasma - trạng thái thứ tư của vật chất',
+    category: 'electricity',
+    difficulty: 'Trung bình',
+    equipment: ['Máy phát cao tần', 'Khí noble', 'Cầu thủy tinh', 'Điện cực'],
+    procedure: [
+      'Tạo chân không trong cầu thủy tinh',
+      'Bơm khí noble áp suất thấp',
+      'Kích hoạt điện cực cao tần',
+      'Quan sát hình thành plasma',
+      'Chạm tay để tương tác với plasma'
+    ],
+    theory: 'Plasma: Ion hóa khí tạo thành các electron tự do và ion dương',
+    safetyTips: [
+      'Tránh chạm vào điện cực trực tiếp',
+      'Sử dụng trong môi trường thông thoáng',
+      'Cẩn thận với tia UV'
+    ],
+    expectedResults: 'Các tia plasma di chuyển theo hướng tiếp xúc',
+    realWorldApplications: ['TV plasma', 'Welding', 'Space propulsion', 'Nuclear fusion']
+  },
+  {
+    id: 'magnetic_levitation',
+    name: 'Từ Tính Lơ Lửng',
+    description: 'Làm cho vật thể lơ lửng trong không khí bằng từ trường',
+    category: 'magnetism',
+    difficulty: 'Nâng cao',
+    equipment: ['Nam châm điện mạnh', 'Vật liệu siêu dẫn', 'Nguồn điện DC', 'Cảm biến vị trí'],
+    procedure: [
+      'Làm lạnh vật liệu siêu dẫn',
+      'Kích hoạt nam châm điện',
+      'Đặt vật kim loại vào từ trường',
+      'Điều chỉnh cường độ từ trường',
+      'Quan sát hiệu ứng lơ lửng ổn định'
+    ],
+    theory: 'Hiệu ứng Meissner: Siêu dẫn đẩy từ trường ra ngoài',
+    safetyTips: [
+      'Cẩn thận với nitơ lỏng',
+      'Tráxa từ trường mạnh',
+      'Đeo găng tay bảo hộ'
+    ],
+    expectedResults: 'Vật thể lơ lửng ổn định không tiếp xúc bề mặt',
+    realWorldApplications: ['Maglev trains', 'Magnetic bearings', 'MRI machines']
+  },
+  {
+    id: 'holographic_interference',
+    name: 'Giao Thoa Holographic',
+    description: 'Tạo ảnh hologram 3D bằng giao thoa laser',
+    category: 'waves',
+    difficulty: 'Nâng cao',
+    equipment: ['Laser coherent', 'Gương chia chùm', 'Phim holographic', 'Bàn chống rung'],
+    procedure: [
+      'Thiết lập laser trên bàn chống rung',
+      'Chia chùm laser thành hai phần',
+      'Một chùm chiếu vật, một chùm tham chiếu',
+      'Ghi nhận mẫu giao thoa trên phim',
+      'Tái tạo ảnh hologram'
+    ],
+    theory: 'Holography: Ghi nhận và tái tạo trường sóng ánh sáng 3D',
+    safetyTips: [
+      'Laser an toàn - Class 2',
+      'Môi trường ổn định',
+      'Tránh rung động'
+    ],
+    expectedResults: 'Ảnh 3D chân thực có thể quan sát từ nhiều góc',
+    realWorldApplications: ['Security holograms', '3D displays', 'Optical storage']
+  },
+  {
+    id: 'chaos_pendulum',
+    name: 'Con Lắc Hỗn Độn',
+    description: 'Mô phỏng hành vi chaotic trong hệ động lực học phức tạp',
+    category: 'mechanics',
+    difficulty: 'Nâng cao',
+    equipment: ['Con lắc kép', 'Cảm biến góc', 'Hệ thống ghi nhận dữ liệu'],
+    procedure: [
+      'Thiết lập con lắc kép',
+      'Đặt điều kiện ban đầu nhạy cảm',
+      'Ghi nhận quỹ đạo theo thời gian',
+      'Thay đổi nhỏ điều kiện ban đầu',
+      'So sánh các quỹ đạo divergent'
+    ],
+    theory: 'Lý thuyết Chaos: Hành vi không dự đoán từ hệ deterministic',
+    safetyTips: [
+      'Cố định chắc chắn thiết bị',
+      'Quan sát từ khoảng cách an toàn',
+      'Cẩn thận với chuyển động nhanh'
+    ],
+    expectedResults: 'Quỹ đạo phức tạp, không lặp lại, nhạy cảm điều kiện đầu',
+    realWorldApplications: ['Weather prediction', 'Stock market', 'Ecosystem dynamics']
   }
 ];
 
@@ -323,12 +438,12 @@ function ElectromagneticField() {
 function WaveInterference() {
   const { isRunning, simulationData } = usePhysicsStore();
   const waveRef = useRef<THREE.Points>(null);
-  const [time, setTime] = useState(0);
+  const timeRef = useRef(0);
 
   useFrame((state, delta) => {
     if (!isRunning || !waveRef.current) return;
 
-    setTime(time + delta);
+    timeRef.current += delta;
     
     const { waveAmplitude, waveFrequency } = simulationData;
     const positions = waveRef.current.geometry.attributes.position;
@@ -341,8 +456,8 @@ function WaveInterference() {
       const d1 = Math.sqrt(Math.pow(x + 1, 2) + Math.pow(z, 2));
       const d2 = Math.sqrt(Math.pow(x - 1, 2) + Math.pow(z, 2));
       
-      const wave1 = waveAmplitude * Math.sin(waveFrequency * time - d1 * 2);
-      const wave2 = waveAmplitude * Math.sin(waveFrequency * time - d2 * 2);
+      const wave1 = waveAmplitude * Math.sin(waveFrequency * timeRef.current - d1 * 2);
+      const wave2 = waveAmplitude * Math.sin(waveFrequency * timeRef.current - d2 * 2);
       
       positions.setY(i, wave1 + wave2);
     }
@@ -377,6 +492,332 @@ function WaveInterference() {
   );
 }
 
+// Double Slit Experiment
+function DoubleSlit() {
+  const { isRunning } = usePhysicsStore();
+  const particlesRef = useRef<THREE.InstancedMesh>(null);
+  const [particles] = useState(() => {
+    const positions = [];
+    for (let i = 0; i < 100; i++) {
+      positions.push(new THREE.Vector3(-4, (Math.random() - 0.5) * 2, 0));
+    }
+    return positions;
+  });
+
+  useFrame((state, delta) => {
+    if (!isRunning || !particlesRef.current) return;
+
+    const matrix = new THREE.Matrix4();
+    particles.forEach((position, i) => {
+      position.x += delta * 2;
+      if (position.x > 4) position.x = -4;
+      
+      // Simulate interference pattern
+      if (Math.abs(position.x) < 0.1) {
+        const slitDistance = 0.5;
+        if (Math.abs(position.y + slitDistance/2) > 0.1 && Math.abs(position.y - slitDistance/2) > 0.1) {
+          position.y += (Math.random() - 0.5) * 0.2;
+        }
+      }
+      
+      matrix.setPosition(position);
+      particlesRef.current!.setMatrixAt(i, matrix);
+    });
+    
+    particlesRef.current.instanceMatrix.needsUpdate = true;
+  });
+
+  return (
+    <group>
+      {/* Double slit barrier */}
+      <mesh position={[0, 0.75, 0]}>
+        <boxGeometry args={[0.2, 1, 0.1]} />
+        <meshStandardMaterial color="#333" />
+      </mesh>
+      <mesh position={[0, -0.75, 0]}>
+        <boxGeometry args={[0.2, 1, 0.1]} />
+        <meshStandardMaterial color="#333" />
+      </mesh>
+      
+      {/* Screen */}
+      <mesh position={[3, 0, 0]}>
+        <planeGeometry args={[0.1, 4]} />
+        <meshStandardMaterial color="#fff" transparent opacity={0.8} />
+      </mesh>
+      
+      {/* Particles */}
+      <instancedMesh ref={particlesRef} args={[undefined, undefined, 100]}>
+        <sphereGeometry args={[0.02]} />
+        <meshStandardMaterial color="#00ff00" emissive="#00ff00" emissiveIntensity={0.5} />
+      </instancedMesh>
+    </group>
+  );
+}
+
+// Plasma Ball Simulation
+function PlasmaBall() {
+  const { isRunning } = usePhysicsStore();
+  const plasmaRef = useRef<THREE.Group>(null);
+  const [plasmaStreaks] = useState(() => {
+    const streaks = [];
+    for (let i = 0; i < 20; i++) {
+      const angle = (i / 20) * Math.PI * 2;
+      streaks.push({
+        angle,
+        length: Math.random() * 1.5 + 0.5,
+        intensity: Math.random()
+      });
+    }
+    return streaks;
+  });
+
+  useFrame((state) => {
+    if (!isRunning || !plasmaRef.current) return;
+
+    plasmaRef.current.rotation.y += 0.01;
+    const time = state.clock.elapsedTime;
+    
+    plasmaRef.current.children.forEach((child, i) => {
+      if (child instanceof THREE.Mesh) {
+        const streak = plasmaStreaks[i];
+        if (streak) {
+          const intensity = streak.intensity + Math.sin(time * 5 + i) * 0.3;
+          (child.material as THREE.MeshStandardMaterial).emissiveIntensity = Math.max(0.2, intensity);
+        }
+      }
+    });
+  });
+
+  return (
+    <group>
+      {/* Glass sphere */}
+      <mesh>
+        <sphereGeometry args={[1.2]} />
+        <meshPhysicalMaterial
+          color="#ffffff"
+          transparent
+          opacity={0.1}
+          transmission={0.9}
+          roughness={0}
+        />
+      </mesh>
+      
+      {/* Plasma streaks */}
+      <group ref={plasmaRef}>
+        {plasmaStreaks.map((streak, i) => (
+          <mesh
+            key={i}
+            position={[
+              Math.cos(streak.angle) * streak.length * 0.3,
+              (Math.random() - 0.5) * 0.5,
+              Math.sin(streak.angle) * streak.length * 0.3
+            ]}
+            rotation={[0, streak.angle, 0]}
+          >
+            <cylinderGeometry args={[0.01, 0.005, streak.length]} />
+            <meshStandardMaterial
+              color="#ff00ff"
+              emissive="#ff00ff"
+              emissiveIntensity={streak.intensity}
+            />
+          </mesh>
+        ))}
+      </group>
+      
+      {/* Central electrode */}
+      <mesh>
+        <sphereGeometry args={[0.1]} />
+        <meshStandardMaterial color="#888" metalness={0.8} />
+      </mesh>
+    </group>
+  );
+}
+
+// Magnetic Levitation
+function MagneticLevitation() {
+  const { isRunning } = usePhysicsStore();
+  const floatingObjectRef = useRef<THREE.Mesh>(null);
+  const timeRef = useRef(0);
+
+  useFrame((state, delta) => {
+    if (!isRunning || !floatingObjectRef.current) return;
+
+    timeRef.current += delta;
+    
+    // Levitating motion
+    const hover = Math.sin(timeRef.current * 2) * 0.1;
+    floatingObjectRef.current.position.y = 1 + hover;
+    floatingObjectRef.current.rotation.y += delta * 0.5;
+  });
+
+  return (
+    <group>
+      {/* Base magnet */}
+      <mesh position={[0, 0, 0]}>
+        <cylinderGeometry args={[0.8, 0.8, 0.3]} />
+        <meshStandardMaterial color="#444" metalness={0.8} />
+      </mesh>
+      
+      {/* Magnetic field visualization */}
+      {Array.from({ length: 12 }, (_, i) => {
+        const angle = (i / 12) * Math.PI * 2;
+        return (
+          <mesh
+            key={i}
+            position={[Math.cos(angle) * 1.2, 0.5, Math.sin(angle) * 1.2]}
+            rotation={[0, angle, Math.PI / 2]}
+          >
+            <torusGeometry args={[0.1, 0.02]} />
+            <meshStandardMaterial
+              color="#0088ff"
+              emissive="#0088ff"
+              emissiveIntensity={0.3}
+              transparent
+              opacity={0.6}
+            />
+          </mesh>
+        );
+      })}
+      
+      {/* Floating object */}
+      <mesh ref={floatingObjectRef} position={[0, 1, 0]}>
+        <boxGeometry args={[0.3, 0.3, 0.3]} />
+        <meshStandardMaterial
+          color="#ff6600"
+          metalness={0.9}
+          roughness={0.1}
+          emissive="#ff6600"
+          emissiveIntensity={0.2}
+        />
+      </mesh>
+    </group>
+  );
+}
+
+// Holographic Interference
+function HolographicInterference() {
+  const { isRunning } = usePhysicsStore();
+  const hologramRef = useRef<THREE.Group>(null);
+  const timeRef = useRef(0);
+
+  useFrame((state, delta) => {
+    if (!isRunning || !hologramRef.current) return;
+
+    timeRef.current += delta;
+    hologramRef.current.rotation.y += delta * 0.3;
+    
+    // Animate hologram layers
+    hologramRef.current.children.forEach((child, i) => {
+      if (child instanceof THREE.Mesh) {
+        const phase = timeRef.current + i * 0.5;
+        (child.material as THREE.MeshStandardMaterial).opacity = 0.3 + Math.sin(phase) * 0.2;
+      }
+    });
+  });
+
+  return (
+    <group>
+      {/* Laser source */}
+      <mesh position={[-3, 0, 0]}>
+        <cylinderGeometry args={[0.05, 0.05, 0.5]} />
+        <meshStandardMaterial color="#ff0000" emissive="#ff0000" emissiveIntensity={0.5} />
+      </mesh>
+      
+      {/* Beam splitter */}
+      <mesh position={[-1, 0, 0]} rotation={[0, 0, Math.PI / 4]}>
+        <planeGeometry args={[0.5, 0.5]} />
+        <meshPhysicalMaterial
+          color="#ffffff"
+          transparent
+          opacity={0.3}
+          transmission={0.7}
+        />
+      </mesh>
+      
+      {/* Hologram display */}
+      <group ref={hologramRef} position={[1, 0, 0]}>
+        {Array.from({ length: 5 }, (_, i) => (
+          <mesh key={i} position={[0, 0, i * 0.1 - 0.2]}>
+            <planeGeometry args={[1, 1]} />
+            <meshStandardMaterial
+              color={`hsl(${i * 60}, 70%, 50%)`}
+              transparent
+              opacity={0.4}
+              side={THREE.DoubleSide}
+            />
+          </mesh>
+        ))}
+      </group>
+    </group>
+  );
+}
+
+// Chaos Pendulum
+function ChaosPendulum() {
+  const { isRunning } = usePhysicsStore();
+  const pendulum1Ref = useRef<THREE.Mesh>(null);
+  const pendulum2Ref = useRef<THREE.Mesh>(null);
+  const [angles, setAngles] = useState({ theta1: 1.5, theta2: 1.5, p1: 0, p2: 0 });
+
+  useFrame((state, delta) => {
+    if (!isRunning || !pendulum1Ref.current || !pendulum2Ref.current) return;
+
+    // Double pendulum physics (simplified)
+    const L1 = 1, L2 = 1, m1 = 1, m2 = 1, g = 9.8;
+    const { theta1, theta2, p1, p2 } = angles;
+    
+    const dt = delta * 0.1; // Slow down simulation
+    
+    // Simplified equations of motion
+    const dtheta1 = p1;
+    const dtheta2 = p2;
+    const dp1 = -((m1 + m2) * g * L1 * Math.sin(theta1)) * dt;
+    const dp2 = -(m2 * g * L2 * Math.sin(theta2)) * dt;
+    
+    const newAngles = {
+      theta1: theta1 + dtheta1 * dt,
+      theta2: theta2 + dtheta2 * dt,
+      p1: p1 + dp1,
+      p2: p2 + dp2
+    };
+    
+    setAngles(newAngles);
+    
+    // Update positions
+    const x1 = L1 * Math.sin(newAngles.theta1);
+    const y1 = -L1 * Math.cos(newAngles.theta1);
+    const x2 = x1 + L2 * Math.sin(newAngles.theta2);
+    const y2 = y1 - L2 * Math.cos(newAngles.theta2);
+    
+    pendulum1Ref.current.position.set(x1, y1, 0);
+    pendulum2Ref.current.position.set(x2, y2, 0);
+  });
+
+  return (
+    <group>
+      {/* Pivot */}
+      <mesh position={[0, 0, 0]}>
+        <sphereGeometry args={[0.05]} />
+        <meshStandardMaterial color="#666" />
+      </mesh>
+      
+      {/* First pendulum bob */}
+      <mesh ref={pendulum1Ref}>
+        <sphereGeometry args={[0.1]} />
+        <meshStandardMaterial color="#ff4444" />
+      </mesh>
+      
+      {/* Second pendulum bob */}
+      <mesh ref={pendulum2Ref}>
+        <sphereGeometry args={[0.1]} />
+        <meshStandardMaterial color="#4444ff" />
+      </mesh>
+      
+      {/* Connection lines would be added with Line geometry */}
+    </group>
+  );
+}
+
 function Scene3D() {
   const { currentExperiment } = usePhysicsStore();
 
@@ -392,6 +833,11 @@ function Scene3D() {
         {currentExperiment?.id === 'pendulum' && <PendulumSimulation />}
         {currentExperiment?.id === 'electromagnetic_field' && <ElectromagneticField />}
         {currentExperiment?.id === 'wave_interference' && <WaveInterference />}
+        {currentExperiment?.id === 'double_slit' && <DoubleSlit />}
+        {currentExperiment?.id === 'plasma_ball' && <PlasmaBall />}
+        {currentExperiment?.id === 'magnetic_levitation' && <MagneticLevitation />}
+        {currentExperiment?.id === 'holographic_interference' && <HolographicInterference />}
+        {currentExperiment?.id === 'chaos_pendulum' && <ChaosPendulum />}
         
         <Stats />
       </Suspense>

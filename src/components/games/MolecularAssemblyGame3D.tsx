@@ -36,6 +36,7 @@ function Atom3D({
   isSelected = false,
   isBonding = false,
   onClick,
+  onRightClick,
   atomId
 }: {
   element: string;
@@ -43,6 +44,7 @@ function Atom3D({
   isSelected?: boolean;
   isBonding?: boolean;
   onClick: (atomId: string) => void;
+  onRightClick: (atomId: string) => void;
   atomId: string;
 }) {
   const atomRef = useRef<any>(null);
@@ -69,6 +71,10 @@ function Atom3D({
       position={position}
       ref={atomRef}
       onClick={() => onClick(atomId)}
+      onContextMenu={(e) => {
+        e.stopPropagation();
+        onRightClick(atomId);
+      }}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
@@ -199,9 +205,8 @@ function ChemicalBond3D({
 
 // Molecular Assembly Control Panel
 function MolecularControlPanel() {
-  const { molecular, updateMolecularState, addAtom, createBond } = useAdvancedGameStore();
+  const { molecular, updateMolecularState, addAtom } = useAdvancedGameStore();
   const [selectedElement, setSelectedElement] = useState('H');
-  const [selectedAtom, setSelectedAtom] = useState<string | null>(null);
   const [bondType, setBondType] = useState<'single' | 'double' | 'triple'>('single');
   const [currentTarget, setCurrentTarget] = useState('H2O');
 
@@ -215,27 +220,6 @@ function MolecularControlPanel() {
       0
     ];
     addAtom(selectedElement, position);
-  };
-
-  const handleAtomClick = (atomId: string) => {
-    if (!selectedAtom) {
-      setSelectedAtom(atomId);
-      updateMolecularState({
-        assembly: { ...molecular.assembly, selectedAtom: atomId }
-      });
-    } else if (selectedAtom !== atomId) {
-      // Create bond between selected atoms
-      createBond(selectedAtom, atomId, bondType);
-      setSelectedAtom(null);
-      updateMolecularState({
-        assembly: { ...molecular.assembly, selectedAtom: null }
-      });
-    } else {
-      setSelectedAtom(null);
-      updateMolecularState({
-        assembly: { ...molecular.assembly, selectedAtom: null }
-      });
-    }
   };
 
   const checkMoleculeComplete = () => {
@@ -338,11 +322,6 @@ function MolecularControlPanel() {
         <div>Score: {molecular.score}</div>
         <div>Research Points: {molecular.research.points}</div>
         <div>Discovered: {molecular.research.discoveredMolecules.length}</div>
-        {selectedAtom && (
-          <div className="text-cyan-300 font-semibold">
-            Selected Atom: {selectedAtom}
-          </div>
-        )}
       </div>
     </div>
   );
@@ -350,14 +329,88 @@ function MolecularControlPanel() {
 
 // Main Molecular Assembly Game component
 export default function MolecularAssemblyGame3D() {
-  const { molecular } = useAdvancedGameStore();
+  const { molecular, updateMolecularState, createBond, removeAtom } = useAdvancedGameStore();
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [selectedAtom, setSelectedAtom] = useState<string | null>(null);
+  const canvasContainerRef = useRef<HTMLDivElement>(null);
+
+  // Handle fullscreen toggle with native browser API
+  const toggleFullscreen = () => {
+    if (!canvasContainerRef.current) return;
+    
+    if (!document.fullscreenElement) {
+      // Enter fullscreen
+      canvasContainerRef.current.requestFullscreen().then(() => {
+        setIsFullscreen(true);
+      }).catch(err => {
+        console.error('Error entering fullscreen:', err);
+        // Fallback to CSS-only fullscreen
+        setIsFullscreen(true);
+      });
+    } else {
+      // Exit fullscreen
+      document.exitFullscreen().then(() => {
+        setIsFullscreen(false);
+      }).catch(err => {
+        console.error('Error exiting fullscreen:', err);
+        setIsFullscreen(false);
+      });
+    }
+  };
+
+  // Listen for fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
+  const handleAtomClick = (atomId: string) => {
+    console.log('Atom clicked:', atomId);
+    
+    if (!selectedAtom) {
+      // First atom selection
+      setSelectedAtom(atomId);
+      updateMolecularState({
+        assembly: { ...molecular.assembly, selectedAtom: atomId }
+      });
+    } else if (selectedAtom !== atomId) {
+      // Second atom selection - create bond
+      console.log('Creating bond between:', selectedAtom, 'and', atomId);
+      createBond(selectedAtom, atomId, 'single');
+      setSelectedAtom(null);
+      updateMolecularState({
+        assembly: { ...molecular.assembly, selectedAtom: null }
+      });
+    } else {
+      // Clicking same atom - deselect
+      setSelectedAtom(null);
+      updateMolecularState({
+        assembly: { ...molecular.assembly, selectedAtom: null }
+      });
+    }
+  };
+
+  const handleAtomRightClick = (atomId: string) => {
+    removeAtom(atomId);
+    if (selectedAtom === atomId) {
+      setSelectedAtom(null);
+      updateMolecularState({
+        assembly: { ...molecular.assembly, selectedAtom: null }
+      });
+    }
+  };
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       switch (e.key.toLowerCase()) {
         case 'f':
-          setIsFullscreen(!isFullscreen);
+          toggleFullscreen();
           break;
         case 'h':
           // Quick add Hydrogen
@@ -376,10 +429,13 @@ export default function MolecularAssemblyGame3D() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isFullscreen]);
+  }, []);
 
   return (
-    <div className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900`}>
+    <div 
+      ref={canvasContainerRef}
+      className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900`}
+    >
       <Canvas
         camera={{ position: [0, 5, 10], fov: 75 }}
         gl={{ antialias: true, alpha: true }}
@@ -409,17 +465,21 @@ export default function MolecularAssemblyGame3D() {
         {molecular.molecules.map((molecule, molIndex) => (
           <group key={`molecule-${molIndex}`}>
             {/* Render atoms */}
-            {molecule.atoms.map((atom, atomIndex) => (
-              <Atom3D
-                key={`atom-${molIndex}-${atomIndex}`}
-                element={atom.element}
-                position={atom.position}
-                isSelected={molecular.assembly.selectedAtom === `${molIndex}-${atomIndex}`}
-                isBonding={molecular.assembly.bondingMode}
-                onClick={() => console.log(`Atom clicked: ${molIndex}-${atomIndex}`)}
-                atomId={`${molIndex}-${atomIndex}`}
-              />
-            ))}
+            {molecule.atoms.map((atom, atomIndex) => {
+              const uniqueAtomId = `${molIndex}-${atomIndex}-${atom.element}`;
+              return (
+                <Atom3D
+                  key={`atom-${uniqueAtomId}`}
+                  element={atom.element}
+                  position={atom.position}
+                  isSelected={molecular.assembly.selectedAtom === uniqueAtomId}
+                  isBonding={molecular.assembly.bondingMode}
+                  onClick={handleAtomClick}
+                  onRightClick={handleAtomRightClick}
+                  atomId={uniqueAtomId}
+                />
+              );
+            })}
 
             {/* Render bonds */}
             {molecule.bonds.map((bond, bondIndex) => {
@@ -461,7 +521,7 @@ export default function MolecularAssemblyGame3D() {
 
       {/* Fullscreen toggle */}
       <button
-        onClick={() => setIsFullscreen(!isFullscreen)}
+        onClick={toggleFullscreen}
         className="absolute top-4 right-4 bg-purple-600 hover:bg-purple-500 text-white px-3 py-2 rounded"
       >
         {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'} [F]
@@ -473,6 +533,7 @@ export default function MolecularAssemblyGame3D() {
         <div className="text-sm space-y-1">
           <div>• Select element → Add atom</div>
           <div>• Click atom 1 → Click atom 2 → Create bond</div>
+          <div>• Right-click atom → Remove atom</div>
           <div>• [H][C][O][N]: Quick add elements</div>
           <div>• [F]: Toggle fullscreen</div>
           <div>• Build target molecules for points</div>

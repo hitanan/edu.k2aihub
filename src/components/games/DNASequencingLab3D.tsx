@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html, Sphere, Box } from '@react-three/drei';
-import { Vector3, CatmullRomCurve3, BufferGeometry, Float32BufferAttribute } from 'three';
+import { Vector3, CatmullRomCurve3 } from 'three';
 import * as THREE from 'three';
 import { useAdvancedGameStore } from '@/stores/advancedGameStore';
 
@@ -39,16 +39,6 @@ function DNABase3D({
       case 'G': return '#4444ff'; // Guanine - Blue
       case 'C': return '#ffff44'; // Cytosine - Yellow
       default: return '#888888';
-    }
-  }, [base]);
-
-  const complementaryBase = useMemo(() => {
-    switch (base.toUpperCase()) {
-      case 'A': return 'T';
-      case 'T': return 'A';
-      case 'G': return 'C';
-      case 'C': return 'G';
-      default: return '';
     }
   }, [base]);
 
@@ -96,11 +86,13 @@ function DNABase3D({
 function DNAHelix({
   sequence,
   position = [0, 0, 0],
-  isEditing = false
+  isEditing = false,
+  onRemove
 }: {
   sequence: string;
   position?: [number, number, number];
   isEditing?: boolean;
+  onRemove?: () => void;
 }) {
   const helixRef = useRef<THREE.Group>(null);
   const [selectedBase, setSelectedBase] = useState<number | null>(null);
@@ -141,7 +133,14 @@ function DNAHelix({
   return (
     <group position={position} ref={helixRef}>
       {/* Sugar-phosphate backbone - simplified */}
-      <mesh>
+      <mesh
+        onContextMenu={(e) => {
+          e.stopPropagation();
+          if (onRemove) {
+            onRemove();
+          }
+        }}
+      >
         <torusGeometry args={[1.5, 0.1, 8, 32]} />
         <meshStandardMaterial color="#8844aa" />
       </mesh>
@@ -363,7 +362,7 @@ function DNAToolsPanel() {
 
 // Main DNA Sequencing Lab component
 export default function DNASequencingLab3D() {
-  const { dna } = useAdvancedGameStore();
+  const { dna, removeDNAStrand } = useAdvancedGameStore();
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [cameraTarget, setCameraTarget] = useState<[number, number, number]>([0, 0, 0]);
 
@@ -420,6 +419,7 @@ export default function DNASequencingLab3D() {
             sequence={strand.sequence}
             position={strand.position}
             isEditing={strand.isEditing}
+            onRemove={() => removeDNAStrand(strand.id)}
           />
         ))}
 
