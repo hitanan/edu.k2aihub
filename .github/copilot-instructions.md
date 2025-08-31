@@ -1,255 +1,506 @@
-# Interactive Information Platform for Vietnamese Education
+`````instructions# Interactive Information Platform for Vietnamese Education
+
+# K2AiHub - Interactive Educational Platform for Vietnamese Learners
 
 The project called "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a modern, professional Next.js educational platform featuring three comprehensive modules: **Vietnam Geography**, **AI Của Tôi** (Practical AI Guide), and **STEM Education** (Science, Technology, Engineering, Arts & Mathematics).
 
+K2AI - "Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a Next.js 15 educational platform with **60+ comprehensive learning modules** spanning from geography and AI to biotechnology and quantum computing, plus **100+ interactive educational games** with 3D simulations.
+
 ## 🌏 CRITICAL LANGUAGE REQUIREMENTS
+
+## 🎯 Core Architecture Understanding
 
 **ALL content, metadata, titles, and user-facing text MUST be in Vietnamese language.**
 
-- **Application Title**: ALWAYS use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" (NEVER translate to English)
-- **Module Names**:
-  - "Địa Lý Việt Nam" (Vietnam Geography)
-  - "AI Của Tôi" (My AI Guide)
+### Platform Scale & Structure
+
+- **60+ Learning Modules**: From basic geography to advanced biotechnology, all using standardized template system- **Application Title**: ALWAYS use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" (NEVER translate to English)
+
+- **100+ Educational Games**: Including 19+ 3D games with A* pathfinding, physics simulations, and cross-curricular connections  - **Module Names**:
+
+- **Static Site Generation**: 650+ pre-built pages for GitHub Pages deployment with <3s load times  - "Địa Lý Việt Nam" (Vietnam Geography)
+
+- **Template-Driven**: All modules use `ModulePageTemplate.tsx` and `LessonPageTemplate.tsx` for consistency  - "AI Của Tôi" (My AI Guide)
+
 - **All UI Text**: Buttons, labels, navigation, error messages in Vietnamese
-- **SEO Metadata**: Vietnamese titles, descriptions, keywords only
-- **Content**: All descriptions, help text, and user documentation in Vietnamese
 
-**Exception**: Technical code comments and developer documentation may be in English.
+### Critical Data Flow Patterns- **SEO Metadata**: Vietnamese titles, descriptions, keywords only
 
-## 📚 Complete Documentation
+```typescript- **Content**: All descriptions, help text, and user documentation in Vietnamese
+
+// Module data flows through standardized interfaces
+
+src/data/{module-name}.ts -> ModulePageTemplate -> /learning/{module-name}/**Exception**: Technical code comments and developer documentation may be in English.
+
+src/data/educationalGames.ts -> EducationalGamesMain -> /games/{gameId}/
+
+src/data/moduleNavigation.ts -> Global navigation system## 📚 Complete Documentation
+
+```
 
 **Primary Documentation**: [**K2AiHub.md**](../docs/K2AiHub.md) - The comprehensive source of truth for all features, technical specifications, and development guidelines.
 
-**Template Features:**
+### Vietnamese Language Requirements (CRITICAL)
 
-- **Standardized Layout**: Consistent UI across all modules
-- **Vietnamese Language**: All text in Vietnamese
+- **ALL user content in Vietnamese**: UI text, metadata, error messages, navigation**Template Features:**
+
+- **Application Title**: Always "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối"
+
+- **SEO Optimization**: Vietnamese-first for local search dominance- **Standardized Layout**: Consistent UI across all modules
+
+- **Technical docs**: English OK for developer clarity- **Vietnamese Language**: All text in Vietnamese
+
 - **Dynamic Navigation**: Previous/Next lesson navigation
-- **Responsive Design**: Mobile-optimized layout
+
+## 🛠 Essential Development Patterns- **Responsive Design**: Mobile-optimized layout
+
 - **SEO Optimization**: Proper metadata generation
-- **Customizable**: Module-specific icons, colors, and sidebar content
-- **Auto-generated Static Params**: For optimal performance
 
-## Project Overview
+### Dynamic Module Page Template System- **Customizable**: Module-specific icons, colors, and sidebar content
 
-This is a complete educational web application with two main modules designed to provide interactive learning experiences using modern technology.
+**ALL new learning modules MUST follow this standardized architecture:**- **Auto-generated Static Params**: For optimal performance
 
-### Module 1: Vietnam Geography - 34 Provincial Administrative Units
+
+
+```typescript## Project Overview
+
+// 1. Data Structure: src/data/{module-name}.ts
+
+export interface ModuleLessonType extends BaseLessonData {This is a complete educational web application with two main modules designed to provide interactive learning experiences using modern technology.
+
+  // Module-specific fields
+
+}### Module 1: Vietnam Geography - 34 Provincial Administrative Units
+
+export const MODULE_NAMELessons: ModuleLessonType[] = [...];
 
 An interactive educational tool covering Vietnam's administrative restructuring with 34 provincial-level units after the merger.
 
-#### Core Features Implemented:
+// 2. Main Page: src/app/learning/{module-name}/page.tsx
 
-- ✅ Interactive SVG map of Vietnam with click/hover interactions
-- ✅ Smart search supporting current and former province names (e.g., "Quang Nam" → "Đà Nẵng")
+export const metadata = createModuleMetadata(title, description, keywords, moduleId);#### Core Features Implemented:
+
+export default function ModuleMainPage() {
+
+  return <ModulePageTemplate moduleData={moduleData} lessons={lessons} />;- ✅ Interactive SVG map of Vietnam with click/hover interactions
+
+}- ✅ Smart search supporting current and former province names (e.g., "Quang Nam" → "Đà Nẵng")
+
 - ✅ Individual SEO-optimized city pages with structured data
-- ✅ Comprehensive city information with statistics and historical data
-- ✅ Share functionality for each city
-- ✅ Mobile-responsive design with touch interactions
-- ✅ Regional exploration pages (9 regions)
-- ✅ FAQ system with structured data
 
-#### Technical Implementation:
+// 3. Lesson Pages: src/app/learning/{module-name}/[lessonId]/page.tsx- ✅ Comprehensive city information with statistics and historical data
 
-- **Map Component**: `src/components/VietnamMap.tsx` - Interactive SVG with state management
-- **City Pages**: `src/app/city/[slug]/page.tsx` - Dynamic routing with static generation
-- **Region Pages**: `src/app/region/[slug]/page.tsx` - Regional exploration and statistics
-- **Search**: `src/components/Search.tsx` - Real-time filtering with auto-close functionality
+export default async function ModuleLessonPage({ params }: PageProps) {- ✅ Share functionality for each city
+
+  const config: LessonPageConfig = {- ✅ Mobile-responsive design with touch interactions
+
+    moduleName: 'module-name',- ✅ Regional exploration pages (9 regions)
+
+    moduleTitle: 'Vietnamese Module Title',- ✅ FAQ system with structured data
+
+    lessons: MODULE_NAMELessons,
+
+    primaryColor: 'blue', // Theme colors#### Technical Implementation:
+
+    secondaryColor: 'indigo',
+
+  };- **Map Component**: `src/components/VietnamMap.tsx` - Interactive SVG with state management
+
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;- **City Pages**: `src/app/city/[slug]/page.tsx` - Dynamic routing with static generation
+
+}- **Region Pages**: `src/app/region/[slug]/page.tsx` - Regional exploration and statistics
+
+```- **Search**: `src/components/Search.tsx` - Real-time filtering with auto-close functionality
+
 - **Data**: `src/data/cities.ts` - Comprehensive city database with merger information, script to add more tourist attractions urls in `src/utils/add_urls.js`
-- **Performance**: O(1) city lookups, lazy loading, memoization, static generation
 
-### Module 2: AI Của Tôi - Practical AI Guide
+### Interactive Map System (Geography Module)- **Performance**: O(1) city lookups, lazy loading, memoization, static generation
 
-A comprehensive guide for using AI tools effectively across 6 major life and work categories.
+- **SVG Manipulation**: Direct DOM parsing with XMLSerializer for Vietnam map
 
-#### AI Categories Implemented:
+- **Performance**: O(1) city lookups using Map data structures, not arrays### Module 2: AI Của Tôi - Practical AI Guide
 
-1. **💼 Office & Work** (`/ai/office-work`)
-   - ChatGPT for professional emails
-   - Excel automation with AI
-   - AI-powered presentations
-   - Smart time management
+- **Event Handling**: Capture-phase delegation for guaranteed province clicks
 
-2. **🎨 Creative & Design** (`/ai/creative-design`)
+- **Path Management**: Dynamic removal/insertion to prevent overlap issuesA comprehensive guide for using AI tools effectively across 6 major life and work categories.
+
+
+
+### 3D Games Engine Architecture#### AI Categories Implemented:
+
+```typescript
+
+// All 3D games use standardized patterns:1. **💼 Office & Work** (`/ai/office-work`)
+
+src/components/games/3d/{game-name}/  # Game-specific components   - ChatGPT for professional emails
+
+src/data/games/{game-name}.ts         # Game data and levels   - Excel automation with AI
+
+relatedLessons: [...] # MUST connect to curriculum modules   - AI-powered presentations
+
+```   - Smart time management
+
+
+
+## ⚡ Critical Commands & Workflows2. **🎨 Creative & Design** (`/ai/creative-design`)
+
    - Midjourney for image generation
-   - Canva AI Magic Studio
-   - AI content writing
-   - Photo editing with AI
 
-3. **📚 Education & Learning** (`/ai/education-learning`)
-   - AI tutoring and assistance
-   - Research with AI tools
+### Build & Development   - Canva AI Magic Studio
+
+```bash   - AI content writing
+
+npm run dev      # Development with turbopack (fastest)   - Photo editing with AI
+
+npm run build    # Production build - WAIT for completion, generates 650+ pages
+
+npm run lint     # TypeScript + ESLint checks3. **📚 Education & Learning** (`/ai/education-learning`)
+
+npx tsc --noEmit # Type checking only   - AI tutoring and assistance
+
+```   - Research with AI tools
+
    - Language learning
-   - Document summarization
 
-4. **📈 Business & Marketing** (`/ai/business-marketing`)
-   - Marketing automation
-   - Data analysis with AI
-   - Chatbot development
-   - SEO optimization
+**Build Performance**: Build generates 650+ static pages. Monitor memory usage and wait for completion.   - Document summarization
 
-5. **🌱 Daily Life** (`/ai/daily-life`)
+
+
+### Static Export Configuration4. **📈 Business & Marketing** (`/ai/business-marketing`)
+
+```typescript   - Marketing automation
+
+// next.config.ts - Critical for GitHub Pages   - Data analysis with AI
+
+export: 'output',   - Chatbot development
+
+trailingSlash: true,  # Required for static hosting   - SEO optimization
+
+images: { unoptimized: true }  # No Next.js image optimization
+
+```5. **🌱 Daily Life** (`/ai/daily-life`)
+
    - Personal productivity
-   - Health and fitness
-   - Financial management
-   - Entertainment
 
-6. **💻 Programming & Development** (`/ai/programming-dev`)
-   - GitHub Copilot mastery
+### SEO Utility Functions (src/utils/seo.ts)   - Health and fitness
+
+```typescript   - Financial management
+
+createTitle(title) => `${title} | K2AiHub`   - Entertainment
+
+createDescription(desc) => desc.substring(0, 157) + '...'
+
+createModuleMetadata(title, desc, keywords, moduleId) => Metadata6. **💻 Programming & Development** (`/ai/programming-dev`)
+
+```   - GitHub Copilot mastery
+
    - Code review and debugging
-   - Documentation generation
+
+## 🎮 Educational Games Integration Patterns   - Documentation generation
+
    - Testing with AI
 
-#### Technical Implementation:
+### Game-to-Curriculum Connections
 
-- **Architecture**: Server/Client component separation for Next.js App Router
-- **SEO**: Individual metadata for each AI category
-- **Interactive Content**: Section-based navigation with state management
-- **Performance**: Code splitting and lazy loading
+Every game MUST have `relatedLessons` array connecting to learning modules:#### Technical Implementation:
 
-### Module 3: STEM Education - Science, Technology, Engineering, Arts & Mathematics
+```typescript
+
+relatedLessons: [- **Architecture**: Server/Client component separation for Next.js App Router
+
+  {- **SEO**: Individual metadata for each AI category
+
+    moduleId: 'python', lessonId: 'ai-libraries', - **Interactive Content**: Section-based navigation with state management
+
+    title: 'AI Libraries', connection: 'Applies ML concepts in game logic'- **Performance**: Code splitting and lazy loading
+
+  }
+
+]### Module 3: STEM Education - Science, Technology, Engineering, Arts & Mathematics
+
+```
 
 A comprehensive educational module covering STEM/STEAM disciplines through interactive, hands-on learning experiences.
 
-#### STEM Lessons Implemented:
+### URL State Management (Games System)
 
-1. **🔬 STEM Introduction** (`/stem/stem-introduction`)
-   - What is STEM/STEAM and why it matters
-   - Career paths and real-world applications
-   - Interactive introduction to scientific thinking
+```typescript#### STEM Lessons Implemented:
 
-2. **⚗️ Fun Physics Experiments** (`/stem/fun-physics-experiments`)
-   - Basic physics principles through experiments
+// Preserve filter state across navigation
+
+const searchParams = useSearchParams();1. **🔬 STEM Introduction** (`/stem/stem-introduction`)
+
+const updateURL = (key: string, value: string) => {   - What is STEM/STEAM and why it matters
+
+  const current = new URLSearchParams(searchParams?.toString());   - Career paths and real-world applications
+
+  current.set(key, value);   - Interactive introduction to scientific thinking
+
+  router.push(`/games?${current.toString()}`);
+
+};2. **⚗️ Fun Physics Experiments** (`/stem/fun-physics-experiments`)
+
+```   - Basic physics principles through experiments
+
    - Hands-on activities with household materials
-   - Understanding forces, motion, and energy
 
-3. **💻 Coding for Kids** (`/stem/coding-for-kids`)
-   - Introduction to programming with Scratch
-   - Visual programming concepts
-   - Creating games and animations
+## 📊 Performance & SEO Standards   - Understanding forces, motion, and energy
+
+
+
+### Performance Targets (MUST ACHIEVE)3. **💻 Coding for Kids** (`/stem/coding-for-kids`)
+
+- **First Load**: <3 seconds   - Introduction to programming with Scratch
+
+- **Navigation**: <500ms between pages     - Visual programming concepts
+
+- **Lighthouse SEO**: 95+ score   - Creating games and animations
+
+- **Mobile**: Touch-optimized interactions
 
 4. **🏗️ Engineering Challenges** (`/stem/engineering-challenges`)
-   - Basic engineering principles
-   - Design thinking and problem solving
-   - Building challenges and prototyping
 
-5. **🔢 Math in Real Life** (`/stem/math-in-real-life`)
+### SEO Implementation Checklist   - Basic engineering principles
+
+- ✅ Vietnamese metadata for all pages using `createTitle()`, `createDescription()`   - Design thinking and problem solving
+
+- ✅ JSON-LD structured data for education content   - Building challenges and prototyping
+
+- ✅ OpenGraph + Twitter Cards for social sharing
+
+- ✅ Proper canonical URLs and robots.txt5. **🔢 Math in Real Life** (`/stem/math-in-real-life`)
+
    - Practical mathematics applications
-   - Math in cooking, shopping, sports, and arts
+
+## 🔧 Component Architecture Patterns   - Math in cooking, shopping, sports, and arts
+
    - Making math relevant and fun
 
-6. **🎨 Art Meets Science** (`/stem/art-meets-science`)
-   - Integration of arts and sciences
-   - Color theory, sound physics, and geometry
-   - Creative projects combining both disciplines
+### Server vs Client Components
 
-7. **🌍 Environmental Solutions** (`/stem/environmental-solutions`)
-   - Environmental challenges and scientific solutions
-   - Renewable energy and sustainability
-   - Climate change and green technology
+```typescript6. **🎨 Art Meets Science** (`/stem/art-meets-science`)
 
-#### Technical Implementation:
+// Server Components: SEO metadata, static content   - Integration of arts and sciences
 
-- **Architecture**: Server/Client component separation for Next.js App Router
-- **SEO**: Individual metadata for each STEM lesson
-- **Interactive Content**: Step-by-step tutorials with video integration
+export async function generateMetadata(): Promise<Metadata>   - Color theory, sound physics, and geometry
+
+export default function ServerPage() // No useState/useEffect   - Creative projects combining both disciplines
+
+
+
+// Client Components: Interactive features, state management  7. **🌍 Environmental Solutions** (`/stem/environmental-solutions`)
+
+'use client'   - Environmental challenges and scientific solutions
+
+export default function ClientComponent() // useState, useEffect OK   - Renewable energy and sustainability
+
+```   - Climate change and green technology
+
+
+
+### React Performance Patterns#### Technical Implementation:
+
+```typescript
+
+// Memoization for expensive operations- **Architecture**: Server/Client component separation for Next.js App Router
+
+const cityMap = useMemo(() => new Map(cities.map(c => [c.id, c])), [cities]);- **SEO**: Individual metadata for each STEM lesson
+
+const MemoizedComponent = React.memo(Component);- **Interactive Content**: Step-by-step tutorials with video integration
+
 - **Performance**: Code splitting and lazy loading
-- **YouTube Integration**: Validated video tutorials for each lesson
-- **Navigation System**: Dynamic lesson navigation with progress tracking
+
+// Lazy loading for large components- **YouTube Integration**: Validated video tutorials for each lesson
+
+const HeavyComponent = lazy(() => import('./HeavyComponent'));- **Navigation System**: Dynamic lesson navigation with progress tracking
+
+```
 
 ### Module 4: Arduino & IoT Programming
 
+## 🚨 Critical Integration Points
+
 A comprehensive hands-on programming module covering Arduino development from basics to advanced IoT projects.
 
-#### Arduino Lessons Implemented:
+### Module Navigation System
 
-1. **🔧 Arduino Setup** (`/arduino/arduino-setup`)
-   - Arduino IDE installation and configuration
-   - Board connection and driver setup
+```typescript#### Arduino Lessons Implemented:
+
+// src/data/moduleNavigation.ts - Central routing system
+
+export const K2Module = { Python: 'python', Arduino: 'arduino' };1. **🔧 Arduino Setup** (`/arduino/arduino-setup`)
+
+export const moduleNavigation: ModuleNavigation[] = [...];   - Arduino IDE installation and configuration
+
+```   - Board connection and driver setup
+
    - First program upload and testing
-   - Understanding Arduino hardware basics
 
-2. **💡 LED & Digital Outputs** (`/arduino/led-digital-outputs`)
-   - LED basics and digital output concepts
-   - Circuit design with resistor calculations
-   - LED effects: blink, fade, chase, RGB color cycling
-   - Multiple LED control and shift registers
-   - 7-segment displays and LED matrices
+### Blog System Integration     - Understanding Arduino hardware basics
 
-3. **🎛️ Arduino Inputs** (`/arduino/arduino-inputs`)
-   - Digital and analog input fundamentals
+```typescript
+
+// docs/*.md files with frontmatter2. **💡 LED & Digital Outputs** (`/arduino/led-digital-outputs`)
+
+---   - LED basics and digital output concepts
+
+title: "Vietnamese Title"   - Circuit design with resistor calculations
+
+description: "Description"     - LED effects: blink, fade, chase, RGB color cycling
+
+date: "2025-08-27"   - Multiple LED control and shift registers
+
+category: "Tài Liệu"   - 7-segment displays and LED matrices
+
+readingTime: "15 phút đọc"
+
+---3. **🎛️ Arduino Inputs** (`/arduino/arduino-inputs`)
+
+```   - Digital and analog input fundamentals
+
    - Button handling with pull-up resistors
-   - Potentiometer and sensor reading
-   - Input validation and debouncing techniques
 
-4. **📡 Sensors & Data Processing** (`/arduino/arduino-sensors`)
-   - Temperature, humidity, and environmental sensors
+### External Dependencies   - Potentiometer and sensor reading
+
+- **Three.js**: 3D games and simulations   - Input validation and debouncing techniques
+
+- **Zustand**: State management for complex interactions
+
+- **Gray-matter**: Markdown processing for blog posts4. **📡 Sensors & Data Processing** (`/arduino/arduino-sensors`)
+
+- **Lucide React**: Consistent iconography across platform   - Temperature, humidity, and environmental sensors
+
    - Analog and digital sensor integration
-   - Data processing and Serial communication
+
+## 📝 Development Workflow Standards   - Data processing and Serial communication
+
    - Multi-sensor projects and data logging
 
-5. **🌐 Communication & Networking** (`/arduino/arduino-communication`)
-   - Serial, I2C, and SPI communication protocols
-   - WiFi and Bluetooth connectivity with ESP32
-   - Web server development and IoT dashboards
+### Before Any Module/Game Development
+
+1. **Check moduleNavigation.ts**: Understand existing module structure5. **🌐 Communication & Networking** (`/arduino/arduino-communication`)
+
+2. **Review template system**: Use `ModulePageTemplate.tsx` and `LessonPageTemplate.tsx`   - Serial, I2C, and SPI communication protocols
+
+3. **Examine similar modules**: Look at `src/data/` for patterns   - WiFi and Bluetooth connectivity with ESP32
+
+4. **Plan lesson connections**: How games connect to curriculum   - Web server development and IoT dashboards
+
    - Cloud integration and remote monitoring
 
-6. **🚀 Advanced Arduino Projects** (`/arduino/arduino-advanced-projects`)
-   - Complex multi-sensor IoT systems
-   - Real-time data dashboards and visualization
-   - Smart home automation projects
-   - Industrial monitoring and control systems
+### Quality Gates
+
+```bash6. **🚀 Advanced Arduino Projects** (`/arduino/arduino-advanced-projects`)
+
+# Run these before any major changes:   - Complex multi-sensor IoT systems
+
+npm run build   # Must complete successfully with 650+ pages   - Real-time data dashboards and visualization
+
+npm run lint    # Zero errors/warnings   - Smart home automation projects
+
+npx tsc --noEmit # TypeScript validation   - Industrial monitoring and control systems
+
+```
 
 #### Technical Implementation:
 
-- **Architecture**: Progressive curriculum with hands-on projects
-- **Hardware Focus**: Real circuit diagrams and component guides
-- **Code Examples**: Complete, tested Arduino sketches
+### Documentation Requirements
+
+- **Update K2AiHub.md**: All changes MUST be documented- **Architecture**: Progressive curriculum with hands-on projects
+
+- **Module integration**: Update moduleNavigation.ts, homepage, sitemap- **Hardware Focus**: Real circuit diagrams and component guides
+
+- **Vietnamese content**: All user-facing text in Vietnamese- **Code Examples**: Complete, tested Arduino sketches
+
 - **Troubleshooting**: Common issues and debugging techniques
-- **Real-world Applications**: IoT projects and industry use cases
 
-### Global Features Implemented:
+## 💡 Project-Specific Conventions- **Real-world Applications**: IoT projects and industry use cases
 
-#### Standalone Feedback System (`/feedback`)
 
-- ✅ Moved outside city module for global accessibility
-- ✅ Form validation with error handling
-- ✅ Email integration
-- ✅ Accessible from all main modules
 
-#### Performance Optimizations:
+### File Organization### Global Features Implemented:
 
-- ✅ Static generation for all pages (`force-static`)
-- ✅ Lazy loading with Suspense
-- ✅ React.memo and useMemo for component optimization
-- ✅ Critical resource preloading
-- ✅ O(1) city lookups using Map data structure
+```
 
-#### SEO Excellence:
+src/#### Standalone Feedback System (`/feedback`)
 
-- ✅ Dynamic metadata generation for all pages
-- ✅ Structured data (JSON-LD) for search engines
-- ✅ OpenGraph and Twitter Cards
-- ✅ Proper canonical URLs and robots configuration
+├── app/{module-name}/page.tsx           # Module overview
 
-## Technical Architecture
+├── app/{module-name}/[lessonId]/page.tsx # Dynamic lesson pages- ✅ Moved outside city module for global accessibility
+
+├── components/learning/                  # Reusable templates- ✅ Form validation with error handling
+
+├── components/games/                     # Game components  - ✅ Email integration
+
+├── data/{module-name}.ts                # Module lesson data- ✅ Accessible from all main modules
+
+└── data/moduleNavigation.ts             # Global navigation
+
+```#### Performance Optimizations:
+
+
+
+### Naming Conventions- ✅ Static generation for all pages (`force-static`)
+
+- **Modules**: kebab-case URLs (`ai-art-creative-tech`)- ✅ Lazy loading with Suspense
+
+- **Components**: PascalCase (`ModulePageTemplate.tsx`)- ✅ React.memo and useMemo for component optimization
+
+- **Data files**: camelCase + module name (`digitalMarketing.ts`)- ✅ Critical resource preloading
+
+- **Game IDs**: kebab-case with descriptive names- ✅ O(1) city lookups using Map data structure
+
+
+
+### Error Handling Patterns#### SEO Excellence:
+
+```typescript
+
+// Static generation with proper error boundaries- ✅ Dynamic metadata generation for all pages
+
+export async function generateStaticParams() {- ✅ Structured data (JSON-LD) for search engines
+
+  return lessons.map(lesson => ({ lessonId: lesson.id }));- ✅ OpenGraph and Twitter Cards
+
+}- ✅ Proper canonical URLs and robots configuration
+
+// Handle not found cases
+
+if (!lesson) notFound();## Technical Architecture
+
+```
 
 ### Technology Stack:
 
+## 🎯 When NOT to Use Templates
+
 - **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript for complete type safety
-- **Styling**: Tailwind CSS v4 with modern design system
-- **Performance**: Static generation, memoization, lazy loading
-- **SEO**: Dynamic metadata, structured data, social sharing
-- **State Management**: React hooks with performance optimizations
 
-### Project Structure:
+**Use alternative approaches for:**- **Language**: TypeScript for complete type safety
 
-```
-src/
-├── app/                    # Next.js App Router
+- Core modules (Geography `/city/`, AI Guide `/ai/`) - already established- **Styling**: Tailwind CSS v4 with modern design system
+
+- Simple informational pages without lesson structure  - **Performance**: Static generation, memoization, lazy loading
+
+- External integrations or standalone tools- **SEO**: Dynamic metadata, structured data, social sharing
+
+- Landing pages that don't follow curriculum patterns- **State Management**: React hooks with performance optimizations
+
+
+
+---### Project Structure:
+
+
+
+**Documentation Source**: [K2AiHub.md](../docs/K2AiHub.md) - Complete technical specifications```
+
+**Last Updated**: August 31, 2025src/
+
+**Platform Version**: 3.1.0 with 60+ modules and 100+ games├── app/                    # Next.js App Router
+
 │   ├── page.tsx           # Homepage with module selection
-│   ├── city/              # Vietnam Geography Module
+
+````│   ├── city/              # Vietnam Geography Module
 │   ├── ai/                # AI Guide Module
 │   ├── stem/              # STEM Education Module
 │   ├── arduino/           # Arduino & IoT Programming Module
@@ -404,6 +655,10 @@ readingTime: "18 phút đọc"
 ---
 ```
 
+## Git strategy
+
+- do not reset hard , just `git reset --soft` to keep changes in working directory in staged files
+
 ## Notes:
 
 This is a production-ready application optimized for GitHub Pages deployment with comprehensive educational content, modern performance optimizations, and excellent SEO implementation.
@@ -411,3 +666,4 @@ This is a production-ready application optimized for GitHub Pages deployment wit
 ```
 
 ```
+`````

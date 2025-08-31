@@ -30,7 +30,7 @@ import {
   MapPin
 } from 'lucide-react';
 
-interface AutonomousRobotMission3DEnhancedProps {
+interface AutonomousRobotMission3DProps {
   onComplete: (success: boolean, score: number) => void;
   timeLeft: number;
   onRestart: () => void;
@@ -476,7 +476,7 @@ function RobotScene3D() {
   );
 }
 
-const AutonomousRobotMission3DEnhanced: React.FC<AutonomousRobotMission3DEnhancedProps> = ({
+const AutonomousRobotMission3D: React.FC<AutonomousRobotMission3DProps> = ({
   onComplete,
   timeLeft,
   onRestart
@@ -800,4 +800,4 @@ const AutonomousRobotMission3DEnhanced: React.FC<AutonomousRobotMission3DEnhance
   );
 };
 
-export default AutonomousRobotMission3DEnhanced;
+export default AutonomousRobotMission3D;

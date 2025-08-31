@@ -105,15 +105,10 @@ import NeuralNetworkBuilder3D from './NeuralNetworkBuilder3D';
 import SmartCityPlanner3D from './SmartCityPlanner3D';
 import OceanConservation3D from './OceanConservation3D';
 import AquacultureIoTManager3D from './AquacultureIoTManager3D';
-import PhysicsExperimentLab3DGame from './individual/PhysicsExperimentLab3DGame';
-import IoTSmartCityBuilder3DGame from './individual/IoTSmartCityBuilder3DGame';
+import PhysicsExperimentLab3D from './PhysicsExperimentLab3D';
+import IoTSmartCityBuilder3D from './IoTSmartCityBuilder3D';
 import AIPythonCodingAssistantGame from './individual/AIPythonCodingAssistantGame';
-import AutonomousRobotMission3DGame from './individual/AutonomousRobotMission3DGame';
-import {
-  AutonomousRobotMission3DEnhanced,
-  IoTSmartCityBuilder3DEnhanced,
-  PhysicsExperimentLab3DEnhanced,
-} from './enhanced3d';
+import AutonomousRobotMission3D from './AutonomousRobotMission3D';
 
 interface MiniGameProps {
   game: EducationalGame;
@@ -414,11 +409,23 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
           <PrivacyProtectionChallengeGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
         );
       case 'future-scenario-builder-3d':
-        return <FutureScenarioBuilder3DGame onComplete={() => endGame(true, score)} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+        return (
+          <FutureScenarioBuilder3DGame
+            onComplete={() => endGame(true, score)}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
       case 'trend-analysis-detective':
         return <TrendAnalysisDetectiveGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'ux-design-studio-3d':
-        return <UXDesignStudio3DGame onComplete={() => endGame(true, score)} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+        return (
+          <UXDesignStudio3DGame
+            onComplete={() => endGame(true, score)}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
       case 'interface-design-challenge':
         return (
           <InterfaceDesignChallengeGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
@@ -484,35 +491,33 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
           <RenewableEnergyGridManagerGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
         );
       case 'game-design-studio-3d':
-        return <GameDesignStudio3DGame onComplete={() => endGame(true, score)} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+        return (
+          <GameDesignStudio3DGame
+            onComplete={() => endGame(true, score)}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
       case 'ai-art-creation-lab':
         return <AIArtCreationLabGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'ethical-hacking-simulator':
         return <EthicalHackingSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'gene-editing-lab-3d':
-        return <GeneEditingLab3DGame onComplete={() => endGame(true, score)} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+        return (
+          <GeneEditingLab3DGame
+            onComplete={() => endGame(true, score)}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
       case 'physics-experiment-lab-3d':
-        return <PhysicsExperimentLab3DGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
-      case 'physics-experiment-lab-3d-enhanced':
-        return (
-          <PhysicsExperimentLab3DEnhanced onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
-        );
+        return <PhysicsExperimentLab3D onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'iot-smart-city-builder-3d':
-        return <IoTSmartCityBuilder3DGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
-      case 'iot-smart-city-builder-3d-enhanced':
-        return (
-          <IoTSmartCityBuilder3DEnhanced onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
-        );
+        return <IoTSmartCityBuilder3D onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'ai-python-coding-assistant':
         return <AIPythonCodingAssistantGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'autonomous-robot-mission-3d':
-        return (
-          <AutonomousRobotMission3DGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
-        );
-      case 'autonomous-robot-mission-3d-enhanced':
-        return (
-          <AutonomousRobotMission3DEnhanced onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
-        );
+        return <AutonomousRobotMission3D onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       default:
         return <div className="text-white">Game not implemented yet!</div>;
     }

@@ -30,7 +30,7 @@ import {
   Target
 } from 'lucide-react';
 
-interface IoTSmartCityBuilder3DEnhancedProps {
+interface IoTSmartCityBuilder3DProps {
   onComplete: (success: boolean, score: number) => void;
   timeLeft: number;
   onRestart: () => void;
@@ -402,7 +402,7 @@ function CityScene3D() {
   );
 }
 
-const IoTSmartCityBuilder3DEnhanced: React.FC<IoTSmartCityBuilder3DEnhancedProps> = ({
+const IoTSmartCityBuilder3D: React.FC<IoTSmartCityBuilder3DProps> = ({
   onComplete,
   timeLeft,
   onRestart
@@ -742,4 +742,4 @@ const IoTSmartCityBuilder3DEnhanced: React.FC<IoTSmartCityBuilder3DEnhancedProps
   );
 };
 
-export default IoTSmartCityBuilder3DEnhanced;
+export default IoTSmartCityBuilder3D;

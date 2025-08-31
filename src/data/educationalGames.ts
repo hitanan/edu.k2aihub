@@ -25,8 +25,8 @@ export interface EducationalGame {
 export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   // ENHANCED 3D GAMES - Implemented Components
   {
-    id: 'physics-experiment-lab-3d-enhanced',
-    title: 'Physics Experiment Lab 3D Enhanced',
+    id: 'physics-experiment-lab-3d',
+    title: 'Physics Experiment Lab 3D',
     description:
       'Advanced physics experiments với pendulum simulation, electromagnetic fields, và wave interference trong 3D laboratory environment',
     category: '3D',
@@ -49,8 +49,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   },
 
   {
-    id: 'iot-smart-city-builder-3d-enhanced',
-    title: 'IoT Smart City Builder 3D Enhanced',
+    id: 'iot-smart-city-builder-3d',
+    title: 'IoT Smart City Builder 3D',
     description:
       'Build comprehensive smart city infrastructure với IoT systems, energy management, và citizen services trong 3D city environment',
     category: '3D',
@@ -72,31 +72,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     ],
   },
 
-  {
-    id: 'autonomous-robot-mission-3d-enhanced',
-    title: 'Autonomous Robot Mission 3D Enhanced',
-    description:
-      'Control autonomous robots through complex missions với pathfinding, obstacle avoidance, và sensor integration trong 3D environments',
-    category: '3D',
-    difficulty: 'Nâng cao',
-    estimatedTime: '50-65 phút',
-    skills: ['Robotics Control', 'Path Planning', 'Sensor Fusion', 'Autonomous Navigation', '3D Robot Simulation'],
-    moduleType: 'robotics',
-    isInternal: true,
-    points: 220,
-    icon: '🤖',
-    color: 'from-orange-500 to-red-500',
-    relatedLessons: [
-      {
-        moduleId: 'ai',
-        lessonId: 'robotics-navigation',
-        title: 'Robotics Navigation',
-        connection: 'Program autonomous robots for complex mission navigation',
-      },
-    ],
-  },
+  // Note: Use existing robot-navigation-3d game instead of duplicate
+  // Autonomous robot functionality available in robot-navigation-3d with A* pathfinding
 
-  // NEW: Advanced 3D Games - Priority Implementation August 2025
   {
     id: 'quantum-computing-visualizer-3d',
     title: 'Quantum Computing Visualizer 3D',
@@ -3746,60 +3724,6 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   },
 
   // Enhanced STEM Games with Better Connections
-  {
-    id: 'physics-experiment-lab-3d',
-    title: 'Physics Experiment Lab 3D',
-    description: 'Thực hiện physics experiments trong 3D virtual lab với realistic simulations và scientific method.',
-    category: '3D',
-    difficulty: 'Trung bình',
-    estimatedTime: '40-50 phút',
-    skills: ['Physics', 'Scientific Method', 'Experimental Design', 'Data Analysis', '3D Lab Simulation'],
-    moduleType: 'stem',
-    isInternal: true,
-    points: 180,
-    icon: '⚡',
-    color: 'from-blue-500 to-purple-500',
-    relatedLessons: [
-      {
-        moduleId: 'stem',
-        lessonId: 'fun-physics-experiments',
-        title: 'Thí Nghiệm Vật Lý Thú Vị',
-        connection: 'Conduct physics experiments with virtual lab equipment and real-time data collection',
-      },
-    ],
-  },
-
-  // Arduino Enhanced Games
-  {
-    id: 'iot-smart-city-builder-3d',
-    title: 'IoT Smart City Builder 3D',
-    description:
-      'Xây dựng smart city với Arduino IoT devices, sensor networks, và automation systems trong môi trường 3D.',
-    category: '3D',
-    difficulty: 'Nâng cao',
-    estimatedTime: '60-70 phút',
-    skills: ['Arduino', 'IoT', 'Smart City', 'Sensor Networks', 'Automation'],
-    moduleType: 'arduino',
-    isInternal: true,
-    points: 220,
-    icon: '🏙️',
-    color: 'from-cyan-500 to-blue-500',
-    relatedLessons: [
-      {
-        moduleId: 'arduino',
-        lessonId: 'arduino-communication',
-        title: 'Communication & Networking',
-        connection: 'Build smart city infrastructure using Arduino communication and networking capabilities',
-      },
-      {
-        moduleId: 'arduino',
-        lessonId: 'arduino-advanced-projects',
-        title: 'Advanced Arduino Projects',
-        connection: 'Create complex IoT systems for smart city applications with advanced Arduino programming',
-      },
-    ],
-  },
-
   // Python Enhanced Games with AI Focus
   {
     id: 'ai-python-coding-assistant',
@@ -3843,7 +3767,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'robotics',
-        lessonId: 'autonomous-systems-ai',
+        lessonId: 'iot-robotics',
         title: 'Hệ Thống Tự Động và AI',
         connection: 'Program autonomous robots with AI capabilities for complex mission scenarios',
       },

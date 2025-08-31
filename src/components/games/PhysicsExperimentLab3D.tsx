@@ -25,7 +25,7 @@ import {
   Clock
 } from 'lucide-react';
 
-interface PhysicsExperimentLab3DEnhancedProps {
+interface PhysicsExperimentLab3DProps {
   onComplete: (success: boolean, score: number) => void;
   timeLeft: number;
   onRestart: () => void;
@@ -399,7 +399,7 @@ function Scene3D() {
   );
 }
 
-const PhysicsExperimentLab3DEnhanced: React.FC<PhysicsExperimentLab3DEnhancedProps> = ({
+const PhysicsExperimentLab3D: React.FC<PhysicsExperimentLab3DProps> = ({
   onComplete,
   timeLeft,
   onRestart
@@ -645,4 +645,4 @@ const PhysicsExperimentLab3DEnhanced: React.FC<PhysicsExperimentLab3DEnhancedPro
   );
 };
 
-export default PhysicsExperimentLab3DEnhanced;
+export default PhysicsExperimentLab3D;
