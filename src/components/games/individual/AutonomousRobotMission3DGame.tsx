@@ -1,23 +1,22 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  Bot, 
-  Navigation, 
-  Target, 
-  Zap, 
-  Shield, 
-  Cpu, 
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import {
+  Bot,
+  Navigation,
+  Target,
+  Zap,
+  Shield,
+  Cpu,
   Radar,
   Settings,
   MapPin,
-  Activity,
   Battery,
   Wifi,
   AlertTriangle,
   CheckCircle2,
   Play,
-  Pause
+  Package,
 } from 'lucide-react';
 
 interface AutonomousRobotMission3DGameProps {
@@ -41,7 +40,7 @@ interface Mission {
   name: string;
   description: string;
   difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
-  environment: 'indoor' | 'outdoor' | 'underwater' | 'space' | 'industrial';
+  environment: 'indoor' | 'outdoor' | 'space' | 'industrial';
   objectives: MissionObjective[];
   obstacles: Obstacle[];
   duration: number; // minutes
@@ -58,14 +57,16 @@ interface MissionObjective {
   type: 'navigation' | 'collection' | 'surveillance' | 'rescue' | 'construction';
   completed: boolean;
   priority: 'low' | 'medium' | 'high' | 'critical';
+  position?: { x: number; z: number }; // Optional position for objectives
+  size?: number;
 }
 
 interface Obstacle {
   id: string;
   type: 'static' | 'dynamic' | 'hazard';
   name: string;
-  position: { x: number; y: number; z: number };
-  severity: number; // 1-10
+  position: { x: number; z: number };
+  size: number; // Collision radius
 }
 
 interface Robot3DPosition {
@@ -83,7 +84,7 @@ const ROBOT_SYSTEMS: RobotSystem[] = [
     efficiency: 95,
     battery: 87,
     dataRate: 2.5,
-    temperature: 45
+    temperature: 45,
   },
   {
     id: 'sensor-array',
@@ -92,7 +93,7 @@ const ROBOT_SYSTEMS: RobotSystem[] = [
     efficiency: 88,
     battery: 92,
     dataRate: 15.3,
-    temperature: 38
+    temperature: 38,
   },
   {
     id: 'ai-processor',
@@ -101,7 +102,7 @@ const ROBOT_SYSTEMS: RobotSystem[] = [
     efficiency: 91,
     battery: 75,
     dataRate: 45.7,
-    temperature: 62
+    temperature: 62,
   },
   {
     id: 'communication-module',
@@ -110,7 +111,7 @@ const ROBOT_SYSTEMS: RobotSystem[] = [
     efficiency: 96,
     battery: 89,
     dataRate: 8.2,
-    temperature: 41
+    temperature: 41,
   },
   {
     id: 'power-management',
@@ -119,7 +120,7 @@ const ROBOT_SYSTEMS: RobotSystem[] = [
     efficiency: 93,
     battery: 100,
     dataRate: 1.1,
-    temperature: 35
+    temperature: 35,
   },
   {
     id: 'defense-system',
@@ -128,8 +129,8 @@ const ROBOT_SYSTEMS: RobotSystem[] = [
     efficiency: 0,
     battery: 65,
     dataRate: 0,
-    temperature: 25
-  }
+    temperature: 25,
+  },
 ];
 
 const MISSIONS: Mission[] = [
@@ -145,34 +146,40 @@ const MISSIONS: Mission[] = [
         description: 'Hoàn thành tuyến tuần tra số 1',
         type: 'navigation',
         completed: false,
-        priority: 'high'
+        priority: 'high',
+        position: { x: 80, z: 80 },
+        size: 5,
       },
       {
         id: 'inventory-scan',
         description: 'Quét kiểm kê hàng hóa khu vực A',
-        type: 'surveillance',
+        type: 'collection',
         completed: false,
-        priority: 'medium'
+        priority: 'medium',
+        position: { x: 20, z: 70 },
+        size: 5,
       },
       {
         id: 'security-report',
         description: 'Gửi báo cáo tình hình an ninh',
-        type: 'surveillance',
+        type: 'collection',
         completed: false,
-        priority: 'low'
-      }
+        priority: 'low',
+        position: { x: 60, z: 20 },
+        size: 5,
+      },
     ],
     obstacles: [
-      { id: 'forklift', type: 'dynamic', name: 'Xe nâng di chuyển', position: { x: 30, y: 0, z: 45 }, severity: 6 },
-      { id: 'boxes', type: 'static', name: 'Thùng hàng xếp chồng', position: { x: 50, y: 0, z: 20 }, severity: 4 },
-      { id: 'workers', type: 'dynamic', name: 'Công nhân làm việc', position: { x: 70, y: 0, z: 60 }, severity: 8 }
+      { id: 'forklift', type: 'dynamic', name: 'Xe nâng di chuyển', position: { x: 30, z: 45 }, size: 8 },
+      { id: 'boxes', type: 'static', name: 'Thùng hàng xếp chồng', position: { x: 50, z: 20 }, size: 10 },
+      { id: 'workers', type: 'dynamic', name: 'Công nhân làm việc', position: { x: 70, z: 60 }, size: 6 },
     ],
     duration: 15,
     rewards: {
       score: 200,
       unlockSystems: ['defense-system'],
-      achievements: ['First Mission', 'Security Expert']
-    }
+      achievements: ['First Mission', 'Security Expert'],
+    },
   },
   {
     id: 'search-rescue',
@@ -184,43 +191,48 @@ const MISSIONS: Mission[] = [
       {
         id: 'locate-survivor',
         description: 'Xác định vị trí người bị nạn',
-        type: 'surveillance',
+        type: 'navigation',
         completed: false,
-        priority: 'critical'
+        priority: 'critical',
+        position: { x: 85, z: 85 },
+        size: 5,
       },
       {
-        id: 'clear-path',
-        description: 'Dọn đường tiếp cận an toàn',
-        type: 'construction',
-        completed: false,
-        priority: 'high'
-      },
-      {
-        id: 'medical-supply',
-        description: 'Chuyển phẩm cấp cứu đến hiện trường',
+        id: 'medical-supply-1',
+        description: 'Thu thập hộp cứu thương 1',
         type: 'collection',
         completed: false,
-        priority: 'critical'
+        priority: 'critical',
+        position: { x: 20, z: 30 },
+        size: 5,
       },
       {
-        id: 'establish-comm',
-        description: 'Thiết lập liên lạc với đội cứu hộ',
-        type: 'surveillance',
+        id: 'medical-supply-2',
+        description: 'Thu thập hộp cứu thương 2',
+        type: 'collection',
         completed: false,
-        priority: 'high'
-      }
+        priority: 'high',
+        position: { x: 70, z: 50 },
+        size: 5,
+      },
     ],
     obstacles: [
-      { id: 'debris', type: 'static', name: 'Đống đổ nát', position: { x: 25, y: 0, z: 35 }, severity: 9 },
-      { id: 'fire-zone', type: 'hazard', name: 'Khu vực cháy', position: { x: 60, y: 0, z: 50 }, severity: 10 },
-      { id: 'unstable-structure', type: 'hazard', name: 'Công trình không ổn định', position: { x: 80, y: 0, z: 30 }, severity: 8 }
+      { id: 'debris', type: 'static', name: 'Đống đổ nát', position: { x: 25, z: 35 }, size: 10 },
+      { id: 'fire-zone', type: 'hazard', name: 'Khu vực cháy', position: { x: 60, z: 50 }, size: 12 },
+      {
+        id: 'unstable-structure',
+        type: 'hazard',
+        name: 'Công trình không ổn định',
+        position: { x: 80, z: 30 },
+        size: 8,
+      },
     ],
     duration: 25,
     rewards: {
       score: 400,
       unlockSystems: ['sensor-array'],
-      achievements: ['Life Saver', 'Emergency Response', 'Hero Robot']
-    }
+      achievements: ['Life Saver', 'Emergency Response', 'Hero Robot'],
+    },
   },
   {
     id: 'space-exploration',
@@ -234,56 +246,48 @@ const MISSIONS: Mission[] = [
         description: 'Lập bản đồ địa hình bề mặt',
         type: 'surveillance',
         completed: false,
-        priority: 'high'
+        priority: 'high',
       },
       {
         id: 'sample-collection',
         description: 'Thu thập mẫu đất đá và khí quyển',
         type: 'collection',
         completed: false,
-        priority: 'critical'
+        priority: 'critical',
       },
       {
         id: 'scientific-analysis',
         description: 'Phân tích thành phần hóa học',
         type: 'surveillance',
         completed: false,
-        priority: 'medium'
+        priority: 'medium',
       },
       {
         id: 'comm-relay',
         description: 'Truyền dữ liệu về Trái Đất',
         type: 'surveillance',
         completed: false,
-        priority: 'high'
+        priority: 'high',
       },
       {
         id: 'base-setup',
         description: 'Lắp đặt trạm nghiên cứu tự động',
         type: 'construction',
         completed: false,
-        priority: 'medium'
-      }
+        priority: 'medium',
+      },
     ],
-    obstacles: [
-      { id: 'crater', type: 'static', name: 'Hố thiên thạch lớn', position: { x: 40, y: -10, z: 40 }, severity: 7 },
-      { id: 'solar-storm', type: 'hazard', name: 'Bão từ trường mặt trời', position: { x: 0, y: 0, z: 0 }, severity: 9 },
-      { id: 'rocky-terrain', type: 'static', name: 'Địa hình đá gồ ghề', position: { x: 70, y: 5, z: 60 }, severity: 6 }
-    ],
+    obstacles: [],
     duration: 40,
     rewards: {
       score: 800,
       unlockSystems: ['ai-processor', 'communication-module'],
-      achievements: ['Space Pioneer', 'Scientific Discovery', 'Interplanetary Explorer', 'Ultimate Mission']
-    }
-  }
+      achievements: ['Space Pioneer', 'Scientific Discovery', 'Interplanetary Explorer', 'Ultimate Mission'],
+    },
+  },
 ];
 
-export default function AutonomousRobotMission3DGame({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: AutonomousRobotMission3DGameProps) {
+export default function AutonomousRobotMission3DGame({ onComplete, onRestart }: AutonomousRobotMission3DGameProps) {
   const [currentMission, setCurrentMission] = useState<Mission | null>(null);
   const [gamePhase, setGamePhase] = useState<'briefing' | 'mission' | 'systems' | 'completed'>('briefing');
   const [robotSystems, setRobotSystems] = useState<RobotSystem[]>(ROBOT_SYSTEMS);
@@ -291,16 +295,124 @@ export default function AutonomousRobotMission3DGame({
     x: 10,
     y: 0,
     z: 10,
-    rotation: { x: 0, y: 0, z: 0 }
+    rotation: { x: 0, y: 0, z: 0 },
   });
   const [completedMissions, setCompletedMissions] = useState<string[]>([]);
   const [score, setScore] = useState(0);
-  const [missionProgress, setMissionProgress] = useState(0);
+  const [missionObjectives, setMissionObjectives] = useState<MissionObjective[]>([]);
   const [systemAlerts, setSystemAlerts] = useState<string[]>([]);
   const [isRobotMoving, setIsRobotMoving] = useState(false);
   const [unlockedSystems, setUnlockedSystems] = useState<string[]>(['navigation-system', 'power-management']);
+  const [collectedItems, setCollectedItems] = useState<string[]>([]);
 
-  // Mission simulation
+  const missionProgress = useMemo(() => {
+    if (!missionObjectives.length) return 0;
+    const completedCount = missionObjectives.filter((obj) => obj.completed).length;
+    return (completedCount / missionObjectives.length) * 100;
+  }, [missionObjectives]);
+
+  const checkCollision = useCallback(
+    (newPosition: { x: number; z: number }) => {
+      if (!currentMission) return false;
+      for (const obstacle of currentMission.obstacles) {
+        const dist = Math.sqrt(
+          Math.pow(obstacle.position.x - newPosition.x, 2) + Math.pow(obstacle.position.z - newPosition.z, 2),
+        );
+        if (dist < obstacle.size) {
+          return true;
+        }
+      }
+      return false;
+    },
+    [currentMission],
+  );
+
+  const completeMission = useCallback(() => {
+    if (!currentMission) return;
+
+    setCompletedMissions((prev) => [...prev, currentMission.id]);
+    setScore((prev) => prev + currentMission.rewards.score);
+
+    currentMission.rewards.unlockSystems.forEach((systemId) => {
+      if (!unlockedSystems.includes(systemId)) {
+        setUnlockedSystems((prev) => [...prev, systemId]);
+        setSystemAlerts((prev) => [
+          ...prev,
+          `🔓 Mở khóa hệ thống: ${ROBOT_SYSTEMS.find((s) => s.id === systemId)?.name}`,
+        ]);
+      }
+    });
+
+    if (completedMissions.length + 1 >= MISSIONS.length) {
+      setGamePhase('completed');
+      onComplete(true, score + currentMission.rewards.score);
+    } else {
+      setGamePhase('briefing');
+      setCurrentMission(null);
+    }
+  }, [currentMission, completedMissions.length, onComplete, score, unlockedSystems]);
+
+  const simulateRobotOperation = useCallback(() => {
+    if (!currentMission) return;
+
+    // Update robot systems
+    setRobotSystems((prev) =>
+      prev.map((system) => ({
+        ...system,
+        battery: Math.max(0, system.battery - Math.random() * 0.5),
+        temperature: Math.min(80, system.temperature + (Math.random() * 1 - 0.5)),
+      })),
+    );
+
+    // Simulate robot movement
+    const moveX = Math.random() * 10 - 5;
+    const moveZ = Math.random() * 10 - 5;
+    const newPosition = {
+      x: Math.max(0, Math.min(100, robotPosition.x + moveX)),
+      z: Math.max(0, Math.min(100, robotPosition.z + moveZ)),
+    };
+
+    if (checkCollision(newPosition)) {
+      setSystemAlerts((prev) => [...prev.slice(-4), '⚠️ Phát hiện vật cản! Đang tìm đường khác.']);
+      return; // Stop movement if collision
+    }
+
+    setRobotPosition((prev) => ({
+      ...prev,
+      ...newPosition,
+      rotation: { ...prev.rotation, y: prev.rotation.y + (Math.random() * 20 - 10) },
+    }));
+    setIsRobotMoving(true);
+    setTimeout(() => setIsRobotMoving(false), 1000);
+
+    // Check for objective completion
+    const updatedObjectives = missionObjectives.map((obj) => {
+      if (obj.completed || !obj.position) return obj;
+
+      const dist = Math.sqrt(Math.pow(obj.position.x - newPosition.x, 2) + Math.pow(obj.position.z - newPosition.z, 2));
+
+      if (dist < (obj.size || 5)) {
+        if (obj.type === 'collection' && !collectedItems.includes(obj.id)) {
+          setCollectedItems((prev) => [...prev, obj.id]);
+          setScore((prev) => prev + 75);
+          setSystemAlerts((prev) => [...prev.slice(-4), `📦 Đã thu thập: ${obj.description}`]);
+        } else if (obj.type === 'navigation') {
+          setScore((prev) => prev + 50);
+          setSystemAlerts((prev) => [...prev.slice(-4), `📍 Đã đến: ${obj.description}`]);
+        }
+        return { ...obj, completed: true };
+      }
+      return obj;
+    });
+    setMissionObjectives(updatedObjectives);
+
+    const allObjectivesCompleted = updatedObjectives.every((obj) => obj.completed);
+    if (allObjectivesCompleted) {
+      setTimeout(() => completeMission(), 2000);
+    }
+  }, [currentMission, robotPosition, checkCollision, missionObjectives, collectedItems, completeMission]);
+
+  // Mission simulation loop
   useEffect(() => {
     if (gamePhase === 'mission' && currentMission) {
       const interval = setInterval(() => {
@@ -309,138 +421,52 @@ export default function AutonomousRobotMission3DGame({
 
       return () => clearInterval(interval);
     }
-  }, [gamePhase, currentMission]);
-
-  const simulateRobotOperation = useCallback(() => {
-    if (!currentMission) return;
-
-    // Update robot systems
-    setRobotSystems(prev => prev.map(system => ({
-      ...system,
-      battery: Math.max(0, system.battery - (Math.random() * 2)),
-      temperature: Math.min(80, system.temperature + (Math.random() * 3 - 1.5)),
-      efficiency: Math.max(70, Math.min(100, system.efficiency + (Math.random() * 10 - 5)))
-    })));
-
-    // Update mission progress
-    setMissionProgress(prev => {
-      const newProgress = Math.min(100, prev + Math.random() * 8);
-      
-      // Complete objectives based on progress
-      if (newProgress > 25 && !currentMission.objectives[0].completed) {
-        currentMission.objectives[0].completed = true;
-        setSystemAlerts(prev => [...prev, `✅ Đã hoàn thành: ${currentMission.objectives[0].description}`]);
-        setScore(prev => prev + 50);
-      }
-      if (newProgress > 50 && currentMission.objectives[1] && !currentMission.objectives[1].completed) {
-        currentMission.objectives[1].completed = true;
-        setSystemAlerts(prev => [...prev, `✅ Đã hoàn thành: ${currentMission.objectives[1].description}`]);
-        setScore(prev => prev + 75);
-      }
-      if (newProgress > 75 && currentMission.objectives[2] && !currentMission.objectives[2].completed) {
-        currentMission.objectives[2].completed = true;
-        setSystemAlerts(prev => [...prev, `✅ Đã hoàn thành: ${currentMission.objectives[2].description}`]);
-        setScore(prev => prev + 100);
-      }
-
-      // Complete mission
-      if (newProgress >= 100) {
-        setTimeout(() => completeMission(), 2000);
-      }
-
-      return newProgress;
-    });
-
-    // Simulate robot movement
-    if (Math.random() > 0.7) {
-      setRobotPosition(prev => ({
-        ...prev,
-        x: Math.max(0, Math.min(100, prev.x + (Math.random() * 10 - 5))),
-        z: Math.max(0, Math.min(100, prev.z + (Math.random() * 10 - 5))),
-        rotation: {
-          ...prev.rotation,
-          y: prev.rotation.y + (Math.random() * 20 - 10)
-        }
-      }));
-      setIsRobotMoving(true);
-      setTimeout(() => setIsRobotMoving(false), 1000);
-    }
-
-    // Random system alerts
-    if (Math.random() > 0.8) {
-      const alerts = [
-        '⚠️ Phát hiện vật cản di động',
-        '🔋 Mức năng lượng giảm nhẹ',
-        '📡 Cập nhật dữ liệu từ cảm biến',
-        '🎯 Đang tiếp cận mục tiêu',
-        '🤖 AI đang phân tích môi trường'
-      ];
-      setSystemAlerts(prev => [...prev.slice(-4), alerts[Math.floor(Math.random() * alerts.length)]]);
-    }
-  }, [currentMission]);
+  }, [gamePhase, currentMission, simulateRobotOperation]);
 
   const startMission = (mission: Mission) => {
     setCurrentMission(mission);
     setGamePhase('mission');
-    setMissionProgress(0);
+    setMissionObjectives(mission.objectives.map((obj) => ({ ...obj, completed: false })));
+    setCollectedItems([]);
     setSystemAlerts([`🚀 Bắt đầu nhiệm vụ: ${mission.name}`]);
-    
-    // Reset objectives
-    mission.objectives.forEach(obj => obj.completed = false);
-  };
-
-  const completeMission = () => {
-    if (!currentMission) return;
-
-    setCompletedMissions(prev => [...prev, currentMission.id]);
-    setScore(prev => prev + currentMission.rewards.score);
-    
-    // Unlock new systems
-    currentMission.rewards.unlockSystems.forEach(systemId => {
-      if (!unlockedSystems.includes(systemId)) {
-        setUnlockedSystems(prev => [...prev, systemId]);
-        setSystemAlerts(prev => [...prev, `🔓 Mở khóa hệ thống: ${ROBOT_SYSTEMS.find(s => s.id === systemId)?.name}`]);
-      }
-    });
-
-    if (completedMissions.length >= 2) {
-      setGamePhase('completed');
-      onComplete(true, score + currentMission.rewards.score);
-    } else {
-      setTimeout(() => setGamePhase('briefing'), 3000);
-    }
   };
 
   const activateSystem = (systemId: string) => {
     if (!unlockedSystems.includes(systemId)) return;
-    
-    setRobotSystems(prev => prev.map(system =>
-      system.id === systemId
-        ? { ...system, status: system.status === 'online' ? 'offline' : 'online' }
-        : system
-    ));
 
-    const system = robotSystems.find(s => s.id === systemId);
+    setRobotSystems((prev) =>
+      prev.map((system) =>
+        system.id === systemId ? { ...system, status: system.status === 'online' ? 'offline' : 'online' } : system,
+      ),
+    );
+
+    const system = robotSystems.find((s) => s.id === systemId);
     if (system) {
-      setSystemAlerts(prev => [...prev, `${system.status === 'online' ? '🔴' : '🟢'} ${system.name}: ${system.status === 'online' ? 'Tắt' : 'Bật'}`]);
+      setSystemAlerts((prev) => [
+        ...prev,
+        `${system.status === 'online' ? '🔴' : '🟢'} ${system.name}: ${system.status === 'online' ? 'Tắt' : 'Bật'}`,
+      ]);
     }
   };
 
   const render3DRobotEnvironment = () => (
     <div className="relative w-full h-80 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-xl border border-cyan-500/30 overflow-hidden">
       {/* 3D Environment */}
-      <div className="absolute inset-0" style={{
-        background: `
-          ${currentMission?.environment === 'space' ? 
-            'radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.4) 0%, rgba(15,23,42,0.9) 70%)' :
-          currentMission?.environment === 'outdoor' ?
-            'linear-gradient(180deg, rgba(56,189,248,0.6) 0%, rgba(34,197,94,0.4) 50%, rgba(15,23,42,0.8) 100%)' :
-            'linear-gradient(180deg, rgba(71,85,105,0.6) 0%, rgba(30,41,59,0.8) 100%)'
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `
+          ${
+            currentMission?.environment === 'space'
+              ? 'radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.4) 0%, rgba(15,23,42,0.9) 70%)'
+              : currentMission?.environment === 'outdoor'
+                ? 'linear-gradient(180deg, rgba(56,189,248,0.6) 0%, rgba(34,197,94,0.4) 50%, rgba(15,23,42,0.8) 100%)'
+                : 'linear-gradient(180deg, rgba(71,85,105,0.6) 0%, rgba(30,41,59,0.8) 100%)'
           }
         `,
-        perspective: '1000px'
-      }}>
-        
+          perspective: '1000px',
+        }}
+      >
         {/* Environment Elements */}
         {currentMission?.environment === 'space' && (
           <>
@@ -452,7 +478,7 @@ export default function AutonomousRobotMission3DGame({
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`
+                  animationDelay: `${Math.random() * 3}s`,
                 }}
               />
             ))}
@@ -475,7 +501,7 @@ export default function AutonomousRobotMission3DGame({
                   width: '8%',
                   height: `${60 + Math.random() * 40}px`,
                   transformStyle: 'preserve-3d',
-                  transform: `rotateY(${i * 5}deg) translateZ(${i * 2}px)`
+                  transform: `rotateY(${i * 5}deg) translateZ(${i * 2}px)`,
                 }}
               />
             ))}
@@ -496,12 +522,27 @@ export default function AutonomousRobotMission3DGame({
                   width: `${10 + Math.random() * 15}px`,
                   height: `${30 + Math.random() * 40}px`,
                   transformStyle: 'preserve-3d',
-                  transform: `translateZ(${Math.random() * 20}px)`
+                  transform: `translateZ(${Math.random() * 20}px)`,
                 }}
               />
             ))}
           </>
         )}
+
+        {/* Obstacles */}
+        {currentMission?.obstacles.map((obstacle) => (
+          <div
+            key={obstacle.id}
+            className="absolute bg-red-500/30 border-2 border-red-500 rounded-full"
+            style={{
+              left: `${obstacle.position.x}%`,
+              bottom: '8%',
+              width: `${obstacle.size * 2}px`,
+              height: `${obstacle.size * 2}px`,
+              transform: 'translateX(-50%)',
+            }}
+          />
+        ))}
 
         {/* 3D Robot */}
         <div
@@ -510,88 +551,66 @@ export default function AutonomousRobotMission3DGame({
             left: `${robotPosition.x}%`,
             bottom: `${currentMission?.environment === 'space' ? 20 : currentMission?.environment === 'indoor' ? 8 : 12}%`,
             transform: `translateX(-50%) rotateY(${robotPosition.rotation.y}deg)`,
-            transformStyle: 'preserve-3d'
+            transformStyle: 'preserve-3d',
           }}
         >
-          {/* Robot Body */}
           <div className="relative">
-            <div 
+            <div
               className="w-8 h-12 bg-gradient-to-b from-cyan-400 to-blue-600 rounded-lg border-2 border-cyan-300 shadow-lg"
-              style={{
-                transformStyle: 'preserve-3d',
-                transform: 'rotateX(15deg)'
-              }}
+              style={{ transformStyle: 'preserve-3d', transform: 'rotateX(15deg)' }}
             >
-              {/* Robot Head */}
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full border-2 border-cyan-300">
                 <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-red-400 rounded-full animate-pulse"></div>
-                <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
               </div>
-              
-              {/* Robot Arms */}
-              <div className="absolute top-2 -left-2 w-2 h-6 bg-gradient-to-b from-gray-400 to-gray-600 rounded transform rotate-12"></div>
-              <div className="absolute top-2 -right-2 w-2 h-6 bg-gradient-to-b from-gray-400 to-gray-600 rounded transform -rotate-12"></div>
-              
-              {/* Status Light */}
-              <div className={`absolute top-6 left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full animate-pulse ${
-                robotSystems.find(s => s.id === 'navigation-system')?.status === 'online' ? 'bg-green-400' : 'bg-red-400'
-              }`}></div>
-            </div>
-
-            {/* Robot Tracks */}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
-              <div className="w-1.5 h-2 bg-gray-700 rounded"></div>
-              <div className="w-1.5 h-2 bg-gray-700 rounded"></div>
+              <div
+                className={`absolute top-6 left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full animate-pulse ${
+                  robotSystems.find((s) => s.id === 'navigation-system')?.status === 'online'
+                    ? 'bg-green-400'
+                    : 'bg-red-400'
+                }`}
+              ></div>
             </div>
           </div>
-
-          {/* Navigation Path Visualization */}
-          {gamePhase === 'mission' && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-              <div className="flex space-x-1">
-                {Array.from({ length: 3 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"
-                    style={{ animationDelay: `${i * 0.2}s` }}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Mission Objectives Markers */}
         {currentMission && gamePhase === 'mission' && (
           <>
-            {currentMission.objectives.map((objective, index) => (
-              <div
-                key={objective.id}
-                className={`absolute transition-all duration-500 ${objective.completed ? 'opacity-50' : 'opacity-100'}`}
-                style={{
-                  left: `${20 + index * 25}%`,
-                  bottom: '20%',
-                  transform: 'translateX(-50%)'
-                }}
-              >
-                <div className={`w-4 h-4 rounded-full border-2 animate-pulse ${
-                  objective.completed 
-                    ? 'bg-green-400 border-green-300'
-                    : objective.priority === 'critical' 
-                      ? 'bg-red-400 border-red-300'
-                      : objective.priority === 'high'
-                        ? 'bg-orange-400 border-orange-300'
-                        : 'bg-blue-400 border-blue-300'
-                }`}>
-                  {objective.completed && (
-                    <CheckCircle2 className="w-4 h-4 text-white" />
-                  )}
-                </div>
-                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-center text-white whitespace-nowrap">
-                  {objective.type}
-                </div>
-              </div>
-            ))}
+            {missionObjectives.map(
+              (objective) =>
+                objective.position && (
+                  <div
+                    key={objective.id}
+                    className={`absolute transition-all duration-500 ${objective.completed ? 'opacity-20' : 'opacity-100'}`}
+                    style={{
+                      left: `${objective.position.x}%`,
+                      bottom: '20%',
+                      transform: 'translateX(-50%)',
+                    }}
+                  >
+                    <div
+                      className={`w-8 h-8 rounded-full border-2 flex items-center justify-center animate-pulse ${
+                        objective.completed
+                          ? 'bg-green-400/50 border-green-300'
+                          : objective.type === 'collection'
+                            ? 'bg-yellow-400/70 border-yellow-300'
+                            : 'bg-blue-400/70 border-blue-300'
+                      }`}
+                    >
+                      {objective.completed ? (
+                        <CheckCircle2 className="w-5 h-5 text-white" />
+                      ) : objective.type === 'collection' ? (
+                        <Package className="w-4 h-4 text-white" />
+                      ) : (
+                        <MapPin className="w-4 h-4 text-white" />
+                      )}
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-center text-white whitespace-nowrap bg-black/50 px-1 rounded">
+                      {objective.description}
+                    </div>
+                  </div>
+                ),
+            )}
           </>
         )}
 
@@ -603,9 +622,7 @@ export default function AutonomousRobotMission3DGame({
           <div className="text-xs text-gray-300">
             Position: ({Math.floor(robotPosition.x)}, {Math.floor(robotPosition.z)})
           </div>
-          <div className="text-xs text-gray-300">
-            Status: {isRobotMoving ? 'MOVING' : 'STATIONARY'}
-          </div>
+          <div className="text-xs text-gray-300">Status: {isRobotMoving ? 'MOVING' : 'STATIONARY'}</div>
         </div>
 
         {/* Mission Progress */}
@@ -639,7 +656,7 @@ export default function AutonomousRobotMission3DGame({
           <p className="text-gray-300 mb-6">
             Điều khiển robot tự hành thực hiện các nhiệm vụ phức tạp trong môi trường 3D
           </p>
-          
+
           {render3DRobotEnvironment()}
         </div>
 
@@ -657,39 +674,44 @@ export default function AutonomousRobotMission3DGame({
               Xem Chi Tiết
             </button>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-4">
-            {robotSystems.filter(system => unlockedSystems.includes(system.id)).map(system => (
-              <div key={system.id} className="p-3 bg-slate-700/30 rounded-lg border border-slate-600/30">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-white font-medium text-sm">{system.name}</span>
-                  <div className={`w-2 h-2 rounded-full ${
-                    system.status === 'online' ? 'bg-green-400 animate-pulse' : 'bg-red-400'
-                  }`}></div>
-                </div>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div>
-                    <span className="text-gray-400">Hiệu quả:</span>
-                    <span className="text-cyan-400 ml-1">{system.efficiency}%</span>
+            {robotSystems
+              .filter((system) => unlockedSystems.includes(system.id))
+              .map((system) => (
+                <div key={system.id} className="p-3 bg-slate-700/30 rounded-lg border border-slate-600/30">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-white font-medium text-sm">{system.name}</span>
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        system.status === 'online' ? 'bg-green-400 animate-pulse' : 'bg-red-400'
+                      }`}
+                    ></div>
                   </div>
-                  <div>
-                    <span className="text-gray-400">Pin:</span>
-                    <span className={`ml-1 ${system.battery > 50 ? 'text-green-400' : 'text-orange-400'}`}>
-                      {system.battery}%
-                    </span>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                      <span className="text-gray-400">Hiệu quả:</span>
+                      <span className="text-cyan-400 ml-1">{system.efficiency}%</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-400">Pin:</span>
+                      <span className={`ml-1 ${system.battery > 50 ? 'text-green-400' : 'text-orange-400'}`}>
+                        {Math.floor(system.battery)}%
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
 
         {/* Mission Selection */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {MISSIONS.map(mission => {
+          {MISSIONS.map((mission) => {
             const isCompleted = completedMissions.includes(mission.id);
-            const canStart = robotSystems.filter(s => unlockedSystems.includes(s.id) && s.status === 'online').length >= 3;
-            
+            const canStart =
+              robotSystems.filter((s) => unlockedSystems.includes(s.id) && s.status === 'online').length >= 3;
+
             return (
               <div
                 key={mission.id}
@@ -707,15 +729,15 @@ export default function AutonomousRobotMission3DGame({
                     {mission.environment === 'indoor' && <Bot className="w-6 h-6 text-blue-400" />}
                     {mission.environment === 'outdoor' && <Target className="w-6 h-6 text-green-400" />}
                     {mission.environment === 'space' && <Zap className="w-6 h-6 text-purple-400" />}
-                    {mission.environment === 'underwater' && <Radar className="w-6 h-6 text-cyan-400" />}
-                    {mission.environment === 'industrial' && <Shield className="w-6 h-6 text-orange-400" />}
-                    
+
                     <div>
                       <h3 className="text-lg font-bold text-white">{mission.name}</h3>
-                      <p className="text-sm text-gray-400">{mission.difficulty} • {mission.duration} phút</p>
+                      <p className="text-sm text-gray-400">
+                        {mission.difficulty} • {mission.duration} phút
+                      </p>
                     </div>
                   </div>
-                  
+
                   {isCompleted && <CheckCircle2 className="w-6 h-6 text-green-400" />}
                 </div>
 
@@ -755,7 +777,6 @@ export default function AutonomousRobotMission3DGame({
           })}
         </div>
 
-        {/* Progress Summary */}
         <div className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/30">
           <div className="flex items-center justify-between">
             <div>
@@ -789,11 +810,10 @@ export default function AutonomousRobotMission3DGame({
           {render3DRobotEnvironment()}
         </div>
 
-        {/* System Control Panel */}
         <div className="grid md:grid-cols-2 gap-6">
-          {robotSystems.map(system => {
+          {robotSystems.map((system) => {
             const isUnlocked = unlockedSystems.includes(system.id);
-            
+
             return (
               <div
                 key={system.id}
@@ -813,7 +833,7 @@ export default function AutonomousRobotMission3DGame({
                     {system.id.includes('communication') && <Wifi className="w-6 h-6 text-green-400" />}
                     {system.id.includes('power') && <Battery className="w-6 h-6 text-yellow-400" />}
                     {system.id.includes('defense') && <Shield className="w-6 h-6 text-red-400" />}
-                    
+
                     <div>
                       <h3 className="text-lg font-bold text-white">{system.name}</h3>
                       <p className="text-sm text-gray-400">
@@ -821,15 +841,18 @@ export default function AutonomousRobotMission3DGame({
                       </p>
                     </div>
                   </div>
-                  
-                  <div className={`w-4 h-4 rounded-full ${
-                    system.status === 'online' ? 'bg-green-400 animate-pulse' :
-                    system.status === 'error' ? 'bg-red-400 animate-pulse' :
-                    'bg-gray-400'
-                  }`}></div>
+
+                  <div
+                    className={`w-4 h-4 rounded-full ${
+                      system.status === 'online'
+                        ? 'bg-green-400 animate-pulse'
+                        : system.status === 'error'
+                          ? 'bg-red-400 animate-pulse'
+                          : 'bg-gray-400'
+                    }`}
+                  ></div>
                 </div>
 
-                {/* System Metrics */}
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <div className="text-sm text-gray-400 mb-1">Hiệu Quả</div>
@@ -841,24 +864,25 @@ export default function AutonomousRobotMission3DGame({
                     </div>
                     <div className="text-xs text-white mt-1">{system.efficiency}%</div>
                   </div>
-                  
+
                   <div>
                     <div className="text-sm text-gray-400 mb-1">Pin</div>
                     <div className="w-full bg-gray-700/50 rounded-full h-2">
                       <div
                         className={`h-2 rounded-full transition-all duration-500 ${
-                          system.battery > 50 ? 'bg-gradient-to-r from-green-500 to-emerald-500' :
-                          system.battery > 20 ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
-                          'bg-gradient-to-r from-red-500 to-red-600'
+                          system.battery > 50
+                            ? 'bg-gradient-to-r from-green-500 to-emerald-500'
+                            : system.battery > 20
+                              ? 'bg-gradient-to-r from-yellow-500 to-orange-500'
+                              : 'bg-gradient-to-r from-red-500 to-red-600'
                         }`}
                         style={{ width: `${system.battery}%` }}
                       />
                     </div>
-                    <div className="text-xs text-white mt-1">{system.battery}%</div>
+                    <div className="text-xs text-white mt-1">{Math.floor(system.battery)}%</div>
                   </div>
                 </div>
 
-                {/* System Stats */}
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between items-center text-sm">
                     <span className="text-gray-400">Data Rate:</span>
@@ -872,7 +896,6 @@ export default function AutonomousRobotMission3DGame({
                   </div>
                 </div>
 
-                {/* System Controls */}
                 {isUnlocked ? (
                   <button
                     onClick={() => activateSystem(system.id)}
@@ -890,14 +913,13 @@ export default function AutonomousRobotMission3DGame({
                   </div>
                 )}
 
-                {/* System Alerts */}
                 {system.temperature > 70 && isUnlocked && (
                   <div className="mt-2 p-2 bg-red-500/20 border border-red-500/30 rounded text-xs text-red-300">
                     <AlertTriangle className="w-3 h-3 inline mr-1" />
                     Nhiệt độ cao - Cần bảo trì
                   </div>
                 )}
-                
+
                 {system.battery < 20 && isUnlocked && (
                   <div className="mt-2 p-2 bg-yellow-500/20 border border-yellow-500/30 rounded text-xs text-yellow-300">
                     <Battery className="w-3 h-3 inline mr-1" />
@@ -909,7 +931,6 @@ export default function AutonomousRobotMission3DGame({
           })}
         </div>
 
-        {/* Back Button */}
         <div className="text-center">
           <button
             onClick={() => setGamePhase('briefing')}
@@ -928,47 +949,54 @@ export default function AutonomousRobotMission3DGame({
         <div className="text-center">
           <h2 className="text-2xl font-bold text-white mb-2">Thực Thi Nhiệm Vụ</h2>
           <h3 className="text-xl text-cyan-400 mb-4">{currentMission.name}</h3>
-          
+
           {render3DRobotEnvironment()}
         </div>
 
-        {/* Mission Objectives */}
         <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 backdrop-blur-sm p-6 rounded-xl border border-blue-500/30">
           <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
             <Target className="w-6 h-6 text-blue-400" />
             <span>Mục Tiêu Nhiệm Vụ</span>
           </h3>
-          
+
           <div className="space-y-3">
-            {currentMission.objectives.map((objective) => (
-              <div key={objective.id} className={`p-3 rounded-lg border transition-all duration-300 ${
-                objective.completed 
-                  ? 'bg-green-900/30 border-green-500/30' 
-                  : 'bg-slate-800/50 border-slate-600/30'
-              }`}>
+            {missionObjectives.map((objective) => (
+              <div
+                key={objective.id}
+                className={`p-3 rounded-lg border transition-all duration-300 ${
+                  objective.completed ? 'bg-green-900/30 border-green-500/30' : 'bg-slate-800/50 border-slate-600/30'
+                }`}
+              >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     {objective.completed ? (
                       <CheckCircle2 className="w-5 h-5 text-green-400" />
                     ) : (
-                      <div className={`w-5 h-5 rounded-full border-2 ${
-                        objective.priority === 'critical' ? 'border-red-400' :
-                        objective.priority === 'high' ? 'border-orange-400' :
-                        'border-blue-400'
-                      }`}></div>
+                      <div
+                        className={`w-5 h-5 rounded-full border-2 ${
+                          objective.priority === 'critical'
+                            ? 'border-red-400'
+                            : objective.priority === 'high'
+                              ? 'border-orange-400'
+                              : 'border-blue-400'
+                        }`}
+                      ></div>
                     )}
-                    <span className={`${
-                      objective.completed ? 'text-gray-400 line-through' : 'text-white'
-                    }`}>
+                    <span className={`${objective.completed ? 'text-gray-400 line-through' : 'text-white'}`}>
                       {objective.description}
                     </span>
                   </div>
-                  <div className={`px-2 py-1 rounded text-xs font-bold ${
-                    objective.priority === 'critical' ? 'bg-red-500/20 text-red-300' :
-                    objective.priority === 'high' ? 'bg-orange-500/20 text-orange-300' :
-                    objective.priority === 'medium' ? 'bg-blue-500/20 text-blue-300' :
-                    'bg-gray-500/20 text-gray-300'
-                  }`}>
+                  <div
+                    className={`px-2 py-1 rounded text-xs font-bold ${
+                      objective.priority === 'critical'
+                        ? 'bg-red-500/20 text-red-300'
+                        : objective.priority === 'high'
+                          ? 'bg-orange-500/20 text-orange-300'
+                          : objective.priority === 'medium'
+                            ? 'bg-blue-500/20 text-blue-300'
+                            : 'bg-gray-500/20 text-gray-300'
+                    }`}
+                  >
                     {objective.priority.toUpperCase()}
                   </div>
                 </div>
@@ -977,49 +1005,13 @@ export default function AutonomousRobotMission3DGame({
           </div>
         </div>
 
-        {/* System Status */}
-        <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/30">
-          <h3 className="text-lg font-bold text-white mb-4 flex items-center space-x-2">
-            <Activity className="w-6 h-6 text-cyan-400" />
-            <span>Trạng Thái Hệ Thống</span>
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-4">
-            {robotSystems.filter(s => unlockedSystems.includes(s.id) && s.status === 'online').map(system => (
-              <div key={system.id} className="p-3 bg-slate-700/30 rounded-lg">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-white text-sm font-medium">{system.name}</span>
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                </div>
-                <div className="space-y-1 text-xs">
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Pin:</span>
-                    <span className={`${system.battery > 50 ? 'text-green-400' : 'text-orange-400'}`}>
-                      {Math.floor(system.battery)}%
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Nhiệt độ:</span>
-                    <span className={`${system.temperature > 60 ? 'text-red-400' : 'text-green-400'}`}>
-                      {system.temperature}°C
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* System Alerts */}
         {systemAlerts.length > 0 && (
-          <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 backdrop-blur-sm p-6 rounded-xl border border-green-500/30">
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-6 rounded-xl border border-slate-700/30">
             <h3 className="text-lg font-bold text-white mb-4">Mission Log</h3>
             <div className="space-y-2 max-h-32 overflow-y-auto">
               {systemAlerts.slice(-5).map((alert, index) => (
                 <div key={index} className="p-2 bg-slate-800/50 rounded text-sm text-gray-300">
-                  <span className="text-gray-500 mr-2">
-                    {new Date().toLocaleTimeString()}
-                  </span>
+                  <span className="text-gray-500 mr-2">{new Date().toLocaleTimeString()}</span>
                   {alert}
                 </div>
               ))}
@@ -1027,7 +1019,6 @@ export default function AutonomousRobotMission3DGame({
           </div>
         )}
 
-        {/* Emergency Controls */}
         <div className="flex justify-center space-x-4">
           <button
             onClick={() => setGamePhase('briefing')}
@@ -1046,10 +1037,8 @@ export default function AutonomousRobotMission3DGame({
         <div>
           <h2 className="text-3xl font-bold text-white mb-4">🤖 Mission Accomplished!</h2>
           <p className="text-xl text-cyan-400 mb-2">Robot đã hoàn thành tất cả nhiệm vụ!</p>
-          <p className="text-gray-300 mb-6">
-            Kỹ năng điều khiển robot tự hành của bạn đã đạt trình độ chuyên nghiệp.
-          </p>
-          
+          <p className="text-gray-300 mb-6">Kỹ năng điều khiển robot tự hành của bạn đã đạt trình độ chuyên nghiệp.</p>
+
           {render3DRobotEnvironment()}
         </div>
 
@@ -1059,28 +1048,18 @@ export default function AutonomousRobotMission3DGame({
             <div className="space-y-3">
               <div className="flex justify-between">
                 <span className="text-gray-300">Nhiệm vụ hoàn thành:</span>
-                <span className="text-white font-bold">{completedMissions.length}/{MISSIONS.length}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-300">Hệ thống đã mở khóa:</span>
-                <span className="text-blue-400 font-bold">{unlockedSystems.length}/{robotSystems.length}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-gray-300">Robot uptime:</span>
-                <span className="text-green-400 font-bold">98.5%</span>
-              </div>
-            </div>
-            <div className="space-y-3">
-              <div className="flex justify-between">
-                <span className="text-gray-300">Efficiency trung bình:</span>
-                <span className="text-cyan-400 font-bold">
-                  {Math.floor(robotSystems.reduce((acc, sys) => acc + sys.efficiency, 0) / robotSystems.length)}%
+                <span className="text-white font-bold">
+                  {completedMissions.length}/{MISSIONS.length}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-300">Nhiệm vụ khó khăn nhất:</span>
-                <span className="text-purple-400 font-bold">Space Exploration</span>
+                <span className="text-gray-300">Hệ thống đã mở khóa:</span>
+                <span className="text-blue-400 font-bold">
+                  {unlockedSystems.length}/{robotSystems.length}
+                </span>
               </div>
+            </div>
+            <div className="space-y-3">
               <div className="flex justify-between">
                 <span className="text-gray-300">Điểm số cuối:</span>
                 <span className="text-yellow-400 font-bold">{score}</span>

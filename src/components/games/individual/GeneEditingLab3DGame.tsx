@@ -1,16 +1,5 @@
-import React, { useState } from 'react';
-import { 
-  Dna, 
-  Zap,
-  Target,
-  AlertTriangle,
-  Play,
-  RotateCcw,
-  Award,
-  Settings,
-  Eye,
-  Activity
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Dna, Zap, Target, AlertTriangle, Play, RotateCcw, Award, Settings, Eye, Activity } from 'lucide-react';
 
 interface GeneEditingLab3DProps {
   onComplete: (success: boolean, score: number) => void;
@@ -64,12 +53,9 @@ interface Disease {
   currentTreatments: string[];
 }
 
-const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
-  onComplete,
-  timeLeft,
-  onRestart,
-}) => {
+const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({ onComplete, timeLeft, onRestart }) => {
   // Game state
+  const [isReady, setIsReady] = useState(false);
   const [gamePhase, setGamePhase] = useState<'setup' | 'design' | 'editing' | 'analysis' | 'results'>('setup');
   const [isStarted, setIsStarted] = useState(false);
   const [score, setScore] = useState(0);
@@ -82,6 +68,16 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
   const [currentProject, setCurrentProject] = useState<EditingProject | null>(null);
   const [ethicsScore, setEthicsScore] = useState(100);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Auto-initialization will happen in startGame or can be done with default state
+
   // Available genes
   const availableGenes: Gene[] = [
     {
@@ -92,7 +88,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       sequence: 'ATGGCTGGCGTTCGCGATCTTCAAG',
       expression: 85,
       mutations: ['deletion', 'duplication', 'point_mutation'],
-      targetable: true
+      targetable: true,
     },
     {
       id: 'cftr',
@@ -102,7 +98,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       sequence: 'ATGTCGTCGATCGAGTTCGGAATCG',
       expression: 75,
       mutations: ['F508del', 'G542X', 'N1303K'],
-      targetable: true
+      targetable: true,
     },
     {
       id: 'huntingtin',
@@ -112,7 +108,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       sequence: 'ATGGCGACCCTGGAAAAGCTGATG',
       expression: 60,
       mutations: ['CAG_repeat_expansion'],
-      targetable: true
+      targetable: true,
     },
     {
       id: 'tp53',
@@ -122,7 +118,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       sequence: 'ATGGAGGAGCCGCAGTCAGATCCT',
       expression: 90,
       mutations: ['R273H', 'R175H', 'R248Q'],
-      targetable: true
+      targetable: true,
     },
     {
       id: 'myc',
@@ -132,7 +128,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       sequence: 'ATGCCCCTCAACGTTAGCTTCACC',
       expression: 45,
       mutations: ['translocation', 'amplification'],
-      targetable: true
+      targetable: true,
     },
     {
       id: 'apoe',
@@ -142,8 +138,8 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       sequence: 'ATGGCGCAGAAGATGCAGGGTCTG',
       expression: 70,
       mutations: ['E4_variant', 'E2_variant'],
-      targetable: true
-    }
+      targetable: true,
+    },
   ];
 
   // CRISPR systems
@@ -156,7 +152,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       efficiency: 90,
       offTargetRisk: 25,
       description: 'Most widely used, creates double-strand breaks',
-      icon: <Zap className="w-5 h-5" />
+      icon: <Zap className="w-5 h-5" />,
     },
     {
       id: 'cas12a',
@@ -166,7 +162,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       efficiency: 80,
       offTargetRisk: 20,
       description: 'Creates staggered cuts, different PAM requirements',
-      icon: <Target className="w-5 h-5" />
+      icon: <Target className="w-5 h-5" />,
     },
     {
       id: 'cas13',
@@ -176,7 +172,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       efficiency: 70,
       offTargetRisk: 15,
       description: 'RNA-targeting system for knockdown applications',
-      icon: <Activity className="w-5 h-5" />
+      icon: <Activity className="w-5 h-5" />,
     },
     {
       id: 'base-editor',
@@ -186,7 +182,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       efficiency: 75,
       offTargetRisk: 10,
       description: 'Precise single nucleotide changes without DSBs',
-      icon: <Settings className="w-5 h-5" />
+      icon: <Settings className="w-5 h-5" />,
     },
     {
       id: 'prime-editor',
@@ -196,8 +192,8 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       efficiency: 60,
       offTargetRisk: 5,
       description: 'Most precise system for insertions, deletions, and substitutions',
-      icon: <Eye className="w-5 h-5" />
-    }
+      icon: <Eye className="w-5 h-5" />,
+    },
   ];
 
   // Diseases
@@ -209,7 +205,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       targetGenes: ['dystrophin'],
       complexity: 8,
       prevalence: '1 in 3,500 male births',
-      currentTreatments: ['Corticosteroids', 'Physical therapy', 'Respiratory support']
+      currentTreatments: ['Corticosteroids', 'Physical therapy', 'Respiratory support'],
     },
     {
       id: 'cystic-fibrosis',
@@ -218,7 +214,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       targetGenes: ['cftr'],
       complexity: 7,
       prevalence: '1 in 2,500 births',
-      currentTreatments: ['CFTR modulators', 'Airway clearance', 'Nutritional support']
+      currentTreatments: ['CFTR modulators', 'Airway clearance', 'Nutritional support'],
     },
     {
       id: 'huntingtons',
@@ -227,7 +223,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       targetGenes: ['huntingtin'],
       complexity: 9,
       prevalence: '1 in 10,000 people',
-      currentTreatments: ['Symptom management', 'Physical therapy', 'Psychiatric care']
+      currentTreatments: ['Symptom management', 'Physical therapy', 'Psychiatric care'],
     },
     {
       id: 'cancer',
@@ -236,8 +232,8 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       targetGenes: ['tp53', 'myc'],
       complexity: 10,
       prevalence: 'Variable by cancer type',
-      currentTreatments: ['Chemotherapy', 'Radiation', 'Immunotherapy', 'Surgery']
-    }
+      currentTreatments: ['Chemotherapy', 'Radiation', 'Immunotherapy', 'Surgery'],
+    },
   ];
 
   // Start gene editing project
@@ -255,7 +251,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       expectedOutcome: getExpectedOutcome(),
       success: false,
       efficiency: 0,
-      offTargetEffects: 0
+      offTargetEffects: 0,
     };
 
     setCurrentProject(project);
@@ -266,7 +262,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
   // Get expected outcome based on edit type
   const getExpectedOutcome = () => {
     if (!selectedEditType || !selectedGene) return '';
-    
+
     switch (selectedEditType) {
       case 'knockout':
         return `Disable ${selectedGene.name} gene function`;
@@ -297,26 +293,24 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
       const baseSuccessRate = systemScore * complexityFactor * 0.8;
 
       const editingSuccess = Math.random() < baseSuccessRate / 100;
-      const efficiency = editingSuccess ? 
-        Math.min(95, systemScore + Math.random() * 20 - 10) :
-        Math.max(5, systemScore * 0.3 + Math.random() * 10);
-      
-      const offTargetEffects = Math.max(0, 
-        currentProject.editingSystem.offTargetRisk + Math.random() * 20 - 10
-      );
+      const efficiency = editingSuccess
+        ? Math.min(95, systemScore + Math.random() * 20 - 10)
+        : Math.max(5, systemScore * 0.3 + Math.random() * 10);
+
+      const offTargetEffects = Math.max(0, currentProject.editingSystem.offTargetRisk + Math.random() * 20 - 10);
 
       // Update ethics score based on editing type and target
       if (selectedDisease?.id === 'cancer' && selectedEditType === 'knockout') {
-        setEthicsScore(prev => Math.max(70, prev - 10)); // Oncogene targeting is more acceptable
+        setEthicsScore((prev) => Math.max(70, prev - 10)); // Oncogene targeting is more acceptable
       } else if (selectedEditType === 'activation' && offTargetEffects > 50) {
-        setEthicsScore(prev => Math.max(50, prev - 20)); // High off-target risk
+        setEthicsScore((prev) => Math.max(50, prev - 20)); // High off-target risk
       }
 
       const updatedProject = {
         ...currentProject,
         success: editingSuccess,
         efficiency,
-        offTargetEffects
+        offTargetEffects,
       };
 
       setCurrentProject(updatedProject);
@@ -331,19 +325,26 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
         const timeBonus = timeLeft > 120 ? 200 : timeLeft > 60 ? 150 : 100;
         const systemBonus = currentProject.editingSystem.precision;
 
-        const finalScore = Math.max(0, Math.min(1000,
-          efficiencyScore + safetyScore + complexityBonus + ethicsBonus + timeBonus + systemBonus
-        ));
+        const finalScore = Math.max(
+          0,
+          Math.min(1000, efficiencyScore + safetyScore + complexityBonus + ethicsBonus + timeBonus + systemBonus),
+        );
 
         setScore(finalScore);
         setGamePhase('results');
-        
+
         setTimeout(() => {
           onComplete(true, finalScore);
         }, 3000);
       }, 4000);
     }, 6000);
   };
+
+  if (!isReady) {
+    return (
+      <div className="flex justify-center items-center h-full bg-gray-900 text-white">Đang tải phòng thí nghiệm...</div>
+    );
+  }
 
   // Render setup phase
   if (!isStarted) {
@@ -352,9 +353,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🧬</div>
-            <h1 className="text-4xl font-bold text-white mb-4">
-              Gene Editing Lab 3D
-            </h1>
+            <h1 className="text-4xl font-bold text-white mb-4">Gene Editing Lab 3D</h1>
             <p className="text-xl text-purple-100 mb-8">
               Advanced CRISPR-Cas gene editing simulation for therapeutic research
             </p>
@@ -393,7 +392,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-white mb-6">Select Target Disease</h3>
             <div className="grid md:grid-cols-2 gap-6">
-              {diseases.map(disease => (
+              {diseases.map((disease) => (
                 <div
                   key={disease.id}
                   onClick={() => setSelectedDisease(disease)}
@@ -405,7 +404,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
                 >
                   <h4 className="text-xl font-bold text-white mb-2">{disease.name}</h4>
                   <p className="text-purple-100 mb-4">{disease.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <div className="text-purple-200">Prevalence:</div>
@@ -416,11 +415,11 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
                       <div className="text-white">{disease.complexity}/10</div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-4">
                     <div className="text-purple-200 text-sm mb-2">Target Genes:</div>
                     <div className="flex flex-wrap gap-2">
-                      {disease.targetGenes.map(gene => (
+                      {disease.targetGenes.map((gene) => (
                         <span key={gene} className="bg-purple-500 text-white px-2 py-1 rounded text-xs">
                           {gene.toUpperCase()}
                         </span>
@@ -438,26 +437,26 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-6">Select Target Gene</h3>
                 <div className="grid md:grid-cols-3 gap-4">
-                  {availableGenes.filter(gene => 
-                    selectedDisease.targetGenes.includes(gene.id)
-                  ).map(gene => (
-                    <div
-                      key={gene.id}
-                      onClick={() => setSelectedGene(gene)}
-                      className={`p-4 rounded-lg cursor-pointer transition-all ${
-                        selectedGene?.id === gene.id
-                          ? 'bg-blue-600 bg-opacity-50 border-2 border-blue-400'
-                          : 'bg-black bg-opacity-30 hover:bg-opacity-40'
-                      }`}
-                    >
-                      <h4 className="font-bold text-white">{gene.name}</h4>
-                      <p className="text-blue-100 text-sm mb-2">{gene.function}</p>
-                      <div className="text-xs">
-                        <div className="text-blue-200">Chromosome: {gene.chromosome}</div>
-                        <div className="text-blue-200">Expression: {gene.expression}%</div>
+                  {availableGenes
+                    .filter((gene) => selectedDisease.targetGenes.includes(gene.id))
+                    .map((gene) => (
+                      <div
+                        key={gene.id}
+                        onClick={() => setSelectedGene(gene)}
+                        className={`p-4 rounded-lg cursor-pointer transition-all ${
+                          selectedGene?.id === gene.id
+                            ? 'bg-blue-600 bg-opacity-50 border-2 border-blue-400'
+                            : 'bg-black bg-opacity-30 hover:bg-opacity-40'
+                        }`}
+                      >
+                        <h4 className="font-bold text-white">{gene.name}</h4>
+                        <p className="text-blue-100 text-sm mb-2">{gene.function}</p>
+                        <div className="text-xs">
+                          <div className="text-blue-200">Chromosome: {gene.chromosome}</div>
+                          <div className="text-blue-200">Expression: {gene.expression}%</div>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
 
@@ -465,7 +464,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-6">Choose CRISPR System</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {crisprSystems.map(system => (
+                  {crisprSystems.map((system) => (
                     <div
                       key={system.id}
                       onClick={() => setSelectedSystem(system)}
@@ -480,7 +479,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
                         <h4 className="font-bold text-white">{system.name}</h4>
                       </div>
                       <p className="text-teal-100 text-sm mb-3">{system.description}</p>
-                      
+
                       <div className="space-y-1 text-xs">
                         <div className="flex justify-between">
                           <span className="text-teal-200">Precision:</span>
@@ -509,8 +508,8 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
                     { id: 'knock-in', name: 'Gene Knock-in', desc: 'Insert corrective sequence' },
                     { id: 'activation', name: 'Gene Activation', desc: 'Increase gene expression' },
                     { id: 'repression', name: 'Gene Repression', desc: 'Decrease gene expression' },
-                    { id: 'base-edit', name: 'Base Editing', desc: 'Precise nucleotide changes' }
-                  ].map(editType => (
+                    { id: 'base-edit', name: 'Base Editing', desc: 'Precise nucleotide changes' },
+                  ].map((editType) => (
                     <div
                       key={editType.id}
                       onClick={() => setSelectedEditType(editType.id)}
@@ -550,33 +549,49 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🔬</div>
             <h1 className="text-4xl font-bold text-white mb-4">Designing CRISPR System</h1>
-            
+
             {currentProject && (
               <div className="bg-black bg-opacity-30 rounded-xl p-6 mb-8">
                 <h2 className="text-2xl font-bold text-white mb-4">{currentProject.name}</h2>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-3">Project Details</h3>
                     <div className="space-y-2 text-purple-100">
-                      <div>Target Gene: <span className="text-white">{currentProject.targetGene.name}</span></div>
-                      <div>CRISPR System: <span className="text-white">{currentProject.editingSystem.name}</span></div>
-                      <div>Edit Type: <span className="text-white capitalize">{currentProject.editType.replace('-', ' ')}</span></div>
-                      <div>Expected Outcome: <span className="text-white">{currentProject.expectedOutcome}</span></div>
+                      <div>
+                        Target Gene: <span className="text-white">{currentProject.targetGene.name}</span>
+                      </div>
+                      <div>
+                        CRISPR System: <span className="text-white">{currentProject.editingSystem.name}</span>
+                      </div>
+                      <div>
+                        Edit Type:{' '}
+                        <span className="text-white capitalize">{currentProject.editType.replace('-', ' ')}</span>
+                      </div>
+                      <div>
+                        Expected Outcome: <span className="text-white">{currentProject.expectedOutcome}</span>
+                      </div>
                     </div>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-3">Technical Specifications</h3>
                     <div className="space-y-2 text-purple-100">
-                      <div>Target Sequence: 
+                      <div>
+                        Target Sequence:
                         <code className="text-green-400 ml-2 font-mono">{currentProject.targetSequence}</code>
                       </div>
-                      <div>Guide RNA: 
+                      <div>
+                        Guide RNA:
                         <code className="text-blue-400 ml-2 font-mono">{currentProject.guideRNA}</code>
                       </div>
-                      <div>System Precision: <span className="text-white">{currentProject.editingSystem.precision}%</span></div>
-                      <div>Expected Efficiency: <span className="text-white">{currentProject.editingSystem.efficiency}%</span></div>
+                      <div>
+                        System Precision: <span className="text-white">{currentProject.editingSystem.precision}%</span>
+                      </div>
+                      <div>
+                        Expected Efficiency:{' '}
+                        <span className="text-white">{currentProject.editingSystem.efficiency}%</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -587,8 +602,8 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
                     <div>
                       <h4 className="text-yellow-400 font-semibold mb-2">Ethical Considerations</h4>
                       <p className="text-yellow-100 text-sm">
-                        Gene editing carries significant ethical responsibilities. Ensure proper oversight,
-                        informed consent, and consideration of long-term consequences for therapeutic applications.
+                        Gene editing carries significant ethical responsibilities. Ensure proper oversight, informed
+                        consent, and consideration of long-term consequences for therapeutic applications.
                       </p>
                     </div>
                   </div>
@@ -670,9 +685,7 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
                 <div className="text-purple-100">Research Score</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-400">
-                  {currentProject?.efficiency.toFixed(0)}%
-                </div>
+                <div className="text-3xl font-bold text-green-400">{currentProject?.efficiency.toFixed(0)}%</div>
                 <div className="text-purple-100">Editing Efficiency</div>
               </div>
               <div>
@@ -688,14 +701,15 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
             </div>
 
             <div className="text-lg text-purple-100 mb-6">
-              {currentProject?.success ? (
-                score > 800 ? '🏆 Breakthrough! Your gene therapy could revolutionize treatment!' :
-                score > 600 ? '🔬 Successful editing with therapeutic potential!' :
-                '👍 Good results, but optimization needed for clinical application.'
-              ) : (
-                score > 400 ? '📚 Learning experience - gene editing is challenging but promising.' :
-                '🛠️ More research needed. Consider different approaches or systems.'
-              )}
+              {currentProject?.success
+                ? score > 800
+                  ? '🏆 Breakthrough! Your gene therapy could revolutionize treatment!'
+                  : score > 600
+                    ? '🔬 Successful editing with therapeutic potential!'
+                    : '👍 Good results, but optimization needed for clinical application.'
+                : score > 400
+                  ? '📚 Learning experience - gene editing is challenging but promising.'
+                  : '🛠️ More research needed. Consider different approaches or systems.'}
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -703,11 +717,21 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
                 <h3 className="text-xl font-semibold text-white mb-4">Project Details</h3>
                 {currentProject && (
                   <div className="space-y-2 text-purple-100">
-                    <div>Disease: <span className="text-white">{selectedDisease?.name}</span></div>
-                    <div>Target Gene: <span className="text-white">{currentProject.targetGene.name}</span></div>
-                    <div>CRISPR System: <span className="text-white">{currentProject.editingSystem.name}</span></div>
-                    <div>Edit Type: <span className="text-white capitalize">{currentProject.editType.replace('-', ' ')}</span></div>
-                    <div>Success: 
+                    <div>
+                      Disease: <span className="text-white">{selectedDisease?.name}</span>
+                    </div>
+                    <div>
+                      Target Gene: <span className="text-white">{currentProject.targetGene.name}</span>
+                    </div>
+                    <div>
+                      CRISPR System: <span className="text-white">{currentProject.editingSystem.name}</span>
+                    </div>
+                    <div>
+                      Edit Type:{' '}
+                      <span className="text-white capitalize">{currentProject.editType.replace('-', ' ')}</span>
+                    </div>
+                    <div>
+                      Success:
                       <span className={currentProject.success ? 'text-green-400' : 'text-red-400'}>
                         {currentProject.success ? ' Yes' : ' No'}
                       </span>
@@ -719,16 +743,20 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
                 <h3 className="text-xl font-semibold text-white mb-4">Technical Results</h3>
                 {currentProject && (
                   <div className="space-y-2 text-purple-100">
-                    <div>Editing Efficiency: 
+                    <div>
+                      Editing Efficiency:
                       <span className="text-green-400 font-semibold"> {currentProject.efficiency.toFixed(1)}%</span>
                     </div>
-                    <div>Off-target Effects: 
+                    <div>
+                      Off-target Effects:
                       <span className="text-red-400 font-semibold"> {currentProject.offTargetEffects.toFixed(1)}%</span>
                     </div>
-                    <div>System Precision: 
+                    <div>
+                      System Precision:
                       <span className="text-blue-400 font-semibold"> {currentProject.editingSystem.precision}%</span>
                     </div>
-                    <div>Overall Quality: 
+                    <div>
+                      Overall Quality:
                       <span className="text-white font-semibold">
                         {score > 700 ? 'Excellent' : score > 500 ? 'Good' : score > 300 ? 'Fair' : 'Needs Improvement'}
                       </span>
@@ -739,22 +767,28 @@ const GeneEditingLab3DGame: React.FC<GeneEditingLab3DProps> = ({
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">Research Impact</h3>
                 <div className="space-y-2 text-purple-100">
-                  <div>Therapeutic Potential: 
+                  <div>
+                    Therapeutic Potential:
+                    <span className="text-white">{score > 750 ? ' High' : score > 500 ? ' Moderate' : ' Limited'}</span>
+                  </div>
+                  <div>
+                    Clinical Readiness:
                     <span className="text-white">
-                      {score > 750 ? ' High' : score > 500 ? ' Moderate' : ' Limited'}
+                      {score > 800
+                        ? ' Ready for trials'
+                        : score > 600
+                          ? ' Optimization needed'
+                          : ' Preclinical research'}
                     </span>
                   </div>
-                  <div>Clinical Readiness: 
-                    <span className="text-white">
-                      {score > 800 ? ' Ready for trials' : score > 600 ? ' Optimization needed' : ' Preclinical research'}
-                    </span>
-                  </div>
-                  <div>Safety Profile: 
+                  <div>
+                    Safety Profile:
                     <span className="text-white">
                       {ethicsScore > 80 ? ' Excellent' : ethicsScore > 60 ? ' Good' : ' Needs review'}
                     </span>
                   </div>
-                  <div>Regulatory Approval: 
+                  <div>
+                    Regulatory Approval:
                     <span className="text-white">
                       {score > 750 && ethicsScore > 80 ? ' Likely' : ' Additional studies needed'}
                     </span>

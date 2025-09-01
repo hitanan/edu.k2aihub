@@ -1,17 +1,5 @@
-import React, { useState } from 'react';
-import { 
-  Gamepad2, 
-  Music,
-  Users,
-  Target,
-  Play,
-  RotateCcw,
-  Award,
-  Settings,
-  Layers,
-  Zap,
-  Star
-} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Gamepad2, Music, Users, Target, Play, RotateCcw, Award, Settings, Layers, Zap, Star } from 'lucide-react';
 
 interface GameDesignStudio3DProps {
   onComplete: (success: boolean, score: number) => void;
@@ -46,11 +34,7 @@ interface GameProject {
   completionTime: number;
 }
 
-const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
-  onComplete,
-  timeLeft,
-  onRestart,
-}) => {
+const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({ onComplete, timeLeft, onRestart }) => {
   // Game state
   const [gamePhase, setGamePhase] = useState<'setup' | 'designing' | 'testing' | 'results'>('setup');
   const [isStarted, setIsStarted] = useState(false);
@@ -66,7 +50,17 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
 
   // Project tracking
   const [currentProject, setCurrentProject] = useState<GameProject | null>(null);
-  
+
+  // Auto-initialize to prevent white screen
+  useEffect(() => {
+    if (!selectedGenre && !selectedAudience && !selectedPlatform) {
+      // Auto-select first options to prevent blank state
+      setSelectedGenre('action');
+      setSelectedAudience('teens');
+      setSelectedPlatform('pc');
+    }
+  }, [selectedGenre, selectedAudience, selectedPlatform]);
+
   // Available game elements
   const availableElements: GameElement[] = [
     // Characters
@@ -79,7 +73,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 200,
       impact: { gameplay: 9, visuals: 8, audio: 3, story: 9 },
       icon: <Users className="w-5 h-5" />,
-      description: 'Main protagonist with unique abilities and backstory'
+      description: 'Main protagonist with unique abilities and backstory',
     },
     {
       id: 'npc-villagers',
@@ -90,7 +84,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 120,
       impact: { gameplay: 6, visuals: 6, audio: 2, story: 7 },
       icon: <Users className="w-5 h-5" />,
-      description: 'Interactive non-player characters for world building'
+      description: 'Interactive non-player characters for world building',
     },
     {
       id: 'boss-enemy',
@@ -101,7 +95,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 250,
       impact: { gameplay: 10, visuals: 9, audio: 4, story: 6 },
       icon: <Users className="w-5 h-5" />,
-      description: 'Challenging boss with complex AI and attack patterns'
+      description: 'Challenging boss with complex AI and attack patterns',
     },
 
     // Environments
@@ -114,7 +108,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 180,
       impact: { gameplay: 5, visuals: 10, audio: 6, story: 8 },
       icon: <Layers className="w-5 h-5" />,
-      description: 'Immersive 3D fantasy environment with multiple biomes'
+      description: 'Immersive 3D fantasy environment with multiple biomes',
     },
     {
       id: 'space-station',
@@ -125,7 +119,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 220,
       impact: { gameplay: 6, visuals: 9, audio: 5, story: 7 },
       icon: <Layers className="w-5 h-5" />,
-      description: 'Futuristic space station with zero-gravity mechanics'
+      description: 'Futuristic space station with zero-gravity mechanics',
     },
     {
       id: 'dungeon-levels',
@@ -136,7 +130,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 150,
       impact: { gameplay: 8, visuals: 7, audio: 4, story: 5 },
       icon: <Layers className="w-5 h-5" />,
-      description: 'Multi-level dungeons with puzzles and secrets'
+      description: 'Multi-level dungeons with puzzles and secrets',
     },
 
     // Mechanics
@@ -149,7 +143,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 280,
       impact: { gameplay: 10, visuals: 6, audio: 7, story: 3 },
       icon: <Zap className="w-5 h-5" />,
-      description: 'Dynamic real-time combat with combos and special moves'
+      description: 'Dynamic real-time combat with combos and special moves',
     },
     {
       id: 'puzzle-mechanics',
@@ -160,7 +154,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 160,
       impact: { gameplay: 8, visuals: 4, audio: 3, story: 6 },
       icon: <Settings className="w-5 h-5" />,
-      description: 'Brain-teasing puzzles that unlock new areas'
+      description: 'Brain-teasing puzzles that unlock new areas',
     },
     {
       id: 'magic-system',
@@ -171,7 +165,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 240,
       impact: { gameplay: 9, visuals: 8, audio: 6, story: 7 },
       icon: <Star className="w-5 h-5" />,
-      description: 'Spell-casting system with elemental combinations'
+      description: 'Spell-casting system with elemental combinations',
     },
 
     // Story
@@ -184,7 +178,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 200,
       impact: { gameplay: 7, visuals: 3, audio: 5, story: 10 },
       icon: <Target className="w-5 h-5" />,
-      description: 'Epic storyline with multiple chapters and plot twists'
+      description: 'Epic storyline with multiple chapters and plot twists',
     },
     {
       id: 'side-quests',
@@ -195,7 +189,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 120,
       impact: { gameplay: 6, visuals: 2, audio: 3, story: 8 },
       icon: <Target className="w-5 h-5" />,
-      description: 'Optional missions that expand the world lore'
+      description: 'Optional missions that expand the world lore',
     },
 
     // Audio
@@ -208,7 +202,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 150,
       impact: { gameplay: 4, visuals: 2, audio: 10, story: 8 },
       icon: <Music className="w-5 h-5" />,
-      description: 'Epic orchestral music that adapts to gameplay'
+      description: 'Epic orchestral music that adapts to gameplay',
     },
     {
       id: 'voice-acting',
@@ -219,7 +213,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 180,
       impact: { gameplay: 5, visuals: 1, audio: 9, story: 9 },
       icon: <Music className="w-5 h-5" />,
-      description: 'High-quality voice performances for all characters'
+      description: 'High-quality voice performances for all characters',
     },
     {
       id: 'sound-effects',
@@ -230,7 +224,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 100,
       impact: { gameplay: 6, visuals: 2, audio: 8, story: 2 },
       icon: <Music className="w-5 h-5" />,
-      description: 'Immersive 3D positional audio effects'
+      description: 'Immersive 3D positional audio effects',
     },
 
     // UI
@@ -243,7 +237,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 80,
       impact: { gameplay: 7, visuals: 6, audio: 1, story: 1 },
       icon: <Settings className="w-5 h-5" />,
-      description: 'Clean, intuitive heads-up display'
+      description: 'Clean, intuitive heads-up display',
     },
     {
       id: 'menu-system',
@@ -254,8 +248,8 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       cost: 100,
       impact: { gameplay: 5, visuals: 7, audio: 2, story: 2 },
       icon: <Settings className="w-5 h-5" />,
-      description: 'Comprehensive settings and inventory management'
-    }
+      description: 'Comprehensive settings and inventory management',
+    },
   ];
 
   // Game genres
@@ -264,7 +258,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
     { id: 'action', name: 'Action', description: 'Fast-paced action and combat' },
     { id: 'adventure', name: 'Adventure', description: 'Story-driven exploration' },
     { id: 'puzzle', name: 'Puzzle', description: 'Brain-teasing challenges' },
-    { id: 'strategy', name: 'Strategy', description: 'Tactical planning and resource management' }
+    { id: 'strategy', name: 'Strategy', description: 'Tactical planning and resource management' },
   ];
 
   // Target audiences
@@ -272,7 +266,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
     { id: 'casual', name: 'Casual Gamers', description: 'Easy to learn, fun for everyone' },
     { id: 'hardcore', name: 'Hardcore Gamers', description: 'Complex mechanics, high challenge' },
     { id: 'family', name: 'Family Friendly', description: 'Suitable for all ages' },
-    { id: 'competitive', name: 'Competitive Players', description: 'Multiplayer focused, skill-based' }
+    { id: 'competitive', name: 'Competitive Players', description: 'Multiplayer focused, skill-based' },
   ];
 
   // Platforms
@@ -280,15 +274,15 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
     { id: 'pc', name: 'PC', description: 'Windows, Mac, Linux desktop' },
     { id: 'console', name: 'Console', description: 'PlayStation, Xbox, Nintendo Switch' },
     { id: 'mobile', name: 'Mobile', description: 'iOS and Android devices' },
-    { id: 'vr', name: 'VR', description: 'Virtual reality headsets' }
+    { id: 'vr', name: 'VR', description: 'Virtual reality headsets' },
   ];
 
   // Add element to game
   const addElement = () => {
     if (!selectedElement || budget < selectedElement.cost) return;
 
-    setGameElements(prev => [...prev, selectedElement]);
-    setBudget(prev => prev - selectedElement.cost);
+    setGameElements((prev) => [...prev, selectedElement]);
+    setBudget((prev) => prev - selectedElement.cost);
     setSelectedElement(null);
   };
 
@@ -296,24 +290,31 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
   const calculateGameQuality = () => {
     if (!currentProject) return { overall: 0, breakdown: { gameplay: 0, visuals: 0, audio: 0, story: 0 } };
 
-    const breakdown = gameElements.reduce((acc, element) => {
-      acc.gameplay += element.impact.gameplay;
-      acc.visuals += element.impact.visuals;
-      acc.audio += element.impact.audio;
-      acc.story += element.impact.story;
-      return acc;
-    }, { gameplay: 0, visuals: 0, audio: 0, story: 0 });
+    const breakdown = gameElements.reduce(
+      (acc, element) => {
+        acc.gameplay += element.impact.gameplay;
+        acc.visuals += element.impact.visuals;
+        acc.audio += element.impact.audio;
+        acc.story += element.impact.story;
+        return acc;
+      },
+      { gameplay: 0, visuals: 0, audio: 0, story: 0 },
+    );
 
     // Normalize scores (max theoretical per category is around 100)
     const normalizedBreakdown = {
       gameplay: Math.min(100, (breakdown.gameplay / gameElements.length) * 10),
       visuals: Math.min(100, (breakdown.visuals / gameElements.length) * 10),
       audio: Math.min(100, (breakdown.audio / gameElements.length) * 10),
-      story: Math.min(100, (breakdown.story / gameElements.length) * 10)
+      story: Math.min(100, (breakdown.story / gameElements.length) * 10),
     };
 
-    const overall = (normalizedBreakdown.gameplay + normalizedBreakdown.visuals + 
-                    normalizedBreakdown.audio + normalizedBreakdown.story) / 4;
+    const overall =
+      (normalizedBreakdown.gameplay +
+        normalizedBreakdown.visuals +
+        normalizedBreakdown.audio +
+        normalizedBreakdown.story) /
+      4;
 
     return { overall, breakdown: normalizedBreakdown };
   };
@@ -329,7 +330,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
       platform: selectedPlatform,
       elements: [],
       totalScore: 0,
-      completionTime: 0
+      completionTime: 0,
     };
 
     setCurrentProject(project);
@@ -340,20 +341,21 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
   // Move to testing phase
   const moveToTesting = () => {
     setGamePhase('testing');
-    
+
     setTimeout(() => {
       const quality = calculateGameQuality();
       const timeBonus = timeLeft > 30 ? 200 : timeLeft > 10 ? 100 : 50;
       const budgetBonus = budget > 500 ? 150 : budget > 200 ? 100 : 50;
-      const elementVarietyBonus = new Set(gameElements.map(e => e.type)).size * 50;
-      
-      const finalScore = Math.max(0, Math.min(1000, 
-        quality.overall * 5 + timeBonus + budgetBonus + elementVarietyBonus
-      ));
-      
+      const elementVarietyBonus = new Set(gameElements.map((e) => e.type)).size * 50;
+
+      const finalScore = Math.max(
+        0,
+        Math.min(1000, quality.overall * 5 + timeBonus + budgetBonus + elementVarietyBonus),
+      );
+
       setScore(finalScore);
       setGamePhase('results');
-      
+
       setTimeout(() => {
         onComplete(true, finalScore);
       }, 3000);
@@ -367,12 +369,8 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🎮</div>
-            <h1 className="text-4xl font-bold text-white mb-4">
-              Game Design Studio 3D
-            </h1>
-            <p className="text-xl text-purple-100 mb-8">
-              Create your own 3D video game from concept to completion
-            </p>
+            <h1 className="text-4xl font-bold text-white mb-4">Game Design Studio 3D</h1>
+            <p className="text-xl text-purple-100 mb-8">Create your own 3D video game from concept to completion</p>
           </div>
 
           <div className="bg-black bg-opacity-30 rounded-xl p-8 mb-8">
@@ -405,7 +403,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
             <div className="bg-black bg-opacity-30 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-4">Choose Genre</h3>
               <div className="space-y-3">
-                {gameGenres.map(genre => (
+                {gameGenres.map((genre) => (
                   <div
                     key={genre.id}
                     onClick={() => setSelectedGenre(genre.id)}
@@ -426,7 +424,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
             <div className="bg-black bg-opacity-30 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-4">Target Audience</h3>
               <div className="space-y-3">
-                {targetAudiences.map(audience => (
+                {targetAudiences.map((audience) => (
                   <div
                     key={audience.id}
                     onClick={() => setSelectedAudience(audience.id)}
@@ -447,7 +445,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
             <div className="bg-black bg-opacity-30 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-4">Platform</h3>
               <div className="space-y-3">
-                {platforms.map(platform => (
+                {platforms.map((platform) => (
                   <div
                     key={platform.id}
                     onClick={() => setSelectedPlatform(platform.id)}
@@ -520,40 +518,40 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
             <div className="bg-black bg-opacity-30 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-white mb-4">Game Elements Library</h2>
               <div className="space-y-3 max-h-96 overflow-y-auto">
-                {availableElements.filter(element => 
-                  !gameElements.some(selected => selected.id === element.id)
-                ).map((element) => (
-                  <div
-                    key={element.id}
-                    onClick={() => setSelectedElement(element)}
-                    className={`p-4 rounded-lg cursor-pointer transition-all ${
-                      selectedElement?.id === element.id
-                        ? 'bg-purple-600 bg-opacity-50 border-2 border-purple-400'
-                        : 'bg-white bg-opacity-10 hover:bg-opacity-20'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <div className="text-purple-400 mr-3">{element.icon}</div>
-                        <div>
-                          <h3 className="font-semibold text-white">{element.name}</h3>
-                          <div className="text-sm text-purple-100 capitalize">{element.type}</div>
+                {availableElements
+                  .filter((element) => !gameElements.some((selected) => selected.id === element.id))
+                  .map((element) => (
+                    <div
+                      key={element.id}
+                      onClick={() => setSelectedElement(element)}
+                      className={`p-4 rounded-lg cursor-pointer transition-all ${
+                        selectedElement?.id === element.id
+                          ? 'bg-purple-600 bg-opacity-50 border-2 border-purple-400'
+                          : 'bg-white bg-opacity-10 hover:bg-opacity-20'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center">
+                          <div className="text-purple-400 mr-3">{element.icon}</div>
+                          <div>
+                            <h3 className="font-semibold text-white">{element.name}</h3>
+                            <div className="text-sm text-purple-100 capitalize">{element.type}</div>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-yellow-400 font-semibold">{element.cost} pts</div>
+                          <div className="text-sm text-purple-100">Level {element.complexity}</div>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <div className="text-yellow-400 font-semibold">{element.cost} pts</div>
-                        <div className="text-sm text-purple-100">Level {element.complexity}</div>
-                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
 
               {selectedElement && (
                 <div className="mt-6 p-4 bg-purple-600 bg-opacity-20 rounded-lg">
                   <h3 className="font-semibold text-white mb-2">{selectedElement.name}</h3>
                   <p className="text-purple-100 text-sm mb-4">{selectedElement.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-sm">
                       <div className="text-purple-100">Impact Scores:</div>
@@ -581,14 +579,20 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
             {/* Current Game */}
             <div className="bg-black bg-opacity-30 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-white mb-4">Your Game Project</h2>
-              
+
               {currentProject && (
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-white mb-2">{currentProject.name}</h3>
                   <div className="text-purple-100 text-sm space-y-1">
-                    <div>Genre: <span className="text-white capitalize">{currentProject.genre}</span></div>
-                    <div>Audience: <span className="text-white capitalize">{currentProject.targetAudience}</span></div>
-                    <div>Platform: <span className="text-white capitalize">{currentProject.platform}</span></div>
+                    <div>
+                      Genre: <span className="text-white capitalize">{currentProject.genre}</span>
+                    </div>
+                    <div>
+                      Audience: <span className="text-white capitalize">{currentProject.targetAudience}</span>
+                    </div>
+                    <div>
+                      Platform: <span className="text-white capitalize">{currentProject.platform}</span>
+                    </div>
                   </div>
                 </div>
               )}
@@ -601,7 +605,10 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
               ) : (
                 <div className="space-y-3 max-h-80 overflow-y-auto mb-6">
                   {gameElements.map((element, index) => (
-                    <div key={index} className="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3">
+                    <div
+                      key={index}
+                      className="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3"
+                    >
                       <div className="flex items-center">
                         <div className="text-purple-400 mr-3">{element.icon}</div>
                         <div>
@@ -646,10 +653,9 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
                   Move to Testing Phase
                 </button>
                 <div className="text-center text-sm text-purple-100">
-                  {gameElements.length < 3 ? 
-                    `Add at least ${3 - gameElements.length} more elements to continue` :
-                    'Ready to test your game!'
-                  }
+                  {gameElements.length < 3
+                    ? `Add at least ${3 - gameElements.length} more elements to continue`
+                    : 'Ready to test your game!'}
                 </div>
               </div>
             </div>
@@ -685,7 +691,7 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
   // Render results phase
   if (gamePhase === 'results') {
     const quality = calculateGameQuality();
-    
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-red-900 p-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -713,18 +719,21 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
             </div>
 
             <div className="text-lg text-purple-100 mb-6">
-              {score > 800 ? '🌟 Masterpiece! Your game is ready for global release!' :
-               score > 600 ? '🎮 Great game! Players will love this experience!' :
-               score > 400 ? '👍 Good effort! With some polish, this could be amazing!' :
-               '🛠️ Learning experience! Game development is challenging but rewarding!'}
+              {score > 800
+                ? '🌟 Masterpiece! Your game is ready for global release!'
+                : score > 600
+                  ? '🎮 Great game! Players will love this experience!'
+                  : score > 400
+                    ? '👍 Good effort! With some polish, this could be amazing!'
+                    : '🛠️ Learning experience! Game development is challenging but rewarding!'}
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">Game Components</h3>
                 <div className="space-y-2">
-                  {['character', 'environment', 'mechanic', 'story', 'audio', 'ui'].map(type => {
-                    const count = gameElements.filter(e => e.type === type).length;
+                  {['character', 'environment', 'mechanic', 'story', 'audio', 'ui'].map((type) => {
+                    const count = gameElements.filter((e) => e.type === type).length;
                     return count > 0 ? (
                       <div key={type} className="flex justify-between items-center text-purple-100">
                         <span className="capitalize">{type}s:</span>
@@ -759,10 +768,18 @@ const GameDesignStudio3DGame: React.FC<GameDesignStudio3DProps> = ({
                 <h3 className="text-xl font-semibold text-white mb-4">Project Info</h3>
                 {currentProject && (
                   <div className="space-y-2 text-purple-100">
-                    <div>Genre: <span className="text-white capitalize">{currentProject.genre}</span></div>
-                    <div>Audience: <span className="text-white capitalize">{currentProject.targetAudience}</span></div>
-                    <div>Platform: <span className="text-white capitalize">{currentProject.platform}</span></div>
-                    <div>Budget Used: <span className="text-white">{1000 - budget}/1000 pts</span></div>
+                    <div>
+                      Genre: <span className="text-white capitalize">{currentProject.genre}</span>
+                    </div>
+                    <div>
+                      Audience: <span className="text-white capitalize">{currentProject.targetAudience}</span>
+                    </div>
+                    <div>
+                      Platform: <span className="text-white capitalize">{currentProject.platform}</span>
+                    </div>
+                    <div>
+                      Budget Used: <span className="text-white">{1000 - budget}/1000 pts</span>
+                    </div>
                   </div>
                 )}
               </div>

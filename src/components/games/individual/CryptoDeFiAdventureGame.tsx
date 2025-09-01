@@ -1,14 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  TrendingUp, 
-  TrendingDown,
-  Coins,
-  Target,
-  Play,
-  RotateCcw,
-  Award,
-  CheckCircle
-} from 'lucide-react';
+import { TrendingUp, TrendingDown, Coins, Target, Play, RotateCcw, Award, CheckCircle } from 'lucide-react';
 
 interface CryptoDeFiAdventureProps {
   onComplete: (success: boolean, score: number) => void;
@@ -61,11 +52,7 @@ interface MarketEvent {
   severity: number; // 1-10
 }
 
-const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
-  onComplete,
-  timeLeft,
-  onRestart,
-}) => {
+const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({ onComplete, timeLeft, onRestart }) => {
   // Game state
   const [gamePhase, setGamePhase] = useState<'setup' | 'trading' | 'defi' | 'event' | 'results'>('setup');
   const [isStarted, setIsStarted] = useState(false);
@@ -99,7 +86,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       volatility: 7,
       stakingReward: 0,
       icon: '₿',
-      description: 'The original cryptocurrency and store of value'
+      description: 'The original cryptocurrency and store of value',
     },
     {
       id: 'ethereum',
@@ -112,7 +99,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       volatility: 8,
       stakingReward: 5.2,
       icon: 'Ξ',
-      description: 'Smart contract platform powering DeFi ecosystem'
+      description: 'Smart contract platform powering DeFi ecosystem',
     },
     {
       id: 'solana',
@@ -125,7 +112,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       volatility: 9,
       stakingReward: 7.1,
       icon: '◎',
-      description: 'High-performance blockchain for DeFi applications'
+      description: 'High-performance blockchain for DeFi applications',
     },
     {
       id: 'cardano',
@@ -138,7 +125,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       volatility: 6,
       stakingReward: 4.5,
       icon: '₳',
-      description: 'Sustainable proof-of-stake blockchain'
+      description: 'Sustainable proof-of-stake blockchain',
     },
     {
       id: 'polygon',
@@ -151,8 +138,8 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       volatility: 8,
       stakingReward: 8.5,
       icon: '⬡',
-      description: 'Ethereum scaling solution with low fees'
-    }
+      description: 'Ethereum scaling solution with low fees',
+    },
   ];
 
   // Available DeFi protocols
@@ -167,7 +154,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       lockPeriod: 0,
       description: 'Decentralized lending and borrowing protocol',
       icon: '🏦',
-      rewards: ['Interest earning', 'COMP tokens']
+      rewards: ['Interest earning', 'COMP tokens'],
     },
     {
       id: 'uniswap',
@@ -179,7 +166,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       lockPeriod: 0,
       description: 'Automated market maker for token swaps',
       icon: '🦄',
-      rewards: ['Trading fees', 'UNI tokens', 'Impermanent loss risk']
+      rewards: ['Trading fees', 'UNI tokens', 'Impermanent loss risk'],
     },
     {
       id: 'aave',
@@ -191,7 +178,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       lockPeriod: 0,
       description: 'Open source liquidity protocol',
       icon: '👻',
-      rewards: ['Variable interest', 'AAVE tokens']
+      rewards: ['Variable interest', 'AAVE tokens'],
     },
     {
       id: 'yearn',
@@ -203,7 +190,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       lockPeriod: 7,
       description: 'Automated yield farming strategies',
       icon: '🌾',
-      rewards: ['Optimized yield', 'YFI tokens', 'Auto-compounding']
+      rewards: ['Optimized yield', 'YFI tokens', 'Auto-compounding'],
     },
     {
       id: 'curve',
@@ -215,7 +202,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       lockPeriod: 0,
       description: 'Stablecoin and similar asset trading',
       icon: '📈',
-      rewards: ['Trading fees', 'CRV tokens', 'Low slippage']
+      rewards: ['Trading fees', 'CRV tokens', 'Low slippage'],
     },
     {
       id: 'lido',
@@ -227,8 +214,8 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       lockPeriod: 30,
       description: 'Liquid staking for Ethereum 2.0',
       icon: '🔒',
-      rewards: ['ETH staking rewards', 'stETH tokens', 'Liquid staking']
-    }
+      rewards: ['ETH staking rewards', 'stETH tokens', 'Liquid staking'],
+    },
   ];
 
   // Market events
@@ -237,49 +224,49 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
       id: 'regulation-news',
       title: 'Positive Crypto Regulation',
       description: 'Major country announces crypto-friendly regulations',
-      impact: { 'BTC': 8, 'ETH': 12, 'SOL': 15, 'ADA': 10, 'MATIC': 18 },
+      impact: { BTC: 8, ETH: 12, SOL: 15, ADA: 10, MATIC: 18 },
       type: 'positive',
-      severity: 6
+      severity: 6,
     },
     {
       id: 'defi-hack',
       title: 'DeFi Protocol Exploit',
       description: 'Major DeFi protocol suffers security breach',
-      impact: { 'BTC': -3, 'ETH': -8, 'SOL': -12, 'ADA': -5, 'MATIC': -15 },
+      impact: { BTC: -3, ETH: -8, SOL: -12, ADA: -5, MATIC: -15 },
       type: 'negative',
-      severity: 7
+      severity: 7,
     },
     {
       id: 'institutional-adoption',
       title: 'Major Institution Adopts Crypto',
       description: 'Fortune 500 company adds crypto to balance sheet',
-      impact: { 'BTC': 15, 'ETH': 10, 'SOL': 8, 'ADA': 6, 'MATIC': 12 },
+      impact: { BTC: 15, ETH: 10, SOL: 8, ADA: 6, MATIC: 12 },
       type: 'positive',
-      severity: 8
+      severity: 8,
     },
     {
       id: 'market-crash',
       title: 'Crypto Market Correction',
       description: 'Broader market downturn affects crypto prices',
-      impact: { 'BTC': -20, 'ETH': -25, 'SOL': -30, 'ADA': -18, 'MATIC': -28 },
+      impact: { BTC: -20, ETH: -25, SOL: -30, ADA: -18, MATIC: -28 },
       type: 'negative',
-      severity: 9
+      severity: 9,
     },
     {
       id: 'ethereum-upgrade',
       title: 'Ethereum Network Upgrade',
       description: 'Successful implementation of major Ethereum improvement',
-      impact: { 'BTC': 2, 'ETH': 18, 'SOL': 5, 'ADA': 3, 'MATIC': 22 },
+      impact: { BTC: 2, ETH: 18, SOL: 5, ADA: 3, MATIC: 22 },
       type: 'positive',
-      severity: 7
-    }
+      severity: 7,
+    },
   ];
 
   // Calculate total portfolio value
   const calculatePortfolioValue = useCallback(() => {
     let totalPortfolioValue = wallet;
-    
-    positions.forEach(position => {
+
+    positions.forEach((position) => {
       if (position.type === 'crypto') {
         const crypto = position.asset as CryptoCurrency;
         totalPortfolioValue += position.amount * crypto.price;
@@ -302,14 +289,14 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
 
     const amount = tradeAmount / selectedCrypto.price;
     const existingPosition = positions.find(
-      p => p.type === 'crypto' && (p.asset as CryptoCurrency).id === selectedCrypto.id
+      (p) => p.type === 'crypto' && (p.asset as CryptoCurrency).id === selectedCrypto.id,
     );
 
     if (existingPosition) {
-      const updatedPositions = positions.map(position => 
+      const updatedPositions = positions.map((position) =>
         position.type === 'crypto' && (position.asset as CryptoCurrency).id === selectedCrypto.id
           ? { ...position, amount: position.amount + amount, value: position.value + tradeAmount }
-          : position
+          : position,
       );
       setPositions(updatedPositions);
     } else {
@@ -319,53 +306,54 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
         amount,
         value: tradeAmount,
         entryPrice: selectedCrypto.price,
-        startTime: Date.now()
+        startTime: Date.now(),
       };
-      setPositions(prev => [...prev, newPosition]);
+      setPositions((prev) => [...prev, newPosition]);
     }
 
-    setWallet(prev => prev - tradeAmount);
+    setWallet((prev) => prev - tradeAmount);
     setTradeAmount(0);
     setSelectedCrypto(null);
   };
 
   // Enter DeFi protocol
   const enterDeFi = () => {
-    if (!selectedProtocol || tradeAmount <= 0 || tradeAmount < selectedProtocol.minDeposit || tradeAmount > wallet) return;
+    if (!selectedProtocol || tradeAmount <= 0 || tradeAmount < selectedProtocol.minDeposit || tradeAmount > wallet)
+      return;
 
     const newPosition: UserPosition = {
       type: 'defi',
       asset: selectedProtocol,
       amount: tradeAmount,
       value: tradeAmount,
-      startTime: Date.now()
+      startTime: Date.now(),
     };
 
-    setPositions(prev => [...prev, newPosition]);
-    setWallet(prev => prev - tradeAmount);
+    setPositions((prev) => [...prev, newPosition]);
+    setWallet((prev) => prev - tradeAmount);
     setTradeAmount(0);
     setSelectedProtocol(null);
   };
 
   // Apply market event
   const applyMarketEvent = (event: MarketEvent) => {
-    const updatedPositions = positions.map(position => {
+    const updatedPositions = positions.map((position) => {
       if (position.type === 'crypto') {
         const crypto = position.asset as CryptoCurrency;
         const impact = event.impact[crypto.symbol] || 0;
         const newPrice = crypto.price * (1 + impact / 100);
-        
+
         return {
           ...position,
           asset: { ...crypto, price: Math.max(newPrice, crypto.price * 0.1) }, // Minimum 10% of original
-          value: position.value * (1 + impact / 100)
+          value: position.value * (1 + impact / 100),
         };
       }
       return position;
     });
 
     setPositions(updatedPositions);
-    setEventHistory(prev => [...prev, event]);
+    setEventHistory((prev) => [...prev, event]);
   };
 
   // Start game
@@ -379,7 +367,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
     const randomEvent = marketEvents[Math.floor(Math.random() * marketEvents.length)];
     setCurrentEvent(randomEvent);
     setGamePhase('event');
-    
+
     setTimeout(() => {
       applyMarketEvent(randomEvent);
       setCurrentEvent(null);
@@ -395,9 +383,9 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
   const endGame = () => {
     setGamePhase('results');
     const returnPercentage = (totalReturns / 10000) * 100;
-    const finalScore = Math.max(0, Math.min(1000, 500 + (returnPercentage * 15)));
+    const finalScore = Math.max(0, Math.min(1000, 500 + returnPercentage * 15));
     setScore(finalScore);
-    
+
     setTimeout(() => {
       onComplete(true, finalScore);
     }, 3000);
@@ -412,7 +400,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
     if (timeLeft === 45 && gamePhase !== 'setup' && gamePhase !== 'results') {
       triggerMarketEvent();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeLeft, gamePhase]);
 
   // Render setup phase
@@ -422,9 +410,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">₿</div>
-            <h1 className="text-4xl font-bold text-white mb-4">
-              Crypto & DeFi Adventure
-            </h1>
+            <h1 className="text-4xl font-bold text-white mb-4">Crypto & DeFi Adventure</h1>
             <p className="text-xl text-blue-100 mb-8">
               Explore cryptocurrency trading and decentralized finance protocols
             </p>
@@ -465,12 +451,15 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                         <span className="text-2xl mr-3">{crypto.icon}</span>
                         <div>
                           <h3 className="font-semibold text-white">{crypto.name}</h3>
-                          <div className="text-sm text-blue-100">${crypto.price.toLocaleString()}</div>
+                          <div className="text-sm text-gray-200">${crypto.price.toLocaleString()}</div>
                         </div>
                       </div>
                       <div className={`flex items-center ${crypto.change24h >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                         {crypto.change24h >= 0 ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
-                        <span className="ml-1">{crypto.change24h > 0 ? '+' : ''}{crypto.change24h}%</span>
+                        <span className="ml-1">
+                          {crypto.change24h > 0 ? '+' : ''}
+                          {crypto.change24h}%
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -488,12 +477,10 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                         <span className="text-2xl mr-3">{protocol.icon}</span>
                         <div>
                           <h3 className="font-semibold text-white">{protocol.name}</h3>
-                          <div className="text-sm text-blue-100">{protocol.type}</div>
+                          <div className="text-sm text-gray-200">{protocol.type}</div>
                         </div>
                       </div>
-                      <div className="text-green-400 font-semibold">
-                        {protocol.apy}% APY
-                      </div>
+                      <div className="text-green-400 font-semibold">{protocol.apy}% APY</div>
                     </div>
                   </div>
                 ))}
@@ -563,13 +550,18 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                       <div className="flex items-center">
                         <span className="text-2xl mr-3">{crypto.icon}</span>
                         <div>
-                          <h3 className="font-semibold text-white">{crypto.name} ({crypto.symbol})</h3>
-                          <div className="text-sm text-blue-100">${crypto.price.toLocaleString()}</div>
+                          <h3 className="font-semibold text-white">
+                            {crypto.name} ({crypto.symbol})
+                          </h3>
+                          <div className="text-sm text-gray-200">${crypto.price.toLocaleString()}</div>
                         </div>
                       </div>
                       <div className={`flex items-center ${crypto.change24h >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                         {crypto.change24h >= 0 ? <TrendingUp size={16} /> : <TrendingDown size={16} />}
-                        <span className="ml-1">{crypto.change24h > 0 ? '+' : ''}{crypto.change24h}%</span>
+                        <span className="ml-1">
+                          {crypto.change24h > 0 ? '+' : ''}
+                          {crypto.change24h}%
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -579,7 +571,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
               {selectedCrypto && (
                 <div className="mt-6 p-4 bg-purple-600 bg-opacity-20 rounded-lg">
                   <h3 className="font-semibold text-white mb-2">Buy {selectedCrypto.name}</h3>
-                  <p className="text-blue-100 text-sm mb-4">{selectedCrypto.description}</p>
+                  <p className="text-gray-200 text-sm mb-4">{selectedCrypto.description}</p>
                   <div className="flex items-center space-x-4">
                     <input
                       type="number"
@@ -598,8 +590,9 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                       Buy
                     </button>
                   </div>
-                  <div className="text-sm text-blue-100 mt-2">
-                    You&apos;ll get: {tradeAmount > 0 ? (tradeAmount / selectedCrypto.price).toFixed(4) : '0'} {selectedCrypto.symbol}
+                  <div className="text-sm text-gray-200 mt-2">
+                    You&apos;ll get: {tradeAmount > 0 ? (tradeAmount / selectedCrypto.price).toFixed(4) : '0'}{' '}
+                    {selectedCrypto.symbol}
                   </div>
                 </div>
               )}
@@ -609,7 +602,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
             <div className="bg-black bg-opacity-30 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-white mb-4">Your Positions</h2>
               {positions.length === 0 ? (
-                <div className="text-center text-blue-100 py-8">
+                <div className="text-center text-gray-200 py-8">
                   <Coins size={48} className="mx-auto mb-4 opacity-50" />
                   <p>No positions yet. Start trading or explore DeFi!</p>
                 </div>
@@ -623,7 +616,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                             <span className="text-2xl mr-3">{(position.asset as CryptoCurrency).icon}</span>
                             <div>
                               <h3 className="font-semibold text-white">{position.asset.name}</h3>
-                              <div className="text-sm text-blue-100">
+                              <div className="text-sm text-gray-200">
                                 {position.amount.toFixed(4)} {(position.asset as CryptoCurrency).symbol}
                               </div>
                             </div>
@@ -632,11 +625,15 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                             <div className="font-semibold text-white">
                               ${(position.amount * (position.asset as CryptoCurrency).price).toLocaleString()}
                             </div>
-                            <div className={`text-sm ${
-                              position.amount * (position.asset as CryptoCurrency).price > position.value ? 'text-green-400' : 'text-red-400'
-                            }`}>
-                              {position.entryPrice ? 
-                                `${(((position.asset as CryptoCurrency).price - position.entryPrice) / position.entryPrice * 100).toFixed(1)}%` 
+                            <div
+                              className={`text-sm ${
+                                position.amount * (position.asset as CryptoCurrency).price > position.value
+                                  ? 'text-green-400'
+                                  : 'text-red-400'
+                              }`}
+                            >
+                              {position.entryPrice
+                                ? `${((((position.asset as CryptoCurrency).price - position.entryPrice) / position.entryPrice) * 100).toFixed(1)}%`
                                 : '0%'}
                             </div>
                           </div>
@@ -647,22 +644,19 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                             <span className="text-2xl mr-3">{(position.asset as DeFiProtocol).icon}</span>
                             <div>
                               <h3 className="font-semibold text-white">{position.asset.name}</h3>
-                              <div className="text-sm text-blue-100">{(position.asset as DeFiProtocol).type}</div>
+                              <div className="text-sm text-gray-200">{(position.asset as DeFiProtocol).type}</div>
                             </div>
                           </div>
                           <div className="text-right">
                             <div className="font-semibold text-white">${position.value.toLocaleString()}</div>
-                            <div className="text-green-400 text-sm">
-                              {(position.asset as DeFiProtocol).apy}% APY
-                            </div>
+                            <div className="text-green-400 text-sm">{(position.asset as DeFiProtocol).apy}% APY</div>
                           </div>
                         </div>
                       )}
                     </div>
                   ))}
                 </div>
-              )}
-
+              )}{' '}
               <div className="mt-6 text-center">
                 <button
                   onClick={() => setGamePhase('defi')}
@@ -691,7 +685,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
         <div className="max-w-6xl mx-auto">
           <div className="bg-black bg-opacity-30 rounded-xl p-6 mb-6">
             <h1 className="text-3xl font-bold text-white mb-4 text-center">🌾 DeFi Protocols</h1>
-            <p className="text-xl text-green-100 text-center">Earn yield through decentralized finance</p>
+            <p className="text-xl text-gray-200 text-center">Earn yield through decentralized finance</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -700,47 +694,43 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                 key={protocol.id}
                 onClick={() => setSelectedProtocol(protocol)}
                 className={`bg-black bg-opacity-30 rounded-xl p-6 cursor-pointer transition-all ${
-                  selectedProtocol?.id === protocol.id
-                    ? 'ring-2 ring-green-400 bg-opacity-50'
-                    : 'hover:bg-opacity-40'
+                  selectedProtocol?.id === protocol.id ? 'ring-2 ring-green-400 bg-opacity-50' : 'hover:bg-opacity-40'
                 }`}
               >
                 <div className="text-center mb-4">
                   <div className="text-4xl mb-2">{protocol.icon}</div>
                   <h3 className="text-xl font-bold text-white">{protocol.name}</h3>
-                  <div className="text-green-100 capitalize">{protocol.type}</div>
-                </div>
-
+                  <div className="text-gray-200 capitalize">{protocol.type}</div>
+                </div>{' '}
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="text-green-100">APY</span>
+                    <span className="text-gray-200">APY</span>
                     <span className="text-green-400 font-bold">{protocol.apy}%</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-green-100">Risk</span>
-                    <span className={`font-bold ${
-                      protocol.risk <= 3 ? 'text-green-400' : 
-                      protocol.risk <= 6 ? 'text-yellow-400' : 'text-red-400'
-                    }`}>
+                    <span className="text-gray-200">Risk</span>
+                    <span
+                      className={`font-bold ${
+                        protocol.risk <= 3 ? 'text-green-400' : protocol.risk <= 6 ? 'text-yellow-400' : 'text-red-400'
+                      }`}
+                    >
                       {protocol.risk}/10
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-green-100">Min Deposit</span>
+                    <span className="text-gray-200">Min Deposit</span>
                     <span className="text-white">${protocol.minDeposit}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-green-100">Lock Period</span>
+                    <span className="text-gray-200">Lock Period</span>
                     <span className="text-white">{protocol.lockPeriod} days</span>
                   </div>
                 </div>
-
-                <p className="text-green-100 text-sm mt-4 mb-4">{protocol.description}</p>
-
+                <p className="text-gray-200 text-sm mt-4 mb-4">{protocol.description}</p>
                 <div className="space-y-2">
                   <div className="text-sm font-semibold text-white">Rewards:</div>
                   {protocol.rewards.map((reward, index) => (
-                    <div key={index} className="text-xs text-green-100 flex items-center">
+                    <div key={index} className="text-xs text-gray-200 flex items-center">
                       <CheckCircle size={12} className="mr-1 text-green-400" />
                       {reward}
                     </div>
@@ -755,23 +745,28 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
               <h3 className="text-2xl font-bold text-white mb-4">Enter {selectedProtocol.name}</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <p className="text-green-100 mb-4">{selectedProtocol.description}</p>
+                  <p className="text-gray-200 mb-4">{selectedProtocol.description}</p>
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-green-100">Expected APY:</span>
+                      <span className="text-gray-200">Expected APY:</span>
                       <span className="text-green-400 font-bold">{selectedProtocol.apy}%</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-green-100">Risk Level:</span>
-                      <span className={`font-bold ${
-                        selectedProtocol.risk <= 3 ? 'text-green-400' : 
-                        selectedProtocol.risk <= 6 ? 'text-yellow-400' : 'text-red-400'
-                      }`}>
+                      <span className="text-gray-200">Risk Level:</span>
+                      <span
+                        className={`font-bold ${
+                          selectedProtocol.risk <= 3
+                            ? 'text-green-400'
+                            : selectedProtocol.risk <= 6
+                              ? 'text-yellow-400'
+                              : 'text-red-400'
+                        }`}
+                      >
                         {selectedProtocol.risk}/10
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-green-100">Lock Period:</span>
+                      <span className="text-gray-200">Lock Period:</span>
                       <span className="text-white">{selectedProtocol.lockPeriod} days</span>
                     </div>
                   </div>
@@ -779,9 +774,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                 <div>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-green-100 text-sm font-medium mb-2">
-                        Deposit Amount (USDC)
-                      </label>
+                      <label className="block text-gray-200 text-sm font-medium mb-2">Deposit Amount (USDC)</label>
                       <input
                         type="number"
                         value={tradeAmount}
@@ -792,8 +785,9 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                         className="w-full px-4 py-2 bg-white bg-opacity-20 text-white rounded border border-green-400 focus:border-green-300 focus:outline-none"
                       />
                     </div>
-                    <div className="text-sm text-green-100">
-                      Estimated annual yield: ${tradeAmount > 0 ? (tradeAmount * selectedProtocol.apy / 100).toLocaleString() : '0'}
+                    <div className="text-sm text-gray-200">
+                      Estimated annual yield: $
+                      {tradeAmount > 0 ? ((tradeAmount * selectedProtocol.apy) / 100).toLocaleString() : '0'}
                     </div>
                     <button
                       onClick={enterDeFi}
@@ -838,9 +832,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
             <div className="bg-black bg-opacity-30 rounded-xl p-8">
               <h2 className="text-2xl font-bold text-white mb-4">{currentEvent.title}</h2>
               <p className="text-xl text-orange-100 mb-6">{currentEvent.description}</p>
-              <div className="text-lg text-white">
-                Analyzing impact on your portfolio...
-              </div>
+              <div className="text-lg text-white">Analyzing impact on your portfolio...</div>
             </div>
           )}
         </div>
@@ -851,7 +843,7 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
   // Render results phase
   if (gamePhase === 'results') {
     const returnPercentage = (totalReturns / 10000) * 100;
-    
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -866,7 +858,8 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
               </div>
               <div>
                 <div className={`text-3xl font-bold ${returnPercentage >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                  {returnPercentage > 0 ? '+' : ''}{returnPercentage.toFixed(1)}%
+                  {returnPercentage > 0 ? '+' : ''}
+                  {returnPercentage.toFixed(1)}%
                 </div>
                 <div className="text-blue-100">Total Return</div>
               </div>
@@ -877,10 +870,13 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
             </div>
 
             <div className="text-lg text-blue-100 mb-6">
-              {returnPercentage > 20 ? '🚀 Outstanding crypto performance!' :
-               returnPercentage > 10 ? '💎 Great DeFi strategy!' :
-               returnPercentage > 0 ? '✅ Positive adventure outcome!' :
-               '📚 Learning experience - crypto is volatile!'}
+              {returnPercentage > 20
+                ? '🚀 Outstanding crypto performance!'
+                : returnPercentage > 10
+                  ? '💎 Great DeFi strategy!'
+                  : returnPercentage > 0
+                    ? '✅ Positive adventure outcome!'
+                    : '📚 Learning experience - crypto is volatile!'}
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -889,10 +885,9 @@ const CryptoDeFiAdventureGame: React.FC<CryptoDeFiAdventureProps> = ({
                 {positions.map((position, index) => (
                   <div key={index} className="flex justify-between items-center mb-2 text-blue-100">
                     <span>
-                      {position.type === 'crypto' ? 
-                        `${(position.asset as CryptoCurrency).icon} ${position.asset.name}` :
-                        `${(position.asset as DeFiProtocol).icon} ${position.asset.name}`
-                      }
+                      {position.type === 'crypto'
+                        ? `${(position.asset as CryptoCurrency).icon} ${position.asset.name}`
+                        : `${(position.asset as DeFiProtocol).icon} ${position.asset.name}`}
                     </span>
                     <span>${position.value.toLocaleString()}</span>
                   </div>

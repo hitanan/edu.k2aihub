@@ -3,6 +3,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { Trophy, Clock, X, ArrowLeft, RotateCcw } from 'lucide-react';
+import FullscreenButton from './FullscreenButton';
 import {
   GAME_DATA,
   STEMExperimentLabGameData,
@@ -502,15 +503,17 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'ai-art-creation-lab':
         return <AIArtCreationLabGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'future-skills-integration-challenge':
-        return <FutureSkillsIntegrationChallengeGame 
-          onComplete={(score: number) => {
-            // Determine success based on score
-            const success = score > 50; // Adjust threshold as needed
-            endGame(success, score);
-          }} 
-          timeLeft={timeLeft} 
-          onRestart={() => restartGame()} 
-        />;
+        return (
+          <FutureSkillsIntegrationChallengeGame
+            onComplete={(score: number) => {
+              // Determine success based on score
+              const success = score > 50; // Adjust threshold as needed
+              endGame(success, score);
+            }}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
       case 'ethical-hacking-simulator':
         return <EthicalHackingSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'gene-editing-lab-3d':
@@ -624,6 +627,18 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
             </div>
 
             <div className="flex items-center space-x-6">
+              {/* Fullscreen Button for 3D Games */}
+              {game.category === '3D' && (
+                <FullscreenButton
+                  targetElementId="game-container"
+                  size="small"
+                  position="relative"
+                  showIcon={true}
+                  buttonText="Toàn màn hình"
+                  className="hidden md:flex"
+                />
+              )}
+
               {/* Timer with visual warning */}
               <div
                 className={`flex items-center space-x-1 ${timeLeft <= 30 ? 'text-red-400 animate-pulse' : timeLeft <= 60 ? 'text-yellow-400' : 'text-emerald-400'}`}
@@ -708,7 +723,9 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       </div>
 
       {/* Game Content */}
-      <div className="max-w-4xl mx-auto">{renderGameContent()}</div>
+      <div id="game-container" data-game-container className="max-w-4xl mx-auto">
+        {renderGameContent()}
+      </div>
 
       {/* Game Completion Celebration */}
       <GameCompletionCelebration

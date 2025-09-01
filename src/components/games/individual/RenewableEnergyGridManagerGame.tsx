@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  Zap, 
+import {
+  Zap,
   Sun,
   Wind,
   Droplet,
@@ -17,7 +17,7 @@ import {
   Award,
   Gauge,
   Activity,
-  CloudRain
+  CloudRain,
 } from 'lucide-react';
 
 interface RenewableEnergyGridManagerProps {
@@ -103,7 +103,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
   // Energy sources and consumers
   const [energySources, setEnergySources] = useState<EnergySource[]>([]);
   const [consumers, setConsumers] = useState<EnergyConsumer[]>([]);
-  
+
   // Weather and events
   const [currentWeather, setCurrentWeather] = useState<Weather | null>(null);
   const [currentEvent, setCurrentEvent] = useState<GridEvent | null>(null);
@@ -127,7 +127,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       reliability: 7,
       weatherDependent: true,
       icon: <Sun className="w-6 h-6" />,
-      description: 'Photovoltaic solar panels generating clean energy from sunlight'
+      description: 'Photovoltaic solar panels generating clean energy from sunlight',
     },
     {
       id: 'wind-turbine',
@@ -141,7 +141,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       reliability: 6,
       weatherDependent: true,
       icon: <Wind className="w-6 h-6" />,
-      description: 'Modern wind turbines harnessing wind power'
+      description: 'Modern wind turbines harnessing wind power',
     },
     {
       id: 'hydro-dam',
@@ -155,7 +155,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       reliability: 9,
       weatherDependent: false,
       icon: <Droplet className="w-6 h-6" />,
-      description: 'Reliable hydroelectric power from flowing water'
+      description: 'Reliable hydroelectric power from flowing water',
     },
     {
       id: 'nuclear-plant',
@@ -169,7 +169,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       reliability: 10,
       weatherDependent: false,
       icon: <Zap className="w-6 h-6" />,
-      description: 'Clean nuclear power with high reliability'
+      description: 'Clean nuclear power with high reliability',
     },
     {
       id: 'gas-plant',
@@ -183,7 +183,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       reliability: 8,
       weatherDependent: false,
       icon: <Factory className="w-6 h-6" />,
-      description: 'Flexible natural gas power generation'
+      description: 'Flexible natural gas power generation',
     },
     {
       id: 'battery-storage',
@@ -197,8 +197,8 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       reliability: 8,
       weatherDependent: false,
       icon: <Battery className="w-6 h-6" />,
-      description: 'Large-scale battery storage for grid stabilization'
-    }
+      description: 'Large-scale battery storage for grid stabilization',
+    },
   ];
 
   // Energy consumers
@@ -211,7 +211,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       currentDemand: 800,
       priority: 8,
       icon: <Home className="w-6 h-6" />,
-      description: 'Homes and residential buildings'
+      description: 'Homes and residential buildings',
     },
     {
       id: 'commercial',
@@ -221,7 +221,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       currentDemand: 600,
       priority: 7,
       icon: <Factory className="w-6 h-6" />,
-      description: 'Offices, shops, and commercial buildings'
+      description: 'Offices, shops, and commercial buildings',
     },
     {
       id: 'industrial',
@@ -231,8 +231,8 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       currentDemand: 1200,
       priority: 9,
       icon: <Factory className="w-6 h-6" />,
-      description: 'Manufacturing and industrial facilities'
-    }
+      description: 'Manufacturing and industrial facilities',
+    },
   ];
 
   // Weather conditions
@@ -242,29 +242,29 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       solarEfficiency: 1.2,
       windEfficiency: 0.8,
       icon: <Sun className="w-6 h-6" />,
-      description: 'Clear sunny weather, optimal for solar power'
+      description: 'Clear sunny weather, optimal for solar power',
     },
     {
       condition: 'cloudy',
       solarEfficiency: 0.6,
       windEfficiency: 0.9,
       icon: <CloudRain className="w-6 h-6" />,
-      description: 'Cloudy conditions reduce solar efficiency'
+      description: 'Cloudy conditions reduce solar efficiency',
     },
     {
       condition: 'windy',
       solarEfficiency: 0.9,
       windEfficiency: 1.3,
       icon: <Wind className="w-6 h-6" />,
-      description: 'Strong winds boost wind power generation'
+      description: 'Strong winds boost wind power generation',
     },
     {
       condition: 'rainy',
       solarEfficiency: 0.4,
       windEfficiency: 1.1,
       icon: <CloudRain className="w-6 h-6" />,
-      description: 'Rain reduces solar output but helps wind'
-    }
+      description: 'Rain reduces solar output but helps wind',
+    },
   ];
 
   // Grid events
@@ -275,7 +275,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       description: 'Hot summer day increases air conditioning demand',
       impact: { demand: 25 },
       duration: 5,
-      severity: 6
+      severity: 6,
     },
     {
       id: 'storm-damage',
@@ -283,7 +283,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       description: 'Severe storm affects wind and solar generation',
       impact: { wind: -40, solar: -60 },
       duration: 8,
-      severity: 8
+      severity: 8,
     },
     {
       id: 'industrial-expansion',
@@ -291,7 +291,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       description: 'New factory comes online, increasing baseline demand',
       impact: { demand: 15 },
       duration: 15,
-      severity: 5
+      severity: 5,
     },
     {
       id: 'equipment-failure',
@@ -299,7 +299,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       description: 'Scheduled maintenance reduces power plant output',
       impact: { wind: -20, solar: -15 },
       duration: 6,
-      severity: 4
+      severity: 4,
     },
     {
       id: 'heat-wave',
@@ -307,8 +307,8 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       description: 'Extreme heat increases solar efficiency but spikes demand',
       impact: { demand: 30, solar: 20 },
       duration: 7,
-      severity: 7
-    }
+      severity: 7,
+    },
   ];
 
   // Add energy source to grid
@@ -318,11 +318,11 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
     const newSources = Array.from({ length: sourceCount }, (_, index) => ({
       ...selectedSource,
       id: `${selectedSource.id}-${Date.now()}-${index}`,
-      output: selectedSource.capacity * (selectedSource.efficiency / 100)
+      output: selectedSource.capacity * (selectedSource.efficiency / 100),
     }));
 
-    setEnergySources(prev => [...prev, ...newSources]);
-    setBudget(prev => prev - (selectedSource.cost * sourceCount));
+    setEnergySources((prev) => [...prev, ...newSources]);
+    setBudget((prev) => prev - selectedSource.cost * sourceCount);
     setSelectedSource(null);
     setSourceCount(1);
   };
@@ -332,7 +332,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
     const totalCap = energySources.reduce((sum, source) => sum + source.capacity, 0);
     const totalOut = energySources.reduce((sum, source) => {
       let output = source.output;
-      
+
       // Apply weather effects
       if (currentWeather && source.weatherDependent) {
         if (source.type === 'solar') {
@@ -341,26 +341,28 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
           output *= currentWeather.windEfficiency;
         }
       }
-      
+
       return sum + output;
     }, 0);
-    
+
     const totalDem = consumers.reduce((sum, consumer) => sum + consumer.currentDemand, 0);
     const emissions = energySources.reduce((sum, source) => {
-      return sum + (source.output * source.carbonEmission);
+      return sum + source.output * source.carbonEmission;
     }, 0);
-    
+
     const renewableSources = ['solar', 'wind', 'hydro', 'nuclear'];
     const renewableOutput = energySources
-      .filter(source => renewableSources.includes(source.type))
+      .filter((source) => renewableSources.includes(source.type))
       .reduce((sum, source) => sum + source.output, 0);
     const renewablePercent = totalOut > 0 ? (renewableOutput / totalOut) * 100 : 0;
-    
+
     // Grid stability calculation
     const supplyDemandRatio = totalOut / totalDem;
     let stability = 100;
-    if (supplyDemandRatio < 0.9) stability = 50; // Under supply
-    else if (supplyDemandRatio > 1.2) stability = 70; // Over supply
+    if (supplyDemandRatio < 0.9)
+      stability = 50; // Under supply
+    else if (supplyDemandRatio > 1.2)
+      stability = 70; // Over supply
     else if (supplyDemandRatio >= 0.95 && supplyDemandRatio <= 1.1) stability = 100; // Optimal
 
     setTotalCapacity(totalCap);
@@ -382,18 +384,18 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
     const randomEvent = gridEvents[Math.floor(Math.random() * gridEvents.length)];
     setCurrentEvent(randomEvent);
     setGamePhase('event');
-    
+
     // Apply event effects
     if (randomEvent.impact.demand) {
-      const newConsumers = consumers.map(consumer => ({
+      const newConsumers = consumers.map((consumer) => ({
         ...consumer,
-        currentDemand: consumer.baseDemand * (1 + randomEvent.impact.demand! / 100)
+        currentDemand: consumer.baseDemand * (1 + randomEvent.impact.demand! / 100),
       }));
       setConsumers(newConsumers);
     }
-    
+
     if (randomEvent.impact.solar || randomEvent.impact.wind || randomEvent.impact.hydro) {
-      const updatedSources = energySources.map(source => {
+      const updatedSources = energySources.map((source) => {
         let outputMultiplier = 1;
         if (source.type === 'solar' && randomEvent.impact.solar) {
           outputMultiplier = 1 + randomEvent.impact.solar / 100;
@@ -402,17 +404,17 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
         } else if (source.type === 'hydro' && randomEvent.impact.hydro) {
           outputMultiplier = 1 + randomEvent.impact.hydro / 100;
         }
-        
+
         return {
           ...source,
-          output: Math.max(0, source.capacity * (source.efficiency / 100) * outputMultiplier)
+          output: Math.max(0, source.capacity * (source.efficiency / 100) * outputMultiplier),
         };
       });
       setEnergySources(updatedSources);
     }
-    
-    setEventHistory(prev => [...prev, randomEvent]);
-    
+
+    setEventHistory((prev) => [...prev, randomEvent]);
+
     setTimeout(() => {
       setCurrentEvent(null);
       if (timeLeft < 20) {
@@ -434,15 +436,15 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
   // End game and calculate score
   const endGame = () => {
     setGamePhase('results');
-    
+
     const efficiencyScore = Math.min(gridStability, 100);
     const renewableScore = renewablePercentage * 2;
     const budgetScore = (budget / 50000000) * 200;
-    const emissionScore = Math.max(0, 200 - (carbonEmissions / 1000));
-    
+    const emissionScore = Math.max(0, 200 - carbonEmissions / 1000);
+
     const finalScore = Math.max(0, Math.min(1000, efficiencyScore + renewableScore + budgetScore + emissionScore));
     setScore(finalScore);
-    
+
     setTimeout(() => {
       onComplete(true, finalScore);
     }, 3000);
@@ -467,7 +469,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
     if (timeLeft === 30 && gamePhase === 'managing') {
       triggerGridEvent();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeLeft, gamePhase]);
 
   // Render setup phase
@@ -477,10 +479,8 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🔋</div>
-            <h1 className="text-4xl font-bold text-white mb-4">
-              Renewable Energy Grid Manager
-            </h1>
-            <p className="text-xl text-green-100 mb-8">
+            <h1 className="text-4xl font-bold text-white mb-4">Renewable Energy Grid Manager</h1>
+            <p className="text-xl text-gray-200 mb-8">
               Build and manage a sustainable electrical grid with renewable energy sources
             </p>
           </div>
@@ -494,22 +494,22 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
               <div className="text-center">
                 <div className="text-3xl mb-3">⚡</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Balance Supply & Demand</h3>
-                <p className="text-green-100">Maintain grid stability by matching power generation to consumption</p>
+                <p className="text-gray-200">Maintain grid stability by matching power generation to consumption</p>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-3">🌱</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Maximize Renewables</h3>
-                <p className="text-green-100">Increase the percentage of clean, renewable energy sources</p>
+                <p className="text-gray-200">Increase the percentage of clean, renewable energy sources</p>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-3">💰</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Budget Management</h3>
-                <p className="text-green-100">Efficiently use your $50M budget for maximum impact</p>
+                <p className="text-gray-200">Efficiently use your $50M budget for maximum impact</p>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-3">🌍</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Reduce Emissions</h3>
-                <p className="text-green-100">Minimize carbon emissions while meeting energy needs</p>
+                <p className="text-gray-200">Minimize carbon emissions while meeting energy needs</p>
               </div>
             </div>
           </div>
@@ -523,7 +523,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                     <div className="text-green-400 mr-3">{source.icon}</div>
                     <h3 className="font-semibold text-white">{source.name}</h3>
                   </div>
-                  <div className="text-sm text-green-100 space-y-1">
+                  <div className="text-sm text-gray-200 space-y-1">
                     <div>Capacity: {source.capacity} MW</div>
                     <div>Efficiency: {source.efficiency}%</div>
                     <div>Cost: ${(source.cost / 1000000).toFixed(1)}M</div>
@@ -548,7 +548,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
 
   // Render managing phase
   if (gamePhase === 'managing') {
-    const supplyDemandRatio = totalDemand > 0 ? (totalOutput / totalDemand) : 0;
+    const supplyDemandRatio = totalDemand > 0 ? totalOutput / totalDemand : 0;
 
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-900 via-teal-900 to-blue-900 p-6">
@@ -558,40 +558,48 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
               <div className="text-center">
                 <div className="text-xl font-bold text-white">{totalOutput.toFixed(0)} MW</div>
-                <div className="text-green-100 text-sm">Supply</div>
+                <div className="text-gray-200 text-sm">Supply</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-bold text-white">{totalDemand.toFixed(0)} MW</div>
-                <div className="text-green-100 text-sm">Demand</div>
+                <div className="text-gray-200 text-sm">Demand</div>
               </div>
               <div className="text-center">
-                <div className={`text-xl font-bold ${gridStability > 80 ? 'text-green-400' : gridStability > 50 ? 'text-yellow-400' : 'text-red-400'}`}>
+                <div
+                  className={`text-xl font-bold ${gridStability > 80 ? 'text-green-400' : gridStability > 50 ? 'text-yellow-400' : 'text-red-400'}`}
+                >
                   {gridStability.toFixed(0)}%
                 </div>
-                <div className="text-green-100 text-sm">Stability</div>
+                <div className="text-gray-200 text-sm">Stability</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-bold text-green-400">{renewablePercentage.toFixed(0)}%</div>
-                <div className="text-green-100 text-sm">Renewable</div>
+                <div className="text-gray-200 text-sm">Renewable</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-bold text-white">${(budget / 1000000).toFixed(1)}M</div>
-                <div className="text-green-100 text-sm">Budget</div>
+                <div className="text-gray-200 text-sm">Budget</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-bold text-orange-400">{(carbonEmissions / 1000).toFixed(1)}t</div>
-                <div className="text-green-100 text-sm">CO2/hr</div>
+                <div className="text-gray-200 text-sm">CO2/hr</div>
               </div>
               <div className="text-center flex items-center justify-center">
                 <div className="text-blue-400 mr-2">{currentWeather?.icon}</div>
-                <div className="text-sm text-green-100 capitalize">{currentWeather?.condition}</div>
+                <div className="text-sm text-gray-200 capitalize">{currentWeather?.condition}</div>
               </div>
               <div className="text-center">
-                <Gauge className={`mx-auto mb-1 ${
-                  supplyDemandRatio >= 0.95 && supplyDemandRatio <= 1.1 ? 'text-green-400' :
-                  supplyDemandRatio > 0.8 ? 'text-yellow-400' : 'text-red-400'
-                }`} size={24} />
-                <div className="text-green-100 text-sm">Balance</div>
+                <Gauge
+                  className={`mx-auto mb-1 ${
+                    supplyDemandRatio >= 0.95 && supplyDemandRatio <= 1.1
+                      ? 'text-green-400'
+                      : supplyDemandRatio > 0.8
+                        ? 'text-yellow-400'
+                        : 'text-red-400'
+                  }`}
+                  size={24}
+                />
+                <div className="text-gray-200 text-sm">Balance</div>
               </div>
             </div>
           </div>
@@ -616,18 +624,14 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                         <div className="text-green-400 mr-3">{source.icon}</div>
                         <div>
                           <h3 className="font-semibold text-white">{source.name}</h3>
-                          <div className="text-sm text-green-100">
+                          <div className="text-sm text-gray-200">
                             {source.capacity} MW | ${(source.cost / 1000000).toFixed(1)}M
                           </div>
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-green-400 text-sm">
-                          {source.efficiency}% efficiency
-                        </div>
-                        <div className="text-orange-400 text-sm">
-                          {source.carbonEmission} kg CO2
-                        </div>
+                        <div className="text-green-400 text-sm">{source.efficiency}% efficiency</div>
+                        <div className="text-orange-400 text-sm">{source.carbonEmission} kg CO2</div>
                       </div>
                     </div>
                   </div>
@@ -637,7 +641,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
               {selectedSource && (
                 <div className="mt-6 p-4 bg-green-600 bg-opacity-20 rounded-lg">
                   <h3 className="font-semibold text-white mb-2">Add {selectedSource.name}</h3>
-                  <p className="text-green-100 text-sm mb-4">{selectedSource.description}</p>
+                  <p className="text-gray-200 text-sm mb-4">{selectedSource.description}</p>
                   <div className="flex items-center space-x-4">
                     <input
                       type="number"
@@ -648,9 +652,9 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                       max={Math.floor(budget / selectedSource.cost)}
                       className="w-20 px-3 py-2 bg-white bg-opacity-20 text-white rounded border border-green-400 focus:border-green-300 focus:outline-none"
                     />
-                    <span className="text-green-100">×</span>
+                    <span className="text-gray-200">×</span>
                     <span className="text-white">${(selectedSource.cost / 1000000).toFixed(1)}M</span>
-                    <span className="text-green-100">=</span>
+                    <span className="text-gray-200">=</span>
                     <span className="text-white">${((selectedSource.cost * sourceCount) / 1000000).toFixed(1)}M</span>
                     <button
                       onClick={addEnergySource}
@@ -667,24 +671,27 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
             {/* Current Grid */}
             <div className="bg-black bg-opacity-30 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-white mb-4">Current Grid Status</h2>
-              
+
               {/* Energy Sources */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3">Power Generation</h3>
                 {energySources.length === 0 ? (
-                  <div className="text-center text-green-100 py-8">
+                  <div className="text-center text-gray-200 py-8">
                     <Zap size={48} className="mx-auto mb-4 opacity-50" />
                     <p>No power sources installed. Add some to start generating electricity!</p>
                   </div>
                 ) : (
                   <div className="space-y-3 max-h-40 overflow-y-auto">
                     {energySources.map((source, index) => (
-                      <div key={index} className="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3"
+                      >
                         <div className="flex items-center">
                           <div className="text-green-400 mr-3">{source.icon}</div>
                           <div>
                             <h4 className="font-semibold text-white text-sm">{source.name}</h4>
-                            <div className="text-xs text-green-100">
+                            <div className="text-xs text-gray-200">
                               {source.output.toFixed(0)} MW / {source.capacity} MW
                             </div>
                           </div>
@@ -705,23 +712,24 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                 <h3 className="text-lg font-semibold text-white mb-3">Energy Demand</h3>
                 <div className="space-y-3">
                   {consumers.map((consumer) => (
-                    <div key={consumer.id} className="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3">
+                    <div
+                      key={consumer.id}
+                      className="flex items-center justify-between bg-white bg-opacity-10 rounded-lg p-3"
+                    >
                       <div className="flex items-center">
                         <div className="text-blue-400 mr-3">{consumer.icon}</div>
                         <div>
                           <h4 className="font-semibold text-white text-sm">{consumer.name}</h4>
-                          <div className="text-xs text-green-100">
-                            Priority: {consumer.priority}/10
-                          </div>
+                          <div className="text-xs text-gray-200">Priority: {consumer.priority}/10</div>
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-blue-400 text-sm">
-                          {consumer.currentDemand.toFixed(0)} MW
-                        </div>
-                        <div className={`text-xs ${
-                          consumer.currentDemand > consumer.baseDemand ? 'text-yellow-400' : 'text-green-100'
-                        }`}>
+                        <div className="text-blue-400 text-sm">{consumer.currentDemand.toFixed(0)} MW</div>
+                        <div
+                          className={`text-xs ${
+                            consumer.currentDemand > consumer.baseDemand ? 'text-yellow-400' : 'text-gray-200'
+                          }`}
+                        >
                           {consumer.currentDemand > consumer.baseDemand ? 'High' : 'Normal'}
                         </div>
                       </div>
@@ -797,33 +805,38 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
             </div>
 
             <div className="text-lg text-green-100 mb-6">
-              {score > 800 ? '🌟 Excellent grid management! Outstanding renewable energy integration!' :
-               score > 600 ? '✅ Good job balancing supply, demand, and sustainability!' :
-               score > 400 ? '⚖️ Decent effort - focus more on renewables and stability!' :
-               '📊 Learning experience - renewable energy grid management is complex!'}
+              {score > 800
+                ? '🌟 Excellent grid management! Outstanding renewable energy integration!'
+                : score > 600
+                  ? '✅ Good job balancing supply, demand, and sustainability!'
+                  : score > 400
+                    ? '⚖️ Decent effort - focus more on renewables and stability!'
+                    : '📊 Learning experience - renewable energy grid management is complex!'}
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">Final Grid Composition</h3>
-                {energySources.reduce((acc: GridComposition[], source) => {
-                  const existing = acc.find((item: GridComposition) => item.type === source.type);
-                  if (existing) {
-                    existing.count += 1;
-                    existing.capacity += source.capacity;
-                  } else {
-                    acc.push({ type: source.type, count: 1, capacity: source.capacity, icon: source.icon });
-                  }
-                  return acc;
-                }, []).map((sourceGroup: GridComposition, index: number) => (
-                  <div key={index} className="flex justify-between items-center mb-2 text-green-100">
-                    <span className="flex items-center">
-                      <span className="mr-2">{sourceGroup.icon}</span>
-                      {sourceGroup.count}× {sourceGroup.type}
-                    </span>
-                    <span>{sourceGroup.capacity} MW</span>
-                  </div>
-                ))}
+                {energySources
+                  .reduce((acc: GridComposition[], source) => {
+                    const existing = acc.find((item: GridComposition) => item.type === source.type);
+                    if (existing) {
+                      existing.count += 1;
+                      existing.capacity += source.capacity;
+                    } else {
+                      acc.push({ type: source.type, count: 1, capacity: source.capacity, icon: source.icon });
+                    }
+                    return acc;
+                  }, [])
+                  .map((sourceGroup: GridComposition, index: number) => (
+                    <div key={index} className="flex justify-between items-center mb-2 text-green-100">
+                      <span className="flex items-center">
+                        <span className="mr-2">{sourceGroup.icon}</span>
+                        {sourceGroup.count}× {sourceGroup.type}
+                      </span>
+                      <span>{sourceGroup.capacity} MW</span>
+                    </div>
+                  ))}
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">Environmental Impact</h3>
@@ -838,7 +851,13 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                   </div>
                   <div className="flex justify-between">
                     <span>Clean Energy:</span>
-                    <span>{renewablePercentage > 70 ? '🌿 Excellent' : renewablePercentage > 50 ? '🌱 Good' : '⚠️ Needs improvement'}</span>
+                    <span>
+                      {renewablePercentage > 70
+                        ? '🌿 Excellent'
+                        : renewablePercentage > 50
+                          ? '🌱 Good'
+                          : '⚠️ Needs improvement'}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -849,9 +868,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                     ⚡ {event.title}
                   </div>
                 ))}
-                {eventHistory.length === 0 && (
-                  <div className="text-sm text-green-100">No major events occurred</div>
-                )}
+                {eventHistory.length === 0 && <div className="text-sm text-green-100">No major events occurred</div>}
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ const scenarios: Scenario[] = [
     year: 2030,
     factors: ['IoT sensors', 'AI traffic control', 'Smart energy', 'Digital citizens'],
     challenges: ['Privacy concerns', 'Digital divide', 'Infrastructure cost', 'Cyber security'],
-    points: 25
+    points: 25,
   },
   {
     id: 'climate-adaptation-2040',
@@ -39,7 +39,7 @@ const scenarios: Scenario[] = [
     year: 2040,
     factors: ['Rising sea levels', 'Extreme weather', 'Food security', 'Water scarcity'],
     challenges: ['Economic burden', 'Population displacement', 'Resource competition', 'Technology gaps'],
-    points: 30
+    points: 30,
   },
   {
     id: 'digital-economy-2035',
@@ -49,8 +49,8 @@ const scenarios: Scenario[] = [
     year: 2035,
     factors: ['Digital currency', 'AI automation', 'Remote work', 'Global connectivity'],
     challenges: ['Job displacement', 'Wealth inequality', 'Regulation gaps', 'Skills mismatch'],
-    points: 35
-  }
+    points: 35,
+  },
 ];
 
 const solutionTypes = [
@@ -59,35 +59,35 @@ const solutionTypes = [
     name: 'Technology Innovation',
     description: 'Giải pháp công nghệ tiên tiến',
     icon: '💻',
-    multiplier: 1.2
+    multiplier: 1.2,
   },
   {
     id: 'policy',
     name: 'Policy Framework',
     description: 'Khung chính sách và quy định',
     icon: '📋',
-    multiplier: 1.1
+    multiplier: 1.1,
   },
   {
     id: 'social',
     name: 'Social Innovation',
     description: 'Đổi mới xã hội và văn hóa',
     icon: '👥',
-    multiplier: 1.0
+    multiplier: 1.0,
   },
   {
     id: 'economic',
     name: 'Economic Model',
     description: 'Mô hình kinh tế bền vững',
     icon: '💰',
-    multiplier: 1.15
-  }
+    multiplier: 1.15,
+  },
 ];
 
 export default function FutureScenarioBuilder3DGame({
   onComplete,
   timeLeft,
-  onRestart
+  onRestart,
 }: FutureScenarioBuilder3DGameProps) {
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedSolutions, setSelectedSolutions] = useState<string[]>([]);
@@ -98,45 +98,52 @@ export default function FutureScenarioBuilder3DGame({
   const [feasibility, setFeasibility] = useState(50);
   const [gameComplete, setGameComplete] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsReady(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const currentScenarioData = scenarios[currentScenario];
 
-  const handleSolutionToggle = useCallback((solutionId: string) => {
-    if (analysisComplete) return;
-    setSelectedSolutions(prev => 
-      prev.includes(solutionId) 
-        ? prev.filter(s => s !== solutionId)
-        : [...prev, solutionId]
-    );
-  }, [analysisComplete]);
+  const handleSolutionToggle = useCallback(
+    (solutionId: string) => {
+      if (analysisComplete) return;
+      setSelectedSolutions((prev) =>
+        prev.includes(solutionId) ? prev.filter((s) => s !== solutionId) : [...prev, solutionId],
+      );
+    },
+    [analysisComplete],
+  );
 
   const handleAnalyze = useCallback(() => {
     if (selectedSolutions.length === 0) return;
-    
+
     setAnalysisComplete(true);
-    
+
     // Calculate scores based on selections
     const baseScore = currentScenarioData.points;
     const solutionBonus = selectedSolutions.length * 5;
     const customBonus = customSolution.trim() ? 20 : 0;
     const diversityBonus = selectedSolutions.length >= 3 ? 15 : 0;
-    
+
     const scenarioScore = baseScore + solutionBonus + customBonus + diversityBonus;
-    setTotalScore(prev => prev + scenarioScore);
-    
+    setTotalScore((prev) => prev + scenarioScore);
+
     // Update innovation and feasibility
     const innovationBoost = customSolution.trim() ? 15 : 10;
     const feasibilityBoost = selectedSolutions.length >= 2 ? 12 : 8;
-    
-    setInnovation(prev => Math.min(100, prev + innovationBoost));
-    setFeasibility(prev => Math.min(100, prev + feasibilityBoost));
-    
+
+    setInnovation((prev) => Math.min(100, prev + innovationBoost));
+    setFeasibility((prev) => Math.min(100, prev + feasibilityBoost));
+
     setTimeout(() => setShowResults(true), 1000);
   }, [selectedSolutions, customSolution, currentScenarioData]);
 
   const handleNextScenario = useCallback(() => {
     if (currentScenario < scenarios.length - 1) {
-      setCurrentScenario(prev => prev + 1);
+      setCurrentScenario((prev) => prev + 1);
       setSelectedSolutions([]);
       setCustomSolution('');
       setAnalysisComplete(false);
@@ -155,6 +162,14 @@ export default function FutureScenarioBuilder3DGame({
     }
   }, [timeLeft, gameComplete, totalScore, onComplete]);
 
+  if (!isReady) {
+    return (
+      <div className="flex justify-center items-center h-full bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 text-white rounded-xl">
+        <p className="text-xl animate-pulse">Đang khởi tạo kịch bản tương lai...</p>
+      </div>
+    );
+  }
+
   if (gameComplete) {
     const finalScore = Math.max(0, Math.min(100, (totalScore / 150) * 100));
 
@@ -163,9 +178,7 @@ export default function FutureScenarioBuilder3DGame({
         <div className="text-center mb-8">
           <Lightbulb className="w-16 h-16 mx-auto mb-4 text-yellow-400" />
           <h2 className="text-3xl font-bold mb-2">Future Scenario Analysis Complete</h2>
-          <div className="text-6xl font-bold text-yellow-400 mb-4">
-            {Math.round(finalScore)}%
-          </div>
+          <div className="text-6xl font-bold text-yellow-400 mb-4">{Math.round(finalScore)}%</div>
           <p className="text-xl mb-6">
             Total Score: {totalScore} | Innovation: {innovation}/100 | Feasibility: {feasibility}/100
           </p>
@@ -227,7 +240,9 @@ export default function FutureScenarioBuilder3DGame({
           <Lightbulb className="w-8 h-8 mr-3 text-yellow-400" />
           <div>
             <h2 className="text-2xl font-bold">Future Scenario Builder 3D</h2>
-            <p className="text-blue-300">Scenario {currentScenario + 1}/{scenarios.length}</p>
+            <p className="text-blue-300">
+              Scenario {currentScenario + 1}/{scenarios.length}
+            </p>
           </div>
         </div>
         <div className="text-right">
@@ -240,13 +255,15 @@ export default function FutureScenarioBuilder3DGame({
             <Target className="w-4 h-4 mr-1" />
             Feasibility: {feasibility}/100
           </div>
-          <div className="text-sm text-gray-300">⏱️ {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</div>
+          <div className="text-sm text-gray-300">
+            ⏱️ {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+          </div>
         </div>
       </div>
 
       {/* Progress Bar */}
       <div className="w-full bg-white/20 rounded-full h-2 mb-6">
-        <div 
+        <div
           className="bg-gradient-to-r from-yellow-500 to-blue-500 h-2 rounded-full transition-all duration-300"
           style={{ width: `${((currentScenario + (showResults ? 1 : 0)) / scenarios.length) * 100}%` }}
         />
@@ -346,7 +363,9 @@ export default function FutureScenarioBuilder3DGame({
           </h4>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-yellow-400">{currentScenarioData.points + (selectedSolutions.length * 5) + (customSolution.trim() ? 20 : 0)}</div>
+              <div className="text-2xl font-bold text-yellow-400">
+                {currentScenarioData.points + selectedSolutions.length * 5 + (customSolution.trim() ? 20 : 0)}
+              </div>
               <div className="text-sm text-gray-300">Points Earned</div>
             </div>
             <div className="text-center">
@@ -376,23 +395,25 @@ export default function FutureScenarioBuilder3DGame({
             <Zap className="w-4 h-4 inline mr-2" />
             Analyze Scenario
           </button>
-        ) : showResults && (
-          <button
-            onClick={handleNextScenario}
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
-          >
-            {currentScenario < scenarios.length - 1 ? (
-              <>
-                <Clock className="w-4 h-4 inline mr-2" />
-                Next Future Scenario
-              </>
-            ) : (
-              <>
-                <BookOpen className="w-4 h-4 inline mr-2" />
-                Complete Analysis
-              </>
-            )}
-          </button>
+        ) : (
+          showResults && (
+            <button
+              onClick={handleNextScenario}
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+            >
+              {currentScenario < scenarios.length - 1 ? (
+                <>
+                  <Clock className="w-4 h-4 inline mr-2" />
+                  Next Future Scenario
+                </>
+              ) : (
+                <>
+                  <BookOpen className="w-4 h-4 inline mr-2" />
+                  Complete Analysis
+                </>
+              )}
+            </button>
+          )
         )}
       </div>
     </div>

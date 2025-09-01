@@ -1,25 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  Globe, 
-  Users, 
-  Compass, 
-  Heart, 
-  Star, 
-  Award,
-  Play,
-  RotateCcw,
-  Map,
-  MessageSquare,
-  Coffee,
-  Handshake,
-  Languages,
-  Eye,
-  CheckCircle,
-  AlertTriangle,
-  Target
-} from 'lucide-react';
+'use client';
 
-interface CulturalIntelligenceNavigator3DGameProps {
+import React, { useState, useEffect } from 'react';
+import { Globe, Users, Target, Brain, Heart, MessageSquare, Play, RotateCcw, Award } from 'lucide-react';
+
+interface CulturalIntelligenceNavigator3DProps {
   onComplete: (success: boolean, score: number) => void;
   timeLeft: number;
   onRestart: () => void;
@@ -30,837 +14,536 @@ interface CulturalScenario {
   title: string;
   country: string;
   context: string;
-  description: string;
-  culturalFactors: string[];
-  challenges: string[];
-  flag: string;
-}
-
-interface CulturalResponse {
-  id: string;
-  text: string;
-  culturalScore: number; // 1-10
-  reasoning: string;
-  consequences: string;
-  isRecommended: boolean;
-}
-
-interface CulturalDimension {
-  name: string;
-  description: string;
-  lowEnd: string;
-  highEnd: string;
-  score: number;
+  situation: string;
+  options: Array<{
+    id: string;
+    action: string;
+    culturalSensitivity: number;
+    effectiveness: number;
+    explanation: string;
+  }>;
+  correctOption: string;
+  points: number;
 }
 
 const CULTURAL_SCENARIOS: CulturalScenario[] = [
   {
-    id: 'japan-business',
-    title: 'Cuộc Họp Kinh Doanh Tại Nhật Bản',
-    country: 'Nhật Bản',
-    context: 'Cuộc họp với đối tác Nhật Bản',
-    description: 'Bạn được mời tham dự cuộc họp quan trọng với một công ty lớn ở Tokyo. Đây là lần đầu tiên bạn làm việc với đối tác Nhật Bản và muốn tạo ấn tượng tốt.',
-    culturalFactors: [
-      'Tôn trọng thứ bậc (Hierarchy)',
-      'Sự lịch sự và khiêm tốn',
-      'Tầm quan trọng của danh thiếp',
-      'Quy trình ra quyết định tập thể',
-      'Tránh làm mất mặt người khác'
+    id: 'japan-business-meeting',
+    title: 'Cuộc Họp Kinh Doanh tại Nhật Bản',
+    country: 'Japan',
+    context: 'Bạn tham gia cuộc họp quan trọng với đối tác Nhật Bản',
+    situation: 'Trong cuộc họp, bạn nhận thấy có một vấn đề trong đề xuất của họ. Bạn nên xử lý như thế nào?',
+    options: [
+      {
+        id: 'direct-confrontation',
+        action: 'Chỉ ra vấn đề trực tiếp trước mặt mọi người',
+        culturalSensitivity: 2,
+        effectiveness: 3,
+        explanation: 'Ở Nhật Bản, việc chỉ trích công khai có thể làm người khác "mất mặt" và được coi là bất lịch sự.',
+      },
+      {
+        id: 'private-discussion',
+        action: 'Đề nghị thảo luận riêng sau cuộc họp',
+        culturalSensitivity: 9,
+        effectiveness: 8,
+        explanation: 'Đây là cách tiếp cận phù hợp với văn hóa Nhật, tránh làm người khác xấu hổ trước mặt đám đông.',
+      },
+      {
+        id: 'ignore-problem',
+        action: 'Im lặng và không nhắc đến vấn đề',
+        culturalSensitivity: 6,
+        effectiveness: 2,
+        explanation: 'Tuy tôn trọng văn hóa nhưng không giải quyết được vấn đề kinh doanh.',
+      },
     ],
-    challenges: [
-      'Cách chào hỏi phù hợp',
-      'Thứ tự ngồi trong cuộc họp',
-      'Cách trao đổi danh thiếp',
-      'Phong cách thuyết trình',
-      'Xử lý bất đồng ý kiến'
-    ],
-    flag: '🇯🇵'
+    correctOption: 'private-discussion',
+    points: 150,
   },
   {
-    id: 'arabia-negotiation',
-    title: 'Đàm Phán Kinh Doanh Ở UAE',
-    country: 'UAE (Các Tiểu Vương Quốc Ả Rập Thống Nhất)',
-    context: 'Đàm phán hợp đồng tại Dubai',
-    description: 'Bạn đang đàm phán một hợp đồng xuất khẩu lớn với một công ty ở Dubai. Đối tác rất quan tâm nhưng quá trình đàm phán kéo dài và có nhiều yếu tố văn hóa cần cân nhắc.',
-    culturalFactors: [
-      'Tầm quan trọng của mối quan hệ cá nhân',
-      'Kiên nhẫn trong đàm phán',
-      'Tôn trọng truyền thống Hồi giáo',
-      'Khái niệm thời gian linh hoạt',
-      'Vai trò của danh dự và uy tín'
+    id: 'india-religious-festival',
+    title: 'Lễ Hội Tôn Giáo tại Ấn Độ',
+    country: 'India',
+    context: 'Bạn được mời tham gia lễ hội Diwali cùng đồng nghiệp Ấn Độ',
+    situation: 'Họ mời bạn tham gia nghi lễ tôn giáo. Bạn không cùng tôn giáo nhưng muốn thể hiện sự tôn trọng.',
+    options: [
+      {
+        id: 'decline-politely',
+        action: 'Từ chối một cách lịch sự vì khác tôn giáo',
+        culturalSensitivity: 5,
+        effectiveness: 4,
+        explanation: 'Tuy lịch sự nhưng có thể bỏ lỡ cơ hội xây dựng mối quan hệ.',
+      },
+      {
+        id: 'participate-respectfully',
+        action: 'Tham gia với thái độ tôn trọng và học hỏi',
+        culturalSensitivity: 9,
+        effectiveness: 9,
+        explanation: 'Thể hiện sự cởi mở và tôn trọng văn hóa, tạo dựng lòng tin với đồng nghiệp.',
+      },
+      {
+        id: 'make-excuses',
+        action: 'Tìm cớ để tránh không tham gia',
+        culturalSensitivity: 2,
+        effectiveness: 2,
+        explanation: 'Có thể được hiểu là thiếu tôn trọng và ảnh hưởng đến mối quan hệ.',
+      },
     ],
-    challenges: [
-      'Xây dựng lòng tin trước khi kinh doanh',
-      'Hiểu về tập quán tôn giáo',
-      'Điều chỉnh kỳ vọng về thời gian',
-      'Thể hiện sự tôn trọng văn hóa địa phương',
-      'Cân bằng giữa chuyên nghiệp và cá nhân'
-    ],
-    flag: '🇦🇪'
+    correctOption: 'participate-respectfully',
+    points: 180,
   },
   {
-    id: 'brazil-team',
-    title: 'Làm Việc Nhóm Ở Brazil',
-    country: 'Brazil',
-    context: 'Dự án nhóm quốc tế tại São Paulo',
-    description: 'Bạn được phân công làm việc với một đội ngũ đa văn hóa tại Brazil. Dự án rất quan trọng nhưng phong cách làm việc ở đây khác hoàn toàn so với kinh nghiệm trước đây của bạn.',
-    culturalFactors: [
-      'Mối quan hệ cá nhân quan trọng hơn nhiệm vụ',
-      'Phong cách giao tiếp trực tiếp và cảm xúc',
-      'Linh hoạt về thời gian và kế hoạch',
-      'Tầm quan trọng của việc chia sẻ cá nhân',
-      'Văn hóa celebration và team bonding'
+    id: 'arab-business-negotiation',
+    title: 'Đàm Phán Kinh Doanh tại UAE',
+    country: 'UAE',
+    context: 'Bạn đàm phán hợp đồng quan trọng với đối tác Ả Rập',
+    situation: 'Cuộc đàm phán kéo dài và đối tác đề nghị dừng lại để cầu nguyện. Phản ứng của bạn?',
+    options: [
+      {
+        id: 'show-impatience',
+        action: 'Thể hiện sự bực bội vì phải dừng đàm phán',
+        culturalSensitivity: 1,
+        effectiveness: 1,
+        explanation: 'Rất thiếu tôn trọng và có thể làm hỏng toàn bộ thương vụ.',
+      },
+      {
+        id: 'wait-respectfully',
+        action: 'Chờ đợi một cách tôn trọng và sử dụng thời gian nghỉ',
+        culturalSensitivity: 10,
+        effectiveness: 9,
+        explanation: 'Thể hiện sự tôn trọng sâu sắc đối với tôn giáo và văn hóa của đối tác.',
+      },
+      {
+        id: 'suggest-reschedule',
+        action: 'Đề nghị dời cuộc họp sang thời gian khác',
+        culturalSensitivity: 4,
+        effectiveness: 3,
+        explanation: 'Tuy có ý tốt nhưng có thể được hiểu là không hiểu văn hóa địa phương.',
+      },
     ],
-    challenges: [
-      'Tham gia các hoạt động xã hội nhóm',
-      'Thích nghi với lịch trình linh hoạt',
-      'Xây dựng mối quan hệ cá nhân',
-      'Hiểu cách thức ra quyết định của nhóm',
-      'Cân bằng giữa work và life'
-    ],
-    flag: '🇧🇷'
+    correctOption: 'wait-respectfully',
+    points: 200,
   },
-  {
-    id: 'germany-precision',
-    title: 'Dự Án Kỹ Thuật Ở Đức',
-    country: 'Đức',
-    context: 'Quản lý dự án công nghệ tại Berlin',
-    description: 'Bạn được giao quản lý một dự án công nghệ phức tạp với đội ngũ kỹ sư người Đức. Họ có tiêu chuẩn rất cao về chất lượng và quy trình làm việc.',
-    culturalFactors: [
-      'Chính xác và chi tiết trong mọi việc',
-      'Tôn trọng quy trình và thời gian',
-      'Giao tiếp trực tiếp và thẳng thắn',
-      'Tầm quan trọng của chuyên môn',
-      'Phân biệt rõ ràng giữa công việc và đời tư'
-    ],
-    challenges: [
-      'Duy trì tiêu chuẩn chất lượng cao',
-      'Giao tiếp feedback trực tiếp',
-      'Lập kế hoạch chi tiết và tuân thủ',
-      'Thể hiện năng lực chuyên môn',
-      'Tôn trọng work-life balance'
-    ],
-    flag: '🇩🇪'
-  }
 ];
 
-const CULTURAL_RESPONSES: { [scenarioId: string]: CulturalResponse[] } = {
-  'japan-business': [
-    {
-      id: 'bow-formally',
-      text: 'Cúi chào sâu và trao danh thiếp bằng hai tay, chờ được mời ngồi',
-      culturalScore: 9,
-      reasoning: 'Thể hiện sự tôn trọng phù hợp với văn hóa Nhật Bản',
-      consequences: 'Tạo ấn tượng tích cực, được đánh giá cao về hiểu biết văn hóa',
-      isRecommended: true
-    },
-    {
-      id: 'handshake-casual',
-      text: 'Bắt tay thân thiện và giới thiệu bản thân một cách tự tin',
-      culturalScore: 4,
-      reasoning: 'Phong cách Western không phù hợp hoàn toàn với văn hóa Nhật',
-      consequences: 'Không tạo ấn tượng xấu nhưng bỏ lỡ cơ hội thể hiện sự tôn trọng',
-      isRecommended: false
-    },
-    {
-      id: 'direct-presentation',
-      text: 'Thuyết trình trực tiếp về lợi ích và yêu cầu quyết định nhanh',
-      culturalScore: 3,
-      reasoning: 'Quá trực tiếp và gây áp lực không phù hợp với văn hóa đồng thuận',
-      consequences: 'Có thể làm đối tác cảm thấy không thoải mái và khó chịu',
-      isRecommended: false
-    }
-  ],
-  'arabia-negotiation': [
-    {
-      id: 'relationship-first',
-      text: 'Dành thời gian tìm hiểu về gia đình và sở thích của đối tác trước khi bàn về kinh doanh',
-      culturalScore: 9,
-      reasoning: 'Xây dựng mối quan hệ cá nhân là nền tảng cho thành công kinh doanh',
-      consequences: 'Tạo lòng tin, đối tác sẽ cởi mở và hợp tác hơn trong đàm phán',
-      isRecommended: true
-    },
-    {
-      id: 'time-pressure',
-      text: 'Nhấn mạnh deadline và yêu cầu đối tác đưa ra quyết định trong tuần này',
-      culturalScore: 2,
-      reasoning: 'Gây áp lực về thời gian trái với văn hóa kiên nhẫn và mối quan hệ',
-      consequences: 'Đối tác có thể cảm thấy bị xúc phạm và từ chối hợp tác',
-      isRecommended: false
-    },
-    {
-      id: 'cultural-respect',
-      text: 'Thể hiện sự tôn trọng với truyền thống địa phương và kiên nhẫn trong quy trình',
-      culturalScore: 8,
-      reasoning: 'Tôn trọng văn hóa và tôn giáo là yếu tố quan trọng trong kinh doanh',
-      consequences: 'Được đánh giá cao về sự hiểu biết và tôn trọng văn hóa',
-      isRecommended: true
-    }
-  ],
-  'brazil-team': [
-    {
-      id: 'social-bonding',
-      text: 'Tham gia tích cực các hoạt động nhóm và chia sẻ về cuộc sống cá nhân',
-      culturalScore: 9,
-      reasoning: 'Xây dựng mối quan hệ cá nhân là chìa khóa thành công ở Brazil',
-      consequences: 'Được nhóm chấp nhận, tạo môi trường làm việc hài hòa và hiệu quả',
-      isRecommended: true
-    },
-    {
-      id: 'task-focused',
-      text: 'Tập trung hoàn toàn vào công việc và tránh các cuộc trò chuyện cá nhân',
-      culturalScore: 3,
-      reasoning: 'Quá tập trung vào nhiệm vụ mà bỏ qua yếu tố con người',
-      consequences: 'Được coi là lạnh lùng, khó hòa nhập và ảnh hưởng đến hiệu quả nhóm',
-      isRecommended: false
-    },
-    {
-      id: 'flexible-approach',
-      text: 'Thích ứng với lịch trình linh hoạt và phong cách làm việc của địa phương',
-      culturalScore: 8,
-      reasoning: 'Thể hiện sự thích ứng với văn hóa làm việc Brazil',
-      consequences: 'Dễ hợp tác, nhưng cần cân bằng để đảm bảo tiến độ dự án',
-      isRecommended: true
-    }
-  ],
-  'germany-precision': [
-    {
-      id: 'detailed-planning',
-      text: 'Chuẩn bị kế hoạch chi tiết, timeline rõ ràng và tuân thủ nghiêm ngặt',
-      culturalScore: 10,
-      reasoning: 'Hoàn toàn phù hợp với văn hóa chính xác và có tổ chức của Đức',
-      consequences: 'Được tin tưởng và đánh giá cao về năng lực quản lý chuyên nghiệp',
-      isRecommended: true
-    },
-    {
-      id: 'casual-flexible',
-      text: 'Giữ phong cách linh hoạt và điều chỉnh kế hoạch theo tình hình',
-      culturalScore: 2,
-      reasoning: 'Thiếu tính có tổ chức và chính xác mà văn hóa Đức đề cao',
-      consequences: 'Mất lòng tin, được coi là thiếu chuyên nghiệp và không đáng tin cậy',
-      isRecommended: false
-    },
-    {
-      id: 'direct-feedback',
-      text: 'Đưa ra feedback trực tiếp và xây dựng, tập trung vào giải pháp',
-      culturalScore: 9,
-      reasoning: 'Phù hợp với phong cách giao tiếp thẳng thắn và hiệu quả',
-      consequences: 'Được đánh giá cao về sự chân thành và khả năng đóng góp xây dựng',
-      isRecommended: true
-    }
-  ]
-};
-
-const CULTURAL_DIMENSIONS: CulturalDimension[] = [
-  {
-    name: 'Khoảng Cách Quyền Lực',
-    description: 'Mức độ chấp nhận sự bất bình đẳng trong xã hội',
-    lowEnd: 'Bình đẳng, informal',
-    highEnd: 'Thứ bậc, formal',
-    score: 5
-  },
-  {
-    name: 'Chủ Nghĩa Cá Nhân vs Tập Thể',
-    description: 'Ưu tiên lợi ích cá nhân hay nhóm',
-    lowEnd: 'Tập thể, harmony',
-    highEnd: 'Cá nhân, independence',
-    score: 5
-  },
-  {
-    name: 'Tránh Rủi Ro',
-    description: 'Mức độ thoải mái với sự không chắc chắn',
-    lowEnd: 'Linh hoạt, risk-taking',
-    highEnd: 'Cẩn trọng, rule-following',
-    score: 5
-  },
-  {
-    name: 'Hướng Thời Gian',
-    description: 'Tập trung vào quá khứ/hiện tại hay tương lai',
-    lowEnd: 'Ngắn hạn, tradition',
-    highEnd: 'Dài hạn, adaptation',
-    score: 5
-  }
-];
-
-const CulturalIntelligenceNavigator3DGame: React.FC<CulturalIntelligenceNavigator3DGameProps> = ({
+const CulturalIntelligenceNavigator3DGame: React.FC<CulturalIntelligenceNavigator3DProps> = ({
   onComplete,
   timeLeft,
-  onRestart
+  onRestart,
 }) => {
-  const [currentScenario, setCurrentScenario] = useState<CulturalScenario>(CULTURAL_SCENARIOS[0]);
-  const [scenarioIndex, setScenarioIndex] = useState(0);
-  const [selectedResponse, setSelectedResponse] = useState<CulturalResponse | null>(null);
-  const [gamePhase, setGamePhase] = useState<'intro' | 'briefing' | 'scenario' | 'response' | 'feedback' | 'results'>('intro');
+  const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [culturalAwareness, setCulturalAwareness] = useState<CulturalDimension[]>(CULTURAL_DIMENSIONS.map(d => ({...d})));
-  const [scenarioResults, setScenarioResults] = useState<Array<{scenario: CulturalScenario, response: CulturalResponse, score: number}>>([]);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [gamePhase, setGamePhase] = useState<'intro' | 'playing' | 'result' | 'completed'>('intro');
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [feedback, setFeedback] = useState<string>('');
+  const [culturalKnowledge, setCulturalKnowledge] = useState(50);
+  const [answeredScenarios, setAnsweredScenarios] = useState<string[]>([]);
 
-  const evaluateResponse = useCallback((response: CulturalResponse) => {
-    const baseScore = response.culturalScore * 10;
-    const bonusScore = response.isRecommended ? 20 : 0;
-    const finalScore = baseScore + bonusScore;
-    
-    // Update cultural awareness based on response quality
-    setCulturalAwareness(prev => prev.map(dim => ({
-      ...dim,
-      score: Math.min(10, dim.score + (response.culturalScore >= 7 ? 0.5 : -0.2))
-    })));
-    
-    setScore(prev => prev + finalScore);
-    
-    setScenarioResults(prev => [...prev, {
-      scenario: currentScenario,
-      response: response,
-      score: finalScore
-    }]);
-  }, [currentScenario]);
-
-  const nextScenario = () => {
-    if (scenarioIndex < CULTURAL_SCENARIOS.length - 1) {
-      setScenarioIndex(prev => prev + 1);
-      setCurrentScenario(CULTURAL_SCENARIOS[scenarioIndex + 1]);
-      setSelectedResponse(null);
-      setGamePhase('briefing');
-    } else {
-      setGamePhase('results');
-    }
-  };
-
-  const startGame = () => {
-    setIsPlaying(true);
-    setGamePhase('intro');
-    setScenarioIndex(0);
-    setCurrentScenario(CULTURAL_SCENARIOS[0]);
-    setSelectedResponse(null);
-    setScore(0);
-    setCulturalAwareness(CULTURAL_DIMENSIONS.map(d => ({...d})));
-    setScenarioResults([]);
-  };
-
-  const nextPhase = () => {
-    switch (gamePhase) {
-      case 'intro':
-        setGamePhase('briefing');
-        break;
-      case 'briefing':
-        setGamePhase('scenario');
-        break;
-      case 'scenario':
-        setGamePhase('response');
-        break;
-      case 'response':
-        if (selectedResponse) {
-          evaluateResponse(selectedResponse);
-          setGamePhase('feedback');
-        }
-        break;
-      case 'feedback':
-        nextScenario();
-        break;
-      case 'results':
-        onComplete(score >= 300, score);
-        break;
-    }
-  };
-
-  const restartGame = () => {
-    setCurrentScenario(CULTURAL_SCENARIOS[0]);
-    setScenarioIndex(0);
-    setSelectedResponse(null);
-    setGamePhase('intro');
-    setScore(0);
-    setCulturalAwareness(CULTURAL_DIMENSIONS.map(d => ({...d})));
-    setScenarioResults([]);
-    setIsPlaying(false);
-    onRestart();
-  };
-
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return 'text-green-400';
-    if (score >= 60) return 'text-yellow-400';
-    return 'text-red-400';
-  };
+  const currentScenario = CULTURAL_SCENARIOS[currentScenarioIndex];
 
   useEffect(() => {
-    if (timeLeft <= 0 && isPlaying) {
-      onComplete(false, score);
+    // Ensure the game starts with a valid scenario
+    if (!currentScenario) {
+      setCurrentScenarioIndex(0);
     }
-  }, [timeLeft, isPlaying, score, onComplete]);
+  }, [currentScenario]);
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-900 via-cyan-900 to-blue-900 p-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 mb-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="bg-teal-500/20 p-3 rounded-xl">
-                <Globe className="w-8 h-8 text-teal-400" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-white">🌍 Điều Hướng Trí Tuệ Văn Hóa 3D</h1>
-                <p className="text-teal-200">Phát triển kỹ năng làm việc đa văn hóa</p>
+  const startGame = () => {
+    setGamePhase('playing');
+    setCurrentScenarioIndex(0);
+    setScore(0);
+    setCulturalKnowledge(50);
+    setAnsweredScenarios([]);
+  };
+
+  const handleOptionSelect = (optionId: string) => {
+    setSelectedOption(optionId);
+    const selectedChoice = currentScenario.options.find((opt) => opt.id === optionId);
+
+    if (selectedChoice) {
+      const isCorrect = optionId === currentScenario.correctOption;
+      const earnedPoints = isCorrect ? currentScenario.points : Math.floor(currentScenario.points * 0.3);
+
+      setScore((prev) => prev + earnedPoints);
+      setCulturalKnowledge((prev) => Math.min(100, prev + (isCorrect ? 10 : -5)));
+      setFeedback(selectedChoice.explanation);
+      setAnsweredScenarios((prev) => [...prev, currentScenario.id]);
+
+      setTimeout(() => {
+        if (currentScenarioIndex < CULTURAL_SCENARIOS.length - 1) {
+          setCurrentScenarioIndex((prev) => prev + 1);
+          setSelectedOption(null);
+          setFeedback('');
+        } else {
+          setGamePhase('completed');
+          onComplete(true, score + earnedPoints);
+        }
+      }, 3000);
+    }
+  };
+
+  const render3DCulturalEnvironment = () => (
+    <div className="relative w-full h-80 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 rounded-xl border border-purple-500/30 overflow-hidden">
+      {/* 3D Cultural Environment */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `linear-gradient(135deg, rgba(79,70,229,0.6) 0%, rgba(147,51,234,0.4) 50%, rgba(37,99,235,0.6) 100%)`,
+          perspective: '1000px',
+        }}
+      >
+        {/* Cultural Elements based on current scenario */}
+        {currentScenario?.country === 'Japan' && (
+          <>
+            {/* Traditional Japanese Elements */}
+            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-red-900/60 to-red-700/40"></div>
+            {/* Torii Gate */}
+            <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
+              <div className="w-24 h-16 border-4 border-red-400 rounded-t-full bg-red-600/20"></div>
+            </div>
+            {/* Cherry Blossoms */}
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-pink-400 rounded-full animate-pulse"
+                style={{
+                  left: `${20 + i * 10}%`,
+                  top: `${20 + Math.random() * 40}%`,
+                  animationDelay: `${i * 0.3}s`,
+                }}
+              />
+            ))}
+          </>
+        )}
+
+        {currentScenario?.country === 'India' && (
+          <>
+            {/* Indian Cultural Elements */}
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-orange-900/60 to-yellow-700/40"></div>
+            {/* Temple Architecture */}
+            <div className="absolute bottom-16 right-8">
+              <div className="w-16 h-20 bg-gradient-to-t from-yellow-600 to-orange-500 rounded-t-full"></div>
+              <div className="w-20 h-4 bg-orange-600 -translate-x-1"></div>
+            </div>
+            {/* Diwali Lights */}
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1.5 h-1.5 bg-yellow-300 rounded-full animate-pulse"
+                style={{
+                  left: `${10 + i * 7}%`,
+                  top: `${60 + Math.random() * 20}%`,
+                  animationDelay: `${i * 0.2}s`,
+                }}
+              />
+            ))}
+          </>
+        )}
+
+        {currentScenario?.country === 'UAE' && (
+          <>
+            {/* Arabic Cultural Elements */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-yellow-900/60 to-amber-700/40"></div>
+            {/* Mosque Architecture */}
+            <div className="absolute bottom-24 left-8">
+              <div className="w-12 h-24 bg-gradient-to-t from-blue-700 to-cyan-500 rounded-t-full"></div>
+              <div className="absolute -top-2 left-5 w-2 h-8 bg-gold-400"></div>
+            </div>
+            {/* Desert Stars */}
+            {Array.from({ length: 20 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full animate-twinkle"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 50}%`,
+                  animationDelay: `${Math.random() * 2}s`,
+                }}
+              />
+            ))}
+          </>
+        )}
+
+        {/* Cultural Avatar */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="relative">
+            <div className="w-12 h-16 bg-gradient-to-b from-blue-400 to-indigo-600 rounded-lg border-2 border-blue-300">
+              {/* Avatar Head */}
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full border-2 border-purple-300">
+                <div className="absolute top-2 left-2 w-1 h-1 bg-white rounded-full"></div>
+                <div className="absolute top-2 right-2 w-1 h-1 bg-white rounded-full"></div>
+                <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-1 bg-white rounded-full"></div>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="text-right">
-                <div className="text-2xl font-bold text-teal-400">{Math.round(score)}</div>
-                <div className="text-sm text-teal-200">Điểm số</div>
-              </div>
-              <div className="text-right">
-                <div className="text-2xl font-bold text-cyan-400">
-                  {Math.round(culturalAwareness.reduce((sum, dim) => sum + dim.score, 0) / culturalAwareness.length * 10)}
-                </div>
-                <div className="text-sm text-teal-200">IQ Văn hóa</div>
-              </div>
-              <div className="text-right">
-                <div className="text-2xl font-bold text-yellow-400">{Math.ceil(timeLeft / 60)}</div>
-                <div className="text-sm text-teal-200">Phút</div>
+
+            {/* Cultural Sensitivity Indicator */}
+            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+              <div className="flex items-center space-x-1 bg-black/60 px-2 py-1 rounded">
+                <Heart className="w-3 h-3 text-red-400" />
+                <span className="text-xs text-white">{culturalKnowledge}%</span>
               </div>
             </div>
           </div>
         </div>
 
-        {!isPlaying ? (
-          /* Start Screen */
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 text-center">
-            <div className="bg-teal-500/20 p-6 rounded-2xl w-24 h-24 mx-auto mb-6 flex items-center justify-center">
-              <Compass className="w-12 h-12 text-teal-400" />
-            </div>
-            <h2 className="text-3xl font-bold text-white mb-4">Chào Mừng Đến Thế Giới Đa Văn Hóa!</h2>
-            <p className="text-teal-200 text-lg mb-8 max-w-2xl mx-auto">
-              Khám phá và phát triển trí tuệ văn hóa qua các tình huống thực tế từ khắp nơi trên thế giới. 
-              Học cách giao tiếp và hợp tác hiệu quả với người từ nhiều nền văn hóa khác nhau.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
-              <div className="bg-blue-900/30 rounded-lg p-4 text-left">
-                <h3 className="font-semibold text-blue-200 mb-2">🎯 Kỹ Năng Phát Triển</h3>
-                <ul className="text-blue-100 text-sm space-y-1">
-                  <li>• Nhận thức văn hóa</li>
-                  <li>• Giao tiếp đa văn hóa</li>
-                  <li>• Thích ứng hành vi</li>
-                  <li>• Xây dựng mối quan hệ quốc tế</li>
-                </ul>
-              </div>
-              <div className="bg-purple-900/30 rounded-lg p-4 text-left">
-                <h3 className="font-semibold text-purple-200 mb-2">🌏 Trải Nghiệm</h3>
-                <ul className="text-purple-100 text-sm space-y-1">
-                  <li>• 4 quốc gia (Nhật, UAE, Brazil, Đức)</li>
-                  <li>• Tình huống kinh doanh thực tế</li>
-                  <li>• Phản hồi chi tiết và học hỏi</li>
-                  <li>• Đánh giá trí tuệ văn hóa</li>
-                </ul>
-              </div>
-            </div>
-            <button
-              onClick={startGame}
-              className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 flex items-center gap-2 mx-auto"
-            >
-              <Play className="w-6 h-6" />
-              Bắt Đầu Hành Trình
-            </button>
+        {/* Scenario Context HUD */}
+        <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm p-3 rounded-lg border border-purple-500/30">
+          <div className="text-purple-400 text-sm font-bold mb-1">
+            {currentScenario?.country.toUpperCase()} SCENARIO
           </div>
-        ) : (
-          <div className="space-y-6">
-            {/* Progress Bar */}
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-teal-200">Tình huống {scenarioIndex + 1}/{CULTURAL_SCENARIOS.length}</span>
-                <span className="text-cyan-300 capitalize">{gamePhase}</span>
-              </div>
-              <div className="w-full bg-cyan-900/50 rounded-full h-2">
-                <div 
-                  className="bg-gradient-to-r from-teal-500 to-cyan-400 h-2 rounded-full transition-all duration-500"
-                  style={{ width: `${(scenarioIndex / CULTURAL_SCENARIOS.length) * 100}%` }}
-                ></div>
-              </div>
-            </div>
-
-            {gamePhase === 'intro' && (
-              /* Introduction Phase */
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <h2 className="text-2xl font-bold text-white mb-6">🌟 Trí Tuệ Văn Hóa Là Gì?</h2>
-                
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-teal-900/30 rounded-lg p-4">
-                    <h3 className="font-semibold text-teal-200 mb-3">📚 Định Nghĩa</h3>
-                    <p className="text-white text-sm mb-3">
-                      Cultural Intelligence (CQ) là khả năng hoạt động hiệu quả trong các môi trường đa văn hóa. 
-                      Đây là kỹ năng quan trọng trong thời đại toàn cầu hóa.
-                    </p>
-                    <div className="text-teal-300 text-xs space-y-1">
-                      <div>• <strong>CQ Drive:</strong> Động lực tìm hiểu văn hóa khác</div>
-                      <div>• <strong>CQ Knowledge:</strong> Hiểu biết về hệ thống văn hóa</div>
-                      <div>• <strong>CQ Strategy:</strong> Lập kế hoạch cho tương tác đa văn hóa</div>
-                      <div>• <strong>CQ Action:</strong> Thích ứng hành vi phù hợp</div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-blue-900/30 rounded-lg p-4">
-                    <h3 className="font-semibold text-blue-200 mb-3">🌍 Tại Sao Quan Trọng?</h3>
-                    <div className="space-y-3 text-sm">
-                      <div className="bg-white/10 rounded p-2">
-                        <div className="font-semibold text-white">Kinh Doanh Toàn Cầu</div>
-                        <div className="text-gray-300">Thành công trong thương mại quốc tế</div>
-                      </div>
-                      <div className="bg-white/10 rounded p-2">
-                        <div className="font-semibold text-white">Đội Ngũ Đa Dạng</div>
-                        <div className="text-gray-300">Hợp tác hiệu quả với đồng nghiệp quốc tế</div>
-                      </div>
-                      <div className="bg-white/10 rounded p-2">
-                        <div className="font-semibold text-white">Phát Triển Cá Nhân</div>
-                        <div className="text-gray-300">Mở rộng tầm nhìn và cơ hội nghề nghiệp</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-purple-900/30 rounded-lg p-4 mb-6">
-                  <h3 className="font-semibold text-purple-200 mb-3">🎯 Cách Đánh Giá</h3>
-                  <div className="grid md:grid-cols-4 gap-3">
-                    {CULTURAL_DIMENSIONS.map((dimension, index) => (
-                      <div key={index} className="text-center">
-                        <div className="font-semibold text-white text-sm mb-1">{dimension.name}</div>
-                        <div className="w-full bg-gray-700 rounded-full h-2 mb-1">
-                          <div
-                            className="bg-gradient-to-r from-purple-500 to-blue-400 h-2 rounded-full"
-                            style={{ width: `${dimension.score * 10}%` }}
-                          ></div>
-                        </div>
-                        <div className="text-xs text-gray-400">{dimension.score}/10</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <button
-                  onClick={nextPhase}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-                >
-                  Bắt Đầu Tình Huống Đầu Tiên
-                </button>
-              </div>
-            )}
-
-            {gamePhase === 'briefing' && (
-              /* Scenario Briefing */
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-3xl">{currentScenario.flag}</span>
-                  <h2 className="text-2xl font-bold text-white">{currentScenario.title}</h2>
-                  <div className="ml-auto bg-teal-500/20 px-3 py-1 rounded-full">
-                    <span className="text-teal-300 font-semibold">{currentScenario.country}</span>
-                  </div>
-                </div>
-                
-                <div className="bg-gray-900/50 rounded-lg p-4 mb-6">
-                  <p className="text-white text-lg leading-relaxed">{currentScenario.description}</p>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-blue-900/30 rounded-lg p-4">
-                    <h3 className="font-semibold text-blue-200 mb-3 flex items-center gap-2">
-                      <Eye className="w-4 h-4" />
-                      Yếu Tố Văn Hóa Quan Trọng
-                    </h3>
-                    <ul className="space-y-2">
-                      {currentScenario.culturalFactors.map((factor, index) => (
-                        <li key={index} className="text-blue-100 text-sm flex items-start gap-2">
-                          <Star className="w-3 h-3 text-blue-400 mt-1 flex-shrink-0" />
-                          {factor}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-orange-900/30 rounded-lg p-4">
-                    <h3 className="font-semibold text-orange-200 mb-3 flex items-center gap-2">
-                      <Target className="w-4 h-4" />
-                      Thách Thức Chính
-                    </h3>
-                    <ul className="space-y-2">
-                      {currentScenario.challenges.map((challenge, index) => (
-                        <li key={index} className="text-orange-100 text-sm flex items-start gap-2">
-                          <AlertTriangle className="w-3 h-3 text-orange-400 mt-1 flex-shrink-0" />
-                          {challenge}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                
-                <button
-                  onClick={nextPhase}
-                  className="w-full mt-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-                >
-                  Tiến Vào Tình Huống
-                </button>
-              </div>
-            )}
-
-            {gamePhase === 'scenario' && (
-              /* 3D Scenario Visualization */
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <h2 className="text-xl font-bold text-white mb-4">🎬 Tình Huống Thực Tế</h2>
-                
-                <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-8 mb-6 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-cyan-500/10"></div>
-                  <div className="relative z-10">
-                    <div className="text-center mb-6">
-                      <div className="text-4xl mb-2">{currentScenario.flag}</div>
-                      <h3 className="text-2xl font-bold text-white mb-2">{currentScenario.context}</h3>
-                      <div className="text-teal-300">{currentScenario.country}</div>
-                    </div>
-                    
-                    {/* 3D Scene Representation */}
-                    <div className="grid md:grid-cols-3 gap-4 mb-6">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center transform perspective-1000 rotate-y-12">
-                        <Users className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-                        <div className="text-white font-semibold">Bạn</div>
-                        <div className="text-xs text-gray-300">Visitor/Partner</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center transform perspective-1000">
-                        <Handshake className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                        <div className="text-white font-semibold">Tương Tác</div>
-                        <div className="text-xs text-gray-300">Cultural Exchange</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center transform perspective-1000 rotate-y-12">
-                        <Globe className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                        <div className="text-white font-semibold">Đối Tác</div>
-                        <div className="text-xs text-gray-300">Local Host</div>
-                      </div>
-                    </div>
-                    
-                    <div className="text-center">
-                      <p className="text-white text-lg mb-4">
-                        Bạn đang ở: <span className="font-semibold text-teal-300">{currentScenario.context}</span>
-                      </p>
-                      <p className="text-gray-300">
-                        Hãy chuẩn bị tinh thần để đưa ra quyết định phù hợp với văn hóa địa phương!
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <button
-                  onClick={nextPhase}
-                  className="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-                >
-                  Đưa Ra Phản Ứng
-                </button>
-              </div>
-            )}
-
-            {gamePhase === 'response' && (
-              /* Response Selection */
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <h2 className="text-xl font-bold text-white mb-4">🤔 Bạn Sẽ Phản Ứng Như Thế Nào?</h2>
-                <p className="text-teal-200 mb-6">
-                  Chọn cách phản ứng phù hợp nhất với tình huống và văn hóa địa phương:
-                </p>
-                
-                <div className="space-y-4 mb-6">
-                  {CULTURAL_RESPONSES[currentScenario.id]?.map((response, index) => (
-                    <button
-                      key={response.id}
-                      onClick={() => setSelectedResponse(response)}
-                      className={`w-full p-4 rounded-lg border-2 text-left transition-all duration-200 ${
-                        selectedResponse?.id === response.id
-                          ? 'border-teal-400 bg-teal-500/20'
-                          : 'border-gray-600 bg-gray-800/30 hover:border-gray-500'
-                      }`}
-                    >
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="bg-teal-500/20 text-teal-300 px-2 py-1 rounded text-xs font-semibold">
-                              Lựa chọn {String.fromCharCode(65 + index)}
-                            </span>
-                          </div>
-                          <p className="text-white text-sm">{response.text}</p>
-                        </div>
-                        {selectedResponse?.id === response.id && (
-                          <CheckCircle className="w-5 h-5 text-teal-400 flex-shrink-0 ml-2" />
-                        )}
-                      </div>
-                    </button>
-                  ))}
-                </div>
-                
-                <button
-                  onClick={nextPhase}
-                  disabled={!selectedResponse}
-                  className="w-full bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Xác Nhận Lựa Chọn
-                </button>
-              </div>
-            )}
-
-            {gamePhase === 'feedback' && selectedResponse && (
-              /* Feedback Phase */
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <Award className="w-6 h-6 text-yellow-400" />
-                  <h2 className="text-2xl font-bold text-white">📊 Phản Hồi Chi Tiết</h2>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-blue-900/30 rounded-lg p-4">
-                    <h3 className="font-semibold text-blue-200 mb-3">📈 Đánh Giá</h3>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-blue-300">Điểm Văn Hóa</span>
-                        <div className="flex items-center gap-2">
-                          <div className="w-32 bg-gray-700 rounded-full h-2">
-                            <div
-                              className="bg-blue-400 h-2 rounded-full transition-all duration-500"
-                              style={{ width: `${selectedResponse.culturalScore * 10}%` }}
-                            ></div>
-                          </div>
-                          <span className={`font-semibold ${getScoreColor(selectedResponse.culturalScore * 10)}`}>
-                            {selectedResponse.culturalScore}/10
-                          </span>
-                        </div>
-                      </div>
-                      <div className="text-center">
-                        <div className={`text-2xl font-bold ${selectedResponse.isRecommended ? 'text-green-400' : 'text-orange-400'}`}>
-                          {selectedResponse.isRecommended ? '✅ Khuyến Khích' : '⚠️ Cần Cân Nhắc'}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-purple-900/30 rounded-lg p-4">
-                    <h3 className="font-semibold text-purple-200 mb-3">💡 Phân Tích</h3>
-                    <div className="space-y-3 text-sm">
-                      <div>
-                        <strong className="text-white">Lý do:</strong>
-                        <p className="text-purple-100 mt-1">{selectedResponse.reasoning}</p>
-                      </div>
-                      <div>
-                        <strong className="text-white">Hệ quả:</strong>
-                        <p className="text-purple-100 mt-1">{selectedResponse.consequences}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-teal-900/30 rounded-lg p-4 mb-6">
-                  <h3 className="font-semibold text-teal-200 mb-3">🎯 Điểm Số Earned</h3>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-500">
-                      +{selectedResponse.culturalScore * 10 + (selectedResponse.isRecommended ? 20 : 0)}
-                    </div>
-                    <div className="text-teal-200">điểm cho phản ứng này</div>
-                  </div>
-                </div>
-                
-                <button
-                  onClick={nextPhase}
-                  className="w-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
-                >
-                  {scenarioIndex < CULTURAL_SCENARIOS.length - 1 ? 'Tình Huống Tiếp Theo' : 'Xem Kết Quả Cuối'}
-                </button>
-              </div>
-            )}
-
-            {gamePhase === 'results' && (
-              /* Final Results */
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <Star className="w-6 h-6 text-yellow-400" />
-                  <h2 className="text-2xl font-bold text-white">🌟 Kết Quả Trí Tuệ Văn Hóa</h2>
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-6 mb-6">
-                  <div className="bg-blue-900/30 rounded-lg p-4 text-center">
-                    <div className="text-4xl font-bold text-blue-400 mb-2">{Math.round(score)}</div>
-                    <div className="text-blue-200 font-semibold">Tổng Điểm</div>
-                    <div className="text-xs text-gray-300 mt-1">Tối đa: 400 điểm</div>
-                  </div>
-                  
-                  <div className="bg-teal-900/30 rounded-lg p-4 text-center">
-                    <div className="text-4xl font-bold text-teal-400 mb-2">
-                      {Math.round(culturalAwareness.reduce((sum, dim) => sum + dim.score, 0) / culturalAwareness.length * 10)}
-                    </div>
-                    <div className="text-teal-200 font-semibold">CQ Score</div>
-                    <div className="text-xs text-gray-300 mt-1">Cultural Intelligence</div>
-                  </div>
-                  
-                  <div className="bg-purple-900/30 rounded-lg p-4 text-center">
-                    <div className="text-4xl font-bold text-purple-400 mb-2">
-                      {scenarioResults.filter(r => r.response.isRecommended).length}
-                    </div>
-                    <div className="text-purple-200 font-semibold">Phản Ứng Tối Ưu</div>
-                    <div className="text-xs text-gray-300 mt-1">/ {CULTURAL_SCENARIOS.length} tình huống</div>
-                  </div>
-                </div>
-                
-                <div className="bg-cyan-900/30 rounded-lg p-4 mb-6">
-                  <h3 className="font-semibold text-cyan-200 mb-3">📋 Tóm Tắt Hành Trình</h3>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {scenarioResults.map((result, index) => (
-                      <div key={index} className="bg-white/5 rounded p-3">
-                        <div className="flex justify-between items-start mb-2">
-                          <div>
-                            <span className="font-semibold text-white">{result.scenario.country}</span>
-                            <div className="text-xs text-gray-400">{result.scenario.title}</div>
-                          </div>
-                          <div className="text-right">
-                            <div className={`font-semibold ${getScoreColor(result.score)}`}>
-                              +{result.score}
-                            </div>
-                            <div className="text-xs">
-                              {result.response.isRecommended ? '✅' : '⚠️'}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    {score >= 320 ? '🌟 Chuyên Gia Văn Hóa!' : 
-                     score >= 240 ? '👍 Nhận Thức Tốt!' : 
-                     '📚 Cần Phát Triển Thêm'}
-                  </h3>
-                  <p className="text-teal-200">
-                    {score >= 320 
-                      ? 'Xuất sắc! Bạn có trí tuệ văn hóa cao và có thể thành công trong môi trường quốc tế.' 
-                      : score >= 240 
-                      ? 'Tốt! Bạn đã có nền tảng tốt, hãy tiếp tục phát triển kỹ năng này.' 
-                      : 'Đây là bước đầu tuyệt vời! Hãy tiếp tục học hỏi về các văn hóa khác nhau.'
-                    }
-                  </p>
-                </div>
-                
-                <div className="flex gap-4 justify-center">
-                  <button
-                    onClick={restartGame}
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2"
-                  >
-                    <RotateCcw className="w-5 h-5" />
-                    Thử Lại
-                  </button>
-                  <button
-                    onClick={() => onComplete(score >= 240, score)}
-                    className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2"
-                  >
-                    <Award className="w-5 h-5" />
-                    Hoàn Thành
-                  </button>
-                </div>
-              </div>
-            )}
+          <div className="text-xs text-gray-300">Cultural Intelligence: {culturalKnowledge}%</div>
+          <div className="text-xs text-gray-300">
+            Progress: {answeredScenarios.length + 1}/{CULTURAL_SCENARIOS.length}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
+
+  if (gamePhase === 'intro') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 p-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="text-6xl mb-4">🌍</div>
+            <h1 className="text-4xl font-bold text-white mb-4">Cultural Intelligence Navigator 3D</h1>
+            <p className="text-xl text-purple-100 mb-8">
+              Phát triển trí tuệ văn hóa qua các tình huống thực tế trên thế giới
+            </p>
+          </div>
+
+          {render3DCulturalEnvironment()}
+
+          <div className="mt-8 bg-black/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500/30">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <Brain className="mr-3" />
+              Trí Tuệ Văn Hóa (Cultural Intelligence)
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center p-4 bg-purple-600/20 rounded-lg">
+                <Globe className="w-12 h-12 text-purple-400 mx-auto mb-3" />
+                <h3 className="font-bold text-white mb-2">Nhận Thức Văn Hóa</h3>
+                <p className="text-purple-100 text-sm">Hiểu biết về các nền văn hóa khác nhau</p>
+              </div>
+              <div className="text-center p-4 bg-blue-600/20 rounded-lg">
+                <Users className="w-12 h-12 text-blue-400 mx-auto mb-3" />
+                <h3 className="font-bold text-white mb-2">Tương Tác Đa Văn Hóa</h3>
+                <p className="text-blue-100 text-sm">Giao tiếp hiệu quả qua các nền văn hóa</p>
+              </div>
+              <div className="text-center p-4 bg-indigo-600/20 rounded-lg">
+                <Target className="w-12 h-12 text-indigo-400 mx-auto mb-3" />
+                <h3 className="font-bold text-white mb-2">Thích Ứng Hành Vi</h3>
+                <p className="text-indigo-100 text-sm">Điều chỉnh hành vi phù hợp văn hóa</p>
+              </div>
+            </div>
+
+            <div className="space-y-4 mb-8">
+              <h3 className="text-lg font-bold text-white mb-4">Các Tình Huống Bạn Sẽ Trải Nghiệm:</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {CULTURAL_SCENARIOS.map((scenario, index) => (
+                  <div key={scenario.id} className="p-4 bg-white/5 rounded-lg border border-white/10">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                        {index + 1}
+                      </span>
+                      <h4 className="text-white font-medium">{scenario.title}</h4>
+                    </div>
+                    <p className="text-gray-300 text-sm">{scenario.context}</p>
+                    <div className="mt-2 flex justify-between items-center">
+                      <span className="text-xs text-purple-300">📍 {scenario.country}</span>
+                      <span className="text-xs text-yellow-400">+{scenario.points} điểm</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <button
+              onClick={startGame}
+              className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-200 flex items-center justify-center text-xl"
+            >
+              <Play className="mr-3" size={24} />
+              Khám Phá Văn Hóa Thế Giới
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (gamePhase === 'playing' && currentScenario) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 p-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-white mb-2">{currentScenario.title}</h2>
+            <div className="flex items-center justify-center space-x-4 text-purple-100 mb-6">
+              <span>📍 {currentScenario.country}</span>
+              <span>•</span>
+              <span>
+                Scenario {currentScenarioIndex + 1}/{CULTURAL_SCENARIOS.length}
+              </span>
+              <span>•</span>
+              <span>⭐ {score} điểm</span>
+            </div>
+
+            {render3DCulturalEnvironment()}
+          </div>
+
+          <div className="bg-black/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500/30">
+            <div className="mb-6">
+              <h3 className="text-xl font-bold text-white mb-4">Bối Cảnh:</h3>
+              <p className="text-purple-100 mb-4">{currentScenario.context}</p>
+
+              <h3 className="text-xl font-bold text-white mb-4">Tình Huống:</h3>
+              <p className="text-blue-100 text-lg">{currentScenario.situation}</p>
+            </div>
+
+            {!selectedOption ? (
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                  <MessageSquare className="mr-2" />
+                  Bạn sẽ xử lý như thế nào?
+                </h3>
+                {currentScenario.options.map((option) => (
+                  <button
+                    key={option.id}
+                    onClick={() => handleOptionSelect(option.id)}
+                    className="w-full p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-400/50 rounded-lg transition-all duration-200 text-left"
+                  >
+                    <div className="text-white font-medium mb-2">{option.action}</div>
+                    <div className="flex space-x-4 text-sm">
+                      <span className="text-purple-300">🤝 Văn hóa: {option.culturalSensitivity}/10</span>
+                      <span className="text-blue-300">⚡ Hiệu quả: {option.effectiveness}/10</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-6">
+                <div
+                  className={`p-6 rounded-lg border-2 ${
+                    selectedOption === currentScenario.correctOption
+                      ? 'bg-green-900/30 border-green-500/50'
+                      : 'bg-red-900/30 border-red-500/50'
+                  }`}
+                >
+                  <div className="flex items-center space-x-2 mb-4">
+                    {selectedOption === currentScenario.correctOption ? (
+                      <>
+                        <div className="text-4xl">🎉</div>
+                        <h3 className="text-xl font-bold text-green-400">Xuất Sắc!</h3>
+                      </>
+                    ) : (
+                      <>
+                        <div className="text-4xl">📚</div>
+                        <h3 className="text-xl font-bold text-yellow-400">Học Hỏi Thêm!</h3>
+                      </>
+                    )}
+                  </div>
+                  <p className="text-white mb-4">{feedback}</p>
+                  <div className="flex justify-between items-center">
+                    <div className="text-sm text-gray-300">
+                      Điểm nhận được: +
+                      {selectedOption === currentScenario.correctOption
+                        ? currentScenario.points
+                        : Math.floor(currentScenario.points * 0.3)}
+                    </div>
+                    <div className="text-sm text-purple-300">Trí tuệ văn hóa: {culturalKnowledge}%</div>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="animate-pulse text-purple-400">Chuyển sang tình huống tiếp theo...</div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (gamePhase === 'completed') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 p-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="text-6xl mb-6">🌍🏆</div>
+          <h1 className="text-4xl font-bold text-white mb-8">Cultural Intelligence Mastery!</h1>
+
+          {render3DCulturalEnvironment()}
+
+          <div className="mt-8 bg-black/40 backdrop-blur-sm rounded-xl p-8 border border-purple-500/30">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <div>
+                <div className="text-3xl font-bold text-purple-400">{score}</div>
+                <div className="text-purple-100">Tổng Điểm</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-blue-400">{culturalKnowledge}%</div>
+                <div className="text-purple-100">Trí Tuệ Văn Hóa</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-green-400">{answeredScenarios.length}</div>
+                <div className="text-purple-100">Tình Huống Hoàn Thành</div>
+              </div>
+            </div>
+
+            <div className="text-lg text-purple-100 mb-8">
+              {score >= 450
+                ? '🏆 Bạn là một navigator văn hóa xuất sắc! Khả năng thích ứng đa văn hóa rất cao.'
+                : score >= 300
+                  ? '🌟 Tốt lắm! Bạn có hiểu biết sâu sắc về các nền văn hóa khác nhau.'
+                  : score >= 150
+                    ? '👍 Khá tốt! Bạn đã học được nhiều về trí tuệ văn hóa.'
+                    : '📚 Tiếp tục học hỏi để phát triển trí tuệ văn hóa!'}
+            </div>
+
+            <div className="bg-indigo-900/50 p-6 rounded-lg mb-8">
+              <h3 className="text-xl font-bold text-white mb-4">Các Kỹ Năng Đã Phát Triển:</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">✓</div>
+                  <span className="text-white">Nhận thức văn hóa toàn cầu</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">✓</div>
+                  <span className="text-white">Giao tiếp đa văn hóa</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">✓</div>
+                  <span className="text-white">Thích ứng hành vi</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">✓</div>
+                  <span className="text-white">Tôn trọng đa dạng</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center space-x-4">
+              <button
+                onClick={onRestart}
+                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 flex items-center"
+              >
+                <RotateCcw className="mr-2" size={20} />
+                Khám Phá Lại
+              </button>
+              <button
+                onClick={() => onComplete(true, score)}
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 flex items-center"
+              >
+                <Award className="mr-2" size={20} />
+                Hoàn Thành
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default CulturalIntelligenceNavigator3DGame;
