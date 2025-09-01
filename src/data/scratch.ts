@@ -55,7 +55,7 @@ export const scratchLessons: ScratchLesson[] = [
     materials: ['Máy tính với trình duyệt web', 'Tài khoản Scratch (tùy chọn)', 'Kết nối Internet'],
     imageUrl:
       'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=D-nW4jvzRr8', // Beginners Guide To Scratch (VERY Simple)
+    videoUrl: 'https://www.youtube.com/watch?v=QuZA24FEiIs', // Lập trình Scratch cơ bản cho người mới bắt đầu
     scratchProjectUrl: 'https://scratch.mit.edu/projects/editor/',
     codeBlocks: [
       'when green flag clicked',
@@ -148,7 +148,7 @@ export const scratchLessons: ScratchLesson[] = [
     materials: ['Scratch editor', 'File âm thanh (tùy chọn)', 'Hình ảnh sprites tùy chỉnh (tùy chọn)'],
     imageUrl:
       'https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=Ck5K_mg0Zqw',
     codeBlocks: [
       'when this sprite clicked',
       'play sound "meow"',
@@ -233,7 +233,7 @@ export const scratchLessons: ScratchLesson[] = [
     materials: ['Scratch editor', 'Notebook để ghi chú logic', 'Ý tưởng cho game đơn giản'],
     imageUrl:
       'https://images.unsplash.com/photo-1509048191080-d2e2678e67b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=FgPFIzJ_Jxk',
     codeBlocks: [
       'set score to 0',
       'change score by 1',

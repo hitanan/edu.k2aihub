@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, Box, Cylinder, Text, Html, Plane } from '@react-three/drei';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls, Box, Cylinder, Html, Plane } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Factory components interfaces
@@ -25,12 +25,12 @@ interface Product {
   defective: boolean;
 }
 
-interface ConveyorPath {
-  id: string;
-  points: [number, number, number][];
-  direction: number;
-  speed: number;
-}
+// interface ConveyorPath {
+//   id: string;
+//   points: [number, number, number][];
+//   direction: number;
+//   speed: number;
+// }
 
 // Production Statistics Interface
 interface ProductionStats {
@@ -53,18 +53,18 @@ function ConveyorBelt3D({
   onClick: () => void;
 }) {
   const beltRef = useRef<THREE.Mesh>(null);
-  const [textureOffset, setTextureOffset] = useState(0);
+  // const [textureOffset, setTextureOffset] = useState(0);
 
-  useFrame((state, delta) => {
+  useFrame(() => {
     if (isRunning && path && beltRef.current) {
       // Animate belt texture to show movement
-      setTextureOffset((prev) => prev + delta * path.speed * 0.1);
+      // setTextureOffset((prev) => prev + delta * path.speed * 0.1);
 
       // Apply texture offset animation
       const material = beltRef.current.material as THREE.Material;
       if ('map' in material && material.map) {
         // Create animated effect on belt surface
-        const offset = textureOffset * 0.1;
+        // const offset = textureOffset * 0.1;
         // Use offset for animation (simplified implementation)
       }
     }
@@ -582,7 +582,7 @@ export default function FactoryAutomationSimulator3D() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showInstructions, setShowInstructions] = useState(true);
   const [showControlPanel, setShowControlPanel] = useState(true);
-  const [gameStarted, setGameStarted] = useState(false);
+  // const [gameStarted, setGameStarted] = useState(false);
 
   // Production statistics
   const [productionStats, setProductionStats] = useState<ProductionStats>({
@@ -937,7 +937,9 @@ export default function FactoryAutomationSimulator3D() {
 
       {/* Machine Details Panel - now available in fullscreen too */}
       {selectedMachine && (
-        <div className={`absolute top-4 right-4 bg-gray-900/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 max-w-sm z-10 ${isFullscreen ? 'text-white' : ''}`}>
+        <div
+          className={`absolute top-4 right-4 bg-gray-900/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 max-w-sm z-10 ${isFullscreen ? 'text-white' : ''}`}
+        >
           <h4 className="text-white font-bold mb-2 flex items-center gap-2">🔧 {selectedMachine.id}</h4>
           <div className="space-y-2 text-sm">
             <div>
@@ -966,73 +968,71 @@ export default function FactoryAutomationSimulator3D() {
               Efficiency: <span className="font-bold text-yellow-400">{selectedMachine.efficiency}%</span>
             </div>
           </div>
-          
+
           {/* Machine Controls */}
           <div className="mt-4 space-y-2">
             <button
               onClick={() => {
                 // Toggle machine active state
-                const updatedMachines = selectedScenario.layout.machines.map(m => 
-                  m.id === selectedMachine.id 
+                const updatedMachines = selectedScenario.layout.machines.map((m) =>
+                  m.id === selectedMachine.id
                     ? { ...m, isActive: !m.isActive, status: (m.isActive ? 'idle' : 'working') as Machine['status'] }
-                    : m
+                    : m,
                 );
                 setSelectedScenario({
                   ...selectedScenario,
                   layout: {
                     ...selectedScenario.layout,
-                    machines: updatedMachines
-                  }
+                    machines: updatedMachines,
+                  },
                 });
-                setSelectedMachine((updatedMachines.find(m => m.id === selectedMachine.id) as Machine) || null);
+                setSelectedMachine((updatedMachines.find((m) => m.id === selectedMachine.id) as Machine) || null);
               }}
               className={`w-full px-3 py-1 rounded text-xs font-semibold ${
-                selectedMachine.isActive 
-                  ? 'bg-red-600 hover:bg-red-700 text-white' 
+                selectedMachine.isActive
+                  ? 'bg-red-600 hover:bg-red-700 text-white'
                   : 'bg-green-600 hover:bg-green-700 text-white'
               }`}
             >
               {selectedMachine.isActive ? '⏹️ Stop Machine' : '▶️ Start Machine'}
             </button>
-            
+
             <button
               onClick={() => {
                 // Adjust machine speed/efficiency
-                const updatedMachines = selectedScenario.layout.machines.map(m => 
-                  m.id === selectedMachine.id 
-                    ? { ...m, efficiency: Math.min(100, m.efficiency + 10) }
-                    : m
+                const updatedMachines = selectedScenario.layout.machines.map((m) =>
+                  m.id === selectedMachine.id ? { ...m, efficiency: Math.min(100, m.efficiency + 10) } : m,
                 );
                 setSelectedScenario({
                   ...selectedScenario,
                   layout: {
                     ...selectedScenario.layout,
-                    machines: updatedMachines
-                  }
+                    machines: updatedMachines,
+                  },
                 });
-                setSelectedMachine((updatedMachines.find(m => m.id === selectedMachine.id) as Machine) || null);
+                setSelectedMachine((updatedMachines.find((m) => m.id === selectedMachine.id) as Machine) || null);
               }}
               className="w-full px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-semibold"
             >
               ⚡ Boost Efficiency (+10%)
             </button>
-            
+
             <button
               onClick={() => {
                 // Maintenance mode
-                const updatedMachines = selectedScenario.layout.machines.map(m => 
-                  m.id === selectedMachine.id 
+                const updatedMachines = selectedScenario.layout.machines.map((m) =>
+                  m.id === selectedMachine.id
                     ? { ...m, status: m.status === 'maintenance' ? 'idle' : 'maintenance' }
-                    : m
+                    : m,
                 );
                 setSelectedScenario({
                   ...selectedScenario,
                   layout: {
                     ...selectedScenario.layout,
-                    machines: updatedMachines
-                  }
+                    machines: updatedMachines,
+                  },
                 });
-                setSelectedMachine((updatedMachines.find(m => m.id === selectedMachine.id) as Machine) || null);
+                setSelectedMachine((updatedMachines.find((m) => m.id === selectedMachine.id) as Machine) || null);
               }}
               className={`w-full px-3 py-1 rounded text-xs font-semibold ${
                 selectedMachine.status === 'maintenance'

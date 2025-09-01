@@ -25,11 +25,11 @@ function convertToLesson(lesson: AdvancedAILesson): BaseLessonData {
     realWorldApplications: lesson.realWorldApplications,
     caseStudies: lesson.caseStudies?.map((study) => ({
       title: study.title,
-      organization: study.company || 'Organization',
+      organization: study.organization,
       problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.technologies || [],
+      innovations: study.innovations || [],
     })),
     resources: lesson.resources,
   };

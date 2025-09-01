@@ -1,4 +1,5 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
 
 export interface GovernmentTechnologyLesson extends BaseLessonData {
   governmentDomain: 'digital-government' | 'public-service-tech' | 'civic-engagement' | 'smart-city' | 'policy-tech';
@@ -11,432 +12,524 @@ export interface GovernmentTechnologyLesson extends BaseLessonData {
 export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
   {
     id: 'digital-government-transformation',
-    title: 'Chuyển Đổi Số Chính Phủ & E-Government',
-    description: 'Comprehensive understanding của digital government transformation, e-government services implementation, và public sector digitalization trong Vietnamese government context.',
+    title: 'Chuyển Đổi Số Chính Phủ & Chính Phủ Điện Tử',
+    description:
+      'Hiểu biết toàn diện về chuyển đổi số chính phủ, triển khai dịch vụ chính phủ điện tử và số hóa khu vực công trong bối cảnh chính phủ Việt Nam.',
     duration: '210 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=0Bw4Tpy0JzE', // Digital Government Transformation
     imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop',
     governmentDomain: 'digital-government',
     technologyCategory: [
-      'E-government platforms',
-      'Digital identity systems',
-      'Public service portals',
-      'Government data management'
+      'Nền tảng chính phủ điện tử',
+      'Hệ thống định danh số',
+      'Cổng dịch vụ công',
+      'Quản lý dữ liệu chính phủ',
     ],
     objectives: [
-      'Understand digital government transformation principles',
-      'Design user-centered public digital services',
-      'Implement secure và accessible e-government platforms',
-      'Develop digital identity và authentication systems',
-      'Create integrated government service delivery models'
+      'Hiểu các nguyên tắc chuyển đổi số chính phủ',
+      'Thiết kế dịch vụ công số lấy người dùng làm trung tâm',
+      'Triển khai các nền tảng chính phủ điện tử an toàn và dễ tiếp cận',
+      'Phát triển hệ thống định danh và xác thực số',
+      'Tạo ra các mô hình cung cấp dịch vụ chính phủ tích hợp',
     ],
     prerequisites: [
-      'Public administration fundamentals',
-      'Basic web development knowledge',
-      'Understanding of government processes'
+      'Kiến thức cơ bản về hành chính công',
+      'Kiến thức cơ bản về phát triển web',
+      'Hiểu biết về các quy trình của chính phủ',
     ],
     vietnameseGovernmentContext: [
-      'Vietnam National Digital Transformation Program',
-      'Ministry-level digital transformation initiatives',
-      'Provincial và local government digitalization',
-      'ASEAN digital government collaboration'
+      'Chương trình Chuyển đổi số Quốc gia Việt Nam',
+      'Các sáng kiến chuyển đổi số cấp Bộ',
+      'Số hóa chính quyền cấp tỉnh và địa phương',
+      'Hợp tác chính phủ số ASEAN',
     ],
     publicServiceApplications: [
-      'Online business registration systems',
-      'Digital health record management',
-      'E-tax filing và payment systems',
-      'Digital citizen service portals'
+      'Hệ thống đăng ký kinh doanh trực tuyến',
+      'Quản lý hồ sơ sức khỏe điện tử',
+      'Hệ thống khai và nộp thuế điện tử',
+      'Cổng dịch vụ công dân số',
     ],
     digitalTransformationAspects: [
-      'Legacy system modernization strategies',
-      'Citizen-centric service design',
-      'Data interoperability requirements',
-      'Digital security và privacy protection'
+      'Chiến lược hiện đại hóa hệ thống cũ',
+      'Thiết kế dịch vụ lấy công dân làm trung tâm',
+      'Yêu cầu về khả năng tương tác dữ liệu',
+      'Bảo mật số và bảo vệ quyền riêng tư',
     ],
     exercises: [
       {
-        title: 'E-Government Service Design Project',
-        description: 'Design comprehensive e-government service for Vietnamese citizens addressing specific public need',
+        title: 'Dự án Thiết kế Dịch vụ Chính phủ Điện tử',
+        description:
+          'Thiết kế một dịch vụ chính phủ điện tử toàn diện cho công dân Việt Nam, giải quyết một nhu cầu công cộng cụ thể.',
         difficulty: 'Nâng cao',
-        materials: ['Government service mapping tools', 'UX design platforms', 'Security frameworks', 'Accessibility guidelines'],
-        procedure: [
-          'Identify target public service và user needs analysis',
-          'Map current service delivery process và pain points',
-          'Design digital service interface với accessibility standards',
-          'Develop security và privacy protection measures',
-          'Create implementation plan với government stakeholders'
+        materials: [
+          'Công cụ lập bản đồ dịch vụ chính phủ',
+          'Nền tảng thiết kế UX',
+          'Khung bảo mật',
+          'Hướng dẫn về khả năng tiếp cận',
         ],
-        expectedResults: 'Comprehensive e-government service design với user journey, security architecture, và implementation roadmap',
-        solution: 'Citizen-centered digital service design incorporating Vietnamese government standards, accessibility requirements, và multi-channel delivery'
-      }
+        procedure: [
+          'Xác định dịch vụ công mục tiêu và phân tích nhu cầu người dùng',
+          'Lập bản đồ quy trình cung cấp dịch vụ hiện tại và các điểm yếu',
+          'Thiết kế giao diện dịch vụ số với các tiêu chuẩn về khả năng tiếp cận',
+          'Phát triển các biện pháp bảo mật và bảo vệ quyền riêng tư',
+          'Tạo kế hoạch triển khai với các bên liên quan của chính phủ',
+        ],
+        expectedResults:
+          'Thiết kế dịch vụ chính phủ điện tử toàn diện với hành trình người dùng, kiến trúc bảo mật và lộ trình triển khai.',
+        solution:
+          'Thiết kế dịch vụ số lấy công dân làm trung tâm, kết hợp các tiêu chuẩn của chính phủ Việt Nam, yêu cầu về khả năng tiếp cận và cung cấp đa kênh.',
+      },
     ],
     realWorldApplications: [
-      'National ID digitalization projects',
-      'Online permit và licensing systems',
-      'Digital voting và election systems',
-      'Public information transparency platforms'
+      'Các dự án số hóa Chứng minh nhân dân/Căn cước công dân',
+      'Hệ thống cấp phép và giấy phép trực tuyến',
+      'Hệ thống bỏ phiếu và bầu cử kỹ thuật số',
+      'Nền tảng minh bạch thông tin công cộng',
     ],
     caseStudies: [
       {
-        title: 'Vietnam National Single Window System',
-        organization: 'Vietnam National Single Window',
-        problem: 'Streamlining import/export procedures và reducing bureaucratic complexity',
-        solution: 'Integrated digital platform connecting multiple government agencies, automated document processing, digital signatures',
-        impact: 'Reduced processing time from 21 days to 3 days, saved $500M annually in compliance costs',
-        innovations: ['Multi-agency integration platform', 'Automated compliance checking', 'Digital document authentication']
-      }
+        title: 'Hệ thống Một cửa Quốc gia Việt Nam',
+        organization: 'Cơ chế Một cửa Quốc gia Việt Nam',
+        problem: 'Đơn giản hóa thủ tục xuất nhập khẩu và giảm sự phức tạp của bộ máy hành chính.',
+        solution: 'Nền tảng kỹ thuật số tích hợp kết nối nhiều cơ quan chính phủ, xử lý tài liệu tự động, chữ ký số.',
+        impact: 'Giảm thời gian xử lý từ 21 ngày xuống còn 3 ngày, tiết kiệm 500 triệu USD chi phí tuân thủ hàng năm.',
+        innovations: ['Nền tảng tích hợp đa cơ quan', 'Kiểm tra tuân thủ tự động', 'Xác thực tài liệu kỹ thuật số'],
+      },
     ],
     resources: [
       {
-        title: 'Digital Government Development Guidelines',
+        title: 'Hướng dẫn Phát triển Chính phủ Số',
         url: 'https://www.oecd.org/gov/digital-government/',
-        type: 'Documentation'
-      }
+        type: 'Tài liệu',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cybersecurity-defense'),
     ]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'smart-city-technology-systems',
     title: 'Công Nghệ Smart City & Hệ Thống Đô Thị Thông Minh',
-    description: 'Explore smart city technologies, urban IoT systems, data-driven city management, và sustainable urban development solutions.',
+    description:
+      'Khám phá các công nghệ thành phố thông minh, hệ thống IoT đô thị, quản lý thành phố dựa trên dữ liệu và các giải pháp phát triển đô thị bền vững.',
     duration: '225 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=7BqYIi4__Ws', // Smart City Technologies
     imageUrl: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=600&fit=crop',
     governmentDomain: 'smart-city',
     technologyCategory: [
-      'IoT sensor networks',
-      'Smart traffic management',
-      'Environmental monitoring',
-      'Urban analytics platforms'
+      'Mạng lưới cảm biến IoT',
+      'Quản lý giao thông thông minh',
+      'Giám sát môi trường',
+      'Nền tảng phân tích đô thị',
     ],
     objectives: [
-      'Design IoT-enabled smart city infrastructure',
-      'Implement urban data collection và analytics systems',
-      'Develop smart traffic và transportation solutions',
-      'Create environmental monitoring và sustainability systems',
-      'Build citizen engagement platforms for smart cities'
+      'Thiết kế cơ sở hạ tầng thành phố thông minh hỗ trợ IoT',
+      'Triển khai hệ thống thu thập và phân tích dữ liệu đô thị',
+      'Phát triển các giải pháp giao thông và vận tải thông minh',
+      'Tạo ra các hệ thống giám sát môi trường và bền vững',
+      'Xây dựng nền tảng tương tác công dân cho các thành phố thông minh',
     ],
     prerequisites: [
-      'IoT systems understanding',
-      'Data analytics fundamentals',
-      'Urban planning basics'
+      'Hiểu biết về hệ thống IoT',
+      'Kiến thức cơ bản về phân tích dữ liệu',
+      'Kiến thức cơ bản về quy hoạch đô thị',
     ],
     vietnameseGovernmentContext: [
-      'Ho Chi Minh City Smart City Master Plan',
-      'Hanoi smart city development initiatives',
-      'Da Nang smart city pilot projects',
-      'National smart city development strategy'
+      'Đề án Thành phố Thông minh của Thành phố Hồ Chí Minh',
+      'Các sáng kiến phát triển thành phố thông minh của Hà Nội',
+      'Các dự án thí điểm thành phố thông minh của Đà Nẵng',
+      'Chiến lược phát triển thành phố thông minh quốc gia',
     ],
     publicServiceApplications: [
-      'Smart parking và traffic flow optimization',
-      'Air quality monitoring systems',
-      'Waste management route optimization',
-      'Public safety incident response systems'
+      'Đỗ xe thông minh và tối ưu hóa luồng giao thông',
+      'Hệ thống giám sát chất lượng không khí',
+      'Tối ưu hóa lộ trình quản lý chất thải',
+      'Hệ thống ứng phó sự cố an toàn công cộng',
     ],
     digitalTransformationAspects: [
-      'Integrated city data platforms',
-      'Real-time decision making systems',
-      'Citizen mobile app ecosystems',
-      'Public-private partnership models'
+      'Nền tảng dữ liệu thành phố tích hợp',
+      'Hệ thống ra quyết định thời gian thực',
+      'Hệ sinh thái ứng dụng di động cho công dân',
+      'Mô hình đối tác công-tư',
     ],
     exercises: [
       {
-        title: 'Smart City Solution Architecture Design',
-        description: 'Design comprehensive smart city solution addressing specific urban challenge trong Vietnamese city',
+        title: 'Thiết kế Kiến trúc Giải pháp Thành phố Thông minh',
+        description:
+          'Thiết kế một giải pháp thành phố thông minh toàn diện giải quyết một thách thức đô thị cụ thể tại một thành phố của Việt Nam.',
         difficulty: 'Nâng cao',
-        materials: ['Smart city frameworks', 'IoT development platforms', 'Data analytics tools', 'Urban planning resources'],
-        procedure: [
-          'Identify specific urban challenge (traffic, environment, safety, etc.)',
-          'Design IoT sensor network architecture',
-          'Develop data collection và processing pipeline',
-          'Create citizen interface và engagement platform',
-          'Plan implementation với municipal government partners'
+        materials: [
+          'Khung thành phố thông minh',
+          'Nền tảng phát triển IoT',
+          'Công cụ phân tích dữ liệu',
+          'Tài nguyên quy hoạch đô thị',
         ],
-        expectedResults: 'Complete smart city solution architecture với technical specifications và implementation plan',
-        solution: 'Integrated IoT-based solution với real-time data analytics, citizen engagement, và measurable urban improvement outcomes'
-      }
+        procedure: [
+          'Xác định thách thức đô thị cụ thể (giao thông, môi trường, an toàn, v.v.)',
+          'Thiết kế kiến trúc mạng lưới cảm biến IoT',
+          'Phát triển quy trình thu thập và xử lý dữ liệu',
+          'Tạo giao diện công dân và nền tảng tương tác',
+          'Lập kế hoạch triển khai với các đối tác chính quyền thành phố',
+        ],
+        expectedResults:
+          'Kiến trúc giải pháp thành phố thông minh hoàn chỉnh với các thông số kỹ thuật và kế hoạch triển khai.',
+        solution:
+          'Giải pháp dựa trên IoT tích hợp với phân tích dữ liệu thời gian thực, tương tác công dân và kết quả cải thiện đô thị có thể đo lường được.',
+      },
     ],
     realWorldApplications: [
-      'Intelligent transportation systems',
-      'Smart energy grid management',
-      'Digital citizen services integration',
-      'Urban sustainability monitoring'
+      'Hệ thống giao thông thông minh',
+      'Quản lý lưới điện thông minh',
+      'Tích hợp dịch vụ công dân số',
+      'Giám sát bền vững đô thị',
     ],
     caseStudies: [
       {
-        title: 'Da Nang Smart City Initiative',
-        organization: 'Da Nang City Government',
-        problem: 'Integrating digital services và improving urban livability for residents và tourists',
-        solution: 'Unified smart city platform, mobile citizen app, IoT environmental monitoring, digital tourism services',
-        impact: 'Improved citizen satisfaction by 35%, increased tourism efficiency, reduced urban management costs by 20%',
-        innovations: ['Integrated city services platform', 'Tourist-friendly digital services', 'Environmental IoT network']
-      }
+        title: 'Sáng kiến Thành phố Thông minh Đà Nẵng',
+        organization: 'Chính quyền Thành phố Đà Nẵng',
+        problem: 'Tích hợp các dịch vụ số và cải thiện chất lượng sống đô thị cho người dân và khách du lịch.',
+        solution:
+          'Nền tảng thành phố thông minh thống nhất, ứng dụng di động cho công dân, giám sát môi trường bằng IoT, dịch vụ du lịch số.',
+        impact: 'Cải thiện sự hài lòng của công dân 35%, tăng hiệu quả du lịch, giảm chi phí quản lý đô thị 20%.',
+        innovations: [
+          'Nền tảng dịch vụ thành phố tích hợp',
+          'Dịch vụ số thân thiện với khách du lịch',
+          'Mạng lưới IoT môi trường',
+        ],
+      },
     ],
     resources: [
       {
-        title: 'Smart City Development Framework',
+        title: 'Khung Phát triển Thành phố Thông minh',
         url: 'https://www.iso.org/committee/656906.html',
-        type: 'Standards'
-      }
+        type: 'Tiêu chuẩn',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'iot-smart-city-builder-3d'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'renewable-energy-manager'),
     ]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'civic-technology-citizen-engagement',
     title: 'Công Nghệ Dân Sự & Sự Tham Gia Của Công Dân',
-    description: 'Develop civic technology solutions that enhance citizen participation, government transparency, và democratic engagement trong Vietnamese political context.',
+    description:
+      'Phát triển các giải pháp công nghệ dân sự giúp tăng cường sự tham gia của công dân, tính minh bạch của chính phủ và sự tham gia dân chủ trong bối cảnh chính trị Việt Nam.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Civic Technology and Democracy
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Civic Technology and Democracy
     imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop',
     governmentDomain: 'civic-engagement',
     technologyCategory: [
-      'Citizen engagement platforms',
-      'Government transparency tools',
-      'Digital participation systems',
-      'Community feedback mechanisms'
+      'Nền tảng tương tác công dân',
+      'Công cụ minh bạch chính phủ',
+      'Hệ thống tham gia kỹ thuật số',
+      'Cơ chế phản hồi cộng đồng',
     ],
     objectives: [
-      'Design citizen engagement digital platforms',
-      'Implement government transparency systems',
-      'Create community feedback và reporting mechanisms',
-      'Develop digital tools for democratic participation',
-      'Build trust through technology-enabled transparency'
+      'Thiết kế nền tảng kỹ thuật số tương tác công dân',
+      'Triển khai hệ thống minh bạch chính phủ',
+      'Tạo cơ chế phản hồi và báo cáo cộng đồng',
+      'Phát triển các công cụ kỹ thuật số cho sự tham gia dân chủ',
+      'Xây dựng lòng tin thông qua tính minh bạch được hỗ trợ bởi công nghệ',
     ],
     prerequisites: [
-      'Understanding of democratic processes',
-      'Community engagement principles',
-      'Basic political science knowledge'
+      'Hiểu biết về các quy trình dân chủ',
+      'Nguyên tắc tương tác cộng đồng',
+      'Kiến thức cơ bản về khoa học chính trị',
     ],
     vietnameseGovernmentContext: [
-      'Vietnamese political system và citizen rights',
-      'Local People\'s Committees engagement methods',
-      'National Assembly citizen feedback mechanisms',
-      'Party-state relationship trong digital governance'
+      'Hệ thống chính trị và quyền công dân Việt Nam',
+      'Phương pháp tương tác của Ủy ban Nhân dân địa phương',
+      'Cơ chế phản hồi của công dân tại Quốc hội',
+      'Mối quan hệ Đảng-nhà nước trong quản trị số',
     ],
     publicServiceApplications: [
-      'Citizen complaint và suggestion systems',
-      'Budget transparency platforms',
-      'Public consultation digital tools',
-      'Community problem reporting apps'
+      'Hệ thống khiếu nại và góp ý của công dân',
+      'Nền tảng minh bạch ngân sách',
+      'Công cụ kỹ thuật số tham vấn cộng đồng',
+      'Ứng dụng báo cáo vấn đề cộng đồng',
     ],
     digitalTransformationAspects: [
-      'Open government data initiatives',
-      'Digital democracy tools',
-      'Social media government communication',
-      'Citizen-government interaction platforms'
+      'Sáng kiến dữ liệu chính phủ mở',
+      'Công cụ dân chủ kỹ thuật số',
+      'Truyền thông chính phủ qua mạng xã hội',
+      'Nền tảng tương tác giữa công dân và chính phủ',
     ],
     exercises: [
       {
-        title: 'Citizen Engagement Platform Development',
-        description: 'Create digital platform enhancing citizen participation trong local government decision-making',
+        title: 'Phát triển Nền tảng Tương tác Công dân',
+        description:
+          'Tạo một nền tảng kỹ thuật số tăng cường sự tham gia của công dân vào việc ra quyết định của chính quyền địa phương.',
         difficulty: 'Trung bình',
-        materials: ['Civic engagement frameworks', 'Platform development tools', 'User research methodologies', 'Government collaboration guidelines'],
-        procedure: [
-          'Research citizen engagement challenges trong Vietnamese context',
-          'Design user-friendly participation interface',
-          'Develop feedback collection và analysis systems',
-          'Create government response tracking mechanisms',
-          'Plan pilot testing với local government partners'
+        materials: [
+          'Khung tương tác công dân',
+          'Công cụ phát triển nền tảng',
+          'Phương pháp nghiên cứu người dùng',
+          'Hướng dẫn hợp tác với chính phủ',
         ],
-        expectedResults: 'Functional civic engagement platform với clear value proposition cho citizens và government',
-        solution: 'Platform enabling two-way communication between citizens và government với transparent tracking của issues và responses'
-      }
+        procedure: [
+          'Nghiên cứu những thách thức trong việc tương tác công dân trong bối cảnh Việt Nam',
+          'Thiết kế giao diện tham gia thân thiện với người dùng',
+          'Phát triển hệ thống thu thập và phân tích phản hồi',
+          'Tạo cơ chế theo dõi phản hồi của chính phủ',
+          'Lập kế hoạch thử nghiệm thí điểm với các đối tác chính quyền địa phương',
+        ],
+        expectedResults: 'Nền tảng tương tác công dân hoạt động với đề xuất giá trị rõ ràng cho công dân và chính phủ.',
+        solution:
+          'Nền tảng cho phép giao tiếp hai chiều giữa công dân và chính phủ với việc theo dõi minh bạch các vấn đề và phản hồi.',
+      },
     ],
     realWorldApplications: [
-      'Municipal budget participatory planning',
-      'Community infrastructure priority setting',
-      'Environmental issue reporting systems',
-      'Local government accountability monitoring'
+      'Lập kế hoạch ngân sách thành phố có sự tham gia của người dân',
+      'Thiết lập ưu tiên cơ sở hạ tầng cộng đồng',
+      'Hệ thống báo cáo vấn đề môi trường',
+      'Giám sát trách nhiệm giải trình của chính quyền địa phương',
     ],
     caseStudies: [
       {
-        title: 'Ho Chi Minh City Citizen Feedback System',
-        organization: 'HCMC People\'s Committee',
-        problem: 'Improving citizen-government communication và increasing transparency trong local governance',
-        solution: 'Multi-channel citizen feedback platform, mobile app for issue reporting, real-time response tracking, public dashboard',
-        impact: 'Increased citizen engagement by 250%, improved government response time by 60%, enhanced public satisfaction',
-        innovations: ['Integrated feedback channels', 'Real-time issue tracking', 'Public transparency dashboard']
-      }
+        title: 'Hệ thống Phản hồi Công dân Thành phố Hồ Chí Minh',
+        organization: 'Ủy ban Nhân dân TP.HCM',
+        problem:
+          'Cải thiện giao tiếp giữa công dân và chính phủ và tăng cường tính minh bạch trong quản trị địa phương.',
+        solution:
+          'Nền tảng phản hồi công dân đa kênh, ứng dụng di động báo cáo sự cố, theo dõi phản hồi thời gian thực, bảng điều khiển công khai.',
+        impact:
+          'Tăng sự tham gia của công dân 250%, cải thiện thời gian phản hồi của chính phủ 60%, nâng cao sự hài lòng của công chúng.',
+        innovations: ['Kênh phản hồi tích hợp', 'Theo dõi sự cố thời gian thực', 'Bảng điều khiển minh bạch công khai'],
+      },
     ],
     resources: [
       {
-        title: 'Civic Technology Handbook',
+        title: 'Sổ tay Công nghệ Dân sự',
         url: 'https://www.codeforamerica.org/resources',
-        type: 'Resource'
-      }
+        type: 'Tài nguyên',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
     ]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'public-service-delivery-optimization',
     title: 'Tối Ưu Hóa Cung Cấp Dịch Vụ Công',
-    description: 'Optimize public service delivery through technology, process improvement, data analytics, và citizen experience enhancement.',
+    description:
+      'Tối ưu hóa việc cung cấp dịch vụ công thông qua công nghệ, cải tiến quy trình, phân tích dữ liệu và nâng cao trải nghiệm của công dân.',
     duration: '195 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=fhn6ZFh2dp4', // Public Service Innovation
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=600&fit=crop',
     governmentDomain: 'public-service-tech',
     technologyCategory: [
-      'Service delivery platforms',
-      'Process automation tools',
-      'Performance analytics systems',
-      'Multi-channel service integration'
+      'Nền tảng cung cấp dịch vụ',
+      'Công cụ tự động hóa quy trình',
+      'Hệ thống phân tích hiệu suất',
+      'Tích hợp dịch vụ đa kênh',
     ],
     objectives: [
-      'Analyze và improve public service delivery processes',
-      'Implement automation trong routine government services',
-      'Design multi-channel service delivery systems',
-      'Develop performance measurement và analytics capabilities',
-      'Create seamless citizen service experiences'
+      'Phân tích và cải thiện quy trình cung cấp dịch vụ công',
+      'Triển khai tự động hóa trong các dịch vụ chính phủ thông thường',
+      'Thiết kế hệ thống cung cấp dịch vụ đa kênh',
+      'Phát triển khả năng đo lường và phân tích hiệu suất',
+      'Tạo ra trải nghiệm dịch vụ công dân liền mạch',
     ],
     prerequisites: [
-      'Process mapping knowledge',
-      'Customer experience design basics',
-      'Government service understanding'
+      'Kiến thức về lập bản đồ quy trình',
+      'Kiến thức cơ bản về thiết kế trải nghiệm khách hàng',
+      'Hiểu biết về dịch vụ chính phủ',
     ],
     vietnameseGovernmentContext: [
-      'Administrative procedure reform initiatives',
-      'One-stop service center development',
-      'Inter-agency collaboration requirements',
-      'Service quality improvement mandates'
+      'Các sáng kiến cải cách thủ tục hành chính',
+      'Phát triển trung tâm dịch vụ một cửa',
+      'Yêu cầu hợp tác liên ngành',
+      'Các nhiệm vụ cải thiện chất lượng dịch vụ',
     ],
     publicServiceApplications: [
-      'Integrated business licensing systems',
-      'Healthcare service coordination platforms',
-      'Education administrative systems',
-      'Social service benefit delivery'
+      'Hệ thống cấp phép kinh doanh tích hợp',
+      'Nền tảng điều phối dịch vụ chăm sóc sức khỏe',
+      'Hệ thống hành chính giáo dục',
+      'Cung cấp phúc lợi dịch vụ xã hội',
     ],
     digitalTransformationAspects: [
-      'Legacy system integration strategies',
-      'Data sharing between agencies',
-      'Citizen identity management',
-      'Service performance monitoring'
+      'Chiến lược tích hợp hệ thống cũ',
+      'Chia sẻ dữ liệu giữa các cơ quan',
+      'Quản lý danh tính công dân',
+      'Giám sát hiệu suất dịch vụ',
     ],
     exercises: [
       {
-        title: 'Public Service Redesign Project',
-        description: 'Redesign complex multi-step public service để improve efficiency và citizen satisfaction',
+        title: 'Dự án Tái thiết kế Dịch vụ Công',
+        description:
+          'Tái thiết kế một dịch vụ công phức tạp nhiều bước để cải thiện hiệu quả và sự hài lòng của công dân.',
         difficulty: 'Nâng cao',
-        materials: ['Service design tools', 'Process mapping software', 'Analytics platforms', 'User testing methodologies'],
-        procedure: [
-          'Map current service delivery process và identify pain points',
-          'Conduct citizen journey analysis và feedback collection',
-          'Design improved service delivery model với technology integration',
-          'Develop implementation plan với change management strategies',
-          'Create measurement framework cho service improvement'
+        materials: [
+          'Công cụ thiết kế dịch vụ',
+          'Phần mềm lập bản đồ quy trình',
+          'Nền tảng phân tích',
+          'Phương pháp kiểm thử người dùng',
         ],
-        expectedResults: 'Redesigned public service với clear improvements trong efficiency, citizen satisfaction, và cost reduction',
-        solution: 'Streamlined service process với digital automation, reduced steps, và enhanced citizen communication'
-      }
+        procedure: [
+          'Lập bản đồ quy trình cung cấp dịch vụ hiện tại và xác định các điểm yếu',
+          'Thực hiện phân tích hành trình của công dân và thu thập phản hồi',
+          'Thiết kế mô hình cung cấp dịch vụ cải tiến với tích hợp công nghệ',
+          'Phát triển kế hoạch triển khai với các chiến lược quản lý thay đổi',
+          'Tạo khung đo lường để cải thiện dịch vụ',
+        ],
+        expectedResults:
+          'Dịch vụ công được tái thiết kế với những cải tiến rõ rệt về hiệu quả, sự hài lòng của công dân và giảm chi phí.',
+        solution:
+          'Quy trình dịch vụ được sắp xếp hợp lý với tự động hóa kỹ thuật số, giảm số bước và tăng cường giao tiếp với công dân',
+      },
     ],
     realWorldApplications: [
-      'Social benefit application processing',
-      'Land use certificate issuance',
-      'Healthcare insurance claim processing',
-      'Education enrollment systems'
+      'Xử lý đơn xin trợ cấp xã hội',
+      'Cấp giấy chứng nhận quyền sử dụng đất',
+      'Xử lý yêu cầu bảo hiểm y tế',
+      'Hệ thống tuyển sinh giáo dục',
     ],
     caseStudies: [
       {
-        title: 'Vietnam Social Insurance Digital Transformation',
-        organization: 'Vietnam Social Security',
-        problem: 'Modernizing social insurance services và reducing processing time for millions of beneficiaries',
-        solution: 'Digital platform integration, automated benefit calculations, mobile service access, inter-agency data sharing',
-        impact: 'Reduced processing time by 70%, improved service satisfaction to 95%, eliminated duplicate data entry',
-        innovations: ['Automated benefit processing', 'Mobile-first service design', 'Inter-agency integration platform']
-      }
+        title: 'Chuyển đổi số Bảo hiểm Xã hội Việt Nam',
+        organization: 'Bảo hiểm Xã hội Việt Nam',
+        problem: 'Hiện đại hóa các dịch vụ bảo hiểm xã hội và giảm thời gian xử lý cho hàng triệu người hưởng lợi.',
+        solution:
+          'Tích hợp nền tảng kỹ thuật số, tính toán phúc lợi tự động, truy cập dịch vụ di động, chia sẻ dữ liệu liên ngành',
+        impact:
+          'Giảm thời gian xử lý 70%, cải thiện sự hài lòng về dịch vụ lên 95%, loại bỏ việc nhập dữ liệu trùng lặp',
+        innovations: ['Xử lý phúc lợi tự động', 'Thiết kế dịch vụ ưu tiên di động', 'Nền tảng tích hợp liên ngành'],
+      },
     ],
     resources: [
       {
-        title: 'Public Service Innovation Guidelines',
+        title: 'Hướng dẫn Đổi mới Dịch vụ Công',
         url: 'https://www.oecd.org/gov/innovative-government/',
-        type: 'Documentation'
-      }
+        type: 'Tài liệu',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'data-visualization'),
     ]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'government-data-analytics-policy',
-    title: 'Phân Tích Dữ Liệu Chính Phủ & Chính Sách Dựa Trên Evidence',
-    description: 'Apply data analytics, evidence-based policy making, predictive modeling, và data-driven governance trong Vietnamese government context.',
+    title: 'Phân Tích Dữ Liệu Chính Phủ & Chính Sách Dựa Trên Bằng Chứng',
+    description:
+      'Áp dụng phân tích dữ liệu, hoạch định chính sách dựa trên bằng chứng, mô hình hóa dự báo và quản trị dựa trên dữ liệu trong bối cảnh chính phủ Việt Nam.',
     duration: '205 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Government Data Analytics
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Government Data Analytics
     imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop',
     governmentDomain: 'policy-tech',
     technologyCategory: [
-      'Government data platforms',
-      'Policy analytics tools',
-      'Predictive modeling systems',
-      'Evidence management platforms'
+      'Nền tảng dữ liệu chính phủ',
+      'Công cụ phân tích chính sách',
+      'Hệ thống mô hình hóa dự báo',
+      'Nền tảng quản lý bằng chứng',
     ],
     objectives: [
-      'Implement government data collection và management systems',
-      'Develop predictive models cho policy planning',
-      'Create evidence-based policy development processes',
-      'Design data visualization cho government decision makers',
-      'Build integrated analytics platforms cho multi-agency insights'
+      'Triển khai hệ thống thu thập và quản lý dữ liệu chính phủ',
+      'Phát triển các mô hình dự báo cho hoạch định chính sách',
+      'Tạo ra các quy trình phát triển chính sách dựa trên bằng chứng',
+      'Thiết kế trực quan hóa dữ liệu cho các nhà ra quyết định của chính phủ',
+      'Xây dựng các nền tảng phân tích tích hợp cho những hiểu biết sâu sắc đa ngành',
     ],
     prerequisites: [
-      'Data analytics fundamentals',
-      'Statistics và research methods',
-      'Policy development basics'
+      'Kiến thức cơ bản về phân tích dữ liệu',
+      'Thống kê và phương pháp nghiên cứu',
+      'Kiến thức cơ bản về phát triển chính sách',
     ],
     vietnameseGovernmentContext: [
-      'National statistical system modernization',
-      'Economic development planning data needs',
-      'Social policy monitoring requirements',
-      'Regional development analytics applications'
+      'Hiện đại hóa hệ thống thống kê quốc gia',
+      'Nhu cầu dữ liệu cho kế hoạch phát triển kinh tế',
+      'Yêu cầu giám sát chính sách xã hội',
+      'Ứng dụng phân tích phát triển vùng',
     ],
     publicServiceApplications: [
-      'Economic forecasting và planning systems',
-      'Social program effectiveness monitoring',
-      'Healthcare system performance analytics',
-      'Education outcome prediction models'
+      'Hệ thống dự báo và kế hoạch kinh tế',
+      'Giám sát hiệu quả chương trình xã hội',
+      'Phân tích hiệu suất hệ thống chăm sóc sức khỏe',
+      'Mô hình dự đoán kết quả giáo dục',
     ],
     digitalTransformationAspects: [
-      'Open data initiative implementation',
-      'Cross-agency data integration',
-      'Real-time policy monitoring dashboards',
-      'Citizen data privacy protection'
+      'Triển khai sáng kiến dữ liệu mở',
+      'Tích hợp dữ liệu liên ngành',
+      'Bảng điều khiển giám sát chính sách thời gian thực',
+      'Bảo vệ quyền riêng tư dữ liệu công dân',
     ],
     exercises: [
       {
-        title: 'Evidence-Based Policy Analytics System',
-        description: 'Develop analytics system supporting evidence-based policy making cho specific Vietnamese government challenge',
+        title: 'Hệ thống Phân tích Chính sách Dựa trên Bằng chứng',
+        description:
+          'Phát triển một hệ thống phân tích hỗ trợ việc hoạch định chính sách dựa trên bằng chứng cho một thách thức cụ thể của chính phủ Việt Nam.',
         difficulty: 'Nâng cao',
-        materials: ['Analytics platforms', 'Statistical software', 'Data visualization tools', 'Policy research databases'],
-        procedure: [
-          'Identify policy area requiring evidence-based improvement',
-          'Design data collection và integration strategy',
-          'Develop analytical models và predictive capabilities',
-          'Create policy maker dashboard với actionable insights',
-          'Plan implementation với government decision makers'
+        materials: [
+          'Nền tảng phân tích',
+          'Phần mềm thống kê',
+          'Công cụ trực quan hóa dữ liệu',
+          'Cơ sở dữ liệu nghiên cứu chính sách',
         ],
-        expectedResults: 'Comprehensive policy analytics system với predictive capabilities và decision support tools',
-        solution: 'Integrated platform combining multiple data sources, advanced analytics, và user-friendly policy maker interfaces'
-      }
+        procedure: [
+          'Xác định lĩnh vực chính sách cần cải thiện dựa trên bằng chứng',
+          'Thiết kế chiến lược thu thập và tích hợp dữ liệu',
+          'Phát triển các mô hình phân tích và khả năng dự báo',
+          'Tạo bảng điều khiển cho nhà hoạch định chính sách với những hiểu biết có thể hành động',
+          'Lập kế hoạch triển khai với các nhà ra quyết định của chính phủ',
+        ],
+        expectedResults:
+          'Hệ thống phân tích chính sách toàn diện với khả năng dự báo và các công cụ hỗ trợ quyết định.',
+        solution:
+          'Nền tảng tích hợp kết hợp nhiều nguồn dữ liệu, phân tích nâng cao và giao diện thân thiện với người dùng cho các nhà hoạch định chính sách',
+      },
     ],
     realWorldApplications: [
-      'Budget allocation optimization models',
-      'Social program impact assessment',
-      'Economic development forecasting',
-      'Public health trend analysis'
+      'Mô hình tối ưu hóa phân bổ ngân sách',
+      'Đánh giá tác động chương trình xã hội',
+      'Dự báo phát triển kinh tế',
+      'Phân tích xu hướng sức khỏe cộng đồng',
     ],
     caseStudies: [
       {
-        title: 'Vietnam Statistics Office Data Modernization',
-        organization: 'General Statistics Office of Vietnam',
-        problem: 'Modernizing national statistical system để provide real-time insights cho government planning',
-        solution: 'Integrated data platform, automated data collection systems, predictive analytics capabilities, policy maker dashboards',
-        impact: 'Reduced data processing time by 80%, improved policy response time, enhanced economic forecasting accuracy by 40%',
-        innovations: ['Real-time statistical monitoring', 'Predictive policy modeling', 'Automated data quality systems']
-      }
+        title: 'Hiện đại hóa Dữ liệu của Tổng cục Thống kê Việt Nam',
+        organization: 'Tổng cục Thống kê Việt Nam',
+        problem:
+          'Hiện đại hóa hệ thống thống kê quốc gia để cung cấp những hiểu biết thời gian thực cho kế hoạch của chính phủ.',
+        solution:
+          'Nền tảng dữ liệu tích hợp, hệ thống thu thập dữ liệu tự động, khả năng phân tích dự báo, bảng điều khiển cho nhà hoạch định chính sách.',
+        impact:
+          'Giảm thời gian xử lý dữ liệu 80%, cải thiện thời gian phản ứng chính sách, nâng cao độ chính xác dự báo kinh tế 40%.',
+        innovations: [
+          'Giám sát thống kê thời gian thực',
+          'Mô hình hóa chính sách dự báo',
+          'Hệ thống chất lượng dữ liệu tự động',
+        ],
+      },
     ],
     resources: [
       {
-        title: 'Government Analytics Best Practices',
+        title: 'Thực hành Tốt nhất về Phân tích Chính phủ',
         url: 'https://www.data.gov/resources/',
-        type: 'Resource'
-      }
+        type: 'Tài nguyên',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'data-visualization'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-data-analyst'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ml-model-builder'),
     ]
-  }
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+  },
 ];

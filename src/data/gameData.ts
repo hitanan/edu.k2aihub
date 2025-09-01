@@ -1191,7 +1191,7 @@ void loop() {
           'Tia nước ở lỗ thấp nhất phun xa nhất (khoảng 30-40cm), tia nước ở lỗ cao nhất phun gần nhất (khoảng 10-15cm)',
         explanation:
           'Áp suất nước tăng theo độ sâu do trọng lượng cột nước bên trên. Công thức: P = ρgh (ρ: khối lượng riêng, g: gia tốc trọng trường, h: độ sâu)',
-        videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Water pressure physics demo
+        videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Water pressure physics demo
         difficulty: 'Cơ bản',
         estimatedTime: '15 phút',
         safetyTips: [
@@ -1228,7 +1228,7 @@ void loop() {
         observation: 'Khi có điện, đinh sắt hút được 8-12 kẹp giấy. Khi ngắt điện, không hút được kẹp giấy nào',
         explanation:
           'Dòng điện chạy qua cuộn dây tạo ra từ trường xung quanh, biến đinh sắt thành nam châm điện. Khi ngắt điện, từ trường biến mất.',
-        videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Electromagnet physics demo
+        videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Electromagnet physics demo
         difficulty: 'Trung bình',
         estimatedTime: '20 phút',
         safetyTips: [
@@ -1258,7 +1258,7 @@ void loop() {
         observation: 'Góc phản xạ luôn bằng góc tới trong tất cả các trường hợp: 30°=30°, 45°=45°, 60°=60°',
         explanation:
           'Định luật phản xạ ánh sáng: góc tới bằng góc phản xạ, và tia tới, tia phản xạ cùng nằm trong một mặt phẳng với pháp tuyến.',
-        videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Light reflection physics demo
+        videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Light reflection physics demo
         difficulty: 'Cơ bản',
         estimatedTime: '25 phút',
         safetyTips: [
@@ -4045,7 +4045,7 @@ const supplyChainLogisticsGameData: SupplyChainLogisticsGameData = {
           difficulty: 'Nâng cao',
           parameters: {
             locations: [
-              { name: 'FC Bình Dương', coordinates: [106.7580, 11.1004], capacity: 100000, cost: 500000 },
+              { name: 'FC Bình Dương', coordinates: [106.758, 11.1004], capacity: 100000, cost: 500000 },
               { name: 'FC Long An', coordinates: [106.2431, 10.6956], capacity: 80000, cost: 400000 },
               { name: 'FC Đồng Nai', coordinates: [107.1676, 10.9045], capacity: 60000, cost: 350000 },
             ],
@@ -4109,12 +4109,7 @@ const supplyChainLogisticsGameData: SupplyChainLogisticsGameData = {
         'RFID/NFC cho inventory management',
         'Condition monitoring cho equipment',
       ],
-      advantages: [
-        'Real-time visibility',
-        'Proactive maintenance',
-        'Quality assurance',
-        'Theft prevention',
-      ],
+      advantages: ['Real-time visibility', 'Proactive maintenance', 'Quality assurance', 'Theft prevention'],
       challenges: [
         'High initial investment',
         'Data security concerns',
@@ -4149,24 +4144,9 @@ const supplyChainLogisticsGameData: SupplyChainLogisticsGameData = {
     {
       name: 'Blockchain for Traceability',
       description: 'Công nghệ Blockchain cho traceability và transparency',
-      applications: [
-        'Product authentication',
-        'Supply chain traceability',
-        'Smart contracts',
-        'Quality certification',
-      ],
-      advantages: [
-        'Immutable records',
-        'End-to-end traceability',
-        'Fraud prevention',
-        'Trust building',
-      ],
-      challenges: [
-        'Scalability limitations',
-        'Energy consumption',
-        'Technical complexity',
-        'Industry adoption',
-      ],
+      applications: ['Product authentication', 'Supply chain traceability', 'Smart contracts', 'Quality certification'],
+      advantages: ['Immutable records', 'End-to-end traceability', 'Fraud prevention', 'Trust building'],
+      challenges: ['Scalability limitations', 'Energy consumption', 'Technical complexity', 'Industry adoption'],
       vietnameseImplementation: 'VinEco sử dụng blockchain để trace nông sản organic',
     },
   ],
@@ -4294,8 +4274,12 @@ const energyManagementGameData: EnergyManagementGameData = {
           difficulty: 'Nâng cao',
           parameters: {
             demand: [
-              { hour: 0, load: 25000 }, { hour: 6, load: 32000 }, { hour: 12, load: 45000 },
-              { hour: 18, load: 52000 }, { hour: 21, load: 48000 }, { hour: 23, load: 35000 },
+              { hour: 0, load: 25000 },
+              { hour: 6, load: 32000 },
+              { hour: 12, load: 45000 },
+              { hour: 18, load: 52000 },
+              { hour: 21, load: 48000 },
+              { hour: 23, load: 35000 },
             ],
             constraints: [
               { type: 'renewable_minimum', limit: 20, description: 'Tối thiểu 20% năng lượng tái tạo' },
@@ -4336,8 +4320,12 @@ const energyManagementGameData: EnergyManagementGameData = {
           difficulty: 'Trung bình',
           parameters: {
             demand: [
-              { hour: 0, load: 3500 }, { hour: 6, load: 4200 }, { hour: 9, load: 5800 },
-              { hour: 12, load: 6500 }, { hour: 18, load: 7200 }, { hour: 22, load: 5000 },
+              { hour: 0, load: 3500 },
+              { hour: 6, load: 4200 },
+              { hour: 9, load: 5800 },
+              { hour: 12, load: 6500 },
+              { hour: 18, load: 7200 },
+              { hour: 22, load: 5000 },
             ],
             constraints: [
               { type: 'transmission_limit', limit: 8000, description: 'Giới hạn truyền tải' },
@@ -4392,8 +4380,12 @@ const energyManagementGameData: EnergyManagementGameData = {
           difficulty: 'Trung bình',
           parameters: {
             demand: [
-              { hour: 6, load: 80 }, { hour: 8, load: 120 }, { hour: 12, load: 100 },
-              { hour: 14, load: 140 }, { hour: 18, load: 90 }, { hour: 22, load: 60 },
+              { hour: 6, load: 80 },
+              { hour: 8, load: 120 },
+              { hour: 12, load: 100 },
+              { hour: 14, load: 140 },
+              { hour: 18, load: 90 },
+              { hour: 22, load: 60 },
             ],
             constraints: [
               { type: 'production_continuity', limit: 99, description: 'Không gián đoạn sản xuất' },
@@ -4441,12 +4433,7 @@ const energyManagementGameData: EnergyManagementGameData = {
         'Integration of renewable sources',
         'Demand response capabilities',
       ],
-      challenges: [
-        'High investment costs',
-        'Cybersecurity risks',
-        'Technical complexity',
-        'Regulatory frameworks',
-      ],
+      challenges: ['High investment costs', 'Cybersecurity risks', 'Technical complexity', 'Regulatory frameworks'],
     },
     {
       name: 'Energy Storage Systems',
@@ -4458,12 +4445,7 @@ const energyManagementGameData: EnergyManagementGameData = {
         'Peak shaving và load shifting',
         'Backup power during outages',
       ],
-      challenges: [
-        'High capital costs',
-        'Technology maturity',
-        'Environmental concerns',
-        'Market mechanisms',
-      ],
+      challenges: ['High capital costs', 'Technology maturity', 'Environmental concerns', 'Market mechanisms'],
     },
     {
       name: 'AI/ML for Energy Optimization',
@@ -4761,7 +4743,8 @@ const psychologyBehavioralGameData: PsychologyBehavioralGameData = {
       name: 'Vietnamese Cultural Values Scale',
       type: 'Cultural Assessment',
       description: 'Đánh giá các giá trị văn hóa truyền thống và hiện đại',
-      vietnameseValidation: 'Factor analysis với 5 dimensions: Collectivism, Hierarchy, Face-saving, Family loyalty, Traditionalism',
+      vietnameseValidation:
+        'Factor analysis với 5 dimensions: Collectivism, Hierarchy, Face-saving, Family loyalty, Traditionalism',
       applications: [
         'Cross-cultural counseling',
         'Organizational psychology',
@@ -5251,11 +5234,7 @@ const internationalBusinessGameData: InternationalBusinessGameData = {
               'Long-term partnership established',
               'Cultural sensitivity maintained',
             ],
-            constraints: [
-              'Language barriers',
-              'Different business practices',
-              'Time zone coordination',
-            ],
+            constraints: ['Language barriers', 'Different business practices', 'Time zone coordination'],
           },
           decisions: [
             {

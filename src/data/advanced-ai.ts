@@ -23,11 +23,11 @@ export interface AdvancedAILesson {
   realWorldApplications: string[];
   caseStudies?: Array<{
     title: string;
-    company: string;
+    organization: string;
     problem: string;
     solution: string;
     impact: string;
-    technologies?: string[];
+    innovations?: string[];
   }>;
   resources?: Array<{
     title: string;
@@ -44,7 +44,7 @@ export const advancedAILessons: AdvancedAILesson[] = [
     description:
       'Master advanced deep learning concepts từ CNN, RNN đến Transformers. Hiểu về backpropagation, gradient descent và optimization techniques cho production AI systems.',
     duration: '240 phút',
-videoUrl: 'https://www.youtube.com/watch?v=jmmW0F0biz0',
+    videoUrl: 'https://www.youtube.com/watch?v=aircAruvnKk',
     difficulty: 'Nâng cao',
     aiDomain: 'Deep Learning',
     objectives: [
@@ -62,8 +62,7 @@ videoUrl: 'https://www.youtube.com/watch?v=jmmW0F0biz0',
     exercises: [
       {
         title: 'CNN Image Classification với Vietnam Dataset',
-        description:
-          'Build convolutional neural network để classify Vietnamese cultural artifacts và landmarks.',
+        description: 'Build convolutional neural network để classify Vietnamese cultural artifacts và landmarks.',
         difficulty: 'Nâng cao',
         tools: ['TensorFlow', 'Keras', 'Python', 'GPU Computing'],
         datasets: ['Vietnamese Landmarks Dataset', 'Cultural Artifacts Images'],
@@ -75,22 +74,14 @@ videoUrl: 'https://www.youtube.com/watch?v=jmmW0F0biz0',
           'Evaluate performance using accuracy, precision, recall metrics',
           'Deploy model cho real-time image classification',
         ],
-        expectedResults:
-          '95%+ accuracy trên test set với real-time inference capability',
-        solution:
-          'Use transfer learning với ResNet-50 backbone, data augmentation, và proper regularization',
+        expectedResults: '95%+ accuracy trên test set với real-time inference capability',
+        solution: 'Use transfer learning với ResNet-50 backbone, data augmentation, và proper regularization',
       },
       {
         title: 'Vietnamese Text Generation với Transformer',
-        description:
-          'Implement Transformer model để generate Vietnamese text và poetry.',
+        description: 'Implement Transformer model để generate Vietnamese text và poetry.',
         difficulty: 'Nâng cao',
-        tools: [
-          'PyTorch',
-          'Transformers',
-          'Hugging Face',
-          'Vietnamese Tokenizer',
-        ],
+        tools: ['PyTorch', 'Transformers', 'Hugging Face', 'Vietnamese Tokenizer'],
         datasets: ['Vietnamese Literature Corpus', 'Vietnamese News Dataset'],
         procedure: [
           'Tokenize Vietnamese text using appropriate tokenizer',
@@ -100,10 +91,8 @@ videoUrl: 'https://www.youtube.com/watch?v=jmmW0F0biz0',
           'Implement beam search decoding',
           'Evaluate generation quality và coherence',
         ],
-        expectedResults:
-          'Coherent Vietnamese text generation với proper grammar và cultural context',
-        solution:
-          'Use attention mechanisms, positional encoding, và proper Vietnamese language preprocessing',
+        expectedResults: 'Coherent Vietnamese text generation với proper grammar và cultural context',
+        solution: 'Use attention mechanisms, positional encoding, và proper Vietnamese language preprocessing',
       },
     ],
     realWorldApplications: [
@@ -116,19 +105,11 @@ videoUrl: 'https://www.youtube.com/watch?v=jmmW0F0biz0',
     caseStudies: [
       {
         title: 'VinAI Research - Vietnamese Language Model',
-        company: 'VinGroup AI Research',
-        problem:
-          'Develop state-of-the-art Vietnamese language understanding cho enterprise applications',
-        solution:
-          'Create PhoBERT - Vietnamese pre-trained language model với domain-specific fine-tuning',
-        impact:
-          'Improved Vietnamese NLP accuracy by 15-20% across multiple tasks',
-        technologies: [
-          'BERT',
-          'Transformer',
-          'Vietnamese Corpus',
-          'Transfer Learning',
-        ],
+        organization: 'VinGroup AI Research',
+        problem: 'Develop state-of-the-art Vietnamese language understanding cho enterprise applications',
+        solution: 'Create PhoBERT - Vietnamese pre-trained language model với domain-specific fine-tuning',
+        impact: 'Improved Vietnamese NLP accuracy by 15-20% across multiple tasks',
+        innovations: ['BERT', 'Transformer', 'Vietnamese Corpus', 'Transfer Learning'],
       },
     ],
     resources: [
@@ -138,13 +119,7 @@ videoUrl: 'https://www.youtube.com/watch?v=jmmW0F0biz0',
         type: 'Research Papers',
       },
     ],
-    frameworks: [
-      'TensorFlow',
-      'PyTorch',
-      'Transformers',
-      'OpenCV',
-      'scikit-learn',
-    ],
+    frameworks: ['TensorFlow', 'PyTorch', 'Transformers', 'OpenCV', 'scikit-learn'],
   },
   {
     id: 'computer-vision-applications',
@@ -152,7 +127,7 @@ videoUrl: 'https://www.youtube.com/watch?v=jmmW0F0biz0',
     description:
       'Advanced computer vision techniques cho real-world applications: object detection, semantic segmentation, facial recognition với focus trên Vietnam market applications.',
     duration: '220 phút',
-videoUrl: 'https://www.youtube.com/watch?v=yb2tPt0QVPY',
+    videoUrl: 'https://www.youtube.com/watch?v=puB-4LuRNys',
     difficulty: 'Nâng cao',
     aiDomain: 'Computer Vision',
     objectives: [
@@ -170,8 +145,7 @@ videoUrl: 'https://www.youtube.com/watch?v=yb2tPt0QVPY',
     exercises: [
       {
         title: 'Traffic Monitoring System cho Vietnamese Cities',
-        description:
-          'Build comprehensive traffic monitoring system using computer vision cho urban planning.',
+        description: 'Build comprehensive traffic monitoring system using computer vision cho urban planning.',
         difficulty: 'Nâng cao',
         tools: ['YOLO v8', 'OpenCV', 'Python', 'Edge Computing'],
         datasets: ['Vietnamese Traffic Dataset', 'Urban Planning Data'],
@@ -183,15 +157,12 @@ videoUrl: 'https://www.youtube.com/watch?v=yb2tPt0QVPY',
           'Create dashboard để visualize traffic patterns',
           'Integrate với city planning systems',
         ],
-        expectedResults:
-          'Real-time traffic monitoring với 90%+ detection accuracy',
-        solution:
-          'Use YOLO v8 với custom Vietnamese traffic dataset và DeepSORT tracking',
+        expectedResults: 'Real-time traffic monitoring với 90%+ detection accuracy',
+        solution: 'Use YOLO v8 với custom Vietnamese traffic dataset và DeepSORT tracking',
       },
       {
         title: 'Medical Image Analysis cho Radiology',
-        description:
-          'Develop AI system để assist Vietnamese radiologists trong medical diagnosis.',
+        description: 'Develop AI system để assist Vietnamese radiologists trong medical diagnosis.',
         difficulty: 'Nâng cao',
         tools: ['U-Net', 'TensorFlow', 'DICOM Processing', 'Medical Imaging'],
         datasets: ['Medical Imaging Dataset', 'Radiology Reports'],
@@ -203,10 +174,8 @@ videoUrl: 'https://www.youtube.com/watch?v=yb2tPt0QVPY',
           'Ensure regulatory compliance cho healthcare applications',
           'Deploy với appropriate security measures',
         ],
-        expectedResults:
-          'Medical AI assistant với sensitivity >95% cho critical conditions',
-        solution:
-          'Use ensemble methods, attention mechanisms, và expert validation loops',
+        expectedResults: 'Medical AI assistant với sensitivity >95% cho critical conditions',
+        solution: 'Use ensemble methods, attention mechanisms, và expert validation loops',
       },
     ],
     realWorldApplications: [
@@ -219,19 +188,11 @@ videoUrl: 'https://www.youtube.com/watch?v=yb2tPt0QVPY',
     caseStudies: [
       {
         title: 'FPT AI - Smart City Solutions',
-        company: 'FPT Software',
-        problem:
-          'Implement AI-powered smart city solutions cho Vietnamese urban areas',
-        solution:
-          'Deploy computer vision systems cho traffic monitoring, security, và urban planning',
-        impact:
-          'Reduced traffic congestion by 25% và improved emergency response times',
-        technologies: [
-          'Computer Vision',
-          'Edge Computing',
-          'IoT Integration',
-          'Real-time Analytics',
-        ],
+        organization: 'FPT Software',
+        problem: 'Implement AI-powered smart city solutions cho Vietnamese urban areas',
+        solution: 'Deploy computer vision systems cho traffic monitoring, security, và urban planning',
+        impact: 'Reduced traffic congestion by 25% và improved emergency response times',
+        innovations: ['Computer Vision', 'Edge Computing', 'IoT Integration', 'Real-time Analytics'],
       },
     ],
     resources: [
@@ -249,7 +210,7 @@ videoUrl: 'https://www.youtube.com/watch?v=yb2tPt0QVPY',
     description:
       'Comprehensive NLP techniques từ traditional methods đến modern LLMs. Focus trên Vietnamese language processing và multilingual applications.',
     duration: '200 phút',
-videoUrl: 'https://www.youtube.com/watch?v=SNG7yLLh_lA',
+    videoUrl: 'https://www.youtube.com/watch?v=fLvJ8VdHLA0',
     difficulty: 'Nâng cao',
     aiDomain: 'Natural Language Processing',
     objectives: [
@@ -267,8 +228,7 @@ videoUrl: 'https://www.youtube.com/watch?v=SNG7yLLh_lA',
     exercises: [
       {
         title: 'Vietnamese Legal Document Analysis System',
-        description:
-          'Build NLP system để analyze và extract information từ Vietnamese legal documents.',
+        description: 'Build NLP system để analyze và extract information từ Vietnamese legal documents.',
         difficulty: 'Nâng cao',
         tools: ['PhoBERT', 'Transformers', 'spaCy', 'Vietnamese NLP Tools'],
         datasets: ['Vietnamese Legal Corpus', 'Government Documents'],
@@ -280,22 +240,14 @@ videoUrl: 'https://www.youtube.com/watch?v=SNG7yLLh_lA',
           'Create question-answering system cho legal queries',
           'Validate accuracy với legal experts',
         ],
-        expectedResults:
-          'Automated legal document processing với 85%+ accuracy',
-        solution:
-          'Use PhoBERT với domain-specific fine-tuning và rule-based post-processing',
+        expectedResults: 'Automated legal document processing với 85%+ accuracy',
+        solution: 'Use PhoBERT với domain-specific fine-tuning và rule-based post-processing',
       },
       {
         title: 'Vietnamese Chatbot cho Customer Service',
-        description:
-          'Develop intelligent chatbot để handle Vietnamese customer inquiries cho e-commerce.',
+        description: 'Develop intelligent chatbot để handle Vietnamese customer inquiries cho e-commerce.',
         difficulty: 'Nâng cao',
-        tools: [
-          'OpenAI API',
-          'LangChain',
-          'Vietnamese Dataset',
-          'Conversational AI',
-        ],
+        tools: ['OpenAI API', 'LangChain', 'Vietnamese Dataset', 'Conversational AI'],
         datasets: ['Vietnamese Conversation Dataset', 'E-commerce FAQ'],
         procedure: [
           'Collect và curate Vietnamese conversation data',
@@ -305,10 +257,8 @@ videoUrl: 'https://www.youtube.com/watch?v=SNG7yLLh_lA',
           'Integrate với e-commerce platforms',
           'Test với real Vietnamese customers',
         ],
-        expectedResults:
-          'Conversational AI với 90%+ intent accuracy và natural Vietnamese responses',
-        solution:
-          'Combine rule-based systems với neural approaches và cultural awareness',
+        expectedResults: 'Conversational AI với 90%+ intent accuracy và natural Vietnamese responses',
+        solution: 'Combine rule-based systems với neural approaches và cultural awareness',
       },
     ],
     realWorldApplications: [
@@ -321,19 +271,11 @@ videoUrl: 'https://www.youtube.com/watch?v=SNG7yLLh_lA',
     caseStudies: [
       {
         title: 'Zalo AI - Vietnamese Conversational AI',
-        company: 'VNG Corporation',
-        problem:
-          'Create intelligent Vietnamese chatbot cho millions of Zalo users',
-        solution:
-          'Develop multilingual conversational AI với Vietnamese cultural understanding',
-        impact:
-          'Handle 80% of customer queries automatically với high satisfaction',
-        technologies: [
-          'NLP',
-          'Conversational AI',
-          'Vietnamese Language Models',
-          'Deep Learning',
-        ],
+        organization: 'VNG Corporation',
+        problem: 'Create intelligent Vietnamese chatbot cho millions of Zalo users',
+        solution: 'Develop multilingual conversational AI với Vietnamese cultural understanding',
+        impact: 'Handle 80% of customer queries automatically với high satisfaction',
+        innovations: ['NLP', 'Conversational AI', 'Vietnamese Language Models', 'Deep Learning'],
       },
     ],
     resources: [
@@ -351,7 +293,7 @@ videoUrl: 'https://www.youtube.com/watch?v=SNG7yLLh_lA',
     description:
       'Advanced reinforcement learning algorithms và applications trong autonomous systems, robotics, và game AI với practical Vietnamese applications.',
     duration: '190 phút',
-videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
+    videoUrl: 'https://www.youtube.com/watch?v=nIgIv4IfJ6s',
     difficulty: 'Nâng cao',
     aiDomain: 'Reinforcement Learning',
     objectives: [
@@ -369,15 +311,9 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
     exercises: [
       {
         title: 'Autonomous Drone Navigation trong Vietnamese Cities',
-        description:
-          'Train RL agent để navigate drone safely through Vietnamese urban environments.',
+        description: 'Train RL agent để navigate drone safely through Vietnamese urban environments.',
         difficulty: 'Nâng cao',
-        tools: [
-          'OpenAI Gym',
-          'Stable Baselines3',
-          'Unity ML-Agents',
-          'Drone Simulation',
-        ],
+        tools: ['OpenAI Gym', 'Stable Baselines3', 'Unity ML-Agents', 'Drone Simulation'],
         datasets: ['Vietnamese City Maps', 'Drone Flight Data'],
         procedure: [
           'Set up realistic Vietnamese city simulation environment',
@@ -387,15 +323,12 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
           'Test robustness với various scenarios',
           'Deploy trên real drone với safety measures',
         ],
-        expectedResults:
-          'Autonomous drone capable of safe navigation trong complex Vietnamese urban areas',
-        solution:
-          'Use hierarchical RL với safety constraints và environmental awareness',
+        expectedResults: 'Autonomous drone capable of safe navigation trong complex Vietnamese urban areas',
+        solution: 'Use hierarchical RL với safety constraints và environmental awareness',
       },
       {
         title: 'Traffic Light Optimization cho Vietnamese Cities',
-        description:
-          'Develop RL system để optimize traffic light timing based on real Vietnamese traffic patterns.',
+        description: 'Develop RL system để optimize traffic light timing based on real Vietnamese traffic patterns.',
         difficulty: 'Nâng cao',
         tools: ['SUMO Traffic Simulator', 'Deep Q-Network', 'Multi-Agent RL'],
         datasets: ['Vietnamese Traffic Flow Data', 'City Infrastructure Maps'],
@@ -407,8 +340,7 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
           'Validate improvements trong traffic congestion',
           'Prepare system cho real-world deployment',
         ],
-        expectedResults:
-          '30% reduction trong average waiting time và improved traffic flow',
+        expectedResults: '30% reduction trong average waiting time và improved traffic flow',
         solution: 'Use multi-agent deep Q-learning với coordination mechanisms',
       },
     ],
@@ -422,19 +354,11 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
     caseStudies: [
       {
         title: 'VinFast - Autonomous Vehicle Development',
-        company: 'VinFast',
-        problem:
-          'Develop autonomous driving capabilities cho Vietnamese traffic conditions',
-        solution:
-          'Use reinforcement learning để adapt to chaotic Vietnamese traffic patterns',
-        impact:
-          'Progress toward Level 3 autonomy với Vietnamese-specific training',
-        technologies: [
-          'Reinforcement Learning',
-          'Computer Vision',
-          'Sensor Fusion',
-          'Edge Computing',
-        ],
+        organization: 'VinFast',
+        problem: 'Develop autonomous driving capabilities cho Vietnamese traffic conditions',
+        solution: 'Use reinforcement learning để adapt to chaotic Vietnamese traffic patterns',
+        impact: 'Progress toward Level 3 autonomy với Vietnamese-specific training',
+        innovations: ['Reinforcement Learning', 'Computer Vision', 'Sensor Fusion', 'Edge Computing'],
       },
     ],
     resources: [
@@ -444,13 +368,7 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
         type: 'Development Platform',
       },
     ],
-    frameworks: [
-      'OpenAI Gym',
-      'Stable Baselines3',
-      'Ray RLLib',
-      'Unity ML-Agents',
-      'TensorFlow Agents',
-    ],
+    frameworks: ['OpenAI Gym', 'Stable Baselines3', 'Ray RLLib', 'Unity ML-Agents', 'TensorFlow Agents'],
   },
   {
     id: 'ai-ethics-deployment',
@@ -475,15 +393,9 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
     exercises: [
       {
         title: 'Bias Detection trong Vietnamese Hiring AI',
-        description:
-          'Analyze và mitigate bias trong AI recruitment system cho Vietnamese companies.',
+        description: 'Analyze và mitigate bias trong AI recruitment system cho Vietnamese companies.',
         difficulty: 'Nâng cao',
-        tools: [
-          'Fairlearn',
-          'AI Fairness 360',
-          'Python',
-          'Statistical Analysis',
-        ],
+        tools: ['Fairlearn', 'AI Fairness 360', 'Python', 'Statistical Analysis'],
         datasets: ['Vietnamese Resume Dataset', 'Hiring Decision Data'],
         procedure: [
           'Analyze historical hiring data cho bias patterns',
@@ -493,21 +405,14 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
           'Create monitoring system cho ongoing bias detection',
           'Document ethical guidelines cho AI hiring systems',
         ],
-        expectedResults:
-          'Demonstrably fair AI hiring system với reduced bias across protected groups',
-        solution:
-          'Use adversarial debiasing, fairness constraints, và continuous monitoring',
+        expectedResults: 'Demonstrably fair AI hiring system với reduced bias across protected groups',
+        solution: 'Use adversarial debiasing, fairness constraints, và continuous monitoring',
       },
       {
         title: 'Culturally-Aware AI System cho Vietnamese Market',
-        description:
-          'Design AI recommendation system that respects Vietnamese cultural values và social norms.',
+        description: 'Design AI recommendation system that respects Vietnamese cultural values và social norms.',
         difficulty: 'Nâng cao',
-        tools: [
-          'Cultural AI Frameworks',
-          'Recommendation Systems',
-          'A/B Testing',
-        ],
+        tools: ['Cultural AI Frameworks', 'Recommendation Systems', 'A/B Testing'],
         datasets: ['Vietnamese Cultural Survey Data', 'User Preference Data'],
         procedure: [
           'Research Vietnamese cultural values và social norms',
@@ -517,10 +422,8 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
           'Measure cultural sensitivity metrics',
           'Deploy với cultural advisory board oversight',
         ],
-        expectedResults:
-          'AI system that enhances user experience while respecting Vietnamese cultural values',
-        solution:
-          'Integrate cultural knowledge graphs với collaborative filtering và expert validation',
+        expectedResults: 'AI system that enhances user experience while respecting Vietnamese cultural values',
+        solution: 'Integrate cultural knowledge graphs với collaborative filtering và expert validation',
       },
     ],
     realWorldApplications: [
@@ -533,19 +436,11 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
     caseStudies: [
       {
         title: 'Vietnamese Government AI Ethics Framework',
-        company: 'Ministry of Science and Technology',
-        problem:
-          'Establish national guidelines cho responsible AI development trong Vietnam',
-        solution:
-          'Create comprehensive AI ethics framework với Vietnamese cultural considerations',
-        impact:
-          'National standard cho ethical AI development protecting Vietnamese citizens',
-        technologies: [
-          'Policy Framework',
-          'Ethics Guidelines',
-          'Cultural Assessment',
-          'Public Consultation',
-        ],
+        organization: 'Ministry of Science and Technology',
+        problem: 'Establish national guidelines cho responsible AI development trong Vietnam',
+        solution: 'Create comprehensive AI ethics framework với Vietnamese cultural considerations',
+        impact: 'National standard cho ethical AI development protecting Vietnamese citizens',
+        innovations: ['Policy Framework', 'Ethics Guidelines', 'Cultural Assessment', 'Public Consultation'],
       },
     ],
     resources: [
@@ -555,12 +450,6 @@ videoUrl: 'https://www.youtube.com/watch?v=PPt2B8aI7S0',
         type: 'Ethics Framework',
       },
     ],
-    frameworks: [
-      'Fairlearn',
-      'AI Fairness 360',
-      'MLFlow',
-      'TensorBoard',
-      'Weights & Biases',
-    ],
+    frameworks: ['Fairlearn', 'AI Fairness 360', 'MLFlow', 'TensorBoard', 'Weights & Biases'],
   },
 ];

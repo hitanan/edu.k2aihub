@@ -5,7 +5,6 @@ import { Globe, Users, Target, Brain, Heart, MessageSquare, Play, RotateCcw, Awa
 
 interface CulturalIntelligenceNavigator3DProps {
   onComplete: (success: boolean, score: number) => void;
-  timeLeft: number;
   onRestart: () => void;
 }
 
@@ -127,7 +126,6 @@ const CULTURAL_SCENARIOS: CulturalScenario[] = [
 
 const CulturalIntelligenceNavigator3DGame: React.FC<CulturalIntelligenceNavigator3DProps> = ({
   onComplete,
-  timeLeft,
   onRestart,
 }) => {
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);

@@ -16,7 +16,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Comprehensive nanomaterials science covering synthesis methods, characterization techniques, và properties analysis. Focus trên Vietnamese research capabilities và applications trong electronics, energy, và environmental technology.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=8DpZ1beHuK8',
+    videoUrl: 'https://www.youtube.com/watch?v=YhuUFLzJSsg',
     imageUrl: 'https://i.ytimg.com/vi/8DpZ1beHuK8/hqdefault.jpg',
     objectives: [
       'Master nanomaterial synthesis techniques: top-down và bottom-up approaches',
@@ -175,7 +175,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Advanced nanoelectronics covering quantum devices, molecular electronics, và next-generation computing technology. Explore applications trong Vietnamese semiconductor industry và emerging quantum technology.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=6SHv455QHlU',
+    videoUrl: 'https://www.youtube.com/watch?v=2voX3fjMGjA',
     imageUrl: 'https://i.ytimg.com/vi/6SHv455QHlU/hqdefault.jpg',
     objectives: [
       'Understand quantum mechanics principles trong nanoelectronic devices',
@@ -320,7 +320,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Advanced biomedical applications của nanotechnology including drug delivery systems, diagnostic nanoparticles, và regenerative medicine. Focus trên Vietnamese healthcare applications và regulatory considerations.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=rlv250ZdjaI',
+    videoUrl: 'https://www.youtube.com/watch?v=DAOFpgocfrg',
     imageUrl: 'https://i.ytimg.com/vi/rlv250ZdjaI/hqdefault.jpg',
     objectives: [
       'Master biomedical nanoparticle design và synthesis principles',
@@ -457,7 +457,7 @@ export const nanotechnologyLessons: NanotechnologyLesson[] = [
       'Nanotechnology solutions cho environmental challenges including water treatment, air purification, và sustainable energy applications. Focus trên Vietnamese environmental issues và sustainability goals.',
     duration: '165 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=EjZA-xfw8k8',
+    videoUrl: 'https://www.youtube.com/watch?v=9ZFx-7zI9MQ',
     imageUrl: 'https://i.ytimg.com/vi/EjZA-xfw8k8/hqdefault.jpg',
     objectives: [
       'Apply nanotechnology solutions cho water và air pollution treatment',

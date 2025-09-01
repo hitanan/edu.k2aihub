@@ -53,7 +53,7 @@ const LANGUAGES: Language[] = [
     speakers: '1.5B',
     marketDemand: 95,
     culturalValue: 85,
-    economicValue: 100
+    economicValue: 100,
   },
   {
     code: 'zh',
@@ -63,7 +63,7 @@ const LANGUAGES: Language[] = [
     speakers: '918M',
     marketDemand: 90,
     culturalValue: 95,
-    economicValue: 95
+    economicValue: 95,
   },
   {
     code: 'ja',
@@ -73,7 +73,7 @@ const LANGUAGES: Language[] = [
     speakers: '125M',
     marketDemand: 85,
     culturalValue: 90,
-    economicValue: 85
+    economicValue: 85,
   },
   {
     code: 'ko',
@@ -83,7 +83,7 @@ const LANGUAGES: Language[] = [
     speakers: '77M',
     marketDemand: 80,
     culturalValue: 85,
-    economicValue: 80
+    economicValue: 80,
   },
   {
     code: 'th',
@@ -93,7 +93,7 @@ const LANGUAGES: Language[] = [
     speakers: '60M',
     marketDemand: 70,
     culturalValue: 80,
-    economicValue: 75
+    economicValue: 75,
   },
   {
     code: 'fr',
@@ -103,7 +103,7 @@ const LANGUAGES: Language[] = [
     speakers: '280M',
     marketDemand: 75,
     culturalValue: 90,
-    economicValue: 80
+    economicValue: 80,
   },
   {
     code: 'de',
@@ -113,7 +113,7 @@ const LANGUAGES: Language[] = [
     speakers: '95M',
     marketDemand: 70,
     culturalValue: 85,
-    economicValue: 85
+    economicValue: 85,
   },
   {
     code: 'es',
@@ -123,8 +123,8 @@ const LANGUAGES: Language[] = [
     speakers: '500M',
     marketDemand: 85,
     culturalValue: 85,
-    economicValue: 80
-  }
+    economicValue: 80,
+  },
 ];
 
 const LEARNING_METHODS: LearningMethod[] = [
@@ -137,7 +137,7 @@ const LEARNING_METHODS: LearningMethod[] = [
     retention: 85,
     cost: 60,
     aiComplexity: 95,
-    description: 'Đối thoại thời gian thực với AI hiểu ngữ cảnh và văn hóa'
+    description: 'Đối thoại thời gian thực với AI hiểu ngữ cảnh và văn hóa',
   },
   {
     id: 'adaptive-grammar',
@@ -148,7 +148,7 @@ const LEARNING_METHODS: LearningMethod[] = [
     retention: 90,
     cost: 50,
     aiComplexity: 80,
-    description: 'Hệ thống ngữ pháp thích ứng theo trình độ người học'
+    description: 'Hệ thống ngữ pháp thích ứng theo trình độ người học',
   },
   {
     id: 'smart-vocabulary',
@@ -159,7 +159,7 @@ const LEARNING_METHODS: LearningMethod[] = [
     retention: 95,
     cost: 40,
     aiComplexity: 70,
-    description: 'Học từ vựng thông minh với spaced repetition'
+    description: 'Học từ vựng thông minh với spaced repetition',
   },
   {
     id: 'cultural-immersion',
@@ -170,7 +170,7 @@ const LEARNING_METHODS: LearningMethod[] = [
     retention: 80,
     cost: 80,
     aiComplexity: 85,
-    description: 'Trải nghiệm văn hóa qua thực tế ảo và AI'
+    description: 'Trải nghiệm văn hóa qua thực tế ảo và AI',
   },
   {
     id: 'pronunciation-coach',
@@ -181,7 +181,7 @@ const LEARNING_METHODS: LearningMethod[] = [
     retention: 85,
     cost: 45,
     aiComplexity: 90,
-    description: 'Huấn luyện phát âm với feedback realtime'
+    description: 'Huấn luyện phát âm với feedback realtime',
   },
   {
     id: 'writing-assistant',
@@ -192,8 +192,8 @@ const LEARNING_METHODS: LearningMethod[] = [
     retention: 90,
     cost: 55,
     aiComplexity: 85,
-    description: 'Hỗ trợ viết và sửa lỗi với AI thông minh'
-  }
+    description: 'Hỗ trợ viết và sửa lỗi với AI thông minh',
+  },
 ];
 
 const TUTOR_PERSONALITIES: TutorPersonality[] = [
@@ -206,7 +206,7 @@ const TUTOR_PERSONALITIES: TutorPersonality[] = [
     cultural_awareness: 90,
     motivation_skill: 95,
     cost: 40,
-    description: 'Giáo viên thân thiện, kiên nhẫn, tạo môi trường học thoải mái'
+    description: 'Giáo viên thân thiện, kiên nhẫn, tạo môi trường học thoải mái',
   },
   {
     id: 'professional-expert',
@@ -217,7 +217,7 @@ const TUTOR_PERSONALITIES: TutorPersonality[] = [
     cultural_awareness: 95,
     motivation_skill: 85,
     cost: 70,
-    description: 'Chuyên gia ngôn ngữ với kiến thức sâu và phương pháp chuyên nghiệp'
+    description: 'Chuyên gia ngôn ngữ với kiến thức sâu và phương pháp chuyên nghiệp',
   },
   {
     id: 'casual-buddy',
@@ -228,7 +228,7 @@ const TUTOR_PERSONALITIES: TutorPersonality[] = [
     cultural_awareness: 80,
     motivation_skill: 90,
     cost: 30,
-    description: 'Bạn học thoải mái, gần gũi, học qua trò chuyện hàng ngày'
+    description: 'Bạn học thoải mái, gần gũi, học qua trò chuyện hàng ngày',
   },
   {
     id: 'encouraging-coach',
@@ -239,7 +239,7 @@ const TUTOR_PERSONALITIES: TutorPersonality[] = [
     cultural_awareness: 85,
     motivation_skill: 100,
     cost: 50,
-    description: 'Huấn luyện viên động viên, giúp vượt qua khó khăn và xây dựng tự tin'
+    description: 'Huấn luyện viên động viên, giúp vượt qua khó khăn và xây dựng tự tin',
   },
   {
     id: 'strict-teacher',
@@ -250,7 +250,7 @@ const TUTOR_PERSONALITIES: TutorPersonality[] = [
     cultural_awareness: 90,
     motivation_skill: 80,
     cost: 60,
-    description: 'Giáo viên nghiêm khắc, kỷ luật, đảm bảo học đúng và học kỹ'
+    description: 'Giáo viên nghiêm khắc, kỷ luật, đảm bảo học đúng và học kỹ',
   },
   {
     id: 'adaptive-ai',
@@ -261,26 +261,27 @@ const TUTOR_PERSONALITIES: TutorPersonality[] = [
     cultural_awareness: 100,
     motivation_skill: 95,
     cost: 80,
-    description: 'AI thích ứng hoàn hảo, tự động điều chỉnh theo phong cách học của bạn'
-  }
+    description: 'AI thích ứng hoàn hảo, tự động điều chỉnh theo phong cách học của bạn',
+  },
 ];
 
 const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'language-selection' | 'method-selection' | 'tutor-selection' | 'development' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'language-selection' | 'method-selection' | 'tutor-selection' | 'development' | 'results'
+  >('briefing');
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
   const [selectedMethods, setSelectedMethods] = useState<LearningMethod[]>([]);
   const [selectedTutor, setSelectedTutor] = useState<TutorPersonality | null>(null);
-  const [budget, setBudget] = useState(350);
+  const [budget] = useState(350);
   const [developmentProgress, setDevelopmentProgress] = useState(0);
-  const [isDeveloping, setIsDeveloping] = useState(false);
+  const [, setIsDeveloping] = useState(false);
 
   // Learning metrics
   const [learningEffectiveness, setLearningEffectiveness] = useState(0);
   const [studentEngagement, setStudentEngagement] = useState(0);
   const [knowledgeRetention, setKnowledgeRetention] = useState(0);
 
-  const totalCost = selectedMethods.reduce((sum, m) => sum + m.cost, 0) + 
-    (selectedTutor ? selectedTutor.cost : 0);
+  const totalCost = selectedMethods.reduce((sum, m) => sum + m.cost, 0) + (selectedTutor ? selectedTutor.cost : 0);
 
   const canAfford = totalCost <= budget;
 
@@ -288,29 +289,29 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
     if (!selectedLanguage || selectedMethods.length === 0 || !selectedTutor) {
       return { effectiveness: 0, engagement: 0, retention: 0 };
     }
-    
+
     // Learning effectiveness
     const methodEffectiveness = selectedMethods.reduce((sum, m) => sum + m.effectiveness, 0) / selectedMethods.length;
     const tutorExpertise = selectedTutor.expertise_depth;
     const languageDemand = selectedLanguage.marketDemand;
-    const effectivenessScore = Math.round((methodEffectiveness * 0.5 + tutorExpertise * 0.3 + languageDemand * 0.2));
-    
+    const effectivenessScore = Math.round(methodEffectiveness * 0.5 + tutorExpertise * 0.3 + languageDemand * 0.2);
+
     // Student engagement
     const methodEngagement = selectedMethods.reduce((sum, m) => sum + m.engagement, 0) / selectedMethods.length;
     const tutorMotivation = selectedTutor.motivation_skill;
     const tutorPatience = selectedTutor.patience_level;
-    const engagementScore = Math.round((methodEngagement * 0.4 + tutorMotivation * 0.35 + tutorPatience * 0.25));
-    
+    const engagementScore = Math.round(methodEngagement * 0.4 + tutorMotivation * 0.35 + tutorPatience * 0.25);
+
     // Knowledge retention
     const methodRetention = selectedMethods.reduce((sum, m) => sum + m.retention, 0) / selectedMethods.length;
     const tutorCultural = selectedTutor.cultural_awareness;
     const culturalValue = selectedLanguage.culturalValue;
-    const retentionScore = Math.round((methodRetention * 0.5 + tutorCultural * 0.3 + culturalValue * 0.2));
-    
+    const retentionScore = Math.round(methodRetention * 0.5 + tutorCultural * 0.3 + culturalValue * 0.2);
+
     return {
       effectiveness: Math.min(100, effectivenessScore),
       engagement: Math.min(100, engagementScore),
-      retention: Math.min(100, retentionScore)
+      retention: Math.min(100, retentionScore),
     };
   };
 
@@ -322,16 +323,16 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
     setGamePhase('development');
     setIsDeveloping(true);
-    
+
     const tutorResults = calculateTutorScore();
     setLearningEffectiveness(tutorResults.effectiveness);
     setStudentEngagement(tutorResults.engagement);
     setKnowledgeRetention(tutorResults.retention);
-    
+
     const totalComplexity = selectedMethods.reduce((sum, m) => sum + m.aiComplexity, 0);
-    
+
     const interval = setInterval(() => {
-      setDevelopmentProgress(prev => {
+      setDevelopmentProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsDeveloping(false);
@@ -345,17 +346,17 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
   const getOverallScore = () => {
     const tutorResults = calculateTutorScore();
-    const costEfficiency = Math.round((budget - totalCost) / budget * 100);
-    const languageDifficulty = selectedLanguage?.difficulty === 'advanced' ? 15 : 
-                              selectedLanguage?.difficulty === 'intermediate' ? 10 : 5;
+    const costEfficiency = Math.round(((budget - totalCost) / budget) * 100);
+    const languageDifficulty =
+      selectedLanguage?.difficulty === 'advanced' ? 15 : selectedLanguage?.difficulty === 'intermediate' ? 10 : 5;
     const methodDiversity = selectedMethods.length >= 3 ? 10 : selectedMethods.length * 3;
-    
+
     return Math.round(
-      tutorResults.effectiveness * 0.35 + 
-      tutorResults.engagement * 0.3 + 
-      tutorResults.retention * 0.25 + 
-      costEfficiency * 0.05 + 
-      (languageDifficulty + methodDiversity) * 0.05
+      tutorResults.effectiveness * 0.35 +
+        tutorResults.engagement * 0.3 +
+        tutorResults.retention * 0.25 +
+        costEfficiency * 0.05 +
+        (languageDifficulty + methodDiversity) * 0.05,
     );
   };
 
@@ -374,9 +375,7 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
               <MessageCircle className="w-16 h-16 text-blue-400" />
             </div>
             <h1 className="text-4xl font-bold text-white mb-4">AI Language Tutor</h1>
-            <p className="text-xl text-gray-300 mb-6">
-              Xây dựng gia sư AI thông minh để dạy ngoại ngữ hiệu quả!
-            </p>
+            <p className="text-xl text-gray-300 mb-6">Xây dựng gia sư AI thông minh để dạy ngoại ngữ hiệu quả!</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -400,10 +399,18 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                 Tiêu chí thành công
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-blue-400">Hiệu quả học (35%)</span> - Khả năng tiếp thu kiến thức</li>
-                <li>• <span className="text-green-400">Sự tham gia (30%)</span> - Động lực và hứng thú</li>
-                <li>• <span className="text-yellow-400">Ghi nhớ (25%)</span> - Lưu giữ kiến thức lâu dài</li>
-                <li>• <span className="text-purple-400">Hiệu quả (10%)</span> - Chi phí và đa dạng</li>
+                <li>
+                  • <span className="text-blue-400">Hiệu quả học (35%)</span> - Khả năng tiếp thu kiến thức
+                </li>
+                <li>
+                  • <span className="text-green-400">Sự tham gia (30%)</span> - Động lực và hứng thú
+                </li>
+                <li>
+                  • <span className="text-yellow-400">Ghi nhớ (25%)</span> - Lưu giữ kiến thức lâu dài
+                </li>
+                <li>
+                  • <span className="text-purple-400">Hiệu quả (10%)</span> - Chi phí và đa dạng
+                </li>
               </ul>
             </div>
           </div>
@@ -437,31 +444,33 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {LANGUAGES.map((language) => {
               const isSelected = selectedLanguage?.code === language.code;
-              
+
               return (
                 <div
                   key={language.code}
                   className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 cursor-pointer transition-all duration-200 hover:scale-105 ${
-                    isSelected
-                      ? 'border-blue-500 bg-blue-500/20'
-                      : 'border-white/20 hover:border-blue-400/50'
+                    isSelected ? 'border-blue-500 bg-blue-500/20' : 'border-white/20 hover:border-blue-400/50'
                   }`}
                   onClick={() => setSelectedLanguage(language)}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <MessageCircle className="w-8 h-8 text-blue-400" />
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      language.difficulty === 'beginner' ? 'bg-green-500/20 text-green-400' :
-                      language.difficulty === 'intermediate' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-red-500/20 text-red-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        language.difficulty === 'beginner'
+                          ? 'bg-green-500/20 text-green-400'
+                          : language.difficulty === 'intermediate'
+                            ? 'bg-yellow-500/20 text-yellow-400'
+                            : 'bg-red-500/20 text-red-400'
+                      }`}
+                    >
                       {language.difficulty}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-1">{language.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{language.nativeName}</p>
-                  
+
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Người dùng:</span>
@@ -470,32 +479,32 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     <div className="flex justify-between">
                       <span className="text-gray-400">Nhu cầu thị trường:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${language.marketDemand}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${language.marketDemand}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Giá trị văn hóa:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-blue-500 h-2 rounded-full" 
-                          style={{width: `${language.culturalValue}%`}}
+                        <div
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: `${language.culturalValue}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Giá trị kinh tế:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-yellow-500 h-2 rounded-full" 
-                          style={{width: `${language.economicValue}%`}}
+                        <div
+                          className="bg-yellow-500 h-2 rounded-full"
+                          style={{ width: `${language.economicValue}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -538,9 +547,9 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {LEARNING_METHODS.map((method) => {
-              const isSelected = selectedMethods.some(m => m.id === method.id);
+              const isSelected = selectedMethods.some((m) => m.id === method.id);
               const canSelect = selectedMethods.length < 4;
-              
+
               return (
                 <div
                   key={method.id}
@@ -548,14 +557,14 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     isSelected
                       ? 'border-green-500 bg-green-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-green-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-green-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedMethods(prev => prev.filter(m => m.id !== method.id));
+                      setSelectedMethods((prev) => prev.filter((m) => m.id !== method.id));
                     } else if (canSelect) {
-                      setSelectedMethods(prev => [...prev, method]);
+                      setSelectedMethods((prev) => [...prev, method]);
                     }
                   }}
                 >
@@ -570,62 +579,63 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     </div>
                     <span className="text-yellow-400 font-bold text-sm">{method.cost}M</span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{method.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{method.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div>
                       <span className="text-gray-400">Hiệu quả:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${method.effectiveness}%`}}
+                        <div
+                          className="bg-blue-500 h-1 rounded-full"
+                          style={{ width: `${method.effectiveness}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Tham gia:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${method.engagement}%`}}
-                        ></div>
+                        <div className="bg-green-500 h-1 rounded-full" style={{ width: `${method.engagement}%` }}></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Ghi nhớ:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-yellow-500 h-1 rounded-full" 
-                          style={{width: `${method.retention}%`}}
-                        ></div>
+                        <div className="bg-yellow-500 h-1 rounded-full" style={{ width: `${method.retention}%` }}></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">AI phức tạp:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-purple-500 h-1 rounded-full" 
-                          style={{width: `${method.aiComplexity}%`}}
+                        <div
+                          className="bg-purple-500 h-1 rounded-full"
+                          style={{ width: `${method.aiComplexity}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-4 text-center">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      method.type === 'conversation' ? 'bg-blue-500/20 text-blue-400' :
-                      method.type === 'grammar' ? 'bg-green-500/20 text-green-400' :
-                      method.type === 'vocabulary' ? 'bg-yellow-500/20 text-yellow-400' :
-                      method.type === 'culture' ? 'bg-purple-500/20 text-purple-400' :
-                      method.type === 'pronunciation' ? 'bg-red-500/20 text-red-400' :
-                      'bg-orange-500/20 text-orange-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        method.type === 'conversation'
+                          ? 'bg-blue-500/20 text-blue-400'
+                          : method.type === 'grammar'
+                            ? 'bg-green-500/20 text-green-400'
+                            : method.type === 'vocabulary'
+                              ? 'bg-yellow-500/20 text-yellow-400'
+                              : method.type === 'culture'
+                                ? 'bg-purple-500/20 text-purple-400'
+                                : method.type === 'pronunciation'
+                                  ? 'bg-red-500/20 text-red-400'
+                                  : 'bg-orange-500/20 text-orange-400'
+                      }`}
+                    >
                       {method.type}
                     </span>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -669,8 +679,8 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
             {TUTOR_PERSONALITIES.map((tutor) => {
               const isSelected = selectedTutor?.id === tutor.id;
               const currentCostWithoutTutor = selectedMethods.reduce((sum, m) => sum + m.cost, 0);
-              const canSelect = (currentCostWithoutTutor + tutor.cost) <= budget;
-              
+              const canSelect = currentCostWithoutTutor + tutor.cost <= budget;
+
               return (
                 <div
                   key={tutor.id}
@@ -678,8 +688,8 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     isSelected
                       ? 'border-purple-500 bg-purple-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-purple-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-purple-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
@@ -693,61 +703,68 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     <Users className="w-8 h-8 text-purple-400" />
                     <div className="text-right">
                       <span className="text-yellow-400 font-bold">{tutor.cost}M VNĐ</span>
-                      <div className={`text-xs px-2 py-1 rounded mt-1 ${
-                        tutor.style === 'friendly' ? 'bg-green-500/20 text-green-400' :
-                        tutor.style === 'professional' ? 'bg-blue-500/20 text-blue-400' :
-                        tutor.style === 'casual' ? 'bg-yellow-500/20 text-yellow-400' :
-                        tutor.style === 'encouraging' ? 'bg-pink-500/20 text-pink-400' :
-                        tutor.style === 'strict' ? 'bg-red-500/20 text-red-400' :
-                        'bg-purple-500/20 text-purple-400'
-                      }`}>
+                      <div
+                        className={`text-xs px-2 py-1 rounded mt-1 ${
+                          tutor.style === 'friendly'
+                            ? 'bg-green-500/20 text-green-400'
+                            : tutor.style === 'professional'
+                              ? 'bg-blue-500/20 text-blue-400'
+                              : tutor.style === 'casual'
+                                ? 'bg-yellow-500/20 text-yellow-400'
+                                : tutor.style === 'encouraging'
+                                  ? 'bg-pink-500/20 text-pink-400'
+                                  : tutor.style === 'strict'
+                                    ? 'bg-red-500/20 text-red-400'
+                                    : 'bg-purple-500/20 text-purple-400'
+                        }`}
+                      >
                         {tutor.style}
                       </div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{tutor.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{tutor.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div>
                       <span className="text-gray-400">Kiên nhẫn:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${tutor.patience_level}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${tutor.patience_level}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Chuyên môn:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-blue-500 h-2 rounded-full" 
-                          style={{width: `${tutor.expertise_depth}%`}}
+                        <div
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: `${tutor.expertise_depth}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Văn hóa:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-purple-500 h-2 rounded-full" 
-                          style={{width: `${tutor.cultural_awareness}%`}}
+                        <div
+                          className="bg-purple-500 h-2 rounded-full"
+                          style={{ width: `${tutor.cultural_awareness}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Động viên:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-yellow-500 h-2 rounded-full" 
-                          style={{width: `${tutor.motivation_skill}%`}}
+                        <div
+                          className="bg-yellow-500 h-2 rounded-full"
+                          style={{ width: `${tutor.motivation_skill}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -763,12 +780,16 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
             <div className="grid md:grid-cols-3 gap-4">
               <div>
                 <h4 className="text-lg font-semibold text-blue-400 mb-2">Ngôn ngữ</h4>
-                <p className="text-gray-300 text-sm">{selectedLanguage?.name} ({selectedLanguage?.nativeName})</p>
+                <p className="text-gray-300 text-sm">
+                  {selectedLanguage?.name} ({selectedLanguage?.nativeName})
+                </p>
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-green-400 mb-2">Phương pháp ({selectedMethods.length})</h4>
-                {selectedMethods.map(method => (
-                  <p key={method.id} className="text-gray-300 text-sm">{method.name}</p>
+                {selectedMethods.map((method) => (
+                  <p key={method.id} className="text-gray-300 text-sm">
+                    {method.name}
+                  </p>
                 ))}
               </div>
               <div>
@@ -816,9 +837,9 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                 <span>{Math.round(developmentProgress)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-6">
-                <div 
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 h-6 rounded-full transition-all duration-300" 
-                  style={{width: `${developmentProgress}%`}}
+                <div
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 h-6 rounded-full transition-all duration-300"
+                  style={{ width: `${developmentProgress}%` }}
                 ></div>
               </div>
             </div>
@@ -830,9 +851,9 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{learningEffectiveness}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${learningEffectiveness}%`}}
+                  <div
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${learningEffectiveness}%` }}
                   ></div>
                 </div>
               </div>
@@ -843,9 +864,9 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{studentEngagement}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${studentEngagement}%`}}
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${studentEngagement}%` }}
                   ></div>
                 </div>
               </div>
@@ -856,9 +877,9 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{knowledgeRetention}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-yellow-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${knowledgeRetention}%`}}
+                  <div
+                    className="bg-yellow-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${knowledgeRetention}%` }}
                   ></div>
                 </div>
               </div>
@@ -913,16 +934,24 @@ const AILanguageTutorGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
             <div className="bg-white/10 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-4">Đánh giá AI Tutor</h3>
               <div className="space-y-2 text-gray-300">
-                {tutorScore >= 90 && <p>🏆 AI Tutor hoàn hảo! Có thể cạnh tranh với các ứng dụng học ngôn ngữ hàng đầu.</p>}
-                {tutorScore >= 80 && tutorScore < 90 && <p>🌟 AI Tutor xuất sắc! Học viên sẽ có trải nghiệm học tập tuyệt vời.</p>}
-                {tutorScore >= 70 && tutorScore < 80 && <p>✅ AI Tutor tốt! Cần cải thiện một số tính năng để tăng hiệu quả.</p>}
-                {tutorScore >= 60 && tutorScore < 70 && <p>⚠️ AI Tutor cơ bản! Cần nâng cấp thuật toán và phương pháp học.</p>}
+                {tutorScore >= 90 && (
+                  <p>🏆 AI Tutor hoàn hảo! Có thể cạnh tranh với các ứng dụng học ngôn ngữ hàng đầu.</p>
+                )}
+                {tutorScore >= 80 && tutorScore < 90 && (
+                  <p>🌟 AI Tutor xuất sắc! Học viên sẽ có trải nghiệm học tập tuyệt vời.</p>
+                )}
+                {tutorScore >= 70 && tutorScore < 80 && (
+                  <p>✅ AI Tutor tốt! Cần cải thiện một số tính năng để tăng hiệu quả.</p>
+                )}
+                {tutorScore >= 60 && tutorScore < 70 && (
+                  <p>⚠️ AI Tutor cơ bản! Cần nâng cấp thuật toán và phương pháp học.</p>
+                )}
                 {tutorScore < 60 && <p>❌ Cần cải thiện đáng kể để tạo ra trải nghiệm học tập hiệu quả.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
-                    <strong>Lưu ý:</strong> AI Language Tutor hiệu quả cần kết hợp công nghệ tiên tiến, 
-                    hiểu biết văn hóa sâu sắc và phương pháp giáo dục phù hợp.
+                    <strong>Lưu ý:</strong> AI Language Tutor hiệu quả cần kết hợp công nghệ tiên tiến, hiểu biết văn
+                    hóa sâu sắc và phương pháp giáo dục phù hợp.
                   </p>
                 </div>
               </div>

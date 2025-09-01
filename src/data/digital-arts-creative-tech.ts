@@ -18,26 +18,31 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
     technologies: ['Photoshop', 'Illustrator', 'Procreate', 'Blender', 'After Effects'],
     creativeFocus: ['Digital Painting', 'Vector Art', 'Photo Manipulation', 'Concept Art'],
     vietnamCulture: 'Incorporating Vietnamese cultural elements into modern digital art',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=OzemCeywKOM',
     imageUrl: '/images/digital-art-fundamentals.jpg',
     objectives: [
       'Master digital art tools và software',
       'Understand color theory và composition trong digital medium',
       'Create original digital artwork incorporating Vietnamese themes',
       'Learn digital painting techniques và workflows',
-      'Build portfolio of diverse digital art pieces'
+      'Build portfolio of diverse digital art pieces',
     ],
     prerequisites: [
       'Basic understanding của art principles',
       'Access to digital art software hoặc tablet',
-      'Interest in visual arts và creativity'
+      'Interest in visual arts và creativity',
     ],
     exercises: [
       {
         title: 'Vietnamese Cultural Digital Illustration',
         description: 'Create series of digital illustrations celebrating Vietnamese festivals và traditions',
         difficulty: 'Trung bình',
-        materials: ['Digital art software (Photoshop/Procreate)', 'Drawing tablet', 'Reference images', 'Color palettes'],
+        materials: [
+          'Digital art software (Photoshop/Procreate)',
+          'Drawing tablet',
+          'Reference images',
+          'Color palettes',
+        ],
         procedure: [
           'Research Vietnamese festivals (Tết, Trung Thu, etc.) và cultural symbols',
           'Sketch initial concepts combining traditional với modern design',
@@ -46,16 +51,21 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Incorporate Vietnamese architectural elements',
           'Add modern digital effects while maintaining cultural authenticity',
           'Create social media posts showcasing artwork',
-          'Gather feedback từ Vietnamese community'
+          'Gather feedback từ Vietnamese community',
         ],
         expectedResults: 'Professional-quality digital illustrations celebrating Vietnamese culture',
-        solution: 'Digital art tutorial với Vietnamese cultural design elements'
+        solution: 'Digital art tutorial với Vietnamese cultural design elements',
       },
       {
         title: 'Digital Portrait Series Project',
         description: 'Create realistic digital portraits showcasing diverse Vietnamese faces',
         difficulty: 'Nâng cao',
-        materials: ['Advanced digital painting software', 'High-quality drawing tablet', 'Portrait references', 'Lighting study materials'],
+        materials: [
+          'Advanced digital painting software',
+          'High-quality drawing tablet',
+          'Portrait references',
+          'Lighting study materials',
+        ],
         procedure: [
           'Study facial anatomy và proportions specific to Vietnamese features',
           'Practice digital brush techniques for realistic skin textures',
@@ -64,11 +74,11 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Experiment với traditional và contemporary styling',
           'Add subtle Vietnamese cultural elements (áo dài, lotus, etc.)',
           'Develop consistent artistic style across series',
-          'Present series as professional portfolio piece'
+          'Present series as professional portfolio piece',
         ],
         expectedResults: 'Portfolio-ready portrait series demonstrating advanced digital painting skills',
-        solution: 'Digital portrait painting masterclass với Vietnamese subject focus'
-      }
+        solution: 'Digital portrait painting masterclass với Vietnamese subject focus',
+      },
     ],
     realWorldApplications: [
       'Freelance digital artist cho international clients',
@@ -77,7 +87,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
       'Book illustration và publishing industry',
       'Animation studio artist for Vietnamese films',
       'NFT artist trong digital marketplace',
-      'Education technology visual content creator'
+      'Education technology visual content creator',
     ],
     caseStudies: [
       {
@@ -86,7 +96,12 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Training local artists for international animation projects',
         solution: 'Comprehensive digital art training program với industry mentorship',
         impact: 'Skilled Vietnamese artists working on global animation projects',
-        innovations: ['Industry-standard training curriculum', 'International project experience', 'Cultural art integration', 'Career placement program']
+        innovations: [
+          'Industry-standard training curriculum',
+          'International project experience',
+          'Cultural art integration',
+          'Career placement program',
+        ],
       },
       {
         title: 'Vietnamese Cultural NFT Art Project',
@@ -94,26 +109,31 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Promoting Vietnamese culture through modern digital art',
         solution: 'Collaborative NFT collection featuring traditional Vietnamese stories',
         impact: 'Global awareness of Vietnamese culture, artist income generation',
-        innovations: ['Cultural storytelling through digital art', 'Blockchain technology adoption', 'International market access', 'Artist royalty systems']
-      }
+        innovations: [
+          'Cultural storytelling through digital art',
+          'Blockchain technology adoption',
+          'International market access',
+          'Artist royalty systems',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Adobe Creative Cloud Tutorials',
         url: 'https://helpx.adobe.com/creative-cloud/tutorials.html',
-        type: 'Tutorial'
+        type: 'Tutorial',
       },
       {
         title: 'Blender 3D Art Community',
         url: 'https://www.blender.org/community/',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'ArtStation Learning Platform',
         url: 'https://www.artstation.com/learning',
-        type: 'Documentation'
-      }
-    ]
+        type: 'Documentation',
+      },
+    ],
   },
   {
     id: 'motion-graphics-animation',
@@ -125,19 +145,19 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
     technologies: ['After Effects', 'Cinema 4D', 'Lottie', 'Principle', 'Rive'],
     creativeFocus: ['2D Animation', '3D Motion Graphics', 'UI Animation', 'Explainer Videos'],
     vietnamCulture: 'Creating animated content promoting Vietnamese businesses và tourism',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=5tQ0hf2SCeo',
     imageUrl: '/images/motion-graphics-animation.jpg',
     objectives: [
       'Master After Effects cho professional motion graphics',
       'Create engaging animated explainer videos',
       'Design UI animations cho mobile apps',
       'Develop storytelling skills through animation',
-      'Build animation portfolio cho commercial work'
+      'Build animation portfolio cho commercial work',
     ],
     prerequisites: [
       'Completed digital art fundamentals',
       'Basic understanding của video editing',
-      'Access to motion graphics software'
+      'Access to motion graphics software',
     ],
     exercises: [
       {
@@ -153,10 +173,10 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Animate traditional Vietnamese elements (dragons, lotus, etc.)',
           'Add engaging transitions và kinetic typography',
           'Include call-to-action encouraging tourism',
-          'Optimize video for social media platforms'
+          'Optimize video for social media platforms',
         ],
         expectedResults: 'Professional tourism promotional video ready for marketing use',
-        solution: 'Motion graphics tutorial với tourism marketing focus'
+        solution: 'Motion graphics tutorial với tourism marketing focus',
       },
       {
         title: 'Vietnamese Startup App UI Animation',
@@ -171,11 +191,11 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Design micro-interactions enhancing user experience',
           'Implement Vietnamese cultural color schemes',
           'Create loading animations với Vietnamese elements',
-          'Export animations for mobile app development'
+          'Export animations for mobile app development',
         ],
         expectedResults: 'Complete UI animation package ready for app implementation',
-        solution: 'UI animation framework với Vietnamese design principles'
-      }
+        solution: 'UI animation framework với Vietnamese design principles',
+      },
     ],
     realWorldApplications: [
       'Social media content creation cho Vietnamese brands',
@@ -184,7 +204,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
       'Mobile app UI/UX animator',
       'Video production company motion artist',
       'Corporate presentation và training video creator',
-      'Independent freelance motion graphics designer'
+      'Independent freelance motion graphics designer',
     ],
     caseStudies: [
       {
@@ -193,7 +213,12 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Engaging younger Vietnamese consumers through social media',
         solution: 'Series of animated social media videos với Vietnamese cultural humor',
         impact: '300% increase in social media engagement, brand recognition',
-        innovations: ['Cultural humor integration', 'Mobile-first design', 'Platform-specific optimization', 'User-generated content inspiration']
+        innovations: [
+          'Cultural humor integration',
+          'Mobile-first design',
+          'Platform-specific optimization',
+          'User-generated content inspiration',
+        ],
       },
       {
         title: 'VinFast Automotive Animation Project',
@@ -201,26 +226,31 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Explaining complex electric vehicle technology to Vietnamese consumers',
         solution: 'Animated explainer video series showcasing EV benefits',
         impact: 'Improved consumer understanding, increased test drive bookings',
-        innovations: ['Technical concept visualization', 'Local market messaging', 'Multi-platform distribution', 'Educational value focus']
-      }
+        innovations: [
+          'Technical concept visualization',
+          'Local market messaging',
+          'Multi-platform distribution',
+          'Educational value focus',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Adobe After Effects Tutorials',
         url: 'https://helpx.adobe.com/after-effects/tutorials.html',
-        type: 'Tutorial'
+        type: 'Tutorial',
       },
       {
         title: 'School of Motion Online Courses',
         url: 'https://www.schoolofmotion.com/',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Lottie Animation Community',
         url: 'https://lottiefiles.com/',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'generative-ai-art',
@@ -239,19 +269,24 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
       'Create consistent character designs using AI',
       'Blend AI-generated art với traditional techniques',
       'Understand ethical considerations trong AI art',
-      'Build commercial AI art workflow'
+      'Build commercial AI art workflow',
     ],
     prerequisites: [
       'Basic understanding của AI concepts',
       'Digital art experience preferred',
-      'Creative problem-solving skills'
+      'Creative problem-solving skills',
     ],
     exercises: [
       {
         title: 'Vietnamese Mythology AI Art Series',
         description: 'Create AI-generated art series based on Vietnamese folklore và mythology',
         difficulty: 'Trung bình',
-        materials: ['Midjourney subscription', 'Stable Diffusion setup', 'Photo editing software', 'Research materials'],
+        materials: [
+          'Midjourney subscription',
+          'Stable Diffusion setup',
+          'Photo editing software',
+          'Research materials',
+        ],
         procedure: [
           'Research Vietnamese mythological creatures (Rồng, Phượng, Ma Lai, etc.)',
           'Study traditional Vietnamese art styles và aesthetics',
@@ -260,10 +295,10 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Refine images using prompt engineering techniques',
           'Post-process images maintaining cultural authenticity',
           'Create cohesive art series với consistent style',
-          'Present series with cultural context explanations'
+          'Present series with cultural context explanations',
         ],
         expectedResults: 'Professional AI art series celebrating Vietnamese mythology',
-        solution: 'AI art prompt library với Vietnamese cultural elements'
+        solution: 'AI art prompt library với Vietnamese cultural elements',
       },
       {
         title: 'AI-Enhanced Vietnamese Fashion Design',
@@ -278,11 +313,11 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Combine AI outputs với manual design refinements',
           'Create technical fashion illustrations',
           'Develop marketing materials cho fashion concepts',
-          'Present designs to Vietnamese fashion industry professionals'
+          'Present designs to Vietnamese fashion industry professionals',
         ],
         expectedResults: 'Commercial-ready fashion concepts với Vietnamese cultural inspiration',
-        solution: 'AI fashion design workflow với cultural integration techniques'
-      }
+        solution: 'AI fashion design workflow với cultural integration techniques',
+      },
     ],
     realWorldApplications: [
       'Concept artist cho Vietnamese game development',
@@ -291,7 +326,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
       'Architectural visualization artist',
       'Book cover designer cho Vietnamese publishers',
       'Social media content creator với AI efficiency',
-      'Art director trong advertising agencies'
+      'Art director trong advertising agencies',
     ],
     caseStudies: [
       {
@@ -300,7 +335,12 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Speeding up concept art production cho mobile games',
         solution: 'AI-assisted concept art workflow with Vietnamese cultural themes',
         impact: '60% faster concept development, unique cultural positioning',
-        innovations: ['AI-human collaboration workflow', 'Cultural prompt libraries', 'Style consistency systems', 'Rapid iteration processes']
+        innovations: [
+          'AI-human collaboration workflow',
+          'Cultural prompt libraries',
+          'Style consistency systems',
+          'Rapid iteration processes',
+        ],
       },
       {
         title: 'Vietnamese Heritage AI Documentation',
@@ -308,26 +348,31 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Preserving và promoting Vietnamese cultural heritage',
         solution: 'AI-generated visual content showcasing historical Vietnamese culture',
         impact: 'Enhanced cultural education, international heritage promotion',
-        innovations: ['Historical recreation through AI', 'Educational content generation', 'Tourism marketing assets', 'Cultural preservation tools']
-      }
+        innovations: [
+          'Historical recreation through AI',
+          'Educational content generation',
+          'Tourism marketing assets',
+          'Cultural preservation tools',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Midjourney Documentation',
         url: 'https://docs.midjourney.com/',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Stable Diffusion Community',
         url: 'https://huggingface.co/spaces/stabilityai/stable-diffusion',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'AI Art Generation Guide',
         url: 'https://www.promptingguide.ai/',
-        type: 'Tutorial'
-      }
-    ]
+        type: 'Tutorial',
+      },
+    ],
   },
   {
     id: 'immersive-media-production',
@@ -339,26 +384,28 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
     technologies: ['Unity 3D', 'Unreal Engine', '360° Cameras', 'Spatial Audio', 'WebXR'],
     creativeFocus: ['VR Experiences', 'AR Applications', '360° Storytelling', 'Interactive Design'],
     vietnamCulture: 'Creating immersive experiences showcasing Vietnamese heritage và tourism',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=4JVfa3SSDQU',
     imageUrl: '/images/immersive-media.jpg',
     objectives: [
       'Produce professional VR/AR content',
       'Master 360° video production techniques',
       'Design interactive immersive experiences',
       'Understand spatial audio và haptic feedback',
-      'Create commercial VR/AR applications'
+      'Create commercial VR/AR applications',
     ],
-    prerequisites: [
-      'Strong 3D design skills',
-      'Understanding của game engines',
-      'Video production experience'
-    ],
+    prerequisites: ['Strong 3D design skills', 'Understanding của game engines', 'Video production experience'],
     exercises: [
       {
         title: 'Virtual Reality Heritage Tour',
         description: 'Create VR experience touring Vietnamese historical sites',
         difficulty: 'Nâng cao',
-        materials: ['VR development software', '360° camera', 'VR headset', 'Historical site access', 'Audio equipment'],
+        materials: [
+          'VR development software',
+          '360° camera',
+          'VR headset',
+          'Historical site access',
+          'Audio equipment',
+        ],
         procedure: [
           'Select significant Vietnamese historical sites cho VR tour',
           'Capture high-quality 360° footage at locations',
@@ -367,10 +414,10 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Add interactive elements (historical artifacts, timeline)',
           'Implement Vietnamese language support với subtitles',
           'Test VR experience với diverse users',
-          'Optimize for different VR platforms và devices'
+          'Optimize for different VR platforms và devices',
         ],
         expectedResults: 'Professional VR heritage tour ready for tourism industry',
-        solution: 'VR development pipeline với cultural heritage focus'
+        solution: 'VR development pipeline với cultural heritage focus',
       },
       {
         title: 'AR Cultural Learning Experience',
@@ -385,11 +432,11 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Add gamification elements to encourage learning',
           'Include cultural context và historical information',
           'Test app với Vietnamese artisans và students',
-          'Publish app for educational use'
+          'Publish app for educational use',
         ],
         expectedResults: 'Educational AR app preserving Vietnamese traditional crafts',
-        solution: 'AR education development framework với cultural craft focus'
-      }
+        solution: 'AR education development framework với cultural craft focus',
+      },
     ],
     realWorldApplications: [
       'Tourism industry VR/AR experience developer',
@@ -398,7 +445,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
       'Entertainment industry immersive content creator',
       'Education technology VR/AR developer',
       'Healthcare simulation designer',
-      'Corporate training VR specialist'
+      'Corporate training VR specialist',
     ],
     caseStudies: [
       {
@@ -407,7 +454,12 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Preserving historical architecture while managing overtourism',
         solution: 'Comprehensive VR tour allowing virtual exploration',
         impact: 'Reduced physical tourism pressure, global heritage promotion',
-        innovations: ['Historical reconstruction accuracy', 'Multi-language support', 'Interactive learning elements', 'Tourism revenue diversification']
+        innovations: [
+          'Historical reconstruction accuracy',
+          'Multi-language support',
+          'Interactive learning elements',
+          'Tourism revenue diversification',
+        ],
       },
       {
         title: 'Vietnam National Museum AR Enhancement',
@@ -415,26 +467,31 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Making historical artifacts more engaging cho young visitors',
         solution: 'AR app bringing museum exhibits to life',
         impact: 'Increased youth engagement, enhanced educational value',
-        innovations: ['Artifact animation systems', 'Historical context overlays', 'Interactive storytelling', 'Multi-sensory experiences']
-      }
+        innovations: [
+          'Artifact animation systems',
+          'Historical context overlays',
+          'Interactive storytelling',
+          'Multi-sensory experiences',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Unity VR Development Documentation',
         url: 'https://docs.unity3d.com/Manual/VROverview.html',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'WebXR Device API',
         url: 'https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API',
-        type: 'Reference'
+        type: 'Reference',
       },
       {
         title: 'Oculus Developer Resources',
         url: 'https://developer.oculus.com/',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'creative-technology-business',
@@ -446,26 +503,31 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
     technologies: ['Portfolio Platforms', 'E-commerce Tools', 'IP Management', 'Social Media Marketing'],
     creativeFocus: ['Business Development', 'Client Relations', 'Pricing Strategies', 'Market Positioning'],
     vietnamCulture: 'Building creative businesses serving Vietnamese market và international expansion',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=qulcqiWzx0M',
     imageUrl: '/images/creative-tech-business.jpg',
     objectives: [
       'Develop sustainable creative business models',
       'Master client acquisition và retention strategies',
       'Understand intellectual property protection',
       'Build professional brand và online presence',
-      'Create scalable creative service offerings'
+      'Create scalable creative service offerings',
     ],
     prerequisites: [
       'Creative skills trong digital arts',
       'Basic business understanding',
-      'Professional portfolio of work'
+      'Professional portfolio of work',
     ],
     exercises: [
       {
         title: 'Creative Agency Business Plan',
         description: 'Develop comprehensive business plan cho Vietnamese creative technology agency',
         difficulty: 'Nâng cao',
-        materials: ['Business planning software', 'Market research tools', 'Financial modeling templates', 'Legal consultation resources'],
+        materials: [
+          'Business planning software',
+          'Market research tools',
+          'Financial modeling templates',
+          'Legal consultation resources',
+        ],
         procedure: [
           'Research Vietnamese creative services market opportunity',
           'Define unique value proposition và target clients',
@@ -474,10 +536,10 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Plan team structure và hiring strategy',
           'Design client acquisition và retention processes',
           'Develop financial projections và funding requirements',
-          'Present business plan to potential investors hoặc partners'
+          'Present business plan to potential investors hoặc partners',
         ],
         expectedResults: 'Investment-ready creative agency business plan',
-        solution: 'Creative business development framework với Vietnamese market focus'
+        solution: 'Creative business development framework với Vietnamese market focus',
       },
       {
         title: 'Digital Art NFT Marketplace Strategy',
@@ -492,11 +554,11 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
           'Build community around Vietnamese cultural preservation',
           'Develop royalty structure supporting ongoing artist income',
           'Launch collection với proper marketing campaign',
-          'Analyze sales performance và community engagement'
+          'Analyze sales performance và community engagement',
         ],
         expectedResults: 'Successful NFT collection promoting Vietnamese culture globally',
-        solution: 'NFT business strategy framework với cultural focus'
-      }
+        solution: 'NFT business strategy framework với cultural focus',
+      },
     ],
     realWorldApplications: [
       'Freelance creative services entrepreneur',
@@ -505,7 +567,7 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
       'Art gallery digital transformation specialist',
       'Creative technology product developer',
       'International creative services exporter',
-      'Creative education platform developer'
+      'Creative education platform developer',
     ],
     caseStudies: [
       {
@@ -514,7 +576,12 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Competing với established international agencies',
         solution: 'Specialization trong Vietnamese cultural branding với international quality',
         impact: 'Client roster including major Vietnamese brands, international recognition',
-        innovations: ['Cultural expertise positioning', 'International quality standards', 'Local market insights', 'Competitive pricing strategies']
+        innovations: [
+          'Cultural expertise positioning',
+          'International quality standards',
+          'Local market insights',
+          'Competitive pricing strategies',
+        ],
       },
       {
         title: 'Vietnamese Art Export Digital Platform',
@@ -522,25 +589,30 @@ export const DigitalArtsLessons: DigitalArtsLessonType[] = [
         problem: 'Limited international exposure cho Vietnamese artists',
         solution: 'Digital platform connecting Vietnamese artists với global collectors',
         impact: 'Increased international sales, artist income growth',
-        innovations: ['Artist development programs', 'International marketing support', 'Cultural education integration', 'Digital art authentication']
-      }
+        innovations: [
+          'Artist development programs',
+          'International marketing support',
+          'Cultural education integration',
+          'Digital art authentication',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Creative Business Legal Guide',
         url: 'https://www.legalzoom.com/business/business-formation/creative-business-guide',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Behance Portfolio Platform',
         url: 'https://www.behance.net/',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'Creative Market for Digital Assets',
         url: 'https://creativemarket.com/',
-        type: 'Reference'
-      }
-    ]
-  }
+        type: 'Reference',
+      },
+    ],
+  },
 ];

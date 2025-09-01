@@ -39,7 +39,7 @@ const EXPERIMENTS: Experiment[] = [
     successRate: 60,
     potentialImpact: 95,
     requirements: ['CRISPR-Cas9', 'Vector delivery system', 'Cell culture'],
-    description: 'Phát triển liệu pháp gen để điều trị bệnh di truyền hiếm gặp'
+    description: 'Phát triển liệu pháp gen để điều trị bệnh di truyền hiếm gặp',
   },
   {
     id: 'protein-folding',
@@ -51,7 +51,7 @@ const EXPERIMENTS: Experiment[] = [
     successRate: 75,
     potentialImpact: 80,
     requirements: ['X-ray crystallography', 'NMR spectroscopy', 'AI modeling'],
-    description: 'Tìm hiểu cơ chế gấp cuộn protein để phát triển thuốc mới'
+    description: 'Tìm hiểu cơ chế gấp cuộn protein để phát triển thuốc mới',
   },
   {
     id: 'stem-cell',
@@ -63,7 +63,7 @@ const EXPERIMENTS: Experiment[] = [
     successRate: 65,
     potentialImpact: 90,
     requirements: ['Stem cell culture', 'Growth factors', '3D bioprinting'],
-    description: 'Nuôi cấy tế bào gốc để tái tạo các mô và cơ quan'
+    description: 'Nuôi cấy tế bào gốc để tái tạo các mô và cơ quan',
   },
   {
     id: 'cancer-drug',
@@ -75,7 +75,7 @@ const EXPERIMENTS: Experiment[] = [
     successRate: 55,
     potentialImpact: 100,
     requirements: ['Drug screening', 'Cell viability assays', 'Animal testing'],
-    description: 'Phát triển loại thuốc mới tấn công đặc hiệu tế bào ung thư'
+    description: 'Phát triển loại thuốc mới tấn công đặc hiệu tế bào ung thư',
   },
   {
     id: 'enzyme-engineering',
@@ -87,7 +87,7 @@ const EXPERIMENTS: Experiment[] = [
     successRate: 80,
     potentialImpact: 70,
     requirements: ['Protein engineering', 'Activity assays', 'Stability testing'],
-    description: 'Tối ưu hóa enzyme để ứng dụng trong sản xuất công nghiệp'
+    description: 'Tối ưu hóa enzyme để ứng dụng trong sản xuất công nghiệp',
   },
   {
     id: 'biosensor',
@@ -99,8 +99,8 @@ const EXPERIMENTS: Experiment[] = [
     successRate: 85,
     potentialImpact: 75,
     requirements: ['DNA/RNA extraction', 'PCR amplification', 'Detection system'],
-    description: 'Phát triển thiết bị sinh học phát hiện nhanh virus và bacteria'
-  }
+    description: 'Phát triển thiết bị sinh học phát hiện nhanh virus và bacteria',
+  },
 ];
 
 const LAB_EQUIPMENT: LabEquipment[] = [
@@ -108,14 +108,14 @@ const LAB_EQUIPMENT: LabEquipment[] = [
   { id: 'microscope', name: 'Confocal Microscope', cost: 35, efficiency: 25, required: false },
   { id: 'sequencer', name: 'DNA Sequencer', cost: 40, efficiency: 30, required: false },
   { id: 'incubator', name: 'Cell Incubator', cost: 15, efficiency: 10, required: true },
-  { id: 'centrifuge', name: 'High-speed Centrifuge', cost: 25, efficiency: 20, required: false }
+  { id: 'centrifuge', name: 'High-speed Centrifuge', cost: 25, efficiency: 20, required: false },
 ];
 
 const EXPERIMENT_TYPES = [
   { id: 'genetic', name: 'Di truyền học', icon: '🧬', color: 'text-green-400' },
   { id: 'protein', name: 'Protein học', icon: '🔬', color: 'text-blue-400' },
   { id: 'cell', name: 'Tế bào học', icon: '🦠', color: 'text-purple-400' },
-  { id: 'drug', name: 'Dược học', icon: '💊', color: 'text-red-400' }
+  { id: 'drug', name: 'Dược học', icon: '💊', color: 'text-red-400' },
 ];
 
 const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onComplete }) => {
@@ -124,7 +124,9 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
   const [remainingBudget, setRemainingBudget] = useState(200);
   const [selectedEquipment, setSelectedEquipment] = useState<string[]>([]);
   const [currentExperiment, setCurrentExperiment] = useState<Experiment | null>(null);
-  const [completedExperiments, setCompletedExperiments] = useState<{ experiment: Experiment; success: boolean; impact: number }[]>([]);
+  const [completedExperiments, setCompletedExperiments] = useState<
+    { experiment: Experiment; success: boolean; impact: number }[]
+  >([]);
   const [researchTime, setResearchTime] = useState(0);
   const [maxResearchTime] = useState(300); // 5 minutes
   const [experimentProgress, setExperimentProgress] = useState(0);
@@ -139,6 +141,32 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
     }
   }, [researchTime, gamePhase, maxResearchTime]);
 
+  const finishCurrentExperiment = React.useCallback(() => {
+    if (currentExperiment) {
+      const equipmentEfficiency = selectedEquipment.reduce((total, eqId) => {
+        const eq = LAB_EQUIPMENT.find((e) => e.id === eqId);
+        return total + (eq?.efficiency || 0);
+      }, 0);
+
+      const modifiedSuccessRate = Math.min(95, currentExperiment.successRate + equipmentEfficiency);
+      const success = Math.random() * 100 < modifiedSuccessRate;
+      const impact = success ? currentExperiment.potentialImpact : Math.floor(currentExperiment.potentialImpact * 0.3);
+
+      setCompletedExperiments((prev) => [
+        ...prev,
+        {
+          experiment: currentExperiment,
+          success,
+          impact,
+        },
+      ]);
+
+      setCurrentExperiment(null);
+      setIsExperimentRunning(false);
+      setExperimentProgress(0);
+    }
+  }, [currentExperiment, selectedEquipment]);
+
   useEffect(() => {
     if (isExperimentRunning && currentExperiment) {
       if (experimentProgress < currentExperiment.duration) {
@@ -148,77 +176,48 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
         finishCurrentExperiment();
       }
     }
-  }, [experimentProgress, isExperimentRunning, currentExperiment]);
+  }, [experimentProgress, isExperimentRunning, currentExperiment, finishCurrentExperiment]);
+
+  const calculateScore = () => {
+    const totalImpact = completedExperiments.reduce((sum, exp) => sum + exp.impact, 0);
+    const successRate =
+      completedExperiments.length > 0
+        ? (completedExperiments.filter((exp) => exp.success).length / completedExperiments.length) * 100
+        : 0;
+    const budgetEfficiency = ((budget - remainingBudget) / budget) * 30;
+    const equipmentBonus = selectedEquipment.length * 5;
+
+    return Math.round(totalImpact / 5 + successRate * 0.3 + budgetEfficiency + equipmentBonus);
+  };
+
+  const finishGame = () => {
+    const finalScore = calculateScore();
+    onComplete(finalScore);
+  };
 
   const startGame = () => {
     setGamePhase('setup');
   };
 
   const buyEquipment = (equipmentId: string) => {
-    const equipment = LAB_EQUIPMENT.find(e => e.id === equipmentId);
-    if (equipment && remainingBudget >= equipment.cost && !selectedEquipment.includes(equipmentId)) {
-      setSelectedEquipment([...selectedEquipment, equipmentId]);
-      setRemainingBudget(remainingBudget - equipment.cost);
+    const equipment = LAB_EQUIPMENT.find((e) => e.id === equipmentId);
+    if (equipment && remainingBudget >= equipment.cost) {
+      setRemainingBudget((prev) => prev - equipment.cost);
+      setSelectedEquipment((prev) => [...prev, equipmentId]);
     }
   };
 
   const startResearch = () => {
-    // Check if required equipment is available
-    const requiredEquipment = LAB_EQUIPMENT.filter(e => e.required);
-    const hasRequired = requiredEquipment.every(e => selectedEquipment.includes(e.id));
-    
-    if (hasRequired) {
-      setGamePhase('research');
-      setResearchTime(0);
-    }
+    setGamePhase('research');
   };
 
   const startExperiment = (experiment: Experiment) => {
-    if (remainingBudget >= experiment.cost && !isExperimentRunning) {
+    if (remainingBudget >= experiment.cost) {
+      setRemainingBudget((prev) => prev - experiment.cost);
       setCurrentExperiment(experiment);
-      setRemainingBudget(remainingBudget - experiment.cost);
-      setExperimentProgress(0);
       setIsExperimentRunning(true);
-    }
-  };
-
-  const finishCurrentExperiment = () => {
-    if (currentExperiment) {
-      const equipmentEfficiency = selectedEquipment.reduce((total, eqId) => {
-        const eq = LAB_EQUIPMENT.find(e => e.id === eqId);
-        return total + (eq?.efficiency || 0);
-      }, 0);
-
-      const modifiedSuccessRate = Math.min(95, currentExperiment.successRate + equipmentEfficiency);
-      const success = Math.random() * 100 < modifiedSuccessRate;
-      const impact = success ? currentExperiment.potentialImpact : Math.floor(currentExperiment.potentialImpact * 0.3);
-
-      setCompletedExperiments([...completedExperiments, {
-        experiment: currentExperiment,
-        success,
-        impact
-      }]);
-
-      setCurrentExperiment(null);
-      setIsExperimentRunning(false);
       setExperimentProgress(0);
     }
-  };
-
-  const calculateScore = () => {
-    const totalImpact = completedExperiments.reduce((sum, exp) => sum + exp.impact, 0);
-    const successRate = completedExperiments.length > 0 
-      ? (completedExperiments.filter(exp => exp.success).length / completedExperiments.length) * 100 
-      : 0;
-    const budgetEfficiency = ((budget - remainingBudget) / budget) * 30;
-    const equipmentBonus = selectedEquipment.length * 5;
-    
-    return Math.round((totalImpact / 5) + (successRate * 0.3) + budgetEfficiency + equipmentBonus);
-  };
-
-  const finishGame = () => {
-    const finalScore = calculateScore();
-    onComplete(finalScore);
   };
 
   if (gamePhase === 'briefing') {
@@ -254,7 +253,7 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
                   Lĩnh Vực Nghiên Cứu
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
-                  {EXPERIMENT_TYPES.map(type => (
+                  {EXPERIMENT_TYPES.map((type) => (
                     <div key={type.id} className="flex items-center text-gray-300">
                       <span className="mr-2">{type.icon}</span>
                       <span className={`text-sm ${type.color}`}>{type.name}</span>
@@ -322,8 +321,8 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
   }
 
   if (gamePhase === 'setup') {
-    const requiredEquipment = LAB_EQUIPMENT.filter(e => e.required);
-    const hasAllRequired = requiredEquipment.every(e => selectedEquipment.includes(e.id));
+    const requiredEquipment = LAB_EQUIPMENT.filter((e) => e.required);
+    const hasAllRequired = requiredEquipment.every((e) => selectedEquipment.includes(e.id));
 
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-900 via-blue-900 to-purple-900 p-4">
@@ -342,10 +341,10 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
             <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/20">
               <h3 className="text-xl font-bold text-white mb-4">Thiết Bị Khả Dụng</h3>
               <div className="space-y-4">
-                {LAB_EQUIPMENT.map(equipment => {
+                {LAB_EQUIPMENT.map((equipment) => {
                   const owned = selectedEquipment.includes(equipment.id);
                   const canAfford = remainingBudget >= equipment.cost;
-                  
+
                   return (
                     <div key={equipment.id} className="bg-white/5 rounded-lg p-4">
                       <div className="flex justify-between items-start mb-2">
@@ -354,9 +353,7 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
                             <span className="font-semibold text-white">{equipment.name}</span>
                             {equipment.required && <span className="ml-2 text-red-400 text-xs">REQUIRED</span>}
                           </div>
-                          <div className="text-sm text-gray-400">
-                            Hiệu suất: +{equipment.efficiency}%
-                          </div>
+                          <div className="text-sm text-gray-400">Hiệu suất: +{equipment.efficiency}%</div>
                         </div>
                         <div className="text-right">
                           <div className="text-green-400 font-bold">{equipment.cost} triệu</div>
@@ -385,15 +382,13 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
 
             <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-green-500/20">
               <h3 className="text-xl font-bold text-white mb-4">Lab Của Bạn</h3>
-              
+
               {selectedEquipment.length === 0 ? (
-                <div className="text-gray-400 text-center py-8">
-                  Chưa có thiết bị nào được mua
-                </div>
+                <div className="text-gray-400 text-center py-8">Chưa có thiết bị nào được mua</div>
               ) : (
                 <div className="space-y-3 mb-6">
-                  {selectedEquipment.map(eqId => {
-                    const equipment = LAB_EQUIPMENT.find(e => e.id === eqId);
+                  {selectedEquipment.map((eqId) => {
+                    const equipment = LAB_EQUIPMENT.find((e) => e.id === eqId);
                     return equipment ? (
                       <div key={eqId} className="bg-green-500/10 rounded-lg p-3">
                         <div className="font-semibold text-white">{equipment.name}</div>
@@ -407,13 +402,15 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
               <div className="text-center">
                 <div className="mb-4">
                   <div className="text-lg font-bold text-white">
-                    Tổng hiệu suất: +{selectedEquipment.reduce((total, eqId) => {
-                      const eq = LAB_EQUIPMENT.find(e => e.id === eqId);
+                    Tổng hiệu suất: +
+                    {selectedEquipment.reduce((total, eqId) => {
+                      const eq = LAB_EQUIPMENT.find((e) => e.id === eqId);
                       return total + (eq?.efficiency || 0);
-                    }, 0)}%
+                    }, 0)}
+                    %
                   </div>
                 </div>
-                
+
                 {hasAllRequired ? (
                   <button
                     onClick={startResearch}
@@ -422,9 +419,7 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
                     Bắt Đầu Nghiên Cứu! 🔬
                   </button>
                 ) : (
-                  <div className="text-red-400 text-sm">
-                    Cần mua đầy đủ thiết bị bắt buộc để tiếp tục
-                  </div>
+                  <div className="text-red-400 text-sm">Cần mua đầy đủ thiết bị bắt buộc để tiếp tục</div>
                 )}
               </div>
             </div>
@@ -446,7 +441,9 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
               <div className="flex items-center space-x-6">
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 mr-2 text-blue-400" />
-                  <span>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}</span>
+                  <span>
+                    {Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-400 mr-2">💰</span>
@@ -465,10 +462,10 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
             <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/20">
               <h3 className="text-xl font-bold text-white mb-4">Thí Nghiệm Khả Dụng</h3>
               <div className="space-y-4 max-h-96 overflow-y-auto">
-                {EXPERIMENTS.map(experiment => {
+                {EXPERIMENTS.map((experiment) => {
                   const canAfford = remainingBudget >= experiment.cost;
-                  const experimentType = EXPERIMENT_TYPES.find(t => t.id === experiment.type);
-                  
+                  const experimentType = EXPERIMENT_TYPES.find((t) => t.id === experiment.type);
+
                   return (
                     <div key={experiment.id} className="bg-white/5 rounded-lg p-4">
                       <div className="flex items-start justify-between mb-2">
@@ -484,9 +481,9 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
                           <div className="text-yellow-400 text-sm">Tác động: {experiment.potentialImpact}</div>
                         </div>
                       </div>
-                      
+
                       <p className="text-gray-300 text-sm mb-3">{experiment.description}</p>
-                      
+
                       <div className="flex justify-between items-center text-xs text-gray-400 mb-3">
                         <span>Thành công: {experiment.successRate}%</span>
                         <span>Thời gian: {experiment.duration}s</span>
@@ -501,8 +498,11 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
                             : 'bg-gray-600 text-gray-400 cursor-not-allowed'
                         }`}
                       >
-                        {!canAfford ? 'Không đủ ngân sách' : 
-                         isExperimentRunning ? 'Đang thí nghiệm...' : 'Bắt đầu thí nghiệm'}
+                        {!canAfford
+                          ? 'Không đủ ngân sách'
+                          : isExperimentRunning
+                            ? 'Đang thí nghiệm...'
+                            : 'Bắt đầu thí nghiệm'}
                       </button>
                     </div>
                   );
@@ -519,7 +519,7 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
                   <div className="text-center">
                     <div className="text-lg font-semibold text-white mb-2">{currentExperiment.name}</div>
                     <div className="w-full bg-gray-700 rounded-full h-4 mb-4">
-                      <div 
+                      <div
                         className="bg-gradient-to-r from-green-500 to-blue-500 h-4 rounded-full transition-all duration-100"
                         style={{ width: `${(experimentProgress / currentExperiment.duration) * 100}%` }}
                       ></div>
@@ -535,13 +535,14 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
               <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-6 border border-green-500/20">
                 <h3 className="text-xl font-bold text-white mb-4">Kết Quả Nghiên Cứu</h3>
                 {completedExperiments.length === 0 ? (
-                  <div className="text-gray-400 text-center py-4">
-                    Chưa có thí nghiệm nào hoàn thành
-                  </div>
+                  <div className="text-gray-400 text-center py-4">Chưa có thí nghiệm nào hoàn thành</div>
                 ) : (
                   <div className="space-y-3 max-h-64 overflow-y-auto">
                     {completedExperiments.map((result, index) => (
-                      <div key={index} className={`rounded-lg p-3 ${result.success ? 'bg-green-500/10' : 'bg-red-500/10'}`}>
+                      <div
+                        key={index}
+                        className={`rounded-lg p-3 ${result.success ? 'bg-green-500/10' : 'bg-red-500/10'}`}
+                      >
                         <div className="flex justify-between items-center">
                           <div>
                             <div className="font-semibold text-white">{result.experiment.name}</div>
@@ -569,9 +570,10 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
   // Results phase
   const score = calculateScore();
   const totalImpact = completedExperiments.reduce((sum, exp) => sum + exp.impact, 0);
-  const successRate = completedExperiments.length > 0 
-    ? Math.round((completedExperiments.filter(exp => exp.success).length / completedExperiments.length) * 100)
-    : 0;
+  const successRate =
+    completedExperiments.length > 0
+      ? Math.round((completedExperiments.filter((exp) => exp.success).length / completedExperiments.length) * 100)
+      : 0;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-900 via-blue-900 to-purple-900 p-4">
@@ -582,10 +584,13 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
             <h2 className="text-3xl font-bold text-white mb-4">Kết Quả Nghiên Cứu!</h2>
             <div className="text-4xl font-bold text-yellow-400 mb-2">{score}/100 điểm</div>
             <p className="text-gray-300">
-              {score >= 80 ? 'Xuất sắc! Bạn là nhà nghiên cứu biotech tài ba!' :
-               score >= 60 ? 'Tốt! Lab của bạn có nhiều đóng góp khoa học.' :
-               score >= 40 ? 'Khá ổn! Cần cải thiện hiệu suất và đa dạng hóa nghiên cứu.' :
-               'Cần cải thiện! Hãy đầu tư thiết bị tốt hơn và lựa chọn thí nghiệm phù hợp.'}
+              {score >= 80
+                ? 'Xuất sắc! Bạn là nhà nghiên cứu biotech tài ba!'
+                : score >= 60
+                  ? 'Tốt! Lab của bạn có nhiều đóng góp khoa học.'
+                  : score >= 40
+                    ? 'Khá ổn! Cần cải thiện hiệu suất và đa dạng hóa nghiên cứu.'
+                    : 'Cần cải thiện! Hãy đầu tư thiết bị tốt hơn và lựa chọn thí nghiệm phù hợp.'}
             </p>
           </div>
 
@@ -612,13 +617,15 @@ const BiotechLabSimulationGame: React.FC<BiotechLabSimulationGameProps> = ({ onC
             <div className="bg-white/5 rounded-lg p-6 mb-8">
               <h3 className="text-lg font-bold text-white mb-4">Thành Tựu Nghiên Cứu:</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                {completedExperiments.filter(exp => exp.success).map((result, index) => (
-                  <div key={index} className="bg-green-500/10 rounded-lg p-4">
-                    <div className="font-semibold text-white">{result.experiment.name}</div>
-                    <div className="text-sm text-green-400">Tác động: +{result.impact} điểm</div>
-                    <div className="text-xs text-gray-400 mt-1">{result.experiment.description}</div>
-                  </div>
-                ))}
+                {completedExperiments
+                  .filter((exp) => exp.success)
+                  .map((result, index) => (
+                    <div key={index} className="bg-green-500/10 rounded-lg p-4">
+                      <div className="font-semibold text-white">{result.experiment.name}</div>
+                      <div className="text-sm text-green-400">Tác động: +{result.impact} điểm</div>
+                      <div className="text-xs text-gray-400 mt-1">{result.experiment.description}</div>
+                    </div>
+                  ))}
               </div>
             </div>
           )}

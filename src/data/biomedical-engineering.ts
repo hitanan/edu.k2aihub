@@ -19,7 +19,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Comprehensive introduction to medical device design principles, từ concept đến clinical implementation. Cover FDA/CE marking requirements, ISO 13485 quality management, và Vietnamese medical device regulations.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=ZqW4PS9-NIA',
+    videoUrl: 'https://www.youtube.com/watch?v=rt0jmVCdpSU',
     imageUrl: 'https://i.ytimg.com/vi/ZqW4PS9-NIA/hqdefault.jpg',
     objectives: [
       'Understand medical device classification systems và regulatory pathways',
@@ -161,7 +161,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Advanced techniques for processing biological signals và medical images. Cover ECG, EEG, EMG signal analysis, medical image processing algorithms, và AI applications trong diagnostic imaging.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=l9GBf0sTk4s',
+    videoUrl: 'https://www.youtube.com/watch?v=n0lSdqPb554',
     imageUrl: 'https://i.ytimg.com/vi/l9GBf0sTk4s/hqdefault.jpg',
     objectives: [
       'Master digital signal processing techniques cho biological signals',
@@ -295,7 +295,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Advanced concepts trong tissue engineering, stem cell technology, và regenerative medicine applications. Cover biomaterials, 3D bioprinting, cell culture techniques, và clinical translation challenges.',
     duration: '240 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=LT4cwXqwxm0',
+    videoUrl: 'https://www.youtube.com/watch?v=2JOKH1EveLM',
     imageUrl: 'https://i.ytimg.com/vi/LT4cwXqwxm0/hqdefault.jpg',
     objectives: [
       'Understand fundamental principles của tissue engineering và regenerative medicine',
@@ -443,7 +443,7 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
       'Comprehensive exploration của medical robotics applications, từ surgical robots đến rehabilitation systems. Cover control systems, haptic feedback, computer vision, và safety considerations trong clinical environments.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=RssggkQKqoY',
+    videoUrl: 'https://www.youtube.com/watch?v=Tu503jjHsrs',
     imageUrl: 'https://i.ytimg.com/vi/RssggkQKqoY/hqdefault.jpg',
     objectives: [
       'Understand medical robotics systems design và control principles',

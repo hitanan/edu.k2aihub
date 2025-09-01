@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Globe, Users, MessageCircle, CheckCircle, Clock, Star, Zap, Target, Heart, Flag } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Globe, Users, CheckCircle, Clock, Star, Target, Heart, Flag } from 'lucide-react';
 
 interface GameProps {
   onComplete: (_: boolean, score: number) => void;
@@ -50,7 +50,7 @@ const CULTURAL_ELEMENTS: CulturalElement[] = [
     importance: 9,
     complexity: 8,
     cost: 25,
-    impact: 90
+    impact: 90,
   },
   {
     id: 'color-symbolism',
@@ -60,7 +60,7 @@ const CULTURAL_ELEMENTS: CulturalElement[] = [
     importance: 7,
     complexity: 5,
     cost: 15,
-    impact: 70
+    impact: 70,
   },
   {
     id: 'festival-customs',
@@ -70,7 +70,7 @@ const CULTURAL_ELEMENTS: CulturalElement[] = [
     importance: 8,
     complexity: 7,
     cost: 20,
-    impact: 85
+    impact: 85,
   },
   {
     id: 'social-hierarchy',
@@ -80,7 +80,7 @@ const CULTURAL_ELEMENTS: CulturalElement[] = [
     importance: 8,
     complexity: 9,
     cost: 30,
-    impact: 80
+    impact: 80,
   },
   {
     id: 'religious-beliefs',
@@ -90,7 +90,7 @@ const CULTURAL_ELEMENTS: CulturalElement[] = [
     importance: 9,
     complexity: 9,
     cost: 35,
-    impact: 95
+    impact: 95,
   },
   {
     id: 'food-culture',
@@ -100,7 +100,7 @@ const CULTURAL_ELEMENTS: CulturalElement[] = [
     importance: 6,
     complexity: 4,
     cost: 12,
-    impact: 60
+    impact: 60,
   },
   {
     id: 'business-etiquette',
@@ -110,7 +110,7 @@ const CULTURAL_ELEMENTS: CulturalElement[] = [
     importance: 8,
     complexity: 6,
     cost: 18,
-    impact: 75
+    impact: 75,
   },
   {
     id: 'family-values',
@@ -120,8 +120,8 @@ const CULTURAL_ELEMENTS: CulturalElement[] = [
     importance: 9,
     complexity: 7,
     cost: 22,
-    impact: 88
-  }
+    impact: 88,
+  },
 ];
 
 const LOCALIZATION_STRATEGIES: LocalizationStrategy[] = [
@@ -133,7 +133,7 @@ const LOCALIZATION_STRATEGIES: LocalizationStrategy[] = [
     culturalAccuracy: 9,
     userEngagement: 7,
     implementationTime: 8,
-    cost: 40
+    cost: 40,
   },
   {
     id: 'local-community-partnership',
@@ -143,7 +143,7 @@ const LOCALIZATION_STRATEGIES: LocalizationStrategy[] = [
     culturalAccuracy: 10,
     userEngagement: 9,
     implementationTime: 6,
-    cost: 50
+    cost: 50,
   },
   {
     id: 'ai-cultural-analysis',
@@ -153,7 +153,7 @@ const LOCALIZATION_STRATEGIES: LocalizationStrategy[] = [
     culturalAccuracy: 6,
     userEngagement: 8,
     implementationTime: 9,
-    cost: 30
+    cost: 30,
   },
   {
     id: 'iterative-user-testing',
@@ -163,8 +163,8 @@ const LOCALIZATION_STRATEGIES: LocalizationStrategy[] = [
     culturalAccuracy: 8,
     userEngagement: 10,
     implementationTime: 7,
-    cost: 35
-  }
+    cost: 35,
+  },
 ];
 
 const MARKETS: Market[] = [
@@ -175,7 +175,7 @@ const MARKETS: Market[] = [
     economicLevel: 'Developing',
     culturalDistance: 0,
     digitalAdoption: 7,
-    regulations: ['Luật An ninh mạng', 'Quy định nội dung số']
+    regulations: ['Luật An ninh mạng', 'Quy định nội dung số'],
   },
   {
     id: 'thailand',
@@ -184,7 +184,7 @@ const MARKETS: Market[] = [
     economicLevel: 'Upper-Middle',
     culturalDistance: 3,
     digitalAdoption: 8,
-    regulations: ['Digital Economy Act', 'Personal Data Protection']
+    regulations: ['Digital Economy Act', 'Personal Data Protection'],
   },
   {
     id: 'indonesia',
@@ -193,7 +193,7 @@ const MARKETS: Market[] = [
     economicLevel: 'Lower-Middle',
     culturalDistance: 5,
     digitalAdoption: 6,
-    regulations: ['Halal Certification', 'Religious Content Rules']
+    regulations: ['Halal Certification', 'Religious Content Rules'],
   },
   {
     id: 'japan',
@@ -202,7 +202,7 @@ const MARKETS: Market[] = [
     economicLevel: 'Developed',
     culturalDistance: 7,
     digitalAdoption: 9,
-    regulations: ['Privacy Protection', 'Quality Standards']
+    regulations: ['Privacy Protection', 'Quality Standards'],
   },
   {
     id: 'india',
@@ -211,12 +211,14 @@ const MARKETS: Market[] = [
     economicLevel: 'Lower-Middle',
     culturalDistance: 8,
     digitalAdoption: 5,
-    regulations: ['Digital India Act', 'Cultural Sensitivity Laws']
-  }
+    regulations: ['Digital India Act', 'Cultural Sensitivity Laws'],
+  },
 ];
 
 const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'market' | 'cultural' | 'strategy' | 'implementation' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'market' | 'cultural' | 'strategy' | 'implementation' | 'results'
+  >('briefing');
   const [budget] = useState(180); // 180 million VND budget
   const [selectedMarket, setSelectedMarket] = useState<Market | null>(null);
   const [selectedElements, setSelectedElements] = useState<CulturalElement[]>([]);
@@ -227,13 +229,7 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
   const [marketPenetration, setMarketPenetration] = useState(0);
   const [localizationScore, setLocalizationScore] = useState(0);
 
-  useEffect(() => {
-    if (timeLeft <= 0 && gamePhase !== 'results') {
-      calculateResults();
-    }
-  }, [timeLeft, gamePhase]);
-
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     if (!selectedMarket || !selectedStrategy || selectedElements.length === 0) {
       setLocalizationScore(0);
       setGamePhase('results');
@@ -242,32 +238,39 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
     }
 
     // Calculate cultural accuracy based on elements selected and strategy
-    const elementAccuracy = selectedElements.reduce((sum, element) => sum + element.importance, 0) / Math.max(selectedElements.length, 1);
+    const elementAccuracy =
+      selectedElements.reduce((sum, element) => sum + element.importance, 0) / Math.max(selectedElements.length, 1);
     const strategyAccuracy = selectedStrategy.culturalAccuracy * 10;
-    const accuracy = Math.min(100, (elementAccuracy * 0.6 + strategyAccuracy * 0.4));
+    const accuracy = Math.min(100, elementAccuracy * 0.6 + strategyAccuracy * 0.4);
 
     // Calculate user satisfaction based on cultural distance and engagement
-    const culturalAdjustment = Math.max(0, 100 - (selectedMarket.culturalDistance * 10));
+    const culturalAdjustment = Math.max(0, 100 - selectedMarket.culturalDistance * 10);
     const engagementScore = selectedStrategy.userEngagement * 10;
-    const satisfaction = Math.min(100, (culturalAdjustment * 0.4 + engagementScore * 0.6));
+    const satisfaction = Math.min(100, culturalAdjustment * 0.4 + engagementScore * 0.6);
 
     // Calculate market penetration based on digital adoption and localization quality
     const digitalScore = selectedMarket.digitalAdoption * 10;
     const localizationQuality = (accuracy + satisfaction) / 2;
-    const penetration = Math.min(100, (digitalScore * 0.3 + localizationQuality * 0.7));
+    const penetration = Math.min(100, digitalScore * 0.3 + localizationQuality * 0.7);
 
     // Calculate overall score
     const budgetEfficiency = Math.min(100, ((budget - spentBudget) / budget) * 100);
-    const overall = (accuracy * 0.3 + satisfaction * 0.3 + penetration * 0.3 + budgetEfficiency * 0.1);
+    const overall = accuracy * 0.3 + satisfaction * 0.3 + penetration * 0.3 + budgetEfficiency * 0.1;
 
     setCulturalAccuracy(Math.round(accuracy));
     setUserSatisfaction(Math.round(satisfaction));
     setMarketPenetration(Math.round(penetration));
     setLocalizationScore(Math.round(overall));
-    
+
     setGamePhase('results');
     onComplete(true, overall);
-  };
+  }, [selectedMarket, selectedStrategy, selectedElements, onComplete, budget, spentBudget]);
+
+  useEffect(() => {
+    if (timeLeft <= 0 && gamePhase !== 'results') {
+      calculateResults();
+    }
+  }, [timeLeft, gamePhase, calculateResults]);
 
   const handleMarketSelect = (market: Market) => {
     setSelectedMarket(market);
@@ -276,16 +279,16 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
 
   const handleElementSelect = (element: CulturalElement) => {
     const newCost = spentBudget + element.cost;
-    if (newCost <= budget && !selectedElements.find(e => e.id === element.id) && selectedElements.length < 5) {
+    if (newCost <= budget && !selectedElements.find((e) => e.id === element.id) && selectedElements.length < 5) {
       setSelectedElements([...selectedElements, element]);
       setSpentBudget(newCost);
     }
   };
 
   const removeElement = (elementId: string) => {
-    const element = selectedElements.find(e => e.id === elementId);
+    const element = selectedElements.find((e) => e.id === elementId);
     if (element) {
-      setSelectedElements(selectedElements.filter(e => e.id !== elementId));
+      setSelectedElements(selectedElements.filter((e) => e.id !== elementId));
       setSpentBudget(spentBudget - element.cost);
     }
   };
@@ -386,11 +389,15 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
           <h2 className="text-2xl font-bold">Chọn thị trường mục tiêu</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
@@ -404,11 +411,9 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
             >
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold">{market.name}</h3>
-                <div className="bg-indigo-600 px-2 py-1 rounded text-xs">
-                  {market.economicLevel}
-                </div>
+                <div className="bg-indigo-600 px-2 py-1 rounded text-xs">{market.economicLevel}</div>
               </div>
-              
+
               <div className="space-y-3 mb-4">
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-300">Dân số:</span>
@@ -454,11 +459,15 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
           <h2 className="text-2xl font-bold">Chọn yếu tố văn hóa (Tối đa 5)</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
@@ -467,7 +476,9 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
           <div className="bg-white/10 p-4 rounded-lg mb-6">
             <h3 className="font-bold mb-2">Thị trường đã chọn:</h3>
             <div className="flex items-center justify-between">
-              <span>{selectedMarket.name} - {(selectedMarket.population / 1000000).toFixed(0)}M dân</span>
+              <span>
+                {selectedMarket.name} - {(selectedMarket.population / 1000000).toFixed(0)}M dân
+              </span>
               <span className="text-indigo-300">Khoảng cách văn hóa: {selectedMarket.culturalDistance}/10</span>
             </div>
           </div>
@@ -478,10 +489,10 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
             <h3 className="text-lg font-bold">Yếu tố văn hóa có sẵn:</h3>
             <div className="space-y-3 max-h-96 overflow-y-auto">
               {CULTURAL_ELEMENTS.map((element) => {
-                const isSelected = selectedElements.find(e => e.id === element.id);
+                const isSelected = selectedElements.find((e) => e.id === element.id);
                 const canAfford = spentBudget + element.cost <= budget;
                 const canSelect = selectedElements.length < 5;
-                
+
                 return (
                   <div
                     key={element.id}
@@ -489,8 +500,8 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
                       isSelected
                         ? 'border-green-400 bg-green-500/20'
                         : canAfford && canSelect
-                        ? 'border-purple-400 bg-purple-500/10 hover:bg-purple-500/20'
-                        : 'border-gray-500 bg-gray-500/10 opacity-50'
+                          ? 'border-purple-400 bg-purple-500/10 hover:bg-purple-500/20'
+                          : 'border-gray-500 bg-gray-500/10 opacity-50'
                     }`}
                     onClick={() => {
                       if (isSelected) {
@@ -502,9 +513,7 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
                   >
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-semibold">{element.name}</h4>
-                      <span className="bg-purple-600 px-2 py-1 rounded text-xs">
-                        {element.category}
-                      </span>
+                      <span className="bg-purple-600 px-2 py-1 rounded text-xs">{element.category}</span>
                     </div>
                     <p className="text-sm text-gray-300 mb-3">{element.description}</p>
                     <div className="grid grid-cols-3 gap-2 text-xs">
@@ -534,10 +543,7 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
                 <div key={element.id} className="bg-green-500/20 p-3 rounded border border-green-400">
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="font-semibold">{element.name}</h4>
-                    <button
-                      onClick={() => removeElement(element.id)}
-                      className="text-red-400 hover:text-red-300"
-                    >
+                    <button onClick={() => removeElement(element.id)} className="text-red-400 hover:text-red-300">
                       ✕
                     </button>
                   </div>
@@ -552,9 +558,11 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
             <div className="border-t border-white/20 pt-4">
               <div className="flex justify-between items-center mb-4">
                 <span className="font-semibold">Tổng chi phí:</span>
-                <span className="text-xl font-bold text-green-300">{spentBudget}/{budget} triệu VNĐ</span>
+                <span className="text-xl font-bold text-green-300">
+                  {spentBudget}/{budget} triệu VNĐ
+                </span>
               </div>
-              
+
               <button
                 onClick={() => setGamePhase('strategy')}
                 disabled={selectedElements.length === 0}
@@ -576,11 +584,15 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
           <h2 className="text-2xl font-bold">Chọn chiến lược bản địa hóa</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
@@ -588,22 +600,18 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white/10 p-4 rounded-lg">
             <h3 className="font-bold mb-2">Thị trường: {selectedMarket?.name}</h3>
-            <div className="text-sm text-gray-300">
-              Khoảng cách văn hóa: {selectedMarket?.culturalDistance}/10
-            </div>
+            <div className="text-sm text-gray-300">Khoảng cách văn hóa: {selectedMarket?.culturalDistance}/10</div>
           </div>
           <div className="bg-white/10 p-4 rounded-lg">
             <h3 className="font-bold mb-2">Yếu tố văn hóa: {selectedElements.length}</h3>
-            <div className="text-sm text-gray-300">
-              Chi phí hiện tại: {spentBudget} triệu VNĐ
-            </div>
+            <div className="text-sm text-gray-300">Chi phí hiện tại: {spentBudget} triệu VNĐ</div>
           </div>
         </div>
 
         <div className="space-y-6">
           {LOCALIZATION_STRATEGIES.map((strategy) => {
-            const canAfford = strategy.cost <= (budget - spentBudget);
-            
+            const canAfford = strategy.cost <= budget - spentBudget;
+
             return (
               <div
                 key={strategy.id}
@@ -786,7 +794,9 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
               </div>
               <div className="flex justify-between">
                 <span>Ngân sách sử dụng:</span>
-                <span className="font-bold">{spentBudget}/{budget} triệu VNĐ</span>
+                <span className="font-bold">
+                  {spentBudget}/{budget} triệu VNĐ
+                </span>
               </div>
               <div className="flex justify-between">
                 <span>Hiệu quả chi phí:</span>
@@ -804,33 +814,33 @@ const CulturalLocalizationChallengeGame: React.FC<GameProps> = ({ onComplete, ti
           <div className="text-gray-300 leading-relaxed">
             {localizationScore >= 90 && (
               <p>
-                🎉 <strong>Xuất sắc!</strong> Dự án bản địa hóa của bạn đạt tiêu chuẩn quốc tế với sự hiểu biết sâu sắc 
-                về văn hóa địa phương, trải nghiệm người dùng tuyệt vời và chiến lược triển khai hiệu quả. 
-                Sản phẩm sẽ được cộng đồng đón nhận nồng nhiệt.
+                🎉 <strong>Xuất sắc!</strong> Dự án bản địa hóa của bạn đạt tiêu chuẩn quốc tế với sự hiểu biết sâu sắc
+                về văn hóa địa phương, trải nghiệm người dùng tuyệt vời và chiến lược triển khai hiệu quả. Sản phẩm sẽ
+                được cộng đồng đón nhận nồng nhiệt.
               </p>
             )}
             {localizationScore >= 80 && localizationScore < 90 && (
               <p>
-                ⭐ <strong>Tốt!</strong> Bản địa hóa thành công với việc tích hợp tốt các yếu tố văn hóa quan trọng. 
-                Một số cải tiến nhỏ về trải nghiệm hoặc độ chính xác văn hóa sẽ giúp đạt kết quả tối ưu.
+                ⭐ <strong>Tốt!</strong> Bản địa hóa thành công với việc tích hợp tốt các yếu tố văn hóa quan trọng. Một
+                số cải tiến nhỏ về trải nghiệm hoặc độ chính xác văn hóa sẽ giúp đạt kết quả tối ưu.
               </p>
             )}
             {localizationScore >= 70 && localizationScore < 80 && (
               <p>
-                👍 <strong>Khá!</strong> Dự án có nền tảng tốt với các yếu tố văn hóa cơ bản được tích hợp. 
-                Cần đầu tư thêm vào nghiên cứu văn hóa sâu và tối ưu trải nghiệm người dùng.
+                👍 <strong>Khá!</strong> Dự án có nền tảng tốt với các yếu tố văn hóa cơ bản được tích hợp. Cần đầu tư
+                thêm vào nghiên cứu văn hóa sâu và tối ưu trải nghiệm người dùng.
               </p>
             )}
             {localizationScore >= 60 && localizationScore < 70 && (
               <p>
-                📈 <strong>Trung bình.</strong> Bản địa hóa đáp ứng được nhu cầu cơ bản nhưng cần cải thiện 
-                đáng kể về độ chính xác văn hóa và chiến lược triển khai.
+                📈 <strong>Trung bình.</strong> Bản địa hóa đáp ứng được nhu cầu cơ bản nhưng cần cải thiện đáng kể về
+                độ chính xác văn hóa và chiến lược triển khai.
               </p>
             )}
             {localizationScore < 60 && (
               <p>
-                🔧 <strong>Cần cải thiện.</strong> Dự án cần đầu tư nhiều hơn vào nghiên cứu văn hóa, 
-                tối ưu chiến lược và nâng cao chất lượng trải nghiệm người dùng địa phương.
+                🔧 <strong>Cần cải thiện.</strong> Dự án cần đầu tư nhiều hơn vào nghiên cứu văn hóa, tối ưu chiến lược
+                và nâng cao chất lượng trải nghiệm người dùng địa phương.
               </p>
             )}
           </div>

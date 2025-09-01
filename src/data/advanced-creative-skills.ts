@@ -13,10 +13,11 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
   {
     id: 'professional-graphic-design',
     title: 'Professional Graphic Design & Brand Identity',
-    description: 'Master advanced graphic design principles, brand identity development, và professional design workflow using industry-standard tools for Vietnamese creative market.',
+    description:
+      'Master advanced graphic design principles, brand identity development, và professional design workflow using industry-standard tools for Vietnamese creative market.',
     duration: '300 phút',
     difficulty: 'Nâng cao',
-videoUrl: 'https://www.youtube.com/watch?v=y_2P5o_msuo', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=J_YmhVzOkEU', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop',
     creativeCategory: 'design',
     skillLevel: 'Advanced',
@@ -27,33 +28,33 @@ videoUrl: 'https://www.youtube.com/watch?v=y_2P5o_msuo', // Default - needs repl
       'Master print design và preparation for production',
       'Build professional design portfolio',
       'Understand client communication và project management',
-      'Navigate Vietnamese design industry và cultural aesthetics'
+      'Navigate Vietnamese design industry và cultural aesthetics',
     ],
     prerequisites: [
       'Basic graphic design knowledge',
       'Familiarity với design software (Photoshop/Illustrator)',
-      'Understanding của design principles'
+      'Understanding của design principles',
     ],
     vietnameseCreativeIndustry: [
       'Growing demand for brand identity in Vietnamese startups',
       'E-commerce design needs for platforms like Shopee, Tiki',
       'Traditional vs modern design balance in Vietnamese culture',
       'Local printing industry standards và requirements',
-      'Social media design trends in Vietnamese market'
+      'Social media design trends in Vietnamese market',
     ],
     portfolioRequirements: [
       '5-10 comprehensive brand identity projects',
       'Print design examples (business cards, brochures, packaging)',
       'Digital design portfolio (social media, web graphics)',
       'Logo design process documentation',
-      'Client testimonials và case studies'
+      'Client testimonials và case studies',
     ],
     freelancingOpportunities: [
       'Brand identity design for Vietnamese SMEs',
       'E-commerce product design và photography',
       'Social media content creation for businesses',
       'Print design for local businesses và events',
-      'Wedding và event design services'
+      'Wedding và event design services',
     ],
     exercises: [
       {
@@ -68,10 +69,10 @@ videoUrl: 'https://www.youtube.com/watch?v=y_2P5o_msuo', // Default - needs repl
           'Design comprehensive brand guidelines document',
           'Apply branding to restaurant materials (menu, signage, packaging)',
           'Create digital brand assets for social media',
-          'Present final brand system với rationale'
+          'Present final brand system với rationale',
         ],
         expectedResults: 'Complete brand identity system ready for implementation across all touchpoints',
-        solution: 'Professional brand identity package với cultural sensitivity và modern appeal'
+        solution: 'Professional brand identity package với cultural sensitivity và modern appeal',
       },
       {
         title: 'Vietnamese Fashion Brand Packaging Design',
@@ -84,17 +85,17 @@ videoUrl: 'https://www.youtube.com/watch?v=y_2P5o_msuo', // Default - needs repl
           'Create packaging graphics với brand consistency',
           'Develop packaging size variations for different products',
           'Prepare print-ready files với local printing specs',
-          'Test packaging prototypes với user feedback'
+          'Test packaging prototypes với user feedback',
         ],
-        expectedResults: 'Sustainable packaging system với premium unboxing experience'
-      }
+        expectedResults: 'Sustainable packaging system với premium unboxing experience',
+      },
     ],
     realWorldApplications: [
       'Brand identity development for Vietnamese businesses',
       'Marketing material design for local companies',
       'Event và wedding design services',
       'Social media content creation',
-      'Print design cho traditional Vietnamese businesses'
+      'Print design cho traditional Vietnamese businesses',
     ],
     caseStudies: [
       {
@@ -103,29 +104,30 @@ videoUrl: 'https://www.youtube.com/watch?v=y_2P5o_msuo', // Default - needs repl
         problem: 'Modernize brand identity while maintaining Vietnamese cultural connection',
         solution: 'Comprehensive rebrand với traditional elements và contemporary design',
         impact: 'Increased brand recognition by 40%, improved customer perception',
-        innovations: ['Cultural motif integration', 'Modern Vietnamese typography', 'Sustainable packaging design']
-      }
+        innovations: ['Cultural motif integration', 'Modern Vietnamese typography', 'Sustainable packaging design'],
+      },
     ],
     resources: [
       {
         title: 'Vietnamese Design Inspiration Gallery',
         url: 'https://www.behance.net/search/projects/vietnamese%20design',
-        type: 'Inspiration'
+        type: 'Inspiration',
       },
       {
         title: 'Adobe Creative Suite Tutorials',
         url: 'https://helpx.adobe.com/support.html',
-        type: 'Tutorial'
-      }
-    ]
+        type: 'Tutorial',
+      },
+    ],
   },
   {
     id: 'video-production-editing',
     title: 'Video Production & Post-Production Mastery',
-    description: 'Advanced video production techniques, cinematic storytelling, và professional editing workflow cho content creators và businesses trong Vietnamese market.',
+    description:
+      'Advanced video production techniques, cinematic storytelling, và professional editing workflow cho content creators và businesses trong Vietnamese market.',
     duration: '280 phút',
     difficulty: 'Nâng cao',
-videoUrl: 'https://www.youtube.com/watch?v=2-n_MWYrP68', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=Mmbn2FyBTVg', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=600&fit=crop',
     creativeCategory: 'video',
     skillLevel: 'Advanced',
@@ -136,33 +138,29 @@ videoUrl: 'https://www.youtube.com/watch?v=2-n_MWYrP68', // Default - needs repl
       'Develop advanced post-production skills',
       'Understand storytelling for Vietnamese audiences',
       'Build video production business in Vietnamese market',
-      'Create content for multiple platforms (YouTube, TikTok, Facebook)'
+      'Create content for multiple platforms (YouTube, TikTok, Facebook)',
     ],
-    prerequisites: [
-      'Basic video editing experience',
-      'Understanding của camera basics',
-      'Content creation interest'
-    ],
+    prerequisites: ['Basic video editing experience', 'Understanding của camera basics', 'Content creation interest'],
     vietnameseCreativeIndustry: [
       'Rapid growth of video content consumption in Vietnam',
       'Rising demand for corporate video production',
       'TikTok và short-form content popularity',
       'Wedding và event videography market',
-      'YouTube creator economy opportunities'
+      'YouTube creator economy opportunities',
     ],
     portfolioRequirements: [
       'Demo reel showcasing various video styles',
       'Client testimonial videos',
       'Social media content examples',
       'Corporate video samples',
-      'Creative storytelling projects'
+      'Creative storytelling projects',
     ],
     freelancingOpportunities: [
       'Corporate video production for Vietnamese companies',
       'Wedding và event videography',
       'Social media content creation',
       'YouTube channel management và editing',
-      'Product video production for e-commerce'
+      'Product video production for e-commerce',
     ],
     exercises: [
       {
@@ -178,18 +176,18 @@ videoUrl: 'https://www.youtube.com/watch?v=2-n_MWYrP68', // Default - needs repl
           'Edit footage với professional pacing và transitions',
           'Apply color grading để enhance visual appeal',
           'Add music và sound design',
-          'Export for multiple platforms (4K, 1080p, mobile)'
+          'Export for multiple platforms (4K, 1080p, mobile)',
         ],
         expectedResults: 'Professional tourism video suitable for marketing campaigns',
-        solution: 'Cinematic video với Vietnamese cultural authenticity và international appeal'
-      }
+        solution: 'Cinematic video với Vietnamese cultural authenticity và international appeal',
+      },
     ],
     realWorldApplications: [
       'Corporate video production và marketing',
       'Wedding và event videography services',
       'YouTube content creation và monetization',
       'Social media marketing videos',
-      'Documentary và storytelling projects'
+      'Documentary và storytelling projects',
     ],
     caseStudies: [
       {
@@ -198,17 +196,18 @@ videoUrl: 'https://www.youtube.com/watch?v=2-n_MWYrP68', // Default - needs repl
         problem: 'Create compelling video content for luxury real estate project',
         solution: 'High-end cinematic video series showcasing lifestyle và amenities',
         impact: '50% increase in property inquiries, viral social media engagement',
-        innovations: ['Drone cinematography', '360-degree virtual tours', 'Lifestyle storytelling approach']
-      }
-    ]
+        innovations: ['Drone cinematography', '360-degree virtual tours', 'Lifestyle storytelling approach'],
+      },
+    ],
   },
   {
     id: 'audio-production-podcasting',
     title: 'Audio Production & Podcasting Excellence',
-    description: 'Professional audio production, podcast creation, và audio branding for Vietnamese content creators và businesses trong growing audio market.',
+    description:
+      'Professional audio production, podcast creation, và audio branding for Vietnamese content creators và businesses trong growing audio market.',
     duration: '240 phút',
     difficulty: 'Trung bình',
-videoUrl: 'https://www.youtube.com/watch?v=8UYbUsfbBW0', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=qonbJHkxH8w', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1200&h=600&fit=crop',
     creativeCategory: 'audio',
     skillLevel: 'Intermediate',
@@ -219,33 +218,29 @@ videoUrl: 'https://www.youtube.com/watch?v=8UYbUsfbBW0', // Default - needs repl
       'Understand audio post-production workflow',
       'Develop audio branding strategies',
       'Build sustainable podcasting business model',
-      'Navigate Vietnamese podcasting landscape'
+      'Navigate Vietnamese podcasting landscape',
     ],
-    prerequisites: [
-      'Basic understanding của audio concepts',
-      'Interest in content creation',
-      'Communication skills'
-    ],
+    prerequisites: ['Basic understanding của audio concepts', 'Interest in content creation', 'Communication skills'],
     vietnameseCreativeIndustry: [
       'Emerging podcasting market in Vietnam',
       'Corporate audio branding opportunities',
       'Voice-over market for Vietnamese content',
       'Audio content for e-learning platforms',
-      'Radio và streaming service growth'
+      'Radio và streaming service growth',
     ],
     portfolioRequirements: [
       'Demo reel của various audio styles',
       'Podcast episode samples',
       'Voice-over work examples',
       'Audio branding projects',
-      'Client testimonials'
+      'Client testimonials',
     ],
     freelancingOpportunities: [
       'Podcast production services',
       'Voice-over work for Vietnamese content',
       'Audio editing for content creators',
       'Corporate audio branding projects',
-      'E-learning narration services'
+      'E-learning narration services',
     ],
     exercises: [
       {
@@ -261,27 +256,28 @@ videoUrl: 'https://www.youtube.com/watch?v=8UYbUsfbBW0', // Default - needs repl
           'Edit episodes với professional audio quality',
           'Create show notes và episode transcriptions',
           'Distribute to major podcast platforms',
-          'Develop marketing strategy for audience growth'
+          'Develop marketing strategy for audience growth',
         ],
         expectedResults: 'Professional podcast series với consistent quality và growing audience',
-        solution: 'Complete podcast production workflow với sustainable content creation process'
-      }
+        solution: 'Complete podcast production workflow với sustainable content creation process',
+      },
     ],
     realWorldApplications: [
       'Podcast creation cho businesses và personal brands',
       'Voice-over services for Vietnamese content',
       'Audio editing for content creators',
       'Corporate audio branding projects',
-      'E-learning và educational content narration'
-    ]
+      'E-learning và educational content narration',
+    ],
   },
   {
     id: 'content-writing-copywriting',
     title: 'Content Writing & Copywriting Mastery',
-    description: 'Advanced content creation, copywriting techniques, và content strategy development for Vietnamese digital marketing và brand communication.',
+    description:
+      'Advanced content creation, copywriting techniques, và content strategy development for Vietnamese digital marketing và brand communication.',
     duration: '220 phút',
     difficulty: 'Trung bình',
-videoUrl: 'https://www.youtube.com/watch?v=O0UxbwFSF2E', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=mcnhDvavxzw', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=600&fit=crop',
     creativeCategory: 'writing',
     skillLevel: 'Intermediate',
@@ -292,40 +288,45 @@ videoUrl: 'https://www.youtube.com/watch?v=O0UxbwFSF2E', // Default - needs repl
       'Master SEO content writing techniques',
       'Understand Vietnamese consumer psychology in writing',
       'Build content writing business model',
-      'Create content for multiple digital platforms'
+      'Create content for multiple digital platforms',
     ],
     prerequisites: [
       'Strong Vietnamese writing skills',
       'Basic marketing understanding',
-      'Interest in digital communication'
+      'Interest in digital communication',
     ],
     vietnameseCreativeIndustry: [
       'High demand for Vietnamese content creators',
       'E-commerce copywriting opportunities',
       'Social media content creation needs',
       'SEO content demand for Vietnamese websites',
-      'Corporate communication writing services'
+      'Corporate communication writing services',
     ],
     portfolioRequirements: [
       'Copywriting samples for different industries',
       'Blog post examples với SEO optimization',
       'Social media content portfolios',
       'Email marketing campaign examples',
-      'Client success stories và metrics'
+      'Client success stories và metrics',
     ],
     freelancingOpportunities: [
       'Copywriting for Vietnamese e-commerce businesses',
       'Content creation for social media agencies',
       'Blog writing cho Vietnamese websites',
       'Email marketing campaign development',
-      'Corporate communication writing'
+      'Corporate communication writing',
     ],
     exercises: [
       {
         title: 'Vietnamese E-commerce Brand Content Strategy',
         description: 'Develop comprehensive content strategy cho Vietnamese fashion brand',
         difficulty: 'Nâng cao',
-        materials: ['Content planning templates', 'SEO keyword tools', 'Analytics platforms', 'Social media schedulers'],
+        materials: [
+          'Content planning templates',
+          'SEO keyword tools',
+          'Analytics platforms',
+          'Social media schedulers',
+        ],
         procedure: [
           'Analyze target audience và competitor content',
           'Develop brand voice và messaging framework',
@@ -334,27 +335,28 @@ videoUrl: 'https://www.youtube.com/watch?v=O0UxbwFSF2E', // Default - needs repl
           'Develop social media content templates',
           'Create email marketing sequences',
           'Measure content performance với analytics',
-          'Iterate strategy based on performance data'
+          'Iterate strategy based on performance data',
         ],
         expectedResults: 'Complete content strategy với measurable engagement improvements',
-        solution: 'Data-driven content approach với authentic Vietnamese brand voice'
-      }
+        solution: 'Data-driven content approach với authentic Vietnamese brand voice',
+      },
     ],
     realWorldApplications: [
       'Digital marketing content for Vietnamese businesses',
       'Social media management và content creation',
       'SEO content writing cho websites',
       'Email marketing campaign development',
-      'Corporate communication và PR writing'
-    ]
+      'Corporate communication và PR writing',
+    ],
   },
   {
     id: 'photography-visual-storytelling',
     title: 'Photography & Visual Storytelling',
-    description: 'Advanced photography techniques, visual storytelling, và commercial photography for Vietnamese creative market và business applications.',
+    description:
+      'Advanced photography techniques, visual storytelling, và commercial photography for Vietnamese creative market và business applications.',
     duration: '260 phút',
     difficulty: 'Trung bình',
-videoUrl: 'https://www.youtube.com/watch?v=cQTb5TxTVu8', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=zyIcVvmxUMU', // Default - needs replacement
     imageUrl: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=1200&h=600&fit=crop',
     creativeCategory: 'photography',
     skillLevel: 'Intermediate',
@@ -365,33 +367,33 @@ videoUrl: 'https://www.youtube.com/watch?v=cQTb5TxTVu8', // Default - needs repl
       'Create visual storytelling projects',
       'Build photography business in Vietnamese market',
       'Understand client photography requirements',
-      'Master post-processing workflow'
+      'Master post-processing workflow',
     ],
     prerequisites: [
       'Basic photography knowledge',
       'Understanding của camera controls',
-      'Photo editing software familiarity'
+      'Photo editing software familiarity',
     ],
     vietnameseCreativeIndustry: [
       'Growing demand for product photography in e-commerce',
       'Wedding photography market expansion',
       'Corporate photography services needed',
       'Food photography for restaurant industry',
-      'Real estate photography opportunities'
+      'Real estate photography opportunities',
     ],
     portfolioRequirements: [
       'Diverse photography portfolio showcasing various styles',
       'Commercial work examples',
       'Client testimonials và case studies',
       'Before/after editing examples',
-      'Specialized niche demonstrations'
+      'Specialized niche demonstrations',
     ],
     freelancingOpportunities: [
       'E-commerce product photography',
       'Wedding và event photography',
       'Corporate headshot và team photography',
       'Food photography for restaurants',
-      'Real estate photography services'
+      'Real estate photography services',
     ],
     exercises: [
       {
@@ -407,20 +409,20 @@ videoUrl: 'https://www.youtube.com/watch?v=cQTb5TxTVu8', // Default - needs repl
           'Document preparation process và customer interactions',
           'Edit photos với consistent style và color grading',
           'Create photo essay layout',
-          'Present final project với storytelling narrative'
+          'Present final project với storytelling narrative',
         ],
         expectedResults: 'Professional photo essay showcasing Vietnamese culinary culture',
-        solution: 'Compelling visual narrative với cultural authenticity và artistic excellence'
-      }
+        solution: 'Compelling visual narrative với cultural authenticity và artistic excellence',
+      },
     ],
     realWorldApplications: [
       'Commercial photography for Vietnamese businesses',
       'Wedding và event photography services',
       'Product photography for e-commerce platforms',
       'Food photography cho restaurant industry',
-      'Corporate photography và branding projects'
-    ]
-  }
+      'Corporate photography và branding projects',
+    ],
+  },
 ];
 
 export default advancedCreativeLessons;

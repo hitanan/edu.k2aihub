@@ -19,7 +19,7 @@ export const QuantumLessons: QuantumLessonData[] = [
       'Khám phá thế giới kỳ diệu của máy tính lượng tử, từ các nguyên lý vật lý cơ bản đến tiềm năng ứng dụng.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=jHoEjvuPoB8', // Quantum Computers, Explained With Quantum Physics - Quanta Magazine
+    videoUrl: 'https://www.youtube.com/watch?v=pZnt0qSYTHM', // Máy tính lượng tử là gì? Giải thích dễ hiểu trong 5 phút
     imageUrl: '/images/quantum-fundamentals.jpg',
     objectives: [
       'Hiểu các nguyên lý vật lý lượng tử cơ bản',
@@ -73,7 +73,7 @@ export const QuantumLessons: QuantumLessonData[] = [
     description: 'Tìm hiểu các thuật toán lượng tử nổi tiếng và cách chúng tạo ra lợi thế tính toán.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=lvTqbM5Dq4Q',
+    videoUrl: 'https://www.youtube.com/watch?v=V85332IZVs0',
     objectives: [
       'Nắm vững thuật toán Shor và ứng dụng phá mã RSA',
       'Hiểu thuật toán Grover cho tìm kiếm nhanh',
@@ -126,6 +126,7 @@ export const QuantumLessons: QuantumLessonData[] = [
     description: 'Khám phá cách quantum computing thay đổi bảo mật thông tin và mã hóa.',
     duration: '120 phút',
     difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=_5NQf8k3Jo0',
     objectives: [
       'Hiểu Quantum Key Distribution (QKD)',
       'Nắm vững post-quantum cryptography',
@@ -163,6 +164,7 @@ export const QuantumLessons: QuantumLessonData[] = [
     description: 'Khám phá xu hướng phát triển và tác động tương lai của quantum computing.',
     duration: '90 phút',
     difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=cer528-lIU8',
     objectives: [
       'Hiểu roadmap phát triển quantum hardware',
       'Nắm vững các thách thức kỹ thuật hiện tại',

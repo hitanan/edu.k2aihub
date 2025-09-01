@@ -625,7 +625,7 @@ function Fish({
               <meshStandardMaterial color={species.secondaryColor} />
             </mesh>
             {/* Eyes for default fish - positioned properly (only if species has visible eyes) */}
-            {(species.details?.hasEyes !== false) && ( // Default to true if not specified
+            {species.details?.hasEyes !== false && ( // Default to true if not specified
               <>
                 <mesh position={[species.size * size * 1.2, species.size * size * 0.3, species.size * size * 0.4]}>
                   <sphereGeometry args={[species.size * size * 0.12]} />
@@ -659,7 +659,7 @@ function Fish({
             <boxGeometry args={[species.size * size, species.size * size * 0.6, 0.05]} />
             <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.8} />
           </mesh>
-          
+
           {/* Anal fin */}
           <mesh position={[-species.size * size * 0.3, -species.size * size * 0.6, 0]} scale={[1.2, 0.8, 0.15]}>
             <boxGeometry args={[species.size * size * 0.6, species.size * size * 0.4, 0.03]} />
@@ -677,11 +677,17 @@ function Fish({
           </mesh>
 
           {/* Pelvic fins */}
-          <mesh position={[-species.size * size * 0.2, -species.size * size * 0.4, species.size * size * 0.5]} scale={[0.6, 0.4, 0.08]}>
+          <mesh
+            position={[-species.size * size * 0.2, -species.size * size * 0.4, species.size * size * 0.5]}
+            scale={[0.6, 0.4, 0.08]}
+          >
             <boxGeometry args={[species.size * size * 0.3, species.size * size * 0.2, 0.02]} />
             <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.6} />
           </mesh>
-          <mesh position={[-species.size * size * 0.2, -species.size * size * 0.4, -species.size * size * 0.5]} scale={[0.6, 0.4, 0.08]}>
+          <mesh
+            position={[-species.size * size * 0.2, -species.size * size * 0.4, -species.size * size * 0.5]}
+            scale={[0.6, 0.4, 0.08]}
+          >
             <boxGeometry args={[species.size * size * 0.3, species.size * size * 0.2, 0.02]} />
             <meshStandardMaterial color={species.secondaryColor} transparent opacity={0.6} />
           </mesh>
@@ -704,7 +710,9 @@ function Fish({
 
           {/* Lateral line */}
           <mesh position={[0, 0, species.size * size * 0.9]} scale={[3, 0.05, 0.05]}>
-            <cylinderGeometry args={[species.size * size * 0.02, species.size * size * 0.02, species.size * size * 2]} />
+            <cylinderGeometry
+              args={[species.size * size * 0.02, species.size * size * 0.02, species.size * size * 2]}
+            />
             <meshStandardMaterial color="#4A4A4A" transparent opacity={0.6} />
           </mesh>
 
@@ -1022,10 +1030,10 @@ interface AquacultureIoTManager3DProps {
   onRestart?: () => void;
 }
 
-export default function AquacultureIoTManager3D({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
+export default function AquacultureIoTManager3D({
+  // onComplete,
+  // timeLeft,
+  // onRestart
 }: AquacultureIoTManager3DProps = {}) {
   const [gameStarted, setGameStarted] = useState(false);
   const [sensors, setSensors] = useState({

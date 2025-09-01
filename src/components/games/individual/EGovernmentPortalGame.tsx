@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Building2, Users, Shield, CheckCircle, AlertCircle, Clock, Star, Zap, Database, Cloud } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Building2, Users, Shield, CheckCircle, Clock, Star, Zap, Database } from 'lucide-react';
 
 interface GameProps {
   onComplete: (_: boolean, score: number) => void;
@@ -41,7 +41,7 @@ const GOVERNMENT_SERVICES: Service[] = [
     priority: 'High',
     requirements: ['Bảo mật cao', 'Tích hợp biometric', 'Đồng bộ dữ liệu'],
     cost: 50,
-    expectedBenefit: 95
+    expectedBenefit: 95,
   },
   {
     id: 'business-license',
@@ -52,7 +52,7 @@ const GOVERNMENT_SERVICES: Service[] = [
     priority: 'High',
     requirements: ['Quy trình tự động', 'Thanh toán online', 'Xác thực điện tử'],
     cost: 30,
-    expectedBenefit: 80
+    expectedBenefit: 80,
   },
   {
     id: 'tax-declaration',
@@ -63,7 +63,7 @@ const GOVERNMENT_SERVICES: Service[] = [
     priority: 'High',
     requirements: ['Tích hợp ngân hàng', 'Báo cáo tự động', 'Kiểm tra AI'],
     cost: 40,
-    expectedBenefit: 90
+    expectedBenefit: 90,
   },
   {
     id: 'property-registration',
@@ -74,7 +74,7 @@ const GOVERNMENT_SERVICES: Service[] = [
     priority: 'Medium',
     requirements: ['GIS mapping', 'Document scan', 'Blockchain verify'],
     cost: 25,
-    expectedBenefit: 70
+    expectedBenefit: 70,
   },
   {
     id: 'healthcare-appointment',
@@ -85,7 +85,7 @@ const GOVERNMENT_SERVICES: Service[] = [
     priority: 'Medium',
     requirements: ['Real-time booking', 'SMS notification', 'Health records'],
     cost: 20,
-    expectedBenefit: 75
+    expectedBenefit: 75,
   },
   {
     id: 'education-enrollment',
@@ -96,7 +96,7 @@ const GOVERNMENT_SERVICES: Service[] = [
     priority: 'Medium',
     requirements: ['Academic sync', 'Parent portal', 'Mobile app'],
     cost: 15,
-    expectedBenefit: 65
+    expectedBenefit: 65,
   },
   {
     id: 'social-services',
@@ -107,8 +107,8 @@ const GOVERNMENT_SERVICES: Service[] = [
     priority: 'Low',
     requirements: ['Case management', 'Document upload', 'Status tracking'],
     cost: 10,
-    expectedBenefit: 60
-  }
+    expectedBenefit: 60,
+  },
 ];
 
 const SYSTEM_FEATURES: SystemFeature[] = [
@@ -119,7 +119,7 @@ const SYSTEM_FEATURES: SystemFeature[] = [
     cost: 25,
     securityLevel: 7,
     userExperience: 9,
-    performance: 8
+    performance: 8,
   },
   {
     id: 'blockchain-auth',
@@ -128,7 +128,7 @@ const SYSTEM_FEATURES: SystemFeature[] = [
     cost: 35,
     securityLevel: 10,
     userExperience: 6,
-    performance: 7
+    performance: 7,
   },
   {
     id: 'biometric-login',
@@ -137,7 +137,7 @@ const SYSTEM_FEATURES: SystemFeature[] = [
     cost: 30,
     securityLevel: 9,
     userExperience: 8,
-    performance: 8
+    performance: 8,
   },
   {
     id: 'mobile-first-ui',
@@ -146,7 +146,7 @@ const SYSTEM_FEATURES: SystemFeature[] = [
     cost: 20,
     securityLevel: 6,
     userExperience: 10,
-    performance: 9
+    performance: 9,
   },
   {
     id: 'real-time-sync',
@@ -155,7 +155,7 @@ const SYSTEM_FEATURES: SystemFeature[] = [
     cost: 40,
     securityLevel: 8,
     userExperience: 7,
-    performance: 10
+    performance: 10,
   },
   {
     id: 'multilingual-support',
@@ -164,8 +164,8 @@ const SYSTEM_FEATURES: SystemFeature[] = [
     cost: 15,
     securityLevel: 5,
     userExperience: 9,
-    performance: 7
-  }
+    performance: 7,
+  },
 ];
 
 const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
@@ -179,31 +179,33 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
   const [operationalEfficiency, setOperationalEfficiency] = useState(0);
   const [digitalTransformationScore, setDigitalTransformationScore] = useState(0);
 
-  useEffect(() => {
-    if (timeLeft <= 0 && gamePhase !== 'results') {
-      calculateResults();
-    }
-  }, [timeLeft, gamePhase]);
-
-  const calculateResults = () => {
+  const calculateResults = useCallback(() => {
     // Calculate citizen satisfaction (based on services and UX features)
-    const serviceScore = selectedServices.reduce((sum, service) => sum + service.expectedBenefit, 0) / Math.max(selectedServices.length, 1);
-    const uxScore = selectedFeatures.reduce((sum, feature) => sum + feature.userExperience, 0) / Math.max(selectedFeatures.length, 1);
-    const satisfaction = Math.min(100, (serviceScore * 0.6 + uxScore * 0.4));
+    const serviceScore =
+      selectedServices.reduce((sum, service) => sum + service.expectedBenefit, 0) /
+      Math.max(selectedServices.length, 1);
+    const uxScore =
+      selectedFeatures.reduce((sum, feature) => sum + feature.userExperience, 0) / Math.max(selectedFeatures.length, 1);
+    const satisfaction = Math.min(100, serviceScore * 0.6 + uxScore * 0.4);
 
     // Calculate system security
-    const securityScore = selectedFeatures.reduce((sum, feature) => sum + feature.securityLevel, 0) / Math.max(selectedFeatures.length, 1);
+    const securityScore =
+      selectedFeatures.reduce((sum, feature) => sum + feature.securityLevel, 0) / Math.max(selectedFeatures.length, 1);
     const security = Math.min(100, securityScore * 10);
 
     // Calculate operational efficiency (performance + service coverage)
-    const performanceScore = selectedFeatures.reduce((sum, feature) => sum + feature.performance, 0) / Math.max(selectedFeatures.length, 1);
+    const performanceScore =
+      selectedFeatures.reduce((sum, feature) => sum + feature.performance, 0) / Math.max(selectedFeatures.length, 1);
     const serviceCoverage = (selectedServices.length / GOVERNMENT_SERVICES.length) * 100;
-    const efficiency = Math.min(100, (performanceScore * 10 * 0.6 + serviceCoverage * 0.4));
+    const efficiency = Math.min(100, performanceScore * 10 * 0.6 + serviceCoverage * 0.4);
 
     // Calculate digital transformation score
     const budgetUtilization = (spentBudget / budget) * 100;
-    const featureComplexity = selectedFeatures.length / SYSTEM_FEATURES.length * 100;
-    const transformationScore = Math.min(100, (satisfaction * 0.3 + security * 0.25 + efficiency * 0.25 + Math.min(budgetUtilization, 100) * 0.2));
+    // const featureComplexity = selectedFeatures.length / SYSTEM_FEATURES.length * 100;
+    const transformationScore = Math.min(
+      100,
+      satisfaction * 0.3 + security * 0.25 + efficiency * 0.25 + Math.min(budgetUtilization, 100) * 0.2,
+    );
 
     setCitizenSatisfaction(Math.round(satisfaction));
     setSystemSecurity(Math.round(security));
@@ -212,11 +214,17 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
 
     setGamePhase('results');
     onComplete(true, transformationScore);
-  };
+  }, [selectedServices, selectedFeatures, spentBudget, budget, onComplete]);
+
+  useEffect(() => {
+    if (timeLeft <= 0 && gamePhase !== 'results') {
+      calculateResults();
+    }
+  }, [timeLeft, gamePhase, calculateResults]);
 
   const handleServiceSelect = (service: Service) => {
     const newCost = spentBudget + service.cost;
-    if (newCost <= budget && !selectedServices.find(s => s.id === service.id)) {
+    if (newCost <= budget && !selectedServices.find((s) => s.id === service.id)) {
       setSelectedServices([...selectedServices, service]);
       setSpentBudget(newCost);
     }
@@ -224,24 +232,24 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
 
   const handleFeatureSelect = (feature: SystemFeature) => {
     const newCost = spentBudget + feature.cost;
-    if (newCost <= budget && !selectedFeatures.find(f => f.id === feature.id)) {
+    if (newCost <= budget && !selectedFeatures.find((f) => f.id === feature.id)) {
       setSelectedFeatures([...selectedFeatures, feature]);
       setSpentBudget(newCost);
     }
   };
 
   const removeService = (serviceId: string) => {
-    const service = selectedServices.find(s => s.id === serviceId);
+    const service = selectedServices.find((s) => s.id === serviceId);
     if (service) {
-      setSelectedServices(selectedServices.filter(s => s.id !== serviceId));
+      setSelectedServices(selectedServices.filter((s) => s.id !== serviceId));
       setSpentBudget(spentBudget - service.cost);
     }
   };
 
   const removeFeature = (featureId: string) => {
-    const feature = selectedFeatures.find(f => f.id === featureId);
+    const feature = selectedFeatures.find((f) => f.id === featureId);
     if (feature) {
-      setSelectedFeatures(selectedFeatures.filter(f => f.id !== featureId));
+      setSelectedFeatures(selectedFeatures.filter((f) => f.id !== featureId));
       setSpentBudget(spentBudget - feature.cost);
     }
   };
@@ -325,11 +333,15 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
           <h2 className="text-2xl font-bold">Thiết kế E-Government Portal</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
@@ -343,10 +355,10 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
             </h3>
             <div className="space-y-3 max-h-80 overflow-y-auto">
               {GOVERNMENT_SERVICES.map((service) => {
-                const isSelected = selectedServices.find(s => s.id === service.id);
+                const isSelected = selectedServices.find((s) => s.id === service.id);
                 const canAfford = spentBudget + service.cost <= budget;
                 const canSelect = selectedServices.length < 5;
-                
+
                 return (
                   <div
                     key={service.id}
@@ -354,8 +366,8 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
                       isSelected
                         ? 'border-green-400 bg-green-500/20'
                         : canAfford && canSelect
-                        ? 'border-blue-400 bg-blue-500/10 hover:bg-blue-500/20'
-                        : 'border-gray-500 bg-gray-500/10 opacity-50'
+                          ? 'border-blue-400 bg-blue-500/10 hover:bg-blue-500/20'
+                          : 'border-gray-500 bg-gray-500/10 opacity-50'
                     }`}
                     onClick={() => {
                       if (isSelected) {
@@ -367,10 +379,15 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
                   >
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-semibold text-sm">{service.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs ${
-                        service.priority === 'High' ? 'bg-red-500' :
-                        service.priority === 'Medium' ? 'bg-yellow-500' : 'bg-green-500'
-                      }`}>
+                      <span
+                        className={`px-2 py-1 rounded text-xs ${
+                          service.priority === 'High'
+                            ? 'bg-red-500'
+                            : service.priority === 'Medium'
+                              ? 'bg-yellow-500'
+                              : 'bg-green-500'
+                        }`}
+                      >
                         {service.priority}
                       </span>
                     </div>
@@ -395,10 +412,10 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
             </h3>
             <div className="space-y-3 max-h-80 overflow-y-auto">
               {SYSTEM_FEATURES.map((feature) => {
-                const isSelected = selectedFeatures.find(f => f.id === feature.id);
+                const isSelected = selectedFeatures.find((f) => f.id === feature.id);
                 const canAfford = spentBudget + feature.cost <= budget;
                 const canSelect = selectedFeatures.length < 4;
-                
+
                 return (
                   <div
                     key={feature.id}
@@ -406,8 +423,8 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
                       isSelected
                         ? 'border-green-400 bg-green-500/20'
                         : canAfford && canSelect
-                        ? 'border-yellow-400 bg-yellow-500/10 hover:bg-yellow-500/20'
-                        : 'border-gray-500 bg-gray-500/10 opacity-50'
+                          ? 'border-yellow-400 bg-yellow-500/10 hover:bg-yellow-500/20'
+                          : 'border-gray-500 bg-gray-500/10 opacity-50'
                     }`}
                     onClick={() => {
                       if (isSelected) {
@@ -448,12 +465,15 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
               <CheckCircle className="w-5 h-5 mr-2 text-green-400" />
               Tổng quan dự án
             </h3>
-            
+
             <div className="mb-4">
               <h4 className="font-semibold mb-2">Dịch vụ đã chọn ({selectedServices.length}/5):</h4>
               <div className="space-y-1 max-h-32 overflow-y-auto">
                 {selectedServices.map((service) => (
-                  <div key={service.id} className="text-sm flex justify-between items-center bg-blue-500/20 p-2 rounded">
+                  <div
+                    key={service.id}
+                    className="text-sm flex justify-between items-center bg-blue-500/20 p-2 rounded"
+                  >
                     <span>{service.name}</span>
                     <span className="text-blue-200">{service.cost}M</span>
                   </div>
@@ -465,7 +485,10 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
               <h4 className="font-semibold mb-2">Tính năng đã chọn ({selectedFeatures.length}/4):</h4>
               <div className="space-y-1 max-h-32 overflow-y-auto">
                 {selectedFeatures.map((feature) => (
-                  <div key={feature.id} className="text-sm flex justify-between items-center bg-yellow-500/20 p-2 rounded">
+                  <div
+                    key={feature.id}
+                    className="text-sm flex justify-between items-center bg-yellow-500/20 p-2 rounded"
+                  >
                     <span>{feature.name}</span>
                     <span className="text-yellow-200">{feature.cost}M</span>
                   </div>
@@ -476,9 +499,11 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
             <div className="border-t border-white/20 pt-4">
               <div className="flex justify-between items-center mb-4">
                 <span className="font-semibold">Tổng chi phí:</span>
-                <span className="text-xl font-bold text-green-300">{spentBudget}/{budget} triệu VNĐ</span>
+                <span className="text-xl font-bold text-green-300">
+                  {spentBudget}/{budget} triệu VNĐ
+                </span>
               </div>
-              
+
               <button
                 onClick={() => setGamePhase('implementation')}
                 disabled={selectedServices.length === 0 && selectedFeatures.length === 0}
@@ -648,33 +673,34 @@ const EGovernmentPortalGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
           <div className="text-gray-300 leading-relaxed">
             {digitalTransformationScore >= 90 && (
               <p>
-                🎉 <strong>Xuất sắc!</strong> Portal e-government của bạn đạt tiêu chuẩn quốc tế với hệ thống bảo mật mạnh mẽ, 
-                trải nghiệm người dùng tuyệt vời và hiệu quả vận hành cao. Dự án này sẽ thúc đẩy mạnh mẽ quá trình chuyển đổi 
-                số quốc gia và nâng cao chất lượng dịch vụ công.
+                🎉 <strong>Xuất sắc!</strong> Portal e-government của bạn đạt tiêu chuẩn quốc tế với hệ thống bảo mật
+                mạnh mẽ, trải nghiệm người dùng tuyệt vời và hiệu quả vận hành cao. Dự án này sẽ thúc đẩy mạnh mẽ quá
+                trình chuyển đổi số quốc gia và nâng cao chất lượng dịch vụ công.
               </p>
             )}
             {digitalTransformationScore >= 80 && digitalTransformationScore < 90 && (
               <p>
-                ⭐ <strong>Tốt!</strong> Hệ thống e-government được thiết kế khá hoàn thiện với các dịch vụ thiết yếu và 
-                tính năng hiện đại. Một số cải tiến về bảo mật hoặc trải nghiệm người dùng sẽ giúp đạt được hiệu quả tối ưu.
+                ⭐ <strong>Tốt!</strong> Hệ thống e-government được thiết kế khá hoàn thiện với các dịch vụ thiết yếu và
+                tính năng hiện đại. Một số cải tiến về bảo mật hoặc trải nghiệm người dùng sẽ giúp đạt được hiệu quả tối
+                ưu.
               </p>
             )}
             {digitalTransformationScore >= 70 && digitalTransformationScore < 80 && (
               <p>
-                👍 <strong>Khá!</strong> Portal có nền tảng tốt với các dịch vụ cơ bản được triển khai. 
-                Cần đầu tư thêm vào bảo mật, tối ưu hiệu suất và mở rộng thêm dịch vụ để đáp ứng nhu cầu người dân.
+                👍 <strong>Khá!</strong> Portal có nền tảng tốt với các dịch vụ cơ bản được triển khai. Cần đầu tư thêm
+                vào bảo mật, tối ưu hiệu suất và mở rộng thêm dịch vụ để đáp ứng nhu cầu người dân.
               </p>
             )}
             {digitalTransformationScore >= 60 && digitalTransformationScore < 70 && (
               <p>
-                📈 <strong>Trung bình.</strong> Hệ thống đáp ứng được nhu cầu cơ bản nhưng cần cải thiện đáng kể về 
-                bảo mật, hiệu suất và trải nghiệm người dùng để thực sự hiệu quả.
+                📈 <strong>Trung bình.</strong> Hệ thống đáp ứng được nhu cầu cơ bản nhưng cần cải thiện đáng kể về bảo
+                mật, hiệu suất và trải nghiệm người dùng để thực sự hiệu quả.
               </p>
             )}
             {digitalTransformationScore < 60 && (
               <p>
-                🔧 <strong>Cần cải thiện.</strong> Portal cần được đầu tư và phát triển thêm về mặt kỹ thuật, 
-                bảo mật và dịch vụ để đáp ứng kỳ vọng của người dân và các cơ quan nhà nước.
+                🔧 <strong>Cần cải thiện.</strong> Portal cần được đầu tư và phát triển thêm về mặt kỹ thuật, bảo mật và
+                dịch vụ để đáp ứng kỳ vọng của người dân và các cơ quan nhà nước.
               </p>
             )}
           </div>

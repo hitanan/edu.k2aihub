@@ -54,7 +54,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     timeline: 36,
     funding_needed: 400,
     ethical_considerations: 85,
-    description: 'Phát triển hệ thống AI nhận diện giao thông phức tạp của Việt Nam'
+    description: 'Phát triển hệ thống AI nhận diện giao thông phức tạp của Việt Nam',
   },
   {
     id: 'vietnamese-llm',
@@ -65,7 +65,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     timeline: 24,
     funding_needed: 350,
     ethical_considerations: 80,
-    description: 'Xây dựng mô hình ngôn ngữ lớn chuyên biệt cho tiếng Việt'
+    description: 'Xây dựng mô hình ngôn ngữ lớn chuyên biệt cho tiếng Việt',
   },
   {
     id: 'medical-diagnosis-ai',
@@ -76,7 +76,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     timeline: 18,
     funding_needed: 280,
     ethical_considerations: 95,
-    description: 'Hệ thống AI hỗ trợ chẩn đoán bệnh qua hình ảnh y tế'
+    description: 'Hệ thống AI hỗ trợ chẩn đoán bệnh qua hình ảnh y tế',
   },
   {
     id: 'warehouse-robots',
@@ -87,7 +87,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     timeline: 15,
     funding_needed: 220,
     ethical_considerations: 60,
-    description: 'Robot tự động hóa warehouse với AI navigation và sorting'
+    description: 'Robot tự động hóa warehouse với AI navigation và sorting',
   },
   {
     id: 'educational-ai-tutor',
@@ -98,7 +98,7 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     timeline: 12,
     funding_needed: 180,
     ethical_considerations: 70,
-    description: 'Hệ thống AI tutor thích ứng với phong cách học của từng học sinh'
+    description: 'Hệ thống AI tutor thích ứng với phong cách học của từng học sinh',
   },
   {
     id: 'game-ai-opponent',
@@ -109,8 +109,8 @@ const RESEARCH_PROJECTS: ResearchProject[] = [
     timeline: 10,
     funding_needed: 150,
     ethical_considerations: 50,
-    description: 'AI agent học hỏi và thích ứng với gameplay của người chơi'
-  }
+    description: 'AI agent học hỏi và thích ứng với gameplay của người chơi',
+  },
 ];
 
 const AI_RESOURCES: AIResource[] = [
@@ -122,7 +122,7 @@ const AI_RESOURCES: AIResource[] = [
     cost: 120,
     availability: 70,
     scalability: 90,
-    description: 'Cluster GPU hàng đầu cho deep learning và training model lớn'
+    description: 'Cluster GPU hàng đầu cho deep learning và training model lớn',
   },
   {
     id: 'google-tpu-pods',
@@ -132,7 +132,7 @@ const AI_RESOURCES: AIResource[] = [
     cost: 150,
     availability: 60,
     scalability: 95,
-    description: 'Tensor Processing Units chuyên dụng cho AI workloads'
+    description: 'Tensor Processing Units chuyên dụng cho AI workloads',
   },
   {
     id: 'imagenet-dataset',
@@ -142,7 +142,7 @@ const AI_RESOURCES: AIResource[] = [
     cost: 40,
     availability: 90,
     scalability: 80,
-    description: 'Bộ dataset chuẩn kết hợp với dữ liệu tùy chỉnh'
+    description: 'Bộ dataset chuẩn kết hợp với dữ liệu tùy chỉnh',
   },
   {
     id: 'vietnamese-corpus',
@@ -152,7 +152,7 @@ const AI_RESOURCES: AIResource[] = [
     cost: 60,
     availability: 75,
     scalability: 85,
-    description: 'Corpus tiếng Việt lớn với 10 tỷ tokens đã được làm sạch'
+    description: 'Corpus tiếng Việt lớn với 10 tỷ tokens đã được làm sạch',
   },
   {
     id: 'pretrained-models',
@@ -162,7 +162,7 @@ const AI_RESOURCES: AIResource[] = [
     cost: 30,
     availability: 95,
     scalability: 70,
-    description: 'GPT-4, BERT, ResNet và các mô hình nền tảng'
+    description: 'GPT-4, BERT, ResNet và các mô hình nền tảng',
   },
   {
     id: 'ai-research-team',
@@ -172,7 +172,7 @@ const AI_RESOURCES: AIResource[] = [
     cost: 100,
     availability: 80,
     scalability: 60,
-    description: 'Team 5 PhD AI researchers với kinh nghiệm 10+ năm'
+    description: 'Team 5 PhD AI researchers với kinh nghiệm 10+ năm',
   },
   {
     id: 'mlops-platform',
@@ -182,8 +182,8 @@ const AI_RESOURCES: AIResource[] = [
     cost: 50,
     availability: 85,
     scalability: 95,
-    description: 'Platform tích hợp MLflow, Kubernetes, monitoring và deployment'
-  }
+    description: 'Platform tích hợp MLflow, Kubernetes, monitoring và deployment',
+  },
 ];
 
 const METHODOLOGIES: Methodology[] = [
@@ -196,7 +196,7 @@ const METHODOLOGIES: Methodology[] = [
     data_requirements: 85,
     implementation_difficulty: 80,
     cost: 80,
-    description: 'State-of-the-art cho NLP và Computer Vision tasks'
+    description: 'State-of-the-art cho NLP và Computer Vision tasks',
   },
   {
     id: 'reinforcement-learning',
@@ -207,7 +207,7 @@ const METHODOLOGIES: Methodology[] = [
     data_requirements: 60,
     implementation_difficulty: 90,
     cost: 70,
-    description: 'PPO, SAC algorithms cho autonomous systems'
+    description: 'PPO, SAC algorithms cho autonomous systems',
   },
   {
     id: 'federated-learning',
@@ -218,7 +218,7 @@ const METHODOLOGIES: Methodology[] = [
     data_requirements: 40,
     implementation_difficulty: 85,
     cost: 60,
-    description: 'Training phân tán bảo vệ privacy với FedAvg, FedProx'
+    description: 'Training phân tán bảo vệ privacy với FedAvg, FedProx',
   },
   {
     id: 'transfer-learning',
@@ -229,7 +229,7 @@ const METHODOLOGIES: Methodology[] = [
     data_requirements: 50,
     implementation_difficulty: 40,
     cost: 30,
-    description: 'Tận dụng pre-trained models cho domain-specific tasks'
+    description: 'Tận dụng pre-trained models cho domain-specific tasks',
   },
   {
     id: 'unsupervised-clustering',
@@ -240,7 +240,7 @@ const METHODOLOGIES: Methodology[] = [
     data_requirements: 70,
     implementation_difficulty: 50,
     cost: 35,
-    description: 'K-means, DBSCAN, autoencoders cho pattern discovery'
+    description: 'K-means, DBSCAN, autoencoders cho pattern discovery',
   },
   {
     id: 'ensemble-methods',
@@ -251,26 +251,28 @@ const METHODOLOGIES: Methodology[] = [
     data_requirements: 75,
     implementation_difficulty: 60,
     cost: 55,
-    description: 'Kết hợp multiple models để tăng accuracy và robustness'
-  }
+    description: 'Kết hợp multiple models để tăng accuracy và robustness',
+  },
 ];
 
 const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'project-selection' | 'resource-selection' | 'methodology-selection' | 'research' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'project-selection' | 'resource-selection' | 'methodology-selection' | 'research' | 'results'
+  >('briefing');
   const [selectedProject, setSelectedProject] = useState<ResearchProject | null>(null);
   const [selectedResources, setSelectedResources] = useState<AIResource[]>([]);
   const [selectedMethodologies, setSelectedMethodologies] = useState<Methodology[]>([]);
-  const [budget, setBudget] = useState(500);
+  const [budget] = useState(500);
   const [researchProgress, setResearchProgress] = useState(0);
-  const [isResearching, setIsResearching] = useState(false);
+  const [, setIsResearching] = useState(false);
 
   // Research metrics
   const [technicalAchievement, setTechnicalAchievement] = useState(0);
   const [practicalImpact, setPracticalImpact] = useState(0);
   const [ethicalCompliance, setEthicalCompliance] = useState(0);
 
-  const totalCost = selectedResources.reduce((sum, r) => sum + r.cost, 0) + 
-    selectedMethodologies.reduce((sum, m) => sum + m.cost, 0);
+  const totalCost =
+    selectedResources.reduce((sum, r) => sum + r.cost, 0) + selectedMethodologies.reduce((sum, m) => sum + m.cost, 0);
 
   const canAfford = totalCost <= budget;
 
@@ -278,29 +280,36 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
     if (!selectedProject || selectedResources.length === 0 || selectedMethodologies.length === 0) {
       return { technical: 0, impact: 0, ethical: 0 };
     }
-    
+
     // Technical achievement score
     const resourcePerformance = selectedResources.reduce((sum, r) => sum + r.performance, 0) / selectedResources.length;
-    const methodologyAccuracy = selectedMethodologies.reduce((sum, m) => sum + m.accuracy_potential, 0) / selectedMethodologies.length;
-    const projectComplexityBonus = selectedProject.complexity / 100 * 20;
-    const technicalScore = Math.round((resourcePerformance * 0.4 + methodologyAccuracy * 0.4 + projectComplexityBonus * 0.2));
-    
+    const methodologyAccuracy =
+      selectedMethodologies.reduce((sum, m) => sum + m.accuracy_potential, 0) / selectedMethodologies.length;
+    const projectComplexityBonus = (selectedProject.complexity / 100) * 20;
+    const technicalScore = Math.round(
+      resourcePerformance * 0.4 + methodologyAccuracy * 0.4 + projectComplexityBonus * 0.2,
+    );
+
     // Practical impact
     const resourceScalability = selectedResources.reduce((sum, r) => sum + r.scalability, 0) / selectedResources.length;
-    const implementationFeasibility = 100 - (selectedMethodologies.reduce((sum, m) => sum + m.implementation_difficulty, 0) / selectedMethodologies.length);
+    const implementationFeasibility =
+      100 -
+      selectedMethodologies.reduce((sum, m) => sum + m.implementation_difficulty, 0) / selectedMethodologies.length;
     const projectImpactPotential = selectedProject.potential_impact;
-    const impactScore = Math.round((resourceScalability * 0.3 + implementationFeasibility * 0.3 + projectImpactPotential * 0.4));
-    
+    const impactScore = Math.round(
+      resourceScalability * 0.3 + implementationFeasibility * 0.3 + projectImpactPotential * 0.4,
+    );
+
     // Ethical compliance
     const ethicalConsideration = selectedProject.ethical_considerations;
-    const dataPrivacyBonus = selectedMethodologies.some(m => m.approach === 'federated') ? 20 : 0;
-    const humanResourceBonus = selectedResources.some(r => r.type === 'human') ? 15 : 0;
+    const dataPrivacyBonus = selectedMethodologies.some((m) => m.approach === 'federated') ? 20 : 0;
+    const humanResourceBonus = selectedResources.some((r) => r.type === 'human') ? 15 : 0;
     const ethicalScore = Math.round(Math.min(100, ethicalConsideration + dataPrivacyBonus + humanResourceBonus));
-    
+
     return {
       technical: Math.min(100, technicalScore),
       impact: Math.min(100, impactScore),
-      ethical: Math.min(100, ethicalScore)
+      ethical: Math.min(100, ethicalScore),
     };
   };
 
@@ -312,17 +321,17 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
 
     setGamePhase('research');
     setIsResearching(true);
-    
+
     const researchResults = calculateResearchScore();
     setTechnicalAchievement(researchResults.technical);
     setPracticalImpact(researchResults.impact);
     setEthicalCompliance(researchResults.ethical);
-    
-    const totalComplexity = selectedProject.complexity + 
-      selectedMethodologies.reduce((sum, m) => sum + m.implementation_difficulty, 0);
-    
+
+    const totalComplexity =
+      selectedProject.complexity + selectedMethodologies.reduce((sum, m) => sum + m.implementation_difficulty, 0);
+
     const interval = setInterval(() => {
-      setResearchProgress(prev => {
+      setResearchProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsResearching(false);
@@ -336,15 +345,15 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
 
   const getOverallScore = () => {
     const researchResults = calculateResearchScore();
-    const costEfficiency = Math.round((budget - totalCost) / budget * 100);
-    const timelineBonus = selectedProject ? Math.max(0, (36 - selectedProject.timeline) / 36 * 20) : 0;
-    
+    const costEfficiency = Math.round(((budget - totalCost) / budget) * 100);
+    const timelineBonus = selectedProject ? Math.max(0, ((36 - selectedProject.timeline) / 36) * 20) : 0;
+
     return Math.round(
-      researchResults.technical * 0.35 + 
-      researchResults.impact * 0.35 + 
-      researchResults.ethical * 0.2 + 
-      costEfficiency * 0.05 + 
-      timelineBonus * 0.05
+      researchResults.technical * 0.35 +
+        researchResults.impact * 0.35 +
+        researchResults.ethical * 0.2 +
+        costEfficiency * 0.05 +
+        timelineBonus * 0.05,
     );
   };
 
@@ -389,10 +398,18 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                 Tiêu chí đánh giá
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-purple-400">Thành tựu kỹ thuật (35%)</span> - Độ khó và chất lượng</li>
-                <li>• <span className="text-blue-400">Tác động thực tiễn (35%)</span> - Ứng dụng trong đời sống</li>
-                <li>• <span className="text-green-400">Tuân thủ đạo đức (20%)</span> - AI Ethics và Privacy</li>
-                <li>• <span className="text-yellow-400">Hiệu quả (10%)</span> - Chi phí và timeline</li>
+                <li>
+                  • <span className="text-purple-400">Thành tựu kỹ thuật (35%)</span> - Độ khó và chất lượng
+                </li>
+                <li>
+                  • <span className="text-blue-400">Tác động thực tiễn (35%)</span> - Ứng dụng trong đời sống
+                </li>
+                <li>
+                  • <span className="text-green-400">Tuân thủ đạo đức (20%)</span> - AI Ethics và Privacy
+                </li>
+                <li>
+                  • <span className="text-yellow-400">Hiệu quả (10%)</span> - Chi phí và timeline
+                </li>
               </ul>
             </div>
           </div>
@@ -426,14 +443,12 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {RESEARCH_PROJECTS.map((project) => {
               const isSelected = selectedProject?.id === project.id;
-              
+
               return (
                 <div
                   key={project.id}
                   className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 cursor-pointer transition-all duration-200 hover:scale-105 ${
-                    isSelected
-                      ? 'border-purple-500 bg-purple-500/20'
-                      : 'border-white/20 hover:border-purple-400/50'
+                    isSelected ? 'border-purple-500 bg-purple-500/20' : 'border-white/20 hover:border-purple-400/50'
                   }`}
                   onClick={() => setSelectedProject(project)}
                 >
@@ -444,53 +459,57 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                       <div className="text-blue-400 font-bold text-xs">{project.timeline} tháng</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{project.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-                  
+
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Lĩnh vực:</span>
-                      <span className={`text-xs px-2 py-1 rounded ${
-                        project.field === 'computer_vision' ? 'bg-blue-500/20 text-blue-400' :
-                        project.field === 'nlp' ? 'bg-green-500/20 text-green-400' :
-                        project.field === 'robotics' ? 'bg-red-500/20 text-red-400' :
-                        project.field === 'reinforcement_learning' ? 'bg-yellow-500/20 text-yellow-400' :
-                        project.field === 'generative_ai' ? 'bg-purple-500/20 text-purple-400' :
-                        'bg-pink-500/20 text-pink-400'
-                      }`}>
+                      <span
+                        className={`text-xs px-2 py-1 rounded ${
+                          project.field === 'computer_vision'
+                            ? 'bg-blue-500/20 text-blue-400'
+                            : project.field === 'nlp'
+                              ? 'bg-green-500/20 text-green-400'
+                              : project.field === 'robotics'
+                                ? 'bg-red-500/20 text-red-400'
+                                : project.field === 'reinforcement_learning'
+                                  ? 'bg-yellow-500/20 text-yellow-400'
+                                  : project.field === 'generative_ai'
+                                    ? 'bg-purple-500/20 text-purple-400'
+                                    : 'bg-pink-500/20 text-pink-400'
+                        }`}
+                      >
                         {project.field}
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Độ phức tạp:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-red-500 h-2 rounded-full" 
-                          style={{width: `${project.complexity}%`}}
-                        ></div>
+                        <div className="bg-red-500 h-2 rounded-full" style={{ width: `${project.complexity}%` }}></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Tác động:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${project.potential_impact}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${project.potential_impact}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Đạo đức:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-purple-500 h-2 rounded-full" 
-                          style={{width: `${project.ethical_considerations}%`}}
+                        <div
+                          className="bg-purple-500 h-2 rounded-full"
+                          style={{ width: `${project.ethical_considerations}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -533,10 +552,10 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {AI_RESOURCES.map((resource) => {
-              const isSelected = selectedResources.some(r => r.id === resource.id);
-              const canSelect = selectedResources.length < 4 && 
-                (totalCost + resource.cost - (isSelected ? resource.cost : 0)) <= budget;
-              
+              const isSelected = selectedResources.some((r) => r.id === resource.id);
+              const canSelect =
+                selectedResources.length < 4 && totalCost + resource.cost - (isSelected ? resource.cost : 0) <= budget;
+
               return (
                 <div
                   key={resource.id}
@@ -544,14 +563,14 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                     isSelected
                       ? 'border-blue-500 bg-blue-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-blue-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-blue-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedResources(prev => prev.filter(r => r.id !== resource.id));
+                      setSelectedResources((prev) => prev.filter((r) => r.id !== resource.id));
                     } else if (canSelect) {
-                      setSelectedResources(prev => [...prev, resource]);
+                      setSelectedResources((prev) => [...prev, resource]);
                     }
                   }}
                 >
@@ -565,51 +584,57 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                     </div>
                     <span className="text-yellow-400 font-bold text-sm">{resource.cost}M</span>
                   </div>
-                  
+
                   <h3 className="text-sm font-bold text-white mb-2">{resource.name}</h3>
                   <p className="text-gray-300 text-xs mb-3">{resource.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-1 text-xs">
                     <div>
                       <span className="text-gray-400">Performance:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${resource.performance}%`}}
+                        <div
+                          className="bg-green-500 h-1 rounded-full"
+                          style={{ width: `${resource.performance}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Availability:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${resource.availability}%`}}
+                        <div
+                          className="bg-blue-500 h-1 rounded-full"
+                          style={{ width: `${resource.availability}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Scalability:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-purple-500 h-1 rounded-full" 
-                          style={{width: `${resource.scalability}%`}}
+                        <div
+                          className="bg-purple-500 h-1 rounded-full"
+                          style={{ width: `${resource.scalability}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="text-center">
-                      <span className={`text-xs px-1 py-0.5 rounded ${
-                        resource.type === 'computing' ? 'bg-red-500/20 text-red-400' :
-                        resource.type === 'data' ? 'bg-blue-500/20 text-blue-400' :
-                        resource.type === 'model' ? 'bg-purple-500/20 text-purple-400' :
-                        resource.type === 'tools' ? 'bg-green-500/20 text-green-400' :
-                        'bg-yellow-500/20 text-yellow-400'
-                      }`}>
+                      <span
+                        className={`text-xs px-1 py-0.5 rounded ${
+                          resource.type === 'computing'
+                            ? 'bg-red-500/20 text-red-400'
+                            : resource.type === 'data'
+                              ? 'bg-blue-500/20 text-blue-400'
+                              : resource.type === 'model'
+                                ? 'bg-purple-500/20 text-purple-400'
+                                : resource.type === 'tools'
+                                  ? 'bg-green-500/20 text-green-400'
+                                  : 'bg-yellow-500/20 text-yellow-400'
+                        }`}
+                      >
                         {resource.type}
                       </span>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-3 text-center">
                       <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Đã chọn</span>
@@ -652,12 +677,12 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {METHODOLOGIES.map((method) => {
-              const isSelected = selectedMethodologies.some(m => m.id === method.id);
-              const currentCostWithoutMethod = selectedResources.reduce((sum, r) => sum + r.cost, 0) +
-                selectedMethodologies.filter(m => m.id !== method.id).reduce((sum, m) => sum + m.cost, 0);
-              const canSelect = selectedMethodologies.length < 3 && 
-                (currentCostWithoutMethod + method.cost) <= budget;
-              
+              const isSelected = selectedMethodologies.some((m) => m.id === method.id);
+              const currentCostWithoutMethod =
+                selectedResources.reduce((sum, r) => sum + r.cost, 0) +
+                selectedMethodologies.filter((m) => m.id !== method.id).reduce((sum, m) => sum + m.cost, 0);
+              const canSelect = selectedMethodologies.length < 3 && currentCostWithoutMethod + method.cost <= budget;
+
               return (
                 <div
                   key={method.id}
@@ -665,14 +690,14 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                     isSelected
                       ? 'border-green-500 bg-green-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-green-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-green-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedMethodologies(prev => prev.filter(m => m.id !== method.id));
+                      setSelectedMethodologies((prev) => prev.filter((m) => m.id !== method.id));
                     } else if (canSelect) {
-                      setSelectedMethodologies(prev => [...prev, method]);
+                      setSelectedMethodologies((prev) => [...prev, method]);
                     }
                   }}
                 >
@@ -680,62 +705,69 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                     <Zap className="w-6 h-6 text-green-400" />
                     <span className="text-yellow-400 font-bold text-sm">{method.cost}M</span>
                   </div>
-                  
+
                   <h3 className="text-sm font-bold text-white mb-2">{method.name}</h3>
                   <p className="text-gray-300 text-xs mb-3">{method.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-1 text-xs">
                     <div>
                       <span className="text-gray-400">Accuracy:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${method.accuracy_potential}%`}}
+                        <div
+                          className="bg-green-500 h-1 rounded-full"
+                          style={{ width: `${method.accuracy_potential}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Compute Cost:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-red-500 h-1 rounded-full" 
-                          style={{width: `${method.computational_cost}%`}}
+                        <div
+                          className="bg-red-500 h-1 rounded-full"
+                          style={{ width: `${method.computational_cost}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Data Need:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${method.data_requirements}%`}}
+                        <div
+                          className="bg-blue-500 h-1 rounded-full"
+                          style={{ width: `${method.data_requirements}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Difficulty:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-orange-500 h-1 rounded-full" 
-                          style={{width: `${method.implementation_difficulty}%`}}
+                        <div
+                          className="bg-orange-500 h-1 rounded-full"
+                          style={{ width: `${method.implementation_difficulty}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-2 text-center">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      method.approach === 'supervised' ? 'bg-blue-500/20 text-blue-400' :
-                      method.approach === 'unsupervised' ? 'bg-green-500/20 text-green-400' :
-                      method.approach === 'reinforcement' ? 'bg-red-500/20 text-red-400' :
-                      method.approach === 'transfer' ? 'bg-purple-500/20 text-purple-400' :
-                      method.approach === 'federated' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-pink-500/20 text-pink-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        method.approach === 'supervised'
+                          ? 'bg-blue-500/20 text-blue-400'
+                          : method.approach === 'unsupervised'
+                            ? 'bg-green-500/20 text-green-400'
+                            : method.approach === 'reinforcement'
+                              ? 'bg-red-500/20 text-red-400'
+                              : method.approach === 'transfer'
+                                ? 'bg-purple-500/20 text-purple-400'
+                                : method.approach === 'federated'
+                                  ? 'bg-yellow-500/20 text-yellow-400'
+                                  : 'bg-pink-500/20 text-pink-400'
+                      }`}
+                    >
                       {method.approach}
                     </span>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-3 text-center">
                       <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs">Đã chọn</span>
@@ -755,14 +787,20 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-blue-400 mb-2">Tài nguyên ({selectedResources.length})</h4>
-                {selectedResources.map(resource => (
-                  <p key={resource.id} className="text-gray-300 text-sm">{resource.name.split(' ')[0]}</p>
+                {selectedResources.map((resource) => (
+                  <p key={resource.id} className="text-gray-300 text-sm">
+                    {resource.name.split(' ')[0]}
+                  </p>
                 ))}
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-green-400 mb-2">Phương pháp ({selectedMethodologies.length})</h4>
-                {selectedMethodologies.map(method => (
-                  <p key={method.id} className="text-gray-300 text-sm">{method.name.split(' ')[0]}</p>
+                <h4 className="text-lg font-semibold text-green-400 mb-2">
+                  Phương pháp ({selectedMethodologies.length})
+                </h4>
+                {selectedMethodologies.map((method) => (
+                  <p key={method.id} className="text-gray-300 text-sm">
+                    {method.name.split(' ')[0]}
+                  </p>
                 ))}
               </div>
             </div>
@@ -806,9 +844,9 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                 <span>{Math.round(researchProgress)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-6">
-                <div 
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 h-6 rounded-full transition-all duration-300" 
-                  style={{width: `${researchProgress}%`}}
+                <div
+                  className="bg-gradient-to-r from-purple-500 to-blue-500 h-6 rounded-full transition-all duration-300"
+                  style={{ width: `${researchProgress}%` }}
                 ></div>
               </div>
             </div>
@@ -820,9 +858,9 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                   <span className="text-white font-bold">{technicalAchievement}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-purple-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${technicalAchievement}%`}}
+                  <div
+                    className="bg-purple-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${technicalAchievement}%` }}
                   ></div>
                 </div>
               </div>
@@ -833,9 +871,9 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                   <span className="text-white font-bold">{practicalImpact}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${practicalImpact}%`}}
+                  <div
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${practicalImpact}%` }}
                   ></div>
                 </div>
               </div>
@@ -846,9 +884,9 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                   <span className="text-white font-bold">{ethicalCompliance}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${ethicalCompliance}%`}}
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${ethicalCompliance}%` }}
                   ></div>
                 </div>
               </div>
@@ -858,7 +896,10 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
           <div className="text-center">
             <div className="flex justify-center items-center space-x-4 text-gray-300">
               <Brain className="w-6 h-6 text-purple-400 animate-pulse" />
-              <span>Đang training với {selectedResources.length} resources và {selectedMethodologies.length} methodologies...</span>
+              <span>
+                Đang training với {selectedResources.length} resources và {selectedMethodologies.length}{' '}
+                methodologies...
+              </span>
               <Cpu className="w-6 h-6 text-blue-400 animate-pulse" />
             </div>
           </div>
@@ -904,15 +945,19 @@ const AIResearchLabGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
               <h3 className="text-xl font-bold text-white mb-4">Đánh giá</h3>
               <div className="space-y-2 text-gray-300">
                 {researchScore >= 90 && <p>🏆 Breakthrough nghiên cứu! Có thể thay đổi ngành AI toàn cầu.</p>}
-                {researchScore >= 80 && researchScore < 90 && <p>🌟 Nghiên cứu xuất sắc! Kết quả có giá trị khoa học cao.</p>}
+                {researchScore >= 80 && researchScore < 90 && (
+                  <p>🌟 Nghiên cứu xuất sắc! Kết quả có giá trị khoa học cao.</p>
+                )}
                 {researchScore >= 70 && researchScore < 80 && <p>✅ Nghiên cứu tốt! Cần cải thiện một số aspect.</p>}
-                {researchScore >= 60 && researchScore < 70 && <p>⚠️ Nghiên cứu cơ bản! Cần thêm resources và methods.</p>}
+                {researchScore >= 60 && researchScore < 70 && (
+                  <p>⚠️ Nghiên cứu cơ bản! Cần thêm resources và methods.</p>
+                )}
                 {researchScore < 60 && <p>❌ Nghiên cứu cần cải thiện nhiều để đạt chuẩn publication.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
-                    <strong>Lưu ý:</strong> Nghiên cứu AI cần cân bằng giữa 
-                    innovation, practical impact và AI ethics compliance.
+                    <strong>Lưu ý:</strong> Nghiên cứu AI cần cân bằng giữa innovation, practical impact và AI ethics
+                    compliance.
                   </p>
                 </div>
               </div>

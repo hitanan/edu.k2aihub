@@ -29,12 +29,7 @@ interface Exercise {
 interface Resource {
   title: string;
   url: string;
-  type:
-    | 'hospital'
-    | 'health-ministry'
-    | 'research'
-    | 'telemedicine'
-    | 'healthtech';
+  type: 'hospital' | 'health-ministry' | 'research' | 'telemedicine' | 'healthtech';
   description: string;
 }
 
@@ -53,18 +48,12 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
     title: 'Bài 1: Digital Health Infrastructure cho Việt Nam',
     description:
       'Phát triển hệ thống y tế số phù hợp với infrastructure và regulations của Việt Nam. Học Electronic Health Records, telemedicine platforms và health data management.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=FscwOyubmmc',
+    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '160 phút',
     medicalField: 'Digital Health Infrastructure',
-    technologies: [
-      'Electronic Health Records',
-      'Telemedicine platforms',
-      'Health APIs',
-      'Data security',
-    ],
+    technologies: ['Electronic Health Records', 'Telemedicine platforms', 'Health APIs', 'Data security'],
     objectives: [
       'Design comprehensive digital health systems cho Vietnamese healthcare',
       'Implement secure Electronic Health Record platforms',
@@ -79,24 +68,17 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
     exercises: [
       {
         title: 'Hospital Management System',
-        description:
-          'Build comprehensive hospital management platform cho Vietnamese private hospital',
+        description: 'Build comprehensive hospital management platform cho Vietnamese private hospital',
         difficulty: 'Trung bình',
-        requirements: [
-          'Database system',
-          'Web framework',
-          'Security protocols',
-        ],
+        requirements: ['Database system', 'Web framework', 'Security protocols'],
         procedure: [
           'Design patient registration system với Vietnamese ID integration',
           'Create appointment scheduling với doctor availability',
           'Implement medical record management với privacy controls',
           'Build billing system với Vietnamese insurance integration',
         ],
-        expectedResults:
-          'Complete hospital management system với all essential features',
-        solution:
-          'Full-stack web application với React frontend và Node.js backend',
+        expectedResults: 'Complete hospital management system với all essential features',
+        solution: 'Full-stack web application với React frontend và Node.js backend',
       },
     ],
     realWorldApplications: [
@@ -109,12 +91,9 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
       {
         title: 'Vinmec Hospital Digital Transformation',
         organization: 'Vinmec International Hospital',
-        problem:
-          'Streamline patient care và improve efficiency across multiple hospital locations',
-        solution:
-          'Comprehensive digital health platform với integrated EHR và telemedicine',
-        impact:
-          '40% reduction in patient wait times, 60% improvement in data accuracy',
+        problem: 'Streamline patient care và improve efficiency across multiple hospital locations',
+        solution: 'Comprehensive digital health platform với integrated EHR và telemedicine',
+        impact: '40% reduction in patient wait times, 60% improvement in data accuracy',
         innovations: [
           'AI-powered diagnostic assistance for radiologists',
           'Mobile app for patient engagement and appointment booking',
@@ -127,8 +106,7 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
         title: 'Vietnam Ministry of Health Digital Health Strategy',
         url: 'https://moh.gov.vn/digital-health',
         type: 'health-ministry',
-        description:
-          'Official government digital health policies và guidelines',
+        description: 'Official government digital health policies và guidelines',
       },
     ],
   },
@@ -137,18 +115,12 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
     title: 'Bài 2: AI Medical Imaging cho Vietnamese Healthcare',
     description:
       'Phát triển AI medical imaging solutions phù hợp với Vietnamese medical practices. Học computer vision cho radiology, pathology và diagnostic assistance.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=aPV3XiczQmI',
+    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '200 phút',
     medicalField: 'AI Medical Imaging',
-    technologies: [
-      'Computer Vision',
-      'Deep Learning',
-      'DICOM processing',
-      'Medical AI',
-    ],
+    technologies: ['Computer Vision', 'Deep Learning', 'DICOM processing', 'Medical AI'],
     objectives: [
       'Develop AI diagnostic tools cho Vietnamese radiologists',
       'Create computer vision models cho medical image analysis',
@@ -163,22 +135,16 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
     exercises: [
       {
         title: 'Chest X-ray Analysis AI',
-        description:
-          'Build AI system để assist Vietnamese radiologists trong chest X-ray diagnosis',
+        description: 'Build AI system để assist Vietnamese radiologists trong chest X-ray diagnosis',
         difficulty: 'Nâng cao',
-        requirements: [
-          'Medical imaging dataset',
-          'Deep learning framework',
-          'DICOM tools',
-        ],
+        requirements: ['Medical imaging dataset', 'Deep learning framework', 'DICOM tools'],
         procedure: [
           'Collect và preprocess Vietnamese chest X-ray dataset',
           'Train deep learning model cho common pathology detection',
           'Create confidence scoring system cho diagnosis assistance',
           'Build web interface cho radiologist workflow integration',
         ],
-        expectedResults:
-          'AI diagnostic assistant với 90%+ accuracy cho common chest pathologies',
+        expectedResults: 'AI diagnostic assistant với 90%+ accuracy cho common chest pathologies',
         solution: 'TensorFlow/PyTorch model với Flask/FastAPI web service',
       },
     ],
@@ -193,8 +159,7 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
         title: 'Bach Mai Hospital AI Radiology Project',
         organization: 'Bach Mai Hospital',
         problem: 'Reduce radiologist workload và improve diagnostic accuracy',
-        solution:
-          'AI-powered chest X-ray analysis system với radiologist workflow integration',
+        solution: 'AI-powered chest X-ray analysis system với radiologist workflow integration',
         impact: '30% faster diagnosis, 95% accuracy in pathology detection',
         innovations: [
           'Custom AI model trained on Vietnamese patient data',
@@ -208,8 +173,7 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
         title: 'Vietnamese Medical AI Research Consortium',
         url: 'https://vn-medai.org',
         type: 'research',
-        description:
-          'Collaborative research initiative cho medical AI development',
+        description: 'Collaborative research initiative cho medical AI development',
       },
     ],
   },

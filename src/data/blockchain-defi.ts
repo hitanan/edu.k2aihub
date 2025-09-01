@@ -46,7 +46,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '200 phút',
     difficulty: 'Trung bình',
     blockchainType: 'Fundamentals',
-    videoUrl: 'https://www.youtube.com/watch?v=pcnB-nSYi_I',
+    videoUrl: 'https://www.youtube.com/watch?v=yubzJw0uiE4',
     objectives: [
       'Master blockchain architecture: blocks, transactions, merkle trees, hashing',
       'Understand cryptographic principles: public-key cryptography, digital signatures',
@@ -62,8 +62,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     exercises: [
       {
         title: 'Build Simple Blockchain từ Scratch',
-        description:
-          'Implement basic blockchain với proof-of-work consensus trong Python.',
+        description: 'Implement basic blockchain với proof-of-work consensus trong Python.',
         difficulty: 'Trung bình',
         technologies: ['Python', 'SHA-256', 'JSON', 'Networking'],
         tools: ['Python IDE', 'Cryptography libraries', 'Network simulation'],
@@ -75,26 +74,15 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Create simple peer-to-peer network simulation',
           'Add transaction validation và digital signature verification',
         ],
-        expectedResults:
-          'Functional blockchain prototype với mining và transaction capabilities',
-        solution:
-          'Modular Python implementation với clear separation of concerns và proper validation',
+        expectedResults: 'Functional blockchain prototype với mining và transaction capabilities',
+        solution: 'Modular Python implementation với clear separation of concerns và proper validation',
       },
       {
         title: 'Cryptocurrency Analysis cho Vietnamese Market',
-        description:
-          'Analyze major cryptocurrencies và their suitability cho Vietnamese financial ecosystem.',
+        description: 'Analyze major cryptocurrencies và their suitability cho Vietnamese financial ecosystem.',
         difficulty: 'Trung bình',
-        technologies: [
-          'Market Analysis',
-          'Economic Modeling',
-          'Regulatory Framework',
-        ],
-        tools: [
-          'Data analysis tools',
-          'Market research platforms',
-          'Vietnamese financial data',
-        ],
+        technologies: ['Market Analysis', 'Economic Modeling', 'Regulatory Framework'],
+        tools: ['Data analysis tools', 'Market research platforms', 'Vietnamese financial data'],
         procedure: [
           'Research Vietnamese regulatory environment cho cryptocurrencies',
           'Analyze Bitcoin, Ethereum, và stablecoin characteristics',
@@ -103,10 +91,8 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Create adoption scenarios cho different Vietnamese demographics',
           'Propose regulatory-compliant implementation strategies',
         ],
-        expectedResults:
-          'Comprehensive analysis của cryptocurrency adoption potential trong Vietnam',
-        solution:
-          'Focus on stablecoins và remittance use cases với phased regulatory compliance approach',
+        expectedResults: 'Comprehensive analysis của cryptocurrency adoption potential trong Vietnam',
+        solution: 'Focus on stablecoins và remittance use cases với phased regulatory compliance approach',
       },
     ],
     realWorldApplications: [
@@ -120,18 +106,10 @@ export const blockchainLessons: BlockchainLesson[] = [
       {
         title: 'Vietnam Central Bank Digital Currency (CBDC) Research',
         organization: 'State Bank of Vietnam',
-        problem:
-          'Explore digital currency options while maintaining monetary policy control',
-        solution:
-          'Research hybrid CBDC model combining centralized control với digital convenience',
-        impact:
-          'Foundation cho future Vietnamese digital currency implementation',
-        technologies: [
-          'CBDC Architecture',
-          'Digital Payments',
-          'Monetary Policy',
-          'Financial Inclusion',
-        ],
+        problem: 'Explore digital currency options while maintaining monetary policy control',
+        solution: 'Research hybrid CBDC model combining centralized control với digital convenience',
+        impact: 'Foundation cho future Vietnamese digital currency implementation',
+        technologies: ['CBDC Architecture', 'Digital Payments', 'Monetary Policy', 'Financial Inclusion'],
       },
     ],
     resources: [
@@ -141,13 +119,7 @@ export const blockchainLessons: BlockchainLesson[] = [
         type: 'Foundational Document',
       },
     ],
-    frameworks: [
-      'Bitcoin',
-      'Ethereum',
-      'Hyperledger',
-      'Cryptography Libraries',
-      'Consensus Algorithms',
-    ],
+    frameworks: ['Bitcoin', 'Ethereum', 'Hyperledger', 'Cryptography Libraries', 'Consensus Algorithms'],
   },
   {
     id: 'smart-contract-development',
@@ -157,7 +129,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '220 phút',
     difficulty: 'Nâng cao',
     blockchainType: 'Smart Contracts',
-    videoUrl: 'https://www.youtube.com/watch?v=wtsJTMJzBOc',
+    videoUrl: 'https://www.youtube.com/watch?v=-1GB6m39-rM',
     objectives: [
       'Master Solidity programming language và smart contract development',
       'Implement common design patterns: proxy, factory, access control',
@@ -173,8 +145,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     exercises: [
       {
         title: 'Vietnamese Remittance Smart Contract System',
-        description:
-          'Build decentralized remittance system cho Vietnamese overseas workers.',
+        description: 'Build decentralized remittance system cho Vietnamese overseas workers.',
         difficulty: 'Nâng cao',
         technologies: ['Solidity', 'Web3.js', 'IPFS', 'Oracle Integration'],
         tools: ['Hardhat', 'MetaMask', 'Remix IDE', 'Testnet deployment'],
@@ -186,15 +157,12 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Implement KYC/AML compliance features',
           'Deploy và test trên Polygon/BSC networks (lower fees)',
         ],
-        expectedResults:
-          'Production-ready remittance dApp với Vietnamese language support',
-        solution:
-          'Layer 2 solution với stablecoin integration và user-friendly Vietnamese interface',
+        expectedResults: 'Production-ready remittance dApp với Vietnamese language support',
+        solution: 'Layer 2 solution với stablecoin integration và user-friendly Vietnamese interface',
       },
       {
         title: 'Agricultural Supply Chain Tracking',
-        description:
-          'Create blockchain system tracking Vietnamese agricultural products từ farm đến consumer.',
+        description: 'Create blockchain system tracking Vietnamese agricultural products từ farm đến consumer.',
         difficulty: 'Nâng cao',
         technologies: ['Solidity', 'IPFS', 'QR Codes', 'IoT Integration'],
         tools: ['Truffle', 'Web3 development stack', 'Mobile app development'],
@@ -206,10 +174,8 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Integrate IoT sensors cho environmental data',
           'Deploy pilot program với Vietnamese agricultural cooperatives',
         ],
-        expectedResults:
-          'Transparent supply chain system improving Vietnamese agricultural exports',
-        solution:
-          'Hybrid on-chain/off-chain architecture với IPFS storage và mobile-first design',
+        expectedResults: 'Transparent supply chain system improving Vietnamese agricultural exports',
+        solution: 'Hybrid on-chain/off-chain architecture với IPFS storage và mobile-first design',
       },
     ],
     realWorldApplications: [
@@ -223,17 +189,10 @@ export const blockchainLessons: BlockchainLesson[] = [
       {
         title: 'VeChain Vietnam Supply Chain Partnership',
         organization: 'VeChain Foundation',
-        problem:
-          'Improve transparency trong Vietnamese manufacturing và exports',
-        solution:
-          'Blockchain-based product authentication và supply chain tracking',
+        problem: 'Improve transparency trong Vietnamese manufacturing và exports',
+        solution: 'Blockchain-based product authentication và supply chain tracking',
         impact: 'Enhanced trust trong Vietnamese products trong global markets',
-        technologies: [
-          'VeChain Blockchain',
-          'IoT Sensors',
-          'Mobile Apps',
-          'QR Authentication',
-        ],
+        technologies: ['VeChain Blockchain', 'IoT Sensors', 'Mobile Apps', 'QR Authentication'],
       },
     ],
     resources: [
@@ -243,14 +202,7 @@ export const blockchainLessons: BlockchainLesson[] = [
         type: 'Technical Documentation',
       },
     ],
-    frameworks: [
-      'Solidity',
-      'Hardhat',
-      'Truffle',
-      'Web3.js',
-      'OpenZeppelin',
-      'IPFS',
-    ],
+    frameworks: ['Solidity', 'Hardhat', 'Truffle', 'Web3.js', 'OpenZeppelin', 'IPFS'],
   },
   {
     id: 'defi-protocols-applications',
@@ -260,7 +212,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '190 phút',
     difficulty: 'Nâng cao',
     blockchainType: 'DeFi',
-    videoUrl: 'https://www.youtube.com/watch?v=GSgxmE5qWOg',
+    videoUrl: 'https://www.youtube.com/watch?v=e9Eg0CmboFU',
     objectives: [
       'Understand DeFi primitives: AMMs, lending/borrowing, derivatives',
       'Analyze yield farming strategies và risk management',
@@ -276,19 +228,10 @@ export const blockchainLessons: BlockchainLesson[] = [
     exercises: [
       {
         title: 'Vietnamese Stablecoin DeFi Platform',
-        description:
-          'Build DeFi platform optimized cho Vietnamese users với VND-pegged stablecoin.',
+        description: 'Build DeFi platform optimized cho Vietnamese users với VND-pegged stablecoin.',
         difficulty: 'Nâng cao',
-        technologies: [
-          'DeFi Protocols',
-          'Stablecoin Design',
-          'AMM Implementation',
-        ],
-        tools: [
-          'DeFi development frameworks',
-          'Price oracles',
-          'Liquidity management',
-        ],
+        technologies: ['DeFi Protocols', 'Stablecoin Design', 'AMM Implementation'],
+        tools: ['DeFi development frameworks', 'Price oracles', 'Liquidity management'],
         procedure: [
           'Design VND-pegged stablecoin với collateral management',
           'Implement automated market maker cho VND/crypto pairs',
@@ -297,26 +240,15 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Integrate Vietnamese banking APIs cho fiat on/off ramps',
           'Implement regulatory compliance features',
         ],
-        expectedResults:
-          'Complete DeFi ecosystem serving Vietnamese financial needs',
-        solution:
-          'Multi-collateral stablecoin với community governance và sustainable yield generation',
+        expectedResults: 'Complete DeFi ecosystem serving Vietnamese financial needs',
+        solution: 'Multi-collateral stablecoin với community governance và sustainable yield generation',
       },
       {
         title: 'Cross-Border Trade Finance DeFi',
-        description:
-          'Create DeFi solution cho Vietnamese import/export trade finance.',
+        description: 'Create DeFi solution cho Vietnamese import/export trade finance.',
         difficulty: 'Nâng cao',
-        technologies: [
-          'Trade Finance',
-          'Multi-chain Protocols',
-          'Institutional DeFi',
-        ],
-        tools: [
-          'Cross-chain bridges',
-          'Trade finance platforms',
-          'Compliance tools',
-        ],
+        technologies: ['Trade Finance', 'Multi-chain Protocols', 'Institutional DeFi'],
+        tools: ['Cross-chain bridges', 'Trade finance platforms', 'Compliance tools'],
         procedure: [
           'Design letter of credit smart contracts',
           'Implement multi-party escrow systems',
@@ -325,10 +257,8 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Integrate với international trade documentation systems',
           'Implement regulatory reporting features',
         ],
-        expectedResults:
-          'Efficient trade finance platform reducing costs và processing time',
-        solution:
-          'Institutional-grade DeFi với compliance features và traditional finance integration',
+        expectedResults: 'Efficient trade finance platform reducing costs và processing time',
+        solution: 'Institutional-grade DeFi với compliance features và traditional finance integration',
       },
     ],
     realWorldApplications: [
@@ -343,15 +273,9 @@ export const blockchainLessons: BlockchainLesson[] = [
         title: 'MDEX Vietnam DeFi Expansion',
         organization: 'MDEX Protocol',
         problem: 'Bring DeFi services to Vietnamese cryptocurrency users',
-        solution:
-          'Localized DeFi platform với Vietnamese language support và local partnerships',
+        solution: 'Localized DeFi platform với Vietnamese language support và local partnerships',
         impact: 'Increased DeFi adoption among Vietnamese crypto community',
-        technologies: [
-          'AMM Protocols',
-          'Yield Farming',
-          'Cross-chain Technology',
-          'Mobile DeFi',
-        ],
+        technologies: ['AMM Protocols', 'Yield Farming', 'Cross-chain Technology', 'Mobile DeFi'],
       },
     ],
     resources: [
@@ -361,14 +285,7 @@ export const blockchainLessons: BlockchainLesson[] = [
         type: 'Market Data Platform',
       },
     ],
-    frameworks: [
-      'Uniswap',
-      'Compound',
-      'Aave',
-      'Curve',
-      'Yearn Finance',
-      'Chainlink Oracles',
-    ],
+    frameworks: ['Uniswap', 'Compound', 'Aave', 'Curve', 'Yearn Finance', 'Chainlink Oracles'],
   },
   {
     id: 'nft-metaverse-development',
@@ -378,7 +295,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '180 phút',
     difficulty: 'Trung bình',
     blockchainType: 'NFT/Metaverse',
-    videoUrl: 'https://www.youtube.com/watch?v=iMHbIPiQS1c',
+    videoUrl: 'https://www.youtube.com/watch?v=NNQLJcJEzv0',
     objectives: [
       'Master NFT standards: ERC-721, ERC-1155, và advanced implementations',
       'Build NFT marketplaces với advanced features',
@@ -394,19 +311,10 @@ export const blockchainLessons: BlockchainLesson[] = [
     exercises: [
       {
         title: 'Vietnamese Cultural Heritage NFT Platform',
-        description:
-          'Create NFT platform preserving Vietnamese cultural artifacts và traditional art.',
+        description: 'Create NFT platform preserving Vietnamese cultural artifacts và traditional art.',
         difficulty: 'Trung bình',
-        technologies: [
-          'NFT Standards',
-          'IPFS Storage',
-          'Cultural Documentation',
-        ],
-        tools: [
-          'NFT development frameworks',
-          'Digital preservation tools',
-          'Metadata standards',
-        ],
+        technologies: ['NFT Standards', 'IPFS Storage', 'Cultural Documentation'],
+        tools: ['NFT development frameworks', 'Digital preservation tools', 'Metadata standards'],
         procedure: [
           'Partner với Vietnamese museums và cultural institutions',
           'Design NFT metadata standards cho cultural artifacts',
@@ -415,22 +323,15 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Build community governance cho cultural preservation decisions',
           'Implement revenue sharing với cultural institutions',
         ],
-        expectedResults:
-          'Comprehensive platform preserving Vietnamese culture trong digital format',
-        solution:
-          'Educational NFT platform với community governance và sustainable funding model',
+        expectedResults: 'Comprehensive platform preserving Vietnamese culture trong digital format',
+        solution: 'Educational NFT platform với community governance và sustainable funding model',
       },
       {
         title: 'Vietnamese Artists NFT Marketplace',
-        description:
-          'Build specialized NFT marketplace supporting Vietnamese artists và creative communities.',
+        description: 'Build specialized NFT marketplace supporting Vietnamese artists và creative communities.',
         difficulty: 'Trung bình',
         technologies: ['NFT Marketplace', 'Artist Tools', 'Community Features'],
-        tools: [
-          'Marketplace development platforms',
-          'Artist creation tools',
-          'Social features',
-        ],
+        tools: ['Marketplace development platforms', 'Artist creation tools', 'Social features'],
         procedure: [
           'Design artist onboarding và verification system',
           'Implement royalty distribution mechanisms',
@@ -439,10 +340,8 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Integrate Vietnamese payment methods',
           'Implement marketing tools cho artist promotion',
         ],
-        expectedResults:
-          'Thriving NFT marketplace supporting Vietnamese creative economy',
-        solution:
-          'Artist-centric marketplace với low fees, community features, và Vietnamese market focus',
+        expectedResults: 'Thriving NFT marketplace supporting Vietnamese creative economy',
+        solution: 'Artist-centric marketplace với low fees, community features, và Vietnamese market focus',
       },
     ],
     realWorldApplications: [
@@ -456,17 +355,10 @@ export const blockchainLessons: BlockchainLesson[] = [
       {
         title: 'TomoChain NFT Ecosystem Development',
         organization: 'TomoChain (Vietnamese Blockchain)',
-        problem:
-          'Build Vietnamese-focused NFT ecosystem với low transaction costs',
-        solution:
-          'Develop comprehensive NFT infrastructure supporting Vietnamese creators',
+        problem: 'Build Vietnamese-focused NFT ecosystem với low transaction costs',
+        solution: 'Develop comprehensive NFT infrastructure supporting Vietnamese creators',
         impact: 'Growing Vietnamese NFT community với local market focus',
-        technologies: [
-          'TomoChain Blockchain',
-          'NFT Standards',
-          'Creator Tools',
-          'Vietnamese Market',
-        ],
+        technologies: ['TomoChain Blockchain', 'NFT Standards', 'Creator Tools', 'Vietnamese Market'],
       },
     ],
     resources: [
@@ -476,14 +368,7 @@ export const blockchainLessons: BlockchainLesson[] = [
         type: 'NFT Platform',
       },
     ],
-    frameworks: [
-      'ERC-721',
-      'ERC-1155',
-      'OpenZeppelin',
-      'IPFS',
-      'Moralis',
-      'Alchemy NFT API',
-    ],
+    frameworks: ['ERC-721', 'ERC-1155', 'OpenZeppelin', 'IPFS', 'Moralis', 'Alchemy NFT API'],
   },
   {
     id: 'regulatory-compliance-security',
@@ -493,7 +378,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     duration: '170 phút',
     difficulty: 'Nâng cao',
     blockchainType: 'Security/Compliance',
-    videoUrl: 'https://www.youtube.com/watch?v=Juan9t1RzhU',
+    videoUrl: 'https://www.youtube.com/watch?v=M_hLYKYFS5w',
     objectives: [
       'Master blockchain security best practices và vulnerability assessment',
       'Understand regulatory frameworks: AML/KYC, securities law, tax implications',
@@ -509,19 +394,10 @@ export const blockchainLessons: BlockchainLesson[] = [
     exercises: [
       {
         title: 'Vietnamese Crypto Exchange Compliance System',
-        description:
-          'Design comprehensive compliance framework cho cryptocurrency exchange operating trong Vietnam.',
+        description: 'Design comprehensive compliance framework cho cryptocurrency exchange operating trong Vietnam.',
         difficulty: 'Nâng cao',
-        technologies: [
-          'Compliance Frameworks',
-          'KYC/AML Systems',
-          'Security Auditing',
-        ],
-        tools: [
-          'Compliance platforms',
-          'Security testing tools',
-          'Regulatory reporting systems',
-        ],
+        technologies: ['Compliance Frameworks', 'KYC/AML Systems', 'Security Auditing'],
+        tools: ['Compliance platforms', 'Security testing tools', 'Regulatory reporting systems'],
         procedure: [
           'Research Vietnamese cryptocurrency regulations và draft laws',
           'Implement KYC/AML verification systems',
@@ -530,26 +406,15 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Implement data protection compliance (Vietnamese data laws)',
           'Design regulatory reporting và audit trail systems',
         ],
-        expectedResults:
-          'Regulatory-compliant exchange framework ready cho Vietnamese market',
-        solution:
-          'Multi-layered compliance system với automated monitoring và regulatory reporting',
+        expectedResults: 'Regulatory-compliant exchange framework ready cho Vietnamese market',
+        solution: 'Multi-layered compliance system với automated monitoring và regulatory reporting',
       },
       {
         title: 'Smart Contract Security Audit Framework',
-        description:
-          'Create comprehensive security audit process cho Vietnamese blockchain projects.',
+        description: 'Create comprehensive security audit process cho Vietnamese blockchain projects.',
         difficulty: 'Nâng cao',
-        technologies: [
-          'Security Auditing',
-          'Vulnerability Assessment',
-          'Testing Frameworks',
-        ],
-        tools: [
-          'Static analysis tools',
-          'Fuzzing frameworks',
-          'Formal verification',
-        ],
+        technologies: ['Security Auditing', 'Vulnerability Assessment', 'Testing Frameworks'],
+        tools: ['Static analysis tools', 'Fuzzing frameworks', 'Formal verification'],
         procedure: [
           'Develop automated vulnerability scanning tools',
           'Create manual code review checklists',
@@ -558,10 +423,8 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Create incident response procedures',
           'Build security training programs cho Vietnamese developers',
         ],
-        expectedResults:
-          'Industry-standard security audit framework cho Vietnamese blockchain ecosystem',
-        solution:
-          'Comprehensive security framework với Vietnamese regulatory compliance integration',
+        expectedResults: 'Industry-standard security audit framework cho Vietnamese blockchain ecosystem',
+        solution: 'Comprehensive security framework với Vietnamese regulatory compliance integration',
       },
     ],
     realWorldApplications: [
@@ -575,17 +438,10 @@ export const blockchainLessons: BlockchainLesson[] = [
       {
         title: 'Vietnamese Blockchain Association Security Standards',
         organization: 'Vietnam Blockchain Association',
-        problem:
-          'Establish security và compliance standards cho Vietnamese blockchain industry',
+        problem: 'Establish security và compliance standards cho Vietnamese blockchain industry',
         solution: 'Develop industry-wide security frameworks và best practices',
-        impact:
-          'Improved security posture across Vietnamese blockchain ecosystem',
-        technologies: [
-          'Security Standards',
-          'Industry Guidelines',
-          'Best Practices',
-          'Regulatory Framework',
-        ],
+        impact: 'Improved security posture across Vietnamese blockchain ecosystem',
+        technologies: ['Security Standards', 'Industry Guidelines', 'Best Practices', 'Regulatory Framework'],
       },
     ],
     resources: [
@@ -595,13 +451,6 @@ export const blockchainLessons: BlockchainLesson[] = [
         type: 'Security Guidelines',
       },
     ],
-    frameworks: [
-      'MythX',
-      'Slither',
-      'Echidna',
-      'Certora',
-      'OpenZeppelin Security',
-      'Chainlink Security',
-    ],
+    frameworks: ['MythX', 'Slither', 'Echidna', 'Certora', 'OpenZeppelin Security', 'Chainlink Security'],
   },
 ];

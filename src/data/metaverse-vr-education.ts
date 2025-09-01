@@ -23,12 +23,12 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Phân biệt VR, AR, MR và các ứng dụng',
       'Sử dụng cơ bản VR headset và navigation',
       'Tạo avatar và tương tác trong môi trường VR',
-      'Nhận biết cơ hội nghề nghiệp trong lĩnh vực này'
+      'Nhận biết cơ hội nghề nghiệp trong lĩnh vực này',
     ],
     prerequisites: [
       'Kiến thức cơ bản về internet và technology',
       'Hiểu biết về social media và gaming',
-      'Không cần kinh nghiệm VR trước đó'
+      'Không cần kinh nghiệm VR trước đó',
     ],
     exercises: [
       {
@@ -42,10 +42,10 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Tạo tài khoản và avatar cá nhân',
           'Tham gia một virtual room công cộng',
           'Thực hành di chuyển và tương tác cơ bản',
-          'Tham gia một virtual classroom hoặc museum tour'
+          'Tham gia một virtual classroom hoặc museum tour',
         ],
         expectedResults: 'Có thể navigation và tương tác cơ bản trong môi trường VR',
-        solution: 'Hướng dẫn chi tiết setup và troubleshooting các vấn đề thường gặp'
+        solution: 'Hướng dẫn chi tiết setup và troubleshooting các vấn đề thường gặp',
       },
       {
         title: 'Tạo Virtual Learning Space',
@@ -58,11 +58,11 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Thêm 3D objects và educational materials',
           'Thiết lập lighting và environment',
           'Invite friends để test collaboration',
-          'Customization với branded elements'
+          'Customization với branded elements',
         ],
         expectedResults: 'Tạo được một virtual classroom có thể chia sẻ và sử dụng',
-        solution: 'Template và best practices cho virtual learning space design'
-      }
+        solution: 'Template và best practices cho virtual learning space design',
+      },
     ],
     realWorldApplications: [
       'Virtual classrooms cho remote learning hiệu quả hơn',
@@ -71,7 +71,7 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Historical recreations cho history education',
       'Language learning với immersive environments',
       'Soft skills training và presentation practice',
-      'Virtual field trips đến những nơi không thể đến được'
+      'Virtual field trips đến những nơi không thể đến được',
     ],
     caseStudies: [
       {
@@ -80,7 +80,12 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Đào tạo nhân viên retail và customer service hiệu quả',
         solution: 'Phát triển VR training modules cho các tình huống customer interaction',
         impact: 'Giảm 40% thời gian training, tăng 60% retention rate',
-        innovations: ['Realistic customer scenarios', 'Multi-language support', 'Performance analytics', 'Gamification elements']
+        innovations: [
+          'Realistic customer scenarios',
+          'Multi-language support',
+          'Performance analytics',
+          'Gamification elements',
+        ],
       },
       {
         title: 'Stanford Virtual Heart Program',
@@ -88,26 +93,31 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Medical students cần hiểu cấu trúc tim 3D phức tạp',
         solution: 'VR application cho phép students "đi vào" tim và khám phá chi tiết',
         impact: 'Tăng 90% comprehension rate, giảm 50% study time',
-        innovations: ['Interactive 3D anatomy', 'Real patient data integration', 'Collaborative learning', 'Assessment tools']
-      }
+        innovations: [
+          'Interactive 3D anatomy',
+          'Real patient data integration',
+          'Collaborative learning',
+          'Assessment tools',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Meta for Education - VR Learning Resources',
         url: 'https://about.meta.com/realitylabs/education/',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Mozilla Hubs Creator Guide',
         url: 'https://hubs.mozilla.com/docs/creators-guide.html',
-        type: 'Tutorial'
+        type: 'Tutorial',
       },
       {
         title: 'Unity VR Development Fundamentals',
         url: 'https://learn.unity.com/course/vr-development-fundamentals',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'vr-content-creation',
@@ -125,12 +135,12 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Sử dụng Unity hoặc A-Frame để tạo VR applications',
       'Tối ưu hóa performance cho VR experiences',
       'Tạo interactive elements và gamification',
-      'Deploy VR content lên các platforms khác nhau'
+      'Deploy VR content lên các platforms khác nhau',
     ],
     prerequisites: [
       'Hoàn thành khóa "Cơ Bản Về Metaverse và Thực Tế Ảo"',
       'Kiến thức cơ bản về 3D design hoặc game development',
-      'Hiểu biết về user experience principles'
+      'Hiểu biết về user experience principles',
     ],
     exercises: [
       {
@@ -146,10 +156,10 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Add atmospheric elements (lighting, sound)',
           'Build và test trên VR headset',
           'Optimize performance và fix issues',
-          'Deploy lên WebXR hoặc app stores'
+          'Deploy lên WebXR hoặc app stores',
         ],
         expectedResults: 'Một virtual museum hoàn chỉnh có thể chia sẻ và trải nghiệm',
-        solution: 'Step-by-step Unity tutorial với pre-made assets và templates'
+        solution: 'Step-by-step Unity tutorial với pre-made assets và templates',
       },
       {
         title: 'VR Chemistry Lab Simulation',
@@ -164,11 +174,11 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Add safety warnings và educational content',
           'Build assessment và progress tracking',
           'User testing với students và teachers',
-          'Iterate based on feedback'
+          'Iterate based on feedback',
         ],
         expectedResults: 'VR chemistry lab với ít nhất 3 experiments hoàn chỉnh',
-        solution: 'Advanced Unity scripting examples và chemistry simulation frameworks'
-      }
+        solution: 'Advanced Unity scripting examples và chemistry simulation frameworks',
+      },
     ],
     realWorldApplications: [
       'Educational institutions creating immersive learning experiences',
@@ -177,7 +187,7 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Engineering và architecture collaborative design',
       'Tourism và cultural heritage preservation',
       'Language immersion environments',
-      'Special needs education với customizable interfaces'
+      'Special needs education với customizable interfaces',
     ],
     caseStudies: [
       {
@@ -186,7 +196,12 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Limited physical space và accessibility for international visitors',
         solution: 'Comprehensive VR tours of Vietnamese historical artifacts và exhibits',
         impact: '300% increase in virtual visitors, enhanced educational outcomes',
-        innovations: ['Multi-language narration', '360-degree artifact viewing', 'AR overlay information', 'Interactive timelines']
+        innovations: [
+          'Multi-language narration',
+          '360-degree artifact viewing',
+          'AR overlay information',
+          'Interactive timelines',
+        ],
       },
       {
         title: 'FPT University VR Campus',
@@ -194,26 +209,31 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Remote students missing campus experience và practical labs',
         solution: 'Virtual campus với interactive labs, library, và social spaces',
         impact: 'Improved student engagement và retention in online programs',
-        innovations: ['Real-time collaboration tools', 'Virtual lab equipment', 'AI-powered tutors', 'Performance analytics']
-      }
+        innovations: [
+          'Real-time collaboration tools',
+          'Virtual lab equipment',
+          'AI-powered tutors',
+          'Performance analytics',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Unity Learn VR Creator Kit',
         url: 'https://learn.unity.com/project/vr-creator-kit',
-        type: 'Tutorial'
+        type: 'Tutorial',
       },
       {
         title: 'A-Frame School - WebVR Development',
         url: 'https://aframe.io/aframe-school/',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Google Poly - Free 3D Assets',
         url: 'https://poly.google.com/',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'ar-mobile-applications',
@@ -231,12 +251,12 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Phát triển AR apps sử dụng ARCore/ARKit',
       'Tạo interactive 3D content với marker-based và markerless AR',
       'Implement image recognition và object tracking',
-      'Design intuitive AR user interfaces'
+      'Design intuitive AR user interfaces',
     ],
     prerequisites: [
       'Kiến thức basic mobile app development (iOS hoặc Android)',
       'Hiểu biết về 3D graphics và Unity (preferred)',
-      'Experience với smartphone photography và basic design'
+      'Experience với smartphone photography và basic design',
     ],
     exercises: [
       {
@@ -252,10 +272,10 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Implement UI cho information display',
           'Add audio narration và interactive elements',
           'Test tại real-world locations',
-          'Optimize performance cho different devices'
+          'Optimize performance cho different devices',
         ],
         expectedResults: 'AR app hoạt động tại ít nhất 3 historical sites',
-        solution: 'Complete Unity project với location services integration'
+        solution: 'Complete Unity project với location services integration',
       },
       {
         title: 'AR Science Textbook',
@@ -270,11 +290,11 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Implement image recognition với robust tracking',
           'Add interactive experiments và quizzes',
           'Create teacher dashboard cho progress tracking',
-          'User testing với students và educators'
+          'User testing với students và educators',
         ],
         expectedResults: 'AR-enhanced textbook với interactive science content',
-        solution: 'Vuforia implementation guide với educational best practices'
-      }
+        solution: 'Vuforia implementation guide với educational best practices',
+      },
     ],
     realWorldApplications: [
       'Interactive textbooks và educational materials',
@@ -283,16 +303,21 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Medical education với anatomy visualization',
       'Architecture visualization tại construction sites',
       'Tourism apps với historical reconstruction',
-      'Retail applications với product try-before-buy'
+      'Retail applications với product try-before-buy',
     ],
     caseStudies: [
       {
         title: 'Saigon Notre-Dame Cathedral AR Guide',
         organization: 'Ho Chi Minh City Tourism Department',
         problem: 'Tourists lacking historical context visiting landmarks',
-        solution: 'AR mobile app showing cathedral\'s history và architectural details',
+        solution: "AR mobile app showing cathedral's history và architectural details",
         impact: 'Enhanced visitor experience, increased tourism engagement',
-        innovations: ['Multi-language support', 'Historical reconstruction overlay', 'Interactive timeline', 'Social sharing features']
+        innovations: [
+          'Multi-language support',
+          'Historical reconstruction overlay',
+          'Interactive timeline',
+          'Social sharing features',
+        ],
       },
       {
         title: 'VinMec AR Medical Training',
@@ -300,26 +325,31 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Medical students needing hands-on anatomy practice',
         solution: 'AR app overlaying detailed anatomy on mannequins và real patients',
         impact: 'Improved learning outcomes, reduced training costs',
-        innovations: ['Real-time anatomy overlay', 'Interactive quizzes', 'Progress tracking', 'Multi-user collaboration']
-      }
+        innovations: [
+          'Real-time anatomy overlay',
+          'Interactive quizzes',
+          'Progress tracking',
+          'Multi-user collaboration',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Google ARCore Development Guide',
         url: 'https://developers.google.com/ar',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Apple ARKit Documentation',
         url: 'https://developer.apple.com/arkit/',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Vuforia Developer Portal',
         url: 'https://developer.vuforia.com/',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'social-vr-collaboration',
@@ -337,12 +367,12 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Facilitate collaborative learning experiences trong VR',
       'Manage virtual teams và remote collaboration',
       'Create inclusive và accessible virtual environments',
-      'Understand social dynamics in virtual spaces'
+      'Understand social dynamics in virtual spaces',
     ],
     prerequisites: [
       'Experience với VR platforms và basic navigation',
       'Understanding của online collaboration tools',
-      'Basic knowledge về educational psychology'
+      'Basic knowledge về educational psychology',
     ],
     exercises: [
       {
@@ -358,10 +388,10 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Implement progress tracking và accountability',
           'Add breakout rooms cho individual work',
           'Test với real study groups',
-          'Gather feedback và iterate design'
+          'Gather feedback và iterate design',
         ],
         expectedResults: 'Functional virtual study space supporting 6-8 students',
-        solution: 'Mozilla Hubs configuration guide với educational best practices'
+        solution: 'Mozilla Hubs configuration guide với educational best practices',
       },
       {
         title: 'Cross-Cultural VR Exchange Program',
@@ -376,11 +406,11 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Develop assessment criteria cho cultural competency',
           'Plan regular exchange sessions với different themes',
           'Document learning outcomes và student feedback',
-          'Scale program based on initial pilot results'
+          'Scale program based on initial pilot results',
         ],
         expectedResults: 'Successful cultural exchange program với measurable learning outcomes',
-        solution: 'Program framework với partner school integration guidelines'
-      }
+        solution: 'Program framework với partner school integration guidelines',
+      },
     ],
     realWorldApplications: [
       'Remote education delivery cho rural Vietnamese schools',
@@ -389,7 +419,7 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Medical consultation và collaborative diagnosis',
       'Design thinking workshops với cross-functional teams',
       'Accessibility-focused education cho students với disabilities',
-      'Professional development workshops cho teachers'
+      'Professional development workshops cho teachers',
     ],
     caseStudies: [
       {
@@ -398,7 +428,12 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Limited budget cho physical student exchange programs',
         solution: 'Monthly VR meetings between Vietnamese và American students',
         impact: 'Cost reduction 95%, participation increase 400%',
-        innovations: ['Real-time translation', 'Cultural artifact sharing', 'Joint project spaces', 'Mentorship programs']
+        innovations: [
+          'Real-time translation',
+          'Cultural artifact sharing',
+          'Joint project spaces',
+          'Mentorship programs',
+        ],
       },
       {
         title: 'Rural School VR Classroom Network',
@@ -406,26 +441,31 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Teacher shortage in remote areas, limited resources',
         solution: 'Network of VR classrooms connecting rural students với expert teachers',
         impact: 'Improved test scores, reduced educational inequality',
-        innovations: ['Mobile VR labs', 'Satellite internet integration', 'Local language support', 'Community involvement']
-      }
+        innovations: [
+          'Mobile VR labs',
+          'Satellite internet integration',
+          'Local language support',
+          'Community involvement',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Mozilla Hubs Educator Guide',
         url: 'https://hubs.mozilla.com/docs/educators-guide.html',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'VRChat World Creation Tutorial',
         url: 'https://docs.vrchat.com/docs/creating-your-first-world',
-        type: 'Tutorial'
+        type: 'Tutorial',
       },
       {
         title: 'Spatial for Education',
         url: 'https://spatial.io/education',
-        type: 'Tool'
-      }
-    ]
+        type: 'Tool',
+      },
+    ],
   },
   {
     id: 'metaverse-business-economics',
@@ -436,19 +476,19 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
     technologyLevel: 'Business-focused',
     tools: ['OpenSea', 'The Sandbox', 'Decentraland', 'Roblox Creator Studio', 'Crypto wallets'],
     headsetCompatibility: ['Desktop web browsers', 'Mobile devices', 'VR optional'],
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: '/images/metaverse-business-economics.jpg',
     objectives: [
       'Hiểu virtual economy principles và tokenomics',
       'Explore career opportunities trong Metaverse industry',
       'Learn về NFTs, virtual assets, và digital ownership',
       'Understand virtual real estate investment strategies',
-      'Develop business models cho Metaverse ventures'
+      'Develop business models cho Metaverse ventures',
     ],
     prerequisites: [
       'Basic understanding về cryptocurrency và blockchain',
       'Interest in business và entrepreneurship',
-      'Completed foundational Metaverse courses'
+      'Completed foundational Metaverse courses',
     ],
     exercises: [
       {
@@ -464,10 +504,10 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Design go-to-market strategy',
           'Create financial projections cho 3 years',
           'Present business plan to peers và mentors',
-          'Refine based on feedback và market validation'
+          'Refine based on feedback và market validation',
         ],
         expectedResults: 'Comprehensive business plan ready cho implementation or investment',
-        solution: 'Business plan template with Metaverse-specific considerations'
+        solution: 'Business plan template with Metaverse-specific considerations',
       },
       {
         title: 'NFT Educational Content Creation',
@@ -482,11 +522,11 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
           'Set up crypto wallet và marketplace accounts',
           'Launch collection với proper marketing strategy',
           'Engage với community và collectors',
-          'Analyze sales data và community feedback'
+          'Analyze sales data và community feedback',
         ],
         expectedResults: 'Live NFT collection với measurable impact và revenue',
-        solution: 'Step-by-step NFT creation và marketing playbook'
-      }
+        solution: 'Step-by-step NFT creation và marketing playbook',
+      },
     ],
     realWorldApplications: [
       'Virtual event planning và conference management',
@@ -495,7 +535,7 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
       'Virtual real estate development và management',
       'Cryptocurrency và DeFi financial services',
       'Virtual fashion và digital asset design',
-      'Consulting services cho businesses entering Metaverse'
+      'Consulting services cho businesses entering Metaverse',
     ],
     caseStudies: [
       {
@@ -504,7 +544,12 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Connect urban consumers với agricultural processes',
         solution: 'Interactive virtual farm in The Sandbox showcasing dairy production',
         impact: 'Increased brand awareness, educational value, new revenue stream',
-        innovations: ['Gamified farming experience', 'Educational content integration', 'Virtual product sampling', 'NFT collectibles']
+        innovations: [
+          'Gamified farming experience',
+          'Educational content integration',
+          'Virtual product sampling',
+          'NFT collectibles',
+        ],
       },
       {
         title: 'Vietnam Tourism NFT Collection',
@@ -512,25 +557,30 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
         problem: 'Promote Vietnamese tourism during COVID-19 restrictions',
         solution: 'NFT collection featuring iconic Vietnamese landmarks and culture',
         impact: 'Global awareness increase, new revenue source, digital asset creation',
-        innovations: ['AR-enabled NFTs', 'Real-world redemption benefits', 'Cultural storytelling', 'International partnerships']
-      }
+        innovations: [
+          'AR-enabled NFTs',
+          'Real-world redemption benefits',
+          'Cultural storytelling',
+          'International partnerships',
+        ],
+      },
     ],
     resources: [
       {
         title: 'The Sandbox Creator Fund',
         url: 'https://www.sandbox.game/en/create/',
-        type: 'Tool'
+        type: 'Tool',
       },
       {
         title: 'OpenSea Creator Guides',
         url: 'https://support.opensea.io/hc/en-us/sections/4405072111763-Creator-Tools',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
         title: 'Metaverse Business Models Report',
         url: 'https://www.jpmorgan.com/content/dam/jpm/treasury-services/documents/opportunities-in-the-metaverse.pdf',
-        type: 'Reference'
-      }
-    ]
-  }
+        type: 'Reference',
+      },
+    ],
+  },
 ];

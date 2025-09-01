@@ -29,14 +29,7 @@ interface Exercise {
 interface Resource {
   title: string;
   url: string;
-  type:
-    | 'research'
-    | 'database'
-    | 'tool'
-    | 'journal'
-    | 'protocol'
-    | 'software'
-    | 'documentation';
+  type: 'research' | 'database' | 'tool' | 'journal' | 'protocol' | 'software' | 'documentation';
   description: string;
 }
 
@@ -55,9 +48,8 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
     title: 'Bài 1: Biotechnology Fundamentals & Genetic Engineering',
     description:
       'Khám phá biotechnology cơ bản, genetic engineering techniques, DNA manipulation, gene editing với CRISPR. Học molecular biology fundamentals và bioethics.',
-    videoUrl: 'https://www.youtube.com/watch?v=jAhjPd4uNFY',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=RrTCjp2015M',
+    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '150 phút',
     biotechField: 'Genetic Engineering',
@@ -66,13 +58,13 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
       'Master genetic engineering principles và molecular biology techniques',
       'Learn CRISPR gene editing technology và its revolutionary applications',
       'Explore bioethics, safety protocols, và regulatory frameworks',
-      'Apply genetic modification techniques cho real-world problem solving'
+      'Apply genetic modification techniques cho real-world problem solving',
     ],
     prerequisites: [
       'Basic biology knowledge (DNA, RNA, proteins)',
       'Understanding của cellular biology',
       'High school chemistry concepts',
-      'Scientific method và laboratory safety awareness'
+      'Scientific method và laboratory safety awareness',
     ],
     labTechniques: [
       'PCR (Polymerase Chain Reaction)',
@@ -80,12 +72,11 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
       'DNA Extraction và Purification',
       'Transformation trong E. coli',
       'CRISPR-Cas9 Gene Editing',
-      'Protein Expression và Purification'
+      'Protein Expression và Purification',
     ],
     exercises: [
       {
-        title:
-          'CRISPR Gene Editing Virtual Lab - Engineering Insulin Production',
+        title: 'CRISPR Gene Editing Virtual Lab - Engineering Insulin Production',
         description:
           'Design và execute complete CRISPR gene editing experiment để enhance insulin production trong bacterial cells, covering target design, guide RNA creation, và therapeutic applications',
         difficulty: 'Nâng cao',
@@ -97,7 +88,7 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
           'Human insulin gene (optimized)',
           'PCR reagents và primers',
           'Restriction enzymes và DNA ligase',
-          'Protein purification equipment'
+          'Protein purification equipment',
         ],
         procedure: [
           'Design guide RNAs cho target site selection',
@@ -105,33 +96,32 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
           'Transform bacteria với CRISPR system',
           'Screen cho successful gene integration',
           'Optimize protein expression conditions',
-          'Purify insulin protein và test activity'
+          'Purify insulin protein và test activity',
         ],
         expectedResults:
-          'Successfully engineered E. coli producing functional human insulin at 150+ mg/L với 95% biological activity compared to commercial insulin'
-      }
+          'Successfully engineered E. coli producing functional human insulin at 150+ mg/L với 95% biological activity compared to commercial insulin',
+      },
     ],
     realWorldApplications: [
       'Pharmaceutical protein production (insulin, growth hormones, vaccines)',
       'Agricultural biotechnology và crop improvement',
       'Medical research và drug discovery',
       'Biofuel production và environmental cleanup',
-      'Industrial enzyme production và optimization'
+      'Industrial enzyme production và optimization',
     ],
     resources: [
       {
         title: 'NCBI Biotechnology Information',
         url: 'https://www.ncbi.nlm.nih.gov/guide/',
         type: 'database',
-        description:
-          'Comprehensive molecular biology database với genetic sequences và research tools'
+        description: 'Comprehensive molecular biology database với genetic sequences và research tools',
       },
       {
         title: 'CRISPR Design Tools',
         url: 'https://crispr.mit.edu/',
         type: 'tool',
-        description: 'Web-based CRISPR guide RNA design và off-target analysis'
-      }
+        description: 'Web-based CRISPR guide RNA design và off-target analysis',
+      },
     ],
     caseStudies: [
       {
@@ -148,19 +138,18 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
           'Established biotechnology industry business model',
           'Advanced protein expression và purification techniques',
           'Scaled bacterial fermentation cho pharmaceutical production',
-          'Created regulatory pathway cho biotech therapeutics'
-        ]
-      }
-    ]
+          'Created regulatory pathway cho biotech therapeutics',
+        ],
+      },
+    ],
   },
   {
     id: 'medical-biotechnology-drug-discovery',
     title: 'Bài 2: Medical Biotechnology & Drug Discovery Pipeline',
     description:
       'Explore medical biotechnology applications, drug discovery processes, clinical trials, personalized medicine. Learn bioinformatics, molecular diagnostics, và therapeutic development.',
-    videoUrl: 'https://www.youtube.com/watch?v=J79VQdIpTlE',
-    imageUrl:
-      'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=5xNjmUa9zw0',
+    imageUrl: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '180 phút',
     biotechField: 'Medical Biotechnology',
@@ -169,13 +158,13 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
       'Master bioinformatics tools cho genomic analysis và drug design',
       'Learn personalized medicine approaches và precision therapeutics',
       'Explore clinical trial design, regulatory requirements, và approval processes',
-      'Apply biotechnology cho disease diagnosis và treatment development'
+      'Apply biotechnology cho disease diagnosis và treatment development',
     ],
     prerequisites: [
       'Molecular biology fundamentals',
       'Understanding của genetics và genomics',
       'Basic pharmacology concepts',
-      'Statistical analysis knowledge'
+      'Statistical analysis knowledge',
     ],
     labTechniques: [
       'High-Throughput Screening (HTS)',
@@ -183,12 +172,11 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
       'Protein Crystallography',
       'Cell Culture và Tissue Engineering',
       'Biomarker Discovery',
-      'Clinical Trial Data Analysis'
+      'Clinical Trial Data Analysis',
     ],
     exercises: [
       {
-        title:
-          'Complete Drug Discovery Project - Cancer Immunotherapy Development',
+        title: 'Complete Drug Discovery Project - Cancer Immunotherapy Development',
         description:
           'Execute end-to-end drug discovery pipeline cho novel cancer immunotherapy, including target validation, compound screening, preclinical testing, và clinical trial design',
         difficulty: 'Chuyên gia',
@@ -200,7 +188,7 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
           'Cell culture facilities',
           'Animal testing facilities',
           'Clinical trial infrastructure',
-          'Regulatory submission systems'
+          'Regulatory submission systems',
         ],
         procedure: [
           'Identify và validate therapeutic target using genomics',
@@ -208,39 +196,36 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
           'Optimize lead compounds cho drug-like properties',
           'Conduct preclinical efficacy và safety studies',
           'Design và execute clinical trials',
-          'Prepare regulatory submissions cho approval'
+          'Prepare regulatory submissions cho approval',
         ],
         expectedResults:
-          'Novel cancer immunotherapy với demonstrated efficacy trong clinical trials, regulatory approval pathway, và commercial potential exceeding $2B annually'
-      }
+          'Novel cancer immunotherapy với demonstrated efficacy trong clinical trials, regulatory approval pathway, và commercial potential exceeding $2B annually',
+      },
     ],
     realWorldApplications: [
       'Cancer immunotherapy và targeted therapy development',
       'Personalized medicine và precision diagnostic platforms',
       'Rare disease therapeutic development',
       'Vaccine development và infectious disease prevention',
-      'Regenerative medicine và tissue engineering applications'
+      'Regenerative medicine và tissue engineering applications',
     ],
     resources: [
       {
         title: 'ClinicalTrials.gov Database',
         url: 'https://clinicaltrials.gov/',
         type: 'database',
-        description:
-          'Comprehensive clinical trial registry với study protocols và results'
+        description: 'Comprehensive clinical trial registry với study protocols và results',
       },
       {
         title: 'FDA Drug Development Guidelines',
         url: 'https://www.fda.gov/drugs/development-approval-process-drugs',
         type: 'documentation',
-        description:
-          'Official FDA guidance documents cho drug development và approval'
-      }
+        description: 'Official FDA guidance documents cho drug development và approval',
+      },
     ],
     caseStudies: [
       {
-        title:
-          'Genentech/Roche Herceptin Development: Precision Medicine Pioneer',
+        title: 'Genentech/Roche Herceptin Development: Precision Medicine Pioneer',
         organization: 'Genentech/Roche, Academic Medical Centers',
         problem:
           'HER2-positive breast cancer patients had aggressive disease với poor prognosis, limited treatment options beyond chemotherapy. 20-25% của breast cancers overexpress HER2 protein, driving tumor growth và metastasis.',
@@ -253,9 +238,9 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
           'Companion diagnostic development model',
           'Biomarker-stratified clinical trial design',
           'Personalized medicine commercial framework',
-          'Antibody-drug conjugate platform technology'
-        ]
-      }
-    ]
-  }
+          'Antibody-drug conjugate platform technology',
+        ],
+      },
+    ],
+  },
 ];

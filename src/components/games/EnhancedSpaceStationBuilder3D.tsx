@@ -7,7 +7,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 import { useGameStore } from '@/utils/gameStore';
-import { Trash2, RotateCcw, Save } from 'lucide-react';
+import { RotateCcw, Save } from 'lucide-react';
 
 // Space station module types
 const STATION_MODULES = [
@@ -40,7 +40,6 @@ interface StationModule {
 function EnhancedStationModule({
   position,
   module,
-  stationModule,
   onSelect,
   onDrag,
   onDelete,
@@ -49,7 +48,6 @@ function EnhancedStationModule({
 }: {
   position: [number, number, number];
   module: (typeof STATION_MODULES)[0];
-  stationModule: StationModule;
   onSelect: () => void;
   onDrag: (newPosition: [number, number, number]) => void;
   onDelete: () => void;
@@ -165,26 +163,26 @@ function Earth() {
     gradient.addColorStop(0.5, '#22c55e'); // Land green
     gradient.addColorStop(0.7, '#f59e0b'); // Desert yellow
     gradient.addColorStop(1, '#ffffff'); // Ice white (polar)
-    
+
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 512, 256);
 
     // Add continent-like shapes
     ctx.fillStyle = '#166534'; // Darker green for continents
-    
+
     // Simplified continent shapes
     const continents = [
       // Europe/Africa-like
       { x: 120, y: 80, width: 60, height: 100 },
-      // Asia-like  
+      // Asia-like
       { x: 200, y: 60, width: 100, height: 80 },
       // Americas-like
       { x: 350, y: 70, width: 40, height: 120 },
       // Australia-like
-      { x: 280, y: 140, width: 30, height: 25 }
+      { x: 280, y: 140, width: 30, height: 25 },
     ];
 
-    continents.forEach(continent => {
+    continents.forEach((continent) => {
       ctx.beginPath();
       ctx.roundRect(continent.x, continent.y, continent.width, continent.height, 10);
       ctx.fill();
@@ -208,10 +206,10 @@ function Earth() {
     <group position={[0, -50, 0]}>
       <mesh ref={meshRef}>
         <sphereGeometry args={[15, 64, 32]} />
-        <meshStandardMaterial 
+        <meshStandardMaterial
           map={earthTexture}
           color="#ffffff"
-          emissive="#001122" 
+          emissive="#001122"
           emissiveIntensity={0.1}
           roughness={0.8}
           metalness={0.1}
@@ -220,12 +218,7 @@ function Earth() {
       {/* Atmosphere glow effect */}
       <mesh scale={[1.05, 1.05, 1.05]}>
         <sphereGeometry args={[15, 32, 16]} />
-        <meshBasicMaterial 
-          color="#4da6ff" 
-          transparent 
-          opacity={0.15}
-          side={THREE.BackSide}
-        />
+        <meshBasicMaterial color="#4da6ff" transparent opacity={0.15} side={THREE.BackSide} />
       </mesh>
     </group>
   );
@@ -374,17 +367,17 @@ interface EnhancedSpaceStationBuilder3DProps {
   onRestart?: () => void;
 }
 
-export default function EnhancedSpaceStationBuilder3D({ 
-  onComplete, 
-  timeLeft: gameTimeLeft, 
-  onRestart 
+export default function EnhancedSpaceStationBuilder3D({
+  // onComplete,
+  // timeLeft: gameTimeLeft,
+  // onRestart
 }: EnhancedSpaceStationBuilder3DProps = {}) {
   const { spaceStation, setSpaceStationState, resetSpaceStation } = useGameStore();
 
   // Local state
   const [selectedModuleType, setSelectedModuleType] = useState<string | null>(null);
   const [selectedModuleId, setSelectedModuleId] = useState<string | null>(null);
-  const [draggedModuleId, setDraggedModuleId] = useState<string | null>(null);
+  // const [draggedModuleId, setDraggedModuleId] = useState<string | null>(null);
   const [gameTime, setGameTime] = useState(0);
 
   // Initialize from store
@@ -565,12 +558,11 @@ export default function EnhancedSpaceStationBuilder3D({
               key={stationModule.id}
               position={stationModule.position}
               module={moduleType}
-              stationModule={stationModule}
               onSelect={() => setSelectedModuleId(stationModule.id)}
               onDrag={(newPos) => dragModule(stationModule.id, newPos)}
               onDelete={() => deleteModule(stationModule.id)}
               isSelected={selectedModuleId === stationModule.id}
-              isDragging={draggedModuleId === stationModule.id}
+              isDragging={false}
             />
           );
         })}

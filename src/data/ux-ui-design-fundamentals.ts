@@ -20,24 +20,21 @@ export const uxuiDesignLessons: UXUILessonType[] = [
     description: 'Tìm hiểu nguyên lý cốt lõi của User Experience Design, từ user research đến interaction design.',
     duration: '150 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=Ovj4hFxko7c', // What is UX Design
+    videoUrl: 'https://www.youtube.com/watch?v=BoE9r31oGak', // What is UX Design
     imageUrl: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu về UX Design là gì và tại sao quan trọng',
       'Nắm vững user-centered design process',
       'Học các phương pháp user research cơ bản',
-      'Áp dụng UX principles vào design decisions'
+      'Áp dụng UX principles vào design decisions',
     ],
-    prerequisites: [
-      'Không có yêu cầu kỹ thuật đặc biệt',
-      'Có sự quan tâm đến user experience'
-    ],
+    prerequisites: ['Không có yêu cầu kỹ thuật đặc biệt', 'Có sự quan tâm đến user experience'],
     designPrinciples: [
       'User-Centered Design',
       'Usability Heuristics',
       'Accessibility Guidelines (WCAG)',
       'Information Architecture',
-      'Interaction Design Principles'
+      'Interaction Design Principles',
     ],
     userResearchMethods: [
       'User Interviews',
@@ -45,7 +42,7 @@ export const uxuiDesignLessons: UXUILessonType[] = [
       'User Personas',
       'User Journey Mapping',
       'Usability Testing',
-      'A/B Testing'
+      'A/B Testing',
     ],
     designProcess: [
       'Discover (Research & Analysis)',
@@ -53,7 +50,7 @@ export const uxuiDesignLessons: UXUILessonType[] = [
       'Ideate (Brainstorming)',
       'Prototype (Build & Test)',
       'Validate (User Testing)',
-      'Iterate (Improve)'
+      'Iterate (Improve)',
     ],
     designTools: [
       {
@@ -61,29 +58,29 @@ export const uxuiDesignLessons: UXUILessonType[] = [
         category: 'UI Design & Prototyping',
         description: 'Collaborative design platform with powerful prototyping',
         freeVersion: true,
-        bestFor: ['UI Design', 'Prototyping', 'Team Collaboration', 'Design Systems']
+        bestFor: ['UI Design', 'Prototyping', 'Team Collaboration', 'Design Systems'],
       },
       {
         name: 'Miro',
         category: 'Collaboration & Ideation',
         description: 'Digital whiteboard for user research and ideation',
         freeVersion: true,
-        bestFor: ['User Journey Maps', 'Brainstorming', 'Affinity Mapping', 'Workshop facilitation']
+        bestFor: ['User Journey Maps', 'Brainstorming', 'Affinity Mapping', 'Workshop facilitation'],
       },
       {
         name: 'Canva',
         category: 'Visual Design',
         description: 'Easy-to-use design tool cho non-designers',
         freeVersion: true,
-        bestFor: ['Visual assets', 'Presentations', 'Social media graphics', 'Quick mockups']
+        bestFor: ['Visual assets', 'Presentations', 'Social media graphics', 'Quick mockups'],
       },
       {
         name: 'UsabilityHub',
         category: 'User Testing',
         description: 'Remote user testing platform',
         freeVersion: true,
-        bestFor: ['First click tests', 'Five second tests', 'Preference tests', 'Design surveys']
-      }
+        bestFor: ['First click tests', 'Five second tests', 'Preference tests', 'Design surveys'],
+      },
     ],
     exercises: [
       {
@@ -97,10 +94,10 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           'Identify patterns trong user behavior',
           'Create detailed persona với demographics, goals, pain points',
           'Add personality traits và preferences',
-          'Validate persona với additional research'
+          'Validate persona với additional research',
         ],
         expectedResults: 'Comprehensive user persona document',
-        solution: 'Base on real research data, avoid assumptions, make persona specific và actionable.'
+        solution: 'Base on real research data, avoid assumptions, make persona specific và actionable.',
       },
       {
         title: 'User Journey Mapping',
@@ -113,70 +110,80 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           'Map user emotions at each stage',
           'Identify pain points và opportunities',
           'Prioritize issues based on impact',
-          'Design solutions cho top pain points'
+          'Design solutions cho top pain points',
         ],
         expectedResults: 'Complete user journey map với actionable insights',
-        solution: 'Include offline touchpoints, consider emotional journey, validate với real users.'
+        solution: 'Include offline touchpoints, consider emotional journey, validate với real users.',
       },
       {
         title: 'Heuristic Evaluation',
         description: 'Evaluate existing interface using usability heuristics',
         difficulty: 'Trung bình',
-        materials: ['Nielsen\'s 10 heuristics', 'Evaluation template', 'Target interface'],
+        materials: ["Nielsen's 10 heuristics", 'Evaluation template', 'Target interface'],
         procedure: [
           'Select interface to evaluate (app, website, kiosk)',
           'Go through each of 10 heuristics systematically',
           'Document violations với screenshots',
           'Rate severity of each issue (1-4 scale)',
           'Prioritize issues based on severity và frequency',
-          'Propose specific solutions'
+          'Propose specific solutions',
         ],
         expectedResults: 'Comprehensive usability evaluation report',
-        solution: 'Be specific about problems, provide actionable recommendations, include examples from other apps.'
-      }
+        solution: 'Be specific about problems, provide actionable recommendations, include examples from other apps.',
+      },
     ],
     realWorldApplications: [
       'Improving existing app/website usability',
       'Designing new digital products',
       'Optimizing e-commerce conversion rates',
       'Creating accessible interfaces for elderly/disabled',
-      'Conducting user research cho business decisions'
+      'Conducting user research cho business decisions',
     ],
     caseStudies: [
       {
-        title: 'Airbnb\'s UX Transformation',
+        title: "Airbnb's UX Transformation",
         organization: 'Airbnb',
         problem: 'Low booking conversion, user trust issues',
         solution: 'Comprehensive UX redesign focused on trust và simplicity',
         impact: 'Dramatically increased bookings và user satisfaction',
-        innovations: ['Host/guest dual perspective', 'Photo-centric design', 'Review system integration', 'Mobile-first approach']
+        innovations: [
+          'Host/guest dual perspective',
+          'Photo-centric design',
+          'Review system integration',
+          'Mobile-first approach',
+        ],
       },
       {
-        title: 'Grab\'s Super App UX',
+        title: "Grab's Super App UX",
         organization: 'Grab (Southeast Asia)',
         problem: 'Multiple services trong single app without confusion',
         solution: 'Information architecture redesign và progressive disclosure',
         impact: 'Successfully integrated 20+ services trong cohesive experience',
-        innovations: ['Progressive disclosure', 'Contextual recommendations', 'Local customization', 'Accessibility focus']
-      }
+        innovations: [
+          'Progressive disclosure',
+          'Contextual recommendations',
+          'Local customization',
+          'Accessibility focus',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Nielsen Norman Group',
         url: 'https://www.nngroup.com',
-        type: 'Research'
+        type: 'Research',
       },
       {
         title: 'UX Myths',
         url: 'https://uxmyths.com',
-        type: 'Website'
+        type: 'Website',
       },
       {
         title: 'Laws of UX',
         url: 'https://lawsofux.com',
-        type: 'Reference'
-      }
-    ]
+        type: 'Reference',
+      },
+    ],
   },
   {
     id: 'ui-visual-design',
@@ -184,31 +191,28 @@ export const uxuiDesignLessons: UXUILessonType[] = [
     description: 'Học visual design principles, typography, color theory và tạo beautiful, functional interfaces.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=0JCUH5daCCE', // UI Design Principles
+    videoUrl: 'https://www.youtube.com/watch?v=cZ5o761xXJ0', // UI Design Principles
     imageUrl: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200&h=600&fit=crop',
     objectives: [
       'Nắm vững visual design principles',
       'Hiểu color theory và typography cho digital',
       'Tạo consistent design system',
-      'Apply visual hierarchy effectively'
+      'Apply visual hierarchy effectively',
     ],
-    prerequisites: [
-      'Đã hoàn thành UX Fundamentals',
-      'Có access đến design tool (Figma/Canva)'
-    ],
+    prerequisites: ['Đã hoàn thành UX Fundamentals', 'Có access đến design tool (Figma/Canva)'],
     designPrinciples: [
       'Visual Hierarchy',
       'Contrast và Emphasis',
       'Balance và Alignment',
       'Repetition và Consistency',
       'Proximity và Grouping',
-      'White Space Usage'
+      'White Space Usage',
     ],
     userResearchMethods: [
       'Visual Preference Testing',
       'A/B Testing for Visual Elements',
       'Eye-tracking Studies',
-      'First Impression Testing'
+      'First Impression Testing',
     ],
     designProcess: [
       'Style Exploration',
@@ -216,7 +220,7 @@ export const uxuiDesignLessons: UXUILessonType[] = [
       'Design System Development',
       'Component Design',
       'Responsive Adaptation',
-      'Design QA'
+      'Design QA',
     ],
     designTools: [
       {
@@ -224,29 +228,29 @@ export const uxuiDesignLessons: UXUILessonType[] = [
         category: 'Color Tools',
         description: 'Color palette generator và harmony tool',
         freeVersion: true,
-        bestFor: ['Color palettes', 'Accessibility checking', 'Trend colors', 'Brand colors']
+        bestFor: ['Color palettes', 'Accessibility checking', 'Trend colors', 'Brand colors'],
       },
       {
         name: 'Google Fonts',
         category: 'Typography',
         description: 'Free web fonts with pairing suggestions',
         freeVersion: true,
-        bestFor: ['Web typography', 'Font pairing', 'Multilingual support', 'Performance optimization']
+        bestFor: ['Web typography', 'Font pairing', 'Multilingual support', 'Performance optimization'],
       },
       {
         name: 'Unsplash',
         category: 'Photography',
         description: 'High-quality stock photos',
         freeVersion: true,
-        bestFor: ['Background images', 'Content imagery', 'Mood boards', 'Placeholder content']
+        bestFor: ['Background images', 'Content imagery', 'Mood boards', 'Placeholder content'],
       },
       {
         name: 'Iconify',
         category: 'Icons',
         description: 'Massive icon collection',
         freeVersion: true,
-        bestFor: ['UI icons', 'Brand consistency', 'Multiple formats', 'Custom styling']
-      }
+        bestFor: ['UI icons', 'Brand consistency', 'Multiple formats', 'Custom styling'],
+      },
     ],
     exercises: [
       {
@@ -260,10 +264,10 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           'Create mood board với references',
           'Design logo và typography system',
           'Develop color palette với accessibility check',
-          'Create brand guidelines document'
+          'Create brand guidelines document',
         ],
         expectedResults: 'Complete brand identity package',
-        solution: 'Ensure scalability, test trong different contexts, prioritize simplicity và memorability.'
+        solution: 'Ensure scalability, test trong different contexts, prioritize simplicity và memorability.',
       },
       {
         title: 'Mobile App UI Design',
@@ -276,10 +280,10 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           'Design component library (buttons, forms, cards)',
           'Apply visual hierarchy principles',
           'Design key screens với interaction states',
-          'Test responsive behavior'
+          'Test responsive behavior',
         ],
         expectedResults: 'Professional mobile app UI design',
-        solution: 'Follow platform conventions, ensure touch targets are adequate, maintain consistency.'
+        solution: 'Follow platform conventions, ensure touch targets are adequate, maintain consistency.',
       },
       {
         title: 'Accessibility Audit',
@@ -292,27 +296,33 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           'Test với screen reader',
           'Review content readability',
           'Analyze focus indicators',
-          'Implement accessibility improvements'
+          'Implement accessibility improvements',
         ],
         expectedResults: 'WCAG compliant design với accessibility report',
-        solution: 'Design for diverse abilities from start, use semantic structure, provide multiple ways to access information.'
-      }
+        solution:
+          'Design for diverse abilities from start, use semantic structure, provide multiple ways to access information.',
+      },
     ],
     realWorldApplications: [
       'Creating marketing materials for business',
       'Designing user interfaces cho apps/websites',
       'Building personal brand visual identity',
       'Improving presentation design skills',
-      'Contributing to open source design projects'
+      'Contributing to open source design projects',
     ],
     caseStudies: [
       {
-        title: 'Spotify\'s Design System',
+        title: "Spotify's Design System",
         organization: 'Spotify',
         problem: 'Inconsistent experience across multiple platforms',
         solution: 'Comprehensive design system "Encore"',
         impact: 'Consistent brand experience, faster development',
-        innovations: ['Component-based design', 'Design tokens', 'Cross-platform consistency', 'Accessibility integration']
+        innovations: [
+          'Component-based design',
+          'Design tokens',
+          'Cross-platform consistency',
+          'Accessibility integration',
+        ],
       },
       {
         title: 'Material Design Impact',
@@ -320,52 +330,55 @@ export const uxuiDesignLessons: UXUILessonType[] = [
         problem: 'Fragmented Android experience',
         solution: 'Material Design system based on physical metaphors',
         impact: 'Unified Android ecosystem, industry design standard',
-        innovations: ['Physical metaphors', 'Motion design principles', 'Adaptive design', 'Developer-friendly guidelines']
-      }
+        innovations: [
+          'Physical metaphors',
+          'Motion design principles',
+          'Adaptive design',
+          'Developer-friendly guidelines',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Material Design',
         url: 'https://material.io',
-        type: 'Guidelines'
+        type: 'Guidelines',
       },
       {
         title: 'Apple Human Interface Guidelines',
         url: 'https://developer.apple.com/design/human-interface-guidelines',
-        type: 'Guidelines'
+        type: 'Guidelines',
       },
       {
         title: 'Dribbble',
         url: 'https://dribbble.com',
-        type: 'Inspiration'
-      }
-    ]
+        type: 'Inspiration',
+      },
+    ],
   },
   {
     id: 'design-thinking-innovation',
     title: 'Design Thinking cho Đổi Mới',
-    description: 'Áp dụng design thinking methodology để solve complex problems và drive innovation trong business và cuộc sống.',
+    description:
+      'Áp dụng design thinking methodology để solve complex problems và drive innovation trong business và cuộc sống.',
     duration: '140 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=_r0VX-aU_T8', // Design Thinking Process
+    videoUrl: 'https://www.youtube.com/watch?v=_QVBreJSejc', // Design Thinking Process
     imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop',
     objectives: [
       'Master design thinking 5-stage process',
       'Apply human-centered approach to problem solving',
       'Develop innovation mindset',
-      'Lead design thinking workshops'
+      'Lead design thinking workshops',
     ],
-    prerequisites: [
-      'Đã hoàn thành UX Fundamentals',
-      'Có experience với group collaboration'
-    ],
+    prerequisites: ['Đã hoàn thành UX Fundamentals', 'Có experience với group collaboration'],
     designPrinciples: [
       'Human-Centered Focus',
       'Empathy-Driven Solutions',
       'Collaborative Innovation',
       'Iterative Development',
       'Bias Toward Action',
-      'Prototype to Learn'
+      'Prototype to Learn',
     ],
     userResearchMethods: [
       'Empathy Mapping',
@@ -373,7 +386,7 @@ export const uxuiDesignLessons: UXUILessonType[] = [
       'Ethnographic Research',
       'Co-creation Sessions',
       'Prototype Testing',
-      'Service Safaris'
+      'Service Safaris',
     ],
     designProcess: [
       'Empathize (Understand Users)',
@@ -381,7 +394,7 @@ export const uxuiDesignLessons: UXUILessonType[] = [
       'Ideate (Generate Ideas)',
       'Prototype (Build to Think)',
       'Test (Learn & Iterate)',
-      'Implement (Scale Solutions)'
+      'Implement (Scale Solutions)',
     ],
     designTools: [
       {
@@ -389,15 +402,15 @@ export const uxuiDesignLessons: UXUILessonType[] = [
         category: 'Collaboration',
         description: 'Digital workspace for design thinking workshops',
         freeVersion: true,
-        bestFor: ['Workshop facilitation', 'Brainstorming', 'Empathy mapping', 'Affinity diagramming']
+        bestFor: ['Workshop facilitation', 'Brainstorming', 'Empathy mapping', 'Affinity diagramming'],
       },
       {
         name: 'IDEO Method Cards',
         category: 'Methods',
         description: 'Design thinking method reference',
         freeVersion: true,
-        bestFor: ['Method selection', 'Workshop planning', 'Team alignment', 'Process guidance']
-      }
+        bestFor: ['Method selection', 'Workshop planning', 'Team alignment', 'Process guidance'],
+      },
     ],
     exercises: [
       {
@@ -411,10 +424,10 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           'Map different stakeholder perspectives',
           'Use "How Might We" questions',
           'Generate multiple problem framings',
-          'Select most actionable framing'
+          'Select most actionable framing',
         ],
         expectedResults: 'Well-defined, actionable problem statement',
-        solution: 'Focus on user needs over solutions, challenge assumptions, involve diverse perspectives.'
+        solution: 'Focus on user needs over solutions, challenge assumptions, involve diverse perspectives.',
       },
       {
         title: 'Rapid Prototyping Workshop',
@@ -427,10 +440,10 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           '15 minutes: Get user feedback',
           '30 minutes: Iterate based on feedback',
           '15 minutes: Test refined prototype',
-          'Reflect on learnings'
+          'Reflect on learnings',
         ],
         expectedResults: 'Validated prototype với user insights',
-        solution: 'Keep prototypes simple, focus on core hypothesis, embrace failure as learning.'
+        solution: 'Keep prototypes simple, focus on core hypothesis, embrace failure as learning.',
       },
       {
         title: 'Service Design Challenge',
@@ -443,27 +456,27 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           'Identify pain points và opportunities',
           'Co-create solutions với users',
           'Design new service blueprint',
-          'Plan implementation strategy'
+          'Plan implementation strategy',
         ],
         expectedResults: 'Complete service redesign proposal',
-        solution: 'Consider all touchpoints, involve service providers, design for systemic change.'
-      }
+        solution: 'Consider all touchpoints, involve service providers, design for systemic change.',
+      },
     ],
     realWorldApplications: [
       'Innovation projects trong corporate settings',
       'Social impact initiatives',
       'Product development processes',
       'Business model innovation',
-      'Organizational change management'
+      'Organizational change management',
     ],
     caseStudies: [
       {
-        title: 'IDEO\'s Shopping Cart Redesign',
+        title: "IDEO's Shopping Cart Redesign",
         organization: 'IDEO',
         problem: 'Traditional shopping cart pain points',
         solution: 'Human-centered redesign process',
         impact: 'Demonstrated power of design thinking methodology',
-        innovations: ['User observation', 'Rapid prototyping', 'Cross-functional teams', 'Iterative testing']
+        innovations: ['User observation', 'Rapid prototyping', 'Cross-functional teams', 'Iterative testing'],
       },
       {
         title: 'Bank of America Keep the Change',
@@ -471,27 +484,27 @@ export const uxuiDesignLessons: UXUILessonType[] = [
         problem: 'Help customers save money effortlessly',
         solution: 'Design thinking approach to financial behavior',
         impact: '$2+ billion in customer savings',
-        innovations: ['Behavioral insights', 'Service design', 'Technology integration', 'Customer co-creation']
-      }
+        innovations: ['Behavioral insights', 'Service design', 'Technology integration', 'Customer co-creation'],
+      },
     ],
     resources: [
       {
         title: 'IDEO Design Kit',
         url: 'https://www.designkit.org',
-        type: 'Toolkit'
+        type: 'Toolkit',
       },
       {
         title: 'd.school Stanford',
         url: 'https://dschool.stanford.edu',
-        type: 'Education'
+        type: 'Education',
       },
       {
         title: 'Design Thinking for Social Innovation',
         url: 'https://www.ideo.org',
-        type: 'Social Impact'
-      }
-    ]
-  }
+        type: 'Social Impact',
+      },
+    ],
+  },
 ];
 
 export default uxuiDesignLessons;

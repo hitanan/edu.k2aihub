@@ -1,4 +1,5 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
 
 export interface HealthcareTechLesson extends BaseLessonData {
   healthcareCategory: 'telemedicine' | 'data-analytics' | 'medical-devices' | 'entrepreneurship' | 'mental-health';
@@ -11,8 +12,9 @@ export interface HealthcareTechLesson extends BaseLessonData {
 export const healthcareTechLessons: HealthcareTechLesson[] = [
   {
     id: 'telemedicine-digital-health',
-    title: 'Telemedicine & Sức Khỏe Số',
-    description: 'Khám phá công nghệ y tế từ xa và hệ thống sức khỏe số, từ platform setup đến patient care delivery trong bối cảnh Việt Nam.',
+    title: 'Y tế từ xa & Sức khỏe số',
+    description:
+      'Khám phá công nghệ y tế từ xa và hệ thống sức khỏe số, từ việc thiết lập nền tảng đến cung cấp dịch vụ chăm sóc bệnh nhân trong bối cảnh Việt Nam.',
     duration: '180 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=eORalU89N4Y', // The Future of Telemedicine
@@ -20,102 +22,108 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     healthcareCategory: 'telemedicine',
     techProficiencyLevel: 'Cơ bản',
     objectives: [
-      'Hiểu ecosystem của telemedicine trong hệ thống y tế Việt Nam',
-      'Setup và sử dụng các platform telehealth phổ biến',
-      'Đảm bảo patient privacy và data security',
-      'Integrate telemedicine vào clinical workflow',
-      'Measure outcomes và ROI của telemedicine programs'
+      'Hiểu hệ sinh thái của y tế từ xa trong hệ thống y tế Việt Nam',
+      'Thiết lập và sử dụng các nền tảng y tế từ xa phổ biến',
+      'Đảm bảo quyền riêng tư của bệnh nhân và bảo mật dữ liệu',
+      'Tích hợp y tế từ xa vào quy trình lâm sàng',
+      'Đo lường kết quả và ROI của các chương trình y tế từ xa',
     ],
-    prerequisites: [
-      'Kiến thức y tế cơ bản hoặc kinh nghiệm healthcare',
-      'Computer literacy và internet skills'
-    ],
+    prerequisites: ['Kiến thức y tế cơ bản hoặc kinh nghiệm trong ngành y tế', 'Kỹ năng sử dụng máy tính và internet'],
     regulatoryCompliance: [
-      'Thông tư 54/2017/TT-BYT về telemedicine',
-      'Luật Cybersecurity 2018 cho patient data',
-      'ISO 27001 cho healthcare information security',
-      'GDPR compliance cho international patients'
+      'Thông tư 54/2017/TT-BYT về y tế từ xa',
+      'Luật An ninh mạng 2018 về dữ liệu bệnh nhân',
+      'ISO 27001 về bảo mật thông tin y tế',
+      'Tuân thủ GDPR cho bệnh nhân quốc tế',
     ],
     vietnameseHealthcareContext: [
-      'Rural healthcare access challenges',
-      'Public vs private healthcare system integration',
-      'Insurance coverage cho telemedicine services',
-      'Cultural attitudes toward remote healthcare',
-      'Language barriers và multilingual support'
+      'Thách thức trong việc tiếp cận y tế ở nông thôn',
+      'Tích hợp hệ thống y tế công và tư',
+      'Phạm vi bảo hiểm cho các dịch vụ y tế từ xa',
+      'Thái độ văn hóa đối với chăm sóc sức khỏe từ xa',
+      'Rào cản ngôn ngữ và hỗ trợ đa ngôn ngữ',
     ],
     targetAudience: [
-      'Healthcare professionals transitioning to digital',
-      'Healthcare administrators và managers',
-      'IT professionals trong healthcare organizations',
-      'Entrepreneurs building healthtech solutions'
+      'Chuyên gia y tế chuyển đổi sang kỹ thuật số',
+      'Quản trị viên và quản lý y tế',
+      'Chuyên gia CNTT trong các tổ chức y tế',
+      'Doanh nhân xây dựng giải pháp công nghệ y tế',
     ],
     exercises: [
       {
-        title: 'Telemedicine Platform Evaluation & Setup',
-        description: 'So sánh và setup một telehealth platform cho phòng khám nhỏ',
+        title: 'Đánh giá & Thiết lập Nền tảng Y tế từ xa',
+        description: 'So sánh và thiết lập một nền tảng y tế từ xa cho một phòng khám nhỏ',
         difficulty: 'Trung bình',
-        materials: ['Access to telehealth platforms', 'HIPAA compliance checklist', 'Cost-benefit analysis template'],
-        procedure: [
-          'Research 5 telehealth platforms popular in Vietnam',
-          'Compare features, pricing, và compliance standards',
-          'Setup demo account và test user experience',
-          'Create patient onboarding workflow',
-          'Develop ROI projection cho 12-month period',
-          'Present recommendations với security assessment'
+        materials: [
+          'Truy cập vào các nền tảng y tế từ xa',
+          'Danh sách kiểm tra tuân thủ HIPAA',
+          'Mẫu phân tích chi phí-lợi ích',
         ],
-        expectedResults: 'Complete platform recommendation với implementation roadmap và compliance checklist',
-        solution: 'Platform selection dựa trên ease of use, Vietnamese language support, cost-effectiveness, và regulatory compliance'
+        procedure: [
+          'Nghiên cứu 5 nền tảng y tế từ xa phổ biến tại Việt Nam',
+          'So sánh các tính năng, giá cả và tiêu chuẩn tuân thủ',
+          'Thiết lập tài khoản demo và kiểm tra trải nghiệm người dùng',
+          'Tạo quy trình tiếp nhận bệnh nhân',
+          'Xây dựng dự báo ROI cho giai đoạn 12 tháng',
+          'Trình bày các đề xuất kèm theo đánh giá bảo mật',
+        ],
+        expectedResults: 'Hoàn thành đề xuất nền tảng với lộ trình triển khai và danh sách kiểm tra tuân thủ',
+        solution:
+          'Lựa chọn nền tảng dựa trên tính dễ sử dụng, hỗ trợ tiếng Việt, hiệu quả chi phí và tuân thủ quy định',
       },
       {
-        title: 'Remote Patient Monitoring System Design',
-        description: 'Thiết kế hệ thống monitoring cho chronic disease management',
+        title: 'Thiết kế Hệ thống Theo dõi Bệnh nhân từ xa',
+        description: 'Thiết kế hệ thống theo dõi để quản lý các bệnh mãn tính',
         difficulty: 'Nâng cao',
-        materials: ['IoT health devices', 'Data dashboard tools', 'Alert system framework'],
+        materials: ['Thiết bị y tế IoT', 'Công cụ bảng điều khiển dữ liệu', 'Khung hệ thống cảnh báo'],
         procedure: [
-          'Identify target chronic conditions (diabetes, hypertension)',
-          'Select appropriate monitoring devices và sensors',
-          'Design data collection và analysis workflow',
-          'Create alert thresholds và escalation protocols',
-          'Build patient engagement và compliance strategies',
-          'Test system với simulated patient data'
+          'Xác định các bệnh mãn tính mục tiêu (tiểu đường, tăng huyết áp)',
+          'Chọn các thiết bị và cảm biến theo dõi phù hợp',
+          'Thiết kế quy trình thu thập và phân tích dữ liệu',
+          'Tạo ngưỡng cảnh báo và quy trình leo thang',
+          'Xây dựng chiến lược tương tác và tuân thủ của bệnh nhân',
+          'Kiểm tra hệ thống với dữ liệu bệnh nhân mô phỏng',
         ],
-        expectedResults: 'Functional RPM system prototype với patient engagement rates >70%'
-      }
+        expectedResults: 'Nguyên mẫu hệ thống RPM hoạt động với tỷ lệ tương tác của bệnh nhân >70%',
+      },
     ],
     realWorldApplications: [
-      'Rural healthcare delivery trong remote areas',
-      'Chronic disease management programs',
-      'Specialist consultations across provinces',
-      'Emergency response và triage systems',
-      'Mental health support services'
+      'Cung cấp dịch vụ y tế ở vùng sâu vùng xa',
+      'Chương trình quản lý bệnh mãn tính',
+      'Tư vấn chuyên khoa giữa các tỉnh thành',
+      'Hệ thống ứng phó khẩn cấp và phân loại bệnh nhân',
+      'Dịch vụ hỗ trợ sức khỏe tâm thần',
     ],
     caseStudies: [
       {
-        title: 'Vinmec - Telemedicine Platform Rollout',
-        organization: 'Vinmec International Hospital',
-        problem: 'Need to provide healthcare access during COVID-19 lockdowns',
-        solution: 'Deployed comprehensive telemedicine platform với multilingual support',
-        impact: '50,000+ remote consultations, 95% patient satisfaction, 30% cost reduction',
-        innovations: ['AI-powered symptom checker', 'Integrated prescription delivery', 'Insurance claim automation']
-      }
+        title: 'Vinmec - Triển khai Nền tảng Y tế từ xa',
+        organization: 'Bệnh viện Đa khoa Quốc tế Vinmec',
+        problem: 'Cần cung cấp khả năng tiếp cận y tế trong thời gian phong tỏa do COVID-19',
+        solution: 'Triển khai nền tảng y tế từ xa toàn diện với hỗ trợ đa ngôn ngữ',
+        impact: 'Hơn 50.000 lượt tư vấn từ xa, 95% bệnh nhân hài lòng, giảm 30% chi phí',
+        innovations: ['Trình kiểm tra triệu chứng bằng AI', 'Giao đơn thuốc tích hợp', 'Tự động hóa yêu cầu bảo hiểm'],
+      },
     ],
     resources: [
       {
-        title: 'Vietnam Telemedicine Regulations Guide',
+        title: 'Hướng dẫn Quy định Y tế từ xa Việt Nam',
         url: 'https://moh.gov.vn/web/guest/tin-tong-hop',
-        type: 'Documentation'
+        type: 'Documentation',
       },
       {
-        title: 'Telehealth Implementation Toolkit',
+        title: 'Bộ công cụ Triển khai Y tế từ xa',
         url: 'https://www.hrsa.gov/rural-health/telehealth/toolkit',
-        type: 'Toolkit'
-      }
-    ]
+        type: 'Toolkit',
+      },
+    ],
+    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal')]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'health-data-analytics-management',
     title: 'Phân Tích & Quản Lý Dữ Liệu Y Tế',
-    description: 'Làm chủ việc thu thập, xử lý và phân tích big data trong healthcare để cải thiện patient outcomes và operational efficiency.',
+    description:
+      'Làm chủ việc thu thập, xử lý và phân tích dữ liệu lớn trong y tế để cải thiện kết quả của bệnh nhân và hiệu quả hoạt động.',
     duration: '200 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=7rqfXuUoJB0', // AI in Healthcare: Revolutionary Applications
@@ -123,139 +131,150 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     healthcareCategory: 'data-analytics',
     techProficiencyLevel: 'Trung bình',
     objectives: [
-      'Hiểu healthcare data landscape và types of medical data',
-      'Implement data governance và quality management',
-      'Sử dụng analytics tools để derive actionable insights',
-      'Create predictive models cho population health',
-      'Ensure HIPAA/GDPR compliance trong data handling'
+      'Hiểu bối cảnh dữ liệu y tế và các loại dữ liệu y tế',
+      'Triển khai quản trị dữ liệu và quản lý chất lượng',
+      'Sử dụng các công cụ phân tích để rút ra thông tin chi tiết hữu ích',
+      'Tạo các mô hình dự đoán cho sức khỏe dân số',
+      'Đảm bảo tuân thủ HIPAA/GDPR trong việc xử lý dữ liệu',
     ],
     prerequisites: [
-      'Basic statistics và data analysis skills',
-      'Familiarity với Excel và database concepts',
-      'Understanding của healthcare processes'
+      'Kỹ năng thống kê và phân tích dữ liệu cơ bản',
+      'Quen thuộc với Excel và các khái niệm cơ sở dữ liệu',
+      'Hiểu biết về các quy trình y tế',
     ],
     regulatoryCompliance: [
-      'Personal Data Protection Decree 15/2020/ND-CP',
-      'Medical data confidentiality regulations',
-      'International standards for health informatics',
-      'Audit trail requirements cho patient data'
+      'Nghị định 13/2023/NĐ-CP về Bảo vệ dữ liệu cá nhân',
+      'Quy định về bảo mật dữ liệu y tế',
+      'Tiêu chuẩn quốc tế về tin học y tế',
+      'Yêu cầu về dấu vết kiểm toán cho dữ liệu bệnh nhân',
     ],
     vietnameseHealthcareContext: [
-      'Electronic health record adoption challenges',
-      'Interoperability issues between hospital systems',
-      'Data sharing between public và private sectors',
-      'Population health analytics cho Vietnamese demographics'
+      'Thách thức trong việc áp dụng hồ sơ sức khỏe điện tử',
+      'Vấn đề tương tác giữa các hệ thống bệnh viện',
+      'Chia sẻ dữ liệu giữa khu vực công và tư',
+      'Phân tích sức khỏe dân số cho nhân khẩu học Việt Nam',
     ],
     targetAudience: [
-      'Healthcare data analysts và researchers',
-      'Hospital IT administrators',
-      'Public health officials',
-      'Biotech và pharma researchers'
+      'Nhà phân tích dữ liệu và nhà nghiên cứu y tế',
+      'Quản trị viên CNTT bệnh viện',
+      'Cán bộ y tế công cộng',
+      'Nhà nghiên cứu công nghệ sinh học và dược phẩm',
     ],
     exercises: [
       {
-        title: 'Hospital Performance Dashboard Development',
-        description: 'Xây dựng real-time dashboard để monitor key hospital metrics',
+        title: 'Phát triển Bảng điều khiển Hiệu suất Bệnh viện',
+        description: 'Xây dựng bảng điều khiển thời gian thực để theo dõi các chỉ số chính của bệnh viện',
         difficulty: 'Nâng cao',
-        materials: ['Power BI/Tableau', 'Sample hospital data', 'KPI framework'],
+        materials: ['Power BI/Tableau', 'Dữ liệu bệnh viện mẫu', 'Khung KPI'],
         procedure: [
-          'Define critical healthcare KPIs (readmission rates, length of stay, etc.)',
-          'Connect to multiple data sources (EMR, billing, scheduling)',
-          'Create interactive visualizations với drill-down capability',
-          'Implement automated alerts cho abnormal patterns',
-          'Design executive summary views cho C-suite',
-          'Test dashboard với real hospital scenarios'
+          'Xác định các KPI y tế quan trọng (tỷ lệ tái nhập viện, thời gian nằm viện, v.v.)',
+          'Kết nối với nhiều nguồn dữ liệu (EMR, thanh toán, lịch hẹn)',
+          'Tạo các trực quan hóa tương tác với khả năng xem chi tiết',
+          'Triển khai cảnh báo tự động cho các mẫu bất thường',
+          'Thiết kế các chế độ xem tóm tắt điều hành cho ban lãnh đạo',
+          'Kiểm tra bảng điều khiển với các kịch bản bệnh viện thực tế',
         ],
-        expectedResults: 'Live dashboard enabling data-driven decision making với <1 hour data latency'
-      }
+        expectedResults: 'Bảng điều khiển trực tiếp cho phép ra quyết định dựa trên dữ liệu với độ trễ dữ liệu <1 giờ',
+      },
     ],
     realWorldApplications: [
-      'Population health management programs',
-      'Clinical decision support systems',
-      'Healthcare quality improvement initiatives',
-      'Epidemiological research và disease surveillance',
-      'Pharmaceutical research và drug discovery'
+      'Chương trình quản lý sức khỏe dân số',
+      'Hệ thống hỗ trợ quyết định lâm sàng',
+      'Sáng kiến cải thiện chất lượng y tế',
+      'Nghiên cứu dịch tễ học và giám sát bệnh tật',
+      'Nghiên cứu dược phẩm và khám phá thuốc',
     ],
     caseStudies: [
       {
-        title: 'FV Hospital - AI-Powered Clinical Analytics',
-        organization: 'Franco-Vietnamese Hospital',
-        problem: 'Need to reduce hospital readmissions và improve patient outcomes',
-        solution: 'Implemented ML models để predict high-risk patients',
-        impact: '25% reduction in readmissions, $2M annual savings',
-        innovations: ['Real-time risk scoring', 'Automated care coordination', 'Predictive staffing models']
-      }
-    ]
+        title: 'Bệnh viện FV - Phân tích Lâm sàng bằng AI',
+        organization: 'Bệnh viện Franco-Vietnamese',
+        problem: 'Cần giảm tỷ lệ tái nhập viện và cải thiện kết quả của bệnh nhân',
+        solution: 'Triển khai các mô hình ML để dự đoán bệnh nhân có nguy cơ cao',
+        impact: 'Giảm 25% tỷ lệ tái nhập viện, tiết kiệm 2 triệu đô la hàng năm',
+        innovations: ['Chấm điểm rủi ro thời gian thực', 'Điều phối chăm sóc tự động', 'Mô hình nhân sự dự đoán'],
+      },
+    ],
+    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'data-visualization')]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'medical-devices-iot-applications',
     title: 'Thiết Bị Y Tế & Ứng Dụng IoT',
-    description: 'Explore cutting-edge medical devices và IoT applications trong healthcare, từ wearables đến smart hospital infrastructure.',
+    description:
+      'Khám phá các thiết bị y tế tiên tiến và ứng dụng IoT trong y tế, từ thiết bị đeo được đến cơ sở hạ tầng bệnh viện thông minh.',
     duration: '160 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // IoT in Healthcare: Smart Medical Devices
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // IoT in Healthcare: Smart Medical Devices
     imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
     healthcareCategory: 'medical-devices',
     techProficiencyLevel: 'Trung bình',
     objectives: [
-      'Understand IoT ecosystem trong healthcare settings',
-      'Evaluate và select appropriate medical IoT devices',
-      'Design secure và scalable IoT architecture',
-      'Implement data integration từ multiple device sources',
-      'Ensure regulatory compliance cho medical devices'
+      'Hiểu hệ sinh thái IoT trong môi trường y tế',
+      'Đánh giá và lựa chọn các thiết bị IoT y tế phù hợp',
+      'Thiết kế kiến trúc IoT an toàn và có khả năng mở rộng',
+      'Triển khai tích hợp dữ liệu từ nhiều nguồn thiết bị',
+      'Đảm bảo tuân thủ quy định cho các thiết bị y tế',
     ],
     prerequisites: [
-      'Basic understanding của IoT concepts',
-      'Knowledge của healthcare workflows',
-      'Technical aptitude với hardware/software integration'
+      'Hiểu biết cơ bản về các khái niệm IoT',
+      'Kiến thức về quy trình làm việc trong y tế',
+      'Năng khiếu kỹ thuật với tích hợp phần cứng/phần mềm',
     ],
     regulatoryCompliance: [
-      'Medical device registration requirements in Vietnam',
-      'ISO 13485 for medical device quality',
-      'IEC 62304 for medical device software',
-      'Cybersecurity requirements cho connected devices'
+      'Yêu cầu đăng ký thiết bị y tế tại Việt Nam',
+      'ISO 13485 về chất lượng thiết bị y tế',
+      'IEC 62304 về phần mềm thiết bị y tế',
+      'Yêu cầu an ninh mạng cho các thiết bị được kết nối',
     ],
     vietnameseHealthcareContext: [
-      'Import regulations cho medical devices',
-      'Local manufacturing capabilities',
-      'Healthcare infrastructure readiness',
-      'Training requirements cho medical staff'
+      'Quy định nhập khẩu thiết bị y tế',
+      'Năng lực sản xuất trong nước',
+      'Sự sẵn sàng của cơ sở hạ tầng y tế',
+      'Yêu cầu đào tạo cho nhân viên y tế',
     ],
     targetAudience: [
-      'Biomedical engineers',
-      'Healthcare IT specialists',
-      'Medical device entrepreneurs',
-      'Clinical engineering professionals'
+      'Kỹ sư y sinh',
+      'Chuyên gia CNTT y tế',
+      'Doanh nhân thiết bị y tế',
+      'Chuyên gia kỹ thuật lâm sàng',
     ],
     exercises: [
       {
-        title: 'Smart Hospital Room IoT Integration',
-        description: 'Design comprehensive IoT solution cho modern hospital room',
+        title: 'Tích hợp IoT cho Phòng bệnh viện Thông minh',
+        description: 'Thiết kế giải pháp IoT toàn diện cho một phòng bệnh viện hiện đại',
         difficulty: 'Nâng cao',
-        materials: ['IoT sensors catalog', 'Network architecture tools', 'Security assessment framework'],
+        materials: ['Danh mục cảm biến IoT', 'Công cụ kiến trúc mạng', 'Khung đánh giá bảo mật'],
         procedure: [
-          'Map out all monitoring requirements (patient vitals, environment, equipment)',
-          'Select appropriate sensors và communication protocols',
-          'Design network topology với redundancy',
-          'Implement data security và privacy controls',
-          'Create integration plan với existing hospital systems',
-          'Develop maintenance và support procedures'
+          'Sơ đồ hóa tất cả các yêu cầu giám sát (chỉ số sinh tồn của bệnh nhân, môi trường, thiết bị)',
+          'Chọn các cảm biến và giao thức truyền thông phù hợp',
+          'Thiết kế cấu trúc liên kết mạng có dự phòng',
+          'Triển khai các biện pháp kiểm soát bảo mật và quyền riêng tư dữ liệu',
+          'Tạo kế hoạch tích hợp với các hệ thống bệnh viện hiện có',
+          'Xây dựng quy trình bảo trì và hỗ trợ',
         ],
-        expectedResults: 'Complete IoT architecture với 99.9% uptime target và full HIPAA compliance'
-      }
+        expectedResults: 'Kiến trúc IoT hoàn chỉnh với mục tiêu thời gian hoạt động 99,9% và tuân thủ đầy đủ HIPAA',
+      },
     ],
     realWorldApplications: [
-      'Remote patient monitoring systems',
-      'Smart hospital infrastructure management',
-      'Wearable health tracking applications',
-      'Medical equipment predictive maintenance',
-      'Emergency response automation'
+      'Hệ thống theo dõi bệnh nhân từ xa',
+      'Quản lý cơ sở hạ tầng bệnh viện thông minh',
+      'Ứng dụng theo dõi sức khỏe đeo được',
+      'Bảo trì dự đoán thiết bị y tế',
+      'Tự động hóa ứng phó khẩn cấp',
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'medical-device-designer'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'smart-home-iot-simulator-3d'),
     ]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'healthtech-entrepreneurship',
     title: 'Khởi Nghiệp Công Nghệ Y Tế',
-    description: 'Navigate the unique challenges của healthcare entrepreneurship, từ regulatory compliance đến funding và scaling trong Vietnamese market.',
+    description:
+      'Vượt qua những thách thức độc đáo của khởi nghiệp trong lĩnh vực y tế, từ tuân thủ quy định đến huy động vốn và mở rộng quy mô tại thị trường Việt Nam.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=vMKNUylmanQ', // Starting a HealthTech Company
@@ -263,74 +282,78 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     healthcareCategory: 'entrepreneurship',
     techProficiencyLevel: 'Nâng cao',
     objectives: [
-      'Understand healthcare startup ecosystem in Vietnam',
-      'Navigate regulatory pathways cho health tech products',
-      'Develop sustainable business models trong healthcare',
-      'Secure funding từ healthcare-focused investors',
-      'Scale operations while maintaining compliance'
+      'Hiểu hệ sinh thái khởi nghiệp y tế tại Việt Nam',
+      'Vượt qua các rào cản pháp lý cho các sản phẩm công nghệ y tế',
+      'Phát triển các mô hình kinh doanh bền vững trong y tế',
+      'Huy động vốn từ các nhà đầu tư tập trung vào y tế',
+      'Mở rộng hoạt động trong khi vẫn duy trì tuân thủ',
     ],
     prerequisites: [
-      'Healthcare industry experience',
-      'Basic business và entrepreneurship knowledge',
-      'Understanding của regulatory environment'
+      'Kinh nghiệm trong ngành y tế',
+      'Kiến thức cơ bản về kinh doanh và khởi nghiệp',
+      'Hiểu biết về môi trường pháp lý',
     ],
     regulatoryCompliance: [
-      'Business license requirements cho healthcare services',
-      'Investment regulations cho foreign healthcare ventures',
-      'Clinical trial requirements for medical products',
-      'Data localization requirements'
+      'Yêu cầu giấy phép kinh doanh cho các dịch vụ y tế',
+      'Quy định đầu tư cho các dự án y tế nước ngoài',
+      'Yêu cầu thử nghiệm lâm sàng cho các sản phẩm y tế',
+      'Yêu cầu về địa phương hóa dữ liệu',
     ],
     vietnameseHealthcareContext: [
-      'Public-private partnership opportunities',
-      'Healthcare investment landscape',
-      'Distribution channels và market access',
-      'Local manufacturing incentives'
+      'Cơ hội hợp tác công-tư',
+      'Bối cảnh đầu tư y tế',
+      'Các kênh phân phối và tiếp cận thị trường',
+      'Ưu đãi sản xuất trong nước',
     ],
     targetAudience: [
-      'Healthcare entrepreneurs',
-      'Medical professionals với business interests',
-      'Investors trong healthcare sector',
-      'Corporate innovation teams'
+      'Doanh nhân công nghệ y tế',
+      'Chuyên gia y tế có hứng thú kinh doanh',
+      'Nhà đầu tư trong lĩnh vực y tế',
+      'Các nhóm đổi mới của doanh nghiệp',
     ],
     exercises: [
       {
-        title: 'HealthTech Startup Business Plan Development',
-        description: 'Create comprehensive business plan cho innovative healthcare solution',
+        title: 'Phát triển Kế hoạch Kinh doanh Khởi nghiệp Công nghệ Y tế',
+        description: 'Tạo kế hoạch kinh doanh toàn diện cho một giải pháp y tế sáng tạo',
         difficulty: 'Nâng cao',
-        materials: ['Business plan template', 'Market research tools', 'Financial modeling software'],
+        materials: ['Mẫu kế hoạch kinh doanh', 'Công cụ nghiên cứu thị trường', 'Phần mềm lập mô hình tài chính'],
         procedure: [
-          'Identify specific healthcare problem và target market',
-          'Conduct competitive analysis và market sizing',
-          'Develop solution architecture và technical specifications',
-          'Create regulatory compliance roadmap',
-          'Build financial projections với funding requirements',
-          'Prepare investor pitch deck'
+          'Xác định vấn đề y tế cụ thể và thị trường mục tiêu',
+          'Tiến hành phân tích đối thủ cạnh tranh và quy mô thị trường',
+          'Phát triển kiến trúc giải pháp và thông số kỹ thuật',
+          'Tạo lộ trình tuân thủ quy định',
+          'Xây dựng các dự báo tài chính với yêu cầu huy động vốn',
+          'Chuẩn bị bài thuyết trình cho nhà đầu tư',
         ],
-        expectedResults: 'Investment-ready business plan với clear path to profitability'
-      }
+        expectedResults: 'Kế hoạch kinh doanh sẵn sàng để đầu tư với con đường rõ ràng đến lợi nhuận',
+      },
     ],
     realWorldApplications: [
-      'Digital therapeutics development',
-      'Healthcare marketplace platforms',
-      'AI-powered diagnostic tools',
-      'Healthcare supply chain optimization',
-      'Patient engagement technologies'
+      'Phát triển liệu pháp kỹ thuật số',
+      'Nền tảng thị trường y tế',
+      'Công cụ chẩn đoán bằng AI',
+      'Tối ưu hóa chuỗi cung ứng y tế',
+      'Công nghệ tương tác với bệnh nhân',
     ],
     caseStudies: [
       {
-        title: 'Docosan - Healthcare Marketplace Success',
-        organization: 'Docosan Vietnam',
-        problem: 'Connecting patients với quality healthcare providers',
-        solution: 'Built comprehensive healthcare marketplace với telemedicine',
-        impact: '1M+ users, partnerships với 500+ clinics nationwide',
-        innovations: ['AI symptom checker', 'Integrated insurance claims', 'Multi-language support']
-      }
-    ]
+        title: 'Docosan - Thành công của Thị trường Y tế',
+        organization: 'Docosan Việt Nam',
+        problem: 'Kết nối bệnh nhân với các nhà cung cấp dịch vụ y tế chất lượng',
+        solution: 'Xây dựng thị trường y tế toàn diện với y tế từ xa',
+        impact: 'Hơn 1 triệu người dùng, hợp tác với hơn 500 phòng khám trên toàn quốc',
+        innovations: ['Trình kiểm tra triệu chứng AI', 'Tích hợp yêu cầu bảo hiểm', 'Hỗ trợ đa ngôn ngữ'],
+      },
+    ],
+    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator')]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'mental-health-technology',
     title: 'Công Nghệ Sức Khỏe Tâm Thần',
-    description: 'Explore digital mental health solutions, từ therapy apps đến AI-powered mental health assessment, với cultural sensitivity cho Vietnamese context.',
+    description:
+      'Khám phá các giải pháp sức khỏe tâm thần kỹ thuật số, từ ứng dụng trị liệu đến đánh giá sức khỏe tâm thần bằng AI, với sự nhạy cảm văn hóa cho bối cảnh Việt Nam.',
     duration: '180 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=IlU-zDU6aQ0', // Digital Mental Health Solutions
@@ -338,70 +361,75 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     healthcareCategory: 'mental-health',
     techProficiencyLevel: 'Trung bình',
     objectives: [
-      'Understand digital mental health landscape',
-      'Design culturally sensitive mental health interventions',
-      'Implement evidence-based digital therapeutic approaches',
-      'Ensure privacy và safety trong mental health apps',
-      'Measure effectiveness của digital mental health interventions'
+      'Hiểu bối cảnh sức khỏe tâm thần kỹ thuật số',
+      'Thiết kế các can thiệp sức khỏe tâm thần nhạy cảm về văn hóa',
+      'Triển khai các phương pháp trị liệu kỹ thuật số dựa trên bằng chứng',
+      'Đảm bảo quyền riêng tư và an toàn trong các ứng dụng sức khỏe tâm thần',
+      'Đo lường hiệu quả của các can thiệp sức khỏe tâm thần kỹ thuật số',
     ],
     prerequisites: [
-      'Basic psychology hoặc mental health knowledge',
-      'Understanding của digital health principles',
-      'Cultural awareness của Vietnamese mental health stigma'
+      'Kiến thức cơ bản về tâm lý học hoặc sức khỏe tâm thần',
+      'Hiểu biết về các nguyên tắc sức khỏe kỹ thuật số',
+      'Nhận thức văn hóa về sự kỳ thị sức khỏe tâm thần ở Việt Nam',
     ],
     regulatoryCompliance: [
-      'Mental health service licensing requirements',
-      'Professional liability cho digital mental health',
-      'Patient safety protocols cho crisis intervention',
-      'Data protection for sensitive mental health data'
+      'Yêu cầu cấp phép dịch vụ sức khỏe tâm thần',
+      'Trách nhiệm nghề nghiệp đối với sức khỏe tâm thần kỹ thuật số',
+      'Giao thức an toàn bệnh nhân cho can thiệp khủng hoảng',
+      'Bảo vệ dữ liệu cho dữ liệu sức khỏe tâm thần nhạy cảm',
     ],
     vietnameseHealthcareContext: [
-      'Mental health stigma và cultural barriers',
-      'Limited mental health professional availability',
-      'Family-centered approach to mental health care',
-      'Integration với traditional healing practices'
+      'Sự kỳ thị sức khỏe tâm thần và rào cản văn hóa',
+      'Sự sẵn có hạn chế của các chuyên gia sức khỏe tâm thần',
+      'Cách tiếp cận chăm sóc sức khỏe tâm thần lấy gia đình làm trung tâm',
+      'Tích hợp với các phương pháp chữa bệnh truyền thống',
     ],
     targetAudience: [
-      'Mental health professionals',
-      'Digital health product developers',
-      'Healthcare administrators',
-      'Wellness program coordinators'
+      'Chuyên gia sức khỏe tâm thần',
+      'Nhà phát triển sản phẩm sức khỏe kỹ thuật số',
+      'Quản trị viên y tế',
+      'Điều phối viên chương trình chăm sóc sức khỏe',
     ],
     exercises: [
       {
-        title: 'Mental Health App UX Design',
-        description: 'Design user experience cho mental wellness app targeting Vietnamese users',
+        title: 'Thiết kế UX cho Ứng dụng Sức khỏe Tâm thần',
+        description:
+          'Thiết kế trải nghiệm người dùng cho một ứng dụng chăm sóc sức khỏe tâm thần nhắm đến người dùng Việt Nam',
         difficulty: 'Trung bình',
-        materials: ['UX design tools', 'Cultural research data', 'Mental health assessment frameworks'],
+        materials: ['Công cụ thiết kế UX', 'Dữ liệu nghiên cứu văn hóa', 'Khung đánh giá sức khỏe tâm thần'],
         procedure: [
-          'Research Vietnamese attitudes toward mental health technology',
-          'Design culturally appropriate user interfaces',
-          'Integrate evidence-based therapeutic techniques',
-          'Implement crisis intervention protocols',
-          'Test với focus groups từ target demographics',
-          'Iterate design based on user feedback'
+          'Nghiên cứu thái độ của người Việt Nam đối với công nghệ sức khỏe tâm thần',
+          'Thiết kế giao diện người dùng phù hợp với văn hóa',
+          'Tích hợp các kỹ thuật trị liệu dựa trên bằng chứng',
+          'Triển khai các giao thức can thiệp khủng hoảng',
+          'Kiểm tra với các nhóm tập trung từ các nhóm nhân khẩu học mục tiêu',
+          'Lặp lại thiết kế dựa trên phản hồi của người dùng',
         ],
-        expectedResults: 'Mental health app prototype với high user engagement và cultural acceptance'
-      }
+        expectedResults:
+          'Nguyên mẫu ứng dụng sức khỏe tâm thần với tỷ lệ tương tác người dùng cao và sự chấp nhận về văn hóa',
+      },
     ],
     realWorldApplications: [
-      'Employee wellness programs',
-      'School-based mental health screening',
-      'Crisis intervention hotline support',
-      'Therapy augmentation tools',
-      'Community mental health outreach'
+      'Chương trình chăm sóc sức khỏe nhân viên',
+      'Sàng lọc sức khỏe tâm thần tại trường học',
+      'Hỗ trợ đường dây nóng can thiệp khủng hoảng',
+      'Công cụ tăng cường trị liệu',
+      'Tiếp cận sức khỏe tâm thần cộng đồng',
     ],
     caseStudies: [
       {
-        title: 'Mindful - Vietnam Mental Health Platform',
+        title: 'Mindful - Nền tảng Sức khỏe Tâm thần Việt Nam',
         organization: 'Mindful Vietnam',
-        problem: 'Limited access to mental health services in urban areas',
-        solution: 'Digital platform connecting users với licensed therapists',
-        impact: '10,000+ users served, 85% reported improvement in symptoms',
-        innovations: ['Vietnamese-language CBT modules', 'Family therapy integration', 'Cultural competency training']
-      }
-    ]
-  }
+        problem: 'Hạn chế tiếp cận các dịch vụ sức khỏe tâm thần ở các khu vực thành thị',
+        solution: 'Nền tảng kỹ thuật số kết nối người dùng với các nhà trị liệu được cấp phép',
+        impact: 'Hơn 10.000 người dùng được phục vụ, 85% báo cáo cải thiện triệu chứng',
+        innovations: ['Các mô-đun CBT bằng tiếng Việt', 'Tích hợp trị liệu gia đình', 'Đào tạo năng lực văn hóa'],
+      },
+    ],
+    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'mental-health-app')]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+  },
 ];
 
 export default healthcareTechLessons;

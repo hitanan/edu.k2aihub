@@ -1,7 +1,13 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
 
 export interface InternationalBusinessLesson extends BaseLessonData {
-  businessDomain: 'cross-cultural-management' | 'global-strategy' | 'international-trade' | 'cultural-intelligence' | 'global-leadership';
+  businessDomain:
+    | 'cross-cultural-management'
+    | 'global-strategy'
+    | 'international-trade'
+    | 'cultural-intelligence'
+    | 'global-leadership';
   culturalRegions: string[];
   businessApplications: string[];
   vietnameseBusinessContext: string[];
@@ -12,431 +18,518 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
   {
     id: 'cross-cultural-management-leadership',
     title: 'Quản Lý & Lãnh Đạo Đa Văn Hóa',
-    description: 'Master cross-cultural management techniques, leadership trong diverse teams, cultural intelligence development, và effective communication across cultures.',
+    description:
+      'Nắm vững các kỹ thuật quản lý đa văn hóa, lãnh đạo trong các nhóm đa dạng, phát triển trí tuệ văn hóa và giao tiếp hiệu quả giữa các nền văn hóa.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=YMyofREc5Jk', // Cross Cultural Management
     imageUrl: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=600&fit=crop',
     businessDomain: 'cross-cultural-management',
     culturalRegions: [
-      'East Asian business cultures (China, Japan, Korea)',
-      'Southeast Asian markets (ASEAN countries)',
-      'Western business cultures (US, Europe)',
-      'Latin American và Middle Eastern markets'
+      'Văn hóa kinh doanh Đông Á (Trung Quốc, Nhật Bản, Hàn Quốc)',
+      'Thị trường Đông Nam Á (các nước ASEAN)',
+      'Văn hóa kinh doanh phương Tây (Mỹ, Châu Âu)',
+      'Thị trường Mỹ Latinh và Trung Đông',
     ],
     objectives: [
-      'Develop cultural intelligence (CQ) capabilities',
-      'Implement effective cross-cultural communication strategies',
-      'Manage diverse multicultural teams successfully',
-      'Navigate cultural differences trong business negotiations',
-      'Create inclusive global work environments'
+      'Phát triển năng lực trí tuệ văn hóa (CQ)',
+      'Thực hiện các chiến lược giao tiếp đa văn hóa hiệu quả',
+      'Quản lý thành công các nhóm đa văn hóa',
+      'Vượt qua sự khác biệt văn hóa trong đàm phán kinh doanh',
+      'Tạo môi trường làm việc toàn cầu hòa nhập',
     ],
     prerequisites: [
-      'Basic management experience',
-      'Interest in international business',
-      'Open mindset về cultural differences'
+      'Kinh nghiệm quản lý cơ bản',
+      'Quan tâm đến kinh doanh quốc tế',
+      'Tư duy cởi mở về sự khác biệt văn hóa',
     ],
     vietnameseBusinessContext: [
-      'Vietnam as bridge between East Asian và Western business cultures',
-      'Managing international partnerships với foreign companies',
-      'Cultural adaptation strategies cho Vietnamese companies going global',
-      'Hosting và integrating foreign workers trong Vietnamese companies'
+      'Việt Nam là cầu nối giữa văn hóa kinh doanh Đông Á và phương Tây',
+      'Quản lý quan hệ đối tác quốc tế với các công ty nước ngoài',
+      'Chiến lược thích ứng văn hóa cho các công ty Việt Nam vươn ra toàn cầu',
+      'Tiếp nhận và hội nhập lao động nước ngoài tại các công ty Việt Nam',
     ],
     businessApplications: [
-      'International joint venture management',
-      'Global team leadership strategies',
-      'Cross-border merger và acquisition integration',
-      'International project management'
+      'Quản lý liên doanh quốc tế',
+      'Chiến lược lãnh đạo nhóm toàn cầu',
+      'Hội nhập sáp nhập và mua lại xuyên biên giới',
+      'Quản lý dự án quốc tế',
     ],
     globalCompetencies: [
-      'Cultural assessment và adaptation skills',
-      'Multilingual communication capabilities',
-      'Conflict resolution across cultures',
-      'Global leadership presence'
+      'Kỹ năng đánh giá và thích ứng văn hóa',
+      'Năng lực giao tiếp đa ngôn ngữ',
+      'Giải quyết xung đột giữa các nền văn hóa',
+      'Sự hiện diện của lãnh đạo toàn cầu',
     ],
     exercises: [
       {
-        title: 'Cultural Intelligence Assessment & Development Plan',
-        description: 'Assess personal cultural intelligence và create development plan cho managing international business relationships',
+        title: 'Đánh giá Trí tuệ Văn hóa & Kế hoạch Phát triển',
+        description:
+          'Đánh giá trí tuệ văn hóa cá nhân và tạo kế hoạch phát triển để quản lý các mối quan hệ kinh doanh quốc tế',
         difficulty: 'Trung bình',
-        materials: ['Cultural Intelligence Scale (CQS)', 'Culture mapping tools', 'Communication assessment frameworks', 'Development planning templates'],
-        procedure: [
-          'Complete comprehensive cultural intelligence assessment',
-          'Identify cultural strengths và development areas',
-          'Research target cultural contexts for business operations',
-          'Design skill development plan với practical exercises',
-          'Create measurement framework cho improvement tracking'
+        materials: [
+          'Thang đo Trí tuệ Văn hóa (CQS)',
+          'Công cụ lập bản đồ văn hóa',
+          'Khung đánh giá giao tiếp',
+          'Mẫu lập kế hoạch phát triển',
         ],
-        expectedResults: 'Personalized cultural intelligence development plan với specific competencies và measurable goals',
-        solution: 'Systematic approach to developing cultural awareness, empathy, communication skills, và adaptive behaviors'
-      }
+        procedure: [
+          'Hoàn thành đánh giá trí tuệ văn hóa toàn diện',
+          'Xác định điểm mạnh và lĩnh vực cần phát triển về văn hóa',
+          'Nghiên cứu bối cảnh văn hóa mục tiêu cho hoạt động kinh doanh',
+          'Thiết kế kế hoạch phát triển kỹ năng với các bài tập thực tế',
+          'Tạo khung đo lường để theo dõi sự cải thiện',
+        ],
+        expectedResults:
+          'Kế hoạch phát triển trí tuệ văn hóa được cá nhân hóa với các năng lực cụ thể và mục tiêu có thể đo lường',
+        solution:
+          'Phương pháp tiếp cận có hệ thống để phát triển nhận thức văn hóa, sự đồng cảm, kỹ năng giao tiếp và hành vi thích ứng',
+      },
     ],
     realWorldApplications: [
-      'Managing Vietnamese-Japanese joint ventures',
-      'Leading international sales teams',
-      'Facilitating cross-cultural business negotiations',
-      'Building global supplier relationships'
+      'Quản lý các liên doanh Việt-Nhật',
+      'Lãnh đạo các nhóm bán hàng quốc tế',
+      'Tạo điều kiện cho các cuộc đàm phán kinh doanh đa văn hóa',
+      'Xây dựng mối quan hệ với nhà cung cấp toàn cầu',
     ],
     caseStudies: [
       {
-        title: 'Vingroup International Expansion Strategy',
-        organization: 'Vingroup Corporation',
-        problem: 'Expanding retail và real estate operations into culturally diverse Southeast Asian markets',
-        solution: 'Cultural intelligence training programs, local partnership strategies, adaptive business models, cross-cultural leadership development',
-        impact: 'Successfully entered 3 new markets, reduced cultural conflict incidents by 70%, improved international team performance by 45%',
-        innovations: ['Cultural adaptation framework', 'Local-global hybrid models', 'Cross-cultural leadership pipeline']
-      }
+        title: 'Chiến lược Mở rộng Quốc tế của Vingroup',
+        organization: 'Tập đoàn Vingroup',
+        problem: 'Mở rộng hoạt động bán lẻ và bất động sản sang các thị trường Đông Nam Á đa dạng về văn hóa',
+        solution:
+          'Các chương trình đào tạo trí tuệ văn hóa, chiến lược hợp tác địa phương, mô hình kinh doanh thích ứng, phát triển lãnh đạo đa văn hóa',
+        impact:
+          'Thâm nhập thành công 3 thị trường mới, giảm 70% sự cố xung đột văn hóa, cải thiện 45% hiệu suất nhóm quốc tế',
+        innovations: [
+          'Khung thích ứng văn hóa',
+          'Mô hình kết hợp địa phương-toàn cầu',
+          'Lộ trình phát triển lãnh đạo đa văn hóa',
+        ],
+      },
     ],
     resources: [
       {
-        title: 'Cultural Intelligence Research',
+        title: 'Nghiên cứu Trí tuệ Văn hóa',
         url: 'https://culturalq.com/',
-        type: 'Research'
-      }
-    ]
+        type: 'Research',
+      },
+    ],
+    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge')]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'global-supply-chain-trade',
     title: 'Chuỗi Cung Ứng Toàn Cầu & Thương Mại Quốc Tế',
-    description: 'Understand international trade mechanics, global supply chain management, trade finance, import/export regulations, và international logistics.',
+    description:
+      'Hiểu cơ chế thương mại quốc tế, quản lý chuỗi cung ứng toàn cầu, tài chính thương mại, quy định xuất nhập khẩu và logistics quốc tế.',
     duration: '235 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=OT3H6U2h0y8', // International Trade and Supply Chain
     imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop',
     businessDomain: 'international-trade',
     culturalRegions: [
-      'ASEAN Free Trade Area operations',
-      'China-Vietnam trade corridor',
-      'European Union trade relationships',
-      'Trans-Pacific trading partnerships'
+      'Hoạt động Khu vực Mậu dịch Tự do ASEAN',
+      'Hành lang thương mại Trung Quốc-Việt Nam',
+      'Quan hệ thương mại Liên minh Châu Âu',
+      'Đối tác thương mại xuyên Thái Bình Dương',
     ],
     objectives: [
-      'Master international trade documentation và procedures',
-      'Design efficient global supply chain networks',
-      'Understand trade finance instruments và risk management',
-      'Navigate international shipping và logistics',
-      'Implement sustainable supply chain practices'
+      'Nắm vững chứng từ và thủ tục thương mại quốc tế',
+      'Thiết kế mạng lưới chuỗi cung ứng toàn cầu hiệu quả',
+      'Hiểu các công cụ tài chính thương mại và quản lý rủi ro',
+      'Vượt qua các thách thức về vận chuyển và logistics quốc tế',
+      'Thực hiện các thông lệ chuỗi cung ứng bền vững',
     ],
     prerequisites: [
-      'Basic business knowledge',
-      'Understanding of logistics principles',
-      'Familiarity với international markets'
+      'Kiến thức kinh doanh cơ bản',
+      'Hiểu biết về các nguyên tắc logistics',
+      'Quen thuộc với thị trường quốc tế',
     ],
     vietnameseBusinessContext: [
-      'Vietnam as manufacturing hub trong global supply chains',
-      'EVFTA (EU-Vietnam Free Trade Agreement) opportunities',
-      'RCEP (Regional Comprehensive Economic Partnership) benefits',
-      'Vietnam-US trade relationship management'
+      'Việt Nam là trung tâm sản xuất trong chuỗi cung ứng toàn cầu',
+      'Cơ hội từ EVFTA (Hiệp định Thương mại Tự do EU-Việt Nam)',
+      'Lợi ích từ RCEP (Hiệp định Đối tác Kinh tế Toàn diện Khu vực)',
+      'Quản lý quan hệ thương mại Việt Nam-Hoa Kỳ',
     ],
     businessApplications: [
-      'Export market development strategies',
-      'Import sourcing và vendor management',
-      'International distribution network design',
-      'Cross-border e-commerce operations'
+      'Chiến lược phát triển thị trường xuất khẩu',
+      'Tìm nguồn cung ứng nhập khẩu và quản lý nhà cung cấp',
+      'Thiết kế mạng lưới phân phối quốc tế',
+      'Hoạt động thương mại điện tử xuyên biên giới',
     ],
     globalCompetencies: [
-      'Trade regulation compliance expertise',
-      'International payment systems knowledge',
-      'Supply chain risk assessment abilities',
-      'Global logistics optimization skills'
+      'Chuyên môn tuân thủ quy định thương mại',
+      'Kiến thức về hệ thống thanh toán quốc tế',
+      'Khả năng đánh giá rủi ro chuỗi cung ứng',
+      'Kỹ năng tối ưu hóa logistics toàn cầu',
     ],
     exercises: [
       {
-        title: 'International Market Entry Strategy',
-        description: 'Develop comprehensive market entry strategy cho Vietnamese company expanding into new international market',
+        title: 'Chiến lược Thâm nhập Thị trường Quốc tế',
+        description:
+          'Phát triển chiến lược thâm nhập thị trường toàn diện cho một công ty Việt Nam mở rộng sang thị trường quốc tế mới',
         difficulty: 'Nâng cao',
-        materials: ['Market research tools', 'Trade analysis software', 'Supply chain modeling platforms', 'Financial planning templates'],
-        procedure: [
-          'Conduct target market analysis including cultural, economic, regulatory factors',
-          'Design supply chain và distribution strategy',
-          'Develop pricing strategy accounting for all international costs',
-          'Create risk management plan cho trade finance và operations',
-          'Plan implementation timeline với key milestones'
+        materials: [
+          'Công cụ nghiên cứu thị trường',
+          'Phần mềm phân tích thương mại',
+          'Nền tảng mô hình hóa chuỗi cung ứng',
+          'Mẫu lập kế hoạch tài chính',
         ],
-        expectedResults: 'Complete international market entry plan với financial projections, risk assessment, và implementation roadmap',
-        solution: 'Systematic market entry approach combining market research, operational planning, financial analysis, và risk mitigation'
-      }
+        procedure: [
+          'Tiến hành phân tích thị trường mục tiêu bao gồm các yếu tố văn hóa, kinh tế, pháp lý',
+          'Thiết kế chiến lược chuỗi cung ứng và phân phối',
+          'Xây dựng chiến lược giá cả tính đến tất cả các chi phí quốc tế',
+          'Tạo kế hoạch quản lý rủi ro cho tài chính thương mại và hoạt động',
+          'Lập kế hoạch thời gian thực hiện với các mốc quan trọng',
+        ],
+        expectedResults:
+          'Kế hoạch thâm nhập thị trường quốc tế hoàn chỉnh với các dự báo tài chính, đánh giá rủi ro và lộ trình thực hiện',
+        solution:
+          'Phương pháp tiếp cận thâm nhập thị trường có hệ thống kết hợp nghiên cứu thị trường, lập kế hoạch hoạt động, phân tích tài chính và giảm thiểu rủi ro',
+      },
     ],
     realWorldApplications: [
-      'Setting up international manufacturing operations',
-      'Developing export markets cho Vietnamese products',
-      'Managing global supplier networks',
-      'Optimizing cross-border logistics costs'
+      'Thiết lập hoạt động sản xuất quốc tế',
+      'Phát triển thị trường xuất khẩu cho sản phẩm Việt Nam',
+      'Quản lý mạng lưới nhà cung cấp toàn cầu',
+      'Tối ưu hóa chi phí logistics xuyên biên giới',
     ],
     caseStudies: [
       {
-        title: 'VinFast Global Expansion',
+        title: 'VinFast Mở rộng Toàn cầu',
         organization: 'VinFast Auto',
-        problem: 'Establishing international electric vehicle supply chain và market presence',
-        solution: 'Global manufacturing strategy, international supplier partnerships, complex logistics networks, market-specific adaptation',
-        impact: 'Established operations in 3 continents, built international supplier network of 200+ companies, achieved 45% cost optimization',
-        innovations: ['Flexible global manufacturing', 'Sustainable supply chain practices', 'Market-adaptive product strategies']
-      }
+        problem: 'Thiết lập chuỗi cung ứng xe điện quốc tế và sự hiện diện trên thị trường',
+        solution:
+          'Chiến lược sản xuất toàn cầu, quan hệ đối tác với nhà cung cấp quốc tế, mạng lưới logistics phức tạp, thích ứng theo từng thị trường cụ thể',
+        impact:
+          'Thành lập hoạt động tại 3 châu lục, xây dựng mạng lưới nhà cung cấp quốc tế hơn 200 công ty, tối ưu hóa chi phí 45%',
+        innovations: [
+          'Sản xuất toàn cầu linh hoạt',
+          'Thực hành chuỗi cung ứng bền vững',
+          'Chiến lược sản phẩm thích ứng với thị trường',
+        ],
+      },
     ],
     resources: [
       {
-        title: 'International Trade Centre Resources',
+        title: 'Tài nguyên của Trung tâm Thương mại Quốc tế',
         url: 'https://www.intracen.org/',
-        type: 'Resource'
-      }
+        type: 'Resource',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'global-marketplace-simulator'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'currency-exchange-puzzle'),
     ]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'global-business-strategy-planning',
-    title: 'Chiến Lược Kinh Doanh Toàn Cầu & Quy Hoạch',
-    description: 'Develop global business strategies, international market analysis, competitive intelligence, và strategic planning for international expansion.',
+    title: 'Chiến Lược Kinh Doanh Toàn Cầu & Hoạch Định',
+    description:
+      'Phát triển chiến lược kinh doanh toàn cầu, phân tích thị trường quốc tế, tình báo cạnh tranh và hoạch định chiến lược để mở rộng quốc tế.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=YiZn5fpPHgY', // Global Business Strategy
     imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop',
     businessDomain: 'global-strategy',
     culturalRegions: [
-      'Emerging Asian markets strategy',
-      'Developed Western markets approach',
-      'Latin American expansion opportunities',
-      'Middle Eastern business development'
+      'Chiến lược thị trường mới nổi châu Á',
+      'Cách tiếp cận thị trường phát triển phương Tây',
+      'Cơ hội mở rộng ở Mỹ Latinh',
+      'Phát triển kinh doanh ở Trung Đông',
     ],
     objectives: [
-      'Develop comprehensive global business strategies',
-      'Conduct international competitive analysis',
-      'Create market entry và expansion plans',
-      'Implement global business model innovation',
-      'Design international partnership strategies'
+      'Phát triển chiến lược kinh doanh toàn cầu toàn diện',
+      'Tiến hành phân tích cạnh tranh quốc tế',
+      'Tạo kế hoạch thâm nhập và mở rộng thị trường',
+      'Thực hiện đổi mới mô hình kinh doanh toàn cầu',
+      'Thiết kế chiến lược hợp tác quốc tế',
     ],
     prerequisites: [
-      'Strategic management fundamentals',
-      'International business awareness',
-      'Competitive analysis experience'
+      'Nguyên tắc cơ bản về quản trị chiến lược',
+      'Nhận thức về kinh doanh quốc tế',
+      'Kinh nghiệm phân tích cạnh tranh',
     ],
     vietnameseBusinessContext: [
-      'Vietnamese companies\' global expansion strategies',
-      'Foreign direct investment into Vietnam',
-      'Regional headquarters strategy trong Southeast Asia',
-      'Government support programs cho international expansion'
+      'Chiến lược mở rộng toàn cầu của các công ty Việt Nam',
+      'Đầu tư trực tiếp nước ngoài vào Việt Nam',
+      'Chiến lược đặt trụ sở khu vực tại Đông Nam Á',
+      'Các chương trình hỗ trợ của chính phủ để mở rộng quốc tế',
     ],
     businessApplications: [
-      'International joint venture planning',
-      'Global product localization strategies',
-      'Cross-border mergers và acquisitions',
-      'International franchise development'
+      'Lập kế hoạch liên doanh quốc tế',
+      'Chiến lược địa phương hóa sản phẩm toàn cầu',
+      'Sáp nhập và mua lại xuyên biên giới',
+      'Phát triển nhượng quyền thương mại quốc tế',
     ],
     globalCompetencies: [
-      'Global market analysis capabilities',
-      'Strategic scenario planning skills',
-      'International competitive intelligence',
-      'Global business model design'
+      'Năng lực phân tích thị trường toàn cầu',
+      'Kỹ năng hoạch định kịch bản chiến lược',
+      'Tình báo cạnh tranh quốc tế',
+      'Thiết kế mô hình kinh doanh toàn cầu',
     ],
     exercises: [
       {
-        title: 'Global Expansion Strategy Development',
-        description: 'Create comprehensive global expansion strategy cho Vietnamese technology company targeting 3 international markets',
+        title: 'Phát triển Chiến lược Mở rộng Toàn cầu',
+        description:
+          'Tạo chiến lược mở rộng toàn cầu toàn diện cho một công ty công nghệ Việt Nam nhắm đến 3 thị trường quốc tế',
         difficulty: 'Nâng cao',
-        materials: ['Strategic planning frameworks', 'Market analysis tools', 'Competitive intelligence platforms', 'Financial modeling software'],
-        procedure: [
-          'Conduct comprehensive global market opportunity analysis',
-          'Perform competitive landscape mapping trong target markets',
-          'Design market entry strategies với timing và resource allocation',
-          'Develop business model adaptations cho each market',
-          'Create implementation roadmap với key performance indicators'
+        materials: [
+          'Khung hoạch định chiến lược',
+          'Công cụ phân tích thị trường',
+          'Nền tảng tình báo cạnh tranh',
+          'Phần mềm lập mô hình tài chính',
         ],
-        expectedResults: 'Detailed global expansion strategy với market prioritization, entry strategies, và implementation plan',
-        solution: 'Multi-market expansion approach với phased implementation, risk-adjusted resource allocation, và measurable success metrics'
-      }
+        procedure: [
+          'Tiến hành phân tích cơ hội thị trường toàn cầu toàn diện',
+          'Thực hiện lập bản đồ bối cảnh cạnh tranh tại các thị trường mục tiêu',
+          'Thiết kế chiến lược thâm nhập thị trường với thời gian và phân bổ nguồn lực',
+          'Phát triển các mô hình kinh doanh thích ứng cho từng thị trường',
+          'Tạo lộ trình thực hiện với các chỉ số hiệu suất chính',
+        ],
+        expectedResults:
+          'Chiến lược mở rộng toàn cầu chi tiết với ưu tiên thị trường, chiến lược thâm nhập và kế hoạch thực hiện',
+        solution:
+          'Phương pháp tiếp cận mở rộng đa thị trường với việc thực hiện theo giai đoạn, phân bổ nguồn lực được điều chỉnh theo rủi ro và các chỉ số thành công có thể đo lường',
+      },
     ],
     realWorldApplications: [
-      'Technology company international scaling',
-      'Manufacturing expansion into new regions',
-      'Service industry globalization',
-      'E-commerce international marketplace development'
+      'Mở rộng quy mô quốc tế của công ty công nghệ',
+      'Mở rộng sản xuất sang các khu vực mới',
+      'Toàn cầu hóa ngành dịch vụ',
+      'Phát triển thị trường quốc tế cho thương mại điện tử',
     ],
     caseStudies: [
       {
-        title: 'FPT International Growth Strategy',
-        organization: 'FPT Corporation',
-        problem: 'Scaling technology services globally while maintaining Vietnamese competitive advantages',
-        solution: 'Market-specific service offerings, strategic partnerships, cultural adaptation programs, global talent development',
-        impact: 'Expanded to 26 countries, achieved $2.1B revenue with 40% from international markets, established 2 global R&D centers',
-        innovations: ['Culturally-adapted service delivery', 'Global talent pipeline', 'Market-specific innovation centers']
-      }
+        title: 'Chiến lược Tăng trưởng Quốc tế của FPT',
+        organization: 'Tập đoàn FPT',
+        problem: 'Mở rộng quy mô dịch vụ công nghệ trên toàn cầu trong khi vẫn duy trì lợi thế cạnh tranh của Việt Nam',
+        solution:
+          'Cung cấp dịch vụ theo từng thị trường cụ thể, quan hệ đối tác chiến lược, chương trình thích ứng văn hóa, phát triển tài năng toàn cầu',
+        impact:
+          'Mở rộng đến 26 quốc gia, đạt doanh thu 2,1 tỷ USD với 40% từ thị trường quốc tế, thành lập 2 trung tâm R&D toàn cầu',
+        innovations: [
+          'Cung cấp dịch vụ thích ứng văn hóa',
+          'Lộ trình phát triển tài năng toàn cầu',
+          'Trung tâm đổi mới theo từng thị trường',
+        ],
+      },
     ],
     resources: [
       {
-        title: 'Global Strategy Research',
+        title: 'Nghiên cứu Chiến lược Toàn cầu',
         url: 'https://hbr.org/topic/global-strategy',
-        type: 'Research'
-      }
-    ]
+        type: 'Research',
+      },
+    ],
+    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'global-marketplace-simulator')]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'international-negotiation-communication',
     title: 'Đàm Phán & Giao Tiếp Quốc Tế',
-    description: 'Master international business negotiation tactics, cross-cultural communication skills, diplomatic business interactions, và relationship building.',
+    description:
+      'Nắm vững các chiến thuật đàm phán kinh doanh quốc tế, kỹ năng giao tiếp đa văn hóa, tương tác kinh doanh ngoại giao và xây dựng mối quan hệ.',
     duration: '190 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=iuYlGRnC7J8', // International Business Negotiation
     imageUrl: 'https://images.unsplash.com/photo-1560264280-88b68371db39?w=1200&h=600&fit=crop',
     businessDomain: 'cultural-intelligence',
     culturalRegions: [
-      'Asian high-context communication styles',
-      'Western direct communication approaches',
-      'Middle Eastern relationship-focused negotiations',
-      'Latin American personal connection importance'
+      'Phong cách giao tiếp ngữ cảnh cao của châu Á',
+      'Cách tiếp cận giao tiếp trực tiếp của phương Tây',
+      'Đàm phán tập trung vào mối quan hệ của Trung Đông',
+      'Tầm quan trọng của kết nối cá nhân ở Mỹ Latinh',
     ],
     objectives: [
-      'Develop advanced international negotiation skills',
-      'Master cross-cultural communication techniques',
-      'Build long-term international business relationships',
-      'Navigate complex multicultural business situations',
-      'Create win-win international partnerships'
+      'Phát triển kỹ năng đàm phán quốc tế nâng cao',
+      'Nắm vững các kỹ thuật giao tiếp đa văn hóa',
+      'Xây dựng mối quan hệ kinh doanh quốc tế lâu dài',
+      'Vượt qua các tình huống kinh doanh đa văn hóa phức tạp',
+      'Tạo ra các quan hệ đối tác quốc tế cùng có lợi',
     ],
     prerequisites: [
-      'Basic negotiation skills',
-      'Communication fundamentals',
-      'Cultural awareness basics'
+      'Kỹ năng đàm phán cơ bản',
+      'Nguyên tắc cơ bản về giao tiếp',
+      'Kiến thức cơ bản về nhận thức văn hóa',
     ],
     vietnameseBusinessContext: [
-      'Vietnamese business relationship building traditions',
-      'Face-saving concepts trong international negotiations',
-      'Hierarchical decision making trong cross-cultural contexts',
-      'Building trust với foreign business partners'
+      'Truyền thống xây dựng mối quan hệ kinh doanh của Việt Nam',
+      'Khái niệm giữ thể diện trong đàm phán quốc tế',
+      'Ra quyết định theo cấp bậc trong bối cảnh đa văn hóa',
+      'Xây dựng lòng tin với các đối tác kinh doanh nước ngoài',
     ],
     businessApplications: [
-      'International contract negotiations',
-      'Partnership agreement development',
-      'Cross-border investment discussions',
-      'Global supplier relationship management'
+      'Đàm phán hợp đồng quốc tế',
+      'Phát triển thỏa thuận hợp tác',
+      'Thảo luận đầu tư xuyên biên giới',
+      'Quản lý quan hệ nhà cung cấp toàn cầu',
     ],
     globalCompetencies: [
-      'Advanced listening và empathy skills',
-      'Cultural adaptation techniques',
-      'Diplomatic communication abilities',
-      'Relationship maintenance strategies'
+      'Kỹ năng lắng nghe và đồng cảm nâng cao',
+      'Kỹ thuật thích ứng văn hóa',
+      'Khả năng giao tiếp ngoại giao',
+      'Chiến lược duy trì mối quan hệ',
     ],
     exercises: [
       {
-        title: 'International Business Negotiation Simulation',
-        description: 'Conduct complex multi-party international business negotiation simulation involving cultural, legal, và economic considerations',
+        title: 'Mô phỏng Đàm phán Kinh doanh Quốc tế',
+        description:
+          'Thực hiện một mô phỏng đàm phán kinh doanh quốc tế đa bên phức tạp liên quan đến các yếu tố văn hóa, pháp lý và kinh tế',
         difficulty: 'Nâng cao',
-        materials: ['Negotiation simulation scenarios', 'Cultural briefing materials', 'Communication assessment tools', 'Relationship tracking frameworks'],
-        procedure: [
-          'Study cultural backgrounds of all negotiating parties',
-          'Prepare negotiation strategy accounting for cultural factors',
-          'Conduct multi-session negotiation với cultural role-playing',
-          'Navigate cultural misunderstandings và communication challenges',
-          'Evaluate outcomes và relationship preservation'
+        materials: [
+          'Kịch bản mô phỏng đàm phán',
+          'Tài liệu tóm tắt về văn hóa',
+          'Công cụ đánh giá giao tiếp',
+          'Khung theo dõi mối quan hệ',
         ],
-        expectedResults: 'Successful negotiation outcome with preserved relationships và cultural sensitivity demonstration',
-        solution: 'Culturally-informed negotiation approach prioritizing relationship building, mutual understanding, và sustainable agreements'
-      }
+        procedure: [
+          'Nghiên cứu nền tảng văn hóa của tất cả các bên đàm phán',
+          'Chuẩn bị chiến lược đàm phán có tính đến các yếu tố văn hóa',
+          'Tiến hành đàm phán nhiều phiên với vai trò văn hóa',
+          'Vượt qua những hiểu lầm văn hóa và thách thức giao tiếp',
+          'Đánh giá kết quả và việc duy trì mối quan hệ',
+        ],
+        expectedResults:
+          'Kết quả đàm phán thành công với các mối quan hệ được duy trì và thể hiện sự nhạy bén về văn hóa',
+        solution:
+          'Phương pháp đàm phán dựa trên thông tin văn hóa ưu tiên xây dựng mối quan hệ, hiểu biết lẫn nhau và các thỏa thuận bền vững',
+      },
     ],
     realWorldApplications: [
-      'Joint venture partnership negotiations',
-      'International sales contract discussions',
-      'Cross-cultural team conflict resolution',
-      'Global strategic alliance development'
+      'Đàm phán hợp tác liên doanh',
+      'Thảo luận hợp đồng bán hàng quốc tế',
+      'Giải quyết xung đột nhóm đa văn hóa',
+      'Phát triển liên minh chiến lược toàn cầu',
     ],
     caseStudies: [
       {
-        title: 'Masan Group International Partnerships',
-        organization: 'Masan Group Corporation',
-        problem: 'Negotiating complex international partnerships với companies from different cultural backgrounds for market expansion',
-        solution: 'Cultural intelligence training, local advisors, relationship-first approach, flexible negotiation strategies',
-        impact: 'Secured $2B+ in international partnerships, maintained 95% partner satisfaction rate, expanded to 15 countries',
-        innovations: ['Cultural partnership frameworks', 'Relationship management systems', 'Adaptive negotiation protocols']
-      }
+        title: 'Quan hệ Đối tác Quốc tế của Tập đoàn Masan',
+        organization: 'Tập đoàn Masan',
+        problem:
+          'Đàm phán các quan hệ đối tác quốc tế phức tạp với các công ty từ các nền văn hóa khác nhau để mở rộng thị trường',
+        solution:
+          'Đào tạo trí tuệ văn hóa, cố vấn địa phương, cách tiếp cận ưu tiên mối quan hệ, chiến lược đàm phán linh hoạt',
+        impact:
+          'Đảm bảo hơn 2 tỷ đô la trong các quan hệ đối tác quốc tế, duy trì tỷ lệ hài lòng của đối tác 95%, mở rộng đến 15 quốc gia',
+        innovations: ['Khung đối tác văn hóa', 'Hệ thống quản lý mối quan hệ', 'Giao thức đàm phán thích ứng'],
+      },
     ],
     resources: [
       {
-        title: 'International Negotiation Institute',
+        title: 'Viện Đàm phán Quốc tế',
         url: 'https://www.negotiations.com/international/',
-        type: 'Training'
-      }
-    ]
+        type: 'Training',
+      },
+    ],
+    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge')]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'global-leadership-development',
     title: 'Phát Triển Lãnh Đạo Toàn Cầu',
-    description: 'Develop global leadership competencies, international team management, cross-cultural leadership styles, và building global organizational culture.',
+    description:
+      'Phát triển năng lực lãnh đạo toàn cầu, quản lý nhóm quốc tế, phong cách lãnh đạo đa văn hóa và xây dựng văn hóa tổ chức toàn cầu.',
     duration: '205 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=yENCsFO-1HQ', // Global Leadership Development
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
     businessDomain: 'global-leadership',
     culturalRegions: [
-      'Asian collective leadership styles',
-      'Western individual-focused leadership',
-      'African ubuntu leadership principles',
-      'Nordic collaborative leadership models'
+      'Phong cách lãnh đạo tập thể châu Á',
+      'Lãnh đạo tập trung vào cá nhân của phương Tây',
+      'Nguyên tắc lãnh đạo ubuntu của châu Phi',
+      'Mô hình lãnh đạo hợp tác của Bắc Âu',
     ],
     objectives: [
-      'Develop global leadership mindset và capabilities',
-      'Master virtual team leadership across time zones',
-      'Create inclusive global organizational cultures',
-      'Implement cross-cultural talent development programs',
-      'Build sustainable global leadership pipelines'
+      'Phát triển tư duy và năng lực lãnh đạo toàn cầu',
+      'Nắm vững kỹ năng lãnh đạo nhóm ảo qua các múi giờ',
+      'Tạo ra văn hóa tổ chức toàn cầu hòa nhập',
+      'Thực hiện các chương trình phát triển tài năng đa văn hóa',
+      'Xây dựng lộ trình phát triển lãnh đạo toàn cầu bền vững',
     ],
-    prerequisites: [
-      'Leadership experience',
-      'International business exposure',
-      'Cultural sensitivity awareness'
-    ],
+    prerequisites: ['Kinh nghiệm lãnh đạo', 'Tiếp xúc với kinh doanh quốc tế', 'Nhận thức về sự nhạy cảm văn hóa'],
     vietnameseBusinessContext: [
-      'Developing Vietnamese leaders for global roles',
-      'Managing international teams từ Vietnam headquarters',
-      'Building bridges between Vietnamese và international management styles',
-      'Succession planning cho global Vietnamese companies'
+      'Phát triển các nhà lãnh đạo Việt Nam cho các vai trò toàn cầu',
+      'Quản lý các nhóm quốc tế từ trụ sở chính tại Việt Nam',
+      'Xây dựng cầu nối giữa phong cách quản lý của Việt Nam và quốc tế',
+      'Hoạch định kế nhiệm cho các công ty toàn cầu của Việt Nam',
     ],
     businessApplications: [
-      'Global executive development programs',
-      'International assignment preparation',
-      'Cross-cultural mentoring systems',
-      'Global leadership succession planning'
+      'Chương trình phát triển giám đốc điều hành toàn cầu',
+      'Chuẩn bị cho các nhiệm vụ quốc tế',
+      'Hệ thống cố vấn đa văn hóa',
+      'Hoạch định kế nhiệm lãnh đạo toàn cầu',
     ],
     globalCompetencies: [
-      'Adaptive leadership styles',
-      'Global communication excellence',
-      'Cultural change management',
-      'International talent development'
+      'Phong cách lãnh đạo thích ứng',
+      'Giao tiếp toàn cầu xuất sắc',
+      'Quản lý thay đổi văn hóa',
+      'Phát triển tài năng quốc tế',
     ],
     exercises: [
       {
-        title: 'Global Leadership Development Program Design',
-        description: 'Design comprehensive global leadership development program cho Vietnamese multinational company',
+        title: 'Thiết kế Chương trình Phát triển Lãnh đạo Toàn cầu',
+        description:
+          'Thiết kế một chương trình phát triển lãnh đạo toàn cầu toàn diện cho một công ty đa quốc gia của Việt Nam',
         difficulty: 'Nâng cao',
-        materials: ['Leadership assessment tools', 'Global competency frameworks', 'Development program templates', 'Measurement systems'],
-        procedure: [
-          'Assess current global leadership capabilities và gaps',
-          'Research best practices từ successful global companies',
-          'Design multi-phase development program với cultural components',
-          'Create mentoring và coaching support systems',
-          'Develop measurement framework cho leadership effectiveness'
+        materials: [
+          'Công cụ đánh giá lãnh đạo',
+          'Khung năng lực toàn cầu',
+          'Mẫu chương trình phát triển',
+          'Hệ thống đo lường',
         ],
-        expectedResults: 'Comprehensive global leadership development program với clear competencies, development paths, và success metrics',
-        solution: 'Multi-faceted program combining cultural intelligence, leadership skills, global mindset development, và practical international experience'
-      }
+        procedure: [
+          'Đánh giá năng lực và khoảng cách lãnh đạo toàn cầu hiện tại',
+          'Nghiên cứu các thông lệ tốt nhất từ các công ty toàn cầu thành công',
+          'Thiết kế chương trình phát triển đa giai đoạn với các thành phần văn hóa',
+          'Tạo hệ thống hỗ trợ cố vấn và huấn luyện',
+          'Phát triển khung đo lường hiệu quả lãnh đạo',
+        ],
+        expectedResults:
+          'Chương trình phát triển lãnh đạo toàn cầu toàn diện với các năng lực rõ ràng, lộ trình phát triển và chỉ số thành công',
+        solution:
+          'Chương trình đa diện kết hợp trí tuệ văn hóa, kỹ năng lãnh đạo, phát triển tư duy toàn cầu và kinh nghiệm quốc tế thực tế',
+      },
     ],
     realWorldApplications: [
-      'Preparing executives for international assignments',
-      'Building global management competencies',
-      'Developing cross-cultural change leaders',
-      'Creating international leadership networks'
+      'Chuẩn bị cho các giám đốc điều hành cho các nhiệm vụ quốc tế',
+      'Xây dựng năng lực quản lý toàn cầu',
+      'Phát triển các nhà lãnh đạo thay đổi đa văn hóa',
+      'Tạo mạng lưới lãnh đạo quốc tế',
     ],
     caseStudies: [
       {
-        title: 'Techcombank Global Leadership Initiative',
-        organization: 'Vietnam Technological and Commercial Joint Stock Bank',
-        problem: 'Developing Vietnamese banking leaders capable of competing trong international financial markets',
-        solution: 'Global leadership academy, international exchange programs, cross-cultural coaching, global mentorship networks',
-        impact: 'Developed 150+ global-ready leaders, expanded international operations to 5 countries, improved global competitiveness scores by 60%',
-        innovations: ['Vietnamese-global leadership hybrid model', 'Cultural bridge-building programs', 'Global leadership networks']
-      }
+        title: 'Sáng kiến Lãnh đạo Toàn cầu của Techcombank',
+        organization: 'Ngân hàng TMCP Kỹ thương Việt Nam',
+        problem:
+          'Phát triển các nhà lãnh đạo ngân hàng Việt Nam có khả năng cạnh tranh trên thị trường tài chính quốc tế',
+        solution:
+          'Học viện lãnh đạo toàn cầu, chương trình trao đổi quốc tế, huấn luyện đa văn hóa, mạng lưới cố vấn toàn cầu',
+        impact:
+          'Phát triển hơn 150 nhà lãnh đạo sẵn sàng toàn cầu, mở rộng hoạt động quốc tế đến 5 quốc gia, cải thiện 60% điểm cạnh tranh toàn cầu',
+        innovations: [
+          'Mô hình kết hợp lãnh đạo Việt Nam-toàn cầu',
+          'Chương trình xây dựng cầu nối văn hóa',
+          'Mạng lưới lãnh đạo toàn cầu',
+        ],
+      },
     ],
     resources: [
       {
-        title: 'Center for Creative Leadership',
+        title: 'Trung tâm Lãnh đạo Sáng tạo',
         url: 'https://www.ccl.org/articles/leading-effectively-articles/what-is-global-leadership/',
-        type: 'Research'
-      }
-    ]
-  }
+        type: 'Research',
+      },
+    ],
+    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge')]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+  },
 ];

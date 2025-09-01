@@ -11,245 +11,223 @@ export interface LiveCommerceLessonType extends BaseLessonData {
   liveFeatures?: string[];
   engagementStrategies?: string[];
   monetizationMethods?: string[];
+  relatedGames?: string[];
 }
 
 export const liveCommerceLessons: LiveCommerceLessonType[] = [
-  // Comprehensive lessons
   {
     id: 'live-commerce-fundamentals',
-    title: 'Live Commerce Fundamentals Và Vietnamese Market',
-    description: 'Master live commerce basics, platform ecosystems, và market opportunities trong Vietnamese e-commerce landscape.',
-    duration: '170 phút',
+    title: 'Nền tảng Live Commerce và Thị trường Việt Nam',
+    description:
+      'Nắm vững kiến thức cơ bản về live commerce, hệ sinh thái nền tảng và cơ hội thị trường trong thương mại điện tử Việt Nam.',
+    duration: 170,
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=IXSQPJAg8ps', // Live commerce basics
+    videoUrl: 'https://www.youtube.com/watch?v=IXSQPJAg8ps',
     imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
     objectives: [
-      'Understand live commerce ecosystem và opportunities',
-      'Analyze Vietnamese live streaming market trends',
-      'Learn platform-specific live commerce features',
-      'Master viewer engagement và conversion techniques',
-      'Understand live commerce business models',
-      'Learn basic streaming technology requirements',
+      'Hiểu hệ sinh thái live commerce và các cơ hội phát triển',
+      'Phân tích xu hướng thị trường live streaming tại Việt Nam',
+      'Tìm hiểu các tính năng đặc thù của từng nền tảng',
+      'Thành thạo kỹ thuật thu hút và chuyển đổi người xem',
+      'Hiểu các mô hình kinh doanh live commerce',
+      'Nắm vững yêu cầu công nghệ cơ bản cho live streaming',
     ],
     prerequisites: [
-      'Basic e-commerce understanding',
-      'Social media marketing familiarity',
-      'Vietnamese consumer behavior awareness',
+      'Kiến thức cơ bản về thương mại điện tử',
+      'Quen thuộc với marketing trên mạng xã hội',
+      'Nhận thức về hành vi tiêu dùng Việt Nam',
     ],
-    streamingPlatforms: ['TikTok Shop Live', 'Facebook Live Shopping', 'YouTube Live Shopping', 'Shopee Live', 'Lazada Live'],
-    salesTechniques: ['Product Demonstration', 'Limited-Time Offers', 'Social Proof', 'Interactive Q&A', 'Storytelling'],
-    technicalSetup: ['Camera Equipment', 'Lighting Setup', 'Audio Systems', 'Streaming Software', 'Internet Requirements'],
-    audienceEngagement: ['Real-time Interaction', 'Community Building', 'User-Generated Content', 'Gamification', 'Personalization'],
-    monetizationStrategies: ['Direct Sales', 'Affiliate Marketing', 'Brand Partnerships', 'Subscription Models', 'Virtual Gifts'],
+    streamingPlatforms: [
+      'TikTok Shop Live',
+      'Facebook Live Shopping',
+      'YouTube Live Shopping',
+      'Shopee Live',
+      'Lazada Live',
+    ],
+    salesTechniques: [
+      'Trình diễn sản phẩm',
+      'Ưu đãi giới hạn thời gian',
+      'Chứng thực xã hội',
+      'Hỏi đáp trực tiếp',
+      'Kể chuyện thương hiệu',
+    ],
+    technicalSetup: ['Thiết bị camera', 'Hệ thống chiếu sáng', 'Âm thanh', 'Phần mềm streaming', 'Yêu cầu internet'],
+    audienceEngagement: [
+      'Tương tác thời gian thực',
+      'Xây dựng cộng đồng',
+      'Nội dung do người dùng tạo',
+      'Gamification',
+      'Cá nhân hóa trải nghiệm',
+    ],
+    monetizationStrategies: [
+      'Bán hàng trực tiếp',
+      'Tiếp thị liên kết',
+      'Hợp tác thương hiệu',
+      'Mô hình đăng ký',
+      'Quà tặng ảo',
+    ],
     exercises: [
       {
-        title: 'Vietnamese Live Commerce Market Analysis',
-        description: 'Research và analyze live commerce opportunities trong Vietnamese market',
+        title: 'Phân tích thị trường Live Commerce Việt Nam',
+        description: 'Nghiên cứu và phân tích cơ hội live commerce trong thị trường Việt Nam',
         difficulty: 'Cơ bản',
-        materials: ['Market Research Tools', 'Platform Analytics', 'Competitor Analysis Templates'],
+        materials: ['Công cụ nghiên cứu thị trường', 'Phân tích nền tảng', 'Mẫu phân tích đối thủ'],
         procedure: [
-          'Study major live commerce platforms trong Vietnam',
-          'Analyze successful Vietnamese live commerce channels',
-          'Research consumer behavior patterns trong live shopping',
-          'Identify trending product categories',
-          'Study peak viewing times và audience demographics',
-          'Analyze pricing strategies và promotional tactics',
-          'Research technical infrastructure requirements',
-          'Create live commerce opportunity assessment',
+          'Nghiên cứu các nền tảng live commerce lớn tại Việt Nam',
+          'Phân tích các kênh live commerce thành công',
+          'Nghiên cứu hành vi tiêu dùng trong mua sắm trực tiếp',
+          'Xác định các danh mục sản phẩm đang thịnh hành',
+          'Phân tích khung giờ vàng và nhân khẩu học người xem',
+          'Phân tích chiến lược giá và khuyến mãi',
+          'Nghiên cứu yêu cầu hạ tầng kỹ thuật',
+          'Lập báo cáo đánh giá cơ hội live commerce',
         ],
-        expectedResults: 'Comprehensive market analysis với actionable live commerce strategy',
-        solution: 'Strategic framework cho entering Vietnamese live commerce market',
+        expectedResults: 'Báo cáo phân tích thị trường toàn diện với chiến lược live commerce khả thi',
+        solution: 'Khung chiến lược cho việc tham gia thị trường live commerce Việt Nam',
       },
     ],
     realWorldApplications: [
-      'Fashion brands launching live fashion shows',
-      'Food businesses doing cooking demonstrations',
-      'Beauty brands offering virtual consultations',
-      'Electronics retailers showcasing product features',
-      'Artisan crafters demonstrating techniques',
+      'Thương hiệu thời trang tổ chức show trực tiếp',
+      'Doanh nghiệp thực phẩm trình diễn nấu ăn',
+      'Thương hiệu mỹ phẩm tư vấn trực tuyến',
+      'Nhà bán lẻ điện tử giới thiệu sản phẩm',
+      'Nghệ nhân thủ công trình diễn kỹ thuật',
     ],
     caseStudies: [
       {
-        title: 'Tiki Live Commerce Success Story',
-        organization: 'Tiki Vietnam',
-        problem: 'Increasing competition trong e-commerce requiring new engagement methods',
-        solution: 'Integrated live streaming với product showcase và real-time purchasing',
-        impact: 'Increased conversion rates by 4x during live streaming sessions',
-        innovations: ['Real-time Product Integration', 'Interactive Shopping Experience', 'Influencer Collaboration'],
+        title: 'Thành công Live Commerce của Tiki',
+        organization: 'Tiki Việt Nam',
+        problem: 'Cạnh tranh tăng cao trong thương mại điện tử, cần phương thức thu hút mới',
+        solution: 'Tích hợp live streaming với trình diễn sản phẩm và mua hàng thời gian thực',
+        impact: 'Tỷ lệ chuyển đổi tăng gấp 4 lần trong các phiên live',
+        innovations: ['Tích hợp sản phẩm thời gian thực', 'Trải nghiệm mua sắm tương tác', 'Hợp tác với influencer'],
       },
     ],
     resources: [
       {
-        title: 'Live Commerce Global Trends Report',
+        title: 'Báo cáo xu hướng Live Commerce toàn cầu',
         url: 'https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/its-showtime-how-live-commerce-is-transforming-the-shopping-experience',
-        type: 'Research Report',
+        type: 'Báo cáo nghiên cứu',
       },
       {
-        title: 'Vietnamese E-commerce Statistics',
+        title: 'Thống kê thương mại điện tử Việt Nam',
         url: 'https://e-conomy.sea.org/',
-        type: 'Market Data',
+        type: 'Dữ liệu thị trường',
       },
     ],
+    relatedGames: ['content-creator-studio', 'digital-marketing-campaign', 'treasure-hunt-adventure'],
   },
 
   {
     id: 'streaming-technology-setup',
-    title: 'Streaming Technology Setup Và Production Quality',
-    description: 'Master technical aspects của live streaming, equipment selection, production workflows, và quality optimization cho professional live commerce.',
-    duration: '195 phút',
+    title: 'Thiết lập Công nghệ Streaming & Chất lượng Sản xuất',
+    description:
+      'Nắm vững các khía cạnh kỹ thuật của live streaming, lựa chọn thiết bị, quy trình sản xuất và tối ưu hóa chất lượng cho live commerce chuyên nghiệp.',
+    duration: 195,
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=rGqScj5IqwU', // Live streaming setup
+    videoUrl: 'https://www.youtube.com/watch?v=rGqScj5IqwU',
     imageUrl: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop',
     objectives: [
-      'Master live streaming technical setup',
-      'Select optimal equipment cho different budgets',
-      'Implement professional lighting và audio',
-      'Configure streaming software và platforms',
-      'Optimize stream quality và stability',
-      'Create efficient production workflows',
+      'Thành thạo thiết lập kỹ thuật live streaming',
+      'Lựa chọn thiết bị tối ưu cho các mức ngân sách',
+      'Triển khai hệ thống chiếu sáng và âm thanh chuyên nghiệp',
+      'Cấu hình phần mềm streaming và nền tảng',
+      'Tối ưu hóa chất lượng và độ ổn định của luồng',
+      'Xây dựng quy trình sản xuất hiệu quả',
     ],
-    prerequisites: [
-      'Basic technical aptitude',
-      'Understanding của video/audio concepts',
-      'Budget planning capabilities',
+    prerequisites: ['Năng lực kỹ thuật cơ bản', 'Hiểu các khái niệm video/audio', 'Khả năng lập kế hoạch ngân sách'],
+    streamingPlatforms: [
+      'Cấu hình OBS Studio',
+      'Streaming theo nền tảng',
+      'Phát sóng đa nền tảng',
+      'Ứng dụng streaming di động',
+      'Phần mềm streaming chuyên nghiệp',
     ],
-    streamingPlatforms: ['OBS Studio Configuration', 'Platform-Specific Streaming', 'Multi-Platform Broadcasting', 'Mobile Streaming Apps', 'Professional Streaming Software'],
-    salesTechniques: ['Visual Product Presentation', 'Technical Demonstrations', 'Quality Showcasing', 'Professional Credibility', 'Trust Building'],
-    technicalSetup: ['Camera Selection', 'Lighting Design', 'Audio Equipment', 'Computer Requirements', 'Network Setup'],
-    audienceEngagement: ['Visual Quality Impact', 'Audio Clarity Importance', 'Professional Appearance', 'Technical Reliability', 'Seamless Experience'],
-    monetizationStrategies: ['Production Quality ROI', 'Equipment Investment Planning', 'Professional Service Pricing', 'Technical Consulting', 'Equipment Affiliate Programs'],
+    salesTechniques: [
+      'Trình bày sản phẩm trực quan',
+      'Trình diễn kỹ thuật',
+      'Thể hiện chất lượng',
+      'Tạo uy tín chuyên nghiệp',
+      'Xây dựng niềm tin',
+    ],
+    technicalSetup: [
+      'Lựa chọn camera',
+      'Thiết kế chiếu sáng',
+      'Thiết bị âm thanh',
+      'Yêu cầu máy tính',
+      'Thiết lập mạng',
+    ],
+    audienceEngagement: [
+      'Ảnh hưởng chất lượng hình ảnh',
+      'Tầm quan trọng của âm thanh',
+      'Diện mạo chuyên nghiệp',
+      'Độ tin cậy kỹ thuật',
+      'Trải nghiệm liền mạch',
+    ],
+    monetizationStrategies: [
+      'Lợi nhuận từ chất lượng sản xuất',
+      'Lập kế hoạch đầu tư thiết bị',
+      'Định giá dịch vụ chuyên nghiệp',
+      'Tư vấn kỹ thuật',
+      'Chương trình liên kết thiết bị',
+    ],
     exercises: [
       {
-        title: 'Professional Live Commerce Studio Setup',
-        description: 'Design và implement complete live streaming studio setup',
+        title: 'Thiết lập Studio Live Commerce chuyên nghiệp',
+        description: 'Thiết kế và triển khai studio live streaming hoàn chỉnh',
         difficulty: 'Trung bình',
-        materials: ['Equipment Budget Planning', 'Technical Specification Guides', 'Setup Tutorials'],
+        materials: ['Lập kế hoạch ngân sách thiết bị', 'Hướng dẫn thông số kỹ thuật', 'Hướng dẫn thiết lập'],
         procedure: [
-          'Assess available space và budget constraints',
-          'Research equipment options cho different price points',
-          'Design optimal lighting setup cho product showcase',
-          'Select cameras với appropriate features',
-          'Configure professional audio recording',
-          'Setup streaming software với optimal settings',
-          'Test stream quality across multiple platforms',
-          'Create equipment maintenance và upgrade plan',
+          'Đánh giá không gian và giới hạn ngân sách',
+          'Nghiên cứu các lựa chọn thiết bị theo mức giá',
+          'Thiết kế hệ thống chiếu sáng tối ưu cho trình diễn sản phẩm',
+          'Chọn camera với tính năng phù hợp',
+          'Cấu hình ghi âm chuyên nghiệp',
+          'Thiết lập phần mềm streaming với cấu hình tối ưu',
+          'Kiểm tra chất lượng luồng trên nhiều nền tảng',
+          'Lập kế hoạch bảo trì và nâng cấp thiết bị',
         ],
-        expectedResults: 'Professional streaming setup với consistent high-quality output',
-        solution: 'Complete technical infrastructure cho professional live commerce',
+        expectedResults: 'Thiết lập streaming chuyên nghiệp với chất lượng ổn định cao',
+        solution: 'Hạ tầng kỹ thuật hoàn chỉnh cho live commerce chuyên nghiệp',
       },
     ],
     realWorldApplications: [
-      'Professional live commerce studios',
-      'Mobile live streaming setups',
-      'Multi-platform broadcast systems',
-      'High-end product demonstration setups',
-      'Cost-effective startup streaming solutions',
+      'Studio live commerce chuyên nghiệp',
+      'Thiết lập streaming di động',
+      'Hệ thống phát sóng đa nền tảng',
+      'Trình diễn sản phẩm cao cấp',
+      'Giải pháp streaming tiết kiệm chi phí cho startup',
     ],
     caseStudies: [
       {
-        title: 'Shopee Live Studio Optimization',
-        organization: 'Vietnamese Fashion Retailer',
-        problem: 'Poor stream quality affecting viewer engagement và sales',
-        solution: 'Complete technical upgrade với professional equipment và setup',
-        impact: 'Increased viewer retention by 60% và sales conversion by 45%',
-        innovations: ['Multi-Camera Setup', 'Professional Lighting Design', 'High-Quality Audio System'],
+        title: 'Tối ưu hóa Studio Shopee Live',
+        organization: 'Nhà bán lẻ thời trang Việt Nam',
+        problem: 'Chất lượng luồng kém ảnh hưởng đến tương tác và doanh số',
+        solution: 'Nâng cấp kỹ thuật toàn diện với thiết bị chuyên nghiệp',
+        impact: 'Tăng giữ chân người xem 60% và tỷ lệ chuyển đổi 45%',
+        innovations: ['Thiết lập đa camera', 'Thiết kế chiếu sáng chuyên nghiệp', 'Hệ thống âm thanh chất lượng cao'],
       },
     ],
     resources: [
       {
-        title: 'Live Streaming Equipment Guide',
+        title: 'Hướng dẫn thiết bị Live Streaming',
         url: 'https://restream.io/blog/live-streaming-equipment/',
-        type: 'Technical Guide',
+        type: 'Hướng dẫn kỹ thuật',
       },
       {
-        title: 'OBS Studio Setup Tutorial',
+        title: 'Hướng dẫn thiết lập OBS Studio',
         url: 'https://obsproject.com/help',
-        type: 'Software Guide',
+        type: 'Hướng dẫn phần mềm',
       },
     ],
-  },
-
-  {
-    id: 'live-selling-techniques',
-    title: 'Live Selling Techniques Và Conversion Optimization',
-    description: 'Master advanced live selling techniques, psychological triggers, conversion strategies, và audience interaction methods cho maximizing sales performance.',
-    duration: '200 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=9z9GiEM4uvA', // Sales techniques
-    imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-    objectives: [
-      'Master persuasive live selling techniques',
-      'Create urgency và scarcity effectively',
-      'Handle viewer objections và questions',
-      'Optimize conversion rate through psychology',
-      'Build trust và credibility rapidly',
-      'Manage live audience interactions',
-    ],
-    prerequisites: [
-      'Basic sales understanding',
-      'Communication skills',
-      'Product knowledge proficiency',
-    ],
-    streamingPlatforms: ['Platform Sales Features', 'Integration Tools', 'Payment Systems', 'Analytics Tracking', 'Audience Management'],
-    salesTechniques: ['Storytelling Sales', 'Social Proof Techniques', 'Urgency Creation', 'Value Demonstration', 'Objection Handling'],
-    technicalSetup: ['Product Display Setup', 'Sales Flow Design', 'Interactive Elements', 'Payment Integration', 'Inventory Management'],
-    audienceEngagement: ['Real-time Q&A Management', 'Community Building', 'Viewer Recognition', 'Interactive Games', 'Personalized Responses'],
-    monetizationStrategies: ['Dynamic Pricing', 'Bundle Strategies', 'Limited-Time Offers', 'Exclusive Deals', 'Loyalty Programs'],
-    exercises: [
-      {
-        title: 'Live Selling Script Development',
-        description: 'Create comprehensive live selling scripts với conversion optimization',
-        difficulty: 'Trung bình',
-        materials: ['Sales Script Templates', 'Psychology Frameworks', 'Conversion Analytics Tools'],
-        procedure: [
-          'Analyze target audience psychology và motivations',
-          'Develop compelling product storytelling narratives',
-          'Create urgency và scarcity messaging frameworks',
-          'Design interactive audience engagement strategies',
-          'Develop objection handling response scripts',
-          'Create social proof integration techniques',
-          'Test scripts với focus groups',
-          'Optimize based on performance data',
-        ],
-        expectedResults: 'High-converting live selling scripts với psychological optimization',
-        solution: 'Comprehensive sales framework maximizing conversion rates',
-      },
-    ],
-    realWorldApplications: [
-      'Fashion live shows với styling advice',
-      'Electronics demonstrations với feature explanations',
-      'Beauty product tutorials với application tips',
-      'Food product tastings với recipe suggestions',
-      'Home goods showcases với lifestyle integration',
-    ],
-    caseStudies: [
-      {
-        title: 'Vietnamese Beauty Brand Live Success',
-        organization: 'Local Skincare Company',
-        problem: 'Low conversion rates despite high viewer engagement',
-        solution: 'Implemented psychological sales techniques với storytelling approach',
-        impact: 'Increased conversion rate từ 2% đến 12% within 3 months',
-        innovations: ['Personal Story Integration', 'Customer Testimonial Live Sharing', 'Real-time Skin Analysis'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Psychology of Live Commerce',
-        url: 'https://www.salesforce.com/resources/articles/live-commerce/',
-        type: 'Psychology Guide',
-      },
-      {
-        title: 'Sales Conversion Optimization',
-        url: 'https://blog.hubspot.com/marketing/conversion-rate-optimization-guide',
-        type: 'Optimization Guide',
-      },
-    ],
+    relatedGames: ['content-creator-studio', 'game-dev-studio', 'digital-marketing-campaign'],
   },
 
   {
     id: 'audience-engagement-community',
     title: 'Audience Engagement Và Community Building',
-    description: 'Learn advanced audience engagement strategies, community building techniques, và retention methods cho developing loyal live commerce followers.',
+    description:
+      'Learn advanced audience engagement strategies, community building techniques, và retention methods cho developing loyal live commerce followers.',
     duration: '180 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=LL7_m_5VETs', // Community building
@@ -262,16 +240,42 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
       'Develop personalized audience relationships',
       'Manage large-scale live interactions',
     ],
-    prerequisites: [
-      'Community management basics',
-      'Social media engagement experience',
-      'Customer service skills',
+    prerequisites: ['Community management basics', 'Social media engagement experience', 'Customer service skills'],
+    streamingPlatforms: [
+      'Interactive Features',
+      'Community Tools',
+      'Engagement Analytics',
+      'Moderation Systems',
+      'Notification Management',
     ],
-    streamingPlatforms: ['Interactive Features', 'Community Tools', 'Engagement Analytics', 'Moderation Systems', 'Notification Management'],
-    salesTechniques: ['Community-Driven Sales', 'Peer Influence Leveraging', 'Social Selling', 'Trust Building', 'Relationship Marketing'],
-    technicalSetup: ['Interactive Tools', 'Moderation Systems', 'Analytics Tracking', 'Automation Tools', 'CRM Integration'],
-    audienceEngagement: ['Live Interaction Management', 'Community Challenges', 'User-Generated Content', 'Loyalty Programs', 'Exclusive Access'],
-    monetizationStrategies: ['Community Monetization', 'Member Benefits', 'Exclusive Products', 'Premium Access', 'Community Commerce'],
+    salesTechniques: [
+      'Community-Driven Sales',
+      'Peer Influence Leveraging',
+      'Social Selling',
+      'Trust Building',
+      'Relationship Marketing',
+    ],
+    technicalSetup: [
+      'Interactive Tools',
+      'Moderation Systems',
+      'Analytics Tracking',
+      'Automation Tools',
+      'CRM Integration',
+    ],
+    audienceEngagement: [
+      'Live Interaction Management',
+      'Community Challenges',
+      'User-Generated Content',
+      'Loyalty Programs',
+      'Exclusive Access',
+    ],
+    monetizationStrategies: [
+      'Community Monetization',
+      'Member Benefits',
+      'Exclusive Products',
+      'Premium Access',
+      'Community Commerce',
+    ],
     exercises: [
       {
         title: 'Live Commerce Community Strategy',
@@ -326,7 +330,8 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
   {
     id: 'multi-platform-strategy',
     title: 'Multi-Platform Live Commerce Strategy',
-    description: 'Master cross-platform live commerce strategies, platform optimization, content adaptation, và audience management across multiple streaming platforms.',
+    description:
+      'Master cross-platform live commerce strategies, platform optimization, content adaptation, và audience management across multiple streaming platforms.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=HjUJf5bKCpU', // Multi-platform strategy
@@ -344,11 +349,41 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
       'Understanding của different platform ecosystems',
       'Content creation và marketing skills',
     ],
-    streamingPlatforms: ['TikTok Live', 'Facebook Live', 'YouTube Live', 'Instagram Live', 'Platform-Specific Features'],
-    salesTechniques: ['Platform-Adapted Sales', 'Cross-Platform Consistency', 'Audience Migration', 'Platform-Specific Offers', 'Integrated Campaigns'],
-    technicalSetup: ['Multi-Stream Broadcasting', 'Platform Integration', 'Automated Content Distribution', 'Analytics Consolidation', 'Workflow Optimization'],
-    audienceEngagement: ['Cross-Platform Community', 'Platform-Specific Engagement', 'Audience Segmentation', 'Unified Messaging', 'Platform Migration'],
-    monetizationStrategies: ['Platform Revenue Optimization', 'Cross-Platform Upselling', 'Integrated Commerce', 'Platform-Specific Monetization', 'Revenue Diversification'],
+    streamingPlatforms: [
+      'TikTok Live',
+      'Facebook Live',
+      'YouTube Live',
+      'Instagram Live',
+      'Platform-Specific Features',
+    ],
+    salesTechniques: [
+      'Platform-Adapted Sales',
+      'Cross-Platform Consistency',
+      'Audience Migration',
+      'Platform-Specific Offers',
+      'Integrated Campaigns',
+    ],
+    technicalSetup: [
+      'Multi-Stream Broadcasting',
+      'Platform Integration',
+      'Automated Content Distribution',
+      'Analytics Consolidation',
+      'Workflow Optimization',
+    ],
+    audienceEngagement: [
+      'Cross-Platform Community',
+      'Platform-Specific Engagement',
+      'Audience Segmentation',
+      'Unified Messaging',
+      'Platform Migration',
+    ],
+    monetizationStrategies: [
+      'Platform Revenue Optimization',
+      'Cross-Platform Upselling',
+      'Integrated Commerce',
+      'Platform-Specific Monetization',
+      'Revenue Diversification',
+    ],
     exercises: [
       {
         title: 'Integrated Multi-Platform Campaign',
@@ -383,7 +418,11 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
         problem: 'Limited by single-platform audience reach',
         solution: 'Implemented coordinated multi-platform live commerce strategy',
         impact: 'Increased total audience by 400% và revenue by 250%',
-        innovations: ['Platform-Specific Content Adaptation', 'Cross-Platform Customer Journey', 'Integrated Analytics System'],
+        innovations: [
+          'Platform-Specific Content Adaptation',
+          'Cross-Platform Customer Journey',
+          'Integrated Analytics System',
+        ],
       },
     ],
     resources: [
@@ -403,7 +442,8 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
   {
     id: 'analytics-performance-optimization',
     title: 'Analytics Và Performance Optimization',
-    description: 'Master live commerce analytics, performance tracking, data-driven optimization, và ROI measurement cho continuously improving live streaming effectiveness.',
+    description:
+      'Master live commerce analytics, performance tracking, data-driven optimization, và ROI measurement cho continuously improving live streaming effectiveness.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=3SuNx0UrnEo', // Analytics and optimization
@@ -421,11 +461,41 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
       'Live commerce operational experience',
       'Data interpretation skills',
     ],
-    streamingPlatforms: ['Platform Analytics Tools', 'Third-Party Analytics', 'Custom Tracking Setup', 'Integration APIs', 'Reporting Dashboards'],
-    salesTechniques: ['Data-Driven Sales', 'Performance-Based Optimization', 'Conversion Funnel Analysis', 'Customer Lifetime Value', 'Predictive Sales'],
-    technicalSetup: ['Analytics Integration', 'Tracking Implementation', 'Data Collection Systems', 'Reporting Automation', 'Performance Monitoring'],
-    audienceEngagement: ['Engagement Analytics', 'Audience Behavior Analysis', 'Retention Metrics', 'Interaction Optimization', 'Community Growth Tracking'],
-    monetizationStrategies: ['Revenue Analytics', 'Profit Optimization', 'Cost Efficiency', 'ROI Maximization', 'Financial Forecasting'],
+    streamingPlatforms: [
+      'Platform Analytics Tools',
+      'Third-Party Analytics',
+      'Custom Tracking Setup',
+      'Integration APIs',
+      'Reporting Dashboards',
+    ],
+    salesTechniques: [
+      'Data-Driven Sales',
+      'Performance-Based Optimization',
+      'Conversion Funnel Analysis',
+      'Customer Lifetime Value',
+      'Predictive Sales',
+    ],
+    technicalSetup: [
+      'Analytics Integration',
+      'Tracking Implementation',
+      'Data Collection Systems',
+      'Reporting Automation',
+      'Performance Monitoring',
+    ],
+    audienceEngagement: [
+      'Engagement Analytics',
+      'Audience Behavior Analysis',
+      'Retention Metrics',
+      'Interaction Optimization',
+      'Community Growth Tracking',
+    ],
+    monetizationStrategies: [
+      'Revenue Analytics',
+      'Profit Optimization',
+      'Cost Efficiency',
+      'ROI Maximization',
+      'Financial Forecasting',
+    ],
     exercises: [
       {
         title: 'Comprehensive Live Commerce Analytics System',
@@ -480,7 +550,8 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
   {
     id: 'vietnamese-market-mastery',
     title: 'Vietnamese Market Mastery Và Cultural Integration',
-    description: 'Master Vietnamese-specific live commerce strategies, cultural nuances, local partnerships, và market penetration techniques cho dominating Vietnamese live commerce landscape.',
+    description:
+      'Master Vietnamese-specific live commerce strategies, cultural nuances, local partnerships, và market penetration techniques cho dominating Vietnamese live commerce landscape.',
     duration: '185 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=xAFaDA1Nv1o', // Vietnamese business culture
@@ -498,11 +569,41 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
       'Understanding của Vietnamese culture',
       'Local market experience preferred',
     ],
-    streamingPlatforms: ['Vietnamese Platform Preferences', 'Local Platform Features', 'Regional Customization', 'Vietnamese Payment Methods', 'Local Logistics Integration'],
-    salesTechniques: ['Vietnamese Sales Psychology', 'Cultural Selling Approaches', 'Traditional Festival Integration', 'Local Relationship Building', 'Regional Customization'],
-    technicalSetup: ['Vietnam-Specific Infrastructure', 'Local Payment Integration', 'Vietnamese Logistics', 'Regulatory Compliance', 'Local Partnerships'],
-    audienceEngagement: ['Vietnamese Cultural Engagement', 'Festival Celebrations', 'Local Community Building', 'Traditional Values Integration', 'Generational Appeal'],
-    monetizationStrategies: ['Vietnam-Specific Pricing', 'Local Payment Preferences', 'Cultural Event Monetization', 'Regional Partnership Revenue', 'Traditional Festival Sales'],
+    streamingPlatforms: [
+      'Vietnamese Platform Preferences',
+      'Local Platform Features',
+      'Regional Customization',
+      'Vietnamese Payment Methods',
+      'Local Logistics Integration',
+    ],
+    salesTechniques: [
+      'Vietnamese Sales Psychology',
+      'Cultural Selling Approaches',
+      'Traditional Festival Integration',
+      'Local Relationship Building',
+      'Regional Customization',
+    ],
+    technicalSetup: [
+      'Vietnam-Specific Infrastructure',
+      'Local Payment Integration',
+      'Vietnamese Logistics',
+      'Regulatory Compliance',
+      'Local Partnerships',
+    ],
+    audienceEngagement: [
+      'Vietnamese Cultural Engagement',
+      'Festival Celebrations',
+      'Local Community Building',
+      'Traditional Values Integration',
+      'Generational Appeal',
+    ],
+    monetizationStrategies: [
+      'Vietnam-Specific Pricing',
+      'Local Payment Preferences',
+      'Cultural Event Monetization',
+      'Regional Partnership Revenue',
+      'Traditional Festival Sales',
+    ],
     exercises: [
       {
         title: 'Vietnamese Cultural Live Commerce Strategy',
@@ -537,7 +638,11 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
         problem: 'Seasonal sales concentration requiring year-round revenue',
         solution: 'Created culturally-integrated live commerce celebrating Vietnamese traditions',
         impact: 'Extended seasonal sales period by 300% với cultural storytelling',
-        innovations: ['Festival Storytelling Integration', 'Traditional Recipe Sharing', 'Cultural Heritage Preservation'],
+        innovations: [
+          'Festival Storytelling Integration',
+          'Traditional Recipe Sharing',
+          'Cultural Heritage Preservation',
+        ],
       },
     ],
     resources: [
@@ -558,7 +663,8 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
   {
     id: 'live-streaming-sales-mastery',
     title: 'Live Streaming Sales Mastery',
-    description: 'Master nghệ thuật live streaming sales với psychological triggers, real-time engagement và proven conversion techniques.',
+    description:
+      'Master nghệ thuật live streaming sales với psychological triggers, real-time engagement và proven conversion techniques.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=ZTxQ34KUBm0',
@@ -568,48 +674,48 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
       'Create compelling live shopping experiences',
       'Handle real-time objections và questions',
       'Implement urgency và scarcity effectively',
-      'Build loyal live shopping communities'
+      'Build loyal live shopping communities',
     ],
     prerequisites: [
       'Comfortable speaking on camera',
       'Basic sales skills',
       'Product knowledge',
-      'Reliable internet connection'
+      'Reliable internet connection',
     ],
     liveFeatures: [
       'Interactive product demonstrations',
       'Real-time Q&A sessions',
       'Flash sales và limited offers',
       'Viewer participation activities',
-      'Behind-the-scenes access'
+      'Behind-the-scenes access',
     ],
     salesTechniques: [
       'Scarcity principle application',
       'Social proof in real-time',
       'Objection handling live',
       'Impulse purchase triggers',
-      'Community building during sales'
+      'Community building during sales',
     ],
     technicalSetup: [
       'Professional lighting setup',
       'High-quality audio systems',
       'Stable internet connection',
       'Multiple camera angles',
-      'Product display optimization'
+      'Product display optimization',
     ],
     engagementStrategies: [
       'Interactive polls và questions',
       'Viewer shoutouts và recognition',
       'Limited-time viewer rewards',
       'Community challenges',
-      'Real-time feedback incorporation'
+      'Real-time feedback incorporation',
     ],
     monetizationMethods: [
       'Direct product sales',
       'Exclusive live viewer discounts',
       'Membership/VIP tiers',
       'Super chat monetization',
-      'Post-live follow-up sales'
+      'Post-live follow-up sales',
     ],
     exercises: [
       {
@@ -620,7 +726,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
           'Streaming equipment setup',
           'Product inventory for demonstration',
           'Sales script và talking points',
-          'Engagement tracking tools'
+          'Engagement tracking tools',
         ],
         procedure: [
           'Plan session structure với clear objectives',
@@ -630,10 +736,10 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
           'Engage với live audience authentically',
           'Implement time-sensitive offers strategically',
           'Handle questions và objections professionally',
-          'Close sales với clear next steps'
+          'Close sales với clear next steps',
         ],
         expectedResults: '100+ concurrent viewers, 20%+ conversion rate, repeat viewers',
-        solution: 'Structured entertainment combined với strategic selling'
+        solution: 'Structured entertainment combined với strategic selling',
       },
       {
         title: 'Live Commerce Community Building',
@@ -643,7 +749,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
           'Community platform setup',
           'Loyalty program framework',
           'Exclusive content strategy',
-          'Member engagement tools'
+          'Member engagement tools',
         ],
         procedure: [
           'Define community value proposition',
@@ -653,17 +759,17 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
           'Provide exclusive access và previews',
           'Implement member feedback systems',
           'Create community-driven content',
-          'Scale community engagement strategies'
+          'Scale community engagement strategies',
         ],
         expectedResults: 'Dedicated community với 500+ active members, 60%+ retention rate',
-        solution: 'Community-centric approach to live commerce'
-      }
+        solution: 'Community-centric approach to live commerce',
+      },
     ],
     realWorldApplications: [
       'Fashion brands showcasing seasonal collections',
       'Beauty brands demonstrating product usage',
       'Tech companies explaining product features',
-      'Home goods brands showing lifestyle integration'
+      'Home goods brands showing lifestyle integration',
     ],
     caseStudies: [
       {
@@ -675,8 +781,8 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
         innovations: [
           'Virtual try-on experiences',
           'Customer styling consultations live',
-          'Cultural fashion storytelling'
-        ]
+          'Cultural fashion storytelling',
+        ],
       },
       {
         title: 'Artisan Craft Live Commerce',
@@ -687,27 +793,28 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
         innovations: [
           'Cultural heritage storytelling',
           'Live crafting process demonstrations',
-          'Custom order consultations'
-        ]
-      }
+          'Custom order consultations',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Live Commerce Best Practices',
         url: 'https://business.instagram.com/blog/live-shopping-guide',
-        type: 'Platform Guide'
+        type: 'Platform Guide',
       },
       {
         title: 'Psychology of Live Selling',
         url: 'https://www.salesforce.com/resources/articles/social-selling',
-        type: 'Sales Psychology'
-      }
-    ]
+        type: 'Sales Psychology',
+      },
+    ],
   },
   {
     id: 'interactive-live-streaming-technology',
     title: 'Interactive Live Streaming Technology & Tools',
-    description: 'Master technical aspects của live streaming với interactive features, multi-platform broadcasting và audience engagement tools.',
+    description:
+      'Master technical aspects của live streaming với interactive features, multi-platform broadcasting và audience engagement tools.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=lj154A6QJk8',
@@ -717,48 +824,48 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
       'Master multi-platform streaming strategies',
       'Implement interactive engagement features',
       'Optimize stream quality và reliability',
-      'Leverage advanced streaming technologies'
+      'Leverage advanced streaming technologies',
     ],
     prerequisites: [
       'Technical aptitude với equipment',
       'Understanding of streaming platforms',
       'Investment budget for equipment',
-      'Stable high-speed internet'
+      'Stable high-speed internet',
     ],
     liveFeatures: [
       'Multi-camera switching',
       'Real-time graphics overlays',
       'Interactive polls và quizzes',
       'Screen sharing capabilities',
-      'Guest collaboration features'
+      'Guest collaboration features',
     ],
     salesTechniques: [
       'Technical product demonstrations',
       'Interactive comparison presentations',
       'Real-time customization shows',
       'Technical Q&A sessions',
-      'Product testing live'
+      'Product testing live',
     ],
     technicalSetup: [
       'DSLR camera integration',
       'Professional microphone systems',
       'Green screen và background setup',
       'Streaming software configuration',
-      'Network optimization'
+      'Network optimization',
     ],
     engagementStrategies: [
       'Interactive feature utilization',
       'Multi-platform engagement',
       'Technical demonstration techniques',
       'Real-time problem solving',
-      'Community technical discussions'
+      'Community technical discussions',
     ],
     monetizationMethods: [
       'Technical consultation services',
       'Equipment recommendation commissions',
       'Premium streaming experiences',
       'Technical course sales',
-      'Sponsored technology reviews'
+      'Sponsored technology reviews',
     ],
     exercises: [
       {
@@ -770,7 +877,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
           'Audio interface và microphones',
           'Lighting equipment',
           'Streaming software license',
-          'High-speed internet connection'
+          'High-speed internet connection',
         ],
         procedure: [
           'Research equipment requirements cho goals',
@@ -780,17 +887,17 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
           'Setup lighting cho professional appearance',
           'Configure multi-platform streaming',
           'Test interactive features thoroughly',
-          'Conduct trial streams for optimization'
+          'Conduct trial streams for optimization',
         ],
         expectedResults: 'Professional streaming setup với broadcast-quality output',
-        solution: 'Investment trong quality equipment paying off long-term'
-      }
+        solution: 'Investment trong quality equipment paying off long-term',
+      },
     ],
     realWorldApplications: [
       'Tech reviewers showcasing products professionally',
       'Educational content creators teaching technical subjects',
       'Corporate training và webinar hosting',
-      'Gaming streamers với professional presentation'
+      'Gaming streamers với professional presentation',
     ],
     caseStudies: [
       {
@@ -802,27 +909,28 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
         innovations: [
           'Multi-angle technical demonstrations',
           'Interactive coding sessions',
-          'Real-time technical problem solving'
-        ]
-      }
+          'Real-time technical problem solving',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Professional Streaming Guide',
         url: 'https://streamlabs.com/content-hub/post/professional-streaming-setup',
-        type: 'Technical Guide'
+        type: 'Technical Guide',
       },
       {
         title: 'Live Streaming Equipment Reviews',
         url: 'https://www.techradar.com/best/live-streaming-equipment',
-        type: 'Equipment Guide'
-      }
-    ]
+        type: 'Equipment Guide',
+      },
+    ],
   },
   {
     id: 'global-live-commerce-expansion',
     title: 'Global Live Commerce & Cross-Cultural Strategies',
-    description: 'Expand live commerce operations globally với cultural adaptation, timezone optimization và international audience engagement.',
+    description:
+      'Expand live commerce operations globally với cultural adaptation, timezone optimization và international audience engagement.',
     duration: '120 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=PYJlZclNkNc',
@@ -832,48 +940,48 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
       'Adapt content cho different cultures',
       'Optimize scheduling cho multiple timezones',
       'Handle international payment và shipping',
-      'Build global community engagement'
+      'Build global community engagement',
     ],
     prerequisites: [
       'Successful domestic live commerce experience',
       'Understanding of international business',
       'Language capabilities hoặc translation resources',
-      'International shipping capabilities'
+      'International shipping capabilities',
     ],
     liveFeatures: [
       'Multi-language streaming',
       'Cultural celebration events',
       'International collaboration streams',
       'Global product showcases',
-      'Cross-cultural exchanges'
+      'Cross-cultural exchanges',
     ],
     salesTechniques: [
       'Cultural sensitivity trong selling',
       'International pricing strategies',
       'Cross-cultural trust building',
       'Global shipping explanations',
-      'Currency conversion handling'
+      'Currency conversion handling',
     ],
     technicalSetup: [
       'Multi-timezone scheduling tools',
       'Translation software integration',
       'International payment processing',
       'Global analytics tracking',
-      'VPN considerations'
+      'VPN considerations',
     ],
     engagementStrategies: [
       'Cultural celebration integration',
       'International guest collaborations',
       'Global community challenges',
       'Cross-cultural learning content',
-      'International trend adaptation'
+      'International trend adaptation',
     ],
     monetizationMethods: [
       'International product sales',
       'Global affiliate partnerships',
       'Cross-border service offerings',
       'International consultation services',
-      'Global brand partnerships'
+      'Global brand partnerships',
     ],
     exercises: [
       {
@@ -884,7 +992,7 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
           'Market research data',
           'Cultural consultation resources',
           'International logistics setup',
-          'Multi-language content preparation'
+          'Multi-language content preparation',
         ],
         procedure: [
           'Research target international market deeply',
@@ -894,17 +1002,17 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
           'Create culturally appropriate content strategy',
           'Partner với local influencers hoặc ambassadors',
           'Launch với soft opening approach',
-          'Gather feedback và iterate approach'
+          'Gather feedback và iterate approach',
         ],
         expectedResults: 'Successful international expansion với positive local reception',
-        solution: 'Cultural adaptation combined với proven business model'
-      }
+        solution: 'Cultural adaptation combined với proven business model',
+      },
     ],
     realWorldApplications: [
       'Vietnamese brands expanding to regional markets',
       'International brands entering Vietnamese market',
       'Cross-border e-commerce optimization',
-      'Global community building strategies'
+      'Global community building strategies',
     ],
     caseStudies: [
       {
@@ -916,23 +1024,23 @@ export const liveCommerceLessons: LiveCommerceLessonType[] = [
         innovations: [
           'Cultural coffee ceremony demonstrations',
           'International coffee education sessions',
-          'Global coffee community building'
-        ]
-      }
+          'Global coffee community building',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Global E-commerce Strategies',
         url: 'https://www.shopify.com/blog/international-ecommerce',
-        type: 'Business Strategy'
+        type: 'Business Strategy',
       },
       {
         title: 'Cross-Cultural Marketing Guide',
         url: 'https://blog.hubspot.com/marketing/cross-cultural-marketing',
-        type: 'Marketing Guide'
-      }
-    ]
-  }
+        type: 'Marketing Guide',
+      },
+    ],
+  },
 ];
 
 // Export for use in other modules

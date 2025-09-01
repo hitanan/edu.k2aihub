@@ -49,24 +49,22 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
     description:
       'Hiểu tác động của technology lên mental health. Học cách sử dụng apps, wearables và digital tools để improve wellbeing và manage stress.',
     videoUrl: 'https://www.youtube.com/watch?v=gmLb9SJHlgU',
-    imageUrl:
-      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '120 phút',
-    wellnessImpact:
-      'Cải thiện sleep quality, giảm stress levels, tăng mindfulness',
+    wellnessImpact: 'Cải thiện sleep quality, giảm stress levels, tăng mindfulness',
     objectives: [
       'Understand relationship giữa technology usage và mental health',
       'Implement digital detox strategies và healthy tech habits',
       'Use mental health apps effectively cho meditation và mood tracking',
       'Set up wellness monitoring systems với wearables và smartphones',
-      'Create personalized digital wellness plan cho long-term mental health'
+      'Create personalized digital wellness plan cho long-term mental health',
     ],
     prerequisites: [
       'Smartphone hoặc tablet với app installation capability',
       'Basic understanding của mental health concepts',
       'Willingness to track personal data và habits',
-      'Access to internet for app downloads và online resources'
+      'Access to internet for app downloads và online resources',
     ],
     technologies: [
       'Meditation Apps (Headspace, Calm, Insight Timer)',
@@ -74,7 +72,7 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
       'Sleep Monitoring (Sleep Cycle, Fitbit)',
       'Mindfulness Tools (Ten Percent Happier)',
       'Therapy Platforms (BetterHelp, Talkspace)',
-      'Wearable Devices (Apple Watch, Fitbit, Oura Ring)'
+      'Wearable Devices (Apple Watch, Fitbit, Oura Ring)',
     ],
     exercises: [
       {
@@ -89,40 +87,38 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
           'Set up wearable device với health monitoring',
           'Create automated intervention systems',
           'Establish daily tracking routine for 30 days',
-          'Implement digital boundaries và detox periods'
+          'Implement digital boundaries và detox periods',
         ],
         hints: [
           'Start với 2-3 core apps, add more gradually',
           'Focus on consistency over perfection trong tracking',
           'Use automation to reduce burden of manual tracking',
-          'Prioritize privacy when selecting mental health apps'
+          'Prioritize privacy when selecting mental health apps',
         ],
         expectedOutput:
-          'Comprehensive digital wellness system với automated monitoring, intervention protocols, và long-term mental health optimization'
-      }
+          'Comprehensive digital wellness system với automated monitoring, intervention protocols, và long-term mental health optimization',
+      },
     ],
     realWorldApplications: [
       'Personal mental health management và prevention',
       'Corporate wellness programs for employee wellbeing',
       'Healthcare integration for patient monitoring',
       'Educational institution mental health support',
-      'Community mental health program development'
+      'Community mental health program development',
     ],
     resources: [
       {
         title: 'Headspace Meditation App',
         url: 'https://www.headspace.com',
         type: 'app',
-        description:
-          'Comprehensive meditation và mindfulness training với guided sessions'
+        description: 'Comprehensive meditation và mindfulness training với guided sessions',
       },
       {
         title: 'BetterHelp Online Therapy',
         url: 'https://www.betterhelp.com',
         type: 'therapy',
-        description:
-          'Professional online therapy platform với licensed therapists'
-      }
+        description: 'Professional online therapy platform với licensed therapists',
+      },
     ],
     caseStudies: [
       {
@@ -138,35 +134,33 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
           'Technology can be part of solution, not just the problem',
           'Consistent small interventions more effective than dramatic changes',
           'Professional therapy enhanced by digital wellness data',
-          'Setting boundaries requires both technology tools và personal discipline'
-        ]
-      }
-    ]
+          'Setting boundaries requires both technology tools và personal discipline',
+        ],
+      },
+    ],
   },
   {
     id: 'ai-therapy-tools',
     title: 'Bài 2: AI-Powered Mental Health Tools & Chatbot Therapy',
     description:
       'Explore AI applications trong mental health: chatbot therapy, personalized interventions, predictive analytics. Build AI tools cho mental wellness support.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
-    imageUrl:
-      'https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    imageUrl: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '180 phút',
-    wellnessImpact:
-      'Accessible 24/7 mental health support, personalized interventions',
+    wellnessImpact: 'Accessible 24/7 mental health support, personalized interventions',
     objectives: [
       'Understand AI applications trong mental health care và therapy',
       'Evaluate effectiveness và limitations của AI therapy tools',
       'Design conversational AI systems cho mental health support',
       'Implement machine learning cho mood prediction và intervention',
-      'Address ethical considerations trong AI-powered mental health'
+      'Address ethical considerations trong AI-powered mental health',
     ],
     prerequisites: [
       'Basic understanding của AI và machine learning concepts',
       'Mental health awareness và digital wellness fundamentals',
       'Programming experience (Python recommended)',
-      'Access to AI development tools và platforms'
+      'Access to AI development tools và platforms',
     ],
     technologies: [
       'Natural Language Processing (NLP)',
@@ -174,7 +168,7 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
       'Chatbot Platforms (Rasa, Dialogflow)',
       'AI Therapy Apps (Woebot, Wysa, Replika)',
       'Sentiment Analysis Tools',
-      'Voice AI Platforms (Amazon Alexa Skills)'
+      'Voice AI Platforms (Amazon Alexa Skills)',
     ],
     exercises: [
       {
@@ -189,40 +183,38 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
           'Implement machine learning models cho mood prediction',
           'Create personalization engine adapting to individual users',
           'Build crisis detection và intervention protocols',
-          'Ensure ethical AI practices và privacy protection'
+          'Ensure ethical AI practices và privacy protection',
         ],
         hints: [
           'Start với rule-based system, gradually add ML components',
           'Use pre-trained models (BERT, GPT) as foundation',
           'Prioritize safety và crisis detection from beginning',
-          'Design for cultural sensitivity và bias mitigation'
+          'Design for cultural sensitivity và bias mitigation',
         ],
         expectedOutput:
-          'Production-ready AI mental health chatbot với clinical validation, ethical safeguards, và professional integration capabilities'
-      }
+          'Production-ready AI mental health chatbot với clinical validation, ethical safeguards, và professional integration capabilities',
+      },
     ],
     realWorldApplications: [
       'Clinical therapy support và augmentation',
       'Workplace mental health programs',
       'Educational institution counseling services',
       'Community mental health outreach',
-      'Crisis intervention và suicide prevention'
+      'Crisis intervention và suicide prevention',
     ],
     resources: [
       {
         title: 'Woebot AI Therapy Platform',
         url: 'https://woebot.io',
         type: 'platform',
-        description:
-          'Evidence-based AI therapy chatbot để depression và anxiety support'
+        description: 'Evidence-based AI therapy chatbot để depression và anxiety support',
       },
       {
         title: 'Rasa Open Source Framework',
         url: 'https://rasa.com',
         type: 'platform',
-        description:
-          'Open-source framework để building conversational AI với NLP capabilities'
-      }
+        description: 'Open-source framework để building conversational AI với NLP capabilities',
+      },
     ],
     caseStudies: [
       {
@@ -238,9 +230,9 @@ export const mentalHealthLessons: MentalHealthLesson[] = [
           'AI therapy lowers barriers to initial mental health engagement',
           'Integration với human services essential cho comprehensive care',
           'Anonymous access reduces stigma và increases usage',
-          'Continuous monitoring ensures safety và effectiveness'
-        ]
-      }
-    ]
-  }
+          'Continuous monitoring ensures safety và effectiveness',
+        ],
+      },
+    ],
+  },
 ];

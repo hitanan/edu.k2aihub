@@ -17,7 +17,7 @@ export const aiContentCreatorLessons: AIContentCreatorLessonType[] = [
       'Học cách sử dụng AI để tạo video content chất lượng cao cho TikTok, YouTube và Instagram. Từ script writing đến video editing với AI tools.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=JJG_X6DmhiI',
+    videoUrl: 'https://www.youtube.com/watch?v=dj-miOAo3LM',
     imageUrl: '/images/lessons/ai-video-creation.jpg',
     objectives: [
       'Sử dụng AI để viết script video hấp dẫn',
@@ -149,7 +149,7 @@ export const aiContentCreatorLessons: AIContentCreatorLessonType[] = [
       'Tự động hóa toàn bộ quy trình social media từ content creation đến engagement với AI tools tiên tiến.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=5JPn50aapqA',
+    videoUrl: 'https://www.youtube.com/watch?v=C75y3n2Ra-w',
     imageUrl: '/images/lessons/social-automation.jpg',
     objectives: [
       'Setup automation workflow cho multiple platforms',
@@ -243,7 +243,7 @@ export const aiContentCreatorLessons: AIContentCreatorLessonType[] = [
     description: 'Xây dựng personal brand mạnh mẽ và establish thought leadership với sức mạnh của AI tools.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=0U4Ko9DVxpY',
+    videoUrl: 'https://www.youtube.com/watch?v=KfoenLbhOTI',
     imageUrl: '/images/lessons/ai-personal-branding.jpg',
     objectives: [
       'Develop unique personal brand identity với AI insights',

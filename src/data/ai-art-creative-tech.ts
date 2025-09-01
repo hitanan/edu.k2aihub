@@ -48,7 +48,7 @@ export const aiArtLessons: AiArtLesson[] = [
     title: 'Bài 1: AI Image Generation & Prompt Engineering',
     description:
       'Master AI image generation với Midjourney, DALL-E, Stable Diffusion. Học prompt engineering techniques, style control, và advanced generation workflows.',
-    videoUrl: 'https://www.youtube.com/watch?v=V16QtZ1OjCQ',
+    videoUrl: 'https://www.youtube.com/watch?v=S2TAa4P2IuY',
     imageUrl: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '150 phút',
@@ -144,7 +144,7 @@ export const aiArtLessons: AiArtLesson[] = [
     title: 'Bài 2: AI Video Production & Motion Graphics',
     description:
       'Create stunning videos với AI tools. Master RunwayML, Pika Labs, Stable Video Diffusion cho video generation, motion graphics, và cinematic storytelling.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=1MQ5ozIvgzE',
     imageUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '180 phút',

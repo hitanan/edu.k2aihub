@@ -1,9 +1,11 @@
+import { EducationalGame } from './educationalGames';
+
 export interface GreenTechLesson {
   id: string;
   title: string;
   description: string;
   difficulty: string;
-  duration: string;
+  duration: number;
   objectives: string[];
   prerequisites: string[];
   exercises: Exercise[];
@@ -14,6 +16,7 @@ export interface GreenTechLesson {
   environmentalImpact: string;
   resources: Resource[];
   caseStudies: CaseStudy[];
+  relatedGames?: EducationalGame[];
 }
 
 interface Exercise {
@@ -45,36 +48,35 @@ interface CaseStudy {
 export const greenTechLessons: GreenTechLesson[] = [
   {
     id: 'renewable-energy-basics',
-    title: 'Bài 1: Cơ Bản Năng Lượng Tái Tạo',
+    title: 'Cơ Bản về Năng Lượng Tái Tạo',
     description:
       'Tìm hiểu về năng lượng mặt trời, gió, nước và các công nghệ xanh hiện đại. Học cách tính toán hiệu quả và ROI của hệ thống năng lượng tái tạo.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
-    imageUrl:
-      'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=1kUE0BZtTRc',
+    imageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
-    duration: '90 phút',
+    duration: 90,
     environmentalImpact: 'Giảm 50-80% khí thải CO2 so với năng lượng hóa thạch',
     objectives: [
       'Hiểu nguyên lý hoạt động của năng lượng mặt trời và gió',
       'Tính toán công suất và hiệu quả hệ thống năng lượng tái tạo',
       'Phân tích chi phí đầu tư và thời gian hoàn vốn',
       'Thiết kế hệ thống năng lượng cho gia đình',
-      'Đánh giá tác động môi trường và lợi ích kinh tế'
+      'Đánh giá tác động môi trường và lợi ích kinh tế',
     ],
     prerequisites: ['Kiến thức vật lý cơ bản', 'Hiểu về điện năng'],
     technologies: [
-      'Solar Panels (Monocrystalline, Polycrystalline)',
-      'Wind Turbines',
-      'Battery Storage Systems',
-      'Smart Grid Technology',
-      'Energy Management Systems',
-      'Hydroelectric Power'
+      'Tấm pin mặt trời (Monocrystalline, Polycrystalline)',
+      'Tuabin gió',
+      'Hệ thống lưu trữ pin',
+      'Công nghệ lưới điện thông minh',
+      'Hệ thống quản lý năng lượng',
+      'Thủy điện',
     ],
     exercises: [
       {
         title: 'Thiết kế hệ thống năng lượng mặt trời cho gia đình',
         description:
-          'Tính toán và thiết kế complete solar system cho một gia đình 4 người ở TP.HCM',
+          'Tính toán và thiết kế một hệ thống năng lượng mặt trời hoàn chỉnh cho một gia đình 4 người ở TP.HCM',
         difficulty: 'Trung bình',
         solution: `# Thiết kế Hệ Thống Năng Lượng Mặt Trời - Gia Đình 4 Người
 
@@ -84,201 +86,221 @@ export const greenTechLessons: GreenTechLesson[] = [
 - **Điều hòa:** 2 máy x 9000 BTU = 3.5kW x 8h = 28kWh/ngày
 - **Tủ lạnh:** 200W x 24h = 4.8kWh/ngày  
 - **Đèn LED:** 15 bóng x 10W x 6h = 0.9kWh/ngày
-- **TV + Electronics:** 300W x 6h = 1.8kWh/ngày
+- **TV + Điện tử:** 300W x 6h = 1.8kWh/ngày
 - **Máy giặt:** 800W x 1h = 0.8kWh/ngày
 - **Khác:** 1.2kWh/ngày
 
 **Tổng tiêu thụ:** 37.5kWh/ngày
-**Peak load:** 4.5kW (điều hòa + tủ lạnh + đèn)
+**Tải đỉnh:** 4.5kW (điều hòa + tủ lạnh + đèn)
 
 ## 2. Thiết Kế Hệ Thống
 
-### Solar Panels:
-- **Công suất cần thiết:** 37.5kWh / 4.5h (sunshine hours) = 8.3kW
-- **Panel selection:** Monocrystalline 450W
-- **Số lượng panels:** 8.3kW / 450W = 19 panels
+### Tấm Pin Mặt Trời:
+- **Công suất cần thiết:** 37.5kWh / 4.5h (giờ nắng) = 8.3kW
+- **Lựa chọn tấm pin:** Monocrystalline 450W
+- **Số lượng tấm pin:** 8.3kW / 450W = 19 tấm
 - **Tổng công suất:** 19 x 450W = 8.55kW
 
-### Inverter System:
-- **Hybrid Inverter:** 10kW (120% của peak load)
-- **Efficiency:** 97%
-- **Features:** Grid-tie với battery backup
+### Hệ Thống Biến Tần:
+- **Biến tần Hybrid:** 10kW (120% tải đỉnh)
+- **Hiệu suất:** 97%
+- **Tính năng:** Hòa lưới có dự phòng pin
 
-### Battery Storage:
-- **Capacity needed:** 37.5kWh x 1.5 (backup) = 56.25kWh
-- **LiFePO4 Battery:** 48V 100Ah modules
-- **Number of modules:** 12 modules (57.6kWh total)
-- **Backup time:** 1.5 ngày không có nắng
+### Lưu Trữ Pin:
+- **Dung lượng cần thiết:** 37.5kWh x 1.5 (dự phòng) = 56.25kWh
+- **Pin LiFePO4:** Mô-đun 48V 100Ah
+- **Số lượng mô-đun:** 12 mô-đun (tổng 57.6kWh)
+- **Thời gian dự phòng:** 1.5 ngày không có nắng
 
-### Mounting & Accessories:
-- **Roof mounting system** cho 19 panels
-- **DC combiner box** với surge protection
-- **Monitoring system** wifi-enabled
-- **Safety disconnects** và breakers
+### Phụ Kiện & Lắp Đặt:
+- **Hệ thống khung đỡ mái** cho 19 tấm pin
+- **Hộp nối DC** có chống sét lan truyền
+- **Hệ thống giám sát** qua wifi
+- **Cầu dao an toàn** và aptomat
 
 ## 3. Phân Tích Tài Chính
 
 ### Chi Phí Đầu Tư:
-- **Solar panels:** 19 x $250 = $4,750
-- **Inverter system:** $2,500
-- **Battery system:** 12 x $800 = $9,600
-- **Installation & accessories:** $3,150
-- **Total system cost:** $20,000
+- **Tấm pin mặt trời:** 19 x $250 = $4,750
+- **Hệ thống biến tần:** $2,500
+- **Hệ thống pin:** 12 x $800 = $9,600
+- **Lắp đặt & phụ kiện:** $3,150
+- **Tổng chi phí hệ thống:** $20,000
 
 ### Tiết Kiệm Hàng Năm:
-- **Electricity bill hiện tại:** 37.5kWh x 30 x $0.08 = $900/tháng
-- **Solar generation:** 8.55kW x 4.5h x 30 = 1,154kWh/tháng
-- **Grid import reduction:** 90% = $810 tiết kiệm/tháng
-- **Annual savings:** $9,720
+- **Hóa đơn điện hiện tại:** 37.5kWh x 30 x $0.08 = $900/tháng
+- **Sản lượng điện mặt trời:** 8.55kW x 4.5h x 30 = 1,154kWh/tháng
+- **Giảm nhập lưới:** 90% = $810 tiết kiệm/tháng
+- **Tiết kiệm hàng năm:** $9,720
 
-### ROI Analysis:
-- **Payback period:** $20,000 / $9,720 = 2.06 năm
-- **25-year savings:** $243,000 - $20,000 = $223,000
-- **IRR:** 48.6%
+### Phân Tích ROI:
+- **Thời gian hoàn vốn:** $20,000 / $9,720 = 2.06 năm
+- **Tiết kiệm trong 25 năm:** $243,000 - $20,000 = $223,000
+- **Tỷ suất hoàn vốn nội bộ (IRR):** 48.6%
 
 ## 4. Lợi Ích Môi Trường
 
-### Carbon Footprint Reduction:
-- **Annual CO2 reduction:** 13.9 tons
-- **25-year CO2 reduction:** 347.5 tons
-- **Equivalent:** Trồng 346 cây xanh
+### Giảm Dấu Chân Carbon:
+- **Giảm CO2 hàng năm:** 13.9 tấn
+- **Giảm CO2 trong 25 năm:** 347.5 tấn
+- **Tương đương:** Trồng 346 cây xanh
 
-### Energy Independence:
-- **Grid dependency:** Giảm từ 100% xuống 10%
-- **Blackout protection:** 1.5 ngày backup power
-- **Energy security:** Stable costs cho 25 năm
+### Độc Lập Năng Lượng:
+- **Phụ thuộc lưới điện:** Giảm từ 100% xuống 10%
+- **Bảo vệ khi mất điện:** 1.5 ngày điện dự phòng
+- **An ninh năng lượng:** Chi phí ổn định trong 25 năm
 
-## 5. Implementation Timeline
+## 5. Lịch Trình Triển Khai
 
-### Phase 1: Planning (Tuần 1-2)
-- Site survey và structural assessment
-- Permit applications
-- Utility interconnection request
-- Equipment procurement
+### Giai đoạn 1: Lập kế hoạch (Tuần 1-2)
+- Khảo sát địa điểm và đánh giá kết cấu
+- Xin giấy phép
+- Yêu cầu kết nối lưới điện
+- Mua sắm thiết bị
 
-### Phase 2: Installation (Tuần 3-4)  
-- Roof preparation và mounting
-- Panel installation và DC wiring
-- Inverter và battery installation
-- Grid connection và commissioning
+### Giai đoạn 2: Lắp đặt (Tuần 3-4)  
+- Chuẩn bị và lắp đặt khung đỡ mái
+- Lắp đặt tấm pin và đi dây DC
+- Lắp đặt biến tần và pin
+- Kết nối lưới và vận hành thử
 
-### Phase 3: Monitoring (Ongoing)
-- System performance monitoring
-- Maintenance scheduling
-- ROI tracking
-- Optimization recommendations`,
+### Giai đoạn 3: Giám sát (Liên tục)
+- Giám sát hiệu suất hệ thống
+- Lên lịch bảo trì
+- Theo dõi ROI
+- Đề xuất tối ưu hóa`,
         requirements: [
-          'Phân tích nhu cầu điện năng chi tiết',
-          'Lựa chọn thiết bị phù hợp với budget',
-          'Tính toán ROI và payback period',
-          'Đánh giá tác động môi trường'
+          'Phân tích chi tiết nhu cầu điện năng',
+          'Lựa chọn thiết bị phù hợp với ngân sách',
+          'Tính toán ROI và thời gian hoàn vốn',
+          'Đánh giá tác động môi trường',
         ],
         hints: [
-          'Sử dụng historical electricity bills để estimate consumption',
-          'Consider peak vs average loads khi sizing inverter',
-          'Factor in battery degradation và maintenance costs'
+          'Sử dụng hóa đơn tiền điện cũ để ước tính mức tiêu thụ',
+          'Xem xét tải đỉnh và tải trung bình khi chọn kích thước biến tần',
+          'Tính đến sự suy giảm hiệu suất của pin và chi phí bảo trì',
         ],
-        expectedOutput:
-          'Complete system design với specifications, costs, và timeline implementation'
-      }
+        expectedOutput: 'Thiết kế hệ thống hoàn chỉnh với thông số kỹ thuật, chi phí và lịch trình triển khai',
+      },
     ],
     realWorldApplications: [
       'Hệ thống năng lượng mặt trời cho gia đình và doanh nghiệp',
-      'Trang trại năng lượng gió offshore và onshore',
-      'Micro-grid systems cho remote communities',
-      'Energy storage integration với renewable sources',
-      'Smart grid technology và demand response systems'
+      'Trang trại năng lượng gió ngoài khơi và trên bờ',
+      'Hệ thống lưới điện siêu nhỏ cho các cộng đồng vùng sâu vùng xa',
+      'Tích hợp lưu trữ năng lượng với các nguồn tái tạo',
+      'Công nghệ lưới điện thông minh và hệ thống phản ứng theo nhu cầu',
     ],
     resources: [
       {
-        title: 'IRENA Global Energy Transformation',
+        title: 'Chuyển đổi Năng lượng Toàn cầu của IRENA',
         url: 'https://www.irena.org/publications',
         type: 'research',
-        description: 'Báo cáo chuyển đổi năng lượng toàn cầu từ IRENA'
+        description: 'Báo cáo về chuyển đổi năng lượng toàn cầu từ IRENA',
       },
       {
-        title: 'Solar Power Calculator',
+        title: 'Công cụ Tính toán Năng lượng Mặt trời',
         url: 'https://www.nrel.gov/analysis/tech-lcoe-documentation.html',
         type: 'tool',
-        description: 'NREL calculator để estimate solar system performance'
-      }
+        description: 'Công cụ tính toán của NREL để ước tính hiệu suất hệ thống năng lượng mặt trời',
+      },
     ],
     caseStudies: [
       {
-        title: 'Sunseap largest floating solar farm ở Singapore',
+        title: 'Trang trại năng lượng mặt trời nổi lớn nhất của Sunseap tại Singapore',
         company: 'Sunseap Group',
         challenge:
-          'Limited land space cho large-scale solar installations trong dense urban environment',
-        solution:
-          'Developed 60MW floating solar farm trên reservoir với innovative cooling technology',
-        results:
-          '60MW capacity, 15% higher efficiency due to water cooling, powers 16,000 homes',
+          'Không gian đất hạn chế cho các công trình lắp đặt năng lượng mặt trời quy mô lớn trong môi trường đô thị dày đặc',
+        solution: 'Phát triển trang trại năng lượng mặt trời nổi 60MW trên hồ chứa với công nghệ làm mát sáng tạo',
+        results: 'Công suất 60MW, hiệu quả cao hơn 15% nhờ làm mát bằng nước, cung cấp điện cho 16,000 hộ gia đình',
         insights: [
-          'Floating solar addresses land scarcity issues trong urban areas',
-          'Water cooling increases panel efficiency by 10-15%',
-          'Innovative engineering enables renewable energy trong challenging environments'
-        ]
-      }
-    ]
+          'Năng lượng mặt trời nổi giải quyết vấn đề khan hiếm đất đai ở các khu vực đô thị',
+          'Làm mát bằng nước tăng hiệu quả tấm pin từ 10-15%',
+          'Kỹ thuật sáng tạo cho phép năng lượng tái tạo trong các môi trường đầy thách thức',
+        ],
+      },
+    ],
+    relatedGames: [
+      {
+        id: 'renewable-energy-manager',
+        title: 'Quản Lý Năng Lượng Tái Tạo',
+        description: 'Xây dựng và quản lý hệ thống năng lượng sạch bền vững',
+        category: 'simulation',
+        difficulty: 'Trung bình',
+        estimatedTime: '25-35 phút',
+        skills: ['Công nghệ xanh', 'Quản lý tài nguyên', 'Bền vững', 'Môi trường'],
+        moduleType: 'green-technology',
+        isInternal: true,
+        points: 120,
+        icon: '🌱',
+        color: 'from-green-500 to-teal-500',
+      },
+      {
+        id: 'climate-modeling',
+        title: 'Mô hình khí hậu',
+        description: 'Mô phỏng tác động của biến đổi khí hậu',
+        category: 'simulation',
+        difficulty: 'Trung bình',
+        estimatedTime: '15-20 phút',
+        skills: ['Khí hậu', 'Môi trường', 'Mô hình hóa'],
+        moduleType: 'environment',
+        isInternal: true,
+        points: 90,
+        icon: '🌍',
+        color: 'from-green-500 to-emerald-500',
+      },
+    ],
   },
   {
     id: 'smart-city-iot-solutions',
-    title: 'Bài 2: Smart City & IoT Solutions',
+    title: 'Giải pháp IoT cho Thành phố Thông minh',
     description:
-      'Xây dựng hệ thống thành phố thông minh với IoT sensors, data analytics và AI để giải quyết các vấn đề đô thị.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
-    imageUrl:
-      'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=400&h=400&fit=crop',
+      'Xây dựng hệ thống thành phố thông minh với cảm biến IoT, phân tích dữ liệu và AI để giải quyết các vấn đề đô thị.',
+    videoUrl: 'https://www.youtube.com/watch?v=pG0B3_XkPGA',
+    imageUrl: 'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
-    duration: '120 phút',
-    environmentalImpact:
-      'Giảm 20-30% tiêu thụ năng lượng đô thị, cải thiện chất lượng không khí',
+    duration: 120,
+    environmentalImpact: 'Giảm 20-30% tiêu thụ năng lượng đô thị, cải thiện chất lượng không khí',
     objectives: [
-      'Thiết kế IoT sensor networks cho smart cities',
-      'Phát triển real-time monitoring và analytics systems',
-      'Implement AI-powered traffic optimization',
-      'Xây dựng environmental monitoring solutions',
-      'Tạo citizen engagement platforms'
+      'Thiết kế mạng lưới cảm biến IoT cho các thành phố thông minh',
+      'Phát triển hệ thống giám sát và phân tích thời gian thực',
+      'Triển khai tối ưu hóa giao thông bằng AI',
+      'Xây dựng các giải pháp giám sát môi trường',
+      'Tạo nền tảng tương tác công dân',
     ],
-    prerequisites: [
-      'Kiến thức IoT cơ bản',
-      'Programming experience',
-      'Database fundamentals'
-    ],
+    prerequisites: ['Kiến thức cơ bản về IoT', 'Kinh nghiệm lập trình', 'Kiến thức cơ bản về cơ sở dữ liệu'],
     technologies: [
-      'IoT Sensors (Air Quality, Noise, Traffic)',
-      'LoRaWAN Networks',
-      'Edge Computing',
-      'Machine Learning',
-      'Real-time Analytics',
-      'Mobile Applications'
+      'Cảm biến IoT (Chất lượng không khí, Tiếng ồn, Giao thông)',
+      'Mạng LoRaWAN',
+      'Điện toán biên',
+      'Học máy',
+      'Phân tích thời gian thực',
+      'Ứng dụng di động',
     ],
     exercises: [
       {
-        title: 'Smart Traffic Management System',
-        description:
-          'Thiết kế hệ thống quản lý giao thông thông minh cho một khu vực đô thị',
+        title: 'Hệ thống Quản lý Giao thông Thông minh',
+        description: 'Thiết kế một hệ thống quản lý giao thông thông minh cho một khu vực đô thị',
         difficulty: 'Nâng cao',
-        solution: `# Smart Traffic Management System Design
+        solution: `# Thiết kế Hệ thống Quản lý Giao thông Thông minh
 
-## 1. System Architecture
+## 1. Kiến trúc Hệ thống
 
-### IoT Sensor Network:
-- **Traffic cameras:** Computer vision để detect vehicles
-- **Inductive loop sensors:** Vehicle counting và speed detection  
-- **Air quality sensors:** Monitor emissions từ traffic
-- **Noise level sensors:** Acoustic pollution monitoring
-- **Weather sensors:** Impact on traffic conditions
+### Mạng lưới Cảm biến IoT:
+- **Camera giao thông:** Thị giác máy tính để phát hiện phương tiện
+- **Cảm biến vòng từ:** Đếm xe và phát hiện tốc độ  
+- **Cảm biến chất lượng không khí:** Giám sát khí thải từ giao thông
+- **Cảm biến mức độ tiếng ồn:** Giám sát ô nhiễm tiếng ồn
+- **Cảm biến thời tiết:** Tác động đến điều kiện giao thông
 
-### Communication Infrastructure:
-- **5G/LTE:** High-bandwidth data transmission
-- **LoRaWAN:** Low-power sensor networks
-- **Edge computing nodes:** Local processing và decision making
-- **Cloud platform:** Central analytics và management
+### Cơ sở hạ tầng Truyền thông:
+- **5G/LTE:** Truyền dữ liệu băng thông cao
+- **LoRaWAN:** Mạng cảm biến năng lượng thấp
+- **Nút điện toán biên:** Xử lý và ra quyết định tại chỗ
+- **Nền tảng đám mây:** Phân tích và quản lý trung tâm
 
-## 2. AI Traffic Optimization
+## 2. Tối ưu hóa Giao thông bằng AI
 
-### Real-time Traffic Flow Analysis:
+### Phân tích Luồng Giao thông Thời gian thực:
 \`\`\`python
 import numpy as np
 import tensorflow as tf
@@ -300,20 +322,20 @@ class TrafficFlowPredictor:
         return model
     
     def predict_traffic_volume(self, historical_data, weather_data, events_data):
-        # Combine multiple data sources
+        # Kết hợp nhiều nguồn dữ liệu
         features = np.concatenate([
-            historical_data,  # Past 24 hours traffic
-            weather_data,     # Current weather conditions
-            events_data       # Scheduled events/incidents
+            historical_data,  # Giao thông 24 giờ qua
+            weather_data,     # Điều kiện thời tiết hiện tại
+            events_data       # Các sự kiện/sự cố đã lên lịch
         ], axis=1)
         
-        # LSTM prediction for time series
+        # Dự đoán LSTM cho chuỗi thời gian
         lstm_pred = self.model.predict(features)
         
-        # Random Forest for complex pattern recognition
+        # Random Forest để nhận dạng mẫu phức tạp
         rf_pred = self.rf_model.predict(features.reshape(features.shape[0], -1))
         
-        # Ensemble prediction
+        # Dự đoán kết hợp
         final_prediction = 0.7 * lstm_pred + 0.3 * rf_pred
         return final_prediction
 
@@ -322,7 +344,7 @@ class TrafficLightOptimizer:
         self.q_learning_agent = self.build_q_agent()
     
     def optimize_signal_timing(self, traffic_data, pedestrian_data):
-        # Current state: [N_vehicles, S_vehicles, E_vehicles, W_vehicles, pedestrians]
+        # Trạng thái hiện tại: [số xe Bắc, Nam, Đông, Tây, người đi bộ]
         state = np.array([
             traffic_data['north_count'],
             traffic_data['south_count'], 
@@ -331,10 +353,10 @@ class TrafficLightOptimizer:
             pedestrian_data['waiting_count']
         ])
         
-        # Q-learning action selection
+        # Lựa chọn hành động Q-learning
         action = self.q_learning_agent.get_action(state)
         
-        # Actions: [green_time_NS, green_time_EW, pedestrian_phase]
+        # Hành động: [thời gian xanh B-N, Đ-T, pha cho người đi bộ]
         signal_timing = {
             'north_south_green': max(30, min(120, action[0])),
             'east_west_green': max(30, min(120, action[1])),
@@ -345,7 +367,7 @@ class TrafficLightOptimizer:
         return signal_timing
 \`\`\`
 
-### Dynamic Route Optimization:
+### Tối ưu hóa Lộ trình Động:
 \`\`\`python
 class DynamicRouting:
     def __init__(self, road_network):
@@ -353,7 +375,7 @@ class DynamicRouting:
         self.traffic_conditions = {}
     
     def calculate_optimal_route(self, origin, destination, current_time):
-        # Consider multiple factors for routing
+        # Xem xét nhiều yếu tố để định tuyến
         factors = {
             'distance': 0.3,
             'current_traffic': 0.4,
@@ -361,10 +383,10 @@ class DynamicRouting:
             'road_quality': 0.1
         }
         
-        # Dijkstra with dynamic weights
+        # Dijkstra với trọng số động
         route = self.dijkstra_dynamic(origin, destination, factors)
         
-        # Alternative routes for load balancing
+        # Các tuyến đường thay thế để cân bằng tải
         alternative_routes = self.generate_alternatives(origin, destination, 3)
         
         return {
@@ -376,106 +398,134 @@ class DynamicRouting:
         }
 \`\`\`
 
-## 3. Environmental Impact Monitoring
+## 3. Giám sát Tác động Môi trường
 
-### Air Quality Integration:
-- **PM2.5/PM10 sensors:** Particulate matter từ vehicle emissions
-- **NO2/CO sensors:** Gas pollutants from combustion
-- **Ozone monitoring:** Secondary pollutant formation
-- **Real-time AQI calculation:** Public health alerts
+### Tích hợp Chất lượng Không khí:
+- **Cảm biến PM2.5/PM10:** Bụi mịn từ khí thải xe
+- **Cảm biến NO2/CO:** Các chất ô nhiễm khí từ quá trình đốt cháy
+- **Giám sát Ozone:** Sự hình thành chất ô nhiễm thứ cấp
+- **Tính toán AQI thời gian thực:** Cảnh báo sức khỏe cộng đồng
 
-### Smart Interventions:
-- **Dynamic pricing:** Congestion charges during peak pollution
-- **Low emission zones:** Restrict access cho high-polluting vehicles
-- **Public transport optimization:** Increase frequency during high pollution
-- **Emergency protocols:** Traffic restrictions during air quality alerts
+### Các Can thiệp Thông minh:
+- **Định giá động:** Phí tắc nghẽn trong giờ ô nhiễm cao điểm
+- **Khu vực phát thải thấp:** Hạn chế quyền truy cập đối với các phương tiện gây ô nhiễm cao
+- **Tối ưu hóa giao thông công cộng:** Tăng tần suất trong thời gian ô nhiễm cao
+- **Giao thức khẩn cấp:** Hạn chế giao thông trong các cảnh báo chất lượng không khí
 
-## 4. Implementation Strategy
+## 4. Chiến lược Triển khai
 
-### Phase 1: Pilot Deployment (3 tháng)
-- **Location:** 2km x 2km downtown area
-- **Infrastructure:** 50 sensors, 10 edge nodes, 1 control center
-- **Features:** Basic traffic monitoring và adaptive signals
-- **Budget:** $500,000
+### Giai đoạn 1: Triển khai Thí điểm (3 tháng)
+- **Vị trí:** Khu vực trung tâm 2km x 2km
+- **Cơ sở hạ tầng:** 50 cảm biến, 10 nút biên, 1 trung tâm điều khiển
+- **Tính năng:** Giám sát giao thông cơ bản và tín hiệu thích ứng
+- **Ngân sách:** $500,000
 
-### Phase 2: City-wide Expansion (12 tháng)
-- **Coverage:** 50km x 50km metro area
-- **Infrastructure:** 2,000 sensors, 200 edge nodes, integrated command center
-- **Features:** Full AI optimization, environmental monitoring, citizen app
-- **Budget:** $15,000,000
+### Giai đoạn 2: Mở rộng Toàn thành phố (12 tháng)
+- **Phạm vi:** Khu vực đô thị 50km x 50km
+- **Cơ sở hạ tầng:** 2,000 cảm biến, 200 nút biên, trung tâm chỉ huy tích hợp
+- **Tính năng:** Tối ưu hóa AI đầy đủ, giám sát môi trường, ứng dụng công dân
+- **Ngân sách:** $15,000,000
 
-### Phase 3: Regional Integration (24 tháng)
-- **Coverage:** Multi-city coordination
-- **Features:** Inter-city traffic coordination, regional air quality management
-- **Advanced AI:** Federated learning across cities
-- **Budget:** $50,000,000
+### Giai đoạn 3: Tích hợp Khu vực (24 tháng)
+- **Phạm vi:** Điều phối đa thành phố
+- **Tính năng:** Điều phối giao thông liên tỉnh, quản lý chất lượng không khí khu vực
+- **AI nâng cao:** Học tập liên kết giữa các thành phố
+- **Ngân sách:** $50,000,000
 
-## 5. Expected Outcomes
+## 5. Kết quả Dự kiến
 
-### Traffic Efficiency:
-- **Travel time reduction:** 25-30%
-- **Fuel consumption:** 20% decrease
-- **Accident reduction:** 40% fewer traffic incidents
-- **Emergency response:** 50% faster ambulance/fire response
+### Hiệu quả Giao thông:
+- **Giảm thời gian di chuyển:** 25-30%
+- **Tiêu thụ nhiên liệu:** Giảm 20%
+- **Giảm tai nạn:** Ít hơn 40% sự cố giao thông
+- **Phản ứng khẩn cấp:** Phản ứng của xe cứu thương/cứu hỏa nhanh hơn 50%
 
-### Environmental Benefits:
-- **CO2 emissions:** 35% reduction từ optimized traffic flow
-- **Air quality improvement:** 25% better AQI scores
-- **Noise pollution:** 20% reduction trong urban areas
-- **Energy efficiency:** 30% less energy for traffic infrastructure
+### Lợi ích Môi trường:
+- **Khí thải CO2:** Giảm 35% từ luồng giao thông được tối ưu hóa
+- **Cải thiện chất lượng không khí:** Điểm AQI tốt hơn 25%
+- **Ô nhiễm tiếng ồn:** Giảm 20% ở các khu vực đô thị
+- **Hiệu quả năng lượng:** Ít hơn 30% năng lượng cho cơ sở hạ tầng giao thông
 
-### Economic Impact:
-- **Cost savings:** $10M annually từ reduced congestion
-- **Health benefits:** $5M saved từ better air quality
-- **Productivity gains:** $20M từ reduced commute times
-- **Tourism boost:** 15% increase từ better city experience`,
+### Tác động Kinh tế:
+- **Tiết kiệm chi phí:** 10 triệu USD hàng năm từ việc giảm tắc nghẽn
+- **Lợi ích sức khỏe:** Tiết kiệm 5 triệu USD từ chất lượng không khí tốt hơn
+- **Tăng năng suất:** 20 triệu USD từ việc giảm thời gian đi lại
+- **Thúc đẩy du lịch:** Tăng 15% từ trải nghiệm thành phố tốt hơn`,
         requirements: [
-          'Design comprehensive IoT sensor network',
-          'Implement AI-powered traffic optimization algorithms',
-          'Include environmental monitoring capabilities',
-          'Plan phased implementation strategy'
+          'Thiết kế mạng lưới cảm biến IoT toàn diện',
+          'Triển khai các thuật toán tối ưu hóa giao thông bằng AI',
+          'Bao gồm khả năng giám sát môi trường',
+          'Lập kế hoạch chiến lược triển khai theo giai đoạn',
         ],
         hints: [
-          'Consider interoperability between different sensor types',
-          'Plan for data privacy và security from the start',
-          'Include citizen engagement features trong system design'
+          'Xem xét khả năng tương tác giữa các loại cảm biến khác nhau',
+          'Lập kế hoạch cho quyền riêng tư và bảo mật dữ liệu ngay từ đầu',
+          'Bao gồm các tính năng tương tác công dân trong thiết kế hệ thống',
         ],
         expectedOutput:
-          'Complete smart city system architecture với technical specifications và implementation roadmap'
-      }
+          'Kiến trúc hệ thống thành phố thông minh hoàn chỉnh với các thông số kỹ thuật và lộ trình triển khai',
+      },
     ],
     realWorldApplications: [
-      'Smart traffic management systems cho major cities',
-      'Environmental monitoring networks',
-      'Waste management optimization',
-      'Smart parking solutions',
-      'Emergency response coordination systems'
+      'Hệ thống quản lý giao thông thông minh cho các thành phố lớn',
+      'Mạng lưới giám sát môi trường',
+      'Tối ưu hóa quản lý chất thải',
+      'Giải pháp đỗ xe thông minh',
+      'Hệ thống điều phối ứng phó khẩn cấp',
     ],
     resources: [
       {
-        title: 'Smart Cities Council',
+        title: 'Hội đồng Thành phố Thông minh',
         url: 'https://smartcitiescouncil.com',
         type: 'article',
-        description:
-          'Best practices và case studies cho smart city implementations'
-      }
+        description: 'Các thực tiễn tốt nhất và nghiên cứu điển hình cho việc triển khai thành phố thông minh',
+      },
     ],
     caseStudies: [
       {
-        title: 'Singapore Smart Nation initiative',
-        company: 'Singapore Government',
-        challenge:
-          'Transform entire nation into smart city với limited land và high population density',
+        title: 'Sáng kiến Quốc gia Thông minh của Singapore',
+        company: 'Chính phủ Singapore',
+        challenge: 'Biến toàn bộ quốc gia thành một thành phố thông minh với đất đai hạn chế và mật độ dân số cao',
         solution:
-          'Comprehensive IoT deployment, AI-powered services, và citizen-centric digital platforms',
-        results:
-          '25% reduction in traffic congestion, 30% improvement in air quality, 95% citizen satisfaction',
+          'Triển khai IoT toàn diện, các dịch vụ được hỗ trợ bởi AI và các nền tảng kỹ thuật số lấy công dân làm trung tâm',
+        results: 'Giảm 25% tắc nghẽn giao thông, cải thiện 30% chất lượng không khí, 95% sự hài lòng của công dân',
         insights: [
-          'Comprehensive government support essential cho large-scale smart city success',
-          'Citizen engagement và privacy protection crucial cho acceptance',
-          'Interoperable systems enable synergies across different city functions'
-        ]
-      }
-    ]
-  }
+          'Sự hỗ trợ toàn diện của chính phủ là điều cần thiết cho sự thành công của thành phố thông minh quy mô lớn',
+          'Sự tham gia của công dân và bảo vệ quyền riêng tư là rất quan trọng để được chấp nhận',
+          'Các hệ thống có khả năng tương tác cho phép tạo ra sức mạnh tổng hợp giữa các chức năng khác nhau của thành phố',
+        ],
+      },
+    ],
+    relatedGames: [
+      {
+        id: 'iot-smart-city-builder-3d',
+        title: 'IoT Smart City Builder 3D',
+        description:
+          'Build comprehensive smart city infrastructure với IoT systems, energy management, và citizen services trong 3D city environment',
+        category: '3D',
+        difficulty: 'Nâng cao',
+        estimatedTime: '60-75 phút',
+        skills: ['Smart City Planning', 'IoT Integration', 'Urban Technology', 'Energy Management', '3D City Design'],
+        moduleType: 'iot',
+        isInternal: true,
+        points: 250,
+        icon: '🏙️',
+        color: 'from-blue-500 to-purple-500',
+      },
+      {
+        id: 'climate-data-analyst',
+        title: 'Chuyên Gia Phân Tích Dữ Liệu Khí Hậu',
+        description: 'Phân tích dữ liệu môi trường và dự báo biến đổi khí hậu',
+        category: 'simulation',
+        difficulty: 'Nâng cao',
+        estimatedTime: '35-40 phút',
+        skills: ['Dữ liệu Môi trường', 'Phân tích', 'Dự báo Khí hậu'],
+        moduleType: 'environmental-data-science',
+        isInternal: true,
+        points: 150,
+        icon: '🌡️',
+        color: 'from-green-600 to-teal-600',
+      },
+    ],
+  },
 ];

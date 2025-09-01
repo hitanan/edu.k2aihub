@@ -52,7 +52,7 @@ export const stemLessons: STEMLesson[] = [
     materials: ['Giấy và bút màu', 'Vật liệu tái chế', 'Kính lúp', 'Máy tính hoặc tablet'],
     imageUrl:
       'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=yOMbTJdbxA4',
+    videoUrl: 'https://www.youtube.com/watch?v=mZWXh69TDz4',
     exercises: [
       {
         id: 'ex1-stem-around-us',
@@ -135,7 +135,7 @@ export const stemLessons: STEMLesson[] = [
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1554475901-4538ddfbccc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=y8E61LsJOrI',
+    videoUrl: 'https://www.youtube.com/watch?v=9k559nGQL9k',
     exercises: [
       {
         id: 'ex1-density-tower',
@@ -218,7 +218,7 @@ export const stemLessons: STEMLesson[] = [
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=jXUZaf5D12A',
+    videoUrl: 'https://www.youtube.com/watch?v=OXj2H94MSeA',
     exercises: [
       {
         id: 'ex1-animated-story',
@@ -304,7 +304,7 @@ export const stemLessons: STEMLesson[] = [
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=0b_OUWfMU8E',
+    videoUrl: 'https://www.youtube.com/watch?v=K7qqMgF847o',
     exercises: [
       {
         id: 'ex1-paper-bridge',

@@ -74,11 +74,14 @@ export const defaultOpenGraph = {
  */
 export function createModuleMetadata(title: string, description: string, keywords: string[] = [], moduleSlug?: string) {
   const socialMeta = SocialSeoPresets.module(title, description, keywords);
+  const canonicalUrl = moduleSlug
+    ? `https://k2aihub.com/learning/${moduleSlug}/`
+    : `https://k2aihub.com/${moduleSlug}/`;
 
   return {
     ...socialMeta,
     alternates: {
-      canonical: moduleSlug ? `https://k2aihub.com/learning/${moduleSlug}/` : `https://k2aihub.com/learning/`,
+      canonical: canonicalUrl,
     },
     robots: {
       index: true,

@@ -6,6 +6,24 @@ export interface ContentCreatorLessonData extends BaseLessonData {
   toolsRequired?: string[];
   averageIncome?: string;
   timeToMaster?: string;
+  mainContent: {
+    introduction: string;
+    keyConcepts: Array<{
+      title: string;
+      description: string;
+      examples: string[];
+    }>;
+    practicalApplications: Array<{
+      area: string;
+      description: string;
+    }>;
+    conclusion: string;
+  };
+  relatedGames: Array<{
+    id: string;
+    name: string;
+    description: string;
+  }>;
 }
 
 export const contentCreatorLessons: ContentCreatorLessonData[] = [
@@ -16,8 +34,75 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Xây dựng thương hiệu cá nhân mạnh mẽ trên các nền tảng social media, phát triển voice và aesthetic riêng biệt để thu hút audience.',
     duration: '180 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=mBy7PU1jTn4',
+    videoUrl: 'https://www.youtube.com/watch?v=Df11SkLnekM',
     imageUrl: 'https://i.ytimg.com/vi/mBy7PU1jTn4/hqdefault.jpg',
+    mainContent: {
+      introduction:
+        'Trong kỷ nguyên số, thương hiệu cá nhân không còn là lựa chọn mà là yếu tố quyết định thành công. Bài học này sẽ hướng dẫn bạn cách xây dựng một thương hiệu cá nhân vững chắc trên mạng xã hội, tạo ra tiếng nói riêng và một phong cách độc đáo để không chỉ thu hút mà còn giữ chân khán giả, biến người theo dõi thành một cộng đồng trung thành.',
+      keyConcepts: [
+        {
+          title: 'Định vị thương hiệu (Brand Positioning)',
+          description:
+            'Xác định vị trí độc nhất của bạn trong thị trường. Điều này bao gồm việc tìm ra niche, xác định đối tượng mục tiêu và tạo ra một tuyên ngôn giá trị rõ ràng để khác biệt hóa bản thân so với hàng triệu người sáng tạo khác.',
+          examples: [
+            'Một blogger ẩm thực tập trung vào các món ăn đường phố Việt Nam dưới 50k.',
+            'Một reviewer công nghệ chuyên về các thiết bị giá rẻ cho sinh viên.',
+          ],
+        },
+        {
+          title: 'Kiến trúc nội dung (Content Architecture)',
+          description:
+            'Xây dựng một hệ thống các chủ đề nội dung (content pillars) cốt lõi, đảm bảo sự nhất quán và chiều sâu cho kênh của bạn. Điều này giúp khán giả biết họ sẽ nhận được gì và giữ cho bạn không bao giờ cạn ý tưởng.',
+          examples: [
+            'Một kênh về tài chính cá nhân có 3 trụ cột: Tiết kiệm, Đầu tư, và Tư duy làm giàu.',
+            'Một kênh lifestyle có các trụ cột: Phát triển bản thân, Sức khỏe, và Du lịch trải nghiệm.',
+          ],
+        },
+        {
+          title: 'Xây dựng cộng đồng (Community Building)',
+          description:
+            'Chuyển từ việc chỉ đăng tải nội dung sang tạo ra sự tương tác hai chiều. Đây là nghệ thuật biến những người theo dõi thụ động thành những thành viên tích cực, những người ủng hộ và lan tỏa thương hiệu của bạn.',
+          examples: [
+            'Tổ chức các buổi livestream Q&A hàng tuần.',
+            'Tạo các thử thách và khuyến khích nội dung do người dùng tạo (UGC).',
+            'Trả lời các bình luận một cách có tâm và tạo ra các cuộc thảo luận.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Tìm kiếm việc làm',
+          description:
+            'Một thương hiệu cá nhân mạnh trên LinkedIn có thể thu hút nhà tuyển dụng và mang lại những cơ hội nghề nghiệp mà bạn không ngờ tới.',
+        },
+        {
+          area: 'Khởi nghiệp',
+          description:
+            'Các nhà sáng lập có thương hiệu cá nhân tốt dễ dàng hơn trong việc thu hút nhân tài, gọi vốn và có được những khách hàng đầu tiên.',
+        },
+        {
+          area: 'Công việc tự do (Freelancing)',
+          description:
+            'Thương hiệu cá nhân giúp các freelancer xây dựng uy tín, thu hút khách hàng chất lượng cao và định giá dịch vụ của mình tốt hơn.',
+        },
+      ],
+      conclusion:
+        'Xây dựng thương hiệu cá nhân là một cuộc hành trình, không phải là đích đến. Bằng cách áp dụng một chiến lược bài bản và duy trì sự nhất quán, bạn sẽ tạo ra một tài sản số vô giá, mở ra vô số cơ hội và cho phép bạn tạo ra ảnh hưởng tích cực đến cộng đồng của mình.',
+    },
+    relatedGames: [
+      {
+        id: 'public-speaking-simulator-3d',
+        name: 'Public Speaking Simulator 3D',
+        description:
+          'Practice public speaking in realistic 3D environments, get AI feedback on performance, and build confidence',
+      },
+      {
+        id: 'presentation-pro-3d',
+        name: 'Presentation Pro 3D',
+        description:
+          'Design and deliver impactful presentations in virtual 3D stages with interactive elements and AI coaching',
+      },
+    ],
     platforms: ['Instagram', 'TikTok', 'Facebook', 'YouTube', 'LinkedIn'],
     monetizationMethods: ['Brand partnerships', 'Affiliate marketing', 'Product placement'],
     toolsRequired: ['Canva', 'Buffer', 'Hootsuite', 'Analytics tools'],
@@ -149,8 +234,69 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Master video production từ concept đến final edit, sử dụng tools professional và techniques để tạo high-quality content.',
     duration: '240 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=apbZc_9XgNo',
+    videoUrl: 'https://www.youtube.com/watch?v=y1KcHBZd3nw',
     imageUrl: 'https://i.ytimg.com/vi/apbZc_9XgNo/hqdefault.jpg',
+    mainContent: {
+      introduction:
+        'Video là ngôn ngữ của internet hiện đại. Khả năng tạo ra những video chất lượng cao không còn là đặc quyền của các studio lớn. Bài học này sẽ trang bị cho bạn từ A-Z kỹ năng sản xuất video, từ việc lên ý tưởng, quay phim bằng những thiết bị sẵn có, đến hậu kỳ chuyên nghiệp, giúp bạn biến những ý tưởng sáng tạo thành những tác phẩm video cuốn hút.',
+      keyConcepts: [
+        {
+          title: 'Ngôn ngữ điện ảnh (Cinematic Language)',
+          description:
+            'Hiểu và áp dụng các yếu-tố-cơ-bản-của-điện-ảnh như các loại cỡ cảnh (shot types), góc máy (camera angles), và chuyển động máy (camera movements) để kể chuyện một cách hiệu quả bằng hình ảnh.',
+          examples: [
+            'Sử dụng cảnh toàn (wide shot) để thiết lập bối cảnh.',
+            'Dùng cảnh cận (close-up) để nhấn mạnh cảm xúc nhân vật.',
+            'Áp dụng quy tắc 1/3 (rule of thirds) để tạo bố cục cân đối.',
+          ],
+        },
+        {
+          title: 'Kỹ thuật kể chuyện qua dựng phim (Storytelling through Editing)',
+          description:
+            'Dựng phim không chỉ là cắt ghép các cảnh quay. Đó là nghệ thuật tạo ra nhịp điệu, cảm xúc và dẫn dắt câu chuyện. Học các kỹ thuật như J-cut, L-cut, và montage để nâng tầm video của bạn.',
+          examples: [
+            'Sử dụng J-cut để âm thanh của cảnh sau bắt đầu trước khi hình ảnh xuất hiện, tạo sự chuyển tiếp mượt mà.',
+            'Tạo một đoạn montage nhanh để thể hiện quá trình thay đổi theo thời gian.',
+          ],
+        },
+        {
+          title: 'Ánh sáng và Âm thanh (Lighting and Sound)',
+          description:
+            'Đây là hai yếu tố thường bị bỏ qua nhưng lại quyết định đến 90% chất lượng của một video. Nắm vững các kỹ thuật cơ bản về ánh sáng 3 điểm và thu âm sạch sẽ là chìa khóa để video của bạn trông chuyên nghiệp.',
+          examples: [
+            'Sử dụng ánh sáng tự nhiên từ cửa sổ làm nguồn sáng chính (key light).',
+            'Dùng một chiếc micro cài áo đơn giản để có chất lượng âm thanh tốt hơn nhiều so với micro của máy ảnh.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Marketing và Quảng cáo',
+          description:
+            'Tạo các video quảng cáo sản phẩm, video testimonial của khách hàng, hoặc video giới thiệu công ty để thu hút khách hàng trên các nền tảng số.',
+        },
+        {
+          area: 'Giáo dục và Đào tạo',
+          description:
+            'Sản xuất các khóa học online, video hướng dẫn (tutorials), hoặc các bài giảng trực quan để truyền đạt kiến thức một cách hiệu quả.',
+        },
+        {
+          area: 'Báo chí và Phim tài liệu',
+          description:
+            'Kể những câu chuyện có thật, thực hiện các cuộc phỏng vấn và sản xuất các bộ phim tài liệu ngắn có sức ảnh hưởng xã hội.',
+        },
+      ],
+      conclusion:
+        'Làm chủ kỹ năng sản xuất video là bạn đang sở hữu một trong những công cụ giao tiếp mạnh mẽ nhất trong thế kỷ 21. Với kiến thức từ bài học này, bạn có đủ khả năng để tạo ra những nội dung video chuyên nghiệp, kể những câu chuyện lay động và xây dựng một sự nghiệp bền vững trong ngành công nghiệp sáng tạo.',
+    },
+    relatedGames: [
+      {
+        id: 'presentation-pro-3d',
+        name: 'Presentation Pro 3D',
+        description:
+          'Design and deliver impactful presentations in virtual 3D stages with interactive elements and AI coaching',
+      },
+    ],
     platforms: ['YouTube', 'TikTok', 'Instagram Reels', 'Facebook Videos'],
     monetizationMethods: ['Ad revenue', 'Sponsored content', 'Course sales'],
     toolsRequired: ['CapCut', 'DaVinci Resolve', 'Adobe Premiere Pro', 'Smartphone camera'],
@@ -265,8 +411,75 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Xây dựng loyal community qua livestreaming, master engagement techniques và monetize live content effectively.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=6ftDWN2DroQ',
+    videoUrl: 'https://www.youtube.com/watch?v=L0-Y67XN11Q',
     imageUrl: 'https://i.ytimg.com/vi/6ftDWN2DroQ/hqdefault.jpg',
+    mainContent: {
+      introduction:
+        'Livestream là cầu nối trực tiếp và chân thực nhất giữa người sáng tạo và khán giả. Đây không chỉ là việc phát sóng trực tiếp, mà là nghệ thuật xây dựng một cộng đồng gắn kết trong thời gian thực. Bài học này sẽ chỉ cho bạn cách thiết lập một buổi livestream chuyên nghiệp, các kỹ thuật để giữ chân người xem, và cách biến những buổi live thành một phần không thể thiếu trong chiến lược nội dung của bạn.',
+      keyConcepts: [
+        {
+          title: 'Tương tác thời gian thực (Real-time Engagement)',
+          description:
+            'Khác với video quay sẵn, sức mạnh của livestream nằm ở khả năng tương tác tức thì. Học cách đọc và trả lời bình luận, tạo các cuộc thăm dò ý kiến (polls), và gọi tên khán giả để tạo cảm giác thân thuộc và được trân trọng.',
+          examples: [
+            'Ghim một bình luận thú vị lên đầu cuộc trò chuyện.',
+            'Tổ chức một phiên hỏi đáp (Q&A) ngẫu hứng dựa trên câu hỏi của khán giả.',
+          ],
+        },
+        {
+          title: 'Cấu trúc của một buổi Livestream (Livestream Structure)',
+          description:
+            'Một buổi livestream thành công cần có kịch bản linh hoạt. Nắm vững cấu trúc 3 phần: Mở đầu (Hook) để thu hút người xem mới, Thân bài (Core Content) để giữ chân họ, và Kết thúc (Call to Action) để chuyển đổi họ.',
+          examples: [
+            'Bắt đầu bằng một câu chuyện gây tò mò hoặc một mini-game.',
+            'Phần thân bài có thể là một buổi hướng dẫn, chơi game, hoặc trò chuyện theo chủ đề.',
+            'Kết thúc bằng việc kêu gọi theo dõi, tham gia nhóm, hoặc mua sản phẩm.',
+          ],
+        },
+        {
+          title: 'Thiết lập kỹ thuật (Technical Setup)',
+          description:
+            'Chất lượng hình ảnh và âm thanh ổn định là yếu tố sống còn. Bạn không cần thiết bị đắt tiền, nhưng cần biết cách tối ưu hóa những gì mình có, từ việc chọn phần mềm (OBS, Streamlabs), thiết lập ánh sáng, và đảm bảo kết nối internet ổn định.',
+          examples: [
+            'Sử dụng OBS Studio để thêm các lớp đồ họa (overlays) và cảnh báo (alerts) chuyên nghiệp.',
+            'Kiểm tra tốc độ upload của internet trước mỗi buổi live.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Bán hàng trực tuyến (Live Commerce)',
+          description:
+            'Giới thiệu và bán sản phẩm trực tiếp, trả lời câu hỏi của khách hàng và chốt đơn ngay trên sóng livestream. Đây là một xu hướng bùng nổ ở Việt Nam và châu Á.',
+        },
+        {
+          area: 'Đào tạo và Coaching',
+          description:
+            'Tổ chức các lớp học, workshop hoặc các buổi coaching nhóm trực tiếp, tạo ra môi trường học tập tương tác cao.',
+        },
+        {
+          area: 'Sự kiện ảo (Virtual Events)',
+          description:
+            'Tổ chức các buổi ra mắt sản phẩm, hội thảo, hoặc các buổi biểu diễn nghệ thuật trực tuyến, tiếp cận khán giả toàn cầu mà không bị giới hạn về địa lý.',
+        },
+      ],
+      conclusion:
+        'Livestreaming là một kỹ năng mạnh mẽ để xây dựng niềm tin và sự gắn kết với khán giả. Bằng cách trở thành một người dẫn dắt cuộc trò chuyện duyên dáng và một nhà tổ chức sự kiện trực tuyến chuyên nghiệp, bạn sẽ tạo ra một cộng đồng trung thành luôn mong chờ đến buổi live tiếp theo của bạn.',
+    },
+    relatedGames: [
+      {
+        id: 'public-speaking-simulator-3d',
+        name: 'Public Speaking Simulator 3D',
+        description:
+          'Practice public speaking in realistic 3D environments, get AI feedback on performance, and build confidence',
+      },
+      {
+        id: 'debate-master-3d',
+        name: 'Debate Master 3D',
+        description:
+          'Engage in AI-driven debates, develop critical thinking, and master persuasive arguments in 3D courtroom',
+      },
+    ],
     platforms: ['Facebook Live', 'YouTube Live', 'TikTok Live', 'Instagram Live', 'Twitch'],
     monetizationMethods: ['Super chats', 'Gifts', 'Sponsorships', 'Product sales'],
     toolsRequired: ['OBS Studio', 'Streamlabs', 'Good webcam', 'Quality microphone'],
@@ -382,8 +595,67 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Deep dive vào monetization opportunities across platforms, optimize revenue streams và build sustainable income from content creation.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=plCRQbAmPuY',
+    videoUrl: 'https://www.youtube.com/watch?v=fzbCmOLDoa8',
     imageUrl: 'https://i.ytimg.com/vi/plCRQbAmPuY/hqdefault.jpg',
+    mainContent: {
+      introduction:
+        'Sáng tạo nội dung là đam mê, nhưng biến đam mê đó thành một nguồn thu nhập bền vững là một bài toán kinh doanh. Bài học này sẽ đi sâu vào các chiến lược kiếm tiền đa dạng trên các nền tảng phổ biến như YouTube, TikTok và Facebook, giúp bạn xây dựng một cỗ máy kiếm tiền từ chính những nội dung bạn tạo ra.',
+      keyConcepts: [
+        {
+          title: 'Đa dạng hóa nguồn thu (Revenue Stream Diversification)',
+          description:
+            'Không bao giờ bỏ tất cả trứng vào một giỏ. Học cách kết hợp nhiều nguồn thu khác nhau: doanh thu quảng cáo từ nền tảng, hợp tác với nhãn hàng, affiliate marketing, bán sản phẩm số, và huy động vốn từ cộng đồng.',
+          examples: [
+            'Một YouTuber có thể kiếm tiền từ quảng cáo, đồng thời bán áo thun (merch) và nhận donate từ người hâm mộ.',
+            'Một TikToker có thể nhận booking quảng cáo và gắn link affiliate cho các sản phẩm họ review.',
+          ],
+        },
+        {
+          title: 'Thang giá trị (Value Ladder)',
+          description:
+            'Xây dựng một hệ thống các sản phẩm/dịch vụ với các mức giá khác nhau để tối đa hóa doanh thu từ mỗi khách hàng. Bắt đầu bằng nội dung miễn phí, sau đó dẫn dắt họ đến các sản phẩm trả phí giá rẻ, và cuối cùng là các sản phẩm cao cấp.',
+          examples: [
+            'Nội dung miễn phí (YouTube) -> Ebook giá rẻ ($5) -> Khóa học online ($99) -> Coaching 1-1 ($500).',
+          ],
+        },
+        {
+          title: 'Kinh tế người hâm mộ (Fan Economy)',
+          description:
+            'Tập trung vào việc xây dựng một nhóm nhỏ những người hâm mộ cuồng nhiệt (superfans) thay vì một lượng lớn khán giả hời hợt. Những người này sẵn sàng trả tiền cho các nội dung độc quyền, vật phẩm giới hạn, hoặc quyền truy cập đặc biệt.',
+          examples: [
+            'Tạo một nhóm thành viên trả phí trên YouTube hoặc Patreon.',
+            'Bán các vật phẩm có chữ ký hoặc phiên bản giới hạn.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Sự nghiệp sáng tạo toàn thời gian',
+          description:
+            'Xây dựng một kế hoạch tài chính vững chắc để có thể từ bỏ công việc văn phòng và theo đuổi sự nghiệp sáng tạo nội dung một cách chuyên nghiệp.',
+        },
+        {
+          area: 'Phát triển doanh nghiệp nhỏ',
+          description:
+            'Sử dụng nội dung như một công cụ marketing để thu hút khách hàng và bán các sản phẩm/dịch vụ khác của doanh nghiệp.',
+        },
+        {
+          area: 'Xây dựng thương hiệu cá nhân',
+          description:
+            'Kiếm tiền từ chính chuyên môn và uy tín của bạn thông qua các hoạt động như diễn thuyết, tư vấn, hoặc viết sách.',
+        },
+      ],
+      conclusion:
+        'Kiếm tiền từ sáng tạo nội dung đòi hỏi tư duy của một doanh nhân. Bằng cách xây dựng các hệ thống kiếm tiền thông minh và đa dạng, bạn không chỉ đảm bảo sự bền vững cho sự nghiệp của mình mà còn có thêm nguồn lực để tái đầu tư và tạo ra những nội dung chất lượng hơn nữa.',
+    },
+    relatedGames: [
+      {
+        id: 'financial-freedom-quest-3d',
+        name: 'Financial Freedom Quest 3D',
+        description:
+          'Learn financial literacy, investing, and wealth management by navigating challenges in a 3D world',
+      },
+    ],
     platforms: ['YouTube', 'TikTok', 'Facebook', 'Instagram'],
     monetizationMethods: ['Ad revenue', 'Sponsored content', 'Affiliate marketing', 'Digital products', 'Memberships'],
     toolsRequired: ['Analytics tools', 'Payment processors', 'Content management systems'],
@@ -502,8 +774,68 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Negotiate win-win partnerships với brands, create authentic sponsored content, và build long-term relationships trong industry.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=VzNi_LtjxsM',
+    videoUrl: 'https://www.youtube.com/watch?v=iWHS05fpPwE',
     imageUrl: 'https://i.ytimg.com/vi/VzNi_LtjxsM/hqdefault.jpg',
+    mainContent: {
+      introduction:
+        'Hợp tác với nhãn hàng là một trong những cách hiệu quả nhất để các nhà sáng tạo nội dung tăng tốc thu nhập và nâng cao uy tín. Tuy nhiên, đây cũng là một lĩnh vực đầy cạm bẫy. Bài học này sẽ dạy bạn cách tìm kiếm, đàm phán và thực hiện các hợp đồng tài trợ một cách chuyên nghiệp, đảm bảo lợi ích cho cả bạn, nhãn hàng và quan trọng nhất là khán giả của bạn.',
+      keyConcepts: [
+        {
+          title: 'Xây dựng Media Kit chuyên nghiệp',
+          description:
+            'Media Kit chính là CV của một nhà sáng tạo nội dung. Học cách tạo một Media Kit ấn tượng, trình bày rõ ràng các số liệu về kênh, thông tin về đối tượng khán giả, và các case study thành công để thuyết phục nhãn hàng.',
+          examples: [
+            'Bao gồm các chỉ số quan trọng như lượng người theo dõi, tỷ lệ tương tác, và nhân khẩu học của khán giả.',
+            'Trình bày các gói hợp tác và báo giá một cách rõ ràng.',
+          ],
+        },
+        {
+          title: 'Nghệ thuật đàm phán (The Art of Negotiation)',
+          description:
+            'Đừng bao giờ chấp nhận lời đề nghị đầu tiên. Học cách định giá đúng giá trị của mình, đàm phán các điều khoản hợp đồng (không chỉ về tiền bạc mà còn về quyền kiểm soát sáng tạo), và bảo vệ lợi ích của bản thân.',
+          examples: [
+            'Đề xuất một gói hợp tác bao gồm nhiều loại nội dung (ví dụ: 1 video + 3 story) thay vì chỉ một bài đăng.',
+            'Đàm phán quyền được xem trước và phê duyệt nội dung cuối cùng.',
+          ],
+        },
+        {
+          title: 'Tích hợp quảng cáo tự nhiên (Authentic Integration)',
+          description:
+            'Khán giả ghét quảng cáo lộ liễu. Chìa khóa thành công là tích hợp thông điệp của nhãn hàng vào nội dung của bạn một cách tự nhiên và chân thực, mang lại giá trị cho người xem thay vì chỉ đơn thuần là quảng cáo.',
+          examples: [
+            'Kể một câu chuyện cá nhân về cách sản phẩm đã giúp bạn giải quyết một vấn đề.',
+            'Sử dụng sản phẩm như một công cụ trong một video hướng dẫn thay vì chỉ nói về nó.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Đại sứ thương hiệu (Brand Ambassador)',
+          description:
+            'Xây dựng mối quan hệ hợp tác lâu dài với một nhãn hàng bạn yêu thích, trở thành gương mặt đại diện và có nguồn thu nhập ổn định.',
+        },
+        {
+          area: 'Chiến dịch ra mắt sản phẩm',
+          description:
+            'Hợp tác với các công ty để tạo ra sự bùng nổ truyền thông cho các sản phẩm mới sắp ra mắt thị trường.',
+        },
+        {
+          area: 'Tiếp thị liên kết (Affiliate Marketing)',
+          description:
+            'Quảng bá sản phẩm và nhận hoa hồng trên mỗi đơn hàng thành công, một hình thức hợp tác ít rủi ro và dễ bắt đầu.',
+        },
+      ],
+      conclusion:
+        'Các mối quan hệ đối tác thành công được xây dựng trên sự tin tưởng và đôi bên cùng có lợi. Bằng cách tiếp cận các thương vụ tài trợ một cách chiến lược và chuyên nghiệp, bạn sẽ không chỉ kiếm được tiền mà còn xây dựng được uy tín và mở ra những cơ hội hợp tác lớn hơn trong tương lai.',
+    },
+    relatedGames: [
+      {
+        id: 'debate-master-3d',
+        name: 'Debate Master 3D',
+        description:
+          'Engage in AI-driven debates, develop critical thinking, and master persuasive arguments in 3D courtroom',
+      },
+    ],
     platforms: ['All social media platforms'],
     monetizationMethods: ['Sponsored posts', 'Product placement', 'Brand ambassadorships', 'Event partnerships'],
     toolsRequired: ['Email templates', 'Media kit', 'Contract templates', 'Analytics dashboard'],
@@ -606,6 +938,57 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=bB5eKayGMvM',
     imageUrl: 'https://i.ytimg.com/vi/bB5eKayGMvM/hqdefault.jpg',
+    mainContent: {
+      introduction:
+        'Sự nhất quán là vua trong thế giới nội dung. Khán giả quay trở lại vì họ biết khi nào và những gì sẽ mong đợi từ bạn. Tuy nhiên, việc duy trì sự sáng tạo và lịch trình đăng bài đều đặn có thể gây kiệt sức. Bài học này sẽ cung cấp cho bạn các hệ thống và quy trình để lên kế hoạch, sản xuất và xuất bản nội dung một cách bền vững, giúp bạn không bị burnout và phát triển kênh một cách ổn định.',
+      keyConcepts: [
+        {
+          title: 'Sản xuất theo lô (Batch Production)',
+          description:
+            'Thay vì tạo từng nội dung một, hãy dành riêng một khoảng thời gian để sản xuất hàng loạt. Kỹ thuật này giúp tiết kiệm thời gian chuyển đổi giữa các công việc, duy trì sự nhất quán về mặt hình ảnh và giải phóng tâm trí bạn khỏi áp lực phải sáng tạo hàng ngày.',
+          examples: [
+            'Dành một ngày cuối tuần để quay 5 video ngắn cho cả tuần.',
+            'Viết kịch bản cho 4 video dài trong một buổi chiều.',
+          ],
+        },
+        {
+          title: 'Tái sử dụng nội dung (Content Repurposing)',
+          description:
+            'Làm việc thông minh hơn, không phải chăm chỉ hơn. Học cách biến một mẩu nội dung lớn thành nhiều định dạng nhỏ hơn để đăng tải trên các nền tảng khác nhau, tối đa hóa phạm vi tiếp cận và giá trị của mỗi ý tưởng.',
+          examples: [
+            'Biến một video YouTube dài thành một bài blog, nhiều video TikTok ngắn, một chuỗi story trên Instagram, và một bài viết trên Facebook.',
+          ],
+        },
+        {
+          title: 'Hệ thống quản lý ý tưởng (Idea Management System)',
+          description:
+            'Ý tưởng có thể đến bất cứ lúc nào. Xây dựng một "ngân hàng ý tưởng" tập trung để bạn không bao giờ phải đối mặt với "hội chứng trang giấy trắng". Hệ thống này giúp bạn nắm bắt, phân loại và phát triển các ý tưởng một cách có tổ chức.',
+          examples: [
+            'Sử dụng một công cụ như Notion hoặc Trello để tạo các cột cho các giai đoạn: Ý tưởng thô -> Đang nghiên cứu -> Sẵn sàng quay -> Đã xuất bản.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Quản lý kênh Social Media',
+          description:
+            'Lên lịch trình nội dung cho cả tháng chỉ trong vài ngày, giúp bạn có thời gian tập trung vào việc tương tác với cộng đồng và các hoạt động chiến lược khác.',
+        },
+        {
+          area: 'Cân bằng công việc và cuộc sống',
+          description:
+            'Xây dựng một hệ thống làm việc hiệu quả giúp bạn tránh được tình trạng kiệt sức, duy trì được đam mê sáng tạo và có thời gian cho cuộc sống cá nhân.',
+        },
+        {
+          area: 'Mở rộng quy mô đội nhóm',
+          description:
+            'Khi kênh của bạn phát triển, các hệ thống và quy trình rõ ràng sẽ giúp bạn dễ dàng thuê và quản lý các thành viên khác trong đội (ví dụ: người dựng phim, người viết kịch bản).',
+        },
+      ],
+      conclusion:
+        'Sự sáng tạo cần có cấu trúc để thăng hoa. Bằng cách xây dựng các hệ thống sản xuất nội dung vững chắc, bạn sẽ giải phóng bản thân khỏi những áp lực hàng ngày, duy trì được sự nhất quán và tạo ra một nền tảng vững chắc cho sự phát triển lâu dài của kênh.',
+    },
+    relatedGames: [],
     platforms: ['All platforms'],
     monetizationMethods: ['Indirect through improved consistency và growth'],
     toolsRequired: ['Content planning tools', 'Scheduling software', 'Project management systems'],
@@ -699,8 +1082,67 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Master data-driven content strategy, analyze performance metrics, và optimize growth through systematic testing và iteration.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=_g5roKHj95o',
-    imageUrl: 'https://i.ytimg.com/vi/_g5roKHj95o/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=RVFlSEJj3vA',
+    imageUrl: 'https://i.ytimg.com/vi/RVFlSEJj3vA/hqdefault.jpg',
+    mainContent: {
+      introduction:
+        'Trong thế giới số, dữ liệu là la bàn dẫn lối đến thành công. Việc chỉ tạo ra nội dung hay là chưa đủ; bạn cần phải hiểu khán giả của mình muốn gì, điều gì khiến họ tương tác, và làm thế nào để tiếp cận được nhiều người hơn. Bài học này sẽ biến bạn từ một người sáng tạo nội dung đơn thuần thành một chiến lược gia tăng trưởng, sử dụng dữ liệu để đưa ra các quyết định thông minh.',
+      keyConcepts: [
+        {
+          title: 'Các chỉ số quan trọng (Key Performance Indicators - KPIs)',
+          description:
+            'Không phải tất cả các con số đều có giá trị như nhau. Học cách phân biệt giữa các "chỉ số phù phiếm" (vanity metrics) như lượt xem và các chỉ số thực sự quan trọng như tỷ lệ giữ chân khán giả (retention rate), tỷ lệ nhấp (CTR), và thời gian xem trung bình.',
+          examples: [
+            'Một video có tỷ lệ giữ chân khán giả cao ở phút đầu tiên cho thấy thumbnail và tiêu đề đã làm tốt việc của nó.',
+            'Tỷ lệ CTR cao cho thấy tiêu đề và thumbnail của bạn hấp dẫn.',
+          ],
+        },
+        {
+          title: 'Thử nghiệm A/B (A/B Testing)',
+          description:
+            'Ngừng đoán mò, hãy để dữ liệu trả lời. Học cách thiết lập các thử nghiệm có kiểm soát để so sánh hiệu quả của các yếu tố khác nhau, chẳng hạn như hai phiên bản thumbnail, hai tiêu đề khác nhau, hoặc hai lời kêu gọi hành động khác nhau.',
+          examples: [
+            'Chạy hai thumbnail khác nhau cho cùng một video trên YouTube để xem cái nào có CTR cao hơn.',
+            'Thử nghiệm hai kiểu caption khác nhau trên Instagram để xem kiểu nào tạo ra nhiều bình luận hơn.',
+          ],
+        },
+        {
+          title: 'Vòng lặp Tối ưu hóa (Optimization Loop)',
+          description:
+            'Tăng trưởng là một quá trình lặp đi lặp lại. Nắm vững chu trình: Phân tích dữ liệu -> Đưa ra giả thuyết -> Thử nghiệm -> Đo lường kết quả -> Áp dụng bài học. Đây là động cơ cốt lõi của sự tăng trưởng bền vững.',
+          examples: [
+            'Phân tích thấy video ngắn hoạt động tốt -> Giả thuyết rằng khán giả thích nội dung nhanh -> Thử nghiệm làm thêm video ngắn -> Đo lường thấy lượt xem tăng -> Áp dụng chiến lược "ưu tiên video ngắn".',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Tối ưu hóa kênh YouTube',
+          description:
+            'Sử dụng YouTube Analytics để hiểu khán giả của bạn đến từ đâu, họ xem những video nào khác, và điều gì khiến họ rời đi, từ đó cải thiện chiến lược nội dung.',
+        },
+        {
+          area: 'Chiến lược Hashtag trên Instagram/TikTok',
+          description:
+            'Phân tích hiệu quả của các hashtag khác nhau để xác định bộ hashtag nào mang lại nhiều lượt tiếp cận và tương tác nhất cho niche của bạn.',
+        },
+        {
+          area: 'Tăng tỷ lệ chuyển đổi',
+          description:
+            'Sử dụng dữ liệu để tối ưu hóa trang bán hàng hoặc lời kêu gọi hành động, tăng tỷ lệ người xem trở thành khách hàng hoặc người đăng ký.',
+        },
+      ],
+      conclusion:
+        'Dữ liệu không giết chết sự sáng tạo; nó cung cấp cho sự sáng tạo một phương hướng. Bằng cách kết hợp nghệ thuật kể chuyện với khoa học phân tích dữ liệu, bạn sẽ xây dựng được một cỗ máy tăng trưởng không thể ngăn cản, liên tục cải thiện và đạt được những tầm cao mới.',
+    },
+    relatedGames: [
+      {
+        id: 'data-visualizer-3d',
+        name: 'Data Visualizer 3D',
+        description:
+          'Explore and visualize complex datasets in interactive 3D environments, uncovering insights and trends',
+      },
+    ],
     platforms: ['All platforms'],
     monetizationMethods: ['Optimized content leads to higher monetization rates'],
     toolsRequired: ['Analytics platforms', 'Data visualization tools', 'A/B testing tools'],
@@ -800,8 +1242,59 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Navigate legal requirements, business registration, taxes, và intellectual property protection trong Vietnamese content creator landscape.',
     duration: '150 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=1-xiSOvgNvw',
-    imageUrl: 'https://i.ytimg.com/vi/1-xiSOvgNvw/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=20PaLUq0h-U',
+    imageUrl: 'https://i.ytimg.com/vi/20PaLUq0h-U/hqdefault.jpg',
+    mainContent: {
+      introduction:
+        'Khi đam mê của bạn bắt đầu tạo ra thu nhập, nó đã trở thành một công việc kinh doanh. Việc bỏ qua các khía cạnh pháp lý và kinh doanh có thể dẫn đến những rủi ro nghiêm trọng. Bài học này là khóa học cấp tốc về "CEO 101" dành cho các nhà sáng tạo nội dung, trang bị cho bạn kiến thức cần thiết về đăng ký kinh doanh, thuế, bản quyền và hợp đồng tại Việt Nam.',
+      keyConcepts: [
+        {
+          title: 'Thành lập pháp nhân (Business Entity Setup)',
+          description:
+            'Bảo vệ tài sản cá nhân của bạn bằng cách tách biệt giữa tài chính cá nhân và tài chính kinh doanh. Tìm hiểu các loại hình doanh nghiệp phổ biến ở Việt Nam (Hộ kinh doanh cá thể, Công ty TNHH) và chọn loại hình phù hợp với quy mô của bạn.',
+          examples: [
+            'Bắt đầu với Hộ kinh doanh cá thể khi thu nhập còn thấp.',
+            'Nâng cấp lên Công ty TNHH một thành viên khi doanh thu tăng và cần sự chuyên nghiệp hơn.',
+          ],
+        },
+        {
+          title: 'Nghĩa vụ thuế (Tax Obligations)',
+          description:
+            'Hiểu rõ các loại thuế bạn cần phải đóng (Thuế thu nhập cá nhân, Thuế giá trị gia tăng) và các khoản chi phí được khấu trừ. Việc tuân thủ quy định về thuế giúp bạn kinh doanh một cách bền vững và tránh các rắc rối pháp lý.',
+          examples: [
+            'Chi phí mua thiết bị, phần mềm, hoặc chi phí đi lại để sản xuất nội dung có thể được tính là chi phí hợp lệ.',
+          ],
+        },
+        {
+          title: 'Sở hữu trí tuệ (Intellectual Property - IP)',
+          description:
+            'Nội dung của bạn là tài sản. Học cách bảo vệ nó thông qua luật bản quyền và nhãn hiệu. Đồng thời, hiểu rõ cách sử dụng hợp pháp nội dung của người khác (ví dụ: âm nhạc, hình ảnh) để tránh bị kiện tụng.',
+          examples: [
+            'Đăng ký bản quyền cho logo và tên thương hiệu của bạn.',
+            'Sử dụng các thư viện nhạc và hình ảnh có bản quyền rõ ràng như Epidemic Sound hoặc Artlist.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Ký kết hợp đồng với nhãn hàng',
+          description:
+            'Đọc và hiểu các điều khoản trong hợp đồng tài trợ, đảm bảo quyền lợi của bạn được bảo vệ trước khi đặt bút ký.',
+        },
+        {
+          area: 'Thuê nhân sự',
+          description:
+            'Khi kênh phát triển, bạn có thể cần thuê người dựng phim hoặc trợ lý. Việc có một pháp nhân kinh doanh sẽ giúp bạn thực hiện các hợp đồng lao động một cách hợp pháp.',
+        },
+        {
+          area: 'Bán sản phẩm và khóa học',
+          description: 'Thiết lập một cổng thanh toán và xuất hóa đơn hợp pháp cho các sản phẩm và dịch vụ bạn bán ra.',
+        },
+      ],
+      conclusion:
+        'Xem mình là một doanh nhân là bước chuyển đổi tư duy quan trọng nhất để thành công lâu dài trong nền kinh tế sáng tạo. Bằng cách xây dựng một nền tảng pháp lý và kinh doanh vững chắc, bạn đang bảo vệ thành quả lao động của mình và tạo điều kiện cho sự phát triển không giới hạn trong tương lai.',
+    },
+    relatedGames: [],
     platforms: ['All platforms'],
     monetizationMethods: ['Proper business setup enables all monetization methods'],
     toolsRequired: ['Legal consultation', 'Accounting software', 'Business registration documents'],

@@ -7,19 +7,6 @@ interface DigitalMarketingCampaignGameProps {
   onComplete: (score: number) => void;
 }
 
-interface Campaign {
-  id: string;
-  name: string;
-  platform: 'facebook' | 'google' | 'tiktok' | 'youtube' | 'instagram';
-  budget: number;
-  targetAudience: string;
-  content: string;
-  objective: 'awareness' | 'engagement' | 'conversion' | 'retention';
-  reach: number;
-  engagement: number;
-  conversion: number;
-}
-
 interface MarketingDecision {
   id: string;
   title: string;
@@ -45,24 +32,24 @@ const MARKETING_DECISIONS: MarketingDecision[] = [
       {
         id: 'facebook',
         text: 'Facebook - Đa dạng độ tuổi, targeting tốt',
-        impact: { reach: 85, engagement: 70, conversion: 75, budget: -40 }
+        impact: { reach: 85, engagement: 70, conversion: 75, budget: -40 },
       },
       {
         id: 'tiktok',
         text: 'TikTok - Gen Z, viral content',
-        impact: { reach: 95, engagement: 90, conversion: 60, budget: -30 }
+        impact: { reach: 95, engagement: 90, conversion: 60, budget: -30 },
       },
       {
         id: 'google',
         text: 'Google Ads - Intent cao, conversion tốt',
-        impact: { reach: 70, engagement: 60, conversion: 95, budget: -50 }
+        impact: { reach: 70, engagement: 60, conversion: 95, budget: -50 },
       },
       {
         id: 'youtube',
         text: 'YouTube - Video content, brand awareness',
-        impact: { reach: 80, engagement: 85, conversion: 65, budget: -45 }
-      }
-    ]
+        impact: { reach: 80, engagement: 85, conversion: 65, budget: -45 },
+      },
+    ],
   },
   {
     id: 'content',
@@ -72,24 +59,24 @@ const MARKETING_DECISIONS: MarketingDecision[] = [
       {
         id: 'ugc',
         text: 'User-Generated Content - Tăng độ tin cậy',
-        impact: { reach: 70, engagement: 95, conversion: 80, budget: -20 }
+        impact: { reach: 70, engagement: 95, conversion: 80, budget: -20 },
       },
       {
         id: 'influencer',
         text: 'Influencer Marketing - Uy tín và tầm ảnh hưởng',
-        impact: { reach: 90, engagement: 85, conversion: 75, budget: -60 }
+        impact: { reach: 90, engagement: 85, conversion: 75, budget: -60 },
       },
       {
         id: 'video',
         text: 'Video Ads - Hấp dẫn và dễ nhớ',
-        impact: { reach: 85, engagement: 90, conversion: 70, budget: -50 }
+        impact: { reach: 85, engagement: 90, conversion: 70, budget: -50 },
       },
       {
         id: 'interactive',
         text: 'Interactive Content - Tham gia tích cực',
-        impact: { reach: 75, engagement: 100, conversion: 85, budget: -40 }
-      }
-    ]
+        impact: { reach: 75, engagement: 100, conversion: 85, budget: -40 },
+      },
+    ],
   },
   {
     id: 'targeting',
@@ -99,24 +86,24 @@ const MARKETING_DECISIONS: MarketingDecision[] = [
       {
         id: 'lookalike',
         text: 'Lookalike Audience - Mở rộng từ khách hàng hiện tại',
-        impact: { reach: 80, engagement: 85, conversion: 90, budget: -35 }
+        impact: { reach: 80, engagement: 85, conversion: 90, budget: -35 },
       },
       {
         id: 'interest',
         text: 'Interest Targeting - Dựa vào sở thích',
-        impact: { reach: 90, engagement: 75, conversion: 70, budget: -30 }
+        impact: { reach: 90, engagement: 75, conversion: 70, budget: -30 },
       },
       {
         id: 'behavioral',
         text: 'Behavioral Targeting - Dựa vào hành vi',
-        impact: { reach: 75, engagement: 80, conversion: 95, budget: -40 }
+        impact: { reach: 75, engagement: 80, conversion: 95, budget: -40 },
       },
       {
         id: 'retargeting',
         text: 'Retargeting - Tái tiếp cận khách đã quan tâm',
-        impact: { reach: 60, engagement: 90, conversion: 100, budget: -25 }
-      }
-    ]
+        impact: { reach: 60, engagement: 90, conversion: 100, budget: -25 },
+      },
+    ],
   },
   {
     id: 'optimization',
@@ -126,24 +113,24 @@ const MARKETING_DECISIONS: MarketingDecision[] = [
       {
         id: 'ab-test',
         text: 'A/B Testing - Thử nghiệm nhiều phiên bản',
-        impact: { reach: 70, engagement: 80, conversion: 90, budget: -20 }
+        impact: { reach: 70, engagement: 80, conversion: 90, budget: -20 },
       },
       {
         id: 'dayparting',
         text: 'Dayparting - Tối ưu thời gian chạy quảng cáo',
-        impact: { reach: 85, engagement: 75, conversion: 80, budget: -15 }
+        impact: { reach: 85, engagement: 75, conversion: 80, budget: -15 },
       },
       {
         id: 'dynamic-ads',
         text: 'Dynamic Ads - Cá nhân hóa quảng cáo',
-        impact: { reach: 75, engagement: 90, conversion: 95, budget: -35 }
+        impact: { reach: 75, engagement: 90, conversion: 95, budget: -35 },
       },
       {
         id: 'automation',
         text: 'Smart Bidding - Tự động tối ưu giá thầu',
-        impact: { reach: 80, engagement: 70, conversion: 85, budget: -30 }
-      }
-    ]
+        impact: { reach: 80, engagement: 70, conversion: 85, budget: -30 },
+      },
+    ],
   },
   {
     id: 'measurement',
@@ -153,25 +140,25 @@ const MARKETING_DECISIONS: MarketingDecision[] = [
       {
         id: 'attribution',
         text: 'Multi-touch Attribution - Theo dõi toàn bộ customer journey',
-        impact: { reach: 60, engagement: 70, conversion: 95, budget: -25 }
+        impact: { reach: 60, engagement: 70, conversion: 95, budget: -25 },
       },
       {
         id: 'cohort',
         text: 'Cohort Analysis - Phân tích nhóm khách hàng theo thời gian',
-        impact: { reach: 65, engagement: 80, conversion: 90, budget: -20 }
+        impact: { reach: 65, engagement: 80, conversion: 90, budget: -20 },
       },
       {
         id: 'ltv',
         text: 'LTV Tracking - Theo dõi giá trị trọn đời khách hàng',
-        impact: { reach: 70, engagement: 75, conversion: 100, budget: -30 }
+        impact: { reach: 70, engagement: 75, conversion: 100, budget: -30 },
       },
       {
         id: 'realtime',
         text: 'Real-time Analytics - Điều chỉnh tức thì',
-        impact: { reach: 80, engagement: 85, conversion: 85, budget: -35 }
-      }
-    ]
-  }
+        impact: { reach: 80, engagement: 85, conversion: 85, budget: -35 },
+      },
+    ],
+  },
 ];
 
 const PLATFORMS = [
@@ -179,7 +166,7 @@ const PLATFORMS = [
   { id: 'google', name: 'Google', icon: '🔍', color: 'text-red-400' },
   { id: 'tiktok', name: 'TikTok', icon: '🎵', color: 'text-pink-400' },
   { id: 'youtube', name: 'YouTube', icon: '📺', color: 'text-red-500' },
-  { id: 'instagram', name: 'Instagram', icon: '📸', color: 'text-purple-400' }
+  { id: 'instagram', name: 'Instagram', icon: '📸', color: 'text-purple-400' },
 ];
 
 const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> = ({ onComplete }) => {
@@ -190,7 +177,7 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
   const [campaignMetrics, setCampaignMetrics] = useState({
     reach: 0,
     engagement: 0,
-    conversion: 0
+    conversion: 0,
   });
   const [decisions, setDecisions] = useState<string[]>([]);
   const [timeLeft, setTimeLeft] = useState(240); // 4 minutes
@@ -211,15 +198,15 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
 
   const makeDecision = (optionId: string) => {
     const decision = MARKETING_DECISIONS[currentDecision];
-    const option = decision.options.find(o => o.id === optionId);
-    
+    const option = decision.options.find((o) => o.id === optionId);
+
     if (option && remainingBudget + option.impact.budget >= 0) {
       setDecisions([...decisions, optionId]);
-      setRemainingBudget(prev => prev + option.impact.budget);
-      setCampaignMetrics(prev => ({
+      setRemainingBudget((prev) => prev + option.impact.budget);
+      setCampaignMetrics((prev) => ({
         reach: Math.min(100, Math.max(0, prev.reach + option.impact.reach)),
         engagement: Math.min(100, Math.max(0, prev.engagement + option.impact.engagement)),
-        conversion: Math.min(100, Math.max(0, prev.conversion + option.impact.conversion))
+        conversion: Math.min(100, Math.max(0, prev.conversion + option.impact.conversion)),
       }));
 
       if (currentDecision < MARKETING_DECISIONS.length - 1) {
@@ -241,7 +228,7 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
   const calculateROI = () => {
     const invested = budget - remainingBudget;
     const revenue = (campaignMetrics.conversion / 100) * invested * 3;
-    return invested > 0 ? ((revenue - invested) / invested * 100) : 0;
+    return invested > 0 ? ((revenue - invested) / invested) * 100 : 0;
   };
 
   const finishGame = () => {
@@ -308,7 +295,7 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
                 Các Nền Tảng Chính
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-                {PLATFORMS.map(platform => (
+                {PLATFORMS.map((platform) => (
                   <div key={platform.id} className="bg-white/5 rounded-lg p-3 text-center">
                     <div className="text-2xl mb-2">{platform.icon}</div>
                     <div className={`text-sm ${platform.color}`}>{platform.name}</div>
@@ -369,7 +356,9 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
               <div className="flex items-center space-x-6">
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 mr-2 text-blue-400" />
-                  <span>{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+                  <span>
+                    {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-400 mr-2">💰</span>
@@ -406,7 +395,7 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
-              {decision.options.map(option => {
+              {decision.options.map((option) => {
                 const canAfford = remainingBudget + option.impact.budget >= 0;
                 return (
                   <button
@@ -420,19 +409,28 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
                     }`}
                   >
                     <div className="font-semibold text-white mb-3">{option.text}</div>
-                    
+
                     <div className="grid grid-cols-2 gap-2 text-xs">
                       <div className="flex justify-between">
                         <span className="text-blue-400">Reach:</span>
-                        <span className="text-white">{option.impact.reach > 0 ? '+' : ''}{option.impact.reach}%</span>
+                        <span className="text-white">
+                          {option.impact.reach > 0 ? '+' : ''}
+                          {option.impact.reach}%
+                        </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-green-400">Engagement:</span>
-                        <span className="text-white">{option.impact.engagement > 0 ? '+' : ''}{option.impact.engagement}%</span>
+                        <span className="text-white">
+                          {option.impact.engagement > 0 ? '+' : ''}
+                          {option.impact.engagement}%
+                        </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-yellow-400">Conversion:</span>
-                        <span className="text-white">{option.impact.conversion > 0 ? '+' : ''}{option.impact.conversion}%</span>
+                        <span className="text-white">
+                          {option.impact.conversion > 0 ? '+' : ''}
+                          {option.impact.conversion}%
+                        </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-purple-400">Chi phí:</span>
@@ -462,10 +460,13 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
             <h2 className="text-3xl font-bold text-white mb-4">Kết Quả Chiến Dịch!</h2>
             <div className="text-4xl font-bold text-yellow-400 mb-2">{score}/100 điểm</div>
             <p className="text-gray-300">
-              {score >= 80 ? 'Xuất sắc! Chiến dịch của bạn rất hiệu quả!' :
-               score >= 60 ? 'Tốt! ROI tích cực và metrics ổn định.' :
-               score >= 40 ? 'Khá ổn! Cần tối ưu thêm targeting và content.' :
-               'Cần cải thiện! Hãy phân tích lại strategy và budget allocation.'}
+              {score >= 80
+                ? 'Xuất sắc! Chiến dịch của bạn rất hiệu quả!'
+                : score >= 60
+                  ? 'Tốt! ROI tích cực và metrics ổn định.'
+                  : score >= 40
+                    ? 'Khá ổn! Cần tối ưu thêm targeting và content.'
+                    : 'Cần cải thiện! Hãy phân tích lại strategy và budget allocation.'}
             </p>
           </div>
 
@@ -496,25 +497,57 @@ const DigitalMarketingCampaignGame: React.FC<DigitalMarketingCampaignGameProps> 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-300">Reach Performance:</span>
-                    <span className={campaignMetrics.reach >= 70 ? 'text-green-400' : campaignMetrics.reach >= 40 ? 'text-yellow-400' : 'text-red-400'}>
+                    <span
+                      className={
+                        campaignMetrics.reach >= 70
+                          ? 'text-green-400'
+                          : campaignMetrics.reach >= 40
+                            ? 'text-yellow-400'
+                            : 'text-red-400'
+                      }
+                    >
                       {campaignMetrics.reach >= 70 ? 'Xuất sắc' : campaignMetrics.reach >= 40 ? 'Tốt' : 'Cần cải thiện'}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-300">Engagement Quality:</span>
-                    <span className={campaignMetrics.engagement >= 70 ? 'text-green-400' : campaignMetrics.engagement >= 40 ? 'text-yellow-400' : 'text-red-400'}>
-                      {campaignMetrics.engagement >= 70 ? 'Cao' : campaignMetrics.engagement >= 40 ? 'Trung bình' : 'Thấp'}
+                    <span
+                      className={
+                        campaignMetrics.engagement >= 70
+                          ? 'text-green-400'
+                          : campaignMetrics.engagement >= 40
+                            ? 'text-yellow-400'
+                            : 'text-red-400'
+                      }
+                    >
+                      {campaignMetrics.engagement >= 70
+                        ? 'Cao'
+                        : campaignMetrics.engagement >= 40
+                          ? 'Trung bình'
+                          : 'Thấp'}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-300">Conversion Rate:</span>
-                    <span className={campaignMetrics.conversion >= 70 ? 'text-green-400' : campaignMetrics.conversion >= 40 ? 'text-yellow-400' : 'text-red-400'}>
-                      {campaignMetrics.conversion >= 70 ? 'Rất tốt' : campaignMetrics.conversion >= 40 ? 'Ổn' : 'Cần tối ưu'}
+                    <span
+                      className={
+                        campaignMetrics.conversion >= 70
+                          ? 'text-green-400'
+                          : campaignMetrics.conversion >= 40
+                            ? 'text-yellow-400'
+                            : 'text-red-400'
+                      }
+                    >
+                      {campaignMetrics.conversion >= 70
+                        ? 'Rất tốt'
+                        : campaignMetrics.conversion >= 40
+                          ? 'Ổn'
+                          : 'Cần tối ưu'}
                     </span>
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h4 className="text-white font-semibold mb-3">Quản Lý Ngân Sách:</h4>
                 <div className="space-y-2 text-sm">

@@ -1,15 +1,15 @@
 ---
-title: "Geography App"
-description: "I want you to create a modern, professional NextJS Vietnam geography. After the merger, Vietnam is expected to have 34 provincial-level administrative units...."
-date: "2025-08-27"
-author: "K2AiHub Development Team"
-category: "Tài Liệu"
-tags: ["trí tuệ nhân tạo", "Việt Nam", "giáo dục", "địa lý"]
+title: 'Geography App'
+description: 'I want you to create a modern, professional NextJS Vietnam geography. After the merger, Vietnam is expected to have 34 provincial-level administrative units....'
+date: '2025-08-27'
+author: 'K2AiHub Development Team'
+category: 'Tài Liệu'
+tags: ['trí tuệ nhân tạo', 'Việt Nam', 'giáo dục', 'địa lý']
 featured: false
-readingTime: "2 phút đọc"
+readingTime: '2 phút đọc'
 ---
 
-I want you to create a modern, professional NextJS Vietnam geography. After the merger, Vietnam is expected to have 34 provincial-level administrative units. Here's my vision:
+A modern, professional NextJS Vietnam geography. After the merger, Vietnam is expected to have 34 provincial-level administrative units ([Địa Lý Việt Nam Demo](https://youtube.com/shorts/Ff17sm2A2sc)):
 
 APPLICATION OVERVIEW:
 Build a complete education web app that helps users quickly get the Vietnam provincial-level (city) administrative units. The app should feel modern, intuitive, and professional.

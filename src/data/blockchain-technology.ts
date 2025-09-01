@@ -80,7 +80,7 @@ export const BlockchainLessons: BlockchainLessonData[] = [
     description: 'Học cách phát triển smart contracts và ứng dụng phi tập trung (DApps) trên Ethereum.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=keI4tymfIbo',
+    videoUrl: 'https://www.youtube.com/watch?v=9_uXrKPM4Qs',
     objectives: [
       'Nắm vững ngôn ngữ Solidity cho smart contracts',
       'Hiểu Ethereum Virtual Machine (EVM)',

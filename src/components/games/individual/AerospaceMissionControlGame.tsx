@@ -52,7 +52,7 @@ const MISSIONS: Mission[] = [
     budget: 2500,
     risk_factor: 85,
     scientific_value: 95,
-    description: 'Gửi robot thăm dò lên sao Hỏa để tìm kiếm dấu hiệu sự sống và nghiên cứu khí hậu'
+    description: 'Gửi robot thăm dò lên sao Hỏa để tìm kiếm dấu hiệu sự sống và nghiên cứu khí hậu',
   },
   {
     id: 'lunar-base',
@@ -63,7 +63,7 @@ const MISSIONS: Mission[] = [
     budget: 5000,
     risk_factor: 70,
     scientific_value: 85,
-    description: 'Thiết lập căn cứ nghiên cứu khoa học trên Mặt Trăng cho các sứ mệnh dài hạn'
+    description: 'Thiết lập căn cứ nghiên cứu khoa học trên Mặt Trăng cho các sứ mệnh dài hạn',
   },
   {
     id: 'europa-probe',
@@ -74,7 +74,7 @@ const MISSIONS: Mission[] = [
     budget: 4200,
     risk_factor: 90,
     scientific_value: 98,
-    description: 'Khám phá đại dương dưới lớp băng của Europa để tìm kiếm sự sống ngoài hành tinh'
+    description: 'Khám phá đại dương dưới lớp băng của Europa để tìm kiếm sự sống ngoài hành tinh',
   },
   {
     id: 'space-telescope',
@@ -85,7 +85,7 @@ const MISSIONS: Mission[] = [
     budget: 3800,
     risk_factor: 60,
     scientific_value: 92,
-    description: 'Quan sát các thiên hà xa xôi và tìm hiểu về nguồn gốc vũ trụ'
+    description: 'Quan sát các thiên hà xa xôi và tìm hiểu về nguồn gốc vũ trụ',
   },
   {
     id: 'asteroid-mining',
@@ -96,8 +96,8 @@ const MISSIONS: Mission[] = [
     budget: 6000,
     risk_factor: 95,
     scientific_value: 80,
-    description: 'Khai thác tài nguyên quý hiếm từ tiểu hành tinh để phục vụ công nghệ trên Trái Đất'
-  }
+    description: 'Khai thác tài nguyên quý hiếm từ tiểu hành tinh để phục vụ công nghệ trên Trái Đất',
+  },
 ];
 
 const COMPONENTS: Component[] = [
@@ -109,7 +109,7 @@ const COMPONENTS: Component[] = [
     cost: 500,
     weight: 250,
     power_consumption: 2000,
-    description: 'Động cơ tiên tiến cho các chuyến bay dài hạn trong không gian'
+    description: 'Động cơ tiên tiến cho các chuyến bay dài hạn trong không gian',
   },
   {
     id: 'chemical-rocket',
@@ -119,7 +119,7 @@ const COMPONENTS: Component[] = [
     cost: 800,
     weight: 2000,
     power_consumption: 0,
-    description: 'Động cơ mạnh mẽ cho giai đoạn phóng và đẩy ban đầu'
+    description: 'Động cơ mạnh mẽ cho giai đoạn phóng và đẩy ban đầu',
   },
   {
     id: 'ai-navigation',
@@ -129,7 +129,7 @@ const COMPONENTS: Component[] = [
     cost: 300,
     weight: 50,
     power_consumption: 150,
-    description: 'Hệ thống dẫn đường thông minh sử dụng AI và machine learning'
+    description: 'Hệ thống dẫn đường thông minh sử dụng AI và machine learning',
   },
   {
     id: 'quantum-communication',
@@ -139,7 +139,7 @@ const COMPONENTS: Component[] = [
     cost: 400,
     weight: 30,
     power_consumption: 100,
-    description: 'Hệ thống liên lạc bảo mật tuyệt đối qua mạng lượng tử'
+    description: 'Hệ thống liên lạc bảo mật tuyệt đối qua mạng lượng tử',
   },
   {
     id: 'solar-panels',
@@ -149,7 +149,7 @@ const COMPONENTS: Component[] = [
     cost: 200,
     weight: 100,
     power_consumption: -3000, // negative means it generates power
-    description: 'Nguồn năng lượng sạch và bền vững cho tàu vũ trụ'
+    description: 'Nguồn năng lượng sạch và bền vững cho tàu vũ trụ',
   },
   {
     id: 'rtg-generator',
@@ -159,7 +159,7 @@ const COMPONENTS: Component[] = [
     cost: 600,
     weight: 45,
     power_consumption: -1500,
-    description: 'Nguồn năng lượng ổn định cho các sứ mệnh xa và dài hạn'
+    description: 'Nguồn năng lượng ổn định cho các sứ mệnh xa và dài hạn',
   },
   {
     id: 'scientific-lab',
@@ -169,7 +169,7 @@ const COMPONENTS: Component[] = [
     cost: 450,
     weight: 200,
     power_consumption: 500,
-    description: 'Thiết bị phân tích mẫu vật và tiến hành thí nghiệm khoa học'
+    description: 'Thiết bị phân tích mẫu vật và tiến hành thí nghiệm khoa học',
   },
   {
     id: 'life-support',
@@ -179,8 +179,8 @@ const COMPONENTS: Component[] = [
     cost: 800,
     weight: 500,
     power_consumption: 800,
-    description: 'Cung cấp oxy, nước và không khí sạch cho phi hành đoàn'
-  }
+    description: 'Cung cấp oxy, nước và không khí sạch cho phi hành đoàn',
+  },
 ];
 
 const LAUNCH_WINDOWS: LaunchWindow[] = [
@@ -191,7 +191,7 @@ const LAUNCH_WINDOWS: LaunchWindow[] = [
     weather_risk: 10,
     orbital_alignment: 95,
     cost_multiplier: 1.0,
-    description: 'Điều kiện thời tiết và quỹ đạo hoàn hảo, tỷ lệ thành công cao nhất'
+    description: 'Điều kiện thời tiết và quỹ đạo hoàn hảo, tỷ lệ thành công cao nhất',
   },
   {
     id: 'good',
@@ -200,7 +200,7 @@ const LAUNCH_WINDOWS: LaunchWindow[] = [
     weather_risk: 25,
     orbital_alignment: 85,
     cost_multiplier: 1.1,
-    description: 'Điều kiện khá tốt với một số rủi ro về thời tiết'
+    description: 'Điều kiện khá tốt với một số rủi ro về thời tiết',
   },
   {
     id: 'acceptable',
@@ -209,7 +209,7 @@ const LAUNCH_WINDOWS: LaunchWindow[] = [
     weather_risk: 40,
     orbital_alignment: 70,
     cost_multiplier: 1.3,
-    description: 'Điều kiện trung bình, cần chuẩn bị kỹ lưỡng để đối phó rủi ro'
+    description: 'Điều kiện trung bình, cần chuẩn bị kỹ lưỡng để đối phó rủi ro',
   },
   {
     id: 'risky',
@@ -218,27 +218,30 @@ const LAUNCH_WINDOWS: LaunchWindow[] = [
     weather_risk: 70,
     orbital_alignment: 60,
     cost_multiplier: 1.5,
-    description: 'Điều kiện khó khăn, chỉ nên chọn khi thời gian cấp bách'
-  }
+    description: 'Điều kiện khó khăn, chỉ nên chọn khi thời gian cấp bách',
+  },
 ];
 
 const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'mission-selection' | 'component-selection' | 'launch-window' | 'mission-execution' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'mission-selection' | 'component-selection' | 'launch-window' | 'mission-execution' | 'results'
+  >('briefing');
   const [selectedMission, setSelectedMission] = useState<Mission | null>(null);
   const [selectedComponents, setSelectedComponents] = useState<Component[]>([]);
   const [selectedLaunchWindow, setSelectedLaunchWindow] = useState<LaunchWindow | null>(null);
   const [budget] = useState(8000); // 8 billion USD
   const [missionProgress, setMissionProgress] = useState(0);
-  const [isExecuting, setIsExecuting] = useState(false);
-  
+  const [, setIsExecuting] = useState(false);
+
   // Mission metrics
   const [missionSuccess, setMissionSuccess] = useState(0);
   const [scientificValue, setScientificValue] = useState(0);
   const [budgetEfficiency, setBudgetEfficiency] = useState(0);
 
-  const totalCost = (selectedMission?.budget || 0) + 
-    selectedComponents.reduce((sum, c) => sum + c.cost, 0) + 
-    ((selectedMission?.budget || 0) * ((selectedLaunchWindow?.cost_multiplier || 1) - 1));
+  const totalCost =
+    (selectedMission?.budget || 0) +
+    selectedComponents.reduce((sum, c) => sum + c.cost, 0) +
+    (selectedMission?.budget || 0) * ((selectedLaunchWindow?.cost_multiplier || 1) - 1);
 
   const canAfford = totalCost <= budget;
 
@@ -246,30 +249,31 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
     if (!selectedMission || selectedComponents.length === 0 || !selectedLaunchWindow) {
       return { success: 0, scientific: 0, efficiency: 0 };
     }
-    
+
     // Mission success probability
-    const componentReliability = selectedComponents.reduce((sum, c) => sum + c.reliability, 0) / selectedComponents.length;
-    const weatherBonus = (100 - selectedLaunchWindow.weather_risk);
+    const componentReliability =
+      selectedComponents.reduce((sum, c) => sum + c.reliability, 0) / selectedComponents.length;
+    const weatherBonus = 100 - selectedLaunchWindow.weather_risk;
     const orbitalBonus = selectedLaunchWindow.orbital_alignment;
     const complexityPenalty = selectedMission.complexity;
-    
+
     const successScore = Math.round(
-      (componentReliability * 0.4 + weatherBonus * 0.2 + orbitalBonus * 0.2 + (100 - complexityPenalty) * 0.2)
+      componentReliability * 0.4 + weatherBonus * 0.2 + orbitalBonus * 0.2 + (100 - complexityPenalty) * 0.2,
     );
-    
+
     // Scientific value calculation
     const missionScientificValue = selectedMission.scientific_value;
-    const hasScientificEquipment = selectedComponents.some(c => c.type === 'science') ? 20 : 0;
+    const hasScientificEquipment = selectedComponents.some((c) => c.type === 'science') ? 20 : 0;
     const scientificScore = Math.round(missionScientificValue * 0.8 + hasScientificEquipment * 0.2);
-    
+
     // Budget efficiency
     const budgetUsage = totalCost / budget;
     const efficiencyScore = Math.round((1 - budgetUsage) * 100);
-    
+
     return {
       success: Math.min(100, Math.max(0, successScore)),
       scientific: Math.min(100, scientificScore),
-      efficiency: Math.max(0, efficiencyScore)
+      efficiency: Math.max(0, efficiencyScore),
     };
   };
 
@@ -281,18 +285,17 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
 
     setGamePhase('mission-execution');
     setIsExecuting(true);
-    
+
     const missionResults = calculateMissionScore();
     setMissionSuccess(missionResults.success);
     setScientificValue(missionResults.scientific);
     setBudgetEfficiency(missionResults.efficiency);
-    
-    const totalComplexity = selectedMission.complexity + 
-      selectedComponents.length * 10 + 
-      selectedLaunchWindow.weather_risk;
-    
+
+    const totalComplexity =
+      selectedMission.complexity + selectedComponents.length * 10 + selectedLaunchWindow.weather_risk;
+
     const interval = setInterval(() => {
-      setMissionProgress(prev => {
+      setMissionProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsExecuting(false);
@@ -307,12 +310,12 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
   const getOverallScore = () => {
     const missionResults = calculateMissionScore();
     const riskBonus = selectedMission ? (selectedMission.risk_factor / 100) * 10 : 0; // Risk bonus
-    
+
     return Math.round(
-      missionResults.success * 0.4 + 
-      missionResults.scientific * 0.3 + 
-      missionResults.efficiency * 0.2 + 
-      riskBonus * 0.1
+      missionResults.success * 0.4 +
+        missionResults.scientific * 0.3 +
+        missionResults.efficiency * 0.2 +
+        riskBonus * 0.1,
     );
   };
 
@@ -331,9 +334,7 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
               <Rocket className="w-16 h-16 text-indigo-400" />
             </div>
             <h1 className="text-4xl font-bold text-white mb-4">Aerospace Mission Control</h1>
-            <p className="text-xl text-gray-300 mb-6">
-              Điều khiển sứ mệnh không gian và chinh phục vũ trụ!
-            </p>
+            <p className="text-xl text-gray-300 mb-6">Điều khiển sứ mệnh không gian và chinh phục vũ trụ!</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -357,10 +358,18 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                 Tiêu chí thành công
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-indigo-400">Thành công sứ mệnh (40%)</span> - Độ tin cậy và an toàn</li>
-                <li>• <span className="text-blue-400">Giá trị khoa học (30%)</span> - Đóng góp cho nhân loại</li>
-                <li>• <span className="text-green-400">Hiệu quả ngân sách (20%)</span> - Tối ưu chi phí</li>
-                <li>• <span className="text-yellow-400">Thử thách rủi ro (10%)</span> - Bonus cho sứ mệnh khó</li>
+                <li>
+                  • <span className="text-indigo-400">Thành công sứ mệnh (40%)</span> - Độ tin cậy và an toàn
+                </li>
+                <li>
+                  • <span className="text-blue-400">Giá trị khoa học (30%)</span> - Đóng góp cho nhân loại
+                </li>
+                <li>
+                  • <span className="text-green-400">Hiệu quả ngân sách (20%)</span> - Tối ưu chi phí
+                </li>
+                <li>
+                  • <span className="text-yellow-400">Thử thách rủi ro (10%)</span> - Bonus cho sứ mệnh khó
+                </li>
               </ul>
             </div>
           </div>
@@ -394,14 +403,12 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {MISSIONS.map((mission) => {
               const isSelected = selectedMission?.id === mission.id;
-              
+
               return (
                 <div
                   key={mission.id}
                   className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 cursor-pointer transition-all duration-200 hover:scale-105 ${
-                    isSelected
-                      ? 'border-indigo-500 bg-indigo-500/20'
-                      : 'border-white/20 hover:border-indigo-400/50'
+                    isSelected ? 'border-indigo-500 bg-indigo-500/20' : 'border-white/20 hover:border-indigo-400/50'
                   }`}
                   onClick={() => setSelectedMission(mission)}
                 >
@@ -415,43 +422,38 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                     </div>
                     <span className="text-yellow-400 font-bold text-sm">{mission.budget}M USD</span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-3">{mission.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{mission.description}</p>
-                  
+
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Độ phức tạp:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-red-500 h-2 rounded-full" 
-                          style={{width: `${mission.complexity}%`}}
-                        ></div>
+                        <div className="bg-red-500 h-2 rounded-full" style={{ width: `${mission.complexity}%` }}></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Giá trị KH:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${mission.scientific_value}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${mission.scientific_value}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Rủi ro:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-yellow-500 h-2 rounded-full" 
-                          style={{width: `${mission.risk_factor}%`}}
+                        <div
+                          className="bg-yellow-500 h-2 rounded-full"
+                          style={{ width: `${mission.risk_factor}%` }}
                         ></div>
                       </div>
                     </div>
-                    <div className="text-center text-gray-400">
-                      Thời gian: {mission.duration} ngày
-                    </div>
+                    <div className="text-center text-gray-400">Thời gian: {mission.duration} ngày</div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -494,10 +496,11 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {COMPONENTS.map((component) => {
-              const isSelected = selectedComponents.some(c => c.id === component.id);
-              const canSelect = selectedComponents.length < 5 && 
-                (totalCost + component.cost - (isSelected ? component.cost : 0)) <= budget;
-              
+              const isSelected = selectedComponents.some((c) => c.id === component.id);
+              const canSelect =
+                selectedComponents.length < 5 &&
+                totalCost + component.cost - (isSelected ? component.cost : 0) <= budget;
+
               return (
                 <div
                   key={component.id}
@@ -505,14 +508,14 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                     isSelected
                       ? 'border-blue-500 bg-blue-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-blue-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-blue-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedComponents(prev => prev.filter(c => c.id !== component.id));
+                      setSelectedComponents((prev) => prev.filter((c) => c.id !== component.id));
                     } else if (canSelect) {
-                      setSelectedComponents(prev => [...prev, component]);
+                      setSelectedComponents((prev) => [...prev, component]);
                     }
                   }}
                 >
@@ -522,17 +525,17 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                     </div>
                     <span className="text-yellow-400 font-bold text-sm">{component.cost}M USD</span>
                   </div>
-                  
+
                   <h3 className="text-sm font-bold text-white mb-2">{component.name}</h3>
                   <p className="text-gray-300 text-xs mb-3">{component.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-1 text-xs">
                     <div>
                       <span className="text-gray-400">Độ tin cậy:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${component.reliability}%`}}
+                        <div
+                          className="bg-green-500 h-1 rounded-full"
+                          style={{ width: `${component.reliability}%` }}
                         ></div>
                       </div>
                     </div>
@@ -545,19 +548,26 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                       <span className="text-white text-xs">{component.power_consumption}W</span>
                     </div>
                     <div className="text-center">
-                      <span className={`text-xs px-1 py-0.5 rounded ${
-                        component.type === 'propulsion' ? 'bg-red-500/20 text-red-400' :
-                        component.type === 'navigation' ? 'bg-blue-500/20 text-blue-400' :
-                        component.type === 'communication' ? 'bg-green-500/20 text-green-400' :
-                        component.type === 'power' ? 'bg-yellow-500/20 text-yellow-400' :
-                        component.type === 'science' ? 'bg-purple-500/20 text-purple-400' :
-                        'bg-orange-500/20 text-orange-400'
-                      }`}>
+                      <span
+                        className={`text-xs px-1 py-0.5 rounded ${
+                          component.type === 'propulsion'
+                            ? 'bg-red-500/20 text-red-400'
+                            : component.type === 'navigation'
+                              ? 'bg-blue-500/20 text-blue-400'
+                              : component.type === 'communication'
+                                ? 'bg-green-500/20 text-green-400'
+                                : component.type === 'power'
+                                  ? 'bg-yellow-500/20 text-yellow-400'
+                                  : component.type === 'science'
+                                    ? 'bg-purple-500/20 text-purple-400'
+                                    : 'bg-orange-500/20 text-orange-400'
+                        }`}
+                      >
                         {component.type}
                       </span>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-3 text-center">
                       <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Đã chọn</span>
@@ -589,7 +599,10 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Chọn cửa sổ phóng</h2>
             <div className="flex justify-center items-center gap-4 text-gray-300">
-              <span>Chi phí hiện tại: {(selectedMission?.budget || 0) + selectedComponents.reduce((sum, c) => sum + c.cost, 0)} triệu USD</span>
+              <span>
+                Chi phí hiện tại:{' '}
+                {(selectedMission?.budget || 0) + selectedComponents.reduce((sum, c) => sum + c.cost, 0)} triệu USD
+              </span>
             </div>
             <div className="text-right text-yellow-400">
               <Clock className="w-5 h-5 inline mr-1" />
@@ -600,10 +613,10 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {LAUNCH_WINDOWS.map((launchWindow) => {
               const isSelected = selectedLaunchWindow?.id === launchWindow.id;
-              const additionalCost = ((selectedMission?.budget || 0) * (launchWindow.cost_multiplier - 1));
+              const additionalCost = (selectedMission?.budget || 0) * (launchWindow.cost_multiplier - 1);
               const totalWithLaunch = totalCost;
               const canSelect = totalWithLaunch <= budget;
-              
+
               return (
                 <div
                   key={launchWindow.id}
@@ -611,8 +624,8 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                     isSelected
                       ? 'border-green-500 bg-green-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-green-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-green-400/50'
                   }`}
                   onClick={() => {
                     if (canSelect) {
@@ -627,10 +640,10 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                       <div className="text-xs text-gray-400">x{launchWindow.cost_multiplier}</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{launchWindow.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{launchWindow.description}</p>
-                  
+
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-400">Thời gian:</span>
@@ -639,23 +652,23 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                     <div className="flex justify-between">
                       <span className="text-gray-400">Rủi ro thời tiết:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-20">
-                        <div 
-                          className="bg-red-500 h-2 rounded-full" 
-                          style={{width: `${launchWindow.weather_risk}%`}}
+                        <div
+                          className="bg-red-500 h-2 rounded-full"
+                          style={{ width: `${launchWindow.weather_risk}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Căn chỉnh quỹ đạo:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-20">
-                        <div 
-                          className="bg-blue-500 h-2 rounded-full" 
-                          style={{width: `${launchWindow.orbital_alignment}%`}}
+                        <div
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: `${launchWindow.orbital_alignment}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -675,8 +688,10 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-blue-400 mb-2">Thiết bị ({selectedComponents.length})</h4>
-                {selectedComponents.map(component => (
-                  <p key={component.id} className="text-gray-300 text-sm">{component.name.split(' ')[0]}</p>
+                {selectedComponents.map((component) => (
+                  <p key={component.id} className="text-gray-300 text-sm">
+                    {component.name.split(' ')[0]}
+                  </p>
                 ))}
               </div>
               <div>
@@ -686,7 +701,9 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
             </div>
             <div className="mt-4 pt-4 border-t border-white/20">
               <div className="flex justify-between items-center">
-                <span className="text-xl font-bold text-white">Tổng chi phí: {totalCost.toLocaleString()} triệu USD</span>
+                <span className="text-xl font-bold text-white">
+                  Tổng chi phí: {totalCost.toLocaleString()} triệu USD
+                </span>
                 <span className={`text-lg font-semibold ${canAfford ? 'text-green-400' : 'text-red-400'}`}>
                   {canAfford ? '✅ Trong ngân sách' : '❌ Vượt ngân sách'}
                 </span>
@@ -724,9 +741,9 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                 <span>{Math.round(missionProgress)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-6">
-                <div 
-                  className="bg-gradient-to-r from-indigo-500 to-purple-500 h-6 rounded-full transition-all duration-300" 
-                  style={{width: `${missionProgress}%`}}
+                <div
+                  className="bg-gradient-to-r from-indigo-500 to-purple-500 h-6 rounded-full transition-all duration-300"
+                  style={{ width: `${missionProgress}%` }}
                 ></div>
               </div>
             </div>
@@ -738,9 +755,9 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                   <span className="text-white font-bold">{missionSuccess}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-indigo-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${missionSuccess}%`}}
+                  <div
+                    className="bg-indigo-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${missionSuccess}%` }}
                   ></div>
                 </div>
               </div>
@@ -751,9 +768,9 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                   <span className="text-white font-bold">{scientificValue}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${scientificValue}%`}}
+                  <div
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${scientificValue}%` }}
                   ></div>
                 </div>
               </div>
@@ -764,9 +781,9 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
                   <span className="text-white font-bold">{budgetEfficiency}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${budgetEfficiency}%`}}
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${budgetEfficiency}%` }}
                   ></div>
                 </div>
               </div>
@@ -822,11 +839,13 @@ const AerospaceMissionControlGame: React.FC<GameProps> = ({ onComplete, timeLeft
               <h3 className="text-xl font-bold text-white mb-4">Đánh giá</h3>
               <div className="space-y-2 text-gray-300">
                 {finalScore >= 90 && <p>🚀 Sứ mệnh huyền thoại! Công nghệ vũ trụ đỉnh cao của nhân loại.</p>}
-                {finalScore >= 80 && finalScore < 90 && <p>⭐ Sứ mệnh xuất sắc! Đóng góp quan trọng cho khoa học vũ trụ.</p>}
+                {finalScore >= 80 && finalScore < 90 && (
+                  <p>⭐ Sứ mệnh xuất sắc! Đóng góp quan trọng cho khoa học vũ trụ.</p>
+                )}
                 {finalScore >= 70 && finalScore < 80 && <p>✅ Sứ mệnh thành công! Đạt được mục tiêu đề ra.</p>}
                 {finalScore >= 60 && finalScore < 70 && <p>⚠️ Sứ mệnh gặp khó khăn nhưng vẫn có kết quả.</p>}
                 {finalScore < 60 && <p>❌ Sứ mệnh thất bại. Cần cải thiện kế hoạch và thiết bị.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
                     <strong>Tổng chi phí:</strong> {totalCost.toLocaleString()} triệu USD

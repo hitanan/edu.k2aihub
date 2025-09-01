@@ -12,10 +12,11 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
   {
     id: 'ai-ml-fundamentals',
     title: 'Nền Tảng AI Và Machine Learning',
-    description: 'Hiểu fundamental concepts của Artificial Intelligence và Machine Learning, từ basic algorithms đến practical applications trong real world.',
+    description:
+      'Hiểu fundamental concepts của Artificial Intelligence và Machine Learning, từ basic algorithms đến practical applications trong real world.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=ADg3VdITIVs', // AI and ML basics
+    videoUrl: 'https://www.youtube.com/watch?v=avgc1rigwec', // AI and ML basics
     imageUrl: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu AI và ML fundamental concepts',
@@ -30,10 +31,28 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
       'High school mathematics',
       'Understanding của statistics basics',
     ],
-    algorithmTypes: ['Linear Regression', 'Decision Trees', 'K-Means Clustering', 'Neural Networks', 'Support Vector Machines'],
+    algorithmTypes: [
+      'Linear Regression',
+      'Decision Trees',
+      'K-Means Clustering',
+      'Neural Networks',
+      'Support Vector Machines',
+    ],
     mlFrameworks: ['Scikit-learn', 'TensorFlow', 'PyTorch', 'Pandas', 'NumPy'],
-    applications: ['Predictive Analytics', 'Image Recognition', 'Natural Language Processing', 'Recommendation Systems', 'Fraud Detection'],
-    programmingSkills: ['Python Programming', 'Data Manipulation', 'Visualization', 'Statistical Analysis', 'Model Development'],
+    applications: [
+      'Predictive Analytics',
+      'Image Recognition',
+      'Natural Language Processing',
+      'Recommendation Systems',
+      'Fraud Detection',
+    ],
+    programmingSkills: [
+      'Python Programming',
+      'Data Manipulation',
+      'Visualization',
+      'Statistical Analysis',
+      'Model Development',
+    ],
     mathConcepts: ['Linear Algebra', 'Statistics', 'Probability', 'Calculus', 'Optimization'],
     exercises: [
       {
@@ -90,10 +109,11 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
   {
     id: 'deep-learning-neural-networks',
     title: 'Deep Learning Và Neural Networks',
-    description: 'Deep dive vào neural networks architecture, backpropagation, và advanced deep learning techniques cho complex problem solving.',
+    description:
+      'Deep dive vào neural networks architecture, backpropagation, và advanced deep learning techniques cho complex problem solving.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=9Ov6WSB2jV4', // Deep learning fundamentals
+    videoUrl: 'https://www.youtube.com/watch?v=7wvyLk_Xa9c', // NLP tutorial
     imageUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop',
     objectives: [
       'Understand neural network architecture và components',
@@ -108,11 +128,29 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
       'Python programming proficiency',
       'Linear algebra và calculus understanding',
     ],
-    algorithmTypes: ['Feedforward Networks', 'Convolutional Networks', 'Recurrent Networks', 'Generative Adversarial Networks', 'Transformer Models'],
+    algorithmTypes: [
+      'Feedforward Networks',
+      'Convolutional Networks',
+      'Recurrent Networks',
+      'Generative Adversarial Networks',
+      'Transformer Models',
+    ],
     mlFrameworks: ['TensorFlow', 'Keras', 'PyTorch', 'OpenCV', 'Hugging Face'],
-    applications: ['Computer Vision', 'Natural Language Processing', 'Speech Recognition', 'Autonomous Systems', 'Generative AI'],
+    applications: [
+      'Computer Vision',
+      'Natural Language Processing',
+      'Speech Recognition',
+      'Autonomous Systems',
+      'Generative AI',
+    ],
     programmingSkills: ['Advanced Python', 'GPU Programming', 'Model Optimization', 'Distributed Training', 'MLOps'],
-    mathConcepts: ['Matrix Operations', 'Gradient Descent', 'Backpropagation', 'Activation Functions', 'Loss Functions'],
+    mathConcepts: [
+      'Matrix Operations',
+      'Gradient Descent',
+      'Backpropagation',
+      'Activation Functions',
+      'Loss Functions',
+    ],
     exercises: [
       {
         title: 'Image Classification CNN',
@@ -167,10 +205,11 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
   {
     id: 'computer-vision-applications',
     title: 'Computer Vision Và Image Processing',
-    description: 'Master computer vision techniques để analyze, process và understand visual content, từ basic image operations đến advanced object detection.',
+    description:
+      'Master computer vision techniques để analyze, process và understand visual content, từ basic image operations đến advanced object detection.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=UdxRgZJf6dE', // Computer vision tutorial
+    videoUrl: 'https://www.youtube.com/watch?v=pcxhj5KFI6M', // Computer vision tutorial
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
     objectives: [
       'Master image preprocessing và enhancement techniques',
@@ -188,8 +227,20 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     algorithmTypes: ['YOLO', 'R-CNN', 'SSD', 'Face Recognition', 'Optical Flow'],
     mlFrameworks: ['OpenCV', 'TensorFlow Object Detection', 'PyTorch Vision', 'Detectron2', 'MediaPipe'],
     applications: ['Autonomous Vehicles', 'Medical Imaging', 'Security Systems', 'Retail Analytics', 'Quality Control'],
-    programmingSkills: ['Image Processing', 'Real-time Systems', 'Model Deployment', 'Edge Computing', 'Mobile Development'],
-    mathConcepts: ['Image Transformations', 'Convolution', 'Feature Extraction', 'Pattern Recognition', 'Signal Processing'],
+    programmingSkills: [
+      'Image Processing',
+      'Real-time Systems',
+      'Model Deployment',
+      'Edge Computing',
+      'Mobile Development',
+    ],
+    mathConcepts: [
+      'Image Transformations',
+      'Convolution',
+      'Feature Extraction',
+      'Pattern Recognition',
+      'Signal Processing',
+    ],
     exercises: [
       {
         title: 'Vietnamese License Plate Recognition System',
@@ -244,7 +295,8 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
   {
     id: 'natural-language-processing',
     title: 'Natural Language Processing Cho Tiếng Việt',
-    description: 'Master NLP techniques specifically designed cho Vietnamese language, từ text preprocessing đến advanced language models.',
+    description:
+      'Master NLP techniques specifically designed cho Vietnamese language, từ text preprocessing đến advanced language models.',
     duration: '190 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=Y-I4pf6Bhas', // NLP fundamentals
@@ -264,9 +316,27 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     ],
     algorithmTypes: ['BERT', 'GPT', 'Word2Vec', 'LSTM', 'Transformer'],
     mlFrameworks: ['Transformers', 'spaCy', 'NLTK', 'PhoBERT', 'VnCoreNLP'],
-    applications: ['Chatbots', 'Sentiment Analysis', 'Machine Translation', 'Text Summarization', 'Information Extraction'],
-    programmingSkills: ['Text Processing', 'Language Modeling', 'API Development', 'Cloud Deployment', 'Model Fine-tuning'],
-    mathConcepts: ['Vector Spaces', 'Attention Mechanisms', 'Sequence Modeling', 'Probability Distributions', 'Information Theory'],
+    applications: [
+      'Chatbots',
+      'Sentiment Analysis',
+      'Machine Translation',
+      'Text Summarization',
+      'Information Extraction',
+    ],
+    programmingSkills: [
+      'Text Processing',
+      'Language Modeling',
+      'API Development',
+      'Cloud Deployment',
+      'Model Fine-tuning',
+    ],
+    mathConcepts: [
+      'Vector Spaces',
+      'Attention Mechanisms',
+      'Sequence Modeling',
+      'Probability Distributions',
+      'Information Theory',
+    ],
     exercises: [
       {
         title: 'Vietnamese Sentiment Analysis System',
@@ -320,11 +390,12 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
 
   {
     id: 'reinforcement-learning',
-    title: 'Reinforcement Learning Và Intelligent Agents',
-    description: 'Explore reinforcement learning algorithms để build intelligent agents capable của learning optimal strategies through interaction.',
-    duration: '210 phút',
+    title: 'Reinforcement Learning Và Ứng Dụng',
+    description:
+      'Khám phá Reinforcement Learning, một lĩnh vực của Machine Learning, nơi các agent học cách đưa ra quyết định thông qua thử và sai để tối đa hóa phần thưởng. Tìm hiểu về các thuật toán cốt lõi và ứng dụng trong game, robot và tự động hóa.',
+    duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=2pWv7GOvuf0', // Reinforcement learning intro
+    videoUrl: 'https://www.youtube.com/watch?v=tFSvLbJCrq8', // Reinforcement learning tutorial
     imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop',
     objectives: [
       'Understand RL fundamentals: agents, environments, rewards',
@@ -342,8 +413,20 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     algorithmTypes: ['Q-Learning', 'Deep Q-Networks', 'Policy Gradients', 'Actor-Critic', 'Multi-Agent RL'],
     mlFrameworks: ['OpenAI Gym', 'Stable Baselines3', 'Ray RLLib', 'TensorFlow Agents', 'Unity ML-Agents'],
     applications: ['Game AI', 'Robotics', 'Trading Systems', 'Resource Optimization', 'Autonomous Systems'],
-    programmingSkills: ['Environment Design', 'Agent Development', 'Simulation', 'Performance Optimization', 'Distributed Computing'],
-    mathConcepts: ['Markov Decision Processes', 'Bellman Equations', 'Policy Optimization', 'Value Functions', 'Exploration vs Exploitation'],
+    programmingSkills: [
+      'Environment Design',
+      'Agent Development',
+      'Simulation',
+      'Performance Optimization',
+      'Distributed Computing',
+    ],
+    mathConcepts: [
+      'Markov Decision Processes',
+      'Bellman Equations',
+      'Policy Optimization',
+      'Value Functions',
+      'Exploration vs Exploitation',
+    ],
     exercises: [
       {
         title: 'Vietnamese Chess AI Agent',
@@ -398,10 +481,11 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
   {
     id: 'mlops-production-deployment',
     title: 'MLOps Và Production Model Deployment',
-    description: 'Master MLOps practices để deploy, monitor và maintain ML models trong production environment efficiently và reliably.',
+    description:
+      'Master MLOps practices để deploy, monitor và maintain ML models trong production environment efficiently và reliably.',
     duration: '175 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=QtWFdWa9B44', // MLOps introduction
+    videoUrl: 'https://www.youtube.com/watch?v=t3KRhBANPbI', // MLOps introduction
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     objectives: [
       'Understand MLOps lifecycle và best practices',
@@ -420,7 +504,13 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
     mlFrameworks: ['MLflow', 'Kubeflow', 'Docker', 'Kubernetes', 'TensorFlow Serving'],
     applications: ['Web APIs', 'Mobile Deployment', 'Edge Computing', 'Batch Processing', 'Real-time Inference'],
     programmingSkills: ['DevOps', 'Cloud Platforms', 'Containerization', 'API Development', 'Monitoring'],
-    mathConcepts: ['Performance Metrics', 'Statistical Testing', 'Resource Optimization', 'Load Balancing', 'Scalability'],
+    mathConcepts: [
+      'Performance Metrics',
+      'Statistical Testing',
+      'Resource Optimization',
+      'Load Balancing',
+      'Scalability',
+    ],
     exercises: [
       {
         title: 'End-to-End ML Pipeline Deployment',
@@ -475,10 +565,11 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
   {
     id: 'ai-ethics-bias-fairness',
     title: 'AI Ethics, Bias Detection Và Fairness',
-    description: 'Understand ethical considerations trong AI development, detect và mitigate bias, và build fair và responsible AI systems.',
+    description:
+      'Understand ethical considerations trong AI development, detect và mitigate bias, và build fair và responsible AI systems.',
     duration: '165 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=zYgkr0KfWM0', // AI ethics and fairness
+    videoUrl: 'https://www.youtube.com/watch?v=1RptHwfkx_k', // AI ethics and fairness
     imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop',
     objectives: [
       'Understand AI ethics principles và frameworks',
@@ -493,11 +584,29 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
       'Understanding của social và cultural contexts',
       'Basic statistics và data analysis',
     ],
-    algorithmTypes: ['Fairness Metrics', 'Bias Detection', 'Explainable AI', 'Privacy-preserving ML', 'Adversarial Debiasing'],
+    algorithmTypes: [
+      'Fairness Metrics',
+      'Bias Detection',
+      'Explainable AI',
+      'Privacy-preserving ML',
+      'Adversarial Debiasing',
+    ],
     mlFrameworks: ['Fairlearn', 'AI Fairness 360', 'LIME', 'SHAP', 'TensorFlow Privacy'],
     applications: ['Hiring Systems', 'Credit Scoring', 'Healthcare AI', 'Criminal Justice', 'Educational Technology'],
-    programmingSkills: ['Bias Analysis', 'Fairness Testing', 'Model Interpretability', 'Privacy Engineering', 'Governance Frameworks'],
-    mathConcepts: ['Statistical Parity', 'Equalized Odds', 'Information Theory', 'Differential Privacy', 'Causal Inference'],
+    programmingSkills: [
+      'Bias Analysis',
+      'Fairness Testing',
+      'Model Interpretability',
+      'Privacy Engineering',
+      'Governance Frameworks',
+    ],
+    mathConcepts: [
+      'Statistical Parity',
+      'Equalized Odds',
+      'Information Theory',
+      'Differential Privacy',
+      'Causal Inference',
+    ],
     exercises: [
       {
         title: 'Vietnamese Hiring System Bias Audit',
@@ -532,7 +641,11 @@ export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
         problem: 'Ensuring fair credit access across diverse Vietnamese customer base',
         solution: 'Implemented bias detection và fairness-aware credit scoring',
         impact: 'Increased loan approval rates for underserved communities by 20%',
-        innovations: ['Multi-objective Fairness Optimization', 'Cultural Context Integration', 'Transparent Decision Making'],
+        innovations: [
+          'Multi-objective Fairness Optimization',
+          'Cultural Context Integration',
+          'Transparent Decision Making',
+        ],
       },
     ],
     resources: [

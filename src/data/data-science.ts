@@ -11,6 +11,24 @@ export interface DataScienceLessonData extends BaseLessonData {
     techniques: string[];
     deliverables: string[];
   }>;
+  mainContent: {
+    introduction: string;
+    keyConcepts: Array<{
+      title: string;
+      description: string;
+      examples: string[];
+    }>;
+    practicalApplications: Array<{
+      area: string;
+      description: string;
+    }>;
+    conclusion: string;
+  };
+  relatedGames: Array<{
+    id: string;
+    name: string;
+    description: string;
+  }>;
 }
 
 export const DataScienceLessons: DataScienceLessonData[] = [
@@ -23,6 +41,63 @@ export const DataScienceLessons: DataScienceLessonData[] = [
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=nS-z5JgqNe0', // Statistics Tutorial - NumPy Regression Analysis
     imageUrl: '/images/data-science-fundamentals.jpg',
+    mainContent: {
+      introduction:
+        'Khoa học dữ liệu là nghệ thuật và khoa học của việc biến dữ liệu thô thành những hiểu biết sâu sắc, những quyết định thông minh và những sản phẩm đột phá. Đây không chỉ là về những thuật toán phức tạp, mà là về tư duy tò mò, khả năng kể chuyện và niềm đam mê giải quyết vấn đề. Bài học này sẽ là cánh cửa đầu tiên đưa bạn vào thế giới hấp dẫn của dữ liệu.',
+      keyConcepts: [
+        {
+          title: 'Quy trình Khoa học Dữ liệu (Data Science Lifecycle)',
+          description:
+            'Một dự án khoa học dữ liệu điển hình tuân theo một quy trình có cấu trúc, thường bao gồm: Hiểu bài toán kinh doanh -> Thu thập dữ liệu -> Làm sạch và chuẩn bị dữ liệu -> Khám phá dữ liệu (EDA) -> Xây dựng mô hình -> Đánh giá mô hình -> Triển khai.',
+          examples: ['Sử dụng mô hình CRISP-DM để quản lý một dự án dự đoán khách hàng rời bỏ.'],
+        },
+        {
+          title: 'Làm sạch dữ liệu (Data Cleaning)',
+          description:
+            'Dữ liệu trong thế giới thực luôn lộn xộn. "Garbage in, garbage out." Giai đoạn này chiếm tới 80% thời gian của một nhà khoa học dữ liệu, bao gồm việc xử lý các giá trị bị thiếu, các giá trị ngoại lai, dữ liệu không nhất quán và trùng lặp.',
+          examples: [
+            'Điền các giá trị tuổi bị thiếu bằng giá trị trung bình.',
+            'Loại bỏ các đơn hàng có giá trị bằng 0.',
+          ],
+        },
+        {
+          title: 'Phân tích dữ liệu khám phá (Exploratory Data Analysis - EDA)',
+          description:
+            'Đây là quá trình "trò chuyện" với dữ liệu bằng cách sử dụng các công cụ thống kê và trực quan hóa để tìm ra các mẫu, các mối quan hệ và các insight ban đầu. EDA giúp bạn hiểu sâu hơn về dữ liệu trước khi xây dựng mô hình.',
+          examples: [
+            'Vẽ biểu đồ phân phối doanh thu để xem xu hướng theo thời gian.',
+            'Tạo ma trận tương quan để xem các yếu tố nào ảnh hưởng đến giá nhà.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Kinh doanh và Marketing',
+          description:
+            'Phân khúc khách hàng để đưa ra các chiến dịch marketing được cá nhân hóa, dự báo doanh thu, và tối ưu hóa giá bán.',
+        },
+        {
+          area: 'Tài chính',
+          description:
+            'Phát hiện gian lận thẻ tín dụng, đánh giá rủi ro tín dụng, và dự đoán xu hướng thị trường chứng khoán.',
+        },
+        {
+          area: 'Y tế',
+          description:
+            'Chẩn đoán bệnh sớm từ hình ảnh y tế, dự đoán nguy cơ bùng phát dịch bệnh, và cá nhân hóa phác đồ điều trị.',
+        },
+      ],
+      conclusion:
+        'Khoa học dữ liệu là một trong những lĩnh vực có sức ảnh hưởng lớn nhất trong thế kỷ 21. Bằng cách nắm vững các nguyên tắc cơ bản, bạn không chỉ mở ra một con đường sự nghiệp đầy hứa hẹn mà còn có khả năng sử dụng dữ liệu để tạo ra những tác động tích cực cho thế giới.',
+    },
+    relatedGames: [
+      {
+        id: 'data-visualizer-3d',
+        name: 'Data Visualizer 3D',
+        description:
+          'Explore and visualize complex datasets in interactive 3D environments, uncovering insights and trends',
+      },
+    ],
     objectives: [
       'Hiểu quy trình Data Science lifecycle (CRISP-DM)',
       'Nắm vững các loại dữ liệu và phương pháp thu thập',
@@ -89,6 +164,65 @@ export const DataScienceLessons: DataScienceLessonData[] = [
     duration: '200 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://youtube.com/watch?v=aircAruvnKk',
+    mainContent: {
+      introduction:
+        'Học máy (Machine Learning) là trái tim của khoa học dữ liệu, là nơi các thuật toán "học" từ dữ liệu để đưa ra dự đoán hoặc quyết định mà không cần được lập trình một cách rõ ràng. Bài học này sẽ đưa bạn vào thế giới của các thuật toán, từ những mô hình đơn giản đến các mạng nơ-ron phức tạp, và cách áp dụng chúng để giải quyết các bài toán thực tế.',
+      keyConcepts: [
+        {
+          title: 'Các loại Học máy (Types of Machine Learning)',
+          description:
+            'Hiểu rõ ba loại chính: Học có giám sát (Supervised Learning) - học từ dữ liệu đã được gán nhãn; Học không giám sát (Unsupervised Learning) - tự tìm ra cấu trúc trong dữ liệu chưa được gán nhãn; và Học tăng cường (Reinforcement Learning) - học thông qua thử và sai.',
+          examples: [
+            'Dự đoán giá nhà (Supervised).',
+            'Phân nhóm khách hàng (Unsupervised).',
+            'Huấn luyện một AI chơi cờ (Reinforcement).',
+          ],
+        },
+        {
+          title: 'Đánh đổi giữa Độ chệch và Phương sai (Bias-Variance Tradeoff)',
+          description:
+            'Đây là một khái niệm cốt lõi trong việc xây dựng mô hình. Một mô hình có độ chệch cao (high bias) quá đơn giản và không nắm bắt được quy luật (underfitting). Một mô hình có phương sai cao (high variance) quá phức tạp và học cả nhiễu trong dữ liệu (overfitting). Mục tiêu là tìm ra sự cân bằng hoàn hảo.',
+          examples: [
+            'Một mô hình đường thẳng để dự đoán giá nhà có thể bị underfitting.',
+            'Một mô hình đa thức bậc cao có thể bị overfitting.',
+          ],
+        },
+        {
+          title: 'Đánh giá và Lựa chọn Mô hình (Model Evaluation and Selection)',
+          description:
+            'Làm thế nào để biết mô hình của bạn có tốt không? Học cách sử dụng các chỉ số đánh giá phù hợp (như Accuracy, Precision, Recall, F1-score cho bài toán phân loại; MAE, RMSE cho bài toán hồi quy) và các kỹ thuật như kiểm tra chéo (cross-validation) để chọn ra mô hình tốt nhất.',
+          examples: [
+            'Sử dụng cross-validation để so sánh hiệu suất của mô hình Random Forest và Support Vector Machine.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Hệ thống gợi ý (Recommendation Engines)',
+          description:
+            'Các thuật toán học máy phân tích hành vi của bạn để gợi ý sản phẩm trên Amazon, phim trên Netflix, hoặc bài hát trên Spotify.',
+        },
+        {
+          area: 'Xử lý ngôn ngữ tự nhiên (NLP)',
+          description:
+            'Phân tích cảm xúc của các bình luận trên mạng xã hội, dịch tự động, và tạo ra các chatbot thông minh.',
+        },
+        {
+          area: 'Thị giác máy tính (Computer Vision)',
+          description: 'Nhận diện khuôn mặt để mở khóa điện thoại, xe tự lái, và chẩn đoán y tế qua hình ảnh.',
+        },
+      ],
+      conclusion:
+        'Các thuật toán học máy là những công cụ mạnh mẽ có khả năng biến đổi mọi ngành công nghiệp. Bằng cách hiểu sâu về cách chúng hoạt động, ưu và nhược điểm của từng loại, bạn sẽ có khả năng lựa chọn và áp dụng đúng công cụ cho đúng bài toán, tạo ra những giải pháp thông minh và hiệu quả.',
+    },
+    relatedGames: [
+      {
+        id: 'ai-algorithm-arena-3d',
+        name: 'AI Algorithm Arena 3D',
+        description:
+          'Visualize and interact with machine learning algorithms in a 3D space, understanding how they work',
+      },
+    ],
     objectives: [
       'Nắm vững supervised, unsupervised, reinforcement learning',
       'Thực hành với các thuật toán: regression, classification, clustering',
@@ -140,6 +274,67 @@ export const DataScienceLessons: DataScienceLessonData[] = [
     description: 'Làm việc với dữ liệu lớn sử dụng các công cụ và framework hiện đại.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
+    mainContent: {
+      introduction:
+        'Khi dữ liệu trở nên quá lớn, quá nhanh, hoặc quá phức tạp để có thể xử lý bằng các công cụ truyền thống, chúng ta bước vào thế giới của Dữ liệu lớn (Big Data). Đây là lĩnh vực của việc xử lý và phân tích các tập dữ liệu khổng lồ để khám phá các mẫu hình và xu hướng ở quy mô vĩ mô. Bài học này sẽ giới thiệu cho bạn các công cụ và kiến trúc để chinh phục dữ liệu lớn.',
+      keyConcepts: [
+        {
+          title: '3V của Dữ liệu lớn (Volume, Velocity, Variety)',
+          description:
+            'Đây là ba đặc tính định nghĩa Dữ liệu lớn. Volume (Khối lượng) - quy mô dữ liệu cực lớn. Velocity (Tốc độ) - dữ liệu được tạo ra và cần được xử lý với tốc độ cao. Variety (Sự đa dạng) - dữ liệu đến từ nhiều nguồn và có nhiều định dạng khác nhau (văn bản, hình ảnh, video, cảm biến).',
+          examples: [
+            'Dữ liệu giao dịch của một sàn thương mại điện tử (Volume).',
+            'Dữ liệu từ các dòng tweet trên Twitter (Velocity).',
+            'Dữ liệu từ các thiết bị IoT (Variety).',
+          ],
+        },
+        {
+          title: 'Hệ sinh thái Hadoop và Spark (Hadoop and Spark Ecosystem)',
+          description:
+            'Đây là hai trong số các framework phổ biến nhất để xử lý dữ liệu lớn. Hadoop, với HDFS để lưu trữ và MapReduce để xử lý, là nền tảng ban đầu. Spark là một công cụ thế hệ mới, nhanh hơn và linh hoạt hơn, có khả năng xử lý dữ liệu trong bộ nhớ (in-memory).',
+          examples: [
+            'Sử dụng Spark để xử lý và phân tích log web server hàng terabyte.',
+            'Lưu trữ dữ liệu trên HDFS để đảm bảo khả năng chịu lỗi và mở rộng.',
+          ],
+        },
+        {
+          title: 'Xử lý theo lô và xử lý luồng (Batch vs. Stream Processing)',
+          description:
+            'Xử lý theo lô (Batch processing) là việc xử lý một khối lượng lớn dữ liệu tĩnh tại một thời điểm. Xử lý luồng (Stream processing) là việc xử lý dữ liệu liên tục ngay khi nó được tạo ra. Việc lựa chọn giữa hai phương pháp này phụ thuộc vào yêu cầu về độ trễ của bài toán.',
+          examples: [
+            'Chạy một báo cáo tổng kết doanh thu cuối ngày (Batch).',
+            'Phát hiện gian lận thẻ tín dụng trong thời gian thực (Stream).',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Phân tích mạng xã hội',
+          description:
+            'Phân tích hàng tỷ bài đăng và tương tác để hiểu xu hướng dư luận, phát hiện tin giả, và đo lường hiệu quả chiến dịch marketing.',
+        },
+        {
+          area: 'Internet Vạn vật (IoT)',
+          description:
+            'Phân tích dữ liệu từ hàng triệu cảm biến trong các thành phố thông minh, nhà máy thông minh, hoặc trên các thiết bị đeo để tối ưu hóa hoạt động và dự đoán sự cố.',
+        },
+        {
+          area: 'Genomics',
+          description:
+            'Phân tích bộ gen người, một tập dữ liệu khổng lồ, để tìm ra các phương pháp điều trị bệnh được cá nhân hóa.',
+        },
+      ],
+      conclusion:
+        'Làm chủ dữ liệu lớn không chỉ là một thách thức về mặt kỹ thuật mà còn là một cơ hội chiến lược. Các tổ chức có khả năng khai thác sức mạnh của dữ liệu lớn sẽ có lợi thế cạnh tranh vượt trội, từ việc hiểu khách hàng sâu sắc hơn đến việc tạo ra các mô hình kinh doanh hoàn toàn mới.',
+    },
+    relatedGames: [
+      {
+        id: 'data-visualizer-3d',
+        name: 'Data Visualizer 3D',
+        description:
+          'Explore and visualize complex datasets in interactive 3D environments, uncovering insights and trends',
+      },
+    ],
     objectives: [
       'Hiểu big data challenges: Volume, Velocity, Variety',
       'Sử dụng Apache Spark cho distributed computing',
@@ -181,6 +376,67 @@ export const DataScienceLessons: DataScienceLessonData[] = [
     description: 'Tạo ra các visualization hiệu quả và kể chuyện với dữ liệu.',
     duration: '140 phút',
     difficulty: 'Trung bình',
+    mainContent: {
+      introduction:
+        'Những con số và bảng tính khô khan không thể tự nó kể chuyện. Trực quan hóa dữ liệu và Kể chuyện bằng dữ liệu là nghệ thuật biến những phân tích phức tạp thành những biểu đồ đẹp mắt, những câu chuyện hấp dẫn và những thông điệp rõ ràng, có sức thuyết phục. Đây là cây cầu nối giữa thế giới của nhà khoa học dữ liệu và thế giới của người ra quyết định.',
+      keyConcepts: [
+        {
+          title: 'Lựa chọn biểu đồ phù hợp (Choosing the Right Chart)',
+          description:
+            'Mỗi loại biểu đồ có một mục đích riêng. Học cách chọn đúng loại biểu-đồ-để-thể-hiện-đúng-thông-điệp: biểu đồ cột để so sánh, biểu đồ đường để xem xu hướng, biểu đồ tròn để thể hiện tỷ lệ, và biểu đồ phân tán để xem mối quan hệ.',
+          examples: [
+            'Không dùng biểu đồ tròn khi có quá nhiều danh mục.',
+            'Sử dụng biểu đồ đường để thể hiện sự thay đổi của giá cổ phiếu theo thời gian.',
+          ],
+        },
+        {
+          title: 'Nguyên tắc thiết kế trực quan (Visual Design Principles)',
+          description:
+            'Một biểu đồ hiệu quả phải sạch sẽ, rõ ràng và trung thực. Áp dụng các nguyên tắc như tối giản hóa (loại bỏ các yếu tố không cần thiết), sử dụng màu sắc một cách có chủ đích, và đảm bảo tỷ lệ dữ liệu trên mực (data-ink ratio) cao.',
+          examples: [
+            'Loại bỏ các đường lưới không cần thiết.',
+            'Sử dụng một màu để làm nổi bật một điểm dữ liệu quan trọng.',
+          ],
+        },
+        {
+          title: 'Cấu trúc của một câu chuyện dữ liệu (Narrative Structure)',
+          description:
+            'Một câu chuyện dữ liệu hay cũng cần có cấu trúc như một bộ phim: Mở đầu (thiết lập bối cảnh và vấn đề), Thân bài (trình bày các phân tích, các khám phá, và cao trào), và Kết luận (đưa ra kết luận và lời kêu gọi hành động).',
+          examples: [
+            'Bắt đầu bằng một con số gây sốc.',
+            'Dẫn dắt khán giả qua từng bước phân tích của bạn.',
+            'Kết thúc bằng một đề xuất rõ ràng dựa trên dữ liệu.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Báo cáo kinh doanh (Business Reporting)',
+          description:
+            'Tạo ra các bảng điều khiển (dashboards) tương tác cho ban lãnh đạo, giúp họ theo dõi các chỉ số hiệu suất chính (KPIs) và ra quyết định nhanh chóng.',
+        },
+        {
+          area: 'Báo chí dữ liệu (Data Journalism)',
+          description:
+            'Sử dụng các biểu đồ và bản đồ tương tác để kể những câu chuyện phức tạp về xã hội, kinh tế, chính trị một cách dễ hiểu và hấp dẫn.',
+        },
+        {
+          area: 'Thuyết trình và Thuyết phục',
+          description:
+            'Sử dụng các biểu đồ mạnh mẽ để củng cố lập luận của bạn trong các buổi thuyết trình, thay vì chỉ trình bày các con số đơn thuần.',
+        },
+      ],
+      conclusion:
+        'Kể chuyện bằng dữ liệu là kỹ năng cuối cùng nhưng quan trọng nhất của một nhà khoa học dữ liệu. Đó là khả năng biến "dữ liệu" thành "tri thức" và "tri thức" thành "hành động". Người nào có thể kể những câu chuyện hay nhất từ dữ liệu sẽ là người có sức ảnh hưởng lớn nhất.',
+    },
+    relatedGames: [
+      {
+        id: 'data-visualizer-3d',
+        name: 'Data Visualizer 3D',
+        description:
+          'Explore and visualize complex datasets in interactive 3D environments, uncovering insights and trends',
+      },
+    ],
     objectives: [
       'Design principles cho effective visualizations',
       'Sử dụng Tableau, Power BI, Python visualization',

@@ -229,7 +229,7 @@ export const MCPLessons: MCPLessonData[] = [
     description: 'Phát triển custom MCP solutions, advanced automation workflows và enterprise-grade integrations.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=Coot4TFTkN4',
+    videoUrl: 'https://www.youtube.com/watch?v=xf2i6Acs1mI',
     objectives: [
       'Develop custom MCP clients và servers',
       'Implement enterprise-grade security practices',
@@ -291,7 +291,7 @@ export const MCPLessons: MCPLessonData[] = [
     description: 'Học cách troubleshoot common issues, optimize performance và maintain MCP integrations effectively.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=Ni5VzaXjNb8',
+    videoUrl: 'https://www.youtube.com/watch?v=Sh9D3lQs3A8',
     objectives: [
       'Diagnose và resolve common MCP issues',
       'Optimize performance cho large-scale deployments',

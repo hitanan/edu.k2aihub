@@ -21,7 +21,7 @@ export default function CityPageClient() {
     {
       question: 'Việt Nam có bao nhiều tỉnh thành?',
       answer:
-        'Việt Nam hiện có 34 đơn vị hành chính cấp tỉnh, bao gồm 19 tỉnh và 15 thành phố trực thuộc trung ương. Đây là kết quả sau quá trình sắp xếp lại đơn vị hành chính.',
+        'Việt Nam hiện có 34 đơn vị hành chính cấp tỉnh, bao gồm 28 tỉnh và 6 thành phố trực thuộc trung ương. Đây là kết quả sau quá trình sắp xếp lại đơn vị hành chính.',
     },
     {
       question: 'Làm thế nào để tìm kiếm thông tin về một tỉnh thành?',

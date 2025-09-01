@@ -1,3 +1,5 @@
+import { EDUCATIONAL_GAMES_DATA, EducationalGame } from './educationalGames';
+
 export interface GameDevLesson {
   id: string;
   title: string;
@@ -15,6 +17,7 @@ export interface GameDevLesson {
   resources: Resource[];
   caseStudies: CaseStudy[];
   careerOpportunities: string[];
+  relatedGames?: (EducationalGame | undefined)[];
 }
 
 interface Exercise {
@@ -46,145 +49,154 @@ interface CaseStudy {
 export const gameDevLessons: GameDevLesson[] = [
   {
     id: 'game-design-fundamentals',
-    title: 'Bài 1: Game Design Fundamentals',
+    title: 'Bài 1: Nguyên Tắc Cơ Bản về Thiết Kế Game',
     description:
-      'Học cơ bản về game design: mechanics, dynamics, aesthetics. Thiết kế gameplay loops và player experience để tạo games hấp dẫn.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+      'Học các nguyên tắc cơ bản về thiết kế game: cơ chế, động lực, thẩm mỹ (MDA). Thiết kế vòng lặp gameplay và trải nghiệm người chơi để tạo ra các trò chơi hấp dẫn.',
+    videoUrl: 'https://www.youtube.com/watch?v=G8AT01tuyrk',
     imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '120 phút',
-    gameGenres: ['Puzzle', 'Platform', 'Adventure', 'Action'],
+    gameGenres: ['Puzzle', 'Platformer', 'Adventure', 'Action'],
     objectives: [
-      'Hiểu core game design principles và MDA framework',
-      'Thiết kế engaging gameplay mechanics và systems',
-      'Tạo balanced difficulty curves và progression systems',
-      'Implement player feedback loops và rewards',
-      'Analyze successful games và extract design patterns',
+      'Hiểu các nguyên tắc thiết kế game cốt lõi và khung MDA',
+      'Thiết kế cơ chế và hệ thống gameplay hấp dẫn',
+      'Tạo đường cong độ khó và hệ thống tiến trình cân bằng',
+      'Triển khai các vòng lặp phản hồi và phần thưởng cho người chơi',
+      'Phân tích các trò chơi thành công và rút ra các mẫu thiết kế',
     ],
     prerequisites: [
-      'Passion cho gaming và interactive experiences',
-      'Basic creative thinking và problem-solving skills',
-      'Understanding của player psychology',
-      'Familiarity với different game genres',
+      'Đam mê chơi game và trải nghiệm tương tác',
+      'Kỹ năng tư duy sáng tạo và giải quyết vấn đề cơ bản',
+      'Hiểu biết về tâm lý người chơi',
+      'Quen thuộc với các thể loại game khác nhau',
     ],
     technologies: [
-      'Game Design Documents (GDD)',
-      'Paper Prototyping',
-      'Digital Design Tools (Figma, Miro)',
-      'Analytics Tools',
-      'User Testing Platforms',
-      'Balancing Spreadsheets',
+      'Tài liệu Thiết kế Game (GDD)',
+      'Tạo mẫu trên giấy (Paper Prototyping)',
+      'Công cụ Thiết kế Kỹ thuật số (Figma, Miro)',
+      'Công cụ Phân tích',
+      'Nền tảng Thử nghiệm Người dùng',
+      'Bảng tính Cân bằng Game',
     ],
     exercises: [
       {
-        title: 'Design a Mobile Puzzle Game',
-        description: 'Tạo complete game design cho mobile puzzle game với unique mechanics và monetization strategy',
+        title: 'Thiết kế một Game Puzzle trên Di động',
+        description:
+          'Tạo một thiết kế game hoàn chỉnh cho một trò chơi giải đố trên di động với cơ chế độc đáo và chiến lược kiếm tiền',
         difficulty: 'Trung bình',
         solution:
-          '# Mobile Puzzle Game Design: Crystal Cascade\\n\\n## 1. Game Concept & Core Loop\\n\\n### High Concept:\\nMatch-3 puzzle game với elemental magic theme, kết hợp strategic planning và quick reflexes.\\n\\n### Core Gameplay Loop (30-60 seconds):\\n1. **Scan Board:** Player observes current state\\n2. **Plan Moves:** Identify optimal match combinations\\n3. **Execute:** Make 3-5 moves creating cascades\\n4. **Collect Rewards:** Earn gems, power-ups, progress\\n5. **Assess Progress:** Check level completion status\\n\\n### Meta Progression Loop (5-10 minutes):\\n1. **Complete Levels:** Finish 3-5 puzzle levels\\n2. **Unlock Content:** New areas, characters, abilities\\n3. **Upgrade Systems:** Improve power-ups và stats\\n4. **Story Progress:** Advance narrative elements\\n5. **Social Features:** Share achievements, compete\\n\\n## 2. Game Mechanics Design\\n\\n### Primary Mechanics:\\n- **Match-3 Core:** Connect 3+ same-colored crystals\\n- **Elemental System:** Fire, Water, Earth, Air với type advantages\\n- **Cascade Reactions:** Matches trigger chain reactions\\n- **Power-up Creation:** 4+ matches create special crystals\\n- **Mana Collection:** Different elements charge different spells\\n\\n### Secondary Mechanics:\\n- **Limited Moves:** Each level has move constraints\\n- **Objectives Variety:** Clear elements, reach score, collect items\\n- **Obstacles:** Locked crystals, barriers, poison clouds\\n- **Boosters:** Pre-level và in-game power-ups\\n- **Lives System:** Energy regeneration over time',
+          '# Thiết kế Game Puzzle Di động: Thác Pha Lê\\n\\n## 1. Ý tưởng & Vòng lặp Cốt lõi của Game\\n\\n### Ý tưởng Chính:\\nGame giải đố match-3 với chủ đề ma thuật nguyên tố, kết hợp lập kế hoạch chiến lược và phản xạ nhanh.\\n\\n### Vòng lặp Gameplay Cốt lõi (30-60 giây):\\n1. **Quét Bảng:** Người chơi quan sát trạng thái hiện tại\\n2. **Lên kế hoạch nước đi:** Xác định các kết hợp ghép tối ưu\\n3. **Thực hiện:** Thực hiện 3-5 nước đi tạo ra các chuỗi phản ứng\\n4. **Thu thập Phần thưởng:** Kiếm đá quý, vật phẩm tăng sức mạnh, tiến trình\\n5. **Đánh giá Tiến trình:** Kiểm tra trạng thái hoàn thành cấp độ\\n\\n### Vòng lặp Tiến trình Meta (5-10 phút):\\n1. **Hoàn thành Cấp độ:** Hoàn thành 3-5 cấp độ giải đố\\n2. **Mở khóa Nội dung:** Khu vực mới, nhân vật, khả năng\\n3. **Nâng cấp Hệ thống:** Cải thiện vật phẩm tăng sức mạnh và chỉ số\\n4. **Tiến trình Câu chuyện:** Thúc đẩy các yếu tố tường thuật\\n5. **Tính năng Xã hội:** Chia sẻ thành tích, cạnh tranh',
         requirements: [
-          'Create comprehensive Game Design Document',
-          'Define core gameplay loop và meta progression',
-          'Design balanced difficulty curve',
-          'Plan monetization strategy',
-          'Include technical implementation roadmap',
+          'Tạo Tài liệu Thiết kế Game toàn diện',
+          'Xác định vòng lặp gameplay cốt lõi và tiến trình meta',
+          'Thiết kế đường cong độ khó cân bằng',
+          'Lên kế hoạch chiến lược kiếm tiền',
+          'Bao gồm lộ trình triển khai kỹ thuật',
         ],
         hints: [
-          'Study successful puzzle games like Candy Crush, Bejeweled',
-          'Focus on player psychology và motivation',
-          'Balance challenge với achievability',
-          'Consider accessibility và inclusive design',
+          'Nghiên cứu các game giải đố thành công như Candy Crush, Bejeweled',
+          'Tập trung vào tâm lý và động lực của người chơi',
+          'Cân bằng giữa thử thách và khả năng đạt được',
+          'Xem xét khả năng tiếp cận và thiết kế toàn diện',
         ],
-        expectedOutput: 'Complete game design document với all systems defined và implementation plan',
+        expectedOutput:
+          'Tài liệu thiết kế game hoàn chỉnh với tất cả các hệ thống được xác định và kế hoạch triển khai',
       },
     ],
     realWorldApplications: [
-      'Mobile game development studios',
-      'Indie game creation và publishing',
-      'Educational game design',
-      'Gamification của business applications',
-      'Virtual reality experience design',
+      'Các studio phát triển game di động',
+      'Sáng tạo và phát hành game độc lập',
+      'Thiết kế game giáo dục',
+      'Gamification hóa các ứng dụng kinh doanh',
+      'Thiết kế trải nghiệm thực tế ảo',
     ],
     careerOpportunities: [
-      'Game Designer',
-      'Level Designer',
-      'Narrative Designer',
-      'Systems Designer',
-      'UX Designer for Games',
-      'Game Producer',
+      'Nhà thiết kế Game',
+      'Nhà thiết kế Cấp độ',
+      'Nhà thiết kế Tường thuật',
+      'Nhà thiết kế Hệ thống',
+      'Nhà thiết kế UX cho Game',
+      'Nhà sản xuất Game',
     ],
     resources: [
       {
-        title: 'The Art of Game Design by Jesse Schell',
+        title: 'Nghệ thuật Thiết kế Game của Jesse Schell',
         url: 'https://artofgamedesign.com',
         type: 'tutorial',
-        description: 'Comprehensive book covering all aspects của game design theory và practice',
+        description: 'Cuốn sách toàn diện bao gồm tất cả các khía cạnh của lý thuyết và thực hành thiết kế game',
       },
       {
         title: "Game Maker's Toolkit",
         url: 'https://www.youtube.com/c/MarkBrownGMT',
         type: 'tutorial',
-        description: 'YouTube channel analyzing game design principles through popular games',
+        description: 'Kênh YouTube phân tích các nguyên tắc thiết kế game thông qua các trò chơi phổ biến',
       },
     ],
     caseStudies: [
       {
-        title: 'Candy Crush Saga: Psychology-Driven Design',
+        title: 'Candy Crush Saga: Thiết kế dựa trên Tâm lý học',
         studio: 'King',
-        challenge: 'Create addictive yet fair match-3 game với sustainable monetization trong competitive market',
+        challenge:
+          'Tạo ra một game match-3 gây nghiện nhưng công bằng với chiến lược kiếm tiền bền vững trong thị trường cạnh tranh',
         solution:
-          'Combined proven match-3 mechanics với psychological triggers: limited lives, social pressure, và carefully balanced difficulty spikes at monetization points',
-        results: '$1.5B+ annual revenue, 250M+ monthly active users, top-grossing mobile game for 5+ years',
+          'Kết hợp cơ chế match-3 đã được chứng minh với các yếu tố kích thích tâm lý: mạng sống có giới hạn, áp lực xã hội và các đỉnh điểm độ khó được cân bằng cẩn thận tại các điểm kiếm tiền',
+        results:
+          'Doanh thu hàng năm hơn 1,5 tỷ đô la, hơn 250 triệu người dùng hoạt động hàng tháng, game di động có doanh thu cao nhất trong hơn 5 năm',
         insights: [
-          'Player psychology understanding crucial cho retention và monetization',
-          'Social features amplify engagement và viral growth',
-          'Balanced difficulty prevents frustration while encouraging spending',
-          'Regular content updates maintain long-term player interest',
+          'Hiểu biết về tâm lý người chơi là rất quan trọng để giữ chân và kiếm tiền',
+          'Các tính năng xã hội khuếch đại sự tương tác và tăng trưởng lan truyền',
+          'Độ khó cân bằng ngăn chặn sự thất vọng trong khi khuyến khích chi tiêu',
+          'Cập nhật nội dung thường xuyên duy trì sự quan tâm của người chơi lâu dài',
         ],
       },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'scratch-animation-studio'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'game-dev-studio'),
     ],
   },
   {
     id: 'unity-2d-development',
-    title: 'Bài 2: Unity 2D Game Development',
+    title: 'Bài 2: Phát triển Game 2D với Unity',
     description:
-      'Hands-on Unity 2D development: sprites, animations, physics, UI systems. Tạo complete 2D platformer từ concept đến deployment.',
-    videoUrl: 'https://www.youtube.com/watch?v=UbPiCgCkHTE',
+      'Thực hành phát triển Unity 2D: sprites, hoạt ảnh, vật lý, hệ thống UI. Tạo một game platformer 2D hoàn chỉnh từ ý tưởng đến triển khai.',
+    videoUrl: 'https://www.youtube.com/watch?v=on9nwbZngyw',
     imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '180 phút',
     gameGenres: ['Platformer', 'Side-scroller', 'Puzzle-platformer'],
     objectives: [
-      'Master Unity 2D workflow và asset management',
-      'Implement character controller với smooth movement',
-      'Create responsive camera system và parallax backgrounds',
-      'Design interactive UI systems và menus',
-      'Build complete game với multiple levels và progression',
+      'Nắm vững quy trình làm việc và quản lý tài sản trong Unity 2D',
+      'Triển khai bộ điều khiển nhân vật với chuyển động mượt mà',
+      'Tạo hệ thống camera đáp ứng và hình nền parallax',
+      'Thiết kế hệ thống UI và menu tương tác',
+      'Xây dựng một game hoàn chỉnh với nhiều cấp độ và tiến trình',
     ],
     prerequisites: [
-      'Basic programming concepts (variables, functions, loops)',
-      'Unity installation và basic interface familiarity',
-      'Understanding của 2D coordinate systems',
-      'Game design fundamentals từ previous lesson',
+      'Các khái niệm lập trình cơ bản (biến, hàm, vòng lặp)',
+      'Cài đặt Unity và quen thuộc với giao diện cơ bản',
+      'Hiểu biết về hệ tọa độ 2D',
+      'Các nguyên tắc cơ bản về thiết kế game từ bài học trước',
     ],
     technologies: [
       'Unity 2022.3 LTS',
-      'C# Programming',
-      '2D Physics System',
-      'Animation System',
+      'Lập trình C#',
+      'Hệ thống Vật lý 2D',
+      'Hệ thống Hoạt ảnh',
       'UI Toolkit',
-      'Input System',
+      'Hệ thống Đầu vào',
     ],
     exercises: [
       {
-        title: 'Build 2D Platformer "Crystal Runner"',
-        description: 'Tạo complete 2D platformer với character movement, collectibles, enemies, và level progression',
+        title: 'Xây dựng Game Platformer 2D "Crystal Runner"',
+        description:
+          'Tạo một game platformer 2D hoàn chỉnh với chuyển động nhân vật, vật phẩm thu thập, kẻ thù và tiến trình cấp độ',
         difficulty: 'Nâng cao',
-        solution: `# Unity 2D Platformer Development: "Crystal Runner"
+        solution: `# Phát triển Game Platformer 2D Unity: "Crystal Runner"
 
-## 1. Project Setup & Architecture
+## 1. Thiết lập & Kiến trúc Dự án
 
-### Project Structure:
+### Cấu trúc Dự án:
 \`\`\`
 Assets/
 ├── Scripts/
@@ -204,17 +216,17 @@ Assets/
 └── Prefabs/
 \`\`\`
 
-### Core Systems Architecture:
-- **GameManager:** Scene transitions, game state, save/load
-- **PlayerController:** Input handling, movement, animations
-- **CameraController:** Following, boundaries, smooth transitions
-- **LevelManager:** Objectives, completion, progression
-- **AudioManager:** Music, SFX, dynamic mixing
-- **UIManager:** Menus, HUD, responsive layouts
+### Kiến trúc Hệ thống Cốt lõi:
+- **GameManager:** Chuyển cảnh, trạng thái game, lưu/tải
+- **PlayerController:** Xử lý đầu vào, chuyển động, hoạt ảnh
+- **CameraController:** Theo dõi, giới hạn, chuyển tiếp mượt mà
+- **LevelManager:** Mục tiêu, hoàn thành, tiến trình
+- **AudioManager:** Nhạc, SFX, trộn âm thanh động
+- **UIManager:** Menu, HUD, bố cục đáp ứng
 
-## 2. Player Controller Implementation
+## 2. Triển khai Bộ điều khiển Người chơi
 
-### Movement System (C#):
+### Hệ thống Chuyển động (C#):
 \`\`\`csharp
 using UnityEngine;
 
@@ -388,9 +400,9 @@ public class PlayerController : MonoBehaviour
 }
 \`\`\`
 
-## 3. Camera System Implementation
+## 3. Triển khai Hệ thống Camera
 
-### Dynamic Camera Controller:
+### Bộ điều khiển Camera Động:
 \`\`\`csharp
 public class CameraController : MonoBehaviour
 {
@@ -455,9 +467,9 @@ public class CameraController : MonoBehaviour
 }
 \`\`\`
 
-## 4. Game Systems Implementation
+## 4. Triển khai Hệ thống Game
 
-### Collectible System:
+### Hệ thống Vật phẩm Thu thập:
 \`\`\`csharp
 public class Crystal : MonoBehaviour
 {
@@ -537,121 +549,127 @@ public class Crystal : MonoBehaviour
 }
 \`\`\`
 
-## 5. Level Design & Progression
+## 5. Thiết kế Cấp độ & Tiến trình
 
-### Level Structure:
-- **Tutorial Level:** Basic movement và jumping
-- **Level 1-3:** Core mechanics introduction
-- **Level 4-6:** Platforming challenges
-- **Level 7-9:** Enemy encounters
-- **Level 10:** Boss fight và story conclusion
+### Cấu trúc Cấp độ:
+- **Cấp độ Hướng dẫn:** Chuyển động và nhảy cơ bản
+- **Cấp độ 1-3:** Giới thiệu cơ chế cốt lõi
+- **Cấp độ 4-6:** Thử thách platforming
+- **Cấp độ 7-9:** Đối đầu với kẻ thù
+- **Cấp độ 10:** Đấu trùm và kết thúc câu chuyện
 
-### Design Principles:
-1. **Introduce:** New mechanic trong safe environment
-2. **Develop:** Practice mechanic với increasing complexity
-3. **Twist:** Combine với previous mechanics
-4. **Conclude:** Master-level challenge
+### Nguyên tắc Thiết kế:
+1. **Giới thiệu:** Cơ chế mới trong môi trường an toàn
+2. **Phát triển:** Thực hành cơ chế với độ phức tạp tăng dần
+3. **Biến tấu:** Kết hợp với các cơ chế trước đó
+4. **Kết luận:** Thử thách ở cấp độ bậc thầy
 
-### Level Completion Metrics:
-- **Primary Objective:** Reach the end portal
-- **Secondary Objectives:** Collect all crystals, finish under time limit
-- **Star Rating System:** 1-3 stars based on completion criteria
+### Chỉ số Hoàn thành Cấp độ:
+- **Mục tiêu Chính:** Đến được cổng cuối
+- **Mục tiêu Phụ:** Thu thập tất cả các viên pha lê, hoàn thành dưới giới hạn thời gian
+- **Hệ thống Đánh giá Sao:** 1-3 sao dựa trên tiêu chí hoàn thành
 
-## 6. Audio & Polish
+## 6. Âm thanh & Đánh bóng
 
-### Audio Implementation:
-- **Adaptive Music:** Intensity changes based on player state
-- **Spatial Audio:** 3D positioned sound effects
-- **Audio Mixing:** Dynamic volume balancing
-- **Accessibility:** Visual representations của audio cues
+### Triển khai Âm thanh:
+- **Nhạc Thích ứng:** Cường độ thay đổi dựa trên trạng thái người chơi
+- **Âm thanh Không gian:** Hiệu ứng âm thanh được định vị 3D
+- **Trộn Âm thanh:** Cân bằng âm lượng động
+- **Khả năng Tiếp cận:** Biểu diễn trực quan của các tín hiệu âm thanh
 
-### Juice & Polish Elements:
-- **Screen Shake:** Landing impacts, damage effects
-- **Particle Systems:** Dust clouds, sparkles, explosions
-- **UI Animations:** Smooth transitions, bouncy buttons
-- **Responsive Feedback:** Every action has immediate response
+### Các yếu tố "Juice" & Đánh bóng:
+- **Rung màn hình:** Hiệu ứng va chạm khi hạ cánh, bị sát thương
+- **Hệ thống Hạt:** Mây bụi, lấp lánh, vụ nổ
+- **Hoạt ảnh UI:** Chuyển tiếp mượt mà, các nút bấm nảy
+- **Phản hồi Tức thì:** Mọi hành động đều có phản hồi ngay lập tức
 
-## 7. Deployment & Publishing
+## 7. Triển khai & Xuất bản
 
-### Build Settings:
-- **Target Platform:** PC (Windows, Mac, Linux)
-- **Resolution:** 1920x1080 với scaling support
-- **Quality Settings:** Optimized for various hardware
-- **Input Support:** Keyboard và gamepad
+### Cài đặt Build:
+- **Nền tảng Mục tiêu:** PC (Windows, Mac, Linux)
+- **Độ phân giải:** 1920x1080 với hỗ trợ co giãn
+- **Cài đặt Chất lượng:** Tối ưu hóa cho các phần cứng khác nhau
+- **Hỗ trợ Đầu vào:** Bàn phím và gamepad
 
-### Publishing Checklist:
-- [ ] All levels tested và balanced
-- [ ] Audio levels properly mixed
-- [ ] Performance optimized (60+ FPS)
-- [ ] Save system implemented
-- [ ] Settings menu functional
-- [ ] Credits và legal info included
+### Danh sách Kiểm tra Xuất bản:
+- [ ] Tất cả các cấp độ đã được kiểm tra và cân bằng
+- [ ] Mức âm thanh được trộn đúng cách
+- [ ] Hiệu suất được tối ưu hóa (60+ FPS)
+- [ ] Hệ thống lưu đã được triển khai
+- [ ] Menu cài đặt hoạt động
+- [ ] Thông tin tín dụng và pháp lý được bao gồm
 
-### Distribution Options:
-- **Steam:** Premium release ($9.99-$14.99)
-- **Itch.io:** Indie-friendly platform
-- **Game Jolt:** Free với optional donations
-- **Mobile Ports:** iOS/Android versions`,
+### Tùy chọn Phân phối:
+- **Steam:** Phát hành trả phí ($9.99-$14.99)
+- **Itch.io:** Nền tảng thân thiện với nhà phát triển độc lập
+- **Game Jolt:** Miễn phí với quyên góp tùy chọn
+- **Cổng di động:** Phiên bản iOS/Android`,
         requirements: [
-          'Set up Unity project với proper folder structure',
-          'Implement smooth character controller với C#',
-          'Create responsive camera system',
-          'Design at least 3 complete levels',
-          'Add audio, animations, và visual polish',
+          'Thiết lập dự án Unity với cấu trúc thư mục phù hợp',
+          'Triển khai bộ điều khiển nhân vật mượt mà bằng C#',
+          'Tạo hệ thống camera đáp ứng',
+          'Thiết kế ít nhất 3 cấp độ hoàn chỉnh',
+          'Thêm âm thanh, hoạt ảnh và đánh bóng hình ảnh',
         ],
         hints: [
-          "Use Unity's built-in 2D physics system effectively",
-          'Plan your code architecture before implementing',
-          'Test player movement feel extensively',
-          'Study reference games for inspiration',
+          'Sử dụng hiệu quả hệ thống vật lý 2D tích hợp của Unity',
+          'Lên kế hoạch kiến trúc mã của bạn trước khi triển khai',
+          'Kiểm tra cảm giác chuyển động của người chơi một cách rộng rãi',
+          'Nghiên cứu các trò chơi tham khảo để lấy cảm hứng',
         ],
-        expectedOutput: 'Playable 2D platformer với multiple levels, polished gameplay, và proper game feel',
+        expectedOutput:
+          'Một game platformer 2D có thể chơi được với nhiều cấp độ, gameplay được đánh bóng và cảm giác game phù hợp',
       },
     ],
     realWorldApplications: [
-      '2D mobile game development',
-      'Indie game publishing',
-      'Educational interactive content',
-      'Prototype development for larger projects',
-      'Portfolio pieces for game industry applications',
+      'Phát triển game di động 2D',
+      'Phát hành game độc lập',
+      'Nội dung tương tác giáo dục',
+      'Phát triển nguyên mẫu cho các dự án lớn hơn',
+      'Các sản phẩm trong portfolio để ứng tuyển vào ngành game',
     ],
     careerOpportunities: [
-      'Unity Developer',
-      '2D Game Programmer',
-      'Indie Game Developer',
-      'Mobile Game Developer',
-      'Technical Game Designer',
-      'Tools Programmer',
+      'Nhà phát triển Unity',
+      'Lập trình viên Game 2D',
+      'Nhà phát triển Game Độc lập',
+      'Nhà phát triển Game Di động',
+      'Nhà thiết kế Game Kỹ thuật',
+      'Lập trình viên Công cụ',
     ],
     resources: [
       {
-        title: 'Unity Learn Platform',
+        title: 'Nền tảng Học tập Unity',
         url: 'https://learn.unity.com',
         type: 'tutorial',
-        description: 'Official Unity tutorials covering 2D development, C# scripting, và game design',
+        description: 'Các hướng dẫn chính thức của Unity bao gồm phát triển 2D, kịch bản C# và thiết kế game',
       },
       {
-        title: 'Brackeys YouTube Channel',
+        title: 'Kênh YouTube Brackeys',
         url: 'https://www.youtube.com/c/Brackeys',
         type: 'tutorial',
-        description: 'High-quality Unity tutorials for beginners và intermediate developers',
+        description: 'Các hướng dẫn Unity chất lượng cao cho người mới bắt đầu và nhà phát triển trung cấp',
       },
     ],
     caseStudies: [
       {
-        title: 'Hollow Knight: Polish & Atmosphere in 2D',
+        title: 'Hollow Knight: Đánh bóng & Bầu không khí trong 2D',
         studio: 'Team Cherry',
-        challenge: 'Create atmospheric 2D Metroidvania với limited budget và small team (3 people)',
+        challenge: 'Tạo ra một game Metroidvania 2D có không khí với ngân sách hạn chế và đội ngũ nhỏ (3 người)',
         solution:
-          'Focused on exceptional art direction, tight controls, và atmospheric audio. Used hand-drawn animations và carefully crafted world design.',
-        results: '3M+ copies sold, 97% positive Steam reviews, considered modern classic trong Metroidvania genre',
+          'Tập trung vào hướng nghệ thuật đặc biệt, điều khiển chặt chẽ và âm thanh có không khí. Sử dụng hoạt ảnh vẽ tay và thiết kế thế giới được chế tác cẩn thận.',
+        results:
+          'Bán được hơn 3 triệu bản, 97% đánh giá tích cực trên Steam, được coi là một tác phẩm kinh điển hiện đại trong thể loại Metroidvania',
         insights: [
-          'Polish và attention to detail can overcome budget limitations',
-          'Strong art direction creates memorable experience',
-          'Tight controls are foundation của great platformers',
-          'Atmospheric audio amplifies emotional impact significantly',
+          'Sự đánh bóng và chú ý đến chi tiết có thể khắc phục những hạn chế về ngân sách',
+          'Hướng nghệ thuật mạnh mẽ tạo ra trải nghiệm đáng nhớ',
+          'Điều khiển chặt chẽ là nền tảng của các game platformer tuyệt vời',
+          'Âm thanh có không khí khuếch đại đáng kể tác động cảm xúc',
         ],
       },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'unity-2d-development'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'game-dev-studio'),
     ],
   },
 ];

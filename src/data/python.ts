@@ -32,7 +32,7 @@ export const pythonLessons: PythonLesson[] = [
     title: 'Bài 1: Giới thiệu Python',
     description:
       'Khám phá thế giới lập trình với Python! Bạn sẽ tự tay cài đặt phần mềm, viết chương trình đầu tiên và trải nghiệm cảm giác "Hello World" đầy hứng khởi. Bài học này giúp bạn tự tin bắt đầu mọi dự án sáng tạo với Python.',
-    videoUrl: 'https://www.youtube.com/watch?v=_uQrJ0TkZlc',
+    videoUrl: 'https://www.youtube.com/watch?v=XEpIMlaD_sI',
     difficulty: 'Dễ',
     duration: '60 phút',
     objectives: [
@@ -40,7 +40,7 @@ export const pythonLessons: PythonLesson[] = [
       'Cài đặt Python và IDE/Text Editor',
       'Viết và chạy chương trình Python đầu tiên',
       'Hiểu cấu trúc cơ bản của chương trình Python',
-      'Sử dụng Python interactive shell'
+      'Sử dụng Python interactive shell',
     ],
     prerequisites: ['Kiến thức máy tính cơ bản'],
     exercises: [
@@ -51,17 +51,13 @@ export const pythonLessons: PythonLesson[] = [
         solution: `name = input("Tên của bạn: ")
 print(f"Xin chào {name}!")
 print("Chào mừng bạn đến với Python!")`,
-        requirements: [
-          'Sử dụng input() để nhận tên',
-          'Sử dụng f-string để format',
-          'In ra ít nhất 2 dòng text'
-        ],
+        requirements: ['Sử dụng input() để nhận tên', 'Sử dụng f-string để format', 'In ra ít nhất 2 dòng text'],
         hints: [
           'Dùng input() để nhận dữ liệu từ user',
           'Dùng f"..." để chèn biến vào string',
-          'Mỗi print() sẽ in một dòng mới'
-        ]
-      }
+          'Mỗi print() sẽ in một dòng mới',
+        ],
+      },
     ],
     realWorldApplications: [
       'Web Development (Django, Flask)',
@@ -69,15 +65,15 @@ print("Chào mừng bạn đến với Python!")`,
       'Automation và Scripting',
       'Desktop Applications',
       'Game Development',
-      'Scientific Computing'
-    ]
+      'Scientific Computing',
+    ],
   },
   {
     id: 'variables-data-types',
     title: 'Bài 2: Variables và Data Types',
     description:
       'Biến hóa dữ liệu như một nhà ảo thuật! Bạn sẽ học cách lưu trữ, xử lý và chuyển đổi thông tin với các kiểu dữ liệu đa dạng. Từ số, chuỗi đến logic, mọi thứ đều nằm trong tầm tay bạn.',
-    videoUrl: 'https://www.youtube.com/watch?v=khKv-8q7YmY',
+    videoUrl: 'https://www.youtube.com/watch?v=0roB7wZMLqI',
     difficulty: 'Dễ',
     duration: '90 phút',
     objectives: [
@@ -85,7 +81,7 @@ print("Chào mừng bạn đến với Python!")`,
       'Nắm vững các kiểu dữ liệu cơ bản: int, float, string, boolean',
       'Thực hiện các phép toán với numbers',
       'Làm việc với strings và string methods',
-      'Chuyển đổi giữa các kiểu dữ liệu khác nhau'
+      'Chuyển đổi giữa các kiểu dữ liệu khác nhau',
     ],
     prerequisites: ['Bài 1: Giới thiệu Python'],
     exercises: [
@@ -115,14 +111,14 @@ print(f"Trạng thái: {'Người lớn' if is_adult else 'Trẻ em'}")`,
           'Tính tuổi dựa trên năm hiện tại',
           'Chuyển đổi chiều cao từ cm sang m',
           'Kiểm tra có phải người lớn không',
-          'Hiển thị thông tin đẹp mắt'
+          'Hiển thị thông tin đẹp mắt',
         ],
         hints: [
           'Dùng int() cho năm sinh',
           'Dùng float() cho chiều cao',
           'Dùng :.2f để làm tròn 2 chữ số thập phân',
-          'Dùng conditional expression cho status'
-        ]
+          'Dùng conditional expression cho status',
+        ],
       },
       {
         title: 'String Processor',
@@ -149,19 +145,14 @@ print(f"IN HOA: {upper_text}")
 print(f"in thường: {lower_text}")
 print(f"Title Case: {title_text}")
 print(f"Ngược lại: {reversed_text}")`,
-        requirements: [
-          'Đếm số từ và ký tự',
-          'Chuyển đổi case khác nhau',
-          'Đảo ngược chuỗi',
-          'Hiển thị thống kê đẹp'
-        ],
+        requirements: ['Đếm số từ và ký tự', 'Chuyển đổi case khác nhau', 'Đảo ngược chuỗi', 'Hiển thị thống kê đẹp'],
         hints: [
           'Dùng split() để chia thành từ',
           'Dùng len() để đếm',
           'Dùng string methods: upper(), lower(), title()',
-          'Dùng slicing [::-1] để đảo ngược'
-        ]
-      }
+          'Dùng slicing [::-1] để đảo ngược',
+        ],
+      },
     ],
     realWorldApplications: [
       'Form validation trong web apps',
@@ -169,35 +160,35 @@ print(f"Ngược lại: {reversed_text}")`,
       'Configuration file processing',
       'User input handling',
       'Data type conversion in APIs',
-      'Financial calculations'
+      'Financial calculations',
     ],
     relatedGames: [
       {
         gameId: 'typing-speed-challenge',
         title: 'Thử Thách Tốc Độ Gõ',
         connection: 'Luyện tập tốc độ gõ code Python nhanh và chính xác',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         gameId: 'python-coding-puzzle',
         title: 'Python Coding Puzzle',
         connection: 'Áp dụng kiến thức Python cơ bản để giải các puzzle lập trình',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         gameId: 'word-builder',
         title: 'Xây Dựng Từ',
         connection: 'Thực hành xử lý string và input/output trong Python',
-        difficulty: 'Cơ bản'
-      }
-    ]
+        difficulty: 'Cơ bản',
+      },
+    ],
   },
   {
     id: 'control-structures',
     title: 'Bài 3: Control Structures',
     description:
       'Làm chủ luồng chương trình với các cấu trúc điều khiển! Bạn sẽ biết cách ra quyết định, lặp lại thao tác và xây dựng logic thông minh cho mọi ứng dụng Python.',
-    videoUrl: 'https://www.youtube.com/watch?v=VchuKL44s6E',
+    videoUrl: 'https://www.youtube.com/watch?v=kIPpTYjareA',
     difficulty: 'Trung bình',
     duration: '120 phút',
     objectives: [
@@ -205,7 +196,7 @@ print(f"Ngược lại: {reversed_text}")`,
       'Hiểu boolean logic và comparison operators',
       'Sử dụng for loops với ranges và sequences',
       'Sử dụng while loops',
-      'Kết hợp control structures để giải quyết bài toán'
+      'Kết hợp control structures để giải quyết bài toán',
     ],
     prerequisites: ['Bài 2: Variables và Data Types'],
     exercises: [
@@ -250,15 +241,15 @@ else:
           'Validate điểm trong khoảng 0-10',
           'Tính điểm trung bình',
           'Xếp loại theo thang điểm Việt Nam',
-          'Xử lý trường hợp không nhập điểm nào'
+          'Xử lý trường hợp không nhập điểm nào',
         ],
         hints: [
           'Dùng list để lưu điểm',
           'Dùng while True và break',
           'Kiểm tra range với 0 <= score <= 10',
-          'Dùng elif cho multiple conditions'
-        ]
-      }
+          'Dùng elif cho multiple conditions',
+        ],
+      },
     ],
     realWorldApplications: [
       'User authentication systems',
@@ -266,15 +257,15 @@ else:
       'Menu-driven applications',
       'Game logic implementation',
       'Automated decision making',
-      'Business rule processing'
-    ]
+      'Business rule processing',
+    ],
   },
   {
     id: 'functions',
     title: 'Bài 4: Functions',
     description:
       'Tổ chức code như một chuyên gia! Học cách tạo hàm, tái sử dụng logic, xử lý dữ liệu linh hoạt và xây dựng thư viện cá nhân. Functions giúp bạn tiết kiệm thời gian và tăng hiệu quả lập trình.',
-    videoUrl: 'https://www.youtube.com/watch?v=9Os0o3wzS_I',
+    videoUrl: 'https://www.youtube.com/watch?v=u-OmVr_fT4s',
     difficulty: 'Trung bình',
     duration: '120 phút',
     objectives: [
@@ -282,7 +273,7 @@ else:
       'Sử dụng parameters và arguments',
       'Hiểu return values',
       'Scope của variables (local vs global)',
-      'Viết docstrings cho functions'
+      'Viết docstrings cho functions',
     ],
     prerequisites: ['Bài 3: Control Structures'],
     exercises: [
@@ -349,15 +340,15 @@ while True:
           'Mỗi function có docstring',
           'Xử lý edge cases',
           'Tạo menu để test functions',
-          'Sử dụng recursion ít nhất 1 lần'
+          'Sử dụng recursion ít nhất 1 lần',
         ],
         hints: [
           'Dùng """...""" cho docstring',
           'Kiểm tra input validity',
           'Recursive function cần base case',
-          'Dùng while loop cho menu'
-        ]
-      }
+          'Dùng while loop cho menu',
+        ],
+      },
     ],
     realWorldApplications: [
       'Code organization và reusability',
@@ -365,15 +356,15 @@ while True:
       'Data processing pipelines',
       'Utility libraries',
       'Mathematical computations',
-      'Business logic separation'
-    ]
+      'Business logic separation',
+    ],
   },
   {
     id: 'lists-tuples',
     title: 'Bài 5: Lists và Tuples',
     description:
       'Quản lý dữ liệu như một chuyên gia! Bạn sẽ học cách lưu trữ, sắp xếp và thao tác với danh sách, tuple để xây dựng ứng dụng thực tế, từ quản lý công việc đến xử lý dữ liệu lớn.',
-    videoUrl: 'https://www.youtube.com/watch?v=W8KRzm-HUcc',
+    videoUrl: 'https://www.youtube.com/watch?v=cs2MoxXBg2o',
     difficulty: 'Trung bình',
     duration: '100 phút',
     objectives: [
@@ -382,7 +373,7 @@ while True:
       'Hiểu list indexing và slicing',
       'Làm việc với tuples',
       'So sánh lists vs tuples',
-      'List comprehensions cơ bản'
+      'List comprehensions cơ bản',
     ],
     prerequisites: ['Bài 4: Functions'],
     exercises: [
@@ -450,15 +441,15 @@ while True:
           'Mỗi task có description và priority',
           'Functions cho từng chức năng',
           'Menu-driven interface',
-          'Xử lý edge cases và errors'
+          'Xử lý edge cases và errors',
         ],
         hints: [
           'Dùng tuple để lưu (task, priority)',
           'enumerate() để đánh số thứ tự',
           'pop() để xóa và lấy element',
-          'try/except để xử lý errors'
-        ]
-      }
+          'try/except để xử lý errors',
+        ],
+      },
     ],
     realWorldApplications: [
       'Data storage và manipulation',
@@ -466,15 +457,15 @@ while True:
       'User management systems',
       'Inventory tracking',
       'Menu systems',
-      'Data processing workflows'
-    ]
+      'Data processing workflows',
+    ],
   },
   {
     id: 'dictionaries',
     title: 'Bài 6: Dictionaries',
     description:
       'Lưu trữ thông tin thông minh với dictionaries! Bạn sẽ biết cách quản lý dữ liệu dạng key-value, xây dựng hệ thống quản lý học sinh, cấu hình phần mềm và nhiều ứng dụng thực tế khác.',
-    videoUrl: 'https://www.youtube.com/watch?v=daefaLgNkw0',
+    videoUrl: 'https://www.youtube.com/watch?v=MZZSMaEAC2g',
     difficulty: 'Trung bình',
     duration: '100 phút',
     objectives: [
@@ -482,7 +473,7 @@ while True:
       'Thêm, sửa, xóa key-value pairs',
       'Iterate through dictionaries',
       'Nested dictionaries',
-      'Dictionary methods và best practices'
+      'Dictionary methods và best practices',
     ],
     prerequisites: ['Bài 5: Lists và Tuples'],
     exercises: [
@@ -556,15 +547,15 @@ def list_all_students():
           'Nested dictionary cho grades',
           'Functions cho CRUD operations',
           'Tính điểm trung bình',
-          'Hiển thị danh sách tổng quan'
+          'Hiển thị danh sách tổng quan',
         ],
         hints: [
           'Dùng student_id làm key',
           'Nested dict: {id: {name, age, grades: {subject: grade}}}',
           'Dùng .items() để iterate',
-          'Check key existence với "in" operator'
-        ]
-      }
+          'Check key existence với "in" operator',
+        ],
+      },
     ],
     realWorldApplications: [
       'Database records representation',
@@ -572,15 +563,15 @@ def list_all_students():
       'API response handling',
       'Cache implementation',
       'User profiles storage',
-      'Settings và preferences'
-    ]
+      'Settings và preferences',
+    ],
   },
   {
     id: 'file-handling',
     title: 'Bài 7: File Handling',
     description:
       'Khai phá dữ liệu từ file! Học cách đọc, ghi, phân tích và tạo báo cáo từ file văn bản, CSV, log... Mở rộng khả năng tự động hóa và xử lý dữ liệu chuyên nghiệp với Python.',
-    videoUrl: 'https://www.youtube.com/watch?v=Uh2ebFW8OYM',
+    videoUrl: 'https://www.youtube.com/watch?v=-o5WNw4Hohk',
     difficulty: 'Khó',
     duration: '120 phút',
     objectives: [
@@ -589,7 +580,7 @@ def list_all_students():
       'Ghi dữ liệu ra files',
       'Xử lý CSV files',
       'Exception handling với files',
-      'File paths và directories'
+      'File paths và directories',
     ],
     prerequisites: ['Bài 6: Dictionaries'],
     exercises: [
@@ -694,15 +685,15 @@ elif choice == "2":
           'Đếm các loại log levels',
           'Tìm và liệt kê errors',
           'Tạo báo cáo ra file mới',
-          'Xử lý exceptions khi đọc file'
+          'Xử lý exceptions khi đọc file',
         ],
         hints: [
           'Dùng with open() để tự động đóng file',
           'split() để tách các phần của log entry',
           'Counter từ collections để đếm',
-          'datetime để timestamp báo cáo'
-        ]
-      }
+          'datetime để timestamp báo cáo',
+        ],
+      },
     ],
     realWorldApplications: [
       'Data processing từ CSV/Excel',
@@ -710,15 +701,15 @@ elif choice == "2":
       'Log analysis và monitoring',
       'Backup và restore systems',
       'Report generation',
-      'Data migration tools'
-    ]
+      'Data migration tools',
+    ],
   },
   {
     id: 'oop-basics',
     title: 'Bài 8: Object-Oriented Programming',
     description:
       'Làm chủ lập trình hướng đối tượng! Tạo class, object, kế thừa, đóng gói dữ liệu và xây dựng hệ thống phần mềm chuyên nghiệp. Đây là chìa khóa để phát triển ứng dụng lớn và hiện đại.',
-    videoUrl: 'https://www.youtube.com/watch?v=JeznW_7DlB0',
+    videoUrl: 'https://www.youtube.com/watch?v=iLRZi0Gu8Go',
     difficulty: 'Khó',
     duration: '150 phút',
     objectives: [
@@ -727,7 +718,7 @@ elif choice == "2":
       'Sử dụng constructors (__init__)',
       'Methods và attributes',
       'Encapsulation và data hiding',
-      'Inheritance cơ bản'
+      'Inheritance cơ bản',
     ],
     prerequisites: ['Bài 7: File Handling'],
     exercises: [
@@ -834,15 +825,15 @@ demo_bank_system()`,
           'Encapsulation với private attributes',
           'Transaction history tracking',
           'Class SavingsAccount kế thừa BankAccount',
-          'Demo system với multiple accounts'
+          'Demo system với multiple accounts',
         ],
         hints: [
           'Dùng _attribute để private',
           'super() để gọi parent constructor',
           'datetime để track transaction time',
-          'String formatting cho currency display'
-        ]
-      }
+          'String formatting cho currency display',
+        ],
+      },
     ],
     realWorldApplications: [
       'Software architecture design',
@@ -850,15 +841,15 @@ demo_bank_system()`,
       'Web framework components',
       'Database ORM models',
       'API client libraries',
-      'GUI application structure'
-    ]
+      'GUI application structure',
+    ],
   },
   {
     id: 'algorithms-data-structures',
-    title: 'Bài 8: Thuật toán & Cấu trúc dữ liệu',
+    title: 'Bài 9: Thuật toán & Cấu trúc dữ liệu',
     description:
       'Khám phá trái tim của lập trình - thuật toán và cấu trúc dữ liệu! Từ tìm kiếm nhị phân đến sắp xếp nhanh, từ stack/queue đến cây nhị phân. Bạn sẽ hiểu cách máy tính "suy nghĩ" và tối ưu hóa hiệu suất chương trình.',
-    videoUrl: 'https://www.youtube.com/watch?v=8hly31xKli0',
+    videoUrl: 'https://www.youtube.com/watch?v=V85332IZVs0',
     difficulty: 'Nâng cao',
     duration: '180 phút',
     objectives: [
@@ -867,13 +858,9 @@ demo_bank_system()`,
       'Sử dụng Stack, Queue, Linked List',
       'Làm việc với Binary Tree và Graph',
       'Áp dụng Dynamic Programming cơ bản',
-      'Phân tích và tối ưu hóa thuật toán'
+      'Phân tích và tối ưu hóa thuật toán',
     ],
-    prerequisites: [
-      'Thành thạo functions và classes',
-      'Hiểu recursion cơ bản',
-      'Kiến thức toán học trung học'
-    ],
+    prerequisites: ['Thành thạo functions và classes', 'Hiểu recursion cơ bản', 'Kiến thức toán học trung học'],
     exercises: [
       {
         title: 'Binary Search Implementation',
@@ -948,14 +935,14 @@ compare_search_algorithms()`,
           'Performance comparison với timing',
           'Handles edge cases (empty array, not found)',
           'Clear documentation và comments',
-          'Test với different array sizes'
+          'Test với different array sizes',
         ],
         hints: [
           'Array phải được sort trước',
           'Dùng time.time() để measure performance',
           'Mid = (left + right) // 2 tránh overflow',
-          'Test với arrays có size khác nhau'
-        ]
+          'Test với arrays có size khác nhau',
+        ],
       },
       {
         title: 'Stack & Queue Implementation',
@@ -1093,14 +1080,14 @@ demo_stack_queue()`,
           'Complete Queue class với all operations',
           'Real-world example (Undo/Redo system)',
           'Proper exception handling',
-          'Demo function showing usage'
+          'Demo function showing usage',
         ],
         hints: [
           'List.append() và list.pop() cho Stack',
           'List.append() và list.pop(0) cho Queue',
           'Check empty trước khi pop/dequeue',
-          'Undo/Redo cần 2 stacks'
-        ]
+          'Undo/Redo cần 2 stacks',
+        ],
       },
       {
         title: 'Binary Tree & Tree Traversal',
@@ -1290,15 +1277,15 @@ demo_binary_tree()`,
           'All 4 traversal methods (inorder, preorder, postorder, level-order)',
           'Search, height, count_nodes methods',
           'Tree visualization method',
-          'Comprehensive demo với test cases'
+          'Comprehensive demo với test cases',
         ],
         hints: [
           'Recursion là key cho tree operations',
           'Inorder traversal cho BST = sorted order',
           'Level order cần queue',
-          'Height = 1 + max(left_height, right_height)'
-        ]
-      }
+          'Height = 1 + max(left_height, right_height)',
+        ],
+      },
     ],
     realWorldApplications: [
       'Database indexing và optimization',
@@ -1308,9 +1295,9 @@ demo_binary_tree()`,
       'Network routing protocols',
       'Machine learning feature selection',
       'Financial algorithmic trading',
-      'Data compression algorithms'
-    ]
-  }
+      'Data compression algorithms',
+    ],
+  },
 ];
 
 export default pythonLessons;

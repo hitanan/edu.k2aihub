@@ -58,12 +58,16 @@ export const K2Module = {
   LegalTechnology: 'legal-technology',
   EducationTechnology: 'education-technology',
   RealEstateTechnology: 'real-estate-technology',
-  
+
   // Alternative names for compatibility
   AI_Art: 'ai-art-creative-tech',
   JavaScript: 'javascript',
 
   // Essential Skills Modules (New 2025)
+  SoftSkills: 'soft-skills',
+  EmotionalIntelligence: 'emotional-intelligence',
+  PublicSpeaking: 'public-speaking',
+  Leadership: 'leadership',
   CriticalThinking: 'critical-thinking',
   CommunicationSkills: 'communication-skills',
   DigitalCitizenship: 'digital-citizenship-ai-ethics',
@@ -1013,7 +1017,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.EducationTechnology,
     title: 'Công Nghệ Giáo Dục',
     subtitle: 'Education Technology & Digital Learning Innovation',
-    description: 'Master các công nghệ tiên tiến đang revolutionize ngành giáo dục từ LMS, AI-powered tools đến VR/AR learning',
+    description:
+      'Master các công nghệ tiên tiến đang revolutionize ngành giáo dục từ LMS, AI-powered tools đến VR/AR learning',
     category: 'professional',
     icon: '🎓',
     color: 'from-indigo-600 to-purple-600',
@@ -1062,7 +1067,8 @@ export const moduleNavigation: ModuleNavigation[] = [
     id: K2Module.RealEstateTechnology,
     title: 'Công Nghệ Bất Động Sản',
     subtitle: 'Real Estate Technology & PropTech Innovation',
-    description: 'Khám phá cách mạng PropTech đang transform ngành bất động sản từ virtual tours đến blockchain transactions',
+    description:
+      'Khám phá cách mạng PropTech đang transform ngành bất động sản từ virtual tours đến blockchain transactions',
     category: 'professional',
     icon: '🏢',
     color: 'from-blue-600 to-indigo-600',
@@ -3680,47 +3686,47 @@ export const moduleNavigation: ModuleNavigation[] = [
       'Quantum algorithms từ Shor đến Grover algorithms',
       'Real-world case studies từ Google, IBM, và leading companies',
       'Business applications và ROI analysis frameworks',
-      'Post-quantum cryptography và cybersecurity implications'
+      'Post-quantum cryptography và cybersecurity implications',
     ],
     tags: ['quantum-computing', 'quantum-algorithms', 'IBM-Qiskit', 'quantum-cryptography', 'future-technology'],
     prerequisites: [
-      'Toán học đại học (linear algebra, probability)', 
+      'Toán học đại học (linear algebra, probability)',
       'Programming experience (Python preferred)',
       'Basic physics understanding',
-      'Interest in cutting-edge technology'
+      'Interest in cutting-edge technology',
     ],
     lessons: [
       {
         id: 'quantum-fundamentals-introduction',
         title: 'Quantum Computing Fundamentals',
         duration: '120 phút',
-        difficulty: 'Cơ bản'
+        difficulty: 'Cơ bản',
       },
       {
         id: 'quantum-algorithms-basics',
         title: 'Quantum Algorithms - Shor & Grover',
         duration: '150 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'quantum-programming-qiskit',
         title: 'Quantum Programming với IBM Qiskit',
         duration: '200 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'quantum-cryptography-security',
         title: 'Quantum Cryptography & Cybersecurity',
         duration: '140 phút',
-        difficulty: 'Trung bình'
+        difficulty: 'Trung bình',
       },
       {
         id: 'quantum-business-applications',
         title: 'Quantum Business Applications & ROI',
         duration: '160 phút',
-        difficulty: 'Trung bình'
-      }
-    ]
+        difficulty: 'Trung bình',
+      },
+    ],
   },
 ];
 

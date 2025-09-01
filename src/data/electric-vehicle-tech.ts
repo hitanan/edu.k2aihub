@@ -1,522 +1,393 @@
-export interface ElectricVehicleLesson {
-  id: string;
-  title: string;
-  description: string;
-  duration: string;
-  difficulty: string;
-  vehicleType?: string;
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
+
+const evChargingGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'ev-charging-network');
+const roboticsNavGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'robotics-navigation');
+
+export interface ElectricVehicleLesson extends BaseLessonData {
+  vehicleType?: 'Xe điện' | 'Xe tự hành' | 'Hạ tầng' | 'Sản xuất';
   technology?: string;
-  imageUrl?: string;
-  videoUrl?: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Array<{
-    title: string;
-    description: string;
-    difficulty: string;
-    components?: string[];
-    tools?: string[];
-    procedure?: string[];
-    expectedResults?: string;
-    solution?: string;
-  }>;
-  realWorldApplications: string[];
-  caseStudies?: Array<{
-    title: string;
-    company: string;
-    challenge: string;
-    solution: string;
-    impact: string;
-    technologies?: string[];
-  }>;
-  resources?: Array<{
-    title: string;
-    url: string;
-    type: string;
-  }>;
   technologies?: string[];
+  relatedGames?: Array<{
+    id: string;
+    name: string;
+    description: string;
+  }>;
 }
 
 export const electricVehicleLessons: ElectricVehicleLesson[] = [
   {
     id: 'ev-powertrain-battery-fundamentals',
-    title: 'EV Powertrain & Battery Technology Fundamentals',
+    title: 'Hệ Thống Truyền Động & Công Nghệ Pin Xe Điện',
     description:
-      'Comprehensive understanding về electric vehicle powertrain systems, battery technologies, và energy management. Focus trên lithium-ion batteries, charging systems và thermal management.',
+      'Hiểu biết toàn diện về hệ thống truyền động xe điện, công nghệ pin và quản lý năng lượng. Tập trung vào pin lithium-ion, hệ thống sạc và quản lý nhiệt.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    vehicleType: 'Electric Vehicle',
+    vehicleType: 'Xe điện',
+    videoUrl: 'https://www.youtube.com/watch?v=HfN5dEeUyuE', // "EV Powertrain"
+    imageUrl: 'https://images.unsplash.com/photo-1617886322207-6f504e7472c5?w=1200&h=600&fit=crop',
     objectives: [
-      'Understand EV powertrain architecture và components',
-      'Master battery chemistry: lithium-ion, solid-state, future technologies',
-      'Design battery management systems (BMS) cho safety và performance',
-      'Analyze charging systems: AC/DC, fast charging, wireless charging',
+      'Hiểu kiến trúc và các thành phần của hệ thống truyền động xe điện',
+      'Nắm vững hóa học pin: lithium-ion, thể rắn và các công nghệ tương lai',
+      'Thiết kế hệ thống quản lý pin (BMS) để đảm bảo an toàn và hiệu suất',
+      'Phân tích các hệ thống sạc: AC/DC, sạc nhanh, sạc không dây',
     ],
     prerequisites: [
-      'Basic electrical engineering knowledge',
-      'Understanding của automotive systems',
-      'Chemistry fundamentals',
-      'Power electronics basics',
+      'Kiến thức cơ bản về kỹ thuật điện',
+      'Hiểu biết về hệ thống ô tô',
+      'Kiến thức cơ bản về hóa học',
+      'Kiến thức cơ bản về điện tử công suất',
     ],
     exercises: [
       {
-        title: 'VinFast VF8 Battery System Analysis',
-        description:
-          'Analyze VinFast VF8 battery pack design và compare với Tesla Model Y battery technology.',
+        title: 'Phân Tích Hệ Thống Pin VinFast VF8',
+        description: 'Phân tích thiết kế bộ pin của VinFast VF8 và so sánh với công nghệ pin của Tesla Model Y.',
         difficulty: 'Trung bình',
-        components: [
-          'Battery cells',
-          'BMS modules',
-          'Cooling system',
-          'Safety systems',
-        ],
-        tools: [
-          'Battery simulation software',
-          'Thermal analysis tools',
-          'Electrical testing equipment',
-        ],
+        materials: ['Các cell pin', 'Các mô-đun BMS', 'Hệ thống làm mát', 'Hệ thống an toàn'],
         procedure: [
-          'Study VinFast VF8 technical specifications và battery architecture',
-          'Compare lithium iron phosphate (LFP) vs nickel-based battery chemistry',
-          'Analyze thermal management system design',
-          'Calculate energy density, power density, và charging capabilities',
-          'Evaluate safety features: thermal runaway protection, crash safety',
-          'Compare với international competitors (Tesla, BYD, Hyundai)',
+          'Nghiên cứu thông số kỹ thuật và kiến trúc pin của VinFast VF8',
+          'So sánh hóa học pin lithium iron phosphate (LFP) và pin gốc niken',
+          'Phân tích thiết kế hệ thống quản lý nhiệt',
+          'Tính toán mật độ năng lượng, mật độ công suất và khả năng sạc',
+          'Đánh giá các tính năng an toàn: bảo vệ thoát nhiệt, an toàn khi va chạm',
+          'So sánh với các đối thủ cạnh tranh quốc tế (Tesla, BYD, Hyundai)',
         ],
-        expectedResults:
-          'Comprehensive battery system analysis với recommendations cho optimization',
+        expectedResults: 'Báo cáo phân tích hệ thống pin toàn diện với các khuyến nghị để tối ưu hóa',
         solution:
-          'VinFast uses LFP batteries cho safety và cost, trade-off energy density cho Vietnamese market needs',
+          'VinFast sử dụng pin LFP vì lý do an toàn và chi phí, đánh đổi mật độ năng lượng để phù hợp với nhu cầu thị trường Việt Nam',
       },
       {
-        title: 'EV Charging Infrastructure Design cho Vietnam',
+        title: 'Thiết Kế Hạ Tầng Sạc Xe Điện cho Việt Nam',
         description:
-          'Design comprehensive EV charging network cho Vietnamese cities considering grid constraints.',
+          'Thiết kế mạng lưới sạc xe điện toàn diện cho các thành phố Việt Nam, xem xét các hạn chế của lưới điện.',
         difficulty: 'Nâng cao',
-        components: [
-          'DC fast chargers',
-          'AC Level 2 chargers',
-          'Grid integration',
-          'Payment systems',
-        ],
-        tools: [
-          'Grid simulation software',
-          'GIS mapping',
-          'Load flow analysis',
-        ],
+        materials: ['Trạm sạc nhanh DC', 'Trạm sạc AC Cấp 2', 'Tích hợp lưới điện', 'Hệ thống thanh toán'],
         procedure: [
-          'Analyze Vietnamese electrical grid capacity và limitations',
-          'Map optimal charging station locations trong major cities',
-          'Design charging network architecture với different power levels',
-          'Calculate grid impact và load management strategies',
-          'Integrate renewable energy sources (solar canopies)',
-          'Design user experience và payment integration systems',
+          'Phân tích công suất và các hạn chế của lưới điện Việt Nam',
+          'Lập bản đồ các vị trí trạm sạc tối ưu tại các thành phố lớn',
+          'Thiết kế kiến trúc mạng lưới sạc với các mức công suất khác nhau',
+          'Tính toán tác động đến lưới điện và các chiến lược quản lý tải',
+          'Tích hợp các nguồn năng lượng tái tạo (mái che năng lượng mặt trời)',
+          'Thiết kế trải nghiệm người dùng và hệ thống tích hợp thanh toán',
         ],
-        expectedResults:
-          'Scalable EV charging infrastructure plan cho Vietnamese market',
-        solution:
-          'Hybrid AC/DC charging network với smart grid integration và renewable energy integration',
+        expectedResults: 'Kế hoạch hạ tầng sạc xe điện có thể mở rộng cho thị trường Việt Nam',
+        solution: 'Mạng lưới sạc AC/DC kết hợp với tích hợp lưới điện thông minh và năng lượng tái tạo',
       },
     ],
     realWorldApplications: [
-      'VinFast electric vehicle manufacturing và battery development',
-      'EV charging infrastructure deployment trong Vietnamese cities',
-      'Electric bus systems cho public transportation',
-      'Electric motorbike development cho Vietnamese market',
-      'Energy storage systems using EV batteries',
+      'Sản xuất xe điện và phát triển pin của VinFast',
+      'Triển khai hạ tầng sạc xe điện tại các thành phố Việt Nam',
+      'Hệ thống xe buýt điện cho giao thông công cộng',
+      'Phát triển xe máy điện cho thị trường Việt Nam',
+      'Hệ thống lưu trữ năng lượng sử dụng pin xe điện',
     ],
     caseStudies: [
       {
-        title: 'VinFast Global EV Strategy',
-        company: 'VinGroup',
-        challenge:
-          'Develop competitive electric vehicles cho global market từ Vietnam base',
-        solution:
-          'Vertical integration strategy: batteries, manufacturing, charging infrastructure',
-        impact: 'First Vietnamese automotive brand to enter US market với EVs',
-        technologies: [
-          'LFP Batteries',
-          'Advanced Manufacturing',
-          'Charging Network',
-          'Software Integration',
-        ],
+        title: 'Chiến Lược Xe Điện Toàn Cầu của VinFast',
+        organization: 'VinGroup',
+        problem: 'Phát triển các loại xe điện cạnh tranh cho thị trường toàn cầu từ cơ sở tại Việt Nam',
+        solution: 'Chiến lược tích hợp dọc: pin, sản xuất, hạ tầng sạc',
+        impact: 'Thương hiệu ô tô Việt Nam đầu tiên gia nhập thị trường Mỹ với xe điện',
+        innovations: ['Pin LFP', 'Sản xuất tiên tiến', 'Mạng lưới sạc', 'Tích hợp phần mềm'],
       },
     ],
     resources: [
       {
-        title: 'VinFast Technical Specifications',
+        title: 'Thông số kỹ thuật VinFast',
         url: 'https://vinfastauto.com/',
-        type: 'Industry Documentation',
+        type: 'Documentation',
       },
     ],
-    technologies: [
-      'Lithium-ion Batteries',
-      'Battery Management Systems',
-      'Power Electronics',
-      'Thermal Management',
-    ],
+    technologies: ['Pin Lithium-ion', 'Hệ thống quản lý pin', 'Điện tử công suất', 'Quản lý nhiệt'],
   },
   {
     id: 'autonomous-driving-systems',
-    title: 'Autonomous Driving & Advanced Driver Assistance Systems',
+    title: 'Lái Xe Tự Hành & Hệ Thống Hỗ Trợ Lái Xe Nâng Cao',
     description:
-      'Advanced autonomous vehicle technology từ ADAS đến full self-driving systems. Computer vision, sensor fusion, decision making cho Vietnamese traffic conditions.',
+      'Công nghệ xe tự hành tiên tiến từ ADAS đến hệ thống lái xe hoàn toàn tự động. Computer vision, tổng hợp cảm biến, ra quyết định cho điều kiện giao thông Việt Nam.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    vehicleType: 'Autonomous Vehicle',
+    vehicleType: 'Xe tự hành',
+    videoUrl: 'https://www.youtube.com/watch?v=TUDiG7PcLBs', // "Xe tự hành"
+    imageUrl: 'https://images.unsplash.com/photo-1621535323732-03b7284c7225?w=1200&h=600&fit=crop',
     objectives: [
-      'Master ADAS technologies: adaptive cruise control, lane keeping, emergency braking',
-      'Understand sensor technologies: cameras, LiDAR, radar, ultrasonic',
-      'Implement computer vision algorithms cho object detection và tracking',
-      'Design decision-making systems cho complex traffic scenarios',
+      'Nắm vững các công nghệ ADAS: kiểm soát hành trình thích ứng, giữ làn đường, phanh khẩn cấp',
+      'Hiểu các công nghệ cảm biến: camera, LiDAR, radar, siêu âm',
+      'Thực hiện các thuật toán computer vision để phát hiện và theo dõi đối tượng',
+      'Thiết kế hệ thống ra quyết định cho các tình huống giao thông phức tạp',
     ],
     prerequisites: [
-      'Computer vision và machine learning knowledge',
-      'Programming skills Python/C++',
-      'Understanding về automotive systems',
-      'Signal processing fundamentals',
+      'Kiến thức về computer vision và machine learning',
+      'Kỹ năng lập trình Python/C++',
+      'Hiểu biết về hệ thống ô tô',
+      'Kiến thức cơ bản về xử lý tín hiệu',
     ],
+    relatedGames: roboticsNavGame
+      ? [
+          {
+            id: roboticsNavGame.id,
+            name: roboticsNavGame.title,
+            description: roboticsNavGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
-        title: 'Vietnamese Traffic Pattern Recognition System',
+        title: 'Hệ Thống Nhận Dạng Mẫu Giao Thông Việt Nam',
         description:
-          'Develop computer vision system để recognize và predict Vietnamese traffic patterns including motorbikes.',
+          'Phát triển hệ thống computer vision để nhận dạng và dự đoán các mẫu giao thông Việt Nam bao gồm cả xe máy.',
         difficulty: 'Nâng cao',
-        components: [
-          'Computer vision models',
-          'Sensor fusion algorithms',
-          'Decision trees',
-          'Real-time processing',
-        ],
-        tools: [
-          'OpenCV',
-          'TensorFlow',
-          'ROS (Robot Operating System)',
-          'Simulation environments',
+        materials: [
+          'Mô hình computer vision',
+          'Thuật toán tổng hợp cảm biến',
+          'Cây quyết định',
+          'Xử lý thời gian thực',
         ],
         procedure: [
-          'Collect và annotate Vietnamese traffic video data',
-          'Train object detection models cho cars, motorbikes, pedestrians',
-          'Implement multi-object tracking algorithms',
-          'Develop prediction models cho vehicle behavior',
-          'Create decision-making logic cho autonomous navigation',
-          'Test trong simulated Vietnamese traffic environments',
+          'Thu thập và chú thích dữ liệu video giao thông Việt Nam',
+          'Huấn luyện các mô hình phát hiện đối tượng cho ô tô, xe máy, người đi bộ',
+          'Thực hiện các thuật toán theo dõi đa đối tượng',
+          'Phát triển các mô hình dự đoán hành vi của phương tiện',
+          'Tạo logic ra quyết định cho điều hướng tự động',
+          'Kiểm tra trong môi trường giao thông Việt Nam mô phỏng',
         ],
-        expectedResults:
-          'Autonomous driving system capable of navigating Vietnamese traffic conditions',
+        expectedResults: 'Hệ thống lái xe tự động có khả năng điều hướng trong điều kiện giao thông Việt Nam',
         solution:
-          'Use ensemble of vision models với rule-based systems tuned cho Vietnamese traffic chaos',
+          'Sử dụng một tập hợp các mô hình thị giác với các hệ thống dựa trên quy tắc được điều chỉnh cho sự hỗn loạn của giao thông Việt Nam',
       },
       {
-        title: 'Smart Traffic Management Integration',
+        title: 'Tích Hợp Quản Lý Giao Thông Thông Minh',
         description:
-          'Design V2X (Vehicle-to-Everything) system cho smart traffic management trong Vietnamese cities.',
+          'Thiết kế hệ thống V2X (Vehicle-to-Everything) để quản lý giao thông thông minh tại các thành phố Việt Nam.',
         difficulty: 'Nâng cao',
-        components: [
-          'V2V communication',
-          'V2I infrastructure',
-          'Traffic optimization',
-          'Emergency response',
-        ],
-        tools: [
-          '5G/LTE-V communication',
-          'Edge computing',
-          'Traffic simulation',
-          'IoT sensors',
-        ],
+        materials: ['Giao tiếp V2V', 'Hạ tầng V2I', 'Tối ưu hóa giao thông', 'Phản ứng khẩn cấp'],
         procedure: [
-          'Design V2X communication protocols cho Vietnamese infrastructure',
-          'Implement traffic light optimization algorithms',
-          'Create emergency vehicle priority systems',
-          'Develop congestion prediction và routing optimization',
-          'Integrate với existing traffic management systems',
-          'Test scalability và real-world deployment scenarios',
+          'Thiết kế các giao thức giao tiếp V2X cho hạ tầng Việt Nam',
+          'Thực hiện các thuật toán tối ưu hóa đèn giao thông',
+          'Tạo hệ thống ưu tiên cho xe khẩn cấp',
+          'Phát triển dự báo tắc nghẽn và tối ưu hóa định tuyến',
+          'Tích hợp với các hệ thống quản lý giao thông hiện có',
+          'Kiểm tra khả năng mở rộng và các kịch bản triển khai trong thế giới thực',
         ],
-        expectedResults:
-          'Integrated smart traffic system reducing congestion và improving safety',
-        solution:
-          'Hierarchical V2X system với cloud-edge computing và AI-powered traffic optimization',
+        expectedResults: 'Hệ thống giao thông thông minh tích hợp giúp giảm tắc nghẽn và cải thiện an toàn',
+        solution: 'Hệ thống V2X phân cấp với điện toán đám mây-biên và tối ưu hóa giao thông do AI cung cấp',
       },
     ],
     realWorldApplications: [
-      'VinFast autonomous driving development cho Vietnamese roads',
-      'Smart traffic management trong Ho Chi Minh City và Hanoi',
-      'Autonomous delivery systems cho e-commerce',
-      'Self-driving public transportation systems',
-      'Emergency vehicle routing optimization',
+      'Phát triển lái xe tự hành của VinFast cho đường phố Việt Nam',
+      'Quản lý giao thông thông minh tại TP.HCM và Hà Nội',
+      'Hệ thống giao hàng tự động cho thương mại điện tử',
+      'Hệ thống giao thông công cộng tự lái',
+      'Tối ưu hóa định tuyến xe khẩn cấp',
     ],
     caseStudies: [
       {
-        title: 'VinAI Autonomous Driving Research',
-        company: 'VinGroup AI',
-        challenge:
-          'Develop autonomous driving technology adapted cho chaotic Vietnamese traffic',
+        title: 'Nghiên Cứu Lái Xe Tự Hành của VinAI',
+        organization: 'VinAI (thuộc VinGroup)',
+        problem: 'Phát triển công nghệ lái xe tự hành thích ứng với giao thông hỗn loạn của Việt Nam',
         solution:
-          'AI systems trained specifically on Vietnamese traffic data với cultural behavior modeling',
-        impact:
-          'Advanced driver assistance features deployed in VinFast vehicles',
-        technologies: [
-          'Computer Vision',
-          'Deep Learning',
-          'Sensor Fusion',
-          'Edge AI',
-        ],
+          'Các hệ thống AI được đào tạo đặc biệt trên dữ liệu giao thông Việt Nam với mô hình hóa hành vi văn hóa',
+        impact: 'Các tính năng hỗ trợ lái xe nâng cao được triển khai trên các xe VinFast',
+        innovations: ['Computer Vision', 'Deep Learning', 'Tổng hợp cảm biến', 'AI tại biên'],
       },
     ],
     resources: [
       {
-        title: 'VinAI Research Publications',
+        title: 'Các Công Bố Nghiên Cứu của VinAI',
         url: 'https://www.vinai.io/',
-        type: 'Research Papers',
+        type: 'Research',
       },
     ],
-    technologies: [
-      'Computer Vision',
-      'LiDAR',
-      'Radar',
-      'Sensor Fusion',
-      'Machine Learning',
-      'V2X Communication',
-    ],
+    technologies: ['Computer Vision', 'LiDAR', 'Radar', 'Tổng hợp cảm biến', 'Machine Learning', 'Giao tiếp V2X'],
   },
   {
     id: 'charging-infrastructure-grid-integration',
-    title: 'Charging Infrastructure & Smart Grid Integration',
+    title: 'Hạ Tầng Sạc & Tích Hợp Lưới Điện Thông Minh',
     description:
-      'Comprehensive EV charging infrastructure design, grid integration, smart charging, và Vehicle-to-Grid (V2G) technology cho sustainable energy ecosystem.',
+      'Thiết kế hạ tầng sạc xe điện toàn diện, tích hợp lưới điện, sạc thông minh và công nghệ Vehicle-to-Grid (V2G) cho hệ sinh thái năng lượng bền vững.',
     duration: '170 phút',
     difficulty: 'Nâng cao',
-    vehicleType: 'Infrastructure',
+    vehicleType: 'Hạ tầng',
+    videoUrl: 'https://www.youtube.com/watch?v=o-ZYsfNuh7M', // "Smart Grid"
+    imageUrl: 'https://images.unsplash.com/photo-1629581518335-35b658a59e61?w=1200&h=600&fit=crop',
     objectives: [
-      'Design scalable EV charging infrastructure cho Vietnamese cities',
-      'Implement smart charging algorithms cho grid load balancing',
-      'Understand V2G technology và bidirectional energy flow',
-      'Integrate renewable energy sources với charging networks',
+      'Thiết kế hạ tầng sạc xe điện có thể mở rộng cho các thành phố Việt Nam',
+      'Thực hiện các thuật toán sạc thông minh để cân bằng tải lưới điện',
+      'Hiểu công nghệ V2G và dòng năng lượng hai chiều',
+      'Tích hợp các nguồn năng lượng tái tạo với mạng lưới sạc',
     ],
     prerequisites: [
-      'Electrical power systems knowledge',
-      'Understanding của renewable energy systems',
-      'Power electronics và grid fundamentals',
-      'Energy management systems',
+      'Kiến thức về hệ thống điện',
+      'Hiểu biết về hệ thống năng lượng tái tạo',
+      'Kiến thức cơ bản về điện tử công suất và lưới điện',
+      'Hệ thống quản lý năng lượng',
     ],
+    relatedGames: evChargingGame
+      ? [
+          {
+            id: evChargingGame.id,
+            name: evChargingGame.title,
+            description: evChargingGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
-        title: 'Smart Charging Network cho Ho Chi Minh City',
-        description:
-          'Design comprehensive smart charging network với load balancing và renewable integration.',
+        title: 'Mạng Lưới Sạc Thông Minh cho TP.HCM',
+        description: 'Thiết kế mạng lưới sạc thông minh toàn diện với cân bằng tải và tích hợp năng lượng tái tạo.',
         difficulty: 'Nâng cao',
-        components: [
-          'Fast DC chargers',
-          'Smart controllers',
-          'Grid interface',
-          'Solar integration',
-        ],
-        tools: [
-          'Power system simulation',
-          'Load forecasting models',
-          'Optimization algorithms',
+        materials: [
+          'Trạm sạc nhanh DC',
+          'Bộ điều khiển thông minh',
+          'Giao diện lưới điện',
+          'Tích hợp năng lượng mặt trời',
         ],
         procedure: [
-          'Analyze current electrical grid capacity trong HCMC',
-          'Map optimal charging station locations based on traffic patterns',
-          'Design load balancing algorithms cho peak demand management',
-          'Integrate rooftop solar và battery storage systems',
-          'Implement dynamic pricing strategies',
-          'Create grid stability monitoring và emergency response protocols',
+          'Phân tích công suất lưới điện hiện tại ở TP.HCM',
+          'Lập bản đồ các vị trí trạm sạc tối ưu dựa trên các mẫu giao thông',
+          'Thiết kế các thuật toán cân bằng tải để quản lý nhu cầu cao điểm',
+          'Tích hợp các hệ thống lưu trữ pin và năng lượng mặt trời trên mái nhà',
+          'Thực hiện các chiến lược định giá động',
+          'Tạo các giao thức giám sát ổn định lưới điện và phản ứng khẩn cấp',
         ],
         expectedResults:
-          'Scalable smart charging network supporting 100,000+ EVs without grid overload',
-        solution:
-          'Hierarchical smart charging với predictive load management và distributed renewable integration',
+          'Mạng lưới sạc thông minh có thể mở rộng hỗ trợ hơn 100.000 xe điện mà không làm quá tải lưới điện',
+        solution: 'Sạc thông minh phân cấp với quản lý tải dự báo và tích hợp năng lượng tái tạo phân tán',
       },
       {
-        title: 'Vehicle-to-Grid Implementation Study',
-        description:
-          'Develop V2G system allowing EVs to provide grid services và energy storage.',
+        title: 'Nghiên Cứu Triển Khai Vehicle-to-Grid (V2G)',
+        description: 'Phát triển hệ thống V2G cho phép xe điện cung cấp dịch vụ lưới điện và lưu trữ năng lượng.',
         difficulty: 'Nâng cao',
-        components: [
-          'Bidirectional chargers',
-          'Grid services',
-          'Energy trading',
-          'Fleet management',
-        ],
-        tools: [
-          'Grid simulation software',
-          'Energy market modeling',
-          'Fleet optimization',
-        ],
+        materials: ['Bộ sạc hai chiều', 'Dịch vụ lưới điện', 'Giao dịch năng lượng', 'Quản lý đội xe'],
         procedure: [
-          'Design bidirectional charging infrastructure',
-          'Develop algorithms cho grid frequency regulation using EVs',
-          'Create energy trading marketplace cho V2G services',
-          'Implement fleet management systems cho commercial vehicles',
-          'Analyze economic benefits cho EV owners và grid operators',
-          'Test grid stability và emergency backup scenarios',
+          'Thiết kế hạ tầng sạc hai chiều',
+          'Phát triển các thuật toán điều chỉnh tần số lưới điện sử dụng xe điện',
+          'Tạo thị trường giao dịch năng lượng cho các dịch vụ V2G',
+          'Thực hiện các hệ thống quản lý đội xe cho xe thương mại',
+          'Phân tích lợi ích kinh tế cho chủ xe điện và nhà vận hành lưới điện',
+          'Kiểm tra ổn định lưới điện và các kịch bản dự phòng khẩn cấp',
         ],
-        expectedResults:
-          'V2G system providing grid services while optimizing EV owner benefits',
-        solution:
-          'Multi-stakeholder V2G platform với AI-powered optimization và fair compensation mechanisms',
+        expectedResults: 'Hệ thống V2G cung cấp dịch vụ lưới điện đồng thời tối ưu hóa lợi ích cho chủ xe điện',
+        solution: 'Nền tảng V2G đa bên với tối ưu hóa do AI cung cấp và cơ chế bồi thường công bằng',
       },
     ],
     realWorldApplications: [
-      'National EV charging infrastructure development',
-      'Smart grid modernization programs',
-      'Commercial fleet electrification',
-      'Renewable energy integration projects',
-      'Emergency power backup systems using EVs',
+      'Phát triển hạ tầng sạc xe điện quốc gia',
+      'Các chương trình hiện đại hóa lưới điện thông minh',
+      'Điện hóa đội xe thương mại',
+      'Các dự án tích hợp năng lượng tái tạo',
+      'Hệ thống dự phòng điện khẩn cấp sử dụng xe điện',
     ],
     caseStudies: [
       {
-        title: 'Vietnam National EV Charging Network',
-        company: 'EVN (Vietnam Electricity)',
-        challenge:
-          'Build national EV charging infrastructure supporting government electrification goals',
-        solution:
-          'Public-private partnership developing standardized charging network',
-        impact:
-          'Foundation cho mass EV adoption trong Vietnam with grid stability',
-        technologies: [
-          'Smart Charging',
-          'Grid Integration',
-          'Renewable Energy',
-          'Load Management',
-        ],
+        title: 'Mạng Lưới Sạc Xe Điện Quốc Gia Việt Nam',
+        organization: 'EVN (Tập đoàn Điện lực Việt Nam)',
+        problem: 'Xây dựng hạ tầng sạc xe điện quốc gia hỗ trợ các mục tiêu điện hóa của chính phủ',
+        solution: 'Đối tác công-tư phát triển mạng lưới sạc tiêu chuẩn hóa',
+        impact: 'Nền tảng cho việc áp dụng hàng loạt xe điện tại Việt Nam với sự ổn định của lưới điện',
+        innovations: ['Sạc thông minh', 'Tích hợp lưới điện', 'Năng lượng tái tạo', 'Quản lý tải'],
       },
     ],
     resources: [
       {
-        title: 'Vietnam Electricity Group',
+        title: 'Tập đoàn Điện lực Việt Nam',
         url: 'https://www.evn.com.vn/',
-        type: 'Utility Company',
+        type: 'Utility',
       },
     ],
-    technologies: [
-      'Smart Charging',
-      'V2G Technology',
-      'Grid Integration',
-      'Energy Management',
-      'Power Electronics',
-    ],
+    technologies: ['Sạc thông minh', 'Công nghệ V2G', 'Tích hợp lưới điện', 'Quản lý năng lượng', 'Điện tử công suất'],
   },
   {
     id: 'ev-manufacturing-quality-control',
-    title: 'EV Manufacturing & Quality Control Systems',
+    title: 'Sản Xuất Xe Điện & Hệ Thống Kiểm Soát Chất Lượng',
     description:
-      'Advanced manufacturing processes cho electric vehicles, quality control systems, supply chain management, và production optimization techniques.',
+      'Các quy trình sản xuất tiên tiến cho xe điện, hệ thống kiểm soát chất lượng, quản lý chuỗi cung ứng và các kỹ thuật tối ưu hóa sản xuất.',
     duration: '160 phút',
     difficulty: 'Trung bình',
-    vehicleType: 'Manufacturing',
+    vehicleType: 'Sản xuất',
+    videoUrl: 'https://www.youtube.com/watch?v=tyNGOiNcukU', // "Vinfast manufacturing"
+    imageUrl: 'https://images.unsplash.com/photo-1554230602-89524289a4a8?w=1200&h=600&fit=crop',
     objectives: [
-      'Understand EV manufacturing processes và production lines',
-      'Implement quality control systems cho battery và vehicle assembly',
-      'Design supply chain management cho EV components',
-      'Optimize production efficiency và cost management',
+      'Hiểu các quy trình sản xuất và dây chuyền sản xuất xe điện',
+      'Thực hiện các hệ thống kiểm soát chất lượng cho lắp ráp pin và xe',
+      'Thiết kế quản lý chuỗi cung ứng cho các linh kiện xe điện',
+      'Tối ưu hóa hiệu quả sản xuất và quản lý chi phí',
     ],
     prerequisites: [
-      'Manufacturing engineering basics',
-      'Quality management systems',
-      'Supply chain fundamentals',
-      'Lean manufacturing principles',
+      'Kiến thức cơ bản về kỹ thuật sản xuất',
+      'Hệ thống quản lý chất lượng',
+      'Kiến thức cơ bản về chuỗi cung ứng',
+      'Nguyên tắc sản xuất tinh gọn',
     ],
     exercises: [
       {
-        title: 'VinFast Production Line Optimization',
-        description:
-          'Analyze và optimize VinFast manufacturing processes cho increased efficiency và quality.',
+        title: 'Tối Ưu Hóa Dây Chuyền Sản Xuất VinFast',
+        description: 'Phân tích và tối ưu hóa các quy trình sản xuất của VinFast để tăng hiệu quả và chất lượng.',
         difficulty: 'Trung bình',
-        components: [
-          'Assembly line design',
-          'Quality checkpoints',
-          'Automation systems',
-          'Testing protocols',
-        ],
-        tools: [
-          'Manufacturing simulation',
-          'Quality control software',
-          'Lean tools',
-          'Statistical analysis',
+        materials: [
+          'Thiết kế dây chuyền lắp ráp',
+          'Các điểm kiểm tra chất lượng',
+          'Hệ thống tự động hóa',
+          'Giao thức kiểm tra',
         ],
         procedure: [
-          'Study VinFast current manufacturing processes',
-          'Identify bottlenecks trong production line',
-          'Design automated quality control checkpoints',
-          'Implement statistical process control methods',
-          'Optimize material flow và inventory management',
-          'Create continuous improvement programs',
+          'Nghiên cứu các quy trình sản xuất hiện tại của VinFast',
+          'Xác định các điểm nghẽn trong dây chuyền sản xuất',
+          'Thiết kế các điểm kiểm tra chất lượng tự động',
+          'Thực hiện các phương pháp kiểm soát quy trình thống kê',
+          'Tối ưu hóa dòng nguyên vật liệu và quản lý hàng tồn kho',
+          'Tạo các chương trình cải tiến liên tục',
         ],
-        expectedResults:
-          '20% improvement trong production efficiency với maintained quality standards',
-        solution:
-          'Lean manufacturing principles với Industry 4.0 automation và predictive quality control',
+        expectedResults: 'Cải thiện 20% hiệu quả sản xuất với các tiêu chuẩn chất lượng được duy trì',
+        solution: 'Các nguyên tắc sản xuất tinh gọn với tự động hóa Công nghiệp 4.0 và kiểm soát chất lượng dự báo',
       },
       {
-        title: 'EV Battery Production Quality System',
-        description:
-          'Design comprehensive quality control system cho lithium-ion battery manufacturing.',
+        title: 'Hệ Thống Chất Lượng Sản Xuất Pin Xe Điện',
+        description: 'Thiết kế hệ thống kiểm soát chất lượng toàn diện cho sản xuất pin lithium-ion.',
         difficulty: 'Nâng cao',
-        components: [
-          'Cell testing',
-          'Pack assembly',
-          'Safety validation',
-          'Lifecycle testing',
-        ],
-        tools: [
-          'Battery testing equipment',
-          'Data analytics',
-          'Failure analysis',
-          'Automated inspection',
-        ],
+        materials: ['Kiểm tra cell pin', 'Lắp ráp bộ pin', 'Xác nhận an toàn', 'Kiểm tra vòng đời'],
         procedure: [
-          'Design incoming material inspection protocols',
-          'Implement in-line testing during cell production',
-          'Create battery pack assembly quality gates',
-          'Develop accelerated aging test procedures',
-          'Implement traceability systems cho quality tracking',
-          'Design recall prevention và root cause analysis systems',
+          'Thiết kế các giao thức kiểm tra nguyên vật liệu đầu vào',
+          'Thực hiện kiểm tra nội tuyến trong quá trình sản xuất cell pin',
+          'Tạo các cổng chất lượng lắp ráp bộ pin',
+          'Phát triển các quy trình kiểm tra lão hóa cấp tốc',
+          'Thực hiện các hệ thống truy xuất nguồn gốc để theo dõi chất lượng',
+          'Thiết kế các hệ thống phòng ngừa thu hồi và phân tích nguyên nhân gốc rễ',
         ],
-        expectedResults: '99.9% battery quality với zero safety incidents',
-        solution:
-          'Multi-layer quality system với AI-powered defect detection và predictive analytics',
+        expectedResults: 'Chất lượng pin 99,9% không có sự cố an toàn',
+        solution: 'Hệ thống chất lượng đa lớp với phát hiện lỗi do AI cung cấp và phân tích dự báo',
       },
     ],
     realWorldApplications: [
-      'VinFast vehicle manufacturing optimization',
-      'Battery production facilities setup',
-      'Supplier quality management programs',
-      'Production cost reduction initiatives',
-      'Manufacturing workforce training programs',
+      'Tối ưu hóa sản xuất xe của VinFast',
+      'Thiết lập các cơ sở sản xuất pin',
+      'Các chương trình quản lý chất lượng nhà cung cấp',
+      'Các sáng kiến giảm chi phí sản xuất',
+      'Các chương trình đào tạo nhân lực sản xuất',
     ],
     caseStudies: [
       {
-        title: 'VinFast Smart Manufacturing Initiative',
-        company: 'VinFast',
-        challenge:
-          'Scale up production while maintaining international quality standards',
-        solution:
-          'Implement Industry 4.0 technologies với Vietnamese workforce development',
-        impact: 'World-class manufacturing facility competing globally',
-        technologies: [
-          'Smart Manufacturing',
-          'Quality Control',
-          'Automation',
-          'Data Analytics',
-        ],
+        title: 'Sáng Kiến Sản Xuất Thông Minh của VinFast',
+        organization: 'VinFast',
+        problem: 'Mở rộng quy mô sản xuất trong khi vẫn duy trì các tiêu chuẩn chất lượng quốc tế',
+        solution: 'Thực hiện các công nghệ Công nghiệp 4.0 với phát triển nguồn nhân lực Việt Nam',
+        impact: 'Cơ sở sản xuất đẳng cấp thế giới cạnh tranh toàn cầu',
+        innovations: ['Sản xuất thông minh', 'Kiểm soát chất lượng', 'Tự động hóa', 'Phân tích dữ liệu'],
       },
     ],
     resources: [
       {
-        title: 'VinFast Manufacturing Innovation',
+        title: 'Đổi Mới Sản Xuất của VinFast',
         url: 'https://vinfastauto.com/',
-        type: 'Industry Case Study',
+        type: 'CaseStudy',
       },
     ],
     technologies: [
-      'Smart Manufacturing',
-      'Quality Control',
-      'Automation',
-      'Supply Chain Management',
-      'Industry 4.0',
+      'Sản xuất thông minh',
+      'Kiểm soát chất lượng',
+      'Tự động hóa',
+      'Quản lý chuỗi cung ứng',
+      'Công nghiệp 4.0',
     ],
   },
 ];

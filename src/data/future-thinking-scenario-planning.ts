@@ -1,3 +1,4 @@
+import { EDUCATIONAL_GAMES_DATA, EducationalGame } from './educationalGames';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 export interface FutureThinkingLessonType extends BaseLessonData {
@@ -16,441 +17,471 @@ export interface FutureThinkingLessonType extends BaseLessonData {
 export const futureThinkingLessons: FutureThinkingLessonType[] = [
   {
     id: 'futures-thinking-fundamentals',
-    title: 'Cơ Bản Tư Duy Tương Lai',
-    description: 'Học cách tư duy về tương lai một cách có hệ thống, từ trend analysis đến scenario planning cho quyết định tốt hơn.',
+    title: 'Bài 1: Cơ Bản về Tư Duy Tương Lai',
+    description:
+      'Học cách tư duy về tương lai một cách có hệ thống, từ phân tích xu hướng đến lập kế hoạch kịch bản để ra quyết định tốt hơn.',
     duration: '120 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Futures Thinking and Strategic Planning
     imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop',
     objectives: [
-      'Hiểu về futures thinking và strategic foresight',
-      'Nắm vững các phương pháp phân tích trend',
-      'Phát triển kỹ năng thinking về multiple futures',
-      'Áp dụng foresight vào planning cá nhân và professional'
+      'Hiểu về tư duy tương lai và tầm nhìn chiến lược',
+      'Nắm vững các phương pháp phân tích xu hướng',
+      'Phát triển kỹ năng tư duy về nhiều tương lai khả dĩ',
+      'Áp dụng tầm nhìn xa vào kế hoạch cá nhân và nghề nghiệp',
     ],
-    prerequisites: [
-      'Có khả năng critical thinking cơ bản',
-      'Quan tâm đến trends và changes trong xã hội'
-    ],
+    prerequisites: ['Có khả năng tư duy phản biện cơ bản', 'Quan tâm đến các xu hướng và thay đổi trong xã hội'],
     scenarioMethods: [
-      'Cross-Impact Analysis',
-      'Morphological Analysis', 
-      'Trend Impact Analysis',
-      'Wild Cards và Weak Signals'
+      'Phân tích tác động chéo (Cross-Impact Analysis)',
+      'Phân tích hình thái (Morphological Analysis)',
+      'Phân tích tác động xu hướng (Trend Impact Analysis)',
+      'Các yếu tố bất ngờ và Tín hiệu yếu (Wild Cards and Weak Signals)',
     ],
     trendAnalysisFrameworks: [
-      'STEEP Analysis (Social, Technological, Economic, Environmental, Political)',
-      'Three Horizons Framework',
-      'Hype Cycle Analysis',
-      'S-Curve Technology Adoption'
+      'Phân tích STEEP (Xã hội, Công nghệ, Kinh tế, Môi trường, Chính trị)',
+      'Khung Ba Chân trời (Three Horizons Framework)',
+      'Phân tích Chu kỳ Hype (Hype Cycle Analysis)',
+      'Đường cong S tiếp nhận công nghệ (S-Curve Technology Adoption)',
     ],
     uncertaintyFactors: [
-      'Technological disruption',
-      'Social và cultural shifts',
-      'Economic cycles và crises',
-      'Environmental changes',
-      'Political instability',
-      'Demographic transitions'
+      'Sự đột phá công nghệ',
+      'Sự thay đổi xã hội và văn hóa',
+      'Chu kỳ và khủng hoảng kinh tế',
+      'Thay đổi môi trường',
+      'Bất ổn chính trị',
+      'Chuyển đổi nhân khẩu học',
     ],
     futuringTechniques: [
       {
-        name: 'Scenario Planning',
-        description: 'Tạo ra multiple plausible futures để test strategies',
+        name: 'Lập kế hoạch Kịch bản (Scenario Planning)',
+        description: 'Tạo ra nhiều tương lai hợp lý để kiểm tra các chiến lược',
         timeHorizon: '5-20 năm',
-        bestUseCases: ['Strategic planning', 'Risk assessment', 'Innovation planning'],
+        bestUseCases: ['Lập kế hoạch chiến lược', 'Đánh giá rủi ro', 'Lập kế hoạch đổi mới'],
         steps: [
-          'Xác định focal question',
-          'Identify key driving forces',
-          'Develop scenario frameworks',
-          'Build detailed scenarios',
-          'Test implications',
-          'Monitor indicators'
-        ]
+          'Xác định câu hỏi trọng tâm',
+          'Xác định các động lực chính',
+          'Phát triển khung kịch bản',
+          'Xây dựng kịch bản chi tiết',
+          'Kiểm tra các hàm ý',
+          'Theo dõi các chỉ số',
+        ],
       },
       {
-        name: 'Backcasting',
-        description: 'Bắt đầu từ desired future và work backwards',
+        name: 'Hoạch định ngược (Backcasting)',
+        description: 'Bắt đầu từ một tương lai mong muốn và làm việc ngược lại',
         timeHorizon: '10-50 năm',
-        bestUseCases: ['Sustainability planning', 'Vision achievement', 'System transformation'],
+        bestUseCases: ['Lập kế hoạch bền vững', 'Đạt được tầm nhìn', 'Chuyển đổi hệ thống'],
         steps: [
-          'Define desired future state',
-          'Identify major milestones',
-          'Map required changes',
-          'Analyze barriers',
-          'Develop action pathways',
-          'Create implementation timeline'
-        ]
+          'Xác định trạng thái tương lai mong muốn',
+          'Xác định các cột mốc quan trọng',
+          'Vạch ra những thay đổi cần thiết',
+          'Phân tích các rào cản',
+          'Phát triển các lộ trình hành động',
+          'Tạo dòng thời gian thực hiện',
+        ],
       },
       {
-        name: 'Trend Extrapolation',
-        description: 'Project current trends into future với modifications',
+        name: 'Ngoại suy Xu hướng (Trend Extrapolation)',
+        description: 'Phóng chiếu các xu hướng hiện tại vào tương lai với các sửa đổi',
         timeHorizon: '1-10 năm',
-        bestUseCases: ['Market forecasting', 'Technology roadmapping', 'Demographic planning'],
+        bestUseCases: ['Dự báo thị trường', 'Lộ trình công nghệ', 'Kế hoạch nhân khẩu học'],
         steps: [
-          'Collect historical data',
-          'Identify trend patterns',
-          'Analyze driving factors',
-          'Project trajectories',
-          'Account for inflection points',
-          'Validate assumptions'
-        ]
-      }
+          'Thu thập dữ liệu lịch sử',
+          'Xác định các mẫu xu hướng',
+          'Phân tích các yếu tố thúc đẩy',
+          'Phóng chiếu quỹ đạo',
+          'Tính đến các điểm uốn',
+          'Xác thực các giả định',
+        ],
+      },
     ],
     exercises: [
       {
-        title: 'Personal Future Scenario Planning',
-        description: 'Tạo scenarios cho career path trong 5-10 năm tới',
+        title: 'Lập Kế hoạch Kịch bản Tương lai Cá nhân',
+        description: 'Tạo các kịch bản cho con đường sự nghiệp của bạn trong 5-10 năm tới',
         difficulty: 'Trung bình',
-        materials: ['Trend research tools', 'Scenario template', 'Career assessment'],
+        materials: ['Công cụ nghiên cứu xu hướng', 'Mẫu kịch bản', 'Đánh giá nghề nghiệp'],
         procedure: [
-          'Analyze current trends affecting your industry',
-          'Identify 2 key uncertainties (e.g., AI impact, remote work)',
-          'Create 4 scenarios using 2x2 matrix',
-          'Develop detailed narratives cho mỗi scenario',
-          'Identify skills needed trong mỗi scenario',
-          'Create adaptive strategy across scenarios'
+          'Phân tích các xu hướng hiện tại ảnh hưởng đến ngành của bạn',
+          'Xác định 2 yếu tố không chắc chắn chính (ví dụ: tác động của AI, làm việc từ xa)',
+          'Tạo 4 kịch bản bằng ma trận 2x2',
+          'Phát triển các câu chuyện chi tiết cho mỗi kịch bản',
+          'Xác định các kỹ năng cần thiết trong mỗi kịch bản',
+          'Tạo chiến lược thích ứng trên các kịch bản',
         ],
-        expectedResults: 'Robust career strategy prepared cho multiple futures',
-        solution: 'Focus on transferable skills và adaptability, maintain portfolio approach to career development.'
+        expectedResults: 'Chiến lược nghề nghiệp vững chắc được chuẩn bị cho nhiều tương lai',
+        solution:
+          'Tập trung vào các kỹ năng có thể chuyển đổi và khả năng thích ứng, duy trì cách tiếp cận danh mục đầu tư cho phát triển sự nghiệp.',
       },
       {
-        title: 'Vietnam 2040 Scenario Workshop',
-        description: 'Collaborative scenario building cho Vietnam\'s future',
+        title: 'Hội thảo Kịch bản Việt Nam 2040',
+        description: 'Xây dựng kịch bản hợp tác cho tương lai của Việt Nam',
         difficulty: 'Nâng cao',
-        materials: ['Research về Vietnam trends', 'Group collaboration tools'],
+        materials: ['Nghiên cứu về các xu hướng của Việt Nam', 'Công cụ cộng tác nhóm'],
         procedure: [
-          'Research Vietnam\'s current major trends (economics, demographics, technology)',
-          'Identify top 3 uncertainties facing Vietnam',
-          'Form teams to develop different scenarios',
-          'Build detailed 2040 scenarios',
-          'Present scenarios với implications',
-          'Identify early warning indicators'
+          'Nghiên cứu các xu hướng lớn hiện tại của Việt Nam (kinh tế, nhân khẩu học, công nghệ)',
+          'Xác định 3 yếu tố không chắc chắn hàng đầu mà Việt Nam phải đối mặt',
+          'Thành lập các nhóm để phát triển các kịch bản khác nhau',
+          'Xây dựng các kịch bản chi tiết cho năm 2040',
+          'Trình bày các kịch bản với các hàm ý',
+          'Xác định các chỉ số cảnh báo sớm',
         ],
-        expectedResults: 'Comprehensive understanding của Vietnam\'s possible futures',
-        solution: 'Consider interactions between trends, account for global influences, focus on actionable insights.'
+        expectedResults: 'Hiểu biết toàn diện về các tương lai có thể có của Việt Nam',
+        solution:
+          'Xem xét sự tương tác giữa các xu hướng, tính đến các ảnh hưởng toàn cầu, tập trung vào các hiểu biết có thể hành động.',
       },
       {
-        title: 'Technology Impact Assessment',
-        description: 'Assess potential impact của emerging technology',
+        title: 'Đánh giá Tác động Công nghệ',
+        description: 'Đánh giá tác động tiềm tàng của công nghệ mới nổi',
         difficulty: 'Nâng cao',
-        materials: ['Technology research', 'Impact assessment framework'],
+        materials: ['Nghiên cứu công nghệ', 'Khung đánh giá tác động'],
         procedure: [
-          'Choose một emerging technology (quantum computing, synthetic biology, etc.)',
-          'Map current state và development trajectory',
-          'Identify potential applications và use cases',
-          'Analyze societal impacts (positive và negative)',
-          'Develop adoption scenarios',
-          'Recommend preparation strategies'
+          'Chọn một công nghệ mới nổi (điện toán lượng tử, sinh học tổng hợp, v.v.)',
+          'Vạch ra trạng thái hiện tại và quỹ đạo phát triển',
+          'Xác định các ứng dụng và trường hợp sử dụng tiềm năng',
+          'Phân tích các tác động xã hội (tích cực và tiêu cực)',
+          'Phát triển các kịch bản áp dụng',
+          'Đề xuất các chiến lược chuẩn bị',
         ],
-        expectedResults: 'Comprehensive technology foresight analysis',
-        solution: 'Consider non-linear adoption patterns, second-order effects, và ethical implications.'
-      }
+        expectedResults: 'Phân tích tầm nhìn xa công nghệ toàn diện',
+        solution: 'Xem xét các mô hình áp dụng phi tuyến tính, các hiệu ứng bậc hai và các hàm ý đạo đức.',
+      },
     ],
     realWorldApplications: [
-      'Strategic planning trong business',
-      'Career development và skill planning',
-      'Investment decisions với long-term perspective',
-      'Policy making và governance',
-      'Innovation management và R&D prioritization'
+      'Lập kế hoạch chiến lược trong kinh doanh',
+      'Phát triển sự nghiệp và lập kế hoạch kỹ năng',
+      'Quyết định đầu tư với góc nhìn dài hạn',
+      'Hoạch định chính sách và quản trị',
+      'Quản lý đổi mới và ưu tiên R&D',
     ],
     caseStudies: [
       {
-        title: 'Shell\'s Energy Scenarios',
+        title: 'Các Kịch bản Năng lượng của Shell',
         organization: 'Royal Dutch Shell',
-        problem: 'Cần strategic direction trong volatile energy market',
-        solution: '50+ years của scenario planning for energy futures',
-        impact: 'Better preparedness cho oil crises, renewable transition',
-        innovations: ['Multi-decade scenario planning', 'Global energy modeling', 'Stakeholder engagement', 'Adaptive strategy development']
+        problem: 'Cần định hướng chiến lược trong thị trường năng lượng biến động',
+        solution: 'Hơn 50 năm lập kế hoạch kịch bản cho tương lai năng lượng',
+        impact: 'Chuẩn bị tốt hơn cho các cuộc khủng hoảng dầu mỏ, chuyển đổi sang năng lượng tái tạo',
+        innovations: [
+          'Lập kế hoạch kịch bản nhiều thập kỷ',
+          'Mô hình hóa năng lượng toàn cầu',
+          'Tương tác với các bên liên quan',
+          'Phát triển chiến lược thích ứng',
+        ],
       },
       {
-        title: 'Singapore\'s Smart Nation Vision',
-        organization: 'Singapore Government',
-        problem: 'Planning for future challenges trong small island state',
-        solution: 'Comprehensive foresight program và scenario planning',
-        impact: 'Successful digital transformation và future preparedness',
-        innovations: ['Whole-of-government foresight', 'Citizen engagement', 'Technology integration', 'Adaptive governance']
-      }
+        title: 'Tầm nhìn Quốc gia Thông minh của Singapore',
+        organization: 'Chính phủ Singapore',
+        problem: 'Lập kế hoạch cho các thách thức trong tương lai ở một quốc đảo nhỏ',
+        solution: 'Chương trình tầm nhìn xa toàn diện và lập kế hoạch kịch bản',
+        impact: 'Chuyển đổi số thành công và chuẩn bị cho tương lai',
+        innovations: [
+          'Tầm nhìn xa toàn chính phủ',
+          'Sự tham gia của công dân',
+          'Tích hợp công nghệ',
+          'Quản trị thích ứng',
+        ],
+      },
     ],
     resources: [
       {
-        title: 'World Future Society',
+        title: 'Hiệp hội Tương lai Thế giới (World Future Society)',
         url: 'https://www.worldfuture.org',
-        type: 'Community'
+        type: 'Cộng đồng',
       },
       {
-        title: 'Institute for the Future',
+        title: 'Viện Nghiên cứu Tương lai (Institute for the Future)',
         url: 'https://www.iftf.org',
-        type: 'Research'
+        type: 'Nghiên cứu',
       },
       {
-        title: 'Global Business Network',
+        title: 'Mạng lưới Kinh doanh Toàn cầu (Global Business Network)',
         url: 'https://www.gbn.com',
-        type: 'Consulting'
-      }
+        type: 'Tư vấn',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'treasure-hunt-adventure'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
     ]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'weak-signals-trend-spotting',
-    title: 'Phát Hiện Tín Hiệu Yếu và Xu Hướng',
-    description: 'Học cách nhận diện early signals của change và emerging trends trước khi chúng trở nên mainstream.',
+    title: 'Bài 2: Phát Hiện Tín Hiệu Yếu và Xu Hướng',
+    description:
+      'Học cách nhận diện các tín hiệu sớm của sự thay đổi và các xu hướng mới nổi trước khi chúng trở nên phổ biến.',
     duration: '90 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=bbcOTT-1oWw', // Trend Spotting and Weak Signals
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop',
     objectives: [
-      'Hiểu về weak signals và early indicators',
-      'Phát triển skills để spot emerging trends',
-      'Tạo personal trend monitoring system',
-      'Convert insights thành actionable intelligence'
+      'Hiểu về tín hiệu yếu và các chỉ báo sớm',
+      'Phát triển kỹ năng để phát hiện các xu hướng mới nổi',
+      'Tạo hệ thống theo dõi xu hướng cá nhân',
+      'Chuyển đổi hiểu biết thành thông tin tình báo có thể hành động',
     ],
-    prerequisites: [
-      'Đã hoàn thành Cơ Bản Tư Duy Tương Lai',
-      'Có habit đọc news và follow trends'
-    ],
+    prerequisites: ['Đã hoàn thành "Cơ Bản về Tư Duy Tương Lai"', 'Có thói quen đọc tin tức và theo dõi các xu hướng'],
     scenarioMethods: [
-      'Environmental Scanning',
-      'Signal Detection Algorithms',
-      'Pattern Recognition',
-      'Network Analysis'
+      'Quét môi trường (Environmental Scanning)',
+      'Thuật toán phát hiện tín hiệu (Signal Detection Algorithms)',
+      'Nhận dạng mẫu (Pattern Recognition)',
+      'Phân tích mạng lưới (Network Analysis)',
     ],
     trendAnalysisFrameworks: [
-      'VERGE Framework (Values, Energy, Resources, Governance, Education)',
-      'Emerging Issues Analysis',
-      'Technology Readiness Assessment',
-      'Social Network Trend Analysis'
+      'Khung VERGE (Giá trị, Năng lượng, Tài nguyên, Quản trị, Giáo dục)',
+      'Phân tích các vấn đề mới nổi (Emerging Issues Analysis)',
+      'Đánh giá mức độ sẵn sàng của công nghệ (Technology Readiness Assessment)',
+      'Phân tích xu hướng mạng xã hội (Social Network Trend Analysis)',
     ],
     uncertaintyFactors: [
-      'Information noise và misinformation',
-      'Confirmation bias trong trend interpretation',
-      'Linear thinking về non-linear changes',
-      'Cultural blind spots'
+      'Nhiễu thông tin và thông tin sai lệch',
+      'Thiên vị xác nhận trong việc giải thích xu hướng',
+      'Tư duy tuyến tính về những thay đổi phi tuyến tính',
+      'Điểm mù văn hóa',
     ],
     futuringTechniques: [
       {
-        name: 'Environmental Scanning',
-        description: 'Systematic monitoring của external environment for changes',
-        timeHorizon: 'Continuous',
-        bestUseCases: ['Strategic intelligence', 'Innovation opportunities', 'Risk early warning'],
+        name: 'Quét Môi trường (Environmental Scanning)',
+        description: 'Giám sát có hệ thống môi trường bên ngoài để tìm kiếm những thay đổi',
+        timeHorizon: 'Liên tục',
+        bestUseCases: ['Tình báo chiến lược', 'Cơ hội đổi mới', 'Cảnh báo sớm rủi ro'],
         steps: [
-          'Define scanning domains',
-          'Identify information sources',
-          'Create monitoring systems',
-          'Filter và categorize signals',
-          'Analyze patterns',
-          'Report insights'
-        ]
+          'Xác định các lĩnh vực quét',
+          'Xác định các nguồn thông tin',
+          'Tạo hệ thống giám sát',
+          'Lọc và phân loại tín hiệu',
+          'Phân tích các mẫu',
+          'Báo cáo thông tin chi tiết',
+        ],
       },
       {
-        name: 'Delphi Method',
-        description: 'Expert consensus building về future developments',
-        timeHorizon: '6 months - 5 years',
-        bestUseCases: ['Expert forecasting', 'Uncertainty reduction', 'Priority setting'],
+        name: 'Phương pháp Delphi',
+        description: 'Xây dựng sự đồng thuận của chuyên gia về các phát triển trong tương lai',
+        timeHorizon: '6 tháng - 5 năm',
+        bestUseCases: ['Dự báo của chuyên gia', 'Giảm sự không chắc chắn', 'Thiết lập ưu tiên'],
         steps: [
-          'Select expert panel',
-          'Design questionnaire rounds',
-          'Collect initial responses',
-          'Provide feedback',
-          'Iterate until consensus',
-          'Synthesize findings'
-        ]
-      }
+          'Chọn hội đồng chuyên gia',
+          'Thiết kế các vòng câu hỏi',
+          'Thu thập các câu trả lời ban đầu',
+          'Cung cấp phản hồi',
+          'Lặp lại cho đến khi đạt được sự đồng thuận',
+          'Tổng hợp các phát hiện',
+        ],
+      },
     ],
     exercises: [
       {
-        title: 'Personal Trend Radar',
-        description: 'Build personal system để monitor trends relevant to your goals',
+        title: 'Radar Xu hướng Cá nhân',
+        description: 'Xây dựng hệ thống cá nhân để theo dõi các xu hướng liên quan đến mục tiêu của bạn',
         difficulty: 'Trung bình',
-        materials: ['RSS feeds', 'Social media monitoring', 'News aggregators'],
+        materials: ['Nguồn cấp RSS', 'Theo dõi mạng xã hội', 'Công cụ tổng hợp tin tức'],
         procedure: [
-          'Define your interests và focus areas',
-          'Identify diverse information sources',
-          'Set up automated monitoring systems',
-          'Create filtering và categorization system',
-          'Weekly trend review routine',
-          'Monthly pattern analysis'
+          'Xác định sở thích và lĩnh vực trọng tâm của bạn',
+          'Xác định các nguồn thông tin đa dạng',
+          'Thiết lập hệ thống giám sát tự động',
+          'Tạo hệ thống lọc và phân loại',
+          'Thói quen xem xét xu hướng hàng tuần',
+          'Phân tích mẫu hàng tháng',
         ],
-        expectedResults: 'Personalized early warning system for relevant trends',
-        solution: 'Balance automation with human insight, diversify sources, focus on quality over quantity.'
+        expectedResults: 'Hệ thống cảnh báo sớm được cá nhân hóa cho các xu hướng liên quan',
+        solution:
+          'Cân bằng tự động hóa với sự sáng suốt của con người, đa dạng hóa các nguồn, tập trung vào chất lượng hơn số lượng.',
       },
       {
-        title: 'Weak Signal Investigation',
-        description: 'Deep dive into một weak signal to assess potential impact',
+        title: 'Điều tra Tín hiệu Yếu',
+        description: 'Đi sâu vào một tín hiệu yếu để đánh giá tác động tiềm tàng',
         difficulty: 'Nâng cao',
-        materials: ['Research tools', 'Analysis framework'],
+        materials: ['Công cụ nghiên cứu', 'Khung phân tích'],
         procedure: [
-          'Identify một interesting weak signal',
-          'Research historical context',
-          'Map stakeholders và interests',
-          'Analyze driving forces',
-          'Assess potential trajectories',
-          'Estimate timeline và impact'
+          'Xác định một tín hiệu yếu thú vị',
+          'Nghiên cứu bối cảnh lịch sử',
+          'Vạch ra các bên liên quan và lợi ích',
+          'Phân tích các động lực thúc đẩy',
+          'Đánh giá các quỹ đạo tiềm năng',
+          'Ước tính dòng thời gian và tác động',
         ],
-        expectedResults: 'Comprehensive assessment của weak signal potential',
-        solution: 'Look for convergence with other signals, consider network effects, validate với multiple sources.'
-      }
+        expectedResults: 'Đánh giá toàn diện về tiềm năng của tín hiệu yếu',
+        solution: 'Tìm kiếm sự hội tụ với các tín hiệu khác, xem xét hiệu ứng mạng lưới, xác thực với nhiều nguồn.',
+      },
     ],
     realWorldApplications: [
-      'Innovation opportunity identification',
-      'Investment timing và market entry',
-      'Risk management và contingency planning',
-      'Product development roadmapping',
-      'Competitive intelligence'
+      'Xác định cơ hội đổi mới',
+      'Thời điểm đầu tư và thâm nhập thị trường',
+      'Quản lý rủi ro và lập kế hoạch dự phòng',
+      'Lộ trình phát triển sản phẩm',
+      'Tình báo cạnh tranh',
     ],
     caseStudies: [
       {
-        title: 'Netflix và Streaming Trend',
+        title: 'Netflix và Xu hướng Phát trực tuyến',
         organization: 'Netflix',
-        problem: 'Transition từ DVD rental sang digital future',
-        solution: 'Early recognition của streaming potential',
-        impact: 'Market leadership trong streaming industry',
-        innovations: ['Data-driven trend analysis', 'Scenario-based planning', 'Bold strategic pivots', 'Technology adoption foresight']
-      }
+        problem: 'Chuyển đổi từ cho thuê DVD sang tương lai kỹ thuật số',
+        solution: 'Nhận ra sớm tiềm năng của phát trực tuyến',
+        impact: 'Dẫn đầu thị trường trong ngành công nghiệp phát trực tuyến',
+        innovations: [
+          'Phân tích xu hướng dựa trên dữ liệu',
+          'Lập kế hoạch dựa trên kịch bản',
+          'Các trục chiến lược táo bạo',
+          'Tầm nhìn xa về việc áp dụng công nghệ',
+        ],
+      },
     ],
     resources: [
       {
         title: 'Trend Hunter',
         url: 'https://www.trendhunter.com',
-        type: 'Platform'
+        type: 'Nền tảng',
       },
       {
         title: 'Futures Platform',
         url: 'https://www.futuresplatform.com',
-        type: 'Tools'
-      }
+        type: 'Công cụ',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-prompt-challenge'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge'),
     ]
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'personal-strategic-planning',
-    title: 'Kế Hoạch Chiến Lược Cá Nhân',
-    description: 'Áp dụng strategic foresight vào personal development, career planning và life design với perspective dài hạn.',
+    title: 'Bài 3: Kế Hoạch Chiến Lược Cá Nhân',
+    description:
+      'Áp dụng tầm nhìn chiến lược vào phát triển cá nhân, lập kế hoạch sự nghiệp và thiết kế cuộc sống với góc nhìn dài hạn.',
     duration: '110 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=LO1mTELoj6o', // Personal Strategic Planning
     imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=600&fit=crop',
     objectives: [
-      'Apply futures thinking vào personal planning',
-      'Tạo adaptive life strategy',
-      'Develop antifragile personal systems',
-      'Build capability for continuous reinvention'
+      'Áp dụng tư duy tương lai vào kế hoạch cá nhân',
+      'Tạo ra một chiến lược sống thích ứng',
+      'Phát triển các hệ thống cá nhân chống mong manh (antifragile)',
+      'Xây dựng năng lực để liên tục tái tạo bản thân',
     ],
-    prerequisites: [
-      'Đã hoàn thành các lessons trước',
-      'Có motivation for long-term personal development'
-    ],
+    prerequisites: ['Đã hoàn thành các bài học trước', 'Có động lực phát triển cá nhân dài hạn'],
     scenarioMethods: [
-      'Personal SWOT Future Analysis',
-      'Life Path Scenario Building',
-      'Skills Portfolio Planning',
-      'Network Effect Analysis'
+      'Phân tích SWOT Tương lai Cá nhân',
+      'Xây dựng Kịch bản Lộ trình Cuộc đời',
+      'Lập kế hoạch Danh mục Kỹ năng',
+      'Phân tích Hiệu ứng Mạng lưới',
     ],
     trendAnalysisFrameworks: [
-      'Personal Future Wheel',
-      'Life Domain Analysis',
-      'Capability Building Roadmap',
-      'Opportunity Cost Assessment'
+      'Bánh xe Tương lai Cá nhân',
+      'Phân tích Lĩnh vực Cuộc sống',
+      'Lộ trình Xây dựng Năng lực',
+      'Đánh giá Chi phí Cơ hội',
     ],
     uncertaintyFactors: [
-      'Career disruption risk',
-      'Technology replacement threats',
-      'Economic volatility',
-      'Health và life changes',
-      'Family obligations',
-      'Geographic mobility needs'
+      'Rủi ro gián đoạn sự nghiệp',
+      'Các mối đe dọa thay thế công nghệ',
+      'Biến động kinh tế',
+      'Những thay đổi về sức khỏe và cuộc sống',
+      'Nghĩa vụ gia đình',
+      'Nhu cầu di chuyển địa lý',
     ],
     futuringTechniques: [
       {
-        name: 'Life Design Thinking',
-        description: 'Apply design thinking principles to life planning',
-        timeHorizon: '1-10 years',
-        bestUseCases: ['Career transitions', 'Life purpose discovery', 'Major decisions'],
+        name: 'Tư duy Thiết kế Cuộc sống (Life Design Thinking)',
+        description: 'Áp dụng các nguyên tắc tư duy thiết kế vào việc lập kế hoạch cuộc sống',
+        timeHorizon: '1-10 năm',
+        bestUseCases: ['Chuyển đổi nghề nghiệp', 'Khám phá mục đích sống', 'Các quyết định lớn'],
         steps: [
-          'Empathize với future self',
-          'Define desired outcomes',
-          'Ideate possible paths',
-          'Prototype experiences',
-          'Test assumptions',
-          'Iterate strategy'
-        ]
+          'Đồng cảm với bản thân trong tương lai',
+          'Xác định kết quả mong muốn',
+          'Lên ý tưởng về các con đường khả thi',
+          'Tạo mẫu trải nghiệm',
+          'Kiểm tra các giả định',
+          'Lặp lại chiến lược',
+        ],
       },
       {
-        name: 'Optionality Strategy',
-        description: 'Build multiple options to benefit từ uncertainty',
-        timeHorizon: '2-20 years',
-        bestUseCases: ['Risk management', 'Opportunity maximization', 'Flexibility preservation'],
+        name: 'Chiến lược Tùy chọn (Optionality Strategy)',
+        description: 'Xây dựng nhiều lựa chọn để hưởng lợi từ sự không chắc chắn',
+        timeHorizon: '2-20 năm',
+        bestUseCases: ['Quản lý rủi ro', 'Tối đa hóa cơ hội', 'Bảo toàn sự linh hoạt'],
         steps: [
-          'Identify key uncertainties',
-          'Map potential opportunities',
-          'Build enabling capabilities',
-          'Maintain multiple options',
-          'Monitor triggering events',
-          'Exercise options optimally'
-        ]
-      }
+          'Xác định các yếu tố không chắc chắn chính',
+          'Vạch ra các cơ hội tiềm năng',
+          'Xây dựng các năng lực hỗ trợ',
+          'Duy trì nhiều lựa chọn',
+          'Theo dõi các sự kiện kích hoạt',
+          'Thực hiện các lựa chọn một cách tối ưu',
+        ],
+      },
     ],
     exercises: [
       {
-        title: 'Future Self Visioning',
-        description: 'Create detailed vision của desired future self trong multiple scenarios',
+        title: 'Tầm nhìn Bản thân Tương lai',
+        description: 'Tạo ra một tầm nhìn chi tiết về bản thân mong muốn trong tương lai trong nhiều kịch bản',
         difficulty: 'Cơ bản',
-        materials: ['Vision board tools', 'Reflection questions'],
+        materials: ['Công cụ bảng tầm nhìn', 'Câu hỏi phản ánh'],
         procedure: [
-          'Imagine yourself 10 years từ now',
-          'Describe ideal day trong detail',
-          'Identify required capabilities',
-          'Map current gaps',
-          'Design development pathway',
-          'Create accountability system'
+          'Tưởng tượng bản thân sau 10 năm nữa',
+          'Mô tả chi tiết một ngày lý tưởng',
+          'Xác định các năng lực cần thiết',
+          'Vạch ra những khoảng trống hiện tại',
+          'Thiết kế lộ trình phát triển',
+          'Tạo hệ thống trách nhiệm',
         ],
-        expectedResults: 'Clear vision và actionable development plan',
-        solution: 'Be specific và vivid, focus on intrinsic values, plan for multiple scenarios.'
+        expectedResults: 'Tầm nhìn rõ ràng và kế hoạch phát triển có thể hành động',
+        solution: 'Hãy cụ thể và sống động, tập trung vào các giá trị nội tại, lập kế hoạch cho nhiều kịch bản.',
       },
       {
-        title: 'Antifragile Career Design',
-        description: 'Design career strategy that benefits từ volatility',
+        title: 'Thiết kế Sự nghiệp Chống Mong manh (Antifragile)',
+        description: 'Thiết kế một chiến lược sự nghiệp có lợi từ sự biến động',
         difficulty: 'Nâng cao',
-        materials: ['Industry analysis', 'Skills assessment'],
+        materials: ['Phân tích ngành', 'Đánh giá kỹ năng'],
         procedure: [
-          'Analyze career disruption risks',
-          'Identify antifragile career elements',
-          'Build diverse skill portfolio',
-          'Create multiple income streams',
-          'Develop adaptive capacity',
-          'Test resilience regularly'
+          'Phân tích rủi ro gián đoạn sự nghiệp',
+          'Xác định các yếu tố sự nghiệp chống mong manh',
+          'Xây dựng danh mục kỹ năng đa dạng',
+          'Tạo nhiều nguồn thu nhập',
+          'Phát triển năng lực thích ứng',
+          'Kiểm tra khả năng phục hồi thường xuyên',
         ],
-        expectedResults: 'Robust career strategy for uncertain future',
-        solution: 'Focus on transferable skills, build strong network, maintain learning mindset.'
-      }
+        expectedResults: 'Chiến lược sự nghiệp vững chắc cho một tương lai không chắc chắn',
+        solution: 'Tập trung vào các kỹ năng có thể chuyển đổi, xây dựng mạng lưới vững chắc, duy trì tư duy học hỏi.',
+      },
     ],
     realWorldApplications: [
-      'Career transition planning',
-      'Skill development prioritization',
-      'Financial planning với uncertainty',
-      'Relationship và family planning',
-      'Health và wellness long-term strategy'
+      'Lập kế hoạch chuyển đổi nghề nghiệp',
+      'Ưu tiên phát triển kỹ năng',
+      'Lập kế hoạch tài chính với sự không chắc chắn',
+      'Lập kế hoạch mối quan hệ và gia đình',
+      'Chiến lược sức khỏe và ευεξία dài hạn',
     ],
     caseStudies: [
       {
-        title: 'Reid Hoffman\'s Career Strategy',
-        organization: 'Reid Hoffman (LinkedIn founder)',
-        problem: 'Navigate uncertain tech industry career',
-        solution: 'Portfolio approach with multiple bets và optionality',
-        impact: 'Successful entrepreneur và investor',
-        innovations: ['Network-based strategy', 'Platform thinking', 'Optionality preservation', 'Learning orientation']
-      }
+        title: 'Chiến lược Sự nghiệp của Reid Hoffman',
+        organization: 'Reid Hoffman (người sáng lập LinkedIn)',
+        problem: 'Điều hướng sự nghiệp trong ngành công nghệ không chắc chắn',
+        solution: 'Tiếp cận danh mục đầu tư với nhiều lần đặt cược và tùy chọn',
+        impact: 'Doanh nhân và nhà đầu tư thành công',
+        innovations: ['Chiến lược dựa trên mạng lưới', 'Tư duy nền tảng', 'Bảo toàn tùy chọn', 'Định hướng học tập'],
+      },
     ],
     resources: [
       {
-        title: 'Designing Your Life',
+        title: 'Thiết kế Cuộc đời Bạn (Designing Your Life)',
         url: 'https://designingyour.life',
-        type: 'Book/Website'
+        type: 'Sách/Trang web',
       },
       {
-        title: 'Antifragile by Nassim Taleb',
+        title: 'Chống Mong manh (Antifragile) của Nassim Taleb',
         url: 'https://www.penguinrandomhouse.com/books/176227/antifragile-by-nassim-nicholas-taleb',
-        type: 'Book'
-      }
+        type: 'Sách',
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'treasure-hunt-adventure'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator'),
     ]
-  }
+      .filter((game): game is EducationalGame => !!game)
+      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+  },
 ];
 
 export default futureThinkingLessons;

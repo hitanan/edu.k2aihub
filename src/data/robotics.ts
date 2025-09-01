@@ -40,14 +40,14 @@ export interface Exercise {
 
 export const roboticsLessons: RoboticsLesson[] = [
   {
-    id: 'basic-robotics-intro',
+    id: 'gioi-thieu-robotics',
     title: 'Giới Thiệu Robotics Cơ Bản',
-    description: 'Khái niệm cơ bản về robotics, các thành phần chính của robot và ứng dụng trong đời sống',
+    description:
+      'Tổng quan về lịch sử, các thành phần chính và phân loại robot. Tìm hiểu các khái niệm cơ bản và thuật ngữ trong ngành robotics.',
+    duration: '60 phút',
     difficulty: 'Cơ bản',
-    duration: '45 phút',
     category: 'theory',
-    icon: '🤖',
-    topics: ['Robot cơ bản', 'Thành phần', 'Ứng dụng', 'Lý thuyết'],
+    videoUrl: 'https://www.youtube.com/watch?v=hsv0DPipNO0',
     objectives: [
       'Hiểu khái niệm robot và robotics',
       'Nhận biết các thành phần chính của robot',
@@ -57,7 +57,6 @@ export const roboticsLessons: RoboticsLesson[] = [
     materials: ['Slides giới thiệu robotics', 'Video demo các loại robot', 'Tài liệu tham khảo'],
     imageUrl:
       'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=srIpWN5TVKc',
     exercises: [
       {
         id: 'ex1-robot-types',
@@ -98,12 +97,14 @@ export const roboticsLessons: RoboticsLesson[] = [
     ],
   },
   {
-    id: 'basic-electronics',
+    id: 'dien-tu-co-ban',
     title: 'Điện Tử Cơ Bản Cho Robotics',
-    description: 'Kiến thức điện tử cần thiết để hiểu cách robot hoạt động: LED, nút nhấn, cảm biến',
+    description:
+      'Tìm hiểu về các linh kiện điện tử cơ bản như điện trở, tụ điện, transistor và cách chúng được sử dụng trong các mạch robot.',
+    duration: '90 phút',
     difficulty: 'Cơ bản',
-    duration: '60 phút',
     category: 'hardware',
+    videoUrl: 'https://www.youtube.com/watch?v=76hnafrT1cQ',
     objectives: [
       'Hiểu các linh kiện điện tử cơ bản',
       'Đọc và vẽ sơ đồ mạch đơn giản',
@@ -113,7 +114,6 @@ export const roboticsLessons: RoboticsLesson[] = [
     materials: ['Breadboard', 'LED các màu', 'Điện trở', 'Nút nhấn', 'Pin 9V', 'Dây nối'],
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=9cQm-6YTOko',
     exercises: [
       {
         id: 'ex1-led-circuit',
@@ -174,12 +174,14 @@ export const roboticsLessons: RoboticsLesson[] = [
     ],
   },
   {
-    id: 'microcontroller-basics',
+    id: 'vi-dieu-khien',
     title: 'Vi Điều Khiển Cơ Bản',
-    description: 'Làm quen với Arduino và các vi điều khiển cơ bản, cách lập trình và kết nối phần cứng',
+    description:
+      'Giới thiệu về vi điều khiển, kiến trúc và cách lập trình. Tập trung vào các dòng phổ biến như Arduino và ESP32.',
+    duration: '120 phút',
     difficulty: 'Trung bình',
-    duration: '90 phút',
     category: 'programming',
+    videoUrl: 'https://www.youtube.com/watch?v=KJRiA-37oVY',
     objectives: [
       'Hiểu cách hoạt động của vi điều khiển',
       'Cài đặt và sử dụng Arduino IDE',
@@ -189,7 +191,6 @@ export const roboticsLessons: RoboticsLesson[] = [
     materials: ['Arduino Uno', 'Cáp USB', 'Breadboard', 'LED, điện trở', 'Cảm biến siêu âm', 'Servo motor'],
     imageUrl:
       'https://images.unsplash.com/photo-1553406830-ef2513450d76?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=n39P6laHSXU',
     codeExample: `// Chương trình nhấp nháy LED
 int ledPin = 13;
 
@@ -274,12 +275,14 @@ void loop() {
     ],
   },
   {
-    id: 'sensors-actuators',
+    id: 'cam-bien-va-dong-co',
     title: 'Cảm Biến và Động Cơ',
-    description: 'Tìm hiểu các loại cảm biến và động cơ thường dùng trong robotics',
+    description:
+      'Khám phá các loại cảm biến (siêu âm, hồng ngoại, gia tốc) và động cơ (DC, servo, bước) thường dùng trong robotics.',
+    duration: '120 phút',
     difficulty: 'Trung bình',
-    duration: '75 phút',
     category: 'hardware',
+    videoUrl: 'https://www.youtube.com/watch?v=-gvfQNws8p0',
     objectives: [
       'Hiểu nguyên lý hoạt động của các cảm biến',
       'Kết nối và đọc dữ liệu từ cảm biến',
@@ -296,7 +299,6 @@ void loop() {
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=XqABZKnnyBU',
     codeExample: `// Đọc khoảng cách từ cảm biến siêu âm
 int trigPin = 9;
 int echoPin = 10;
@@ -411,12 +413,14 @@ void loop() {
     ],
   },
   {
-    id: 'mobile-robots',
+    id: 'robot-di-dong',
     title: 'Robot Di Động Cơ Bản',
-    description: 'Xây dựng robot có thể di chuyển và tránh vật cản',
-    difficulty: 'Nâng cao',
-    duration: '120 phút',
+    description:
+      'Thiết kế và chế tạo một robot di động đơn giản. Tìm hiểu về các cơ cấu chuyển động và thuật toán điều khiển cơ bản.',
+    duration: '150 phút',
+    difficulty: 'Trung bình',
     category: 'projects',
+    videoUrl: 'https://www.youtube.com/watch?v=Ot_FgZmrB24',
     objectives: [
       'Thiết kế khung robot di động',
       'Lập trình điều khiển bánh xe',
@@ -435,7 +439,6 @@ void loop() {
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=BCv3OgNw6Nk',
     codeExample: `// Robot tránh vật cản cơ bản
 #include <NewPing.h>
 
@@ -598,12 +601,14 @@ void findBestPath() {
     ],
   },
   {
-    id: 'iot-robotics',
+    id: 'iot-va-robotics',
     title: 'IoT và Robotics',
-    description: 'Kết nối robot với Internet để điều khiển từ xa và thu thập dữ liệu',
-    difficulty: 'Nâng cao',
+    description:
+      'Tìm hiểu cách kết hợp Internet of Things (IoT) với robotics để tạo ra các hệ thống robot thông minh, có khả năng kết nối và thu thập dữ liệu.',
     duration: '90 phút',
-    category: 'programming',
+    difficulty: 'Nâng cao',
+    category: 'projects',
+    videoUrl: 'https://www.youtube.com/watch?v=i-HTiy0EOuc',
     objectives: [
       'Hiểu khái niệm Internet of Things (IoT)',
       'Kết nối robot với WiFi',
@@ -619,7 +624,6 @@ void findBestPath() {
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=WH4m6dRa5Yc',
     codeExample: `// Robot IoT với ESP32 và Blynk
 #define BLYNK_TEMPLATE_ID "YourTemplateID"
 #define BLYNK_DEVICE_NAME "Robot IoT"

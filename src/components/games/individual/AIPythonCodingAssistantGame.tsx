@@ -1,13 +1,11 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  Code2, 
-  Play, 
-  Bug, 
-  CheckCircle2, 
-  Lightbulb, 
-  Zap, 
+import React, { useState, useCallback } from 'react';
+import {
+  Code2,
+  Play,
+  CheckCircle2,
+  Lightbulb,
   Brain,
   Terminal,
   FileText,
@@ -17,7 +15,7 @@ import {
   Settings,
   Target,
   Award,
-  BookOpen
+  BookOpen,
 } from 'lucide-react';
 
 interface AIPythonCodingAssistantGameProps {
@@ -69,29 +67,29 @@ const AI_ASSISTANTS: AIAssistant[] = [
       greeting: [
         'Xin chào! Tôi là CodeGuru, chuyên gia về thuật toán. Hôm nay chúng ta sẽ giải quyết vấn đề gì?',
         'Chào bạn! Sẵn sàng khám phá thế giới thuật toán chưa? Tôi sẽ hướng dẫn bạn từng bước.',
-        'Hello Developer! Hãy cùng nhau xây dựng những giải pháp code hiệu quả nhé!'
+        'Hello Developer! Hãy cùng nhau xây dựng những giải pháp code hiệu quả nhé!',
       ],
       hint: [
         'Gợi ý: Hãy thử sử dụng approach chia để trị (divide and conquer) cho bài này.',
         'Bạn có thể tối ưu thuật toán bằng cách sử dụng dynamic programming.',
-        'Hãy nghĩ về cấu trúc dữ liệu nào phù hợp nhất cho việc lưu trữ và truy xuất.'
+        'Hãy nghĩ về cấu trúc dữ liệu nào phù hợp nhất cho việc lưu trữ và truy xuất.',
       ],
       encouragement: [
         'Tuyệt vời! Bạn đang trên đúng hướng. Tiếp tục phát huy!',
         'Code của bạn ngày càng tiến bộ. Hãy tin vào khả năng của mình!',
-        'Excellent! Cách tiếp cận này rất thông minh.'
+        'Excellent! Cách tiếp cận này rất thông minh.',
       ],
       debugging: [
         'Tôi nhận thấy có một lỗi logic nhỏ ở vòng lặp. Hãy kiểm tra điều kiện dừng.',
         'Edge case: Bạn đã xem xét trường hợp input rỗng chưa?',
-        'Lỗi index: Hãy đảm bảo không truy cập ngoài phạm vi array.'
+        'Lỗi index: Hãy đảm bảo không truy cập ngoài phạm vi array.',
       ],
       explanation: [
         'Thuật toán này có độ phức tạp O(n log n) vì chúng ta sử dụng divide and conquer.',
         'Cách tiếp cận này giúp tối ưu bộ nhớ từ O(n²) xuống O(n).',
-        'Pattern này rất phổ biến trong competitive programming.'
-      ]
-    }
+        'Pattern này rất phổ biến trong competitive programming.',
+      ],
+    },
   },
   {
     name: 'MLMentor',
@@ -101,29 +99,29 @@ const AI_ASSISTANTS: AIAssistant[] = [
       greeting: [
         'Chào bạn! Tôi là MLMentor, chuyên gia AI. Sẵn sàng khám phá machine learning?',
         'Hi there! Cùng nhau xây dựng những mô hình AI thông minh nhé!',
-        'Welcome to AI world! Hôm nay chúng ta sẽ tạo ra điều kỳ diệu gì?'
+        'Welcome to AI world! Hôm nay chúng ta sẽ tạo ra điều kỳ diệu gì?',
       ],
       hint: [
         'Hãy thử sử dụng scikit-learn để implement model này nhanh chóng.',
         'Feature engineering là chìa khóa. Bạn đã chuẩn bị dữ liệu tốt chưa?',
-        'Gradient descent sẽ giúp optimize cost function hiệu quả hơn.'
+        'Gradient descent sẽ giúp optimize cost function hiệu quả hơn.',
       ],
       encouragement: [
         'Amazing! Mô hình của bạn đang học tốt đấy!',
         'Perfect! Accuracy đang tăng lên từng epoch.',
-        'Brilliant! Cách tiếp cận deep learning này rất sáng tạo!'
+        'Brilliant! Cách tiếp cận deep learning này rất sáng tạo!',
       ],
       debugging: [
         'Overfitting detected! Hãy thử thêm regularization hoặc dropout.',
         'Learning rate có vẻ quá cao. Thử giảm xuống 0.001 xem sao.',
-        'Data preprocessing: Đừng quên normalize dữ liệu trước khi train.'
+        'Data preprocessing: Đừng quên normalize dữ liệu trước khi train.',
       ],
       explanation: [
         'Neural network này sử dụng backpropagation để cập nhật weights.',
         'Cross-validation giúp đánh giá model objektively hơn.',
-        'Ensemble methods kết hợp nhiều model để tăng độ chính xác.'
-      ]
-    }
+        'Ensemble methods kết hợp nhiều model để tăng độ chính xác.',
+      ],
+    },
   },
   {
     name: 'DevBot',
@@ -133,30 +131,30 @@ const AI_ASSISTANTS: AIAssistant[] = [
       greeting: [
         'Hey Developer! Tôi là DevBot, chuyên gia web development. Sẵn sàng code chưa?',
         'Chào bạn! Cùng xây dựng những ứng dụng web tuyệt vời nhé!',
-        'Hello! Hôm nay chúng ta sẽ tạo ra những API và web app gì thú vị?'
+        'Hello! Hôm nay chúng ta sẽ tạo ra những API và web app gì thú vị?',
       ],
       hint: [
         'Sử dụng Flask hoặc Django cho backend, React cho frontend sẽ rất hiệu quả.',
         'RESTful API design: Đừng quên implement proper status codes.',
-        'Async/await sẽ giúp handle concurrent requests tốt hơn.'
+        'Async/await sẽ giúp handle concurrent requests tốt hơn.',
       ],
       encouragement: [
         'Great job! API endpoint này hoạt động rất smooth.',
         'Excellent! Frontend design vừa responsive vừa user-friendly.',
-        'Perfect! Database queries được optimize rất tốt!'
+        'Perfect! Database queries được optimize rất tốt!',
       ],
       debugging: [
         'CORS error: Hãy check Access-Control-Allow-Origin header.',
         'Database connection: Kiểm tra connection string và credentials.',
-        '404 Error: Route mapping có vẻ chưa đúng, hãy double-check URL patterns.'
+        '404 Error: Route mapping có vẻ chưa đúng, hãy double-check URL patterns.',
       ],
       explanation: [
         'MVC pattern giúp tách biệt logic, view và data rất hiệu quả.',
         'JWT tokens provide stateless authentication cho API.',
-        'Database indexing sẽ cải thiện query performance đáng kể.'
-      ]
-    }
-  }
+        'Database indexing sẽ cải thiện query performance đáng kể.',
+      ],
+    },
+  },
 ];
 
 const CODING_CHALLENGES: CodingChallenge[] = [
@@ -201,16 +199,16 @@ print(fibonacci(1))   # Expected: 1`,
       { input: '10', expectedOutput: '55', description: 'Fibonacci số thứ 10' },
       { input: '0', expectedOutput: '0', description: 'Fibonacci số thứ 0' },
       { input: '1', expectedOutput: '1', description: 'Fibonacci số thứ 1' },
-      { input: '15', expectedOutput: '610', description: 'Fibonacci số thứ 15' }
+      { input: '15', expectedOutput: '610', description: 'Fibonacci số thứ 15' },
     ],
     aiHints: [
       'Sử dụng mảng để lưu trữ các giá trị đã tính toán (memoization)',
       'Base cases: F(0) = 0, F(1) = 1',
       'Công thức: F(n) = F(n-1) + F(n-2)',
-      'Time complexity: O(n), Space complexity: O(n)'
+      'Time complexity: O(n), Space complexity: O(n)',
     ],
     concepts: ['Dynamic Programming', 'Memoization', 'Time Complexity', 'Space Optimization'],
-    estimatedTime: 15
+    estimatedTime: 15,
   },
   {
     id: 'ml-linear-regression',
@@ -303,17 +301,25 @@ class LinearRegression:
     def cost_function(self, y_true, y_pred):
         return np.mean((y_true - y_pred) ** 2)`,
     testCases: [
-      { input: 'X=[[1],[2],[3]], y=[2,4,6]', expectedOutput: 'predictions≈[2,4,6]', description: 'Perfect linear relationship' },
-      { input: 'X=[[0],[1],[2]], y=[1,3,5]', expectedOutput: 'predictions≈[1,3,5]', description: 'Linear with intercept' }
+      {
+        input: 'X=[[1],[2],[3]], y=[2,4,6]',
+        expectedOutput: 'predictions≈[2,4,6]',
+        description: 'Perfect linear relationship',
+      },
+      {
+        input: 'X=[[0],[1],[2]], y=[1,3,5]',
+        expectedOutput: 'predictions≈[1,3,5]',
+        description: 'Linear with intercept',
+      },
     ],
     aiHints: [
       'Khởi tạo weights và bias bằng 0',
       'Sử dụng gradient descent để tối ưu cost function',
       'Cost function: MSE = (1/m) * Σ(y_pred - y_true)²',
-      'Update rule: w = w - α * dw, b = b - α * db'
+      'Update rule: w = w - α * dw, b = b - α * db',
     ],
     concepts: ['Machine Learning', 'Gradient Descent', 'Linear Regression', 'Cost Function', 'NumPy'],
-    estimatedTime: 30
+    estimatedTime: 30,
   },
   {
     id: 'api-weather-service',
@@ -486,23 +492,27 @@ def predict_weather(city):
         }), 500`,
     testCases: [
       { input: 'GET /weather/hanoi', expectedOutput: 'JSON with weather data', description: 'Current weather API' },
-      { input: 'GET /weather/hanoi/predict', expectedOutput: 'JSON with prediction', description: 'Weather prediction API' }
+      {
+        input: 'GET /weather/hanoi/predict',
+        expectedOutput: 'JSON with prediction',
+        description: 'Weather prediction API',
+      },
     ],
     aiHints: [
       'Sử dụng Flask để tạo RESTful API endpoints',
       'Implement caching để giảm API calls và tăng performance',
       'Linear regression đơn giản cho temperature prediction',
-      'Error handling và status codes phù hợp'
+      'Error handling và status codes phù hợp',
     ],
     concepts: ['Flask', 'RESTful API', 'Caching', 'AI Prediction', 'Error Handling', 'JSON'],
-    estimatedTime: 45
-  }
+    estimatedTime: 45,
+  },
 ];
 
-export default function AIPythonCodingAssistantGame({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
+export default function AIPythonCodingAssistantGame({
+  onComplete,
+  timeLeft,
+  onRestart,
 }: AIPythonCodingAssistantGameProps) {
   const [currentChallenge, setCurrentChallenge] = useState<CodingChallenge | null>(null);
   const [selectedAssistant, setSelectedAssistant] = useState<AIAssistant | null>(null);
@@ -524,7 +534,7 @@ export default function AIPythonCodingAssistantGame({
     setTestResults([]);
     setHintsUsed(0);
     setCodeExecutionResults([]);
-    
+
     // AI greeting message
     const greeting = assistant.responses.greeting[Math.floor(Math.random() * assistant.responses.greeting.length)];
     setAiMessages([greeting]);
@@ -532,29 +542,30 @@ export default function AIPythonCodingAssistantGame({
 
   const requestAIHint = () => {
     if (!selectedAssistant || !currentChallenge) return;
-    
-    setHintsUsed(prev => prev + 1);
-    
+
+    setHintsUsed((prev) => prev + 1);
+
     const hint = currentChallenge.aiHints[Math.min(hintsUsed, currentChallenge.aiHints.length - 1)];
-    const aiResponse = selectedAssistant.responses.hint[Math.floor(Math.random() * selectedAssistant.responses.hint.length)];
-    
-    setAiMessages(prev => [...prev, `💡 ${hint}`, aiResponse]);
-    setScore(prev => Math.max(0, prev - 10)); // Penalty for hints
+    const aiResponse =
+      selectedAssistant.responses.hint[Math.floor(Math.random() * selectedAssistant.responses.hint.length)];
+
+    setAiMessages((prev) => [...prev, `💡 ${hint}`, aiResponse]);
+    setScore((prev) => Math.max(0, prev - 10)); // Penalty for hints
   };
 
   const runCode = useCallback(() => {
     if (!currentChallenge) return;
-    
+
     // Simulate code execution (trong thực tế sẽ dùng code execution engine)
     const results: string[] = [];
     const testsPassed: boolean[] = [];
-    
+
     currentChallenge.testCases.forEach((testCase, index) => {
       try {
         // Mock execution results
         const isCorrect = Math.random() > 0.3; // Simulated success rate
         testsPassed.push(isCorrect);
-        
+
         if (isCorrect) {
           results.push(`✅ Test ${index + 1}: PASSED - ${testCase.description}`);
         } else {
@@ -565,33 +576,39 @@ export default function AIPythonCodingAssistantGame({
         results.push(`🐛 Test ${index + 1}: ERROR - ${error}`);
       }
     });
-    
+
     setTestResults(testsPassed);
     setCodeExecutionResults(results);
-    
+
     // Calculate score
     const passedCount = testsPassed.filter(Boolean).length;
     const testScore = (passedCount / testsPassed.length) * 100;
     const timeBonus = Math.max(0, (timeLeft / 120) * 20);
     const hintPenalty = hintsUsed * 5;
-    
+
     const totalScore = Math.max(0, testScore + timeBonus - hintPenalty);
-    setScore(prev => prev + Math.floor(totalScore));
-    
+    setScore((prev) => prev + Math.floor(totalScore));
+
     // AI feedback
     if (selectedAssistant) {
       if (passedCount === testsPassed.length) {
-        const encouragement = selectedAssistant.responses.encouragement[Math.floor(Math.random() * selectedAssistant.responses.encouragement.length)];
-        setAiMessages(prev => [...prev, `🎉 ${encouragement}`]);
+        const encouragement =
+          selectedAssistant.responses.encouragement[
+            Math.floor(Math.random() * selectedAssistant.responses.encouragement.length)
+          ];
+        setAiMessages((prev) => [...prev, `🎉 ${encouragement}`]);
       } else {
-        const debugging = selectedAssistant.responses.debugging[Math.floor(Math.random() * selectedAssistant.responses.debugging.length)];
-        setAiMessages(prev => [...prev, `🔍 ${debugging}`]);
+        const debugging =
+          selectedAssistant.responses.debugging[
+            Math.floor(Math.random() * selectedAssistant.responses.debugging.length)
+          ];
+        setAiMessages((prev) => [...prev, `🔍 ${debugging}`]);
       }
     }
-    
+
     if (passedCount === testsPassed.length) {
-      setCompletedChallenges(prev => [...prev, currentChallenge.id]);
-      
+      setCompletedChallenges((prev) => [...prev, currentChallenge.id]);
+
       if (completedChallenges.length >= 2) {
         setGamePhase('completed');
         onComplete(true, score + Math.floor(totalScore));
@@ -604,15 +621,17 @@ export default function AIPythonCodingAssistantGame({
   const render3DCodeEnvironment = () => (
     <div className="relative w-full h-64 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-xl border border-cyan-500/30 overflow-hidden">
       {/* 3D Code Editor Simulation */}
-      <div className="absolute inset-0" style={{
-        background: `
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `
           radial-gradient(ellipse at 30% 50%, rgba(59,130,246,0.3) 0%, transparent 50%),
           radial-gradient(ellipse at 70% 50%, rgba(147,51,234,0.3) 0%, transparent 50%),
           linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(30,41,59,0.9) 100%)
         `,
-        perspective: '1000px'
-      }}>
-        
+          perspective: '1000px',
+        }}
+      >
         {/* Floating Code Blocks */}
         <div className="absolute inset-0">
           {Array.from({ length: 8 }).map((_, i) => (
@@ -627,7 +646,7 @@ export default function AIPythonCodingAssistantGame({
                 transform: `rotateX(${Math.random() * 20}deg) rotateY(${Math.random() * 20}deg) translateZ(${Math.random() * 50}px)`,
                 transformStyle: 'preserve-3d',
                 animation: `float ${3 + Math.random() * 2}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 2}s`
+                animationDelay: `${Math.random() * 2}s`,
               }}
             >
               <div className="text-xs text-cyan-400 font-mono">
@@ -659,7 +678,9 @@ export default function AIPythonCodingAssistantGame({
             </div>
             <div className="flex items-center space-x-1">
               <Target className="w-3 h-3 text-green-400" />
-              <span className="text-white">Tests: {testResults.filter(Boolean).length}/{testResults.length}</span>
+              <span className="text-white">
+                Tests: {testResults.filter(Boolean).length}/{testResults.length}
+              </span>
             </div>
             <div className="flex items-center space-x-1">
               <Lightbulb className="w-3 h-3 text-yellow-400" />
@@ -675,8 +696,13 @@ export default function AIPythonCodingAssistantGame({
 
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px) rotateY(0deg); }
-          50% { transform: translateY(-10px) rotateY(10deg); }
+          0%,
+          100% {
+            transform: translateY(0px) rotateY(0deg);
+          }
+          50% {
+            transform: translateY(-10px) rotateY(10deg);
+          }
         }
       `}</style>
     </div>
@@ -694,7 +720,7 @@ export default function AIPythonCodingAssistantGame({
           <p className="text-gray-300 mb-6">
             Lập trình Python với sự hỗ trợ của AI thông minh - từ algorithms đến machine learning
           </p>
-          
+
           {render3DCodeEnvironment()}
         </div>
 
@@ -704,9 +730,9 @@ export default function AIPythonCodingAssistantGame({
             <Brain className="w-6 h-6 text-blue-400" />
             <span>Chọn AI Assistant</span>
           </h3>
-          
+
           <div className="grid md:grid-cols-3 gap-4">
-            {AI_ASSISTANTS.map(assistant => (
+            {AI_ASSISTANTS.map((assistant) => (
               <div
                 key={assistant.name}
                 className={`p-4 rounded-xl border cursor-pointer transition-all duration-300 ${
@@ -726,9 +752,7 @@ export default function AIPythonCodingAssistantGame({
                   </div>
                 </div>
                 <p className="text-sm text-gray-300 mb-2">{assistant.specialty}</p>
-                <div className="text-xs text-blue-300 italic">
-                  &quot;{assistant.responses.greeting[0]}&quot;
-                </div>
+                <div className="text-xs text-blue-300 italic">&quot;{assistant.responses.greeting[0]}&quot;</div>
               </div>
             ))}
           </div>
@@ -736,10 +760,10 @@ export default function AIPythonCodingAssistantGame({
 
         {/* Challenge Selection */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {CODING_CHALLENGES.map(challenge => {
+          {CODING_CHALLENGES.map((challenge) => {
             const isCompleted = completedChallenges.includes(challenge.id);
             const canStart = selectedAssistant !== null;
-            
+
             return (
               <div
                 key={challenge.id}
@@ -759,13 +783,15 @@ export default function AIPythonCodingAssistantGame({
                     {challenge.category === 'web-dev' && <Globe className="w-6 h-6 text-green-400" />}
                     {challenge.category === 'data-structures' && <Database className="w-6 h-6 text-cyan-400" />}
                     {challenge.category === 'automation' && <Settings className="w-6 h-6 text-orange-400" />}
-                    
+
                     <div>
                       <h3 className="text-lg font-bold text-white">{challenge.title}</h3>
-                      <p className="text-sm text-gray-400">{challenge.difficulty} • {challenge.estimatedTime} phút</p>
+                      <p className="text-sm text-gray-400">
+                        {challenge.difficulty} • {challenge.estimatedTime} phút
+                      </p>
                     </div>
                   </div>
-                  
+
                   {isCompleted && <CheckCircle2 className="w-6 h-6 text-green-400" />}
                 </div>
 
@@ -775,7 +801,7 @@ export default function AIPythonCodingAssistantGame({
                   <div>
                     <div className="text-xs text-gray-400 mb-1">Concepts:</div>
                     <div className="flex flex-wrap gap-1">
-                      {challenge.concepts.slice(0, 3).map(concept => (
+                      {challenge.concepts.slice(0, 3).map((concept) => (
                         <span key={concept} className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">
                           {concept}
                         </span>
@@ -841,7 +867,7 @@ export default function AIPythonCodingAssistantGame({
         <div className="text-center">
           <h2 className="text-2xl font-bold text-white mb-2">Coding Challenge</h2>
           <h3 className="text-xl text-cyan-400 mb-4">{currentChallenge.title}</h3>
-          
+
           {render3DCodeEnvironment()}
         </div>
 
@@ -891,7 +917,9 @@ export default function AIPythonCodingAssistantGame({
           />
 
           <div className="flex justify-between items-center mt-2 text-sm text-gray-400">
-            <span>Lines: {userCode.split('\n').length} | Characters: {userCode.length}</span>
+            <span>
+              Lines: {userCode.split('\n').length} | Characters: {userCode.length}
+            </span>
             <span>Difficulty: {currentChallenge.difficulty}</span>
           </div>
         </div>
@@ -903,14 +931,19 @@ export default function AIPythonCodingAssistantGame({
               <FileText className="w-6 h-6 text-purple-400" />
               <h3 className="text-lg font-bold text-white">Kết Quả Test</h3>
             </div>
-            
+
             <div className="space-y-2">
               {codeExecutionResults.map((result, index) => (
                 <div key={index} className="p-3 bg-slate-800/50 rounded-lg font-mono text-sm">
-                  <span className={`${
-                    result.includes('PASSED') ? 'text-green-400' : 
-                    result.includes('FAILED') ? 'text-red-400' : 'text-yellow-400'
-                  }`}>
+                  <span
+                    className={`${
+                      result.includes('PASSED')
+                        ? 'text-green-400'
+                        : result.includes('FAILED')
+                          ? 'text-red-400'
+                          : 'text-yellow-400'
+                    }`}
+                  >
                     {result}
                   </span>
                 </div>
@@ -923,7 +956,9 @@ export default function AIPythonCodingAssistantGame({
               </span>
               <div className="flex items-center space-x-2">
                 <span className="text-gray-400">Score:</span>
-                <span className="text-cyan-400 font-bold">+{Math.floor((testResults.filter(Boolean).length / testResults.length) * 100)}</span>
+                <span className="text-cyan-400 font-bold">
+                  +{Math.floor((testResults.filter(Boolean).length / testResults.length) * 100)}
+                </span>
               </div>
             </div>
           </div>
@@ -943,7 +978,7 @@ export default function AIPythonCodingAssistantGame({
               {showAIChat ? 'Ẩn Chat' : 'Hiện Chat'}
             </button>
           </div>
-          
+
           {showAIChat && (
             <div className="bg-slate-800/50 rounded-lg p-4 max-h-40 overflow-y-auto">
               {aiMessages.map((message, index) => (
@@ -964,10 +999,8 @@ export default function AIPythonCodingAssistantGame({
         <div>
           <h2 className="text-3xl font-bold text-white mb-4">🏆 Excellent Coding!</h2>
           <p className="text-xl text-cyan-400 mb-2">Bạn đã hoàn thành tất cả challenges!</p>
-          <p className="text-gray-300 mb-6">
-            Kỹ năng Python và tư duy thuật toán của bạn đã được nâng cao đáng kể.
-          </p>
-          
+          <p className="text-gray-300 mb-6">Kỹ năng Python và tư duy thuật toán của bạn đã được nâng cao đáng kể.</p>
+
           {render3DCodeEnvironment()}
         </div>
 
@@ -996,7 +1029,10 @@ export default function AIPythonCodingAssistantGame({
               <div className="flex justify-between">
                 <span className="text-gray-300">Test success rate:</span>
                 <span className="text-green-400 font-bold">
-                  {testResults.length > 0 ? Math.round((testResults.filter(Boolean).length / testResults.length) * 100) : 0}%
+                  {testResults.length > 0
+                    ? Math.round((testResults.filter(Boolean).length / testResults.length) * 100)
+                    : 0}
+                  %
                 </span>
               </div>
               <div className="flex justify-between">

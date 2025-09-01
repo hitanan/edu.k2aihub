@@ -54,7 +54,7 @@ const DATA_SOURCES: DataSource[] = [
     coverage: 100,
     cost: 80,
     real_time: false,
-    description: 'Dữ liệu vệ tinh toàn cầu về thảm thực vật, nhiệt độ bề mặt'
+    description: 'Dữ liệu vệ tinh toàn cầu về thảm thực vật, nhiệt độ bề mặt',
   },
   {
     id: 'landsat-imagery',
@@ -64,7 +64,7 @@ const DATA_SOURCES: DataSource[] = [
     coverage: 85,
     cost: 60,
     real_time: false,
-    description: 'Hình ảnh vệ tinh lịch sử từ 1972, theo dõi biến đổi land use'
+    description: 'Hình ảnh vệ tinh lịch sử từ 1972, theo dõi biến đổi land use',
   },
   {
     id: 'weather-stations',
@@ -74,7 +74,7 @@ const DATA_SOURCES: DataSource[] = [
     coverage: 70,
     cost: 40,
     real_time: true,
-    description: 'Mạng lưới trạm thời tiết toàn cầu, dữ liệu real-time'
+    description: 'Mạng lưới trạm thời tiết toàn cầu, dữ liệu real-time',
   },
   {
     id: 'ocean-buoys',
@@ -84,7 +84,7 @@ const DATA_SOURCES: DataSource[] = [
     coverage: 60,
     cost: 50,
     real_time: true,
-    description: 'Phao đo nhiệt độ nước biển, mực nước, dòng chảy'
+    description: 'Phao đo nhiệt độ nước biển, mực nước, dòng chảy',
   },
   {
     id: 'iot-sensors',
@@ -94,7 +94,7 @@ const DATA_SOURCES: DataSource[] = [
     coverage: 45,
     cost: 30,
     real_time: true,
-    description: 'Mạng cảm biến IoT: CO2, PM2.5, độ ẩm, nhiệt độ'
+    description: 'Mạng cảm biến IoT: CO2, PM2.5, độ ẩm, nhiệt độ',
   },
   {
     id: 'climate-database',
@@ -104,8 +104,8 @@ const DATA_SOURCES: DataSource[] = [
     coverage: 90,
     cost: 70,
     real_time: false,
-    description: 'Cơ sở dữ liệu khí hậu chuẩn từ IPCC và NASA'
-  }
+    description: 'Cơ sở dữ liệu khí hậu chuẩn từ IPCC và NASA',
+  },
 ];
 
 const ANALYSIS_METHODS: AnalysisMethod[] = [
@@ -117,7 +117,7 @@ const ANALYSIS_METHODS: AnalysisMethod[] = [
     accuracy: 80,
     processing_time: 30,
     cost: 40,
-    description: 'Phân tích chuỗi thời gian, dự báo xu hướng khí hậu'
+    description: 'Phân tích chuỗi thời gian, dự báo xu hướng khí hậu',
   },
   {
     id: 'machine-learning-ensemble',
@@ -127,7 +127,7 @@ const ANALYSIS_METHODS: AnalysisMethod[] = [
     accuracy: 92,
     processing_time: 80,
     cost: 90,
-    description: 'Random Forest + XGBoost cho prediction và pattern recognition'
+    description: 'Random Forest + XGBoost cho prediction và pattern recognition',
   },
   {
     id: 'climate-modeling',
@@ -137,7 +137,7 @@ const ANALYSIS_METHODS: AnalysisMethod[] = [
     accuracy: 88,
     processing_time: 120,
     cost: 120,
-    description: 'Mô hình toàn cầu phức tạp, mô phỏng hệ thống khí hậu'
+    description: 'Mô hình toàn cầu phức tạp, mô phỏng hệ thống khí hậu',
   },
   {
     id: 'geospatial-analysis',
@@ -147,7 +147,7 @@ const ANALYSIS_METHODS: AnalysisMethod[] = [
     accuracy: 85,
     processing_time: 50,
     cost: 60,
-    description: 'Phân tích không gian địa lý với QGIS, ArcGIS, Google Earth Engine'
+    description: 'Phân tích không gian địa lý với QGIS, ArcGIS, Google Earth Engine',
   },
   {
     id: 'deep-learning-cnn',
@@ -157,7 +157,7 @@ const ANALYSIS_METHODS: AnalysisMethod[] = [
     accuracy: 94,
     processing_time: 100,
     cost: 100,
-    description: 'Convolutional Neural Networks cho xử lý ảnh vệ tinh'
+    description: 'Convolutional Neural Networks cho xử lý ảnh vệ tinh',
   },
   {
     id: 'statistical-regression',
@@ -167,7 +167,7 @@ const ANALYSIS_METHODS: AnalysisMethod[] = [
     accuracy: 75,
     processing_time: 20,
     cost: 25,
-    description: 'Hồi quy đa biến, tìm mối quan hệ giữa các yếu tố khí hậu'
+    description: 'Hồi quy đa biến, tìm mối quan hệ giữa các yếu tố khí hậu',
   },
   {
     id: 'ensemble-climate-models',
@@ -177,8 +177,8 @@ const ANALYSIS_METHODS: AnalysisMethod[] = [
     accuracy: 90,
     processing_time: 150,
     cost: 140,
-    description: 'Kết hợp nhiều mô hình khí hậu để dự báo chính xác hơn'
-  }
+    description: 'Kết hợp nhiều mô hình khí hậu để dự báo chính xác hơn',
+  },
 ];
 
 const RESEARCH_PROJECTS: Research[] = [
@@ -193,7 +193,7 @@ const RESEARCH_PROJECTS: Research[] = [
     urgency: 90,
     difficulty: 85,
     budget: 350,
-    description: 'Dự báo mực nước biển dâng tác động đến 28 tỉnh ven biển Việt Nam'
+    description: 'Dự báo mực nước biển dâng tác động đến 28 tỉnh ven biển Việt Nam',
   },
   {
     id: 'mekong-drought',
@@ -206,7 +206,7 @@ const RESEARCH_PROJECTS: Research[] = [
     urgency: 85,
     difficulty: 75,
     budget: 280,
-    description: 'Mô hình dự báo hạn hán và đề xuất giải pháp thích ứng'
+    description: 'Mô hình dự báo hạn hán và đề xuất giải pháp thích ứng',
   },
   {
     id: 'urban-heat-island',
@@ -219,7 +219,7 @@ const RESEARCH_PROJECTS: Research[] = [
     urgency: 75,
     difficulty: 70,
     budget: 220,
-    description: 'Nghiên cứu hiệu ứng đảo nhiệt đô thị và giải pháp giảm thiểu'
+    description: 'Nghiên cứu hiệu ứng đảo nhiệt đô thị và giải pháp giảm thiểu',
   },
   {
     id: 'forest-deforestation',
@@ -232,7 +232,7 @@ const RESEARCH_PROJECTS: Research[] = [
     urgency: 80,
     difficulty: 60,
     budget: 180,
-    description: 'So sánh tốc độ phá rừng và hiệu quả chính sách bảo vệ'
+    description: 'So sánh tốc độ phá rừng và hiệu quả chính sách bảo vệ',
   },
   {
     id: 'extreme-weather-prediction',
@@ -245,26 +245,28 @@ const RESEARCH_PROJECTS: Research[] = [
     urgency: 95,
     difficulty: 90,
     budget: 400,
-    description: 'Mô hình dự báo bão, lũ lụt, hạn hán với độ chính xác cao'
-  }
+    description: 'Mô hình dự báo bão, lũ lụt, hạn hán với độ chính xác cao',
+  },
 ];
 
 const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'project-selection' | 'data-selection' | 'method-selection' | 'analysis' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'project-selection' | 'data-selection' | 'method-selection' | 'analysis' | 'results'
+  >('briefing');
   const [selectedProject, setSelectedProject] = useState<Research | null>(null);
   const [selectedDataSources, setSelectedDataSources] = useState<DataSource[]>([]);
   const [selectedMethods, setSelectedMethods] = useState<AnalysisMethod[]>([]);
-  const [budget, setBudget] = useState(400);
+  const [budget] = useState(400);
   const [analysisProgress, setAnalysisProgress] = useState(0);
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [, setIsAnalyzing] = useState(false);
 
   // Analysis results
   const [dataQuality, setDataQuality] = useState(0);
   const [methodAccuracy, setMethodAccuracy] = useState(0);
   const [projectImpact, setProjectImpact] = useState(0);
 
-  const totalCost = selectedDataSources.reduce((sum, ds) => sum + ds.cost, 0) + 
-    selectedMethods.reduce((sum, m) => sum + m.cost, 0);
+  const totalCost =
+    selectedDataSources.reduce((sum, ds) => sum + ds.cost, 0) + selectedMethods.reduce((sum, m) => sum + m.cost, 0);
 
   const canAfford = totalCost <= budget;
 
@@ -272,37 +274,43 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
     if (!selectedProject || selectedDataSources.length === 0 || selectedMethods.length === 0) {
       return { data: 0, method: 0, impact: 0 };
     }
-    
+
     // Data quality score
     const coverageScore = selectedDataSources.reduce((sum, ds) => sum + ds.coverage, 0) / selectedDataSources.length;
     const accuracyScore = selectedDataSources.reduce((sum, ds) => sum + ds.accuracy, 0) / selectedDataSources.length;
-    const realTimeBonus = selectedDataSources.some(ds => ds.real_time) ? 10 : 0;
-    const dataScore = Math.round((coverageScore * 0.4 + accuracyScore * 0.5 + realTimeBonus * 0.1));
-    
+    const realTimeBonus = selectedDataSources.some((ds) => ds.real_time) ? 10 : 0;
+    const dataScore = Math.round(coverageScore * 0.4 + accuracyScore * 0.5 + realTimeBonus * 0.1);
+
     // Method effectiveness
     const methodAccuracy = selectedMethods.reduce((sum, m) => sum + m.accuracy, 0) / selectedMethods.length;
     const methodComplexity = selectedMethods.reduce((sum, m) => sum + m.complexity, 0) / selectedMethods.length;
     const methodScore = Math.round(methodAccuracy * 0.7 + (methodComplexity / 100) * 30 * 0.3);
-    
+
     // Project impact (data-method fit)
     const requiredDataTypes = selectedProject.data_requirements;
-    const availableDataTypes = selectedDataSources.map(ds => ds.type);
-    const dataFit = requiredDataTypes.filter(req => 
-      availableDataTypes.includes(req as 'satellite' | 'weather_station' | 'sensor_network' | 'research_database' | 'ocean_buoy')
-    ).length / requiredDataTypes.length;
-    
+    const availableDataTypes = selectedDataSources.map((ds) => ds.type);
+    const dataFit =
+      requiredDataTypes.filter((req) =>
+        availableDataTypes.includes(
+          req as 'satellite' | 'weather_station' | 'sensor_network' | 'research_database' | 'ocean_buoy',
+        ),
+      ).length / requiredDataTypes.length;
+
     const requiredMethods = selectedProject.methodology;
-    const availableMethods = selectedMethods.map(m => m.category);
-    const methodFit = requiredMethods.filter(req => 
-      availableMethods.includes(req as 'statistical' | 'machine_learning' | 'modeling' | 'visualization' | 'prediction')
-    ).length / requiredMethods.length;
-    
+    const availableMethods = selectedMethods.map((m) => m.category);
+    const methodFit =
+      requiredMethods.filter((req) =>
+        availableMethods.includes(
+          req as 'statistical' | 'machine_learning' | 'modeling' | 'visualization' | 'prediction',
+        ),
+      ).length / requiredMethods.length;
+
     const impactScore = Math.round(selectedProject.impact_level * (dataFit * 0.5 + methodFit * 0.5));
-    
+
     return {
       data: Math.min(100, dataScore),
       method: Math.min(100, methodScore),
-      impact: Math.min(100, impactScore)
+      impact: Math.min(100, impactScore),
     };
   };
 
@@ -314,16 +322,16 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
 
     setGamePhase('analysis');
     setIsAnalyzing(true);
-    
+
     const analysisResults = calculateAnalysisScore();
     setDataQuality(analysisResults.data);
     setMethodAccuracy(analysisResults.method);
     setProjectImpact(analysisResults.impact);
-    
+
     const totalComplexity = selectedMethods.reduce((sum, m) => sum + m.processing_time, 0);
-    
+
     const interval = setInterval(() => {
-      setAnalysisProgress(prev => {
+      setAnalysisProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsAnalyzing(false);
@@ -337,15 +345,15 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
 
   const getOverallScore = () => {
     const analysisResults = calculateAnalysisScore();
-    const costEfficiency = Math.round((budget - totalCost) / budget * 100);
+    const costEfficiency = Math.round(((budget - totalCost) / budget) * 100);
     const urgencyBonus = selectedProject ? selectedProject.urgency / 10 : 0;
-    
+
     return Math.round(
-      analysisResults.data * 0.3 + 
-      analysisResults.method * 0.3 + 
-      analysisResults.impact * 0.25 + 
-      costEfficiency * 0.1 + 
-      urgencyBonus * 0.05
+      analysisResults.data * 0.3 +
+        analysisResults.method * 0.3 +
+        analysisResults.impact * 0.25 +
+        costEfficiency * 0.1 +
+        urgencyBonus * 0.05,
     );
   };
 
@@ -390,10 +398,18 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                 Tiêu chí đánh giá
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-green-400">Chất lượng dữ liệu (30%)</span> - Độ bao phủ và chính xác</li>
-                <li>• <span className="text-blue-400">Phương pháp (30%)</span> - Độ chính xác và phù hợp</li>
-                <li>• <span className="text-yellow-400">Tác động (25%)</span> - Giá trị khoa học và xã hội</li>
-                <li>• <span className="text-purple-400">Hiệu quả (15%)</span> - Chi phí và tính cấp thiết</li>
+                <li>
+                  • <span className="text-green-400">Chất lượng dữ liệu (30%)</span> - Độ bao phủ và chính xác
+                </li>
+                <li>
+                  • <span className="text-blue-400">Phương pháp (30%)</span> - Độ chính xác và phù hợp
+                </li>
+                <li>
+                  • <span className="text-yellow-400">Tác động (25%)</span> - Giá trị khoa học và xã hội
+                </li>
+                <li>
+                  • <span className="text-purple-400">Hiệu quả (15%)</span> - Chi phí và tính cấp thiết
+                </li>
               </ul>
             </div>
           </div>
@@ -427,14 +443,12 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {RESEARCH_PROJECTS.map((project) => {
               const isSelected = selectedProject?.id === project.id;
-              
+
               return (
                 <div
                   key={project.id}
                   className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 cursor-pointer transition-all duration-200 hover:scale-105 ${
-                    isSelected
-                      ? 'border-green-500 bg-green-500/20'
-                      : 'border-white/20 hover:border-green-400/50'
+                    isSelected ? 'border-green-500 bg-green-500/20' : 'border-white/20 hover:border-green-400/50'
                   }`}
                   onClick={() => setSelectedProject(project)}
                 >
@@ -445,10 +459,10 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                       <div className="text-red-400 font-bold text-xs">Khó: {project.difficulty}%</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{project.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-                  
+
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Vùng:</span>
@@ -461,25 +475,22 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                     <div className="flex justify-between">
                       <span className="text-gray-400">Tác động:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${project.impact_level}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${project.impact_level}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Cấp thiết:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-red-500 h-2 rounded-full" 
-                          style={{width: `${project.urgency}%`}}
-                        ></div>
+                        <div className="bg-red-500 h-2 rounded-full" style={{ width: `${project.urgency}%` }}></div>
                       </div>
                     </div>
                     <div className="mt-3">
                       <span className="text-gray-400 text-xs">Cần dữ liệu:</span>
                       <div className="flex flex-wrap gap-1 mt-1">
-                        {project.data_requirements.slice(0, 2).map(req => (
+                        {project.data_requirements.slice(0, 2).map((req) => (
                           <span key={req} className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs">
                             {req}
                           </span>
@@ -487,7 +498,7 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -530,10 +541,10 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {DATA_SOURCES.map((source) => {
-              const isSelected = selectedDataSources.some(ds => ds.id === source.id);
-              const canSelect = selectedDataSources.length < 4 && 
-                (totalCost + source.cost - (isSelected ? source.cost : 0)) <= budget;
-              
+              const isSelected = selectedDataSources.some((ds) => ds.id === source.id);
+              const canSelect =
+                selectedDataSources.length < 4 && totalCost + source.cost - (isSelected ? source.cost : 0) <= budget;
+
               return (
                 <div
                   key={source.id}
@@ -541,14 +552,14 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                     isSelected
                       ? 'border-blue-500 bg-blue-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-blue-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-blue-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedDataSources(prev => prev.filter(ds => ds.id !== source.id));
+                      setSelectedDataSources((prev) => prev.filter((ds) => ds.id !== source.id));
                     } else if (canSelect) {
-                      setSelectedDataSources(prev => [...prev, source]);
+                      setSelectedDataSources((prev) => [...prev, source]);
                     }
                   }}
                 >
@@ -565,31 +576,25 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                       {source.real_time && <div className="text-green-400 text-xs">Real-time</div>}
                     </div>
                   </div>
-                  
+
                   <h3 className="text-sm font-bold text-white mb-2">{source.name}</h3>
                   <p className="text-gray-300 text-xs mb-3">{source.description}</p>
-                  
+
                   <div className="space-y-1 text-xs">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Độ chính xác:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${source.accuracy}%`}}
-                        ></div>
+                        <div className="bg-green-500 h-1 rounded-full" style={{ width: `${source.accuracy}%` }}></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Bao phủ:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${source.coverage}%`}}
-                        ></div>
+                        <div className="bg-blue-500 h-1 rounded-full" style={{ width: `${source.coverage}%` }}></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-3 text-center">
                       <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">Đã chọn</span>
@@ -621,7 +626,9 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Chọn phương pháp phân tích (tối đa 3)</h2>
             <div className="flex justify-center items-center gap-4 text-gray-300">
-              <span>Ngân sách còn lại: {budget - selectedDataSources.reduce((sum, ds) => sum + ds.cost, 0)} triệu VNĐ</span>
+              <span>
+                Ngân sách còn lại: {budget - selectedDataSources.reduce((sum, ds) => sum + ds.cost, 0)} triệu VNĐ
+              </span>
               <span>Đã chọn: {selectedMethods.length}/3</span>
             </div>
             <div className="text-right text-yellow-400">
@@ -632,12 +639,12 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {ANALYSIS_METHODS.map((method) => {
-              const isSelected = selectedMethods.some(m => m.id === method.id);
-              const currentCostWithoutMethod = selectedDataSources.reduce((sum, ds) => sum + ds.cost, 0) +
-                selectedMethods.filter(m => m.id !== method.id).reduce((sum, m) => sum + m.cost, 0);
-              const canSelect = selectedMethods.length < 3 && 
-                (currentCostWithoutMethod + method.cost) <= budget;
-              
+              const isSelected = selectedMethods.some((m) => m.id === method.id);
+              const currentCostWithoutMethod =
+                selectedDataSources.reduce((sum, ds) => sum + ds.cost, 0) +
+                selectedMethods.filter((m) => m.id !== method.id).reduce((sum, m) => sum + m.cost, 0);
+              const canSelect = selectedMethods.length < 3 && currentCostWithoutMethod + method.cost <= budget;
+
               return (
                 <div
                   key={method.id}
@@ -645,14 +652,14 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                     isSelected
                       ? 'border-purple-500 bg-purple-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-purple-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-purple-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedMethods(prev => prev.filter(m => m.id !== method.id));
+                      setSelectedMethods((prev) => prev.filter((m) => m.id !== method.id));
                     } else if (canSelect) {
-                      setSelectedMethods(prev => [...prev, method]);
+                      setSelectedMethods((prev) => [...prev, method]);
                     }
                   }}
                 >
@@ -663,43 +670,46 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                       <div className="text-gray-400 text-xs">{method.processing_time}h</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-sm font-bold text-white mb-2">{method.name}</h3>
                   <p className="text-gray-300 text-xs mb-3">{method.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div>
                       <span className="text-gray-400">Độ chính xác:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${method.accuracy}%`}}
-                        ></div>
+                        <div className="bg-green-500 h-1 rounded-full" style={{ width: `${method.accuracy}%` }}></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Độ phức tạp:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-orange-500 h-1 rounded-full" 
-                          style={{width: `${method.complexity}%`}}
+                        <div
+                          className="bg-orange-500 h-1 rounded-full"
+                          style={{ width: `${method.complexity}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-2 text-center">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      method.category === 'statistical' ? 'bg-blue-500/20 text-blue-400' :
-                      method.category === 'machine_learning' ? 'bg-green-500/20 text-green-400' :
-                      method.category === 'modeling' ? 'bg-purple-500/20 text-purple-400' :
-                      method.category === 'visualization' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-red-500/20 text-red-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        method.category === 'statistical'
+                          ? 'bg-blue-500/20 text-blue-400'
+                          : method.category === 'machine_learning'
+                            ? 'bg-green-500/20 text-green-400'
+                            : method.category === 'modeling'
+                              ? 'bg-purple-500/20 text-purple-400'
+                              : method.category === 'visualization'
+                                ? 'bg-yellow-500/20 text-yellow-400'
+                                : 'bg-red-500/20 text-red-400'
+                      }`}
+                    >
                       {method.category}
                     </span>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-3 text-center">
                       <span className="bg-purple-500 text-white px-2 py-1 rounded-full text-xs">Đã chọn</span>
@@ -719,14 +729,18 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-blue-400 mb-2">Dữ liệu ({selectedDataSources.length})</h4>
-                {selectedDataSources.map(source => (
-                  <p key={source.id} className="text-gray-300 text-sm">{source.name.split(' ')[0]}</p>
+                {selectedDataSources.map((source) => (
+                  <p key={source.id} className="text-gray-300 text-sm">
+                    {source.name.split(' ')[0]}
+                  </p>
                 ))}
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-purple-400 mb-2">Phương pháp ({selectedMethods.length})</h4>
-                {selectedMethods.map(method => (
-                  <p key={method.id} className="text-gray-300 text-sm">{method.name.split(' ')[0]}</p>
+                {selectedMethods.map((method) => (
+                  <p key={method.id} className="text-gray-300 text-sm">
+                    {method.name.split(' ')[0]}
+                  </p>
                 ))}
               </div>
             </div>
@@ -770,9 +784,9 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                 <span>{Math.round(analysisProgress)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-6">
-                <div 
-                  className="bg-gradient-to-r from-green-500 to-blue-500 h-6 rounded-full transition-all duration-300" 
-                  style={{width: `${analysisProgress}%`}}
+                <div
+                  className="bg-gradient-to-r from-green-500 to-blue-500 h-6 rounded-full transition-all duration-300"
+                  style={{ width: `${analysisProgress}%` }}
                 ></div>
               </div>
             </div>
@@ -784,9 +798,9 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                   <span className="text-white font-bold">{dataQuality}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${dataQuality}%`}}
+                  <div
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${dataQuality}%` }}
                   ></div>
                 </div>
               </div>
@@ -797,9 +811,9 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                   <span className="text-white font-bold">{methodAccuracy}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-purple-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${methodAccuracy}%`}}
+                  <div
+                    className="bg-purple-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${methodAccuracy}%` }}
                   ></div>
                 </div>
               </div>
@@ -810,9 +824,9 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
                   <span className="text-white font-bold">{projectImpact}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${projectImpact}%`}}
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${projectImpact}%` }}
                   ></div>
                 </div>
               </div>
@@ -822,7 +836,9 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
           <div className="text-center">
             <div className="flex justify-center items-center space-x-4 text-gray-300">
               <BarChart3 className="w-6 h-6 text-green-400 animate-pulse" />
-              <span>Đang xử lý {selectedDataSources.length} nguồn dữ liệu với {selectedMethods.length} phương pháp...</span>
+              <span>
+                Đang xử lý {selectedDataSources.length} nguồn dữ liệu với {selectedMethods.length} phương pháp...
+              </span>
               <AlertTriangle className="w-6 h-6 text-yellow-400 animate-pulse" />
             </div>
           </div>
@@ -868,15 +884,21 @@ const ClimateDataAnalystGame: React.FC<GameProps> = ({ onComplete, timeLeft, onR
               <h3 className="text-xl font-bold text-white mb-4">Đánh giá</h3>
               <div className="space-y-2 text-gray-300">
                 {analysisScore >= 90 && <p>🏆 Nghiên cứu xuất sắc! Có thể thay đổi chính sách khí hậu toàn cầu.</p>}
-                {analysisScore >= 80 && analysisScore < 90 && <p>🌟 Nghiên cứu rất tốt! Kết quả có giá trị khoa học cao.</p>}
-                {analysisScore >= 70 && analysisScore < 80 && <p>✅ Nghiên cứu khá ổn! Cần cải thiện một số phương pháp.</p>}
-                {analysisScore >= 60 && analysisScore < 70 && <p>⚠️ Nghiên cứu cơ bản! Cần thêm dữ liệu và phương pháp.</p>}
+                {analysisScore >= 80 && analysisScore < 90 && (
+                  <p>🌟 Nghiên cứu rất tốt! Kết quả có giá trị khoa học cao.</p>
+                )}
+                {analysisScore >= 70 && analysisScore < 80 && (
+                  <p>✅ Nghiên cứu khá ổn! Cần cải thiện một số phương pháp.</p>
+                )}
+                {analysisScore >= 60 && analysisScore < 70 && (
+                  <p>⚠️ Nghiên cứu cơ bản! Cần thêm dữ liệu và phương pháp.</p>
+                )}
                 {analysisScore < 60 && <p>❌ Nghiên cứu cần cải thiện nhiều để đạt chuẩn khoa học.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
-                    <strong>Lưu ý:</strong> Nghiên cứu khí hậu cần cân bằng giữa 
-                    chất lượng dữ liệu, độ chính xác phương pháp và tác động thực tế.
+                    <strong>Lưu ý:</strong> Nghiên cứu khí hậu cần cân bằng giữa chất lượng dữ liệu, độ chính xác phương
+                    pháp và tác động thực tế.
                   </p>
                 </div>
               </div>

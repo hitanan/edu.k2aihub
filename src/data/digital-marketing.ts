@@ -1,14 +1,33 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
+
+const socialMediaGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'digital-marketing-campaign');
+const contentCreatorGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'content-creator-studio');
+const aiArtGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'ai-art-studio');
+const seoGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'seo-optimization-challenge');
 
 export interface DigitalMarketingLesson extends BaseLessonData {
   videoUrl: string;
   tools: string[];
   resources: Resource[];
+  mainContent: {
+    introduction: string;
+    keyConcepts: {
+      title: string;
+      description: string;
+      examples: string[];
+    }[];
+    practicalApplications: {
+      area: string;
+      description: string;
+      case_study: string;
+    }[];
+    conclusion: string;
+  };
   relatedGames?: Array<{
-    gameId: string;
-    title: string;
-    connection: string;
-    difficulty: string;
+    id: string;
+    name: string;
+    description: string;
   }>;
 }
 
@@ -49,14 +68,66 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     ],
     prerequisites: ['Kiến thức cơ bản về marketing', 'Hiểu biết về internet và social media'],
     tools: ['Google Analytics', 'Facebook Business Manager', 'Google Ads', 'Canva', 'HubSpot', 'Mailchimp'],
-    relatedGames: [
-      {
-        gameId: 'social-media-campaign-builder',
-        title: 'Social Media Campaign Builder',
-        connection: 'Practice digital marketing fundamentals by building comprehensive social media campaigns',
-        difficulty: 'Trung bình',
-      },
-    ],
+    mainContent: {
+      introduction:
+        'Digital Marketing là một lĩnh vực rộng lớn và năng động, sử dụng các kênh kỹ thuật số để quảng bá sản phẩm hoặc dịch vụ. Bài học này sẽ cung cấp cho bạn nền tảng vững chắc về các khái niệm cốt lõi, các kênh chính và cách xây dựng một chiến lược marketing hiệu quả từ đầu.',
+      keyConcepts: [
+        {
+          title: 'Buyer Persona',
+          description:
+            'Là hồ sơ chi tiết về khách hàng lý tưởng của bạn, bao gồm thông tin nhân khẩu học, sở thích, thách thức và mục tiêu. Việc xây dựng buyer persona giúp bạn hiểu rõ hơn về đối tượng mục tiêu và tạo ra các chiến dịch marketing phù hợp.',
+          examples: [
+            'Tạo persona cho một sinh viên đại học quan tâm đến các khóa học lập trình.',
+            'Xây dựng persona cho một bà mẹ bỉm sữa tìm kiếm sản phẩm chăm sóc em bé.',
+          ],
+        },
+        {
+          title: 'Customer Journey Map',
+          description:
+            'Là bản đồ trực quan hóa các điểm chạm và trải nghiệm của khách hàng với thương hiệu của bạn, từ giai đoạn nhận biết đến khi trở thành khách hàng trung thành. Nó giúp xác định các cơ hội để cải thiện trải nghiệm khách hàng.',
+          examples: [
+            'Vẽ bản đồ hành trình cho một khách hàng mua sắm trên trang thương mại điện tử.',
+            'Phân tích các điểm chạm của khách hàng khi sử dụng một ứng dụng di động.',
+          ],
+        },
+        {
+          title: 'Chiến lược Marketing 360 độ',
+          description:
+            'Là một cách tiếp cận toàn diện, tích hợp nhiều kênh marketing khác nhau (cả online và offline) để tạo ra một thông điệp nhất quán và trải nghiệm liền mạch cho khách hàng.',
+          examples: [
+            'Kết hợp quảng cáo trên mạng xã hội, email marketing, và sự kiện offline.',
+            'Sử dụng SEO, content marketing và PR để xây dựng thương hiệu.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Startup Công nghệ',
+          description:
+            'Một startup công nghệ có thể sử dụng digital marketing để tiếp cận khách hàng tiềm năng trên toàn cầu với chi phí thấp, xây dựng cộng đồng người dùng và nhanh chóng xác thực ý tưởng sản phẩm.',
+          case_study:
+            'Dropbox đã sử dụng một chương trình giới thiệu (referral program) đơn giản để tăng trưởng người dùng một cách chóng mặt mà không cần chi nhiều cho quảng cáo truyền thống.',
+        },
+        {
+          area: 'Thương mại điện tử',
+          description:
+            'Các doanh nghiệp e-commerce phụ thuộc rất nhiều vào digital marketing để thu hút lưu lượng truy cập, tối ưu hóa tỷ lệ chuyển đổi và xây dựng lòng trung thành của khách hàng thông qua các kênh như SEO, quảng cáo trả phí và email marketing.',
+          case_study:
+            'Tiki đã đầu tư mạnh vào SEO và content marketing để cạnh tranh với các đối thủ lớn, giúp họ tăng trưởng organic traffic và doanh thu một cách bền vững.',
+        },
+      ],
+      conclusion:
+        'Nắm vững các nguyên tắc cơ bản của Digital Marketing là bước đầu tiên và quan trọng nhất để xây dựng sự nghiệp thành công trong lĩnh vực này. Bằng cách hiểu rõ khách hàng và lựa chọn kênh phù hợp, bạn có thể tạo ra những chiến dịch có tác động lớn.',
+    },
+    relatedGames: socialMediaGame
+      ? [
+          {
+            id: socialMediaGame.id,
+            name: socialMediaGame.title,
+            description: socialMediaGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
         title: 'Xây dựng Buyer Persona',
@@ -89,11 +160,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Research đối tượng khách hàng thực tế',
           'Sử dụng dữ liệu demographics và psychographics',
           'Xác định pain points và goals cụ thể',
-        ],
-        hints: [
-          'Phỏng vấn khách hàng hiện tại để thu thập insights',
-          'Sử dụng Google Analytics để phân tích audience',
-          'Tham khảo các nghiên cứu thị trường trong ngành',
         ],
         expectedResults: 'Một buyer persona hoàn chỉnh với ảnh đại diện, thông tin chi tiết và kế hoạch tiếp cận',
       },
@@ -131,11 +197,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Mô tả customer actions tại mỗi stage',
           'Phân tích emotions và pain points',
           'Đề xuất optimization opportunities',
-        ],
-        hints: [
-          'Sử dụng thực tế từ một website bán hàng cụ thể',
-          'Thu thập feedback từ khách hàng thực tế',
-          'Áp dụng analytics data để validate journey',
         ],
         expectedResults: 'Journey map trực quan với các insights và action items cụ thể',
       },
@@ -208,14 +269,66 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Canva',
       'Adobe Creative Suite',
     ],
-    relatedGames: [
-      {
-        gameId: 'social-media-campaign-builder',
-        title: 'Social Media Campaign Builder',
-        connection: 'Build comprehensive social media campaigns across multiple platforms with real audience targeting',
-        difficulty: 'Trung bình',
-      },
-    ],
+    mainContent: {
+      introduction:
+        'Social Media Marketing không chỉ là đăng bài lên Facebook. Đó là nghệ thuật và khoa học của việc sử dụng các nền tảng mạng xã hội để xây dựng thương hiệu, kết nối với khách hàng và thúc đẩy mục tiêu kinh doanh. Bài học này sẽ hướng dẫn bạn cách làm chủ các nền tảng phổ biến và tạo ra các chiến dịch có sức ảnh hưởng.',
+      keyConcepts: [
+        {
+          title: 'Content Strategy',
+          description:
+            'Là kế hoạch chi tiết về loại nội dung bạn sẽ tạo, nền tảng bạn sẽ sử dụng và lịch trình đăng bài. Một chiến lược nội dung tốt cần cân bằng giữa việc cung cấp giá trị cho khán giả và quảng bá thương hiệu.',
+          examples: [
+            'Lên kế hoạch nội dung theo chủ đề hàng tuần (ví dụ: "Thứ Hai Mẹo Vặt", "Thứ Sáu Hỏi Đáp").',
+            'Sử dụng quy tắc 80/20: 80% nội dung giá trị, 20% nội dung quảng cáo.',
+          ],
+        },
+        {
+          title: 'Community Building',
+          description:
+            'Không chỉ là thu hút người theo dõi, mà là xây dựng một cộng đồng trung thành và tương tác xung quanh thương hiệu của bạn. Điều này bao gồm việc trả lời bình luận, tạo các cuộc thảo luận và khuyến khích nội dung do người dùng tạo ra.',
+          examples: [
+            'Tổ chức các buổi livestream Q&A hàng tuần.',
+            'Tạo một nhóm Facebook độc quyền cho khách hàng thân thiết.',
+          ],
+        },
+        {
+          title: 'Social Commerce',
+          description:
+            'Là việc tích hợp trải nghiệm mua sắm trực tiếp vào các nền tảng mạng xã hội, cho phép người dùng khám phá và mua sản phẩm mà không cần rời khỏi ứng dụng. Đây là một xu hướng ngày càng phát triển.',
+          examples: [
+            'Sử dụng tính năng Instagram Shopping để tag sản phẩm trên ảnh.',
+            'Thiết lập cửa hàng trên Facebook (Facebook Shop).',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Thương hiệu thời trang',
+          description:
+            'Một thương hiệu thời trang có thể sử dụng Instagram và TikTok để giới thiệu các bộ sưu tập mới thông qua hình ảnh và video bắt mắt, hợp tác với các influencer và chạy các chiến dịch social commerce.',
+          case_study:
+            'Các thương hiệu như Zara và H&M sử dụng Instagram để tạo lookbook trực tuyến, cho phép người dùng "mua ngay" các sản phẩm họ thấy trên feed.',
+        },
+        {
+          area: 'Nhà hàng địa phương',
+          description:
+            'Một nhà hàng có thể sử dụng Facebook và Instagram để đăng ảnh món ăn hấp dẫn, chia sẻ đánh giá của khách hàng, chạy quảng cáo nhắm mục tiêu đến những người ở gần và thông báo các chương trình khuyến mãi đặc biệt.',
+          case_study:
+            'Nhiều quán cà phê "sống ảo" đã trở nên nổi tiếng nhờ vào việc khách hàng check-in và chia sẻ hình ảnh trên Instagram, tạo ra hiệu ứng marketing truyền miệng mạnh mẽ.',
+        },
+      ],
+      conclusion:
+        'Social Media Marketing là một công cụ mạnh mẽ để kết nối với khách hàng ở cấp độ cá nhân. Bằng cách tạo ra nội dung hấp dẫn và xây dựng một cộng đồng thực sự, bạn có thể biến những người theo dõi thành những người ủng hộ thương hiệu nhiệt thành.',
+    },
+    relatedGames: socialMediaGame
+      ? [
+          {
+            id: socialMediaGame.id,
+            name: socialMediaGame.title,
+            description: socialMediaGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
         title: 'Content Calendar Planning',
@@ -257,11 +370,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Cân bằng các loại content khác nhau',
           'Xác định optimal posting times',
           'Include call-to-actions cho mỗi post',
-        ],
-        hints: [
-          'Research audience insights để xác định best posting times',
-          'Áp dụng 80/20 rule: 80% value content, 20% promotional',
-          'Plan content around holidays và trending topics',
         ],
         expectedResults: 'Content calendar chi tiết với descriptions, hashtags và posting schedule',
       },
@@ -307,7 +415,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 3: Content Marketing & Storytelling',
     description:
       'Học nghệ thuật kể chuyện và tạo nội dung hấp dẫn. Từ blog posts đến video content, master các format content khác nhau.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=TkskQD1Lt4A',
     imageUrl: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '120 phút',
@@ -320,6 +428,67 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     ],
     prerequisites: ['Kỹ năng viết cơ bản', 'Hiểu về target audience'],
     tools: ['WordPress', 'Google Docs', 'Grammarly', 'BuzzSumo', 'CoSchedule', 'Yoast SEO', 'Google Trends'],
+    mainContent: {
+      introduction:
+        'Content Marketing không chỉ là viết bài. Đó là việc tạo ra và phân phối nội dung có giá trị, liên quan và nhất quán để thu hút và giữ chân một đối tượng khán giả được xác định rõ ràng — và cuối cùng, để thúc đẩy hành động của khách hàng mang lại lợi nhuận. Bài học này sẽ dạy bạn cách kết hợp nghệ thuật kể chuyện với chiến lược để tạo ra nội dung thực sự nổi bật.',
+      keyConcepts: [
+        {
+          title: 'Content Funnel (Phễu nội dung)',
+          description:
+            'Là một mô hình mô tả hành trình của khách hàng từ khi họ lần đầu tiên biết đến thương hiệu của bạn (Top of Funnel - TOFU) đến khi họ đưa ra quyết định mua hàng (Bottom of Funnel - BOFU). Mỗi giai đoạn của phễu đòi hỏi một loại nội dung khác nhau.',
+          examples: [
+            'TOFU: Bài blog, infographic, video giải trí.',
+            'MOFU (Middle of Funnel): Ebook, webinar, case study.',
+            'BOFU: Demo sản phẩm, trang báo giá, đánh giá của khách hàng.',
+          ],
+        },
+        {
+          title: 'Storytelling (Kể chuyện thương hiệu)',
+          description:
+            'Là việc sử dụng một câu chuyện để kết nối thương hiệu của bạn với khách hàng ở cấp độ cảm xúc. Một câu chuyện hay có thể làm cho thương hiệu của bạn trở nên đáng nhớ, đáng tin cậy và khác biệt so với đối thủ.',
+          examples: [
+            'Câu chuyện về người sáng lập và lý do họ bắt đầu công ty.',
+            'Câu chuyện thành công của khách hàng sau khi sử dụng sản phẩm của bạn.',
+          ],
+        },
+        {
+          title: 'Content Repurposing (Tái sử dụng nội dung)',
+          description:
+            'Là quá trình lấy một mẩu nội dung và biến nó thành nhiều định dạng khác nhau để phân phối trên các kênh khác nhau. Điều này giúp bạn tối đa hóa giá trị từ công sức tạo nội dung ban đầu.',
+          examples: [
+            'Biến một bài blog dài thành một chuỗi các bài đăng trên mạng xã hội.',
+            'Chuyển một buổi webinar thành một video YouTube, một podcast và một infographic.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Công ty phần mềm B2B',
+          description:
+            'Một công ty SaaS có thể sử dụng content marketing để giáo dục thị trường về vấn đề mà sản phẩm của họ giải quyết, xây dựng vị thế chuyên gia trong ngành và tạo ra các khách hàng tiềm năng chất lượng cao thông qua các ebook và webinar.',
+          case_study:
+            'HubSpot đã xây dựng cả một đế chế bằng cách cung cấp miễn phí một lượng lớn nội dung marketing và bán hàng chất lượng cao, thu hút hàng triệu người dùng và biến họ thành khách hàng.',
+        },
+        {
+          area: 'Thương hiệu tiêu dùng (B2C)',
+          description:
+            'Một thương hiệu thực phẩm có thể tạo ra các blog về công thức nấu ăn, video hướng dẫn trên YouTube và các thử thách nấu ăn trên mạng xã hội để thu hút cộng đồng những người yêu thích ẩm thực và quảng bá sản phẩm của họ một cách tự nhiên.',
+          case_study:
+            'Red Bull không bán nước tăng lực, họ bán một lối sống phiêu lưu mạo hiểm thông qua việc tài trợ và tạo ra nội dung về các môn thể thao mạo hiểm, từ đó xây dựng một thương hiệu toàn cầu mạnh mẽ.',
+        },
+      ],
+      conclusion:
+        'Content Marketing và Storytelling là trái tim của marketing hiện đại. Bằng cách cung cấp giá trị trước khi yêu cầu bất cứ điều gì, bạn xây dựng được niềm tin và mối quan hệ lâu dài với khách hàng, điều mà quảng cáo truyền thống khó có thể làm được.',
+    },
+    relatedGames: contentCreatorGame
+      ? [
+          {
+            id: contentCreatorGame.id,
+            name: contentCreatorGame.title,
+            description: contentCreatorGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
         title: 'Brand Storytelling Framework',
@@ -362,11 +531,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Include personal và emotional elements',
           'Connect đến larger purpose và mission',
           'Make it relatable cho target audience',
-        ],
-        hints: [
-          'Start with a relatable moment hoặc challenge',
-          'Use specific details để make story memorable',
-          'End with forward-looking vision',
         ],
         expectedResults: 'Complete brand story với clear narrative arc và emotional connection',
       },
@@ -433,14 +597,69 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Yoast SEO',
       'Google Keyword Planner',
     ],
-    relatedGames: [
-      {
-        gameId: 'seo-optimization-challenge',
-        title: 'SEO Optimization Challenge',
-        connection: 'Master SEO techniques through hands-on website optimization challenges with keyword research and technical SEO',
-        difficulty: 'Trung bình',
-      },
-    ],
+    mainContent: {
+      introduction:
+        'Tối ưu hóa Công cụ Tìm kiếm (SEO) là quá trình cải thiện trang web của bạn để tăng khả năng hiển thị của nó khi mọi người tìm kiếm các sản phẩm hoặc dịch vụ liên quan đến doanh nghiệp của bạn trong Google, Bing và các công cụ tìm kiếm khác. SEO không phải là một thủ thuật, mà là một tập hợp các phương pháp hay nhất giúp công cụ tìm kiếm hiểu và trình bày nội dung của bạn. Bài học này sẽ giải mã các yếu tố phức tạp của SEO thành các bước có thể hành động.',
+      keyConcepts: [
+        {
+          title: 'On-Page SEO',
+          description:
+            'Là việc tối ưu hóa các yếu-tố-trên-trang-web của bạn, chẳng hạn như thẻ tiêu đề, mô tả meta, tiêu đề và nội dung. Mục tiêu là làm cho nội dung của bạn vừa thân thiện với công cụ tìm kiếm, vừa hấp dẫn đối với người dùng.',
+          examples: [
+            'Đặt từ khóa chính vào thẻ tiêu đề và H1.',
+            'Viết mô tả meta hấp dẫn để tăng tỷ lệ nhấp chuột.',
+            'Tối ưu hóa hình ảnh bằng cách sử dụng thẻ alt.',
+          ],
+        },
+        {
+          title: 'Off-Page SEO',
+          description:
+            'Bao gồm các hoạt động được thực hiện bên ngoài trang web của bạn để tác động đến thứ hạng của bạn trong các trang kết quả của công cụ tìm kiếm (SERPs). Yếu tố quan trọng nhất của Off-Page SEO là xây dựng liên kết ngược (backlink).',
+          examples: [
+            'Viết bài đăng của khách (guest post) trên các blog có uy tín trong ngành.',
+            'Được đề cập trên các trang tin tức hoặc ấn phẩm trực tuyến.',
+            'Xây dựng hồ sơ trên các danh bạ doanh nghiệp địa phương.',
+          ],
+        },
+        {
+          title: 'Technical SEO',
+          description:
+            'Đề cập đến việc tối ưu hóa các khía cạnh kỹ thuật của trang web của bạn để giúp các công cụ tìm kiếm thu thập dữ liệu và lập chỉ mục trang web của bạn hiệu quả hơn. Điều này bao gồm tốc độ trang, tính thân thiện với thiết bị di động, cấu trúc trang web và dữ liệu có cấu trúc.',
+          examples: [
+            'Cải thiện tốc độ tải trang bằng cách nén hình ảnh.',
+            'Sử dụng tệp robots.txt để hướng dẫn trình thu thập thông tin của công cụ tìm kiếm.',
+            'Triển khai schema markup để giúp Google hiểu rõ hơn về nội dung của bạn.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Trang web thương mại điện tử',
+          description:
+            'Một cửa hàng trực tuyến có thể sử dụng SEO để xếp hạng cho các từ khóa sản phẩm cụ thể, thu hút những người mua có ý định cao và tăng doanh số bán hàng trực tiếp từ các công cụ tìm kiếm.',
+          case_study:
+            'Shopee và Lazada đã đầu tư rất lớn vào SEO cho hàng triệu trang sản phẩm của họ, cho phép họ thống trị các kết quả tìm kiếm cho các truy vấn mua sắm ở Việt Nam.',
+        },
+        {
+          area: 'Doanh nghiệp địa phương',
+          description:
+            'Một phòng khám nha khoa hoặc một nhà hàng có thể sử dụng Local SEO để xuất hiện trong "map pack" của Google khi người dùng tìm kiếm "nha sĩ gần đây" hoặc "nhà hàng ý ở quận 1", thu hút khách hàng trong khu vực của họ.',
+          case_study:
+            'Nhiều doanh nghiệp nhỏ đã tăng gấp đôi lượng khách hàng ghé thăm chỉ bằng cách tối ưu hóa hồ sơ Google Business Profile và thu thập các đánh giá tích cực.',
+        },
+      ],
+      conclusion:
+        'SEO là một cuộc marathon, không phải là một cuộc chạy nước rút. Bằng cách liên tục tạo ra nội dung chất lượng cao và tuân thủ các phương pháp hay nhất về kỹ thuật, bạn có thể xây dựng một nguồn lưu lượng truy cập không phải trả tiền bền vững và có giá trị, đây là một trong những tài sản quý giá nhất trong marketing kỹ thuật số.',
+    },
+    relatedGames: seoGame
+      ? [
+          {
+            id: seoGame.id,
+            name: seoGame.title,
+            description: seoGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
         title: 'SEO Audit & Strategy',
@@ -524,11 +743,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Assess backlink profile quality',
           'Create prioritized action plan',
         ],
-        hints: [
-          'Use multiple SEO tools để get comprehensive view',
-          'Focus on quick wins trước khi tackle long-term strategies',
-          'Quantify potential impact cho each recommendation',
-        ],
         expectedResults: 'Detailed SEO audit report với actionable recommendations và timeline',
       },
     ],
@@ -573,7 +787,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 5: Paid Advertising & PPC',
     description:
       'Master Google Ads, Facebook Ads và các nền tảng quảng cáo trả phí. Tối ưu ROI và scale campaigns hiệu quả.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=fSbqaTlWaYI',
     imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '150 phút',
@@ -594,6 +808,65 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Hotjar',
       'Google Tag Manager',
     ],
+    mainContent: {
+      introduction:
+        'Quảng cáo trả phí (Paid Advertising), đặc biệt là Pay-Per-Click (PPC), là cách nhanh nhất để đưa thông điệp của bạn đến với đối tượng mục tiêu. Không giống như SEO, bạn có thể thấy kết quả gần như ngay lập tức. Tuy nhiên, để thành công, bạn cần một chiến lược vững chắc để không "đốt tiền" vô ích. Bài học này sẽ trang bị cho bạn kiến thức để chạy các chiến dịch có lợi nhuận trên các nền tảng lớn nhất.',
+      keyConcepts: [
+        {
+          title: 'Targeting (Nhắm mục tiêu)',
+          description:
+            'Là khả năng hiển thị quảng cáo của bạn cho các nhóm người dùng cụ thể dựa trên nhân khẩu học, sở thích, hành vi, vị trí, v.v. Đây là sức mạnh lớn nhất của quảng cáo kỹ thuật số.',
+          examples: [
+            'Nhắm mục tiêu đến những người đã truy cập trang web của bạn trong 30 ngày qua (Remarketing).',
+            'Nhắm mục tiêu đến những người có sở thích "du lịch sang trọng" và sống tại TP.HCM.',
+          ],
+        },
+        {
+          title: 'Ad Copy & Landing Page Optimization',
+          description:
+            'Ad copy là văn bản quảng cáo của bạn, và landing page là trang mà người dùng truy cập sau khi nhấp vào quảng cáo. Cả hai yếu tố này phải nhất quán và được tối ưu hóa để thuyết phục người dùng thực hiện hành động mong muốn (chuyển đổi).',
+          examples: [
+            'Thử nghiệm A/B các tiêu đề quảng cáo khác nhau để xem cái nào có tỷ lệ nhấp chuột cao hơn.',
+            'Đảm bảo landing page có một lời kêu gọi hành động (CTA) rõ ràng và duy nhất.',
+          ],
+        },
+        {
+          title: 'Return on Ad Spend (ROAS)',
+          description:
+            'Là một chỉ số quan trọng đo lường doanh thu bạn kiếm được cho mỗi đồng chi tiêu cho quảng cáo. ROAS = (Doanh thu từ quảng cáo / Chi phí quảng cáo). Một ROAS dương và cao cho thấy chiến dịch của bạn đang có lãi.',
+          examples: [
+            'Nếu bạn chi 10 triệu cho quảng cáo và thu về 50 triệu doanh thu, ROAS của bạn là 5x (hoặc 500%).',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Ra mắt sản phẩm mới',
+          description:
+            'Khi một công ty ra mắt sản phẩm mới, quảng cáo trả phí là cách hiệu quả để nhanh chóng tạo ra nhận thức, thu hút lưu lượng truy cập ban đầu và thu thập dữ liệu về khách hàng.',
+          case_study:
+            'Các hãng phim thường sử dụng Google Search Ads và YouTube Ads rầm rộ trong tuần đầu tiên công chiếu phim để tạo ra sự bùng nổ tại phòng vé.',
+        },
+        {
+          area: 'Lead Generation cho B2B',
+          description:
+            'Các công ty B2B có thể sử dụng LinkedIn Ads để nhắm mục tiêu đến các chuyên gia có chức danh công việc hoặc làm việc tại các công ty cụ thể, cung cấp cho họ các tài liệu hữu ích (như whitepaper) để đổi lấy thông tin liên hệ.',
+          case_study:
+            'Salesforce sử dụng quảng cáo trả phí để quảng bá các báo cáo ngành và webinar của họ, từ đó xây dựng một danh sách khách hàng tiềm năng khổng lồ cho đội ngũ bán hàng.',
+        },
+      ],
+      conclusion:
+        'Quảng cáo trả phí là một công cụ cực kỳ mạnh mẽ khi được sử dụng đúng cách. Nó đòi hỏi sự kết hợp giữa tư duy phân tích dữ liệu và sự sáng tạo trong thông điệp. Bằng cách liên tục thử nghiệm, đo lường và tối ưu hóa, bạn có thể xây dựng một cỗ máy tăng trưởng có thể dự đoán và mở rộng được.',
+    },
+    relatedGames: socialMediaGame
+      ? [
+          {
+            id: socialMediaGame.id,
+            name: socialMediaGame.title,
+            description: socialMediaGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
         title: 'Google Ads Campaign Setup',
@@ -700,11 +973,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Design conversion tracking strategy',
           'Plan optimization và scaling roadmap',
         ],
-        hints: [
-          'Use local language và cultural references trong ad copy',
-          'Set up proper conversion tracking trước khi launch',
-          'Start với exact match keywords để control costs',
-        ],
         expectedResults: 'Complete Google Ads campaign setup với detailed strategy và optimization plan',
       },
     ],
@@ -752,7 +1020,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 6: Email Marketing & Automation',
     description:
       'Xây dựng email marketing systems tự động hóa customer journey. Từ welcome series đến advanced segmentation.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=pLhQOYMGa88',
     imageUrl: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '110 phút',
@@ -765,6 +1033,60 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     ],
     prerequisites: ['Hiểu customer journey', 'Kỹ năng copywriting cơ bản'],
     tools: ['Mailchimp', 'HubSpot', 'ActiveCampaign', 'ConvertKit', 'Klaviyo', 'Litmus', 'Canva'],
+    mainContent: {
+      introduction:
+        'Email Marketing vẫn là một trong những kênh có ROI (Return on Investment) cao nhất trong digital marketing. Nó cho phép bạn xây dựng mối quan hệ trực tiếp và cá nhân với khách hàng. Khi kết hợp với tự động hóa (automation), nó trở thành một cỗ máy mạnh mẽ để nuôi dưỡng khách hàng tiềm năng và thúc đẩy doanh số một cách tự động. Bài học này sẽ chỉ cho bạn cách xây dựng các hệ thống email marketing hiệu quả.',
+      keyConcepts: [
+        {
+          title: 'Email Automation Workflows',
+          description:
+            'Là một chuỗi các email được gửi tự động đến người dùng dựa trên các trình kích hoạt (triggers) hoặc hành động cụ thể. Điều này cho phép bạn gửi đúng thông điệp, đến đúng người, vào đúng thời điểm.',
+          examples: [
+            'Chuỗi email chào mừng (welcome series) cho người đăng ký mới.',
+            'Chuỗi email nhắc nhở giỏ hàng bị bỏ quên (abandoned cart).',
+            'Chuỗi email nuôi dưỡng khách hàng tiềm năng (lead nurturing).',
+          ],
+        },
+        {
+          title: 'Segmentation & Personalization',
+          description:
+            'Phân khúc (Segmentation) là chia danh sách email của bạn thành các nhóm nhỏ hơn dựa trên các tiêu chí chung. Cá nhân hóa (Personalization) là sử dụng dữ liệu người đăng ký để tùy chỉnh nội dung email. Cả hai đều giúp tăng đáng kể sự liên quan và hiệu quả của email.',
+          examples: [
+            'Gửi một ưu đãi đặc biệt cho những khách hàng đã mua hàng hơn 3 lần.',
+            'Chèn tên của người nhận vào dòng tiêu đề email.',
+            'Gợi ý các sản phẩm dựa trên lịch sử mua hàng của họ.',
+          ],
+        },
+        {
+          title: 'Email Deliverability',
+          description:
+            'Là khả năng email của bạn đến được hộp thư đến của người nhận thay vì vào thư mục spam. Nó bị ảnh hưởng bởi nhiều yếu tố như uy tín của người gửi, chất lượng danh sách email và nội dung email.',
+          examples: [
+            'Xác thực tên miền của bạn (SPF, DKIM).',
+            'Thường xuyên làm sạch danh sách email để loại bỏ các địa chỉ không hoạt động.',
+            'Tránh sử dụng các từ ngữ dễ bị coi là spam trong tiêu đề.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Thương mại điện tử',
+          description:
+            'Các cửa hàng trực tuyến sử dụng email automation để gửi email xác nhận đơn hàng, thông báo vận chuyển, nhắc nhở giỏ hàng, gợi ý sản phẩm và các chiến dịch khuyến mãi, giúp tăng doanh số và giữ chân khách hàng.',
+          case_study:
+            'Amazon là bậc thầy về email marketing, gửi các email được cá nhân hóa cao dựa trên lịch sử xem và mua hàng của bạn, thúc đẩy một phần đáng kể doanh thu của họ.',
+        },
+        {
+          area: 'Doanh nghiệp SaaS',
+          description:
+            'Các công ty phần mềm dưới dạng dịch vụ (SaaS) sử dụng email để hướng dẫn người dùng mới (onboarding), thông báo các tính năng mới, nuôi dưỡng người dùng bản dùng thử thành khách hàng trả phí và giảm tỷ lệ khách hàng rời bỏ (churn).',
+          case_study:
+            'Grammarly gửi các báo cáo tiến độ hàng tuần được cá nhân hóa cho người dùng, cho thấy họ đã viết bao nhiêu từ và những lỗi sai phổ biến, điều này khuyến khích họ tiếp tục sử dụng sản phẩm.',
+        },
+      ],
+      conclusion:
+        'Email Marketing là một tài sản mà bạn sở hữu, không giống như lượng người theo dõi trên mạng xã hội có thể biến mất nếu nền tảng thay đổi thuật toán. Bằng cách xây dựng một danh sách email chất lượng và giao tiếp với họ một cách có chiến lược, bạn đang xây dựng một kênh marketing bền vững và có lợi nhuận cao.',
+    },
     exercises: [
       {
         title: 'Email Automation Workflow',
@@ -871,11 +1193,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Design compelling subject lines và content',
           'Set measurable performance targets',
         ],
-        hints: [
-          'Focus on value delivery trong mỗi email',
-          'Use behavioral triggers để personalize experience',
-          'Test subject lines và send times regularly',
-        ],
         expectedResults: 'Complete email automation workflow với content examples và performance metrics',
       },
     ],
@@ -944,6 +1261,66 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Optimizely',
       'Facebook Analytics',
     ],
+    mainContent: {
+      introduction:
+        'Trong marketing hiện đại, "cảm tính" không còn chỗ đứng. Mọi quyết định đều cần được dựa trên dữ liệu. Data-Driven Marketing là phương pháp sử dụng dữ liệu khách hàng để tối ưu hóa các chiến dịch và đưa ra quyết định sáng suốt. Bài học này sẽ dạy bạn cách thu thập, phân tích và biến dữ liệu thô thành những hiểu biết sâu sắc có thể hành động để thúc đẩy tăng trưởng.',
+      keyConcepts: [
+        {
+          title: 'Analytics Tracking Setup',
+          description:
+            'Là nền tảng của marketing dựa trên dữ liệu. Nó bao gồm việc cài đặt các công cụ như Google Analytics và Google Tag Manager để theo dõi hành vi của người dùng trên trang web và ứng dụng của bạn, từ lượt xem trang đến các chuyển đổi quan trọng.',
+          examples: [
+            'Thiết lập theo dõi sự kiện (event tracking) cho các lần nhấp vào nút "Thêm vào giỏ hàng".',
+            'Cài đặt theo dõi chuyển đổi (conversion tracking) cho các biểu mẫu đăng ký.',
+          ],
+        },
+        {
+          title: 'Conversion Funnel Analysis',
+          description:
+            'Là quá trình phân tích các bước mà người dùng thực hiện để hoàn thành một mục tiêu (ví dụ: mua hàng). Bằng cách xác định nơi người dùng rời bỏ nhiều nhất trong phễu, bạn có thể tìm ra các điểm yếu và tối ưu hóa chúng.',
+          examples: [
+            'Phân tích phễu thanh toán để giảm tỷ lệ bỏ giỏ hàng.',
+            'Tối ưu hóa phễu đăng ký để tăng số lượng người dùng mới.',
+          ],
+        },
+        {
+          title: 'A/B Testing (Thử nghiệm A/B)',
+          description:
+            'Là một phương pháp thử nghiệm trong đó hai phiên bản của một trang web hoặc một yếu tố (ví dụ: một nút bấm) được hiển thị cho hai nhóm người dùng khác nhau để xem phiên bản nào hoạt động hiệu quả hơn. Đây là một công cụ mạnh mẽ để ra quyết định dựa trên dữ liệu.',
+          examples: [
+            'Thử nghiệm hai tiêu đề khác nhau cho một trang đích.',
+            'Thử nghiệm màu sắc của nút "Mua ngay" (ví dụ: xanh lá cây so với màu cam).',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Tối ưu hóa trang web',
+          description:
+            'Các công ty sử dụng các công cụ phân tích như Hotjar để xem bản đồ nhiệt (heatmaps) và bản ghi phiên (session recordings) về cách người dùng tương tác với trang web của họ, từ đó xác định các vấn đề về trải nghiệm người dùng và cải thiện thiết kế.',
+          case_study:
+            'Một công ty e-commerce đã phát hiện ra rằng người dùng không nhìn thấy nút "Thanh toán" trên thiết bị di động. Sau khi di chuyển nút lên vị trí cao hơn, tỷ lệ chuyển đổi trên di động của họ đã tăng 30%.',
+        },
+        {
+          area: 'Phân bổ ngân sách marketing',
+          description:
+            'Bằng cách sử dụng các mô hình phân bổ (attribution models), các nhà marketing có thể hiểu rõ hơn về kênh nào (SEO, quảng cáo trả phí, mạng xã hội, v.v.) đóng góp nhiều nhất vào việc tạo ra chuyển đổi, từ đó phân bổ ngân sách một cách hiệu quả hơn.',
+          case_study:
+            'Một công ty nhận ra rằng mặc dù quảng cáo Facebook có nhiều lượt nhấp chuột, nhưng các khách hàng đến từ tìm kiếm không phải trả tiền (organic search) lại có giá trị vòng đời cao hơn. Họ đã điều chỉnh ngân sách để đầu tư nhiều hơn vào SEO.',
+        },
+      ],
+      conclusion:
+        'Dữ liệu là la bàn của nhà marketing hiện đại. Bằng cách học cách đọc và diễn giải nó, bạn có thể điều hướng các chiến dịch của mình một cách tự tin, tránh lãng phí ngân sách và liên tục cải thiện kết quả. Việc áp dụng tư duy dựa trên dữ liệu sẽ tách biệt các nhà marketing nghiệp dư khỏi các chuyên gia thực thụ.',
+    },
+    relatedGames: aiArtGame
+      ? [
+          {
+            id: aiArtGame.id,
+            name: aiArtGame.title,
+            description: aiArtGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
         title: 'Marketing Analytics Dashboard',
@@ -1094,11 +1471,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Calculate ROI cho different marketing channels',
           'Provide actionable insights và recommendations',
         ],
-        hints: [
-          'Focus on metrics that directly impact business goals',
-          'Use data visualization để make insights clear',
-          'Include both performance tracking và predictive insights',
-        ],
         expectedResults: 'Comprehensive marketing dashboard với key metrics, analysis và actionable recommendations',
       },
     ],
@@ -1146,7 +1518,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
     title: 'Bài 8: Creator Economy & Monetization',
     description:
       'Kiếm tiền từ content creation và personal branding. Từ influencer marketing đến building personal brand empire.',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU',
+    videoUrl: 'https://www.youtube.com/watch?v=eoWcQUjNM8o',
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '120 phút',
@@ -1167,6 +1539,70 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'LinkTree',
       'Later',
     ],
+    mainContent: {
+      introduction:
+        'Nền kinh tế sáng tạo (Creator Economy) đã mở ra một con đường sự nghiệp hoàn toàn mới, nơi các cá nhân có thể kiếm sống và xây dựng doanh nghiệp từ chính nội dung và thương hiệu cá nhân của họ. Đây không còn là sân chơi chỉ dành cho những người nổi tiếng. Bất kỳ ai có chuyên môn và đam mê đều có thể tham gia. Bài học này sẽ cung cấp cho bạn một lộ trình để biến đam mê sáng tạo thành một nguồn thu nhập bền vững.',
+      keyConcepts: [
+        {
+          title: 'Personal Brand (Thương hiệu cá nhân)',
+          description:
+            'Là cách thế giới nhìn nhận về bạn, dựa trên chuyên môn, giá trị và cá tính mà bạn thể hiện. Một thương hiệu cá nhân mạnh mẽ là nền tảng để xây dựng lòng tin và thu hút cơ hội.',
+          examples: [
+            'Một lập trình viên chia sẻ các mẹo code hữu ích trên Twitter.',
+            'Một chuyên gia tài chính viết blog về đầu tư cho người mới bắt đầu.',
+          ],
+        },
+        {
+          title: 'Multiple Revenue Streams (Đa dạng hóa nguồn thu)',
+          description:
+            'Những nhà sáng tạo thành công không bao giờ phụ thuộc vào một nguồn thu nhập duy nhất. Họ xây dựng một hệ sinh thái các sản phẩm và dịch vụ khác nhau để tạo ra sự ổn định và tiềm năng tăng trưởng.',
+          examples: [
+            'Doanh thu từ quảng cáo YouTube.',
+            'Bán các khóa học trực tuyến.',
+            'Hợp tác với các thương hiệu (brand deals).',
+            'Nhận quyên góp từ người hâm mộ (Patreon).',
+            'Bán sản phẩm vật lý (merchandise).',
+          ],
+        },
+        {
+          title: 'Community Building (Xây dựng cộng đồng)',
+          description:
+            'Tài sản lớn nhất của một nhà sáng tạo không phải là nội dung, mà là cộng đồng mà họ xây dựng xung quanh nội dung đó. Một cộng đồng gắn kết sẽ hỗ trợ bạn, cung cấp phản hồi và trở thành những khách hàng đầu tiên của bạn.',
+          examples: [
+            'Tạo một server Discord cho những người theo dõi bạn.',
+            'Tổ chức các buổi gặp mặt hoặc livestream độc quyền.',
+            'Tích cực trả lời bình luận và tin nhắn.',
+          ],
+        },
+      ],
+      practicalApplications: [
+        {
+          area: 'Chuyên gia (Expert)',
+          description:
+            'Một chuyên gia trong bất kỳ lĩnh vực nào (ví dụ: marketing, thiết kế, dinh dưỡng) có thể sử dụng các nền tảng sáng tạo để chia sẻ kiến thức, xây dựng uy tín và bán các dịch vụ tư vấn, khóa học hoặc sách.',
+          case_study:
+            'Mark Manson từ một blogger đã trở thành tác giả sách bán chạy nhất thế giới ("The Subtle Art of Not Giving a F*ck") bằng cách xây dựng một lượng lớn độc giả trung thành qua blog và email newsletter của mình.',
+        },
+        {
+          area: 'Nghệ sĩ/Người làm giải trí',
+          description:
+            'Các nhạc sĩ, họa sĩ, diễn viên hài có thể sử dụng YouTube, TikTok và Patreon để giới thiệu tác phẩm của mình, kết nối trực tiếp với người hâm mộ và kiếm tiền mà không cần thông qua các hãng đĩa hay công ty quản lý truyền thống.',
+          case_study:
+            'Nhiều nghệ sĩ độc lập đã khởi nghiệp thành công bằng cách phát hành nhạc trên Spotify và xây dựng cộng đồng người hâm mộ trên Patreon, nơi họ cung cấp nội dung độc quyền cho những người ủng hộ.',
+        },
+      ],
+      conclusion:
+        'Trở thành một nhà sáng tạo thành công đòi hỏi sự kiên trì, nhất quán và tư duy của một doanh nhân. Bằng cách tập trung vào việc phục vụ một đối tượng khán giả cụ thể và đa dạng hóa nguồn thu nhập, bạn có thể xây dựng một sự nghiệp linh hoạt, tự chủ và đầy ý nghĩa từ chính đam mê của mình.',
+    },
+    relatedGames: contentCreatorGame
+      ? [
+          {
+            id: contentCreatorGame.id,
+            name: contentCreatorGame.title,
+            description: contentCreatorGame.description,
+          },
+        ]
+      : [],
     exercises: [
       {
         title: 'Personal Brand Strategy',
@@ -1367,11 +1803,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
           'Create content strategy với multiple pillars',
           'Design multi-platform distribution approach',
           'Plan monetization roadmap với timeline',
-        ],
-        hints: [
-          'Focus on authentic storytelling rather than generic advice',
-          'Choose platforms where your audience actually spends time',
-          'Start with one revenue stream và expand gradually',
         ],
         expectedResults: 'Comprehensive personal brand strategy với actionable implementation plan',
       },

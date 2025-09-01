@@ -1,458 +1,475 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 export interface LegalTechLesson extends BaseLessonData {
-  legalArea: 'contract-management' | 'legal-research' | 'case-management' | 'compliance' | 'legal-automation' | 'intellectual-property';
+  legalArea:
+    | 'contract-management'
+    | 'legal-research'
+    | 'case-management'
+    | 'compliance'
+    | 'legal-automation'
+    | 'intellectual-property';
   vietnameseLegalSystem: string[];
   legalTechTools: string[];
   complianceRequirements: string[];
   targetLegalProfessionals: string[];
+  relatedGames?: string[];
 }
 
 export const legalTechLessons: LegalTechLesson[] = [
   {
     id: 'legal-document-automation',
-    title: 'Legal Document Automation & Contract Management',
-    description: 'Tự động hóa quy trình tạo tài liệu pháp lý, quản lý hợp đồng và contract lifecycle management trong hệ thống pháp luật Việt Nam.',
-    duration: '260 phút',
+    title: 'Tự động hóa Tài liệu Pháp lý & Quản lý Hợp đồng',
+    description:
+      'Tự động hóa quy trình tạo tài liệu pháp lý, quản lý hợp đồng và vòng đời hợp đồng trong hệ thống pháp luật Việt Nam.',
+    duration: 260,
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=ZXT6W8Nfs98', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=ZXT6W8Nfs98',
     imageUrl: 'https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=1200&h=600&fit=crop',
     legalArea: 'contract-management',
     objectives: [
-      'Hiểu contract lifecycle management và automation workflows',
-      'Sử dụng legal tech tools để tạo tài liệu pháp lý chuẩn',
-      'Implement contract review processes với AI assistance',
-      'Manage legal document repositories và version control',
-      'Ensure compliance với Vietnamese legal requirements',
-      'Create templates cho common Vietnamese legal documents'
+      'Hiểu về quản lý vòng đời hợp đồng và quy trình tự động hóa',
+      'Sử dụng công cụ công nghệ pháp lý để tạo tài liệu pháp lý chuẩn',
+      'Triển khai quy trình rà soát hợp đồng với sự hỗ trợ của AI',
+      'Quản lý kho tài liệu pháp lý và kiểm soát phiên bản',
+      'Đảm bảo tuân thủ các yêu cầu pháp lý của Việt Nam',
+      'Tạo mẫu cho các tài liệu pháp lý phổ biến của Việt Nam',
     ],
     prerequisites: [
-      'Basic understanding của Vietnamese legal system',
-      'Familiarity với document management concepts',
-      'Interest trong legal process optimization'
+      'Kiến thức cơ bản về hệ thống pháp luật Việt Nam',
+      'Quen thuộc với các khái niệm quản lý tài liệu',
+      'Quan tâm đến tối ưu hóa quy trình pháp lý',
     ],
     vietnameseLegalSystem: [
-      'Vietnamese Civil Code 2015 contract provisions',
-      'Commercial Law 2005 và amendments',
-      'Investment Law 2020 compliance requirements',
-      'Labor Code 2019 employment contract standards',
-      'Law on Enterprises 2020 corporate documentation'
+      'Các quy định về hợp đồng trong Bộ luật Dân sự Việt Nam 2015',
+      'Luật Thương mại 2005 và các sửa đổi',
+      'Yêu cầu tuân thủ của Luật Đầu tư 2020',
+      'Tiêu chuẩn hợp đồng lao động trong Bộ luật Lao động 2019',
+      'Hồ sơ doanh nghiệp theo Luật Doanh nghiệp 2020',
     ],
     legalTechTools: [
-      'ContractPodAi for contract management',
-      'LegalZoom document automation',
-      'Kira Systems for contract analysis',
-      'Microsoft Word với legal templates',
-      'Google Workspace for collaboration'
+      'ContractPodAi để quản lý hợp đồng',
+      'Tự động hóa tài liệu với LegalZoom',
+      'Kira Systems để phân tích hợp đồng',
+      'Microsoft Word với các mẫu pháp lý',
+      'Google Workspace để cộng tác',
     ],
     complianceRequirements: [
-      'Vietnamese data protection regulations',
-      'Financial reporting compliance standards',
-      'Labor law documentation requirements',
-      'Tax compliance document management',
-      'Corporate governance documentation'
+      'Quy định bảo vệ dữ liệu của Việt Nam',
+      'Tiêu chuẩn tuân thủ báo cáo tài chính',
+      'Yêu cầu về hồ sơ luật lao động',
+      'Quản lý tài liệu tuân thủ thuế',
+      'Hồ sơ quản trị doanh nghiệp',
     ],
     targetLegalProfessionals: [
-      'Corporate lawyers transitioning to legal tech',
-      'Law firm administrators và paralegals',
-      'In-house legal counsel',
-      'Legal consultants serving Vietnamese businesses',
-      'Legal tech entrepreneurs'
+      'Luật sư doanh nghiệp chuyển sang công nghệ pháp lý',
+      'Quản trị viên và trợ lý pháp lý tại các công ty luật',
+      'Cố vấn pháp lý nội bộ',
+      'Tư vấn pháp lý cho doanh nghiệp Việt Nam',
+      'Doanh nhân công nghệ pháp lý',
     ],
     exercises: [
       {
-        title: 'Vietnamese Employment Contract Automation System',
-        description: 'Build comprehensive system để generate standardized Vietnamese employment contracts',
+        title: 'Hệ thống Tự động hóa Hợp đồng Lao động Việt Nam',
+        description: 'Xây dựng hệ thống toàn diện để tạo ra các hợp đồng lao động tiêu chuẩn của Việt Nam.',
         difficulty: 'Nâng cao',
-        materials: ['Document automation software', 'Vietnamese labor law resources', 'Contract templates'],
+        materials: ['Phần mềm tự động hóa tài liệu', 'Nguồn tài liệu luật lao động Việt Nam', 'Mẫu hợp đồng'],
         procedure: [
-          'Research Vietnamese Labor Code 2019 requirements',
-          'Identify common contract variations và clauses',
-          'Create master template với variable fields',
-          'Build user interface cho contract generation',
-          'Implement validation cho legal compliance',
-          'Add electronic signature integration',
-          'Create audit trail system cho contract changes',
-          'Test với various employment scenarios'
+          'Nghiên cứu yêu cầu của Bộ luật Lao động Việt Nam 2019',
+          'Xác định các biến thể và điều khoản hợp đồng phổ biến',
+          'Tạo mẫu chính với các trường có thể thay đổi',
+          'Xây dựng giao diện người dùng để tạo hợp đồng',
+          'Triển khai xác thực để tuân thủ pháp lý',
+          'Tích hợp chữ ký điện tử',
+          'Tạo hệ thống theo dõi thay đổi hợp đồng',
+          'Kiểm thử với các kịch bản tuyển dụng khác nhau',
         ],
-        expectedResults: 'Automated contract generation system reducing manual work by 80%',
-        solution: 'Complete legal document automation platform với Vietnamese law compliance'
+        expectedResults: 'Hệ thống tạo hợp đồng tự động giảm 80% công việc thủ công',
+        solution: 'Nền tảng tự động hóa tài liệu pháp lý hoàn chỉnh tuân thủ luật pháp Việt Nam',
       },
       {
-        title: 'Contract Analysis Dashboard',
-        description: 'Develop AI-powered dashboard để analyze contract portfolios',
+        title: 'Bảng điều khiển Phân tích Hợp đồng',
+        description: 'Phát triển bảng điều khiển sử dụng AI để phân tích danh mục hợp đồng.',
         difficulty: 'Nâng cao',
-        materials: ['Analytics platforms', 'Contract databases', 'Visualization tools'],
+        materials: ['Nền tảng phân tích', 'Cơ sở dữ liệu hợp đồng', 'Công cụ trực quan hóa'],
         procedure: [
-          'Collect sample Vietnamese commercial contracts',
-          'Extract key terms và obligations using AI',
-          'Create risk assessment scoring system',
-          'Build visualization dashboard cho contract insights',
-          'Implement alert system cho expiring contracts',
-          'Add compliance checking automation'
+          'Thu thập các hợp đồng thương mại mẫu của Việt Nam',
+          'Trích xuất các điều khoản và nghĩa vụ chính bằng AI',
+          'Tạo hệ thống chấm điểm đánh giá rủi ro',
+          'Xây dựng bảng điều khiển trực quan hóa để có thông tin chi tiết về hợp đồng',
+          'Triển khai hệ thống cảnh báo cho các hợp đồng sắp hết hạn',
+          'Thêm tự động hóa kiểm tra tuân thủ',
         ],
-        expectedResults: 'Contract intelligence platform providing actionable insights'
-      }
+        expectedResults: 'Nền tảng thông minh hợp đồng cung cấp thông tin chi tiết có thể hành động',
+      },
     ],
     realWorldApplications: [
-      'Corporate legal departments automation',
-      'Law firm document management systems',
-      'SME contract standardization',
-      'Real estate transaction documentation',
-      'Employment contract management for HR departments'
+      'Tự động hóa phòng pháp chế doanh nghiệp',
+      'Hệ thống quản lý tài liệu của công ty luật',
+      'Tiêu chuẩn hóa hợp đồng cho SME',
+      'Hồ sơ giao dịch bất động sản',
+      'Quản lý hợp đồng lao động cho phòng nhân sự',
     ],
     caseStudies: [
       {
-        title: 'VinGroup Legal Tech Transformation',
-        organization: 'VinGroup Corporation',
-        problem: 'Manual contract management across multiple subsidiaries',
-        solution: 'Centralized contract automation platform với Vietnamese legal compliance',
-        impact: '60% reduction in contract processing time, 95% compliance rate',
-        innovations: ['AI contract review', 'Automated approval workflows', 'Risk scoring algorithms']
-      }
+        title: 'Chuyển đổi Công nghệ Pháp lý tại VinGroup',
+        organization: 'Tập đoàn VinGroup',
+        problem: 'Quản lý hợp đồng thủ công qua nhiều công ty con',
+        solution: 'Nền tảng tự động hóa hợp đồng tập trung tuân thủ pháp luật Việt Nam',
+        impact: 'Giảm 60% thời gian xử lý hợp đồng, tỷ lệ tuân thủ 95%',
+        innovations: ['Rà soát hợp đồng bằng AI', 'Quy trình phê duyệt tự động', 'Thuật toán chấm điểm rủi ro'],
+      },
     ],
     resources: [
       {
-        title: 'Vietnamese Legal Framework Documentation',
+        title: 'Tài liệu Khung pháp lý Việt Nam',
         url: 'https://thukyluat.vn/',
-        type: 'Documentation'
+        type: 'Tài liệu',
       },
       {
-        title: 'Legal Tech Implementation Guide',
+        title: 'Hướng dẫn Triển khai Công nghệ Pháp lý',
         url: 'https://legaltechnology.com/',
-        type: 'Guide'
-      }
-    ]
+        type: 'Hướng dẫn',
+      },
+    ],
+    relatedGames: ['ai-ethics-dilemma', 'blockchain-explorer', 'e-government-portal'],
   },
   {
     id: 'legal-research-ai-tools',
-    title: 'AI-Powered Legal Research & Case Analysis',
-    description: 'Leverage AI và machine learning cho legal research, case law analysis và precedent identification trong Vietnamese jurisprudence.',
-    duration: '280 phút',
+    title: 'Công cụ Nghiên cứu Pháp lý & Phân tích Vụ việc bằng AI',
+    description:
+      'Tận dụng AI và học máy cho nghiên cứu pháp lý, phân tích án lệ và xác định tiền lệ trong hệ thống tư pháp Việt Nam.',
+    duration: 280,
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=39zbC_PrNQs', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=39zbC_PrNQs',
     imageUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=600&fit=crop',
     legalArea: 'legal-research',
     objectives: [
-      'Master AI-powered legal research methodologies',
-      'Analyze Vietnamese case law với machine learning tools',
-      'Build legal knowledge databases',
-      'Implement predictive analytics cho legal outcomes',
-      'Create legal research workflows',
-      'Understand limitations và ethics of AI in legal practice'
+      'Thành thạo các phương pháp nghiên cứu pháp lý sử dụng AI',
+      'Phân tích án lệ Việt Nam bằng công cụ học máy',
+      'Xây dựng cơ sở dữ liệu kiến thức pháp lý',
+      'Triển khai phân tích dự đoán cho kết quả pháp lý',
+      'Tạo quy trình nghiên cứu pháp lý',
+      'Hiểu các hạn chế và đạo đức của AI trong hành nghề luật',
     ],
     prerequisites: [
-      'Strong legal research background',
-      'Understanding của Vietnamese court system',
-      'Basic familiarity với AI concepts'
+      'Nền tảng nghiên cứu pháp lý vững chắc',
+      'Hiểu biết về hệ thống tòa án Việt Nam',
+      'Quen thuộc cơ bản với các khái niệm AI',
     ],
     vietnameseLegalSystem: [
-      'Supreme People\'s Court jurisprudence database',
-      'People\'s Court case law repositories',
-      'Administrative court decision analysis',
-      'Commercial arbitration precedents',
-      'Constitutional Court decision tracking'
+      'Cơ sở dữ liệu án lệ của Tòa án nhân dân tối cao',
+      'Kho án lệ của Tòa án nhân dân',
+      'Phân tích quyết định của tòa án hành chính',
+      'Tiền lệ trọng tài thương mại',
+      'Theo dõi quyết định của Tòa án Hiến pháp',
     ],
     legalTechTools: [
-      'Westlaw Edge với AI features',
-      'Lexis+ AI research platform',
-      'ROSS Intelligence legal search',
-      'Casetext CARA brief analysis',
-      'Custom legal research AI tools'
+      'Westlaw Edge với các tính năng AI',
+      'Nền tảng nghiên cứu Lexis+ AI',
+      'Tìm kiếm pháp lý ROSS Intelligence',
+      'Phân tích bản tóm tắt Casetext CARA',
+      'Công cụ AI nghiên cứu pháp lý tùy chỉnh',
     ],
     complianceRequirements: [
-      'Legal professional ethics regarding AI use',
-      'Client confidentiality in AI-powered research',
-      'Accuracy standards for AI-generated legal analysis',
-      'Documentation requirements for AI-assisted research'
+      'Đạo đức nghề nghiệp luật sư về việc sử dụng AI',
+      'Bảo mật thông tin khách hàng trong nghiên cứu bằng AI',
+      'Tiêu chuẩn chính xác cho phân tích pháp lý do AI tạo ra',
+      'Yêu cầu về tài liệu cho nghiên cứu có sự hỗ trợ của AI',
     ],
     targetLegalProfessionals: [
-      'Legal researchers và law librarians',
-      'Litigation attorneys needing case analysis',
-      'Academic legal researchers',
-      'Judges needing precedent research',
-      'Legal tech developers'
+      'Nhà nghiên cứu pháp lý và thủ thư luật',
+      'Luật sư tranh tụng cần phân tích vụ việc',
+      'Nhà nghiên cứu pháp lý học thuật',
+      'Thẩm phán cần nghiên cứu tiền lệ',
+      'Nhà phát triển công nghệ pháp lý',
     ],
     exercises: [
       {
-        title: 'Vietnamese Commercial Law Precedent Analysis',
-        description: 'Build AI system để analyze trends trong Vietnamese commercial litigation',
+        title: 'Phân tích Tiền lệ Luật Thương mại Việt Nam',
+        description: 'Xây dựng hệ thống AI để phân tích các xu hướng trong tranh tụng thương mại Việt Nam.',
         difficulty: 'Nâng cao',
-        materials: ['Vietnamese court databases', 'NLP libraries', 'Data visualization tools'],
+        materials: ['Cơ sở dữ liệu tòa án Việt Nam', 'Thư viện NLP', 'Công cụ trực quan hóa dữ liệu'],
         procedure: [
-          'Collect Vietnamese commercial court decisions (5+ years)',
-          'Clean và structure legal text data',
-          'Apply NLP techniques để extract legal concepts',
-          'Identify patterns trong judicial decision-making',
-          'Create predictive models cho case outcomes',
-          'Build interactive dashboard với trend analysis',
-          'Validate predictions với recent case outcomes'
+          'Thu thập các quyết định của tòa án thương mại Việt Nam (hơn 5 năm)',
+          'Làm sạch và cấu trúc dữ liệu văn bản pháp lý',
+          'Áp dụng kỹ thuật NLP để trích xuất các khái niệm pháp lý',
+          'Xác định các mẫu trong việc ra quyết định của tòa án',
+          'Tạo mô hình dự đoán cho kết quả vụ việc',
+          'Xây dựng bảng điều khiển tương tác với phân tích xu hướng',
+          'Xác thực các dự đoán với kết quả vụ việc gần đây',
         ],
-        expectedResults: 'Predictive analytics platform với 75%+ accuracy in outcome prediction',
-        solution: 'AI-powered legal research platform specific to Vietnamese commercial law'
-      }
+        expectedResults: 'Nền tảng phân tích dự đoán với độ chính xác hơn 75% trong dự đoán kết quả',
+        solution: 'Nền tảng nghiên cứu pháp lý sử dụng AI dành riêng cho luật thương mại Việt Nam',
+      },
     ],
     realWorldApplications: [
-      'Law firm research departments',
-      'Corporate legal strategy development',
-      'Academic legal research projects',
-      'Judicial decision support systems',
-      'Legal publishing và knowledge management'
+      'Phòng nghiên cứu của công ty luật',
+      'Phát triển chiến lược pháp lý doanh nghiệp',
+      'Dự án nghiên cứu pháp lý học thuật',
+      'Hệ thống hỗ trợ quyết định của tòa án',
+      'Xuất bản và quản lý kiến thức pháp lý',
     ],
     caseStudies: [
       {
-        title: 'Baker McKenzie Legal Research AI',
-        organization: 'Baker McKenzie Vietnam',
-        problem: 'Time-intensive manual legal research across multiple jurisdictions',
-        solution: 'AI-powered research platform combining international và Vietnamese law',
-        impact: '50% reduction in research time, improved case strategy development',
-        innovations: ['Multi-jurisdictional analysis', 'Automated brief generation', 'Risk assessment scoring']
-      }
-    ]
+        title: 'AI Nghiên cứu Pháp lý của Baker McKenzie',
+        organization: 'Baker McKenzie Việt Nam',
+        problem: 'Nghiên cứu pháp lý thủ công tốn thời gian qua nhiều khu vực pháp lý',
+        solution: 'Nền tảng nghiên cứu sử dụng AI kết hợp luật pháp quốc tế và Việt Nam',
+        impact: 'Giảm 50% thời gian nghiên cứu, cải thiện phát triển chiến lược vụ việc',
+        innovations: ['Phân tích đa khu vực pháp lý', 'Tạo bản tóm tắt tự động', 'Chấm điểm đánh giá rủi ro'],
+      },
+    ],
+    relatedGames: ['ai-ethics-dilemma', 'neural-network-builder', 'data-visualization'],
   },
   {
     id: 'legal-case-management-systems',
-    title: 'Legal Case Management & Practice Management Systems',
-    description: 'Comprehensive case management, client relationship management, và practice optimization cho Vietnamese law firms và legal departments.',
-    duration: '240 phút',
+    title: 'Hệ thống Quản lý Vụ việc & Quản lý Thực hành Pháp lý',
+    description:
+      'Quản lý vụ việc toàn diện, quản lý quan hệ khách hàng và tối ưu hóa thực hành cho các công ty luật và phòng pháp chế Việt Nam.',
+    duration: 240,
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=7bB8zX_2cIE', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=7bB8zX_2cIE',
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
     legalArea: 'case-management',
     objectives: [
-      'Implement comprehensive case management workflows',
-      'Optimize client relationship management trong legal practice',
-      'Manage legal calendaring và deadline tracking',
-      'Create efficient billing và time tracking systems',
-      'Build client portal và communication systems',
-      'Analyze practice performance với data insights'
+      'Triển khai quy trình quản lý vụ việc toàn diện',
+      'Tối ưu hóa quản lý quan hệ khách hàng trong hành nghề luật',
+      'Quản lý lịch pháp lý và theo dõi thời hạn',
+      'Tạo hệ thống thanh toán và theo dõi thời gian hiệu quả',
+      'Xây dựng cổng thông tin và hệ thống liên lạc với khách hàng',
+      'Phân tích hiệu suất thực hành với thông tin chi tiết từ dữ liệu',
     ],
     prerequisites: [
-      'Law practice experience',
-      'Understanding của legal practice operations',
-      'Basic project management knowledge'
+      'Kinh nghiệm hành nghề luật',
+      'Hiểu biết về hoạt động hành nghề luật',
+      'Kiến thức quản lý dự án cơ bản',
     ],
     vietnameseLegalSystem: [
-      'Vietnamese court filing deadlines',
-      'Legal procedure timelines và requirements',
-      'Client confidentiality requirements',
-      'Legal billing regulations và standards',
-      'Professional responsibility compliance'
+      'Thời hạn nộp hồ sơ tại tòa án Việt Nam',
+      'Thời gian và yêu cầu thủ tục pháp lý',
+      'Yêu cầu bảo mật thông tin khách hàng',
+      'Quy định và tiêu chuẩn thanh toán pháp lý',
+      'Tuân thủ trách nhiệm nghề nghiệp',
     ],
     legalTechTools: [
-      'Clio practice management platform',
-      'MyCase case management system',
-      'PracticePanther legal software',
+      'Nền tảng quản lý thực hành Clio',
+      'Hệ thống quản lý vụ việc MyCase',
+      'Phần mềm pháp lý PracticePanther',
       'LexisNexis Time Matters',
-      'Custom case management solutions'
+      'Giải pháp quản lý vụ việc tùy chỉnh',
     ],
     complianceRequirements: [
-      'Client data protection requirements',
-      'Legal professional ethics compliance',
-      'Financial record keeping standards',
-      'Document retention policies',
-      'Conflict of interest management'
+      'Yêu cầu bảo vệ dữ liệu khách hàng',
+      'Tuân thủ đạo đức nghề nghiệp luật sư',
+      'Tiêu chuẩn lưu giữ hồ sơ tài chính',
+      'Chính sách lưu giữ tài liệu',
+      'Quản lý xung đột lợi ích',
     ],
     targetLegalProfessionals: [
-      'Law firm partners và administrators',
-      'Solo practitioners optimizing operations',
-      'Legal operations professionals',
-      'IT managers in legal organizations',
-      'Legal practice consultants'
+      'Thành viên hợp danh và quản trị viên công ty luật',
+      'Luật sư hành nghề độc lập tối ưu hóa hoạt động',
+      'Chuyên gia vận hành pháp lý',
+      'Quản lý CNTT trong các tổ chức pháp lý',
+      'Tư vấn thực hành pháp lý',
     ],
     exercises: [
       {
-        title: 'Vietnamese Law Firm Practice Management System',
-        description: 'Design comprehensive practice management system cho Vietnamese law firm',
+        title: 'Hệ thống Quản lý Thực hành cho Công ty Luật Việt Nam',
+        description: 'Thiết kế hệ thống quản lý thực hành toàn diện cho một công ty luật Việt Nam.',
         difficulty: 'Nâng cao',
-        materials: ['Practice management software', 'Client database templates', 'Workflow automation tools'],
+        materials: ['Phần mềm quản lý thực hành', 'Mẫu cơ sở dữ liệu khách hàng', 'Công cụ tự động hóa quy trình'],
         procedure: [
-          'Analyze current firm operations và pain points',
-          'Design case intake và client onboarding workflow',
-          'Implement matter management với deadlines tracking',
-          'Create billing automation với Vietnamese requirements',
-          'Build client communication portal',
-          'Add document management với security controls',
-          'Implement performance analytics dashboard',
-          'Train team members on new system usage'
+          'Phân tích hoạt động và các điểm yếu hiện tại của công ty',
+          'Thiết kế quy trình tiếp nhận vụ việc và giới thiệu khách hàng',
+          'Triển khai quản lý vấn đề với theo dõi thời hạn',
+          'Tạo tự động hóa thanh toán với các yêu cầu của Việt Nam',
+          'Xây dựng cổng thông tin liên lạc với khách hàng',
+          'Thêm quản lý tài liệu với kiểm soát bảo mật',
+          'Triển khai bảng điều khiển phân tích hiệu suất',
+          'Đào tạo thành viên nhóm về cách sử dụng hệ thống mới',
         ],
-        expectedResults: 'Complete practice management transformation với 40% efficiency improvement',
-        solution: 'Integrated legal practice platform tailored to Vietnamese legal market'
-      }
+        expectedResults: 'Chuyển đổi quản lý thực hành hoàn chỉnh với cải thiện hiệu quả 40%',
+        solution: 'Nền tảng thực hành pháp lý tích hợp phù hợp với thị trường pháp lý Việt Nam',
+      },
     ],
     realWorldApplications: [
-      'Law firm operations optimization',
-      'Corporate legal department management',
-      'Solo practitioner practice enhancement',
-      'Legal services delivery improvement',
-      'Client experience enhancement'
-    ]
+      'Tối ưu hóa hoạt động của công ty luật',
+      'Quản lý phòng pháp chế doanh nghiệp',
+      'Nâng cao thực hành của luật sư độc lập',
+      'Cải thiện cung cấp dịch vụ pháp lý',
+      'Nâng cao trải nghiệm khách hàng',
+    ],
+    relatedGames: ['e-government-portal', 'investment-simulator', 'treasure-hunt-adventure'],
   },
   {
     id: 'regulatory-compliance-technology',
-    title: 'Regulatory Compliance & Risk Management Technology',
-    description: 'Technology solutions cho regulatory compliance, risk assessment, và automated compliance monitoring trong Vietnamese business environment.',
-    duration: '220 phút',
+    title: 'Công nghệ Tuân thủ Quy định & Quản lý Rủi ro',
+    description:
+      'Các giải pháp công nghệ cho việc tuân thủ quy định, đánh giá rủi ro và giám sát tuân thủ tự động trong môi trường kinh doanh Việt Nam.',
+    duration: 220,
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=Sc7qx2lxGYM', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=Sc7qx2lxGYM',
     imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&h=600&fit=crop',
     legalArea: 'compliance',
     objectives: [
-      'Build automated compliance monitoring systems',
-      'Implement risk assessment và management workflows',
-      'Create regulatory reporting automation',
-      'Understand Vietnamese regulatory landscape',
-      'Design compliance training và tracking systems',
-      'Develop regulatory change management processes'
+      'Xây dựng hệ thống giám sát tuân thủ tự động',
+      'Triển khai quy trình đánh giá và quản lý rủi ro',
+      'Tạo tự động hóa báo cáo quy định',
+      'Hiểu bối cảnh quy định của Việt Nam',
+      'Thiết kế hệ thống đào tạo và theo dõi tuân thủ',
+      'Phát triển quy trình quản lý thay đổi quy định',
     ],
     prerequisites: [
-      'Understanding của regulatory compliance concepts',
-      'Vietnamese business law knowledge',
-      'Risk management fundamentals'
+      'Hiểu biết về các khái niệm tuân thủ quy định',
+      'Kiến thức luật kinh doanh Việt Nam',
+      'Nguyên tắc cơ bản về quản lý rủi ro',
     ],
     vietnameseLegalSystem: [
-      'Corporate governance regulations',
-      'Financial services compliance requirements',
-      'Data protection và cybersecurity laws',
-      'Environmental compliance standards',
-      'Labor law compliance monitoring'
+      'Quy định về quản trị doanh nghiệp',
+      'Yêu cầu tuân thủ dịch vụ tài chính',
+      'Luật bảo vệ dữ liệu và an ninh mạng',
+      'Tiêu chuẩn tuân thủ môi trường',
+      'Giám sát tuân thủ luật lao động',
     ],
     legalTechTools: [
-      'Thomson Reuters compliance platforms',
-      'MetricStream GRC platform',
-      'ServiceNow GRC solutions',
-      'Custom compliance automation tools',
-      'Regulatory intelligence platforms'
+      'Nền tảng tuân thủ của Thomson Reuters',
+      'Nền tảng GRC của MetricStream',
+      'Giải pháp GRC của ServiceNow',
+      'Công cụ tự động hóa tuân thủ tùy chỉnh',
+      'Nền tảng thông tin quy định',
     ],
     complianceRequirements: [
-      'Automated compliance reporting standards',
-      'Risk assessment documentation requirements',
-      'Audit trail maintenance',
-      'Regulatory change tracking',
-      'Compliance training verification'
+      'Tiêu chuẩn báo cáo tuân thủ tự động',
+      'Yêu cầu về tài liệu đánh giá rủi ro',
+      'Duy trì dấu vết kiểm toán',
+      'Theo dõi thay đổi quy định',
+      'Xác minh đào tạo tuân thủ',
     ],
     targetLegalProfessionals: [
-      'Compliance officers và managers',
-      'Risk management professionals',
-      'Corporate legal counsel',
-      'Regulatory affairs specialists',
-      'Internal audit professionals'
+      'Cán bộ và quản lý tuân thủ',
+      'Chuyên gia quản lý rủi ro',
+      'Cố vấn pháp lý doanh nghiệp',
+      'Chuyên gia về các vấn đề pháp lý',
+      'Chuyên gia kiểm toán nội bộ',
     ],
     exercises: [
       {
-        title: 'Vietnamese Banking Compliance Monitoring System',
-        description: 'Create automated compliance monitoring system cho Vietnamese banking regulations',
+        title: 'Hệ thống Giám sát Tuân thủ Ngân hàng Việt Nam',
+        description: 'Tạo hệ thống giám sát tuân thủ tự động cho các quy định ngân hàng Việt Nam.',
         difficulty: 'Nâng cao',
-        materials: ['Compliance frameworks', 'Banking regulations database', 'Monitoring tools'],
+        materials: ['Khung tuân thủ', 'Cơ sở dữ liệu quy định ngân hàng', 'Công cụ giám sát'],
         procedure: [
-          'Map Vietnamese banking compliance requirements',
-          'Design automated monitoring workflows',
-          'Create risk scoring algorithms',
-          'Build regulatory reporting automation',
-          'Implement alert systems cho compliance violations',
-          'Add regulatory change tracking',
-          'Create compliance dashboard với KPIs',
-          'Test system với regulatory scenarios'
+          'Sơ đồ hóa các yêu cầu tuân thủ ngân hàng Việt Nam',
+          'Thiết kế quy trình giám sát tự động',
+          'Tạo thuật toán chấm điểm rủi ro',
+          'Xây dựng tự động hóa báo cáo quy định',
+          'Triển khai hệ thống cảnh báo vi phạm tuân thủ',
+          'Thêm theo dõi thay đổi quy định',
+          'Tạo bảng điều khiển tuân thủ với các chỉ số KPI',
+          'Kiểm thử hệ thống với các kịch bản quy định',
         ],
-        expectedResults: 'Comprehensive compliance platform reducing manual monitoring by 70%',
-        solution: 'Automated regulatory compliance system với Vietnamese banking focus'
-      }
+        expectedResults: 'Nền tảng tuân thủ toàn diện giảm 70% giám sát thủ công',
+        solution: 'Hệ thống tuân thủ quy định tự động tập trung vào ngân hàng Việt Nam',
+      },
     ],
     realWorldApplications: [
-      'Financial services compliance automation',
-      'Corporate compliance management',
-      'Regulatory reporting automation',
-      'Risk management system implementation',
-      'Audit compliance tracking'
-    ]
+      'Tự động hóa tuân thủ dịch vụ tài chính',
+      'Quản lý tuân thủ doanh nghiệp',
+      'Tự động hóa báo cáo quy định',
+      'Triển khai hệ thống quản lý rủi ro',
+      'Theo dõi tuân thủ kiểm toán',
+    ],
+    relatedGames: ['cybersecurity-defense', 'investment-simulator', 'ai-ethics-dilemma'],
   },
   {
     id: 'intellectual-property-management',
-    title: 'Intellectual Property Management & Protection Technology',
-    description: 'Digital tools và strategies cho IP portfolio management, trademark monitoring, và patent analysis trong Vietnamese IP ecosystem.',
-    duration: '200 phút',
+    title: 'Công nghệ Quản lý & Bảo hộ Sở hữu Trí tuệ',
+    description:
+      'Các công cụ và chiến lược kỹ thuật số để quản lý danh mục IP, giám sát nhãn hiệu và phân tích bằng sáng chế trong hệ sinh thái IP của Việt Nam.',
+    duration: 200,
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=UqZJPuyK9VY', // Default - needs replacement
+    videoUrl: 'https://www.youtube.com/watch?v=UqZJPuyK9VY',
     imageUrl: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=600&fit=crop',
     legalArea: 'intellectual-property',
     objectives: [
-      'Understand Vietnamese IP registration processes',
-      'Implement IP portfolio management systems',
-      'Create trademark monitoring và enforcement workflows',
-      'Analyze patent landscapes với technology tools',
-      'Build IP valuation và commercialization strategies',
-      'Manage IP litigation support technology'
+      'Hiểu quy trình đăng ký IP của Việt Nam',
+      'Triển khai hệ thống quản lý danh mục IP',
+      'Tạo quy trình giám sát và thực thi nhãn hiệu',
+      'Phân tích bối cảnh bằng sáng chế bằng các công cụ công nghệ',
+      'Xây dựng chiến lược định giá và thương mại hóa IP',
+      'Quản lý công nghệ hỗ trợ tranh tụng IP',
     ],
     prerequisites: [
-      'Basic intellectual property knowledge',
-      'Understanding của Vietnamese IP law',
-      'Interest trong technology commercialization'
+      'Kiến thức cơ bản về sở hữu trí tuệ',
+      'Hiểu biết về luật IP Việt Nam',
+      'Quan tâm đến thương mại hóa công nghệ',
     ],
     vietnameseLegalSystem: [
-      'Vietnamese IP Law 2005 và amendments',
-      'National Office of Intellectual Property (NOIP) procedures',
-      'Trademark registration processes',
-      'Patent filing requirements',
-      'Copyright protection mechanisms'
+      'Luật Sở hữu trí tuệ Việt Nam 2005 và các sửa đổi',
+      'Thủ tục của Cục Sở hữu trí tuệ (NOIP)',
+      'Quy trình đăng ký nhãn hiệu',
+      'Yêu cầu nộp đơn bằng sáng chế',
+      'Cơ chế bảo hộ bản quyền',
     ],
     legalTechTools: [
-      'PatSnap IP intelligence platform',
-      'Clarivate Innovation Suite',
-      'Thomson Reuters IP solutions',
-      'Anaqua IP management system',
-      'Custom IP tracking tools'
+      'Nền tảng thông tin IP PatSnap',
+      'Bộ công cụ đổi mới của Clarivate',
+      'Giải pháp IP của Thomson Reuters',
+      'Hệ thống quản lý IP Anaqua',
+      'Công cụ theo dõi IP tùy chỉnh',
     ],
     complianceRequirements: [
-      'IP filing deadline management',
-      'Prior art search documentation',
-      'Trademark watch service requirements',
-      'IP portfolio valuation standards',
-      'Cross-border IP protection compliance'
+      'Quản lý thời hạn nộp đơn IP',
+      'Tài liệu tìm kiếm nghệ thuật trước đó',
+      'Yêu cầu dịch vụ theo dõi nhãn hiệu',
+      'Tiêu chuẩn định giá danh mục IP',
+      'Tuân thủ bảo hộ IP xuyên biên giới',
     ],
     targetLegalProfessionals: [
-      'IP attorneys và patent agents',
-      'Corporate IP managers',
-      'R&D professionals managing IP',
-      'Technology transfer specialists',
-      'IP licensing professionals'
+      'Luật sư IP và đại diện sáng chế',
+      'Quản lý IP doanh nghiệp',
+      'Chuyên gia R&D quản lý IP',
+      'Chuyên gia chuyển giao công nghệ',
+      'Chuyên gia cấp phép IP',
     ],
     exercises: [
       {
-        title: 'Vietnamese Trademark Monitoring System',
-        description: 'Build comprehensive trademark watch và enforcement system',
+        title: 'Hệ thống Giám sát Nhãn hiệu Việt Nam',
+        description: 'Xây dựng hệ thống theo dõi và thực thi nhãn hiệu toàn diện.',
         difficulty: 'Trung bình',
-        materials: ['NOIP databases', 'Trademark monitoring tools', 'Alert systems'],
+        materials: ['Cơ sở dữ liệu của NOIP', 'Công cụ giám sát nhãn hiệu', 'Hệ thống cảnh báo'],
         procedure: [
-          'Connect to Vietnamese trademark databases',
-          'Create automated search algorithms',
-          'Build similarity detection systems',
-          'Implement alert workflows cho potential conflicts',
-          'Add enforcement action tracking',
-          'Create IP portfolio dashboard',
-          'Test với real trademark portfolios'
+          'Kết nối với cơ sở dữ liệu nhãn hiệu Việt Nam',
+          'Tạo thuật toán tìm kiếm tự động',
+          'Xây dựng hệ thống phát hiện sự tương tự',
+          'Triển khai quy trình cảnh báo cho các xung đột tiềm ẩn',
+          'Thêm theo dõi hành động thực thi',
+          'Tạo bảng điều khiển danh mục IP',
+          'Kiểm thử với danh mục nhãn hiệu thực tế',
         ],
-        expectedResults: 'Automated trademark protection system với comprehensive monitoring',
-        solution: 'IP protection platform specifically designed cho Vietnamese market'
-      }
+        expectedResults: 'Hệ thống bảo hộ nhãn hiệu tự động với giám sát toàn diện',
+        solution: 'Nền tảng bảo hộ IP được thiết kế riêng cho thị trường Việt Nam',
+      },
     ],
     realWorldApplications: [
-      'Corporate IP portfolio management',
-      'Law firm IP practice enhancement',
-      'Technology company IP strategy',
-      'Patent prosecution support',
-      'IP licensing và commercialization'
+      'Quản lý danh mục IP doanh nghiệp',
+      'Nâng cao thực hành IP của công ty luật',
+      'Chiến lược IP của công ty công nghệ',
+      'Hỗ trợ truy tố bằng sáng chế',
+      'Cấp phép và thương mại hóa IP',
     ],
     caseStudies: [
       {
-        title: 'Vinamilk IP Portfolio Management',
-        organization: 'Vietnam Dairy Products Joint Stock Company',
-        problem: 'Managing complex IP portfolio across multiple countries',
-        solution: 'Centralized IP management platform với Vietnamese và international coverage',
-        impact: 'Streamlined IP processes, 30% reduction in filing costs',
-        innovations: ['Automated filing workflows', 'IP valuation tools', 'Portfolio analytics']
-      }
-    ]
-  }
+        title: 'Quản lý Danh mục IP của Vinamilk',
+        organization: 'Công ty Cổ phần Sữa Việt Nam',
+        problem: 'Quản lý danh mục IP phức tạp trên nhiều quốc gia',
+        solution: 'Nền tảng quản lý IP tập trung bao phủ Việt Nam và quốc tế',
+        impact: 'Hợp lý hóa quy trình IP, giảm 30% chi phí nộp đơn',
+        innovations: ['Quy trình nộp đơn tự động', 'Công cụ định giá IP', 'Phân tích danh mục'],
+      },
+    ],
+    relatedGames: ['blockchain-explorer', 'ai-art-studio', 'treasure-hunt-adventure'],
+  },
 ];
 
 export default legalTechLessons;

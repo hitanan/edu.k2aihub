@@ -4,10 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import {
-  electricVehicleLessons,
-  type ElectricVehicleLesson,
-} from '@/data/electric-vehicle-tech';
+import { electricVehicleLessons, type ElectricVehicleLesson } from '@/data/electric-vehicle-tech';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Car, Battery, Zap, Settings } from 'lucide-react';
@@ -28,11 +25,11 @@ function convertToLesson(lesson: ElectricVehicleLesson): BaseLessonData {
     realWorldApplications: lesson.realWorldApplications,
     caseStudies: lesson.caseStudies?.map((study) => ({
       title: study.title,
-      organization: study.company || 'Organization',
-      problem: study.challenge,
+      organization: study.organization,
+      problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.technologies || [],
+      innovations: study.innovations,
     })),
     resources: lesson.resources,
   };
@@ -84,9 +81,7 @@ export default async function ElectricVehicleLessonPage({ params }: PageProps) {
     },
     getFieldValue: (lesson) => {
       // Find original lesson to get vehicleType
-      const originalLesson = electricVehicleLessons.find(
-        (l) => l.id === lesson.id,
-      );
+      const originalLesson = electricVehicleLessons.find((l) => l.id === lesson.id);
       return originalLesson?.vehicleType || 'EV Technology';
     },
   };

@@ -25,7 +25,7 @@ export const smartManufacturingLessons: SmartManufacturingLessonType[] = [
     description: 'Giới thiệu về cách mạng công nghiệp 4.0 và những công nghệ nền tảng',
     duration: '90 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // What is Industry 4.0? - By Design
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // What is Industry 4.0? - By Design
     objectives: [
       'Hiểu khái niệm Công nghiệp 4.0',
       'Nắm được các công nghệ cốt lõi',
@@ -57,7 +57,7 @@ export const smartManufacturingLessons: SmartManufacturingLessonType[] = [
     description: 'Tìm hiểu về hệ thống cảm biến IoT và ứng dụng trong giám sát sản xuất',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // IoT in Manufacturing - Explained
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // IoT in Manufacturing - Explained
     objectives: [
       'Hiểu các loại sensor trong nhà máy',
       'Thiết kế hệ thống giám sát IoT',
@@ -104,7 +104,7 @@ export const smartManufacturingLessons: SmartManufacturingLessonType[] = [
     description: 'Lập trình PLC và thiết kế hệ thống tự động hóa cho dây chuyền sản xuất',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // PLC Programming Tutorial - RealPars
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // PLC Programming Tutorial - RealPars
     objectives: [
       'Hiểu nguyên lý hoạt động của PLC',
       'Lập trình PLC với Ladder Logic',
@@ -152,7 +152,7 @@ export const smartManufacturingLessons: SmartManufacturingLessonType[] = [
     description: 'Ứng dụng trí tuệ nhân tạo trong bảo trì dự báo máy móc công nghiệp',
     duration: '180 phút',
     difficulty: 'Khó',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Predictive Maintenance with AI - IBM
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Predictive Maintenance with AI - IBM
     objectives: [
       'Hiểu nguyên lý bảo trì dự báo',
       'Áp dụng machine learning cho dự báo lỗi',
@@ -200,7 +200,7 @@ export const smartManufacturingLessons: SmartManufacturingLessonType[] = [
     description: 'Xây dựng và ứng dụng Digital Twin trong sản xuất thông minh',
     duration: '135 phút',
     difficulty: 'Khó',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Digital Twin Technology Explained - Siemens
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Digital Twin Technology Explained - Siemens
     objectives: [
       'Hiểu khái niệm Digital Twin',
       'Xây dựng mô hình Digital Twin',
@@ -248,7 +248,7 @@ export const smartManufacturingLessons: SmartManufacturingLessonType[] = [
     description: 'Ứng dụng computer vision và AI trong kiểm tra chất lượng sản phẩm',
     duration: '160 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Computer Vision in Manufacturing - Cognex
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Computer Vision in Manufacturing - Cognex
     objectives: [
       'Hiểu nguyên lý computer vision trong QC',
       'Xây dựng hệ thống phát hiện lỗi tự động',
@@ -296,7 +296,7 @@ export const smartManufacturingLessons: SmartManufacturingLessonType[] = [
     description: 'Tối ưu hóa chuỗi cung ứng với AI, IoT và blockchain technology',
     duration: '140 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Smart Supply Chain Management - SAP
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Smart Supply Chain Management - SAP
     objectives: [
       'Hiểu supply chain 4.0 concepts',
       'Áp dụng AI trong demand forecasting',
@@ -344,7 +344,7 @@ export const smartManufacturingLessons: SmartManufacturingLessonType[] = [
     description: 'Bảo mật hệ thống IIoT và infrastructure trong smart manufacturing',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=zqIAtnOLFPU', // Industrial Cybersecurity Basics - Rockwell Automation
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Industrial Cybersecurity Basics - Rockwell Automation
     objectives: [
       'Hiểu threat landscape trong IIoT',
       'Thiết kế security architecture',

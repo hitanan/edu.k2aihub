@@ -1,17 +1,12 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import {
-  electricVehicleLessons,
-  type ElectricVehicleLesson,
-} from '@/data/electric-vehicle-tech';
+import { electricVehicleLessons, type ElectricVehicleLesson } from '@/data/electric-vehicle-tech';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 // Convert ElectricVehicleLesson to BaseLessonData
-function convertToBaseLessonData(
-  lesson: ElectricVehicleLesson,
-): BaseLessonData {
+function convertToBaseLessonData(lesson: ElectricVehicleLesson): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -26,11 +21,11 @@ function convertToBaseLessonData(
     realWorldApplications: lesson.realWorldApplications,
     caseStudies: lesson.caseStudies?.map((study) => ({
       title: study.title,
-      organization: study.company || 'Organization',
-      problem: study.challenge,
+      organization: study.organization,
+      problem: study.problem,
       solution: study.solution,
       impact: study.impact,
-      innovations: study.technologies || [],
+      innovations: study.innovations || [],
     })),
     resources: lesson.resources,
   };
@@ -39,8 +34,19 @@ function convertToBaseLessonData(
 export const metadata: Metadata = createModuleMetadata(
   'Electric Vehicle Technology - Công Nghệ Ô Tô Điện',
   'Master electric vehicle technology từ powertrain và battery systems đến autonomous driving và smart charging. VinFast case studies và Vietnamese market focus. EV manufacturing, charging infrastructure, V2G technology.',
-  ['electric vehicle', 'ev technology', 'battery systems', 'autonomous driving', 'charging infrastructure', 'vinfast', 'smart transportation', 'v2g technology', 'ev manufacturing', 'K2AI'],
-  'electric-vehicle-tech'
+  [
+    'electric vehicle',
+    'ev technology',
+    'battery systems',
+    'autonomous driving',
+    'charging infrastructure',
+    'vinfast',
+    'smart transportation',
+    'v2g technology',
+    'ev manufacturing',
+    'K2AI',
+  ],
+  'electric-vehicle-tech',
 );
 
 export default function ElectricVehiclePage() {
@@ -62,8 +68,7 @@ export default function ElectricVehiclePage() {
     ],
     icon: '🚗',
     color: 'from-blue-600 to-cyan-600',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl: 'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master EV powertrain architecture, battery chemistry, và energy management systems',
       'Develop autonomous driving algorithms adapted cho Vietnamese traffic patterns',
@@ -112,7 +117,5 @@ export default function ElectricVehiclePage() {
   // Convert lessons to BaseLessonData format
   const convertedLessons = electricVehicleLessons.map(convertToBaseLessonData);
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

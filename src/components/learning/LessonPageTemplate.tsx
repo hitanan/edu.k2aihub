@@ -23,12 +23,13 @@ export interface BaseLessonData {
   id: string;
   title: string;
   description: string;
-  duration: string;
+  duration: string | number;
   difficulty: string;
   videoUrl?: string;
   imageUrl?: string;
   objectives: string[];
   prerequisites: string[];
+  relatedGames?: Array<string | { id: string; name: string; description?: string }>;
   tools?:
     | string[]
     | Array<{
@@ -51,6 +52,14 @@ export interface BaseLessonData {
     hints?: string[];
   }>;
   realWorldApplications: string[];
+  environmentalApplications?: string[];
+  dataSourcesTypes?: string[];
+  analyticalMethods?: string[];
+  sustainabilityMetrics?: Array<{
+    name: string;
+    description: string;
+    measurement: string;
+  }>;
   environmentalImpact?: string;
   caseStudies?: Array<{
     title: string;
@@ -93,38 +102,27 @@ export function generateLessonMetadata<T extends BaseLessonData>(
   const lesson = lessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
-    return createLessonMetadata(
-      'Bài học không tìm thấy',
-      'Không thể tìm thấy bài học yêu cầu',
-      moduleType,
-      lessonId,
-      ['not found', 'error']
-    );
+    return createLessonMetadata('Bài học không tìm thấy', 'Không thể tìm thấy bài học yêu cầu', moduleType, lessonId, [
+      'not found',
+      'error',
+    ]);
   }
   if (!moduleType) {
-      return {
-    title: createTitle(lesson.title),
-    description: createDescription(lesson.description),
-    openGraph: {
-      title: lesson.title,
-      description: lesson.description,
-      images: lesson.imageUrl ? [{ url: lesson.imageUrl }] : [],
-    },
-  };
+    return {
+      title: createTitle(lesson.title),
+      description: createDescription(lesson.description),
+      openGraph: {
+        title: lesson.title,
+        description: lesson.description,
+        images: lesson.imageUrl ? [{ url: lesson.imageUrl }] : [],
+      },
+    };
   }
 
-  return createLessonMetadata(
-    lesson.title,
-    lesson.description,
-    moduleType,
-    lessonId,
-    lesson.objectives || []
-  );
+  return createLessonMetadata(lesson.title, lesson.description, moduleType, lessonId, lesson.objectives || []);
 }
 
-export function generateLessonStaticParams<T extends BaseLessonData>(
-  lessons: T[],
-) {
+export function generateLessonStaticParams<T extends BaseLessonData>(lessons: T[]) {
   return lessons.map((lesson) => ({
     lessonId: lesson.id,
   }));
@@ -145,10 +143,7 @@ export function getDifficultyColor(difficulty: string): string {
   }
 }
 
-export function LessonPageTemplate<T extends BaseLessonData>({
-  lessonId,
-  config,
-}: LessonPageTemplateProps<T>) {
+export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config }: LessonPageTemplateProps<T>) {
   const lesson = config.lessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
@@ -156,21 +151,13 @@ export function LessonPageTemplate<T extends BaseLessonData>({
   }
 
   const currentIndex = config.lessons.findIndex((l) => l.id === lessonId);
-  const previousLesson =
-    currentIndex > 0 ? config.lessons[currentIndex - 1] : null;
-  const nextLesson =
-    currentIndex < config.lessons.length - 1
-      ? config.lessons[currentIndex + 1]
-      : null;
+  const previousLesson = currentIndex > 0 ? config.lessons[currentIndex - 1] : null;
+  const nextLesson = currentIndex < config.lessons.length - 1 ? config.lessons[currentIndex + 1] : null;
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${config.gradientColors}`}>
       {/* Analytics and Progress Tracking */}
-      <LessonAnalytics
-        lesson={lesson}
-        moduleName={config.moduleName}
-        moduleTitle={config.moduleTitle}
-      />
+      <LessonAnalytics lesson={lesson} moduleName={config.moduleName} moduleTitle={config.moduleTitle} />
 
       {/* Navigation Header */}
       <div className="bg-black/20 border-b border-white/10 sticky top-0 z-50 backdrop-blur-sm">
@@ -190,9 +177,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({
                   className={`flex items-center px-2 sm:px-3 py-1 bg-gradient-to-r ${config.primaryColor} to-${config.secondaryColor} rounded-full text-white text-xs sm:text-sm`}
                 >
                   {config.getFieldIcon(config.getFieldValue(lesson))}
-                  <span className="ml-1 sm:ml-2">
-                    {config.getFieldValue(lesson)}
-                  </span>
+                  <span className="ml-1 sm:ml-2">{config.getFieldValue(lesson)}</span>
                 </div>
               )}
               <div
@@ -202,10 +187,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({
               </div>
               {lesson.environmentalImpact && (
                 <div className="bg-teal-500/20 text-teal-200 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
-                  🌱{' '}
-                  <span className="hidden sm:inline">
-                    {lesson.environmentalImpact}
-                  </span>
+                  🌱 <span className="hidden sm:inline">{lesson.environmentalImpact}</span>
                 </div>
               )}
             </div>
@@ -223,28 +205,20 @@ export function LessonPageTemplate<T extends BaseLessonData>({
                 {lesson.title}
               </h1>
 
-              <p className="text-lg sm:text-xl text-gray-300 mb-4 sm:mb-6 leading-relaxed">
-                {lesson.description}
-              </p>
+              <p className="text-lg sm:text-xl text-gray-300 mb-4 sm:mb-6 leading-relaxed">{lesson.description}</p>
 
               <div className="flex flex-wrap gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                  <Clock
-                    className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`}
-                  />
+                  <Clock className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`} />
                   <span>{lesson.duration}</span>
                 </div>
                 <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                  <Target
-                    className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`}
-                  />
+                  <Target className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`} />
                   <span>{lesson.difficulty}</span>
                 </div>
                 {config.getFieldValue && (
                   <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                    <User
-                      className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`}
-                    />
+                    <User className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`} />
                     <span>{config.getFieldValue(lesson)}</span>
                   </div>
                 )}
@@ -253,10 +227,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({
               {/* Video */}
               {lesson.videoUrl && (
                 <div className="relative rounded-xl overflow-hidden mb-4 sm:mb-6 bg-black/20">
-                  <div
-                    className="relative w-full"
-                    style={{ paddingBottom: '56.25%' }}
-                  >
+                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                     <iframe
                       src={lesson.videoUrl.replace('watch?v=', 'embed/')}
                       title={lesson.title}
@@ -271,21 +242,14 @@ export function LessonPageTemplate<T extends BaseLessonData>({
             {/* Learning Objectives */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Target
-                  className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`}
-                />
+                <Target className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
                 Mục tiêu học tập
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                 {lesson.objectives.map((objective, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10"
-                  >
+                  <div key={index} className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10">
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300 text-sm sm:text-base">
-                      {objective}
-                    </span>
+                    <span className="text-gray-300 text-sm sm:text-base">{objective}</span>
                   </div>
                 ))}
               </div>
@@ -294,21 +258,14 @@ export function LessonPageTemplate<T extends BaseLessonData>({
             {/* Prerequisites */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Book
-                  className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`}
-                />
+                <Book className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
                 Kiến thức cần có
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                 {lesson.prerequisites.map((prereq, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10"
-                  >
+                  <div key={index} className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10">
                     <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300 text-sm sm:text-base">
-                      {prereq}
-                    </span>
+                    <span className="text-gray-300 text-sm sm:text-base">{prereq}</span>
                   </div>
                 ))}
               </div>
@@ -317,21 +274,14 @@ export function LessonPageTemplate<T extends BaseLessonData>({
             {/* Exercises */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Play
-                  className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`}
-                />
+                <Play className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
                 Bài tập thực hành
               </h2>
               <div className="space-y-4 sm:space-y-6">
                 {lesson.exercises.map((exercise, index) => (
-                  <div
-                    key={index}
-                    className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5"
-                  >
+                  <div key={index} className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-                      <h3 className="text-lg sm:text-xl font-bold text-white">
-                        {exercise.title}
-                      </h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-white">{exercise.title}</h3>
                       <span
                         className={`px-3 py-1 bg-gradient-to-r ${getDifficultyColor(exercise.difficulty)} rounded-full text-white text-sm font-medium self-start`}
                       >
@@ -339,22 +289,15 @@ export function LessonPageTemplate<T extends BaseLessonData>({
                       </span>
                     </div>
 
-                    <p className="text-gray-300 mb-4 text-sm sm:text-base">
-                      {exercise.description}
-                    </p>
+                    <p className="text-gray-300 mb-4 text-sm sm:text-base">{exercise.description}</p>
 
                     {/* Materials */}
                     {exercise.materials && exercise.materials.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">
-                          Công cụ cần thiết:
-                        </h4>
+                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Công cụ cần thiết:</h4>
                         <ul className="space-y-1">
                           {exercise.materials.map((material, matIndex) => (
-                            <li
-                              key={matIndex}
-                              className="text-gray-300 text-xs sm:text-sm flex items-start"
-                            >
+                            <li key={matIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
                               <span
                                 className={`w-2 h-2 bg-${config.primaryColor}-400 rounded-full mr-2 mt-1.5 sm:mt-2 flex-shrink-0`}
                               ></span>
@@ -368,15 +311,10 @@ export function LessonPageTemplate<T extends BaseLessonData>({
                     {/* Procedure */}
                     {exercise.procedure && exercise.procedure.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">
-                          Các bước thực hiện:
-                        </h4>
+                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Các bước thực hiện:</h4>
                         <ol className="space-y-2">
                           {exercise.procedure.map((step, stepIndex) => (
-                            <li
-                              key={stepIndex}
-                              className="text-gray-300 text-xs sm:text-sm flex items-start"
-                            >
+                            <li key={stepIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
                               <span
                                 className={`w-5 h-5 sm:w-6 sm:h-6 bg-${config.primaryColor}-500/20 rounded-full flex items-center justify-center text-${config.primaryColor}-400 text-xs font-bold mr-2 mt-0.5 flex-shrink-0`}
                               >
@@ -392,9 +330,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({
                     {/* Expected Results */}
                     {exercise.expectedResults && (
                       <div className="mb-4">
-                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">
-                          Kết quả mong đợi:
-                        </h4>
+                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Kết quả mong đợi:</h4>
                         <p
                           className={`text-gray-300 text-xs sm:text-sm bg-${config.primaryColor}-500/10 p-3 rounded-lg border border-${config.primaryColor}-500/20`}
                         >
@@ -427,25 +363,18 @@ export function LessonPageTemplate<T extends BaseLessonData>({
             {/* Real-world Applications */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Users
-                  className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`}
-                />
+                <Users className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
                 Ứng dụng thực tế
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
                 {lesson.realWorldApplications.map((application, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10"
-                  >
+                  <div key={index} className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10">
                     <span
                       className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-${config.primaryColor}-500 to-${config.secondaryColor}-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold mr-3 flex-shrink-0`}
                     >
                       {index + 1}
                     </span>
-                    <span className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                      {application}
-                    </span>
+                    <span className="text-gray-300 text-sm sm:text-base leading-relaxed">{application}</span>
                   </div>
                 ))}
               </div>
@@ -460,72 +389,42 @@ export function LessonPageTemplate<T extends BaseLessonData>({
             {lesson.caseStudies && lesson.caseStudies.length > 0 && (
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
                 <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                  <Book
-                    className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`}
-                  />
+                  <Book className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
                   Nghiên cứu tình huống
                 </h2>
                 <div className="space-y-4 sm:space-y-6">
                   {lesson.caseStudies.map((caseStudy, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5"
-                    >
-                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
-                        {caseStudy.title}
-                      </h3>
-                      <p
-                        className={`text-${config.primaryColor}-400 font-medium mb-3 sm:mb-4 text-sm sm:text-base`}
-                      >
+                    <div key={index} className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5">
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{caseStudy.title}</h3>
+                      <p className={`text-${config.primaryColor}-400 font-medium mb-3 sm:mb-4 text-sm sm:text-base`}>
                         {caseStudy.organization}
                       </p>
 
                       <div className="space-y-3 sm:space-y-4">
                         <div>
-                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">
-                            Vấn đề:
-                          </h4>
-                          <p className="text-gray-300 text-sm sm:text-base">
-                            {caseStudy.problem}
-                          </p>
+                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Vấn đề:</h4>
+                          <p className="text-gray-300 text-sm sm:text-base">{caseStudy.problem}</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">
-                            Giải pháp:
-                          </h4>
-                          <p className="text-gray-300 text-sm sm:text-base">
-                            {caseStudy.solution}
-                          </p>
+                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Giải pháp:</h4>
+                          <p className="text-gray-300 text-sm sm:text-base">{caseStudy.solution}</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">
-                            Tác động:
-                          </h4>
-                          <p className="text-gray-300 text-sm sm:text-base">
-                            {caseStudy.impact}
-                          </p>
+                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Tác động:</h4>
+                          <p className="text-gray-300 text-sm sm:text-base">{caseStudy.impact}</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">
-                            Đổi mới chính:
-                          </h4>
+                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Đổi mới chính:</h4>
                           <ul className="space-y-1 sm:space-y-2">
-                            {caseStudy.innovations.map(
-                              (innovation, innovationIndex) => (
-                                <li
-                                  key={innovationIndex}
-                                  className="text-gray-300 flex items-start text-sm sm:text-base"
-                                >
-                                  <CheckCircle className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                                  <span className="leading-relaxed">
-                                    {innovation}
-                                  </span>
-                                </li>
-                              ),
-                            )}
+                            {caseStudy.innovations.map((innovation, innovationIndex) => (
+                              <li key={innovationIndex} className="text-gray-300 flex items-start text-sm sm:text-base">
+                                <CheckCircle className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                                <span className="leading-relaxed">{innovation}</span>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </div>
@@ -569,9 +468,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({
             {/* Resources */}
             {lesson.resources && lesson.resources.length > 0 && (
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10 mb-4 sm:mb-6">
-                <h4 className="font-semibold text-white mb-3 text-sm sm:text-base">
-                  Tài nguyên bổ sung
-                </h4>
+                <h4 className="font-semibold text-white mb-3 text-sm sm:text-base">Tài nguyên bổ sung</h4>
                 <div className="space-y-2">
                   {lesson.resources.map((resource, index) => (
                     <a
@@ -592,9 +489,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({
                             className={`w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-${config.primaryColor}-400 transition-colors ml-2 flex-shrink-0`}
                           />
                         </div>
-                        <div className="text-xs text-gray-500 mt-1">
-                          {resource.type}
-                        </div>
+                        <div className="text-xs text-gray-500 mt-1">{resource.type}</div>
                       </div>
                     </a>
                   ))}
@@ -604,9 +499,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({
 
             {/* Course Progress */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
-                Tiến độ khóa học
-              </h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Tiến độ khóa học</h3>
               <div className="space-y-2 sm:space-y-3">
                 {config.lessons.map((lessonItem, index) => (
                   <Link

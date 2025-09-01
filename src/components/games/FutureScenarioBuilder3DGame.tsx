@@ -1,18 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text, Sphere } from '@react-three/drei';
-import { 
-  RotateCcw, 
-  Target,
-  Award,
-  TrendingUp,
-  Zap,
-  Globe,
-  Users,
-  Building,
-  Leaf,
-  Brain
-} from 'lucide-react';
+import { RotateCcw, Target, Award, TrendingUp, Zap, Globe, Users, Brain } from 'lucide-react';
 
 interface GameProps {
   onComplete: () => void;
@@ -40,20 +29,17 @@ interface Future3DSceneProps {
   buildingMode: string;
 }
 
-const Future3DScene: React.FC<Future3DSceneProps> = ({ scenarios, onScenarioClick, selectedScenario, buildingMode }) => {
+const Future3DScene: React.FC<Future3DSceneProps> = ({ scenarios, onScenarioClick, selectedScenario }) => {
   return (
     <>
       <ambientLight intensity={0.4} />
       <pointLight position={[10, 10, 10]} intensity={0.8} />
       <pointLight position={[-10, -10, -10]} intensity={0.4} color="#4F46E5" />
-      
+
       {/* Future Scenarios */}
       {scenarios.map((scenario) => (
         <group key={scenario.id} position={scenario.position}>
-          <Sphere
-            args={[scenario.implemented ? 0.8 : 0.6, 32, 32]}
-            onClick={() => onScenarioClick(scenario.id)}
-          >
+          <Sphere args={[scenario.implemented ? 0.8 : 0.6, 32, 32]} onClick={() => onScenarioClick(scenario.id)}>
             <meshStandardMaterial
               color={scenario.color}
               transparent
@@ -62,18 +48,12 @@ const Future3DScene: React.FC<Future3DSceneProps> = ({ scenarios, onScenarioClic
               emissiveIntensity={selectedScenario === scenario.id ? 0.2 : 0}
             />
           </Sphere>
-          
+
           {/* Node Labels */}
-          <Text
-            position={[0, 1.2, 0]}
-            fontSize={0.3}
-            color="white"
-            anchorX="center"
-            anchorY="middle"
-          >
+          <Text position={[0, 1.2, 0]} fontSize={0.3} color="white" anchorX="center" anchorY="middle">
             {scenario.title}
           </Text>
-          
+
           {scenario.implemented && (
             <Sphere args={[1.2, 16, 16]} position={[0, 0, 0]}>
               <meshBasicMaterial color={scenario.color} transparent opacity={0.1} />
@@ -81,32 +61,26 @@ const Future3DScene: React.FC<Future3DSceneProps> = ({ scenarios, onScenarioClic
           )}
         </group>
       ))}
-      
+
       {/* Connection Lines */}
       {scenarios.map((scenario) =>
         scenario.connections.map((connectionId) => {
-          const targetScenario = scenarios.find(s => s.id === connectionId);
+          const targetScenario = scenarios.find((s) => s.id === connectionId);
           if (!targetScenario) return null;
-          
-          const positions = new Float32Array([
-            ...scenario.position,
-            ...targetScenario.position
-          ]);
-          
+
+          const positions = new Float32Array([...scenario.position, ...targetScenario.position]);
+
           return (
             <line key={`${scenario.id}-${connectionId}`}>
               <bufferGeometry>
-                <bufferAttribute
-                  attach="attributes-position"
-                  args={[positions, 3]}
-                />
+                <bufferAttribute attach="attributes-position" args={[positions, 3]} />
               </bufferGeometry>
               <lineBasicMaterial color="#64748B" transparent opacity={0.6} />
             </line>
           );
-        })
+        }),
       )}
-      
+
       <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
     </>
   );
@@ -118,132 +92,135 @@ const FutureScenarioBuilder3DGame: React.FC<GameProps> = ({ onComplete, timeLeft
   const [score, setScore] = useState(0);
   const [gamePhase, setGamePhase] = useState<'building' | 'analyzing' | 'completed'>('building');
 
-  const initialScenarios: Scenario[] = useMemo(() => [
-    {
-      id: 'ai-governance',
-      title: 'AI Governance',
-      description: 'Implement comprehensive AI ethics and regulation frameworks',
-      position: [0, 2, 0],
-      connections: ['digital-citizenship', 'smart-cities'],
-      impact: 85,
-      feasibility: 75,
-      category: 'technology',
-      color: '#3B82F6',
-      implemented: false
-    },
-    {
-      id: 'climate-tech',
-      title: 'Climate Technology',
-      description: 'Deploy advanced carbon capture and renewable energy systems',
-      position: [-3, 0, 2],
-      connections: ['sustainable-transport', 'green-economy'],
-      impact: 95,
-      feasibility: 70,
-      category: 'environmental',
-      color: '#10B981',
-      implemented: false
-    },
-    {
-      id: 'digital-citizenship',
-      title: 'Digital Citizenship',
-      description: 'Establish digital rights and cyber security frameworks',
-      position: [3, 1, -1],
-      connections: ['ai-governance', 'social-equity'],
-      impact: 75,
-      feasibility: 85,
-      category: 'social',
-      color: '#F59E0B',
-      implemented: false
-    },
-    {
-      id: 'green-economy',
-      title: 'Green Economy',
-      description: 'Transition to sustainable economic models and circular economy',
-      position: [-2, -1, -2],
-      connections: ['climate-tech', 'social-equity'],
-      impact: 90,
-      feasibility: 65,
-      category: 'economic',
-      color: '#EF4444',
-      implemented: false
-    },
-    {
-      id: 'smart-cities',
-      title: 'Smart Cities',
-      description: 'Develop intelligent urban infrastructure and IoT integration',
-      position: [1, -2, 1],
-      connections: ['ai-governance', 'sustainable-transport'],
-      impact: 80,
-      feasibility: 80,
-      category: 'technology',
-      color: '#8B5CF6',
-      implemented: false
-    },
-    {
-      id: 'social-equity',
-      title: 'Social Equity',
-      description: 'Ensure equitable access to technology and opportunities',
-      position: [0, 0, 3],
-      connections: ['digital-citizenship', 'green-economy'],
-      impact: 85,
-      feasibility: 70,
-      category: 'social',
-      color: '#EC4899',
-      implemented: false
-    },
-    {
-      id: 'sustainable-transport',
-      title: 'Sustainable Transport',
-      description: 'Implement electric and autonomous transportation systems',
-      position: [-1, 1, -3],
-      connections: ['climate-tech', 'smart-cities'],
-      impact: 70,
-      feasibility: 90,
-      category: 'environmental',
-      color: '#06B6D4',
-      implemented: false
-    }
-  ], []);
+  const initialScenarios: Scenario[] = useMemo(
+    () => [
+      {
+        id: 'ai-governance',
+        title: 'AI Governance',
+        description: 'Implement comprehensive AI ethics and regulation frameworks',
+        position: [0, 2, 0],
+        connections: ['digital-citizenship', 'smart-cities'],
+        impact: 85,
+        feasibility: 75,
+        category: 'technology',
+        color: '#3B82F6',
+        implemented: false,
+      },
+      {
+        id: 'climate-tech',
+        title: 'Climate Technology',
+        description: 'Deploy advanced carbon capture and renewable energy systems',
+        position: [-3, 0, 2],
+        connections: ['sustainable-transport', 'green-economy'],
+        impact: 95,
+        feasibility: 70,
+        category: 'environmental',
+        color: '#10B981',
+        implemented: false,
+      },
+      {
+        id: 'digital-citizenship',
+        title: 'Digital Citizenship',
+        description: 'Establish digital rights and cyber security frameworks',
+        position: [3, 1, -1],
+        connections: ['ai-governance', 'social-equity'],
+        impact: 75,
+        feasibility: 85,
+        category: 'social',
+        color: '#F59E0B',
+        implemented: false,
+      },
+      {
+        id: 'green-economy',
+        title: 'Green Economy',
+        description: 'Transition to sustainable economic models and circular economy',
+        position: [-2, -1, -2],
+        connections: ['climate-tech', 'social-equity'],
+        impact: 90,
+        feasibility: 65,
+        category: 'economic',
+        color: '#EF4444',
+        implemented: false,
+      },
+      {
+        id: 'smart-cities',
+        title: 'Smart Cities',
+        description: 'Develop intelligent urban infrastructure and IoT integration',
+        position: [1, -2, 1],
+        connections: ['ai-governance', 'sustainable-transport'],
+        impact: 80,
+        feasibility: 80,
+        category: 'technology',
+        color: '#8B5CF6',
+        implemented: false,
+      },
+      {
+        id: 'social-equity',
+        title: 'Social Equity',
+        description: 'Ensure equitable access to technology and opportunities',
+        position: [0, 0, 3],
+        connections: ['digital-citizenship', 'green-economy'],
+        impact: 85,
+        feasibility: 70,
+        category: 'social',
+        color: '#EC4899',
+        implemented: false,
+      },
+      {
+        id: 'sustainable-transport',
+        title: 'Sustainable Transport',
+        description: 'Implement electric and autonomous transportation systems',
+        position: [-1, 1, -3],
+        connections: ['climate-tech', 'smart-cities'],
+        impact: 70,
+        feasibility: 90,
+        category: 'environmental',
+        color: '#06B6D4',
+        implemented: false,
+      },
+    ],
+    [],
+  );
 
   const [scenarios, setScenarios] = useState<Scenario[]>(initialScenarios);
 
-  const currentScenario = useMemo(() => 
-    scenarios.find(s => s.id === selectedScenario), [scenarios, selectedScenario]
+  const currentScenario = useMemo(
+    () => scenarios.find((s) => s.id === selectedScenario),
+    [scenarios, selectedScenario],
   );
 
-  const implementScenario = useCallback((scenarioId: string) => {
-    if (implementedScenarios.has(scenarioId)) return;
+  const implementScenario = useCallback(
+    (scenarioId: string) => {
+      if (implementedScenarios.has(scenarioId)) return;
 
-    const scenario = scenarios.find(s => s.id === scenarioId);
-    if (!scenario) return;
+      const scenario = scenarios.find((s) => s.id === scenarioId);
+      if (!scenario) return;
 
-    // Calculate impact bonus
-    let impactBonus = scenario.impact;
-    
-    // Bonus for connected implemented scenarios
-    const connectedImplemented = scenario.connections.filter((id: string) => 
-      implementedScenarios.has(id)
-    ).length;
-    impactBonus += connectedImplemented * 15;
+      // Calculate impact bonus
+      let impactBonus = scenario.impact;
 
-    setScore(prev => prev + impactBonus);
-    setImplementedScenarios(prev => new Set([...prev, scenarioId]));
-    
-    setScenarios(prev => prev.map(s => 
-      s.id === scenarioId ? { ...s, implemented: true } : s
-    ));
+      // Bonus for connected implemented scenarios
+      const connectedImplemented = scenario.connections.filter((id: string) => implementedScenarios.has(id)).length;
+      impactBonus += connectedImplemented * 15;
 
-    // Check for completion
-    if (implementedScenarios.size >= 6) {
-      setGamePhase('completed');
-      setTimeout(() => onComplete(), 2000);
-    }
-  }, [implementedScenarios, scenarios, onComplete]);
+      setScore((prev) => prev + impactBonus);
+      setImplementedScenarios((prev) => new Set([...prev, scenarioId]));
+
+      setScenarios((prev) => prev.map((s) => (s.id === scenarioId ? { ...s, implemented: true } : s)));
+
+      // Check for completion
+      if (implementedScenarios.size >= 6) {
+        setGamePhase('completed');
+        setTimeout(() => onComplete(), 2000);
+      }
+    },
+    [implementedScenarios, scenarios, onComplete],
+  );
 
   const analyzeScenario = useCallback(() => {
     if (!currentScenario) return;
     setGamePhase('analyzing');
-    
+
     setTimeout(() => {
       implementScenario(currentScenario.id);
       setGamePhase('building');
@@ -253,10 +230,14 @@ const FutureScenarioBuilder3DGame: React.FC<GameProps> = ({ onComplete, timeLeft
 
   const getCategoryIcon = (category: Scenario['category']) => {
     switch (category) {
-      case 'technology': return <Zap className="w-4 h-4" />;
-      case 'social': return <Users className="w-4 h-4" />;
-      case 'economic': return <TrendingUp className="w-4 h-4" />;
-      case 'environmental': return <Globe className="w-4 h-4" />;
+      case 'technology':
+        return <Zap className="w-4 h-4" />;
+      case 'social':
+        return <Users className="w-4 h-4" />;
+      case 'economic':
+        return <TrendingUp className="w-4 h-4" />;
+      case 'environmental':
+        return <Globe className="w-4 h-4" />;
     }
   };
 
@@ -276,10 +257,7 @@ const FutureScenarioBuilder3DGame: React.FC<GameProps> = ({ onComplete, timeLeft
             <div className="text-white font-bold">Score: {score}</div>
             <div className="text-blue-200">{timeLeft}s</div>
           </div>
-          <button
-            onClick={onRestart}
-            className="p-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-          >
+          <button onClick={onRestart} className="p-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
             <RotateCcw className="w-5 h-5 text-white" />
           </button>
         </div>
@@ -296,7 +274,7 @@ const FutureScenarioBuilder3DGame: React.FC<GameProps> = ({ onComplete, timeLeft
               buildingMode={gamePhase}
             />
           </Canvas>
-          
+
           {gamePhase === 'analyzing' && (
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <div className="text-center">
@@ -329,15 +307,15 @@ const FutureScenarioBuilder3DGame: React.FC<GameProps> = ({ onComplete, timeLeft
                 {getCategoryIcon(currentScenario.category)}
                 <h4 className="font-bold text-white">{currentScenario.title}</h4>
               </div>
-              
+
               <p className="text-gray-300 text-sm">{currentScenario.description}</p>
-              
+
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-400">Impact Score:</span>
                   <span className="text-yellow-400 font-bold">{currentScenario.impact}</span>
                 </div>
-                
+
                 <div className="text-sm">
                   <span className="text-gray-400">Category:</span>
                   <span className="ml-2 px-2 py-1 rounded text-xs bg-blue-600 text-white">
@@ -350,14 +328,12 @@ const FutureScenarioBuilder3DGame: React.FC<GameProps> = ({ onComplete, timeLeft
                     <span className="text-gray-400">Connected to:</span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {currentScenario.connections.map((id: string) => {
-                        const connected = scenarios.find(s => s.id === id);
+                        const connected = scenarios.find((s) => s.id === id);
                         return connected ? (
-                          <span 
+                          <span
                             key={id}
                             className={`px-2 py-1 rounded text-xs ${
-                              implementedScenarios.has(id) 
-                                ? 'bg-green-600 text-white' 
-                                : 'bg-gray-600 text-gray-200'
+                              implementedScenarios.has(id) ? 'bg-green-600 text-white' : 'bg-gray-600 text-gray-200'
                             }`}
                           >
                             {connected.title}
@@ -389,13 +365,13 @@ const FutureScenarioBuilder3DGame: React.FC<GameProps> = ({ onComplete, timeLeft
 
           <div className="space-y-2">
             <h4 className="font-bold text-white">All Scenarios:</h4>
-            {scenarios.map(scenario => (
+            {scenarios.map((scenario) => (
               <div
                 key={scenario.id}
                 onClick={() => setSelectedScenario(scenario.id)}
                 className={`p-3 rounded cursor-pointer transition-colors ${
-                  selectedScenario === scenario.id 
-                    ? 'bg-blue-600/50 border border-blue-400' 
+                  selectedScenario === scenario.id
+                    ? 'bg-blue-600/50 border border-blue-400'
                     : 'bg-white/5 hover:bg-white/10'
                 } ${scenario.implemented ? 'border-l-4 border-green-500' : ''}`}
               >

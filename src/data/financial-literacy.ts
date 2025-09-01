@@ -1,3 +1,5 @@
+import { EDUCATIONAL_GAMES_DATA, EducationalGame } from './educationalGames';
+
 export interface FinancialLiteracyLessons {
   id: string;
   title: string;
@@ -14,6 +16,7 @@ export interface FinancialLiteracyLessons {
   financialImpact: string;
   resources: Resource[];
   caseStudies: CaseStudy[];
+  relatedGames?: (EducationalGame | undefined)[];
 }
 
 interface Exercise {
@@ -45,200 +48,562 @@ interface CaseStudy {
 export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
   {
     id: 'personal-budgeting-fundamentals',
-    title: 'Bài 1: Personal Budgeting & Financial Planning',
+    title: 'Bài 1: Lập Ngân Sách Cá Nhân & Kế Hoạch Tài Chính',
     description:
-      'Master personal finance fundamentals: budgeting methods, expense tracking, financial goals setting. Sử dụng apps và tools để quản lý tài chính cá nhân hiệu quả.',
-    videoUrl: 'https://www.youtube.com/watch?v=HQzoZfc3GwQ',
-    imageUrl:
-      'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=400&fit=crop',
+      'Nắm vững các nguyên tắc cơ bản về tài chính cá nhân: phương pháp lập ngân sách, theo dõi chi tiêu, đặt mục tiêu tài chính. Sử dụng các ứng dụng và công cụ để quản lý tài chính cá nhân hiệu quả.',
+    videoUrl: 'https://www.youtube.com/watch?v=ReW5_6A0iGQ',
+    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '90 phút',
-    financialImpact: 'Tiết kiệm 20-30% chi tiêu hàng tháng, tăng savings rate',
+    financialImpact: 'Tiết kiệm 20-30% chi tiêu hàng tháng, tăng tỷ lệ tiết kiệm',
     objectives: [
-      'Thiết lập comprehensive personal budget với 50/30/20 rule',
-      'Track expenses và identify spending patterns',
-      'Set SMART financial goals (short-term và long-term)',
-      'Build emergency fund strategy (3-6 months expenses)',
-      'Optimize cash flow và reduce unnecessary expenses'
+      'Thiết lập ngân sách cá nhân toàn diện với quy tắc 50/30/20',
+      'Theo dõi chi tiêu và xác định các mẫu chi tiêu',
+      'Đặt mục tiêu tài chính SMART (ngắn hạn và dài hạn)',
+      'Xây dựng chiến lược quỹ khẩn cấp (chi phí 3-6 tháng)',
+      'Tối ưu hóa dòng tiền và giảm các chi phí không cần thiết',
     ],
     prerequisites: [
-      'Basic math skills (addition, subtraction, percentages)',
-      'Understanding của income sources và monthly expenses',
-      'Smartphone hoặc computer for digital tools',
-      'Bank account và financial statements access'
+      'Kỹ năng toán học cơ bản (cộng, trừ, phần trăm)',
+      'Hiểu biết về các nguồn thu nhập và chi phí hàng tháng',
+      'Điện thoại thông minh hoặc máy tính để sử dụng các công cụ số',
+      'Truy cập vào tài khoản ngân hàng và báo cáo tài chính',
     ],
     technologies: [
-      'Budgeting Apps (Mint, YNAB, Personal Capital)',
-      'Spreadsheet Software (Excel, Google Sheets)',
-      'Banking Apps với expense categorization',
-      'Investment Tracking Platforms',
-      'Receipt Scanning Apps',
-      'Financial Calculator Tools'
+      'Ứng dụng lập ngân sách (Mint, YNAB, Personal Capital)',
+      'Phần mềm bảng tính (Excel, Google Sheets)',
+      'Ứng dụng ngân hàng với tính năng phân loại chi tiêu',
+      'Nền tảng theo dõi đầu tư',
+      'Ứng dụng quét hóa đơn',
+      'Công cụ tính toán tài chính',
     ],
     exercises: [
       {
-        title: 'Create Personal Financial Dashboard',
+        title: 'Tạo Bảng Điều Khiển Tài Chính Cá Nhân',
         description:
-          'Xây dựng comprehensive financial dashboard tracking income, expenses, savings, investments và net worth progression',
+          'Xây dựng bảng điều khiển tài chính toàn diện theo dõi thu nhập, chi tiêu, tiết kiệm, đầu tư và tiến trình tăng trưởng tài sản ròng.',
         difficulty: 'Trung bình',
-        solution:
-          "# Personal Financial Dashboard Creation\n\n## 1. Income Analysis & Categorization\n\n### Primary Income Sources:\n- **Salary (Net):** 25,000,000 VND/month\n- **Freelance Work:** 3,000,000 VND/month (average)\n- **Investment Returns:** 800,000 VND/month (dividends, interest)\n- **Side Business:** 2,000,000 VND/month\n- **Total Monthly Income:** 30,800,000 VND\n\n### Income Stability Assessment:\n- **Fixed Income (Salary):** 81% - Very stable\n- **Variable Income (Freelance/Business):** 19% - Moderate volatility\n- **Diversification Score:** Good (4 income streams)\n\n## 2. Expense Tracking & Categorization\n\n### Fixed Expenses (Needs - 50% target):\n- **Housing:** 8,000,000 VND (rent, utilities, internet)\n- **Transportation:** 2,500,000 VND (motorbike payment, gas, maintenance)\n- **Food (Groceries):** 3,000,000 VND\n- **Insurance:** 1,200,000 VND (health, motorbike)\n- **Debt Payments:** 500,000 VND (student loan)\n- **Subtotal:** 15,200,000 VND (49% of income) ✓\n\n### Variable Expenses (Wants - 30% target):\n- **Dining Out:** 2,500,000 VND\n- **Entertainment:** 1,500,000 VND\n- **Shopping:** 2,000,000 VND\n- **Hobbies:** 1,000,000 VND\n- **Travel Fund:** 2,000,000 VND\n- **Subtotal:** 9,000,000 VND (29% of income) ✓\n\n### Savings & Investments (20% target):\n- **Emergency Fund:** 2,000,000 VND\n- **Investment Portfolio:** 3,000,000 VND\n- **Retirement Savings:** 1,600,000 VND\n- **Subtotal:** 6,600,000 VND (21% of income) ✓\n\n## 3. Financial Goals Framework\n\n### Short-Term Goals (1-2 years):\n1. **Emergency Fund:** Build to 6 months expenses (91M VND)\n   - Current: 15M VND\n   - Target: 91M VND\n   - Monthly savings: 2M VND\n   - Timeline: 38 months\n\n2. **Vacation Fund:** Japan trip\n   - Target: 30M VND\n   - Monthly savings: 2M VND (travel fund)\n   - Timeline: 15 months\n\n### Medium-Term Goals (3-7 years):\n1. **House Down Payment:** Apartment purchase\n   - Target: 500M VND (20% down payment)\n   - Current savings rate: 3M VND/month\n   - Additional needed: 2M VND/month\n   - Timeline: 5-6 years\n\n2. **Business Expansion:** Grow side business\n   - Target investment: 100M VND\n   - Expected return: 20M VND/month additional income\n   - Timeline: 3 years\n\n### Long-Term Goals (10+ years):\n1. **Retirement Planning:** Early retirement at 50\n   - Target portfolio: 5 billion VND\n   - Current age: 28\n   - Investment horizon: 22 years\n   - Required monthly investment: 4.5M VND\n\n## 4. Budget Optimization Strategies\n\n### Expense Reduction Opportunities:\n- **Food Delivery:** Reduce from 1.5M to 800K (-700K/month)\n- **Subscription Services:** Audit và cancel unused (-200K/month)\n- **Shopping:** Implement 24-hour rule, buy only necessities (-500K/month)\n- **Transportation:** Optimize routes, consider carpooling (-300K/month)\n- **Total Potential Savings:** 1,700,000 VND/month\n\n### Income Optimization:\n- **Salary Negotiation:** Research market rates, prepare case for 15% raise\n- **Freelance Rates:** Increase hourly rate by 20% for new clients\n- **Investment Education:** Learn để improve returns from 3% to 7% annually\n- **Side Business Focus:** Allocate more time to highest-ROI activities\n\n## 5. Digital Tools Integration\n\n### Recommended App Stack:\n- **Primary Budgeting:** YNAB (You Need A Budget)\n- **Expense Tracking:** Mint connected to all accounts\n- **Investment Tracking:** Personal Capital\n- **Bill Management:** Prism for payment scheduling\n- **Receipt Scanning:** Expensify\n- **Goal Tracking:** Custom Google Sheets dashboard\n\n### Automation Setup:\n- **Automatic Transfers:** 6.6M VND to savings/investments monthly\n- **Bill Pay:** All fixed expenses on autopay\n- **Investment:** Dollar-cost averaging into index funds\n- **Expense Alerts:** Notifications when approaching category limits\n\n## 6. Monthly Review Process\n\n### Week 1 of Month: Planning\n- Review previous month's performance vs budget\n- Adjust current month's budget based on known variations\n- Check progress toward financial goals\n- Plan any large purchases or expenses\n\n### Week 2-3: Monitoring\n- Daily expense logging (5 minutes/day)\n- Weekly category review (15 minutes/week)\n- Identify any budget overruns early\n- Adjust spending if necessary\n\n### Week 4: Analysis & Optimization\n- Complete month-end reconciliation\n- Calculate actual vs budgeted variance\n- Identify trends và patterns\n- Plan optimizations for next month\n- Update financial goal progress\n\n## 7. Dashboard Metrics & KPIs\n\n### Financial Health Indicators:\n- **Savings Rate:** 21% (Target: 20%+) ✓\n- **Debt-to-Income Ratio:** 1.6% (Target: <20%) ✓\n- **Emergency Fund Ratio:** 0.6 months (Target: 6 months) ⚠️\n- **Investment Rate:** 9.7% (Target: 10%+) ⚠️\n\n### Behavioral Metrics:\n- **Budget Adherence:** 95% (Track monthly)\n- **Expense Logging:** Daily for 30+ days\n- **Goal Check-ins:** Weekly progress reviews\n- **Financial Education:** 2 hours/week learning\n\n### Net Worth Tracking:\n- **Assets:** 150M VND (cash, investments, possessions)\n- **Liabilities:** 25M VND (student loan, credit cards)\n- **Net Worth:** 125M VND\n- **Monthly Growth Target:** 6.6M VND\n- **Annual Growth Target:** 79.2M VND (63% increase)\n\n## 8. Risk Management\n\n### Income Protection:\n- **Diversified Income:** Multiple streams reduce risk\n- **Skill Development:** Continuous learning for marketability\n- **Professional Network:** Maintain relationships for opportunities\n- **Emergency Planning:** 3-month expense buffer minimum\n\n### Expense Management:\n- **Flexible Categories:** Ability to adjust non-essential spending\n- **Subscription Audits:** Quarterly review của recurring charges\n- **Insurance Coverage:** Adequate protection without over-insuring\n- **Health Fund:** Separate allocation for medical emergencies",
+        solution: `# Tạo Bảng Điều Khiển Tài Chính Cá Nhân
+
+## 1. Phân Tích & Phân Loại Thu Nhập
+
+### Nguồn Thu Nhập Chính:
+- **Lương (Net):** 25,000,000 VND/tháng
+- **Làm thêm (Freelance):** 3,000,000 VND/tháng (trung bình)
+- **Lợi nhuận đầu tư:** 800,000 VND/tháng (cổ tức, lãi suất)
+- **Kinh doanh phụ:** 2,000,000 VND/tháng
+- **Tổng Thu Nhập Hàng Tháng:** 30,800,000 VND
+
+### Đánh Giá Mức Độ Ổn Định Thu Nhập:
+- **Thu Nhập Cố Định (Lương):** 81% - Rất ổn định
+- **Thu Nhập Biến Đổi (Freelance/Kinh doanh):** 19% - Biến động vừa phải
+- **Điểm Đa Dạng Hóa:** Tốt (4 nguồn thu nhập)
+
+## 2. Theo Dõi & Phân Loại Chi Tiêu
+
+### Chi Phí Cố Định (Nhu Cầu - mục tiêu 50%):
+- **Nhà ở:** 8,000,000 VND (thuê, điện nước, internet)
+- **Đi lại:** 2,500,000 VND (trả góp xe máy, xăng, bảo dưỡng)
+- **Thực phẩm (Tạp hóa):** 3,000,000 VND
+- **Bảo hiểm:** 1,200,000 VND (sức khỏe, xe máy)
+- **Trả nợ:** 500,000 VND (vay sinh viên)
+- **Tổng cộng:** 15,200,000 VND (49% thu nhập) ✓
+
+### Chi Phí Biến Đổi (Mong Muốn - mục tiêu 30%):
+- **Ăn ngoài:** 2,500,000 VND
+- **Giải trí:** 1,500,000 VND
+- **Mua sắm:** 2,000,000 VND
+- **Sở thích:** 1,000,000 VND
+- **Quỹ du lịch:** 2,000,000 VND
+- **Tổng cộng:** 9,000,000 VND (29% thu nhập) ✓
+
+### Tiết Kiệm & Đầu Tư (mục tiêu 20%):
+- **Quỹ khẩn cấp:** 2,000,000 VND
+- **Danh mục đầu tư:** 3,000,000 VND
+- **Tiết kiệm hưu trí:** 1,600,000 VND
+- **Tổng cộng:** 6,600,000 VND (21% thu nhập) ✓
+
+## 3. Khung Mục Tiêu Tài Chính
+
+### Mục Tiêu Ngắn Hạn (1-2 năm):
+1. **Quỹ Khẩn Cấp:** Xây dựng đủ 6 tháng chi phí (91 triệu VND)
+   - Hiện tại: 15 triệu VND
+   - Mục tiêu: 91 triệu VND
+   - Tiết kiệm hàng tháng: 2 triệu VND
+   - Thời gian: 38 tháng
+
+2. **Quỹ Du Lịch:** Chuyến đi Nhật Bản
+   - Mục tiêu: 30 triệu VND
+   - Tiết kiệm hàng tháng: 2 triệu VND (quỹ du lịch)
+   - Thời gian: 15 tháng
+
+### Mục Tiêu Trung Hạn (3-7 năm):
+1. **Tiền Trả Trước Mua Nhà:** Mua căn hộ
+   - Mục tiêu: 500 triệu VND (20% trả trước)
+   - Tỷ lệ tiết kiệm hiện tại: 3 triệu VND/tháng
+   - Cần thêm: 2 triệu VND/tháng
+   - Thời gian: 5-6 năm
+
+2. **Mở Rộng Kinh Doanh:** Phát triển kinh doanh phụ
+   - Vốn đầu tư mục tiêu: 100 triệu VND
+   - Lợi nhuận kỳ vọng: thêm 20 triệu VND/tháng thu nhập
+   - Thời gian: 3 năm
+
+### Mục Tiêu Dài Hạn (10+ năm):
+1. **Kế Hoạch Hưu Trí:** Nghỉ hưu sớm ở tuổi 50
+   - Danh mục mục tiêu: 5 tỷ VND
+   - Tuổi hiện tại: 28
+   - Thời gian đầu tư: 22 năm
+   - Yêu cầu đầu tư hàng tháng: 4.5 triệu VND
+
+## 4. Chiến Lược Tối Ưu Hóa Ngân Sách
+
+### Cơ Hội Giảm Chi Tiêu:
+- **Giao đồ ăn:** Giảm từ 1.5 triệu xuống 800K (-700K/tháng)
+- **Dịch vụ đăng ký:** Kiểm tra và hủy các dịch vụ không sử dụng (-200K/tháng)
+- **Mua sắm:** Áp dụng quy tắc 24 giờ, chỉ mua những thứ cần thiết (-500K/tháng)
+- **Đi lại:** Tối ưu hóa lộ trình, xem xét đi chung xe (-300K/tháng)
+- **Tổng Tiết Kiệm Tiềm Năng:** 1,700,000 VND/tháng
+
+### Tối Ưu Hóa Thu Nhập:
+- **Đàm phán lương:** Nghiên cứu mức lương thị trường, chuẩn bị lý lẽ để tăng 15%
+- **Giá freelance:** Tăng giá theo giờ 20% cho khách hàng mới
+- **Học hỏi đầu tư:** Tìm hiểu để cải thiện lợi nhuận từ 3% lên 7% hàng năm
+- **Tập trung kinh doanh phụ:** Dành nhiều thời gian hơn cho các hoạt động có ROI cao nhất
+
+## 5. Tích Hợp Công Cụ Số
+
+### Bộ Ứng Dụng Đề Xuất:
+- **Lập Ngân Sách Chính:** YNAB (You Need A Budget)
+- **Theo Dõi Chi Tiêu:** Mint kết nối với tất cả các tài khoản
+- **Theo Dõi Đầu Tư:** Personal Capital
+- **Quản Lý Hóa Đơn:** Prism để lên lịch thanh toán
+- **Quét Hóa Đơn:** Expensify
+- **Theo Dõi Mục Tiêu:** Bảng tính Google Sheets tùy chỉnh
+
+### Thiết Lập Tự Động Hóa:
+- **Chuyển Khoản Tự Động:** 6.6 triệu VND vào tiết kiệm/đầu tư hàng tháng
+- **Thanh Toán Hóa Đơn:** Tất cả chi phí cố định được thanh toán tự động
+- **Đầu Tư:** Trung bình giá (DCA) vào các quỹ chỉ số
+- **Cảnh Báo Chi Tiêu:** Thông báo khi gần đạt giới hạn danh mục
+
+## 6. Quy Trình Đánh Giá Hàng Tháng
+
+### Tuần 1 của Tháng: Lập Kế Hoạch
+- Xem lại hiệu suất tháng trước so với ngân sách
+- Điều chỉnh ngân sách tháng hiện tại dựa trên các biến động đã biết
+- Kiểm tra tiến độ đạt được các mục tiêu tài chính
+- Lên kế hoạch cho các khoản mua sắm hoặc chi tiêu lớn
+
+### Tuần 2-3: Theo Dõi
+- Ghi lại chi tiêu hàng ngày (5 phút/ngày)
+- Xem lại danh mục hàng tuần (15 phút/tuần)
+- Phát hiện sớm bất kỳ khoản chi tiêu vượt ngân sách nào
+- Điều chỉnh chi tiêu nếu cần
+
+### Tuần 4: Phân Tích & Tối Ưu Hóa
+- Hoàn thành đối chiếu cuối tháng
+- Tính toán chênh lệch thực tế so với ngân sách
+- Xác định xu hướng và các mẫu chi tiêu
+- Lên kế hoạch tối ưu hóa cho tháng tiếp theo
+- Cập nhật tiến độ mục tiêu tài chính
+
+## 7. Các Chỉ Số & KPI của Bảng Điều Khiển
+
+### Chỉ Số Sức Khỏe Tài Chính:
+- **Tỷ Lệ Tiết Kiệm:** 21% (Mục tiêu: 20%+) ✓
+- **Tỷ Lệ Nợ trên Thu Nhập:** 1.6% (Mục tiêu: <20%) ✓
+- **Tỷ Lệ Quỹ Khẩn Cấp:** 0.6 tháng (Mục tiêu: 6 tháng) ⚠️
+- **Tỷ Lệ Đầu Tư:** 9.7% (Mục tiêu: 10%+) ⚠️
+
+### Chỉ Số Hành Vi:
+- **Tuân Thủ Ngân Sách:** 95% (Theo dõi hàng tháng)
+- **Ghi Chép Chi Tiêu:** Hàng ngày trong hơn 30 ngày
+- **Kiểm Tra Mục Tiêu:** Đánh giá tiến độ hàng tuần
+- **Học Hỏi Tài Chính:** 2 giờ/tuần học tập
+
+### Theo Dõi Tài Sản Ròng:
+- **Tài Sản:** 150 triệu VND (tiền mặt, đầu tư, tài sản)
+- **Nợ:** 25 triệu VND (vay sinh viên, thẻ tín dụng)
+- **Tài Sản Ròng:** 125 triệu VND
+- **Mục Tiêu Tăng Trưởng Hàng Tháng:** 6.6 triệu VND
+- **Mục Tiêu Tăng Trưởng Hàng Năm:** 79.2 triệu VND (tăng 63%)
+
+## 8. Quản Lý Rủi Ro
+
+### Bảo Vệ Thu Nhập:
+- **Đa Dạng Hóa Thu Nhập:** Nhiều nguồn thu nhập giảm rủi ro
+- **Phát Triển Kỹ Năng:** Học hỏi liên tục để duy trì khả năng cạnh tranh
+- **Mạng Lưới Chuyên Môn:** Duy trì mối quan hệ để có cơ hội
+- **Kế Hoạch Khẩn Cấp:** Tối thiểu có quỹ dự phòng 3 tháng chi phí
+
+### Quản Lý Chi Tiêu:
+- **Danh Mục Linh Hoạt:** Khả năng điều chỉnh chi tiêu không thiết yếu
+- **Kiểm Tra Đăng Ký:** Đánh giá hàng quý các khoản phí định kỳ
+- **Bảo Hiểm:** Bảo vệ đầy đủ mà không mua quá mức
+- **Quỹ Sức Khỏe:** Phân bổ riêng cho các trường hợp khẩn cấp y tế`,
         requirements: [
-          'Complete income và expense analysis for last 3 months',
-          'Set up digital tracking system với automated categorization',
-          'Define SMART financial goals với specific timelines',
-          'Create monthly review process với KPIs',
-          'Implement automation for savings và bill payments'
+          'Hoàn thành phân tích thu nhập và chi tiêu trong 3 tháng gần nhất',
+          'Thiết lập hệ thống theo dõi số với phân loại tự động',
+          'Xác định mục tiêu tài chính SMART với timeline cụ thể',
+          'Tạo quy trình đánh giá hàng tháng với các KPI',
+          'Triển khai tự động hóa cho tiết kiệm và thanh toán hóa đơn',
         ],
         hints: [
-          'Use bank transaction data to identify actual spending patterns',
-          'Start with broad categories, then refine based on usage',
-          'Consider seasonal variations trong expense planning',
-          'Set up alerts for budget overruns before they happen'
+          'Sử dụng dữ liệu giao dịch ngân hàng để xác định các mẫu chi tiêu thực tế',
+          'Bắt đầu với các danh mục rộng, sau đó tinh chỉnh dựa trên việc sử dụng',
+          'Xem xét các biến động theo mùa trong kế hoạch chi tiêu',
+          'Thiết lập cảnh báo khi chi tiêu vượt ngân sách trước khi xảy ra',
         ],
         expectedOutput:
-          'Comprehensive financial dashboard với automated tracking, clear goals, và actionable optimization strategies'
-      }
+          'Bảng điều khiển tài chính toàn diện với theo dõi tự động, mục tiêu rõ ràng, và các chiến lược tối ưu hóa có thể hành động',
+      },
     ],
     realWorldApplications: [
-      'Personal wealth building và financial independence',
-      'Small business financial management',
-      'Family financial planning và goal achievement',
-      'Debt reduction và credit improvement strategies',
-      'Investment decision making với risk assessment'
+      'Xây dựng tài sản cá nhân và độc lập tài chính',
+      'Quản lý tài chính doanh nghiệp nhỏ',
+      'Lập kế hoạch tài chính gia đình và đạt được mục tiêu',
+      'Chiến lược giảm nợ và cải thiện điểm tín dụng',
+      'Ra quyết định đầu tư với đánh giá rủi ro',
     ],
     resources: [
       {
         title: 'YNAB (You Need A Budget)',
         url: 'https://www.youneedabudget.com',
         type: 'app',
-        description:
-          'Comprehensive budgeting app với zero-based budgeting methodology'
+        description: 'Ứng dụng lập ngân sách toàn diện với phương pháp lập ngân sách từ con số không',
       },
       {
         title: 'Mint Personal Finance',
         url: 'https://mint.intuit.com',
         type: 'platform',
-        description:
-          'Free financial tracking với automatic categorization và credit monitoring'
-      }
+        description: 'Theo dõi tài chính miễn phí với phân loại tự động và giám sát tín dụng',
+      },
     ],
     caseStudies: [
       {
-        title: 'Young Professional Debt Freedom Journey',
-        person: 'Minh, Software Developer, Age 26',
+        title: 'Hành Trình Thoát Nợ của Chuyên Gia Trẻ',
+        person: 'Minh, Lập Trình Viên, 26 tuổi',
         challenge:
-          'Graduated với 200M VND student debt, high lifestyle inflation after first job, no savings despite 30M VND monthly income',
+          'Tốt nghiệp với khoản nợ sinh viên 200 triệu VND, lạm phát lối sống cao sau khi có công việc đầu tiên, không có tiền tiết kiệm dù thu nhập 30 triệu VND/tháng',
         solution:
-          'Implemented aggressive budgeting: moved to smaller apartment, cooked at home, used debt avalanche method. Allocated 15M VND monthly to debt payment while building 1-month emergency fund.',
+          'Thực hiện ngân sách chặt chẽ: chuyển đến căn hộ nhỏ hơn, tự nấu ăn, sử dụng phương pháp trả nợ tuyết lở. Phân bổ 15 triệu VND/tháng để trả nợ trong khi xây dựng quỹ khẩn cấp 1 tháng.',
         results:
-          'Debt free trong 18 months, built 6-month emergency fund, started investing 8M VND monthly. Net worth increased from -200M to +150M VND trong 3 years.',
+          'Thoát nợ trong 18 tháng, xây dựng quỹ khẩn cấp 6 tháng, bắt đầu đầu tư 8 triệu VND/tháng. Tài sản ròng tăng từ -200 triệu lên +150 triệu VND trong 3 năm.',
         insights: [
-          'Lifestyle inflation is biggest threat to young professionals',
-          'Aggressive debt payoff frees up significant cash flow long-term',
-          'Small apartment sacrifices worth the financial freedom',
-          'Cooking skills save 5-8M VND monthly while improving health'
-        ]
-      }
-    ]
+          'Lạm phát lối sống là mối đe dọa lớn nhất đối với các chuyên gia trẻ',
+          'Trả nợ quyết liệt giải phóng dòng tiền đáng kể trong dài hạn',
+          'Hy sinh căn hộ nhỏ đáng giá cho sự tự do tài chính',
+          'Kỹ năng nấu ăn tiết kiệm 5-8 triệu VND/tháng đồng thời cải thiện sức khỏe',
+        ],
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'math-puzzle'),
+    ],
   },
   {
     id: 'investment-fundamentals',
-    title: 'Bài 2: Investment Fundamentals & Portfolio Building',
+    title: 'Bài 2: Nguyên Tắc Cơ Bản về Đầu Tư & Xây Dựng Danh Mục',
     description:
-      'Learn investment basics: stocks, bonds, ETFs, real estate. Build diversified portfolio với risk management và long-term wealth building strategies.',
-    videoUrl: 'https://www.youtube.com/watch?v=gFQNPmLKj1k',
-    imageUrl:
-      'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=400&fit=crop',
+      'Học các kiến thức cơ bản về đầu tư: cổ phiếu, trái phiếu, ETF, bất động sản. Xây dựng danh mục đầu tư đa dạng với quản lý rủi ro và chiến lược xây dựng tài sản dài hạn.',
+    videoUrl: 'https://www.youtube.com/watch?v=SL3t_Fxerds',
+    imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '150 phút',
-    financialImpact: '7-10% annual returns long-term, wealth compounding',
+    financialImpact: 'Lợi nhuận hàng năm 7-10% trong dài hạn, tài sảnทbố trí',
     objectives: [
-      'Understand investment fundamentals: risk, return, diversification',
-      'Build balanced portfolio appropriate for age và risk tolerance',
-      'Master dollar-cost averaging và compound interest concepts',
-      'Analyze stocks, bonds, ETFs, và real estate investments',
-      'Implement tax-efficient investment strategies'
+      'Hiểu các nguyên tắc cơ bản về đầu tư: rủi ro, lợi nhuận, đa dạng hóa',
+      'Xây dựng danh mục đầu tư cân bằng phù hợp với độ tuổi và mức độ chấp nhận rủi ro',
+      'Nắm vững các khái niệm trung bình giá (DCA) và lãi kép',
+      'Phân tích các khoản đầu tư cổ phiếu, trái phiếu, ETF và bất động sản',
+      'Thực hiện các chiến lược đầu tư hiệu quả về thuế',
     ],
     prerequisites: [
-      'Personal budgeting basics completed',
-      'Emergency fund established (3-6 months expenses)',
-      'Understanding của basic financial concepts',
-      'Access to investment platforms hoặc brokerage accounts'
+      'Hoàn thành các kiến thức cơ bản về lập ngân sách cá nhân',
+      'Đã thiết lập quỹ khẩn cấp (chi phí 3-6 tháng)',
+      'Hiểu biết về các khái niệm tài chính cơ bản',
+      'Truy cập vào các nền tảng đầu tư hoặc tài khoản môi giới',
     ],
     technologies: [
-      'Investment Platforms (eToro, Vanguard, Fidelity)',
-      'Stock Analysis Tools (Yahoo Finance, Bloomberg)',
-      'Portfolio Tracking Apps (Personal Capital, Sharesight)',
-      'Robo-Advisors (Betterment, Wealthfront)',
-      'Real Estate Platforms (REITs, Fundrise)',
-      'Tax Software (TurboTax, TaxAct)'
+      'Nền tảng đầu tư (eToro, Vanguard, Fidelity)',
+      'Công cụ phân tích cổ phiếu (Yahoo Finance, Bloomberg)',
+      'Ứng dụng theo dõi danh mục (Personal Capital, Sharesight)',
+      'Cố vấn robot (Betterment, Wealthfront)',
+      'Nền tảng bất động sản (REITs, Fundrise)',
+      'Phần mềm thuế (TurboTax, TaxAct)',
     ],
     exercises: [
       {
-        title: 'Build Diversified Investment Portfolio',
+        title: 'Xây Dựng Danh Mục Đầu Tư Đa Dạng',
         description:
-          'Create age-appropriate investment portfolio với proper asset allocation, risk management, và long-term growth strategy',
+          'Tạo danh mục đầu tư phù hợp với độ tuổi với phân bổ tài sản hợp lý, quản lý rủi ro và chiến lược tăng trưởng dài hạn.',
         difficulty: 'Nâng cao',
-        solution:
-          '# Investment Portfolio Construction: Age 28 Professional\n\n## 1. Investment Profile Assessment\n\n### Personal Financial Situation:\n- **Age:** 28 years old\n- **Investment Horizon:** 37 years until retirement (age 65)\n- **Risk Tolerance:** Moderate-Aggressive (time advantage)\n- **Monthly Investment Capacity:** 8,000,000 VND\n- **Current Portfolio Value:** 50,000,000 VND\n- **Investment Knowledge:** Intermediate\n\n### Financial Goals:\n- **Primary Goal:** Retirement với 5 billion VND at age 65\n- **Secondary Goals:** House down payment trong 5 years (500M VND)\n- **Required Annual Return:** 8.5% to meet retirement goal\n- **Emergency Fund:** Fully funded (6 months expenses)\n\n## 2. Strategic Asset Allocation\n\n### Core Portfolio Allocation (Age-Based Rule: 120 - Age):\n- **Equities (Stocks):** 70% (120-28 = 92, adjusted for conservative approach)\n- **Fixed Income (Bonds):** 20%\n- **Alternative Investments:** 7%\n- **Cash/Money Market:** 3%\n\n### Geographic Diversification:\n- **Domestic (Vietnam):** 40%\n- **Developed Markets (US, Europe):** 45%\n- **Emerging Markets:** 15%\n\n## 3. Detailed Portfolio Construction\n\n### Equity Holdings (70% = 35,000,000 VND):\n\n#### US Market ETFs (25% = 12,500,000 VND):\n- **VTI (Total Stock Market):** 10,000,000 VND\n  - Expense ratio: 0.03%\n  - Dividend yield: 1.8%\n  - Broad US market exposure\n\n- **QQQ (Nasdaq 100):** 2,500,000 VND\n  - Expense ratio: 0.20%\n  - Tech-heavy growth focus\n  - Higher volatility but growth potential\n\n#### Vietnam Market (20% = 10,000,000 VND):\n- **VN30 ETF:** 5,000,000 VND\n  - Top 30 Vietnamese companies\n  - Local market exposure\n  - Currency matching\n\n- **Individual Stocks:** 5,000,000 VND\n  - VCB (Vietcombank): 2,000,000 VND\n  - VIC (Vingroup): 1,500,000 VND\n  - HPG (Hoa Phat): 1,500,000 VND\n\n#### International Developed Markets (15% = 7,500,000 VND):\n- **VEA (Europe, Asia):** 4,500,000 VND\n- **VGK (European Stocks):** 3,000,000 VND\n\n#### Emerging Markets (10% = 5,000,000 VND):\n- **VWO (Emerging Markets ETF):** 3,000,000 VND\n- **ASEAN Focus ETF:** 2,000,000 VND\n\n### Fixed Income (20% = 10,000,000 VND):\n\n#### Government Bonds (12% = 6,000,000 VND):\n- **Vietnam Government Bonds:** 4,000,000 VND\n  - 5-year term, 6.5% annual yield\n  - Safe, predictable returns\n  - Currency matching for stability\n\n- **US Treasury ETFs (TLT):** 2,000,000 VND\n  - Long-term treasuries\n  - Inflation hedge\n  - Dollar diversification\n\n#### Corporate Bonds (8% = 4,000,000 VND):\n- **High-Grade Corporate Bonds:** 2,500,000 VND\n- **Vietnam Corporate Bond Fund:** 1,500,000 VND\n\n### Alternative Investments (7% = 3,500,000 VND):\n\n#### Real Estate Investment Trusts (5% = 2,500,000 VND):\n- **Vietnam REITs:** 1,500,000 VND\n  - Shopping malls, office buildings\n  - 7-9% dividend yields\n  - Real estate exposure without direct ownership\n\n- **US REITs (VNQ):** 1,000,000 VND\n  - Diversified US real estate\n  - Professional management\n  - Liquidity advantage\n\n#### Commodities (2% = 1,000,000 VND):\n- **Gold ETF (GLD):** 600,000 VND\n  - Inflation hedge\n  - Portfolio insurance\n  - Crisis diversification\n\n- **Commodity ETF (DJP):** 400,000 VND\n  - Broad commodity exposure\n  - Energy, agriculture, metals\n\n### Cash & Money Market (3% = 1,500,000 VND):\n- **High-Yield Savings:** 1,000,000 VND\n- **Money Market Fund:** 500,000 VND\n\n## 4. Investment Strategy Implementation\n\n### Dollar-Cost Averaging Plan:\n- **Monthly Investment:** 8,000,000 VND\n- **Allocation Strategy:** Maintain target percentages\n- **Rebalancing:** Quarterly review, annual rebalancing\n- **Automatic Investing:** Set up monthly transfers\n\n### Monthly Investment Distribution:\n- **Equities:** 5,600,000 VND\n- **Fixed Income:** 1,600,000 VND\n- **Alternatives:** 560,000 VND\n- **Cash Buffer:** 240,000 VND\n\n### Rebalancing Rules:\n- **Trigger:** When allocation deviates >5% from target\n- **Method:** Sell overweight, buy underweight\n- **Frequency:** Quarterly review, annual action\n- **Tax Considerations:** Use tax-advantaged accounts first\n\n## 5. Risk Management Framework\n\n### Diversification Strategies:\n- **Asset Class:** Stocks, bonds, alternatives, cash\n- **Geographic:** Multiple countries và regions\n- **Sector:** Technology, finance, healthcare, energy\n- **Company Size:** Large cap, mid cap, small cap\n- **Investment Style:** Growth và value\n\n### Risk Monitoring:\n- **Portfolio Beta:** Target 1.0-1.2 (moderate risk)\n- **Maximum Drawdown:** Prepared for 30-40% declines\n- **Correlation Analysis:** Ensure assets move differently\n- **Stress Testing:** Model portfolio performance trong various scenarios\n\n### Position Sizing Rules:\n- **Individual Stocks:** Maximum 5% of portfolio\n- **Single Sector:** Maximum 25% of equity allocation\n- **Single Country:** Maximum 50% of total portfolio\n- **Single Asset Class:** Follow strategic allocation limits\n\n## 6. Tax Optimization Strategies\n\n### Account Types Priority:\n1. **Tax-Advantaged Accounts:** Maximize contributions\n2. **Tax-Efficient Investments:** Index funds trong taxable accounts\n3. **Tax-Loss Harvesting:** Offset gains với losses\n4. **Asset Location:** Bonds trong tax-advantaged, growth stocks trong taxable\n\n### Tax-Efficient Investing:\n- **Hold Period:** >1 year for capital gains tax benefits\n- **Dividend Focus:** Qualified dividends taxed favorably\n- **Index Funds:** Lower turnover, fewer taxable events\n- **Municipal Bonds:** Tax-free interest (if applicable)\n\n## 7. Performance Monitoring\n\n### Key Performance Indicators:\n- **Total Return:** Compare to benchmarks (S&P 500, VN-Index)\n- **Risk-Adjusted Return:** Sharpe ratio >1.0 target\n- **Tracking Error:** Minimize deviation from target allocation\n- **Expense Ratio:** Average <0.5% for entire portfolio\n\n### Benchmark Comparisons:\n- **60/40 Portfolio:** Traditional stock/bond mix\n- **Target Date Fund:** Age-appropriate allocation\n- **S&P 500:** US equity benchmark\n- **VN-Index:** Vietnam market benchmark\n\n### Monthly Review Process:\n1. **Performance Analysis:** Calculate returns vs benchmarks\n2. **Allocation Check:** Confirm target percentages maintained\n3. **News Review:** Major events affecting holdings\n4. **Contribution Planning:** Adjust monthly investments if needed\n\n## 8. Long-Term Projections\n\n### Retirement Goal Analysis:\n- **Target Amount:** 5,000,000,000 VND\n- **Time Horizon:** 37 years\n- **Required Return:** 8.5% annually\n- **Monthly Investment:** 8,000,000 VND\n- **Probability of Success:** 75% based on historical returns\n\n### Scenario Analysis:\n- **Optimistic (10% annual return):** 8.2 billion VND\n- **Expected (8.5% annual return):** 5.0 billion VND\n- **Conservative (7% annual return):** 3.1 billion VND\n- **Pessimistic (5% annual return):** 1.6 billion VND\n\n### Adjustment Strategies:\n- **Underperformance:** Increase monthly contributions\n- **Overperformance:** Consider more aggressive allocation\n- **Life Changes:** Adjust goals và timeline as needed\n- **Market Volatility:** Stay the course, maintain discipline',
+        solution: `# Xây Dựng Danh Mục Đầu Tư: Chuyên Gia 28 Tuổi
+
+## 1. Đánh Giá Hồ Sơ Đầu Tư
+
+### Tình Hình Tài Chính Cá Nhân:
+- **Tuổi:** 28
+- **Thời gian đầu tư:** 37 năm cho đến khi nghỉ hưu (tuổi 65)
+- **Mức độ chấp nhận rủi ro:** Trung bình-Cao (lợi thế thời gian)
+- **Khả năng đầu tư hàng tháng:** 8,000,000 VND
+- **Giá trị danh mục hiện tại:** 50,000,000 VND
+- **Kiến thức đầu tư:** Trung cấp
+
+### Mục Tiêu Tài Chính:
+- **Mục tiêu chính:** Nghỉ hưu với 5 tỷ VND ở tuổi 65
+- **Mục tiêu phụ:** Trả trước tiền nhà trong 5 năm (500 triệu VND)
+- **Lợi nhuận hàng năm yêu cầu:** 8.5% để đạt mục tiêu hưu trí
+- **Quỹ khẩn cấp:** Đã đủ (6 tháng chi phí)
+
+## 2. Phân Bổ Tài Sản Chiến Lược
+
+### Phân Bổ Danh Mục Cốt Lõi (Quy tắc theo tuổi: 120 - Tuổi):
+- **Cổ phiếu:** 70% (120-28 = 92, điều chỉnh để thận trọng hơn)
+- **Trái phiếu:** 20%
+- **Đầu tư thay thế:** 7%
+- **Tiền mặt/Thị trường tiền tệ:** 3%
+
+### Đa Dạng Hóa Địa Lý:
+- **Trong nước (Việt Nam):** 40%
+- **Thị trường phát triển (Mỹ, Châu Âu):** 45%
+- **Thị trường mới nổi:** 15%
+
+## 3. Xây Dựng Danh Mục Chi Tiết
+
+### Cổ Phiếu (70% = 35,000,000 VND):
+
+#### ETF Thị Trường Mỹ (25% = 12,500,000 VND):
+- **VTI (Toàn bộ thị trường chứng khoán):** 10,000,000 VND
+  - Tỷ lệ chi phí: 0.03%
+  - Lợi tức cổ tức: 1.8%
+  - Tiếp cận rộng rãi thị trường Mỹ
+
+- **QQQ (Nasdaq 100):** 2,500,000 VND
+  - Tỷ lệ chi phí: 0.20%
+  - Tập trung vào tăng trưởng công nghệ
+  - Biến động cao hơn nhưng tiềm năng tăng trưởng
+
+#### Thị Trường Việt Nam (20% = 10,000,000 VND):
+- **ETF VN30:** 5,000,000 VND
+  - Top 30 công ty Việt Nam
+  - Tiếp cận thị trường địa phương
+  - Khớp tiền tệ
+
+- **Cổ phiếu riêng lẻ:** 5,000,000 VND
+  - VCB (Vietcombank): 2,000,000 VND
+  - VIC (Vingroup): 1,500,000 VND
+  - HPG (Hòa Phát): 1,500,000 VND
+
+#### Thị Trường Phát Triển Quốc Tế (15% = 7,500,000 VND):
+- **VEA (Châu Âu, Châu Á):** 4,500,000 VND
+- **VGK (Cổ phiếu Châu Âu):** 3,000,000 VND
+
+#### Thị Trường Mới Nổi (10% = 5,000,000 VND):
+- **VWO (ETF Thị trường mới nổi):** 3,000,000 VND
+- **ETF tập trung ASEAN:** 2,000,000 VND
+
+### Trái Phiếu (20% = 10,000,000 VND):
+
+#### Trái Phiếu Chính Phủ (12% = 6,000,000 VND):
+- **Trái phiếu Chính phủ Việt Nam:** 4,000,000 VND
+  - Kỳ hạn 5 năm, lợi suất 6.5%/năm
+  - Lợi nhuận an toàn, có thể dự đoán
+  - Khớp tiền tệ để ổn định
+
+- **ETF Trái phiếu Kho bạc Mỹ (TLT):** 2,000,000 VND
+  - Trái phiếu kho bạc dài hạn
+  - Phòng ngừa lạm phát
+  - Đa dạng hóa đô la
+
+#### Trái Phiếu Doanh Nghiệp (8% = 4,000,000 VND):
+- **Trái phiếu doanh nghiệp hạng cao:** 2,500,000 VND
+- **Quỹ trái phiếu doanh nghiệp Việt Nam:** 1,500,000 VND
+
+### Đầu Tư Thay Thế (7% = 3,500,000 VND):
+
+#### Quỹ Tín Thác Bất Động Sản (REITs) (5% = 2,500,000 VND):
+- **REITs Việt Nam:** 1,500,000 VND
+  - Trung tâm thương mại, tòa nhà văn phòng
+  - Lợi tức cổ tức 7-9%
+  - Tiếp cận bất động sản không cần sở hữu trực tiếp
+
+- **REITs Mỹ (VNQ):** 1,000,000 VND
+  - Bất động sản đa dạng của Mỹ
+  - Quản lý chuyên nghiệp
+  - Lợi thế thanh khoản
+
+#### Hàng Hóa (2% = 1,000,000 VND):
+- **ETF Vàng (GLD):** 600,000 VND
+  - Phòng ngừa lạm phát
+  - Bảo hiểm danh mục
+  - Đa dạng hóa trong khủng hoảng
+
+- **ETF Hàng hóa (DJP):** 400,000 VND
+  - Tiếp cận hàng hóa rộng rãi
+  - Năng lượng, nông nghiệp, kim loại
+
+### Tiền Mặt & Thị Trường Tiền Tệ (3% = 1,500,000 VND):
+- **Tiết kiệm lãi suất cao:** 1,000,000 VND
+- **Quỹ thị trường tiền tệ:** 500,000 VND
+
+## 4. Thực Hiện Chiến Lược Đầu Tư
+
+### Kế Hoạch Trung Bình Giá (DCA):
+- **Đầu tư hàng tháng:** 8,000,000 VND
+- **Chiến lược phân bổ:** Duy trì tỷ lệ mục tiêu
+- **Tái cân bằng:** Đánh giá hàng quý, tái cân bằng hàng năm
+- **Đầu tư tự động:** Thiết lập chuyển khoản hàng tháng
+
+### Phân Bổ Đầu Tư Hàng Tháng:
+- **Cổ phiếu:** 5,600,000 VND
+- **Trái phiếu:** 1,600,000 VND
+- **Đầu tư thay thế:** 560,000 VND
+- **Đệm tiền mặt:** 240,000 VND
+
+### Quy Tắc Tái Cân Bằng:
+- **Kích hoạt:** Khi phân bổ lệch >5% so với mục tiêu
+- **Phương pháp:** Bán tài sản thừa cân, mua tài sản thiếu cân
+- **Tần suất:** Đánh giá hàng quý, hành động hàng năm
+- **Cân nhắc về thuế:** Sử dụng tài khoản ưu đãi thuế trước
+
+## 5. Khung Quản Lý Rủi Ro
+
+### Chiến Lược Đa Dạng Hóa:
+- **Loại tài sản:** Cổ phiếu, trái phiếu, thay thế, tiền mặt
+- **Địa lý:** Nhiều quốc gia và khu vực
+- **Ngành:** Công nghệ, tài chính, y tế, năng lượng
+- **Quy mô công ty:** Vốn hóa lớn, vừa, nhỏ
+- **Phong cách đầu tư:** Tăng trưởng và giá trị
+
+### Giám Sát Rủi Ro:
+- **Beta danh mục:** Mục tiêu 1.0-1.2 (rủi ro vừa phải)
+- **Sụt giảm tối đa:** Chuẩn bị cho mức giảm 30-40%
+- **Phân tích tương quan:** Đảm bảo các tài sản di chuyển khác nhau
+- **Kiểm tra căng thẳng:** Mô hình hóa hiệu suất danh mục trong các kịch bản khác nhau
+
+### Quy Tắc Quy Mô Vị Thế:
+- **Cổ phiếu riêng lẻ:** Tối đa 5% danh mục
+- **Một ngành duy nhất:** Tối đa 25% phân bổ cổ phiếu
+- **Một quốc gia duy nhất:** Tối đa 50% tổng danh mục
+- **Một loại tài sản duy nhất:** Tuân theo giới hạn phân bổ chiến lược
+
+## 6. Chiến Lược Tối Ưu Hóa Thuế
+
+### Ưu Tiên Loại Tài Khoản:
+1. **Tài khoản ưu đãi thuế:** Tối đa hóa đóng góp
+2. **Đầu tư hiệu quả về thuế:** Quỹ chỉ số trong tài khoản chịu thuế
+3. **Thu hoạch lỗ thuế:** Bù trừ lãi bằng lỗ
+4. **Vị trí tài sản:** Trái phiếu trong tài khoản ưu đãi thuế, cổ phiếu tăng trưởng trong tài khoản chịu thuế
+
+### Đầu Tư Hiệu Quả Về Thuế:
+- **Thời gian nắm giữ:** >1 năm để hưởng lợi thuế thu nhập vốn
+- **Tập trung cổ tức:** Cổ tức đủ điều kiện được đánh thuế ưu đãi
+- **Quỹ chỉ số:** Vòng quay thấp hơn, ít sự kiện chịu thuế hơn
+- **Trái phiếu đô thị:** Lãi suất miễn thuế (nếu có)
+
+## 7. Giám Sát Hiệu Suất
+
+### Các Chỉ Số Hiệu Suất Chính (KPI):
+- **Tổng lợi nhuận:** So sánh với các chỉ số tham chiếu (S&P 500, VN-Index)
+- **Lợi nhuận điều chỉnh theo rủi ro:** Tỷ lệ Sharpe >1.0 mục tiêu
+- **Lỗi theo dõi:** Giảm thiểu độ lệch so với phân bổ mục tiêu
+- **Tỷ lệ chi phí:** Trung bình <0.5% cho toàn bộ danh mục
+
+### So Sánh Với Chỉ Số Tham Chiếu:
+- **Danh mục 60/40:** Hỗn hợp cổ phiếu/trái phiếu truyền thống
+- **Quỹ theo ngày mục tiêu:** Phân bổ phù hợp với độ tuổi
+- **S&P 500:** Chỉ số tham chiếu thị trường Mỹ
+- **VN-Index:** Chỉ số tham chiếu thị trường Việt Nam
+
+### Quy Trình Đánh Giá Hàng Tháng:
+1. **Phân tích hiệu suất:** Tính toán lợi nhuận so với chỉ số tham chiếu
+2. **Kiểm tra phân bổ:** Xác nhận duy trì tỷ lệ mục tiêu
+3. **Xem lại tin tức:** Các sự kiện lớn ảnh hưởng đến các khoản nắm giữ
+4. **Lập kế hoạch đóng góp:** Điều chỉnh đầu tư hàng tháng nếu cần
+
+## 8. Dự Báo Dài Hạn
+
+### Phân Tích Mục Tiêu Hưu Trí:
+- **Số tiền mục tiêu:** 5,000,000,000 VND
+- **Thời gian:** 37 năm
+- **Lợi nhuận yêu cầu:** 8.5% hàng năm
+- **Đầu tư hàng tháng:** 8,000,000 VND
+- **Xác suất thành công:** 75% dựa trên lợi nhuận lịch sử
+
+### Phân Tích Kịch Bản:
+- **Lạc quan (lợi nhuận 10%/năm):** 8.2 tỷ VND
+- **Dự kiến (lợi nhuận 8.5%/năm):** 5.0 tỷ VND
+- **Thận trọng (lợi nhuận 7%/năm):** 3.1 tỷ VND
+- **Bi quan (lợi nhuận 5%/năm):** 1.6 tỷ VND
+
+### Chiến Lược Điều Chỉnh:
+- **Hiệu suất kém:** Tăng đóng góp hàng tháng
+- **Hiệu suất tốt:** Xem xét phân bổ tích cực hơn
+- **Thay đổi cuộc sống:** Điều chỉnh mục tiêu và thời gian khi cần
+- **Biến động thị trường:** Giữ vững lộ trình, duy trì kỷ luật`,
         requirements: [
-          'Assess personal risk tolerance và investment timeline',
-          'Research và select appropriate asset classes',
-          'Calculate optimal allocation percentages',
-          'Set up automatic investment plan',
-          'Create monitoring và rebalancing schedule'
+          'Đánh giá mức độ chấp nhận rủi ro cá nhân và thời gian đầu tư',
+          'Nghiên cứu và lựa chọn các loại tài sản phù hợp',
+          'Tính toán tỷ lệ phân bổ tối ưu',
+          'Thiết lập kế hoạch đầu tư tự động',
+          'Tạo lịch trình giám sát và tái cân bằng',
         ],
         hints: [
-          'Use age-based allocation as starting point, adjust for personal situation',
-          'Start với low-cost index funds before individual stock picking',
-          'Consider tax implications của different account types',
-          'Diversify across multiple dimensions: geography, sector, company size'
+          'Sử dụng phân bổ dựa trên tuổi làm điểm khởi đầu, điều chỉnh cho phù hợp với tình hình cá nhân',
+          'Bắt đầu với các quỹ chỉ số chi phí thấp trước khi chọn cổ phiếu riêng lẻ',
+          'Xem xét các tác động về thuế của các loại tài khoản khác nhau',
+          'Đa dạng hóa trên nhiều phương diện: địa lý, ngành, quy mô công ty',
         ],
         expectedOutput:
-          'Complete investment portfolio với detailed allocation, risk management plan, và performance monitoring system'
-      }
+          'Danh mục đầu tư hoàn chỉnh với phân bổ chi tiết, kế hoạch quản lý rủi ro và hệ thống giám sát hiệu suất',
+      },
     ],
     realWorldApplications: [
-      'Retirement planning và wealth accumulation',
-      'Education funding for children',
-      'Real estate investment strategies',
-      'Business investment và expansion funding',
-      'Financial independence và early retirement (FIRE)'
+      'Lập kế hoạch hưu trí và tích lũy tài sản',
+      'Tài trợ giáo dục cho con cái',
+      'Chiến lược đầu tư bất động sản',
+      'Đầu tư kinh doanh và tài trợ mở rộng',
+      'Độc lập tài chính và nghỉ hưu sớm (FIRE)',
     ],
     resources: [
       {
-        title: 'Vanguard Investment Platform',
+        title: 'Nền Tảng Đầu Tư Vanguard',
         url: 'https://investor.vanguard.com',
         type: 'platform',
-        description:
-          'Low-cost index funds và ETFs với comprehensive investment tools'
+        description: 'Các quỹ chỉ số và ETF chi phí thấp với các công cụ đầu tư toàn diện',
       },
       {
-        title: 'Morningstar Investment Research',
+        title: 'Nghiên Cứu Đầu Tư Morningstar',
         url: 'https://www.morningstar.com',
         type: 'platform',
-        description:
-          'Professional investment analysis, fund ratings, và portfolio tools'
-      }
+        description: 'Phân tích đầu tư chuyên nghiệp, xếp hạng quỹ và các công cụ danh mục',
+      },
     ],
     caseStudies: [
       {
-        title: 'Early Retirement Through Index Investing',
-        person: 'Lan, Marketing Manager, Age 32',
+        title: 'Nghỉ Hưu Sớm Nhờ Đầu Tư Chỉ Số',
+        person: 'Lan, Giám Đốc Marketing, 32 tuổi',
         challenge:
-          'Started investing late at age 30, wanted to retire by 50 với limited investment knowledge và moderate income',
+          'Bắt đầu đầu tư muộn ở tuổi 30, muốn nghỉ hưu ở tuổi 50 với kiến thức đầu tư hạn chế và thu nhập trung bình',
         solution:
-          'Focused on low-cost index fund investing: 80% stocks, 20% bonds. Maximized retirement account contributions, invested 40% of income through extreme frugality.',
+          'Tập trung vào đầu tư quỹ chỉ số chi phí thấp: 80% cổ phiếu, 20% trái phiếu. Tối đa hóa đóng góp vào tài khoản hưu trí, đầu tư 40% thu nhập thông qua tiết kiệm tối đa.',
         results:
-          'Portfolio grew from 0 to 2.8 billion VND trong 15 years. Achieved financial independence at age 45, 5 years ahead of goal.',
+          'Danh mục tăng từ 0 lên 2.8 tỷ VND trong 15 năm. Đạt được độc lập tài chính ở tuổi 45, sớm hơn 5 năm so với mục tiêu.',
         insights: [
-          'Consistent investing beats timing the market',
-          'High savings rate more important than investment returns',
-          'Index funds provide broad diversification với minimal fees',
-          'Compound interest accelerates wealth building over time'
-        ]
-      }
-    ]
-  }
+          'Đầu tư nhất quán đánh bại việc cố gắng đoán định thị trường',
+          'Tỷ lệ tiết kiệm cao quan trọng hơn lợi nhuận đầu tư',
+          'Quỹ chỉ số cung cấp sự đa dạng hóa rộng rãi với chi phí tối thiểu',
+          'Lãi kép thúc đẩy việc xây dựng tài sản theo thời gian',
+        ],
+      },
+    ],
+    relatedGames: [
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'blockchain-explorer'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'currency-exchange-puzzle'),
+    ],
+  },
 ];

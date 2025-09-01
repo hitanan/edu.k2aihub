@@ -1,14 +1,12 @@
 import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
-import { createTitle, createDescription, createKeywords } from '@/utils/seo';
+import { createModuleMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: createTitle('AI Của Tôi - Ứng Dụng AI Thực Tế'),
-  description: createDescription(
-    'Khám phá các ứng dụng AI thực tế trong đời sống và công việc hàng ngày. Từ ChatGPT, Midjourney đến GitHub Copilot - học cách sử dụng AI hiệu quả',
-  ),
-  keywords: createKeywords([
+export const metadata: Metadata = createModuleMetadata(
+  'AI Của Tôi - Ứng Dụng AI Thực Tế',
+  'Khám phá các ứng dụng AI thực tế trong đời sống và công việc hàng ngày. Từ ChatGPT, Midjourney đến GitHub Copilot - học cách sử dụng AI hiệu quả.',
+  [
     'AI',
     'trí tuệ nhân tạo',
     'ChatGPT',
@@ -18,36 +16,16 @@ export const metadata: Metadata = {
     'hướng dẫn AI',
     'AI Việt Nam',
     'AI apps',
-  ]),
-  authors: [{ name: 'K2AiHub Team' }],
-  openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
-
-    title: createTitle('AI Của Tôi - Ứng Dụng AI Thực Tế'),
-    description: createDescription(
-      'Khám phá các ứng dụng AI thực tế trong đời sống và công việc hàng ngày',
-    ),
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: createTitle('K2AiHub Educational Content'),
-    description: createDescription('Nền tảng học tập thông minh với công nghệ AI dẫn lối'),
-    images: ['https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop'],
-  },
-};
+  ],
+  'ai',
+);
 
 const featuredAIApps = [
   {
     name: 'ChatGPT',
     description: 'Trợ lý AI cho viết, nghiên cứu và giải quyết vấn đề',
     category: 'Productivity',
-    features: [
-      'Viết email chuyên nghiệp',
-      'Tóm tắt tài liệu',
-      'Brainstorming ý tưởng',
-      'Code assistance',
-    ],
+    features: ['Viết email chuyên nghiệp', 'Tóm tắt tài liệu', 'Brainstorming ý tưởng', 'Code assistance'],
     link: 'https://chat.openai.com',
     pricing: 'Freemium',
     icon: '🤖',
@@ -57,12 +35,7 @@ const featuredAIApps = [
     name: 'Claude 3.5 Sonnet',
     description: 'AI assistant từ Anthropic cho phân tích và reasoning',
     category: 'Analysis',
-    features: [
-      'Phân tích văn bản dài',
-      'Reasoning logic mạnh',
-      'Code review chuyên sâu',
-      'Artifacts creation',
-    ],
+    features: ['Phân tích văn bản dài', 'Reasoning logic mạnh', 'Code review chuyên sâu', 'Artifacts creation'],
     link: 'https://claude.ai',
     pricing: 'Freemium',
     icon: '🧠',
@@ -72,12 +45,7 @@ const featuredAIApps = [
     name: 'Cursor IDE',
     description: 'AI-native code editor cho developers',
     category: 'Development',
-    features: [
-      'AI pair programming',
-      'Codebase chat',
-      'Multi-file editing',
-      'Claude integration',
-    ],
+    features: ['AI pair programming', 'Codebase chat', 'Multi-file editing', 'Claude integration'],
     link: 'https://cursor.com',
     pricing: 'Freemium',
     icon: '💻',
@@ -87,12 +55,7 @@ const featuredAIApps = [
     name: 'Midjourney',
     description: 'Tạo ảnh nghệ thuật từ text prompts',
     category: 'Creative',
-    features: [
-      'High-quality art generation',
-      'Multiple art styles',
-      'Image variations',
-      'Community gallery',
-    ],
+    features: ['High-quality art generation', 'Multiple art styles', 'Image variations', 'Community gallery'],
     link: 'https://midjourney.com',
     pricing: 'Subscription',
     icon: '🎨',
@@ -102,12 +65,7 @@ const featuredAIApps = [
     name: 'Perplexity AI',
     description: 'AI search engine với citations và real-time data',
     category: 'Research',
-    features: [
-      'Real-time web search',
-      'Source citations',
-      'Academic research',
-      'Follow-up questions',
-    ],
+    features: ['Real-time web search', 'Source citations', 'Academic research', 'Follow-up questions'],
     link: 'https://perplexity.ai',
     pricing: 'Freemium',
     icon: '🔍',
@@ -117,12 +75,7 @@ const featuredAIApps = [
     name: 'GitHub Copilot',
     description: 'AI pair programmer cho developers',
     category: 'Development',
-    features: [
-      'Code suggestions',
-      'Function generation',
-      'Documentation',
-      'Multiple languages',
-    ],
+    features: ['Code suggestions', 'Function generation', 'Documentation', 'Multiple languages'],
     link: 'https://github.com/features/copilot',
     pricing: 'Subscription',
     icon: '👨‍💻',
@@ -132,12 +85,7 @@ const featuredAIApps = [
     name: 'Canva AI',
     description: 'AI design tools trong Canva',
     category: 'Design',
-    features: [
-      'Magic Design',
-      'Background remover',
-      'AI presenter',
-      'Text to image',
-    ],
+    features: ['Magic Design', 'Background remover', 'AI presenter', 'Text to image'],
     link: 'https://canva.com/ai',
     pricing: 'Freemium',
     icon: '🖌️',
@@ -147,12 +95,7 @@ const featuredAIApps = [
     name: 'Windsurf IDE',
     description: 'AI-first code editor với agentic workflows',
     category: 'Development',
-    features: [
-      'Agentic coding',
-      'Multi-file awareness',
-      'Natural language commands',
-      'Free tier',
-    ],
+    features: ['Agentic coding', 'Multi-file awareness', 'Natural language commands', 'Free tier'],
     link: 'https://codeium.com/windsurf',
     pricing: 'Freemium',
     icon: '🌊',
@@ -162,12 +105,7 @@ const featuredAIApps = [
     name: 'NotebookLM',
     description: 'AI research assistant từ Google',
     category: 'Research',
-    features: [
-      'Document analysis',
-      'Podcast generation',
-      'Source grounding',
-      'Note organization',
-    ],
+    features: ['Document analysis', 'Podcast generation', 'Source grounding', 'Note organization'],
     link: 'https://notebooklm.google.com',
     pricing: 'Free',
     icon: '📚',
@@ -182,12 +120,7 @@ const aiCategories = [
     href: '/learning/ai/office-work',
     icon: '💼',
     color: 'from-blue-600 to-indigo-600',
-    topics: [
-      'Email tự động',
-      'Excel thông minh',
-      'Thuyết trình AI',
-      'Quản lý thời gian',
-    ],
+    topics: ['Email tự động', 'Excel thông minh', 'Thuyết trình AI', 'Quản lý thời gian'],
   },
   {
     title: 'Creative & Design',
@@ -293,22 +226,14 @@ export default function AIModule() {
               </span>
             </h1>
             <h2 className="text-2xl md:text-4xl font-bold text-gray-300 mb-8">
-              <span className="text-blue-400">Thực Tế</span> •
-              <span className="text-purple-400">Ứng Dụng</span> •
+              <span className="text-blue-400">Thực Tế</span> •<span className="text-purple-400">Ứng Dụng</span> •
               <span className="text-pink-400">Hiệu Quả</span>
             </h2>
 
             <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Khám phá sức mạnh của{' '}
-              <span className="text-blue-400 font-bold">AI thực tế</span> trong
-              <span className="text-purple-400 font-bold">
-                {' '}
-                công việc hàng ngày
-              </span>{' '}
-              - từ
-              <span className="text-pink-400 font-bold">
-                ChatGPT đến Midjourney
-              </span>
+              Khám phá sức mạnh của <span className="text-blue-400 font-bold">AI thực tế</span> trong
+              <span className="text-purple-400 font-bold"> công việc hàng ngày</span> - từ
+              <span className="text-pink-400 font-bold">ChatGPT đến Midjourney</span>
             </p>
 
             {/* AI Stats */}
@@ -321,12 +246,8 @@ export default function AIModule() {
               ].map((stat, index) => (
                 <div key={index} className="relative group">
                   <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-blue-400/20 hover:border-blue-400/50 transition-all duration-300 group-hover:scale-105">
-                    <div className="text-5xl mb-3 group-hover:animate-bounce">
-                      {stat.icon}
-                    </div>
-                    <div className="text-3xl font-black text-blue-400 mb-1">
-                      {stat.number}
-                    </div>
+                    <div className="text-5xl mb-3 group-hover:animate-bounce">{stat.icon}</div>
+                    <div className="text-3xl font-black text-blue-400 mb-1">{stat.number}</div>
                     <div className="text-sm text-gray-400">{stat.label}</div>
                   </div>
                   <div className="absolute inset-0 bg-blue-400/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
@@ -342,9 +263,7 @@ export default function AIModule() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-black font-black">
-                  🚀 BẮT ĐẦU NGAY
-                </span>
+                <span className="relative text-black font-black">🚀 BẮT ĐẦU NGAY</span>
               </a>
               <a
                 href="#ai-categories"
@@ -352,9 +271,7 @@ export default function AIModule() {
               >
                 <div className="absolute inset-0 bg-pink-400/10 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-pink-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-pink-400 font-black">
-                  🎯 KHÁM PHÁ AI
-                </span>
+                <span className="relative text-pink-400 font-black">🎯 KHÁM PHÁ AI</span>
               </a>
             </div>
           </div>
@@ -362,10 +279,7 @@ export default function AIModule() {
       </section>
 
       {/* Featured AI Apps - Neon cards */}
-      <section
-        id="featured-apps"
-        className="py-20 bg-gradient-to-br from-slate-900 via-black to-slate-900"
-      >
+      <section id="featured-apps" className="py-20 bg-gradient-to-br from-slate-900 via-black to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
@@ -375,8 +289,7 @@ export default function AIModule() {
               <span className="block text-pink-400 mt-2">PHỔ BIẾN</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Những công cụ AI được sử dụng nhiều nhất hiện nay, từ miễn phí đến
-              chuyên nghiệp
+              Những công cụ AI được sử dụng nhiều nhất hiện nay, từ miễn phí đến chuyên nghiệp
             </p>
           </div>
 
@@ -407,16 +320,11 @@ export default function AIModule() {
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
                     {app.name}
                   </h3>
-                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                    {app.description}
-                  </p>
+                  <p className="text-gray-300 mb-4 text-sm leading-relaxed">{app.description}</p>
 
                   <div className="space-y-2 mb-6">
                     {app.features.slice(0, 3).map((feature, idx) => (
-                      <div
-                        key={idx}
-                        className="flex items-center text-gray-300 text-sm"
-                      >
+                      <div key={idx} className="flex items-center text-gray-300 text-sm">
                         <span className="text-green-400 mr-2">✓</span>
                         {feature}
                       </div>
@@ -442,21 +350,15 @@ export default function AIModule() {
       </section>
 
       {/* AI Categories - Matrix style */}
-      <section
-        id="ai-categories"
-        className="py-20 bg-gradient-to-br from-black via-slate-800 to-black"
-      >
+      <section id="ai-categories" className="py-20 bg-gradient-to-br from-black via-slate-800 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                HỌC AI
-              </span>
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">HỌC AI</span>
               <span className="block text-blue-400 mt-2">THEO LĨNH VỰC</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Chọn lĩnh vực bạn quan tâm để học cách áp dụng AI một cách hiệu
-              quả nhất
+              Chọn lĩnh vực bạn quan tâm để học cách áp dụng AI một cách hiệu quả nhất
             </p>
           </div>
 
@@ -473,9 +375,7 @@ export default function AIModule() {
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
                     {category.title}
                   </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {category.description}
-                  </p>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{category.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {category.topics.map((topic, topicIndex) => (
@@ -490,9 +390,7 @@ export default function AIModule() {
 
                   <div className="text-blue-400 font-bold group-hover:text-blue-300 transition-colors flex items-center">
                     <span>HỌC NGAY</span>
-                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">
-                      →
-                    </span>
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </div>
 
                   {/* Matrix effect hint */}
@@ -509,14 +407,10 @@ export default function AIModule() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                BẮT ĐẦU
-              </span>
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">BẮT ĐẦU</span>
               <span className="block text-purple-400 mt-2">VỚI AI</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              3 bước đơn giản để bắt đầu hành trình AI của bạn
-            </p>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">3 bước đơn giản để bắt đầu hành trình AI của bạn</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -528,17 +422,11 @@ export default function AIModule() {
                 <h3 className="text-xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  {step.description}
-                </p>
+                <p className="text-gray-300 mb-6 leading-relaxed">{step.description}</p>
                 <a
                   href={step.link}
                   target={step.link.startsWith('http') ? '_blank' : '_self'}
-                  rel={
-                    step.link.startsWith('http')
-                      ? 'noopener noreferrer'
-                      : undefined
-                  }
+                  rel={step.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-2xl font-bold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   {step.action}
@@ -568,14 +456,8 @@ export default function AIModule() {
               </span>
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Bắt đầu với{' '}
-              <span className="text-blue-400 font-bold">AI tools miễn phí</span>{' '}
-              và
-              <span className="text-purple-400 font-bold">
-                {' '}
-                nâng cao dần kỹ năng
-              </span>{' '}
-              của bạn
+              Bắt đầu với <span className="text-blue-400 font-bold">AI tools miễn phí</span> và
+              <span className="text-purple-400 font-bold"> nâng cao dần kỹ năng</span> của bạn
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <a
@@ -586,9 +468,7 @@ export default function AIModule() {
               >
                 <div className="absolute inset-0 bg-blue-400/10 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-blue-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-blue-400 font-black">
-                  🤖 THỬ CHATGPT
-                </span>
+                <span className="relative text-blue-400 font-black">🤖 THỬ CHATGPT</span>
               </a>
               <Link
                 href="/learning/ai/office-work"
@@ -596,9 +476,7 @@ export default function AIModule() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-black font-black">
-                  📚 HỌC AI CƠ BẢN
-                </span>
+                <span className="relative text-black font-black">📚 HỌC AI CƠ BẢN</span>
               </Link>
             </div>
           </div>
