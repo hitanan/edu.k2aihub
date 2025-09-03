@@ -15,7 +15,7 @@ function DNABase3D({
   position,
   isPaired = false,
   isSelected = false,
-  onClick
+  onClick,
 }: {
   base: string;
   position: [number, number, number];
@@ -34,11 +34,16 @@ function DNABase3D({
 
   const color = useMemo(() => {
     switch (base.toUpperCase()) {
-      case 'A': return '#ff4444'; // Adenine - Red
-      case 'T': return '#44ff44'; // Thymine - Green
-      case 'G': return '#4444ff'; // Guanine - Blue
-      case 'C': return '#ffff44'; // Cytosine - Yellow
-      default: return '#888888';
+      case 'A':
+        return '#ff4444'; // Adenine - Red
+      case 'T':
+        return '#44ff44'; // Thymine - Green
+      case 'G':
+        return '#4444ff'; // Guanine - Blue
+      case 'C':
+        return '#ffff44'; // Cytosine - Yellow
+      default:
+        return '#888888';
     }
   }, [base]);
 
@@ -53,11 +58,7 @@ function DNABase3D({
         onPointerOut={() => setHovered(false)}
         scale={hovered || isSelected ? 1.3 : 1}
       >
-        <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={isSelected ? 0.5 : 0.2}
-        />
+        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={isSelected ? 0.5 : 0.2} />
       </Sphere>
 
       {/* Base letter label */}
@@ -72,9 +73,7 @@ function DNABase3D({
         <>
           <meshBasicMaterial attach="material" color="#ffffff" />
           <Html position={[0, -0.3, 0.75]} center>
-            <div className="text-gray-300 text-xs">
-              {base === 'A' || base === 'T' ? '2 H-bonds' : '3 H-bonds'}
-            </div>
+            <div className="text-gray-300 text-xs">{base === 'A' || base === 'T' ? '2 H-bonds' : '3 H-bonds'}</div>
           </Html>
         </>
       )}
@@ -87,7 +86,7 @@ function DNAHelix({
   sequence,
   position = [0, 0, 0],
   isEditing = false,
-  onRemove
+  onRemove,
 }: {
   sequence: string;
   position?: [number, number, number];
@@ -108,26 +107,34 @@ function DNAHelix({
     const points = [];
     const turns = sequence.length / 10;
     const height = sequence.length * 0.3;
-    
+
     for (let i = 0; i < sequence.length; i++) {
       const angle = (i / sequence.length) * Math.PI * 2 * turns;
       const y = (i / sequence.length) * height - height / 2;
       points.push(new Vector3(Math.cos(angle) * 1.5, y, Math.sin(angle) * 1.5));
     }
-    
+
     return new CatmullRomCurve3(points);
   }, [sequence]);
 
   const complementarySequence = useMemo(() => {
-    return sequence.split('').map(base => {
-      switch (base.toUpperCase()) {
-        case 'A': return 'T';
-        case 'T': return 'A';
-        case 'G': return 'C';
-        case 'C': return 'G';
-        default: return 'N';
-      }
-    }).join('');
+    return sequence
+      .split('')
+      .map((base) => {
+        switch (base.toUpperCase()) {
+          case 'A':
+            return 'T';
+          case 'T':
+            return 'A';
+          case 'G':
+            return 'C';
+          case 'C':
+            return 'G';
+          default:
+            return 'N';
+        }
+      })
+      .join('');
   }, [sequence]);
 
   return (
@@ -165,9 +172,7 @@ function DNAHelix({
       {complementarySequence.split('').map((base, index) => {
         const t = index / (complementarySequence.length - 1);
         const point = helixCurve.getPoint(t);
-        const complementaryPoint: [number, number, number] = [
-          -point.x * 0.8, point.y, -point.z * 0.8
-        ];
+        const complementaryPoint: [number, number, number] = [-point.x * 0.8, point.y, -point.z * 0.8];
         return (
           <DNABase3D
             key={`base2-${index}`}
@@ -186,7 +191,7 @@ function DNAHelix({
 function Protein3D({
   aminoAcids,
   position,
-  foldingState = 0
+  foldingState = 0,
 }: {
   aminoAcids: string[];
   position: [number, number, number];
@@ -209,29 +214,17 @@ function Protein3D({
     <group position={position} ref={proteinRef}>
       {aminoAcids.map((amino, index) => {
         let pos: [number, number, number];
-        
+
         switch (currentStructure) {
           case 'alpha-helix':
             const helixAngle = index * 0.6;
-            pos = [
-              Math.cos(helixAngle) * 1.5,
-              index * 0.3,
-              Math.sin(helixAngle) * 1.5
-            ];
+            pos = [Math.cos(helixAngle) * 1.5, index * 0.3, Math.sin(helixAngle) * 1.5];
             break;
           case 'beta-sheet':
-            pos = [
-              (index % 2) * 2 - 1,
-              Math.floor(index / 2) * 0.5,
-              (index % 4) * 0.3
-            ];
+            pos = [(index % 2) * 2 - 1, Math.floor(index / 2) * 0.5, (index % 4) * 0.3];
             break;
           default: // random-coil
-            pos = [
-              (Math.random() - 0.5) * 3,
-              index * 0.2,
-              (Math.random() - 0.5) * 3
-            ];
+            pos = [(Math.random() - 0.5) * 3, index * 0.2, (Math.random() - 0.5) * 3];
         }
 
         return (
@@ -259,18 +252,13 @@ function DNAToolsPanel() {
   const { dna, updateDNAState, addDNAStrand } = useAdvancedGameStore();
   const [newSequence, setNewSequence] = useState('ATCGATCGATCG');
 
-  const commonSequences = [
-    'ATCGATCGATCG',
-    'GGCCTTAACGTA',
-    'CGTACGTACGTA',
-    'ATGCATGCATGC'
-  ];
+  const commonSequences = ['ATCGATCGATCG', 'GGCCTTAACGTA', 'CGTACGTACGTA', 'ATGCATGCATGC'];
 
   const addNewDNAStrand = () => {
     const position: [number, number, number] = [
       (dna.dnaStrands.length % 3) * 4 - 4,
       0,
-      (dna.dnaStrands.length % 2) * 3 - 1.5
+      (dna.dnaStrands.length % 2) * 3 - 1.5,
     ];
     addDNAStrand(newSequence, position);
   };
@@ -278,23 +266,23 @@ function DNAToolsPanel() {
   const performSequencing = () => {
     updateDNAState({
       currentExperiment: 'sequencing',
-      progress: Math.min(dna.progress + 20, 100)
+      progress: Math.min(dna.progress + 20, 100),
     });
   };
 
   const foldProtein = () => {
     updateDNAState({
-      proteins: dna.proteins.map(protein => ({
+      proteins: dna.proteins.map((protein) => ({
         ...protein,
-        foldingState: Math.min(protein.foldingState + 25, 100)
-      }))
+        foldingState: Math.min(protein.foldingState + 25, 100),
+      })),
     });
   };
 
   return (
     <div className="absolute top-4 left-4 bg-black bg-opacity-80 text-white p-4 rounded-lg max-w-sm">
       <h3 className="text-lg font-bold mb-3 text-green-300">🧬 DNA Sequencing Lab</h3>
-      
+
       {/* DNA Input */}
       <div className="mb-4">
         <h4 className="font-semibold mb-2">Create DNA Strand</h4>
@@ -306,10 +294,7 @@ function DNAToolsPanel() {
           placeholder="ATCGATCG..."
           maxLength={20}
         />
-        <button
-          onClick={addNewDNAStrand}
-          className="bg-green-600 hover:bg-green-500 px-3 py-1 rounded mt-2 w-full"
-        >
+        <button onClick={addNewDNAStrand} className="bg-green-600 hover:bg-green-500 px-3 py-1 rounded mt-2 w-full">
           + Add DNA Strand
         </button>
       </div>
@@ -340,10 +325,7 @@ function DNAToolsPanel() {
           >
             🔍 Sequence Analysis
           </button>
-          <button
-            onClick={foldProtein}
-            className="bg-orange-600 hover:bg-orange-500 px-3 py-1 rounded w-full text-sm"
-          >
+          <button onClick={foldProtein} className="bg-orange-600 hover:bg-orange-500 px-3 py-1 rounded w-full text-sm">
             🌀 Protein Folding
           </button>
         </div>
@@ -386,11 +368,10 @@ export default function DNASequencingLab3D() {
   }, [isFullscreen]);
 
   return (
-    <div className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-green-900 via-blue-900 to-black`}>
-      <Canvas
-        camera={{ position: [0, 5, 10], fov: 75 }}
-        gl={{ antialias: true, alpha: true }}
-      >
+    <div
+      className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-green-900 via-blue-900 to-black`}
+    >
+      <Canvas camera={{ position: [0, 5, 10], fov: 75 }} gl={{ antialias: true, alpha: true }}>
         {/* Lighting */}
         <ambientLight intensity={0.7} />
         <directionalLight position={[10, 10, 5]} intensity={1} color="#ffffff" />
@@ -438,18 +419,14 @@ export default function DNASequencingLab3D() {
           <meshStandardMaterial color="#666666" emissive="#333333" emissiveIntensity={0.3} />
         </Box>
         <Html position={[-8, 0.5, 0]} center>
-          <div className="text-white text-sm bg-gray-800 px-2 py-1 rounded">
-            PCR Machine
-          </div>
+          <div className="text-white text-sm bg-gray-800 px-2 py-1 rounded">PCR Machine</div>
         </Html>
 
         <Box args={[1.5, 1.2, 0.8]} position={[8, -1, 0]}>
           <meshStandardMaterial color="#444488" emissive="#222244" emissiveIntensity={0.3} />
         </Box>
         <Html position={[8, 0.5, 0]} center>
-          <div className="text-white text-sm bg-blue-800 px-2 py-1 rounded">
-            Sequencer
-          </div>
+          <div className="text-white text-sm bg-blue-800 px-2 py-1 rounded">Sequencer</div>
         </Html>
 
         {/* Grid */}
@@ -484,10 +461,18 @@ export default function DNASequencingLab3D() {
       <div className="absolute bottom-4 right-4 bg-black bg-opacity-80 text-white p-3 rounded max-w-xs">
         <h4 className="font-bold mb-2 text-cyan-300">📚 Genetics Info</h4>
         <div className="text-sm space-y-1">
-          <div><strong>Base Pairing:</strong> A-T (2 bonds), G-C (3 bonds)</div>
-          <div><strong>DNA Double Helix:</strong> Antiparallel strands</div>
-          <div><strong>Protein Folding:</strong> Primary → Secondary → Tertiary</div>
-          <div><strong>Gene Expression:</strong> DNA → RNA → Protein</div>
+          <div>
+            <strong>Base Pairing:</strong> A-T (2 bonds), G-C (3 bonds)
+          </div>
+          <div>
+            <strong>DNA Double Helix:</strong> Antiparallel strands
+          </div>
+          <div>
+            <strong>Protein Folding:</strong> Primary → Secondary → Tertiary
+          </div>
+          <div>
+            <strong>Gene Expression:</strong> DNA → RNA → Protein
+          </div>
           <div className="text-green-300 font-semibold mt-2">
             &quot;DNA is the language of life, written in four letters: A, T, G, C&quot;
           </div>

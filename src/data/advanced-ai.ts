@@ -1,15 +1,9 @@
-export interface AdvancedAILesson {
-  id: string;
-  title: string;
-  description: string;
-  duration: string;
-  difficulty: string;
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+
+export interface AdvancedAILesson extends Omit<BaseLessonData, 'exercises'> {
   aiDomain?: string;
   complexity?: string;
-  imageUrl?: string;
-  videoUrl?: string;
-  objectives: string[];
-  prerequisites: string[];
+  frameworks?: string[];
   exercises: Array<{
     title: string;
     description: string;
@@ -20,21 +14,6 @@ export interface AdvancedAILesson {
     expectedResults?: string;
     solution?: string;
   }>;
-  realWorldApplications: string[];
-  caseStudies?: Array<{
-    title: string;
-    organization: string;
-    problem: string;
-    solution: string;
-    impact: string;
-    innovations?: string[];
-  }>;
-  resources?: Array<{
-    title: string;
-    url: string;
-    type: string;
-  }>;
-  frameworks?: string[];
 }
 
 export const advancedAILessons: AdvancedAILesson[] = [
@@ -120,6 +99,36 @@ export const advancedAILessons: AdvancedAILesson[] = [
       },
     ],
     frameworks: ['TensorFlow', 'PyTorch', 'Transformers', 'OpenCV', 'scikit-learn'],
+    vietnamContext: {
+      title: 'Deep Learning tại Việt Nam: Từ Nghiên cứu đến Sản xuất',
+      content: [
+        'VinAI Research, một đơn vị của Vingroup, đang dẫn đầu trong nghiên cứu AI tại Việt Nam, với nhiều công trình được công bố tại các hội nghị hàng đầu thế giới như NeurIPS, ICML.',
+        'Các công ty công nghệ lớn như FPT, Viettel, Zalo đều có các đội ngũ R&D mạnh về Deep Learning, ứng dụng vào nhận dạng giọng nói, xử lý ảnh và ngôn ngữ tự nhiên.',
+        'Nhu cầu về kỹ sư Deep Learning tại Việt Nam đang tăng vọt, đặc biệt trong các lĩnh vực e-commerce, fintech và sản xuất thông minh.',
+      ],
+    },
+    careerConnect: {
+      name: 'TS. Bùi Hải Hưng',
+      title: 'Tổng Giám đốc VinAI',
+      company: 'VinAI Research',
+      imageUrl: 'https://i.pravatar.cc/150?u=buihaihung',
+      quote:
+        'Chúng tôi muốn chứng minh rằng người Việt Nam hoàn toàn có thể làm chủ công nghệ lõi và tạo ra những sản phẩm AI đẳng cấp thế giới. Deep Learning là chìa khóa cho mục tiêu đó.',
+    },
+    quizzes: [
+      {
+        question: 'Backpropagation là thuật toán dùng để làm gì trong mạng neural?',
+        options: [
+          'Tính toán đầu ra của mạng',
+          'Cập nhật trọng số của mạng để giảm sai số',
+          'Khởi tạo trọng số ban đầu',
+          'Chuẩn hóa dữ liệu đầu vào',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Backpropagation (lan truyền ngược) tính toán gradient của hàm mất mát đối với các trọng số của mạng, từ đó cho phép cập nhật trọng số thông qua các thuật toán tối ưu như Gradient Descent.',
+      },
+    ],
   },
   {
     id: 'computer-vision-applications',
@@ -203,6 +212,36 @@ export const advancedAILessons: AdvancedAILesson[] = [
       },
     ],
     frameworks: ['OpenCV', 'YOLO', 'TensorFlow', 'PyTorch', 'MediaPipe'],
+    vietnamContext: {
+      title: 'Computer Vision giải quyết bài toán đặc thù của Việt Nam',
+      content: [
+        'Giám sát giao thông: Các hệ thống CV được huấn luyện để nhận diện và đếm số lượng xe máy - phương tiện chiếm đa số tại Việt Nam, giúp tối ưu hóa đèn tín hiệu và quy hoạch đô thị.',
+        'Nông nghiệp thông minh: CV được dùng để phát hiện sâu bệnh trên cây lúa, thanh long, hoặc giám sát sức khỏe tôm trong các đầm nuôi tại Đồng bằng sông Cửu Long.',
+        'Bán lẻ và E-commerce: Các công ty như The Coffee House, Tiki sử dụng CV để phân tích hành vi khách hàng trong cửa hàng hoặc tự động hóa quy trình kiểm kho.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Hoàng Bảo Đại',
+      title: 'AI Lead',
+      company: 'FPT Software',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyenhoangbaodai',
+      quote:
+        'Thách thức lớn nhất của Computer Vision tại Việt Nam là dữ liệu. Chúng ta cần xây dựng những bộ dữ liệu đặc thù cho con người, văn hóa và bối cảnh Việt Nam để AI thực sự "hiểu" được chúng ta.',
+    },
+    quizzes: [
+      {
+        question: 'Mô hình YOLO (You Only Look Once) nổi tiếng trong lĩnh vực nào của Computer Vision?',
+        options: [
+          'Nhận dạng khuôn mặt (Facial Recognition)',
+          'Phân đoạn ảnh (Image Segmentation)',
+          'Phát hiện vật thể thời gian thực (Real-time Object Detection)',
+          'Tăng cường chất lượng ảnh (Image Enhancement)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'YOLO là một trong những thuật toán phát hiện vật thể một pha (single-stage) hiệu quả và nhanh nhất, cho phép xử lý video trong thời gian thực, rất phù hợp cho các ứng dụng như xe tự lái, giám sát an ninh.',
+      },
+    ],
   },
   {
     id: 'nlp-language-models',
@@ -286,6 +325,31 @@ export const advancedAILessons: AdvancedAILesson[] = [
       },
     ],
     frameworks: ['Transformers', 'spaCy', 'NLTK', 'LangChain', 'OpenAI API'],
+    vietnamContext: {
+      title: 'Thách thức và Cơ hội của NLP cho Tiếng Việt',
+      content: [
+        'Tiếng Việt là ngôn ngữ đơn âm tiết, có thanh điệu và cấu trúc ngữ pháp phức tạp, tạo ra thách thức lớn cho các mô hình NLP.',
+        'Các mô hình như PhoBERT (của VinAI) và VietBERT (của FPT) là những nỗ lực quan trọng để xây dựng các mô hình ngôn ngữ lớn dành riêng cho tiếng Việt.',
+        'Trợ lý ảo "Kiki" của Zalo là một ứng dụng NLP thành công, được tích hợp trên ô tô, loa thông minh và có khả năng hiểu và phản hồi giọng nói ba miền Bắc, Trung, Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Châu Thành Đức',
+      title: 'Giám đốc sản phẩm Kiki',
+      company: 'Zalo AI',
+      imageUrl: 'https://i.pravatar.cc/150?u=chauthanhduc',
+      quote:
+        'Làm NLP cho tiếng Việt không chỉ là bài toán kỹ thuật, mà còn là bài toán về văn hóa. Để AI nói chuyện tự nhiên như người Việt, nó phải "sống" trong văn hóa Việt.',
+    },
+    quizzes: [
+      {
+        question: 'Mô hình PhoBERT được phát triển dựa trên kiến trúc của mô hình nào?',
+        options: ['GPT-3', 'BERT', 'T5', 'LSTM'],
+        correctAnswerIndex: 1,
+        explanation:
+          'PhoBERT được xây dựng dựa trên kiến trúc BERT (Bidirectional Encoder Representations from Transformers) của Google và được huấn luyện trước trên một tập dữ liệu tiếng Việt khổng lồ.',
+      },
+    ],
   },
   {
     id: 'reinforcement-learning-systems',
@@ -369,6 +433,36 @@ export const advancedAILessons: AdvancedAILesson[] = [
       },
     ],
     frameworks: ['OpenAI Gym', 'Stable Baselines3', 'Ray RLLib', 'Unity ML-Agents', 'TensorFlow Agents'],
+    vietnamContext: {
+      title: 'Học tăng cường (RL) và Hệ thống tự hành tại Việt Nam',
+      content: [
+        'VinFast đang đầu tư mạnh vào xe tự lái, trong đó RL được kỳ vọng sẽ giúp xe thích ứng với điều kiện giao thông phức tạp và khó lường của Việt Nam.',
+        'Trong công nghiệp, các nhà máy thông minh của Vinamilk, TH True Milk sử dụng robot tự hành (AGV) được tối ưu hóa bằng RL để vận chuyển hàng hóa trong kho.',
+        'Lĩnh vực logistics (Giao Hàng Nhanh, Giao Hàng Tiết Kiệm) có tiềm năng lớn ứng dụng RL để tối ưu hóa lộ trình giao hàng trong các thành phố đông đúc.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lương Anh Tuấn',
+      title: 'Kỹ sư trưởng Xe tự hành',
+      company: 'VinFast',
+      imageUrl: 'https://i.pravatar.cc/150?u=luonganhtuan',
+      quote:
+        'Dạy cho một chiếc xe tự lái ở Việt Nam khó hơn ở Mỹ rất nhiều. Học tăng cường cho phép chiếc xe "học" từ những tình huống bất ngờ nhất trên đường phố, điều mà lập trình quy tắc không thể bao quát hết.',
+    },
+    quizzes: [
+      {
+        question: 'Trong học tăng cường, "reward function" (hàm thưởng) có vai trò gì?',
+        options: [
+          'Xác định hành động tiếp theo của tác tử (agent)',
+          'Định nghĩa mục tiêu của tác tử, cho biết hành động nào là tốt hay xấu',
+          'Mô tả môi trường xung quanh tác tử',
+          'Lưu trữ kinh nghiệm của tác tử',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Hàm thưởng là tín hiệu quan trọng nhất trong RL, nó định hướng quá trình học của tác tử. Việc thiết kế một hàm thưởng tốt là yếu tố then chốt để tác tử học được hành vi mong muốn.',
+      },
+    ],
   },
   {
     id: 'ai-ethics-deployment',
@@ -451,5 +545,35 @@ export const advancedAILessons: AdvancedAILesson[] = [
       },
     ],
     frameworks: ['Fairlearn', 'AI Fairness 360', 'MLFlow', 'TensorBoard', 'Weights & Biases'],
+    vietnamContext: {
+      title: 'Đạo đức AI và Triển khai có trách nhiệm tại Việt Nam',
+      content: [
+        'Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân đã đặt ra khung pháp lý quan trọng cho việc thu thập và xử lý dữ liệu, ảnh hưởng trực tiếp đến các ứng dụng AI.',
+        'Bài toán thiên vị (bias) trong AI tại Việt Nam rất phức tạp, không chỉ về giới tính, độ tuổi mà còn về vùng miền (ví dụ: giọng nói, văn hóa).',
+        'Chính phủ Việt Nam đang xây dựng "Chiến lược quốc gia về nghiên cứu, phát triển và ứng dụng Trí tuệ nhân tạo", trong đó nhấn mạnh yếu tố đạo đức và an toàn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Phạm Thị Thu Hiền',
+      title: 'Chuyên gia Chính sách Công nghệ',
+      company: 'Chương trình Phát triển Liên Hợp Quốc (UNDP) tại Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=phamthithuhien',
+      quote:
+        'Phát triển AI phải đi đôi với trách nhiệm. Tại Việt Nam, chúng ta cần đảm bảo AI phục vụ sự phát triển bao trùm, không để ai bị bỏ lại phía sau và tôn trọng các giá trị văn hóa độc đáo của dân tộc.',
+    },
+    quizzes: [
+      {
+        question: 'Thiên vị (bias) trong một mô hình AI thường xuất phát từ đâu?',
+        options: [
+          'Thuật toán quá phức tạp',
+          'Dữ liệu huấn luyện không đại diện hoặc phản ánh định kiến xã hội',
+          'Phần cứng không đủ mạnh',
+          'Lỗi trong thư viện machine learning',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Nguồn gốc phổ biến nhất của bias là từ dữ liệu. Nếu dữ liệu huấn luyện chứa đựng những định kiến có sẵn (ví dụ: nam giới thường làm kỹ sư), mô hình AI sẽ học và khuếch đại những định kiến đó.',
+      },
+    ],
   },
 ];

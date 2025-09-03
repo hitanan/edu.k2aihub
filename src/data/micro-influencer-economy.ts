@@ -1,26 +1,34 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
-// Micro-Influencer Economy Lesson Interface
 export interface MicroInfluencerLessonType extends BaseLessonData {
-  platformStrategies?: string[];
-  monetizationMethods?: string[];
-  brandCollaboration?: string[];
-  audienceBuilding?: string[];
-  contentTypes?: string[];
-  // Legacy support
-  influencerTiers?: string[];
-  collaborationTypes?: string[];
-  growthTactics?: string[];
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+  quizzes: Array<{
+    question: string;
+    options: string[];
+    correctAnswerIndex: number;
+    explanation: string;
+  }>;
 }
 
-export const microInfluencerLessons: MicroInfluencerLessonType[] = [
+export const microInfluencerEconomyLessons: MicroInfluencerLessonType[] = [
   {
     id: 'micro-influencer-fundamentals',
     title: 'Nền Tảng Micro-Influencer Economy',
-    description: 'Hiểu ecosystem của micro-influencer economy, từ defining micro-influencers đến understanding market opportunities trong Vietnamese context.',
+    description:
+      'Hiểu ecosystem của micro-influencer economy, từ defining micro-influencers đến understanding market opportunities trong Vietnamese context.',
     duration: '160 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=3DdJ1JynG8M', // Influencer marketing basics
+    videoUrl: 'https://www.youtube.com/watch?v=3DdJ1JynG8M',
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Understand micro-influencer definition và market position',
@@ -35,11 +43,6 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
       'Vietnamese market awareness',
       'Interest trong content creation',
     ],
-    platformStrategies: ['Instagram Growth', 'TikTok Algorithms', 'YouTube Shorts', 'Facebook Communities', 'LinkedIn Personal Brand'],
-    monetizationMethods: ['Brand Partnerships', 'Affiliate Marketing', 'Product Sales', 'Course Creation', 'Consulting Services'],
-    brandCollaboration: ['Partnership Negotiation', 'Content Briefing', 'Campaign Execution', 'Performance Reporting', 'Relationship Building'],
-    audienceBuilding: ['Niche Selection', 'Content Consistency', 'Community Engagement', 'Value Delivery', 'Authentic Storytelling'],
-    contentTypes: ['Educational Content', 'Behind-the-Scenes', 'Product Reviews', 'Tutorials', 'Lifestyle Content'],
     exercises: [
       {
         title: 'Vietnamese Micro-Influencer Market Analysis',
@@ -89,15 +92,54 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
         type: 'Research',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Sự bùng nổ của các "Micro-Influencer"',
+      content: [
+        'Thị trường Việt Nam với dân số trẻ và tỷ lệ sử dụng mạng xã hội cao là mảnh đất màu mỡ cho các micro-influencer. Người tiêu dùng có xu hướng tin tưởng các đánh giá chân thực từ những người có quy mô theo dõi nhỏ hơn.',
+        'Các ngành hàng như mỹ phẩm, thời trang, ẩm thực và du lịch địa phương đặc biệt ưa chuộng hợp tác với micro-influencer để tiếp cận các thị trường ngách.',
+        'Nhiều thương hiệu Việt Nam nhận ra rằng chiến dịch với hàng chục micro-influencer có thể hiệu quả hơn về chi phí và tạo ra độ phủ rộng hơn so với một mega-influencer duy nhất.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Mai Vân',
+      title: 'Food Blogger & Micro-Influencer',
+      company: 'Ẩm Thực Đường Phố',
+      imageUrl: 'https://i.pravatar.cc/150?u=mai-van',
+      quote:
+        'Tôi bắt đầu chỉ với một chiếc điện thoại và tình yêu với các món ăn vặt Sài Gòn. Sự chân thật là chìa khóa. Tôi không cố gắng trở thành một ai đó xa vời, tôi là một người bạn giới thiệu món ngon cho mọi người. Các thương hiệu tìm đến tôi vì điều đó.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là lợi thế lớn nhất của micro-influencer so với mega-influencer?',
+        options: [
+          'Lượng người theo dõi lớn hơn',
+          'Tỷ lệ tương tác và sự tin tưởng cao hơn',
+          'Chi phí sản xuất video cao hơn',
+          'Luôn được các thương hiệu lớn nhất lựa chọn',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Micro-influencer thường có một cộng đồng nhỏ nhưng gắn kết, dẫn đến tỷ lệ tương tác (like, comment) và mức độ tin tưởng của người theo dõi cao hơn.',
+      },
+      {
+        question:
+          'Nền tảng nào đang là xu hướng cho các micro-influencer tại Việt Nam để xây dựng thương hiệu cá nhân nhanh chóng?',
+        options: ['Facebook', 'TikTok', 'LinkedIn', 'Zalo'],
+        correctAnswerIndex: 1,
+        explanation:
+          'TikTok với thuật toán ưu tiên nội dung và khả năng viral cao đang là nền tảng hiệu quả giúp các micro-influencer nhanh chóng xây dựng được lượng người theo dõi ban đầu.',
+      },
+    ],
   },
 
   {
     id: 'niche-selection-positioning',
     title: 'Niche Selection Và Personal Brand Positioning',
-    description: 'Master niche selection strategies để find profitable micro-influencer opportunities và build strong personal brand positioning trong competitive market.',
+    description:
+      'Master niche selection strategies để find profitable micro-influencer opportunities và build strong personal brand positioning trong competitive market.',
     duration: '175 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=sO4te2QNsHY', // Personal branding
+    videoUrl: 'https://www.youtube.com/watch?v=sO4te2QNsHY',
     imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
     objectives: [
       'Identify profitable niches trong Vietnamese market',
@@ -107,16 +149,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
       'Build authentic brand personality',
       'Design consistent visual brand identity',
     ],
-    prerequisites: [
-      'Market research basics',
-      'Understanding của personal strengths',
-      'Basic design awareness',
-    ],
-    platformStrategies: ['Niche Research Methods', 'Brand Positioning Strategies', 'Visual Identity Development', 'Content Pillars Creation', 'Competitor Analysis'],
-    monetizationMethods: ['Niche-Specific Monetization', 'Premium Content Strategy', 'Exclusive Community Access', 'Niche Product Development', 'Expert Consulting'],
-    brandCollaboration: ['Niche Brand Partnership', 'Category Expertise Positioning', 'Thought Leadership Development', 'Industry Networking', 'Expert Collaboration'],
-    audienceBuilding: ['Niche Community Building', 'Expert Content Creation', 'Thought Leadership', 'Industry Engagement', 'Authentic Expertise'],
-    contentTypes: ['Educational Deep-Dives', 'Niche Tutorials', 'Expert Opinions', 'Industry Analysis', 'Behind-the-Scenes Expertise'],
+    prerequisites: ['Market research basics', 'Understanding của personal strengths', 'Basic design awareness'],
     exercises: [
       {
         title: 'Personal Brand Strategy Development',
@@ -166,15 +199,58 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
         type: 'Tool',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Tìm "ngách" để nổi bật',
+      content: [
+        'Thị trường influencer Việt Nam ngày càng đông đúc, việc chọn một "ngách" cụ thể là yếu tố sống còn. Ví dụ, thay vì là một "food blogger" chung chung, bạn có thể là "chuyên gia review bún bò Huế" hoặc "người sành cà phê đặc sản Việt Nam".',
+        'Các ngách tiềm năng tại Việt Nam bao gồm: sản phẩm OCOP (mỗi xã một sản phẩm), du lịch bền vững, tài chính cá nhân cho người trẻ, review ứng dụng "Made in Vietnam".',
+        'Xây dựng thương hiệu cá nhân gắn liền với một giá trị cụ thể (ví dụ: sống tối giản, bảo vệ môi trường) cũng là một cách định vị hiệu quả và thu hút các thương hiệu có cùng giá trị.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lê Tuấn Anh',
+      title: 'Micro-Influencer về Tài chính Cá nhân',
+      company: 'Tự Do Tài Chính ở Tuổi 30',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-tuan-anh',
+      quote:
+        'Khi tôi bắt đầu, có rất nhiều chuyên gia tài chính lớn. Tôi chọn ngách hẹp hơn: "tài chính cá nhân cho người mới đi làm". Tôi không nói những điều vĩ mô, tôi chỉ cách các bạn trẻ tiết kiệm 50,000 VNĐ mỗi ngày. Sự gần gũi đó đã giúp tôi xây dựng được một cộng đồng tin tưởng.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là một ví dụ tốt về việc chọn "ngách" cho một micro-influencer?',
+        options: [
+          'Review tất cả các loại phim',
+          'Chuyên review phim kinh dị Việt Nam',
+          'Nói về mọi thứ trong cuộc sống',
+          'Làm video về game',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Chuyên review phim kinh dị Việt Nam là một ngách cụ thể, nhắm đến một đối tượng khán giả rõ ràng và giúp influencer trở thành chuyên gia trong lĩnh vực đó.',
+      },
+      {
+        question: 'Tại sao việc xây dựng thương hiệu cá nhân lại quan trọng với micro-influencer?',
+        options: [
+          'Để có nhiều người ghét hơn',
+          'Để có thể bán được mọi thứ',
+          'Để tạo sự khác biệt, thu hút đúng đối tượng và xây dựng lòng tin',
+          'Để không cần tạo nội dung hay',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Thương hiệu cá nhân giúp influencer nổi bật giữa đám đông, thu hút những người thực sự quan tâm đến chủ đề của họ và tạo dựng được lòng tin, yếu tố quan trọng nhất để thành công.',
+      },
+    ],
   },
 
   {
     id: 'content-creation-strategies',
     title: 'Content Creation Strategies Cho Micro-Influencers',
-    description: 'Master content creation workflows, từ ideation đến production, để consistently create engaging content that drives audience growth và brand partnerships.',
+    description:
+      'Master content creation workflows, từ ideation đến production, để consistently create engaging content that drives audience growth và brand partnerships.',
     duration: '190 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=EvGP5mSrGHk', // Content creation tips
+    videoUrl: 'https://www.youtube.com/watch?v=EvGP5mSrGHk',
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Develop efficient content creation workflows',
@@ -189,11 +265,6 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
       'Understanding của major social platforms',
       'Time management abilities',
     ],
-    platformStrategies: ['Instagram Content Optimization', 'TikTok Trending Strategies', 'YouTube Algorithm Understanding', 'Facebook Engagement Tactics', 'LinkedIn Professional Content'],
-    monetizationMethods: ['Sponsored Content Creation', 'Brand Storytelling', 'Product Integration', 'Content Licensing', 'Premium Content Tiers'],
-    brandCollaboration: ['Brand Brief Interpretation', 'Creative Concept Development', 'Content Production Management', 'Brand Message Integration', 'Campaign Optimization'],
-    audienceBuilding: ['Engagement-Driven Content', 'Community Building Posts', 'User-Generated Content', 'Interactive Content', 'Value-First Approach'],
-    contentTypes: ['Video Content', 'Photography', 'Stories', 'Live Streaming', 'Written Content'],
     exercises: [
       {
         title: '30-Day Content Calendar Creation',
@@ -243,15 +314,58 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
         type: 'Template',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Sáng tạo nội dung "chất" và "đều"',
+      content: [
+        'Khán giả Việt Nam đánh giá cao sự nhất quán. Việc có một lịch đăng bài đều đặn giúp xây dựng thói quen cho người xem và được thuật toán ưu ái.',
+        'Sản xuất nội dung theo lô (batch production) là một chiến lược hiệu quả. Ví dụ, một food blogger có thể dành một ngày cuối tuần để đi quay ở 4-5 quán ăn, sau đó dành thời gian trong tuần để dựng và đăng dần.',
+        'Tận dụng các xu hướng (trends) trên TikTok và Instagram Reels là cách nhanh nhất để tiếp cận khán giả mới, nhưng nội dung vẫn cần phải phù hợp với thương hiệu cá nhân.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bạn Trần Gia Huy',
+      title: 'TikTok Creator',
+      company: 'Gia Huy Thích Đi Chơi',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-gia-huy',
+      quote:
+        'Mỗi tuần tôi dành một ngày chỉ để lên ý tưởng, một ngày để quay và một ngày để dựng. Nhờ vậy, tôi luôn có sẵn video để đăng mỗi ngày mà không bị "bí" ý tưởng. Kỷ luật và quy trình là bí quyết để một creator có thể đi đường dài.',
+    },
+    quizzes: [
+      {
+        question: 'Sản xuất nội dung theo lô (batch production) có lợi ích gì?',
+        options: [
+          'Tốn nhiều thời gian hơn',
+          'Tiết kiệm thời gian, tăng hiệu quả và đảm bảo sự nhất quán',
+          'Chất lượng nội dung luôn thấp hơn',
+          'Chỉ áp dụng được cho video dài',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Sản xuất theo lô giúp tiết kiệm thời gian bằng cách gộp các công việc giống nhau lại, đảm bảo có nội dung đăng đều đặn và duy trì một phong cách nhất quán.',
+      },
+      {
+        question: 'Content pillar (trụ cột nội dung) là gì?',
+        options: [
+          'Một loại tripod máy ảnh',
+          'Những chủ đề chính, cốt lõi mà kênh của bạn sẽ xoay quanh',
+          'Video dài nhất trên kênh',
+          'Người theo dõi trung thành nhất',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Content pillars là 3-5 chủ đề cốt lõi mà bạn sẽ tập trung sản xuất nội dung. Điều này giúp kênh của bạn có định hướng rõ ràng và thu hút đúng đối tượng khán giả.',
+      },
+    ],
   },
 
   {
     id: 'audience-growth-engagement',
     title: 'Audience Growth Và Community Engagement Strategies',
-    description: 'Learn advanced strategies để grow authentic, engaged audiences và build loyal communities around your micro-influencer brand.',
+    description:
+      'Learn advanced strategies để grow authentic, engaged audiences và build loyal communities around your micro-influencer brand.',
     duration: '185 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=XSMNLuUdVQY', // Audience growth strategies
+    videoUrl: 'https://www.youtube.com/watch?v=XSMNLuUdVQY',
     imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
     objectives: [
       'Master organic audience growth techniques',
@@ -266,11 +380,6 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
       'Basic social media management',
       'Understanding của community dynamics',
     ],
-    platformStrategies: ['Instagram Growth Hacks', 'TikTok Viral Strategies', 'YouTube Community Building', 'Facebook Group Management', 'LinkedIn Networking'],
-    monetizationMethods: ['Community Monetization', 'Exclusive Content Access', 'Fan Funding', 'Community Commerce', 'Member Benefits'],
-    brandCollaboration: ['Audience Data Presentation', 'Community Integration', 'Brand Community Building', 'Collaborative Campaigns', 'Community Advocacy'],
-    audienceBuilding: ['Growth Hacking Techniques', 'Engagement Optimization', 'Community Management', 'Retention Strategies', 'Loyalty Building'],
-    contentTypes: ['Community Content', 'Interactive Posts', 'User-Generated Content', 'Live Interactions', 'Q&A Sessions'],
     exercises: [
       {
         title: 'Community Growth Campaign',
@@ -320,15 +429,58 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
         type: 'Analytics Guide',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Xây dựng cộng đồng "chất"',
+      content: [
+        'Người Việt rất coi trọng tính cộng đồng. Việc xây dựng một group Facebook hoặc Zalo cho những người theo dõi trung thành là một chiến lược hiệu quả để tăng sự gắn kết.',
+        'Tổ chức các buổi offline nhỏ (meetup) là cách tuyệt vời để biến cộng đồng ảo thành các mối quan hệ thật, điều này đặc biệt được đánh giá cao tại Việt Nam.',
+        'Tương tác chân thành là chìa khóa. Trả lời bình luận, tin nhắn và ghi nhận những người theo dõi tích cực sẽ giúp xây dựng một cộng đồng bền vững.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Ngọc Diệp',
+      title: 'Micro-Influencer về Lối sống bền vững',
+      company: 'Nhà Có Con Mèo',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-ngoc-diep',
+      quote:
+        'Cộng đồng của tôi không chỉ là những người theo dõi, họ là những người bạn. Chúng tôi cùng nhau chia sẻ cách làm phân compost, cách tái chế đồ cũ. Khi tôi tổ chức một buổi dọn rác ở bờ biển, có hơn 50 bạn đã đến tham gia. Đó là sức mạnh của một cộng đồng được xây dựng từ sự chân thành.',
+    },
+    quizzes: [
+      {
+        question: 'Tại sao việc xây dựng cộng đồng lại quan trọng hơn là chỉ tăng lượng người theo dõi?',
+        options: [
+          'Vì các thương hiệu chỉ trả tiền cho cộng đồng',
+          'Vì cộng đồng tạo ra sự gắn kết, lòng trung thành và giá trị lâu dài',
+          'Vì tăng người theo dõi rất khó',
+          'Vì không có lý do nào đặc biệt',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Một lượng lớn người theo dõi nhưng không tương tác sẽ không có giá trị. Một cộng đồng nhỏ nhưng gắn kết sẽ ủng hộ bạn, cung cấp phản hồi và có giá trị hơn trong mắt các thương hiệu.',
+      },
+      {
+        question: 'Đâu là một hoạt động hiệu quả để tăng tương tác với cộng đồng tại Việt Nam?',
+        options: [
+          'Đăng bài và không trả lời bình luận',
+          'Tổ chức các buổi gặp mặt offline nhỏ',
+          'Chỉ đăng bài quảng cáo',
+          'Mua người theo dõi ảo',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Các hoạt động offline giúp củng cố mối quan hệ trong cộng đồng, biến những tương tác ảo thành kết nối thật, điều này rất được coi trọng trong văn hóa Việt Nam.',
+      },
+    ],
   },
 
   {
     id: 'brand-partnership-monetization',
     title: 'Brand Partnership Và Advanced Monetization',
-    description: 'Master brand partnership negotiations, relationship management, và advanced monetization strategies để maximize micro-influencer income.',
+    description:
+      'Master brand partnership negotiations, relationship management, và advanced monetization strategies để maximize micro-influencer income.',
     duration: '195 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=NwZy0evRnZs', // Brand partnerships
+    videoUrl: 'https://www.youtube.com/watch?v=NwZy0evRnZs',
     imageUrl: 'https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&h=600&fit=crop',
     objectives: [
       'Master brand partnership negotiation tactics',
@@ -338,16 +490,7 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
       'Understand legal aspects của influencer contracts',
       'Diversify income streams beyond brand deals',
     ],
-    prerequisites: [
-      'Established audience base',
-      'Content creation experience',
-      'Basic business understanding',
-    ],
-    platformStrategies: ['Media Kit Development', 'Portfolio Presentation', 'Pitch Strategies', 'Brand Outreach', 'Professional Communication'],
-    monetizationMethods: ['Sponsored Posts', 'Affiliate Commissions', 'Brand Ambassadorships', 'Product Collaborations', 'Event Partnerships'],
-    brandCollaboration: ['Contract Negotiation', 'Campaign Planning', 'Content Guidelines', 'Performance Metrics', 'Relationship Management'],
-    audienceBuilding: ['Brand-Audience Alignment', 'Authentic Recommendations', 'Trust Building', 'Transparency Practices', 'Value Preservation'],
-    contentTypes: ['Sponsored Content', 'Product Reviews', 'Brand Storytelling', 'Campaign Content', 'Ambassador Content'],
+    prerequisites: ['Established audience base', 'Content creation experience', 'Basic business understanding'],
     exercises: [
       {
         title: 'Brand Partnership Strategy Development',
@@ -397,15 +540,53 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
         type: 'Pricing Guide',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Hợp tác thương hiệu và kiếm tiền',
+      content: [
+        'Affiliate marketing (tiếp thị liên kết) cho các sàn thương mại điện tử như Shopee, Lazada, Tiki là một nguồn thu nhập phổ biến cho các micro-influencer tại Việt Nam.',
+        'Các thương hiệu Việt Nam thường đánh giá cao các mối quan hệ hợp tác lâu dài. Việc trở thành "gương mặt đại diện" không chính thức cho một nhãn hàng có thể mang lại nguồn thu nhập ổn định.',
+        'Ngoài tiền mặt, các hình thức hợp tác khác như nhận sản phẩm miễn phí (barter), voucher, hoặc phần trăm hoa hồng cũng rất phổ biến, đặc biệt với các influencer mới.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Bùi Công Sơn',
+      title: 'Tech Reviewer & Affiliate Marketer',
+      company: 'Sơn Sành Sỏi',
+      imageUrl: 'https://i.pravatar.cc/150?u=bui-cong-son',
+      quote:
+        'Review sản phẩm chỉ là bước đầu. Nguồn thu nhập lớn nhất của tôi đến từ affiliate. Khi một người xem tin tưởng và mua hàng qua link của tôi, tôi nhận được hoa hồng. Điều quan trọng là phải chọn sản phẩm mình thực sự tin dùng, nếu không bạn sẽ mất lòng tin của khán giả.',
+    },
+    quizzes: [
+      {
+        question: 'Media Kit là gì?',
+        options: [
+          'Bộ dụng cụ sửa máy ảnh',
+          'Một tài liệu giới thiệu về kênh của bạn, các chỉ số và báo giá cho các thương hiệu',
+          'Hộp quà thương hiệu gửi tặng',
+          'Tên một phần mềm chỉnh sửa video',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Media Kit (hay Influencer Kit) là một bản CV của influencer, dùng để gửi cho các thương hiệu tiềm năng, trong đó trình bày các thông tin về kênh, số liệu thống kê về khán giả và các gói hợp tác.',
+      },
+      {
+        question: 'Hình thức kiếm tiền nào phổ biến với các micro-influencer trên các sàn thương mại điện tử Việt Nam?',
+        options: ['Bán cổ phiếu', 'Tiếp thị liên kết (Affiliate Marketing)', 'Làm khảo sát', 'Xem quảng cáo'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Tiếp thị liên kết là mô hình mà influencer sẽ nhận được hoa hồng khi người dùng mua sản phẩm qua một đường link đặc biệt. Đây là hình thức rất phổ biến và hiệu quả.',
+      },
+    ],
   },
 
   {
     id: 'platform-optimization-algorithms',
     title: 'Platform Optimization Và Algorithm Mastery',
-    description: 'Master platform-specific algorithms và optimization techniques để maximize reach, engagement, và growth across major social media platforms.',
+    description:
+      'Master platform-specific algorithms và optimization techniques để maximize reach, engagement, và growth across major social media platforms.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=oqyRjXsazIA', // Social media algorithms
+    videoUrl: 'https://www.youtube.com/watch?v=oqyRjXsazIA',
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Understand algorithms của major social platforms',
@@ -420,11 +601,6 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
       'Content creation proficiency',
       'Analytics interpretation skills',
     ],
-    platformStrategies: ['Instagram Algorithm Optimization', 'TikTok For You Page Strategy', 'YouTube Recommendation System', 'Facebook News Feed Optimization', 'LinkedIn Algorithm Understanding'],
-    monetizationMethods: ['Algorithm-Driven Growth', 'Viral Content Monetization', 'Platform-Specific Revenue Streams', 'Cross-Platform Optimization', 'Algorithmic Advertising'],
-    brandCollaboration: ['Platform Performance Data', 'Algorithm-Optimized Campaigns', 'Cross-Platform Strategy', 'Performance Optimization', 'Algorithm-Aware Content'],
-    audienceBuilding: ['Algorithmic Growth Tactics', 'Platform-Specific Engagement', 'Cross-Platform Audience Building', 'Algorithm-Driven Discovery', 'Platform Optimization'],
-    contentTypes: ['Algorithm-Optimized Content', 'Platform-Native Content', 'Trending Format Content', 'Cross-Platform Adaptations', 'Performance-Driven Content'],
     exercises: [
       {
         title: 'Multi-Platform Algorithm Optimization',
@@ -459,7 +635,11 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
         problem: 'Maintaining growth across multiple platforms với different algorithms',
         solution: 'Developed systematic approach để platform-specific optimization',
         impact: 'Achieved top 1% reach rates across Instagram, TikTok, và YouTube',
-        innovations: ['Multi-Platform Optimization System', 'Algorithm Adaptation Framework', 'Cross-Platform Content Strategy'],
+        innovations: [
+          'Multi-Platform Optimization System',
+          'Algorithm Adaptation Framework',
+          'Cross-Platform Content Strategy',
+        ],
       },
     ],
     resources: [
@@ -474,15 +654,58 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
         type: 'Best Practices',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: "Chơi" với thuật toán',
+      content: [
+        'Thuật toán của các nền tảng như TikTok và Facebook liên tục thay đổi. Việc cập nhật và thử nghiệm liên tục là bắt buộc để duy trì sự hiện diện.',
+        'Các yếu tố quan trọng mà thuật toán Việt Nam thường ưu tiên là thời gian xem (watch time), tỷ lệ xem lại (rewatch rate), và các tương tác sớm (bình luận, chia sẻ trong giờ đầu tiên).',
+        'Sử dụng âm nhạc đang thịnh hành (trending sounds) trên TikTok và Reels là một trong những cách hiệu quả nhất để được thuật toán "để mắt" tới.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bạn Phạm Hoàng Long',
+      title: 'Social Media Analyst',
+      company: 'Một Agency về Marketing',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-hoang-long',
+      quote:
+        'Công việc của tôi là "đoán" ý của thuật toán. Tôi phân tích hàng trăm video mỗi ngày để tìm ra công thức chung: độ dài bao nhiêu, dùng nhạc gì, caption viết thế nào... Không có công thức nào là tuyệt đối, nhưng dữ liệu cho chúng ta biết cách để tăng cơ hội viral.',
+    },
+    quizzes: [
+      {
+        question: 'Yếu tố nào sau đây thường được các thuật toán mạng xã hội ưu tiên nhất?',
+        options: [
+          'Số lượng hashtag',
+          'Thời gian người dùng ở lại xem nội dung của bạn',
+          'Chất lượng camera xịn nhất',
+          'Video có độ dài trên 10 phút',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Thời gian xem (watch time) là một trong những tín hiệu quan trọng nhất cho thuật toán, vì nó cho thấy nội dung của bạn đủ hấp dẫn để giữ chân người dùng trên nền tảng.',
+      },
+      {
+        question: 'Làm thế nào để một micro-influencer có thể cập nhật về sự thay đổi của thuật toán?',
+        options: [
+          'Không cần quan tâm',
+          'Chỉ cần đoán',
+          'Theo dõi các blog chính thức của nền tảng, các chuyên gia phân tích và thử nghiệm liên tục',
+          'Hỏi bạn bè',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Việc cập nhật thông tin từ các nguồn uy tín và tự mình thử nghiệm các định dạng nội dung mới là cách tốt nhất để thích ứng với sự thay đổi liên tục của thuật toán.',
+      },
+    ],
   },
 
   {
     id: 'business-scaling-systematization',
     title: 'Business Scaling Và Micro-Influencer Systematization',
-    description: 'Transform micro-influencer activities into scalable business system với automation, team building, và revenue diversification strategies.',
+    description:
+      'Transform micro-influencer activities into scalable business system với automation, team building, và revenue diversification strategies.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Creator business scaling
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: 'https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&h=600&fit=crop',
     objectives: [
       'Develop scalable micro-influencer business systems',
@@ -497,350 +720,97 @@ export const microInfluencerLessons: MicroInfluencerLessonType[] = [
       'Brand partnership experience',
       'Basic business management skills',
     ],
-    platformStrategies: ['Multi-Platform Management', 'Team Coordination', 'Systematic Growth', 'Process Automation', 'Scalable Operations'],
-    monetizationMethods: ['Revenue Diversification', 'Product Development', 'Service Offerings', 'Team Revenue', 'Investment Income'],
-    brandCollaboration: ['Agency-Level Partnerships', 'Long-term Contracts', 'Performance-Based Deals', 'White-Label Services', 'Corporate Consulting'],
-    audienceBuilding: ['Systematic Growth', 'Team-Managed Communities', 'Automated Engagement', 'Scalable Interaction', 'Community Systematization'],
-    contentTypes: ['Team-Produced Content', 'Systematic Content Series', 'Brand-Integrated Content', 'Educational Products', 'Premium Content'],
     exercises: [
       {
-        title: 'Micro-Influencer Business Systematization',
-        description: 'Build comprehensive systems để scale micro-influencer operations into professional business',
+        title: 'Micro-Influencer Business Plan Development',
+        description: 'Create comprehensive business plan để scale micro-influencer operations',
         difficulty: 'Nâng cao',
-        materials: ['Business Planning Tools', 'Automation Software', 'Team Management Systems'],
+        materials: ['Business Plan Templates', 'Financial Projection Tools', 'Automation Software'],
         procedure: [
-          'Audit current micro-influencer operations và identify bottlenecks',
-          'Design systematic workflows cho content creation và management',
-          'Plan team structure và define role responsibilities',
-          'Research và implement business automation tools',
-          'Develop multiple revenue stream strategies',
-          'Create standard operating procedures',
-          'Setup business metrics tracking systems',
-          'Plan 12-month business scaling roadmap',
+          'Define long-term business vision và mission',
+          'Map out current content creation và monetization workflows',
+          'Identify bottlenecks và areas for automation',
+          'Develop plan cho revenue stream diversification',
+          'Create hiring plan cho team members (e.g., editor, assistant)',
+          'Establish standard operating procedures (SOPs)',
+          'Develop 3-year financial projections',
+          'Create risk management plan',
         ],
-        expectedResults: 'Professional business system capable của scaling micro-influencer operations',
-        solution: 'Comprehensive business framework transforming micro-influencer activity into scalable enterprise',
+        expectedResults: 'Scalable business plan với clear growth roadmap và operational systems',
+        solution: 'Comprehensive framework cho transforming micro-influencer passion into sustainable business',
       },
     ],
     realWorldApplications: [
-      'Micro-influencers building content agencies',
+      'Micro-influencers building media companies',
       'Creators launching product lines',
-      'Influencers developing educational businesses',
-      'Content creators building media companies',
-      'Micro-influencers creating consulting services',
+      'Influencers developing educational courses',
+      'Creators building subscription-based communities',
+      'Influencers scaling into agencies',
     ],
     caseStudies: [
       {
-        title: 'Mai Phuong - Vietnamese Micro-Influencer Business Empire',
-        organization: 'Independent Creator Business',
-        problem: 'Scaling micro-influencer success into sustainable business',
-        solution: 'Built systematic business operations với team support và multiple revenue streams',
-        impact: 'Generated $200K annual revenue từ diversified creator business',
-        innovations: ['Creator Business System', 'Team-Based Operations', 'Revenue Stream Diversification'],
+        title: 'Giang Oi - From Blogger to Media Entrepreneur',
+        organization: 'Giang Oi',
+        problem: 'Scaling personal brand beyond individual capacity',
+        solution: 'Built team để manage content production, brand partnerships, và product lines',
+        impact: 'Successfully launched multiple product lines và built sustainable media business',
+        innovations: ['Team Building', 'Revenue Diversification', 'Brand Extension'],
       },
     ],
     resources: [
       {
-        title: 'Creator Business Building Guide',
-        url: 'https://creatoreconomy.so/p/creator-business-guide',
+        title: 'Creator Business Scaling Guide',
+        url: 'https://creatoreconomy.so/p/scaling-creator-business',
         type: 'Business Guide',
       },
       {
-        title: 'Influencer Business Automation Tools',
-        url: 'https://blog.influencermarketinghub.com/creator-tools/',
-        type: 'Tool Directory',
+        title: 'Standard Operating Procedure (SOP) Templates',
+        url: 'https://www.process.st/sop-templates/',
+        type: 'Templates',
+      },
+    ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Từ "người ảnh hưởng" đến "doanh nhân"',
+      content: [
+        'Nhiều micro-influencer thành công tại Việt Nam đang chuyển mình thành các doanh nhân, xây dựng thương hiệu riêng thay vì chỉ đi quảng cáo cho người khác.',
+        'Các sản phẩm thường được phát triển bao gồm: thời trang, mỹ phẩm, đồ ăn vặt, các khóa học online hoặc sổ tay, vật phẩm trang trí mang dấu ấn cá nhân.',
+        'Việc xây dựng một ê-kíp nhỏ (ví dụ: một người quay phim, một người dựng video) đang trở nên phổ biến để chuyên nghiệp hóa sản xuất và giải phóng thời gian cho influencer tập trung vào sáng tạo và chiến lược.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Helly Tống',
+      title: 'Founder & Entrepreneur',
+      company: 'The Yên Concept & Lại Đây Refill Station',
+      imageUrl: 'https://i.pravatar.cc/150?u=helly-tong',
+      quote:
+        'Bắt đầu là một người mẫu ảnh, một influencer, nhưng tôi nhận ra mình muốn tạo ra giá trị bền vững hơn. Tôi đã xây dựng các thương hiệu của riêng mình dựa trên những giá trị mà tôi theo đuổi. Việc trở thành influencer cho chính sản phẩm của mình là một lợi thế cực kỳ lớn.',
+    },
+    quizzes: [
+      {
+        question: 'Tại sao một micro-influencer nên đa dạng hóa nguồn thu nhập?',
+        options: [
+          'Để làm việc nhiều hơn',
+          'Để không bị phụ thuộc vào một nguồn duy nhất (ví dụ: quảng cáo) và xây dựng một doanh nghiệp bền vững',
+          'Vì các nền tảng yêu cầu vậy',
+          'Để đóng nhiều thuế hơn',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Đa dạng hóa nguồn thu nhập giúp giảm rủi ro khi một nguồn thu nhập bị ảnh hưởng (ví dụ: thuật toán thay đổi, thương hiệu cắt hợp đồng) và tạo ra một doanh nghiệp ổn định, bền vững hơn.',
+      },
+      {
+        question:
+          'Hình thức nào sau đây không phải là một lợi ích của việc xây dựng thương hiệu cá nhân với tư cách là một micro-influencer?',
+        options: [
+          'Tăng độ tin cậy và uy tín',
+          'Mở rộng cơ hội hợp tác với thương hiệu',
+          'Giảm bớt công việc sáng tạo nội dung',
+          'Tạo ra nguồn thu nhập ổn định hơn',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Xây dựng thương hiệu cá nhân thường đi kèm với việc tăng cường hoạt động sáng tạo nội dung và tương tác với cộng đồng, điều này có thể làm tăng khối lượng công việc ban đầu.',
       },
     ],
   },
-
-  {
-    id: 'vietnamese-market-specialization',
-    title: 'Vietnamese Market Specialization Và Cultural Integration',
-    description: 'Master Vietnamese-specific micro-influencer strategies, cultural integration, và local market optimization cho authentic connection với Vietnamese audiences.',
-    duration: '180 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=o6gfe8bb11Y', // Vietnamese culture and business
-    imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
-    objectives: [
-      'Understand Vietnamese social media culture deeply',
-      'Master culturally appropriate content creation',
-      'Build authentic connections với Vietnamese audiences',
-      'Navigate Vietnamese business relationship dynamics',
-      'Leverage Vietnamese festivals và cultural moments',
-      'Create Vietnam-specific brand positioning',
-    ],
-    prerequisites: [
-      'Understanding của Vietnamese culture',
-      'Vietnamese language proficiency',
-      'Familiarity với local social media trends',
-    ],
-    platformStrategies: ['Vietnamese Platform Preferences', 'Cultural Content Strategies', 'Local Trending Topics', 'Vietnamese Audience Behavior', 'Regional Customization'],
-    monetizationMethods: ['Vietnamese Brand Partnerships', 'Local Product Collaborations', 'Cultural Event Sponsorships', 'Vietnamese Community Monetization', 'Traditional Festival Integration'],
-    brandCollaboration: ['Vietnamese Brand Culture', 'Local Partnership Dynamics', 'Cultural Sensitivity', 'Regional Brand Preferences', 'Traditional Value Integration'],
-    audienceBuilding: ['Vietnamese Community Building', 'Cultural Authenticity', 'Local Relevance', 'Traditional Respect', 'Generational Bridge Building'],
-    contentTypes: ['Cultural Content', 'Traditional Integration', 'Local Lifestyle', 'Vietnamese Language Content', 'Festival Content'],
-    exercises: [
-      {
-        title: 'Vietnamese Cultural Content Strategy',
-        description: 'Develop comprehensive content strategy integrating Vietnamese cultural elements authentically',
-        difficulty: 'Trung bình',
-        materials: ['Cultural Research Resources', 'Vietnamese Content Examples', 'Local Trend Analysis Tools'],
-        procedure: [
-          'Research Vietnamese cultural values và their social media expression',
-          'Analyze successful Vietnamese micro-influencers for cultural integration',
-          'Plan content calendar incorporating major Vietnamese festivals',
-          'Develop authentic Vietnamese storytelling approaches',
-          'Create cultural sensitivity guidelines cho content creation',
-          'Design Vietnamese language content strategies',
-          'Plan regional customization approaches',
-          'Build cultural authenticity verification process',
-        ],
-        expectedResults: 'Culturally integrated content strategy resonating authentically với Vietnamese audiences',
-        solution: 'Comprehensive cultural integration framework cho micro-influencer success trong Vietnamese market',
-      },
-    ],
-    realWorldApplications: [
-      'International micro-influencers adapting to Vietnamese market',
-      'Vietnamese-diaspora influencers connecting với homeland audiences',
-      'Local micro-influencers deepening cultural authenticity',
-      'Cross-cultural content creators building Vietnamese presence',
-      'Traditional craft artisans building modern micro-influencer brands',
-    ],
-    caseStudies: [
-      {
-        title: 'An Nguyen - Cultural Heritage Micro-Influencer',
-        organization: 'Independent Cultural Creator',
-        problem: 'Modernizing traditional Vietnamese craft content cho younger audiences',
-        solution: 'Blended traditional craftsmanship với modern micro-influencer techniques',
-        impact: 'Revitalized interest trong traditional crafts among 18-35 year olds',
-        innovations: ['Traditional-Modern Fusion Content', 'Cultural Education Integration', 'Cross-Generational Appeal'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Vietnamese Consumer Behavior Study',
-        url: 'https://www.nielsen.com/vn/vi/insights/',
-        type: 'Market Research',
-      },
-      {
-        title: 'Vietnamese Social Media Culture Guide',
-        url: 'https://datareportal.com/reports/digital-2023-vietnam',
-        type: 'Cultural Guide',
-      },
-    ],
-  },
-
-  // Legacy lessons for compatibility
-  {
-    id: 'micro-influencer-partnership-strategies',
-    title: 'Micro-Influencer Partnership & Collaboration Strategies',
-    description: 'Master micro-influencer partnerships với authentic collaborations, fair compensation và long-term relationship building.',
-    duration: '150 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=ggEbz64X3lU',
-    imageUrl: 'https://i.ytimg.com/vi/ggEbz64X3lU/hqdefault.jpg',
-    objectives: [
-      'Understand micro-influencer landscape và value',
-      'Develop authentic partnership strategies',
-      'Create win-win collaboration frameworks',
-      'Build long-term influencer relationships',
-      'Measure partnership ROI effectively'
-    ],
-    prerequisites: [
-      'Understanding of influencer marketing basics',
-      'Brand partnership experience',
-      'Budget for influencer collaborations'
-    ],
-    influencerTiers: [
-      'Nano-influencers (1K-10K followers)',
-      'Micro-influencers (10K-100K followers)',
-      'Mid-tier influencers (100K-1M followers)'
-    ],
-    collaborationTypes: [
-      'Product seeding và reviews',
-      'Sponsored content posts',
-      'Brand ambassador programs',
-      'Event collaborations',
-      'Co-created content series'
-    ],
-    platformStrategies: [
-      'Instagram focused campaigns',
-      'TikTok viral partnerships',
-      'YouTube long-form collaborations',
-      'Multi-platform integrated approaches'
-    ],
-    monetizationMethods: [
-      'Performance-based compensation',
-      'Flat fee arrangements',
-      'Product exchange partnerships',
-      'Commission-based structures',
-      'Long-term retainer agreements'
-    ],
-    growthTactics: [
-      'Authentic audience building',
-      'Niche expertise development',
-      'Consistent content creation',
-      'Community engagement focus',
-      'Brand alignment strategies'
-    ],
-    exercises: [
-      {
-        title: 'Micro-Influencer Campaign Development',
-        description: 'Create comprehensive micro-influencer campaign với multiple partnerships',
-        difficulty: 'Trung bình',
-        materials: [
-          'Influencer research tools',
-          'Campaign brief templates',
-          'Contract templates',
-          'Performance tracking systems'
-        ],
-        procedure: [
-          'Define campaign objectives và target audience',
-          'Research và identify relevant micro-influencers',
-          'Develop authentic collaboration proposals',
-          'Negotiate fair compensation structures',
-          'Create clear campaign guidelines',
-          'Execute collaborative content creation',
-          'Monitor campaign performance metrics',
-          'Nurture relationships for future partnerships'
-        ],
-        expectedResults: '80%+ positive campaign sentiment, 5x higher engagement than macro-influencers',
-        solution: 'Authentic partnerships with engaged micro-audiences'
-      }
-    ],
-    realWorldApplications: [
-      'Local businesses building community presence',
-      'Startups establishing brand credibility',
-      'Niche brands reaching specific audiences',
-      'Service providers building local awareness'
-    ],
-    caseStudies: [
-      {
-        title: 'Vietnamese Skincare Brand Success',
-        organization: 'Local Natural Skincare Brand',
-        problem: 'Limited budget competing với big beauty brands',
-        solution: 'Network of 50 micro-influencers với authentic skin journeys',
-        impact: 'Brand awareness tăng 400%, sales conversion 25% higher than paid ads',
-        innovations: [
-          'Long-term skin transformation documentation',
-          'Micro-influencer community building',
-          'User-generated content amplification'
-        ]
-      }
-    ],
-    resources: [
-      {
-        title: 'Micro-Influencer Marketing Guide',
-        url: 'https://influencermarketinghub.com/micro-influencer-marketing',
-        type: 'Strategy Guide'
-      }
-    ]
-  },
-  {
-    id: 'authentic-influence-community-building',
-    title: 'Authentic Influence & Community Building',
-    description: 'Build genuine influence through authentic content, community engagement và value-driven approach to social media presence.',
-    duration: '120 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=Xz94wRwFOCI',
-    imageUrl: 'https://i.ytimg.com/vi/Xz94wRwFOCI/hqdefault.jpg',
-    objectives: [
-      'Develop authentic personal brand',
-      'Build engaged community around shared values',
-      'Create valuable content consistently',
-      'Foster genuine relationships với audience',
-      'Monetize influence ethically'
-    ],
-    prerequisites: [
-      'Clear personal values và mission',
-      'Commitment to consistent content creation',
-      'Willingness to be vulnerable và authentic'
-    ],
-    influencerTiers: [
-      'Emerging influencers building foundations',
-      'Established micro-influencers scaling',
-      'Thought leaders trong specific niches'
-    ],
-    collaborationTypes: [
-      'Value-aligned brand partnerships',
-      'Community-driven initiatives',
-      'Educational content collaborations',
-      'Cause-based campaigns'
-    ],
-    platformStrategies: [
-      'Platform-specific authenticity approaches',
-      'Cross-platform consistency maintenance',
-      'Community migration strategies',
-      'Platform algorithm optimization'
-    ],
-    monetizationMethods: [
-      'Educational product sales',
-      'Consultation service offerings',
-      'Community membership programs',
-      'Sponsored content alignment',
-      'Affiliate marketing authenticity'
-    ],
-    growthTactics: [
-      'Value-first content creation',
-      'Community engagement prioritization',
-      'Authentic storytelling techniques',
-      'Consistent brand message delivery',
-      'Long-term relationship building'
-    ],
-    exercises: [
-      {
-        title: 'Authentic Personal Brand Development',
-        description: 'Develop comprehensive authentic personal brand strategy',
-        difficulty: 'Trung bình',
-        materials: [
-          'Brand values assessment tools',
-          'Content planning frameworks',
-          'Community engagement strategies',
-          'Authenticity measurement metrics'
-        ],
-        procedure: [
-          'Define core values và mission clearly',
-          'Identify unique perspective và expertise',
-          'Develop authentic brand voice',
-          'Create content strategy aligned với values',
-          'Build community around shared interests',
-          'Engage authentically với followers',
-          'Share vulnerable stories appropriately',
-          'Maintain consistency across platforms'
-        ],
-        expectedResults: 'Authentic brand với highly engaged community, trust-based relationships',
-        solution: 'Values-driven approach to influence building'
-      }
-    ],
-    realWorldApplications: [
-      'Professionals building thought leadership',
-      'Entrepreneurs establishing credibility',
-      'Educators sharing knowledge authentically',
-      'Activists driving social change'
-    ],
-    caseStudies: [
-      {
-        title: 'Mental Health Advocate Growth',
-        organization: 'Vietnamese Mental Health Advocate',
-        problem: 'Stigma around mental health topics',
-        solution: 'Authentic vulnerability sharing với educational content',
-        impact: 'Community của 100K+ people seeking mental health support',
-        innovations: [
-          'Cultural sensitivity trong mental health discussions',
-          'Professional therapy integration',
-          'Community support systems'
-        ]
-      }
-    ],
-    resources: [
-      {
-        title: 'Authentic Personal Branding',
-        url: 'https://hbr.org/2019/02/the-authenticity-paradox',
-        type: 'Research Article'
-      }
-    ]
-  }
 ];
-
-// Export for use in other modules
-export const microInfluencerEconomyLessons = microInfluencerLessons;

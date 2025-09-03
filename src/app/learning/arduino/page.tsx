@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, {
-  ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { ModuleData } from '@/components/learning/ModulePageTemplate';
 import { arduinoLessons, ArduinoLesson } from '@/data/arduino';
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { createModuleMetadata } from '@/utils/seo';
@@ -11,8 +9,8 @@ import { K2Module } from '@/data/moduleNavigation';
 export const metadata: Metadata = createModuleMetadata(
   'Arduino Programming - Lập Trình Arduino',
   'Học lập trình Arduino từ cơ bản đến nâng cao. Tạo các project IoT, robotics và embedded systems',
-  ["arduino","programming","iot","embedded systems","microcontroller","sensors"],
-  'arduino'
+  ['arduino', 'programming', 'iot', 'embedded systems', 'microcontroller', 'sensors'],
+  'arduino',
 );
 
 // Convert ArduinoLesson to BaseLessonData interface
@@ -23,15 +21,10 @@ function convertToLesson(arduinoLesson: ArduinoLesson): BaseLessonData {
     description: arduinoLesson.description,
     duration: arduinoLesson.duration,
     difficulty: arduinoLesson.difficulty,
-    category: arduinoLesson.category || 'Arduino Programming',
     imageUrl: arduinoLesson.imageUrl || '/default-lesson.jpg',
     videoUrl: arduinoLesson.videoUrl,
     objectives: arduinoLesson.objectives,
-    prerequisites: [
-      'Basic computer skills',
-      'Interest in electronics',
-      'Problem-solving mindset',
-    ],
+    prerequisites: ['Basic computer skills', 'Interest in electronics', 'Problem-solving mindset'],
     exercises:
       arduinoLesson.exercises?.map((ex) => ({
         title: ex.title,
@@ -43,9 +36,11 @@ function convertToLesson(arduinoLesson: ArduinoLesson): BaseLessonData {
         solution: ex.code,
       })) || [],
     resources: [],
-    tools: arduinoLesson.materials || [],
     realWorldApplications: arduinoLesson.realWorldApplications || [],
     caseStudies: [],
+    vietnamContext: arduinoLesson.vietnamContext,
+    careerConnect: arduinoLesson.careerConnect,
+    quizzes: arduinoLesson.quizzes,
   };
 }
 
@@ -61,8 +56,7 @@ export default function ArduinoPage() {
     primaryColor: 'cyan',
     gradientColors: 'from-slate-900 via-cyan-900 to-blue-900',
     basePath: '/learning/arduino',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&h=600&fit=crop',
     statsConfig: {
       lessons: `${arduinoLessons.length}+ bài`,
       duration: '15-20 giờ',
@@ -91,68 +85,36 @@ export default function ArduinoPage() {
       {
         title: 'Arduino Basics',
         icon: '🔧',
-        items: [
-          'Arduino IDE Setup',
-          'Board Programming',
-          'Digital I/O',
-          'Analog Sensors',
-        ],
+        items: ['Arduino IDE Setup', 'Board Programming', 'Digital I/O', 'Analog Sensors'],
       },
       {
         title: 'Sensor Integration',
         icon: '📡',
-        items: [
-          'Temperature Sensors',
-          'Motion Detection',
-          'Light Sensors',
-          'Environmental Monitoring',
-        ],
+        items: ['Temperature Sensors', 'Motion Detection', 'Light Sensors', 'Environmental Monitoring'],
       },
       {
         title: 'IoT Connectivity',
         icon: '🌐',
-        items: [
-          'WiFi Modules',
-          'ESP32 Programming',
-          'Cloud Integration',
-          'Remote Monitoring',
-        ],
+        items: ['WiFi Modules', 'ESP32 Programming', 'Cloud Integration', 'Remote Monitoring'],
       },
       {
         title: 'Advanced Projects',
         icon: '🚀',
-        items: [
-          'Smart Home Systems',
-          'Weather Stations',
-          'Security Systems',
-          'Automation Control',
-        ],
+        items: ['Smart Home Systems', 'Weather Stations', 'Security Systems', 'Automation Control'],
       },
       {
         title: 'Communication',
         icon: '📱',
-        items: [
-          'Serial Communication',
-          'I2C Protocol',
-          'SPI Interface',
-          'Bluetooth & WiFi',
-        ],
+        items: ['Serial Communication', 'I2C Protocol', 'SPI Interface', 'Bluetooth & WiFi'],
       },
       {
         title: 'Real Applications',
         icon: '🏭',
-        items: [
-          'Industrial IoT',
-          'Smart Agriculture',
-          'Health Monitoring',
-          'Environmental Sensing',
-        ],
+        items: ['Industrial IoT', 'Smart Agriculture', 'Health Monitoring', 'Environmental Sensing'],
       },
     ],
     relatedModules: [K2Module.Python, K2Module.Robotics, K2Module.STEM],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />;
 }

@@ -1,43 +1,9 @@
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+
 // Scratch Programming Module Data
 // Comprehensive Scratch programming content for K2AiHub education platform
 
-export interface ScratchLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
-  duration: string;
-  category: 'basics' | 'animation' | 'games' | 'interactive' | 'advanced';
-  objectives: string[];
-  materials: string[];
-  scratchProjectUrl?: string;
-  videoUrl?: string;
-  imageUrl: string;
-  codeBlocks: string[];
-  exercises: ScratchExercise[];
-  realWorldApplications: string[];
-  competitions: string[];
-  relatedGames?: Array<{
-    gameId: string;
-    title: string;
-    connection: string;
-    difficulty: string;
-  }>;
-}
-
-export interface ScratchExercise {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: 'Dễ' | 'Trung bình' | 'Khó';
-  requiredBlocks: string[];
-  expectedBehavior: string;
-  hints: string[];
-  steps?: string[];
-  scratchUrl?: string;
-}
-
-export const scratchLessons: ScratchLesson[] = [
+export const scratchLessons: BaseLessonData[] = [
   {
     id: 'scratch-introduction',
     title: 'Giới Thiệu Scratch',
@@ -45,533 +11,177 @@ export const scratchLessons: ScratchLesson[] = [
       'Khám phá thế giới sáng tạo với Scratch! Bạn sẽ làm quen giao diện trực quan, tự tay kéo thả các khối lệnh để tạo ra hoạt cảnh, game và câu chuyện tương tác. Bài học này giúp bạn khởi đầu hành trình lập trình đầy màu sắc và vui nhộn.',
     difficulty: 'Cơ bản',
     duration: '45 phút',
-    category: 'basics',
+    videoUrl: 'https://www.youtube.com/watch?v=QuZA24FEiIs',
+    imageUrl: 'https://i.ytimg.com/vi/QuZA24FEiIs/hqdefault.jpg',
     objectives: [
-      'Hiểu giao diện Scratch và các thành phần chính',
-      'Tạo dự án Scratch đầu tiên',
-      'Sử dụng blocks cơ bản để điều khiển Sprite',
-      'Hiểu khái niệm sự kiện và lệnh',
+      'Hiểu giao diện Scratch và các thành phần chính.',
+      'Tạo dự án Scratch đầu tiên.',
+      'Sử dụng blocks cơ bản để điều khiển nhân vật (Sprite).',
+      'Hiểu khái niệm sự kiện và kịch bản lệnh.',
     ],
-    materials: ['Máy tính với trình duyệt web', 'Tài khoản Scratch (tùy chọn)', 'Kết nối Internet'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=QuZA24FEiIs', // Lập trình Scratch cơ bản cho người mới bắt đầu
-    scratchProjectUrl: 'https://scratch.mit.edu/projects/editor/',
-    codeBlocks: [
-      'when green flag clicked',
-      'move 10 steps',
-      'turn 15 degrees',
-      'say "Hello!" for 2 seconds',
-      'wait 1 seconds',
-      'repeat 10',
-      'forever',
-    ],
+    prerequisites: ['Máy tính có kết nối Internet và trình duyệt web.'],
     exercises: [
       {
-        id: 'ex1-first-animation',
         title: 'Hoạt Cảnh Đầu Tiên',
-        description: 'Tạo hoạt cảnh đơn giản cho mèo Scratch di chuyển và nói chào',
-        difficulty: 'Dễ',
-        requiredBlocks: ['when green flag clicked', 'say "Xin chào!" for 2 seconds', 'move 10 steps', 'wait 1 seconds'],
-        expectedBehavior: 'Mèo nói "Xin chào!" rồi di chuyển sang phải',
-        hints: [
-          'Bắt đầu với khối "when green flag clicked"',
-          'Sử dụng khối "say" để mèo nói chuyện',
-          'Khối "move" để mèo di chuyển',
-          'Khối "wait" tạo khoảng dừng giữa các hành động',
+        description: 'Tạo hoạt cảnh đơn giản cho mèo Scratch di chuyển và nói "Xin chào!"',
+        difficulty: 'Cơ bản',
+        procedure: [
+          'Bắt đầu với khối sự kiện "Khi bấm vào lá cờ xanh".',
+          'Sử dụng khối "nói" trong nhóm "Hiển thị" để mèo nói chuyện.',
+          'Sử dụng khối "di chuyển" trong nhóm "Chuyển động" để mèo đi tới.',
+          'Dùng khối "đợi" trong nhóm "Điều khiển" để tạo khoảng dừng.',
         ],
-      },
-      {
-        id: 'ex2-simple-loop',
-        title: 'Vòng Lặp Đơn Giản',
-        description: 'Tạo chương trình mèo di chuyển trong hình vuông',
-        difficulty: 'Trung bình',
-        requiredBlocks: ['when green flag clicked', 'repeat 4', 'move 100 steps', 'turn 90 degrees'],
-        expectedBehavior: 'Mèo di chuyển theo hình vuông',
-        hints: [
-          'Hình vuông có 4 cạnh bằng nhau',
-          'Mỗi góc của hình vuông là 90 độ',
-          'Sử dụng "repeat 4" để lặp lại 4 lần',
-          'Trong vòng lặp: di chuyển rồi quay',
-        ],
+        expectedResults: 'Khi người dùng bấm vào lá cờ xanh, nhân vật mèo sẽ nói "Xin chào!" rồi di chuyển một đoạn ngắn.',
       },
     ],
     realWorldApplications: [
-      'Game giáo dục cho trẻ em',
-      'Hoạt cảnh và storytelling',
-      'Mô phỏng khái niệm khoa học',
-      'Tạo presentations tương tác',
-      'Prototype ứng dụng đơn giản',
+      'Tạo hoạt hình ngắn.',
+      'Làm game giáo dục đơn giản.',
+      'Thiết kế các câu chuyện tương tác.',
+      'Tạo mô phỏng khoa học cơ bản.',
     ],
-    competitions: [
-      'Scratch Programming Contest',
-      'Code.org Hour of Code',
-      'MIT Scratch Competition',
-      'Vietnam Programming Contest for Students',
-      'Creative Computing Challenge',
-    ],
-    relatedGames: [
+    vietnamContext: {
+      title: 'Scratch và Phong trào "Tin học trẻ" tại Việt Nam',
+      content: [
+        'Scratch là một trong những nội dung thi đấu chính thức và phổ biến nhất trong hội thi "Tin học trẻ" cấp quốc gia và các cấp địa phương ở Việt Nam.',
+        'Nhiều trung tâm giáo dục STEM tại Hà Nội, TP.HCM, và Đà Nẵng sử dụng Scratch làm công cụ nhập môn lập trình cho học sinh tiểu học.',
+        'Cộng đồng giáo viên và phụ huynh Việt Nam tích cực chia sẻ tài nguyên và kinh nghiệm dạy Scratch qua các nhóm trên mạng xã hội.',
+      ],
+    },
+    careerConnect: {
+      name: 'Đặng Thị Thuý',
+      title: 'Giáo viên Tin học & Huấn luyện viên đội tuyển Tin học trẻ',
+      company: 'Trường Tiểu học Đoàn Thị Điểm',
+      imageUrl: '/placeholder-attraction.svg',
+      quote: 'Scratch không chỉ dạy lập trình, nó dạy trẻ em cách tư duy sáng tạo, giải quyết vấn đề và biến ý tưởng thành hiện thực. Đó là kỹ năng cho tương lai.',
+    },
+    quizzes: [
       {
-        gameId: 'scratch-animation-studio',
-        title: 'Scratch Animation Studio',
-        connection: 'Thực hành tạo animation và hoạt cảnh với Scratch',
-        difficulty: 'Cơ bản',
-      },
-      {
-        gameId: 'creative-storytelling',
-        title: 'Kể Chuyện Sáng Tạo',
-        connection: 'Ứng dụng Scratch để tạo những câu chuyện tương tác',
-        difficulty: 'Trung bình',
-      },
-      {
-        gameId: 'memory-match',
-        title: 'Trò Chơi Ghép Cặp',
-        connection: 'Tạo game logic và tương tác người dùng với Scratch',
-        difficulty: 'Trung bình',
+        question: 'Khối lệnh nào trong Scratch dùng để bắt đầu một kịch bản khi người dùng nhấn vào lá cờ màu xanh?',
+        options: ['Khi nhận tin nhắn', 'Khi bấm vào nhân vật này', 'Khi bấm vào lá cờ xanh', 'Khi phím cách được bấm'],
+        correctAnswerIndex: 2,
+        explanation: 'Khối "Khi bấm vào lá cờ xanh" (when green flag clicked) là khối sự kiện phổ biến nhất, dùng để khởi chạy hầu hết các dự án trong Scratch.',
       },
     ],
   },
   {
-    id: 'scratch-sprites-sounds',
-    title: 'Sprites và Âm Thanh',
+    id: 'scratch-animation-storytelling',
+    title: 'Hoạt Cảnh & Kể Chuyện với Scratch',
     description:
-      'Thỏa sức sáng tạo với nhiều nhân vật và âm thanh sống động! Bạn sẽ học cách thêm sprites, tạo hiệu ứng âm thanh, xây dựng tương tác giữa các nhân vật để dự án Scratch trở nên hấp dẫn và cuốn hút.',
+      'Học cách thổi hồn vào nhân vật, tạo ra các đoạn hội thoại, chuyển đổi phông nền và âm thanh để kể một câu chuyện hoàn chỉnh bằng Scratch. Giải phóng trí tưởng tượng của bạn và trở thành một đạo diễn phim hoạt hình kỹ thuật số!',
     difficulty: 'Cơ bản',
     duration: '60 phút',
-    category: 'animation',
+    videoUrl: 'https://www.youtube.com/watch?v=rwY3aL3eW7k',
+    imageUrl: 'https://i.ytimg.com/vi/rwY3aL3eW7k/hqdefault.jpg',
     objectives: [
-      'Thêm và tùy chỉnh nhiều sprites',
-      'Sử dụng âm thanh trong dự án',
-      'Tạo tương tác giữa các sprites',
-      'Hiểu khái niệm broadcasting và messaging',
+      'Điều khiển chuyển động và thay đổi trang phục cho nhân vật.',
+      'Tạo hội thoại giữa hai hoặc nhiều nhân vật.',
+      'Sử dụng các khối lệnh để chuyển đổi phông nền (backdrop).',
+      'Thêm và điều khiển âm thanh, nhạc nền.',
+      'Sử dụng tin nhắn (broadcast) để phối hợp hành động giữa các nhân vật.',
     ],
-    materials: ['Scratch editor', 'File âm thanh (tùy chọn)', 'Hình ảnh sprites tùy chỉnh (tùy chọn)'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=Ck5K_mg0Zqw',
-    codeBlocks: [
-      'when this sprite clicked',
-      'play sound "meow"',
-      'change costume to "cat-a"',
-      'broadcast "message1"',
-      'when I receive "message1"',
-      'set size to 150%',
-      'show',
-      'hide',
-    ],
+    prerequisites: ["Hoàn thành bài 'Giới thiệu Scratch'"],
     exercises: [
       {
-        id: 'ex1-multiple-sprites',
-        title: 'Cuộc Trò Chuyện Giữa Các Sprites',
-        description: 'Tạo đối thoại giữa mèo và chó',
-        difficulty: 'Dễ',
-        requiredBlocks: [
-          'when green flag clicked',
-          'say "Xin chào!" for 2 seconds',
-          'broadcast "turn"',
-          'when I receive "turn"',
-          'say "Chào bạn!" for 2 seconds',
+        title: 'Cuộc đối thoại ngắn',
+        description: 'Tạo một câu chuyện ngắn giữa hai nhân vật. Nhân vật A hỏi một câu, và nhân vật B trả lời.',
+        difficulty: 'Cơ bản',
+        procedure: [
+          'Chọn 2 nhân vật và một phông nền phù hợp.',
+          'Lập trình cho nhân vật A nói trước.',
+          'Sử dụng khối "đợi" để nhân vật B chờ nhân vật A nói xong.',
+          'Lập trình cho nhân vật B trả lời câu hỏi.',
         ],
-        expectedBehavior: 'Mèo chào trước, rồi chó chào lại',
-        hints: [
-          'Mỗi sprite có script riêng',
-          'Dùng broadcast để gửi tin nhắn',
-          'Sprite khác nhận tin nhắn với "when I receive"',
-          'Đặt tên tin nhắn dễ hiểu',
-        ],
-      },
-      {
-        id: 'ex2-sound-interaction',
-        title: 'Tương Tác Với Âm Thanh',
-        description: 'Tạo piano đơn giản với các phím có âm thanh khác nhau',
-        difficulty: 'Trung bình',
-        requiredBlocks: [
-          'when this sprite clicked',
-          'play sound "C4"',
-          'change color effect by 25',
-          'wait 0.5 seconds',
-          'clear graphic effects',
-        ],
-        expectedBehavior: 'Click vào sprite phát âm và đổi màu',
-        hints: [
-          'Mỗi sprite như một phím đàn',
-          'Gán âm thanh khác nhau cho mỗi sprite',
-          'Hiệu ứng màu sắc khi click',
-          'Reset hiệu ứng sau khi phát âm',
-        ],
+        expectedResults: 'Hai nhân vật lần lượt đối thoại với nhau một cách hợp lý.',
       },
     ],
     realWorldApplications: [
-      'Ứng dụng âm nhạc giáo dục',
-      'Game tương tác đa nhân vật',
-      'Mô phỏng hội thoại và giao tiếp',
-      'Ứng dụng học ngôn ngữ',
-      'Interactive storytelling',
+      'Làm phim hoạt hình ngắn.',
+      'Tạo thiệp chúc mừng sinh nhật điện tử.',
+      'Minh họa các câu chuyện cổ tích hoặc bài học lịch sử.',
     ],
-    competitions: [
-      'Scratch Animation Festival',
-      'International Scratch Day',
-      'Creative Expression Contest',
-      'Educational Game Challenge',
-      'Digital Storytelling Awards',
-    ],
-  },
-  {
-    id: 'scratch-variables-logic',
-    title: 'Biến và Logic',
-    description:
-      'Làm chủ tư duy logic với Scratch! Bạn sẽ sử dụng biến để lưu trữ điểm số, tạo điều kiện if-else để xây dựng game tương tác, và phát triển các chương trình thông minh, phản hồi linh hoạt với người dùng.',
-    difficulty: 'Trung bình',
-    duration: '75 phút',
-    category: 'interactive',
-    objectives: [
-      'Hiểu khái niệm biến và cách sử dụng',
-      'Sử dụng câu lệnh if-else',
-      'Tạo chương trình tương tác với input',
-      'Xây dựng logic phức tạp với nhiều điều kiện',
-    ],
-    materials: ['Scratch editor', 'Notebook để ghi chú logic', 'Ý tưởng cho game đơn giản'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1509048191080-d2e2678e67b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=FgPFIzJ_Jxk',
-    codeBlocks: [
-      'set score to 0',
-      'change score by 1',
-      'if touching edge then',
-      'if key space pressed?',
-      'ask "What\'s your name?" and wait',
-      'answer',
-      'if answer = "yes" then',
-      'else',
-      'random 1 to 10',
-    ],
-    exercises: [
+    vietnamContext: {
+      title: 'Kể chuyện Lịch sử Việt Nam bằng Scratch',
+      content: [
+        'Học sinh Việt Nam có thể dùng Scratch để tái hiện các câu chuyện lịch sử như "Sự tích Hồ Gươm" hay "Trận chiến trên sông Bạch Đằng".',
+        'Các dự án Scratch về văn hóa Việt Nam, giới thiệu về áo dài, nón lá, hay các món ăn truyền thống, thường đạt giải cao trong các cuộc thi.',
+        'Việc lồng tiếng Việt cho các nhân vật trong dự án Scratch giúp học sinh rèn luyện kỹ năng ngôn ngữ và biểu cảm.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Hoài An',
+      title: 'Nhà thiết kế đồ họa & Motion Graphic',
+      company: 'Freelancer',
+      imageUrl: '/placeholder-attraction.svg',
+      quote: 'Nguyên tắc kể chuyện bằng hình ảnh trong Scratch cũng tương tự như trong ngành thiết kế chuyển động chuyên nghiệp. Bắt đầu sớm với Scratch là một lợi thế lớn.',
+    },
+    quizzes: [
       {
-        id: 'ex1-score-system',
-        title: 'Hệ Thống Điểm Số',
-        description: 'Tạo game đơn giản với hệ thống tính điểm',
-        difficulty: 'Trung bình',
-        requiredBlocks: [
-          'when green flag clicked',
-          'set score to 0',
-          'when this sprite clicked',
-          'change score by 1',
-          'say "Score:" join score for 1 seconds',
-        ],
-        expectedBehavior: 'Click vào sprite để tăng điểm và hiển thị',
-        hints: [
-          'Tạo biến "score" trước khi sử dụng',
-          'Khởi tạo điểm về 0 khi bắt đầu',
-          'Tăng điểm khi click sprite',
-          'Hiển thị điểm hiện tại',
-        ],
+        question: 'Để một nhân vật gửi tín hiệu cho một nhân vật khác hành động, bạn nên dùng cặp khối lệnh nào?',
+        options: ['nói và đợi', 'phát tin và khi nhận tin', 'đợi và lặp lại', 'chuyển trang phục và chuyển phông nền'],
+        correctAnswerIndex: 1,
+        explanation: 'Cặp khối "phát tin" (broadcast) và "khi nhận tin" (when I receive) là cơ chế chính trong Scratch để các nhân vật và đối tượng khác nhau có thể giao tiếp và kích hoạt hành động của nhau.',
       },
-      {
-        id: 'ex2-guessing-game',
-        title: 'Game Đoán Số',
-        description: 'Tạo game đoán số ngẫu nhiên với phản hồi',
-        difficulty: 'Khó',
-        requiredBlocks: [
-          'set random number to random 1 to 10',
-          'ask "Guess a number (1-10)" and wait',
-          'if answer = random number then',
-          'say "Correct!" for 2 seconds',
-          'else',
-          'say "Try again!" for 2 seconds',
-        ],
-        expectedBehavior: 'Người chơi đoán số, chương trình phản hồi đúng/sai',
-        hints: [
-          'Tạo biến để lưu số ngẫu nhiên',
-          'Sử dụng "random 1 to 10" tạo số bất kỳ',
-          'So sánh câu trả lời với số đã tạo',
-          'Đưa ra phản hồi phù hợp',
-        ],
-      },
-    ],
-    realWorldApplications: [
-      'Game giáo dục với scoring',
-      'Quiz và assessment tools',
-      'Calculator đơn giản',
-      'Form nhập liệu tương tác',
-      'Simulation với parameter',
-    ],
-    competitions: [
-      'Logic Programming Challenge',
-      'Educational Game Development',
-      'Interactive Media Contest',
-      'Problem Solving with Code',
-      'Youth Innovation Awards',
     ],
   },
   {
     id: 'scratch-game-development',
-    title: 'Phát Triển Game',
+    title: 'Xây Dựng Game Đầu Tiên',
     description:
-      'Trở thành nhà phát triển game nhí! Bạn sẽ tự tay thiết kế gameplay, xây dựng hệ thống level, thêm hiệu ứng đặc biệt và kiểm tra va chạm để tạo ra những trò chơi hấp dẫn, thử thách bạn bè.',
-    difficulty: 'Nâng cao',
-    duration: '120 phút',
-    category: 'games',
-    objectives: [
-      'Thiết kế gameplay và game mechanics',
-      'Implement collision detection',
-      'Tạo hệ thống level và progression',
-      'Thêm power-ups và special effects',
-    ],
-    materials: [
-      'Scratch editor',
-      'Sprites cho game (player, enemies, items)',
-      'Background images',
-      'Sound effects',
-      'Game design document',
-    ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=-4ItfZH06Yk',
-    codeBlocks: [
-      'when green flag clicked',
-      'if touching "enemy" then',
-      'change lives by -1',
-      'if lives < 1 then',
-      'broadcast "game over"',
-      'go to x: 0 y: 0',
-      'point towards "player"',
-      'move 2 steps',
-      'if on edge, bounce',
-    ],
-    exercises: [
-      {
-        id: 'ex1-avoid-game',
-        title: 'Game Tránh Vật Cản',
-        description: 'Tạo game player tránh enemies di chuyển ngẫu nhiên',
-        difficulty: 'Trung bình',
-        requiredBlocks: [
-          'when green flag clicked',
-          'forever',
-          'if key "left arrow" pressed?',
-          'change x by -5',
-          'if touching "enemy" then',
-          'say "Game Over!" for 2 seconds',
-        ],
-        expectedBehavior: 'Player điều khiển bằng phím mũi tên, tránh enemies',
-        hints: [
-          'Player di chuyển theo phím mũi tên',
-          'Enemies di chuyển tự động',
-          'Kiểm tra va chạm liên tục',
-          'Kết thúc game khi chạm enemy',
-        ],
-      },
-      {
-        id: 'ex2-platform-game',
-        title: 'Platform Game Cơ Bản',
-        description: 'Tạo game platform với gravity và jumping',
-        difficulty: 'Khó',
-        requiredBlocks: [
-          'when green flag clicked',
-          'set gravity to -0.5',
-          'change y by gravity',
-          'if touching color blue? then',
-          'set gravity to 0',
-          'if key "space" pressed? and touching color blue?',
-          'set gravity to 8',
-        ],
-        expectedBehavior: 'Player có thể nhảy và chịu tác động của trọng lực',
-        hints: [
-          'Gravity kéo player xuống liên tục',
-          'Nền tảng ngăn player rơi',
-          'Space bar để nhảy',
-          'Chỉ nhảy được khi đang đứng trên nền',
-        ],
-      },
-    ],
-    realWorldApplications: [
-      'Mobile game prototyping',
-      'Educational game design',
-      'Interactive learning tools',
-      'Game mechanics testing',
-      'User experience prototyping',
-    ],
-    competitions: [
-      'Scratch Game Jam',
-      'Youth Game Development Challenge',
-      'Educational Game Awards',
-      'Indie Game Development Contest',
-      'Creative Programming Olympics',
-    ],
-  },
-  {
-    id: 'scratch-advanced-features',
-    title: 'Tính Năng Nâng Cao',
-    description:
-      'Chinh phục Scratch với các tính năng nâng cao! Bạn sẽ tạo custom blocks, sử dụng clone để tạo hiệu ứng đặc biệt, vẽ hình nghệ thuật với pen extension và kết hợp mọi kỹ năng để xây dựng dự án phức tạp, sáng tạo không giới hạn.',
-    difficulty: 'Nâng cao',
+      'Từ ý tưởng đến một trò chơi hoàn chỉnh! Học cách tạo ra các game kinh điển như Pong, Flappy Bird hay Maze. Bạn sẽ được học về điều khiển nhân vật, xử lý va chạm, tính điểm và tạo ra các cấp độ thử thách.',
+    difficulty: 'Trung bình',
     duration: '90 phút',
-    category: 'advanced',
+    videoUrl: 'https://www.youtube.com/watch?v=DdgjVdF7p4I', // Hướng dẫn làm game Flappy Bird
+    imageUrl: 'https://i.ytimg.com/vi/DdgjVdF7p4I/hqdefault.jpg',
     objectives: [
-      'Tạo và sử dụng custom blocks',
-      'Sử dụng clones để tạo nhiều objects',
-      'Vẽ graphics với pen extension',
-      'Kết hợp tất cả kỹ năng trong dự án phức tạp',
+      'Điều khiển nhân vật bằng bàn phím hoặc chuột.',
+      'Sử dụng biến số (variables) để lưu trữ điểm số hoặc mạng sống.',
+      'Phát hiện va chạm giữa các nhân vật.',
+      'Sử dụng khối "nếu...thì" (if...then) để tạo logic cho game.',
+      'Tạo và nhân bản các đối tượng (cloning).',
     ],
-    materials: [
-      'Scratch editor với extensions',
-      'Pen extension',
-      'Music extension (tùy chọn)',
-      'Video sensing extension (tùy chọn)',
-    ],
-    imageUrl:
-      'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-    videoUrl: 'https://www.youtube.com/watch?v=S5TCrUGQASY',
-    codeBlocks: [
-      'define draw circle',
-      'create clone of myself',
-      'when I start as a clone',
-      'delete this clone',
-      'pen down',
-      'pen up',
-      'set pen color to red',
-      'change pen size by 1',
-    ],
+    prerequisites: ["Hoàn thành bài 'Hoạt cảnh & Kể chuyện'"],
     exercises: [
       {
-        id: 'ex1-custom-blocks',
-        title: 'Custom Blocks cho Shapes',
-        description: 'Tạo custom blocks để vẽ các hình học khác nhau',
+        title: 'Game "Hứng Táo"',
+        description: 'Tạo một game đơn giản trong đó người chơi di chuyển một cái bát để hứng những quả táo rơi từ trên xuống.',
         difficulty: 'Trung bình',
-        requiredBlocks: ['define draw square', 'pen down', 'repeat 4', 'move 100 steps', 'turn 90 degrees', 'pen up'],
-        expectedBehavior: 'Custom block vẽ hình vuông khi gọi',
-        hints: [
-          'Tạo custom block trong "My Blocks"',
-          'Đặt tên mô tả chức năng',
-          'Sử dụng pen để vẽ',
-          'Có thể thêm parameters cho custom block',
+        procedure: [
+          'Tạo nhân vật "Bát" có thể di chuyển sang trái/phải theo chuột.',
+          'Tạo nhân vật "Táo" liên tục rơi từ vị trí ngẫu nhiên ở phía trên.',
+          'Lập trình để khi "Táo" chạm vào "Bát", điểm số tăng lên và quả táo biến mất, sau đó xuất hiện lại từ đầu.',
+          'Nếu "Táo" rơi xuống đất, trò chơi kết thúc.',
         ],
-      },
-      {
-        id: 'ex2-clone-system',
-        title: 'Hệ Thống Clone cho Particles',
-        description: 'Tạo hiệu ứng particle bằng clone system',
-        difficulty: 'Khó',
-        requiredBlocks: [
-          'when green flag clicked',
-          'repeat 10',
-          'create clone of myself',
-          'when I start as a clone',
-          'point in direction random 1 to 360',
-          'repeat 30',
-          'move 5 steps',
-          'delete this clone',
-        ],
-        expectedBehavior: 'Tạo nhiều particles bay ra theo hướng ngẫu nhiên',
-        hints: [
-          'Master sprite tạo clones',
-          'Mỗi clone có hành vi riêng',
-          'Clones tự xóa sau khi hoàn thành',
-          'Giới hạn số lượng clones để tránh lag',
-        ],
+        expectedResults: 'Một trò chơi hoàn chỉnh với điều khiển, tính điểm và điều kiện thắng/thua.',
       },
     ],
     realWorldApplications: [
-      'Advanced game development',
-      'Data visualization',
-      'Artistic programming',
-      'Interactive art installations',
-      'Educational simulations',
+      'Phát triển game 2D đơn giản.',
+      'Tạo các bài tập tương tác trong giáo dục.',
+      'Thiết kế các thử thách logic và giải đố.',
     ],
-    competitions: [
-      'Advanced Scratch Programming',
-      'Creative Computing Showcase',
-      'Digital Art with Code',
-      'Innovation in Education Technology',
-      'International Programming Olympics',
+    vietnamContext: {
+      title: 'Từ game Scratch đến ngành Công nghiệp Game Việt Nam',
+      content: [
+        'Ngành công nghiệp game Việt Nam đang phát triển mạnh mẽ, và Scratch là bước khởi đầu cho nhiều nhà phát triển game tương lai.',
+        'Các khái niệm trong game Scratch như biến số, vòng lặp, điều kiện là nền tảng cho việc học các ngôn ngữ lập trình game chuyên nghiệp như C# (với Unity) hay C++ (với Unreal Engine).',
+        'Nhiều "game jam" (cuộc thi làm game trong thời gian ngắn) tại Việt Nam cũng chấp nhận các sản phẩm làm bằng Scratch, khuyến khích sự sáng tạo nhanh.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Hà Đông',
+      title: 'Nhà phát triển game & Tác giả Flappy Bird',
+      company: '.GEARS',
+      imageUrl: '/placeholder-attraction.svg',
+      quote: 'Một trò chơi không cần phức tạp để trở nên hấp dẫn. Sự đơn giản và một cơ chế chơi gây nghiện là chìa khóa. Scratch là nơi tuyệt vời để thử nghiệm những ý tưởng đó.',
+    },
+    quizzes: [
+      {
+        question: 'Để lưu trữ điểm số của người chơi trong game, bạn nên sử dụng công cụ nào trong Scratch?',
+        options: ['Danh sách (List)', 'Biến số (Variable)', 'Khối tùy chỉnh (My Blocks)', 'Tin nhắn (Broadcast)'],
+        correctAnswerIndex: 1,
+        explanation: 'Biến số (Variable) được dùng để lưu trữ các giá trị có thể thay đổi trong quá trình chạy chương trình, ví dụ như điểm số, mạng sống, hay thời gian.',
+      },
     ],
   },
 ];
-
-// Scratch programming concepts quiz
-export const scratchQuizzes = [
-  {
-    id: 'quiz-scratch-1',
-    lessonId: 'scratch-introduction',
-    question: 'Trong Scratch, khối nào được sử dụng để bắt đầu chương trình?',
-    options: ['when space key pressed', 'when green flag clicked', 'when this sprite clicked', 'forever'],
-    correctAnswer: 1,
-    explanation:
-      'Khối "when green flag clicked" được sử dụng để bắt đầu chương trình khi người dùng click vào lá cờ xanh.',
-  },
-  {
-    id: 'quiz-scratch-2',
-    lessonId: 'scratch-sprites-sounds',
-    question: 'Để gửi tin nhắn giữa các sprites, chúng ta sử dụng khối nào?',
-    options: ['say', 'broadcast', 'ask', 'think'],
-    correctAnswer: 1,
-    explanation: 'Khối "broadcast" được sử dụng để gửi tin nhắn đến tất cả sprites trong dự án.',
-  },
-  {
-    id: 'quiz-scratch-3',
-    lessonId: 'scratch-variables-logic',
-    question: 'Biến trong Scratch được sử dụng để làm gì?',
-    options: ['Chỉ để hiển thị text', 'Lưu trữ và thay đổi dữ liệu', 'Tạo âm thanh', 'Thay đổi costume'],
-    correctAnswer: 1,
-    explanation:
-      'Biến được sử dụng để lưu trữ dữ liệu như điểm số, tên người chơi, hoặc bất kỳ giá trị nào cần thay đổi trong chương trình.',
-  },
-  {
-    id: 'quiz-scratch-4',
-    lessonId: 'scratch-game-development',
-    question: 'Để kiểm tra va chạm giữa sprites, ta sử dụng khối nào?',
-    options: ['touching mouse-pointer?', 'touching edge?', 'touching [sprite name]?', 'key pressed?'],
-    correctAnswer: 2,
-    explanation: 'Khối "touching [sprite name]?" kiểm tra xem sprite hiện tại có chạm vào sprite khác hay không.',
-  },
-];
-
-// Popular Scratch project templates
-export const scratchProjectTemplates = [
-  {
-    id: 'template-platformer',
-    title: 'Platform Game Template',
-    description: 'Template cơ bản cho game platform với gravity và collision',
-    category: 'games',
-    difficulty: 'Trung bình',
-    features: [
-      'Player movement với phím mũi tên',
-      'Gravity system',
-      'Platform collision detection',
-      'Scoring system',
-      'Basic enemy AI',
-    ],
-    scratchUrl: 'https://scratch.mit.edu/projects/platformer-template/',
-  },
-  {
-    id: 'template-animation',
-    title: 'Animation Story Template',
-    description: 'Template cho tạo animation và kể chuyện',
-    category: 'animation',
-    difficulty: 'Cơ bản',
-    features: [
-      'Multiple scenes',
-      'Character dialogue',
-      'Background music',
-      'Smooth transitions',
-      'Interactive elements',
-    ],
-    scratchUrl: 'https://scratch.mit.edu/projects/animation-template/',
-  },
-  {
-    id: 'template-quiz',
-    title: 'Interactive Quiz Template',
-    description: 'Template cho tạo quiz tương tác với multiple choice',
-    category: 'interactive',
-    difficulty: 'Trung bình',
-    features: ['Question database', 'Score tracking', 'Timer system', 'Feedback messages', 'Results screen'],
-    scratchUrl: 'https://scratch.mit.edu/projects/quiz-template/',
-  },
-];
-
-const scratchData = {
-  scratchLessons,
-  scratchQuizzes,
-  scratchProjectTemplates,
-};
-
-export default scratchData;

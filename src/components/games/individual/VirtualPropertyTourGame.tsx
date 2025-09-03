@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Trophy, Home, Clock, Camera, MapPin, Eye, Users, Star } from 'lucide-react';
 
 interface GameProps {
@@ -58,7 +58,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     market_appeal: 80,
     tech_requirements: 40,
     budget_multiplier: 1.0,
-    description: 'Căn hộ tiêu chuẩn trong khu chung cư cao cấp'
+    description: 'Căn hộ tiêu chuẩn trong khu chung cư cao cấp',
   },
   {
     id: 'villa-luxury',
@@ -70,7 +70,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     market_appeal: 95,
     tech_requirements: 80,
     budget_multiplier: 2.5,
-    description: 'Biệt thự sang trọng với sân vườn và tiện ích đầy đủ'
+    description: 'Biệt thự sang trọng với sân vườn và tiện ích đầy đủ',
   },
   {
     id: 'office-building',
@@ -82,7 +82,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     market_appeal: 75,
     tech_requirements: 90,
     budget_multiplier: 1.8,
-    description: 'Tòa nhà văn phòng hiện đại cho doanh nghiệp'
+    description: 'Tòa nhà văn phòng hiện đại cho doanh nghiệp',
   },
   {
     id: 'historic-mansion',
@@ -94,7 +94,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     market_appeal: 90,
     tech_requirements: 60,
     budget_multiplier: 2.0,
-    description: 'Dinh thự cổ kính với giá trị lịch sử cao'
+    description: 'Dinh thự cổ kính với giá trị lịch sử cao',
   },
   {
     id: 'retail-center',
@@ -106,7 +106,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     market_appeal: 85,
     tech_requirements: 95,
     budget_multiplier: 2.2,
-    description: 'Trung tâm mua sắm với nhiều cửa hàng và dịch vụ'
+    description: 'Trung tâm mua sắm với nhiều cửa hàng và dịch vụ',
   },
   {
     id: 'warehouse-modern',
@@ -118,8 +118,8 @@ const PROPERTY_TYPES: PropertyType[] = [
     market_appeal: 60,
     tech_requirements: 70,
     budget_multiplier: 1.3,
-    description: 'Kho bãi hiện đại với hệ thống tự động hóa'
-  }
+    description: 'Kho bãi hiện đại với hệ thống tự động hóa',
+  },
 ];
 
 const TOUR_TECHNOLOGIES: TourTechnology[] = [
@@ -133,7 +133,7 @@ const TOUR_TECHNOLOGIES: TourTechnology[] = [
     cost: 40,
     setup_time: 30,
     tech_complexity: 50,
-    description: 'Camera 360° chất lượng 4K với ổn định hình ảnh'
+    description: 'Camera 360° chất lượng 4K với ổn định hình ảnh',
   },
   {
     id: 'vr-headset-kit',
@@ -145,7 +145,7 @@ const TOUR_TECHNOLOGIES: TourTechnology[] = [
     cost: 60,
     setup_time: 45,
     tech_complexity: 80,
-    description: 'Trải nghiệm VR hoàn toàn với tương tác thực tế'
+    description: 'Trải nghiệm VR hoàn toàn với tương tác thực tế',
   },
   {
     id: 'drone-professional',
@@ -157,7 +157,7 @@ const TOUR_TECHNOLOGIES: TourTechnology[] = [
     cost: 50,
     setup_time: 40,
     tech_complexity: 70,
-    description: 'Drone 4K với gimbal ổn định cho góc nhìn từ trên cao'
+    description: 'Drone 4K với gimbal ổn định cho góc nhìn từ trên cao',
   },
   {
     id: 'ai-tour-guide',
@@ -169,7 +169,7 @@ const TOUR_TECHNOLOGIES: TourTechnology[] = [
     cost: 35,
     setup_time: 25,
     tech_complexity: 85,
-    description: 'AI chatbot thông minh giải đáp thắc mắc và hướng dẫn'
+    description: 'AI chatbot thông minh giải đáp thắc mắc và hướng dẫn',
   },
   {
     id: 'ar-furniture',
@@ -181,7 +181,7 @@ const TOUR_TECHNOLOGIES: TourTechnology[] = [
     cost: 45,
     setup_time: 35,
     tech_complexity: 75,
-    description: 'Thử nghiệm nội thất thực tế ảo tăng cường'
+    description: 'Thử nghiệm nội thất thực tế ảo tăng cường',
   },
   {
     id: 'interactive-hotspot',
@@ -193,7 +193,7 @@ const TOUR_TECHNOLOGIES: TourTechnology[] = [
     cost: 25,
     setup_time: 20,
     tech_complexity: 40,
-    description: 'Các điểm click tương tác với thông tin chi tiết'
+    description: 'Các điểm click tương tác với thông tin chi tiết',
   },
   {
     id: 'live-streaming',
@@ -205,8 +205,8 @@ const TOUR_TECHNOLOGIES: TourTechnology[] = [
     cost: 30,
     setup_time: 20,
     tech_complexity: 60,
-    description: 'Tour trực tiếp với tương tác realtime'
-  }
+    description: 'Tour trực tiếp với tương tác realtime',
+  },
 ];
 
 const TOUR_FEATURES: TourFeature[] = [
@@ -219,7 +219,7 @@ const TOUR_FEATURES: TourFeature[] = [
     market_impact: 90,
     cost: 50,
     required_tech: ['360-camera-pro', 'ar-furniture'],
-    description: 'Trang trí nội thất ảo để tăng tính hấp dẫn'
+    description: 'Trang trí nội thất ảo để tăng tính hấp dẫn',
   },
   {
     id: 'multi-language',
@@ -230,7 +230,7 @@ const TOUR_FEATURES: TourFeature[] = [
     market_impact: 80,
     cost: 25,
     required_tech: ['ai-tour-guide'],
-    description: 'Hỗ trợ nhiều ngôn ngữ cho khách quốc tế'
+    description: 'Hỗ trợ nhiều ngôn ngữ cho khách quốc tế',
   },
   {
     id: 'virtual-measurement',
@@ -241,7 +241,7 @@ const TOUR_FEATURES: TourFeature[] = [
     market_impact: 85,
     cost: 35,
     required_tech: ['360-camera-pro', 'ar-furniture'],
-    description: 'Đo kích thước phòng và vật dụng trực tiếp trong tour'
+    description: 'Đo kích thước phòng và vật dụng trực tiếp trong tour',
   },
   {
     id: 'group-tour',
@@ -252,7 +252,7 @@ const TOUR_FEATURES: TourFeature[] = [
     market_impact: 85,
     cost: 40,
     required_tech: ['vr-headset-kit', 'live-streaming'],
-    description: 'Nhiều người cùng tham gia tour và tương tác'
+    description: 'Nhiều người cùng tham gia tour và tương tác',
   },
   {
     id: 'behavior-analytics',
@@ -263,7 +263,7 @@ const TOUR_FEATURES: TourFeature[] = [
     market_impact: 95,
     cost: 45,
     required_tech: ['ai-tour-guide', 'interactive-hotspot'],
-    description: 'Theo dõi và phân tích hành vi khách hàng'
+    description: 'Theo dõi và phân tích hành vi khách hàng',
   },
   {
     id: 'weather-simulation',
@@ -274,7 +274,7 @@ const TOUR_FEATURES: TourFeature[] = [
     market_impact: 75,
     cost: 55,
     required_tech: ['vr-headset-kit', '360-camera-pro'],
-    description: 'Xem bất động sản trong các điều kiện thời tiết khác nhau'
+    description: 'Xem bất động sản trong các điều kiện thời tiết khác nhau',
   },
   {
     id: 'price-calculator',
@@ -285,110 +285,117 @@ const TOUR_FEATURES: TourFeature[] = [
     market_impact: 90,
     cost: 30,
     required_tech: ['ai-tour-guide'],
-    description: 'Tính toán giá và chi phí theo từng tùy chọn'
-  }
+    description: 'Tính toán giá và chi phí theo từng tùy chọn',
+  },
 ];
 
 const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'property-selection' | 'technology-selection' | 'feature-selection' | 'production' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'property-selection' | 'technology-selection' | 'feature-selection' | 'production' | 'results'
+  >('briefing');
   const [selectedProperty, setSelectedProperty] = useState<PropertyType | null>(null);
   const [selectedTechnologies, setSelectedTechnologies] = useState<TourTechnology[]>([]);
   const [selectedFeatures, setSelectedFeatures] = useState<TourFeature[]>([]);
-  const [budget, setBudget] = useState(400);
+  const [budget] = useState(400);
   const [productionProgress, setProductionProgress] = useState(0);
-  const [isProducing, setIsProducing] = useState(false);
 
   // Tour quality metrics
   const [immersionLevel, setImmersionLevel] = useState(0);
   const [productionQuality, setProductionQuality] = useState(0);
   const [userEngagement, setUserEngagement] = useState(0);
 
-  const calculateTotalCost = () => {
+  const calculateTotalCost = useCallback(() => {
     if (!selectedProperty) return 0;
-    
+
     const techCost = selectedTechnologies.reduce((sum, t) => sum + t.cost, 0);
     const featureCost = selectedFeatures.reduce((sum, f) => sum + f.cost, 0);
     return Math.round((techCost + featureCost) * selectedProperty.budget_multiplier);
-  };
+  }, [selectedProperty, selectedTechnologies, selectedFeatures]);
 
   const canAfford = calculateTotalCost() <= budget;
 
-  const calculateTourQuality = () => {
+  const calculateTourQuality = useCallback(() => {
     if (!selectedProperty || selectedTechnologies.length === 0) {
       return { immersion: 0, quality: 0, engagement: 0 };
     }
-    
+
     // Immersion level
-    const techImmersion = selectedTechnologies.reduce((sum, t) => sum + t.immersion_level, 0) / selectedTechnologies.length;
+    const techImmersion =
+      selectedTechnologies.reduce((sum, t) => sum + t.immersion_level, 0) / selectedTechnologies.length;
     const propertyComplexity = selectedProperty.complexity;
-    const featureImmersion = selectedFeatures.reduce((sum, f) => sum + f.engagement_boost, 0) / Math.max(selectedFeatures.length, 1);
-    const immersionScore = Math.round((techImmersion * 0.6 + featureImmersion * 0.3 + (100 - propertyComplexity) * 0.1));
-    
+    const featureImmersion =
+      selectedFeatures.reduce((sum, f) => sum + f.engagement_boost, 0) / Math.max(selectedFeatures.length, 1);
+    const immersionScore = Math.round(techImmersion * 0.6 + featureImmersion * 0.3 + (100 - propertyComplexity) * 0.1);
+
     // Production quality
-    const techQuality = selectedTechnologies.reduce((sum, t) => sum + t.production_quality, 0) / selectedTechnologies.length;
-    const featureComplexity = selectedFeatures.reduce((sum, f) => sum + (100 - f.production_complexity), 0) / Math.max(selectedFeatures.length, 1);
+    const techQuality =
+      selectedTechnologies.reduce((sum, t) => sum + t.production_quality, 0) / selectedTechnologies.length;
+    const featureComplexity =
+      selectedFeatures.reduce((sum, f) => sum + (100 - f.production_complexity), 0) /
+      Math.max(selectedFeatures.length, 1);
     const propertyAppeal = selectedProperty.market_appeal;
-    const qualityScore = Math.round((techQuality * 0.5 + featureComplexity * 0.3 + propertyAppeal * 0.2));
-    
+    const qualityScore = Math.round(techQuality * 0.5 + featureComplexity * 0.3 + propertyAppeal * 0.2);
+
     // User engagement
-    const techEngagement = selectedTechnologies.reduce((sum, t) => sum + t.user_engagement, 0) / selectedTechnologies.length;
-    const featureEngagement = selectedFeatures.reduce((sum, f) => sum + f.engagement_boost, 0) / Math.max(selectedFeatures.length, 1);
-    const engagementScore = Math.round((techEngagement * 0.5 + featureEngagement * 0.5));
-    
+    const techEngagement =
+      selectedTechnologies.reduce((sum, t) => sum + t.user_engagement, 0) / selectedTechnologies.length;
+    const featureEngagement =
+      selectedFeatures.reduce((sum, f) => sum + f.engagement_boost, 0) / Math.max(selectedFeatures.length, 1);
+    const engagementScore = Math.round(techEngagement * 0.5 + featureEngagement * 0.5);
+
     return {
       immersion: Math.min(100, immersionScore),
       quality: Math.min(100, qualityScore),
-      engagement: Math.min(100, engagementScore)
+      engagement: Math.min(100, engagementScore),
     };
-  };
+  }, [selectedProperty, selectedTechnologies, selectedFeatures]);
 
-  const startProduction = () => {
+  const startProduction = useCallback(() => {
     if (!selectedProperty || selectedTechnologies.length === 0 || !canAfford) {
       onComplete(false, 0);
       return;
     }
 
     setGamePhase('production');
-    setIsProducing(true);
-    
+
     const tourResults = calculateTourQuality();
     setImmersionLevel(tourResults.immersion);
     setProductionQuality(tourResults.quality);
     setUserEngagement(tourResults.engagement);
-    
-    const totalComplexity = selectedProperty.complexity + 
+
+    const totalComplexity =
+      selectedProperty.complexity +
       selectedTechnologies.reduce((sum, t) => sum + t.setup_time, 0) / 10 +
       selectedFeatures.reduce((sum, f) => sum + f.production_complexity, 0) / 10;
-    
+
     const interval = setInterval(() => {
-      setProductionProgress(prev => {
+      setProductionProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setIsProducing(false);
           setGamePhase('results');
           return 100;
         }
         return prev + Math.max(1, (100 / totalComplexity) * 2);
       });
     }, 300);
-  };
+  }, [selectedProperty, selectedTechnologies, selectedFeatures, canAfford, onComplete, calculateTourQuality]);
 
-  const getOverallScore = () => {
+  const getOverallScore = useCallback(() => {
     const tourResults = calculateTourQuality();
-    const costEfficiency = Math.round((budget - calculateTotalCost()) / budget * 100);
+    const costEfficiency = Math.round(((budget - calculateTotalCost()) / budget) * 100);
     const technologyDiversity = Math.min(20, selectedTechnologies.length * 4);
     const featureDiversity = Math.min(15, selectedFeatures.length * 3);
     const marketFit = selectedProperty?.market_appeal || 0;
-    
+
     return Math.round(
-      tourResults.immersion * 0.25 + 
-      tourResults.quality * 0.25 + 
-      tourResults.engagement * 0.25 + 
-      costEfficiency * 0.1 + 
-      (technologyDiversity + featureDiversity) * 0.1 +
-      marketFit * 0.05
+      tourResults.immersion * 0.25 +
+        tourResults.quality * 0.25 +
+        tourResults.engagement * 0.25 +
+        costEfficiency * 0.1 +
+        (technologyDiversity + featureDiversity) * 0.1 +
+        marketFit * 0.05,
     );
-  };
+  }, [calculateTourQuality, selectedProperty, selectedTechnologies, selectedFeatures, budget, calculateTotalCost]);
 
   useEffect(() => {
     if (timeLeft <= 0 && gamePhase !== 'results') {
@@ -405,9 +412,7 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
               <Eye className="w-16 h-16 text-purple-400" />
             </div>
             <h1 className="text-4xl font-bold text-white mb-4">Virtual Property Tour</h1>
-            <p className="text-xl text-gray-300 mb-6">
-              Tạo tour bất động sản ảo với công nghệ hiện đại!
-            </p>
+            <p className="text-xl text-gray-300 mb-6">Tạo tour bất động sản ảo với công nghệ hiện đại!</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -431,10 +436,18 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                 Tiêu chí đánh giá
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-purple-400">Độ nhập vai (25%)</span> - Trải nghiệm thực tế</li>
-                <li>• <span className="text-blue-400">Chất lượng (25%)</span> - Kỹ thuật sản xuất</li>
-                <li>• <span className="text-green-400">Tương tác (25%)</span> - Mức độ hấp dẫn</li>
-                <li>• <span className="text-yellow-400">Hiệu quả (25%)</span> - Chi phí và đa dạng</li>
+                <li>
+                  • <span className="text-purple-400">Độ nhập vai (25%)</span> - Trải nghiệm thực tế
+                </li>
+                <li>
+                  • <span className="text-blue-400">Chất lượng (25%)</span> - Kỹ thuật sản xuất
+                </li>
+                <li>
+                  • <span className="text-green-400">Tương tác (25%)</span> - Mức độ hấp dẫn
+                </li>
+                <li>
+                  • <span className="text-yellow-400">Hiệu quả (25%)</span> - Chi phí và đa dạng
+                </li>
               </ul>
             </div>
           </div>
@@ -468,33 +481,37 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {PROPERTY_TYPES.map((property) => {
               const isSelected = selectedProperty?.id === property.id;
-              
+
               return (
                 <div
                   key={property.id}
                   className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 cursor-pointer transition-all duration-200 hover:scale-105 ${
-                    isSelected
-                      ? 'border-purple-500 bg-purple-500/20'
-                      : 'border-white/20 hover:border-purple-400/50'
+                    isSelected ? 'border-purple-500 bg-purple-500/20' : 'border-white/20 hover:border-purple-400/50'
                   }`}
                   onClick={() => setSelectedProperty(property)}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <Home className="w-8 h-8 text-purple-400" />
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      property.category === 'residential' ? 'bg-blue-500/20 text-blue-400' :
-                      property.category === 'commercial' ? 'bg-green-500/20 text-green-400' :
-                      property.category === 'luxury' ? 'bg-yellow-500/20 text-yellow-400' :
-                      property.category === 'historical' ? 'bg-orange-500/20 text-orange-400' :
-                      'bg-gray-500/20 text-gray-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        property.category === 'residential'
+                          ? 'bg-blue-500/20 text-blue-400'
+                          : property.category === 'commercial'
+                            ? 'bg-green-500/20 text-green-400'
+                            : property.category === 'luxury'
+                              ? 'bg-yellow-500/20 text-yellow-400'
+                              : property.category === 'historical'
+                                ? 'bg-orange-500/20 text-orange-400'
+                                : 'bg-gray-500/20 text-gray-400'
+                      }`}
+                    >
                       {property.category}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{property.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{property.description}</p>
-                  
+
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Diện tích:</span>
@@ -507,27 +524,24 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                     <div className="flex justify-between">
                       <span className="text-gray-400">Độ phức tạp:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-red-500 h-2 rounded-full" 
-                          style={{width: `${property.complexity}%`}}
-                        ></div>
+                        <div className="bg-red-500 h-2 rounded-full" style={{ width: `${property.complexity}%` }}></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Hấp dẫn thị trường:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${property.market_appeal}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${property.market_appeal}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Yêu cầu công nghệ:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-blue-500 h-2 rounded-full" 
-                          style={{width: `${property.tech_requirements}%`}}
+                        <div
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: `${property.tech_requirements}%` }}
                         ></div>
                       </div>
                     </div>
@@ -536,7 +550,7 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                       <span className="text-yellow-400">x{property.budget_multiplier}</span>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -579,9 +593,9 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {TOUR_TECHNOLOGIES.map((tech) => {
-              const isSelected = selectedTechnologies.some(t => t.id === tech.id);
+              const isSelected = selectedTechnologies.some((t) => t.id === tech.id);
               const canSelect = selectedTechnologies.length < 5;
-              
+
               return (
                 <div
                   key={tech.id}
@@ -589,14 +603,14 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                     isSelected
                       ? 'border-blue-500 bg-blue-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-blue-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-blue-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedTechnologies(prev => prev.filter(t => t.id !== tech.id));
+                      setSelectedTechnologies((prev) => prev.filter((t) => t.id !== tech.id));
                     } else if (canSelect) {
-                      setSelectedTechnologies(prev => [...prev, tech]);
+                      setSelectedTechnologies((prev) => [...prev, tech]);
                     }
                   }}
                 >
@@ -614,62 +628,69 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                       <div className="text-xs text-gray-400">{tech.setup_time}min setup</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{tech.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{tech.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div>
                       <span className="text-gray-400">Nhập vai:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-purple-500 h-1 rounded-full" 
-                          style={{width: `${tech.immersion_level}%`}}
+                        <div
+                          className="bg-purple-500 h-1 rounded-full"
+                          style={{ width: `${tech.immersion_level}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Chất lượng:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${tech.production_quality}%`}}
+                        <div
+                          className="bg-blue-500 h-1 rounded-full"
+                          style={{ width: `${tech.production_quality}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Tương tác:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${tech.user_engagement}%`}}
+                        <div
+                          className="bg-green-500 h-1 rounded-full"
+                          style={{ width: `${tech.user_engagement}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Độ khó:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-red-500 h-1 rounded-full" 
-                          style={{width: `${tech.tech_complexity}%`}}
+                        <div
+                          className="bg-red-500 h-1 rounded-full"
+                          style={{ width: `${tech.tech_complexity}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-4 text-center">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      tech.type === '360_camera' ? 'bg-blue-500/20 text-blue-400' :
-                      tech.type === 'vr_equipment' ? 'bg-purple-500/20 text-purple-400' :
-                      tech.type === 'drone' ? 'bg-green-500/20 text-green-400' :
-                      tech.type === 'ai_assistant' ? 'bg-yellow-500/20 text-yellow-400' :
-                      tech.type === 'ar_features' ? 'bg-pink-500/20 text-pink-400' :
-                      'bg-orange-500/20 text-orange-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        tech.type === '360_camera'
+                          ? 'bg-blue-500/20 text-blue-400'
+                          : tech.type === 'vr_equipment'
+                            ? 'bg-purple-500/20 text-purple-400'
+                            : tech.type === 'drone'
+                              ? 'bg-green-500/20 text-green-400'
+                              : tech.type === 'ai_assistant'
+                                ? 'bg-yellow-500/20 text-yellow-400'
+                                : tech.type === 'ar_features'
+                                  ? 'bg-pink-500/20 text-pink-400'
+                                  : 'bg-orange-500/20 text-orange-400'
+                      }`}
+                    >
                       {tech.type.replace('_', ' ')}
                     </span>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -712,18 +733,18 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {TOUR_FEATURES.map((feature) => {
-              const isSelected = selectedFeatures.some(f => f.id === feature.id);
-              const hasRequiredTech = feature.required_tech.every(techId =>
-                selectedTechnologies.some(t => t.id === techId)
+              const isSelected = selectedFeatures.some((f) => f.id === feature.id);
+              const hasRequiredTech = feature.required_tech.every((techId) =>
+                selectedTechnologies.some((t) => t.id === techId),
               );
-              const currentCostWithoutFeature = selectedTechnologies.reduce((sum, t) => sum + t.cost, 0) +
-                selectedFeatures.filter(f => f.id !== feature.id).reduce((sum, f) => sum + f.cost, 0);
-              const totalCostWithFeature = selectedProperty ? 
-                (currentCostWithoutFeature + feature.cost) * selectedProperty.budget_multiplier : 0;
-              const canSelect = selectedFeatures.length < 5 && 
-                hasRequiredTech && 
-                totalCostWithFeature <= budget;
-              
+              const currentCostWithoutFeature =
+                selectedTechnologies.reduce((sum, t) => sum + t.cost, 0) +
+                selectedFeatures.filter((f) => f.id !== feature.id).reduce((sum, f) => sum + f.cost, 0);
+              const totalCostWithFeature = selectedProperty
+                ? (currentCostWithoutFeature + feature.cost) * selectedProperty.budget_multiplier
+                : 0;
+              const canSelect = selectedFeatures.length < 5 && hasRequiredTech && totalCostWithFeature <= budget;
+
               return (
                 <div
                   key={feature.id}
@@ -731,14 +752,14 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                     isSelected
                       ? 'border-green-500 bg-green-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-green-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-green-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedFeatures(prev => prev.filter(f => f.id !== feature.id));
+                      setSelectedFeatures((prev) => prev.filter((f) => f.id !== feature.id));
                     } else if (canSelect) {
-                      setSelectedFeatures(prev => [...prev, feature]);
+                      setSelectedFeatures((prev) => [...prev, feature]);
                     }
                   }}
                 >
@@ -752,35 +773,43 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                     </div>
                     <div className="text-right">
                       <span className="text-yellow-400 font-bold text-sm">{feature.cost}M</span>
-                      <div className={`text-xs px-1 py-0.5 rounded mt-1 ${
-                        feature.production_complexity <= 40 ? 'bg-green-500/20 text-green-400' :
-                        feature.production_complexity <= 70 ? 'bg-yellow-500/20 text-yellow-400' :
-                        'bg-red-500/20 text-red-400'
-                      }`}>
-                        {feature.production_complexity <= 40 ? 'Dễ' : feature.production_complexity <= 70 ? 'TB' : 'Khó'}
+                      <div
+                        className={`text-xs px-1 py-0.5 rounded mt-1 ${
+                          feature.production_complexity <= 40
+                            ? 'bg-green-500/20 text-green-400'
+                            : feature.production_complexity <= 70
+                              ? 'bg-yellow-500/20 text-yellow-400'
+                              : 'bg-red-500/20 text-red-400'
+                        }`}
+                      >
+                        {feature.production_complexity <= 40
+                          ? 'Dễ'
+                          : feature.production_complexity <= 70
+                            ? 'TB'
+                            : 'Khó'}
                       </div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{feature.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{feature.description}</p>
-                  
+
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Tăng tương tác:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${feature.engagement_boost}%`}}
+                        <div
+                          className="bg-green-500 h-1 rounded-full"
+                          style={{ width: `${feature.engagement_boost}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Tác động thị trường:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${feature.market_impact}%`}}
+                        <div
+                          className="bg-blue-500 h-1 rounded-full"
+                          style={{ width: `${feature.market_impact}%` }}
                         ></div>
                       </div>
                     </div>
@@ -790,27 +819,32 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                     <div className="mt-3 p-2 bg-red-500/20 rounded text-xs">
                       <div className="text-red-400">Thiếu công nghệ cần thiết:</div>
                       <div className="text-gray-300">
-                        {feature.required_tech.filter(techId =>
-                          !selectedTechnologies.some(t => t.id === techId)
-                        ).map(techId => 
-                          TOUR_TECHNOLOGIES.find(t => t.id === techId)?.name
-                        ).join(', ')}
+                        {feature.required_tech
+                          .filter((techId) => !selectedTechnologies.some((t) => t.id === techId))
+                          .map((techId) => TOUR_TECHNOLOGIES.find((t) => t.id === techId)?.name)
+                          .join(', ')}
                       </div>
                     </div>
                   )}
 
                   <div className="mt-4 text-center">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      feature.category === 'visual' ? 'bg-blue-500/20 text-blue-400' :
-                      feature.category === 'interactive' ? 'bg-green-500/20 text-green-400' :
-                      feature.category === 'information' ? 'bg-yellow-500/20 text-yellow-400' :
-                      feature.category === 'social' ? 'bg-purple-500/20 text-purple-400' :
-                      'bg-red-500/20 text-red-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        feature.category === 'visual'
+                          ? 'bg-blue-500/20 text-blue-400'
+                          : feature.category === 'interactive'
+                            ? 'bg-green-500/20 text-green-400'
+                            : feature.category === 'information'
+                              ? 'bg-yellow-500/20 text-yellow-400'
+                              : feature.category === 'social'
+                                ? 'bg-purple-500/20 text-purple-400'
+                                : 'bg-red-500/20 text-red-400'
+                      }`}
+                    >
                       {feature.category}
                     </span>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -826,19 +860,27 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
             <div className="grid md:grid-cols-3 gap-4">
               <div>
                 <h4 className="text-lg font-semibold text-purple-400 mb-2">BĐS ({selectedProperty?.name})</h4>
-                <p className="text-gray-300 text-sm">{selectedProperty?.size}m² - {selectedProperty?.rooms} phòng</p>
+                <p className="text-gray-300 text-sm">
+                  {selectedProperty?.size}m² - {selectedProperty?.rooms} phòng
+                </p>
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-blue-400 mb-2">Công nghệ ({selectedTechnologies.length})</h4>
-                {selectedTechnologies.slice(0, 3).map(tech => (
-                  <p key={tech.id} className="text-gray-300 text-sm">{tech.name}</p>
+                {selectedTechnologies.slice(0, 3).map((tech) => (
+                  <p key={tech.id} className="text-gray-300 text-sm">
+                    {tech.name}
+                  </p>
                 ))}
-                {selectedTechnologies.length > 3 && <p className="text-gray-400 text-xs">+{selectedTechnologies.length - 3} khác</p>}
+                {selectedTechnologies.length > 3 && (
+                  <p className="text-gray-400 text-xs">+{selectedTechnologies.length - 3} khác</p>
+                )}
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-green-400 mb-2">Tính năng ({selectedFeatures.length})</h4>
-                {selectedFeatures.map(feature => (
-                  <p key={feature.id} className="text-gray-300 text-sm">{feature.name}</p>
+                {selectedFeatures.map((feature) => (
+                  <p key={feature.id} className="text-gray-300 text-sm">
+                    {feature.name}
+                  </p>
                 ))}
               </div>
             </div>
@@ -885,9 +927,9 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                 <span>{Math.round(productionProgress)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-6">
-                <div 
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 h-6 rounded-full transition-all duration-300" 
-                  style={{width: `${productionProgress}%`}}
+                <div
+                  className="bg-gradient-to-r from-purple-500 to-blue-500 h-6 rounded-full transition-all duration-300"
+                  style={{ width: `${productionProgress}%` }}
                 ></div>
               </div>
             </div>
@@ -899,9 +941,9 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                   <span className="text-white font-bold">{immersionLevel}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-purple-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${immersionLevel}%`}}
+                  <div
+                    className="bg-purple-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${immersionLevel}%` }}
                   ></div>
                 </div>
               </div>
@@ -912,9 +954,9 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                   <span className="text-white font-bold">{productionQuality}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${productionQuality}%`}}
+                  <div
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${productionQuality}%` }}
                   ></div>
                 </div>
               </div>
@@ -925,9 +967,9 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                   <span className="text-white font-bold">{userEngagement}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${userEngagement}%`}}
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${userEngagement}%` }}
                   ></div>
                 </div>
               </div>
@@ -982,18 +1024,23 @@ const VirtualPropertyTourGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
             <div className="bg-white/10 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-4">Đánh giá tổng thể</h3>
               <div className="space-y-2 text-gray-300">
-                {tourScore >= 90 && <p>🏆 Tour ảo xuất sắc! Khách hàng sẽ có trải nghiệm tuyệt vời và quyết định mua ngay.</p>}
-                {tourScore >= 80 && tourScore < 90 && <p>🌟 Tour ảo chất lượng cao! Công nghệ hiện đại tạo ấn tượng mạnh.</p>}
+                {tourScore >= 90 && (
+                  <p>🏆 Tour ảo xuất sắc! Khách hàng sẽ có trải nghiệm tuyệt vời và quyết định mua ngay.</p>
+                )}
+                {tourScore >= 80 && tourScore < 90 && (
+                  <p>🌟 Tour ảo chất lượng cao! Công nghệ hiện đại tạo ấn tượng mạnh.</p>
+                )}
                 {tourScore >= 70 && tourScore < 80 && <p>✅ Tour ảo tốt! Cần nâng cấp thêm tính năng để cạnh tranh.</p>}
                 {tourScore >= 60 && tourScore < 70 && <p>⚠️ Tour ảo cơ bản! Hãy đầu tư thêm công nghệ và tính năng.</p>}
                 {tourScore < 60 && <p>❌ Cần cải thiện đáng kể để thu hút khách hàng hiệu quả.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
                     <strong>Chi phí đầu tư:</strong> {calculateTotalCost()} triệu VNĐ
                   </p>
                   <p className="text-sm mt-2">
-                    <strong>Lưu ý:</strong> Tour ảo thành công cần cân bằng giữa công nghệ, tính năng và trải nghiệm khách hàng.
+                    <strong>Lưu ý:</strong> Tour ảo thành công cần cân bằng giữa công nghệ, tính năng và trải nghiệm
+                    khách hàng.
                   </p>
                 </div>
               </div>

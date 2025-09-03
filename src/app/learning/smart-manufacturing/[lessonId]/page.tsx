@@ -4,7 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { smartManufacturingLessons, SmartManufacturingLessonType } from '@/data/smart-manufacturing';
+import { smartManufacturingLessons } from '@/data/smart-manufacturing';
+import { SmartManufacturingLessonType } from '@/data/smart-manufacturing';
 import { PageProps } from '@/types';
 import { Factory, Cog, Zap } from 'lucide-react';
 
@@ -39,6 +40,7 @@ export default async function SmartManufacturingLessonPage({ params }: PageProps
           return <Factory className="w-5 h-5" />;
       }
     },
+    getFieldValue: (lesson) => lesson.technologyFocus,
   };
 
   const { lessonId } = await params;

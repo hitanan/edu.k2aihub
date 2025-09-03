@@ -102,25 +102,15 @@ export default function CityPageClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <Link
-                href="/"
-                className="flex items-center gap-3 hover:opacity-80 transition-opacity"
-              >
-                <h1 className="text-xl font-bold text-gray-900">
-                  Địa Lý Việt Nam
-                </h1>
+              <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <h1 className="text-xl font-bold text-gray-900">Địa Lý Việt Nam</h1>
               </Link>
               <nav className="hidden md:flex items-center gap-1 ml-6">
-                <Link
-                  href="/"
-                  className="text-gray-500 hover:text-gray-700 text-sm"
-                >
+                <Link href="/" className="text-gray-500 hover:text-gray-700 text-sm">
                   Trang Chủ
                 </Link>
                 <span className="text-gray-300 mx-2">/</span>
-                <span className="text-gray-900 text-sm font-medium">
-                  Địa Lý Việt Nam
-                </span>
+                <span className="text-gray-900 text-sm font-medium">Địa Lý Việt Nam</span>
               </nav>
             </div>
           </div>
@@ -131,11 +121,7 @@ export default function CityPageClient() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Search */}
         <div className="mb-8">
-          <Search
-            cities={cities}
-            onFilterChange={handleFilterChange}
-            onCitySelect={handleCitySelect}
-          />
+          <Search cities={cities} onFilterChange={handleFilterChange} onCitySelect={handleCitySelect} />
         </div>
 
         {/* Map and Info Layout */}
@@ -149,9 +135,7 @@ export default function CityPageClient() {
               <p className="text-sm text-gray-600">
                 Nhấp vào để xem thông tin.
                 {hoveredCity && (
-                  <span className="ml-2 font-medium text-blue-600">
-                    Đang di chuột: {hoveredCity.name}
-                  </span>
+                  <span className="ml-2 font-medium text-blue-600">Đang di chuột: {hoveredCity.name}</span>
                 )}
               </p>
             </div>
@@ -167,8 +151,7 @@ export default function CityPageClient() {
             {filteredCities.length > 0 && (
               <div className="mt-4 p-3 bg-blue-50 rounded-lg">
                 <p className="text-sm text-blue-800">
-                  <strong>{filteredCities.length}</strong> thành phố phù hợp với
-                  tìm kiếm của bạn
+                  <strong>{filteredCities.length}</strong> thành phố phù hợp với tìm kiếm của bạn
                 </p>
               </div>
             )}
@@ -194,20 +177,14 @@ export default function CityPageClient() {
             href="/region"
             className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center hover:shadow-md hover:border-purple-300 transition-all duration-200 group"
           >
-            <div className="text-3xl font-bold text-purple-600 mb-2 group-hover:text-purple-700">
-              9
-            </div>
-            <div className="text-sm text-gray-600 group-hover:text-purple-600 font-medium">
-              Vùng Miền
-            </div>
+            <div className="text-3xl font-bold text-purple-600 mb-2 group-hover:text-purple-700">9</div>
+            <div className="text-sm text-gray-600 group-hover:text-purple-600 font-medium">Vùng Miền</div>
             <div className="text-xs text-purple-500 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
               Khám phá các vùng →
             </div>
           </Link>
           <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
-            <div className="text-3xl font-bold text-orange-600 mb-2">
-              102 Triệu
-            </div>
+            <div className="text-3xl font-bold text-orange-600 mb-2">102 Triệu</div>
             <div className="text-sm text-gray-600">Tổng Dân Số</div>
           </div>
         </div>

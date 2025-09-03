@@ -1,229 +1,183 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
-export interface SpaceLessonData extends BaseLessonData {
-  spaceConcepts?: string[];
-  missions?: string[];
-  technologies?: Array<{
+export interface SpaceExplorationLesson extends BaseLessonData {
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
     name: string;
-    description: string;
-    applications: string[];
-    currentStatus: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+  quizzes: Array<{
+    question: string;
+    options: string[];
+    correctAnswerIndex: number;
+    explanation: string;
   }>;
 }
 
-export const SpaceLessons: SpaceLessonData[] = [
+export const spaceLessons: SpaceExplorationLesson[] = [
   {
     id: 'space-exploration-fundamentals',
-    title: 'Cơ bản về Khám phá Vũ trụ',
-    description: 'Tìm hiểu lịch sử và nguyên lý cơ bản của khám phá vũ trụ, từ rocket science đến space missions.',
-    duration: '160 phút',
+    title: 'Nền tảng về Khám phá Vũ trụ',
+    description:
+      'Tìm hiểu lịch sử và các nguyên lý cơ bản của việc khám phá không gian, từ khoa học tên lửa đến các sứ mệnh không gian.',
+    duration: '90 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=mEEJNG4uAPM',
-    imageUrl: '/images/space-fundamentals.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     objectives: [
-      'Hiểu lịch sử khám phá vũ trụ từ Sputnik đến hiện tại',
-      'Nắm vững nguyên lý rocket propulsion và orbital mechanics',
-      'Tìm hiểu cấu trúc Hệ Mặt trời và các thiên thể',
-      'Khám phá các space agencies và missions nổi tiếng',
+      'Hiểu lịch sử khám phá vũ trụ từ vệ tinh Sputnik đến nay.',
+      'Nắm vững nguyên lý đẩy của tên lửa và cơ học quỹ đạo.',
+      'Tìm hiểu cấu trúc Hệ Mặt trời và các loại thiên thể.',
+      'Khám phá các cơ quan không gian và các sứ mệnh nổi tiếng.',
     ],
-    prerequisites: [
-      'Vật lý đại cương',
-      'Toán học cấp 3',
-      'Hiểu biết về khoa học cơ bản',
-      'Đam mê khám phá và công nghệ',
-    ],
+    prerequisites: ['Kiến thức Vật lý và Toán học cấp 3.', 'Đam mê khám phá và công nghệ.'],
     exercises: [
       {
-        title: 'Mission Planning Simulation',
-        description: 'Thiết kế và mô phỏng một mission khám phá sao Hỏa',
+        title: 'Mô phỏng Lập kế hoạch Sứ mệnh',
+        description: 'Sử dụng công cụ mô phỏng để thiết kế một sứ mệnh đơn giản khám phá Sao Hỏa.',
         difficulty: 'Trung bình',
-        materials: ['KSP (Kerbal Space Program)', 'Mission planning software', 'Orbital mechanics calculator'],
         procedure: [
-          'Phân tích launch window để đến sao Hỏa',
-          'Thiết kế spacecraft architecture và payload',
-          'Tính toán delta-v requirements cho mission',
-          'Plan trajectory với gravity assists',
-          'Design landing sequence và surface operations',
-          'Calculate mission duration và resource requirements',
-          'Simulate mission trong KSP hoặc software khác',
-          'Create mission timeline và risk assessment',
+          'Xác định "cửa sổ phóng" (launch window) tối ưu để đến Sao Hỏa.',
+          'Lựa chọn các thiết bị khoa học cần thiết cho tàu vũ trụ.',
+          'Tính toán sơ bộ lượng nhiên liệu cần thiết.',
+          'Vạch ra các giai đoạn chính của sứ mệnh: phóng, du hành, đi vào quỹ đạo, và hạ cánh.',
         ],
-        expectedResults: 'Complete mission plan với detailed timeline và resource calculations',
-        solution:
-          'Comprehensive Mars mission plan bao gồm: spacecraft design với mass budget 15,000kg, launch vehicle selection (Falcon Heavy), orbital mechanics calculations sử dụng Hohmann transfer, detailed mission timeline từ pre-launch đến surface operations, risk assessment với mitigation strategies, budget breakdown $2.5B, international collaboration framework, và technology demonstrations. Mission sẽ sử dụng robotic probe để explore Mars surface trong 26 months với scientific instruments bao gồm cameras, spectrometers, drill system, weather station, ground-penetrating radar và sample analysis laboratory.',
+        expectedResults: 'Một bản kế hoạch sứ mệnh sơ bộ với các giai đoạn và mục tiêu rõ ràng.',
       },
     ],
     realWorldApplications: [
-      'Satellite technology cho telecommunications',
-      'GPS và navigation systems',
-      'Earth observation cho climate monitoring',
-      'Space-based scientific research',
-      'Commercial space transportation',
+      'Công nghệ vệ tinh cho viễn thông và Internet.',
+      'Hệ thống định vị toàn cầu (GPS).',
+      'Quan sát Trái Đất để theo dõi biến đổi khí hậu.',
+      'Nghiên cứu khoa học trong môi trường không trọng lực.',
     ],
     caseStudies: [
       {
-        title: 'NASA Perseverance Mars Mission',
+        title: 'Sứ mệnh Sao Hỏa Perseverance của NASA',
         organization: 'NASA / JPL',
-        problem: 'Search for signs of ancient life on Mars và collect samples',
-        solution: 'Advanced rover với sophisticated scientific instruments và sample caching',
-        impact: 'Groundbreaking discoveries about Mars geology và potential for past life',
-        innovations: ['Autonomous helicopter flight', 'Advanced sample caching', 'AI-powered navigation'],
+        problem:
+          'Tìm kiếm dấu hiệu của sự sống cổ đại trên Sao Hỏa và thu thập các mẫu đất đá để mang về Trái Đất trong tương lai.',
+        solution:
+          'Triển khai một robot tự hành (rover) tiên tiến được trang bị các công cụ khoa học phức tạp và một hệ thống lưu trữ mẫu vật.',
+        impact:
+          'Mang lại những khám phá đột phá về địa chất Sao Hỏa, khả năng tồn tại của nước trong quá khứ và tiềm năng cho sự sống.',
+        innovations: [
+          'Trực thăng tự hành Ingenuity',
+          'Hệ thống thu thập và lưu mẫu vật tiên tiến',
+          'Công nghệ tự điều hướng bằng AI',
+        ],
       },
     ],
-    spaceConcepts: [
-      'Rocket Propulsion',
-      'Orbital Mechanics',
-      'Space Environment',
-      'Mission Design',
-      'Planetary Science',
-    ],
-    missions: [
-      'Apollo Moon Landings',
-      'Voyager Interstellar Mission',
-      'Hubble Space Telescope',
-      'International Space Station',
-      'Mars Rover Missions',
+    vietnamContext: {
+      title: 'Dấu ấn Việt Nam trên bản đồ không gian',
+      content: [
+        'Việt Nam đã có vệ tinh riêng (VINASAT-1, VINASAT-2) để phục vụ viễn thông, khẳng định chủ quyền quốc gia trong không gian.',
+        'Trung tâm Vũ trụ Việt Nam (VNSC) đang được xây dựng với mục tiêu làm chủ công nghệ vệ tinh nhỏ và ứng dụng công nghệ vũ trụ vào đời sống.',
+        'Phạm Tuân là người Việt Nam và châu Á đầu tiên bay vào vũ trụ vào năm 1980 trong chương trình Interkosmos của Liên Xô.',
+      ],
+    },
+    careerConnect: {
+      name: 'Tiến sĩ Lê Thị Ngọc Hân',
+      title: 'Nhà nghiên cứu Khoa học Hành tinh',
+      company: 'Viện Hàn lâm Khoa học và Công nghệ Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-thi-ngoc-han',
+      quote:
+        'Vũ trụ là phòng thí nghiệm lớn nhất. Nghiên cứu các hành tinh khác giúp chúng ta hiểu rõ hơn về chính Trái Đất và vị trí của chúng ta trong vũ trụ.',
+    },
+    quizzes: [
+      {
+        question: 'Vệ tinh nhân tạo đầu tiên được con người phóng lên quỹ đạo Trái Đất có tên là gì?',
+        options: ['Explorer 1', 'Sputnik 1', 'Vostok 1', 'Apollo 11'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Sputnik 1, được Liên Xô phóng vào ngày 4 tháng 10 năm 1957, đã mở ra kỷ nguyên chinh phục không gian của loài người.',
+      },
     ],
   },
   {
     id: 'rocket-science-propulsion',
-    title: 'Rocket Science và Propulsion Systems',
-    description: 'Tìm hiểu nguyên lý hoạt động của rockets và các hệ thống propulsion trong space exploration.',
-    duration: '180 phút',
+    title: 'Khoa học Tên lửa và Hệ thống Đẩy',
+    description:
+      'Đi sâu vào nguyên lý hoạt động của tên lửa và các loại hệ thống đẩy khác nhau được sử dụng trong khám phá không gian.',
+    duration: '120 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=jI-HeXhsUIg',
+    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     objectives: [
-      'Nắm vững Tsiolkovsky rocket equation',
-      'Hiểu các loại rocket propulsion: chemical, electric, nuclear',
-      'Thiết kế và phân tích rocket performance',
-      'Tìm hiểu future propulsion technologies',
+      'Nắm vững phương trình tên lửa Tsiolkovsky.',
+      'Hiểu các loại động cơ đẩy chính: hóa học, điện, hạt nhân.',
+      'Phân tích hiệu suất của tên lửa (lực đẩy, xung lực riêng).',
+      'Tìm hiểu về các công nghệ đẩy trong tương lai.',
     ],
-    prerequisites: [
-      'Space exploration fundamentals',
-      'Physics: mechanics, thermodynamics',
-      'Calculus và differential equations',
-      'Engineering principles',
-    ],
+    prerequisites: ["Hoàn thành bài 'Nền tảng về Khám phá Vũ trụ'"],
     exercises: [
       {
-        title: 'Rocket Design Challenge',
-        description: 'Thiết kế rocket system cho specific mission requirements',
-        difficulty: 'Nâng cao',
-        materials: ['RocketLab simulation software', 'Propulsion calculations', 'CAD tools'],
-        procedure: [
-          'Define mission requirements (payload, orbit, constraints)',
-          'Select appropriate propulsion system',
-          'Calculate mass ratios using rocket equation',
-          'Design multi-stage rocket configuration',
-          'Analyze performance với different propellants',
-          'Optimize thrust-to-weight ratios',
-          'Simulate launch trajectory',
-          'Cost analysis và comparison với existing rockets',
-        ],
-      },
-    ],
-    realWorldApplications: [
-      'Commercial launch services (SpaceX, Blue Origin)',
-      'Military missile systems',
-      'Satellite deployment',
-      'Interplanetary missions',
-      'Space tourism vehicles',
-    ],
-    technologies: [
-      {
-        name: 'Chemical Propulsion',
-        description: 'Traditional rocket engines burning fuel với oxidizer',
-        applications: ['Launch vehicles', 'Spacecraft maneuvering', 'Landing systems'],
-        currentStatus: 'Mature technology, continuously improving efficiency',
-      },
-      {
-        name: 'Ion Propulsion',
-        description: 'Electric propulsion using ionized gas',
-        applications: ['Deep space missions', 'Satellite station-keeping', 'Interplanetary travel'],
-        currentStatus: 'Operational on many spacecraft, advancing in power',
-      },
-    ],
-  },
-  {
-    id: 'satellite-technology',
-    title: 'Satellite Technology và Applications',
-    description: 'Khám phá công nghệ vệ tinh và ứng dụng trong đời sống hàng ngày.',
-    duration: '150 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=ror4P1UAv_g',
-    objectives: [
-      'Hiểu các loại satellites và orbits',
-      'Nắm vững satellite communication systems',
-      'Tìm hiểu Earth observation satellites',
-      'Thực hành satellite data analysis',
-    ],
-    prerequisites: [
-      'Basic physics và telecommunications',
-      'Understanding của radio waves',
-      'Computer science fundamentals',
-    ],
-    exercises: [
-      {
-        title: 'CubeSat Mission Design',
-        description: 'Thiết kế CubeSat mission cho Earth observation',
-        difficulty: 'Trung bình',
-        procedure: [
-          'Define scientific objectives',
-          'Select appropriate sensors và instruments',
-          'Design satellite bus và power systems',
-          'Plan orbital parameters',
-          'Calculate communication requirements',
-          'Design ground segment',
-          'Create mission timeline',
-          'Budget analysis và funding strategy',
-        ],
-      },
-    ],
-    realWorldApplications: [
-      'Weather forecasting',
-      'GPS navigation',
-      'Internet connectivity',
-      'Environmental monitoring',
-      'Disaster response',
-    ],
-  },
-  {
-    id: 'space-colonization',
-    title: 'Space Colonization và Future Missions',
-    description: 'Tìm hiểu về tương lai của human space exploration và colonization plans.',
-    duration: '120 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=A2AMAwefAuA',
-    objectives: [
-      'Hiểu challenges của long-duration spaceflight',
-      'Tìm hiểu life support systems',
-      'Khám phá Mars colonization plans',
-      'Đánh giá feasibility của interstellar travel',
-    ],
-    prerequisites: ['Space science background', 'Biology và life sciences', 'Engineering systems thinking'],
-    exercises: [
-      {
-        title: 'Mars Colony Planning',
-        description: 'Thiết kế sustainable Mars colony cho 1000 residents',
+        title: 'Tính toán Delta-v cho một Sứ mệnh',
+        description:
+          'Sử dụng phương trình tên lửa Tsiolkovsky để tính toán sự thay đổi vận tốc (delta-v) cần thiết cho một tên lửa.',
         difficulty: 'Nâng cao',
         procedure: [
-          'Site selection on Mars surface',
-          'Habitat design cho radiation protection',
-          'Life support systems planning',
-          'Food production systems',
-          'Transportation infrastructure',
-          'Resource utilization (ISRU)',
-          'Social và governance structures',
-          'Emergency protocols và backup systems',
+          'Giả sử một tên lửa có khối lượng ban đầu (ướt) là 100,000 kg.',
+          'Khối lượng sau khi đốt hết nhiên liệu (khô) là 10,000 kg.',
+          'Vận tốc phụt khí của động cơ (Ve) là 4,500 m/s.',
+          'Áp dụng công thức: Δv = Ve * ln(m0 / mf) để tính toán.',
         ],
+        expectedResults: 'Tính toán ra được giá trị delta-v xấp xỉ 10,360 m/s.',
       },
     ],
     realWorldApplications: [
-      'International Space Station operations',
-      'Lunar base development',
-      'Mars exploration preparation',
-      'Deep space mission planning',
-      'Space tourism industry',
+      'Động cơ Merlin của SpaceX sử dụng nhiên liệu lỏng (LOX/RP-1).',
+      'Động cơ đẩy ion trên các tàu thăm dò không gian sâu.',
+      'Tên lửa đẩy phụ nhiên liệu rắn (SRB) của Tàu con thoi.',
+    ],
+    caseStudies: [
+      {
+        title: 'SpaceX và Cuộc cách mạng Tên lửa Tái sử dụng',
+        organization: 'SpaceX',
+        problem: 'Chi phí phóng tên lửa cực kỳ đắt đỏ vì mỗi tên lửa chỉ sử dụng một lần rồi vứt bỏ.',
+        solution:
+          'Phát triển công nghệ để tầng đầu tiên của tên lửa có thể tự động quay trở lại và hạ cánh thẳng đứng, sẵn sàng cho lần phóng tiếp theo.',
+        impact:
+          'Giảm đáng kể chi phí phóng vệ tinh và đưa con người vào không gian, mở ra một kỷ nguyên mới cho ngành công nghiệp vũ trụ thương mại.',
+        innovations: ['Hạ cánh thẳng đứng', 'Tái sử dụng tầng đẩy', 'Sản xuất hàng loạt'],
+      },
+    ],
+    vietnamContext: {
+      title: 'Tiềm năng Tên lửa "Made in Vietnam"',
+      content: [
+        'Các trường đại học kỹ thuật hàng đầu Việt Nam như Đại học Bách Khoa đã có các nhóm sinh viên nghiên cứu và chế tạo thành công các mẫu tên lửa thử nghiệm (sounding rocket) quy mô nhỏ.',
+        'Các cuộc thi rocketry (tên lửa nước, tên lửa mô hình) đang ngày càng phổ biến, khơi dậy niềm đam mê khoa học không gian cho thế hệ trẻ.',
+        'Việc phát triển tên lửa đẩy thương mại đòi hỏi một hệ sinh thái công nghiệp phụ trợ và đầu tư lớn, là một mục tiêu dài hạn cho Việt Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Vũ Hồng Nhật',
+      title: 'Kỹ sư trưởng, CLB Tên lửa Bách Khoa',
+      company: 'HUST',
+      imageUrl: 'https://i.pravatar.cc/150?u=vu-hong-nhat',
+      quote:
+        'Mỗi lần phóng tên lửa, dù là mô hình, đều là một bài học quý giá về kỹ thuật, làm việc nhóm và xử lý thất bại. Chúng tôi đang xây dựng những viên gạch đầu tiên cho ngành hàng không vũ trụ Việt Nam.',
+    },
+    quizzes: [
+      {
+        question:
+          'Theo phương trình tên lửa Tsiolkovsky, yếu tố nào sau đây KHÔNG ảnh hưởng trực tiếp đến delta-v (khả năng thay đổi vận tốc) của tên lửa?',
+        options: [
+          'Tỷ lệ khối lượng (khối lượng ban đầu / khối lượng cuối)',
+          'Vận tốc phụt khí của động cơ',
+          'Thời gian đốt cháy nhiên liệu',
+          'Tất cả đều ảnh hưởng',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Phương trình Tsiolkovsky (Δv = Ve * ln(m0 / mf)) chỉ phụ thuộc vào vận tốc phụt khí (Ve) và logarit tự nhiên của tỷ lệ khối lượng (m0/mf). Thời gian đốt cháy ảnh hưởng đến lực đẩy và gia tốc, nhưng không trực tiếp quyết định tổng delta-v.',
+      },
     ],
   },
 ];

@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { MetaverseVREducationLessons, MetaverseVRLessonType } from '@/data/metaverse-vr-education'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { MetaverseVREducationLessons, MetaverseVRLessonType } from '@/data/metaverse-vr-education';
 import { PageProps } from '@/types';
 
 // Generate static params for all lessons
@@ -24,8 +29,8 @@ export default async function MetaverseVRLessonPage({ params }: PageProps) {
     secondaryColor: 'pink',
     gradientColors: 'from-slate-900 via-purple-900 to-slate-900',
     getFieldIcon: () => <span className="w-5 h-5">🥽</span>,
-    getFieldValue: (lesson) => lesson.technologyLevel || lesson.tools?.join(', '),
-  }
+    getFieldValue: (lesson) => lesson.technologyLevel || lesson.tools?.join(', ') || '',
+  };
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

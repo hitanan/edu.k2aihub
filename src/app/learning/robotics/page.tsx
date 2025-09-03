@@ -1,163 +1,77 @@
-import type { Metadata } from 'next';
-
-import ModulePageTemplate, {
-  ModuleData,
-} from '@/components/learning/ModulePageTemplate';
-import { roboticsLessons, RoboticsLesson } from '@/data/robotics';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { createModuleMetadata } from '@/utils/seo';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
+import { roboticsLessons } from '@/data/robotics';
+import { createTitle, createDescription } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
-export const metadata: Metadata = createModuleMetadata(
-  'Robotics & Automation - Robot và Tự Động Hóa',
-  'Khóa học Robotics toàn diện. Từ mechanical design đến AI control systems',
-  ['robotics', 'automation', 'mechanical engineering', 'ai control', 'sensors', 'actuators'],
-  'robotics'
-);
-
-// Convert RoboticsLesson to BaseLessonData interface
-function convertToLesson(roboticsLesson: RoboticsLesson): BaseLessonData {
+// Generate metadata
+export async function generateMetadata() {
   return {
-    id: roboticsLesson.id,
-    title: roboticsLesson.title,
-    description: roboticsLesson.description,
-    duration: roboticsLesson.duration,
-    difficulty: roboticsLesson.difficulty,
-    category: 'Robotics',
-    imageUrl: roboticsLesson.imageUrl || '/default-lesson.jpg',
-    videoUrl: roboticsLesson.videoUrl,
-    objectives: roboticsLesson.objectives,
-    prerequisites: [
-      'Basic electronics knowledge',
-      'Programming fundamentals',
-      'Arduino basics',
-    ],
-    exercises:
-      roboticsLesson.exercises?.map((ex) => ({
-        title: ex.title,
-        description: ex.description,
-        difficulty: ex.difficulty,
-        materials: roboticsLesson.materials || [],
-        procedure: [ex.code || ex.description],
-        expectedResults: ex.expectedOutput || 'Robot hoạt động theo yêu cầu',
-        solution: ex.code || 'Code solution provided in lesson',
-      })) || [],
-    resources: [],
-    tools: roboticsLesson.materials || [
-      'Arduino',
-      'Sensors',
-      'Motors',
-      'Chassis',
-    ],
-    realWorldApplications: roboticsLesson.realWorldApplications || [],
-    caseStudies: [],
+    title: createTitle('Robotics & Hệ thống tự hành'),
+    description: createDescription(
+      'Khám phá thế giới robotics, từ thiết kế, lập trình robot cơ bản đến tích hợp AI và các hệ thống tự hành tiên tiến.',
+    ),
+    keywords: ['robotics', 'hệ thống tự hành', 'lập trình robot', 'AI', 'K2AI'],
+    openGraph: {
+      title: createTitle('Robotics & Hệ thống tự hành'),
+      description: createDescription(
+        'Khám phá thế giới robotics, từ thiết kế, lập trình robot cơ bản đến tích hợp AI và các hệ thống tự hành tiên tiến.',
+      ),
+      type: 'website',
+    },
   };
 }
 
-export default function RoboticsPage() {
-  // Convert lessons to base interface
-  const convertedLessons = roboticsLessons.map(convertToLesson);
-
-  const moduleConfig: ModuleData = {
-    title: 'Robotics',
-    subtitle: 'Học Robotics Từ Cơ Bản Đến Nâng Cao',
+export default function RoboticsMainPage() {
+  const moduleData = {
+    id: K2Module.Robotics,
+    title: 'Robotics & Hệ thống tự hành',
+    subtitle: 'Thiết kế, xây dựng và lập trình robot thông minh cho tương lai.',
     description:
-      'Khám phá thế giới robotics với các bài học thực hành. Từ robot đơn giản đến hệ thống tự động thông minh - tạo ra những robot có thể tương tác với thế giới thực.',
-    primaryColor: 'purple',
-    gradientColors: 'from-slate-900 via-purple-900 to-blue-900',
-    basePath: '/learning/robotics',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=600&fit=crop',
-    statsConfig: {
-      lessons: `${roboticsLessons.length}+ bài`,
-      duration: '20-25 giờ',
-      level: 'Cơ bản → Nâng cao',
-      projects: '8+ robot thực tế',
-    },
-    marketData: {
-      marketSize: '$75 Billion',
-      marketNote: 'Global robotics market by 2026',
-      jobGrowth: '33% Growth',
-      jobNote: 'Robotics engineer jobs by 2030',
-      reduction: '80% Efficiency',
-      reductionNote: 'Improvement in automated systems',
-      startups: '3000+ Startups',
-      startupsNote: 'Robotics companies worldwide',
-    },
-    careerPaths: [
-      'Robotics Engineer',
-      'Automation Specialist',
-      'AI Robotics Developer',
-      'Industrial Robot Programmer',
-      'Research Roboticist',
-      'Mechatronics Engineer',
+      'Module này cung cấp kiến thức toàn diện về robotics, từ các thành phần cơ khí và điện tử, lập trình điều khiển chuyển động, đến việc tích hợp cảm biến, thị giác máy tính và trí tuệ nhân tạo để xây dựng các hệ thống tự hành phức tạp.',
+    level: 'Nâng cao',
+    duration: '10-12 giờ',
+    category: 'STEM',
+    features: [
+      'Thiết kế và lắp ráp robot vật lý',
+      'Lập trình điều khiển robot với Python/C++',
+      'Tích hợp và xử lý dữ liệu từ cảm biến',
+      'Ứng dụng AI và thuật toán cho điều hướng tự động',
     ],
-    technicalHighlights: [
-      {
-        title: 'Robot Mechanics',
-        icon: '⚙️',
-        items: [
-          'Chassis Design',
-          'Motor Control',
-          'Gear Systems',
-          'Movement Mechanics',
-        ],
-      },
-      {
-        title: 'Sensor Integration',
-        icon: '📡',
-        items: [
-          'Ultrasonic Sensors',
-          'Camera Vision',
-          'Gyroscope/IMU',
-          'Touch Sensors',
-        ],
-      },
-      {
-        title: 'Programming',
-        icon: '💻',
-        items: [
-          'Arduino Programming',
-          'Algorithm Development',
-          'State Machines',
-          'Real-time Control',
-        ],
-      },
-      {
-        title: 'Artificial Intelligence',
-        icon: '🧠',
-        items: [
-          'Machine Learning',
-          'Computer Vision',
-          'Path Planning',
-          'Decision Making',
-        ],
-      },
-      {
-        title: 'Communication',
-        icon: '📱',
-        items: [
-          'Wireless Control',
-          'IoT Integration',
-          'Remote Monitoring',
-          'Swarm Robotics',
-        ],
-      },
-      {
-        title: 'Applications',
-        icon: '🏭',
-        items: [
-          'Industrial Automation',
-          'Medical Robotics',
-          'Home Assistants',
-          'Space Exploration',
-        ],
-      },
+    icon: '🤖',
+    color: 'from-purple-600 to-pink-600',
+    objectives: [
+      'Hiểu các thành phần cơ bản và nguyên tắc hoạt động của robot.',
+      'Lập trình và điều khiển chuyển động của robot.',
+      'Tích hợp cảm biến và thị giác máy tính cho robot.',
+      'Triển khai thuật toán điều hướng tự động và tích hợp AI.',
     ],
-    relatedModules: [K2Module.Arduino, K2Module.Python, K2Module.STEM],
+    prerequisites: [
+      'Kiến thức cơ bản về lập trình (Python hoặc C++)',
+      'Hiểu biết về các linh kiện điện tử cơ bản',
+      'Tư duy logic và toán học',
+      'Kỹ năng giải quyết vấn đề',
+    ],
+    careerOutcomes: [
+      'Kỹ sư Robotics',
+      'Chuyên gia Hệ thống Tự động hóa',
+      'Kỹ sư AI/ML (chuyên về Robotics)',
+      'Kỹ sư Điều khiển và Tự động hóa',
+    ],
+    industryApplications: [
+      'Sản xuất và Lắp ráp công nghiệp',
+      'Logistics và Quản lý kho bãi tự động',
+      'Y tế và Phẫu thuật robot',
+      'Nông nghiệp chính xác và thông minh',
+      'Xe tự hành và Giao thông vận tải',
+    ],
+    marketDemand: {
+      averageSalary: '20-45 triệu VNĐ/tháng',
+      jobGrowth: '+30%',
+      hireDemand: 'Rất cao',
+    },
+    relatedModules: [K2Module.Arduino, K2Module.STEM, K2Module.AdvancedAI, K2Module.SemiconductorTechnology],
+    heroImageUrl: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&h=600&fit=crop',
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={roboticsLessons} />;
 }

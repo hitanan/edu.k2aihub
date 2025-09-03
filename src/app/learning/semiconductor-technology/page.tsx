@@ -1,181 +1,69 @@
-import type { Metadata } from 'next';
-
-import ModulePageTemplate, {
-  ModuleData,
-} from '@/components/learning/ModulePageTemplate';
-import {
-  semiconductorLessons,
-  SemiconductorLesson,
-} from '@/data/semiconductor-technology';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { createModuleMetadata } from '@/utils/seo';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
+import { semiconductorLessons } from '@/data/semiconductor-technology';
 import { K2Module } from '@/data/moduleNavigation';
+import { createTitle, createDescription } from '@/utils/seo';
 
-export const metadata: Metadata = createModuleMetadata(
-  'Semiconductor Technology - Công Nghệ Bán Dẫn',
-  'Khóa học công nghệ bán dẫn chuyên sâu. Từ chip design đến manufacturing processes',
-  ['semiconductor', 'chip design', 'microprocessor', 'integrated circuits', 'fabrication', 'vlsi'],
-  'semiconductor-technology'
-);
-
-// Convert SemiconductorLesson to BaseLessonData interface
-function convertToLesson(
-  semiconductorLesson: SemiconductorLesson,
-): BaseLessonData {
+export async function generateMetadata() {
   return {
-    id: semiconductorLesson.id,
-    title: semiconductorLesson.title,
-    description: semiconductorLesson.description,
-    duration: semiconductorLesson.duration,
-    difficulty: semiconductorLesson.difficulty,
-    category: semiconductorLesson.chipType || 'Semiconductor Technology',
-    imageUrl: semiconductorLesson.imageUrl || '/default-lesson.jpg',
-    videoUrl: semiconductorLesson.videoUrl,
-    objectives: semiconductorLesson.objectives,
-    prerequisites: semiconductorLesson.prerequisites || [
-      'Basic physics',
-      'Mathematics',
-      'Interest in electronics',
-    ],
-    exercises:
-      semiconductorLesson.exercises?.map((ex) => ({
-        title: ex.title,
-        description: ex.description,
-        difficulty: ex.difficulty,
-        materials: ex.requirements || [],
-        procedure: ex.hints || [ex.description],
-        expectedResults:
-          ex.expectedOutput ||
-          'Successful completion of semiconductor experiment',
-        solution: ex.solution || 'Follow industry best practices',
-      })) || [],
-    resources: semiconductorLesson.resources || [],
-    tools: semiconductorLesson.labTechniques || [
-      'EDA Tools',
-      'Simulation Software',
-      'Lab Equipment',
-    ],
-    realWorldApplications: semiconductorLesson.realWorldApplications || [],
-    caseStudies:
-      semiconductorLesson.caseStudies?.map((cs) => ({
-        title: cs.title,
-        organization: cs.company,
-        problem: cs.challenge,
-        solution: cs.solution,
-        impact: cs.results,
-        innovations: cs.insights || [],
-      })) || [],
+    title: createTitle('Công nghệ Bán dẫn & Thiết kế Vi mạch'),
+    description: createDescription(
+      'Khóa học chuyên sâu về công nghệ bán dẫn từ cơ bản đến nâng cao. Học thiết kế IC, VLSI, quy trình chế tạo và cơ hội nghề nghiệp.',
+    ),
+    keywords: ['bán dẫn', 'thiết kế vi mạch', 'chip', 'semiconductor', 'VLSI', 'K2AI'],
+    openGraph: {
+      title: createTitle('Trở thành Chuyên gia ngành Bán dẫn'),
+      description:
+        'Khám phá thế giới vi mạch, từ vật lý bán dẫn đến thiết kế chip AI tiên tiến và các cơ hội tại Việt Nam.',
+      type: 'website',
+    },
   };
 }
 
 export default function SemiconductorTechnologyPage() {
-  // Convert lessons to base interface
-  const convertedLessons = semiconductorLessons.map(convertToLesson);
-
-  const moduleConfig: ModuleData = {
-    title: 'Semiconductor Technology & Microchip Design',
-    subtitle: 'Công nghệ Bán dẫn & Thiết kế Vi mạch',
+  const moduleData = {
+    id: 'semiconductor-technology',
+    title: 'Công nghệ Bán dẫn & Thiết kế Vi mạch',
+    subtitle: 'Khám phá thế giới vi mô định hình tương lai công nghệ.',
     description:
-      'Khóa học chuyên sâu về công nghệ bán dẫn từ cơ bản đến nâng cao. Học thiết kế IC, VLSI technology, fabrication process và career opportunities tại các công ty hàng đầu như Samsung, Intel Vietnam. Tỉ lệ chọi ngành: 1:50-100.',
-    primaryColor: 'blue',
-    gradientColors: 'from-slate-900 via-blue-900 to-purple-900',
-    basePath: '/learning/semiconductor-technology',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af2e79?w=1200&h=600&fit=crop',
-    statsConfig: {
-      lessons: `${semiconductorLessons.length}+ bài`,
-      duration: '25-30 giờ',
-      level: 'Cơ bản → Nâng cao',
-      projects: '8+ dự án thực hành',
+      'Khóa học này cung cấp kiến thức toàn diện về ngành công nghiệp bán dẫn, từ những nguyên lý vật lý cơ bản, quy trình thiết kế và chế tạo vi mạch phức tạp, đến các ứng dụng trong AI và điện toán hiệu năng cao. Đây là bước đệm vững chắc cho sự nghiệp trong ngành công nghệ cao đang bùng nổ tại Việt Nam.',
+    level: 'Cơ bản - Nâng cao',
+    duration: '25-30 giờ',
+    category: 'Science & Research',
+    features: [
+      'Kiến thức từ cơ bản đến chuyên sâu về vật lý bán dẫn.',
+      'Tìm hiểu quy trình thiết kế và chế tạo chip thực tế.',
+      'Cập nhật các công nghệ tiên tiến như FinFET, EUV và chip AI.',
+      'Kết nối với bối cảnh và cơ hội việc làm tại Việt Nam.',
+    ],
+    icon: '🔬',
+    color: 'from-blue-500 to-purple-500',
+    objectives: [
+      'Hiểu nguyên lý hoạt động của transistor và các linh kiện bán dẫn.',
+      'Nắm vững các bước trong quy trình thiết kế vi mạch (IC Design).',
+      'Phân biệt được các công nghệ chế tạo (fabrication) khác nhau.',
+      'Phân tích được kiến trúc của các loại chip chuyên dụng (CPU, GPU, AI Chip).',
+    ],
+    prerequisites: ['Kiến thức cơ bản về Vật lý và Hóa học.', 'Tư duy logic và khả năng phân tích hệ thống.'],
+    careerOutcomes: [
+      'Kỹ sư Thiết kế Vi mạch (IC Design Engineer)',
+      'Kỹ sư Quy trình (Process Engineer)',
+      'Kỹ sư Kiểm thử (Test Engineer)',
+      'Kỹ sư Ứng dụng (Application Engineer)',
+    ],
+    industryApplications: [
+      'Điện tử tiêu dùng (smartphone, laptop)',
+      'Trung tâm dữ liệu và điện toán đám mây',
+      'Công nghiệp ô tô (xe tự lái)',
+      'Trí tuệ nhân tạo và Học máy',
+    ],
+    marketDemand: {
+      averageSalary: '25-60 triệu VNĐ',
+      jobGrowth: '+85%',
+      hireDemand: 'Rất cao',
     },
-    marketData: {
-      marketSize: '$574 Billion',
-      marketNote: 'Global semiconductor market by 2025',
-      jobGrowth: '85% Growth',
-      jobNote: 'Vietnam semiconductor jobs 2024-2028',
-      reduction: '50% Cost',
-      reductionNote: 'Manufacturing cost advantage in Vietnam',
-      startups: '15+ Companies',
-      startupsNote: 'Major semiconductor companies in Vietnam',
-    },
-    careerPaths: [
-      'IC Design Engineer (25-60 triệu VNĐ)',
-      'Process Engineer (22-45 triệu VNĐ)',
-      'Verification Engineer (28-55 triệu VNĐ)',
-      'Applications Engineer (20-40 triệu VNĐ)',
-      'Product Manager (35-70 triệu VNĐ)',
-      'Research Scientist (30-65 triệu VNĐ)',
-    ],
-    technicalHighlights: [
-      {
-        title: 'Semiconductor Physics',
-        icon: '⚛️',
-        items: [
-          'Silicon Crystal Structure',
-          'P-N Junction',
-          'Doping Process',
-          'Transistor Operation',
-        ],
-      },
-      {
-        title: 'IC Design & VLSI',
-        icon: '🔬',
-        items: [
-          'Verilog HDL',
-          'Logic Synthesis',
-          'Place & Route',
-          'Timing Analysis',
-        ],
-      },
-      {
-        title: 'Fabrication Process',
-        icon: '🏭',
-        items: [
-          'Photolithography',
-          'Etching',
-          'Deposition',
-          'Clean Room Technology',
-        ],
-      },
-      {
-        title: 'Advanced Nodes',
-        icon: '🚀',
-        items: [
-          '3nm Technology',
-          '5nm Process',
-          'FinFET Structure',
-          'EUV Lithography',
-        ],
-      },
-      {
-        title: 'AI Chips',
-        icon: '🧠',
-        items: [
-          'Neural Accelerators',
-          'TPU Architecture',
-          'Edge AI Chips',
-          'Neuromorphic Computing',
-        ],
-      },
-      {
-        title: 'Industry Practice',
-        icon: '🏢',
-        items: [
-          'Samsung Vietnam',
-          'Intel Design Center',
-          'TSMC Partnership',
-          'Career Development',
-        ],
-      },
-    ],
-    relatedModules: [
-      K2Module.Python,
-      K2Module.Arduino,
-      K2Module.AIArtCreativeTech,
-    ],
+    relatedModules: [K2Module.Robotics, K2Module.AdvancedAI, K2Module.QuantumComputingEducation],
+    heroImageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2e79?w=1200&h=600&fit=crop',
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={semiconductorLessons} />;
 }

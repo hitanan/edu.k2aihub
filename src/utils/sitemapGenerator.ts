@@ -21,12 +21,12 @@ import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 // Import NEW MODULES (Recently Created)
 import { aiMachineLearningLessons, AIMachineLearningLessonType } from '@/data/ai-machine-learning';
 import { environmentalClimateLessons, EnvironmentalClimateLessonType } from '@/data/environmental-science-climate';
-import { QuantumLessons } from '@/data/quantum-computing';
+import { quantumComputingLessons } from '@/data/quantum-computing';
 import { BlockchainLessons } from '@/data/blockchain-technology';
 import { ClimateLessons } from '@/data/climate-science';
 import { CybersecurityLessons } from '@/data/cybersecurity';
 import { DataScienceLessons } from '@/data/data-science';
-import { SpaceLessons } from '@/data/space-exploration';
+import { spaceLessons } from '@/data/space-exploration';
 import { ProgrammingRoboticsLessons } from '@/data/programming-robotics';
 
 // Import 2025 Vietnam Niche Market Research Modules
@@ -53,7 +53,7 @@ import { tiktokSocialCommerceLessons } from '@/data/tiktok-social-commerce';
 import { genZMarketingLessons } from '@/data/genz-marketing';
 import { shortVideoMasteryLessons } from '@/data/short-video-mastery';
 import { liveCommerceLessons } from '@/data/live-commerce-streaming';
-import { microInfluencerLessons } from '@/data/micro-influencer-economy';
+import { microInfluencerEconomyLessons } from '@/data/micro-influencer-economy';
 import { socialListeningLessons } from '@/data/social-listening-crisis';
 import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
 import { crossPlatformStrategyLessons } from '@/data/cross-platform-strategy';
@@ -469,7 +469,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const quantumComputingPages = QuantumLessons.map((lesson) => ({
+  const quantumComputingPages = quantumComputingLessons.map((lesson) => ({
     url: `${baseUrl}/learning/quantum-computing/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
@@ -497,7 +497,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const spaceExplorationPages = SpaceLessons.map((lesson) => ({
+  const spaceExplorationPages = spaceLessons.map((lesson) => ({
     url: `${baseUrl}/learning/space-exploration/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
@@ -547,7 +547,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const microInfluencerEconomyPages = microInfluencerLessons.map((lesson) => ({
+  const microInfluencerEconomyPages = microInfluencerEconomyLessons.map((lesson) => ({
     url: `${baseUrl}/learning/micro-influencer-economy/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,

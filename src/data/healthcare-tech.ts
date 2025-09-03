@@ -1,123 +1,129 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
 
 export interface HealthcareTechLesson extends BaseLessonData {
-  healthcareCategory: 'telemedicine' | 'data-analytics' | 'medical-devices' | 'entrepreneurship' | 'mental-health';
+  healthcareCategory: string;
   regulatoryCompliance: string[];
-  vietnameseHealthcareContext: string[];
-  techProficiencyLevel: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  techProficiencyLevel: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
   targetAudience: string[];
+  vietnamContext?: {
+    title: string;
+    content: string[];
+  };
 }
 
-export const healthcareTechLessons: HealthcareTechLesson[] = [
+const healthcareTechLessons: HealthcareTechLesson[] = [
   {
-    id: 'telemedicine-digital-health',
-    title: 'Y tế từ xa & Sức khỏe số',
+    id: 'telemedicine-virtual-care-platforms',
+    title: 'Y tế từ xa & Nền tảng Chăm sóc ảo',
     description:
-      'Khám phá công nghệ y tế từ xa và hệ thống sức khỏe số, từ việc thiết lập nền tảng đến cung cấp dịch vụ chăm sóc bệnh nhân trong bối cảnh Việt Nam.',
+      'Khám phá sự phát triển của y tế từ xa và các nền tảng chăm sóc ảo, cách chúng thay đổi việc cung cấp dịch vụ y tế tại Việt Nam và trên toàn thế giới.',
     duration: '180 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=eORalU89N4Y', // The Future of Telemedicine
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&h=600&fit=crop',
-    healthcareCategory: 'telemedicine',
-    techProficiencyLevel: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=T-21bu-x_bI', // Telemedicine Explained
+    imageUrl: 'https://images.unsplash.com/photo-1584820927498-f32e4642f1a2?w=1200&h=600&fit=crop',
+    healthcareCategory: 'Telehealth',
+    regulatoryCompliance: ['HIPAA', 'GDPR', 'Thông tư 24/2020/TT-BYT'],
+    techProficiencyLevel: 'Beginner',
+    targetAudience: ['Bác sĩ', 'Quản lý bệnh viện', 'Bệnh nhân'],
     objectives: [
-      'Hiểu hệ sinh thái của y tế từ xa trong hệ thống y tế Việt Nam',
-      'Thiết lập và sử dụng các nền tảng y tế từ xa phổ biến',
-      'Đảm bảo quyền riêng tư của bệnh nhân và bảo mật dữ liệu',
-      'Tích hợp y tế từ xa vào quy trình lâm sàng',
-      'Đo lường kết quả và ROI của các chương trình y tế từ xa',
+      'Hiểu các khái niệm cốt lõi của y tế từ xa và chăm sóc ảo.',
+      'Phân tích các mô hình cung cấp dịch vụ y tế từ xa khác nhau.',
+      'Đánh giá các công nghệ hỗ trợ y tế từ xa.',
+      'Nhận biết các thách thức về quy định và đạo đức.',
+      'Khám phá các trường hợp sử dụng trong thực tế tại Việt Nam.',
     ],
-    prerequisites: ['Kiến thức y tế cơ bản hoặc kinh nghiệm trong ngành y tế', 'Kỹ năng sử dụng máy tính và internet'],
-    regulatoryCompliance: [
-      'Thông tư 54/2017/TT-BYT về y tế từ xa',
-      'Luật An ninh mạng 2018 về dữ liệu bệnh nhân',
-      'ISO 27001 về bảo mật thông tin y tế',
-      'Tuân thủ GDPR cho bệnh nhân quốc tế',
-    ],
-    vietnameseHealthcareContext: [
-      'Thách thức trong việc tiếp cận y tế ở nông thôn',
-      'Tích hợp hệ thống y tế công và tư',
-      'Phạm vi bảo hiểm cho các dịch vụ y tế từ xa',
-      'Thái độ văn hóa đối với chăm sóc sức khỏe từ xa',
-      'Rào cản ngôn ngữ và hỗ trợ đa ngôn ngữ',
-    ],
-    targetAudience: [
-      'Chuyên gia y tế chuyển đổi sang kỹ thuật số',
-      'Quản trị viên và quản lý y tế',
-      'Chuyên gia CNTT trong các tổ chức y tế',
-      'Doanh nhân xây dựng giải pháp công nghệ y tế',
-    ],
+    prerequisites: ['Kiến thức cơ bản về hệ thống y tế.', 'Kỹ năng sử dụng máy tính cơ bản.'],
     exercises: [
       {
-        title: 'Đánh giá & Thiết lập Nền tảng Y tế từ xa',
-        description: 'So sánh và thiết lập một nền tảng y tế từ xa cho một phòng khám nhỏ',
-        difficulty: 'Trung bình',
-        materials: [
-          'Truy cập vào các nền tảng y tế từ xa',
-          'Danh sách kiểm tra tuân thủ HIPAA',
-          'Mẫu phân tích chi phí-lợi ích',
-        ],
+        title: 'Thiết kế một buổi tư vấn y tế từ xa',
+        description: 'Lập kế hoạch và mô phỏng một kịch bản tư vấn y tế từ xa cho một bệnh thông thường.',
+        difficulty: 'Cơ bản',
+        materials: ['Biểu mẫu kịch bản', 'Checklist công nghệ'],
         procedure: [
-          'Nghiên cứu 5 nền tảng y tế từ xa phổ biến tại Việt Nam',
-          'So sánh các tính năng, giá cả và tiêu chuẩn tuân thủ',
-          'Thiết lập tài khoản demo và kiểm tra trải nghiệm người dùng',
-          'Tạo quy trình tiếp nhận bệnh nhân',
-          'Xây dựng dự báo ROI cho giai đoạn 12 tháng',
-          'Trình bày các đề xuất kèm theo đánh giá bảo mật',
+          'Chọn một tình trạng bệnh phổ biến (ví dụ: cảm cúm, đau đầu).',
+          'Xác định các bước cần thiết cho một buổi tư vấn từ xa hiệu quả.',
+          'Liệt kê các công nghệ cần thiết (ví dụ: video call, thiết bị đo tại nhà).',
+          'Soạn thảo kịch bản trao đổi giữa bác sĩ và bệnh nhân.',
+          'Xác định các rủi ro tiềm ẩn và cách xử lý.',
         ],
-        expectedResults: 'Hoàn thành đề xuất nền tảng với lộ trình triển khai và danh sách kiểm tra tuân thủ',
-        solution:
-          'Lựa chọn nền tảng dựa trên tính dễ sử dụng, hỗ trợ tiếng Việt, hiệu quả chi phí và tuân thủ quy định',
-      },
-      {
-        title: 'Thiết kế Hệ thống Theo dõi Bệnh nhân từ xa',
-        description: 'Thiết kế hệ thống theo dõi để quản lý các bệnh mãn tính',
-        difficulty: 'Nâng cao',
-        materials: ['Thiết bị y tế IoT', 'Công cụ bảng điều khiển dữ liệu', 'Khung hệ thống cảnh báo'],
-        procedure: [
-          'Xác định các bệnh mãn tính mục tiêu (tiểu đường, tăng huyết áp)',
-          'Chọn các thiết bị và cảm biến theo dõi phù hợp',
-          'Thiết kế quy trình thu thập và phân tích dữ liệu',
-          'Tạo ngưỡng cảnh báo và quy trình leo thang',
-          'Xây dựng chiến lược tương tác và tuân thủ của bệnh nhân',
-          'Kiểm tra hệ thống với dữ liệu bệnh nhân mô phỏng',
-        ],
-        expectedResults: 'Nguyên mẫu hệ thống RPM hoạt động với tỷ lệ tương tác của bệnh nhân >70%',
+        expectedResults: 'Một kịch bản chi tiết cho buổi tư vấn y tế từ xa, sẵn sàng để diễn tập.',
       },
     ],
     realWorldApplications: [
-      'Cung cấp dịch vụ y tế ở vùng sâu vùng xa',
-      'Chương trình quản lý bệnh mãn tính',
-      'Tư vấn chuyên khoa giữa các tỉnh thành',
-      'Hệ thống ứng phó khẩn cấp và phân loại bệnh nhân',
-      'Dịch vụ hỗ trợ sức khỏe tâm thần',
+      'Tư vấn sức khỏe ban đầu từ xa.',
+      'Theo dõi bệnh nhân mắc bệnh mãn tính.',
+      'Chăm sóc sức khỏe tâm thần trực tuyến.',
+      'Hội chẩn từ xa giữa các chuyên gia y tế.',
+      'Cung cấp dịch vụ y tế cho các vùng sâu, vùng xa.',
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Y tế từ xa tại Việt Nam',
+      content: [
+        'Y tế từ xa (Telemedicine) đã được triển khai ở Việt Nam, đặc biệt tăng tốc sau đại dịch COVID-19.',
+        'Bộ Y tế đã ban hành các quy định ban đầu cho việc khám chữa bệnh từ xa, tạo hành lang pháp lý cho các hoạt động này.',
+        'Các bệnh viện lớn như Bệnh viện Đại học Y Hà Nội, Bệnh viện Chợ Rẫy đã triển khai các nền tảng tư vấn, khám bệnh từ xa.',
+        'Thách thức bao gồm hạ tầng công nghệ không đồng đều, vấn đề bảo mật thông tin và thói quen của người dân.',
+        'Các startup HealthTech Việt Nam như eDoctor, Jio Health đang tiên phong trong việc cung cấp các giải pháp sáng tạo, giúp người dân tiếp cận dịch vụ y tế thuận tiện hơn.',
+      ],
+    },
     caseStudies: [
       {
         title: 'Vinmec - Triển khai Nền tảng Y tế từ xa',
         organization: 'Bệnh viện Đa khoa Quốc tế Vinmec',
-        problem: 'Cần cung cấp khả năng tiếp cận y tế trong thời gian phong tỏa do COVID-19',
-        solution: 'Triển khai nền tảng y tế từ xa toàn diện với hỗ trợ đa ngôn ngữ',
-        impact: 'Hơn 50.000 lượt tư vấn từ xa, 95% bệnh nhân hài lòng, giảm 30% chi phí',
-        innovations: ['Trình kiểm tra triệu chứng bằng AI', 'Giao đơn thuốc tích hợp', 'Tự động hóa yêu cầu bảo hiểm'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Hướng dẫn Quy định Y tế từ xa Việt Nam',
-        url: 'https://moh.gov.vn/web/guest/tin-tong-hop',
-        type: 'Documentation',
+        problem:
+          'Cần cung cấp khả năng tiếp cận y tế liên tục cho bệnh nhân, đặc biệt trong các bối cảnh hạn chế di chuyển như đại dịch COVID-19, đồng thời tối ưu hóa quy trình khám chữa bệnh.',
+        solution:
+          'Vinmec đã phát triển ứng dụng MyVinmec, cho phép bệnh nhân đặt lịch khám, tư vấn từ xa với bác sĩ, xem kết quả xét nghiệm và quản lý hồ sơ sức khỏe cá nhân. Hệ thống này được tích hợp sâu với bệnh án điện tử của bệnh viện.',
+        impact:
+          'Giảm đáng kể thời gian chờ đợi, tăng sự hài lòng của bệnh nhân và cho phép chăm sóc sức khỏe liên tục. Vinmec đã thực hiện hàng chục nghìn lượt khám từ xa, khẳng định vị thế tiên phong trong y tế số.',
+        innovations: ['Ứng dụng di động cho bệnh nhân', 'Tích hợp bệnh án điện tử', 'Tư vấn video call'],
       },
       {
-        title: 'Bộ công cụ Triển khai Y tế từ xa',
-        url: 'https://www.hrsa.gov/rural-health/telehealth/toolkit',
-        type: 'Toolkit',
+        title: 'eDoctor: Mang Bác sĩ đến mọi nhà',
+        organization: 'eDoctor',
+        problem:
+          'Người dân ở các thành phố lớn thường mất nhiều thời gian và công sức để đến bệnh viện cho các vấn đề sức khỏe không quá nghiêm trọng. Người dân ở vùng sâu vùng xa lại khó tiếp cận bác sĩ chuyên khoa.',
+        solution:
+          'eDoctor xây dựng một nền tảng kết nối người dùng với các bác sĩ qua ứng dụng di động. Người dùng có thể nhận tư vấn sức khỏe, đặt lịch xét nghiệm tại nhà và mua thuốc trực tuyến.',
+        impact:
+          'eDoctor đã phục vụ hàng triệu người dùng, giúp giảm tải cho hệ thống y tế công và nâng cao ý thức chăm sóc sức khỏe chủ động. Mô hình này đặc biệt hữu ích cho việc theo dõi sức khỏe người cao tuổi và trẻ em.',
+        innovations: ['Mô hình marketplace cho dịch vụ y tế', 'Dịch vụ y tế tại nhà', 'Tư vấn sức khỏe theo yêu cầu'],
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    careerConnect: {
+      name: 'Bác sĩ Alireza Parandian',
+      title: 'Giám đốc Y khoa, Jio Health Việt Nam',
+      company: 'Jio Health',
+      imageUrl: 'https://i.pravatar.cc/150?u=alireza-parandian',
+      quote:
+        'Công nghệ y tế không chỉ là về các tiện ích. Nó là về việc xây dựng một mối quan hệ tin cậy và liên tục giữa bác sĩ và bệnh nhân, vượt qua mọi rào cản về không gian và thời gian. Việt Nam là một thị trường lý tưởng để các mô hình chăm sóc sức khỏe sáng tạo phát triển.',
+    },
+    quizzes: [
+      {
+        question: 'Giải pháp chính mà ứng dụng MyVinmec cung cấp là gì?',
+        options: [
+          'Cung cấp thuốc miễn phí',
+          'Cho phép bệnh nhân tự chẩn đoán bệnh',
+          'Đặt lịch, tư vấn từ xa và quản lý hồ sơ sức khỏe',
+          'Thay thế hoàn toàn việc khám trực tiếp',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'MyVinmec tập trung vào việc cung cấp các tiện ích số để bệnh nhân có thể chủ động quản lý sức khỏe của mình và tương tác với bệnh viện một cách thuận tiện, bao gồm đặt lịch, tư vấn từ xa và xem hồ sơ.',
+      },
+      {
+        question: 'Đâu là một trong những thách thức lớn nhất của chuyển đổi số y tế tại Việt Nam?',
+        options: [
+          'Bác sĩ không muốn sử dụng công nghệ',
+          'Người dân không có nhu cầu',
+          'Hạ tầng công nghệ không đồng đều và vấn đề bảo mật',
+          'Không có startup nào trong lĩnh vực này',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Sự chênh lệch về hạ tầng CNTT giữa các vùng miền và việc đảm bảo an toàn, bảo mật cho dữ liệu sức khỏe nhạy cảm là những rào cản lớn cần được giải quyết để chuyển đổi số y tế thành công trên diện rộng.',
+      },
+    ],
   },
   {
     id: 'health-data-analytics-management',
@@ -126,10 +132,12 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Làm chủ việc thu thập, xử lý và phân tích dữ liệu lớn trong y tế để cải thiện kết quả của bệnh nhân và hiệu quả hoạt động.',
     duration: '200 phút',
     difficulty: 'Trung bình',
+    healthcareCategory: 'Health Data Analytics',
+    regulatoryCompliance: ['HIPAA', 'GDPR', 'Luật An ninh mạng'],
+    techProficiencyLevel: 'Advanced',
+    targetAudience: ['Data Analysts', 'Hospital Management', 'Public Health Officials'],
     videoUrl: 'https://www.youtube.com/watch?v=7rqfXuUoJB0', // AI in Healthcare: Revolutionary Applications
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
-    healthcareCategory: 'data-analytics',
-    techProficiencyLevel: 'Trung bình',
     objectives: [
       'Hiểu bối cảnh dữ liệu y tế và các loại dữ liệu y tế',
       'Triển khai quản trị dữ liệu và quản lý chất lượng',
@@ -141,24 +149,6 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Kỹ năng thống kê và phân tích dữ liệu cơ bản',
       'Quen thuộc với Excel và các khái niệm cơ sở dữ liệu',
       'Hiểu biết về các quy trình y tế',
-    ],
-    regulatoryCompliance: [
-      'Nghị định 13/2023/NĐ-CP về Bảo vệ dữ liệu cá nhân',
-      'Quy định về bảo mật dữ liệu y tế',
-      'Tiêu chuẩn quốc tế về tin học y tế',
-      'Yêu cầu về dấu vết kiểm toán cho dữ liệu bệnh nhân',
-    ],
-    vietnameseHealthcareContext: [
-      'Thách thức trong việc áp dụng hồ sơ sức khỏe điện tử',
-      'Vấn đề tương tác giữa các hệ thống bệnh viện',
-      'Chia sẻ dữ liệu giữa khu vực công và tư',
-      'Phân tích sức khỏe dân số cho nhân khẩu học Việt Nam',
-    ],
-    targetAudience: [
-      'Nhà phân tích dữ liệu và nhà nghiên cứu y tế',
-      'Quản trị viên CNTT bệnh viện',
-      'Cán bộ y tế công cộng',
-      'Nhà nghiên cứu công nghệ sinh học và dược phẩm',
     ],
     exercises: [
       {
@@ -184,6 +174,14 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Nghiên cứu dịch tễ học và giám sát bệnh tật',
       'Nghiên cứu dược phẩm và khám phá thuốc',
     ],
+    vietnamContext: {
+      title: 'Phân tích Dữ liệu Y tế tại Việt Nam',
+      content: [
+        'Việt Nam đang xây dựng cơ sở dữ liệu sức khỏe quốc gia, tích hợp dữ liệu từ các bệnh viện, trung tâm y tế trên cả nước. Đây là nền tảng cho việc phân tích dữ liệu lớn.',
+        'Các bệnh viện lớn như Bệnh viện Bạch Mai, Chợ Rẫy đã bắt đầu ứng dụng phân tích dữ liệu để tối ưu hóa quy trình khám chữa bệnh và quản lý nguồn lực.',
+        'Thách thức là tính phân mảnh của dữ liệu, các tiêu chuẩn dữ liệu chưa đồng nhất và thiếu hụt nhân lực có kỹ năng phân tích dữ liệu y tế chuyên sâu.',
+      ],
+    },
     caseStudies: [
       {
         title: 'Bệnh viện FV - Phân tích Lâm sàng bằng AI',
@@ -194,9 +192,40 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
         innovations: ['Chấm điểm rủi ro thời gian thực', 'Điều phối chăm sóc tự động', 'Mô hình nhân sự dự đoán'],
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'data-visualization')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    careerConnect: {
+      name: 'Anh Trần Quốc Dũng',
+      title: 'Data Scientist, FPT Software',
+      company: 'FPT Software',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-quoc-dung',
+      quote:
+        'Dữ liệu y tế là một "mỏ vàng". Bằng cách phân tích nó, chúng tôi có thể tìm ra các mẫu hình ẩn, giúp bác sĩ chẩn đoán bệnh sớm hơn và chính xác hơn. Công việc của tôi là biến những con số khô khan thành những thông tin có thể cứu sống con người.',
+    },
+    quizzes: [
+      {
+        question: 'Một trong những lợi ích chính của phân tích dữ liệu y tế là gì?',
+        options: [
+          'Giảm chi phí bảo hiểm y tế',
+          'Cải thiện độ chính xác của chẩn đoán và cá nhân hóa điều trị',
+          'Tăng số lượng bệnh nhân đến khám',
+          'Giảm thiểu vai trò của bác sĩ trong điều trị',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Phân tích dữ liệu y tế giúp nhận diện các mẫu và xu hướng trong dữ liệu sức khỏe, từ đó cải thiện độ chính xác của chẩn đoán và cho phép cá nhân hóa điều trị dựa trên đặc điểm riêng của từng bệnh nhân.',
+      },
+      {
+        question: 'HIPAA là gì và tại sao nó quan trọng trong phân tích dữ liệu y tế?',
+        options: [
+          'Một loại thuốc điều trị bệnh lý tâm thần',
+          'Một tiêu chuẩn bảo mật thông tin y tế của Mỹ, thường được tham chiếu quốc tế',
+          'Một phần mềm phân tích dữ liệu y tế',
+          'Một tổ chức phi lợi nhuận về y tế',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'HIPAA (Health Insurance Portability and Accountability Act) là một bộ luật của Mỹ quy định về bảo mật và quyền riêng tư của thông tin y tế. Nó quan trọng trong phân tích dữ liệu y tế vì đảm bảo rằng các thông tin nhạy cảm của bệnh nhân được bảo vệ và chỉ được sử dụng cho các mục đích hợp pháp và có đạo đức.',
+      },
+    ],
   },
   {
     id: 'medical-devices-iot-applications',
@@ -205,10 +234,12 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Khám phá các thiết bị y tế tiên tiến và ứng dụng IoT trong y tế, từ thiết bị đeo được đến cơ sở hạ tầng bệnh viện thông minh.',
     duration: '160 phút',
     difficulty: 'Trung bình',
+    healthcareCategory: 'Medical IoT',
+    regulatoryCompliance: ['FDA', 'CE Mark', 'ISO 13485'],
+    techProficiencyLevel: 'Intermediate',
+    targetAudience: ['Biomedical Engineers', 'Clinicians', 'Patients'],
     videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // IoT in Healthcare: Smart Medical Devices
     imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
-    healthcareCategory: 'medical-devices',
-    techProficiencyLevel: 'Trung bình',
     objectives: [
       'Hiểu hệ sinh thái IoT trong môi trường y tế',
       'Đánh giá và lựa chọn các thiết bị IoT y tế phù hợp',
@@ -220,24 +251,6 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Hiểu biết cơ bản về các khái niệm IoT',
       'Kiến thức về quy trình làm việc trong y tế',
       'Năng khiếu kỹ thuật với tích hợp phần cứng/phần mềm',
-    ],
-    regulatoryCompliance: [
-      'Yêu cầu đăng ký thiết bị y tế tại Việt Nam',
-      'ISO 13485 về chất lượng thiết bị y tế',
-      'IEC 62304 về phần mềm thiết bị y tế',
-      'Yêu cầu an ninh mạng cho các thiết bị được kết nối',
-    ],
-    vietnameseHealthcareContext: [
-      'Quy định nhập khẩu thiết bị y tế',
-      'Năng lực sản xuất trong nước',
-      'Sự sẵn sàng của cơ sở hạ tầng y tế',
-      'Yêu cầu đào tạo cho nhân viên y tế',
-    ],
-    targetAudience: [
-      'Kỹ sư y sinh',
-      'Chuyên gia CNTT y tế',
-      'Doanh nhân thiết bị y tế',
-      'Chuyên gia kỹ thuật lâm sàng',
     ],
     exercises: [
       {
@@ -263,12 +276,64 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Bảo trì dự đoán thiết bị y tế',
       'Tự động hóa ứng phó khẩn cấp',
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'medical-device-designer'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'smart-home-iot-simulator-3d'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'IoT trong Y tế tại Việt Nam',
+      content: [
+        'Các thiết bị đeo theo dõi sức khỏe (wearables) như đồng hồ thông minh ngày càng phổ biến tại Việt Nam, giúp người dân chủ động theo dõi các chỉ số cơ bản.',
+        'Nhiều bệnh viện đang thí điểm ứng dụng IoT để quản lý giường bệnh thông minh, theo dõi vị trí thiết bị y tế và giám sát bệnh nhân từ xa trong khuôn viên bệnh viện.',
+        'Vinmec và một số bệnh viện tư nhân khác đã triển khai các vòng đeo tay thông minh cho bệnh nhân để theo dõi chỉ số sinh tồn và gửi cảnh báo tự động đến y tá.',
+      ],
+    },
+    caseStudies: [
+      {
+        title: 'Smart Health - Giải pháp IoT cho Bệnh viện',
+        organization: 'Bệnh viện Đa khoa Quốc tế',
+        problem: 'Cần nâng cao chất lượng dịch vụ và tối ưu hóa quy trình quản lý bệnh viện',
+        solution:
+          'Triển khai hệ thống IoT cho phép giám sát và quản lý bệnh nhân, thiết bị y tế và môi trường bệnh viện theo thời gian thực.',
+        impact:
+          'Cải thiện đáng kể chất lượng dịch vụ chăm sóc bệnh nhân, giảm thiểu sai sót và tối ưu hóa việc sử dụng tài nguyên của bệnh viện.',
+        innovations: [
+          'Giám sát bệnh nhân liên tục',
+          'Cảnh báo sớm tình trạng khẩn cấp',
+          'Quản lý thiết bị y tế thông minh',
+        ],
+      },
+    ],
+    careerConnect: {
+      name: 'Anh Phạm Anh Tuấn',
+      title: 'Kỹ sư R&D, Rạng Đông',
+      company: 'Rạng Đông',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-anh-tuan',
+      quote:
+        'Chúng tôi đang phát triển các giải pháp chiếu sáng thông minh cho bệnh viện, không chỉ để tiết kiệm năng lượng mà còn để điều chỉnh ánh sáng phù hợp với nhịp sinh học của bệnh nhân, hỗ trợ quá trình hồi phục. Đó là sự kết hợp giữa IoT và khoa học sức khỏe.',
+    },
+    quizzes: [
+      {
+        question: 'Thiết bị IoT nào sau đây không phải là thiết bị y tế?',
+        options: [
+          'Máy đo huyết áp kết nối Bluetooth',
+          'Đồng hồ thông minh theo dõi nhịp tim',
+          'Cảm biến chuyển động trong nhà',
+          'Máy trợ thính thông minh',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Cảm biến chuyển động trong nhà thường được sử dụng cho mục đích an ninh hoặc tự động hóa nhà thông minh, không phải là thiết bị y tế. Trong khi đó, máy đo huyết áp, đồng hồ thông minh theo dõi nhịp tim và máy trợ thính thông minh đều là những thiết bị y tế hoặc có liên quan đến y tế.',
+      },
+      {
+        question: 'Một trong những thách thức lớn nhất khi triển khai thiết bị y tế IoT là gì?',
+        options: [
+          'Thiết bị quá rẻ và dễ tiếp cận',
+          'Khó khăn trong việc tích hợp với hệ thống hiện có',
+          'Không có đủ dữ liệu để phân tích',
+          'Người dùng không quan tâm đến sức khỏe của họ',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Nhiều cơ sở y tế gặp khó khăn trong việc tích hợp các thiết bị IoT mới vào hệ thống quản lý và hồ sơ bệnh án hiện có của họ. Điều này đòi hỏi phải có các giải pháp công nghệ phù hợp và sự đào tạo cần thiết cho nhân viên y tế.',
+      },
+    ],
   },
   {
     id: 'healthtech-entrepreneurship',
@@ -277,10 +342,12 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Vượt qua những thách thức độc đáo của khởi nghiệp trong lĩnh vực y tế, từ tuân thủ quy định đến huy động vốn và mở rộng quy mô tại thị trường Việt Nam.',
     duration: '220 phút',
     difficulty: 'Nâng cao',
+    healthcareCategory: 'HealthTech Business',
+    regulatoryCompliance: ['Corporate Law', 'Investment Law', 'Medical Device Regulations'],
+    techProficiencyLevel: 'Expert',
+    targetAudience: ['Entrepreneurs', 'Investors', 'Healthcare Leaders'],
     videoUrl: 'https://www.youtube.com/watch?v=vMKNUylmanQ', // Starting a HealthTech Company
     imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1200&h=600&fit=crop',
-    healthcareCategory: 'entrepreneurship',
-    techProficiencyLevel: 'Nâng cao',
     objectives: [
       'Hiểu hệ sinh thái khởi nghiệp y tế tại Việt Nam',
       'Vượt qua các rào cản pháp lý cho các sản phẩm công nghệ y tế',
@@ -292,24 +359,6 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Kinh nghiệm trong ngành y tế',
       'Kiến thức cơ bản về kinh doanh và khởi nghiệp',
       'Hiểu biết về môi trường pháp lý',
-    ],
-    regulatoryCompliance: [
-      'Yêu cầu giấy phép kinh doanh cho các dịch vụ y tế',
-      'Quy định đầu tư cho các dự án y tế nước ngoài',
-      'Yêu cầu thử nghiệm lâm sàng cho các sản phẩm y tế',
-      'Yêu cầu về địa phương hóa dữ liệu',
-    ],
-    vietnameseHealthcareContext: [
-      'Cơ hội hợp tác công-tư',
-      'Bối cảnh đầu tư y tế',
-      'Các kênh phân phối và tiếp cận thị trường',
-      'Ưu đãi sản xuất trong nước',
-    ],
-    targetAudience: [
-      'Doanh nhân công nghệ y tế',
-      'Chuyên gia y tế có hứng thú kinh doanh',
-      'Nhà đầu tư trong lĩnh vực y tế',
-      'Các nhóm đổi mới của doanh nghiệp',
     ],
     exercises: [
       {
@@ -335,6 +384,15 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Tối ưu hóa chuỗi cung ứng y tế',
       'Công nghệ tương tác với bệnh nhân',
     ],
+    vietnamContext: {
+      title: 'Hệ sinh thái Khởi nghiệp Y tế (HealthTech) tại Việt Nam',
+      content: [
+        'Hệ sinh thái HealthTech tại Việt Nam đang phát triển nhanh chóng, thu hút sự quan tâm của nhiều nhà đầu tư trong và ngoài nước.',
+        'Các lĩnh vực nổi bật bao gồm y tế từ xa (telemedicine), nền tảng đặt lịch khám (booking platforms), và thiết bị theo dõi sức khỏe cá nhân.',
+        'Thách thức cho các startup HealthTech là hành lang pháp lý chưa hoàn thiện, sự cạnh tranh từ các bệnh viện lớn và việc thay đổi thói quen của người dùng.',
+        'Chính phủ đang có những chính sách hỗ trợ, và các vườn ươm khởi nghiệp cũng đang tích cực tìm kiếm và đầu tư vào các startup y tế tiềm năng.',
+      ],
+    },
     caseStudies: [
       {
         title: 'Docosan - Thành công của Thị trường Y tế',
@@ -345,9 +403,40 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
         innovations: ['Trình kiểm tra triệu chứng AI', 'Tích hợp yêu cầu bảo hiểm', 'Hỗ trợ đa ngôn ngữ'],
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    careerConnect: {
+      name: 'Bà Beth Ann Lopez',
+      title: 'Co-founder & CEO, Docosan',
+      company: 'Docosan',
+      imageUrl: 'https://i.pravatar.cc/150?u=beth-ann-lopez',
+      quote:
+        'Khởi nghiệp trong ngành y tế tại một thị trường năng động như Việt Nam là một hành trình đầy cảm hứng. Thách thức lớn nhất là xây dựng được lòng tin - lòng tin từ bệnh nhân, từ bác sĩ và từ các đối tác. Công nghệ chỉ là công cụ, mục tiêu cuối cùng là cải thiện cuộc sống.',
+    },
+    quizzes: [
+      {
+        question: 'Yếu tố nào sau đây không phải là lợi ích của việc khởi nghiệp trong lĩnh vực công nghệ y tế?',
+        options: [
+          'Đáp ứng nhu cầu ngày càng tăng về dịch vụ y tế chất lượng',
+          'Có thể làm giàu nhanh chóng mà không cần đầu tư',
+          'Cơ hội hợp tác với các tổ chức y tế và công nghệ hàng đầu',
+          'Góp phần cải thiện sức khỏe cộng đồng và nâng cao chất lượng cuộc sống',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Mặc dù khởi nghiệp trong lĩnh vực công nghệ y tế có thể mang lại lợi nhuận cao, nhưng không có nghĩa là sẽ làm giàu nhanh chóng mà không cần đầu tư. Ngành này đòi hỏi sự đầu tư đáng kể về thời gian, tiền bạc và công sức để phát triển sản phẩm và thâm nhập thị trường.',
+      },
+      {
+        question: 'Đâu là một trong những thách thức lớn nhất mà các startup công nghệ y tế phải đối mặt?',
+        options: [
+          'Thị trường không có nhu cầu về sản phẩm y tế',
+          'Cạnh tranh từ các công ty công nghệ lớn và có nguồn lực mạnh',
+          'Thiếu nhân lực có kỹ năng trong lĩnh vực công nghệ và y tế',
+          'Tất cả các đáp án trên đều đúng',
+        ],
+        correctAnswerIndex: 3,
+        explanation:
+          'Các startup công nghệ y tế thường phải đối mặt với nhiều thách thức, bao gồm cạnh tranh từ các công ty lớn, thiếu hụt nhân lực có kỹ năng và cần phải thuyết phục thị trường về giá trị của sản phẩm hoặc dịch vụ của họ.',
+      },
+    ],
   },
   {
     id: 'mental-health-technology',
@@ -356,10 +445,12 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Khám phá các giải pháp sức khỏe tâm thần kỹ thuật số, từ ứng dụng trị liệu đến đánh giá sức khỏe tâm thần bằng AI, với sự nhạy cảm văn hóa cho bối cảnh Việt Nam.',
     duration: '180 phút',
     difficulty: 'Trung bình',
+    healthcareCategory: 'Mental Health Tech',
+    regulatoryCompliance: ['HIPAA', 'Data Privacy Laws', 'Ethical Guidelines'],
+    techProficiencyLevel: 'Intermediate',
+    targetAudience: ['Therapists', 'Patients', 'HR Professionals'],
     videoUrl: 'https://www.youtube.com/watch?v=IlU-zDU6aQ0', // Digital Mental Health Solutions
     imageUrl: 'https://images.unsplash.com/photo-1607619662634-3ac55ec2d0a9?w=1200&h=600&fit=crop',
-    healthcareCategory: 'mental-health',
-    techProficiencyLevel: 'Trung bình',
     objectives: [
       'Hiểu bối cảnh sức khỏe tâm thần kỹ thuật số',
       'Thiết kế các can thiệp sức khỏe tâm thần nhạy cảm về văn hóa',
@@ -371,24 +462,6 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Kiến thức cơ bản về tâm lý học hoặc sức khỏe tâm thần',
       'Hiểu biết về các nguyên tắc sức khỏe kỹ thuật số',
       'Nhận thức văn hóa về sự kỳ thị sức khỏe tâm thần ở Việt Nam',
-    ],
-    regulatoryCompliance: [
-      'Yêu cầu cấp phép dịch vụ sức khỏe tâm thần',
-      'Trách nhiệm nghề nghiệp đối với sức khỏe tâm thần kỹ thuật số',
-      'Giao thức an toàn bệnh nhân cho can thiệp khủng hoảng',
-      'Bảo vệ dữ liệu cho dữ liệu sức khỏe tâm thần nhạy cảm',
-    ],
-    vietnameseHealthcareContext: [
-      'Sự kỳ thị sức khỏe tâm thần và rào cản văn hóa',
-      'Sự sẵn có hạn chế của các chuyên gia sức khỏe tâm thần',
-      'Cách tiếp cận chăm sóc sức khỏe tâm thần lấy gia đình làm trung tâm',
-      'Tích hợp với các phương pháp chữa bệnh truyền thống',
-    ],
-    targetAudience: [
-      'Chuyên gia sức khỏe tâm thần',
-      'Nhà phát triển sản phẩm sức khỏe kỹ thuật số',
-      'Quản trị viên y tế',
-      'Điều phối viên chương trình chăm sóc sức khỏe',
     ],
     exercises: [
       {
@@ -416,6 +489,15 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
       'Công cụ tăng cường trị liệu',
       'Tiếp cận sức khỏe tâm thần cộng đồng',
     ],
+    vietnamContext: {
+      title: 'Sức khỏe Tâm thần trong Kỷ nguyên số tại Việt Nam',
+      content: [
+        'Nhận thức về sức khỏe tâm thần tại Việt Nam đang dần được cải thiện, đặc biệt trong giới trẻ, nhưng sự kỳ thị vẫn còn tồn tại.',
+        'Các ứng dụng thiền định và chăm sóc sức khỏe tinh thần như Calm, Headspace bắt đầu có người dùng tại Việt Nam, nhưng các giải pháp được địa phương hóa còn hạn chế.',
+        'Các trang cộng đồng, diễn đàn online đang là nơi nhiều người trẻ tìm đến để chia sẻ các vấn đề tâm lý, cho thấy nhu cầu lớn về một không gian an toàn để thảo luận.',
+        'Thách thức là làm sao để xây dựng các ứng dụng vừa hiệu quả về mặt lâm sàng, vừa phù hợp với văn hóa và giảm bớt rào cản kỳ thị.',
+      ],
+    },
     caseStudies: [
       {
         title: 'Mindful - Nền tảng Sức khỏe Tâm thần Việt Nam',
@@ -426,10 +508,42 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
         innovations: ['Các mô-đun CBT bằng tiếng Việt', 'Tích hợp trị liệu gia đình', 'Đào tạo năng lực văn hóa'],
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'mental-health-app')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    careerConnect: {
+      name: 'Chuyên gia Tâm lý Đặng Khánh An',
+      title: 'Co-founder, Mindful Vietnam',
+      company: 'Mindful Vietnam',
+      imageUrl: 'https://i.pravatar.cc/150?u=dang-khanh-an',
+      quote:
+        'Công nghệ giúp chúng tôi phá vỡ rào cản địa lý và sự e ngại để mang dịch vụ chăm sóc sức khỏe tâm thần đến gần hơn với mọi người. Một ứng dụng không thể thay thế một nhà trị liệu, nhưng nó có thể là một người bạn đồng hành, một công cụ hỗ trợ đắc lực trên hành trình chữa lành.',
+    },
+    quizzes: [
+      {
+        question: 'Một trong những lợi ích của công nghệ sức khỏe tâm thần kỹ thuật số là gì?',
+        options: [
+          'Giảm chi phí điều trị sức khỏe tâm thần',
+          'Tăng cường quyền tự chủ và tiếp cận dịch vụ cho bệnh nhân',
+          'Thay thế hoàn toàn bác sĩ trong việc điều trị',
+          'Cung cấp chẩn đoán bệnh tâm thần chính xác 100%',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Công nghệ sức khỏe tâm thần kỹ thuật số giúp bệnh nhân dễ dàng tiếp cận dịch vụ chăm sóc sức khỏe tâm thần từ xa, tăng cường quyền tự chủ trong việc quản lý sức khỏe của bản thân. Tuy nhiên, nó không thể thay thế hoàn toàn bác sĩ và không đảm bảo chẩn đoán chính xác 100%.',
+      },
+      {
+        question:
+          'Đâu là một trong những thách thức lớn nhất khi triển khai các ứng dụng sức khỏe tâm thần kỹ thuật số tại Việt Nam?',
+        options: [
+          'Tất cả người dân đều có điện thoại thông minh',
+          'Không có sự kỳ thị nào đối với sức khỏe tâm thần',
+          'Vấn đề bảo mật, quyền riêng tư và sự kỳ thị văn hóa',
+          'Các ứng dụng này hoàn toàn miễn phí cho người dùng',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Vấn đề bảo mật và quyền riêng tư là rất quan trọng trong lĩnh vực sức khỏe tâm thần. Bên cạnh đó, sự kỳ thị (stigma) vẫn còn tồn tại trong văn hóa, khiến nhiều người e ngại tìm kiếm sự giúp đỡ, ngay cả qua các ứng dụng kỹ thuật số.',
+      },
+    ],
   },
 ];
 
-export default healthcareTechLessons;
+export { healthcareTechLessons };

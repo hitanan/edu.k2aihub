@@ -353,7 +353,7 @@ export function TreasureHuntGame({ onComplete, timeLeft, onRestart }: TreasureHu
         }
       }
     },
-    [treasures, enemies, level],
+    [treasures, enemies, level, onComplete, onRestart, score],
   );
 
   const attackEnemy = useCallback(() => {

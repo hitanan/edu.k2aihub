@@ -3,51 +3,21 @@ import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { vietnameseBusinessLessons } from '@/data/vietnamese-business';
 import { K2Module } from '@/data/moduleNavigation';
 import { createModuleMetadata } from '@/utils/seo';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import type { VietnameseBusinessLesson } from '@/data/vietnamese-business';
-
-// Convert VietnameseBusinessLesson to BaseLessonData
-function convertVietnameseBusinessToBase(
-  lesson: VietnameseBusinessLesson,
-): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises.map((exercise) => ({
-      title: exercise.title,
-      description: exercise.description,
-      difficulty: exercise.difficulty,
-      solution: exercise.solution,
-      materials: exercise.requirements,
-      procedure: exercise.hints,
-      expectedResults: exercise.expectedOutput,
-    })),
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies.map((caseStudy) => ({
-      title: caseStudy.title,
-      organization: caseStudy.company,
-      problem: caseStudy.challenge,
-      solution: caseStudy.solution,
-      impact: caseStudy.results,
-      innovations: caseStudy.insights,
-    })),
-    resources: lesson.resources,
-  };
-}
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(
   'Vietnamese Business & Entrepreneurship - K2AiHub',
   'Khóa học kinh doanh và khởi nghiệp tại Việt Nam: startup ecosystem, quy định pháp lý, FinTech và e-commerce strategies. Thành công trong thị trường Việt Nam.',
-  ['kinh doanh việt nam', 'startup vietnam', 'fintech vietnam', 'e-commerce vietnam', 'doanh nghiệp việt nam', 'đầu tư việt nam', 'K2AiHub'],
-  'vietnamese-business'
+  [
+    'kinh doanh việt nam',
+    'startup vietnam',
+    'fintech vietnam',
+    'e-commerce vietnam',
+    'doanh nghiệp việt nam',
+    'đầu tư việt nam',
+    'K2AiHub',
+  ],
+  'vietnamese-business',
 );
 
 export default function VietnameseBusinessPage() {
@@ -69,8 +39,7 @@ export default function VietnameseBusinessPage() {
     icon: '🏪',
     color: 'from-green-600 to-blue-600',
     gradientColors: 'from-slate-900 via-green-900 to-slate-900',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop',
     objectives: [
       'Navigate Vietnamese startup ecosystem và regulatory environment',
       'Develop FinTech solutions compliant với Vietnamese banking laws',
@@ -109,18 +78,8 @@ export default function VietnameseBusinessPage() {
       startups: '3.2K+',
       startupsNote: 'Active Vietnamese Startups',
     },
-    relatedModules: [
-      K2Module.FinancialLiteracy,
-      K2Module.DigitalMarketing,
-      K2Module.VietnameseLanguageTech,
-    ],
+    relatedModules: [K2Module.FinancialLiteracy, K2Module.DigitalMarketing, K2Module.VietnameseLanguageTech],
   };
 
-  const convertedLessons = vietnameseBusinessLessons.map(
-    convertVietnameseBusinessToBase,
-  );
-
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={vietnameseBusinessLessons} />;
 }

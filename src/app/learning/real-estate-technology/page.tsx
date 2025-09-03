@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { RealEstateTechnologyLessons } from '@/data/real-estate-technology';
+import { realEstateTechnologyLessons } from '@/data/real-estate-technology';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 import { ModuleData } from '@/types';
@@ -9,8 +9,19 @@ import { ModuleData } from '@/types';
 export const metadata: Metadata = createModuleMetadata(
   'Công Nghệ Bất Động Sản - Real Estate Technology',
   'Master công nghệ bất động sản với PropTech, Virtual Tours 360°, Smart Buildings IoT, Real Estate Analytics AI và Blockchain. Khóa học toàn diện về digital transformation trong ngành bất động sản.',
-  ['công nghệ bất động sản', 'real estate technology', 'proptech', 'virtual tours', 'smart buildings', 'real estate analytics', 'blockchain real estate', 'property management', 'real estate ai', 'K2AI'],
-  'real-estate-technology'
+  [
+    'công nghệ bất động sản',
+    'real estate technology',
+    'proptech',
+    'virtual tours',
+    'smart buildings',
+    'real estate analytics',
+    'blockchain real estate',
+    'property management',
+    'real estate ai',
+    'K2AI',
+  ],
+  'real-estate-technology',
 );
 
 export default function RealEstateTechnologyPage() {
@@ -18,7 +29,8 @@ export default function RealEstateTechnologyPage() {
     id: 'real-estate-technology',
     title: 'Công Nghệ Bất Động Sản',
     subtitle: 'Real Estate Technology & PropTech Innovation',
-    description: 'Khám phá cách mạng PropTech đang transform ngành bất động sản toàn cầu. Từ virtual property tours, IoT smart buildings, AI-powered analytics đến blockchain property transactions. Master các technologies tiên tiến để revolutionize real estate industry và create innovative PropTech solutions.',
+    description:
+      'Khám phá cách mạng PropTech đang transform ngành bất động sản toàn cầu. Từ virtual property tours, IoT smart buildings, AI-powered analytics đến blockchain property transactions. Master các technologies tiên tiến để revolutionize real estate industry và create innovative PropTech solutions.',
     level: 'Nâng cao',
     duration: '22-27 giờ',
     category: 'Real Estate & Technology',
@@ -28,7 +40,7 @@ export default function RealEstateTechnologyPage() {
       '360° Virtual Tours & VR Property Viewing development',
       'Smart Buildings IoT Management Systems',
       'AI-Powered Real Estate Analytics & Market Intelligence',
-      'Blockchain Technology & Real Estate FinTech solutions'
+      'Blockchain Technology & Real Estate FinTech solutions',
     ],
     icon: '🏢',
     color: 'from-blue-600 to-indigo-600',
@@ -37,13 +49,13 @@ export default function RealEstateTechnologyPage() {
       'Tạo immersive virtual property experiences với VR/AR technology',
       'Thiết kế smart building systems với IoT và predictive analytics',
       'Build AI-powered valuation models và market intelligence tools',
-      'Implement blockchain solutions cho property transactions và tokenization'
+      'Implement blockchain solutions cho property transactions và tokenization',
     ],
     prerequisites: [
       'Hiểu biết cơ bản về real estate market và property transactions',
       'Kiến thức về web development, mobile apps và cloud platforms',
       'Basic understanding về IoT, blockchain và AI/ML concepts',
-      'Familiarity với data analytics và visualization tools'
+      'Familiarity với data analytics và visualization tools',
     ],
     careerOutcomes: [
       'PropTech Product Manager - 35-55 triệu VNĐ/tháng',
@@ -51,7 +63,7 @@ export default function RealEstateTechnologyPage() {
       'Smart Building Systems Engineer - 30-50 triệu VNĐ/tháng',
       'Real Estate Data Analyst - 22-38 triệu VNĐ/tháng',
       'PropTech Entrepreneur - Potential unlimited income',
-      'Digital Real Estate Marketing Manager - 20-35 triệu VNĐ/tháng'
+      'Digital Real Estate Marketing Manager - 20-35 triệu VNĐ/tháng',
     ],
     industryApplications: [
       'Residential Real Estate: Virtual tours, smart home automation và buyer matching platforms',
@@ -59,25 +71,20 @@ export default function RealEstateTechnologyPage() {
       'Property Development: VR project visualization, construction monitoring và pre-sales platforms',
       'Real Estate Investment: AI-powered analytics, market intelligence và portfolio optimization',
       'Property Management: Smart building operations, tenant services và maintenance automation',
-      'Real Estate Finance: Blockchain transactions, tokenized investments và DeFi lending'
+      'Real Estate Finance: Blockchain transactions, tokenized investments và DeFi lending',
     ],
     marketDemand: {
       averageSalary: '25-55 triệu VNĐ',
       jobGrowth: '+42%',
-      hireDemand: 'Rất cao'
+      hireDemand: 'Rất cao',
     },
     relatedModules: [
       K2Module.BlockchainDeFi,
       K2Module.AdvancedAI,
       K2Module.SmartManufacturing,
-      K2Module.DigitalMarketing
-    ]
+      K2Module.DigitalMarketing,
+    ],
   };
 
-  return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={RealEstateTechnologyLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={realEstateTechnologyLessons} />;
 }

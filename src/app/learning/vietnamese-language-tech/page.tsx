@@ -3,51 +3,21 @@ import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { vietnameseLangTechLessons } from '@/data/vietnamese-language-tech';
 import { K2Module } from '@/data/moduleNavigation';
 import { createModuleMetadata } from '@/utils/seo';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import type { VietnameseLangTechLesson } from '@/data/vietnamese-language-tech';
-
-// Convert VietnameseLangTechLesson to BaseLessonData
-function convertVietnameseLangTechToBase(
-  lesson: VietnameseLangTechLesson,
-): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises.map((exercise) => ({
-      title: exercise.title,
-      description: exercise.description,
-      difficulty: exercise.difficulty,
-      solution: exercise.solution,
-      materials: exercise.requirements,
-      procedure: exercise.hints,
-      expectedResults: exercise.expectedOutput,
-    })),
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies.map((caseStudy) => ({
-      title: caseStudy.title,
-      organization: caseStudy.organization,
-      problem: caseStudy.challenge,
-      solution: caseStudy.solution,
-      impact: caseStudy.results,
-      innovations: caseStudy.insights,
-    })),
-    resources: lesson.resources,
-  };
-}
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(
   'Vietnamese Language Technology - K2AiHub',
   'Khóa học công nghệ ngôn ngữ tiếng Việt: NLP, AI chatbot, voice technology và speech recognition. Phát triển ứng dụng AI hiểu tiếng Việt tự nhiên.',
-  ['vietnamese nlp', 'tiếng việt ai', 'chatbot tiếng việt', 'voice ai vietnam', 'vietnamese speech recognition', 'phobert', 'K2AiHub'],
-  'vietnamese-language-tech'
+  [
+    'vietnamese nlp',
+    'tiếng việt ai',
+    'chatbot tiếng việt',
+    'voice ai vietnam',
+    'vietnamese speech recognition',
+    'phobert',
+    'K2AiHub',
+  ],
+  'vietnamese-language-tech',
 );
 
 export default function VietnameseLanguageTechPage() {
@@ -69,8 +39,7 @@ export default function VietnameseLanguageTechPage() {
     icon: '🇻🇳',
     color: 'from-red-600 to-yellow-500',
     gradientColors: 'from-slate-900 via-red-900 to-slate-900',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=600&fit=crop',
     objectives: [
       'Master Vietnamese NLP techniques và tokenization challenges',
       'Build intelligent chatbots hiểu context và intent tiếng Việt',
@@ -109,18 +78,8 @@ export default function VietnameseLanguageTechPage() {
       startups: '120+',
       startupsNote: 'Vietnamese AI Startups',
     },
-    relatedModules: [
-      K2Module.DigitalMarketing,
-      K2Module.VietnameseBusiness,
-      K2Module.Python,
-    ],
+    relatedModules: [K2Module.DigitalMarketing, K2Module.VietnameseBusiness, K2Module.Python],
   };
 
-  const convertedLessons = vietnameseLangTechLessons.map(
-    convertVietnameseLangTechToBase,
-  );
-
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={vietnameseLangTechLessons} />;
 }

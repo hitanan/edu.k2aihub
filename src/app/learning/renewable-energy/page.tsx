@@ -1,46 +1,25 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import {
-  renewableEnergyLessons,
-  type RenewableEnergyLesson,
-} from '@/data/renewable-energy';
+import { renewableEnergyLessons } from '@/data/renewable-energy';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
-// Convert RenewableEnergyLesson to BaseLessonData
-function convertToBaseLessonData(
-  lesson: RenewableEnergyLesson,
-): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises,
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies?.map((study) => ({
-      title: study.title,
-      organization: study.location || 'Organization',
-      problem: study.challenge || 'Problem',
-      solution: study.solution,
-      impact: study.impact,
-      innovations: study.insights || [],
-    })),
-    resources: lesson.resources,
-  };
-}
 
 export const metadata: Metadata = createModuleMetadata(
   'Năng Lượng Tái Tạo - Công Nghệ Xanh Cho Tương Lai',
   'Khám phá công nghệ năng lượng tái tạo từ solar, wind đến energy storage. Học thiết kế hệ thống renewable energy cho Vietnam Net Zero 2050. Bao gồm wind turbines, photovoltaic systems, battery storage và smart grid technology.',
-  ['năng lượng tái tạo', 'solar energy', 'wind power', 'energy storage', 'smart grid', 'vietnam renewable', 'net zero 2050', 'green technology', 'sustainable energy', 'K2AI'],
-  'renewable-energy'
+  [
+    'năng lượng tái tạo',
+    'solar energy',
+    'wind power',
+    'energy storage',
+    'smart grid',
+    'vietnam renewable',
+    'net zero 2050',
+    'green technology',
+    'sustainable energy',
+    'K2AI',
+  ],
+  'renewable-energy',
 );
 
 export default function RenewableEnergyPage() {
@@ -62,8 +41,7 @@ export default function RenewableEnergyPage() {
     ],
     icon: '⚡',
     color: 'from-green-600 to-emerald-600',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master solar photovoltaic system design và installation best practices',
       'Understand wind turbine technology và offshore wind farm development',
@@ -98,18 +76,8 @@ export default function RenewableEnergyPage() {
       jobGrowth: '+45%',
       hireDemand: 'Rất cao',
     },
-    relatedModules: [
-      K2Module.GreenTechnology,
-      K2Module.RenewableEnergy,
-      K2Module.DigitalMarketing,
-      K2Module.Python,
-    ],
+    relatedModules: [K2Module.GreenTechnology, K2Module.RenewableEnergy, K2Module.DigitalMarketing, K2Module.Python],
   };
 
-  // Convert lessons to BaseLessonData format
-  const convertedLessons = renewableEnergyLessons.map(convertToBaseLessonData);
-
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={renewableEnergyLessons} />;
 }

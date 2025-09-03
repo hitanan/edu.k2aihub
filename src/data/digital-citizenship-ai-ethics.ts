@@ -1,5 +1,25 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 export interface DigitalCitizenshipLessonType extends BaseLessonData {
   ethicalFrameworks: string[];
   practicalScenarios: Array<{
@@ -13,6 +33,9 @@ export interface DigitalCitizenshipLessonType extends BaseLessonData {
   digitalRights: string[];
   aiEthicsPrinciples: string[];
   privacyTools: string[];
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  quizzes?: Quiz[];
 }
 
 export const digitalCitizenshipLessons: DigitalCitizenshipLessonType[] = [
@@ -168,6 +191,49 @@ export const digitalCitizenshipLessons: DigitalCitizenshipLessonType[] = [
         type: 'Tools',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Công dân số tại Việt Nam',
+      content: [
+        'Luật An ninh mạng 2018 là khung pháp lý quan trọng điều chỉnh hành vi trên không gian mạng tại Việt Nam, yêu cầu người dùng tuân thủ pháp luật và bảo vệ an ninh quốc gia.',
+        'Chương trình Chuyển đổi số Quốc gia đến năm 2025, định hướng đến năm 2030, nhấn mạnh việc nâng cao nhận thức và kỹ năng số cho người dân, hướng tới một xã hội số an toàn và nhân văn.',
+        'Tình trạng lừa đảo trực tuyến (online scams) ngày càng tinh vi tại Việt Nam, từ giả mạo cuộc gọi của cơ quan chức năng đến các chiêu trò "việc nhẹ lương cao", đòi hỏi người dân phải có kỹ năng nhận diện và phòng tránh.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Ngô Tuấn Anh',
+      title: 'Phó Chủ tịch, Hiệp hội An toàn Thông tin Việt Nam (VNISA)',
+      company: 'VNISA',
+      imageUrl: 'https://i.pravatar.cc/150?u=ngo-tuan-anh',
+      quote:
+        'Trở thành một công dân số có trách nhiệm không chỉ là bảo vệ bản thân mà còn là góp phần xây dựng một không gian mạng Việt Nam lành mạnh. Kỹ năng số và nhận thức về an toàn thông tin là hành trang không thể thiếu trong thế kỷ 21.',
+    },
+    quizzes: [
+      {
+        question: 'Theo Luật An ninh mạng của Việt Nam, hành vi nào sau đây bị cấm trên không gian mạng?',
+        options: [
+          'Bày tỏ quan điểm cá nhân',
+          'Chia sẻ thông tin khoa học',
+          'Xúc phạm danh dự, nhân phẩm của người khác',
+          'Mua sắm trực tuyến',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Luật An ninh mạng nghiêm cấm các hành vi như đăng tải thông tin sai sự thật, xúc phạm danh dự, nhân phẩm của tổ chức, cá nhân, và các hành vi khác xâm phạm an ninh quốc gia, trật tự an toàn xã hội.',
+      },
+      {
+        question:
+          'Bạn nhận được một tin nhắn SMS thông báo trúng thưởng một chiếc xe máy và yêu cầu bạn nhấp vào một liên kết để nhận giải. Đây có khả năng là hình thức tấn công nào?',
+        options: [
+          'Phishing (Lừa đảo giả mạo)',
+          'Malware (Phần mềm độc hại)',
+          'Spam (Thư rác)',
+          'Tất cả các phương án trên',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'Đây là một hình thức lừa đảo giả mạo (phishing) phổ biến, nhằm mục đích lừa người dùng nhấp vào liên kết độc hại để đánh cắp thông tin cá nhân hoặc tài khoản ngân hàng.',
+      },
+    ],
   },
   {
     id: 'ai-ethics-deep-dive',
@@ -320,6 +386,49 @@ export const digitalCitizenshipLessons: DigitalCitizenshipLessonType[] = [
         type: 'Policy',
       },
     ],
+    vietnamContext: {
+      title: 'Đạo đức AI trong bối cảnh Việt Nam',
+      content: [
+        'Chiến lược quốc gia về nghiên cứu, phát triển và ứng dụng Trí tuệ nhân tạo đến năm 2030 của Việt Nam nhấn mạnh việc xây dựng các hệ thống AI có trách nhiệm, đáng tin cậy và minh bạch.',
+        'Các công ty công nghệ Việt Nam như FPT, Viettel, Zalo đang tích cực phát triển các ứng dụng AI trong nhiều lĩnh vực, từ trợ lý ảo, nhận dạng giọng nói tiếng Việt đến xử lý hình ảnh. Điều này đặt ra các câu hỏi đạo đức về thu thập dữ liệu và quyền riêng tư.',
+        'Việc triển khai camera giám sát thông minh sử dụng AI tại các thành phố lớn như Hà Nội và TP.HCM đang gây ra các cuộc tranh luận về sự cân bằng giữa an ninh công cộng và quyền riêng tư của công dân.',
+      ],
+    },
+    careerConnect: {
+      name: 'TS. Bùi Hải Hưng',
+      title: 'Viện trưởng Viện Nghiên cứu Trí tuệ nhân tạo VinAI',
+      company: 'VinAI (VinGroup)',
+      imageUrl: 'https://i.pravatar.cc/150?u=bui-hai-hung',
+      quote:
+        'Phát triển AI tại Việt Nam không chỉ là cuộc đua về công nghệ mà còn là cuộc đua về đạo đức. Chúng tôi cam kết xây dựng những sản phẩm AI không chỉ thông minh mà còn phục vụ con người một cách công bằng và có trách nhiệm, tôn trọng các giá trị văn hóa Việt Nam.',
+    },
+    quizzes: [
+      {
+        question:
+          'Một hệ thống AI chấm điểm tín dụng ở Việt Nam có xu hướng cho điểm thấp hơn đối với những người sống ở khu vực nông thôn. Đây là ví dụ về vấn đề gì?',
+        options: [
+          'Thiên vị thuật toán (Algorithmic Bias)',
+          'Thiếu khả năng giải thích (Lack of Explainability)',
+          'An toàn hệ thống (System Safety)',
+          'Hiệu suất thấp (Low Performance)',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'Đây là một ví dụ điển hình về thiên vị thuật toán, khi mô hình AI học được các định kiến có sẵn trong dữ liệu lịch sử, dẫn đến các quyết định không công bằng đối với một nhóm người nhất định.',
+      },
+      {
+        question: '"Explainability" (Khả năng giải thích) trong đạo đức AI có nghĩa là gì?',
+        options: [
+          'AI có thể giải thích mọi thứ trên thế giới',
+          'Con người có thể hiểu được tại sao AI lại đưa ra một quyết định cụ thể',
+          'AI có thể tự sửa lỗi',
+          'AI có thể nói chuyện như người',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Khả năng giải thích đòi hỏi các quyết định của AI không phải là "hộp đen", mà phải có khả năng được diễn giải và hiểu bởi con người, đặc biệt trong các lĩnh vực có ảnh hưởng lớn như y tế hay tài chính.',
+      },
+    ],
   },
   {
     id: 'digital-wellness-mindful-tech',
@@ -465,6 +574,43 @@ export const digitalCitizenshipLessons: DigitalCitizenshipLessonType[] = [
         title: 'Time Well Spent Movement',
         url: 'https://medium.com/time-well-spent',
         type: 'Community',
+      },
+    ],
+    vietnamContext: {
+      title: 'Sức khỏe số trong Xã hội Việt Nam hiện đại',
+      content: [
+        'Việt Nam là một trong những quốc gia có tỷ lệ sử dụng mạng xã hội cao nhất thế giới, đặc biệt là ở giới trẻ. Điều này dẫn đến những lo ngại về "nghiện" mạng xã hội và các tác động tiêu cực đến sức khỏe tâm thần như lo âu, trầm cảm và hội chứng FOMO (sợ bỏ lỡ).',
+        'Vấn nạn "nghiện game" online là một vấn đề xã hội được quan tâm tại Việt Nam, ảnh hưởng đến kết quả học tập và sức khỏe của thanh thiếu niên. Nhiều gia đình đang tìm kiếm các giải pháp để giúp con em cân bằng giữa giải trí và cuộc sống.',
+        'Trào lưu "digital detox" (cai nghiện số) và thực hành chánh niệm (mindfulness) đang dần trở nên phổ biến ở các thành phố lớn, nơi mọi người tìm cách ngắt kết nối với thiết bị số để tái tạo năng lượng và kết nối với cuộc sống thực.',
+      ],
+    },
+    careerConnect: {
+      name: 'ThS. Nguyễn Thị Tâm',
+      title: 'Chuyên gia Tâm lý, Trung tâm Mindful Way',
+      company: 'Mindful Way',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-tam',
+      quote:
+        'Công nghệ không xấu, nhưng cách chúng ta sử dụng nó có thể gây hại. Sức khỏe số không phải là từ bỏ công nghệ, mà là học cách làm chủ nó. Bằng cách thực hành chánh niệm, chúng ta có thể sử dụng điện thoại một cách có ý thức, thay vì để nó điều khiển chúng ta.',
+    },
+    quizzes: [
+      {
+        question: 'Hội chứng FOMO (Fear Of Missing Out) thường liên quan đến việc sử dụng nền tảng nào nhiều nhất?',
+        options: ['Email', 'Ứng dụng đọc báo', 'Mạng xã hội (Facebook, Instagram, TikTok)', 'Phần mềm văn phòng'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Mạng xã hội thường là nơi mọi người chia sẻ những khoảnh khắc nổi bật, được tô hồng trong cuộc sống, dễ gây ra cảm giác so sánh và sợ hãi rằng mình đang bỏ lỡ những trải nghiệm thú vị mà người khác có.',
+      },
+      {
+        question: 'Phương pháp nào sau đây KHÔNG phải là một chiến lược tốt để cải thiện sức khỏe số?',
+        options: [
+          'Tắt thông báo (notifications) không cần thiết',
+          'Kiểm tra điện thoại ngay khi thức dậy để không bỏ lỡ tin tức',
+          'Đặt ra những khoảng thời gian "không điện thoại" trong ngày',
+          'Sử dụng các ứng dụng theo dõi thời gian sử dụng màn hình',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Kiểm tra điện thoại ngay khi thức dậy sẽ khiến não bộ bị quá tải với thông tin và các yêu cầu từ bên ngoài, làm giảm khả năng tập trung và bắt đầu ngày mới một cách chủ động. Đây là một thói quen xấu cần thay đổi.',
       },
     ],
   },

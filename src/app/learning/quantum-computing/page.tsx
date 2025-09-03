@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { QuantumLessons } from '@/data/quantum-computing';
+import { quantumComputingLessons } from '@/data/quantum-computing';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
@@ -8,8 +8,18 @@ import { K2Module } from '@/data/moduleNavigation';
 export const metadata: Metadata = createModuleMetadata(
   'Quantum Computing - Máy Tính Lượng Tử',
   'Khám phá thế giới kỳ diệu của máy tính lượng tử từ nguyên lý cơ bản đến ứng dụng thực tế. Học quantum algorithms, cryptography và tương lai công nghệ.',
-  ['quantum computing', 'máy tính lượng tử', 'quantum algorithms', 'quantum cryptography', 'qiskit', 'quantum physics', 'vật lý lượng tử', 'công nghệ tương lai', 'K2AI'],
-  'quantum-computing'
+  [
+    'quantum computing',
+    'máy tính lượng tử',
+    'quantum algorithms',
+    'quantum cryptography',
+    'qiskit',
+    'quantum physics',
+    'vật lý lượng tử',
+    'công nghệ tương lai',
+    'K2AI',
+  ],
+  'quantum-computing',
 );
 
 export default function QuantumComputingMainPage() {
@@ -52,7 +62,7 @@ export default function QuantumComputingMainPage() {
     ],
     careerOutcomes: [
       'Quantum Algorithm Developer - 40-80 triệu VNĐ',
-      'Quantum Cryptography Specialist - 35-70 triệu VNĐ', 
+      'Quantum Cryptography Specialist - 35-70 triệu VNĐ',
       'Quantum Research Scientist - 50-100 triệu VNĐ',
       'Quantum Software Engineer - 45-85 triệu VNĐ',
       'Quantum Machine Learning Engineer - 55-95 triệu VNĐ',
@@ -73,47 +83,14 @@ export default function QuantumComputingMainPage() {
       jobGrowth: '+180%',
       hireDemand: 'Cực cao',
     },
-    technologyHighlights: [
-      'IBM Quantum Experience & Qiskit Framework',
-      'Google Quantum AI & Cirq Platform',
-      'Microsoft Azure Quantum Development Kit',
-      'Amazon Braket Quantum Computing Service',
-      'Quantum Algorithms: Shor, Grover, VQE, QAOA',
-      'Quantum Error Correction & Fault Tolerance',
-      'Quantum Machine Learning Libraries',
-      'Quantum Cryptography Protocols',
-    ],
-    vietnameseMarketFocus: {
-      industryAdoption: [
-        'Viettel: Nghiên cứu quantum communication và 5G security',
-        'VNPT: Quantum key distribution cho government communications',
-        'Banking sector: Quantum-safe cryptography preparation',
-        'Vietnam National University: Quantum computing research programs',
-        'FPT Software: Quantum algorithm development partnerships',
-      ],
-      localOpportunities: [
-        'Vietnam Quantum Computing Consortium development',
-        'Collaboration với international quantum labs',
-        'Government quantum security initiatives',
-        'Academic quantum research programs',
-        'Startup ecosystem cho quantum applications',
-      ],
-      skillDemand: [
-        'Quantum algorithm implementation với high demand',
-        'Quantum cryptography expertise cho banking/government',
-        'Research và development roles trong universities',
-        'Consulting cho quantum readiness assessment',
-        'International collaboration opportunities',
-      ],
-    },
     relatedModules: [
       K2Module.AdvancedAI,
-      K2Module.Cybersecurity, 
+      K2Module.Cybersecurity,
       K2Module.Python,
       K2Module.DataScienceAnalytics,
       K2Module.Nanotechnology,
     ],
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={QuantumLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={quantumComputingLessons} />;
 }

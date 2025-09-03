@@ -1,163 +1,75 @@
-import type { Metadata } from 'next';
-
-import { createModuleMetadata } from '@/utils/seo';
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
-import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { stemLessons, type STEMLesson } from '@/data/stem';
+import { createTitle, createDescription } from '@/utils/seo';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
+import { stemLessons } from '@/data/stem';
 import { K2Module } from '@/data/moduleNavigation';
 
-export const metadata: Metadata = createModuleMetadata(
-  'STEM Education - Giáo Dục STEM',
-  'Khóa học STEM tích hợp. Science, Technology, Engineering và Mathematics cho kids và teens',
-  ['stem education', 'science', 'technology', 'engineering', 'mathematics', 'kids coding'],
-  'stem'
-);
-
-// Convert STEMLesson to BaseLessonData interface
-function convertToLesson(stemLesson: STEMLesson): BaseLessonData {
+// Generate metadata
+export async function generateMetadata() {
   return {
-    id: stemLesson.id,
-    title: stemLesson.title,
-    description: stemLesson.description,
-    duration: stemLesson.duration,
-    difficulty: stemLesson.difficulty,
-    category: stemLesson.category.toUpperCase(),
-    imageUrl: stemLesson.imageUrl || '/default-lesson.jpg',
-    videoUrl: stemLesson.videoUrl,
-    objectives: stemLesson.objectives,
-    prerequisites: [
-      'Basic curiosity',
-      'Open mindset',
-      'Willingness to explore',
-    ],
-    exercises:
-      stemLesson.exercises?.map((ex) => ({
-        title: ex.title,
-        description: ex.description,
-        difficulty: ex.difficulty,
-        materials: ex.materials || stemLesson.materials || [],
-        procedure: ex.procedure || [ex.description],
-        expectedResults:
-          ex.expectedResults || 'Successful completion of experiment',
-        solution: ex.hints?.join(' ') || 'Follow the procedure carefully',
-      })) || [],
-    resources: [],
-    tools: stemLesson.materials || [
-      'Basic materials',
-      'Creativity',
-      'Scientific method',
-    ],
-    realWorldApplications: stemLesson.realWorldApplications || [],
-    caseStudies: [],
+    title: createTitle('Giáo Dục STEM'),
+    description: createDescription(
+      'Khám phá thế giới STEM/STEAM qua các bài học thực hành thú vị. Từ thí nghiệm khoa học đến lập trình, kỹ thuật và nghệ thuật sáng tạo - phát triển tư duy khoa học và sáng tạo.',
+    ),
+    keywords: ['stem education', 'science', 'technology', 'engineering', 'mathematics', 'kids coding', 'K2AI'],
+    openGraph: {
+      title: 'Giáo Dục STEM',
+      description: 'Khám phá thế giới STEM/STEAM qua các bài học thực hành thú vị.',
+      type: 'website',
+    },
   };
 }
 
 export default function STEMPage() {
-  // Convert lessons to base interface
-  const convertedLessons = stemLessons.map(convertToLesson);
-
-  const moduleConfig: ModuleData = {
+  const moduleData = {
+    id: 'stem',
     title: 'STEM Education',
     subtitle: 'Khoa Học - Công Nghệ - Kỹ Thuật - Toán Học',
     description:
       'Khám phá thế giới STEM/STEAM qua các bài học thực hành thú vị. Từ thí nghiệm khoa học đến lập trình, kỹ thuật và nghệ thuật sáng tạo - phát triển tư duy khoa học và sáng tạo.',
-    primaryColor: 'green',
-    gradientColors: 'from-slate-900 via-green-900 to-blue-900',
-    basePath: '/learning/stem',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=600&fit=crop',
-    statsConfig: {
-      lessons: `${stemLessons.length}+ bài`,
-      duration: '25-30 giờ',
-      level: 'Từ cơ bản đến nâng cao',
-      projects: '15+ thí nghiệm thực hành',
-    },
-    marketData: {
-      marketSize: '$18.6 Trillion',
-      marketNote: 'Global STEM market by 2025',
-      jobGrowth: '18.7% Growth',
-      jobNote: 'STEM jobs faster than average',
-      reduction: '65% Higher',
-      reductionNote: 'STEM graduate salaries',
-      startups: '2.4 Million',
-      startupsNote: 'STEM jobs in the US',
-    },
-    careerPaths: [
-      'Data Scientist',
-      'Research Engineer',
-      'Software Developer',
-      'Biomedical Engineer',
-      'Environmental Scientist',
-      'Robotics Engineer',
+    level: 'Cơ bản - Nâng cao',
+    duration: '25-30 giờ',
+    category: 'Science & Research',
+    features: [
+      'Học qua dự án thực tế',
+      'Phát triển tư duy phản biện',
+      'Tích hợp liên môn (STEAM)',
+      'Chuẩn bị cho tương lai số',
     ],
-    technicalHighlights: [
-      {
-        title: 'Scientific Method',
-        icon: '🔬',
-        items: [
-          'Hypothesis Formation',
-          'Experiment Design',
-          'Data Collection',
-          'Analysis & Conclusion',
-        ],
-      },
-      {
-        title: 'Technology Integration',
-        icon: '💻',
-        items: [
-          'Programming Concepts',
-          'Digital Tools',
-          'AI & Machine Learning',
-          'IoT Applications',
-        ],
-      },
-      {
-        title: 'Engineering Design',
-        icon: '🏗️',
-        items: [
-          'Problem Identification',
-          'Solution Design',
-          'Prototyping',
-          'Testing & Iteration',
-        ],
-      },
-      {
-        title: 'Mathematical Modeling',
-        icon: '🔢',
-        items: [
-          'Statistical Analysis',
-          'Pattern Recognition',
-          'Geometric Principles',
-          'Logical Reasoning',
-        ],
-      },
-      {
-        title: 'Creative Arts',
-        icon: '🎨',
-        items: [
-          'Design Thinking',
-          'Visual Communication',
-          'Artistic Expression',
-          'Innovation Methods',
-        ],
-      },
-      {
-        title: 'Real-World Applications',
-        icon: '🌍',
-        items: [
-          'Environmental Solutions',
-          'Medical Technology',
-          'Space Exploration',
-          'Smart Cities',
-        ],
-      },
+    icon: '🔬',
+    color: 'from-pink-500 to-purple-500',
+    heroImageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=600&fit=crop',
+    objectives: [
+      'Nắm vững phương pháp luận khoa học.',
+      'Áp dụng quy trình thiết kế kỹ thuật để giải quyết vấn đề.',
+      'Sử dụng công nghệ và lập trình để tạo ra sản phẩm.',
+      'Phát triển kỹ năng tư duy logic và phân tích dữ liệu.',
     ],
+    prerequisites: [
+      'Sự tò mò, không ngại đặt câu hỏi.',
+      'Tinh thần ham học hỏi và khám phá.',
+      'Không yêu cầu kiến thức nền tảng chuyên sâu.',
+    ],
+    careerOutcomes: [
+      'Kỹ sư Phần mềm',
+      'Nhà khoa học Dữ liệu',
+      'Kỹ sư Robot',
+      'Nhà nghiên cứu Y sinh',
+      'Chuyên gia Phân tích Môi trường',
+    ],
+    industryApplications: [
+      'Y tế & Chăm sóc sức khỏe',
+      'Công nghệ thông tin',
+      'Năng lượng tái tạo',
+      'Hàng không & Vũ trụ',
+      'Nông nghiệp công nghệ cao',
+    ],
+    marketDemand: {
+      averageSalary: '20-45 triệu VNĐ',
+      jobGrowth: '+15%',
+      hireDemand: 'Rất cao',
+    },
     relatedModules: [K2Module.Scratch, K2Module.Python, K2Module.Arduino],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={stemLessons} />;
 }

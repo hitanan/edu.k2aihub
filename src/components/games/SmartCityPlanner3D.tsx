@@ -397,11 +397,7 @@ interface SmartCityPlanner3DProps {
   onRestart?: () => void;
 }
 
-export default function SmartCityPlanner3D({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: SmartCityPlanner3DProps = {}) {
+export default function SmartCityPlanner3D({ onComplete, timeLeft, onRestart }: SmartCityPlanner3DProps = {}) {
   const { smartCity, setSmartCityState } = useGameStore();
   const [gameStarted, setGameStarted] = useState(true); // Start directly with the game
   const [selectedBuildingType, setSelectedBuildingType] = useState<string | null>('residential');
@@ -536,7 +532,7 @@ export default function SmartCityPlanner3D({
   }
 
   return (
-    <div 
+    <div
       id="smart-city-game-container"
       className={`relative w-full ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-b from-sky-200 to-green-200`}
     >

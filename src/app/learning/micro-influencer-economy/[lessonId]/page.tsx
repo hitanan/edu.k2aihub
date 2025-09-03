@@ -30,7 +30,7 @@ export default async function MicroInfluencerEconomyLessonPage({ params }: PageP
     secondaryColor: 'rose', // Secondary theme color
     gradientColors: 'from-slate-900 via-pink-900 to-rose-900', // Background gradient
     getFieldIcon: () => <Users className="w-5 h-5" />, // Optional
-    getFieldValue: (lesson) => lesson.platformStrategies?.join(', ') || '', // Optional
+    getFieldValue: () => '', // Optional
   };
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;

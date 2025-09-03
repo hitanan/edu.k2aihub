@@ -7,6 +7,11 @@ export interface EthicalMarketingLessonType extends BaseLessonData {
   transparencyMethods: string[];
   socialImpactMetrics: string[];
   stakeholderGroups: string[];
+  relatedGames?: Array<{
+    id: string;
+    name: string;
+    description: string;
+  }>;
 }
 
 export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [

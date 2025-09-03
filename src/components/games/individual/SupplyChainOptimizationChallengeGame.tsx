@@ -135,16 +135,16 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
     if (gameState !== 'running') return;
 
     const interval = setInterval(() => {
-      setGameTime(prev => prev + 1);
+      setGameTime((prev) => prev + 1);
 
       // Update shipments
-      setShipments(prevShipments => {
-        return prevShipments.map(shipment => {
+      setShipments((prevShipments) => {
+        return prevShipments.map((shipment) => {
           if (shipment.status === 'pending') {
             return { ...shipment, status: 'in-transit' };
           }
           if (shipment.status === 'in-transit') {
-            const route = routes.find(r => r.id === shipment.routeId);
+            const route = routes.find((r) => r.id === shipment.routeId);
             if (route && gameTime >= shipment.startTime + route.time) {
               return { ...shipment, status: 'delivered' };
             }
@@ -154,15 +154,15 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
       });
 
       // Process delivered shipments
-      setShipments(prevShipments => {
-        const delivered = prevShipments.filter(s => s.status === 'delivered');
-        
-        delivered.forEach(shipment => {
-          const route = routes.find(r => r.id === shipment.routeId);
+      setShipments((prevShipments) => {
+        const delivered = prevShipments.filter((s) => s.status === 'delivered');
+
+        delivered.forEach((shipment) => {
+          const route = routes.find((r) => r.id === shipment.routeId);
           if (route) {
             // Update inventory
-            setNodes(prevNodes => {
-              return prevNodes.map(node => {
+            setNodes((prevNodes) => {
+              return prevNodes.map((node) => {
                 if (node.id === route.from) {
                   return { ...node, inventory: Math.max(0, node.inventory - shipment.quantity) };
                 }
@@ -174,23 +174,23 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
             });
 
             // Update cost
-            setTotalCost(prev => prev + route.cost * shipment.quantity / 100);
-            
+            setTotalCost((prev) => prev + (route.cost * shipment.quantity) / 100);
+
             // Update score based on efficiency
             const efficiencyBonus = shipment.priority === 'high' ? 15 : shipment.priority === 'medium' ? 10 : 5;
-            setScore(prev => prev + efficiencyBonus);
+            setScore((prev) => prev + efficiencyBonus);
           }
         });
 
-        return prevShipments.filter(s => s.status !== 'delivered');
+        return prevShipments.filter((s) => s.status !== 'delivered');
       });
 
       // Update customer satisfaction
-      setCustomerSatisfaction(prev => {
-        const customers = nodes.filter(n => n.type === 'customer');
+      setCustomerSatisfaction((prev) => {
+        const customers = nodes.filter((n) => n.type === 'customer');
         let satisfaction = 100;
-        
-        customers.forEach(customer => {
+
+        customers.forEach((customer) => {
           const fulfillmentRate = Math.min(100, (customer.inventory / customer.demand) * 100);
           if (fulfillmentRate < 50) satisfaction -= 20;
           else if (fulfillmentRate < 80) satisfaction -= 10;
@@ -200,27 +200,26 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
       });
 
       // Update efficiency based on costs
-      setEfficiency(prev => {
+      setEfficiency(() => {
         const costEfficiency = Math.max(0, 100 - totalCost / 10);
         return Math.min(100, costEfficiency);
       });
 
       // Random demand fluctuations
       if (gameTime % 5 === 0) {
-        setNodes(prevNodes => {
-          return prevNodes.map(node => {
+        setNodes((prevNodes) => {
+          return prevNodes.map((node) => {
             if (node.type === 'customer') {
               const fluctuation = (Math.random() - 0.5) * 50;
-              return { 
-                ...node, 
-                demand: Math.max(50, Math.min(300, node.demand + fluctuation))
+              return {
+                ...node,
+                demand: Math.max(50, Math.min(300, node.demand + fluctuation)),
               };
             }
             return node;
           });
         });
       }
-
     }, 1000);
 
     return () => clearInterval(interval);
@@ -238,9 +237,9 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
   const createShipment = useCallback(() => {
     if (!selectedRoute) return;
 
-    const route = routes.find(r => r.id === selectedRoute);
-    const fromNode = nodes.find(n => n.id === route?.from);
-    
+    const route = routes.find((r) => r.id === selectedRoute);
+    const fromNode = nodes.find((n) => n.id === route?.from);
+
     if (!route || !fromNode || fromNode.inventory < shipmentQuantity) {
       alert('Không đủ hàng tồn kho!');
       return;
@@ -255,285 +254,298 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
       priority: shipmentQuantity > 100 ? 'high' : shipmentQuantity > 50 ? 'medium' : 'low',
     };
 
-    setShipments(prev => [...prev, newShipment]);
-    setRoutes(prev => prev.map(r => r.id === selectedRoute ? { ...r, isActive: true } : r));
-  }, [selectedRoute, shipmentQuantity, nodes, gameTime]);
+    setShipments((prev) => [...prev, newShipment]);
+    setRoutes((prev) => prev.map((r) => (r.id === selectedRoute ? { ...r, isActive: true } : r)));
+  }, [selectedRoute, shipmentQuantity, nodes, gameTime, routes]);
 
   const getNodeTypeIcon = (type: SupplyNode['type']) => {
     switch (type) {
-      case 'supplier': return '🏭';
-      case 'warehouse': return '🏬';
-      case 'factory': return '⚙️';
-      case 'customer': return '🏪';
-      default: return '📦';
+      case 'supplier':
+        return '🏭';
+      case 'warehouse':
+        return '🏬';
+      case 'factory':
+        return '⚙️';
+      case 'customer':
+        return '🏪';
+      default:
+        return '📦';
     }
   };
 
   const getNodeStatusColor = (node: SupplyNode) => {
     if (node.type === 'customer') {
-      const fulfillment = (node.inventory / node.demand) * 100;
-      return fulfillment >= 80 ? 'border-green-500' : fulfillment >= 50 ? 'border-yellow-500' : 'border-red-500';
+      const fulfillmentRate = Math.min(100, (node.inventory / Math.max(1, node.demand)) * 100);
+      if (fulfillmentRate < 50) return 'border-red-500';
+      if (fulfillmentRate < 80) return 'border-yellow-500';
+      return 'border-green-500';
     }
-    
-    const utilizationRate = (node.inventory / node.capacity) * 100;
-    return utilizationRate > 80 ? 'border-red-500' : utilizationRate > 50 ? 'border-yellow-500' : 'border-green-500';
+
+    const inventoryPercentage = (node.inventory / Math.max(1, node.capacity)) * 100;
+    if (inventoryPercentage < 10) {
+      return 'border-red-500'; // Critical low stock
+    }
+    if (inventoryPercentage < 30) {
+      return 'border-yellow-500'; // Low stock
+    }
+    if (inventoryPercentage > 90) {
+      return 'border-blue-500'; // Overstocked
+    }
+    return 'border-green-500'; // Healthy stock
   };
 
-  const startGame = () => setGameState('running');
-  const pauseGame = () => setGameState('paused');
-  const resumeGame = () => setGameState('running');
-
-  if (gameState === 'completed') {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 flex items-center justify-center p-4">
-        <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 max-w-md w-full border border-indigo-500/20 text-center">
-          <Package className="w-16 h-16 mx-auto mb-4 text-indigo-400" />
-          <h2 className="text-2xl font-bold text-white mb-4">Hoàn thành!</h2>
-          <div className="space-y-2 mb-6">
-            <p className="text-gray-300">Điểm số: <span className="text-indigo-400 font-bold">{score}</span></p>
-            <p className="text-gray-300">Tổng chi phí: <span className="text-red-400 font-bold">${totalCost.toFixed(2)}</span></p>
-            <p className="text-gray-300">Hiệu suất: <span className="text-yellow-400 font-bold">{efficiency.toFixed(1)}%</span></p>
-            <p className="text-gray-300">Hài lòng KH: <span className="text-green-400 font-bold">{customerSatisfaction.toFixed(1)}%</span></p>
-          </div>
-          <button onClick={onRestart} className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-3 px-6 rounded-xl">
-            Chơi lại
-          </button>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 p-4">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <div className="flex items-center space-x-4">
-          <Package className="w-8 h-8 text-indigo-400" />
-          <h1 className="text-2xl font-bold text-white">Tối Ưu Chuỗi Cung Ứng</h1>
+    <div className="p-4">
+      <div className="flex justify-between mb-4">
+        <div>
+          <h1 className="text-2xl font-bold">Supply Chain Optimization Game</h1>
+          <p className="text-sm text-gray-500">Thời gian còn lại: {timeLeft} giây</p>
         </div>
-        <div className="flex items-center space-x-4">
-          <div className="text-white">Thời gian: {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</div>
-          <div className="text-indigo-400 font-bold">Điểm: {score}</div>
+        <div className="flex items-center">
+          <button
+            onClick={onRestart}
+            className="px-4 py-2 text-sm bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition-all mr-2"
+          >
+            <RotateCcw className="w-4 h-4 mr-1" /> Khởi động lại
+          </button>
+          <button
+            onClick={() => setGameState((prev) => (prev === 'running' ? 'paused' : 'running'))}
+            className="px-4 py-2 text-sm bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 transition-all"
+          >
+            {gameState === 'running' ? <Pause className="w-4 h-4 mr-1" /> : <Play className="w-4 h-4 mr-1" />}
+            {gameState === 'running' ? 'Tạm dừng' : 'Tiếp tục'}
+          </button>
         </div>
       </div>
 
-      {/* Game Controls */}
-      <div className="mb-6 flex space-x-4">
-        {gameState === 'setup' && (
-          <button onClick={startGame} className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg flex items-center">
-            <Play className="w-4 h-4 mr-2" />
-            Bắt đầu
-          </button>
-        )}
-        {gameState === 'running' && (
-          <button onClick={pauseGame} className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg flex items-center">
-            <Pause className="w-4 h-4 mr-2" />
-            Tạm dừng
-          </button>
-        )}
-        {gameState === 'paused' && (
-          <button onClick={resumeGame} className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg flex items-center">
-            <Play className="w-4 h-4 mr-2" />
-            Tiếp tục
-          </button>
-        )}
-        <button onClick={onRestart} className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg flex items-center">
-          <RotateCcw className="w-4 h-4 mr-2" />
-          Khởi động lại
-        </button>
-      </div>
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="bg-white p-4 rounded-md shadow-md">
+          <h2 className="text-lg font-semibold mb-2">Tình trạng tổng quan</h2>
+          <div className="flex justify-between text-sm text-gray-500">
+            <div>
+              <div>
+                Điểm số: <span className="font-semibold text-black">{score}</span>
+              </div>
+              <div>
+                Tổng chi phí: <span className="font-semibold text-black">{totalCost} $</span>
+              </div>
+            </div>
+            <div>
+              <div>
+                Hiệu suất: <span className="font-semibold text-black">{efficiency}%</span>
+              </div>
+              <div>
+                Sự hài lòng của khách hàng: <span className="font-semibold text-black">{customerSatisfaction}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      {/* Main Dashboard */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {/* Supply Chain Map */}
-        <div className="lg:col-span-3 bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-          <h2 className="text-xl font-bold text-white mb-4">Sơ đồ chuỗi cung ứng</h2>
-          
-          <div className="relative bg-slate-800 rounded-lg p-4" style={{ height: '400px' }}>
-            {/* Nodes */}
-            {nodes.map(node => (
-              <div
-                key={node.id}
-                className={`absolute border-2 rounded-lg p-3 bg-slate-700 ${getNodeStatusColor(node)} transform -translate-x-1/2 -translate-y-1/2 min-w-[120px]`}
-                style={{ left: `${node.location.x}%`, top: `${node.location.y}%` }}
-              >
-                <div className="text-center">
-                  <div className="text-2xl mb-1">{getNodeTypeIcon(node.type)}</div>
-                  <div className="text-white text-xs font-semibold">{node.name}</div>
-                  <div className="text-gray-300 text-xs mt-1">
-                    {node.type === 'customer' ? (
-                      <span>Cần: {node.demand}</span>
-                    ) : (
-                      <span>Tồn: {node.inventory}</span>
-                    )}
+        <div className="bg-white p-4 rounded-md shadow-md">
+          <h2 className="text-lg font-semibold mb-2">Lộ trình đã chọn</h2>
+          {selectedRoute ? (
+            <div className="text-sm text-gray-500">
+              <div>
+                <span className="font-semibold text-black">{routes.find((r) => r.id === selectedRoute)?.from}</span> →{' '}
+                <span className="font-semibold text-black">{routes.find((r) => r.id === selectedRoute)?.to}</span>
+              </div>
+              <div className="flex justify-between mt-2">
+                <div>
+                  <div>
+                    Khoảng cách:{' '}
+                    <span className="font-semibold text-black">
+                      {routes.find((r) => r.id === selectedRoute)?.distance} km
+                    </span>
                   </div>
-                  {node.inventory > 0 && node.type === 'customer' && (
-                    <div className="text-green-400 text-xs">
-                      Có: {node.inventory}
-                    </div>
-                  )}
+                  <div>
+                    Thời gian:{' '}
+                    <span className="font-semibold text-black">
+                      {routes.find((r) => r.id === selectedRoute)?.time} giờ
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    Chi phí:{' '}
+                    <span className="font-semibold text-black">
+                      {routes.find((r) => r.id === selectedRoute)?.cost} $
+                    </span>
+                  </div>
+                  <div>
+                    Trạng thái:{' '}
+                    <span className="font-semibold text-black">
+                      {routes.find((r) => r.id === selectedRoute)?.isActive ? 'Đang hoạt động' : 'Ngừng hoạt động'}
+                    </span>
+                  </div>
                 </div>
               </div>
-            ))}
-
-            {/* Routes */}
-            {routes.map(route => {
-              const fromNode = nodes.find(n => n.id === route.from);
-              const toNode = nodes.find(n => n.id === route.to);
-              if (!fromNode || !toNode) return null;
-
-              return (
-                <svg
-                  key={route.id}
-                  className="absolute inset-0 w-full h-full pointer-events-none"
-                  style={{ zIndex: 1 }}
-                >
-                  <line
-                    x1={`${fromNode.location.x}%`}
-                    y1={`${fromNode.location.y}%`}
-                    x2={`${toNode.location.x}%`}
-                    y2={`${toNode.location.y}%`}
-                    stroke={route.isActive ? '#10b981' : '#6b7280'}
-                    strokeWidth={route.isActive ? '3' : '1'}
-                    strokeDasharray={route.isActive ? '0' : '5,5'}
-                  />
-                </svg>
-              );
-            })}
-
-            {/* Active Shipments */}
-            {shipments
-              .filter(s => s.status === 'in-transit')
-              .map(shipment => {
-                const route = routes.find(r => r.id === shipment.routeId);
-                const fromNode = nodes.find(n => n.id === route?.from);
-                const toNode = nodes.find(n => n.id === route?.to);
-                if (!route || !fromNode || !toNode) return null;
-
-                const progress = Math.min(1, (gameTime - shipment.startTime) / route.time);
-                const x = fromNode.location.x + (toNode.location.x - fromNode.location.x) * progress;
-                const y = fromNode.location.y + (toNode.location.y - fromNode.location.y) * progress;
-
-                return (
-                  <div
-                    key={shipment.id}
-                    className="absolute transform -translate-x-1/2 -translate-y-1/2"
-                    style={{ left: `${x}%`, top: `${y}%`, zIndex: 10 }}
-                  >
-                    <Truck className="w-6 h-6 text-blue-400" />
-                  </div>
-                );
-              })}
-          </div>
+            </div>
+          ) : (
+            <div className="text-sm text-gray-500 italic">Chưa có lộ trình nào được chọn.</div>
+          )}
         </div>
+      </div>
 
-        {/* Control Panel */}
-        <div className="space-y-6">
-          {/* Statistics */}
-          <div className="bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <h3 className="text-lg font-bold text-white mb-4">Thống kê</h3>
-            <div className="space-y-3">
-              <div className="text-gray-300">
-                Tổng chi phí: <span className="text-red-400 font-bold">${totalCost.toFixed(2)}</span>
-              </div>
-              <div className="text-gray-300">
-                Hiệu suất: <span className="text-yellow-400 font-bold">{efficiency.toFixed(1)}%</span>
-              </div>
-              <div className="text-gray-300">
-                Hài lòng KH: <span className="text-green-400 font-bold">{customerSatisfaction.toFixed(1)}%</span>
-              </div>
-              <div className="text-gray-300">
-                Lô hàng: <span className="text-blue-400 font-bold">{shipments.length}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Shipment Control */}
-          <div className="bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <h3 className="text-lg font-bold text-white mb-4">Tạo lô hàng</h3>
-            
-            <div className="space-y-4">
-              <div>
-                <label className="text-gray-300 text-sm block mb-2">Chọn tuyến đường:</label>
-                <select
-                  value={selectedRoute || ''}
-                  onChange={(e) => setSelectedRoute(e.target.value || null)}
-                  className="w-full bg-slate-800 text-white rounded px-3 py-2 text-sm"
-                >
-                  <option value="">-- Chọn tuyến --</option>
-                  {routes.map(route => {
-                    const fromNode = nodes.find(n => n.id === route.from);
-                    const toNode = nodes.find(n => n.id === route.to);
-                    return (
-                      <option key={route.id} value={route.id}>
-                        {fromNode?.name} → {toNode?.name} (${route.cost})
-                      </option>
-                    );
-                  })}
-                </select>
-              </div>
-
-              <div>
-                <label className="text-gray-300 text-sm block mb-2">Số lượng:</label>
-                <input
-                  type="number"
-                  min="10"
-                  max="200"
-                  step="10"
-                  value={shipmentQuantity}
-                  onChange={(e) => setShipmentQuantity(Number(e.target.value))}
-                  className="w-full bg-slate-800 text-white rounded px-3 py-2 text-sm"
-                />
-              </div>
-
-              <button
-                onClick={createShipment}
-                disabled={!selectedRoute || gameState !== 'running'}
-                className="w-full bg-indigo-500 hover:bg-indigo-600 disabled:bg-gray-600 text-white py-2 rounded-lg flex items-center justify-center"
-              >
-                <Truck className="w-4 h-4 mr-2" />
-                Gửi hàng
-              </button>
-            </div>
-          </div>
-
-          {/* Active Routes */}
-          <div className="bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <h3 className="text-lg font-bold text-white mb-4">Tuyến đường hoạt động</h3>
-            <div className="space-y-2 max-h-60 overflow-y-auto">
-              {routes.filter(r => r.isActive).map(route => {
-                const fromNode = nodes.find(n => n.id === route.from);
-                const toNode = nodes.find(n => n.id === route.to);
-                return (
-                  <div key={route.id} className="text-sm bg-slate-800 rounded p-2">
-                    <div className="text-green-400 font-semibold">
-                      {fromNode?.name} → {toNode?.name}
-                    </div>
-                    <div className="text-gray-400">
-                      Chi phí: ${route.cost} | Thời gian: {route.time}h
-                    </div>
-                  </div>
-                );
-              })}
-              {routes.filter(r => r.isActive).length === 0 && (
-                <div className="text-gray-400 text-sm text-center py-4">
-                  Chưa có tuyến đường nào hoạt động
+      <div className="bg-white p-4 rounded-md shadow-md mb-4">
+        <h2 className="text-lg font-semibold mb-2">Các nút cung ứng</h2>
+        <div className="grid grid-cols-2 gap-4">
+          {nodes.map((node) => (
+            <div
+              key={node.id}
+              className={`p-4 rounded-md shadow-sm border-l-4 transition-all ${getNodeStatusColor(node)}`}
+            >
+              <div className="flex items-center mb-2">
+                <div className="text-2xl mr-2">{getNodeTypeIcon(node.type)}</div>
+                <div>
+                  <div className="font-semibold text-black">{node.name}</div>
+                  <div className="text-xs text-gray-500">{node.type}</div>
                 </div>
-              )}
+              </div>
+              <div className="text-sm text-gray-700">
+                Tồn kho: <span className="font-semibold">{node.inventory}</span> / {node.capacity} <br />
+                Nhu cầu: <span className="font-semibold">{node.demand}</span> <br />
+                Chi phí: <span className="font-semibold">{node.cost} $</span> <br />
+                Hiệu suất: <span className="font-semibold">{node.efficiency}%</span>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* Instructions */}
-      <div className="mt-6 bg-black/20 backdrop-blur-sm rounded-xl p-4 border border-white/10">
-        <h3 className="text-white font-semibold mb-2">Hướng dẫn:</h3>
-        <p className="text-gray-300 text-sm">
-          🎯 Tối ưu hóa chuỗi cung ứng bằng cách quản lý tuyến đường và lô hàng. 
-          💡 Theo dõi tồn kho và nhu cầu khách hàng. 
-          ⚡ Cân bằng chi phí và hiệu suất để đạt điểm số cao nhất!
-        </p>
+      <div className="bg-white p-4 rounded-md shadow-md mb-4">
+        <h2 className="text-lg font-semibold mb-2">Các lộ trình</h2>
+        <div className="grid grid-cols-2 gap-4">
+          {routes.map((route) => (
+            <div
+              key={route.id}
+              className={`p-4 rounded-md shadow-sm border-l-4 transition-all ${route.isActive ? 'border-green-500' : 'border-gray-300'}`}
+            >
+              <div className="flex items-center mb-2">
+                <div className="text-2xl mr-2">
+                  <Truck className="w-6 h-6 text-gray-700" />
+                </div>
+                <div>
+                  <div className="font-semibold text-black">
+                    {route.from} → {route.to}
+                  </div>
+                  <div className="text-xs text-gray-500">Khoảng cách: {route.distance} km</div>
+                </div>
+              </div>
+              <div className="text-sm text-gray-700">
+                Thời gian: <span className="font-semibold">{route.time} giờ</span> <br />
+                Chi phí: <span className="font-semibold">{route.cost} $</span> <br />
+                Trạng thái:{' '}
+                <span className="font-semibold">{route.isActive ? 'Đang hoạt động' : 'Ngừng hoạt động'}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      <div className="bg-white p-4 rounded-md shadow-md mb-4">
+        <h2 className="text-lg font-semibold mb-2">Các lô hàng</h2>
+        <div className="space-y-2">
+          {shipments.map((shipment) => (
+            <div
+              key={shipment.id}
+              className={`p-4 rounded-md shadow-sm border-l-4 transition-all ${shipment.status === 'delivered' ? 'border-green-500' : 'border-blue-500'}`}
+            >
+              <div className="flex items-center mb-2">
+                <div className="text-2xl mr-2">
+                  <Package className="w-6 h-6 text-gray-700" />
+                </div>
+                <div>
+                  <div className="font-semibold text-black">Lô hàng {shipment.id}</div>
+                  <div className="text-xs text-gray-500">
+                    Tuyến đường: {routes.find((r) => r.id === shipment.routeId)?.from} →{' '}
+                    {routes.find((r) => r.id === shipment.routeId)?.to}
+                  </div>
+                </div>
+              </div>
+              <div className="text-sm text-gray-700">
+                Số lượng: <span className="font-semibold">{shipment.quantity}</span> <br />
+                Thời gian bắt đầu: <span className="font-semibold">{shipment.startTime} giờ</span> <br />
+                Trạng thái: <span className="font-semibold">{shipment.status}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {gameState === 'running' && (
+        <div className="bg-white p-4 rounded-md shadow-md">
+          <h2 className="text-lg font-semibold mb-2">Tạo lô hàng mới</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm text-gray-700 mb-1">Chọn tuyến đường</label>
+              <select
+                value={selectedRoute || ''}
+                onChange={(e) => setSelectedRoute(e.target.value)}
+                className="block w-full p-2 text-sm border rounded-md focus:ring-1 focus:ring-blue-500 focus:outline-none"
+              >
+                <option value="">-- Chọn tuyến đường --</option>
+                {routes.map((route) => (
+                  <option key={route.id} value={route.id}>
+                    {route.from} → {route.to} (Khoảng cách: {route.distance} km)
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm text-gray-700 mb-1">Số lượng</label>
+              <input
+                type="number"
+                value={shipmentQuantity}
+                onChange={(e) => setShipmentQuantity(Math.max(0, Number(e.target.value)))}
+                className="block w-full p-2 text-sm border rounded-md focus:ring-1 focus:ring-blue-500 focus:outline-none"
+              />
+            </div>
+          </div>
+          <div className="mt-4">
+            <button
+              onClick={createShipment}
+              className="w-full px-4 py-2 text-sm bg-indigo-600 text-white rounded-md shadow-md hover:bg-indigo-700 transition-all"
+            >
+              Tạo lô hàng
+            </button>
+          </div>
+        </div>
+      )}
+
+      {gameState === 'completed' && (
+        <div className="bg-white p-4 rounded-md shadow-md">
+          <h2 className="text-lg font-semibold mb-2">Kết thúc trò chơi</h2>
+          <div className="text-sm text-gray-700 mb-4">
+            Cảm ơn bạn đã tham gia trò chơi! Dưới đây là kết quả của bạn:
+          </div>
+          <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
+            <div>
+              <div className="font-semibold text-black">Điểm số:</div>
+              <div>{score}</div>
+            </div>
+            <div>
+              <div className="font-semibold text-black">Tổng chi phí:</div>
+              <div>{totalCost} $</div>
+            </div>
+            <div>
+              <div className="font-semibold text-black">Hiệu suất:</div>
+              <div>{efficiency}%</div>
+            </div>
+            <div>
+              <div className="font-semibold text-black">Sự hài lòng của khách hàng:</div>
+              <div>{customerSatisfaction}%</div>
+            </div>
+          </div>
+          <div className="mt-4">
+            <button
+              onClick={onRestart}
+              className="w-full px-4 py-2 text-sm bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition-all"
+            >
+              Chơi lại
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

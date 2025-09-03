@@ -1,5 +1,25 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 export interface ContentCreatorLessonData extends BaseLessonData {
   platforms?: string[];
   monetizationMethods?: string[];
@@ -24,6 +44,9 @@ export interface ContentCreatorLessonData extends BaseLessonData {
     name: string;
     description: string;
   }>;
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  quizzes?: Quiz[];
 }
 
 export const contentCreatorLessons: ContentCreatorLessonData[] = [
@@ -226,6 +249,49 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
         type: 'Documentation',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Sáng tạo Nội dung tại Việt Nam',
+      content: [
+        'Thị trường Việt Nam có tỷ lệ người dùng Internet và mạng xã hội trẻ, năng động, tạo ra cơ hội lớn cho các nhà sáng tạo nội dung.',
+        'Các nền tảng như TikTok và Facebook Reels đang thống trị, ưu tiên các nội dung video ngắn, giải trí và theo xu hướng.',
+        'Các "KOL" (Key Opinion Leader) và "KOC" (Key Opinion Consumer) có sức ảnh hưởng lớn đến quyết định mua hàng của người tiêu dùng Việt Nam.',
+        'Các thương hiệu địa phương và quốc tế đang tích cực đầu tư vào influencer marketing, tạo ra nguồn thu nhập chính cho nhiều nhà sáng tạo.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Thị Vân',
+      title: 'Founder & CEO, The Influencer',
+      company: 'METUB Network',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-van',
+      quote:
+        'Nghề sáng tạo nội dung tại Việt Nam đã vượt qua giai đoạn tự phát. Để thành công bền vững, bạn cần tư duy như một doanh nhân: xây dựng thương hiệu cá nhân, hiểu rõ khán giả, và tạo ra giá trị thực sự. Dữ liệu và chiến lược là hai người bạn đồng hành không thể thiếu.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là yếu tố quan trọng nhất để xây dựng thương hiệu cá nhân thành công trên mạng xã hội?',
+        options: [
+          'Có nhiều người theo dõi nhất',
+          'Đăng bài mỗi ngày',
+          'Sự nhất quán về tiếng nói, phong cách và giá trị',
+          'Sử dụng các thiết bị đắt tiền nhất',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Sự nhất quán (consistency) giúp khán giả nhận diện và ghi nhớ thương hiệu của bạn. Nó bao gồm sự nhất quán trong thông điệp, hình ảnh, và lịch trình đăng bài, tạo ra sự tin tưởng và lòng trung thành.',
+      },
+      {
+        question: 'Content pillars (trụ cột nội dung) là gì?',
+        options: [
+          'Các video dài nhất của bạn',
+          'Các chủ đề cốt lõi mà kênh của bạn tập trung vào',
+          'Các bài đăng được tài trợ',
+          'Các bài đăng có nhiều lượt thích nhất',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Content pillars là 3-5 chủ đề chính, cốt lõi mà bạn thường xuyên nói đến. Chúng giúp định hình kênh, đảm bảo nội dung đa dạng nhưng vẫn tập trung, và giúp bạn không bao giờ cạn ý tưởng.',
+      },
+    ],
   },
   {
     id: 'video-production-editing-mastery',
@@ -401,6 +467,39 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
         title: 'Peter McKinnon Photography & Video',
         url: 'https://youtube.com/petermckinnon',
         type: 'Tutorial',
+      },
+    ],
+    vietnamContext: {
+      title: 'Sản xuất Video tại Việt Nam',
+      content: [
+        'Các Music Video (MV) của các ca sĩ V-Pop thường có kinh phí đầu tư lớn, tạo ra xu hướng và tiêu chuẩn cao cho sản xuất video trong nước.',
+        'Các video review ẩm thực đường phố, du lịch "phượt" với phong cách tự nhiên, chân thật rất được ưa chuộng tại Việt Nam.',
+        'CapCut, một ứng dụng chỉnh sửa video miễn phí của ByteDance, là công cụ cực kỳ phổ biến trong giới trẻ Việt Nam để tạo video TikTok.',
+        'Nhiều ekip sản xuất phim độc lập và các kênh YouTube chuyên nghiệp đang nổi lên, cho thấy sự phát triển mạnh mẽ của ngành công nghiệp video tại Việt Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Nguyễn Thành Nam',
+      title: 'Đạo diễn, Founder',
+      company: 'DTAP',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thanh-nam',
+      quote:
+        'Làm video không chỉ là kỹ thuật, mà là kể chuyện. Một câu chuyện hay có thể được kể bằng bất cứ thiết bị nào. Ở DTAP, chúng tôi luôn tìm cách kết hợp giữa yếu tố văn hóa Việt Nam và kỹ thuật sản xuất hiện đại để tạo ra những sản phẩm âm nhạc và hình ảnh có dấu ấn riêng.',
+    },
+    quizzes: [
+      {
+        question: 'Kỹ thuật dựng phim nào giúp âm thanh của cảnh sau bắt đầu trước khi hình ảnh của nó xuất hiện?',
+        options: ['L-cut', 'J-cut', 'Jump cut', 'Match cut'],
+        correctAnswerIndex: 1,
+        explanation:
+          'J-cut là kỹ thuật mà âm thanh (audio) của cảnh tiếp theo bắt đầu trước khi hình ảnh (video) của cảnh đó xuất hiện, tạo ra một sự chuyển tiếp mượt mà và lôi cuốn người xem.',
+      },
+      {
+        question: 'Trong kỹ thuật ánh sáng 3 điểm, nguồn sáng chính được gọi là gì?',
+        options: ['Fill light', 'Backlight', 'Key light', 'Hair light'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Key light là nguồn sáng chính và mạnh nhất trong thiết lập ánh sáng 3 điểm. Nó định hình, xác định và tạo ra chiều sâu cho chủ thể.',
       },
     ],
   },
@@ -587,6 +686,44 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
         type: 'Tool',
       },
     ],
+    vietnamContext: {
+      title: 'Văn hóa Livestream tại Việt Nam',
+      content: [
+        'Live commerce (bán hàng qua livestream) là một ngành công nghiệp tỷ đô tại Việt Nam, đặc biệt trên các nền tảng Facebook và TikTok.',
+        'Các streamer game, đặc biệt là các tựa game như Liên Quân Mobile và Free Fire, có lượng người hâm mộ khổng lồ và rất trung thành.',
+        'Tính năng tặng quà (gifts) ảo trên TikTok Live và Facebook Live là một nguồn thu nhập quan trọng cho các nhà sáng tạo Việt Nam.',
+        'Các buổi livestream "hóng biến", tâm sự đêm khuya, hoặc các phiên đấu giá từ thiện thu hút lượng người xem rất lớn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Độ Mixi',
+      title: 'Streamer, YouTuber',
+      company: 'MixiGaming',
+      imageUrl: 'https://i.pravatar.cc/150?u=do-mixi',
+      quote:
+        'Livestream không chỉ là chơi game, mà là tạo ra một gia đình. Sự chân thật và kết nối với "bộ tộc" của mình mỗi tối là điều quan trọng nhất. Thu nhập đến từ nhiều nguồn, nhưng sự ủng hộ của anh em là điều đáng quý nhất.',
+    },
+    quizzes: [
+      {
+        question: 'Phần mềm nào sau đây là phổ biến và miễn phí để thiết lập một buổi livestream chuyên nghiệp?',
+        options: ['Adobe Premiere Pro', 'Final Cut Pro', 'OBS Studio', 'Microsoft PowerPoint'],
+        correctAnswerIndex: 2,
+        explanation:
+          'OBS (Open Broadcaster Software) Studio là một phần mềm mã nguồn mở, miễn phí và rất mạnh mẽ, cho phép người dùng tạo các cảnh quay phức tạp, thêm đồ họa, và phát sóng lên nhiều nền tảng khác nhau.',
+      },
+      {
+        question: 'Live commerce là gì?',
+        options: [
+          'Chơi game trực tuyến',
+          'Bán hàng hóa và dịch vụ trong một buổi phát sóng trực tiếp',
+          'Tổ chức một buổi hòa nhạc ảo',
+          'Dạy học qua livestream',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Live commerce là sự kết hợp giữa livestreaming và thương mại điện tử, nơi người bán giới thiệu, tương tác và bán sản phẩm trực tiếp cho người xem trong thời gian thực. Đây là một xu hướng cực kỳ phát triển ở châu Á, đặc biệt là Việt Nam.',
+      },
+    ],
   },
   {
     id: 'monetization-strategies',
@@ -766,6 +903,49 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
         type: 'Documentation',
       },
     ],
+    vietnamContext: {
+      title: 'Kiếm tiền từ Nội dung tại Việt Nam',
+      content: [
+        'Affiliate marketing (tiếp thị liên kết) thông qua các sàn thương mại điện tử như Shopee, Lazada, Tiki là một nguồn thu nhập cực kỳ phổ biến cho các nhà sáng tạo Việt Nam.',
+        'Các nền tảng cho phép người hâm mộ "donate" hoặc tặng quà ảo (như TikTok, Facebook Gaming) rất phát triển, đặc biệt trong lĩnh vực livestream game và giải trí.',
+        'Nhiều nhà sáng tạo thành công đã ra mắt thương hiệu riêng (local brand) về thời trang, mỹ phẩm, và đồ ăn, tận dụng lượng người theo dõi sẵn có.',
+        'Việc nhận booking quảng cáo từ các nhãn hàng vẫn là nguồn thu nhập chính và lớn nhất đối với các KOL/KOC có tầm ảnh hưởng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Helly Tống',
+      title: 'Founder, Entrepreneur, Influencer',
+      company: 'The Yên Concept, Lại Đây Refill Station',
+      imageUrl: 'https://i.pravatar.cc/150?u=helly-tong',
+      quote:
+        'Sáng tạo nội dung cho tôi một tiếng nói và một cộng đồng. Nhưng tôi không dừng lại ở đó. Tôi biến cộng đồng đó thành khách hàng cho những dự án kinh doanh mang giá trị bền vững mà tôi tin tưởng. Đó là cách bạn tạo ra ảnh hưởng thực sự và xây dựng một sự nghiệp có ý nghĩa.',
+    },
+    quizzes: [
+      {
+        question: 'Đa dạng hóa nguồn thu (Revenue Stream Diversification) có lợi ích gì lớn nhất?',
+        options: [
+          'Kiếm được nhiều tiền hơn ngay lập tức',
+          'Giảm sự phụ thuộc vào một nguồn thu duy nhất, tăng tính bền vững',
+          'Chỉ cần làm việc ít hơn',
+          'Dễ dàng hơn để quản lý',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Lợi ích lớn nhất của việc đa dạng hóa là giảm thiểu rủi ro. Nếu một nguồn thu nhập (ví dụ: doanh thu quảng cáo YouTube) giảm sút do thay đổi thuật toán, bạn vẫn có các nguồn thu khác (bán hàng, affiliate, tài trợ) để duy trì sự ổn định tài chính.',
+      },
+      {
+        question: '"Thang giá trị" (Value Ladder) trong kinh doanh nội dung hoạt động như thế nào?',
+        options: [
+          'Bán sản phẩm đắt nhất trước tiên',
+          'Chỉ bán một loại sản phẩm',
+          'Dẫn dắt khán giả từ nội dung miễn phí đến các sản phẩm trả phí có giá trị tăng dần',
+          'Tặng tất cả mọi thứ miễn phí',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Thang giá trị là một chiến lược marketing nhằm xây dựng lòng tin và tối đa hóa giá trị từ khách hàng. Nó bắt đầu bằng việc cung cấp giá trị miễn phí, sau đó giới thiệu các sản phẩm/dịch vụ trả phí với mức giá và giá trị tăng dần, phù hợp với các mức độ cam kết khác nhau của khách hàng.',
+      },
+    ],
   },
   {
     id: 'brand-partnerships-sponsorships',
@@ -928,6 +1108,49 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
         type: 'Documentation',
       },
     ],
+    vietnamContext: {
+      title: 'Hợp tác Nhãn hàng tại Việt Nam',
+      content: [
+        'Các agency booking KOL/KOC đóng vai trò trung gian quan trọng giữa nhãn hàng và nhà sáng tạo tại Việt Nam.',
+        'Báo giá (rate card) thường linh hoạt và phụ thuộc nhiều vào kết quả thực tế (performance-based) hơn là chỉ số người theo dõi.',
+        'Tính chân thực và phù hợp với văn hóa địa phương là yếu tố được các nhãn hàng tại Việt Nam đánh giá rất cao.',
+        'Việc công khai nội dung được tài trợ (ví dụ: dùng hashtag #sponsored, #ad) đang dần trở thành tiêu chuẩn, dù chưa được thực thi nghiêm ngặt như ở các nước phương Tây.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Nguyễn Khoa',
+      title: 'Head of Influencer Marketing',
+      company: 'Ogilvy Vietnam',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-khoa',
+      quote:
+        'Chúng tôi không tìm kiếm những người chỉ có followers cao. Chúng tôi tìm kiếm những người có khả năng tạo ra ảnh hưởng thực sự và có một cộng đồng tin tưởng họ. Sự phù hợp giữa giá trị của nhà sáng tạo và giá trị của nhãn hàng là chìa khóa cho một chiến dịch thành công.',
+    },
+    quizzes: [
+      {
+        question: 'Media Kit là gì?',
+        options: [
+          'Một bộ dụng cụ để làm media',
+          'CV của một nhà sáng tạo nội dung, trình bày các số liệu và thông tin về kênh',
+          'Một hợp đồng mẫu',
+          'Một danh sách các nhãn hàng',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Media Kit là một tài liệu chuyên nghiệp tổng hợp tất cả thông tin quan trọng về kênh của bạn: số liệu thống kê, nhân khẩu học khán giả, các gói hợp tác, báo giá, và các case study thành công. Nó được dùng để gửi cho các nhãn hàng tiềm năng.',
+      },
+      {
+        question: 'Khi đàm phán hợp đồng với nhãn hàng, bạn nên tập trung vào điều gì ngoài tiền bạc?',
+        options: [
+          'Chỉ tiền bạc là quan trọng',
+          'Quyền kiểm soát sáng tạo, thời hạn thanh toán, và quyền sở hữu nội dung',
+          'Số lượng sản phẩm miễn phí bạn nhận được',
+          'Không có gì khác',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Một hợp đồng tốt không chỉ có giá trị cao mà còn bảo vệ quyền lợi của bạn. Các điều khoản quan trọng khác bao gồm: quyền tự do sáng tạo, thời gian nhãn hàng được phép sử dụng nội dung, và bạn có được giữ bản quyền nội dung sau chiến dịch hay không.',
+      },
+    ],
   },
   {
     id: 'content-calendar-consistency',
@@ -1072,6 +1295,49 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
         title: 'Notion - Content Planning',
         url: 'https://notion.so',
         type: 'Tool',
+      },
+    ],
+    vietnamContext: {
+      title: 'Hệ thống làm việc của Creator Việt',
+      content: [
+        'Nhiều creator Việt Nam thành công thường có một đội ngũ (ekip) nhỏ hỗ trợ, bao gồm người quay phim, dựng phim và quản lý.',
+        'Việc "bắt trend" là cực kỳ quan trọng, đòi hỏi các creator phải có hệ thống linh hoạt để sản xuất nội dung nhanh chóng.',
+        'Các công cụ như Trello, Notion, và Google Calendar được sử dụng rộng rãi để quản lý lịch trình và ý tưởng.',
+        'Sản xuất theo lô (batching) đặc biệt hiệu quả cho các TikToker, những người cần đăng nhiều video mỗi ngày để duy trì sự hiện diện.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lê Minh',
+      title: 'Production Manager',
+      company: 'Schannel',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-minh',
+      quote:
+        'Tại Schannel, chúng tôi không thể tồn tại nếu không có hệ thống. Mỗi tuần, chúng tôi có các buổi họp lên ý tưởng, lịch quay, và lịch đăng bài chi tiết cho từng kênh. Sự nhất quán và quy trình chuyên nghiệp là thứ biến một kênh YouTube từ một sở thích thành một cỗ máy truyền thông thực thụ.',
+    },
+    quizzes: [
+      {
+        question: 'Sản xuất theo lô (Batch Production) có lợi ích chính là gì?',
+        options: [
+          'Chất lượng video tốt hơn',
+          'Tiết kiệm thời gian và giảm áp lực sáng tạo hàng ngày',
+          'Cần ít thiết bị hơn',
+          'Tốn nhiều chi phí hơn',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Sản xuất theo lô giúp bạn tập trung năng lượng vào một loại công việc tại một thời điểm (ví dụ: chỉ quay hoặc chỉ dựng phim), giúp tiết kiệm thời gian chuyển đổi và giảm bớt áp lực phải nghĩ ra ý tưởng mới và thực hiện nó mỗi ngày.',
+      },
+      {
+        question: 'Tái sử dụng nội dung (Content Repurposing) là gì?',
+        options: [
+          'Đăng lại cùng một nội dung ở mọi nơi',
+          'Xóa nội dung cũ',
+          'Biến một mẩu nội dung lớn thành nhiều định dạng nhỏ hơn cho các nền tảng khác nhau',
+          'Chỉ tạo nội dung mới',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Đây là một chiến lược thông minh để tối đa hóa giá trị của mỗi ý tưởng. Ví dụ, một video dài trên YouTube có thể được cắt thành nhiều clip ngắn cho TikTok, chuyển thành một bài viết blog, và các trích dẫn hay có thể làm thành ảnh đăng Instagram.',
       },
     ],
   },
@@ -1234,6 +1500,49 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
         type: 'Tool',
       },
     ],
+    vietnamContext: {
+      title: 'Phân tích và Tăng trưởng tại Việt Nam',
+      content: [
+        'Các "trend" trên TikTok và Facebook tại Việt Nam thay đổi rất nhanh, đòi hỏi các creator phải liên tục phân tích và thích ứng.',
+        'Khung giờ vàng để đăng bài ở Việt Nam thường là buổi trưa (12h-13h) và buổi tối (20h-22h), nhưng cần được kiểm chứng lại cho từng đối tượng khán giả cụ thể.',
+        'Việc phân tích các bình luận của khán giả (comment analysis) là một mỏ vàng để tìm ra insight và các ý tưởng nội dung mới.',
+        'Nhiều creator Việt Nam thành công bằng cách phân tích và "Việt hóa" các format nội dung thành công từ nước ngoài.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Tuấn Hà',
+      title: 'Chief Digital Officer',
+      company: 'VMLY&R Vietnam',
+      imageUrl: 'https://i.pravatar.cc/150?u=tuan-ha',
+      quote:
+        'Trong marketing hiện đại, không có chỗ cho sự đoán mò. Mọi quyết định đều phải dựa trên dữ liệu. Các content creator cũng vậy. Những người thành công nhất là những người hiểu rõ khán giả của họ hơn bất kỳ ai khác, và họ làm điều đó bằng cách liên tục phân tích, thử nghiệm và tối ưu.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là một "chỉ số phù phiếm" (vanity metric)?',
+        options: [
+          'Tỷ lệ giữ chân khán giả (Audience Retention)',
+          'Thời gian xem (Watch Time)',
+          'Số lượt thích (Likes)',
+          'Tỷ lệ nhấp (Click-Through Rate)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Lượt thích là một chỉ số dễ thấy nhưng thường không phản ánh sự tương tác sâu sắc hay giá trị thực sự của nội dung. Các chỉ số như thời gian xem và tỷ lệ giữ chân khán giả cho thấy mức độ quan tâm thực sự của người xem.',
+      },
+      {
+        question: 'Mục đích chính của thử nghiệm A/B là gì?',
+        options: [
+          'Để tạo ra nhiều nội dung hơn',
+          'Để so sánh hiệu quả của hai phiên bản khác nhau của một yếu tố để đưa ra quyết định dựa trên dữ liệu',
+          'Để xem đối thủ đang làm gì',
+          'Để tăng số người theo dõi ngay lập tức',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Thử nghiệm A/B (hay split testing) là một phương pháp có kiểm soát để so sánh hai phiên bản của một biến (ví dụ: hai tiêu đề) nhằm xác định phiên bản nào hoạt động tốt hơn trong việc đạt được một mục tiêu cụ thể (ví dụ: tỷ lệ nhấp cao hơn).',
+      },
+    ],
   },
   {
     id: 'legal-business-content-creation',
@@ -1382,6 +1691,46 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
         title: 'Vietnam IP Office',
         url: 'http://ipvietnam.gov.vn',
         type: 'Documentation',
+      },
+    ],
+    vietnamContext: {
+      title: 'Pháp lý và Kinh doanh cho Creator tại Việt Nam',
+      content: [
+        'Nghị định 72 về quản lý, cung cấp, sử dụng dịch vụ Internet và thông tin trên mạng là văn bản pháp lý quan trọng mà các nhà sáng tạo nội dung cần nắm rõ.',
+        'Việc đăng ký hộ kinh doanh cá thể là hình thức phổ biến và đơn giản nhất cho các creator khi mới bắt đầu có thu nhập.',
+        'Thuế thu nhập cá nhân từ các hoạt động sáng tạo nội dung, quảng cáo là bắt buộc và đang được cơ quan thuế giám sát chặt chẽ.',
+        'Vấn đề bản quyền âm nhạc và hình ảnh ngày càng được siết chặt trên các nền tảng, đòi hỏi creator phải có ý thức hơn về việc sử dụng các nguồn tài nguyên hợp pháp.',
+      ],
+    },
+    careerConnect: {
+      name: 'Luật sư Trần Thị Hậu',
+      title: 'Chuyên gia Luật Sở hữu Trí tuệ',
+      company: 'Baker & McKenzie Vietnam',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-thi-hau',
+      quote:
+        'Nhiều nhà sáng tạo nội dung chỉ tập trung vào việc sáng tạo mà quên mất rằng họ đang xây dựng một tài sản. Việc bảo vệ tài sản trí tuệ và tuân thủ các quy định pháp lý ngay từ đầu không phải là gánh nặng, mà là nền tảng vững chắc nhất cho sự phát triển bền vững.',
+    },
+    quizzes: [
+      {
+        question:
+          'Tại Việt Nam, hình thức kinh doanh nào là đơn giản nhất cho một cá nhân sáng tạo nội dung khi mới bắt đầu có thu nhập?',
+        options: ['Công ty Cổ phần', 'Công ty TNHH', 'Hộ kinh doanh cá thể', 'Doanh nghiệp tư nhân'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Hộ kinh doanh cá thể là hình thức đơn giản nhất về thủ tục đăng ký và nghĩa vụ kế toán, phù hợp với các cá nhân kinh doanh với quy mô nhỏ, bao gồm cả các nhà sáng tạo nội dung mới bắt đầu.',
+      },
+      {
+        question:
+          'Sử dụng một đoạn nhạc nổi tiếng trong video của bạn mà không có sự cho phép có được coi là "sử dụng hợp lý" (fair use) không?',
+        options: [
+          'Luôn luôn được',
+          'Không bao giờ được',
+          'Phụ thuộc vào nhiều yếu tố và rất rủi ro',
+          'Chỉ cần video của bạn không kiếm tiền',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Khái niệm "fair use" rất phức tạp và không được định nghĩa rõ ràng trong luật Việt Nam như ở Mỹ. Việc sử dụng bất kỳ nội dung nào có bản quyền mà không được phép đều tiềm ẩn rủi ro bị gỡ bỏ video hoặc kiện tụng. An toàn nhất là luôn sử dụng các nguồn tài nguyên có bản quyền rõ ràng.',
       },
     ],
   },

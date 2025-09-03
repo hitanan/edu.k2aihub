@@ -32,7 +32,7 @@ const featuredAIApps = [
     color: 'from-green-500 to-blue-500',
   },
   {
-    name: 'Claude 3.5 Sonnet',
+    name: 'Claude Sonnet',
     description: 'AI assistant từ Anthropic cho phân tích và reasoning',
     category: 'Analysis',
     features: ['Phân tích văn bản dài', 'Reasoning logic mạnh', 'Code review chuyên sâu', 'Artifacts creation'],

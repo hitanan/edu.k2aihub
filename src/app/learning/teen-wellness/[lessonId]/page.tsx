@@ -4,10 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import {
-  teenWellnessLessons,
-  TeenWellnessLessonData,
-} from '@/data/teen-wellness';
+import { teenWellnessLessons, TeenWellnessLessonData as TeenWellnessLessonType } from '@/data/teen-wellness';
 import { PageProps } from '@/types';
 
 // Generate static params for all lessons
@@ -23,7 +20,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 // Page component with standardized config
 export default async function TeenWellnessLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<TeenWellnessLessonData> = {
+  const config: LessonPageConfig<TeenWellnessLessonType> = {
     moduleName: 'teen-wellness',
     moduleTitle: 'Teen Wellness & Mental Health',
     modulePath: '/learning/teen-wellness',
@@ -58,17 +55,12 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
       if ('urgencyLevel' in lesson && lesson.urgencyLevel) {
         return lesson.urgencyLevel;
       }
-      if (
-        'professionalSupport' in lesson &&
-        lesson.professionalSupport !== undefined
-      ) {
-        return lesson.professionalSupport
-          ? 'Có thể cần thiết'
-          : 'Không bắt buộc';
+      if ('professionalSupport' in lesson && lesson.professionalSupport !== undefined) {
+        return lesson.professionalSupport ? 'Có thể cần thiết' : 'Không bắt buộc';
       }
       return '';
     },
-    sidebarContent: (lesson) => (
+    sidebarContent: (lesson: TeenWellnessLessonType) => (
       <div className="space-y-6">
         {lesson.ageGroup && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
@@ -113,14 +105,10 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
             <div className="flex items-center">
               <span
                 className={`px-3 py-1 rounded-full text-sm font-medium ${
-                  lesson.professionalSupport
-                    ? 'bg-blue-500/20 text-blue-200'
-                    : 'bg-gray-500/20 text-gray-200'
+                  lesson.professionalSupport ? 'bg-blue-500/20 text-blue-200' : 'bg-gray-500/20 text-gray-200'
                 }`}
               >
-                {lesson.professionalSupport
-                  ? 'Có thể cần thiết'
-                  : 'Không bắt buộc'}
+                {lesson.professionalSupport ? 'Có thể cần thiết' : 'Không bắt buộc'}
               </span>
             </div>
           </div>
@@ -134,10 +122,7 @@ export default async function TeenWellnessLessonPage({ params }: PageProps) {
             </h4>
             <div className="flex flex-wrap gap-2">
               {lesson.mentalHealthAreas.map((area, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 bg-green-500/20 text-green-200 rounded-full text-sm"
-                >
+                <span key={index} className="px-3 py-1 bg-green-500/20 text-green-200 rounded-full text-sm">
                   {area}
                 </span>
               ))}

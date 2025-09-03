@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import {
-  financialLiteracyLessons,
-  type FinancialLiteracyLessons,
-} from '@/data/financial-literacy';
+import { financialLiteracyLessons, type FinancialLiteracyLesson } from '@/data/financial-literacy';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
@@ -15,13 +10,11 @@ export const metadata: Metadata = createModuleMetadata(
   'Financial Literacy - Kiến Thức Tài Chính',
   'Học kiến thức tài chính cá nhân và đầu tư thông minh. Từ budgeting đến investment strategies',
   ['financial literacy', 'personal finance', 'investment', 'budgeting', 'savings', 'financial planning'],
-  'financial-literacy'
+  'financial-literacy',
 );
 
-// Convert FinancialLiteracyLessons to BaseLessonData interface
-function convertToLesson(
-  financialLiteracyLesson: FinancialLiteracyLessons,
-): BaseLessonData {
+// Convert FinancialLiteracyLesson to BaseLessonData interface
+function convertToLesson(financialLiteracyLesson: FinancialLiteracyLesson): BaseLessonData {
   return {
     id: financialLiteracyLesson.id,
     title: financialLiteracyLesson.title,
@@ -32,22 +25,19 @@ function convertToLesson(
     imageUrl: financialLiteracyLesson.imageUrl || '/default-lesson.jpg',
     videoUrl: financialLiteracyLesson.videoUrl,
     objectives: financialLiteracyLesson.objectives,
-    prerequisites: financialLiteracyLesson.prerequisites || [
-      'Basic math skills',
-      'Interest in finance',
-    ],
+    prerequisites: financialLiteracyLesson.prerequisites || ['Basic math skills', 'Interest in finance'],
     exercises:
       financialLiteracyLesson.exercises?.map((ex) => ({
         title: ex.title,
         description: ex.description,
         difficulty: ex.difficulty,
-        materials: ex.requirements || [],
-        procedure: ex.hints || [ex.description],
-        expectedResults: ex.expectedOutput || 'Financial calculation completed',
+        materials: ex.materials || [],
+        procedure: ex.procedure || [ex.description],
+        expectedResults: ex.expectedResults || 'Financial calculation completed',
         solution: ex.solution || 'Follow financial best practices',
       })) || [],
     resources: financialLiteracyLesson.resources || [],
-    tools: financialLiteracyLesson.technologies || [
+    tools: financialLiteracyLesson.mainContent.technologies || [
       'Excel',
       'Banking Apps',
       'Investment Platforms',
@@ -57,11 +47,11 @@ function convertToLesson(
     caseStudies:
       financialLiteracyLesson.caseStudies?.map((cs) => ({
         title: cs.title,
-        organization: cs.person,
-        problem: cs.challenge,
+        organization: cs.organization,
+        problem: cs.problem,
         solution: cs.solution,
-        impact: cs.results,
-        innovations: cs.insights || [],
+        impact: cs.impact,
+        innovations: cs.innovations || [],
       })) || [],
   };
 }
@@ -82,8 +72,7 @@ export default function FinancialLiteracyPage() {
     primaryColor: 'green',
     gradientColors: 'from-slate-900 via-green-900 to-emerald-900',
     basePath: '/learning/financial-literacy',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=600&fit=crop',
     features: [
       'Personal Finance Management và Budgeting',
       'Investment Strategies và Portfolio Management',
@@ -151,72 +140,36 @@ export default function FinancialLiteracyPage() {
       {
         title: 'Personal Finance',
         icon: '📊',
-        items: [
-          'Budgeting Apps',
-          'Expense Tracking',
-          'Goal Setting',
-          'Cash Flow Analysis',
-        ],
+        items: ['Budgeting Apps', 'Expense Tracking', 'Goal Setting', 'Cash Flow Analysis'],
       },
       {
         title: 'Investment Tools',
         icon: '📈',
-        items: [
-          'Portfolio Management',
-          'Stock Analysis',
-          'Robo-Advisors',
-          'Trading Platforms',
-        ],
+        items: ['Portfolio Management', 'Stock Analysis', 'Robo-Advisors', 'Trading Platforms'],
       },
       {
         title: 'Cryptocurrency',
         icon: '₿',
-        items: [
-          'Blockchain Technology',
-          'Digital Wallets',
-          'DeFi Protocols',
-          'NFT Marketplace',
-        ],
+        items: ['Blockchain Technology', 'Digital Wallets', 'DeFi Protocols', 'NFT Marketplace'],
       },
       {
         title: 'Digital Banking',
         icon: '🏦',
-        items: [
-          'Mobile Banking',
-          'Digital Payments',
-          'Online Lending',
-          'Open Banking APIs',
-        ],
+        items: ['Mobile Banking', 'Digital Payments', 'Online Lending', 'Open Banking APIs'],
       },
       {
         title: 'Risk Management',
         icon: '🛡️',
-        items: [
-          'Insurance Planning',
-          'Credit Scoring',
-          'Market Analysis',
-          'Portfolio Diversification',
-        ],
+        items: ['Insurance Planning', 'Credit Scoring', 'Market Analysis', 'Portfolio Diversification'],
       },
       {
         title: 'Financial Analysis',
         icon: '🔍',
-        items: [
-          'Excel Modeling',
-          'Financial Ratios',
-          'Valuation Methods',
-          'Data Visualization',
-        ],
+        items: ['Excel Modeling', 'Financial Ratios', 'Valuation Methods', 'Data Visualization'],
       },
     ],
-    relatedModules: [
-      K2Module.DigitalMarketing,
-      K2Module.Python,
-      K2Module.AIArtCreativeTech,
-    ],
+    relatedModules: [K2Module.DigitalMarketing, K2Module.Python, K2Module.AIArtCreativeTech],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

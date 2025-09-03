@@ -141,7 +141,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
               <span className="font-semibold text-gray-800">Game Type</span>
             </div>
             <div className="flex flex-wrap gap-1 mb-4">
-              {lesson.gameGenres.map((topic, topicIndex) => (
+              {lesson.mainContent.gameGenres.map((topic, topicIndex) => (
                 <span key={topicIndex} className="bg-purple-100 text-gray-600 text-xs px-2 py-1 rounded-full">
                   {topic}
                 </span>
@@ -172,12 +172,14 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Video Tutorial</h2>
               <div className="aspect-video rounded-lg overflow-hidden">
-                <iframe
-                  src={lesson.videoUrl.replace('watch?v=', 'embed/')}
-                  title={lesson.title}
-                  className="w-full h-full"
-                  allowFullScreen
-                />
+                {lesson.videoUrl && (
+                  <iframe
+                    src={lesson.videoUrl.replace('watch?v=', 'embed/')}
+                    title={lesson.title}
+                    className="w-full h-full"
+                    allowFullScreen
+                  />
+                )}
               </div>
             </div>
 
@@ -211,7 +213,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
                 <div className="mb-6">
                   <h3 className="font-semibold text-gray-800 mb-3">Requirements:</h3>
                   <ul className="space-y-2">
-                    {exercise.requirements.map((req, i) => (
+                    {exercise.materials?.map((req, i) => (
                       <li key={i} className="flex items-start">
                         <span className="text-purple-500 mr-2">•</span>
                         <span className="text-gray-600">{req}</span>
@@ -229,23 +231,23 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
 
                 <div className="border-t pt-4">
                   <h3 className="font-semibold text-gray-800 mb-3">Expected Outcome:</h3>
-                  <p className="text-gray-600">{exercise.expectedOutput}</p>
+                  <p className="text-gray-600">{exercise.expectedResults}</p>
                 </div>
               </div>
             ))}
 
             {/* Case Studies */}
-            {lesson.caseStudies.map((caseStudy, index) => (
+            {lesson.caseStudies?.map((caseStudy, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Case Study: {caseStudy.title}</h2>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-semibold text-gray-800 mb-2">Studio</h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.studio}</p>
+                    <p className="text-gray-600 mb-4">{caseStudy.organization}</p>
 
                     <h3 className="font-semibold text-gray-800 mb-2">Challenge</h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.challenge}</p>
+                    <p className="text-gray-600 mb-4">{caseStudy.problem}</p>
                   </div>
 
                   <div>
@@ -253,14 +255,14 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
                     <p className="text-gray-600 mb-4">{caseStudy.solution}</p>
 
                     <h3 className="font-semibold text-gray-800 mb-2">Results</h3>
-                    <p className="text-gray-600">{caseStudy.results}</p>
+                    <p className="text-gray-600">{caseStudy.impact}</p>
                   </div>
                 </div>
 
                 <div className="mt-6 pt-6 border-t">
                   <h3 className="font-semibold text-gray-800 mb-3">Key Insights</h3>
                   <ul className="space-y-2">
-                    {caseStudy.insights.map((insight, i) => (
+                    {caseStudy.innovations.map((insight, i) => (
                       <li key={i} className="flex items-start">
                         <span className="text-purple-500 mr-2">💡</span>
                         <span className="text-gray-600">{insight}</span>
@@ -278,7 +280,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Technologies Used</h3>
               <div className="space-y-2">
-                {lesson.technologies.map((tech) => (
+                {lesson.mainContent.technologies.map((tech) => (
                   <div key={tech} className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-sm">
                     {tech}
                   </div>
@@ -316,7 +318,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Additional Resources</h3>
               <div className="space-y-3">
-                {lesson.resources.map((resource, index) => (
+                {lesson.resources?.map((resource, index) => (
                   <a
                     key={index}
                     href={resource.url}
@@ -325,7 +327,6 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
                     className="block p-3 border border-gray-200 rounded-lg hover:border-purple-300 hover:bg-purple-50 transition-colors"
                   >
                     <div className="font-medium text-gray-800">{resource.title}</div>
-                    <div className="text-sm text-gray-600">{resource.description}</div>
                     <div className="text-xs text-purple-600 mt-1 capitalize">{resource.type}</div>
                   </a>
                 ))}

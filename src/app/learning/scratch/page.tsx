@@ -1,160 +1,69 @@
-import type { Metadata } from 'next';
-
-import { createModuleMetadata } from '@/utils/seo';
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
-import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { scratchLessons, type ScratchLesson } from '@/data/scratch';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
+import { scratchLessons } from '@/data/scratch';
 import { K2Module } from '@/data/moduleNavigation';
+import { createTitle, createDescription } from '@/utils/seo';
 
-export const metadata: Metadata = createModuleMetadata(
-  'Scratch Programming - Lập Trình Scratch',
-  'Học lập trình cơ bản với Scratch. Visual programming cho kids và beginners',
-  ['scratch programming', 'visual programming', 'kids coding', 'block programming', 'computational thinking'],
-  'scratch'
-);
-
-// Convert ScratchLesson to BaseLessonData interface
-function convertToLesson(scratchLesson: ScratchLesson): BaseLessonData {
+export async function generateMetadata() {
   return {
-    id: scratchLesson.id,
-    title: scratchLesson.title,
-    description: scratchLesson.description,
-    duration: scratchLesson.duration,
-    difficulty: scratchLesson.difficulty,
-    category: 'Visual Programming',
-    imageUrl: scratchLesson.imageUrl || '/default-lesson.jpg',
-    videoUrl: scratchLesson.videoUrl,
-    objectives: scratchLesson.objectives,
-    prerequisites: ['Computer basics', 'Mouse and keyboard skills'],
-    exercises:
-      scratchLesson.exercises?.map((ex) => ({
-        title: ex.title,
-        description: ex.description,
-        difficulty: ex.difficulty,
-        materials: scratchLesson.materials || [],
-        procedure: ex.steps || [ex.description],
-        expectedResults:
-          ex.expectedBehavior || 'Project hoạt động như mong đợi',
-        solution: ex.scratchUrl || 'Solution provided in lesson',
-      })) || [],
-    resources: [],
-    tools: scratchLesson.codeBlocks || [
-      'Scratch Blocks',
-      'Motion',
-      'Looks',
-      'Events',
-    ],
-    realWorldApplications: scratchLesson.realWorldApplications || [],
-    caseStudies: [],
+    title: createTitle('Lập trình Scratch'),
+    description: createDescription(
+      'Học lập trình trực quan với Scratch. Tạo game, hoạt hình và câu chuyện tương tác. Khóa học dành cho người mới bắt đầu, đặc biệt là trẻ em.',
+    ),
+    keywords: ['Scratch', 'lập trình cho trẻ em', 'lập trình trực quan', 'K2AI'],
+    openGraph: {
+      title: createTitle('Khám phá Lập trình Sáng tạo với Scratch'),
+      description:
+        'Bắt đầu hành trình lập trình của bạn với Scratch, công cụ kéo-thả trực quan giúp biến ý tưởng thành hiện thực.',
+      type: 'website',
+    },
   };
 }
 
-export default function ScratchPage() {
-  // Convert lessons to base interface
-  const convertedLessons = scratchLessons.map(convertToLesson);
-
-  const moduleConfig: ModuleData = {
-    title: 'Scratch Programming',
-    subtitle: 'Lập Trình Trực Quan Cho Trẻ Em',
+export default function ScratchModulePage() {
+  const moduleData = {
+    id: 'scratch',
+    title: 'Lập trình Scratch',
+    subtitle: 'Nền tảng lập trình trực quan, sáng tạo cho mọi lứa tuổi.',
     description:
-      'Khám phá thế giới lập trình với Scratch - ngôn ngữ lập trình trực quan hoàn hảo cho trẻ em và người mới bắt đầu. Tạo game, animation và ứng dụng tương tác một cách thú vị.',
-    primaryColor: 'orange',
-    gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
-    basePath: '/learning/scratch',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=1200&h=600&fit=crop',
-    statsConfig: {
-      lessons: `${scratchLessons.length}+ bài`,
-      duration: '15-20 giờ',
-      level: 'Dành cho trẻ em',
-      projects: '10+ dự án thú vị',
-    },
-    marketData: {
-      marketSize: '70 Million',
-      marketNote: 'Active Scratch users worldwide',
-      jobGrowth: '22% Growth',
-      jobNote: 'Programming jobs by 2030',
-      reduction: '90% Easier',
-      reductionNote: 'Learning programming with visual blocks',
-      startups: '1000+ Schools',
-      startupsNote: 'Teaching Scratch globally',
-    },
-    careerPaths: [
-      'Game Developer',
-      'Animation Artist',
-      'Programming Teacher',
-      'Software Engineer',
-      'UX/UI Designer',
-      'Creative Technologist',
+      'Khóa học này sẽ đưa bạn vào thế giới lập trình đầy màu sắc của Scratch. Thông qua các khối lệnh kéo-thả, bạn sẽ học được tư duy logic, giải quyết vấn đề và tạo ra các sản phẩm sáng tạo của riêng mình như game, hoạt hình và các câu chuyện tương tác.',
+    level: 'Cơ bản',
+    duration: '5-8 giờ',
+    category: 'Creative Technology',
+    features: [
+      'Giao diện kéo-thả trực quan, không cần viết code.',
+      'Phát triển tư duy logic và kỹ năng giải quyết vấn đề.',
+      'Tạo ra sản phẩm game, hoạt hình, và câu chuyện tương tác.',
+      'Nền tảng vững chắc để học các ngôn ngữ lập trình khác.',
     ],
-    technicalHighlights: [
-      {
-        title: 'Visual Programming',
-        icon: '🧩',
-        items: [
-          'Drag & Drop Blocks',
-          'No Text Coding',
-          'Visual Logic',
-          'Color-coded Commands',
-        ],
-      },
-      {
-        title: 'Creative Projects',
-        icon: '🎨',
-        items: [
-          'Games & Stories',
-          'Animation & Art',
-          'Interactive Music',
-          'Digital Storytelling',
-        ],
-      },
-      {
-        title: 'Programming Concepts',
-        icon: '💻',
-        items: [
-          'Loops & Conditions',
-          'Variables & Events',
-          'Functions & Logic',
-          'Problem Solving',
-        ],
-      },
-      {
-        title: 'Sharing Platform',
-        icon: '🌍',
-        items: [
-          'Global Community',
-          'Project Sharing',
-          'Remix & Learn',
-          'Collaborative Learning',
-        ],
-      },
-      {
-        title: 'Educational Benefits',
-        icon: '📚',
-        items: [
-          'Computational Thinking',
-          'Creative Expression',
-          'Logical Reasoning',
-          'STEM Learning',
-        ],
-      },
-      {
-        title: 'Real Skills',
-        icon: '🚀',
-        items: [
-          'Algorithm Design',
-          'Debugging Skills',
-          'Project Planning',
-          'Digital Literacy',
-        ],
-      },
+    icon: '🎨',
+    color: 'from-orange-500 to-amber-500',
+    objectives: [
+      'Hiểu các khái niệm lập trình cơ bản: vòng lặp, điều kiện, biến số.',
+      'Tự tin tạo ra các dự án Scratch của riêng mình.',
+      'Phát triển kỹ năng kể chuyện và thiết kế game.',
+      'Sử dụng Scratch để học các môn học khác như Toán, Lý.',
     ],
-    relatedModules: [K2Module.STEM, K2Module.Python, K2Module.GameDevelopment],
+    prerequisites: ['Kỹ năng sử dụng máy tính cơ bản.', 'Không yêu cầu kinh nghiệm lập trình.'],
+    careerOutcomes: [
+      'Nhà phát triển game độc lập (Indie Game Developer)',
+      'Nhà thiết kế hoạt hình (Animator)',
+      'Giáo viên STEM',
+      'Chuyên gia thiết kế trải nghiệm học tập (Learning Experience Designer)',
+    ],
+    industryApplications: [
+      'Giáo dục: Công cụ dạy và học lập trình phổ biến nhất.',
+      'Giải trí: Tạo mẫu (prototyping) cho các ý tưởng game.',
+      'Marketing: Tạo các quảng cáo tương tác đơn giản.',
+      'Nghệ thuật: Sáng tạo nghệ thuật kỹ thuật số (digital art).',
+    ],
+    marketDemand: {
+      averageSalary: 'N/A',
+      jobGrowth: 'Kỹ năng nền tảng',
+      hireDemand: 'Cao trong lĩnh vực giáo dục STEM',
+    },
+    relatedModules: [K2Module.Python, K2Module.GameDevelopment, K2Module.Robotics],
+    heroImageUrl: 'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=1200&h=600&fit=crop',
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={scratchLessons} />;
 }

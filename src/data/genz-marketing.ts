@@ -1,7 +1,6 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
 
-export interface GenZMarketingLessonType extends BaseLessonData {
+interface MainContent {
   generationalInsights: string[];
   authenticityPrinciples: string[];
   platformPreferences: string[];
@@ -9,7 +8,11 @@ export interface GenZMarketingLessonType extends BaseLessonData {
   engagementTactics: string[];
 }
 
-export const genZMarketingLessons: GenZMarketingLessonType[] = [
+export interface GenZMarketingLesson extends BaseLessonData {
+  mainContent: MainContent;
+}
+
+export const genZMarketingLessons: GenZMarketingLesson[] = [
   {
     id: 'genz-psychology-authentic-marketing',
     title: 'Tâm lý Gen Z & Nguyên tắc Marketing Đích thực',
@@ -31,34 +34,75 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
       'Hiểu biết về các nền tảng mạng xã hội',
       'Sẵn sàng thách thức các phương pháp marketing truyền thống',
     ],
-    generationalInsights: [
-      'Là người bản địa kỹ thuật số với khoảng chú ý 8 giây',
-      'Coi trọng sự chân thực hơn là sự hoàn hảo được đánh bóng',
-      'Có ý thức xã hội và nhận thức về môi trường',
-      'Ưu tiên các thương hiệu phù hợp với giá trị cá nhân',
-      'Hoài nghi về quảng cáo truyền thống',
-    ],
-    authenticityPrinciples: [
-      'Minh bạch trong hoạt động kinh doanh',
-      'Thừa nhận sai lầm và thể hiện sự tổn thương',
-      'Hỗ trợ các hoạt động xã hội một cách chân thành',
-      'Nội dung do người dùng tạo ra hơn là nội dung thương hiệu',
-      'Kể chuyện hậu trường',
-    ],
-    platformPreferences: ['TikTok', 'Instagram', 'YouTube', 'Discord', 'Twitch'],
-    valueAlignment: [
-      'Bền vững môi trường',
-      'Công bằng xã hội và hòa nhập',
-      'Nhận thức về sức khỏe tâm thần',
-      'Khả năng tiếp cận kinh tế',
-      'Tự do biểu đạt sáng tạo',
-    ],
-    engagementTactics: [
-      'Tích hợp văn hóa meme',
-      'Các định dạng nội dung tương tác',
-      'Các cuộc trò chuyện thời gian thực',
-      'Các phương pháp xây dựng cộng đồng',
-      'Sáng tạo nội dung hợp tác',
+    mainContent: {
+      generationalInsights: [
+        'Là người bản địa kỹ thuật số với khoảng chú ý 8 giây',
+        'Coi trọng sự chân thực hơn là sự hoàn hảo được đánh bóng',
+        'Có ý thức xã hội và nhận thức về môi trường',
+        'Ưu tiên các thương hiệu phù hợp với giá trị cá nhân',
+        'Hoài nghi về quảng cáo truyền thống',
+      ],
+      authenticityPrinciples: [
+        'Minh bạch trong hoạt động kinh doanh',
+        'Thừa nhận sai lầm và thể hiện sự tổn thương',
+        'Hỗ trợ các hoạt động xã hội một cách chân thành',
+        'Nội dung do người dùng tạo ra hơn là nội dung thương hiệu',
+        'Kể chuyện hậu trường',
+      ],
+      platformPreferences: ['TikTok', 'Instagram', 'YouTube', 'Discord', 'Twitch'],
+      valueAlignment: [
+        'Bền vững môi trường',
+        'Công bằng xã hội và hòa nhập',
+        'Nhận thức về sức khỏe tâm thần',
+        'Khả năng tiếp cận kinh tế',
+        'Tự do biểu đạt sáng tạo',
+      ],
+      engagementTactics: [
+        'Tích hợp văn hóa meme',
+        'Các định dạng nội dung tương tác',
+        'Các cuộc trò chuyện thời gian thực',
+        'Các phương pháp xây dựng cộng đồng',
+        'Sáng tạo nội dung hợp tác',
+      ],
+    },
+    vietnamContext: {
+      title: 'Bối cảnh Gen Z Việt Nam',
+      content: [
+        'Gen Z Việt Nam là một lực lượng tiêu dùng ngày càng lớn, với hơn 15 triệu người.',
+        'Họ rất thành thạo về kỹ thuật số, với tỷ lệ sử dụng điện thoại thông minh và mạng xã hội cực kỳ cao (TikTok và Instagram là nền tảng hàng đầu).',
+        'Các "hot trend" trên mạng xã hội Việt Nam có sức ảnh hưởng lớn đến quyết định mua sắm của Gen Z.',
+        'Họ quan tâm đến các vấn đề xã hội như bảo vệ môi trường và ngày càng ưa chuộng các thương hiệu "sống xanh", bền vững.',
+        'Văn hóa "đu idol" (theo dõi thần tượng) K-Pop và V-Pop tạo ra cơ hội lớn cho marketing hợp tác với người có ảnh hưởng (KOLs/KOCs).',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Minh Anh',
+      title: 'Social Media Manager',
+      company: 'Zalo',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-minh-anh',
+      quote:
+        'Công việc của mình là "lướt" TikTok, Instagram cả ngày nhưng không phải để giải trí, mà là để nắm bắt "trend". Hiểu được ngôn ngữ, meme và điều gì khiến Gen Z hào hứng là chìa khóa để tạo ra những chiến dịch thành công. Sự chân thực và tương tác hai chiều quan trọng hơn bất kỳ quảng cáo bóng bẩy nào.',
+    },
+    quizzes: [
+      {
+        question: 'Nền tảng mạng xã hội nào phổ biến nhất với Gen Z Việt Nam cho nội dung video ngắn?',
+        options: ['Facebook', 'Zalo', 'TikTok', 'LinkedIn'],
+        correctAnswerIndex: 2,
+        explanation:
+          'TikTok đã trở thành nền tảng thống trị cho việc tạo và tiêu thụ nội dung video ngắn trong giới trẻ Việt Nam, tạo ra nhiều xu hướng lan truyền.',
+      },
+      {
+        question: 'Gen Z coi trọng điều gì nhất ở một thương hiệu?',
+        options: [
+          'Giá thấp nhất',
+          'Quảng cáo hài hước',
+          'Sự chân thực và phù hợp giá trị',
+          'Lịch sử lâu đời của thương hiệu',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Gen Z có xu hướng ủng hộ các thương hiệu thể hiện sự chân thực, minh bạch và có chung giá trị về các vấn đề xã hội và môi trường với họ.',
+      },
     ],
     exercises: [
       {
@@ -153,13 +197,6 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
         type: 'Tạp chí Kinh doanh Harvard',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'digital-marketing-campaign'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'content-creator-studio'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'inclusive-diverse-brand-messaging',
@@ -182,34 +219,74 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
       'Cam kết học hỏi về các vấn đề đa dạng',
       'Sẵn sàng thách thức các thực tiễn hiện có',
     ],
-    generationalInsights: [
-      'Gen Z là thế hệ đa dạng nhất trong lịch sử',
-      'Mong đợi các thương hiệu đại diện cho các cộng đồng đa dạng',
-      'Nhanh chóng chỉ ra sự đồng minh hình thức',
-      'Coi trọng sự đại diện đích thực hơn là sự đa dạng bề ngoài',
-      'Hỗ trợ các thương hiệu tích cực thúc đẩy sự hòa nhập',
-    ],
-    authenticityPrinciples: [
-      'Sự đại diện trong các vị trí lãnh đạo',
-      'Các quan điểm đa dạng trong việc ra quyết định',
-      'Kể chuyện đích thực từ các tiếng nói đa dạng',
-      'Hỗ trợ nhất quán ngoài các chiến dịch marketing',
-      'Thừa nhận và học hỏi từ sai lầm',
-    ],
-    platformPreferences: ['Instagram Stories', 'TikTok', 'LinkedIn', 'Twitter', 'YouTube'],
-    valueAlignment: [
-      'Bình đẳng chủng tộc và công lý',
-      'Quyền và sự đại diện của LGBTQ+',
-      'Bình đẳng giới và trao quyền',
-      'Hòa nhập và khả năng tiếp cận cho người khuyết tật',
-      'Tôn vinh sự đa dạng văn hóa',
-    ],
-    engagementTactics: [
-      'Nội dung do người dùng tạo ra tôn vinh sự đa dạng',
-      'Hợp tác với các nhà sáng tạo và người có ảnh hưởng đa dạng',
-      'Chia sẻ câu chuyện và quan điểm của nhân viên',
-      'Hỗ trợ các sự kiện cộng đồng đa dạng',
-      'Nội dung giáo dục về sự hòa nhập',
+    mainContent: {
+      generationalInsights: [
+        'Gen Z là thế hệ đa dạng nhất trong lịch sử',
+        'Mong đợi các thương hiệu đại diện cho các cộng đồng đa dạng',
+        'Nhanh chóng chỉ ra sự đồng minh hình thức',
+        'Coi trọng sự đại diện đích thực hơn là sự đa dạng bề ngoài',
+        'Hỗ trợ các thương hiệu tích cực thúc đẩy sự hòa nhập',
+      ],
+      authenticityPrinciples: [
+        'Sự đại diện trong các vị trí lãnh đạo',
+        'Các quan điểm đa dạng trong việc ra quyết định',
+        'Kể chuyện đích thực từ các tiếng nói đa dạng',
+        'Hỗ trợ nhất quán ngoài các chiến dịch marketing',
+        'Thừa nhận và học hỏi từ sai lầm',
+      ],
+      platformPreferences: ['Instagram Stories', 'TikTok', 'LinkedIn', 'Twitter', 'YouTube'],
+      valueAlignment: [
+        'Bình đẳng chủng tộc và công lý',
+        'Quyền và sự đại diện của LGBTQ+',
+        'Bình đẳng giới và trao quyền',
+        'Hòa nhập và khả năng tiếp cận cho người khuyết tật',
+        'Tôn vinh sự đa dạng văn hóa',
+      ],
+      engagementTactics: [
+        'Nội dung do người dùng tạo ra tôn vinh sự đa dạng',
+        'Hợp tác với các nhà sáng tạo và người có ảnh hưởng đa dạng',
+        'Chia sẻ câu chuyện và quan điểm của nhân viên',
+        'Hỗ trợ các sự kiện cộng đồng đa dạng',
+        'Nội dung giáo dục về sự hòa nhập',
+      ],
+    },
+    vietnamContext: {
+      title: 'Hòa nhập và Đa dạng trong bối cảnh Việt Nam',
+      content: [
+        'Việt Nam có 54 dân tộc anh em, tạo nên một nền văn hóa đa dạng. Các chiến dịch marketing cần nhạy cảm và tôn trọng sự đa dạng này.',
+        'Cộng đồng LGBTQ+ ở Việt Nam ngày càng được công nhận và có tiếng nói mạnh mẽ hơn, đặc biệt trong giới trẻ. Các thương hiệu như Bitis đã có những chiến dịch thành công ủng hộ cộng đồng này.',
+        'Nhận thức về người khuyết tật đang dần được cải thiện. Việc đưa hình ảnh người khuyết tật vào quảng cáo một cách tích cực và chân thực là một hướng đi mới mẻ và được đánh giá cao.',
+        'Sự khác biệt vùng miền (Bắc - Trung - Nam) cũng là một yếu tố quan trọng cần cân nhắc trong các chiến dịch marketing để đảm bảo tính phù hợp và hiệu quả.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Trần Văn Hùng',
+      title: 'Diversity & Inclusion Specialist',
+      company: 'Unilever Vietnam',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-van-hung',
+      quote:
+        'Công việc của tôi là đảm bảo mọi tiếng nói đều được lắng nghe, từ trong nội bộ công ty đến các chiến dịch quảng cáo. Marketing cho Gen Z không chỉ là bán sản phẩm, mà là xây dựng một thương hiệu đại diện cho giá trị mà họ tin tưởng. Sự đa dạng không phải là một "trend", đó là tương lai.',
+    },
+    quizzes: [
+      {
+        question: 'Yếu tố nào sau đây KHÔNG phải là một khía cạnh quan trọng của marketing hòa nhập tại Việt Nam?',
+        options: [
+          'Đa dạng dân tộc',
+          'Sự khác biệt vùng miền',
+          'Chỉ tập trung vào nhóm khách hàng đa số',
+          'Sự hiện diện của cộng đồng LGBTQ+',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Marketing hòa nhập đòi hỏi phải xem xét và tôn trọng tất cả các nhóm khách hàng, bao gồm cả các nhóm thiểu số, thay vì chỉ tập trung vào nhóm đa số.',
+      },
+      {
+        question: 'Một thương hiệu giày Việt Nam nào đã thành công với chiến dịch ủng hộ cộng đồng LGBTQ+?',
+        options: ['Vina Giầy', 'Bitis', 'Juno', 'Ananas'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Bitis đã có những chiến dịch marketing rất thành công và ý nghĩa, thể hiện sự ủng hộ đối với cộng đồng LGBTQ+ tại Việt Nam, được Gen Z đón nhận nồng nhiệt.',
+      },
     ],
     exercises: [
       {
@@ -268,13 +345,6 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
         type: 'Nghiên cứu Ngành',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'vietnamese-heritage-explorer'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'purpose-driven-brand-activism',
@@ -298,34 +368,79 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
       'Cam kết thay đổi dài hạn',
       'Nguồn lực cho chủ nghĩa tích cực bền vững',
     ],
-    generationalInsights: [
-      'Gen Z mong đợi các thương hiệu có lập trường về các vấn đề',
-      'Sẽ tẩy chay các thương hiệu xung đột với giá trị của họ',
-      'Coi trọng hành động hơn các chiến dịch nâng cao nhận thức',
-      'Nghiên cứu các thực tiễn thương hiệu ngoài marketing',
-      'Hỗ trợ các thương hiệu tạo ra tác động có thể đo lường được',
-    ],
-    authenticityPrinciples: [
-      'Chọn các nguyên nhân phù hợp với mô hình kinh doanh',
-      'Đầu tư nguồn lực ngoài ngân sách marketing',
-      'Hợp tác với các tổ chức đã được thành lập',
-      'Chia sẻ tiến độ và thất bại một cách minh bạch',
-      'Duy trì sự nhất quán theo thời gian',
-    ],
-    platformPreferences: ['Instagram', 'TikTok', 'LinkedIn', 'Twitter', 'Blog Công ty'],
-    valueAlignment: [
-      'Hành động vì khí hậu và bảo vệ môi trường',
-      'Công bằng xã hội và nhân quyền',
-      'Khả năng tiếp cận giáo dục',
-      'Vận động cho sức khỏe tâm thần',
-      'Bình đẳng kinh tế',
-    ],
-    engagementTactics: [
-      'Các sáng kiến do nhân viên dẫn dắt',
-      'Sự tham gia của khách hàng vào các nguyên nhân',
-      'Hợp tác với các tổ chức phi chính phủ và nhà hoạt động',
-      'Nội dung giáo dục về các vấn đề',
-      'Báo cáo tác động minh bạch',
+    mainContent: {
+      generationalInsights: [
+        'Gen Z mong đợi các thương hiệu có lập trường về các vấn đề',
+        'Sẽ tẩy chay các thương hiệu xung đột với giá trị của họ',
+        'Coi trọng hành động hơn các chiến dịch nâng cao nhận thức',
+        'Nghiên cứu các thực tiễn thương hiệu ngoài marketing',
+        'Hỗ trợ các thương hiệu tạo ra tác động có thể đo lường được',
+      ],
+      authenticityPrinciples: [
+        'Chọn các nguyên nhân phù hợp với mô hình kinh doanh',
+        'Đầu tư nguồn lực ngoài ngân sách marketing',
+        'Hợp tác với các tổ chức đã được thành lập',
+        'Chia sẻ tiến độ và thất bại một cách minh bạch',
+        'Duy trì sự nhất quán theo thời gian',
+      ],
+      platformPreferences: ['Instagram', 'TikTok', 'LinkedIn', 'Twitter', 'Blog Công ty'],
+      valueAlignment: [
+        'Hành động vì khí hậu và bảo vệ môi trường',
+        'Công bằng xã hội và nhân quyền',
+        'Khả năng tiếp cận giáo dục',
+        'Vận động cho sức khỏe tâm thần',
+        'Bình đẳng kinh tế',
+      ],
+      engagementTactics: [
+        'Các sáng kiến do nhân viên dẫn dắt',
+        'Sự tham gia của khách hàng vào các nguyên nhân',
+        'Hợp tác với các tổ chức phi chính phủ và nhà hoạt động',
+        'Nội dung giáo dục về các vấn đề',
+        'Báo cáo tác động minh bạch',
+      ],
+    },
+    vietnamContext: {
+      title: 'Marketing có mục đích tại Việt Nam',
+      content: [
+        'Các chiến dịch vì cộng đồng như "Đi để trở về" của Bitis (tôn vinh giá trị gia đình) hay các hoạt động của Vinamilk hỗ trợ trẻ em khó khăn đã tạo được tiếng vang lớn.',
+        'Người tiêu dùng Việt, đặc biệt là Gen Z, ngày càng quan tâm đến các sản phẩm thân thiện với môi trường. Các thương hiệu như LUSH với mỹ phẩm "tươi" và không thử nghiệm trên động vật có một lượng fan trung thành.',
+        'Các phong trào "giải cứu nông sản" khi nông dân gặp khó khăn trong việc tiêu thụ sản phẩm đã cho thấy sức mạnh của cộng đồng và người tiêu dùng sẵn sàng ủng hộ các doanh nghiệp có trách nhiệm xã hội.',
+        'Các startup xã hội (social enterprises) đang ngày càng phát triển ở Việt Nam, kết hợp giữa mục tiêu kinh doanh và tạo tác động tích cực cho xã hội.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Lê Thị Thảo',
+      title: 'Brand Manager',
+      company: 'Bitis',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-thi-thao',
+      quote:
+        'Chúng tôi không chỉ bán giày, chúng tôi kể những câu chuyện chạm đến trái tim người Việt. Chiến dịch "Đi để trở về" thành công vì nó kết nối với một giá trị văn hóa sâu sắc. Marketing có mục đích là khi thương hiệu của bạn trở thành một phần trong cuộc sống và niềm tin của khách hàng.',
+    },
+    quizzes: [
+      {
+        question: 'Chiến dịch "Đi để trở về" của Bitis chủ yếu nói về điều gì?',
+        options: [
+          'Khuyến khích du lịch',
+          'Tôn vinh giá trị gia đình và sự trở về',
+          'Quảng cáo độ bền của sản phẩm',
+          'Giảm giá sản phẩm',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Chiến dịch "Đi để trở về" đã rất thành công trong việc kết nối với cảm xúc của người trẻ Việt Nam, đặc biệt là vào dịp Tết, nhấn mạnh ý nghĩa của việc trở về nhà.',
+      },
+      {
+        question: 'Doanh nghiệp xã hội (social enterprise) là gì?',
+        options: [
+          'Một tổ chức từ thiện',
+          'Một doanh nghiệp chỉ tập trung vào lợi nhuận',
+          'Một doanh nghiệp có mục tiêu chính là giải quyết vấn đề xã hội bên cạnh lợi nhuận',
+          'Một cơ quan của chính phủ',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Doanh nghiệp xã hội là mô hình kinh doanh sử dụng các chiến lược thương mại để tạo ra sự cải thiện về tài chính, xã hội và môi trường.',
+      },
     ],
     exercises: [
       {
@@ -387,12 +502,5 @@ export const genZMarketingLessons: GenZMarketingLessonType[] = [
         type: 'Khung Chứng nhận',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-modeling'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'renewable-energy-manager'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
 ];

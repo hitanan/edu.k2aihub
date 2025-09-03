@@ -13,7 +13,7 @@ import { GameCardSkeleton } from '@/components/LoadingSpinner';
 export default function EducationalGamesMain() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
+
   // Get initial values from URL params
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -27,7 +27,7 @@ export default function EducationalGamesMain() {
       const categoryParam = searchParams.get('category');
       const difficultyParam = searchParams.get('difficulty');
       const searchParam = searchParams.get('search');
-      
+
       if (categoryParam) setSelectedCategory(categoryParam);
       if (difficultyParam) setSelectedDifficulty(difficultyParam);
       if (searchParam) setSearchTerm(searchParam);
@@ -37,14 +37,14 @@ export default function EducationalGamesMain() {
   // Function to update URL with current filter state
   const updateURL = (newCategory: string, newDifficulty: string, newSearch: string) => {
     const params = new URLSearchParams();
-    
+
     if (newCategory && newCategory !== 'all') params.set('category', newCategory);
     if (newDifficulty && newDifficulty !== 'all') params.set('difficulty', newDifficulty);
     if (newSearch) params.set('search', newSearch);
-    
+
     const queryString = params.toString();
     const newUrl = queryString ? `/games?${queryString}` : '/games';
-    
+
     // Use replace instead of push to avoid creating too many history entries
     router.replace(newUrl, { scroll: false });
   };

@@ -1,5 +1,25 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
+interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 export interface BlockchainLessonData extends BaseLessonData {
   blockchainConcepts?: string[];
   cryptocurrencies?: string[];
@@ -9,6 +29,9 @@ export interface BlockchainLessonData extends BaseLessonData {
     technology: string[];
     complexity: string;
   }>;
+  vietnamContext: VietnamContext;
+  careerConnect: CareerConnect;
+  quizzes: Quiz[];
 }
 
 export const BlockchainLessons: BlockchainLessonData[] = [
@@ -73,6 +96,36 @@ export const BlockchainLessons: BlockchainLessonData[] = [
       'Consensus Mechanisms',
     ],
     cryptocurrencies: ['Bitcoin (BTC)', 'Ethereum (ETH)', 'Binance Coin (BNB)', 'Cardano (ADA)', 'Solana (SOL)'],
+    vietnamContext: {
+      title: 'Bối cảnh Blockchain tại Việt Nam',
+      content: [
+        'Việt Nam là một trong những quốc gia có tỷ lệ chấp nhận tiền điện tử cao nhất thế giới.',
+        'Chính phủ Việt Nam đang trong quá trình xây dựng khung pháp lý cho tài sản kỹ thuật số.',
+        'Nhiều dự án blockchain của Việt Nam đã thành công trên trường quốc tế như Axie Infinity, TomoChain.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Trịnh Công Duy',
+      title: 'Kỹ sư Blockchain',
+      company: 'TomoChain',
+      imageUrl: 'https://i.pravatar.cc/150?u=trinh-cong-duy',
+      quote:
+        'Blockchain không chỉ là về tiền điện tử, nó là công nghệ của niềm tin. Làm việc trong ngành này tại Việt Nam là cơ hội để đi đầu trong một cuộc cách mạng công nghệ.',
+    },
+    quizzes: [
+      {
+        question: 'Proof of Work (PoW) là gì?',
+        options: [
+          'Một thuật toán đồng thuận yêu cầu giải bài toán phức tạp',
+          'Một loại tiền điện tử',
+          'Một loại hợp đồng thông minh',
+          'Một cách để lưu trữ dữ liệu',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'PoW là cơ chế đồng thuận đầu tiên và phổ biến nhất, được sử dụng bởi Bitcoin. Nó yêu cầu các "thợ đào" (miners) phải giải một bài toán tính toán phức tạp để có quyền thêm block mới vào chuỗi.',
+      },
+    ],
   },
   {
     id: 'smart-contracts-dapps',
@@ -135,6 +188,31 @@ export const BlockchainLessons: BlockchainLessonData[] = [
         complexity: 'Nâng cao',
       },
     ],
+    vietnamContext: {
+      title: 'Phát triển DApp tại Việt Nam',
+      content: [
+        'Cộng đồng lập trình viên blockchain tại Việt Nam rất năng động và sáng tạo.',
+        'Nhiều DApp "Made in Vietnam" đã gây được tiếng vang lớn trên toàn cầu.',
+        'Các cuộc thi hackathon về blockchain thường xuyên được tổ chức, thu hút nhiều tài năng trẻ.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Lê Mỹ An',
+      title: 'Solidity Developer',
+      company: 'Kyber Network',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-my-an',
+      quote:
+        'Phát triển smart contract giống như xây dựng những cỗ máy tự động trên internet. Nó đòi hỏi sự chính xác tuyệt đối và tư duy logic sắc bén. Đây là một lĩnh vực đầy thử thách nhưng cũng vô cùng thú vị.',
+    },
+    quizzes: [
+      {
+        question: 'Solidity là ngôn ngữ lập trình cho nền tảng nào?',
+        options: ['Bitcoin', 'Ethereum', 'Ripple', 'Cardano'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Solidity là ngôn ngữ lập trình chính để viết smart contract trên Ethereum và các blockchain tương thích EVM.',
+      },
+    ],
   },
   {
     id: 'defi-protocols',
@@ -172,6 +250,36 @@ export const BlockchainLessons: BlockchainLessonData[] = [
       'Insurance protocols (Nexus Mutual)',
       'Cross-chain bridges',
     ],
+    vietnamContext: {
+      title: 'DeFi tại Việt Nam',
+      content: [
+        'Việt Nam là một trong những thị trường DeFi tiềm năng nhất Đông Nam Á.',
+        'Nhiều người dùng Việt Nam tham gia yield farming và liquidity mining để tìm kiếm lợi nhuận.',
+        'Các dự án DeFi Việt Nam đang dần khẳng định được vị thế trên bản đồ thế giới.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Trần Văn Hùng',
+      title: 'Chuyên gia DeFi',
+      company: 'Coin98 Finance',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-van-hung',
+      quote:
+        'DeFi đang định hình lại toàn bộ ngành tài chính. Đây là cơ hội để xây dựng một hệ thống tài chính cởi mở, minh bạch và dễ tiếp cận hơn cho tất cả mọi người.',
+    },
+    quizzes: [
+      {
+        question: 'AMM là viết tắt của từ gì?',
+        options: [
+          'Automated Money Maker',
+          'Automated Market Maker',
+          'Advanced Market Maker',
+          'Automated aRithmetic Model',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'AMM (Automated Market Maker) là cơ chế cốt lõi của các sàn giao dịch phi tập trung (DEX), cho phép giao dịch tự động thông qua các liquidity pool.',
+      },
+    ],
   },
   {
     id: 'blockchain-enterprise',
@@ -208,6 +316,31 @@ export const BlockchainLessons: BlockchainLessonData[] = [
       'Healthcare records management',
       'Real estate transactions',
       'Carbon credit trading',
+    ],
+    vietnamContext: {
+      title: 'Blockchain cho Doanh nghiệp tại Việt Nam',
+      content: [
+        'Nhiều doanh nghiệp lớn tại Việt Nam đang thử nghiệm và ứng dụng blockchain để tăng cường minh bạch và hiệu quả.',
+        'Truy xuất nguồn gốc nông sản là một trong những ứng dụng blockchain thành công nhất tại Việt Nam.',
+        'Chính phủ cũng đang nghiên cứu ứng dụng blockchain trong quản lý công và dịch vụ công.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Thị Lan',
+      title: 'Giám đốc tư vấn chuyển đổi số',
+      company: 'FPT Digital',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-lan',
+      quote:
+        'Blockchain là một công cụ mạnh mẽ để giải quyết các bài toán về niềm tin và minh bạch trong doanh nghiệp. Việc ứng dụng thành công công nghệ này sẽ tạo ra lợi thế cạnh tranh rất lớn.',
+    },
+    quizzes: [
+      {
+        question: 'Hyperledger Fabric là một ví dụ của loại blockchain nào?',
+        options: ['Public', 'Private', 'Permissioned', 'Permissionless'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Hyperledger Fabric là một nền tảng blockchain dành cho doanh nghiệp, thuộc loại permissioned (có sự cho phép), nơi các thành viên tham gia mạng lưới phải được xác thực.',
+      },
     ],
   },
 ];

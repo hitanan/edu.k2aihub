@@ -54,7 +54,7 @@ const FeedbackForm: React.FC = () => {
     const body = encodeURIComponent(
       `Tên: ${form.name}\nEmail: ${form.email}\n\nNội dung:\n${form.message}\n\n---\nGửi từ K2AiHub`
     );
-    const mailtoLink = `mailto:jobtimeseo@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:k2aihub@gmail.com?subject=${subject}&body=${body}`;
 
     // Open email client
     window.location.href = mailtoLink;

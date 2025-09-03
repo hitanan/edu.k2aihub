@@ -11,8 +11,8 @@ import { PageProps } from '@/types';
 
 // Extend VietnameseBusinessLesson to be compatible with BaseLessonData
 interface ExtendedVietnameseBusinessLesson extends BaseLessonData {
-  businessTopics: string[];
-  regulations: string[];
+  businessTopics?: string[];
+  regulations?: string[];
 }
 
 // Transform the lessons to match BaseLessonData interface
@@ -22,19 +22,19 @@ const transformedLessons: ExtendedVietnameseBusinessLesson[] =
     // Ensure all required BaseLessonData fields are present
     exercises: lesson.exercises.map((exercise) => ({
       ...exercise,
-      materials: exercise.requirements || [],
+      materials: exercise.materials || [],
       procedure: exercise.hints || [],
-      expectedResults: exercise.expectedOutput || '',
+      expectedResults: exercise.expectedResults || '',
     })),
     // Map caseStudies to match expected format
     caseStudies:
       lesson.caseStudies?.map((cs) => ({
         title: cs.title,
-        organization: cs.company,
-        problem: cs.challenge,
+        organization: cs.organization,
+        problem: cs.problem,
         solution: cs.solution,
-        impact: cs.results,
-        innovations: cs.insights || [],
+        impact: cs.impact,
+        innovations: cs.innovations || [],
       })) || [],
   }));
 

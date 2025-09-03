@@ -8,6 +8,11 @@ export interface EnvironmentalClimateLessonType extends BaseLessonData {
   sustainabilityMethods?: string[];
   researchTools?: string[];
   policyApplications?: string[];
+  relatedGames?: Array<{
+    id: string;
+    name: string;
+    description: string;
+  }>;
   // Legacy support
   researchMethods?: string[];
   environmentalFactors?: string[];

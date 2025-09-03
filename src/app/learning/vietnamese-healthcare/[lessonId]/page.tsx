@@ -3,56 +3,26 @@ import {
   generateLessonMetadata,
   generateLessonStaticParams,
   LessonPageConfig,
-  BaseLessonData,
 } from '@/components/learning/LessonPageTemplate';
-import { vietnameseHealthcareLessons } from '@/data/vietnamese-healthcare';
+import { vietnameseHealthcareLessons, VietnameseHealthcareLesson } from '@/data/vietnamese-healthcare';
 import { PageProps } from '@/types';
 import { Activity } from 'lucide-react';
 
-// Extend lesson interface
-interface ExtendedVietnameseHealthcareLesson extends BaseLessonData {
-  medicalField: string;
-  technologies: string[];
-}
-
-// Transform lessons to match BaseLessonData interface
-const transformedLessons: ExtendedVietnameseHealthcareLesson[] =
-  vietnameseHealthcareLessons.map((lesson) => ({
-    ...lesson,
-    exercises: lesson.exercises.map((exercise) => ({
-      ...exercise,
-      materials: exercise.requirements || [],
-      procedure: exercise.procedure || [],
-      expectedResults: exercise.expectedResults || '',
-    })),
-    caseStudies:
-      lesson.caseStudies?.map((cs) => ({
-        title: cs.title,
-        organization: cs.organization,
-        problem: cs.problem,
-        solution: cs.solution,
-        impact: cs.impact,
-        innovations: cs.innovations || [],
-      })) || [],
-  }));
-
 export async function generateStaticParams() {
-  return generateLessonStaticParams(transformedLessons);
+  return generateLessonStaticParams(vietnameseHealthcareLessons);
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, transformedLessons, 'vietnamese-healthcare');
+  return generateLessonMetadata(lessonId, vietnameseHealthcareLessons, 'vietnamese-healthcare');
 }
 
-export default async function VietnameseHealthcareLessonPage({
-  params,
-}: PageProps) {
-  const config: LessonPageConfig<ExtendedVietnameseHealthcareLesson> = {
+export default async function VietnameseHealthcareLessonPage({ params }: PageProps) {
+  const config: LessonPageConfig<VietnameseHealthcareLesson> = {
     moduleName: 'vietnamese-healthcare',
     moduleTitle: 'Công Nghệ Y Tế Việt Nam',
     modulePath: '/learning/vietnamese-healthcare',
-    lessons: transformedLessons,
+    lessons: vietnameseHealthcareLessons,
     primaryColor: 'cyan',
     secondaryColor: 'teal',
     gradientColors: 'from-slate-900 via-cyan-900 to-slate-900',
@@ -68,10 +38,7 @@ export default async function VietnameseHealthcareLessonPage({
         <h4 className="font-semibold text-white mb-3">Technologies</h4>
         <div className="space-y-2">
           {lesson.technologies?.map((tech, index) => (
-            <div
-              key={index}
-              className="text-xs text-gray-400 bg-white/5 p-2 rounded border border-white/10"
-            >
+            <div key={index} className="text-xs text-gray-400 bg-white/5 p-2 rounded border border-white/10">
               {tech}
             </div>
           ))}

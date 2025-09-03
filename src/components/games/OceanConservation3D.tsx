@@ -103,18 +103,24 @@ function MarineAnimal({
 
       if (species.bodyShape === 'whale' || species.bodyShape === 'dolphin') {
         // Large mammals - slower, graceful movement
-        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 3;
-        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.15) + timeOffset) * 1;
+        meshRef.current.position.x =
+          position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 3;
+        meshRef.current.position.y =
+          position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.15) + timeOffset) * 1;
         meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * (baseSpeed * 0.08) + timeOffset) * 0.2;
       } else if (species.bodyShape === 'turtle') {
         // Turtle - very slow movement with slow fin swing
-        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 1;
-        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.05) + timeOffset) * 0.5;
+        meshRef.current.position.x =
+          position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 1;
+        meshRef.current.position.y =
+          position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.05) + timeOffset) * 0.5;
         meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * (baseSpeed * 0.05) + timeOffset) * 0.1;
       } else {
         // Fish - faster, darting movement with species-specific fin swing speeds
-        meshRef.current.position.x = position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 2;
-        meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.15) + timeOffset) * 0.8;
+        meshRef.current.position.x =
+          position[0] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.1) + timeOffset) * 2;
+        meshRef.current.position.y =
+          position[1] + Math.sin(state.clock.elapsedTime * (baseSpeed * 0.15) + timeOffset) * 0.8;
         meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * (baseSpeed * 0.075) + timeOffset) * 0.4;
       }
 
@@ -183,11 +189,7 @@ function MarineAnimal({
             </mesh>
             {/* Grooves on throat (whale feature) */}
             {Array.from({ length: 6 }, (_, i) => (
-              <mesh
-                key={i}
-                position={[2.5 + i * 0.3, -0.6, 0]}
-                scale={[0.1, 0.05, 1]}
-              >
+              <mesh key={i} position={[2.5 + i * 0.3, -0.6, 0]} scale={[0.1, 0.05, 1]}>
                 <cylinderGeometry args={[0.02, 0.02, 1.2]} />
                 <meshStandardMaterial color="#555555" transparent opacity={0.6} />
               </mesh>
@@ -266,11 +268,7 @@ function MarineAnimal({
             {Array.from({ length: 12 }, (_, i) => (
               <mesh
                 key={i}
-                position={[
-                  (i % 3) * 0.4 - 0.4,
-                  0.35,
-                  Math.floor(i / 3) * 0.4 - 0.6,
-                ]}
+                position={[(i % 3) * 0.4 - 0.4, 0.35, Math.floor(i / 3) * 0.4 - 0.6]}
                 scale={[0.3, 0.1, 0.3]}
               >
                 <cylinderGeometry args={[0.15, 0.15, 0.05, 6]} />
@@ -350,21 +348,13 @@ function MarineAnimal({
             </mesh>
             {/* Gills */}
             {Array.from({ length: 5 }, (_, i) => (
-              <mesh
-                key={i}
-                position={[1 - i * 0.2, 0, 0.7]}
-                scale={[0.05, 0.8, 0.1]}
-              >
+              <mesh key={i} position={[1 - i * 0.2, 0, 0.7]} scale={[0.05, 0.8, 0.1]}>
                 <boxGeometry args={[0.1, 0.4, 0.02]} />
                 <meshStandardMaterial color="#8B4513" transparent opacity={0.8} />
               </mesh>
             ))}
             {Array.from({ length: 5 }, (_, i) => (
-              <mesh
-                key={i + 5}
-                position={[1 - i * 0.2, 0, -0.7]}
-                scale={[0.05, 0.8, 0.1]}
-              >
+              <mesh key={i + 5} position={[1 - i * 0.2, 0, -0.7]} scale={[0.05, 0.8, 0.1]}>
                 <boxGeometry args={[0.1, 0.4, 0.02]} />
                 <meshStandardMaterial color="#8B4513" transparent opacity={0.8} />
               </mesh>
@@ -1109,11 +1099,7 @@ interface OceanConservation3DProps {
   onRestart?: () => void;
 }
 
-export default function OceanConservation3D({ 
-  onComplete, 
-  timeLeft, 
-  onRestart 
-}: OceanConservation3DProps = {}) {
+export default function OceanConservation3D({ onComplete, timeLeft, onRestart }: OceanConservation3DProps = {}) {
   const [gameStarted, setGameStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [rescued, setRescued] = useState(0);

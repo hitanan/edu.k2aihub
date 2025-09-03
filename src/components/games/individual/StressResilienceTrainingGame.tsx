@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  Heart, 
-  Brain, 
-  Shield, 
-  Activity, 
-  Compass, 
+import {
+  Heart,
+  Brain,
+  Shield,
+  Activity,
+  Compass,
   Award,
   Play,
   RotateCcw,
@@ -14,8 +14,6 @@ import {
   AlertCircle,
   TrendingUp,
   Zap,
-  Coffee,
-  Moon
 } from 'lucide-react';
 
 interface StressResilienceTrainingGameProps {
@@ -60,13 +58,14 @@ const STRESS_SCENARIOS: StressScenario[] = [
   {
     id: 'deadline-pressure',
     title: 'Áp Lực Deadline Công Việc',
-    description: 'Bạn có 3 dự án quan trọng cần hoàn thành trong tuần này nhưng thời gian không đủ. Sếp liên tục hỏi tiến độ.',
+    description:
+      'Bạn có 3 dự án quan trọng cần hoàn thành trong tuần này nhưng thời gian không đủ. Sếp liên tục hỏi tiến độ.',
     stressLevel: 8,
     category: 'work',
     triggers: ['Thời gian không đủ', 'Áp lực từ cấp trên', 'Khối lượng công việc quá lớn'],
     physicalSymptoms: ['Đau đầu', 'Căng thẳng cơ vai gáy', 'Khó ngủ', 'Mệt mỏi'],
     emotionalSymptoms: ['Lo lắng', 'Cáu gắt', 'Cảm giác bất lực', 'Sợ thất bại'],
-    immediateThoughts: ['Tôi không thể hoàn thành được', 'Tôi sẽ bị sa thải', 'Tôi quá tệ']
+    immediateThoughts: ['Tôi không thể hoàn thành được', 'Tôi sẽ bị sa thải', 'Tôi quá tệ'],
   },
   {
     id: 'relationship-conflict',
@@ -77,18 +76,19 @@ const STRESS_SCENARIOS: StressScenario[] = [
     triggers: ['Bất đồng quan điểm', 'Thiếu hiểu biết', 'Kỳ vọng không thực tế'],
     physicalSymptoms: ['Tim đập nhanh', 'Khó thở', 'Căng thẳng', 'Mất ngủ'],
     emotionalSymptoms: ['Tủi thân', 'Tức giận', 'Buồn bã', 'Cô đơn'],
-    immediateThoughts: ['Mối quan hệ này không có tương lai', 'Tôi không đủ tốt', 'Tại sao lại như vậy?']
+    immediateThoughts: ['Mối quan hệ này không có tương lai', 'Tôi không đủ tốt', 'Tại sao lại như vậy?'],
   },
   {
     id: 'public-presentation',
     title: 'Thuyết Trình Trước Đám Đông',
-    description: 'Bạn cần thuyết trình một dự án quan trọng trước 100 người, bao gồm cấp trên và đối tác. Thời gian chuẩn bị không nhiều.',
+    description:
+      'Bạn cần thuyết trình một dự án quan trọng trước 100 người, bao gồm cấp trên và đối tác. Thời gian chuẩn bị không nhiều.',
     stressLevel: 9,
     category: 'social',
     triggers: ['Sợ bị đánh giá', 'Lo sai sót', 'Thiếu tự tin'],
     physicalSymptoms: ['Run tay', 'Đổ mồ hôi', 'Khô miệng', 'Buồn nôn'],
     emotionalSymptoms: ['Lo lắng cực độ', 'Sợ hãi', 'Tự ti', 'Hoảng loạn'],
-    immediateThoughts: ['Tôi sẽ thất bại thảm hại', 'Mọi người sẽ cười nhạo tôi', 'Tôi không xứng đáng']
+    immediateThoughts: ['Tôi sẽ thất bại thảm hại', 'Mọi người sẽ cười nhạo tôi', 'Tôi không xứng đáng'],
   },
   {
     id: 'health-concern',
@@ -99,8 +99,8 @@ const STRESS_SCENARIOS: StressScenario[] = [
     triggers: ['Không chắc chắn về tương lai', 'Sợ bệnh tật', 'Cảm giác mất kiểm soát'],
     physicalSymptoms: ['Mất ngủ hoàn toàn', 'Không ăn được', 'Tim đập nhanh', 'Hoa mắt chóng mặt'],
     emotionalSymptoms: ['Sợ chết', 'Tuyệt vọng', 'Lo lắng cực độ', 'Trầm cảm'],
-    immediateThoughts: ['Tôi có thể bị ung thư', 'Tôi sẽ chết', 'Gia đình tôi sẽ ra sao?']
-  }
+    immediateThoughts: ['Tôi có thể bị ung thư', 'Tôi sẽ chết', 'Gia đình tôi sẽ ra sao?'],
+  },
 ];
 
 const COPING_STRATEGIES: CopingStrategy[] = [
@@ -113,13 +113,13 @@ const COPING_STRATEGIES: CopingStrategy[] = [
     description: 'Kỹ thuật hít thở để làm dịu hệ thần kinh và giảm lo lắng tức thì',
     steps: [
       'Hít vào từ từ trong 4 giây',
-      'Giữ hơi trong 4 giây', 
+      'Giữ hơi trong 4 giây',
       'Thở ra từ từ trong 4 giây',
       'Tạm dừng 4 giây trước khi hít tiếp',
-      'Lặp lại 4-6 lần'
+      'Lặp lại 4-6 lần',
     ],
     icon: <Activity className="w-4 h-4" />,
-    bestFor: ['Lo lắng cấp tính', 'Hoảng loạn', 'Căng thẳng']
+    bestFor: ['Lo lắng cấp tính', 'Hoảng loạn', 'Căng thẳng'],
   },
   {
     id: 'cognitive-reframe',
@@ -133,10 +133,10 @@ const COPING_STRATEGIES: CopingStrategy[] = [
       'Tự hỏi: "Suy nghĩ này có hợp lý không?"',
       'Tìm bằng chứng ủng hộ và phản bác',
       'Tạo ra suy nghĩ cân bằng hơn',
-      'Tập trung vào điều có thể kiểm soát'
+      'Tập trung vào điều có thể kiểm soát',
     ],
     icon: <Brain className="w-4 h-4" />,
-    bestFor: ['Suy nghĩ tiêu cực', 'Lo lắng thái quá', 'Tự đánh giá thấp']
+    bestFor: ['Suy nghĩ tiêu cực', 'Lo lắng thái quá', 'Tự đánh giá thấp'],
   },
   {
     id: 'progressive-relaxation',
@@ -150,10 +150,10 @@ const COPING_STRATEGIES: CopingStrategy[] = [
       'Bắt đầu từ ngón chân, căng cơ 5 giây',
       'Thả lỏng đột ngột và cảm nhận sự khác biệt',
       'Tiếp tục lên các nhóm cơ khác',
-      'Kết thúc với thư giãn toàn thân'
+      'Kết thúc với thư giãn toàn thân',
     ],
     icon: <Shield className="w-4 h-4" />,
-    bestFor: ['Căng thẳng cơ bắp', 'Khó ngủ', 'Stress thể chất']
+    bestFor: ['Căng thẳng cơ bắp', 'Khó ngủ', 'Stress thể chất'],
   },
   {
     id: 'mindfulness-meditation',
@@ -167,10 +167,10 @@ const COPING_STRATEGIES: CopingStrategy[] = [
       'Tập trung vào hơi thở tự nhiên',
       'Khi có suy nghĩ, nhẹ nhàng đưa chú ý về hơi thở',
       'Quan sát cảm giác trong cơ thể',
-      'Chấp nhận mọi cảm xúc không phán xét'
+      'Chấp nhận mọi cảm xúc không phán xét',
     ],
     icon: <Compass className="w-4 h-4" />,
-    bestFor: ['Lo lắng về tương lai', 'Stress mãn tính', 'Mất tập trung']
+    bestFor: ['Lo lắng về tương lai', 'Stress mãn tính', 'Mất tập trung'],
   },
   {
     id: 'social-support',
@@ -184,10 +184,10 @@ const COPING_STRATEGIES: CopingStrategy[] = [
       'Chia sẻ cảm xúc một cách trung thực',
       'Yêu cầu hỗ trợ cụ thể nếu cần',
       'Lắng nghe lời khuyên và góc nhìn khác',
-      'Cảm ơn và duy trì mối quan hệ'
+      'Cảm ơn và duy trì mối quan hệ',
     ],
     icon: <Heart className="w-4 h-4" />,
-    bestFor: ['Cô đơn', 'Stress xã hội', 'Cần góc nhìn khách quan']
+    bestFor: ['Cô đơn', 'Stress xã hội', 'Cần góc nhìn khách quan'],
   },
   {
     id: 'physical-exercise',
@@ -201,17 +201,17 @@ const COPING_STRATEGIES: CopingStrategy[] = [
       'Bắt đầu với cường độ nhẹ',
       'Tập trung vào cảm giác cơ thể',
       'Tăng dần cường độ nếu cảm thấy tốt',
-      'Kết thúc với động tác giãn cơ'
+      'Kết thúc với động tác giãn cơ',
     ],
     icon: <Zap className="w-4 h-4" />,
-    bestFor: ['Stress thể chất', 'Năng lượng dư thừa', 'Tâm trạng tiêu cực']
-  }
+    bestFor: ['Stress thể chất', 'Năng lượng dư thừa', 'Tâm trạng tiêu cực'],
+  },
 ];
 
 const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> = ({
   onComplete,
   timeLeft,
-  onRestart
+  onRestart,
 }) => {
   const [currentScenario, setCurrentScenario] = useState<StressScenario>(STRESS_SCENARIOS[0]);
   const [selectedStrategies, setSelectedStrategies] = useState<CopingStrategy[]>([]);
@@ -231,7 +231,7 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
     let stressReduction = 0;
     let resilienceGain = 0;
 
-    selectedStrategies.forEach(strategy => {
+    selectedStrategies.forEach((strategy) => {
       // Base effectiveness
       let effectivenessScore = strategy.effectiveness;
 
@@ -250,10 +250,10 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
       }
 
       // Check if strategy is well-suited for scenario symptoms
-      const isWellSuited = strategy.bestFor.some(condition => 
-        currentScenario.emotionalSymptoms.some(symptom => 
-          symptom.toLowerCase().includes(condition.toLowerCase().split(' ')[0])
-        )
+      const isWellSuited = strategy.bestFor.some((condition) =>
+        currentScenario.emotionalSymptoms.some((symptom) =>
+          symptom.toLowerCase().includes(condition.toLowerCase().split(' ')[0]),
+        ),
       );
 
       if (isWellSuited) {
@@ -271,7 +271,7 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
     }
 
     // Bonus for diverse strategy types
-    const uniqueTypes = new Set(selectedStrategies.map(s => s.type));
+    const uniqueTypes = new Set(selectedStrategies.map((s) => s.type));
     if (uniqueTypes.size >= 2) {
       totalEffectiveness *= 1.2;
       resilienceGain *= 1.1;
@@ -280,27 +280,27 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
     return {
       effectiveness: Math.min(10, totalEffectiveness / selectedStrategies.length),
       stressReduction: Math.min(10, stressReduction / selectedStrategies.length),
-      resilienceGain: Math.min(10, resilienceGain / selectedStrategies.length)
+      resilienceGain: Math.min(10, resilienceGain / selectedStrategies.length),
     };
   }, [selectedStrategies, currentScenario]);
 
   const completeSession = () => {
     const evaluation = evaluateStrategies();
-    
+
     const session: TrainingSession = {
       scenario: currentScenario,
       selectedStrategies: [...selectedStrategies],
       stressReduction: evaluation.stressReduction,
       resilienceGain: evaluation.resilienceGain,
-      effectiveness: evaluation.effectiveness
+      effectiveness: evaluation.effectiveness,
     };
 
-    setSessionHistory(prev => [...prev, session]);
-    setResilienceLevel(prev => prev + evaluation.resilienceGain);
-    setScore(prev => prev + (evaluation.effectiveness * 10));
+    setSessionHistory((prev) => [...prev, session]);
+    setResilienceLevel((prev) => prev + evaluation.resilienceGain);
+    setScore((prev) => prev + evaluation.effectiveness * 10);
 
     if (currentSession < STRESS_SCENARIOS.length - 1) {
-      setCurrentSession(prev => prev + 1);
+      setCurrentSession((prev) => prev + 1);
       setCurrentScenario(STRESS_SCENARIOS[currentSession + 1]);
       setSelectedStrategies([]);
       setGamePhase('scenario');
@@ -362,11 +362,12 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
   };
 
   const toggleStrategy = (strategy: CopingStrategy) => {
-    setSelectedStrategies(prev => {
-      const exists = prev.find(s => s.id === strategy.id);
+    setSelectedStrategies((prev) => {
+      const exists = prev.find((s) => s.id === strategy.id);
       if (exists) {
-        return prev.filter(s => s.id !== strategy.id);
-      } else if (prev.length < 3) { // Limit to 3 strategies
+        return prev.filter((s) => s.id !== strategy.id);
+      } else if (prev.length < 3) {
+        // Limit to 3 strategies
         return [...prev, strategy];
       }
       return prev;
@@ -382,11 +383,16 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'work': return '💼';
-      case 'personal': return '❤️';
-      case 'social': return '👥';
-      case 'health': return '🏥';
-      default: return '📝';
+      case 'work':
+        return '💼';
+      case 'personal':
+        return '❤️';
+      case 'social':
+        return '👥';
+      case 'health':
+        return '🏥';
+      default:
+        return '📝';
     }
   };
 
@@ -400,14 +406,14 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
     let interval: NodeJS.Timeout;
     if (practiceActive && practiceTimer > 0) {
       interval = setInterval(() => {
-        setPracticeTimer(prev => prev - 1);
+        setPracticeTimer((prev) => prev - 1);
       }, 1000);
     }
-    
+
     if (practiceTimer === 0 && practiceActive) {
       setPracticeActive(false);
     }
-    
+
     return () => clearInterval(interval);
   }, [practiceActive, practiceTimer]);
 
@@ -451,8 +457,8 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">Chào Mừng Đến Trung Tâm Rèn Luyện Tâm Lý!</h2>
             <p className="text-green-200 text-lg mb-8 max-w-2xl mx-auto">
-              Học cách nhận diện, quản lý và vượt qua căng thẳng trong cuộc sống. 
-              Phát triển khả năng phục hồi tâm lý và sống khỏe mạnh hơn.
+              Học cách nhận diện, quản lý và vượt qua căng thẳng trong cuộc sống. Phát triển khả năng phục hồi tâm lý và
+              sống khỏe mạnh hơn.
             </p>
             <div className="grid md:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
               <div className="bg-blue-900/30 rounded-lg p-4 text-left">
@@ -487,13 +493,15 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
             {/* Progress Bar */}
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-green-200">Tình huống {currentSession + 1}/{STRESS_SCENARIOS.length}</span>
+                <span className="text-green-200">
+                  Tình huống {currentSession + 1}/{STRESS_SCENARIOS.length}
+                </span>
                 <span className="text-teal-300 capitalize">{gamePhase}</span>
               </div>
               <div className="w-full bg-teal-900/50 rounded-full h-2">
-                <div 
+                <div
                   className="bg-gradient-to-r from-green-500 to-teal-400 h-2 rounded-full transition-all duration-500"
-                  style={{ width: `${((currentSession) / STRESS_SCENARIOS.length) * 100}%` }}
+                  style={{ width: `${(currentSession / STRESS_SCENARIOS.length) * 100}%` }}
                 ></div>
               </div>
             </div>
@@ -502,32 +510,33 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
               /* Introduction Phase */
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
                 <h2 className="text-2xl font-bold text-white mb-6">🌟 Giới Thiệu Chương Trình</h2>
-                
+
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div className="bg-green-900/30 rounded-lg p-4">
                     <h3 className="font-semibold text-green-200 mb-3">🧠 Stress Là Gì?</h3>
                     <p className="text-white text-sm mb-3">
-                      Stress là phản ứng tự nhiên của cơ thể khi đối mặt với thách thức hoặc mối đe dọa. 
-                      Nó có thể có lợi (eustress) hoặc có hại (distress).
+                      Stress là phản ứng tự nhiên của cơ thể khi đối mặt với thách thức hoặc mối đe dọa. Nó có thể có
+                      lợi (eustress) hoặc có hại (distress).
                     </p>
                     <div className="text-gray-300 text-xs">
-                      <strong>Tác động tích cực:</strong> Động lực, tập trung, hiệu suất<br/>
+                      <strong>Tác động tích cực:</strong> Động lực, tập trung, hiệu suất
+                      <br />
                       <strong>Tác động tiêu cực:</strong> Lo lắng, mệt mỏi, bệnh tật
                     </div>
                   </div>
-                  
+
                   <div className="bg-blue-900/30 rounded-lg p-4">
                     <h3 className="font-semibold text-blue-200 mb-3">💪 Khả Năng Phục Hồi</h3>
                     <p className="text-white text-sm mb-3">
-                      Resilience là khả năng thích ứng và phục hồi từ nghịch cảnh, stress, hoặc thay đổi. 
-                      Đây là kỹ năng có thể học và rèn luyện.
+                      Resilience là khả năng thích ứng và phục hồi từ nghịch cảnh, stress, hoặc thay đổi. Đây là kỹ năng
+                      có thể học và rèn luyện.
                     </p>
                     <div className="text-gray-300 text-xs">
                       <strong>Yếu tố chính:</strong> Tư duy tích cực, hỗ trợ xã hội, kỹ năng ứng phó, chăm sóc bản thân
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="bg-purple-900/30 rounded-lg p-4 mb-6">
                   <h3 className="font-semibold text-purple-200 mb-3">🎯 Phương Pháp Học</h3>
                   <div className="grid md:grid-cols-4 gap-4">
@@ -553,7 +562,7 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                     </div>
                   </div>
                 </div>
-                
+
                 <button
                   onClick={nextPhase}
                   className="w-full bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
@@ -569,15 +578,17 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-2xl">{getCategoryIcon(currentScenario.category)}</span>
                   <h2 className="text-2xl font-bold text-white">{currentScenario.title}</h2>
-                  <span className={`text-sm px-2 py-1 rounded-full bg-black/20 ${getStressColor(currentScenario.stressLevel)}`}>
+                  <span
+                    className={`text-sm px-2 py-1 rounded-full bg-black/20 ${getStressColor(currentScenario.stressLevel)}`}
+                  >
                     Mức độ: {currentScenario.stressLevel}/10
                   </span>
                 </div>
-                
+
                 <div className="bg-gray-900/50 rounded-lg p-4 mb-6">
                   <p className="text-white text-lg leading-relaxed">{currentScenario.description}</p>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                   <div className="bg-red-900/30 rounded-lg p-4">
                     <h3 className="font-semibold text-red-200 mb-3 flex items-center gap-2">
@@ -586,11 +597,13 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                     </h3>
                     <ul className="space-y-1">
                       {currentScenario.triggers.map((trigger, index) => (
-                        <li key={index} className="text-red-100 text-sm">• {trigger}</li>
+                        <li key={index} className="text-red-100 text-sm">
+                          • {trigger}
+                        </li>
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div className="bg-orange-900/30 rounded-lg p-4">
                     <h3 className="font-semibold text-orange-200 mb-3 flex items-center gap-2">
                       <Activity className="w-4 h-4" />
@@ -598,11 +611,13 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                     </h3>
                     <ul className="space-y-1">
                       {currentScenario.physicalSymptoms.map((symptom, index) => (
-                        <li key={index} className="text-orange-100 text-sm">• {symptom}</li>
+                        <li key={index} className="text-orange-100 text-sm">
+                          • {symptom}
+                        </li>
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div className="bg-yellow-900/30 rounded-lg p-4">
                     <h3 className="font-semibold text-yellow-200 mb-3 flex items-center gap-2">
                       <Heart className="w-4 h-4" />
@@ -610,11 +625,13 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                     </h3>
                     <ul className="space-y-1">
                       {currentScenario.emotionalSymptoms.map((symptom, index) => (
-                        <li key={index} className="text-yellow-100 text-sm">• {symptom}</li>
+                        <li key={index} className="text-yellow-100 text-sm">
+                          • {symptom}
+                        </li>
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div className="bg-purple-900/30 rounded-lg p-4">
                     <h3 className="font-semibold text-purple-200 mb-3 flex items-center gap-2">
                       <Brain className="w-4 h-4" />
@@ -622,12 +639,14 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                     </h3>
                     <ul className="space-y-1">
                       {currentScenario.immediateThoughts.map((thought, index) => (
-                        <li key={index} className="text-purple-100 text-sm">• {thought}</li>
+                        <li key={index} className="text-purple-100 text-sm">
+                          • {thought}
+                        </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-                
+
                 <button
                   onClick={nextPhase}
                   className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
@@ -645,12 +664,12 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                   <p className="text-green-200 mb-6">
                     Chọn 1-3 kỹ thuật phù hợp với tình huống. Hãy cân nhắc loại stress và triệu chứng cụ thể.
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                     {COPING_STRATEGIES.map((strategy) => {
-                      const isSelected = selectedStrategies.find(s => s.id === strategy.id);
+                      const isSelected = selectedStrategies.find((s) => s.id === strategy.id);
                       const canSelect = selectedStrategies.length < 3 || isSelected;
-                      
+
                       return (
                         <button
                           key={strategy.id}
@@ -660,8 +679,8 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                             isSelected
                               ? 'border-green-400 bg-green-500/20'
                               : canSelect
-                              ? 'border-gray-600 bg-gray-800/30 hover:border-gray-500'
-                              : 'border-gray-700 bg-gray-900/50 opacity-50 cursor-not-allowed'
+                                ? 'border-gray-600 bg-gray-800/30 hover:border-gray-500'
+                                : 'border-gray-700 bg-gray-900/50 opacity-50 cursor-not-allowed'
                           }`}
                         >
                           <div className="flex items-center gap-2 mb-2">
@@ -681,19 +700,19 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                               </div>
                             </div>
                           </div>
-                          <div className="text-xs text-gray-400 mt-2">
-                            Tốt nhất cho: {strategy.bestFor.join(', ')}
-                          </div>
+                          <div className="text-xs text-gray-400 mt-2">Tốt nhất cho: {strategy.bestFor.join(', ')}</div>
                         </button>
                       );
                     })}
                   </div>
-                  
+
                   {selectedStrategies.length > 0 && (
                     <div className="bg-blue-900/30 rounded-lg p-4 mb-6">
-                      <h3 className="font-semibold text-blue-200 mb-2">✅ Kỹ Thuật Đã Chọn ({selectedStrategies.length}/3)</h3>
+                      <h3 className="font-semibold text-blue-200 mb-2">
+                        ✅ Kỹ Thuật Đã Chọn ({selectedStrategies.length}/3)
+                      </h3>
                       <div className="space-y-2">
-                        {selectedStrategies.map((strategy, index) => (
+                        {selectedStrategies.map((strategy) => (
                           <div key={strategy.id} className="flex items-center justify-between bg-white/5 rounded p-2">
                             <div className="flex items-center gap-2">
                               {strategy.icon}
@@ -708,7 +727,7 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                       </div>
                     </div>
                   )}
-                  
+
                   <button
                     onClick={nextPhase}
                     disabled={selectedStrategies.length === 0}
@@ -727,7 +746,7 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                   <Activity className="w-6 h-6 text-green-400" />
                   <h2 className="text-2xl font-bold text-white">🧘 Thực Hành Kỹ Thuật</h2>
                 </div>
-                
+
                 {!practiceActive ? (
                   <div className="space-y-6">
                     {selectedStrategies.map((strategy, index) => (
@@ -751,7 +770,7 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                         </div>
                       </div>
                     ))}
-                    
+
                     <button
                       onClick={startPractice}
                       className="w-full bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2"
@@ -768,18 +787,18 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                       </div>
                       <div className="text-xl text-green-200 mb-4">Thời gian thực hành</div>
                       <div className="w-full bg-teal-900/50 rounded-full h-3 mb-4">
-                        <div 
+                        <div
                           className="bg-gradient-to-r from-green-500 to-teal-400 h-3 rounded-full transition-all duration-1000"
-                          style={{ 
-                            width: `${100 - (practiceTimer / (selectedStrategies.reduce((total, s) => total + s.timeRequired, 0) * 60)) * 100}%` 
+                          style={{
+                            width: `${100 - (practiceTimer / (selectedStrategies.reduce((total, s) => total + s.timeRequired, 0) * 60)) * 100}%`,
                           }}
                         ></div>
                       </div>
                       <div className="text-teal-200">
-                        Đang thực hành: {selectedStrategies.map(s => s.name).join(' → ')}
+                        Đang thực hành: {selectedStrategies.map((s) => s.name).join(' → ')}
                       </div>
                     </div>
-                    
+
                     {practiceTimer === 0 && (
                       <div className="bg-green-900/30 rounded-lg p-4">
                         <CheckCircle className="w-8 h-8 text-green-400 mx-auto mb-2" />
@@ -807,27 +826,27 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                   <Award className="w-6 h-6 text-yellow-400" />
                   <h2 className="text-2xl font-bold text-white">📊 Kết Quả Chương Trình</h2>
                 </div>
-                
+
                 <div className="grid md:grid-cols-3 gap-6 mb-6">
                   <div className="bg-blue-900/30 rounded-lg p-4 text-center">
                     <div className="text-4xl font-bold text-blue-400 mb-2">{Math.round(score)}</div>
                     <div className="text-blue-200 font-semibold">Điểm Tổng Kết</div>
                     <div className="text-xs text-gray-300 mt-1">Dựa trên hiệu quả kỹ thuật</div>
                   </div>
-                  
+
                   <div className="bg-green-900/30 rounded-lg p-4 text-center">
                     <div className="text-4xl font-bold text-green-400 mb-2">{Math.round(resilienceLevel)}</div>
                     <div className="text-green-200 font-semibold">Khả Năng Phục Hồi</div>
                     <div className="text-xs text-gray-300 mt-1">Tăng qua mỗi phiên thực hành</div>
                   </div>
-                  
+
                   <div className="bg-purple-900/30 rounded-lg p-4 text-center">
                     <div className="text-4xl font-bold text-purple-400 mb-2">{sessionHistory.length}</div>
                     <div className="text-purple-200 font-semibold">Tình Huống Hoàn Thành</div>
                     <div className="text-xs text-gray-300 mt-1">Tổng số bài học</div>
                   </div>
                 </div>
-                
+
                 <div className="bg-teal-900/30 rounded-lg p-4 mb-6">
                   <h3 className="font-semibold text-teal-200 mb-3">📋 Tóm Tắt Phiên Học</h3>
                   <div className="space-y-3">
@@ -848,13 +867,13 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                           </div>
                         </div>
                         <div className="text-xs text-gray-300">
-                          Kỹ thuật: {session.selectedStrategies.map(s => s.name).join(', ')}
+                          Kỹ thuật: {session.selectedStrategies.map((s) => s.name).join(', ')}
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="bg-green-900/30 rounded-lg p-4 mb-6">
                   <h3 className="font-semibold text-green-200 mb-3">💡 Lời Khuyên Cho Tương Lai</h3>
                   <ul className="space-y-2 text-white text-sm">
@@ -865,21 +884,20 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                     <li>✓ Tìm kiếm hỗ trợ chuyên nghiệp nếu cần thiết</li>
                   </ul>
                 </div>
-                
+
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white mb-4">
                     {score >= 80 ? '🌟 Xuất Sắc!' : score >= 60 ? '👍 Tốt!' : '📚 Cần Cải Thiện'}
                   </h3>
                   <p className="text-green-200 mb-6">
-                    {score >= 80 
-                      ? 'Bạn đã thành thạo các kỹ thuật quản lý stress! Tiếp tục áp dụng vào cuộc sống.' 
-                      : score >= 60 
-                      ? 'Bạn đã có nền tảng tốt. Hãy thực hành thêm để hoàn thiện kỹ năng.' 
-                      : 'Đừng nản lòng! Quản lý stress là kỹ năng cần thời gian. Hãy thử lại và thực hành thêm.'
-                    }
+                    {score >= 80
+                      ? 'Bạn đã thành thạo các kỹ thuật quản lý stress! Tiếp tục áp dụng vào cuộc sống.'
+                      : score >= 60
+                        ? 'Bạn đã có nền tảng tốt. Hãy thực hành thêm để hoàn thiện kỹ năng.'
+                        : 'Đừng nản lòng! Quản lý stress là kỹ năng cần thời gian. Hãy thử lại và thực hành thêm.'}
                   </p>
                 </div>
-                
+
                 <div className="flex gap-4 justify-center">
                   <button
                     onClick={restartGame}

@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import {
-  biotechnologyLessons,
-  type BiotechnologyLesson,
-} from '@/data/biotechnology';
+import { biotechnologyLessons, type BiotechnologyLesson } from '@/data/biotechnology';
 import { K2Module } from '@/data/moduleNavigation';
 import { createModuleMetadata } from '@/utils/seo';
 
@@ -15,54 +10,43 @@ export const metadata: Metadata = createModuleMetadata(
   'Biotechnology & Life Sciences - Công Nghệ Sinh Học',
   'Khóa học Biotechnology và Life Sciences chuyên sâu. Từ gene editing đến medical applications, khám phá tương lai của sinh học và y học',
   ['biotechnology', 'gene editing', 'crispr', 'medical technology', 'life sciences', 'genetic engineering'],
-  'biotechnology'
+  'biotechnology',
 );
 
 // Convert BiotechnologyLesson to BaseLessonData interface
-function convertToLesson(
-  biotechnologyLesson: BiotechnologyLesson,
-): BaseLessonData {
+function convertToLesson(biotechnologyLesson: BiotechnologyLesson): BaseLessonData {
+  // Ensure all required fields from BaseLessonData are present
   return {
     id: biotechnologyLesson.id,
     title: biotechnologyLesson.title,
     description: biotechnologyLesson.description,
     duration: biotechnologyLesson.duration,
     difficulty: biotechnologyLesson.difficulty,
-    category: biotechnologyLesson.biotechField || 'Biotechnology',
-    imageUrl: biotechnologyLesson.imageUrl || '/default-lesson.jpg',
     videoUrl: biotechnologyLesson.videoUrl,
-    objectives: biotechnologyLesson.objectives,
-    prerequisites: biotechnologyLesson.prerequisites || [
-      'Basic biology',
-      'Chemistry knowledge',
-    ],
+    imageUrl: biotechnologyLesson.imageUrl,
+    objectives: biotechnologyLesson.objectives || [],
+    prerequisites: biotechnologyLesson.prerequisites || [],
     exercises:
       biotechnologyLesson.exercises?.map((ex) => ({
-        title: ex.title,
-        description: ex.description,
-        difficulty: ex.difficulty,
+        ...ex,
         materials: ex.materials || [],
-        procedure: ex.procedure || [ex.description],
-        expectedResults: ex.expectedResults || 'Successful biotech experiment',
-        solution: ex.solution || 'Follow laboratory protocols',
+        procedure: ex.procedure || [],
+        expectedResults: ex.expectedResults || '',
+        solution: ex.solution || '',
       })) || [],
-    resources: biotechnologyLesson.resources || [],
-    tools: biotechnologyLesson.labTechniques || [
-      'PCR',
-      'Gene Sequencing',
-      'Cell Culture',
-      'Microscopy',
-    ],
     realWorldApplications: biotechnologyLesson.realWorldApplications || [],
     caseStudies:
       biotechnologyLesson.caseStudies?.map((cs) => ({
-        title: cs.title,
-        organization: cs.organization,
-        problem: cs.problem,
-        solution: cs.biotechSolution,
-        impact: cs.impact,
+        ...cs,
         innovations: cs.innovations || [],
       })) || [],
+    resources:
+      biotechnologyLesson.resources?.map((res) => ({
+        ...res,
+      })) || [],
+    vietnamContext: biotechnologyLesson.vietnamContext,
+    careerConnect: biotechnologyLesson.careerConnect,
+    quizzes: biotechnologyLesson.quizzes,
   };
 }
 
@@ -82,8 +66,7 @@ export default function BiotechnologyPage() {
     primaryColor: 'emerald',
     gradientColors: 'from-slate-900 via-emerald-900 to-teal-900',
     basePath: '/learning/biotechnology',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&h=600&fit=crop',
     features: [
       'CRISPR và Gene Editing techniques',
       'Phát triển thuốc và Medical Applications',
@@ -156,62 +139,31 @@ export default function BiotechnologyPage() {
       {
         title: 'Molecular Biology',
         icon: '🧬',
-        items: [
-          'PCR Techniques',
-          'DNA Sequencing',
-          'Protein Analysis',
-          'Cell Culture',
-        ],
+        items: ['PCR Techniques', 'DNA Sequencing', 'Protein Analysis', 'Cell Culture'],
       },
       {
         title: 'Bioinformatics',
         icon: '💻',
-        items: [
-          'Genomic Analysis',
-          'Protein Modeling',
-          'Database Mining',
-          'AI Applications',
-        ],
+        items: ['Genomic Analysis', 'Protein Modeling', 'Database Mining', 'AI Applications'],
       },
       {
         title: 'Drug Development',
         icon: '💊',
-        items: [
-          'Target Identification',
-          'Lead Optimization',
-          'Clinical Trials',
-          'Regulatory Approval',
-        ],
+        items: ['Target Identification', 'Lead Optimization', 'Clinical Trials', 'Regulatory Approval'],
       },
       {
         title: 'Synthetic Biology',
         icon: '🔬',
-        items: [
-          'Metabolic Engineering',
-          'Biosynthesis',
-          'Biodesign',
-          'Living Materials',
-        ],
+        items: ['Metabolic Engineering', 'Biosynthesis', 'Biodesign', 'Living Materials'],
       },
       {
         title: 'Medical Applications',
         icon: '🏥',
-        items: [
-          'Diagnostic Tools',
-          'Therapeutic Proteins',
-          'Cell Therapy',
-          'Tissue Engineering',
-        ],
+        items: ['Diagnostic Tools', 'Therapeutic Proteins', 'Cell Therapy', 'Tissue Engineering'],
       },
     ],
-    relatedModules: [
-      K2Module.AIArtCreativeTech,
-      K2Module.Cybersecurity,
-      K2Module.STEM,
-    ],
+    relatedModules: [K2Module.AIArtCreativeTech, K2Module.Cybersecurity, K2Module.STEM],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

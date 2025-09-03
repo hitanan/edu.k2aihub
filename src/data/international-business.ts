@@ -1,20 +1,6 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
 
-export interface InternationalBusinessLesson extends BaseLessonData {
-  businessDomain:
-    | 'cross-cultural-management'
-    | 'global-strategy'
-    | 'international-trade'
-    | 'cultural-intelligence'
-    | 'global-leadership';
-  culturalRegions: string[];
-  businessApplications: string[];
-  vietnameseBusinessContext: string[];
-  globalCompetencies: string[];
-}
-
-export const internationalBusinessLessons: InternationalBusinessLesson[] = [
+export const internationalBusinessLessons: BaseLessonData[] = [
   {
     id: 'cross-cultural-management-leadership',
     title: 'Quản Lý & Lãnh Đạo Đa Văn Hóa',
@@ -24,13 +10,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=YMyofREc5Jk', // Cross Cultural Management
     imageUrl: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=600&fit=crop',
-    businessDomain: 'cross-cultural-management',
-    culturalRegions: [
-      'Văn hóa kinh doanh Đông Á (Trung Quốc, Nhật Bản, Hàn Quốc)',
-      'Thị trường Đông Nam Á (các nước ASEAN)',
-      'Văn hóa kinh doanh phương Tây (Mỹ, Châu Âu)',
-      'Thị trường Mỹ Latinh và Trung Đông',
-    ],
     objectives: [
       'Phát triển năng lực trí tuệ văn hóa (CQ)',
       'Thực hiện các chiến lược giao tiếp đa văn hóa hiệu quả',
@@ -42,24 +21,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
       'Kinh nghiệm quản lý cơ bản',
       'Quan tâm đến kinh doanh quốc tế',
       'Tư duy cởi mở về sự khác biệt văn hóa',
-    ],
-    vietnameseBusinessContext: [
-      'Việt Nam là cầu nối giữa văn hóa kinh doanh Đông Á và phương Tây',
-      'Quản lý quan hệ đối tác quốc tế với các công ty nước ngoài',
-      'Chiến lược thích ứng văn hóa cho các công ty Việt Nam vươn ra toàn cầu',
-      'Tiếp nhận và hội nhập lao động nước ngoài tại các công ty Việt Nam',
-    ],
-    businessApplications: [
-      'Quản lý liên doanh quốc tế',
-      'Chiến lược lãnh đạo nhóm toàn cầu',
-      'Hội nhập sáp nhập và mua lại xuyên biên giới',
-      'Quản lý dự án quốc tế',
-    ],
-    globalCompetencies: [
-      'Kỹ năng đánh giá và thích ứng văn hóa',
-      'Năng lực giao tiếp đa ngôn ngữ',
-      'Giải quyết xung đột giữa các nền văn hóa',
-      'Sự hiện diện của lãnh đạo toàn cầu',
     ],
     exercises: [
       {
@@ -115,9 +76,49 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
         type: 'Research',
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'Bối cảnh Kinh doanh Đa văn hóa tại Việt Nam',
+      content: [
+        'Việt Nam là một trong những nền kinh tế mở nhất thế giới, là điểm giao thoa của nhiều nền văn hóa kinh doanh, đặc biệt là giữa Đông Á và phương Tây.',
+        'Các tập đoàn đa quốc gia hoạt động tại Việt Nam phải đối mặt với thách thức quản lý đội ngũ nhân sự địa phương và chuyên gia nước ngoài.',
+        'Doanh nghiệp Việt Nam khi vươn ra toàn cầu (như FPT, Viettel, Vinamilk) cần xây dựng năng lực lãnh đạo đa văn hóa để thành công trên thị trường quốc tế.',
+        'Hiểu biết về các khái niệm như "giữ thể diện" và tầm quan trọng của mối quan hệ cá nhân là chìa khóa để đàm phán và hợp tác thành công tại Việt Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bà Nguyễn Thị Mai',
+      title: 'Giám đốc Nhân sự Toàn cầu, Tập đoàn FPT',
+      company: 'FPT',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-mai',
+      quote:
+        'Lãnh đạo trong môi trường toàn cầu đòi hỏi sự thấu cảm sâu sắc và khả năng thích ứng liên tục. Tại FPT, chúng tôi không chỉ xây dựng sản phẩm, mà còn xây dựng những cây cầu văn hóa để kết nối tài năng Việt với thế giới.',
+    },
+    quizzes: [
+      {
+        question: 'Trí tuệ văn hóa (CQ) là gì?',
+        options: [
+          'Chỉ số thông minh của một quốc gia',
+          'Khả năng hoạt động hiệu quả trong các môi trường văn hóa đa dạng',
+          'Kiến thức về lịch sử và địa lý thế giới',
+          'Khả năng nói nhiều ngôn ngữ',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Trí tuệ văn hóa (Cultural Intelligence - CQ) là khả năng của một cá nhân để hoạt động và quản lý hiệu quả trong các môi trường có sự đa dạng về văn hóa.',
+      },
+      {
+        question: 'Đâu là một thách thức phổ biến trong quản lý nhóm đa văn hóa?',
+        options: [
+          'Mọi người đều đồng ý với nhau',
+          'Sự khác biệt trong phong cách giao tiếp và kỳ vọng',
+          'Thiếu ý tưởng sáng tạo',
+          'Năng suất làm việc luôn cao hơn',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Sự khác biệt trong phong cách giao tiếp (trực tiếp vs. gián tiếp), cách ra quyết định, và kỳ vọng về vai trò lãnh đạo là những thách thức cốt lõi trong quản lý nhóm đa văn hóa.',
+      },
+    ],
   },
   {
     id: 'global-supply-chain-trade',
@@ -128,13 +129,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=OT3H6U2h0y8', // International Trade and Supply Chain
     imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop',
-    businessDomain: 'international-trade',
-    culturalRegions: [
-      'Hoạt động Khu vực Mậu dịch Tự do ASEAN',
-      'Hành lang thương mại Trung Quốc-Việt Nam',
-      'Quan hệ thương mại Liên minh Châu Âu',
-      'Đối tác thương mại xuyên Thái Bình Dương',
-    ],
     objectives: [
       'Nắm vững chứng từ và thủ tục thương mại quốc tế',
       'Thiết kế mạng lưới chuỗi cung ứng toàn cầu hiệu quả',
@@ -146,24 +140,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
       'Kiến thức kinh doanh cơ bản',
       'Hiểu biết về các nguyên tắc logistics',
       'Quen thuộc với thị trường quốc tế',
-    ],
-    vietnameseBusinessContext: [
-      'Việt Nam là trung tâm sản xuất trong chuỗi cung ứng toàn cầu',
-      'Cơ hội từ EVFTA (Hiệp định Thương mại Tự do EU-Việt Nam)',
-      'Lợi ích từ RCEP (Hiệp định Đối tác Kinh tế Toàn diện Khu vực)',
-      'Quản lý quan hệ thương mại Việt Nam-Hoa Kỳ',
-    ],
-    businessApplications: [
-      'Chiến lược phát triển thị trường xuất khẩu',
-      'Tìm nguồn cung ứng nhập khẩu và quản lý nhà cung cấp',
-      'Thiết kế mạng lưới phân phối quốc tế',
-      'Hoạt động thương mại điện tử xuyên biên giới',
-    ],
-    globalCompetencies: [
-      'Chuyên môn tuân thủ quy định thương mại',
-      'Kiến thức về hệ thống thanh toán quốc tế',
-      'Khả năng đánh giá rủi ro chuỗi cung ứng',
-      'Kỹ năng tối ưu hóa logistics toàn cầu',
     ],
     exercises: [
       {
@@ -219,12 +195,44 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
         type: 'Resource',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'global-marketplace-simulator'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'currency-exchange-puzzle'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'Việt Nam - Mắt xích quan trọng trong Chuỗi cung ứng Toàn cầu',
+      content: [
+        'Việt Nam đã trở thành một trung tâm sản xuất quan trọng của thế giới, đặc biệt trong các ngành điện tử, dệt may và da giày, nhờ vào chiến lược "China + 1".',
+        'Các hiệp định thương mại tự do như EVFTA, CPTPP và RCEP đã mở ra những cơ hội lớn cho hàng hóa Việt Nam thâm nhập các thị trường lớn với thuế suất ưu đãi.',
+        'Thách thức lớn nhất là nâng cao năng lực logistics, phát triển công nghiệp phụ trợ và đáp ứng các tiêu chuẩn ngày càng khắt khe về lao động và môi trường từ các thị trường nhập khẩu.',
+        'Các doanh nghiệp logistics Việt Nam như Gemadept, Sotrans đang đầu tư mạnh mẽ vào hạ tầng cảng biển và kho bãi để đáp ứng nhu cầu tăng trưởng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Trần Thanh Hải',
+      title: 'Phó Cục trưởng Cục Xuất nhập khẩu, Bộ Công Thương',
+      company: 'Bộ Công Thương',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-thanh-hai',
+      quote:
+        'Tận dụng các FTA và đa dạng hóa thị trường là chìa khóa cho sự tăng trưởng bền vững của xuất khẩu Việt Nam. Nâng cao năng lực cạnh tranh của doanh nghiệp và chất lượng sản phẩm là yếu tố sống còn trong sân chơi toàn cầu.',
+    },
+    quizzes: [
+      {
+        question: 'EVFTA là hiệp định thương mại tự do giữa Việt Nam và khu vực nào?',
+        options: ['Khối ASEAN', 'Liên minh Châu Âu (EU)', 'Hoa Kỳ', 'Trung Quốc'],
+        correctAnswerIndex: 1,
+        explanation:
+          'EVFTA là Hiệp định Thương mại Tự do giữa Việt Nam và Liên minh Châu Âu, có hiệu lực từ tháng 8 năm 2020.',
+      },
+      {
+        question: 'Chiến lược "China + 1" có ý nghĩa gì đối với Việt Nam?',
+        options: [
+          'Việt Nam chỉ hợp tác với Trung Quốc',
+          'Các công ty đa quốc gia tìm kiếm một địa điểm sản xuất thứ hai ngoài Trung Quốc, và Việt Nam là một lựa chọn hàng đầu',
+          'Việt Nam cạnh tranh trực tiếp với Trung Quốc trong mọi lĩnh vực',
+          'Việt Nam nhập khẩu tất cả hàng hóa từ Trung Quốc',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Chiến lược "China + 1" là việc các công ty đa quốc gia đa dạng hóa chuỗi cung ứng của họ bằng cách thiết lập cơ sở sản xuất ở một quốc gia khác ngoài Trung Quốc để giảm thiểu rủi ro, và Việt Nam đã hưởng lợi lớn từ xu hướng này.',
+      },
+    ],
   },
   {
     id: 'global-business-strategy-planning',
@@ -235,13 +243,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=YiZn5fpPHgY', // Global Business Strategy
     imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop',
-    businessDomain: 'global-strategy',
-    culturalRegions: [
-      'Chiến lược thị trường mới nổi châu Á',
-      'Cách tiếp cận thị trường phát triển phương Tây',
-      'Cơ hội mở rộng ở Mỹ Latinh',
-      'Phát triển kinh doanh ở Trung Đông',
-    ],
     objectives: [
       'Phát triển chiến lược kinh doanh toàn cầu toàn diện',
       'Tiến hành phân tích cạnh tranh quốc tế',
@@ -253,24 +254,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
       'Nguyên tắc cơ bản về quản trị chiến lược',
       'Nhận thức về kinh doanh quốc tế',
       'Kinh nghiệm phân tích cạnh tranh',
-    ],
-    vietnameseBusinessContext: [
-      'Chiến lược mở rộng toàn cầu của các công ty Việt Nam',
-      'Đầu tư trực tiếp nước ngoài vào Việt Nam',
-      'Chiến lược đặt trụ sở khu vực tại Đông Nam Á',
-      'Các chương trình hỗ trợ của chính phủ để mở rộng quốc tế',
-    ],
-    businessApplications: [
-      'Lập kế hoạch liên doanh quốc tế',
-      'Chiến lược địa phương hóa sản phẩm toàn cầu',
-      'Sáp nhập và mua lại xuyên biên giới',
-      'Phát triển nhượng quyền thương mại quốc tế',
-    ],
-    globalCompetencies: [
-      'Năng lực phân tích thị trường toàn cầu',
-      'Kỹ năng hoạch định kịch bản chiến lược',
-      'Tình báo cạnh tranh quốc tế',
-      'Thiết kế mô hình kinh doanh toàn cầu',
     ],
     exercises: [
       {
@@ -326,9 +309,49 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
         type: 'Research',
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'global-marketplace-simulator')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'Khát vọng Toàn cầu của Doanh nghiệp Việt',
+      content: [
+        'Nhiều tập đoàn lớn của Việt Nam như Vingroup, FPT, Viettel Global, Masan đang tích cực triển khai các chiến lược mở rộng ra thị trường quốc tế.',
+        'Chính phủ Việt Nam có nhiều chính sách khuyến khích và hỗ trợ doanh nghiệp trong nước đầu tư ra nước ngoài, nhằm xây dựng các thương hiệu quốc gia mạnh.',
+        'Các thương vụ M&A (Mua bán & Sáp nhập) do doanh nghiệp Việt Nam thực hiện ở nước ngoài ngày càng tăng, đặc biệt trong các lĩnh vực công nghệ và tiêu dùng.',
+        'Thách thức cho các doanh nghiệp này là xây dựng đội ngũ lãnh đạo có tư duy toàn cầu, am hiểu luật pháp quốc tế và có khả năng cạnh tranh sòng phẳng với các đối thủ nước ngoài.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bà Lê Thị Thu Thủy',
+      title: 'Tổng Giám đốc Toàn cầu VinFast',
+      company: 'VinFast',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-thi-thu-thuy',
+      quote:
+        'Đem thương hiệu Việt ra thế giới là một hành trình đầy thách thức nhưng cũng vô cùng tự hào. Chúng tôi phải suy nghĩ toàn cầu nhưng hành động phải phù hợp với từng địa phương, kết hợp giữa tiêu chuẩn quốc tế và sự am hiểu sâu sắc văn hóa bản địa.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là một trong những động lực chính thúc đẩy doanh nghiệp Việt Nam mở rộng toàn cầu?',
+        options: [
+          'Thị trường trong nước đã bão hòa',
+          'Sự khuyến khích từ chính phủ và mong muốn xây dựng thương hiệu quốc gia',
+          'Doanh nghiệp nước ngoài không còn đầu tư vào Việt Nam',
+          'Tất cả các doanh nghiệp Việt Nam đều bắt buộc phải đầu tư ra nước ngoài',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Chính sách hỗ trợ từ chính phủ và khát vọng xây dựng các thương hiệu Việt có tầm vóc quốc tế là những động lực quan trọng thúc đẩy làn sóng đầu tư ra nước ngoài của các doanh nghiệp Việt Nam.',
+      },
+      {
+        question: 'M&A là viết tắt của thuật ngữ gì trong kinh doanh quốc tế?',
+        options: [
+          'Marketing & Advertising',
+          'Management & Administration',
+          'Mergers & Acquisitions (Mua bán & Sáp nhập)',
+          'Manufacturing & Assembly',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'M&A (Mergers & Acquisitions) là hoạt động mua bán và sáp nhập doanh nghiệp, một công cụ quan trọng trong chiến lược mở rộng và tăng trưởng quốc tế.',
+      },
+    ],
   },
   {
     id: 'international-negotiation-communication',
@@ -339,13 +362,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=iuYlGRnC7J8', // International Business Negotiation
     imageUrl: 'https://images.unsplash.com/photo-1560264280-88b68371db39?w=1200&h=600&fit=crop',
-    businessDomain: 'cultural-intelligence',
-    culturalRegions: [
-      'Phong cách giao tiếp ngữ cảnh cao của châu Á',
-      'Cách tiếp cận giao tiếp trực tiếp của phương Tây',
-      'Đàm phán tập trung vào mối quan hệ của Trung Đông',
-      'Tầm quan trọng của kết nối cá nhân ở Mỹ Latinh',
-    ],
     objectives: [
       'Phát triển kỹ năng đàm phán quốc tế nâng cao',
       'Nắm vững các kỹ thuật giao tiếp đa văn hóa',
@@ -357,24 +373,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
       'Kỹ năng đàm phán cơ bản',
       'Nguyên tắc cơ bản về giao tiếp',
       'Kiến thức cơ bản về nhận thức văn hóa',
-    ],
-    vietnameseBusinessContext: [
-      'Truyền thống xây dựng mối quan hệ kinh doanh của Việt Nam',
-      'Khái niệm giữ thể diện trong đàm phán quốc tế',
-      'Ra quyết định theo cấp bậc trong bối cảnh đa văn hóa',
-      'Xây dựng lòng tin với các đối tác kinh doanh nước ngoài',
-    ],
-    businessApplications: [
-      'Đàm phán hợp đồng quốc tế',
-      'Phát triển thỏa thuận hợp tác',
-      'Thảo luận đầu tư xuyên biên giới',
-      'Quản lý quan hệ nhà cung cấp toàn cầu',
-    ],
-    globalCompetencies: [
-      'Kỹ năng lắng nghe và đồng cảm nâng cao',
-      'Kỹ thuật thích ứng văn hóa',
-      'Khả năng giao tiếp ngoại giao',
-      'Chiến lược duy trì mối quan hệ',
     ],
     exercises: [
       {
@@ -427,9 +425,49 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
         type: 'Training',
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'Nghệ thuật Đàm phán và Giao tiếp của Người Việt',
+      content: [
+        'Trong văn hóa kinh doanh Việt Nam, việc xây dựng mối quan hệ cá nhân (quan hệ) trước khi bàn bạc công việc là rất quan trọng.',
+        'Khái niệm "giữ thể diện" (saving face) ảnh hưởng lớn đến quá trình đàm phán. Cần tránh đối đầu trực tiếp và tìm cách diễn đạt bất đồng một cách khéo léo.',
+        'Giao tiếp thường mang tính ngữ cảnh cao và gián tiếp. Người đàm phán cần có khả năng "đọc giữa các dòng" để hiểu ý định thực sự.',
+        'Lòng hiếu khách và các buổi tiệc thân mật thường là một phần không thể thiếu của quá trình xây dựng lòng tin và đàm phán kinh doanh.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Nguyễn Mạnh Tường',
+      title: 'Phó Chủ tịch HĐQT, MoMo',
+      company: 'MoMo',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-manh-tuong',
+      quote:
+        'Trong các thương vụ quốc tế, chúng tôi không chỉ bán một sản phẩm, chúng tôi đang kể câu chuyện về Việt Nam. Sự thành công không chỉ nằm ở các điều khoản hợp đồng, mà còn ở việc xây dựng được lòng tin và sự tôn trọng lẫn nhau giữa các nền văn hóa.',
+    },
+    quizzes: [
+      {
+        question: 'Khái niệm "giữ thể diện" trong đàm phán có nghĩa là gì?',
+        options: [
+          'Luôn luôn phải thắng trong mọi cuộc đàm phán',
+          'Tránh làm mất mặt hoặc gây bối rối cho đối tác và chính mình một cách công khai',
+          'Chỉ đàm phán qua video call',
+          'Không bao giờ thay đổi ý kiến của mình',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          '"Giữ thể diện" là một nguyên tắc văn hóa quan trọng ở nhiều nước châu Á, bao gồm Việt Nam. Nó nhấn mạnh tầm quan trọng của việc duy trì danh dự, uy tín và sự tôn trọng trong các tương tác xã hội và kinh doanh.',
+      },
+      {
+        question: 'Phong cách giao tiếp "ngữ cảnh cao" (high-context) có đặc điểm gì?',
+        options: [
+          'Thông điệp được truyền tải một cách trực tiếp và rõ ràng bằng lời nói',
+          'Nhiều ý nghĩa được truyền tải qua các yếu tố phi ngôn ngữ, bối cảnh và mối quan hệ',
+          'Chỉ sử dụng văn bản để giao tiếp',
+          'Luôn luôn nói to và rõ ràng',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Trong các nền văn hóa có ngữ cảnh cao như Việt Nam, phần lớn thông điệp nằm ở bối cảnh xung quanh, mối quan hệ giữa các bên và các tín hiệu phi ngôn ngữ, thay vì chỉ phụ thuộc vào lời nói trực tiếp.',
+      },
+    ],
   },
   {
     id: 'global-leadership-development',
@@ -440,13 +478,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=yENCsFO-1HQ', // Global Leadership Development
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
-    businessDomain: 'global-leadership',
-    culturalRegions: [
-      'Phong cách lãnh đạo tập thể châu Á',
-      'Lãnh đạo tập trung vào cá nhân của phương Tây',
-      'Nguyên tắc lãnh đạo ubuntu của châu Phi',
-      'Mô hình lãnh đạo hợp tác của Bắc Âu',
-    ],
     objectives: [
       'Phát triển tư duy và năng lực lãnh đạo toàn cầu',
       'Nắm vững kỹ năng lãnh đạo nhóm ảo qua các múi giờ',
@@ -455,24 +486,6 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
       'Xây dựng lộ trình phát triển lãnh đạo toàn cầu bền vững',
     ],
     prerequisites: ['Kinh nghiệm lãnh đạo', 'Tiếp xúc với kinh doanh quốc tế', 'Nhận thức về sự nhạy cảm văn hóa'],
-    vietnameseBusinessContext: [
-      'Phát triển các nhà lãnh đạo Việt Nam cho các vai trò toàn cầu',
-      'Quản lý các nhóm quốc tế từ trụ sở chính tại Việt Nam',
-      'Xây dựng cầu nối giữa phong cách quản lý của Việt Nam và quốc tế',
-      'Hoạch định kế nhiệm cho các công ty toàn cầu của Việt Nam',
-    ],
-    businessApplications: [
-      'Chương trình phát triển giám đốc điều hành toàn cầu',
-      'Chuẩn bị cho các nhiệm vụ quốc tế',
-      'Hệ thống cố vấn đa văn hóa',
-      'Hoạch định kế nhiệm lãnh đạo toàn cầu',
-    ],
-    globalCompetencies: [
-      'Phong cách lãnh đạo thích ứng',
-      'Giao tiếp toàn cầu xuất sắc',
-      'Quản lý thay đổi văn hóa',
-      'Phát triển tài năng quốc tế',
-    ],
     exercises: [
       {
         title: 'Thiết kế Chương trình Phát triển Lãnh đạo Toàn cầu',
@@ -499,37 +512,73 @@ export const internationalBusinessLessons: InternationalBusinessLesson[] = [
       },
     ],
     realWorldApplications: [
-      'Chuẩn bị cho các giám đốc điều hành cho các nhiệm vụ quốc tế',
-      'Xây dựng năng lực quản lý toàn cầu',
-      'Phát triển các nhà lãnh đạo thay đổi đa văn hóa',
-      'Tạo mạng lưới lãnh đạo quốc tế',
+      'Chương trình phát triển giám đốc điều hành toàn cầu',
+      'Chuẩn bị cho các nhiệm vụ quốc tế',
+      'Hệ thống cố vấn đa văn hóa',
+      'Hoạch định kế nhiệm lãnh đạo toàn cầu',
     ],
     caseStudies: [
       {
-        title: 'Sáng kiến Lãnh đạo Toàn cầu của Techcombank',
-        organization: 'Ngân hàng TMCP Kỹ thương Việt Nam',
+        title: 'Chương trình Phát triển Lãnh đạo của Viettel Global',
+        organization: 'Viettel Global',
         problem:
-          'Phát triển các nhà lãnh đạo ngân hàng Việt Nam có khả năng cạnh tranh trên thị trường tài chính quốc tế',
+          'Cần phát triển một thế hệ lãnh đạo kế cận có khả năng quản lý hiệu quả tại các thị trường quốc tế đa dạng mà Viettel đầu tư.',
         solution:
-          'Học viện lãnh đạo toàn cầu, chương trình trao đổi quốc tế, huấn luyện đa văn hóa, mạng lưới cố vấn toàn cầu',
+          'Viettel đã triển khai chương trình luân chuyển cán bộ quản lý qua nhiều thị trường khác nhau ở châu Á, châu Phi và Mỹ Latinh. Chương trình kết hợp đào tạo tại chỗ, cố vấn từ lãnh đạo cấp cao và các dự án thực tế.',
         impact:
-          'Phát triển hơn 150 nhà lãnh đạo sẵn sàng toàn cầu, mở rộng hoạt động quốc tế đến 5 quốc gia, cải thiện 60% điểm cạnh tranh toàn cầu',
-        innovations: [
-          'Mô hình kết hợp lãnh đạo Việt Nam-toàn cầu',
-          'Chương trình xây dựng cầu nối văn hóa',
-          'Mạng lưới lãnh đạo toàn cầu',
-        ],
+          'Xây dựng được đội ngũ lãnh đạo am hiểu sâu sắc nhiều nền văn hóa, có khả năng thích ứng cao và đưa ra các quyết định kinh doanh phù hợp với bối cảnh địa phương. Tỷ lệ thành công của các dự án quốc tế do các nhà lãnh đạo này dẫn dắt tăng 30%.',
+        innovations: ['Chương trình luân chuyển quốc tế', 'Cố vấn đa văn hóa', 'Học tập dựa trên dự án thực tế'],
       },
     ],
     resources: [
       {
-        title: 'Trung tâm Lãnh đạo Sáng tạo',
-        url: 'https://www.ccl.org/articles/leading-effectively-articles/what-is-global-leadership/',
+        title: 'Phát triển Lãnh đạo Toàn cầu - Center for Creative Leadership',
+        url: 'https://www.ccl.org/leadership-challenges/global-leadership/',
         type: 'Research',
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cultural-localization-challenge')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'Xây dựng Thế hệ Lãnh đạo Toàn cầu cho Việt Nam',
+      content: [
+        'Việt Nam đang đối mặt với nhu cầu cấp thiết về việc phát triển các nhà lãnh đạo có tầm nhìn và năng lực toàn cầu để dẫn dắt các doanh nghiệp trong nước hội nhập sâu rộng vào kinh tế thế giới.',
+        'Các chương trình đào tạo quản lý cấp cao (EMBA) hợp tác với các trường đại học quốc tế đang trở nên phổ biến tại Việt Nam.',
+        'Thách thức là làm thế nào để cân bằng giữa các giá trị quản trị quốc tế hiện đại và các đặc trưng trong văn hóa lãnh đạo của Việt Nam.',
+        'Nhiều công ty đang áp dụng các mô hình như luân chuyển cán bộ ra nước ngoài, cố vấn ngược (reverse mentoring) từ nhân viên trẻ am hiểu công nghệ cho lãnh đạo cấp cao.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bà Tôn Nữ Thị Ninh',
+      title: 'Nhà ngoại giao, Nguyên Đại sứ Việt Nam tại EU',
+      company: 'Trường Đại học Trí Việt (Phó chủ tịch HĐQT)',
+      imageUrl: 'https://i.pravatar.cc/150?u=ton-nu-thi-ninh',
+      quote:
+        'Một nhà lãnh đạo toàn cầu không chỉ cần có kiến thức và kỹ năng, mà còn phải có một bản sắc văn hóa vững vàng và một sự tò mò, tôn trọng đối với các nền văn hóa khác. Đó là cách để Việt Nam đối thoại bình đẳng và tự tin với thế giới.',
+    },
+    quizzes: [
+      {
+        question: 'Mục tiêu chính của chương trình luân chuyển cán bộ quản lý của Viettel Global là gì?',
+        options: [
+          'Để nhân viên đi du lịch miễn phí',
+          'Giảm chi phí nhân sự tại Việt Nam',
+          'Phát triển các nhà lãnh đạo có kinh nghiệm thực tế và am hiểu đa văn hóa',
+          'Chỉ để học ngoại ngữ',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Chương trình luân chuyển quốc tế của Viettel nhằm mục đích "thực chiến", giúp các nhà quản lý tiềm năng tích lũy kinh nghiệm thực tế, hiểu sâu sắc về các thị trường khác nhau và nâng cao năng lực lãnh đạo đa văn hóa.',
+      },
+      {
+        question: 'Đâu là một thách thức trong việc phát triển lãnh đạo toàn cầu tại Việt Nam?',
+        options: [
+          'Người Việt Nam không muốn làm lãnh đạo',
+          'Không có chương trình đào tạo nào',
+          'Cân bằng giữa phương pháp quản trị quốc tế và đặc trưng văn hóa Việt Nam',
+          'Thiếu sự hỗ trợ từ chính phủ',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Việc dung hòa, kết hợp một cách hiệu quả giữa các thông lệ quản trị tốt nhất của thế giới với các giá trị và phong cách làm việc đặc thù của văn hóa Việt Nam là một trong những thách thức lớn nhất để tạo ra các nhà lãnh đạo toàn cầu thành công.',
+      },
+    ],
   },
 ];

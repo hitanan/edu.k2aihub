@@ -12,6 +12,11 @@ export interface FutureThinkingLessonType extends BaseLessonData {
   }>;
   trendAnalysisFrameworks: string[];
   uncertaintyFactors: string[];
+  relatedGames?: Array<{
+    id: string;
+    name: string;
+    description: string;
+  }>;
 }
 
 export const futureThinkingLessons: FutureThinkingLessonType[] = [

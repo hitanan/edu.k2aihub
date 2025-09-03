@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { healthcareTechLessons, HealthcareTechLesson } from '@/data/healthcare-tech'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { healthcareTechLessons, HealthcareTechLesson } from '@/data/healthcare-tech';
 import { PageProps } from '@/types';
 import { Activity, Shield, Database, Heart, Stethoscope } from 'lucide-react';
 
@@ -25,12 +30,17 @@ export default async function HealthcareTechLessonPage({ params }: PageProps) {
     secondaryColor: 'cyan',
     gradientColors: 'from-slate-900 via-blue-900 to-cyan-900',
     getFieldIcon: (field: string) => {
-      switch(field) {
-        case 'healthcareCategory': return <Activity className="w-5 h-5" />;
-        case 'regulatoryCompliance': return <Shield className="w-5 h-5" />;
-        case 'techProficiencyLevel': return <Database className="w-5 h-5" />;
-        case 'targetAudience': return <Heart className="w-5 h-5" />;
-        default: return <Stethoscope className="w-5 h-5" />;
+      switch (field) {
+        case 'healthcareCategory':
+          return <Activity className="w-5 h-5" />;
+        case 'regulatoryCompliance':
+          return <Shield className="w-5 h-5" />;
+        case 'techProficiencyLevel':
+          return <Database className="w-5 h-5" />;
+        case 'targetAudience':
+          return <Heart className="w-5 h-5" />;
+        default:
+          return <Stethoscope className="w-5 h-5" />;
       }
     },
     getFieldValue: (lesson: HealthcareTechLesson) => lesson.healthcareCategory,
@@ -85,14 +95,14 @@ export default async function HealthcareTechLessonPage({ params }: PageProps) {
           </div>
         </div>
 
-        {lesson.vietnameseHealthcareContext && (
+        {lesson.vietnamContext && (
           <div className="bg-green-950/30 rounded-lg p-4">
             <h3 className="text-lg font-semibold text-green-300 mb-3 flex items-center">
               <Stethoscope className="w-5 h-5 mr-2" />
-              Vietnamese Healthcare Context
+              {lesson.vietnamContext.title}
             </h3>
             <ul className="space-y-2">
-              {lesson.vietnameseHealthcareContext.map((context, index) => (
+              {lesson.vietnamContext.content.map((context, index) => (
                 <li key={index} className="text-green-100 text-sm flex items-start">
                   <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
                   {context}
@@ -102,9 +112,9 @@ export default async function HealthcareTechLessonPage({ params }: PageProps) {
           </div>
         )}
       </div>
-    )
-  }
-  
+    ),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

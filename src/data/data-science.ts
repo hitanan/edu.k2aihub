@@ -1,5 +1,25 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 export interface DataScienceLessonData extends BaseLessonData {
   dataScienceConcepts?: string[];
   tools?: string[];
@@ -29,6 +49,9 @@ export interface DataScienceLessonData extends BaseLessonData {
     name: string;
     description: string;
   }>;
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  quizzes?: Quiz[];
 }
 
 export const DataScienceLessons: DataScienceLessonData[] = [
@@ -156,6 +179,44 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       'Data Visualization',
     ],
     tools: ['Python', 'pandas', 'matplotlib', 'seaborn', 'numpy'],
+    vietnamContext: {
+      title: 'Khoa học Dữ liệu tại Việt Nam: Cơ hội và Thách thức',
+      content: [
+        'Nhu cầu nhân lực Khoa học Dữ liệu tại Việt Nam đang bùng nổ, đặc biệt trong các lĩnh vực như E-commerce (Tiki, Shopee), FinTech (MoMo, VNPay), và Viễn thông (Viettel, FPT).',
+        'FPT Software và Viettel AI là hai trong số các đơn vị tiên phong tại Việt Nam trong việc nghiên cứu và ứng dụng AI và Khoa học Dữ liệu, đặc biệt là trong xử lý ngôn ngữ tự nhiên tiếng Việt và nhận dạng hình ảnh.',
+        'Các cuộc thi về Khoa học Dữ liệu như Zalo AI Challenge thu hút hàng ngàn sinh viên và kỹ sư tham gia, thúc đẩy cộng đồng và tìm kiếm tài năng.',
+        'Thách thức lớn nhất là chất lượng và sự sẵn có của dữ liệu. Nhiều doanh nghiệp Việt Nam vẫn đang trong giai đoạn đầu của việc số hóa, khiến dữ liệu bị phân mảnh và thiếu nhất quán.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Nguyễn Mạnh Tường',
+      title: 'Phó Tổng Giám đốc, Khối Zalo',
+      company: 'VNG Corporation',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-manh-tuong',
+      quote:
+        'Dữ liệu giống như dầu mỏ của thế kỷ 21, và các nhà khoa học dữ liệu là những người kỹ sư lọc dầu. Tại Zalo, chúng tôi không chỉ ngồi trên một mỏ dữ liệu khổng lồ, mà còn phải biến nó thành những sản phẩm thông minh, hữu ích cho hàng chục triệu người dùng mỗi ngày.',
+    },
+    quizzes: [
+      {
+        question: 'Giai đoạn nào thường chiếm nhiều thời gian nhất trong một dự án khoa học dữ liệu?',
+        options: ['Xây dựng mô hình', 'Làm sạch và chuẩn bị dữ liệu', 'Trình bày kết quả', 'Hiểu bài toán kinh doanh'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Dữ liệu trong thực tế thường rất "bẩn", thiếu sót và không nhất quán. Việc làm sạch và chuẩn bị dữ liệu là bước cực kỳ quan trọng để đảm bảo mô hình hoạt động chính xác, và nó thường chiếm tới 80% thời gian của dự án.',
+      },
+      {
+        question: 'EDA (Exploratory Data Analysis) là viết tắt của cụm từ gì và mục đích của nó là gì?',
+        options: [
+          'Phân tích Dữ liệu Mở rộng - Để mở rộng bộ dữ liệu',
+          'Phân tích Dữ liệu Khám phá - Để hiểu rõ hơn về dữ liệu, tìm ra các mẫu và mối quan hệ ban đầu',
+          'Đánh giá Dữ liệu Chính xác - Để kiểm tra độ chính xác của dữ liệu',
+          'Thực thi Dữ liệu Tự động - Để tự động hóa quy trình',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'EDA là bước "làm quen" và "trò chuyện" với dữ liệu. Bằng cách sử dụng các công cụ thống kê và trực quan hóa, nhà khoa học dữ liệu có thể khám phá các đặc điểm, phát hiện các điểm bất thường và hình thành các giả thuyết ban đầu.',
+      },
+    ],
   },
   {
     id: 'machine-learning-algorithms',
@@ -267,6 +328,50 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       'K-Means Clustering',
       'Neural Networks',
     ],
+    vietnamContext: {
+      title: 'Ứng dụng Học máy tại Việt Nam',
+      content: [
+        'Hệ thống gợi ý sản phẩm của Tiki, Shopee sử dụng học máy để cá nhân hóa trang chủ của từng người dùng, làm tăng đáng kể tỷ lệ chuyển đổi.',
+        'VinAI (thuộc Vingroup) là một trong những đơn vị nghiên cứu hàng đầu về thị giác máy tính, ứng dụng trong xe tự lái Vinfast và hệ thống nhận diện khuôn mặt.',
+        'Các ngân hàng như Techcombank, VPBank sử dụng mô hình học máy để đánh giá rủi ro tín dụng, giúp quá trình duyệt vay nhanh hơn và chính xác hơn.',
+        'Thách thức: Việc xây dựng các mô hình học máy cho ngôn ngữ tiếng Việt (NLP) rất phức tạp do sự đa dạng về ngữ điệu, từ đồng âm, và "teen code".',
+      ],
+    },
+    careerConnect: {
+      name: 'Tiến sĩ Bùi Hải Hưng',
+      title: 'Tổng Giám đốc',
+      company: 'VinAI',
+      imageUrl: 'https://i.pravatar.cc/150?u=bui-hai-hung',
+      quote:
+        'Trí tuệ nhân tạo không còn là khoa học viễn tưởng. Tại VinAI, chúng tôi đang biến những nghiên cứu AI đỉnh cao của thế giới thành những sản phẩm thực tế, giải quyết những bài toán của người Việt. Học máy là công cụ để chúng tôi thực hiện sứ mệnh đó.',
+    },
+    quizzes: [
+      {
+        question:
+          'Học có giám sát (Supervised Learning) khác với học không giám sát (Unsupervised Learning) ở điểm nào?',
+        options: [
+          'Học có giám sát cần có người giám sát ngồi cạnh',
+          'Học không giám sát không cần máy tính',
+          'Học có giám sát sử dụng dữ liệu đã được gán nhãn (biết trước kết quả), trong khi học không giám sát tự tìm ra cấu trúc trong dữ liệu chưa được gán nhãn.',
+          'Học không giám sát luôn cho kết quả tốt hơn.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Ví dụ của học có giám sát là dự đoán giá nhà (biết giá nhà trong quá khứ). Ví dụ của học không giám sát là phân nhóm khách hàng dựa trên hành vi mua sắm (chưa biết trước có những nhóm nào).',
+      },
+      {
+        question: 'Overfitting (học quá khớp) xảy ra khi nào?',
+        options: [
+          'Khi mô hình quá đơn giản và không học được quy luật của dữ liệu.',
+          'Khi mô hình quá phức tạp, học thuộc lòng cả nhiễu trong dữ liệu huấn luyện và hoạt động kém trên dữ liệu mới.',
+          'Khi dữ liệu huấn luyện quá lớn.',
+          'Khi mô hình hoạt động hoàn hảo trên cả dữ liệu huấn luyện và dữ liệu kiểm tra.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Overfitting giống như một học sinh học vẹt, trả lời rất tốt các câu hỏi đã gặp nhưng không thể giải quyết các vấn đề mới. Đây là một trong những thách thức lớn nhất khi xây dựng mô hình học máy.',
+      },
+    ],
   },
   {
     id: 'big-data-analytics',
@@ -368,6 +473,44 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       'Financial trading systems',
       'Supply chain optimization',
       'Smart city applications',
+    ],
+    vietnamContext: {
+      title: 'Dữ liệu lớn (Big Data) tại Việt Nam',
+      content: [
+        'Các công ty viễn thông như Viettel, Mobifone, Vinaphone đang quản lý những tập dữ liệu khổng lồ về thông tin thuê bao và lưu lượng mạng, là nguồn tài nguyên quý giá cho việc phân tích hành vi người dùng và quy hoạch hạ tầng.',
+        'Thương mại điện tử và các siêu ứng dụng (super-apps) như Grab, Gojek tạo ra một lượng dữ liệu giao dịch và di chuyển khổng lồ mỗi ngày, được sử dụng để tối ưu hóa logistics, giá cả và gợi ý dịch vụ.',
+        'VNG Cloud, Viettel IDC là những nhà cung cấp dịch vụ điện toán đám mây "made in Vietnam", cung cấp hạ tầng để các doanh nghiệp trong nước xử lý dữ liệu lớn mà không cần phụ thuộc vào các gã khổng lồ quốc tế.',
+        'Thách thức: Việc đảm bảo an ninh, chủ quyền dữ liệu và tuân thủ Luật An ninh mạng là một bài toán phức tạp khi làm việc với dữ liệu lớn tại Việt Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lê Hồng Việt',
+      title: 'Tổng Giám đốc',
+      company: 'FPT Smart Cloud',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-hong-viet',
+      quote:
+        'Big Data không chỉ là về kích thước, mà là về tốc độ và sự đa dạng. Thách thức lớn nhất không phải là lưu trữ dữ liệu, mà là xử lý nó đủ nhanh để đưa ra quyết định kinh doanh trong thời gian thực. Tại FPT, chúng tôi xây dựng những "nhà máy" xử lý dữ liệu để giúp các doanh nghiệp Việt Nam tăng tốc trong cuộc đua chuyển đổi số.',
+    },
+    quizzes: [
+      {
+        question: 'Đặc tính nào sau đây KHÔNG phải là một trong 3V của Big Data?',
+        options: ['Volume (Khối lượng)', 'Velocity (Tốc độ)', 'Variety (Sự đa dạng)', 'Value (Giá trị)'],
+        correctAnswerIndex: 3,
+        explanation:
+          'Mặc dù "Value" (Giá trị) là mục tiêu cuối cùng của việc phân tích Big Data, 3V truyền thống định nghĩa các đặc tính của dữ liệu là Volume, Velocity, và Variety. Sau này, các V khác như Veracity (Tính xác thực) và Value đã được thêm vào để mở rộng khái niệm.',
+      },
+      {
+        question: 'Apache Spark có ưu điểm chính gì so với Hadoop MapReduce?',
+        options: [
+          'Chỉ hoạt động với dữ liệu nhỏ',
+          'Khả năng xử lý dữ liệu trong bộ nhớ (in-memory), giúp tốc độ nhanh hơn đáng kể',
+          'Bảo mật kém hơn',
+          'Chỉ viết được bằng ngôn ngữ Java',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Khả năng thực hiện các phép tính trong RAM thay vì phải đọc/ghi liên tục trên đĩa cứng như MapReduce giúp Spark có thể nhanh hơn gấp 10 đến 100 lần, đặc biệt với các thuật toán lặp lại như trong Machine Learning.',
+      },
     ],
   },
   {
@@ -474,6 +617,49 @@ export const DataScienceLessons: DataScienceLessonData[] = [
         dataset: 'WHO COVID-19 data',
         techniques: ['Time series visualization', 'Geographic mapping', 'Comparative analysis'],
         deliverables: ['Public dashboard', 'Mobile-responsive design', 'Automated updates'],
+      },
+    ],
+    vietnamContext: {
+      title: 'Kể chuyện bằng Dữ liệu trong bối cảnh Việt Nam',
+      content: [
+        'Các báo cáo kinh doanh tại Việt Nam thường bị chỉ trích là khô khan và đầy số liệu. Kỹ năng kể chuyện bằng dữ liệu giúp các nhà phân tích biến những con số đó thành những câu chuyện có ý nghĩa, thuyết phục được ban lãnh đạo.',
+        'Trong các buổi thuyết trình gọi vốn (pitching), các startup Việt Nam thành công thường không chỉ trình bày số liệu mà còn kể một câu chuyện hấp dẫn về thị trường, vấn đề và giải pháp của họ bằng dữ liệu.',
+        'Các công cụ như Power BI và Tableau đang ngày càng được ưa chuộng trong các doanh nghiệp Việt Nam, thay thế dần cho các báo cáo Excel truyền thống.',
+        'Thách thức: Nhiều nhà quản lý ở Việt Nam vẫn quen với việc ra quyết định dựa trên kinh nghiệm và "cảm tính", đòi hỏi người trình bày phải có kỹ năng kể chuyện bằng dữ liệu cực kỳ thuyết phục để thay đổi văn hóa này.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Phi Vân',
+      title: 'Chuyên gia nhượng quyền thương hiệu, Tác giả sách',
+      company: 'Retail & Franchise Asia',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-phi-van',
+      quote:
+        'Dữ liệu không biết nói dối, nhưng nó cũng không tự biết kể chuyện. Một nhà lãnh đạo giỏi phải là một người kể chuyện giỏi, người có thể thổi hồn vào những con số, biến chúng thành một tầm nhìn, một chiến lược mà mọi người đều muốn đi theo. Đừng chỉ cho tôi biểu đồ, hãy kể cho tôi nghe câu chuyện đằng sau nó.',
+    },
+    quizzes: [
+      {
+        question: 'Mục tiêu chính của "kể chuyện bằng dữ liệu" (data storytelling) là gì?',
+        options: [
+          'Làm cho báo cáo trông đẹp hơn',
+          'Sử dụng càng nhiều biểu đồ phức tạp càng tốt',
+          'Trình bày dữ liệu một cách nhàm chán',
+          'Truyền đạt những hiểu biết sâu sắc từ dữ liệu một cách rõ ràng, hấp dẫn và đáng nhớ để thúc đẩy hành động.',
+        ],
+        correctAnswerIndex: 3,
+        explanation:
+          'Kể chuyện bằng dữ liệu là sự kết hợp giữa khoa học (dữ liệu) và nghệ thuật (cách kể chuyện) để làm cho thông tin trở nên dễ hiểu, thuyết phục và có tác động mạnh mẽ đến người nghe.',
+      },
+      {
+        question: 'Để so sánh doanh thu giữa các vùng miền khác nhau, loại biểu đồ nào là phù hợp nhất?',
+        options: [
+          'Biểu đồ đường (Line chart)',
+          'Biểu đồ tròn (Pie chart)',
+          'Biểu đồ cột (Bar chart)',
+          'Biểu đồ phân tán (Scatter plot)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Biểu đồ cột rất hiệu quả trong việc so sánh các giá trị giữa các danh mục riêng biệt (như các vùng miền). Biểu đồ đường dùng cho xu hướng theo thời gian, biểu đồ tròn cho tỷ lệ phần trăm, và biểu đồ phân tán cho mối quan hệ giữa hai biến số.',
       },
     ],
   },

@@ -1,30 +1,6 @@
-export interface PythonLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
-  videoUrl: string;
-  relatedGames?: Array<{
-    gameId: string;
-    title: string;
-    connection: string;
-    difficulty: string;
-  }>;
-}
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  requirements: string[];
-  hints: string[];
-}
+export type PythonLesson = BaseLessonData;
 
 export const pythonLessons: PythonLesson[] = [
   {
@@ -46,17 +22,13 @@ export const pythonLessons: PythonLesson[] = [
     exercises: [
       {
         title: 'Hello World Plus',
-        description: 'Viết chương trình in ra lời chào với tên của bạn',
+        description:
+          'Viết chương trình in ra lời chào với tên của bạn. Hints: Dùng input() để nhận dữ liệu từ user, Dùng f"..." để chèn biến vào string, Mỗi print() sẽ in một dòng mới.',
         difficulty: 'Dễ',
         solution: `name = input("Tên của bạn: ")
 print(f"Xin chào {name}!")
 print("Chào mừng bạn đến với Python!")`,
-        requirements: ['Sử dụng input() để nhận tên', 'Sử dụng f-string để format', 'In ra ít nhất 2 dòng text'],
-        hints: [
-          'Dùng input() để nhận dữ liệu từ user',
-          'Dùng f"..." để chèn biến vào string',
-          'Mỗi print() sẽ in một dòng mới',
-        ],
+        procedure: ['Sử dụng input() để nhận tên', 'Sử dụng f-string để format', 'In ra ít nhất 2 dòng text'],
       },
     ],
     realWorldApplications: [
@@ -66,6 +38,37 @@ print("Chào mừng bạn đến với Python!")`,
       'Desktop Applications',
       'Game Development',
       'Scientific Computing',
+    ],
+    vietnamContext: {
+      title: 'Python tại Việt Nam',
+      content: [
+        'Python là một trong những ngôn ngữ lập trình phổ biến nhất tại Việt Nam, đặc biệt trong lĩnh vực Khoa học Dữ liệu, AI và Web Development (Django).',
+        'Cộng đồng Python Việt Nam (PyMi, PyCon Vietnam) rất lớn mạnh và thường xuyên tổ chức các buổi gặp gỡ, hội thảo.',
+        'Nhiều công ty công nghệ lớn tại Việt Nam (VNG, FPT, Viettel) đang tuyển dụng mạnh mẽ các lập trình viên Python.',
+        'Python được đưa vào giảng dạy ở nhiều trường đại học và trung tâm đào tạo lập trình trên cả nước.',
+      ],
+    },
+    careerConnect: {
+      name: 'Vương Quang Khải',
+      title: 'Phó Tổng Giám đốc',
+      company: 'VNG Corporation',
+      imageUrl: '/images/career/vuong-quang-khai.jpg',
+      quote:
+        'Python là ngôn ngữ của tương lai. Tại VNG, chúng tôi sử dụng Python để xây dựng các sản phẩm AI đột phá, phục vụ hàng triệu người dùng. Nắm vững Python là bạn đang nắm giữ chìa khóa để mở ra cánh cửa của cuộc cách mạng công nghiệp 4.0.',
+    },
+    quizzes: [
+      {
+        question: 'Tại sao Python lại phổ biến trong lĩnh vực Khoa học Dữ liệu và AI?',
+        options: [
+          'Vì nó là ngôn ngữ nhanh nhất',
+          'Vì nó có cú pháp phức tạp, thử thách lập trình viên',
+          'Vì nó có hệ sinh thái thư viện mạnh mẽ (NumPy, Pandas, TensorFlow) và cú pháp dễ đọc',
+          'Vì nó chỉ chạy được trên hệ điều hành Linux',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Sức mạnh của Python trong AI và Data Science đến từ cộng đồng lớn và hệ thống thư viện phong phú, giúp các nhà phát triển xây dựng mô hình phức tạp một cách nhanh chóng và hiệu quả.',
+      },
     ],
   },
   {
@@ -106,19 +109,15 @@ print(f"Tên: {name}")
 print(f"Tuổi: {age}")
 print(f"Chiều cao: {height_m:.2f}m")
 print(f"Trạng thái: {'Người lớn' if is_adult else 'Trẻ em'}")`,
-        requirements: [
+        procedure: [
           'Nhận input cho tên, năm sinh, chiều cao',
           'Tính tuổi dựa trên năm hiện tại',
           'Chuyển đổi chiều cao từ cm sang m',
           'Kiểm tra có phải người lớn không',
           'Hiển thị thông tin đẹp mắt',
         ],
-        hints: [
-          'Dùng int() cho năm sinh',
-          'Dùng float() cho chiều cao',
-          'Dùng :.2f để làm tròn 2 chữ số thập phân',
-          'Dùng conditional expression cho status',
-        ],
+        expectedResults:
+          'Dùng int() cho năm sinh. Dùng float() cho chiều cao. Dùng :.2f để làm tròn 2 chữ số thập phân. Dùng conditional expression cho status.',
       },
       {
         title: 'String Processor',
@@ -145,13 +144,9 @@ print(f"IN HOA: {upper_text}")
 print(f"in thường: {lower_text}")
 print(f"Title Case: {title_text}")
 print(f"Ngược lại: {reversed_text}")`,
-        requirements: ['Đếm số từ và ký tự', 'Chuyển đổi case khác nhau', 'Đảo ngược chuỗi', 'Hiển thị thống kê đẹp'],
-        hints: [
-          'Dùng split() để chia thành từ',
-          'Dùng len() để đếm',
-          'Dùng string methods: upper(), lower(), title()',
-          'Dùng slicing [::-1] để đảo ngược',
-        ],
+        procedure: ['Đếm số từ và ký tự', 'Chuyển đổi case khác nhau', 'Đảo ngược chuỗi', 'Hiển thị thống kê đẹp'],
+        expectedResults:
+          'Dùng split() để chia thành từ. Dùng len() để đếm. Dùng string methods: upper(), lower(), title(). Dùng slicing [::-1] để đảo ngược.',
       },
     ],
     realWorldApplications: [
@@ -162,24 +157,30 @@ print(f"Ngược lại: {reversed_text}")`,
       'Data type conversion in APIs',
       'Financial calculations',
     ],
-    relatedGames: [
+    vietnamContext: {
+      title: 'Xử lý Dữ liệu Tiếng Việt',
+      content: [
+        'Khi làm việc với chuỗi (string) tiếng Việt, cần đảm bảo sử dụng encoding UTF-8 để hiển thị dấu chính xác.',
+        'Các bài toán thực tế tại Việt Nam thường liên quan đến việc xử lý dữ liệu tiền tệ (VND), cần sử dụng kiểu số nguyên (int) để tránh sai số làm tròn của số thực (float).',
+        'Việc chuyển đổi dữ liệu từ ngày tháng theo định dạng Việt Nam (DD/MM/YYYY) sang các đối tượng `datetime` là một tác vụ phổ biến.',
+        'Boolean (True/False) được dùng nhiều trong logic của các hệ thống thương mại điện tử, ví dụ: `is_verified`, `has_promotion`.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Hà Đông',
+      title: 'Nhà phát triển Game',
+      company: '.GEARS',
+      imageUrl: '/images/career/nguyen-ha-dong.jpg',
+      quote:
+        'Trong game, mỗi biến số đều quan trọng, từ điểm số của người chơi đến tọa độ của nhân vật. Quản lý tốt các kiểu dữ liệu là bước đầu tiên để tạo ra một thế giới game hoạt động trơn tru và không có lỗi.',
+    },
+    quizzes: [
       {
-        gameId: 'typing-speed-challenge',
-        title: 'Thử Thách Tốc Độ Gõ',
-        connection: 'Luyện tập tốc độ gõ code Python nhanh và chính xác',
-        difficulty: 'Cơ bản',
-      },
-      {
-        gameId: 'python-coding-puzzle',
-        title: 'Python Coding Puzzle',
-        connection: 'Áp dụng kiến thức Python cơ bản để giải các puzzle lập trình',
-        difficulty: 'Cơ bản',
-      },
-      {
-        gameId: 'word-builder',
-        title: 'Xây Dựng Từ',
-        connection: 'Thực hành xử lý string và input/output trong Python',
-        difficulty: 'Cơ bản',
+        question: 'Để lưu trữ số tiền 50,000 VND một cách an toàn và chính xác nhất trong Python, bạn nên dùng kiểu dữ liệu nào?',
+        options: ['float', 'string', 'int', 'boolean'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Sử dụng `int` (lưu 50000) là tốt nhất để tránh các sai số làm tròn có thể xảy ra với `float`. Các phép tính tiền tệ nên được thực hiện trên số nguyên (ví dụ: tính theo đơn vị đồng hoặc xu).',
       },
     ],
   },
@@ -236,19 +237,15 @@ if scores:
     print(f"Xếp loại: {grade}")
 else:
     print("Không có điểm nào được nhập!")`,
-        requirements: [
+        procedure: [
           'Nhập nhiều điểm số (dùng while loop)',
           'Validate điểm trong khoảng 0-10',
           'Tính điểm trung bình',
           'Xếp loại theo thang điểm Việt Nam',
           'Xử lý trường hợp không nhập điểm nào',
         ],
-        hints: [
-          'Dùng list để lưu điểm',
-          'Dùng while True và break',
-          'Kiểm tra range với 0 <= score <= 10',
-          'Dùng elif cho multiple conditions',
-        ],
+        expectedResults:
+          'Dùng list để lưu điểm. Dùng while True và break. Kiểm tra range với 0 <= score <= 10. Dùng elif cho multiple conditions.',
       },
     ],
     realWorldApplications: [
@@ -258,6 +255,32 @@ else:
       'Game logic implementation',
       'Automated decision making',
       'Business rule processing',
+    ],
+    vietnamContext: {
+      title: 'Logic trong Ứng dụng Thực tế',
+      content: [
+        'Các hệ thống thương mại điện tử (Tiki, Shopee) sử dụng `if-elif-else` để phân loại khách hàng (thường, bạc, vàng, kim cương) và áp dụng các chính sách ưu đãi khác nhau.',
+        '`for` loop được dùng để duyệt qua danh sách sản phẩm, bài viết, hoặc bình luận để hiển thị lên giao diện người dùng.',
+        '`while` loop thường được dùng trong các game để giữ cho game chạy cho đến khi người chơi chọn thoát, hoặc trong các hệ thống lắng nghe sự kiện.',
+        'Logic điều khiển là nền tảng của các chatbot trả lời tự động, giúp bot quyết định câu trả lời dựa trên input của người dùng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Đàm Quang Hùng',
+      title: 'Lead Software Engineer',
+      company: 'Grab Vietnam',
+      imageUrl: '/images/career/dam-quang-hung.jpg',
+      quote:
+        'Hệ thống của Grab xử lý hàng triệu yêu cầu mỗi ngày. Logic điều khiển chính xác là xương sống giúp chúng tôi quyết định ghép cặp tài xế và khách hàng, tính toán giá cước và ước tính thời gian di chuyển một cách hiệu quả.',
+    },
+    quizzes: [
+      {
+        question: 'Một trang web tin tức muốn hiển thị 10 bài báo mới nhất từ một danh sách 100 bài báo. Cấu trúc lặp nào là phù hợp nhất?',
+        options: ['Một `while` loop chạy vô tận', 'Một `for` loop duyệt qua 10 phần tử đầu tiên của danh sách', 'Một `if-else` statement', 'Không cần vòng lặp'],
+        correctAnswerIndex: 1,
+        explanation:
+          '`for` loop là lựa chọn lý tưởng để duyệt qua một số lượng phần tử xác định trong một chuỗi hoặc danh sách, giúp code ngắn gọn và dễ hiểu.',
+      },
     ],
   },
   {
@@ -335,19 +358,15 @@ while True:
     elif choice == "2":
         n = int(input("Nhập số: "))
         print(f"{n}! = {factorial(n)}")`,
-        requirements: [
+        procedure: [
           'Tạo ít nhất 4 functions toán học',
           'Mỗi function có docstring',
           'Xử lý edge cases',
           'Tạo menu để test functions',
           'Sử dụng recursion ít nhất 1 lần',
         ],
-        hints: [
-          'Dùng """...""" cho docstring',
-          'Kiểm tra input validity',
-          'Recursive function cần base case',
-          'Dùng while loop cho menu',
-        ],
+        expectedResults:
+          'Dùng """...""" cho docstring. Kiểm tra input validity. Recursive function cần base case. Dùng while loop cho menu.',
       },
     ],
     realWorldApplications: [
@@ -357,6 +376,32 @@ while True:
       'Utility libraries',
       'Mathematical computations',
       'Business logic separation',
+    ],
+    vietnamContext: {
+      title: 'Tổ chức Code trong Dự án Việt',
+      content: [
+        'Trong các dự án outsourcing, việc viết code thành các hàm (functions) rõ ràng, có tài liệu (docstrings) tốt giúp các thành viên trong nhóm dễ dàng hợp tác.',
+        'Các hàm như `calculate_shipping_fee`, `check_promotion_code` là những ví dụ thực tế trong các dự-án thương mại điện tử tại Việt Nam.',
+        'Việc chia nhỏ các tác vụ phức tạp thành các hàm giúp việc kiểm thử (testing) và gỡ lỗi (debugging) trở nên dễ dàng hơn, một yêu cầu quan trọng trong các công ty công nghệ.',
+        'Scope (phạm vi của biến) là một khái niệm quan trọng để tránh các lỗi không mong muốn, đặc biệt khi nhiều người cùng làm việc trên một codebase.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lê Hồng Minh',
+      title: 'Nhà sáng lập & CEO',
+      company: 'VNG Corporation',
+      imageUrl: '/images/career/le-hong-minh.jpg',
+      quote:
+        'Để xây dựng những sản phẩm lớn, bạn phải bắt đầu từ những khối xây dựng nhỏ và vững chắc. Functions trong lập trình cũng vậy. Một hàm được viết tốt cũng giống như một viên gạch chất lượng cao, là nền tảng cho cả một hệ thống vĩ đại.',
+    },
+    quizzes: [
+      {
+        question: 'Lợi ích chính của việc sử dụng hàm (function) trong lập trình là gì?',
+        options: ['Làm cho chương trình chạy nhanh hơn', 'Tái sử dụng code, tránh lặp lại và giúp chương trình dễ quản lý hơn', 'Chỉ để in ra màn hình', 'Làm cho code khó hiểu hơn'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Hàm cho phép bạn đóng gói một đoạn code để có thể gọi lại nhiều lần, giúp code ngắn gọn, dễ đọc, dễ bảo trì và nâng cấp.',
+      },
     ],
   },
   {
@@ -436,19 +481,15 @@ while True:
         show_tasks()
     elif choice == "3":
         complete_task()`,
-        requirements: [
+        procedure: [
           'Sử dụng list để lưu tasks',
           'Mỗi task có description và priority',
           'Functions cho từng chức năng',
           'Menu-driven interface',
           'Xử lý edge cases và errors',
         ],
-        hints: [
-          'Dùng tuple để lưu (task, priority)',
-          'enumerate() để đánh số thứ tự',
-          'pop() để xóa và lấy element',
-          'try/except để xử lý errors',
-        ],
+        expectedResults:
+          'Dùng tuple để lưu (task, priority). enumerate() để đánh số thứ tự. pop() để xóa và lấy element. try/except để xử lý errors.',
       },
     ],
     realWorldApplications: [
@@ -458,6 +499,37 @@ while True:
       'Inventory tracking',
       'Menu systems',
       'Data processing workflows',
+    ],
+    vietnamContext: {
+      title: 'Quản lý Dữ liệu Danh sách',
+      content: [
+        'Các ứng dụng giao đồ ăn như GrabFood, Baemin sử dụng list để quản lý danh sách các món ăn trong giỏ hàng của bạn.',
+        'Tuple thường được dùng để lưu trữ các dữ liệu không thay đổi, ví dụ như tọa độ (kinh độ, vĩ độ) của một địa điểm trên bản đồ.',
+        'List comprehensions là một kỹ thuật mạnh mẽ được các lập trình viên có kinh nghiệm ở Việt Nam sử dụng để viết code xử lý danh sách ngắn gọn và hiệu quả hơn.',
+        'Các trang web hiển thị danh sách bài viết, sản phẩm, hay bình luận đều sử dụng list làm cấu trúc dữ liệu nền tảng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Phan Bá Việt',
+      title: 'Head of Engineering',
+      company: 'Tiki',
+      imageUrl: '/images/career/phan-ba-viet.jpg',
+      quote:
+        'Tại Tiki, chúng tôi xử lý hàng triệu sản phẩm. Việc sử dụng hiệu quả các cấu trúc dữ liệu như list và tuple là cực kỳ quan trọng để đảm bảo hệ thống chạy nhanh, ổn định và mang lại trải nghiệm tốt nhất cho người dùng.',
+    },
+    quizzes: [
+      {
+        question: 'Bạn nên sử dụng `tuple` thay vì `list` trong trường hợp nào?',
+        options: [
+          'Khi bạn cần một danh sách có thể thêm, xóa, sửa phần tử',
+          'Khi bạn muốn lưu trữ một bộ dữ liệu không bao giờ thay đổi, ví dụ như các ngày trong tuần',
+          'Khi bạn muốn sắp xếp các phần tử',
+          'Khi danh sách của bạn rất lớn',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Tuple là "immutable" (bất biến), nghĩa là sau khi tạo ra, bạn không thể thay đổi nó. Điều này làm cho tuple trở nên an toàn và hiệu quả hơn cho các dữ liệu cố định.',
+      },
     ],
   },
   {
@@ -542,19 +614,15 @@ def list_all_students():
         grades = info['grades']
         avg = sum(grades.values()) / len(grades) if grades else 0
         print(f"{student_id}: {info['name']} (TB: {avg:.1f})")`,
-        requirements: [
+        procedure: [
           'Dictionary chính để lưu students',
           'Nested dictionary cho grades',
           'Functions cho CRUD operations',
           'Tính điểm trung bình',
           'Hiển thị danh sách tổng quan',
         ],
-        hints: [
-          'Dùng student_id làm key',
-          'Nested dict: {id: {name, age, grades: {subject: grade}}}',
-          'Dùng .items() để iterate',
-          'Check key existence với "in" operator',
-        ],
+        expectedResults:
+          'Dùng student_id làm key. Nested dict: {id: {name, age, grades: {subject: grade}}}. Dùng .items() để iterate. Check key existence với "in" operator.',
       },
     ],
     realWorldApplications: [
@@ -564,6 +632,31 @@ def list_all_students():
       'Cache implementation',
       'User profiles storage',
       'Settings và preferences',
+    ],
+    vietnamContext: {
+      title: 'Dữ liệu Key-Value trong Thực tế',
+      content: [
+        'Thông tin cá nhân của bạn trên các trang web như Facebook, Zalo được lưu trữ dưới dạng dictionary (ví dụ: `{"name": "Nguyễn Văn A", "city": "Hà Nội"}`).',
+        'Các file cấu hình JSON, một định dạng rất phổ biến trong phát triển web, về cơ bản chính là các dictionary của Python.',
+        'Khi bạn tra cứu một từ trong từ điển online, ứng dụng đang sử dụng dictionary để tìm nhanh định nghĩa dựa trên từ khóa bạn nhập.',
+        'Trong các ứng dụng thương mại điện tử, thông tin của một sản phẩm (tên, giá, mô tả, hình ảnh) thường được cấu trúc dưới dạng một dictionary.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Hòa Bình',
+      title: 'Chủ tịch Tập đoàn',
+      company: 'NextTech Group',
+      imageUrl: '/images/career/nguyen-hoa-binh.jpg',
+      quote:
+        'Trong thế giới số, mọi thứ đều có thể được ánh xạ. Dictionary là công cụ mạnh mẽ để tạo ra các ánh xạ đó, kết nối dữ liệu và tạo ra thông tin có giá trị. Hiểu nó là hiểu cách thông tin được tổ chức trong kỷ nguyên số.',
+    },
+    quizzes: [
+      {
+        question: 'Để lấy giá trị tương ứng với key "age" trong một dictionary có tên là `person`, bạn sẽ dùng cú pháp nào?',
+        options: ['person(age)', 'person.age', 'person["age"]', 'person.get_age()'],
+        correctAnswerIndex: 2,
+        explanation: 'Cú pháp `dictionary[key]` là cách cơ bản và trực tiếp nhất để truy cập giá trị của một key trong dictionary.',
+      },
     ],
   },
   {
@@ -680,19 +773,15 @@ if choice == "1":
 elif choice == "2":
     filename = input("Tên file log: ")
     analyze_log(filename)`,
-        requirements: [
+        procedure: [
           'Đọc và parse log files',
           'Đếm các loại log levels',
           'Tìm và liệt kê errors',
           'Tạo báo cáo ra file mới',
           'Xử lý exceptions khi đọc file',
         ],
-        hints: [
-          'Dùng with open() để tự động đóng file',
-          'split() để tách các phần của log entry',
-          'Counter từ collections để đếm',
-          'datetime để timestamp báo cáo',
-        ],
+        expectedResults:
+          'Dùng with open() để tự động đóng file. split() để tách các phần của log entry. Counter từ collections để đếm. datetime để timestamp báo cáo.',
       },
     ],
     realWorldApplications: [
@@ -702,6 +791,37 @@ elif choice == "2":
       'Backup và restore systems',
       'Report generation',
       'Data migration tools',
+    ],
+    vietnamContext: {
+      title: 'Xử lý File trong Công việc',
+      content: [
+        'Các công ty tài chính, ngân hàng thường xuyên phải xử lý các file CSV hoặc Excel chứa dữ liệu giao dịch hàng ngày.',
+        'Lập trình viên web cần đọc các file cấu hình (ví dụ: `.env`, `config.json`) để lấy thông tin kết nối cơ sở dữ liệu, API keys...',
+        'Các nhà phân tích dữ liệu viết script Python để đọc file log từ server, phân tích hành vi người dùng và tìm kiếm lỗi.',
+        'Tự động hóa văn phòng: viết script để đọc dữ liệu từ một file text và điền vào một mẫu báo cáo Word là một ứng dụng phổ biến.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lưu Danh Anh Vũ',
+      title: 'Data Engineering Manager',
+      company: 'Amanotes',
+      imageUrl: '/images/career/luu-danh-anh-vu.jpg',
+      quote:
+        'Dữ liệu là dầu mỏ của thế kỷ 21, và các file chính là những mỏ dầu. Kỹ năng đọc, xử lý và trích xuất thông tin từ hàng terabyte dữ liệu file mỗi ngày là công việc cốt lõi của một kỹ sư dữ liệu tại Amanotes.',
+    },
+    quizzes: [
+      {
+        question: 'Tại sao nên sử dụng `with open(...) as f:` khi làm việc với file trong Python?',
+        options: [
+          'Để file trông đẹp hơn',
+          'Nó giúp file được mở nhanh hơn',
+          'Nó tự động đóng file sau khi khối lệnh kết thúc, kể cả khi có lỗi xảy ra',
+          'Nó chỉ hoạt động với file text',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Sử dụng `with` statement đảm bảo rằng file sẽ luôn được đóng một cách an toàn, giúp tránh rò rỉ tài nguyên và các lỗi tiềm ẩn, làm cho code của bạn an toàn và đáng tin cậy hơn.',
+      },
     ],
   },
   {
@@ -820,19 +940,15 @@ def demo_bank_system():
     acc2.get_statement()
 
 demo_bank_system()`,
-        requirements: [
+        procedure: [
           'Class BankAccount với các methods cơ bản',
           'Encapsulation với private attributes',
           'Transaction history tracking',
           'Class SavingsAccount kế thừa BankAccount',
           'Demo system với multiple accounts',
         ],
-        hints: [
-          'Dùng _attribute để private',
-          'super() để gọi parent constructor',
-          'datetime để track transaction time',
-          'String formatting cho currency display',
-        ],
+        expectedResults:
+          'Dùng _attribute để private. super() để gọi parent constructor. datetime để track transaction time. String formatting cho currency display.',
       },
     ],
     realWorldApplications: [
@@ -842,6 +958,37 @@ demo_bank_system()`,
       'Database ORM models',
       'API client libraries',
       'GUI application structure',
+    ],
+    vietnamContext: {
+      title: 'OOP trong các Hệ thống Lớn',
+      content: [
+        'Các framework web phổ biến như Django (dùng bởi VCCorp, Tiki) được xây dựng hoàn toàn dựa trên các nguyên tắc OOP.',
+        'Trong phát triển game (ví dụ, các studio sử dụng Unity với C#, có thể áp dụng tư duy tương tự), mỗi nhân vật, vật phẩm, kẻ địch đều là một object với các thuộc tính và phương thức riêng.',
+        'Các hệ thống ngân hàng tại Việt Nam sử dụng OOP để mô hình hóa các khái niệm phức tạp như `TaiKhoan`, `GiaoDich`, `KhachHang`.',
+        'Mô hình Kế thừa (Inheritance) giúp tạo ra các phiên bản chuyên biệt, ví dụ: từ class `NhanVien` chung, có thể tạo ra `NhanVienKinhDoanh` và `NhanVienKyThuat` với các thuộc tính và hành vi riêng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Dương Lê',
+      title: 'Principal Software Engineer',
+      company: 'Salesforce',
+      imageUrl: 'https://i.pravatar.cc/150?u=duong-le',
+      quote:
+        'Lập trình hướng đối tượng không chỉ là một kỹ thuật, đó là một tư duy. Nó giúp chúng tôi ở Salesforce xây dựng các hệ thống phức tạp, dễ bảo trì và mở rộng, có khả năng phục vụ hàng triệu doanh nghiệp trên toàn cầu. Nắm vững OOP là bạn đang nói cùng một ngôn ngữ với các kỹ sư phần mềm hàng đầu thế giới.',
+    },
+    quizzes: [
+      {
+        question: 'Đóng gói (Encapsulation) trong OOP có ý nghĩa gì?',
+        options: [
+          'Làm cho code chạy chậm hơn',
+          'Che giấu thông tin và các chi tiết triển khai bên trong một object, chỉ cung cấp giao diện công khai để tương tác',
+          'Cho phép một class con thừa hưởng các thuộc tính từ class cha',
+          'Viết tất cả code vào một file duy nhất',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Đóng gói giúp bảo vệ dữ liệu của object khỏi các truy cập không hợp lệ từ bên ngoài, tăng tính bảo mật và giúp code dễ quản lý hơn vì bạn chỉ cần quan tâm đến giao diện (các hàm public) mà không cần biết chi tiết bên trong.',
+      },
     ],
   },
   {
@@ -930,19 +1077,15 @@ def compare_search_algorithms():
     print(f"Speed up: {linear_time/binary_time:.2f}x faster")
 
 compare_search_algorithms()`,
-        requirements: [
+        procedure: [
           'Implement cả iterative và recursive binary search',
           'Performance comparison với timing',
           'Handles edge cases (empty array, not found)',
           'Clear documentation và comments',
           'Test với different array sizes',
         ],
-        hints: [
-          'Array phải được sort trước',
-          'Dùng time.time() để measure performance',
-          'Mid = (left + right) // 2 tránh overflow',
-          'Test với arrays có size khác nhau',
-        ],
+        expectedResults:
+          'Array phải được sort trước. Dùng time.time() để measure performance. Mid = (left + right) // 2 tránh overflow. Test với arrays có size khác nhau.',
       },
       {
         title: 'Stack & Queue Implementation',
@@ -1010,84 +1153,38 @@ class Queue:
     def __str__(self):
         return f"Queue: {self.items}"
 
-# Undo/Redo system using Stack
-class UndoRedoSystem:
-    def __init__(self):
-        self.undo_stack = Stack()
-        self.redo_stack = Stack()
-        self.current_state = ""
-    
-    def execute_command(self, command):
-        """Execute command và save state for undo"""
-        self.undo_stack.push(self.current_state)
-        self.current_state = command
-        # Clear redo stack khi có command mới
-        self.redo_stack = Stack()
-        print(f"Executed: {command}")
-    
-    def undo(self):
-        """Undo last command"""
-        if not self.undo_stack.is_empty():
-            self.redo_stack.push(self.current_state)
-            self.current_state = self.undo_stack.pop()
-            print(f"Undid to: {self.current_state}")
-        else:
-            print("Nothing to undo")
-    
-    def redo(self):
-        """Redo last undone command"""
-        if not self.redo_stack.is_empty():
-            self.undo_stack.push(self.current_state)
-            self.current_state = self.redo_stack.pop()
-            print(f"Redid to: {self.current_state}")
-        else:
-            print("Nothing to redo")
-
-# Demo Stack & Queue
+# Demo
 def demo_stack_queue():
-    print("=== STACK DEMO ===")
-    stack = Stack()
-    stack.push("First")
-    stack.push("Second")
-    stack.push("Third")
-    print(stack)
-    print(f"Pop: {stack.pop()}")  # Third
-    print(f"Peek: {stack.peek()}")  # Second
-    print(stack)
+    print("--- Stack Demo ---")
+    s = Stack()
+    s.push(1)
+    s.push(2)
+    s.push(3)
+    print(s)
+    print(f"Pop: {s.pop()}")
+    print(f"Peek: {s.peek()}")
+    print(s)
     
-    print("\\n=== QUEUE DEMO ===")
-    queue = Queue()
-    queue.enqueue("First")
-    queue.enqueue("Second") 
-    queue.enqueue("Third")
-    print(queue)
-    print(f"Dequeue: {queue.dequeue()}")  # First
-    print(f"Front: {queue.front()}")  # Second
-    print(queue)
-    
-    print("\\n=== UNDO/REDO DEMO ===")
-    editor = UndoRedoSystem()
-    editor.execute_command("Type 'Hello'")
-    editor.execute_command("Type ' World'")
-    editor.execute_command("Delete 'World'")
-    editor.undo()  # Back to "Type ' World'"
-    editor.undo()  # Back to "Type 'Hello'"
-    editor.redo()  # Forward to "Type ' World'"
+    print("\\n--- Queue Demo ---")
+    q = Queue()
+    q.enqueue('A')
+    q.enqueue('B')
+    q.enqueue('C')
+    print(q)
+    print(f"Dequeue: {q.dequeue()}")
+    print(f"Front: {q.front()}")
+    print(q)
 
 demo_stack_queue()`,
-        requirements: [
-          'Complete Stack class với error handling',
-          'Complete Queue class với all operations',
-          'Real-world example (Undo/Redo system)',
-          'Proper exception handling',
-          'Demo function showing usage',
+        procedure: [
+          'Implement Stack class với push, pop, peek, is_empty',
+          'Implement Queue class với enqueue, dequeue, front, is_empty',
+          'Handle empty state exceptions',
+          'Viết demo code để test',
+          'Thêm docstrings và comments',
         ],
-        hints: [
-          'List.append() và list.pop() cho Stack',
-          'List.append() và list.pop(0) cho Queue',
-          'Check empty trước khi pop/dequeue',
-          'Undo/Redo cần 2 stacks',
-        ],
+        expectedResults:
+          'Stack: LIFO behavior. Queue: FIFO behavior. Dùng list.pop() cho stack, list.pop(0) cho queue. Raise IndexError khi empty.',
       },
       {
         title: 'Binary Tree & Tree Traversal',
@@ -1272,19 +1369,15 @@ def demo_binary_tree():
     tree.visualize()
 
 demo_binary_tree()`,
-        requirements: [
+        procedure: [
           'Complete TreeNode và BinaryTree classes',
           'All 4 traversal methods (inorder, preorder, postorder, level-order)',
           'Search, height, count_nodes methods',
           'Tree visualization method',
           'Comprehensive demo với test cases',
         ],
-        hints: [
-          'Recursion là key cho tree operations',
-          'Inorder traversal cho BST = sorted order',
-          'Level order cần queue',
-          'Height = 1 + max(left_height, right_height)',
-        ],
+        expectedResults:
+          'Recursion là key cho tree operations. Inorder traversal cho BST = sorted order. Level order cần queue. Height = 1 + max(left_height, right_height).',
       },
     ],
     realWorldApplications: [
@@ -1299,5 +1392,3 @@ demo_binary_tree()`,
     ],
   },
 ];
-
-export default pythonLessons;

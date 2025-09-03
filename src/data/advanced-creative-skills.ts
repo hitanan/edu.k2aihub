@@ -119,6 +119,37 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         type: 'Tutorial',
       },
     ],
+    vietnamContext: {
+      title: 'Thiết kế đồ họa và Bản sắc thương hiệu tại Việt Nam',
+      content: [
+        'Nhu cầu xây dựng bản sắc thương hiệu chuyên nghiệp đang bùng nổ cùng với làn sóng khởi nghiệp tại Việt Nam.',
+        'Các nhà thiết kế cần cân bằng giữa thẩm mỹ hiện đại và các yếu tố văn hóa truyền thống (như họa tiết trống đồng, hoa sen) để tạo ra sản phẩm phù hợp với thị trường nội địa.',
+        'Hiểu biết về ngành công nghiệp in ấn và sản xuất bao bì tại Việt Nam là một lợi thế lớn để đưa thiết kế từ ý tưởng đến sản phẩm thực tế.',
+      ],
+    },
+    careerConnect: {
+      name: 'Tôn Thất An',
+      title: 'Giám đốc Sáng tạo',
+      company: 'Rice Creative',
+      imageUrl: 'https://i.pravatar.cc/150?u=tonthatan',
+      quote:
+        'Thiết kế tốt không chỉ đẹp, nó phải kể được một câu chuyện. Tại Việt Nam, chúng ta có vô vàn câu chuyện văn hóa để kể qua từng sản phẩm thiết kế.',
+    },
+    quizzes: [
+      {
+        question:
+          'Trong thiết kế bộ nhận diện thương hiệu, "Brand Guidelines" (bộ quy chuẩn thương hiệu) dùng để làm gì?',
+        options: [
+          'Chỉ để trình bày với khách hàng',
+          'Đảm bảo tính nhất quán của thương hiệu trên mọi ấn phẩm',
+          'Là một file chứa tất cả các logo',
+          'Để đăng ký bản quyền thương hiệu',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Brand Guidelines là tài liệu cốt lõi, hướng dẫn cách sử dụng các yếu tố thương hiệu (logo, màu sắc, font chữ) một cách nhất quán, giúp xây dựng hình ảnh chuyên nghiệp và dễ nhận biết.',
+      },
+    ],
   },
   {
     id: 'video-production-editing',
@@ -199,6 +230,36 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         innovations: ['Drone cinematography', '360-degree virtual tours', 'Lifestyle storytelling approach'],
       },
     ],
+    vietnamContext: {
+      title: 'Sản xuất Video trong Kỷ nguyên số tại Việt Nam',
+      content: [
+        'Sự thống trị của các nền tảng như YouTube, Facebook và đặc biệt là TikTok đã tạo ra một "cơn khát" nội dung video khổng lồ tại Việt Nam.',
+        'Các thương hiệu Việt Nam ngày càng đầu tư mạnh vào video marketing, từ các TVC quảng cáo đến các video review sản phẩm, nội dung hướng dẫn.',
+        'Nghề "Creator" (nhà sáng tạo nội dung) đang trở thành một lựa chọn nghề nghiệp hấp dẫn cho giới trẻ, với nhiều cơ hội kiếm tiền từ quảng cáo, tài trợ.',
+      ],
+    },
+    careerConnect: {
+      name: 'Helly Tống',
+      title: 'Người mẫu, Doanh nhân & Nhà sáng tạo nội dung',
+      company: 'The Yên Concept',
+      imageUrl: 'https://i.pravatar.cc/150?u=hellytong',
+      quote:
+        'Video là ngôn ngữ mạnh mẽ nhất để kết nối cảm xúc. Một video hay có thể truyền tải thông điệp của thương hiệu và chạm đến trái tim của hàng triệu người xem.',
+    },
+    quizzes: [
+      {
+        question: 'Trong sản xuất video, "B-roll" là gì?',
+        options: [
+          'Cảnh quay chính của nhân vật',
+          'Các cảnh quay phụ để minh họa, làm phong phú thêm cho câu chuyện',
+          'Bản nháp đầu tiên của video',
+          'Âm thanh nền của video',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'B-roll là những cảnh quay bổ sung, không phải là cảnh quay chính (A-roll). Nó giúp video trở nên sinh động hơn, che đi các lỗi cắt ghép và cung cấp thêm ngữ cảnh cho người xem.',
+      },
+    ],
   },
   {
     id: 'audio-production-podcasting',
@@ -268,6 +329,36 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
       'Audio editing for content creators',
       'Corporate audio branding projects',
       'E-learning và educational content narration',
+    ],
+    vietnamContext: {
+      title: 'Thị trường Âm thanh và Podcasting tại Việt Nam',
+      content: [
+        'Thị trường podcast tại Việt Nam đang trong giai đoạn đầu phát triển nhưng có tiềm năng rất lớn, đặc biệt là các nội dung về phát triển bản thân, kinh doanh và văn hóa.',
+        'Các nền tảng như Spotify, Apple Podcasts và ứng dụng nội địa Voiz FM đang tích cực đầu tư vào nội dung podcast tiếng Việt.',
+        'Nhu cầu về giọng đọc quảng cáo (voice-over) và lồng tiếng cho video, game, sách nói cũng đang tăng cao, tạo cơ hội cho những người có chất giọng tốt và kỹ năng diễn xuất.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Hữu Trí',
+      title: 'Host',
+      company: 'The Present Writer Podcast',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyenhuutri',
+      quote:
+        'Âm thanh có một sức mạnh đặc biệt: nó tạo ra sự thân mật. Khi bạn nghe một podcast, bạn cảm thấy như đang có một cuộc trò chuyện riêng tư với người nói. Đó là chìa khóa để xây dựng một cộng đồng trung thành.',
+    },
+    quizzes: [
+      {
+        question: 'Trong sản xuất âm thanh, "Normalization" là quá trình gì?',
+        options: [
+          'Loại bỏ tạp âm',
+          'Tăng hoặc giảm âm lượng của toàn bộ file âm thanh đến một mức nhất định',
+          'Thêm hiệu ứng vang (reverb)',
+          'Cắt bỏ những đoạn im lặng',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Normalization điều chỉnh âm lượng đỉnh (peak) hoặc âm lượng trung bình (RMS) của một file audio lên một mức tiêu chuẩn, giúp các file âm thanh khác nhau có độ lớn đồng đều hơn khi phát.',
+      },
     ],
   },
   {
@@ -348,6 +439,36 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
       'Email marketing campaign development',
       'Corporate communication và PR writing',
     ],
+    vietnamContext: {
+      title: 'Sáng tạo nội dung và Copywriting cho thị trường Việt',
+      content: [
+        'Content "bắt trend" trên mạng xã hội là một kỹ năng quan trọng, nhưng cần phải phù hợp với hình ảnh thương hiệu.',
+        'Viết nội dung chuẩn SEO cho tiếng Việt đòi hỏi sự am hiểu về cách người Việt tìm kiếm thông tin, bao gồm cả các từ địa phương và tiếng lóng.',
+        'Người tiêu dùng Việt Nam thường bị ảnh hưởng bởi các câu chuyện cảm xúc và đánh giá từ cộng đồng (social proof), đây là yếu tố quan trọng trong copywriting.',
+      ],
+    },
+    careerConnect: {
+      name: 'Linh Phan',
+      title: 'Tác giả & Chuyên gia Xây dựng thương hiệu cá nhân',
+      company: 'The Present Writer',
+      imageUrl: 'https://i.pravatar.cc/150?u=linhphan',
+      quote:
+        'Con chữ là công cụ để xây dựng niềm tin. Trong một thế giới đầy tiếng ồn, một bài viết chân thành, sâu sắc và giải quyết được vấn đề của độc giả sẽ luôn có giá trị.',
+    },
+    quizzes: [
+      {
+        question: 'Trong copywriting, "Call to Action" (CTA) là gì?',
+        options: [
+          'Tiêu đề của bài viết',
+          'Đoạn mô tả sản phẩm',
+          'Lời kêu gọi, hướng dẫn người đọc thực hiện một hành động cụ thể',
+          'Tên của thương hiệu',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'CTA là một yếu tố cực kỳ quan trọng, nó chỉ cho người đọc biết họ cần làm gì tiếp theo, ví dụ: "Mua ngay", "Đăng ký tư vấn", "Tải tài liệu". Một CTA rõ ràng và hấp dẫn sẽ quyết định hiệu quả của một bài quảng cáo.',
+      },
+    ],
   },
   {
     id: 'photography-visual-storytelling',
@@ -421,6 +542,36 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
       'Product photography for e-commerce platforms',
       'Food photography cho restaurant industry',
       'Corporate photography và branding projects',
+    ],
+    vietnamContext: {
+      title: 'Nhiếp ảnh và Kể chuyện bằng hình ảnh tại Việt Nam',
+      content: [
+        'Thị trường e-commerce phát triển mạnh mẽ kéo theo nhu cầu lớn về chụp ảnh sản phẩm chuyên nghiệp.',
+        'Nhiếp ảnh ẩm thực là một lĩnh vực rất tiềm năng, khi các nhà hàng, quán cà phê ngày càng chú trọng vào hình ảnh trên mạng xã hội và các ứng dụng giao đồ ăn.',
+        'Kể chuyện bằng hình ảnh về văn hóa, con người và danh lam thắng cảnh Việt Nam luôn là một chủ đề hấp dẫn, có thể thu hút cả khách hàng trong nước và quốc tế.',
+      ],
+    },
+    careerConnect: {
+      name: 'Trần Tuấn Việt',
+      title: 'Nhiếp ảnh gia',
+      company: 'National Geographic',
+      imageUrl: 'https://i.pravatar.cc/150?u=trantuanviet',
+      quote:
+        'Một bức ảnh không chỉ ghi lại một khoảnh khắc, nó phải kể một câu chuyện. Hãy tìm kiếm những câu chuyện ẩn sau vẻ đẹp của Việt Nam và kể lại nó qua ống kính của bạn.',
+    },
+    quizzes: [
+      {
+        question: 'Trong nhiếp ảnh, "Tam giác phơi sáng" (Exposure Triangle) bao gồm ba yếu tố nào?',
+        options: [
+          'Tốc độ màn trập, Tiêu cự, ISO',
+          'Khẩu độ, Tốc độ màn trập, ISO',
+          'Cân bằng trắng, Khẩu độ, Tiêu cự',
+          'ISO, Cân bằng trắng, Tốc độ màn trập',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Tam giác phơi sáng là khái niệm cơ bản nhất trong nhiếp ảnh, bao gồm Khẩu độ (Aperture), Tốc độ màn trập (Shutter Speed) và ISO. Việc hiểu và cân bằng ba yếu tố này là chìa khóa để kiểm soát độ sáng của bức ảnh.',
+      },
     ],
   },
 ];

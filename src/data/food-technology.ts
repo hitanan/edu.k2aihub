@@ -1,4 +1,3 @@
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from './educationalGames';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 export interface FoodTechnologyLesson extends BaseLessonData {
@@ -154,9 +153,44 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
         type: 'Hướng dẫn kỹ thuật',
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'food-tech-innovator')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'An toàn thực phẩm tại Việt Nam: Thách thức và Cơ hội',
+      content: [
+        'Việt Nam đang nỗ lực cải thiện an toàn vệ sinh thực phẩm, đặc biệt là với thực phẩm đường phố và các chợ truyền thống.',
+        'Các tiêu chuẩn VietGAP (Thực hành sản xuất nông nghiệp tốt) đang được khuyến khích áp dụng rộng rãi để đảm bảo chất lượng nông sản.',
+        'Nhiều doanh nghiệp lớn như Vinamilk, TH True Milk, Minh Phú đã đầu tư mạnh vào hệ thống quản lý chất lượng theo tiêu chuẩn quốc tế để phục vụ xuất khẩu.',
+        'Truy xuất nguồn gốc bằng mã QR đang trở nên phổ biến, giúp người tiêu dùng kiểm tra thông tin sản phẩm từ trang trại đến bàn ăn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Thị Bích',
+      title: 'Trưởng phòng Quản lý Chất lượng (QA/QC)',
+      company: 'Công ty CP Thủy sản Minh Phú',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-bich',
+      quote:
+        'Công việc của tôi là đảm bảo mỗi con tôm xuất khẩu đều đáp ứng những tiêu chuẩn khắt khe nhất của thị trường Nhật Bản, EU và Mỹ. Chúng tôi áp dụng HACCP và nhiều hệ thống khác để kiểm soát mọi rủi ro, từ nguồn nước nuôi trồng đến nhiệt độ container. Đó là trách nhiệm lớn để giữ vững uy tín cho thương hiệu Việt.',
+    },
+    quizzes: [
+      {
+        question: 'HACCP là viết tắt của từ gì?',
+        options: [
+          'Hazard Analysis and Critical Control Points',
+          'Healthy And Clean Consumption Practices',
+          'High-tech Agricultural Control Process',
+          'Hệ thống An toàn và Kiểm soát Chất lượng Thực phẩm',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'HACCP là viết tắt của Hazard Analysis and Critical Control Points (Phân tích mối nguy và Điểm kiểm soát tới hạn), một hệ thống quản lý an toàn thực phẩm được công nhận trên toàn cầu.',
+      },
+      {
+        question: 'Tiêu chuẩn nào là thực hành sản xuất nông nghiệp tốt tại Việt Nam?',
+        options: ['ISO 22000', 'HACCP', 'VietGAP', 'GlobalG.A.P.'],
+        correctAnswerIndex: 2,
+        explanation:
+          'VietGAP (Vietnamese Good Agricultural Practices) là bộ tiêu chuẩn do Bộ Nông nghiệp và Phát triển Nông thôn Việt Nam ban hành, nhằm đảm bảo nông sản an toàn và chất lượng.',
+      },
+    ],
   },
   {
     id: 'fermentation-technology-vietnamese-foods',
@@ -315,12 +349,44 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
         type: 'Cơ sở dữ liệu tham khảo',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'biotech-lab-simulation'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'food-tech-innovator'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'Văn hóa ẩm thực lên men của Việt Nam',
+      content: [
+        'Nước mắm là "linh hồn" của ẩm thực Việt, với các làng nghề nổi tiếng như Phú Quốc, Phan Thiết, Cát Hải.',
+        'Tương Bần (Hưng Yên) là một loại tương lên men từ đậu nành và gạo nếp, một đặc sản không thể thiếu trong nhiều món ăn miền Bắc.',
+        'Mắm tôm, dù có mùi vị nồng, là gia vị quan trọng trong các món như bún đậu mắm tôm, chả cá Lã Vọng.',
+        'Các công ty như Masan và Chin-su đang áp dụng công nghệ hiện đại để sản xuất nước mắm và các sản phẩm lên men khác ở quy mô công nghiệp nhưng vẫn giữ hương vị truyền thống.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Lê Anh Quân',
+      title: 'Chuyên gia Nghiên cứu và Phát triển (R&D)',
+      company: 'Masan Consumer',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-anh-quan',
+      quote:
+        'Thách thức lớn nhất của chúng tôi là làm sao để sản xuất hàng triệu chai nước mắm mỗi năm mà vẫn giữ được hương vị "như mẹ làm". Chúng tôi phải nghiên cứu sâu về các chủng vi sinh vật, kiểm soát nhiệt độ, độ mặn một cách chính xác để quá trình lên men diễn ra hoàn hảo trong các bồn chứa khổng lồ.',
+    },
+    quizzes: [
+      {
+        question: 'Yếu tố nào là quan trọng nhất tạo nên hương vị đặc trưng (umami) của nước mắm?',
+        options: [
+          'Độ mặn của muối',
+          'Axit amin từ quá trình phân giải protein cá',
+          'Màu sắc của nước mắm',
+          'Loại cá sử dụng',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Hương vị umami đậm đà của nước mắm chủ yếu đến từ các axit amin, đặc biệt là glutamate, được tạo ra khi enzyme từ chính con cá phân giải protein trong quá trình lên men kéo dài.',
+      },
+      {
+        question: 'Sản phẩm nào sau đây KHÔNG phải là thực phẩm lên men truyền thống của Việt Nam?',
+        options: ['Tương Bần', 'Nước tương (Xì dầu)', 'Mắm tôm', 'Chao'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Nước tương (xì dầu) có nguồn gốc từ Trung Quốc, mặc dù rất phổ biến nhưng không phải là sản phẩm lên men có nguồn gốc truyền thống của Việt Nam như tương, mắm, chao.',
+      },
+    ],
   },
   {
     id: 'molecular-gastronomy-food-innovation',
@@ -460,9 +526,49 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
         type: 'Nền tảng công nghiệp',
       },
     ],
-    relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'virtual-chemistry-lab-3d')]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'Ẩm thực phân tử và sự sáng tạo trong ẩm thực Việt',
+      content: [
+        'Một số nhà hàng cao cấp tại TP.HCM và Hà Nội đã bắt đầu áp dụng kỹ thuật ẩm thực phân tử để làm mới các món ăn truyền thống, tạo ra trải nghiệm độc đáo.',
+        'Các đầu bếp Việt Nam đang sử dụng kỹ thuật này để tạo ra "phở dạng viên", "trứng cá muối nước mắm" hay "bọt rau thơm".',
+        'Đây là một lĩnh vực mới mẻ, mở ra cơ hội cho các đầu bếp trẻ Việt Nam sáng tạo và nâng tầm ẩm thực nước nhà trên bản đồ thế giới.',
+        'Thách thức là làm sao để ứng dụng kỹ thuật hiện đại mà không làm mất đi "hồn cốt" và hương vị đặc trưng của món ăn Việt.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chef Peter Cường Franklin',
+      title: 'Bếp trưởng & Người sáng lập',
+      company: 'Anan Saigon & Nhau Nhau Bar',
+      imageUrl: 'https://i.pravatar.cc/150?u=peter-cuong-franklin',
+      quote:
+        'Tôi gọi phong cách của mình là "Cuisine Mới". Tôi sử dụng các kỹ thuật hiện đại, bao gồm cả ẩm thực phân tử, để kể lại câu chuyện về các món ăn đường phố Việt Nam. Một ví dụ là món "phở 100 đô" của chúng tôi, nơi mỗi thành phần đều được nâng cấp bằng kỹ thuật nấu ăn tiên tiến để tạo ra một trải nghiệm phở đỉnh cao.',
+    },
+    quizzes: [
+      {
+        question: 'Kỹ thuật nào trong ẩm thực phân tử dùng để tạo ra các viên lỏng có vỏ mỏng bên ngoài?',
+        options: [
+          'Tạo gel (Gelification)',
+          'Tạo bọt (Emulsification)',
+          'Tạo hình cầu (Spherification)',
+          'Nấu chậm (Sous-vide)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Tạo hình cầu (Spherification) là kỹ thuật đặc trưng của ẩm thực phân tử, sử dụng phản ứng giữa natri alginat và canxi clorua để tạo ra một lớp màng gel mỏng xung quanh một chất lỏng, tạo thành các viên "trứng cá".',
+      },
+      {
+        question: 'Mục đích chính của việc áp dụng ẩm thực phân tử vào món ăn truyền thống là gì?',
+        options: [
+          'Để làm cho món ăn rẻ hơn',
+          'Để thay đổi hoàn toàn hương vị gốc',
+          'Để tạo ra trải nghiệm mới về kết cấu, hình thức và hương vị trong khi vẫn tôn trọng bản chất của món ăn',
+          'Để nấu ăn nhanh hơn',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Mục tiêu của ẩm thực phân tử không phải là phá hủy hương vị truyền thống, mà là để khám phá và mang đến những trải nghiệm mới lạ về mặt cảm quan (kết cấu, hình thức, nhiệt độ) cho thực khách, làm cho món ăn quen thuộc trở nên thú vị hơn.',
+      },
+    ],
   },
   {
     id: 'sustainable-food-production',
@@ -600,11 +706,39 @@ export const foodTechnologyLessons: FoodTechnologyLesson[] = [
         type: 'Sáng kiến của Chính phủ',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'renewable-energy-manager'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-modeling'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    vietnamContext: {
+      title: 'Nông nghiệp bền vững ở Việt Nam',
+      content: [
+        'Mô hình lúa-tôm ở Đồng bằng sông Cửu Long là một ví dụ điển hình về nông nghiệp thích ứng với biến đổi khí hậu, mang lại hiệu quả kinh tế cao.',
+        'Các trang trại hữu cơ ở Đà Lạt, Lâm Đồng đang cung cấp rau củ sạch cho các thành phố lớn, đáp ứng nhu cầu về thực phẩm an toàn.',
+        'Chính phủ Việt Nam đang thúc đẩy kinh tế tuần hoàn trong nông nghiệp, khuyến khích việc tái sử dụng phụ phẩm nông nghiệp để làm phân bón, thức ăn chăn nuôi.',
+        'Các tổ chức phi chính phủ và doanh nghiệp xã hội đang tích cực triển khai các dự án giảm lãng phí thực phẩm và hỗ trợ nông dân canh tác bền vững.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Nguyễn Văn Tâm',
+      title: 'Giám đốc Hợp tác xã Nông nghiệp Hữu cơ',
+      company: 'HTX Rau hữu cơ Đà Lạt',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-van-tam',
+      quote:
+        'Chúng tôi không chỉ trồng rau, chúng tôi còn nuôi dưỡng đất. Bằng cách không sử dụng hóa chất, chúng tôi tạo ra sản phẩm an toàn cho người tiêu dùng và bảo vệ môi trường. Việc xây dựng một chuỗi cung ứng minh bạch, kết nối trực tiếp với người mua giúp nông dân chúng tôi có thu nhập ổn định và tự hào về công việc của mình.',
+    },
+    quizzes: [
+      {
+        question: 'Mô hình kinh tế nào sau đây tập trung vào việc giảm thiểu chất thải và tái sử dụng tài nguyên?',
+        options: ['Kinh tế tuyến tính', 'Kinh tế thị trường', 'Kinh tế tuần hoàn', 'Kinh tế kế hoạch hóa'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Kinh tế tuần hoàn (Circular Economy) là một mô hình kinh tế trong đó các hoạt động thiết kế, sản xuất và dịch vụ đặt ra mục tiêu kéo dài tuổi thọ của vật chất, và loại bỏ tác động tiêu cực đến môi trường.',
+      },
+      {
+        question:
+          'Mô hình canh tác nào ở Đồng bằng Sông Cửu Long được xem là một giải pháp bền vững thích ứng với biến đổi khí hậu?',
+        options: ['Thâm canh 3 vụ lúa', 'Nuôi cá tra công nghiệp', 'Mô hình lúa - tôm', 'Trồng cây ăn quả'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Mô hình lúa - tôm, trong đó người nông dân trồng lúa vào mùa mưa (nước ngọt) và nuôi tôm vào mùa khô (nước lợ), là một cách canh tác thông minh giúp tận dụng điều kiện tự nhiên thay đổi và giảm thiểu rủi ro, tăng thu nhập.',
+      },
+    ],
   },
 ];

@@ -8,12 +8,12 @@ import * as THREE from 'three';
 import { useAdvancedGameStore } from '@/stores/advancedGameStore';
 
 // Qubit component với 3D visualization
-function Qubit3D({ 
-  position, 
-  state, 
-  isEntangled, 
+function Qubit3D({
+  position,
+  state,
+  isEntangled,
   onClick,
-  rotation = [0, 0, 0]
+  rotation = [0, 0, 0],
 }: {
   position: [number, number, number];
   state: 'superposition' | '0' | '1';
@@ -74,12 +74,7 @@ function Qubit3D({
       {/* Entanglement indicator */}
       {isEntangled && (
         <Sphere args={[0.5, 16, 16]} position={[0, 0, 0]}>
-          <meshBasicMaterial
-            color="#00ffff"
-            transparent
-            opacity={0.1}
-            wireframe
-          />
+          <meshBasicMaterial color="#00ffff" transparent opacity={0.1} wireframe />
         </Sphere>
       )}
 
@@ -94,25 +89,31 @@ function Qubit3D({
 }
 
 // Quantum Gate component
-function QuantumGate({ 
-  position, 
-  type, 
-  onClick 
-}: { 
-  position: [number, number, number]; 
-  type: string; 
+function QuantumGate({
+  position,
+  type,
+  onClick,
+}: {
+  position: [number, number, number];
+  type: string;
   onClick: () => void;
 }) {
   const [hovered, setHovered] = useState(false);
 
   const color = useMemo(() => {
     switch (type) {
-      case 'Hadamard': return '#ff8800';
-      case 'Pauli-X': return '#ff0000';
-      case 'Pauli-Y': return '#00ff00';
-      case 'Pauli-Z': return '#0000ff';
-      case 'CNOT': return '#ff00ff';
-      default: return '#888888';
+      case 'Hadamard':
+        return '#ff8800';
+      case 'Pauli-X':
+        return '#ff0000';
+      case 'Pauli-Y':
+        return '#00ff00';
+      case 'Pauli-Z':
+        return '#0000ff';
+      case 'CNOT':
+        return '#ff00ff';
+      default:
+        return '#888888';
     }
   }, [type]);
 
@@ -125,20 +126,22 @@ function QuantumGate({
         onPointerOut={() => setHovered(false)}
         scale={hovered ? 1.1 : 1}
       >
-        <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={0.2}
-        />
+        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.2} />
       </Box>
-      
+
       <Html position={[0, 0, 0.15]} center>
         <div className="text-white text-xs font-bold">
-          {type === 'Hadamard' ? 'H' : 
-           type === 'Pauli-X' ? 'X' :
-           type === 'Pauli-Y' ? 'Y' :
-           type === 'Pauli-Z' ? 'Z' :
-           type === 'CNOT' ? '⊕' : type}
+          {type === 'Hadamard'
+            ? 'H'
+            : type === 'Pauli-X'
+              ? 'X'
+              : type === 'Pauli-Y'
+                ? 'Y'
+                : type === 'Pauli-Z'
+                  ? 'Z'
+                  : type === 'CNOT'
+                    ? '⊕'
+                    : type}
         </div>
       </Html>
     </group>
@@ -146,17 +149,21 @@ function QuantumGate({
 }
 
 // Quantum circuit visualization với đường connection
-function QuantumCircuit({ qubits }: { qubits: { id: string; position: [number, number, number]; state: string; entangled: boolean }[] }) {
+function QuantumCircuit({
+  qubits,
+}: {
+  qubits: { id: string; position: [number, number, number]; state: string; entangled: boolean }[];
+}) {
   const positions: number[] = useMemo(() => {
     const posArray: number[] = [];
-    
+
     // Tạo circuit lines nối các qubits
     qubits.forEach((qubit, index) => {
       const y = index * 2 - (qubits.length - 1);
       posArray.push(-5, y, 0);
       posArray.push(5, y, 0);
     });
-    
+
     return posArray;
   }, [qubits]);
 
@@ -180,25 +187,25 @@ function QuantumControlPanel() {
     {
       id: 'superposition',
       name: 'Quantum Superposition',
-      description: 'Tạo qubit ở trạng thái superposition bằng Hadamard gate'
+      description: 'Tạo qubit ở trạng thái superposition bằng Hadamard gate',
     },
     {
       id: 'entanglement',
       name: 'Quantum Entanglement',
-      description: 'Tạo cặp qubit entangled bằng CNOT gate'
+      description: 'Tạo cặp qubit entangled bằng CNOT gate',
     },
     {
       id: 'teleportation',
       name: 'Quantum Teleportation',
-      description: 'Teleport trạng thái qubit qua entanglement'
-    }
+      description: 'Teleport trạng thái qubit qua entanglement',
+    },
   ];
 
   const addNewQubit = () => {
     const position: [number, number, number] = [
       (quantum.qubits.length % 3) * 2 - 2,
       Math.floor(quantum.qubits.length / 3) * 2,
-      0
+      0,
     ];
     addQubit(position);
   };
@@ -206,7 +213,7 @@ function QuantumControlPanel() {
   const runExperiment = (experimentId: string) => {
     switch (experimentId) {
       case 'superposition':
-        quantum.qubits.forEach(qubit => {
+        quantum.qubits.forEach((qubit) => {
           updateQubitState(qubit.id, 'superposition');
         });
         break;
@@ -216,8 +223,8 @@ function QuantumControlPanel() {
             qubits: quantum.qubits.map((qubit, index) => ({
               ...qubit,
               entangled: index < 2,
-              state: 'superposition'
-            }))
+              state: 'superposition',
+            })),
           });
         }
         break;
@@ -227,14 +234,11 @@ function QuantumControlPanel() {
   return (
     <div className="absolute top-4 left-4 bg-black bg-opacity-70 text-white p-4 rounded-lg max-w-sm">
       <h3 className="text-lg font-bold mb-3 text-purple-300">🔮 Quantum Computing Lab</h3>
-      
+
       {/* Qubit Controls */}
       <div className="mb-4">
         <h4 className="font-semibold mb-2">Qubit Management</h4>
-        <button
-          onClick={addNewQubit}
-          className="bg-purple-600 hover:bg-purple-500 px-3 py-1 rounded mr-2"
-        >
+        <button onClick={addNewQubit} className="bg-purple-600 hover:bg-purple-500 px-3 py-1 rounded mr-2">
           + Add Qubit
         </button>
         <span className="text-sm">Qubits: {quantum.qubits.length}</span>
@@ -249,9 +253,7 @@ function QuantumControlPanel() {
               key={gate}
               onClick={() => setSelectedGate(gate)}
               className={`px-2 py-1 rounded text-xs ${
-                selectedGate === gate 
-                  ? 'bg-orange-600 text-white' 
-                  : 'bg-gray-600 hover:bg-gray-500'
+                selectedGate === gate ? 'bg-orange-600 text-white' : 'bg-gray-600 hover:bg-gray-500'
               }`}
             >
               {gate}
@@ -295,7 +297,7 @@ export default function QuantumComputingVisualizer3D() {
     const handleKeyPress = (e: KeyboardEvent) => {
       switch (e.key.toLowerCase()) {
         case 'f':
-          setIsFullscreen(prev => !prev);
+          setIsFullscreen((prev) => !prev);
           break;
         case 'r':
           // Reset quantum state
@@ -308,46 +310,33 @@ export default function QuantumComputingVisualizer3D() {
   }, []);
 
   const handleQubitClick = (qubitId: string) => {
-    const qubit = quantum.qubits.find(q => q.id === qubitId);
+    const qubit = quantum.qubits.find((q) => q.id === qubitId);
     if (qubit) {
-      const nextState = qubit.state === '0' ? '1' : 
-                       qubit.state === '1' ? 'superposition' : '0';
+      const nextState = qubit.state === '0' ? '1' : qubit.state === '1' ? 'superposition' : '0';
       updateQubitState(qubitId, nextState);
     }
   };
 
   const toggleFullscreen = () => {
-    setIsFullscreen(prev => !prev);
+    setIsFullscreen((prev) => !prev);
   };
 
   return (
-    <div className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-purple-900 via-blue-900 to-black`}>
-      <Canvas
-        camera={{ position: [0, 0, 8], fov: 75 }}
-        gl={{ antialias: true, alpha: true }}
-      >
+    <div
+      className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-purple-900 via-blue-900 to-black`}
+    >
+      <Canvas camera={{ position: [0, 0, 8], fov: 75 }} gl={{ antialias: true, alpha: true }}>
         {/* Lighting */}
         <ambientLight intensity={0.6} />
         <directionalLight position={[10, 10, 5]} intensity={1} color="#ffffff" />
         <pointLight position={[-10, -10, -5]} intensity={0.5} color="#8844ff" />
 
         {/* Controls */}
-        <OrbitControls
-          enablePan={true}
-          enableZoom={true}
-          enableRotate={true}
-          maxDistance={15}
-          minDistance={3}
-        />
+        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} maxDistance={15} minDistance={3} />
 
         {/* Background quantum field effect */}
         <Sphere args={[50, 32, 32]} position={[0, 0, 0]}>
-          <meshBasicMaterial
-            color="#001122"
-            transparent
-            opacity={0.1}
-            side={2}
-          />
+          <meshBasicMaterial color="#001122" transparent opacity={0.1} side={2} />
         </Sphere>
 
         {/* Render Qubits */}
@@ -363,9 +352,7 @@ export default function QuantumComputingVisualizer3D() {
         ))}
 
         {/* Quantum Circuit Visualization */}
-        {quantum.qubits.length > 0 && (
-          <QuantumCircuit qubits={quantum.qubits} />
-        )}
+        {quantum.qubits.length > 0 && <QuantumCircuit qubits={quantum.qubits} />}
 
         {/* Grid helper */}
         <gridHelper args={[10, 10, '#444444', '#222222']} />
@@ -398,13 +385,20 @@ export default function QuantumComputingVisualizer3D() {
       <div className="absolute bottom-4 right-4 bg-black bg-opacity-70 text-white p-3 rounded max-w-xs">
         <h4 className="font-bold mb-2 text-cyan-300">ℹ️ Quantum Info</h4>
         <div className="text-sm space-y-1">
-          <div><strong>Superposition:</strong> Qubit can be in |0⟩ and |1⟩ simultaneously</div>
-          <div><strong>Entanglement:</strong> Qubits connected across space</div>
-          <div><strong>Gates:</strong> Operations that manipulate quantum states</div>
+          <div>
+            <strong>Superposition:</strong> Qubit can be in |0⟩ and |1⟩ simultaneously
+          </div>
+          <div>
+            <strong>Entanglement:</strong> Qubits connected across space
+          </div>
+          <div>
+            <strong>Gates:</strong> Operations that manipulate quantum states
+          </div>
           <div className="text-purple-300 font-semibold mt-2">
-                      <p className="text-green-400 font-mono bg-black bg-opacity-50 p-2 rounded">
-            &ldquo;Quantum computing is not just faster computing, it&rsquo;s a fundamentally different way of processing information&rdquo;
-          </p>
+            <p className="text-green-400 font-mono bg-black bg-opacity-50 p-2 rounded">
+              &ldquo;Quantum computing is not just faster computing, it&rsquo;s a fundamentally different way of
+              processing information&rdquo;
+            </p>
           </div>
         </div>
       </div>

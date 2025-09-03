@@ -11,7 +11,7 @@ import { useAdvancedGameStore } from '@/stores/advancedGameStore';
 function SmartDevice3D({
   device,
   position,
-  onClick
+  onClick,
 }: {
   device: any;
   position: [number, number, number];
@@ -30,13 +30,20 @@ function SmartDevice3D({
   const deviceColor = useMemo(() => {
     if (device.status === 'on') {
       switch (device.type) {
-        case 'light': return '#ffff88';
-        case 'thermostat': return '#ff8888';
-        case 'camera': return '#88ff88';
-        case 'sensor': return '#8888ff';
-        case 'speaker': return '#ff88ff';
-        case 'lock': return '#88ffff';
-        default: return '#ffffff';
+        case 'light':
+          return '#ffff88';
+        case 'thermostat':
+          return '#ff8888';
+        case 'camera':
+          return '#88ff88';
+        case 'sensor':
+          return '#8888ff';
+        case 'speaker':
+          return '#ff88ff';
+        case 'lock':
+          return '#88ffff';
+        default:
+          return '#ffffff';
       }
     }
     return '#444444';
@@ -67,9 +74,7 @@ function SmartDevice3D({
       case 'camera':
         return (
           <Box args={[0.3, 0.2, 0.15]}>
-            <meshStandardMaterial
-              color={device.status === 'on' ? '#444444' : '#222222'}
-            />
+            <meshStandardMaterial color={device.status === 'on' ? '#444444' : '#222222'} />
           </Box>
         );
       case 'sensor':
@@ -85,17 +90,13 @@ function SmartDevice3D({
       case 'speaker':
         return (
           <Cylinder args={[0.2, 0.2, 0.3, 16]}>
-            <meshStandardMaterial
-              color={device.status === 'on' ? '#333333' : '#111111'}
-            />
+            <meshStandardMaterial color={device.status === 'on' ? '#333333' : '#111111'} />
           </Cylinder>
         );
       case 'lock':
         return (
           <Box args={[0.1, 0.3, 0.15]}>
-            <meshStandardMaterial
-              color={device.status === 'on' ? '#888888' : '#444444'}
-            />
+            <meshStandardMaterial color={device.status === 'on' ? '#888888' : '#444444'} />
           </Box>
         );
       default:
@@ -117,7 +118,7 @@ function SmartDevice3D({
       scale={hovered ? 1.2 : 1}
     >
       <DeviceShape type={device.type} />
-      
+
       {/* Device status indicator */}
       {device.status === 'on' && (
         <Sphere args={[0.05, 8, 8]} position={[0, 0.3, 0]}>
@@ -141,13 +142,7 @@ function SmartDevice3D({
 }
 
 // 3D Room Component
-function Room3D({
-  room,
-  onDeviceClick
-}: {
-  room: any;
-  onDeviceClick: (deviceId: string) => void;
-}) {
+function Room3D({ room, onDeviceClick }: { room: any; onDeviceClick: (deviceId: string) => void }) {
   // Room walls and floor
   return (
     <group position={room.position}>
@@ -210,9 +205,7 @@ function Room3D({
 
       {/* Room name label */}
       <Html position={[0, 2.5, 0]} center>
-        <div className="text-white font-bold bg-blue-600 bg-opacity-80 px-3 py-2 rounded">
-          {room.name}
-        </div>
+        <div className="text-white font-bold bg-blue-600 bg-opacity-80 px-3 py-2 rounded">{room.name}</div>
       </Html>
     </group>
   );
@@ -226,29 +219,29 @@ function SmartHomeControlPanel() {
 
   const deviceTypes = ['light', 'thermostat', 'camera', 'sensor', 'speaker', 'lock'];
   const deviceCosts = {
-    light: 500000,      // 500k VND
+    light: 500000, // 500k VND
     thermostat: 2000000, // 2M VND
-    camera: 3000000,     // 3M VND
-    sensor: 800000,      // 800k VND
-    speaker: 1500000,    // 1.5M VND
-    lock: 2500000        // 2.5M VND
+    camera: 3000000, // 3M VND
+    sensor: 800000, // 800k VND
+    speaker: 1500000, // 1.5M VND
+    lock: 2500000, // 2.5M VND
   };
 
   const addNewDevice = () => {
     const cost = deviceCosts[selectedDeviceType as keyof typeof deviceCosts] || 500000;
-    
+
     if (smartHome.budget >= cost) {
-      const room = smartHome.rooms.find(r => r.id === selectedRoom);
+      const room = smartHome.rooms.find((r) => r.id === selectedRoom);
       if (room) {
         const position: [number, number, number] = [
           (room.devices.length % 3) - 1,
           0.5,
-          Math.floor(room.devices.length / 3) - 0.5
+          Math.floor(room.devices.length / 3) - 0.5,
         ];
-        
+
         addDevice(selectedRoom, selectedDeviceType, position);
         updateSmartHomeState({
-          budget: smartHome.budget - cost
+          budget: smartHome.budget - cost,
         });
       }
     }
@@ -261,26 +254,26 @@ function SmartHomeControlPanel() {
         name: 'Buổi sáng',
         actions: [
           { deviceId: 'all-lights', action: 'turn-on', value: 80 },
-          { deviceId: 'thermostat', action: 'set-temperature', value: 24 }
-        ]
+          { deviceId: 'thermostat', action: 'set-temperature', value: 24 },
+        ],
       },
       {
         id: 'night',
         name: 'Buổi tối',
         actions: [
           { deviceId: 'all-lights', action: 'turn-off' },
-          { deviceId: 'security', action: 'arm' }
-        ]
-      }
+          { deviceId: 'security', action: 'arm' },
+        ],
+      },
     ];
 
     // Check if scenarios already exist to prevent duplicates
-    const existingIds = new Set(smartHome.scenarios.map(s => s.id));
-    const newScenarios = scenarios.filter(scenario => !existingIds.has(scenario.id));
+    const existingIds = new Set(smartHome.scenarios.map((s) => s.id));
+    const newScenarios = scenarios.filter((scenario) => !existingIds.has(scenario.id));
 
     if (newScenarios.length > 0) {
       updateSmartHomeState({
-        scenarios: [...smartHome.scenarios, ...newScenarios]
+        scenarios: [...smartHome.scenarios, ...newScenarios],
       });
     }
   };
@@ -288,7 +281,7 @@ function SmartHomeControlPanel() {
   return (
     <div className="absolute top-4 left-4 bg-black bg-opacity-80 text-white p-4 rounded-lg max-w-sm">
       <h3 className="text-lg font-bold mb-3 text-blue-300">🏠 Smart Home Control</h3>
-      
+
       {/* Room Selection */}
       <div className="mb-4">
         <h4 className="font-semibold mb-2">Select Room</h4>
@@ -315,7 +308,8 @@ function SmartHomeControlPanel() {
         >
           {deviceTypes.map((type) => (
             <option key={type} value={type}>
-              {type.charAt(0).toUpperCase() + type.slice(1)} - {(deviceCosts[type as keyof typeof deviceCosts] / 1000).toFixed(0)}k VND
+              {type.charAt(0).toUpperCase() + type.slice(1)} -{' '}
+              {(deviceCosts[type as keyof typeof deviceCosts] / 1000).toFixed(0)}k VND
             </option>
           ))}
         </select>
@@ -337,7 +331,7 @@ function SmartHomeControlPanel() {
         >
           🤖 Create Scenarios
         </button>
-        
+
         {smartHome.scenarios.map((scenario) => (
           <button
             key={scenario.id}
@@ -393,11 +387,10 @@ export default function SmartHomeIoTSimulator3D() {
   };
 
   return (
-    <div className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900`}>
-      <Canvas
-        camera={{ position: [0, 8, 12], fov: 75 }}
-        gl={{ antialias: true, alpha: true }}
-      >
+    <div
+      className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900`}
+    >
+      <Canvas camera={{ position: [0, 8, 12], fov: 75 }} gl={{ antialias: true, alpha: true }}>
         {/* Lighting */}
         <ambientLight intensity={0.4} />
         <directionalLight position={[10, 10, 5]} intensity={0.8} color="#ffffff" />
@@ -416,11 +409,7 @@ export default function SmartHomeIoTSimulator3D() {
 
         {/* Render all rooms */}
         {smartHome.rooms.map((room) => (
-          <Room3D
-            key={room.id}
-            room={room}
-            onDeviceClick={handleDeviceClick}
-          />
+          <Room3D key={room.id} room={room} onDeviceClick={handleDeviceClick} />
         ))}
 
         {/* House exterior */}
@@ -465,10 +454,18 @@ export default function SmartHomeIoTSimulator3D() {
       <div className="absolute bottom-4 right-4 bg-black bg-opacity-80 text-white p-3 rounded max-w-xs">
         <h4 className="font-bold mb-2 text-cyan-300">🌐 IoT Info</h4>
         <div className="text-sm space-y-1">
-          <div><strong>Smart Lighting:</strong> Energy efficient LED control</div>
-          <div><strong>Climate Control:</strong> Automated temperature management</div>
-          <div><strong>Security System:</strong> Camera và sensor monitoring</div>
-          <div><strong>Home Automation:</strong> Scheduled and scenario-based control</div>
+          <div>
+            <strong>Smart Lighting:</strong> Energy efficient LED control
+          </div>
+          <div>
+            <strong>Climate Control:</strong> Automated temperature management
+          </div>
+          <div>
+            <strong>Security System:</strong> Camera và sensor monitoring
+          </div>
+          <div>
+            <strong>Home Automation:</strong> Scheduled and scenario-based control
+          </div>
           <div className="text-blue-300 font-semibold mt-2">
             &quot;Smart homes save energy and increase convenience&quot;
           </div>

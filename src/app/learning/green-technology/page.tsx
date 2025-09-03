@@ -17,23 +17,23 @@ function convertGreenTechToBase(lesson: GreenTechLesson): BaseLessonData {
     imageUrl: lesson.imageUrl,
     objectives: lesson.objectives,
     prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises.map((exercise) => ({
+    exercises: (lesson.exercises || []).map((exercise) => ({
       title: exercise.title,
       description: exercise.description,
       difficulty: exercise.difficulty,
       solution: exercise.solution,
-      materials: exercise.requirements,
-      procedure: exercise.hints,
-      expectedResults: exercise.expectedOutput,
+      materials: exercise.materials,
+      procedure: [], // No procedure data available in source
+      expectedResults: exercise.expectedResults,
     })),
     realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies.map((caseStudy) => ({
+    caseStudies: (lesson.caseStudies || []).map((caseStudy) => ({
       title: caseStudy.title,
-      organization: caseStudy.company,
-      problem: caseStudy.challenge,
+      organization: caseStudy.organization,
+      problem: caseStudy.problem,
       solution: caseStudy.solution,
-      impact: caseStudy.results,
-      innovations: caseStudy.insights,
+      impact: caseStudy.impact,
+      innovations: caseStudy.innovations,
     })),
     resources: lesson.resources,
   };

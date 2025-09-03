@@ -1,5 +1,11 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
-import { shortVideoMasteryLessons, ShortVideoMasteryLessonType } from '@/data/short-video-mastery';
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { shortVideoMasteryLessons } from '@/data/short-video-mastery';
+import { ShortVideoMasteryLessonType } from '@/data/short-video-mastery';
 import { PageProps } from '@/types';
 
 // Generate static params for all lessons
@@ -24,7 +30,7 @@ export default async function ShortVideoMasteryLessonPage({ params }: PageProps)
     secondaryColor: 'yellow',
     gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
   };
-  
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

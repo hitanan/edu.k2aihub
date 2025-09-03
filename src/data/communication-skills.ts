@@ -1,5 +1,25 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 export interface CommunicationSkillsLessonType extends BaseLessonData {
   communicationMethods: string[];
   presentationTechniques: string[];
@@ -24,6 +44,9 @@ export interface CommunicationSkillsLessonType extends BaseLessonData {
     name: string;
     description: string;
   }>;
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  quizzes?: Quiz[];
 }
 
 export const communicationSkillsLessons: CommunicationSkillsLessonType[] = [
@@ -209,6 +232,50 @@ export const communicationSkillsLessons: CommunicationSkillsLessonType[] = [
         type: 'Tool',
       },
     ],
+    vietnamContext: {
+      title: 'Nghệ thuật giao tiếp trong văn hóa Việt Nam',
+      content: [
+        'Văn hóa Việt Nam coi trọng sự khiêm tốn và giao tiếp gián tiếp. "Lời nói chẳng mất tiền mua, lựa lời mà nói cho vừa lòng nhau" là một phương châm quan trọng.',
+        'Trong kinh doanh, việc xây dựng mối quan hệ cá nhân (quan hệ) trước khi bàn bạc công việc là rất phổ biến và cần thiết.',
+        'Giao tiếp phi ngôn ngữ, như cách chào hỏi (cúi đầu nhẹ với người lớn tuổi) và duy trì khoảng cách phù hợp, đóng vai trò quan trọng trong việc thể hiện sự tôn trọng.',
+        'Thế hệ trẻ Việt Nam (Gen Z) đang dần áp dụng phong cách giao tiếp trực diện và cởi mở hơn, đặc biệt trong môi trường làm việc quốc tế và trên mạng xã hội.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Lan Anh',
+      title: 'Trưởng phòng Nhân sự',
+      company: 'Tiki Corporation',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-lan-anh',
+      quote:
+        'Trong tuyển dụng, chúng tôi không chỉ tìm kiếm ứng viên có chuyên môn giỏi, mà còn tìm những người có khả năng giao tiếp và hòa nhập văn hóa tốt. Một ứng viên biết lắng nghe, trình bày ý tưởng rõ ràng và thể hiện sự tôn trọng luôn được đánh giá cao. Kỹ năng mềm chính là chìa khóa để đi đường dài.',
+    },
+    quizzes: [
+      {
+        question:
+          'Trong văn hóa Việt Nam, yếu tố nào thường được coi trọng nhất khi bắt đầu một mối quan hệ kinh doanh?',
+        options: [
+          'Đi thẳng vào vấn đề chính',
+          'Ký hợp đồng ngay lập tức',
+          'Xây dựng mối quan hệ cá nhân và lòng tin',
+          'Thảo luận về giá cả đầu tiên',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Văn hóa kinh doanh Việt Nam rất coi trọng việc xây dựng mối quan hệ (quan hệ) và lòng tin cậy lẫn nhau trước khi tiến tới các thỏa thuận chính thức. Các buổi gặp gỡ, ăn uống không chính thức thường là bước đệm quan trọng.',
+      },
+      {
+        question: 'Lắng nghe chủ động (Active Listening) bao gồm những hành động nào sau đây?',
+        options: [
+          'Chỉ im lặng và nghe',
+          'Ngắt lời để đưa ra ý kiến của mình',
+          'Tập trung, diễn giải lại và đặt câu hỏi làm rõ',
+          'Nhìn đi chỗ khác để thể hiện sự suy ngẫm',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Lắng nghe chủ động là một quá trình đòi hỏi sự tham gia tích cực, bao gồm việc tập trung hoàn toàn vào người nói, diễn giải lại những gì bạn hiểu để xác nhận, và đặt câu hỏi để làm rõ thông tin, thể hiện sự đồng cảm.',
+      },
+    ],
   },
   {
     id: 'digital-presentation-mastery',
@@ -378,6 +445,44 @@ export const communicationSkillsLessons: CommunicationSkillsLessonType[] = [
         type: 'Reference',
       },
     ],
+    vietnamContext: {
+      title: 'Xu hướng thuyết trình số tại Việt Nam',
+      content: [
+        'Các startup công nghệ Việt Nam thường sử dụng các bài thuyết trình (pitch deck) sáng tạo, theo phong cách Silicon Valley để gọi vốn.',
+        'Trong giáo dục, các trường đại học đang tích cực áp dụng các công cụ như MS Teams, Google Classroom kết hợp với các slide tương tác để tăng hiệu quả giảng dạy từ xa.',
+        'Livestream bán hàng trên các nền tảng như Facebook, TikTok đã trở thành một hình thức thuyết trình sản phẩm cực kỳ phổ biến và hiệu quả, đòi hỏi kỹ năng trình bày lôi cuốn và tương tác tức thì.',
+        'Các nhà thiết kế và marketer Việt Nam rất ưa chuộng Canva nhờ giao diện thân thiện, kho tài nguyên phong phú và khả năng cộng tác dễ dàng để tạo ra các ấn phẩm thuyết trình chuyên nghiệp.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Phan Thanh Bình',
+      title: 'Creative Director',
+      company: 'Dentsu Creative Vietnam',
+      imageUrl: 'https://i.pravatar.cc/150?u=phan-thanh-binh',
+      quote:
+        'Trong ngành quảng cáo, một ý tưởng tuyệt vời sẽ trở nên vô nghĩa nếu bạn không thể "bán" nó cho khách hàng. Kỹ năng thuyết trình, đặc biệt là kể chuyện bằng hình ảnh, là vũ khí tối thượng. Chúng tôi dùng mọi công cụ, từ PowerPoint, Keynote đến các video motion graphic để biến ý tưởng thành những trải nghiệm không thể quên.',
+    },
+    quizzes: [
+      {
+        question: 'Kể chuyện bằng dữ liệu (Data Storytelling) hiệu quả nhất khi nào?',
+        options: [
+          'Hiển thị tất cả dữ liệu thô trên một slide',
+          'Sử dụng biểu đồ phức tạp nhất có thể',
+          'Biến dữ liệu thành một câu chuyện có ngữ cảnh, nhân vật và insight rõ ràng',
+          'Chỉ trình bày các con số mà không có diễn giải',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Data Storytelling không chỉ là trình bày dữ liệu, mà là dệt nên một câu chuyện xung quanh nó. Một câu chuyện hay cần có ngữ cảnh (bối cảnh), nhân vật (dữ liệu), xung đột (vấn đề) và giải pháp (insight), giúp khán giả dễ dàng thấu hiểu và ghi nhớ.',
+      },
+      {
+        question: 'Công cụ nào sau đây thường được dùng để tăng tương tác trong các buổi thuyết trình ảo?',
+        options: ['Microsoft Word', 'Adobe Photoshop', 'Mentimeter hoặc Slido', 'Excel'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Mentimeter và Slido là các nền tảng phổ biến cho phép người thuyết trình tạo các cuộc thăm dò ý kiến (polls), hỏi đáp (Q&A), và các đám mây từ (word clouds) để thu hút sự tham gia và nhận phản hồi trực tiếp từ khán giả trong thời gian thực.',
+      },
+    ],
   },
   {
     id: 'cross-cultural-communication',
@@ -544,6 +649,50 @@ export const communicationSkillsLessons: CommunicationSkillsLessonType[] = [
         title: 'Cross-Cultural Communication Institute',
         url: 'https://www.intercultural.org/',
         type: 'Documentation',
+      },
+    ],
+    vietnamContext: {
+      title: 'Việt Nam trong Giao tiếp Toàn cầu',
+      content: [
+        'Với việc hội nhập kinh tế sâu rộng, các công ty Việt Nam ngày càng có nhiều nhân sự làm việc trong các đội nhóm đa quốc gia, đòi hỏi kỹ năng giao tiếp đa văn hóa cao.',
+        'Nhiều bạn trẻ Việt Nam có cơ hội du học và làm việc tại nước ngoài, việc trang bị kiến thức về sốc văn hóa và các chiến lược thích ứng là cực kỳ quan trọng.',
+        'Ngành du lịch là một điểm sáng, nơi giao tiếp đa văn hóa diễn ra hàng ngày. Hướng dẫn viên du lịch, nhân viên khách sạn cần thấu hiểu kỳ vọng của du khách từ nhiều nền văn hóa khác nhau.',
+        'Các công ty FDI (đầu tư trực tiếp nước ngoài) tại Việt Nam như Samsung, Intel, LG tạo ra môi trường làm việc đa văn hóa, nơi nhân viên Việt Nam có cơ hội cọ xát và học hỏi phong cách làm việc quốc tế.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Trần Quốc Khánh',
+      title: 'Phó Chủ nhiệm Văn phòng Chính phủ, Trưởng đoàn đàm phán TPP/CPTPP',
+      company: 'Chính phủ Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-quoc-khanh',
+      quote:
+        'Đàm phán các hiệp định thương mại tự do là một quá trình giao tiếp đa văn hóa phức tạp. Chúng tôi phải hiểu sâu sắc không chỉ lợi ích kinh tế mà cả văn hóa, lịch sử, và cách tư duy của từng đối tác. Sự kiên nhẫn, linh hoạt và tôn trọng sự khác biệt là chìa khóa để đi đến một thỏa thuận mà tất cả các bên cùng có lợi.',
+    },
+    quizzes: [
+      {
+        question:
+          'Theo mô hình của Hofstede, một nền văn hóa có "Khoảng cách quyền lực" (Power Distance) cao có đặc điểm gì?',
+        options: [
+          'Mọi người đều bình đẳng',
+          'Cấp dưới dễ dàng tranh luận với cấp trên',
+          'Mọi người chấp nhận sự phân chia quyền lực không đồng đều và tôn trọng hệ thống cấp bậc',
+          'Các quyết định được đưa ra dựa trên sự đồng thuận của tập thể',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Văn hóa có khoảng cách quyền lực cao (như nhiều nước châu Á) chấp nhận và kỳ vọng rằng quyền lực được phân bổ không đồng đều. Cấp dưới thường thể hiện sự tôn trọng và ít khi thách thức cấp trên một cách công khai.',
+      },
+      {
+        question: 'Giao tiếp "high-context" (ngữ cảnh cao) là gì?',
+        options: [
+          'Thông điệp được truyền tải một cách trực tiếp và rõ ràng bằng lời nói',
+          'Phần lớn thông điệp nằm trong ngữ cảnh, mối quan hệ và các yếu tố phi ngôn ngữ',
+          'Chỉ sử dụng trong môi trường công nghệ cao',
+          'Luôn luôn sử dụng ngôn ngữ trang trọng',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Trong các nền văn hóa high-context (ví dụ: Nhật Bản, Việt Nam), thông điệp thường không được nói ra một cách trực tiếp. Người nghe cần phải dựa vào ngữ cảnh, mối quan hệ, và các tín hiệu phi ngôn ngữ để hiểu đầy đủ ý nghĩa. Ngược lại, văn hóa low-context (ví dụ: Mỹ, Đức) ưa chuộng giao tiếp trực tiếp và rõ ràng.',
       },
     ],
   },

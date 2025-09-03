@@ -1,51 +1,15 @@
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from './educationalGames';
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
-export interface FinancialLiteracyLessons {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
-  videoUrl: string;
-  imageUrl?: string;
+interface MainContent {
   technologies: string[];
   financialImpact: string;
-  resources: Resource[];
-  caseStudies: CaseStudy[];
-  relatedGames?: (EducationalGame | undefined)[];
 }
 
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  requirements: string[];
-  hints: string[];
-  expectedOutput: string;
+export interface FinancialLiteracyLesson extends BaseLessonData {
+  mainContent: MainContent;
 }
 
-interface Resource {
-  title: string;
-  url: string;
-  type: 'app' | 'platform' | 'calculator' | 'course' | 'book';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  person: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  insights: string[];
-}
-
-export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
+export const financialLiteracyLessons: FinancialLiteracyLesson[] = [
   {
     id: 'personal-budgeting-fundamentals',
     title: 'Bài 1: Lập Ngân Sách Cá Nhân & Kế Hoạch Tài Chính',
@@ -55,7 +19,17 @@ export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
     imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '90 phút',
-    financialImpact: 'Tiết kiệm 20-30% chi tiêu hàng tháng, tăng tỷ lệ tiết kiệm',
+    mainContent: {
+      financialImpact: 'Tiết kiệm 20-30% chi tiêu hàng tháng, tăng tỷ lệ tiết kiệm',
+      technologies: [
+        'Ứng dụng lập ngân sách (Mint, YNAB, Personal Capital)',
+        'Phần mềm bảng tính (Excel, Google Sheets)',
+        'Ứng dụng ngân hàng với tính năng phân loại chi tiêu',
+        'Nền tảng theo dõi đầu tư',
+        'Ứng dụng quét hóa đơn',
+        'Công cụ tính toán tài chính',
+      ],
+    },
     objectives: [
       'Thiết lập ngân sách cá nhân toàn diện với quy tắc 50/30/20',
       'Theo dõi chi tiêu và xác định các mẫu chi tiêu',
@@ -69,13 +43,43 @@ export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
       'Điện thoại thông minh hoặc máy tính để sử dụng các công cụ số',
       'Truy cập vào tài khoản ngân hàng và báo cáo tài chính',
     ],
-    technologies: [
-      'Ứng dụng lập ngân sách (Mint, YNAB, Personal Capital)',
-      'Phần mềm bảng tính (Excel, Google Sheets)',
-      'Ứng dụng ngân hàng với tính năng phân loại chi tiêu',
-      'Nền tảng theo dõi đầu tư',
-      'Ứng dụng quét hóa đơn',
-      'Công cụ tính toán tài chính',
+    vietnamContext: {
+      title: 'Quản lý tài chính cá nhân tại Việt Nam',
+      content: [
+        'Với sự phát triển của các ví điện tử như MoMo, ZaloPay, việc theo dõi chi tiêu trở nên vừa tiện lợi vừa phức tạp hơn do có nhiều nguồn chi.',
+        'Văn hóa "tiền mặt là vua" vẫn còn phổ biến, đòi hỏi phải có phương pháp ghi chép thủ công hoặc kỷ luật cao để không bỏ sót các khoản chi tiêu.',
+        'Lãi suất tiết kiệm tại các ngân hàng Việt Nam tương đối hấp dẫn so với nhiều nước, là một kênh an toàn cho người mới bắt đầu.',
+        'Thói quen tiêu dùng của giới trẻ Việt bị ảnh hưởng nhiều bởi mạng xã hội và các xu hướng "sống ảo", dễ dẫn đến chi tiêu quá mức cho các sản phẩm và trải nghiệm không thiết yếu.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lâm Minh Chánh',
+      title: 'Chuyên gia tài chính, Tác giả sách "Tài chính cá nhân cho người Việt Nam"',
+      company: 'BizUni',
+      imageUrl: 'https://i.pravatar.cc/150?u=lam-minh-chanh',
+      quote:
+        'Tự do tài chính không phải là điều gì xa vời, nó bắt đầu từ những việc nhỏ nhất như ghi chép chi tiêu và lập ngân sách. Hiểu rõ tiền của mình đi đâu về đâu là bước đầu tiên để bạn làm chủ tương lai tài chính của mình. Với người Việt trẻ, kỷ luật và kiến thức là hai chìa khóa vàng.',
+    },
+    quizzes: [
+      {
+        question: 'Quy tắc 50/30/20 trong lập ngân sách cá nhân phân bổ chi tiêu như thế nào?',
+        options: [
+          '50% cho tiết kiệm, 30% cho nhu cầu thiết yếu, 20% cho mong muốn',
+          '50% cho nhu cầu thiết yếu, 30% cho mong muốn, 20% cho tiết kiệm và trả nợ',
+          '50% cho mong muốn, 30% cho tiết kiệm, 20% cho nhu cầu thiết yếu',
+          '50% cho trả nợ, 30% cho ăn uống, 20% cho giải trí',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Quy tắc 50/30/20 là một phương pháp phổ biến, đề xuất dành 50% thu nhập cho các nhu cầu thiết yếu (nhà ở, ăn uống), 30% cho các mong muốn (giải trí, mua sắm), và 20% cho mục tiêu tài chính (tiết kiệm, đầu tư, trả nợ).',
+      },
+      {
+        question: 'Ví điện tử nào là phổ biến nhất tại Việt Nam?',
+        options: ['PayPal', 'Venmo', 'MoMo', 'Apple Pay'],
+        correctAnswerIndex: 2,
+        explanation:
+          'MoMo là một trong những ví điện tử (e-wallet) có số lượng người dùng lớn nhất và hệ sinh thái dịch vụ đa dạng nhất tại Việt Nam.',
+      },
     ],
     exercises: [
       {
@@ -242,20 +246,14 @@ export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
 - **Kiểm Tra Đăng Ký:** Đánh giá hàng quý các khoản phí định kỳ
 - **Bảo Hiểm:** Bảo vệ đầy đủ mà không mua quá mức
 - **Quỹ Sức Khỏe:** Phân bổ riêng cho các trường hợp khẩn cấp y tế`,
-        requirements: [
+        materials: [
           'Hoàn thành phân tích thu nhập và chi tiêu trong 3 tháng gần nhất',
           'Thiết lập hệ thống theo dõi số với phân loại tự động',
           'Xác định mục tiêu tài chính SMART với timeline cụ thể',
           'Tạo quy trình đánh giá hàng tháng với các KPI',
           'Triển khai tự động hóa cho tiết kiệm và thanh toán hóa đơn',
         ],
-        hints: [
-          'Sử dụng dữ liệu giao dịch ngân hàng để xác định các mẫu chi tiêu thực tế',
-          'Bắt đầu với các danh mục rộng, sau đó tinh chỉnh dựa trên việc sử dụng',
-          'Xem xét các biến động theo mùa trong kế hoạch chi tiêu',
-          'Thiết lập cảnh báo khi chi tiêu vượt ngân sách trước khi xảy ra',
-        ],
-        expectedOutput:
+        expectedResults:
           'Bảng điều khiển tài chính toàn diện với theo dõi tự động, mục tiêu rõ ràng, và các chiến lược tối ưu hóa có thể hành động',
       },
     ],
@@ -271,36 +269,30 @@ export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
         title: 'YNAB (You Need A Budget)',
         url: 'https://www.youneedabudget.com',
         type: 'app',
-        description: 'Ứng dụng lập ngân sách toàn diện với phương pháp lập ngân sách từ con số không',
       },
       {
         title: 'Mint Personal Finance',
         url: 'https://mint.intuit.com',
         type: 'platform',
-        description: 'Theo dõi tài chính miễn phí với phân loại tự động và giám sát tín dụng',
       },
     ],
     caseStudies: [
       {
         title: 'Hành Trình Thoát Nợ của Chuyên Gia Trẻ',
-        person: 'Minh, Lập Trình Viên, 26 tuổi',
-        challenge:
+        organization: 'Minh, Lập Trình Viên, 26 tuổi',
+        problem:
           'Tốt nghiệp với khoản nợ sinh viên 200 triệu VND, lạm phát lối sống cao sau khi có công việc đầu tiên, không có tiền tiết kiệm dù thu nhập 30 triệu VND/tháng',
         solution:
           'Thực hiện ngân sách chặt chẽ: chuyển đến căn hộ nhỏ hơn, tự nấu ăn, sử dụng phương pháp trả nợ tuyết lở. Phân bổ 15 triệu VND/tháng để trả nợ trong khi xây dựng quỹ khẩn cấp 1 tháng.',
-        results:
+        impact:
           'Thoát nợ trong 18 tháng, xây dựng quỹ khẩn cấp 6 tháng, bắt đầu đầu tư 8 triệu VND/tháng. Tài sản ròng tăng từ -200 triệu lên +150 triệu VND trong 3 năm.',
-        insights: [
+        innovations: [
           'Lạm phát lối sống là mối đe dọa lớn nhất đối với các chuyên gia trẻ',
           'Trả nợ quyết liệt giải phóng dòng tiền đáng kể trong dài hạn',
           'Hy sinh căn hộ nhỏ đáng giá cho sự tự do tài chính',
           'Kỹ năng nấu ăn tiết kiệm 5-8 triệu VND/tháng đồng thời cải thiện sức khỏe',
         ],
       },
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'math-puzzle'),
     ],
   },
   {
@@ -312,7 +304,17 @@ export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
     imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '150 phút',
-    financialImpact: 'Lợi nhuận hàng năm 7-10% trong dài hạn, tài sảnทbố trí',
+    mainContent: {
+      financialImpact: 'Lợi nhuận hàng năm 7-10% trong dài hạn, tài sảnทbố trí',
+      technologies: [
+        'Nền tảng đầu tư (eToro, Vanguard, Fidelity)',
+        'Công cụ phân tích cổ phiếu (Yahoo Finance, Bloomberg)',
+        'Ứng dụng theo dõi danh mục (Personal Capital, Sharesight)',
+        'Cố vấn robot (Betterment, Wealthfront)',
+        'Nền tảng bất động sản (REITs, Fundrise)',
+        'Phần mềm thuế (TurboTax, TaxAct)',
+      ],
+    },
     objectives: [
       'Hiểu các nguyên tắc cơ bản về đầu tư: rủi ro, lợi nhuận, đa dạng hóa',
       'Xây dựng danh mục đầu tư cân bằng phù hợp với độ tuổi và mức độ chấp nhận rủi ro',
@@ -326,13 +328,48 @@ export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
       'Hiểu biết về các khái niệm tài chính cơ bản',
       'Truy cập vào các nền tảng đầu tư hoặc tài khoản môi giới',
     ],
-    technologies: [
-      'Nền tảng đầu tư (eToro, Vanguard, Fidelity)',
-      'Công cụ phân tích cổ phiếu (Yahoo Finance, Bloomberg)',
-      'Ứng dụng theo dõi danh mục (Personal Capital, Sharesight)',
-      'Cố vấn robot (Betterment, Wealthfront)',
-      'Nền tảng bất động sản (REITs, Fundrise)',
-      'Phần mềm thuế (TurboTax, TaxAct)',
+    vietnamContext: {
+      title: 'Đầu tư tại thị trường Việt Nam',
+      content: [
+        'Thị trường chứng khoán Việt Nam (VN-Index) có tiềm năng tăng trưởng cao nhưng cũng đi kèm với biến động lớn, phù hợp với nhà đầu tư chấp nhận rủi ro.',
+        'Bất động sản luôn được coi là một kênh đầu tư "trú ẩn" an toàn và hấp dẫn trong tâm lý người Việt, tuy nhiên đòi hỏi vốn lớn.',
+        'Gửi tiết kiệm ngân hàng và mua vàng là hai hình thức đầu tư truyền thống, an toàn và rất phổ biến.',
+        'Các ứng dụng đầu tư như Finhay, Tikop, Infina cho phép đầu tư chứng chỉ quỹ với số vốn nhỏ, giúp giới trẻ dễ dàng tiếp cận kênh đầu tư chuyên nghiệp.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Dominic Scriven',
+      title: 'Chủ tịch, Dragon Capital',
+      company: 'Dragon Capital',
+      imageUrl: 'https://i.pravatar.cc/150?u=dominic-scriven',
+      quote:
+        'Thị trường Việt Nam là một trong những câu chuyện tăng trưởng hấp dẫn nhất thế giới. Chìa khóa cho nhà đầu tư cá nhân là sự kiên nhẫn và kỷ luật. Đừng cố gắng "lướt sóng", hãy đầu tư dài hạn vào những doanh nghiệp tốt và để lãi suất kép làm nên điều kỳ diệu.',
+    },
+    quizzes: [
+      {
+        question: 'Kênh đầu tư nào được coi là truyền thống và phổ biến nhất với người Việt Nam?',
+        options: [
+          'Tiền điện tử (Cryptocurrency)',
+          'Cổ phiếu công nghệ Mỹ',
+          'Gửi tiết kiệm và mua vàng',
+          'Đầu tư mạo hiểm (Venture Capital)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Từ lâu, gửi tiền tiết kiệm tại ngân hàng và tích trữ vàng đã là hai hình thức đầu tư quen thuộc, được nhiều thế hệ người Việt tin tưởng vì tính an toàn và thanh khoản.',
+      },
+      {
+        question: 'Trung bình giá (DCA - Dollar-Cost Averaging) là gì?',
+        options: [
+          'Cố gắng mua ở giá thấp nhất và bán ở giá cao nhất',
+          'Đầu tư một số tiền cố định vào một tài sản theo các khoảng thời gian đều đặn, bất kể giá cả',
+          'Chỉ đầu tư vào các công ty của Mỹ',
+          'Tất toán toàn bộ danh mục khi thị trường giảm',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Trung bình giá là một chiến lược đầu tư giúp giảm thiểu rủi ro do biến động thị trường. Bằng cách đầu tư đều đặn, bạn sẽ mua được nhiều cổ phiếu/chứng chỉ quỹ hơn khi giá thấp và ít hơn khi giá cao, từ đó có được mức giá mua trung bình tốt hơn theo thời gian.',
+      },
     ],
     exercises: [
       {
@@ -544,20 +581,14 @@ export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
 - **Hiệu suất tốt:** Xem xét phân bổ tích cực hơn
 - **Thay đổi cuộc sống:** Điều chỉnh mục tiêu và thời gian khi cần
 - **Biến động thị trường:** Giữ vững lộ trình, duy trì kỷ luật`,
-        requirements: [
+        materials: [
           'Đánh giá mức độ chấp nhận rủi ro cá nhân và thời gian đầu tư',
           'Nghiên cứu và lựa chọn các loại tài sản phù hợp',
           'Tính toán tỷ lệ phân bổ tối ưu',
           'Thiết lập kế hoạch đầu tư tự động',
           'Tạo lịch trình giám sát và tái cân bằng',
         ],
-        hints: [
-          'Sử dụng phân bổ dựa trên tuổi làm điểm khởi đầu, điều chỉnh cho phù hợp với tình hình cá nhân',
-          'Bắt đầu với các quỹ chỉ số chi phí thấp trước khi chọn cổ phiếu riêng lẻ',
-          'Xem xét các tác động về thuế của các loại tài khoản khác nhau',
-          'Đa dạng hóa trên nhiều phương diện: địa lý, ngành, quy mô công ty',
-        ],
-        expectedOutput:
+        expectedResults:
           'Danh mục đầu tư hoàn chỉnh với phân bổ chi tiết, kế hoạch quản lý rủi ro và hệ thống giám sát hiệu suất',
       },
     ],
@@ -573,37 +604,30 @@ export const financialLiteracyLessons: FinancialLiteracyLessons[] = [
         title: 'Nền Tảng Đầu Tư Vanguard',
         url: 'https://investor.vanguard.com',
         type: 'platform',
-        description: 'Các quỹ chỉ số và ETF chi phí thấp với các công cụ đầu tư toàn diện',
       },
       {
         title: 'Nghiên Cứu Đầu Tư Morningstar',
         url: 'https://www.morningstar.com',
         type: 'platform',
-        description: 'Phân tích đầu tư chuyên nghiệp, xếp hạng quỹ và các công cụ danh mục',
       },
     ],
     caseStudies: [
       {
         title: 'Nghỉ Hưu Sớm Nhờ Đầu Tư Chỉ Số',
-        person: 'Lan, Giám Đốc Marketing, 32 tuổi',
-        challenge:
+        organization: 'Lan, Giám Đốc Marketing, 32 tuổi',
+        problem:
           'Bắt đầu đầu tư muộn ở tuổi 30, muốn nghỉ hưu ở tuổi 50 với kiến thức đầu tư hạn chế và thu nhập trung bình',
         solution:
           'Tập trung vào đầu tư quỹ chỉ số chi phí thấp: 80% cổ phiếu, 20% trái phiếu. Tối đa hóa đóng góp vào tài khoản hưu trí, đầu tư 40% thu nhập thông qua tiết kiệm tối đa.',
-        results:
+        impact:
           'Danh mục tăng từ 0 lên 2.8 tỷ VND trong 15 năm. Đạt được độc lập tài chính ở tuổi 45, sớm hơn 5 năm so với mục tiêu.',
-        insights: [
+        innovations: [
           'Đầu tư nhất quán đánh bại việc cố gắng đoán định thị trường',
           'Tỷ lệ tiết kiệm cao quan trọng hơn lợi nhuận đầu tư',
           'Quỹ chỉ số cung cấp sự đa dạng hóa rộng rãi với chi phí tối thiểu',
           'Lãi kép thúc đẩy việc xây dựng tài sản theo thời gian',
         ],
       },
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'blockchain-explorer'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'currency-exchange-puzzle'),
     ],
   },
 ];

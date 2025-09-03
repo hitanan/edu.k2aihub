@@ -1,5 +1,25 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 export interface CriticalThinkingLessonType extends BaseLessonData {
   mainContent?: Array<{
     heading: string;
@@ -20,6 +40,9 @@ export interface CriticalThinkingLessonType extends BaseLessonData {
   }>;
   cognitiveSkills: string[];
   assessmentMethods: string[];
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  quizzes?: Quiz[];
 }
 
 export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
@@ -179,6 +202,49 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
         type: 'Reference',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Tư duy Phê phán tại Việt Nam',
+      content: [
+        'Văn hóa "cả nể", ngại tranh luận thẳng thắn có thể là một rào cản đối với việc thực hành tư duy phê phán trong môi trường học tập và làm việc.',
+        'Sự bùng nổ của mạng xã hội tại Việt Nam tạo ra một môi trường lý tưởng cho tin giả (fake news) và các thuyết âm mưu lan truyền, đòi hỏi người dùng phải có kỹ năng sàng lọc thông tin.',
+        'Trong các cuộc tranh luận online, lỗi ngụy biện "công kích cá nhân" (ad hominem) và "tấn công người rơm" (straw man) rất phổ biến.',
+        'Giáo dục truyền thống Việt Nam thường tập trung vào việc ghi nhớ kiến thức hơn là đặt câu hỏi và phản biện, tạo ra một thế hệ cần được trang bị thêm kỹ năng tư duy phê phán.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Nguyễn Cảnh Bình',
+      title: 'Chủ tịch HĐQT, Alpha Books',
+      company: 'Alpha Books',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-canh-binh',
+      quote:
+        'Trong ngành xuất bản, tư duy phê phán là công cụ sống còn. Chúng tôi phải đánh giá hàng trăm bản thảo, phân tích xu hướng thị trường, và quyết định xem cuốn sách nào thực sự mang lại giá trị cho độc giả, chứ không chỉ chạy theo trào lưu. Một quyết định sai có thể lãng phí rất nhiều nguồn lực.',
+    },
+    quizzes: [
+      {
+        question: 'Lỗi ngụy biện "Ad Hominem" là gì?',
+        options: [
+          'Tấn công vào luận điểm của đối phương',
+          'Tấn công vào cá nhân, ngoại hình, hoặc tính cách của đối phương thay vì luận điểm của họ',
+          'Đưa ra một kết luận vội vàng',
+          'Cho rằng vì A xảy ra trước B, nên A gây ra B',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Ad Hominem (công kích cá nhân) là một lỗi ngụy biện phổ biến, trong đó người tranh luận bỏ qua nội dung của luận điểm và chuyển sang tấn công, lăng mạ người đưa ra luận điểm đó.',
+      },
+      {
+        question: 'Phương pháp "5 Whys" được sử dụng để làm gì?',
+        options: [
+          'Để đưa ra 5 giải pháp khác nhau',
+          'Để tìm ra nguyên nhân gốc rễ của một vấn đề bằng cách hỏi "Tại sao?" lặp đi lặp lại',
+          'Để kiểm tra 5 nguồn thông tin khác nhau',
+          'Để thuyết phục 5 người khác nhau',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Phương pháp 5 Whys là một kỹ thuật phân tích nguyên nhân gốc rễ, bằng cách hỏi "Tại sao?" nhiều lần (thường là 5 lần) cho đến khi tìm ra được nguyên nhân cốt lõi của một vấn đề, thay vì chỉ xử lý các triệu chứng bề mặt.',
+      },
+    ],
   },
   {
     id: 'creative-problem-solving',
@@ -297,6 +363,44 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
         title: 'Stanford d.school Design Thinking Process',
         url: 'https://dschool.stanford.edu/resources/design-thinking-bootleg',
         type: 'Documentation',
+      },
+    ],
+    vietnamContext: {
+      title: 'Giải quyết vấn đề của Người Việt',
+      content: [
+        'Sự khéo léo và khả năng "ứng biến" (improvisation) là một đặc điểm sáng tạo của người Việt, thể hiện qua việc tạo ra các giải pháp tình thế hiệu quả.',
+        'Các dự án khởi nghiệp xã hội tại Việt Nam đang áp dụng Design Thinking để giải quyết các vấn đề cộng đồng như rác thải nhựa, giáo dục cho trẻ em vùng cao.',
+        'Phong trào "makerspace" và "hackathon" đang phát triển, tạo ra môi trường cho các bạn trẻ thực hành giải quyết vấn đề sáng tạo một cách nhanh chóng.',
+        'Ví dụ về MoMo: Từ một ứng dụng chuyển tiền, đã thấu hiểu nhu cầu của người dùng và phát triển thành một "siêu ứng dụng" với hàng trăm dịch vụ, giải quyết nhiều vấn đề trong cuộc sống hàng ngày.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Đặng Tuấn Minh',
+      title: 'Giám đốc Sáng tạo',
+      company: 'Richard Moore Associates',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-dang-tuan-minh',
+      quote:
+        'Sáng tạo không phải là phép màu. Đó là sự đồng cảm sâu sắc với người dùng, kết hợp với việc thử nghiệm và thất bại không ngừng. Tại Việt Nam, những giải pháp thành công nhất là những giải pháp hiểu rõ văn hóa và giải quyết được những "nỗi đau" rất đời thường của người Việt.',
+    },
+    quizzes: [
+      {
+        question: 'Bước đầu tiên trong quy trình Design Thinking là gì?',
+        options: ['Lên ý tưởng (Ideate)', 'Tạo mẫu (Prototype)', 'Thấu cảm (Empathize)', 'Kiểm thử (Test)'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Bước đầu tiên và quan trọng nhất của Design Thinking là Thấu cảm (Empathize) - đặt mình vào vị trí của người dùng để hiểu sâu sắc về nhu cầu, mong muốn và bối cảnh của họ. Mọi giải pháp sau này đều phải xuất phát từ sự thấu cảm này.',
+      },
+      {
+        question: 'Nguyên tắc "thất bại nhanh, thất bại rẻ" thuộc giai đoạn nào của Design Thinking?',
+        options: [
+          'Định nghĩa (Define)',
+          'Tạo mẫu (Prototype) và Kiểm thử (Test)',
+          'Lên ý tưởng (Ideate)',
+          'Thấu cảm (Empathize)',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Nguyên tắc này là cốt lõi của giai đoạn Tạo mẫu (Prototype) và Kiểm thử (Test). Thay vì xây dựng một sản phẩm hoàn hảo rồi mới ra mắt, Design Thinking khuyến khích tạo ra các mẫu thử đơn giản, chi phí thấp để nhanh chóng nhận phản hồi, học hỏi từ sai lầm và cải tiến.',
       },
     ],
   },
@@ -419,6 +523,49 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
         title: 'Kumu Systems Mapping Tool',
         url: 'https://kumu.io/',
         type: 'Tool',
+      },
+    ],
+    vietnamContext: {
+      title: 'Tư duy Hệ thống trong Bối cảnh Việt Nam',
+      content: [
+        'Vấn đề ngập lụt ở TP.HCM là một ví dụ điển hình của tư duy hệ thống: nó không chỉ do mưa lớn, mà còn liên quan đến đô thị hóa, hệ thống thoát nước, và biến đổi khí hậu.',
+        'Chính sách phát triển kinh tế của Việt Nam là một hệ thống phức tạp, cân bằng giữa thu hút đầu tư nước ngoài (FDI), phát triển doanh nghiệp trong nước, và đảm bảo an sinh xã hội.',
+        'Văn hóa "phong bì" trong y tế là một vấn đề hệ thống, liên quan đến lương của bác sĩ, chính sách bảo hiểm, và nhận thức của người dân.',
+        'Việc giải quyết vấn đề an toàn thực phẩm đòi hỏi một cách tiếp cận hệ thống, từ trang trại, khâu vận chuyển, chế biến, đến bàn ăn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Tiến sĩ Nguyễn Văn A',
+      title: 'Chuyên gia Quy hoạch Đô thị',
+      company: 'Viện Quy hoạch Đô thị và Nông thôn Quốc gia',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-van-a',
+      quote:
+        'Quy hoạch một thành phố giống như chơi một ván cờ vua phức tạp. Mỗi quyết định, dù là xây một cây cầu hay một khu dân cư, đều tạo ra những gợn sóng lan tỏa khắp hệ thống. Nếu không có tư duy hệ thống, bạn sẽ chỉ mãi chạy theo để giải quyết các vấn đề do chính mình tạo ra.',
+    },
+    quizzes: [
+      {
+        question: 'Trong tư duy hệ thống, "vòng lặp tăng cường" (reinforcing loop) là gì?',
+        options: [
+          'Một vòng lặp luôn mang lại kết quả tốt',
+          'Một vòng lặp tự ổn định và giữ nguyên trạng thái',
+          'Một vòng lặp tạo ra hiệu ứng quả cầu tuyết, nơi sự thay đổi ban đầu được khuếch đại theo thời gian',
+          'Một vòng lặp luôn dẫn đến sự sụp đổ của hệ thống',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Vòng lặp tăng cường (còn gọi là vòng lặp dương) khuếch đại sự thay đổi. Ví dụ: càng có nhiều người dùng một mạng xã hội, nó càng trở nên hấp dẫn hơn với người dùng mới, dẫn đến tăng trưởng theo cấp số nhân.',
+      },
+      {
+        question: '"Điểm đòn bẩy" (leverage point) trong một hệ thống là gì?',
+        options: [
+          'Điểm yếu nhất của hệ thống',
+          'Nơi mà một sự can thiệp nhỏ có thể tạo ra một sự thay đổi lớn cho toàn bộ hệ thống',
+          'Vấn đề lớn nhất của hệ thống',
+          'Người có quyền lực nhất trong hệ thống',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Theo Donella Meadows, điểm đòn bẩy là những vị trí chiến lược trong một hệ thống phức tạp nơi một sự thay đổi nhỏ có thể tạo ra những thay đổi lớn ở cấp độ hệ thống. Tìm ra và tác động vào các điểm này hiệu quả hơn nhiều so với việc cố gắng thay đổi mọi thứ.',
       },
     ],
   },

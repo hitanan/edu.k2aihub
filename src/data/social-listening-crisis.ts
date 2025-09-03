@@ -1,545 +1,178 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 export interface SocialListeningLessonType extends BaseLessonData {
-  crisisStages?: string[];
   monitoringTools?: string[];
-  responseStrategies?: string[];
-  communicationChannels?: string[];
-  stakeholderGroups?: string[];
 }
 
 export const socialListeningLessons: SocialListeningLessonType[] = [
   {
     id: 'social-listening-fundamentals',
-    title: 'Nền Tảng Social Listening Và Brand Monitoring',
-    description: 'Master social listening fundamentals để monitor brand mentions, track sentiment và proactively identify opportunities và threats online.',
-    duration: '150 phút',
+    title: 'Nền tảng Lắng nghe Xã hội (Social Listening) & Giám sát Thương hiệu',
+    description:
+      'Nắm vững các nguyên tắc cơ bản của social listening để giám sát các cuộc thảo luận về thương hiệu, theo dõi cảm xúc của khách hàng và chủ động xác định các cơ hội cũng như mối đe dọa trực tuyến.',
+    duration: '90 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=PjOW1trH7yg', // Social Listening Strategy for Crisis Management
+    videoUrl: 'https://www.youtube.com/watch?v=PjOW1trH7yg',
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
+    monitoringTools: ['Brandwatch', 'Talkwalker', 'Meltwater', 'Socialbakers', 'Younet Media'],
     objectives: [
-      'Hiểu social listening concepts và importance',
-      'Setup comprehensive brand monitoring systems',
-      'Analyze sentiment trends và brand perception',
-      'Identify key influencers và brand advocates',
-      'Track competitor activities và industry trends',
-      'Create actionable insights from social data',
+      'Hiểu khái niệm và tầm quan trọng của social listening.',
+      'Thiết lập hệ thống giám sát thương hiệu toàn diện.',
+      'Phân tích xu hướng cảm xúc và nhận thức về thương hiệu.',
+      'Xác định những người có ảnh hưởng chính và người ủng hộ thương hiệu.',
+      'Theo dõi hoạt động của đối thủ cạnh tranh và xu hướng ngành.',
     ],
     prerequisites: [
-      'Social media marketing basics',
-      'Analytics và data interpretation',
-      'Brand management understanding',
+      'Kiến thức cơ bản về marketing trên mạng xã hội.',
+      'Kỹ năng phân tích và diễn giải dữ liệu.',
+      'Hiểu biết về quản trị thương hiệu.',
     ],
-    crisisStages: ['Pre-Crisis Prevention', 'Crisis Detection', 'Response Planning', 'Active Management', 'Recovery'],
-    monitoringTools: ['Hootsuite Insights', 'Brandwatch', 'Mention', 'Google Alerts', 'Social Mention'],
-    responseStrategies: ['Proactive Engagement', 'Real-time Response', 'Escalation Protocols', 'Community Management', 'Influencer Outreach'],
-    communicationChannels: ['Social Media', 'Press Releases', 'Email', 'Website', 'Customer Service'],
-    stakeholderGroups: ['Customers', 'Employees', 'Media', 'Investors', 'Partners'],
     exercises: [
       {
-        title: 'Brand Listening Setup Workshop',
-        description: 'Implement comprehensive social listening system cho Vietnamese brand',
+        title: 'Thiết lập một chiến dịch Social Listening',
+        description:
+          'Thực hành thiết lập một hệ thống lắng nghe xã hội toàn diện cho một thương hiệu Việt Nam giả định.',
         difficulty: 'Trung bình',
-        materials: ['Social Listening Tools', 'Monitoring Dashboard Templates', 'Keyword Research Tools'],
         procedure: [
-          'Define brand keywords và monitoring terms',
-          'Setup monitoring across multiple platforms',
-          'Configure sentiment analysis parameters',
-          'Create custom dashboards cho different stakeholders',
-          'Establish baseline metrics và benchmarks',
-          'Test alert systems và response protocols',
+          'Xác định các từ khóa chính liên quan đến thương hiệu (tên thương hiệu, sản phẩm, slogan, cả các biến thể sai chính tả).',
+          'Sử dụng một công cụ social listening (có thể là bản miễn phí như Google Alerts, Social Mention) để thiết lập theo dõi.',
+          'Cấu hình các thông số để phân tích cảm xúc (tích cực, tiêu cực, trung lập).',
+          'Tạo một dashboard đơn giản để theo dõi các chỉ số chính.',
         ],
-        expectedResults: 'Functional social listening system với real-time monitoring',
-        solution: 'Comprehensive brand monitoring framework tailored for Vietnamese market',
+        expectedResults:
+          'Một hệ thống social listening hoạt động có khả năng giám sát thời gian thực và gửi cảnh báo cơ bản.',
       },
     ],
     realWorldApplications: [
-      'E-commerce brands tracking customer satisfaction',
-      'Financial services monitoring regulatory discussions',
-      'Tourism companies managing destination reputation',
-      'Technology brands tracking product feedback',
-      'Healthcare organizations monitoring health discussions',
+      'Các thương hiệu thương mại điện tử theo dõi sự hài lòng của khách hàng.',
+      'Các công ty du lịch quản lý danh tiếng điểm đến.',
+      'Các thương hiệu công nghệ theo dõi phản hồi về sản phẩm.',
     ],
     caseStudies: [
       {
-        title: 'Tiki - Vietnamese E-commerce Social Listening Success',
-        organization: 'Tiki Corporation',
-        problem: 'Managing customer complaints và feedback across multiple channels',
-        solution: 'Comprehensive social listening system với rapid response protocols',
-        impact: 'Customer satisfaction scores improved 45% within 6 months',
-        innovations: ['AI-powered Sentiment Analysis', 'Multi-channel Integration', 'Proactive Customer Service'],
+        title: 'Biti\'s Hunter và Chiến dịch "Đi để trở về"',
+        organization: "Biti's",
+        problem:
+          "Làm thế nào để một thương hiệu lâu đời như Biti's có thể tái kết nối với giới trẻ và tạo ra một cuộc thảo luận tích cực trên mạng xã hội?",
+        solution:
+          'Biti\'s đã lắng nghe các cuộc trò chuyện của giới trẻ về việc đi du lịch và nỗi nhớ nhà, từ đó tạo ra chiến dịch "Đi để trở về" với thông điệp sâu sắc, kết hợp với các MV của các ca sĩ nổi tiếng.',
+        impact:
+          "Chiến dịch đã tạo ra một cơn sốt trên mạng xã hội, giúp Biti's Hunter trở thành một thương hiệu được giới trẻ yêu thích và thảo luận rộng rãi, tăng doanh số đột biến.",
+        innovations: ['Sử dụng Music Marketing', 'Phân tích Insight giới trẻ', 'Tạo thông điệp cảm xúc'],
       },
     ],
-    resources: [
+    vietnamContext: {
+      title: 'Đặc thù Social Listening tại Việt Nam',
+      content: [
+        'Ngôn ngữ tiếng Việt với sự đa dạng về dấu câu, từ lóng, teencode là một thách thức lớn cho các công cụ phân tích cảm xúc tự động.',
+        'Người dùng Việt Nam rất tích cực trên các hội, nhóm (group) trên Facebook. Việc theo dõi các cuộc thảo luận trong các nhóm kín này là cực kỳ quan trọng.',
+        'Các "drama" hoặc khủng hoảng truyền thông có thể bùng phát và lan truyền với tốc độ chóng mặt, đòi hỏi sự phản ứng nhanh nhạy.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Thị Ngọc Bích',
+      title: 'Chuyên gia Phân tích Dữ liệu Mạng xã hội',
+      company: 'Younet Media',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-ngoc-bich',
+      quote:
+        'Social listening không chỉ là nghe, mà là thấu hiểu. Dữ liệu cho chúng ta biết "cái gì" đang xảy ra, nhưng chỉ có sự thấu hiểu sâu sắc mới cho chúng ta biết "tại sao".',
+    },
+    quizzes: [
       {
-        title: 'Social Listening Best Practices Guide',
-        url: 'https://blog.hootsuite.com/social-listening-business/',
-        type: 'Guide',
-      },
-      {
-        title: 'Brandwatch Social Listening Tools',
-        url: 'https://www.brandwatch.com/products/consumer-research/',
-        type: 'Tool',
+        question:
+          'Việc phân loại một bình luận trên mạng xã hội là "tích cực", "tiêu cực" hay "trung lập" được gọi là gì?',
+        options: [
+          'Phân tích từ khóa',
+          'Phân tích nhân khẩu học',
+          'Phân tích cảm xúc (Sentiment Analysis)',
+          'Phân tích đối thủ',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Phân tích cảm xúc là quá trình sử dụng xử lý ngôn ngữ tự nhiên (NLP) để xác định và phân loại quan điểm, cảm xúc được thể hiện trong một đoạn văn bản.',
       },
     ],
   },
-
   {
     id: 'crisis-detection-early-warning',
-    title: 'Crisis Detection Và Early Warning Systems',
-    description: 'Develop advanced crisis detection capabilities để identify potential issues before they escalate và implement effective early warning systems.',
-    duration: '165 phút',
+    title: 'Phát hiện Khủng hoảng & Hệ thống Cảnh báo sớm',
+    description:
+      'Phát triển khả năng phát hiện khủng hoảng nâng cao để xác định các vấn đề tiềm ẩn trước khi chúng leo thang và triển khai các hệ thống cảnh báo sớm hiệu quả.',
+    duration: '120 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=pYnEgD1r4EM', // Crisis management
+    videoUrl: 'https://www.youtube.com/watch?v=pYnEgD1r4EM',
     imageUrl: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=600&fit=crop',
+    monitoringTools: ['Reputation.com', 'Mention', 'Hootsuite Insights', 'Sprinklr'],
     objectives: [
-      'Identify early warning signals của potential crises',
-      'Setup automated alert systems',
-      'Analyze conversation patterns và anomalies',
-      'Implement escalation protocols',
-      'Create crisis severity assessment frameworks',
-      'Build rapid response capabilities',
+      'Xác định các tín hiệu cảnh báo sớm của các cuộc khủng hoảng tiềm tàng.',
+      'Thiết lập hệ thống cảnh báo tự động.',
+      'Phân tích các mẫu hội thoại và sự bất thường.',
+      'Thực hiện các quy trình leo thang xử lý khủng hoảng.',
+      'Xây dựng khung đánh giá mức độ nghiêm trọng của khủng hoảng.',
     ],
-    prerequisites: [
-      'Social listening fundamentals',
-      'Data analysis skills',
-      'Crisis management basics',
-    ],
-    crisisStages: ['Signal Detection', 'Threat Assessment', 'Alert Triggering', 'Team Activation', 'Initial Response'],
-    monitoringTools: ['Advanced Analytics', 'AI Detection Systems', 'Sentiment Monitoring', 'Volume Tracking', 'Influencer Analysis'],
-    responseStrategies: ['Early Intervention', 'Stakeholder Notification', 'Content Strategy Pivot', 'Resource Mobilization', 'Timeline Planning'],
-    communicationChannels: ['Internal Alerts', 'Management Reports', 'Team Communication', 'Stakeholder Updates', 'Media Monitoring'],
-    stakeholderGroups: ['Crisis Team', 'Management', 'PR Department', 'Customer Service', 'Legal Team'],
+    prerequisites: ["Hoàn thành bài 'Nền tảng Social Listening'"],
     exercises: [
       {
-        title: 'Crisis Early Warning System Development',
-        description: 'Build comprehensive early warning system cho crisis detection và response',
+        title: 'Mô phỏng Tình huống Khủng hoảng',
+        description:
+          'Phân tích một tình huống khủng hoảng giả định và xây dựng một kế hoạch phản ứng dựa trên các tín hiệu cảnh báo sớm.',
         difficulty: 'Nâng cao',
-        materials: ['Monitoring Tools Suite', 'Alert Configuration Templates', 'Crisis Assessment Frameworks'],
         procedure: [
-          'Analyze historical crisis patterns và warning signs',
-          'Configure multi-level alert systems',
-          'Set up automated threat assessment tools',
-          'Create escalation decision trees',
-          'Design rapid response activation protocols',
-          'Test system effectiveness với simulated scenarios',
+          'Đọc kịch bản về một khủng hoảng tiềm tàng (ví dụ: tin đồn sản phẩm có lỗi).',
+          'Xác định các chỉ số bất thường cần theo dõi (ví dụ: số lượng bình luận tiêu cực tăng đột biến, các influencer bắt đầu lên tiếng).',
+          'Xây dựng một quy trình leo thang: ai cần được thông báo, khi nào, và thông điệp ban đầu là gì.',
         ],
-        expectedResults: 'Functional early warning system với proven detection accuracy',
-        solution: 'AI-powered crisis detection system adapted for Vietnamese digital landscape',
+        expectedResults: 'Một kế hoạch phản ứng khủng hoảng sơ bộ với các bước hành động rõ ràng.',
       },
     ],
     realWorldApplications: [
-      'Airlines monitoring safety concerns',
-      'Food brands tracking contamination discussions',
-      'Government agencies monitoring public sentiment',
-      'Tech companies identifying security breach discussions',
-      'Pharmaceutical companies tracking adverse effects reports',
+      'Phát hiện tin đồn thất thiệt về thương hiệu.',
+      'Theo dõi các vấn đề về an toàn sản phẩm.',
+      'Quản lý các cuộc tẩy chay trên mạng xã hội.',
+      'Phản ứng với các sự cố dịch vụ khách hàng lan truyền rộng rãi.',
     ],
     caseStudies: [
       {
-        title: 'VinFast - Proactive Crisis Management',
-        organization: 'VinFast Auto',
-        problem: 'Managing international expansion reputation challenges',
-        solution: 'Advanced social listening system với proactive response capabilities',
-        impact: 'Reduced negative sentiment spread by 60% through early intervention',
-        innovations: ['Multi-language Monitoring', 'Cultural Context Analysis', 'Rapid Response Teams'],
+        title: 'Khủng hoảng "Con ruồi trong chai nước" của Tân Hiệp Phát',
+        organization: 'Tân Hiệp Phát',
+        problem:
+          'Một khách hàng phát hiện có dị vật trong sản phẩm và lan truyền thông tin trên mạng, nhưng cách xử lý ban đầu của công ty đã khiến khủng hoảng leo thang.',
+        solution:
+          '(Bài học rút ra) Cần có một quy trình xử lý khiếu nại của khách hàng một cách minh bạch, đồng cảm và nhanh chóng. Lắng nghe và đối thoại thay vì đối đầu.',
+        impact:
+          'Vụ việc đã gây tổn hại nghiêm trọng đến danh tiếng và doanh thu của Tân Hiệp Phát trong một thời gian dài, trở thành một bài học kinh điển về xử lý khủng hoảng truyền thông tại Việt Nam.',
+        innovations: ['Quản lý khủng hoảng', 'Quan hệ công chúng', 'Đối thoại với người tiêu dùng'],
       },
     ],
-    resources: [
+    vietnamContext: {
+      title: 'Văn hóa "Hóng" và Tốc độ lan truyền Khủng hoảng',
+      content: [
+        'Văn hóa "hóng drama" trên mạng xã hội Việt Nam khiến các khủng hoảng có thể lan truyền với tốc độ cực nhanh, đôi khi dựa trên những thông tin chưa được kiểm chứng.',
+        'Việc sử dụng nhiều tài khoản ẩn danh, seeding có thể tạo ra các cuộc khủng hoảng giả mạo hoặc làm trầm trọng hóa vấn đề.',
+        'Sự tham gia của các "KOLs" (Key Opinion Leaders) có thể đẩy một sự việc nhỏ thành một cuộc khủng hoảng truyền thông quy mô lớn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lê Quốc Vinh',
+      title: 'Chuyên gia Xử lý Khủng hoảng Truyền thông',
+      company: 'Le Bros',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-quoc-vinh',
+      quote:
+        'Trong khủng hoảng, im lặng không phải là vàng. Sự im lặng của bạn sẽ được lấp đầy bởi tin đồn, sự sợ hãi và thông tin sai lệch. Hãy lên tiếng nhanh, minh bạch và có trách nhiệm.',
+    },
+    quizzes: [
       {
-        title: 'Crisis Detection Methodologies',
-        url: 'https://www.instituteforpr.org/crisis-management-planning/',
-        type: 'Research',
-      },
-      {
-        title: 'AI-Powered Crisis Detection Tools',
-        url: 'https://www.talkwalker.com/blog/crisis-management',
-        type: 'Technology',
-      },
-    ],
-  },
-
-  {
-    id: 'rapid-response-communication',
-    title: 'Rapid Response Communication Strategies',
-    description: 'Master rapid response communication techniques để effectively manage crises trong digital age với speed, accuracy và authenticity.',
-    duration: '180 phút',
-    difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=GwEjuhpo26o', // Crisis communication
-    imageUrl: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop',
-    objectives: [
-      'Develop rapid response communication protocols',
-      'Create authentic crisis messaging',
-      'Manage multi-channel crisis communications',
-      'Balance speed với accuracy trong responses',
-      'Coordinate cross-functional crisis teams',
-      'Maintain brand voice during crisis situations',
-    ],
-    prerequisites: [
-      'Crisis detection fundamentals',
-      'Corporate communications experience',
-      'Team coordination skills',
-    ],
-    crisisStages: ['Immediate Response', 'Message Crafting', 'Multi-channel Deployment', 'Monitoring Feedback', 'Iterative Adjustment'],
-    monitoringTools: ['Real-time Dashboards', 'Response Tracking', 'Engagement Metrics', 'Sentiment Analysis', 'Media Monitoring'],
-    responseStrategies: ['Acknowledge & Apologize', 'Take Responsibility', 'Provide Solutions', 'Show Empathy', 'Demonstrate Action'],
-    communicationChannels: ['Social Media', 'Press Releases', 'Company Website', 'Email Communications', 'Direct Outreach'],
-    stakeholderGroups: ['Affected Customers', 'General Public', 'Media', 'Employees', 'Investors'],
-    exercises: [
-      {
-        title: 'Crisis Communication Simulation',
-        description: 'Complete crisis communication simulation với real-time decision making',
-        difficulty: 'Nâng cao',
-        materials: ['Crisis Scenario Scripts', 'Communication Templates', 'Response Time Trackers'],
-        procedure: [
-          'Receive crisis alert notification',
-          'Assemble crisis communication team',
-          'Assess situation severity và impact',
-          'Draft initial response messages',
-          'Deploy communications across channels',
-          'Monitor response effectiveness và feedback',
-          'Adjust messaging based on real-time data',
-          'Coordinate follow-up communications',
+        question:
+          'Khi một vấn đề tiêu cực bắt đầu có dấu hiệu lan truyền nhanh chóng, bước đầu tiên quan trọng nhất là gì?',
+        options: [
+          'Xóa các bình luận tiêu cực',
+          'Đánh giá mức độ nghiêm trọng và xác thực thông tin',
+          'Đổ lỗi cho đối thủ cạnh tranh',
+          'Im lặng và chờ cho sự việc lắng xuống',
         ],
-        expectedResults: 'Rapid, authentic crisis response delivered within critical timeframes',
-        solution: 'Comprehensive crisis communication protocol với proven effectiveness metrics',
-      },
-    ],
-    realWorldApplications: [
-      'Restaurant chains managing food safety issues',
-      'Technology companies addressing data breaches',
-      'Transportation services handling service disruptions',
-      'Retail brands managing product recalls',
-      'Healthcare organizations addressing medical concerns',
-    ],
-    caseStudies: [
-      {
-        title: 'Grab - Service Disruption Response',
-        organization: 'Grab Southeast Asia',
-        problem: 'Major service outage during peak hours',
-        solution: 'Rapid multi-channel communication với transparent updates',
-        impact: 'Maintained customer trust despite service disruption',
-        innovations: ['Real-time Status Updates', 'Proactive Customer Compensation', 'Transparent Problem Resolution'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Crisis Communication Playbook',
-        url: 'https://www.prsa.org/learning/resources/crisis-communications',
-        type: 'Playbook',
-      },
-      {
-        title: 'Rapid Response Best Practices',
-        url: 'https://www.edelman.com/insights/crisis-communications-best-practices',
-        type: 'Best Practices',
-      },
-    ],
-  },
-
-  {
-    id: 'reputation-recovery-management',
-    title: 'Reputation Recovery Và Long-term Brand Rebuilding',
-    description: 'Learn systematic approaches to recover từ reputation damage và rebuild trust through consistent, authentic long-term efforts.',
-    duration: '195 phút',
-    difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=rJ4Hx0_cBLo', // Reputation management
-    imageUrl: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop',
-    objectives: [
-      'Develop comprehensive reputation recovery plans',
-      'Implement long-term trust rebuilding strategies',
-      'Monitor recovery progress và public sentiment',
-      'Create authentic reputation improvement campaigns',
-      'Rebuild stakeholder relationships systematically',
-      'Establish sustainable reputation management practices',
-    ],
-    prerequisites: [
-      'Crisis communication experience',
-      'Long-term strategic planning skills',
-      'Stakeholder relationship management',
-    ],
-    crisisStages: ['Assessment & Planning', 'Initial Recovery Actions', 'Trust Rebuilding', 'Reputation Monitoring', 'Long-term Maintenance'],
-    monitoringTools: ['Reputation Tracking', 'Sentiment Trends', 'Trust Metrics', 'Brand Health Monitors', 'Stakeholder Feedback'],
-    responseStrategies: ['Consistent Messaging', 'Authentic Actions', 'Stakeholder Engagement', 'Community Investment', 'Transparency Commitment'],
-    communicationChannels: ['Owned Media', 'Earned Media', 'Social Platforms', 'Community Outreach', 'Direct Stakeholder Communication'],
-    stakeholderGroups: ['Customers', 'Employees', 'Community', 'Media', 'Industry Partners'],
-    exercises: [
-      {
-        title: 'Reputation Recovery Campaign Design',
-        description: 'Create comprehensive reputation recovery campaign với measurable outcomes',
-        difficulty: 'Nâng cao',
-        materials: ['Recovery Planning Templates', 'Trust Measurement Tools', 'Campaign Development Resources'],
-        procedure: [
-          'Conduct comprehensive reputation audit',
-          'Identify key stakeholder concerns và priorities',
-          'Develop authentic recovery messaging strategy',
-          'Create consistent action-oriented initiatives',
-          'Launch multi-channel recovery campaign',
-          'Implement continuous monitoring systems',
-          'Adjust strategies based on feedback',
-          'Measure long-term recovery progress',
-        ],
-        expectedResults: 'Systematic reputation recovery với measurable trust improvement',
-        solution: 'Integrated reputation rebuilding framework với sustained positive outcomes',
-      },
-    ],
-    realWorldApplications: [
-      'Financial institutions rebuilding trust after scandals',
-      'Technology companies recovering from data breaches',
-      'Food brands recovering from contamination issues',
-      'Healthcare organizations addressing malpractice concerns',
-      'Government agencies rebuilding public confidence',
-    ],
-    caseStudies: [
-      {
-        title: 'Samsung - Galaxy Note 7 Recovery',
-        organization: 'Samsung Electronics',
-        problem: 'Global reputation damage from Note 7 battery explosions',
-        solution: 'Comprehensive quality improvement và transparent communication strategy',
-        impact: 'Successfully recovered market position và customer trust',
-        innovations: ['Enhanced Quality Assurance', 'Transparent Safety Communication', 'Customer-Centric Recovery Programs'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Reputation Recovery Strategies',
-        url: 'https://www.weber-shandwick.com/what-we-do/reputation-management/',
-        type: 'Strategy Guide',
-      },
-      {
-        title: 'Trust Rebuilding Methodologies',
-        url: 'https://www.edelman.com/trust/2023-trust-barometer',
-        type: 'Research',
-      },
-    ],
-  },
-
-  {
-    id: 'proactive-community-engagement',
-    title: 'Proactive Community Engagement Và Relationship Building',
-    description: 'Build strong community relationships để prevent crises và create network của advocates supporting brand during challenging times.',
-    duration: '170 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=rgQvqi6aYD8', // Community engagement
-    imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
-    objectives: [
-      'Build proactive community engagement strategies',
-      'Create authentic brand advocate networks',
-      'Develop crisis prevention through relationships',
-      'Foster positive brand sentiment continuously',
-      'Implement community feedback loops',
-      'Maintain consistent community presence',
-    ],
-    prerequisites: [
-      'Community management basics',
-      'Social media engagement skills',
-      'Relationship building experience',
-    ],
-    crisisStages: ['Relationship Building', 'Trust Development', 'Advocacy Creation', 'Network Maintenance', 'Crisis Prevention'],
-    monitoringTools: ['Community Engagement Metrics', 'Advocate Tracking', 'Relationship CRM', 'Sentiment Monitoring', 'Influence Mapping'],
-    responseStrategies: ['Consistent Engagement', 'Value Creation', 'Authentic Communication', 'Community Investment', 'Advocate Empowerment'],
-    communicationChannels: ['Social Communities', 'Forums', 'Events', 'Direct Outreach', 'Content Platforms'],
-    stakeholderGroups: ['Community Members', 'Brand Advocates', 'Local Leaders', 'Industry Influencers', 'Customer Groups'],
-    exercises: [
-      {
-        title: 'Community Advocacy Program Development',
-        description: 'Create comprehensive program để build và maintain brand advocacy network',
-        difficulty: 'Trung bình',
-        materials: ['Community Mapping Tools', 'Engagement Planning Templates', 'Advocacy Program Frameworks'],
-        procedure: [
-          'Map existing community landscape và key players',
-          'Identify potential brand advocates và influencers',
-          'Develop community engagement strategy',
-          'Create value-driven content và interaction plans',
-          'Launch community building initiatives',
-          'Nurture relationships through consistent engagement',
-          'Measure community sentiment và advocacy levels',
-          'Expand network through referrals và partnerships',
-        ],
-        expectedResults: 'Active community advocacy network supporting brand proactively',
-        solution: 'Sustainable community engagement ecosystem với crisis prevention capabilities',
-      },
-    ],
-    realWorldApplications: [
-      'Local businesses building neighborhood support',
-      'Tech companies engaging developer communities',
-      'Consumer brands creating customer communities',
-      'B2B companies building industry relationships',
-      'Non-profits mobilizing supporter networks',
-    ],
-    caseStudies: [
-      {
-        title: 'Shopee - Vietnamese Community Building',
-        organization: 'Shopee Vietnam',
-        problem: 'Building trust trong competitive e-commerce market',
-        solution: 'Comprehensive community engagement program với local influencers',
-        impact: 'Achieved market leadership through strong community advocacy',
-        innovations: ['Local Influencer Networks', 'Community Events', 'User-Generated Content Campaigns'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Community Building Best Practices',
-        url: 'https://www.communityroundtable.com/research/',
-        type: 'Best Practices',
-      },
-      {
-        title: 'Social Media Community Management',
-        url: 'https://blog.hootsuite.com/social-media-community-management/',
-        type: 'Guide',
-      },
-    ],
-  },
-
-  {
-    id: 'crisis-prevention-planning',
-    title: 'Crisis Prevention Planning Và Risk Assessment',
-    description: 'Develop comprehensive crisis prevention strategies through risk assessment, scenario planning và proactive mitigation measures.',
-    duration: '160 phút',
-    difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=y-n1RUbYq6Q', // Risk management
-    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
-    objectives: [
-      'Conduct comprehensive brand risk assessments',
-      'Develop crisis prevention strategies',
-      'Create scenario planning frameworks',
-      'Implement proactive risk mitigation measures',
-      'Build crisis response preparedness',
-      'Establish monitoring systems cho risk indicators',
-    ],
-    prerequisites: [
-      'Risk management fundamentals',
-      'Strategic planning experience',
-      'Crisis management understanding',
-    ],
-    crisisStages: ['Risk Identification', 'Assessment & Prioritization', 'Prevention Planning', 'Mitigation Implementation', 'Monitoring & Review'],
-    monitoringTools: ['Risk Assessment Matrices', 'Scenario Planning Tools', 'Monitoring Dashboards', 'Early Warning Systems', 'Stakeholder Feedback'],
-    responseStrategies: ['Proactive Communication', 'Risk Mitigation', 'Stakeholder Engagement', 'Process Improvement', 'Continuous Monitoring'],
-    communicationChannels: ['Internal Communications', 'Stakeholder Updates', 'Industry Networks', 'Regulatory Communications', 'Public Relations'],
-    stakeholderGroups: ['Management Team', 'Employees', 'Customers', 'Regulators', 'Industry Partners'],
-    exercises: [
-      {
-        title: 'Comprehensive Risk Assessment Workshop',
-        description: 'Conduct thorough risk assessment và develop prevention strategies',
-        difficulty: 'Nâng cao',
-        materials: ['Risk Assessment Templates', 'Scenario Planning Tools', 'Prevention Strategy Frameworks'],
-        procedure: [
-          'Identify potential crisis scenarios specific to business',
-          'Assess likelihood và impact của each risk',
-          'Prioritize risks based on severity và probability',
-          'Develop prevention strategies cho high-priority risks',
-          'Create monitoring systems cho early risk detection',
-          'Design response protocols cho each scenario',
-          'Train team on prevention và response procedures',
-          'Regularly update risk assessments',
-        ],
-        expectedResults: 'Comprehensive crisis prevention framework với proactive risk management',
-        solution: 'Integrated risk assessment system với proven prevention effectiveness',
-      },
-    ],
-    realWorldApplications: [
-      'Manufacturing companies preventing safety incidents',
-      'Financial institutions managing regulatory risks',
-      'Healthcare organizations preventing medical errors',
-      'Technology companies addressing security vulnerabilities',
-      'Retail brands preventing supply chain disruptions',
-    ],
-    caseStudies: [
-      {
-        title: 'Vietjet - Safety-First Risk Management',
-        organization: 'Vietjet Aviation',
-        problem: 'Managing aviation safety risks trong rapidly growing market',
-        solution: 'Comprehensive safety management system với proactive risk assessment',
-        impact: 'Maintained excellent safety record while achieving rapid growth',
-        innovations: ['Predictive Safety Analytics', 'Comprehensive Training Programs', 'Continuous Risk Monitoring'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Enterprise Risk Management Framework',
-        url: 'https://www.coso.org/Pages/erm.aspx',
-        type: 'Framework',
-      },
-      {
-        title: 'Crisis Prevention Best Practices',
-        url: 'https://www.instituteforpr.org/crisis-management-and-communications/',
-        type: 'Best Practices',
-      },
-    ],
-  },
-
-  {
-    id: 'social-media-crisis-management',
-    title: 'Social Media Crisis Management Trong Digital Age',
-    description: 'Master specialized techniques for managing crises trong social media environment với focus on speed, authenticity và multi-platform coordination.',
-    duration: '175 phút',
-    difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=x47EcD3d0pA', // Social media crisis
-    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
-    objectives: [
-      'Navigate social media crisis dynamics',
-      'Manage viral negative content effectively',
-      'Coordinate responses across multiple platforms',
-      'Engage với critics constructively',
-      'Leverage positive voices during crises',
-      'Monitor real-time sentiment changes',
-    ],
-    prerequisites: [
-      'Social media marketing proficiency',
-      'Crisis communication experience',
-      'Multi-platform management skills',
-    ],
-    crisisStages: ['Viral Detection', 'Platform Assessment', 'Multi-channel Response', 'Engagement Management', 'Recovery Coordination'],
-    monitoringTools: ['Social Media Dashboards', 'Viral Content Tracking', 'Influencer Monitoring', 'Hashtag Analysis', 'Platform-Specific Analytics'],
-    responseStrategies: ['Platform-Specific Messaging', 'Influencer Engagement', 'Community Mobilization', 'Content Strategy Pivot', 'Authentic Storytelling'],
-    communicationChannels: ['Facebook', 'Instagram', 'YouTube', 'TikTok', 'LinkedIn'],
-    stakeholderGroups: ['Social Media Users', 'Influencers', 'Brand Community', 'Media', 'Platform Moderators'],
-    exercises: [
-      {
-        title: 'Multi-Platform Crisis Response Simulation',
-        description: 'Handle complex social media crisis across multiple platforms simultaneously',
-        difficulty: 'Nâng cao',
-        materials: ['Platform-Specific Response Templates', 'Crisis Scenario Scripts', 'Real-time Monitoring Tools'],
-        procedure: [
-          'Detect crisis emergence on primary platform',
-          'Assess spread potential across other platforms',
-          'Develop platform-specific response strategies',
-          'Coordinate simultaneous responses',
-          'Engage với key influencers và advocates',
-          'Monitor sentiment changes across platforms',
-          'Adjust messaging based on real-time feedback',
-          'Coordinate recovery phase across all channels',
-        ],
-        expectedResults: 'Effective multi-platform crisis management với controlled narrative',
-        solution: 'Integrated social media crisis response framework với platform optimization',
-      },
-    ],
-    realWorldApplications: [
-      'Brands managing viral negative content',
-      'Celebrities addressing public relations crises',
-      'Companies responding to social media boycotts',
-      'Organizations managing misinformation spread',
-      'Politicians addressing controversy trong digital space',
-    ],
-    caseStudies: [
-      {
-        title: 'Momo - Digital Wallet Security Crisis Response',
-        organization: 'M_Service (Momo)',
-        problem: 'Security concerns spreading rapidly on social media',
-        solution: 'Immediate transparency, security demonstration, và user education',
-        impact: 'Maintained user trust và continued growth despite initial concerns',
-        innovations: ['Real-time Security Updates', 'User Education Campaigns', 'Transparent Communication Strategy'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Social Media Crisis Management Guide',
-        url: 'https://sproutsocial.com/insights/social-media-crisis-management/',
-        type: 'Guide',
-      },
-      {
-        title: 'Platform-Specific Crisis Response Strategies',
-        url: 'https://blog.hootsuite.com/social-media-crisis-management/',
-        type: 'Strategy Guide',
+        correctAnswerIndex: 1,
+        explanation:
+          'Trước khi có bất kỳ hành động nào, việc cần làm là nhanh chóng tập hợp thông tin, xác thực tính chính xác của vấn đề và đánh giá mức độ ảnh hưởng tiềm tàng để có phương án phản ứng phù hợp.',
       },
     ],
   },

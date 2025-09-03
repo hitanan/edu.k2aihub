@@ -1,347 +1,154 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 export interface ShortVideoMasteryLessonType extends BaseLessonData {
-  videoFormats: string[];
-  editingTools: string[];
-  algorithmFactors: string[];
-  contentPillars: string[];
-  viralTriggers: string[];
+  category: 'Social Media';
 }
 
 export const shortVideoMasteryLessons: ShortVideoMasteryLessonType[] = [
   {
     id: 'viral-video-psychology-hooks',
-    title: 'Viral Video Psychology & Hook Mastery',
-    description: 'Master psychological triggers tạo viral videos và craft compelling hooks giữ chân viewers trong 3 giây đầu tiên.',
-    duration: '150 phút',
+    title: 'Tâm lý học Video Viral & Kỹ thuật "Câu" người xem',
+    description:
+      'Nắm vững các yếu tố tâm lý tạo nên video viral và xây dựng những "cú hook" hấp dẫn để giữ chân người xem trong 3 giây đầu tiên.',
+    duration: '90 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=hNuAv-42jzY',
     imageUrl: 'https://i.ytimg.com/vi/hNuAv-42jzY/hqdefault.jpg',
+    category: 'Social Media',
     objectives: [
-      'Understand psychology behind viral content',
-      'Master 3-second hook creation techniques',
-      'Apply emotional triggers effectively',
-      'Create content patterns for consistent virality',
-      'Optimize timing và posting strategies'
+      'Hiểu tâm lý đằng sau nội dung viral.',
+      'Thành thạo các kỹ thuật tạo hook trong 3 giây.',
+      'Áp dụng các yếu tố kích thích cảm xúc hiệu quả.',
+      'Tạo các mẫu nội dung để có khả năng viral nhất quán.',
+      'Tối ưu hóa thời gian và chiến lược đăng bài.',
     ],
     prerequisites: [
-      'Basic video editing skills',
-      'Understanding of social media platforms',
-      'Creative mindset và storytelling interest'
-    ],
-    videoFormats: ['15-60 second videos', 'Vertical 9:16 ratio', 'Hook + Content + CTA structure'],
-    editingTools: ['CapCut', 'InShot', 'Adobe Premiere Rush', 'TikTok Editor', 'Instagram Reels Editor'],
-    algorithmFactors: [
-      'Watch time percentage',
-      'Engagement rate within first hour',
-      'Share rate và saves',
-      'Comment quality và responses',
-      'Profile visits from video'
-    ],
-    contentPillars: [
-      'Educational content với twist',
-      'Behind-the-scenes authenticity',
-      'Trend participation với unique angle',
-      'Problem-solution storytelling',
-      'Emotional resonance content'
-    ],
-    viralTriggers: [
-      'Pattern interrupts',
-      'Controversial but safe opinions',
-      'Relatable frustrations',
-      'Surprising revelations',
-      'Visual satisfying elements'
+      'Kỹ năng chỉnh sửa video cơ bản.',
+      'Hiểu biết về các nền tảng mạng xã hội (TikTok, Instagram Reels, YouTube Shorts).',
+      'Tư duy sáng tạo và yêu thích kể chuyện.',
     ],
     exercises: [
       {
-        title: 'Viral Hook Formula Implementation',
-        description: 'Create 10 videos using proven viral hook formulas và track performance',
+        title: 'Thực hành Công thức Hook Viral',
+        description: 'Tạo 5 video ngắn sử dụng các công thức hook đã được chứng minh và theo dõi hiệu suất của chúng.',
         difficulty: 'Trung bình',
-        materials: [
-          'Smartphone với good camera',
-          'Video editing app',
-          'Content calendar template',
-          'Performance tracking sheet'
-        ],
         procedure: [
-          'Study top-performing videos trong niche',
-          'Identify common hook patterns và triggers',
-          'Brainstorm 20 video ideas using viral formulas',
-          'Create first batch của 5 videos với different hooks',
-          'Post strategically với optimal timing',
-          'Monitor performance metrics closely',
-          'Iterate successful patterns',
-          'Create second batch applying learnings'
+          'Nghiên cứu các video hoạt động tốt nhất trong lĩnh vực của bạn.',
+          'Xác định các mẫu hook và yếu tố tâm lý chung.',
+          'Brainstorm 10 ý tưởng video sử dụng các công thức viral.',
+          'Tạo và đăng 5 video với các loại hook khác nhau.',
+          'Theo dõi chặt chẽ các chỉ số hiệu suất (lượt xem, tỷ lệ giữ chân, tương tác).',
         ],
-        expectedResults: '2-3 videos với 10K+ views, improved engagement rates',
-        solution: 'Data-driven approach to viral content creation'
+        expectedResults:
+          'Ít nhất 1-2 video có lượt xem vượt trội và tỷ lệ tương tác cao hơn so với các video thông thường.',
       },
-      {
-        title: 'Trend Jacking Mastery',
-        description: 'Master technique của trend jacking while maintaining brand authenticity',
-        difficulty: 'Nâng cao',
-        materials: [
-          'Trend monitoring tools',
-          'Quick content creation setup',
-          'Brand guidelines reference',
-          'Performance analytics access'
-        ],
-        procedure: [
-          'Setup trend monitoring system',
-          'Identify trends early before saturation',
-          'Develop unique brand angle for trends',
-          'Create rapid content production workflow',
-          'Execute trend participation within 24 hours',
-          'Maintain authenticity while following trends',
-          'Measure performance against non-trend content',
-          'Document successful trend adaptation strategies'
-        ],
-        expectedResults: 'Consistent trend participation với maintained brand identity',
-        solution: 'Systematic approach to trend leveraging'
-      }
     ],
     realWorldApplications: [
-      'Personal brands building thought leadership',
-      'Small businesses increasing visibility',
-      'Non-profits raising awareness for causes',
-      'Educational creators explaining complex topics'
+      'Xây dựng thương hiệu cá nhân trên mạng xã hội.',
+      'Tiếp thị sản phẩm/dịch vụ thông qua video ngắn.',
+      'Trở thành nhà sáng tạo nội dung chuyên nghiệp.',
+      'Tạo các chiến dịch truyền thông lan truyền.',
     ],
-    caseStudies: [
+    vietnamContext: {
+      title: 'Bùng nổ Video ngắn tại Thị trường Việt Nam',
+      content: [
+        'Việt Nam là một trong những thị trường có tốc độ tăng trưởng người dùng TikTok nhanh nhất thế giới.',
+        'Các "hot trend" trên TikTok và Reels tại Việt Nam thường có vòng đời ngắn nhưng tốc độ lan truyền cực kỳ nhanh, đòi hỏi sự nhạy bén của nhà sáng tạo.',
+        'Nội dung review sản phẩm, ẩm thực, và các điệu nhảy biến hình (transformation) đặc biệt được ưa chuộng bởi khán giả Việt.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lê Chí Linh (Linh Barbie)',
+      title: 'Nhà sáng tạo nội dung TikTok',
+      company: 'TikTok Creator',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-chi-linh',
+      quote:
+        'Sự sáng tạo và chân thật là chìa khóa. Đừng ngại thử nghiệm những ý tưởng điên rồ nhất, vì đó có thể là thứ khán giả đang tìm kiếm.',
+    },
+    quizzes: [
       {
-        title: 'Educational Creator Viral Success',
-        organization: 'Vietnamese Language Learning Creator',
-        problem: 'Struggling to make educational content engaging',
-        solution: 'Apply viral hooks to language learning content',
-        impact: '50K to 2M followers trong 6 tháng, course sales 1000% increase',
-        innovations: [
-          'Vietnamese slang explanation videos',
-          'Cultural context storytelling',
-          'Interactive language challenges'
-        ]
+        question: 'Mục tiêu chính của "hook" trong một video ngắn là gì?',
+        options: [
+          'Giới thiệu bản thân',
+          'Kêu gọi hành động (Call to Action)',
+          'Giữ chân người xem trong 3-5 giây đầu tiên',
+          'Giải thích chi tiết về nội dung',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Hook là yếu tố quyết định liệu người xem có lướt qua video của bạn hay không. Mục tiêu của nó là tạo ra sự tò mò, bất ngờ hoặc đồng cảm ngay lập tức để giữ họ ở lại.',
       },
-      {
-        title: 'Local Business Viral Marketing',
-        organization: 'Ho Chi Minh City Coffee Shop',
-        problem: 'High competition, low brand awareness',
-        solution: 'Daily behind-the-scenes videos với viral elements',
-        impact: 'Queue time increased 300%, revenue up 250%',
-        innovations: [
-          'Coffee art process videos',
-          'Customer reaction content',
-          'Cultural coffee stories'
-        ]
-      }
     ],
-    resources: [
-      {
-        title: 'Viral Content Psychology Guide',
-        url: 'https://blog.hootsuite.com/viral-marketing',
-        type: 'Educational Guide'
-      },
-      {
-        title: 'Short-form Video Best Practices',
-        url: 'https://creatoreconomy.so/p/short-form-video-guide',
-        type: 'Creator Resource'
-      }
-    ]
   },
   {
-    id: 'advanced-video-editing-techniques',
-    title: 'Advanced Video Editing & Visual Storytelling',
-    description: 'Master advanced editing techniques tạo cinematic short-form content với professional production value.',
-    duration: '180 phút',
-    difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=XtZUcZeiZRE',
-    imageUrl: 'https://i.ytimg.com/vi/XtZUcZeiZRE/hqdefault.jpg',
-    objectives: [
-      'Master advanced editing transitions và effects',
-      'Create cinematic looks với smartphone footage',
-      'Implement professional color grading',
-      'Design engaging text animations',
-      'Optimize video quality for platforms'
-    ],
-    prerequisites: [
-      'Intermediate video editing experience',
-      'Understanding of basic video concepts',
-      'Access to editing software'
-    ],
-    videoFormats: ['4K recording for crop flexibility', 'LOG footage for color grading', 'Multi-angle setups'],
-    editingTools: ['DaVinci Resolve', 'Adobe Premiere Pro', 'Final Cut Pro', 'CapCut Pro', 'LumaFusion'],
-    algorithmFactors: [
-      'Video quality và clarity',
-      'Retention curves optimization',
-      'Audio quality consistency',
-      'Visual appeal để encourage sharing'
-    ],
-    contentPillars: [
-      'Visual storytelling mastery',
-      'Cinematic movement và framing',
-      'Color psychology application',
-      'Audio design để enhance mood',
-      'Text design và typography'
-    ],
-    viralTriggers: [
-      'Smooth transition surprises',
-      'Visual transformations',
-      'Split-screen comparisons',
-      'Time-lapse revelations',
-      'Before/after reveals'
-    ],
-    exercises: [
-      {
-        title: 'Cinematic Short-form Video Production',
-        description: 'Create film-quality short-form video using advanced techniques',
-        difficulty: 'Nâng cao',
-        materials: [
-          'Professional editing software',
-          'Smartphone with manual camera controls',
-          'External microphone',
-          'Lighting equipment'
-        ],
-        procedure: [
-          'Plan cinematic shot sequence',
-          'Record footage với manual camera settings',
-          'Import và organize footage professionally',
-          'Apply color grading for mood enhancement',
-          'Create smooth transitions between shots',
-          'Design animated text overlays',
-          'Mix audio với background music',
-          'Export optimized for platform specifications'
-        ],
-        expectedResults: 'Professional-looking video challenging traditional content creators',
-        solution: 'Production value differentiation trong saturated market'
-      }
-    ],
-    realWorldApplications: [
-      'Brands creating premium content on budget',
-      'Creators differentiating through quality',
-      'Agencies serving high-end clients',
-      'Businesses showcasing products professionally'
-    ],
-    caseStudies: [
-      {
-        title: 'Luxury Brand Mobile-First Strategy',
-        organization: 'Vietnamese Luxury Fashion Brand',
-        problem: 'Premium brand image conflicted với casual social media',
-        solution: 'Cinematic mobile video production maintaining luxury aesthetic',
-        impact: 'Brand perception improved 85%, engagement quality increased significantly',
-        innovations: [
-          'Mobile filmmaking techniques for luxury content',
-          'High-end visual storytelling on social platforms',
-          'Professional production value với smartphone tools'
-        ]
-      }
-    ],
-    resources: [
-      {
-        title: 'Mobile Filmmaking Masterclass',
-        url: 'https://www.masterclass.com/classes/mobile-filmmaking',
-        type: 'Course'
-      },
-      {
-        title: 'Color Grading for Social Media',
-        url: 'https://www.blackmagicdesign.com/products/davinciresolve',
-        type: 'Software Tutorial'
-      }
-    ]
-  },
-  {
-    id: 'platform-optimization-algorithm-mastery',
-    title: 'Platform Optimization & Algorithm Mastery',
-    description: 'Deep dive into từng platform\'s algorithm và optimize content strategies cho maximum reach và engagement.',
+    id: 'content-strategy-monetization',
+    title: 'Chiến lược Nội dung & Kiếm tiền từ Video ngắn',
+    description:
+      'Xây dựng một chiến lược nội dung bền vững, xác định các trụ cột nội dung và khám phá các phương pháp kiếm tiền hiệu quả từ video ngắn.',
     duration: '120 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=_s2h7X-c2jE',
-    imageUrl: 'https://i.ytimg.com/vi/_s2h7X-c2jE/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=sV1qG3F-g2k',
+    imageUrl: 'https://i.ytimg.com/vi/sV1qG3F-g2k/hqdefault.jpg',
+    category: 'Social Media',
     objectives: [
-      'Understand each platform\'s algorithm in depth',
-      'Optimize posting times và frequency',
-      'Master platform-specific features',
-      'Develop multi-platform content adaptation',
-      'Track performance để continuous optimization'
+      'Xây dựng các trụ cột nội dung (content pillars) cho kênh.',
+      'Lập kế hoạch nội dung theo tháng và quý.',
+      'Hiểu các phương pháp kiếm tiền: Affiliate, Booking PR, Quỹ nhà sáng tạo, Bán sản phẩm riêng.',
+      'Xây dựng cộng đồng và tăng tỷ lệ chuyển đổi.',
+      'Phân tích dữ liệu để tối ưu hóa chiến lược.',
     ],
-    prerequisites: [
-      'Experience creating content across platforms',
-      'Understanding of basic analytics',
-      'Willingness to experiment và test'
-    ],
-    videoFormats: ['Platform-native aspect ratios', 'Optimal duration for each platform', 'Feature-specific formats'],
-    editingTools: ['Platform native editors', 'Third-party scheduling tools', 'Analytics platforms'],
-    algorithmFactors: [
-      'Platform-specific engagement signals',
-      'Audience retention patterns',
-      'Cross-platform traffic drivers',
-      'Community building metrics'
-    ],
-    contentPillars: [
-      'Platform-native content creation',
-      'Cross-platform story adaptation',
-      'Community engagement strategies',
-      'Performance data interpretation',
-      'Trend adaptation per platform'
-    ],
-    viralTriggers: [
-      'Platform-specific viral mechanics',
-      'Feature utilization strategies',
-      'Community-driven content',
-      'Algorithm timing optimization'
-    ],
+    prerequisites: ["Hoàn thành bài 'Tâm lý học Video Viral'"],
     exercises: [
       {
-        title: 'Multi-Platform Algorithm Optimization',
-        description: 'Develop optimized content strategy for 3 major platforms simultaneously',
-        difficulty: 'Nâng cao',
-        materials: [
-          'Analytics access for multiple platforms',
-          'Content planning tools',
-          'A/B testing framework',
-          'Performance tracking spreadsheets'
-        ],
+        title: 'Xây dựng Kế hoạch Nội dung 30 ngày',
+        description:
+          'Lập một kế hoạch nội dung chi tiết cho kênh video ngắn của bạn trong 30 ngày tới, dựa trên các trụ cột nội dung đã xác định.',
+        difficulty: 'Trung bình',
         procedure: [
-          'Analyze current performance across platforms',
-          'Identify platform-specific optimization opportunities',
-          'Develop platform-native content strategies',
-          'Create testing framework cho different variables',
-          'Implement optimized posting schedule',
-          'Monitor performance changes closely',
-          'Iterate based on data insights',
-          'Document successful optimization tactics'
+          'Xác định 3-4 trụ cột nội dung chính cho kênh của bạn.',
+          'Brainstorm ít nhất 5 ý tưởng video cho mỗi trụ cột.',
+          'Sắp xếp các ý tưởng vào một lịch đăng bài trong 30 ngày.',
+          'Xác định mục tiêu (ví dụ: tăng follow, quảng bá sản phẩm) cho mỗi tuần.',
         ],
-        expectedResults: '50%+ improvement trong organic reach across platforms',
-        solution: 'Data-driven optimization tailored to each platform'
-      }
+        expectedResults: 'Một bản kế hoạch nội dung hoàn chỉnh, có cấu trúc và mục tiêu rõ ràng.',
+      },
     ],
     realWorldApplications: [
-      'Agencies managing multiple client accounts',
-      'Creators scaling across platforms efficiently',
-      'Businesses maximizing organic reach',
-      'Influencers monetizing audience growth'
+      'Phát triển kênh thành một doanh nghiệp.',
+      'Hợp tác với các nhãn hàng lớn.',
+      'Xây dựng phễu bán hàng từ video ngắn.',
+      'Tổ chức các chiến dịch ra mắt sản phẩm.',
     ],
-    caseStudies: [
+    vietnamContext: {
+      title: 'Hệ sinh thái kiếm tiền cho Nhà sáng tạo Việt',
+      content: [
+        'TikTok Shop và Livestream Commerce đang là xu hướng bùng nổ, cho phép nhà sáng tạo bán hàng trực tiếp và nhận hoa hồng ngay trên nền tảng.',
+        'Các MCN (Multi-Channel Network) và Agency tại Việt Nam đóng vai trò quan trọng trong việc kết nối nhà sáng tạo với các nhãn hàng (booking PR).',
+        'Xây dựng thương hiệu cá nhân mạnh có thể dẫn đến các cơ hội ngoài đời thực như viết sách, làm diễn giả, hoặc ra mắt dòng sản phẩm riêng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Phạm Thoại',
+      title: 'Nhà sáng tạo nội dung & "Chiến thần" Livestream',
+      company: 'TikTok Creator',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-thoai',
+      quote:
+        'Content là vua, nhưng livestream bán hàng là nữ hoàng. Sự kết hợp giữa giải trí và thương mại là công thức thành công trên nền tảng video ngắn.',
+    },
+    quizzes: [
       {
-        title: 'Multi-Platform Creator Success',
-        organization: 'Vietnamese Tech Reviewer',
-        problem: 'Inconsistent performance across different platforms',
-        solution: 'Platform-specific optimization strategy với native content approaches',
-        impact: 'Uniform growth: 200K TikTok, 150K YouTube, 100K Instagram trong 8 tháng',
-        innovations: [
-          'Platform-specific content formats',
-          'Cross-platform audience migration strategies',
-          'Algorithm timing optimization'
-        ]
-      }
-    ],
-    resources: [
-      {
-        title: 'Social Media Algorithm Updates',
-        url: 'https://blog.hootsuite.com/how-the-instagram-algorithm-works',
-        type: 'Algorithm Guide'
+        question:
+          'Hình thức kiếm tiền nào liên quan đến việc quảng bá sản phẩm của người khác và nhận hoa hồng trên mỗi đơn hàng thành công?',
+        options: [
+          'Quỹ nhà sáng tạo (Creator Fund)',
+          'Booking PR',
+          'Tiếp thị liên kết (Affiliate Marketing)',
+          'Bán sản phẩm riêng (Merchandise)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Tiếp thị liên kết là mô hình mà nhà sáng tạo giới thiệu sản phẩm/dịch vụ của một công ty khác thông qua các đường link đặc biệt và nhận hoa hồng khi có người mua hàng qua link đó.',
       },
-      {
-        title: 'Platform Optimization Tools',
-        url: 'https://later.com/blog/social-media-analytics',
-        type: 'Analytics Resource'
-      }
-    ]
-  }
+    ],
+  },
 ];

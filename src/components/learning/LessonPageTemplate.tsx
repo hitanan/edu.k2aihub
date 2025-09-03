@@ -1,46 +1,61 @@
-import { ReactNode } from 'react';
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import {
+  BookOpen,
+  CheckCircle,
   Clock,
+  Lightbulb,
+  ListChecks,
   Target,
-  User,
+  Users,
   Play,
+  Book,
+  User,
   ChevronLeft,
   ChevronRight,
-  Book,
-  ExternalLink,
-  CheckCircle,
-  Lightbulb,
-  Users,
+  HelpCircle,
 } from 'lucide-react';
+import { ReactNode } from 'react';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { createDescription, createLessonMetadata, createTitle } from '@/utils/seo';
+import { YoutubePlayer } from '@/components/media/YoutubePlayer';
+import { VietnamContextBox } from './VietnamContextBox';
+import { CareerConnectSection } from './CareerConnectSection';
+import { InteractiveQuiz } from './InteractiveQuiz';
 import { LessonAnalytics } from './LessonAnalytics';
-import { EducationalGamesShowcase } from '@/components/games/EducationalGames';
+import { EducationalGamesShowcase } from '../games/EducationalGames';
+
+// Define the structure for a quiz question
+export interface QuizQuestion {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+export interface CareerProfile {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+  interviewUrl?: string;
+}
+
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
 
 export interface BaseLessonData {
   id: string;
   title: string;
   description: string;
-  duration: string | number;
+  duration: string;
   difficulty: string;
   videoUrl?: string;
   imageUrl?: string;
   objectives: string[];
   prerequisites: string[];
-  relatedGames?: Array<string | { id: string; name: string; description?: string }>;
-  tools?:
-    | string[]
-    | Array<{
-        name: string;
-        category: string;
-        description: string;
-        difficulty: string;
-      }>;
-  tags?: string[];
-  category?: string;
-  concepts?: string[];
   exercises: Array<{
     title: string;
     description: string;
@@ -52,15 +67,6 @@ export interface BaseLessonData {
     hints?: string[];
   }>;
   realWorldApplications: string[];
-  environmentalApplications?: string[];
-  dataSourcesTypes?: string[];
-  analyticalMethods?: string[];
-  sustainabilityMetrics?: Array<{
-    name: string;
-    description: string;
-    measurement: string;
-  }>;
-  environmentalImpact?: string;
   caseStudies?: Array<{
     title: string;
     organization: string;
@@ -74,6 +80,12 @@ export interface BaseLessonData {
     url: string;
     type: string;
   }>;
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerProfile;
+  quizzes?: QuizQuestion[];
+  environmentalImpact?: string;
+  tools?: string[];
+  category?: string;
 }
 
 export interface LessonPageConfig<T extends BaseLessonData> {
@@ -169,12 +181,11 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
             >
               <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
               <span className="truncate">Quay lại {config.moduleTitle}</span>
-            </Link>
-
+            </Link>{' '}
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {config.getFieldIcon && config.getFieldValue && (
                 <div
-                  className={`flex items-center px-2 sm:px-3 py-1 bg-gradient-to-r ${config.primaryColor} to-${config.secondaryColor} rounded-full text-white text-xs sm:text-sm`}
+                  className={`flex items-center px-2 sm:px-3 py-1 bg-gradient-to-r from-primary to-secondary rounded-full text-white text-xs sm:text-sm`}
                 >
                   {config.getFieldIcon(config.getFieldValue(lesson))}
                   <span className="ml-1 sm:ml-2">{config.getFieldValue(lesson)}</span>
@@ -209,153 +220,175 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
 
               <div className="flex flex-wrap gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                  <Clock className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`} />
+                  <Clock className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary-400 flex-shrink-0`} />
                   <span>{lesson.duration}</span>
                 </div>
                 <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                  <Target className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`} />
+                  <Target className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary-400 flex-shrink-0`} />
                   <span>{lesson.difficulty}</span>
                 </div>
-                {config.getFieldValue && (
+                {config.getFieldValue && lesson && (
                   <div className="flex items-center text-gray-300 text-sm sm:text-base">
-                    <User className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-${config.primaryColor}-400 flex-shrink-0`} />
+                    <User className={`w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary-400 flex-shrink-0`} />
                     <span>{config.getFieldValue(lesson)}</span>
                   </div>
                 )}
               </div>
 
-              {/* Video */}
               {lesson.videoUrl && (
                 <div className="relative rounded-xl overflow-hidden mb-4 sm:mb-6 bg-black/20">
-                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                    <iframe
-                      src={lesson.videoUrl.replace('watch?v=', 'embed/')}
-                      title={lesson.title}
-                      className="absolute inset-0 w-full h-full"
-                      allowFullScreen
-                    />
-                  </div>
+                  <YoutubePlayer videoId={lesson.videoUrl.split('v=')[1]} />
                 </div>
               )}
             </div>
 
-            {/* Learning Objectives */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Target className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
-                Mục tiêu học tập
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
-                {lesson.objectives.map((objective, index) => (
-                  <div key={index} className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300 text-sm sm:text-base">{objective}</span>
-                  </div>
-                ))}
+            {/* Learning Objectives & Prerequisites */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center">
+                  <Target className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
+                  Mục tiêu
+                </h2>
+                <ul className="space-y-3">
+                  {lesson.objectives.map((objective, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300 text-sm sm:text-base">{objective}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center">
+                  <Book className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
+                  Yêu cầu
+                </h2>
+                <ul className="space-y-3">
+                  {lesson.prerequisites.map((prereq, index) => (
+                    <li key={index} className="flex items-start">
+                      <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300 text-sm sm:text-base">{prereq}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
-            {/* Prerequisites */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Book className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
-                Kiến thức cần có
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
-                {lesson.prerequisites.map((prereq, index) => (
-                  <div key={index} className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10">
-                    <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300 text-sm sm:text-base">{prereq}</span>
-                  </div>
-                ))}
+            {/* Vietnam Context */}
+            {lesson.vietnamContext && (
+              <div className="mb-6 sm:mb-8">
+                <VietnamContextBox title={lesson.vietnamContext.title} content={lesson.vietnamContext.content} />
               </div>
-            </div>
+            )}
+
+            {/* Interactive Quizzes */}
+            {lesson.quizzes && lesson.quizzes.length > 0 && (
+              <div className="mb-6 sm:mb-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
+                  <HelpCircle className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
+                  Kiểm tra kiến thức
+                </h2>
+                <div className="space-y-4">
+                  {lesson.quizzes.map((quiz, index) => (
+                    <InteractiveQuiz key={index} quiz={quiz} primaryColor={config.primaryColor} />
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Exercises */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Play className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
+                <Play className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
                 Bài tập thực hành
               </h2>
               <div className="space-y-4 sm:space-y-6">
                 {lesson.exercises.map((exercise, index) => (
-                  <div key={index} className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-                      <h3 className="text-lg sm:text-xl font-bold text-white">{exercise.title}</h3>
+                  <details
+                    key={index}
+                    className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5 group"
+                    open={index === 0}
+                  >
+                    <summary className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 cursor-pointer">
+                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-primary-400 transition-colors">
+                        {exercise.title}
+                      </h3>
                       <span
                         className={`px-3 py-1 bg-gradient-to-r ${getDifficultyColor(exercise.difficulty)} rounded-full text-white text-sm font-medium self-start`}
                       >
                         {exercise.difficulty}
                       </span>
-                    </div>
+                    </summary>
 
-                    <p className="text-gray-300 mb-4 text-sm sm:text-base">{exercise.description}</p>
+                    <div className="mt-4">
+                      <p className="text-gray-300 mb-4 text-sm sm:text-base">{exercise.description}</p>
 
-                    {/* Materials */}
-                    {exercise.materials && exercise.materials.length > 0 && (
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Công cụ cần thiết:</h4>
-                        <ul className="space-y-1">
-                          {exercise.materials.map((material, matIndex) => (
-                            <li key={matIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
-                              <span
-                                className={`w-2 h-2 bg-${config.primaryColor}-400 rounded-full mr-2 mt-1.5 sm:mt-2 flex-shrink-0`}
-                              ></span>
-                              {material}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Procedure */}
-                    {exercise.procedure && exercise.procedure.length > 0 && (
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Các bước thực hiện:</h4>
-                        <ol className="space-y-2">
-                          {exercise.procedure.map((step, stepIndex) => (
-                            <li key={stepIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
-                              <span
-                                className={`w-5 h-5 sm:w-6 sm:h-6 bg-${config.primaryColor}-500/20 rounded-full flex items-center justify-center text-${config.primaryColor}-400 text-xs font-bold mr-2 mt-0.5 flex-shrink-0`}
-                              >
-                                {stepIndex + 1}
-                              </span>
-                              <span className="leading-relaxed">{step}</span>
-                            </li>
-                          ))}
-                        </ol>
-                      </div>
-                    )}
-
-                    {/* Expected Results */}
-                    {exercise.expectedResults && (
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Kết quả mong đợi:</h4>
-                        <p
-                          className={`text-gray-300 text-xs sm:text-sm bg-${config.primaryColor}-500/10 p-3 rounded-lg border border-${config.primaryColor}-500/20`}
-                        >
-                          {exercise.expectedResults}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Solution Toggle */}
-                    {exercise.solution && (
-                      <details className="mt-4">
-                        <summary
-                          className={`cursor-pointer font-semibold text-${config.primaryColor}-400 hover:text-${config.primaryColor}-300 transition-colors text-sm sm:text-base`}
-                          data-solution-exercise={exercise.title}
-                        >
-                          Xem hướng dẫn chi tiết & phân tích
-                        </summary>
-                        <div className="mt-4 p-3 sm:p-4 bg-black/20 rounded-lg border border-white/10">
-                          <pre className="text-gray-300 text-xs sm:text-sm whitespace-pre-wrap overflow-x-auto">
-                            {exercise.solution}
-                          </pre>
+                      {/* Materials */}
+                      {exercise.materials && exercise.materials.length > 0 && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Công cụ cần thiết:</h4>
+                          <ul className="space-y-1">
+                            {exercise.materials.map((material, matIndex) => (
+                              <li key={matIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
+                                <span
+                                  className={`w-2 h-2 bg-primary-400 rounded-full mr-2 mt-1.5 sm:mt-2 flex-shrink-0`}
+                                ></span>
+                                {material}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                      </details>
-                    )}
-                  </div>
+                      )}
+
+                      {/* Procedure */}
+                      {exercise.procedure && exercise.procedure.length > 0 && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Các bước thực hiện:</h4>
+                          <ol className="space-y-2">
+                            {exercise.procedure.map((step, stepIndex) => (
+                              <li key={stepIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
+                                <span
+                                  className={`w-5 h-5 sm:w-6 sm:h-6 bg-primary-500/20 rounded-full flex items-center justify-center text-primary-400 text-xs font-bold mr-2 mt-0.5 flex-shrink-0`}
+                                >
+                                  {stepIndex + 1}
+                                </span>
+                                <span className="leading-relaxed">{step}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        </div>
+                      )}
+
+                      {/* Expected Results */}
+                      {exercise.expectedResults && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Kết quả mong đợi:</h4>
+                          <p
+                            className={`text-gray-300 text-xs sm:text-sm bg-primary-500/10 p-3 rounded-lg border border-primary-500/20`}
+                          >
+                            {exercise.expectedResults}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Solution Toggle */}
+                      {exercise.solution && (
+                        <details className="mt-4">
+                          <summary
+                            className={`cursor-pointer font-semibold text-primary-400 hover:text-primary-300 transition-colors text-sm sm:text-base`}
+                            data-solution-exercise={exercise.title}
+                          >
+                            Xem hướng dẫn chi tiết & phân tích
+                          </summary>
+                          <div className="mt-4 p-3 sm:p-4 bg-black/20 rounded-lg border border-white/10">
+                            <pre className="text-gray-300 text-xs sm:text-sm whitespace-pre-wrap overflow-x-auto">
+                              {exercise.solution}
+                            </pre>
+                          </div>
+                        </details>
+                      )}
+                    </div>
+                  </details>
                 ))}
               </div>
             </div>
@@ -363,17 +396,18 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
             {/* Real-world Applications */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Users className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
+                <Users className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
                 Ứng dụng thực tế
               </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {lesson.realWorldApplications.map((application, index) => (
-                  <div key={index} className="flex items-start p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10">
-                    <span
-                      className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-${config.primaryColor}-500 to-${config.secondaryColor}-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold mr-3 flex-shrink-0`}
-                    >
-                      {index + 1}
-                    </span>
+                  <div
+                    key={index}
+                    className="flex items-start p-4 bg-white/5 rounded-xl border border-white/10 transform hover:scale-105 hover:border-primary-500/50 transition-all duration-300"
+                  >
+                    <div className={`p-2 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full mr-4`}>
+                      <CheckCircle className="w-5 h-5 text-white" />
+                    </div>
                     <span className="text-gray-300 text-sm sm:text-base leading-relaxed">{application}</span>
                   </div>
                 ))}
@@ -385,18 +419,25 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
               <EducationalGamesShowcase moduleType={config.moduleName} limit={3} />
             </div>
 
+            {/* Career Connect */}
+            {lesson.careerConnect && (
+              <div className="mb-6 sm:mb-8">
+                <CareerConnectSection {...lesson.careerConnect} />
+              </div>
+            )}
+
             {/* Case Studies */}
             {lesson.caseStudies && lesson.caseStudies.length > 0 && (
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
                 <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                  <Book className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-${config.primaryColor}-400 flex-shrink-0`} />
+                  <Book className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
                   Nghiên cứu tình huống
                 </h2>
                 <div className="space-y-4 sm:space-y-6">
                   {lesson.caseStudies.map((caseStudy, index) => (
                     <div key={index} className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5">
                       <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{caseStudy.title}</h3>
-                      <p className={`text-${config.primaryColor}-400 font-medium mb-3 sm:mb-4 text-sm sm:text-base`}>
+                      <p className={`text-primary-400 font-medium mb-3 sm:mb-4 text-sm sm:text-base`}>
                         {caseStudy.organization}
                       </p>
 
@@ -451,7 +492,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
               {nextLesson && (
                 <Link
                   href={`${config.modulePath}/${nextLesson.id}`}
-                  className={`flex items-center justify-center sm:justify-start px-4 sm:px-6 py-3 bg-gradient-to-r from-${config.primaryColor}-500 to-${config.secondaryColor}-500 text-white rounded-xl hover:from-${config.primaryColor}-600 hover:to-${config.secondaryColor}-600 transition-all duration-300 text-sm sm:text-base min-h-[44px]`}
+                  className={`flex items-center justify-center sm:justify-start px-4 sm:px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 text-sm sm:text-base min-h-[44px]`}
                 >
                   <span className="truncate">Bài tiếp theo</span>
                   <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 flex-shrink-0" />
@@ -462,76 +503,77 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
 
           {/* Sidebar */}
           <div className="xl:col-span-1 order-1 xl:order-2">
-            {/* Custom Sidebar Content */}
-            {config.sidebarContent && config.sidebarContent(lesson)}
-
-            {/* Resources */}
-            {lesson.resources && lesson.resources.length > 0 && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10 mb-4 sm:mb-6">
-                <h4 className="font-semibold text-white mb-3 text-sm sm:text-base">Tài nguyên bổ sung</h4>
-                <div className="space-y-2">
-                  {lesson.resources.map((resource, index) => (
-                    <a
-                      key={index}
-                      href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/30 transition-colors group min-h-[44px] flex items-center"
-                      data-resource-title={resource.title}
-                      data-resource-type={resource.type}
-                    >
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs sm:text-sm text-gray-300 group-hover:text-white transition-colors truncate">
-                            {resource.title}
-                          </span>
-                          <ExternalLink
-                            className={`w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-${config.primaryColor}-400 transition-colors ml-2 flex-shrink-0`}
-                          />
-                        </div>
-                        <div className="text-xs text-gray-500 mt-1">{resource.type}</div>
-                      </div>
-                    </a>
-                  ))}
+            <div className="sticky top-24 space-y-6 sm:space-y-8">
+              {/* Custom Sidebar Content */}
+              {config.sidebarContent && lesson && (
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
+                  {config.sidebarContent(lesson)}
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Course Progress */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Tiến độ khóa học</h3>
-              <div className="space-y-2 sm:space-y-3">
-                {config.lessons.map((lessonItem, index) => (
-                  <Link
-                    key={lessonItem.id}
-                    href={`${config.modulePath}/${lessonItem.id}`}
-                    className={`block p-3 rounded-lg border transition-all duration-300 min-h-[44px] ${
-                      lessonItem.id === lesson.id
-                        ? `bg-${config.primaryColor}-500/20 border-${config.primaryColor}-500/50 text-white`
-                        : `bg-white/5 border-white/10 text-gray-300 hover:border-${config.primaryColor}-500/30 hover:text-white`
-                    }`}
-                  >
-                    <div className="flex items-center">
-                      <div
-                        className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 sm:mr-3 flex-shrink-0 ${
-                          lessonItem.id === lesson.id
-                            ? `bg-${config.primaryColor}-500 text-white`
-                            : 'bg-white/10 text-gray-400'
+              {/* Resources */}
+              {lesson.resources && lesson.resources.length > 0 && (
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
+                  <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center">
+                    <BookOpen className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
+                    Tài nguyên
+                  </h2>
+                  <ul className="space-y-3">
+                    {lesson.resources.map((resource, index) => (
+                      <li key={index}>
+                        <a
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-gray-300 hover:text-white transition-colors group"
+                        >
+                          <span
+                            className={`w-2 h-2 bg-primary-400 rounded-full mr-3 flex-shrink-0 group-hover:scale-125 transition-transform`}
+                          ></span>
+                          <span className="flex-grow truncate text-sm sm:text-base">{resource.title}</span>
+                          <span
+                            className={`ml-2 text-xs text-gray-400 border border-gray-600 px-1.5 py-0.5 rounded-md bg-gray-700/50`}
+                          >
+                            {resource.type}
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Module Lessons */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center">
+                  <ListChecks className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
+                  Các bài học
+                </h2>
+                <ul className="space-y-2">
+                  {config.lessons.map((l, index) => (
+                    <li key={l.id}>
+                      <Link
+                        href={`${config.modulePath}/${l.id}`}
+                        className={`flex items-center p-3 rounded-lg transition-colors text-sm sm:text-base ${
+                          l.id === lessonId
+                            ? `bg-gradient-to-r from-primary-500/30 to-secondary-500/30 text-white font-semibold`
+                            : 'text-gray-300 hover:bg-white/10'
                         }`}
                       >
-                        {index + 1}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-medium truncate text-xs sm:text-sm">
-                          {lessonItem.title.replace(/^Bài \d+: /, '')}
-                        </div>
-                        <div className="text-xs text-gray-400 mt-1">
-                          {lessonItem.duration} • {lessonItem.difficulty}
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
+                        <span
+                          className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3 flex-shrink-0 ${
+                            l.id === lessonId
+                              ? `bg-gradient-to-r from-primary-500 to-secondary-500 text-white`
+                              : 'bg-gray-700 text-gray-300'
+                          }`}
+                        >
+                          {index + 1}
+                        </span>
+                        <span className="truncate">{l.title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

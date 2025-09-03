@@ -17,16 +17,60 @@ const ELEMENTS = {
   P: { color: '#ff8800', radius: 0.17, name: 'Phosphorus' },
   S: { color: '#ffff00', radius: 0.16, name: 'Sulfur' },
   Cl: { color: '#00ff00', radius: 0.18, name: 'Chlorine' },
-  Na: { color: '#8000ff', radius: 0.19, name: 'Sodium' }
+  Na: { color: '#8000ff', radius: 0.19, name: 'Sodium' },
 };
 
 // Target molecules for challenges
 const TARGET_MOLECULES = {
-  H2O: { atoms: ['H', 'O', 'H'], bonds: [['H', 'O'], ['O', 'H']], name: 'Water' },
-  CH4: { atoms: ['C', 'H', 'H', 'H', 'H'], bonds: [['C', 'H'], ['C', 'H'], ['C', 'H'], ['C', 'H']], name: 'Methane' },
-  NH3: { atoms: ['N', 'H', 'H', 'H'], bonds: [['N', 'H'], ['N', 'H'], ['N', 'H']], name: 'Ammonia' },
-  C2H6: { atoms: ['C', 'C', 'H', 'H', 'H', 'H', 'H', 'H'], bonds: [['C', 'C'], ['C', 'H'], ['C', 'H'], ['C', 'H'], ['C', 'H'], ['C', 'H'], ['C', 'H']], name: 'Ethane' },
-  DNA_BASE: { atoms: ['C', 'N', 'O', 'P', 'H'], bonds: [['C', 'N'], ['N', 'O'], ['O', 'P']], name: 'DNA Nucleotide' }
+  H2O: {
+    atoms: ['H', 'O', 'H'],
+    bonds: [
+      ['H', 'O'],
+      ['O', 'H'],
+    ],
+    name: 'Water',
+  },
+  CH4: {
+    atoms: ['C', 'H', 'H', 'H', 'H'],
+    bonds: [
+      ['C', 'H'],
+      ['C', 'H'],
+      ['C', 'H'],
+      ['C', 'H'],
+    ],
+    name: 'Methane',
+  },
+  NH3: {
+    atoms: ['N', 'H', 'H', 'H'],
+    bonds: [
+      ['N', 'H'],
+      ['N', 'H'],
+      ['N', 'H'],
+    ],
+    name: 'Ammonia',
+  },
+  C2H6: {
+    atoms: ['C', 'C', 'H', 'H', 'H', 'H', 'H', 'H'],
+    bonds: [
+      ['C', 'C'],
+      ['C', 'H'],
+      ['C', 'H'],
+      ['C', 'H'],
+      ['C', 'H'],
+      ['C', 'H'],
+      ['C', 'H'],
+    ],
+    name: 'Ethane',
+  },
+  DNA_BASE: {
+    atoms: ['C', 'N', 'O', 'P', 'H'],
+    bonds: [
+      ['C', 'N'],
+      ['N', 'O'],
+      ['O', 'P'],
+    ],
+    name: 'DNA Nucleotide',
+  },
 };
 
 // 3D Atom Component
@@ -37,7 +81,7 @@ function Atom3D({
   isBonding = false,
   onClick,
   onRightClick,
-  atomId
+  atomId,
 }: {
   element: string;
   position: [number, number, number];
@@ -56,7 +100,7 @@ function Atom3D({
         atomRef.current.rotation.y += 0.02;
         atomRef.current.rotation.x += 0.01;
       }
-      
+
       if (isBonding) {
         const scale = 1 + Math.sin(Date.now() * 0.008) * 0.1;
         atomRef.current.scale.setScalar(scale);
@@ -78,9 +122,7 @@ function Atom3D({
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <Sphere 
-        args={[elementData.radius * (hovered ? 1.3 : 1), 32, 32]}
-      >
+      <Sphere args={[elementData.radius * (hovered ? 1.3 : 1), 32, 32]}>
         <meshStandardMaterial
           color={elementData.color}
           emissive={elementData.color}
@@ -93,26 +135,19 @@ function Atom3D({
       {/* Selection ring */}
       {isSelected && (
         <Sphere args={[elementData.radius * 1.5, 32, 32]}>
-          <meshBasicMaterial
-            color="#00ffff"
-            transparent
-            opacity={0.3}
-            wireframe
-          />
+          <meshBasicMaterial color="#00ffff" transparent opacity={0.3} wireframe />
         </Sphere>
       )}
 
       {/* Element label */}
       <Html position={[0, elementData.radius + 0.2, 0]} center>
-        <div className={`text-white text-sm font-bold px-2 py-1 rounded ${
-          isSelected ? 'bg-cyan-600' : 'bg-black bg-opacity-60'
-        }`}>
+        <div
+          className={`text-white text-sm font-bold px-2 py-1 rounded ${
+            isSelected ? 'bg-cyan-600' : 'bg-black bg-opacity-60'
+          }`}
+        >
           {element}
-          {hovered && (
-            <div className="text-xs text-gray-300">
-              {elementData.name}
-            </div>
-          )}
+          {hovered && <div className="text-xs text-gray-300">{elementData.name}</div>}
         </div>
       </Html>
     </group>
@@ -123,7 +158,7 @@ function Atom3D({
 function ChemicalBond3D({
   startPosition,
   endPosition,
-  bondType
+  bondType,
 }: {
   startPosition: [number, number, number];
   endPosition: [number, number, number];
@@ -148,15 +183,8 @@ function ChemicalBond3D({
 
   return (
     <group position={center.toArray()} ref={bondRef}>
-      <Cylinder 
-        args={[bondRadius, bondRadius, length, 8]}
-        rotation={[Math.PI / 2, 0, 0]}
-      >
-        <meshStandardMaterial
-          color={bondColor}
-          emissive={bondColor}
-          emissiveIntensity={0.2}
-        />
+      <Cylinder args={[bondRadius, bondRadius, length, 8]} rotation={[Math.PI / 2, 0, 0]}>
+        <meshStandardMaterial color={bondColor} emissive={bondColor} emissiveIntensity={0.2} />
       </Cylinder>
 
       {/* Multiple bonds for double/triple */}
@@ -166,11 +194,7 @@ function ChemicalBond3D({
           position={[0.1, 0, 0]}
           rotation={[Math.PI / 2, 0, 0]}
         >
-          <meshStandardMaterial
-            color={bondColor}
-            emissive={bondColor}
-            emissiveIntensity={0.2}
-          />
+          <meshStandardMaterial color={bondColor} emissive={bondColor} emissiveIntensity={0.2} />
         </Cylinder>
       )}
 
@@ -195,9 +219,7 @@ function ChemicalBond3D({
 
       {/* Bond type label */}
       <Html position={[0, 0.3, 0]} center>
-        <div className="text-white text-xs bg-gray-800 bg-opacity-80 px-1 py-0.5 rounded">
-          {bondType.toUpperCase()}
-        </div>
+        <div className="text-white text-xs bg-gray-800 bg-opacity-80 px-1 py-0.5 rounded">{bondType.toUpperCase()}</div>
       </Html>
     </group>
   );
@@ -217,7 +239,7 @@ function MolecularControlPanel() {
     const position: [number, number, number] = [
       (molecular.molecules.length % 4) * 2 - 3,
       Math.floor(molecular.molecules.length / 4) * 2,
-      0
+      0,
     ];
     addAtom(selectedElement, position);
   };
@@ -233,8 +255,8 @@ function MolecularControlPanel() {
           research: {
             ...molecular.research,
             points: molecular.research.points + 50,
-            discoveredMolecules: [...molecular.research.discoveredMolecules, target.name]
-          }
+            discoveredMolecules: [...molecular.research.discoveredMolecules, target.name],
+          },
         });
       }
     }
@@ -243,7 +265,7 @@ function MolecularControlPanel() {
   return (
     <div className="absolute top-4 left-4 bg-black bg-opacity-80 text-white p-4 rounded-lg max-w-sm">
       <h3 className="text-lg font-bold mb-3 text-purple-300">🧪 Molecular Assembly Lab</h3>
-      
+
       {/* Element Selection */}
       <div className="mb-4">
         <h4 className="font-semibold mb-2">Select Element</h4>
@@ -253,23 +275,19 @@ function MolecularControlPanel() {
               key={element}
               onClick={() => setSelectedElement(element)}
               className={`px-2 py-1 rounded text-sm font-bold ${
-                selectedElement === element 
-                  ? 'bg-purple-600 text-white' 
-                  : 'bg-gray-600 hover:bg-gray-500'
+                selectedElement === element ? 'bg-purple-600 text-white' : 'bg-gray-600 hover:bg-gray-500'
               }`}
-              style={{ 
-                backgroundColor: selectedElement === element ? undefined : ELEMENTS[element as keyof typeof ELEMENTS].color,
-                color: selectedElement === element ? undefined : '#000000'
+              style={{
+                backgroundColor:
+                  selectedElement === element ? undefined : ELEMENTS[element as keyof typeof ELEMENTS].color,
+                color: selectedElement === element ? undefined : '#000000',
               }}
             >
               {element}
             </button>
           ))}
         </div>
-        <button
-          onClick={addNewAtom}
-          className="bg-green-600 hover:bg-green-500 px-3 py-1 rounded mt-2 w-full"
-        >
+        <button onClick={addNewAtom} className="bg-green-600 hover:bg-green-500 px-3 py-1 rounded mt-2 w-full">
           + Add {selectedElement} Atom
         </button>
       </div>
@@ -283,9 +301,7 @@ function MolecularControlPanel() {
               key={type}
               onClick={() => setBondType(type)}
               className={`px-2 py-1 rounded text-xs ${
-                bondType === type 
-                  ? 'bg-yellow-600 text-white' 
-                  : 'bg-gray-600 hover:bg-gray-500'
+                bondType === type ? 'bg-yellow-600 text-white' : 'bg-gray-600 hover:bg-gray-500'
               }`}
             >
               {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -337,24 +353,30 @@ export default function MolecularAssemblyGame3D() {
   // Handle fullscreen toggle with native browser API
   const toggleFullscreen = () => {
     if (!canvasContainerRef.current) return;
-    
+
     if (!document.fullscreenElement) {
       // Enter fullscreen
-      canvasContainerRef.current.requestFullscreen().then(() => {
-        setIsFullscreen(true);
-      }).catch(err => {
-        console.error('Error entering fullscreen:', err);
-        // Fallback to CSS-only fullscreen
-        setIsFullscreen(true);
-      });
+      canvasContainerRef.current
+        .requestFullscreen()
+        .then(() => {
+          setIsFullscreen(true);
+        })
+        .catch((err) => {
+          console.error('Error entering fullscreen:', err);
+          // Fallback to CSS-only fullscreen
+          setIsFullscreen(true);
+        });
     } else {
       // Exit fullscreen
-      document.exitFullscreen().then(() => {
-        setIsFullscreen(false);
-      }).catch(err => {
-        console.error('Error exiting fullscreen:', err);
-        setIsFullscreen(false);
-      });
+      document
+        .exitFullscreen()
+        .then(() => {
+          setIsFullscreen(false);
+        })
+        .catch((err) => {
+          console.error('Error exiting fullscreen:', err);
+          setIsFullscreen(false);
+        });
     }
   };
 
@@ -372,12 +394,12 @@ export default function MolecularAssemblyGame3D() {
 
   const handleAtomClick = (atomId: string) => {
     console.log('Atom clicked:', atomId);
-    
+
     if (!selectedAtom) {
       // First atom selection
       setSelectedAtom(atomId);
       updateMolecularState({
-        assembly: { ...molecular.assembly, selectedAtom: atomId }
+        assembly: { ...molecular.assembly, selectedAtom: atomId },
       });
     } else if (selectedAtom !== atomId) {
       // Second atom selection - create bond
@@ -385,13 +407,13 @@ export default function MolecularAssemblyGame3D() {
       createBond(selectedAtom, atomId, 'single');
       setSelectedAtom(null);
       updateMolecularState({
-        assembly: { ...molecular.assembly, selectedAtom: null }
+        assembly: { ...molecular.assembly, selectedAtom: null },
       });
     } else {
       // Clicking same atom - deselect
       setSelectedAtom(null);
       updateMolecularState({
-        assembly: { ...molecular.assembly, selectedAtom: null }
+        assembly: { ...molecular.assembly, selectedAtom: null },
       });
     }
   };
@@ -401,7 +423,7 @@ export default function MolecularAssemblyGame3D() {
     if (selectedAtom === atomId) {
       setSelectedAtom(null);
       updateMolecularState({
-        assembly: { ...molecular.assembly, selectedAtom: null }
+        assembly: { ...molecular.assembly, selectedAtom: null },
       });
     }
   };
@@ -416,7 +438,7 @@ export default function MolecularAssemblyGame3D() {
           // Quick add Hydrogen
           break;
         case 'c':
-          // Quick add Carbon  
+          // Quick add Carbon
           break;
         case 'o':
           // Quick add Oxygen
@@ -432,14 +454,11 @@ export default function MolecularAssemblyGame3D() {
   }, []);
 
   return (
-    <div 
+    <div
       ref={canvasContainerRef}
       className={`relative ${isFullscreen ? 'fixed inset-0 z-50' : 'h-screen'} bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900`}
     >
-      <Canvas
-        camera={{ position: [0, 5, 10], fov: 75 }}
-        gl={{ antialias: true, alpha: true }}
-      >
+      <Canvas camera={{ position: [0, 5, 10], fov: 75 }} gl={{ antialias: true, alpha: true }}>
         {/* Lighting */}
         <ambientLight intensity={0.6} />
         <directionalLight position={[10, 10, 5]} intensity={1} color="#ffffff" />
@@ -447,13 +466,7 @@ export default function MolecularAssemblyGame3D() {
         <pointLight position={[5, -5, -5]} intensity={0.6} color="#88ffff" />
 
         {/* Controls */}
-        <OrbitControls
-          enablePan={true}
-          enableZoom={true}
-          enableRotate={true}
-          maxDistance={20}
-          minDistance={2}
-        />
+        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} maxDistance={20} minDistance={2} />
 
         {/* Lab bench/workspace */}
         <mesh position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
@@ -483,9 +496,9 @@ export default function MolecularAssemblyGame3D() {
 
             {/* Render bonds */}
             {molecule.bonds.map((bond, bondIndex) => {
-              const atom1 = molecule.atoms.find(a => a.element === bond.atom1);
-              const atom2 = molecule.atoms.find(a => a.element === bond.atom2);
-              
+              const atom1 = molecule.atoms.find((a) => a.element === bond.atom1);
+              const atom2 = molecule.atoms.find((a) => a.element === bond.atom2);
+
               if (atom1 && atom2) {
                 return (
                   <ChemicalBond3D
@@ -544,10 +557,18 @@ export default function MolecularAssemblyGame3D() {
       <div className="absolute bottom-4 right-4 bg-black bg-opacity-80 text-white p-3 rounded max-w-xs">
         <h4 className="font-bold mb-2 text-cyan-300">⚗️ Chemistry Info</h4>
         <div className="text-sm space-y-1">
-          <div><strong>Single Bond:</strong> σ orbital overlap</div>
-          <div><strong>Double Bond:</strong> σ + π orbital overlap</div>
-          <div><strong>Triple Bond:</strong> σ + 2π orbital overlap</div>
-          <div><strong>VSEPR Theory:</strong> Electron pair repulsion shapes molecules</div>
+          <div>
+            <strong>Single Bond:</strong> σ orbital overlap
+          </div>
+          <div>
+            <strong>Double Bond:</strong> σ + π orbital overlap
+          </div>
+          <div>
+            <strong>Triple Bond:</strong> σ + 2π orbital overlap
+          </div>
+          <div>
+            <strong>VSEPR Theory:</strong> Electron pair repulsion shapes molecules
+          </div>
           <div className="text-purple-300 font-semibold mt-2">
             &quot;Chemistry is the study of matter and the changes it undergoes&quot;
           </div>

@@ -1,37 +1,29 @@
-// Blue Economy & Marine Technology Module
-export interface BlueEconomyLessonType {
-  id: string;
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+
+interface VietnamContext {
   title: string;
-  description: string;
-  duration: string;
-  difficulty: string;
-  videoUrl?: string;
-  imageUrl?: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Array<{
-    title: string;
-    description: string;
-    difficulty: string;
-    materials?: string[];
-    procedure?: string[];
-    expectedResults?: string;
-    solution?: string;
-  }>;
-  realWorldApplications: string[];
-  caseStudies?: Array<{
-    title: string;
-    organization: string;
-    problem: string;
-    solution: string;
-    impact: string;
-    innovations: string[];
-  }>;
-  resources?: Array<{
-    title: string;
-    url: string;
-    type: string;
-  }>;
+  content: string[];
+}
+
+interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
+export interface BlueEconomyLessonType extends BaseLessonData {
+  vietnamContext: VietnamContext;
+  careerConnect: CareerConnect;
+  quizzes: Quiz[];
 }
 
 export const blueEconomyLessons: BlueEconomyLessonType[] = [
@@ -72,6 +64,36 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
         innovations: ['IoT sensors', 'AI prediction', 'Automated feeding'],
       },
     ],
+    vietnamContext: {
+      title: 'Việt Nam: Cường quốc biển',
+      content: [
+        'Với đường bờ biển dài 3.260 km, Việt Nam có tiềm năng to lớn để phát triển kinh tế biển.',
+        'Chính phủ đã phê duyệt "Chiến lược phát triển bền vững kinh tế biển Việt Nam đến năm 2030, tầm nhìn đến năm 2045".',
+        'Các ngành kinh tế biển trọng điểm bao gồm du lịch, thủy sản, năng lượng tái tạo, và vận tải biển.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Trần Thị Thu Hà',
+      title: 'Chuyên gia Quy hoạch Biển',
+      company: 'Viện Nghiên cứu Biển và Hải đảo',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-thi-thu-ha',
+      quote:
+        'Làm việc trong lĩnh vực kinh tế biển là cơ hội để góp phần xây dựng tương lai thịnh vượng và bền vững cho đất nước, dựa trên những tài nguyên quý giá mà thiên nhiên ban tặng.',
+    },
+    quizzes: [
+      {
+        question: 'Kinh tế biển xanh là gì?',
+        options: [
+          'Khai thác tài nguyên biển tối đa',
+          'Sử dụng bền vững tài nguyên biển để phát triển kinh tế, cải thiện sinh kế và việc làm',
+          'Chỉ tập trung vào du lịch biển',
+          'Cấm hoàn toàn các hoạt động trên biển',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Kinh tế biển xanh nhấn mạnh sự cân bằng giữa phát triển kinh tế và bảo vệ môi trường biển, đảm bảo sự bền vững cho các thế hệ tương lai.',
+      },
+    ],
   },
   {
     id: 'smart-aquaculture-systems',
@@ -107,6 +129,36 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
       'Hệ thống cảnh báo sớm',
       'Tối ưu hóa thức ăn và môi trường',
     ],
+    vietnamContext: {
+      title: 'Nuôi trồng thủy sản 4.0 tại Việt Nam',
+      content: [
+        'Việt Nam là một trong những nước xuất khẩu thủy sản hàng đầu thế giới.',
+        'Việc áp dụng công nghệ cao giúp tăng năng suất, giảm rủi ro dịch bệnh và bảo vệ môi trường.',
+        'Các tập đoàn lớn như Minh Phú, Việt-Úc đang đi đầu trong việc ứng dụng công nghệ vào nuôi tôm.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lê Văn Quang',
+      title: 'Kỹ sư tự động hóa',
+      company: 'R&D Department, a local aquaculture tech firm',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-van-quang',
+      quote:
+        'Kết hợp công nghệ với nông nghiệp là con đường tất yếu. Chúng tôi tự hào tạo ra những giải pháp giúp người nông dân làm giàu trên chính mảnh đất quê hương một cách bền vững.',
+    },
+    quizzes: [
+      {
+        question: 'Lợi ích chính của việc áp dụng IoT trong nuôi trồng thủy sản là gì?',
+        options: [
+          'Giảm chi phí mua giống',
+          'Giám sát chất lượng nước theo thời gian thực và tự động hóa',
+          'Tăng diện tích ao nuôi',
+          'Không cần nhân công',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'IoT cho phép giám sát liên tục các chỉ số quan trọng của môi trường nước (pH, oxy hòa tan, nhiệt độ), từ đó đưa ra cảnh báo và điều khiển tự động, giúp tối ưu hóa điều kiện sống cho vật nuôi.',
+      },
+    ],
   },
   {
     id: 'marine-renewable-energy',
@@ -140,6 +192,36 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
       'Năng lượng sóng và thủy triều',
       'Tích hợp lưới điện thông minh',
     ],
+    vietnamContext: {
+      title: 'Tiềm năng điện gió ngoài khơi của Việt Nam',
+      content: [
+        'Việt Nam được đánh giá là có tiềm năng điện gió ngoài khơi lớn nhất Đông Nam Á.',
+        'Nhiều dự án điện gió ngoài khơi quy mô lớn đang được đề xuất tại các tỉnh như Bình Thuận, Ninh Thuận, Bạc Liêu.',
+        'Phát triển điện gió ngoài khơi góp phần đảm bảo an ninh năng lượng và giảm phát thải khí nhà kính.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Phạm Thị Thanh Mai',
+      title: 'Kỹ sư dự án năng lượng tái tạo',
+      company: 'T&T Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-thi-thanh-mai',
+      quote:
+        'Phát triển năng lượng tái tạo từ biển là một lĩnh vực mới mẻ và đầy thách thức, nhưng đó cũng là cơ hội để chúng ta tạo ra một tương lai năng lượng sạch và bền vững cho Việt Nam.',
+    },
+    quizzes: [
+      {
+        question: 'Tại sao điện gió ngoài khơi có tiềm năng lớn hơn điện gió trên bờ?',
+        options: [
+          'Dễ lắp đặt hơn',
+          'Gió ngoài khơi thường mạnh và ổn định hơn',
+          'Chi phí thấp hơn',
+          'Không ảnh hưởng đến cảnh quan',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Tốc độ gió ngoài khơi thường cao hơn và ít bị ảnh hưởng bởi các vật cản hơn so với trên đất liền, giúp các tuabin gió hoạt động hiệu quả và tạo ra sản lượng điện lớn hơn.',
+      },
+    ],
   },
   {
     id: 'marine-biotechnology',
@@ -169,6 +251,36 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
       },
     ],
     realWorldApplications: ['Phát triển thuốc từ biển', 'Mỹ phẩm từ nguyên liệu biển', 'Thực phẩm chức năng'],
+    vietnamContext: {
+      title: 'Kho báu dược liệu từ biển Việt Nam',
+      content: [
+        'Việt Nam có đa dạng sinh học biển cao, là nguồn tài nguyên quý giá cho công nghệ sinh học.',
+        'Viện Hàn lâm Khoa học và Công nghệ Việt Nam đang có nhiều nghiên cứu về các hợp chất có hoạt tính sinh học từ sinh vật biển.',
+        'Các sản phẩm từ rong biển, hải sâm đang ngày càng được ưa chuộng trên thị trường.',
+      ],
+    },
+    careerConnect: {
+      name: 'Tiến sĩ Hoàng Văn Nam',
+      title: 'Nhà nghiên cứu',
+      company: 'Viện Công nghệ sinh học',
+      imageUrl: 'https://i.pravatar.cc/150?u=hoang-van-nam',
+      quote:
+        'Biển cả là một phòng thí nghiệm khổng lồ với vô vàn bí ẩn chưa được khám phá. Mỗi chuyến đi thực địa là một hành trình tìm kiếm những hợp chất mới có thể cứu sống con người.',
+    },
+    quizzes: [
+      {
+        question: 'Công nghệ sinh học biển có thể được ứng dụng trong lĩnh vực nào?',
+        options: [
+          'Chỉ sản xuất thuốc',
+          'Chỉ làm mỹ phẩm',
+          'Chỉ làm thực phẩm',
+          'Dược phẩm, mỹ phẩm, thực phẩm, năng lượng sinh học và nhiều lĩnh vực khác',
+        ],
+        correctAnswerIndex: 3,
+        explanation:
+          'Công nghệ sinh học biển có phạm vi ứng dụng rất rộng, từ việc tìm kiếm các hợp chất mới cho y học, tạo ra các thành phần tự nhiên cho mỹ phẩm, đến việc phát triển nhiên liệu sinh học từ tảo.',
+      },
+    ],
   },
   {
     id: 'sustainable-fisheries-management',
@@ -198,6 +310,36 @@ export const blueEconomyLessons: BlueEconomyLessonType[] = [
       },
     ],
     realWorldApplications: ['Hệ thống truy xuất thực phẩm', 'Quản lý đội tàu cá', 'Chứng nhận bền vững'],
+    vietnamContext: {
+      title: 'Chống khai thác IUU và truy xuất nguồn gốc',
+      content: [
+        'Việt Nam đang nỗ lực chống khai thác hải sản bất hợp pháp, không báo cáo và không theo quy định (IUU) để gỡ "thẻ vàng" của Ủy ban châu Âu.',
+        'Việc áp dụng công nghệ truy xuất nguồn gốc điện tử là một yêu cầu bắt buộc để xuất khẩu hải sản sang các thị trường khó tính.',
+        'Nhiều doanh nghiệp và ngư dân đang chuyển đổi sang các phương pháp khai thác bền vững hơn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Nguyễn Văn Bình',
+      title: 'Thuyền trưởng tàu cá',
+      company: 'Hợp tác xã nghề cá Rạng Đông',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-van-binh',
+      quote:
+        'Trước đây chúng tôi chỉ biết ra khơi và đánh bắt. Giờ đây, chúng tôi học cách ghi nhật ký điện tử, sử dụng công nghệ để bảo vệ nguồn lợi. Biển nuôi sống chúng tôi, chúng tôi phải giữ gìn biển.',
+    },
+    quizzes: [
+      {
+        question: 'Mục đích chính của hệ thống truy xuất nguồn gốc hải sản là gì?',
+        options: [
+          'Để bán cá giá cao hơn',
+          'Để chứng minh nguồn gốc hợp pháp và an toàn của sản phẩm, tăng cường niềm tin cho người tiêu dùng',
+          'Để theo dõi ngư dân',
+          'Để tính thuế',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Hệ thống truy xuất nguồn gốc giúp minh bạch hóa toàn bộ chuỗi cung ứng, từ lúc đánh bắt đến khi tới tay người tiêu dùng, đảm bảo sản phẩm tuân thủ các quy định về an toàn thực phẩm và khai thác bền vững.',
+      },
+    ],
   },
 ];
 

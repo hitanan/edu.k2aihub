@@ -37,11 +37,27 @@ export const softSkillsLessons: BaseLessonData[] = [
       'Giải quyết xung đột trong nhóm',
       'Xây dựng mạng lưới quan hệ chuyên nghiệp',
     ],
-    resources: [
+    vietnamContext: {
+      title: 'Văn hóa "Cả nể" và Thách thức trong Giao tiếp',
+      content: [
+        'Trong văn hóa Việt Nam, sự "cả nể" đôi khi khiến việc đưa ra phản hồi thẳng thắn trở nên khó khăn. Học cách góp ý một cách khéo léo và tôn trọng là rất quan trọng.',
+        'Giao tiếp phi ngôn ngữ, như cách chào hỏi, gật đầu, và duy trì ánh mắt, đóng vai trò quan trọng trong việc xây dựng lòng tin.',
+        'Trong môi trường công sở hiện đại, kỹ năng trình bày ý tưởng một cách rõ ràng, mạch lạc đang ngày càng được coi trọng hơn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Thị Lan Anh',
+      title: 'Trưởng phòng Nhân sự',
+      company: 'Navigos Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-huu-loi',
+      quote: 'Chúng tôi có thể đào tạo kỹ năng chuyên môn, nhưng chúng tôi tuyển dụng những người có kỹ năng giao tiếp tốt. Đó là nền tảng của mọi sự hợp tác thành công.',
+    },
+    quizzes: [
       {
-        title: 'Sách "Đắc nhân tâm"',
-        url: 'https://www.vinabook.com/dac-nhan-tam-tai-ban-2019-p82269.html',
-        type: 'Reference',
+        question: 'Kỹ thuật tóm tắt lại lời của người nói bằng ngôn ngữ của chính bạn để xác nhận sự thấu hiểu được gọi là gì?',
+        options: ['Lắng nghe chọn lọc', 'Lắng nghe thấu cảm', 'Diễn giải (Paraphrasing)', 'Phản hồi trực tiếp'],
+        correctAnswerIndex: 2,
+        explanation: 'Diễn giải là một kỹ thuật cốt lõi của lắng nghe tích cực, giúp đảm bảo bạn đã hiểu đúng thông điệp của người nói và thể hiện rằng bạn đang thực sự chú ý.',
       },
     ],
   },
@@ -79,11 +95,27 @@ export const softSkillsLessons: BaseLessonData[] = [
       'Lập kế hoạch và tổ chức sự kiện',
       'Đàm phán và thuyết phục trong kinh doanh',
     ],
-    resources: [
+    vietnamContext: {
+      title: 'Ra quyết định trong môi trường tập thể',
+      content: [
+        'Các doanh nghiệp Việt Nam thường có xu hướng ra quyết định dựa trên sự đồng thuận của tập thể. Kỹ năng trình bày và thuyết phục để đạt được sự đồng thuận là rất cần thiết.',
+        'Áp lực từ "sếp" hoặc những người lớn tuổi hơn có thể ảnh hưởng đến quyết định. Học cách bảo vệ quan điểm của mình một cách logic và tôn trọng là một kỹ năng quan trọng.',
+        'Trong bối cảnh kinh doanh thay đổi nhanh chóng, khả năng ra quyết định dựa trên dữ liệu thay vì cảm tính đang trở thành một lợi thế cạnh tranh lớn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lê Hồng Minh',
+      title: 'Chủ tịch & CEO',
+      company: 'VNG Corporation',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-hong-minh',
+      quote: 'Khởi nghiệp là một chuỗi các quyết định. Không phải quyết định nào cũng đúng, nhưng quyết định nhanh và học hỏi từ sai lầm còn hơn là không dám quyết định.',
+    },
+    quizzes: [
       {
-        title: 'Video "5 bước giải quyết vấn đề hiệu quả"',
-        url: 'https://www.youtube.com/watch?v=8aP8j6g2G6A',
-        type: 'Video',
+        question: 'Bước đầu tiên và quan trọng nhất trong quy trình giải quyết vấn đề là gì?',
+        options: ['Tìm kiếm giải pháp', 'Xác định rõ ràng vấn đề', 'Đánh giá các lựa chọn', 'Thực hiện giải pháp'],
+        correctAnswerIndex: 1,
+        explanation: 'Nếu không xác định đúng vấn đề gốc rễ, mọi giải pháp đưa ra sau đó đều có thể trở nên vô nghĩa. Việc định nghĩa rõ ràng vấn đề là nền tảng cho toàn bộ quy trình.',
       },
     ],
   },

@@ -18,17 +18,16 @@ function convertToBaseLessonData(lesson: AdvancedAILesson): BaseLessonData {
     imageUrl: lesson.imageUrl,
     objectives: lesson.objectives,
     prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises,
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies?.map((study) => ({
-      title: study.title,
-      organization: study.organization,
-      problem: study.problem,
-      solution: study.solution,
-      impact: study.impact,
-      innovations: study.innovations || [],
+    exercises: lesson.exercises.map((ex) => ({
+      ...ex,
+      materials: [...(ex.tools || []), ...(ex.datasets || [])],
     })),
+    realWorldApplications: lesson.realWorldApplications,
+    caseStudies: lesson.caseStudies,
     resources: lesson.resources,
+    vietnamContext: lesson.vietnamContext,
+    careerConnect: lesson.careerConnect,
+    quizzes: lesson.quizzes,
   };
 }
 

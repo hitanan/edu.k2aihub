@@ -1,41 +1,30 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import {
-  CybersecurityLessonData,
-  CybersecurityLessons,
-} from '@/data/cybersecurity';
+import { CybersecurityLessonData, CybersecurityLessons } from '@/data/cybersecurity';
 import { K2Module } from '@/data/moduleNavigation';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
   'Cybersecurity & Ethical Hacking - An Ninh Mạng',
   'Khóa học bảo mật mạng và ethical hacking toàn diện. Từ network security đến penetration testing',
-  ["cybersecurity","ethical hacking","network security","penetration testing","malware analysis"],
-  'cybersecurity'
+  ['cybersecurity', 'ethical hacking', 'network security', 'penetration testing', 'malware analysis'],
+  'cybersecurity',
 );
 
 // Convert CyberSecurityLesson to BaseLessonData interface
-function convertToLesson(
-  cyberSecurityLesson: CybersecurityLessonData,
-): BaseLessonData {
+function convertToLesson(cyberSecurityLesson: CybersecurityLessonData): BaseLessonData {
   return {
     id: cyberSecurityLesson.id,
     title: cyberSecurityLesson.title,
     description: cyberSecurityLesson.description,
     duration: cyberSecurityLesson.duration,
     difficulty: cyberSecurityLesson.difficulty,
-    category: cyberSecurityLesson.category,
     imageUrl: cyberSecurityLesson.imageUrl || '/default-lesson.jpg',
     videoUrl: cyberSecurityLesson.videoUrl,
     objectives: cyberSecurityLesson.objectives,
-    prerequisites: cyberSecurityLesson.prerequisites || [
-      'Basic networking',
-      'Computer fundamentals',
-    ],
+    prerequisites: cyberSecurityLesson.prerequisites || ['Basic networking', 'Computer fundamentals'],
     exercises:
       cyberSecurityLesson.exercises?.map((ex) => ({
         title: ex.title,
@@ -43,17 +32,10 @@ function convertToLesson(
         difficulty: ex.difficulty,
         materials: ex.materials || [],
         procedure: ex.hints || [ex.description],
-        expectedResults:
-          ex.expectedResults || 'Security test completed successfully',
+        expectedResults: ex.expectedResults || 'Security test completed successfully',
         solution: ex.solution || 'Follow security best practices',
       })) || [],
     resources: cyberSecurityLesson.resources || [],
-    tools: cyberSecurityLesson.tools || [
-      'Kali Linux',
-      'Metasploit',
-      'Wireshark',
-      'Nmap',
-    ],
     realWorldApplications: cyberSecurityLesson.realWorldApplications || [],
     caseStudies:
       cyberSecurityLesson.caseStudies?.map((cs) => ({
@@ -83,8 +65,7 @@ export default function CybersecurityPage() {
     primaryColor: 'red',
     gradientColors: 'from-slate-900 via-red-900 to-orange-900',
     basePath: '/learning/cybersecurity',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     features: [
       'Penetration Testing và Vulnerability Assessment',
       'Network Security và Firewall Configuration',
@@ -152,12 +133,7 @@ export default function CybersecurityPage() {
       {
         title: 'Penetration Testing',
         icon: '🎯',
-        items: [
-          'Web App Testing',
-          'Network Scanning',
-          'Vulnerability Assessment',
-          'Exploitation Techniques',
-        ],
+        items: ['Web App Testing', 'Network Scanning', 'Vulnerability Assessment', 'Exploitation Techniques'],
       },
       {
         title: 'Security Tools',
@@ -167,48 +143,26 @@ export default function CybersecurityPage() {
       {
         title: 'Incident Response',
         icon: '🚨',
-        items: [
-          'Threat Detection',
-          'Digital Forensics',
-          'Malware Analysis',
-          'Recovery Procedures',
-        ],
+        items: ['Threat Detection', 'Digital Forensics', 'Malware Analysis', 'Recovery Procedures'],
       },
       {
         title: 'Network Security',
         icon: '🌐',
-        items: [
-          'Firewall Configuration',
-          'IDS/IPS Systems',
-          'VPN Setup',
-          'Network Monitoring',
-        ],
+        items: ['Firewall Configuration', 'IDS/IPS Systems', 'VPN Setup', 'Network Monitoring'],
       },
       {
         title: 'Cryptography',
         icon: '🔐',
-        items: [
-          'Encryption Algorithms',
-          'Digital Signatures',
-          'PKI Systems',
-          'Hash Functions',
-        ],
+        items: ['Encryption Algorithms', 'Digital Signatures', 'PKI Systems', 'Hash Functions'],
       },
       {
         title: 'Compliance',
         icon: '📋',
-        items: [
-          'ISO 27001',
-          'NIST Framework',
-          'GDPR Compliance',
-          'Risk Assessment',
-        ],
+        items: ['ISO 27001', 'NIST Framework', 'GDPR Compliance', 'Risk Assessment'],
       },
     ],
     relatedModules: [K2Module.Python, K2Module.Arduino, K2Module.Biotechnology],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

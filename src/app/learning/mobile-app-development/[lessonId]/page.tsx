@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { mobileAppLessons, MobileAppLesson } from '@/data/mobile-app-development'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { mobileAppLessons, MobileAppLessonType } from '@/data/mobile-app-development';
 import { PageProps } from '@/types';
 import { Smartphone, Code, Layers, Target, DollarSign } from 'lucide-react';
 
@@ -16,7 +21,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 // Page component with mobile app development-specific configuration
 export default async function MobileAppLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<MobileAppLesson> = {
+  const config: LessonPageConfig<MobileAppLessonType> = {
     moduleName: 'mobile-app-development',
     moduleTitle: 'Mobile App Development',
     modulePath: '/learning/mobile-app-development',
@@ -25,17 +30,23 @@ export default async function MobileAppLessonPage({ params }: PageProps) {
     secondaryColor: 'pink',
     gradientColors: 'from-slate-900 via-purple-900 to-pink-900',
     getFieldIcon: (field: string) => {
-      switch(field) {
-        case 'platform': return <Smartphone className="w-5 h-5" />;
-        case 'programmingLanguages': return <Code className="w-5 h-5" />;
-        case 'frameworks': return <Layers className="w-5 h-5" />;
-        case 'developmentLevel': return <Target className="w-5 h-5" />;
-        case 'monetizationStrategies': return <DollarSign className="w-5 h-5" />;
-        default: return <Smartphone className="w-5 h-5" />;
+      switch (field) {
+        case 'platform':
+          return <Smartphone className="w-5 h-5" />;
+        case 'programmingLanguages':
+          return <Code className="w-5 h-5" />;
+        case 'frameworks':
+          return <Layers className="w-5 h-5" />;
+        case 'developmentLevel':
+          return <Target className="w-5 h-5" />;
+        case 'monetizationStrategies':
+          return <DollarSign className="w-5 h-5" />;
+        default:
+          return <Smartphone className="w-5 h-5" />;
       }
     },
-    getFieldValue: (lesson: MobileAppLesson) => lesson.platform,
-    sidebarContent: (lesson: MobileAppLesson) => (
+    getFieldValue: (lesson: MobileAppLessonType) => lesson.platform,
+    sidebarContent: (lesson: MobileAppLessonType) => (
       <div className="space-y-6">
         <div className="bg-purple-950/30 rounded-lg p-4">
           <h3 className="text-lg font-semibold text-purple-300 mb-3 flex items-center">
@@ -120,9 +131,9 @@ export default async function MobileAppLessonPage({ params }: PageProps) {
           </div>
         )}
       </div>
-    )
-  }
-  
+    ),
+  };
+
   const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

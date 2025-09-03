@@ -1,45 +1,8 @@
-export interface VietnameseHealthcareLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
-  videoUrl: string;
-  imageUrl?: string;
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+
+export interface VietnameseHealthcareLesson extends BaseLessonData {
   medicalField: string;
   technologies: string[];
-  resources: Resource[];
-  caseStudies: CaseStudy[];
-}
-
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  requirements: string[];
-  procedure: string[];
-  expectedResults: string;
-}
-
-interface Resource {
-  title: string;
-  url: string;
-  type: 'hospital' | 'health-ministry' | 'research' | 'telemedicine' | 'healthtech';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  organization: string;
-  problem: string;
-  solution: string;
-  impact: string;
-  innovations: string[];
 }
 
 export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
@@ -52,8 +15,8 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
     imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '160 phút',
-    medicalField: 'Digital Health Infrastructure',
-    technologies: ['Electronic Health Records', 'Telemedicine platforms', 'Health APIs', 'Data security'],
+    medicalField: 'Y tế số (Digital Health)',
+    technologies: ['Electronic Health Records (EHR)', 'Telemedicine', 'Health Data Management', 'AI in Diagnostics'],
     objectives: [
       'Design comprehensive digital health systems cho Vietnamese healthcare',
       'Implement secure Electronic Health Record platforms',
@@ -70,7 +33,7 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
         title: 'Hospital Management System',
         description: 'Build comprehensive hospital management platform cho Vietnamese private hospital',
         difficulty: 'Trung bình',
-        requirements: ['Database system', 'Web framework', 'Security protocols'],
+        materials: ['Database system', 'Web framework', 'Security protocols'],
         procedure: [
           'Design patient registration system với Vietnamese ID integration',
           'Create appointment scheduling với doctor availability',
@@ -82,98 +45,96 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
       },
     ],
     realWorldApplications: [
-      'Private hospital digital transformation',
-      'Rural healthcare telemedicine solutions',
-      'Health insurance technology platforms',
-      'Medical research data management',
+      'Chuyển đổi số tại các bệnh viện tư nhân.',
+      'Giải pháp y tế từ xa (telemedicine) cho các vùng nông thôn.',
+      'Nền tảng công nghệ cho bảo hiểm y tế.',
+      'Quản lý dữ liệu cho các nghiên cứu y học.',
     ],
+    vietnamContext: {
+      title: 'Y tế số: Tương lai của ngành Chăm sóc sức khỏe Việt Nam',
+      content: [
+        'Hệ thống y tế Việt Nam đang đối mặt với nhiều thách thức như quá tải ở các bệnh viện tuyến trên và khó khăn trong việc tiếp cận dịch vụ y tế ở vùng sâu vùng xa. Y tế số (Digital Health) được xem là chìa khóa để giải quyết các vấn đề này.',
+        'Chính phủ đang triển khai mạnh mẽ các chính sách về bệnh án điện tử (EHR), khám chữa bệnh từ xa (telemedicine) và quản lý y tế dựa trên dữ liệu.',
+        'Các startup healthtech Việt Nam đang phát triển nhanh chóng, cung cấp các giải pháp từ đặt lịch khám, tư vấn trực tuyến đến các thiết bị theo dõi sức khỏe cá nhân.',
+      ],
+    },
     caseStudies: [
       {
-        title: 'Vinmec Hospital Digital Transformation',
-        organization: 'Vinmec International Hospital',
-        problem: 'Streamline patient care và improve efficiency across multiple hospital locations',
-        solution: 'Comprehensive digital health platform với integrated EHR và telemedicine',
-        impact: '40% reduction in patient wait times, 60% improvement in data accuracy',
+        title: 'Vinmec: Chuyển đổi số toàn diện bệnh viện',
+        organization: 'Hệ thống Y tế Vinmec',
+        problem:
+          'Cần một hệ thống đồng bộ để tối ưu hóa quy trình chăm sóc bệnh nhân, nâng cao hiệu quả hoạt động và quản lý dữ liệu trên toàn chuỗi bệnh viện.',
+        solution:
+          'Vinmec đã triển khai một nền tảng y tế số toàn diện, tích hợp bệnh án điện tử (EHR), ứng dụng di động cho bệnh nhân, và hệ thống quản lý bệnh viện thông minh. Họ cũng ứng dụng AI trong chẩn đoán hình ảnh.',
+        impact:
+          'Giảm 40% thời gian chờ đợi của bệnh nhân, cải thiện 60% độ chính xác của dữ liệu. Vinmec trở thành hình mẫu về chuyển đổi số trong lĩnh vực y tế tại Việt Nam.',
+        innovations: ['AI hỗ trợ chẩn đoán hình ảnh', 'Ứng dụng di động cho bệnh nhân', 'Bệnh án điện tử tích hợp'],
+      },
+      {
+        title: 'eDoctor: Bác sĩ trong túi bạn',
+        organization: 'eDoctor',
+        problem:
+          'Người dân, đặc biệt ở các thành phố lớn, gặp khó khăn trong việc tiếp cận tư vấn y tế nhanh chóng cho các vấn đề sức khỏe không khẩn cấp, dẫn đến tình trạng tự ý mua thuốc hoặc quá tải bệnh viện.',
+        solution:
+          'eDoctor phát triển một ứng dụng di động cho phép người dùng kết nối và nhận tư vấn từ các bác sĩ qua video call hoặc chat. Ứng dụng cũng cung cấp dịch vụ đặt lịch xét nghiệm tại nhà và giao thuốc.',
+        impact:
+          'Cung cấp hàng triệu lượt tư vấn trực tuyến, giúp giảm tải cho các cơ sở y tế và nâng cao nhận thức về chăm sóc sức khỏe chủ động cho người dân. Mô hình này đặc biệt phát huy hiệu quả trong các đợt dịch bệnh.',
         innovations: [
-          'AI-powered diagnostic assistance for radiologists',
-          'Mobile app for patient engagement and appointment booking',
-          'Integrated billing system with Vietnamese health insurance',
+          'Tư vấn y tế từ xa (Tele-consultation)',
+          'Dịch vụ y tế tại nhà',
+          'Hệ sinh thái chăm sóc sức khỏe di động',
         ],
+      },
+    ],
+    careerConnect: {
+      name: 'Bác sĩ Nguyễn Hữu Tùng',
+      title: 'Nhà sáng lập & Chủ tịch, Hệ thống Y khoa Hoàn Mỹ',
+      company: 'Hoan My Medical Corporation',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-huu-tung',
+      quote:
+        'Công nghệ không thể thay thế bác sĩ, nhưng nó là công cụ đắc lực giúp bác sĩ phục vụ bệnh nhân tốt hơn. Tương lai của y tế nằm ở sự kết hợp hài hòa giữa chuyên môn y khoa và sức mạnh của dữ liệu và kết nối.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là một trong những lợi ích chính của việc Vinmec triển khai y tế số?',
+        options: [
+          'Tăng giá viện phí',
+          'Giảm thời gian chờ đợi của bệnh nhân và tăng độ chính xác dữ liệu',
+          'Yêu cầu tất cả bệnh nhân phải có smartphone',
+          'Loại bỏ hoàn toàn vai trò của y tá',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Việc áp dụng nền tảng số toàn diện đã giúp Vinmec tối ưu hóa quy trình, từ đó mang lại lợi ích trực tiếp cho bệnh nhân là giảm thời gian chờ và đảm bảo dữ liệu y tế chính xác hơn.',
+      },
+      {
+        question: 'Mô hình của eDoctor giải quyết vấn đề gì trong hệ thống y tế Việt Nam?',
+        options: [
+          'Phẫu thuật phức tạp',
+          'Cung cấp tư vấn y tế nhanh chóng cho các vấn đề không khẩn cấp',
+          'Nghiên cứu và phát triển vaccine',
+          'Xây dựng bệnh viện mới',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'eDoctor tập trung vào việc cung cấp dịch vụ tư vấn từ xa (telemedicine), giúp người dùng tiếp cận bác sĩ một cách thuận tiện cho các nhu cầu chăm sóc sức khỏe ban đầu, giảm tải cho bệnh viện.',
       },
     ],
     resources: [
       {
-        title: 'Vietnam Ministry of Health Digital Health Strategy',
-        url: 'https://moh.gov.vn/digital-health',
+        title: 'Bộ Y tế Việt Nam',
+        url: 'https://moh.gov.vn/',
         type: 'health-ministry',
-        description: 'Official government digital health policies và guidelines',
       },
-    ],
-  },
-  {
-    id: 'ai-medical-imaging',
-    title: 'Bài 2: AI Medical Imaging cho Vietnamese Healthcare',
-    description:
-      'Phát triển AI medical imaging solutions phù hợp với Vietnamese medical practices. Học computer vision cho radiology, pathology và diagnostic assistance.',
-    videoUrl: 'https://www.youtube.com/watch?v=aPV3XiczQmI',
-    imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=400&fit=crop',
-    difficulty: 'Nâng cao',
-    duration: '200 phút',
-    medicalField: 'AI Medical Imaging',
-    technologies: ['Computer Vision', 'Deep Learning', 'DICOM processing', 'Medical AI'],
-    objectives: [
-      'Develop AI diagnostic tools cho Vietnamese radiologists',
-      'Create computer vision models cho medical image analysis',
-      'Implement AI assistance cho pathology diagnosis',
-      'Build medical imaging workflow automation',
-    ],
-    prerequisites: [
-      'Machine learning và computer vision experience',
-      'Understanding of medical imaging principles',
-      'Python programming với AI libraries',
-    ],
-    exercises: [
       {
-        title: 'Chest X-ray Analysis AI',
-        description: 'Build AI system để assist Vietnamese radiologists trong chest X-ray diagnosis',
-        difficulty: 'Nâng cao',
-        requirements: ['Medical imaging dataset', 'Deep learning framework', 'DICOM tools'],
-        procedure: [
-          'Collect và preprocess Vietnamese chest X-ray dataset',
-          'Train deep learning model cho common pathology detection',
-          'Create confidence scoring system cho diagnosis assistance',
-          'Build web interface cho radiologist workflow integration',
-        ],
-        expectedResults: 'AI diagnostic assistant với 90%+ accuracy cho common chest pathologies',
-        solution: 'TensorFlow/PyTorch model với Flask/FastAPI web service',
+        title: 'Vinmec International Hospital',
+        url: 'https://www.vinmec.com/',
+        type: 'hospital',
       },
-    ],
-    realWorldApplications: [
-      'Radiology department AI assistance tools',
-      'Rural clinic diagnostic support systems',
-      'Medical imaging research platforms',
-      'Pathology automation solutions',
-    ],
-    caseStudies: [
       {
-        title: 'Bach Mai Hospital AI Radiology Project',
-        organization: 'Bach Mai Hospital',
-        problem: 'Reduce radiologist workload và improve diagnostic accuracy',
-        solution: 'AI-powered chest X-ray analysis system với radiologist workflow integration',
-        impact: '30% faster diagnosis, 95% accuracy in pathology detection',
-        innovations: [
-          'Custom AI model trained on Vietnamese patient data',
-          'Integration with existing hospital PACS system',
-          'Multi-language interface (Vietnamese/English) for international doctors',
-        ],
-      },
-    ],
-    resources: [
-      {
-        title: 'Vietnamese Medical AI Research Consortium',
-        url: 'https://vn-medai.org',
-        type: 'research',
-        description: 'Collaborative research initiative cho medical AI development',
+        title: 'eDoctor',
+        url: 'https://edoctor.io/',
+        type: 'telemedicine',
       },
     ],
   },

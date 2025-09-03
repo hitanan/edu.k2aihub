@@ -1,9 +1,9 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
 export interface YoungEntrepreneurLessonData extends BaseLessonData {
+  ageGroup: string;
   businessTools: string[];
   vietnameseMarketFocus: string[];
-  ageGroup: string;
   successMetrics: string[];
 }
 
@@ -15,6 +15,10 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Xây dựng tư duy khởi nghiệp, nhận diện cơ hội kinh doanh và hiểu rõ thị trường Việt Nam cho thế hệ GenZ',
     duration: '180 phút',
     difficulty: 'Cơ bản',
+    ageGroup: '16-22',
+    businessTools: ['Canvas Business Model', 'Design Thinking', 'SWOT Analysis'],
+    vietnameseMarketFocus: ['GenZ Consumers', 'Social Commerce', 'EdTech'],
+    successMetrics: ['Validated Business Idea', 'User Growth', 'Initial Revenue'],
     videoUrl: 'https://www.youtube.com/watch?v=0pgIeCsgqRY',
     imageUrl: 'https://i.ytimg.com/vi/x2JRtPxGF7Y/hqdefault.jpg',
     objectives: [
@@ -68,6 +72,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
           'Test: Thu thập feedback và cải thiện',
         ],
         expectedResults: 'Một prototype giải pháp và plan cải thiện dựa trên user feedback',
+        solution: 'Tập trung vào việc thấu hiểu sâu sắc người dùng và lặp lại nhanh chóng dựa trên dữ liệu thực tế.',
       },
     ],
     realWorldApplications: [
@@ -76,53 +81,71 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Phát triển sản phẩm/dịch vụ phù hợp với GenZ Vietnam',
       'Ứng dụng Design Thinking trong giải quyết vấn đề xã hội',
     ],
+    vietnamContext: {
+      title: 'Hệ sinh thái Khởi nghiệp cho Người trẻ tại Việt Nam',
+      content: [
+        'Việt Nam đang chứng kiến một làn sóng khởi nghiệp mạnh mẽ từ thế hệ trẻ, đặc biệt là Gen Z. Với dân số trẻ, năng động và khả năng tiếp cận công nghệ cao, Việt Nam là một thị trường đầy tiềm năng cho các ý tưởng kinh doanh mới.',
+        'Các lĩnh vực như thương mại xã hội (social commerce), công nghệ giáo dục (edtech), và các sản phẩm/dịch vụ bền vững đang thu hút sự quan tâm lớn.',
+        'Nhiều quỹ đầu tư và vườn ươm khởi nghiệp đã xuất hiện để hỗ trợ các nhà sáng lập trẻ, tạo ra một hệ sinh thái ngày càng hoàn thiện.',
+      ],
+    },
     caseStudies: [
       {
-        title: 'Thành công của Startup Tiki',
-        organization: 'Tiki.vn - Trần Ngọc Thái Sơn',
-        problem: 'E-commerce Việt Nam chưa phát triển, người dùng ngại mua hàng online',
-        solution: 'Xây dựng platform với focus vào trải nghiệm người dùng và giao hàng nhanh',
-        impact: 'Trở thành Top 3 e-commerce Vietnam, định giá $800M năm 2021',
-        innovations: [
-          '2-hour delivery trong TP.HCM',
-          'TikiNow - logistics riêng',
-          'Tiki Smartbooks - AI recommendation',
+        title: 'Tiki: Từ nhà sách online đến "kỳ lân" thương mại điện tử',
+        organization: 'Tiki.vn (Sáng lập bởi Trần Ngọc Thái Sơn)',
+        problem:
+          'Thị trường thương mại điện tử Việt Nam giai đoạn đầu còn non trẻ, người tiêu dùng thiếu tin tưởng và lo ngại về chất lượng dịch vụ, đặc biệt là thời gian giao hàng.',
+        solution:
+          'Tiki đã xây dựng lòng tin bằng cách tập trung vào trải nghiệm khách hàng, cam kết bán sách thật và đầu tư mạnh vào hệ thống kho vận (logistics) để có thể giao hàng nhanh (TikiNOW).',
+        impact:
+          'Trở thành một trong những sàn thương mại điện tử hàng đầu Việt Nam, định giá gần 1 tỷ USD. Thành công của Tiki đã chứng minh tầm quan trọng của việc giải quyết đúng "nỗi đau" của khách hàng.',
+        innovations: ['Dịch vụ giao hàng trong 2 giờ', 'Hệ thống logistics tự chủ', 'AI gợi ý sản phẩm'],
+      },
+      {
+        title: 'Base.vn: Giải pháp Quản trị Doanh nghiệp Toàn diện',
+        organization: 'Base.vn (Sáng lập bởi Phạm Kim Hùng)',
+        problem:
+          'Các doanh nghiệp vừa và nhỏ (SMEs) tại Việt Nam gặp khó khăn trong việc quản lý công việc, nhân sự và quy trình một cách hiệu quả do thiếu các công cụ phù hợp.',
+        solution:
+          'Base.vn đã phát triển một nền tảng SaaS (Software-as-a-Service) với hơn 50 ứng dụng chuyên biệt, giúp các doanh nghiệp giải quyết các bài toán quản trị từ nhân sự, công việc đến tài chính.',
+        impact:
+          'Được hơn 5,000 doanh nghiệp tin dùng và được tập đoàn FPT mua lại. Base.vn đã trở thành một trong những câu chuyện thành công tiêu biểu nhất của startup B2B tại Việt Nam.',
+        innovations: ['Nền tảng SaaS toàn diện', 'Mô hình ứng dụng chuyên biệt', 'Tập trung vào thị trường SME'],
+      },
+    ],
+    careerConnect: {
+      name: 'Shark Nguyễn Hòa Bình',
+      title: 'Nhà sáng lập & Chủ tịch, NextTech Group',
+      company: 'NextTech Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoa-binh',
+      quote:
+        'Khởi nghiệp không cần những ý tưởng "đao to búa lớn". Hãy bắt đầu từ những vấn đề nhỏ nhất xung quanh bạn mà chưa ai giải quyết tốt. Công nghệ chỉ là công cụ, sự thấu hiểu thị trường và khả năng thực thi mới là quyết định.',
+    },
+    quizzes: [
+      {
+        question: 'Yếu tố cốt lõi nào đã giúp Tiki xây dựng được lòng tin của khách hàng trong giai đoạn đầu?',
+        options: [
+          'Bán sản phẩm giá rẻ nhất thị trường',
+          'Tập trung vào trải nghiệm khách hàng và giao hàng nhanh',
+          'Chỉ bán hàng nhập khẩu',
+          'Quảng cáo rầm rộ trên truyền hình',
         ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Tiki đã giải quyết thành công "nỗi đau" lớn nhất của người mua hàng online thời kỳ đầu là sự thiếu tin tưởng và thời gian chờ đợi lâu, bằng cách cam kết chất lượng và đầu tư vào logistics.',
       },
       {
-        title: 'Base.vn - Startup EdTech từ sinh viên',
-        organization: 'Base.vn - Nguyễn Hữu Tuấn',
-        problem: 'Sinh viên khó tiếp cận kiến thức thực tế và skill nghề nghiệp',
-        solution: 'Platform học online với focus vào practical skills và mentorship',
-        impact: 'Hơn 100,000 học viên, huy động vốn Series A thành công',
-        innovations: ['Learning path cá nhân hóa', '1-on-1 mentorship', 'Project-based learning'],
+        question: 'Base.vn là một ví dụ thành công của mô hình kinh doanh nào?',
+        options: [
+          'B2C (Business-to-Consumer)',
+          'C2C (Consumer-to-Consumer)',
+          'SaaS B2B (Software-as-a-Service for Business-to-Business)',
+          'Kinh doanh truyền thống',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Base.vn cung cấp phần mềm như một dịch vụ (SaaS) cho các khách hàng doanh nghiệp (B2B), giúp họ giải quyết các bài toán quản trị nội bộ.',
       },
-    ],
-    resources: [
-      {
-        title: 'Vietnam Startup Ecosystem Report 2024',
-        url: 'https://startup.gov.vn/ecosystem-report',
-        type: 'Research',
-      },
-      {
-        title: 'Design Thinking Toolkit - IDEO',
-        url: 'https://designthinking.ideo.com',
-        type: 'Tool',
-      },
-    ],
-    businessTools: ['Business Model Canvas', 'Design Thinking Framework', 'Market Research Tools', 'SWOT Analysis'],
-    vietnameseMarketFocus: [
-      'Đặc điểm tiêu dùng GenZ Việt Nam',
-      'Hệ sinh thái startup Việt Nam',
-      'Chính sách hỗ trợ khởi nghiệp',
-      'Xu hướng đầu tư venture capital',
-    ],
-    ageGroup: '16-25 tuổi',
-    successMetrics: [
-      'Tạo được Business Model Canvas hoàn chỉnh',
-      'Nhận diện được 5+ cơ hội kinh doanh',
-      'Áp dụng được Design Thinking',
-      'Hiểu rõ thị trường startup Việt Nam',
     ],
   },
   {
@@ -132,6 +155,10 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Học cách xây dựng business model bền vững, tạo MVP và validate ý tưởng kinh doanh với thị trường thực tế',
     duration: '210 phút',
     difficulty: 'Trung bình',
+    ageGroup: '16-22',
+    businessTools: ['Business Model Canvas', 'MVP', 'A/B Testing'],
+    vietnameseMarketFocus: ['SaaS', 'E-commerce', 'Fintech'],
+    successMetrics: ['Product-Market Fit', 'CAC', 'LTV'],
     videoUrl: 'https://www.youtube.com/watch?v=Glj7_9IxEqs',
     imageUrl: 'https://i.ytimg.com/vi/nkrJgHptrY8/hqdefault.jpg',
     objectives: [
@@ -202,31 +229,34 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         innovations: ['Mobile-first approach', 'Seller support program', 'Logistics integration'],
       },
     ],
-    resources: [
+    careerConnect: {
+      name: 'Shark Nguyễn Hòa Bình',
+      title: 'Nhà sáng lập & Chủ tịch, NextTech Group',
+      company: 'NextTech Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoa-binh',
+      quote:
+        'Khởi nghiệp không cần những ý tưởng "đao to búa lớn". Hãy bắt đầu từ những vấn đề nhỏ nhất xung quanh bạn mà chưa ai giải quyết tốt. Công nghệ chỉ là công cụ, sự thấu hiểu thị trường và khả năng thực thi mới là quyết định.',
+    },
+    quizzes: [
       {
-        title: 'Lean Startup Methodology',
-        url: 'http://theleanstartup.com/principles',
-        type: 'Methodology',
+        question: 'Yếu tố nào sau đây không phải là một phần của Business Model Canvas?',
+        options: ['Customer Segments', 'Value Propositions', 'Marketing Channels', 'Production Techniques'],
+        correctAnswerIndex: 3,
+        explanation:
+          'Business Model Canvas không bao gồm phần "Production Techniques". Nó tập trung vào cách doanh nghiệp tạo ra giá trị và tiếp cận khách hàng.',
       },
       {
-        title: 'Vietnam E-commerce Report 2024',
-        url: 'https://e-commerce.gov.vn/report',
-        type: 'Research',
+        question: 'MVP là viết tắt của thuật ngữ nào trong khởi nghiệp?',
+        options: [
+          'Most Valuable Player',
+          'Minimum Viable Product',
+          'Maximum Income Potential',
+          'Minimum Investment Plan',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'MVP (Minimum Viable Product) là phiên bản đơn giản nhất của sản phẩm, được phát triển để kiểm chứng ý tưởng kinh doanh với chi phí thấp nhất.',
       },
-    ],
-    businessTools: ['Lean Canvas', 'MVP Development', 'A/B Testing', 'Customer Validation'],
-    vietnameseMarketFocus: [
-      'Payment methods phổ biến tại VN',
-      'Logistics và fulfillment challenges',
-      'Consumer behavior trong online shopping',
-      'Regulatory requirements cho startup',
-    ],
-    ageGroup: '18-25 tuổi',
-    successMetrics: [
-      'Business Model validated với 50+ customers',
-      'MVP có traction metrics tích cực',
-      'Clear competitive differentiation',
-      'Roadmap phát triển 6-12 tháng',
     ],
   },
   {
@@ -235,6 +265,10 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
     description: 'Chiến lược marketing cost-effective, growth hacking và xây dựng brand awareness với budget hạn chế',
     duration: '195 phút',
     difficulty: 'Trung bình',
+    ageGroup: '16-22',
+    businessTools: ['Google Analytics', 'Facebook Ads', 'TikTok Creator Studio'],
+    vietnameseMarketFocus: ['Social Commerce', 'KOL/KOC Marketing', 'Viral Content'],
+    successMetrics: ['CAC', 'LTV', 'Viral Coefficient'],
     videoUrl: 'https://www.youtube.com/watch?v=D5ZYCjl6glY',
     imageUrl: 'https://i.ytimg.com/vi/2DQ5bq7if-Y/hqdefault.jpg',
     objectives: [
@@ -281,26 +315,39 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         innovations: ['MyTeksi rebrand thành Grab', 'Driver incentive programs', 'Super app strategy'],
       },
     ],
-    resources: [
+    careerConnect: {
+      name: 'Shark Nguyễn Hòa Bình',
+      title: 'Nhà sáng lập & Chủ tịch, NextTech Group',
+      company: 'NextTech Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoa-binh',
+      quote:
+        'Khởi nghiệp không cần những ý tưởng "đao to búa lớn". Hãy bắt đầu từ những vấn đề nhỏ nhất xung quanh bạn mà chưa ai giải quyết tốt. Công nghệ chỉ là công cụ, sự thấu hiểu thị trường và khả năng thực thi mới là quyết định.',
+    },
+    quizzes: [
       {
-        title: 'Growth Hacking Handbook',
-        url: 'https://growthhackers.com/handbook',
-        type: 'Guide',
+        question: 'Growth hacking khác gì so với marketing truyền thống?',
+        options: [
+          'Chỉ tập trung vào quảng cáo trả tiền',
+          'Tìm kiếm các kênh marketing mới mẻ và sáng tạo với chi phí thấp',
+          'Không bao giờ sử dụng email marketing',
+          'Chỉ phù hợp với các công ty lớn',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Growth hacking là tìm kiếm các kênh marketing mới mẻ và sáng tạo với chi phí thấp, thường là ưu tiên số 1 cho các startup với ngân sách hạn chế.',
       },
-    ],
-    businessTools: ['Growth Analytics', 'A/B Testing Platforms', 'Social Media Management', 'Email Marketing'],
-    vietnameseMarketFocus: [
-      'Social media platforms phổ biến tại VN',
-      'Influencer marketing ecosystem',
-      'Mobile-first marketing approach',
-      'Cross-platform attribution',
-    ],
-    ageGroup: '18-25 tuổi',
-    successMetrics: [
-      'CAC reduction 30%+',
-      'Viral coefficient > 1.0',
-      'Organic traffic tăng 200%+',
-      'Social media engagement > 5%',
+      {
+        question: 'Yếu tố nào sau đây không phải là một phần của chiến lược growth marketing?',
+        options: [
+          'Xác định đối tượng khách hàng mục tiêu',
+          'Tạo nội dung viral',
+          'Tối ưu hóa tỷ lệ chuyển đổi',
+          'Chỉ chạy quảng cáo trên Facebook',
+        ],
+        correctAnswerIndex: 3,
+        explanation:
+          'Chiến lược growth marketing bao gồm nhiều kênh và phương pháp khác nhau, không chỉ giới hạn ở quảng cáo trên Facebook.',
+      },
     ],
   },
   {
@@ -309,6 +356,10 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
     description: 'Chuẩn bị pitch deck, tìm kiếm nhà đầu tư và negotiate terms để gọi vốn thành công cho startup',
     duration: '240 phút',
     difficulty: 'Nâng cao',
+    ageGroup: '18-25',
+    businessTools: ['Pitch Deck', 'Financial Model', 'Term Sheet'],
+    vietnameseMarketFocus: ['Angel Investors', 'VC Funds', 'Corporate Ventures'],
+    successMetrics: ['Successful Funding Round', 'Valuation', 'Investor Relations'],
     videoUrl: 'https://www.youtube.com/watch?v=FwQTVN5fODw',
     imageUrl: 'https://i.ytimg.com/vi/x2JRtPxGF7Y/hqdefault.jpg',
     objectives: [
@@ -378,31 +429,39 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         innovations: ['QR payment ecosystem', 'Super app model', 'Financial inclusion'],
       },
     ],
-    resources: [
+    careerConnect: {
+      name: 'Shark Nguyễn Hòa Bình',
+      title: 'Nhà sáng lập & Chủ tịch, NextTech Group',
+      company: 'NextTech Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoa-binh',
+      quote:
+        'Khởi nghiệp không cần những ý tưởng "đao to búa lớn". Hãy bắt đầu từ những vấn đề nhỏ nhất xung quanh bạn mà chưa ai giải quyết tốt. Công nghệ chỉ là công cụ, sự thấu hiểu thị trường và khả năng thực thi mới là quyết định.',
+    },
+    quizzes: [
       {
-        title: 'Vietnam Venture Capital Report 2024',
-        url: 'https://vietnam-vc.com/report',
-        type: 'Research',
+        question: 'Yếu tố nào sau đây không phải là một phần của quy trình gọi vốn?',
+        options: [
+          'Chuẩn bị pitch deck',
+          'Tìm kiếm nhà đầu tư tiềm năng',
+          'Phân tích đối thủ cạnh tranh',
+          'Thương thảo điều khoản đầu tư',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Quy trình gọi vốn thường không bao gồm phân tích đối thủ cạnh tranh như một bước chính thức. Tuy nhiên, việc hiểu rõ đối thủ cạnh tranh vẫn rất quan trọng trong kinh doanh.',
       },
       {
-        title: 'Pitch Deck Examples - Series A',
-        url: 'https://piktochart.com/pitch-deck-examples',
-        type: 'Template',
+        question: 'Term sheet là gì trong quá trình gọi vốn?',
+        options: [
+          'Một loại thuế phải nộp khi gọi vốn',
+          'Tài liệu phác thảo các điều khoản chính của thỏa thuận đầu tư',
+          'Bảng tính toán lợi nhuận dự kiến cho nhà đầu tư',
+          'Hợp đồng chính thức giữa startup và nhà đầu tư',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Term sheet là tài liệu phác thảo các điều khoản chính của thỏa thuận đầu tư giữa startup và nhà đầu tư. Nó không phải là hợp đồng chính thức nhưng là cơ sở để soạn thảo hợp đồng sau này.',
       },
-    ],
-    businessTools: ['Pitch Deck Creation', 'Financial Modeling', 'Due Diligence Management', 'CRM for Investors'],
-    vietnameseMarketFocus: [
-      'VC ecosystem và major funds tại VN',
-      'Government support programs',
-      'Angel investor networks',
-      'Corporate venture arms',
-    ],
-    ageGroup: '20-25 tuổi',
-    successMetrics: [
-      'Pitch deck score > 8/10 từ mentors',
-      'Secured meetings với 5+ investors',
-      'Term sheet negotiations',
-      'Due diligence completion',
     ],
   },
   {
@@ -411,6 +470,10 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
     description: 'Phát triển kỹ năng lãnh đạo, recruiting talent, xây dựng culture và quản lý team hiệu quả',
     duration: '180 phút',
     difficulty: 'Trung bình',
+    ageGroup: '18-25',
+    businessTools: ['Recruitment Platforms', 'Performance Management Systems', 'Team Collaboration Tools'],
+    vietnameseMarketFocus: ['Startup Culture', 'Talent Retention', 'Remote Work Management'],
+    successMetrics: ['Employee Satisfaction', 'Team Performance', 'Low Turnover Rate'],
     videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: 'https://i.ytimg.com/vi/anClAIcriq8/hqdefault.jpg',
     objectives: [
@@ -458,26 +521,34 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         innovations: ['Culture-driven hiring', 'Cross-country collaboration', 'Innovation mindset'],
       },
     ],
-    resources: [
+    careerConnect: {
+      name: 'Shark Nguyễn Hòa Bình',
+      title: 'Nhà sáng lập & Chủ tịch, NextTech Group',
+      company: 'NextTech Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoa-binh',
+      quote:
+        'Khởi nghiệp không cần những ý tưởng "đao to búa lớn". Hãy bắt đầu từ những vấn đề nhỏ nhất xung quanh bạn mà chưa ai giải quyết tốt. Công nghệ chỉ là công cụ, sự thấu hiểu thị trường và khả năng thực thi mới là quyết định.',
+    },
+    quizzes: [
       {
-        title: 'First-Time Manager Guide',
-        url: 'https://firsttimemanagers.com',
-        type: 'Guide',
+        question: 'Yếu tố nào sau đây không phải là một phần của văn hóa doanh nghiệp?',
+        options: ['Giá trị cốt lõi', 'Chính sách lương thưởng', 'Quy trình tuyển dụng', 'Chiến lược marketing'],
+        correctAnswerIndex: 3,
+        explanation:
+          'Chiến lược marketing thường không được xem là một phần của văn hóa doanh nghiệp, mặc dù nó có thể bị ảnh hưởng bởi văn hóa doanh nghiệp.',
       },
-    ],
-    businessTools: ['Team Assessment', 'Performance Management', 'Culture Surveys', 'Communication Tools'],
-    vietnameseMarketFocus: [
-      'Hiring practices tại Vietnam',
-      'Remote work culture',
-      'Compensation benchmarks',
-      'Employee retention strategies',
-    ],
-    ageGroup: '20-25 tuổi',
-    successMetrics: [
-      'Team engagement score > 8/10',
-      'Employee retention > 90%',
-      'Clear career progression paths',
-      'Strong culture metrics',
+      {
+        question: 'Kỹ năng lãnh đạo nào sau đây là quan trọng nhất trong giai đoạn đầu của một startup?',
+        options: [
+          'Kỹ năng tài chính',
+          'Kỹ năng giao tiếp và truyền cảm hứng',
+          'Kỹ năng lập trình',
+          'Kỹ năng phân tích dữ liệu',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Trong giai đoạn đầu của một startup, kỹ năng giao tiếp và truyền cảm hứng là rất quan trọng để xây dựng đội ngũ và thuyết phục nhà đầu tư.',
+      },
     ],
   },
   {
@@ -487,6 +558,10 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Học cách scale business operations, optimize processes và maintain quality trong quá trình tăng trưởng nhanh',
     duration: '225 phút',
     difficulty: 'Nâng cao',
+    ageGroup: '18-25',
+    businessTools: ['Automation Tools (Zapier)', 'CRM (Salesforce)', 'ERP Systems'],
+    vietnameseMarketFocus: ['Logistics', 'Supply Chain', 'Customer Support'],
+    successMetrics: ['Operational Efficiency', 'Profitability', 'Customer Satisfaction'],
     videoUrl: 'https://www.youtube.com/watch?v=cIYmQeN62SA',
     imageUrl: 'https://i.ytimg.com/vi/cIYmQeN62SA/hqdefault.jpg',
     objectives: [
@@ -533,26 +608,34 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         innovations: ['Unified logistics network', 'Local payment integration', 'Cross-border commerce'],
       },
     ],
-    resources: [
+    careerConnect: {
+      name: 'Shark Nguyễn Hòa Bình',
+      title: 'Nhà sáng lập & Chủ tịch, NextTech Group',
+      company: 'NextTech Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoa-binh',
+      quote:
+        'Khởi nghiệp không cần những ý tưởng "đao to búa lớn". Hãy bắt đầu từ những vấn đề nhỏ nhất xung quanh bạn mà chưa ai giải quyết tốt. Công nghệ chỉ là công cụ, sự thấu hiểu thị trường và khả năng thực thi mới là quyết định.',
+    },
+    quizzes: [
       {
-        title: 'Scaling Up Business Guide',
-        url: 'https://scalingup.com',
-        type: 'Methodology',
+        question: 'Yếu tố nào sau đây không phải là một thách thức khi mở rộng quy mô doanh nghiệp?',
+        options: [
+          'Duy trì chất lượng sản phẩm/dịch vụ',
+          'Tìm kiếm khách hàng mới',
+          'Quản lý dòng tiền',
+          'Tăng trưởng doanh thu',
+        ],
+        correctAnswerIndex: 3,
+        explanation:
+          'Tăng trưởng doanh thu thường được xem là một mục tiêu tích cực, không phải là một thách thức. Tuy nhiên, việc duy trì lợi nhuận trong khi tăng trưởng có thể là một thách thức.',
       },
-    ],
-    businessTools: ['Process Automation', 'Performance Dashboards', 'Quality Management', 'Scaling Frameworks'],
-    vietnameseMarketFocus: [
-      'Multi-city expansion strategies',
-      'Supply chain optimization',
-      'Regulatory compliance scaling',
-      'Local partnerships',
-    ],
-    ageGroup: '22-25 tuổi',
-    successMetrics: [
-      '3x revenue growth với same headcount',
-      'Process automation > 70%',
-      'Customer satisfaction maintained',
-      'Profitable unit economics',
+      {
+        question: 'Công cụ nào sau đây thường không được sử dụng để tự động hóa quy trình kinh doanh?',
+        options: ['Zapier', 'Google Analytics', 'Salesforce', 'Mailchimp'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Salesforce là một CRM và không phải là công cụ tự động hóa quy trình kinh doanh như Zapier. Tuy nhiên, nó có thể được tích hợp với các công cụ tự động hóa khác.',
+      },
     ],
   },
   {
@@ -562,6 +645,10 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
       'Hiểu rõ khung pháp lý, intellectual property, contracts và compliance requirements cho startup tại Việt Nam',
     duration: '165 phút',
     difficulty: 'Trung bình',
+    ageGroup: '18-25',
+    businessTools: ['Contract Templates', 'IP Registration Portals', 'Compliance Checklists'],
+    vietnameseMarketFocus: ['Business Registration', 'Foreign Investment Law', 'Data Privacy (Decree 13)'],
+    successMetrics: ['Legal Compliance', 'IP Protection', 'Risk Mitigation'],
     videoUrl: 'https://www.youtube.com/watch?v=n7O6IpKS7Ww',
     imageUrl: 'https://i.ytimg.com/vi/n7O6IpKS7Ww/hqdefault.jpg',
     objectives: [
@@ -613,26 +700,34 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
         innovations: ['Patent portfolio development', 'Trade secret management', 'International compliance'],
       },
     ],
-    resources: [
+    careerConnect: {
+      name: 'Shark Nguyễn Hòa Bình',
+      title: 'Nhà sáng lập & Chủ tịch, NextTech Group',
+      company: 'NextTech Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoa-binh',
+      quote:
+        'Khởi nghiệp không cần những ý tưởng "đao to búa lớn". Hãy bắt đầu từ những vấn đề nhỏ nhất xung quanh bạn mà chưa ai giải quyết tốt. Công nghệ chỉ là công cụ, sự thấu hiểu thị trường và khả năng thực thi mới là quyết định.',
+    },
+    quizzes: [
       {
-        title: 'Vietnam Business Law Guide',
-        url: 'https://business-law.vn',
-        type: 'Legal',
+        question: 'Yếu tố nào sau đây không phải là một phần của quy trình bảo vệ sở hữu trí tuệ?',
+        options: ['Đăng ký nhãn hiệu', 'Nộp thuế doanh nghiệp', 'Đăng ký bản quyền tác giả', 'Xin cấp bằng sáng chế'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Nộp thuế doanh nghiệp không liên quan trực tiếp đến quy trình bảo vệ sở hữu trí tuệ. Tuy nhiên, việc tuân thủ nghĩa vụ thuế là cần thiết để duy trì hoạt động hợp pháp của doanh nghiệp.',
       },
-    ],
-    businessTools: ['Legal Document Management', 'IP Management Systems', 'Compliance Tracking', 'Contract Management'],
-    vietnameseMarketFocus: [
-      'Vietnam business registration',
-      'Tax obligations cho startup',
-      'Labor law compliance',
-      'Foreign investment regulations',
-    ],
-    ageGroup: '20-25 tuổi',
-    successMetrics: [
-      '100% legal compliance achieved',
-      'IP protection strategy implemented',
-      'Standard contracts established',
-      'Legal risk mitigation',
+      {
+        question: 'Hợp đồng nào sau đây thường không cần thiết phải có trong một startup?',
+        options: [
+          'Hợp đồng lao động',
+          'Hợp đồng thuê văn phòng',
+          'Hợp đồng bảo mật thông tin (NDA)',
+          'Hợp đồng mua bán hàng hóa',
+        ],
+        correctAnswerIndex: 4,
+        explanation:
+          'Hợp đồng mua bán hàng hóa không phải lúc nào cũng cần thiết trong giai đoạn đầu của một startup, trừ khi startup đó hoạt động trong lĩnh vực thương mại hoặc sản xuất.',
+      },
     ],
   },
 ];

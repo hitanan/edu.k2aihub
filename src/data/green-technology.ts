@@ -1,48 +1,12 @@
-import { EducationalGame } from './educationalGames';
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
-export interface GreenTechLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: number;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
-  videoUrl: string;
-  imageUrl?: string;
+interface MainContent {
   technologies: string[];
   environmentalImpact: string;
-  resources: Resource[];
-  caseStudies: CaseStudy[];
-  relatedGames?: EducationalGame[];
 }
 
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  requirements: string[];
-  hints: string[];
-  expectedOutput: string;
-}
-
-interface Resource {
-  title: string;
-  url: string;
-  type: 'article' | 'tool' | 'video' | 'research';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  company: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  insights: string[];
+export interface GreenTechLesson extends BaseLessonData {
+  mainContent: MainContent;
 }
 
 export const greenTechLessons: GreenTechLesson[] = [
@@ -54,8 +18,18 @@ export const greenTechLessons: GreenTechLesson[] = [
     videoUrl: 'https://www.youtube.com/watch?v=1kUE0BZtTRc',
     imageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
-    duration: 90,
-    environmentalImpact: 'Giảm 50-80% khí thải CO2 so với năng lượng hóa thạch',
+    duration: '90 phút',
+    mainContent: {
+      environmentalImpact: 'Giảm 50-80% khí thải CO2 so với năng lượng hóa thạch',
+      technologies: [
+        'Tấm pin mặt trời (Monocrystalline, Polycrystalline)',
+        'Tuabin gió',
+        'Hệ thống lưu trữ pin',
+        'Công nghệ lưới điện thông minh',
+        'Hệ thống quản lý năng lượng',
+        'Thủy điện',
+      ],
+    },
     objectives: [
       'Hiểu nguyên lý hoạt động của năng lượng mặt trời và gió',
       'Tính toán công suất và hiệu quả hệ thống năng lượng tái tạo',
@@ -64,13 +38,39 @@ export const greenTechLessons: GreenTechLesson[] = [
       'Đánh giá tác động môi trường và lợi ích kinh tế',
     ],
     prerequisites: ['Kiến thức vật lý cơ bản', 'Hiểu về điện năng'],
-    technologies: [
-      'Tấm pin mặt trời (Monocrystalline, Polycrystalline)',
-      'Tuabin gió',
-      'Hệ thống lưu trữ pin',
-      'Công nghệ lưới điện thông minh',
-      'Hệ thống quản lý năng lượng',
-      'Thủy điện',
+    vietnamContext: {
+      title: 'Tiềm năng Năng lượng Tái tạo tại Việt Nam',
+      content: [
+        'Việt Nam có tiềm năng lớn về năng lượng mặt trời, đặc biệt ở các tỉnh miền Nam và miền Trung với số giờ nắng cao.',
+        'Điện mặt trời áp mái đang phát triển bùng nổ tại các hộ gia đình và nhà xưởng, giúp giảm tải cho lưới điện quốc gia.',
+        'Các dự án điện gió lớn đã và đang được xây dựng tại các tỉnh ven biển như Bạc Liêu, Ninh Thuận, Bình Thuận.',
+        'Chính phủ Việt Nam đã ban hành nhiều cơ chế khuyến khích phát triển năng lượng tái tạo, thể hiện trong Quy hoạch điện VIII.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lê Quang Minh',
+      title: 'Kỹ sư trưởng, Nhà máy Điện gió Bạc Liêu',
+      company: 'Công ty TNHH Xây dựng - Thương mại - Du lịch Công Lý',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-quang-minh',
+      quote:
+        'Công việc của tôi là đảm bảo những "cánh quạt khổng lồ" này hoạt động ổn định để biến gió thành điện. Mỗi ngày, chúng tôi không chỉ tạo ra năng lượng sạch mà còn góp phần khẳng định vị thế của Việt Nam trên bản đồ năng lượng tái tạo thế giới. Đây là một ngành đầy hứa hẹn cho các kỹ sư trẻ.',
+    },
+    quizzes: [
+      {
+        question:
+          'Tỉnh nào ở Việt Nam được mệnh danh là "thủ phủ" của năng lượng tái tạo, đặc biệt là điện gió và điện mặt trời?',
+        options: ['Hà Giang', 'Ninh Thuận', 'Cà Mau', 'Quảng Ninh'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Ninh Thuận có điều kiện tự nhiên vô cùng thuận lợi với số giờ nắng và tốc độ gió cao, là nơi tập trung nhiều dự án điện mặt trời và điện gió lớn nhất cả nước.',
+      },
+      {
+        question: 'Quy hoạch điện VIII của Việt Nam ưu tiên phát triển loại hình năng lượng nào?',
+        options: ['Nhiệt điện than', 'Điện hạt nhân', 'Năng lượng tái tạo (gió, mặt trời)', 'Thủy điện nhỏ'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Quy hoạch phát triển điện lực quốc gia thời kỳ 2021-2030, tầm nhìn đến năm 2050 (Quy hoạch điện VIII) đặt mục tiêu mạnh mẽ về chuyển dịch năng lượng, ưu tiên phát triển các nguồn năng lượng tái tạo để đảm bảo an ninh năng lượng và bảo vệ môi trường.',
+      },
     ],
     exercises: [
       {
@@ -169,18 +169,13 @@ export const greenTechLessons: GreenTechLesson[] = [
 - Lên lịch bảo trì
 - Theo dõi ROI
 - Đề xuất tối ưu hóa`,
-        requirements: [
+        materials: [
           'Phân tích chi tiết nhu cầu điện năng',
           'Lựa chọn thiết bị phù hợp với ngân sách',
           'Tính toán ROI và thời gian hoàn vốn',
           'Đánh giá tác động môi trường',
         ],
-        hints: [
-          'Sử dụng hóa đơn tiền điện cũ để ước tính mức tiêu thụ',
-          'Xem xét tải đỉnh và tải trung bình khi chọn kích thước biến tần',
-          'Tính đến sự suy giảm hiệu suất của pin và chi phí bảo trì',
-        ],
-        expectedOutput: 'Thiết kế hệ thống hoàn chỉnh với thông số kỹ thuật, chi phí và lịch trình triển khai',
+        expectedResults: 'Thiết kế hệ thống hoàn chỉnh với thông số kỹ thuật, chi phí và lịch trình triển khai',
       },
     ],
     realWorldApplications: [
@@ -195,58 +190,26 @@ export const greenTechLessons: GreenTechLesson[] = [
         title: 'Chuyển đổi Năng lượng Toàn cầu của IRENA',
         url: 'https://www.irena.org/publications',
         type: 'research',
-        description: 'Báo cáo về chuyển đổi năng lượng toàn cầu từ IRENA',
       },
       {
         title: 'Công cụ Tính toán Năng lượng Mặt trời',
         url: 'https://www.nrel.gov/analysis/tech-lcoe-documentation.html',
         type: 'tool',
-        description: 'Công cụ tính toán của NREL để ước tính hiệu suất hệ thống năng lượng mặt trời',
       },
     ],
     caseStudies: [
       {
         title: 'Trang trại năng lượng mặt trời nổi lớn nhất của Sunseap tại Singapore',
-        company: 'Sunseap Group',
-        challenge:
+        organization: 'Sunseap Group',
+        problem:
           'Không gian đất hạn chế cho các công trình lắp đặt năng lượng mặt trời quy mô lớn trong môi trường đô thị dày đặc',
         solution: 'Phát triển trang trại năng lượng mặt trời nổi 60MW trên hồ chứa với công nghệ làm mát sáng tạo',
-        results: 'Công suất 60MW, hiệu quả cao hơn 15% nhờ làm mát bằng nước, cung cấp điện cho 16,000 hộ gia đình',
-        insights: [
+        impact: 'Công suất 60MW, hiệu quả cao hơn 15% nhờ làm mát bằng nước, cung cấp điện cho 16,000 hộ gia đình',
+        innovations: [
           'Năng lượng mặt trời nổi giải quyết vấn đề khan hiếm đất đai ở các khu vực đô thị',
           'Làm mát bằng nước tăng hiệu quả tấm pin từ 10-15%',
           'Kỹ thuật sáng tạo cho phép năng lượng tái tạo trong các môi trường đầy thách thức',
         ],
-      },
-    ],
-    relatedGames: [
-      {
-        id: 'renewable-energy-manager',
-        title: 'Quản Lý Năng Lượng Tái Tạo',
-        description: 'Xây dựng và quản lý hệ thống năng lượng sạch bền vững',
-        category: 'simulation',
-        difficulty: 'Trung bình',
-        estimatedTime: '25-35 phút',
-        skills: ['Công nghệ xanh', 'Quản lý tài nguyên', 'Bền vững', 'Môi trường'],
-        moduleType: 'green-technology',
-        isInternal: true,
-        points: 120,
-        icon: '🌱',
-        color: 'from-green-500 to-teal-500',
-      },
-      {
-        id: 'climate-modeling',
-        title: 'Mô hình khí hậu',
-        description: 'Mô phỏng tác động của biến đổi khí hậu',
-        category: 'simulation',
-        difficulty: 'Trung bình',
-        estimatedTime: '15-20 phút',
-        skills: ['Khí hậu', 'Môi trường', 'Mô hình hóa'],
-        moduleType: 'environment',
-        isInternal: true,
-        points: 90,
-        icon: '🌍',
-        color: 'from-green-500 to-emerald-500',
       },
     ],
   },
@@ -258,8 +221,18 @@ export const greenTechLessons: GreenTechLesson[] = [
     videoUrl: 'https://www.youtube.com/watch?v=pG0B3_XkPGA',
     imageUrl: 'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
-    duration: 120,
-    environmentalImpact: 'Giảm 20-30% tiêu thụ năng lượng đô thị, cải thiện chất lượng không khí',
+    duration: '120 phút',
+    mainContent: {
+      environmentalImpact: 'Giảm 20-30% tiêu thụ năng lượng đô thị, cải thiện chất lượng không khí',
+      technologies: [
+        'Cảm biến IoT (Chất lượng không khí, Tiếng ồn, Giao thông)',
+        'Mạng LoRaWAN',
+        'Điện toán biên',
+        'Học máy',
+        'Phân tích thời gian thực',
+        'Ứng dụng di động',
+      ],
+    },
     objectives: [
       'Thiết kế mạng lưới cảm biến IoT cho các thành phố thông minh',
       'Phát triển hệ thống giám sát và phân tích thời gian thực',
@@ -268,13 +241,48 @@ export const greenTechLessons: GreenTechLesson[] = [
       'Tạo nền tảng tương tác công dân',
     ],
     prerequisites: ['Kiến thức cơ bản về IoT', 'Kinh nghiệm lập trình', 'Kiến thức cơ bản về cơ sở dữ liệu'],
-    technologies: [
-      'Cảm biến IoT (Chất lượng không khí, Tiếng ồn, Giao thông)',
-      'Mạng LoRaWAN',
-      'Điện toán biên',
-      'Học máy',
-      'Phân tích thời gian thực',
-      'Ứng dụng di động',
+    vietnamContext: {
+      title: 'Giải pháp Đô thị Thông minh tại Việt Nam',
+      content: [
+        'Các thành phố lớn như TP.HCM, Hà Nội, Đà Nẵng đang tích cực triển khai các Trung tâm Điều hành Đô thị thông minh (IOC) để giám sát giao thông, an ninh, môi trường.',
+        'Ứng dụng công nghệ trong quản lý giao thông thông minh, như hệ thống camera phạt nguội, điều khiển đèn tín hiệu linh hoạt, đang được áp dụng để giảm ùn tắc.',
+        'Nhiều dự án bất động sản mới tại Việt Nam được quảng bá là "khu đô thị thông minh", tích hợp các giải pháp quản lý năng lượng, an ninh và tiện ích cho cư dân.',
+        'Thách thức trong việc triển khai IoT cho thành phố thông minh ở Việt Nam bao gồm hạ tầng mạng, an ninh dữ liệu và sự đồng bộ giữa các cơ quan.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Võ Ngọc Anh',
+      title: 'Product Manager, Viettel Solutions',
+      company: 'Viettel Solutions',
+      imageUrl: 'https://i.pravatar.cc/150?u=vo-ngoc-anh',
+      quote:
+        'Chúng tôi không chỉ xây dựng phần mềm, chúng tôi xây dựng "bộ não" cho các thành phố. Việc phân tích dữ liệu từ hàng ngàn cảm biến IoT giúp chính quyền đưa ra quyết định nhanh chóng và chính xác hơn, từ việc điều tiết giao thông đến cảnh báo ô nhiễm. Đó là một công việc đầy thách thức nhưng cũng rất ý nghĩa.',
+    },
+    quizzes: [
+      {
+        question: 'Mạng LoRaWAN thường được sử dụng trong các ứng dụng IoT thành phố thông minh vì lý do gì?',
+        options: [
+          'Tốc độ truyền dữ liệu cực cao',
+          'Vùng phủ sóng rộng và tiêu thụ năng lượng thấp',
+          'Bảo mật tuyệt đối',
+          'Chi phí rất đắt đỏ',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'LoRaWAN (Long Range Wide Area Network) là công nghệ lý tưởng cho các ứng dụng IoT không đòi hỏi băng thông lớn nhưng cần vùng phủ sóng rộng và pin có tuổi thọ cao, ví dụ như cảm biến môi trường, cảm biến đỗ xe.',
+      },
+      {
+        question: '"Điện toán biên" (Edge Computing) trong ngữ cảnh IoT có nghĩa là gì?',
+        options: [
+          'Chỉ xử lý dữ liệu ở trên mây (cloud)',
+          'Xử lý dữ liệu ngay tại hoặc gần nơi dữ liệu được tạo ra (ví dụ: tại cảm biến)',
+          'Lưu trữ tất cả dữ liệu trên điện thoại người dùng',
+          'Một kỹ thuật mã hóa dữ liệu',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Điện toán biên giúp giảm độ trễ và tiết kiệm băng thông bằng cách xử lý dữ liệu ngay tại "biên" của mạng, gần các thiết bị IoT, thay vì phải gửi tất cả dữ liệu thô lên máy chủ trung tâm để xử lý.',
+      },
     ],
     exercises: [
       {
@@ -451,18 +459,13 @@ class DynamicRouting:
 - **Lợi ích sức khỏe:** Tiết kiệm 5 triệu USD từ chất lượng không khí tốt hơn
 - **Tăng năng suất:** 20 triệu USD từ việc giảm thời gian đi lại
 - **Thúc đẩy du lịch:** Tăng 15% từ trải nghiệm thành phố tốt hơn`,
-        requirements: [
+        materials: [
           'Thiết kế mạng lưới cảm biến IoT toàn diện',
           'Triển khai các thuật toán tối ưu hóa giao thông bằng AI',
           'Bao gồm khả năng giám sát môi trường',
           'Lập kế hoạch chiến lược triển khai theo giai đoạn',
         ],
-        hints: [
-          'Xem xét khả năng tương tác giữa các loại cảm biến khác nhau',
-          'Lập kế hoạch cho quyền riêng tư và bảo mật dữ liệu ngay từ đầu',
-          'Bao gồm các tính năng tương tác công dân trong thiết kế hệ thống',
-        ],
-        expectedOutput:
+        expectedResults:
           'Kiến trúc hệ thống thành phố thông minh hoàn chỉnh với các thông số kỹ thuật và lộ trình triển khai',
       },
     ],
@@ -478,53 +481,21 @@ class DynamicRouting:
         title: 'Hội đồng Thành phố Thông minh',
         url: 'https://smartcitiescouncil.com',
         type: 'article',
-        description: 'Các thực tiễn tốt nhất và nghiên cứu điển hình cho việc triển khai thành phố thông minh',
       },
     ],
     caseStudies: [
       {
         title: 'Sáng kiến Quốc gia Thông minh của Singapore',
-        company: 'Chính phủ Singapore',
-        challenge: 'Biến toàn bộ quốc gia thành một thành phố thông minh với đất đai hạn chế và mật độ dân số cao',
+        organization: 'Chính phủ Singapore',
+        problem: 'Biến toàn bộ quốc gia thành một thành phố thông minh với đất đai hạn chế và mật độ dân số cao',
         solution:
           'Triển khai IoT toàn diện, các dịch vụ được hỗ trợ bởi AI và các nền tảng kỹ thuật số lấy công dân làm trung tâm',
-        results: 'Giảm 25% tắc nghẽn giao thông, cải thiện 30% chất lượng không khí, 95% sự hài lòng của công dân',
-        insights: [
+        impact: 'Giảm 25% tắc nghẽn giao thông, cải thiện 30% chất lượng không khí, 95% sự hài lòng của công dân',
+        innovations: [
           'Sự hỗ trợ toàn diện của chính phủ là điều cần thiết cho sự thành công của thành phố thông minh quy mô lớn',
           'Sự tham gia của công dân và bảo vệ quyền riêng tư là rất quan trọng để được chấp nhận',
           'Các hệ thống có khả năng tương tác cho phép tạo ra sức mạnh tổng hợp giữa các chức năng khác nhau của thành phố',
         ],
-      },
-    ],
-    relatedGames: [
-      {
-        id: 'iot-smart-city-builder-3d',
-        title: 'IoT Smart City Builder 3D',
-        description:
-          'Build comprehensive smart city infrastructure với IoT systems, energy management, và citizen services trong 3D city environment',
-        category: '3D',
-        difficulty: 'Nâng cao',
-        estimatedTime: '60-75 phút',
-        skills: ['Smart City Planning', 'IoT Integration', 'Urban Technology', 'Energy Management', '3D City Design'],
-        moduleType: 'iot',
-        isInternal: true,
-        points: 250,
-        icon: '🏙️',
-        color: 'from-blue-500 to-purple-500',
-      },
-      {
-        id: 'climate-data-analyst',
-        title: 'Chuyên Gia Phân Tích Dữ Liệu Khí Hậu',
-        description: 'Phân tích dữ liệu môi trường và dự báo biến đổi khí hậu',
-        category: 'simulation',
-        difficulty: 'Nâng cao',
-        estimatedTime: '35-40 phút',
-        skills: ['Dữ liệu Môi trường', 'Phân tích', 'Dự báo Khí hậu'],
-        moduleType: 'environmental-data-science',
-        isInternal: true,
-        points: 150,
-        icon: '🌡️',
-        color: 'from-green-600 to-teal-600',
       },
     ],
   },

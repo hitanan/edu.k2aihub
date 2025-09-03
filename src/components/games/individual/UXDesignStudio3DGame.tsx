@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { Palette, Monitor, Users, CheckCircle, Star, Eye, MousePointer, Layers } from 'lucide-react';
+import { Palette, Monitor, CheckCircle, Star, Eye, MousePointer, Layers } from 'lucide-react';
 
 interface UXDesignStudio3DGameProps {
   onComplete: (success: boolean, score: number) => void;
@@ -44,21 +44,22 @@ const designProjects: DesignProject[] = [
     title: 'Mobile Banking App Redesign',
     category: 'mobile',
     client: 'VietBank Digital',
-    briefing: 'Redesign the mobile banking app to improve user experience for Vietnamese customers, focusing on accessibility and security.',
+    briefing:
+      'Redesign the mobile banking app to improve user experience for Vietnamese customers, focusing on accessibility and security.',
     requirements: [
       'Accessible design for elderly users',
       'Biometric authentication integration',
       'Vietnamese language optimization',
       'Offline transaction history',
       'Quick payment shortcuts',
-      'Multi-device synchronization'
+      'Multi-device synchronization',
     ],
     constraints: [
       'Must work on Android 8.0+',
       'Limited to 3 primary colors',
       'Maximum 4-step authentication',
       'Compliance with banking regulations',
-      'Support for screen readers'
+      'Support for screen readers',
     ],
     designPhases: [
       {
@@ -71,15 +72,15 @@ const designProjects: DesignProject[] = [
             type: 'persona',
             description: 'Primary user persona: 45-year-old office worker',
             qualityScore: 85,
-            userScore: 0
+            userScore: 0,
           },
           {
             type: 'user-journey',
             description: 'Current banking app user journey mapping',
             qualityScore: 80,
-            userScore: 0
-          }
-        ]
+            userScore: 0,
+          },
+        ],
       },
       {
         id: 'design',
@@ -91,15 +92,15 @@ const designProjects: DesignProject[] = [
             type: 'wireframe',
             description: 'Low-fidelity wireframes for key screens',
             qualityScore: 75,
-            userScore: 0
+            userScore: 0,
           },
           {
             type: 'prototype',
             description: 'High-fidelity interactive prototype',
             qualityScore: 90,
-            userScore: 0
-          }
-        ]
+            userScore: 0,
+          },
+        ],
       },
       {
         id: 'testing',
@@ -111,39 +112,40 @@ const designProjects: DesignProject[] = [
             type: 'usability-test',
             description: 'A/B testing results and recommendations',
             qualityScore: 88,
-            userScore: 0
-          }
-        ]
-      }
+            userScore: 0,
+          },
+        ],
+      },
     ],
     successCriteria: {
       minUsability: 80,
       minAccessibility: 85,
       minInnovation: 70,
-      maxComplexity: 60
+      maxComplexity: 60,
     },
-    points: 40
+    points: 40,
   },
   {
     id: 'ar-shopping-experience',
     title: 'AR Shopping Experience',
     category: 'ar/vr',
     client: 'FashionForward Vietnam',
-    briefing: 'Design an augmented reality shopping experience that allows customers to try on clothes virtually before purchasing.',
+    briefing:
+      'Design an augmented reality shopping experience that allows customers to try on clothes virtually before purchasing.',
     requirements: [
       '3D garment visualization',
       'Real-time size adjustment',
       'Social sharing features',
       'Virtual fitting room',
       'Price comparison tools',
-      'Vietnamese fashion preferences'
+      'Vietnamese fashion preferences',
     ],
     constraints: [
       'Works on mid-range smartphones',
       'AR tracking without markers',
       'Loading time under 5 seconds',
       'Privacy-compliant data handling',
-      'Cultural sensitivity in designs'
+      'Cultural sensitivity in designs',
     ],
     designPhases: [
       {
@@ -156,9 +158,9 @@ const designProjects: DesignProject[] = [
             type: 'prototype',
             description: 'AR concept demonstration with basic tracking',
             qualityScore: 80,
-            userScore: 0
-          }
-        ]
+            userScore: 0,
+          },
+        ],
       },
       {
         id: 'experience',
@@ -170,15 +172,15 @@ const designProjects: DesignProject[] = [
             type: 'prototype',
             description: '3D try-on experience with gesture controls',
             qualityScore: 92,
-            userScore: 0
+            userScore: 0,
           },
           {
             type: 'user-journey',
             description: 'AR shopping journey with pain point solutions',
             qualityScore: 87,
-            userScore: 0
-          }
-        ]
+            userScore: 0,
+          },
+        ],
       },
       {
         id: 'validation',
@@ -190,39 +192,40 @@ const designProjects: DesignProject[] = [
             type: 'usability-test',
             description: 'AR usability testing with motion capture data',
             qualityScore: 85,
-            userScore: 0
-          }
-        ]
-      }
+            userScore: 0,
+          },
+        ],
+      },
     ],
     successCriteria: {
       minUsability: 75,
       minAccessibility: 70,
       minInnovation: 90,
-      maxComplexity: 80
+      maxComplexity: 80,
     },
-    points: 60
+    points: 60,
   },
   {
     id: 'smart-city-dashboard',
     title: 'Smart City IoT Dashboard',
     category: 'iot',
     client: 'Ho Chi Minh City Smart Initiative',
-    briefing: 'Create a comprehensive dashboard for city administrators to monitor and control IoT devices across the smart city infrastructure.',
+    briefing:
+      'Create a comprehensive dashboard for city administrators to monitor and control IoT devices across the smart city infrastructure.',
     requirements: [
       'Real-time data visualization',
       'Multi-device responsive design',
       'Alert and notification system',
       'Historical data analysis',
       'Role-based access control',
-      'Emergency response integration'
+      'Emergency response integration',
     ],
     constraints: [
       'Must handle 10,000+ data points',
       'Sub-second response time',
       'Works offline for critical functions',
       'Government security standards',
-      'Multi-language support'
+      'Multi-language support',
     ],
     designPhases: [
       {
@@ -235,9 +238,9 @@ const designProjects: DesignProject[] = [
             type: 'wireframe',
             description: 'Dashboard information hierarchy wireframes',
             qualityScore: 82,
-            userScore: 0
-          }
-        ]
+            userScore: 0,
+          },
+        ],
       },
       {
         id: 'visualization',
@@ -249,15 +252,15 @@ const designProjects: DesignProject[] = [
             type: 'prototype',
             description: 'Interactive data visualization prototypes',
             qualityScore: 95,
-            userScore: 0
+            userScore: 0,
           },
           {
             type: 'mockup',
             description: 'High-fidelity dashboard mockups',
             qualityScore: 88,
-            userScore: 0
-          }
-        ]
+            userScore: 0,
+          },
+        ],
       },
       {
         id: 'interaction',
@@ -269,26 +272,22 @@ const designProjects: DesignProject[] = [
             type: 'prototype',
             description: 'Advanced interaction prototypes with micro-animations',
             qualityScore: 90,
-            userScore: 0
-          }
-        ]
-      }
+            userScore: 0,
+          },
+        ],
+      },
     ],
     successCriteria: {
       minUsability: 85,
       minAccessibility: 90,
       minInnovation: 80,
-      maxComplexity: 70
+      maxComplexity: 70,
     },
-    points: 50
-  }
+    points: 50,
+  },
 ];
 
-export default function UXDesignStudio3DGame({
-  onComplete,
-  timeLeft,
-  onRestart
-}: UXDesignStudio3DGameProps) {
+export default function UXDesignStudio3DGame({ onComplete, timeLeft, onRestart }: UXDesignStudio3DGameProps) {
   const [currentProject, setCurrentProject] = useState(0);
   const [currentPhase, setCurrentPhase] = useState(0);
   const [currentDeliverable, setCurrentDeliverable] = useState(0);
@@ -296,7 +295,7 @@ export default function UXDesignStudio3DGame({
     usability: 60,
     accessibility: 60,
     innovation: 60,
-    complexity: 40
+    complexity: 40,
   });
   const [completedDeliverables, setCompletedDeliverables] = useState<string[]>([]);
   const [showDesignResult, setShowDesignResult] = useState(false);
@@ -308,75 +307,87 @@ export default function UXDesignStudio3DGame({
   const currentPhaseData = currentProjectData?.designPhases[currentPhase];
   const currentDeliverableData = currentPhaseData?.deliverables[currentDeliverable];
 
-  const handleDeliverableComplete = useCallback((quality: number) => {
-    if (!currentDeliverableData || showDesignResult) return;
-
-    // Update metrics based on deliverable quality
-    const improvement = Math.floor(quality / 10);
-    setDesignMetrics(prev => ({
-      usability: Math.min(100, prev.usability + improvement),
-      accessibility: Math.min(100, prev.accessibility + improvement * 0.8),
-      innovation: Math.min(100, prev.innovation + improvement * 1.2),
-      complexity: Math.max(0, prev.complexity - improvement * 0.5)
-    }));
-
-    // Mark deliverable as completed
-    const deliverableId = `${currentProject}-${currentPhase}-${currentDeliverable}`;
-    setCompletedDeliverables(prev => [...prev, deliverableId]);
-
-    // Add score based on quality
-    const deliverableScore = Math.round((quality / 100) * 15);
-    setTotalScore(prev => prev + deliverableScore);
-
-    // Increase design level for high-quality work
-    if (quality >= 85) {
-      setDesignLevel(prev => Math.min(10, prev + 1));
-    }
-
-    setShowDesignResult(true);
-
-    setTimeout(() => {
-      setShowDesignResult(false);
-      
-      // Progress to next deliverable/phase/project
-      if (currentDeliverable < currentPhaseData.deliverables.length - 1) {
-        setCurrentDeliverable(prev => prev + 1);
-      } else if (currentPhase < currentProjectData.designPhases.length - 1) {
-        setCurrentPhase(prev => prev + 1);
-        setCurrentDeliverable(0);
-      } else {
-        // Project complete
-        evaluateProjectSuccess();
-      }
-    }, 3000);
-  }, [currentProject, currentPhase, currentDeliverable, currentProjectData, currentPhaseData, showDesignResult]);
-
   const evaluateProjectSuccess = useCallback(() => {
-    const projectSuccess = 
+    const projectSuccess =
       designMetrics.usability >= currentProjectData.successCriteria.minUsability &&
       designMetrics.accessibility >= currentProjectData.successCriteria.minAccessibility &&
       designMetrics.innovation >= currentProjectData.successCriteria.minInnovation &&
       designMetrics.complexity <= currentProjectData.successCriteria.maxComplexity;
 
     const projectScore = projectSuccess ? currentProjectData.points : Math.floor(currentProjectData.points * 0.6);
-    setTotalScore(prev => prev + projectScore);
+    setTotalScore((prev) => prev + projectScore);
 
     if (currentProject < designProjects.length - 1) {
-      setCurrentProject(prev => prev + 1);
+      setCurrentProject((prev) => prev + 1);
       setCurrentPhase(0);
       setCurrentDeliverable(0);
       setDesignMetrics({
         usability: 60,
         accessibility: 60,
         innovation: 60,
-        complexity: 40
+        complexity: 40,
       });
     } else {
       setGameComplete(true);
       const finalScore = Math.max(0, Math.min(100, (totalScore / 150) * 100));
       onComplete(finalScore > 60, finalScore);
     }
-  }, [currentProject, currentProjectData, designMetrics, totalScore, onComplete]);
+  }, [currentProject, designMetrics, totalScore, onComplete, currentProjectData]);
+
+  const handleDeliverableComplete = useCallback(
+    (quality: number) => {
+      if (!currentDeliverableData || showDesignResult) return;
+
+      // Update metrics based on deliverable quality
+      const improvement = Math.floor(quality / 10);
+      setDesignMetrics((prev) => ({
+        usability: Math.min(100, prev.usability + improvement),
+        accessibility: Math.min(100, prev.accessibility + improvement * 0.8),
+        innovation: Math.min(100, prev.innovation + improvement * 1.2),
+        complexity: Math.max(0, prev.complexity - improvement * 0.5),
+      }));
+
+      // Mark deliverable as completed
+      const deliverableId = `${currentProject}-${currentPhase}-${currentDeliverable}`;
+      setCompletedDeliverables((prev) => [...prev, deliverableId]);
+
+      // Add score based on quality
+      const deliverableScore = Math.round((quality / 100) * 15);
+      setTotalScore((prev) => prev + deliverableScore);
+
+      // Increase design level for high-quality work
+      if (quality >= 85) {
+        setDesignLevel((prev) => Math.min(10, prev + 1));
+      }
+
+      setShowDesignResult(true);
+
+      setTimeout(() => {
+        setShowDesignResult(false);
+
+        // Progress to next deliverable/phase/project
+        if (currentDeliverable < currentPhaseData.deliverables.length - 1) {
+          setCurrentDeliverable((prev) => prev + 1);
+        } else if (currentPhase < currentProjectData.designPhases.length - 1) {
+          setCurrentPhase((prev) => prev + 1);
+          setCurrentDeliverable(0);
+        } else {
+          // Project complete
+          evaluateProjectSuccess();
+        }
+      }, 3000);
+    },
+    [
+      currentDeliverableData,
+      showDesignResult,
+      currentDeliverable,
+      currentPhaseData,
+      currentPhase,
+      currentProject,
+      evaluateProjectSuccess,
+      currentProjectData.designPhases.length,
+    ],
+  );
 
   useEffect(() => {
     if (timeLeft <= 0 && !gameComplete) {
@@ -393,21 +404,21 @@ export default function UXDesignStudio3DGame({
         <div className="text-center mb-8">
           <Palette className="w-16 h-16 mx-auto mb-4 text-pink-400" />
           <h2 className="text-3xl font-bold mb-2">Design Studio Portfolio Complete</h2>
-          <div className="text-6xl font-bold text-pink-400 mb-4">
-            {Math.round(finalScore)}%
-          </div>
-          <p className="text-xl mb-6">
-            Design Level: {designLevel}/10
-          </p>
+          <div className="text-6xl font-bold text-pink-400 mb-4">{Math.round(finalScore)}%</div>
+          <p className="text-xl mb-6">Design Level: {designLevel}/10</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white/10 rounded-lg p-6">
             <h3 className="text-lg font-semibold mb-4 text-pink-300">Design Achievements:</h3>
             <div className="space-y-2 text-sm">
-              {finalScore >= 90 && <div className="text-green-300">• UX Design Master - Exceptional user experience</div>}
+              {finalScore >= 90 && (
+                <div className="text-green-300">• UX Design Master - Exceptional user experience</div>
+              )}
               {designLevel >= 8 && <div className="text-blue-300">• Innovation Leader - Creative problem solving</div>}
-              {completedDeliverables.length >= 12 && <div className="text-purple-300">• Production Pro - High output quality</div>}
+              {completedDeliverables.length >= 12 && (
+                <div className="text-purple-300">• Production Pro - High output quality</div>
+              )}
               {finalScore >= 70 && <div className="text-yellow-300">• Design Excellence - Professional standards</div>}
             </div>
           </div>
@@ -419,10 +430,7 @@ export default function UXDesignStudio3DGame({
                 <span>Usability:</span>
                 <div className="flex items-center">
                   <div className="w-20 bg-gray-700 rounded-full h-2 mr-2">
-                    <div 
-                      className="bg-green-500 h-2 rounded-full"
-                      style={{ width: `${designMetrics.usability}%` }}
-                    />
+                    <div className="bg-green-500 h-2 rounded-full" style={{ width: `${designMetrics.usability}%` }} />
                   </div>
                   <span className="text-sm">{designMetrics.usability}%</span>
                 </div>
@@ -431,7 +439,7 @@ export default function UXDesignStudio3DGame({
                 <span>Accessibility:</span>
                 <div className="flex items-center">
                   <div className="w-20 bg-gray-700 rounded-full h-2 mr-2">
-                    <div 
+                    <div
                       className="bg-blue-500 h-2 rounded-full"
                       style={{ width: `${designMetrics.accessibility}%` }}
                     />
@@ -443,10 +451,7 @@ export default function UXDesignStudio3DGame({
                 <span>Innovation:</span>
                 <div className="flex items-center">
                   <div className="w-20 bg-gray-700 rounded-full h-2 mr-2">
-                    <div 
-                      className="bg-purple-500 h-2 rounded-full"
-                      style={{ width: `${designMetrics.innovation}%` }}
-                    />
+                    <div className="bg-purple-500 h-2 rounded-full" style={{ width: `${designMetrics.innovation}%` }} />
                   </div>
                   <span className="text-sm">{designMetrics.innovation}%</span>
                 </div>
@@ -455,7 +460,7 @@ export default function UXDesignStudio3DGame({
                 <span>Complexity:</span>
                 <div className="flex items-center">
                   <div className="w-20 bg-gray-700 rounded-full h-2 mr-2">
-                    <div 
+                    <div
                       className="bg-red-500 h-2 rounded-full"
                       style={{ width: `${100 - designMetrics.complexity}%` }}
                     />
@@ -514,16 +519,18 @@ export default function UXDesignStudio3DGame({
             <Star className="w-4 h-4 mr-1" />
             Design Level: {designLevel}/10
           </div>
-          <div className="text-sm text-gray-300">⏱️ {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</div>
+          <div className="text-sm text-gray-300">
+            ⏱️ {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+          </div>
         </div>
       </div>
 
       {/* Progress Bar */}
       <div className="w-full bg-white/20 rounded-full h-2 mb-6">
-        <div 
+        <div
           className="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full transition-all duration-300"
-          style={{ 
-            width: `${((currentProject + (currentPhase + 1) / currentProjectData.designPhases.length) / designProjects.length) * 100}%` 
+          style={{
+            width: `${((currentProject + (currentPhase + 1) / currentProjectData.designPhases.length) / designProjects.length) * 100}%`,
           }}
         />
       </div>
@@ -538,9 +545,7 @@ export default function UXDesignStudio3DGame({
             {currentProjectData.category === 'iot' && '🔗'}
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-2 text-yellow-300">
-              {currentProjectData.client}
-            </h3>
+            <h3 className="text-xl font-bold mb-2 text-yellow-300">{currentProjectData.client}</h3>
             <p className="text-gray-200">{currentProjectData.briefing}</p>
           </div>
         </div>
@@ -554,7 +559,7 @@ export default function UXDesignStudio3DGame({
             <div className="text-2xl font-bold text-green-400">{designMetrics.usability}%</div>
             <div className="text-sm text-gray-300">Usability</div>
             <div className="w-full bg-gray-700 rounded-full h-1 mt-1">
-              <div 
+              <div
                 className="bg-green-500 h-1 rounded-full transition-all"
                 style={{ width: `${designMetrics.usability}%` }}
               />
@@ -564,7 +569,7 @@ export default function UXDesignStudio3DGame({
             <div className="text-2xl font-bold text-blue-400">{designMetrics.accessibility}%</div>
             <div className="text-sm text-gray-300">Accessibility</div>
             <div className="w-full bg-gray-700 rounded-full h-1 mt-1">
-              <div 
+              <div
                 className="bg-blue-500 h-1 rounded-full transition-all"
                 style={{ width: `${designMetrics.accessibility}%` }}
               />
@@ -574,7 +579,7 @@ export default function UXDesignStudio3DGame({
             <div className="text-2xl font-bold text-purple-400">{designMetrics.innovation}%</div>
             <div className="text-sm text-gray-300">Innovation</div>
             <div className="w-full bg-gray-700 rounded-full h-1 mt-1">
-              <div 
+              <div
                 className="bg-purple-500 h-1 rounded-full transition-all"
                 style={{ width: `${designMetrics.innovation}%` }}
               />
@@ -584,7 +589,7 @@ export default function UXDesignStudio3DGame({
             <div className="text-2xl font-bold text-red-400">{designMetrics.complexity}%</div>
             <div className="text-sm text-gray-300">Complexity</div>
             <div className="w-full bg-gray-700 rounded-full h-1 mt-1">
-              <div 
+              <div
                 className="bg-red-500 h-1 rounded-full transition-all"
                 style={{ width: `${designMetrics.complexity}%` }}
               />
@@ -626,33 +631,31 @@ export default function UXDesignStudio3DGame({
             onClick={() => handleDeliverableComplete(95)}
             disabled={showDesignResult}
             className={`p-4 text-left rounded-lg border-2 transition-all ${
-              showDesignResult 
-                ? 'opacity-50 cursor-not-allowed border-gray-600 bg-white/5' 
+              showDesignResult
+                ? 'opacity-50 cursor-not-allowed border-gray-600 bg-white/5'
                 : 'border-gray-600 bg-white/5 hover:bg-white/10 hover:border-green-500 cursor-pointer'
             }`}
           >
             <div className="font-medium text-green-300 mb-2">Exceptional Quality (95%)</div>
             <div className="text-sm text-gray-300">
-              • Exceeds expectations with innovative solutions
-              • Perfect accessibility and usability standards
-              • Advanced interactions and micro-animations
+              • Exceeds expectations with innovative solutions • Perfect accessibility and usability standards •
+              Advanced interactions and micro-animations
             </div>
           </button>
-          
+
           <button
             onClick={() => handleDeliverableComplete(80)}
             disabled={showDesignResult}
             className={`p-4 text-left rounded-lg border-2 transition-all ${
-              showDesignResult 
-                ? 'opacity-50 cursor-not-allowed border-gray-600 bg-white/5' 
+              showDesignResult
+                ? 'opacity-50 cursor-not-allowed border-gray-600 bg-white/5'
                 : 'border-gray-600 bg-white/5 hover:bg-white/10 hover:border-blue-500 cursor-pointer'
             }`}
           >
             <div className="font-medium text-blue-300 mb-2">Professional Quality (80%)</div>
             <div className="text-sm text-gray-300">
-              • Meets all requirements with good execution
-              • Standard accessibility compliance
-              • Clean and functional design
+              • Meets all requirements with good execution • Standard accessibility compliance • Clean and functional
+              design
             </div>
           </button>
 
@@ -660,16 +663,14 @@ export default function UXDesignStudio3DGame({
             onClick={() => handleDeliverableComplete(65)}
             disabled={showDesignResult}
             className={`p-4 text-left rounded-lg border-2 transition-all ${
-              showDesignResult 
-                ? 'opacity-50 cursor-not-allowed border-gray-600 bg-white/5' 
+              showDesignResult
+                ? 'opacity-50 cursor-not-allowed border-gray-600 bg-white/5'
                 : 'border-gray-600 bg-white/5 hover:bg-white/10 hover:border-yellow-500 cursor-pointer'
             }`}
           >
             <div className="font-medium text-yellow-300 mb-2">Basic Quality (65%)</div>
             <div className="text-sm text-gray-300">
-              • Fulfills core requirements
-              • Some accessibility considerations
-              • Functional but minimal innovation
+              • Fulfills core requirements • Some accessibility considerations • Functional but minimal innovation
             </div>
           </button>
         </div>
@@ -687,7 +688,7 @@ export default function UXDesignStudio3DGame({
           </p>
           <div className="bg-white/10 rounded-lg p-3">
             <div className="text-sm text-center text-gray-300">
-              Processing design impact... 
+              Processing design impact...
               <span className="animate-pulse ml-2">🎨</span>
             </div>
           </div>
@@ -704,7 +705,9 @@ export default function UXDesignStudio3DGame({
             </h4>
             <ul className="text-xs space-y-1">
               {currentProjectData.requirements.slice(0, 3).map((req, index) => (
-                <li key={index} className="text-gray-300">• {req}</li>
+                <li key={index} className="text-gray-300">
+                  • {req}
+                </li>
               ))}
             </ul>
           </div>
@@ -715,7 +718,9 @@ export default function UXDesignStudio3DGame({
             </h4>
             <ul className="text-xs space-y-1">
               {currentProjectData.constraints.slice(0, 3).map((constraint, index) => (
-                <li key={index} className="text-gray-300">• {constraint}</li>
+                <li key={index} className="text-gray-300">
+                  • {constraint}
+                </li>
               ))}
             </ul>
           </div>

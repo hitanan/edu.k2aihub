@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
-import { Users, Monitor, MessageSquare, Settings, BookOpen, CheckCircle, AlertCircle, RotateCcw } from 'lucide-react';
+import { Users, Monitor, MessageSquare, Settings, BookOpen, CheckCircle, RotateCcw } from 'lucide-react';
 
 interface Student {
   id: string;
@@ -26,14 +26,78 @@ interface VirtualClassroomManagerGameProps {
 }
 
 const STUDENTS_DATA: Student[] = [
-  { id: '1', name: 'An', attention: 80, participation: 70, technical: 90, status: 'active', currentActivity: 'listening' },
-  { id: '2', name: 'Bình', attention: 60, participation: 40, technical: 60, status: 'struggling', currentActivity: 'confused' },
-  { id: '3', name: 'Cường', attention: 90, participation: 85, technical: 95, status: 'excelling', currentActivity: 'engaged' },
-  { id: '4', name: 'Dung', attention: 75, participation: 80, technical: 70, status: 'active', currentActivity: 'participating' },
-  { id: '5', name: 'Hòa', attention: 45, participation: 30, technical: 50, status: 'inactive', currentActivity: 'distracted' },
-  { id: '6', name: 'Linh', attention: 85, participation: 90, technical: 80, status: 'excelling', currentActivity: 'leading' },
-  { id: '7', name: 'Minh', attention: 70, participation: 60, technical: 75, status: 'active', currentActivity: 'thinking' },
-  { id: '8', name: 'Nam', attention: 55, participation: 45, technical: 65, status: 'struggling', currentActivity: 'confused' },
+  {
+    id: '1',
+    name: 'An',
+    attention: 80,
+    participation: 70,
+    technical: 90,
+    status: 'active',
+    currentActivity: 'listening',
+  },
+  {
+    id: '2',
+    name: 'Bình',
+    attention: 60,
+    participation: 40,
+    technical: 60,
+    status: 'struggling',
+    currentActivity: 'confused',
+  },
+  {
+    id: '3',
+    name: 'Cường',
+    attention: 90,
+    participation: 85,
+    technical: 95,
+    status: 'excelling',
+    currentActivity: 'engaged',
+  },
+  {
+    id: '4',
+    name: 'Dung',
+    attention: 75,
+    participation: 80,
+    technical: 70,
+    status: 'active',
+    currentActivity: 'participating',
+  },
+  {
+    id: '5',
+    name: 'Hòa',
+    attention: 45,
+    participation: 30,
+    technical: 50,
+    status: 'inactive',
+    currentActivity: 'distracted',
+  },
+  {
+    id: '6',
+    name: 'Linh',
+    attention: 85,
+    participation: 90,
+    technical: 80,
+    status: 'excelling',
+    currentActivity: 'leading',
+  },
+  {
+    id: '7',
+    name: 'Minh',
+    attention: 70,
+    participation: 60,
+    technical: 75,
+    status: 'active',
+    currentActivity: 'thinking',
+  },
+  {
+    id: '8',
+    name: 'Nam',
+    attention: 55,
+    participation: 45,
+    technical: 65,
+    status: 'struggling',
+    currentActivity: 'confused',
+  },
 ];
 
 const ACTIVITIES_DATA: ClassActivity[] = [
@@ -68,115 +132,132 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
     setClassEvents(['Lớp học bắt đầu! Chọn hoạt động đầu tiên.']);
   };
 
-  const resetGame = () => {
+  const resetGame = useCallback(() => {
     setGamePhase('briefing');
-  };
+  }, []);
 
   const startActivity = (activity: ClassActivity) => {
     setCurrentActivity(activity);
     setActivityTimeLeft(activity.duration);
-    setClassEvents(prev => [...prev, `Bắt đầu: ${activity.name}`]);
-    
+    setClassEvents((prev) => [...prev, `Bắt đầu: ${activity.name}`]);
+
     // Update student status based on activity
-    setStudents(prev => prev.map(student => {
-      let newAttention = student.attention;
-      let newParticipation = student.participation;
-      
-      // Activity affects students differently based on type
-      switch (activity.type) {
-        case 'lecture':
-          newAttention += student.technical > 70 ? 5 : -5;
-          break;
-        case 'discussion':
-          newParticipation += student.participation > 60 ? 10 : -5;
-          newAttention += 5;
-          break;
-        case 'exercise':
-          newAttention += student.technical > 80 ? 10 : -10;
-          newParticipation += 5;
-          break;
-        case 'quiz':
-          newAttention += 15;
-          break;
-      }
-      
-      newAttention = Math.max(0, Math.min(100, newAttention));
-      newParticipation = Math.max(0, Math.min(100, newParticipation));
-      
-      // Determine new status
-      let newStatus: Student['status'] = 'active';
-      if (newAttention < 50 || newParticipation < 40) {
-        newStatus = 'struggling';
-      } else if (newAttention > 85 && newParticipation > 80) {
-        newStatus = 'excelling';
-      }
-      
-      return {
-        ...student,
-        attention: newAttention,
-        participation: newParticipation,
-        status: newStatus
-      };
-    }));
+    setStudents((prev) =>
+      prev.map((student) => {
+        let newAttention = student.attention;
+        let newParticipation = student.participation;
+
+        // Activity affects students differently based on type
+        switch (activity.type) {
+          case 'lecture':
+            newAttention += student.technical > 70 ? 5 : -5;
+            break;
+          case 'discussion':
+            newParticipation += student.participation > 60 ? 10 : -5;
+            newAttention += 5;
+            break;
+          case 'exercise':
+            newAttention += student.technical > 80 ? 10 : -10;
+            newParticipation += 5;
+            break;
+          case 'quiz':
+            newAttention += 15;
+            break;
+        }
+
+        newAttention = Math.max(0, Math.min(100, newAttention));
+        newParticipation = Math.max(0, Math.min(100, newParticipation));
+
+        // Determine new status
+        let newStatus: Student['status'] = 'active';
+        if (newAttention < 50 || newParticipation < 40) {
+          newStatus = 'struggling';
+        } else if (newAttention > 85 && newParticipation > 80) {
+          newStatus = 'excelling';
+        }
+
+        return {
+          ...student,
+          attention: newAttention,
+          participation: newParticipation,
+          status: newStatus,
+        };
+      }),
+    );
   };
 
   const helpStudent = (studentId: string) => {
-    setStudents(prev => prev.map(student => {
-      if (student.id === studentId) {
-        return {
-          ...student,
-          attention: Math.min(100, student.attention + 20),
-          participation: Math.min(100, student.participation + 15),
-          status: student.attention + 20 > 70 ? 'active' : student.status
-        };
-      }
-      return student;
-    }));
-    
-    setScore(prev => prev + 25);
-    setClassEvents(prev => [...prev, `Hỗ trợ học sinh: ${students.find(s => s.id === studentId)?.name}`]);
+    setStudents((prev) =>
+      prev.map((student) => {
+        if (student.id === studentId) {
+          return {
+            ...student,
+            attention: Math.min(100, student.attention + 20),
+            participation: Math.min(100, student.participation + 15),
+            status: student.attention + 20 > 70 ? 'active' : student.status,
+          };
+        }
+        return student;
+      }),
+    );
+
+    setScore((prev) => prev + 25);
+    setClassEvents((prev) => [...prev, `Hỗ trợ học sinh: ${students.find((s) => s.id === studentId)?.name}`]);
   };
 
-  const adjustClassPace = (adjustment: 'slower' | 'faster') => {
-    if (!currentActivity) return;
-    
-    const multiplier = adjustment === 'slower' ? 1.2 : 0.8;
-    setActivityTimeLeft(prev => Math.round(prev * multiplier));
-    
-    setStudents(prev => prev.map(student => {
-      let attentionChange = 0;
-      if (adjustment === 'slower' && student.status === 'struggling') {
-        attentionChange = 10;
-      } else if (adjustment === 'faster' && student.status === 'excelling') {
-        attentionChange = 5;
-      } else {
-        attentionChange = -5;
-      }
-      
-      return {
-        ...student,
-        attention: Math.max(0, Math.min(100, student.attention + attentionChange))
-      };
-    }));
-    
-    setClassEvents(prev => [...prev, `Điều chỉnh tốc độ: ${adjustment === 'slower' ? 'chậm lại' : 'nhanh hơn'}`]);
-  };
+  const adjustClassPace = useCallback(
+    (adjustment: 'slower' | 'faster') => {
+      if (!currentActivity) return;
+
+      const multiplier = adjustment === 'slower' ? 1.2 : 0.8;
+      setActivityTimeLeft((prev) => Math.round(prev * multiplier));
+
+      setStudents((prev) =>
+        prev.map((student) => {
+          let attentionChange = 0;
+          if (adjustment === 'slower' && student.status === 'struggling') {
+            attentionChange = 10;
+          } else if (adjustment === 'faster' && student.status === 'excelling') {
+            attentionChange = 5;
+          } else {
+            attentionChange = -5;
+          }
+
+          return {
+            ...student,
+            attention: Math.max(0, Math.min(100, student.attention + attentionChange)),
+          };
+        }),
+      );
+
+      setClassEvents((prev) => [...prev, `Điều chỉnh tốc độ: ${adjustment === 'slower' ? 'chậm lại' : 'nhanh hơn'}`]);
+    },
+    [currentActivity],
+  );
 
   const getStudentStatusColor = (status: Student['status']) => {
     switch (status) {
-      case 'excelling': return 'border-green-400 bg-green-500/10';
-      case 'struggling': return 'border-red-400 bg-red-500/10';
-      case 'inactive': return 'border-gray-400 bg-gray-500/10';
-      default: return 'border-blue-400 bg-blue-500/10';
+      case 'excelling':
+        return 'border-green-400 bg-green-500/10';
+      case 'struggling':
+        return 'border-red-400 bg-red-500/10';
+      case 'inactive':
+        return 'border-gray-400 bg-gray-500/10';
+      default:
+        return 'border-blue-400 bg-blue-500/10';
     }
   };
 
   const getStatusIcon = (status: Student['status']) => {
     switch (status) {
-      case 'excelling': return '⭐';
-      case 'struggling': return '😟';
-      case 'inactive': return '😴';
-      default: return '😊';
+      case 'excelling':
+        return '⭐';
+      case 'struggling':
+        return '😟';
+      case 'inactive':
+        return '😴';
+      default:
+        return '😊';
     }
   };
 
@@ -185,49 +266,62 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
     if (gamePhase !== 'playing') return;
 
     const timer = setInterval(() => {
-      setClassTime(prev => prev + 1);
-      
+      setClassTime((prev) => prev + 1);
+
       if (currentActivity && activityTimeLeft > 0) {
-        setActivityTimeLeft(prev => prev - 1);
-        
+        setActivityTimeLeft((prev) => prev - 1);
+
         // Update engagement during activity
-        const currentEngagement = students.reduce((sum, student) => 
-          sum + (student.attention + student.participation) / 2, 0) / students.length;
-        setTotalEngagement(prev => prev + currentEngagement);
-        
+        const currentEngagement =
+          students.reduce((sum, student) => sum + (student.attention + student.participation) / 2, 0) / students.length;
+        setTotalEngagement((prev) => prev + currentEngagement);
+
         // Activity completed
         if (activityTimeLeft === 1) {
-          setActivitiesCompleted(prev => prev + 1);
-          setScore(prev => prev + Math.round(currentEngagement));
-          setClassEvents(prev => [...prev, `Hoàn thành: ${currentActivity.name}`]);
+          setActivitiesCompleted((prev) => prev + 1);
+          setScore((prev) => prev + Math.round(currentEngagement));
+          setClassEvents((prev) => [...prev, `Hoàn thành: ${currentActivity.name}`]);
           setCurrentActivity(null);
         }
       }
-      
+
       // Update struggling students count
-      const struggling = students.filter(s => s.status === 'struggling' || s.status === 'inactive').length;
+      const struggling = students.filter((s) => s.status === 'struggling' || s.status === 'inactive').length;
       setStrugglingStudents(struggling);
-      
+
       // Natural attention decay over time
       if (classTime % 5 === 0 && !currentActivity) {
-        setStudents(prev => prev.map(student => ({
-          ...student,
-          attention: Math.max(0, student.attention - 2)
-        })));
+        setStudents((prev) =>
+          prev.map((student) => ({
+            ...student,
+            attention: Math.max(0, student.attention - 2),
+          })),
+        );
       }
-      
+
       // End game after 5 minutes
       if (classTime >= 300) {
         setGamePhase('results');
         const avgEngagement = totalEngagement / Math.max(1, classTime);
-        const finalScore = Math.round(score + avgEngagement * 2 + (activitiesCompleted * 50) - (strugglingStudents * 10));
+        const finalScore = Math.round(score + avgEngagement * 2 + activitiesCompleted * 50 - strugglingStudents * 10);
         setScore(finalScore);
         setTimeout(() => onComplete(finalScore > 400), 2000);
       }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [gamePhase, classTime, currentActivity, activityTimeLeft, students, totalEngagement, score, activitiesCompleted, strugglingStudents, onComplete]);
+  }, [
+    gamePhase,
+    classTime,
+    currentActivity,
+    activityTimeLeft,
+    students,
+    totalEngagement,
+    score,
+    activitiesCompleted,
+    strugglingStudents,
+    onComplete,
+  ]);
 
   if (gamePhase === 'briefing') {
     return (
@@ -303,21 +397,19 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
 
   if (gamePhase === 'results') {
     const avgEngagement = totalEngagement / Math.max(1, classTime);
-    
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-slate-900 to-purple-900 p-4">
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-white mb-4">
-              🏆 Kết quả quản lý lớp học
-            </h1>
-            <div className="text-6xl font-bold text-purple-400 mb-4">
-              {score}
-            </div>
+            <h1 className="text-4xl font-bold text-white mb-4">🏆 Kết quả quản lý lớp học</h1>
+            <div className="text-6xl font-bold text-purple-400 mb-4">{score}</div>
             <p className="text-gray-300 text-lg">
-              {score > 400 ? 'Xuất sắc! Bạn là giáo viên online tuyệt vời!' : 
-               score > 250 ? 'Tốt! Bạn đã quản lý lớp học khá hiệu quả!' :
-               'Cần cải thiện! Hãy thử lại để đạt kết quả tốt hơn.'}
+              {score > 400
+                ? 'Xuất sắc! Bạn là giáo viên online tuyệt vời!'
+                : score > 250
+                  ? 'Tốt! Bạn đã quản lý lớp học khá hiệu quả!'
+                  : 'Cần cải thiện! Hãy thử lại để đạt kết quả tốt hơn.'}
             </p>
           </div>
 
@@ -327,7 +419,9 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
               <div className="space-y-3 text-gray-300">
                 <div className="flex justify-between">
                   <span>Thời gian dạy:</span>
-                  <span className="text-blue-400 font-medium">{Math.floor(classTime / 60)}:{(classTime % 60).toString().padStart(2, '0')}</span>
+                  <span className="text-blue-400 font-medium">
+                    {Math.floor(classTime / 60)}:{(classTime % 60).toString().padStart(2, '0')}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Hoạt động hoàn thành:</span>
@@ -391,11 +485,19 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
             <div className="flex items-center space-x-4 text-sm">
               <div className="flex items-center">
                 <BookOpen className="w-4 h-4 mr-2 text-blue-400" />
-                <span className="text-white">{Math.floor(classTime / 60)}:{(classTime % 60).toString().padStart(2, '0')}</span>
+                <span className="text-white">
+                  {Math.floor(classTime / 60)}:{(classTime % 60).toString().padStart(2, '0')}
+                </span>
               </div>
               <div className="flex items-center">
                 <Users className="w-4 h-4 mr-2 text-green-400" />
-                <span className="text-white">Engagement: {(students.reduce((sum, s) => sum + (s.attention + s.participation) / 2, 0) / students.length).toFixed(0)}%</span>
+                <span className="text-white">
+                  Engagement:{' '}
+                  {(
+                    students.reduce((sum, s) => sum + (s.attention + s.participation) / 2, 0) / students.length
+                  ).toFixed(0)}
+                  %
+                </span>
               </div>
               <div className="flex items-center">
                 <span className="text-purple-400 font-medium">Điểm: {score}</span>
@@ -412,21 +514,18 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
               Trạng thái học sinh
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {students.map(student => (
+              {students.map((student) => (
                 <button
                   key={student.id}
                   onClick={() => helpStudent(student.id)}
                   className={`p-3 rounded-lg border-2 transition-all duration-200 hover:scale-105 ${getStudentStatusColor(student.status)}`}
+                  disabled={!currentActivity}
                 >
                   <div className="text-center">
                     <div className="text-2xl mb-1">{getStatusIcon(student.status)}</div>
                     <div className="text-white text-sm font-medium">{student.name}</div>
-                    <div className="text-xs text-gray-300 mt-1">
-                      Chú ý: {student.attention}%
-                    </div>
-                    <div className="text-xs text-gray-300">
-                      Tham gia: {student.participation}%
-                    </div>
+                    <div className="text-xs text-gray-300 mt-1">Chú ý: {student.attention}%</div>
+                    <div className="text-xs text-gray-300">Tham gia: {student.participation}%</div>
                   </div>
                 </button>
               ))}
@@ -439,7 +538,7 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
               <Settings className="w-5 h-5 mr-2 text-purple-400" />
               Hoạt động lớp học
             </h3>
-            
+
             {currentActivity ? (
               <div className="space-y-4">
                 <div className="bg-purple-500/20 border border-purple-500/40 rounded-lg p-3">
@@ -448,23 +547,25 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
                     Còn lại: {Math.floor(activityTimeLeft / 60)}:{(activityTimeLeft % 60).toString().padStart(2, '0')}
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
-                    <div 
+                    <div
                       className="bg-purple-500 h-2 rounded-full transition-all duration-1000"
                       style={{ width: `${(activityTimeLeft / currentActivity.duration) * 100}%` }}
                     ></div>
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <button
                     onClick={() => adjustClassPace('slower')}
                     className="w-full bg-blue-500/20 hover:bg-blue-500/40 text-blue-400 py-2 px-3 rounded-lg text-sm border border-blue-500/20 transition-all duration-200"
+                    disabled={!currentActivity}
                   >
                     Chậm lại
                   </button>
                   <button
                     onClick={() => adjustClassPace('faster')}
                     className="w-full bg-red-500/20 hover:bg-red-500/40 text-red-400 py-2 px-3 rounded-lg text-sm border border-red-500/20 transition-all duration-200"
+                    disabled={!currentActivity}
                   >
                     Nhanh hơn
                   </button>
@@ -472,11 +573,12 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
               </div>
             ) : (
               <div className="space-y-2">
-                {ACTIVITIES_DATA.map(activity => (
+                {ACTIVITIES_DATA.map((activity) => (
                   <button
                     key={activity.id}
                     onClick={() => startActivity(activity)}
                     className="w-full bg-green-500/20 hover:bg-green-500/40 text-green-400 py-2 px-3 rounded-lg text-sm border border-green-500/20 transition-all duration-200 text-left"
+                    disabled={!!currentActivity}
                   >
                     <div className="font-medium">{activity.name}</div>
                     <div className="text-xs text-gray-300">{activity.duration} phút</div>
@@ -493,11 +595,14 @@ export default function VirtualClassroomManagerGame({ onComplete }: VirtualClass
               Nhật ký sự kiện
             </h3>
             <div className="space-y-2 max-h-96 overflow-y-auto">
-              {classEvents.slice(-10).reverse().map((event, index) => (
-                <div key={index} className="bg-gray-700/50 rounded p-2 text-sm text-gray-300">
-                  {event}
-                </div>
-              ))}
+              {classEvents
+                .slice(-10)
+                .reverse()
+                .map((event, index) => (
+                  <div key={index} className="bg-gray-700/50 rounded p-2 text-sm text-gray-300">
+                    {event}
+                  </div>
+                ))}
             </div>
           </div>
         </div>

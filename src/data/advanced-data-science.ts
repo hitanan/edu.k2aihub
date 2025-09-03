@@ -98,6 +98,32 @@ export const advancedDataScienceLessons: AdvancedDataScienceLesson[] = [
         type: 'Documentation',
       },
     ],
+    vietnamContext: {
+      title: 'Machine Learning giải quyết bài toán Việt Nam',
+      content: [
+        'Các ngân hàng Việt Nam như Techcombank, VPBank đang tiên phong áp dụng ML để chấm điểm tín dụng, giúp tiếp cận được nhiều khách hàng dưới chuẩn truyền thống.',
+        'Trong nông nghiệp, các mô hình ML được dùng để dự báo sản lượng lúa ở Đồng bằng sông Cửu Long, dựa trên dữ liệu thời tiết và thổ nhưỡng.',
+        'Các sàn thương mại điện tử như Tiki, Shopee sử dụng hệ thống khuyến nghị sản phẩm phức tạp để cá nhân hóa trải nghiệm mua sắm cho hàng triệu người dùng Việt.',
+      ],
+    },
+    careerConnect: {
+      name: 'TS. Nguyễn An Nguyên',
+      title: 'Giám đốc Khoa học Dữ liệu',
+      company: 'Tiki.vn',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyenannguyen',
+      quote:
+        'Dữ liệu ở Việt Nam rất độc đáo, từ hành vi mua sắm đến ngôn ngữ. Thách thức và cũng là cơ hội cho các nhà khoa học dữ liệu là xây dựng những mô hình "thuần Việt" thực sự hiệu quả.',
+    },
+    quizzes: [
+      {
+        question:
+          'Phương pháp Ensemble Learning nào xây dựng các mô hình tuần tự, trong đó mô hình sau học từ lỗi của mô hình trước?',
+        options: ['Random Forest', 'Bagging', 'Gradient Boosting', 'Stacking'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Gradient Boosting (như XGBoost, LightGBM) là một phương pháp ensemble tuần tự, nơi mỗi cây quyết định mới được huấn luyện để sửa các lỗi còn lại từ tập hợp các cây trước đó, giúp tạo ra một mô hình tổng thể rất mạnh.',
+      },
+    ],
   },
   {
     id: 'deep-learning-neural-networks',
@@ -188,6 +214,31 @@ export const advancedDataScienceLessons: AdvancedDataScienceLesson[] = [
         type: 'Course',
       },
     ],
+    vietnamContext: {
+      title: 'Deep Learning và Tác động tại Việt Nam',
+      content: [
+        'VinBrain, một công ty của Vingroup, đã phát triển DrAid™ - một nền tảng AI chẩn đoán hình ảnh y tế, được triển khai rộng rãi và hỗ trợ đắc lực cho các bác sĩ Việt Nam.',
+        'Các mô hình nhận dạng tiếng nói của Zalo AI, FPT.AI có khả năng phân biệt giọng ba miền Bắc-Trung-Nam, là một thành tựu quan trọng của Deep Learning ứng dụng.',
+        'Xe tự lái của VinFast sử dụng các mô hình Deep Learning phức tạp để xử lý dữ liệu từ camera và cảm biến, thích ứng với điều kiện giao thông đặc thù của Việt Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Trương Quốc Hùng',
+      title: 'Tổng Giám đốc VinBrain',
+      company: 'VinBrain',
+      imageUrl: 'https://i.pravatar.cc/150?u=truongquochung',
+      quote:
+        'Deep Learning không chỉ là công nghệ, nó là công cụ để giải quyết những bài toán lớn của xã hội. Tại VinBrain, chúng tôi dùng nó để cải thiện chất lượng y tế cho người Việt.',
+    },
+    quizzes: [
+      {
+        question: 'Kiến trúc Transformer, nền tảng của các mô hình ngôn ngữ lớn hiện đại, dựa trên cơ chế chính nào?',
+        options: ['Convolution (Tích chập)', 'Recurrence (Đệ quy)', 'Attention (Sự chú ý)', 'Pooling (Gộp)'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Cơ chế "Attention" cho phép mô hình cân nhắc tầm quan trọng của các từ khác nhau trong câu khi xử lý một từ cụ thể, giúp nó nắm bắt được các mối quan hệ ngữ nghĩa phức tạp và xa nhau, một bước đột phá so với RNN/LSTM.',
+      },
+    ],
   },
   {
     id: 'natural-language-processing-vietnamese',
@@ -275,6 +326,36 @@ export const advancedDataScienceLessons: AdvancedDataScienceLesson[] = [
         type: 'Tool',
       },
     ],
+    vietnamContext: {
+      title: 'NLP và Thách thức với Tiếng Việt',
+      content: [
+        'Tiếng Việt là một ngôn ngữ phức tạp với thanh điệu, từ đồng âm khác nghĩa và cấu trúc không có dấu phân cách từ rõ ràng, đòi hỏi các kỹ thuật NLP chuyên biệt.',
+        'Các thư viện như "Underthesea" được cộng đồng phát triển riêng cho Tiếng Việt, cung cấp các công cụ tách từ, gán nhãn từ loại hiệu quả.',
+        'Phân tích sắc thái trong bình luận của người Việt trên mạng xã hội là một bài toán khó, do sự phổ biến của ngôn ngữ teen, nói lái, và các biểu đạt mỉa mai, châm biếm.',
+      ],
+    },
+    careerConnect: {
+      name: 'Vũ Anh',
+      title: 'Trưởng nhóm NLP',
+      company: 'VCCorp',
+      imageUrl: 'https://i.pravatar.cc/150?u=vuanh',
+      quote:
+        'Để xử lý được ngôn ngữ tự nhiên của người Việt, máy móc không chỉ cần học từ vựng, ngữ pháp, mà còn phải học cả văn hóa, thói quen và cách chúng ta nói chuyện hàng ngày.',
+    },
+    quizzes: [
+      {
+        question: 'Trong NLP, "Tokenization" (tách từ) cho Tiếng Việt khó hơn Tiếng Anh vì sao?',
+        options: [
+          'Tiếng Việt có bảng chữ cái phức tạp hơn',
+          'Tiếng Việt không dùng khoảng trắng để phân tách các từ một cách rõ ràng',
+          'Tiếng Việt có nhiều từ mượn',
+          'Tiếng Việt không có quy tắc ngữ pháp',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Trong tiếng Anh, từ được ngăn cách bởi khoảng trắng. Nhưng trong tiếng Việt, một "từ" có thể gồm nhiều âm tiết (ví dụ: "khoa học dữ liệu"), và các âm tiết này cũng được ngăn cách bởi khoảng trắng. Điều này làm cho việc xác định đâu là một từ trở nên phức tạp.',
+      },
+    ],
   },
   {
     id: 'computer-vision-image-processing',
@@ -359,6 +440,36 @@ export const advancedDataScienceLessons: AdvancedDataScienceLesson[] = [
         title: 'Computer Vision Course',
         url: 'https://opencv.org/',
         type: 'Documentation',
+      },
+    ],
+    vietnamContext: {
+      title: 'Computer Vision và Bài toán Giao thông Việt Nam',
+      content: [
+        'Một trong những ứng dụng CV thách thức nhất tại Việt Nam là giám sát giao thông, do mật độ xe máy dày đặc và hành vi di chuyển phức tạp.',
+        'Các mô hình phát hiện vật thể phải được huấn luyện lại với dữ liệu đặc thù của Việt Nam để có thể phân biệt được xe máy, xe ôm công nghệ, người đi bộ và các loại phương tiện khác.',
+        'Công nghệ nhận dạng biển số xe được ứng dụng rộng rãi trong các bãi giữ xe thông minh tại các thành phố lớn, giúp tự động hóa và tăng cường an ninh.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lê Viết Quốc',
+      title: 'Nhà khoa học AI',
+      company: 'Google DeepMind',
+      imageUrl: 'https://i.pravatar.cc/150?u=levietquoc',
+      quote:
+        'Computer Vision có tiềm năng to lớn để giải quyết các vấn đề thực tiễn tại Việt Nam, từ y tế, nông nghiệp đến giao thông. Chìa khóa nằm ở việc xây dựng các bộ dữ liệu chất lượng và các mô hình phù hợp với bối cảnh địa phương.',
+    },
+    quizzes: [
+      {
+        question: 'Trong Computer Vision, "Image Segmentation" khác "Object Detection" ở điểm nào?',
+        options: [
+          'Image Segmentation chỉ hoạt động trên ảnh đen trắng',
+          'Object Detection chỉ vẽ một hộp (bounding box) quanh vật thể, còn Image Segmentation phân loại từng pixel thuộc về vật thể nào',
+          'Object Detection nhanh hơn Image Segmentation',
+          'Image Segmentation chỉ dùng cho ảnh y tế',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Object Detection xác định vị trí và loại của vật thể bằng một hộp chữ nhật. Image Segmentation đi sâu hơn, nó tạo ra một "mặt nạ" (mask) cho từng vật thể, xác định chính xác ranh giới của vật thể ở cấp độ pixel.',
       },
     ],
   },
@@ -451,6 +562,37 @@ export const advancedDataScienceLessons: AdvancedDataScienceLesson[] = [
         title: 'Apache Spark Documentation',
         url: 'https://spark.apache.org/docs/latest/',
         type: 'Documentation',
+      },
+    ],
+    vietnamContext: {
+      title: 'Kỹ thuật Dữ liệu lớn trong bối cảnh Việt Nam',
+      content: [
+        'Các công ty viễn thông như Viettel, Mobifone xử lý hàng petabyte dữ liệu mỗi ngày từ các cuộc gọi, tin nhắn và lưu lượng internet để tối ưu hóa mạng lưới.',
+        'Sự bùng nổ của thanh toán không dùng tiền mặt qua các ví điện tử như MoMo, ZaloPay tạo ra một lượng lớn dữ liệu giao dịch, là nguồn tài nguyên quý giá cho việc phân tích và phát hiện gian lận.',
+        'Nhu cầu về Kỹ sư dữ liệu (Data Engineer) tại Việt Nam đang tăng rất nhanh, thậm chí cao hơn cả Nhà khoa học dữ liệu, do các công ty cần xây dựng nền tảng dữ liệu vững chắc trước khi có thể khai thác.',
+      ],
+    },
+    careerConnect: {
+      name: 'Đặng Hoàng Vũ',
+      title: 'Giám đốc Khoa học, Khối Công nghệ',
+      company: 'Techcombank',
+      imageUrl: 'https://i.pravatar.cc/150?u=danghoangvu',
+      quote:
+        'Dữ liệu là tài sản chiến lược. Một kỹ sư dữ liệu giỏi không chỉ xây dựng đường ống, họ xây dựng nền móng cho toàn bộ hoạt động kinh doanh dựa trên dữ liệu của tổ chức.',
+    },
+    quizzes: [
+      {
+        question:
+          'Trong kiến trúc dữ liệu lớn, "Data Lake" (Hồ dữ liệu) khác với "Data Warehouse" (Kho dữ liệu) ở điểm nào cơ bản nhất?',
+        options: [
+          'Data Lake chỉ lưu trữ dữ liệu có cấu trúc',
+          'Data Warehouse nhanh hơn Data Lake',
+          'Data Lake lưu trữ dữ liệu thô ở mọi định dạng, trong khi Data Warehouse lưu trữ dữ liệu đã được xử lý và có cấu trúc',
+          'Data Lake chỉ dùng trên cloud',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Data Lake theo nguyên tắc "lưu trữ tất cả", chấp nhận dữ liệu ở mọi định dạng (có cấu trúc, bán cấu trúc, phi cấu trúc). Ngược lại, Data Warehouse đòi hỏi dữ liệu phải được làm sạch, chuyển đổi và đưa về một cấu trúc (schema) xác định trước khi được nạp vào.',
       },
     ],
   },

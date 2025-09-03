@@ -46,21 +46,6 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         expectedResults: 'Một kế hoạch chi tiết để triển khai hệ thống giám sát thông minh',
         solution: 'Hệ thống IoT cơ bản có thể giúp tăng năng suất 15-25% và giảm chi phí đầu vào 20-30%',
       },
-      {
-        title: 'Phân tích Dữ liệu Nông nghiệp',
-        description: 'Sử dụng dữ liệu từ sensor để đưa ra quyết định canh tác',
-        difficulty: 'Trung bình',
-        materials: ['Dataset mẫu', 'Excel hoặc Google Sheets', 'Máy tính'],
-        procedure: [
-          'Tải dataset mẫu về nhiệt độ, độ ẩm, pH trong 30 ngày',
-          'Tạo biểu đồ theo dõi xu hướng các thông số',
-          'Xác định các ngưỡng cảnh báo cho từng thông số',
-          'Thiết lập hệ thống alert tự động',
-          'Đưa ra khuyến nghị tưới tiêu và bón phân',
-        ],
-        expectedResults: 'Dashboard theo dõi và hệ thống cảnh báo tự động',
-        solution: 'Việc phân tích dữ liệu giúp tối ưu hóa việc sử dụng nước và phân bón, giảm lãng phí 30-40%',
-      },
     ],
     realWorldApplications: [
       'Nông trại thông minh tại Đà Lạt sử dụng IoT để tối ưu hóa sản xuất rau sạch',
@@ -88,6 +73,36 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         title: 'IoT Platform cho Nông nghiệp',
         url: 'https://thingsboard.io/smart-farming/',
         type: 'Tool',
+      },
+    ],
+    vietnamContext: {
+      title: 'Nông nghiệp thông minh tại Việt Nam',
+      content: [
+        'Việt Nam đang đẩy mạnh chuyển đổi số trong nông nghiệp, với các vùng chuyên canh công nghệ cao ở Lâm Đồng, TP.HCM, Hà Nội.',
+        'Các sản phẩm chủ lực như lúa gạo ở Đồng bằng sông Cửu Long, cà phê ở Tây Nguyên đang dần được áp dụng công nghệ để tăng chất lượng và giá trị xuất khẩu.',
+        'Thách thức lớn nhất là chi phí đầu tư ban đầu và trình độ kỹ thuật của nông dân, đòi hỏi các giải pháp công nghệ phải "dễ dùng, dễ trúng thưởng".',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Thị Lan',
+      title: 'Chủ trang trại',
+      company: 'Dalat Hasfarm',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyenthilan',
+      quote:
+        'Công nghệ không thay thế người nông dân, mà nó trở thành công cụ đắc lực giúp chúng tôi làm việc thông minh hơn, tạo ra sản phẩm tốt hơn cho người tiêu dùng.',
+    },
+    quizzes: [
+      {
+        question: 'IoT trong nông nghiệp là viết tắt của cụm từ nào?',
+        options: [
+          'Internet of Tractors',
+          'Internet of Things',
+          'International Organic Technology',
+          'Investment in On-farm Technology',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'IoT (Internet of Things) là mạng lưới các thiết bị vật lý được gắn cảm biến, phần mềm và các công nghệ khác để kết nối và trao đổi dữ liệu với nhau qua Internet.',
       },
     ],
   },
@@ -130,21 +145,6 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         expectedResults: 'Kế hoạch bay chi tiết với timeline và chi phí ước tính',
         solution: 'Drone có thể giám sát 100 hecta trong 2-3 giờ, hiệu quả hơn gấp 50 lần so với kiểm tra thủ công',
       },
-      {
-        title: 'Phân tích Hình ảnh Multispectral',
-        description: 'Sử dụng AI để phân tích sức khỏe cây trồng từ hình ảnh drone',
-        difficulty: 'Nâng cao',
-        materials: ['Hình ảnh mẫu từ drone', 'Phần mềm QGIS', 'Plugin NDVI'],
-        procedure: [
-          'Import hình ảnh RGB và NIR từ drone vào QGIS',
-          'Tính toán chỉ số NDVI (Normalized Difference Vegetation Index)',
-          'Tạo bản đồ màu hiển thị sức khỏe cây trồng',
-          'Xác định các vùng cây yếu hoặc bị bệnh',
-          'Đưa ra khuyến nghị can thiệp cụ thể cho từng vùng',
-        ],
-        expectedResults: 'Bản đồ NDVI và báo cáo sức khỏe cây trồng chi tiết',
-        solution: 'NDVI >0.7 cho thấy cây khỏe, <0.4 cần can thiệp ngay lập tức',
-      },
     ],
     realWorldApplications: [
       'Công ty Avimech cung cấp drone nông nghiệp cho nông dân miền Bắc',
@@ -172,6 +172,31 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         title: 'Phần mềm phân tích NDVI',
         url: 'https://qgis.org/en/site/',
         type: 'Tool',
+      },
+    ],
+    vietnamContext: {
+      title: 'Drone: "Mắt thần" trên đồng ruộng Việt',
+      content: [
+        'Tại Đồng bằng sông Cửu Long, drone phun thuốc đã trở nên phổ biến, giúp nông dân tiết kiệm 30% thuốc, 90% nước và bảo vệ sức khỏe.',
+        'Các vườn cây ăn trái lớn ở miền Đông Nam Bộ dùng drone để thụ phấn nhân tạo, giải quyết vấn đề thiếu côn trùng thụ phấn tự nhiên.',
+        'Chính phủ Việt Nam đang xây dựng hành lang pháp lý cho việc sử dụng drone trong nông nghiệp, mở đường cho công nghệ này phát triển mạnh mẽ hơn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Trần Văn A',
+      title: 'Phi công Drone Nông nghiệp',
+      company: 'AgriDrone Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=tranvana',
+      quote:
+        'Nghề của chúng tôi là "lái máy bay" trên đồng ruộng. Mỗi chuyến bay không chỉ giúp tăng năng suất mà còn giúp người nông dân bớt đi gánh nặng và độc hại.',
+    },
+    quizzes: [
+      {
+        question: 'Chỉ số NDVI (Normalized Difference Vegetation Index) được dùng để đo lường điều gì?',
+        options: ['Độ ẩm của đất', 'Sức khỏe và mật độ của thảm thực vật', 'Nhiệt độ của lá cây', 'Tốc độ gió'],
+        correctAnswerIndex: 1,
+        explanation:
+          'NDVI được tính toán từ ánh sáng phản xạ ở vùng cận hồng ngoại (NIR) và vùng ánh sáng nhìn thấy (VIS). Thực vật khỏe mạnh hấp thụ nhiều ánh sáng đỏ và phản xạ nhiều ánh sáng cận hồng ngoại, do đó có chỉ số NDVI cao.',
       },
     ],
   },
@@ -214,21 +239,6 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         expectedResults: 'Bản thiết kế hoàn chỉnh với ước tính chi phí và hiệu quả',
         solution: 'Hệ thống thông minh có thể tiết kiệm 30-50% nước so với tưới truyền thống',
       },
-      {
-        title: 'Tối ưu hóa Lịch Tưới theo Thời tiết',
-        description: 'Phát triển thuật toán tưới thông minh dựa trên dự báo thời tiết',
-        difficulty: 'Nâng cao',
-        materials: ['API thời tiết', 'Dữ liệu sensor mẫu', 'Excel/Python'],
-        procedure: [
-          'Kết nối API dự báo thời tiết (OpenWeatherMap)',
-          'Phân tích mối quan hệ giữa lượng mưa và độ ẩm đất',
-          'Xây dựng thuật toán dự đoán nhu cầu tưới',
-          'Thiết lập hệ thống cảnh báo và điều chỉnh tự động',
-          'Test thuật toán với dữ liệu thực tế 3 tháng',
-        ],
-        expectedResults: 'Thuật toán tưới thông minh với độ chính xác >85%',
-        solution: 'AI có thể dự đoán nhu cầu tưới chính xác 85-90%, tránh tưới thừa khi có mưa',
-      },
     ],
     realWorldApplications: [
       'Các nông trại Đà Lạt sử dụng hệ thống tưới thông minh cho hoa và rau',
@@ -256,6 +266,31 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         title: 'IoT Platform cho Nông nghiệp',
         url: 'https://blynk.io/',
         type: 'Tool',
+      },
+    ],
+    vietnamContext: {
+      title: 'Giải bài toán "khát" cho nông nghiệp Việt',
+      content: [
+        'Tưới nhỏ giọt theo công nghệ Israel đang được áp dụng rộng rãi tại các vùng khô hạn như Ninh Thuận, Bình Thuận, giúp trồng được các loại cây có giá trị cao như nho, táo.',
+        'Đối với cây cà phê ở Tây Nguyên, tưới thông minh không chỉ tiết kiệm nước mà còn giúp cây ra hoa đồng loạt, tăng tỷ lệ đậu quả và chất lượng hạt.',
+        'Thách thức là tích hợp hệ thống tưới với các nguồn nước không ổn định và địa hình phức tạp của Việt Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Nguyễn Văn Dũng',
+      title: 'Kỹ sư trưởng',
+      company: 'Netafim Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyenvandung',
+      quote:
+        'Mỗi giọt nước được tiết kiệm hôm nay là một hạt giống cho tương lai bền vững của nông nghiệp Việt Nam. Công nghệ tưới thông minh chính là chìa khóa.',
+    },
+    quizzes: [
+      {
+        question: 'Hệ thống tưới tiêu thông minh thường dựa vào dữ liệu từ cảm biến nào nhất?',
+        options: ['Cảm biến nhiệt độ không khí', 'Cảm biến ánh sáng', 'Cảm biến độ ẩm đất', 'Cảm biến âm thanh'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Cảm biến độ ẩm đất là thành phần cốt lõi, nó cung cấp dữ liệu trực tiếp về lượng nước có sẵn cho rễ cây, giúp hệ thống quyết định khi nào và tưới bao nhiêu là tối ưu.',
       },
     ],
   },
@@ -298,21 +333,6 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         expectedResults: 'Hệ thống blockchain hoàn chỉnh với demo truy xuất nguồn gốc',
         solution: 'Blockchain giúp tăng giá trị nông sản 15-30% nhờ xây dựng niềm tin người tiêu dùng',
       },
-      {
-        title: 'Smart Contract cho Giao dịch Nông sản',
-        description: 'Phát triển hợp đồng thông minh để tự động hóa thanh toán',
-        difficulty: 'Nâng cao',
-        materials: ['Solidity IDE', 'Ethereum testnet', 'Web3 interface'],
-        procedure: [
-          'Thiết kế logic hợp đồng mua bán lúa với điều kiện chất lượng',
-          'Viết smart contract với escrow mechanism',
-          'Tích hợp oracle để lấy giá lúa real-time',
-          'Test contract với các scenario khác nhau',
-          'Deploy lên testnet và tạo frontend interface',
-        ],
-        expectedResults: 'Smart contract hoạt động với interface người dùng thân thiện',
-        solution: 'Smart contract giảm chi phí giao dịch 20-40% và tăng tính minh bạch',
-      },
     ],
     realWorldApplications: [
       'Walmart sử dụng blockchain để truy xuất nguồn gốc thực phẩm tại Việt Nam',
@@ -340,6 +360,36 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         title: 'Platform phát triển Smart Contract',
         url: 'https://remix.ethereum.org/',
         type: 'Tool',
+      },
+    ],
+    vietnamContext: {
+      title: 'Minh bạch hóa nông sản Việt bằng Blockchain',
+      content: [
+        'Đối với các sản phẩm xuất khẩu chủ lực như gạo, cà phê, thủy sản, blockchain là "giấy thông hành" để vào các thị trường khó tính như EU, Nhật Bản, Mỹ.',
+        'Nhiều hợp tác xã đã áp dụng tem QR code dựa trên blockchain, cho phép người tiêu dùng quét và xem toàn bộ "nhật ký" của sản phẩm từ lúc gieo trồng.',
+        'Thách thức là làm sao để tất cả các tác nhân trong chuỗi cung ứng, đặc biệt là các nông hộ nhỏ lẻ, có thể tham gia vào hệ thống một cách dễ dàng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Đào Hà Trung',
+      title: 'Chủ tịch Hội Công nghệ cao TP.HCM (HITECH)',
+      company: 'TE-FOOD International',
+      imageUrl: 'https://i.pravatar.cc/150?u=daohatrung',
+      quote:
+        'Blockchain không phải là cây đũa thần, nhưng nó là công cụ mạnh mẽ nhất để xây dựng niềm tin - thứ còn quý hơn vàng trong ngành nông sản.',
+    },
+    quizzes: [
+      {
+        question: 'Đặc tính nào của Blockchain làm cho nó phù hợp với việc truy xuất nguồn gốc?',
+        options: [
+          'Tính ẩn danh',
+          'Tính tập trung',
+          'Tính bất biến (không thể thay đổi) và minh bạch',
+          'Tốc độ giao dịch nhanh',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Tính bất biến đảm bảo rằng một khi dữ liệu đã được ghi vào chuỗi, không ai có thể sửa đổi hoặc xóa nó. Tính minh bạch cho phép tất cả các bên được cấp phép có thể xem cùng một thông tin, tạo ra một "sự thật duy nhất".',
       },
     ],
   },
@@ -382,21 +432,6 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         expectedResults: 'Bản thiết kế 3D với danh sách thiết bị và chi phí',
         solution: 'Vertical farm mini có thể sản xuất 20-30kg rau/tháng trong 10m2',
       },
-      {
-        title: 'Tối ưu hóa Công thức Dinh dưỡng Hydroponic',
-        description: 'Phát triển nutrient solution cho cà chua cherry',
-        difficulty: 'Trung bình',
-        materials: ['Bảng dinh dưỡng thực vật', 'Calculator', 'pH meter mô phỏng'],
-        procedure: [
-          'Nghiên cứu nhu cầu dinh dưỡng của cà chua cherry theo giai đoạn',
-          'Tính toán tỷ lệ NPK và vi lượng cần thiết',
-          'Thiết lập lịch trình thay đổi dinh dưỡng theo tuần tuổi',
-          'Monitor và điều chỉnh pH, EC của dung dịch',
-          'Đánh giá hiệu quả qua tốc độ sinh trưởng và năng suất',
-        ],
-        expectedResults: 'Bảng công thức dinh dưỡng tối ưu cho cà chua cherry',
-        solution: 'Nutrient solution chính xác có thể tăng năng suất 200-300% so với đất truyền thống',
-      },
     ],
     realWorldApplications: [
       'Saigon Innovation Hub phát triển vertical farm cho các trường học TP.HCM',
@@ -424,6 +459,36 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         title: 'Hydroponic Calculator',
         url: 'https://hydroponics.net/calculator',
         type: 'Tool',
+      },
+    ],
+    vietnamContext: {
+      title: 'Mang trang trại về thành phố',
+      content: [
+        'Với tốc độ đô thị hóa nhanh, vertical farming là giải pháp tiềm năng để đảm bảo an ninh lương thực cho các thành phố lớn như Hà Nội và TP.HCM.',
+        'Mô hình này đặc biệt phù hợp để trồng các loại rau gia vị, salad cao cấp cho các nhà hàng, khách sạn, đảm bảo độ tươi ngon và an toàn tuyệt đối.',
+        'Các công ty như Vingroup đang tiên phong trong việc tích hợp các trang trại thẳng đứng vào các khu đô thị thông minh của họ.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Phan Thị Thảo',
+      title: 'Sáng lập',
+      company: 'Greeny Vertical Farm',
+      imageUrl: 'https://i.pravatar.cc/150?u=phanthithao',
+      quote:
+        'Chúng tôi không chỉ trồng rau, chúng tôi mang cả một hệ sinh thái xanh vào từng ngôi nhà, giúp mọi người kết nối lại với thiên nhiên ngay trong lòng đô thị.',
+    },
+    quizzes: [
+      {
+        question: 'Hydroponics là phương pháp trồng cây...',
+        options: [
+          'Trong không khí',
+          'Trong dung dịch dinh dưỡng, không cần đất',
+          'Trên các tầng cao của tòa nhà',
+          'Chỉ sử dụng ánh sáng mặt trời',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Hydroponics là một nhánh của hydroculture, phương pháp trồng cây mà không cần đất, bằng cách sử dụng dung dịch dinh dưỡng khoáng chất trong dung môi nước.',
       },
     ],
   },
@@ -466,21 +531,6 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         expectedResults: 'AI model với độ chính xác >90% trong nhận diện bệnh lúa',
         solution: 'CNN model có thể đạt 92-95% accuracy, giúp phát hiện sớm bệnh 2-3 tuần',
       },
-      {
-        title: 'Phát triển Mobile App AI Plant Doctor',
-        description: 'Tạo ứng dụng di động sử dụng AI để chẩn đoán bệnh cây',
-        difficulty: 'Nâng cao',
-        materials: ['React Native/Flutter', 'TensorFlow Lite', 'Camera API'],
-        procedure: [
-          'Convert trained model sang TensorFlow Lite format',
-          'Thiết kế UI/UX cho việc chụp ảnh và hiển thị kết quả',
-          'Tích hợp camera với real-time prediction',
-          'Thêm database các loại bệnh và cách điều trị',
-          'Test app với nông dân thực tế và thu thập feedback',
-        ],
-        expectedResults: 'Mobile app hoàn chỉnh với AI engine tích hợp sẵn',
-        solution: 'App có thể chẩn đoán tức thì, cung cấp khuyến nghị điều trị cụ thể',
-      },
     ],
     realWorldApplications: [
       'PlantVillage platform của Penn State hỗ trợ nông dân Châu Phi',
@@ -508,6 +558,36 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         title: 'TensorFlow Plant Disease Guide',
         url: 'https://tensorflow.org/lite/examples/image_classification',
         type: 'Tutorial',
+      },
+    ],
+    vietnamContext: {
+      title: '"Bác sĩ cây trồng" trong túi nông dân Việt',
+      content: [
+        'Các ứng dụng di động như "Bác sĩ Cây trồng" đang giúp nông dân Việt Nam tự chẩn đoán bệnh cho cây chỉ bằng một bức ảnh chụp từ điện thoại.',
+        'Dữ liệu hình ảnh về các loại sâu bệnh đặc hữu của Việt Nam là yếu tố quan trọng để xây dựng các mô hình AI chính xác và hiệu quả.',
+        'AI không chỉ phát hiện bệnh mà còn có thể đưa ra khuyến nghị về loại thuốc và liều lượng phù hợp, giúp giảm lạm dụng thuốc bảo vệ thực vật.',
+      ],
+    },
+    careerConnect: {
+      name: 'TS. Nguyễn Đức Thành',
+      title: 'Nhà khoa học dữ liệu',
+      company: 'Viện Di truyền Nông nghiệp',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyenducthanh',
+      quote:
+        'Mỗi bức ảnh về một chiếc lá bệnh mà người nông dân gửi lên là một đóng góp quý giá. Chúng tôi dùng AI để biến hàng triệu bức ảnh đó thành tri thức giúp ích lại cho hàng triệu người.',
+    },
+    quizzes: [
+      {
+        question: 'Transfer Learning trong Computer Vision là gì?',
+        options: [
+          'Chuyển ảnh từ máy tính này sang máy tính khác',
+          'Sử dụng một mô hình đã được huấn luyện trên một bộ dữ liệu lớn (ví dụ: ImageNet) làm điểm khởi đầu để huấn luyện cho một tác vụ mới',
+          'Chuyển đổi mô hình từ TensorFlow sang PyTorch',
+          'Học cách nhận diện nhiều loại bệnh cùng lúc',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Transfer Learning giúp tiết kiệm thời gian và tài nguyên tính toán đáng kể. Thay vì huấn luyện từ đầu, chúng ta tận dụng các "kiến thức" về các đặc trưng hình ảnh (cạnh, góc, kết cấu...) mà mô hình lớn đã học được.',
       },
     ],
   },
@@ -550,21 +630,6 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         expectedResults: 'Bản thiết kế robot hoàn chỉnh với specifications kỹ thuật',
         solution: 'Robot thu hoạch có thể làm việc 24/7, hiệu quả gấp 5-10 lần thủ công',
       },
-      {
-        title: 'Lập trình Robot Làm cỏ Tự động',
-        description: 'Phát triển thuật toán cho robot phân biệt cây trồng và cỏ dại',
-        difficulty: 'Nâng cao',
-        materials: ['Python/ROS', 'Computer vision library', 'Simulation environment'],
-        procedure: [
-          'Tạo dataset ảnh phân biệt cây lúa và cỏ dại',
-          'Training deep learning model cho weed detection',
-          'Thiết kế path planning algorithm cho robot di chuyển',
-          'Lập trình control system cho cơ cấu làm cỏ',
-          'Simulation và test trong môi trường ảo',
-        ],
-        expectedResults: 'Software package điều khiển robot làm cỏ tự động',
-        solution: 'Robot có thể giảm 80-90% lượng thuốc diệt cỏ sử dụng',
-      },
     ],
     realWorldApplications: [
       'Công ty John Deere phát triển máy kéo tự động cho nông nghiệp lớn',
@@ -592,6 +657,36 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         title: 'ROS cho Robot Nông nghiệp',
         url: 'https://wiki.ros.org/agriculture',
         type: 'Documentation',
+      },
+    ],
+    vietnamContext: {
+      title: 'Robot thay trâu trên đồng ruộng Việt Nam?',
+      content: [
+        'Tình trạng thiếu lao động nông thôn do di cư ra thành thị đang thúc đẩy nhu cầu tự động hóa trong nông nghiệp Việt Nam.',
+        'Các viện nghiên cứu và trường đại học như Đại học Bách Khoa đang phát triển các mẫu robot nông nghiệp "made in Vietnam" với chi phí hợp lý.',
+        'Robot nông nghiệp không chỉ giải quyết bài toán lao động mà còn giúp thực hiện các công việc đòi hỏi độ chính xác cao mà con người khó làm được, như vi phun thuốc hoặc làm cỏ chọn lọc.',
+      ],
+    },
+    careerConnect: {
+      name: 'PGS. TS. Đỗ Văn Dũng',
+      title: 'Nguyên Hiệu trưởng',
+      company: 'Đại học Sư phạm Kỹ thuật TP.HCM',
+      imageUrl: 'https://i.pravatar.cc/150?u=dovandung',
+      quote:
+        'Tương lai của nông nghiệp nằm ở những cỗ máy thông minh. Đào tạo ra một thế hệ kỹ sư có thể thiết kế, chế tạo và vận hành những robot này là nhiệm vụ của chúng tôi.',
+    },
+    quizzes: [
+      {
+        question: 'ROS trong robotics là viết tắt của?',
+        options: [
+          'Robot Operating System',
+          'Remote Operation Service',
+          'Robotic Object Sensor',
+          'Real-time Operating System',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'ROS (Robot Operating System) là một framework linh hoạt để viết phần mềm cho robot. Nó cung cấp một tập hợp các công cụ, thư viện và quy ước nhằm mục đích đơn giản hóa nhiệm vụ tạo ra các hành vi robot phức tạp và mạnh mẽ trên nhiều nền tảng robot khác nhau.',
       },
     ],
   },

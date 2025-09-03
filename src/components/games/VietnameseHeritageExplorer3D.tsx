@@ -359,13 +359,13 @@ function GameStats({ visited, score, totalSites }: { visited: number; score: num
     // Use store data if it's more recent than component props
     const storeVisited = vietnameseHeritage.visitedSites.length;
     const storeScore = vietnameseHeritage.score;
-    
+
     if (storeVisited >= visited) {
       setPersistentVisited(storeVisited);
     } else {
       setPersistentVisited(visited);
     }
-    
+
     if (storeScore >= score) {
       setPersistentScore(storeScore);
     } else {
@@ -406,9 +406,7 @@ function GameStats({ visited, score, totalSites }: { visited: number; score: num
         </div>
 
         {/* Persistence indicator */}
-        <div className="text-xs text-gray-400 border-t pt-2">
-          💾 Tiến độ được lưu tự động
-        </div>
+        <div className="text-xs text-gray-400 border-t pt-2">💾 Tiến độ được lưu tự động</div>
       </div>
     </div>
   );

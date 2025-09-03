@@ -54,7 +54,7 @@ function Earth() {
     canvas.width = 1024;
     canvas.height = 512;
     const ctx = canvas.getContext('2d');
-    
+
     if (ctx) {
       // Ocean base with gradient
       const oceanGradient = ctx.createLinearGradient(0, 0, 0, 512);
@@ -63,40 +63,40 @@ function Earth() {
       oceanGradient.addColorStop(1, '#1e3a8a'); // Dark blue at poles
       ctx.fillStyle = oceanGradient;
       ctx.fillRect(0, 0, 1024, 512);
-      
+
       // Draw continents with more detail
       ctx.fillStyle = '#22c55e'; // Green continents
-      
+
       // North America - more detailed
       ctx.fillRect(150, 60, 120, 140); // Main body
       ctx.fillRect(120, 80, 40, 100); // West coast
       ctx.fillRect(180, 40, 80, 40); // Canada
       ctx.fillRect(160, 180, 60, 60); // Mexico/Central America
-      
+
       // South America - improved shape
       ctx.fillRect(200, 220, 80, 180); // Main body
       ctx.fillRect(220, 400, 40, 60); // Argentina
       ctx.fillRect(240, 200, 30, 40); // Northern coast
-      
+
       // Africa - more realistic
       ctx.fillRect(450, 120, 100, 200); // Main body
       ctx.fillRect(480, 100, 60, 40); // North Africa
       ctx.fillRect(460, 300, 80, 80); // Southern Africa
-      
+
       // Europe
       ctx.fillRect(480, 80, 80, 60);
       ctx.fillRect(520, 60, 40, 40); // Scandinavia
-      
+
       // Asia - expanded
       ctx.fillRect(560, 100, 200, 120); // Main body
       ctx.fillRect(620, 80, 100, 40); // Siberia
       ctx.fillRect(680, 140, 80, 60); // India
       ctx.fillRect(740, 180, 120, 80); // Southeast Asia
-      
+
       // Australia and Oceania
       ctx.fillRect(760, 280, 100, 60);
       ctx.fillRect(800, 260, 30, 30); // New Guinea
-      
+
       // Add mountain ranges (darker green)
       ctx.fillStyle = '#16a34a';
       // Rocky Mountains
@@ -107,7 +107,7 @@ function Earth() {
       ctx.fillRect(640, 120, 80, 15);
       // Atlas Mountains
       ctx.fillRect(450, 110, 40, 10);
-      
+
       // Add deserts (sandy color)
       ctx.fillStyle = '#f59e0b';
       // Sahara
@@ -116,12 +116,12 @@ function Earth() {
       ctx.fillRect(580, 160, 40, 30);
       // Gobi Desert
       ctx.fillRect(680, 100, 50, 25);
-      
+
       // Ice caps with more detail
       ctx.fillStyle = '#f8fafc';
       ctx.fillRect(0, 0, 1024, 20); // North pole
       ctx.fillRect(0, 492, 1024, 20); // South pole
-      
+
       // Add some cloud-like white patches for variety
       ctx.fillStyle = '#e2e8f0';
       for (let i = 0; i < 15; i++) {
@@ -133,7 +133,7 @@ function Earth() {
         ctx.fill();
       }
     }
-    
+
     return new THREE.CanvasTexture(canvas);
   }, []);
 
@@ -175,7 +175,7 @@ function Earth() {
           side={THREE.BackSide}
         />
       </mesh>
-      
+
       {/* Additional atmospheric layer for more realistic glow */}
       <mesh>
         <sphereGeometry args={[16.2, 32, 32]} />
@@ -195,53 +195,53 @@ function Earth() {
     canvas.width = 1024;
     canvas.height = 512;
     const ctx = canvas.getContext('2d');
-    
+
     if (ctx) {
       // Create cloud patterns
       ctx.fillStyle = '#000000';
       ctx.fillRect(0, 0, 1024, 512);
-      
+
       // Add realistic cloud formations with varying density
       ctx.fillStyle = '#ffffff';
-      
+
       // Create weather systems and storm patterns
       for (let i = 0; i < 80; i++) {
         const x = Math.random() * 1024;
         const y = Math.random() * 512;
         const size = Math.random() * 60 + 15;
         const density = Math.random() * 0.7 + 0.3;
-        
+
         ctx.globalAlpha = density;
         ctx.beginPath();
         ctx.arc(x, y, size, 0, Math.PI * 2);
         ctx.fill();
-        
+
         // Add connected cloud formations for realistic weather patterns
         if (Math.random() > 0.6) {
           const angle = Math.random() * Math.PI * 2;
           const distance = size * (0.5 + Math.random() * 0.8);
           const newX = x + Math.cos(angle) * distance;
           const newY = y + Math.sin(angle) * distance;
-          
+
           ctx.globalAlpha = density * 0.8;
           ctx.beginPath();
           ctx.arc(newX, newY, size * 0.7, 0, Math.PI * 2);
           ctx.fill();
         }
       }
-      
+
       // Add hurricane/cyclone formations
       for (let i = 0; i < 5; i++) {
         const centerX = Math.random() * 1024;
         const centerY = 100 + Math.random() * 312; // Avoid poles
         const spiralSize = 40 + Math.random() * 60;
-        
+
         ctx.globalAlpha = 0.8;
         for (let angle = 0; angle < Math.PI * 8; angle += 0.2) {
           const radius = angle * 8;
           const x = centerX + Math.cos(angle) * radius;
           const y = centerY + Math.sin(angle) * radius;
-          
+
           if (radius < spiralSize) {
             ctx.beginPath();
             ctx.arc(x, y, 8 - (radius / spiralSize) * 6, 0, Math.PI * 2);
@@ -249,7 +249,7 @@ function Earth() {
           }
         }
       }
-      
+
       // Add polar cloud formations
       ctx.globalAlpha = 0.6;
       for (let i = 0; i < 20; i++) {
@@ -258,14 +258,14 @@ function Earth() {
         ctx.beginPath();
         ctx.arc(x, y, 15 + Math.random() * 25, 0, Math.PI * 2);
         ctx.fill();
-        
+
         const y2 = 462 + Math.random() * 50; // South pole
         ctx.beginPath();
         ctx.arc(x, y2, 15 + Math.random() * 25, 0, Math.PI * 2);
         ctx.fill();
       }
     }
-    
+
     return new THREE.CanvasTexture(canvas);
   }
 }

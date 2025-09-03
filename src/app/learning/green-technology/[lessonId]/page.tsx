@@ -38,11 +38,11 @@ function convertToLesson(gtLesson: GreenTechLesson): BaseLessonData {
     realWorldApplications: gtLesson.realWorldApplications || [],
     caseStudies: (gtLesson.caseStudies || []).map((cs) => ({
       title: cs.title,
-      organization: cs.company || 'Unknown Organization',
-      problem: cs.challenge || 'Challenge not specified',
+      organization: cs.organization || 'Unknown Organization',
+      problem: cs.problem || 'Challenge not specified',
       solution: cs.solution,
-      impact: cs.results || 'Impact not specified',
-      innovations: cs.insights || [],
+      impact: cs.impact || 'Impact not specified',
+      innovations: cs.innovations || [],
     })),
   };
 }
@@ -97,27 +97,19 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
       <div className="space-y-6">
         {/* Environmental Impact */}
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-          <h3 className="text-white font-semibold mb-3 flex items-center">
-            🌍 Environmental Impact
-          </h3>
+          <h3 className="text-white font-semibold mb-3 flex items-center">🌍 Environmental Impact</h3>
           <div className="space-y-3">
             <div className="flex justify-between text-sm">
               <span className="text-gray-300">CO2 Reduction</span>
-              <span className="text-green-400 font-semibold">
-                {Math.floor(Math.random() * 40 + 10)}%
-              </span>
+              <span className="text-green-400 font-semibold">{Math.floor(Math.random() * 40 + 10)}%</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-300">Energy Efficiency</span>
-              <span className="text-emerald-400 font-semibold">
-                +{Math.floor(Math.random() * 30 + 20)}%
-              </span>
+              <span className="text-emerald-400 font-semibold">+{Math.floor(Math.random() * 30 + 20)}%</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-300">Cost Savings</span>
-              <span className="text-teal-400 font-semibold">
-                ${Math.floor(Math.random() * 5000 + 1000)}/year
-              </span>
+              <span className="text-teal-400 font-semibold">${Math.floor(Math.random() * 5000 + 1000)}/year</span>
             </div>
           </div>
         </div>
@@ -139,9 +131,7 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
 
         {/* Green Tech Metrics */}
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-          <h3 className="text-white font-semibold mb-3 flex items-center">
-            📊 Green Metrics
-          </h3>
+          <h3 className="text-white font-semibold mb-3 flex items-center">📊 Green Metrics</h3>
           <div className="space-y-3">
             <div className="flex justify-between text-sm">
               <span className="text-gray-300">Market Growth</span>
@@ -149,9 +139,7 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-300">Job Creation</span>
-              <span className="text-emerald-400 font-semibold">
-                42M by 2030
-              </span>
+              <span className="text-emerald-400 font-semibold">42M by 2030</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-300">Investment ROI</span>
@@ -162,9 +150,7 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
 
         {/* Renewable Energy Tools */}
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-          <h3 className="text-white font-semibold mb-3 flex items-center">
-            ⚡ Renewable Tools
-          </h3>
+          <h3 className="text-white font-semibold mb-3 flex items-center">⚡ Renewable Tools</h3>
           <div className="space-y-2">
             <div className="flex items-center text-sm">
               <span className="text-green-400 mr-2">☀️</span>
@@ -187,9 +173,7 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
 
         {/* Sustainability Tips */}
         <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl p-4 border border-green-500/20">
-          <h3 className="text-green-300 font-semibold mb-3 flex items-center">
-            💡 Sustainability Tips
-          </h3>
+          <h3 className="text-green-300 font-semibold mb-3 flex items-center">💡 Sustainability Tips</h3>
           <div className="space-y-2 text-sm text-gray-300">
             <p>• Optimize energy consumption patterns</p>
             <p>• Implement smart grid integration</p>
@@ -200,9 +184,7 @@ export default async function GreenTechnologyLessonPage({ params }: PageProps) {
 
         {/* Career Opportunities */}
         <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-xl p-4 border border-emerald-500/20">
-          <h3 className="text-emerald-300 font-semibold mb-3 flex items-center">
-            🚀 Career Growth
-          </h3>
+          <h3 className="text-emerald-300 font-semibold mb-3 flex items-center">🚀 Career Growth</h3>
           <div className="space-y-2 text-sm text-gray-300">
             <p>• CleanTech industry booming</p>
             <p>• $2.5T market by 2030</p>

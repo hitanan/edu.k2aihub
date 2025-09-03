@@ -12,6 +12,11 @@ export interface EventManagementLesson extends BaseLessonData {
   vietnameseEventContext: string[];
   industryApplications: string[];
   eventScale: 'small' | 'medium' | 'large' | 'mega';
+  relatedGames?: Array<{
+    id: string;
+    name: string;
+    description: string;
+  }>;
 }
 
 export const eventManagementLessons: EventManagementLesson[] = [
@@ -22,7 +27,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
       'Quản lý sản xuất sự kiện toàn diện bao gồm các nền tảng sự kiện số, công nghệ live streaming, sự kiện kết hợp (hybrid), và trải nghiệm thực tế ảo.',
     duration: '215 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=yST4J4_K-ME',
     imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=600&fit=crop',
     eventCategory: 'virtual-events',
     eventScale: 'large',
@@ -121,7 +126,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
       'Công nghệ giải trí tiên tiến bao gồm hệ thống âm thanh, thiết kế ánh sáng, tự động hóa sân khấu, và các công nghệ trải nghiệm nhập vai.',
     duration: '235 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=13CIZmc0-Lg',
     imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&h=600&fit=crop',
     eventCategory: 'entertainment-events',
     eventScale: 'mega',
@@ -221,7 +226,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
       'Các chiến lược marketing số cho sự kiện, tương tác trên mạng xã hội, hợp tác với người ảnh hưởng (influencer), và quảng bá sự kiện dựa trên dữ liệu.',
     duration: '190 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=juPUcJAxIMk',
     imageUrl: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&h=600&fit=crop',
     eventCategory: 'corporate-events',
     eventScale: 'medium',
@@ -320,7 +325,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
       'Quản lý festival quy mô lớn bao gồm điều phối logistics, quản lý nhà cung cấp, lập kế hoạch an toàn, và vận hành xuất sắc.',
     duration: '225 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=DRZymVT5i6w',
     imageUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200&h=600&fit=crop',
     eventCategory: 'festival-management',
     eventScale: 'mega',
@@ -415,7 +420,7 @@ export const eventManagementLessons: EventManagementLesson[] = [
       'Phân tích sự kiện dựa trên dữ liệu, đo lường ROI, phân tích hành vi người tham dự, và các chiến lược tối ưu hóa hiệu suất.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: 'https://www.youtube.com/watch?v=N8PKjyAnQ6U',
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
     eventCategory: 'corporate-events',
     eventScale: 'medium',

@@ -1,403 +1,175 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
-export interface SupplyChainLogisticsLesson extends BaseLessonData {
-  logisticsCategory: 'supply-chain' | 'warehousing' | 'transportation' | 'analytics' | 'trade';
-  industryFocus: string[];
-  vietnameseManufacturingContext: string[];
-  technologyLevel: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
-  targetAudience: string[];
+export interface SupplyChainLogisticsLessonType extends BaseLessonData {
+  logisticsFramework?: 'SCOR' | 'APICS' | 'Lean Logistics';
 }
 
-export const supplyChainLogisticsLessons: SupplyChainLogisticsLesson[] = [
+export const supplyChainLogisticsLessons: SupplyChainLogisticsLessonType[] = [
   {
     id: 'global-supply-chain-management',
-    title: 'Quản Lý Chuỗi Cung Ứng Toàn Cầu',
+    title: 'Quản lý Chuỗi Cung ứng Toàn cầu',
     description:
-      'Khám phá hệ thống quản lý chuỗi cung ứng toàn cầu với trọng tâm là vai trò của Việt Nam như một trung tâm sản xuất và xuất khẩu.',
-    duration: '200 phút',
+      'Khám phá hệ thống quản lý chuỗi cung ứng toàn cầu, với trọng tâm là vai trò của Việt Nam như một trung tâm sản xuất và xuất khẩu mới nổi.',
+    duration: '90 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=fJjSYbquvtg', // Supply Chain Management Explained
-    imageUrl: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1200&h=600&fit=crop',
-    logisticsCategory: 'supply-chain',
-    technologyLevel: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=fJjSYbquvtg',
+    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
+    logisticsFramework: 'SCOR',
     objectives: [
-      'Hiểu kiến trúc và dynamics của global supply chains',
-      'Phân tích vai trò của Việt Nam trong chuỗi cung ứng toàn cầu',
-      'Sử dụng technology để optimize supply chain operations',
-      'Manage risks và disruptions trong supply chain',
-      'Implement sustainable và ethical supply chain practices',
+      'Hiểu cấu trúc và động lực của chuỗi cung ứng toàn cầu.',
+      'Phân tích vai trò và vị thế của Việt Nam trong chuỗi cung ứng.',
+      'Sử dụng công nghệ để tối ưu hóa hoạt động chuỗi cung ứng.',
+      'Quản lý rủi ro và gián đoạn trong chuỗi cung ứng.',
     ],
-    prerequisites: ['Hiểu biết cơ bản về business operations', 'Familiarity với Excel và data analysis tools'],
-    industryFocus: [
-      'Manufacturing và assembly',
-      'Retail và e-commerce',
-      'Automotive và electronics',
-      'Textiles và apparel',
-    ],
-    vietnameseManufacturingContext: [
-      'Việt Nam như manufacturing hub của thế giới',
-      'Integration với ASEAN supply chains',
-      'Role trong US-China trade tensions',
-      'Opportunities trong reshoring trends',
-    ],
-    targetAudience: [
-      'Manufacturing managers',
-      'Logistics professionals',
-      'Business operations staff',
-      'Import/export specialists',
+    prerequisites: [
+      'Hiểu biết cơ bản về hoạt động kinh doanh.',
+      'Làm quen với Excel và các công cụ phân tích dữ liệu.',
     ],
     exercises: [
       {
-        title: 'Phân Tích Supply Chain Risk Assessment',
-        description: 'Evaluate risks và vulnerabilities trong một supply chain thực tế của công ty Việt Nam',
+        title: 'Đánh giá Rủi ro Chuỗi Cung ứng',
+        description:
+          'Thực hành đánh giá các rủi ro và lỗ hổng trong một chuỗi cung ứng giả định của một công ty sản xuất tại Việt Nam.',
         difficulty: 'Trung bình',
-        materials: ['Risk assessment template', 'Case study data', 'Analysis tools'],
         procedure: [
-          'Identify key suppliers và distribution channels',
-          'Map supply chain dependencies và bottlenecks',
-          'Assess geopolitical và economic risks',
-          'Develop risk mitigation strategies',
-          'Present findings và recommendations',
+          'Xác định các nhà cung cấp chính và các kênh phân phối.',
+          'Vẽ sơ đồ chuỗi cung ứng để tìm ra các điểm nghẽn (bottlenecks).',
+          'Đánh giá các rủi ro về địa chính trị, kinh tế và thiên tai.',
+          'Xây dựng các chiến lược giảm thiểu rủi ro (ví dụ: đa dạng hóa nhà cung cấp).',
         ],
-        expectedResults: 'Complete risk assessment report với actionable mitigation strategies',
-        solution:
-          'Comprehensive analysis including supplier diversification, geographic risk distribution, và contingency planning',
+        expectedResults: 'Một báo cáo đánh giá rủi ro hoàn chỉnh với các chiến lược giảm thiểu khả thi.',
       },
     ],
     realWorldApplications: [
-      'Managing COVID-19 supply chain disruptions',
-      'Optimizing inventory levels để reduce costs',
-      'Negotiating với international suppliers',
-      'Implementing just-in-time manufacturing',
+      'Quản lý gián đoạn chuỗi cung ứng do đại dịch.',
+      'Tối ưu hóa mức tồn kho để giảm chi phí.',
+      'Đàm phán với các nhà cung cấp quốc tế.',
+      'Thực hiện sản xuất "just-in-time".',
     ],
     caseStudies: [
       {
-        title: 'Vinfast Global Supply Chain Strategy',
+        title: 'Chiến lược Chuỗi Cung ứng Toàn cầu của VinFast',
         organization: 'VinFast Auto',
-        problem: 'Building global supply chain cho electric vehicle manufacturing',
-        solution: 'Partnership với international suppliers, technology transfer, local sourcing development',
-        impact: 'Successfully launched EV production với competitive cost structure',
-        innovations: ['Vertical integration strategy', 'Battery supply partnerships', 'Smart manufacturing'],
+        problem:
+          'Xây dựng một chuỗi cung ứng toàn cầu từ con số không cho việc sản xuất xe điện, một ngành đòi hỏi công nghệ cao và nhiều nhà cung cấp phức tạp.',
+        solution:
+          'Hợp tác chiến lược với các nhà cung cấp hàng đầu thế giới, chuyển giao công nghệ, đồng thời phát triển các nhà cung cấp phụ trợ trong nước.',
+        impact:
+          'Ra mắt thành công các dòng xe điện với cơ cấu chi phí cạnh tranh, từng bước thâm nhập thị trường quốc tế.',
+        innovations: ['Chiến lược tích hợp dọc', 'Hợp tác cung ứng pin', 'Sản xuất thông minh'],
       },
     ],
-    resources: [
+    vietnamContext: {
+      title: 'Việt Nam: Mắt xích mới trong Chuỗi Cung ứng Toàn cầu',
+      content: [
+        'Việt Nam đang nổi lên như một trung tâm sản xuất quan trọng của thế giới, đặc biệt trong các ngành điện tử, dệt may và da giày.',
+        'Sự dịch chuyển chuỗi cung ứng ra khỏi Trung Quốc (China+1) đã tạo ra cơ hội lớn cho các nhà sản xuất tại Việt Nam.',
+        'Việc tham gia các hiệp định thương mại tự do như EVFTA, CPTPP giúp Việt Nam hội nhập sâu hơn vào chuỗi cung ứng toàn cầu.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bà Nguyễn Thị Phương Thảo',
+      title: 'Chủ tịch HĐQT',
+      company: 'VietJet Air & Sovico Group',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-phuong-thao',
+      quote:
+        'Logistics và hàng không là những mạch máu của nền kinh tế. Tối ưu hóa chuỗi cung ứng không chỉ giúp doanh nghiệp tiết kiệm chi phí mà còn nâng cao năng lực cạnh tranh của cả quốc gia.',
+    },
+    quizzes: [
       {
-        title: 'Supply Chain Management Best Practices',
-        url: 'https://www.apics.org/careers-education-professional-development/publications/apics-magazine',
-        type: 'Documentation',
+        question: 'Chiến lược "China + 1" có ý nghĩa gì đối với Việt Nam?',
+        options: [
+          'Một chiến lược hợp tác giữa Trung Quốc và Việt Nam',
+          'Các công ty đa quốc gia tìm kiếm một địa điểm sản xuất thứ hai ngoài Trung Quốc để đa dạng hóa rủi ro',
+          'Việt Nam chỉ nhập khẩu hàng hóa từ Trung Quốc',
+          'Một chính sách thương mại của Trung Quốc',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'China + 1 là chiến lược của các công ty toàn cầu nhằm giảm sự phụ thuộc vào một quốc gia sản xuất duy nhất (Trung Quốc) bằng cách thiết lập thêm hoạt động ở một quốc gia khác, và Việt Nam là một trong những điểm đến hàng đầu.',
       },
     ],
   },
   {
     id: 'warehouse-inventory-technology',
-    title: 'Công Nghệ Kho Bãi & Quản Lý Tồn Kho',
+    title: 'Công nghệ Kho bãi & Quản lý Tồn kho',
     description:
-      'Ứng dụng technology tiên tiến trong warehouse management và inventory optimization, từ WMS đến automated systems.',
-    duration: '180 phút',
+      'Tìm hiểu các công nghệ tiên tiến trong quản lý kho bãi và tối ưu hóa hàng tồn kho, từ Hệ thống Quản lý Kho (WMS) đến các robot tự hành.',
+    duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=924DW-pqjwA', // Modern Warehouse Technology
-    imageUrl: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&h=600&fit=crop',
-    logisticsCategory: 'warehousing',
-    technologyLevel: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=924DW-pqjwA',
+    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
+    logisticsFramework: 'Lean Logistics',
     objectives: [
-      'Deploy warehouse management systems (WMS) effectively',
-      'Implement inventory tracking và optimization systems',
-      'Use automated storage và retrieval systems (ASRS)',
-      'Apply data analytics cho inventory forecasting',
-      'Design efficient warehouse layouts và workflows',
+      'Hiểu vai trò của kho bãi hiện đại trong chuỗi cung ứng.',
+      'Làm quen với Hệ thống Quản lý Kho (WMS) và các chức năng của nó.',
+      'Khám phá các công nghệ tự động hóa như robot tự hành (AGV/AMR), hệ thống lưu trữ và truy xuất tự động (AS/RS).',
+      'Áp dụng các phương pháp quản lý tồn kho (FIFO, LIFO, JIT).',
     ],
-    prerequisites: ['Basic knowledge of logistics operations', 'Understanding của inventory management principles'],
-    industryFocus: [
-      'E-commerce fulfillment',
-      'Manufacturing warehousing',
-      '3PL service providers',
-      'Retail distribution centers',
-    ],
-    vietnameseManufacturingContext: [
-      'Vietnamese warehouse automation trends',
-      'Labor cost considerations trong automation',
-      'Government incentives cho logistics investment',
-      'Integration với seaport và airport facilities',
-    ],
-    targetAudience: [
-      'Warehouse managers',
-      'Inventory control specialists',
-      'Logistics coordinators',
-      'Operations analysts',
-    ],
+    prerequisites: ["Hoàn thành bài 'Quản lý Chuỗi Cung ứng Toàn cầu'"],
     exercises: [
       {
-        title: 'WMS Implementation Planning',
-        description: 'Design và plan implementation của warehouse management system cho một distribution center',
-        difficulty: 'Nâng cao',
-        materials: ['WMS software demo', 'Warehouse layout tools', 'ROI calculator'],
-        procedure: [
-          'Analyze current warehouse operations và pain points',
-          'Define WMS requirements và specifications',
-          'Design system architecture và integration plan',
-          'Calculate ROI và implementation timeline',
-          'Create change management strategy',
-        ],
-        expectedResults: 'Complete WMS implementation plan với business case',
-        solution: 'Detailed project plan covering technology, process, training, và change management aspects',
-      },
-    ],
-    realWorldApplications: [
-      'E-commerce order fulfillment optimization',
-      'Multi-channel inventory management',
-      'Cross-docking operations',
-      'Returns processing automation',
-    ],
-    caseStudies: [
-      {
-        title: 'Shopee Logistics Automation',
-        organization: 'Shopee Vietnam',
-        problem: 'Scaling fulfillment operations cho rapid e-commerce growth',
-        solution: 'Investment trong automated sorting systems, AI-powered inventory management, robotic picking',
-        impact: 'Reduced order processing time by 60%, increased accuracy to 99.5%',
-        innovations: ['AI demand forecasting', 'Robotic fulfillment centers', 'Real-time inventory tracking'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Warehouse Management Systems Guide',
-        url: 'https://www.mhi.org/fundamentals/warehouse-management-systems',
-        type: 'Documentation',
-      },
-    ],
-  },
-  {
-    id: 'transportation-distribution-optimization',
-    title: 'Tối Ưu Hóa Vận Tải & Phân Phối',
-    description:
-      'Optimize transportation networks và distribution strategies sử dụng advanced analytics, route optimization, và modern logistics technology.',
-    duration: '190 phút',
-    difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=L0mI8UV3tko', // Transportation Optimization
-    imageUrl: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&h=600&fit=crop',
-    logisticsCategory: 'transportation',
-    technologyLevel: 'Nâng cao',
-    objectives: [
-      'Apply route optimization algorithms và software',
-      'Design efficient distribution network strategies',
-      'Use GPS tracking và fleet management systems',
-      'Implement last-mile delivery optimization',
-      'Analyze transportation costs và performance metrics',
-    ],
-    prerequisites: [
-      'Understanding của logistics fundamentals',
-      'Basic knowledge of data analysis',
-      'Familiarity với mapping và GPS systems',
-    ],
-    industryFocus: [
-      'Delivery và courier services',
-      'Freight transportation',
-      'Food delivery platforms',
-      'Retail distribution',
-    ],
-    vietnameseManufacturingContext: [
-      "Vietnam's strategic location trong Southeast Asia",
-      'Infrastructure development và logistics corridors',
-      'Cross-border transportation challenges',
-      'Urban congestion và last-mile delivery issues',
-    ],
-    targetAudience: ['Transportation managers', 'Fleet operators', 'Distribution planners', 'Logistics analysts'],
-    exercises: [
-      {
-        title: 'Route Optimization Challenge',
+        title: 'Thiết kế Bố cục Kho hàng Tối ưu',
         description:
-          'Solve complex routing problem cho delivery fleet ở Ho Chi Minh City sử dụng optimization software',
-        difficulty: 'Nâng cao',
-        materials: ['Route optimization software', 'HCMC traffic data', 'Delivery requirements'],
-        procedure: [
-          'Import delivery addresses và time constraints',
-          'Configure vehicle capacities và driver schedules',
-          'Run optimization algorithm với traffic considerations',
-          'Analyze results và adjust parameters',
-          'Calculate cost savings và efficiency improvements',
-        ],
-        expectedResults: 'Optimized delivery routes với measurable efficiency gains',
-        solution: 'Routes optimized cho minimum travel time và fuel consumption while meeting delivery windows',
-      },
-    ],
-    realWorldApplications: [
-      'E-commerce last-mile delivery optimization',
-      'Cross-docking operations planning',
-      'Intermodal transportation coordination',
-      'Emergency logistics response',
-    ],
-    caseStudies: [
-      {
-        title: 'Grab Logistics Network Optimization',
-        organization: 'Grab Vietnam',
-        problem: 'Optimizing food delivery routes trong dense urban areas',
-        solution: 'AI-powered route optimization, real-time traffic integration, predictive demand modeling',
-        impact: 'Reduced delivery times by 25%, improved driver earnings by 15%',
-        innovations: ['Dynamic routing algorithms', 'Predictive analytics', 'Real-time optimization'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Transportation Optimization Methods',
-        url: 'https://www.informs.org/Explore/OR-MS-Today/Public-Articles',
-        type: 'Reference',
-      },
-    ],
-  },
-  {
-    id: 'supply-chain-analytics-forecasting',
-    title: 'Phân Tích Chuỗi Cung Ứng & Dự Báo',
-    description:
-      'Sử dụng advanced analytics, AI và machine learning để optimize supply chain performance, demand forecasting, và strategic decision making.',
-    duration: '210 phút',
-    difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=VlEYg0j9e9U', // Supply Chain Analytics
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
-    logisticsCategory: 'analytics',
-    technologyLevel: 'Nâng cao',
-    objectives: [
-      'Apply statistical methods cho demand forecasting',
-      'Use machine learning trong supply chain optimization',
-      'Implement predictive analytics cho risk management',
-      'Build supply chain dashboards và KPI tracking',
-      'Conduct scenario analysis và what-if modeling',
-    ],
-    prerequisites: [
-      'Strong analytical skills',
-      'Familiarity với Excel và data analysis',
-      'Basic understanding của statistics',
-    ],
-    industryFocus: ['FMCG và retail', 'Manufacturing planning', 'E-commerce operations', 'Pharmaceutical supply chain'],
-    vietnameseManufacturingContext: [
-      'Seasonality trong Vietnamese consumer behavior',
-      'Impact of weather patterns on supply/demand',
-      'Festival và holiday demand spikes',
-      'Economic indicators affecting purchasing power',
-    ],
-    targetAudience: [
-      'Supply chain analysts',
-      'Demand planners',
-      'Operations researchers',
-      'Business intelligence professionals',
-    ],
-    exercises: [
-      {
-        title: 'Demand Forecasting Model Development',
-        description: 'Build predictive model cho demand forecasting sử dụng historical sales data và external factors',
-        difficulty: 'Nâng cao',
-        materials: ['Historical sales data', 'Python/R environment', 'Forecasting libraries'],
-        procedure: [
-          'Clean và prepare historical demand data',
-          'Identify seasonal patterns và trends',
-          'Incorporate external factors (weather, holidays, economic indicators)',
-          'Build và validate forecasting models',
-          'Compare accuracy của different approaches',
-        ],
-        expectedResults: 'Accurate demand forecasting model với measurable error reduction',
-        solution: 'Multiple models compared (ARIMA, exponential smoothing, machine learning) với ensemble approach',
-      },
-    ],
-    realWorldApplications: [
-      'Inventory planning và stock level optimization',
-      'Production scheduling và capacity planning',
-      'Supplier performance monitoring',
-      'Cost optimization và budget planning',
-    ],
-    caseStudies: [
-      {
-        title: 'Unilever Vietnam Demand Planning',
-        organization: 'Unilever Vietnam',
-        problem: 'Improving demand forecast accuracy cho FMCG products trong volatile market',
-        solution:
-          'Advanced analytics platform với AI-powered forecasting, real-time data integration, collaborative planning',
-        impact: 'Forecast accuracy improved from 65% to 85%, inventory reduction of 20%',
-        innovations: ['Machine learning algorithms', 'Real-time market sensing', 'Collaborative forecasting'],
-      },
-    ],
-    resources: [
-      {
-        title: 'Supply Chain Analytics Best Practices',
-        url: 'https://www.gartner.com/en/supply-chain/insights/supply-chain-analytics',
-        type: 'Research',
-      },
-    ],
-  },
-  {
-    id: 'international-trade-customs',
-    title: 'Thương Mại Quốc Tế & Hải Quan',
-    description:
-      'Navigate complex world của international trade, customs regulations, trade compliance, và cross-border logistics với focus trên Vietnamese trade relationships.',
-    duration: '170 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=yn08pSZwnuI', // International Trade Explained
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
-    logisticsCategory: 'trade',
-    technologyLevel: 'Trung bình',
-    objectives: [
-      'Understand international trade regulations và compliance requirements',
-      'Navigate customs procedures và documentation',
-      'Use trade management software và systems',
-      'Calculate duties, taxes, và trade costs',
-      'Implement trade risk management strategies',
-    ],
-    prerequisites: ['Basic business knowledge', 'Understanding of import/export basics'],
-    industryFocus: [
-      'Import/export businesses',
-      'Manufacturing exporters',
-      'Trading companies',
-      'Logistics service providers',
-    ],
-    vietnameseManufacturingContext: [
-      'EVFTA và other free trade agreements',
-      "Vietnam's WTO commitments và obligations",
-      'ASEAN trade facilitation initiatives',
-      'US-Vietnam trade relationship',
-    ],
-    targetAudience: [
-      'Import/export managers',
-      'Customs brokers',
-      'Trade compliance officers',
-      'International business developers',
-    ],
-    exercises: [
-      {
-        title: 'Trade Compliance Audit',
-        description: 'Conduct comprehensive trade compliance audit cho Vietnamese exporting company',
+          'Vẽ một sơ đồ bố cục (layout) cho một kho hàng thương mại điện tử giả định để tối ưu hóa quy trình lấy hàng.',
         difficulty: 'Trung bình',
-        materials: ['Trade compliance checklist', 'Sample documentation', 'Regulatory database'],
         procedure: [
-          'Review current trade processes và documentation',
-          'Identify compliance gaps và risks',
-          'Research applicable regulations và requirements',
-          'Develop compliance improvement plan',
-          'Create standard operating procedures',
+          'Xác định các khu vực chính: nhận hàng, lưu trữ, đóng gói, và xuất hàng.',
+          'Sắp xếp các mặt hàng bán chạy (fast-moving items) ở vị trí dễ tiếp cận nhất.',
+          'Thiết kế các lối đi rõ ràng để robot hoặc nhân viên có thể di chuyển hiệu quả.',
+          'Cân nhắc các yếu tố về an toàn và phòng cháy chữa cháy.',
         ],
-        expectedResults: 'Complete compliance audit report với actionable recommendations',
-        solution: 'Structured audit covering documentation, licensing, origin determination, và record-keeping',
+        expectedResults:
+          'Một bản vẽ sơ đồ kho hàng hợp lý, giúp giảm thiểu thời gian và quãng đường di chuyển khi xử lý đơn hàng.',
       },
     ],
     realWorldApplications: [
-      'Setting up import/export operations',
-      'Navigating trade disputes và investigations',
-      'Optimizing duty và tax structures',
-      'Managing supply chain compliance',
+      'Các trung tâm hoàn tất đơn hàng (fulfillment center) của Tiki, Shopee, Lazada.',
+      'Kho lạnh để bảo quản thực phẩm và dược phẩm.',
+      'Hệ thống kho tự động trong các nhà máy sản xuất.',
     ],
     caseStudies: [
       {
-        title: 'Textile Exporter EVFTA Optimization',
-        organization: 'Vietnamese Textile Company',
-        problem: 'Maximizing benefits từ EU-Vietnam Free Trade Agreement',
+        title: 'Tự động hóa tại Trung tâm Phân loại của Giao Hàng Nhanh',
+        organization: 'Giao Hàng Nhanh (GHN)',
+        problem:
+          'Xử lý hàng triệu bưu kiện mỗi ngày với tốc độ nhanh và độ chính xác cao, đặc biệt trong các mùa cao điểm mua sắm.',
         solution:
-          'Supply chain restructuring để meet origin requirements, documentation automation, tariff optimization',
-        impact: 'Achieved preferential tariff rates, reduced export costs by 12%',
-        innovations: ['Origin management system', 'Automated documentation', 'Supply chain transparency'],
+          'Đầu tư vào hệ thống băng chuyền phân loại tự động, có khả năng đọc mã vạch và chia chọn bưu kiện đến các tuyến giao hàng khác nhau một cách tự động.',
+        impact:
+          'Tăng công suất xử lý lên gấp nhiều lần, giảm tỷ lệ sai sót, và rút ngắn thời gian giao hàng toàn trình.',
+        innovations: ['Hệ thống phân loại tự động', 'Xử lý dữ liệu lớn', 'Tối ưu hóa tuyến đường'],
       },
     ],
-    resources: [
+    vietnamContext: {
+      title: 'Sự bùng nổ của Logistics Thương mại Điện tử tại Việt Nam',
+      content: [
+        'Sự tăng trưởng mạnh mẽ của thương mại điện tử đã tạo ra nhu cầu khổng lồ về các kho bãi hiện đại và dịch vụ hoàn tất đơn hàng (fulfillment).',
+        'Các công ty logistics lớn như Giao Hàng Nhanh, J&T Express, BEST Express đang chạy đua đầu tư vào các trung tâm phân loại tự động quy mô lớn.',
+        'Nhu cầu về kho lạnh để phục vụ giao hàng thực phẩm tươi sống và bách hóa online cũng đang tăng cao.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lương Duy Hoài',
+      title: 'Nhà sáng lập & CEO',
+      company: 'Giao Hàng Nhanh (GHN)',
+      imageUrl: 'https://i.pravatar.cc/150?u=luong-duy-hoai',
+      quote:
+        'Tại Việt Nam, logistics không còn là ngành dịch vụ phụ trợ, mà đã trở thành một ngành công nghệ. Chúng tôi đầu tư vào dữ liệu và tự động hóa để giải quyết bài toán giao nhận ở một trong những thị trường phức tạp nhất.',
+    },
+    quizzes: [
       {
-        title: 'Vietnam International Trade Guide',
-        url: 'https://www.trade.gov/country-commercial-guides/vietnam-trade-agreements',
-        type: 'Reference',
+        question:
+          'Phương pháp quản lý tồn kho nào giả định rằng các mặt hàng được nhập vào kho trước sẽ được xuất ra trước?',
+        options: [
+          'LIFO (Last-In, First-Out)',
+          'JIT (Just-In-Time)',
+          'FIFO (First-In, First-Out)',
+          'EOQ (Economic Order Quantity)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'FIFO (Nhập trước, Xuất trước) là phương pháp phổ biến, đặc biệt quan trọng đối với các sản phẩm có hạn sử dụng như thực phẩm và dược phẩm, đảm bảo rằng các lô hàng cũ hơn được bán trước.',
       },
     ],
   },

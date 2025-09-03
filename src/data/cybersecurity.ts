@@ -1,6 +1,26 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
-export interface CybersecurityLessonData extends BaseLessonData {
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
+export interface CybersecurityLessonData extends Omit<BaseLessonData, 'tools'> {
   securityDomains?: string[];
   threats?: string[];
   tools?: Array<{
@@ -27,6 +47,9 @@ export interface CybersecurityLessonData extends BaseLessonData {
     name: string;
     description: string;
   }>;
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  quizzes?: Quiz[];
 }
 
 export const CybersecurityLessons: CybersecurityLessonData[] = [
@@ -150,6 +173,49 @@ export const CybersecurityLessons: CybersecurityLessonData[] = [
       'Incident Response',
     ],
     threats: ['Malware', 'Phishing', 'Ransomware', 'DDoS', 'Insider Threats'],
+    vietnamContext: {
+      title: 'Bối cảnh An ninh mạng tại Việt Nam',
+      content: [
+        'Việt Nam là một trong những quốc gia có số lượng người dùng Internet tăng nhanh nhất thế giới, nhưng cũng là mục tiêu hàng đầu của các cuộc tấn công mạng trong khu vực.',
+        'Các hình thức tấn công phổ biến tại Việt Nam bao gồm: lừa đảo trực tuyến (phishing) qua email/tin nhắn, mã độc tống tiền (ransomware) nhắm vào doanh nghiệp, và các chiến dịch tấn công có chủ đích (APT) vào hệ thống của chính phủ và các hạ tầng quan trọng.',
+        'Luật An ninh mạng của Việt Nam, có hiệu lực từ năm 2019, đặt ra các yêu cầu nghiêm ngặt về bảo vệ dữ liệu cá nhân và an ninh hệ thống thông tin đối với các doanh nghiệp trong và ngoài nước.',
+        'Nhận thức về an ninh mạng của người dùng cá nhân và doanh nghiệp nhỏ tại Việt Nam vẫn còn hạn chế, tạo ra nhiều lỗ hổng dễ bị khai thác.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Ngô Tuấn Anh',
+      title: 'Phó Chủ tịch',
+      company: 'Tập đoàn Bkav',
+      imageUrl: 'https://i.pravatar.cc/150?u=ngo-tuan-anh',
+      quote:
+        'An ninh mạng giống như sức khỏe. Bạn chỉ thực sự quan tâm đến nó khi đã bị bệnh. Công việc của chúng tôi là làm "bác sĩ phòng bệnh", giúp các tổ chức và cá nhân tại Việt Nam xây dựng một hệ miễn dịch kỹ thuật số đủ mạnh để chống lại các loại virus và vi khuẩn nguy hiểm trên không gian mạng.',
+    },
+    quizzes: [
+      {
+        question: 'Bộ ba CIA trong an ninh thông tin là viết tắt của những từ nào?',
+        options: [
+          'Central Intelligence Agency',
+          'Confidentiality, Integrity, Availability',
+          'Cybersecurity, Information, Assurance',
+          'Control, Inspect, Audit',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'CIA Triad (Bảo mật, Toàn vẹn, Sẵn sàng) là mô hình nền tảng và cốt lõi nhất của an ninh thông tin, xác định ba mục tiêu chính cần được bảo vệ.',
+      },
+      {
+        question: 'Chiến lược "Phòng thủ theo chiều sâu" (Defense-in-Depth) có nghĩa là gì?',
+        options: [
+          'Chỉ sử dụng một lớp bảo vệ duy nhất nhưng rất mạnh.',
+          'Xây dựng nhiều lớp phòng thủ khác nhau để nếu một lớp bị vượt qua, các lớp khác vẫn còn.',
+          'Chỉ tập trung vào việc phòng thủ ở tầng mạng.',
+          'Không cần phòng thủ, chỉ cần phục hồi sau tấn công.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Phòng thủ theo chiều sâu là một triết lý an ninh quan trọng, thừa nhận rằng không có một biện pháp bảo vệ nào là hoàn hảo và việc kết hợp nhiều lớp sẽ tạo ra một hệ thống an toàn và kiên cố hơn.',
+      },
+    ],
   },
   {
     id: 'ethical-hacking-pentesting',
@@ -277,6 +343,44 @@ export const CybersecurityLessons: CybersecurityLessonData[] = [
         difficulty: 'Nâng cao',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Ethical Hacking tại Việt Nam',
+      content: [
+        'Cộng đồng ethical hacker và "bug bounty hunter" tại Việt Nam đang phát triển rất mạnh mẽ, với nhiều cá nhân và đội nhóm được xếp hạng cao trên các nền tảng quốc tế như Bugcrowd, HackerOne.',
+        'Nhiều công ty lớn của Việt Nam như VNG, Viettel, FPT đã có các chương trình bug bounty riêng hoặc thuê các công ty an ninh mạng trong nước để thực hiện pentest định kỳ.',
+        'WhiteHat Drill là một cuộc thi diễn tập an toàn không gian mạng uy tín do Bkav tổ chức, tạo sân chơi cho các chuyên gia an ninh mạng và sinh viên cọ xát và nâng cao kỹ năng.',
+        'Thách thức: Ranh giới giữa "hacker mũ trắng" và "hacker mũ đen" đôi khi rất mong manh. Việc thiếu một hành lang pháp lý rõ ràng cho hoạt động bug bounty đôi khi gây khó khăn cho các nhà nghiên cứu bảo mật.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Ngô Minh Hiếu (Hiếu PC)',
+      title: 'Chuyên gia An ninh mạng',
+      company: 'Trung tâm Giám sát an toàn không gian mạng quốc gia (NCSC)',
+      imageUrl: 'https://i.pravatar.cc/150?u=hieu-pc',
+      quote:
+        'Tôi đã từng ở phía bên kia của chiến tuyến. Tôi hiểu hacker nghĩ gì và làm gì. Giờ đây, tôi dùng chính những kiến thức đó để bảo vệ người dân và doanh nghiệp Việt Nam. Cách tốt nhất để chống lại hacker là phải am hiểu họ hơn chính họ.',
+    },
+    quizzes: [
+      {
+        question: 'Sự khác biệt cơ bản nhất giữa Ethical Hacker và tội phạm mạng là gì?',
+        options: ['Công cụ sử dụng', 'Kỹ năng kỹ thuật', 'Sự cho phép (permission)', 'Mục tiêu tấn công'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Một Ethical Hacker luôn có sự cho phép rõ ràng bằng văn bản từ chủ sở hữu hệ thống trước khi thực hiện bất kỳ hành động kiểm thử nào. Đây là yếu tố pháp lý và đạo đức cốt lõi phân biệt hai bên.',
+      },
+      {
+        question: 'OWASP Top 10 là gì?',
+        options: [
+          'Top 10 công ty an ninh mạng hàng đầu.',
+          'Một danh sách 10 lỗ hổng bảo mật ứng dụng web phổ biến và nguy hiểm nhất.',
+          'Top 10 hacker bị truy nã gắt gao nhất.',
+          'Một bộ phim về hacker.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'OWASP Top 10 là một tài liệu tham khảo tiêu chuẩn trong ngành, giúp các nhà phát triển và chuyên gia bảo mật tập trung vào việc phòng chống các rủi ro nghiêm trọng nhất đối với ứng dụng web.',
+      },
+    ],
   },
   {
     id: 'incident-response-forensics',
@@ -383,6 +487,51 @@ export const CybersecurityLessons: CybersecurityLessonData[] = [
       'Cybersecurity consulting',
       'Insurance claim investigations',
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Ứng phó sự cố và Điều tra số tại Việt Nam',
+      content: [
+        'Cục An toàn thông tin (thuộc Bộ TT&TT) và Trung tâm Giám sát an toàn không gian mạng quốc gia (NCSC) đóng vai trò điều phối các hoạt động ứng cứu sự cố an ninh mạng trên toàn quốc.',
+        'Mạng lưới ứng cứu sự cố an toàn thông tin mạng quốc gia, với sự tham gia của nhiều doanh nghiệp và tổ chức, đã được thành lập để chia sẻ thông tin và hỗ trợ lẫn nhau khi có tấn công xảy ra.',
+        'Các vụ tấn công ransomware vào các bệnh viện, doanh nghiệp lớn tại Việt Nam trong những năm gần đây đã thúc đẩy nhu cầu về các đội ngũ ứng phó sự cố chuyên nghiệp.',
+        'Lực lượng công an Việt Nam (Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao - A05) ngày càng được trang bị các công cụ và kỹ năng điều tra số hiện đại để phá các vụ án công nghệ cao.',
+      ],
+    },
+    careerConnect: {
+      name: 'Thiếu tướng Nguyễn Minh Chính',
+      title: 'Cục trưởng Cục A05 (hư cấu)',
+      company: 'Bộ Công an',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-minh-chinh',
+      quote:
+        'Tội phạm công nghệ cao không để lại dấu vân tay, nhưng chúng luôn để lại dấu vết kỹ thuật số. Công việc của chúng tôi là lần theo những dấu vết đó, dù là nhỏ nhất, trong hàng terabyte dữ liệu để tái tạo lại hiện trường vụ án và đưa tội phạm ra ánh sáng. Đó là một cuộc chiến thầm lặng nhưng vô cùng quan trọng.',
+    },
+    quizzes: [
+      {
+        question:
+          'Trong quy trình ứng phó sự cố, giai đoạn nào nên được thực hiện đầu tiên sau khi nhận diện được một cuộc tấn công?',
+        options: [
+          'Loại bỏ (Eradication)',
+          'Phục hồi (Recovery)',
+          'Ngăn chặn (Containment)',
+          'Rút kinh nghiệm (Lessons Learned)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Sau khi xác định có sự cố, ưu tiên hàng đầu là ngăn chặn không cho nó lan rộng và gây thêm thiệt hại. Việc cô lập các hệ thống bị ảnh hưởng là một bước quan trọng trong giai đoạn này.',
+      },
+      {
+        question:
+          'Tại sao việc thu thập dữ liệu biến động (volatile data) lại quan trọng và cần được ưu tiên trong điều tra số?',
+        options: [
+          'Vì nó không chứa thông tin quan trọng.',
+          'Vì nó sẽ mất đi vĩnh viễn khi máy tính tắt nguồn.',
+          'Vì nó dễ thu thập hơn dữ liệu trên ổ cứng.',
+          'Vì nó không có giá trị pháp lý.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Dữ liệu biến động như nội dung RAM, các kết nối mạng... chứa những thông tin cực kỳ quý giá về trạng thái hiện tại của hệ thống và hành vi của kẻ tấn công. Nếu không được thu thập ngay lập tức, những bằng chứng này sẽ bị mất.',
+      },
+    ],
   },
   {
     id: 'security-architecture-governance',
@@ -487,6 +636,49 @@ export const CybersecurityLessons: CybersecurityLessonData[] = [
       'Regulatory compliance programs',
       'Security policy development',
       'Security awareness training',
+    ],
+    vietnamContext: {
+      title: 'Bối cảnh Kiến trúc và Quản trị An ninh tại Việt Nam',
+      content: [
+        'Hệ thống 11 lĩnh vực quan trọng cần bảo đảm an toàn thông tin mạng theo Luật An ninh mạng của Việt Nam đòi hỏi các tổ chức phải có kiến trúc và quản trị an ninh chặt chẽ.',
+        'Các ngân hàng và tổ chức tài chính tại Việt Nam là những đơn vị đi đầu trong việc áp dụng các khung quản trị an ninh quốc tế như ISO 27001, PCIDSS để tuân thủ quy định của Ngân hàng Nhà nước.',
+        'Sự chuyển dịch lên điện toán đám mây (cloud) của các doanh nghiệp Việt Nam tạo ra thách thức lớn về kiến trúc an ninh, đòi hỏi các chuyên gia phải có kỹ năng về bảo mật đám mây (cloud security).',
+        'Vị trí Giám đốc An toàn thông tin (CISO) ngày càng trở nên quan trọng và được nhiều tập đoàn lớn tại Việt Nam săn đón, cho thấy sự thay đổi trong nhận thức về tầm quan trọng chiến lược của an ninh mạng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Robert Trấn',
+      title: 'Giám đốc An toàn thông tin (CISO)',
+      company: 'Một Ngân hàng lớn tại Việt Nam (hư cấu)',
+      imageUrl: 'https://i.pravatar.cc/150?u=robert-tran',
+      quote:
+        'Công việc của tôi không phải là "vá lỗi". Công việc của tôi là thiết kế một con tàu không có lỗ hổng ngay từ đầu. An ninh mạng phải được tích hợp vào từng viên gạch khi xây dựng hệ thống, chứ không phải là một lớp sơn phủ lên bên ngoài sau khi đã xây xong.',
+    },
+    quizzes: [
+      {
+        question: 'Triết lý cốt lõi của kiến trúc "Zero Trust" là gì?',
+        options: [
+          'Tin tưởng mọi người dùng bên trong mạng.',
+          'Chỉ xác minh người dùng một lần duy nhất.',
+          '"Không bao giờ tin tưởng, luôn luôn xác minh" (Never trust, always verify).',
+          'Chỉ tập trung vào bảo vệ vành đai mạng.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Zero Trust là một sự thay đổi mô hình tư duy, từ việc tin tưởng mặc định sang việc yêu cầu xác minh liên tục đối với mọi truy cập, bất kể vị trí.',
+      },
+      {
+        question: 'ISO/IEC 27001 là gì?',
+        options: [
+          'Một luật về an ninh mạng của Mỹ.',
+          'Một tiêu chuẩn quốc tế về hệ thống quản lý an toàn thông tin.',
+          'Một công cụ để hack mật khẩu.',
+          'Một loại mã độc.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'ISO/IEC 27001 là một trong những khung quản trị an ninh phổ biến và được công nhận rộng rãi nhất trên thế giới, cung cấp một phương pháp có hệ thống để quản lý an toàn thông tin.',
+      },
     ],
   },
 ];

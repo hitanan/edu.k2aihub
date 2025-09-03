@@ -4,13 +4,13 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { SpaceLessons, type SpaceLessonData } from '@/data/space-exploration';
+import { spaceLessons, type SpaceExplorationLesson } from '@/data/space-exploration';
 import { PageProps } from '@/types';
 import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { Rocket, Satellite, Globe, Star } from 'lucide-react';
 
-// Convert SpaceLessonData to BaseLessonData
-function convertToBaseLessonData(lesson: SpaceLessonData): BaseLessonData {
+// Convert SpaceExplorationLesson to BaseLessonData
+function convertToBaseLessonData(lesson: SpaceExplorationLesson): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -36,7 +36,7 @@ function convertToBaseLessonData(lesson: SpaceLessonData): BaseLessonData {
 }
 
 // Convert lessons to BaseLessonData format
-const convertedLessons = SpaceLessons.map(convertToBaseLessonData);
+const convertedLessons = spaceLessons.map(convertToBaseLessonData);
 
 // Generate static params for all lessons
 export async function generateStaticParams() {

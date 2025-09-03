@@ -1,17 +1,23 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
-import { SpaceLessons } from '@/data/space-exploration';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
+import { spaceLessons } from '@/data/space-exploration';
 import { K2Module } from '@/data/moduleNavigation';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
   'Space Technology & Exploration - Công Nghệ Vũ Trụ',
   'Khám phá công nghệ vũ trụ và tương lai của nhân loại trong không gian. Từ rocket science đến space missions và colonization.',
-  ['space technology', 'space exploration', 'rocket science', 'satellite technology', 'space missions', 'aerospace engineering', 'k2aihub'],
-  'space-exploration'
+  [
+    'space technology',
+    'space exploration',
+    'rocket science',
+    'satellite technology',
+    'space missions',
+    'aerospace engineering',
+    'k2aihub',
+  ],
+  'space-exploration',
 );
 
 export default function SpaceExplorationPage() {
@@ -27,8 +33,7 @@ export default function SpaceExplorationPage() {
     primaryColor: 'indigo',
     gradientColors: 'from-slate-900 via-indigo-900 to-purple-900',
     basePath: '/learning/space-exploration',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=1200&h=600&fit=crop',
     features: [
       'Rocket Science & Propulsion Systems',
       'Satellite Technology & Communications',
@@ -42,7 +47,7 @@ export default function SpaceExplorationPage() {
     icon: '🚀',
     color: 'from-indigo-600 to-purple-600',
     statsConfig: {
-      lessons: `${SpaceLessons.length}+ bài`,
+      lessons: `${spaceLessons.length}+ bài`,
       duration: '15-20 giờ',
       level: 'Trung bình đến Nâng cao',
       projects: '8+ missions thực tế',
@@ -97,72 +102,36 @@ export default function SpaceExplorationPage() {
       {
         title: 'Propulsion Systems',
         icon: '🚀',
-        items: [
-          'Chemical Rockets',
-          'Ion Propulsion',
-          'Nuclear Thermal',
-          'Solar Sails',
-        ],
+        items: ['Chemical Rockets', 'Ion Propulsion', 'Nuclear Thermal', 'Solar Sails'],
       },
       {
         title: 'Satellite Technology',
         icon: '🛰️',
-        items: [
-          'Communication Sats',
-          'Earth Observation',
-          'Navigation Systems',
-          'Scientific Instruments',
-        ],
+        items: ['Communication Sats', 'Earth Observation', 'Navigation Systems', 'Scientific Instruments'],
       },
       {
         title: 'Mission Design',
         icon: '🎯',
-        items: [
-          'Trajectory Planning',
-          'Launch Windows',
-          'Orbital Mechanics',
-          'Gravity Assists',
-        ],
+        items: ['Trajectory Planning', 'Launch Windows', 'Orbital Mechanics', 'Gravity Assists'],
       },
       {
         title: 'Space Exploration',
         icon: '🌌',
-        items: [
-          'Planetary Missions',
-          'Deep Space Probes',
-          'Human Spaceflight',
-          'Mars Colonization',
-        ],
+        items: ['Planetary Missions', 'Deep Space Probes', 'Human Spaceflight', 'Mars Colonization'],
       },
       {
         title: 'Space Operations',
         icon: '🏗️',
-        items: [
-          'Mission Control',
-          'Ground Stations',
-          'Telemetry Systems',
-          'Emergency Procedures',
-        ],
+        items: ['Mission Control', 'Ground Stations', 'Telemetry Systems', 'Emergency Procedures'],
       },
       {
         title: 'Future Technology',
         icon: '⚡',
-        items: [
-          'Reusable Rockets',
-          'Space Elevators',
-          'Interstellar Travel',
-          'Space Manufacturing',
-        ],
+        items: ['Reusable Rockets', 'Space Elevators', 'Interstellar Travel', 'Space Manufacturing'],
       },
     ],
-    relatedModules: [
-      K2Module.AerospaceEngineering,
-      K2Module.AdvancedAI,
-      K2Module.DataScienceAnalytics,
-    ],
+    relatedModules: [K2Module.AerospaceEngineering, K2Module.AdvancedAI, K2Module.DataScienceAnalytics],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={SpaceLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={spaceLessons} />;
 }

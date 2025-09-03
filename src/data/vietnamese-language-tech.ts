@@ -1,45 +1,8 @@
-export interface VietnameseLangTechLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
-  videoUrl: string;
-  imageUrl?: string;
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+
+export interface VietnameseLangTechLesson extends BaseLessonData {
   technologies: string[];
   languageFeatures: string[];
-  resources: Resource[];
-  caseStudies: CaseStudy[];
-}
-
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  requirements: string[];
-  hints: string[];
-  expectedOutput: string;
-}
-
-interface Resource {
-  title: string;
-  url: string;
-  type: 'library' | 'tool' | 'dataset' | 'research' | 'tutorial';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  organization: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  insights: string[];
 }
 
 export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
@@ -52,7 +15,8 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
     imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '120 phút',
-    languageFeatures: ['Dấu thanh', 'Từ ghép', 'Ngữ pháp isolating', 'Không có dấu cách từ'],
+    technologies: ['NLP', 'Text Processing', 'Tokenization', 'Word Segmentation'],
+    languageFeatures: ['Tonal Language', 'No Word Delimiter', 'Complex Encoding'],
     objectives: [
       'Hiểu đặc điểm ngôn ngữ học của tiếng Việt trong NLP',
       'Thực hiện word segmentation và tokenization cho tiếng Việt',
@@ -60,190 +24,113 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
       'Build basic text processing pipeline cho Vietnamese text',
     ],
     prerequisites: ['Kiến thức Python cơ bản', 'Hiểu biết về regular expressions', 'Kiến thức cơ bản về NLP'],
-    technologies: ['Python', 'PyVi', 'VnCoreNLP', 'spaCy', 'NLTK', 'Underthesea'],
     exercises: [
       {
         title: 'Vietnamese Text Normalization',
         description: 'Implement text normalization cho tiếng Việt bao gồm dấu thanh và ký tự đặc biệt',
         difficulty: 'Cơ bản',
-        requirements: ['Python', 'PyVi library', 'Unicode handling'],
-        hints: [
-          'Sử dụng Unicode normalization cho dấu thanh',
-          'Handle các trường hợp dấu thanh kết hợp và riêng biệt',
-          'Test với các văn bản có nhiều loại dấu thanh khác nhau',
+        materials: ['Python', 'PyVi library', 'Unicode handling'],
+        procedure: [
+          'Viết một hàm nhận đầu vào là một chuỗi văn bản tiếng Việt.',
+          'Sử dụng thư viện `unicodedata` để chuẩn hóa các dấu thanh về dạng tổ hợp (NFC).',
+          'Viết các biểu thức chính quy (regex) để loại bỏ các ký tự đặc biệt không cần thiết.',
+          'Chuyển đổi toàn bộ văn bản về chữ thường.',
         ],
-        expectedOutput: 'Function chuẩn hóa text tiếng Việt với độ chính xác > 95%',
-        solution: 'Implement using unicodedata.normalize() và custom rules cho Vietnamese',
+        expectedResults: 'Một hàm có khả năng chuẩn hóa văn bản tiếng Việt với độ chính xác cao.',
+        solution: 'Sử dụng `unicodedata.normalize("NFC", text)` và các quy tắc regex tùy chỉnh cho tiếng Việt.',
       },
     ],
     realWorldApplications: [
-      'Chatbot tiếng Việt cho customer service',
-      'Vietnamese document analysis và classification',
-      'Social media monitoring và sentiment analysis',
-      'Voice-to-text applications cho tiếng Việt',
+      'Chatbot tiếng Việt cho dịch vụ khách hàng.',
+      'Phân tích và phân loại tài liệu tiếng Việt.',
+      'Theo dõi mạng xã hội và phân tích cảm xúc.',
+      'Ứng dụng chuyển giọng nói thành văn bản tiếng Việt.',
     ],
+    vietnamContext: {
+      title: 'Xử lý Ngôn ngữ Tự nhiên cho Tiếng Việt',
+      content: [
+        'Tiếng Việt là một ngôn ngữ có thanh điệu và không có dấu cách giữa các từ, tạo ra những thách thức độc đáo cho Xử lý Ngôn ngữ Tự nhiên (NLP). Các bài toán như tách từ (word segmentation) và xử lý dấu thanh là cực kỳ quan trọng.',
+        'Sự phát triển của các mô hình ngôn ngữ lớn (LLMs) và các thư viện mã nguồn mở dành riêng cho tiếng Việt (như VnCoreNLP, underthesea) đã thúc đẩy mạnh mẽ lĩnh vực này.',
+        'Các ứng dụng NLP tiếng Việt đang bùng nổ, từ trợ lý ảo, dịch máy, đến phân tích dữ liệu kinh doanh, cho thấy tiềm năng to lớn của công nghệ ngôn ngữ tại thị trường Việt Nam.',
+      ],
+    },
     caseStudies: [
       {
-        title: 'Zalo AI Vietnamese Language Model',
-        organization: 'VNG Corporation',
-        challenge: 'Phát triển NLP model cho 60+ triệu người dùng Vietnamese',
-        solution: 'Custom Vietnamese NLP pipeline với advanced tokenization',
-        results: '40% improvement in Vietnamese text understanding, 25% faster processing',
-        insights: [
-          'Vietnamese tone marks require special handling',
-          'Context is crucial for word segmentation',
-          'Domain-specific vocabulary needs custom training',
+        title: 'Zalo AI: Xây dựng Mô hình Ngôn ngữ cho Tiếng Việt',
+        organization: 'Zalo AI (VNG Corporation)',
+        problem:
+          'Cần một mô hình NLP hiệu suất cao để phục vụ hệ sinh thái Zalo với hàng chục triệu người dùng, có khả năng hiểu sâu sắc các sắc thái của tiếng Việt, bao gồm cả tiếng lóng và ngôn ngữ tuổi teen.',
+        solution:
+          'Zalo AI đã xây dựng các mô hình ngôn ngữ lớn được huấn luyện trên tập dữ liệu khổng lồ bằng tiếng Việt. Họ phát triển các kỹ thuật tách từ và nhận dạng thực thể (Named Entity Recognition) tiên tiến, được tối ưu hóa riêng cho tiếng Việt.',
+        impact:
+          'Cải thiện 40% khả năng hiểu văn bản tiếng Việt trên toàn hệ sinh thái Zalo, từ chatbot đến tìm kiếm. Các mô hình này cũng được chia sẻ cho cộng đồng, thúc đẩy sự phát triển của NLP tại Việt Nam.',
+        innovations: [
+          'Tách từ theo ngữ cảnh',
+          'Mô hình ngôn ngữ lớn cho tiếng Việt',
+          'Xử lý tiếng lóng và ngôn ngữ mạng',
         ],
+      },
+      {
+        title: 'FPT.AI: Nền tảng Trí tuệ Nhân tạo Toàn diện',
+        organization: 'FPT.AI',
+        problem:
+          'Các doanh nghiệp Việt Nam cần một nền tảng AI dễ tiếp cận để xây dựng các ứng dụng thông minh (như chatbot, tổng đài tự động) mà không cần đầu tư lớn vào R&D.',
+        solution:
+          'FPT.AI đã phát triển một nền tảng cung cấp các API và công cụ cho NLP tiếng Việt, bao gồm nhận dạng giọng nói, tổng hợp giọng nói, và xử lý ngôn ngữ tự nhiên. Nền tảng này cho phép các nhà phát triển tích hợp AI vào sản phẩm của họ một cách dễ dàng.',
+        impact:
+          'Hàng ngàn doanh nghiệp đã sử dụng FPT.AI để tự động hóa dịch vụ khách hàng và tối ưu hóa hoạt động. Nền tảng này đã dân chủ hóa công nghệ AI, giúp nhiều công ty tiếp cận và ứng dụng AI hơn.',
+        innovations: ['Nền tảng AI-as-a-Service', 'Nhận dạng giọng nói đa vùng miền', 'Tổng hợp giọng nói tự nhiên'],
+      },
+    ],
+    careerConnect: {
+      name: 'Tiến sĩ Vũ Duy Thức',
+      title: 'Đồng sáng lập, OhmniLabs & Kambria',
+      company: 'OhmniLabs',
+      imageUrl: 'https://i.pravatar.cc/150?u=vu-duy-thuc',
+      quote:
+        'Ngôn ngữ là cửa sổ tâm hồn của một dân tộc. Việc phát triển công nghệ xử lý ngôn ngữ tiếng Việt không chỉ là một bài toán kỹ thuật, mà còn là cách chúng ta bảo tồn và phát huy bản sắc văn hóa trong thế giới số.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là một thách thức độc đáo của tiếng Việt trong xử lý ngôn ngữ tự nhiên?',
+        options: [
+          'Có quá nhiều từ mượn',
+          'Bảng chữ cái Latin',
+          'Là ngôn ngữ có thanh điệu và không có dấu cách từ',
+          'Ngữ pháp phức tạp',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Đặc điểm về thanh điệu và việc các từ không được phân cách rõ ràng bằng dấu cách tạo ra các bài toán cốt lõi như xử lý dấu và tách từ, khác biệt so với nhiều ngôn ngữ khác.',
+      },
+      {
+        question: 'FPT.AI cung cấp giải pháp gì cho các doanh nghiệp Việt Nam?',
+        options: [
+          'Xây dựng phần cứng máy tính',
+          'Một nền tảng AI-as-a-Service với các công cụ NLP tiếng Việt',
+          'Dịch vụ tư vấn pháp lý',
+          'Cung cấp nhân sự AI',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'FPT.AI tập trung vào việc cung cấp một nền tảng (Platform as a Service) để các doanh nghiệp có thể dễ dàng tích hợp các tính năng AI, đặc biệt là NLP, vào sản phẩm của mình.',
       },
     ],
     resources: [
-      {
-        title: 'PyVi - Vietnamese Text Processing',
-        url: 'https://github.com/trungtv/pyvi',
-        type: 'library',
-        description: 'Python library for Vietnamese NLP tasks',
-      },
       {
         title: 'VnCoreNLP',
         url: 'https://github.com/vncorenlp/VnCoreNLP',
-        type: 'tool',
-        description: 'Fast Vietnamese NLP annotation pipeline',
-      },
-    ],
-  },
-  {
-    id: 'vietnamese-ai-chatbot',
-    title: 'Bài 2: Xây dựng AI Chatbot tiếng Việt thông minh',
-    description:
-      'Phát triển chatbot AI hiểu và trả lời tiếng Việt tự nhiên. Học intent recognition, entity extraction và conversation management cho tiếng Việt.',
-    videoUrl: 'https://www.youtube.com/watch?v=q1ngSbMqXUE',
-    imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=400&fit=crop',
-    difficulty: 'Trung bình',
-    duration: '180 phút',
-    languageFeatures: ['Intent classification', 'Entity recognition', 'Context understanding', 'Vietnamese grammar'],
-    objectives: [
-      'Thiết kế conversation flow cho Vietnamese chatbot',
-      'Implement intent recognition cho câu hỏi tiếng Việt',
-      'Build entity extraction system cho Vietnamese entities',
-      'Deploy chatbot integration với popular Vietnamese platforms',
-    ],
-    prerequisites: [
-      'Hoàn thành Vietnamese NLP Fundamentals',
-      'Kiến thức về machine learning cơ bản',
-      'Quen thuộc với API development',
-    ],
-    technologies: ['Rasa', 'spaCy', 'Transformers', 'FastAPI', 'Zalo API', 'Facebook Messenger'],
-    exercises: [
-      {
-        title: 'Vietnamese Intent Classification',
-        description: 'Build intent classifier cho common Vietnamese customer service queries',
-        difficulty: 'Trung bình',
-        requirements: ['Rasa framework', 'Vietnamese training data', 'Classification metrics'],
-        hints: [
-          'Collect diverse Vietnamese conversation data',
-          'Use pre-trained Vietnamese embeddings',
-          'Handle informal Vietnamese (teen speak, abbreviations)',
-        ],
-        expectedOutput: 'Intent classifier với accuracy > 85% trên Vietnamese test set',
-        solution: 'Fine-tune PhoBERT model cho intent classification với Vietnamese data',
-      },
-    ],
-    realWorldApplications: [
-      'Customer service automation cho Vietnamese businesses',
-      'E-commerce product recommendation',
-      'Banking và financial services chatbots',
-      'Educational support chatbots cho học sinh',
-    ],
-    caseStudies: [
-      {
-        title: 'Vietcombank AI Customer Service',
-        organization: 'Vietcombank',
-        challenge: 'Automate 70% of customer inquiries in Vietnamese',
-        solution: 'Multi-turn conversation AI với Vietnamese NLU',
-        results: '65% automation rate, 30% reduction in call center load',
-        insights: [
-          'Vietnamese customers prefer formal language in banking',
-          'Regional dialects need special handling',
-          'Financial terminology requires domain expertise',
-        ],
-      },
-    ],
-    resources: [
-      {
-        title: 'PhoBERT Vietnamese Language Model',
-        url: 'https://github.com/VinAIResearch/PhoBERT',
         type: 'library',
-        description: 'Pre-trained Vietnamese BERT model',
       },
-    ],
-  },
-  {
-    id: 'vietnamese-voice-ai',
-    title: 'Bài 3: AI Voice Technology cho tiếng Việt',
-    description:
-      'Phát triển ứng dụng voice AI cho tiếng Việt: speech-to-text, text-to-speech và voice assistant. Học cách handle Vietnamese pronunciation và tone.',
-    videoUrl: 'https://www.youtube.com/watch?v=kIoxOeWXjC4',
-    imageUrl: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=400&h=400&fit=crop',
-    difficulty: 'Nâng cao',
-    duration: '150 phút',
-    languageFeatures: ['Tonal pronunciation', 'Regional accents', 'Speech patterns', 'Voice synthesis'],
-    objectives: [
-      'Implement Vietnamese speech recognition với high accuracy',
-      'Build natural Vietnamese text-to-speech system',
-      'Create voice assistant hiểu lệnh tiếng Việt',
-      'Optimize cho Vietnamese pronunciation và accents',
-    ],
-    prerequisites: [
-      'Hoàn thành Vietnamese NLP và Chatbot lessons',
-      'Kiến thức về signal processing',
-      'Experience với audio processing libraries',
-    ],
-    technologies: ['Wav2Vec2', 'Transformers', 'TTS', 'PyAudio', 'Librosa', 'FastSpeech2'],
-    exercises: [
       {
-        title: 'Vietnamese Speech Recognition',
-        description: 'Build STT system cho Vietnamese với support cho regional accents',
-        difficulty: 'Nâng cao',
-        requirements: ['Wav2Vec2 model', 'Vietnamese audio dataset', 'Audio preprocessing'],
-        hints: [
-          'Use Vietnamese pre-trained Wav2Vec2 model',
-          'Handle different Vietnamese regional accents',
-          'Implement noise reduction for better accuracy',
-        ],
-        expectedOutput: 'STT system với WER < 15% trên Vietnamese speech',
-        solution: 'Fine-tune Wav2Vec2-vietnamese model với domain-specific data',
+        title: 'underthesea',
+        url: 'https://github.com/undertheseanlp/underthesea',
+        type: 'library',
       },
-    ],
-    realWorldApplications: [
-      'Vietnamese voice assistants cho smart homes',
-      'Voice navigation cho Vietnamese drivers',
-      'Accessibility tools cho Vietnamese users',
-      'Language learning applications',
-    ],
-    caseStudies: [
       {
-        title: 'VinFast Vietnamese Voice Assistant',
-        organization: 'VinFast',
-        challenge: 'Integrate Vietnamese voice control in cars',
-        solution: 'Custom Vietnamese STT/TTS system optimized for car environment',
-        results: '90% accuracy in noisy car environment, 200ms response time',
-        insights: [
-          'Car noise requires specialized acoustic models',
-          'Vietnamese tone recognition is crucial for accuracy',
-          'Local traffic and location names need special handling',
-        ],
-      },
-    ],
-    resources: [
-      {
-        title: 'Vietnamese Self-Supervised Learning Wav2Vec2 model',
-        url: 'https://github.com/nguyenvulebinh/vietnamese-wav2vec2',
-        type: 'tool',
-        description: `self-supervised model is pre-trained on a massive audio set of 13k hours of Vietnamese youtube audio, which includes:
-- Clean audio
-- Noise audio
-- Conversation
-- Multi-gender and dialects`,
+        title: 'PhoBERT',
+        url: 'https://github.com/VinAIResearch/PhoBERT',
+        type: 'research',
       },
     ],
   },

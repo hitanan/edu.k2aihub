@@ -1,39 +1,35 @@
-import type { Metadata } from 'next';
-import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
-import { supplyChainLogisticsLessons, SupplyChainLogisticsLesson } from '@/data/supply-chain-logistics';
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { supplyChainLogisticsLessons } from '@/data/supply-chain-logistics';
+import type { SupplyChainLogisticsLessonType } from '@/data/supply-chain-logistics';
+import { PageProps } from '@/types';
 
+// Generate static params for all lessons
 export async function generateStaticParams() {
-  return supplyChainLogisticsLessons.map((lesson) => ({
-    lessonId: lesson.id,
-  }));
+  return generateLessonStaticParams(supplyChainLogisticsLessons);
 }
 
-export const metadata: Metadata = {
-  title: 'Supply Chain Logistics Lesson',
-  description: 'Learn advanced supply chain and logistics management techniques',
-};
-
-type Params = {
-  lessonId: string;
-};
-
-export default async function SupplyChainLogisticsLessonPage({ params }: { params: Promise<Params> }) {
+// Generate metadata for each lesson
+export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
-  
-  const config: LessonPageConfig<SupplyChainLogisticsLesson> = {
+  return generateLessonMetadata(lessonId, supplyChainLogisticsLessons, 'supply-chain-logistics');
+}
+
+// Page component with standardized config
+export default async function SupplyChainLogisticsLessonPage({ params }: PageProps) {
+  const config: LessonPageConfig<SupplyChainLogisticsLessonType> = {
     moduleName: 'supply-chain-logistics',
     moduleTitle: 'Supply Chain & Logistics',
     modulePath: '/learning/supply-chain-logistics',
     lessons: supplyChainLogisticsLessons,
     primaryColor: 'orange',
     secondaryColor: 'amber',
-    gradientColors: 'from-slate-900 via-orange-900 to-slate-900'
+    gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
   };
-
-  return (
-    <LessonPageTemplate<SupplyChainLogisticsLesson>
-      lessonId={lessonId}
-      config={config}
-    />
-  );
+  const { lessonId } = await params;
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

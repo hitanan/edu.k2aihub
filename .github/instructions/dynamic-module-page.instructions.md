@@ -10,16 +10,16 @@ This instruction guide provides comprehensive guidance for creating standardized
 
 ### 📺 Default Media Resources
 
-**Default YouTube Video**: `https://www.youtube.com/watch?v=vd2dtkMINIw` (Learning How to Learn by Barbara Oakley)
-
-- Use this video as default for all new lessons if no specific video is provided
-- This video is educational, widely applicable, and safe for all age groups
-- Content: Introduction to effective learning techniques and strategies
-
 **Youtube VideoUrl Generation**
 
-- Try to search youtube to find the best VideoUrl for each lesson, use the Key `YOUR_API_KEY` in [.envy](../../.envy) file, and the search query should include the lesson title and relevant keywords.
-- When determining a Youtube VideoUrl, first check the video VIDEO_ID is available by check the response of https://www.googleapis.com/youtube/v3/videos?part=id&id=VIDEO_ID&key=YOUR_API_KEY, if the response for {pageInfo {totalResults :0}} is returned, it means that the video is not available, please find another VIDEO_ID
+- Try to search youtube to find the best VideoUrl for each lesson, use some of Key `YOUR_API_KEY` in [.envy](../../.envy) file, and the search query should include the lesson title and relevant keywords.
+- If you need to determine a Youtube VideoUrl for an existing lesson, first check the video VIDEO_ID is available by check the response of https://www.googleapis.com/youtube/v3/videos?part=id&id=VIDEO_ID&key=YOUR_API_KEY, if the response for {pageInfo {totalResults :0}} is returned, it means that the video is not available, please find another VIDEO_ID
+
+**Default YouTube Video**: `https://www.youtube.com/watch?v=vd2dtkMINIw` (Learning How to Learn by Barbara Oakley)
+
+- Use this video as default for all new lessons if no specific video is provided or no video can be found
+- This video is educational, widely applicable, and safe for all age groups
+- Content: Introduction to effective learning techniques and strategies
 
 **Default Hero Image**: `https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop`
 
@@ -280,7 +280,7 @@ export const [MODULE_NAME]Lessons: ModuleLessonType[] = [
     duration: '120 phút',
     difficulty: 'Cơ bản', // Cơ bản | Trung bình | Nâng cao
     videoUrl: 'https://youtube.com/watch?v=VIDEO_ID', // Optional
-    imageUrl: '/images/lesson-image.jpg', // Optional
+    imageUrl: 'https://i.ytimg.com/vi/VIDEO_ID/hqdefault.jpg', // Optional
     objectives: [
       'Specific learning objective 1',
       'Specific learning objective 2',
@@ -325,6 +325,35 @@ export const [MODULE_NAME]Lessons: ModuleLessonType[] = [
         title: 'Resource Title',
         url: 'https://example.com',
         type: 'Documentation' // Documentation | Tutorial | Tool | Reference
+      }
+    ],
+    vietnamContext: {
+      title: 'Cảm biến trong Nông nghiệp và Đô thị Thông minh tại Việt Nam',
+      content: [
+        'Nông nghiệp công nghệ cao ở Việt Nam (ví dụ: các trang trại hoa ở Đà Lạt, rau sạch ở Vingroup) ứng dụng rộng rãi cảm biến để giám sát nhiệt độ, độ ẩm, ánh sáng, giúp tối ưu hóa năng suất.',
+        'Các dự án "Thành phố Thông minh" tại Bình Dương, Đà Nẵng đang triển khai các trạm quan trắc môi trường sử dụng cảm biến để theo dõi chất lượng không khí và tiếng ồn.',
+        'Cảm biến chuyển động PIR là thành phần không thể thiếu trong các hệ thống chống trộm phổ biến được lắp đặt tại các gia đình và cửa hàng ở Việt Nam.'
+      ]
+    },
+    careerConnect: {
+      name: 'Chị Võ Thị Sương',
+      title: 'Kỹ sư Nông nghiệp Công nghệ cao',
+      company: 'Dalat Hasfarm',
+      imageUrl: 'https://i.pravatar.cc/150?u=vo-thi-suong',
+      quote: 'Công việc của tôi là "lắng nghe" cây trồng nói chuyện qua các con số từ cảm biến. Dữ liệu về độ ẩm đất, nhiệt độ không khí cho chúng tôi biết chính xác khi nào cây cần nước, cần ánh sáng. Arduino và các cảm biến đã cách mạng hóa ngành nông nghiệp truyền thống.'
+    },
+    quizzes: [
+      {
+        question: 'Cảm biến DHT22 có thể đo được những đại lượng nào?',
+        options: ['Chỉ nhiệt độ', 'Nhiệt độ và áp suất', 'Nhiệt độ và độ ẩm', 'Ánh sáng và âm thanh'],
+        correctAnswerIndex: 2,
+        explanation: 'DHT22 là một cảm biến phổ biến có khả năng đo đồng thời cả nhiệt độ và độ ẩm của môi trường xung quanh.'
+      },
+      {
+        question: 'Cảm biến chuyển động PIR (Passive Infrared) hoạt động dựa trên nguyên tắc nào?',
+        options: ['Phát ra sóng siêu âm', 'Đo sự thay đổi của ánh sáng', 'Phát hiện bức xạ hồng ngoại (thân nhiệt) từ các vật thể chuyển động', 'Đo khoảng cách'],
+        correctAnswerIndex: 2,
+        explanation: 'Cảm biến PIR hoạt động một cách thụ động bằng cách phát hiện sự thay đổi đột ngột của bức xạ hồng ngoại, vốn được phát ra từ các cơ thể sống như người và động vật.'
       }
     ]
   }
@@ -376,7 +405,7 @@ export const [MODULE_NAME]Lessons: ModuleLessonType[] = [
 **All pages MUST include**:
 
 - Vietnamese title with K2AiHub branding
-- Meta description under 160 characters
+- Meta description in Vietnamese under 160 characters
 - Appropriate keywords for Vietnamese market
 - OpenGraph tags for social sharing
 - Structured data (JSON-LD) for search engines
@@ -390,6 +419,7 @@ export const [MODULE_NAME]Lessons: ModuleLessonType[] = [
 - Optimal bundle size through code splitting
 - Mobile-first responsive design
 - Accessibility compliance (WCAG AA)
+- Follow Prettier and ESLint rules in the .prettierrc file (like 2 spaces indentation, single quotes, etc.)
 
 ## 🌐 Vietnamese Language Standards
 

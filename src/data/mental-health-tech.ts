@@ -1,237 +1,247 @@
-export interface MentalHealthLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
-  videoUrl: string;
-  imageUrl?: string;
-  technologies: string[];
-  wellnessImpact: string;
-  resources: Resource[];
-  caseStudies: CaseStudy[];
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+
+export interface MentalHealthLessonType extends BaseLessonData {
+  technologies?: string[];
+  wellnessImpact?: string;
 }
 
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  requirements: string[];
-  hints: string[];
-  expectedOutput: string;
-}
-
-interface Resource {
-  title: string;
-  url: string;
-  type: 'app' | 'platform' | 'research' | 'therapy' | 'community';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  participant: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  insights: string[];
-}
-
-export const mentalHealthLessons: MentalHealthLesson[] = [
+export const mentalHealthLessons: MentalHealthLessonType[] = [
   {
     id: 'digital-wellness-fundamentals',
-    title: 'Bài 1: Digital Wellness & Mental Health Technology',
+    title: 'Bài 1: Sức khỏe Kỹ thuật số & Công nghệ Sức khỏe Tâm thần',
     description:
-      'Hiểu tác động của technology lên mental health. Học cách sử dụng apps, wearables và digital tools để improve wellbeing và manage stress.',
+      'Hiểu tác động của công nghệ lên sức khỏe tâm thần. Học cách sử dụng ứng dụng, thiết bị đeo và công cụ kỹ thuật số để cải thiện sức khỏe và quản lý căng thẳng.',
     videoUrl: 'https://www.youtube.com/watch?v=gmLb9SJHlgU',
     imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '120 phút',
-    wellnessImpact: 'Cải thiện sleep quality, giảm stress levels, tăng mindfulness',
+    wellnessImpact: 'High',
+    technologies: ['Wearable Devices', 'Meditation Apps', 'Mood Trackers', 'Digital Detox Tools'],
     objectives: [
-      'Understand relationship giữa technology usage và mental health',
-      'Implement digital detox strategies và healthy tech habits',
-      'Use mental health apps effectively cho meditation và mood tracking',
-      'Set up wellness monitoring systems với wearables và smartphones',
-      'Create personalized digital wellness plan cho long-term mental health',
+      'Hiểu mối quan hệ giữa việc sử dụng công nghệ và sức khỏe tâm thần',
+      'Thực hiện các chiến lược cai nghiện kỹ thuật số và thói quen công nghệ lành mạnh',
+      'Sử dụng hiệu quả các ứng dụng sức khỏe tâm thần để thiền và theo dõi tâm trạng',
+      'Thiết lập hệ thống theo dõi sức khỏe với thiết bị đeo và điện thoại thông minh',
+      'Tạo kế hoạch sức khỏe kỹ thuật số cá nhân hóa cho sức khỏe tâm thần lâu dài',
     ],
     prerequisites: [
-      'Smartphone hoặc tablet với app installation capability',
-      'Basic understanding của mental health concepts',
-      'Willingness to track personal data và habits',
-      'Access to internet for app downloads và online resources',
-    ],
-    technologies: [
-      'Meditation Apps (Headspace, Calm, Insight Timer)',
-      'Mood Tracking Apps (Daylio, Moodtools)',
-      'Sleep Monitoring (Sleep Cycle, Fitbit)',
-      'Mindfulness Tools (Ten Percent Happier)',
-      'Therapy Platforms (BetterHelp, Talkspace)',
-      'Wearable Devices (Apple Watch, Fitbit, Oura Ring)',
+      'Điện thoại thông minh hoặc máy tính bảng có khả năng cài đặt ứng dụng',
+      'Hiểu biết cơ bản về các khái niệm sức khỏe tâm thần',
+      'Sẵn sàng theo dõi dữ liệu và thói quen cá nhân',
+      'Truy cập internet để tải ứng dụng và tài nguyên trực tuyến',
     ],
     exercises: [
       {
-        title: 'Build Personal Digital Wellness System',
+        title: 'Xây dựng Hệ thống Sức khỏe Kỹ thuật số Cá nhân',
         description:
-          'Create comprehensive digital wellness monitoring và intervention system using apps, wearables, và behavioral tracking',
+          'Tạo một hệ thống can thiệp và theo dõi sức khỏe kỹ thuật số toàn diện bằng cách sử dụng ứng dụng, thiết bị đeo và theo dõi hành vi.',
         difficulty: 'Trung bình',
+        procedure: [
+          'Đánh giá thói quen kỹ thuật số hiện tại và xác định các vấn đề.',
+          'Chọn và cài đặt các ứng dụng phù hợp (thiền, theo dõi tâm trạng).',
+          'Kết nối thiết bị đeo (nếu có) để theo dõi giấc ngủ, nhịp tim.',
+          'Thiết lập các giới hạn thời gian sử dụng mạng xã hội.',
+          'Lên lịch cho các khoảng thời gian "cai nghiện kỹ thuật số" hàng tuần.',
+          'Ghi lại và phân tích dữ liệu hàng tuần để xem xét tiến độ.',
+        ],
+        expectedResults:
+          'Một hệ thống sức khỏe kỹ thuật số được cá nhân hóa giúp theo dõi, can thiệp và tối ưu hóa sức khỏe tâm thần một cách chủ động.',
         solution:
-          "# Personal Digital Wellness System Design\n\n## 1. Digital Habits Assessment & Baseline\n\n### Current Technology Usage Analysis:\n- **Screen Time:** 8.5 hours/day average\n  - Work: 6 hours (productivity apps, meetings)\n  - Social Media: 1.5 hours (Instagram, Facebook, TikTok)\n  - Entertainment: 1 hour (YouTube, Netflix)\n\n- **Device Usage Patterns:**\n  - Phone pickups: 127 times/day\n  - First phone check: 6:30 AM (within 15 minutes of waking)\n  - Last phone use: 11:45 PM (30 minutes before sleep)\n  - Peak usage: 7-9 PM (3.2 hours continuous)\n\n### Mental Health Impact Assessment:\n- **Sleep Quality:** 6/10 (frequent late-night scrolling)\n- **Stress Levels:** 7/10 (work notifications after hours)\n- **Focus Quality:** 5/10 (frequent interruptions)\n- **Social Connection:** 4/10 (prefer digital over face-to-face)\n- **Physical Activity:** 3/10 (sedentary due to screen time)\n\n## 2. Technology Stack for Wellness Monitoring\n\n### Primary Monitoring Tools:\n\n#### Wearable Device: Apple Watch Series 9\n- **Heart Rate Variability (HRV):** Stress indicator monitoring\n- **Sleep Tracking:** REM, deep sleep, sleep duration\n- **Activity Monitoring:** Steps, exercise minutes, stand hours\n- **Mindfulness Reminders:** Breathe app notifications\n- **Noise Level Monitoring:** Environmental stress factors\n\n#### Smartphone Apps Integration:\n\n**Mood & Mental State:**\n- **Primary:** Daylio (mood tracking với custom categories)\n- **Secondary:** Sanvello (anxiety và mood monitoring)\n- **Features:** Daily check-ins, trigger identification, pattern recognition\n\n**Meditation & Mindfulness:**\n- **Primary:** Headspace (guided meditations, sleep stories)\n- **Secondary:** Insight Timer (free meditations, community)\n- **Usage:** 10-20 minutes daily, stress-response sessions\n\n**Sleep Optimization:**\n- **Primary:** Sleep Cycle (smart alarm, sleep analysis)\n- **Secondary:** Native Apple Health integration\n- **Metrics:** Sleep efficiency, time to fall asleep, wake quality\n\n**Digital Wellbeing:**\n- **iOS Screen Time:** App usage limits, downtime scheduling\n- **Moment:** Mindful phone usage tracking\n- **Focus Apps:** Forest app for concentration sessions\n\n## 3. Wellness Intervention Strategies\n\n### Automated Response System:\n\n#### Stress Detection & Response:\n- **Trigger:** HRV below personal baseline for 2+ hours\n- **Intervention:** Apple Watch breathing reminder + Headspace 3-minute meditation\n- **Follow-up:** Mood check-in through Daylio\n- **Escalation:** If stress persists >6 hours, prompt for professional support\n\n#### Sleep Optimization Protocol:\n- **Evening Routine:** 9 PM phone notification → Wind Down mode activation\n- **Blue Light Filtering:** Auto-enable at sunset\n- **Bedroom Environment:** Smart lights dim to warm temperature\n- **Wake Optimization:** Sleep Cycle smart alarm during light sleep phase\n\n#### Focus & Productivity Enhancement:\n- **Work Sessions:** 90-minute focus blocks với Forest app\n- **Break Reminders:** Apple Watch stand notifications\n- **Attention Training:** Daily 10-minute Headspace focus meditation\n- **Digital Boundaries:** Work apps blocked after 7 PM\n\n### Manual Intervention Protocols:\n\n#### Weekly Digital Detox:\n- **Saturday Mornings:** 3-hour phone-free period (9 AM - 12 PM)\n- **Activities:** Nature walk, reading, face-to-face socializing\n- **Preparation:** Inform contacts, plan alternative activities\n- **Reflection:** Journal about experience và mental state changes\n\n#### Mindful Technology Use:\n- **Intentional Check-ins:** Ask 'Why am I picking up my phone?' before use\n- **Single-tasking:** One screen at a time, no multitasking\n- **Social Media Boundaries:** Specific times (12 PM, 6 PM) for 15 minutes max\n- **News Consumption:** Once daily at designated time, avoid before bed\n\n## 4. Data Collection & Analysis Framework\n\n### Daily Metrics Tracking:\n\n#### Physiological Indicators:\n- **Resting Heart Rate:** Target: 60-70 BPM\n- **HRV Score:** Track weekly trends\n- **Sleep Score:** Aim for 85+ composite score\n- **Activity Levels:** 10,000+ steps, 30+ active minutes\n\n#### Psychological Indicators:\n- **Mood Rating:** 1-5 scale (Daylio)\n- **Stress Level:** 1-10 scale (evening reflection)\n- **Focus Quality:** Pomodoro completion rate\n- **Social Connection:** In-person vs digital interaction ratio\n\n#### Behavioral Indicators:\n- **Screen Time:** Target <7 hours total\n- **Phone Pickups:** Target <80 times/day\n- **Evening Screen Use:** End by 10 PM\n- **Morning Phone Delay:** Wait 30+ minutes after waking\n\n### Weekly Analysis & Optimization:\n\n#### Pattern Recognition:\n- **Stress Triggers:** Correlate HRV drops với activities, people, environments\n- **Sleep Disruptors:** Identify factors affecting sleep quality\n- **Mood Influences:** Connect mood changes với digital habits\n- **Productivity Patterns:** Optimal times for focused work\n\n#### Intervention Effectiveness:\n- **Meditation Impact:** Mood improvement post-session tracking\n- **Digital Boundaries:** Stress reduction when limits maintained\n- **Sleep Routine:** Quality improvement với consistent schedule\n- **Social Connection:** Wellbeing boost from in-person interactions\n\n## 5. Technology-Assisted Therapy Integration\n\n### Professional Support Platform:\n- **Primary:** BetterHelp for weekly video therapy sessions\n- **Preparation:** Pre-session mood và stress data sharing\n- **Integration:** Therapist access to weekly wellness reports\n- **Homework:** App-based exercises assigned by therapist\n\n### Peer Support Community:\n- **Platform:** Sanvello community forums\n- **Participation:** Weekly check-ins, support offering\n- **Privacy:** Anonymous sharing of progress và challenges\n- **Learning:** Others' strategies và success stories\n\n### Crisis Prevention:\n- **Warning Signs:** Mood below 2/5 for 3+ consecutive days\n- **Automated Alerts:** System prompts professional contact\n- **Emergency Contacts:** Quick access through health app\n- **Crisis Resources:** National suicide prevention hotline integration\n\n## 6. Long-term Wellness Goals & Milestones\n\n### 30-Day Goals:\n- **Establish Routine:** Consistent meditation practice (20+ days)\n- **Improve Sleep:** Average 7+ hours với 80+ quality score\n- **Digital Boundaries:** Maintain evening phone-free time\n- **Stress Management:** Reduce daily stress levels from 7/10 to 5/10\n\n### 90-Day Goals:\n- **Habit Integration:** Wellness practices become automatic\n- **Social Balance:** 50/50 digital vs in-person social interaction\n- **Focus Improvement:** Complete 90% of planned focus sessions\n- **Professional Growth:** Incorporate therapy insights into daily life\n\n### Annual Goals:\n- **Mental Health Literacy:** Complete online course về psychology\n- **Community Building:** Help others through peer support\n- **Technology Mastery:** Optimize personal wellness tech stack\n- **Resilience Building:** Handle stress với minimal technology dependence\n\n## 7. Privacy & Data Security Considerations\n\n### Data Protection Strategy:\n- **App Permissions:** Minimal data sharing, review privacy policies\n- **Health Data:** Use Apple Health as centralized, secure repository\n- **Backup Plans:** Regular export of important wellness data\n- **Professional Sharing:** Only share aggregate insights với therapist\n\n### Digital Footprint Management:\n- **Anonymous Usage:** Where possible, avoid linking to real identity\n- **Data Retention:** Regularly delete unnecessary historical data\n- **Platform Evaluation:** Choose providers với strong privacy commitments\n- **Consent Management:** Understand và control data usage permissions\n\n## 8. System Evaluation & Iteration\n\n### Monthly System Review:\n- **Effectiveness Assessment:** Which tools provide most value?\n- **Burden Evaluation:** Is tracking becoming stressful itself?\n- **Goal Adjustment:** Modify targets based on progress và life changes\n- **Technology Updates:** Explore new apps, retire unused tools\n\n### Quarterly Deep Analysis:\n- **Trend Identification:** Long-term patterns trong mental health data\n- **Intervention Optimization:** Refine automated responses\n- **Professional Consultation:** Therapist review of system effectiveness\n- **Life Integration:** Ensure technology supports rather than dominates wellness",
-        requirements: [
-          'Install và configure comprehensive mental health app suite',
-          'Set up wearable device với health monitoring',
-          'Create automated intervention systems',
-          'Establish daily tracking routine for 30 days',
-          'Implement digital boundaries và detox periods',
-        ],
-        hints: [
-          'Start với 2-3 core apps, add more gradually',
-          'Focus on consistency over perfection trong tracking',
-          'Use automation to reduce burden of manual tracking',
-          'Prioritize privacy when selecting mental health apps',
-        ],
-        expectedOutput:
-          'Comprehensive digital wellness system với automated monitoring, intervention protocols, và long-term mental health optimization',
+          'Giải pháp là một kế hoạch chi tiết kết hợp công nghệ (ứng dụng, thiết bị đeo) và thay đổi hành vi (giới hạn thời gian, cai nghiện kỹ thuật số) để tạo ra một lối sống kỹ thuật số cân bằng và lành mạnh.',
       },
     ],
     realWorldApplications: [
-      'Personal mental health management và prevention',
-      'Corporate wellness programs for employee wellbeing',
-      'Healthcare integration for patient monitoring',
-      'Educational institution mental health support',
-      'Community mental health program development',
+      'Quản lý và phòng ngừa sức khỏe tâm thần cá nhân',
+      'Các chương trình chăm sóc sức khỏe cho nhân viên trong công ty',
+      'Tích hợp theo dõi bệnh nhân trong lĩnh vực chăm sóc sức khỏe',
+      'Hỗ trợ sức khỏe tâm thần tại các cơ sở giáo dục',
+      'Phát triển chương trình sức khỏe tâm thần cộng đồng',
     ],
     resources: [
       {
-        title: 'Headspace Meditation App',
+        title: 'Headspace: Meditation & Sleep',
         url: 'https://www.headspace.com',
-        type: 'app',
-        description: 'Comprehensive meditation và mindfulness training với guided sessions',
+        type: 'Tool',
       },
       {
-        title: 'BetterHelp Online Therapy',
+        title: 'BetterHelp: Online Therapy',
         url: 'https://www.betterhelp.com',
-        type: 'therapy',
-        description: 'Professional online therapy platform với licensed therapists',
+        type: 'Tool',
       },
     ],
     caseStudies: [
       {
-        title: 'Tech Worker Burnout Recovery',
-        participant: 'Alex, Software Engineer, Age 29',
-        challenge:
-          'Severe burnout from 70+ hour work weeks, chronic insomnia, anxiety attacks, complete disconnection from physical và social wellness',
+        title: 'Phục hồi sau Burnout của một Nhân viên Công nghệ',
+        organization: 'Một công ty công nghệ',
+        problem:
+          'Burnout nghiêm trọng do làm việc 70+ giờ/tuần, mất ngủ kinh niên, các cơn lo âu và mất kết nối xã hội.',
         solution:
-          'Implemented comprehensive digital wellness system: HRV monitoring for stress, meditation app với daily practice, strict digital boundaries after 8 PM, weekly therapy via BetterHelp platform.',
-        results:
-          'Reduced anxiety levels by 60% trong 3 months, improved sleep quality from 4/10 to 8/10, returned to sustainable 45-hour work weeks, developed healthy technology relationship.',
-        insights: [
-          'Technology can be part of solution, not just the problem',
-          'Consistent small interventions more effective than dramatic changes',
-          'Professional therapy enhanced by digital wellness data',
-          'Setting boundaries requires both technology tools và personal discipline',
+          'Thực hiện một hệ thống sức khỏe kỹ thuật số toàn diện: theo dõi HRV để kiểm soát căng thẳng, thực hành thiền hàng ngày, đặt ra các ranh giới kỹ thuật số nghiêm ngặt sau 8 giờ tối và trị liệu hàng tuần qua nền tảng trực tuyến.',
+        impact:
+          'Giảm mức độ lo âu 60% trong 3 tháng, cải thiện chất lượng giấc ngủ, quay trở lại tuần làm việc 45 giờ bền vững và phát triển mối quan hệ lành mạnh với công nghệ.',
+        innovations: [
+          'Sử dụng công nghệ như một phần của giải pháp',
+          'Các can thiệp nhỏ, nhất quán hiệu quả hơn các thay đổi đột ngột',
+          'Dữ liệu sức khỏe kỹ thuật số hỗ trợ trị liệu chuyên nghiệp',
         ],
+      },
+    ],
+    vietnamContext: {
+      title: 'Sức khỏe tâm thần trong bối cảnh số hóa tại Việt Nam',
+      content: [
+        'Nhận thức về sức khỏe tâm thần ở Việt Nam đang tăng lên, đặc biệt trong giới trẻ, những người phải đối mặt với áp lực từ mạng xã hội và công việc.',
+        'Các ứng dụng thiền định và chăm sóc sức khỏe tinh thần như Calm, Headspace, và các ứng dụng Việt Nam như Mindful.vn đang dần trở nên phổ biến.',
+        'Tuy nhiên, vẫn còn nhiều rào cản về văn hóa và sự kỳ thị khi tìm kiếm sự giúp đỡ chuyên nghiệp cho các vấn đề sức khỏe tâm thần.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Đặng Thu Trang',
+      title: 'Nhà tâm lý học & Sáng lập ứng dụng Sức khỏe tinh thần',
+      company: 'Mindful.vn',
+      imageUrl: 'https://i.pravatar.cc/150?u=dang-thu-trang',
+      quote:
+        'Công nghệ không phải là kẻ thù của sức khỏe tâm thần nếu chúng ta biết cách sử dụng nó một cách khôn ngoan. Mục tiêu của chúng tôi là tạo ra các công cụ dễ tiếp cận, dựa trên bằng chứng khoa học để người Việt có thể chăm sóc cho tâm trí của mình mọi lúc, mọi nơi, phá vỡ rào cản về địa lý và sự e ngại.',
+    },
+    quizzes: [
+      {
+        question: 'Digital Detox (Cai nghiện kỹ thuật số) có nghĩa là gì?',
+        options: [
+          'Xóa tất cả các ứng dụng mạng xã hội',
+          'Một khoảng thời gian chủ động không sử dụng các thiết bị điện tử',
+          'Chỉ sử dụng điện thoại cho công việc',
+          'Chuyển sang dùng điện thoại phổ thông',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Digital detox là một khoảng thời gian tự nguyện mà một người không sử dụng các thiết bị điện tử như điện thoại thông minh hoặc máy tính để giảm căng thẳng và tập trung vào tương tác xã hội trong thế giới thực.',
+      },
+      {
+        question: 'Thiết bị đeo (wearables) có thể giúp theo dõi chỉ số nào quan trọng cho sức khỏe tâm thần?',
+        options: ['Số bước chân', 'Chất lượng giấc ngủ', 'Nhịp tim biến thiên (HRV)', 'Tất cả các đáp án trên'],
+        correctAnswerIndex: 3,
+        explanation:
+          'Tất cả các chỉ số trên đều cung cấp cái nhìn tổng quan về sức khỏe thể chất và tinh thần. Đặc biệt, chất lượng giấc ngủ và HRV là những chỉ số quan trọng phản ánh mức độ căng thẳng và khả năng phục hồi của cơ thể.',
       },
     ],
   },
   {
     id: 'ai-therapy-tools',
-    title: 'Bài 2: AI-Powered Mental Health Tools & Chatbot Therapy',
+    title: 'Bài 2: Công cụ Sức khỏe Tâm thần dùng AI & Trị liệu bằng Chatbot',
     description:
-      'Explore AI applications trong mental health: chatbot therapy, personalized interventions, predictive analytics. Build AI tools cho mental wellness support.',
+      'Khám phá các ứng dụng của AI trong sức khỏe tâm thần: trị liệu bằng chatbot, can thiệp cá nhân hóa, phân tích dự báo. Xây dựng các công cụ AI để hỗ trợ sức khỏe tinh thần.',
     videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     imageUrl: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '180 phút',
-    wellnessImpact: 'Accessible 24/7 mental health support, personalized interventions',
     objectives: [
-      'Understand AI applications trong mental health care và therapy',
-      'Evaluate effectiveness và limitations của AI therapy tools',
-      'Design conversational AI systems cho mental health support',
-      'Implement machine learning cho mood prediction và intervention',
-      'Address ethical considerations trong AI-powered mental health',
+      'Hiểu các ứng dụng của AI trong chăm sóc sức khỏe tâm thần và trị liệu',
+      'Đánh giá hiệu quả và hạn chế của các công cụ trị liệu AI',
+      'Thiết kế hệ thống AI đàm thoại để hỗ trợ sức khỏe tâm thần',
+      'Thực hiện học máy để dự đoán tâm trạng và can thiệp',
+      'Giải quyết các cân nhắc về đạo đức trong sức khỏe tâm thần do AI cung cấp',
     ],
     prerequisites: [
-      'Basic understanding của AI và machine learning concepts',
-      'Mental health awareness và digital wellness fundamentals',
-      'Programming experience (Python recommended)',
-      'Access to AI development tools và platforms',
-    ],
-    technologies: [
-      'Natural Language Processing (NLP)',
-      'Machine Learning Frameworks (TensorFlow, PyTorch)',
-      'Chatbot Platforms (Rasa, Dialogflow)',
-      'AI Therapy Apps (Woebot, Wysa, Replika)',
-      'Sentiment Analysis Tools',
-      'Voice AI Platforms (Amazon Alexa Skills)',
+      'Hiểu biết cơ bản về AI và các khái niệm học máy',
+      'Nhận thức về sức khỏe tâm thần và các nguyên tắc cơ bản về sức khỏe kỹ thuật số',
+      'Kinh nghiệm lập trình (khuyến nghị Python)',
+      'Truy cập vào các công cụ và nền tảng phát triển AI',
     ],
     exercises: [
       {
-        title: 'Build AI Mental Health Chatbot',
+        title: 'Xây dựng Chatbot Sức khỏe Tâm thần AI',
         description:
-          'Create intelligent chatbot providing mental health support, mood tracking, và personalized interventions using NLP và machine learning',
+          'Tạo một chatbot thông minh cung cấp hỗ trợ sức khỏe tâm thần, theo dõi tâm trạng và các can thiệp cá nhân hóa bằng cách sử dụng NLP và học máy.',
         difficulty: 'Nâng cao',
+        procedure: [
+          'Thiết kế kiến trúc hệ thống chatbot (NLU, quản lý hội thoại).',
+          'Chọn và huấn luyện mô hình NLP để nhận dạng ý định và thực thể.',
+          'Xây dựng luồng hội thoại cho các kịch bản phổ biến (kiểm tra tâm trạng, bài tập thư giãn).',
+          'Tích hợp một mô hình học máy đơn giản để đề xuất can thiệp dựa trên đầu vào.',
+          'Thiết lập các quy tắc an toàn để phát hiện và xử lý các tình huống khủng hoảng.',
+          'Tạo giao diện người dùng đơn giản để tương tác với chatbot.',
+        ],
+        expectedResults:
+          'Một chatbot AI sẵn sàng sản xuất với xác thực lâm sàng, các biện pháp bảo vệ đạo đức và khả năng tích hợp chuyên nghiệp.',
         solution:
-          "# AI Mental Health Chatbot Development: MindBot\n\n## 1. System Architecture & Design\n\n### Core Components:\n- **Natural Language Understanding (NLU):** Intent recognition, entity extraction\n- **Dialogue Management:** Conversation flow, context tracking\n- **Personalization Engine:** User modeling, adaptation over time\n- **Intervention Recommender:** ML-based suggestion system\n- **Safety Monitor:** Crisis detection và escalation protocols\n- **Analytics Dashboard:** Usage patterns, effectiveness metrics\n\n### Technology Stack:\n- **Backend:** Python với Flask framework\n- **NLP Engine:** spaCy + transformers (BERT-based models)\n- **ML Framework:** scikit-learn + TensorFlow\n- **Database:** PostgreSQL cho user data, Redis cho sessions\n- **Frontend:** React-based web interface + mobile app\n- **Deployment:** Docker containers on AWS/Azure\n\n## 2. Natural Language Processing Implementation\n\n### Intent Classification System:\n```python\nimport spacy\nfrom transformers import pipeline\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.naive_bayes import MultinomialNB\n\nclass MentalHealthNLU:\n    def __init__(self):\n        self.nlp = spacy.load('en_core_web_lg')\n        self.sentiment_analyzer = pipeline('sentiment-analysis', \n                                         model='cardiffnlp/twitter-roberta-base-sentiment')\n        self.intent_classifier = self.load_intent_model()\n        \n    def process_message(self, text):\n        \"\"\"Main processing pipeline for user messages\"\"\"\n        # Text preprocessing\n        cleaned_text = self.preprocess_text(text)\n        \n        # Extract linguistic features\n        doc = self.nlp(cleaned_text)\n        entities = [(ent.text, ent.label_) for ent in doc.ents]\n        \n        # Sentiment analysis\n        sentiment = self.sentiment_analyzer(cleaned_text)[0]\n        \n        # Intent classification\n        intent = self.classify_intent(cleaned_text)\n        \n        # Emotional state detection\n        emotions = self.detect_emotions(cleaned_text)\n        \n        # Crisis indicators\n        crisis_level = self.assess_crisis_risk(cleaned_text, emotions)\n        \n        return {\n            'text': cleaned_text,\n            'entities': entities,\n            'sentiment': sentiment,\n            'intent': intent,\n            'emotions': emotions,\n            'crisis_level': crisis_level,\n            'timestamp': datetime.now()\n        }\n    \n    def detect_emotions(self, text):\n        \"\"\"Advanced emotion detection beyond basic sentiment\"\"\"\n        emotion_keywords = {\n            'anxiety': ['worried', 'nervous', 'anxious', 'panic', 'stress'],\n            'depression': ['sad', 'hopeless', 'empty', 'worthless', 'tired'],\n            'anger': ['angry', 'frustrated', 'mad', 'irritated', 'furious'],\n            'joy': ['happy', 'excited', 'cheerful', 'glad', 'delighted'],\n            'fear': ['scared', 'afraid', 'terrified', 'fearful', 'worried']\n        }\n        \n        detected_emotions = {}\n        doc = self.nlp(text.lower())\n        \n        for emotion, keywords in emotion_keywords.items():\n            score = 0\n            for token in doc:\n                if token.lemma_ in keywords:\n                    score += 1\n                # Use word embeddings for semantic similarity\n                for keyword in keywords:\n                    similarity = token.similarity(self.nlp(keyword)[0])\n                    if similarity > 0.7:\n                        score += similarity\n            \n            detected_emotions[emotion] = min(score / len(keywords), 1.0)\n        \n        return detected_emotions\n    \n    def assess_crisis_risk(self, text, emotions):\n        \"\"\"Assess potential mental health crisis indicators\"\"\"\n        crisis_keywords = [\n            'suicide', 'kill myself', 'end it all', 'not worth living',\n            'harm myself', 'self-harm', 'cutting', 'overdose'\n        ]\n        \n        risk_score = 0\n        \n        # Direct keyword matching\n        for keyword in crisis_keywords:\n            if keyword in text.lower():\n                risk_score += 0.8\n        \n        # Emotional intensity indicators\n        if emotions.get('depression', 0) > 0.7:\n            risk_score += 0.3\n        if emotions.get('anxiety', 0) > 0.8:\n            risk_score += 0.2\n        \n        # Hopelessness indicators\n        hopelessness_patterns = ['no hope', 'nothing matters', 'give up']\n        for pattern in hopelessness_patterns:\n            if pattern in text.lower():\n                risk_score += 0.4\n        \n        # Normalize to 0-1 scale\n        return min(risk_score, 1.0)\n```\n\n### Conversation Management System:\n```python\nclass ConversationManager:\n    def __init__(self):\n        self.conversation_states = {\n            'greeting': GreetingState(),\n            'mood_check': MoodCheckState(),\n            'problem_exploration': ProblemExplorationState(),\n            'intervention': InterventionState(),\n            'crisis_response': CrisisResponseState(),\n            'closure': ClosureState()\n        }\n        self.current_state = 'greeting'\n        self.conversation_history = []\n        self.user_context = {}\n    \n    def process_user_input(self, user_input, nlu_results):\n        \"\"\"Main conversation processing logic\"\"\"\n        # Update conversation history\n        self.conversation_history.append({\n            'user_input': user_input,\n            'nlu_results': nlu_results,\n            'timestamp': datetime.now()\n        })\n        \n        # Crisis intervention takes priority\n        if nlu_results['crisis_level'] > 0.6:\n            self.current_state = 'crisis_response'\n            return self.handle_crisis_response(nlu_results)\n        \n        # Regular conversation flow\n        current_handler = self.conversation_states[self.current_state]\n        response, next_state = current_handler.process(user_input, nlu_results, self.user_context)\n        \n        # Update state và context\n        self.current_state = next_state\n        self.update_user_context(nlu_results)\n        \n        return response\n    \n    def handle_crisis_response(self, nlu_results):\n        \"\"\"Specialized crisis intervention protocol\"\"\"\n        crisis_response = {\n            'message': \"I'm concerned about what you've shared. Your safety is important. Would you like me to connect you with a crisis counselor right now?\",\n            'resources': [\n                {'name': 'National Suicide Prevention Lifeline', 'number': '988'},\n                {'name': 'Crisis Text Line', 'text': 'HOME to 741741'},\n                {'name': 'Emergency Services', 'number': '911'}\n            ],\n            'immediate_actions': [\n                'Stay with someone you trust',\n                'Remove any means of self-harm',\n                'Call emergency services if in immediate danger'\n            ],\n            'requires_human_escalation': True\n        }\n        \n        # Log crisis event for professional review\n        self.log_crisis_event(nlu_results)\n        \n        return crisis_response\n```\n\n## 3. Personalization & Machine Learning\n\n### User Modeling System:\n```python\nclass UserPersonalizationEngine:\n    def __init__(self):\n        self.user_models = {}\n        self.intervention_recommender = InterventionRecommender()\n        self.mood_predictor = MoodPredictor()\n    \n    def build_user_profile(self, user_id):\n        \"\"\"Create comprehensive user psychological profile\"\"\"\n        conversation_data = self.get_user_conversations(user_id)\n        \n        profile = {\n            'personality_traits': self.extract_personality_traits(conversation_data),\n            'emotional_patterns': self.analyze_emotional_patterns(conversation_data),\n            'stress_triggers': self.identify_stress_triggers(conversation_data),\n            'coping_mechanisms': self.identify_effective_coping(conversation_data),\n            'communication_style': self.analyze_communication_style(conversation_data),\n            'intervention_preferences': self.learn_intervention_preferences(conversation_data)\n        }\n        \n        return profile\n    \n    def recommend_intervention(self, user_id, current_mood, context):\n        \"\"\"ML-based intervention recommendation\"\"\"\n        user_profile = self.user_models[user_id]\n        \n        # Feature engineering\n        features = {\n            'current_mood_score': current_mood['valence'],\n            'anxiety_level': current_mood['anxiety'],\n            'time_of_day': datetime.now().hour,\n            'day_of_week': datetime.now().weekday(),\n            'previous_intervention_success': user_profile.get('last_intervention_rating', 0.5),\n            'personality_openness': user_profile['personality_traits']['openness'],\n            'stress_level': context.get('stress_level', 0.5)\n        }\n        \n        # Intervention options với success probability\n        interventions = [\n            {'type': 'breathing_exercise', 'duration': 5, 'complexity': 'low'},\n            {'type': 'guided_meditation', 'duration': 10, 'complexity': 'medium'},\n            {'type': 'cognitive_reframing', 'duration': 15, 'complexity': 'high'},\n            {'type': 'mindfulness_practice', 'duration': 8, 'complexity': 'medium'},\n            {'type': 'progressive_relaxation', 'duration': 12, 'complexity': 'medium'}\n        ]\n        \n        # ML model to predict intervention effectiveness\n        recommended = self.intervention_recommender.predict_best_intervention(\n            features, interventions, user_profile\n        )\n        \n        return recommended\n```\n\n### Mood Prediction & Trend Analysis:\n```python\nclass MoodPredictor:\n    def __init__(self):\n        self.model = self.load_trained_model()\n        self.feature_extractors = {\n            'linguistic': LinguisticFeatureExtractor(),\n            'temporal': TemporalFeatureExtractor(),\n            'contextual': ContextualFeatureExtractor()\n        }\n    \n    def predict_mood_trajectory(self, user_id, prediction_horizon_days=7):\n        \"\"\"Predict user's mood trajectory over next week\"\"\"\n        historical_data = self.get_user_mood_history(user_id, days=30)\n        \n        # Feature engineering\n        features = []\n        for extractor_name, extractor in self.feature_extractors.items():\n            extracted_features = extractor.extract(historical_data)\n            features.extend(extracted_features)\n        \n        # Generate predictions\n        predictions = []\n        for day in range(prediction_horizon_days):\n            future_features = self.extrapolate_features(features, day)\n            mood_prediction = self.model.predict([future_features])[0]\n            \n            predictions.append({\n                'date': datetime.now() + timedelta(days=day),\n                'predicted_mood': mood_prediction,\n                'confidence': self.model.predict_proba([future_features]).max(),\n                'risk_factors': self.identify_risk_factors(future_features)\n            })\n        \n        return predictions\n    \n    def generate_proactive_interventions(self, mood_predictions):\n        \"\"\"Generate preventive interventions based on predictions\"\"\"\n        interventions = []\n        \n        for prediction in mood_predictions:\n            if prediction['predicted_mood'] < 0.3:  # Low mood predicted\n                interventions.append({\n                    'trigger_date': prediction['date'] - timedelta(days=1),\n                    'intervention_type': 'mood_boost',\n                    'specific_actions': [\n                        'Schedule enjoyable activity',\n                        'Reach out to supportive friend',\n                        'Practice gratitude exercise'\n                    ],\n                    'rationale': f\"Low mood predicted với {prediction['confidence']:.2f} confidence\"\n                })\n        \n        return interventions\n```\n\n## 4. Ethical AI & Safety Protocols\n\n### Bias Detection & Mitigation:\n```python\nclass EthicalAIMonitor:\n    def __init__(self):\n        self.bias_detectors = {\n            'demographic': DemographicBiasDetector(),\n            'cultural': CulturalBiasDetector(),\n            'therapeutic': TherapeuticBiasDetector()\n        }\n    \n    def audit_response_bias(self, user_demographics, bot_responses):\n        \"\"\"Detect potential bias trong bot responses\"\"\"\n        bias_report = {}\n        \n        for bias_type, detector in self.bias_detectors.items():\n            bias_score = detector.analyze(\n                user_demographics, \n                bot_responses\n            )\n            bias_report[bias_type] = bias_score\n        \n        # Flag concerning bias levels\n        if any(score > 0.7 for score in bias_report.values()):\n            self.alert_bias_concern(bias_report)\n        \n        return bias_report\n    \n    def ensure_cultural_sensitivity(self, user_profile, intervention):\n        \"\"\"Adapt interventions for cultural appropriateness\"\"\"\n        cultural_context = user_profile.get('cultural_background', 'default')\n        \n        cultural_adaptations = {\n            'east_asian': {\n                'meditation_style': 'zen_buddhist',\n                'family_involvement': 'high',\n                'direct_expression': 'low'\n            },\n            'western': {\n                'meditation_style': 'mindfulness',\n                'family_involvement': 'medium',\n                'direct_expression': 'high'\n            }\n        }\n        \n        adaptation = cultural_adaptations.get(cultural_context, cultural_adaptations['western'])\n        \n        # Modify intervention based on cultural preferences\n        adapted_intervention = self.adapt_intervention(intervention, adaptation)\n        \n        return adapted_intervention\n```\n\n### Privacy Protection Framework:\n```python\nclass PrivacyProtectionSystem:\n    def __init__(self):\n        self.encryption_key = self.load_encryption_key()\n        self.anonymization_tools = AnonymizationToolkit()\n        self.consent_manager = ConsentManager()\n    \n    def protect_user_data(self, user_data):\n        \"\"\"Comprehensive data protection protocol\"\"\"\n        protected_data = {\n            'encrypted_content': self.encrypt_sensitive_data(user_data),\n            'anonymized_analytics': self.anonymize_for_research(user_data),\n            'retention_metadata': self.set_retention_policy(user_data)\n        }\n        \n        return protected_data\n    \n    def encrypt_sensitive_data(self, data):\n        \"\"\"End-to-end encryption for mental health conversations\"\"\"\n        sensitive_fields = ['conversation_text', 'mood_scores', 'personal_details']\n        \n        encrypted_data = data.copy()\n        for field in sensitive_fields:\n            if field trong data:\n                encrypted_data[field] = self.encrypt(data[field])\n        \n        return encrypted_data\n    \n    def anonymize_for_research(self, data):\n        \"\"\"Create anonymized dataset for research và improvement\"\"\"\n        anonymized = {\n            'conversation_patterns': self.extract_patterns_without_content(data),\n            'demographic_cluster': self.assign_demographic_cluster(data),\n            'intervention_effectiveness': self.measure_effectiveness_anonymously(data)\n        }\n        \n        return anonymized\n```\n\n## 5. Evaluation & Effectiveness Measurement\n\n### Clinical Validation Framework:\n```python\nclass ClinicalValidationSystem:\n    def __init__(self):\n        self.standardized_assessments = {\n            'depression': PHQ9Assessment(),\n            'anxiety': GAD7Assessment(),\n            'stress': PSS10Assessment()\n        }\n        self.effectiveness_tracker = EffectivenessTracker()\n    \n    def measure_therapeutic_alliance(self, user_id):\n        \"\"\"Measure relationship between user và AI therapist\"\"\"\n        conversation_data = self.get_user_conversations(user_id)\n        \n        alliance_metrics = {\n            'trust_indicators': self.extract_trust_signals(conversation_data),\n            'engagement_depth': self.measure_engagement_depth(conversation_data),\n            'disclosure_comfort': self.assess_disclosure_comfort(conversation_data),\n            'perceived_helpfulness': self.analyze_helpfulness_feedback(conversation_data)\n        }\n        \n        alliance_score = self.calculate_alliance_score(alliance_metrics)\n        \n        return {\n            'alliance_score': alliance_score,\n            'metrics': alliance_metrics,\n            'recommendations': self.generate_alliance_recommendations(alliance_metrics)\n        }\n    \n    def longitudinal_outcome_tracking(self, user_id, tracking_period_weeks=12):\n        \"\"\"Track mental health outcomes over time\"\"\"\n        baseline_assessment = self.get_baseline_assessment(user_id)\n        \n        outcome_measurements = []\n        for week in range(tracking_period_weeks):\n            weekly_data = self.get_weekly_interaction_data(user_id, week)\n            \n            outcome_measurements.append({\n                'week': week,\n                'mood_trend': self.calculate_mood_trend(weekly_data),\n                'coping_skill_usage': self.track_coping_skill_application(weekly_data),\n                'crisis_incidents': self.count_crisis_episodes(weekly_data),\n                'engagement_quality': self.assess_engagement_quality(weekly_data)\n            })\n        \n        return {\n            'baseline': baseline_assessment,\n            'outcomes': outcome_measurements,\n            'overall_improvement': self.calculate_overall_improvement(baseline_assessment, outcome_measurements),\n            'clinical_significance': self.assess_clinical_significance(baseline_assessment, outcome_measurements)\n        }\n```\n\n## 6. Integration với Professional Care\n\n### Human Therapist Collaboration:\n```python\nclass ProfessionalIntegrationSystem:\n    def __init__(self):\n        self.therapist_dashboard = TherapistDashboard()\n        self.referral_system = ReferralSystem()\n        self.collaboration_tools = CollaborationTools()\n    \n    def generate_therapist_summary(self, user_id, period_days=30):\n        \"\"\"Create professional summary for human therapists\"\"\"\n        user_data = self.aggregate_user_data(user_id, period_days)\n        \n        professional_summary = {\n            'client_overview': {\n                'interaction_frequency': user_data['session_count'],\n                'engagement_quality': user_data['avg_engagement_score'],\n                'primary_concerns': user_data['top_discussed_topics'],\n                'progress_indicators': user_data['improvement_metrics']\n            },\n            'clinical_observations': {\n                'mood_patterns': user_data['mood_trend_analysis'],\n                'stress_triggers': user_data['identified_stressors'],\n                'coping_strategies': user_data['effective_interventions'],\n                'risk_factors': user_data['risk_assessment']\n            },\n            'ai_recommendations': {\n                'therapeutic_focus_areas': self.identify_focus_areas(user_data),\n                'intervention_suggestions': self.suggest_human_interventions(user_data),\n                'collaboration_opportunities': self.identify_collaboration_points(user_data)\n            }\n        }\n        \n        return professional_summary\n    \n    def coordinate_care_plan(self, user_id, therapist_input):\n        \"\"\"Coordinate between AI và human therapist care plans\"\"\"\n        ai_insights = self.get_ai_analysis(user_id)\n        human_assessment = therapist_input\n        \n        integrated_plan = {\n            'shared_goals': self.align_treatment_goals(ai_insights, human_assessment),\n            'ai_support_role': self.define_ai_responsibilities(human_assessment),\n            'human_therapy_focus': self.define_human_focus_areas(ai_insights),\n            'progress_monitoring': self.setup_collaborative_monitoring(ai_insights, human_assessment)\n        }\n        \n        return integrated_plan\n```\n\n## 7. Deployment & Scaling Considerations\n\n### System Architecture for Scale:\n- **Load Balancing:** Handle 10,000+ concurrent conversations\n- **Database Optimization:** Sharding for user data, caching for frequent queries\n- **ML Model Serving:** TensorFlow Serving for real-time inference\n- **Monitoring:** Comprehensive logging, performance metrics, error tracking\n- **Compliance:** HIPAA compliance for healthcare data protection\n\n### Quality Assurance Protocol:\n- **Automated Testing:** Unit tests cho all ML components\n- **Human Review:** Clinical psychologists review sample conversations\n- **Bias Auditing:** Regular bias detection và mitigation\n- **Performance Monitoring:** Response time, accuracy metrics\n- **User Feedback Integration:** Continuous improvement based on user ratings",
-        requirements: [
-          'Design comprehensive NLP system cho mental health conversations',
-          'Implement machine learning models cho mood prediction',
-          'Create personalization engine adapting to individual users',
-          'Build crisis detection và intervention protocols',
-          'Ensure ethical AI practices và privacy protection',
-        ],
-        hints: [
-          'Start với rule-based system, gradually add ML components',
-          'Use pre-trained models (BERT, GPT) as foundation',
-          'Prioritize safety và crisis detection from beginning',
-          'Design for cultural sensitivity và bias mitigation',
-        ],
-        expectedOutput:
-          'Production-ready AI mental health chatbot với clinical validation, ethical safeguards, và professional integration capabilities',
+          'Giải pháp là một chatbot có khả năng hiểu ngôn ngữ tự nhiên, duy trì ngữ cảnh hội thoại, cá nhân hóa phản hồi, đề xuất các bài tập phù hợp và quan trọng nhất là nhận biết tình huống khủng hoảng để chuyển đến chuyên gia con người.',
       },
     ],
     realWorldApplications: [
-      'Clinical therapy support và augmentation',
-      'Workplace mental health programs',
-      'Educational institution counseling services',
-      'Community mental health outreach',
-      'Crisis intervention và suicide prevention',
+      'Hỗ trợ và tăng cường trị liệu lâm sàng',
+      'Các chương trình sức khỏe tâm thần tại nơi làm việc',
+      'Dịch vụ tư vấn tại các cơ sở giáo dục',
+      'Tiếp cận sức khỏe tâm thần cộng đồng',
+      'Can thiệp khủng hoảng và phòng chống tự tử',
     ],
     resources: [
       {
-        title: 'Woebot AI Therapy Platform',
+        title: 'Woebot - Your Mental Health Ally',
         url: 'https://woebot.io',
-        type: 'platform',
-        description: 'Evidence-based AI therapy chatbot để depression và anxiety support',
+        type: 'Tool',
       },
       {
-        title: 'Rasa Open Source Framework',
+        title: 'Rasa: Open Source Conversational AI',
         url: 'https://rasa.com',
-        type: 'platform',
-        description: 'Open-source framework để building conversational AI với NLP capabilities',
+        type: 'Tool',
       },
     ],
     caseStudies: [
       {
-        title: 'University Mental Health AI Implementation',
-        participant: 'State University, 25,000 students',
-        challenge:
-          'Overwhelming demand cho counseling services, 3-week wait times, limited 24/7 support, stigma preventing help-seeking behavior',
+        title: 'Triển khai AI Sức khỏe Tâm thần tại một trường Đại học',
+        organization: 'Một trường Đại học lớn',
+        problem:
+          'Nhu cầu về dịch vụ tư vấn quá tải, thời gian chờ đợi 3 tuần, hỗ trợ 24/7 hạn chế, và sự kỳ thị ngăn cản việc tìm kiếm sự giúp đỡ.',
         solution:
-          'Deployed AI chatbot integrated với existing counseling services. Provided immediate support, triaged urgent cases, offered coping strategies, và connected students to human counselors when needed.',
-        results:
-          'Reduced counseling wait times to 5 days, 40% increase trong help-seeking behavior, 24/7 crisis support availability, 85% user satisfaction rate, early intervention prevented 60+ crisis escalations.',
-        insights: [
-          'AI therapy lowers barriers to initial mental health engagement',
-          'Integration với human services essential cho comprehensive care',
-          'Anonymous access reduces stigma và increases usage',
-          'Continuous monitoring ensures safety và effectiveness',
+          'Triển khai một chatbot AI tích hợp với các dịch vụ tư vấn hiện có. Cung cấp hỗ trợ ngay lập tức, phân loại các trường hợp khẩn cấp, đưa ra các chiến lược đối phó và kết nối sinh viên với các nhà tư vấn con người khi cần thiết.',
+        impact:
+          'Giảm thời gian chờ đợi tư vấn xuống còn 5 ngày, tăng 40% hành vi tìm kiếm sự giúp đỡ, có sẵn hỗ trợ khủng hoảng 24/7, tỷ lệ hài lòng của người dùng đạt 85%, và can thiệp sớm đã ngăn chặn hơn 60 trường hợp leo thang khủng hoảng.',
+        innovations: [
+          'Trị liệu AI làm giảm rào cản ban đầu trong việc tiếp cận sức khỏe tâm thần',
+          'Tích hợp với dịch vụ con người là cần thiết cho việc chăm sóc toàn diện',
+          'Truy cập ẩn danh làm giảm sự kỳ thị và tăng cường sử dụng',
         ],
+      },
+    ],
+    vietnamContext: {
+      title: 'Tiềm năng và Thách thức của Chatbot trị liệu tại Việt Nam',
+      content: [
+        'Với sự thiếu hụt chuyên gia tâm lý và chi phí trị liệu cao, chatbot AI có thể là một giải pháp đầy hứa hẹn để cung cấp hỗ trợ sức khỏe tâm thần cơ bản, dễ tiếp cận cho người Việt.',
+        'Thách thức lớn nhất là về ngôn ngữ và văn hóa. Chatbot cần được huấn luyện trên dữ liệu tiếng Việt và hiểu các sắc thái văn hóa, các vấn đề tâm lý đặc thù của người Việt.',
+        'Các công ty công nghệ Việt Nam như Zalo AI, FPT.AI đang phát triển các mô hình ngôn ngữ lớn, mở ra tiềm năng xây dựng các chatbot trị liệu "thuần Việt" trong tương lai.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Phạm Tuấn Anh',
+      title: 'Kỹ sư AI/ML chuyên về NLP',
+      company: 'Một công ty khởi nghiệp về HealthTech',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-tuan-anh',
+      quote:
+        'Xây dựng một chatbot trị liệu không chỉ là về code. Đó là sự kết hợp giữa khoa học máy tính, ngôn ngữ học và tâm lý học. Thử thách lớn nhất của tôi là làm sao để AI không chỉ "hiểu" từ ngữ, mà còn "cảm nhận" được cảm xúc đằng sau đó và phản hồi một cách đồng cảm, phù hợp với văn hóa Việt Nam.',
+    },
+    quizzes: [
+      {
+        question: 'NLP (Natural Language Processing) là viết tắt của thuật ngữ gì?',
+        options: [
+          'Neuro-Linguistic Programming',
+          'Natural Language Processing',
+          'New Logic Programming',
+          'Network Learning Protocol',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'NLP, hay Xử lý Ngôn ngữ Tự nhiên, là một lĩnh vực của trí tuệ nhân tạo giúp máy tính hiểu, diễn giải và tạo ra ngôn ngữ của con người.',
+      },
+      {
+        question: 'Thách thức lớn nhất khi phát triển chatbot trị liệu cho thị trường Việt Nam là gì?',
+        options: [
+          'Thiếu hụt kỹ sư AI',
+          'Tốc độ internet chậm',
+          'Sự phức tạp của ngôn ngữ và các sắc thái văn hóa đặc thù',
+          'Chi phí máy chủ cao',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Để một chatbot thực sự hữu ích, nó cần phải hiểu sâu sắc về cách người Việt diễn đạt cảm xúc, các vấn đề họ thường đối mặt và các cách tiếp cận phù hợp với văn hóa, đây là một thách thức lớn về dữ liệu và mô hình.',
       },
     ],
   },

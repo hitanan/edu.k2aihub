@@ -21,33 +21,26 @@ const allLearningModules = moduleNavigation
     href: module.href || `/learning/${module.id}`,
     color: module.color,
     category: module.category, // Now supports both string and string[]
-  lessons: Array.isArray(module.lessons) ? module.lessons.length : 0,
+    lessons: Array.isArray(module.lessons) ? module.lessons.length : 0,
     features: module.features || [],
     icon: module.icon,
     tags: module.tags || [],
   }));
 
 // Helper function to get all categories for a module
-const getModuleCategories = (module: {
-  category: string | string[];
-}): string[] => {
+const getModuleCategories = (module: { category: string | string[] }): string[] => {
   return Array.isArray(module.category) ? module.category : [module.category];
 };
 
 // Helper function to check if module belongs to category
-const moduleInCategory = (
-  module: { category: string | string[] },
-  category: string,
-): boolean => {
+const moduleInCategory = (module: { category: string | string[] }, category: string): boolean => {
   const moduleCategories = getModuleCategories(module);
   return moduleCategories.includes(category);
 };
 
 // Count modules per category (supporting multi-category)
 const countModulesInCategory = (category: string): number => {
-  return allLearningModules.filter((module) =>
-    moduleInCategory(module, category),
-  ).length;
+  return allLearningModules.filter((module) => moduleInCategory(module, category)).length;
 };
 
 const categories = {
@@ -267,21 +260,13 @@ export default function AllLearningPageClient() {
     if (searchFromUrl) {
       setSearchTerm(searchFromUrl);
     }
-    if (
-      sortFromUrl &&
-      ['popular', 'duration', 'newest'].includes(sortFromUrl)
-    ) {
+    if (sortFromUrl && ['popular', 'duration', 'newest'].includes(sortFromUrl)) {
       setSortBy(sortFromUrl);
     }
   }, [searchParams]);
 
   // Function to update URL when filters change
-  const updateURL = (
-    newCategory: string,
-    newLevel: string,
-    newSearch: string,
-    newSort: string,
-  ) => {
+  const updateURL = (newCategory: string, newLevel: string, newSearch: string, newSort: string) => {
     if (!pathname) return;
 
     const params = new URLSearchParams();
@@ -291,9 +276,7 @@ export default function AllLearningPageClient() {
     if (newSearch) params.set('search', newSearch);
     if (newSort !== 'popular') params.set('sort', newSort);
 
-    const newUrl = params.toString()
-      ? `${pathname}?${params.toString()}`
-      : pathname;
+    const newUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname;
     router.replace(newUrl, { scroll: false });
   };
 
@@ -319,14 +302,9 @@ export default function AllLearningPageClient() {
   };
 
   // Filter modules based on search and filters with enhanced Vietnamese search
-  const filteredModules = searchModulesVietnamese(
-    allLearningModules,
-    searchTerm,
-  ).filter((module) => {
-    const matchesCategoryFilter =
-      selectedCategory === 'all' || moduleInCategory(module, selectedCategory);
-    const matchesLevelFilter =
-      selectedLevel === 'Tất cả' || module.level === selectedLevel;
+  const filteredModules = searchModulesVietnamese(allLearningModules, searchTerm).filter((module) => {
+    const matchesCategoryFilter = selectedCategory === 'all' || moduleInCategory(module, selectedCategory);
+    const matchesLevelFilter = selectedLevel === 'Tất cả' || module.level === selectedLevel;
 
     return matchesCategoryFilter && matchesLevelFilter;
   });
@@ -339,7 +317,7 @@ export default function AllLearningPageClient() {
       case 'newest':
         return b.id.localeCompare(a.id);
       default: // popular
-  return (b.lessons ?? 0) - (a.lessons ?? 0);
+        return (b.lessons ?? 0) - (a.lessons ?? 0);
     }
   });
 
@@ -351,9 +329,7 @@ export default function AllLearningPageClient() {
         <div className="relative overflow-x-hidden bg-gradient-to-r from-blue-600/20 to-purple-600/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                📚 Tất Cả Khóa Học
-              </h1>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">📚 Tất Cả Khóa Học</h1>
               <div className="w-3/4 h-6 bg-gray-600/50 animate-pulse rounded mx-auto mb-8"></div>
 
               {/* Loading Search Bar */}
@@ -378,7 +354,10 @@ export default function AllLearningPageClient() {
           {/* Loading Modules Grid - Shorter cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {Array.from({ length: 8 }).map((_, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10 animate-pulse">
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/10 animate-pulse"
+              >
                 {/* Compact header */}
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gray-600/50 rounded-lg"></div>
@@ -427,19 +406,19 @@ export default function AllLearningPageClient() {
   }
 
   return (
-    <div 
+    <div
       className="min-h-screen transition-all duration-1000 ease-out"
       style={{
         background: `linear-gradient(135deg, 
           rgb(15, 23, 42) 0%, 
           rgb(30, 58, 138) ${Math.min(50, scrollY * 0.1)}%, 
-          rgb(15, 23, 42) 100%)`
+          rgb(15, 23, 42) 100%)`,
       }}
     >
       {/* Enhanced Hero Section */}
       <div className="relative overflow-hidden">
         {/* Animated Background Pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `
@@ -449,36 +428,34 @@ export default function AllLearningPageClient() {
               radial-gradient(circle at 25% 75%, #10b981 0%, transparent 50%)
             `,
             backgroundSize: '400px 400px',
-            animation: 'float 20s ease-in-out infinite'
+            animation: 'float 20s ease-in-out infinite',
           }}
         />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
           <div className="text-center">
-            <h1 
+            <h1
               className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight"
               style={{
                 transform: `translateY(${scrollY * 0.2}px)`,
-                textShadow: '0 4px 20px rgba(59, 130, 246, 0.3)'
+                textShadow: '0 4px 20px rgba(59, 130, 246, 0.3)',
               }}
             >
               📚 Tất Cả Khóa Học
             </h1>
-            <p 
+            <p
               className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
               style={{
-                transform: `translateY(${scrollY * 0.1}px)`
+                transform: `translateY(${scrollY * 0.1}px)`,
               }}
             >
               Khám phá{' '}
               <strong className="text-transparent bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text">
                 {allLearningModules.length} khóa học chuyên sâu
               </strong>{' '}
-              từ Vietnamese business, AI technology, Electric Vehicle Tech,
-              Blockchain & DeFi, Biomedical Engineering, Environmental Data
-              Science, Food Technology, Aerospace Engineering, Nanotechnology
-              đến programming và science. Tất cả miễn phí và được thiết kế cho
-              thị trường Việt Nam.
+              từ Vietnamese business, AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering,
+              Environmental Data Science, Food Technology, Aerospace Engineering, Nanotechnology đến programming và
+              science. Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.
             </p>
 
             {/* Search Bar */}
@@ -491,9 +468,7 @@ export default function AllLearningPageClient() {
                   value={searchTerm}
                   onChange={(e) => handleSearchChange(e.target.value)}
                   onFocus={() => setShowSearchSuggestions(true)}
-                  onBlur={() =>
-                    setTimeout(() => setShowSearchSuggestions(false), 200)
-                  }
+                  onBlur={() => setTimeout(() => setShowSearchSuggestions(false), 200)}
                   className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
                 />
 
@@ -503,9 +478,7 @@ export default function AllLearningPageClient() {
                     {searchTerm === '' ? (
                       <>
                         <div className="mb-4">
-                          <h4 className="text-white font-medium mb-3">
-                            🔥 Tìm kiếm phổ biến:
-                          </h4>
+                          <h4 className="text-white font-medium mb-3">🔥 Tìm kiếm phổ biến:</h4>
                           <div className="flex flex-wrap gap-2 max-h-24 overflow-y-auto">
                             {popularSearchTerms.map((term) => (
                               <button
@@ -523,32 +496,25 @@ export default function AllLearningPageClient() {
                         </div>
 
                         <div className="mb-4">
-                          <h4 className="text-green-300 font-medium mb-2">
-                            🇻🇳 Hỗ trợ tiếng Việt không dấu:
-                          </h4>
+                          <h4 className="text-green-300 font-medium mb-2">🇻🇳 Hỗ trợ tiếng Việt không dấu:</h4>
                           <p className="text-gray-400 text-sm mb-2">
-                            Bạn có thể tìm kiếm bằng tiếng Việt có dấu hoặc
-                            không dấu. Ví dụ:
+                            Bạn có thể tìm kiếm bằng tiếng Việt có dấu hoặc không dấu. Ví dụ:
                           </p>
                           <div className="flex flex-wrap gap-2">
                             <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs border border-green-500/30">
                               &ldquo;lập trình&rdquo; = &ldquo;lap trinh&rdquo;
                             </span>
                             <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs border border-green-500/30">
-                              &ldquo;trí tuệ nhân tạo&rdquo; = &ldquo;tri tue
-                              nhan tao&rdquo;
+                              &ldquo;trí tuệ nhân tạo&rdquo; = &ldquo;tri tue nhan tao&rdquo;
                             </span>
                             <span className="px-2 py-1 bg-green-500/20 text-green-200 rounded text-xs border border-green-500/30">
-                              &ldquo;an ninh mạng&rdquo; = &ldquo;an ninh
-                              mang&rdquo;
+                              &ldquo;an ninh mạng&rdquo; = &ldquo;an ninh mang&rdquo;
                             </span>
                           </div>
                         </div>
 
                         <div>
-                          <h4 className="text-white font-medium mb-2">
-                            💡 Gợi ý khóa học:
-                          </h4>
+                          <h4 className="text-white font-medium mb-2">💡 Gợi ý khóa học:</h4>
                           <div className="space-y-2">
                             {searchSuggestions.slice(0, 6).map((suggestion) => (
                               <button
@@ -559,12 +525,8 @@ export default function AllLearningPageClient() {
                                 }}
                                 className="w-full text-left p-2 hover:bg-white/10 rounded-lg transition-colors"
                               >
-                                <div className="text-white font-medium">
-                                  {suggestion.term}
-                                </div>
-                                <div className="text-gray-400 text-sm">
-                                  {suggestion.description}
-                                </div>
+                                <div className="text-white font-medium">{suggestion.term}</div>
+                                <div className="text-gray-400 text-sm">{suggestion.description}</div>
                               </button>
                             ))}
                           </div>
@@ -576,8 +538,8 @@ export default function AllLearningPageClient() {
                           🔍 Kết quả tìm kiếm cho &ldquo;{searchTerm}&rdquo;
                         </h4>
                         <p className="text-gray-300 text-sm">
-                          Tìm thấy {filteredModules.length} khóa học phù hợp.
-                          Nhấn Enter hoặc click bên ngoài để xem kết quả.
+                          Tìm thấy {filteredModules.length} khóa học phù hợp. Nhấn Enter hoặc click bên ngoài để xem kết
+                          quả.
                         </p>
                       </div>
                     )}
@@ -606,11 +568,7 @@ export default function AllLearningPageClient() {
                   Tất cả danh mục
                 </option>
                 {Object.entries(categories).map(([key, cat]) => (
-                  <option
-                    key={key}
-                    value={key}
-                    className="bg-gray-800 text-white"
-                  >
+                  <option key={key} value={key} className="bg-gray-800 text-white">
                     {cat.title}
                   </option>
                 ))}
@@ -626,11 +584,7 @@ export default function AllLearningPageClient() {
                 className="bg-gray-800/80 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
               >
                 {levels.map((level) => (
-                  <option
-                    key={level}
-                    value={level}
-                    className="bg-gray-800 text-white"
-                  >
+                  <option key={level} value={level} className="bg-gray-800 text-white">
                     {level}
                   </option>
                 ))}
@@ -659,11 +613,7 @@ export default function AllLearningPageClient() {
 
             {/* Results count */}
             <div className="ml-auto text-gray-300">
-              Tìm thấy{' '}
-              <span className="text-blue-300 font-semibold">
-                {filteredModules.length}
-              </span>{' '}
-              khóa học
+              Tìm thấy <span className="text-blue-300 font-semibold">{filteredModules.length}</span> khóa học
             </div>
           </div>
         </div>
@@ -685,18 +635,11 @@ export default function AllLearningPageClient() {
                       {getModuleCategories(module)
                         .slice(0, 1)
                         .map((cat, idx) => (
-                          <span
-                            key={idx}
-                            className="bg-blue-500/20 text-blue-200 px-2 py-0.5 rounded-full text-xs"
-                          >
-                            {categories[
-                              cat as keyof typeof categories
-                            ]?.title.split(' ')[1] || cat}
+                          <span key={idx} className="bg-blue-500/20 text-blue-200 px-2 py-0.5 rounded-full text-xs">
+                            {categories[cat as keyof typeof categories]?.title.split(' ')[1] || cat}
                           </span>
                         ))}
-                      <span className="text-gray-400 text-xs ml-auto">
-                        {(module.lessons ?? 0)} bài
-                      </span>
+                      <span className="text-gray-400 text-xs ml-auto">{module.lessons ?? 0} bài</span>
                     </div>
                   </div>
                 </div>
@@ -706,14 +649,10 @@ export default function AllLearningPageClient() {
                   {module.title}
                 </h3>
 
-                <p className="text-blue-300 mb-2 font-medium text-sm line-clamp-1">
-                  {module.subtitle}
-                </p>
+                <p className="text-blue-300 mb-2 font-medium text-sm line-clamp-1">{module.subtitle}</p>
 
                 {/* Compact Description */}
-                <p className="text-gray-300 mb-3 text-sm leading-relaxed line-clamp-2">
-                  {module.description}
-                </p>
+                <p className="text-gray-300 mb-3 text-sm leading-relaxed line-clamp-2">{module.description}</p>
 
                 {/* Compact Meta Info */}
                 <div className="flex flex-wrap gap-2 mb-3">
@@ -730,18 +669,13 @@ export default function AllLearningPageClient() {
                 {/* Compact Features - Only show 2 */}
                 <div className="space-y-1 mb-3">
                   {module.features.slice(0, 2).map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="flex items-center text-gray-300 text-xs"
-                    >
+                    <div key={featureIndex} className="flex items-center text-gray-300 text-xs">
                       <span className="text-green-400 mr-1 text-xs">✓</span>
                       <span className="line-clamp-1">{feature}</span>
                     </div>
                   ))}
                   {module.features.length > 2 && (
-                    <div className="text-gray-400 text-xs">
-                      +{module.features.length - 2} tính năng
-                    </div>
+                    <div className="text-gray-400 text-xs">+{module.features.length - 2} tính năng</div>
                   )}
                 </div>
 
@@ -759,12 +693,8 @@ export default function AllLearningPageClient() {
         {filteredModules.length === 0 && (
           <div className="text-center py-16">
             <div className="text-6xl mb-6">🔍</div>
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Không tìm thấy khóa học phù hợp
-            </h3>
-            <p className="text-gray-300 mb-6">
-              Thử thay đổi từ khóa tìm kiếm hoặc bộ lọc để tìm khóa học khác
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-4">Không tìm thấy khóa học phù hợp</h3>
+            <p className="text-gray-300 mb-6">Thử thay đổi từ khóa tìm kiếm hoặc bộ lọc để tìm khóa học khác</p>
             <button
               onClick={() => {
                 handleSearchChange('');
@@ -783,9 +713,7 @@ export default function AllLearningPageClient() {
       {/* Popular Categories */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            🔥 Danh Mục Phổ Biến
-          </h2>
+          <h2 className="text-3xl font-bold text-white mb-4">🔥 Danh Mục Phổ Biến</h2>
           <p className="text-gray-300">Khám phá theo chủ đề yêu thích</p>
         </div>
 
@@ -803,15 +731,9 @@ export default function AllLearningPageClient() {
                   : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
               }`}
             >
-              <div className="text-2xl mb-2">
-                {category.title.split(' ')[0]}
-              </div>
-              <div className="text-sm font-medium mb-1">
-                {category.title.split(' ').slice(1).join(' ')}
-              </div>
-              <div className="text-xs text-gray-400">
-                {category.count} khóa học
-              </div>
+              <div className="text-2xl mb-2">{category.title.split(' ')[0]}</div>
+              <div className="text-sm font-medium mb-1">{category.title.split(' ').slice(1).join(' ')}</div>
+              <div className="text-xs text-gray-400">{category.count} khóa học</div>
             </button>
           ))}
         </div>
@@ -820,12 +742,9 @@ export default function AllLearningPageClient() {
       {/* Call to Action */}
       <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 py-16">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            🎯 Chưa biết bắt đầu từ đâu?
-          </h2>
+          <h2 className="text-4xl font-bold text-white mb-6">🎯 Chưa biết bắt đầu từ đâu?</h2>
           <p className="text-xl text-gray-300 mb-8">
-            Hãy bắt đầu với các khóa học cơ bản hoặc khám phá theo lĩnh vực yêu
-            thích!
+            Hãy bắt đầu với các khóa học cơ bản hoặc khám phá theo lĩnh vực yêu thích!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

@@ -1,53 +1,32 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 
-const socialMediaGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'digital-marketing-campaign');
-const contentCreatorGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'content-creator-studio');
-const aiArtGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'ai-art-studio');
-const seoGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'seo-optimization-challenge');
-
 export interface DigitalMarketingLesson extends BaseLessonData {
-  videoUrl: string;
-  tools: string[];
-  resources: Resource[];
   mainContent: {
     introduction: string;
-    keyConcepts: {
+    keyConcepts: Array<{
       title: string;
       description: string;
       examples: string[];
-    }[];
-    practicalApplications: {
+    }>;
+    practicalApplications: Array<{
       area: string;
       description: string;
       case_study: string;
-    }[];
+    }>;
     conclusion: string;
   };
-  relatedGames?: Array<{
+  relatedGames: Array<{
     id: string;
     name: string;
     description: string;
   }>;
 }
 
-// interface DigitalMarketingExercise {
-//   title: string;
-//   description: string;
-//   difficulty: string;
-//   solution: string;
-//   materials?: string[];
-//   procedure?: string[];
-//   expectedResults?: string;
-//   hints?: string[];
-// }
-
-interface Resource {
-  title: string;
-  url: string;
-  type: 'article' | 'tool' | 'video' | 'book';
-  description?: string;
-}
+const socialMediaGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'digital-marketing-campaign');
+const contentCreatorGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'content-creator-studio');
+const aiArtGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'ai-art-studio');
+const seoGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'seo-optimization-challenge');
 
 export const digitalMarketingLessons: DigitalMarketingLesson[] = [
   {
@@ -67,7 +46,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Xây dựng chiến lược marketing 360 độ',
     ],
     prerequisites: ['Kiến thức cơ bản về marketing', 'Hiểu biết về internet và social media'],
-    tools: ['Google Analytics', 'Facebook Business Manager', 'Google Ads', 'Canva', 'HubSpot', 'Mailchimp'],
     mainContent: {
       introduction:
         'Digital Marketing là một lĩnh vực rộng lớn và năng động, sử dụng các kênh kỹ thuật số để quảng bá sản phẩm hoặc dịch vụ. Bài học này sẽ cung cấp cho bạn nền tảng vững chắc về các khái niệm cốt lõi, các kênh chính và cách xây dựng một chiến lược marketing hiệu quả từ đầu.',
@@ -119,6 +97,49 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       conclusion:
         'Nắm vững các nguyên tắc cơ bản của Digital Marketing là bước đầu tiên và quan trọng nhất để xây dựng sự nghiệp thành công trong lĩnh vực này. Bằng cách hiểu rõ khách hàng và lựa chọn kênh phù hợp, bạn có thể tạo ra những chiến dịch có tác động lớn.',
     },
+    vietnamContext: {
+      title: 'Bối cảnh Digital Marketing tại Việt Nam',
+      content: [
+        'Thị trường Digital Marketing Việt Nam đang bùng nổ với tốc độ tăng trưởng hai con số, được thúc đẩy bởi dân số trẻ, tỷ lệ sử dụng internet và smartphone cao, cùng sự phát triển mạnh mẽ của thương mại điện tử và các nền tảng mạng xã hội.',
+        '**Tăng trưởng E-commerce:** Các sàn thương mại điện tử như Shopee, Lazada, Tiki và TikTok Shop đang thống trị, tạo ra nhu cầu lớn về các chuyên gia marketing có kỹ năng về quảng cáo trên sàn, SEO và quản lý gian hàng.',
+        '**Sự thống trị của Mạng xã hội:** Facebook và Zalo vẫn là các kênh quan trọng, nhưng TikTok đã trở thành nền tảng không thể thiếu để tiếp cận thế hệ Gen Z. Influencer Marketing (KOLs/KOCs) là một phần quan trọng trong các chiến dịch.',
+        '**Chuyển đổi số:** Chính phủ và các doanh nghiệp từ lớn đến nhỏ đều đang đẩy mạnh chuyển đổi số, làm tăng nhu cầu về các dịch vụ digital marketing để tiếp cận khách hàng trực tuyến.',
+      ],
+    },
+    careerConnect: {
+      name: 'Trần Minh Anh',
+      title: 'Digital Marketing Manager',
+      company: 'VNG Corporation',
+      imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop',
+      quote:
+        'Minh Anh có hơn 8 năm kinh nghiệm trong ngành, chịu trách nhiệm xây dựng và thực thi chiến lược marketing tổng thể cho các sản phẩm game và ứng dụng của VNG. Công việc của cô bao gồm quản lý ngân sách hàng triệu đô, dẫn dắt một đội ngũ chuyên gia về SEO, SEM, Social Media và phân tích dữ liệu để đạt được các mục tiêu tăng trưởng người dùng và doanh thu.',
+    },
+    quizzes: [
+      {
+        question: 'Buyer Persona là gì?',
+        options: [
+          'Một khách hàng thực tế đã mua sản phẩm.',
+          'Hồ sơ chi tiết về khách hàng lý tưởng của bạn.',
+          'Một nhân vật trong một chiến dịch quảng cáo.',
+          'Bản đồ hành trình của khách hàng.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Buyer Persona là một hồ sơ hư cấu nhưng dựa trên dữ liệu thực tế về khách hàng mục tiêu, giúp doanh nghiệp hiểu rõ hơn về đối tượng họ muốn tiếp cận.',
+      },
+      {
+        question: 'Kênh nào sau đây KHÔNG phải là một kênh Digital Marketing chính?',
+        options: [
+          'SEO (Search Engine Optimization)',
+          'Social Media Marketing',
+          'Email Marketing',
+          'Phát tờ rơi (Leaflet distribution)',
+        ],
+        correctAnswerIndex: 3,
+        explanation:
+          'Phát tờ rơi là một hình thức marketing truyền thống (offline), trong khi các lựa chọn còn lại đều là các kênh marketing kỹ thuật số (online).',
+      },
+    ],
     relatedGames: socialMediaGame
       ? [
           {
@@ -213,19 +234,16 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
         title: 'Google Digital Marketing Course',
         url: 'https://skillshop.withgoogle.com',
         type: 'tool',
-        description: 'Khóa học miễn phí từ Google về digital marketing',
       },
       {
         title: 'HubSpot Marketing Hub',
         url: 'https://hubspot.com',
         type: 'tool',
-        description: 'Platform marketing automation toàn diện',
       },
       {
         title: 'Digital Marketing Trends 2024',
         url: 'https://blog.hubspot.com/marketing/digital-marketing-trends',
         type: 'article',
-        description: 'Xu hướng marketing mới nhất',
       },
     ],
     caseStudies: [
@@ -260,15 +278,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Đo lường và phân tích hiệu quả social media',
     ],
     prerequisites: ['Hiểu biết cơ bản về social media', 'Kỹ năng viết content'],
-    tools: [
-      'Facebook Creator Studio',
-      'Instagram Business',
-      'TikTok for Business',
-      'Buffer',
-      'Hootsuite',
-      'Canva',
-      'Adobe Creative Suite',
-    ],
     mainContent: {
       introduction:
         'Social Media Marketing không chỉ là đăng bài lên Facebook. Đó là nghệ thuật và khoa học của việc sử dụng các nền tảng mạng xã hội để xây dựng thương hiệu, kết nối với khách hàng và thúc đẩy mục tiêu kinh doanh. Bài học này sẽ hướng dẫn bạn cách làm chủ các nền tảng phổ biến và tạo ra các chiến dịch có sức ảnh hưởng.',
@@ -320,6 +329,45 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       conclusion:
         'Social Media Marketing là một công cụ mạnh mẽ để kết nối với khách hàng ở cấp độ cá nhân. Bằng cách tạo ra nội dung hấp dẫn và xây dựng một cộng đồng thực sự, bạn có thể biến những người theo dõi thành những người ủng hộ thương hiệu nhiệt thành.',
     },
+    vietnamContext: {
+      title: 'Bối cảnh Social Media tại Việt Nam',
+      content: [
+        'Việt Nam là một trong những quốc gia có tỷ lệ sử dụng mạng xã hội cao nhất thế giới. Đây là kênh không thể thiếu để các thương hiệu tiếp cận và tương tác với khách hàng, đặc biệt là giới trẻ.',
+        '**Sự thống trị của Facebook & Zalo:** Facebook vẫn là nền tảng lớn nhất về số lượng người dùng. Zalo là ứng dụng nhắn tin và mạng xã hội phổ biến, đặc biệt hiệu quả cho việc chăm sóc khách hàng và marketing địa phương.',
+        '**Cơn sốt TikTok:** TikTok đã bùng nổ và trở thành nền tảng video ngắn hàng đầu, là kênh marketing chủ lực để tiếp cận Gen Z thông qua các video giải trí, các thử thách (challenge) và hợp tác với các nhà sáng tạo nội dung.',
+        '**Quyền lực của KOC/KOL:** Key Opinion Consumers (KOC) và Key Opinion Leaders (KOL) có ảnh hưởng rất lớn đến quyết định mua hàng. Các chiến dịch thành công thường kết hợp với các influencer phù hợp để tăng độ tin cậy và lan tỏa.',
+        '**Livestream Bán hàng:** Bán hàng qua livestream trên Facebook và TikTok là một hình thức cực kỳ phổ biến, kết hợp giải trí và thương mại để tạo ra doanh số ấn tượng trong thời gian ngắn.',
+      ],
+    },
+    careerConnect: {
+      name: 'Lê Thảo Nhi',
+      title: 'Social Media Specialist',
+      company: "Biti's",
+      imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+      quote:
+        "Thảo Nhi là người đứng sau các chiến dịch social media thành công của Biti's Hunter. Cô chịu trách nhiệm lên kế hoạch nội dung, quản lý cộng đồng trên các nền tảng Facebook, Instagram, TikTok, và làm việc trực tiếp với các KOLs để tạo ra các chiến dịch viral, góp phần làm mới hình ảnh thương hiệu và tiếp cận thành công thế hệ khách hàng trẻ.",
+    },
+    quizzes: [
+      {
+        question: 'Quy tắc 80/20 trong content strategy nghĩa là gì?',
+        options: [
+          '80% nội dung quảng cáo, 20% nội dung giá trị.',
+          '80% nội dung video, 20% nội dung hình ảnh.',
+          '80% nội dung giá trị, 20% nội dung quảng cáo.',
+          '80% bài đăng vào ban ngày, 20% vào ban đêm.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Quy tắc 80/20 gợi ý rằng phần lớn nội dung của bạn nên cung cấp giá trị (giáo dục, giải trí) cho khán giả, và chỉ một phần nhỏ nên trực tiếp quảng bá sản phẩm/dịch vụ.',
+      },
+      {
+        question: 'Tại Việt Nam, nền tảng nào được xem là "sân nhà" và rất hiệu quả cho marketing địa phương?',
+        options: ['LinkedIn', 'Zalo', 'Twitter', 'Pinterest'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Zalo là ứng dụng nhắn tin và mạng xã hội do Việt Nam phát triển, rất phổ biến và có các tính năng như Zalo Official Account, Zalo Shop hỗ trợ tốt cho các doanh nghiệp địa phương.',
+      },
+    ],
     relatedGames: socialMediaGame
       ? [
           {
@@ -386,13 +434,11 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
         title: 'Facebook Blueprint',
         url: 'https://www.facebook.com/business/learn',
         type: 'tool',
-        description: 'Khóa học chính thức từ Facebook về social media marketing',
       },
       {
         title: 'Later Social Media Calendar',
         url: 'https://later.com',
         type: 'tool',
-        description: 'Tool lập kế hoạch và đăng bài tự động',
       },
     ],
     caseStudies: [
@@ -427,7 +473,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Đo lường content performance và ROI',
     ],
     prerequisites: ['Kỹ năng viết cơ bản', 'Hiểu về target audience'],
-    tools: ['WordPress', 'Google Docs', 'Grammarly', 'BuzzSumo', 'CoSchedule', 'Yoast SEO', 'Google Trends'],
     mainContent: {
       introduction:
         'Content Marketing không chỉ là viết bài. Đó là việc tạo ra và phân phối nội dung có giá trị, liên quan và nhất quán để thu hút và giữ chân một đối tượng khán giả được xác định rõ ràng — và cuối cùng, để thúc đẩy hành động của khách hàng mang lại lợi nhuận. Bài học này sẽ dạy bạn cách kết hợp nghệ thuật kể chuyện với chiến lược để tạo ra nội dung thực sự nổi bật.',
@@ -480,6 +525,45 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       conclusion:
         'Content Marketing và Storytelling là trái tim của marketing hiện đại. Bằng cách cung cấp giá trị trước khi yêu cầu bất cứ điều gì, bạn xây dựng được niềm tin và mối quan hệ lâu dài với khách hàng, điều mà quảng cáo truyền thống khó có thể làm được.',
     },
+    vietnamContext: {
+      title: 'Bối cảnh Content Marketing tại Việt Nam',
+      content: [
+        'Tại Việt Nam, content marketing đang phát triển vượt bậc, không chỉ dừng lại ở viết bài SEO mà đã mở rộng ra nhiều định dạng sáng tạo và có tính bản địa hóa cao.',
+        "**Video là vua:** Video ngắn (TikTok, YouTube Shorts, Facebook Reels) và video dài (web series, phim ngắn) là các định dạng thu hút sự chú ý nhiều nhất. Các thương hiệu lớn như Biti's, Viettel đã rất thành công với các chiến dịch storytelling qua video.",
+        '**Nội dung bản địa và theo trend:** Nội dung cần phải "bắt trend" và sử dụng ngôn ngữ, văn hóa gần gũi với người Việt. Các meme, các câu nói viral trên mạng xã hội thường được các thương hiệu tích hợp vào nội dung của mình một cách khéo léo.',
+        '**Podcast và nội dung âm thanh:** Podcast đang dần trở nên phổ biến, đặc biệt trong các lĩnh vực phát triển bản thân, kinh doanh và công nghệ. Các nền tảng như Spotify và Apple Podcasts đang có lượng người nghe tăng trưởng tốt tại Việt Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Nguyễn Hà Linh',
+      title: 'Content Strategist',
+      company: 'Vietcetera Media',
+      imageUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop',
+      quote:
+        'Hà Linh chịu trách nhiệm xây dựng chiến lược nội dung dài hạn cho các kênh của Vietcetera, một trong những công ty truyền thông có ảnh hưởng nhất với giới trẻ Việt. Cô phân tích insight của độc giả, xác định các chủ đề tiềm năng, và phối hợp với đội ngũ biên tập viên, sản xuất video để tạo ra các tuyến bài viết, series podcast và video có giá trị, thu hút hàng triệu lượt xem mỗi tháng.',
+    },
+    quizzes: [
+      {
+        question:
+          'Giai đoạn nào của Content Funnel tập trung vào việc cung cấp các nội dung như Ebook, webinar, case study?',
+        options: ['Top of Funnel (TOFU)', 'Middle of Funnel (MOFU)', 'Bottom of Funnel (BOFU)', 'Post-Funnel'],
+        correctAnswerIndex: 1,
+        explanation:
+          'MOFU (Giai đoạn cân nhắc) là nơi bạn cung cấp các nội dung sâu hơn để giúp khách hàng tiềm năng đánh giá giải pháp của bạn, chẳng hạn như case study, webinar, ebook.',
+      },
+      {
+        question: 'Ví dụ nào sau đây là một hình thức của Content Repurposing?',
+        options: [
+          'Viết một bài blog hoàn toàn mới.',
+          'Xóa một bài blog cũ.',
+          'Biến một bài blog thành một chuỗi bài đăng trên Instagram.',
+          'Chạy quảng cáo cho một bài blog.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Content Repurposing là việc tái sử dụng một nội dung gốc và chuyển đổi nó sang các định dạng khác để tiếp cận khán giả trên nhiều kênh khác nhau.',
+      },
+    ],
     relatedGames: contentCreatorGame
       ? [
           {
@@ -547,13 +631,11 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
         title: 'StoryBrand Framework',
         url: 'https://storybrand.com',
         type: 'book',
-        description: "Framework tạo brand story theo hero's journey",
       },
       {
         title: 'Content Marketing Institute',
         url: 'https://contentmarketinginstitute.com',
         type: 'article',
-        description: 'Resource hub cho content marketing best practices',
       },
     ],
     caseStudies: [
@@ -588,15 +670,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Track SEO performance và ROI',
     ],
     prerequisites: ['Hiểu biết về websites và HTML cơ bản', 'Kỹ năng phân tích dữ liệu'],
-    tools: [
-      'Google Search Console',
-      'Google Analytics',
-      'SEMrush',
-      'Ahrefs',
-      'Screaming Frog',
-      'Yoast SEO',
-      'Google Keyword Planner',
-    ],
     mainContent: {
       introduction:
         'Tối ưu hóa Công cụ Tìm kiếm (SEO) là quá trình cải thiện trang web của bạn để tăng khả năng hiển thị của nó khi mọi người tìm kiếm các sản phẩm hoặc dịch vụ liên quan đến doanh nghiệp của bạn trong Google, Bing và các công cụ tìm kiếm khác. SEO không phải là một thủ thuật, mà là một tập hợp các phương pháp hay nhất giúp công cụ tìm kiếm hiểu và trình bày nội dung của bạn. Bài học này sẽ giải mã các yếu tố phức tạp của SEO thành các bước có thể hành động.',
@@ -651,6 +724,50 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       conclusion:
         'SEO là một cuộc marathon, không phải là một cuộc chạy nước rút. Bằng cách liên tục tạo ra nội dung chất lượng cao và tuân thủ các phương pháp hay nhất về kỹ thuật, bạn có thể xây dựng một nguồn lưu lượng truy cập không phải trả tiền bền vững và có giá trị, đây là một trong những tài sản quý giá nhất trong marketing kỹ thuật số.',
     },
+    vietnamContext: {
+      title: 'Bối cảnh SEO tại Việt Nam',
+      content: [
+        'SEO tại Việt Nam là một lĩnh vực cực kỳ cạnh tranh, đặc biệt trong các ngành như e-commerce, du lịch, và bất động sản. Google là công cụ tìm kiếm thống trị tuyệt đối.',
+        '**Ưu tiên Mobile-First:** Với phần lớn người dùng truy cập internet qua điện thoại, việc tối ưu hóa cho thiết bị di động (tốc độ tải trang, giao diện responsive) là yếu tố sống còn để có thứ hạng tốt.',
+        '**Tối ưu cho từ khóa tiếng Việt:** Việc nghiên cứu và tối ưu cho các từ khóa tiếng Việt có dấu và không dấu, cũng như các từ địa phương và từ lóng, là rất quan trọng để tiếp cận đúng đối tượng.',
+        '**Local SEO và Google Business Profile:** Đối với các doanh nghiệp có địa điểm thực tế, việc tối ưu hóa Google Business Profile (trước đây là Google My Business) để xuất hiện trên bản đồ là cực kỳ quan trọng để thu hút khách hàng địa phương.',
+        '**Xây dựng backlink chất lượng:** Các công cụ tìm kiếm ngày càng thông minh hơn trong việc đánh giá chất lượng backlink. Việc xây dựng liên kết từ các trang báo chí uy tín, các blog chuyên ngành tại Việt Nam mang lại giá trị cao hơn nhiều so với các backlink số lượng lớn nhưng kém chất lượng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Phạm Hoàng Long',
+      title: 'SEO Team Leader',
+      company: 'FPT Online',
+      imageUrl: 'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=400&h=400&fit=crop',
+      quote:
+        'Hoàng Long dẫn dắt đội ngũ SEO chịu trách nhiệm cho việc tăng trưởng traffic tự nhiên của các trang tin tức lớn như VnExpress. Anh chuyên sâu về Technical SEO, phân tích và tối ưu hóa cấu trúc website hàng triệu trang, xây dựng chiến lược nội dung dựa trên dữ liệu tìm kiếm để đảm bảo VnExpress luôn đứng đầu trong các kết quả tìm kiếm cho các tin tức nóng hổi.',
+    },
+    quizzes: [
+      {
+        question: 'Yếu tố nào sau đây thuộc về On-Page SEO?',
+        options: [
+          'Xây dựng backlink từ các trang khác.',
+          'Tối ưu hóa thẻ tiêu đề (title tag) của trang.',
+          'Chia sẻ bài viết lên mạng xã hội.',
+          'Chạy quảng cáo Google Ads.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'On-Page SEO bao gồm các hoạt động tối ưu hóa được thực hiện trực tiếp trên trang web của bạn, như tối ưu thẻ tiêu đề, nội dung, hình ảnh.',
+      },
+      {
+        question: 'Technical SEO KHÔNG bao gồm hoạt động nào sau đây?',
+        options: [
+          'Cải thiện tốc độ tải trang.',
+          'Viết nội dung cho bài blog.',
+          'Tạo sitemap.xml cho website.',
+          'Tối ưu hóa file robots.txt.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Viết nội dung thuộc về Content và On-Page SEO. Technical SEO tập trung vào các khía cạnh kỹ thuật của website để giúp công cụ tìm kiếm thu thập và lập chỉ mục hiệu quả hơn.',
+      },
+    ],
     relatedGames: seoGame
       ? [
           {
@@ -758,13 +875,11 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
         title: 'Google Search Central',
         url: 'https://developers.google.com/search',
         type: 'article',
-        description: 'Official SEO guidelines từ Google',
       },
       {
         title: 'Ahrefs SEO Toolset',
         url: 'https://ahrefs.com',
         type: 'tool',
-        description: 'Comprehensive SEO analysis và research tool',
       },
     ],
     caseStudies: [
@@ -799,15 +914,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Scale profitable campaigns và manage budgets',
     ],
     prerequisites: ['Hiểu biết về digital marketing funnel', 'Kỹ năng phân tích dữ liệu cơ bản'],
-    tools: [
-      'Google Ads',
-      'Facebook Ads Manager',
-      'Google Analytics',
-      'Facebook Pixel',
-      'Unbounce',
-      'Hotjar',
-      'Google Tag Manager',
-    ],
     mainContent: {
       introduction:
         'Quảng cáo trả phí (Paid Advertising), đặc biệt là Pay-Per-Click (PPC), là cách nhanh nhất để đưa thông điệp của bạn đến với đối tượng mục tiêu. Không giống như SEO, bạn có thể thấy kết quả gần như ngay lập tức. Tuy nhiên, để thành công, bạn cần một chiến lược vững chắc để không "đốt tiền" vô ích. Bài học này sẽ trang bị cho bạn kiến thức để chạy các chiến dịch có lợi nhuận trên các nền tảng lớn nhất.',
@@ -858,6 +964,45 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       conclusion:
         'Quảng cáo trả phí là một công cụ cực kỳ mạnh mẽ khi được sử dụng đúng cách. Nó đòi hỏi sự kết hợp giữa tư duy phân tích dữ liệu và sự sáng tạo trong thông điệp. Bằng cách liên tục thử nghiệm, đo lường và tối ưu hóa, bạn có thể xây dựng một cỗ máy tăng trưởng có thể dự đoán và mở rộng được.',
     },
+    vietnamContext: {
+      title: 'Bối cảnh Quảng cáo trả phí tại Việt Nam',
+      content: [
+        'Thị trường quảng cáo trả phí tại Việt Nam rất sôi động, với phần lớn ngân sách được chi cho Google và Meta (Facebook/Instagram). Các nền tảng mới như TikTok Ads và quảng cáo trên các sàn e-commerce cũng đang tăng trưởng nhanh chóng.',
+        '**Facebook Ads là kênh chủ đạo:** Đối với nhiều doanh nghiệp, đặc biệt là trong lĩnh vực B2C và e-commerce, Facebook Ads vẫn là kênh mang lại hiệu quả cao nhất nhờ khả năng nhắm mục tiêu chi tiết và tệp người dùng khổng lồ.',
+        '**Sự trỗi dậy của TikTok Ads:** TikTok Ads đang trở thành lựa chọn hàng đầu để tiếp cận Gen Z. Các định dạng quảng cáo sáng tạo, tự nhiên và có tính giải trí cao thường hoạt động tốt nhất trên nền tảng này.',
+        '**Tầm quan trọng của Landing Page tiếng Việt:** Một chiến dịch quảng cáo tốt có thể thất bại nếu landing page không được tối ưu. Landing page cần có nội dung tiếng Việt rõ ràng, thuyết phục, và giao diện thân thiện với người dùng di động.',
+        '**Thách thức về "chạy bùng":** Tình trạng "chạy bùng" quảng cáo (không trả tiền cho nền tảng) là một vấn đề nhức nhối tại Việt Nam, dẫn đến việc các nền tảng như Facebook và Google ngày càng siết chặt chính sách, gây khó khăn cho cả những nhà quảng cáo chân chính.',
+      ],
+    },
+    careerConnect: {
+      name: 'Vũ Anh Tuấn',
+      title: 'Performance Marketing Lead',
+      company: 'Shopee Việt Nam',
+      imageUrl: 'https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&h=400&fit=crop',
+      quote:
+        'Anh Tuấn quản lý một ngân sách quảng cáo khổng lồ, chịu trách nhiệm thu hút hàng triệu người dùng mới và thúc đẩy doanh số cho Shopee thông qua các kênh quảng cáo trả phí. Công việc của anh là phân tích dữ liệu, tối ưu hóa từng đồng chi tiêu để đạt được ROAS (Return on Ad Spend) cao nhất có thể. Anh là chuyên gia về Google Ads, Facebook Ads và các hệ thống quảng cáo tự động.',
+    },
+    quizzes: [
+      {
+        question: 'ROAS là viết tắt của từ gì?',
+        options: ['Return on SEO', 'Revenue on Ad Spend', 'Return on Ad Spend', 'Revenue of Advertising System'],
+        correctAnswerIndex: 2,
+        explanation:
+          'ROAS (Return on Ad Spend) là chỉ số đo lường doanh thu tạo ra trên mỗi đồng chi tiêu cho quảng cáo, một KPI cực kỳ quan trọng trong performance marketing.',
+      },
+      {
+        question: 'Remarketing (Tiếp thị lại) là gì?',
+        options: [
+          'Nhắm mục tiêu đến khách hàng mới.',
+          'Nhắm mục tiêu đến những người đã từng tương tác với website hoặc ứng dụng của bạn.',
+          'Nhắm mục tiêu đến khách hàng của đối thủ.',
+          'Nhắm mục tiêu dựa trên vị trí địa lý.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Remarketing là một chiến thuật mạnh mẽ để hiển thị quảng cáo cho những người đã thể hiện sự quan tâm đến thương hiệu của bạn, giúp tăng tỷ lệ chuyển đổi.',
+      },
+    ],
     relatedGames: socialMediaGame
       ? [
           {
@@ -988,13 +1133,11 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
         title: 'Google Ads Skillshop',
         url: 'https://skillshop.withgoogle.com',
         type: 'tool',
-        description: 'Official Google Ads certification courses',
       },
       {
         title: 'Facebook Blueprint',
         url: 'https://www.facebook.com/business/learn',
         type: 'tool',
-        description: 'Facebook advertising certification platform',
       },
     ],
     caseStudies: [
@@ -1032,7 +1175,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Measure email marketing ROI và performance',
     ],
     prerequisites: ['Hiểu customer journey', 'Kỹ năng copywriting cơ bản'],
-    tools: ['Mailchimp', 'HubSpot', 'ActiveCampaign', 'ConvertKit', 'Klaviyo', 'Litmus', 'Canva'],
     mainContent: {
       introduction:
         'Email Marketing vẫn là một trong những kênh có ROI (Return on Investment) cao nhất trong digital marketing. Nó cho phép bạn xây dựng mối quan hệ trực tiếp và cá nhân với khách hàng. Khi kết hợp với tự động hóa (automation), nó trở thành một cỗ máy mạnh mẽ để nuôi dưỡng khách hàng tiềm năng và thúc đẩy doanh số một cách tự động. Bài học này sẽ chỉ cho bạn cách xây dựng các hệ thống email marketing hiệu quả.',
@@ -1087,6 +1229,50 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       conclusion:
         'Email Marketing là một tài sản mà bạn sở hữu, không giống như lượng người theo dõi trên mạng xã hội có thể biến mất nếu nền tảng thay đổi thuật toán. Bằng cách xây dựng một danh sách email chất lượng và giao tiếp với họ một cách có chiến lược, bạn đang xây dựng một kênh marketing bền vững và có lợi nhuận cao.',
     },
+    vietnamContext: {
+      title: 'Bối cảnh Email Marketing tại Việt Nam',
+      content: [
+        'Mặc dù bị cạnh tranh bởi các kênh như Zalo và Messenger, Email Marketing vẫn là một công cụ hiệu quả tại Việt Nam, đặc biệt trong các lĩnh vực B2B, e-commerce và các ngành dịch vụ.',
+        '**Tỷ lệ mở email trên di động cao:** Phần lớn người Việt kiểm tra email trên điện thoại di động. Do đó, các email phải được thiết kế theo phong cách mobile-first, với tiêu đề ngắn gọn, nội dung dễ đọc và các nút kêu gọi hành động (CTA) lớn.',
+        '**Cá nhân hóa và phân khúc là chìa khóa:** Người dùng Việt Nam nhận được rất nhiều email quảng cáo mỗi ngày. Để nổi bật, các email cần được cá nhân hóa cao, gửi đúng nội dung cho đúng đối tượng dựa trên hành vi và sở thích của họ.',
+        '**Tích hợp với các kênh khác:** Email marketing hoạt động hiệu quả nhất khi được kết hợp với các kênh khác. Ví dụ, sử dụng email để nuôi dưỡng khách hàng tiềm năng thu được từ quảng cáo Facebook, hoặc để thông báo về một buổi livestream sắp diễn ra.',
+      ],
+    },
+    careerConnect: {
+      name: 'Đặng Thu Trang',
+      title: 'CRM Manager',
+      company: 'The Coffee House',
+      imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
+      quote:
+        'Thu Trang chịu trách nhiệm quản lý mối quan hệ với hàng triệu khách hàng của The Coffee House thông qua các kênh trực tiếp như Email và ứng dụng di động. Cô thiết kế các chuỗi email tự động (ví dụ: chúc mừng sinh nhật, nhắc nhở điểm thưởng sắp hết hạn), phân khúc khách hàng để gửi các ưu đãi phù hợp, và phân tích dữ liệu để tăng tỷ lệ khách hàng quay lại và giá trị vòng đời khách hàng (LTV).',
+    },
+    quizzes: [
+      {
+        question: 'Workflow tự động nào thường được sử dụng trong e-commerce để cứu vãn doanh số?',
+        options: [
+          'Chuỗi email chào mừng (Welcome series)',
+          'Chuỗi email nhắc nhở giỏ hàng bị bỏ quên (Abandoned cart)',
+          'Chuỗi email giới thiệu sản phẩm mới',
+          'Chuỗi email chúc mừng sinh nhật',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Chuỗi email nhắc nhở giỏ hàng bị bỏ quên được kích hoạt khi người dùng thêm sản phẩm vào giỏ hàng nhưng không hoàn tất thanh toán, đây là một trong những workflow tự động có ROI cao nhất.',
+      },
+      {
+        question: 'SPF và DKIM là gì?',
+        options: [
+          'Các chỉ số đo lường hiệu quả email.',
+          'Các phương pháp xác thực tên miền để cải thiện khả năng gửi email (deliverability).',
+          'Các loại phân khúc khách hàng.',
+          'Tên của các nhà cung cấp dịch vụ email.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'SPF (Sender Policy Framework) và DKIM (DomainKeys Identified Mail) là các bản ghi DNS giúp các máy chủ email xác minh rằng email được gửi từ một nguồn hợp lệ, giúp email vào hộp thư đến thay vì spam.',
+      },
+    ],
+    relatedGames: [],
     exercises: [
       {
         title: 'Email Automation Workflow',
@@ -1183,6 +1369,7 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
 - **Industry-Specific:** Customize examples based on company industry
 
 ## Performance Targets:
+
 - Open Rate: >25%
 - Click-through Rate: >5%
 - Trial-to-Paid Conversion: >15%
@@ -1208,13 +1395,11 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
         title: 'Really Good Emails',
         url: 'https://reallygoodemails.com',
         type: 'article',
-        description: 'Curated collection of well-designed email examples',
       },
       {
         title: 'Klaviyo Email Marketing Guide',
         url: 'https://www.klaviyo.com/marketing-resources',
         type: 'tool',
-        description: 'Comprehensive email marketing resources và templates',
       },
     ],
     caseStudies: [
@@ -1252,15 +1437,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Make data-driven marketing decisions',
     ],
     prerequisites: ['Hiểu biết về digital marketing metrics', 'Kỹ năng Excel/Google Sheets cơ bản'],
-    tools: [
-      'Google Analytics 4',
-      'Google Tag Manager',
-      'Google Data Studio',
-      'Hotjar',
-      'Mixpanel',
-      'Optimizely',
-      'Facebook Analytics',
-    ],
     mainContent: {
       introduction:
         'Trong marketing hiện đại, "cảm tính" không còn chỗ đứng. Mọi quyết định đều cần được dựa trên dữ liệu. Data-Driven Marketing là phương pháp sử dụng dữ liệu khách hàng để tối ưu hóa các chiến dịch và đưa ra quyết định sáng suốt. Bài học này sẽ dạy bạn cách thu thập, phân tích và biến dữ liệu thô thành những hiểu biết sâu sắc có thể hành động để thúc đẩy tăng trưởng.',
@@ -1312,6 +1488,45 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       conclusion:
         'Dữ liệu là la bàn của nhà marketing hiện đại. Bằng cách học cách đọc và diễn giải nó, bạn có thể điều hướng các chiến dịch của mình một cách tự tin, tránh lãng phí ngân sách và liên tục cải thiện kết quả. Việc áp dụng tư duy dựa trên dữ liệu sẽ tách biệt các nhà marketing nghiệp dư khỏi các chuyên gia thực thụ.',
     },
+    vietnamContext: {
+      title: 'Bối cảnh Marketing dựa trên dữ liệu tại Việt Nam',
+      content: [
+        'Các doanh nghiệp Việt Nam ngày càng nhận thức được tầm quan trọng của dữ liệu. Tuy nhiên, việc áp dụng vẫn còn ở giai đoạn đầu so với các thị trường phát triển. Nhu cầu về các chuyên gia phân tích dữ liệu marketing đang tăng rất nhanh.',
+        '**Chuyển đổi sang Google Analytics 4:** Việc Google khai tử Universal Analytics và chuyển hoàn toàn sang Google Analytics 4 (GA4) đã tạo ra một thách thức và cơ hội lớn. Các doanh nghiệp cần học cách sử dụng mô hình dựa trên sự kiện của GA4 để hiểu rõ hơn về hành trình khách hàng.',
+        '**Nhu cầu về chuyên gia phân tích:** Thị trường đang thiếu hụt nhân sự có khả năng không chỉ thu thập mà còn phân tích và biến dữ liệu thành các insight kinh doanh có giá trị. Đây là một kỹ năng được săn đón với mức lương cao.',
+        '**Tích hợp dữ liệu đa kênh:** Thách thức lớn là làm thế nào để hợp nhất dữ liệu từ nhiều nguồn khác nhau (website, app, cửa hàng offline, mạng xã hội, sàn e-commerce) để có một cái nhìn 360 độ về khách hàng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Hoàng Bích Ngọc',
+      title: 'Senior Marketing Analyst',
+      company: 'Traveloka Việt Nam',
+      imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop',
+      quote:
+        'Bích Ngọc là "thám tử dữ liệu" của team marketing. Cô dành phần lớn thời gian làm việc với Google Analytics, SQL và các công cụ BI (Business Intelligence) để trả lời những câu hỏi kinh doanh quan trọng như: "Chiến dịch nào mang lại ROI cao nhất?", "Tại sao người dùng lại từ bỏ ở bước thanh toán?", "Phân khúc khách hàng nào có giá trị nhất?". Những phân tích của cô là cơ sở để ban lãnh đạo đưa ra các quyết định chiến lược.',
+    },
+    quizzes: [
+      {
+        question: 'A/B Testing là gì?',
+        options: [
+          'Hiển thị cùng một phiên bản cho tất cả người dùng.',
+          'Hiển thị hai phiên bản khác nhau của một trang cho hai nhóm người dùng để xem phiên bản nào hiệu quả hơn.',
+          'Phân tích hành vi của người dùng trong quá khứ.',
+          'Thu thập phản hồi của người dùng qua khảo sát.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'A/B Testing là một phương pháp thử nghiệm có kiểm soát để so sánh hiệu quả của hai phiên bản (A và B) và đưa ra quyết định dựa trên dữ liệu thực tế.',
+      },
+      {
+        question:
+          'Công cụ nào của Google cho phép quản lý các thẻ theo dõi (tracking tags) trên website một cách linh hoạt?',
+        options: ['Google Analytics', 'Google Search Console', 'Google Tag Manager', 'Google Data Studio'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Google Tag Manager (GTM) là một hệ thống quản lý thẻ giúp bạn dễ dàng cập nhật và quản lý các đoạn mã theo dõi (còn gọi là tags hoặc pixels) trên trang web hoặc ứng dụng di động của mình mà không cần chỉnh sửa code.',
+      },
+    ],
     relatedGames: aiArtGame
       ? [
           {
@@ -1486,13 +1701,11 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
         title: 'Google Analytics Academy',
         url: 'https://analytics.google.com/analytics/academy/',
         type: 'tool',
-        description: 'Free comprehensive Google Analytics training',
       },
       {
         title: 'Google Data Studio Templates',
         url: 'https://datastudio.google.com/gallery',
         type: 'tool',
-        description: 'Pre-built dashboard templates cho marketing analytics',
       },
     ],
     caseStudies: [
@@ -1530,15 +1743,6 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       'Scale personal brand thành business empire',
     ],
     prerequisites: ['Hiểu social media platforms', 'Content creation experience'],
-    tools: [
-      'Instagram Creator Studio',
-      'YouTube Studio',
-      'TikTok Creator Fund',
-      'Patreon',
-      'Gumroad',
-      'LinkTree',
-      'Later',
-    ],
     mainContent: {
       introduction:
         'Nền kinh tế sáng tạo (Creator Economy) đã mở ra một con đường sự nghiệp hoàn toàn mới, nơi các cá nhân có thể kiếm sống và xây dựng doanh nghiệp từ chính nội dung và thương hiệu cá nhân của họ. Đây không còn là sân chơi chỉ dành cho những người nổi tiếng. Bất kỳ ai có chuyên môn và đam mê đều có thể tham gia. Bài học này sẽ cung cấp cho bạn một lộ trình để biến đam mê sáng tạo thành một nguồn thu nhập bền vững.',
@@ -1594,6 +1798,45 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
       conclusion:
         'Trở thành một nhà sáng tạo thành công đòi hỏi sự kiên trì, nhất quán và tư duy của một doanh nhân. Bằng cách tập trung vào việc phục vụ một đối tượng khán giả cụ thể và đa dạng hóa nguồn thu nhập, bạn có thể xây dựng một sự nghiệp linh hoạt, tự chủ và đầy ý nghĩa từ chính đam mê của mình.',
     },
+    vietnamContext: {
+      title: 'Bối cảnh Creator Economy tại Việt Nam',
+      content: [
+        'Creator Economy ở Việt Nam đang phát triển với tốc độ chóng mặt, tạo ra một thế hệ những người nổi tiếng và doanh nhân mới trên không gian mạng. Thị trường này rất năng động nhưng cũng đầy cạnh tranh.',
+        '**Sự bùng nổ của các nền tảng:** YouTube, Facebook, Instagram và đặc biệt là TikTok là những "sân khấu" chính cho các nhà sáng tạo Việt Nam. Mỗi nền tảng có một đặc thù riêng và đòi hỏi chiến lược nội dung khác nhau.',
+        '**Từ KOL đến KOC:** Xu hướng đang dịch chuyển từ các KOL (Key Opinion Leader) có lượng theo dõi lớn sang các KOC (Key Opinion Consumer) - những người tiêu dùng có sức ảnh hưởng, đưa ra các đánh giá chân thực và có tỷ lệ chuyển đổi cao hơn.',
+        '**Các hình thức kiếm tiền phổ biến:** Ngoài quảng cáo trực tiếp từ nền tảng, các nhà sáng tạo Việt Nam chủ yếu kiếm tiền qua: hợp đồng quảng cáo với nhãn hàng (brand deals), affiliate marketing (đặc biệt là cho các sàn e-commerce), bán hàng qua livestream, và bán sản phẩm/dịch vụ của riêng mình.',
+        '**MCN và các Agency:** Các Multi-Channel Network (MCN) và agency quản lý tài năng đóng vai trò quan trọng trong việc kết nối nhà sáng tạo với các nhãn hàng, hỗ trợ sản xuất và phát triển chiến lược.',
+      ],
+    },
+    careerConnect: {
+      name: 'Khoai Lang Thang (Đinh Võ Hoài Phương)',
+      title: 'Nhà sáng tạo nội dung Du lịch & Ẩm thực',
+      company: 'YouTube & Khoai Lang Thang Universe',
+      imageUrl: 'https://images.unsplash.com/photo-1616587894289-8740238a5233?w=400&h=400&fit=crop',
+      quote:
+        'Từ một kỹ sư xây dựng, Khoai Lang Thang đã trở thành một trong những travel blogger/YouTuber thành công nhất Việt Nam. Anh nổi tiếng với phong cách kể chuyện gần gũi, hình ảnh chân thực và nội dung sâu sắc về văn hóa, ẩm thực các vùng miền. Anh đã xây dựng một thương hiệu cá nhân mạnh mẽ, đa dạng hóa nguồn thu từ YouTube, hợp đồng quảng cáo, bán sản phẩm riêng và các dự án cộng đồng.',
+    },
+    quizzes: [
+      {
+        question: 'Trong Creator Economy Việt Nam, KOC là viết tắt của từ gì?',
+        options: ['Key Opinion Creator', 'Key Official Content', 'Key Opinion Consumer', 'King of Content'],
+        correctAnswerIndex: 2,
+        explanation:
+          'KOC (Key Opinion Consumer) là những người tiêu dùng có sức ảnh hưởng, họ đưa ra các đánh giá sản phẩm một cách chân thực và có khả năng thúc đẩy doanh số bán hàng trực tiếp.',
+      },
+      {
+        question: 'Hình thức nào sau đây KHÔNG phải là một nguồn thu nhập phổ biến của các nhà sáng tạo nội dung?',
+        options: [
+          'Doanh thu quảng cáo từ YouTube',
+          'Hợp đồng quảng cáo với nhãn hàng',
+          'Lương cố định hàng tháng từ chính phủ',
+          'Bán các khóa học hoặc sản phẩm số',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Các nhà sáng tạo nội dung là những doanh nhân độc lập, họ không nhận lương cố định từ chính phủ mà phải tự xây dựng các nguồn thu nhập của riêng mình.',
+      },
+    ],
     relatedGames: contentCreatorGame
       ? [
           {
@@ -1819,13 +2062,11 @@ export const digitalMarketingLessons: DigitalMarketingLesson[] = [
         title: 'Creator Economy Report 2024',
         url: 'https://creatoreconomy.so/report',
         type: 'article',
-        description: 'Annual report về creator economy trends và opportunities',
       },
       {
         title: 'ConvertKit Creator Toolkit',
         url: 'https://convertkit.com/creator-toolkit',
         type: 'tool',
-        description: 'Free tools và resources cho content creators',
       },
     ],
     caseStudies: [

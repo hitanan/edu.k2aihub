@@ -1,49 +1,13 @@
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from './educationalGames';
+import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
-export interface GameDevLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
-  videoUrl: string;
-  imageUrl?: string;
+interface MainContent {
   technologies: string[];
   gameGenres: string[];
-  resources: Resource[];
-  caseStudies: CaseStudy[];
   careerOpportunities: string[];
-  relatedGames?: (EducationalGame | undefined)[];
 }
 
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  requirements: string[];
-  hints: string[];
-  expectedOutput: string;
-}
-
-interface Resource {
-  title: string;
-  url: string;
-  type: 'tool' | 'engine' | 'tutorial' | 'asset' | 'community';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  studio: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  insights: string[];
+export interface GameDevLesson extends BaseLessonData {
+  mainContent: MainContent;
 }
 
 export const gameDevLessons: GameDevLesson[] = [
@@ -56,7 +20,6 @@ export const gameDevLessons: GameDevLesson[] = [
     imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '120 phút',
-    gameGenres: ['Puzzle', 'Platformer', 'Adventure', 'Action'],
     objectives: [
       'Hiểu các nguyên tắc thiết kế game cốt lõi và khung MDA',
       'Thiết kế cơ chế và hệ thống gameplay hấp dẫn',
@@ -70,14 +33,25 @@ export const gameDevLessons: GameDevLesson[] = [
       'Hiểu biết về tâm lý người chơi',
       'Quen thuộc với các thể loại game khác nhau',
     ],
-    technologies: [
-      'Tài liệu Thiết kế Game (GDD)',
-      'Tạo mẫu trên giấy (Paper Prototyping)',
-      'Công cụ Thiết kế Kỹ thuật số (Figma, Miro)',
-      'Công cụ Phân tích',
-      'Nền tảng Thử nghiệm Người dùng',
-      'Bảng tính Cân bằng Game',
-    ],
+    mainContent: {
+      gameGenres: ['Puzzle', 'Platformer', 'Adventure', 'Action'],
+      technologies: [
+        'Tài liệu Thiết kế Game (GDD)',
+        'Tạo mẫu trên giấy (Paper Prototyping)',
+        'Công cụ Thiết kế Kỹ thuật số (Figma, Miro)',
+        'Công cụ Phân tích',
+        'Nền tảng Thử nghiệm Người dùng',
+        'Bảng tính Cân bằng Game',
+      ],
+      careerOpportunities: [
+        'Nhà thiết kế Game',
+        'Nhà thiết kế Cấp độ',
+        'Nhà thiết kế Tường thuật',
+        'Nhà thiết kế Hệ thống',
+        'Nhà thiết kế UX cho Game',
+        'Nhà sản xuất Game',
+      ],
+    },
     exercises: [
       {
         title: 'Thiết kế một Game Puzzle trên Di động',
@@ -86,20 +60,14 @@ export const gameDevLessons: GameDevLesson[] = [
         difficulty: 'Trung bình',
         solution:
           '# Thiết kế Game Puzzle Di động: Thác Pha Lê\\n\\n## 1. Ý tưởng & Vòng lặp Cốt lõi của Game\\n\\n### Ý tưởng Chính:\\nGame giải đố match-3 với chủ đề ma thuật nguyên tố, kết hợp lập kế hoạch chiến lược và phản xạ nhanh.\\n\\n### Vòng lặp Gameplay Cốt lõi (30-60 giây):\\n1. **Quét Bảng:** Người chơi quan sát trạng thái hiện tại\\n2. **Lên kế hoạch nước đi:** Xác định các kết hợp ghép tối ưu\\n3. **Thực hiện:** Thực hiện 3-5 nước đi tạo ra các chuỗi phản ứng\\n4. **Thu thập Phần thưởng:** Kiếm đá quý, vật phẩm tăng sức mạnh, tiến trình\\n5. **Đánh giá Tiến trình:** Kiểm tra trạng thái hoàn thành cấp độ\\n\\n### Vòng lặp Tiến trình Meta (5-10 phút):\\n1. **Hoàn thành Cấp độ:** Hoàn thành 3-5 cấp độ giải đố\\n2. **Mở khóa Nội dung:** Khu vực mới, nhân vật, khả năng\\n3. **Nâng cấp Hệ thống:** Cải thiện vật phẩm tăng sức mạnh và chỉ số\\n4. **Tiến trình Câu chuyện:** Thúc đẩy các yếu tố tường thuật\\n5. **Tính năng Xã hội:** Chia sẻ thành tích, cạnh tranh',
-        requirements: [
+        materials: [
           'Tạo Tài liệu Thiết kế Game toàn diện',
           'Xác định vòng lặp gameplay cốt lõi và tiến trình meta',
           'Thiết kế đường cong độ khó cân bằng',
           'Lên kế hoạch chiến lược kiếm tiền',
           'Bao gồm lộ trình triển khai kỹ thuật',
         ],
-        hints: [
-          'Nghiên cứu các game giải đố thành công như Candy Crush, Bejeweled',
-          'Tập trung vào tâm lý và động lực của người chơi',
-          'Cân bằng giữa thử thách và khả năng đạt được',
-          'Xem xét khả năng tiếp cận và thiết kế toàn diện',
-        ],
-        expectedOutput:
+        expectedResults:
           'Tài liệu thiết kế game hoàn chỉnh với tất cả các hệ thống được xác định và kế hoạch triển khai',
       },
     ],
@@ -110,39 +78,29 @@ export const gameDevLessons: GameDevLesson[] = [
       'Gamification hóa các ứng dụng kinh doanh',
       'Thiết kế trải nghiệm thực tế ảo',
     ],
-    careerOpportunities: [
-      'Nhà thiết kế Game',
-      'Nhà thiết kế Cấp độ',
-      'Nhà thiết kế Tường thuật',
-      'Nhà thiết kế Hệ thống',
-      'Nhà thiết kế UX cho Game',
-      'Nhà sản xuất Game',
-    ],
     resources: [
       {
         title: 'Nghệ thuật Thiết kế Game của Jesse Schell',
         url: 'https://artofgamedesign.com',
         type: 'tutorial',
-        description: 'Cuốn sách toàn diện bao gồm tất cả các khía cạnh của lý thuyết và thực hành thiết kế game',
       },
       {
         title: "Game Maker's Toolkit",
         url: 'https://www.youtube.com/c/MarkBrownGMT',
         type: 'tutorial',
-        description: 'Kênh YouTube phân tích các nguyên tắc thiết kế game thông qua các trò chơi phổ biến',
       },
     ],
     caseStudies: [
       {
         title: 'Candy Crush Saga: Thiết kế dựa trên Tâm lý học',
-        studio: 'King',
-        challenge:
+        organization: 'King',
+        problem:
           'Tạo ra một game match-3 gây nghiện nhưng công bằng với chiến lược kiếm tiền bền vững trong thị trường cạnh tranh',
         solution:
           'Kết hợp cơ chế match-3 đã được chứng minh với các yếu tố kích thích tâm lý: mạng sống có giới hạn, áp lực xã hội và các đỉnh điểm độ khó được cân bằng cẩn thận tại các điểm kiếm tiền',
-        results:
+        impact:
           'Doanh thu hàng năm hơn 1,5 tỷ đô la, hơn 250 triệu người dùng hoạt động hàng tháng, game di động có doanh thu cao nhất trong hơn 5 năm',
-        insights: [
+        innovations: [
           'Hiểu biết về tâm lý người chơi là rất quan trọng để giữ chân và kiếm tiền',
           'Các tính năng xã hội khuếch đại sự tương tác và tăng trưởng lan truyền',
           'Độ khó cân bằng ngăn chặn sự thất vọng trong khi khuyến khích chi tiêu',
@@ -150,9 +108,47 @@ export const gameDevLessons: GameDevLesson[] = [
         ],
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'scratch-animation-studio'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'game-dev-studio'),
+    vietnamContext: {
+      title: 'Bối cảnh ngành Game Việt Nam: Từ Studio Tỷ đô đến Văn hóa Game Jam',
+      content: [
+        'Việt Nam là một cường quốc về game di động, với các studio như Amanotes và VNG Games đạt được thành công toàn cầu. Amanotes, chuyên về game âm nhạc, đã có hơn 2 tỷ lượt tải xuống.',
+        'Cộng đồng game dev độc lập (indie) rất sôi nổi, thường xuyên tổ chức các sự kiện Game Jam, nơi các nhà phát triển tạo ra một trò chơi trong thời gian ngắn (thường là 48 giờ), thúc đẩy sự sáng tạo và hợp tác.',
+        'Các trường đại học như RMIT Việt Nam và Đại học FPT đang cung cấp các chương trình đào tạo chuyên sâu về thiết kế và phát triển game, đáp ứng nhu cầu nhân lực ngày càng tăng của ngành.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Nguyễn Hà Đông',
+      title: 'Nhà phát triển Game',
+      company: '.GEARS',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-ha-dong',
+      quote:
+        'Thành công của Flappy Bird cho thấy một ý tưởng đơn giản, được thực hiện tốt có thể tạo ra tác động toàn cầu. Đừng ngại bắt đầu nhỏ. Điều quan trọng là tạo ra một trải nghiệm độc đáo và hấp dẫn cho người chơi.',
+    },
+    quizzes: [
+      {
+        question: 'Khung MDA trong thiết kế game là viết tắt của gì?',
+        options: [
+          'Cơ chế, Động lực, Thẩm mỹ',
+          'Tối đa hóa, Giảm thiểu, Tối ưu hóa',
+          'Di chuyển, Tấn công, Phòng thủ',
+          'Nhiệm vụ, Dữ liệu, Hành động',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'MDA (Mechanics, Dynamics, Aesthetics) là một khung phân tích game phổ biến, giúp nhà thiết kế xem xét trò chơi từ ba góc độ: các quy tắc (Cơ chế), lối chơi phát sinh (Động lực), và cảm xúc của người chơi (Thẩm mỹ).',
+      },
+      {
+        question: 'Vòng lặp gameplay cốt lõi (core gameplay loop) là gì?',
+        options: [
+          'Câu chuyện chính của game',
+          'Chuỗi hoạt động lặp đi lặp lại mà người chơi thực hiện thường xuyên nhất',
+          'Cách game kiếm tiền',
+          'Đồ họa và âm thanh của game',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Vòng lặp gameplay cốt lõi là chuỗi các hành động chính mà người chơi thực hiện lặp đi lặp lại, tạo nên trải nghiệm trung tâm của trò chơi. Ví dụ: trong một game platformer, đó là chạy, nhảy, và thu thập vật phẩm.',
+      },
     ],
   },
   {
@@ -164,7 +160,6 @@ export const gameDevLessons: GameDevLesson[] = [
     imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
     duration: '180 phút',
-    gameGenres: ['Platformer', 'Side-scroller', 'Puzzle-platformer'],
     objectives: [
       'Nắm vững quy trình làm việc và quản lý tài sản trong Unity 2D',
       'Triển khai bộ điều khiển nhân vật với chuyển động mượt mà',
@@ -178,14 +173,25 @@ export const gameDevLessons: GameDevLesson[] = [
       'Hiểu biết về hệ tọa độ 2D',
       'Các nguyên tắc cơ bản về thiết kế game từ bài học trước',
     ],
-    technologies: [
-      'Unity 2022.3 LTS',
-      'Lập trình C#',
-      'Hệ thống Vật lý 2D',
-      'Hệ thống Hoạt ảnh',
-      'UI Toolkit',
-      'Hệ thống Đầu vào',
-    ],
+    mainContent: {
+      gameGenres: ['Platformer', 'Side-scroller', 'Puzzle-platformer'],
+      technologies: [
+        'Unity 2022.3 LTS',
+        'Lập trình C#',
+        'Hệ thống Vật lý 2D',
+        'Hệ thống Hoạt ảnh',
+        'UI Toolkit',
+        'Hệ thống Đầu vào',
+      ],
+      careerOpportunities: [
+        'Nhà phát triển Unity',
+        'Lập trình viên Game 2D',
+        'Nhà phát triển Game Độc lập',
+        'Nhà phát triển Game Di động',
+        'Nhà thiết kế Game Kỹ thuật',
+        'Lập trình viên Công cụ',
+      ],
+    },
     exercises: [
       {
         title: 'Xây dựng Game Platformer 2D "Crystal Runner"',
@@ -604,20 +610,14 @@ public class Crystal : MonoBehaviour
 - **Itch.io:** Nền tảng thân thiện với nhà phát triển độc lập
 - **Game Jolt:** Miễn phí với quyên góp tùy chọn
 - **Cổng di động:** Phiên bản iOS/Android`,
-        requirements: [
+        materials: [
           'Thiết lập dự án Unity với cấu trúc thư mục phù hợp',
           'Triển khai bộ điều khiển nhân vật mượt mà bằng C#',
           'Tạo hệ thống camera đáp ứng',
           'Thiết kế ít nhất 3 cấp độ hoàn chỉnh',
           'Thêm âm thanh, hoạt ảnh và đánh bóng hình ảnh',
         ],
-        hints: [
-          'Sử dụng hiệu quả hệ thống vật lý 2D tích hợp của Unity',
-          'Lên kế hoạch kiến trúc mã của bạn trước khi triển khai',
-          'Kiểm tra cảm giác chuyển động của người chơi một cách rộng rãi',
-          'Nghiên cứu các trò chơi tham khảo để lấy cảm hứng',
-        ],
-        expectedOutput:
+        expectedResults:
           'Một game platformer 2D có thể chơi được với nhiều cấp độ, gameplay được đánh bóng và cảm giác game phù hợp',
       },
     ],
@@ -628,38 +628,28 @@ public class Crystal : MonoBehaviour
       'Phát triển nguyên mẫu cho các dự án lớn hơn',
       'Các sản phẩm trong portfolio để ứng tuyển vào ngành game',
     ],
-    careerOpportunities: [
-      'Nhà phát triển Unity',
-      'Lập trình viên Game 2D',
-      'Nhà phát triển Game Độc lập',
-      'Nhà phát triển Game Di động',
-      'Nhà thiết kế Game Kỹ thuật',
-      'Lập trình viên Công cụ',
-    ],
     resources: [
       {
         title: 'Nền tảng Học tập Unity',
         url: 'https://learn.unity.com',
         type: 'tutorial',
-        description: 'Các hướng dẫn chính thức của Unity bao gồm phát triển 2D, kịch bản C# và thiết kế game',
       },
       {
         title: 'Kênh YouTube Brackeys',
         url: 'https://www.youtube.com/c/Brackeys',
         type: 'tutorial',
-        description: 'Các hướng dẫn Unity chất lượng cao cho người mới bắt đầu và nhà phát triển trung cấp',
       },
     ],
     caseStudies: [
       {
         title: 'Hollow Knight: Đánh bóng & Bầu không khí trong 2D',
-        studio: 'Team Cherry',
-        challenge: 'Tạo ra một game Metroidvania 2D có không khí với ngân sách hạn chế và đội ngũ nhỏ (3 người)',
+        organization: 'Team Cherry',
+        problem: 'Tạo ra một game Metroidvania 2D có không khí với ngân sách hạn chế và đội ngũ nhỏ (3 người)',
         solution:
           'Tập trung vào hướng nghệ thuật đặc biệt, điều khiển chặt chẽ và âm thanh có không khí. Sử dụng hoạt ảnh vẽ tay và thiết kế thế giới được chế tác cẩn thận.',
-        results:
+        impact:
           'Bán được hơn 3 triệu bản, 97% đánh giá tích cực trên Steam, được coi là một tác phẩm kinh điển hiện đại trong thể loại Metroidvania',
-        insights: [
+        innovations: [
           'Sự đánh bóng và chú ý đến chi tiết có thể khắc phục những hạn chế về ngân sách',
           'Hướng nghệ thuật mạnh mẽ tạo ra trải nghiệm đáng nhớ',
           'Điều khiển chặt chẽ là nền tảng của các game platformer tuyệt vời',
@@ -667,9 +657,42 @@ public class Crystal : MonoBehaviour
         ],
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'unity-2d-development'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'game-dev-studio'),
+    vietnamContext: {
+      title: 'Unity và Hệ sinh thái Game Dev tại Việt Nam',
+      content: [
+        'Unity là game engine phổ biến nhất tại Việt Nam, được sử dụng bởi cả các công ty lớn và các nhà phát triển độc lập cho các dự án game 2D và 3D.',
+        'Cộng đồng Unity Việt Nam rất lớn mạnh, với nhiều nhóm trên Facebook và Zalo, các buổi gặp mặt (meetup) và workshop được tổ chức thường xuyên tại Hà Nội và TP.HCM.',
+        'Nhiều game "Made in Vietnam" thành công trên thị trường quốc tế được xây dựng bằng Unity, chứng tỏ khả năng của các nhà phát triển Việt Nam trong việc tận dụng công cụ mạnh mẽ này.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lê Giang Anh',
+      title: 'Giám đốc Studio, Sparx*',
+      company: 'Virtuos',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-giang-anh',
+      quote:
+        'Tại Sparx*, chúng tôi sử dụng Unity để tạo ra các nội dung đồ họa ấn tượng cho những tựa game AAA hàng đầu thế giới. Việc thành thạo Unity không chỉ mở ra cơ hội làm game của riêng bạn mà còn cho phép bạn tham gia vào các dự án game bom tấn toàn cầu ngay tại Việt Nam.',
+    },
+    quizzes: [
+      {
+        question: 'Trong Unity, "Prefab" là gì?',
+        options: [
+          'Một đoạn mã C#',
+          'Một đối tượng game (GameObject) đã được lưu lại với tất cả các thành phần, thuộc tính và đối tượng con của nó',
+          'Một file âm thanh',
+          'Một thiết lập của camera',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Prefab là một tài sản có thể tái sử dụng, cho phép bạn lưu trữ một GameObject hoàn chỉnh với tất cả các thành phần của nó. Điều này rất hữu ích để tạo ra nhiều bản sao của một đối tượng, ví dụ như kẻ thù, đạn, hoặc vật phẩm.',
+      },
+      {
+        question: 'Thành phần nào trong Unity được sử dụng để xử lý va chạm và vật lý cho các đối tượng 2D?',
+        options: ['Transform', 'Rigidbody2D và Collider2D', 'Animator', 'Sprite Renderer'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Rigidbody2D cung cấp các thuộc tính vật lý (như khối lượng, trọng lực) cho một đối tượng, trong khi Collider2D xác định hình dạng của đối tượng cho mục đích va chạm. Cả hai đều cần thiết cho tương tác vật lý 2D.',
+      },
     ],
   },
 ];

@@ -1,5 +1,25 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 // Cross-border E-commerce Lesson Interface
 export interface CrossBorderEcommerceLessonData extends BaseLessonData {
   marketSize?: string;
@@ -25,6 +45,9 @@ export interface CrossBorderEcommerceLessonData extends BaseLessonData {
     name: string;
     description: string;
   }>;
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  quizzes?: Quiz[];
 }
 
 export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
@@ -130,6 +153,50 @@ export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
     growthRate: '+42% annually',
     platforms: ['Shopee', 'Lazada', 'Amazon', 'eBay', 'AliExpress'],
     regulations: ['EVFTA', 'CPTPP', 'ASEAN Trade Agreement'],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam',
+      content: [
+        'Chính phủ Việt Nam đặt mục tiêu kim ngạch xuất khẩu thương mại điện tử xuyên biên giới đạt 200.000 tỷ đồng vào năm 2025.',
+        'Các mặt hàng xuất khẩu phổ biến của Việt Nam qua kênh TMĐT bao gồm: dệt may, da giày, đồ gỗ, thủ công mỹ nghệ, và nông sản chế biến.',
+        'Các doanh nghiệp nhỏ và vừa (SMEs) chiếm hơn 95% tổng số doanh nghiệp tại Việt Nam, và TMĐT xuyên biên giới là con đường hiệu quả nhất để họ vươn ra toàn cầu.',
+        'Các "nhà xuất khẩu triệu đô" trên Amazon từ Việt Nam đang tăng nhanh, chứng tỏ tiềm năng to lớn của thị trường này.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Trần Thị Lan Anh',
+      title: 'Nhà sáng lập, VietCrafts Global',
+      company: 'VietCrafts Global (hư cấu)',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-thi-lan-anh',
+      quote:
+        '5 năm trước, chúng tôi chỉ là một cửa hàng nhỏ ở Hội An. Nhờ có Etsy và Amazon, những sản phẩm mây tre đan của các nghệ nhân làng nghề đã có mặt trong các gia đình ở Mỹ, châu Âu. TMĐT xuyên biên giới không chỉ là kinh doanh, đó là cách chúng tôi kể câu chuyện văn hóa Việt Nam với thế giới.',
+    },
+    quizzes: [
+      {
+        question: 'Mô hình D2C (Direct-to-Consumer) trong TMĐT xuyên biên giới có nghĩa là gì?',
+        options: [
+          'Bán hàng cho các doanh nghiệp khác ở nước ngoài.',
+          'Bán hàng thông qua một nhà phân phối lớn.',
+          'Nhà sản xuất bán hàng trực tiếp cho người tiêu dùng cuối cùng ở nước ngoài, không qua trung gian.',
+          'Chỉ bán hàng trên các sàn TMĐT.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'D2C cho phép các thương hiệu kiểm soát hoàn toàn trải nghiệm khách hàng và giữ lại phần lớn lợi nhuận, đây là một xu hướng đang phát triển mạnh mẽ.',
+      },
+      {
+        question:
+          'Lợi ích lớn nhất của TMĐT xuyên biên giới đối với các doanh nghiệp nhỏ và vừa (SMEs) Việt Nam là gì?',
+        options: [
+          'Tiếp cận thị trường toàn cầu với chi phí thấp.',
+          'Chỉ cần bán hàng trong nước.',
+          'Không cần quan tâm đến marketing.',
+          'Tránh được mọi rủi ro pháp lý.',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'So với xuất khẩu truyền thống đòi hỏi vốn lớn và các mối quan hệ phức tạp, TMĐT xuyên biên giới cho phép các SMEs tiếp cận hàng tỷ khách hàng với chi phí khởi đầu thấp hơn rất nhiều.',
+      },
+    ],
   },
   {
     id: 'international-platforms',
@@ -219,6 +286,44 @@ export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
       'Tối ưu hóa revenue từ nhiều nguồn',
       'Giảm thiểu rủi ro phụ thuộc một platform',
       'Tiếp cận đa dạng customer segments',
+    ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam',
+      content: [
+        'Amazon Global Selling và Alibaba.com có đội ngũ hỗ trợ riêng tại Việt Nam, tích cực tổ chức các hội thảo và chương trình đào tạo cho người bán hàng.',
+        'Các "E-commerce Enablers" (công ty cung cấp dịch vụ hỗ trợ TMĐT) như OnPoint, Society Pass đang phát triển mạnh, giúp các doanh nghiệp Việt Nam quản lý gian hàng trên nhiều nền tảng quốc tế.',
+        'Thách thức lớn nhất cho người bán Việt Nam là cạnh tranh về giá với người bán từ Trung Quốc và xây dựng thương hiệu đủ mạnh để khách hàng tin tưởng.',
+        'Bán hàng trên các nền tảng khu vực như Shopee, Lazada sang các nước Đông Nam Á (Malaysia, Singapore, Thái Lan) là một bước đệm tốt trước khi tiến ra các thị trường lớn hơn như Mỹ, EU.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lê Minh Đức',
+      title: 'Amazon FBA Seller & Trainer',
+      company: 'FBA Masters (hư cấu)',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-minh-duc',
+      quote:
+        'Nhiều người nghĩ chỉ cần đăng sản phẩm lên Amazon là có thể bán được hàng. Thực tế, đó là một cuộc chiến thực sự về từ khóa, hình ảnh, và đánh giá. Công việc của tôi là giúp các doanh nghiệp Việt Nam hiểu luật chơi và sử dụng các công cụ một cách thông minh để chiến thắng trong cuộc chiến đó.',
+    },
+    quizzes: [
+      {
+        question: 'Nền tảng nào được xem là phù hợp nhất cho các sản phẩm thủ công mỹ nghệ (handmade)?',
+        options: ['Alibaba', 'Amazon', 'Etsy', 'eBay'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Etsy là một thị trường ngách toàn cầu chuyên dành cho các sản phẩm handmade, vintage, và đồ thủ công độc đáo, nơi người mua đánh giá cao tính độc bản và câu chuyện đằng sau sản phẩm.',
+      },
+      {
+        question: 'Tại sao việc quản lý đánh giá (reviews) lại cực kỳ quan trọng trên các sàn TMĐT quốc tế?',
+        options: [
+          'Vì nó không ảnh hưởng đến doanh số.',
+          'Vì nó là yếu tố then chốt để xây dựng lòng tin và cải thiện thứ hạng tìm kiếm của sản phẩm.',
+          'Vì người bán có thể xóa các đánh giá xấu.',
+          'Vì chỉ cần có nhiều đánh giá là đủ, không quan trọng tốt hay xấu.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Đối với khách hàng quốc tế khi mua một sản phẩm từ Việt Nam, đánh giá từ những người mua trước là bằng chứng xã hội quan trọng nhất để họ ra quyết định. Các thuật toán của sàn cũng ưu tiên hiển thị các sản phẩm có đánh giá tốt.',
+      },
     ],
   },
   {
@@ -310,6 +415,49 @@ export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
       'Mở rộng thị trường địa lý',
     ],
     tools: ['ShipStation', 'Easyship', 'Flexport', 'DHL Express', 'FedEx'],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam',
+      content: [
+        'Hệ thống cảng biển tại TP.HCM và Hải Phòng là cửa ngõ logistics quan trọng cho hàng hóa xuất khẩu.',
+        'Các công ty logistics nội địa như Giao Hàng Nhanh, Viettel Post đang mở rộng dịch vụ vận chuyển quốc tế, tạo ra sự cạnh tranh với các hãng lớn như DHL, FedEx.',
+        'Các công ty 3PL (Third-party Logistics) tại Việt Nam như Boxme, Fado đang cung cấp các giải pháp fulfillment toàn diện, giúp người bán lưu kho, đóng gói và vận chuyển hàng hóa từ Việt Nam đi khắp thế giới.',
+        'Thủ tục thông quan tại Việt Nam vẫn còn là một thách thức, đòi hỏi người bán phải chuẩn bị kỹ lưỡng giấy tờ và làm việc với các đối tác logistics uy tín.',
+      ],
+    },
+    careerConnect: {
+      name: 'Ông Nguyễn Hòa Bình',
+      title: 'Chủ tịch, NextTech Group',
+      company: 'NextTech Group (sở hữu Boxme)',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoa-binh',
+      quote:
+        'Logistics là mạch máu của thương mại điện tử. Chúng tôi nhận thấy các doanh nghiệp Việt Nam rất giỏi sản xuất và marketing, nhưng lại gặp khó ở khâu hậu cần khi ra biển lớn. Sứ mệnh của chúng tôi là cung cấp một giải pháp logistics "chia sẻ", giúp bất kỳ ai cũng có thể xuất khẩu hàng hóa một cách dễ dàng như bán hàng trong nước.',
+    },
+    quizzes: [
+      {
+        question: 'FBA (Fulfillment by Amazon) là mô hình gì?',
+        options: [
+          'Người bán tự đóng gói và gửi hàng từ Việt Nam.',
+          'Người bán lưu trữ sản phẩm của mình trong các trung tâm hoàn thiện đơn hàng của Amazon, và Amazon sẽ thay mặt người bán xử lý việc giao hàng.',
+          'Một dịch vụ vận chuyển đường biển.',
+          'Một phương thức thanh toán.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'FBA là một dịch vụ cực kỳ mạnh mẽ, giúp sản phẩm của người bán đủ điều kiện giao hàng nhanh "Prime", tăng đáng kể khả năng cạnh tranh và sự tin tưởng của khách hàng trên Amazon.',
+      },
+      {
+        question: 'Khi nào nên sử dụng vận chuyển đường biển (Sea Freight) thay vì đường hàng không (Air Freight)?',
+        options: [
+          'Khi cần giao hàng gấp cho khách.',
+          'Khi vận chuyển các mặt hàng nhỏ, giá trị cao.',
+          'Khi vận chuyển số lượng lớn hàng hóa, không yêu cầu giao hàng gấp và muốn tối ưu chi phí.',
+          'Khi vận chuyển hàng hóa trong nội địa.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Vận chuyển đường biển có chi phí rẻ hơn nhiều so với đường hàng không nhưng thời gian vận chuyển lâu hơn đáng kể. Đây là lựa chọn tối ưu để vận chuyển hàng tồn kho số lượng lớn đến các kho ở nước ngoài.',
+      },
+    ],
   },
   {
     id: 'payment-solutions',
@@ -407,6 +555,50 @@ export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
       'Mở rộng customer base quốc tế',
     ],
     tools: ['PayPal', 'Stripe', 'Wise', 'Payoneer', 'Alipay Global'],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam',
+      content: [
+        'Việc nhận tiền thanh toán từ nước ngoài về Việt Nam qua các kênh ngân hàng truyền thống thường phức tạp và tốn kém. Do đó, các giải pháp như Payoneer và Wise (trước đây là TransferWise) trở nên cực kỳ phổ biến.',
+        'PayPal là cổng thanh toán quốc tế được biết đến nhiều nhất tại Việt Nam, nhưng phí khá cao và chính sách đôi khi khắt khe với người bán mới.',
+        'Stripe, một trong những cổng thanh toán hàng đầu thế giới, vẫn chưa hỗ trợ chính thức cho các doanh nghiệp đăng ký tại Việt Nam, tạo ra một rào cản lớn. Nhiều doanh nghiệp phải đăng ký công ty ở nước ngoài (ví dụ: Singapore, Mỹ) để sử dụng Stripe.',
+        'Sự phát triển của blockchain và tiền điện tử đang mở ra các kênh thanh toán xuyên biên giới mới, nhưng vẫn còn nhiều rào cản pháp lý tại Việt Nam.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Vương An Ngọc',
+      title: 'Giám đốc Quốc gia',
+      company: 'Payoneer Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=vuong-an-ngoc',
+      quote:
+        'Rào cản lớn nhất của các freelancer và doanh nghiệp xuất khẩu Việt Nam không phải là chất lượng sản phẩm, mà là làm sao để nhận tiền thanh toán một cách nhanh chóng, an toàn và chi phí thấp. Chúng tôi ở đây để giải quyết bài toán đó, giúp dòng tiền chảy về Việt Nam một cách thông suốt nhất.',
+    },
+    quizzes: [
+      {
+        question: 'Tại sao việc cho phép khách hàng thanh toán bằng đồng tiền của họ lại quan trọng?',
+        options: [
+          'Vì nó làm cho sản phẩm trông rẻ hơn.',
+          'Vì nó giúp người bán thu được nhiều lợi nhuận hơn.',
+          'Vì nó tạo ra trải nghiệm mua sắm quen thuộc, minh bạch về giá và tăng tỷ lệ chuyển đổi.',
+          'Vì đó là yêu cầu bắt buộc của pháp luật.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Khách hàng thường không thích phải tự tính toán tỷ giá và các chi phí ẩn. Việc nhìn thấy giá cuối cùng bằng đồng tiền của mình sẽ giúp họ tự tin hơn khi ra quyết định mua hàng.',
+      },
+      {
+        question:
+          'Đâu là một trong những thách thức lớn nhất đối với người bán hàng Việt Nam khi sử dụng các cổng thanh toán quốc tế?',
+        options: [
+          'Không có thách thức nào.',
+          'Phí giao dịch quá thấp.',
+          'Nhiều cổng thanh toán hàng đầu như Stripe chưa hỗ trợ trực tiếp cho doanh nghiệp đăng ký tại Việt Nam.',
+          'Tất cả các cổng thanh toán đều giống hệt nhau.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Việc Stripe chưa hỗ trợ trực tiếp tại Việt Nam là một trở ngại lớn, buộc nhiều doanh nghiệp phải tìm các giải pháp thay thế hoặc đăng ký kinh doanh ở nước ngoài, làm tăng chi phí và độ phức tạp.',
+      },
+    ],
   },
   {
     id: 'cultural-localization',
@@ -502,6 +694,50 @@ export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
       'Giảm cultural misunderstandings',
       'Xây dựng long-term customer relationships',
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam',
+      content: [
+        'Một ví dụ điển hình về localization là cách các thương hiệu cà phê Việt Nam như Trung Nguyên Legend, King Coffee xây dựng câu chuyện thương hiệu và thiết kế bao bì khác nhau cho thị trường nội địa và quốc tế.',
+        'Thách thức: Nhiều doanh nghiệp Việt Nam chỉ đơn thuần dịch nội dung website sang tiếng Anh mà không điều chỉnh hình ảnh, ví dụ, và các yếu tố văn hóa khác, làm giảm sự kết nối với khách hàng quốc tế.',
+        'Cơ hội: Các sản phẩm mang đậm bản sắc văn hóa Việt Nam (áo dài, nón lá, gốm sứ Bát Tràng) có tiềm năng lớn nếu được marketing một cách tinh tế, tôn trọng và phù hợp với bối cảnh văn hóa của người mua.',
+        'Khi marketing tại các nước châu Á khác, các doanh nghiệp Việt Nam cần chú ý đến các yếu tố như ngày lễ (Tết Nguyên Đán, Trung Thu), các biểu tượng may mắn, và các giá trị cộng đồng.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bà Nguyễn Thị Mai',
+      title: 'Giám đốc Marketing Toàn cầu',
+      company: 'Vinamilk',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-mai',
+      quote:
+        'Khi mang sữa Việt ra thế giới, chúng tôi không chỉ bán một sản phẩm dinh dưỡng. Chúng tôi phải kể một câu chuyện mà người tiêu dùng ở Trung Đông, ở châu Phi có thể hiểu và tin tưởng. Điều đó có nghĩa là phải bản địa hóa mọi thứ, từ bao bì sản phẩm đến thông điệp quảng cáo, để nó thực sự gần gũi với họ.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là sự khác biệt chính giữa Dịch thuật (Translation) và Bản địa hóa (Localization)?',
+        options: [
+          'Không có sự khác biệt nào.',
+          'Dịch thuật chỉ chuyển đổi ngôn ngữ, còn Bản địa hóa là thích ứng toàn bộ trải nghiệm (hình ảnh, màu sắc, văn hóa) cho thị trường địa phương.',
+          'Bản địa hóa rẻ hơn dịch thuật.',
+          'Bản địa hóa chỉ cần thiết cho các sản phẩm phần mềm.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Bản địa hóa là một quá trình sâu rộng hơn nhiều so với dịch thuật, nó đảm bảo rằng sản phẩm và thông điệp của bạn không chỉ dễ hiểu mà còn phù hợp và có tính kết nối về mặt văn hóa.',
+      },
+      {
+        question:
+          'Theo mô hình của Hofstede, một thông điệp marketing nhấn mạnh "sự độc đáo cá nhân" và "tự thể hiện" sẽ hiệu quả hơn ở thị trường nào?',
+        options: [
+          'Nhật Bản (văn hóa tập thể)',
+          'Hàn Quốc (văn hóa tập thể)',
+          'Mỹ (văn hóa cá nhân)',
+          'Việt Nam (văn hóa tập thể)',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Các nền văn hóa theo chủ nghĩa cá nhân như Mỹ đánh giá cao sự khác biệt và thành tựu cá nhân, do đó các thông điệp marketing tập trung vào việc sản phẩm giúp họ thể hiện bản thân sẽ có hiệu quả cao.',
+      },
+    ],
   },
   {
     id: 'legal-compliance',
@@ -569,7 +805,7 @@ export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
       'Quản lý intellectual property rights',
       'Xử lý legal disputes và customer protection',
     ],
-    prerequisites: ['Kiến thức cơ bản về business law', 'Hiểu về international trade'],
+    prerequisites: ['Kiến thức cơ bản về business law', 'Hiểu biết về international trade'],
     exercises: [
       {
         title: 'Compliance Audit',
@@ -592,6 +828,45 @@ export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
       'Bảo vệ company reputation',
     ],
     regulations: ['GDPR', 'CCPA', 'VAT regulations', 'Consumer protection laws'],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam',
+      content: [
+        'Các hiệp định thương mại tự do (FTA) như EVFTA (với EU) và CPTPP giúp giảm thuế quan cho hàng hóa Việt Nam, nhưng cũng đi kèm các yêu cầu nghiêm ngặt về quy tắc xuất xứ và tiêu chuẩn lao động, môi trường.',
+        'Nghị định 52/2013/NĐ-CP về thương mại điện tử là khung pháp lý chính tại Việt Nam, nhưng khi bán hàng ra nước ngoài, doanh nghiệp phải tuân thủ luật của cả Việt Nam và nước sở tại.',
+        'Bảo hộ sở hữu trí tuệ là một điểm yếu của nhiều doanh nghiệp Việt Nam. Việc bị ăn cắp mẫu mã, thương hiệu khi vừa mới thành công ở thị trường quốc tế là một rủi ro hiện hữu.',
+        'Việt Nam cũng đã ban hành Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân, có nhiều điểm tương đồng với GDPR, cho thấy sự hội nhập của Việt Nam với các tiêu chuẩn toàn cầu.',
+      ],
+    },
+    careerConnect: {
+      name: 'Luật sư Trương Trọng Nghĩa',
+      title: 'Phó Chủ nhiệm Đoàn Luật sư TP.HCM',
+      company: 'YKVN Lawyers',
+      imageUrl: 'https://i.pravatar.cc/150?u=truong-trong-nghia',
+      quote:
+        'Nhiều doanh nghiệp Việt khi ra biển lớn chỉ lo bán hàng mà quên mất việc xây dựng "tấm khiên" pháp lý. Một hợp đồng sơ sài, một nhãn hiệu không được đăng ký, một chính sách bảo mật thiếu sót... tất cả đều có thể trở thành tử huyệt khi có tranh chấp xảy ra. Pháp lý không phải là chi phí, mà là một khoản đầu tư để đi đường dài.',
+    },
+    quizzes: [
+      {
+        question: 'GDPR là luật bảo vệ dữ liệu cá nhân áp dụng chủ yếu ở đâu?',
+        options: ['Mỹ', 'Trung Quốc', 'Liên minh châu Âu (EU)', 'Việt Nam'],
+        correctAnswerIndex: 2,
+        explanation:
+          'GDPR (General Data Protection Regulation) là quy định rất nghiêm ngặt của EU. Bất kỳ doanh nghiệp nào trên thế giới, nếu xử lý dữ liệu cá nhân của công dân EU, đều phải tuân thủ GDPR.',
+      },
+      {
+        question:
+          'Tại sao một doanh nghiệp Việt Nam bán hàng đi Mỹ lại cần quan tâm đến việc đăng ký nhãn hiệu tại Mỹ?',
+        options: [
+          'Vì đăng ký ở Việt Nam là đủ.',
+          'Vì quyền sở hữu trí tuệ có tính lãnh thổ. Đăng ký ở Việt Nam không tự động bảo hộ bạn ở Mỹ. Nếu không đăng ký, người khác có thể đăng ký và "cướp" mất thương hiệu của bạn tại thị trường đó.',
+          'Vì nó không quan trọng.',
+          'Vì chỉ các công ty lớn mới cần đăng ký.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Nguyên tắc lãnh thổ là một trong những nguyên tắc cơ bản nhất của luật sở hữu trí tuệ. Bạn phải đăng ký bảo hộ ở từng quốc gia hoặc khu vực mà bạn muốn kinh doanh.',
+      },
+    ],
   },
   {
     id: 'analytics-optimization',
@@ -691,6 +966,49 @@ export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
       'Improve customer lifetime value',
     ],
     tools: ['Google Analytics', 'Facebook Analytics', 'Klaviyo', 'Hotjar', 'Tableau'],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam',
+      content: [
+        'Các sàn TMĐT lớn tại Việt Nam như Tiki, Shopee, Lazada đều có đội ngũ phân tích dữ liệu rất mạnh để tối ưu hóa trải nghiệm người dùng và các chiến dịch marketing.',
+        'Các "E-commerce enablers" tại Việt Nam đang cung cấp các dịch vụ phân tích dữ liệu cho các thương hiệu, giúp họ hiểu rõ hiệu suất bán hàng trên nhiều nền tảng.',
+        'Thách thức: Nhiều doanh nghiệp vừa và nhỏ Việt Nam vẫn còn ra quyết định dựa trên cảm tính, chưa có văn hóa sử dụng dữ liệu để định hướng chiến lược.',
+        'Cơ hội: Nguồn nhân lực trong lĩnh vực phân tích dữ liệu tại Việt Nam đang phát triển nhanh, cung cấp tài năng cho các công ty muốn xây dựng năng lực này.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Hoàng Nam',
+      title: 'Head of E-commerce Analytics',
+      company: 'Tiki',
+      imageUrl: 'https://i.pravatar.cc/150?u=hoang-nam',
+      quote:
+        'Tại Tiki, mỗi quyết định, từ việc thay đổi màu sắc một cái nút đến việc ra mắt một ngành hàng mới, đều phải dựa trên dữ liệu. Dữ liệu không nói dối. Nó cho chúng tôi biết khách hàng thực sự muốn gì, ở đâu, và khi nào. Trong TMĐT, không có dữ liệu, bạn như một người đi trong bóng tối.',
+    },
+    quizzes: [
+      {
+        question: 'CRO (Conversion Rate Optimization) là viết tắt của từ gì?',
+        options: [
+          'Tối ưu hóa quan hệ khách hàng',
+          'Tối ưu hóa tỷ lệ chuyển đổi',
+          'Tối ưu hóa chi phí công ty',
+          'Tối ưu hóa lợi nhuận khách hàng',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Tối ưu hóa tỷ lệ chuyển đổi là một quá trình có hệ thống nhằm tăng tỷ lệ phần trăm khách truy cập website thực hiện một hành động mong muốn - chẳng hạn như mua hàng.',
+      },
+      {
+        question: 'A/B testing là gì?',
+        options: [
+          'Thử nghiệm hai phiên bản hoàn toàn khác nhau của một website.',
+          'Một phương pháp so sánh hai phiên bản của một trang web hoặc ứng dụng (phiên bản A và phiên bản B) để xem phiên bản nào hoạt động tốt hơn.',
+          'Chỉ kiểm tra phiên bản B của một trang web.',
+          'Một bài kiểm tra về kiến thức cơ bản.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'A/B testing là một công cụ cốt lõi của CRO, cho phép bạn đưa ra các quyết định cải tiến dựa trên bằng chứng dữ liệu thay vì cảm tính.',
+      },
+    ],
   },
 ];
 

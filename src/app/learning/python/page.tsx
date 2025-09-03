@@ -1,143 +1,81 @@
 import type { Metadata } from 'next';
-
-import ModulePageTemplate, {
-  ModuleData,
-} from '@/components/learning/ModulePageTemplate';
-import { pythonLessons, PythonLesson } from '@/data/python';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
+import { pythonLessons } from '@/data/python';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 
 export const metadata: Metadata = createModuleMetadata(
   'Python Programming - Lập Trình Python',
-  'Học Python từ cơ bản đến nâng cao. Data Science, Web Development và AI Programming',
-  ['python programming', 'data science', 'web development', 'machine learning', 'pandas', 'django'],
-  'python'
+  'Học Python từ cơ bản đến nâng cao. Khám phá Data Science, Web Development, AI và tự động hóa với ngôn ngữ lập trình phổ biến nhất thế giới.',
+  [
+    'python programming',
+    'học python',
+    'lập trình python',
+    'data science',
+    'web development',
+    'machine learning',
+    'pandas',
+    'django',
+    'K2AI',
+  ],
+  'python',
 );
 
-// Convert PythonLesson to BaseLessonData interface
-function convertToLesson(pythonLesson: PythonLesson): BaseLessonData {
-  return {
-    id: pythonLesson.id,
-    title: pythonLesson.title,
-    description: pythonLesson.description,
-    duration: pythonLesson.duration,
-    difficulty: pythonLesson.difficulty,
-    category: 'Python Programming',
-    imageUrl: '/default-lesson.jpg',
-    videoUrl: pythonLesson.videoUrl,
-    objectives: pythonLesson.objectives,
-    prerequisites: pythonLesson.prerequisites || [
-      'Basic computer skills',
-      'Logical thinking',
-      'Problem-solving mindset',
-    ],
-    exercises:
-      pythonLesson.exercises?.map((ex) => ({
-        title: ex.title,
-        description: ex.description,
-        difficulty: ex.difficulty,
-        materials: ex.requirements || [],
-        procedure: [ex.solution],
-        expectedResults: 'Chương trình chạy thành công và cho kết quả đúng',
-        solution: ex.solution,
-      })) || [],
-    resources: [],
-    tools: ['Python 3.x', 'IDE (PyCharm, VS Code)', 'Terminal/Command Prompt'],
-    realWorldApplications: pythonLesson.realWorldApplications || [],
-    caseStudies: [],
-  };
-}
-
 export default function PythonPage() {
-  // Convert lessons to base interface
-  const convertedLessons = pythonLessons.map(convertToLesson);
-
-  const moduleConfig: ModuleData = {
+  const moduleData = {
+    id: 'python',
     title: 'Python Programming',
-    subtitle: 'Lập Trình Python Cơ Bản',
+    subtitle: 'Từ Zero đến Hero trong Lập Trình Python',
     description:
-      'Học Python qua các bài toán cơ bản và thực tế. Từ syntax cơ bản đến giải thuật và xử lý dữ liệu - nền tảng vững chắc cho lập trình viên tương lai.',
-    primaryColor: 'yellow',
-    gradientColors: 'from-slate-900 via-yellow-900 to-green-900',
-    basePath: '/learning/python',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?w=1200&h=600&fit=crop',
-    statsConfig: {
-      lessons: `${pythonLessons.length}+ bài`,
-      duration: '25-30 giờ',
-      level: 'Cơ bản → Trung bình',
-      projects: '8+ dự án thực hành',
-    },
-    marketData: {
-      marketSize: '#1 Language',
-      marketNote: 'Most popular programming language 2024',
-      jobGrowth: '25% Growth',
-      jobNote: 'Python developer jobs by 2030',
-      reduction: '60% Faster',
-      reductionNote: 'Development time vs other languages',
-      startups: '85% Usage',
-      startupsNote: 'Tech companies use Python',
-    },
-    careerPaths: [
+      'Khóa học toàn diện giúp bạn làm chủ Python, ngôn ngữ lập trình số 1 thế giới. Từ cú pháp cơ bản đến các ứng dụng thực tế trong khoa học dữ liệu, phát triển web và trí tuệ nhân tạo, khóa học này là nền tảng vững chắc cho sự nghiệp lập trình viên của bạn.',
+    level: 'Cơ bản - Nâng cao',
+    duration: '25-30 giờ',
+    category: 'Programming & Development',
+    features: [
+      'Học từ cú pháp cơ bản đến OOP nâng cao.',
+      'Thực hành với 8+ dự án thực tế.',
+      'Nắm vững các cấu trúc dữ liệu và giải thuật.',
+      'Xây dựng ứng dụng web, tool tự động hóa.',
+    ],
+    icon: '🐍',
+    color: 'from-yellow-500 to-green-500',
+    objectives: [
+      'Nắm vững cú pháp và các khái niệm cốt lõi của Python.',
+      'Sử dụng thành thạo các cấu trúc dữ liệu: Lists, Dictionaries, Tuples.',
+      'Hiểu và áp dụng lập trình hướng đối tượng (OOP).',
+      'Xử lý file, làm việc với dữ liệu từ CSV và JSON.',
+      'Viết các thuật toán tìm kiếm, sắp xếp cơ bản.',
+      'Xây dựng các ứng dụng nhỏ và script tự động hóa.',
+    ],
+    prerequisites: [
+      'Kỹ năng sử dụng máy tính cơ bản.',
+      'Tư duy logic và khả năng giải quyết vấn đề.',
+      'Không yêu cầu kinh nghiệm lập trình trước đó.',
+    ],
+    careerOutcomes: [
       'Python Developer',
-      'Data Scientist',
+      'Data Analyst / Data Scientist',
       'Web Developer (Django/Flask)',
       'AI/ML Engineer',
       'Automation Engineer',
       'Software Developer',
     ],
-    technicalHighlights: [
-      {
-        title: 'Python Fundamentals',
-        icon: '🐍',
-        items: [
-          'Syntax & Variables',
-          'Data Types',
-          'Control Structures',
-          'Functions',
-        ],
-      },
-      {
-        title: 'Data Structures',
-        icon: '📊',
-        items: [
-          'Lists & Tuples',
-          'Dictionaries',
-          'Sets',
-          'List Comprehensions',
-        ],
-      },
-      {
-        title: 'Problem Solving',
-        icon: '🧩',
-        items: ['Algorithms', 'Logic Building', 'Debugging', 'Testing'],
-      },
-      {
-        title: 'File Handling',
-        icon: '📄',
-        items: ['File I/O', 'CSV Processing', 'JSON Data', 'Error Handling'],
-      },
-      {
-        title: 'OOP Basics',
-        icon: '🏗️',
-        items: ['Classes & Objects', 'Inheritance', 'Encapsulation', 'Methods'],
-      },
-      {
-        title: 'Real Applications',
-        icon: '🚀',
-        items: [
-          'Calculator Apps',
-          'Data Analysis',
-          'Game Development',
-          'Automation Scripts',
-        ],
-      },
+    industryApplications: [
+      'Phân tích dữ liệu và trực quan hóa trong tài chính.',
+      'Xây dựng backend cho ứng dụng web và di động.',
+      'Tự động hóa các tác vụ văn phòng và hệ thống.',
+      'Phát triển các mô hình học máy và AI.',
+      'Lập trình game và ứng dụng desktop.',
+      'Nghiên cứu khoa học và tính toán hiệu năng cao.',
     ],
-    relatedModules: [K2Module.Arduino, K2Module.STEM, K2Module.Scratch],
+    marketDemand: {
+      averageSalary: '20-45 triệu VNĐ',
+      jobGrowth: '+25%',
+      hireDemand: 'Rất cao',
+    },
+    relatedModules: [K2Module.Arduino, K2Module.STEM, K2Module.Scratch, K2Module.DataScienceAnalytics],
+    heroImageUrl: 'https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?w=1200&h=600&fit=crop',
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={pythonLessons} />;
 }

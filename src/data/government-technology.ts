@@ -1,12 +1,15 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
 
-export interface GovernmentTechnologyLesson extends BaseLessonData {
+interface MainContent {
   governmentDomain: 'digital-government' | 'public-service-tech' | 'civic-engagement' | 'smart-city' | 'policy-tech';
   technologyCategory: string[];
   vietnameseGovernmentContext: string[];
   publicServiceApplications: string[];
   digitalTransformationAspects: string[];
+}
+
+export interface GovernmentTechnologyLesson extends BaseLessonData {
+  mainContent: MainContent;
 }
 
 export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
@@ -19,13 +22,33 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=0Bw4Tpy0JzE', // Digital Government Transformation
     imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop',
-    governmentDomain: 'digital-government',
-    technologyCategory: [
-      'Nền tảng chính phủ điện tử',
-      'Hệ thống định danh số',
-      'Cổng dịch vụ công',
-      'Quản lý dữ liệu chính phủ',
-    ],
+    mainContent: {
+      governmentDomain: 'digital-government',
+      technologyCategory: [
+        'Nền tảng chính phủ điện tử',
+        'Hệ thống định danh số',
+        'Cổng dịch vụ công',
+        'Quản lý dữ liệu chính phủ',
+      ],
+      vietnameseGovernmentContext: [
+        'Chương trình Chuyển đổi số Quốc gia Việt Nam',
+        'Các sáng kiến chuyển đổi số cấp Bộ',
+        'Số hóa chính quyền cấp tỉnh và địa phương',
+        'Hợp tác chính phủ số ASEAN',
+      ],
+      publicServiceApplications: [
+        'Hệ thống đăng ký kinh doanh trực tuyến',
+        'Quản lý hồ sơ sức khỏe điện tử',
+        'Hệ thống khai và nộp thuế điện tử',
+        'Cổng dịch vụ công dân số',
+      ],
+      digitalTransformationAspects: [
+        'Chiến lược hiện đại hóa hệ thống cũ',
+        'Thiết kế dịch vụ lấy công dân làm trung tâm',
+        'Yêu cầu về khả năng tương tác dữ liệu',
+        'Bảo mật số và bảo vệ quyền riêng tư',
+      ],
+    },
     objectives: [
       'Hiểu các nguyên tắc chuyển đổi số chính phủ',
       'Thiết kế dịch vụ công số lấy người dùng làm trung tâm',
@@ -38,23 +61,48 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
       'Kiến thức cơ bản về phát triển web',
       'Hiểu biết về các quy trình của chính phủ',
     ],
-    vietnameseGovernmentContext: [
-      'Chương trình Chuyển đổi số Quốc gia Việt Nam',
-      'Các sáng kiến chuyển đổi số cấp Bộ',
-      'Số hóa chính quyền cấp tỉnh và địa phương',
-      'Hợp tác chính phủ số ASEAN',
-    ],
-    publicServiceApplications: [
-      'Hệ thống đăng ký kinh doanh trực tuyến',
-      'Quản lý hồ sơ sức khỏe điện tử',
-      'Hệ thống khai và nộp thuế điện tử',
-      'Cổng dịch vụ công dân số',
-    ],
-    digitalTransformationAspects: [
-      'Chiến lược hiện đại hóa hệ thống cũ',
-      'Thiết kế dịch vụ lấy công dân làm trung tâm',
-      'Yêu cầu về khả năng tương tác dữ liệu',
-      'Bảo mật số và bảo vệ quyền riêng tư',
+    vietnamContext: {
+      title: 'Chuyển đổi số quốc gia tại Việt Nam',
+      content: [
+        'Việt Nam đang triển khai mạnh mẽ "Chương trình Chuyển đổi số quốc gia đến năm 2025, định hướng đến năm 2030" với 3 trụ cột: Chính phủ số, Kinh tế số và Xã hội số.',
+        'Cổng Dịch vụ công Quốc gia (dichvucong.gov.vn) đã tích hợp hàng ngàn dịch vụ công trực tuyến, giúp người dân và doanh nghiệp tiết kiệm thời gian và chi phí.',
+        'Hệ thống định danh và xác thực điện tử VNeID đang được triển khai rộng rãi, tích hợp nhiều giấy tờ cá nhân như Căn cước công dân, giấy phép lái xe, bảo hiểm y tế.',
+        'Nhiều địa phương như Đà Nẵng, Thừa Thiên Huế, Bình Dương đang đi đầu trong việc xây dựng các mô hình thành phố thông minh và chính quyền điện tử.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Phạm Nhật Huy',
+      title: 'Chuyên viên Cao cấp, Cục Tin học hóa, Bộ Thông tin và Truyền thông',
+      company: 'Bộ Thông tin và Truyền thông',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-nhat-huy',
+      quote:
+        'Công việc của chúng tôi là kiến tạo một chính phủ "không giấy tờ", hoạt động hiệu quả và minh bạch hơn. Thách thức lớn nhất là thay đổi tư duy và quy trình làm việc truyền thống, nhưng khi thấy người dân có thể làm thủ tục hành chính ngay trên điện thoại, đó là động lực lớn nhất.',
+    },
+    quizzes: [
+      {
+        question: 'Đâu là 3 trụ cột chính của Chương trình Chuyển đổi số quốc gia Việt Nam?',
+        options: [
+          'Công nghiệp số, Nông nghiệp số, Du lịch số',
+          'Chính phủ số, Kinh tế số, Xã hội số',
+          'An ninh mạng, Thương mại điện tử, Giáo dục trực tuyến',
+          'Hạ tầng số, Nhân lực số, Thể chế số',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Chương trình Chuyển đổi số quốc gia của Việt Nam tập trung vào ba trụ cột chính là Chính phủ số, Kinh tế số và Xã hội số để tạo ra sự thay đổi toàn diện.',
+      },
+      {
+        question: 'Ứng dụng VNeID của Bộ Công an dùng để làm gì?',
+        options: [
+          'Chơi game',
+          'Định danh và xác thực điện tử, tích hợp giấy tờ cá nhân',
+          'Mua sắm trực tuyến',
+          'Đặt lịch khám bệnh',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'VNeID là ứng dụng định danh điện tử cấp bởi Bộ Công an, giúp công dân thực hiện các giao dịch hành chính, chứng minh thông tin cá nhân một cách tiện lợi và an toàn.',
+      },
     ],
     exercises: [
       {
@@ -104,12 +152,6 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
         type: 'Tài liệu',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'cybersecurity-defense'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'smart-city-technology-systems',
@@ -120,13 +162,33 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=7BqYIi4__Ws', // Smart City Technologies
     imageUrl: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=600&fit=crop',
-    governmentDomain: 'smart-city',
-    technologyCategory: [
-      'Mạng lưới cảm biến IoT',
-      'Quản lý giao thông thông minh',
-      'Giám sát môi trường',
-      'Nền tảng phân tích đô thị',
-    ],
+    mainContent: {
+      governmentDomain: 'smart-city',
+      technologyCategory: [
+        'Mạng lưới cảm biến IoT',
+        'Quản lý giao thông thông minh',
+        'Giám sát môi trường',
+        'Nền tảng phân tích đô thị',
+      ],
+      vietnameseGovernmentContext: [
+        'Đề án Thành phố Thông minh của Thành phố Hồ Chí Minh',
+        'Các sáng kiến phát triển thành phố thông minh của Hà Nội',
+        'Các dự án thí điểm thành phố thông minh của Đà Nẵng',
+        'Chiến lược phát triển thành phố thông minh quốc gia',
+      ],
+      publicServiceApplications: [
+        'Đỗ xe thông minh và tối ưu hóa luồng giao thông',
+        'Hệ thống giám sát chất lượng không khí',
+        'Tối ưu hóa lộ trình quản lý chất thải',
+        'Hệ thống ứng phó sự cố an toàn công cộng',
+      ],
+      digitalTransformationAspects: [
+        'Nền tảng dữ liệu thành phố tích hợp',
+        'Hệ thống ra quyết định thời gian thực',
+        'Hệ sinh thái ứng dụng di động cho công dân',
+        'Mô hình đối tác công-tư',
+      ],
+    },
     objectives: [
       'Thiết kế cơ sở hạ tầng thành phố thông minh hỗ trợ IoT',
       'Triển khai hệ thống thu thập và phân tích dữ liệu đô thị',
@@ -139,23 +201,49 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
       'Kiến thức cơ bản về phân tích dữ liệu',
       'Kiến thức cơ bản về quy hoạch đô thị',
     ],
-    vietnameseGovernmentContext: [
-      'Đề án Thành phố Thông minh của Thành phố Hồ Chí Minh',
-      'Các sáng kiến phát triển thành phố thông minh của Hà Nội',
-      'Các dự án thí điểm thành phố thông minh của Đà Nẵng',
-      'Chiến lược phát triển thành phố thông minh quốc gia',
-    ],
-    publicServiceApplications: [
-      'Đỗ xe thông minh và tối ưu hóa luồng giao thông',
-      'Hệ thống giám sát chất lượng không khí',
-      'Tối ưu hóa lộ trình quản lý chất thải',
-      'Hệ thống ứng phó sự cố an toàn công cộng',
-    ],
-    digitalTransformationAspects: [
-      'Nền tảng dữ liệu thành phố tích hợp',
-      'Hệ thống ra quyết định thời gian thực',
-      'Hệ sinh thái ứng dụng di động cho công dân',
-      'Mô hình đối tác công-tư',
+    vietnamContext: {
+      title: 'Xây dựng Thành phố Thông minh tại Việt Nam',
+      content: [
+        'TP. Hồ Chí Minh, Hà Nội, Đà Nẵng và Bình Dương là những địa phương tiên phong trong việc triển khai các đề án thành phố thông minh.',
+        'Trung tâm Giám sát, điều hành đô thị thông minh (IOC) đã được triển khai ở nhiều tỉnh thành, tích hợp dữ liệu từ camera an ninh, cảm biến môi trường, hệ thống giao thông.',
+        'Các ứng dụng cho công dân như "Đà Nẵng Smart City" hay "Hue-S" cho phép người dân phản ánh hiện trường, tra cứu thông tin quy hoạch, thanh toán dịch vụ công.',
+        'Thách thức lớn nhất hiện nay là vấn đề đồng bộ hóa dữ liệu giữa các ngành và đảm bảo an ninh, an toàn thông tin cho các hệ thống IoT.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Hoàng An Nhiên',
+      title: 'Kiến trúc sư Giải pháp IoT, FPT Smart Cloud',
+      company: 'FPT Smart Cloud',
+      imageUrl: 'https://i.pravatar.cc/150?u=hoang-an-nhien',
+      quote:
+        'Chúng tôi biến những ý tưởng về thành phố thông minh thành hiện thực. Từ việc lắp đặt cảm biến đo chất lượng không khí ở Hà Nội đến việc xây dựng hệ thống điều khiển đèn giao thông thông minh ở TP.HCM, công nghệ IoT đang giúp các đô thị của Việt Nam trở nên đáng sống và an toàn hơn.',
+    },
+    quizzes: [
+      {
+        question:
+          'Trung tâm IOC (Intelligent Operations Center) trong một thành phố thông minh có chức năng chính là gì?',
+        options: [
+          'Tổ chức sự kiện văn hóa',
+          'Giám sát, điều hành và tích hợp dữ liệu của đô thị',
+          'Cấp giấy phép xây dựng',
+          'Quản lý các trường học',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'IOC là "bộ não" của thành phố thông minh, nơi tập trung dữ liệu từ nhiều nguồn khác nhau để giúp lãnh đạo thành phố giám sát, phân tích và đưa ra quyết định điều hành hiệu quả.',
+      },
+      {
+        question: 'Ứng dụng nào sau đây KHÔNG phải là một ví dụ điển hình của thành phố thông minh?',
+        options: [
+          'Hệ thống đỗ xe thông minh chỉ dẫn chỗ trống',
+          'Ứng dụng đặt đồ ăn nhanh',
+          'Hệ thống giám sát chất lượng nước sông theo thời gian thực',
+          'Ứng dụng cho phép công dân báo cáo ổ gà trên đường',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Mặc dù ứng dụng đặt đồ ăn sử dụng công nghệ, nó chủ yếu phục vụ mục đích thương mại cá nhân thay vì quản lý và tối ưu hóa hạ tầng và dịch vụ công của đô thị.',
+      },
     ],
     exercises: [
       {
@@ -210,29 +298,43 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
         type: 'Tiêu chuẩn',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'iot-smart-city-builder-3d'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'renewable-energy-manager'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'civic-technology-citizen-engagement',
     title: 'Công Nghệ Dân Sự & Sự Tham Gia Của Công Dân',
     description:
-      'Phát triển các giải pháp công nghệ dân sự giúp tăng cường sự tham gia của công dân, tính minh bạch của chính phủ và sự tham gia dân chủ trong bối cảnh chính trị Việt Nam.',
+      'Phát triển các giải pháp công nghệ dân sự giúp tăng cường sự tham gia của công dân, tính minh bạch của chính phủ và sự tham gia dân chủ.',
     duration: '180 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Civic Technology and Democracy
     imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop',
-    governmentDomain: 'civic-engagement',
-    technologyCategory: [
-      'Nền tảng tương tác công dân',
-      'Công cụ minh bạch chính phủ',
-      'Hệ thống tham gia kỹ thuật số',
-      'Cơ chế phản hồi cộng đồng',
-    ],
+    mainContent: {
+      governmentDomain: 'civic-engagement',
+      technologyCategory: [
+        'Nền tảng tương tác công dân',
+        'Công cụ minh bạch chính phủ',
+        'Hệ thống tham gia kỹ thuật số',
+        'Cơ chế phản hồi cộng đồng',
+      ],
+      vietnameseGovernmentContext: [
+        'Hệ thống chính trị và quyền công dân Việt Nam',
+        'Phương pháp tương tác của Ủy ban Nhân dân địa phương',
+        'Cơ chế phản hồi của công dân tại Quốc hội',
+        'Mối quan hệ Đảng-nhà nước trong quản trị số',
+      ],
+      publicServiceApplications: [
+        'Hệ thống khiếu nại và góp ý của công dân',
+        'Nền tảng minh bạch ngân sách',
+        'Công cụ kỹ thuật số tham vấn cộng đồng',
+        'Ứng dụng báo cáo vấn đề cộng đồng',
+      ],
+      digitalTransformationAspects: [
+        'Sáng kiến dữ liệu chính phủ mở',
+        'Công cụ dân chủ kỹ thuật số',
+        'Truyền thông chính phủ qua mạng xã hội',
+        'Nền tảng tương tác giữa công dân và chính phủ',
+      ],
+    },
     objectives: [
       'Thiết kế nền tảng kỹ thuật số tương tác công dân',
       'Triển khai hệ thống minh bạch chính phủ',
@@ -245,23 +347,44 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
       'Nguyên tắc tương tác cộng đồng',
       'Kiến thức cơ bản về khoa học chính trị',
     ],
-    vietnameseGovernmentContext: [
-      'Hệ thống chính trị và quyền công dân Việt Nam',
-      'Phương pháp tương tác của Ủy ban Nhân dân địa phương',
-      'Cơ chế phản hồi của công dân tại Quốc hội',
-      'Mối quan hệ Đảng-nhà nước trong quản trị số',
-    ],
-    publicServiceApplications: [
-      'Hệ thống khiếu nại và góp ý của công dân',
-      'Nền tảng minh bạch ngân sách',
-      'Công cụ kỹ thuật số tham vấn cộng đồng',
-      'Ứng dụng báo cáo vấn đề cộng đồng',
-    ],
-    digitalTransformationAspects: [
-      'Sáng kiến dữ liệu chính phủ mở',
-      'Công cụ dân chủ kỹ thuật số',
-      'Truyền thông chính phủ qua mạng xã hội',
-      'Nền tảng tương tác giữa công dân và chính phủ',
+    vietnamContext: {
+      title: 'Tương tác Công dân trong Kỷ nguyên số tại Việt Nam',
+      content: [
+        'Nhiều cơ quan chính phủ Việt Nam sử dụng các nền tảng mạng xã hội như Zalo và Facebook để cung cấp thông tin và tiếp nhận phản hồi từ người dân.',
+        'Các ứng dụng "Phản ánh hiện trường" cho phép người dân chụp ảnh, gửi các vấn đề về trật tự đô thị, vệ sinh môi trường... đến chính quyền xử lý.',
+        'Các kỳ họp Quốc hội ngày càng cởi mở hơn trong việc tiếp thu ý kiến cử tri qua các kênh trực tuyến và báo chí.',
+        'Thách thức là làm sao để đảm bảo các ý kiến đóng góp được xử lý một cách thực chất và có phản hồi minh bạch, tránh hình thức.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bà Nguyễn Thị Lan',
+      title: 'Trưởng phòng Dân nguyện, Văn phòng Quốc hội',
+      company: 'Văn phòng Quốc hội',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-lan',
+      quote:
+        'Công nghệ đã thay đổi cách chúng tôi lắng nghe người dân. Thay vì chỉ qua các buổi tiếp xúc cử tri, giờ đây chúng tôi có thể nắm bắt tâm tư, nguyện vọng của người dân hàng ngày qua các kênh số. Việc phân tích dữ liệu lớn từ các nguồn này giúp chúng tôi xác định các vấn đề xã hội nổi cộm để đưa ra nghị trường.',
+    },
+    quizzes: [
+      {
+        question: '"Công nghệ dân sự" (Civic Tech) nhằm mục đích chính là gì?',
+        options: [
+          'Phát triển trò chơi điện tử về chính trị',
+          'Sử dụng công nghệ để tăng cường mối quan hệ giữa người dân và chính phủ',
+          'Bán các sản phẩm công nghệ cho chính phủ',
+          'Tấn công vào các hệ thống của chính phủ',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Civic Tech tập trung vào việc tạo ra các công cụ và nền tảng công nghệ để cải thiện sự tham gia của công dân, tăng cường tính minh bạch và hiệu quả của chính phủ.',
+      },
+      {
+        question:
+          'Tại Việt Nam, nền tảng nào thường được chính quyền địa phương sử dụng để tạo các "Official Account" nhằm tương tác với người dân?',
+        options: ['Telegram', 'WhatsApp', 'Zalo', 'Signal'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Zalo là một nền tảng rất phổ biến tại Việt Nam và được nhiều cơ quan nhà nước lựa chọn để tạo tài khoản chính thức (Official Account) nhằm gửi thông báo và tương tác với công dân.',
+      },
     ],
     exercises: [
       {
@@ -313,12 +436,6 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
         type: 'Tài nguyên',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'public-service-delivery-optimization',
@@ -329,13 +446,33 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=fhn6ZFh2dp4', // Public Service Innovation
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=600&fit=crop',
-    governmentDomain: 'public-service-tech',
-    technologyCategory: [
-      'Nền tảng cung cấp dịch vụ',
-      'Công cụ tự động hóa quy trình',
-      'Hệ thống phân tích hiệu suất',
-      'Tích hợp dịch vụ đa kênh',
-    ],
+    mainContent: {
+      governmentDomain: 'public-service-tech',
+      technologyCategory: [
+        'Nền tảng cung cấp dịch vụ',
+        'Công cụ tự động hóa quy trình',
+        'Hệ thống phân tích hiệu suất',
+        'Tích hợp dịch vụ đa kênh',
+      ],
+      vietnameseGovernmentContext: [
+        'Các sáng kiến cải cách thủ tục hành chính',
+        'Phát triển trung tâm dịch vụ một cửa',
+        'Yêu cầu hợp tác liên ngành',
+        'Các nhiệm vụ cải thiện chất lượng dịch vụ',
+      ],
+      publicServiceApplications: [
+        'Hệ thống cấp phép kinh doanh tích hợp',
+        'Nền tảng điều phối dịch vụ chăm sóc sức khỏe',
+        'Hệ thống hành chính giáo dục',
+        'Cung cấp phúc lợi dịch vụ xã hội',
+      ],
+      digitalTransformationAspects: [
+        'Chiến lược tích hợp hệ thống cũ',
+        'Chia sẻ dữ liệu giữa các cơ quan',
+        'Quản lý danh tính công dân',
+        'Giám sát hiệu suất dịch vụ',
+      ],
+    },
     objectives: [
       'Phân tích và cải thiện quy trình cung cấp dịch vụ công',
       'Triển khai tự động hóa trong các dịch vụ chính phủ thông thường',
@@ -348,23 +485,48 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
       'Kiến thức cơ bản về thiết kế trải nghiệm khách hàng',
       'Hiểu biết về dịch vụ chính phủ',
     ],
-    vietnameseGovernmentContext: [
-      'Các sáng kiến cải cách thủ tục hành chính',
-      'Phát triển trung tâm dịch vụ một cửa',
-      'Yêu cầu hợp tác liên ngành',
-      'Các nhiệm vụ cải thiện chất lượng dịch vụ',
-    ],
-    publicServiceApplications: [
-      'Hệ thống cấp phép kinh doanh tích hợp',
-      'Nền tảng điều phối dịch vụ chăm sóc sức khỏe',
-      'Hệ thống hành chính giáo dục',
-      'Cung cấp phúc lợi dịch vụ xã hội',
-    ],
-    digitalTransformationAspects: [
-      'Chiến lược tích hợp hệ thống cũ',
-      'Chia sẻ dữ liệu giữa các cơ quan',
-      'Quản lý danh tính công dân',
-      'Giám sát hiệu suất dịch vụ',
+    vietnamContext: {
+      title: 'Cải cách Thủ tục hành chính ở Việt Nam',
+      content: [
+        'Mô hình "Một cửa", "Một cửa liên thông" được triển khai rộng rãi tại các Trung tâm Hành chính công cấp tỉnh/thành phố, giúp giảm bớt việc người dân phải đi lại nhiều nơi.',
+        'Đề án 06 của Chính phủ về "Phát triển ứng dụng dữ liệu về dân cư, định danh và xác thực điện tử phục vụ chuyển đổi số quốc gia" là nòng cốt để đơn giản hóa nhiều thủ tục.',
+        'Việc trả kết quả giải quyết thủ tục hành chính qua dịch vụ bưu chính công ích (VNPost) giúp người dân không cần phải quay lại cơ quan nhà nước.',
+        'Mức độ hài lòng của người dân và doanh nghiệp là một trong những chỉ số quan trọng để đánh giá hiệu quả cải cách của các bộ, ngành, địa phương.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Trần Bích Ngọc',
+      title: 'Chuyên viên, Tổ công tác Đề án 06, Văn phòng Chính phủ',
+      company: 'Văn phòng Chính phủ',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-bich-ngoc',
+      quote:
+        'Mục tiêu của chúng tôi là cắt giảm tối đa các giấy tờ, thủ tục không cần thiết. Bằng cách kết nối các cơ sở dữ liệu quốc gia, chúng tôi hướng tới việc người dân chỉ cần cung cấp thông tin một lần cho nhà nước. Mỗi một thủ tục được đơn giản hóa là một niềm vui cho cả người dân và chính chúng tôi.',
+    },
+    quizzes: [
+      {
+        question: 'Mô hình "Một cửa liên thông" có nghĩa là gì?',
+        options: [
+          'Chỉ có một cơ quan nhà nước duy nhất',
+          'Người dân chỉ cần đến một nơi để nộp hồ sơ và nhận kết quả cho một nhóm các thủ tục liên quan đến nhiều cơ quan',
+          'Tất cả dịch vụ công đều có thể thực hiện qua một cửa sổ trên website',
+          'Chỉ làm việc một ngày trong tuần',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Một cửa liên thông là cơ chế giải quyết công việc của cá nhân, tổ chức thuộc trách nhiệm, thẩm quyền của nhiều cơ quan hành chính nhà nước cùng cấp hoặc giữa các cơ quan hành chính nhà nước các cấp nhưng có liên quan với nhau, theo đó người dân, doanh nghiệp chỉ cần đến một đầu mối để nộp hồ sơ và nhận kết quả.',
+      },
+      {
+        question: 'Đề án 06 của Chính phủ Việt Nam tập trung vào việc gì?',
+        options: [
+          'Xây dựng thêm đường cao tốc',
+          'Phát triển du lịch',
+          'Phát triển ứng dụng dữ liệu dân cư và định danh điện tử',
+          'Cải cách giáo dục phổ thông',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Đề án 06 là một chương trình lớn nhằm tận dụng Cơ sở dữ liệu quốc gia về dân cư để đơn giản hóa thủ tục hành chính, phát triển kinh tế - xã hội và phục vụ công dân số.',
+      },
     ],
     exercises: [
       {
@@ -416,12 +578,6 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
         type: 'Tài liệu',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'data-visualization'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
   {
     id: 'government-data-analytics-policy',
@@ -432,13 +588,33 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Government Data Analytics
     imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop',
-    governmentDomain: 'policy-tech',
-    technologyCategory: [
-      'Nền tảng dữ liệu chính phủ',
-      'Công cụ phân tích chính sách',
-      'Hệ thống mô hình hóa dự báo',
-      'Nền tảng quản lý bằng chứng',
-    ],
+    mainContent: {
+      governmentDomain: 'policy-tech',
+      technologyCategory: [
+        'Nền tảng dữ liệu chính phủ',
+        'Công cụ phân tích chính sách',
+        'Hệ thống mô hình hóa dự báo',
+        'Nền tảng quản lý bằng chứng',
+      ],
+      vietnameseGovernmentContext: [
+        'Hiện đại hóa hệ thống thống kê quốc gia',
+        'Nhu cầu dữ liệu cho kế hoạch phát triển kinh tế',
+        'Yêu cầu giám sát chính sách xã hội',
+        'Ứng dụng phân tích phát triển vùng',
+      ],
+      publicServiceApplications: [
+        'Hệ thống dự báo và kế hoạch kinh tế',
+        'Giám sát hiệu quả chương trình xã hội',
+        'Phân tích hiệu suất hệ thống chăm sóc sức khỏe',
+        'Mô hình dự đoán kết quả giáo dục',
+      ],
+      digitalTransformationAspects: [
+        'Triển khai sáng kiến dữ liệu mở',
+        'Tích hợp dữ liệu liên ngành',
+        'Bảng điều khiển giám sát chính sách thời gian thực',
+        'Bảo vệ quyền riêng tư dữ liệu công dân',
+      ],
+    },
     objectives: [
       'Triển khai hệ thống thu thập và quản lý dữ liệu chính phủ',
       'Phát triển các mô hình dự báo cho hoạch định chính sách',
@@ -451,23 +627,49 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
       'Thống kê và phương pháp nghiên cứu',
       'Kiến thức cơ bản về phát triển chính sách',
     ],
-    vietnameseGovernmentContext: [
-      'Hiện đại hóa hệ thống thống kê quốc gia',
-      'Nhu cầu dữ liệu cho kế hoạch phát triển kinh tế',
-      'Yêu cầu giám sát chính sách xã hội',
-      'Ứng dụng phân tích phát triển vùng',
-    ],
-    publicServiceApplications: [
-      'Hệ thống dự báo và kế hoạch kinh tế',
-      'Giám sát hiệu quả chương trình xã hội',
-      'Phân tích hiệu suất hệ thống chăm sóc sức khỏe',
-      'Mô hình dự đoán kết quả giáo dục',
-    ],
-    digitalTransformationAspects: [
-      'Triển khai sáng kiến dữ liệu mở',
-      'Tích hợp dữ liệu liên ngành',
-      'Bảng điều khiển giám sát chính sách thời gian thực',
-      'Bảo vệ quyền riêng tư dữ liệu công dân',
+    vietnamContext: {
+      title: 'Ra quyết định dựa trên dữ liệu tại Việt Nam',
+      content: [
+        'Tổng cục Thống kê đang trong quá trình hiện đại hóa, chuyển từ khảo sát giấy sang thu thập dữ liệu điện tử (CAPI) và phân tích dữ liệu lớn.',
+        'Dữ liệu từ các ngành như thuế, hải quan, bảo hiểm xã hội đang được tích hợp để cung cấp bức tranh toàn cảnh hơn về kinh tế - xã hội.',
+        'Trong các đợt dịch COVID-19, việc phân tích dữ liệu di chuyển dân cư, ca nhiễm, tiêm chủng đã đóng vai trò quan trọng trong việc đưa ra các quyết định phòng chống dịch.',
+        'Một thách thức lớn là chất lượng và tính nhất quán của dữ liệu từ các bộ ngành, địa phương khác nhau, cũng như năng lực phân tích dữ liệu của đội ngũ cán bộ.',
+      ],
+    },
+    careerConnect: {
+      name: 'Tiến sĩ Vũ Thành Trung',
+      title: 'Nhà nghiên cứu, Viện Chiến lược và Chính sách, Bộ Công Thương',
+      company: 'Bộ Công Thương',
+      imageUrl: 'https://i.pravatar.cc/150?u=vu-thanh-trung',
+      quote:
+        'Trước đây, chúng tôi làm chính sách dựa nhiều vào kinh nghiệm và các báo cáo định tính. Giờ đây, với dữ liệu, chúng tôi có thể xây dựng các mô hình dự báo tác động của một chính sách thương mại mới, hay phân tích xem ngành hàng nào có tiềm năng xuất khẩu lớn nhất. Dữ liệu là "ngọn hải đăng" giúp chúng tôi hoạch định chính sách một cách khách quan và hiệu quả hơn.',
+    },
+    quizzes: [
+      {
+        question: 'Hoạch định chính sách dựa trên bằng chứng (evidence-based policy) có nghĩa là gì?',
+        options: [
+          'Chỉ làm theo các chính sách đã có',
+          'Ra quyết định chính sách dựa trên phân tích dữ liệu và thông tin khách quan',
+          'Làm chính sách theo ý kiến của số đông trên mạng xã hội',
+          'Sao chép chính sách của nước khác',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Hoạch định chính sách dựa trên bằng chứng là một phương pháp tiếp cận nhấn mạnh việc sử dụng rigourous evidence (bằng chứng khắt khe) và phân tích dữ liệu để đưa ra các quyết định chính sách, thay vì chỉ dựa trên ý kiến chủ quan hoặc kinh nghiệm.',
+      },
+      {
+        question:
+          'Tại sao việc tích hợp dữ liệu từ nhiều ngành (thuế, hải quan, y tế...) lại quan trọng cho chính phủ?',
+        options: [
+          'Để tạo ra nhiều công việc hơn cho chuyên gia IT',
+          'Để có một cái nhìn toàn diện, đa chiều về một vấn đề xã hội hoặc kinh tế',
+          'Để làm cho hệ thống trở nên phức tạp hơn',
+          'Để bán dữ liệu cho các công ty quảng cáo',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Dữ liệu từ một ngành riêng lẻ chỉ cung cấp một góc nhìn hạn hẹp. Bằng cách tích hợp dữ liệu từ nhiều nguồn, các nhà hoạch định chính sách có thể phát hiện ra các mối liên hệ, các xu hướng ẩn và hiểu rõ hơn về bức tranh toàn cảnh, từ đó đưa ra quyết định chính xác hơn.',
+      },
     ],
     exercises: [
       {
@@ -524,12 +726,5 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
         type: 'Tài nguyên',
       },
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'data-visualization'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-data-analyst'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ml-model-builder'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
   },
 ];

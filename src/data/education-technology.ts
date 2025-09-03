@@ -1,19 +1,10 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
-
-const vrGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'virtual-reality-classroom');
-const aiTutorGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'ai-tutor-creator');
 
 export interface EducationTechLesson extends BaseLessonData {
   techFocus: 'Công cụ EdTech' | 'Phân tích học tập' | 'Học tập ảo' | 'Công nghệ đánh giá' | 'AI trong giáo dục';
   targetAudience: 'Giáo viên' | 'Học sinh' | 'Quản trị viên' | 'Phụ huynh' | 'Nhà phát triển';
   implementationLevel: 'Lớp học' | 'Tổ chức' | 'Quận/Huyện' | 'Quốc gia' | 'Toàn cầu';
   measurableOutcomes: string[];
-  relatedGames?: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
 }
 
 export const EducationTechnologyLessons: EducationTechLesson[] = [
@@ -121,6 +112,44 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
         type: 'Tutorial',
       },
     ],
+    vietnamContext: {
+      title: 'Thực tiễn áp dụng LMS tại Việt Nam',
+      content: [
+        'Nhiều trường đại học lớn như Đại học FPT, HUTECH, RMIT Việt Nam đã triển khai sâu rộng các hệ thống LMS như Canvas, Blackboard và Moodle để quản lý đào tạo.',
+        'Các tập đoàn lớn như Viettel, FPT Software sử dụng LMS để đào tạo nội bộ cho hàng chục nghìn nhân viên.',
+        'Trong giáo dục phổ thông, các nền tảng như VNPT E-Learning, Viettel Study, và OLM.vn đang được sử dụng rộng rãi, đặc biệt sau giai đoạn học trực tuyến do COVID-19.',
+        'Google Classroom là công cụ cực kỳ phổ biến ở mọi cấp học tại Việt Nam nhờ tính đơn giản, miễn phí và tích hợp tốt với bộ công cụ của Google.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Trần Minh Huy',
+      title: 'Chuyên gia E-Learning',
+      company: 'Tập đoàn FPT',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-minh-huy',
+      quote:
+        'Công việc của tôi là biến các ý tưởng đào tạo thành các khóa học trực tuyến hấp dẫn trên hệ thống LMS. Việc lựa chọn, tùy chỉnh và quản trị một LMS hiệu quả là chìa khóa để đảm bảo hàng ngàn nhân viên có thể học tập mọi lúc, mọi nơi và theo dõi được tiến trình của mình.',
+    },
+    quizzes: [
+      {
+        question: 'Hệ thống LMS nào sau đây là mã nguồn mở và rất phổ biến tại các trường đại học Việt Nam?',
+        options: ['Canvas', 'Blackboard', 'Moodle', 'Google Classroom'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Moodle là một hệ thống quản lý học tập mã nguồn mở, cho phép các trường đại học tùy biến sâu và được sử dụng rộng rãi tại Việt Nam.',
+      },
+      {
+        question: 'Tính năng nào KHÔNG phải là một chức năng cốt lõi của một LMS?',
+        options: [
+          'Quản lý khóa học và tài liệu',
+          'Theo dõi tiến độ và chấm điểm',
+          'Tạo diễn đàn thảo luận',
+          'Soạn thảo văn bản chuyên nghiệp như Microsoft Word',
+        ],
+        correctAnswerIndex: 3,
+        explanation:
+          'Mặc dù LMS có trình soạn thảo văn bản, nhưng nó không phải là một công cụ soạn thảo chuyên nghiệp như Word. Các chức năng cốt lõi của LMS tập trung vào quản lý và phân phối nội dung học tập.',
+      },
+    ],
   },
 
   {
@@ -153,15 +182,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
       'Tăng 30% engagement và hiệu quả học tập của học sinh',
       'Tạo được hệ thống học tập cá nhân hóa cho 100+ học sinh',
     ],
-    relatedGames: aiTutorGame
-      ? [
-          {
-            id: aiTutorGame.id,
-            name: aiTutorGame.title,
-            description: aiTutorGame.description,
-          },
-        ]
-      : [],
     exercises: [
       {
         title: 'Xây Dựng Chatbot Hỗ Trợ Học Tập Với Dialogflow',
@@ -243,6 +263,39 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
         type: 'Documentation',
       },
     ],
+    vietnamContext: {
+      title: 'AI trong Giáo dục tại Việt Nam',
+      content: [
+        'ELSA Speak, một startup Việt Nam thành công toàn cầu, sử dụng AI để dạy phát âm tiếng Anh.',
+        'Nền tảng FPT.AI for Education cung cấp các giải pháp như nhận dạng chữ viết tay, chấm thi tự động cho các trường học.',
+        'Các nền tảng học tập trực tuyến như VUIHOC, Hocmai.vn đang tích hợp AI để cá nhân hóa lộ trình học và gợi ý bài tập phù hợp cho học sinh.',
+        'Chatbot tuyển sinh sử dụng AI được nhiều trường đại học và cao đẳng triển khai để tư vấn cho học sinh và phụ huynh 24/7.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Lan Anh',
+      title: 'Product Manager, AI in EdTech',
+      company: 'ELSA Corp',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-lan-anh',
+      quote:
+        'Tại ELSA, chúng tôi không chỉ xây dựng một ứng dụng học tiếng Anh, mà còn tạo ra một người bạn đồng hành AI. Công việc của tôi là nghiên cứu nhu cầu người học, làm việc với các kỹ sư AI để phát triển các tính năng nhận diện giọng nói chính xác nhất, giúp hàng triệu người Việt tự tin hơn khi giao tiếp.',
+    },
+    quizzes: [
+      {
+        question: 'Ứng dụng nào của AI trong giáo dục giúp tạo ra lộ trình học tập riêng cho mỗi học sinh?',
+        options: ['Chatbot hỗ trợ', 'Chấm bài tự động', 'Adaptive Learning (Học tập thích ứng)', 'Nhận dạng khuôn mặt'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Adaptive Learning sử dụng AI để phân tích hiệu suất của học sinh và tự động điều chỉnh độ khó, nội dung và phương pháp giảng dạy cho phù hợp với từng cá nhân.',
+      },
+      {
+        question: 'Startup EdTech nào của Việt Nam nổi tiếng toàn cầu với ứng dụng luyện phát âm tiếng Anh bằng AI?',
+        options: ['Hocmai.vn', 'ELSA Speak', 'VUIHOC', 'Topica'],
+        correctAnswerIndex: 1,
+        explanation:
+          'ELSA Speak là một trong những startup EdTech thành công nhất của Việt Nam, huy động được hàng triệu USD vốn đầu tư và có hàng chục triệu người dùng trên toàn thế giới.',
+      },
+    ],
   },
 
   {
@@ -275,15 +328,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
       'Triển khai VR/AR lab với 20+ devices cho trường học',
       'Training 50+ giảng viên sử dụng công nghệ VR/AR',
     ],
-    relatedGames: vrGame
-      ? [
-          {
-            id: vrGame.id,
-            name: vrGame.title,
-            description: vrGame.description,
-          },
-        ]
-      : [],
     exercises: [
       {
         title: 'Tạo Virtual Museum Tour Với CoSpaces Edu',
@@ -364,6 +408,41 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
         title: 'Unity Learn - AR/VR Development',
         url: 'https://learn.unity.com/pathway/vr-development',
         type: 'Tutorial',
+      },
+    ],
+    vietnamContext: {
+      title: 'Ứng dụng VR/AR trong Giáo dục và Đào tạo tại Việt Nam',
+      content: [
+        'Các trường đại học kỹ thuật như Đại học Bách Khoa, USTH, RMIT Việt Nam đã xây dựng các phòng lab VR/AR để sinh viên thực hành mô phỏng.',
+        'Trong lĩnh vực bất động sản, các công ty như Vinhomes sử dụng VR để tạo các tour tham quan nhà mẫu ảo cho khách hàng và đào tạo nhân viên kinh doanh.',
+        'Trung tâm Bảo tồn Di tích Cố đô Huế đã bắt đầu ứng dụng AR để tái hiện lại các công trình lịch sử và cung cấp thông tin cho du khách.',
+        'Các công ty game Việt Nam đang phát triển các sản phẩm giáo dục sử dụng VR/AR để dạy lịch sử, văn hóa và khoa học cho trẻ em.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Phạm Hoàng Long',
+      title: 'VR/AR Developer for Education',
+      company: 'TMA Solutions',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-hoang-long',
+      quote:
+        'Tôi tạo ra những thế giới ảo nơi sinh viên y khoa có thể thực hành phẫu thuật mà không gặp rủi ro, hay học sinh có thể du hành ngược thời gian về thăm Cố đô Huế. Công việc của tôi là kết hợp giữa lập trình, thiết kế 3D và kịch bản sư phạm để tạo ra những trải nghiệm học tập không thể nào quên.',
+    },
+    quizzes: [
+      {
+        question:
+          'Công nghệ nào cho phép hiển thị các vật thể ảo trong môi trường thực tế thông qua camera của điện thoại?',
+        options: ['Virtual Reality (VR)', 'Augmented Reality (AR)', 'Mixed Reality (MR)', '360° Video'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Augmented Reality (AR) hay Thực tế tăng cường là công nghệ chồng các lớp thông tin ảo (hình ảnh, dữ liệu) lên trên thế giới thực thông qua các thiết bị như smartphone hoặc kính thông minh.',
+      },
+      {
+        question:
+          'Nền tảng nào sau đây cho phép người dùng (kể cả không chuyên) dễ dàng tạo ra các thế giới ảo 3D cho giáo dục?',
+        options: ['Unity', 'Unreal Engine', 'CoSpaces Edu', 'ARCore'],
+        correctAnswerIndex: 2,
+        explanation:
+          'CoSpaces Edu là một nền tảng thân thiện với người dùng, cho phép giáo viên và học sinh tạo ra các nội dung 3D, VR và AR một cách dễ dàng bằng giao diện kéo-thả và lập trình khối đơn giản.',
       },
     ],
   },
@@ -480,6 +559,44 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
         type: 'Documentation',
       },
     ],
+    vietnamContext: {
+      title: 'Phân tích dữ liệu trong giáo dục Việt Nam',
+      content: [
+        'Đại học Quốc gia Hà Nội và TP.HCM sử dụng phân tích dữ liệu để tối ưu hóa quy trình tuyển sinh và dự báo kết quả học tập của sinh viên.',
+        'Các trung tâm kiểm định chất lượng giáo dục đang áp dụng các công cụ phân tích để đánh giá hiệu quả của các chương trình đào tạo.',
+        'Các công ty EdTech lớn tại Việt Nam như FPT, Viettel đều có bộ phận phân tích dữ liệu để cải thiện sản phẩm và cá nhân hóa trải nghiệm người dùng.',
+        'Việc phân tích dữ liệu từ các kỳ thi quốc gia giúp các nhà hoạch định chính sách đưa ra những điều chỉnh phù hợp cho chương trình giáo dục phổ thông.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Lê Thu Trang',
+      title: 'Chuyên viên Phân tích Dữ liệu Học tập',
+      company: 'Một Tổ chức Giáo dục lớn tại Hà Nội',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-thu-trang',
+      quote:
+        'Dữ liệu giống như "tiếng nói" của học sinh. Bằng cách phân tích điểm số, thời gian học, và mức độ tương tác, tôi có thể phát hiện sớm những sinh viên đang gặp khó khăn và đề xuất các biện pháp can thiệp kịp thời. Công việc của tôi giúp nhà trường đưa ra quyết định dựa trên bằng chứng, thay vì cảm tính.',
+    },
+    quizzes: [
+      {
+        question: 'Mục tiêu chính của Learning Analytics là gì?',
+        options: [
+          'Chỉ để theo dõi điểm danh của học sinh',
+          'Để hiểu và tối ưu hóa việc học và môi trường học tập',
+          'Để bán dữ liệu học sinh cho các công ty quảng cáo',
+          'Để thay thế hoàn toàn vai trò của giáo viên',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Learning Analytics (Phân tích học tập) tập trung vào việc thu thập, phân tích và báo cáo dữ liệu về người học và bối cảnh của họ, nhằm mục đích hiểu và tối ưu hóa việc học và môi trường diễn ra việc học đó.',
+      },
+      {
+        question: 'Công cụ nào sau đây thường được sử dụng để tạo các dashboard trực quan hóa dữ liệu giáo dục?',
+        options: ['Python', 'SQL', 'Power BI / Tableau', 'Excel'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Power BI và Tableau là hai công cụ Business Intelligence (BI) hàng đầu, rất mạnh mẽ trong việc tạo ra các báo cáo và dashboard tương tác, trực quan từ các bộ dữ liệu lớn, rất phù hợp cho learning analytics.',
+      },
+    ],
   },
 
   {
@@ -592,6 +709,49 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
         title: 'ASU+GSV Education Innovation Summit',
         url: 'https://www.asugsvsummit.com/',
         type: 'Documentation',
+      },
+    ],
+    vietnamContext: {
+      title: 'Hệ sinh thái Khởi nghiệp EdTech tại Việt Nam',
+      content: [
+        'Việt Nam là một trong những thị trường EdTech phát triển nhanh nhất Đông Nam Á, với các tên tuổi nổi bật như ELSA Speak, CoderSchool, VUIHOC, Manabie.',
+        'Chính phủ có nhiều chính sách hỗ trợ chuyển đổi số trong giáo dục, tạo điều kiện cho các startup EdTech phát triển (Đề án 844).',
+        "Các quỹ đầu tư mạo hiểm trong và ngoài nước như Do Ventures, Monk's Hill Ventures, ThinkZone Ventures đang tích cực đầu tư vào các startup EdTech Việt Nam.",
+        'Thách thức lớn nhất là việc thuyết phục các trường học công lập áp dụng công nghệ mới và mô hình kinh doanh bền vững.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Văn Đinh Hồng Vũ',
+      title: 'Nhà sáng lập & CEO',
+      company: 'ELSA Corp',
+      imageUrl: 'https://i.pravatar.cc/150?u=van-dinh-hong-vu',
+      quote:
+        'Khởi nghiệp EdTech là một hành trình đầy thử thách nhưng cũng vô cùng ý nghĩa. Chúng tôi bắt đầu từ một vấn đề cá nhân - khó khăn trong việc nói tiếng Anh - và biến nó thành một giải pháp công nghệ giúp hàng triệu người. Chìa khóa thành công là sự kiên trì, thấu hiểu sâu sắc người dùng và xây dựng một đội ngũ đam mê.',
+    },
+    quizzes: [
+      {
+        question: 'MVP trong khởi nghiệp là viết tắt của cụm từ nào?',
+        options: [
+          'Most Valuable Player (Người chơi giá trị nhất)',
+          'Minimum Viable Product (Sản phẩm khả dụng tối thiểu)',
+          'Maximum Viable Profit (Lợi nhuận khả thi tối đa)',
+          'Mainstream Viral Promotion (Quảng bá lan truyền chính thống)',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Minimum Viable Product (MVP) là phiên bản sản phẩm có các tính năng cốt lõi tối thiểu, đủ để ra mắt cho những người dùng đầu tiên và thu thập phản hồi để phát triển tiếp.',
+      },
+      {
+        question: 'Mô hình kinh doanh "Freemium" trong EdTech có nghĩa là gì?',
+        options: [
+          'Sản phẩm hoàn toàn miễn phí',
+          'Sản phẩm chỉ dành cho người dùng trả phí cao cấp',
+          'Cung cấp miễn phí các tính năng cơ bản và thu phí cho các tính năng nâng cao',
+          'Bán sản phẩm với giá rất rẻ',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Mô hình Freemium là sự kết hợp giữa "Free" (miễn phí) và "Premium" (cao cấp). Nó cho phép người dùng trải nghiệm các tính năng cơ bản miễn phí và khuyến khích họ nâng cấp lên phiên bản trả phí để sử dụng các chức năng cao cấp hơn.',
       },
     ],
   },

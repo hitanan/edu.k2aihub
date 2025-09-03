@@ -1,5 +1,25 @@
 import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
 
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
 export interface CrossCulturalLessonType extends BaseLessonData {
   culturalDimensions: string[];
   communicationPatterns: Array<{
@@ -30,6 +50,9 @@ export interface CrossCulturalLessonType extends BaseLessonData {
     name: string;
     description: string;
   }>;
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  quizzes?: Quiz[];
 }
 
 export const crossCulturalLessons: CrossCulturalLessonType[] = [
@@ -294,6 +317,49 @@ export const crossCulturalLessons: CrossCulturalLessonType[] = [
         type: 'Tools',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Cầu nối văn hóa Đông - Tây',
+      content: [
+        'Việt Nam có nền văn hóa ngữ cảnh cao (high-context), coi trọng mối quan hệ và giao tiếp gián tiếp. Việc "giữ thể diện" và sự hòa hợp nhóm là rất quan trọng.',
+        'Thế hệ trẻ Việt Nam, đặc biệt là những người làm việc trong các công ty công nghệ và quốc tế, đang ngày càng quen thuộc với phong cách giao tiếp trực tiếp của phương Tây, tạo ra một môi trường làm việc đa dạng về phong cách ngay trong nước.',
+        'Sự khác biệt văn hóa vùng miền (Bắc - Trung - Nam) cũng là một yếu tố quan trọng, ảnh hưởng đến phong cách giao tiếp và kinh doanh ngay tại Việt Nam.',
+        'Trong đàm phán, người Việt thường dành nhiều thời gian để xây dựng mối quan hệ cá nhân trước khi đi vào công việc chính. Một bữa ăn thân mật có thể quan trọng hơn một cuộc họp chính thức.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Tôn Nữ Thị Ninh',
+      title: 'Cựu Đại sứ Việt Nam tại EU',
+      company: 'Nhà ngoại giao',
+      imageUrl: 'https://i.pravatar.cc/150?u=ton-nu-thi-ninh',
+      quote:
+        'Ngoại giao chính là nghệ thuật của trí tuệ đa văn hóa. Để bảo vệ lợi ích quốc gia, bạn phải hiểu sâu sắc không chỉ "họ nói gì" mà còn "tại sao họ nói như vậy". Đó là khả năng đọc được những thông điệp ẩn sau con chữ, hành động và cả sự im lặng.',
+    },
+    quizzes: [
+      {
+        question: 'Việt Nam được xếp vào nhóm văn hóa nào theo lý thuyết về ngữ cảnh giao tiếp?',
+        options: [
+          'Ngữ cảnh thấp (Low-context)',
+          'Ngữ cảnh cao (High-context)',
+          'Ngữ cảnh trung bình',
+          'Không thuộc nhóm nào',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Văn hóa Việt Nam là văn hóa ngữ cảnh cao, nơi các mối quan hệ, bối cảnh và những yếu tố phi ngôn ngữ đóng vai trò quan trọng trong việc truyền tải thông điệp.',
+      },
+      {
+        question: 'CQ Drive, một trong 4 thành tố của Trí tuệ Đa văn hóa, thể hiện điều gì?',
+        options: [
+          'Kiến thức về các nền văn hóa.',
+          'Khả năng điều chỉnh hành vi.',
+          'Động lực, sự tự tin và hứng thú khi tương tác với các nền văn hóa khác.',
+          'Khả năng lập chiến lược giao tiếp.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'CQ Drive là "động cơ" của Trí tuệ Đa văn hóa. Nếu không có động lực và sự tò mò, việc học hỏi kiến thức hay kỹ năng khác sẽ trở nên khó khăn.',
+      },
+    ],
   },
   {
     id: 'global-communication-mastery',
@@ -533,6 +599,49 @@ export const crossCulturalLessons: CrossCulturalLessonType[] = [
         type: 'Training',
       },
     ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Phong cách giao tiếp và lãnh đạo',
+      content: [
+        'Phong cách lãnh đạo ở Việt Nam thường có tính phân cấp cao (high power distance), nhưng đang dần thay đổi theo hướng cởi mở và trao quyền hơn, đặc biệt trong các công ty khởi nghiệp.',
+        'Khi đưa ra phản hồi tiêu cực, người Việt thường dùng cách nói gián tiếp, "vòng vo tam quốc" để tránh làm mất lòng người nghe. Việc hiểu và sử dụng kỹ thuật này là rất quan trọng.',
+        'Trong các cuộc họp, người có chức vụ cao nhất thường là người đưa ra quyết định cuối cùng, nhưng việc lấy ý kiến tập thể (dù chỉ mang tính hình thức) vẫn được coi trọng.',
+        'Sự im lặng trong giao tiếp của người Việt có thể mang nhiều ý nghĩa: sự đồng ý, sự không đồng ý nhưng không muốn đối đầu, hoặc đơn giản là cần thêm thời gian để suy nghĩ.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Nguyễn Duy Hưng',
+      title: 'Chủ tịch HĐQT',
+      company: 'SSI Securities Corporation',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-duy-hung',
+      quote:
+        'Trong kinh doanh, đặc biệt là kinh doanh quốc tế, chữ "tín" là quan trọng nhất. Nhưng để xây dựng được lòng tin với đối tác từ các nền văn hóa khác nhau, bạn phải hiểu cách họ định nghĩa chữ "tín". Với người này, đó là hợp đồng chặt chẽ. Với người khác, đó lại là một mối quan hệ cá nhân thân thiết.',
+    },
+    quizzes: [
+      {
+        question: 'Một nhà lãnh đạo "hòa nhập" (inclusive leader) trong môi trường đa văn hóa sẽ làm gì?',
+        options: [
+          'Chỉ lắng nghe ý kiến của những người nói nhiều nhất.',
+          'Bắt mọi người phải theo phong cách giao tiếp của mình.',
+          'Tạo ra không gian an toàn và chủ động mời gọi ý kiến từ những thành viên trầm tính hoặc có phong cách giao tiếp khác biệt.',
+          'Luôn đưa ra quyết định một mình.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Lãnh đạo hòa nhập là người có khả năng khai thác sức mạnh của sự đa dạng bằng cách đảm bảo mọi tiếng nói, dù là nhỏ nhất, đều được lắng nghe và tôn trọng.',
+      },
+      {
+        question: 'Trong một nền văn hóa "ngữ cảnh thấp" (low-context), thông điệp được truyền tải chủ yếu qua đâu?',
+        options: [
+          'Ngôn ngữ cơ thể và các yếu tố phi ngôn ngữ.',
+          'Mối quan hệ giữa người nói và người nghe.',
+          'Những lời nói trực tiếp, rõ ràng và minh bạch.',
+          'Những điều không được nói ra.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Các nền văn hóa ngữ cảnh thấp, như Mỹ hay Đức, coi trọng sự rõ ràng và trực tiếp. Thông điệp nằm ở chính lời nói, không cần phải "đọc giữa các dòng".',
+      },
+    ],
   },
   {
     id: 'building-global-networks',
@@ -715,6 +824,49 @@ export const crossCulturalLessons: CrossCulturalLessonType[] = [
         title: 'Cultural Detective',
         url: 'https://www.culturaldetective.com',
         type: 'Tools',
+      },
+    ],
+    vietnamContext: {
+      title: 'Bối cảnh Việt Nam: Xây dựng quan hệ "kiểu Việt"',
+      content: [
+        'Networking ở Việt Nam nặng về "tình cảm" và các mối quan hệ cá nhân. Người Việt thường muốn biết về bạn với tư cách một con người trước khi bàn về công việc.',
+        'Khái niệm "quan hệ" (connections) rất quan trọng. Một lời giới thiệu từ một người đáng tin cậy có giá trị hơn hàng chục email lạnh.',
+        'Các hoạt động như ăn nhậu, cà phê, hay thậm chí là karaoke là một phần không thể thiếu của quá trình xây dựng mối quan hệ kinh doanh.',
+        'Sự có đi có lại (reciprocity) rất được coi trọng. Nếu ai đó giúp bạn, họ sẽ ngầm kỳ vọng bạn sẽ giúp lại họ trong tương lai, dù không nói ra trực tiếp.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bà Hà Thị Thu Thanh',
+      title: 'Chủ tịch HĐTV',
+      company: 'Deloitte Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=ha-thi-thu-thanh',
+      quote:
+        'Để thành công trong ngành dịch vụ chuyên nghiệp tại Việt Nam, năng lực chuyên môn là điều kiện cần, nhưng xây dựng được mạng lưới quan hệ tin cậy mới là điều kiện đủ. Mạng lưới đó không được tạo ra trong phòng họp, mà được vun đắp qua những lần tương tác chân thành, nơi con người kết nối với con người.',
+    },
+    quizzes: [
+      {
+        question: 'Lòng tin dựa trên tình cảm (Affective trust) được xây dựng dựa trên yếu tố nào?',
+        options: [
+          'Bằng cấp và chứng chỉ của một người.',
+          'Hiệu quả công việc và các dự án đã hoàn thành.',
+          'Mối quan hệ cá nhân, sự đồng cảm và cảm giác thân thuộc.',
+          'Chức vụ của một người trong công ty.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Affective trust phổ biến ở các nền văn hóa thiên về mối quan hệ (relationship-oriented) như Việt Nam, nơi mọi người có xu hướng tin tưởng những người mà họ có mối liên kết cá nhân.',
+      },
+      {
+        question: 'Khi networking ở một nền văn hóa "relationship-oriented", bạn nên làm gì?',
+        options: [
+          'Đi thẳng vào vấn đề kinh doanh để tiết kiệm thời gian.',
+          'Dành thời gian cho các hoạt động xã giao, chia sẻ về bản thân và tìm hiểu về đối tác như một con người trước khi bàn về công việc.',
+          'Chỉ gửi email và không bao giờ gặp mặt trực tiếp.',
+          'Tránh nói về các chủ đề cá nhân như gia đình hay sở thích.',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Trong các nền văn hóa ưu tiên mối quan hệ, việc xây dựng một nền tảng quan hệ cá nhân vững chắc là bước đi bắt buộc trước khi các hoạt động kinh doanh có thể diễn ra một cách suôn sẻ.',
       },
     ],
   },

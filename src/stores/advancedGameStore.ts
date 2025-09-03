@@ -137,7 +137,7 @@ export interface MolecularAssemblyState {
   };
 }
 
-// Physics Lab Game State  
+// Physics Lab Game State
 export interface PhysicsLabState {
   experiments: Array<{
     id: string;
@@ -193,30 +193,33 @@ interface GameStore {
   smartHome: SmartHomeState;
   molecular: MolecularAssemblyState;
   physics: PhysicsLabState;
-  
+
   // Actions
   updateQuantumState: (updates: Partial<QuantumState>) => void;
   addQubit: (position: [number, number, number]) => void;
   updateQubitState: (qubitId: string, state: 'superposition' | '0' | '1') => void;
-  
+
   updateDNAState: (updates: Partial<DNAState>) => void;
   addDNAStrand: (sequence: string, position: [number, number, number]) => void;
   removeDNAStrand: (strandId: string) => void;
   mutateDNA: (strandId: string, position: number, newBase: string) => void;
-  
+
   updateSmartHomeState: (updates: Partial<SmartHomeState>) => void;
   addDevice: (roomId: string, deviceType: string, position: [number, number, number]) => void;
   toggleDevice: (deviceId: string) => void;
-  
+
   updateMolecularState: (updates: Partial<MolecularAssemblyState>) => void;
   addAtom: (element: string, position: [number, number, number]) => void;
   createBond: (atom1Id: string, atom2Id: string, bondType: 'single' | 'double' | 'triple') => void;
   removeAtom: (atomId: string) => void;
-  
+
   updatePhysicsState: (updates: Partial<PhysicsLabState>) => void;
   startExperiment: (experimentId: string) => void;
-  recordMeasurement: (experimentId: string, measurement: { time: number; value: number; unit: string; property: string }) => void;
-  
+  recordMeasurement: (
+    experimentId: string,
+    measurement: { time: number; value: number; unit: string; property: string },
+  ) => void;
+
   resetAllGames: () => void;
 }
 
@@ -226,7 +229,7 @@ const initialQuantumState: QuantumState = {
   currentLevel: 1,
   score: 0,
   completedExperiments: [],
-  achievements: []
+  achievements: [],
 };
 
 const initialDNAState: DNAState = {
@@ -234,11 +237,11 @@ const initialDNAState: DNAState = {
   proteins: [],
   tools: {
     selectedTool: 'sequencer',
-    editMode: false
+    editMode: false,
   },
   currentExperiment: '',
   progress: 0,
-  discoveredGenes: []
+  discoveredGenes: [],
 };
 
 const initialSmartHomeState: SmartHomeState = {
@@ -247,27 +250,27 @@ const initialSmartHomeState: SmartHomeState = {
       id: 'living-room',
       name: 'Phòng khách',
       position: [0, 0, 0],
-      devices: []
+      devices: [],
     },
     {
       id: 'bedroom',
       name: 'Phòng ngủ',
       position: [5, 0, 0],
-      devices: []
+      devices: [],
     },
     {
       id: 'kitchen',
       name: 'Nhà bếp',
       position: [0, 0, 5],
-      devices: []
-    }
+      devices: [],
+    },
   ],
   energyUsage: 0,
   securityStatus: 'disarmed',
   scenarios: [],
   currentScenario: null,
   budget: 10000000, // 10 triệu VND
-  installedDevices: 0
+  installedDevices: 0,
 };
 
 const initialMolecularState: MolecularAssemblyState = {
@@ -277,7 +280,7 @@ const initialMolecularState: MolecularAssemblyState = {
   assembly: {
     selectedAtom: null,
     bondingMode: false,
-    energyCalculation: false
+    energyCalculation: false,
   },
   challenges: [
     {
@@ -285,29 +288,29 @@ const initialMolecularState: MolecularAssemblyState = {
       name: 'Tạo phân tử nước (H2O)',
       targetMolecule: 'H2O',
       difficulty: 1,
-      completed: false
+      completed: false,
     },
     {
       id: 'methane-ch4',
       name: 'Tạo phân tử methane (CH4)',
       targetMolecule: 'CH4',
       difficulty: 2,
-      completed: false
+      completed: false,
     },
     {
       id: 'protein-insulin',
       name: 'Gấp protein insulin',
       targetMolecule: 'INSULIN',
       difficulty: 5,
-      completed: false
-    }
+      completed: false,
+    },
   ],
   score: 0,
   research: {
     points: 0,
     unlockedElements: ['H', 'C', 'O', 'N'],
-    discoveredMolecules: []
-  }
+    discoveredMolecules: [],
+  },
 };
 
 const initialPhysicsState: PhysicsLabState = {
@@ -319,29 +322,29 @@ const initialPhysicsState: PhysicsLabState = {
       name: 'Con lắc đơn',
       type: 'mechanics',
       available: true,
-      condition: 'excellent'
+      condition: 'excellent',
     },
     {
       id: 'spring-mass',
       name: 'Lò xo - quả nặng',
       type: 'mechanics',
       available: true,
-      condition: 'good'
+      condition: 'good',
     },
     {
       id: 'laser',
       name: 'Laser pointer',
       type: 'optics',
       available: true,
-      condition: 'excellent'
+      condition: 'excellent',
     },
     {
       id: 'prism',
       name: 'Lăng kính',
       type: 'optics',
       available: true,
-      condition: 'excellent'
-    }
+      condition: 'excellent',
+    },
   ],
   safety: {
     safetyScore: 100,
@@ -349,14 +352,14 @@ const initialPhysicsState: PhysicsLabState = {
     protective: {
       goggles: false,
       gloves: false,
-      labCoat: false
-    }
+      labCoat: false,
+    },
   },
   progress: {
     completedExperiments: [],
     skillLevel: 1,
-    achievements: []
-  }
+    achievements: [],
+  },
 };
 
 export const useAdvancedGameStore = create<GameStore>()(
@@ -371,7 +374,7 @@ export const useAdvancedGameStore = create<GameStore>()(
       // Quantum Computing Actions
       updateQuantumState: (updates) =>
         set((state) => ({
-          quantum: { ...state.quantum, ...updates }
+          quantum: { ...state.quantum, ...updates },
         })),
 
       addQubit: (position) =>
@@ -387,26 +390,24 @@ export const useAdvancedGameStore = create<GameStore>()(
                 entangled: false,
                 rotationX: 0,
                 rotationY: 0,
-                rotationZ: 0
-              }
-            ]
-          }
+                rotationZ: 0,
+              },
+            ],
+          },
         })),
 
       updateQubitState: (qubitId, newState) =>
         set((state) => ({
           quantum: {
             ...state.quantum,
-            qubits: state.quantum.qubits.map((qubit) =>
-              qubit.id === qubitId ? { ...qubit, state: newState } : qubit
-            )
-          }
+            qubits: state.quantum.qubits.map((qubit) => (qubit.id === qubitId ? { ...qubit, state: newState } : qubit)),
+          },
         })),
 
       // DNA Sequencing Actions
       updateDNAState: (updates) =>
         set((state) => ({
-          dna: { ...state.dna, ...updates }
+          dna: { ...state.dna, ...updates },
         })),
 
       addDNAStrand: (sequence, position) =>
@@ -420,18 +421,18 @@ export const useAdvancedGameStore = create<GameStore>()(
                 sequence,
                 position,
                 isEditing: false,
-                mutations: []
-              }
-            ]
-          }
+                mutations: [],
+              },
+            ],
+          },
         })),
 
       removeDNAStrand: (strandId) =>
         set((state) => ({
           dna: {
             ...state.dna,
-            dnaStrands: state.dna.dnaStrands.filter((strand) => strand.id !== strandId)
-          }
+            dnaStrands: state.dna.dnaStrands.filter((strand) => strand.id !== strandId),
+          },
         })),
 
       mutateDNA: (strandId, position, newBase) =>
@@ -447,19 +448,19 @@ export const useAdvancedGameStore = create<GameStore>()(
                       {
                         position,
                         original: strand.sequence[position],
-                        mutated: newBase
-                      }
-                    ]
+                        mutated: newBase,
+                      },
+                    ],
                   }
-                : strand
-            )
-          }
+                : strand,
+            ),
+          },
         })),
 
       // Smart Home Actions
       updateSmartHomeState: (updates) =>
         set((state) => ({
-          smartHome: { ...state.smartHome, ...updates }
+          smartHome: { ...state.smartHome, ...updates },
         })),
 
       addDevice: (roomId, deviceType, position) =>
@@ -478,14 +479,14 @@ export const useAdvancedGameStore = create<GameStore>()(
                         position,
                         status: 'off',
                         value: 0,
-                        automationRules: []
-                      }
-                    ]
+                        automationRules: [],
+                      },
+                    ],
                   }
-                : room
+                : room,
             ),
-            installedDevices: state.smartHome.installedDevices + 1
-          }
+            installedDevices: state.smartHome.installedDevices + 1,
+          },
         })),
 
       toggleDevice: (deviceId) =>
@@ -498,18 +499,18 @@ export const useAdvancedGameStore = create<GameStore>()(
                 device.id === deviceId
                   ? {
                       ...device,
-                      status: device.status === 'on' ? 'off' : 'on'
+                      status: device.status === 'on' ? 'off' : 'on',
                     }
-                  : device
-              )
-            }))
-          }
+                  : device,
+              ),
+            })),
+          },
         })),
 
       // Molecular Assembly Actions
       updateMolecularState: (updates) =>
         set((state) => ({
-          molecular: { ...state.molecular, ...updates }
+          molecular: { ...state.molecular, ...updates },
         })),
 
       addAtom: (element, position) =>
@@ -521,18 +522,18 @@ export const useAdvancedGameStore = create<GameStore>()(
                 element,
                 position,
                 bonds: [],
-                hybridization: 'sp3' as const
-              }
+                hybridization: 'sp3' as const,
+              },
             ],
             bonds: [],
             energy: 0,
-            stability: 50
+            stability: 50,
           };
           return {
             molecular: {
               ...state.molecular,
-              molecules: [...state.molecular.molecules, newMolecule]
-            }
+              molecules: [...state.molecular.molecules, newMolecule],
+            },
           };
         }),
 
@@ -543,7 +544,7 @@ export const useAdvancedGameStore = create<GameStore>()(
             molecules: state.molecular.molecules.map((molecule) => {
               const hasAtom1 = molecule.atoms.some((atom) => atom.element === atom1Id);
               const hasAtom2 = molecule.atoms.some((atom) => atom.element === atom2Id);
-              
+
               if (hasAtom1 || hasAtom2) {
                 return {
                   ...molecule,
@@ -554,34 +555,34 @@ export const useAdvancedGameStore = create<GameStore>()(
                       atom1: atom1Id,
                       atom2: atom2Id,
                       type: bondType,
-                      strength: bondType === 'single' ? 1 : bondType === 'double' ? 2 : 3
-                    }
-                  ]
+                      strength: bondType === 'single' ? 1 : bondType === 'double' ? 2 : 3,
+                    },
+                  ],
                 };
               }
               return molecule;
-            })
-          }
+            }),
+          },
         })),
 
       removeAtom: (atomId: string) =>
         set((state) => ({
           molecular: {
             ...state.molecular,
-            molecules: state.molecular.molecules.map((molecule) => ({
-              ...molecule,
-              atoms: molecule.atoms.filter((atom, index) => `${atom.element}-${index}` !== atomId),
-              bonds: molecule.bonds.filter(
-                (bond) => bond.atom1 !== atomId && bond.atom2 !== atomId
-              )
-            })).filter(molecule => molecule.atoms.length > 0) // Remove empty molecules
-          }
+            molecules: state.molecular.molecules
+              .map((molecule) => ({
+                ...molecule,
+                atoms: molecule.atoms.filter((atom, index) => `${atom.element}-${index}` !== atomId),
+                bonds: molecule.bonds.filter((bond) => bond.atom1 !== atomId && bond.atom2 !== atomId),
+              }))
+              .filter((molecule) => molecule.atoms.length > 0), // Remove empty molecules
+          },
         })),
 
       // Physics Lab Actions
       updatePhysicsState: (updates) =>
         set((state) => ({
-          physics: { ...state.physics, ...updates }
+          physics: { ...state.physics, ...updates },
         })),
 
       startExperiment: (experimentId) =>
@@ -590,11 +591,9 @@ export const useAdvancedGameStore = create<GameStore>()(
             ...state.physics,
             currentExperiment: experimentId,
             experiments: state.physics.experiments.map((exp) =>
-              exp.id === experimentId
-                ? { ...exp, isRunning: true }
-                : { ...exp, isRunning: false }
-            )
-          }
+              exp.id === experimentId ? { ...exp, isRunning: true } : { ...exp, isRunning: false },
+            ),
+          },
         })),
 
       recordMeasurement: (experimentId, measurement) =>
@@ -605,11 +604,11 @@ export const useAdvancedGameStore = create<GameStore>()(
               exp.id === experimentId
                 ? {
                     ...exp,
-                    measurements: [...exp.measurements, measurement]
+                    measurements: [...exp.measurements, measurement],
                   }
-                : exp
-            )
-          }
+                : exp,
+            ),
+          },
         })),
 
       resetAllGames: () =>
@@ -618,8 +617,8 @@ export const useAdvancedGameStore = create<GameStore>()(
           dna: initialDNAState,
           smartHome: initialSmartHomeState,
           molecular: initialMolecularState,
-          physics: initialPhysicsState
-        }))
+          physics: initialPhysicsState,
+        })),
     }),
     {
       name: 'advanced-3d-games-storage',
@@ -628,8 +627,8 @@ export const useAdvancedGameStore = create<GameStore>()(
         dna: state.dna,
         smartHome: state.smartHome,
         molecular: state.molecular,
-        physics: state.physics
-      })
-    }
-  )
+        physics: state.physics,
+      }),
+    },
+  ),
 );
