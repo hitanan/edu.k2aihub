@@ -480,7 +480,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🔋</div>
             <h1 className="text-4xl font-bold text-white mb-4">Renewable Energy Grid Manager</h1>
-            <p className="text-xl text-gray-200 mb-8">
+            <p className="text-xl text-gray-500 mb-8">
               Build and manage a sustainable electrical grid with renewable energy sources
             </p>
           </div>
@@ -523,7 +523,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                     <div className="text-green-400 mr-3">{source.icon}</div>
                     <h3 className="font-semibold text-white">{source.name}</h3>
                   </div>
-                  <div className="text-sm text-gray-200 space-y-1">
+                  <div className="text-sm text-gray-500 space-y-1">
                     <div>Capacity: {source.capacity} MW</div>
                     <div>Efficiency: {source.efficiency}%</div>
                     <div>Cost: ${(source.cost / 1000000).toFixed(1)}M</div>
@@ -558,11 +558,11 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
               <div className="text-center">
                 <div className="text-xl font-bold text-white">{totalOutput.toFixed(0)} MW</div>
-                <div className="text-gray-200 text-sm">Supply</div>
+                <div className="text-gray-500 text-sm">Supply</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-bold text-white">{totalDemand.toFixed(0)} MW</div>
-                <div className="text-gray-200 text-sm">Demand</div>
+                <div className="text-gray-500 text-sm">Demand</div>
               </div>
               <div className="text-center">
                 <div
@@ -570,23 +570,23 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                 >
                   {gridStability.toFixed(0)}%
                 </div>
-                <div className="text-gray-200 text-sm">Stability</div>
+                <div className="text-gray-500 text-sm">Stability</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-bold text-green-400">{renewablePercentage.toFixed(0)}%</div>
-                <div className="text-gray-200 text-sm">Renewable</div>
+                <div className="text-gray-500 text-sm">Renewable</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-bold text-white">${(budget / 1000000).toFixed(1)}M</div>
-                <div className="text-gray-200 text-sm">Budget</div>
+                <div className="text-gray-500 text-sm">Budget</div>
               </div>
               <div className="text-center">
                 <div className="text-xl font-bold text-orange-400">{(carbonEmissions / 1000).toFixed(1)}t</div>
-                <div className="text-gray-200 text-sm">CO2/hr</div>
+                <div className="text-gray-500 text-sm">CO2/hr</div>
               </div>
               <div className="text-center flex items-center justify-center">
                 <div className="text-blue-400 mr-2">{currentWeather?.icon}</div>
-                <div className="text-sm text-gray-200 capitalize">{currentWeather?.condition}</div>
+                <div className="text-sm text-gray-500 capitalize">{currentWeather?.condition}</div>
               </div>
               <div className="text-center">
                 <Gauge
@@ -599,7 +599,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
                   }`}
                   size={24}
                 />
-                <div className="text-gray-200 text-sm">Balance</div>
+                <div className="text-gray-500 text-sm">Balance</div>
               </div>
             </div>
           </div>
@@ -641,7 +641,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
               {selectedSource && (
                 <div className="mt-6 p-4 bg-green-600 bg-opacity-20 rounded-lg">
                   <h3 className="font-semibold text-white mb-2">Add {selectedSource.name}</h3>
-                  <p className="text-gray-200 text-sm mb-4">{selectedSource.description}</p>
+                  <p className="text-gray-500 text-sm mb-4">{selectedSource.description}</p>
                   <div className="flex items-center space-x-4">
                     <input
                       type="number"
@@ -676,7 +676,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3">Power Generation</h3>
                 {energySources.length === 0 ? (
-                  <div className="text-center text-gray-200 py-8">
+                  <div className="text-center text-gray-500 py-8">
                     <Zap size={48} className="mx-auto mb-4 opacity-50" />
                     <p>No power sources installed. Add some to start generating electricity!</p>
                   </div>

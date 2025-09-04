@@ -132,7 +132,7 @@ const Header: React.FC = () => {
     return Object.entries(categoryMap).map(([categoryKey, categoryData]) => ({
       ...categoryData,
       categoryKey,
-      modules: categoryData.modules.slice(0, 4), // Limit to 4 modules
+      modules: categoryData.modules.slice(0, 2), // Limit to 4 modules
       hasMore: categoryData.modules.length > 4, // Check if there are more modules
       totalCount: categoryData.modules.length,
     }));

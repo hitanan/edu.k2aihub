@@ -341,6 +341,7 @@ export interface MathPuzzleGameData {
 export interface ChemistryLabGameData {
   experiments: Array<{
     name: string;
+    materials?: string[];
     chemicals: string[];
     procedure: string[];
     reaction: string;
@@ -350,6 +351,7 @@ export interface ChemistryLabGameData {
       question: string;
       options: string[];
       correct: number;
+      explanation?: string;
     };
   }>;
 }
@@ -1191,7 +1193,7 @@ void loop() {
           'Tia nước ở lỗ thấp nhất phun xa nhất (khoảng 30-40cm), tia nước ở lỗ cao nhất phun gần nhất (khoảng 10-15cm)',
         explanation:
           'Áp suất nước tăng theo độ sâu do trọng lượng cột nước bên trên. Công thức: P = ρgh (ρ: khối lượng riêng, g: gia tốc trọng trường, h: độ sâu)',
-        videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Water pressure physics demo
+        videoUrl: undefined, // Water pressure physics demo
         difficulty: 'Cơ bản',
         estimatedTime: '15 phút',
         safetyTips: [
@@ -1228,7 +1230,7 @@ void loop() {
         observation: 'Khi có điện, đinh sắt hút được 8-12 kẹp giấy. Khi ngắt điện, không hút được kẹp giấy nào',
         explanation:
           'Dòng điện chạy qua cuộn dây tạo ra từ trường xung quanh, biến đinh sắt thành nam châm điện. Khi ngắt điện, từ trường biến mất.',
-        videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Electromagnet physics demo
+        videoUrl: undefined, // Electromagnet physics demo
         difficulty: 'Trung bình',
         estimatedTime: '20 phút',
         safetyTips: [
@@ -1258,7 +1260,7 @@ void loop() {
         observation: 'Góc phản xạ luôn bằng góc tới trong tất cả các trường hợp: 30°=30°, 45°=45°, 60°=60°',
         explanation:
           'Định luật phản xạ ánh sáng: góc tới bằng góc phản xạ, và tia tới, tia phản xạ cùng nằm trong một mặt phẳng với pháp tuyến.',
-        videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Light reflection physics demo
+        videoUrl: undefined, // Light reflection physics demo
         difficulty: 'Cơ bản',
         estimatedTime: '25 phút',
         safetyTips: [

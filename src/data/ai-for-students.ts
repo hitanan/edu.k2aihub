@@ -33,8 +33,8 @@ export const AIForStudentsLessons: AIForStudentsLessonType[] = [
     description: 'Bài học đầu tiên giới thiệu về Trí tuệ nhân tạo, lịch sử phát triển và những khái niệm cơ bản nhất.',
     duration: '60 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=ad79nYk2keg',
-    imageUrl: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=NRdF9BH9uiM',
+    imageUrl: 'https://i.ytimg.com/vi/NRdF9BH9uiM/hqdefault.jpg',
     objectives: [
       'Hiểu được AI là gì và không phải là gì.',
       'Nắm được các mốc quan trọng trong lịch sử AI.',
@@ -104,8 +104,8 @@ export const AIForStudentsLessons: AIForStudentsLessonType[] = [
       'Khám phá cách sử dụng các công cụ AI để tìm kiếm thông tin, tóm tắt tài liệu, giải quyết bài tập và cá nhân hóa lộ trình học tập.',
     duration: '90 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=sYv2wA_3w4E',
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c64c1a248bf?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=Srhm9d3CV_s',
+    imageUrl: 'https://i.ytimg.com/vi/Srhm9d3CV_s/hqdefault.jpg',
     objectives: [
       'Sử dụng thành thạo các công cụ tìm kiếm thông minh và chatbot AI để nghiên cứu.',
       'Biết cách dùng AI để tóm tắt văn bản dài và trích xuất ý chính.',
@@ -192,8 +192,8 @@ export const AIForStudentsLessons: AIForStudentsLessonType[] = [
       'Bài học quan trọng về những vấn đề đạo đức khi sử dụng AI, bao gồm thiên vị trong thuật toán, quyền riêng tư dữ liệu, và trách nhiệm của người dùng.',
     duration: '75 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=TcPq5f1Vb8A',
-    imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=400&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=yNbGY3s3xqU',
+    imageUrl: 'https://i.ytimg.com/vi/yNbGY3s3xqU/hqdefault.jpg',
     objectives: [
       'Nhận biết được các vấn đề đạo đức tiềm ẩn trong các hệ thống AI.',
       'Hiểu về tầm quan trọng của dữ liệu, quyền riêng tư và sự thiên vị (bias) trong AI.',

@@ -28,8 +28,8 @@ export const spaceTechnologyLessons: SpaceTechnologyLesson[] = [
       'Tìm hiểu về công nghệ vũ trụ, các loại vệ tinh, và cơ hội cho Việt Nam trong kỷ nguyên không gian mới.',
     duration: '90 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=XyWYStAdX40',
-    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=mhwoKfMzah4',
+    imageUrl: 'https://i.ytimg.com/vi/mhwoKfMzah4/hqdefault.jpg',
     objectives: [
       'Hiểu lịch sử và tình hình hiện tại của việc khám phá không gian.',
       'Nắm rõ các loại tàu vũ trụ và công nghệ vệ tinh.',
@@ -102,8 +102,8 @@ export const spaceTechnologyLessons: SpaceTechnologyLesson[] = [
       'Tìm hiểu cách vệ tinh cho phép chúng ta giao tiếp xuyên lục địa và xác định vị trí chính xác ở bất kỳ đâu trên Trái Đất.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=s_o8_W4c4u4',
-    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
+    videoUrl: 'https://www.youtube.com/watch?v=srS66A7j5Is',
+    imageUrl: 'https://i.ytimg.com/vi/srS66A7j5Is/hqdefault.jpg',
     objectives: [
       'Hiểu nguyên lý hoạt động của truyền thông vệ tinh.',
       'Phân biệt các loại quỹ đạo vệ tinh (LEO, MEO, GEO).',

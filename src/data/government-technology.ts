@@ -306,7 +306,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
       'Phát triển các giải pháp công nghệ dân sự giúp tăng cường sự tham gia của công dân, tính minh bạch của chính phủ và sự tham gia dân chủ.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Civic Technology and Democracy
+    videoUrl: null, // Civic Technology and Democracy
     imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop',
     mainContent: {
       governmentDomain: 'civic-engagement',
@@ -586,7 +586,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
       'Áp dụng phân tích dữ liệu, hoạch định chính sách dựa trên bằng chứng, mô hình hóa dự báo và quản trị dựa trên dữ liệu trong bối cảnh chính phủ Việt Nam.',
     duration: '205 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Government Data Analytics
+    videoUrl: null, // Government Data Analytics
     imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop',
     mainContent: {
       governmentDomain: 'policy-tech',

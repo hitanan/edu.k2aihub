@@ -52,7 +52,7 @@ export interface BaseLessonData {
   description: string;
   duration: string;
   difficulty: string;
-  videoUrl?: string;
+  videoUrl?: string | null;
   imageUrl?: string;
   objectives: string[];
   prerequisites: string[];

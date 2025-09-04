@@ -37,7 +37,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     description: 'Master advanced energy storage technologies...',
     duration: '160 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // DEFAULT VIDEO - CẦN THAY THẾ
+    // videoUrl: Not found keep videoUrl undefined
     objectives: [...],
     prerequisites: [...],
   }
