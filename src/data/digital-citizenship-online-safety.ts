@@ -24,7 +24,7 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
       'Khám phá khái niệm công dân số và tầm quan trọng của việc trở thành một công dân số có trách nhiệm trong kỷ nguyên số.',
     duration: '45 phút',
     difficulty: 'Cơ bản',
-    videoUrl: https://www.youtube.com/watch?v=uJ065EhtUG4,
+    videoUrl: 'https://www.youtube.com/watch?v=uJ065EhtUG4',
     imageUrl: 'https://i.ytimg.com/vi/vd2dtkMINIw/hqdefault.jpg',
     mainContent: {
       introduction:

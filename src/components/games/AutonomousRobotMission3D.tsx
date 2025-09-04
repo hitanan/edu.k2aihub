@@ -38,7 +38,7 @@ const calculatePath = (start: THREE.Vector3, end: THREE.Vector3, obstacles: THRE
       if (nextPos.distanceTo(obstacle) < 1.2) {
         // Obstacle detected, try to find a way around
         const avoidanceVector = new THREE.Vector3(-direction.z, 0, direction.x).normalize().multiplyScalar(1.5);
-        
+
         // Try right
         const rightPos = nextPos.clone().add(avoidanceVector);
         let rightBlocked = false;
@@ -167,7 +167,8 @@ const useRobotStore = create<GameState>((set, get) => ({
       obstacles: mission.obstacles,
       targets: mission.targets,
       collectibles: mission.targets.map((t) => t.clone()),
-      robot: { // Reset robot state on new mission
+      robot: {
+        // Reset robot state on new mission
         position: new THREE.Vector3(0, 0.5, 0),
         rotation: new THREE.Euler(0, 0, 0),
         velocity: new THREE.Vector3(0, 0, 0),
@@ -192,7 +193,7 @@ const useRobotStore = create<GameState>((set, get) => ({
   setGamePhase: (phase) => set({ gamePhase: phase }),
 
   collectItem: (position) => {
-    set(state => {
+    set((state) => {
       const { collectibles, robot, currentMission, score, obstacles } = state;
 
       const isPresent = collectibles.some((c) => c.distanceTo(position) < 0.8);
