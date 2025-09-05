@@ -13,7 +13,7 @@ export const energyManagementLessons: EnergyManagementLessonType[] = [
       'Học cách quản lý năng lượng cá nhân để tối ưu hóa hiệu suất và duy trì sức khỏe bền vững trong cuộc sống và công việc.',
     duration: '120 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu về 4 loại năng lượng: Thể chất, Cảm xúc, Tinh thần, và Tinh thần (Spiritual)',

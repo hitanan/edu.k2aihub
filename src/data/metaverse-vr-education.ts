@@ -473,7 +473,7 @@ export const MetaverseVREducationLessons: MetaverseVRLessonType[] = [
     description: 'Khám phá nền kinh tế ảo, NFT, bất động sản ảo và các cơ hội nghề nghiệp trong Metaverse.',
     duration: '90 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: '/images/metaverse-business-economics.jpg',
     objectives: [
       'Hiểu các nguyên tắc kinh tế ảo và tokenomics',

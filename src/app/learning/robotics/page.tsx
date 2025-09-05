@@ -69,7 +69,7 @@ export default function RoboticsMainPage() {
       jobGrowth: '+30%',
       hireDemand: 'Rất cao',
     },
-    relatedModules: [K2Module.Arduino, K2Module.STEM, K2Module.AdvancedAI, K2Module.SemiconductorTechnology],
+    relatedModules: [K2Module.Arduino, K2Module.Stem, K2Module.AdvancedAI, K2Module.SemiconductorTechnology],
     heroImageUrl: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&h=600&fit=crop',
   };
 

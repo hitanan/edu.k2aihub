@@ -17,8 +17,8 @@ export const roboticsLessons: RoboticsLessonType[] = [
     description: 'Giới thiệu về thế giới robot, lịch sử phát triển, các thành phần cơ bản và phân loại robot.',
     duration: '60 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=P2r9u4wkjcc',
-    imageUrl: 'https://i.ytimg.com/vi/P2r9u4wkjcc/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=p2WfJe7qC-s',
+    imageUrl: 'https://i.ytimg.com/vi/p2WfJe7qC-s/hqdefault.jpg',
     objectives: [
       'Hiểu định nghĩa về robot và lịch sử của ngành robotics.',
       'Phân biệt được các loại robot phổ biến (công nghiệp, dịch vụ, tự hành).',
@@ -81,8 +81,8 @@ export const roboticsLessons: RoboticsLessonType[] = [
       'Làm quen với Arduino, nền tảng vi điều khiển mã nguồn mở phổ biến nhất để xây dựng các dự án điện tử và robot.',
     duration: '120 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=fJWR7dBuc18',
-    imageUrl: 'https://i.ytimg.com/vi/fJWR7dBuc18/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=m_O0g_NNg_A',
+    imageUrl: 'https://i.ytimg.com/vi/m_O0g_NNg_A/hqdefault.jpg',
     objectives: [
       'Hiểu cấu trúc và chức năng các chân (pin) của board Arduino Uno.',
       'Cài đặt và sử dụng phần mềm Arduino IDE.',
@@ -147,8 +147,8 @@ export const roboticsLessons: RoboticsLessonType[] = [
       'Tìm hiểu về "giác quan" (cảm biến) và "cơ bắp" (cơ cấu chấp hành) của robot, hai thành phần thiết yếu để robot tương tác với thế giới.',
     duration: '90 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=kpi-aZU4haY',
-    imageUrl: 'https://i.ytimg.com/vi/kpi-aZU4haY/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=Zt5_k1vBUoA',
+    imageUrl: 'https://i.ytimg.com/vi/Zt5_k1vBUoA/hqdefault.jpg',
     objectives: [
       'Phân biệt giữa cảm biến (sensor) và cơ cấu chấp hành (actuator).',
       'Nhận biết các loại cảm biến phổ biến: khoảng cách (siêu âm, hồng ngoại), ánh sáng, nhiệt độ.',

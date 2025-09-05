@@ -705,7 +705,7 @@ export const microInfluencerEconomyLessons: MicroInfluencerLessonType[] = [
       'Transform micro-influencer activities into scalable business system với automation, team building, và revenue diversification strategies.',
     duration: '210 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=800&h=600&fit=crop',
     objectives: [
       'Develop scalable micro-influencer business systems',

@@ -9,8 +9,19 @@ import { ModuleData } from '@/types';
 export const metadata: Metadata = createModuleMetadata(
   'Công Nghệ Y Tế & Sức Khỏe Số',
   'Khám phá công nghệ y tế tiên tiến từ telemedicine đến AI trong healthcare. Học cách ứng dụng digital health, data analytics và IoT để cải thiện chăm sóc sức khỏe.',
-  ['công nghệ y tế', 'sức khỏe số', 'telemedicine', 'health data analytics', 'IoT y tế', 'khởi nghiệp healthtech', 'sức khỏe tâm thần số', 'thiết bị y tế thông minh', 'chăm sóc từ xa', 'K2AI'],
-  'healthcare-tech'
+  [
+    'công nghệ y tế',
+    'sức khỏe số',
+    'telemedicine',
+    'health data analytics',
+    'IoT y tế',
+    'khởi nghiệp healthtech',
+    'sức khỏe tâm thần số',
+    'thiết bị y tế thông minh',
+    'chăm sóc từ xa',
+    'K2AI',
+  ],
+  'healthcare-tech',
 );
 
 export default function HealthcareTechMainPage() {
@@ -18,7 +29,8 @@ export default function HealthcareTechMainPage() {
     id: 'healthcare-tech',
     title: 'Công Nghệ Y Tế & Sức Khỏe Số',
     subtitle: 'Cách mạng hóa chăm sóc sức khỏe với công nghệ tiên tiến',
-    description: 'Khám phá và thành thạo các công nghệ y tế hiện đại từ telemedicine, healthcare data analytics đến thiết bị IoT y tế. Học cách áp dụng digital health solutions để cải thiện patient outcomes và operational efficiency trong bối cảnh hệ thống y tế Việt Nam.',
+    description:
+      'Khám phá và thành thạo các công nghệ y tế hiện đại từ telemedicine, healthcare data analytics đến thiết bị IoT y tế. Học cách áp dụng digital health solutions để cải thiện patient outcomes và operational efficiency trong bối cảnh hệ thống y tế Việt Nam.',
     level: 'Trung bình',
     duration: '18-22 giờ',
     category: 'Healthcare Technology',
@@ -27,7 +39,7 @@ export default function HealthcareTechMainPage() {
       'Healthcare data analytics với AI-powered insights',
       'Medical IoT devices và smart hospital infrastructure',
       'Healthtech entrepreneurship và business development',
-      'Digital mental health solutions với cultural sensitivity'
+      'Digital mental health solutions với cultural sensitivity',
     ],
     icon: '🏥',
     color: 'from-blue-600 to-cyan-600',
@@ -37,12 +49,12 @@ export default function HealthcareTechMainPage() {
       'Phân tích healthcare big data để cải thiện patient outcomes',
       'Tích hợp medical IoT devices vào hospital operations',
       'Phát triển sustainable healthtech business models',
-      'Triển khai digital mental health interventions phù hợp văn hóa Việt Nam'
+      'Triển khai digital mental health interventions phù hợp văn hóa Việt Nam',
     ],
     prerequisites: [
       'Hiểu biết cơ bản về hệ thống healthcare',
       'Computer literacy và digital tool proficiency',
-      'Quan tâm đến healthcare innovation và patient care'
+      'Quan tâm đến healthcare innovation và patient care',
     ],
     careerOutcomes: [
       'Healthcare Technology Manager (25-45 triệu VNĐ)',
@@ -50,7 +62,7 @@ export default function HealthcareTechMainPage() {
       'Healthcare Data Analyst (18-35 triệu VNĐ)',
       'Medical IoT Engineer (22-42 triệu VNĐ)',
       'HealthTech Entrepreneur (Thu nhập không giới hạn)',
-      'Digital Health Consultant (30-60 triệu VNĐ)'
+      'Digital Health Consultant (30-60 triệu VNĐ)',
     ],
     industryApplications: [
       'Hospitals và healthcare systems modernization',
@@ -58,25 +70,15 @@ export default function HealthcareTechMainPage() {
       'Healthcare startups và innovation labs',
       'Government health ministry digital transformation',
       'Insurance companies với value-based care models',
-      'Medical device companies với IoT integration'
+      'Medical device companies với IoT integration',
     ],
     marketDemand: {
       averageSalary: '22-45 triệu VNĐ',
       jobGrowth: '+40%',
-      hireDemand: 'Rất Cao'
+      hireDemand: 'Rất Cao',
     },
-    relatedModules: [
-      K2Module.AI_Art,
-      K2Module.Biotechnology,
-      K2Module.Python,
-      K2Module.Arduino
-    ]
+    relatedModules: [K2Module.AIArtCreativeTech, K2Module.Biotechnology, K2Module.Python, K2Module.Arduino],
   };
 
-  return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={healthcareTechLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={healthcareTechLessons} />;
 }

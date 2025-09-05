@@ -107,7 +107,7 @@ export const AgriTechLessons: AgriTechLessonData[] = [
     ],
   },
   {
-    id: 'drone-crop-monitoring',
+    id: 'drone-crop-monitoring-3d',
     title: 'Giám sát Cây trồng bằng Drone',
     description:
       'Học cách sử dụng drone và AI để giám sát sức khỏe cây trồng, phát hiện sớm dịch bệnh và tối ưu hóa việc phun thuốc.',

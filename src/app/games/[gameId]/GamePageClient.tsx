@@ -2,15 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import {
-  ArrowLeft,
-  Clock,
-  Play,
-  ExternalLink,
-  CheckCircle,
-  Trophy,
-  Target,
-} from 'lucide-react';
+import { ArrowLeft, Clock, Play, ExternalLink, CheckCircle, Trophy, Target } from 'lucide-react';
 import { EducationalGame } from '@/data/educationalGames';
 import { useEducationalGames } from '@/components/games/EducationalGames';
 import { MiniGamePlayer } from '@/components/games/MiniGamePlayer';
@@ -42,22 +34,13 @@ export default function GamePageClient({ game }: GamePageClientProps) {
   };
 
   const getCategoryIcon = (category: EducationalGame['category']) => {
-    switch (category) {
-      case 'quiz':
-        return '❓';
-      case 'puzzle':
-        return '🧩';
-      case 'simulation':
-        return '🎮';
-      case 'coding':
-        return '💻';
-      case 'memory':
-        return '🧠';
-      case 'strategy':
-        return '🎯';
-      default:
-        return '🎯';
-    }
+    if (category.includes('quiz')) return '❓';
+    if (category.includes('puzzle')) return '🧩';
+    if (category.includes('simulation')) return '🎮';
+    if (category.includes('coding')) return '💻';
+    if (category.includes('memory')) return '🧠';
+    if (category.includes('strategy')) return '🎯';
+    return '🎯';
   };
 
   const handlePlay = () => {
@@ -68,8 +51,8 @@ export default function GamePageClient({ game }: GamePageClientProps) {
         setIsLoading(false);
         setIsPlaying(true);
       }, 500);
-    } else if (game.url) {
-      window.open(game.url, '_blank', 'noopener,noreferrer');
+    } else if (game.gameUrl) {
+      window.open(game.gameUrl, '_blank', 'noopener,noreferrer');
       // Track external game play
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'external_game_play', {
@@ -87,22 +70,12 @@ export default function GamePageClient({ game }: GamePageClientProps) {
   };
 
   if (isPlaying && game.isInternal) {
-    return (
-      <MiniGamePlayer
-        game={game}
-        onComplete={handleGameComplete}
-        onExit={() => setIsPlaying(false)}
-      />
-    );
+    return <MiniGamePlayer game={game} onComplete={handleGameComplete} onExit={() => setIsPlaying(false)} />;
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <PageTracker
-        path={`/games/${game.id}`}
-        title={game.title}
-        moduleType="learning"
-      />
+      <PageTracker path={`/games/${game.id}`} title={game.title} moduleType="learning" />
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -124,9 +97,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
                 <div className="flex items-center space-x-4 mb-4">
                   <span className="text-6xl">{game.icon}</span>
                   <div>
-                    <h1 className="text-4xl font-bold text-white mb-2">
-                      {game.title}
-                    </h1>
+                    <h1 className="text-4xl font-bold text-white mb-2">{game.title}</h1>
                     <div className="flex items-center space-x-4">
                       <span
                         className={`px-3 py-1 rounded-full text-sm font-medium ${getDifficultyColor(game.difficulty)}`}
@@ -151,10 +122,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {game.skills.map((skill, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-white/10 text-white rounded-full text-sm"
-                    >
+                    <span key={index} className="px-3 py-1 bg-white/10 text-white rounded-full text-sm">
                       {skill}
                     </span>
                   ))}
@@ -183,33 +151,25 @@ export default function GamePageClient({ game }: GamePageClientProps) {
                     <>
                       <Play className="w-5 h-5 mr-3" />
                       {game.isInternal ? 'Chơi ngay' : 'Mở trò chơi'}
-                      {!game.isInternal && (
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      )}
+                      {!game.isInternal && <ExternalLink className="w-4 h-4 ml-2" />}
                     </>
                   )}
                 </button>
               </div>
 
               <div className="bg-white/5 rounded-2xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Thông tin chi tiết
-                </h3>
+                <h3 className="text-xl font-bold text-white mb-4">Thông tin chi tiết</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between">
                     <span className="text-gray-300">Danh mục:</span>
                     <span className="text-white flex items-center">
-                      <span className="mr-2">
-                        {getCategoryIcon(game.category)}
-                      </span>
+                      <span className="mr-2">{getCategoryIcon(game.category)}</span>
                       {game.category}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-300">Cấp độ:</span>
-                    <span
-                      className={`px-2 py-1 rounded text-sm ${getDifficultyColor(game.difficulty)}`}
-                    >
+                    <span className={`px-2 py-1 rounded text-sm ${getDifficultyColor(game.difficulty)}`}>
                       {game.difficulty}
                     </span>
                   </div>
@@ -226,9 +186,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-300">Loại:</span>
-                    <span className="text-white">
-                      {game.isInternal ? '🏠 Nội bộ' : '🔗 Bên ngoài'}
-                    </span>
+                    <span className="text-white">{game.isInternal ? '🏠 Nội bộ' : '🔗 Bên ngoài'}</span>
                   </div>
                 </div>
               </div>
@@ -245,9 +203,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Kỹ năng phát triển
-              </h3>
+              <h3 className="text-lg font-semibold text-white mb-4">Kỹ năng phát triển</h3>
               <ul className="space-y-2">
                 {game.skills.map((skill, index) => (
                   <li key={index} className="text-gray-300 flex items-center">
@@ -259,32 +215,30 @@ export default function GamePageClient({ game }: GamePageClientProps) {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">
-                Hướng dẫn chơi
-              </h3>
+              <h3 className="text-lg font-semibold text-white mb-4">Hướng dẫn chơi</h3>
               <div className="text-gray-300 space-y-2">
-                {game.category === 'quiz' && (
+                {game.category.includes('quiz') && (
                   <>
                     <p>• Đọc câu hỏi và chọn đáp án đúng</p>
                     <p>• Mỗi câu hỏi có 4 lựa chọn</p>
                     <p>• Hoàn thành tất cả câu hỏi để nhận điểm</p>
                   </>
                 )}
-                {game.category === 'puzzle' && (
+                {game.category.includes('puzzle') && (
                   <>
                     <p>• Sử dụng logic để giải các bài toán</p>
                     <p>• Kéo thả để sắp xếp các phần tử</p>
                     <p>• Hoàn thành càng nhanh càng nhiều điểm</p>
                   </>
                 )}
-                {game.category === 'simulation' && (
+                {game.category.includes('simulation') && (
                   <>
                     <p>• Tương tác với giao diện mô phỏng</p>
                     <p>• Thực hiện các thí nghiệm ảo</p>
                     <p>• Quan sát và ghi nhận kết quả</p>
                   </>
                 )}
-                {game.category === 'coding' && (
+                {game.category.includes('coding') && (
                   <>
                     <p>• Viết code để giải quyết bài toán</p>
                     <p>• Kiểm tra và sửa lỗi syntax</p>
@@ -299,9 +253,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
         {/* Related Lessons */}
         {game.relatedLessons && game.relatedLessons.length > 0 && (
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              📚 Bài học liên quan
-            </h2>
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">📚 Bài học liên quan</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {game.relatedLessons.map((lesson, index) => (
                 <Link
@@ -319,9 +271,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
                       <h3 className="text-white font-medium text-sm mb-1 group-hover:text-blue-200 transition-colors">
                         {lesson.title}
                       </h3>
-                      <p className="text-gray-400 text-xs mb-2 line-clamp-2">
-                        {lesson.connection}
-                      </p>
+                      <p className="text-gray-400 text-xs mb-2 line-clamp-2">{lesson.connection}</p>
                       <div className="flex items-center text-xs text-blue-300">
                         <span>Học ngay</span>
                         <ArrowLeft className="w-3 h-3 ml-1 rotate-180 group-hover:translate-x-1 transition-transform" />
@@ -341,9 +291,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
 
         {/* Related Games */}
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-white mb-6">
-            Trò chơi liên quan
-          </h2>
+          <h2 className="text-2xl font-bold text-white mb-6">Trò chơi liên quan</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* This would show related games - implement based on category or moduleType */}
             <div className="text-center text-gray-400">

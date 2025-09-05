@@ -74,11 +74,6 @@ const searchYouTube = (query, apiKey) => {
 };
 
 const findAndReplaceUrl = async (lessonBlock) => {
-  const placeholderUrl = null;
-  if (!lessonBlock.includes(placeholderUrl)) {
-    return lessonBlock;
-  }
-
   const titleMatch = lessonBlock.match(/title:\s*['"`]([^'"`]+)['"`]/);
   if (!titleMatch) {
     return lessonBlock;
@@ -107,10 +102,33 @@ const findAndReplaceUrl = async (lessonBlock) => {
   }
 
   if (newUrl) {
-    console.log(`  -> Replacing with new URL: ${newUrl}`);
-    return lessonBlock.replace(placeholderUrl, newUrl);
+    console.log(`  -> Found new URL: ${newUrl}`);
+    const videoUrlRegex = /videoUrl:\s*['"`][^'"`]*['"`]/;
+    const imageUrlRegex = /imageUrl:\s*['"`][^'"`]*['"`]/;
+    const videoId = newUrl.split('v=')[1];
+    const newImageUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+
+    let updatedBlock = lessonBlock;
+
+    if (videoUrlRegex.test(lessonBlock)) {
+      console.log(`  -> Replacing existing videoUrl.`);
+      updatedBlock = updatedBlock.replace(videoUrlRegex, `videoUrl: '${newUrl}'`);
+    } else {
+      console.log(`  -> Adding new videoUrl.`);
+      // Add it before imageUrl or another property
+      updatedBlock = updatedBlock.replace(/(\s*difficulty:\s*['"`][^'"`]+['"`],)/, `$1\n    videoUrl: '${newUrl}',`);
+    }
+
+    if (imageUrlRegex.test(updatedBlock)) {
+      console.log(`  -> Replacing existing imageUrl.`);
+      updatedBlock = updatedBlock.replace(imageUrlRegex, `imageUrl: '${newImageUrl}'`);
+    } else {
+      console.log(`  -> Adding new imageUrl.`);
+      updatedBlock = updatedBlock.replace(/(\s*videoUrl:\s*['"`][^'"`]+['"`],)/, `$1\n    imageUrl: '${newImageUrl}',`);
+    }
+    return updatedBlock;
   } else {
-    console.log(`  -> No video found for "${title}". Keeping placeholder.`);
+    console.log(`  -> No video found for "${title}". Keeping existing URL.`);
     return lessonBlock;
   }
 };

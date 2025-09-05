@@ -238,7 +238,7 @@ const healthcareTechLessons: HealthcareTechLesson[] = [
     regulatoryCompliance: ['FDA', 'CE Mark', 'ISO 13485'],
     techProficiencyLevel: 'Intermediate',
     targetAudience: ['Biomedical Engineers', 'Clinicians', 'Patients'],
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // IoT in Healthcare: Smart Medical Devices
+    videoUrl: null, // IoT in Healthcare: Smart Medical Devices
     imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu hệ sinh thái IoT trong môi trường y tế',

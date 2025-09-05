@@ -89,8 +89,8 @@ export function CompactGameCard({ game }: { game: EducationalGame }) {
       if (typeof window !== 'undefined') {
         router.push(`/games/${game.id}`);
       }
-    } else if (game.url) {
-      window.open(game.url, '_blank', 'noopener,noreferrer');
+    } else if (game.gameUrl) {
+      window.open(game.gameUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -145,22 +145,13 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
   };
 
   const getCategoryIcon = (category: EducationalGame['category']) => {
-    switch (category) {
-      case 'quiz':
-        return <Brain className="w-4 h-4" />;
-      case 'puzzle':
-        return <Target className="w-4 h-4" />;
-      case 'simulation':
-        return <Zap className="w-4 h-4" />;
-      case 'coding':
-        return <Play className="w-4 h-4" />;
-      case 'memory':
-        return <Star className="w-4 h-4" />;
-      case 'strategy':
-        return <Trophy className="w-4 h-4" />;
-      default:
-        return <Play className="w-4 h-4" />;
-    }
+    if (category.includes('quiz')) return <Brain className="w-4 h-4" />;
+    if (category.includes('puzzle')) return <Target className="w-4 h-4" />;
+    if (category.includes('simulation')) return <Zap className="w-4 h-4" />;
+    if (category.includes('coding')) return <Play className="w-4 h-4" />;
+    if (category.includes('memory')) return <Star className="w-4 h-4" />;
+    if (category.includes('strategy')) return <Trophy className="w-4 h-4" />;
+    return <Play className="w-4 h-4" />;
   };
 
   const handlePlay = () => {
@@ -171,9 +162,9 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
       } else if (typeof window !== 'undefined') {
         router.push(`/games/${game.id}`);
       }
-    } else if (game.url) {
+    } else if (game.gameUrl) {
       // Open external game
-      window.open(game.url, '_blank', 'noopener,noreferrer');
+      window.open(game.gameUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -198,7 +189,7 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
           </span>
           <span className="bg-white/10 text-gray-300 px-2 py-1 rounded-full text-xs font-medium flex items-center">
             {getCategoryIcon(game.category)}
-            <span className="ml-1 capitalize">{game.category}</span>
+            <span className="ml-1 capitalize">{game.category.join(', ')}</span>
           </span>
         </div>
 

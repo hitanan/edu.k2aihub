@@ -64,7 +64,7 @@ export default function RobosimModulePage() {
       jobGrowth: '+30%',
       hireDemand: 'Rất cao',
     },
-    relatedModules: [K2Module.ProgrammingRobotics, K2Module.Python, K2Module.GameDevelopment],
+    relatedModules: [K2Module.Robotics, K2Module.Python, K2Module.GameDevelopment],
     heroImageUrl: '/images/modules/robosim/hero-banner.jpg',
   };
 

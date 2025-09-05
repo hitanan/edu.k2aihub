@@ -68,7 +68,12 @@ export default function AdvancedCreativeSkillsMainPage() {
       jobGrowth: '+30%',
       hireDemand: 'Cao',
     },
-    relatedModules: [K2Module.AI_Art, K2Module.DigitalMarketing, K2Module.GameDevelopment, K2Module.ProfessionalSkills],
+    relatedModules: [
+      K2Module.AIArtCreativeTech,
+      K2Module.DigitalMarketing,
+      K2Module.GameDevelopment,
+      K2Module.ProfessionalSkills,
+    ],
   };
 
   return <ModulePageTemplate moduleData={moduleData} lessons={advancedCreativeLessons} />;

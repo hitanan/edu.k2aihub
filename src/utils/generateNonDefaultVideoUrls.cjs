@@ -8,7 +8,7 @@ const { promisify } = require('util');
 const sleep = promisify(setTimeout);
 
 // Configuration
-const DEFAULT_VIDEO_URL = 'https://www.youtube.com/watch?v=vd2dtkMINIw';
+const DEFAULT_VIDEO_URL = null;
 const API_KEY = fs.readFileSync(path.join(__dirname, '.envy'), 'utf-8').trim();
 const DATA_DIR = path.join(__dirname, 'src', 'data');
 const OUTPUT_FILE = path.join(__dirname, 'non-default-video-urls.json');

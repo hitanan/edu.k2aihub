@@ -59,3 +59,27 @@ export interface ContactForm {
 export interface PageProps {
   params: Promise<{ lessonId: string; gameId?: string; slug: string; category: string }>;
 }
+
+export interface EducationalGame {
+  id: string;
+  title: string;
+  description: string;
+  category: string[];
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+  estimatedTime: string;
+  skills: string[];
+  moduleType: string;
+  isInternal: boolean;
+  points: number;
+  icon: string;
+  color: string;
+  imageUrl?: string;
+  relatedLessons: Array<{
+    moduleId: string;
+    lessonId: string;
+    title: string;
+    connection: string;
+  }>;
+  gameUrl?: string;
+  is3D?: boolean;
+}

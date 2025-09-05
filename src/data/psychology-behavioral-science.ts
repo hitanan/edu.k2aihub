@@ -114,7 +114,7 @@ export const psychologyBehavioralScienceLessons: PsychologyBehavioralScienceLess
       'Hiểu tâm lý người tiêu dùng, quy trình ra quyết định và các yếu tố kích hoạt hành vi để tạo ra các chiến lược marketing hiệu quả hơn cho thị trường Việt Nam.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Consumer Psychology
+    videoUrl: null, // Consumer Psychology
     imageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=600&fit=crop',
     category: 'Tâm lý học & Khoa học hành vi',
     objectives: [

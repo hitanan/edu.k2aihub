@@ -393,7 +393,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     relatedGames: [
       EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'smart-farming-simulator'),
       EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'aquaculture-iot-manager'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'drone-crop-monitoring'),
+      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'drone-crop-monitoring-3d'),
     ]
       .filter((game): game is EducationalGame => !!game)
       .map((game) => ({ id: game.id, name: game.title, description: game.description })),

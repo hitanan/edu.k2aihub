@@ -287,7 +287,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <DataVisualizationGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'space-exploration':
         return <SpaceExplorationGame onComplete={endGame} timeLeft={timeLeft} />;
-      case 'neural-network-builder':
+      case 'neural-network-builder-3d':
         return <NeuralNetworkBuilderGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'math-puzzle':
         return (
@@ -314,9 +314,9 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <AquacultureIoTManagerGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'smart-farming-simulator':
         return <SmartFarmingSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
-      case 'drone-crop-monitoring':
+      case 'drone-crop-monitoring-3d':
         return <DroneCropMonitoringGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
-      case 'factory-automation-simulator':
+      case 'factory-automation-simulator-3d':
         return <FactoryAutomationSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'supply-chain-optimization-challenge':
         return (
@@ -336,7 +336,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <FoodTechInnovatorGame onComplete={endGame} />;
       case 'digital-marketing-campaign':
         return <DigitalMarketingCampaignGame onComplete={handleGameComplete} />;
-      case 'biotech-lab-simulation':
+      case 'biotech-lab-simulation-3d':
         return <BiotechLabSimulationGame onComplete={handleGameComplete} />;
       case 'e-government-portal':
         return <EGovernmentPortalGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
@@ -346,7 +346,7 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <CulturalLocalizationChallengeGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'game-dev-studio':
         return <GameDevStudioGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
-      case 'medical-device-designer':
+      case 'medical-device-designer-3d':
         return <MedicalDeviceDesignerGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'nano-lab-explorer':
         return <NanoLabExplorerGame onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
@@ -621,14 +621,14 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
               <div>
                 <h1 className="text-xl font-bold text-white">{game.title}</h1>
                 <p className="text-sm text-gray-400">
-                  {game.difficulty} • {game.category}
+                  {game.difficulty} • {game.category.join(', ')}
                 </p>
               </div>
             </div>
 
             <div className="flex items-center space-x-6">
               {/* Fullscreen Button for 3D Games */}
-              {game.category === '3D' && (
+              {game.category.includes('3D') && (
                 <FullscreenButton
                   targetElementId="game-container"
                   size="small"

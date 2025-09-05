@@ -1,5 +1,5 @@
 ---
-title: 'Module Giáo Dục Thiếu Vắng: Định Hướng Phát Triển Lessons K2AiHub 2025-2026'
+title: 'Module Giáo Dục Còn Thiếu: Định Hướng Phát Triển Lessons K2AiHub 2025-2026'
 description: 'Phân tích toàn diện 30+ modules/lĩnh vực giáo dục hiện chưa có trong hệ thống K2AiHub nhưng có nhu cầu cao từ sinh viên và thị trường việc làm, để định hướng phát triển lessons tương lai.'
 date: '2025-08-28'
 author: 'K2AiHub Curriculum Development Team'
@@ -9,11 +9,11 @@ featured: true
 readingTime: '28 phút đọc'
 ---
 
-# Module Giáo Dục Thiếu Vắng: Định Hướng Phát Triển Lessons K2AiHub 2025-2026
+# Module Giáo Dục Còn Thiếu: Định Hướng Phát Triển Lessons K2AiHub 2025-2026
 
 ## 🎯 Executive Summary
 
-Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với nhu cầu từ 50,000+ sinh viên, nghiên cứu này xác định **32 modules thiếu vắng** có tiềm năng cao. Dự án sẽ ưu tiên phát triển theo 4 phases trong 18 tháng tới.
+Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với nhu cầu từ 50,000+ sinh viên, nghiên cứu này xác định **32 modules thiếu** có tiềm năng cao. Dự án sẽ ưu tiên phát triển theo 4 phases trong 18 tháng tới.
 
 **Current K2AiHub Modules (14):**
 

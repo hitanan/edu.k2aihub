@@ -129,7 +129,7 @@ export const mentalHealthLessons: MentalHealthLessonType[] = [
     title: 'Bài 2: Công cụ Sức khỏe Tâm thần dùng AI & Trị liệu bằng Chatbot',
     description:
       'Khám phá các ứng dụng của AI trong sức khỏe tâm thần: trị liệu bằng chatbot, can thiệp cá nhân hóa, phân tích dự báo. Xây dựng các công cụ AI để hỗ trợ sức khỏe tinh thần.',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '180 phút',

@@ -113,7 +113,7 @@ export default function ArduinoPage() {
         items: ['Industrial IoT', 'Smart Agriculture', 'Health Monitoring', 'Environmental Sensing'],
       },
     ],
-    relatedModules: [K2Module.Python, K2Module.Robotics, K2Module.STEM],
+    relatedModules: [K2Module.Python, K2Module.Robotics, K2Module.Stem],
   };
 
   return <ModulePageTemplate moduleData={moduleConfig} lessons={convertedLessons} />;

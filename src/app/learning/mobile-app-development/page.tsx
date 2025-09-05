@@ -9,8 +9,18 @@ import { ModuleData } from '@/types';
 export const metadata: Metadata = createModuleMetadata(
   'Mobile App Development - Phát Triển Ứng Dụng Di Động',
   'Học phát triển ứng dụng mobile từ cơ bản đến nâng cao. Mastery React Native, iOS Swift, Android Kotlin, Flutter và App Store Optimization cho thị trường Việt Nam.',
-  ['mobile app development', 'react native', 'iOS swift', 'android kotlin', 'flutter', 'app store optimization', 'phát triển ứng dụng di động', 'lập trình mobile', 'K2AI'],
-  'mobile-app-development'
+  [
+    'mobile app development',
+    'react native',
+    'iOS swift',
+    'android kotlin',
+    'flutter',
+    'app store optimization',
+    'phát triển ứng dụng di động',
+    'lập trình mobile',
+    'K2AI',
+  ],
+  'mobile-app-development',
 );
 
 export default function MobileAppDevelopmentMainPage() {
@@ -18,7 +28,8 @@ export default function MobileAppDevelopmentMainPage() {
     id: 'mobile-app-development',
     title: 'Mobile App Development',
     subtitle: 'Phát triển ứng dụng di động chuyên nghiệp',
-    description: 'Khám phá và thành thạo các công nghệ phát triển ứng dụng mobile từ cơ bản đến nâng cao. Học React Native, iOS Swift, Android Kotlin, Flutter và App Store Optimization để tạo ra những ứng dụng mobile thành công trên thị trường Việt Nam và quốc tế.',
+    description:
+      'Khám phá và thành thạo các công nghệ phát triển ứng dụng mobile từ cơ bản đến nâng cao. Học React Native, iOS Swift, Android Kotlin, Flutter và App Store Optimization để tạo ra những ứng dụng mobile thành công trên thị trường Việt Nam và quốc tế.',
     level: 'Trung bình',
     duration: '20-25 giờ',
     category: 'Mobile Technology',
@@ -27,7 +38,7 @@ export default function MobileAppDevelopmentMainPage() {
       'Native iOS development với Swift và SwiftUI framework',
       'Android development với Kotlin và Jetpack Compose',
       'Flutter development cho multi-platform apps',
-      'App Store Optimization và mobile marketing strategies'
+      'App Store Optimization và mobile marketing strategies',
     ],
     icon: '📱',
     color: 'from-purple-600 to-pink-600',
@@ -37,12 +48,12 @@ export default function MobileAppDevelopmentMainPage() {
       'Master native iOS development với Swift và SwiftUI',
       'Develop Android apps với Kotlin và latest Android SDK',
       'Create cross-platform solutions với React Native và Flutter',
-      'Optimize app store presence và implement effective marketing strategies'
+      'Optimize app store presence và implement effective marketing strategies',
     ],
     prerequisites: [
       'Programming fundamentals (JavaScript hoặc any OOP language)',
       'Basic understanding của mobile platforms',
-      'Development environment setup capability'
+      'Development environment setup capability',
     ],
     careerOutcomes: [
       'Mobile App Developer (18-40 triệu VNĐ)',
@@ -51,7 +62,7 @@ export default function MobileAppDevelopmentMainPage() {
       'Android Developer (22-48 triệu VNĐ)',
       'Flutter Developer (18-42 triệu VNĐ)',
       'Mobile Product Manager (30-65 triệu VNĐ)',
-      'Mobile App Entrepreneur (Thu nhập không giới hạn)'
+      'Mobile App Entrepreneur (Thu nhập không giới hạn)',
     ],
     industryApplications: [
       'E-commerce platforms như Shopee, Tiki, Lazada',
@@ -59,25 +70,15 @@ export default function MobileAppDevelopmentMainPage() {
       'Food delivery services như GrabFood, ShopeeFood',
       'Ride-hailing platforms như Grab, Be, Gojek',
       'Social media và messaging apps như Zalo',
-      'Healthcare và education technology apps'
+      'Healthcare và education technology apps',
     ],
     marketDemand: {
       averageSalary: '20-50 triệu VNĐ',
       jobGrowth: '+35%',
-      hireDemand: 'Rất Cao'
+      hireDemand: 'Rất Cao',
     },
-    relatedModules: [
-      K2Module.JavaScript,
-      K2Module.Python,
-      K2Module.GameDevelopment,
-      K2Module.DigitalMarketing
-    ]
+    relatedModules: [K2Module.Python, K2Module.Python, K2Module.GameDevelopment, K2Module.DigitalMarketing],
   };
 
-  return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={mobileAppLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={mobileAppLessons} />;
 }

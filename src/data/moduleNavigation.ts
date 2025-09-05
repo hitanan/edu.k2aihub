@@ -43,81 +43,54 @@ export const K2Module = {
   MCP: 'mcp',
   AIApplications: 'ai-applications',
   AIForStudents: 'ai-for-students',
+  AdvancedAI: 'advanced-ai',
+  SemiconductorTechnology: 'semiconductor-technology',
+  RenewableEnergy: 'renewable-energy',
+  BlockchainDeFi: 'blockchain-defi',
+  EnvironmentalDataScience: 'environmental-data-science',
+  Nanotechnology: 'nanotechnology',
+  AerospaceEngineering: 'aerospace-engineering',
+  ElectricVehicleTech: 'electric-vehicle-tech',
+  DigitalGovernment: 'digital-government',
+  CircularEconomy: 'circular-economy',
+  EmotionalIntelligence: 'emotional-intelligence',
+  PublicSpeaking: 'public-speaking',
+  Leadership: 'leadership',
 
   // Programming & STEM Modules
   Python: 'python',
   Arduino: 'arduino',
-  Scratch: 'scratch',
-  STEM: 'stem',
   Robotics: 'robotics',
-
-  // New Phase 1 Priority Modules
-  ProfessionalSkills: 'professional-soft-skills',
+  Scratch: 'scratch',
+  Stem: 'stem',
+  PhysicsOfSports: 'physics-of-sports',
+  KitchenChemistry: 'kitchen-chemistry',
+  DigitalCitizenshipOnlineSafety: 'digital-citizenship-online-safety',
+  VietnameseBusiness: 'vietnamese-business',
+  VietnameseCulture: 'vietnamese-culture',
+  VietnameseHealthcare: 'vietnamese-healthcare',
+  VietnameseLanguageTech: 'vietnamese-language-tech',
+  CriticalThinking: 'critical-thinking',
+  CommunicationSkills: 'communication-skills',
+  ProfessionalSkills: 'professional-skills',
   HealthcareTech: 'healthcare-tech',
   MobileAppDevelopment: 'mobile-app-development',
   AdvancedCreativeSkills: 'advanced-creative-skills',
   LegalTechnology: 'legal-technology',
   EducationTechnology: 'education-technology',
   RealEstateTechnology: 'real-estate-technology',
-
-  // Alternative names for compatibility
-  AI_Art: 'ai-art-creative-tech',
-  JavaScript: 'javascript',
-
-  // Essential Skills Modules (New 2025)
-  SoftSkills: 'soft-skills',
-  EmotionalIntelligence: 'emotional-intelligence',
-  PublicSpeaking: 'public-speaking',
-  Leadership: 'leadership',
-  CriticalThinking: 'critical-thinking',
-  CommunicationSkills: 'communication-skills',
-  DigitalCitizenship: 'digital-citizenship-ai-ethics',
-  FutureThinking: 'future-thinking-scenario-planning',
-  UXUIDesign: 'ux-ui-design-fundamentals',
-  EnergyManagement: 'personal-energy-performance-management',
-  CrossCultural: 'cross-cultural-intelligence',
-
-  // Vietnamese-Specific Modules
-  VietnameseBusiness: 'vietnamese-business',
-  DigitalGovernment: 'digital-government',
-  VietnameseLanguageTech: 'vietnamese-language-tech',
-  VietnameseCulture: 'vietnamese-culture',
-  VietnameseHealthcare: 'vietnamese-healthcare',
-
-  // 2025 High-Demand Modules (Tier 1)
-  SemiconductorTechnology: 'semiconductor-technology',
-  RenewableEnergy: 'renewable-energy',
-  AdvancedAI: 'advanced-ai',
-
-  // 2025 High-Demand Modules (Tier 2)
-  ElectricVehicleTech: 'electric-vehicle-tech',
-  BlockchainDeFi: 'blockchain-defi',
-  BiomedicalEngineering: 'biomedical-engineering',
-
-  // 2025 High-Demand Modules (Tier 3)
-  EnvironmentalDataScience: 'environmental-data-science',
+  Robosim: 'robosim',
+  RobloxGameDev: 'roblox-game-dev',
+  MinecraftEdu: 'minecraft-edu',
+  ArduinoCircuits: 'arduino-circuits',
+  ThreeDPrinting: '3d-printing',
+  CrossCultural: 'cross-cultural',
+  QuantumComputingEducation: 'quantum-computing-education',
+  DataScienceAnalytics: 'data-science-analytics',
   FoodTechnology: 'food-technology',
-  AerospaceEngineering: 'aerospace-engineering',
-  Nanotechnology: 'nanotechnology',
-
-  // 2025 Vietnam Niche Market Research Modules
-  BlueEconomy: 'blue-economy',
-  SmartManufacturing: 'smart-manufacturing',
-  AgriTech: 'agritech',
-  DigitalHealth: 'digital-health',
-  EdTech: 'edtech',
-  SmartCity: 'smart-city',
-  PropTech: 'proptech',
-  CircularEconomy: 'circular-economy',
-  ElectricVehicle: 'electric-vehicle',
-  CrossBorderEcommerce: 'cross-border-ecommerce',
-
-  // 2025 Trend-Based Modules
   ContentCreator: 'content-creator',
   TeenWellness: 'teen-wellness',
   YoungEntrepreneur: 'young-entrepreneur',
-
-  // 2025 Social Media Trending Modules
   AIContentCreator: 'ai-content-creator',
   TikTokSocialCommerce: 'tiktok-social-commerce',
   GenZMarketing: 'genz-marketing',
@@ -128,26 +101,18 @@ export const K2Module = {
   EthicalMarketingPurpose: 'ethical-marketing-purpose',
   CrossPlatformStrategy: 'cross-platform-strategy',
   DataDrivenAnalytics: 'data-driven-analytics',
-
-  // 2025 Academic Specialized Modules
-  DataScienceAnalytics: 'data-science-analytics',
   EnvironmentalScienceClimate: 'environmental-science-climate',
-
-  // 2025+ Trending Experimental Modules
   MetaverseVREducation: 'metaverse-vr-education',
   SpaceTechnology: 'space-technology',
   DigitalArtsCreativeTech: 'digital-arts-creative-tech',
-  QuantumComputingEducation: 'quantum-computing-education',
-  Robosim: 'robosim',
-  RobloxGameDev: 'roblox-game-dev',
-  MinecraftEdu: 'minecraft-edu',
-  ArduinoCircuits: 'arduino-circuits',
-  ThreeDPrinting: '3d-printing',
-  FutureCareersAI: 'future-careers-ai',
-  SustainableAgriculture: 'sustainable-agriculture',
-  DigitalCitizenshipOnlineSafety: 'digital-citizenship-online-safety',
-  ProgrammingRobotics: 'programming-robotics',
+  BlueEconomy: 'blue-economy',
+  SmartManufacturing: 'smart-manufacturing',
+  DigitalCitizenship: 'digital-citizenship',
+  FutureThinking: 'future-thinking',
+  UXUIDesign: 'ux-ui-design',
+  EnergyManagement: 'energy-management',
 };
+
 export const moduleNavigation: ModuleNavigation[] = [
   // Core Modules (outside /learning/ folder)
   {
@@ -1677,7 +1642,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
   },
   {
-    id: K2Module.STEM,
+    id: K2Module.Stem,
     title: 'STEM Education',
     subtitle: 'Khoa học ứng dụng',
     description: 'Thí nghiệm vật lý, toán học thực tế và engineering',

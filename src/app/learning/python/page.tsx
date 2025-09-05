@@ -73,7 +73,7 @@ export default function PythonPage() {
       jobGrowth: '+25%',
       hireDemand: 'Rất cao',
     },
-    relatedModules: [K2Module.Arduino, K2Module.STEM, K2Module.Scratch, K2Module.DataScienceAnalytics],
+    relatedModules: [K2Module.Arduino, K2Module.Stem, K2Module.Scratch, K2Module.DataScienceAnalytics],
     heroImageUrl: 'https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?w=1200&h=600&fit=crop',
   };
 

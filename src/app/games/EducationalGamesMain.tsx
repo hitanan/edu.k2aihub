@@ -85,7 +85,7 @@ export default function EducationalGamesMain() {
         game.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         game.skills.some((skill) => skill.toLowerCase().includes(searchTerm.toLowerCase()));
 
-      const matchesCategory = selectedCategory === 'all' || game.category === selectedCategory;
+      const matchesCategory = selectedCategory === 'all' || game.category.includes(selectedCategory);
       const matchesDifficulty = selectedDifficulty === 'all' || game.difficulty === selectedDifficulty;
 
       return matchesSearch && matchesCategory && matchesDifficulty;
@@ -101,37 +101,37 @@ export default function EducationalGamesMain() {
     {
       value: 'quiz',
       label: '❓ Quiz',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'quiz').length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category.includes('quiz')).length,
     },
     {
       value: 'puzzle',
       label: '🧩 Puzzle',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'puzzle').length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category.includes('puzzle')).length,
     },
     {
       value: 'simulation',
       label: '🎮 Mô phỏng',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'simulation').length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category.includes('simulation')).length,
     },
     {
       value: 'coding',
       label: '💻 Lập trình',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'coding').length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category.includes('coding')).length,
     },
     {
       value: 'memory',
       label: '🧠 Trí nhớ',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'memory').length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category.includes('memory')).length,
     },
     {
       value: 'strategy',
       label: '🎯 Chiến lược',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === 'strategy').length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category.includes('strategy')).length,
     },
     {
       value: '3D',
       label: '🎮 3D',
-      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category === '3D').length,
+      count: EDUCATIONAL_GAMES_DATA.filter((g) => g.category.includes('3D')).length,
     },
   ];
 

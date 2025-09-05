@@ -167,8 +167,7 @@ const useRobotStore = create<GameState>((set, get) => ({
       obstacles: mission.obstacles,
       targets: mission.targets,
       collectibles: mission.targets.map((t) => t.clone()),
-      robot: {
-        // Reset robot state on new mission
+      robot: { // Reset robot state on new mission
         position: new THREE.Vector3(0, 0.5, 0),
         rotation: new THREE.Euler(0, 0, 0),
         velocity: new THREE.Vector3(0, 0, 0),
@@ -181,6 +180,7 @@ const useRobotStore = create<GameState>((set, get) => ({
       },
       pathPlanning: [],
       score: 0,
+      gamePhase: 'running', // Immediately set the game to running
     }),
 
   updateRobot: (updates) =>

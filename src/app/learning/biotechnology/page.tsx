@@ -162,7 +162,7 @@ export default function BiotechnologyPage() {
         items: ['Diagnostic Tools', 'Therapeutic Proteins', 'Cell Therapy', 'Tissue Engineering'],
       },
     ],
-    relatedModules: [K2Module.AIArtCreativeTech, K2Module.Cybersecurity, K2Module.STEM],
+    relatedModules: [K2Module.AIArtCreativeTech, K2Module.Cybersecurity, K2Module.Stem],
   };
 
   return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;

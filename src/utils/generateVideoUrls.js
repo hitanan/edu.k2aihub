@@ -22,7 +22,7 @@ const MODULES_TO_PROCESS = [
 ];
 
 // Default video URL to replace
-const DEFAULT_VIDEO_URL = 'https://www.youtube.com/watch?v=vd2dtkMINIw';
+const DEFAULT_VIDEO_URL = null;
 
 // Read API keys from .envy file
 function getApiKeys() {

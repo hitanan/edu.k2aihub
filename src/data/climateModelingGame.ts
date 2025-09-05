@@ -13,17 +13,12 @@ export interface ExtendedClimateModelingGame extends EducationalGame {
 export const climateModelingGame: ExtendedClimateModelingGame = {
   id: 'climate-modeling',
   title: 'Climate Modeling Simulator',
-  description: 'Interactive climate simulation exploring environmental factors, pollution impact, and green solutions over time.',
-  category: 'simulation',
+  description:
+    'Interactive climate simulation exploring environmental factors, pollution impact, and green solutions over time.',
+  category: ['simulation'],
   difficulty: 'Trung bình',
   estimatedTime: '30-45 phút',
-  skills: [
-    'Environmental Science',
-    'Data Analysis', 
-    'Systems Thinking',
-    'Decision Making',
-    'Sustainability Planning'
-  ],
+  skills: ['Environmental Science', 'Data Analysis', 'Systems Thinking', 'Decision Making', 'Sustainability Planning'],
   moduleType: 'environmental',
   isInternal: true,
   points: 100,
@@ -34,32 +29,32 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
       moduleId: 'green-technology',
       lessonId: 'renewable-energy-systems',
       title: 'Renewable Energy Systems',
-      connection: 'Explore solar, wind, and hydroelectric solutions modeled in the simulation'
+      connection: 'Explore solar, wind, and hydroelectric solutions modeled in the simulation',
     },
     {
-      moduleId: 'green-technology', 
+      moduleId: 'green-technology',
       lessonId: 'carbon-capture-storage',
       title: 'Carbon Capture & Storage',
-      connection: 'Learn about advanced carbon reduction technologies featured in the game'
+      connection: 'Learn about advanced carbon reduction technologies featured in the game',
     },
     {
       moduleId: 'stem',
       lessonId: 'environmental-solutions',
       title: 'Environmental Solutions',
-      connection: 'Apply STEM principles to environmental challenges simulated in the game'
+      connection: 'Apply STEM principles to environmental challenges simulated in the game',
     },
     {
       moduleId: 'data-science',
       lessonId: 'environmental-data-analysis',
       title: 'Environmental Data Analysis',
-      connection: 'Understand data patterns and trends shown in climate modeling'
+      connection: 'Understand data patterns and trends shown in climate modeling',
     },
     {
       moduleId: 'python',
       lessonId: 'data-visualization',
       title: 'Data Visualization with Python',
-      connection: 'Learn to create charts similar to those in the climate dashboard'
-    }
+      connection: 'Learn to create charts similar to those in the climate dashboard',
+    },
   ],
   gameData: {
     scenarios: [
@@ -70,13 +65,13 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
           'Increased global temperature by 1.2°C since pre-industrial times',
           'Sea level rise of 3.5mm per year',
           'More frequent extreme weather events',
-          'Coral reef bleaching và ecosystem disruption'
+          'Coral reef bleaching và ecosystem disruption',
         ],
         solutions: [
           'Transition to renewable energy sources',
           'Implement carbon pricing mechanisms',
           'Invest in carbon capture technology',
-          'Promote electric vehicle adoption'
+          'Promote electric vehicle adoption',
         ],
         quiz: {
           question: 'What is the primary cause of increased CO2 levels in this scenario?',
@@ -84,10 +79,10 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
             'Natural climate variations',
             'Industrial fossil fuel burning',
             'Volcanic activity',
-            'Solar radiation changes'
+            'Solar radiation changes',
           ],
-          correct: 1
-        }
+          correct: 1,
+        },
       },
       {
         name: 'Green Transition Scenario',
@@ -96,26 +91,21 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
           'Stabilized global temperature increase',
           'Reduced rate of sea level rise',
           'Improved air quality in major cities',
-          'Increased biodiversity recovery'
+          'Increased biodiversity recovery',
         ],
         solutions: [
           'Continue renewable energy expansion',
           'Implement reforestation programs',
           'Develop green transportation networks',
-          'Support sustainable agriculture practices'
+          'Support sustainable agriculture practices',
         ],
         quiz: {
           question: 'Which intervention would have the most immediate impact on CO2 reduction?',
-          options: [
-            'Planting trees',
-            'Reducing fossil fuel use',
-            'Ocean conservation',
-            'Recycling programs'
-          ],
-          correct: 1
-        }
-      }
-    ]
+          options: ['Planting trees', 'Reducing fossil fuel use', 'Ocean conservation', 'Recycling programs'],
+          correct: 1,
+        },
+      },
+    ],
   },
   environmentalFactors: [
     'CO2 Emissions từ fossil fuels',
@@ -125,7 +115,7 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
     'Agriculture và livestock impact',
     'Renewable energy adoption',
     'Carbon capture initiatives',
-    'Reforestation programs'
+    'Reforestation programs',
   ],
   climateIndicators: [
     'Global Average Temperature',
@@ -135,7 +125,7 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
     'Ocean pH Levels',
     'Air Quality Index',
     'Biodiversity Index',
-    'Renewable Energy Percentage'
+    'Renewable Energy Percentage',
   ],
   interventions: [
     'Renewable Energy Investment',
@@ -145,7 +135,7 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
     'Industrial Regulation',
     'Green Building Standards',
     'Public Transportation Development',
-    'Research & Development Funding'
+    'Research & Development Funding',
   ],
   scienceTopics: [
     'Greenhouse Effect và Global Warming',
@@ -155,7 +145,7 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
     'Environmental Impact Assessment',
     'Sustainable Development Goals',
     'Green Technology Innovation',
-    'Climate Adaptation Strategies'
+    'Climate Adaptation Strategies',
   ],
   realWorldConnections: [
     'Paris Climate Agreement targets và implementation',
@@ -165,6 +155,6 @@ export const climateModelingGame: ExtendedClimateModelingGame = {
     'Environmental activism và policy advocacy',
     'Green technology startups và innovation',
     'International cooperation on climate action',
-    'Local community sustainability projects'
-  ]
+    'Local community sustainability projects',
+  ],
 };
