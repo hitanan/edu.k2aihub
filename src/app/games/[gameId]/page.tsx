@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: createTitle(`${game.title} - Trò Chơi Giáo Dục`),
     description: createDescription(game.description),
-    keywords: [game.title, ...game.skills, 'trò chơi giáo dục', 'K2AI'],
+    keywords: [game.title, ...(game.skills || []), 'trò chơi giáo dục', 'K2AI'],
     alternates: {
       canonical: `/games/${game.id}`,
     },

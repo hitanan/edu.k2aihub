@@ -121,7 +121,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
                 <p className="text-gray-300 text-lg mb-6">{game.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {game.skills.map((skill, index) => (
+                  {game.skills?.map((skill, index) => (
                     <span key={index} className="px-3 py-1 bg-white/10 text-white rounded-full text-sm">
                       {skill}
                     </span>
@@ -205,7 +205,7 @@ export default function GamePageClient({ game }: GamePageClientProps) {
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Kỹ năng phát triển</h3>
               <ul className="space-y-2">
-                {game.skills.map((skill, index) => (
+                {game.skills?.map((skill, index) => (
                   <li key={index} className="text-gray-300 flex items-center">
                     <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
                     {skill}

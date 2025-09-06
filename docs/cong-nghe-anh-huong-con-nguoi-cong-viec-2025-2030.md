@@ -97,7 +97,7 @@ Giai đoạn 2025-2030 sẽ chứng kiến cuộc cách mạng công nghệ mạ
 - **New skills needed**: Robot programming, maintenance, supervision
 - **Human-robot collaboration**: Kết hợp điểm mạnh của cả hai
 
-### 5. **Quantum Computing**
+### 5. **[Quantum Computing](/learning/quantum-computing)**
 
 **Breakthroughs Expected:**
 
@@ -114,8 +114,8 @@ Giai đoạn 2025-2030 sẽ chứng kiến cuộc cách mạng công nghệ mạ
 **Preparation Needed:**
 
 - **Quantum-safe cryptography**: Chuẩn bị cho post-quantum world
-- **Quantum education**: Đào tạo nhân lực quantum computing
-- **Industry partnerships**: Hợp tác với các quantum computing companies
+- **Quantum education**: Đào tạo nhân lực [Quantum Computing](/learning/quantum-computing)
+- **Industry partnerships**: Hợp tác với các [Quantum Computing](/learning/quantum-computing) companies
 
 ### 6. **Biotechnology và Gene Editing**
 

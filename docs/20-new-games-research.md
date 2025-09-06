@@ -100,7 +100,7 @@ readingTime: "18 phút đọc"
 - **Công nghệ**: Simulation engine, real-time rendering
 - **Thời gian phát triển**: 4 tuần
 
-#### 7. **⚛️ Phòng thí nghiệm Hóa học Mini** (`mini-chemistry-lab`)
+#### 7. **⚛️ [Phòng thí nghiệm Hóa học](/games/chemistry-lab) Mini** (`mini-chemistry-lab`)
 - **Mô tả**: Thí nghiệm hóa học an toàn trong môi trường ảo
 - **Cơ chế**: Mix chemicals, observe reactions
 - **Tính năng**:
@@ -353,7 +353,7 @@ src/
 
 **Games Addition**:
 5. **Thám tử Số học** (Week 1-3)
-6. **Phòng thí nghiệm Hóa học Mini** (Week 4-8)
+6. **[Phòng thí nghiệm Hóa học](/games/chemistry-lab) Mini** (Week 4-8)
 7. **Sân khấu Văn học** (Week 9-14)
 8. **Siêu anh hùng Môi trường** (Week 15-18)
 

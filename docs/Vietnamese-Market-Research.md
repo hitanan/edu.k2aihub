@@ -37,7 +37,7 @@ _Nghiên cứu thị trường giáo dục Việt Nam và đề xuất các modu
 
 ## 🏢 Recommended Vietnamese-Specific Modules
 
-### 1. 🇻🇳 **Vietnamese Language Technology** (`/learning/vietnamese-tech`)
+### 1. 🇻🇳 **[Vietnamese Language Technology](/learning/vietnamese-language-tech)** (`/learning/vietnamese-tech`)
 
 **Target Audience:** International students, overseas Vietnamese, AI researchers
 **Market Size:** 95+ million Vietnamese speakers globally + international learners
@@ -72,7 +72,7 @@ _Nghiên cứu thị trường giáo dục Việt Nam và đề xuất các modu
 
 ---
 
-### 2. 🏪 **Vietnamese Business & Entrepreneurship** (`/learning/vietnam-business`)
+### 2. 🏪 **[Vietnamese Business & Entrepreneurship](/learning/vietnamese-business)** (`/learning/vietnam-business`)
 
 **Target Audience:** Young entrepreneurs, small business owners, startup founders
 **Market Size:** 600,000+ small businesses in Vietnam + startup ecosystem
@@ -277,7 +277,7 @@ _Nghiên cứu thị trường giáo dục Việt Nam và đề xuất các modu
 
 ---
 
-### 7. 🏥 **Vietnamese Healthcare Technology** (`/learning/healthtech-vietnam`)
+### 7. 🏥 **[Vietnamese Healthcare Technology](/learning/vietnamese-healthcare)** (`/learning/healthtech-vietnam`)
 
 **Target Audience:** Healthcare workers, health tech developers, medical students
 **Market Size:** 95 million population + growing healthcare sector
@@ -322,15 +322,15 @@ _Nghiên cứu thị trường giáo dục Việt Nam và đề xuất các modu
 
 ### High Priority (Immediate Implementation)
 
-1. **Vietnamese Business & Entrepreneurship** - High demand, immediate job market impact
+1. **[Vietnamese Business & Entrepreneurship](/learning/vietnamese-business)** - High demand, immediate job market impact
 2. **Vietnamese Financial Technology** - Growing fintech sector, high earning potential
 3. **Smart Agriculture & Rural Technology** - Large addressable market, government support
 
 ### Medium Priority (6-month timeline)
 
-4. **Vietnamese Language Technology** - Specialized market, international appeal
+4. **[Vietnamese Language Technology](/learning/vietnamese-language-tech)** - Specialized market, international appeal
 5. **Digital Government & Civic Technology** - Government digitization initiatives
-6. **Vietnamese Healthcare Technology** - Post-pandemic digital health focus
+6. **[Vietnamese Healthcare Technology](/learning/vietnamese-healthcare)** - Post-pandemic digital health focus
 
 ### Long-term Priority (12-month timeline)
 
@@ -405,7 +405,7 @@ _Nghiên cứu thị trường giáo dục Việt Nam và đề xuất các modu
 
 ### Phase 1: Foundation (Months 1-3)
 
-- Launch Vietnamese Business & Entrepreneurship module
+- Launch [Vietnamese Business & Entrepreneurship](/learning/vietnamese-business) module
 - Partner with local business associations
 - Create Vietnamese-language marketing content
 - Establish social media presence (Facebook, Zalo, TikTok)
@@ -520,7 +520,7 @@ _Nghiên cứu thị trường giáo dục Việt Nam và đề xuất các modu
 
 ### Development Timeline
 
-**Q1 2025:** Vietnamese Business & Entrepreneurship + FinTech modules
+**Q1 2025:** [Vietnamese Business & Entrepreneurship](/learning/vietnamese-business) + FinTech modules
 **Q2 2025:** Smart Agriculture + Language Technology modules  
 **Q3 2025:** Digital Government + Healthcare Technology modules
 **Q4 2025:** Digital Heritage + Culture module + platform optimizations

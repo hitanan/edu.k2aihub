@@ -39,7 +39,7 @@ Dựa trên phân tích data từ **50,000+ sinh viên** Việt Nam qua các pla
 
 - Python for beginners (85% requests)
 - Web development basics (70%)
-- Mobile app development (55%)
+- [Mobile App Development](/learning/mobile-app-development) (55%)
 - Game development (45%)
 - AI/ML programming (40%)
 

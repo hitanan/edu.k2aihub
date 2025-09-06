@@ -62,8 +62,8 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       'Tìm hiểu các khái niệm cơ bản của khoa học dữ liệu, từ thu thập đến phân tích và trực quan hóa dữ liệu.',
     duration: '150 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=nS-z5JgqNe0', // Statistics Tutorial - NumPy Regression Analysis
-    imageUrl: '/images/data-science-fundamentals.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=HPGYTWYM13s', // Statistics Tutorial - NumPy Regression Analysis
+    imageUrl: 'https://i.ytimg.com/vi/HPGYTWYM13s/hqdefault.jpg',
     mainContent: {
       introduction:
         'Khoa học dữ liệu là nghệ thuật và khoa học của việc biến dữ liệu thô thành những hiểu biết sâu sắc, những quyết định thông minh và những sản phẩm đột phá. Đây không chỉ là về những thuật toán phức tạp, mà là về tư duy tò mò, khả năng kể chuyện và niềm đam mê giải quyết vấn đề. Bài học này sẽ là cánh cửa đầu tiên đưa bạn vào thế giới hấp dẫn của dữ liệu.',
@@ -120,6 +120,11 @@ export const DataScienceLessons: DataScienceLessonData[] = [
         description:
           'Explore and visualize complex datasets in interactive 3D environments, uncovering insights and trends',
       },
+      {
+        id: 'data-detective',
+        name: 'Data Detective: The Missing Shipment',
+        description: 'Use your data analysis skills to solve a mystery and find a missing shipment.',
+      },
     ],
     objectives: [
       'Hiểu quy trình Data Science lifecycle (CRISP-DM)',
@@ -138,6 +143,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
         title: 'Complete Data Analysis Project',
         description: 'Thực hiện dự án phân tích dữ liệu hoàn chỉnh từ A-Z với dataset bán hàng',
         difficulty: 'Cơ bản',
+        videoUrl: 'https://www.youtube.com/watch?v=lV6fNwKjA8A',
         materials: ['Python', 'pandas', 'matplotlib', 'seaborn', 'numpy', 'Sales dataset'],
         procedure: [
           'Download và load sales dataset với pandas',
@@ -192,7 +198,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       name: 'Anh Nguyễn Mạnh Tường',
       title: 'Phó Tổng Giám đốc, Khối Zalo',
       company: 'VNG Corporation',
-      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-manh-tuong',
+      imageUrl: 'https://i.ytimg.com/vi/lV6fNwKjA8A/hqdefault.jpg',
       quote:
         'Dữ liệu giống như dầu mỏ của thế kỷ 21, và các nhà khoa học dữ liệu là những người kỹ sư lọc dầu. Tại Zalo, chúng tôi không chỉ ngồi trên một mỏ dữ liệu khổng lồ, mà còn phải biến nó thành những sản phẩm thông minh, hữu ích cho hàng chục triệu người dùng mỗi ngày.',
     },
@@ -224,7 +230,8 @@ export const DataScienceLessons: DataScienceLessonData[] = [
     description: 'Học các thuật toán machine learning phổ biến và cách áp dụng trong thực tế.',
     duration: '200 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://youtube.com/watch?v=aircAruvnKk',
+    videoUrl: 'https://www.youtube.com/watch?v=E0Hmnixke2g',
+    imageUrl: 'https://i.ytimg.com/vi/E0Hmnixke2g/hqdefault.jpg',
     mainContent: {
       introduction:
         'Học máy (Machine Learning) là trái tim của khoa học dữ liệu, là nơi các thuật toán "học" từ dữ liệu để đưa ra dự đoán hoặc quyết định mà không cần được lập trình một cách rõ ràng. Bài học này sẽ đưa bạn vào thế giới của các thuật toán, từ những mô hình đơn giản đến các mạng nơ-ron phức tạp, và cách áp dụng chúng để giải quyết các bài toán thực tế.',
@@ -301,6 +308,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
         title: 'Build Predictive Models Portfolio',
         description: 'Xây dựng portfolio các mô hình ML cho different business scenarios',
         difficulty: 'Nâng cao',
+        videoUrl: 'https://www.youtube.com/watch?v=DsAjwVu092U',
         materials: ['scikit-learn', 'XGBoost', 'TensorFlow', 'Multiple datasets'],
         procedure: [
           'Classification: Customer churn prediction',
@@ -341,7 +349,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       name: 'Tiến sĩ Bùi Hải Hưng',
       title: 'Tổng Giám đốc',
       company: 'VinAI',
-      imageUrl: 'https://i.pravatar.cc/150?u=bui-hai-hung',
+      imageUrl: 'https://i.ytimg.com/vi/DsAjwVu092U/hqdefault.jpg',
       quote:
         'Trí tuệ nhân tạo không còn là khoa học viễn tưởng. Tại VinAI, chúng tôi đang biến những nghiên cứu AI đỉnh cao của thế giới thành những sản phẩm thực tế, giải quyết những bài toán của người Việt. Học máy là công cụ để chúng tôi thực hiện sứ mệnh đó.',
     },
@@ -379,6 +387,8 @@ export const DataScienceLessons: DataScienceLessonData[] = [
     description: 'Làm việc với dữ liệu lớn sử dụng các công cụ và framework hiện đại.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=dJA7k58zlA8',
+    imageUrl: 'https://i.ytimg.com/vi/dJA7k58zlA8/hqdefault.jpg',
     mainContent: {
       introduction:
         'Khi dữ liệu trở nên quá lớn, quá nhanh, hoặc quá phức tạp để có thể xử lý bằng các công cụ truyền thống, chúng ta bước vào thế giới của Dữ liệu lớn (Big Data). Đây là lĩnh vực của việc xử lý và phân tích các tập dữ liệu khổng lồ để khám phá các mẫu hình và xu hướng ở quy mô vĩ mô. Bài học này sẽ giới thiệu cho bạn các công cụ và kiến trúc để chinh phục dữ liệu lớn.',
@@ -457,6 +467,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
         title: 'Real-time Analytics Pipeline',
         description: 'Xây dựng end-to-end big data pipeline với real-time processing',
         difficulty: 'Chuyên gia',
+        videoUrl: 'https://www.youtube.com/watch?v=kGT4PcTEPP8',
         procedure: [
           'Setup Apache Kafka cho data streaming',
           'Process data với Apache Spark',
@@ -487,7 +498,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       name: 'Anh Lê Hồng Việt',
       title: 'Tổng Giám đốc',
       company: 'FPT Smart Cloud',
-      imageUrl: 'https://i.pravatar.cc/150?u=le-hong-viet',
+      imageUrl: 'https://i.ytimg.com/vi/kGT4PcTEPP8/hqdefault.jpg',
       quote:
         'Big Data không chỉ là về kích thước, mà là về tốc độ và sự đa dạng. Thách thức lớn nhất không phải là lưu trữ dữ liệu, mà là xử lý nó đủ nhanh để đưa ra quyết định kinh doanh trong thời gian thực. Tại FPT, chúng tôi xây dựng những "nhà máy" xử lý dữ liệu để giúp các doanh nghiệp Việt Nam tăng tốc trong cuộc đua chuyển đổi số.',
     },
@@ -519,6 +530,8 @@ export const DataScienceLessons: DataScienceLessonData[] = [
     description: 'Tạo ra các visualization hiệu quả và kể chuyện với dữ liệu.',
     duration: '140 phút',
     difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=r5_34YnCmMY',
+    imageUrl: 'https://i.ytimg.com/vi/r5_34YnCmMY/hqdefault.jpg',
     mainContent: {
       introduction:
         'Những con số và bảng tính khô khan không thể tự nó kể chuyện. Trực quan hóa dữ liệu và Kể chuyện bằng dữ liệu là nghệ thuật biến những phân tích phức tạp thành những biểu đồ đẹp mắt, những câu chuyện hấp dẫn và những thông điệp rõ ràng, có sức thuyết phục. Đây là cây cầu nối giữa thế giới của nhà khoa học dữ liệu và thế giới của người ra quyết định.',
@@ -592,6 +605,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
         title: 'Executive Dashboard Creation',
         description: 'Tạo executive dashboard tương tác với multiple data sources',
         difficulty: 'Trung bình',
+        videoUrl: 'https://www.youtube.com/watch?v=MTlQvyNQ3PM',
         procedure: [
           'Requirements gathering từ stakeholders',
           'Data integration từ multiple sources',
@@ -632,7 +646,7 @@ export const DataScienceLessons: DataScienceLessonData[] = [
       name: 'Chị Nguyễn Phi Vân',
       title: 'Chuyên gia nhượng quyền thương hiệu, Tác giả sách',
       company: 'Retail & Franchise Asia',
-      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-phi-van',
+      imageUrl: 'https://i.ytimg.com/vi/MTlQvyNQ3PM/hqdefault.jpg',
       quote:
         'Dữ liệu không biết nói dối, nhưng nó cũng không tự biết kể chuyện. Một nhà lãnh đạo giỏi phải là một người kể chuyện giỏi, người có thể thổi hồn vào những con số, biến chúng thành một tầm nhìn, một chiến lược mà mọi người đều muốn đi theo. Đừng chỉ cho tôi biểu đồ, hãy kể cho tôi nghe câu chuyện đằng sau nó.',
     },

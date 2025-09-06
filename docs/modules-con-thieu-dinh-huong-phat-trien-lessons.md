@@ -18,15 +18,15 @@ Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với
 **Current K2AiHub Modules (14):**
 
 1. Địa Lý Việt Nam (Geography)
-2. AI Của Tôi (Practical AI Guide)
-3. Digital Marketing & Creator Economy
-4. Financial Literacy & FinTech
-5. Green Technology & Sustainability
-6. Game Development & Interactive Media
-7. AI Art & Creative Technology
+2. [AI Của Tôi](/ai) (Practical AI Guide)
+3. [Digital Marketing & Creator Economy](/learning/digital-marketing)
+4. [Financial Literacy & FinTech](/learning/financial-literacy)
+5. [Green Technology & Sustainability](/learning/green-technology)
+6. [Game Development & Interactive Media](/learning/game-development)
+7. [AI Art & Creative Technology](/learning/ai-art-creative-tech)
 8. Cybersecurity & Ethical Hacking
 9. Biotechnology & Life Sciences
-10. STEM Education
+10. [STEM Education](/learning/stem)
 11. Scratch Programming
 12. Python Programming
 13. Arduino & IoT
@@ -55,7 +55,7 @@ Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với
 
 ## 🚀 Phase 1: Immediate Priority (Q1-Q2 2025) - 8 Modules
 
-### **💼 1. Professional Soft Skills & Communication**
+### **💼 1. [Professional Soft Skills & Communication](/learning/professional-soft-skills)**
 
 **Gap Analysis:**
 
@@ -164,7 +164,7 @@ Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với
 **Estimated Development Time:** 4 months
 **Expected Engagement:** 25,000+ students in first year
 
-### **📱 3. Mobile App Development (iOS/Android)**
+### **📱 3. [Mobile App Development](/learning/mobile-app-development) (iOS/Android)**
 
 **Gap Analysis:**
 
@@ -219,7 +219,7 @@ Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với
 **Estimated Development Time:** 5 months
 **Expected Engagement:** 45,000+ students in first year
 
-### **🎨 4. Advanced Creative Skills (Animation, 3D, VFX)**
+### **🎨 4. [Advanced Creative Skills](/learning/advanced-creative-skills) (Animation, 3D, VFX)**
 
 **Gap Analysis:**
 
@@ -274,7 +274,7 @@ Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với
 **Estimated Development Time:** 6 months
 **Expected Engagement:** 35,000+ students in first year
 
-### **⚖️ 5. Legal Technology & Compliance**
+### **⚖️ 5. [Legal Technology](/learning/legal-technology) & Compliance**
 
 **Gap Analysis:**
 
@@ -307,7 +307,7 @@ Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với
    - GDPR compliance for Vietnamese businesses
    - International data transfer laws
 
-3. **Legal Technology & Automation**
+3. **[Legal Technology](/learning/legal-technology) & Automation**
    - Legal research tools and databases
    - Contract automation and templates
    - Compliance monitoring systems
@@ -734,11 +734,11 @@ Sau khi phân tích **14 modules hiện tại** của K2AiHub và so sánh với
 - Biomedical engineering
 - Regulatory and ethical considerations
 
-### **🔮 27. Quantum Computing & Advanced Physics**
+### **🔮 27. [Quantum Computing](/learning/quantum-computing) & Advanced Physics**
 
 **Future Relevance**: 85/100
 
-- Quantum computing principles
+- [Quantum Computing](/learning/quantum-computing) principles
 - Quantum cryptography and security
 - Advanced physics applications
 - Future technology implications

@@ -73,7 +73,7 @@ readingTime: "10 phút đọc"
 
 ---
 
-### 3. **Advanced AI & Machine Learning**
+### 3. **Advanced [AI & Machine Learning](/learning/ai-machine-learning)**
 
 **Path**: `/learning/advanced-ai-ml`
 
@@ -254,7 +254,7 @@ readingTime: "10 phút đọc"
 ### Tier 1 - Triển khai ngay (Q1 2025):
 
 1. **Semiconductor Technology** - Highest demand, government priority
-2. **Advanced AI & Machine Learning** - Universal application
+2. **Advanced [AI & Machine Learning](/learning/ai-machine-learning)** - Universal application
 3. **Renewable Energy Engineering** - Climate commitment aligned
 
 ### Tier 2 - Triển khai Q2 2025:

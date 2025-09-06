@@ -27,31 +27,31 @@ readingTime: "6 phút đọc"
 
 ### 🚀 Professional Skills Modules (7 modules)
 
-#### 1. Digital Marketing & Creator Economy
+#### 1. [Digital Marketing & Creator Economy](/learning/digital-marketing)
 - **Focus**: Tiếp thị số và kinh tế sáng tạo
 - **Duration**: 12-18 giờ | **Level**: Trung bình
 - **Career paths**: Digital Marketer, Content Creator, Social Media Manager
 - **Salary range**: 15-35 triệu VNĐ/tháng
 
-#### 2. Financial Literacy & FinTech  
+#### 2. [Financial Literacy & FinTech](/learning/financial-literacy)  
 - **Focus**: Tài chính cá nhân và công nghệ tài chính
 - **Duration**: 10-14 giờ | **Level**: Cơ bản → Trung bình
 - **Career paths**: Financial Advisor, FinTech Specialist, Investment Analyst
 - **Salary range**: 18-40 triệu VNĐ/tháng
 
-#### 3. Green Technology & Sustainability
+#### 3. [Green Technology & Sustainability](/learning/green-technology)
 - **Focus**: Công nghệ xanh và phát triển bền vững
 - **Duration**: 8-12 giờ | **Level**: Trung bình
 - **Career paths**: Sustainability Consultant, Green Tech Engineer
 - **Salary range**: 20-45 triệu VNĐ/tháng
 
-#### 4. Game Development & Interactive Media
+#### 4. [Game Development & Interactive Media](/learning/game-development)
 - **Focus**: Phát triển game và media tương tác
 - **Duration**: 15-25 giờ | **Level**: Trung bình → Khó
 - **Career paths**: Game Developer, UI/UX Designer, Interactive Designer
 - **Salary range**: 18-50 triệu VNĐ/tháng
 
-#### 5. AI Art & Creative Technology
+#### 5. [AI Art & Creative Technology](/learning/ai-art-creative-tech)
 - **Focus**: Nghệ thuật AI và công nghệ sáng tạo
 - **Duration**: 10-15 giờ | **Level**: Trung bình
 - **Career paths**: AI Artist, Creative Technologist, Digital Content Creator
@@ -77,7 +77,7 @@ readingTime: "6 phút đọc"
 - **Applications**: Data Science, Web Development, AI/ML
 - **Career paths**: Python Developer, Data Scientist, AI Engineer
 
-#### 9. Arduino & IoT Programming  
+#### 9. [Arduino & IoT Programming](/learning/arduino)  
 - **Focus**: Lập trình phần cứng và IoT
 - **Duration**: 15-20 giờ | **Level**: Cơ bản → Trung bình
 - **Applications**: Smart Home, Industrial IoT, Automation
@@ -89,7 +89,7 @@ readingTime: "6 phút đọc"
 - **Applications**: Game development, Animation, Logic thinking
 - **Target**: Học sinh 8-16 tuổi, beginners
 
-#### 11. STEM Education
+#### 11. [STEM Education](/learning/stem)
 - **Focus**: Khoa học, Công nghệ, Kỹ thuật, Toán học
 - **Duration**: 12-18 giờ | **Level**: Cơ bản → Trung bình
 - **Applications**: Science experiments, Engineering challenges
@@ -110,7 +110,7 @@ readingTime: "6 phút đọc"
 - **Market opportunity**: China+1 strategy, Manufacturing shift to Vietnam
 
 #### 14. Blockchain & DeFi
-- **Focus**: Blockchain technology và Decentralized Finance
+- **Focus**: [Blockchain Technology](/learning/blockchain-technology) và Decentralized Finance
 - **Duration**: 12-18 giờ | **Level**: Khó
 - **Applications**: Cryptocurrency, Smart contracts, DeFi applications
 - **Career paths**: Blockchain Developer, DeFi Analyst, Crypto Consultant

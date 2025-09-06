@@ -241,7 +241,7 @@ Tiếp nối nghiên cứu Phần 1, xác định 10 kỹ năng mới thiết y�
 ## 🌟 Kết Hợp 20 Kỹ Năng Thiết Yếu
 
 ### **Nhóm 1: Foundation (Phần 1)**
-1. Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo ✅
+1. [Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo](/learning/critical-thinking) ✅
 2. Giao Tiếp và Thuyết Trình Đa Phương Tiện ✅
 3. An Toàn Thông Tin và Quyền Riêng Tư Số ✅
 4. Quản Lý Tài Chính Cá Nhân và Đầu Tư Thông Minh ✅

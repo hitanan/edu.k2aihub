@@ -27,7 +27,7 @@ Xác định 10 kỹ năng quan trọng nhất mà học sinh phổ thông Việ
 
 ## 🔥 TOP 10 KỸ NĂNG THIẾT YẾU CHO HỌC SINH PHỔ THÔNG VIỆT NAM
 
-### 1. 🧠 **Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo**
+### 1. 🧠 **[Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo](/learning/critical-thinking)**
 
 **Vì sao thiết yếu:**
 - Thế giới VUCA (Volatile, Uncertain, Complex, Ambiguous) đòi hỏi khả năng phân tích và xử lý thông tin phức tạp

@@ -131,7 +131,7 @@ readingTime: "12 phút đọc"
 
 ### **Immediate Priority (Q1 2025)**
 
-#### 🎮 **Digital Content Creator Academy** (`/learning/content-creator`)
+#### 🎮 **Digital [Content Creator Academy](/learning/content-creator)** (`/learning/content-creator`)
 
 - **Target**: Cấp 2 & 3 students interested in social media careers
 - **Content**: TikTok/YouTube optimization, live streaming, monetization
@@ -145,7 +145,7 @@ readingTime: "12 phút đọc"
 - **Skills**: Emotional intelligence, self-care, healthy tech habits
 - **Market Size**: 16M+ Vietnamese teens
 
-#### 💰 **Young Entrepreneur Bootcamp** (`/learning/young-entrepreneur`)
+#### 💰 **[Young Entrepreneur Bootcamp](/learning/young-entrepreneur)** (`/learning/young-entrepreneur`)
 
 - **Target**: High school students với business ambitions
 - **Content**: Startup basics, Vietnamese market analysis, funding

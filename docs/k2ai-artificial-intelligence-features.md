@@ -109,7 +109,7 @@ interface LearningAnalytics {
 
 ## 🎯 AI-Powered Learning Modules
 
-### "AI Của Tôi" - Practical AI Guide
+### "[AI Của Tôi](/ai)" - Practical AI Guide
 **Comprehensive AI education với 6 categories**:
 
 #### 💼 Office & Work AI

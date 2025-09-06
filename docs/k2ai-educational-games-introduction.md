@@ -174,8 +174,8 @@ Mỗi game đều có **relatedLessons** connecting to:
 - **Python Programming**: Data analysis, algorithm implementation
 - **Arduino & IoT**: Hardware integration, sensor programming  
 - **Robotics**: Autonomous systems, AI integration
-- **STEM Education**: Scientific method, mathematical modeling
-- **AI & Machine Learning**: Pattern recognition, optimization
+- **[STEM Education](/learning/stem)**: Scientific method, mathematical modeling
+- **[AI & Machine Learning](/learning/ai-machine-learning)**: Pattern recognition, optimization
 
 ### Achievement System
 - **Skill badges**: Chứng nhận kỹ năng cụ thể

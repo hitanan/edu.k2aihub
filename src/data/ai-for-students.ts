@@ -24,6 +24,11 @@ export interface AIForStudentsLessonType extends BaseLessonData {
   vietnamContext: VietnamContext;
   careerConnect: CareerConnect;
   quizzes: Quiz[];
+  relatedGames?: Array<{
+    id: string;
+    name: string;
+    description: string;
+  }>;
 }
 
 export const AIForStudentsLessons: AIForStudentsLessonType[] = [
@@ -201,6 +206,13 @@ export const AIForStudentsLessons: AIForStudentsLessonType[] = [
       'Phân biệt giữa việc sử dụng AI để hỗ trợ và việc lạm dụng AI (ví dụ: đạo văn).',
     ],
     prerequisites: ['Hoàn thành các bài học trước'],
+    relatedGames: [
+      {
+        id: 'ai-ethics-simulator',
+        name: 'Ethical AI Simulator',
+        description: 'Face complex ethical dilemmas and make decisions on how to develop and deploy AI responsibly.',
+      },
+    ],
     exercises: [
       {
         title: 'Phân tích tình huống: AI trong tuyển dụng',
@@ -210,7 +222,7 @@ export const AIForStudentsLessons: AIForStudentsLessonType[] = [
         procedure: [
           'Đọc tình huống: "Một công ty công nghệ lớn sử dụng AI để quét hàng nghìn CV. AI được huấn luyện dựa trên dữ liệu các nhân viên thành công trước đây của công ty, phần lớn là nam giới tốt nghiệp từ các trường đại học hàng đầu."',
           'Thảo luận nhóm về các câu hỏi: AI này có thể có những thiên vị nào? Điều gì sẽ xảy ra với các ứng viên nữ hoặc ứng viên từ các trường ít danh tiếng hơn? Ai là người chịu trách nhiệm nếu AI đưa ra quyết định không công bằng?',
-          'Đề xuất các giải pháp để giảm thiểu thiên vị trong hệ thống AI này.',
+          'Đề xuất các giải pháp để giảm thiểu thiên bias trong hệ thống AI này.',
         ],
         expectedResults:
           'Học sinh hiểu được khái niệm "thiên vị thuật toán" (algorithmic bias) và nhận thức được tầm quan trọng của việc xây dựng và sử dụng AI một cách công bằng.',

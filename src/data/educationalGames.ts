@@ -1,12 +1,13 @@
-import { K2Module } from './moduleNavigation';
 import { EducationalGame } from '@/types';
 import { NEW_GAMES_DATA } from './games/newGames';
+import { NEW_STORY_GAMES_DATA } from './games/newStoryGames';
 
 export type { EducationalGame };
 
 // Games array for static generation
 export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
   ...NEW_GAMES_DATA,
+  ...NEW_STORY_GAMES_DATA,
   // ENHANCED 3D GAMES - Implemented Components
   {
     id: 'physics-experiment-lab-3d',
@@ -2504,68 +2505,6 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
     ],
   },
-
-  // New Advanced 3D Biotechnology Game
-  {
-    id: 'biotech-lab-simulation-3d',
-    title: 'Biotech Lab Simulation 3D',
-    description:
-      'Immersive 3D biotechnology laboratory với real-time experiments, lab equipment simulation, và advanced safety protocols trong realistic virtual environment',
-    category: ['3D'],
-    difficulty: 'Nâng cao',
-    estimatedTime: '45-60 phút',
-    skills: [
-      'Biotechnology',
-      '3D Simulation',
-      'Lab Safety',
-      'Scientific Method',
-      'Molecular Biology',
-      'Research Protocols',
-    ],
-    moduleType: 'biotechnology',
-    isInternal: true,
-    points: 90,
-    icon: '🌍',
-    color: 'from-purple-500 to-pink-500',
-    relatedLessons: [
-      {
-        moduleId: 'biotechnology',
-        lessonId: 'genetic-engineering-crispr',
-        title: 'Genetic Engineering & CRISPR Technology',
-        connection: 'Practice CRISPR gene editing techniques trong safe virtual laboratory environment',
-      },
-      {
-        moduleId: 'biotechnology',
-        lessonId: 'biomedical-applications',
-        title: 'Biomedical Applications & Drug Development',
-        connection: 'Simulate drug discovery process và biomedical device testing protocols',
-      },
-      {
-        moduleId: 'biotechnology',
-        lessonId: 'synthetic-biology',
-        title: 'Synthetic Biology & Biodesign',
-        connection: 'Design và test synthetic biological systems trong controlled 3D environment',
-      },
-      {
-        moduleId: 'python',
-        lessonId: 'computational-biology',
-        title: 'Computational Biology with Python',
-        connection: 'Use Python to model biological systems and analyze biotech experimental data',
-      },
-      {
-        moduleId: 'green-technology',
-        lessonId: 'biotechnology-sustainability',
-        title: 'Sustainable Biotechnology Applications',
-        connection: 'Develop eco-friendly biotech solutions for environmental challenges',
-      },
-      {
-        moduleId: 'stem',
-        lessonId: 'stem-introduction',
-        title: 'STEM Introduction',
-        connection: 'Apply scientific method và research protocols trong biotechnology experiments',
-      },
-    ],
-  },
   {
     id: 'drone-crop-monitoring-3d',
     title: 'Drone Crop Monitoring 3D',
@@ -2928,115 +2867,6 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
     ],
   },
-
-  // Missing 3D Games - Medical Device Designer
-  {
-    id: 'medical-device-designer-3d',
-    title: 'Medical Device Designer 3D',
-    description: 'Thiết kế và test các thiết bị y tế trong môi trường 3D với patient simulation',
-    category: ['3D'],
-    difficulty: 'Nâng cao',
-    estimatedTime: '40-55 phút',
-    skills: ['Biomedical Engineering', 'Medical Technology', '3D Modeling', 'Healthcare Innovation'],
-    moduleType: 'biotechnology',
-    isInternal: true,
-    points: 180,
-    icon: '🏥',
-    color: 'from-red-500 to-pink-500',
-    relatedLessons: [
-      {
-        moduleId: 'biotechnology',
-        lessonId: 'medical-biotechnology',
-        title: 'Medical Biotechnology',
-        connection: 'Apply biomedical engineering principles to device design and testing',
-      },
-      {
-        moduleId: 'arduino',
-        lessonId: 'arduino-sensors',
-        title: 'Sensors & Data Processing',
-        connection: 'Use sensors for medical monitoring and diagnostic devices',
-      },
-      {
-        moduleId: 'python',
-        lessonId: 'python-data-analysis',
-        title: 'Python Data Analysis',
-        connection: 'Process medical data and implement device control algorithms',
-      },
-    ],
-  },
-
-  // Missing 3D Games - Neural Network Builder
-  {
-    id: 'neural-network-builder-3d',
-    title: 'Neural Network Builder 3D',
-    description: 'Xây dựng và train neural networks với 3D visualization của data flow và learning process',
-    category: ['3D'],
-    difficulty: 'Nâng cao',
-    estimatedTime: '50-70 phút',
-    skills: ['Machine Learning', 'Neural Networks', 'AI Development', '3D Visualization', 'Deep Learning'],
-    moduleType: 'ai-machine-learning',
-    isInternal: true,
-    points: 220,
-    icon: '🧠',
-    color: 'from-purple-600 to-blue-600',
-    relatedLessons: [
-      {
-        moduleId: 'ai-machine-learning',
-        lessonId: 'neural-networks',
-        title: 'Neural Networks Fundamentals',
-        connection: 'Build and visualize neural network architectures and training processes',
-      },
-      {
-        moduleId: 'python',
-        lessonId: 'python-ai-ml',
-        title: 'Python AI & ML',
-        connection: 'Implement neural networks using Python libraries like TensorFlow and PyTorch',
-      },
-      {
-        moduleId: 'data-science',
-        lessonId: 'machine-learning-algorithms',
-        title: 'Machine Learning Algorithms',
-        connection: 'Apply deep learning algorithms for pattern recognition and prediction',
-      },
-    ],
-  },
-
-  // Missing 3D Games - Traffic Management Simulator
-  {
-    id: 'traffic-management-simulator-3d',
-    title: 'Traffic Management Simulator 3D',
-    description: 'Quản lý và tối ưu hóa hệ thống giao thông đô thị với smart traffic lights và real-time simulation',
-    category: ['3D'],
-    difficulty: 'Trung bình',
-    estimatedTime: '35-50 phút',
-    skills: ['Traffic Engineering', 'Urban Planning', 'Smart Cities', 'Optimization', '3D Simulation'],
-    moduleType: 'green-technology',
-    isInternal: true,
-    points: 160,
-    icon: '🚦',
-    color: 'from-orange-500 to-red-500',
-    relatedLessons: [
-      {
-        moduleId: 'green-technology',
-        lessonId: 'smart-cities-iot',
-        title: 'Smart Cities & IoT',
-        connection: 'Implement IoT sensors and smart systems for traffic optimization',
-      },
-      {
-        moduleId: 'arduino',
-        lessonId: 'arduino-communication',
-        title: 'Communication & Networking',
-        connection: 'Network traffic sensors and control systems for real-time management',
-      },
-      {
-        moduleId: 'python',
-        lessonId: 'python-algorithms',
-        title: 'Python Algorithms',
-        connection: 'Develop optimization algorithms for traffic flow and signal timing',
-      },
-    ],
-  },
-
   // Critical Thinking Skills Games
   {
     id: 'logical-fallacy-detector',

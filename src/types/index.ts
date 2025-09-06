@@ -66,14 +66,16 @@ export interface EducationalGame {
   description: string;
   category: string[];
   difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
-  estimatedTime: string;
-  skills: string[];
-  moduleType: string;
-  isInternal: boolean;
-  points: number;
-  icon: string;
-  color: string;
+  estimatedTime?: string;
+  skills?: string[];
+  moduleType?: string;
+  isInternal?: boolean;
+  points?: number;
+  icon?: string;
+  color?: string;
   imageUrl?: string;
+  tags?: string[];
+  isNew?: boolean;
   relatedLessons: Array<{
     moduleId: string;
     lessonId: string;

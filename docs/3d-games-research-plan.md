@@ -27,7 +27,7 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 - **Existing 58+ Games**: Nền tảng mạnh để develop 3D versions
 - **Unique Vietnamese Content**: Địa lý Việt Nam, văn hóa, startup ecosystem
 - **Specialized STEM Focus**: Arduino, Robotics, AI applications với 3D visualization
-- **Advanced Topics**: Quantum computing, Blockchain, Biotechnology visualization
+- **Advanced Topics**: [Quantum Computing](/learning/quantum-computing), Blockchain, Biotechnology visualization
 
 ### Target Demographics:
 
@@ -41,7 +41,7 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 
 ### ⭐ **TIER 1: High 3D Potential & Unique Market Position (Ưu tiên cao)**
 
-#### ✅ **COMPLETED: 🧪 Virtual Chemistry Lab 3D** - *Successfully Implemented August 2025*
+#### ✅ **COMPLETED: 🧪 [Virtual Chemistry Lab 3D](/games/virtual-chemistry-lab-3d)** - *Successfully Implemented August 2025*
 
 - **Implementation Status**: ✅ **LIVE & FUNCTIONAL** - Available at `/games/virtual-chemistry-lab-3d/`
 - **Original State**: 2D molecular structure visualization game
@@ -95,7 +95,7 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 
 ---
 
-#### ✅ **COMPLETED: 🏗️ Arduino Circuit Builder 3D** - *Successfully Implemented August 2025*
+#### ✅ **COMPLETED: 🏗️ [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d)** - *Successfully Implemented August 2025*
 
 - **Implementation Status**: ✅ **LIVE & FUNCTIONAL** - Available at `/games/arduino-circuit-builder-3d/`
 - **Original State**: 2D circuit simulation concept
@@ -128,7 +128,7 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 - **Market Validation**: 🎯 **PROVEN CONCEPT**
   - **Demonstrates Advanced 3D Educational Gaming**: Complex system successfully implemented
   - **Template for Technical Education**: Architecture suitable for other engineering subjects
-  - **Vietnamese STEM Education**: Addresses critical gap in hands-on technical training
+  - **Vietnamese [STEM Education](/learning/stem)**: Addresses critical gap in hands-on technical training
 
 **Key Success Metrics Achieved**:
 - ✅ **3D Circuit Building**: Realistic component placement and wiring visualization
@@ -186,7 +186,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Technical Feasibility**: ⭐⭐⭐⭐ - Complex but builds on Arduino Circuit Builder architecture
 - **Development Priority**: 🔥 **HIGH**
 
-#### 3. **🚁 Drone Crop Monitoring 3D**
+#### 3. **🚁 [Drone Crop Monitoring 3D](/games/drone-crop-monitoring-3d)**
 - **Current State**: 2D agricultural monitoring interface
 - **3D Enhancement**: 3D terrain with drone flight simulation and crop analysis
 - **Market Niche**: ✅ Agricultural technology and precision farming education
@@ -206,7 +206,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 
 #### **TIER 2: Strong 3D Enhancement Potential**
 
-#### 5. **🌊 Aquaculture IoT Manager 3D**
+#### 5. **🌊 [Aquaculture IoT Manager 3D](/games/aquaculture-iot-manager-3d)**
 - **Current State**: 2D aquaculture management interface
 - **3D Enhancement**: 3D underwater environment with fish behavior and monitoring systems
 - **Market Niche**: ✅ Sustainable aquaculture and marine technology
@@ -255,7 +255,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 
 #### **UNIQUE VIETNAMESE MARKET OPPORTUNITIES**
 
-#### 11. **🏛️ Vietnamese Heritage Explorer 3D**
+#### 11. **🏛️ [Vietnamese Heritage Explorer 3D](/games/vietnamese-heritage-explorer-3d)**
 - **Current State**: 2D cultural heritage interface
 - **3D Enhancement**: Immersive 3D historical sites and cultural landmarks
 - **Market Niche**: ✅ **UNIQUE** Vietnamese cultural education with international appeal
@@ -285,7 +285,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 
 - **Current State**: Text-based experiment instructions
 - **3D Enhancement**: Realistic lab equipment with physics simulation
-- **Market Niche**: ✅ Vietnamese STEM education gap
+- **Market Niche**: ✅ Vietnamese [STEM Education](/learning/stem) gap
 - **Competition Level**: 🟢 LOW - Most are expensive enterprise solutions
 - **Educational Value**: ⭐⭐⭐⭐⭐ - Safe, accessible lab experience
 - **Technical Feasibility**: ⭐⭐⭐ - Requires physics engine
@@ -313,7 +313,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Technical Feasibility**: ⭐⭐⭐⭐ - Earth visualization is established
 - **Development Priority**: 🔥 MEDIUM
 
-#### 6. **⚙️ Quantum Computing Visualization 3D**
+#### 6. **⚙️ [Quantum Computing](/learning/quantum-computing) Visualization 3D**
 
 - **Current State**: Text-based quantum concepts
 - **3D Enhancement**: 3D qubit states and quantum gates visualization
@@ -370,7 +370,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 
 **Priority Games** (1-2 games):
 
-1. **Arduino Circuit Builder 3D** (8 tuần)
+1. **[Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d)** (8 tuần)
    - **Why First**: Unique market position, high educational value, achievable scope
    - **MVP Features**: 3D breadboard, basic components (LED, resistors, Arduino)
    - **Success Metrics**: 1000+ users, 70%+ completion rate
@@ -396,10 +396,10 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Features**: Interactive 3D neural architectures, training visualization
 - **Target**: University students, AI professionals
 
-4. **Quantum Computing Visualization 3D** (6 tuần)
+4. **[Quantum Computing](/learning/quantum-computing) Visualization 3D** (6 tuần)
    - **Innovation Focus**: Revolutionary educational tool
    - **Features**: Qubit states, quantum gates, entanglement visualization
-   - **Target**: Advanced students, quantum computing enthusiasts
+   - **Target**: Advanced students, [Quantum Computing](/learning/quantum-computing) enthusiasts
 
 **Advanced Features**:
 
@@ -774,7 +774,7 @@ src/
 - [ ] **User Survey**: Survey 200+ Vietnamese students about 3D learning preferences
 - [ ] **Teacher Interviews**: Interview 20+ STEM teachers about classroom integration needs
 - [ ] **Competitor Analysis**: Deep analysis of international 3D education tools
-- [ ] **MVP Feature Definition**: Finalize Arduino Circuit Builder 3D feature scope
+- [ ] **MVP Feature Definition**: Finalize [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d) feature scope
 - [ ] **Pricing Strategy**: Research willingness-to-pay for 3D educational tools
 
 #### **Business Planning**:
@@ -787,7 +787,7 @@ src/
 
 ### **Success Criteria for Phase 1**:
 
-- [ ] **Technical MVP**: Arduino Circuit Builder 3D demo running at 60fps on mobile
+- [ ] **Technical MVP**: [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d) demo running at 60fps on mobile
 - [ ] **Market Validation**: 80%+ positive feedback from target users
 - [ ] **Performance Target**: <5s load time on 4G network
 - [ ] **Educational Effectiveness**: 40%+ better learning outcomes vs 2D version
@@ -831,7 +831,7 @@ src/
 
 #### **Q1 2025 Targets**:
 
-- **Development**: Arduino Circuit Builder 3D MVP completed
+- **Development**: [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d) MVP completed
 - **Users**: 1,000+ beta testers
 - **Performance**: 60fps on iPhone 12, Samsung Galaxy S21
 - **Engagement**: 70%+ task completion rate

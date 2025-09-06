@@ -83,8 +83,8 @@ export const robloxLessons: RobloxLessonType[] = [
       'Học những khái niệm cơ bản của ngôn ngữ lập trình Lua, ngôn ngữ chính được sử dụng trong Roblox, để làm cho các đối tượng trong game của bạn có thể tương tác.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=I_2G1UjSPms',
-    imageUrl: 'https://i.ytimg.com/vi/I_2G1UjSPms/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=srOXlSvpLI8',
+    imageUrl: 'https://i.ytimg.com/vi/srOXlSvpLI8/hqdefault.jpg',
     studioVersion: 'v613',
     luaVersion: '5.1',
     objectives: [
@@ -160,8 +160,8 @@ export const robloxLessons: RobloxLessonType[] = [
       'Tìm hiểu các bước cuối cùng để đưa game của bạn đến với cộng đồng Roblox, bao gồm cấu hình game, tạo icon, và các chiến lược quảng bá cơ bản.',
     duration: '90 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=TMDnovRbotk',
-    imageUrl: 'https://i.ytimg.com/vi/TMDnovRbotk/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=M3Jj6cwDChE',
+    imageUrl: 'https://i.ytimg.com/vi/M3Jj6cwDChE/hqdefault.jpg',
     studioVersion: 'v613',
     luaVersion: '5.1',
     objectives: [

@@ -83,7 +83,7 @@ export default function EducationalGamesMain() {
       const matchesSearch =
         game.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         game.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        game.skills.some((skill) => skill.toLowerCase().includes(searchTerm.toLowerCase()));
+        (game.skills && game.skills.some((skill) => skill.toLowerCase().includes(searchTerm.toLowerCase())));
 
       const matchesCategory = selectedCategory === 'all' || game.category.includes(selectedCategory);
       const matchesDifficulty = selectedDifficulty === 'all' || game.difficulty === selectedDifficulty;

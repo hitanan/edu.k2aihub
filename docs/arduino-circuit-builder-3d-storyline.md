@@ -1,5 +1,5 @@
 ---
-title: "Arduino Circuit Builder 3D - Cốt Truyện Game"
+title: "[Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d) - Cốt Truyện Game"
 description: "Trong một thành phố tương lai nơi mọi thứ vận hành bằng các mạch Arduino, một sự cố lớn đã xảy ra: hệ thống điều khiển trung tâm bị lỗi, khiến các khu vực tr..."
 date: "2025-08-27"
 author: "K2AiHub Development Team"
@@ -9,7 +9,7 @@ featured: true
 readingTime: "7 phút đọc"
 ---
 
-# Arduino Circuit Builder 3D - Cốt Truyện Game
+# [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d) - Cốt Truyện Game
 
 ## 🧠 Bối cảnh & Cốt truyện
 

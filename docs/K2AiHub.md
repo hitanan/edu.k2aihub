@@ -28,7 +28,7 @@ To democratize access to quality educational content through interactive, engagi
 - **Application Title**: Always use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" (never translate to English)
 - **Module Names**:
   - "Địa Lý Việt Nam" (Vietnam Geography)
-  - "AI Của Tôi" (My AI / Practical AI Guide)
+  - "[AI Của Tôi](/ai)" (My AI / Practical AI Guide)
 - **Content Language**: All descriptions, metadata, and user interface text in Vietnamese
 - **SEO Metadata**: Vietnamese titles, descriptions, and keywords for better local search
 - **Error Messages**: All error messages and system feedback in Vietnamese
@@ -101,7 +101,7 @@ An advanced interactive educational tool covering Vietnam's administrative restr
 - **Visual Feedback**: Real-time hover (yellow #FCD34D) and selection (yellow-brown #D97706) colors
 - **Mobile Optimization**: Touch-friendly interactions with proper event handling
 
-### 🤖 **Module 2: AI Của Tôi - Practical AI Guide**
+### 🤖 **Module 2: [AI Của Tôi](/ai) - Practical AI Guide**
 
 A comprehensive guide system for using AI tools effectively across 6 major life and work categories.
 
@@ -162,7 +162,7 @@ A comprehensive guide system for using AI tools effectively across 6 major life 
 - **Performance**: Code splitting, lazy loading, and React optimization
 - **Content Organization**: Structured tutorials with practical examples
 
-### 📱 **Module 3: Digital Marketing & Creator Economy**
+### 📱 **Module 3: [Digital Marketing & Creator Economy](/learning/digital-marketing)**
 
 A comprehensive digital marketing education platform covering modern marketing strategies and creator economy principles.
 
@@ -182,7 +182,7 @@ A comprehensive digital marketing education platform covering modern marketing s
   - Brand partnership and sponsorship guidance
   - Revenue diversification techniques
 
-### 💰 **Module 4: Financial Literacy & FinTech**
+### 💰 **Module 4: [Financial Literacy & FinTech](/learning/financial-literacy)**
 
 Advanced personal finance education with modern FinTech integration and investment strategies.
 
@@ -202,7 +202,7 @@ Advanced personal finance education with modern FinTech integration and investme
   - Robo-advisors and automated investing
   - Blockchain and DeFi applications
 
-### 🌱 **Module 5: Green Technology & Sustainability**
+### 🌱 **Module 5: [Green Technology & Sustainability](/learning/green-technology)**
 
 Environmental technology education focusing on renewable energy and sustainable solutions.
 
@@ -221,7 +221,7 @@ Environmental technology education focusing on renewable energy and sustainable 
   - Waste management and recycling technology
   - Sustainable urban planning
 
-### 🎮 **Module 6: Game Development & Interactive Media**
+### 🎮 **Module 6: [Game Development & Interactive Media](/learning/game-development)**
 
 Comprehensive game development education from concept to publishing.
 
@@ -241,7 +241,7 @@ Comprehensive game development education from concept to publishing.
   - User experience in interactive media
   - Virtual and augmented reality applications
 
-### 🎨 **Module 7: AI Art & Creative Technology**
+### 🎨 **Module 7: [AI Art & Creative Technology](/learning/ai-art-creative-tech)**
 
 Master AI-powered creative tools for professional content generation.
 
@@ -298,7 +298,7 @@ Cutting-edge biotechnology education covering genetic engineering and medical ap
   - Regenerative medicine and stem cell therapy
   - Bioethics and regulatory considerations
 
-### 🔬 **Module 10: STEM Education**
+### 🔬 **Module 10: [STEM Education](/learning/stem)**
 
 Science, Technology, Engineering, and Mathematics education with hands-on experiments.
 
@@ -394,17 +394,17 @@ src/
 │   │   ├── daily-life/        # Daily Life AI guides
 │   │   └── programming-dev/   # Programming AI guides
 │   ├── learning/              # Professional Learning Modules
-│   │   ├── digital-marketing/ # Digital Marketing & Creator Economy
-│   │   ├── financial-literacy/# Financial Literacy & FinTech
-│   │   ├── green-technology/  # Green Technology & Sustainability
-│   │   ├── game-development/  # Game Development & Interactive Media
-│   │   ├── ai-art/           # AI Art & Creative Technology
+│   │   ├── digital-marketing/ # [Digital Marketing & Creator Economy](/learning/digital-marketing)
+│   │   ├── financial-literacy/# [Financial Literacy & FinTech](/learning/financial-literacy)
+│   │   ├── green-technology/  # [Green Technology & Sustainability](/learning/green-technology)
+│   │   ├── game-development/  # [Game Development & Interactive Media](/learning/game-development)
+│   │   ├── ai-art/           # [AI Art & Creative Technology](/learning/ai-art-creative-tech)
 │   │   ├── cybersecurity/    # Cybersecurity & Ethical Hacking
 │   │   └── biotechnology/    # Biotechnology & Life Sciences
-│   ├── stem/                  # STEM Education Module
+│   ├── stem/                  # [STEM Education](/learning/stem) Module
 │   ├── scratch/               # Scratch Programming Module
 │   ├── python/                # Python Programming Module
-│   ├── arduino/               # Arduino & IoT Programming Module
+│   ├── arduino/               # [Arduino & IoT Programming](/learning/arduino) Module
 │   ├── robotics/              # Robotics Module
 │   ├── games/                 # Educational Games System
 │   │   ├── page.tsx          # Games overview and catalog
@@ -430,13 +430,13 @@ src/
 ├── data/                       # Static data management
 │   ├── cities.ts              # Complete city database
 │   ├── digital-marketing.ts   # Digital Marketing lessons and content
-│   ├── financial-literacy.ts  # Financial Literacy & FinTech lessons
-│   ├── green-technology.ts    # Green Technology & Sustainability lessons
+│   ├── financial-literacy.ts  # [Financial Literacy & FinTech](/learning/financial-literacy) lessons
+│   ├── green-technology.ts    # [Green Technology & Sustainability](/learning/green-technology) lessons
 │   ├── game-development.ts    # Game Development lessons and projects
-│   ├── ai-art-creative-tech.ts# AI Art & Creative Technology lessons
+│   ├── ai-art-creative-tech.ts# [AI Art & Creative Technology](/learning/ai-art-creative-tech) lessons
 │   ├── cybersecurity.ts       # Cybersecurity & Ethical Hacking lessons
 │   ├── biotechnology.ts       # Biotechnology & Life Sciences lessons
-│   ├── stem.ts                # STEM Education lessons
+│   ├── stem.ts                # [STEM Education](/learning/stem) lessons
 │   ├── scratch.ts             # Scratch Programming lessons
 │   ├── python.ts              # Python Programming curriculum
 │   ├── arduino.ts             # Arduino & IoT lessons
@@ -701,7 +701,7 @@ The project is optimized for GitHub Pages deployment with:
 - **Mobile-First**: Design and test mobile experience first
 - **Vietnamese Language**: All user-facing content MUST be in Vietnamese
   - Use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" as the official application title
-  - Module names: "Địa Lý Việt Nam" and "AI Của Tôi"
+  - Module names: "Địa Lý Việt Nam" and "[AI Của Tôi](/ai)"
   - All metadata, descriptions, and UI text in Vietnamese
   - Error messages and system feedback in Vietnamese
 
@@ -776,7 +776,7 @@ This document serves as the single source of truth for K2AiHub development. All 
 
 - ✅ **14 Comprehensive Modules**: Complete educational platform with all major technology domains
 - ✅ **Professional Learning Modules**: Digital Marketing, Financial Literacy, Green Technology, Game Development, AI Art, Cybersecurity, Biotechnology
-- ✅ **Programming & STEM Modules**: Python, Arduino, Robotics, Scratch, STEM Education
+- ✅ **Programming & STEM Modules**: Python, Arduino, Robotics, Scratch, [STEM Education](/learning/stem)
 - ✅ **Enhanced Homepage**: Updated with all 14 modules organized by category
 - ✅ **Complete Sitemap**: Auto-generated sitemap including all modules and lesson pages
 - ✅ **ESLint Compliance**: All code quality issues resolved

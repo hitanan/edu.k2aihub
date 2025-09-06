@@ -65,6 +65,7 @@ export interface BaseLessonData {
     expectedResults?: string;
     solution?: string;
     hints?: string[];
+    videoUrl?: string
   }>;
   realWorldApplications: string[];
   caseStudies?: Array<{
