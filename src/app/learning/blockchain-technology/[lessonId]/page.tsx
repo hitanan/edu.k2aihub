@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { BlockchainLessons, type BlockchainLessonData } from '@/data/blockchain-technology';
 import { PageProps } from '@/types';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { Shield, Link2, Database, Cpu } from 'lucide-react';
 
 // Convert BlockchainLessonData to BaseLessonData

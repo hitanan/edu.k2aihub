@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export interface RobloxLessonType extends BaseLessonData {
   studioVersion: string;
   luaVersion: string;

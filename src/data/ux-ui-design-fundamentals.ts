@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export interface UXUILessonType extends BaseLessonData {
   // Adding a dummy property to satisfy the linter
   module: 'UX/UI';

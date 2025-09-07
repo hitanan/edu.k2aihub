@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export interface RenewableEnergyLesson extends BaseLessonData {
   energyType?: string;
 }

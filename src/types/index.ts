@@ -91,3 +91,31 @@ export interface EducationalGame {
   gameUrl?: string;
   is3D?: boolean;
 }
+
+export interface ModuleNavigation {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  category: string[] | string; // Support both single and multiple categories
+  icon: string;
+  color: string;
+  lessons?: LessonNavigation[]; // Make lessons optional for dynamic loading
+  totalDuration: string;
+  difficulty: string;
+  level?: string;
+  duration?: string;
+  href?: string;
+  features?: string[];
+  tags?: string[];
+  prerequisites: string[];
+  coreModule?: boolean;
+}
+
+export interface LessonNavigation {
+  id: string;
+  title: string;
+  duration: string;
+  difficulty: string;
+  completed?: boolean;
+}

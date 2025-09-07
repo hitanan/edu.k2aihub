@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { ProgrammingRoboticsLessons, type ProgrammingRoboticsLessonData } from '@/data/programming-robotics';
 import { PageProps } from '@/types';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { Bot, Code, Cpu, Zap } from 'lucide-react';
 
 // Convert ProgrammingRoboticsLessonData to BaseLessonData

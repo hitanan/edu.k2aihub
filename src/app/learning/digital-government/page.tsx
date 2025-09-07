@@ -3,7 +3,7 @@ import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { digitalGovLessons } from '@/data/digital-government';
 import { K2Module } from '@/data/moduleNavigation';
 import { createModuleMetadata } from '@/utils/seo';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import type { DigitalGovLesson } from '@/data/digital-government';
 
 // Convert DigitalGovLesson to BaseLessonData
@@ -44,8 +44,16 @@ function convertDigitalGovToBase(lesson: DigitalGovLesson): BaseLessonData {
 export const metadata: Metadata = createModuleMetadata(
   'Digital Government & Civic Technology - K2AiHub',
   'Khóa học chính phủ điện tử và công nghệ công dân: smart city, e-governance, IoT monitoring và civic engagement platforms. Xây dựng dịch vụ công kỹ thuật số.',
-  ['chính phủ điện tử', 'smart city vietnam', 'e governance', 'civic technology', 'dịch vụ công trực tuyến', 'công nghệ công dân', 'K2AiHub'],
-  'digital-government'
+  [
+    'chính phủ điện tử',
+    'smart city vietnam',
+    'e governance',
+    'civic technology',
+    'dịch vụ công trực tuyến',
+    'công nghệ công dân',
+    'K2AiHub',
+  ],
+  'digital-government',
 );
 
 export default function DigitalGovernmentPage() {
@@ -67,8 +75,7 @@ export default function DigitalGovernmentPage() {
     icon: '🏛️',
     color: 'from-blue-600 to-indigo-600',
     gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1573164713619-24c711fe7878?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1573164713619-24c711fe7878?w=1200&h=600&fit=crop',
     objectives: [
       'Design comprehensive digital government services cho Vietnamese citizens',
       'Implement smart city IoT systems với real-time monitoring',
@@ -107,16 +114,10 @@ export default function DigitalGovernmentPage() {
       startups: '65+',
       startupsNote: 'GovTech Startups Vietnam',
     },
-    relatedModules: [
-      K2Module.Arduino,
-      K2Module.VietnameseBusiness,
-      K2Module.Cybersecurity,
-    ],
+    relatedModules: [K2Module.Arduino, K2Module.VietnameseBusiness, K2Module.Cybersecurity],
   };
 
   const convertedLessons = digitalGovLessons.map(convertDigitalGovToBase);
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

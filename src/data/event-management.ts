@@ -1,4 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
 
 export interface EventManagementLesson extends BaseLessonData {

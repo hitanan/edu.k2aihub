@@ -1,4 +1,4 @@
-import { BaseLessonData, CareerProfile, QuizQuestion, VietnamContext } from '@/types/lesson-base';
+import { BaseLessonData } from '@/types/lesson-base';
 import { createDescription, createLessonMetadata, createTitle } from '@/utils/seo';
 import {
   Book,
@@ -202,12 +202,13 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
                   Yêu cầu
                 </h2>
                 <ul className="space-y-3">
-                  {lesson.prerequisites.map((prereq, index) => (
-                    <li key={index} className="flex items-start">
-                      <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-300 text-sm sm:text-base">{prereq}</span>
-                    </li>
-                  ))}
+                  {lesson.prerequisites &&
+                    lesson.prerequisites.map((prereq, index) => (
+                      <li key={index} className="flex items-start">
+                        <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-300 text-sm sm:text-base">{prereq}</span>
+                      </li>
+                    ))}
                 </ul>
               </div>
             </div>
@@ -306,6 +307,16 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
                           >
                             {exercise.expectedResults}
                           </p>
+                        </div>
+                      )}
+
+                      {/* Video for exercise */}
+                      {exercise.videoUrl && (
+                        <div className="mt-4">
+                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Video hướng dẫn:</h4>
+                          <div className="relative rounded-xl overflow-hidden bg-black/20">
+                            <YoutubePlayer videoId={exercise.videoUrl.split('v=')[1]} />
+                          </div>
                         </div>
                       )}
 

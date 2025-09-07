@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { spaceLessons, type SpaceExplorationLesson } from '@/data/space-exploration';
 import { PageProps } from '@/types';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { Rocket, Satellite, Globe, Star } from 'lucide-react';
 
 // Convert SpaceExplorationLesson to BaseLessonData

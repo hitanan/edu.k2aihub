@@ -18,7 +18,8 @@ export const circularEconomyLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Phân tích sản phẩm',
-        description: 'Chọn một sản phẩm hàng ngày và phân tích vòng đời của nó trong mô hình kinh tế tuyến tính và tuần hoàn.',
+        description:
+          'Chọn một sản phẩm hàng ngày và phân tích vòng đời của nó trong mô hình kinh tế tuyến tính và tuần hoàn.',
         difficulty: 'Cơ bản',
         procedure: [
           'Chọn một sản phẩm (ví dụ: chai nhựa, áo thun).',

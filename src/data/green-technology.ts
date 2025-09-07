@@ -1,6 +1,6 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const greenTechnologyLessons: BaseLessonData[] = [
+export const greenTechLessons: BaseLessonData[] = [
   {
     id: 'renewable-energy-basics',
     title: 'Cơ Bản về Năng Lượng Tái Tạo',

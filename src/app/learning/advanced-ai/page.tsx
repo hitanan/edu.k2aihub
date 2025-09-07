@@ -4,7 +4,7 @@ import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
 // Convert AdvancedAILesson to BaseLessonData
 function convertToBaseLessonData(lesson: AdvancedAILesson): BaseLessonData {

@@ -1,18 +1,13 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import {
-  aerospaceEngineeringLessons,
-  type AerospaceEngineeringLesson,
-} from '@/data/aerospace-engineering';
+import { aerospaceEngineeringLessons, type AerospaceEngineeringLesson } from '@/data/aerospace-engineering';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
 // Convert AerospaceEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(
-  lesson: AerospaceEngineeringLesson,
-): BaseLessonData {
+function convertToBaseLessonData(lesson: AerospaceEngineeringLesson): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -40,8 +35,8 @@ function convertToBaseLessonData(
 export const metadata: Metadata = createModuleMetadata(
   'Aerospace Engineering - Kỹ Thuật Hàng Không',
   'Khóa học Aerospace Engineering chuyên sâu. Aircraft design, propulsion systems và space technology',
-  ["aerospace engineering","aircraft design","propulsion systems","space technology","aviation"],
-  'aerospace-engineering'
+  ['aerospace engineering', 'aircraft design', 'propulsion systems', 'space technology', 'aviation'],
+  'aerospace-engineering',
 );
 
 export default function AerospaceEngineeringPage() {
@@ -63,8 +58,7 @@ export default function AerospaceEngineeringPage() {
     ],
     icon: '🚀',
     color: 'from-blue-600 to-indigo-600',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=600&fit=crop&auto=format',
+    heroImageUrl: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=600&fit=crop&auto=format',
     objectives: [
       'Master aircraft design principles và aerodynamic analysis cho Vietnamese aviation market',
       'Understand satellite systems engineering và space technology applications',
@@ -102,20 +96,11 @@ export default function AerospaceEngineeringPage() {
       jobGrowth: '+55%',
       hireDemand: 'Trung bình - Cao',
     },
-    relatedModules: [
-      K2Module.AdvancedAI,
-      K2Module.RenewableEnergy,
-      K2Module.Arduino,
-      K2Module.Python,
-    ],
+    relatedModules: [K2Module.AdvancedAI, K2Module.RenewableEnergy, K2Module.Arduino, K2Module.Python],
   };
 
   // Convert lessons to BaseLessonData format
-  const convertedLessons = aerospaceEngineeringLessons.map(
-    convertToBaseLessonData,
-  );
+  const convertedLessons = aerospaceEngineeringLessons.map(convertToBaseLessonData);
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
 }

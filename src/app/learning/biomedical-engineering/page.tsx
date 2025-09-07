@@ -4,7 +4,7 @@ import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { biomedicalEngineeringLessons, type BiomedicalEngineeringLesson } from '@/data/biomedical-engineering';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
 // Convert BiomedicalEngineeringLesson to BaseLessonData
 function convertToBaseLessonData(lesson: BiomedicalEngineeringLesson): BaseLessonData {

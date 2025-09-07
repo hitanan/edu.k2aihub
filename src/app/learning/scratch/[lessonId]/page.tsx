@@ -6,8 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { scratchLessons } from '@/data/scratch';
 import { PageProps } from '@/types';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export async function generateStaticParams() {
   return generateLessonStaticParams(scratchLessons);
 }

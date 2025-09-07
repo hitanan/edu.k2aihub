@@ -4,18 +4,13 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import {
-  biomedicalEngineeringLessons,
-  type BiomedicalEngineeringLesson,
-} from '@/data/biomedical-engineering';
+import { biomedicalEngineeringLessons, type BiomedicalEngineeringLesson } from '@/data/biomedical-engineering';
 import { PageProps } from '@/types';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { Heart, Brain, Dna, Bot, Shield, Activity } from 'lucide-react';
 
 // Convert BiomedicalEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(
-  lesson: BiomedicalEngineeringLesson,
-): BaseLessonData {
+function convertToBaseLessonData(lesson: BiomedicalEngineeringLesson): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -41,9 +36,7 @@ function convertToBaseLessonData(
 }
 
 // Convert lessons to BaseLessonData format
-const convertedLessons = biomedicalEngineeringLessons.map(
-  convertToBaseLessonData,
-);
+const convertedLessons = biomedicalEngineeringLessons.map(convertToBaseLessonData);
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -73,9 +66,7 @@ function getBiomedicalIcon(field: string) {
 }
 
 // Page component with standardized config
-export default async function BiomedicalEngineeringLessonPage({
-  params,
-}: PageProps) {
+export default async function BiomedicalEngineeringLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'biomedical-engineering',
     moduleTitle: 'Biomedical Engineering',

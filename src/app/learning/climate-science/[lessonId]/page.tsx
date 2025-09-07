@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { ClimateLessons, type ClimateLessonData } from '@/data/climate-science';
 import { PageProps } from '@/types';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { Thermometer, CloudRain, Wind, Trees } from 'lucide-react';
 
 // Convert ClimateLessonData to BaseLessonData

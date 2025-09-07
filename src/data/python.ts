@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export type PythonLesson = BaseLessonData;
 
 export const pythonLessons: PythonLesson[] = [
@@ -176,7 +175,8 @@ print(f"Ngược lại: {reversed_text}")`,
     },
     quizzes: [
       {
-        question: 'Để lưu trữ số tiền 50,000 VND một cách an toàn và chính xác nhất trong Python, bạn nên dùng kiểu dữ liệu nào?',
+        question:
+          'Để lưu trữ số tiền 50,000 VND một cách an toàn và chính xác nhất trong Python, bạn nên dùng kiểu dữ liệu nào?',
         options: ['float', 'string', 'int', 'boolean'],
         correctAnswerIndex: 2,
         explanation:
@@ -275,8 +275,14 @@ else:
     },
     quizzes: [
       {
-        question: 'Một trang web tin tức muốn hiển thị 10 bài báo mới nhất từ một danh sách 100 bài báo. Cấu trúc lặp nào là phù hợp nhất?',
-        options: ['Một `while` loop chạy vô tận', 'Một `for` loop duyệt qua 10 phần tử đầu tiên của danh sách', 'Một `if-else` statement', 'Không cần vòng lặp'],
+        question:
+          'Một trang web tin tức muốn hiển thị 10 bài báo mới nhất từ một danh sách 100 bài báo. Cấu trúc lặp nào là phù hợp nhất?',
+        options: [
+          'Một `while` loop chạy vô tận',
+          'Một `for` loop duyệt qua 10 phần tử đầu tiên của danh sách',
+          'Một `if-else` statement',
+          'Không cần vòng lặp',
+        ],
         correctAnswerIndex: 1,
         explanation:
           '`for` loop là lựa chọn lý tưởng để duyệt qua một số lượng phần tử xác định trong một chuỗi hoặc danh sách, giúp code ngắn gọn và dễ hiểu.',
@@ -397,7 +403,12 @@ while True:
     quizzes: [
       {
         question: 'Lợi ích chính của việc sử dụng hàm (function) trong lập trình là gì?',
-        options: ['Làm cho chương trình chạy nhanh hơn', 'Tái sử dụng code, tránh lặp lại và giúp chương trình dễ quản lý hơn', 'Chỉ để in ra màn hình', 'Làm cho code khó hiểu hơn'],
+        options: [
+          'Làm cho chương trình chạy nhanh hơn',
+          'Tái sử dụng code, tránh lặp lại và giúp chương trình dễ quản lý hơn',
+          'Chỉ để in ra màn hình',
+          'Làm cho code khó hiểu hơn',
+        ],
         correctAnswerIndex: 1,
         explanation:
           'Hàm cho phép bạn đóng gói một đoạn code để có thể gọi lại nhiều lần, giúp code ngắn gọn, dễ đọc, dễ bảo trì và nâng cấp.',
@@ -652,10 +663,12 @@ def list_all_students():
     },
     quizzes: [
       {
-        question: 'Để lấy giá trị tương ứng với key "age" trong một dictionary có tên là `person`, bạn sẽ dùng cú pháp nào?',
+        question:
+          'Để lấy giá trị tương ứng với key "age" trong một dictionary có tên là `person`, bạn sẽ dùng cú pháp nào?',
         options: ['person(age)', 'person.age', 'person["age"]', 'person.get_age()'],
         correctAnswerIndex: 2,
-        explanation: 'Cú pháp `dictionary[key]` là cách cơ bản và trực tiếp nhất để truy cập giá trị của một key trong dictionary.',
+        explanation:
+          'Cú pháp `dictionary[key]` là cách cơ bản và trực tiếp nhất để truy cập giá trị của một key trong dictionary.',
       },
     ],
   },

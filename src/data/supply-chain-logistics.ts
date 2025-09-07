@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export interface SupplyChainLogisticsLessonType extends BaseLessonData {
   logisticsFramework?: 'SCOR' | 'APICS' | 'Lean Logistics';
 }

@@ -4,18 +4,13 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import {
-  aerospaceEngineeringLessons,
-  type AerospaceEngineeringLesson,
-} from '@/data/aerospace-engineering';
+import { aerospaceEngineeringLessons, type AerospaceEngineeringLesson } from '@/data/aerospace-engineering';
 import { PageProps } from '@/types';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { Plane, Satellite, Rocket, Cog, Navigation, Radar } from 'lucide-react';
 
 // Convert AerospaceEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(
-  lesson: AerospaceEngineeringLesson,
-): BaseLessonData {
+function convertToBaseLessonData(lesson: AerospaceEngineeringLesson): BaseLessonData {
   return {
     id: lesson.id,
     title: lesson.title,
@@ -41,9 +36,7 @@ function convertToBaseLessonData(
 }
 
 // Convert lessons to BaseLessonData format
-const convertedLessons = aerospaceEngineeringLessons.map(
-  convertToBaseLessonData,
-);
+const convertedLessons = aerospaceEngineeringLessons.map(convertToBaseLessonData);
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -71,9 +64,7 @@ function getAerospaceIcon(field: string) {
 }
 
 // Page component with standardized config
-export default async function AerospaceEngineeringLessonPage({
-  params,
-}: PageProps) {
+export default async function AerospaceEngineeringLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'aerospace-engineering',
     moduleTitle: 'Aerospace Engineering',

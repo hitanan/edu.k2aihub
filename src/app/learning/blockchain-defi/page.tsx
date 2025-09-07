@@ -3,8 +3,7 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { blockchainLessons, BlockchainLesson } from '@/data/blockchain-defi';
 import { K2Module } from '@/data/moduleNavigation';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 // Generate metadata
 export async function generateMetadata(): Promise<Metadata> {
   return {

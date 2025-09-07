@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export const sustainableAgricultureLessons: BaseLessonData[] = [
   {
     id: 'intro-sustainable-agritech',
@@ -51,14 +50,16 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
       title: 'Nhà sáng lập & Giám đốc',
       company: 'Công ty TNHH Thực phẩm Hữu cơ Orfarm',
       imageUrl: 'https://i.pravatar.cc/150?u=nguyen-minh-nguyet',
-      quote: 'Nông nghiệp bền vững bắt đầu từ việc tôn trọng đất mẹ. Khi chúng ta chăm sóc cho đất, đất sẽ trả lại cho chúng ta những sản phẩm an toàn và bổ dưỡng.',
+      quote:
+        'Nông nghiệp bền vững bắt đầu từ việc tôn trọng đất mẹ. Khi chúng ta chăm sóc cho đất, đất sẽ trả lại cho chúng ta những sản phẩm an toàn và bổ dưỡng.',
     },
     quizzes: [
       {
         question: 'Đâu KHÔNG phải là một trong ba trụ cột chính của nông nghiệp bền vững?',
         options: ['Hiệu quả kinh tế', 'Công bằng xã hội', 'Bảo vệ môi trường', 'Năng suất tối đa bằng mọi giá'],
         correctAnswerIndex: 3,
-        explanation: 'Nông nghiệp bền vững tìm cách cân bằng giữa lợi ích kinh tế, trách nhiệm xã hội và bảo vệ môi trường, chứ không chỉ tập trung vào việc tối đa hóa năng suất mà bỏ qua các yếu tố khác.',
+        explanation:
+          'Nông nghiệp bền vững tìm cách cân bằng giữa lợi ích kinh tế, trách nhiệm xã hội và bảo vệ môi trường, chứ không chỉ tập trung vào việc tối đa hóa năng suất mà bỏ qua các yếu tố khác.',
       },
     ],
   },
@@ -110,14 +111,21 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
       title: 'Kỹ sư hệ thống nhúng',
       company: 'Rynan Technologies Vietnam',
       imageUrl: 'https://i.pravatar.cc/150?u=pham-anh-khoa',
-      quote: 'IoT cho phép chúng ta "lắng nghe" cây trồng nói. Bằng cách cung cấp đúng thứ chúng cần, vào đúng thời điểm, chúng ta có thể canh tác hiệu quả hơn với ít tài nguyên hơn.',
+      quote:
+        'IoT cho phép chúng ta "lắng nghe" cây trồng nói. Bằng cách cung cấp đúng thứ chúng cần, vào đúng thời điểm, chúng ta có thể canh tác hiệu quả hơn với ít tài nguyên hơn.',
     },
     quizzes: [
       {
         question: 'IoT là viết tắt của cụm từ nào?',
-        options: ['Internal Online Tools', 'Internet of Things', 'Integrated Office Technology', 'International Open Telecom'],
+        options: [
+          'Internal Online Tools',
+          'Internet of Things',
+          'Integrated Office Technology',
+          'International Open Telecom',
+        ],
         correctAnswerIndex: 1,
-        explanation: 'IoT (Internet of Things) hay "Mạng lưới vạn vật kết nối" là một mạng lưới các thiết bị vật lý được tích hợp cảm biến, phần mềm và các công nghệ khác để kết nối và trao đổi dữ liệu với nhau qua Internet.',
+        explanation:
+          'IoT (Internet of Things) hay "Mạng lưới vạn vật kết nối" là một mạng lưới các thiết bị vật lý được tích hợp cảm biến, phần mềm và các công nghệ khác để kết nối và trao đổi dữ liệu với nhau qua Internet.',
       },
     ],
   },
@@ -171,14 +179,16 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
       title: 'Phi công Drone & Nhà sáng lập',
       company: 'AgriFly Vietnam',
       imageUrl: 'https://i.pravatar.cc/150?u=tran-van-manh',
-      quote: 'Chiếc drone không chỉ là một công cụ, nó là con mắt của người nông dân trên không. Chúng tôi giúp họ nhìn thấy những gì mắt thường không thể, từ đó đưa ra những quyết định tốt hơn cho cánh đồng của mình.',
+      quote:
+        'Chiếc drone không chỉ là một công cụ, nó là con mắt của người nông dân trên không. Chúng tôi giúp họ nhìn thấy những gì mắt thường không thể, từ đó đưa ra những quyết định tốt hơn cho cánh đồng của mình.',
     },
     quizzes: [
       {
         question: 'Chỉ số NDVI (Normalized Difference Vegetation Index) thường được dùng để đo lường điều gì?',
         options: ['Độ ẩm của đất', 'Nhiệt độ của lá cây', 'Sức khỏe và mật độ của thảm thực vật', 'Tốc độ gió'],
         correctAnswerIndex: 2,
-        explanation: 'NDVI là một chỉ số quan trọng được tính toán từ hình ảnh vệ tinh hoặc drone, dựa trên cách thực vật phản xạ ánh sáng cận hồng ngoại và ánh sáng đỏ. Chỉ số NDVI cao thường cho thấy cây trồng khỏe mạnh và phát triển tốt.',
+        explanation:
+          'NDVI là một chỉ số quan trọng được tính toán từ hình ảnh vệ tinh hoặc drone, dựa trên cách thực vật phản xạ ánh sáng cận hồng ngoại và ánh sáng đỏ. Chỉ số NDVI cao thường cho thấy cây trồng khỏe mạnh và phát triển tốt.',
       },
     ],
   },
@@ -231,14 +241,16 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
       title: 'Chuyên gia Kinh tế Môi trường',
       company: 'Viện Nghiên cứu Phát triển Bền vững',
       imageUrl: 'https://i.pravatar.cc/150?u=le-van-binh',
-      quote: 'Kinh tế tuần hoàn trong nông nghiệp là chìa khóa để phát triển bền vững. Nó không chỉ bảo vệ môi trường mà còn mang lại lợi ích kinh tế lâu dài cho nông dân.',
+      quote:
+        'Kinh tế tuần hoàn trong nông nghiệp là chìa khóa để phát triển bền vững. Nó không chỉ bảo vệ môi trường mà còn mang lại lợi ích kinh tế lâu dài cho nông dân.',
     },
     quizzes: [
       {
         question: 'Mô hình VAC trong nông nghiệp bao gồm những thành phần nào?',
         options: ['Vườn, Ao, Chuồng', 'Vườn, Ruộng, Rừng', 'Ao, Hồ, Suối', 'Chuồng, Trại, Khu nuôi thủy sản'],
         correctAnswerIndex: 0,
-        explanation: 'Mô hình VAC là một hệ thống nông nghiệp bền vững truyền thống của Việt Nam, bao gồm Vườn (trồng cây), Ao (nuôi cá), và Chuồng (nuôi gia súc, gia cầm). Hệ thống này giúp tuần hoàn chất dinh dưỡng và năng lượng trong nông nghiệp.',
+        explanation:
+          'Mô hình VAC là một hệ thống nông nghiệp bền vững truyền thống của Việt Nam, bao gồm Vườn (trồng cây), Ao (nuôi cá), và Chuồng (nuôi gia súc, gia cầm). Hệ thống này giúp tuần hoàn chất dinh dưỡng và năng lượng trong nông nghiệp.',
       },
     ],
   },

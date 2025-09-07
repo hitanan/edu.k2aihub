@@ -1,50 +1,63 @@
-import { K2Module } from '@/data/moduleNavigation';
-import { ModuleData } from '@/types';
+import { ModuleNavigation } from '@/types';
 
-export const smartManufacturingModuleData: ModuleData = {
+export const smartManufacturingModuleData: ModuleNavigation = {
   id: 'smart-manufacturing',
-  title: 'Sản Xuất Thông Minh & Công Nghiệp 4.0',
-  subtitle: 'Chuyển đổi số trong sản xuất - Cơ hội từ China+1 strategy',
+  title: 'Smart Manufacturing & Industry 4.0',
+  subtitle: 'Sản xuất thông minh và Công nghiệp 4.0',
   description:
-    'Nắm vững công nghệ Công nghiệp 4.0 để tận dụng làn sóng chuyển dịch sản xuất từ Trung Quốc sang Việt Nam. Thị trường 15-25 tỷ USD đang chờ đón những chuyên gia am hiểu công nghệ.',
-  level: 'Trung bình',
-  duration: '10-15 giờ',
-  category: 'Industry 4.0',
-  features: [
-    'Factory Automation Systems',
-    'Predictive Maintenance AI',
-    'Supply Chain Optimization',
-    'Quality Control với Computer Vision',
-  ],
+    'Tìm hiểu về nhà máy thông minh, IoT trong sản xuất, robot tự động và phân tích dữ liệu để tối ưu hóa chuỗi cung ứng.',
+  category: 'technology',
   icon: '🏭',
-  color: 'from-orange-600 to-red-600',
-  objectives: [
-    'Hiểu rõ về cuộc cách mạng Công nghiệp 4.0 và cơ hội Việt Nam',
-    'Thiết kế và triển khai hệ thống tự động hóa nhà máy',
-    'Phát triển AI cho bảo trì dự đoán và kiểm soát chất lượng',
-    'Tối ưu hóa chuỗi cung ứng với blockchain và IoT',
-    'Xây dựng nhà máy thông minh hoàn chỉnh',
+  color: 'from-slate-500 to-gray-600',
+  totalDuration: '22-28 giờ',
+  difficulty: 'Nâng cao',
+  level: 'Nâng cao',
+  duration: '22-28 giờ',
+  href: '/learning/smart-manufacturing',
+  features: [
+    'Industrial IoT (IIoT)',
+    'Robotics & Automation',
+    'Digital Twin',
+    'Supply Chain Analytics',
+    'Additive Manufacturing',
   ],
-  prerequisites: ['Kiến thức điện tử cơ bản', 'Lập trình cơ bản', 'Hiểu biết về quy trình sản xuất'],
-  careerOutcomes: [
-    'Industry 4.0 Consultant ($2,200-4,500/tháng)',
-    'Factory Automation Engineer ($1,800-3,500/tháng)',
-    'Smart Manufacturing Specialist ($2,000-4,000/tháng)',
-    'Predictive Maintenance Engineer ($1,900-3,700/tháng)',
-    'Digital Transformation Manager ($2,800-5,500/tháng)',
+  tags: ['industry 4.0', 'smart factory', 'iot', 'robotics', 'supply chain'],
+  prerequisites: [
+    'Kiến thức về quy trình sản xuất',
+    'Hiểu biết về kỹ thuật công nghiệp',
+    'Kỹ năng phân tích dữ liệu',
+    'Làm quen với các khái niệm tự động hóa',
   ],
-  industryApplications: [
-    'Dệt may và da giày (xuất khẩu 40+ tỷ USD)',
-    'Điện tử và linh kiện',
-    'Thực phẩm và đồ uống',
-    'Ô tô và phụ tùng',
-    'Hóa chất và vật liệu',
+  lessons: [
+    {
+      id: 'industrial-iot-connectivity',
+      title: 'Industrial IoT và Kết nối Nhà máy',
+      duration: '260 phút',
+      difficulty: 'Trung bình',
+    },
+    {
+      id: 'robotics-automation-in-manufacturing',
+      title: 'Robot và Tự động hóa trong Sản xuất',
+      duration: '280 phút',
+      difficulty: 'Nâng cao',
+    },
+    {
+      id: 'digital-twin-simulation',
+      title: 'Digital Twin và Mô phỏng Sản xuất',
+      duration: '240 phút',
+      difficulty: 'Nâng cao',
+    },
+    {
+      id: 'supply-chain-analytics-optimization',
+      title: 'Phân tích và Tối ưu hóa Chuỗi cung ứng',
+      duration: '220 phút',
+      difficulty: 'Nâng cao',
+    },
+    {
+      id: 'additive-manufacturing-3d-printing',
+      title: 'Sản xuất Bồi đắp (In 3D công nghiệp)',
+      duration: '200 phút',
+      difficulty: 'Trung bình',
+    },
   ],
-  marketDemand: {
-    averageSalary: '22-50 triệu VNĐ',
-    jobGrowth: '+35%',
-    hireDemand: 'Rất cao',
-  },
-  relatedModules: [K2Module.Arduino, K2Module.Robotics, K2Module.Python, K2Module.AIApplications],
-  heroImageUrl: '/images/smart-manufacturing-hero.jpg',
 };

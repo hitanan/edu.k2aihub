@@ -1,6 +1,6 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const digitalGovernment: BaseLessonData[] = [
+export const digitalGovLessons: BaseLessonData[] = [
   {
     id: 'vietnam-digital-government',
     title: 'Bài 1: Chính phủ Điện tử Việt Nam và Smart City Development',
@@ -47,11 +47,11 @@ export const digitalGovernment: BaseLessonData[] = [
     caseStudies: [
       {
         title: 'Ho Chi Minh City Smart Traffic System',
-        government: 'HCMC Department of Transportation',
-        challenge: 'Reduce traffic congestion trong megacity với 9M dân',
+        organization: 'HCMC Department of Transportation',
+        problem: 'Reduce traffic congestion trong megacity với 9M dân',
         solution: 'AI-powered traffic management với IoT sensors',
-        results: '15% reduction in travel time, 20% fewer accidents',
-        insights: [
+        impact: '15% reduction in travel time, 20% fewer accidents',
+        innovations: [
           'Real-time data integration is crucial',
           'Public-private partnerships accelerate deployment',
           'Citizen engagement improves system effectiveness',
@@ -119,11 +119,11 @@ export const digitalGovernment: BaseLessonData[] = [
     caseStudies: [
       {
         title: 'Da Nang Smart City Initiative',
-        government: 'Da Nang City Government',
-        challenge: 'Transform into ASEAN smart city leader',
+        organization: 'Da Nang City Government',
+        problem: 'Transform into ASEAN smart city leader',
         solution: 'Comprehensive IoT deployment với citizen app integration',
-        results: '40% improvement in service delivery, 25% energy savings',
-        insights: [
+        impact: '40% improvement in service delivery, 25% energy savings',
+        innovations: [
           'Citizen engagement drives adoption',
           'Interoperability standards are essential',
           'Public-private partnerships enable scaling',
@@ -185,11 +185,11 @@ export const digitalGovernment: BaseLessonData[] = [
     caseStudies: [
       {
         title: 'Hanoi Public Participation Platform',
-        government: "Hanoi People's Committee",
-        challenge: 'Increase citizen engagement trong urban planning decisions',
+        organization: "Hanoi People's Committee",
+        problem: 'Increase citizen engagement trong urban planning decisions',
         solution: 'Multi-channel platform với online/offline integration',
-        results: '300% increase in citizen feedback, improved policy acceptance',
-        insights: [
+        impact: '300% increase in citizen feedback, improved policy acceptance',
+        innovations: [
           'Multi-generational design improves participation',
           'Local language support is critical',
           'Government responsiveness builds trust',

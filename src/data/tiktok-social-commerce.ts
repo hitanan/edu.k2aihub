@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export interface TikTokSocialCommerceLessonType extends BaseLessonData {
   // This can be expanded with specific properties for this module
   // Adding a dummy property to satisfy the linter

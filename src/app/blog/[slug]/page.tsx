@@ -5,18 +5,17 @@ import { siteConfig } from '@/config/site';
 import { BlogPost } from '@/components/blog/BlogPost';
 import { siteCode } from '@/config/site-code';
 
-interface BlogPostPageProps {
+// Define a specific props type for this page
+type BlogPostPageProps = {
   params: {
     slug: string;
-    lessonId?: string;
-    gameId?: string;
-    category?: string;
   };
   searchParams?: { [key: string]: string | string[] | undefined };
-}
+};
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getBlogPostBySlug(params.slug);
+  const slug = params.slug;
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     return {
@@ -67,7 +66,8 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getBlogPostBySlug(params.slug);
+  const slug = params.slug;
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();

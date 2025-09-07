@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai';
 import { PageProps } from '@/types';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { Brain, Eye, MessageSquare, Target, Shield } from 'lucide-react';
 
 // Convert AdvancedAILesson to BaseLessonData

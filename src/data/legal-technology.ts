@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export interface LegalTechLesson extends BaseLessonData {
   legalArea: 'document-automation' | 'legal-research' | 'case-management' | 'regulatory-compliance' | 'ip-management';
   legalTechTools: string[];

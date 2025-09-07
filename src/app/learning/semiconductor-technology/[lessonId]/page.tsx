@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { semiconductorLessons } from '@/data/semiconductor-technology';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { PageProps } from '@/types';
 
 // Generate static params for all lessons

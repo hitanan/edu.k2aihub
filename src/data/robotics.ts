@@ -1,8 +1,7 @@
 // Robotics Education Module Data
 // Comprehensive robotics learning content for K2AiHub education platform
 
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from "@/types/lesson-base";
 export interface RoboticsLessonType extends BaseLessonData {
   category: 'hardware' | 'programming' | 'projects' | 'theory';
   codeExample?: string;

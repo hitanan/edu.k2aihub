@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 // Scratch Programming Module Data
 // Comprehensive Scratch programming content for K2AiHub education platform
 
@@ -31,7 +30,8 @@ export const scratchLessons: BaseLessonData[] = [
           'Sử dụng khối "di chuyển" trong nhóm "Chuyển động" để mèo đi tới.',
           'Dùng khối "đợi" trong nhóm "Điều khiển" để tạo khoảng dừng.',
         ],
-        expectedResults: 'Khi người dùng bấm vào lá cờ xanh, nhân vật mèo sẽ nói "Xin chào!" rồi di chuyển một đoạn ngắn.',
+        expectedResults:
+          'Khi người dùng bấm vào lá cờ xanh, nhân vật mèo sẽ nói "Xin chào!" rồi di chuyển một đoạn ngắn.',
       },
     ],
     realWorldApplications: [
@@ -53,14 +53,16 @@ export const scratchLessons: BaseLessonData[] = [
       title: 'Giáo viên Tin học & Huấn luyện viên đội tuyển Tin học trẻ',
       company: 'Trường Tiểu học Đoàn Thị Điểm',
       imageUrl: '/placeholder-attraction.svg',
-      quote: 'Scratch không chỉ dạy lập trình, nó dạy trẻ em cách tư duy sáng tạo, giải quyết vấn đề và biến ý tưởng thành hiện thực. Đó là kỹ năng cho tương lai.',
+      quote:
+        'Scratch không chỉ dạy lập trình, nó dạy trẻ em cách tư duy sáng tạo, giải quyết vấn đề và biến ý tưởng thành hiện thực. Đó là kỹ năng cho tương lai.',
     },
     quizzes: [
       {
         question: 'Khối lệnh nào trong Scratch dùng để bắt đầu một kịch bản khi người dùng nhấn vào lá cờ màu xanh?',
         options: ['Khi nhận tin nhắn', 'Khi bấm vào nhân vật này', 'Khi bấm vào lá cờ xanh', 'Khi phím cách được bấm'],
         correctAnswerIndex: 2,
-        explanation: 'Khối "Khi bấm vào lá cờ xanh" (when green flag clicked) là khối sự kiện phổ biến nhất, dùng để khởi chạy hầu hết các dự án trong Scratch.',
+        explanation:
+          'Khối "Khi bấm vào lá cờ xanh" (when green flag clicked) là khối sự kiện phổ biến nhất, dùng để khởi chạy hầu hết các dự án trong Scratch.',
       },
     ],
   },
@@ -113,14 +115,16 @@ export const scratchLessons: BaseLessonData[] = [
       title: 'Nhà thiết kế đồ họa & Motion Graphic',
       company: 'Freelancer',
       imageUrl: '/placeholder-attraction.svg',
-      quote: 'Nguyên tắc kể chuyện bằng hình ảnh trong Scratch cũng tương tự như trong ngành thiết kế chuyển động chuyên nghiệp. Bắt đầu sớm với Scratch là một lợi thế lớn.',
+      quote:
+        'Nguyên tắc kể chuyện bằng hình ảnh trong Scratch cũng tương tự như trong ngành thiết kế chuyển động chuyên nghiệp. Bắt đầu sớm với Scratch là một lợi thế lớn.',
     },
     quizzes: [
       {
         question: 'Để một nhân vật gửi tín hiệu cho một nhân vật khác hành động, bạn nên dùng cặp khối lệnh nào?',
         options: ['nói và đợi', 'phát tin và khi nhận tin', 'đợi và lặp lại', 'chuyển trang phục và chuyển phông nền'],
         correctAnswerIndex: 1,
-        explanation: 'Cặp khối "phát tin" (broadcast) và "khi nhận tin" (when I receive) là cơ chế chính trong Scratch để các nhân vật và đối tượng khác nhau có thể giao tiếp và kích hoạt hành động của nhau.',
+        explanation:
+          'Cặp khối "phát tin" (broadcast) và "khi nhận tin" (when I receive) là cơ chế chính trong Scratch để các nhân vật và đối tượng khác nhau có thể giao tiếp và kích hoạt hành động của nhau.',
       },
     ],
   },
@@ -144,7 +148,8 @@ export const scratchLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Game "Hứng Táo"',
-        description: 'Tạo một game đơn giản trong đó người chơi di chuyển một cái bát để hứng những quả táo rơi từ trên xuống.',
+        description:
+          'Tạo một game đơn giản trong đó người chơi di chuyển một cái bát để hứng những quả táo rơi từ trên xuống.',
         difficulty: 'Trung bình',
         procedure: [
           'Tạo nhân vật "Bát" có thể di chuyển sang trái/phải theo chuột.',
@@ -173,14 +178,16 @@ export const scratchLessons: BaseLessonData[] = [
       title: 'Nhà phát triển game & Tác giả Flappy Bird',
       company: '.GEARS',
       imageUrl: '/placeholder-attraction.svg',
-      quote: 'Một trò chơi không cần phức tạp để trở nên hấp dẫn. Sự đơn giản và một cơ chế chơi gây nghiện là chìa khóa. Scratch là nơi tuyệt vời để thử nghiệm những ý tưởng đó.',
+      quote:
+        'Một trò chơi không cần phức tạp để trở nên hấp dẫn. Sự đơn giản và một cơ chế chơi gây nghiện là chìa khóa. Scratch là nơi tuyệt vời để thử nghiệm những ý tưởng đó.',
     },
     quizzes: [
       {
         question: 'Để lưu trữ điểm số của người chơi trong game, bạn nên sử dụng công cụ nào trong Scratch?',
         options: ['Danh sách (List)', 'Biến số (Variable)', 'Khối tùy chỉnh (My Blocks)', 'Tin nhắn (Broadcast)'],
         correctAnswerIndex: 1,
-        explanation: 'Biến số (Variable) được dùng để lưu trữ các giá trị có thể thay đổi trong quá trình chạy chương trình, ví dụ như điểm số, mạng sống, hay thời gian.',
+        explanation:
+          'Biến số (Variable) được dùng để lưu trữ các giá trị có thể thay đổi trong quá trình chạy chương trình, ví dụ như điểm số, mạng sống, hay thời gian.',
       },
     ],
   },

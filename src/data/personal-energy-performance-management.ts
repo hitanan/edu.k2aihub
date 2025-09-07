@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 export interface EnergyManagementLessonType extends BaseLessonData {
   // No extra properties, but defining for consistency

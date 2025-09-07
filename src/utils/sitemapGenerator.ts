@@ -19,8 +19,8 @@ import { getBlogSlugs, getAllCategoriesSync } from '@/lib/blog';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 
 // Import NEW MODULES (Recently Created)
-import { aiMachineLearningLessons, AIMachineLearningLessonType } from '@/data/ai-machine-learning';
-import { environmentalClimateLessons, EnvironmentalClimateLessonType } from '@/data/environmental-science-climate';
+import { aiMachineLearningLessons } from '@/data/ai-machine-learning';
+import { environmentalClimateLessons } from '@/data/environmental-science-climate';
 import { quantumComputingLessons } from '@/data/quantum-computing';
 import { BlockchainLessons } from '@/data/blockchain-technology';
 import { ClimateLessons } from '@/data/climate-science';
@@ -59,6 +59,7 @@ import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
 import { crossPlatformStrategyLessons } from '@/data/cross-platform-strategy';
 import { dataDrivenAnalyticsLessons } from '@/data/data-driven-analytics';
 import { dataScienceLessons } from '@/data/data-science-analytics';
+import { BaseLessonData } from '@/types/lesson-base';
 
 // Utility to automatically generate sitemap entries for all pages
 const baseUrl = 'https://k2aihub.com';
@@ -462,7 +463,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
   }));
 
   // Recently created lesson pages
-  const aiMachineLearningPages = aiMachineLearningLessons.map((lesson: AIMachineLearningLessonType) => ({
+  const aiMachineLearningPages = aiMachineLearningLessons.map((lesson: BaseLessonData) => ({
     url: `${baseUrl}/learning/ai-machine-learning/${lesson.id}`,
     lastModified,
     changeFrequency: 'monthly' as const,
@@ -591,7 +592,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
   }));
 
   const environmentalScienceClimatePages = environmentalClimateLessons.map(
-    (lesson: EnvironmentalClimateLessonType) => ({
+    (lesson: BaseLessonData) => ({
       url: `${baseUrl}/learning/environmental-science-climate/${lesson.id}`,
       lastModified,
       changeFrequency: 'monthly' as const,

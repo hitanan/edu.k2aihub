@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import ModulePageTemplate, { ModuleData } from '@/components/learning/ModulePageTemplate';
 import { aiArtLessons, AiArtLesson } from '@/data/ai-art-creative-tech';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/moduleNavigation';
 

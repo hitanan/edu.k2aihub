@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export const semiconductorLessons: BaseLessonData[] = [
   {
     id: 'semiconductor-fundamentals',
@@ -143,7 +142,12 @@ export const semiconductorLessons: BaseLessonData[] = [
     quizzes: [
       {
         question: 'Một công ty chuyên thiết kế chip nhưng không sở hữu nhà máy sản xuất được gọi là gì?',
-        options: ['Foundry', 'IDM (Integrated Device Manufacturer)', 'Fabless', 'OSAT (Outsourced Semiconductor Assembly and Test)'],
+        options: [
+          'Foundry',
+          'IDM (Integrated Device Manufacturer)',
+          'Fabless',
+          'OSAT (Outsourced Semiconductor Assembly and Test)',
+        ],
         correctAnswerIndex: 2,
         explanation:
           'Fabless (viết tắt của fabrication-less) là thuật ngữ chỉ các công ty tập trung vào thiết kế và bán sản phẩm bán dẫn, trong khi việc chế tạo được thuê ngoài cho các công ty khác (foundry).',

@@ -20,6 +20,7 @@ export const NEW_STORY_GAMES_DATA: EducationalGame[] = [
       },
     ],
     isNew: true,
+    isInternal: true,
   },
   {
     id: 'ethical-ai-simulator',
@@ -40,5 +41,6 @@ export const NEW_STORY_GAMES_DATA: EducationalGame[] = [
       },
     ],
     isNew: true,
+    isInternal: true,
   },
 ];

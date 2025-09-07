@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { greenTechnologyModuleData } from '@/data/green-technology-module';
-import { greenTechnologyLessons } from '@/data/green-technology';
+import { greenTechLessons } from '@/data/green-technology';
 
 export const metadata: Metadata = createModuleMetadata(
   greenTechnologyModuleData.title,
@@ -12,5 +12,5 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function GreenTechnologyPage() {
-  return <ModulePageTemplate moduleData={greenTechnologyModuleData} lessons={greenTechnologyLessons} />;
+  return <ModulePageTemplate moduleData={greenTechnologyModuleData} lessons={greenTechLessons} />;
 }

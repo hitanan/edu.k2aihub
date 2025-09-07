@@ -9,14 +9,9 @@ export const metadata: Metadata = createModuleMetadata(
   circularEconomyModuleData.title,
   circularEconomyModuleData.description,
   ['kinh tế tuần hoàn', 'bền vững', 'thiết kế tuần hoàn', 'không rác thải', 'K2AI'],
-  circularEconomyModuleData.id
+  circularEconomyModuleData.id,
 );
 
 export default function CircularEconomyPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={circularEconomyModuleData}
-      lessons={circularEconomyLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={circularEconomyModuleData} lessons={circularEconomyLessons} />;
 }

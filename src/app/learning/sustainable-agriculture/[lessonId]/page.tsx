@@ -6,8 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { sustainableAgricultureLessons } from '@/data/sustainable-agriculture';
 import { PageProps } from '@/types';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 // Generate static params for all lessons
 export async function generateStaticParams() {
   return generateLessonStaticParams(sustainableAgricultureLessons);

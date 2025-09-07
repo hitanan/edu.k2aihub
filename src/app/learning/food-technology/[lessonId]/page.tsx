@@ -4,20 +4,10 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import {
-  foodTechnologyLessons,
-  type FoodTechnologyLesson,
-} from '@/data/food-technology';
+import { foodTechnologyLessons, type FoodTechnologyLesson } from '@/data/food-technology';
 import { PageProps } from '@/types';
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import {
-  Shield,
-  FlaskConical,
-  ChefHat,
-  Leaf,
-  Utensils,
-  Beaker,
-} from 'lucide-react';
+import { BaseLessonData } from '@/types/lesson-base';
+import { Shield, FlaskConical, ChefHat, Leaf, Utensils, Beaker } from 'lucide-react';
 
 // Convert FoodTechnologyLesson to BaseLessonData
 function convertToBaseLessonData(lesson: FoodTechnologyLesson): BaseLessonData {

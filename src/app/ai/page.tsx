@@ -117,7 +117,7 @@ const aiCategories = [
   {
     title: 'Office & Work',
     description: 'AI cho văn phòng và công việc',
-    href: '/learning/ai/office-work',
+    href: '/ai/office-work',
     icon: '💼',
     color: 'from-blue-600 to-indigo-600',
     topics: ['Email tự động', 'Excel thông minh', 'Thuyết trình AI', 'Quản lý thời gian'],
@@ -125,7 +125,7 @@ const aiCategories = [
   {
     title: 'Creative & Design',
     description: 'AI cho sáng tạo và thiết kế',
-    href: '/learning/ai/creative-design',
+    href: '/ai/creative-design',
     icon: '🎨',
     color: 'from-purple-600 to-pink-600',
     topics: ['Tạo ảnh AI', 'Design tự động', 'Content sáng tạo', 'Video AI'],
@@ -133,7 +133,7 @@ const aiCategories = [
   {
     title: 'Education & Learning',
     description: 'AI hỗ trợ học tập',
-    href: '/learning/ai/education-learning',
+    href: '/ai/education-learning',
     icon: '📚',
     color: 'from-green-600 to-teal-600',
     topics: ['AI Tutor', 'Nghiên cứu', 'Học ngôn ngữ', 'Tóm tắt tài liệu'],
@@ -141,7 +141,7 @@ const aiCategories = [
   {
     title: 'Business & Marketing',
     description: 'AI cho kinh doanh',
-    href: '/learning/ai/business-marketing',
+    href: '/ai/business-marketing',
     icon: '📈',
     color: 'from-orange-600 to-red-600',
     topics: ['Marketing AI', 'Phân tích khách hàng', 'Chatbot', 'SEO AI'],
@@ -149,7 +149,7 @@ const aiCategories = [
   {
     title: 'Daily Life',
     description: 'AI trong đời sống',
-    href: '/learning/ai/daily-life',
+    href: '/ai/daily-life',
     icon: '🏠',
     color: 'from-emerald-600 to-cyan-600',
     topics: ['Trợ lý cá nhân', 'Tài chính thông minh', 'Sức khỏe', 'Du lịch'],
@@ -157,7 +157,7 @@ const aiCategories = [
   {
     title: 'Programming & Dev',
     description: 'AI cho lập trình',
-    href: '/learning/ai/programming-dev',
+    href: '/ai/programming-dev',
     icon: '💻',
     color: 'from-slate-600 to-blue-600',
     topics: ['Code AI', 'Debug thông minh', 'Review tự động', 'Testing AI'],
@@ -177,14 +177,14 @@ const quickStartSteps = [
     description: 'Nắm vững cách viết prompts hiệu quả',
     icon: '2️⃣',
     action: 'Học ngay',
-    link: '/learning/ai/office-work',
+    link: '/ai/office-work',
   },
   {
     title: 'Khám phá các công cụ khác',
     description: 'Thử Midjourney, Canva AI, và các tools khác',
     icon: '3️⃣',
     action: 'Khám phá',
-    link: '/learning/ai/creative-design',
+    link: '/ai/creative-design',
   },
 ];
 
@@ -471,7 +471,7 @@ export default function AIModule() {
                 <span className="relative text-blue-400 font-black">🤖 THỬ CHATGPT</span>
               </a>
               <Link
-                href="/learning/ai/office-work"
+                href="/ai/office-work"
                 className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl"></div>

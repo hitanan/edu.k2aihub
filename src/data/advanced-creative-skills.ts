@@ -1,5 +1,4 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-
+import { BaseLessonData } from '@/types/lesson-base';
 export interface AdvancedCreativeLesson extends BaseLessonData {
   creativeCategory: 'design' | 'video' | 'audio' | 'writing' | 'photography' | 'animation';
   skillLevel: 'Intermediate' | 'Advanced' | 'Expert';
