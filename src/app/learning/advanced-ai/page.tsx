@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { BaseLessonData } from '@/types/lesson-base';
 
 // Convert AdvancedAILesson to BaseLessonData

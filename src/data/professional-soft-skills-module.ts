@@ -1,4 +1,4 @@
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { ModuleData } from '@/types';
 
 export const professionalSoftSkillsModuleData: ModuleData = {

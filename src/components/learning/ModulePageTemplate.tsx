@@ -1,56 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Clock, Target, Users, TrendingUp, Play, ChevronRight, Star, Award, Lightbulb } from 'lucide-react';
-import { BaseLessonData } from './LessonPageTemplate';
-import { ModuleNavigation, moduleNavigation } from '@/data/moduleNavigation';
-export interface ModuleData {
-  id?: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  level?: string;
-  duration?: string;
-  category?: string;
-  features?: string[];
-  icon?: string;
-  color?: string;
-  heroImageUrl?: string;
-  objectives?: string[];
-  prerequisites?: string[];
-  careerOutcomes?: string[];
-  industryApplications?: Array<string | { name: string; description: string }>;
-  marketDemand?: {
-    averageSalary: string;
-    jobGrowth: string;
-    hireDemand: string;
-  };
-  primaryColor?: string;
-  gradientColors?: string;
-  basePath?: string;
-  statsConfig?: {
-    lessons: string;
-    duration: string;
-    level: string;
-    projects: string;
-  };
-  marketData?: {
-    marketSize: string;
-    marketNote: string;
-    jobGrowth: string;
-    jobNote: string;
-    reduction: string;
-    reductionNote: string;
-    startups: string;
-    startupsNote: string;
-  };
-  careerPaths?: string[];
-  technicalHighlights?: Array<{
-    title: string;
-    icon: string;
-    items: string[];
-  }>;
-  relatedModules?: Array<string>;
-}
+import { BaseLessonData } from '@/types/lesson-base';
+import { ModuleData } from '@/types';
+import { moduleNavigation } from '@/data/moduleNavigation';
 
 interface ModulePageTemplateProps {
   moduleData: ModuleData;
@@ -94,15 +47,21 @@ export default function ModulePageTemplate({
   } = moduleData;
 
   // Get relatedModules data from moduleNavigation
-  const relatedModulesData = relatedModules?.map((moduleId) => {
-    const mod = moduleNavigation.find((mod) => mod.id === moduleId) || ({} as ModuleNavigation);
-    return {
-      href: mod.coreModule ? `/${mod.id}` : `/learning/${mod.id}`,
-      icon: mod.icon,
-      title: mod.title,
-      description: mod.description,
-    };
-  });
+  const relatedModulesData = relatedModules
+    ?.map((moduleId) => {
+      const mod = moduleNavigation.find((mod) => 'id' in mod && mod.id === moduleId);
+      if (!mod) return null;
+
+      const isCore = 'coreModule' in mod && (mod as { coreModule?: boolean }).coreModule;
+
+      return {
+        href: isCore ? `/${mod.id}` : `/learning/${mod.id}`,
+        icon: mod.icon,
+        title: mod.title,
+        description: mod.description,
+      };
+    })
+    .filter((mod) => mod !== null);
 
   const defaultStats = [
     {
@@ -325,7 +284,7 @@ export default function ModulePageTemplate({
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">Các vị trí nghề nghiệp</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {(careerPaths || careerOutcomes || []).map((career, index) => (
+                  {(careerPaths || careerOutcomes || []).map((career: string, index: number) => (
                     <div
                       key={index}
                       className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20 hover:border-white/40 transition-all duration-300"
@@ -351,24 +310,26 @@ export default function ModulePageTemplate({
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {industryApplications.map((application, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white mb-4">
-                    {index + 1}
+              {industryApplications.map(
+                (application: string | { name: string; description: string }, index: number) => (
+                  <div
+                    key={index}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white mb-4">
+                      {index + 1}
+                    </div>
+                    {typeof application === 'string' ? (
+                      <h3 className="text-lg font-semibold text-white mb-2">{application}</h3>
+                    ) : (
+                      <>
+                        <h3 className="text-lg font-semibold text-white mb-2">{application.name}</h3>
+                        <p className="text-gray-300 text-sm">{application.description}</p>
+                      </>
+                    )}
                   </div>
-                  {typeof application === 'string' ? (
-                    <h3 className="text-lg font-semibold text-white mb-2">{application}</h3>
-                  ) : (
-                    <>
-                      <h3 className="text-lg font-semibold text-white mb-2">{application.name}</h3>
-                      <p className="text-gray-300 text-sm">{application.description}</p>
-                    </>
-                  )}
-                </div>
-              ))}
+                ),
+              )}
             </div>
           </div>
         </section>
@@ -384,7 +345,7 @@ export default function ModulePageTemplate({
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {technicalHighlights.map((tech, index) => (
+              {technicalHighlights.map((tech: { title: string; icon: string; items: string[] }, index: number) => (
                 <div
                   key={index}
                   className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300"
@@ -394,7 +355,7 @@ export default function ModulePageTemplate({
                     <h3 className="text-xl font-bold text-white">{tech.title}</h3>
                   </div>
                   <ul className="space-y-2">
-                    {tech.items.map((item, itemIndex) => (
+                    {tech.items.map((item: string, itemIndex: number) => (
                       <li key={itemIndex} className="text-gray-300 flex items-center">
                         <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
                         {item}
@@ -423,19 +384,21 @@ export default function ModulePageTemplate({
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {relatedModulesData.map((module, index) => (
-                <Link
-                  key={index}
-                  href={module.href}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 group"
-                >
-                  <div className="flex items-center mb-4">
-                    <span className="text-3xl mr-3">{module.icon}</span>
-                    <h3 className="text-xl font-bold text-white group-hover:text-gray-200">{module.title}</h3>
-                  </div>
-                  <p className="text-gray-300">{module.description}</p>
-                </Link>
-              ))}
+              {relatedModulesData.map((module, index) =>
+                !module ? null : (
+                  <Link
+                    key={index}
+                    href={module.href || ''}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 group"
+                  >
+                    <div className="flex items-center mb-4">
+                      <span className="text-3xl mr-3">{module.icon}</span>
+                      <h3 className="text-xl font-bold text-white group-hover:text-gray-200">{module.title}</h3>
+                    </div>
+                    <p className="text-gray-300">{module.description}</p>
+                  </Link>
+                ),
+              )}
             </div>
           </div>
         </section>

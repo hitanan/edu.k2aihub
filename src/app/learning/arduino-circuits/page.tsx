@@ -1,4 +1,4 @@
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { createTitle, createDescription } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { arduinoCircuitsLessons } from '@/data/arduino-circuits';

@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { crossCulturalLessons } from '@/data/cross-cultural-intelligence';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export const metadata: Metadata = createModuleMetadata(
   'Trí Tuệ Đa Văn Hóa',
   'Phát triển cultural intelligence để giao tiếp, hợp tác và lãnh đạo hiệu quả với người từ các nền văn hóa khác nhau trong thế giới toàn cầu.',
   ['cultural intelligence', 'cross-cultural communication', 'global leadership', 'diversity', 'K2AiHub'],
-  'cross-cultural-intelligence'
+  'cross-cultural-intelligence',
 );
 
 export default function CrossCulturalMainPage() {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { pythonLessons } from '@/data/python';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export const metadata: Metadata = createModuleMetadata(
   'Python Programming - Lập Trình Python',

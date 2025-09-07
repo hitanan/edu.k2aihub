@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { advancedCreativeLessons } from '@/data/advanced-creative-skills';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { ModuleData } from '@/types';
 
 // Generate metadata

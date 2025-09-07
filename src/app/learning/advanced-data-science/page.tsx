@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { advancedDataScienceLessons } from '@/data/advanced-data-science';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(

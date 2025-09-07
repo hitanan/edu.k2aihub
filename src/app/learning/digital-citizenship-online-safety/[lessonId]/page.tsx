@@ -7,7 +7,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { DigitalCitizenshipLessons } from '@/data/digital-citizenship-online-safety';
 import { PageProps } from '@/types';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(DigitalCitizenshipLessons);

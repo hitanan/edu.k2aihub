@@ -1,5 +1,5 @@
-import { ModuleData } from '@/components/learning/ModulePageTemplate';
-import { K2Module } from '@/data/moduleNavigation';
+import { ModuleData } from '@/types';
+import { K2Module } from '@/data/k2-modules';
 
 export const mobileAppDevelopmentModuleData: ModuleData = {
   id: 'mobile-app-development',

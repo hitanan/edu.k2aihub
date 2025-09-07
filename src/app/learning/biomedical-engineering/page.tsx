@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { biomedicalEngineeringLessons, type BiomedicalEngineeringLesson } from '@/data/biomedical-engineering';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { BaseLessonData } from '@/types/lesson-base';
 
 // Convert BiomedicalEngineeringLesson to BaseLessonData

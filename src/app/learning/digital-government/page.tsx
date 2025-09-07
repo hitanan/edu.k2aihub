@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { digitalGovLessons } from '@/data/digital-government';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
 import { BaseLessonData } from '@/types/lesson-base';
 import type { DigitalGovLesson } from '@/data/digital-government';

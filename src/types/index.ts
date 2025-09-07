@@ -47,6 +47,30 @@ export interface ModuleData {
     hireDemand: string;
   };
   relatedModules: string[];
+  gradientColors?: string;
+  basePath?: string;
+  statsConfig?: {
+    lessons: string;
+    duration: string;
+    level: string;
+    projects: string;
+  };
+  marketData?: {
+    marketSize: string;
+    marketNote: string;
+    jobGrowth: string;
+    jobNote: string;
+    reduction: string;
+    reductionNote: string;
+    startups: string;
+    startupsNote: string;
+  };
+  careerPaths?: string[];
+  technicalHighlights?: Array<{
+    title: string;
+    icon: string;
+    items: string[];
+  }>;
 }
 
 export interface ContactForm {
@@ -101,8 +125,8 @@ export interface ModuleNavigation {
   icon: string;
   color: string;
   lessons?: LessonNavigation[]; // Make lessons optional for dynamic loading
-  totalDuration: string;
-  difficulty: string;
+  totalDuration?: string;
+  difficulty?: string;
   level?: string;
   duration?: string;
   href?: string;

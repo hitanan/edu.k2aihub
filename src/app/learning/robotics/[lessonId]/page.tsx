@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { roboticsLessons, RoboticsLessonType } from '@/data/robotics';
 import { PageProps } from '@/types';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { Bot, Settings, Play, Target, Award } from 'lucide-react';
 
 // Generate static params for all lessons

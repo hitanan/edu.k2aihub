@@ -1,17 +1,24 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { BlockchainLessons } from '@/data/blockchain-technology';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
   'Blockchain Technology & Development - Công Nghệ Blockchain',
   'Học công nghệ blockchain từ cơ bản đến nâng cao. Từ cryptocurrency đến smart contracts và DeFi applications.',
-  ['blockchain technology', 'cryptocurrency', 'smart contracts', 'web3 development', 'defi', 'nft', 'ethereum', 'k2aihub'],
-  'blockchain-technology'
+  [
+    'blockchain technology',
+    'cryptocurrency',
+    'smart contracts',
+    'web3 development',
+    'defi',
+    'nft',
+    'ethereum',
+    'k2aihub',
+  ],
+  'blockchain-technology',
 );
 
 export default function BlockchainTechnologyPage() {
@@ -27,8 +34,7 @@ export default function BlockchainTechnologyPage() {
     primaryColor: 'amber',
     gradientColors: 'from-slate-900 via-amber-900 to-orange-900',
     basePath: '/learning/blockchain-technology',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&h=600&fit=crop',
     features: [
       'Blockchain Fundamentals & Architecture',
       'Cryptocurrency & Digital Assets',
@@ -97,72 +103,36 @@ export default function BlockchainTechnologyPage() {
       {
         title: 'Core Blockchain',
         icon: '⛓️',
-        items: [
-          'Bitcoin & Ethereum',
-          'Consensus Algorithms',
-          'Cryptographic Hashing',
-          'Merkle Trees',
-        ],
+        items: ['Bitcoin & Ethereum', 'Consensus Algorithms', 'Cryptographic Hashing', 'Merkle Trees'],
       },
       {
         title: 'Smart Contracts',
         icon: '📝',
-        items: [
-          'Solidity Programming',
-          'Gas Optimization',
-          'Contract Patterns',
-          'Testing & Deployment',
-        ],
+        items: ['Solidity Programming', 'Gas Optimization', 'Contract Patterns', 'Testing & Deployment'],
       },
       {
         title: 'DeFi Development',
         icon: '🏦',
-        items: [
-          'AMM Protocols',
-          'Yield Farming',
-          'Lending/Borrowing',
-          'Governance Tokens',
-        ],
+        items: ['AMM Protocols', 'Yield Farming', 'Lending/Borrowing', 'Governance Tokens'],
       },
       {
         title: 'Web3 Stack',
         icon: '🌐',
-        items: [
-          'React + Web3.js',
-          'IPFS Storage',
-          'MetaMask Integration',
-          'The Graph Protocol',
-        ],
+        items: ['React + Web3.js', 'IPFS Storage', 'MetaMask Integration', 'The Graph Protocol'],
       },
       {
         title: 'Security & Auditing',
         icon: '🔒',
-        items: [
-          'Smart Contract Security',
-          'Vulnerability Testing',
-          'Code Auditing',
-          'Best Practices',
-        ],
+        items: ['Smart Contract Security', 'Vulnerability Testing', 'Code Auditing', 'Best Practices'],
       },
       {
         title: 'NFT & Gaming',
         icon: '🎮',
-        items: [
-          'ERC-721/1155',
-          'NFT Marketplaces',
-          'GameFi Development',
-          'Metaverse Integration',
-        ],
+        items: ['ERC-721/1155', 'NFT Marketplaces', 'GameFi Development', 'Metaverse Integration'],
       },
     ],
-    relatedModules: [
-      K2Module.BlockchainDeFi,
-      K2Module.FinancialLiteracy,
-      K2Module.Cybersecurity,
-    ],
+    relatedModules: [K2Module.BlockchainDeFi, K2Module.FinancialLiteracy, K2Module.Cybersecurity],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={BlockchainLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={BlockchainLessons} />;
 }

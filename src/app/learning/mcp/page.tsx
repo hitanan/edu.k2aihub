@@ -2,13 +2,23 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { MCPLessons } from '@/data/mcp';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export const metadata: Metadata = createModuleMetadata(
   'MCP - Model Context Protocol',
   'Học cách tích hợp AI tools với Atlassian qua Model Context Protocol. Setup Jira automation, VS Code integration, và office productivity workflows với MCP.',
-  ['MCP', 'Model Context Protocol', 'Atlassian integration', 'Jira automation', 'VS Code AI', 'Cursor IDE', 'Office productivity', 'AI workflows', 'K2AI'],
-  'mcp'
+  [
+    'MCP',
+    'Model Context Protocol',
+    'Atlassian integration',
+    'Jira automation',
+    'VS Code AI',
+    'Cursor IDE',
+    'Office productivity',
+    'AI workflows',
+    'K2AI',
+  ],
+  'mcp',
 );
 
 export default function MCPMainPage() {

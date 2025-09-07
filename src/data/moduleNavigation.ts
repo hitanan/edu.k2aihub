@@ -1,8 +1,9 @@
-import { ModuleNavigation } from '@/types';
+import { ModuleNavigation, ModuleData } from '@/types';
 import { advancedCreativeSkillsModuleData } from './advanced-creative-skills-module';
 import { aiArtCreativeTechModuleData } from './ai-art-creative-tech-module';
 import { aiForStudentsModuleData } from './ai-for-students-module';
 import { aiMachineLearningModuleData } from './ai-machine-learning-module';
+import { aiLearningModuleData } from './ai-learning-module';
 import { arduinoCircuitsModuleData } from './arduino-circuits-module';
 import { arduinoModuleData } from './arduino-module';
 import { blueEconomyModuleData } from './blue-economy-module';
@@ -85,97 +86,10 @@ import { vietnameseLanguageTechModuleData } from './vietnamese-language-tech-mod
 import { youngEntrepreneurModuleData } from './young-entrepreneur-module';
 import { threeDPrintingModuleData } from './3d-printing-module';
 import { blockchainTechnologyModuleData } from './blockchain-technology-module';
-import { aiLearningModuleData } from './ai-learning-module';
 import { sustainableAgricultureModuleData } from './sustainable-agriculture-module';
+import { K2Module } from './k2-modules';
 
-export const K2Module = {
-  // Core Modules
-  City: 'city',
-  AI: 'ai',
-
-  // Professional Learning Modules
-  DigitalMarketing: 'digital-marketing',
-  GreenTechnology: 'green-technology',
-  MentalHealthTech: 'mental-health-tech',
-  FinancialLiteracy: 'financial-literacy',
-  GameDevelopment: 'game-development',
-  AIArtCreativeTech: 'ai-art-creative-tech',
-  Cybersecurity: 'cybersecurity',
-  Biotechnology: 'biotechnology',
-  MCP: 'mcp',
-  AIApplications: 'ai-applications',
-  AIForStudents: 'ai-for-students',
-  AdvancedAI: 'advanced-ai',
-  SemiconductorTechnology: 'semiconductor-technology',
-  RenewableEnergy: 'renewable-energy',
-  BlockchainDeFi: 'blockchain-defi',
-  EnvironmentalDataScience: 'environmental-data-science',
-  Nanotechnology: 'nanotechnology',
-  AerospaceEngineering: 'aerospace-engineering',
-  ElectricVehicleTech: 'electric-vehicle-tech',
-  DigitalGovernment: 'digital-government',
-  CircularEconomy: 'circular-economy',
-  EmotionalIntelligence: 'emotional-intelligence',
-  PublicSpeaking: 'public-speaking',
-  Leadership: 'leadership',
-
-  // Programming & STEM Modules
-  Python: 'python',
-  Arduino: 'arduino',
-  Robotics: 'robotics',
-  Scratch: 'scratch',
-  Stem: 'stem',
-  PhysicsOfSports: 'physics-of-sports',
-  KitchenChemistry: 'kitchen-chemistry',
-  DigitalCitizenshipOnlineSafety: 'digital-citizenship-online-safety',
-  VietnameseBusiness: 'vietnamese-business',
-  VietnameseCulture: 'vietnamese-culture',
-  VietnameseHealthcare: 'vietnamese-healthcare',
-  VietnameseLanguageTech: 'vietnamese-language-tech',
-  CriticalThinking: 'critical-thinking',
-  CommunicationSkills: 'communication-skills',
-  ProfessionalSkills: 'professional-skills',
-  HealthcareTech: 'healthcare-tech',
-  MobileAppDevelopment: 'mobile-app-development',
-  AdvancedCreativeSkills: 'advanced-creative-skills',
-  LegalTechnology: 'legal-technology',
-  EducationTechnology: 'education-technology',
-  RealEstateTechnology: 'real-estate-technology',
-  Robosim: 'robosim',
-  RobloxGameDev: 'roblox-game-dev',
-  MinecraftEdu: 'minecraft-edu',
-  ArduinoCircuits: 'arduino-circuits',
-  ThreeDPrinting: '3d-printing',
-  CrossCultural: 'cross-cultural',
-  QuantumComputingEducation: 'quantum-computing-education',
-  DataScienceAnalytics: 'data-science-analytics',
-  FoodTechnology: 'food-technology',
-  ContentCreator: 'content-creator',
-  TeenWellness: 'teen-wellness',
-  YoungEntrepreneur: 'young-entrepreneur',
-  AIContentCreator: 'ai-content-creator',
-  TikTokSocialCommerce: 'tiktok-social-commerce',
-  GenZMarketing: 'genz-marketing',
-  ShortVideoMastery: 'short-video-mastery',
-  LiveCommerceStreaming: 'live-commerce-streaming',
-  MicroInfluencerEconomy: 'micro-influencer-economy',
-  SocialListeningCrisis: 'social-listening-crisis',
-  EthicalMarketingPurpose: 'ethical-marketing-purpose',
-  CrossPlatformStrategy: 'cross-platform-strategy',
-  DataDrivenAnalytics: 'data-driven-analytics',
-  EnvironmentalScienceClimate: 'environmental-science-climate',
-  MetaverseVREducation: 'metaverse-vr-education',
-  SpaceTechnology: 'space-technology',
-  DigitalArtsCreativeTech: 'digital-arts-creative-tech',
-  BlueEconomy: 'blue-economy',
-  SmartManufacturing: 'smart-manufacturing',
-  DigitalCitizenship: 'digital-citizenship',
-  FutureThinking: 'future-thinking',
-  UXUIDesign: 'ux-ui-design',
-  EnergyManagement: 'energy-management',
-};
-
-export const moduleNavigation: ModuleNavigation[] = [
+export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   // Core Modules (outside /learning/ folder)
   {
     id: K2Module.City,

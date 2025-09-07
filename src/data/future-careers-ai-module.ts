@@ -1,5 +1,5 @@
 import { ModuleData } from '@/types';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export const futureCareersModuleData: ModuleData = {
   id: 'future-careers-ai',

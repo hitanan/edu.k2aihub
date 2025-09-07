@@ -2,13 +2,31 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { contentCreatorLessons } from '@/data/content-creator';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export const metadata: Metadata = createModuleMetadata(
   'Content Creator Academy - Thành công với Social Media',
   'Học từ A-Z cách trở thành content creator thành công. Thu nhập 15-100 triệu VNĐ/tháng từ social media.',
-  ['content creator', 'social media', 'youtube', 'tiktok', 'instagram', 'personal branding', 'video production', 'livestreaming', 'monetization', 'brand partnerships', 'influencer marketing', 'content strategy', 'vietnamese creators', 'social media marketing', 'digital marketing', 'creator economy', 'K2AI'],
-  'content-creator'
+  [
+    'content creator',
+    'social media',
+    'youtube',
+    'tiktok',
+    'instagram',
+    'personal branding',
+    'video production',
+    'livestreaming',
+    'monetization',
+    'brand partnerships',
+    'influencer marketing',
+    'content strategy',
+    'vietnamese creators',
+    'social media marketing',
+    'digital marketing',
+    'creator economy',
+    'K2AI',
+  ],
+  'content-creator',
 );
 
 export default function ContentCreatorPage() {
@@ -21,8 +39,7 @@ export default function ContentCreatorPage() {
     level: 'Cơ bản đến Nâng cao',
     duration: '18-22 giờ',
     category: 'Creator Economy & Digital Media',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop',
     features: [
       '🎬 Video Production & Editing chuyên nghiệp với smartphone',
       '💡 Personal Branding & Content Strategy độc đáo',
@@ -109,10 +126,6 @@ export default function ContentCreatorPage() {
   ];
 
   return (
-    <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={contentCreatorLessons}
-      additionalStats={additionalStats}
-    />
+    <ModulePageTemplate moduleData={moduleData} lessons={contentCreatorLessons} additionalStats={additionalStats} />
   );
 }

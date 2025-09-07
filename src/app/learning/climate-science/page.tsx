@@ -1,17 +1,23 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, {
-  type ModuleData,
-} from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
 import { ClimateLessons } from '@/data/climate-science';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
   'Climate Science & Environmental Research - Khoa Học Khí Hậu',
   'Nghiên cứu khoa học khí hậu và môi trường. Từ climate modeling đến environmental data analysis và climate change solutions.',
-  ['climate science', 'environmental research', 'climate change', 'climate modeling', 'environmental data', 'sustainability', 'k2aihub'],
-  'climate-science'
+  [
+    'climate science',
+    'environmental research',
+    'climate change',
+    'climate modeling',
+    'environmental data',
+    'sustainability',
+    'k2aihub',
+  ],
+  'climate-science',
 );
 
 export default function ClimateSciencePage() {
@@ -27,8 +33,7 @@ export default function ClimateSciencePage() {
     primaryColor: 'emerald',
     gradientColors: 'from-slate-900 via-emerald-900 to-green-900',
     basePath: '/learning/climate-science',
-    heroImageUrl:
-      'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=1200&h=600&fit=crop',
+    heroImageUrl: 'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=1200&h=600&fit=crop',
     features: [
       'Climate System Understanding',
       'Environmental Data Analysis',
@@ -97,72 +102,36 @@ export default function ClimateSciencePage() {
       {
         title: 'Climate Modeling',
         icon: '🌡️',
-        items: [
-          'Atmospheric Models',
-          'Ocean Circulation',
-          'Ice Sheet Dynamics',
-          'Ecosystem Models',
-        ],
+        items: ['Atmospheric Models', 'Ocean Circulation', 'Ice Sheet Dynamics', 'Ecosystem Models'],
       },
       {
         title: 'Data Analysis',
         icon: '📊',
-        items: [
-          'Satellite Data',
-          'Weather Stations',
-          'Ocean Monitoring',
-          'Paleoclimate Records',
-        ],
+        items: ['Satellite Data', 'Weather Stations', 'Ocean Monitoring', 'Paleoclimate Records'],
       },
       {
         title: 'Environmental Assessment',
         icon: '🔬',
-        items: [
-          'Carbon Footprinting',
-          'Life Cycle Analysis',
-          'Environmental Impact',
-          'Biodiversity Metrics',
-        ],
+        items: ['Carbon Footprinting', 'Life Cycle Analysis', 'Environmental Impact', 'Biodiversity Metrics'],
       },
       {
         title: 'Technology Tools',
         icon: '💻',
-        items: [
-          'GIS & Remote Sensing',
-          'Python/R Programming',
-          'Climate Databases',
-          'Visualization Tools',
-        ],
+        items: ['GIS & Remote Sensing', 'Python/R Programming', 'Climate Databases', 'Visualization Tools'],
       },
       {
         title: 'Policy & Economics',
         icon: '🏛️',
-        items: [
-          'Climate Policy',
-          'Carbon Markets',
-          'Economic Modeling',
-          'Risk Assessment',
-        ],
+        items: ['Climate Policy', 'Carbon Markets', 'Economic Modeling', 'Risk Assessment'],
       },
       {
         title: 'Solutions & Mitigation',
         icon: '🌱',
-        items: [
-          'Renewable Energy',
-          'Carbon Sequestration',
-          'Adaptation Strategies',
-          'Green Technology',
-        ],
+        items: ['Renewable Energy', 'Carbon Sequestration', 'Adaptation Strategies', 'Green Technology'],
       },
     ],
-    relatedModules: [
-      K2Module.GreenTechnology,
-      K2Module.EnvironmentalDataScience,
-      K2Module.RenewableEnergy,
-    ],
+    relatedModules: [K2Module.GreenTechnology, K2Module.EnvironmentalDataScience, K2Module.RenewableEnergy],
   };
 
-  return (
-    <ModulePageTemplate moduleData={moduleData} lessons={ClimateLessons} />
-  );
+  return <ModulePageTemplate moduleData={moduleData} lessons={ClimateLessons} />;
 }

@@ -1,5 +1,5 @@
 import { ModuleData } from '@/types';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export const personalEnergyPerformanceManagementModuleData: ModuleData = {
   id: 'personal-energy-performance-management',

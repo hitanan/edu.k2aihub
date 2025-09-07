@@ -1,7 +1,7 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { robosimLessons } from '@/data/robosim';
 import { createTitle, createDescription } from '@/utils/seo';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export async function generateMetadata() {
   return {

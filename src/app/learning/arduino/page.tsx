@@ -4,7 +4,7 @@ import ModulePageTemplate, { ModuleData } from '@/components/learning/ModulePage
 import { arduinoLessons, ArduinoLesson } from '@/data/arduino';
 import { BaseLessonData } from '@/types/lesson-base';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 
 export const metadata: Metadata = createModuleMetadata(
   'Arduino Programming - Lập Trình Arduino',

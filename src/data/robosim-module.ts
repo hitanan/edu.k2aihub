@@ -1,4 +1,4 @@
-import { K2Module } from './moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { ModuleNavigation } from '@/types';
 
 export const robosimModuleData: ModuleNavigation = {

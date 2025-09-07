@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { circularEconomyLessons } from '@/data/circular-economy';
 import { PageProps } from '@/types';
-import { K2Module } from '@/data/moduleNavigation';
+import { K2Module } from '@/data/k2-modules';
 import { notFound } from 'next/navigation';
 import { BaseLessonData } from '@/types/lesson-base';
 
