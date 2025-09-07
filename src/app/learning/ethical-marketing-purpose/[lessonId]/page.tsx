@@ -2,11 +2,12 @@ import {
   LessonPageTemplate,
   generateLessonMetadata,
   generateLessonStaticParams,
-  LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { ethicalMarketingLessons, EthicalMarketingLessonType } from '@/data/ethical-marketing-purpose';
+import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
 import { PageProps } from '@/types';
-import { Lightbulb } from 'lucide-react';
+import { LessonPageConfig } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -15,23 +16,29 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   return generateLessonMetadata(lessonId, ethicalMarketingLessons, 'ethical-marketing-purpose');
 }
 
 // Page component with standardized config
-export default async function EthicalMarketingLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<EthicalMarketingLessonType> = {
+export default function EthicalMarketingLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
+
+  const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'ethical-marketing-purpose',
     moduleTitle: 'Ethical Marketing & Purpose-Driven Brands',
     modulePath: '/learning/ethical-marketing-purpose',
     lessons: ethicalMarketingLessons,
-    primaryColor: 'green', // Primary theme color
-    secondaryColor: 'emerald', // Secondary theme color
-    gradientColors: 'from-slate-900 via-green-900 to-emerald-900', // Background gradient
-    getFieldIcon: () => <Lightbulb className="w-5 h-5" />, // Optional
-    getFieldValue: (lesson) => lesson.ethicalPrinciples?.join(', ') || '', // Optional
+    primaryColor: 'green',
+    secondaryColor: 'emerald',
+    gradientColors: 'from-slate-900 via-green-900 to-emerald-900',
   };
-  const { lessonId } = await params;
+
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

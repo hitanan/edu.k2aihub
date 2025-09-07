@@ -4,37 +4,39 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { quantumComputingLessons, QuantumComputingLesson } from '@/data/quantum-computing';
+import { quantumComputingLessons } from '@/data/quantum-computing';
 import { PageProps } from '@/types';
-import { K2Module } from '@/data/moduleNavigation';
+import { BaseLessonData } from '@/types/lesson-base';
+import { notFound } from 'next/navigation';
 
-// Generate static params for all lessons
 export async function generateStaticParams() {
   return generateLessonStaticParams(quantumComputingLessons);
 }
 
-// Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
-  return generateLessonMetadata(
-    lessonId,
-    quantumComputingLessons,
-    K2Module.QuantumComputingEducation, // Note: This might need a specific 'QuantumComputing' enum if available
-  );
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return {};
+  }
+  return generateLessonMetadata(lessonId, quantumComputingLessons, 'quantum-computing');
 }
 
-// Page component with standardized config
-export default async function QuantumLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<QuantumComputingLesson> = {
-    moduleName: 'Quantum Computing',
-    moduleTitle: 'Quantum Computing - Máy Tính Lượng Tử',
-    modulePath: `/learning/${K2Module.QuantumComputingEducation}`,
+export default async function QuantumComputingLessonPage({ params }: PageProps) {
+  const config: LessonPageConfig<BaseLessonData> = {
+    moduleName: 'quantum-computing',
+    moduleTitle: 'Điện toán Lượng tử',
+    modulePath: '/learning/quantum-computing',
     lessons: quantumComputingLessons,
-    primaryColor: 'purple',
-    secondaryColor: 'pink',
-    gradientColors: 'from-slate-900 via-purple-900 to-slate-900',
+    primaryColor: 'indigo',
+    secondaryColor: 'purple',
+    gradientColors: 'from-indigo-500 via-purple-600 to-pink-500',
   };
 
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+
+  if (!lessonId) {
+    return notFound();
+  }
+
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

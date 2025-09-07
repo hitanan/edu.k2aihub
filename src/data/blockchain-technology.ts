@@ -1,40 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface BlockchainLessonData extends BaseLessonData {
-  blockchainConcepts?: string[];
-  cryptocurrencies?: string[];
-  practicalProjects?: Array<{
-    title: string;
-    description: string;
-    technology: string[];
-    complexity: string;
-  }>;
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
-
-export const BlockchainLessons: BlockchainLessonData[] = [
+export const BlockchainLessons: BaseLessonData[] = [
   {
     id: 'blockchain-fundamentals',
     title: 'Cơ bản về Blockchain và Cryptocurrency',

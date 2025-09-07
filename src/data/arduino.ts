@@ -1,67 +1,6 @@
-// Arduino Programming Module Data
-// Comprehensive Arduino content for K2AiHub education platform
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface ArduinoLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
-  duration: string;
-  category: 'basics' | 'sensors' | 'communication' | 'projects' | 'iot';
-  objectives: string[];
-  materials: string[];
-  codeExample: string;
-  circuitDiagram?: string;
-  videoUrl?: string;
-  imageUrl: string;
-  exercises: ArduinoExercise[];
-  realWorldApplications: string[];
-  competitions: string[];
-  relatedGames?: Array<{
-    gameId: string;
-    title: string;
-    connection: string;
-    difficulty: string;
-  }>;
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
-
-export interface ArduinoExercise {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: 'Dễ' | 'Trung bình' | 'Khó';
-  videoUrl?: string;
-  imageUrl?: string;
-  code: string;
-  expectedOutput: string;
-  hints: string[];
-  troubleshooting: string[];
-}
-
-export const arduinoLessons: ArduinoLesson[] = [
+export const arduinoLessons: BaseLessonData[] = [
   {
     id: 'arduino-setup',
     title: 'Cài Đặt và Làm Quen Arduino',

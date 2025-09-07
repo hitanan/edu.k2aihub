@@ -1,13 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface EducationTechLesson extends BaseLessonData {
-  techFocus: 'Công cụ EdTech' | 'Phân tích học tập' | 'Học tập ảo' | 'Công nghệ đánh giá' | 'AI trong giáo dục';
-  targetAudience: 'Giáo viên' | 'Học sinh' | 'Quản trị viên' | 'Phụ huynh' | 'Nhà phát triển';
-  implementationLevel: 'Lớp học' | 'Tổ chức' | 'Quận/Huyện' | 'Quốc gia' | 'Toàn cầu';
-  measurableOutcomes: string[];
-}
-
-export const EducationTechnologyLessons: EducationTechLesson[] = [
+export const educationTechnologyLessons: BaseLessonData[] = [
   {
     id: 'learning-management-systems',
     title: 'Hệ Thống Quản Lý Học Tập (LMS) & Nền Tảng Giáo Dục',
@@ -17,9 +10,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=aKZBxTJvPnE', // "LMS là gì?"
     imageUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=1200&h=600&fit=crop',
-    techFocus: 'Công cụ EdTech',
-    targetAudience: 'Giáo viên',
-    implementationLevel: 'Tổ chức',
     objectives: [
       'Hiểu rõ các tính năng và lợi ích của các hệ thống LMS phổ biến',
       'Thiết kế và tùy chỉnh môi trường học tập trực tuyến hiệu quả',
@@ -31,12 +21,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
       'Kiến thức cơ bản về công nghệ thông tin và internet',
       'Kinh nghiệm giảng dạy hoặc quản lý giáo dục',
       'Hiểu biết về quy trình học tập và đánh giá học sinh',
-    ],
-    measurableOutcomes: [
-      'Triển khai thành công ít nhất 1 LMS cho tổ chức giáo dục',
-      'Tạo được 5+ khóa học trực tuyến với nội dung đa phương tiện',
-      'Thiết lập hệ thống đánh giá và theo dõi tiến độ học sinh',
-      'Tăng 40% hiệu quả quản lý và tương tác giáo dục',
     ],
     exercises: [
       {
@@ -161,9 +145,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=OBKNCcxfYEs', // "AI trong giáo dục"
     imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=600&fit=crop',
-    techFocus: 'AI trong giáo dục',
-    targetAudience: 'Giáo viên',
-    implementationLevel: 'Lớp học',
     objectives: [
       'Hiểu nguyên lý hoạt động của AI trong giáo dục và các ứng dụng phổ biến',
       'Triển khai chatbot giáo dục để hỗ trợ học sinh 24/7',
@@ -175,12 +156,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
       'Hiểu biết cơ bản về artificial intelligence và machine learning',
       'Kinh nghiệm sử dụng các công cụ giáo dục số',
       'Kiến thức về data analysis và statistics cơ bản',
-    ],
-    measurableOutcomes: [
-      'Triển khai thành công 2+ công cụ AI trong lớp học',
-      'Giảm 50% thời gian chấm bài và phản hồi học sinh',
-      'Tăng 30% engagement và hiệu quả học tập của học sinh',
-      'Tạo được hệ thống học tập cá nhân hóa cho 100+ học sinh',
     ],
     exercises: [
       {
@@ -307,9 +282,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=7r5frPWLUoE', // "VR AR trong giáo dục"
     imageUrl: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200&h=600&fit=crop',
-    techFocus: 'Học tập ảo',
-    targetAudience: 'Giáo viên',
-    implementationLevel: 'Lớp học',
     objectives: [
       'Hiểu sự khác biệt và ứng dụng của VR, AR và Mixed Reality trong giáo dục',
       'Thiết kế và phát triển trải nghiệm học tập VR/AR tương tác',
@@ -321,12 +293,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
       'Kiến thức cơ bản về 3D graphics và spatial computing',
       'Hiểu biết về hardware VR/AR (Oculus, ARCore, ARKit)',
       'Kỹ năng basic 3D modeling hoặc game development',
-    ],
-    measurableOutcomes: [
-      'Tạo được 3+ trải nghiệm VR/AR giáo dục hoàn chỉnh',
-      'Tăng 45% engagement và retention của học sinh',
-      'Triển khai VR/AR lab với 20+ devices cho trường học',
-      'Training 50+ giảng viên sử dụng công nghệ VR/AR',
     ],
     exercises: [
       {
@@ -456,9 +422,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=XscUZ8dIa-8', // "Learning Analytics"
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
-    techFocus: 'Phân tích học tập',
-    targetAudience: 'Quản trị viên',
-    implementationLevel: 'Tổ chức',
     objectives: [
       'Hiểu các loại dữ liệu giáo dục và phương pháp thu thập ethically',
       'Phân tích student behavior patterns và learning pathways',
@@ -470,12 +433,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
       'Kiến thức statistics và data analysis cơ bản',
       'Kinh nghiệm với Excel/Google Sheets và basic SQL',
       'Hiểu biết về educational assessment và student outcomes',
-    ],
-    measurableOutcomes: [
-      'Xây dựng comprehensive learning analytics dashboard',
-      'Tăng 25% accuracy trong predicting student outcomes',
-      'Giảm 30% tỷ lệ dropout thông qua early intervention',
-      'Cải thiện 20% overall learning effectiveness',
     ],
     exercises: [
       {
@@ -608,9 +565,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=aR2P8wXOhT4', // "Khởi nghiệp EdTech"
     imageUrl: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=1200&h=600&fit=crop',
-    techFocus: 'Công cụ EdTech',
-    targetAudience: 'Nhà phát triển',
-    implementationLevel: 'Toàn cầu',
     objectives: [
       'Identify và validate viable EdTech business opportunities',
       'Thiết kế user-centered educational products với design thinking',
@@ -622,12 +576,6 @@ export const EducationTechnologyLessons: EducationTechLesson[] = [
       'Basic understanding of startup ecosystem và venture capital',
       'Knowledge về education sector challenges và opportunities',
       'Experience với product development hoặc project management',
-    ],
-    measurableOutcomes: [
-      'Complete market validation cho 1 EdTech product idea',
-      'Develop functional MVP với user testing feedback',
-      'Create comprehensive business plan và pitch deck',
-      'Establish partnerships với 3+ educational institutions',
     ],
     exercises: [
       {

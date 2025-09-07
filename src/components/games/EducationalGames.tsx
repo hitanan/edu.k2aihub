@@ -52,7 +52,7 @@ export function useEducationalGames() {
     return EDUCATIONAL_GAMES_DATA.slice()
       .reverse() // Show newest games first (from end of array)
       .filter((game) => !completedGames.includes(game.id))
-      .sort((a, b) => b.points - a.points)
+      .sort((a, b) => (b.points || 0) - (a.points || 0))
       .slice(0, limit);
   };
 
@@ -108,7 +108,7 @@ export function CompactGameCard({ game }: { game: EducationalGame }) {
           <span className={`px-1.5 py-0.5 rounded-full text-xs ${getDifficultyColor(game.difficulty)}`}>
             {game.difficulty}
           </span>
-          {game.isInternal && game.points > 0 && <span className="text-xs text-yellow-400">🏆 {game.points}</span>}
+          {game.isInternal && game.points && game.points > 0 && <span className="text-xs text-yellow-400">🏆 {game.points}</span>}
         </div>
 
         <div className="text-xs text-gray-400 mb-2">⏱️ {game.estimatedTime}</div>
@@ -195,13 +195,13 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
 
         <div className="text-xs text-gray-400 mb-3">
           ⏱️ {game.estimatedTime}
-          {game.isInternal && game.points > 0 && <span className="ml-2">🏆 {game.points} điểm</span>}
+          {game.isInternal && game.points && game.points > 0 && <span className="ml-2">🏆 {game.points} điểm</span>}
         </div>
 
         <div className="mb-4">
           <div className="text-xs text-gray-400 mb-1">Kỹ năng:</div>
           <div className="flex flex-wrap gap-1">
-            {game.skills.slice(0, 3).map((skill, index) => (
+            {game.skills?.slice(0, 3).map((skill, index) => (
               <span key={index} className="bg-white/5 text-gray-300 px-2 py-0.5 rounded text-xs">
                 {skill}
               </span>

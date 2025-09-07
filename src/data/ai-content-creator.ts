@@ -1,37 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface AIContentCreatorLessonType extends BaseLessonData {
-  aiTools: string[];
-  platforms: string[];
-  techniques: string[];
-  costRange: string;
-  estimatedEarnings: string;
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
-
-export const aiContentCreatorLessons: AIContentCreatorLessonType[] = [
+export const aiContentCreatorLessons: BaseLessonData[] = [
   {
     id: 'ai-video-content-creation',
     title: 'Làm chủ Sáng tạo Nội dung Video với AI',

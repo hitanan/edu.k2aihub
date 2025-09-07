@@ -1,33 +1,12 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
+import { BaseLessonData } from '@/types/lesson-base';
 
-// Environmental Science & Climate Lesson Interface
-export interface EnvironmentalClimateLessonType extends BaseLessonData {
-  climateTopics?: string[];
-  environmentalSolutions?: string[];
-  sustainabilityMethods?: string[];
-  researchTools?: string[];
-  policyApplications?: string[];
-  relatedGames?: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-  // Legacy support
-  researchMethods?: string[];
-  environmentalFactors?: string[];
-  monitoringTechnologies?: string[];
-  solutionApproaches?: string[];
-  policyFrameworks?: string[];
-}
-
-export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
+export const environmentalClimateLessons: BaseLessonData[] = [
   {
     id: 'climate-science-fundamentals',
     title: 'Khoa học Khí hậu Cơ bản và Bối cảnh Việt Nam',
     description:
       'Nắm vững các nguyên tắc cơ bản của khoa học khí hậu, hiệu ứng nhà kính và tác động của biến đổi khí hậu đặc biệt ảnh hưởng đến Việt Nam và khu vực Đông Nam Á.',
-    duration: '180 phút',
+    duration: '180',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=G4H1N_yXBiA', // General climate change video
     imageUrl: 'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?w=800&h=600&fit=crop',
@@ -43,42 +22,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Kiến thức cơ bản về khoa học trái đất',
       'Hiểu biết về phương pháp khoa học',
       'Quan tâm đến các vấn đề môi trường',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-modeling'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'vietnam-geography-quiz'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-data-analyst'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    climateTopics: ['Hiệu ứng nhà kính', 'Mô hình khí hậu', 'Xu hướng nhiệt độ', 'Các kiểu mưa', 'Mực nước biển dâng'],
-    environmentalSolutions: [
-      'Năng lượng tái tạo',
-      'Thu giữ Carbon',
-      'Tái trồng rừng',
-      'Nông nghiệp bền vững',
-      'Giao thông xanh',
-    ],
-    sustainabilityMethods: [
-      'Phân tích vòng đời',
-      'Tính toán dấu chân carbon',
-      'Đánh giá tác động môi trường',
-      'Các chỉ số bền vững',
-      'Chứng nhận xanh',
-    ],
-    researchTools: [
-      'Phân tích dữ liệu khí hậu',
-      'Bản đồ GIS',
-      'Hình ảnh vệ tinh',
-      'Trạm thời tiết',
-      'Phần mềm thống kê',
-    ],
-    policyApplications: [
-      'Khung chính sách khí hậu',
-      'Các hiệp định quốc tế',
-      'Kế hoạch thích ứng quốc gia',
-      'Thực hiện tại địa phương',
-      'Hệ thống giám sát',
     ],
     exercises: [
       {
@@ -136,7 +79,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Giám sát Môi trường và Đánh giá Tác động',
     description:
       'Học các kỹ thuật giám sát môi trường tiên tiến, phương pháp thu thập dữ liệu và phương pháp tiếp cận đánh giá tác động toàn diện cho các hệ sinh thái của Việt Nam.',
-    duration: '195 phút',
+    duration: '195',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=em43W_L5EO4', // Environmental monitoring technology
     imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop',
@@ -152,48 +95,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Kiến thức cơ bản về khoa học môi trường',
       'Hiểu biết về các nguyên tắc đo lường',
       'Kỹ năng phân tích dữ liệu',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-data-analyst'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'chemistry-lab'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'biology-ecosystem'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    climateTopics: [
-      'Giám sát chất lượng không khí',
-      'Đánh giá chất lượng nước',
-      'Phân tích ô nhiễm đất',
-      'Giám sát đa dạng sinh học',
-      'Đo lường ô nhiễm tiếng ồn',
-    ],
-    environmentalSolutions: [
-      'Công nghệ kiểm soát ô nhiễm',
-      'Chiến lược khắc phục',
-      'Kỹ thuật phục hồi',
-      'Phương pháp bảo tồn',
-      'Thực hành bền vững',
-    ],
-    sustainabilityMethods: [
-      'Hệ thống quản lý môi trường',
-      'Tiêu chuẩn ISO 14001',
-      'Đánh giá công trình xanh',
-      'Nguyên tắc kinh tế tuần hoàn',
-      'Chiến lược không rác thải',
-    ],
-    researchTools: [
-      'Cảm biến môi trường',
-      'Thiết bị phòng thí nghiệm',
-      'Máy ghi dữ liệu',
-      'Kỹ thuật lấy mẫu',
-      'Phân tích thống kê',
-    ],
-    policyApplications: [
-      'Quy định về môi trường',
-      'Giám sát tuân thủ',
-      'Yêu cầu cấp phép',
-      'Tiêu chuẩn báo cáo',
-      'Cơ chế thực thi',
     ],
     exercises: [
       {
@@ -255,7 +156,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Hệ thống Năng lượng Tái tạo cho Thị trường Việt Nam',
     description:
       'Nắm vững các công nghệ năng lượng tái tạo, thiết kế hệ thống và chiến lược triển khai phù hợp với khí hậu và nhu cầu năng lượng của Việt Nam.',
-    duration: '205 phút',
+    duration: '205',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=1kUE0BZtTRc', // Renewable energy explained
     imageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=600&fit=crop',
@@ -271,47 +172,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Nguyên tắc cơ bản về vật lý và kỹ thuật',
       'Hiểu biết về hệ thống điện',
       'Quan tâm đến công nghệ bền vững',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'renewable-energy-manager'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ev-charging-network'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    climateTopics: [
-      'Các kiểu bức xạ mặt trời',
-      'Đánh giá tài nguyên gió',
-      'Tiềm năng thủy điện',
-      'Sẵn có sinh khối',
-      'Tài nguyên địa nhiệt',
-    ],
-    environmentalSolutions: [
-      'Hệ thống PV mặt trời',
-      'Tua bin gió',
-      'Thủy điện siêu nhỏ',
-      'Năng lượng sinh khối',
-      'Lưu trữ năng lượng',
-    ],
-    sustainabilityMethods: [
-      'Phân tích hiệu quả năng lượng',
-      'Lập kế hoạch tích hợp lưới điện',
-      'Đánh giá vòng đời',
-      'Phân tích chi phí-lợi ích',
-      'Tối ưu hóa hiệu suất',
-    ],
-    researchTools: [
-      'Máy đo bức xạ mặt trời',
-      'Máy theo dõi tốc độ gió',
-      'Phần mềm mô hình hóa năng lượng',
-      'Công cụ phân tích kinh tế',
-      'Hệ thống phân tích lưới điện',
-    ],
-    policyApplications: [
-      'Chính sách năng lượng tái tạo',
-      'Biểu giá điện hỗ trợ',
-      'Tiêu chuẩn kết nối lưới điện',
-      'Giấy phép môi trường',
-      'Chương trình khuyến khích',
     ],
     exercises: [
       {
@@ -373,7 +233,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Nông nghiệp Bền vững trong Bối cảnh Biến đổi Khí hậu',
     description:
       'Học các kỹ thuật nông nghiệp thông minh với khí hậu, thực hành canh tác bền vững và chiến lược thích ứng cho các hệ thống nông nghiệp của Việt Nam.',
-    duration: '190 phút',
+    duration: '190',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=X4DZLtdSeCM', // What is sustainable agriculture?
     imageUrl: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&h=600&fit=crop',
@@ -389,48 +249,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Kiến thức nông nghiệp cơ bản',
       'Hiểu biết về sinh học thực vật',
       'Quen thuộc với các hệ thống canh tác của Việt Nam',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'smart-farming-simulator'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'aquaculture-iot-manager'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'drone-crop-monitoring-3d'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    climateTopics: [
-      'Tác động của khí hậu đối với cây trồng',
-      'Quản lý hạn hán',
-      'Thích ứng với lũ lụt',
-      'Căng thẳng nhiệt độ',
-      'Biến đổi theo mùa',
-    ],
-    environmentalSolutions: [
-      'Canh tác hữu cơ',
-      'Quản lý dịch hại tổng hợp',
-      'Nông lâm kết hợp',
-      'Trồng cây che phủ',
-      'Hệ thống ủ phân',
-    ],
-    sustainabilityMethods: [
-      'Nông nghiệp chính xác',
-      'Bảo tồn nước',
-      'Quản lý sức khỏe đất',
-      'Chu trình dinh dưỡng',
-      'Tăng cường đa dạng sinh học',
-    ],
-    researchTools: [
-      'Thiết bị kiểm tra đất',
-      'Giám sát thời tiết',
-      'Phần mềm mô hình hóa cây trồng',
-      'Công nghệ không người lái',
-      'Hình ảnh vệ tinh',
-    ],
-    policyApplications: [
-      'Trợ cấp nông nghiệp',
-      'Tuân thủ môi trường',
-      'Chứng nhận hữu cơ',
-      'Quyền sử dụng nước',
-      'Quy hoạch sử dụng đất',
     ],
     exercises: [
       {
@@ -488,7 +306,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Bảo tồn Đa dạng Sinh học và Quản lý Hệ sinh thái',
     description:
       'Nắm vững các phương pháp đánh giá đa dạng sinh học, chiến lược bảo tồn hệ sinh thái và phương pháp tiếp cận quản lý bền vững cho di sản thiên nhiên Việt Nam.',
-    duration: '200 phút',
+    duration: '200',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=GK_vRtHJZu4', // Biodiversity
     imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop',
@@ -504,41 +322,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Kiến thức nền về sinh học và sinh thái học',
       'Hiểu biết về các nguyên tắc bảo tồn',
       'Ưu tiên kinh nghiệm nghiên cứu thực địa',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'biology-ecosystem'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'vietnamese-heritage-explorer'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    climateTopics: [
-      'Tương tác khí hậu-đa dạng sinh học',
-      'Sự thay đổi môi trường sống',
-      'Di cư của các loài',
-      'Rủi ro tuyệt chủng',
-      'Cơ chế thích ứng',
-    ],
-    environmentalSolutions: [
-      'Quản lý khu bảo tồn',
-      'Chương trình phục hồi loài',
-      'Phục hồi môi trường sống',
-      'Hành lang động vật hoang dã',
-      'Bảo tồn ngoại vi',
-    ],
-    sustainabilityMethods: [
-      'Đánh giá dịch vụ hệ sinh thái',
-      'Quy hoạch bảo tồn',
-      'Gắn kết cộng đồng',
-      'Thực hành sử dụng bền vững',
-      'Giao thức giám sát',
-    ],
-    researchTools: ['Phương pháp khảo sát loài', 'Bẫy ảnh', 'Mã vạch DNA', 'Phân tích GIS', 'Mô hình hóa quần thể'],
-    policyApplications: [
-      'Chiến lược đa dạng sinh học',
-      'Luật pháp khu bảo tồn',
-      'Thực thi CITES',
-      'Đánh giá tác động môi trường',
-      'Thỏa thuận bảo tồn',
     ],
     exercises: [
       {
@@ -596,7 +379,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Chính sách Môi trường và Khung Quản trị',
     description:
       'Hiểu về phát triển chính sách môi trường, cấu trúc quản trị và cơ chế thực thi trong hệ thống hành chính Việt Nam.',
-    duration: '185 phút',
+    duration: '185',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=6xkaqTyB5D8', // Environmental Policy
     imageUrl: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=600&fit=crop',
@@ -612,47 +395,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Hiểu biết về hệ thống chính phủ',
       'Kiến thức về các vấn đề môi trường',
       'Quan tâm đến phân tích chính sách',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    climateTopics: [
-      'Khung chính sách khí hậu',
-      'Các hiệp định quốc tế',
-      'Kế hoạch hành động quốc gia',
-      'Thực hiện tại địa phương',
-      'Tích hợp chính sách',
-    ],
-    environmentalSolutions: [
-      'Khung pháp lý',
-      'Công cụ kinh tế',
-      'Các biện pháp tự nguyện',
-      'Tiêu chuẩn công nghệ',
-      'Hệ thống thông tin',
-    ],
-    sustainabilityMethods: [
-      'Phân tích chính sách',
-      'Gắn kết các bên liên quan',
-      'Đánh giá tác động',
-      'Hệ thống giám sát',
-      'Quản lý thích ứng',
-    ],
-    researchTools: [
-      'Khung phân tích chính sách',
-      'Lập bản đồ các bên liên quan',
-      'Công cụ đánh giá tác động',
-      'Phương pháp đánh giá',
-      'Kỹ thuật khảo sát',
-    ],
-    policyApplications: [
-      'Luật môi trường',
-      'Tuân thủ quy định',
-      'Thực thi chính sách',
-      'Hệ thống quản trị',
-      'Hợp tác quốc tế',
     ],
     exercises: [
       {
@@ -710,7 +452,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Đổi mới Công nghệ Xanh và Phát triển Bền vững',
     description:
       'Nắm vững phát triển công nghệ xanh, quy trình đổi mới và thiết kế giải pháp bền vững để giải quyết các thách thức môi trường của Việt Nam.',
-    duration: '215 phút',
+    duration: '215',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=TCtIRAFyTIY', // Green technology
     imageUrl: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&h=600&fit=crop',
@@ -726,47 +468,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Kiến thức nền về kỹ thuật hoặc công nghệ',
       'Hiểu biết về các quy trình đổi mới',
       'Kiến thức về mô hình kinh doanh là một lợi thế',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'renewable-energy-manager'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'nano-lab-explorer'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    climateTopics: [
-      'Giải pháp công nghệ khí hậu',
-      'Công nghệ giảm phát thải',
-      'Công nghệ thích ứng',
-      'Hệ thống thu giữ carbon',
-      'Đổi mới năng lượng sạch',
-    ],
-    environmentalSolutions: [
-      'Công nghệ kiểm soát ô nhiễm',
-      'Hệ thống hiệu quả tài nguyên',
-      'Giải pháp kinh tế tuần hoàn',
-      'Sản xuất xanh',
-      'Vật liệu bền vững',
-    ],
-    sustainabilityMethods: [
-      'Tư duy vòng đời',
-      'Đánh giá công nghệ',
-      'Quản lý đổi mới',
-      'Các chỉ số bền vững',
-      'Đo lường tác động',
-    ],
-    researchTools: [
-      'Công cụ đánh giá công nghệ',
-      'Khung đổi mới',
-      'Phát triển nguyên mẫu',
-      'Thiết bị thử nghiệm',
-      'Phân tích thị trường',
-    ],
-    policyApplications: [
-      'Chính sách đổi mới',
-      'Ưu đãi công nghệ',
-      'Tài trợ nghiên cứu',
-      'Sở hữu trí tuệ',
-      'Chuyển giao công nghệ',
     ],
     exercises: [
       {
@@ -824,7 +525,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Giáo dục Môi trường và Truyền thông Khoa học',
     description:
       'Nắm vững các chiến lược giáo dục môi trường, kỹ thuật truyền thông khoa học và phương pháp tiếp cận cộng đồng để thúc đẩy nhận thức về môi trường trong xã hội Việt Nam.',
-    duration: '170 phút',
+    duration: '170',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=SN5-DnOHQmE', // Science communication
     imageUrl: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=600&fit=crop',
@@ -840,47 +541,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Kiến thức khoa học môi trường',
       'Kỹ năng giao tiếp',
       'Quan tâm đến giáo dục và tiếp cận cộng đồng',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'content-creator-studio'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'history-timeline'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    climateTopics: [
-      'Truyền thông khí hậu',
-      'Hiểu biết của công chúng',
-      'Thay đổi hành vi',
-      'Tương tác với truyền thông',
-      'Học tập xã hội',
-    ],
-    environmentalSolutions: [
-      'Chương trình giáo dục',
-      'Chiến dịch nâng cao nhận thức',
-      'Sáng kiến cộng đồng',
-      'Chiến lược truyền thông',
-      'Tiếp cận kỹ thuật số',
-    ],
-    sustainabilityMethods: [
-      'Thiết kế giáo dục',
-      'Chiến lược gắn kết',
-      'Đo lường tác động',
-      'Đánh giá chương trình',
-      'Cải tiến liên tục',
-    ],
-    researchTools: [
-      'Phương pháp khảo sát',
-      'Nhóm tập trung',
-      'Công cụ tạo nội dung',
-      'Phân tích mạng xã hội',
-      'Khung đánh giá',
-    ],
-    policyApplications: [
-      'Chính sách giáo dục môi trường',
-      'Yêu cầu nâng cao nhận thức cộng đồng',
-      'Tham vấn cộng đồng',
-      'Gắn kết các bên liên quan',
-      'Tiêu chuẩn truyền thông',
     ],
     exercises: [
       {
@@ -940,7 +600,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Khoa học Biến đổi Khí hậu & Giám sát Môi trường',
     description:
       'Hiểu khoa học biến đổi khí hậu, kỹ thuật giám sát môi trường và phân tích dữ liệu cho nghiên cứu môi trường.',
-    duration: '200 phút',
+    duration: '200',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=EtW2rrLHs08', // Climate Change Explained
     imageUrl: '/images/lessons/climate-monitoring.jpg',
@@ -956,47 +616,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Hiểu biết về phân tích dữ liệu',
       'Nhận thức về môi trường',
       'Kiến thức về phương pháp nghiên cứu',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-data-analyst'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'climate-modeling'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    researchMethods: [
-      'Kỹ thuật lấy mẫu thực địa',
-      'Ứng dụng viễn thám',
-      'Quy trình phân tích trong phòng thí nghiệm',
-      'Phân tích dữ liệu thống kê',
-      'Bản đồ GIS và phân tích không gian',
-    ],
-    environmentalFactors: [
-      'Nồng độ khí nhà kính trong khí quyển',
-      'Các kiểu nhiệt độ và lượng mưa',
-      'Thay đổi mực nước biển',
-      'Các chỉ số đa dạng sinh học',
-      'Mức độ ô nhiễm (không khí, nước, đất)',
-    ],
-    monitoringTechnologies: [
-      'Hệ thống viễn thám vệ tinh',
-      'Trạm thời tiết tự động',
-      'Cảm biến chất lượng nước',
-      'Máy theo dõi ô nhiễm không khí',
-      'Thiết bị theo dõi đa dạng sinh học',
-    ],
-    solutionApproaches: [
-      'Thực hiện năng lượng tái tạo',
-      'Công nghệ thu giữ carbon',
-      'Phương pháp phục hồi hệ sinh thái',
-      'Thực hành nông nghiệp bền vững',
-      'Nguyên tắc kinh tế tuần hoàn',
-    ],
-    policyFrameworks: [
-      'Các hiệp định khí hậu quốc tế',
-      'Quy định môi trường quốc gia',
-      'Chính sách bền vững địa phương',
-      'Tiêu chuẩn môi trường của doanh nghiệp',
-      'Chương trình bảo tồn cộng đồng',
     ],
     exercises: [
       {
@@ -1106,7 +725,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Chính sách Môi trường & Phát triển Bền vững',
     description:
       'Hiểu các khung chính sách môi trường và các nguyên tắc phát triển bền vững để quản trị môi trường hiệu quả.',
-    duration: '180 phút',
+    duration: '180',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=iSItxQ8Wm1Q',
     imageUrl: 'https://i.ytimg.com/vi/iSItxQ8Wm1Q/hqdefault.jpg',
@@ -1122,47 +741,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Kiến thức khoa học môi trường',
       'Kinh nghiệm phân tích chính sách',
       'Kỹ năng quản lý các bên liên quan',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'renewable-energy-manager'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    researchMethods: [
-      'Đánh giá tác động chính sách',
-      'Kỹ thuật phân tích các bên liên quan',
-      'Phân tích chi phí-lợi ích',
-      'Đánh giá tác động môi trường',
-      'Phương pháp nghiên cứu có sự tham gia',
-    ],
-    environmentalFactors: [
-      'Yêu cầu tuân thủ quy định',
-      'Áp lực phát triển kinh tế',
-      'Cân nhắc về công bằng xã hội',
-      'Hạn chế về tính khả thi của công nghệ',
-      'Nhu cầu hợp tác quốc tế',
-    ],
-    monitoringTechnologies: [
-      'Hệ thống theo dõi tuân thủ chính sách',
-      'Cơ sở dữ liệu chỉ số môi trường',
-      'Nền tảng phản hồi của các bên liên quan',
-      'Công cụ đo lường tác động kinh tế',
-      'Hệ thống giám sát tiến bộ xã hội',
-    ],
-    solutionApproaches: [
-      'Phát triển chính sách tích hợp',
-      'Hợp tác đa bên',
-      'Chiến lược quản lý thích ứng',
-      'Cơ chế dựa trên khuyến khích',
-      'Chương trình chuyển giao công nghệ',
-    ],
-    policyFrameworks: [
-      'Mục tiêu Phát triển Bền vững của LHQ',
-      'Thực hiện Hiệp định Khí hậu Paris',
-      'Hợp tác môi trường ASEAN',
-      'Luật môi trường Việt Nam',
-      'Pháp lệnh bền vững địa phương',
     ],
     exercises: [
       {
@@ -1230,7 +808,7 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
     title: 'Phục hồi Hệ sinh thái & Bảo tồn Đa dạng Sinh học',
     description:
       'Nắm vững các kỹ thuật phục hồi hệ sinh thái và chiến lược bảo tồn đa dạng sinh học để phục hồi môi trường.',
-    duration: '160 phút',
+    duration: '160',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=9NRMbDel75A',
     imageUrl: 'https://i.ytimg.com/vi/9NRMbDel75A/hqdefault.jpg',
@@ -1246,47 +824,6 @@ export const environmentalClimateLessons: EnvironmentalClimateLessonType[] = [
       'Kỹ năng đánh giá môi trường',
       'Kinh nghiệm quản lý dự án',
       'Khả năng gắn kết cộng đồng',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'biology-ecosystem'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'vietnamese-heritage-explorer'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    researchMethods: [
-      'Đánh giá cơ sở sinh thái',
-      'Quy trình giám sát đa dạng sinh học',
-      'Đánh giá chất lượng môi trường sống',
-      'Khảo sát quần thể loài',
-      'Định giá dịch vụ hệ sinh thái',
-    ],
-    environmentalFactors: [
-      'Tác động của phân mảnh môi trường sống',
-      'Các mối đe dọa tuyệt chủng của loài',
-      'Suy thoái dịch vụ hệ sinh thái',
-      'Nhu cầu thích ứng với biến đổi khí hậu',
-      'Các vấn đề xung đột giữa người và động vật hoang dã',
-    ],
-    monitoringTechnologies: [
-      'Hệ thống bẫy ảnh',
-      'Thiết bị giám sát âm thanh',
-      'Công nghệ khảo sát bằng máy bay không người lái',
-      'Hệ thống theo dõi GPS',
-      'Lấy mẫu DNA môi trường',
-    ],
-    solutionApproaches: [
-      'Phục hồi hệ sinh thái tích cực',
-      'Hỗ trợ tái sinh thụ động',
-      'Chương trình tái du nhập loài',
-      'Tạo hành lang môi trường sống',
-      'Bảo tồn dựa vào cộng đồng',
-    ],
-    policyFrameworks: [
-      'Công ước về Đa dạng Sinh học',
-      'Quy định thương mại động vật hoang dã CITES',
-      'Chiến lược đa dạng sinh học quốc gia',
-      'Kế hoạch quản lý khu bảo tồn',
-      'Thỏa thuận bảo tồn cộng đồng',
     ],
     exercises: [
       {

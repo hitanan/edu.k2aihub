@@ -1,0 +1,68 @@
+import { K2Module } from '@/data/moduleNavigation';
+import { ModuleData } from '@/types';
+
+export const spaceExplorationModuleData: ModuleData = {
+  id: 'space-exploration',
+  title: 'Space Technology & Exploration',
+  subtitle: 'Công nghệ vũ trụ & khám phá không gian',
+  description:
+    'Khám phá thế giới công nghệ vũ trụ từ rocket science đến space missions. Học về satellite technology, space exploration missions và tương lai của nhân loại trong không gian.',
+  level: 'Trung bình đến Nâng cao',
+  duration: '15-20 giờ',
+  category: 'Engineering & Technology',
+  heroImageUrl: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=1200&h=600&fit=crop',
+  features: [
+    'Rocket Science & Propulsion Systems',
+    'Satellite Technology & Communications',
+    'Space Mission Planning & Operations',
+    'Orbital Mechanics & Trajectory Design',
+    'Space Exploration History & Future',
+    'International Space Cooperation',
+    'Commercial Space Industry',
+    'Mars Colonization & Deep Space',
+  ],
+  icon: '🚀',
+  color: 'from-indigo-600 to-purple-600',
+  objectives: [
+    'Hiểu nguyên lý rocket science và propulsion systems',
+    'Thiết kế và mô phỏng space missions',
+    'Phân tích orbital mechanics và trajectory planning',
+    'Khám phá satellite technology và applications',
+    'Nghiên cứu space exploration history và future plans',
+    'Phát triển space technology solutions',
+  ],
+  prerequisites: [
+    'Vật lý đại cương (mechanics, thermodynamics)',
+    'Toán học cao cấp (calculus, differential equations)',
+    'Kiến thức về engineering principles',
+    'Tư duy logic và khả năng giải quyết vấn đề',
+  ],
+  careerOutcomes: [
+    'Aerospace Engineer (25-45 triệu VNĐ)',
+    'Mission Operations Specialist (20-35 triệu VNĐ)',
+    'Satellite Systems Engineer (22-40 triệu VNĐ)',
+    'Propulsion Engineer (25-42 triệu VNĐ)',
+    'Space Systems Analyst (18-32 triệu VNĐ)',
+    'Flight Dynamics Engineer (24-38 triệu VNĐ)',
+    'Space Program Manager (30-55 triệu VNĐ)',
+    'Planetary Scientist (20-45 triệu VNĐ)',
+  ],
+  industryApplications: [
+    'Commercial space companies (SpaceX, Blue Origin)',
+    'Government space agencies (NASA, ESA)',
+    'Satellite communications providers',
+    'Earth observation and mapping',
+    'National defense và security',
+    'Scientific research institutions',
+    'Space tourism companies',
+    'Mining và resource exploration',
+    'Climate monitoring systems',
+    'GPS và navigation services',
+  ],
+  marketDemand: {
+    averageSalary: '20-55 triệu VNĐ',
+    jobGrowth: '42% Growth',
+    hireDemand: 'Rất cao',
+  },
+  relatedModules: [K2Module.AerospaceEngineering, K2Module.AdvancedAI, K2Module.DataScienceAnalytics],
+};

@@ -1,391 +1,335 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '../types/lesson-base';
 
-export interface QuantumComputingLesson extends BaseLessonData {
-  vietnamContext: {
-    title: string;
-    content: string[];
-  };
-  careerConnect: {
-    name: string;
-    title: string;
-    company: string;
-    imageUrl: string;
-    quote: string;
-  };
-  quizzes: Array<{
-    question: string;
-    options: string[];
-    correctAnswerIndex: number;
-    explanation: string;
-  }>;
-}
-
-export const quantumComputingLessons: QuantumComputingLesson[] = [
+export const quantumComputingLessons: BaseLessonData[] = [
   {
-    id: 'quantum-fundamentals',
-    title: 'Cơ bản về Điện toán Lượng tử',
+    id: 'quantum-intro',
+    title: 'Nhập môn Điện toán Lượng tử',
     description:
-      'Khám phá thế giới kỳ diệu của máy tính lượng tử, từ các nguyên lý vật lý cơ bản đến tiềm năng ứng dụng.',
-    duration: '150 phút',
+      'Giới thiệu các khái niệm cơ bản của điện toán lượng tử, so sánh sự khác biệt giữa bit cổ điển và qubit, và khám phá tiềm năng cách mạng của công nghệ này.',
+    duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=pZnt0qSYTHM',
-    imageUrl: 'https://i.ytimg.com/vi/pZnt0qSYTHM/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=IrbwR_j_sIQ',
+    imageUrl: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=600&fit=crop',
     objectives: [
-      'Hiểu các nguyên lý vật lý lượng tử cơ bản',
-      'Nắm vững khái niệm qubit và chồng chập (superposition)',
-      'Phân biệt điện toán lượng tử với điện toán cổ điển',
-      'Tìm hiểu về các cổng lượng tử và mạch lượng tử',
-      'Khám phá các khái niệm: Chồng chập, Vướng víu, Giao thoa lượng tử, Mất đồng bộ, Đo lường lượng tử',
+      'Hiểu được tại sao cần điện toán lượng tử.',
+      'Phân biệt được bit và qubit.',
+      'Nắm được các khái niệm cốt lõi: chồng chập và vướng víu lượng tử.',
+      'Khám phá các lĩnh vực ứng dụng tiềm năng của máy tính lượng tử.',
     ],
-    prerequisites: ['Toán học cơ bản: đại số tuyến tính', 'Vật lý đại cương', 'Hiểu biết về máy tính cổ điển'],
+    prerequisites: ['Kiến thức cơ bản về vật lý và toán học phổ thông.', 'Tư duy logic và sự tò mò về công nghệ mới.'],
     exercises: [
       {
-        title: 'Mô phỏng Mạch Lượng tử với Qiskit',
-        description: 'Xây dựng và mô phỏng một mạch lượng tử đơn giản với IBM Qiskit để hiểu các khái niệm cơ bản.',
+        title: 'So sánh Bit và Qubit',
+        description: 'Vẽ và mô tả sự khác biệt trong không gian trạng thái của một bit cổ điển và một qubit.',
         difficulty: 'Cơ bản',
-        materials: ['Python', 'Qiskit', 'Jupyter Notebook', 'Tài khoản IBM Quantum Experience'],
         procedure: [
-          'Cài đặt Qiskit: pip install qiskit qiskit-aer matplotlib',
-          'Tạo một mạch lượng tử với 2 qubit',
-          'Áp dụng cổng Hadamard để tạo trạng thái chồng chập',
-          'Áp dụng cổng CNOT để tạo trạng thái vướng víu',
-          'Thêm các phép đo lường',
-          'Chạy mô phỏng trên trình giả lập cục bộ',
-          'Trực quan hóa kết quả bằng biểu đồ histogram',
+          'Vẽ một đường thẳng và đánh dấu hai điểm 0 và 1 để biểu diễn bit.',
+          'Vẽ một hình cầu (khối cầu Bloch) và giải thích rằng qubit có thể tồn tại ở bất kỳ điểm nào trên bề mặt.',
+          'Viết ra phương trình trạng thái của một qubit tổng quát.',
         ],
-        expectedResults: 'Hiểu được cách các trạng thái lượng tử hoạt động và cách tạo ra sự vướng víu.',
-        solution:
-          '# Mạch Lượng tử cơ bản\nfrom qiskit import QuantumCircuit, Aer, execute\nfrom qiskit.visualization import plot_histogram\nimport matplotlib.pyplot as plt\n\n# Tạo mạch lượng tử\nqc = QuantumCircuit(2, 2)\n\n# Áp dụng cổng Hadamard\nqc.h(0)\n\n# Tạo vướng víu với CNOT\nqc.cx(0, 1)\n\n# Đo lường\nqc.measure_all()\n\n# Mô phỏng\nsimulator = Aer.get_backend("qasm_simulator")\njob = execute(qc, simulator, shots=1024)\nresult = job.result()\ncounts = result.get_counts(qc)\n\n# Trực quan hóa\nprint("Kết quả đo lường:", counts)\nplot_histogram(counts)\nplt.show()',
+        expectedResults: 'Hiểu rõ sự khác biệt về khả năng biểu diễn thông tin giữa bit và qubit.',
       },
     ],
     realWorldApplications: [
-      'Mã hóa lượng tử cho bảo mật tuyệt đối',
-      'Tối ưu hóa logistics và chuỗi cung ứng',
-      'Khám phá thuốc và mô hình hóa phân tử',
-      'Tăng tốc học máy (Machine Learning)',
-      'Dự báo thời tiết chính xác hơn',
-    ],
-    caseStudies: [
-      {
-        title: 'Thành tựu Ưu thế Lượng tử của Google',
-        organization: 'Google AI Quantum',
-        problem: 'Chứng minh máy tính lượng tử có thể giải quyết vấn đề mà máy tính cổ điển không thể làm hiệu quả.',
-        solution: 'Sử dụng chip Sycamore 53-qubit để giải quyết bài toán lấy mẫu ngẫu nhiên phức tạp.',
-        impact: 'Hoàn thành tác vụ trong 200 giây, so với ước tính 10.000 năm đối với siêu máy tính mạnh nhất.',
-        innovations: ['Qubit siêu dẫn', 'Kỹ thuật sửa lỗi lượng tử', 'Thuật toán lượng tử'],
-      },
+      'Mô phỏng phân tử để phát triển thuốc mới.',
+      'Tối ưu hóa các hệ thống phức tạp (logistics, tài chính).',
+      'Phá vỡ các hệ thống mã hóa hiện tại.',
+      'Phát triển các loại vật liệu mới với đặc tính mong muốn.',
     ],
     vietnamContext: {
-      title: 'Nền tảng Lượng tử tại Việt Nam',
+      title: 'Điện toán lượng tử tại Việt Nam: Bước đầu hội nhập',
       content: [
-        'Tại Việt Nam, nghiên cứu về khoa học lượng tử và máy tính lượng tử đang ở giai đoạn đầu, tập trung chủ yếu tại các viện nghiên cứu và trường đại học lớn như Viện Vật lý (Viện Hàn lâm KH&CN Việt Nam), Đại học Quốc gia Hà Nội và TP.HCM.',
-        'Các nhóm nghiên cứu đang nỗ lực xây dựng nền tảng kiến thức, đào tạo thế hệ nhà khoa học trẻ và tiếp cận với các nền tảng đám mây lượng tử như IBM Quantum để thực hiện các mô phỏng đầu tiên.',
+        'Việt Nam đã bắt đầu có những nhóm nghiên cứu về vật lý lượng tử và công nghệ lượng tử tại các trường đại học lớn như ĐHQG Hà Nội và ĐHQG TP.HCM.',
+        'Các hội thảo và khóa học về điện toán lượng tử đang dần được tổ chức, thu hút sự quan tâm của sinh viên và các nhà khoa học trẻ.',
+        'FPT Software là một trong những công ty công nghệ tiên phong của Việt Nam trong việc nghiên cứu và tìm hiểu ứng dụng của điện toán lượng tử.',
       ],
     },
     careerConnect: {
-      name: 'GS.TS. Nguyễn Văn Hùng',
-      title: 'Trưởng phòng Thí nghiệm Vật lý Lượng tử',
-      company: 'Viện Khoa học Vật liệu (hư cấu)',
-      imageUrl: '/placeholder-attraction.svg',
+      name: 'Giáo sư Nguyễn Văn A',
+      title: 'Trưởng phòng thí nghiệm Vật lý Lượng tử',
+      company: 'Viện Khoa học và Công nghệ Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-van-a',
       quote:
-        'Hiểu được các nguyên lý cơ bản của thế giới lượng tử là bước đầu tiên để làm chủ công nghệ đột phá này. Việt Nam cần một thế hệ trẻ đam mê và dấn thân.',
+        'Điện toán lượng tử là một cuộc cách mạng. Việt Nam cần nhanh chóng xây dựng nguồn nhân lực chất lượng cao để không bị tụt hậu trong cuộc đua công nghệ toàn cầu này. Chúng tôi đang nỗ lực để đưa các khái niệm này đến gần hơn với sinh viên.',
     },
     quizzes: [
       {
-        question: 'Đơn vị thông tin cơ bản trong máy tính lượng tử là gì?',
-        options: ['Bit', 'Qubit', 'Gate', 'Circuit'],
+        question: 'Đơn vị thông tin cơ bản trong máy tính lượng tử được gọi là gì?',
+        options: ['Bit', 'Qubit', 'Gate', 'Electron'],
         correctAnswerIndex: 1,
-        explanation:
-          'Qubit là đơn vị cơ bản của thông tin lượng tử, tương tự như bit trong máy tính cổ điển, nhưng có thêm các thuộc tính đặc biệt như chồng chập.',
+        explanation: 'Qubit (quantum bit) là đơn vị thông tin cơ bản của máy tính lượng tử, tương tự như bit trong máy tính cổ điển.',
       },
       {
-        question: 'Hiện tượng "chồng chập" (superposition) cho phép qubit làm gì?',
-        options: [
-          'Chỉ tồn tại ở trạng thái 0',
-          'Chỉ tồn tại ở trạng thái 1',
-          'Tồn tại ở cả trạng thái 0 và 1 cùng một lúc',
-          'Sao chép chính nó',
+        question: 'Hiện tượng nào cho phép một qubit tồn tại ở trạng thái 0 và 1 cùng một lúc?',
+        options: ['Vướng víu (Entanglement)', 'Chồng chập (Superposition)', 'Giao thoa (Interference)', 'Đường hầm (Tunneling)'],
+        correctAnswerIndex: 1,
+        explanation: 'Chồng chập (Superposition) là nguyên lý cơ học lượng tử cho phép một qubit tồn tại trong sự kết hợp của cả hai trạng thái 0 và 1.',
+      },
+    ],
+  },
+  {
+    id: 'qubits-and-gates',
+    title: 'Qubit và các Cổng Lượng tử',
+    description:
+      'Đi sâu vào toán học của qubit, biểu diễn chúng trên khối cầu Bloch và tìm hiểu cách các cổng lượng tử (Pauli-X, Hadamard, CNOT) thao tác trên chúng.',
+    duration: '150 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=9f-v_i543_c',
+    imageUrl: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=600&fit=crop',
+    objectives: [
+      'Biểu diễn trạng thái qubit bằng vector và trên khối cầu Bloch.',
+      'Hiểu chức năng của các cổng lượng tử một qubit: X, Y, Z, H.',
+      'Hiểu chức năng của cổng lượng tử hai qubit: CNOT.',
+      'Xây dựng các mạch lượng tử đơn giản.',
+    ],
+    prerequisites: ['Kiến thức về Đại số tuyến tính (vector, ma trận).', 'Hoàn thành bài "Nhập môn Điện toán Lượng tử".'],
+    exercises: [
+      {
+        title: 'Xây dựng mạch Bell State',
+        description: 'Sử dụng cổng Hadamard và CNOT để tạo ra một trạng thái vướng víu (Bell state) từ hai qubit ban đầu ở trạng thái |00>.',
+        difficulty: 'Trung bình',
+        materials: ['Trình giả lập mạch lượng tử (ví dụ: IBM Quantum Experience, Quirk).'],
+        procedure: [
+          'Khởi tạo hai qubit ở trạng thái |0>.',
+          'Áp dụng cổng Hadamard (H) lên qubit đầu tiên.',
+          'Áp dụng cổng CNOT với qubit đầu tiên là control và qubit thứ hai là target.',
+          'Đo lường xác suất của các trạng thái đầu ra (00, 01, 10, 11).',
         ],
+        expectedResults: 'Trạng thái đầu ra là một sự chồng chập của |00> và |11> với xác suất mỗi trạng thái khoảng 50%, cho thấy hai qubit đã bị vướng víu.',
+      },
+    ],
+    realWorldApplications: [
+      'Nền tảng cho mọi thuật toán lượng tử.',
+      'Sửa lỗi lượng tử (Quantum Error Correction).',
+      'Mô phỏng các hệ thống vật lý.',
+    ],
+    vietnamContext: {
+      title: 'Giảng dạy Toán và Lý cho Kỷ nguyên Lượng tử',
+      content: [
+        'Chương trình giáo dục đại học ở Việt Nam cần cập nhật, nhấn mạnh hơn vào Đại số tuyến tính và các khái niệm vật lý hiện đại để chuẩn bị cho sinh viên.',
+        'Các công cụ giả lập trực tuyến như IBM Quantum Experience là tài nguyên quý giá cho sinh viên Việt Nam để thực hành mà không cần phần cứng đắt tiền.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bạn Trần Thị Bích',
+      title: 'Sinh viên ngành Vật lý Kỹ thuật',
+      company: 'Đại học Bách Khoa Hà Nội',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-thi-bich',
+      quote:
+        'Lúc đầu, các ma trận và vector có vẻ trừu tượng, nhưng khi thấy chúng biến đổi trạng thái của qubit trên khối cầu Bloch, tôi thực sự bị cuốn hút. Nó giống như học một ngôn ngữ mới để nói chuyện với tự nhiên ở cấp độ cơ bản nhất.',
+    },
+    quizzes: [
+      {
+        question: 'Cổng Hadamard (H) làm gì với một qubit ở trạng thái |0>?',
+        options: ['Lật nó thành |1>', 'Không làm gì cả', 'Tạo ra một trạng thái chồng chập của |0> và |1>', 'Đo lường qubit'],
         correctAnswerIndex: 2,
-        explanation:
-          'Chồng chập là một nguyên lý cơ bản của cơ học lượng tử, cho phép một qubit biểu diễn đồng thời cả giá trị 0 và 1 cho đến khi được đo.',
+        explanation: 'Cổng Hadamard là cổng lượng tử cơ bản dùng để tạo ra trạng thái chồng chập. Khi tác động lên |0>, nó tạo ra trạng thái |+> = (|0> + |1>)/sqrt(2).',
+      },
+      {
+        question: 'Cổng CNOT (Controlled-NOT) cần bao nhiêu qubit để hoạt động?',
+        options: ['1', '2', '3', '4'],
+        correctAnswerIndex: 1,
+        explanation: 'CNOT là một cổng hai qubit, bao gồm một qubit điều khiển (control) và một qubit mục tiêu (target). Nó lật qubit mục tiêu nếu qubit điều khiển là |1>.',
+      },
+    ],
+  },
+  {
+    id: 'quantum-entanglement',
+    title: 'Vướng víu Lượng tử và Dịch chuyển Tức thời',
+    description:
+      'Khám phá "hành động ma quái ở khoảng cách xa" như Einstein đã mô tả. Tìm hiểu cách các qubit vướng víu được kết nối với nhau bất kể khoảng cách và ứng dụng trong dịch chuyển lượng tử.',
+    duration: '130 phút',
+    difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=ZzRcAk-2y_A',
+    imageUrl: 'https://images.unsplash.com/photo-1504333638930-c8787321eee0?w=1200&h=600&fit=crop',
+    objectives: [
+      'Định nghĩa và nhận biết một trạng thái vướng víu.',
+      'Hiểu nghịch lý EPR và ý nghĩa của nó.',
+      'Nắm được các bước của giao thức dịch chuyển lượng tử.',
+      'Phân biệt giữa dịch chuyển lượng tử và truyền thông tin nhanh hơn ánh sáng.',
+    ],
+    prerequisites: ['Hoàn thành bài "Qubit và các Cổng Lượng tử".', 'Hiểu biết về các trạng thái Bell.'],
+    exercises: [
+      {
+        title: 'Mô phỏng Giao thức Dịch chuyển Lượng tử',
+        description: 'Sử dụng trình giả lập để dịch chuyển trạng thái của một qubit từ Alice đến Bob bằng cách sử dụng một cặp qubit vướng víu.',
+        difficulty: 'Nâng cao',
+        materials: ['Trình giả lập mạch lượng tử.'],
+        procedure: [
+          'Chuẩn bị 3 qubit: một qubit |ψ> cần dịch chuyển (của Alice), và một cặp Bell |β00> (một cho Alice, một cho Bob).',
+          'Alice thực hiện phép toán CNOT và Hadamard trên qubit của cô ấy.',
+          'Alice đo hai qubit của mình và gửi kết quả (2 bit cổ điển) cho Bob.',
+          'Dựa trên kết quả của Alice, Bob áp dụng các cổng X và/hoặc Z tương ứng lên qubit của mình.',
+        ],
+        expectedResults: 'Qubit của Bob sẽ ở trạng thái |ψ>, giống hệt trạng thái ban đầu của qubit của Alice, chứng tỏ dịch chuyển đã thành công.',
+      },
+    ],
+    realWorldApplications: [
+      'Mạng lượng tử và Internet lượng tử.',
+      'Phân phối khóa lượng tử (Quantum Key Distribution) cho truyền thông bảo mật.',
+      'Tính toán lượng tử phân tán.',
+    ],
+    vietnamContext: {
+      title: 'An ninh Mạng trong Kỷ nguyên Lượng tử',
+      content: [
+        'Khi máy tính lượng tử đủ mạnh, chúng có thể phá vỡ các hệ thống mã hóa hiện tại (như RSA). Việt Nam, với nền kinh tế số đang phát triển, sẽ phải đối mặt với thách thức an ninh này.',
+        'Nghiên cứu về Mật mã Lượng tử (Quantum Cryptography) và Phân phối Khóa Lượng tử (QKD) là một hướng đi quan trọng để đảm bảo an ninh quốc gia trong tương lai.',
+      ],
+    },
+    careerConnect: {
+      name: 'Tiến sĩ Lê Hoàng Nam',
+      title: 'Chuyên gia An ninh Mạng',
+      company: 'Ban Cơ yếu Chính phủ',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-hoang-nam',
+      quote:
+        'Vướng víu lượng tử không chỉ là một khái niệm vật lý kỳ lạ, nó là nền tảng cho thế hệ tiếp theo của công nghệ bảo mật. Chúng tôi đang nghiên cứu cách sử dụng chính các định luật của vật lý lượng tử để tạo ra những kênh truyền thông không thể bị nghe lén.',
+    },
+    quizzes: [
+      {
+        question: 'Trong một cặp qubit vướng víu, nếu đo một qubit ở trạng thái |0>, trạng thái của qubit còn lại sẽ là gì ngay lập tức?',
+        options: ['|0>', '|1>', 'Trạng thái chồng chập', 'Phụ thuộc vào trạng thái ban đầu của nó'],
+        correctAnswerIndex: 0,
+        explanation: 'Trong trạng thái Bell |β00> = (|00> + |11>)/sqrt(2), nếu một qubit được đo là |0>, qubit còn lại chắc chắn sẽ là |0> ngay lập tức, và ngược lại.',
+      },
+      {
+        question: 'Dịch chuyển lượng tử có vi phạm giới hạn tốc độ ánh sáng không?',
+        options: ['Có, nó truyền thông tin tức thời', 'Không, vì nó cần một kênh truyền thông cổ điển', 'Chỉ trong một số trường hợp', 'Chưa ai biết chắc'],
+        correctAnswerIndex: 1,
+        explanation: 'Dịch chuyển lượng tử không thể dùng để truyền thông tin nhanh hơn ánh sáng vì nó yêu cầu Alice phải gửi kết quả đo của mình cho Bob qua một kênh cổ điển (vốn bị giới hạn bởi tốc độ ánh sáng).',
       },
     ],
   },
   {
     id: 'quantum-algorithms',
-    title: 'Các Thuật toán Lượng tử',
-    description: 'Tìm hiểu các thuật toán lượng tử nổi tiếng và cách chúng tạo ra lợi thế tính toán.',
+    title: 'Thuật toán Lượng tử: Shor và Grover',
+    description:
+      'Tìm hiểu hai thuật toán lượng tử nổi tiếng nhất: Thuật toán Shor để phân tích số nguyên tố (đe dọa mã hóa RSA) và thuật toán Grover để tìm kiếm trong cơ sở dữ liệu không có cấu trúc.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=V85332IZVs0',
-    imageUrl: 'https://i.ytimg.com/vi/V85332IZVs0/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=iTr3X5y2AgI',
+    imageUrl: 'https://images.unsplash.com/photo-1605835613824-3c28a456b3a3?w=1200&h=600&fit=crop',
     objectives: [
-      'Nắm vững thuật toán Shor và ứng dụng phá mã RSA',
-      'Hiểu thuật toán Grover cho tìm kiếm nhanh',
-      'Tìm hiểu Biến đổi Fourier Lượng tử (Quantum Fourier Transform)',
-      'Thực hành triển khai các thuật toán lượng tử',
-      'Khám phá các thuật toán: Shor, Grover, Quantum Fourier Transform, VQE, QAOA',
+      'Hiểu được vấn đề mà thuật toán Shor giải quyết và tại sao nó lại quan trọng.',
+      'Nắm được ý tưởng chính đằng sau thuật toán Grover và lợi thế tốc độ của nó.',
+      'So sánh độ phức tạp tính toán của thuật toán cổ điển và lượng tử cho các vấn đề này.',
+      'Nhận thức được tác động của các thuật toán này đối với thế giới thực.',
     ],
-    prerequisites: [
-      'Kiến thức cơ bản về điện toán lượng tử',
-      'Toán học: số học modular, biến đổi Fourier',
-      'Lập trình Python và Qiskit',
-    ],
+    prerequisites: ['Hoàn thành các bài học trước.', 'Kiến thức cơ bản về lý thuyết số và độ phức tạp thuật toán.'],
     exercises: [
       {
-        title: 'Triển khai Thuật toán Grover',
-        description: 'Cài đặt thuật toán Grover để tìm kiếm trong một cơ sở dữ liệu không có cấu trúc.',
-        difficulty: 'Nâng cao',
-        materials: ['Qiskit', 'Python', 'Kiến thức toán học'],
-        procedure: [
-          'Thiết kế hàm oracle cho mục tiêu cần tìm',
-          'Triển khai toán tử khuếch tán (khuếch đại biên độ)',
-          'Tính toán số lần lặp tối ưu: π/4 * √N',
-          'Xây dựng mạch Grover hoàn chỉnh',
-          'Kiểm tra với cơ sở dữ liệu 4 mục và 8 mục',
-          'So sánh với độ phức tạp của tìm kiếm cổ điển',
-          'Phân tích xác suất thành công theo số lần lặp',
-        ],
-        expectedResults: 'Tìm thấy mục tiêu với xác suất cao sau khoảng √N lần lặp.',
-        solution:
-          '# Triển khai Thuật toán Grover\nfrom qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister\nfrom qiskit import Aer, execute\nimport numpy as np\n\ndef grover_algorithm(n_qubits, target_item):\n    # Tạo mạch lượng tử\n    qreg = QuantumRegister(n_qubits)\n    creg = ClassicalRegister(n_qubits)\n    qc = QuantumCircuit(qreg, creg)\n    \n    # Khởi tạo trạng thái chồng chập\n    for qubit in range(n_qubits):\n        qc.h(qubit)\n    \n    # Số lần lặp\n    iterations = int(np.pi/4 * np.sqrt(2**n_qubits))\n    \n    for _ in range(iterations):\n        # Oracle\n        oracle_circuit(qc, target_item, n_qubits)\n        \n        # Toán tử khuếch tán\n        diffusion_operator(qc, n_qubits)\n    \n    # Đo lường\n    qc.measure(qreg, creg)\n    \n    return qc\n\ndef oracle_circuit(qc, target, n_qubits):\n    # Đánh dấu trạng thái mục tiêu\n    # Việc triển khai phụ thuộc vào mục tiêu cụ thể\n    pass\n\ndef diffusion_operator(qc, n_qubits):\n    # Áp dụng Hadamard cho tất cả qubit\n    for qubit in range(n_qubits):\n        qc.h(qubit)\n    \n    # Lật quanh |00...0>\n    for qubit in range(n_qubits):\n        qc.x(qubit)\n    \n    # Cổng Z đa điều kiện\n    qc.h(n_qubits-1)\n    qc.mcx(list(range(n_qubits-1)), n_qubits-1)\n    qc.h(n_qubits-1)\n    \n    # Lật lại\n    for qubit in range(n_qubits):\n        qc.x(qubit)\n    \n    # Áp dụng Hadamard cho tất cả qubit\n    for qubit in range(n_qubits):\n        qc.h(qubit)',
-      },
-    ],
-    realWorldApplications: [
-      'Phá vỡ mã hóa RSA và mã hóa đường cong elliptic',
-      'Tìm kiếm trong cơ sở dữ liệu lớn với độ phức tạp O(√N)',
-      'Mô phỏng các hệ lượng tử nhiều vật thể',
-      'Các bài toán tối ưu hóa (sử dụng QAOA)',
-      'Học máy với lợi thế lượng tử',
-    ],
-    vietnamContext: {
-      title: 'An ninh mạng và Thuật toán Lượng tử',
-      content: [
-        'Sự ra đời của thuật toán Shor đặt ra một thách thức lớn cho an ninh mạng toàn cầu, bao gồm cả Việt Nam. Các hệ thống mã hóa hiện tại (như RSA) có nguy cơ bị bẻ khóa.',
-        'Ban Cơ yếu Chính phủ và các công ty an ninh mạng hàng đầu Việt Nam đang tích cực nghiên cứu và chuẩn bị cho "mật mã hậu lượng tử" (Post-Quantum Cryptography - PQC) để đảm bảo an toàn cho hạ tầng số quốc gia.',
-      ],
-    },
-    careerConnect: {
-      name: 'Chị Lê Thị Bảo An',
-      title: 'Chuyên gia Mật mã Lượng tử',
-      company: 'Viettel Cyber Security (hư cấu)',
-      imageUrl: '/placeholder-attraction.svg',
-      quote:
-        'Chúng tôi đang trong một cuộc chạy đua thầm lặng: xây dựng những chiếc khiên vững chắc trước khi những mũi giáo lượng tử sắc bén nhất được tạo ra.',
-    },
-    quizzes: [
-      {
-        question: 'Thuật toán Shor nổi tiếng vì khả năng làm gì?',
-        options: [
-          'Tìm kiếm trong cơ sở dữ liệu',
-          'Phân tích số nguyên thành thừa số một cách hiệu quả',
-          'Mô phỏng vật liệu',
-          'Tối ưu hóa chuỗi cung ứng',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'Thuật toán Shor có thể phân tích một số nguyên lớn thành các thừa số nguyên tố nhanh hơn theo cấp số nhân so với thuật toán cổ điển tốt nhất, đe dọa trực tiếp đến mã hóa RSA.',
-      },
-      {
-        question: 'Thuật toán Grover được ứng dụng chính trong lĩnh vực nào?',
-        options: [
-          'Phá mã',
-          'Tìm kiếm trong một cơ sở dữ liệu lớn, không có cấu trúc',
-          'Dự báo thời tiết',
-          'Nhận dạng hình ảnh',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'Thuật toán Grover cung cấp một sự tăng tốc bậc hai (quadratic speedup) cho các bài toán tìm kiếm, giúp tìm một mục tiêu trong N mục với khoảng √N lần thử.',
-      },
-    ],
-  },
-  {
-    id: 'quantum-cryptography',
-    title: 'Mật mã Lượng tử và Bảo mật',
-    description: 'Khám phá cách điện toán lượng tử thay đổi bảo mật thông tin và mã hóa.',
-    duration: '120 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=_5NQf8k3Jo0',
-    imageUrl: 'https://i.ytimg.com/vi/_5NQf8k3Jo0/hqdefault.jpg',
-    objectives: [
-      'Hiểu về Phân phối Khóa Lượng tử (Quantum Key Distribution - QKD)',
-      'Nắm vững về mật mã hậu lượng tử (post-quantum cryptography)',
-      'Tìm hiểu các phương pháp mã hóa an toàn-lượng tử',
-      'Đánh giá tác động của điện toán lượng tử lên an ninh mạng',
-    ],
-    prerequisites: ['Kiến thức mã hóa cổ điển', 'Kiến thức cơ bản về điện toán lượng tử', 'Bảo mật mạng'],
-    exercises: [
-      {
-        title: 'Mô phỏng Giao thức BB84',
-        description:
-          'Triển khai giao thức trao đổi khóa lượng tử BB84 để hiểu cách nó hoạt động và phát hiện nghe lén.',
+        title: 'Phân tích bài toán tìm kiếm',
+        description: 'So sánh số bước cần thiết để tìm một mục trong danh sách N mục bằng thuật toán cổ điển và thuật toán Grover.',
         difficulty: 'Trung bình',
         procedure: [
-          'Mô phỏng Alice gửi các bit ngẫu nhiên',
-          'Lựa chọn cơ sở ngẫu nhiên (thẳng và chéo)',
-          'Bob đo lường với cơ sở ngẫu nhiên của mình',
-          'So sánh công khai cơ sở đã dùng',
-          'Sàng lọc khóa và sửa lỗi',
-          'Phát hiện kẻ nghe lén (eavesdropping)',
-          'Tạo khóa an toàn cuối cùng',
+          'Tính số phép toán trung bình và tệ nhất cho tìm kiếm tuyến tính cổ điển (O(N)).',
+          'Viết ra độ phức tạp của thuật toán Grover (O(sqrt(N))).',
+          'Tính toán lợi thế tốc độ cho N = 1 triệu, N = 1 tỷ.',
         ],
-        expectedResults: 'Hiểu rõ cách QKD tạo ra khóa an toàn và tại sao việc nghe lén sẽ bị phát hiện.',
-        solution:
-          '# Giao thức BB84\n# Alice gửi qubit cho Bob\n# Bob đo lường\n# Alice và Bob công khai cơ sở đã dùng\n# Họ giữ lại các bit mà cơ sở của họ khớp nhau\n# Họ kiểm tra một phần nhỏ của khóa để phát hiện nghe lén\n# Nếu tỷ lệ lỗi thấp, khóa còn lại được coi là an toàn.',
+        expectedResults: 'Hiểu rõ lợi thế tốc độ bậc hai (quadratic speedup) của thuật toán Grover so với thuật toán cổ điển tốt nhất.',
       },
     ],
     realWorldApplications: [
-      'Truyền thông an toàn-lượng tử cho ngân hàng',
-      'Các kênh liên lạc an toàn của chính phủ',
-      'Bảo vệ dữ liệu y tế',
-      'Truyền thông quân sự',
-      'Hệ thống giao dịch tài chính',
+      'Thuật toán Shor: Phá vỡ mã hóa RSA, nền tảng của an ninh Internet hiện tại.',
+      'Thuật toán Grover: Tăng tốc giải quyết các bài toán tối ưu hóa và tìm kiếm, ví dụ như trong lĩnh vực AI và logistics.',
+      'Mô phỏng các hệ thống lượng tử phức tạp.',
     ],
     vietnamContext: {
-      title: 'Bảo mật Kênh Lượng tử cho Chính phủ và Tài chính',
+      title: 'Thách thức và Cơ hội cho ngành Tài chính - Ngân hàng',
       content: [
-        'Việt Nam đang xem xét các công nghệ bảo mật kênh liên lạc thế hệ mới. Phân phối Khóa Lượng tử (QKD) là một trong những hướng đi tiềm năng để bảo vệ các kênh truyền thông trọng yếu của chính phủ, quân đội và ngành tài chính-ngân hàng.',
-        'Dù việc triển khai trên diện rộng còn tốn kém, việc xây dựng các "hành lang an toàn" sử dụng QKD giữa các trung tâm dữ liệu quan trọng là một kịch bản đang được các nhà hoạch định chính sách cân nhắc.',
+        'Hệ thống ngân hàng và tài chính Việt Nam hiện đang dựa trên mã hóa RSA. Sự ra đời của máy tính lượng tử đủ mạnh sẽ là một mối đe dọa an ninh nghiêm trọng.',
+        'Mặt khác, các thuật toán tối ưu hóa lượng tử có thể giúp các ngân hàng Việt Nam quản lý rủi ro, tối ưu hóa danh mục đầu tư và phát hiện gian lận hiệu quả hơn.',
       ],
     },
     careerConnect: {
-      name: 'Anh Trần Quốc Trung',
-      title: 'Kỹ sư trưởng, Mạng Lưới Viễn thông An toàn',
-      company: 'VNPT Technology (hư cấu)',
-      imageUrl: '/placeholder-attraction.svg',
+      name: 'Anh Phạm Tuấn Anh',
+      title: 'Chuyên gia R&D',
+      company: 'Ngân hàng Techcombank',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-tuan-anh',
       quote:
-        'Với QKD, chúng ta không chỉ mã hóa thông tin, chúng ta sử dụng chính các quy luật của vật lý để đảm bảo rằng mọi hành vi nghe lén đều bị phát hiện. Đó là cấp độ bảo mật cao nhất.',
+        'Chúng tôi phải đi trước một bước. Việc nghiên cứu về "mật mã hậu lượng tử" (post-quantum cryptography) không còn là khoa học viễn tưởng, mà là một yêu cầu cấp thiết để bảo vệ tài sản của khách hàng và sự ổn định của hệ thống tài chính trong thập kỷ tới.',
     },
     quizzes: [
       {
-        question: 'Phân phối Khóa Lượng tử (QKD) giải quyết vấn đề gì?',
-        options: [
-          'Tăng tốc độ mã hóa',
-          'Phân phối một khóa mã hóa bí mật một cách an toàn',
-          'Bẻ khóa mã hóa của đối phương',
-          'Lưu trữ khóa an toàn hơn',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'QKD sử dụng các nguyên lý của cơ học lượng tử để cho phép hai bên tạo ra và chia sẻ một khóa bí mật ngẫu nhiên mà chỉ họ biết, đồng thời có thể phát hiện sự hiện diện của bên thứ ba.',
+        question: 'Thuật toán Shor có khả năng giải quyết hiệu quả bài toán nào mà máy tính cổ điển không thể?',
+        options: ['Sắp xếp một danh sách', 'Nhân hai số lớn', 'Phân tích một số lớn ra thừa số nguyên tố', 'Tìm đường đi ngắn nhất trong đồ thị'],
+        correctAnswerIndex: 2,
+        explanation: 'Thuật toán Shor có thể phân tích một số nguyên tố trong thời gian đa thức, trong khi thuật toán cổ điển tốt nhất cần thời gian siêu đa thức, khiến nó trở nên bất khả thi với các số lớn.',
       },
       {
-        question: '"Mật mã hậu lượng tử" (PQC) là gì?',
-        options: [
-          'Mã hóa sử dụng máy tính lượng tử',
-          'Các thuật toán mã hóa chạy trên máy tính cổ điển nhưng có khả năng chống lại các cuộc tấn công từ cả máy tính cổ điển và lượng tử',
-          'Một tên gọi khác của QKD',
-          'Mã hóa đã lỗi thời',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'PQC là các thuật toán được thiết kế để đảm bảo an toàn trong tương lai, khi các máy tính lượng tử đủ mạnh để phá vỡ các hệ thống mã hóa hiện tại đã trở nên phổ biến.',
+        question: 'Thuật toán Grover mang lại lợi thế tốc độ như thế nào so với tìm kiếm cổ điển?',
+        options: ['Tốc độ gấp đôi', 'Tốc độ lũy thừa (Exponential speedup)', 'Tốc độ bậc hai (Quadratic speedup)', 'Không có lợi thế tốc độ'],
+        correctAnswerIndex: 2,
+        explanation: 'Thuật toán Grover có thể tìm một mục trong N mục với khoảng sqrt(N) bước, so với N/2 bước trung bình của tìm kiếm cổ điển. Đây được gọi là lợi thế tốc độ bậc hai.',
       },
     ],
   },
   {
-    id: 'quantum-future',
-    title: 'Tương lai của Điện toán Lượng tử',
-    description: 'Khám phá xu hướng phát triển và tác động tương lai của điện toán lượng tử.',
-    duration: '90 phút',
-    difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=cer528-lIU8',
-    imageUrl: 'https://i.ytimg.com/vi/cer528-lIU8/hqdefault.jpg',
+    id: 'quantum-programming-qiskit',
+    title: 'Lập trình Lượng tử với Qiskit',
+    description:
+      'Hướng dẫn thực hành từng bước để bắt đầu lập trình lượng tử. Cài đặt môi trường, viết mạch lượng tử đầu tiên với Qiskit, và chạy nó trên cả trình giả lập và máy tính lượng tử thực của IBM.',
+    duration: '200 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=a11bdY1i-wI',
+    imageUrl: 'https://images.unsplash.com/photo-1614926852348-c778453a6a6a?w=1200&h=600&fit=crop',
     objectives: [
-      'Hiểu lộ trình phát triển phần cứng lượng tử',
-      'Nắm vững các thách thức kỹ thuật hiện tại',
-      'Dự báo tác động lên các ngành công nghiệp',
-      'Cơ hội nghề nghiệp trong lĩnh vực điện toán lượng tử',
+      'Cài đặt Python và Qiskit.',
+      'Xây dựng, vẽ và mô phỏng các mạch lượng tử.',
+      'Gửi một công việc (job) đến một máy tính lượng tử thực qua cloud.',
+      'Phân tích kết quả và hiểu về nhiễu (noise) trong các thiết bị lượng tử thực.',
     ],
-    prerequisites: ['Kiến thức cơ bản về điện toán lượng tử', 'Hiểu biết chung về công nghệ'],
+    prerequisites: ['Kinh nghiệm lập trình Python.', 'Tài khoản IBM Quantum Experience (miễn phí).'],
     exercises: [
       {
-        title: 'Phân tích Hệ sinh thái Lượng tử',
-        description: 'Nghiên cứu và so sánh các nền tảng điện toán lượng tử hiện tại.',
-        difficulty: 'Cơ bản',
+        title: 'Hello, Quantum World!',
+        description: 'Tạo một trạng thái Bell, chạy trên cả trình giả lập và một máy tính lượng tử thực, sau đó so sánh kết quả.',
+        difficulty: 'Trung bình',
+        materials: ['Python, Jupyter Notebook, Qiskit, tài khoản IBM Quantum.'],
         procedure: [
-          'Nghiên cứu về IBM Quantum, Google Quantum AI, Amazon Braket',
-          'So sánh số lượng qubit và tỷ lệ lỗi',
-          'Phân tích các mô hình định giá',
-          'Đánh giá khả năng tiếp cận cho các nhà phát triển',
-          'Dự báo thời gian đạt được lợi thế lượng tử',
-          'Tạo một bài thuyết trình về bối cảnh lượng tử',
+          'Import các thư viện cần thiết từ Qiskit.',
+          'Tạo một QuantumCircuit với 2 qubit và 2 classical bit.',
+          'Áp dụng cổng H lên qubit 0 và CNOT với control là 0, target là 1.',
+          'Thêm phép đo vào mạch.',
+          'Chạy mạch trên `qasm_simulator` và vẽ biểu đồ kết quả.',
+          'Chọn một backend máy tính lượng tử thực (ví dụ: `ibmq_lima`), gửi job và chờ kết quả.',
+          'So sánh biểu đồ kết quả từ giả lập và từ máy thật, nhận xét về sự khác biệt do nhiễu.',
         ],
-        expectedResults: 'Một bài phân tích tổng quan về các nền tảng lượng tử hàng đầu và vị thế của chúng.',
-        solution:
-          'Bài tập này là một bài nghiên cứu và phân tích, không có một giải pháp code duy nhất. Sinh viên cần trình bày kết quả dưới dạng báo cáo hoặc bài thuyết trình.',
+        expectedResults: 'Thành công trong việc chạy một mạch lượng tử trên cả giả lập và phần cứng thực. Kết quả từ máy thật sẽ có một tỷ lệ nhỏ các trạng thái 01 và 10 do nhiễu, trong khi giả lập chỉ cho 00 và 11.',
       },
     ],
     realWorldApplications: [
-      'Dịch vụ điện toán đám mây lượng tử',
-      'Nền tảng học máy lượng tử',
-      'Mô phỏng lượng tử để khám phá thuốc',
-      'Tối ưu hóa lượng tử cho logistics',
-      'Cảm biến lượng tử và đo lường',
-    ],
-    caseStudies: [
-      {
-        title: 'Dịch vụ Đám mây Lượng tử',
-        organization: 'IBM, Google, Amazon, Microsoft',
-        problem: 'Cung cấp quyền truy cập vào máy tính lượng tử mà không cần đầu tư phần cứng đắt đỏ.',
-        solution:
-          'Các gã khổng lồ công nghệ đã xây dựng các nền tảng đám mây (IBM Quantum, Amazon Braket, Azure Quantum) cho phép các nhà phát triển và nhà nghiên cứu chạy thuật toán trên các máy tính lượng tử thực sự.',
-        impact:
-          'Dân chủ hóa việc tiếp cận công nghệ lượng tử, thúc đẩy nghiên cứu và phát triển ứng dụng trên toàn cầu.',
-        innovations: [
-          'Lượng tử như một Dịch vụ (QaaS)',
-          'Tác vụ lai lượng tử-cổ điển',
-          'Bộ công cụ phát triển lượng tử',
-        ],
-      },
-      {
-        title: 'Tăng tốc Khám phá Thuốc',
-        organization: 'Các công ty dược phẩm & công nghệ',
-        problem:
-          'Mô phỏng các phân tử phức tạp để tìm ra thuốc mới là một bài toán cực kỳ khó đối với máy tính cổ điển.',
-        solution:
-          'Sử dụng máy tính lượng tử để mô phỏng chính xác hơn các tương tác ở cấp độ phân tử, giúp sàng lọc và thiết kế các ứng cử viên thuốc tiềm năng nhanh hơn.',
-        impact:
-          'Có tiềm năng rút ngắn đáng kể thời gian và chi phí phát triển thuốc mới, từ hàng thập kỷ xuống còn vài năm.',
-        innovations: ['Bộ giải Eigen lượng tử biến phân (VQE)', 'Học máy lượng tử cho hóa học'],
-      },
+      'Nghiên cứu và phát triển các thuật toán lượng tử mới.',
+      'Kiểm tra các lý thuyết vật lý lượng tử.',
+      'Giáo dục và đào tạo thế hệ các nhà khoa học lượng tử tiếp theo.',
     ],
     vietnamContext: {
-      title: 'Cơ hội Lượng tử cho Doanh nghiệp Việt Nam',
+      title: 'Cơ hội cho Lập trình viên Việt Nam',
       content: [
-        'Các tập đoàn công nghệ lớn của Việt Nam như FPT, Viettel, Vingroup đang ở giai đoạn "sẵn sàng cho lượng tử" (quantum-ready), theo dõi sát sao sự phát triển và xây dựng đội ngũ R&D nòng cốt.',
-        'Cơ hội trước mắt cho Việt Nam nằm ở việc phát triển phần mềm và thuật toán ứng dụng trên các nền tảng đám mây lượng tử, tập trung vào các bài toán tối ưu hóa cho logistics, tài chính, và sản xuất mà Việt Nam có thế mạnh.',
+        'Với các nền tảng cloud như IBM Quantum, các lập trình viên Việt Nam có thể tiếp cận và thực hành trên các máy tính lượng tử hàng đầu thế giới mà không cần đầu tư phần cứng.',
+        'Kỹ năng lập trình Python là một lợi thế lớn, vì hầu hết các framework lượng tử lớn (Qiskit, Cirq, PennyLane) đều dựa trên Python.',
+        'Các cuộc thi và hackathon về lập trình lượng tử trực tuyến là cơ hội tốt để các tài năng trẻ Việt Nam cọ xát và học hỏi.',
       ],
     },
     careerConnect: {
-      name: 'Anh Đỗ Minh Khôi',
-      title: 'Giám đốc Quỹ đầu tư Công nghệ Sâu',
-      company: 'Mekong Capital (hư cấu)',
-      imageUrl: '/placeholder-attraction.svg',
+      name: 'Bạn Lê Văn Cường',
+      title: 'Lập trình viên Python',
+      company: 'Tự do',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-van-cuong',
       quote:
-        'Chúng tôi không đầu tư vào công nghệ của ngày hôm nay, chúng tôi đầu tư vào đội ngũ sẽ xây dựng công nghệ của ngày mai. Điện toán lượng tử là một trong những canh bạc lớn nhất và thú vị nhất.',
+        'Tôi chưa bao giờ nghĩ mình có thể điều khiển một máy tính lượng tử từ căn phòng của mình ở Đà Nẵng. Qiskit và IBM Quantum đã mở ra một thế giới hoàn toàn mới. Việc thấy kết quả chạy trên một cỗ máy thực sự, dù có nhiễu, là một trải nghiệm vô cùng phấn khích.',
     },
     quizzes: [
       {
-        question: 'Thách thức lớn nhất của phần cứng máy tính lượng tử hiện nay là gì?',
-        options: [
-          'Tốc độ quá chậm',
-          'Hiện tượng "mất đồng bộ lượng tử" (decoherence) và lỗi',
-          'Tốn quá nhiều điện',
-          'Khó lập trình',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'Các trạng thái lượng tử rất mong manh và dễ bị ảnh hưởng bởi môi trường bên ngoài, gây ra lỗi tính toán. Việc kiểm soát và sửa lỗi là một trong những thách thức hàng đầu.',
+        question: 'Qiskit là một framework mã nguồn mở được phát triển bởi công ty nào?',
+        options: ['Google', 'Microsoft', 'IBM', 'Amazon'],
+        correctAnswerIndex: 2,
+        explanation: 'Qiskit (Quantum Information Science Kit) là một SDK mã nguồn mở được phát triển và hậu thuẫn bởi IBM để làm việc với các máy tính lượng tử.',
       },
       {
-        question: 'Một trong những ngành được dự báo sẽ bị ảnh hưởng sớm nhất bởi điện toán lượng tử là gì?',
-        options: ['Bán lẻ', 'Nông nghiệp', 'Dược phẩm và Khoa học vật liệu', 'Giải trí'],
-        correctAnswerIndex: 2,
-        explanation:
-          'Các ngành phụ thuộc vào việc mô phỏng các hệ thống phức tạp ở cấp độ phân tử và nguyên tử, như dược phẩm và vật liệu mới, được cho là sẽ gặt hái được "lợi thế lượng tử" sớm nhất.',
+        question: 'Tại sao kết quả từ một máy tính lượng tử thực thường khác với trình giả lập?',
+        options: ['Do lỗi lập trình', 'Do nhiễu (noise) trong hệ thống lượng tử', 'Do trình giả lập không chính xác', 'Do tốc độ mạng'],
+        correctAnswerIndex: 1,
+        explanation: 'Các qubit rất nhạy cảm với môi trường xung quanh, gây ra hiện tượng "nhiễu" làm thay đổi trạng thái của chúng và dẫn đến sai sót trong tính toán. Đây là một trong những thách thức lớn nhất của điện toán lượng tử hiện nay.',
       },
     ],
   },

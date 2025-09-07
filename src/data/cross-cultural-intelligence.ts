@@ -1,61 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-export interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-export interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface CrossCulturalLessonType extends BaseLessonData {
-  culturalDimensions: string[];
-  communicationPatterns: Array<{
-    culture: string;
-    directness: string;
-    contextLevel: string;
-    timeOrientation: string;
-    hierarchyStyle: string;
-    examples: string[];
-  }>;
-  adaptationStrategies: string[];
-  globalCompetencies: string[];
-  mainContent: {
-    introduction: string;
-    keyConcepts: Array<{
-      title: string;
-      description: string;
-      examples: string[];
-    }>;
-    practicalApplications: Array<{
-      area: string;
-      description: string;
-    }>;
-    conclusion: string;
-  };
-  relatedGames: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-  vietnamContext?: VietnamContext;
-  careerConnect?: CareerConnect;
-  quizzes?: Quiz[];
-}
-
-export const crossCulturalLessons: CrossCulturalLessonType[] = [
+export const crossCulturalLessons: BaseLessonData[] = [
   {
     id: 'cultural-intelligence-fundamentals',
     title: 'Cơ Bản Trí Tuệ Đa Văn Hóa',

@@ -1,54 +1,6 @@
-export interface AILessonType {
-  id: string;
-  title: string;
-  description: string;
-  duration: string;
-  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
-  category: string;
-  videoUrl?: string;
-  objectives: string[];
-  prerequisites: string[];
-  tools: string[];
-  exercises: Array<{
-    title: string;
-    description: string;
-    difficulty: string;
-    steps: string[];
-    expectedResults: string;
-    tips?: string[];
-  }>;
-  realWorldApplications: string[];
-  resources?: Array<{
-    title: string;
-    url: string;
-    type: string;
-  }>;
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export const aiLessons: AILessonType[] = [
+export const aiLessons: BaseLessonData[] = [
   {
     id: 'office-work',
     title: 'AI cho Công việc Văn phòng',

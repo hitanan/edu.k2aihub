@@ -1,15 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '../types/lesson-base';
 
-export interface MobileAppLessonType extends BaseLessonData {
-  platform: string;
-  developmentLevel: string;
-  programmingLanguages: string[];
-  frameworks: string[];
-  monetizationStrategies?: string[];
-  vietnameseMobileMarket?: string[];
-}
-
-export const mobileAppLessons: MobileAppLessonType[] = [
+export const mobileAppDevelopmentLessons: BaseLessonData[] = [
   {
     id: 'react-native-fundamentals',
     title: 'React Native Cơ Bản - Build App Đầu Tiên',
@@ -17,16 +8,6 @@ export const mobileAppLessons: MobileAppLessonType[] = [
       'Mastery React Native từ zero đến hero, xây dựng ứng dụng mobile đầu tiên với navigation, state management và API integration.',
     duration: '240 phút',
     difficulty: 'Cơ bản',
-    platform: 'Cross-platform (iOS & Android)',
-    developmentLevel: 'Beginner to Intermediate',
-    programmingLanguages: ['JavaScript', 'TypeScript'],
-    frameworks: ['React Native', 'Expo'],
-    monetizationStrategies: ['In-app Purchases', 'Advertising', 'Subscription'],
-    vietnameseMobileMarket: [
-      'High demand for e-commerce and utility apps',
-      'Large Android user base',
-      'Growing demand for high-quality UI/UX',
-    ],
     videoUrl: 'https://www.youtube.com/watch?v=0-S5a0eXPoc',
     imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=600&fit=crop',
     objectives: [
@@ -151,10 +132,6 @@ export const mobileAppLessons: MobileAppLessonType[] = [
       'Native iOS development từ cơ bản đến nâng cao, từ UIKit đến SwiftUI, App Store deployment và iOS ecosystem mastery.',
     duration: '280 phút',
     difficulty: 'Trung bình',
-    platform: 'iOS',
-    developmentLevel: 'Intermediate to Advanced',
-    programmingLanguages: ['Swift'],
-    frameworks: ['UIKit', 'SwiftUI', 'Core Data', 'CloudKit'],
     videoUrl: 'https://www.youtube.com/watch?v=09TeUXjzpKs',
     imageUrl: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=600&fit=crop',
     objectives: [
@@ -260,10 +237,6 @@ export const mobileAppLessons: MobileAppLessonType[] = [
       'Modern Android development với Kotlin, Jetpack Compose, Room database, và Google Play Store optimization cho Vietnamese market.',
     duration: '260 phút',
     difficulty: 'Trung bình',
-    platform: 'Android',
-    developmentLevel: 'Intermediate to Advanced',
-    programmingLanguages: ['Kotlin'],
-    frameworks: ['Jetpack Compose', 'Room', 'ViewModel', 'LiveData'],
     videoUrl: 'https://www.youtube.com/watch?v=F9UC9DY-vIU',
     imageUrl: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?w=1200&h=600&fit=crop',
     objectives: [
@@ -374,10 +347,6 @@ export const mobileAppLessons: MobileAppLessonType[] = [
       'Build beautiful, high-performance apps for iOS và Android với single codebase using Flutter và Dart programming language.',
     duration: '220 phút',
     difficulty: 'Trung bình',
-    platform: 'Cross-platform (iOS & Android)',
-    developmentLevel: 'Beginner to Intermediate',
-    programmingLanguages: ['Dart'],
-    frameworks: ['Flutter', 'Provider', 'Bloc', 'Firebase'],
     videoUrl: 'https://www.youtube.com/watch?v=VPvVD8t02U8',
     imageUrl: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=600&fit=crop',
     objectives: [
@@ -487,10 +456,6 @@ export const mobileAppLessons: MobileAppLessonType[] = [
       'Master App Store Optimization (ASO), user acquisition strategies, và app marketing specific cho Vietnamese mobile market.',
     duration: '180 phút',
     difficulty: 'Trung bình',
-    platform: 'All Mobile Platforms',
-    developmentLevel: 'Intermediate',
-    programmingLanguages: ['N/A'],
-    frameworks: ['ASO Tools', 'Analytics Platforms'],
     videoUrl: 'https://www.youtube.com/watch?v=bqM9x-oRZOA',
     imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop',
     objectives: [

@@ -56,9 +56,16 @@ export interface ContactForm {
   message: string;
 }
 
-export interface PageProps {
-  params: Promise<{ lessonId: string; gameId?: string; slug: string; category: string }>;
-}
+export type PageProps = {
+  params: {
+    lessonId?: string;
+    gameId?: string;
+    slug?: string;
+    category?: string;
+  };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
 
 export interface EducationalGame {
   id: string;

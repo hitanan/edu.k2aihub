@@ -1,51 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-export interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-export interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface CriticalThinkingLessonType extends BaseLessonData {
-  mainContent?: Array<{
-    heading: string;
-    details: string;
-  }>;
-  relatedGames?: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-  thinkingFrameworks: string[];
-  practicalExercises: Array<{
-    title: string;
-    scenario: string;
-    steps: string[];
-    expectedOutcome: string;
-    realWorldApplication: string;
-  }>;
-  cognitiveSkills: string[];
-  assessmentMethods: string[];
-  vietnamContext?: VietnamContext;
-  careerConnect?: CareerConnect;
-  quizzes?: Quiz[];
-}
-
-export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
+export const criticalThinkingLessons: BaseLessonData[] = [
   {
     id: 'critical-thinking-fundamentals',
     title: 'Cơ Bản Tư Duy Phê Phán',

@@ -1,40 +1,6 @@
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import type { BaseLessonData } from '@/types/lesson-base';
 
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface BiomedicalEngineeringLesson extends BaseLessonData {
-  medicalApplications?: string[];
-  regulatoryConsiderations?: string[];
-  safetyCriteria?: string[];
-  clinicalValidation?: {
-    phase: string;
-    description: string;
-    requirements: string[];
-  }[];
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
-
-export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
+export const biomedicalEngineeringLessons: BaseLessonData[] = [
   {
     id: 'medical-device-design',
     title: 'Thiết Kế & Phát Triển Thiết Bị Y Tế',

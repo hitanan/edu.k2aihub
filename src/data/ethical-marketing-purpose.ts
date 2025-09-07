@@ -1,26 +1,12 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { EDUCATIONAL_GAMES_DATA, EducationalGame } from '@/data/educationalGames';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface EthicalMarketingLessonType extends BaseLessonData {
-  ethicalPrinciples: string[];
-  brandPurposeAreas: string[];
-  transparencyMethods: string[];
-  socialImpactMetrics: string[];
-  stakeholderGroups: string[];
-  relatedGames?: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-}
-
-export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
+export const ethicalMarketingLessons: BaseLessonData[] = [
   {
     id: 'purpose-driven-brand-foundation',
     title: 'Xây Dựng Nền Tảng Thương Hiệu Có Mục Đích',
     description:
       'Hiểu cách định nghĩa và phát triển một mục đích đích thực cho thương hiệu, kết nối với các giá trị của đối tượng mục tiêu và tạo ra sự kết nối có ý nghĩa.',
-    duration: '180 phút',
+    duration: '180',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=u4ZoJKF_VuA', // Simon Sinek - Start with Why
     imageUrl: 'https://images.unsplash.com/photo-1542626991-cbc4e32524cc?w=800&h=600&fit=crop',
@@ -37,38 +23,6 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
       'Hiểu biết về nghiên cứu đối tượng mục tiêu',
       'Nhận thức về các vấn đề xã hội và môi trường',
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'digital-marketing-campaign'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'content-creator-studio'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    ethicalPrinciples: [
-      'Cân bằng Mục đích-Lợi nhuận',
-      'Giao tiếp Đích thực',
-      'Giá trị cho các bên liên quan',
-      'Tư duy dài hạn',
-    ],
-    brandPurposeAreas: [
-      'Tác động xã hội',
-      'Bền vững môi trường',
-      'Phát triển cộng đồng',
-      'Thực hành kinh doanh có đạo đức',
-    ],
-    transparencyMethods: [
-      'Tài liệu hóa mục đích',
-      'Giao tiếp với các bên liên quan',
-      'Báo cáo tiến độ',
-      'Đo lường tác động',
-    ],
-    socialImpactMetrics: [
-      'Điểm tin cậy thương hiệu',
-      'Nhận thức về mục đích',
-      'Tỷ lệ tương tác xã hội',
-      'Chỉ số tác động cộng đồng',
-    ],
-    stakeholderGroups: ['Khách hàng', 'Nhân viên', 'Cộng đồng', 'Đối tác', 'Xã hội'],
     exercises: [
       {
         title: 'Hội thảo Khám phá Mục đích',
@@ -124,7 +78,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     title: 'Khung và Tiêu chuẩn cho Marketing Đạo đức',
     description:
       'Học các khung đạo đức và tiêu chuẩn ngành để đảm bảo các chiến dịch marketing trung thực, minh bạch và có tác động tích cực cho xã hội.',
-    duration: '150 phút',
+    duration: '150',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=c1XC7KJiPWQ', // Ethical Marketing
     imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop',
@@ -141,33 +95,6 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
       'Hiểu biết về tâm lý người tiêu dùng',
       'Kiến thức cơ bản về các quy định pháp lý',
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'digital-marketing-campaign'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    ethicalPrinciples: [
-      'Sự thật trong Quảng cáo',
-      'Bảo vệ Người tiêu dùng',
-      'Quyền riêng tư Dữ liệu',
-      'Cạnh tranh Công bằng',
-    ],
-    brandPurposeAreas: [
-      'Giao tiếp Trung thực',
-      'Quyền lợi Người tiêu dùng',
-      'Bảo vệ Dữ liệu',
-      'Thực hành Kinh doanh Công bằng',
-    ],
-    transparencyMethods: ['Công bố Rõ ràng', 'Giao tiếp Mở', 'Quảng cáo Trung thực', 'Giá cả Minh bạch'],
-    socialImpactMetrics: [
-      'Điểm Trung thực',
-      'Chỉ số Minh bạch',
-      'Đánh giá Tin cậy của Người tiêu dùng',
-      'Tỷ lệ Tuân thủ Đạo đức',
-    ],
-    stakeholderGroups: ['Người tiêu dùng', 'Cơ quan Quản lý', 'Đối thủ trong ngành', 'Truyền thông', 'Xã hội'],
     exercises: [
       {
         title: 'Kiểm toán Marketing Đạo đức',
@@ -226,7 +153,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     title: 'Đo lường và Báo cáo Tác động Xã hội',
     description:
       'Nắm vững các phương pháp và công cụ để đo lường, theo dõi và truyền thông tác động xã hội của các hoạt động marketing và sáng kiến thương hiệu một cách hiệu quả.',
-    duration: '165 phút',
+    duration: '165',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=X3t8XvSALek', // Measuring social impact
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
@@ -243,38 +170,6 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
       'Hiểu biết về các vấn đề xã hội và nhu cầu cộng đồng',
       'Kiến thức về các khái niệm bền vững',
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'data-visualization'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    ethicalPrinciples: [
-      'Tác động có thể đo lường',
-      'Báo cáo minh bạch',
-      'Trách nhiệm giải trình của các bên liên quan',
-      'Cải tiến liên tục',
-    ],
-    brandPurposeAreas: [
-      'Lợi tức xã hội trên đầu tư',
-      'Lợi ích cộng đồng',
-      'Tác động môi trường',
-      'Giá trị cho các bên liên quan',
-    ],
-    transparencyMethods: [
-      'Báo cáo tác động',
-      'Trực quan hóa bảng điều khiển',
-      'Cập nhật cho các bên liên quan',
-      'Báo cáo công khai',
-    ],
-    socialImpactMetrics: [
-      'ROI xã hội',
-      'Điểm tương tác cộng đồng',
-      'Giảm tác động môi trường',
-      'Sự hài lòng của các bên liên quan',
-    ],
-    stakeholderGroups: ['Người thụ hưởng', 'Nhà đầu tư', 'Cộng đồng', 'Đối tác', 'Cơ quan quản lý'],
     exercises: [
       {
         title: 'Phát triển Bảng điều khiển Tác động Xã hội',
@@ -333,7 +228,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     title: 'Mô hình Kinh doanh Bền vững và Kinh tế Tuần hoàn',
     description:
       'Khám phá các mô hình kinh doanh bền vững sáng tạo tích hợp các nguyên tắc kinh tế tuần hoàn với các chiến lược marketing dựa trên mục đích để thành công lâu dài.',
-    duration: '195 phút',
+    duration: '195',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=zCRKvDyyHmI', // Circular economy business models
     imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=600&fit=crop',
@@ -350,23 +245,6 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
       'Hiểu biết về các khái niệm bền vững',
       'Kiến thức về phân tích chuỗi giá trị',
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'renewable-energy-manager'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'biology-ecosystem'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'investment-simulator'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    ethicalPrinciples: ['Bền vững Môi trường', 'Công bằng Xã hội', 'Khả thi Kinh tế', 'Các thế hệ tương lai'],
-    brandPurposeAreas: ['Thiết kế Tuần hoàn', 'Kinh doanh Tái tạo', 'Giá trị Chung', 'Tác động Dài hạn'],
-    transparencyMethods: [
-      'Báo cáo Bền vững',
-      'Các chỉ số Tuần hoàn',
-      'Tài liệu hóa Tác động',
-      'Gắn kết các bên liên quan',
-    ],
-    socialImpactMetrics: ['Giảm Dấu chân Carbon', 'Loại bỏ Chất thải', 'Việc làm cho Cộng đồng', 'Tác động Tái tạo'],
-    stakeholderGroups: ['Môi trường', 'Cộng đồng', 'Chuỗi cung ứng', 'Nhà đầu tư', 'Các thế hệ tương lai'],
     exercises: [
       {
         title: 'Mô hình Kinh doanh Tuần hoàn Canvas',
@@ -421,7 +299,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     title: 'Kết nối với Người tiêu dùng có ý thức và Xây dựng Cộng đồng',
     description:
       'Nắm vững các chiến lược để tương tác với người tiêu dùng có ý thức, xây dựng cộng đồng đích thực và thúc đẩy các mối quan hệ lâu dài dựa trên các giá trị chung.',
-    duration: '170 phút',
+    duration: '170',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=QMH4rPEJ5BI', // Building a community
     imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop',
@@ -437,24 +315,6 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
       'Kinh nghiệm marketing trên mạng xã hội',
       'Kỹ năng quản lý cộng đồng',
       'Hiểu biết về tâm lý người tiêu dùng',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'content-creator-studio'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'vietnamese-heritage-explorer'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    ethicalPrinciples: ['Giao tiếp Đích thực', 'Trao quyền cho Cộng đồng', 'Giá trị Chung', 'Mối quan hệ Lâu dài'],
-    brandPurposeAreas: ['Xây dựng Cộng đồng', 'Giá trị Chung', 'Tương tác Đích thực', 'Mối quan hệ Lâu dài'],
-    transparencyMethods: ['Đối thoại Mở', 'Phản hồi từ Cộng đồng', 'Giao tiếp Minh bạch', 'Kể chuyện Đích thực'],
-    socialImpactMetrics: ['Tỷ lệ Tương tác Cộng đồng', 'Điểm phù hợp Giá trị', 'Tỷ lệ Vận động', 'Giữ chân Lâu dài'],
-    stakeholderGroups: [
-      'Người tiêu dùng có ý thức',
-      'Người ủng hộ Thương hiệu',
-      'Thành viên Cộng đồng',
-      'Người có ảnh hưởng',
-      'Đối tác',
     ],
     exercises: [
       {
@@ -510,7 +370,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     title: 'Tích hợp Giá trị Văn hóa Việt Nam vào Marketing có Mục đích',
     description:
       'Tìm hiểu sâu về các giá trị văn hóa Việt Nam và cách tích hợp chúng một cách đích thực vào các chiến lược marketing dựa trên mục đích để có sự phù hợp tại địa phương.',
-    duration: '155 phút',
+    duration: '155',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=2Q18LaHAkNo', // Vietnamese culture
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
@@ -526,29 +386,6 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
       'Hiểu biết cơ bản về văn hóa Việt Nam',
       'Kinh nghiệm bản địa hóa marketing',
       'Nhận thức về sự nhạy cảm văn hóa',
-    ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'vietnamese-heritage-explorer'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'vietnam-geography-quiz'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'history-timeline'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    ethicalPrinciples: ['Tôn trọng Văn hóa', 'Phù hợp với Địa phương', 'Hòa hợp Cộng đồng', 'Giá trị Truyền thống'],
-    brandPurposeAreas: ['Di sản Văn hóa', 'Giá trị Cộng đồng', 'Tập trung vào Gia đình', 'Hòa hợp Xã hội'],
-    transparencyMethods: ['Tham vấn Văn hóa', 'Phản hồi từ Cộng đồng', 'Đối tác Địa phương', 'Đại diện Đích thực'],
-    socialImpactMetrics: [
-      'Điểm Đích thực Văn hóa',
-      'Sự chấp nhận của Cộng đồng Địa phương',
-      'Chỉ số Nhạy cảm Văn hóa',
-      'Sự phù hợp Khu vực',
-    ],
-    stakeholderGroups: [
-      'Cộng đồng Địa phương',
-      'Lãnh đạo Văn hóa',
-      'Khán giả Khu vực',
-      'Các nhóm Truyền thống',
-      'Người tiêu dùng Hiện đại',
     ],
     exercises: [
       {
@@ -609,7 +446,7 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
     title: 'Trách nhiệm Xã hội của Doanh nghiệp và Kể chuyện Đích thực',
     description:
       'Học cách phát triển các chiến lược CSR toàn diện và truyền đạt chúng thông qua cách kể chuyện đích thực để xây dựng lòng tin và sự tương tác.',
-    duration: '185 phút',
+    duration: '185',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=jpt1TvdBmok', // CSR and storytelling
     imageUrl: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop',
@@ -626,28 +463,6 @@ export const ethicalMarketingLessons: EthicalMarketingLessonType[] = [
       'Kỹ năng kể chuyện và tạo nội dung',
       'Hiểu biết về các vấn đề xã hội',
     ],
-    relatedGames: [
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'content-creator-studio'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'ai-ethics-dilemma'),
-      EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'e-government-portal'),
-    ]
-      .filter((game): game is EducationalGame => !!game)
-      .map((game) => ({ id: game.id, name: game.title, description: game.description })),
-    ethicalPrinciples: ['Tác động Thực sự', 'Giao tiếp Minh bạch', 'Giá trị cho các bên liên quan', 'Cam kết Lâu dài'],
-    brandPurposeAreas: ['Trách nhiệm Xã hội', 'Tác động Cộng đồng', 'Quản lý Môi trường', 'Lãnh đạo có Đạo đức'],
-    transparencyMethods: [
-      'Câu chuyện Tác động',
-      'Báo cáo Tiến độ',
-      'Cập nhật cho các bên liên quan',
-      'Nội dung Hậu trường',
-    ],
-    socialImpactMetrics: [
-      'Điểm Tác động CSR',
-      'Đánh giá Tính xác thực',
-      'Chỉ số Tin cậy của các bên liên quan',
-      'Tỷ lệ Tương tác Câu chuyện',
-    ],
-    stakeholderGroups: ['Cộng đồng', 'Nhân viên', 'Nhà đầu tư', 'Truyền thông', 'Cơ quan quản lý'],
     exercises: [
       {
         title: 'Chiến dịch Kể chuyện CSR',

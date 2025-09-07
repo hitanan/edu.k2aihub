@@ -2,23 +2,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { 
   Network, 
   Users, 
-  MessageSquare, 
-  Globe, 
   Star, 
   Award,
   Play,
   RotateCcw,
   Target,
   CheckCircle,
-  User,
-  Building,
-  TrendingUp,
-  Coffee,
-  Handshake,
-  Mail,
-  Phone,
-  Calendar,
-  MapPin
+  MapPin,
+  TrendingUp
 } from 'lucide-react';
 
 interface InternationalNetworkingChallengeProps {
@@ -601,7 +592,7 @@ const InternationalNetworkingChallengeGame: React.FC<InternationalNetworkingChal
               /* Event Briefing */
               <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <Calendar className="w-6 h-6 text-indigo-400" />
+                  <MapPin className="w-6 h-6 text-indigo-400" />
                   <h2 className="text-2xl font-bold text-white">{currentOpportunity.event}</h2>
                   <div className="ml-auto flex items-center gap-2 bg-indigo-500/20 px-3 py-1 rounded-full">
                     <MapPin className="w-4 h-4 text-indigo-300" />
@@ -644,8 +635,11 @@ const InternationalNetworkingChallengeGame: React.FC<InternationalNetworkingChal
                 <div className="bg-purple-900/30 rounded-lg p-4 mb-6">
                   <h3 className="font-semibold text-purple-200 mb-3">👥 Available Contacts</h3>
                   <div className="grid md:grid-cols-3 gap-3">
-                    {currentOpportunity.contacts.map((contact, index) => (
-                      <div key={contact.id} className="bg-white/10 rounded p-3 text-center">
+                    {currentOpportunity.contacts.map((contact) => (
+                      <div
+                        key={contact.id}
+                        className="p-3 bg-gray-700/50 rounded-lg"
+                      >
                         <div className="text-2xl mb-1">{contact.avatar}</div>
                         <div className="font-semibold text-white text-sm">{contact.name}</div>
                         <div className="text-xs text-gray-400">{contact.title}</div>
@@ -731,11 +725,10 @@ const InternationalNetworkingChallengeGame: React.FC<InternationalNetworkingChal
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  {NETWORKING_STRATEGIES.map((strategy, index) => (
-                    <button
+                  {NETWORKING_STRATEGIES.map((strategy) => (
+                    <div
                       key={strategy.id}
-                      onClick={() => setSelectedStrategy(strategy)}
-                      className={`p-4 rounded-lg border-2 text-left transition-all duration-200 ${
+                      className={`p-3 rounded-lg cursor-pointer transition-all duration-200 ${
                         selectedStrategy?.id === strategy.id
                           ? 'border-indigo-400 bg-indigo-500/20'
                           : 'border-gray-600 bg-gray-800/30 hover:border-gray-500'
@@ -756,7 +749,7 @@ const InternationalNetworkingChallengeGame: React.FC<InternationalNetworkingChal
                       <div className="mt-2 text-xs text-indigo-300">
                         Success Rate: {strategy.successRate}%
                       </div>
-                    </button>
+                    </div>
                   ))}
                 </div>
                 

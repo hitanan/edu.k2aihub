@@ -1,0 +1,73 @@
+import { K2Module } from '@/data/moduleNavigation';
+import { ModuleData } from '@/types';
+
+export const transportationTechnologyModuleData: ModuleData = {
+  id: 'transportation-technology',
+  title: 'Transportation Technology',
+  subtitle: 'Công nghệ giao thông thông minh',
+  description:
+    'Khám phá smart transportation systems, autonomous vehicle technology và traffic optimization solutions trong future mobility ecosystems.',
+  level: 'Nâng cao',
+  duration: '20-26 giờ',
+  category: 'Transportation Technology',
+  heroImageUrl:
+    'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=600&fit=crop',
+  features: [
+    'Autonomous Vehicle Systems',
+    'Traffic Management Optimization',
+    'Smart Public Transportation',
+    'Mobility as a Service (MaaS)',
+    'Electric Vehicle Infrastructure',
+    'Route Optimization Algorithms',
+    'Transportation Analytics',
+    'Connected Vehicle Networks',
+  ],
+  icon: '🚗',
+  color: 'from-indigo-600 to-purple-600',
+  objectives: [
+    'Design autonomous vehicle control systems',
+    'Optimize traffic flow algorithms',
+    'Develop smart public transport solutions',
+    'Create mobility service platforms',
+    'Build electric vehicle infrastructure',
+    'Implement connected vehicle networks',
+  ],
+  prerequisites: [
+    'Engineering fundamentals',
+    'Programming skills (Python/C++)',
+    'Understanding của transportation systems',
+    'Data analysis capabilities',
+  ],
+  careerOutcomes: [
+    'Autonomous Vehicle Engineer (55-105 triệu VNĐ)',
+    'Traffic Systems Manager (45-85 triệu VNĐ)',
+    'Smart Mobility Developer (50-95 triệu VNĐ)',
+    'Transportation Data Scientist (50-90 triệu VNĐ)',
+    'Electric Vehicle Engineer (45-90 triệu VNĐ)',
+    'Connected Systems Specialist (50-95 triệu VNĐ)',
+    'Transportation Technology Consultant (55-110 triệu VNĐ)',
+    'Urban Mobility Planner (40-80 triệu VNĐ)',
+  ],
+  industryApplications: [
+    'Smart city traffic management',
+    'Autonomous vehicle development',
+    'Ride-sharing platform optimization',
+    'Public transportation systems',
+    'Electric vehicle charging networks',
+    'Logistics route optimization',
+    'Airport traffic control',
+    'Maritime transportation tracking',
+    'Railway management systems',
+    'Emergency vehicle routing',
+  ],
+  marketDemand: {
+    averageSalary: '40-110 triệu VNĐ',
+    jobGrowth: '78% Growth',
+    hireDemand: 'Rất cao',
+  },
+  relatedModules: [
+    K2Module.AIApplications,
+    K2Module.ElectricVehicleTech,
+    K2Module.SmartManufacturing,
+  ],
+};

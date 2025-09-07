@@ -1,24 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
+import { BaseLessonData } from '@/types/lesson-base';
 
-const renewableEnergyGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'renewable-energy-manager');
-const smartGridGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'ev-charging-network');
-const climateGame = EDUCATIONAL_GAMES_DATA.find((g) => g.id === 'climate-modeling');
-
-export interface EnergyManagementLesson extends BaseLessonData {
-  energyCategory: 'Tái tạo' | 'Lưới điện thông minh' | 'Hiệu quả' | 'Chính sách' | 'Lưu trữ';
-  techComplexity: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
-  vietnameseEnergyContext: string[];
-  industryApplications: string[];
-  sustainabilityFocus: string[];
-  relatedGames?: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-}
-
-export const energyManagementLessons: EnergyManagementLesson[] = [
+export const energyManagementLessons: BaseLessonData[] = [
   {
     id: 'renewable-energy-systems-design',
     title: 'Thiết Kế Hệ Thống Năng Lượng Tái Tạo',
@@ -28,17 +10,6 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=Uwmyx0vpL1U',
     imageUrl: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&h=600&fit=crop',
-    energyCategory: 'Tái tạo',
-    techComplexity: 'Nâng cao',
-    relatedGames: renewableEnergyGame
-      ? [
-          {
-            id: renewableEnergyGame.id,
-            name: renewableEnergyGame.title,
-            description: renewableEnergyGame.description,
-          },
-        ]
-      : [],
     objectives: [
       'Thiết kế hệ thống quang điện mặt trời cho ứng dụng dân dụng và thương mại',
       'Tính toán tiềm năng năng lượng gió và kích thước tuabin',
@@ -51,40 +22,20 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
       'Hiểu biết về các nguyên tắc cơ bản của năng lượng',
       'Quen thuộc với các công cụ tính toán',
     ],
-    vietnameseEnergyContext: [
-      'Mục tiêu năng lượng tái tạo của Việt Nam (20% vào năm 2030)',
-      'Chính sách giá FIT và đo đếm điện năng thuần',
-      'Bức xạ mặt trời và mô hình gió theo vùng',
-      'Yêu cầu và tiêu chuẩn kết nối lưới điện',
-    ],
-    industryApplications: [
-      'Lắp đặt điện mặt trời áp mái',
-      'Tự cung cấp năng lượng cho khu công nghiệp',
-      'Dự án điện khí hóa nông thôn',
-      'Phát triển trang trại điện mặt trời nổi',
-    ],
-    sustainabilityFocus: [
-      'Chiến lược giảm thiểu dấu chân carbon',
-      'Đánh giá vòng đời của các hệ thống tái tạo',
-      'Giảm thiểu tác động môi trường',
-      'Nguyên tắc kinh tế tuần hoàn trong ngành năng lượng',
-    ],
+    vietnamContext: {
+        title: "Bối cảnh năng lượng Việt Nam",
+        content: [
+            'Mục tiêu năng lượng tái tạo của Việt Nam (20% vào năm 2030)',
+            'Chính sách giá FIT và đo đếm điện năng thuần',
+            'Bức xạ mặt trời và mô hình gió theo vùng',
+            'Yêu cầu và tiêu chuẩn kết nối lưới điện',
+        ]
+    },
     exercises: [
       {
         title: 'Dự Án Thiết Kế Hệ Thống Điện Mặt Trời',
         description: 'Thiết kế một hệ thống điện mặt trời áp mái hoàn chỉnh cho một nhà máy sản xuất tại Việt Nam',
         difficulty: 'Nâng cao',
-        materials: ['Phần mềm PVsyst', 'Dữ liệu thời tiết', 'Hồ sơ phụ tải điện', 'Mô hình kinh tế'],
-        procedure: [
-          'Phân tích mô hình tiêu thụ năng lượng của nhà máy',
-          'Đánh giá diện tích mái và các hạn chế về bóng râm',
-          'Xác định kích thước dãy PV và cấu hình biến tần',
-          'Tính toán sản lượng năng lượng và lợi nhuận tài chính',
-          'Chuẩn bị đề xuất kỹ thuật và hồ sơ kinh doanh',
-        ],
-        expectedResults: 'Thiết kế hệ thống điện mặt trời hoàn chỉnh với thông số kỹ thuật và phân tích ROI',
-        solution:
-          'Thiết kế hệ thống được tối ưu hóa cân bằng giữa sản lượng năng lượng, hiệu quả chi phí và yêu cầu tích hợp lưới điện',
       },
     ],
     realWorldApplications: [
@@ -120,17 +71,6 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=o-ZYsfNuh7M',
     imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop',
-    energyCategory: 'Lưới điện thông minh',
-    techComplexity: 'Nâng cao',
-    relatedGames: smartGridGame
-      ? [
-          {
-            id: smartGridGame.id,
-            name: smartGridGame.title,
-            description: smartGridGame.description,
-          },
-        ]
-      : [],
     objectives: [
       'Hiểu kiến trúc lưới điện thông minh và các giao thức truyền thông',
       'Triển khai các chương trình đáp ứng nhu cầu và quản lý phụ tải',
@@ -143,39 +83,20 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
       'Hiểu biết cơ bản về mạng truyền thông',
       'Quen thuộc với phân tích dữ liệu',
     ],
-    vietnameseEnergyContext: [
-      'Kế hoạch hiện đại hóa lưới điện của Tập đoàn Điện lực Việt Nam (EVN)',
-      'Các sáng kiến thành phố thông minh tại các khu đô thị lớn',
-      'Thách thức của hạ tầng lưới điện cũ',
-      'Tích hợp với các nguồn năng lượng tái tạo',
-    ],
-    industryApplications: [
-      'Dự án hiện đại hóa lưới điện của các công ty điện lực',
-      'Chương trình đáp ứng nhu cầu công nghiệp',
-      'Quản lý năng lượng thành phố thông minh',
-      'Hệ thống điều khiển lưới điện vi mô',
-    ],
-    sustainabilityFocus: [
-      'Tối ưu hóa hiệu quả lưới điện',
-      'Chiến lược giảm nhu cầu đỉnh điểm',
-      'Tạo điều kiện tích hợp năng lượng tái tạo',
-      'Giảm thiểu lãng phí năng lượng',
-    ],
+     vietnamContext: {
+        title: "Bối cảnh năng lượng Việt Nam",
+        content: [
+            'Kế hoạch hiện đại hóa lưới điện của Tập đoàn Điện lực Việt Nam (EVN)',
+            'Các sáng kiến thành phố thông minh tại các khu đô thị lớn',
+            'Thách thức của hạ tầng lưới điện cũ',
+            'Tích hợp với các nguồn năng lượng tái tạo',
+        ]
+    },
     exercises: [
       {
         title: 'Thiết Kế Truyền Thông Lưới Điện Thông Minh',
         description: 'Thiết kế kiến trúc truyền thông cho một dự án thí điểm lưới điện thông minh tại TP.HCM',
         difficulty: 'Nâng cao',
-        materials: ['Phần mềm mô phỏng lưới điện', 'Tài liệu tham khảo giao thức truyền thông', 'Khung an ninh mạng'],
-        procedure: [
-          'Lập bản đồ hạ tầng lưới điện hiện có và nhu cầu truyền thông',
-          'Chọn các công nghệ truyền thông phù hợp (cáp quang, không dây, PLC)',
-          'Thiết kế hệ thống thu thập và quản lý dữ liệu',
-          'Triển khai các biện pháp và giao thức an ninh mạng',
-          'Phát triển quy trình kiểm tra và xác nhận',
-        ],
-        expectedResults: 'Kế hoạch kiến trúc truyền thông hoàn chỉnh với các cân nhắc về bảo mật và độ tin cậy',
-        solution: 'Hệ thống truyền thông hybrid cân bằng giữa hiệu suất, chi phí và yêu cầu bảo mật',
       },
     ],
     realWorldApplications: [
@@ -216,8 +137,6 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=D11iFUw_ImU',
     imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=600&fit=crop',
-    energyCategory: 'Hiệu quả',
-    techComplexity: 'Trung bình',
     objectives: [
       'Thực hiện kiểm toán và đánh giá năng lượng toàn diện',
       'Triển khai hệ thống quản lý năng lượng ISO 50001',
@@ -230,39 +149,20 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
       'Quen thuộc với các công cụ phân tích dữ liệu',
       'Kiến thức về phân tích chi phí-lợi ích',
     ],
-    vietnameseEnergyContext: [
-      'Các sáng kiến của Chương trình Quốc gia về Sử dụng Năng lượng Tiết kiệm và Hiệu quả (VNEEP)',
-      'Mô hình tiêu thụ năng lượng công nghiệp',
-      'Ưu đãi của chính phủ cho hiệu quả năng lượng',
-      'Tiêu chuẩn hiệu quả năng lượng ASEAN',
-    ],
-    industryApplications: [
-      'Tối ưu hóa quy trình sản xuất',
-      'Hệ thống quản lý năng lượng tòa nhà',
-      'Cải thiện hiệu quả hệ thống HVAC',
-      'Nâng cấp hệ thống chiếu sáng',
-    ],
-    sustainabilityFocus: [
-      'Chiến lược giảm tiêu thụ năng lượng',
-      'Giảm thiểu phát thải carbon',
-      'Kỹ thuật tối ưu hóa tài nguyên',
-      'Thực hành vận hành bền vững',
-    ],
+    vietnamContext: {
+        title: "Bối cảnh năng lượng Việt Nam",
+        content: [
+            'Các sáng kiến của Chương trình Quốc gia về Sử dụng Năng lượng Tiết kiệm và Hiệu quả (VNEEP)',
+            'Mô hình tiêu thụ năng lượng công nghiệp',
+            'Ưu đãi của chính phủ cho hiệu quả năng lượng',
+            'Tiêu chuẩn hiệu quả năng lượng ASEAN',
+        ]
+    },
     exercises: [
       {
         title: 'Dự Án Kiểm Toán Năng Lượng Công Nghiệp',
         description: 'Thực hiện kiểm toán năng lượng hoàn chỉnh cho một nhà máy dệt may Việt Nam',
         difficulty: 'Trung bình',
-        materials: ['Công cụ kiểm toán năng lượng', 'Đồng hồ đo điện', 'Thiết bị ghi dữ liệu', 'Phần mềm phân tích'],
-        procedure: [
-          'Thu thập dữ liệu tiêu thụ năng lượng cơ sở',
-          'Xác định các thiết bị và quy trình tiêu thụ năng lượng chính',
-          'Đo lường mô hình sử dụng năng lượng thực tế',
-          'Phân tích các cơ hội cải thiện hiệu quả',
-          'Phát triển kế hoạch triển khai với phân tích chi phí-lợi ích',
-        ],
-        expectedResults: 'Báo cáo kiểm toán năng lượng toàn diện với các khuyến nghị hiệu quả được ưu tiên',
-        solution: 'Phân tích chi tiết bao gồm hệ thống chiếu sáng, động cơ, HVAC, nhiệt quy trình và khí nén',
       },
     ],
     realWorldApplications: [
@@ -298,17 +198,6 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=G-jUB4CJ4YI',
     imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop',
-    energyCategory: 'Chính sách',
-    techComplexity: 'Trung bình',
-    relatedGames: climateGame
-      ? [
-          {
-            id: climateGame.id,
-            name: climateGame.title,
-            description: climateGame.description,
-          },
-        ]
-      : [],
     objectives: [
       'Hiểu khung chính sách năng lượng và chiến lược phát triển của Việt Nam',
       'Nắm vững các yêu cầu quy định cho các dự án năng lượng',
@@ -317,41 +206,21 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
       'Phát triển các chiến lược tuân thủ cho các doanh nghiệp năng lượng',
     ],
     prerequisites: ['Hiểu biết cơ bản về ngành năng lượng', 'Quen thuộc với các phương pháp phân tích chính sách'],
-    vietnameseEnergyContext: [
-      'Chiến lược phát triển năng lượng quốc gia đến năm 2030',
-      'Quy hoạch phát triển điện lực VIII (PDP 8)',
-      'Cam kết trung hòa carbon vào năm 2050',
-      'Sáng kiến kết nối lưới điện ASEAN',
-    ],
-    industryApplications: [
-      'Phát triển và cấp phép dự án năng lượng',
-      'Tuân thủ quy định trong ngành điện lực',
-      'Giao dịch năng lượng và tham gia thị trường',
-      'Mua sắm năng lượng tái tạo của doanh nghiệp',
-    ],
-    sustainabilityFocus: [
-      'Chính sách giảm thiểu biến đổi khí hậu',
-      'Chiến lược chuyển đổi công bằng',
-      'Yêu cầu đánh giá tác động môi trường',
-      'Phù hợp với mục tiêu phát triển bền vững',
-    ],
+    vietnamContext: {
+        title: "Bối cảnh năng lượng Việt Nam",
+        content: [
+            'Chiến lược phát triển năng lượng quốc gia đến năm 2030',
+            'Quy hoạch phát triển điện lực VIII (PDP 8)',
+            'Cam kết trung hòa carbon vào năm 2050',
+            'Sáng kiến kết nối lưới điện ASEAN',
+        ]
+    },
     exercises: [
       {
         title: 'Phân Tích Tác Động Chính Sách Năng Lượng',
         description:
           'Phân tích tác động của những thay đổi chính sách năng lượng tái tạo được đề xuất đối với ngành năng lượng mặt trời Việt Nam',
         difficulty: 'Trung bình',
-        materials: ['Tài liệu chính sách', 'Dữ liệu ngành', 'Mô hình kinh tế', 'Khung phân tích các bên liên quan'],
-        procedure: [
-          'Xem xét khung chính sách hiện tại và các thay đổi được đề xuất',
-          'Xác định các bên liên quan bị ảnh hưởng và lợi ích của họ',
-          'Mô hình hóa các tác động kinh tế đối với các phân khúc thị trường khác nhau',
-          'Đánh giá các tác động môi trường và xã hội',
-          'Phát triển các khuyến nghị chính sách',
-        ],
-        expectedResults: 'Đánh giá tác động chính sách toàn diện với các khuyến nghị của các bên liên quan',
-        solution:
-          'Phân tích đa bên liên quan bao gồm các nhà phát triển, công ty điện lực, người tiêu dùng và quan điểm của chính phủ',
       },
     ],
     realWorldApplications: [
@@ -394,8 +263,6 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=2qa_kh8JEfk',
     imageUrl: 'https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=1200&h=600&fit=crop',
-    energyCategory: 'Lưu trữ',
-    techComplexity: 'Nâng cao',
     objectives: [
       'So sánh các công nghệ lưu trữ năng lượng và ứng dụng khác nhau',
       'Thiết kế hệ thống lưu trữ năng lượng bằng pin (BESS)',
@@ -408,46 +275,21 @@ export const energyManagementLessons: EnergyManagementLesson[] = [
       'Hiểu biết về hóa học pin cơ bản',
       'Quen thuộc với hoạt động của hệ thống điện',
     ],
-    vietnameseEnergyContext: [
-      'Thách thức ổn định lưới điện với tỷ lệ thâm nhập năng lượng tái tạo cao',
-      'Yêu cầu về nguồn điện dự phòng công nghiệp',
-      'Phát triển hạ tầng sạc xe điện',
-      'Ứng dụng lưới điện đảo tại các khu vực xa xôi',
-    ],
-    industryApplications: [
-      'Dự án lưu trữ năng lượng quy mô lưới điện',
-      'Nguồn điện dự phòng thương mại và công nghiệp',
-      'Trạm sạc xe điện',
-      'Ứng dụng làm mịn năng lượng tái tạo',
-    ],
-    sustainabilityFocus: [
-      'Tái chế pin và ứng dụng vòng đời thứ hai',
-      'Tìm nguồn cung ứng vật liệu bền vững',
-      'Hỗ trợ khử carbon lưới điện',
-      'Nguyên tắc kinh tế tuần hoàn',
-    ],
+    vietnamContext: {
+        title: "Bối cảnh năng lượng Việt Nam",
+        content: [
+            'Thách thức ổn định lưới điện với tỷ lệ thâm nhập năng lượng tái tạo cao',
+            'Yêu cầu về nguồn điện dự phòng công nghiệp',
+            'Phát triển hạ tầng sạc xe điện',
+            'Ứng dụng lưới điện đảo tại các khu vực xa xôi',
+        ]
+    },
     exercises: [
       {
         title: 'Thiết Kế BESS và Phân Tích Kinh Tế',
         description:
           'Thiết kế hệ thống lưu trữ năng lượng bằng pin cho một cơ sở công nghiệp Việt Nam với tích hợp PV mặt trời',
         difficulty: 'Nâng cao',
-        materials: [
-          'Công cụ định cỡ pin',
-          'Phần mềm mô hình hóa kinh tế',
-          'Công cụ phân tích lưới điện',
-          'Tiêu chuẩn an toàn',
-        ],
-        procedure: [
-          'Phân tích hồ sơ phụ tải của cơ sở và mô hình phát điện mặt trời',
-          'Định cỡ hệ thống pin để cạo đỉnh và cung cấp điện dự phòng',
-          'Chọn công nghệ pin và BMS phù hợp',
-          'Tính toán kinh tế dự án với nhiều luồng giá trị',
-          'Phát triển kế hoạch lắp đặt và bảo trì',
-        ],
-        expectedResults: 'Đề xuất thiết kế BESS hoàn chỉnh với thông số kỹ thuật và hồ sơ kinh doanh',
-        solution:
-          'Hệ thống được tối ưu hóa cân bằng nhiều ứng dụng bao gồm cạo đỉnh, giảm phí nhu cầu và dịch vụ lưới điện',
       },
     ],
     realWorldApplications: [

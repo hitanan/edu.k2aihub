@@ -1,0 +1,68 @@
+import { ModuleData } from '@/types';
+import { K2Module } from '@/data/moduleNavigation';
+
+export const liveCommerceStreamingModuleData: ModuleData = {
+  id: 'live-commerce-streaming',
+  title: 'Live Commerce & Streaming',
+  subtitle: 'Bán hàng livestream & xây dựng empire thương mại điện tử',
+  description:
+    'Master art of live selling trên social platforms. Build engaging streaming business với advanced sales techniques và audience engagement strategies.',
+  level: 'Trung bình',
+  duration: '18-25 giờ',
+  category: 'E-commerce & Social Selling',
+  features: [
+    'Live Streaming Setup & Equipment',
+    'Sales Funnel & Conversion Tactics',
+    'Audience Engagement & Community Building',
+    'Multi-Platform Streaming Strategies',
+    'Product Presentation & Demos',
+    'Vietnamese Market Live Commerce Trends',
+    'Analytics & Performance Optimization',
+    'Brand Partnerships & Collaborations',
+  ],
+  icon: '🎥',
+  color: 'orange',
+  heroImageUrl: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=1200&h=600&fit=crop',
+  objectives: [
+    'Setup professional livestream selling environment',
+    'Master sales techniques cho live audience engagement',
+    'Build loyal community của repeat customers',
+    'Optimize conversion rates across multiple platforms',
+    'Understand Vietnamese live commerce trends',
+    'Scale livestream business sustainably',
+  ],
+  prerequisites: [
+    'Basic e-commerce knowledge',
+    'Comfort với public speaking',
+    'Social media familiarity',
+    'Interest trong sales và marketing',
+  ],
+  careerOutcomes: [
+    'Live Commerce Host (20-80 triệu VNĐ/năm)',
+    'Social Commerce Manager (30-65 triệu VNĐ)',
+    'Livestream Producer (25-55 triệu VNĐ)',
+    'E-commerce Growth Specialist (35-70 triệu VNĐ)',
+    'Social Selling Consultant (40-85 triệu VNĐ)',
+    'Live Shopping Platform Manager (45-90 triệu VNĐ)',
+    'Digital Commerce Strategist (40-75 triệu VNĐ)',
+    'Social Media Sales Trainer (35-70 triệu VNĐ)',
+  ],
+  industryApplications: [
+    'Fashion và beauty livestream selling',
+    'Electronics và gadget demonstrations',
+    'Food và beverage tastings',
+    'Home goods và lifestyle products',
+    'Health supplements và wellness',
+    'Automotive product showcases',
+    'Educational course selling',
+    'Handicrafts và artisan products',
+    'Technology product launches',
+    'Seasonal và event-based selling',
+  ],
+  marketDemand: {
+    averageSalary: '35-75 triệu VNĐ',
+    jobGrowth: '+156%',
+    hireDemand: 'Rất cao',
+  },
+  relatedModules: [K2Module.ContentCreator, K2Module.DigitalMarketing, K2Module.MicroInfluencerEconomy],
+};

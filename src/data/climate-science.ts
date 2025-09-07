@@ -1,40 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-export interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-export interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface ClimateLessonData extends BaseLessonData {
-  climateConcepts?: string[];
-  researchMethods?: string[];
-  climateData?: Array<{
-    source: string;
-    type: string;
-    description: string;
-    accessibility: string;
-  }>;
-  vietnamContext?: VietnamContext;
-  careerConnect?: CareerConnect;
-  quizzes?: Quiz[];
-}
-
-export const ClimateLessons: ClimateLessonData[] = [
+export const ClimateLessons: BaseLessonData[] = [
   {
     id: 'climate-science-fundamentals',
     title: 'Cơ bản về Khoa học Khí hậu',

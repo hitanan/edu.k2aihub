@@ -1,23 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface AIApplicationLessonData extends BaseLessonData {
-  mainContent?: Array<{
-    heading: string;
-    details: string;
-  }>;
-  relatedGames?: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-  aiTools?: string[];
-  practicalUses?: string[];
-  industries?: string[];
-  skillLevel?: string;
-  outcomes?: string[];
-}
-
-export const AIApplicationLessons: AIApplicationLessonData[] = [
+export const AIApplicationLessons: BaseLessonData[] = [
   {
     id: 'ai-for-study-abroad',
     title: 'AI cho Du học - Chuẩn bị hồ sơ và IELTS',

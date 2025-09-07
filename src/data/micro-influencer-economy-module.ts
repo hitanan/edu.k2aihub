@@ -1,0 +1,68 @@
+import { ModuleData } from '@/types';
+import { K2Module } from '@/data/moduleNavigation';
+
+export const microInfluencerEconomyModuleData: ModuleData = {
+  id: 'micro-influencer-economy',
+  title: 'Micro-Influencer Economy',
+  subtitle: 'Kinh tế micro-influencer & xây dựng thương hiệu cá nhân',
+  description:
+    'Khám phá strategies để build authentic personal brand, tạo meaningful connections với audience và monetize influence effectively trong Vietnamese market.',
+  level: 'Trung bình',
+  duration: '20-28 giờ',
+  category: 'Creator Economy & Personal Branding',
+  features: [
+    'Personal Brand Strategy & Development',
+    'Content Creation & Audience Building',
+    'Brand Partnership Negotiation',
+    'Revenue Diversification Strategies',
+    'Vietnamese Market Micro-Influencer Trends',
+    'Platform-Specific Growth Tactics',
+    'Analytics & Performance Measurement',
+    'Community Building & Engagement',
+  ],
+  icon: '💫',
+  color: 'pink',
+  heroImageUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=600&fit=crop',
+  objectives: [
+    'Build authentic personal brand với clear value proposition',
+    'Create engaging content strategies cho different platforms',
+    'Negotiate favorable brand partnership deals',
+    'Diversify income streams as micro-influencer',
+    'Understand Vietnamese creator economy landscape',
+    'Measure và optimize influence performance',
+  ],
+  prerequisites: [
+    'Active social media presence',
+    'Basic content creation skills',
+    'Understanding của target audience',
+    'Interest trong personal branding',
+  ],
+  careerOutcomes: [
+    'Micro-Influencer (10-50 triệu VNĐ/năm)',
+    'Content Creator & Brand Partner (15-80 triệu VNĐ/năm)',
+    'Social Media Strategist (25-55 triệu VNĐ)',
+    'Influencer Marketing Manager (30-65 triệu VNĐ)',
+    'Personal Brand Consultant (35-75 triệu VNĐ)',
+    'Creator Economy Analyst (28-58 triệu VNĐ)',
+    'Community Manager (22-45 triệu VNĐ)',
+    'Digital Marketing Specialist (25-60 triệu VNĐ)',
+  ],
+  industryApplications: [
+    'Fashion và beauty micro-influencing',
+    'Food và lifestyle content creation',
+    'Tech product reviews và tutorials',
+    'Health và wellness advocacy',
+    'Travel và tourism promotion',
+    'Education và skill-sharing',
+    'Parenting và family lifestyle',
+    'Finance và investment education',
+    'Gaming và entertainment',
+    'Local business partnerships',
+  ],
+  marketDemand: {
+    averageSalary: '30-65 triệu VNĐ',
+    jobGrowth: '+92%',
+    hireDemand: 'Rất cao',
+  },
+  relatedModules: [K2Module.ContentCreator, K2Module.DigitalMarketing, K2Module.EthicalMarketingPurpose],
+};

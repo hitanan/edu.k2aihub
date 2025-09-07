@@ -1,39 +1,39 @@
-import type { Metadata } from 'next';
-import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
-import { energyManagementLessons, EnergyManagementLesson } from '@/data/energy-management-smart-grid';
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+  BaseLessonData,
+} from '@/components/learning/LessonPageTemplate';
+import { energyManagementLessons } from '@/data/energy-management-smart-grid';
+import { PageProps } from '@/types';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-  return energyManagementLessons.map((lesson) => ({
-    lessonId: lesson.id,
-  }));
+  return generateLessonStaticParams(energyManagementLessons);
 }
 
-export const metadata: Metadata = {
-  title: 'Energy Management Smart Grid Lesson',
-  description: 'Learn advanced energy management and smart grid technologies',
-};
+export async function generateMetadata({ params }: PageProps) {
+  const lessonId = params.lessonId;
+  if (!lessonId) return {};
+  return generateLessonMetadata(lessonId, energyManagementLessons, 'energy-management-smart-grid');
+}
 
-type Params = {
-  lessonId: string;
-};
+export default async function EnergyManagementLessonPage({ params }: PageProps) {
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    notFound();
+  }
 
-export default async function EnergyManagementLessonPage({ params }: { params: Promise<Params> }) {
-  const { lessonId } = await params;
-  
-  const config: LessonPageConfig<EnergyManagementLesson> = {
+  const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'energy-management-smart-grid',
-    moduleTitle: 'Energy Management & Smart Grid',
+    moduleTitle: 'Quản Lý Năng Lượng & Lưới Điện Thông Minh',
     modulePath: '/learning/energy-management-smart-grid',
     lessons: energyManagementLessons,
     primaryColor: 'green',
     secondaryColor: 'emerald',
-    gradientColors: 'from-slate-900 via-green-900 to-slate-900'
+    gradientColors: 'from-slate-900 via-green-900 to-slate-900',
   };
 
-  return (
-    <LessonPageTemplate<EnergyManagementLesson>
-      lessonId={lessonId}
-      config={config}
-    />
-  );
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

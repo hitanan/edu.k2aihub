@@ -1,93 +1,35 @@
 import {
+  BaseLessonData,
+  CareerProfile,
+  QuizQuestion,
+  VietnamContext,
+} from '@/types/lesson-base';
+import { createDescription, createLessonMetadata, createTitle } from '@/utils/seo';
+import {
+  Book,
   BookOpen,
   CheckCircle,
-  Clock,
-  Lightbulb,
-  ListChecks,
-  Target,
-  Users,
-  Play,
-  Book,
-  User,
   ChevronLeft,
   ChevronRight,
+  Clock,
   HelpCircle,
+  Lightbulb,
+  ListChecks,
+  Play,
+  Target,
+  User,
+  Users,
 } from 'lucide-react';
-import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { createDescription, createLessonMetadata, createTitle } from '@/utils/seo';
+import { ReactNode } from 'react';
 import { YoutubePlayer } from '@/components/media/YoutubePlayer';
-import { VietnamContextBox } from './VietnamContextBox';
 import { CareerConnectSection } from './CareerConnectSection';
+import { EducationalGamesShowcase } from '../games/EducationalGames';
 import { InteractiveQuiz } from './InteractiveQuiz';
 import { LessonAnalytics } from './LessonAnalytics';
-import { EducationalGamesShowcase } from '../games/EducationalGames';
-
-// Define the structure for a quiz question
-export interface QuizQuestion {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-export interface CareerProfile {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-  interviewUrl?: string;
-}
-
-export interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-export interface BaseLessonData {
-  id: string;
-  title: string;
-  description: string;
-  duration: string;
-  difficulty: string;
-  videoUrl?: string | null;
-  imageUrl?: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Array<{
-    title: string;
-    description: string;
-    difficulty: string;
-    materials?: string[];
-    procedure?: string[];
-    expectedResults?: string;
-    solution?: string;
-    hints?: string[];
-    videoUrl?: string
-  }>;
-  realWorldApplications: string[];
-  caseStudies?: Array<{
-    title: string;
-    organization: string;
-    problem: string;
-    solution: string;
-    impact: string;
-    innovations: string[];
-  }>;
-  resources?: Array<{
-    title: string;
-    url: string;
-    type: string;
-  }>;
-  vietnamContext?: VietnamContext;
-  careerConnect?: CareerProfile;
-  quizzes?: QuizQuestion[];
-  environmentalImpact?: string;
-  tools?: string[];
-  category?: string;
-}
+import { VietnamContextBox } from './VietnamContextBox';
 
 export interface LessonPageConfig<T extends BaseLessonData> {
   moduleName: string;

@@ -1,52 +1,6 @@
-import type { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import type { BaseLessonData } from '@/types/lesson-base';
 
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-interface Resource {
-  title: string;
-  url: string;
-  type: 'research' | 'database' | 'tool' | 'journal' | 'protocol' | 'software' | 'documentation';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  organization: string;
-  problem: string;
-  solution: string;
-  impact: string;
-  innovations: string[];
-}
-
-export interface BiotechnologyLesson extends BaseLessonData {
-  biotechField: string;
-  labTechniques: string[];
-  resources: Resource[];
-  caseStudies: CaseStudy[];
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
-
-export const biotechnologyLessons: BiotechnologyLesson[] = [
+export const biotechnologyLessons: BaseLessonData[] = [
   {
     id: 'biotech-fundamentals-genetic-engineering',
     title: 'Bài 1: Nguyên tắc cơ bản Công nghệ sinh học & Kỹ thuật di truyền',

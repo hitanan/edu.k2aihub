@@ -2,17 +2,23 @@ import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams,
 import { physicsOfSportsLessons, PhysicsLessonType } from '@/data/physics-of-sports'
 import { PageProps } from '@/types';
 import { FaFlask } from 'react-icons/fa';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(physicsOfSportsLessons);
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) return {};
   return generateLessonMetadata(lessonId, physicsOfSportsLessons, 'physics-of-sports');
 }
 
 export default async function PhysicsLessonPage({ params }: PageProps) {
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<PhysicsLessonType> = {
     moduleName: 'physics-of-sports',
     moduleTitle: 'Vật lý trong Thể thao',
@@ -24,6 +30,5 @@ export default async function PhysicsLessonPage({ params }: PageProps) {
     getFieldIcon: (field) => field === 'keyConcept' ? <FaFlask className="w-5 h-5" /> : null,
     getFieldValue: (lesson) => lesson.keyConcept,
   }
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

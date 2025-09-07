@@ -1,28 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface BlockchainLesson extends BaseLessonData {
-  blockchainType: string;
-  frameworks: string[];
-  vietnamContext: {
-    title: string;
-    content: string[];
-  };
-  careerConnect: {
-    name: string;
-    title: string;
-    company: string;
-    imageUrl: string;
-    quote: string;
-  };
-  quizzes: Array<{
-    question: string;
-    options: string[];
-    correctAnswerIndex: number;
-    explanation: string;
-  }>;
-}
-
-export const blockchainLessons: BlockchainLesson[] = [
+export const blockchainLessons: BaseLessonData[] = [
   {
     id: 'blockchain-fundamentals-vietnam',
     title: 'Bài 1: Nền tảng Blockchain & Tiền điện tử tại Việt Nam',

@@ -11,9 +11,10 @@ import { useLearningProgress } from '@/components/gamification/LearningProgress'
 
 interface GamePageClientProps {
   game: EducationalGame;
+  SpecificGameComponent?: React.ComponentType<{ onComplete: (score: number) => void }>;
 }
 
-export default function GamePageClient({ game }: GamePageClientProps) {
+export default function GamePageClient({ game, SpecificGameComponent }: GamePageClientProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { completedGames, markGameCompleted } = useEducationalGames();
@@ -68,6 +69,10 @@ export default function GamePageClient({ game }: GamePageClientProps) {
     completLesson('games', game.id, 15); // 15 minutes average play time
     setIsPlaying(false);
   };
+
+  if (isPlaying && SpecificGameComponent) {
+    return <SpecificGameComponent onComplete={handleGameComplete} />;
+  }
 
   if (isPlaying && game.isInternal) {
     return <MiniGamePlayer game={game} onComplete={handleGameComplete} onExit={() => setIsPlaying(false)} />;

@@ -1,59 +1,6 @@
-// AI Learning Apps Module Data
-// Comprehensive AI learning applications for K2AiHub education platform
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface AILearningApp {
-  id: string;
-  name: string;
-  description: string;
-  category: 'math' | 'language' | 'writing' | 'coding' | 'research' | 'general';
-  platform: 'Web' | 'Mobile' | 'Both';
-  pricing: 'Free' | 'Freemium' | 'Paid';
-  features: string[];
-  bestFor: string[];
-  limitations: string[];
-  howToUse: HowToUseStep[];
-  videoDemo?: string;
-  websiteUrl: string;
-  imageUrl: string;
-  rating: number;
-  downloads?: string;
-  languages: string[];
-  ageGroup: string;
-  subjects: string[];
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
-
-export interface HowToUseStep {
-  step: number;
-  title: string;
-  description: string;
-  tips: string[];
-  screenshot?: string;
-}
-
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export const aiLearningApps: AILearningApp[] = [
+export const aiLearningApps: BaseLessonData[] = [
   {
     id: 'photomath',
     name: 'PhotoMath',

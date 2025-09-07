@@ -1,15 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface MainContent {
-  technologies: string[];
-  environmentalImpact: string;
-}
-
-export interface GreenTechLesson extends BaseLessonData {
-  mainContent: MainContent;
-}
-
-export const greenTechLessons: GreenTechLesson[] = [
+export const greenTechnologyLessons: BaseLessonData[] = [
   {
     id: 'renewable-energy-basics',
     title: 'Cơ Bản về Năng Lượng Tái Tạo',
@@ -19,17 +10,6 @@ export const greenTechLessons: GreenTechLesson[] = [
     imageUrl: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop',
     difficulty: 'Cơ bản',
     duration: '90 phút',
-    mainContent: {
-      environmentalImpact: 'Giảm 50-80% khí thải CO2 so với năng lượng hóa thạch',
-      technologies: [
-        'Tấm pin mặt trời (Monocrystalline, Polycrystalline)',
-        'Tuabin gió',
-        'Hệ thống lưu trữ pin',
-        'Công nghệ lưới điện thông minh',
-        'Hệ thống quản lý năng lượng',
-        'Thủy điện',
-      ],
-    },
     objectives: [
       'Hiểu nguyên lý hoạt động của năng lượng mặt trời và gió',
       'Tính toán công suất và hiệu quả hệ thống năng lượng tái tạo',
@@ -222,17 +202,6 @@ export const greenTechLessons: GreenTechLesson[] = [
     imageUrl: 'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=400&h=400&fit=crop',
     difficulty: 'Nâng cao',
     duration: '120 phút',
-    mainContent: {
-      environmentalImpact: 'Giảm 20-30% tiêu thụ năng lượng đô thị, cải thiện chất lượng không khí',
-      technologies: [
-        'Cảm biến IoT (Chất lượng không khí, Tiếng ồn, Giao thông)',
-        'Mạng LoRaWAN',
-        'Điện toán biên',
-        'Học máy',
-        'Phân tích thời gian thực',
-        'Ứng dụng di động',
-      ],
-    },
     objectives: [
       'Thiết kế mạng lưới cảm biến IoT cho các thành phố thông minh',
       'Phát triển hệ thống giám sát và phân tích thời gian thực',

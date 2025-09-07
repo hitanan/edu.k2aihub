@@ -1,55 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-export interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-export interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface ContentCreatorLessonData extends BaseLessonData {
-  platforms?: string[];
-  monetizationMethods?: string[];
-  toolsRequired?: string[];
-  averageIncome?: string;
-  timeToMaster?: string;
-  mainContent: {
-    introduction: string;
-    keyConcepts: Array<{
-      title: string;
-      description: string;
-      examples: string[];
-    }>;
-    practicalApplications: Array<{
-      area: string;
-      description: string;
-    }>;
-    conclusion: string;
-  };
-  relatedGames: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-  vietnamContext?: VietnamContext;
-  careerConnect?: CareerConnect;
-  quizzes?: Quiz[];
-}
-
-export const contentCreatorLessons: ContentCreatorLessonData[] = [
+export const contentCreatorLessons: BaseLessonData[] = [
   {
     id: 'social-media-personal-branding',
     title: 'Social Media Strategy & Personal Branding',

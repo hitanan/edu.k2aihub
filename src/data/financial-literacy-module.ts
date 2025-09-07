@@ -1,0 +1,68 @@
+import { ModuleData } from '@/types';
+import { K2Module } from '@/data/moduleNavigation';
+
+export const financialLiteracyModuleData: ModuleData = {
+  id: 'financial-literacy',
+  title: 'Financial Literacy & FinTech',
+  subtitle: 'Kiến thức tài chính & công nghệ FinTech',
+  description:
+    'Nắm vững kiến thức tài chính cá nhân và khám phá thế giới FinTech. Từ budgeting đến investment, cryptocurrency và digital banking - trở thành chuyên gia tài chính trong thời đại số.',
+  level: 'Cơ bản đến Nâng cao',
+  duration: '18-22 giờ',
+  category: 'Finance & Technology',
+  color: 'green',
+  heroImageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=600&fit=crop',
+  features: [
+    'Personal Finance Management và Budgeting',
+    'Investment Strategies và Portfolio Management',
+    'Cryptocurrency và Blockchain Technology',
+    'Digital Banking và FinTech Applications',
+    'Risk Management và Insurance Planning',
+    'Retirement Planning và Wealth Building',
+    'Tax Planning và Optimization',
+    'Financial Analysis và Decision Making',
+  ],
+  icon: '💰',
+  objectives: [
+    'Quản lý tài chính cá nhân và xây dựng budget hiệu quả',
+    'Hiểu và áp dụng các chiến lược đầu tư thông minh',
+    'Nắm vững cryptocurrency và blockchain technology',
+    'Sử dụng thành thạo các ứng dụng FinTech hiện đại',
+    'Phân tích risk và lập kế hoạch bảo hiểm phù hợp',
+    'Xây dựng kế hoạch retirement và wealth building',
+  ],
+  prerequisites: [
+    'Kỹ năng toán học cơ bản và logic tính toán',
+    'Hiểu biết về tiền tệ và hệ thống ngân hàng',
+    'Sử dụng thành thạo smartphone và computer',
+    'Quan tâm đến thị trường tài chính và đầu tư',
+  ],
+  careerOutcomes: [
+    'Financial Advisor (15-35 triệu VNĐ)',
+    'FinTech Product Manager (25-50 triệu VNĐ)',
+    'Investment Analyst (18-40 triệu VNĐ)',
+    'Digital Banking Specialist (20-38 triệu VNĐ)',
+    'Cryptocurrency Trader (10-100+ triệu VNĐ)',
+    'Risk Management Analyst (22-42 triệu VNĐ)',
+    'Financial Technology Consultant (28-55 triệu VNĐ)',
+    'Personal Finance Coach (12-30 triệu VNĐ)',
+  ],
+  industryApplications: [
+    'Banking và financial institutions',
+    'Investment management firms',
+    'Insurance companies',
+    'FinTech startups và technology',
+    'Cryptocurrency exchanges',
+    'Real estate và property investment',
+    'Government financial agencies',
+    'Corporate finance departments',
+    'Financial consulting services',
+    'Educational institutions',
+  ],
+  marketDemand: {
+    averageSalary: '25-50 triệu VNĐ/tháng',
+    jobGrowth: '20%',
+    hireDemand: 'Cao',
+  },
+  relatedModules: [K2Module.DigitalMarketing, K2Module.Python, K2Module.AIArtCreativeTech],
+};

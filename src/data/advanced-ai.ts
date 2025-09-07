@@ -1,22 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface AdvancedAILesson extends Omit<BaseLessonData, 'exercises'> {
-  aiDomain?: string;
-  complexity?: string;
-  frameworks?: string[];
-  exercises: Array<{
-    title: string;
-    description: string;
-    difficulty: string;
-    tools?: string[];
-    datasets?: string[];
-    procedure?: string[];
-    expectedResults?: string;
-    solution?: string;
-  }>;
-}
-
-export const advancedAILessons: AdvancedAILesson[] = [
+export const advancedAILessons: BaseLessonData[] = [
   {
     id: 'deep-learning-foundations',
     title: 'Deep Learning & Neural Network Architectures',

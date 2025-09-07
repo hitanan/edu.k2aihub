@@ -125,77 +125,26 @@ export interface BaseLessonData {
 **Standard Implementation**:
 
 ```typescript
+import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { [MODULE_NAME]Lessons } from '@/data/[module-name]';
-import { createTitle, createDescription } from '@/utils/seo';
+import { [moduleName]Lessons } from '@/data/[module-name]';
+import { [moduleName]ModuleData } from '@/data/[module-name]-module';
+import { createModuleMetadata } from '@/utils/seo';
+
 
 // Generate metadata
-export async function generateMetadata() {
-  return {
-    title: createTitle('Module Title in Vietnamese'),
-    description: createDescription('Comprehensive module description in Vietnamese'),
-    keywords: ['keyword1', 'keyword2', 'vietnamese-learning', 'K2AI'],
-    openGraph: {
-      title: 'Module Title in Vietnamese',
-      description: 'Module description for social sharing',
-      type: 'website',
-    },
-  };
-}
+export const metadata: Metadata = createModuleMetadata(
+  [moduleName]ModuleData.title,
+  [moduleName]ModuleData.description,
+  ['vật lý', 'thể thao', 'khoa học thể thao', 'cơ học', 'K2AI'],
+  [moduleName]ModuleData.id
+);
 
-export default function ModuleMainPage() {
-  const moduleData = {
-    id: 'module-name',
-    title: 'Module Title in Vietnamese',
-    subtitle: 'Brief compelling subtitle',
-    description: 'Comprehensive description explaining value proposition',
-    level: 'Trung bình', // Cơ bản | Trung bình | Nâng cao
-    duration: '15-20 giờ',
-    category: 'Professional Skills', // or appropriate category
-    features: [
-      'Feature 1 description',
-      'Feature 2 description',
-      'Feature 3 description',
-      'Feature 4 description'
-    ],
-    icon: '📱', // Appropriate emoji icon
-    color: 'from-blue-600 to-indigo-600', // Gradient colors
-    objectives: [
-      'Learning objective 1',
-      'Learning objective 2',
-      'Learning objective 3'
-    ],
-    prerequisites: [
-      'Prerequisite 1',
-      'Prerequisite 2'
-    ],
-    careerOutcomes: [
-      'Career path 1',
-      'Career path 2',
-      'Career path 3'
-    ],
-    industryApplications: [
-      'Industry application 1',
-      'Industry application 2',
-      'Industry application 3'
-    ],
-    marketDemand: {
-      averageSalary: '15-30 triệu VNĐ',
-      jobGrowth: '+25%',
-      hireDemand: 'Cao'
-    },
-    relatedModules: [
-      K2Module.Module1,
-      K2Module.Module2,
-      K2Module.Module3
-    ]
-  };
-
+export default function [ModuleName]Page() {
   return (
     <ModulePageTemplate
-      moduleData={moduleData}
-      lessons={[MODULE_NAME]Lessons}
-      heroImageUrl="/path/to/hero-image.jpg" // Optional
+      moduleData={[moduleName]ModuleData}
+      lessons={[moduleName]Lessons}
     />
   );
 }

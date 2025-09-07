@@ -1,14 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface AdvancedDataScienceLesson extends BaseLessonData {
-  dataScienceDomain: 'machine-learning' | 'deep-learning' | 'nlp-processing' | 'computer-vision' | 'data-engineering';
-  technicalComplexity: 'intermediate' | 'advanced' | 'expert';
-  programmingLanguages: string[];
-  vietnameseDataContext: string[];
-  industryApplications: string[];
-}
-
-export const advancedDataScienceLessons: AdvancedDataScienceLesson[] = [
+export const advancedDataScienceLessons: BaseLessonData[] = [
   {
     id: 'advanced-machine-learning-algorithms',
     title: 'Thuật Toán Machine Learning Nâng Cao',

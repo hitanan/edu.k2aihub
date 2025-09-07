@@ -1,36 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-export interface AIMachineLearningLessonType extends BaseLessonData {
-  algorithmTypes?: string[];
-  mlFrameworks?: string[];
-  applications?: string[];
-  programmingSkills?: string[];
-  mathConcepts?: string[];
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
-
-export const aiMachineLearningLessons: AIMachineLearningLessonType[] = [
+export const aiMachineLearningLessons: BaseLessonData[] = [
   {
     id: 'ai-ml-fundamentals',
     title: 'Nền Tảng AI Và Machine Learning',

@@ -18,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // Convert BlockchainLesson to BaseLessonData
 function convertToBaseLessonData(lesson: BlockchainLesson): BaseLessonData {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { blockchainType, frameworks, vietnamContext, careerConnect, quizzes, ...baseLessonData } = lesson;
   return baseLessonData;
 }

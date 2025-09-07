@@ -48,13 +48,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+import EthicalAISimulatorGame from '@/components/games/story/EthicalAISimulatorGame';
+import DataDetectiveGame from '@/components/games/story/DataDetectiveGame';
+
+const gameComponents: { [key: string]: React.ComponentType<{ onComplete: (score: number) => void }> } = {
+  'ethical-ai-simulator': EthicalAISimulatorGame,
+  'data-detective-missing-shipment': DataDetectiveGame,
+  // ... other specific game components
+};
+
 export default async function GamePage({ params }: PageProps) {
-  const { gameId } = await params;
+  const gameId = params.gameId;
+  if (!gameId) {
+    notFound();
+  }
   const game = EDUCATIONAL_GAMES_DATA.find((g) => g.id === gameId);
 
   if (!game) {
     notFound();
   }
 
-  return <GamePageClient game={game} />;
+  const SpecificGameComponent = gameComponents[gameId];
+
+  return <GamePageClient game={game} SpecificGameComponent={SpecificGameComponent} />;
 }

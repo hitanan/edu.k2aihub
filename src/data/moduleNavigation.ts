@@ -191,6 +191,1591 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
   },
   {
+    id: K2Module.KitchenChemistry,
+    title: 'Hóa học Nhà bếp',
+    subtitle: 'Khám phá khoa học trong nấu ăn',
+    description: 'Tìm hiểu các phản ứng hóa học thú vị xảy ra trong nhà bếp, từ phản ứng Maillard đến sự nhũ hóa, biến những nguyên liệu quen thuộc thành các món ăn ngon.',
+    category: 'stem',
+    icon: '🧪',
+    color: 'from-orange-500 to-red-500',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '3-4 giờ',
+    href: '/learning/kitchen-chemistry',
+    features: [
+      'Thí nghiệm an toàn tại nhà',
+      'Giải thích khoa học về nấu ăn',
+      'Ứng dụng thực tế trong bếp',
+      'Hiểu sâu hơn về thực phẩm'
+    ],
+    tags: ['hóa học', 'nấu ăn', 'khoa học', 'thí nghiệm', 'stem'],
+    prerequisites: [
+      'Kiến thức hóa học phổ thông.',
+      'Đam mê nấu nướng và khám phá.'
+    ],
+    lessons: [
+      { id: 'maillard-reaction', title: 'Phản ứng Maillard', duration: '60 phút', difficulty: 'Cơ bản' },
+      { id: 'emulsification', title: 'Sự nhũ hóa', duration: '75 phút', difficulty: 'Trung bình' }
+    ]
+  },
+  {
+    id: K2Module.DigitalCitizenshipOnlineSafety,
+    title: 'Công dân số & An toàn trực tuyến',
+    subtitle: 'Hành trang thiết yếu cho thế hệ tương lai',
+    description:
+      'Trong thế giới kết nối ngày nay, việc trở thành một công dân số có trách nhiệm là vô cùng quan trọng. Khóa học này cung cấp cho học sinh những kiến thức và kỹ năng để tương tác an toàn, có đạo đức và hiệu quả trên môi trường Internet.',
+    category: ['essential', 'lifeskills'],
+    icon: '🛡️',
+    color: 'from-teal-500 to-cyan-600',
+    totalDuration: '8-10 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '8-10 giờ',
+    href: '/learning/digital-citizenship-online-safety',
+    features: [
+      'Bảo vệ danh tính và thông tin cá nhân.',
+      'Nhận diện và phòng chống tin giả, lừa đảo.',
+      'Xây dựng dấu chân số tích cực.',
+      'Giao tiếp và ứng xử văn minh trên mạng.',
+    ],
+    tags: ['công dân số', 'an toàn trực tuyến', 'an ninh mạng', 'đạo đức số'],
+    prerequisites: [
+      'Kỹ năng sử dụng máy tính và Internet cơ bản.',
+      'Có tài khoản mạng xã hội (Facebook, TikTok, etc.) là một lợi thế.',
+      'Mong muốn trở thành người dùng Internet thông thái.',
+    ],
+    lessons: [
+      { id: 'hieu-ve-cong-dan-so', title: 'Hiểu về Công dân số', duration: '45 phút', difficulty: 'Cơ bản' },
+      {
+        id: 'bao-ve-danh-tinh-truc-tuyen',
+        title: 'Bảo vệ Danh tính Trực tuyến',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'nhan-dien-tin-gia',
+        title: 'Tư duy Phản biện & Nhận diện Tin giả',
+        duration: '75 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'giao-tiep-va-ung-xu-tren-mang',
+        title: 'Giao tiếp và Ứng xử trên mạng (Netiquette)',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'ai',
+    title: 'AI Của Tôi - Learning',
+    subtitle: 'Khóa học AI thực tế',
+    description:
+      'Khóa học AI thực tế với 6 chuyên đề: Văn phòng, Sáng tạo, Giáo dục, Kinh doanh, Cuộc sống và Lập trình',
+    category: 'artificial-intelligence',
+    icon: '🤖',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '25-30 giờ',
+    difficulty: 'Trung bình',
+    href: '/learning/ai',
+    features: [
+      'Hướng dẫn 6 lĩnh vực AI ứng dụng',
+      'Thực hành với các tool AI hàng đầu',
+      'Prompt engineering chuyên sâu',
+      'Ứng dụng thực tế trong công việc',
+    ],
+    tags: ['ai', 'chatgpt', 'midjourney', 'practical', 'productivity'],
+    prerequisites: [
+      'Sử dụng máy tính và internet cơ bản',
+      'Tiếng Anh đọc hiểu (để sử dụng AI tools)',
+      'Tư duy sáng tạo và ham học hỏi',
+    ],
+    lessons: [
+      {
+        id: 'office-work',
+        title: 'AI cho Văn Phòng & Công Việc',
+        duration: '4 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'creative-design',
+        title: 'AI cho Sáng Tạo & Thiết Kế',
+        duration: '5 giờ',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'education-learning',
+        title: 'AI cho Giáo Dục & Học Tập',
+        duration: '3 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'business-marketing',
+        title: 'AI cho Kinh Doanh & Marketing',
+        duration: '6 giờ',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'daily-life',
+        title: 'AI cho Cuộc Sống Hàng Ngày',
+        duration: '2 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'programming-dev',
+        title: 'AI cho Lập Trình & Phát Triển',
+        duration: '5 giờ',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
+  {
+    id: 'office-work',
+    title: 'AI cho Văn Phòng & Công Việc',
+    subtitle: 'Tăng hiệu suất với AI',
+    description:
+      'Học cách sử dụng AI để tự động hóa công việc văn phòng, viết email chuyên nghiệp và quản lý thời gian hiệu quả',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '💼',
+    color: 'from-blue-600 to-indigo-600',
+    totalDuration: '4-6 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/office-work',
+    features: ['ChatGPT cho Email', 'Excel thông minh', 'Thuyết trình AI', 'Quản lý thời gian'],
+    tags: ['office', 'productivity', 'email', 'automation'],
+    prerequisites: ['Kỹ năng máy tính cơ bản', 'Hiểu biết về Microsoft Office'],
+    lessons: [
+      {
+        id: 'email-automation',
+        title: 'Tự động hóa Email với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'excel-ai',
+        title: 'Excel thông minh với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'presentation-ai',
+        title: 'Tạo bài thuyết trình với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'time-management',
+        title: 'Quản lý thời gian với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'creative-design',
+    title: 'AI cho Sáng Tạo & Thiết Kế',
+    subtitle: 'Sáng tạo nội dung với AI',
+    description:
+      'Khám phá cách sử dụng Midjourney, DALL-E, Canva AI để tạo ra nội dung sáng tạo và thiết kế chuyên nghiệp',
+    category: ['creative', 'trending'], // Multiple categories
+    icon: '🎨',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '5-7 giờ',
+    difficulty: 'Cơ bản đến Nâng cao',
+    href: '/learning/ai/creative-design',
+    features: ['Midjourney mastery', 'Canva AI Studio', 'Content creation', 'Visual design'],
+    tags: ['design', 'creativity', 'art', 'visual'],
+    prerequisites: ['Hiểu biết cơ bản về design', 'Sử dụng máy tính thành thạo'],
+    lessons: [
+      {
+        id: 'midjourney-basics',
+        title: 'Midjourney cơ bản',
+        duration: '60 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'advanced-prompting',
+        title: 'Prompt engineering nâng cao',
+        duration: '75 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'canva-ai',
+        title: 'Canva AI Magic Studio',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'content-creation',
+        title: 'Tạo nội dung với AI',
+        duration: '45 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'education-learning',
+    title: 'AI cho Giáo Dục & Học Tập',
+    subtitle: 'Học tập thông minh với AI',
+    description: 'Sử dụng AI như một gia sư cá nhân, hỗ trợ nghiên cứu, học ngôn ngữ và tóm tắt tài liệu hiệu quả',
+    category: ['professional', 'stem'], // Multiple categories
+    icon: '📚',
+    color: 'from-green-600 to-teal-600',
+    totalDuration: '4-5 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/education-learning',
+    features: ['AI Tutor', 'Research assistance', 'Language learning', 'Document summarization'],
+    tags: ['education', 'learning', 'research', 'study'],
+    prerequisites: ['Kỹ năng học tập cơ bản'],
+    lessons: [
+      {
+        id: 'ai-tutor',
+        title: 'AI như gia sư cá nhân',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'research-ai',
+        title: 'Nghiên cứu với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'language-learning',
+        title: 'Học ngôn ngữ với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'document-summary',
+        title: 'Tóm tắt tài liệu với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'business-marketing',
+    title: 'AI cho Kinh Doanh & Marketing',
+    subtitle: 'Marketing thông minh với AI',
+    description: 'Ứng dụng AI trong marketing, phân tích khách hàng, tạo chatbot và tối ưu hóa SEO cho doanh nghiệp',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '📈',
+    color: 'from-orange-600 to-red-600',
+    totalDuration: '6-8 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/business-marketing',
+    features: ['Marketing automation', 'Customer analytics', 'Chatbot development', 'SEO optimization'],
+    tags: ['marketing', 'business', 'analytics', 'automation'],
+    prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm kinh doanh'],
+    lessons: [
+      {
+        id: 'marketing-automation',
+        title: 'Tự động hóa Marketing',
+        duration: '70 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'customer-analytics',
+        title: 'Phân tích khách hàng với AI',
+        duration: '80 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'chatbot-development',
+        title: 'Phát triển Chatbot',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'seo-ai',
+        title: 'SEO tối ưu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'daily-life',
+    title: 'AI cho Đời Sống Hàng Ngày',
+    subtitle: 'AI trong cuộc sống',
+    description:
+      'Khám phá cách AI có thể hỗ trợ cuộc sống hàng ngày từ quản lý tài chính, sức khỏe đến du lịch thông minh',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '🏠',
+    color: 'from-emerald-600 to-cyan-600',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    href: '/learning/ai/daily-life',
+    features: ['Personal AI assistant', 'Financial management', 'Health & fitness', 'Smart travel'],
+    tags: ['lifestyle', 'personal', 'health', 'finance'],
+    prerequisites: ['Sử dụng smartphone/máy tính'],
+    lessons: [
+      {
+        id: 'personal-assistant',
+        title: 'Trợ lý AI cá nhân',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'financial-ai',
+        title: 'Quản lý tài chính với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'health-fitness',
+        title: 'Sức khỏe & Fitness AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'travel-ai',
+        title: 'Du lịch thông minh với AI',
+        duration: '35 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'programming-dev',
+    title: 'AI cho Lập Trình & Phát Triển',
+    subtitle: 'Code thông minh với AI',
+    description: 'Tìm hiểu GitHub Copilot, AI code review và các công cụ AI hỗ trợ lập trình để tăng hiệu suất coding',
+    category: ['programming', 'trending'], // Multiple categories
+    icon: '💻',
+    color: 'from-slate-600 to-blue-600',
+    totalDuration: '7-9 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/programming-dev',
+    features: ['GitHub Copilot', 'AI code review', 'Automated testing', 'Documentation generation'],
+    tags: ['programming', 'coding', 'development', 'automation'],
+    prerequisites: ['Kiến thức lập trình cơ bản', 'Sử dụng Git/GitHub'],
+    lessons: [
+      {
+        id: 'github-copilot',
+        title: 'GitHub Copilot mastery',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'ai-code-review',
+        title: 'AI Code Review',
+        duration: '70 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'automated-testing',
+        title: 'Testing tự động với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'documentation-ai',
+        title: 'Tạo tài liệu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: K2Module.KitchenChemistry,
+    title: 'Hóa học Nhà bếp',
+    subtitle: 'Khám phá khoa học trong nấu ăn',
+    description: 'Tìm hiểu các phản ứng hóa học thú vị xảy ra trong nhà bếp, từ phản ứng Maillard đến sự nhũ hóa, biến những nguyên liệu quen thuộc thành các món ăn ngon.',
+    category: 'stem',
+    icon: '🧪',
+    color: 'from-orange-500 to-red-500',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '3-4 giờ',
+    href: '/learning/kitchen-chemistry',
+    features: [
+      'Thí nghiệm an toàn tại nhà',
+      'Giải thích khoa học về nấu ăn',
+      'Ứng dụng thực tế trong bếp',
+      'Hiểu sâu hơn về thực phẩm'
+    ],
+    tags: ['hóa học', 'nấu ăn', 'khoa học', 'thí nghiệm', 'stem'],
+    prerequisites: [
+      'Kiến thức hóa học phổ thông.',
+      'Đam mê nấu nướng và khám phá.'
+    ],
+    lessons: [
+      { id: 'maillard-reaction', title: 'Phản ứng Maillard', duration: '60 phút', difficulty: 'Cơ bản' },
+      { id: 'emulsification', title: 'Sự nhũ hóa', duration: '75 phút', difficulty: 'Trung bình' }
+    ]
+  },
+  {
+    id: K2Module.DigitalCitizenshipOnlineSafety,
+    title: 'Công dân số & An toàn trực tuyến',
+    subtitle: 'Hành trang thiết yếu cho thế hệ tương lai',
+    description:
+      'Trong thế giới kết nối ngày nay, việc trở thành một công dân số có trách nhiệm là vô cùng quan trọng. Khóa học này cung cấp cho học sinh những kiến thức và kỹ năng để tương tác an toàn, có đạo đức và hiệu quả trên môi trường Internet.',
+    category: ['essential', 'lifeskills'],
+    icon: '🛡️',
+    color: 'from-teal-500 to-cyan-600',
+    totalDuration: '8-10 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '8-10 giờ',
+    href: '/learning/digital-citizenship-online-safety',
+    features: [
+      'Bảo vệ danh tính và thông tin cá nhân.',
+      'Nhận diện và phòng chống tin giả, lừa đảo.',
+      'Xây dựng dấu chân số tích cực.',
+      'Giao tiếp và ứng xử văn minh trên mạng.',
+    ],
+    tags: ['công dân số', 'an toàn trực tuyến', 'an ninh mạng', 'đạo đức số'],
+    prerequisites: [
+      'Kỹ năng sử dụng máy tính và Internet cơ bản.',
+      'Có tài khoản mạng xã hội (Facebook, TikTok, etc.) là một lợi thế.',
+      'Mong muốn trở thành người dùng Internet thông thái.',
+    ],
+    lessons: [
+      { id: 'hieu-ve-cong-dan-so', title: 'Hiểu về Công dân số', duration: '45 phút', difficulty: 'Cơ bản' },
+      {
+        id: 'bao-ve-danh-tinh-truc-tuyen',
+        title: 'Bảo vệ Danh tính Trực tuyến',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'nhan-dien-tin-gia',
+        title: 'Tư duy Phản biện & Nhận diện Tin giả',
+        duration: '75 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'giao-tiep-va-ung-xu-tren-mang',
+        title: 'Giao tiếp và Ứng xử trên mạng (Netiquette)',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'ai',
+    title: 'AI Của Tôi - Learning',
+    subtitle: 'Khóa học AI thực tế',
+    description:
+      'Khóa học AI thực tế với 6 chuyên đề: Văn phòng, Sáng tạo, Giáo dục, Kinh doanh, Cuộc sống và Lập trình',
+    category: 'artificial-intelligence',
+    icon: '🤖',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '25-30 giờ',
+    difficulty: 'Trung bình',
+    href: '/learning/ai',
+    features: [
+      'Hướng dẫn 6 lĩnh vực AI ứng dụng',
+      'Thực hành với các tool AI hàng đầu',
+      'Prompt engineering chuyên sâu',
+      'Ứng dụng thực tế trong công việc',
+    ],
+    tags: ['ai', 'chatgpt', 'midjourney', 'practical', 'productivity'],
+    prerequisites: [
+      'Sử dụng máy tính và internet cơ bản',
+      'Tiếng Anh đọc hiểu (để sử dụng AI tools)',
+      'Tư duy sáng tạo và ham học hỏi',
+    ],
+    lessons: [
+      {
+        id: 'office-work',
+        title: 'AI cho Văn Phòng & Công Việc',
+        duration: '4 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'creative-design',
+        title: 'AI cho Sáng Tạo & Thiết Kế',
+        duration: '5 giờ',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'education-learning',
+        title: 'AI cho Giáo Dục & Học Tập',
+        duration: '3 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'business-marketing',
+        title: 'AI cho Kinh Doanh & Marketing',
+        duration: '6 giờ',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'daily-life',
+        title: 'AI cho Cuộc Sống Hàng Ngày',
+        duration: '2 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'programming-dev',
+        title: 'AI cho Lập Trình & Phát Triển',
+        duration: '5 giờ',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
+  {
+    id: 'office-work',
+    title: 'AI cho Văn Phòng & Công Việc',
+    subtitle: 'Tăng hiệu suất với AI',
+    description:
+      'Học cách sử dụng AI để tự động hóa công việc văn phòng, viết email chuyên nghiệp và quản lý thời gian hiệu quả',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '💼',
+    color: 'from-blue-600 to-indigo-600',
+    totalDuration: '4-6 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/office-work',
+    features: ['ChatGPT cho Email', 'Excel thông minh', 'Thuyết trình AI', 'Quản lý thời gian'],
+    tags: ['office', 'productivity', 'email', 'automation'],
+    prerequisites: ['Kỹ năng máy tính cơ bản', 'Hiểu biết về Microsoft Office'],
+    lessons: [
+      {
+        id: 'email-automation',
+        title: 'Tự động hóa Email với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'excel-ai',
+        title: 'Excel thông minh với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'presentation-ai',
+        title: 'Tạo bài thuyết trình với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'time-management',
+        title: 'Quản lý thời gian với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'creative-design',
+    title: 'AI cho Sáng Tạo & Thiết Kế',
+    subtitle: 'Sáng tạo nội dung với AI',
+    description:
+      'Khám phá cách sử dụng Midjourney, DALL-E, Canva AI để tạo ra nội dung sáng tạo và thiết kế chuyên nghiệp',
+    category: ['creative', 'trending'], // Multiple categories
+    icon: '🎨',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '5-7 giờ',
+    difficulty: 'Cơ bản đến Nâng cao',
+    href: '/learning/ai/creative-design',
+    features: ['Midjourney mastery', 'Canva AI Studio', 'Content creation', 'Visual design'],
+    tags: ['design', 'creativity', 'art', 'visual'],
+    prerequisites: ['Hiểu biết cơ bản về design', 'Sử dụng máy tính thành thạo'],
+    lessons: [
+      {
+        id: 'midjourney-basics',
+        title: 'Midjourney cơ bản',
+        duration: '60 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'advanced-prompting',
+        title: 'Prompt engineering nâng cao',
+        duration: '75 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'canva-ai',
+        title: 'Canva AI Magic Studio',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'content-creation',
+        title: 'Tạo nội dung với AI',
+        duration: '45 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'education-learning',
+    title: 'AI cho Giáo Dục & Học Tập',
+    subtitle: 'Học tập thông minh với AI',
+    description: 'Sử dụng AI như một gia sư cá nhân, hỗ trợ nghiên cứu, học ngôn ngữ và tóm tắt tài liệu hiệu quả',
+    category: ['professional', 'stem'], // Multiple categories
+    icon: '📚',
+    color: 'from-green-600 to-teal-600',
+    totalDuration: '4-5 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/education-learning',
+    features: ['AI Tutor', 'Research assistance', 'Language learning', 'Document summarization'],
+    tags: ['education', 'learning', 'research', 'study'],
+    prerequisites: ['Kỹ năng học tập cơ bản'],
+    lessons: [
+      {
+        id: 'ai-tutor',
+        title: 'AI như gia sư cá nhân',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'research-ai',
+        title: 'Nghiên cứu với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'language-learning',
+        title: 'Học ngôn ngữ với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'document-summary',
+        title: 'Tóm tắt tài liệu với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'business-marketing',
+    title: 'AI cho Kinh Doanh & Marketing',
+    subtitle: 'Marketing thông minh với AI',
+    description: 'Ứng dụng AI trong marketing, phân tích khách hàng, tạo chatbot và tối ưu hóa SEO cho doanh nghiệp',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '📈',
+    color: 'from-orange-600 to-red-600',
+    totalDuration: '6-8 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/business-marketing',
+    features: ['Marketing automation', 'Customer analytics', 'Chatbot development', 'SEO optimization'],
+    tags: ['marketing', 'business', 'analytics', 'automation'],
+    prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm kinh doanh'],
+    lessons: [
+      {
+        id: 'marketing-automation',
+        title: 'Tự động hóa Marketing',
+        duration: '70 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'customer-analytics',
+        title: 'Phân tích khách hàng với AI',
+        duration: '80 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'chatbot-development',
+        title: 'Phát triển Chatbot',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'seo-ai',
+        title: 'SEO tối ưu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'daily-life',
+    title: 'AI cho Đời Sống Hàng Ngày',
+    subtitle: 'AI trong cuộc sống',
+    description:
+      'Khám phá cách AI có thể hỗ trợ cuộc sống hàng ngày từ quản lý tài chính, sức khỏe đến du lịch thông minh',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '🏠',
+    color: 'from-emerald-600 to-cyan-600',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    href: '/learning/ai/daily-life',
+    features: ['Personal AI assistant', 'Financial management', 'Health & fitness', 'Smart travel'],
+    tags: ['lifestyle', 'personal', 'health', 'finance'],
+    prerequisites: ['Sử dụng smartphone/máy tính'],
+    lessons: [
+      {
+        id: 'personal-assistant',
+        title: 'Trợ lý AI cá nhân',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'financial-ai',
+        title: 'Quản lý tài chính với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'health-fitness',
+        title: 'Sức khỏe & Fitness AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'travel-ai',
+        title: 'Du lịch thông minh với AI',
+        duration: '35 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'programming-dev',
+    title: 'AI cho Lập Trình & Phát Triển',
+    subtitle: 'Code thông minh với AI',
+    description: 'Tìm hiểu GitHub Copilot, AI code review và các công cụ AI hỗ trợ lập trình để tăng hiệu suất coding',
+    category: ['programming', 'trending'], // Multiple categories
+    icon: '💻',
+    color: 'from-slate-600 to-blue-600',
+    totalDuration: '7-9 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/programming-dev',
+    features: ['GitHub Copilot', 'AI code review', 'Automated testing', 'Documentation generation'],
+    tags: ['programming', 'coding', 'development', 'automation'],
+    prerequisites: ['Kiến thức lập trình cơ bản', 'Sử dụng Git/GitHub'],
+    lessons: [
+      {
+        id: 'github-copilot',
+        title: 'GitHub Copilot mastery',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'ai-code-review',
+        title: 'AI Code Review',
+        duration: '70 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'automated-testing',
+        title: 'Testing tự động với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'documentation-ai',
+        title: 'Tạo tài liệu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: K2Module.KitchenChemistry,
+    title: 'Hóa học Nhà bếp',
+    subtitle: 'Khám phá khoa học trong nấu ăn',
+    description: 'Tìm hiểu các phản ứng hóa học thú vị xảy ra trong nhà bếp, từ phản ứng Maillard đến sự nhũ hóa, biến những nguyên liệu quen thuộc thành các món ăn ngon.',
+    category: 'stem',
+    icon: '🧪',
+    color: 'from-orange-500 to-red-500',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '3-4 giờ',
+    href: '/learning/kitchen-chemistry',
+    features: [
+      'Thí nghiệm an toàn tại nhà',
+      'Giải thích khoa học về nấu ăn',
+      'Ứng dụng thực tế trong bếp',
+      'Hiểu sâu hơn về thực phẩm'
+    ],
+    tags: ['hóa học', 'nấu ăn', 'khoa học', 'thí nghiệm', 'stem'],
+    prerequisites: [
+      'Kiến thức hóa học phổ thông.',
+      'Đam mê nấu nướng và khám phá.'
+    ],
+    lessons: [
+      { id: 'maillard-reaction', title: 'Phản ứng Maillard', duration: '60 phút', difficulty: 'Cơ bản' },
+      { id: 'emulsification', title: 'Sự nhũ hóa', duration: '75 phút', difficulty: 'Trung bình' }
+    ]
+  },
+  {
+    id: K2Module.DigitalCitizenshipOnlineSafety,
+    title: 'Công dân số & An toàn trực tuyến',
+    subtitle: 'Hành trang thiết yếu cho thế hệ tương lai',
+    description:
+      'Trong thế giới kết nối ngày nay, việc trở thành một công dân số có trách nhiệm là vô cùng quan trọng. Khóa học này cung cấp cho học sinh những kiến thức và kỹ năng để tương tác an toàn, có đạo đức và hiệu quả trên môi trường Internet.',
+    category: ['essential', 'lifeskills'],
+    icon: '🛡️',
+    color: 'from-teal-500 to-cyan-600',
+    totalDuration: '8-10 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '8-10 giờ',
+    href: '/learning/digital-citizenship-online-safety',
+    features: [
+      'Bảo vệ danh tính và thông tin cá nhân.',
+      'Nhận diện và phòng chống tin giả, lừa đảo.',
+      'Xây dựng dấu chân số tích cực.',
+      'Giao tiếp và ứng xử văn minh trên mạng.',
+    ],
+    tags: ['công dân số', 'an toàn trực tuyến', 'an ninh mạng', 'đạo đức số'],
+    prerequisites: [
+      'Kỹ năng sử dụng máy tính và Internet cơ bản.',
+      'Có tài khoản mạng xã hội (Facebook, TikTok, etc.) là một lợi thế.',
+      'Mong muốn trở thành người dùng Internet thông thái.',
+    ],
+    lessons: [
+      { id: 'hieu-ve-cong-dan-so', title: 'Hiểu về Công dân số', duration: '45 phút', difficulty: 'Cơ bản' },
+      {
+        id: 'bao-ve-danh-tinh-truc-tuyen',
+        title: 'Bảo vệ Danh tính Trực tuyến',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'nhan-dien-tin-gia',
+        title: 'Tư duy Phản biện & Nhận diện Tin giả',
+        duration: '75 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'giao-tiep-va-ung-xu-tren-mang',
+        title: 'Giao tiếp và Ứng xử trên mạng (Netiquette)',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'ai',
+    title: 'AI Của Tôi - Learning',
+    subtitle: 'Khóa học AI thực tế',
+    description:
+      'Khóa học AI thực tế với 6 chuyên đề: Văn phòng, Sáng tạo, Giáo dục, Kinh doanh, Cuộc sống và Lập trình',
+    category: 'artificial-intelligence',
+    icon: '🤖',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '25-30 giờ',
+    difficulty: 'Trung bình',
+    href: '/learning/ai',
+    features: [
+      'Hướng dẫn 6 lĩnh vực AI ứng dụng',
+      'Thực hành với các tool AI hàng đầu',
+      'Prompt engineering chuyên sâu',
+      'Ứng dụng thực tế trong công việc',
+    ],
+    tags: ['ai', 'chatgpt', 'midjourney', 'practical', 'productivity'],
+    prerequisites: [
+      'Sử dụng máy tính và internet cơ bản',
+      'Tiếng Anh đọc hiểu (để sử dụng AI tools)',
+      'Tư duy sáng tạo và ham học hỏi',
+    ],
+    lessons: [
+      {
+        id: 'office-work',
+        title: 'AI cho Văn Phòng & Công Việc',
+        duration: '4 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'creative-design',
+        title: 'AI cho Sáng Tạo & Thiết Kế',
+        duration: '5 giờ',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'education-learning',
+        title: 'AI cho Giáo Dục & Học Tập',
+        duration: '3 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'business-marketing',
+        title: 'AI cho Kinh Doanh & Marketing',
+        duration: '6 giờ',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'daily-life',
+        title: 'AI cho Cuộc Sống Hàng Ngày',
+        duration: '2 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'programming-dev',
+        title: 'AI cho Lập Trình & Phát Triển',
+        duration: '5 giờ',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
+  {
+    id: 'office-work',
+    title: 'AI cho Văn Phòng & Công Việc',
+    subtitle: 'Tăng hiệu suất với AI',
+    description:
+      'Học cách sử dụng AI để tự động hóa công việc văn phòng, viết email chuyên nghiệp và quản lý thời gian hiệu quả',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '💼',
+    color: 'from-blue-600 to-indigo-600',
+    totalDuration: '4-6 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/office-work',
+    features: ['ChatGPT cho Email', 'Excel thông minh', 'Thuyết trình AI', 'Quản lý thời gian'],
+    tags: ['office', 'productivity', 'email', 'automation'],
+    prerequisites: ['Kỹ năng máy tính cơ bản', 'Hiểu biết về Microsoft Office'],
+    lessons: [
+      {
+        id: 'email-automation',
+        title: 'Tự động hóa Email với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'excel-ai',
+        title: 'Excel thông minh với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'presentation-ai',
+        title: 'Tạo bài thuyết trình với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'time-management',
+        title: 'Quản lý thời gian với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'creative-design',
+    title: 'AI cho Sáng Tạo & Thiết Kế',
+    subtitle: 'Sáng tạo nội dung với AI',
+    description:
+      'Khám phá cách sử dụng Midjourney, DALL-E, Canva AI để tạo ra nội dung sáng tạo và thiết kế chuyên nghiệp',
+    category: ['creative', 'trending'], // Multiple categories
+    icon: '🎨',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '5-7 giờ',
+    difficulty: 'Cơ bản đến Nâng cao',
+    href: '/learning/ai/creative-design',
+    features: ['Midjourney mastery', 'Canva AI Studio', 'Content creation', 'Visual design'],
+    tags: ['design', 'creativity', 'art', 'visual'],
+    prerequisites: ['Hiểu biết cơ bản về design', 'Sử dụng máy tính thành thạo'],
+    lessons: [
+      {
+        id: 'midjourney-basics',
+        title: 'Midjourney cơ bản',
+        duration: '60 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'advanced-prompting',
+        title: 'Prompt engineering nâng cao',
+        duration: '75 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'canva-ai',
+        title: 'Canva AI Magic Studio',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'content-creation',
+        title: 'Tạo nội dung với AI',
+        duration: '45 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'education-learning',
+    title: 'AI cho Giáo Dục & Học Tập',
+    subtitle: 'Học tập thông minh với AI',
+    description: 'Sử dụng AI như một gia sư cá nhân, hỗ trợ nghiên cứu, học ngôn ngữ và tóm tắt tài liệu hiệu quả',
+    category: ['professional', 'stem'], // Multiple categories
+    icon: '📚',
+    color: 'from-green-600 to-teal-600',
+    totalDuration: '4-5 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/education-learning',
+    features: ['AI Tutor', 'Research assistance', 'Language learning', 'Document summarization'],
+    tags: ['education', 'learning', 'research', 'study'],
+    prerequisites: ['Kỹ năng học tập cơ bản'],
+    lessons: [
+      {
+        id: 'ai-tutor',
+        title: 'AI như gia sư cá nhân',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'research-ai',
+        title: 'Nghiên cứu với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'language-learning',
+        title: 'Học ngôn ngữ với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'document-summary',
+        title: 'Tóm tắt tài liệu với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'business-marketing',
+    title: 'AI cho Kinh Doanh & Marketing',
+    subtitle: 'Marketing thông minh với AI',
+    description: 'Ứng dụng AI trong marketing, phân tích khách hàng, tạo chatbot và tối ưu hóa SEO cho doanh nghiệp',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '📈',
+    color: 'from-orange-600 to-red-600',
+    totalDuration: '6-8 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/business-marketing',
+    features: ['Marketing automation', 'Customer analytics', 'Chatbot development', 'SEO optimization'],
+    tags: ['marketing', 'business', 'analytics', 'automation'],
+    prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm kinh doanh'],
+    lessons: [
+      {
+        id: 'marketing-automation',
+        title: 'Tự động hóa Marketing',
+        duration: '70 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'customer-analytics',
+        title: 'Phân tích khách hàng với AI',
+        duration: '80 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'chatbot-development',
+        title: 'Phát triển Chatbot',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'seo-ai',
+        title: 'SEO tối ưu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'daily-life',
+    title: 'AI cho Đời Sống Hàng Ngày',
+    subtitle: 'AI trong cuộc sống',
+    description:
+      'Khám phá cách AI có thể hỗ trợ cuộc sống hàng ngày từ quản lý tài chính, sức khỏe đến du lịch thông minh',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '🏠',
+    color: 'from-emerald-600 to-cyan-600',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    href: '/learning/ai/daily-life',
+    features: ['Personal AI assistant', 'Financial management', 'Health & fitness', 'Smart travel'],
+    tags: ['lifestyle', 'personal', 'health', 'finance'],
+    prerequisites: ['Sử dụng smartphone/máy tính'],
+    lessons: [
+      {
+        id: 'personal-assistant',
+        title: 'Trợ lý AI cá nhân',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'financial-ai',
+        title: 'Quản lý tài chính với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'health-fitness',
+        title: 'Sức khỏe & Fitness AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'travel-ai',
+        title: 'Du lịch thông minh với AI',
+        duration: '35 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'programming-dev',
+    title: 'AI cho Lập Trình & Phát Triển',
+    subtitle: 'Code thông minh với AI',
+    description: 'Tìm hiểu GitHub Copilot, AI code review và các công cụ AI hỗ trợ lập trình để tăng hiệu suất coding',
+    category: ['programming', 'trending'], // Multiple categories
+    icon: '💻',
+    color: 'from-slate-600 to-blue-600',
+    totalDuration: '7-9 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/programming-dev',
+    features: ['GitHub Copilot', 'AI code review', 'Automated testing', 'Documentation generation'],
+    tags: ['programming', 'coding', 'development', 'automation'],
+    prerequisites: ['Kiến thức lập trình cơ bản', 'Sử dụng Git/GitHub'],
+    lessons: [
+      {
+        id: 'github-copilot',
+        title: 'GitHub Copilot mastery',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'ai-code-review',
+        title: 'AI Code Review',
+        duration: '70 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'automated-testing',
+        title: 'Testing tự động với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'documentation-ai',
+        title: 'Tạo tài liệu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: K2Module.KitchenChemistry,
+    title: 'Hóa học Nhà bếp',
+    subtitle: 'Khám phá khoa học trong nấu ăn',
+    description: 'Tìm hiểu các phản ứng hóa học thú vị xảy ra trong nhà bếp, từ phản ứng Maillard đến sự nhũ hóa, biến những nguyên liệu quen thuộc thành các món ăn ngon.',
+    category: 'stem',
+    icon: '🧪',
+    color: 'from-orange-500 to-red-500',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '3-4 giờ',
+    href: '/learning/kitchen-chemistry',
+    features: [
+      'Thí nghiệm an toàn tại nhà',
+      'Giải thích khoa học về nấu ăn',
+      'Ứng dụng thực tế trong bếp',
+      'Hiểu sâu hơn về thực phẩm'
+    ],
+    tags: ['hóa học', 'nấu ăn', 'khoa học', 'thí nghiệm', 'stem'],
+    prerequisites: [
+      'Kiến thức hóa học phổ thông.',
+      'Đam mê nấu nướng và khám phá.'
+    ],
+    lessons: [
+      { id: 'maillard-reaction', title: 'Phản ứng Maillard', duration: '60 phút', difficulty: 'Cơ bản' },
+      { id: 'emulsification', title: 'Sự nhũ hóa', duration: '75 phút', difficulty: 'Trung bình' }
+    ]
+  },
+  {
+    id: K2Module.DigitalCitizenshipOnlineSafety,
+    title: 'Công dân số & An toàn trực tuyến',
+    subtitle: 'Hành trang thiết yếu cho thế hệ tương lai',
+    description:
+      'Trong thế giới kết nối ngày nay, việc trở thành một công dân số có trách nhiệm là vô cùng quan trọng. Khóa học này cung cấp cho học sinh những kiến thức và kỹ năng để tương tác an toàn, có đạo đức và hiệu quả trên môi trường Internet.',
+    category: ['essential', 'lifeskills'],
+    icon: '🛡️',
+    color: 'from-teal-500 to-cyan-600',
+    totalDuration: '8-10 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '8-10 giờ',
+    href: '/learning/digital-citizenship-online-safety',
+    features: [
+      'Bảo vệ danh tính và thông tin cá nhân.',
+      'Nhận diện và phòng chống tin giả, lừa đảo.',
+      'Xây dựng dấu chân số tích cực.',
+      'Giao tiếp và ứng xử văn minh trên mạng.',
+    ],
+    tags: ['công dân số', 'an toàn trực tuyến', 'an ninh mạng', 'đạo đức số'],
+    prerequisites: [
+      'Kỹ năng sử dụng máy tính và Internet cơ bản.',
+      'Có tài khoản mạng xã hội (Facebook, TikTok, etc.) là một lợi thế.',
+      'Mong muốn trở thành người dùng Internet thông thái.',
+    ],
+    lessons: [
+      { id: 'hieu-ve-cong-dan-so', title: 'Hiểu về Công dân số', duration: '45 phút', difficulty: 'Cơ bản' },
+      {
+        id: 'bao-ve-danh-tinh-truc-tuyen',
+        title: 'Bảo vệ Danh tính Trực tuyến',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'nhan-dien-tin-gia',
+        title: 'Tư duy Phản biện & Nhận diện Tin giả',
+        duration: '75 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'giao-tiep-va-ung-xu-tren-mang',
+        title: 'Giao tiếp và Ứng xử trên mạng (Netiquette)',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'ai',
+    title: 'AI Của Tôi - Learning',
+    subtitle: 'Khóa học AI thực tế',
+    description:
+      'Khóa học AI thực tế với 6 chuyên đề: Văn phòng, Sáng tạo, Giáo dục, Kinh doanh, Cuộc sống và Lập trình',
+    category: 'artificial-intelligence',
+    icon: '🤖',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '25-30 giờ',
+    difficulty: 'Trung bình',
+    href: '/learning/ai',
+    features: [
+      'Hướng dẫn 6 lĩnh vực AI ứng dụng',
+      'Thực hành với các tool AI hàng đầu',
+      'Prompt engineering chuyên sâu',
+      'Ứng dụng thực tế trong công việc',
+    ],
+    tags: ['ai', 'chatgpt', 'midjourney', 'practical', 'productivity'],
+    prerequisites: [
+      'Sử dụng máy tính và internet cơ bản',
+      'Tiếng Anh đọc hiểu (để sử dụng AI tools)',
+      'Tư duy sáng tạo và ham học hỏi',
+    ],
+    lessons: [
+      {
+        id: 'office-work',
+        title: 'AI cho Văn Phòng & Công Việc',
+        duration: '4 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'creative-design',
+        title: 'AI cho Sáng Tạo & Thiết Kế',
+        duration: '5 giờ',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'education-learning',
+        title: 'AI cho Giáo Dục & Học Tập',
+        duration: '3 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'business-marketing',
+        title: 'AI cho Kinh Doanh & Marketing',
+        duration: '6 giờ',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'daily-life',
+        title: 'AI cho Cuộc Sống Hàng Ngày',
+        duration: '2 giờ',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'programming-dev',
+        title: 'AI cho Lập Trình & Phát Triển',
+        duration: '5 giờ',
+        difficulty: 'Nâng cao',
+      },
+    ],
+  },
+  {
+    id: 'office-work',
+    title: 'AI cho Văn Phòng & Công Việc',
+    subtitle: 'Tăng hiệu suất với AI',
+    description:
+      'Học cách sử dụng AI để tự động hóa công việc văn phòng, viết email chuyên nghiệp và quản lý thời gian hiệu quả',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '💼',
+    color: 'from-blue-600 to-indigo-600',
+    totalDuration: '4-6 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/office-work',
+    features: ['ChatGPT cho Email', 'Excel thông minh', 'Thuyết trình AI', 'Quản lý thời gian'],
+    tags: ['office', 'productivity', 'email', 'automation'],
+    prerequisites: ['Kỹ năng máy tính cơ bản', 'Hiểu biết về Microsoft Office'],
+    lessons: [
+      {
+        id: 'email-automation',
+        title: 'Tự động hóa Email với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'excel-ai',
+        title: 'Excel thông minh với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'presentation-ai',
+        title: 'Tạo bài thuyết trình với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'time-management',
+        title: 'Quản lý thời gian với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'creative-design',
+    title: 'AI cho Sáng Tạo & Thiết Kế',
+    subtitle: 'Sáng tạo nội dung với AI',
+    description:
+      'Khám phá cách sử dụng Midjourney, DALL-E, Canva AI để tạo ra nội dung sáng tạo và thiết kế chuyên nghiệp',
+    category: ['creative', 'trending'], // Multiple categories
+    icon: '🎨',
+    color: 'from-purple-600 to-pink-600',
+    totalDuration: '5-7 giờ',
+    difficulty: 'Cơ bản đến Nâng cao',
+    href: '/learning/ai/creative-design',
+    features: ['Midjourney mastery', 'Canva AI Studio', 'Content creation', 'Visual design'],
+    tags: ['design', 'creativity', 'art', 'visual'],
+    prerequisites: ['Hiểu biết cơ bản về design', 'Sử dụng máy tính thành thạo'],
+    lessons: [
+      {
+        id: 'midjourney-basics',
+        title: 'Midjourney cơ bản',
+        duration: '60 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'advanced-prompting',
+        title: 'Prompt engineering nâng cao',
+        duration: '75 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'canva-ai',
+        title: 'Canva AI Magic Studio',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'content-creation',
+        title: 'Tạo nội dung với AI',
+        duration: '45 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'education-learning',
+    title: 'AI cho Giáo Dục & Học Tập',
+    subtitle: 'Học tập thông minh với AI',
+    description: 'Sử dụng AI như một gia sư cá nhân, hỗ trợ nghiên cứu, học ngôn ngữ và tóm tắt tài liệu hiệu quả',
+    category: ['professional', 'stem'], // Multiple categories
+    icon: '📚',
+    color: 'from-green-600 to-teal-600',
+    totalDuration: '4-5 giờ',
+    difficulty: 'Cơ bản đến Trung bình',
+    href: '/learning/ai/education-learning',
+    features: ['AI Tutor', 'Research assistance', 'Language learning', 'Document summarization'],
+    tags: ['education', 'learning', 'research', 'study'],
+    prerequisites: ['Kỹ năng học tập cơ bản'],
+    lessons: [
+      {
+        id: 'ai-tutor',
+        title: 'AI như gia sư cá nhân',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'research-ai',
+        title: 'Nghiên cứu với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'language-learning',
+        title: 'Học ngôn ngữ với AI',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'document-summary',
+        title: 'Tóm tắt tài liệu với AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'business-marketing',
+    title: 'AI cho Kinh Doanh & Marketing',
+    subtitle: 'Marketing thông minh với AI',
+    description: 'Ứng dụng AI trong marketing, phân tích khách hàng, tạo chatbot và tối ưu hóa SEO cho doanh nghiệp',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '📈',
+    color: 'from-orange-600 to-red-600',
+    totalDuration: '6-8 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/business-marketing',
+    features: ['Marketing automation', 'Customer analytics', 'Chatbot development', 'SEO optimization'],
+    tags: ['marketing', 'business', 'analytics', 'automation'],
+    prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm kinh doanh'],
+    lessons: [
+      {
+        id: 'marketing-automation',
+        title: 'Tự động hóa Marketing',
+        duration: '70 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'customer-analytics',
+        title: 'Phân tích khách hàng với AI',
+        duration: '80 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'chatbot-development',
+        title: 'Phát triển Chatbot',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'seo-ai',
+        title: 'SEO tối ưu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: 'daily-life',
+    title: 'AI cho Đời Sống Hàng Ngày',
+    subtitle: 'AI trong cuộc sống',
+    description:
+      'Khám phá cách AI có thể hỗ trợ cuộc sống hàng ngày từ quản lý tài chính, sức khỏe đến du lịch thông minh',
+    category: ['professional', 'trending'], // Multiple categories
+    icon: '🏠',
+    color: 'from-emerald-600 to-cyan-600',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    href: '/learning/ai/daily-life',
+    features: ['Personal AI assistant', 'Financial management', 'Health & fitness', 'Smart travel'],
+    tags: ['lifestyle', 'personal', 'health', 'finance'],
+    prerequisites: ['Sử dụng smartphone/máy tính'],
+    lessons: [
+      {
+        id: 'personal-assistant',
+        title: 'Trợ lý AI cá nhân',
+        duration: '45 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'financial-ai',
+        title: 'Quản lý tài chính với AI',
+        duration: '50 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'health-fitness',
+        title: 'Sức khỏe & Fitness AI',
+        duration: '40 phút',
+        difficulty: 'Cơ bản',
+      },
+      {
+        id: 'travel-ai',
+        title: 'Du lịch thông minh với AI',
+        duration: '35 phút',
+        difficulty: 'Cơ bản',
+      },
+    ],
+  },
+  {
+    id: 'programming-dev',
+    title: 'AI cho Lập Trình & Phát Triển',
+    subtitle: 'Code thông minh với AI',
+    description: 'Tìm hiểu GitHub Copilot, AI code review và các công cụ AI hỗ trợ lập trình để tăng hiệu suất coding',
+    category: ['programming', 'trending'], // Multiple categories
+    icon: '💻',
+    color: 'from-slate-600 to-blue-600',
+    totalDuration: '7-9 giờ',
+    difficulty: 'Trung bình đến Nâng cao',
+    href: '/learning/ai/programming-dev',
+    features: ['GitHub Copilot', 'AI code review', 'Automated testing', 'Documentation generation'],
+    tags: ['programming', 'coding', 'development', 'automation'],
+    prerequisites: ['Kiến thức lập trình cơ bản', 'Sử dụng Git/GitHub'],
+    lessons: [
+      {
+        id: 'github-copilot',
+        title: 'GitHub Copilot mastery',
+        duration: '90 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'ai-code-review',
+        title: 'AI Code Review',
+        duration: '70 phút',
+        difficulty: 'Nâng cao',
+      },
+      {
+        id: 'automated-testing',
+        title: 'Testing tự động với AI',
+        duration: '60 phút',
+        difficulty: 'Trung bình',
+      },
+      {
+        id: 'documentation-ai',
+        title: 'Tạo tài liệu với AI',
+        duration: '50 phút',
+        difficulty: 'Trung bình',
+      },
+    ],
+  },
+  {
+    id: K2Module.KitchenChemistry,
+    title: 'Hóa học Nhà bếp',
+    subtitle: 'Khám phá khoa học trong nấu ăn',
+    description: 'Tìm hiểu các phản ứng hóa học thú vị xảy ra trong nhà bếp, từ phản ứng Maillard đến sự nhũ hóa, biến những nguyên liệu quen thuộc thành các món ăn ngon.',
+    category: 'stem',
+    icon: '🧪',
+    color: 'from-orange-500 to-red-500',
+    totalDuration: '3-4 giờ',
+    difficulty: 'Cơ bản',
+    level: 'Cơ bản',
+    duration: '3-4 giờ',
+    href: '/learning/kitchen-chemistry',
+    features: [
+      'Thí nghiệm an toàn tại nhà',
+      'Giải thích khoa học về nấu ăn',
+      'Ứng dụng thực tế trong bếp',
+      'Hiểu sâu hơn về thực phẩm'
+    ],
+    tags: ['hóa học', 'nấu ăn', 'khoa học', 'thí nghiệm', 'stem'],
+    prerequisites: [
+      'Kiến thức hóa học phổ thông.',
+      'Đam mê nấu nướng và khám phá.'
+    ],
+    lessons: [
+      { id: 'maillard-reaction', title: 'Phản ứng Maillard', duration: '60 phút', difficulty: 'Cơ bản' },
+      { id: 'emulsification', title: 'Sự nhũ hóa', duration: '75 phút', difficulty: 'Trung bình' }
+    ]
+  },
+  {
     id: K2Module.DigitalCitizenshipOnlineSafety,
     title: 'Công dân số & An toàn trực tuyến',
     subtitle: 'Hành trang thiết yếu cho thế hệ tương lai',
@@ -2161,808 +3746,15 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
   },
   {
-    id: K2Module.YoungEntrepreneur,
-    title: 'Young Entrepreneur Bootcamp',
-    subtitle: 'Khởi nghiệp thành công từ tuổi teen',
-    description:
-      'Bootcamp toàn diện cho thế hệ GenZ muốn khởi nghiệp: từ ý tưởng, xây dựng MVP, gọi vốn đến scale business với focus đặc biệt vào thị trường Việt Nam',
-    category: 'trending',
-    icon: '🚀',
-    color: 'from-orange-600 to-red-600',
-    totalDuration: '25-30 giờ',
-    difficulty: 'Cơ bản đến Nâng cao',
-    level: 'Trung bình',
-    duration: '25-30 giờ',
-    href: '/learning/young-entrepreneur',
-    features: [
-      'Startup Mindset',
-      'Business Model Design',
-      'MVP Development',
-      'Fundraising',
-      'Team Building',
-      'Growth Hacking',
-      'Legal Compliance',
-    ],
-    tags: [
-      'startup',
-      'entrepreneurship',
-      'business model',
-      'mvp',
-      'fundraising',
-      'young entrepreneur',
-      'vietnam startup',
-    ],
-    prerequisites: [
-      'Tư duy logic và sáng tạo',
-      'Đam mê kinh doanh',
-      'Kỹ năng học hỏi nhanh',
-      'Tinh thần chấp nhận thử thách',
-    ],
-    lessons: [
-      {
-        id: 'startup-mindset-fundamentals',
-        title: 'Tư Duy Khởi Nghiệp & Cơ Hội Thị Trường',
-        duration: '180 phút',
-        difficulty: 'Cơ bản',
-      },
-      {
-        id: 'business-model-validation',
-        title: 'Xây Dựng & Kiểm Chứng Business Model',
-        duration: '210 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'digital-marketing-growth',
-        title: 'Digital Marketing & Growth Hacking cho Startup',
-        duration: '195 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'funding-investment-preparation',
-        title: 'Gọi Vốn & Chuẩn Bị Đầu Tư',
-        duration: '240 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'team-building-leadership',
-        title: 'Xây Dựng Đội Ngũ & Leadership Skills',
-        duration: '180 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'scaling-operations',
-        title: 'Scale Operations & Business Growth',
-        duration: '225 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'startup-legal-compliance',
-        title: 'Pháp Lý & Compliance cho Startup',
-        duration: '165 phút',
-        difficulty: 'Trung bình',
-      },
-    ],
-  },
-
-  // 2025 Social Media Trending Modules
-  {
-    id: K2Module.AIContentCreator,
-    title: 'AI Content Creator Academy',
-    subtitle: 'Master AI tools cho content creation',
-    description:
-      'Học cách sử dụng AI để tạo content viral trên TikTok, YouTube, Instagram với tools như ChatGPT, RunwayML, Midjourney.',
-    category: 'trending',
-    icon: '🎬',
-    color: 'from-purple-600 to-pink-600',
-    totalDuration: '8-10 giờ',
-    difficulty: 'Trung bình',
-    level: 'Trung bình',
-    duration: '8-10 giờ',
-    href: '/learning/ai-content-creator',
-    features: [
-      'AI Video Creation với RunwayML',
-      'Automated Social Media với AI',
-      'Personal Branding với AI Tools',
-      'Content Workflow Optimization',
-    ],
-    tags: ['ai content creation', 'social media automation', 'viral marketing', 'content strategy'],
-    prerequisites: [
-      'Hiểu biết cơ bản về social media platforms',
-      'Kỹ năng sử dụng máy tính và smartphone',
-      'Tư duy sáng tạo và storytelling',
-    ],
-    lessons: [
-      {
-        id: 'ai-video-content-creation',
-        title: 'AI Video Content Creation Mastery',
-        duration: '180 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'ai-powered-social-media-automation',
-        title: 'AI-Powered Social Media Automation',
-        duration: '150 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'ai-personal-branding-strategy',
-        title: 'AI Personal Branding & Authority Building',
-        duration: '120 phút',
-        difficulty: 'Trung bình',
-      },
-    ],
-  },
-  {
-    id: K2Module.TikTokSocialCommerce,
-    title: 'TikTok Shop & Social Commerce',
-    subtitle: 'Master live selling và e-commerce',
-    description:
-      'Học cách setup và optimize TikTok Shop, livestream selling strategies và social commerce cho maximized revenue.',
-    category: 'trending',
-    icon: '🛒',
-    color: 'from-pink-600 to-red-600',
-    totalDuration: '8-9 giờ',
-    difficulty: 'Trung bình',
-    level: 'Trung bình',
-    duration: '8-9 giờ',
-    href: '/learning/tiktok-social-commerce',
-    features: [
-      'TikTok Shop Setup & Optimization',
-      'Livestream Selling Mastery',
-      'Cross-Platform Commerce Strategy',
-      'Social Commerce Analytics',
-    ],
-    tags: ['tiktok shop', 'social commerce', 'livestream selling', 'e-commerce optimization'],
-    prerequisites: [
-      'Business license và tax registration',
-      'Products ready for online selling',
-      'Basic understanding của e-commerce',
-      'TikTok Creator Fund eligibility',
-    ],
-    lessons: [
-      {
-        id: 'tiktok-shop-setup-mastery',
-        title: 'TikTok Shop Setup & Optimization Mastery',
-        duration: '180 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'social-commerce-livestream-mastery',
-        title: 'Social Commerce Livestream Selling Mastery',
-        duration: '150 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'cross-platform-social-commerce',
-        title: 'Cross-Platform Social Commerce Strategy',
-        duration: '120 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-  {
-    id: K2Module.GenZMarketing,
-    title: 'Gen Z Marketing & Authentic Branding',
-    subtitle: 'Marketing cho thế hệ Gen Z',
-    description:
-      'Hiểu sâu về tâm lý Gen Z và develop authentic marketing strategies resonate với thế hệ digital natives.',
-    category: 'trending',
-    icon: '🎯',
-    color: 'from-cyan-600 to-blue-600',
-    totalDuration: '8-9 giờ',
-    difficulty: 'Trung bình',
-    level: 'Trung bình',
-    duration: '8-9 giờ',
-    href: '/learning/genz-marketing',
-    features: [
-      'Gen Z Psychology & Behavior Analysis',
-      'Inclusive & Diverse Messaging',
-      'Purpose-Driven Brand Activism',
-      'Authenticity Framework Development',
-    ],
-    tags: ['gen z marketing', 'authentic branding', 'inclusive marketing', 'brand activism'],
-    prerequisites: [
-      'Basic marketing knowledge',
-      'Understanding of social media platforms',
-      'Cultural sensitivity awareness',
-      'Commitment to ethical practices',
-    ],
-    lessons: [
-      {
-        id: 'genz-psychology-authentic-marketing',
-        title: 'Gen Z Psychology & Authentic Marketing Principles',
-        duration: '150 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'inclusive-diverse-brand-messaging',
-        title: 'Inclusive & Diverse Brand Messaging',
-        duration: '120 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'purpose-driven-brand-activism',
-        title: 'Purpose-Driven Brand Activism & Social Impact',
-        duration: '180 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-  {
-    id: K2Module.ShortVideoMastery,
-    title: 'Short-form Video Mastery',
-    subtitle: 'Viral video creation techniques',
-    description:
-      'Master psychological triggers, advanced editing techniques và platform optimization cho viral short-form videos.',
-    category: 'trending',
-    icon: '📱',
-    color: 'from-orange-600 to-yellow-600',
-    totalDuration: '8-9 giờ',
-    difficulty: 'Trung bình',
-    level: 'Trung bình',
-    duration: '8-9 giờ',
-    href: '/learning/short-video-mastery',
-    features: [
-      'Viral Psychology & Hook Creation',
-      'Advanced Editing Techniques',
-      'Platform Algorithm Optimization',
-      'Trend Analysis & Adaptation',
-    ],
-    tags: ['short form video', 'viral content', 'video editing', 'algorithm optimization'],
-    prerequisites: [
-      'Basic video editing skills',
-      'Understanding of social media platforms',
-      'Creative mindset và storytelling interest',
-    ],
-    lessons: [
-      {
-        id: 'viral-video-psychology-hooks',
-        title: 'Viral Video Psychology & Hook Mastery',
-        duration: '150 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'advanced-video-editing-techniques',
-        title: 'Advanced Video Editing & Visual Storytelling',
-        duration: '180 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'platform-optimization-algorithm-mastery',
-        title: 'Platform Optimization & Algorithm Mastery',
-        duration: '120 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-  {
-    id: K2Module.LiveCommerceStreaming,
-    title: 'Live Commerce & Streaming',
-    subtitle: 'Live selling mastery',
-    description:
-      'Master livestream selling, interactive technology setup và global expansion strategies cho live commerce success.',
-    category: 'trending',
-    icon: '📹',
-    color: 'from-red-600 to-pink-600',
-    totalDuration: '8-9 giờ',
-    difficulty: 'Nâng cao',
-    level: 'Nâng cao',
-    duration: '8-9 giờ',
-    href: '/learning/live-commerce-streaming',
-    features: [
-      'Live Streaming Sales Techniques',
-      'Professional Streaming Technology',
-      'Global Expansion Strategies',
-      'Community Building approaches',
-    ],
-    tags: ['live commerce', 'streaming technology', 'sales techniques', 'global expansion'],
-    prerequisites: [
-      'Comfortable speaking on camera',
-      'Basic sales skills',
-      'Technical aptitude với equipment',
-      'Investment budget for equipment',
-    ],
-    lessons: [
-      {
-        id: 'live-streaming-sales-mastery',
-        title: 'Live Streaming Sales Mastery',
-        duration: '180 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'interactive-live-streaming-technology',
-        title: 'Interactive Live Streaming Technology & Tools',
-        duration: '150 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'global-live-commerce-expansion',
-        title: 'Global Live Commerce & Cross-Cultural Strategies',
-        duration: '120 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-  {
-    id: K2Module.MicroInfluencerEconomy,
-    title: 'Micro-Influencer Economy',
-    subtitle: 'Influencer partnerships & growth',
-    description:
-      'Build authentic micro-influencer partnerships, develop personal influence và create win-win collaboration strategies.',
-    category: 'trending',
-    icon: '👥',
-    color: 'from-teal-600 to-green-600',
-    totalDuration: '6-7 giờ',
-    difficulty: 'Trung bình',
-    level: 'Trung bình',
-    duration: '6-7 giờ',
-    href: '/learning/micro-influencer-economy',
-    features: [
-      'Micro-Influencer Partnership Strategies',
-      'Authentic Influence Building',
-      'Community Engagement Techniques',
-      'Monetization Best Practices',
-    ],
-    tags: ['micro influencer', 'partnership strategies', 'authentic influence', 'community building'],
-    prerequisites: [
-      'Understanding of influencer marketing basics',
-      'Brand partnership experience',
-      'Clear personal values và mission',
-      'Commitment to consistent content creation',
-    ],
-    lessons: [
-      {
-        id: 'micro-influencer-partnership-strategies',
-        title: 'Micro-Influencer Partnership & Collaboration Strategies',
-        duration: '150 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'authentic-influence-community-building',
-        title: 'Authentic Influence & Community Building',
-        duration: '120 phút',
-        difficulty: 'Trung bình',
-      },
-    ],
-  },
-  {
-    id: K2Module.SocialListeningCrisis,
-    title: 'Social Listening & Crisis Management',
-    subtitle: 'Reputation monitoring & crisis response',
-    description:
-      'Master social listening tools, crisis management protocols và reputation recovery strategies cho brand protection.',
-    category: 'trending',
-    icon: '🔍',
-    color: 'from-blue-600 to-indigo-600',
-    totalDuration: '7-8 giờ',
-    difficulty: 'Nâng cao',
-    level: 'Nâng cao',
-    duration: '7-8 giờ',
-    href: '/learning/social-listening-crisis',
-    features: [
-      'Advanced Social Listening Setup',
-      'Crisis Detection & Response',
-      'Reputation Recovery Strategies',
-      'Proactive Brand Protection',
-    ],
-    tags: ['social listening', 'crisis management', 'reputation monitoring', 'brand protection'],
-    prerequisites: [
-      'Understanding of social media platforms',
-      'Basic analytics experience',
-      'Understanding of brand reputation dynamics',
-      'Crisis communication experience',
-    ],
-    lessons: [
-      {
-        id: 'advanced-social-listening-monitoring',
-        title: 'Advanced Social Listening & Brand Monitoring',
-        duration: '150 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'crisis-management-reputation-recovery',
-        title: 'Crisis Management & Reputation Recovery Strategies',
-        duration: '180 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-  {
-    id: K2Module.EthicalMarketingPurpose,
-    title: 'Ethical Marketing & Brand Purpose',
-    subtitle: 'Values-driven marketing',
-    description:
-      'Develop ethical marketing principles, transparent brand communication và purpose-driven campaigns tạo social impact.',
-    category: 'trending',
-    icon: '💚',
-    color: 'from-green-600 to-emerald-600',
-    totalDuration: '7-8 giờ',
-    difficulty: 'Trung bình',
-    level: 'Trung bình',
-    duration: '7-8 giờ',
-    href: '/learning/ethical-marketing-purpose',
-    features: [
-      'Ethical Marketing Framework',
-      'Brand Transparency Strategies',
-      'Purpose-Driven Campaign Development',
-      'Social Impact Measurement',
-    ],
-    tags: ['ethical marketing', 'brand purpose', 'social impact', 'transparent communication'],
-    prerequisites: [
-      'Basic marketing knowledge',
-      'Understanding of consumer rights',
-      'Strong brand values foundation',
-      'Commitment to ethical business practices',
-    ],
-    lessons: [
-      {
-        id: 'ethical-marketing-principles-transparency',
-        title: 'Ethical Marketing Principles & Brand Transparency',
-        duration: '150 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'purpose-driven-marketing-social-impact',
-        title: 'Purpose-Driven Marketing & Social Impact Campaigns',
-        duration: '180 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-  {
-    id: K2Module.CrossPlatformStrategy,
-    title: 'Cross-Platform Content Strategy',
-    subtitle: 'Multi-platform optimization',
-    description:
-      'Develop unified brand messaging, advanced content repurposing và cross-platform optimization strategies.',
-    category: 'trending',
-    icon: '🌐',
-    color: 'from-violet-600 to-purple-600',
-    totalDuration: '6-7 giờ',
-    difficulty: 'Nâng cao',
-    level: 'Nâng cao',
-    duration: '6-7 giờ',
-    href: '/learning/cross-platform-strategy',
-    features: [
-      'Unified Brand Messaging',
-      'Content Repurposing Automation',
-      'Platform-Specific Optimization',
-      'Cross-Platform Analytics',
-    ],
-    tags: ['cross platform strategy', 'content repurposing', 'brand consistency', 'multi platform optimization'],
-    prerequisites: [
-      'Established brand identity',
-      'Multi-platform presence',
-      'Content creation experience',
-      'Understanding of platform differences',
-    ],
-    lessons: [
-      {
-        id: 'unified-brand-messaging-strategy',
-        title: 'Unified Brand Messaging Across Platforms',
-        duration: '150 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'advanced-content-repurposing-distribution',
-        title: 'Advanced Content Repurposing & Distribution',
-        duration: '120 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-  {
-    id: K2Module.DataDrivenAnalytics,
-    title: 'Data-driven Social Media Analytics',
-    subtitle: 'Advanced analytics & insights',
-    description:
-      'Master advanced analytics techniques, predictive modeling và data-driven optimization cho social media strategies.',
-    category: 'trending',
-    icon: '📊',
-    color: 'from-slate-600 to-blue-600',
-    totalDuration: '7-8 giờ',
-    difficulty: 'Nâng cao',
-    level: 'Nâng cao',
-    duration: '7-8 giờ',
-    href: '/learning/data-driven-analytics',
-    features: [
-      'Advanced Analytics Techniques',
-      'Predictive Trend Forecasting',
-      'Data Visualization Mastery',
-      'Strategic Decision Support',
-    ],
-    tags: ['data analytics', 'predictive modeling', 'social media insights', 'performance optimization'],
-    prerequisites: [
-      'Basic analytics experience',
-      'Understanding of statistical concepts',
-      'Advanced analytics experience',
-      'Statistical modeling knowledge',
-    ],
-    lessons: [
-      {
-        id: 'advanced-social-media-analytics-insights',
-        title: 'Advanced Social Media Analytics & Data Insights',
-        duration: '180 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'predictive-analytics-trend-forecasting',
-        title: 'Predictive Analytics & Social Media Trend Forecasting',
-        duration: '150 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-
-  // 2025 Academic Specialized Modules
-  {
-    id: K2Module.DataScienceAnalytics,
-    title: 'Data Science & Big Data Analytics',
-    subtitle: 'Advanced data analysis & ML',
-    description:
-      'Master data science fundamentals với Python, big data processing, machine learning applications và business intelligence.',
-    category: 'professional',
-    icon: '📈',
-    color: 'from-indigo-600 to-purple-600',
-    totalDuration: '14-16 giờ',
-    difficulty: 'Nâng cao',
-    level: 'Nâng cao',
-    duration: '14-16 giờ',
-    href: '/learning/data-science-analytics',
-    features: [
-      'Python Data Science Mastery',
-      'Big Data Processing với Spark',
-      'Machine Learning Applications',
-      'Business Intelligence & Storytelling',
-    ],
-    tags: ['data science', 'machine learning', 'big data', 'business intelligence'],
-    prerequisites: [
-      'Basic Python programming knowledge',
-      'Understanding of mathematics and statistics',
-      'Intermediate programming skills',
-      'Database và cloud computing knowledge',
-    ],
-    lessons: [
-      {
-        id: 'data-science-fundamentals-python',
-        title: 'Data Science Fundamentals với Python',
-        duration: '240 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'big-data-machine-learning-applications',
-        title: 'Big Data Processing & Machine Learning Applications',
-        duration: '220 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'business-intelligence-data-storytelling',
-        title: 'Business Intelligence & Data Storytelling',
-        duration: '180 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-  {
-    id: K2Module.EnvironmentalScienceClimate,
-    title: 'Environmental Science & Climate Change',
-    subtitle: 'Climate science & conservation',
-    description:
-      'Understand climate change science, environmental monitoring, policy development và ecosystem restoration techniques.',
-    category: 'professional',
-    icon: '🌍',
-    color: 'from-green-600 to-teal-600',
-    totalDuration: '12-14 giờ',
-    difficulty: 'Trung bình',
-    level: 'Trung bình',
-    duration: '12-14 giờ',
-    href: '/learning/environmental-science-climate',
-    features: ['Climate Change Science', 'Environmental Monitoring', 'Policy Development', 'Ecosystem Restoration'],
-    tags: ['environmental science', 'climate change', 'conservation', 'sustainability'],
-    prerequisites: [
-      'Basic science knowledge (chemistry, physics)',
-      'Understanding of data analysis',
-      'Understanding of governance systems',
-      'Environmental science knowledge',
-    ],
-    lessons: [
-      {
-        id: 'climate-change-environmental-monitoring',
-        title: 'Climate Change Science & Environmental Monitoring',
-        duration: '200 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'environmental-policy-sustainable-development',
-        title: 'Environmental Policy & Sustainable Development',
-        duration: '180 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'ecosystem-restoration-biodiversity-conservation',
-        title: 'Ecosystem Restoration & Biodiversity Conservation',
-        duration: '160 phút',
-        difficulty: 'Nâng cao',
-      },
-    ],
-  },
-
-  // 2025+ Trending Experimental Modules for Vietnamese Students
-  {
-    id: K2Module.MetaverseVREducation,
-    title: 'Metaverse & Giáo Dục VR',
-    subtitle: 'Tương lai của học tập immersive',
-    description: 'Khám phá công nghệ Metaverse, VR/AR trong giáo dục và cơ hội nghề nghiệp trong kỷ nguyên thực tế ảo',
-    category: ['experimental', 'technology', 'future-skills'],
-    icon: '🥽',
-    color: 'from-purple-500 to-pink-500',
-    totalDuration: '8-10 giờ',
-    difficulty: 'Trung bình',
-    features: [
-      'VR Content Creation',
-      'Metaverse Business Models',
-      'AR Mobile Apps',
-      'Social VR Collaboration',
-      'Virtual Economy',
-    ],
-    tags: ['metaverse', 'vr', 'ar', 'immersive', 'education', 'future'],
-    prerequisites: [
-      'Kiến thức cơ bản về technology',
-      'Hiểu biết về internet và social media',
-      'Không cần kinh nghiệm VR trước đó',
-    ],
-    lessons: [
-      {
-        id: 'metaverse-fundamentals',
-        title: 'Cơ Bản Về Metaverse và Thực Tế Ảo',
-        duration: '90 phút',
-        difficulty: 'Cơ bản',
-      },
-      {
-        id: 'vr-content-creation',
-        title: 'Tạo Nội Dung VR Giáo Dục',
-        duration: '120 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'ar-mobile-applications',
-        title: 'Ứng Dụng AR Trên Mobile',
-        duration: '100 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'social-vr-collaboration',
-        title: 'Hợp Tác Xã Hội Trong VR',
-        duration: '80 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'metaverse-business-economics',
-        title: 'Kinh Tế Metaverse & Cơ Hội Kinh Doanh',
-        duration: '90 phút',
-        difficulty: 'Trung bình',
-      },
-    ],
-  },
-
-  {
-    id: K2Module.SpaceTechnology,
-    title: 'Công Nghệ Vũ Trụ',
-    subtitle: 'Khám phá không gian cho Việt Nam',
-    description:
-      'Tìm hiểu về space technology, satellite systems và cơ hội cho Việt Nam trong kỷ nguyên khám phá không gian',
-    category: ['experimental', 'technology', 'engineering'],
-    icon: '🚀',
-    color: 'from-indigo-500 to-purple-500',
-    totalDuration: '10-12 giờ',
-    difficulty: 'Trung bình',
-    features: [
-      'Satellite Technology',
-      'Space Mission Engineering',
-      'CubeSat Development',
-      'Space Entrepreneurship',
-      'Vietnam Space Strategy',
-    ],
-    tags: ['space', 'satellite', 'aerospace', 'vietnam', 'engineering'],
-    prerequisites: [
-      'Kiến thức cơ bản về physics và mathematics',
-      'Hiểu biết về technology và engineering',
-      'Interest trong science và exploration',
-    ],
-    lessons: [
-      {
-        id: 'space-exploration-fundamentals',
-        title: 'Cơ Bản Khám Phá Không Gian',
-        duration: '100 phút',
-        difficulty: 'Cơ bản',
-      },
-      {
-        id: 'satellite-technology-applications',
-        title: 'Công Nghệ Vệ Tinh & Ứng Dụng',
-        duration: '120 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'space-mission-engineering',
-        title: 'Kỹ Thuật Sứ Mệnh Không Gian',
-        duration: '150 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'space-entrepreneurship-economics',
-        title: 'Kinh Doanh Không Gian & Kinh Tế Vũ Trụ',
-        duration: '90 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'space-careers-future',
-        title: 'Nghề Nghiệp Vũ Trụ & Tương Lai',
-        duration: '75 phút',
-        difficulty: 'Cơ bản',
-      },
-    ],
-  },
-  {
-    id: K2Module.DigitalArtsCreativeTech,
-    title: 'Nghệ Thuật Số & Công Nghệ Sáng Tạo',
-    subtitle: 'Creative technology cho thế hệ mới',
-    description: 'Master digital art, motion graphics, AI art generation và immersive media cho creative careers',
-    category: ['experimental', 'creative', 'technology'],
-    icon: '🎨',
-    color: 'from-pink-500 to-rose-500',
-    totalDuration: '10-12 giờ',
-    difficulty: 'Trung bình',
-    features: ['Digital Art Mastery', 'AI Art Generation', 'Motion Graphics', 'VR/AR Content', 'Creative Business'],
-    tags: ['digital-art', 'ai-art', 'creative', 'design', 'technology'],
-    prerequisites: [
-      'Basic understanding của art principles',
-      'Access to digital art software hoặc tablet',
-      'Interest in visual arts và creativity',
-    ],
-    lessons: [
-      {
-        id: 'digital-art-fundamentals',
-        title: 'Cơ Bản Nghệ Thuật Số',
-        duration: '100 phút',
-        difficulty: 'Cơ bản',
-      },
-      {
-        id: 'motion-graphics-animation',
-        title: 'Motion Graphics & Animation',
-        duration: '120 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'generative-ai-art',
-        title: 'Nghệ Thuật AI Tạo Sinh',
-        duration: '90 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'immersive-media-production',
-        title: 'Sản Xuất Media Nhập Vai',
-        duration: '130 phút',
-        difficulty: 'Nâng cao',
-      },
-      {
-        id: 'creative-technology-business',
-        title: 'Kinh Doanh Công Nghệ Sáng Tạo',
-        duration: '100 phút',
-        difficulty: 'Trung bình',
-      },
-    ],
-  },
-
-  // 2025 Vietnam Niche Market Research Modules
-  {
     id: K2Module.BlueEconomy,
-    title: 'Kinh Tế Biển Xanh & Công Nghệ Biển',
-    subtitle: 'Khai thác tiềm năng 3.200km bờ biển Việt Nam',
+    title: 'Kinh Tế Biển Xanh & Công Nghệ Hàng Hải',
+    subtitle: 'Phát triển bền vững kinh tế biển',
     description:
-      'Phát triển kinh tế biển bền vững với công nghệ thông minh, từ nuôi trồng thủy sản đến năng lượng tái tạo biển',
-    category: ['ocean-tech', 'sustainable-economy', 'marine-science'],
+      'Khám phá tiềm năng kinh tế biển Việt Nam qua công nghệ, từ nuôi trồng thủy sản thông minh đến năng lượng tái tạo từ biển.',
+    category: ['sustainability', 'technology', 'economy'],
     icon: '🌊',
-    color: 'from-blue-600 to-cyan-600',
+    color: 'from-cyan-600 to-blue-600',
+    href: '/learning/blue-economy',
     totalDuration: '8-12 giờ',
     difficulty: 'Trung bình',
     features: [
@@ -2973,6 +3765,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
     tags: ['blue-economy', 'marine-tech', 'aquaculture', 'renewable-energy', 'sustainability'],
     prerequisites: ['Kiến thức cơ bản về kinh tế học', 'Hiểu biết về môi trường biển', 'IoT và cảm biến cơ bản'],
+    lessons: [],
   },
   {
     id: K2Module.SmartManufacturing,
@@ -2985,6 +3778,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     color: 'from-orange-600 to-red-600',
     totalDuration: '10-15 giờ',
     difficulty: 'Trung bình',
+    href: '/learning/smart-manufacturing',
     features: [
       'Factory Automation Systems',
       'Predictive Maintenance AI',
@@ -2993,6 +3787,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
     tags: ['industry-4.0', 'automation', 'iot', 'ai', 'manufacturing'],
     prerequisites: ['Kiến thức điện tử cơ bản', 'Lập trình cơ bản', 'Hiểu biết về quy trình sản xuất'],
+    lessons: [],
   },
 
   // Part 2: Essential Skills from 2025 Research
@@ -3016,6 +3811,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
     tags: ['digital-citizenship', 'ai-ethics', 'privacy', 'digital-wellness'],
     prerequisites: ['Sử dụng internet và mạng xã hội cơ bản', 'Quan tâm đến vấn đề đạo đức công nghệ'],
+    lessons: [],
   },
   {
     id: K2Module.FutureThinking,
@@ -3037,6 +3833,7 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
     tags: ['futures-thinking', 'scenario-planning', 'strategic-foresight', 'trend-analysis'],
     prerequisites: ['Khả năng critical thinking', 'Quan tâm đến xu hướng và thay đổi xã hội'],
+    lessons: [],
   },
   {
     id: K2Module.UXUIDesign,
@@ -3058,163 +3855,28 @@ export const moduleNavigation: ModuleNavigation[] = [
     ],
     tags: ['ux-design', 'ui-design', 'user-research', 'design-thinking'],
     prerequisites: ['Không có yêu cầu kỹ thuật đặc biệt', 'Quan tâm đến user experience'],
+    lessons: [],
   },
   {
     id: K2Module.EnergyManagement,
-    title: 'Quản Lý Năng Lượng Cá Nhân',
-    subtitle: 'Tối ưu hóa hiệu suất bền vững',
+    title: 'Quản Lý Năng Lượng và Tòa Nhà Thông Minh',
+    subtitle: 'Tối ưu hóa năng lượng cho tương lai bền vững',
     description:
-      'Học cách quản lý năng lượng cá nhân, optimize performance, xây dựng resilience và duy trì sức khỏe trong cuộc sống và công việc.',
-    category: ['Personal Development', 'Wellness', 'Performance'],
-    icon: '⚡',
-    color: 'from-orange-600 to-red-600',
-    totalDuration: '6-7 giờ',
-    difficulty: 'Trung bình',
-    href: '/learning/personal-energy-performance-management',
-    features: [
-      '4 types of energy management',
-      'Cognitive performance optimization',
-      'Stress resilience building',
-      'Sustainable performance strategies',
-    ],
-    tags: ['energy-management', 'performance-optimization', 'stress-resilience', 'wellness'],
-    prerequisites: ['Động lực cải thiện hiệu suất cá nhân', 'Sẵn sàng theo dõi thói quen hàng ngày'],
-  },
-  {
-    id: K2Module.CrossCultural,
-    title: 'Trí Tuệ Đa Văn Hóa',
-    subtitle: 'Thành công trong môi trường đa văn hóa',
-    description:
-      'Phát triển cultural intelligence để giao tiếp, hợp tác và lãnh đạo hiệu quả với người từ các nền văn hóa khác nhau.',
-    category: ['Essential Skills', 'Communication', 'Global Skills'],
-    icon: '🌍',
+      'Học cách quản lý năng lượng hiệu quả, thiết kế smart buildings và sử dụng IoT để tối ưu hóa tiêu thụ năng lượng.',
+    category: ['Technical Skills', 'Sustainability', 'IoT'],
+    icon: '💡',
     color: 'from-teal-600 to-cyan-600',
-    totalDuration: '7-8 giờ',
-    difficulty: 'Nâng cao',
-    href: '/learning/cross-cultural-intelligence',
+    totalDuration: '8-9 giờ',
+    difficulty: 'Trung bình',
+    href: '/learning/energy-management-smart-buildings',
     features: [
-      'Cultural intelligence assessment',
-      'Cross-cultural communication mastery',
-      'Global team leadership',
-      'International network building',
+      'Energy efficiency principles',
+      'Smart building automation',
+      'IoT for energy monitoring',
+      'Renewable energy integration',
     ],
-    tags: ['cultural-intelligence', 'cross-cultural-communication', 'global-leadership', 'diversity'],
-    prerequisites: ['Open mindset về cultural differences', 'Experience with multicultural environments preferred'],
-  },
-  {
-    id: K2Module.QuantumComputingEducation,
-    title: 'Quantum Computing Education',
-    subtitle: 'Giáo Dục Điện Toán Lượng Tử',
-    description:
-      'Khám phá thế giới quantum computing từ fundamentals đến business applications. Học quantum algorithms, programming với IBM Qiskit, và hiểu tác động revolutionary lên các ngành công nghiệp.',
-    category: ['Emerging Technology', 'Programming', 'Future Technology'],
-    icon: '⚛️',
-    color: 'from-purple-600 to-indigo-600',
-    totalDuration: '15-20 giờ',
-    difficulty: 'Trung bình đến Nâng cao',
-    href: '/learning/quantum-computing-education',
-    features: [
-      'Hands-on programming với IBM Qiskit framework',
-      'Quantum algorithms từ Shor đến Grover algorithms',
-      'Real-world case studies từ Google, IBM, và leading companies',
-      'Business applications và ROI analysis frameworks',
-      'Post-quantum cryptography và cybersecurity implications',
-    ],
-    tags: ['quantum-computing', 'quantum-algorithms', 'IBM-Qiskit', 'quantum-cryptography', 'future-technology'],
-    prerequisites: [
-      'Toán học đại học (linear algebra, probability)',
-      'Programming experience (Python preferred)',
-      'Basic physics understanding',
-      'Interest in cutting-edge technology',
-    ],
-    lessons: [
-      {
-        id: 'quantum-fundamentals-introduction',
-        title: 'Quantum Computing Fundamentals',
-        duration: '120 phút',
-        difficulty: 'Cơ bản',
-      },
-      {
-        id: 'quantum-algorithms-basics',
-        title: 'Quantum Algorithms - Shor & Grover',
-        duration: '150 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'quantum-programming-qiskit',
-        title: 'Quantum Programming với IBM Qiskit',
-        duration: '200 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'quantum-cryptography-security',
-        title: 'Quantum Cryptography & Cybersecurity',
-        duration: '140 phút',
-        difficulty: 'Trung bình',
-      },
-      {
-        id: 'quantum-business-applications',
-        title: 'Quantum Business Applications & ROI',
-        duration: '160 phút',
-        difficulty: 'Trung bình',
-      },
-    ],
+    tags: ['energy-management', 'smart-buildings', 'iot', 'sustainability'],
+    prerequisites: ['Kiến thức cơ bản về điện', 'Quan tâm đến vấn đề năng lượng và môi trường'],
+    lessons: [],
   },
 ];
-
-// Helper functions cho navigation
-export function getModuleById(id: string): ModuleNavigation | undefined {
-  return moduleNavigation.find((module) => module.id === id);
-}
-
-export function getLessonById(moduleId: string, lessonId: string): LessonNavigation | undefined {
-  const moduleData = getModuleById(moduleId);
-  return moduleData?.lessons?.find((lesson) => lesson.id === lessonId);
-}
-
-export function getModulesByCategory(category: string): ModuleNavigation[] {
-  return moduleNavigation.filter((moduleData) => {
-    const moduleCategories = Array.isArray(moduleData.category) ? moduleData.category : [moduleData.category];
-    return moduleCategories.includes(category);
-  });
-}
-
-export function getAllCategories(): string[] {
-  const categories: string[] = [];
-  moduleNavigation.forEach((moduleData) => {
-    if (Array.isArray(moduleData.category)) {
-      categories.push(...moduleData.category);
-    } else {
-      categories.push(moduleData.category);
-    }
-  });
-  return Array.from(new Set(categories));
-}
-
-export function getNextLesson(moduleId: string, currentLessonId: string): LessonNavigation | undefined {
-  const moduleData = getModuleById(moduleId);
-  if (!moduleData || !moduleData.lessons) return undefined;
-
-  const currentIndex = moduleData.lessons.findIndex((lesson) => lesson.id === currentLessonId);
-  if (currentIndex === -1 || currentIndex === moduleData.lessons.length - 1) return undefined;
-
-  return moduleData.lessons[currentIndex + 1];
-}
-
-export function getPreviousLesson(moduleId: string, currentLessonId: string): LessonNavigation | undefined {
-  const moduleData = getModuleById(moduleId);
-  if (!moduleData || !moduleData.lessons) return undefined;
-
-  const currentIndex = moduleData.lessons.findIndex((lesson) => lesson.id === currentLessonId);
-  if (currentIndex <= 0) return undefined;
-
-  return moduleData.lessons[currentIndex - 1];
-}
-
-export function calculateModuleProgress(moduleId: string): number {
-  const moduleData = getModuleById(moduleId);
-  if (!moduleData || !moduleData.lessons) return 0;
-
-  const completedLessons = moduleData.lessons.filter((lesson) => lesson.completed).length;
-  return Math.round((completedLessons / moduleData.lessons.length) * 100);
-}

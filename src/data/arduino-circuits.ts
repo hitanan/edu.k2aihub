@@ -1,32 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface ArduinoCircuitLesson extends BaseLessonData {
-  vietnamContext: VietnamContext;
-  careerConnect: CareerConnect;
-  quizzes: Quiz[];
-}
-
-export const arduinoCircuitsLessons: ArduinoCircuitLesson[] = [
+export const arduinoCircuitsLessons: BaseLessonData[] = [
   {
     id: 'nhap-mon-arduino',
     title: 'Nhập môn Arduino và Điện tử Căn bản',
