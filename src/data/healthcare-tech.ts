@@ -1,17 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface HealthcareTechLesson extends BaseLessonData {
-  healthcareCategory: string;
-  regulatoryCompliance: string[];
-  techProficiencyLevel: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
-  targetAudience: string[];
-  vietnamContext?: {
-    title: string;
-    content: string[];
-  };
-}
-
-const healthcareTechLessons: HealthcareTechLesson[] = [
+const healthcareTechLessons: BaseLessonData[] = [
   {
     id: 'telemedicine-virtual-care-platforms',
     title: 'Y tế từ xa & Nền tảng Chăm sóc ảo',

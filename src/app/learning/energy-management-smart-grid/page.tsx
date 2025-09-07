@@ -7,12 +7,19 @@ import { createModuleMetadata } from '@/utils/seo';
 export const metadata: Metadata = createModuleMetadata(
   energyManagementSmartGridModuleData.title,
   energyManagementSmartGridModuleData.description,
-  ['energy management', 'smart grid', 'renewable energy', 'grid optimization', 'energy efficiency', 'sustainability', 'vietnam energy', 'k2aihub'],
-  energyManagementSmartGridModuleData.id
+  [
+    'energy management',
+    'smart grid',
+    'renewable energy',
+    'grid optimization',
+    'energy efficiency',
+    'sustainability',
+    'vietnam energy',
+    'k2aihub',
+  ],
+  energyManagementSmartGridModuleData.id,
 );
 
 export default function EnergyManagementSmartGridPage() {
-  return (
-    <ModulePageTemplate moduleData={energyManagementSmartGridModuleData} lessons={energyManagementLessons} />
-  );
+  return <ModulePageTemplate moduleData={energyManagementSmartGridModuleData} lessons={energyManagementLessons} />;
 }

@@ -57,13 +57,20 @@ export const quantumComputingLessons: BaseLessonData[] = [
         question: 'Đơn vị thông tin cơ bản trong máy tính lượng tử được gọi là gì?',
         options: ['Bit', 'Qubit', 'Gate', 'Electron'],
         correctAnswerIndex: 1,
-        explanation: 'Qubit (quantum bit) là đơn vị thông tin cơ bản của máy tính lượng tử, tương tự như bit trong máy tính cổ điển.',
+        explanation:
+          'Qubit (quantum bit) là đơn vị thông tin cơ bản của máy tính lượng tử, tương tự như bit trong máy tính cổ điển.',
       },
       {
         question: 'Hiện tượng nào cho phép một qubit tồn tại ở trạng thái 0 và 1 cùng một lúc?',
-        options: ['Vướng víu (Entanglement)', 'Chồng chập (Superposition)', 'Giao thoa (Interference)', 'Đường hầm (Tunneling)'],
+        options: [
+          'Vướng víu (Entanglement)',
+          'Chồng chập (Superposition)',
+          'Giao thoa (Interference)',
+          'Đường hầm (Tunneling)',
+        ],
         correctAnswerIndex: 1,
-        explanation: 'Chồng chập (Superposition) là nguyên lý cơ học lượng tử cho phép một qubit tồn tại trong sự kết hợp của cả hai trạng thái 0 và 1.',
+        explanation:
+          'Chồng chập (Superposition) là nguyên lý cơ học lượng tử cho phép một qubit tồn tại trong sự kết hợp của cả hai trạng thái 0 và 1.',
       },
     ],
   },
@@ -82,11 +89,15 @@ export const quantumComputingLessons: BaseLessonData[] = [
       'Hiểu chức năng của cổng lượng tử hai qubit: CNOT.',
       'Xây dựng các mạch lượng tử đơn giản.',
     ],
-    prerequisites: ['Kiến thức về Đại số tuyến tính (vector, ma trận).', 'Hoàn thành bài "Nhập môn Điện toán Lượng tử".'],
+    prerequisites: [
+      'Kiến thức về Đại số tuyến tính (vector, ma trận).',
+      'Hoàn thành bài "Nhập môn Điện toán Lượng tử".',
+    ],
     exercises: [
       {
         title: 'Xây dựng mạch Bell State',
-        description: 'Sử dụng cổng Hadamard và CNOT để tạo ra một trạng thái vướng víu (Bell state) từ hai qubit ban đầu ở trạng thái |00>.',
+        description:
+          'Sử dụng cổng Hadamard và CNOT để tạo ra một trạng thái vướng víu (Bell state) từ hai qubit ban đầu ở trạng thái |00>.',
         difficulty: 'Trung bình',
         materials: ['Trình giả lập mạch lượng tử (ví dụ: IBM Quantum Experience, Quirk).'],
         procedure: [
@@ -95,7 +106,8 @@ export const quantumComputingLessons: BaseLessonData[] = [
           'Áp dụng cổng CNOT với qubit đầu tiên là control và qubit thứ hai là target.',
           'Đo lường xác suất của các trạng thái đầu ra (00, 01, 10, 11).',
         ],
-        expectedResults: 'Trạng thái đầu ra là một sự chồng chập của |00> và |11> với xác suất mỗi trạng thái khoảng 50%, cho thấy hai qubit đã bị vướng víu.',
+        expectedResults:
+          'Trạng thái đầu ra là một sự chồng chập của |00> và |11> với xác suất mỗi trạng thái khoảng 50%, cho thấy hai qubit đã bị vướng víu.',
       },
     ],
     realWorldApplications: [
@@ -121,15 +133,22 @@ export const quantumComputingLessons: BaseLessonData[] = [
     quizzes: [
       {
         question: 'Cổng Hadamard (H) làm gì với một qubit ở trạng thái |0>?',
-        options: ['Lật nó thành |1>', 'Không làm gì cả', 'Tạo ra một trạng thái chồng chập của |0> và |1>', 'Đo lường qubit'],
+        options: [
+          'Lật nó thành |1>',
+          'Không làm gì cả',
+          'Tạo ra một trạng thái chồng chập của |0> và |1>',
+          'Đo lường qubit',
+        ],
         correctAnswerIndex: 2,
-        explanation: 'Cổng Hadamard là cổng lượng tử cơ bản dùng để tạo ra trạng thái chồng chập. Khi tác động lên |0>, nó tạo ra trạng thái |+> = (|0> + |1>)/sqrt(2).',
+        explanation:
+          'Cổng Hadamard là cổng lượng tử cơ bản dùng để tạo ra trạng thái chồng chập. Khi tác động lên |0>, nó tạo ra trạng thái |+> = (|0> + |1>)/sqrt(2).',
       },
       {
         question: 'Cổng CNOT (Controlled-NOT) cần bao nhiêu qubit để hoạt động?',
         options: ['1', '2', '3', '4'],
         correctAnswerIndex: 1,
-        explanation: 'CNOT là một cổng hai qubit, bao gồm một qubit điều khiển (control) và một qubit mục tiêu (target). Nó lật qubit mục tiêu nếu qubit điều khiển là |1>.',
+        explanation:
+          'CNOT là một cổng hai qubit, bao gồm một qubit điều khiển (control) và một qubit mục tiêu (target). Nó lật qubit mục tiêu nếu qubit điều khiển là |1>.',
       },
     ],
   },
@@ -152,7 +171,8 @@ export const quantumComputingLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Mô phỏng Giao thức Dịch chuyển Lượng tử',
-        description: 'Sử dụng trình giả lập để dịch chuyển trạng thái của một qubit từ Alice đến Bob bằng cách sử dụng một cặp qubit vướng víu.',
+        description:
+          'Sử dụng trình giả lập để dịch chuyển trạng thái của một qubit từ Alice đến Bob bằng cách sử dụng một cặp qubit vướng víu.',
         difficulty: 'Nâng cao',
         materials: ['Trình giả lập mạch lượng tử.'],
         procedure: [
@@ -161,7 +181,8 @@ export const quantumComputingLessons: BaseLessonData[] = [
           'Alice đo hai qubit của mình và gửi kết quả (2 bit cổ điển) cho Bob.',
           'Dựa trên kết quả của Alice, Bob áp dụng các cổng X và/hoặc Z tương ứng lên qubit của mình.',
         ],
-        expectedResults: 'Qubit của Bob sẽ ở trạng thái |ψ>, giống hệt trạng thái ban đầu của qubit của Alice, chứng tỏ dịch chuyển đã thành công.',
+        expectedResults:
+          'Qubit của Bob sẽ ở trạng thái |ψ>, giống hệt trạng thái ban đầu của qubit của Alice, chứng tỏ dịch chuyển đã thành công.',
       },
     ],
     realWorldApplications: [
@@ -186,16 +207,24 @@ export const quantumComputingLessons: BaseLessonData[] = [
     },
     quizzes: [
       {
-        question: 'Trong một cặp qubit vướng víu, nếu đo một qubit ở trạng thái |0>, trạng thái của qubit còn lại sẽ là gì ngay lập tức?',
+        question:
+          'Trong một cặp qubit vướng víu, nếu đo một qubit ở trạng thái |0>, trạng thái của qubit còn lại sẽ là gì ngay lập tức?',
         options: ['|0>', '|1>', 'Trạng thái chồng chập', 'Phụ thuộc vào trạng thái ban đầu của nó'],
         correctAnswerIndex: 0,
-        explanation: 'Trong trạng thái Bell |β00> = (|00> + |11>)/sqrt(2), nếu một qubit được đo là |0>, qubit còn lại chắc chắn sẽ là |0> ngay lập tức, và ngược lại.',
+        explanation:
+          'Trong trạng thái Bell |β00> = (|00> + |11>)/sqrt(2), nếu một qubit được đo là |0>, qubit còn lại chắc chắn sẽ là |0> ngay lập tức, và ngược lại.',
       },
       {
         question: 'Dịch chuyển lượng tử có vi phạm giới hạn tốc độ ánh sáng không?',
-        options: ['Có, nó truyền thông tin tức thời', 'Không, vì nó cần một kênh truyền thông cổ điển', 'Chỉ trong một số trường hợp', 'Chưa ai biết chắc'],
+        options: [
+          'Có, nó truyền thông tin tức thời',
+          'Không, vì nó cần một kênh truyền thông cổ điển',
+          'Chỉ trong một số trường hợp',
+          'Chưa ai biết chắc',
+        ],
         correctAnswerIndex: 1,
-        explanation: 'Dịch chuyển lượng tử không thể dùng để truyền thông tin nhanh hơn ánh sáng vì nó yêu cầu Alice phải gửi kết quả đo của mình cho Bob qua một kênh cổ điển (vốn bị giới hạn bởi tốc độ ánh sáng).',
+        explanation:
+          'Dịch chuyển lượng tử không thể dùng để truyền thông tin nhanh hơn ánh sáng vì nó yêu cầu Alice phải gửi kết quả đo của mình cho Bob qua một kênh cổ điển (vốn bị giới hạn bởi tốc độ ánh sáng).',
       },
     ],
   },
@@ -218,14 +247,16 @@ export const quantumComputingLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Phân tích bài toán tìm kiếm',
-        description: 'So sánh số bước cần thiết để tìm một mục trong danh sách N mục bằng thuật toán cổ điển và thuật toán Grover.',
+        description:
+          'So sánh số bước cần thiết để tìm một mục trong danh sách N mục bằng thuật toán cổ điển và thuật toán Grover.',
         difficulty: 'Trung bình',
         procedure: [
           'Tính số phép toán trung bình và tệ nhất cho tìm kiếm tuyến tính cổ điển (O(N)).',
           'Viết ra độ phức tạp của thuật toán Grover (O(sqrt(N))).',
           'Tính toán lợi thế tốc độ cho N = 1 triệu, N = 1 tỷ.',
         ],
-        expectedResults: 'Hiểu rõ lợi thế tốc độ bậc hai (quadratic speedup) của thuật toán Grover so với thuật toán cổ điển tốt nhất.',
+        expectedResults:
+          'Hiểu rõ lợi thế tốc độ bậc hai (quadratic speedup) của thuật toán Grover so với thuật toán cổ điển tốt nhất.',
       },
     ],
     realWorldApplications: [
@@ -251,15 +282,27 @@ export const quantumComputingLessons: BaseLessonData[] = [
     quizzes: [
       {
         question: 'Thuật toán Shor có khả năng giải quyết hiệu quả bài toán nào mà máy tính cổ điển không thể?',
-        options: ['Sắp xếp một danh sách', 'Nhân hai số lớn', 'Phân tích một số lớn ra thừa số nguyên tố', 'Tìm đường đi ngắn nhất trong đồ thị'],
+        options: [
+          'Sắp xếp một danh sách',
+          'Nhân hai số lớn',
+          'Phân tích một số lớn ra thừa số nguyên tố',
+          'Tìm đường đi ngắn nhất trong đồ thị',
+        ],
         correctAnswerIndex: 2,
-        explanation: 'Thuật toán Shor có thể phân tích một số nguyên tố trong thời gian đa thức, trong khi thuật toán cổ điển tốt nhất cần thời gian siêu đa thức, khiến nó trở nên bất khả thi với các số lớn.',
+        explanation:
+          'Thuật toán Shor có thể phân tích một số nguyên tố trong thời gian đa thức, trong khi thuật toán cổ điển tốt nhất cần thời gian siêu đa thức, khiến nó trở nên bất khả thi với các số lớn.',
       },
       {
         question: 'Thuật toán Grover mang lại lợi thế tốc độ như thế nào so với tìm kiếm cổ điển?',
-        options: ['Tốc độ gấp đôi', 'Tốc độ lũy thừa (Exponential speedup)', 'Tốc độ bậc hai (Quadratic speedup)', 'Không có lợi thế tốc độ'],
+        options: [
+          'Tốc độ gấp đôi',
+          'Tốc độ lũy thừa (Exponential speedup)',
+          'Tốc độ bậc hai (Quadratic speedup)',
+          'Không có lợi thế tốc độ',
+        ],
         correctAnswerIndex: 2,
-        explanation: 'Thuật toán Grover có thể tìm một mục trong N mục với khoảng sqrt(N) bước, so với N/2 bước trung bình của tìm kiếm cổ điển. Đây được gọi là lợi thế tốc độ bậc hai.',
+        explanation:
+          'Thuật toán Grover có thể tìm một mục trong N mục với khoảng sqrt(N) bước, so với N/2 bước trung bình của tìm kiếm cổ điển. Đây được gọi là lợi thế tốc độ bậc hai.',
       },
     ],
   },
@@ -282,7 +325,8 @@ export const quantumComputingLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Hello, Quantum World!',
-        description: 'Tạo một trạng thái Bell, chạy trên cả trình giả lập và một máy tính lượng tử thực, sau đó so sánh kết quả.',
+        description:
+          'Tạo một trạng thái Bell, chạy trên cả trình giả lập và một máy tính lượng tử thực, sau đó so sánh kết quả.',
         difficulty: 'Trung bình',
         materials: ['Python, Jupyter Notebook, Qiskit, tài khoản IBM Quantum.'],
         procedure: [
@@ -294,7 +338,8 @@ export const quantumComputingLessons: BaseLessonData[] = [
           'Chọn một backend máy tính lượng tử thực (ví dụ: `ibmq_lima`), gửi job và chờ kết quả.',
           'So sánh biểu đồ kết quả từ giả lập và từ máy thật, nhận xét về sự khác biệt do nhiễu.',
         ],
-        expectedResults: 'Thành công trong việc chạy một mạch lượng tử trên cả giả lập và phần cứng thực. Kết quả từ máy thật sẽ có một tỷ lệ nhỏ các trạng thái 01 và 10 do nhiễu, trong khi giả lập chỉ cho 00 và 11.',
+        expectedResults:
+          'Thành công trong việc chạy một mạch lượng tử trên cả giả lập và phần cứng thực. Kết quả từ máy thật sẽ có một tỷ lệ nhỏ các trạng thái 01 và 10 do nhiễu, trong khi giả lập chỉ cho 00 và 11.',
       },
     ],
     realWorldApplications: [
@@ -323,13 +368,20 @@ export const quantumComputingLessons: BaseLessonData[] = [
         question: 'Qiskit là một framework mã nguồn mở được phát triển bởi công ty nào?',
         options: ['Google', 'Microsoft', 'IBM', 'Amazon'],
         correctAnswerIndex: 2,
-        explanation: 'Qiskit (Quantum Information Science Kit) là một SDK mã nguồn mở được phát triển và hậu thuẫn bởi IBM để làm việc với các máy tính lượng tử.',
+        explanation:
+          'Qiskit (Quantum Information Science Kit) là một SDK mã nguồn mở được phát triển và hậu thuẫn bởi IBM để làm việc với các máy tính lượng tử.',
       },
       {
         question: 'Tại sao kết quả từ một máy tính lượng tử thực thường khác với trình giả lập?',
-        options: ['Do lỗi lập trình', 'Do nhiễu (noise) trong hệ thống lượng tử', 'Do trình giả lập không chính xác', 'Do tốc độ mạng'],
+        options: [
+          'Do lỗi lập trình',
+          'Do nhiễu (noise) trong hệ thống lượng tử',
+          'Do trình giả lập không chính xác',
+          'Do tốc độ mạng',
+        ],
         correctAnswerIndex: 1,
-        explanation: 'Các qubit rất nhạy cảm với môi trường xung quanh, gây ra hiện tượng "nhiễu" làm thay đổi trạng thái của chúng và dẫn đến sai sót trong tính toán. Đây là một trong những thách thức lớn nhất của điện toán lượng tử hiện nay.',
+        explanation:
+          'Các qubit rất nhạy cảm với môi trường xung quanh, gây ra hiện tượng "nhiễu" làm thay đổi trạng thái của chúng và dẫn đến sai sót trong tính toán. Đây là một trong những thách thức lớn nhất của điện toán lượng tử hiện nay.',
       },
     ],
   },

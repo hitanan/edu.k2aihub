@@ -1,25 +1,7 @@
 import { EDUCATIONAL_GAMES_DATA, EducationalGame } from './educationalGames';
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface FutureThinkingLessonType extends BaseLessonData {
-  scenarioMethods: string[];
-  futuringTechniques: Array<{
-    name: string;
-    description: string;
-    timeHorizon: string;
-    bestUseCases: string[];
-    steps: string[];
-  }>;
-  trendAnalysisFrameworks: string[];
-  uncertaintyFactors: string[];
-  relatedGames?: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-}
-
-export const futureThinkingLessons: FutureThinkingLessonType[] = [
+export const futureThinkingLessons: BaseLessonData[] = [
   {
     id: 'futures-thinking-fundamentals',
     title: 'Bài 1: Cơ Bản về Tư Duy Tương Lai',

@@ -7,8 +7,18 @@ import { createModuleMetadata } from '@/utils/seo';
 export const metadata: Metadata = createModuleMetadata(
   environmentalDataScienceModuleData.title,
   environmentalDataScienceModuleData.description,
-  ['environmental data science', 'climate analysis', 'remote sensing', 'air quality monitoring', 'environmental machine learning', 'vietnamese environment', 'sustainability', 'GIS', 'K2AI'],
-  environmentalDataScienceModuleData.id
+  [
+    'environmental data science',
+    'climate analysis',
+    'remote sensing',
+    'air quality monitoring',
+    'environmental machine learning',
+    'vietnamese environment',
+    'sustainability',
+    'GIS',
+    'K2AI',
+  ],
+  environmentalDataScienceModuleData.id,
 );
 
 export default function EnvironmentalDataSciencePage() {

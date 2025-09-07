@@ -10,8 +10,7 @@ export const vietnameseHealthcareModuleData: ModuleData = {
   level: 'Nâng cao',
   duration: '12-16 giờ',
   category: 'Vietnamese-Specific Technology',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
+  heroImageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
   features: [
     'Digital health infrastructure development cho Vietnamese hospitals',
     'AI medical imaging solutions với Vietnamese dataset',
@@ -48,9 +47,5 @@ export const vietnameseHealthcareModuleData: ModuleData = {
     jobGrowth: '+45%',
     hireDemand: 'Rất cao',
   },
-  relatedModules: [
-    K2Module.AI,
-    K2Module.Biotechnology,
-    K2Module.DigitalGovernment,
-  ],
+  relatedModules: [K2Module.AI, K2Module.Biotechnology, K2Module.DigitalGovernment],
 };

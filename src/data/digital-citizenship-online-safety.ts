@@ -1,22 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface DigitalCitizenshipLesson extends BaseLessonData {
-  mainContent: {
-    introduction: string;
-    keyConcepts: Array<{
-      title: string;
-      description: string;
-      examples: string[];
-    }>;
-    practicalApplications: Array<{
-      area: string;
-      description: string;
-    }>;
-    conclusion: string;
-  };
-}
-
-export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
+export const DigitalCitizenshipLessons: BaseLessonData[] = [
   {
     id: 'hieu-ve-cong-dan-so',
     title: 'Hiểu về Công dân số',

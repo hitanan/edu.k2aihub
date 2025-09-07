@@ -1,60 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-export interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-export interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface DataScienceLessonData extends BaseLessonData {
-  dataScienceConcepts?: string[];
-  tools?: string[];
-  algorithms?: string[];
-  practicalProjects?: Array<{
-    title: string;
-    description: string;
-    dataset: string;
-    techniques: string[];
-    deliverables: string[];
-  }>;
-  mainContent: {
-    introduction: string;
-    keyConcepts: Array<{
-      title: string;
-      description: string;
-      examples: string[];
-    }>;
-    practicalApplications: Array<{
-      area: string;
-      description: string;
-    }>;
-    conclusion: string;
-  };
-  relatedGames: Array<{
-    id: string;
-    name: string;
-    description: string;
-  }>;
-  vietnamContext?: VietnamContext;
-  careerConnect?: CareerConnect;
-  quizzes?: Quiz[];
-}
-
-export const DataScienceLessons: DataScienceLessonData[] = [
+export const DataScienceLessons: BaseLessonData[] = [
   {
     id: 'data-science-fundamentals',
     title: 'Cơ bản về Data Science',

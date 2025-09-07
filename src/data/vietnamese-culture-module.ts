@@ -10,8 +10,7 @@ export const vietnameseCultureModuleData: ModuleData = {
   level: 'Trung bình',
   duration: '8-12 giờ',
   category: 'Vietnamese-Specific Technology',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop',
+  heroImageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop',
   features: [
     'Digital heritage preservation với 3D scanning và VR technology',
     'Tourism platform development cho Vietnamese destinations',
@@ -48,9 +47,5 @@ export const vietnameseCultureModuleData: ModuleData = {
     jobGrowth: '+35%',
     hireDemand: 'Cao',
   },
-  relatedModules: [
-    K2Module.AI,
-    K2Module.VietnameseBusiness,
-    K2Module.DigitalGovernment,
-  ],
+  relatedModules: [K2Module.AI, K2Module.VietnameseBusiness, K2Module.DigitalGovernment],
 };

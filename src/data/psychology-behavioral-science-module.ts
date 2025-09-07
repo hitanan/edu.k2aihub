@@ -22,8 +22,7 @@ export const psychologyBehavioralScienceModuleData: ModuleData = {
   ],
   icon: '🧠',
   color: 'purple',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
+  heroImageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
   objectives: [
     'Understand cognitive psychology principles for design',
     'Apply behavioral economics trong business decisions',
@@ -65,9 +64,5 @@ export const psychologyBehavioralScienceModuleData: ModuleData = {
     jobGrowth: '+72%',
     hireDemand: 'Rất cao',
   },
-  relatedModules: [
-    K2Module.UXUIDesign,
-    K2Module.DigitalMarketing,
-    K2Module.DataScienceAnalytics,
-  ],
+  relatedModules: [K2Module.UXUIDesign, K2Module.DigitalMarketing, K2Module.DataScienceAnalytics],
 };

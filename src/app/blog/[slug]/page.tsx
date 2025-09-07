@@ -25,9 +25,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
-  const ogImage = post.coverImage
-    ? `${siteConfig.url}${post.coverImage}`
-    : `${siteConfig.url}/og.jpg`;
+  const ogImage = post.coverImage ? `${siteConfig.url}${post.coverImage}` : `${siteConfig.url}/og.jpg`;
 
   return {
     title: post.title,
@@ -63,7 +61,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = await getAllBlogPosts();
-  return posts.map(post => ({
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }

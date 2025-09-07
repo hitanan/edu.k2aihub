@@ -19,8 +19,7 @@ export const foodTechnologyModuleData: ModuleData = {
   ],
   icon: '🍜',
   color: 'amber',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=600&fit=crop&auto=format',
+  heroImageUrl: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=600&fit=crop&auto=format',
   objectives: [
     'Master food safety management systems including HACCP và Vietnamese regulations',
     'Understand fermentation biotechnology với focus trên traditional Vietnamese fermented foods',
@@ -58,10 +57,5 @@ export const foodTechnologyModuleData: ModuleData = {
     jobGrowth: '+45%',
     hireDemand: 'Trung bình - Cao',
   },
-  relatedModules: [
-    K2Module.GreenTechnology,
-    K2Module.Python,
-    K2Module.DigitalMarketing,
-    K2Module.Biotechnology,
-  ],
+  relatedModules: [K2Module.GreenTechnology, K2Module.Python, K2Module.DigitalMarketing, K2Module.Biotechnology],
 };

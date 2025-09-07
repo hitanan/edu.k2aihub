@@ -23,13 +23,13 @@ export const energyManagementLessons: BaseLessonData[] = [
       'Quen thuộc với các công cụ tính toán',
     ],
     vietnamContext: {
-        title: "Bối cảnh năng lượng Việt Nam",
-        content: [
-            'Mục tiêu năng lượng tái tạo của Việt Nam (20% vào năm 2030)',
-            'Chính sách giá FIT và đo đếm điện năng thuần',
-            'Bức xạ mặt trời và mô hình gió theo vùng',
-            'Yêu cầu và tiêu chuẩn kết nối lưới điện',
-        ]
+      title: 'Bối cảnh năng lượng Việt Nam',
+      content: [
+        'Mục tiêu năng lượng tái tạo của Việt Nam (20% vào năm 2030)',
+        'Chính sách giá FIT và đo đếm điện năng thuần',
+        'Bức xạ mặt trời và mô hình gió theo vùng',
+        'Yêu cầu và tiêu chuẩn kết nối lưới điện',
+      ],
     },
     exercises: [
       {
@@ -83,14 +83,14 @@ export const energyManagementLessons: BaseLessonData[] = [
       'Hiểu biết cơ bản về mạng truyền thông',
       'Quen thuộc với phân tích dữ liệu',
     ],
-     vietnamContext: {
-        title: "Bối cảnh năng lượng Việt Nam",
-        content: [
-            'Kế hoạch hiện đại hóa lưới điện của Tập đoàn Điện lực Việt Nam (EVN)',
-            'Các sáng kiến thành phố thông minh tại các khu đô thị lớn',
-            'Thách thức của hạ tầng lưới điện cũ',
-            'Tích hợp với các nguồn năng lượng tái tạo',
-        ]
+    vietnamContext: {
+      title: 'Bối cảnh năng lượng Việt Nam',
+      content: [
+        'Kế hoạch hiện đại hóa lưới điện của Tập đoàn Điện lực Việt Nam (EVN)',
+        'Các sáng kiến thành phố thông minh tại các khu đô thị lớn',
+        'Thách thức của hạ tầng lưới điện cũ',
+        'Tích hợp với các nguồn năng lượng tái tạo',
+      ],
     },
     exercises: [
       {
@@ -150,13 +150,13 @@ export const energyManagementLessons: BaseLessonData[] = [
       'Kiến thức về phân tích chi phí-lợi ích',
     ],
     vietnamContext: {
-        title: "Bối cảnh năng lượng Việt Nam",
-        content: [
-            'Các sáng kiến của Chương trình Quốc gia về Sử dụng Năng lượng Tiết kiệm và Hiệu quả (VNEEP)',
-            'Mô hình tiêu thụ năng lượng công nghiệp',
-            'Ưu đãi của chính phủ cho hiệu quả năng lượng',
-            'Tiêu chuẩn hiệu quả năng lượng ASEAN',
-        ]
+      title: 'Bối cảnh năng lượng Việt Nam',
+      content: [
+        'Các sáng kiến của Chương trình Quốc gia về Sử dụng Năng lượng Tiết kiệm và Hiệu quả (VNEEP)',
+        'Mô hình tiêu thụ năng lượng công nghiệp',
+        'Ưu đãi của chính phủ cho hiệu quả năng lượng',
+        'Tiêu chuẩn hiệu quả năng lượng ASEAN',
+      ],
     },
     exercises: [
       {
@@ -207,13 +207,13 @@ export const energyManagementLessons: BaseLessonData[] = [
     ],
     prerequisites: ['Hiểu biết cơ bản về ngành năng lượng', 'Quen thuộc với các phương pháp phân tích chính sách'],
     vietnamContext: {
-        title: "Bối cảnh năng lượng Việt Nam",
-        content: [
-            'Chiến lược phát triển năng lượng quốc gia đến năm 2030',
-            'Quy hoạch phát triển điện lực VIII (PDP 8)',
-            'Cam kết trung hòa carbon vào năm 2050',
-            'Sáng kiến kết nối lưới điện ASEAN',
-        ]
+      title: 'Bối cảnh năng lượng Việt Nam',
+      content: [
+        'Chiến lược phát triển năng lượng quốc gia đến năm 2030',
+        'Quy hoạch phát triển điện lực VIII (PDP 8)',
+        'Cam kết trung hòa carbon vào năm 2050',
+        'Sáng kiến kết nối lưới điện ASEAN',
+      ],
     },
     exercises: [
       {
@@ -276,13 +276,13 @@ export const energyManagementLessons: BaseLessonData[] = [
       'Quen thuộc với hoạt động của hệ thống điện',
     ],
     vietnamContext: {
-        title: "Bối cảnh năng lượng Việt Nam",
-        content: [
-            'Thách thức ổn định lưới điện với tỷ lệ thâm nhập năng lượng tái tạo cao',
-            'Yêu cầu về nguồn điện dự phòng công nghiệp',
-            'Phát triển hạ tầng sạc xe điện',
-            'Ứng dụng lưới điện đảo tại các khu vực xa xôi',
-        ]
+      title: 'Bối cảnh năng lượng Việt Nam',
+      content: [
+        'Thách thức ổn định lưới điện với tỷ lệ thâm nhập năng lượng tái tạo cao',
+        'Yêu cầu về nguồn điện dự phòng công nghiệp',
+        'Phát triển hạ tầng sạc xe điện',
+        'Ứng dụng lưới điện đảo tại các khu vực xa xôi',
+      ],
     },
     exercises: [
       {

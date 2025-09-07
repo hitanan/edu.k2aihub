@@ -18,11 +18,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!lessonId) {
     return {};
   }
-  return generateLessonMetadata(
-    lessonId,
-    digitalMarketingLessons,
-    digitalMarketingModuleData.id,
-  );
+  return generateLessonMetadata(lessonId, digitalMarketingLessons, digitalMarketingModuleData.id);
 }
 
 export default async function DigitalMarketingLessonPage({ params }: PageProps) {
@@ -40,4 +36,3 @@ export default async function DigitalMarketingLessonPage({ params }: PageProps) 
 
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }
-

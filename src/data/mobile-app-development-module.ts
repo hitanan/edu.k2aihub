@@ -25,7 +25,10 @@ export const mobileAppDevelopmentModuleData: ModuleData = {
     'Biết cách tối ưu hóa hiệu năng và trải nghiệm người dùng.',
     'Tự tin phát hành ứng dụng lên App Store và Google Play.',
   ],
-  prerequisites: ['Kiến thức cơ bản về lập trình (JavaScript, Dart hoặc Swift/Kotlin là một lợi thế).', 'Hiểu biết về HTML/CSS.'],
+  prerequisites: [
+    'Kiến thức cơ bản về lập trình (JavaScript, Dart hoặc Swift/Kotlin là một lợi thế).',
+    'Hiểu biết về HTML/CSS.',
+  ],
   careerOutcomes: ['Lập trình viên React Native/Flutter', 'Lập trình viên iOS/Android', 'Mobile App Developer'],
   industryApplications: [
     'Xây dựng ứng dụng thương mại điện tử',

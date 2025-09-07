@@ -7,12 +7,18 @@ import { programmingRoboticsModuleData } from '@/data/programming-robotics-modul
 export const metadata: Metadata = createModuleMetadata(
   programmingRoboticsModuleData.title,
   programmingRoboticsModuleData.description,
-  ['programming robotics', 'robot programming', 'ros programming', 'python robotics', 'c++ robotics', 'embedded systems', 'k2aihub'],
-  programmingRoboticsModuleData.id
+  [
+    'programming robotics',
+    'robot programming',
+    'ros programming',
+    'python robotics',
+    'c++ robotics',
+    'embedded systems',
+    'k2aihub',
+  ],
+  programmingRoboticsModuleData.id,
 );
 
 export default function ProgrammingRoboticsPage() {
-  return (
-    <ModulePageTemplate moduleData={programmingRoboticsModuleData} lessons={ProgrammingRoboticsLessons} />
-  );
+  return <ModulePageTemplate moduleData={programmingRoboticsModuleData} lessons={ProgrammingRoboticsLessons} />;
 }

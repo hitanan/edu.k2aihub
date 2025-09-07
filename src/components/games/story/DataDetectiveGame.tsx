@@ -2,16 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Play,
-  Repeat,
-  Trophy,
-  FileText,
-  Search,
-  Clock,
-  AlertTriangle,
-  CheckCircle,
-} from 'lucide-react';
+import { Play, Repeat, Trophy, FileText, Search, Clock, AlertTriangle, CheckCircle } from 'lucide-react';
 import { useEducationalGames } from '../EducationalGames';
 
 // ... existing code ...
@@ -29,7 +20,11 @@ const story = {
     'Bạn là một nhà khoa học dữ liệu tại một công ty logistics lớn. Một lô hàng điện tử giá trị cao đã biến mất khỏi kho. Dữ liệu là manh mối duy nhất của bạn. Hãy phân tích dữ liệu để tìm ra chuyện gì đã xảy ra.',
   clues: [
     { id: 1, text: 'Nhật ký truy cập cho thấy một lượt truy cập trái phép vào kho lúc 2 giờ sáng.', isRelevant: true },
-    { id: 2, text: 'Dữ liệu GPS của xe tải cho thấy một điểm dừng không có kế hoạch gần một bến cảng.', isRelevant: true },
+    {
+      id: 2,
+      text: 'Dữ liệu GPS của xe tải cho thấy một điểm dừng không có kế hoạch gần một bến cảng.',
+      isRelevant: true,
+    },
     { id: 3, text: 'Hồ sơ nhân sự cho thấy một nhân viên kho có vấn đề về tài chính.', isRelevant: true },
     { id: 4, text: 'Dữ liệu bán hàng tuần trước cho thấy doanh số tăng đột biến.', isRelevant: false },
     { id: 5, text: 'Camera an ninh bị "lỗi" trong 15 phút quanh thời điểm xảy ra vụ việc.', isRelevant: true },
@@ -135,11 +130,7 @@ const DataDetectiveGame = () => {
 
   if (isFinished) {
     return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="text-center"
-      >
+      <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center">
         <Trophy className="w-16 h-16 mx-auto text-yellow-400 mb-4" />
         <h2 className="text-3xl font-bold text-white mb-4">Kết thúc điều tra!</h2>
         <p className="text-gray-300 mb-6">{finalMessage}</p>
@@ -202,9 +193,7 @@ const DataDetectiveGame = () => {
               <p className="font-bold text-white flex items-center">
                 <Clock className="mr-2" /> Thời gian đã sử dụng
               </p>
-              <p
-                className={`font-bold text-lg ${timeUsed > timeLimit * 0.75 ? 'text-red-400' : 'text-green-400'}`}
-              >
+              <p className={`font-bold text-lg ${timeUsed > timeLimit * 0.75 ? 'text-red-400' : 'text-green-400'}`}>
                 {timeUsed} / {timeLimit} giờ
               </p>
             </div>

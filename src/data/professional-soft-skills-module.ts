@@ -45,9 +45,5 @@ export const professionalSoftSkillsModuleData: ModuleData = {
     jobGrowth: '+20%',
     hireDemand: 'Rất cao',
   },
-  relatedModules: [
-    K2Module.DigitalMarketing,
-    K2Module.FinancialLiteracy,
-    K2Module.AI,
-  ],
+  relatedModules: [K2Module.DigitalMarketing, K2Module.FinancialLiteracy, K2Module.AI],
 };

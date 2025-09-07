@@ -108,7 +108,9 @@ export function CompactGameCard({ game }: { game: EducationalGame }) {
           <span className={`px-1.5 py-0.5 rounded-full text-xs ${getDifficultyColor(game.difficulty)}`}>
             {game.difficulty}
           </span>
-          {game.isInternal && game.points && game.points > 0 && <span className="text-xs text-yellow-400">🏆 {game.points}</span>}
+          {game.isInternal && game.points && game.points > 0 && (
+            <span className="text-xs text-yellow-400">🏆 {game.points}</span>
+          )}
         </div>
 
         <div className="text-xs text-gray-400 mb-2">⏱️ {game.estimatedTime}</div>

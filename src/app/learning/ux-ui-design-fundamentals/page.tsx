@@ -8,14 +8,9 @@ export const metadata: Metadata = createModuleMetadata(
   uxUiDesignFundamentalsModuleData.title,
   uxUiDesignFundamentalsModuleData.description,
   ['ux design', 'ui design', 'user experience', 'design thinking', 'K2AiHub'],
-  uxUiDesignFundamentalsModuleData.id
+  uxUiDesignFundamentalsModuleData.id,
 );
 
 export default function UXUIDesignMainPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={uxUiDesignFundamentalsModuleData}
-      lessons={uxuiDesignLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={uxUiDesignFundamentalsModuleData} lessons={uxuiDesignLessons} />;
 }

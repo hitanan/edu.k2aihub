@@ -22,8 +22,7 @@ export const programmingRoboticsModuleData: ModuleData = {
   ],
   icon: '🤖',
   color: 'cyan',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=600&fit=crop',
+  heroImageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=600&fit=crop',
   objectives: [
     'Thành thạo Python và C++ programming cho robotics',
     'Làm chủ ROS ecosystem và robotics middleware',
@@ -65,10 +64,5 @@ export const programmingRoboticsModuleData: ModuleData = {
     jobGrowth: '+48%',
     hireDemand: 'Rất cao',
   },
-  relatedModules: [
-    K2Module.Robotics,
-    K2Module.Python,
-    K2Module.Arduino,
-    K2Module.AdvancedAI,
-  ],
+  relatedModules: [K2Module.Robotics, K2Module.Python, K2Module.Arduino, K2Module.AdvancedAI],
 };

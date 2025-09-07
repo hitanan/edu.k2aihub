@@ -9,14 +9,9 @@ export const metadata: Metadata = createModuleMetadata(
   metaverseVREducationModuleData.title,
   metaverseVREducationModuleData.description,
   ['metaverse', 'vr', 'ar', 'giáo dục', 'thực tế ảo', 'công nghệ', 'tương lai', 'K2AI'],
-  metaverseVREducationModuleData.id
+  metaverseVREducationModuleData.id,
 );
 
 export default function MetaverseVREducationMainPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={metaverseVREducationModuleData}
-      lessons={MetaverseVREducationLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={metaverseVREducationModuleData} lessons={MetaverseVREducationLessons} />;
 }

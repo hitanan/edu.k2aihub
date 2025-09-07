@@ -12,10 +12,5 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function NanotechnologyPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={nanotechnologyModuleData}
-      lessons={nanotechnologyLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={nanotechnologyModuleData} lessons={nanotechnologyLessons} />;
 }

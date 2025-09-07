@@ -1,37 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-export interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-export interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface DigitalArtsLessonType extends BaseLessonData {
-  artLevel: string;
-  technologies: string[];
-  tools: string[];
-  creativeFocus: string[];
-  vietnamCulture: string;
-  vietnamContext?: VietnamContext;
-  careerConnect?: CareerConnect;
-  quizzes?: Quiz[];
-}
-
-export const DigitalArtsLessons: DigitalArtsLessonType[] = [
+export const DigitalArtsLessons: BaseLessonData[] = [
   {
     id: 'digital-art-fundamentals',
     title: 'Cơ Bản Nghệ Thuật Số',

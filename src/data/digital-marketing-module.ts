@@ -1,4 +1,3 @@
-
 import { ModuleData } from '@/types';
 import { K2Module } from '@/data/moduleNavigation';
 

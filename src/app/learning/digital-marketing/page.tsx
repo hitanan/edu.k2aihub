@@ -8,10 +8,9 @@ export const metadata: Metadata = createModuleMetadata(
   digitalMarketingModuleData.title,
   digitalMarketingModuleData.description,
   ['digital marketing', 'ecommerce', 'seo', 'social media', 'kinh doanh online', 'K2AI'],
-  digitalMarketingModuleData.id
+  digitalMarketingModuleData.id,
 );
 
 export default function DigitalMarketingPage() {
   return <ModulePageTemplate moduleData={digitalMarketingModuleData} lessons={digitalMarketingLessons} />;
 }
-

@@ -66,7 +66,6 @@ export type PageProps = {
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-
 export interface EducationalGame {
   id: string;
   title: string;

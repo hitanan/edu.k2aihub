@@ -1,18 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface MainContent {
-  generationalInsights: string[];
-  authenticityPrinciples: string[];
-  platformPreferences: string[];
-  valueAlignment: string[];
-  engagementTactics: string[];
-}
-
-export interface GenZMarketingLesson extends BaseLessonData {
-  mainContent: MainContent;
-}
-
-export const genZMarketingLessons: GenZMarketingLesson[] = [
+export const genZMarketingLessons: BaseLessonData[] = [
   {
     id: 'genz-psychology-authentic-marketing',
     title: 'Tâm lý Gen Z & Nguyên tắc Marketing Đích thực',
@@ -34,7 +22,7 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
       'Hiểu biết về các nền tảng mạng xã hội',
       'Sẵn sàng thách thức các phương pháp marketing truyền thống',
     ],
-    mainContent: {
+    genZMarketingMainContent: {
       generationalInsights: [
         'Là người bản địa kỹ thuật số với khoảng chú ý 8 giây',
         'Coi trọng sự chân thực hơn là sự hoàn hảo được đánh bóng',
@@ -219,7 +207,7 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
       'Cam kết học hỏi về các vấn đề đa dạng',
       'Sẵn sàng thách thức các thực tiễn hiện có',
     ],
-    mainContent: {
+    genZMarketingMainContent: {
       generationalInsights: [
         'Gen Z là thế hệ đa dạng nhất trong lịch sử',
         'Mong đợi các thương hiệu đại diện cho các cộng đồng đa dạng',
@@ -368,7 +356,7 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
       'Cam kết thay đổi dài hạn',
       'Nguồn lực cho chủ nghĩa tích cực bền vững',
     ],
-    mainContent: {
+    genZMarketingMainContent: {
       generationalInsights: [
         'Gen Z mong đợi các thương hiệu có lập trường về các vấn đề',
         'Sẽ tẩy chay các thương hiệu xung đột với giá trị của họ',

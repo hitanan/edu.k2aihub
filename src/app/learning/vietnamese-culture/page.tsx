@@ -8,14 +8,9 @@ export const metadata: Metadata = createModuleMetadata(
   vietnameseCultureModuleData.title,
   vietnameseCultureModuleData.description,
   ['văn hóa việt nam', 'di sản số', 'tourism technology', 'cultural preservation', 'digital heritage'],
-  vietnameseCultureModuleData.id
+  vietnameseCultureModuleData.id,
 );
 
 export default function VietnameseCulturePage() {
-  return (
-    <ModulePageTemplate
-      moduleData={vietnameseCultureModuleData}
-      lessons={vietnameseCultureLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={vietnameseCultureModuleData} lessons={vietnameseCultureLessons} />;
 }

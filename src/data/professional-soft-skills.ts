@@ -19,8 +19,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Thực hành cấu trúc 10-20-30 của Guy Kawasaki',
-        description:
-          'Áp dụng quy tắc 10 slide, 20 phút, font chữ 30 để tạo một bài thuyết trình ngắn gọn và mạnh mẽ.',
+        description: 'Áp dụng quy tắc 10 slide, 20 phút, font chữ 30 để tạo một bài thuyết trình ngắn gọn và mạnh mẽ.',
         difficulty: 'Cơ bản',
         procedure: [
           'Chọn một chủ đề bạn am hiểu.',
@@ -72,8 +71,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Viết email yêu cầu thông tin',
-        description:
-          'Thực hành viết một email chuyên nghiệp để yêu cầu thông tin từ một phòng ban khác.',
+        description: 'Thực hành viết một email chuyên nghiệp để yêu cầu thông tin từ một phòng ban khác.',
         difficulty: 'Cơ bản',
         procedure: [
           'Xác định rõ mục đích email.',
@@ -81,8 +79,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
           'Soạn nội dung theo cấu trúc: Chào hỏi, giới thiệu, nêu rõ yêu cầu, cảm ơn và ký tên.',
           'Kiểm tra lại lỗi chính tả, ngữ pháp trước khi gửi.',
         ],
-        expectedResults:
-          'Một email chuyên nghiệp, rõ ràng và dễ dàng nhận được phản hồi.',
+        expectedResults: 'Một email chuyên nghiệp, rõ ràng và dễ dàng nhận được phản hồi.',
       },
     ],
     realWorldApplications: [
@@ -110,8 +107,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Phân tích tình huống: Giải quyết xung đột',
-        description:
-          'Đọc một tình huống xung đột trong nhóm và đề xuất các bước giải quyết.',
+        description: 'Đọc một tình huống xung đột trong nhóm và đề xuất các bước giải quyết.',
         difficulty: 'Trung bình',
         procedure: [
           'Đọc kỹ tình huống được cung cấp.',
@@ -119,8 +115,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
           'Đề xuất các bước giải quyết theo mô hình đã học (ví dụ: Lắng nghe, Thừa nhận, Tìm giải pháp chung).',
           'Phân tích ưu và nhược điểm của giải pháp đề xuất.',
         ],
-        expectedResults:
-          'Một kế hoạch giải quyết xung đột hợp lý và hiệu quả.',
+        expectedResults: 'Một kế hoạch giải quyết xung đột hợp lý và hiệu quả.',
       },
     ],
     realWorldApplications: [
@@ -156,8 +151,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Đóng vai: Đàm phán tăng lương',
-        description:
-          'Chuẩn bị và thực hành một cuộc đàm phán tăng lương với "quản lý".',
+        description: 'Chuẩn bị và thực hành một cuộc đàm phán tăng lương với "quản lý".',
         difficulty: 'Trung bình',
         procedure: [
           'Nghiên cứu mức lương trung bình cho vị trí của bạn.',
@@ -165,8 +159,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
           'Xác định mức lương mong muốn và mức tối thiểu có thể chấp nhận (BATNA).',
           'Thực hành cuộc đàm phán với một người bạn hoặc đồng nghiệp.',
         ],
-        expectedResults:
-          'Sự tự tin và một kịch bản vững chắc cho cuộc đàm phán thực tế.',
+        expectedResults: 'Sự tự tin và một kịch bản vững chắc cho cuộc đàm phán thực tế.',
       },
     ],
     realWorldApplications: [
@@ -194,8 +187,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
     exercises: [
       {
         title: 'Áp dụng Ma trận Eisenhower',
-        description:
-          'Phân loại các công việc trong tuần của bạn vào 4 ô của Ma trận Eisenhower.',
+        description: 'Phân loại các công việc trong tuần của bạn vào 4 ô của Ma trận Eisenhower.',
         difficulty: 'Cơ bản',
         procedure: [
           'Liệt kê tất cả các công việc bạn cần làm trong tuần tới.',
@@ -203,8 +195,7 @@ export const professionalSoftSkillsLessons: BaseLessonData[] = [
           'Đặt từng công việc vào ô phù hợp: (1) Quan trọng & Khẩn cấp, (2) Quan trọng & Không khẩn cấp, (3) Không quan trọng & Khẩn cấp, (4) Không quan trọng & Không khẩn cấp.',
           'Lên kế hoạch hành động dựa trên sự phân loại này.',
         ],
-        expectedResults:
-          'Một kế hoạch làm việc rõ ràng, tập trung vào những việc thực sự quan trọng.',
+        expectedResults: 'Một kế hoạch làm việc rõ ràng, tập trung vào những việc thực sự quan trọng.',
       },
     ],
     realWorldApplications: [

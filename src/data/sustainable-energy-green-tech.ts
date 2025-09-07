@@ -1,11 +1,11 @@
-
 import { BaseLessonData } from '@/types/lesson-base';
 
 export const sustainableEnergyGreenTechLessons: BaseLessonData[] = [
   {
     id: 'introduction-to-sustainable-energy',
     title: 'Giới thiệu về Năng lượng Bền vững',
-    description: 'Tìm hiểu các khái niệm cơ bản về năng lượng bền vững, tầm quan trọng và các loại năng lượng tái tạo chính.',
+    description:
+      'Tìm hiểu các khái niệm cơ bản về năng lượng bền vững, tầm quan trọng và các loại năng lượng tái tạo chính.',
     videoUrl: 'https://www.youtube.com/watch?v=ysz5S6PUM-U',
     duration: '45 phút',
     difficulty: 'Cơ bản',
@@ -21,7 +21,8 @@ export const sustainableEnergyGreenTechLessons: BaseLessonData[] = [
   {
     id: 'solar-power-technology',
     title: 'Công nghệ Năng lượng Mặt trời',
-    description: 'Khám phá cách hoạt động của pin mặt trời, các loại hệ thống điện mặt trời và tiềm năng ứng dụng tại Việt Nam.',
+    description:
+      'Khám phá cách hoạt động của pin mặt trời, các loại hệ thống điện mặt trời và tiềm năng ứng dụng tại Việt Nam.',
     videoUrl: 'https://www.youtube.com/watch?v=0eQ12-mQ-4o',
     duration: '60 phút',
     difficulty: 'Trung bình',
@@ -37,7 +38,8 @@ export const sustainableEnergyGreenTechLessons: BaseLessonData[] = [
   {
     id: 'wind-power-and-turbines',
     title: 'Năng lượng Gió và Tua bin',
-    description: 'Tìm hiểu về nguyên lý hoạt động của tua bin gió, các loại trang trại gió và thách thức trong phát triển điện gió.',
+    description:
+      'Tìm hiểu về nguyên lý hoạt động của tua bin gió, các loại trang trại gió và thách thức trong phát triển điện gió.',
     videoUrl: 'https://www.youtube.com/watch?v=Z5vYafcxV_E',
     duration: '60 phút',
     difficulty: 'Trung bình',
@@ -53,7 +55,8 @@ export const sustainableEnergyGreenTechLessons: BaseLessonData[] = [
   {
     id: 'green-building-and-design',
     title: 'Thiết kế và Xây dựng Xanh',
-    description: 'Các nguyên tắc của kiến trúc bền vững, vật liệu xây dựng thân thiện với môi trường và công nghệ tòa nhà thông minh.',
+    description:
+      'Các nguyên tắc của kiến trúc bền vững, vật liệu xây dựng thân thiện với môi trường và công nghệ tòa nhà thông minh.',
     videoUrl: 'https://www.youtube.com/watch?v=Io-m_WIiXkI',
     duration: '50 phút',
     difficulty: 'Trung bình',
@@ -85,7 +88,8 @@ export const sustainableEnergyGreenTechLessons: BaseLessonData[] = [
   {
     id: 'circular-economy-principles',
     title: 'Nguyên tắc Kinh tế Tuần hoàn',
-    description: 'Hiểu về mô hình kinh tế tuần hoàn, cách áp dụng trong sản xuất và tiêu dùng để giảm thiểu chất thải và bảo vệ tài nguyên.',
+    description:
+      'Hiểu về mô hình kinh tế tuần hoàn, cách áp dụng trong sản xuất và tiêu dùng để giảm thiểu chất thải và bảo vệ tài nguyên.',
     videoUrl: 'https://www.youtube.com/watch?v=W-b_mS-L4-A',
     duration: '65 phút',
     difficulty: 'Nâng cao',

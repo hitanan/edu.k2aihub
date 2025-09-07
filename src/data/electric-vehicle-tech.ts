@@ -1,6 +1,5 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-
 export const electricVehicleLessons: BaseLessonData[] = [
   {
     id: 'ev-powertrain-battery-fundamentals',

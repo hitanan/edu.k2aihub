@@ -8,7 +8,7 @@ export const metadata: Metadata = createModuleMetadata(
   quantumComputingModuleData.title,
   quantumComputingModuleData.description,
   ['điện toán lượng tử', 'quantum computing', 'qubit', 'qiskit', 'thuật toán lượng tử', 'K2AI'],
-  quantumComputingModuleData.id
+  quantumComputingModuleData.id,
 );
 
 export default function QuantumComputingMainPage() {

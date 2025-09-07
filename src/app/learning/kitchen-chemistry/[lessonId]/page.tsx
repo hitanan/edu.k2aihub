@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { kitchenChemistryLessons, KitchenChemistryLessonType } from '@/data/kitchen-chemistry'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { kitchenChemistryLessons, KitchenChemistryLessonType } from '@/data/kitchen-chemistry';
 import { PageProps } from '@/types';
 import { FaVial } from 'react-icons/fa';
 import { notFound } from 'next/navigation';
@@ -28,8 +33,8 @@ export default async function KitchenChemistryLessonPage({ params }: PageProps) 
     primaryColor: 'orange',
     secondaryColor: 'amber',
     gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
-    getFieldIcon: (field) => field === 'keyConcept' ? <FaVial className="w-5 h-5" /> : null,
+    getFieldIcon: (field) => (field === 'keyConcept' ? <FaVial className="w-5 h-5" /> : null),
     getFieldValue: (lesson) => lesson.keyConcept,
-  }
+  };
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

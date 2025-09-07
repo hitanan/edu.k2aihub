@@ -1,9 +1,4 @@
-import {
-  BaseLessonData,
-  CareerProfile,
-  QuizQuestion,
-  VietnamContext,
-} from '@/types/lesson-base';
+import { BaseLessonData, CareerProfile, QuizQuestion, VietnamContext } from '@/types/lesson-base';
 import { createDescription, createLessonMetadata, createTitle } from '@/utils/seo';
 import {
   Book,

@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { physicsOfSportsLessons, PhysicsLessonType } from '@/data/physics-of-sports'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { physicsOfSportsLessons, PhysicsLessonType } from '@/data/physics-of-sports';
 import { PageProps } from '@/types';
 import { FaFlask } from 'react-icons/fa';
 import { notFound } from 'next/navigation';
@@ -27,8 +32,8 @@ export default async function PhysicsLessonPage({ params }: PageProps) {
     primaryColor: 'teal',
     secondaryColor: 'cyan',
     gradientColors: 'from-slate-900 via-teal-900 to-slate-900',
-    getFieldIcon: (field) => field === 'keyConcept' ? <FaFlask className="w-5 h-5" /> : null,
+    getFieldIcon: (field) => (field === 'keyConcept' ? <FaFlask className="w-5 h-5" /> : null),
     getFieldValue: (lesson) => lesson.keyConcept,
-  }
+  };
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

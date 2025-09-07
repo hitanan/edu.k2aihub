@@ -8,14 +8,9 @@ export const metadata: Metadata = createModuleMetadata(
   greenTechnologyModuleData.title,
   greenTechnologyModuleData.description,
   ['green technology', 'sustainability', 'renewable energy', 'smart cities', 'K2AI'],
-  greenTechnologyModuleData.id
+  greenTechnologyModuleData.id,
 );
 
 export default function GreenTechnologyPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={greenTechnologyModuleData}
-      lessons={greenTechnologyLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={greenTechnologyModuleData} lessons={greenTechnologyLessons} />;
 }

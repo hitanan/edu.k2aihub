@@ -8,14 +8,9 @@ export const metadata: Metadata = createModuleMetadata(
   physicsOfSportsModuleData.title,
   physicsOfSportsModuleData.description,
   ['vật lý', 'thể thao', 'khoa học thể thao', 'cơ học', 'K2AI'],
-  physicsOfSportsModuleData.id
+  physicsOfSportsModuleData.id,
 );
 
 export default function PhysicsOfSportsPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={physicsOfSportsModuleData}
-      lessons={physicsOfSportsLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={physicsOfSportsModuleData} lessons={physicsOfSportsLessons} />;
 }

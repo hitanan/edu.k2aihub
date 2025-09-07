@@ -8,14 +8,11 @@ export const metadata: Metadata = createModuleMetadata(
   personalEnergyPerformanceManagementModuleData.title,
   personalEnergyPerformanceManagementModuleData.description,
   ['energy management', 'performance optimization', 'stress resilience', 'wellness', 'K2AiHub'],
-  personalEnergyPerformanceManagementModuleData.id
+  personalEnergyPerformanceManagementModuleData.id,
 );
 
 export default function EnergyManagementMainPage() {
   return (
-    <ModulePageTemplate
-      moduleData={personalEnergyPerformanceManagementModuleData}
-      lessons={energyManagementLessons}
-    />
+    <ModulePageTemplate moduleData={personalEnergyPerformanceManagementModuleData} lessons={energyManagementLessons} />
   );
 }

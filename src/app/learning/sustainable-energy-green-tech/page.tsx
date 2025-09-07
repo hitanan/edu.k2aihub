@@ -1,4 +1,3 @@
-
 import { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
@@ -9,14 +8,9 @@ export const metadata: Metadata = createModuleMetadata(
   sustainableEnergyModuleData.title,
   sustainableEnergyModuleData.description,
   [], // No keywords property in ModuleData
-  sustainableEnergyModuleData.id
+  sustainableEnergyModuleData.id,
 );
 
 export default function SustainableEnergyGreenTechModulePage() {
-  return (
-    <ModulePageTemplate
-      moduleData={sustainableEnergyModuleData}
-      lessons={sustainableEnergyGreenTechLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={sustainableEnergyModuleData} lessons={sustainableEnergyGreenTechLessons} />;
 }

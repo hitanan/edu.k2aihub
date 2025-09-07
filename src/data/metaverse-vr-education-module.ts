@@ -5,7 +5,8 @@ export const metaverseVREducationModuleData: ModuleData = {
   id: 'metaverse-vr-education',
   title: 'Metaverse & Giáo Dục VR',
   subtitle: 'Tương lai của học tập immersive',
-  description: 'Khám phá công nghệ Metaverse, Virtual Reality và Augmented Reality trong giáo dục. Học cách tạo nội dung VR/AR, phát triển ứng dụng giáo dục immersive và nắm bắt cơ hội kinh doanh trong virtual economy.',
+  description:
+    'Khám phá công nghệ Metaverse, Virtual Reality và Augmented Reality trong giáo dục. Học cách tạo nội dung VR/AR, phát triển ứng dụng giáo dục immersive và nắm bắt cơ hội kinh doanh trong virtual economy.',
   level: 'Trung bình',
   duration: '8-10 giờ',
   category: 'Experimental Technology',
@@ -13,7 +14,7 @@ export const metaverseVREducationModuleData: ModuleData = {
     'Tạo nội dung VR/AR giáo dục chuyên nghiệp',
     'Phát triển ứng dụng mobile AR tương tác',
     'Thiết kế virtual spaces cho collaborative learning',
-    'Hiểu biết về Metaverse business models và kinh tế ảo'
+    'Hiểu biết về Metaverse business models và kinh tế ảo',
   ],
   icon: '🥽',
   color: 'from-purple-600 to-pink-600',
@@ -23,35 +24,31 @@ export const metaverseVREducationModuleData: ModuleData = {
     'Tạo immersive learning experiences sử dụng Unity và AR platforms',
     'Phát triển social VR collaboration systems',
     'Hiểu về virtual economy và Metaverse business opportunities',
-    'Apply VR/AR technology cho Vietnamese education challenges'
+    'Apply VR/AR technology cho Vietnamese education challenges',
   ],
   prerequisites: [
     'Kiến thức cơ bản về technology và internet',
     'Hiểu biết về social media và digital platforms',
-    'Không cần kinh nghiệm VR/AR trước đó'
+    'Không cần kinh nghiệm VR/AR trước đó',
   ],
   careerOutcomes: [
     'VR/AR Developer cho education technology companies',
     'Metaverse Experience Designer',
     'Educational Technology Consultant',
     'Virtual Event và Training Specialist',
-    'Immersive Content Creator'
+    'Immersive Content Creator',
   ],
   industryApplications: [
     'Remote education delivery với immersive experiences',
     'Corporate training trong virtual environments',
     'Cultural heritage preservation và virtual tourism',
     'Medical education với VR simulation',
-    'Engineering design collaboration trong virtual spaces'
+    'Engineering design collaboration trong virtual spaces',
   ],
   marketDemand: {
     averageSalary: '25-45 triệu VNĐ',
     jobGrowth: '+400%',
-    hireDemand: 'Rất cao'
+    hireDemand: 'Rất cao',
   },
-  relatedModules: [
-    K2Module.GameDevelopment,
-    K2Module.AIArtCreativeTech,
-    K2Module.DigitalArtsCreativeTech
-  ]
+  relatedModules: [K2Module.GameDevelopment, K2Module.AIArtCreativeTech, K2Module.DigitalArtsCreativeTech],
 };

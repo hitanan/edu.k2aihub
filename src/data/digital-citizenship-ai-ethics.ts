@@ -1,44 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export interface VietnamContext {
-  title: string;
-  content: string[];
-}
-
-export interface CareerConnect {
-  name: string;
-  title: string;
-  company: string;
-  imageUrl: string;
-  quote: string;
-}
-
-export interface Quiz {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-  explanation: string;
-}
-
-export interface DigitalCitizenshipLessonType extends BaseLessonData {
-  ethicalFrameworks: string[];
-  practicalScenarios: Array<{
-    title: string;
-    situation: string;
-    ethicalDilemma: string;
-    possibleActions: string[];
-    recommendedApproach: string;
-    reasoning: string;
-  }>;
-  digitalRights: string[];
-  aiEthicsPrinciples: string[];
-  privacyTools: string[];
-  vietnamContext?: VietnamContext;
-  careerConnect?: CareerConnect;
-  quizzes?: Quiz[];
-}
-
-export const digitalCitizenshipLessons: DigitalCitizenshipLessonType[] = [
+export const digitalCitizenshipLessons: BaseLessonData[] = [
   {
     id: 'digital-citizenship-fundamentals',
     title: 'Công Dân Số Cơ Bản',

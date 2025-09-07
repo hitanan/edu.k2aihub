@@ -7,8 +7,17 @@ import { transportationTechnologyModuleData } from '@/data/transportation-techno
 export const metadata: Metadata = createModuleMetadata(
   transportationTechnologyModuleData.title,
   transportationTechnologyModuleData.description,
-  ['transportation technology', 'smart transportation', 'autonomous vehicles', 'traffic management', 'mobility solutions', 'logistics tech', 'vietnam transportation', 'k2aihub'],
-  transportationTechnologyModuleData.id
+  [
+    'transportation technology',
+    'smart transportation',
+    'autonomous vehicles',
+    'traffic management',
+    'mobility solutions',
+    'logistics tech',
+    'vietnam transportation',
+    'k2aihub',
+  ],
+  transportationTechnologyModuleData.id,
 );
 
 export default function TransportationTechnologyPage() {

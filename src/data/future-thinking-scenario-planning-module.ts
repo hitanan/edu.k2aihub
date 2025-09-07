@@ -5,7 +5,8 @@ export const futureThinkingModuleData: ModuleData = {
   id: 'future-thinking-scenario-planning',
   title: 'Tư Duy Tương Lai và Kế Hoạch Kịch Bản',
   subtitle: 'Dự đoán và chuẩn bị cho tương lai',
-  description: 'Trong thế giới thay đổi nhanh chóng, khả năng tư duy về tương lai và lập kế hoạch cho nhiều kịch bản khác nhau là kỹ năng quan trọng. Module này dạy bạn các phương pháp khoa học để phân tích xu hướng, xây dựng kịch bản tương lai và đưa ra quyết định chiến lược.',
+  description:
+    'Trong thế giới thay đổi nhanh chóng, khả năng tư duy về tương lai và lập kế hoạch cho nhiều kịch bản khác nhau là kỹ năng quan trọng. Module này dạy bạn các phương pháp khoa học để phân tích xu hướng, xây dựng kịch bản tương lai và đưa ra quyết định chiến lược.',
   level: 'Nâng cao',
   duration: '6-7 giờ',
   category: 'Strategic Thinking',
@@ -13,7 +14,7 @@ export const futureThinkingModuleData: ModuleData = {
     'Phương pháp luận futures thinking',
     'Kỹ thuật scenario planning chuyên nghiệp',
     'Phân tích xu hướng và tín hiệu yếu',
-    'Ứng dụng vào kế hoạch cá nhân và doanh nghiệp'
+    'Ứng dụng vào kế hoạch cá nhân và doanh nghiệp',
   ],
   icon: '🔮',
   color: 'purple',
@@ -22,33 +23,26 @@ export const futureThinkingModuleData: ModuleData = {
     'Nắm vững các phương pháp futures thinking và strategic foresight',
     'Biết cách phân tích xu hướng và nhận diện weak signals',
     'Phát triển kỹ năng xây dựng và sử dụng scenarios',
-    'Áp dụng foresight vào planning cá nhân và professional'
+    'Áp dụng foresight vào planning cá nhân và professional',
   ],
-  prerequisites: [
-    'Khả năng critical thinking cơ bản',
-    'Quan tâm đến xu hướng và thay đổi xã hội'
-  ],
+  prerequisites: ['Khả năng critical thinking cơ bản', 'Quan tâm đến xu hướng và thay đổi xã hội'],
   careerOutcomes: [
     'Strategic Planner',
     'Futures Researcher',
     'Innovation Manager',
     'Policy Analyst',
-    'Business Strategist'
+    'Business Strategist',
   ],
   industryApplications: [
     'Tư vấn chiến lược và quản lý',
     'Nghiên cứu và phát triển',
     'Chính sách công và quản trị',
-    'Đầu tư và tài chính'
+    'Đầu tư và tài chính',
   ],
   marketDemand: {
     averageSalary: '25-50 triệu VNĐ',
     jobGrowth: '+30%',
-    hireDemand: 'Trung bình-Cao'
+    hireDemand: 'Trung bình-Cao',
   },
-  relatedModules: [
-    K2Module.CriticalThinking,
-    K2Module.DigitalMarketing,
-    K2Module.CrossCultural
-  ],
+  relatedModules: [K2Module.CriticalThinking, K2Module.DigitalMarketing, K2Module.CrossCultural],
 };

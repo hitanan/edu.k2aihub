@@ -9,14 +9,9 @@ export const metadata: Metadata = createModuleMetadata(
   shortVideoMasteryModuleData.title,
   shortVideoMasteryModuleData.description,
   ['short form video', 'viral content', 'video editing', 'algorithm optimization', 'K2AI', 'học tập thông minh'],
-  shortVideoMasteryModuleData.id
+  shortVideoMasteryModuleData.id,
 );
 
 export default function ShortVideoMasteryPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={shortVideoMasteryModuleData}
-      lessons={shortVideoMasteryLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={shortVideoMasteryModuleData} lessons={shortVideoMasteryLessons} />;
 }

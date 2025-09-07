@@ -1,16 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface MainContent {
-  technologies: string[];
-  gameGenres: string[];
-  careerOpportunities: string[];
-}
-
-export interface GameDevLesson extends BaseLessonData {
-  mainContent: MainContent;
-}
-
-export const gameDevLessons: GameDevLesson[] = [
+export const gameDevLessons: BaseLessonData[] = [
   {
     id: 'game-design-fundamentals',
     title: 'Bài 1: Nguyên Tắc Cơ Bản về Thiết Kế Game',
@@ -33,7 +23,7 @@ export const gameDevLessons: GameDevLesson[] = [
       'Hiểu biết về tâm lý người chơi',
       'Quen thuộc với các thể loại game khác nhau',
     ],
-    mainContent: {
+    gameDevMainContent: {
       gameGenres: ['Puzzle', 'Platformer', 'Adventure', 'Action'],
       technologies: [
         'Tài liệu Thiết kế Game (GDD)',
@@ -173,7 +163,7 @@ export const gameDevLessons: GameDevLesson[] = [
       'Hiểu biết về hệ tọa độ 2D',
       'Các nguyên tắc cơ bản về thiết kế game từ bài học trước',
     ],
-    mainContent: {
+    gameDevMainContent: {
       gameGenres: ['Platformer', 'Side-scroller', 'Puzzle-platformer'],
       technologies: [
         'Unity 2022.3 LTS',

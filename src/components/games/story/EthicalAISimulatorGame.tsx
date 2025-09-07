@@ -137,11 +137,7 @@ const EthicalAISimulatorGame = () => {
 
   if (isGameFinished) {
     return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="text-center"
-      >
+      <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center">
         <Trophy className="w-16 h-16 mx-auto text-yellow-400 mb-4" />
         <h2 className="text-3xl font-bold text-white mb-4">Hoàn thành Mô phỏng!</h2>
         <p className="text-gray-300 mb-6">Đây là kết quả cuối cùng của bạn:</p>
@@ -214,15 +210,11 @@ const EthicalAISimulatorGame = () => {
               />
               <ScoreChange
                 label="Hiệu quả"
-                change={
-                  currentScenario.choices.find((c) => c.feedback === feedbackText)!.consequences.effectiveness
-                }
+                change={currentScenario.choices.find((c) => c.feedback === feedbackText)!.consequences.effectiveness}
               />
               <ScoreChange
                 label="Niềm tin"
-                change={
-                  currentScenario.choices.find((c) => c.feedback === feedbackText)!.consequences.publicTrust
-                }
+                change={currentScenario.choices.find((c) => c.feedback === feedbackText)!.consequences.publicTrust}
               />
             </div>
             <button

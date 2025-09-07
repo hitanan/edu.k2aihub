@@ -20,7 +20,5 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function YoungEntrepreneurBootcampPage() {
-  return (
-    <ModulePageTemplate moduleData={youngEntrepreneurModuleData} lessons={youngEntrepreneurLessons} />
-  );
+  return <ModulePageTemplate moduleData={youngEntrepreneurModuleData} lessons={youngEntrepreneurLessons} />;
 }

@@ -8,8 +8,17 @@ import { createModuleMetadata } from '@/utils/seo';
 export const metadata: Metadata = createModuleMetadata(
   ethicalMarketingPurposeModuleData.title,
   ethicalMarketingPurposeModuleData.description,
-  ['ethical marketing', 'purpose-driven brands', 'sustainable marketing', 'social impact', 'conscious branding', 'vietnam marketing ethics', 'responsible advertising', 'k2aihub'],
-  ethicalMarketingPurposeModuleData.id
+  [
+    'ethical marketing',
+    'purpose-driven brands',
+    'sustainable marketing',
+    'social impact',
+    'conscious branding',
+    'vietnam marketing ethics',
+    'responsible advertising',
+    'k2aihub',
+  ],
+  ethicalMarketingPurposeModuleData.id,
 );
 
 export default function EthicalMarketingPurposePage() {

@@ -7,12 +7,19 @@ import { supplyChainLogisticsModuleData } from '@/data/supply-chain-logistics-mo
 export const metadata: Metadata = createModuleMetadata(
   supplyChainLogisticsModuleData.title,
   supplyChainLogisticsModuleData.description,
-  ['supply chain', 'logistics', 'inventory management', 'distribution', 'supply chain optimization', 'warehouse management', 'vietnam logistics', 'k2aihub'],
-  supplyChainLogisticsModuleData.id
+  [
+    'supply chain',
+    'logistics',
+    'inventory management',
+    'distribution',
+    'supply chain optimization',
+    'warehouse management',
+    'vietnam logistics',
+    'k2aihub',
+  ],
+  supplyChainLogisticsModuleData.id,
 );
 
 export default function SupplyChainLogisticsPage() {
-  return (
-    <ModulePageTemplate moduleData={supplyChainLogisticsModuleData} lessons={supplyChainLogisticsLessons} />
-  );
+  return <ModulePageTemplate moduleData={supplyChainLogisticsModuleData} lessons={supplyChainLogisticsLessons} />;
 }

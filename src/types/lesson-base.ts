@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export interface StructuredContent {
   introduction: string;
@@ -78,6 +78,7 @@ export interface BaseLessonData {
     datasets?: string[];
     code?: string;
     troubleshooting?: string[];
+    requirements?: string[];
   }>;
   realWorldApplications: string[];
   caseStudies?: Array<{
@@ -87,9 +88,11 @@ export interface BaseLessonData {
     solution: string;
     impact: string;
     innovations: string[];
+    government?: string;
+    challenge?: string;
   }>;
   resources?: Array<{
-    title:string;
+    title: string;
     url: string;
     type: string;
     description?: string;
@@ -227,6 +230,58 @@ export interface BaseLessonData {
   machineLearningMethods?: string[];
   dataScienceConcepts?: string[];
   algorithms?: string[];
+  artLevel?: string;
+  technologies?: string[];
+  creativeFocus?: string[];
+  vietnamCulture?: string;
+  ethicalFrameworks?: string[];
+  practicalScenarios?: Array<{
+    title: string;
+    situation: string;
+    ethicalDilemma: string;
+    possibleActions: string[];
+    recommendedApproach: string;
+    reasoning: string;
+  }>;
+  digitalRights?: string[];
+  aiEthicsPrinciples?: string[];
+  privacyTools?: string[];
+  govTechnologies?: string[];
+  publicServices?: string[];
+  scenarioMethods?: string[];
+  futuringTechniques?: Array<{
+    name: string;
+    description: string;
+    timeHorizon: string;
+    bestUseCases: string[];
+    steps: string[];
+  }>;
+  trendAnalysisFrameworks?: string[];
+  uncertaintyFactors?: string[];
+  gameDevMainContent?: {
+    technologies: string[];
+    gameGenres: string[];
+    careerOpportunities: string[];
+  };
+  genZMarketingMainContent?: {
+    generationalInsights: string[];
+    authenticityPrinciples: string[];
+    platformPreferences: string[];
+    valueAlignment: string[];
+    engagementTactics: string[];
+  };
+  governmentTechnologyMainContent?: {
+    governmentDomain: 'digital-government' | 'public-service-tech' | 'civic-engagement' | 'smart-city' | 'policy-tech';
+    technologyCategory: string[];
+    vietnameseGovernmentContext: string[];
+    publicServiceApplications: string[];
+    digitalTransformationAspects: string[];
+  };
+  healthcareCategory?: string;
+  regulatoryCompliance?: string[];
+  techProficiencyLevel?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
+  targetAudience?: string[];
+  keyConcept?: string;
 }
 
 export interface HowToUseStep {
@@ -236,7 +291,6 @@ export interface HowToUseStep {
   tips: string[];
   screenshot?: string;
 }
-
 
 export interface LessonPageConfig<T extends BaseLessonData> {
   moduleName: string;
@@ -255,4 +309,3 @@ export interface LessonPageTemplateProps<T extends BaseLessonData> {
   lessonId: string;
   config: LessonPageConfig<T>;
 }
-

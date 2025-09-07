@@ -9,14 +9,9 @@ export const metadata: Metadata = createModuleMetadata(
   smartManufacturingModuleData.title,
   smartManufacturingModuleData.description,
   ['công nghiệp 4.0', 'sản xuất thông minh', 'tự động hóa', 'IoT', 'AI', 'smart factory'],
-  smartManufacturingModuleData.id
+  smartManufacturingModuleData.id,
 );
 
 export default function SmartManufacturingMainPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={smartManufacturingModuleData}
-      lessons={smartManufacturingLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={smartManufacturingModuleData} lessons={smartManufacturingLessons} />;
 }

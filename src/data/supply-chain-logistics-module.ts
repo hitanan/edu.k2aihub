@@ -10,8 +10,7 @@ export const supplyChainLogisticsModuleData: ModuleData = {
   level: 'Nâng cao',
   duration: '18-24 giờ',
   category: 'Business Technology',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop',
+  heroImageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop',
   features: [
     'Supply Chain Optimization Algorithms',
     'Inventory Management Systems',
@@ -65,9 +64,5 @@ export const supplyChainLogisticsModuleData: ModuleData = {
     jobGrowth: '65% Growth',
     hireDemand: 'Rất cao',
   },
-  relatedModules: [
-    K2Module.DataScienceAnalytics,
-    K2Module.ProfessionalSkills,
-    K2Module.DigitalMarketing,
-  ],
+  relatedModules: [K2Module.DataScienceAnalytics, K2Module.ProfessionalSkills, K2Module.DigitalMarketing],
 };

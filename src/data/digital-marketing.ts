@@ -1321,8 +1321,10 @@ export const digitalMarketingLessons: BaseLessonData[] = [
         title: 'Giang Oi built a multi-platform media empire',
         organization: 'Giang Oi',
         problem: 'Transition from a lifestyle blogger to a sustainable media business',
-        solution: 'Diversified content across YouTube, Facebook, Instagram và built multiple revenue streams including brand deals, merchandise, và personal brand licensing',
-        impact: 'Millions of followers across platforms, one of the most trusted personal brands in Vietnam, successful merchandise line',
+        solution:
+          'Diversified content across YouTube, Facebook, Instagram và built multiple revenue streams including brand deals, merchandise, và personal brand licensing',
+        impact:
+          'Millions of followers across platforms, one of the most trusted personal brands in Vietnam, successful merchandise line',
         innovations: [
           'Authentic, relatable content builds long-term trust',
           'Cross-platform strategy maximizes reach và engagement',

@@ -22,8 +22,7 @@ export const energyManagementSmartGridModuleData: ModuleData = {
   ],
   icon: '⚡',
   color: 'from-green-600 to-emerald-600',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=1200&h=600&fit=crop',
+  heroImageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=1200&h=600&fit=crop',
   objectives: [
     'Design và implement smart grid architectures',
     'Integrate renewable energy sources effectively',
@@ -65,9 +64,5 @@ export const energyManagementSmartGridModuleData: ModuleData = {
     jobGrowth: '76%',
     hireDemand: 'Cao',
   },
-  relatedModules: [
-    K2Module.GreenTechnology,
-    K2Module.DataScienceAnalytics,
-    K2Module.EnvironmentalScienceClimate,
-  ],
+  relatedModules: [K2Module.GreenTechnology, K2Module.DataScienceAnalytics, K2Module.EnvironmentalScienceClimate],
 };

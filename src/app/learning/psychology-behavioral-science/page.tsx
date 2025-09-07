@@ -7,12 +7,24 @@ import { psychologyBehavioralScienceModuleData } from '@/data/psychology-behavio
 export const metadata: Metadata = createModuleMetadata(
   psychologyBehavioralScienceModuleData.title,
   psychologyBehavioralScienceModuleData.description,
-  ['behavioral psychology', 'behavioral science', 'user psychology', 'behavioral economics', 'cognitive psychology', 'ux psychology', 'vietnam psychology', 'k2aihub'],
-  psychologyBehavioralScienceModuleData.id
+  [
+    'behavioral psychology',
+    'behavioral science',
+    'user psychology',
+    'behavioral economics',
+    'cognitive psychology',
+    'ux psychology',
+    'vietnam psychology',
+    'k2aihub',
+  ],
+  psychologyBehavioralScienceModuleData.id,
 );
 
 export default function PsychologyBehavioralSciencePage() {
   return (
-    <ModulePageTemplate moduleData={psychologyBehavioralScienceModuleData} lessons={psychologyBehavioralScienceLessons} />
+    <ModulePageTemplate
+      moduleData={psychologyBehavioralScienceModuleData}
+      lessons={psychologyBehavioralScienceLessons}
+    />
   );
 }

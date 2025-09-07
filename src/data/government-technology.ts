@@ -1,18 +1,6 @@
-import { BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface MainContent {
-  governmentDomain: 'digital-government' | 'public-service-tech' | 'civic-engagement' | 'smart-city' | 'policy-tech';
-  technologyCategory: string[];
-  vietnameseGovernmentContext: string[];
-  publicServiceApplications: string[];
-  digitalTransformationAspects: string[];
-}
-
-export interface GovernmentTechnologyLesson extends BaseLessonData {
-  mainContent: MainContent;
-}
-
-export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
+export const governmentTechnologyLessons: BaseLessonData[] = [
   {
     id: 'digital-government-transformation',
     title: 'Chuyển Đổi Số Chính Phủ & Chính Phủ Điện Tử',
@@ -22,7 +10,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=0Bw4Tpy0JzE', // Digital Government Transformation
     imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop',
-    mainContent: {
+    governmentTechnologyMainContent: {
       governmentDomain: 'digital-government',
       technologyCategory: [
         'Nền tảng chính phủ điện tử',
@@ -162,7 +150,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=7BqYIi4__Ws', // Smart City Technologies
     imageUrl: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=600&fit=crop',
-    mainContent: {
+    governmentTechnologyMainContent: {
       governmentDomain: 'smart-city',
       technologyCategory: [
         'Mạng lưới cảm biến IoT',
@@ -308,7 +296,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: null, // Civic Technology and Democracy
     imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop',
-    mainContent: {
+    governmentTechnologyMainContent: {
       governmentDomain: 'civic-engagement',
       technologyCategory: [
         'Nền tảng tương tác công dân',
@@ -446,7 +434,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=fhn6ZFh2dp4', // Public Service Innovation
     imageUrl: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=600&fit=crop',
-    mainContent: {
+    governmentTechnologyMainContent: {
       governmentDomain: 'public-service-tech',
       technologyCategory: [
         'Nền tảng cung cấp dịch vụ',
@@ -588,7 +576,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     difficulty: 'Nâng cao',
     videoUrl: null, // Government Data Analytics
     imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop',
-    mainContent: {
+    governmentTechnologyMainContent: {
       governmentDomain: 'policy-tech',
       technologyCategory: [
         'Nền tảng dữ liệu chính phủ',

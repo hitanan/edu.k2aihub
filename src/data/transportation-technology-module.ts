@@ -10,8 +10,7 @@ export const transportationTechnologyModuleData: ModuleData = {
   level: 'Nâng cao',
   duration: '20-26 giờ',
   category: 'Transportation Technology',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=600&fit=crop',
+  heroImageUrl: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=600&fit=crop',
   features: [
     'Autonomous Vehicle Systems',
     'Traffic Management Optimization',
@@ -65,9 +64,5 @@ export const transportationTechnologyModuleData: ModuleData = {
     jobGrowth: '78% Growth',
     hireDemand: 'Rất cao',
   },
-  relatedModules: [
-    K2Module.AIApplications,
-    K2Module.ElectricVehicleTech,
-    K2Module.SmartManufacturing,
-  ],
+  relatedModules: [K2Module.AIApplications, K2Module.ElectricVehicleTech, K2Module.SmartManufacturing],
 };

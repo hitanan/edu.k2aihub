@@ -7,8 +7,18 @@ import { liveCommerceStreamingModuleData } from '@/data/live-commerce-streaming-
 export const metadata: Metadata = createModuleMetadata(
   liveCommerceStreamingModuleData.title,
   liveCommerceStreamingModuleData.description,
-  ['live commerce', 'livestream selling', 'social commerce', 'tiktok shop', 'facebook live', 'streaming business', 'vietnamese livestream', 'online selling', 'k2aihub'],
-  liveCommerceStreamingModuleData.id
+  [
+    'live commerce',
+    'livestream selling',
+    'social commerce',
+    'tiktok shop',
+    'facebook live',
+    'streaming business',
+    'vietnamese livestream',
+    'online selling',
+    'k2aihub',
+  ],
+  liveCommerceStreamingModuleData.id,
 );
 
 export default function LiveCommerceStreamingPage() {

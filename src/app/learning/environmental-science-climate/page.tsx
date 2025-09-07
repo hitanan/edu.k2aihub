@@ -8,10 +8,23 @@ import { createModuleMetadata } from '@/utils/seo';
 export const metadata: Metadata = createModuleMetadata(
   environmentalScienceClimateModuleData.title,
   environmentalScienceClimateModuleData.description,
-  ['environmental science', 'climate change', 'sustainability', 'green technology', 'renewable energy', 'vietnam environment', 'eco solutions', 'climate action', 'environmental conservation', 'k2aihub'],
-  environmentalScienceClimateModuleData.id
+  [
+    'environmental science',
+    'climate change',
+    'sustainability',
+    'green technology',
+    'renewable energy',
+    'vietnam environment',
+    'eco solutions',
+    'climate action',
+    'environmental conservation',
+    'k2aihub',
+  ],
+  environmentalScienceClimateModuleData.id,
 );
 
 export default function EnvironmentalScienceClimatePage() {
-  return <ModulePageTemplate moduleData={environmentalScienceClimateModuleData} lessons={environmentalClimateLessons} />;
+  return (
+    <ModulePageTemplate moduleData={environmentalScienceClimateModuleData} lessons={environmentalClimateLessons} />
+  );
 }

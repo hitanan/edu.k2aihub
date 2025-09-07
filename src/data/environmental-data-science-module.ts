@@ -19,8 +19,7 @@ export const environmentalDataScienceModuleData: ModuleData = {
   ],
   icon: '🌍',
   color: 'from-green-600 to-emerald-600',
-  heroImageUrl:
-    'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=1200&h=600&fit=crop&auto=format',
+  heroImageUrl: 'https://images.unsplash.com/photo-1569163139394-de4e4f43e4e5?w=1200&h=600&fit=crop&auto=format',
   objectives: [
     'Master climate data analysis techniques với focus trên Vietnamese weather patterns',
     'Design IoT environmental monitoring systems cho air và water quality tracking',
@@ -58,10 +57,5 @@ export const environmentalDataScienceModuleData: ModuleData = {
     jobGrowth: '+75%',
     hireDemand: 'Cao',
   },
-  relatedModules: [
-    K2Module.AdvancedAI,
-    K2Module.Python,
-    K2Module.GreenTechnology,
-    K2Module.DigitalMarketing,
-  ],
+  relatedModules: [K2Module.AdvancedAI, K2Module.Python, K2Module.GreenTechnology, K2Module.DigitalMarketing],
 };

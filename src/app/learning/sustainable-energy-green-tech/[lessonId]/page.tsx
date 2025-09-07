@@ -1,4 +1,3 @@
-
 import { PageProps } from '@/types';
 import LessonPageTemplate, { LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 import { sustainableEnergyGreenTechLessons } from '@/data/sustainable-energy-green-tech';

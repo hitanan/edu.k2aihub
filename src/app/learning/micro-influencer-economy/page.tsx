@@ -7,8 +7,17 @@ import { microInfluencerEconomyModuleData } from '@/data/micro-influencer-econom
 export const metadata: Metadata = createModuleMetadata(
   microInfluencerEconomyModuleData.title,
   microInfluencerEconomyModuleData.description,
-  ['micro influencer', 'influencer marketing', 'personal branding', 'social media monetization', 'creator economy', 'vietnamese influencers', 'brand partnerships', 'k2aihub'],
-  microInfluencerEconomyModuleData.id
+  [
+    'micro influencer',
+    'influencer marketing',
+    'personal branding',
+    'social media monetization',
+    'creator economy',
+    'vietnamese influencers',
+    'brand partnerships',
+    'k2aihub',
+  ],
+  microInfluencerEconomyModuleData.id,
 );
 
 export default function MicroInfluencerEconomyPage() {

@@ -1,48 +1,6 @@
-export interface DigitalGovLesson {
-  id: string;
-  title: string;
-  description: string;
-  difficulty: string;
-  duration: string;
-  objectives: string[];
-  prerequisites: string[];
-  exercises: Exercise[];
-  realWorldApplications: string[];
-  videoUrl: string;
-  imageUrl?: string;
-  govTechnologies: string[];
-  publicServices: string[];
-  resources: Resource[];
-  caseStudies: CaseStudy[];
-}
+import { BaseLessonData } from '@/types/lesson-base';
 
-interface Exercise {
-  title: string;
-  description: string;
-  difficulty: string;
-  solution: string;
-  requirements: string[];
-  hints: string[];
-  expectedOutput: string;
-}
-
-interface Resource {
-  title: string;
-  url: string;
-  type: 'government' | 'platform' | 'specification' | 'guide' | 'api';
-  description: string;
-}
-
-interface CaseStudy {
-  title: string;
-  government: string;
-  challenge: string;
-  solution: string;
-  results: string;
-  insights: string[];
-}
-
-export const digitalGovLessons: DigitalGovLesson[] = [
+export const digitalGovernment: BaseLessonData[] = [
   {
     id: 'vietnam-digital-government',
     title: 'Bài 1: Chính phủ Điện tử Việt Nam và Smart City Development',

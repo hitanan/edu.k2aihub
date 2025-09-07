@@ -7,14 +7,7 @@ import { mentalHealthTechModuleData } from '@/data/mental-health-tech-module';
 export const metadata: Metadata = createModuleMetadata(
   mentalHealthTechModuleData.title,
   mentalHealthTechModuleData.description,
-  [
-    'mental health tech',
-    'digital wellness',
-    'sức khỏe tâm thần',
-    'wellness apps',
-    'meditation tech',
-    'K2AiHub',
-  ],
+  ['mental health tech', 'digital wellness', 'sức khỏe tâm thần', 'wellness apps', 'meditation tech', 'K2AiHub'],
   mentalHealthTechModuleData.id,
 );
 
