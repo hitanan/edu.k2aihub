@@ -1,6 +1,19 @@
-import { BaseLessonData } from '@/types/lesson-base';
+import { BaseLessonData, StructuredContent } from '@/types/lesson-base';
 
-export const DataScienceLessons: BaseLessonData[] = [
+export interface DataScienceLesson extends BaseLessonData {
+  mainContent: StructuredContent;
+  algorithms?: string[];
+  dataScienceConcepts?: string[];
+  practicalProjects?: {
+    title: string;
+    description: string;
+    dataset: string;
+    techniques: string[];
+    deliverables: string[];
+  }[];
+}
+
+export const DataScienceLessons: DataScienceLesson[] = [
   {
     id: 'data-science-fundamentals',
     title: 'Cơ bản về Data Science',

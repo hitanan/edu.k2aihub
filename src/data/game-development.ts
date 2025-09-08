@@ -1,6 +1,25 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const gameDevLessons: BaseLessonData[] = [
+export interface GameDevLesson extends BaseLessonData {
+  gameDevMainContent: {
+    gameGenres: string[];
+    technologies: string[];
+    careerOpportunities: string[];
+  };
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+}
+
+export const gameDevLessons: GameDevLesson[] = [
   {
     id: 'game-design-fundamentals',
     title: 'Bài 1: Nguyên Tắc Cơ Bản về Thiết Kế Game',

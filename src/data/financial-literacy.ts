@@ -1,6 +1,11 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const financialLiteracyLessons: BaseLessonData[] = [
+export interface FinancialLiteracyLesson extends BaseLessonData {
+  technologies: string[];
+  financialImpact: string;
+}
+
+export const financialLiteracyLessons: FinancialLiteracyLesson[] = [
   {
     id: 'personal-budgeting-fundamentals',
     title: 'Bài 1: Lập Ngân Sách Cá Nhân & Kế Hoạch Tài Chính',
@@ -78,6 +83,9 @@ export const financialLiteracyLessons: BaseLessonData[] = [
         ],
       },
     ],
+    financialImpact:
+      'Nâng cao nhận thức và kỹ năng quản lý tài chính cá nhân, từ đó cải thiện chất lượng cuộc sống và giảm bớt căng thẳng tài chính.',
+    technologies: ['Ứng dụng di động', 'Phần mềm kế toán cá nhân', 'Nền tảng giáo dục trực tuyến'],
   },
   {
     id: 'investment-fundamentals',
@@ -156,5 +164,8 @@ export const financialLiteracyLessons: BaseLessonData[] = [
         ],
       },
     ],
+    financialImpact:
+      'Hiểu biết và áp dụng các nguyên tắc đầu tư cơ bản để xây dựng tài sản và đạt được các mục tiêu tài chính dài hạn.',
+    technologies: ['Nền tảng giao dịch trực tuyến', 'Phần mềm phân tích đầu tư', 'Ứng dụng theo dõi danh mục đầu tư'],
   },
 ];

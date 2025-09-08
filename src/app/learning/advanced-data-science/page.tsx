@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { advancedDataScienceLessons } from '@/data/advanced-data-science';
 import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
+import { ModuleData } from '@/types';
 
 export const metadata: Metadata = createModuleMetadata(
   'Advanced Data Science - Khoa Học Dữ Liệu Nâng Cao',
@@ -77,7 +78,7 @@ export default function AdvancedDataSciencePage() {
       'Basic machine learning experience',
       'Data manipulation proficiency',
     ],
-    careerPaths: [
+    careerOutcomes: [
       'Senior Data Scientist (60-120 triệu VNĐ)',
       'Machine Learning Engineer (55-110 triệu VNĐ)',
       'AI Research Scientist (70-140 triệu VNĐ)',
@@ -137,6 +138,11 @@ export default function AdvancedDataSciencePage() {
       },
     ],
     relatedModules: [K2Module.DataScienceAnalytics, K2Module.AIApplications, K2Module.DigitalCitizenship],
+    marketDemand: {
+      averageSalary: '70-150 triệu VNĐ/tháng',
+      jobGrowth: '36% (2021-2031)',
+      hireDemand: 'Rất cao',
+    },
   };
 
   return <ModulePageTemplate moduleData={moduleData} lessons={advancedDataScienceLessons} />;

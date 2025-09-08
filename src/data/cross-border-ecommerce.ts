@@ -1,6 +1,29 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const crossBorderEcommerceLessons: BaseLessonData[] = [
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface CrossBorderEcommerceLessonData extends BaseLessonData {
+  marketSize?: string;
+  growthRate?: string;
+  platforms?: string[];
+  regulations?: string[];
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  tools?: string[];
+}
+
+export const crossBorderEcommerceLessons: CrossBorderEcommerceLessonData[] = [
   {
     id: 'ecommerce-fundamentals',
     title: 'Cơ bản Thương mại Điện tử Xuyên biên giới',

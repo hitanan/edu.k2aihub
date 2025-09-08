@@ -33,6 +33,7 @@ export interface ModuleData {
   level: string;
   duration: string;
   category: string;
+  primaryColor?: string;
   features: string[];
   icon: string;
   color: string;

@@ -6,35 +6,42 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { kitchenChemistryLessons, KitchenChemistryLessonType } from '@/data/kitchen-chemistry';
 import { PageProps } from '@/types';
-import { FaVial } from 'react-icons/fa';
-import { notFound } from 'next/navigation';
+import { createModuleMetadata } from '@/utils/seo';
+import { FlaskConical } from 'lucide-react';
 
+// Generate static params for all lessons
 export async function generateStaticParams() {
   return generateLessonStaticParams(kitchenChemistryLessons);
 }
 
+// Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const lessonId = params.lessonId;
-  if (!lessonId) return {};
+  if (!lessonId) {
+    return createModuleMetadata(
+      'Hóa Học Trong Bếp',
+      'Khám phá những phản ứng hóa học kỳ diệu xảy ra trong chính căn bếp của bạn.',
+      ['hóa học', 'nấu ăn', 'khoa học thực phẩm', 'K2AI'],
+      'kitchen-chemistry',
+    );
+  }
   return generateLessonMetadata(lessonId, kitchenChemistryLessons, 'kitchen-chemistry');
 }
 
-export default async function KitchenChemistryLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
-  if (!lessonId) {
-    notFound();
-  }
-
+// Page component
+export default function KitchenChemistryLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<KitchenChemistryLessonType> = {
     moduleName: 'kitchen-chemistry',
-    moduleTitle: 'Hóa học Nhà bếp',
+    moduleTitle: 'Hóa Học Trong Bếp',
     modulePath: '/learning/kitchen-chemistry',
     lessons: kitchenChemistryLessons,
     primaryColor: 'orange',
     secondaryColor: 'amber',
-    gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
-    getFieldIcon: (field) => (field === 'keyConcept' ? <FaVial className="w-5 h-5" /> : null),
+    gradientColors: 'from-slate-900 via-orange-900 to-amber-900',
+    getFieldIcon: () => <FlaskConical className="w-5 h-5" />,
     getFieldValue: (lesson) => lesson.keyConcept,
   };
+
+  const lessonId = params.lessonId;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

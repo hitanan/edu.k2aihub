@@ -1,4 +1,4 @@
-import { financialLiteracyLessons } from '@/data/financial-literacy';
+import { financialLiteracyLessons, FinancialLiteracyLesson } from '@/data/financial-literacy';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function FinancialLiteracyLessonPage({ params }: PageProps) {
   const { lessonId } = await params;
-  const lesson = financialLiteracyLessons.find((l) => l.id === lessonId);
+  const lesson = financialLiteracyLessons.find((l) => l.id === lessonId) as FinancialLiteracyLesson;
 
   if (!lesson) {
     notFound();
@@ -133,7 +133,7 @@ export default async function FinancialLiteracyLessonPage({ params }: PageProps)
               </svg>
               <span className="font-semibold text-gray-800">Financial Impact</span>
             </div>
-            <p className="text-gray-600">{lesson.mainContent.financialImpact}</p>
+            <p className="text-gray-600">{lesson.financialImpact}</p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow-lg">
@@ -186,7 +186,7 @@ export default async function FinancialLiteracyLessonPage({ params }: PageProps)
             </div>
 
             {/* Exercises */}
-            {lesson.exercises.map((exercise, index) => (
+            {lesson.exercises?.map((exercise, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-2xl font-bold text-gray-800">{exercise.title}</h2>
@@ -267,7 +267,7 @@ export default async function FinancialLiteracyLessonPage({ params }: PageProps)
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Financial Tools Used</h3>
               <div className="space-y-2">
-                {lesson.mainContent.technologies.map((tool) => (
+                {lesson.technologies.map((tool) => (
                   <div key={tool} className="bg-amber-50 text-amber-700 px-3 py-2 rounded-lg text-sm">
                     {tool}
                   </div>
@@ -279,7 +279,7 @@ export default async function FinancialLiteracyLessonPage({ params }: PageProps)
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Prerequisites</h3>
               <ul className="space-y-2">
-                {lesson.prerequisites.map((prereq, index) => (
+                {lesson.prerequisites?.map((prereq, index) => (
                   <li key={index} className="flex items-start">
                     <span className="text-amber-500 mr-2 mt-1">✓</span>
                     <span className="text-gray-600 text-sm">{prereq}</span>

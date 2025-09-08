@@ -1,6 +1,34 @@
-import { BaseLessonData } from '@/types/lesson-base';
+import { BaseLessonData, CaseStudy, Resource, VietnamContext, Exercise } from '@/types/lesson-base';
 
-export const criticalThinkingLessons: BaseLessonData[] = [
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface PracticalExercise {
+  title: string;
+  scenario: string;
+  steps: string[];
+  expectedOutcome: string;
+  realWorldApplication: string;
+}
+
+export interface CriticalThinkingLessonType extends BaseLessonData {
+  thinkingFrameworks?: string[];
+  cognitiveSkills?: string[];
+  assessmentMethods?: string[];
+  practicalExercises?: PracticalExercise[];
+  vietnamContext?: VietnamContext;
+  careerConnect?: CareerConnect;
+  caseStudies?: CaseStudy[];
+  resources?: Resource[];
+  exercises?: Exercise[];
+}
+
+export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
   {
     id: 'critical-thinking-fundamentals',
     title: 'Cơ Bản Tư Duy Phê Phán',

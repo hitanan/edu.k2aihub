@@ -1,6 +1,37 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const greenTechLessons: BaseLessonData[] = [
+export interface GreenTechExercise {
+  title: string;
+  description: string;
+  difficulty: string;
+  solution: string;
+  materials?: string[];
+  expectedResults: string;
+}
+
+export interface GreenTechResource {
+  title: string;
+  url: string;
+  type: 'research' | 'tool' | 'article';
+}
+
+export interface GreenTechCaseStudy {
+  title: string;
+  organization: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  innovations: string[];
+}
+
+export interface GreenTechLesson extends Omit<BaseLessonData, 'exercises' | 'resources' | 'caseStudies'> {
+  exercises: GreenTechExercise[];
+  resources: GreenTechResource[];
+  caseStudies: GreenTechCaseStudy[];
+  tools?: string[];
+}
+
+export const greenTechLessons: GreenTechLesson[] = [
   {
     id: 'renewable-energy-basics',
     title: 'Cơ Bản về Năng Lượng Tái Tạo',

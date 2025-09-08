@@ -1,6 +1,25 @@
-import { BaseLessonData } from '@/types/lesson-base';
+import { BaseLessonData, QuizQuestion, VietnamContext, CareerProfile } from '@/types/lesson-base';
 
-export const DigitalCitizenshipLessons: BaseLessonData[] = [
+export interface DigitalCitizenshipLesson extends BaseLessonData {
+  mainContent: {
+    introduction: string;
+    keyConcepts: {
+      title: string;
+      description: string;
+      examples: string[];
+    }[];
+    practicalApplications: {
+      area: string;
+      description: string;
+    }[];
+    conclusion: string;
+  };
+  vietnamContext: VietnamContext;
+  careerConnect: CareerProfile;
+  quizzes: QuizQuestion[];
+}
+
+export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
   {
     id: 'hieu-ve-cong-dan-so',
     title: 'Hiểu về Công dân số',

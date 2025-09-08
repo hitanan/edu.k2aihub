@@ -78,7 +78,7 @@ export const aiLearningApps: BaseLessonData[] = [
         ],
       },
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=pyjZ58tTWUI',
+    videoUrl: 'https://www.youtube.com/watch?v=pyjZ58tTWUI',
     websiteUrl: 'https://photomath.com/',
     imageUrl:
       'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -199,7 +199,7 @@ export const aiLearningApps: BaseLessonData[] = [
         ],
       },
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=Slqw4wC_ZN4',
+    videoUrl: 'https://www.youtube.com/watch?v=Slqw4wC_ZN4',
     websiteUrl: 'https://www.gauthmath.com/',
     imageUrl:
       'https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -323,7 +323,7 @@ export const aiLearningApps: BaseLessonData[] = [
         ],
       },
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=vZ1tQZ8glXg',
+    videoUrl: 'https://www.youtube.com/watch?v=vZ1tQZ8glXg',
     websiteUrl: 'https://socratic.org/',
     imageUrl:
       'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -449,7 +449,7 @@ export const aiLearningApps: BaseLessonData[] = [
         ],
       },
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=FJ_ZWAUO78s',
+    videoUrl: 'https://www.youtube.com/watch?v=FJ_ZWAUO78s',
     websiteUrl: 'https://www.grammarly.com/',
     imageUrl:
       'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -569,7 +569,7 @@ export const aiLearningApps: BaseLessonData[] = [
         ],
       },
     ],
-    videoDemo: 'https://www.youtube.com/shorts/EJxCDJmuMYY',
+    videoUrl: 'https://www.youtube.com/shorts/EJxCDJmuMYY',
     websiteUrl: 'https://www.question.ai/',
     imageUrl:
       'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -694,7 +694,7 @@ export const aiLearningApps: BaseLessonData[] = [
         ],
       },
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=P3ZTxke4AOU',
+    videoUrl: 'https://www.youtube.com/watch?v=P3ZTxke4AOU',
     websiteUrl: 'https://www.duolingo.com/',
     imageUrl:
       'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -828,7 +828,7 @@ export const aiLearningApps: BaseLessonData[] = [
         ],
       },
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=EPyyyB23NUU',
+    videoUrl: 'https://www.youtube.com/watch?v=EPyyyB23NUU',
     websiteUrl: 'https://github.com/features/copilot',
     imageUrl:
       'https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -955,7 +955,7 @@ export const aiLearningApps: BaseLessonData[] = [
         ],
       },
     ],
-    videoDemo: 'https://www.youtube.com/watch?v=jasrI4XUcNU',
+    videoUrl: 'https://www.youtube.com/watch?v=jasrI4XUcNU',
     websiteUrl: 'https://quillbot.com/',
     imageUrl:
       'https://images.unsplash.com/photo-1456324504439-367cee3b3c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',

@@ -2,53 +2,46 @@ import {
   LessonPageTemplate,
   generateLessonMetadata,
   generateLessonStaticParams,
-  LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { DigitalArtsLessons, DigitalArtsLessonType } from '@/data/digital-arts-creative-tech';
+import { DigitalArtsLessons } from '@/data/digital-arts-creative-tech';
 import { PageProps } from '@/types';
-import { Palette, Video, Sparkles } from 'lucide-react';
+import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+import { createTitle } from '@/utils/seo';
 
 // Generate static params for all lessons
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return generateLessonStaticParams(DigitalArtsLessons);
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+export function generateMetadata({ params }: PageProps): Metadata {
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return {
+      title: createTitle('Bài học không tồn tại'),
+      description: 'Bài học này không tồn tại hoặc đã bị di chuyển.',
+    };
+  }
   return generateLessonMetadata(lessonId, DigitalArtsLessons, 'digital-arts-creative-tech');
 }
 
 // Page component with standardized config
-export default async function DigitalArtsLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<DigitalArtsLessonType> = {
+export default function DigitalArtsLessonPage({ params }: PageProps) {
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    notFound();
+  }
+
+  const config = {
     moduleName: 'digital-arts-creative-tech',
-    moduleTitle: 'Nghệ Thuật Số & Công Nghệ Sáng Tạo',
-    modulePath: '/learning/digital-arts-creative-tech',
+    moduleTitle: 'Digital Arts & Creative Tech',
     lessons: DigitalArtsLessons,
-    primaryColor: 'pink',
-    secondaryColor: 'rose',
-    gradientColors: 'from-slate-900 via-pink-900 to-slate-900',
-    getFieldIcon: (field: string) => {
-      switch (field) {
-        case 'tools':
-          return <Palette className="w-5 h-5" />;
-        case 'techniques':
-          return <Video className="w-5 h-5" />;
-        case 'aiPrompts':
-          return <Sparkles className="w-5 h-5" />;
-        default:
-          return <Palette className="w-5 h-5" />;
-      }
-    },
-    getFieldValue: (lesson) => {
-      if (lesson.tools) return lesson.tools.join(', ');
-      if (lesson.technologies) return lesson.technologies.join(', ');
-      if (lesson.creativeFocus) return lesson.creativeFocus.slice(0, 2).join(', ') + '...';
-      return 'Không có thông tin';
-    },
+    primaryColor: 'purple',
+    secondaryColor: 'pink',
+    modulePath: '/learning/digital-arts-creative-tech',
+    gradientColors: 'from-purple-900 to-pink-900',
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

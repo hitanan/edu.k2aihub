@@ -1,6 +1,14 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const crossPlatformStrategyLessons: BaseLessonData[] = [
+export interface CrossPlatformStrategyLessonType extends BaseLessonData {
+  platformFeatures: string[];
+  contentAdaptation: string[];
+  audienceSegmentation: string[];
+  analyticsIntegration: string[];
+  automationTools: string[];
+}
+
+export const crossPlatformStrategyLessons: CrossPlatformStrategyLessonType[] = [
   {
     id: 'unified-brand-messaging-strategy',
     title: 'Unified Brand Messaging Across Platforms',

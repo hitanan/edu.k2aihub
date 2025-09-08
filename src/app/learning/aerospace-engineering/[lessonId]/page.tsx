@@ -45,7 +45,7 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
   return generateLessonMetadata(lessonId, convertedLessons, 'aerospace-engineering');
 }
 
@@ -64,7 +64,7 @@ function getAerospaceIcon(field: string) {
 }
 
 // Page component with standardized config
-export default async function AerospaceEngineeringLessonPage({ params }: PageProps) {
+export default function AerospaceEngineeringLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'aerospace-engineering',
     moduleTitle: 'Aerospace Engineering',
@@ -76,6 +76,6 @@ export default async function AerospaceEngineeringLessonPage({ params }: PagePro
     getFieldIcon: (field: string) => getAerospaceIcon(field),
   };
 
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

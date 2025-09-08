@@ -1,26 +1,21 @@
-import {
-  LessonPageTemplate,
-  generateLessonMetadata,
-  generateLessonStaticParams,
-  LessonPageConfig,
-} from '@/components/learning/LessonPageTemplate';
-import { DataScienceLessons, DataScienceLessonData } from '@/data/data-science';
+import { Metadata } from 'next';
+import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 import { PageProps } from '@/types';
+import { createLessonMetadata } from '@/utils/seo';
+import { DataScienceLessons, DataScienceLesson } from '@/data/data-science';
 
-// Generate static params for all lessons
-export async function generateStaticParams() {
-  return generateLessonStaticParams(DataScienceLessons);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const lesson = DataScienceLessons.find((l) => l.id === params.lessonId);
+  if (!lesson) {
+    return {};
+  }
+  return createLessonMetadata(lesson.title, lesson.description, 'data-science', lesson.id, []);
 }
 
-// Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, DataScienceLessons, 'data-science');
-}
+export default function DataScienceLessonPage({ params }: PageProps) {
+  const lessonId = params.lessonId;
 
-// Page component with standardized config
-export default async function DataScienceLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<DataScienceLessonData> = {
+  const config: LessonPageConfig<DataScienceLesson> = {
     moduleName: 'data-science',
     moduleTitle: 'Data Science - Khoa học dữ liệu',
     modulePath: '/learning/data-science',
@@ -29,6 +24,12 @@ export default async function DataScienceLessonPage({ params }: PageProps) {
     secondaryColor: 'cyan',
     gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
   };
-  const { lessonId } = await params;
+
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
+}
+
+export async function generateStaticParams() {
+  return DataScienceLessons.map((lesson: DataScienceLesson) => ({
+    lessonId: lesson.id,
+  }));
 }

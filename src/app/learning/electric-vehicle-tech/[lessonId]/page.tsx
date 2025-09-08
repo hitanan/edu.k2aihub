@@ -3,23 +3,30 @@ import {
   generateLessonMetadata,
   generateLessonStaticParams,
   LessonPageConfig,
-  BaseLessonData,
 } from '@/components/learning/LessonPageTemplate';
 import { electricVehicleLessons } from '@/data/electric-vehicle-tech';
 import { PageProps } from '@/types';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+import { createTitle } from '@/utils/seo';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return generateLessonStaticParams(electricVehicleLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export function generateMetadata({ params }: PageProps): Metadata {
   const lessonId = params.lessonId;
-  if (!lessonId) return {};
+  if (!lessonId) {
+    return {
+      title: createTitle('Bài học không tồn tại'),
+      description: 'Bài học này không tồn tại hoặc đã bị di chuyển.',
+    };
+  }
   return generateLessonMetadata(lessonId, electricVehicleLessons, 'electric-vehicle-tech');
 }
 
-export default async function ElectricVehicleLessonPage({ params }: PageProps) {
+export default function ElectricVehicleLessonPage({ params }: PageProps) {
   const lessonId = params.lessonId;
   if (!lessonId) {
     notFound();

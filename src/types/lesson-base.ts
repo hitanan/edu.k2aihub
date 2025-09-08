@@ -27,6 +27,46 @@ export interface QuizQuestion {
   explanation: string;
 }
 
+export interface Exercise {
+  id?: string;
+  title: string;
+  description: string;
+  difficulty: string;
+  materials?: string[];
+  procedure?: string[];
+  steps?: string[];
+  expectedResults?: string;
+  expectedOutput?: string;
+  solution?: string;
+  hints?: string[];
+  tips?: string[];
+  videoUrl?: string;
+  imageUrl?: string;
+  tools?: string[];
+  datasets?: string[];
+  code?: string;
+  troubleshooting?: string[];
+  requirements?: string[];
+}
+
+export interface CaseStudy {
+  title: string;
+  organization: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  innovations: string[];
+  government?: string;
+  challenge?: string;
+}
+
+export interface Resource {
+  title: string;
+  url: string;
+  type: string;
+  description?: string;
+}
+
 export interface ToolDetail {
   name: string;
   category: string;
@@ -59,44 +99,10 @@ export interface BaseLessonData {
   imageUrl?: string;
   objectives: string[];
   prerequisites?: string[];
-  exercises: Array<{
-    id?: string;
-    title: string;
-    description: string;
-    difficulty: string;
-    materials?: string[];
-    procedure?: string[];
-    steps?: string[];
-    expectedResults?: string;
-    expectedOutput?: string;
-    solution?: string;
-    hints?: string[];
-    tips?: string[];
-    videoUrl?: string;
-    imageUrl?: string;
-    tools?: string[];
-    datasets?: string[];
-    code?: string;
-    troubleshooting?: string[];
-    requirements?: string[];
-  }>;
+  exercises?: Exercise[];
   realWorldApplications: string[];
-  caseStudies?: Array<{
-    title: string;
-    organization: string;
-    problem: string;
-    solution: string;
-    impact: string;
-    innovations: string[];
-    government?: string;
-    challenge?: string;
-  }>;
-  resources?: Array<{
-    title: string;
-    url: string;
-    type: string;
-    description?: string;
-  }>;
+  caseStudies?: CaseStudy[];
+  resources?: Resource[];
   vietnamContext?: VietnamContext;
   careerConnect?: CareerProfile;
   quizzes?: QuizQuestion[];
@@ -119,6 +125,7 @@ export interface BaseLessonData {
   skillLevel?: string;
   outcomes?: string[];
   mainContent?: SimpleContent[] | StructuredContent;
+  financialImpact?: string;
   relatedGames?: Array<{
     id?: string;
     name?: string;

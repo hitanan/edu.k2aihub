@@ -1,6 +1,26 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const dataScienceLessons: BaseLessonData[] = [
+export interface DataScienceAnalyticsLesson extends BaseLessonData {
+  tools: string[];
+  programmingLanguages: string[];
+  analyticsTools: string[];
+  dataTypes: string[];
+  machineLearningMethods: string[];
+  industryApplications: string[];
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+}
+
+export const dataScienceLessons: DataScienceAnalyticsLesson[] = [
   {
     id: 'data-science-fundamentals-python',
     title: 'Data Science Fundamentals với Python',
@@ -85,29 +105,6 @@ export const dataScienceLessons: BaseLessonData[] = [
         expectedResults: 'Professional data science project demonstrating statistical insights',
         solution: 'Systematic approach to data-driven decision making',
       },
-      {
-        title: 'Vietnamese Market Analysis Project',
-        description: 'Analyze Vietnamese consumer behavior data để identify market trends',
-        difficulty: 'Nâng cao',
-        materials: [
-          'Vietnamese consumer survey data',
-          'Economic indicators dataset',
-          'Social media sentiment data',
-          'Advanced analytics tools',
-        ],
-        procedure: [
-          'Gather multi-source Vietnamese market data',
-          'Integrate disparate data sources effectively',
-          'Apply advanced statistical techniques',
-          'Identify consumer behavior patterns',
-          'Segment customers based on behavior',
-          'Predict market trends using forecasting',
-          'Validate insights với domain experts',
-          'Create actionable business recommendations',
-        ],
-        expectedResults: 'Market insights report với actionable recommendations for Vietnamese businesses',
-        solution: 'Data-driven understanding of Vietnamese consumer landscape',
-      },
     ],
     realWorldApplications: [
       'E-commerce personalization systems',
@@ -129,18 +126,6 @@ export const dataScienceLessons: BaseLessonData[] = [
           'Weather impact factor integration',
         ],
       },
-      {
-        title: 'FinTech Risk Assessment Model',
-        organization: 'Vietnamese Digital Bank',
-        problem: 'High default rates on personal loans',
-        solution: 'Machine learning model using alternative data sources',
-        impact: '40% reduction trong default rates, 25% increase trong loan approvals',
-        innovations: [
-          'Social media behavior analysis',
-          'Mobile usage pattern evaluation',
-          'Transaction history deep learning',
-        ],
-      },
     ],
     resources: [
       {
@@ -148,24 +133,12 @@ export const dataScienceLessons: BaseLessonData[] = [
         url: 'https://jakevdp.github.io/PythonDataScienceHandbook',
         type: 'Educational Resource',
       },
-      {
-        title: 'Kaggle Learn Data Science',
-        url: 'https://www.kaggle.com/learn',
-        type: 'Interactive Course',
-      },
-      {
-        title: 'Pandas Documentation',
-        url: 'https://pandas.pydata.org/docs',
-        type: 'Technical Documentation',
-      },
     ],
     vietnamContext: {
       title: 'Khoa học Dữ liệu tại Việt Nam: Cơ hội và Thách thức',
       content: [
         'Nhu cầu nhân lực Khoa học Dữ liệu tại Việt Nam đang bùng nổ, đặc biệt trong các lĩnh vực như E-commerce (Tiki, Shopee), FinTech (MoMo, VNPay), và Viễn thông (Viettel, FPT).',
         'FPT Software và Viettel AI là hai trong số các đơn vị tiên phong tại Việt Nam trong việc nghiên cứu và ứng dụng AI và Khoa học Dữ liệu, đặc biệt là trong xử lý ngôn ngữ tự nhiên tiếng Việt và nhận dạng hình ảnh.',
-        'Các cuộc thi về Khoa học Dữ liệu như Zalo AI Challenge thu hút hàng ngàn sinh viên và kỹ sư tham gia, thúc đẩy cộng đồng và tìm kiếm tài năng.',
-        'Thách thức lớn nhất là chất lượng và sự sẵn có của dữ liệu. Nhiều doanh nghiệp Việt Nam vẫn đang trong giai đoạn đầu của việc số hóa, khiến dữ liệu bị phân mảnh và thiếu nhất quán.',
       ],
     },
     careerConnect: {
@@ -188,19 +161,6 @@ export const dataScienceLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Pandas là thư viện nền tảng cho việc làm sạch, chuyển đổi, và phân tích dữ liệu ở dạng bảng (DataFrame) trong Python, là công cụ không thể thiếu của bất kỳ nhà khoa học dữ liệu nào.',
-      },
-      {
-        question:
-          'Học máy có giám sát (Supervised Learning) khác với học máy không giám sát (Unsupervised Learning) ở điểm nào?',
-        options: [
-          'Học có giám sát cần có người giám sát ngồi cạnh',
-          'Học không giám sát không cần máy tính',
-          'Học có giám sát sử dụng dữ liệu đã được gán nhãn (biết trước kết quả), trong khi học không giám sát tự tìm ra cấu trúc trong dữ liệu chưa được gán nhãn.',
-          'Học không giám sát luôn cho kết quả tốt hơn.',
-        ],
-        correctAnswerIndex: 2,
-        explanation:
-          'Ví dụ của học có giám sát là dự đoán giá nhà (biết giá nhà trong quá khứ). Ví dụ của học không giám sát là phân nhóm khách hàng dựa trên hành vi mua sắm (chưa biết trước có những nhóm nào).',
       },
     ],
   },
@@ -316,19 +276,12 @@ export const dataScienceLessons: BaseLessonData[] = [
         url: 'https://spark.apache.org/docs/latest',
         type: 'Technical Documentation',
       },
-      {
-        title: 'MLOps Best Practices',
-        url: 'https://ml-ops.org',
-        type: 'Industry Standards',
-      },
     ],
     vietnamContext: {
       title: 'Dữ liệu lớn (Big Data) tại Việt Nam',
       content: [
         'Các công ty viễn thông như Viettel, Mobifone, Vinaphone đang quản lý những tập dữ liệu khổng lồ về thông tin thuê bao và lưu lượng mạng, là nguồn tài nguyên quý giá cho việc phân tích hành vi người dùng và quy hoạch hạ tầng.',
         'Thương mại điện tử và các siêu ứng dụng (super-apps) như Grab, Gojek tạo ra một lượng dữ liệu giao dịch và di chuyển khổng lồ mỗi ngày, được sử dụng để tối ưu hóa logistics, giá cả và gợi ý dịch vụ.',
-        'VNG Cloud, Viettel IDC là những nhà cung cấp dịch vụ điện toán đám mây "made in Vietnam", cung cấp hạ tầng để các doanh nghiệp trong nước xử lý dữ liệu lớn mà không cần phụ thuộc vào các gã khổng lồ quốc tế.',
-        'Thách thức: Việc đảm bảo an ninh, chủ quyền dữ liệu và tuân thủ Luật An ninh mạng là một bài toán phức tạp khi làm việc với dữ liệu lớn tại Việt Nam.',
       ],
     },
     careerConnect: {
@@ -351,18 +304,6 @@ export const dataScienceLessons: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Spark là một framework tính toán phân tán mạnh mẽ, cho phép xử lý các tập dữ liệu khổng lồ (terabytes, petabytes) nhanh hơn nhiều so với các công nghệ truyền thống như Hadoop MapReduce.',
-      },
-      {
-        question: 'MLOps (Machine Learning Operations) là gì?',
-        options: [
-          'Một loại thuật toán học máy mới',
-          'Một bộ các thực hành nhằm mục đích triển khai và duy trì các mô hình học máy trong môi trường sản xuất một cách đáng tin cậy và hiệu quả.',
-          'Tên của một công ty phần mềm',
-          'Một ngôn ngữ lập trình',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'MLOps kết hợp Machine Learning, DevOps và Data Engineering để tự động hóa và quản lý vòng đời của mô hình học máy, từ việc xây dựng, triển khai đến giám sát và bảo trì.',
       },
     ],
   },
@@ -478,19 +419,12 @@ export const dataScienceLessons: BaseLessonData[] = [
         url: 'http://www.storytellingwithdata.com',
         type: 'Methodology Guide',
       },
-      {
-        title: 'Power BI Learning Path',
-        url: 'https://docs.microsoft.com/en-us/learn/powerplatform/power-bi',
-        type: 'Educational Platform',
-      },
     ],
     vietnamContext: {
       title: 'Kể chuyện bằng Dữ liệu trong bối cảnh Việt Nam',
       content: [
         'Các báo cáo kinh doanh tại Việt Nam thường bị chỉ trích là khô khan và đầy số liệu. Kỹ năng kể chuyện bằng dữ liệu giúp các nhà phân tích biến những con số đó thành những câu chuyện có ý nghĩa, thuyết phục được ban lãnh đạo.',
         'Trong các buổi thuyết trình gọi vốn (pitching), các startup Việt Nam thành công thường không chỉ trình bày số liệu mà còn kể một câu chuyện hấp dẫn về thị trường, vấn đề và giải pháp của họ bằng dữ liệu.',
-        'Các công cụ như Power BI và Tableau đang ngày càng được ưa chuộng trong các doanh nghiệp Việt Nam, thay thế dần cho các báo cáo Excel truyền thống.',
-        'Thách thức: Nhiều nhà quản lý ở Việt Nam vẫn quen với việc ra quyết định dựa trên kinh nghiệm và "cảm tính", đòi hỏi người trình bày phải có kỹ năng kể chuyện bằng dữ liệu cực kỳ thuyết phục để thay đổi văn hóa này.',
       ],
     },
     careerConnect: {
@@ -513,18 +447,6 @@ export const dataScienceLessons: BaseLessonData[] = [
         correctAnswerIndex: 3,
         explanation:
           'Kể chuyện bằng dữ liệu là sự kết hợp giữa khoa học (dữ liệu) và nghệ thuật (cách kể chuyện) để làm cho thông tin trở nên dễ hiểu, thuyết phục và có tác động mạnh mẽ đến người nghe.',
-      },
-      {
-        question: 'Tại sao việc trực quan hóa dữ liệu (data visualization) lại quan trọng?',
-        options: [
-          'Vì nó làm cho báo cáo dài hơn',
-          'Vì bộ não con người xử lý thông tin hình ảnh nhanh hơn và hiệu quả hơn nhiều so với văn bản hoặc bảng số liệu thô.',
-          'Vì sếp yêu cầu phải có màu sắc',
-          'Vì nó không cần thiết',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'Một biểu đồ tốt có thể truyền tải một xu hướng hoặc một sự so sánh phức tạp chỉ trong vài giây, điều mà có thể mất vài đoạn văn để giải thích bằng lời.',
       },
     ],
   },

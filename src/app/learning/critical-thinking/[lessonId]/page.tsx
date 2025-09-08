@@ -14,12 +14,17 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+    };
+  }
   return generateLessonMetadata(lessonId, criticalThinkingLessons, 'critical-thinking');
 }
 
 // Page component with standardized config
-export default async function CriticalThinkingLessonPage({ params }: PageProps) {
+export default function CriticalThinkingLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<CriticalThinkingLessonType> = {
     moduleName: 'critical-thinking',
     moduleTitle: 'Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo',
@@ -44,7 +49,7 @@ export default async function CriticalThinkingLessonPage({ params }: PageProps) 
       if (lesson.assessmentMethods) return lesson.assessmentMethods.join(', ');
       return 'Không có thông tin';
     },
-    sidebarContent: (lesson) => (
+    sidebarContent: (lesson: CriticalThinkingLessonType) => (
       <div className="space-y-6">
         {lesson.thinkingFrameworks && (
           <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-4 border border-purple-500/20">
@@ -52,7 +57,7 @@ export default async function CriticalThinkingLessonPage({ params }: PageProps) 
               <span>🧩</span> Thinking Frameworks
             </h4>
             <ul className="space-y-2">
-              {lesson.thinkingFrameworks.map((framework, index) => (
+              {lesson.thinkingFrameworks.map((framework: string, index: number) => (
                 <li key={index} className="text-sm text-gray-300 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-purple-400 rounded-full flex-shrink-0"></span>
                   {framework}
@@ -68,7 +73,7 @@ export default async function CriticalThinkingLessonPage({ params }: PageProps) 
               <span>🧠</span> Cognitive Skills
             </h4>
             <ul className="space-y-2">
-              {lesson.cognitiveSkills.map((skill, index) => (
+              {lesson.cognitiveSkills.map((skill: string, index: number) => (
                 <li key={index} className="text-sm text-gray-300 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-pink-400 rounded-full flex-shrink-0"></span>
                   {skill}
@@ -97,6 +102,6 @@ export default async function CriticalThinkingLessonPage({ params }: PageProps) 
       </div>
     ),
   };
-  const { lessonId } = await params;
+  const { lessonId } = params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

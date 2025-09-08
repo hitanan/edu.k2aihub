@@ -1,6 +1,10 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const kitchenChemistryLessons: BaseLessonData[] = [
+export interface KitchenChemistryLessonType extends BaseLessonData {
+  keyConcept: string;
+}
+
+export const kitchenChemistryLessons: KitchenChemistryLessonType[] = [
   {
     id: 'maillard-reaction',
     title: 'Phản ứng Maillard: Nghệ thuật của việc "làm nâu" thực phẩm',

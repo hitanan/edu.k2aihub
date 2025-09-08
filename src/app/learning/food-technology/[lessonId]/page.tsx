@@ -6,47 +6,25 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { foodTechnologyLessons, type FoodTechnologyLesson } from '@/data/food-technology';
 import { PageProps } from '@/types';
-import { BaseLessonData } from '@/types/lesson-base';
+import { Metadata } from 'next';
+import { createTitle } from '@/utils/seo';
 import { Shield, FlaskConical, ChefHat, Leaf, Utensils, Beaker } from 'lucide-react';
 
-// Convert FoodTechnologyLesson to BaseLessonData
-function convertToBaseLessonData(lesson: FoodTechnologyLesson): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises,
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies?.map((study) => ({
-      title: study.title,
-      organization: study.organization,
-      problem: study.problem,
-      solution: study.solution,
-      impact: study.impact,
-      innovations: study.innovations || [],
-    })),
-    resources: lesson.resources,
-  };
-}
-
-// Convert lessons to BaseLessonData format
-const convertedLessons = foodTechnologyLessons.map(convertToBaseLessonData);
-
 // Generate static params for all lessons
-export async function generateStaticParams() {
-  return generateLessonStaticParams(convertedLessons);
+export function generateStaticParams() {
+  return generateLessonStaticParams(foodTechnologyLessons);
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, convertedLessons, 'food-technology');
+export function generateMetadata({ params }: PageProps): Metadata {
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {
+      title: createTitle('Bài học không tồn tại'),
+      description: 'Bài học này không tồn tại hoặc đã bị di chuyển.',
+    };
+  }
+  return generateLessonMetadata(lessonId, foodTechnologyLessons, 'food-technology');
 }
 
 // Icon mapping function for food technology fields
@@ -64,18 +42,18 @@ function getFoodTechIcon(field: string) {
 }
 
 // Page component with standardized config
-export default async function FoodTechnologyLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<BaseLessonData> = {
+export default function FoodTechnologyLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  const config: LessonPageConfig<FoodTechnologyLesson> = {
     moduleName: 'food-technology',
     moduleTitle: 'Food Technology',
     modulePath: '/learning/food-technology',
-    lessons: convertedLessons,
+    lessons: foodTechnologyLessons,
     primaryColor: 'amber',
     secondaryColor: 'orange',
     gradientColors: 'from-slate-900 via-amber-900 to-slate-900',
     getFieldIcon: (field: string) => getFoodTechIcon(field),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

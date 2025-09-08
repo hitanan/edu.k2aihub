@@ -14,7 +14,12 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+    };
+  }
   return generateLessonMetadata(lessonId, crossCulturalLessons, 'cross-cultural-intelligence');
 }
 

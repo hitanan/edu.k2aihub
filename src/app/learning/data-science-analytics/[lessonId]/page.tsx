@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { dataScienceLessons, DataScienceLessonType } from '@/data/data-science-analytics';
+import { dataScienceLessons, DataScienceAnalyticsLesson } from '@/data/data-science-analytics';
 import { PageProps } from '@/types';
 import { Database, BarChart, Brain } from 'lucide-react';
 
@@ -15,13 +15,13 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, dataScienceLessons, 'data-science-analytics');
+  const { lessonId } = params;
+  return generateLessonMetadata(lessonId || '', dataScienceLessons, 'data-science-analytics');
 }
 
 // Page component with standardized config
 export default async function DataScienceAnalyticsLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<DataScienceLessonType> = {
+  const config: LessonPageConfig<DataScienceAnalyticsLesson> = {
     moduleName: 'data-science-analytics',
     moduleTitle: 'Data Science & Big Data Analytics',
     modulePath: '/learning/data-science-analytics',
@@ -41,14 +41,14 @@ export default async function DataScienceAnalyticsLessonPage({ params }: PagePro
           return <Database className="w-5 h-5" />;
       }
     },
-    getFieldValue: (lesson) => {
+    getFieldValue: (lesson: DataScienceAnalyticsLesson) => {
       if (lesson.tools) return lesson.tools.join(', ');
       if (lesson.dataTypes) return lesson.dataTypes.join(', ');
       if (lesson.programmingLanguages) return lesson.programmingLanguages.join(', ');
       return 'Không có thông tin';
-    }
+    },
   };
 
-  const { lessonId } = await params;
+  const { lessonId } = params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

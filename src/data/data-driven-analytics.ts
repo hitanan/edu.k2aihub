@@ -1,6 +1,25 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const dataDrivenAnalyticsLessons: BaseLessonData[] = [
+export interface DataDrivenAnalyticsLesson extends BaseLessonData {
+  analyticsTools: string[];
+  metricCategories: string[];
+  reportingFrameworks: string[];
+  optimizationMethods: string[];
+  dataVisualization: string[];
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+}
+
+export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLesson[] = [
   {
     id: 'advanced-social-media-analytics-insights',
     title: 'Advanced Social Media Analytics & Data Insights',

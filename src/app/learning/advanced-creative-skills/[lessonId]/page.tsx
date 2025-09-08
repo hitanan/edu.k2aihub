@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { advancedCreativeLessons, AdvancedCreativeLesson } from '@/data/advanced-creative-skills'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { advancedCreativeLessons, AdvancedCreativeLesson } from '@/data/advanced-creative-skills';
 import { PageProps } from '@/types';
 import { Palette, Camera, Mic, PenTool, Video, Briefcase } from 'lucide-react';
 
@@ -10,12 +15,12 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId ?? '';
   return generateLessonMetadata(lessonId, advancedCreativeLessons, 'advanced-creative-skills');
 }
 
 // Page component with advanced creative skills-specific configuration
-export default async function AdvancedCreativeLessonPage({ params }: PageProps) {
+export default function AdvancedCreativeLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<AdvancedCreativeLesson> = {
     moduleName: 'advanced-creative-skills',
     moduleTitle: 'Advanced Creative Skills',
@@ -25,13 +30,19 @@ export default async function AdvancedCreativeLessonPage({ params }: PageProps) 
     secondaryColor: 'rose',
     gradientColors: 'from-slate-900 via-pink-900 to-rose-900',
     getFieldIcon: (field: string) => {
-      switch(field) {
-        case 'creativeCategory': return <Palette className="w-5 h-5" />;
-        case 'softwareTools': return <PenTool className="w-5 h-5" />;
-        case 'portfolioRequirements': return <Camera className="w-5 h-5" />;
-        case 'freelancingOpportunities': return <Briefcase className="w-5 h-5" />;
-        case 'skillLevel': return <Video className="w-5 h-5" />;
-        default: return <Palette className="w-5 h-5" />;
+      switch (field) {
+        case 'creativeCategory':
+          return <Palette className="w-5 h-5" />;
+        case 'softwareTools':
+          return <PenTool className="w-5 h-5" />;
+        case 'portfolioRequirements':
+          return <Camera className="w-5 h-5" />;
+        case 'freelancingOpportunities':
+          return <Briefcase className="w-5 h-5" />;
+        case 'skillLevel':
+          return <Video className="w-5 h-5" />;
+        default:
+          return <Palette className="w-5 h-5" />;
       }
     },
     getFieldValue: (lesson: AdvancedCreativeLesson) => lesson.creativeCategory,
@@ -123,9 +134,9 @@ export default async function AdvancedCreativeLessonPage({ params }: PageProps) 
           </div>
         )}
       </div>
-    )
-  }
-  
-  const { lessonId } = await params;
+    ),
+  };
+
+  const lessonId = params.lessonId ?? '';
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

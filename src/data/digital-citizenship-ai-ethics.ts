@@ -1,6 +1,37 @@
-import { BaseLessonData } from '@/types/lesson-base';
+import { BaseLessonData, CaseStudy, Exercise, QuizQuestion as Quiz, Resource } from '@/types/lesson-base';
 
-export const digitalCitizenshipLessons: BaseLessonData[] = [
+export interface DigitalCitizenshipLessonType extends BaseLessonData {
+  ethicalFrameworks?: string[];
+  digitalRights?: string[];
+  aiEthicsPrinciples?: string[];
+  privacyTools?: string[];
+  practicalScenarios?: {
+    title: string;
+    situation: string;
+    ethicalDilemma: string;
+    possibleActions: string[];
+    recommendedApproach: string;
+    reasoning: string;
+  }[];
+  exercises?: Exercise[];
+  realWorldApplications: string[];
+  caseStudies?: CaseStudy[];
+  resources?: Resource[];
+  vietnamContext?: {
+    title: string;
+    content: string[];
+  };
+  careerConnect?: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+  quizzes?: Quiz[];
+}
+
+export const digitalCitizenshipLessons: DigitalCitizenshipLessonType[] = [
   {
     id: 'digital-citizenship-fundamentals',
     title: 'Công Dân Số Cơ Bản',

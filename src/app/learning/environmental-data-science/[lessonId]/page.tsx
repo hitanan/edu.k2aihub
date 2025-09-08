@@ -1,34 +1,27 @@
-import {
-  LessonPageTemplate,
-  generateLessonMetadata,
-  generateLessonStaticParams,
-  LessonPageConfig,
-  BaseLessonData,
-} from '@/components/learning/LessonPageTemplate';
-import { environmentalDataScienceLessons } from '@/data/environmental-data-science';
+import { Metadata } from 'next';
+import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 import { PageProps } from '@/types';
-import { notFound } from 'next/navigation';
+import { createLessonMetadata } from '@/utils/seo';
+import { environmentalDataScienceLessons, EnvironmentalDataScienceLesson } from '@/data/environmental-data-science';
 
-// Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(environmentalDataScienceLessons);
+  return environmentalDataScienceLessons.map((lesson) => ({
+    lessonId: lesson.id,
+  }));
 }
 
-// Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
-  if (!lessonId) return {};
-  return generateLessonMetadata(lessonId, environmentalDataScienceLessons, 'environmental-data-science');
-}
-
-// Page component with standardized config
-export default async function EnvironmentalDataScienceLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
-  if (!lessonId) {
-    notFound();
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const lesson = environmentalDataScienceLessons.find((l) => l.id === params.lessonId);
+  if (!lesson) {
+    return {};
   }
+  return createLessonMetadata(lesson.title, lesson.description, 'environmental-data-science', lesson.id, []);
+}
 
-  const config: LessonPageConfig<BaseLessonData> = {
+export default function EnvironmentalDataScienceLessonPage({ params }: PageProps) {
+  const lessonId = params.lessonId;
+
+  const config: LessonPageConfig<EnvironmentalDataScienceLesson> = {
     moduleName: 'environmental-data-science',
     moduleTitle: 'Khoa Học Dữ Liệu Môi Trường',
     modulePath: '/learning/environmental-data-science',

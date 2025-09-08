@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { AgriTechLessons, AgriTechLessonData } from '@/data/agritech-precision-farming'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { AgriTechLessons, AgriTechLessonData } from '@/data/agritech-precision-farming';
 import { PageProps } from '@/types';
 import { Sprout, Wifi, Drone, Cpu } from 'lucide-react';
 
@@ -8,11 +13,11 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-    const { lessonId } = await params;
-    return generateLessonMetadata(lessonId, AgriTechLessons, 'agritech-precision-farming');
+  const lessonId = params.lessonId;
+  return generateLessonMetadata(lessonId, AgriTechLessons, 'agritech-precision-farming');
 }
 
-export default async function AgriTechLessonPage({ params }: PageProps) {
+export default function AgriTechLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<AgriTechLessonData> = {
     moduleName: 'agritech-precision-farming',
     moduleTitle: 'AgriTech & Nông nghiệp Chính xác',
@@ -23,10 +28,14 @@ export default async function AgriTechLessonPage({ params }: PageProps) {
     gradientColors: 'from-slate-900 via-green-900 to-slate-900',
     getFieldIcon: (field: string) => {
       switch (field) {
-        case 'cropType': return <Sprout className="w-5 h-5" />;
-        case 'farmSize': return <Wifi className="w-5 h-5" />;
-        case 'technologyLevel': return <Cpu className="w-5 h-5" />;
-        default: return <Drone className="w-5 h-5" />;
+        case 'cropType':
+          return <Sprout className="w-5 h-5" />;
+        case 'farmSize':
+          return <Wifi className="w-5 h-5" />;
+        case 'technologyLevel':
+          return <Cpu className="w-5 h-5" />;
+        default:
+          return <Drone className="w-5 h-5" />;
       }
     },
     getFieldValue: (lesson) => lesson.cropType || lesson.farmSize || lesson.technologyLevel || 'N/A',
@@ -41,7 +50,7 @@ export default async function AgriTechLessonPage({ params }: PageProps) {
             <p className="text-gray-300 text-sm">{lesson.cropType}</p>
           </div>
         )}
-        
+
         {lesson.farmSize && (
           <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
             <h4 className="font-semibold text-blue-400 mb-2 flex items-center">
@@ -77,9 +86,9 @@ export default async function AgriTechLessonPage({ params }: PageProps) {
           </div>
         </div>
       </div>
-    )
-  }
-  
-  const { lessonId } = await params;
+    ),
+  };
+
+  const lessonId = params.lessonId;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

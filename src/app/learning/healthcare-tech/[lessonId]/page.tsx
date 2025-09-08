@@ -6,6 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { healthcareTechLessons, HealthcareTechLesson } from '@/data/healthcare-tech';
 import { PageProps } from '@/types';
+import { createModuleMetadata } from '@/utils/seo';
 import { Activity, Shield, Database, Heart, Stethoscope } from 'lucide-react';
 
 // Generate static params for all lessons
@@ -15,12 +16,20 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return createModuleMetadata(
+      'Công Nghệ Y Tế & Sức Khỏe Số',
+      'Khám phá các giải pháp công nghệ y tế tiên tiến, từ y tế từ xa đến phân tích dữ liệu và thiết bị IoT.',
+      ['công nghệ y tế', 'healthtech', 'y tế số', 'telemedicine', 'K2AI'],
+      'healthcare-tech',
+    );
+  }
   return generateLessonMetadata(lessonId, healthcareTechLessons, 'healthcare-tech');
 }
 
 // Page component with healthcare tech-specific configuration
-export default async function HealthcareTechLessonPage({ params }: PageProps) {
+export default function HealthcareTechLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<HealthcareTechLesson> = {
     moduleName: 'healthcare-tech',
     moduleTitle: 'Công Nghệ Y Tế & Sức Khỏe Số',
@@ -62,7 +71,7 @@ export default async function HealthcareTechLessonPage({ params }: PageProps) {
             Regulatory Compliance
           </h3>
           <ul className="space-y-2">
-            {lesson.regulatoryCompliance?.map((regulation, index) => (
+            {lesson.regulatoryCompliance?.map((regulation: string, index: number) => (
               <li key={index} className="text-cyan-100 text-sm flex items-start">
                 <span className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
                 {regulation}
@@ -87,7 +96,7 @@ export default async function HealthcareTechLessonPage({ params }: PageProps) {
             Target Audience
           </h3>
           <div className="flex flex-wrap gap-2">
-            {lesson.targetAudience?.map((audience, index) => (
+            {lesson.targetAudience?.map((audience: string, index: number) => (
               <span key={index} className="px-2 py-1 bg-cyan-600 text-cyan-100 rounded text-sm">
                 {audience}
               </span>
@@ -102,7 +111,7 @@ export default async function HealthcareTechLessonPage({ params }: PageProps) {
               {lesson.vietnamContext.title}
             </h3>
             <ul className="space-y-2">
-              {lesson.vietnamContext.content.map((context, index) => (
+              {lesson.vietnamContext.content.map((context: string, index: number) => (
                 <li key={index} className="text-green-100 text-sm flex items-start">
                   <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
                   {context}
@@ -115,6 +124,6 @@ export default async function HealthcareTechLessonPage({ params }: PageProps) {
     ),
   };
 
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

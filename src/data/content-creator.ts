@@ -1,6 +1,90 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const contentCreatorLessons: BaseLessonData[] = [
+interface Exercise {
+  title: string;
+  description: string;
+  difficulty: string;
+  materials: string[];
+  procedure: string[];
+  expectedResults: string;
+  solution: string;
+}
+
+interface CaseStudy {
+  title: string;
+  organization: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  innovations: string[];
+}
+
+interface Resource {
+  title: string;
+  url: string;
+  type: string;
+}
+
+interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+interface Quiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
+interface MainContent {
+  introduction: string;
+  keyConcepts: {
+    title: string;
+    description: string;
+    examples: string[];
+  }[];
+  practicalApplications: {
+    area: string;
+    description: string;
+  }[];
+  conclusion: string;
+}
+
+interface RelatedGame {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface ContentCreatorLessonData extends BaseLessonData {
+  mainContent: MainContent;
+  relatedGames: RelatedGame[];
+  platforms: string[];
+  monetizationMethods: string[];
+  toolsRequired: string[];
+  averageIncome: string;
+  timeToMaster: string;
+  objectives: string[];
+  prerequisites: string[];
+  exercises: Exercise[];
+  realWorldApplications: string[];
+  caseStudies: CaseStudy[];
+  resources: Resource[];
+  vietnamContext: VietnamContext;
+  careerConnect: CareerConnect;
+  quizzes: Quiz[];
+}
+
+export const contentCreatorLessons: ContentCreatorLessonData[] = [
   {
     id: 'social-media-personal-branding',
     title: 'Social Media Strategy & Personal Branding',
@@ -1326,90 +1410,6 @@ export const contentCreatorLessons: BaseLessonData[] = [
         {
           title: 'Vòng lặp Tối ưu hóa (Optimization Loop)',
           description:
-            'Tăng trưởng là một quá trình lặp đi lặp lại. Nắm vững chu trình: Phân tích dữ liệu -> Đưa ra giả thuyết -> Thử nghiệm -> Đo lường kết quả -> Áp dụng bài học. Đây là động cơ cốt lõi của sự tăng trưởng bền vững.',
-          examples: [
-            'Phân tích thấy video ngắn hoạt động tốt -> Giả thuyết rằng khán giả thích nội dung nhanh -> Thử nghiệm làm thêm video ngắn -> Đo lường thấy lượt xem tăng -> Áp dụng chiến lược "ưu tiên video ngắn".',
-          ],
-        },
-      ],
-      practicalApplications: [
-        {
-          area: 'Tối ưu hóa kênh YouTube',
-          description:
-            'Sử dụng YouTube Analytics để hiểu khán giả của bạn đến từ đâu, họ xem những video nào khác, và điều gì khiến họ rời đi, từ đó cải thiện chiến lược nội dung.',
-        },
-        {
-          area: 'Chiến lược Hashtag trên Instagram/TikTok',
-          description:
-            'Phân tích hiệu quả của các hashtag khác nhau để xác định bộ hashtag nào mang lại nhiều lượt tiếp cận và tương tác nhất cho niche của bạn.',
-        },
-        {
-          area: 'Tăng tỷ lệ chuyển đổi',
-          description:
-            'Sử dụng dữ liệu để tối ưu hóa trang bán hàng hoặc lời kêu gọi hành động, tăng tỷ lệ người xem trở thành khách hàng hoặc người đăng ký.',
-        },
-      ],
-      conclusion:
-        'Dữ liệu không giết chết sự sáng tạo; nó cung cấp cho sự sáng tạo một phương hướng. Bằng cách kết hợp nghệ thuật kể chuyện với khoa học phân tích dữ liệu, bạn sẽ xây dựng được một cỗ máy tăng trưởng không thể ngăn cản, liên tục cải thiện và đạt được những tầm cao mới.',
-    },
-    relatedGames: [
-      {
-        id: 'data-visualizer-3d',
-        name: 'Data Visualizer 3D',
-        description:
-          'Explore and visualize complex datasets in interactive 3D environments, uncovering insights and trends',
-      },
-    ],
-    platforms: ['All platforms'],
-    monetizationMethods: ['Optimized content leads to higher monetization rates'],
-    toolsRequired: ['Analytics platforms', 'Data visualization tools', 'A/B testing tools'],
-    averageIncome: 'Multiplier effect on all other income streams',
-    timeToMaster: '3-6 tháng',
-    objectives: [
-      'Understand key performance metrics cho each platform',
-      'Implement data-driven decision making trong content strategy',
-      'Optimize content cho maximum reach và engagement',
-      'Identify growth opportunities through data analysis',
-      'Build systematic testing culture cho continuous improvement',
-    ],
-    prerequisites: [
-      'Established content creation track record',
-      'Access to platform analytics tools',
-      'Basic understanding của statistics và data interpretation',
-      'Willingness to experiment với content approaches',
-    ],
-    exercises: [
-      {
-        title: 'Comprehensive Analytics Audit',
-        description: 'Analyze current performance across all platforms để identify optimization opportunities',
-        difficulty: 'Trung bình',
-        materials: ['Platform analytics access', 'Data analysis spreadsheet', 'Competitor research'],
-        procedure: [
-          'Collect 3-6 months của performance data across platforms',
-          'Identify top-performing content types và themes',
-          'Analyze audience demographics và behavior patterns',
-          'Compare performance against competitor benchmarks',
-          'Identify content gaps và missed opportunities',
-          'Map audience journey across different content types',
-          'Calculate ROI cho different content investments',
-          'Create actionable insights report với specific recommendations',
-        ],
-        expectedResults: 'Comprehensive understanding của content performance với clear optimization roadmap',
-        solution: 'Focus on patterns rather than individual posts - look cho systemic insights that can guide strategy',
-      },
-      {
-        title: 'Growth Experimentation Framework',
-        description: 'Implement systematic testing approach để optimize content performance',
-        difficulty: 'Nâng cao',
-        materials: ['Testing plan template', 'Performance tracking tools', 'Statistical analysis tools'],
-        procedure: [
-          'Design controlled experiments cho content variables',
-          'Test posting times, content formats, engagement strategies',
-          'Implement A/B testing cho thumbnails, titles, descriptions',
-          'Measure statistical significance của test results',
-          'Document learnings và apply successful strategies systematically',
-          'Scale winning approaches across content production',
-          'Create continuous experimentation pipeline',
           'Share learnings với team hoặc community',
         ],
         expectedResults: 'Data-proven strategies resulting trong 25%+ improvement trong key metrics',

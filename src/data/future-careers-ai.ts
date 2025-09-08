@@ -1,6 +1,12 @@
 import { BaseLessonData } from '@/types/lesson-base';
+import type { CareerProfile, VietnamContext } from '@/types/lesson-base';
 
-export const futureCareersLessons: BaseLessonData[] = [
+export interface FutureCareersLesson extends BaseLessonData {
+  vietnamContext: VietnamContext;
+  careerConnect: CareerProfile;
+}
+
+export const futureCareersLessons: FutureCareersLesson[] = [
   {
     id: 'ai-impact-on-jobs',
     title: 'Tác động của AI đến Thị trường Lao động',

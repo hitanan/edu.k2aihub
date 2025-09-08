@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
   return generateLessonMetadata(lessonId, AIApplicationLessons, 'ai-applications');
 }
 
@@ -116,7 +116,7 @@ function AIAppSidebarContent({ lesson }: { lesson: AIApplicationLessonData }) {
 }
 
 // Page component with standardized config
-export default async function AIApplicationLessonPage({ params }: PageProps) {
+export default function AIApplicationLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<AIApplicationLessonData> = {
     moduleName: 'ai-applications',
     moduleTitle: 'AI Applications - Ứng dụng AI thực tế',
@@ -129,6 +129,6 @@ export default async function AIApplicationLessonPage({ params }: PageProps) {
     sidebarContent: (lesson) => <AIAppSidebarContent lesson={lesson} />,
   };
 
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

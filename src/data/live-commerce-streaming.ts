@@ -1,7 +1,7 @@
 import { BaseLessonData } from '@/types/lesson-base';
 export interface LiveCommerceLessonType extends BaseLessonData {
   streamingPlatforms?: string[];
-  mainContent?: {
+  liveCommerceContent?: {
     platformSpecifics: Array<{
       platform: string;
       features: string[];

@@ -15,7 +15,12 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+    };
+  }
   return generateLessonMetadata(lessonId, crossPlatformStrategyLessons, 'cross-platform-strategy');
 }
 
@@ -45,6 +50,6 @@ export default async function CrossPlatformStrategyLessonPage({ params }: PagePr
     },
   };
 
-  const { lessonId } = await params;
+  const { lessonId } = params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -15,12 +15,12 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
   return generateLessonMetadata(lessonId, liveCommerceLessons, 'live-commerce-streaming');
 }
 
 // Page component with standardized config
-export default async function LiveCommerceStreamingLessonPage({ params }: PageProps) {
+export default function LiveCommerceStreamingLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<LiveCommerceLessonType> = {
     moduleName: 'live-commerce-streaming',
     moduleTitle: 'Live Commerce & Streaming',
@@ -32,6 +32,6 @@ export default async function LiveCommerceStreamingLessonPage({ params }: PagePr
     getFieldIcon: () => <Video className="w-5 h-5" />, // Optional
     getFieldValue: (lesson) => lesson.streamingPlatforms?.join(', ') || '', // Optional
   };
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

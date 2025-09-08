@@ -1,6 +1,14 @@
-import { BaseLessonData } from '@/types/lesson-base';
+import { BaseLessonData, VietnamContext, Exercise, CaseStudy, Resource } from '@/types/lesson-base';
 
-export const energyManagementLessons: BaseLessonData[] = [
+export interface EnergyManagementLesson extends BaseLessonData {
+  vietnamContext: VietnamContext;
+  exercises: Exercise[];
+  realWorldApplications: string[];
+  caseStudies: CaseStudy[];
+  resources: Resource[];
+}
+
+export const energyManagementLessons: EnergyManagementLesson[] = [
   {
     id: 'renewable-energy-systems-design',
     title: 'Thiết Kế Hệ Thống Năng Lượng Tái Tạo',

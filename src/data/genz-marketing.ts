@@ -1,6 +1,27 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const genZMarketingLessons: BaseLessonData[] = [
+export interface GenZMarketingLesson extends BaseLessonData {
+  genZMarketingMainContent: {
+    generationalInsights: string[];
+    authenticityPrinciples: string[];
+    platformPreferences: string[];
+    valueAlignment: string[];
+    engagementTactics: string[];
+  };
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+}
+
+export const genZMarketingLessons: GenZMarketingLesson[] = [
   {
     id: 'genz-psychology-authentic-marketing',
     title: 'Tâm lý Gen Z & Nguyên tắc Marketing Đích thực',

@@ -15,12 +15,17 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+    };
+  }
   return generateLessonMetadata(lessonId, crossBorderEcommerceLessons, 'cross-border-ecommerce');
 }
 
 // Page component with standardized config
-export default async function CrossBorderEcommerceLessonPage({ params }: PageProps) {
+export default function CrossBorderEcommerceLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<CrossBorderEcommerceLessonData> = {
     moduleName: 'cross-border-ecommerce',
     moduleTitle: 'Thương mại Điện tử Xuyên biên giới',
@@ -41,13 +46,13 @@ export default async function CrossBorderEcommerceLessonPage({ params }: PagePro
           return <Globe className="w-5 h-5" />;
       }
     },
-    getFieldValue: (lesson) => {
+    getFieldValue: (lesson: CrossBorderEcommerceLessonData) => {
       if (lesson.marketSize) return lesson.marketSize;
       if (lesson.growthRate) return lesson.growthRate;
       if (lesson.platforms) return lesson.platforms.join(', ');
       return '';
     },
-    sidebarContent: (lesson) => (
+    sidebarContent: (lesson: CrossBorderEcommerceLessonData) => (
       <div className="space-y-4">
         {lesson.marketSize && (
           <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-4">
@@ -91,6 +96,6 @@ export default async function CrossBorderEcommerceLessonPage({ params }: PagePro
     ),
   };
 
-  const { lessonId } = await params;
+  const { lessonId } = params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

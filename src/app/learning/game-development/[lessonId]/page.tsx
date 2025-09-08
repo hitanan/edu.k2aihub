@@ -4,15 +4,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { PageProps } from '@/types';
 import { createTitle, createDescription } from '@/utils/seo';
+import { Metadata } from 'next';
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return gameDevLessons.map((lesson) => ({
     lessonId: lesson.id,
   }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+export function generateMetadata({ params }: PageProps): Metadata {
+  const { lessonId } = params;
   const lesson = gameDevLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
@@ -49,8 +50,8 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function GameDevelopmentLessonPage({ params }: PageProps) {
-  const { lessonId } = await params;
+export default function GameDevelopmentLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
   const lesson = gameDevLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
@@ -141,7 +142,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
               <span className="font-semibold text-gray-800">Game Type</span>
             </div>
             <div className="flex flex-wrap gap-1 mb-4">
-              {lesson.mainContent.gameGenres.map((topic, topicIndex) => (
+              {(lesson.gameDevMainContent.gameGenres || []).map((topic: string, topicIndex: number) => (
                 <span key={topicIndex} className="bg-purple-100 text-gray-600 text-xs px-2 py-1 rounded-full">
                   {topic}
                 </span>
@@ -280,7 +281,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Technologies Used</h3>
               <div className="space-y-2">
-                {lesson.mainContent.technologies.map((tech) => (
+                {(lesson.gameDevMainContent.technologies || []).map((tech: string) => (
                   <div key={tech} className="bg-purple-50 text-purple-700 px-3 py-2 rounded-lg text-sm">
                     {tech}
                   </div>
@@ -292,7 +293,7 @@ export default async function GameDevelopmentLessonPage({ params }: PageProps) {
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Prerequisites</h3>
               <ul className="space-y-2">
-                {lesson.prerequisites.map((prereq, index) => (
+                {(lesson.prerequisites || []).map((prereq: string, index: number) => (
                   <li key={index} className="flex items-start">
                     <span className="text-purple-500 mr-2 mt-1">✓</span>
                     <span className="text-gray-600 text-sm">{prereq}</span>

@@ -1,6 +1,11 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const digitalGovLessons: BaseLessonData[] = [
+export interface DigitalGovLesson extends BaseLessonData {
+  govTechnologies: string[];
+  publicServices: string[];
+}
+
+export const digitalGovLessons: DigitalGovLesson[] = [
   {
     id: 'vietnam-digital-government',
     title: 'Bài 1: Chính phủ Điện tử Việt Nam và Smart City Development',

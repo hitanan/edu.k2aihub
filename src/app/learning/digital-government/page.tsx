@@ -3,42 +3,6 @@ import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { digitalGovLessons } from '@/data/digital-government';
 import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
-import { BaseLessonData } from '@/types/lesson-base';
-import type { DigitalGovLesson } from '@/data/digital-government';
-
-// Convert DigitalGovLesson to BaseLessonData
-function convertDigitalGovToBase(lesson: DigitalGovLesson): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises.map((exercise) => ({
-      title: exercise.title,
-      description: exercise.description,
-      difficulty: exercise.difficulty,
-      solution: exercise.solution,
-      materials: exercise.requirements,
-      procedure: exercise.hints,
-      expectedResults: exercise.expectedOutput,
-    })),
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies.map((caseStudy) => ({
-      title: caseStudy.title,
-      organization: caseStudy.government,
-      problem: caseStudy.challenge,
-      solution: caseStudy.solution,
-      impact: caseStudy.results,
-      innovations: caseStudy.insights,
-    })),
-    resources: lesson.resources,
-  };
-}
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(
@@ -117,7 +81,5 @@ export default function DigitalGovernmentPage() {
     relatedModules: [K2Module.Arduino, K2Module.VietnameseBusiness, K2Module.Cybersecurity],
   };
 
-  const convertedLessons = digitalGovLessons.map(convertDigitalGovToBase);
-
-  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={digitalGovLessons} />;
 }

@@ -1,31 +1,27 @@
-import {
-  LessonPageTemplate,
-  generateLessonMetadata,
-  generateLessonStaticParams,
-  LessonPageConfig,
-  BaseLessonData,
-} from '@/components/learning/LessonPageTemplate';
-import { energyManagementLessons } from '@/data/energy-management-smart-grid';
+import { Metadata } from 'next';
+import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 import { PageProps } from '@/types';
-import { notFound } from 'next/navigation';
+import { createLessonMetadata } from '@/utils/seo';
+import { energyManagementLessons, EnergyManagementLesson } from '@/data/energy-management-smart-grid';
 
 export async function generateStaticParams() {
-  return generateLessonStaticParams(energyManagementLessons);
+  return energyManagementLessons.map((lesson) => ({
+    lessonId: lesson.id,
+  }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
-  if (!lessonId) return {};
-  return generateLessonMetadata(lessonId, energyManagementLessons, 'energy-management-smart-grid');
-}
-
-export default async function EnergyManagementLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
-  if (!lessonId) {
-    notFound();
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const lesson = energyManagementLessons.find((l) => l.id === params.lessonId);
+  if (!lesson) {
+    return {};
   }
+  return createLessonMetadata(lesson.title, lesson.description, 'energy-management-smart-grid', lesson.id, []);
+}
 
-  const config: LessonPageConfig<BaseLessonData> = {
+export default function EnergyManagementLessonPage({ params }: PageProps) {
+  const lessonId = params.lessonId;
+
+  const config: LessonPageConfig<EnergyManagementLesson> = {
     moduleName: 'energy-management-smart-grid',
     moduleTitle: 'Quản Lý Năng Lượng & Lưới Điện Thông Minh',
     modulePath: '/learning/energy-management-smart-grid',

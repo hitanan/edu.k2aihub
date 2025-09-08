@@ -40,7 +40,7 @@ export interface LessonPageConfig<T extends BaseLessonData> {
 }
 
 export interface LessonPageTemplateProps<T extends BaseLessonData> {
-  lessonId: string;
+  lessonId: string | undefined;
   config: LessonPageConfig<T>;
 }
 

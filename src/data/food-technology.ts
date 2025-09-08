@@ -1,6 +1,8 @@
 import type { BaseLessonData } from '@/types/lesson-base';
 
-export const foodTechnologyLessons: BaseLessonData[] = [
+export type FoodTechnologyLesson = BaseLessonData;
+
+export const foodTechnologyLessons: FoodTechnologyLesson[] = [
   {
     id: 'food-safety-quality-control',
     title: 'Hệ thống an toàn thực phẩm và kiểm soát chất lượng',

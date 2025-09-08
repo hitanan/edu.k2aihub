@@ -6,6 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { MetaverseVREducationLessons, MetaverseVRLessonType } from '@/data/metaverse-vr-education';
 import { PageProps } from '@/types';
+import { createModuleMetadata } from '@/utils/seo';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -14,12 +15,20 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return createModuleMetadata(
+      'Metaverse & Giáo Dục VR',
+      'Khám phá tiềm năng của metaverse và thực tế ảo (VR) trong giáo dục tương lai.',
+      ['metaverse', 'VR', 'giáo dục', 'công nghệ giáo dục', 'K2AI'],
+      'metaverse-vr-education',
+    );
+  }
   return generateLessonMetadata(lessonId, MetaverseVREducationLessons, 'metaverse-vr-education');
 }
 
 // Page component with standardized config
-export default async function MetaverseVRLessonPage({ params }: PageProps) {
+export default function MetaverseVRLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<MetaverseVRLessonType> = {
     moduleName: 'metaverse-vr-education',
     moduleTitle: 'Metaverse & Giáo Dục VR',
@@ -31,6 +40,6 @@ export default async function MetaverseVRLessonPage({ params }: PageProps) {
     getFieldIcon: () => <span className="w-5 h-5">🥽</span>,
     getFieldValue: (lesson) => lesson.technologyLevel || lesson.tools?.join(', ') || '',
   };
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

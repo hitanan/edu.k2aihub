@@ -1,6 +1,12 @@
-import type { BaseLessonData } from '@/types/lesson-base';
+import type { BaseLessonData, Exercise, CaseStudy, Resource } from '@/types/lesson-base';
 
-export const environmentalDataScienceLessons: BaseLessonData[] = [
+export interface EnvironmentalDataScienceLesson extends BaseLessonData {
+  exercises: Exercise[];
+  caseStudies: CaseStudy[];
+  resources: Resource[];
+}
+
+export const environmentalDataScienceLessons: EnvironmentalDataScienceLesson[] = [
   {
     id: 'climate-data-analysis',
     title: 'Phân Tích & Mô Hình Hóa Dữ Liệu Khí Hậu',
