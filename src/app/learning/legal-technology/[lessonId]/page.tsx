@@ -1,5 +1,10 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate'
-import { legalTechLessons, LegalTechLesson } from '@/data/legal-technology'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { legalTechLessons, LegalTechLesson } from '@/data/legal-technology';
 import { PageProps } from '@/types';
 import { Scale, FileText, Search, Shield, Copyright } from 'lucide-react';
 
@@ -10,12 +15,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {
+      title: 'Bài học không tìm thấy',
+      description: 'Không thể tìm thấy bài học yêu cầu trong khóa học công nghệ pháp lý.',
+    };
+  }
   return generateLessonMetadata(lessonId, legalTechLessons, 'legal-technology');
 }
 
 // Page component with legal technology-specific configuration
 export default async function LegalTechnologyLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
   const config: LessonPageConfig<LegalTechLesson> = {
     moduleName: 'legal-technology',
     moduleTitle: 'Legal Technology',
@@ -25,13 +37,19 @@ export default async function LegalTechnologyLessonPage({ params }: PageProps) {
     secondaryColor: 'blue',
     gradientColors: 'from-slate-900 via-indigo-900 to-blue-900',
     getFieldIcon: (field: string) => {
-      switch(field) {
-        case 'legalArea': return <Scale className="w-5 h-5" />;
-        case 'legalTechTools': return <FileText className="w-5 h-5" />;
-        case 'complianceRequirements': return <Shield className="w-5 h-5" />;
-        case 'vietnameseLegalSystem': return <Search className="w-5 h-5" />;
-        case 'targetLegalProfessionals': return <Copyright className="w-5 h-5" />;
-        default: return <Scale className="w-5 h-5" />;
+      switch (field) {
+        case 'legalArea':
+          return <Scale className="w-5 h-5" />;
+        case 'legalTechTools':
+          return <FileText className="w-5 h-5" />;
+        case 'complianceRequirements':
+          return <Shield className="w-5 h-5" />;
+        case 'vietnameseLegalSystem':
+          return <Search className="w-5 h-5" />;
+        case 'targetLegalProfessionals':
+          return <Copyright className="w-5 h-5" />;
+        default:
+          return <Scale className="w-5 h-5" />;
       }
     },
     getFieldValue: (lesson: LegalTechLesson) => lesson.legalArea,
@@ -69,7 +87,10 @@ export default async function LegalTechnologyLessonPage({ params }: PageProps) {
           </h3>
           <div className="flex flex-wrap gap-2">
             {lesson.targetLegalProfessionals?.map((professional, index) => (
-              <span key={index} className="px-2 py-1 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded text-sm">
+              <span
+                key={index}
+                className="px-2 py-1 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded text-sm"
+              >
                 {professional}
               </span>
             ))}
@@ -110,9 +131,8 @@ export default async function LegalTechnologyLessonPage({ params }: PageProps) {
           </div>
         )}
       </div>
-    )
-  }
-  
-  const { lessonId } = await params;
+    ),
+  };
+
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

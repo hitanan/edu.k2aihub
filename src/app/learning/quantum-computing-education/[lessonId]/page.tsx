@@ -7,6 +7,7 @@ import {
 import { quantumComputingLessons, QuantumComputingLessonType } from '@/data/quantum-computing-education';
 import { PageProps } from '@/types';
 import { Zap, Atom, TrendingUp } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -15,12 +16,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, quantumComputingLessons, 'quantum-computing-education');
 }
 
 // Page component with quantum computing-specific configuration
-export default async function QuantumComputingLessonPage({ params }: PageProps) {
+export default function QuantumComputingLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<QuantumComputingLessonType> = {
     moduleName: 'quantum-computing-education',
     moduleTitle: 'Quantum Computing Education',
@@ -79,6 +87,5 @@ export default async function QuantumComputingLessonPage({ params }: PageProps) 
     ),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

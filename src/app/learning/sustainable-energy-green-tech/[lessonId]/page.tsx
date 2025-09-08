@@ -1,11 +1,28 @@
+import { notFound } from 'next/navigation';
 import { PageProps } from '@/types';
-import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
+import {
+  LessonPageTemplate,
+  LessonPageConfig,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+} from '@/components/learning/LessonPageTemplate';
 import { sustainableEnergyGreenTechLessons } from '@/data/sustainable-energy-green-tech';
 import { sustainableEnergyModuleData } from '@/data/sustainable-energy-green-tech-module';
 import { BaseLessonData } from '@/types/lesson-base';
 
+export async function generateMetadata({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
+  return generateLessonMetadata(lessonId, sustainableEnergyGreenTechLessons, 'sustainable-energy-green-tech');
+}
+
 export default async function SustainableEnergyGreenTechLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId || 'introduction-to-sustainable-energy';
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
 
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: sustainableEnergyModuleData.id,
@@ -21,7 +38,5 @@ export default async function SustainableEnergyGreenTechLessonPage({ params }: P
 }
 
 export async function generateStaticParams() {
-  return sustainableEnergyGreenTechLessons.map((lesson) => ({
-    lessonId: lesson.id,
-  }));
+  return generateLessonStaticParams(sustainableEnergyGreenTechLessons);
 }

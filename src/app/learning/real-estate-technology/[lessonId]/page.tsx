@@ -7,6 +7,7 @@ import {
 import { realEstateTechnologyLessons, RealEstateTechLesson } from '@/data/real-estate-technology';
 import { PageProps } from '@/types';
 import { TrendingUp } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -15,7 +16,11 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  return generateLessonMetadata((await params).lessonId, realEstateTechnologyLessons, 'real-estate-technology');
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
+  return generateLessonMetadata(lessonId, realEstateTechnologyLessons, 'real-estate-technology');
 }
 
 // Custom sidebar content for Real Estate Technology lessons
@@ -46,7 +51,12 @@ function RealEstateTechSidebar({ lesson }: { lesson: RealEstateTechLesson }) {
 }
 
 // Page component with standardized config
-export default async function RealEstateTechnologyLessonPage({ params }: PageProps) {
+export default function RealEstateTechnologyLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
+
   const config: LessonPageConfig<RealEstateTechLesson> = {
     moduleName: 'real-estate-technology',
     moduleTitle: 'Công Nghệ Bất Động Sản',
@@ -58,6 +68,5 @@ export default async function RealEstateTechnologyLessonPage({ params }: PagePro
     sidebarContent: (lesson) => <RealEstateTechSidebar lesson={lesson} />,
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

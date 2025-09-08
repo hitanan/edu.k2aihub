@@ -1,116 +1,78 @@
 import type { Metadata } from 'next';
-
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { biomedicalEngineeringLessons, type BiomedicalEngineeringLesson } from '@/data/biomedical-engineering';
+import { biomedicalEngineeringLessons } from '@/data/biomedical-engineering';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/k2-modules';
-import { BaseLessonData } from '@/types/lesson-base';
-
-// Convert BiomedicalEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(lesson: BiomedicalEngineeringLesson): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises,
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies?.map((study) => ({
-      title: study.title,
-      organization: study.organization,
-      problem: study.problem,
-      solution: study.solution,
-      impact: study.impact,
-      innovations: study.innovations || [],
-    })),
-    resources: lesson.resources,
-  };
-}
+import { ModuleData } from '@/types';
 
 export const metadata: Metadata = createModuleMetadata(
-  'Biomedical Engineering - Kỹ Thuật Y Sinh',
-  'Master biomedical engineering: medical device design, biosignal processing, regenerative medicine, surgical robotics. Vietnamese healthcare applications với FDA/MOH regulatory compliance.',
+  'Kỹ Thuật Y Sinh - Biomedical Engineering',
+  'Làm chủ kỹ thuật y sinh: thiết kế thiết bị y tế, xử lý tín hiệu sinh học, y học tái tạo, robot phẫu thuật. Ứng dụng trong y tế Việt Nam và tuân thủ quy định của FDA/Bộ Y tế.',
   [
-    'biomedical engineering',
-    'medical devices',
-    'biosignals',
-    'regenerative medicine',
-    'surgical robotics',
-    'vietnamese healthcare',
-    'FDA regulations',
-    'medical innovation',
+    'kỹ thuật y sinh',
+    'thiết bị y tế',
+    'tín hiệu sinh học',
+    'y học tái tạo',
+    'robot phẫu thuật',
+    'y tế Việt Nam',
+    'quy định FDA',
+    'sáng tạo y tế',
     'K2AI',
   ],
   'biomedical-engineering',
 );
 
+const biomedicalEngineeringModuleData: ModuleData = {
+  id: 'biomedical-engineering',
+  title: 'Kỹ Thuật Y Sinh',
+  subtitle: 'Công nghệ cho Sức khỏe: Từ Phòng thí nghiệm đến Lâm sàng',
+  description:
+    'Khóa học toàn diện về kỹ thuật y sinh, bao gồm thiết kế thiết bị y tế, xử lý tín hiệu sinh học, y học tái tạo và robot phẫu thuật. Tập trung đặc biệt vào các ứng dụng trong hệ thống y tế Việt Nam, tuân thủ quy định của Bộ Y tế và thúc đẩy sáng tạo trong lĩnh vực công nghệ y tế.',
+  level: 'Nâng cao',
+  duration: '30 giờ',
+  category: 'Khoa học & Kỹ thuật',
+  heroImageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop&auto=format',
+  features: [
+    'Thiết kế & Phát triển Thiết bị Y tế theo tiêu chuẩn FDA/Bộ Y tế',
+    'Xử lý Tín hiệu Sinh học & Hình ảnh Y tế bằng AI/ML',
+    'Y học Tái tạo & Kỹ thuật Mô cho ứng dụng lâm sàng',
+    'Robot Y tế & Hệ thống Phẫu thuật với phản hồi xúc giác và thị giác máy tính',
+    'Tích hợp vào Hệ thống Y tế Việt Nam qua hợp tác với các bệnh viện',
+  ],
+  icon: 'heart-pulse',
+  color: 'teal',
+  objectives: [
+    'Thiết kế và phát triển các thiết bị y tế theo tiêu chuẩn pháp lý quốc tế.',
+    'Triển khai các thuật toán xử lý tín hiệu sinh học tiên tiến cho các ứng dụng chẩn đoán.',
+    'Làm chủ các kỹ thuật y học tái tạo bao gồm kỹ thuật mô và liệu pháp tế bào gốc.',
+    'Xây dựng các hệ thống robot phẫu thuật với thị giác máy tính và phản hồi xúc giác.',
+    'Nắm vững môi trường pháp lý y tế Việt Nam và triển khai lâm sàng.',
+  ],
+  prerequisites: [
+    'Nền tảng kỹ thuật vững chắc về điện, cơ khí hoặc khoa học máy tính.',
+    'Kỹ năng lập trình MATLAB, Python, C++ cho các ứng dụng y tế.',
+    'Hiểu biết về giải phẫu, sinh lý người và thuật ngữ y khoa.',
+    'Kiến thức về xử lý tín hiệu, hệ thống điều khiển và khoa học vật liệu.',
+  ],
+  careerOutcomes: [
+    'Kỹ sư Y sinh (Lương: 25-60 triệu VNĐ/tháng)',
+    'Nhà thiết kế Thiết bị Y tế (Lương: 30-70 triệu VNĐ/tháng)',
+    'Chuyên gia Pháp chế Y tế (Lương: 35-80 triệu VNĐ/tháng)',
+    'Kỹ sư Robot Phẫu thuật (Lương: 45-100 triệu VNĐ/tháng)',
+  ],
+  industryApplications: [
+    'Bệnh viện Việt Nam: Tích hợp các công nghệ y tế tiên tiến.',
+    'Nhà sản xuất thiết bị y tế: Năng lực R&D và sản xuất tại địa phương.',
+    'Công ty dược phẩm: Hệ thống phân phối thuốc và thiết bị chẩn đoán.',
+    'Các startup y tế: Sáng tạo trong các giải pháp y tế giá cả phải chăng.',
+  ],
+  marketDemand: {
+    averageSalary: '45 triệu VNĐ/tháng',
+    jobGrowth: '15% mỗi năm',
+    hireDemand: 'Cao',
+  },
+  relatedModules: ['advanced-ai', 'robotics', 'arduino', 'python'],
+};
+
 export default function BiomedicalEngineeringPage() {
-  const moduleData = {
-    id: 'biomedical-engineering',
-    title: 'Biomedical Engineering',
-    subtitle: 'Kỹ Thuật Y Sinh - Công Nghệ Y Tế Hiện Đại',
-    description:
-      'Comprehensive biomedical engineering education covering medical device design, biosignal processing, regenerative medicine, và surgical robotics. Focus đặc biệt trên Vietnamese healthcare applications, regulatory compliance với MOH, và innovation trong medical technology sector.',
-    level: 'Nâng cao',
-    duration: '12-18 giờ',
-    category: 'Engineering Technology',
-    features: [
-      'Medical Device Design & Development với FDA/MOH regulatory pathways',
-      'Biosignal Processing & Medical Imaging using AI/ML technologies',
-      'Regenerative Medicine & Tissue Engineering cho clinical applications',
-      'Medical Robotics & Surgical Systems với haptic feedback và computer vision',
-      'Vietnamese Healthcare Integration với local hospital partnerships',
-    ],
-    icon: '🏥',
-    color: 'from-teal-600 to-cyan-600',
-    heroImageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop&auto=format',
-    objectives: [
-      'Design và develop medical devices theo international regulatory standards',
-      'Implement advanced biosignal processing algorithms cho diagnostic applications',
-      'Master regenerative medicine techniques including tissue engineering và stem cell therapy',
-      'Build surgical robotics systems với computer vision và haptic feedback',
-      'Navigate Vietnamese healthcare regulatory environment và clinical implementation',
-    ],
-    prerequisites: [
-      'Strong engineering background trong electrical, mechanical, hoặc computer engineering',
-      'Programming skills trong MATLAB, Python, C++ cho medical applications',
-      'Understanding của human anatomy, physiology, và medical terminology',
-      'Knowledge của signal processing, control systems, và materials science',
-      'Familiarity với quality management systems và regulatory frameworks',
-    ],
-    careerOutcomes: [
-      'Biomedical Engineer (25-60 triệu VNĐ/tháng)',
-      'Medical Device Designer (30-70 triệu VNĐ/tháng)',
-      'Clinical Engineer (28-65 triệu VNĐ/tháng)',
-      'Regulatory Affairs Specialist (35-80 triệu VNĐ/tháng)',
-      'R&D Engineer - Medical Technology (40-90 triệu VNĐ/tháng)',
-      'Surgical Robotics Engineer (45-100 triệu VNĐ/tháng)',
-      'Biomedical Data Scientist (38-85 triệu VNĐ/tháng)',
-    ],
-    industryApplications: [
-      'Vietnamese hospitals: Integration của advanced medical technologies',
-      'Medical device manufacturers: Local R&D và manufacturing capabilities',
-      'Pharmaceutical companies: Drug delivery systems và diagnostic devices',
-      'Healthcare startups: Innovation trong affordable medical solutions',
-      'Government healthcare programs: Technology assessment và policy development',
-      'International collaborations: Technology transfer và joint ventures',
-      'Academic research institutions: Clinical translation of biomedical innovations',
-    ],
-    marketDemand: {
-      averageSalary: '25-100 triệu VNĐ',
-      jobGrowth: '+85%',
-      hireDemand: 'Cao',
-    },
-    relatedModules: [K2Module.AdvancedAI, K2Module.Robotics, K2Module.Arduino, K2Module.Python],
-  };
-
-  // Convert lessons to BaseLessonData format
-  const convertedLessons = biomedicalEngineeringLessons.map(convertToBaseLessonData);
-
-  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
+  return <ModulePageTemplate moduleData={biomedicalEngineeringModuleData} lessons={biomedicalEngineeringLessons} />;
 }

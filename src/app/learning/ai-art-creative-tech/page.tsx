@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, { ModuleData } from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
+import { ModuleData } from '@/types';
 import { aiArtLessons, AiArtLesson } from '@/data/ai-art-creative-tech';
 import { BaseLessonData } from '@/types/lesson-base';
 import { createModuleMetadata } from '@/utils/seo';
@@ -61,7 +62,18 @@ export default function AiArtCreativeTechPage() {
     subtitle: 'Sáng Tạo Nghệ Thuật với AI',
     description:
       'Master AI art generation và creative technology. Từ Midjourney, DALL-E đến AI video production - tạo ra những tác phẩm nghệ thuật đỉnh cao với sức mạnh của AI.',
+    level: 'Beginner to Advanced',
+    duration: '12 weeks',
+    category: 'Creative & Design',
     primaryColor: 'pink',
+    features: [
+      'Hands-on projects with Midjourney and DALL-E',
+      'AI video production with RunwayML',
+      'Brand design with AI',
+      'Social media content creation',
+    ],
+    icon: 'Palette',
+    color: 'pink',
     gradientColors: 'from-pink-900 via-purple-900 to-indigo-900',
     heroImageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop',
     statsConfig: {

@@ -41,7 +41,7 @@ export interface ModuleData {
   objectives: string[];
   prerequisites: string[];
   careerOutcomes: string[];
-  industryApplications: string[];
+  industryApplications: (string | { name: string; description: string })[];
   marketDemand: {
     averageSalary: string;
     jobGrowth: string;

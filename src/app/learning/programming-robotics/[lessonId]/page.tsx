@@ -45,7 +45,10 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, convertedLessons, 'programming-robotics');
 }
 
@@ -61,7 +64,8 @@ function getRoboticsIcon(field: string) {
 }
 
 // Page component with standardized config
-export default async function ProgrammingRoboticsLessonPage({ params }: PageProps) {
+export default function ProgrammingRoboticsLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'programming-robotics',
     moduleTitle: 'Programming & Robotics',
@@ -73,6 +77,5 @@ export default async function ProgrammingRoboticsLessonPage({ params }: PageProp
     getFieldIcon: (field: string) => getRoboticsIcon(field),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

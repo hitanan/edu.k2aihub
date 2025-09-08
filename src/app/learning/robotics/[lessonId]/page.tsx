@@ -8,6 +8,7 @@ import { roboticsLessons, RoboticsLessonType } from '@/data/robotics';
 import { PageProps } from '@/types';
 import { K2Module } from '@/data/k2-modules';
 import { Bot, Settings, Play, Target, Award } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -16,12 +17,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, roboticsLessons, K2Module.Robotics);
 }
 
 // Page component with standardized config
-export default async function RoboticsLessonPage({ params }: PageProps) {
+export default function RoboticsLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<RoboticsLessonType> = {
     moduleName: 'Robotics & Hệ thống tự hành',
     moduleTitle: 'Robotics & Hệ thống tự hành',
@@ -81,6 +89,5 @@ export default async function RoboticsLessonPage({ params }: PageProps) {
     ),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

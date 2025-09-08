@@ -3,8 +3,8 @@ import {
   generateLessonMetadata,
   generateLessonStaticParams,
   LessonPageConfig,
-  BaseLessonData,
 } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 import { arduinoCircuitsLessons } from '@/data/arduino-circuits';
 import { PageProps } from '@/types';
 
@@ -15,12 +15,22 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+      description: 'The requested lesson could not be found.',
+    };
+  }
   return generateLessonMetadata(lessonId, arduinoCircuitsLessons, 'arduino-circuits');
 }
 
 // Page component with standardized config
 export default async function ArduinoLessonPage({ params }: PageProps) {
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return null;
+  }
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'arduino-circuits',
     moduleTitle: 'Xây dựng Mạch điện tử với Arduino',
@@ -30,6 +40,5 @@ export default async function ArduinoLessonPage({ params }: PageProps) {
     secondaryColor: 'teal',
     gradientColors: 'from-slate-900 via-green-900 to-slate-900',
   };
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

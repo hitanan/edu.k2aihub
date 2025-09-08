@@ -1,6 +1,28 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const BlockchainLessons: BaseLessonData[] = [
+export interface BlockchainTechnologyLesson extends BaseLessonData {
+  blockchainConcepts?: string[];
+  cryptocurrencies?: string[];
+  practicalProjects?: {
+    title: string;
+    description: string;
+    technology: string[];
+    complexity: string;
+  }[];
+  vietnamContext?: {
+    title: string;
+    content: string[];
+  };
+  careerConnect?: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+}
+
+export const BlockchainLessons: BlockchainTechnologyLesson[] = [
   {
     id: 'blockchain-fundamentals',
     title: 'Cơ bản về Blockchain và Cryptocurrency',

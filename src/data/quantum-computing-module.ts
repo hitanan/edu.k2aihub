@@ -1,50 +1,44 @@
-import { ModuleNavigation } from '@/types';
+import { ModuleData } from '@/types';
 
-export const quantumComputingModuleData: ModuleNavigation = {
+export const quantumComputingModuleData: ModuleData = {
   id: 'quantum-computing',
   title: 'Quantum Computing',
   subtitle: 'Máy tính lượng tử',
   description: 'Khám phá thế giới quantum computing với Qiskit, quantum algorithms và cryptography',
-  category: ['professional', 'programming'],
+  category: 'professional',
   icon: '⚛️',
   color: 'from-cyan-600 to-blue-600',
-  totalDuration: '14-18 giờ',
-  difficulty: 'Nâng cao',
   level: 'Nâng cao',
   duration: '14-18 giờ',
-  href: '/learning/quantum-computing',
   features: ['Quantum Fundamentals', 'Qiskit Programming', 'Quantum Algorithms', 'Quantum Cryptography'],
-  tags: ['quantum', 'qiskit', 'cryptography', 'algorithms'],
   prerequisites: [
     'Linear algebra và complex numbers',
     'Python programming',
     'Basic physics knowledge',
     'Mathematical reasoning',
   ],
-  lessons: [
-    {
-      id: 'quantum-fundamentals',
-      title: 'Quantum Computing Fundamentals',
-      duration: '160 phút',
-      difficulty: 'Trung bình',
-    },
-    {
-      id: 'quantum-algorithms',
-      title: 'Quantum Algorithms & Implementations',
-      duration: '180 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'quantum-cryptography',
-      title: 'Quantum Cryptography & Security',
-      duration: '160 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'quantum-future',
-      title: 'Future of Quantum Computing',
-      duration: '120 phút',
-      difficulty: 'Trung bình',
-    },
+  objectives: [
+    'Nắm vững các nguyên lý cơ bản của tính toán lượng tử, bao gồm superposition và entanglement.',
+    'Lập trình các thuật toán lượng tử cơ bản bằng Qiskit.',
+    'Hiểu các ứng dụng tiềm năng của máy tính lượng tử trong các lĩnh vực như y học, tài chính và mật mã.',
+    'Phân tích các thách thức và tương lai của công nghệ lượng tử.',
   ],
+  careerOutcomes: [
+    'Nhà nghiên cứu lượng tử',
+    'Kỹ sư phần mềm lượng tử',
+    'Chuyên gia phân tích dữ liệu lượng tử',
+    'Tư vấn công nghệ lượng tử',
+  ],
+  industryApplications: [
+    { name: 'Dược phẩm', description: 'Mô phỏng phân tử để phát triển thuốc mới.' },
+    { name: 'Tài chính', description: 'Tối ưu hóa danh mục đầu tư và quản lý rủi ro.' },
+    { name: 'An ninh mạng', description: 'Phát triển các giao thức mã hóa lượng tử.' },
+    { name: 'Trí tuệ nhân tạo', description: 'Tăng tốc các thuật toán machine learning.' },
+  ],
+  marketDemand: {
+    averageSalary: '2000-5000 USD/tháng',
+    jobGrowth: '30% mỗi năm (dự kiến)',
+    hireDemand: 'Rất cao',
+  },
+  relatedModules: ['python', 'ai-fundamentals', 'cybersecurity'],
 };

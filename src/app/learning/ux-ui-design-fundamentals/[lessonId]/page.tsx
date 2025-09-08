@@ -15,6 +15,9 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
+  if (!lessonId) {
+    return { title: 'Lesson not found' };
+  }
   return generateLessonMetadata(lessonId, uxuiDesignLessons, 'ux-ui-design-fundamentals');
 }
 

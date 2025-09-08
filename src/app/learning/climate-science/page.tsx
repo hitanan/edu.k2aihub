@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { ClimateLessons } from '@/data/climate-science';
 import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
+import { ModuleData } from '@/types';
 
 export const metadata: Metadata = createModuleMetadata(
   'Climate Science & Environmental Research - Khoa Học Khí Hậu',
@@ -52,16 +53,6 @@ export default function ClimateSciencePage() {
       level: 'Trung bình đến Nâng cao',
       projects: '10+ research projects',
     },
-    marketData: {
-      marketSize: '$385 Billion',
-      marketNote: 'Global environmental services market by 2025',
-      jobGrowth: '55% Growth',
-      jobNote: 'Environmental science jobs by 2030',
-      reduction: '80% Emissions',
-      reductionNote: 'Target reduction by 2050',
-      startups: '15000+ Organizations',
-      startupsNote: 'Environmental organizations worldwide',
-    },
     objectives: [
       'Hiểu sâu về hệ thống khí hậu và biến đổi khí hậu',
       'Phân tích và xử lý environmental data với công nghệ hiện đại',
@@ -76,7 +67,22 @@ export default function ClimateSciencePage() {
       'Hiểu biết về môi trường và sustainability',
       'Kỹ năng sử dụng máy tính và phần mềm',
     ],
-    careerPaths: [
+    marketData: {
+      marketSize: '$385 Billion',
+      marketNote: 'Global environmental services market by 2025',
+      jobGrowth: '55% Growth',
+      jobNote: 'Environmental science jobs by 2030',
+      reduction: '80% Emissions',
+      reductionNote: 'Target reduction by 2050',
+      startups: '15000+ Organizations',
+      startupsNote: 'Environmental organizations worldwide',
+    },
+    marketDemand: {
+      averageSalary: '20-55 triệu VNĐ',
+      jobGrowth: '55%',
+      hireDemand: 'Cao',
+    },
+    careerOutcomes: [
       'Climate Scientist (22-40 triệu VNĐ)',
       'Environmental Data Analyst (18-35 triệu VNĐ)',
       'Sustainability Consultant (25-45 triệu VNĐ)',

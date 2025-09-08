@@ -7,6 +7,7 @@ import {
 import { renewableEnergyLessons, type RenewableEnergyLesson } from '@/data/renewable-energy';
 import { PageProps } from '@/types';
 import { Battery, Zap, Sun, Wind } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -15,7 +16,10 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, renewableEnergyLessons, 'renewable-energy');
 }
 
@@ -36,7 +40,12 @@ function getEnergyTypeIcon(energyType?: string) {
 }
 
 // Page component with standardized config
-export default async function RenewableEnergyLessonPage({ params }: PageProps) {
+export default function RenewableEnergyLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
+
   const config: LessonPageConfig<RenewableEnergyLesson> = {
     moduleName: 'renewable-energy',
     moduleTitle: 'Năng Lượng Tái Tạo',
@@ -53,6 +62,5 @@ export default async function RenewableEnergyLessonPage({ params }: PageProps) {
     },
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -12,41 +12,41 @@ import {
   ExternalLink,
   CheckCircle,
   Lightbulb,
-  Users
+  Users,
 } from 'lucide-react';
 import { CybersecurityLessons } from '@/data/cybersecurity';
+import { ToolDetail } from '@/types/lesson-base';
 import { createTitle, createDescription } from '@/utils/seo';
 import { PageProps } from '@/types';
 
 export async function generateStaticParams() {
   return CybersecurityLessons.map((lesson) => ({
-    lessonId: lesson.id
+    lessonId: lesson.id,
   }));
 }
 
-export async function generateMetadata({
-  params
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lessonId } = await params;
   const lesson = CybersecurityLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     return {
       title: 'Lesson Not Found | K2AiHub',
-      description: 'The requested cybersecurity lesson could not be found.'
+      description: 'The requested cybersecurity lesson could not be found.',
     };
   }
 
   return {
     title: createTitle(lesson.title),
     description: createDescription(lesson.description),
-    openGraph: {    locale: 'vi_VN',
-    siteName: 'K2AiHub - Nền tảng học tập thông minh',
+    openGraph: {
+      locale: 'vi_VN',
+      siteName: 'K2AiHub - Nền tảng học tập thông minh',
 
       title: lesson.title,
       description: lesson.description,
-      images: lesson.imageUrl ? [{ url: lesson.imageUrl }] : []
-    }
+      images: lesson.imageUrl ? [{ url: lesson.imageUrl }] : [],
+    },
   };
 }
 
@@ -59,12 +59,8 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
   }
 
   const currentIndex = CybersecurityLessons.findIndex((l) => l.id === lessonId);
-  const previousLesson =
-    currentIndex > 0 ? CybersecurityLessons[currentIndex - 1] : null;
-  const nextLesson =
-    currentIndex < CybersecurityLessons.length - 1
-      ? CybersecurityLessons[currentIndex + 1]
-      : null;
+  const previousLesson = currentIndex > 0 ? CybersecurityLessons[currentIndex - 1] : null;
+  const nextLesson = currentIndex < CybersecurityLessons.length - 1 ? CybersecurityLessons[currentIndex + 1] : null;
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty.toLowerCase()) {
@@ -112,13 +108,9 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
           <div className="lg:col-span-3">
             {/* Lesson Header */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-8">
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                {lesson.title}
-              </h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{lesson.title}</h1>
 
-              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                {lesson.description}
-              </p>
+              <p className="text-xl text-gray-300 mb-6 leading-relaxed">{lesson.description}</p>
 
               <div className="flex flex-wrap gap-4 mb-6">
                 <div className="flex items-center text-gray-300">
@@ -152,10 +144,7 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {lesson.objectives.map((objective, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start p-4 bg-white/5 rounded-xl border border-white/10"
-                  >
+                  <div key={index} className="flex items-start p-4 bg-white/5 rounded-xl border border-white/10">
                     <CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-300">{objective}</span>
                   </div>
@@ -164,89 +153,80 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
             </div>
 
             {/* Prerequisites */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-8">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <Book className="w-6 h-6 mr-3 text-red-400" />
-                Prerequisites
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                {lesson.prerequisites.map((prereq, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start p-4 bg-white/5 rounded-xl border border-white/10"
-                  >
-                    <Lightbulb className="w-5 h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-300">{prereq}</span>
-                  </div>
-                ))}
+            {lesson.prerequisites && lesson.prerequisites.length > 0 && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-8">
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Book className="w-6 h-6 mr-3 text-red-400" />
+                  Prerequisites
+                </h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {lesson.prerequisites.map((prereq, index) => (
+                    <div key={index} className="flex items-start p-4 bg-white/5 rounded-xl border border-white/10">
+                      <Lightbulb className="w-5 h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300">{prereq}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Hands-on Exercises */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-8">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <Play className="w-6 h-6 mr-3 text-red-400" />
-                Hands-on Exercises
-              </h2>
-              <div className="space-y-6">
-                {lesson.exercises.map((exercise, index) => (
-                  <div
-                    key={index}
-                    className="border border-white/10 rounded-xl p-6 bg-white/5"
-                  >
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-bold text-white">
-                        {exercise.title}
-                      </h3>
-                      <span
-                        className={`px-3 py-1 bg-gradient-to-r ${getDifficultyColor(exercise.difficulty)} rounded-full text-white text-sm`}
-                      >
-                        {exercise.difficulty}
-                      </span>
-                    </div>
-
-                    <p className="text-gray-300 mb-4">{exercise.description}</p>
-
-                    {/* Expected Results */}
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-white mb-2">
-                        Expected Results:
-                      </h4>
-                      {exercise.expectedResults}
-                    </div>
-
-                    {/* Hints */}
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-white mb-2">Hints:</h4>
-                      <ul className="space-y-1">
-                        {exercise.hints &&
-                          exercise.hints.map((hint, hintIndex) => (
-                            <li
-                              key={hintIndex}
-                              className="text-gray-300 text-sm flex items-start"
-                            >
-                              <Lightbulb className="w-4 h-4 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
-                              {hint}
-                            </li>
-                          ))}
-                      </ul>
-                    </div>
-
-                    {/* Solution Toggle */}
-                    <details className="mt-4">
-                      <summary className="cursor-pointer font-semibold text-red-400 hover:text-red-300 transition-colors">
-                        View Complete Solution & Implementation
-                      </summary>
-                      <div className="mt-4 p-4 bg-black/20 rounded-lg border border-white/10">
-                        <pre className="text-gray-300 text-sm whitespace-pre-wrap overflow-x-auto">
-                          {exercise.solution}
-                        </pre>
+            {lesson.exercises && lesson.exercises.length > 0 && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-8">
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                  <Play className="w-6 h-6 mr-3 text-red-400" />
+                  Hands-on Exercises
+                </h2>
+                <div className="space-y-6">
+                  {lesson.exercises.map((exercise, index) => (
+                    <div key={index} className="border border-white/10 rounded-xl p-6 bg-white/5">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-xl font-bold text-white">{exercise.title}</h3>
+                        <span
+                          className={`px-3 py-1 bg-gradient-to-r ${getDifficultyColor(exercise.difficulty)} rounded-full text-white text-sm`}
+                        >
+                          {exercise.difficulty}
+                        </span>
                       </div>
-                    </details>
-                  </div>
-                ))}
+
+                      <p className="text-gray-300 mb-4">{exercise.description}</p>
+
+                      {/* Expected Results */}
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-white mb-2">Expected Results:</h4>
+                        {exercise.expectedResults}
+                      </div>
+
+                      {/* Hints */}
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-white mb-2">Hints:</h4>
+                        <ul className="space-y-1">
+                          {exercise.hints &&
+                            exercise.hints.map((hint: string, hintIndex: number) => (
+                              <li key={hintIndex} className="text-gray-300 text-sm flex items-start">
+                                <Lightbulb className="w-4 h-4 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" />
+                                {hint}
+                              </li>
+                            ))}
+                        </ul>
+                      </div>
+
+                      {/* Solution Toggle */}
+                      <details className="mt-4">
+                        <summary className="cursor-pointer font-semibold text-red-400 hover:text-red-300 transition-colors">
+                          View Complete Solution & Implementation
+                        </summary>
+                        <div className="mt-4 p-4 bg-black/20 rounded-lg border border-white/10">
+                          <pre className="text-gray-300 text-sm whitespace-pre-wrap overflow-x-auto">
+                            {exercise.solution}
+                          </pre>
+                        </div>
+                      </details>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Real-world Applications */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-8">
@@ -256,10 +236,7 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {lesson.realWorldApplications.map((application, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start p-4 bg-white/5 rounded-xl border border-white/10"
-                  >
+                  <div key={index} className="flex items-start p-4 bg-white/5 rounded-xl border border-white/10">
                     <span className="w-6 h-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 flex-shrink-0">
                       {index + 1}
                     </span>
@@ -278,47 +255,29 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
                 </h2>
                 <div className="space-y-6">
                   {lesson.caseStudies.map((caseStudy, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/10 rounded-xl p-6 bg-white/5"
-                    >
-                      <h3 className="text-xl font-bold text-white mb-2">
-                        {caseStudy.title}
-                      </h3>
-                      <p className="text-red-400 font-medium mb-4">
-                        {caseStudy.organization}
-                      </p>
+                    <div key={index} className="border border-white/10 rounded-xl p-6 bg-white/5">
+                      <h3 className="text-xl font-bold text-white mb-2">{caseStudy.title}</h3>
+                      <p className="text-red-400 font-medium mb-4">{caseStudy.organization}</p>
 
                       <div className="space-y-4">
                         <div>
-                          <h4 className="font-semibold text-white mb-2">
-                            Problem:
-                          </h4>
+                          <h4 className="font-semibold text-white mb-2">Problem:</h4>
                           <p className="text-gray-300">{caseStudy.problem}</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-white mb-2">
-                            Solution:
-                          </h4>
+                          <h4 className="font-semibold text-white mb-2">Solution:</h4>
                           <p className="text-gray-300">{caseStudy.solution}</p>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-white mb-2">
-                            Key Innovations:
-                          </h4>
+                          <h4 className="font-semibold text-white mb-2">Key Innovations:</h4>
                           <ul className="space-y-1">
-                            {caseStudy.innovations.map(
-                              (innovation, innovationIndex) => (
-                                <li
-                                  key={innovationIndex}
-                                  className="text-gray-300 flex items-start"
-                                >
-                                  <CheckCircle className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                                  {innovation}
-                                </li>
-                              )
-                            )}
+                            {caseStudy.innovations.map((innovation, innovationIndex) => (
+                              <li key={innovationIndex} className="text-gray-300 flex items-start">
+                                <CheckCircle className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                                {innovation}
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </div>
@@ -365,27 +324,20 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
               <div className="space-y-2">
                 {lesson.tools &&
                   lesson.tools.map((tool, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center p-3 bg-white/5 rounded-lg border border-white/10"
-                    >
+                    <div key={index} className="flex items-center p-3 bg-white/5 rounded-lg border border-white/10">
                       <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
-                      <ul className="list-disc list-inside text-gray-300">
-                        <li>
-                          <span className="text-gray-300 text-sm">
-                            {tool.name}
-                          </span>
-                          <span className="text-gray-300 text-sm">
-                            {tool.description}
-                          </span>
-                          <span className="text-gray-300 text-sm">
-                            {tool.category}
-                          </span>
-                          <span className="text-gray-300 text-sm">
-                            {tool.difficulty}
-                          </span>
-                        </li>
-                      </ul>
+                      {typeof tool === 'string' ? (
+                        <span className="text-gray-300 text-sm">{tool}</span>
+                      ) : (
+                        <ul className="list-disc list-inside text-gray-300">
+                          <li>
+                            <span className="text-gray-300 text-sm">{(tool as ToolDetail).name}</span>
+                            <span className="text-gray-300 text-sm">{(tool as ToolDetail).description}</span>
+                            <span className="text-gray-300 text-sm">{(tool as ToolDetail).category}</span>
+                            <span className="text-gray-300 text-sm">{(tool as ToolDetail).difficulty}</span>
+                          </li>
+                        </ul>
+                      )}
                     </div>
                   ))}
               </div>
@@ -393,9 +345,7 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
               {/* Resources */}
               {lesson.resources && lesson.resources.length > 0 && (
                 <div className="mt-6">
-                  <h4 className="font-semibold text-white mb-3">
-                    Additional Resources
-                  </h4>
+                  <h4 className="font-semibold text-white mb-3">Additional Resources</h4>
                   <div className="space-y-2">
                     {lesson.resources.map((resource, index) => (
                       <a
@@ -411,9 +361,7 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
                           </span>
                           <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-red-400 transition-colors" />
                         </div>
-                        <div className="text-xs text-gray-500 mt-1">
-                          {resource.type}
-                        </div>
+                        <div className="text-xs text-gray-500 mt-1">{resource.type}</div>
                       </a>
                     ))}
                   </div>
@@ -423,9 +371,7 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
 
             {/* Course Progress */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4">
-                Course Progress
-              </h3>
+              <h3 className="text-xl font-bold text-white mb-4">Course Progress</h3>
               <div className="space-y-3">
                 {CybersecurityLessons.map((lessonItem, index) => (
                   <Link
@@ -440,17 +386,13 @@ export default async function CyberSecurityLessonPage({ params }: PageProps) {
                     <div className="flex items-center">
                       <div
                         className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-3 ${
-                          lessonItem.id === lesson.id
-                            ? 'bg-red-500 text-white'
-                            : 'bg-white/10 text-gray-400'
+                          lessonItem.id === lesson.id ? 'bg-red-500 text-white' : 'bg-white/10 text-gray-400'
                         }`}
                       >
                         {index + 1}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="font-medium truncate">
-                          {lessonItem.title.replace(/^Bài \d+: /, '')}
-                        </div>
+                        <div className="font-medium truncate">{lessonItem.title.replace(/^Bài \d+: /, '')}</div>
                         <div className="text-xs text-gray-400 mt-1">
                           {lessonItem.duration} • {lessonItem.difficulty}
                         </div>

@@ -6,6 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { nanotechnologyLessons, NanotechnologyLesson } from '@/data/nanotechnology';
 import { PageProps } from '@/types';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -14,12 +15,20 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, nanotechnologyLessons, 'nanotechnology');
 }
 
 // Page component with nanotechnology-specific configuration
-export default async function NanotechnologyLessonPage({ params }: PageProps) {
+export default function NanotechnologyLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
+
   const config: LessonPageConfig<NanotechnologyLesson> = {
     moduleName: 'nanotechnology',
     moduleTitle: 'Công Nghệ Nano & Vật Liệu Tiên Tiến',
@@ -77,6 +86,5 @@ export default async function NanotechnologyLessonPage({ params }: PageProps) {
     ),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -15,12 +15,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {
+      title: 'Bài học không tìm thấy',
+      description: 'Không thể tìm thấy bài học yêu cầu trong khóa học Micro-Influencer Economy.',
+    };
+  }
   return generateLessonMetadata(lessonId, microInfluencerEconomyLessons, 'micro-influencer-economy');
 }
 
 // Page component with standardized config
 export default async function MicroInfluencerEconomyLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
   const config: LessonPageConfig<MicroInfluencerLessonType> = {
     moduleName: 'micro-influencer-economy',
     moduleTitle: 'Micro-Influencer Economy',
@@ -32,6 +39,5 @@ export default async function MicroInfluencerEconomyLessonPage({ params }: PageP
     getFieldIcon: () => <Users className="w-5 h-5" />, // Optional
     getFieldValue: () => '', // Optional
   };
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

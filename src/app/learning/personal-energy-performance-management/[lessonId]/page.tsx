@@ -15,13 +15,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, energyManagementLessons, 'personal-energy-performance-management');
 }
 
 // Page component with standardized config
-export default async function EnergyManagementLessonPage({ params }: PageProps) {
-  const { lessonId } = await params;
+export default function EnergyManagementLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   const lesson = energyManagementLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
@@ -52,12 +58,13 @@ export default async function EnergyManagementLessonPage({ params }: PageProps) 
         <div className="mb-6">
           <h3 className="text-lg font-semibold text-white mb-3">Điều kiện tiên quyết</h3>
           <ul className="space-y-2">
-            {lesson.prerequisites.map((prereq: string, index: number) => (
-              <li key={index} className="flex items-start text-gray-300 text-sm">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
-                {prereq}
-              </li>
-            ))}
+            {lesson.prerequisites &&
+              lesson.prerequisites.map((prereq: string, index: number) => (
+                <li key={index} className="flex items-start text-gray-300 text-sm">
+                  <span className="w-2 h-2 bg-yellow-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
+                  {prereq}
+                </li>
+              ))}
           </ul>
         </div>
         {lesson.vietnamContext && (

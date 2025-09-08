@@ -1,7 +1,7 @@
 import { K2Module } from '@/data/k2-modules';
-import { ModuleNavigation } from '@/types';
+import { ModuleData } from '@/types';
 
-export const roboticsModuleData: ModuleNavigation = {
+export const roboticsModuleData: ModuleData = {
   id: K2Module.Robotics,
   title: 'Robotics & Autonomous Systems',
   subtitle: 'Robot tự động',
@@ -9,38 +9,32 @@ export const roboticsModuleData: ModuleNavigation = {
   category: 'stem',
   icon: '🤖',
   color: 'from-purple-600 to-pink-600',
-  totalDuration: '10-12 giờ',
-  difficulty: 'Nâng cao',
   level: 'Nâng cao',
   duration: '10-12 giờ',
-  href: '/learning/robotics',
   features: ['Robot Design', 'Motion Control', 'AI Integration', 'Autonomous Navigation'],
-  tags: ['robotics', 'ai', 'automation', 'control'],
   prerequisites: ['Programming fundamentals', 'Basic electronics', 'Mathematical thinking', 'Problem-solving skills'],
-  lessons: [
-    {
-      id: 'robotics-fundamentals',
-      title: 'Robotics Fundamentals & Components',
-      duration: '120 phút',
-      difficulty: 'Trung bình',
-    },
-    {
-      id: 'robot-programming-control',
-      title: 'Robot Programming & Motion Control',
-      duration: '150 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'sensors-computer-vision',
-      title: 'Sensors & Computer Vision in Robotics',
-      duration: '150 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'autonomous-navigation-ai',
-      title: 'Autonomous Navigation & AI Integration',
-      duration: '120 phút',
-      difficulty: 'Nâng cao',
-    },
+  objectives: [
+    'Hiểu các thành phần cơ bản của một robot.',
+    'Lập trình điều khiển chuyển động và cảm biến cho robot.',
+    'Áp dụng các thuật toán AI cho robot tự hành.',
+    'Xây dựng một dự án robot hoàn chỉnh.',
   ],
+  careerOutcomes: [
+    'Kỹ sư Robotics',
+    'Chuyên gia tự động hóa',
+    'Kỹ sư điều khiển',
+    'Nhà phát triển hệ thống không người lái (UAV/UGV)',
+  ],
+  industryApplications: [
+    { name: 'Sản xuất công nghiệp', description: 'Robot hàn, sơn, lắp ráp trong các nhà máy.' },
+    { name: 'Hậu cần và Kho bãi', description: 'Robot tự hành sắp xếp và vận chuyển hàng hóa.' },
+    { name: 'Y tế', description: 'Robot hỗ trợ phẫu thuật, chăm sóc bệnh nhân.' },
+    { name: 'Thám hiểm không gian', description: 'Robot tự hành trên các hành tinh khác.' },
+  ],
+  marketDemand: {
+    averageSalary: '1800-3500 USD/tháng',
+    jobGrowth: '12% mỗi năm',
+    hireDemand: 'Cao',
+  },
+  relatedModules: ['programming-robotics', 'ai-fundamentals', 'iot-basics'],
 };

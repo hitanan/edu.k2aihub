@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { communicationSkillsLessons, CommunicationSkillsLessonType } from '@/data/communication-skills';
+import { communicationSkillsLessons, CommunicationSkillsLesson } from '@/data/communication-skills';
 import { PageProps } from '@/types';
 
 // Generate static params for all lessons
@@ -14,13 +14,18 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+    };
+  }
   return generateLessonMetadata(lessonId, communicationSkillsLessons, 'communication-skills');
 }
 
 // Page component with standardized config
 export default async function CommunicationSkillsLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<CommunicationSkillsLessonType> = {
+  const config: LessonPageConfig<CommunicationSkillsLesson> = {
     moduleName: 'communication-skills',
     moduleTitle: 'Kỹ Năng Giao Tiếp và Thuyết Trình',
     modulePath: '/learning/communication-skills',
@@ -54,7 +59,7 @@ export default async function CommunicationSkillsLessonPage({ params }: PageProp
               <span>🗣️</span> Communication Methods
             </h4>
             <ul className="space-y-2">
-              {lesson.communicationMethods.map((method, index) => (
+              {lesson.communicationMethods.map((method: string, index: number) => (
                 <li key={index} className="text-sm text-gray-300 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0"></span>
                   {method}
@@ -70,7 +75,7 @@ export default async function CommunicationSkillsLessonPage({ params }: PageProp
               <span>📊</span> Presentation Techniques
             </h4>
             <ul className="space-y-2">
-              {lesson.presentationTechniques.map((technique, index) => (
+              {lesson.presentationTechniques.map((technique: string, index: number) => (
                 <li key={index} className="text-sm text-gray-300 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full flex-shrink-0"></span>
                   {technique}
@@ -86,7 +91,7 @@ export default async function CommunicationSkillsLessonPage({ params }: PageProp
               <span>💻</span> Digital Platforms
             </h4>
             <ul className="space-y-2">
-              {lesson.digitalPlatforms.map((platform, index) => (
+              {lesson.digitalPlatforms.map((platform: string, index: number) => (
                 <li key={index} className="text-sm text-gray-300 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0"></span>
                   {platform}
@@ -102,7 +107,7 @@ export default async function CommunicationSkillsLessonPage({ params }: PageProp
               <span>🌍</span> Cultural Context
             </h4>
             <ul className="space-y-2">
-              {lesson.culturalContext.map((context, index) => (
+              {lesson.culturalContext.map((context: string, index: number) => (
                 <li key={index} className="text-sm text-gray-300 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full flex-shrink-0"></span>
                   {context}

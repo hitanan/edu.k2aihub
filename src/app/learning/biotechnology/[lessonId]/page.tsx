@@ -13,7 +13,13 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+      description: 'The requested lesson could not be found.',
+    };
+  }
   return generateLessonMetadata(lessonId, biotechnologyLessons, 'biotechnology');
 }
 
@@ -56,7 +62,10 @@ const sidebarContent = (lesson: BiotechnologyLesson) => (
 );
 
 export default async function BiotechnologyLessonPage({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return null;
+  }
 
   const config: LessonPageConfig<BiotechnologyLesson> = {
     moduleName: 'biotechnology',

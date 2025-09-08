@@ -1,6 +1,46 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const CybersecurityLessons: BaseLessonData[] = [
+export interface CybersecurityLessonData extends BaseLessonData {
+  mainContent: {
+    introduction: string;
+    keyConcepts: {
+      title: string;
+      description: string;
+      examples: string[];
+    }[];
+    practicalApplications: {
+      area: string;
+      description: string;
+    }[];
+    conclusion: string;
+  };
+  relatedGames?: {
+    id: string;
+    name: string;
+    description: string;
+  }[];
+  securityDomains?: string[];
+  threats?: string[];
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+  quizzes: {
+    question: string;
+    options: string[];
+    correctAnswerIndex: number;
+    explanation: string;
+  }[];
+}
+
+export const CybersecurityLessons: CybersecurityLessonData[] = [
   {
     id: 'cybersecurity-fundamentals',
     title: 'Cơ bản về An toàn Thông tin',

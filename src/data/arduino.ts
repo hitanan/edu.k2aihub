@@ -1,6 +1,62 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const arduinoLessons: BaseLessonData[] = [
+export interface ArduinoExercise {
+  id: string;
+  title: string;
+  description: string;
+  difficulty: 'Dễ' | 'Trung bình' | 'Khó';
+  videoUrl?: string;
+  imageUrl?: string;
+  code: string;
+  expectedOutput: string;
+  hints: string[];
+  troubleshooting: string[];
+}
+
+export interface ArduinoRelatedGame {
+  gameId: string;
+  title: string;
+  connection: string;
+  difficulty: 'Cơ bản' | 'Trung bình' | 'Nâng cao';
+}
+
+export interface VietnamContext {
+  title: string;
+  content: string[];
+}
+
+export interface CareerConnect {
+  name: string;
+  title: string;
+  company: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export interface ArduinoQuiz {
+  question: string;
+  options: string[];
+  correctAnswerIndex: number;
+  explanation: string;
+}
+
+export interface ArduinoLesson extends BaseLessonData {
+  category: 'basics' | 'sensors' | 'communication' | 'projects';
+  materials: string[];
+  imageUrl: string;
+  videoUrl: string;
+  circuitDiagram?: string;
+  codeExample: string;
+  exercises: ArduinoExercise[];
+  realWorldApplications: string[];
+  competitions?: string[];
+  relatedGames: ArduinoRelatedGame[];
+  vietnamContext: VietnamContext;
+  careerConnect: CareerConnect;
+  quizzes: ArduinoQuiz[];
+}
+
+export const arduinoLessons: ArduinoLesson[] = [
   {
     id: 'arduino-setup',
     title: 'Cài Đặt và Làm Quen Arduino',
@@ -682,6 +738,7 @@ void loop() {
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     codeExample: `/*
   Hệ thống Giám sát Đa cảm biến
   Đọc nhiệt độ, độ ẩm và ánh sáng và hiển thị qua Serial Monitor
@@ -869,6 +926,26 @@ void loop() {
       'Giải thưởng IoT vì Sự bền vững',
       'Cuộc thi Mạng lưới Cảm biến',
     ],
+    relatedGames: [
+      {
+        gameId: 'reaction-time-test',
+        title: 'Kiểm Tra Phản Xạ',
+        connection: 'Áp dụng kiến thức đọc tín hiệu đầu vào từ nút nhấn và xử lý tín hiệu nhanh.',
+        difficulty: 'Cơ bản',
+      },
+      {
+        gameId: 'simon-says',
+        title: 'Simon Says',
+        connection: 'Kết hợp tín hiệu đầu vào từ nút nhấn và đầu ra là đèn LED để tạo ra một trò chơi tương tác.',
+        difficulty: 'Trung bình',
+      },
+      {
+        gameId: 'puzzle-solver',
+        title: 'Giải Đố Logic',
+        connection: 'Sử dụng các tín hiệu đầu vào analog và digital để điều khiển logic của trò chơi giải đố.',
+        difficulty: 'Nâng cao',
+      },
+    ],
     vietnamContext: {
       title: 'Cảm biến trong Nông nghiệp và Đô thị Thông minh tại Việt Nam',
       content: [
@@ -932,6 +1009,7 @@ void loop() {
     ],
     imageUrl:
       'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     codeExample: `/*
   Web Server trên ESP32 với Dữ liệu Cảm biến
   Tạo một giao diện web để hiển thị dữ liệu từ cảm biến
@@ -1191,6 +1269,7 @@ void loop() {
       'Giải thưởng Thiết bị Kết nối',
       'Thử thách Sáng tạo Không dây',
     ],
+    relatedGames: [],
     vietnamContext: {
       title: 'IoT và Làn sóng Khởi nghiệp Công nghệ tại Việt Nam',
       content: [
@@ -1602,6 +1681,7 @@ void autoLighting() {
       'IoT vì Lợi ích Xã hội',
       'Cuộc thi Thiết kế Kỹ thuật',
     ],
+    relatedGames: [],
     vietnamContext: {
       title: 'Dự án Tốt nghiệp và Khởi nghiệp Sinh viên',
       content: [

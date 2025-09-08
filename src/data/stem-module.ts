@@ -1,7 +1,7 @@
 import { K2Module } from '@/data/k2-modules';
-import { ModuleNavigation } from '@/types';
+import { ModuleData } from '@/types';
 
-export const stemModuleData: ModuleNavigation = {
+export const stemModuleData: ModuleData = {
   id: K2Module.Stem,
   title: 'STEM Education',
   subtitle: 'Khoa học ứng dụng',
@@ -9,50 +9,31 @@ export const stemModuleData: ModuleNavigation = {
   category: 'stem',
   icon: '🔬',
   color: 'from-teal-600 to-green-600',
-  totalDuration: '8-10 giờ',
-  difficulty: 'Cơ bản đến Trung bình',
   level: 'Cơ bản',
   duration: '8-10 giờ',
-  href: '/learning/stem',
   features: ['Physics Experiments', 'Math Applications', 'Engineering Design', 'Science Projects'],
-  tags: ['stem', 'science', 'math', 'engineering'],
   prerequisites: ['Curiosity and interest in science', 'Basic math skills', 'Safety awareness'],
-  lessons: [
-    {
-      id: 'stem-introduction',
-      title: 'STEM Introduction & Scientific Method',
-      duration: '60 phút',
-      difficulty: 'Cơ bản',
-    },
-    {
-      id: 'fun-physics-experiments',
-      title: 'Fun Physics Experiments & Principles',
-      duration: '120 phút',
-      difficulty: 'Cơ bản',
-    },
-    {
-      id: 'coding-for-kids',
-      title: 'Coding for Kids & Computational Thinking',
-      duration: '90 phút',
-      difficulty: 'Cơ bản',
-    },
-    {
-      id: 'engineering-challenges',
-      title: 'Engineering Challenges & Design Thinking',
-      duration: '120 phút',
-      difficulty: 'Trung bình',
-    },
-    {
-      id: 'math-in-real-life',
-      title: 'Math in Real Life Applications',
-      duration: '60 phút',
-      difficulty: 'Cơ bản',
-    },
-    {
-      id: 'art-meets-science',
-      title: 'Art Meets Science Creative Projects',
-      duration: '60 phút',
-      difficulty: 'Cơ bản',
-    },
+  objectives: [
+    'Hiểu và áp dụng phương pháp khoa học.',
+    'Thực hiện các thí nghiệm vật lý vui và an toàn tại nhà.',
+    'Làm quen với tư duy lập trình và giải quyết vấn đề.',
+    'Phát triển kỹ năng thiết kế và kỹ thuật thông qua các thử thách thực tế.',
   ],
+  careerOutcomes: [
+    'Nền tảng vững chắc cho các ngành học STEM ở bậc cao hơn.',
+    'Phát triển tư duy phản biện và kỹ năng giải quyết vấn đề.',
+    'Khơi dậy đam mê với khoa học, công nghệ và sáng tạo.',
+  ],
+  industryApplications: [
+    { name: 'Mọi ngành nghề', description: 'Tư duy STEM là cần thiết trong hầu hết các lĩnh vực hiện đại.' },
+    { name: 'Nghiên cứu khoa học', description: 'Nền tảng để trở thành nhà khoa học, nhà nghiên cứu.' },
+    { name: 'Kỹ thuật', description: 'Bước đầu để trở thành kỹ sư, nhà thiết kế sản phẩm.' },
+    { name: 'Công nghệ thông tin', description: 'Làm quen với logic lập trình, nền tảng của ngành CNTT.' },
+  ],
+  marketDemand: {
+    averageSalary: 'N/A',
+    jobGrowth: 'Cao (kỹ năng nền tảng)',
+    hireDemand: 'Rất cao (kỹ năng nền tảng)',
+  },
+  relatedModules: ['coding-for-kids', 'fun-physics-experiments', 'engineering-challenges'],
 };

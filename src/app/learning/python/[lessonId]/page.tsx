@@ -109,7 +109,7 @@ export default async function PythonLessonPage({ params }: PageProps) {
                 </div>
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <Play className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">{lesson.exercises.length}</div>
+                  <div className="text-white font-semibold">{lesson.exercises?.length || 0}</div>
                   <div className="text-sm text-gray-300">Bài tập</div>
                 </div>
               </div>
@@ -153,48 +153,49 @@ export default async function PythonLessonPage({ params }: PageProps) {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <h2 className="text-2xl font-bold text-white mb-6">Bài tập thực hành</h2>
               <div className="space-y-6">
-                {lesson.exercises.map((exercise, index) => (
-                  <div key={index} className="border border-white/20 rounded-lg p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-semibold text-white">{exercise.title}</h3>
-                      <span
-                        className={`text-sm font-semibold px-3 py-1 rounded ${getDifficultyColor(exercise.difficulty)}`}
-                      >
-                        {exercise.difficulty}
-                      </span>
+                {lesson.exercises &&
+                  lesson.exercises.map((exercise, index) => (
+                    <div key={index} className="border border-white/20 rounded-lg p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-xl font-semibold text-white">{exercise.title}</h3>
+                        <span
+                          className={`text-sm font-semibold px-3 py-1 rounded ${getDifficultyColor(exercise.difficulty)}`}
+                        >
+                          {exercise.difficulty}
+                        </span>
+                      </div>
+                      <p className="text-gray-200 mb-4">{exercise.description}</p>
+
+                      {exercise.procedure && exercise.procedure.length > 0 && (
+                        <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
+                          <h4 className="text-blue-300 font-semibold mb-2">📋 Các bước thực hiện:</h4>
+                          <ul className="space-y-1">
+                            {exercise.procedure.map((step, stepIndex) => (
+                              <li key={stepIndex} className="text-gray-300 text-sm">
+                                • {step}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {exercise.expectedResults && (
+                        <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 mb-4">
+                          <h4 className="text-yellow-300 font-semibold mb-2">Kết quả mong đợi:</h4>
+                          <p className="text-gray-300 text-sm">{exercise.expectedResults}</p>
+                        </div>
+                      )}
+
+                      {exercise.solution && (
+                        <div className="bg-black/50 rounded-lg p-4">
+                          <h4 className="text-gray-300 font-semibold mb-2">💡 Giải pháp:</h4>
+                          <pre className="text-green-400 text-sm overflow-x-auto">
+                            <code>{exercise.solution}</code>
+                          </pre>
+                        </div>
+                      )}
                     </div>
-                    <p className="text-gray-200 mb-4">{exercise.description}</p>
-
-                    {exercise.procedure && exercise.procedure.length > 0 && (
-                      <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
-                        <h4 className="text-blue-300 font-semibold mb-2">📋 Các bước thực hiện:</h4>
-                        <ul className="space-y-1">
-                          {exercise.procedure.map((step, stepIndex) => (
-                            <li key={stepIndex} className="text-gray-300 text-sm">
-                              • {step}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {exercise.expectedResults && (
-                      <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 mb-4">
-                        <h4 className="text-yellow-300 font-semibold mb-2">Kết quả mong đợi:</h4>
-                        <p className="text-gray-300 text-sm">{exercise.expectedResults}</p>
-                      </div>
-                    )}
-
-                    {exercise.solution && (
-                      <div className="bg-black/50 rounded-lg p-4">
-                        <h4 className="text-gray-300 font-semibold mb-2">💡 Giải pháp:</h4>
-                        <pre className="text-green-400 text-sm overflow-x-auto">
-                          <code>{exercise.solution}</code>
-                        </pre>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
 
@@ -220,11 +221,12 @@ export default async function PythonLessonPage({ params }: PageProps) {
                 Kiến thức cần thiết
               </h3>
               <ul className="space-y-2">
-                {lesson.prerequisites.map((prerequisite, index) => (
-                  <li key={index} className="text-gray-300 text-sm">
-                    • {prerequisite}
-                  </li>
-                ))}
+                {lesson.prerequisites &&
+                  lesson.prerequisites.map((prerequisite, index) => (
+                    <li key={index} className="text-gray-300 text-sm">
+                      • {prerequisite}
+                    </li>
+                  ))}
               </ul>
             </div>
 

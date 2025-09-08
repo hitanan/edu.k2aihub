@@ -6,26 +6,10 @@ import { Search, Clock, Star, ChevronRight, Filter } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { searchModulesVietnamese } from '@/utils/vietnameseSearch';
+import { isModuleData, isModuleNavigation } from '@/utils/typeguards';
+import { ModuleData, ModuleNavigation } from '@/types';
 
-// Transform moduleNavigation data to match AllLearningPageClient format
-const allLearningModules = moduleNavigation
-  .filter((module) => !module.coreModule) // Exclude core modules (City, AI)
-  .reverse() // Show latest modules first
-  .map((module) => ({
-    id: module.id,
-    title: module.title,
-    subtitle: module.subtitle || '',
-    description: module.description,
-    level: module.level || module.difficulty,
-    duration: module.duration || module.totalDuration,
-    href: module.href || `/learning/${module.id}`,
-    color: module.color,
-    category: module.category, // Now supports both string and string[]
-    lessons: Array.isArray(module.lessons) ? module.lessons.length : 0,
-    features: module.features || [],
-    icon: module.icon,
-    tags: module.tags || [],
-  }));
+// --- Helper functions and constants moved outside the component ---
 
 // Helper function to get all categories for a module
 const getModuleCategories = (module: { category: string | string[] }): string[] => {
@@ -37,6 +21,51 @@ const moduleInCategory = (module: { category: string | string[] }, category: str
   const moduleCategories = getModuleCategories(module);
   return moduleCategories.includes(category);
 };
+
+// Transform moduleNavigation data into a unified format
+const allLearningModules = moduleNavigation
+  .map((module) => {
+    if (isModuleNavigation(module) && module.coreModule) {
+      return null; // Filter out core modules
+    }
+
+    if (isModuleData(module)) {
+      return {
+        id: module.id,
+        title: module.title,
+        subtitle: module.subtitle || '',
+        description: module.description,
+        level: module.level,
+        duration: module.duration,
+        href: `/learning/${module.id}`,
+        color: module.color,
+        category: module.category,
+        lessons: module.statsConfig?.lessons ? parseInt(module.statsConfig.lessons, 10) : 0,
+        features: module.features || [],
+        icon: module.icon,
+        tags: [], // ModuleData doesn't have tags, provide a default
+      };
+    }
+
+    // It's a ModuleNavigation object (and not a core module)
+    return {
+      id: module.id,
+      title: module.title,
+      subtitle: module.subtitle || '',
+      description: module.description,
+      level: module.level || module.difficulty || 'N/A',
+      duration: module.duration || module.totalDuration || 'N/A',
+      href: module.href || `/learning/${module.id}`,
+      color: module.color,
+      category: module.category,
+      lessons: Array.isArray(module.lessons) ? module.lessons.length : 0,
+      features: module.features || [],
+      icon: module.icon,
+      tags: module.tags || [],
+    };
+  })
+  .filter((module): module is NonNullable<typeof module> => module !== null)
+  .reverse(); // Show latest modules first
 
 // Count modules per category (supporting multi-category)
 const countModulesInCategory = (category: string): number => {
@@ -298,7 +327,7 @@ export default function AllLearningPageClient() {
 
   const handleSortChange = (sort: string) => {
     setSortBy(sort);
-    updateURL(selectedCategory, selectedLevel, searchTerm, sort);
+    updateURL(selectedCategory, selectedLevel, searchTerm, sortBy);
   };
 
   // Filter modules based on search and filters with enhanced Vietnamese search
@@ -313,7 +342,7 @@ export default function AllLearningPageClient() {
   const sortedModules = [...filteredModules].sort((a, b) => {
     switch (sortBy) {
       case 'duration':
-        return parseInt(a.duration) - parseInt(b.duration);
+        return (parseInt(a.duration, 10) || 0) - (parseInt(b.duration, 10) || 0);
       case 'newest':
         return b.id.localeCompare(a.id);
       default: // popular

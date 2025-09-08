@@ -8,6 +8,7 @@ import { smartManufacturingLessons } from '@/data/smart-manufacturing';
 import { SmartManufacturingLessonType } from '@/data/smart-manufacturing';
 import { PageProps } from '@/types';
 import { Factory, Cog, Zap } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -16,12 +17,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, smartManufacturingLessons, 'smart-manufacturing');
 }
 
 // Page component with standardized config
-export default async function SmartManufacturingLessonPage({ params }: PageProps) {
+export default function SmartManufacturingLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<SmartManufacturingLessonType> = {
     moduleName: 'smart-manufacturing',
     moduleTitle: 'Sản Xuất Thông Minh & Công Nghiệp 4.0',
@@ -43,6 +51,5 @@ export default async function SmartManufacturingLessonPage({ params }: PageProps
     getFieldValue: (lesson) => lesson.technologyFocus,
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

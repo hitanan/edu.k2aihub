@@ -1,6 +1,11 @@
-import { BaseLessonData } from '@/types/lesson-base';
+import { type BaseLessonData } from '@/types/lesson-base';
 
-export const blockchainLessons: BaseLessonData[] = [
+export interface BlockchainLesson extends BaseLessonData {
+  blockchainType: string;
+  frameworks: string[];
+}
+
+export const blockchainLessons: BlockchainLesson[] = [
   {
     id: 'blockchain-fundamentals-vietnam',
     title: 'Bài 1: Nền tảng Blockchain & Tiền điện tử tại Việt Nam',

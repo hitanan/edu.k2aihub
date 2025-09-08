@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
+import { ModuleData } from '@/types';
 import { aiMachineLearningLessons } from '@/data/ai-machine-learning';
 import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
@@ -135,6 +136,12 @@ export default function AIMachineLearningPage() {
       },
     ],
     relatedModules: [K2Module.Python, K2Module.DataScienceAnalytics, K2Module.Robotics],
+    careerOutcomes: [],
+    marketDemand: {
+      averageSalary: '',
+      jobGrowth: '',
+      hireDemand: '',
+    },
   };
 
   return <ModulePageTemplate moduleData={moduleData} lessons={aiMachineLearningLessons} />;

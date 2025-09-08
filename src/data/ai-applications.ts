@@ -1,6 +1,40 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const AIApplicationLessons: BaseLessonData[] = [
+export interface AIApplicationLessonData extends BaseLessonData {
+  skillLevel?: string;
+  aiTools?: string[];
+  practicalUses?: string[];
+  industries?: string[];
+  outcomes?: string[];
+  mainContent: {
+    heading: string;
+    details: string;
+  }[];
+  relatedGames?: {
+    id: string;
+    name: string;
+    description: string;
+  }[];
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+  quizzes: {
+    question: string;
+    options: string[];
+    correctAnswerIndex: number;
+    explanation: string;
+  }[];
+}
+
+export const AIApplicationLessons: AIApplicationLessonData[] = [
   {
     id: 'ai-for-study-abroad',
     title: 'AI cho Du học - Chuẩn bị hồ sơ và IELTS',

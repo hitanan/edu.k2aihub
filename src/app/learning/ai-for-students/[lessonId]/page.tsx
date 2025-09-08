@@ -1,19 +1,33 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams } from '@/components/learning/LessonPageTemplate'
-import { AIForStudentsLessons } from '@/data/ai-for-students'
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { AIForStudentsLessons } from '@/data/ai-for-students';
 import { PageProps } from '@/types';
-import { LessonPageConfig, BaseLessonData } from '@/components/learning/LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(AIForStudentsLessons);
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+      description: 'The requested lesson could not be found.',
+    };
+  }
   return generateLessonMetadata(lessonId, AIForStudentsLessons, 'ai-for-students');
 }
 
 export default async function AIForStudentsLessonPage({ params }: PageProps) {
-    const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return null;
+  }
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'ai-for-students',
     moduleTitle: 'AI cho Học sinh',

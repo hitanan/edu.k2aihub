@@ -8,6 +8,7 @@ import { socialListeningLessons } from '@/data/social-listening-crisis';
 import type { SocialListeningLessonType } from '@/data/social-listening-crisis';
 import { PageProps } from '@/types';
 import { AlertTriangle } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -16,12 +17,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, socialListeningLessons, 'social-listening-crisis');
 }
 
 // Page component with standardized config
-export default async function SocialListeningLessonPage({ params }: PageProps) {
+export default function SocialListeningLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<SocialListeningLessonType> = {
     moduleName: 'social-listening-crisis',
     moduleTitle: 'Social Listening & Crisis Management',
@@ -33,6 +41,5 @@ export default async function SocialListeningLessonPage({ params }: PageProps) {
     getFieldIcon: () => <AlertTriangle className="w-5 h-5" />, // Optional
     getFieldValue: (lesson) => lesson.monitoringTools?.join(', ') || '', // Optional
   };
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -1,6 +1,12 @@
-import { LessonPageTemplate, generateLessonMetadata, generateLessonStaticParams, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
 import { tiktokSocialCommerceLessons, TikTokSocialCommerceLessonType } from '@/data/tiktok-social-commerce';
 import { PageProps } from '@/types';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -10,6 +16,9 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, tiktokSocialCommerceLessons, 'tiktok-social-commerce');
 }
 
@@ -24,7 +33,10 @@ export default async function TikTokSocialCommerceLessonPage({ params }: PagePro
     secondaryColor: 'red',
     gradientColors: 'from-slate-900 via-pink-900 to-slate-900',
   };
-  
+
   const { lessonId } = await params;
+  if (!lessonId) {
+    notFound();
+  }
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

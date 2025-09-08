@@ -4,49 +4,24 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai';
+import { advancedAILessons } from '@/data/advanced-ai';
 import { PageProps } from '@/types';
-import { BaseLessonData } from '@/types/lesson-base';
+import { BaseLessonData, CaseStudy } from '@/types/lesson-base';
 import { Brain, Eye, MessageSquare, Target, Shield } from 'lucide-react';
-
-// Convert AdvancedAILesson to BaseLessonData
-function convertToLesson(lesson: AdvancedAILesson): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises,
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies?.map((study) => ({
-      title: study.title,
-      organization: study.organization,
-      problem: study.problem,
-      solution: study.solution,
-      impact: study.impact,
-      innovations: study.innovations || [],
-    })),
-    resources: lesson.resources,
-  };
-}
-
-// Convert all lessons to BaseLessonData format
-const convertedLessons = advancedAILessons.map(convertToLesson);
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(convertedLessons);
+  return generateLessonStaticParams(advancedAILessons);
 }
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, convertedLessons, 'advanced-ai');
+  const { lessonId } = params;
+  if (!lessonId) {
+    return { title: 'Lesson not found' };
+  }
+  return generateLessonMetadata(lessonId, advancedAILessons, 'advanced-ai');
 }
 
 // Get icon for AI domain field
@@ -69,11 +44,16 @@ function getAIDomainIcon(aiDomain: string) {
 
 // Page component with standardized config
 export default async function AdvancedAILessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
+
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'advanced-ai',
     moduleTitle: 'Advanced AI & Machine Learning',
     modulePath: '/learning/advanced-ai',
-    lessons: convertedLessons,
+    lessons: advancedAILessons,
     primaryColor: 'purple',
     secondaryColor: 'indigo',
     gradientColors: 'from-slate-900 via-purple-900 to-slate-900',
@@ -82,12 +62,25 @@ export default async function AdvancedAILessonPage({ params }: PageProps) {
       return <Brain className="w-5 h-5" />;
     },
     getFieldValue: (lesson) => {
-      // Find original lesson to get aiDomain
-      const originalLesson = advancedAILessons.find((l) => l.id === lesson.id);
-      return originalLesson?.aiDomain || 'Advanced AI';
+      return lesson.aiDomain || 'Advanced AI';
     },
+    sidebarContent: (lesson: BaseLessonData) => (
+      <>
+        {lesson.caseStudies && lesson.caseStudies.length > 0 && (
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Case Studies</h3>
+            <ul className="space-y-2">
+              {lesson.caseStudies.map((study: CaseStudy, index: number) => (
+                <li key={index} className="text-sm text-gray-600 dark:text-gray-400">
+                  {study.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </>
+    ),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -200,42 +200,45 @@ export default function GameDevelopmentLessonPage({ params }: PageProps) {
             </div>
 
             {/* Exercises */}
-            {lesson.exercises.map((exercise, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-2xl font-bold text-gray-800">{exercise.title}</h2>
-                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
-                    {exercise.difficulty}
-                  </span>
-                </div>
+            {lesson.exercises &&
+              lesson.exercises.map((exercise, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-lg p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-2xl font-bold text-gray-800">{exercise.title}</h2>
+                    <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
+                      {exercise.difficulty}
+                    </span>
+                  </div>
 
-                <p className="text-gray-600 mb-6">{exercise.description}</p>
+                  <p className="text-gray-600 mb-6">{exercise.description}</p>
 
-                <div className="mb-6">
-                  <h3 className="font-semibold text-gray-800 mb-3">Requirements:</h3>
-                  <ul className="space-y-2">
-                    {exercise.materials?.map((req, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-purple-500 mr-2">•</span>
-                        <span className="text-gray-600">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="mb-6">
+                    <h3 className="font-semibold text-gray-800 mb-3">Requirements:</h3>
+                    <ul className="space-y-2">
+                      {exercise.materials?.map((req, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="text-purple-500 mr-2">•</span>
+                          <span className="text-gray-600">{req}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div className="mb-6">
-                  <h3 className="font-semibold text-gray-800 mb-3">Implementation Guide:</h3>
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <pre className="whitespace-pre-wrap text-sm text-gray-700 overflow-x-auto">{exercise.solution}</pre>
+                  <div className="mb-6">
+                    <h3 className="font-semibold text-gray-800 mb-3">Implementation Guide:</h3>
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <pre className="whitespace-pre-wrap text-sm text-gray-700 overflow-x-auto">
+                        {exercise.solution}
+                      </pre>
+                    </div>
+                  </div>
+
+                  <div className="border-t pt-4">
+                    <h3 className="font-semibold text-gray-800 mb-3">Expected Outcome:</h3>
+                    <p className="text-gray-600">{exercise.expectedResults}</p>
                   </div>
                 </div>
-
-                <div className="border-t pt-4">
-                  <h3 className="font-semibold text-gray-800 mb-3">Expected Outcome:</h3>
-                  <p className="text-gray-600">{exercise.expectedResults}</p>
-                </div>
-              </div>
-            ))}
+              ))}
 
             {/* Case Studies */}
             {lesson.caseStudies?.map((caseStudy, index) => (

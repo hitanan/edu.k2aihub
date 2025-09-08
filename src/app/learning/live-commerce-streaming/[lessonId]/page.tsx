@@ -16,6 +16,12 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const lessonId = params.lessonId;
+  if (!lessonId) {
+    return {
+      title: 'Bài học không tìm thấy',
+      description: 'Không thể tìm thấy bài học yêu cầu trong khóa học Live Commerce & Streaming.',
+    };
+  }
   return generateLessonMetadata(lessonId, liveCommerceLessons, 'live-commerce-streaming');
 }
 

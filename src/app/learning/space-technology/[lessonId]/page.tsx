@@ -6,6 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { spaceTechnologyLessons, type SpaceTechnologyLesson } from '@/data/space-technology';
 import { PageProps } from '@/types';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -14,12 +15,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, spaceTechnologyLessons, 'space-technology');
 }
 
 // Page component with standardized config
-export default async function SpaceTechnologyLessonPage({ params }: PageProps) {
+export default function SpaceTechnologyLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<SpaceTechnologyLesson> = {
     moduleName: 'space-technology',
     moduleTitle: 'Công Nghệ Vũ Trụ',
@@ -31,6 +39,5 @@ export default async function SpaceTechnologyLessonPage({ params }: PageProps) {
     getFieldIcon: () => <span className="w-5 h-5">🚀</span>,
     getFieldValue: (lesson) => lesson.difficulty,
   };
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

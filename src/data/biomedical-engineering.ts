@@ -1,6 +1,23 @@
 import type { BaseLessonData } from '@/types/lesson-base';
 
-export const biomedicalEngineeringLessons: BaseLessonData[] = [
+export interface BiomedicalEngineeringLesson extends BaseLessonData {
+  medicalApplications?: string[];
+  regulatoryConsiderations?: string[];
+  safetyCriteria?: string[];
+  vietnamContext?: {
+    title: string;
+    content: string[];
+  };
+  careerConnect?: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+}
+
+export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
   {
     id: 'medical-device-design',
     title: 'Thiết Kế & Phát Triển Thiết Bị Y Tế',

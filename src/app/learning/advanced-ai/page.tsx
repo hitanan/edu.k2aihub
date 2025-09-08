@@ -1,35 +1,10 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { advancedAILessons, type AdvancedAILesson } from '@/data/advanced-ai';
+import { advancedAILessons } from '@/data/advanced-ai';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/k2-modules';
-import { BaseLessonData } from '@/types/lesson-base';
-
-// Convert AdvancedAILesson to BaseLessonData
-function convertToBaseLessonData(lesson: AdvancedAILesson): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises.map((ex) => ({
-      ...ex,
-      materials: [...(ex.tools || []), ...(ex.datasets || [])],
-    })),
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies,
-    resources: lesson.resources,
-    vietnamContext: lesson.vietnamContext,
-    careerConnect: lesson.careerConnect,
-    quizzes: lesson.quizzes,
-  };
-}
+import { ModuleData } from '@/types';
 
 export const metadata: Metadata = createModuleMetadata(
   'Advanced AI & Machine Learning - AI Nâng Cao',
@@ -39,7 +14,7 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function AdvancedAIPage() {
-  const moduleData = {
+  const moduleData: ModuleData = {
     id: 'advanced-ai',
     title: 'Advanced AI & Machine Learning',
     subtitle: 'Trí Tuệ Nhân Tạo Nâng Cao',
@@ -104,8 +79,5 @@ export default function AdvancedAIPage() {
     ],
   };
 
-  // Convert lessons to BaseLessonData format
-  const convertedLessons = advancedAILessons.map(convertToBaseLessonData);
-
-  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={advancedAILessons} />;
 }

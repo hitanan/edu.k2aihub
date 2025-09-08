@@ -4,49 +4,25 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { aerospaceEngineeringLessons, type AerospaceEngineeringLesson } from '@/data/aerospace-engineering';
+import { aerospaceEngineeringLessons } from '@/data/aerospace-engineering';
 import { PageProps } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
 import { Plane, Satellite, Rocket, Cog, Navigation, Radar } from 'lucide-react';
-
-// Convert AerospaceEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(lesson: AerospaceEngineeringLesson): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises,
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies?.map((study) => ({
-      title: study.title,
-      organization: study.organization,
-      problem: study.problem,
-      solution: study.solution,
-      impact: study.impact,
-      innovations: study.innovations || [],
-    })),
-    resources: lesson.resources,
-  };
-}
-
-// Convert lessons to BaseLessonData format
-const convertedLessons = aerospaceEngineeringLessons.map(convertToBaseLessonData);
+import { notFound } from 'next/navigation';
+import { AerospaceEngineeringLesson } from '@/data/aerospace-engineering';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(convertedLessons);
+  return generateLessonStaticParams(aerospaceEngineeringLessons);
 }
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
-  return generateLessonMetadata(lessonId, convertedLessons, 'aerospace-engineering');
+  const { lessonId } = params;
+  if (!lessonId) {
+    return { title: 'Lesson not found' };
+  }
+  return generateLessonMetadata(lessonId, aerospaceEngineeringLessons, 'aerospace-engineering');
 }
 
 // Icon mapping function for aerospace engineering fields
@@ -65,17 +41,27 @@ function getAerospaceIcon(field: string) {
 
 // Page component with standardized config
 export default function AerospaceEngineeringLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
+
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'aerospace-engineering',
     moduleTitle: 'Aerospace Engineering',
     modulePath: '/learning/aerospace-engineering',
-    lessons: convertedLessons,
+    lessons: aerospaceEngineeringLessons,
     primaryColor: 'blue',
     secondaryColor: 'indigo',
     gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
     getFieldIcon: (field: string) => getAerospaceIcon(field),
+    getFieldValue: (lesson) => {
+      const aeroLesson = lesson as AerospaceEngineeringLesson;
+      if (aeroLesson.aerospaceApplications) return `${aeroLesson.aerospaceApplications.length} Applications`;
+      if (aeroLesson.flightPrinciples) return `${aeroLesson.flightPrinciples.length} Principles`;
+      return 'General';
+    },
   };
 
-  const lessonId = params.lessonId;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

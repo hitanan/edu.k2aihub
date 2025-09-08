@@ -4,6 +4,7 @@ import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { getCategoryFromSlug } from '@/utils/slug';
 import { ArrowLeft, Clock, User, Tag, Calendar } from 'lucide-react';
 import { PageProps } from '@/types';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   const categorySlugs = await getAllCategorySlugs();
@@ -13,40 +14,46 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { category } = await params;
+  const { category } = params;
+  if (!category) {
+    return {
+      title: createTitle('Chủ đề không tìm thấy'),
+      description: createDescription('Chủ đề blog bạn đang tìm kiếm không tồn tại.'),
+    };
+  }
   const categoryName = getCategoryFromSlug(category);
 
   return {
     title: createTitle(`${categoryName} - Blog K2AiHub`),
     description: createDescription(
-      `Khám phá tất cả bài viết về ${categoryName} tại K2AiHub Blog. Kiến thức chuyên sâu và phân tích chi tiết.`
+      `Khám phá tất cả bài viết về ${categoryName} tại K2AiHub Blog. Kiến thức chuyên sâu và phân tích chi tiết.`,
     ),
-    keywords: createKeywords([
-      categoryName,
-      'blog K2AiHub',
-      'giáo dục',
-      'công nghệ',
-      'phân tích'
-    ])
+    keywords: createKeywords([categoryName, 'blog K2AiHub', 'giáo dục', 'công nghệ', 'phân tích']),
   };
 }
 
 export default async function CategoryPage({ params }: PageProps) {
-  const { category } = await params;
+  const { category } = params;
+
+  if (!category) {
+    return notFound();
+  }
+
   const categoryName = getCategoryFromSlug(category);
   const posts = await getBlogPostsByCategorySlug(category);
 
-  const categoryEmoji = {
-    'Giáo Dục': '📚',
-    'Công Nghệ': '💻',
-    'Phân Tích': '📊',
-    'Nghiên Cứu': '🔬',
-    'Trò Chơi': '🎮',
-    'Xu Hướng': '📈',
-    'K2AiHub': '🎯',
-    'Triển Khai': '🚀',
-    'Tổng Hợp': '📝'
-  }[categoryName] || '📝';
+  const categoryEmoji =
+    {
+      'Giáo Dục': '📚',
+      'Công Nghệ': '💻',
+      'Phân Tích': '📊',
+      'Nghiên Cứu': '🔬',
+      'Trò Chơi': '🎮',
+      'Xu Hướng': '📈',
+      K2AiHub: '🎯',
+      'Triển Khai': '🚀',
+      'Tổng Hợp': '📝',
+    }[categoryName] || '📝';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-800 via-blue-800 to-slate-800">
@@ -65,9 +72,7 @@ export default async function CategoryPage({ params }: PageProps) {
       <div className="container mx-auto px-4 mb-12 max-w-6xl">
         <div className="text-center">
           <div className="text-6xl mb-4">{categoryEmoji}</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {categoryName}
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{categoryName}</h1>
           <p className="text-xl text-gray-300 mb-6">
             {posts.length} bài viết về {categoryName.toLowerCase()}
           </p>
@@ -99,9 +104,7 @@ export default async function CategoryPage({ params }: PageProps) {
                         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
                           {post.title}
                         </h3>
-                        <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                          {post.description}
-                        </p>
+                        <p className="text-gray-300 text-sm mb-4 line-clamp-2">{post.description}</p>
                         <div className="flex items-center justify-between text-gray-400 text-xs">
                           <div className="flex items-center gap-4">
                             <span className="flex items-center gap-1">
@@ -121,10 +124,7 @@ export default async function CategoryPage({ params }: PageProps) {
                         {post.tags && post.tags.length > 0 && (
                           <div className="flex flex-wrap gap-2 mt-3">
                             {post.tags.slice(0, 3).map((tag) => (
-                              <span
-                                key={tag}
-                                className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs"
-                              >
+                              <span key={tag} className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">
                                 {tag}
                               </span>
                             ))}
@@ -140,12 +140,8 @@ export default async function CategoryPage({ params }: PageProps) {
         ) : (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">📝</div>
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Chưa có bài viết nào
-            </h2>
-            <p className="text-gray-300 mb-8">
-              Hiện tại chưa có bài viết nào trong chủ đề {categoryName}.
-            </p>
+            <h2 className="text-2xl font-bold text-white mb-4">Chưa có bài viết nào</h2>
+            <p className="text-gray-300 mb-8">Hiện tại chưa có bài viết nào trong chủ đề {categoryName}.</p>
             <Link
               href="/blog"
               className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition-all duration-300 font-medium"

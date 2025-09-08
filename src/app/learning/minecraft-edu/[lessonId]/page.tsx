@@ -7,13 +7,17 @@ import {
 import { minecraftLessons, MinecraftLessonType } from '@/data/minecraft-edu';
 import { PageProps } from '@/types';
 import { FlaskConical, Cpu, Wrench } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(minecraftLessons);
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, minecraftLessons, 'minecraft-edu');
 }
 
@@ -38,7 +42,10 @@ const config: LessonPageConfig<MinecraftLessonType> = {
   getFieldValue: (lesson) => lesson.skills.join(', '),
 };
 
-export default async function MinecraftLessonPage({ params }: PageProps) {
-  const { lessonId } = await params;
+export default function MinecraftLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

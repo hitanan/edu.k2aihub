@@ -167,7 +167,7 @@ export default function AIAppsModule() {
               <div className="mb-4">
                 <h4 className="text-sm font-semibold text-yellow-300 mb-2">✨ Tính năng chính:</h4>
                 <div className="flex flex-wrap gap-1">
-                  {app.features.slice(0, 3).map((feature, featIndex) => (
+                  {app.features?.slice(0, 3).map((feature, featIndex) => (
                     <span key={featIndex} className="bg-purple-500/20 text-purple-200 text-xs px-2 py-1 rounded-full">
                       {feature}
                     </span>
@@ -178,7 +178,7 @@ export default function AIAppsModule() {
               <div className="mb-4">
                 <h4 className="text-sm font-semibold text-green-300 mb-2">🎯 Phù hợp cho:</h4>
                 <ul className="text-xs text-gray-300 space-y-1">
-                  {app.bestFor.slice(0, 2).map((useCase, caseIndex) => (
+                  {app.bestFor?.slice(0, 2).map((useCase, caseIndex) => (
                     <li key={caseIndex} className="flex items-start">
                       <span className="text-green-400 mr-2">•</span>
                       {useCase}
@@ -187,9 +187,9 @@ export default function AIAppsModule() {
                 </ul>
               </div>
 
-              {app.videoDemo && (
+              {app.videoUrl && (
                 <div className="mb-4">
-                  <YouTubePlayer videoUrl={app.videoDemo} title={`${app.name} - Demo`} className="h-40" />
+                  <YouTubePlayer videoUrl={app.videoUrl} title={`${app.name} - Demo`} className="h-40" />
                 </div>
               )}
 

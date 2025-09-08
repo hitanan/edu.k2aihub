@@ -1,6 +1,17 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
 export interface CrossCulturalLessonType extends BaseLessonData {
+  culturalDimensions: string[];
+  adaptationStrategies: string[];
+  globalCompetencies: string[];
+  communicationPatterns: {
+    culture: string;
+    directness: string;
+    contextLevel: string;
+    timeOrientation: string;
+    hierarchyStyle: string;
+    examples: string[];
+  }[];
   mainContent: {
     introduction: string;
     keyConcepts: {
@@ -14,21 +25,10 @@ export interface CrossCulturalLessonType extends BaseLessonData {
     }[];
     conclusion: string;
   };
-  relatedGames?: {
+  relatedGames: {
     id: string;
     name: string;
     description: string;
-  }[];
-  culturalDimensions: string[];
-  adaptationStrategies: string[];
-  globalCompetencies: string[];
-  communicationPatterns: {
-    culture: string;
-    directness: string;
-    contextLevel: string;
-    timeOrientation: string;
-    hierarchyStyle: string;
-    examples: string[];
   }[];
   vietnamContext: {
     title: string;

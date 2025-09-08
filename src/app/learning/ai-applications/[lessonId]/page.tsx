@@ -16,6 +16,12 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const lessonId = params.lessonId;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+      description: 'The requested lesson could not be found.',
+    };
+  }
   return generateLessonMetadata(lessonId, AIApplicationLessons, 'ai-applications');
 }
 
@@ -130,5 +136,8 @@ export default function AIApplicationLessonPage({ params }: PageProps) {
   };
 
   const lessonId = params.lessonId;
+  if (!lessonId) {
+    return null;
+  }
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -8,13 +8,17 @@ import { robloxLessons } from '@/data/roblox-game-dev';
 import { RobloxLessonType } from '@/data/roblox-game-dev';
 import { PageProps } from '@/types';
 import { Code, Package } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(robloxLessons);
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, robloxLessons, 'roblox-game-dev');
 }
 
@@ -39,7 +43,10 @@ const config: LessonPageConfig<RobloxLessonType> = {
   getFieldValue: (lesson) => `Studio: ${lesson.studioVersion} / Lua: ${lesson.luaVersion}`,
 };
 
-export default async function RobloxLessonPage({ params }: PageProps) {
-  const { lessonId } = await params;
+export default function RobloxLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

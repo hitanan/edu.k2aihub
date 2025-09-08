@@ -1,6 +1,6 @@
-import { ModuleNavigation } from '@/types';
+import { ModuleData } from '@/types';
 
-export const spaceTechnologyModuleData: ModuleNavigation = {
+export const spaceTechnologyModuleData: ModuleData = {
   id: 'space-technology',
   title: 'Space Technology & Exploration',
   subtitle: 'Công nghệ vũ trụ',
@@ -8,43 +8,40 @@ export const spaceTechnologyModuleData: ModuleNavigation = {
   category: 'technology',
   icon: '🚀',
   color: 'from-gray-700 to-blue-900',
-  totalDuration: '15-20 giờ',
-  difficulty: 'Nâng cao',
   level: 'Nâng cao',
   duration: '15-20 giờ',
-  href: '/learning/space-technology',
   features: ['Rocket Science', 'Satellite Technology', 'Planetary Exploration', 'Space Colonization'],
-  tags: ['space', 'rocket', 'exploration', 'astronomy'],
   prerequisites: [
     'Vật lý và toán học nâng cao',
     'Kỹ thuật cơ khí hoặc hàng không vũ trụ',
     'Lập trình cho hệ thống nhúng',
     'Đam mê khám phá vũ trụ',
   ],
-  lessons: [
-    {
-      id: 'rocket-propulsion-systems',
-      title: 'Hệ thống Đẩy Tên lửa',
-      duration: '180 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'satellite-design-communication',
-      title: 'Thiết kế và Truyền thông Vệ tinh',
-      duration: '200 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'interplanetary-missions',
-      title: 'Nhiệm vụ Liên hành tinh',
-      duration: '180 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'future-space-exploration',
-      title: 'Tương lai của Khám phá Vũ trụ',
-      duration: '150 phút',
-      difficulty: 'Trung bình',
-    },
+  objectives: [
+    'Hiểu sâu về các loại động cơ tên lửa và nguyên lý hoạt động.',
+    'Thiết kế một mô hình vệ tinh nhỏ (CubeSat) với các hệ thống con.',
+    'Lập kế hoạch cho một nhiệm vụ khám phá liên hành tinh.',
+    'Phân tích các công nghệ cần thiết cho việc định cư ngoài Trái Đất.',
   ],
+  careerOutcomes: [
+    'Kỹ sư hàng không vũ trụ',
+    'Chuyên gia thiết kế vệ tinh',
+    'Nhà phân tích quỹ đạo',
+    'Kỹ sư hệ thống đẩy',
+  ],
+  industryApplications: [
+    { name: 'Phóng vệ tinh thương mại', description: 'Đưa vệ tinh của các công ty lên quỹ đạo.' },
+    {
+      name: 'Khai thác tài nguyên không gian',
+      description: 'Thăm dò và khai thác khoáng sản trên các tiểu hành tinh.',
+    },
+    { name: 'Du lịch vũ trụ', description: 'Phát triển tàu vũ trụ và dịch vụ cho khách du lịch.' },
+    { name: 'Nghiên cứu khoa học', description: 'Chế tạo kính thiên văn không gian, tàu thăm dò.' },
+  ],
+  marketDemand: {
+    averageSalary: '3000-7000 USD/tháng',
+    jobGrowth: '10% mỗi năm',
+    hireDemand: 'Cao, đặc biệt cho chuyên gia có kinh nghiệm',
+  },
+  relatedModules: ['aerospace-engineering', 'robotics', 'materials-science'],
 };

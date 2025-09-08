@@ -7,17 +7,25 @@ import {
 import { robosimLessons, RobosimLessonType } from '@/data/robosim';
 import { PageProps } from '@/types';
 import { Bot, Cpu, Puzzle } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(robosimLessons);
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, robosimLessons, 'robosim');
 }
 
-export default async function RobosimLessonPage({ params }: PageProps) {
+export default function RobosimLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<RobosimLessonType> = {
     moduleName: 'robosim',
     moduleTitle: 'Robosim - Lập trình và Thi đấu Robotics Giả lập',
@@ -40,6 +48,5 @@ export default async function RobosimLessonPage({ params }: PageProps) {
     },
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

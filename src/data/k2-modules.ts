@@ -83,4 +83,5 @@ export const K2Module = {
   FutureThinking: 'future-thinking',
   UXUIDesign: 'ux-ui-design',
   EnergyManagement: 'energy-management',
+  SustainableAgriculture: 'sustainable-agriculture',
 };

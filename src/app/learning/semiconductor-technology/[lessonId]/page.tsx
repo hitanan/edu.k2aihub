@@ -7,6 +7,7 @@ import {
 import { semiconductorLessons } from '@/data/semiconductor-technology';
 import { BaseLessonData } from '@/types/lesson-base';
 import { PageProps } from '@/types';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -15,12 +16,19 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, semiconductorLessons, 'semiconductor-technology');
 }
 
 // Page component with standardized config
-export default async function SemiconductorLessonPage({ params }: PageProps) {
+export default function SemiconductorLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'semiconductor-technology',
     moduleTitle: 'Công nghệ Bán dẫn & Thiết kế Vi mạch',
@@ -30,6 +38,5 @@ export default async function SemiconductorLessonPage({ params }: PageProps) {
     secondaryColor: 'purple',
     gradientColors: 'from-slate-900 via-blue-900 to-purple-900',
   };
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

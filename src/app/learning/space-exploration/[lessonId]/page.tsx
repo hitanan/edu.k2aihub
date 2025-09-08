@@ -8,6 +8,7 @@ import { spaceLessons, type SpaceExplorationLesson } from '@/data/space-explorat
 import { PageProps } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
 import { Rocket, Satellite, Globe, Star } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 // Convert SpaceExplorationLesson to BaseLessonData
 function convertToBaseLessonData(lesson: SpaceExplorationLesson): BaseLessonData {
@@ -45,7 +46,10 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, convertedLessons, 'space-exploration');
 }
 
@@ -61,7 +65,12 @@ function getSpaceIcon(field: string) {
 }
 
 // Page component with standardized config
-export default async function SpaceExplorationLessonPage({ params }: PageProps) {
+export default function SpaceExplorationLessonPage({ params }: PageProps) {
+  const { lessonId } = params;
+  if (!lessonId) {
+    notFound();
+  }
+
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'space-exploration',
     moduleTitle: 'Space Exploration',
@@ -73,6 +82,5 @@ export default async function SpaceExplorationLessonPage({ params }: PageProps) 
     getFieldIcon: (field: string) => getSpaceIcon(field),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

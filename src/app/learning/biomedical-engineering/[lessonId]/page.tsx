@@ -6,47 +6,21 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { biomedicalEngineeringLessons, type BiomedicalEngineeringLesson } from '@/data/biomedical-engineering';
 import { PageProps } from '@/types';
-import { BaseLessonData } from '@/types/lesson-base';
+import { notFound } from 'next/navigation';
 import { Heart, Brain, Dna, Bot, Shield, Activity } from 'lucide-react';
-
-// Convert BiomedicalEngineeringLesson to BaseLessonData
-function convertToBaseLessonData(lesson: BiomedicalEngineeringLesson): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises,
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies?.map((study) => ({
-      title: study.title,
-      organization: study.organization,
-      problem: study.problem,
-      solution: study.solution,
-      impact: study.impact,
-      innovations: study.innovations || [],
-    })),
-    resources: lesson.resources,
-  };
-}
-
-// Convert lessons to BaseLessonData format
-const convertedLessons = biomedicalEngineeringLessons.map(convertToBaseLessonData);
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(convertedLessons);
+  return generateLessonStaticParams(biomedicalEngineeringLessons);
 }
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, convertedLessons, 'biomedical-engineering');
+  const { lessonId } = params;
+  if (!lessonId) {
+    return {};
+  }
+  return generateLessonMetadata(lessonId, biomedicalEngineeringLessons, 'biomedical-engineering');
 }
 
 // Icon mapping function for biomedical engineering fields
@@ -67,17 +41,23 @@ function getBiomedicalIcon(field: string) {
 
 // Page component with standardized config
 export default async function BiomedicalEngineeringLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<BaseLessonData> = {
+  const { lessonId } = params;
+  const lesson = biomedicalEngineeringLessons.find((l) => l.id === lessonId);
+
+  if (!lesson) {
+    notFound();
+  }
+
+  const config: LessonPageConfig<BiomedicalEngineeringLesson> = {
     moduleName: 'biomedical-engineering',
-    moduleTitle: 'Biomedical Engineering',
+    moduleTitle: 'Kỹ thuật Y Sinh',
     modulePath: '/learning/biomedical-engineering',
-    lessons: convertedLessons,
+    lessons: biomedicalEngineeringLessons,
     primaryColor: 'teal',
     secondaryColor: 'cyan',
     gradientColors: 'from-slate-900 via-teal-900 to-slate-900',
     getFieldIcon: (field: string) => getBiomedicalIcon(field),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -7,6 +7,8 @@ import {
 import { sustainableAgricultureLessons } from '@/data/sustainable-agriculture';
 import { PageProps } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
+import { notFound } from 'next/navigation';
+
 // Generate static params for all lessons
 export async function generateStaticParams() {
   return generateLessonStaticParams(sustainableAgricultureLessons);
@@ -15,6 +17,9 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
   const { lessonId } = await params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, sustainableAgricultureLessons, 'sustainable-agriculture');
 }
 
@@ -30,5 +35,8 @@ export default async function SustainableAgricultureLessonPage({ params }: PageP
     gradientColors: 'from-slate-900 via-lime-900 to-slate-900',
   };
   const { lessonId } = await params;
+  if (!lessonId) {
+    notFound();
+  }
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

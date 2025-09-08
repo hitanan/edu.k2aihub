@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-import ModulePageTemplate, { type ModuleData } from '@/components/learning/ModulePageTemplate';
-import { type BaseLessonData } from '@/components/learning/LessonPageTemplate';
-import { biotechnologyLessons, type BiotechnologyLesson } from '@/data/biotechnology';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
+import { biotechnologyLessons } from '@/data/biotechnology';
 import { K2Module } from '@/data/k2-modules';
+import type { ModuleData } from '@/types';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
@@ -13,47 +13,7 @@ export const metadata: Metadata = createModuleMetadata(
   'biotechnology',
 );
 
-// Convert BiotechnologyLesson to BaseLessonData interface
-function convertToLesson(biotechnologyLesson: BiotechnologyLesson): BaseLessonData {
-  // Ensure all required fields from BaseLessonData are present
-  return {
-    id: biotechnologyLesson.id,
-    title: biotechnologyLesson.title,
-    description: biotechnologyLesson.description,
-    duration: biotechnologyLesson.duration,
-    difficulty: biotechnologyLesson.difficulty,
-    videoUrl: biotechnologyLesson.videoUrl,
-    imageUrl: biotechnologyLesson.imageUrl,
-    objectives: biotechnologyLesson.objectives || [],
-    prerequisites: biotechnologyLesson.prerequisites || [],
-    exercises:
-      biotechnologyLesson.exercises?.map((ex) => ({
-        ...ex,
-        materials: ex.materials || [],
-        procedure: ex.procedure || [],
-        expectedResults: ex.expectedResults || '',
-        solution: ex.solution || '',
-      })) || [],
-    realWorldApplications: biotechnologyLesson.realWorldApplications || [],
-    caseStudies:
-      biotechnologyLesson.caseStudies?.map((cs) => ({
-        ...cs,
-        innovations: cs.innovations || [],
-      })) || [],
-    resources:
-      biotechnologyLesson.resources?.map((res) => ({
-        ...res,
-      })) || [],
-    vietnamContext: biotechnologyLesson.vietnamContext,
-    careerConnect: biotechnologyLesson.careerConnect,
-    quizzes: biotechnologyLesson.quizzes,
-  };
-}
-
 export default function BiotechnologyPage() {
-  // Convert lessons to base interface
-  const convertedLessons = biotechnologyLessons.map(convertToLesson);
-
   const moduleData: ModuleData = {
     id: 'biotechnology',
     title: 'Biotechnology & Life Sciences',
@@ -163,7 +123,14 @@ export default function BiotechnologyPage() {
       },
     ],
     relatedModules: [K2Module.AIArtCreativeTech, K2Module.Cybersecurity, K2Module.Stem],
+    color: 'emerald',
+    careerOutcomes: ['Biomedical Engineer', 'Genetic Counselor', 'Research Scientist', 'Biotech Product Manager'],
+    marketDemand: {
+      averageSalary: '20-55 triệu VNĐ',
+      jobGrowth: '15%',
+      hireDemand: 'Cao',
+    },
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={convertedLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={biotechnologyLessons} />;
 }

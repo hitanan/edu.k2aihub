@@ -4,8 +4,9 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { blueEconomyLessons, BlueEconomyLessonType } from '@/data/blue-economy';
+import { blueEconomyLessons } from '@/data/blue-economy';
 import { PageProps } from '@/types';
+import { BaseLessonData } from '@/types/lesson-base';
 import { Waves, Fish, Zap } from 'lucide-react';
 
 // Generate static params for all lessons
@@ -15,13 +16,23 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = await params;
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return {
+      title: 'Lesson not found',
+      description: 'The requested lesson could not be found.',
+    };
+  }
   return generateLessonMetadata(lessonId, blueEconomyLessons, 'blue-economy');
 }
 
 // Page component with standardized config
 export default async function BlueEconomyLessonPage({ params }: PageProps) {
-  const config: LessonPageConfig<BlueEconomyLessonType> = {
+  const lessonId = params.lessonId;
+  if (!lessonId) {
+    return null;
+  }
+  const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'blue-economy',
     moduleTitle: 'Kinh Tế Biển Xanh & Công Nghệ Biển',
     modulePath: '/learning/blue-economy',
@@ -41,6 +52,5 @@ export default async function BlueEconomyLessonPage({ params }: PageProps) {
     },
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

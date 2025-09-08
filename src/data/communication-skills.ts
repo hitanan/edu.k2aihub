@@ -1,6 +1,14 @@
 import { BaseLessonData } from '@/types/lesson-base';
 
-export const communicationSkillsLessons: BaseLessonData[] = [
+export interface CommunicationSkillsLesson extends BaseLessonData {
+  communicationMethods: string[];
+  presentationTechniques: string[];
+  culturalContext: string[];
+  digitalPlatforms: string[];
+  assessmentCriteria: string[];
+}
+
+export const communicationSkillsLessons: CommunicationSkillsLesson[] = [
   {
     id: 'effective-communication-fundamentals',
     title: 'Cơ Bản Giao Tiếp Hiệu Quả',
