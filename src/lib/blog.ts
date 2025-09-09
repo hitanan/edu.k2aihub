@@ -39,9 +39,7 @@ const postsDirectory = path.join(process.cwd(), 'docs');
 // Get all blog post slugs
 export function getBlogSlugs(): string[] {
   const files = fs.readdirSync(postsDirectory);
-  return files
-    .filter((file) => file.endsWith('.md'))
-    .map((file) => file.replace(/\.md$/, ''));
+  return files.filter((file) => file.endsWith('.md')).map((file) => file.replace(/\.md$/, ''));
 }
 
 // Calculate reading time based on content length
@@ -55,20 +53,20 @@ function calculateReadingTime(content: string): string {
 // Generate category from slug or content
 function generateCategory(slug: string, content: string): string {
   const categoryMap: { [key: string]: string } = {
-    'education': 'Giáo Dục',
-    'trends': 'xu Hướng',
-    'analysis': 'Phân Tích',
-    'research': 'Nghiên Cứu',
-    'technology': 'Công Nghệ',
-    'games': 'Trò Chơi',
-    'vietnam': 'Việt Nam',
-    'market': 'Thị Trường',
-    'ux': 'Trải Nghiệm Người Dùng',
-    'deployment': 'Triển Khai',
-    'k2aihub': 'K2AiHub',
-    'guide': 'Hướng Dẫn',
-    'cities': 'Thành Phố',
-    'geography': 'Địa Lý'
+    education: 'Giáo Dục',
+    trends: 'xu Hướng',
+    analysis: 'Phân Tích',
+    research: 'Nghiên Cứu',
+    technology: 'Công Nghệ',
+    games: 'Trò Chơi',
+    vietnam: 'Việt Nam',
+    market: 'Thị Trường',
+    ux: 'Trải Nghiệm Người Dùng',
+    deployment: 'Triển Khai',
+    k2aihub: 'K2AiHub',
+    guide: 'Hướng Dẫn',
+    cities: 'Thành Phố',
+    geography: 'Địa Lý',
   };
 
   // Check slug for category keywords
@@ -92,28 +90,28 @@ function generateCategory(slug: string, content: string): string {
 // Generate tags from content and filename
 function generateTags(slug: string, content: string): string[] {
   const tagMap: { [key: string]: string } = {
-    'ai': 'Trí Tuệ Nhân Tạo',
-    'education': 'Giáo Dục',
-    'vietnam': 'Việt Nam',
-    'technology': 'Công Nghệ',
-    'games': 'Trò Chơi',
-    'research': 'Nghiên Cứu',
-    'analysis': 'Phân Tích',
-    'trends': 'Xu Hướng',
-    'k2aihub': 'K2AiHub',
-    'development': 'Phát Triển',
-    'programming': 'Lập Trình',
-    'arduino': 'Arduino',
-    'robot': 'Robot',
-    'navigation': 'Điều Hướng',
+    ai: 'Trí Tuệ Nhân Tạo',
+    education: 'Giáo Dục',
+    vietnam: 'Việt Nam',
+    technology: 'Công Nghệ',
+    games: 'Trò Chơi',
+    research: 'Nghiên Cứu',
+    analysis: 'Phân Tích',
+    trends: 'Xu Hướng',
+    k2aihub: 'K2AiHub',
+    development: 'Phát Triển',
+    programming: 'Lập Trình',
+    arduino: 'Arduino',
+    robot: 'Robot',
+    navigation: 'Điều Hướng',
     '3d': '3D',
-    'ux': 'UX/UI',
-    'deployment': 'Triển Khai',
-    'market': 'Thị Trường',
-    'student': 'Học Sinh',
-    'skills': 'Kỹ Năng',
-    'geography': 'Địa Lý',
-    'cities': 'Thành Phố'
+    ux: 'UX/UI',
+    deployment: 'Triển Khai',
+    market: 'Thị Trường',
+    student: 'Học Sinh',
+    skills: 'Kỹ Năng',
+    geography: 'Địa Lý',
+    cities: 'Thành Phố',
   };
 
   const tags = new Set<string>();
@@ -132,7 +130,7 @@ function generateTags(slug: string, content: string): string[] {
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
-    
+
     if (!fs.existsSync(fullPath)) {
       return null;
     }
@@ -141,10 +139,7 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
     const { data, content } = matter(fileContents);
 
     // Process markdown content to HTML
-    const processedContent = await unified()
-      .use(remarkParse)
-      .use(remarkHtml, { sanitize: false })
-      .process(content);
+    const processedContent = await unified().use(remarkParse).use(remarkHtml, { sanitize: false }).process(content);
 
     const contentHtml = processedContent.toString();
 
@@ -185,11 +180,12 @@ export async function getAllBlogPosts(): Promise<BlogMetadata[]> {
     slugs.map(async (slug) => {
       const post = await getBlogPostBySlug(slug);
       if (!post) return null;
-      
+
       // Return only metadata, not full content
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { content, ...metadata } = post;
       return metadata;
-    })
+    }),
   );
 
   return posts
@@ -200,19 +196,19 @@ export async function getAllBlogPosts(): Promise<BlogMetadata[]> {
 // Get featured blog posts
 export async function getFeaturedBlogPosts(): Promise<BlogMetadata[]> {
   const allPosts = await getAllBlogPosts();
-  return allPosts.filter(post => post.featured).slice(0, 3);
+  return allPosts.filter((post) => post.featured).slice(0, 3);
 }
 
 // Get blog posts by category
 export async function getBlogPostsByCategory(category: string): Promise<BlogMetadata[]> {
   const allPosts = await getAllBlogPosts();
-  return allPosts.filter(post => post.category === category);
+  return allPosts.filter((post) => post.category === category);
 }
 
 // Get blog posts by tag
 export async function getBlogPostsByTag(tag: string): Promise<BlogMetadata[]> {
   const allPosts = await getAllBlogPosts();
-  return allPosts.filter(post => post.tags?.includes(tag));
+  return allPosts.filter((post) => post.tags?.includes(tag));
 }
 
 // Helper functions
@@ -226,7 +222,7 @@ function generateTitleFromContent(content: string, slug: string): string {
   // Generate from slug
   return slug
     .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 }
 
@@ -242,7 +238,7 @@ function generateDescriptionFromContent(content: string): string {
 
   const firstParagraph = cleanContent.split('\n\n')[0];
   const description = firstParagraph.slice(0, 160);
-  
+
   return description.length < firstParagraph.length ? `${description}...` : description;
 }
 
@@ -255,32 +251,6 @@ function getFileCreationDate(filePath: string): string {
   }
 }
 
-function formatDate(dateString: string): string {
-  try {
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) {
-      // If date is invalid, return current date formatted
-      return new Date().toLocaleDateString('vi-VN', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-    }
-    return date.toLocaleDateString('vi-VN', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  } catch {
-    // Fallback to current date if parsing fails
-    return new Date().toLocaleDateString('vi-VN', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  }
-}
-
 function generateCoverImage(category: string): string {
   const imageMap: { [key: string]: string } = {
     'Giáo Dục': 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=600&fit=crop',
@@ -289,8 +259,8 @@ function generateCoverImage(category: string): string {
     'Nghiên Cứu': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&h=600&fit=crop',
     'Trò Chơi': 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&h=600&fit=crop',
     'Xu Hướng': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
-    'K2AiHub': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
-    'Triển Khai': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop'
+    K2AiHub: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
+    'Triển Khai': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop',
   };
 
   return imageMap[category] || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop';
@@ -299,14 +269,14 @@ function generateCoverImage(category: string): string {
 // Get all unique categories
 export async function getAllCategories(): Promise<string[]> {
   const allPosts = await getAllBlogPosts();
-  const categories = new Set(allPosts.map(post => post.category));
+  const categories = new Set(allPosts.map((post) => post.category));
   return Array.from(categories).filter((cat): cat is string => Boolean(cat));
 }
 
 // Get all unique categories (synchronous version for sitemap)
 export function getAllCategoriesSync(): string[] {
   const posts = getAllBlogPostsSync();
-  const categories = new Set(posts.map(post => post.category));
+  const categories = new Set(posts.map((post) => post.category));
   return Array.from(categories).filter((cat): cat is string => Boolean(cat));
 }
 
@@ -321,7 +291,7 @@ export function getAllBlogPostsSync(): BlogPost[] {
       const fullPath = path.join(docsDirectory, name);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data: frontMatter, content } = matter(fileContents);
-      
+
       // Generate metadata if not provided
       const title = frontMatter.title || generateTitleFromContent(content, slug);
       const description = frontMatter.description || generateDescriptionFromContent(content);
@@ -332,7 +302,7 @@ export function getAllBlogPostsSync(): BlogPost[] {
       const readingTime = frontMatter.readingTime || calculateReadingTime(content);
       const featured = frontMatter.featured || false;
       const coverImage = frontMatter.coverImage || generateCoverImage(category);
-      
+
       return {
         slug,
         title,
@@ -349,7 +319,7 @@ export function getAllBlogPostsSync(): BlogPost[] {
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  
+
   return posts;
 }
 
@@ -357,8 +327,8 @@ export function getAllBlogPostsSync(): BlogPost[] {
 export async function getAllTags(): Promise<string[]> {
   const allPosts = await getAllBlogPosts();
   const tags = new Set<string>();
-  allPosts.forEach(post => {
-    post.tags?.forEach(tag => tags.add(tag));
+  allPosts.forEach((post) => {
+    post.tags?.forEach((tag) => tags.add(tag));
   });
   return Array.from(tags);
 }

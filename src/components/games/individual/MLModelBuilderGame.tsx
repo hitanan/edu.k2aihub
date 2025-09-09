@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Brain, Database, Code, BarChart3, Clock, Star, Zap, Target, TrendingUp, Cpu } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Brain, Database, Clock, Star, Zap, Target, TrendingUp, Cpu } from 'lucide-react';
 
 interface GameProps {
   onComplete: (_: boolean, score: number) => void;
@@ -49,7 +49,7 @@ const DATASETS: Dataset[] = [
     quality: 8,
     domain: 'E-commerce',
     cost: 15,
-    features: 25
+    features: 25,
   },
   {
     id: 'medical-imaging',
@@ -59,7 +59,7 @@ const DATASETS: Dataset[] = [
     quality: 9,
     domain: 'Healthcare',
     cost: 30,
-    features: 512
+    features: 512,
   },
   {
     id: 'financial-transactions',
@@ -69,7 +69,7 @@ const DATASETS: Dataset[] = [
     quality: 7,
     domain: 'Finance',
     cost: 25,
-    features: 40
+    features: 40,
   },
   {
     id: 'traffic-patterns',
@@ -79,7 +79,7 @@ const DATASETS: Dataset[] = [
     quality: 6,
     domain: 'Transportation',
     cost: 10,
-    features: 15
+    features: 15,
   },
   {
     id: 'weather-climate',
@@ -89,7 +89,7 @@ const DATASETS: Dataset[] = [
     quality: 8,
     domain: 'Environment',
     cost: 20,
-    features: 35
+    features: 35,
   },
   {
     id: 'social-media',
@@ -99,8 +99,8 @@ const DATASETS: Dataset[] = [
     quality: 5,
     domain: 'Social Media',
     cost: 12,
-    features: 100
-  }
+    features: 100,
+  },
 ];
 
 const ALGORITHMS: Algorithm[] = [
@@ -112,7 +112,7 @@ const ALGORITHMS: Algorithm[] = [
     speed: 6,
     interpretability: 3,
     complexity: 9,
-    cost: 40
+    cost: 40,
   },
   {
     id: 'random-forest',
@@ -122,7 +122,7 @@ const ALGORITHMS: Algorithm[] = [
     speed: 8,
     interpretability: 7,
     complexity: 5,
-    cost: 15
+    cost: 15,
   },
   {
     id: 'gradient-boosting',
@@ -132,7 +132,7 @@ const ALGORITHMS: Algorithm[] = [
     speed: 7,
     interpretability: 6,
     complexity: 6,
-    cost: 20
+    cost: 20,
   },
   {
     id: 'svm',
@@ -142,7 +142,7 @@ const ALGORITHMS: Algorithm[] = [
     speed: 6,
     interpretability: 4,
     complexity: 7,
-    cost: 18
+    cost: 18,
   },
   {
     id: 'transformer',
@@ -152,7 +152,7 @@ const ALGORITHMS: Algorithm[] = [
     speed: 4,
     interpretability: 2,
     complexity: 10,
-    cost: 50
+    cost: 50,
   },
   {
     id: 'linear-regression',
@@ -162,8 +162,8 @@ const ALGORITHMS: Algorithm[] = [
     speed: 10,
     interpretability: 10,
     complexity: 2,
-    cost: 5
-  }
+    cost: 5,
+  },
 ];
 
 const TRAINING_CONFIGS: TrainingConfig[] = [
@@ -173,7 +173,7 @@ const TRAINING_CONFIGS: TrainingConfig[] = [
     learningRate: 0.01,
     validationSplit: 0.2,
     earlyStopping: false,
-    cost: 5
+    cost: 5,
   },
   {
     epochs: 50,
@@ -181,7 +181,7 @@ const TRAINING_CONFIGS: TrainingConfig[] = [
     learningRate: 0.001,
     validationSplit: 0.3,
     earlyStopping: true,
-    cost: 15
+    cost: 15,
   },
   {
     epochs: 100,
@@ -189,12 +189,14 @@ const TRAINING_CONFIGS: TrainingConfig[] = [
     learningRate: 0.0001,
     validationSplit: 0.25,
     earlyStopping: true,
-    cost: 25
-  }
+    cost: 25,
+  },
 ];
 
 const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'dataset' | 'algorithm' | 'training' | 'evaluation' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'dataset' | 'algorithm' | 'training' | 'evaluation' | 'results'
+  >('briefing');
   const [budget] = useState(150); // 150 million VND budget
   const [selectedDataset, setSelectedDataset] = useState<Dataset | null>(null);
   const [selectedAlgorithm, setSelectedAlgorithm] = useState<Algorithm | null>(null);
@@ -208,16 +210,53 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
   const [isTraining, setIsTraining] = useState(false);
   const [trainingProgress, setTrainingProgress] = useState(0);
 
+  const calculateResults = useCallback(() => {
+    if (!selectedDataset || !selectedAlgorithm || !selectedConfig) {
+      setOverallScore(0);
+      setGamePhase('results');
+      onComplete(false, 0);
+      return;
+    }
+
+    // Calculate model accuracy based on dataset quality, algorithm accuracy, and training config
+    const dataQualityBonus = selectedDataset.quality * 10;
+    const algorithmAccuracy = selectedAlgorithm.accuracy * 10;
+    const configBonus = selectedConfig.epochs / 10 + selectedConfig.validationSplit * 100;
+    const accuracy = Math.min(100, dataQualityBonus * 0.3 + algorithmAccuracy * 0.5 + configBonus * 0.2);
+
+    // Calculate training efficiency (speed vs quality trade-off)
+    const speedScore = selectedAlgorithm.speed * 10;
+    const complexityPenalty = selectedAlgorithm.complexity * 5;
+    const efficiency = Math.max(0, speedScore - complexityPenalty + 50);
+
+    // Calculate model interpretability and deployment readiness
+    const interpretabilityScore = selectedAlgorithm.interpretability * 10;
+    const deployment = Math.min(100, accuracy * 0.4 + efficiency * 0.3 + interpretabilityScore * 0.3);
+
+    // Calculate overall score
+    const budgetEfficiency = Math.min(100, ((budget - spentBudget) / budget) * 100);
+    const overall = accuracy * 0.4 + efficiency * 0.3 + deployment * 0.2 + budgetEfficiency * 0.1;
+
+    setModelAccuracy(Math.round(accuracy));
+    setTrainingTime(Math.round(efficiency));
+    setModelComplexity(selectedAlgorithm.complexity * 10);
+    setDeploymentReadiness(Math.round(deployment));
+    setOverallScore(Math.round(overall));
+
+    setGamePhase('results');
+    onComplete(true, overall);
+  }, [selectedDataset, selectedAlgorithm, selectedConfig, onComplete, budget, spentBudget]);
+
   useEffect(() => {
     if (timeLeft <= 0 && gamePhase !== 'results') {
       calculateResults();
     }
-  }, [timeLeft, gamePhase]);
+  }, [timeLeft, gamePhase, calculateResults]);
 
   useEffect(() => {
     if (isTraining) {
       const interval = setInterval(() => {
-        setTrainingProgress(prev => {
+        setTrainingProgress((prev) => {
           if (prev >= 100) {
             setIsTraining(false);
             setGamePhase('evaluation');
@@ -230,43 +269,6 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
     }
   }, [isTraining]);
 
-  const calculateResults = () => {
-    if (!selectedDataset || !selectedAlgorithm || !selectedConfig) {
-      setOverallScore(0);
-      setGamePhase('results');
-      onComplete(false, 0);
-      return;
-    }
-
-    // Calculate model accuracy based on dataset quality, algorithm accuracy, and training config
-    const dataQualityBonus = selectedDataset.quality * 10;
-    const algorithmAccuracy = selectedAlgorithm.accuracy * 10;
-    const configBonus = (selectedConfig.epochs / 10) + (selectedConfig.validationSplit * 100);
-    const accuracy = Math.min(100, (dataQualityBonus * 0.3 + algorithmAccuracy * 0.5 + configBonus * 0.2));
-
-    // Calculate training efficiency (speed vs quality trade-off)
-    const speedScore = selectedAlgorithm.speed * 10;
-    const complexityPenalty = selectedAlgorithm.complexity * 5;
-    const efficiency = Math.max(0, speedScore - complexityPenalty + 50);
-
-    // Calculate model interpretability and deployment readiness
-    const interpretabilityScore = selectedAlgorithm.interpretability * 10;
-    const deployment = Math.min(100, (accuracy * 0.4 + efficiency * 0.3 + interpretabilityScore * 0.3));
-
-    // Calculate overall score
-    const budgetEfficiency = Math.min(100, ((budget - spentBudget) / budget) * 100);
-    const overall = (accuracy * 0.4 + efficiency * 0.3 + deployment * 0.2 + budgetEfficiency * 0.1);
-
-    setModelAccuracy(Math.round(accuracy));
-    setTrainingTime(Math.round(efficiency));
-    setModelComplexity(selectedAlgorithm.complexity * 10);
-    setDeploymentReadiness(Math.round(deployment));
-    setOverallScore(Math.round(overall));
-    
-    setGamePhase('results');
-    onComplete(true, overall);
-  };
-
   const handleDatasetSelect = (dataset: Dataset) => {
     setSelectedDataset(dataset);
     setSpentBudget(dataset.cost);
@@ -275,13 +277,13 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
 
   const handleAlgorithmSelect = (algorithm: Algorithm) => {
     setSelectedAlgorithm(algorithm);
-    setSpentBudget(prev => prev + algorithm.cost);
+    setSpentBudget((prev) => prev + algorithm.cost);
     setGamePhase('training');
   };
 
   const handleConfigSelect = (config: TrainingConfig) => {
     setSelectedConfig(config);
-    setSpentBudget(prev => prev + config.cost);
+    setSpentBudget((prev) => prev + config.cost);
     setGamePhase('evaluation');
     setIsTraining(true);
     setTrainingProgress(0);
@@ -374,19 +376,23 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
           <h2 className="text-2xl font-bold">Chọn Dataset Training</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {DATASETS.map((dataset) => {
-            const canAfford = dataset.cost <= (budget - spentBudget + (selectedDataset?.cost || 0));
-            
+            const canAfford = dataset.cost <= budget - spentBudget + (selectedDataset?.cost || 0);
+
             return (
               <div
                 key={dataset.id}
@@ -394,20 +400,18 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
                   selectedDataset?.id === dataset.id
                     ? 'border-purple-400 bg-purple-500/20'
                     : canAfford
-                    ? 'border-blue-400 bg-blue-500/10 hover:bg-blue-500/20'
-                    : 'border-gray-500 bg-gray-500/10 opacity-50'
+                      ? 'border-blue-400 bg-blue-500/10 hover:bg-blue-500/20'
+                      : 'border-gray-500 bg-gray-500/10 opacity-50'
                 }`}
                 onClick={() => canAfford && handleDatasetSelect(dataset)}
               >
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-lg font-bold">{dataset.name}</h3>
-                  <div className="bg-blue-600 px-2 py-1 rounded text-xs">
-                    {dataset.domain}
-                  </div>
+                  <div className="bg-blue-600 px-2 py-1 rounded text-xs">{dataset.domain}</div>
                 </div>
-                
+
                 <p className="text-sm text-gray-300 mb-4">{dataset.description}</p>
-                
+
                 <div className="grid grid-cols-2 gap-3 text-sm mb-4">
                   <div className="text-center bg-white/10 p-2 rounded">
                     <div className="text-blue-300">Kích thước</div>
@@ -454,11 +458,15 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
           <h2 className="text-2xl font-bold">Chọn AI Algorithm</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
@@ -475,8 +483,8 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {ALGORITHMS.map((algorithm) => {
-            const canAfford = algorithm.cost <= (budget - spentBudget);
-            
+            const canAfford = algorithm.cost <= budget - spentBudget;
+
             return (
               <div
                 key={algorithm.id}
@@ -489,11 +497,9 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
               >
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-lg font-bold">{algorithm.name}</h3>
-                  <div className="bg-purple-600 px-2 py-1 rounded text-xs">
-                    {algorithm.type}
-                  </div>
+                  <div className="bg-purple-600 px-2 py-1 rounded text-xs">{algorithm.type}</div>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-3 text-sm mb-4">
                   <div className="text-center bg-white/10 p-2 rounded">
                     <div className="text-green-300">Accuracy</div>
@@ -544,11 +550,15 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
           <h2 className="text-2xl font-bold">Cấu hình Training</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
@@ -566,8 +576,8 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
 
         <div className="space-y-6">
           {TRAINING_CONFIGS.map((config, index) => {
-            const canAfford = config.cost <= (budget - spentBudget);
-            
+            const canAfford = config.cost <= budget - spentBudget;
+
             return (
               <div
                 key={index}
@@ -596,16 +606,15 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
                     <div className="font-bold text-xl">{(config.validationSplit * 100).toFixed(0)}%</div>
                   </div>
                 </div>
-                
+
                 <div className="flex justify-between items-center mt-4">
                   <div className="text-sm">
-                    Early Stopping: <span className={config.earlyStopping ? 'text-green-400' : 'text-red-400'}>
+                    Early Stopping:{' '}
+                    <span className={config.earlyStopping ? 'text-green-400' : 'text-red-400'}>
                       {config.earlyStopping ? 'Có' : 'Không'}
                     </span>
                   </div>
-                  <div className="text-lg font-bold text-green-300">
-                    {config.cost}M VNĐ
-                  </div>
+                  <div className="text-lg font-bold text-green-300">{config.cost}M VNĐ</div>
                 </div>
               </div>
             );
@@ -630,12 +639,12 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
             <span className="text-xl font-bold text-green-300">{trainingProgress}%</span>
           </div>
           <div className="w-full bg-gray-700 rounded-full h-6 mb-4">
-            <div 
+            <div
               className="bg-gradient-to-r from-purple-600 to-blue-600 h-6 rounded-full transition-all duration-200"
               style={{ width: `${trainingProgress}%` }}
             ></div>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-4">
             <div className="text-center">
               <div className="text-sm text-gray-300">Dataset</div>
@@ -739,7 +748,9 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
               </div>
               <div className="flex justify-between">
                 <span>Total Budget:</span>
-                <span className="font-bold">{spentBudget}/{budget} triệu VNĐ</span>
+                <span className="font-bold">
+                  {spentBudget}/{budget} triệu VNĐ
+                </span>
               </div>
               <div className="flex justify-between">
                 <span>Cost Efficiency:</span>
@@ -757,33 +768,33 @@ const MLModelBuilderGame: React.FC<GameProps> = ({ onComplete, timeLeft, onResta
           <div className="text-gray-300 leading-relaxed">
             {overallScore >= 90 && (
               <p>
-                🎉 <strong>Outstanding AI Model!</strong> Bạn đã xây dựng một mô hình AI đẳng cấp thế giới với độ chính xác cao, 
-                hiệu quả training tối ưu và sẵn sàng deploy production. Model này có thể tạo ra giá trị kinh doanh to lớn 
-                và thúc đẩy chuyển đổi số doanh nghiệp.
+                🎉 <strong>Outstanding AI Model!</strong> Bạn đã xây dựng một mô hình AI đẳng cấp thế giới với độ chính
+                xác cao, hiệu quả training tối ưu và sẵn sàng deploy production. Model này có thể tạo ra giá trị kinh
+                doanh to lớn và thúc đẩy chuyển đổi số doanh nghiệp.
               </p>
             )}
             {overallScore >= 80 && overallScore < 90 && (
               <p>
-                ⭐ <strong>Excellent Model!</strong> AI model của bạn đạt chất lượng rất tốt với cân bằng hợp lý giữa 
+                ⭐ <strong>Excellent Model!</strong> AI model của bạn đạt chất lượng rất tốt với cân bằng hợp lý giữa
                 accuracy, speed và interpretability. Một số tinh chỉnh nhỏ sẽ giúp đạt được performance tối ưu.
               </p>
             )}
             {overallScore >= 70 && overallScore < 80 && (
               <p>
-                👍 <strong>Good Model!</strong> Model có nền tảng tốt và có thể đáp ứng nhu cầu cơ bản. 
-                Cần cải thiện thêm về accuracy hoặc optimization để đạt được hiệu quả cao hơn.
+                👍 <strong>Good Model!</strong> Model có nền tảng tốt và có thể đáp ứng nhu cầu cơ bản. Cần cải thiện
+                thêm về accuracy hoặc optimization để đạt được hiệu quả cao hơn.
               </p>
             )}
             {overallScore >= 60 && overallScore < 70 && (
               <p>
-                📈 <strong>Average Model.</strong> Model đáp ứng được yêu cầu tối thiểu nhưng cần đầu tư thêm 
-                về data quality, algorithm selection hoặc training configuration.
+                📈 <strong>Average Model.</strong> Model đáp ứng được yêu cầu tối thiểu nhưng cần đầu tư thêm về data
+                quality, algorithm selection hoặc training configuration.
               </p>
             )}
             {overallScore < 60 && (
               <p>
-                🔧 <strong>Needs Improvement.</strong> Model cần được tối ưu đáng kể về mặt kỹ thuật, 
-                data preparation và training strategy để đạt được hiệu quả thực tế.
+                🔧 <strong>Needs Improvement.</strong> Model cần được tối ưu đáng kể về mặt kỹ thuật, data preparation
+                và training strategy để đạt được hiệu quả thực tế.
               </p>
             )}
           </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Sprout, Droplet, Sun, ThermometerSun, Wifi, AlertTriangle, RotateCcw, CheckCircle } from 'lucide-react';
 
 interface GameProps {
@@ -32,7 +32,7 @@ const OPTIMAL_RANGES = {
   temperature: { min: 22, max: 28 },
   humidity: { min: 65, max: 75 },
   lightLevel: { min: 70, max: 90 },
-  ph: { min: 6.0, max: 7.0 }
+  ph: { min: 6.0, max: 7.0 },
 };
 
 const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart }) => {
@@ -54,7 +54,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
       temperature: 24,
       nutrients: 80,
       health: 90,
-      yield: 0
+      yield: 0,
     },
     {
       name: 'Rau Xà lách',
@@ -65,7 +65,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
       temperature: 22,
       nutrients: 75,
       health: 85,
-      yield: 0
+      yield: 0,
     },
     {
       name: 'Ớt Chuông',
@@ -76,8 +76,8 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
       temperature: 26,
       nutrients: 85,
       health: 88,
-      yield: 0
-    }
+      yield: 0,
+    },
   ]);
 
   const [sensorData, setSensorData] = useState<SensorData>({
@@ -85,7 +85,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
     temperature: 24,
     humidity: 70,
     lightLevel: 80,
-    ph: 6.5
+    ph: 6.5,
   });
 
   const [alerts, setAlerts] = useState<string[]>([]);
@@ -93,69 +93,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
   const [budget, setBudget] = useState(100000); // VND thousands
   const [totalRevenue, setTotalRevenue] = useState(0);
 
-  useEffect(() => {
-    if (gamePhase === 'monitoring') {
-      intervalRef.current = setInterval(() => {
-        simulateDay();
-      }, 3000); // 3 seconds per day
-
-      return () => {
-        if (intervalRef.current) {
-          clearInterval(intervalRef.current);
-        }
-      };
-    }
-  }, [gamePhase, currentDay]);
-
-  const simulateDay = () => {
-    setCurrentDay(prev => {
-      const newDay = prev + 1;
-      
-      if (newDay > totalDays) {
-        setGamePhase('results');
-        calculateFinalResults();
-        return prev;
-      }
-
-      // Simulate environmental changes
-      setSensorData(prev => ({
-        soilMoisture: Math.max(30, prev.soilMoisture - Math.random() * 10),
-        temperature: 22 + Math.random() * 8,
-        humidity: 60 + Math.random() * 20,
-        lightLevel: 70 + Math.random() * 25,
-        ph: 6.0 + Math.random() * 1.2
-      }));
-
-      // Update crop growth
-      setCrops(prev => prev.map(crop => {
-        const newGrowth = Math.min(100, crop.growth + Math.random() * 5);
-        let newStage = crop.stage;
-        
-        if (newGrowth > 80) newStage = 'harvest';
-        else if (newGrowth > 60) newStage = 'fruiting';
-        else if (newGrowth > 40) newStage = 'flowering';
-        else if (newGrowth > 20) newStage = 'growing';
-
-        const healthFactor = calculateHealthFactor();
-        const newHealth = Math.max(0, Math.min(100, crop.health + (healthFactor - 0.5) * 20));
-        
-        return {
-          ...crop,
-          growth: newGrowth,
-          stage: newStage,
-          health: newHealth,
-          yield: calculateYield(newGrowth, newHealth, crop.name)
-        };
-      }));
-
-      // Check for alerts
-      checkAlerts();
-      
-      return newDay;
-    });
-  };
-
-  const calculateHealthFactor = (): number => {
+  const calculateHealthFactor = useCallback((): number => {
     let score = 0;
     let factors = 0;
 
@@ -170,20 +108,23 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
     });
 
     return score / factors;
-  };
+  }, [sensorData]);
 
-  const calculateYield = (growth: number, health: number, cropName: string): number => {
-    const baseYield = {
-      'Cà chua Cherry': 2500,
-      'Rau Xà lách': 1800,
-      'Ớt Chuông': 2200
-    };
+  const calculateYield = useCallback(
+    (growth: number, health: number, cropName: string): number => {
+      const baseYield = {
+        'Cà chua Cherry': 2500,
+        'Rau Xà lách': 1800,
+        'Ớt Chuông': 2200,
+      };
 
-    const base = baseYield[cropName as keyof typeof baseYield] || 2000;
-    return Math.round(base * (growth / 100) * (health / 100) * farmSize);
-  };
+      const base = baseYield[cropName as keyof typeof baseYield] || 2000;
+      return Math.round(base * (growth / 100) * (health / 100) * farmSize);
+    },
+    [farmSize],
+  );
 
-  const checkAlerts = () => {
+  const checkAlerts = useCallback(() => {
     const newAlerts: string[] = [];
 
     if (sensorData.soilMoisture < 50) {
@@ -200,60 +141,28 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
     }
 
     setAlerts(newAlerts);
-  };
+  }, [sensorData]);
 
-  const performAction = (actionType: string, cost: number) => {
-    if (budget >= cost) {
-      setBudget(prev => prev - cost);
-      setActions(prev => prev + 1);
-
-      switch (actionType) {
-        case 'water':
-          setSensorData(prev => ({ ...prev, soilMoisture: Math.min(100, prev.soilMoisture + 20) }));
-          break;
-        case 'cool':
-          setSensorData(prev => ({ ...prev, temperature: Math.max(20, prev.temperature - 3) }));
-          break;
-        case 'fertilize':
-          setCrops(prev => prev.map(crop => ({ ...crop, nutrients: Math.min(100, crop.nutrients + 15) })));
-          break;
-        case 'ph-adjust':
-          setSensorData(prev => ({ ...prev, ph: 6.5 }));
-          break;
-        case 'light':
-          setSensorData(prev => ({ ...prev, lightLevel: Math.min(100, prev.lightLevel + 15) }));
-          break;
-      }
-
-      // Update score for good actions
-      setScore(prev => prev + 100);
-    }
-  };
-
-  const calculateFinalResults = () => {
+  const calculateFinalResults = useCallback(() => {
     const totalYield = crops.reduce((sum, crop) => sum + crop.yield, 0);
     const avgHealth = crops.reduce((sum, crop) => sum + crop.health, 0) / crops.length;
-    
+
     // Revenue calculation (VND per kg)
     const pricePerKg = {
       'Cà chua Cherry': 25,
       'Rau Xà lách': 20,
-      'Ớt Chuông': 30
+      'Ớt Chuông': 30,
     };
 
     const revenue = crops.reduce((sum, crop) => {
       const price = pricePerKg[crop.name as keyof typeof pricePerKg] || 25;
-      return sum + (crop.yield * price);
+      return sum + crop.yield * price;
     }, 0);
 
     setTotalRevenue(revenue);
 
     const finalScore = Math.round(
-      (avgHealth * 2) + 
-      (totalYield / 100) + 
-      (revenue / 1000) +
-      (actions * 10) -
-      (alerts.length * 50)
+      avgHealth * 2 + totalYield / 100 + revenue / 1000 + actions * 10 - alerts.length * 50,
     );
 
     setScore(finalScore);
@@ -262,6 +171,98 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
     setTimeout(() => {
       onComplete(avgHealth > 70 && totalYield > 10000);
     }, 2000);
+  }, [crops, actions, alerts, onComplete]);
+
+  const simulateDay = useCallback(() => {
+    setCurrentDay((prev) => {
+      const newDay = prev + 1;
+
+      if (newDay > totalDays) {
+        setGamePhase('results');
+        calculateFinalResults();
+        return prev;
+      }
+
+      // Simulate environmental changes
+      setSensorData((prev) => ({
+        soilMoisture: Math.max(30, prev.soilMoisture - Math.random() * 10),
+        temperature: 22 + Math.random() * 8,
+        humidity: 60 + Math.random() * 20,
+        lightLevel: 70 + Math.random() * 25,
+        ph: 6.0 + Math.random() * 1.2,
+      }));
+
+      // Update crop growth
+      setCrops((prev) =>
+        prev.map((crop) => {
+          const newGrowth = Math.min(100, crop.growth + Math.random() * 5);
+          let newStage = crop.stage;
+
+          if (newGrowth > 80) newStage = 'harvest';
+          else if (newGrowth > 60) newStage = 'fruiting';
+          else if (newGrowth > 40) newStage = 'flowering';
+          else if (newGrowth > 20) newStage = 'growing';
+
+          const healthFactor = calculateHealthFactor();
+          const newHealth = Math.max(0, Math.min(100, crop.health + (healthFactor - 0.5) * 20));
+
+          return {
+            ...crop,
+            growth: newGrowth,
+            stage: newStage,
+            health: newHealth,
+            yield: calculateYield(newGrowth, newHealth, crop.name),
+          };
+        }),
+      );
+
+      // Check for alerts
+      checkAlerts();
+
+      return newDay;
+    });
+  }, [totalDays, calculateFinalResults, calculateHealthFactor, calculateYield, checkAlerts]);
+
+  useEffect(() => {
+    if (gamePhase === 'monitoring') {
+      intervalRef.current = setInterval(() => {
+        simulateDay();
+      }, 3000); // 3 seconds per day
+
+      return () => {
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+        }
+      };
+    }
+  }, [gamePhase, simulateDay]);
+
+  const performAction = (actionType: string, cost: number) => {
+    if (budget >= cost) {
+      setBudget((prev) => prev - cost);
+      setActions((prev) => prev + 1);
+
+      switch (actionType) {
+        case 'water':
+          setSensorData((prev) => ({ ...prev, soilMoisture: Math.min(100, prev.soilMoisture + 20) }));
+          break;
+        case 'cool':
+          setSensorData((prev) => ({ ...prev, temperature: Math.max(20, prev.temperature - 3) }));
+          break;
+        case 'fertilize':
+          setCrops((prev) => prev.map((crop) => ({ ...crop, nutrients: Math.min(100, crop.nutrients + 15) })));
+          break;
+        case 'ph-adjust':
+          setSensorData((prev) => ({ ...prev, ph: 6.5 }));
+          break;
+        case 'light':
+          setSensorData((prev) => ({ ...prev, lightLevel: Math.min(100, prev.lightLevel + 15) }));
+          break;
+      }
+
+      // Update score for good actions
+      setScore((prev) => prev + 100);
+    }
   };
 
   const startMonitoring = () => {
@@ -278,10 +279,14 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'optimal': return 'text-green-400';
-      case 'warning': return 'text-yellow-400';
-      case 'critical': return 'text-red-400';
-      default: return 'text-gray-400';
+      case 'optimal':
+        return 'text-green-400';
+      case 'warning':
+        return 'text-yellow-400';
+      case 'critical':
+        return 'text-red-400';
+      default:
+        return 'text-gray-400';
     }
   };
 
@@ -336,9 +341,15 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
             <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
               <h3 className="font-semibold text-green-400 mb-2">📊 Dự báo đầu tư:</h3>
               <div className="space-y-1 text-sm">
-                <p className="text-gray-300">Chi phí IoT: <span className="text-green-400">{farmSize * 5000} nghìn VNĐ</span></p>
-                <p className="text-gray-300">Chi phí vận hành: <span className="text-green-400">{farmSize * 2000} nghìn VNĐ</span></p>
-                <p className="text-gray-300">Ngân sách khả dụng: <span className="text-green-400">{budget} nghìn VNĐ</span></p>
+                <p className="text-gray-300">
+                  Chi phí IoT: <span className="text-green-400">{farmSize * 5000} nghìn VNĐ</span>
+                </p>
+                <p className="text-gray-300">
+                  Chi phí vận hành: <span className="text-green-400">{farmSize * 2000} nghìn VNĐ</span>
+                </p>
+                <p className="text-gray-300">
+                  Ngân sách khả dụng: <span className="text-green-400">{budget} nghìn VNĐ</span>
+                </p>
               </div>
             </div>
 
@@ -368,7 +379,9 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
                   <Sprout className="w-8 h-8 mr-3 text-green-400" />
                   Smart Farm Dashboard
                 </h1>
-                <p className="text-gray-300">Cây trồng: {selectedCrop} • Quy mô: {farmSize} hecta</p>
+                <p className="text-gray-300">
+                  Cây trồng: {selectedCrop} • Quy mô: {farmSize} hecta
+                </p>
               </div>
               <div className="flex items-center space-x-4">
                 <div className="text-center">
@@ -392,7 +405,9 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
               </h3>
               <div className="space-y-1">
                 {alerts.map((alert, index) => (
-                  <p key={index} className="text-sm text-gray-300">{alert}</p>
+                  <p key={index} className="text-sm text-gray-300">
+                    {alert}
+                  </p>
                 ))}
               </div>
             </div>
@@ -412,16 +427,24 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
                   return (
                     <div key={key} className="flex items-center justify-between">
                       <span className="text-gray-300 capitalize">
-                        {key === 'soilMoisture' ? 'Độ ẩm đất' :
-                         key === 'temperature' ? 'Nhiệt độ' :
-                         key === 'humidity' ? 'Độ ẩm không khí' :
-                         key === 'lightLevel' ? 'Cường độ ánh sáng' :
-                         'pH đất'}:
+                        {key === 'soilMoisture'
+                          ? 'Độ ẩm đất'
+                          : key === 'temperature'
+                            ? 'Nhiệt độ'
+                            : key === 'humidity'
+                              ? 'Độ ẩm không khí'
+                              : key === 'lightLevel'
+                                ? 'Cường độ ánh sáng'
+                                : 'pH đất'}
+                        :
                       </span>
                       <span className={`font-medium ${getStatusColor(status)}`}>
                         {typeof value === 'number' ? value.toFixed(1) : value}
-                        {key === 'temperature' ? '°C' : 
-                         key.includes('Level') || key.includes('Moisture') || key.includes('humidity') ? '%' : ''}
+                        {key === 'temperature'
+                          ? '°C'
+                          : key.includes('Level') || key.includes('Moisture') || key.includes('humidity')
+                            ? '%'
+                            : ''}
                       </span>
                     </div>
                   );
@@ -475,7 +498,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
                 <span className="text-sm text-white">Tưới nước</span>
                 <span className="text-xs text-gray-400">5k VNĐ</span>
               </button>
-              
+
               <button
                 onClick={() => performAction('cool', 8000)}
                 disabled={budget < 8000}
@@ -485,7 +508,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
                 <span className="text-sm text-white">Làm mát</span>
                 <span className="text-xs text-gray-400">8k VNĐ</span>
               </button>
-              
+
               <button
                 onClick={() => performAction('fertilize', 12000)}
                 disabled={budget < 12000}
@@ -495,7 +518,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
                 <span className="text-sm text-white">Bón phân</span>
                 <span className="text-xs text-gray-400">12k VNĐ</span>
               </button>
-              
+
               <button
                 onClick={() => performAction('ph-adjust', 6000)}
                 disabled={budget < 6000}
@@ -505,7 +528,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
                 <span className="text-sm text-white">Điều chỉnh pH</span>
                 <span className="text-xs text-gray-400">6k VNĐ</span>
               </button>
-              
+
               <button
                 onClick={() => performAction('light', 10000)}
                 disabled={budget < 10000}
@@ -542,9 +565,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
 
             <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
               <h3 className="font-semibold text-blue-400 mb-2">💰 Doanh thu</h3>
-              <div className="text-2xl font-bold text-white">
-                {totalRevenue.toLocaleString()} VNĐ
-              </div>
+              <div className="text-2xl font-bold text-white">{totalRevenue.toLocaleString()} VNĐ</div>
               <div className="text-sm text-gray-400">Lợi nhuận ước tính</div>
             </div>
 
@@ -573,7 +594,7 @@ const SmartFarmingSimulatorGame: React.FC<GameProps> = ({ onComplete, onRestart 
               <div className="border-t border-gray-700 pt-2 mt-2">
                 <div className="flex justify-between items-center font-medium">
                   <span className="text-white">ROI ước tính:</span>
-                  <span className="text-green-400">+{((totalRevenue - 50000) / 50000 * 100).toFixed(0)}%</span>
+                  <span className="text-green-400">+{(((totalRevenue - 50000) / 50000) * 100).toFixed(0)}%</span>
                 </div>
               </div>
             </div>

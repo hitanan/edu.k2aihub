@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { uxuiDesignLessons, UXUILessonType } from '@/data/ux-ui-design-fundamentals';
-import { PageProps } from '@/types';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -13,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   if (!lessonId) {
     return { title: 'Lesson not found' };
@@ -22,7 +21,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function UXUIDesignLessonPage({ params }: PageProps) {
+export default async function UXUIDesignLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<UXUILessonType> = {
     moduleName: 'ux-ui-design-fundamentals',
     moduleTitle: 'Cơ Bản Thiết Kế UX/UI',

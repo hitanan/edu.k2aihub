@@ -1,7 +1,16 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { TrendingUp, TrendingDown, DollarSign, PieChart, Target, AlertTriangle, Briefcase, Calendar } from 'lucide-react';
+import React, { useState } from 'react';
+import {
+  TrendingUp,
+  TrendingDown,
+  DollarSign,
+  PieChart,
+  Target,
+  AlertTriangle,
+  Briefcase,
+  Calendar,
+} from 'lucide-react';
 
 interface Stock {
   id: string;
@@ -42,7 +51,7 @@ const INITIAL_STOCKS: Stock[] = [
     changePercent: 1.27,
     volume: 5000000,
     sector: 'Index',
-    risk: 'low'
+    risk: 'low',
   },
   {
     id: 'vingroup',
@@ -50,10 +59,10 @@ const INITIAL_STOCKS: Stock[] = [
     name: 'Vingroup',
     price: 85,
     change: -2,
-    changePercent: -2.30,
+    changePercent: -2.3,
     volume: 2500000,
     sector: 'Real Estate',
-    risk: 'medium'
+    risk: 'medium',
   },
   {
     id: 'vietcombank',
@@ -64,7 +73,7 @@ const INITIAL_STOCKS: Stock[] = [
     changePercent: 3.37,
     volume: 1800000,
     sector: 'Banking',
-    risk: 'low'
+    risk: 'low',
   },
   {
     id: 'fpt',
@@ -75,7 +84,7 @@ const INITIAL_STOCKS: Stock[] = [
     changePercent: 6.85,
     volume: 3200000,
     sector: 'Technology',
-    risk: 'medium'
+    risk: 'medium',
   },
   {
     id: 'pvgas',
@@ -83,10 +92,10 @@ const INITIAL_STOCKS: Stock[] = [
     name: 'PV Gas',
     price: 115,
     change: -8,
-    changePercent: -6.50,
+    changePercent: -6.5,
     volume: 1200000,
     sector: 'Energy',
-    risk: 'high'
+    risk: 'high',
   },
   {
     id: 'vinamilk',
@@ -97,8 +106,8 @@ const INITIAL_STOCKS: Stock[] = [
     changePercent: 1.49,
     volume: 900000,
     sector: 'Consumer Goods',
-    risk: 'low'
-  }
+    risk: 'low',
+  },
 ];
 
 const MARKET_EVENTS: MarketEvent[] = [
@@ -106,30 +115,30 @@ const MARKET_EVENTS: MarketEvent[] = [
     id: 'tech-boom',
     title: 'Bùng nổ công nghệ AI',
     description: 'Đầu tư mạnh vào AI và công nghệ số làm tăng giá cổ phiếu công nghệ',
-    impact: { 'FPT': 15, 'VIC': 5 },
-    duration: 3
+    impact: { FPT: 15, VIC: 5 },
+    duration: 3,
   },
   {
     id: 'banking-regulation',
     title: 'Chính sách ngân hàng mới',
     description: 'Ngân hàng Nhà nước công bố chính sách hỗ trợ thanh khoản',
-    impact: { 'VCB': 10, 'VN30': 3 },
-    duration: 2
+    impact: { VCB: 10, VN30: 3 },
+    duration: 2,
   },
   {
     id: 'oil-crisis',
     title: 'Khủng hoảng năng lượng',
     description: 'Giá dầu thế giới tăng vọt ảnh hưởng đến các công ty năng lượng',
-    impact: { 'GAS': -12, 'VN30': -2 },
-    duration: 4
+    impact: { GAS: -12, VN30: -2 },
+    duration: 4,
   },
   {
     id: 'consumer-boost',
     title: 'Tăng trưởng tiêu dùng',
     description: 'Kinh tế phục hồi mạnh, tiêu dùng trong nước tăng cao',
-    impact: { 'VNM': 8, 'VIC': 6, 'VN30': 4 },
-    duration: 3
-  }
+    impact: { VNM: 8, VIC: 6, VN30: 4 },
+    duration: 3,
+  },
 ];
 
 export default function InvestmentSimulatorGame() {
@@ -147,9 +156,9 @@ export default function InvestmentSimulatorGame() {
 
   // Calculate portfolio value
   const portfolioValue = Object.keys(portfolio).reduce((total, symbol) => {
-    const stock = stocks.find(s => s.symbol === symbol);
+    const stock = stocks.find((s) => s.symbol === symbol);
     if (stock && portfolio[symbol]) {
-      return total + (stock.price * portfolio[symbol].shares);
+      return total + stock.price * portfolio[symbol].shares;
     }
     return total;
   }, 0);
@@ -160,37 +169,38 @@ export default function InvestmentSimulatorGame() {
 
   // Market simulation - update prices each round
   const simulateMarket = () => {
-    setStocks(prevStocks => 
-      prevStocks.map(stock => {
+    setStocks((prevStocks) =>
+      prevStocks.map((stock) => {
         let priceChange = 0;
-        
+
         // Base volatility based on risk level
         const volatility = stock.risk === 'high' ? 0.08 : stock.risk === 'medium' ? 0.05 : 0.03;
         priceChange = (Math.random() - 0.5) * 2 * volatility;
-        
+
         // Apply market event effects
         if (activeEvent && activeEvent.impact[stock.symbol]) {
           priceChange += activeEvent.impact[stock.symbol] / 100;
         }
-        
+
         const newPrice = Math.max(stock.price * (1 + priceChange), 1);
         const change = newPrice - stock.price;
         const changePercent = (change / stock.price) * 100;
-        
+
         return {
           ...stock,
           price: Math.round(newPrice * 100) / 100,
           change: Math.round(change * 100) / 100,
           changePercent: Math.round(changePercent * 100) / 100,
-          volume: Math.floor(stock.volume * (0.8 + Math.random() * 0.4))
+          volume: Math.floor(stock.volume * (0.8 + Math.random() * 0.4)),
         };
-      })
+      }),
     );
   };
 
   // Random market events
   const triggerRandomEvent = () => {
-    if (Math.random() < 0.3 && !activeEvent) { // 30% chance per round
+    if (Math.random() < 0.3 && !activeEvent) {
+      // 30% chance per round
       const event = MARKET_EVENTS[Math.floor(Math.random() * MARKET_EVENTS.length)];
       setActiveEvent(event);
       setEventDuration(event.duration);
@@ -199,11 +209,11 @@ export default function InvestmentSimulatorGame() {
   };
 
   const addToLog = (message: string) => {
-    setGameLog(prev => [`Vòng ${currentRound}: ${message}`, ...prev.slice(0, 9)]);
+    setGameLog((prev) => [`Vòng ${currentRound}: ${message}`, ...prev.slice(0, 9)]);
   };
 
   const executeTrade = () => {
-    const stock = stocks.find(s => s.symbol === selectedStock);
+    const stock = stocks.find((s) => s.symbol === selectedStock);
     if (!stock || tradeAmount <= 0) return;
 
     if (tradeType === 'buy') {
@@ -212,19 +222,19 @@ export default function InvestmentSimulatorGame() {
         addToLog(`❌ Không đủ tiền để mua ${tradeAmount} cổ phiếu ${stock.symbol}`);
         return;
       }
-      
-      setBalance(prev => prev - totalCost);
-      setPortfolio(prev => ({
+
+      setBalance((prev) => prev - totalCost);
+      setPortfolio((prev) => ({
         ...prev,
         [selectedStock]: {
           shares: (prev[selectedStock]?.shares || 0) + tradeAmount,
-          avgPrice: prev[selectedStock] 
-            ? ((prev[selectedStock].avgPrice * prev[selectedStock].shares) + totalCost) / 
+          avgPrice: prev[selectedStock]
+            ? (prev[selectedStock].avgPrice * prev[selectedStock].shares + totalCost) /
               (prev[selectedStock].shares + tradeAmount)
-            : stock.price
-        }
+            : stock.price,
+        },
       }));
-      
+
       addToLog(`✅ Mua ${tradeAmount} cổ phiếu ${stock.symbol} với giá ${stock.price.toLocaleString()} VNĐ`);
     } else {
       const currentShares = portfolio[selectedStock]?.shares || 0;
@@ -232,37 +242,37 @@ export default function InvestmentSimulatorGame() {
         addToLog(`❌ Không đủ cổ phiếu ${stock.symbol} để bán`);
         return;
       }
-      
+
       const sellValue = stock.price * tradeAmount;
-      setBalance(prev => prev + sellValue);
-      setPortfolio(prev => ({
+      setBalance((prev) => prev + sellValue);
+      setPortfolio((prev) => ({
         ...prev,
         [selectedStock]: {
           ...prev[selectedStock],
-          shares: prev[selectedStock].shares - tradeAmount
-        }
+          shares: prev[selectedStock].shares - tradeAmount,
+        },
       }));
-      
+
       const profit = (stock.price - portfolio[selectedStock].avgPrice) * tradeAmount;
       addToLog(`💰 Bán ${tradeAmount} cổ phiếu ${stock.symbol} - Lãi/lỗ: ${profit.toLocaleString()} VNĐ`);
     }
-    
+
     setTradeAmount(0);
   };
 
   const nextRound = () => {
     simulateMarket();
     triggerRandomEvent();
-    
+
     if (eventDuration > 0) {
-      setEventDuration(prev => prev - 1);
+      setEventDuration((prev) => prev - 1);
       if (eventDuration === 1) {
         setActiveEvent(null);
         addToLog(`📅 Sự kiện thị trường kết thúc`);
       }
     }
-    
-    setCurrentRound(prev => prev + 1);
+
+    setCurrentRound((prev) => prev + 1);
     addToLog(`🔄 Chuyển sang vòng ${currentRound + 1}`);
   };
 
@@ -274,13 +284,23 @@ export default function InvestmentSimulatorGame() {
           <div className="bg-gray-800 p-8 rounded-xl max-w-2xl mx-4">
             <h2 className="text-2xl font-bold mb-4 text-green-400">🎯 Hướng Dẫn Đầu Tư</h2>
             <div className="space-y-4 text-gray-300">
-              <p>• <strong>Mục tiêu:</strong> Tăng giá trị tài sản từ 1 triệu VNĐ ban đầu</p>
-              <p>• <strong>Mua/Bán:</strong> Chọn cổ phiếu và số lượng để giao dịch</p>
-              <p>• <strong>Rủi ro:</strong> Cổ phiếu có mức rủi ro khác nhau (thấp/trung bình/cao)</p>
-              <p>• <strong>Sự kiện:</strong> Theo dõi tin tức thị trường ảnh hưởng giá cổ phiếu</p>
-              <p>• <strong>Đa dạng hóa:</strong> Đầu tư nhiều lĩnh vực để giảm rủi ro</p>
+              <p>
+                • <strong>Mục tiêu:</strong> Tăng giá trị tài sản từ 1 triệu VNĐ ban đầu
+              </p>
+              <p>
+                • <strong>Mua/Bán:</strong> Chọn cổ phiếu và số lượng để giao dịch
+              </p>
+              <p>
+                • <strong>Rủi ro:</strong> Cổ phiếu có mức rủi ro khác nhau (thấp/trung bình/cao)
+              </p>
+              <p>
+                • <strong>Sự kiện:</strong> Theo dõi tin tức thị trường ảnh hưởng giá cổ phiếu
+              </p>
+              <p>
+                • <strong>Đa dạng hóa:</strong> Đầu tư nhiều lĩnh vực để giảm rủi ro
+              </p>
             </div>
-            <button 
+            <button
               onClick={() => setShowTutorial(false)}
               className="mt-6 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-bold"
             >
@@ -306,19 +326,19 @@ export default function InvestmentSimulatorGame() {
           <div className="text-2xl font-bold">{balance.toLocaleString()} VNĐ</div>
           <div className="text-gray-300">Tiền mặt</div>
         </div>
-        
+
         <div className="bg-blue-900 p-6 rounded-lg text-center">
           <PieChart className="w-8 h-8 text-blue-400 mx-auto mb-2" />
           <div className="text-2xl font-bold">{portfolioValue.toLocaleString()} VNĐ</div>
           <div className="text-gray-300">Giá trị cổ phiếu</div>
         </div>
-        
+
         <div className="bg-purple-900 p-6 rounded-lg text-center">
           <Target className="w-8 h-8 text-purple-400 mx-auto mb-2" />
           <div className="text-2xl font-bold">{totalAssets.toLocaleString()} VNĐ</div>
           <div className="text-gray-300">Tổng tài sản</div>
         </div>
-        
+
         <div className={`p-6 rounded-lg text-center ${totalReturn >= 0 ? 'bg-green-900' : 'bg-red-900'}`}>
           {totalReturn >= 0 ? (
             <TrendingUp className="w-8 h-8 text-green-400 mx-auto mb-2" />
@@ -336,9 +356,7 @@ export default function InvestmentSimulatorGame() {
           <div className="flex items-center gap-2 mb-2">
             <AlertTriangle className="w-6 h-6 text-yellow-400" />
             <h3 className="text-xl font-bold text-yellow-300">{activeEvent.title}</h3>
-            <span className="text-sm bg-yellow-700 px-2 py-1 rounded">
-              {eventDuration} vòng còn lại
-            </span>
+            <span className="text-sm bg-yellow-700 px-2 py-1 rounded">{eventDuration} vòng còn lại</span>
           </div>
           <p className="text-yellow-100">{activeEvent.description}</p>
         </div>
@@ -351,14 +369,16 @@ export default function InvestmentSimulatorGame() {
             📈 Thị Trường Chứng Khoán
             <span className="text-sm bg-gray-700 px-2 py-1 rounded">Vòng {currentRound}</span>
           </h2>
-          
+
           <div className="space-y-4">
             {stocks.map((stock) => (
-              <div 
+              <div
                 key={stock.id}
                 onClick={() => setSelectedStock(stock.symbol)}
                 className={`p-4 bg-gray-700 rounded-lg cursor-pointer border-2 transition-all ${
-                  selectedStock === stock.symbol ? 'border-blue-400 bg-blue-900' : 'border-gray-600 hover:border-gray-500'
+                  selectedStock === stock.symbol
+                    ? 'border-blue-400 bg-blue-900'
+                    : 'border-gray-600 hover:border-gray-500'
                 }`}
               >
                 <div className="flex justify-between items-center">
@@ -366,40 +386,55 @@ export default function InvestmentSimulatorGame() {
                     <div className="flex items-center gap-3">
                       <div className="font-bold text-lg">{stock.symbol}</div>
                       <div className="text-gray-300">{stock.name}</div>
-                      <span className={`px-2 py-1 rounded text-xs ${
-                        stock.risk === 'high' ? 'bg-red-800 text-red-200' :
-                        stock.risk === 'medium' ? 'bg-yellow-800 text-yellow-200' :
-                        'bg-green-800 text-green-200'
-                      }`}>
-                        {stock.risk === 'high' ? 'Rủi ro cao' :
-                         stock.risk === 'medium' ? 'Rủi ro TB' : 'Rủi ro thấp'}
+                      <span
+                        className={`px-2 py-1 rounded text-xs ${
+                          stock.risk === 'high'
+                            ? 'bg-red-800 text-red-200'
+                            : stock.risk === 'medium'
+                              ? 'bg-yellow-800 text-yellow-200'
+                              : 'bg-green-800 text-green-200'
+                        }`}
+                      >
+                        {stock.risk === 'high' ? 'Rủi ro cao' : stock.risk === 'medium' ? 'Rủi ro TB' : 'Rủi ro thấp'}
                       </span>
                     </div>
                     <div className="text-gray-400 text-sm">{stock.sector}</div>
                   </div>
-                  
+
                   <div className="text-right">
                     <div className="text-2xl font-bold">{stock.price.toLocaleString()} VNĐ</div>
-                    <div className={`flex items-center gap-1 ${
-                      stock.changePercent >= 0 ? 'text-green-400' : 'text-red-400'
-                    }`}>
+                    <div
+                      className={`flex items-center gap-1 ${
+                        stock.changePercent >= 0 ? 'text-green-400' : 'text-red-400'
+                      }`}
+                    >
                       {stock.changePercent >= 0 ? (
                         <TrendingUp className="w-4 h-4" />
                       ) : (
                         <TrendingDown className="w-4 h-4" />
                       )}
-                      <span>{stock.change > 0 ? '+' : ''}{stock.change.toLocaleString()}</span>
-                      <span>({stock.changePercent > 0 ? '+' : ''}{stock.changePercent.toFixed(2)}%)</span>
+                      <span>
+                        {stock.change > 0 ? '+' : ''}
+                        {stock.change.toLocaleString()}
+                      </span>
+                      <span>
+                        ({stock.changePercent > 0 ? '+' : ''}
+                        {stock.changePercent.toFixed(2)}%)
+                      </span>
                     </div>
                   </div>
                 </div>
-                
+
                 {portfolio[stock.symbol] && (
                   <div className="mt-2 pt-2 border-t border-gray-600">
                     <div className="text-sm text-blue-300">
-                      Sở hữu: {portfolio[stock.symbol].shares} cổ phiếu | 
-                      Giá mua TB: {portfolio[stock.symbol].avgPrice.toLocaleString()} VNĐ |
-                      P&L: {((stock.price - portfolio[stock.symbol].avgPrice) * portfolio[stock.symbol].shares).toLocaleString()} VNĐ
+                      Sở hữu: {portfolio[stock.symbol].shares} cổ phiếu | Giá mua TB:{' '}
+                      {portfolio[stock.symbol].avgPrice.toLocaleString()} VNĐ | P&L:{' '}
+                      {(
+                        (stock.price - portfolio[stock.symbol].avgPrice) *
+                        portfolio[stock.symbol].shares
+                      ).toLocaleString()}{' '}
+                      VNĐ
                     </div>
                   </div>
                 )}
@@ -413,16 +448,16 @@ export default function InvestmentSimulatorGame() {
           {/* Trade Controls */}
           <div className="bg-gray-700 p-6 rounded-lg">
             <h3 className="text-xl font-bold mb-4">🔄 Giao Dịch</h3>
-            
+
             {selectedStock ? (
               <div className="space-y-4">
                 <div>
                   <div className="font-bold text-lg text-blue-300">{selectedStock}</div>
                   <div className="text-sm text-gray-400">
-                    Giá hiện tại: {stocks.find(s => s.symbol === selectedStock)?.price.toLocaleString()} VNĐ
+                    Giá hiện tại: {stocks.find((s) => s.symbol === selectedStock)?.price.toLocaleString()} VNĐ
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     onClick={() => setTradeType('buy')}
@@ -441,7 +476,7 @@ export default function InvestmentSimulatorGame() {
                     Bán
                   </button>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-bold mb-2">Số lượng cổ phiếu:</label>
                   <input
@@ -453,16 +488,17 @@ export default function InvestmentSimulatorGame() {
                     placeholder="Nhập số lượng"
                   />
                 </div>
-                
+
                 {tradeAmount > 0 && (
                   <div className="text-sm text-gray-300">
-                    {tradeType === 'buy' ? 'Tổng chi phí' : 'Tổng thu được'}: {' '}
+                    {tradeType === 'buy' ? 'Tổng chi phí' : 'Tổng thu được'}:{' '}
                     <span className="font-bold">
-                      {((stocks.find(s => s.symbol === selectedStock)?.price || 0) * tradeAmount).toLocaleString()} VNĐ
+                      {((stocks.find((s) => s.symbol === selectedStock)?.price || 0) * tradeAmount).toLocaleString()}{' '}
+                      VNĐ
                     </span>
                   </div>
                 )}
-                
+
                 <button
                   onClick={executeTrade}
                   disabled={tradeAmount <= 0}
@@ -472,9 +508,7 @@ export default function InvestmentSimulatorGame() {
                 </button>
               </div>
             ) : (
-              <div className="text-center text-gray-400 py-8">
-                Chọn một cổ phiếu để giao dịch
-              </div>
+              <div className="text-center text-gray-400 py-8">Chọn một cổ phiếu để giao dịch</div>
             )}
           </div>
 

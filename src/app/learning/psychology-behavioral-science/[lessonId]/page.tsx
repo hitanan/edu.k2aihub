@@ -8,23 +8,22 @@ import {
   psychologyBehavioralScienceLessons,
   PsychologyBehavioralScienceLesson,
 } from '@/data/psychology-behavioral-science';
-import { PageProps } from '@/types';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(psychologyBehavioralScienceLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
   return generateLessonMetadata(lessonId, psychologyBehavioralScienceLessons, 'psychology-behavioral-science');
 }
 
-export default function PsychologyBehavioralScienceLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function PsychologyBehavioralScienceLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

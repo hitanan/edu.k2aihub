@@ -5,16 +5,24 @@ import { siteConfig } from '@/config/site';
 import { BlogPost } from '@/components/blog/BlogPost';
 import { siteCode } from '@/config/site-code';
 
-// Define a specific props type for this page
-type BlogPostPageProps = {
-  params: {
-    slug: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const slug = params.slug;
+// Define a specific props type for this page
+// type BlogPostPageProps = {
+//   params: {
+//     slug: string;
+//   };
+//   searchParams?: { [key: string]: string | string[] | undefined };
+// };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  if (!slug) {
+    return notFound();
+  }
   const post = await getBlogPostBySlug(slug);
 
   if (!post) {
@@ -65,8 +73,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }));
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const slug = params.slug;
+export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
+  if (!slug) {
+    return notFound();
+  }
   const post = await getBlogPostBySlug(slug);
 
   if (!post) {

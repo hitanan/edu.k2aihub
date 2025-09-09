@@ -6,7 +6,6 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { smartManufacturingLessons } from '@/data/smart-manufacturing';
 import { SmartManufacturingLessonType } from '@/data/smart-manufacturing';
-import { PageProps } from '@/types';
 import { Factory, Cog, Zap } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -16,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -25,8 +24,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function SmartManufacturingLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function SmartManufacturingLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

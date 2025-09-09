@@ -61,7 +61,7 @@ const WASTE_SOURCES: WasteSource[] = [
     moisture_content: 35,
     environmental_benefit: 80,
     cost_per_ton: 0.5,
-    description: 'Rác sinh hoạt từ các hộ gia đình và cơ quan'
+    description: 'Rác sinh hoạt từ các hộ gia đình và cơ quan',
   },
   {
     id: 'rice-husk',
@@ -73,7 +73,7 @@ const WASTE_SOURCES: WasteSource[] = [
     moisture_content: 12,
     environmental_benefit: 90,
     cost_per_ton: 0.3,
-    description: 'Phụ phẩm từ quá trình xay xát gạo'
+    description: 'Phụ phẩm từ quá trình xay xát gạo',
   },
   {
     id: 'wood-chips',
@@ -85,7 +85,7 @@ const WASTE_SOURCES: WasteSource[] = [
     moisture_content: 15,
     environmental_benefit: 85,
     cost_per_ton: 0.8,
-    description: 'Dăm gỗ từ cành cây và gỗ thải'
+    description: 'Dăm gỗ từ cành cây và gỗ thải',
   },
   {
     id: 'food-waste',
@@ -97,7 +97,7 @@ const WASTE_SOURCES: WasteSource[] = [
     moisture_content: 70,
     environmental_benefit: 75,
     cost_per_ton: 0.2,
-    description: 'Thức ăn thừa từ nhà hàng và chợ'
+    description: 'Thức ăn thừa từ nhà hàng và chợ',
   },
   {
     id: 'industrial-waste',
@@ -109,7 +109,7 @@ const WASTE_SOURCES: WasteSource[] = [
     moisture_content: 20,
     environmental_benefit: 95,
     cost_per_ton: 1.5,
-    description: 'Chất thải từ các nhà máy sản xuất'
+    description: 'Chất thải từ các nhà máy sản xuất',
   },
   {
     id: 'bagasse',
@@ -121,8 +121,8 @@ const WASTE_SOURCES: WasteSource[] = [
     moisture_content: 50,
     environmental_benefit: 85,
     cost_per_ton: 0.1,
-    description: 'Phụ phẩm từ quá trình ép mía'
-  }
+    description: 'Phụ phẩm từ quá trình ép mía',
+  },
 ];
 
 const CONVERSION_TECHNOLOGIES: ConversionTechnology[] = [
@@ -137,7 +137,7 @@ const CONVERSION_TECHNOLOGIES: ConversionTechnology[] = [
     investment_cost: 150,
     operating_cost: 2,
     compatible_waste: ['municipal-solid', 'industrial-waste'],
-    description: 'Đốt cháy trực tiếp chất thải để sản xuất điện'
+    description: 'Đốt cháy trực tiếp chất thải để sản xuất điện',
   },
   {
     id: 'fluidized-bed-gasifier',
@@ -150,7 +150,7 @@ const CONVERSION_TECHNOLOGIES: ConversionTechnology[] = [
     investment_cost: 120,
     operating_cost: 3,
     compatible_waste: ['rice-husk', 'wood-chips', 'bagasse'],
-    description: 'Chuyển đổi chất thải thành khí có thể cháy'
+    description: 'Chuyển đổi chất thải thành khí có thể cháy',
   },
   {
     id: 'fast-pyrolysis-reactor',
@@ -163,7 +163,7 @@ const CONVERSION_TECHNOLOGIES: ConversionTechnology[] = [
     investment_cost: 100,
     operating_cost: 4,
     compatible_waste: ['wood-chips', 'rice-husk', 'industrial-waste'],
-    description: 'Phân hủy nhiệt trong môi trường không oxi'
+    description: 'Phân hủy nhiệt trong môi trường không oxi',
   },
   {
     id: 'anaerobic-digester',
@@ -176,7 +176,7 @@ const CONVERSION_TECHNOLOGIES: ConversionTechnology[] = [
     investment_cost: 80,
     operating_cost: 1.5,
     compatible_waste: ['food-waste', 'municipal-solid', 'bagasse'],
-    description: 'Sản xuất biogas từ quá trình lên men yếm khí'
+    description: 'Sản xuất biogas từ quá trình lên men yếm khí',
   },
   {
     id: 'biomass-power-plant',
@@ -189,7 +189,7 @@ const CONVERSION_TECHNOLOGIES: ConversionTechnology[] = [
     investment_cost: 200,
     operating_cost: 2.5,
     compatible_waste: ['wood-chips', 'rice-husk', 'bagasse'],
-    description: 'Đốt sinh khối trong lò hơi hiệu suất cao'
+    description: 'Đốt sinh khối trong lò hơi hiệu suất cao',
   },
   {
     id: 'waste-to-ethanol',
@@ -202,7 +202,7 @@ const CONVERSION_TECHNOLOGIES: ConversionTechnology[] = [
     investment_cost: 90,
     operating_cost: 5,
     compatible_waste: ['food-waste', 'bagasse', 'municipal-solid'],
-    description: 'Sản xuất nhiên liệu sinh học ethanol'
+    description: 'Sản xuất nhiên liệu sinh học ethanol',
   },
   {
     id: 'integrated-facility',
@@ -215,8 +215,8 @@ const CONVERSION_TECHNOLOGIES: ConversionTechnology[] = [
     investment_cost: 250,
     operating_cost: 3.5,
     compatible_waste: ['municipal-solid', 'food-waste', 'industrial-waste', 'wood-chips'],
-    description: 'Kết hợp nhiều công nghệ chuyển đổi'
-  }
+    description: 'Kết hợp nhiều công nghệ chuyển đổi',
+  },
 ];
 
 const OPTIMIZATION_FEATURES: OptimizationFeature[] = [
@@ -231,7 +231,7 @@ const OPTIMIZATION_FEATURES: OptimizationFeature[] = [
     grid_stability: 5,
     cost: 40,
     required_tech: ['mass-burn-incinerator', 'biomass-power-plant'],
-    description: 'Tận dụng nhiệt thải để tăng hiệu suất'
+    description: 'Tận dụng nhiệt thải để tăng hiệu suất',
   },
   {
     id: 'emission-control',
@@ -244,7 +244,7 @@ const OPTIMIZATION_FEATURES: OptimizationFeature[] = [
     grid_stability: 0,
     cost: 50,
     required_tech: ['mass-burn-incinerator', 'fluidized-bed-gasifier'],
-    description: 'Hệ thống lọc khí thải tiên tiến'
+    description: 'Hệ thống lọc khí thải tiên tiến',
   },
   {
     id: 'smart-automation',
@@ -257,7 +257,7 @@ const OPTIMIZATION_FEATURES: OptimizationFeature[] = [
     grid_stability: 10,
     cost: 60,
     required_tech: [],
-    description: 'AI và IoT để tối ưu hóa vận hành'
+    description: 'AI và IoT để tối ưu hóa vận hành',
   },
   {
     id: 'energy-storage',
@@ -270,7 +270,7 @@ const OPTIMIZATION_FEATURES: OptimizationFeature[] = [
     grid_stability: 30,
     cost: 70,
     required_tech: [],
-    description: 'Pin và hệ thống lưu trữ năng lượng'
+    description: 'Pin và hệ thống lưu trữ năng lượng',
   },
   {
     id: 'grid-integration',
@@ -283,7 +283,7 @@ const OPTIMIZATION_FEATURES: OptimizationFeature[] = [
     grid_stability: 40,
     cost: 45,
     required_tech: [],
-    description: 'Kết nối với lưới điện quốc gia'
+    description: 'Kết nối với lưới điện quốc gia',
   },
   {
     id: 'carbon-capture',
@@ -296,7 +296,7 @@ const OPTIMIZATION_FEATURES: OptimizationFeature[] = [
     grid_stability: 0,
     cost: 80,
     required_tech: ['mass-burn-incinerator', 'biomass-power-plant'],
-    description: 'Hệ thống CCS để giảm phát thải CO2'
+    description: 'Hệ thống CCS để giảm phát thải CO2',
   },
   {
     id: 'waste-preprocessing',
@@ -309,18 +309,19 @@ const OPTIMIZATION_FEATURES: OptimizationFeature[] = [
     grid_stability: 0,
     cost: 35,
     required_tech: [],
-    description: 'Phân loại và chuẩn bị chất thải tối ưu'
-  }
+    description: 'Phân loại và chuẩn bị chất thải tối ưu',
+  },
 ];
 
 const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'waste-selection' | 'technology-selection' | 'optimization-selection' | 'operation' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'waste-selection' | 'technology-selection' | 'optimization-selection' | 'operation' | 'results'
+  >('briefing');
   const [selectedWasteSources, setSelectedWasteSources] = useState<WasteSource[]>([]);
   const [selectedTechnology, setSelectedTechnology] = useState<ConversionTechnology | null>(null);
   const [selectedFeatures, setSelectedFeatures] = useState<OptimizationFeature[]>([]);
   const [budget, setBudget] = useState(500);
   const [operationProgress, setOperationProgress] = useState(0);
-  const [isOperating, setIsOperating] = useState(false);
 
   // Plant performance metrics
   const [energyOutput, setEnergyOutput] = useState(0);
@@ -335,7 +336,6 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
     setSelectedFeatures([]);
     setBudget(500);
     setOperationProgress(0);
-    setIsOperating(false);
     setEnergyOutput(0);
     setEnvironmentalScore(0);
     setEconomicViability(0);
@@ -358,32 +358,35 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
     if (selectedWasteSources.length === 0 || !selectedTechnology) {
       return { energy: 0, environmental: 0, economic: 0 };
     }
-    
+
     // Energy output calculation
     const totalWastePerDay = selectedWasteSources.reduce((sum, w) => sum + w.availability, 0);
-    const avgEnergyContent = selectedWasteSources.reduce((sum, w) => sum + w.energy_content * w.availability, 0) / totalWastePerDay;
-    const techEfficiency = selectedTechnology.efficiency + selectedFeatures.reduce((sum, f) => sum + f.efficiency_boost, 0);
+    const avgEnergyContent =
+      selectedWasteSources.reduce((sum, w) => sum + w.energy_content * w.availability, 0) / totalWastePerDay;
+    const techEfficiency =
+      selectedTechnology.efficiency + selectedFeatures.reduce((sum, f) => sum + f.efficiency_boost, 0);
     const dailyEnergyOutput = totalWastePerDay * avgEnergyContent * (techEfficiency / 100);
     const energyScore = Math.min(100, Math.round(dailyEnergyOutput / 100));
-    
+
     // Environmental score
-    const avgEnvironmentalBenefit = selectedWasteSources.reduce((sum, w) => sum + w.environmental_benefit * w.availability, 0) / totalWastePerDay;
+    const avgEnvironmentalBenefit =
+      selectedWasteSources.reduce((sum, w) => sum + w.environmental_benefit * w.availability, 0) / totalWastePerDay;
     const emissionReduction = selectedFeatures.reduce((sum, f) => sum + f.emission_reduction, 0);
     const baseEmissions = 100 - selectedTechnology.emissions_level;
     const environmentalScore = Math.round((avgEnvironmentalBenefit + baseEmissions + emissionReduction) / 3);
-    
+
     // Economic viability
     const wasteCost = selectedWasteSources.reduce((sum, w) => sum + w.cost_per_ton * w.availability, 0);
     const operatingCost = selectedTechnology.operating_cost * totalWastePerDay;
     const costReduction = selectedFeatures.reduce((sum, f) => sum + f.cost_reduction, 0);
     const dailyRevenue = dailyEnergyOutput * 0.8; // VND per kWh
-    const dailyProfit = dailyRevenue - wasteCost - operatingCost + (costReduction * 10);
+    const dailyProfit = dailyRevenue - wasteCost - operatingCost + costReduction * 10;
     const economicScore = Math.min(100, Math.max(0, Math.round(dailyProfit / 50 + 50)));
-    
+
     return {
       energy: Math.min(100, energyScore),
       environmental: Math.min(100, environmentalScore),
-      economic: Math.min(100, economicScore)
+      economic: Math.min(100, economicScore),
     };
   };
 
@@ -394,22 +397,21 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
     }
 
     setGamePhase('operation');
-    setIsOperating(true);
-    
+
     const plantResults = calculatePlantPerformance();
     setEnergyOutput(plantResults.energy);
     setEnvironmentalScore(plantResults.environmental);
     setEconomicViability(plantResults.economic);
-    
-    const operationComplexity = selectedWasteSources.reduce((sum, w) => sum + w.processing_difficulty, 0) / 10 +
+
+    const operationComplexity =
+      selectedWasteSources.reduce((sum, w) => sum + w.processing_difficulty, 0) / 10 +
       selectedTechnology.investment_cost / 20 +
       selectedFeatures.reduce((sum, f) => sum + f.cost, 0) / 10;
-    
+
     const interval = setInterval(() => {
-      setOperationProgress(prev => {
+      setOperationProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setIsOperating(false);
           setGamePhase('results');
           return 100;
         }
@@ -420,19 +422,19 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
 
   const getOverallScore = () => {
     const plantResults = calculatePlantPerformance();
-    const costEfficiency = Math.round((budget - calculateTotalCost()) / budget * 100);
+    const costEfficiency = Math.round(((budget - calculateTotalCost()) / budget) * 100);
     const wasteUtilization = Math.min(25, selectedWasteSources.length * 5);
     const techAdvancement = selectedTechnology ? Math.round(selectedTechnology.efficiency / 4) : 0;
     const featureIntegration = Math.min(20, selectedFeatures.length * 4);
     const gridStability = selectedFeatures.reduce((sum, f) => sum + f.grid_stability, 0) / 10;
-    
+
     return Math.round(
-      plantResults.energy * 0.30 + 
-      plantResults.environmental * 0.25 + 
-      plantResults.economic * 0.20 + 
-      costEfficiency * 0.1 + 
-      (wasteUtilization + techAdvancement + featureIntegration) * 0.1 +
-      gridStability * 0.05
+      plantResults.energy * 0.3 +
+        plantResults.environmental * 0.25 +
+        plantResults.economic * 0.2 +
+        costEfficiency * 0.1 +
+        (wasteUtilization + techAdvancement + featureIntegration) * 0.1 +
+        gridStability * 0.05,
     );
   };
 
@@ -451,9 +453,7 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
               <Flame className="w-16 h-16 text-orange-400" />
             </div>
             <h1 className="text-4xl font-bold text-white mb-4">Waste to Energy Puzzle</h1>
-            <p className="text-xl text-gray-300 mb-6">
-              Chuyển đổi chất thải thành năng lượng sạch!
-            </p>
+            <p className="text-xl text-gray-300 mb-6">Chuyển đổi chất thải thành năng lượng sạch!</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -477,10 +477,18 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                 Tiêu chí đánh giá
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-orange-400">Sản lượng năng lượng (30%)</span> - Điện năng</li>
-                <li>• <span className="text-green-400">Môi trường (25%)</span> - Giảm khí thải</li>
-                <li>• <span className="text-blue-400">Kinh tế (20%)</span> - Khả năng sinh lời</li>
-                <li>• <span className="text-purple-400">Hiệu quả (25%)</span> - Công nghệ và tích hợp</li>
+                <li>
+                  • <span className="text-orange-400">Sản lượng năng lượng (30%)</span> - Điện năng
+                </li>
+                <li>
+                  • <span className="text-green-400">Môi trường (25%)</span> - Giảm khí thải
+                </li>
+                <li>
+                  • <span className="text-blue-400">Kinh tế (20%)</span> - Khả năng sinh lời
+                </li>
+                <li>
+                  • <span className="text-purple-400">Hiệu quả (25%)</span> - Công nghệ và tích hợp
+                </li>
               </ul>
             </div>
           </div>
@@ -513,9 +521,9 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {WASTE_SOURCES.map((waste) => {
-              const isSelected = selectedWasteSources.some(w => w.id === waste.id);
+              const isSelected = selectedWasteSources.some((w) => w.id === waste.id);
               const canSelect = selectedWasteSources.length < 4;
-              
+
               return (
                 <div
                   key={waste.id}
@@ -523,14 +531,14 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                     isSelected
                       ? 'border-orange-500 bg-orange-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-orange-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-orange-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedWasteSources(prev => prev.filter(w => w.id !== waste.id));
+                      setSelectedWasteSources((prev) => prev.filter((w) => w.id !== waste.id));
                     } else if (canSelect) {
-                      setSelectedWasteSources(prev => [...prev, waste]);
+                      setSelectedWasteSources((prev) => [...prev, waste]);
                     }
                   }}
                 >
@@ -548,62 +556,69 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                       <div className="text-xs text-gray-400">{waste.availability} tấn/ngày</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{waste.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{waste.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div>
                       <span className="text-gray-400">Độ khó xử lý:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-red-500 h-1 rounded-full" 
-                          style={{width: `${waste.processing_difficulty}%`}}
+                        <div
+                          className="bg-red-500 h-1 rounded-full"
+                          style={{ width: `${waste.processing_difficulty}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Độ ẩm:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${waste.moisture_content}%`}}
+                        <div
+                          className="bg-blue-500 h-1 rounded-full"
+                          style={{ width: `${waste.moisture_content}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Lợi ích MT:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${waste.environmental_benefit}%`}}
+                        <div
+                          className="bg-green-500 h-1 rounded-full"
+                          style={{ width: `${waste.environmental_benefit}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Chi phí:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-yellow-500 h-1 rounded-full" 
-                          style={{width: `${waste.cost_per_ton * 20}%`}}
+                        <div
+                          className="bg-yellow-500 h-1 rounded-full"
+                          style={{ width: `${waste.cost_per_ton * 20}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-4 text-center">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      waste.type === 'municipal' ? 'bg-gray-500/20 text-gray-400' :
-                      waste.type === 'agricultural' ? 'bg-green-500/20 text-green-400' :
-                      waste.type === 'industrial' ? 'bg-red-500/20 text-red-400' :
-                      waste.type === 'forestry' ? 'bg-emerald-500/20 text-emerald-400' :
-                      waste.type === 'food' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-purple-500/20 text-purple-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        waste.type === 'municipal'
+                          ? 'bg-gray-500/20 text-gray-400'
+                          : waste.type === 'agricultural'
+                            ? 'bg-green-500/20 text-green-400'
+                            : waste.type === 'industrial'
+                              ? 'bg-red-500/20 text-red-400'
+                              : waste.type === 'forestry'
+                                ? 'bg-emerald-500/20 text-emerald-400'
+                                : waste.type === 'food'
+                                  ? 'bg-yellow-500/20 text-yellow-400'
+                                  : 'bg-purple-500/20 text-purple-400'
+                      }`}
+                    >
                       {waste.type}
                     </span>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -647,11 +662,11 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {CONVERSION_TECHNOLOGIES.map((tech) => {
               const isSelected = selectedTechnology?.id === tech.id;
-              const hasCompatibleWaste = tech.compatible_waste.some(wasteId =>
-                selectedWasteSources.some(w => w.id === wasteId)
+              const hasCompatibleWaste = tech.compatible_waste.some((wasteId) =>
+                selectedWasteSources.some((w) => w.id === wasteId),
               );
               const canSelect = hasCompatibleWaste;
-              
+
               return (
                 <div
                   key={tech.id}
@@ -659,8 +674,8 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                     isSelected
                       ? 'border-red-500 bg-red-500/20'
                       : !canSelect
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-red-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-red-400/50'
                   }`}
                   onClick={() => {
                     if (canSelect) {
@@ -682,44 +697,41 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                       <div className="text-xs text-gray-400">{tech.capacity} tấn/ngày</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{tech.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{tech.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div>
                       <span className="text-gray-400">Hiệu suất:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${tech.efficiency}%`}}
-                        ></div>
+                        <div className="bg-green-500 h-1 rounded-full" style={{ width: `${tech.efficiency}%` }}></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Năng lượng ra:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-orange-500 h-1 rounded-full" 
-                          style={{width: `${tech.energy_output * 4}%`}}
+                        <div
+                          className="bg-orange-500 h-1 rounded-full"
+                          style={{ width: `${tech.energy_output * 4}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Phát thải:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-red-500 h-1 rounded-full" 
-                          style={{width: `${tech.emissions_level}%`}}
+                        <div
+                          className="bg-red-500 h-1 rounded-full"
+                          style={{ width: `${tech.emissions_level}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Vận hành:</span>
                       <div className="bg-gray-700 rounded-full h-1 mt-1">
-                        <div 
-                          className="bg-yellow-500 h-1 rounded-full" 
-                          style={{width: `${tech.operating_cost * 20}%`}}
+                        <div
+                          className="bg-yellow-500 h-1 rounded-full"
+                          style={{ width: `${tech.operating_cost * 20}%` }}
                         ></div>
                       </div>
                     </div>
@@ -732,18 +744,25 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                   )}
 
                   <div className="mt-4 text-center">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      tech.method === 'incineration' ? 'bg-red-500/20 text-red-400' :
-                      tech.method === 'gasification' ? 'bg-blue-500/20 text-blue-400' :
-                      tech.method === 'pyrolysis' ? 'bg-purple-500/20 text-purple-400' :
-                      tech.method === 'anaerobic' ? 'bg-green-500/20 text-green-400' :
-                      tech.method === 'biofuel' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-orange-500/20 text-orange-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        tech.method === 'incineration'
+                          ? 'bg-red-500/20 text-red-400'
+                          : tech.method === 'gasification'
+                            ? 'bg-blue-500/20 text-blue-400'
+                            : tech.method === 'pyrolysis'
+                              ? 'bg-purple-500/20 text-purple-400'
+                              : tech.method === 'anaerobic'
+                                ? 'bg-green-500/20 text-green-400'
+                                : tech.method === 'biofuel'
+                                  ? 'bg-yellow-500/20 text-yellow-400'
+                                  : 'bg-orange-500/20 text-orange-400'
+                      }`}
+                    >
                       {tech.method}
                     </span>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -786,15 +805,16 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {OPTIMIZATION_FEATURES.map((feature) => {
-              const isSelected = selectedFeatures.some(f => f.id === feature.id);
-              const hasRequiredTech = feature.required_tech.length === 0 || 
+              const isSelected = selectedFeatures.some((f) => f.id === feature.id);
+              const hasRequiredTech =
+                feature.required_tech.length === 0 ||
                 (selectedTechnology && feature.required_tech.includes(selectedTechnology.id));
-              const currentCostWithoutFeature = (selectedTechnology?.investment_cost || 0) +
-                selectedFeatures.filter(f => f.id !== feature.id).reduce((sum, f) => sum + f.cost, 0);
-              const canSelect = selectedFeatures.length < 5 && 
-                hasRequiredTech && 
-                (currentCostWithoutFeature + feature.cost) <= budget;
-              
+              const currentCostWithoutFeature =
+                (selectedTechnology?.investment_cost || 0) +
+                selectedFeatures.filter((f) => f.id !== feature.id).reduce((sum, f) => sum + f.cost, 0);
+              const canSelect =
+                selectedFeatures.length < 5 && hasRequiredTech && currentCostWithoutFeature + feature.cost <= budget;
+
               return (
                 <div
                   key={feature.id}
@@ -802,14 +822,14 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                     isSelected
                       ? 'border-yellow-500 bg-yellow-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-yellow-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-yellow-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedFeatures(prev => prev.filter(f => f.id !== feature.id));
+                      setSelectedFeatures((prev) => prev.filter((f) => f.id !== feature.id));
                     } else if (canSelect) {
-                      setSelectedFeatures(prev => [...prev, feature]);
+                      setSelectedFeatures((prev) => [...prev, feature]);
                     }
                   }}
                 >
@@ -826,35 +846,35 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                       <div className="text-xs text-gray-400">+{feature.efficiency_boost}% hiệu suất</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{feature.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{feature.description}</p>
-                  
+
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Giảm phát thải:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-emerald-500 h-1 rounded-full" 
-                          style={{width: `${feature.emission_reduction * 1.5}%`}}
+                        <div
+                          className="bg-emerald-500 h-1 rounded-full"
+                          style={{ width: `${feature.emission_reduction * 1.5}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Giảm chi phí:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${feature.cost_reduction * 3}%`}}
+                        <div
+                          className="bg-green-500 h-1 rounded-full"
+                          style={{ width: `${feature.cost_reduction * 3}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Ổn định lưới:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${feature.grid_stability * 2.5}%`}}
+                        <div
+                          className="bg-blue-500 h-1 rounded-full"
+                          style={{ width: `${feature.grid_stability * 2.5}%` }}
                         ></div>
                       </div>
                     </div>
@@ -867,17 +887,23 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                   )}
 
                   <div className="mt-4 text-center">
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      feature.category === 'efficiency' ? 'bg-green-500/20 text-green-400' :
-                      feature.category === 'emission' ? 'bg-emerald-500/20 text-emerald-400' :
-                      feature.category === 'automation' ? 'bg-blue-500/20 text-blue-400' :
-                      feature.category === 'storage' ? 'bg-purple-500/20 text-purple-400' :
-                      'bg-yellow-500/20 text-yellow-400'
-                    }`}>
+                    <span
+                      className={`text-xs px-2 py-1 rounded ${
+                        feature.category === 'efficiency'
+                          ? 'bg-green-500/20 text-green-400'
+                          : feature.category === 'emission'
+                            ? 'bg-emerald-500/20 text-emerald-400'
+                            : feature.category === 'automation'
+                              ? 'bg-blue-500/20 text-blue-400'
+                              : feature.category === 'storage'
+                                ? 'bg-purple-500/20 text-purple-400'
+                                : 'bg-yellow-500/20 text-yellow-400'
+                      }`}
+                    >
                       {feature.category}
                     </span>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -892,23 +918,29 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
             <h3 className="text-xl font-bold text-white mb-4">Tóm tắt Nhà máy Waste-to-Energy</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div>
-                <h4 className="text-lg font-semibold text-orange-400 mb-2">Chất thải ({selectedWasteSources.length})</h4>
-                {selectedWasteSources.map(waste => (
-                  <p key={waste.id} className="text-gray-300 text-sm">{waste.name}</p>
+                <h4 className="text-lg font-semibold text-orange-400 mb-2">
+                  Chất thải ({selectedWasteSources.length})
+                </h4>
+                {selectedWasteSources.map((waste) => (
+                  <p key={waste.id} className="text-gray-300 text-sm">
+                    {waste.name}
+                  </p>
                 ))}
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-red-400 mb-2">Công nghệ</h4>
-                {selectedTechnology && (
-                  <p className="text-gray-300 text-sm">{selectedTechnology.name}</p>
-                )}
+                {selectedTechnology && <p className="text-gray-300 text-sm">{selectedTechnology.name}</p>}
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-yellow-400 mb-2">Tối ưu ({selectedFeatures.length})</h4>
-                {selectedFeatures.slice(0, 3).map(feature => (
-                  <p key={feature.id} className="text-gray-300 text-sm">{feature.name}</p>
+                {selectedFeatures.slice(0, 3).map((feature) => (
+                  <p key={feature.id} className="text-gray-300 text-sm">
+                    {feature.name}
+                  </p>
                 ))}
-                {selectedFeatures.length > 3 && <p className="text-gray-400 text-xs">+{selectedFeatures.length - 3} khác</p>}
+                {selectedFeatures.length > 3 && (
+                  <p className="text-gray-400 text-xs">+{selectedFeatures.length - 3} khác</p>
+                )}
               </div>
             </div>
             <div className="mt-4 pt-4 border-t border-white/20">
@@ -954,9 +986,9 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                 <span>{Math.round(operationProgress)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-6">
-                <div 
-                  className="bg-gradient-to-r from-orange-500 to-red-500 h-6 rounded-full transition-all duration-300" 
-                  style={{width: `${operationProgress}%`}}
+                <div
+                  className="bg-gradient-to-r from-orange-500 to-red-500 h-6 rounded-full transition-all duration-300"
+                  style={{ width: `${operationProgress}%` }}
                 ></div>
               </div>
             </div>
@@ -968,9 +1000,9 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                   <span className="text-white font-bold">{energyOutput}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-orange-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${energyOutput}%`}}
+                  <div
+                    className="bg-orange-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${energyOutput}%` }}
                   ></div>
                 </div>
               </div>
@@ -981,9 +1013,9 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                   <span className="text-white font-bold">{environmentalScore}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${environmentalScore}%`}}
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${environmentalScore}%` }}
                   ></div>
                 </div>
               </div>
@@ -994,9 +1026,9 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
                   <span className="text-white font-bold">{economicViability}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${economicViability}%`}}
+                  <div
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${economicViability}%` }}
                   ></div>
                 </div>
               </div>
@@ -1051,18 +1083,25 @@ const WasteToEnergyPuzzleGame: React.FC<GameProps> = ({ onComplete, timeLeft, on
             <div className="bg-white/10 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-4">Đánh giá tổng thể</h3>
               <div className="space-y-2 text-gray-300">
-                {plantScore >= 90 && <p>🏆 Nhà máy Waste-to-Energy xuất sắc! Giải pháp năng lượng bền vững hoàn hảo.</p>}
-                {plantScore >= 80 && plantScore < 90 && <p>🌟 Nhà máy chất lượng cao! Đóng góp tích cực cho môi trường và năng lượng.</p>}
-                {plantScore >= 70 && plantScore < 80 && <p>✅ Nhà máy tốt! Cần cải thiện một số công nghệ và quy trình.</p>}
+                {plantScore >= 90 && (
+                  <p>🏆 Nhà máy Waste-to-Energy xuất sắc! Giải pháp năng lượng bền vững hoàn hảo.</p>
+                )}
+                {plantScore >= 80 && plantScore < 90 && (
+                  <p>🌟 Nhà máy chất lượng cao! Đóng góp tích cực cho môi trường và năng lượng.</p>
+                )}
+                {plantScore >= 70 && plantScore < 80 && (
+                  <p>✅ Nhà máy tốt! Cần cải thiện một số công nghệ và quy trình.</p>
+                )}
                 {plantScore >= 60 && plantScore < 70 && <p>⚠️ Nhà máy cơ bản! Hãy đầu tư thêm công nghệ tối ưu hóa.</p>}
                 {plantScore < 60 && <p>❌ Cần cải thiện đáng kể để đạt hiệu quả kinh tế và môi trường.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
                     <strong>Chi phí đầu tư:</strong> {calculateTotalCost()} triệu VNĐ
                   </p>
                   <p className="text-sm mt-2">
-                    <strong>Lưu ý:</strong> Nhà máy Waste-to-Energy thành công cần cân bằng giữa năng lượng, môi trường và kinh tế.
+                    <strong>Lưu ý:</strong> Nhà máy Waste-to-Energy thành công cần cân bằng giữa năng lượng, môi trường
+                    và kinh tế.
                   </p>
                 </div>
               </div>

@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { mobileAppDevelopmentLessons } from '@/data/mobile-app-development';
-import { PageProps } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
 
@@ -15,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -24,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with mobile app development-specific configuration
-export default async function MobileAppLessonPage({ params }: PageProps) {
+export default async function MobileAppLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'mobile-app-development',
     moduleTitle: 'Mobile App Development',
@@ -35,7 +34,7 @@ export default async function MobileAppLessonPage({ params }: PageProps) {
     gradientColors: 'from-slate-900 via-purple-900 to-pink-900',
   };
 
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
 
   if (!lessonId) {
     return notFound();

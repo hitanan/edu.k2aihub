@@ -385,13 +385,25 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'presentation-master':
         return <PresentationMaster onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'traffic-management-simulator-3d':
-        return <TrafficManagementSimulator3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
+        return (
+          <TrafficManagementSimulator3D
+            onComplete={(success: boolean, rawScore?: number) => endGame(success, rawScore)}
+            timeLeft={timeLeft}
+            onRestart={restartGame}
+          />
+        );
       case 'neural-network-builder-3d':
         return <NeuralNetworkBuilder3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'space-station-builder-3d':
         return <EnhancedSpaceStationBuilder3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'smart-city-planner-3d':
-        return <SmartCityPlanner3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
+        return (
+          <SmartCityPlanner3D
+            onComplete={(success: boolean, rawScore?: number) => endGame(success, rawScore)}
+            timeLeft={timeLeft}
+            onRestart={restartGame}
+          />
+        );
       case 'ocean-conservation-3d':
         return <OceanConservation3D onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'aquaculture-iot-manager-3d':

@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { MetaverseVREducationLessons, MetaverseVRLessonType } from '@/data/metaverse-vr-education';
-import { PageProps } from '@/types';
 import { createModuleMetadata } from '@/utils/seo';
 
 // Generate static params for all lessons
@@ -14,8 +13,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return createModuleMetadata(
       'Metaverse & Giáo Dục VR',
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function MetaverseVRLessonPage({ params }: PageProps) {
+export default async function MetaverseVRLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<MetaverseVRLessonType> = {
     moduleName: 'metaverse-vr-education',
     moduleTitle: 'Metaverse & Giáo Dục VR',
@@ -40,6 +39,6 @@ export default function MetaverseVRLessonPage({ params }: PageProps) {
     getFieldIcon: () => <span className="w-5 h-5">🥽</span>,
     getFieldValue: (lesson) => lesson.technologyLevel || lesson.tools?.join(', ') || '',
   };
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

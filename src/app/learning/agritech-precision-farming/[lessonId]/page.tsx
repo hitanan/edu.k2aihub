@@ -8,15 +8,15 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { AgriTechLessons, AgriTechLessonData } from '@/data/agritech-precision-farming';
 import { getLessonById } from '@/utils/lesson-utils';
-import { PageProps } from '@/types';
+
 import { Sprout, Wifi, Drone, Cpu } from 'lucide-react';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(AgriTechLessons);
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }
@@ -98,8 +98,8 @@ const config: LessonPageConfig<AgriTechLessonData> = {
   ),
 };
 
-export default function AgriTechLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function AgriTechLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

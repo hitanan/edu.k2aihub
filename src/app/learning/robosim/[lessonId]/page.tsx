@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { robosimLessons, RobosimLessonType } from '@/data/robosim';
-import { PageProps } from '@/types';
 import { Bot, Cpu, Puzzle } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -13,16 +12,16 @@ export async function generateStaticParams() {
   return generateLessonStaticParams(robosimLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
   return generateLessonMetadata(lessonId, robosimLessons, 'robosim');
 }
 
-export default function RobosimLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function RobosimLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

@@ -7,7 +7,7 @@ import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { searchModulesVietnamese } from '@/utils/vietnameseSearch';
 import { isModuleData, isModuleNavigation } from '@/utils/typeguards';
-import { ModuleData, ModuleNavigation } from '@/types';
+// import { ModuleData, ModuleNavigation } from '@/types';
 
 // --- Helper functions and constants moved outside the component ---
 

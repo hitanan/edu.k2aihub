@@ -1099,7 +1099,7 @@ interface OceanConservation3DProps {
   onRestart?: () => void;
 }
 
-export default function OceanConservation3D({ onComplete, timeLeft, onRestart }: OceanConservation3DProps = {}) {
+export default function OceanConservation3D({}: OceanConservation3DProps = {}) {
   const [gameStarted, setGameStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [rescued, setRescued] = useState(0);

@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { renewableEnergyLessons, type RenewableEnergyLesson } from '@/data/renewable-energy';
-import { PageProps } from '@/types';
 import { Battery, Zap, Sun, Wind } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -15,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -40,8 +39,8 @@ function getEnergyTypeIcon(energyType?: string) {
 }
 
 // Page component with standardized config
-export default function RenewableEnergyLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function RenewableEnergyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

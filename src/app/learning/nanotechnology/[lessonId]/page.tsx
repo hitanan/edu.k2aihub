@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { nanotechnologyLessons, NanotechnologyLesson } from '@/data/nanotechnology';
-import { PageProps } from '@/types';
 import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
@@ -14,8 +13,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -23,8 +22,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with nanotechnology-specific configuration
-export default function NanotechnologyLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function NanotechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { BlockchainLessons, type BlockchainTechnologyLesson } from '@/data/blockchain-technology';
-import { PageProps } from '@/types';
+
 import { notFound } from 'next/navigation';
 import { Shield, Link2, Database, Cpu } from 'lucide-react';
 
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -35,8 +35,8 @@ function getBlockchainIcon(field: string) {
 }
 
 // Page component with standardized config
-export default async function BlockchainTechnologyLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function BlockchainTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const lesson = BlockchainLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {

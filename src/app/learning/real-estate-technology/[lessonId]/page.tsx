@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { realEstateTechnologyLessons, RealEstateTechLesson } from '@/data/real-estate-technology';
-import { PageProps } from '@/types';
 import { TrendingUp } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -15,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -51,8 +50,8 @@ function RealEstateTechSidebar({ lesson }: { lesson: RealEstateTechLesson }) {
 }
 
 // Page component with standardized config
-export default function RealEstateTechnologyLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function RealEstateTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

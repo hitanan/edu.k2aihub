@@ -23,22 +23,18 @@ interface NeuralNetworkBuilder3DProps {
   onRestart?: () => void;
 }
 
-export default function NeuralNetworkBuilder3D({ 
-  onComplete, 
-  timeLeft: gameTimeLeft, 
-  onRestart 
-}: NeuralNetworkBuilder3DProps = {}) {
+export default function NeuralNetworkBuilder3D({}: NeuralNetworkBuilder3DProps = {}) {
   const [started, setStarted] = useState(false);
   const [layers, setLayers] = useState<NetworkLayer[]>([
     { id: 'input', nodes: 3, activation: 'linear', name: 'Input Layer' },
     { id: 'hidden1', nodes: 4, activation: 'relu', name: 'Hidden Layer 1' },
-    { id: 'output', nodes: 2, activation: 'softmax', name: 'Output Layer' }
+    { id: 'output', nodes: 2, activation: 'softmax', name: 'Output Layer' },
   ]);
   const [isTraining, setIsTraining] = useState(false);
   const [trainingData, setTrainingData] = useState<TrainingData>({
     accuracy: 0,
     loss: 1.0,
-    epoch: 0
+    epoch: 0,
   });
 
   const handlePlayGame = useCallback(() => {
@@ -50,7 +46,7 @@ export default function NeuralNetworkBuilder3D({
       id: `hidden${layers.length}`,
       nodes: 3,
       activation: 'relu',
-      name: `Hidden Layer ${layers.length - 1}`
+      name: `Hidden Layer ${layers.length - 1}`,
     };
     const newLayers = [...layers];
     newLayers.splice(-1, 0, newLayer);
@@ -59,36 +55,32 @@ export default function NeuralNetworkBuilder3D({
 
   const removeLayer = (layerId: string) => {
     if (layers.length <= 2) return;
-    setLayers(prev => prev.filter(layer => layer.id !== layerId));
+    setLayers((prev) => prev.filter((layer) => layer.id !== layerId));
   };
 
   const updateLayerNodes = (layerId: string, nodes: number) => {
     if (nodes < 1 || nodes > 10) return;
-    setLayers(prev => prev.map(layer => 
-      layer.id === layerId ? { ...layer, nodes } : layer
-    ));
+    setLayers((prev) => prev.map((layer) => (layer.id === layerId ? { ...layer, nodes } : layer)));
   };
 
   const updateLayerActivation = (layerId: string, activation: string) => {
-    setLayers(prev => prev.map(layer => 
-      layer.id === layerId ? { ...layer, activation } : layer
-    ));
+    setLayers((prev) => prev.map((layer) => (layer.id === layerId ? { ...layer, activation } : layer)));
   };
 
   const startTraining = () => {
     setIsTraining(true);
     let epoch = 0;
-    
+
     const trainingInterval = setInterval(() => {
       epoch++;
       const progress = Math.min(epoch / 50, 1);
       const newAccuracy = Math.min(0.95, progress * 0.95 + Math.random() * 0.05);
       const newLoss = Math.max(0.05, 1.0 - progress + Math.random() * 0.1);
-      
+
       setTrainingData({
         accuracy: newAccuracy,
         loss: newLoss,
-        epoch
+        epoch,
       });
 
       if (epoch >= 50) {
@@ -102,7 +94,7 @@ export default function NeuralNetworkBuilder3D({
     setLayers([
       { id: 'input', nodes: 3, activation: 'linear', name: 'Input Layer' },
       { id: 'hidden1', nodes: 4, activation: 'relu', name: 'Hidden Layer 1' },
-      { id: 'output', nodes: 2, activation: 'softmax', name: 'Output Layer' }
+      { id: 'output', nodes: 2, activation: 'softmax', name: 'Output Layer' },
     ]);
     setTrainingData({ accuracy: 0, loss: 1.0, epoch: 0 });
     setIsTraining(false);
@@ -117,7 +109,8 @@ export default function NeuralNetworkBuilder3D({
             Neural Network Builder 3D Advanced
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Xây dựng và huấn luyện mạng neural trong không gian 3D tương tác. Khám phá deep learning, backpropagation, và các kiến trúc neural network tiên tiến.
+            Xây dựng và huấn luyện mạng neural trong không gian 3D tương tác. Khám phá deep learning, backpropagation,
+            và các kiến trúc neural network tiên tiến.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -131,16 +124,12 @@ export default function NeuralNetworkBuilder3D({
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6">
               <div className="text-3xl mb-3">⚡</div>
               <h3 className="text-lg font-semibold text-white mb-2">Real-time Training</h3>
-              <p className="text-gray-300 text-sm">
-                Xem quá trình học của mạng neural với visualization real-time
-              </p>
+              <p className="text-gray-300 text-sm">Xem quá trình học của mạng neural với visualization real-time</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6">
               <div className="text-3xl mb-3">🤖</div>
               <h3 className="text-lg font-semibold text-white mb-2">Interactive Learning</h3>
-              <p className="text-gray-300 text-sm">
-                Thực hành AI và machine learning qua trải nghiệm tương tác
-              </p>
+              <p className="text-gray-300 text-sm">Thực hành AI và machine learning qua trải nghiệm tương tác</p>
             </div>
           </div>
 
@@ -186,22 +175,19 @@ export default function NeuralNetworkBuilder3D({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 bg-black/30 backdrop-blur-sm rounded-xl p-6">
             <h2 className="text-xl font-bold mb-4">Network Architecture</h2>
-            
+
             <div className="space-y-4">
               {layers.map((layer, index) => (
                 <div key={layer.id} className="bg-white/5 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="font-semibold text-purple-400">{layer.name}</h3>
                     {layer.id !== 'input' && layer.id !== 'output' && (
-                      <button
-                        onClick={() => removeLayer(layer.id)}
-                        className="text-red-400 hover:text-red-300"
-                      >
+                      <button onClick={() => removeLayer(layer.id)} className="text-red-400 hover:text-red-300">
                         <Minus className="w-4 h-4" />
                       </button>
                     )}
                   </div>
-                  
+
                   <div className="flex items-center gap-4 mb-3">
                     <div className="flex items-center gap-2">
                       <span className="text-sm">Nodes:</span>
@@ -219,7 +205,7 @@ export default function NeuralNetworkBuilder3D({
                         +
                       </button>
                     </div>
-                    
+
                     <div className="flex items-center gap-2">
                       <span className="text-sm">Activation:</span>
                       <select
@@ -254,7 +240,7 @@ export default function NeuralNetworkBuilder3D({
                   </div>
                 </div>
               ))}
-              
+
               <button
                 onClick={addLayer}
                 className="w-full py-3 border-2 border-dashed border-purple-500 hover:border-purple-400 rounded-lg flex items-center justify-center gap-2 text-purple-400 hover:text-purple-300"
@@ -268,7 +254,7 @@ export default function NeuralNetworkBuilder3D({
           <div className="space-y-6">
             <div className="bg-black/30 backdrop-blur-sm rounded-xl p-6">
               <h2 className="text-xl font-bold mb-4">Training Progress</h2>
-              
+
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between text-sm mb-1">
@@ -276,7 +262,7 @@ export default function NeuralNetworkBuilder3D({
                     <span>{(trainingData.accuracy * 100).toFixed(1)}%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div 
+                    <div
                       className="bg-green-500 h-2 rounded-full transition-all"
                       style={{ width: `${trainingData.accuracy * 100}%` }}
                     />
@@ -289,7 +275,7 @@ export default function NeuralNetworkBuilder3D({
                     <span>{trainingData.loss.toFixed(3)}</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div 
+                    <div
                       className="bg-red-500 h-2 rounded-full transition-all"
                       style={{ width: `${Math.min(trainingData.loss * 100, 100)}%` }}
                     />
@@ -323,7 +309,9 @@ export default function NeuralNetworkBuilder3D({
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-400">Parameters:</span>
-                  <span>~{layers.reduce((sum, layer, i) => i > 0 ? sum + (layers[i-1].nodes * layer.nodes) : sum, 0)}</span>
+                  <span>
+                    ~{layers.reduce((sum, layer, i) => (i > 0 ? sum + layers[i - 1].nodes * layer.nodes : sum), 0)}
+                  </span>
                 </div>
               </div>
             </div>

@@ -4,93 +4,43 @@ import {
   generateLessonMetadata,
   generateLessonStaticParams,
   LessonPageConfig,
-  BaseLessonData,
 } from '@/components/learning/LessonPageTemplate';
-import { vietnameseBusinessLessons } from '@/data/vietnamese-business';
-import { PageProps } from '@/types';
+import { vietnameseBusinessLessons, VietnameseBusinessLesson } from '@/data/vietnamese-business';
 
-// Extend VietnameseBusinessLesson to be compatible with BaseLessonData
-interface ExtendedVietnameseBusinessLesson extends BaseLessonData {
-  businessTopics?: string[];
-  regulations?: string[];
-}
-
-// Transform the lessons to match BaseLessonData interface
-const transformedLessons: ExtendedVietnameseBusinessLesson[] =
-  vietnameseBusinessLessons.map((lesson) => ({
-    ...lesson,
-    // Ensure all required BaseLessonData fields are present
-    exercises: lesson.exercises.map((exercise) => ({
-      ...exercise,
-      materials: exercise.materials || [],
-      procedure: exercise.hints || [],
-      expectedResults: exercise.expectedResults || '',
-    })),
-    // Map caseStudies to match expected format
-    caseStudies:
-      lesson.caseStudies?.map((cs) => ({
-        title: cs.title,
-        organization: cs.organization,
-        problem: cs.problem,
-        solution: cs.solution,
-        impact: cs.impact,
-        innovations: cs.innovations || [],
-      })) || [],
-  }));
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(transformedLessons);
+  return generateLessonStaticParams(vietnameseBusinessLessons);
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  return generateLessonMetadata(lessonId, transformedLessons, 'vietnamese-business');
+  if (!lessonId) {
+    return {};
+  }
+  return generateLessonMetadata(lessonId, vietnameseBusinessLessons, 'vietnamese-business');
 }
 
 // Page component with standardized config
-export default async function VietnameseBusinessLessonPage({
-  params,
-}: PageProps) {
-  const config: LessonPageConfig<ExtendedVietnameseBusinessLesson> = {
+export default async function VietnameseBusinessLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
+  if (!lessonId) {
+    notFound();
+  }
+
+  const config: LessonPageConfig<VietnameseBusinessLesson> = {
     moduleName: 'vietnamese-business',
-    moduleTitle: 'Vietnamese Business Development',
+    moduleTitle: 'Phát triển Kinh doanh tại Việt Nam',
     modulePath: '/learning/vietnamese-business',
-    lessons: transformedLessons,
+    lessons: vietnameseBusinessLessons,
     primaryColor: 'emerald',
     secondaryColor: 'green',
     gradientColors: 'from-slate-900 via-emerald-900 to-slate-900',
     getFieldIcon: () => <Building className="w-5 h-5" />,
-    getFieldValue: (lesson) => lesson.businessTopics?.[0] || 'Business',
-    sidebarContent: (lesson) => (
-      <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-6">
-        <h4 className="font-semibold text-white mb-3">Business Topics</h4>
-        <div className="space-y-2">
-          {lesson.businessTopics?.map((topic, index) => (
-            <div
-              key={index}
-              className="text-sm text-gray-300 bg-emerald-500/10 p-2 rounded border border-emerald-500/20"
-            >
-              {topic}
-            </div>
-          ))}
-        </div>
-
-        <h4 className="font-semibold text-white mb-3 mt-4">Key Regulations</h4>
-        <div className="space-y-2">
-          {lesson.regulations?.map((regulation, index) => (
-            <div
-              key={index}
-              className="text-xs text-gray-400 bg-white/5 p-2 rounded border border-white/10"
-            >
-              {regulation}
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
+    getFieldValue: (lesson) => lesson.title,
   };
-  const { lessonId } = await params;
+
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

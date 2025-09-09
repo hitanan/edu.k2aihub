@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useGoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { PageTracker } from '@/components/gamification/VisitTracker';
 import { useLearningProgress } from '@/components/gamification/LearningProgress';
-import { BaseLessonData } from './LessonPageTemplate';
+import { BaseLessonData } from '@/types/lesson-base';
 
 interface LessonAnalyticsProps {
   lesson: BaseLessonData;
@@ -12,18 +12,9 @@ interface LessonAnalyticsProps {
   moduleTitle: string;
 }
 
-export function LessonAnalytics({
-  lesson,
-  moduleName,
-  moduleTitle,
-}: LessonAnalyticsProps) {
-  const {
-    trackLessonStart,
-    trackVideoPlay,
-    trackExerciseStart,
-    trackSolutionView,
-    trackResourceClick,
-  } = useGoogleAnalytics();
+export function LessonAnalytics({ lesson, moduleName, moduleTitle }: LessonAnalyticsProps) {
+  const { trackLessonStart, trackVideoPlay, trackExerciseStart, trackSolutionView, trackResourceClick } =
+    useGoogleAnalytics();
   const { completLesson } = useLearningProgress();
 
   useEffect(() => {
@@ -57,9 +48,7 @@ export function LessonAnalytics({
   // Exercise interaction tracking
   useEffect(() => {
     const exerciseButtons = document.querySelectorAll('[data-exercise-title]');
-    const solutionButtons = document.querySelectorAll(
-      '[data-solution-exercise]',
-    );
+    const solutionButtons = document.querySelectorAll('[data-solution-exercise]');
     const resourceLinks = document.querySelectorAll('[data-resource-title]');
 
     exerciseButtons.forEach((button) => {

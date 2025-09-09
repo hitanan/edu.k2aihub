@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { mentalHealthLessons, MentalHealthLessonType } from '@/data/mental-health-tech';
-import { PageProps } from '@/types';
 import { BrainCircuit } from 'lucide-react';
 import { createModuleMetadata } from '@/utils/seo';
 
@@ -15,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return createModuleMetadata(
       'Mental Health & Technology',
@@ -29,7 +28,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function MentalHealthTechLessonPage({ params }: PageProps) {
+export default async function MentalHealthTechLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<MentalHealthLessonType> = {
     moduleName: 'mental-health-tech',
     moduleTitle: 'Mental Health & Technology',
@@ -41,6 +40,6 @@ export default function MentalHealthTechLessonPage({ params }: PageProps) {
     getFieldIcon: () => <BrainCircuit className="w-5 h-5" />,
     getFieldValue: (lesson) => lesson.wellnessImpact || 'N/A',
   };
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

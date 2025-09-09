@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Check, X } from 'lucide-react';
-import { QuizQuestion } from './LessonPageTemplate';
+import { QuizQuestion } from '@/types/lesson-base';
 
 interface InteractiveQuizProps {
   quiz: QuizQuestion;
@@ -24,7 +24,7 @@ export function InteractiveQuiz({ quiz, primaryColor }: InteractiveQuizProps) {
     <div className="bg-white/5 p-4 sm:p-6 rounded-xl border border-white/10">
       <p className="font-semibold text-white mb-4 text-base sm:text-lg">{quiz.question}</p>
       <div className="space-y-3">
-        {quiz.options.map((option, index) => {
+        {quiz.options.map((option: string, index: number) => {
           const isCorrect = index === quiz.correctAnswerIndex;
           const isSelected = selectedOption === index;
           let buttonClass = `w-full text-left p-3 rounded-lg border transition-all duration-300 flex items-center justify-between min-h-[44px] text-sm sm:text-base `;

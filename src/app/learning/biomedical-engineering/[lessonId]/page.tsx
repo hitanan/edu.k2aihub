@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { biomedicalEngineeringLessons, type BiomedicalEngineeringLesson } from '@/data/biomedical-engineering';
-import { PageProps } from '@/types';
+
 import { notFound } from 'next/navigation';
 import { Heart, Brain, Dna, Bot, Shield, Activity } from 'lucide-react';
 
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -40,8 +40,8 @@ function getBiomedicalIcon(field: string) {
 }
 
 // Page component with standardized config
-export default async function BiomedicalEngineeringLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function BiomedicalEngineeringLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const lesson = biomedicalEngineeringLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {

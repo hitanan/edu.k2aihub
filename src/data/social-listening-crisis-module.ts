@@ -59,5 +59,10 @@ export const socialListeningCrisisModuleData: ModuleData = {
     'Technology company communications',
     'NGO và non-profit messaging',
   ],
+  marketDemand: {
+    averageSalary: '35-70 triệu VNĐ/tháng',
+    jobGrowth: '18% (2023-2028)',
+    hireDemand: 'Cao',
+  },
   relatedModules: [K2Module.DigitalMarketing, K2Module.ContentCreator, K2Module.EthicalMarketingPurpose],
 };

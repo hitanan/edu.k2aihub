@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { tiktokSocialCommerceLessons, TikTokSocialCommerceLessonType } from '@/data/tiktok-social-commerce';
-import { PageProps } from '@/types';
+
 import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   if (!lessonId) {
     return {};
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function TikTokSocialCommerceLessonPage({ params }: PageProps) {
+export default async function TikTokSocialCommerceLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<TikTokSocialCommerceLessonType> = {
     moduleName: 'tiktok-social-commerce',
     moduleTitle: 'TikTok Shop & Social Commerce',

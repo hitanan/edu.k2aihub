@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { circularEconomyLessons } from '@/data/circular-economy';
-import { PageProps } from '@/types';
+
 import { K2Module } from '@/data/k2-modules';
 import { notFound } from 'next/navigation';
 import { BaseLessonData } from '@/types/lesson-base';
@@ -16,16 +16,16 @@ export async function generateStaticParams() {
   return generateLessonStaticParams(circularEconomyLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
   return generateLessonMetadata(lessonId, circularEconomyLessons, MODULE_ID);
 }
 
-export default function CircularEconomyLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function CircularEconomyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

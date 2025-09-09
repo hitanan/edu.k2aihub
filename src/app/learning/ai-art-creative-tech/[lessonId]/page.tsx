@@ -15,7 +15,7 @@ import {
   Lightbulb,
   ExternalLink,
 } from 'lucide-react';
-import { PageProps } from '@/types';
+
 import CourseProgress from '@/components/learning/CourseProgress';
 
 // Generate static params
@@ -26,8 +26,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const lesson = aiArtLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
@@ -45,8 +45,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component
-export default async function AiArtLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function AiArtLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
 
   if (!lessonId) {
     notFound();

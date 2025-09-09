@@ -6,7 +6,7 @@ import { K2Module } from '@/data/k2-modules';
 import type { ModuleData } from '@/types';
 import { createModuleMetadata } from '@/utils/seo';
 
-export const blockchainDeFiModuleData: ModuleData = {
+const blockchainDeFiModuleData: ModuleData = {
   id: 'blockchain-defi',
   title: 'Blockchain & DeFi',
   subtitle: 'Từ nền tảng đến tài chính phi tập trung và NFT',

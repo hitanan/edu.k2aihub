@@ -7,10 +7,6 @@ import {
   Battery,
   Home,
   Factory,
-  TrendingUp,
-  TrendingDown,
-  AlertTriangle,
-  CheckCircle,
   Target,
   Play,
   RotateCcw,
@@ -32,7 +28,7 @@ interface EnergySource {
   type: 'solar' | 'wind' | 'hydro' | 'nuclear' | 'coal' | 'gas';
   capacity: number; // MW
   output: number; // Current MW output
-  efficiency: number; // %
+  efficiency: number; // %'
   cost: number; // $ per MW
   carbonEmission: number; // kg CO2 per MWh
   reliability: number; // 1-10
@@ -81,6 +77,204 @@ interface GridEvent {
   severity: number; // 1-10
 }
 
+// Available energy sources
+const availableSources: EnergySource[] = [
+  {
+    id: 'solar-farm',
+    name: 'Solar Farm',
+    type: 'solar',
+    capacity: 100,
+    output: 80,
+    efficiency: 22,
+    cost: 1200000,
+    carbonEmission: 48,
+    reliability: 7,
+    weatherDependent: true,
+    icon: <Sun className="w-6 h-6" />,
+    description: 'Photovoltaic solar panels generating clean energy from sunlight',
+  },
+  {
+    id: 'wind-turbine',
+    name: 'Wind Turbine Farm',
+    type: 'wind',
+    capacity: 150,
+    output: 120,
+    efficiency: 35,
+    cost: 1800000,
+    carbonEmission: 11,
+    reliability: 6,
+    weatherDependent: true,
+    icon: <Wind className="w-6 h-6" />,
+    description: 'Modern wind turbines harnessing wind power',
+  },
+  {
+    id: 'hydro-dam',
+    name: 'Hydroelectric Dam',
+    type: 'hydro',
+    capacity: 300,
+    output: 280,
+    efficiency: 90,
+    cost: 5000000,
+    carbonEmission: 24,
+    reliability: 9,
+    weatherDependent: false,
+    icon: <Droplet className="w-6 h-6" />,
+    description: 'Reliable hydroelectric power from flowing water',
+  },
+  {
+    id: 'nuclear-plant',
+    name: 'Nuclear Power Plant',
+    type: 'nuclear',
+    capacity: 1000,
+    output: 950,
+    efficiency: 33,
+    cost: 15000000,
+    carbonEmission: 12,
+    reliability: 10,
+    weatherDependent: false,
+    icon: <Zap className="w-6 h-6" />,
+    description: 'Clean nuclear power with high reliability',
+  },
+  {
+    id: 'gas-plant',
+    name: 'Natural Gas Plant',
+    type: 'gas',
+    capacity: 500,
+    output: 450,
+    efficiency: 60,
+    cost: 800000,
+    carbonEmission: 490,
+    reliability: 8,
+    weatherDependent: false,
+    icon: <Factory className="w-6 h-6" />,
+    description: 'Flexible natural gas power generation',
+  },
+  {
+    id: 'battery-storage',
+    name: 'Battery Storage',
+    type: 'solar', // Acts as renewable storage
+    capacity: 200,
+    output: 150,
+    efficiency: 85,
+    cost: 2500000,
+    carbonEmission: 0,
+    reliability: 8,
+    weatherDependent: false,
+    icon: <Battery className="w-6 h-6" />,
+    description: 'Large-scale battery storage for grid stabilization',
+  },
+];
+
+// Energy consumers
+const initialConsumers: EnergyConsumer[] = [
+  {
+    id: 'residential',
+    name: 'Residential Areas',
+    type: 'residential',
+    baseDemand: 800,
+    currentDemand: 800,
+    priority: 8,
+    icon: <Home className="w-6 h-6" />,
+    description: 'Homes and residential buildings',
+  },
+  {
+    id: 'commercial',
+    name: 'Commercial District',
+    type: 'commercial',
+    baseDemand: 600,
+    currentDemand: 600,
+    priority: 7,
+    icon: <Factory className="w-6 h-6" />,
+    description: 'Offices, shops, and commercial buildings',
+  },
+  {
+    id: 'industrial',
+    name: 'Industrial Complex',
+    type: 'industrial',
+    baseDemand: 1200,
+    currentDemand: 1200,
+    priority: 9,
+    icon: <Factory className="w-6 h-6" />,
+    description: 'Manufacturing and industrial facilities',
+  },
+];
+
+// Weather conditions
+const weatherConditions: Weather[] = [
+  {
+    condition: 'sunny',
+    solarEfficiency: 1.2,
+    windEfficiency: 0.8,
+    icon: <Sun className="w-6 h-6" />,
+    description: 'Clear sunny weather, optimal for solar power',
+  },
+  {
+    condition: 'cloudy',
+    solarEfficiency: 0.6,
+    windEfficiency: 0.9,
+    icon: <CloudRain className="w-6 h-6" />,
+    description: 'Cloudy conditions reduce solar efficiency',
+  },
+  {
+    condition: 'windy',
+    solarEfficiency: 0.9,
+    windEfficiency: 1.3,
+    icon: <Wind className="w-6 h-6" />,
+    description: 'Strong winds boost wind power generation',
+  },
+  {
+    condition: 'rainy',
+    solarEfficiency: 0.4,
+    windEfficiency: 1.1,
+    icon: <CloudRain className="w-6 h-6" />,
+    description: 'Rain reduces solar output but helps wind',
+  },
+];
+
+// Grid events
+const gridEvents: GridEvent[] = [
+  {
+    id: 'peak-demand',
+    title: 'Peak Demand Period',
+    description: 'Hot summer day increases air conditioning demand',
+    impact: { demand: 25 },
+    duration: 5,
+    severity: 6,
+  },
+  {
+    id: 'storm-damage',
+    title: 'Storm Damage',
+    description: 'Severe storm affects wind and solar generation',
+    impact: { wind: -40, solar: -60 },
+    duration: 8,
+    severity: 8,
+  },
+  {
+    id: 'industrial-expansion',
+    title: 'Industrial Expansion',
+    description: 'New factory comes online, increasing baseline demand',
+    impact: { demand: 15 },
+    duration: 15,
+    severity: 5,
+  },
+  {
+    id: 'equipment-failure',
+    title: 'Equipment Maintenance',
+    description: 'Scheduled maintenance reduces power plant output',
+    impact: { wind: -20, solar: -15 },
+    duration: 6,
+    severity: 4,
+  },
+  {
+    id: 'heat-wave',
+    title: 'Heat Wave',
+    description: 'Extreme heat increases solar efficiency but spikes demand',
+    impact: { demand: 30, solar: 20 },
+    duration: 7,
+    severity: 7,
+  },
+];
+
 const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> = ({
   onComplete,
   timeLeft,
@@ -93,7 +287,6 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
 
   // Grid management
   const [budget, setBudget] = useState(50000000); // $50M budget
-  const [totalCapacity, setTotalCapacity] = useState(0);
   const [totalOutput, setTotalOutput] = useState(0);
   const [totalDemand, setTotalDemand] = useState(0);
   const [gridStability, setGridStability] = useState(100);
@@ -113,204 +306,6 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
   const [selectedSource, setSelectedSource] = useState<EnergySource | null>(null);
   const [sourceCount, setSourceCount] = useState(1);
 
-  // Available energy sources
-  const availableSources: EnergySource[] = [
-    {
-      id: 'solar-farm',
-      name: 'Solar Farm',
-      type: 'solar',
-      capacity: 100,
-      output: 80,
-      efficiency: 22,
-      cost: 1200000,
-      carbonEmission: 48,
-      reliability: 7,
-      weatherDependent: true,
-      icon: <Sun className="w-6 h-6" />,
-      description: 'Photovoltaic solar panels generating clean energy from sunlight',
-    },
-    {
-      id: 'wind-turbine',
-      name: 'Wind Turbine Farm',
-      type: 'wind',
-      capacity: 150,
-      output: 120,
-      efficiency: 35,
-      cost: 1800000,
-      carbonEmission: 11,
-      reliability: 6,
-      weatherDependent: true,
-      icon: <Wind className="w-6 h-6" />,
-      description: 'Modern wind turbines harnessing wind power',
-    },
-    {
-      id: 'hydro-dam',
-      name: 'Hydroelectric Dam',
-      type: 'hydro',
-      capacity: 300,
-      output: 280,
-      efficiency: 90,
-      cost: 5000000,
-      carbonEmission: 24,
-      reliability: 9,
-      weatherDependent: false,
-      icon: <Droplet className="w-6 h-6" />,
-      description: 'Reliable hydroelectric power from flowing water',
-    },
-    {
-      id: 'nuclear-plant',
-      name: 'Nuclear Power Plant',
-      type: 'nuclear',
-      capacity: 1000,
-      output: 950,
-      efficiency: 33,
-      cost: 15000000,
-      carbonEmission: 12,
-      reliability: 10,
-      weatherDependent: false,
-      icon: <Zap className="w-6 h-6" />,
-      description: 'Clean nuclear power with high reliability',
-    },
-    {
-      id: 'gas-plant',
-      name: 'Natural Gas Plant',
-      type: 'gas',
-      capacity: 500,
-      output: 450,
-      efficiency: 60,
-      cost: 800000,
-      carbonEmission: 490,
-      reliability: 8,
-      weatherDependent: false,
-      icon: <Factory className="w-6 h-6" />,
-      description: 'Flexible natural gas power generation',
-    },
-    {
-      id: 'battery-storage',
-      name: 'Battery Storage',
-      type: 'solar', // Acts as renewable storage
-      capacity: 200,
-      output: 150,
-      efficiency: 85,
-      cost: 2500000,
-      carbonEmission: 0,
-      reliability: 8,
-      weatherDependent: false,
-      icon: <Battery className="w-6 h-6" />,
-      description: 'Large-scale battery storage for grid stabilization',
-    },
-  ];
-
-  // Energy consumers
-  const initialConsumers: EnergyConsumer[] = [
-    {
-      id: 'residential',
-      name: 'Residential Areas',
-      type: 'residential',
-      baseDemand: 800,
-      currentDemand: 800,
-      priority: 8,
-      icon: <Home className="w-6 h-6" />,
-      description: 'Homes and residential buildings',
-    },
-    {
-      id: 'commercial',
-      name: 'Commercial District',
-      type: 'commercial',
-      baseDemand: 600,
-      currentDemand: 600,
-      priority: 7,
-      icon: <Factory className="w-6 h-6" />,
-      description: 'Offices, shops, and commercial buildings',
-    },
-    {
-      id: 'industrial',
-      name: 'Industrial Complex',
-      type: 'industrial',
-      baseDemand: 1200,
-      currentDemand: 1200,
-      priority: 9,
-      icon: <Factory className="w-6 h-6" />,
-      description: 'Manufacturing and industrial facilities',
-    },
-  ];
-
-  // Weather conditions
-  const weatherConditions: Weather[] = [
-    {
-      condition: 'sunny',
-      solarEfficiency: 1.2,
-      windEfficiency: 0.8,
-      icon: <Sun className="w-6 h-6" />,
-      description: 'Clear sunny weather, optimal for solar power',
-    },
-    {
-      condition: 'cloudy',
-      solarEfficiency: 0.6,
-      windEfficiency: 0.9,
-      icon: <CloudRain className="w-6 h-6" />,
-      description: 'Cloudy conditions reduce solar efficiency',
-    },
-    {
-      condition: 'windy',
-      solarEfficiency: 0.9,
-      windEfficiency: 1.3,
-      icon: <Wind className="w-6 h-6" />,
-      description: 'Strong winds boost wind power generation',
-    },
-    {
-      condition: 'rainy',
-      solarEfficiency: 0.4,
-      windEfficiency: 1.1,
-      icon: <CloudRain className="w-6 h-6" />,
-      description: 'Rain reduces solar output but helps wind',
-    },
-  ];
-
-  // Grid events
-  const gridEvents: GridEvent[] = [
-    {
-      id: 'peak-demand',
-      title: 'Peak Demand Period',
-      description: 'Hot summer day increases air conditioning demand',
-      impact: { demand: 25 },
-      duration: 5,
-      severity: 6,
-    },
-    {
-      id: 'storm-damage',
-      title: 'Storm Damage',
-      description: 'Severe storm affects wind and solar generation',
-      impact: { wind: -40, solar: -60 },
-      duration: 8,
-      severity: 8,
-    },
-    {
-      id: 'industrial-expansion',
-      title: 'Industrial Expansion',
-      description: 'New factory comes online, increasing baseline demand',
-      impact: { demand: 15 },
-      duration: 15,
-      severity: 5,
-    },
-    {
-      id: 'equipment-failure',
-      title: 'Equipment Maintenance',
-      description: 'Scheduled maintenance reduces power plant output',
-      impact: { wind: -20, solar: -15 },
-      duration: 6,
-      severity: 4,
-    },
-    {
-      id: 'heat-wave',
-      title: 'Heat Wave',
-      description: 'Extreme heat increases solar efficiency but spikes demand',
-      impact: { demand: 30, solar: 20 },
-      duration: 7,
-      severity: 7,
-    },
-  ];
-
   // Add energy source to grid
   const addEnergySource = () => {
     if (!selectedSource || budget < selectedSource.cost * sourceCount) return;
@@ -329,7 +324,6 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
 
   // Calculate grid metrics
   const calculateGridMetrics = useCallback(() => {
-    const totalCap = energySources.reduce((sum, source) => sum + source.capacity, 0);
     const totalOut = energySources.reduce((sum, source) => {
       let output = source.output;
 
@@ -365,7 +359,6 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
       stability = 70; // Over supply
     else if (supplyDemandRatio >= 0.95 && supplyDemandRatio <= 1.1) stability = 100; // Optimal
 
-    setTotalCapacity(totalCap);
     setTotalOutput(totalOut);
     setTotalDemand(totalDem);
     setCarbonEmissions(emissions);
@@ -377,7 +370,7 @@ const RenewableEnergyGridManagerGame: React.FC<RenewableEnergyGridManagerProps> 
   const changeWeather = useCallback(() => {
     const newWeather = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
     setCurrentWeather(newWeather);
-  }, [weatherConditions]);
+  }, []);
 
   // Trigger grid event
   const triggerGridEvent = () => {

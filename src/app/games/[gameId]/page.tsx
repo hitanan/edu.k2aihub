@@ -3,17 +3,21 @@ import { notFound } from 'next/navigation';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 import { createTitle, createDescription } from '@/utils/seo';
 import GamePageClient from './GamePageClient';
-import { PageProps } from '@/types';
+
+type Props = {
+  params: Promise<{ gameId: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
 // Generate static params for all games
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ gameId: string }[]> {
   return EDUCATIONAL_GAMES_DATA.map((game) => ({
     gameId: game.id,
   }));
 }
 
 // Generate metadata for each game
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { gameId } = await params;
   const game = EDUCATIONAL_GAMES_DATA.find((g) => g.id === gameId);
 
@@ -57,8 +61,8 @@ const gameComponents: { [key: string]: React.ComponentType<{ onComplete: (score:
   // ... other specific game components
 };
 
-export default async function GamePage({ params }: PageProps) {
-  const gameId = params.gameId;
+export default async function GamePage({ params }: Props) {
+  const { gameId } = await params;
   if (!gameId) {
     notFound();
   }

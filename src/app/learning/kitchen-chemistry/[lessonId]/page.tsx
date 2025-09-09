@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { kitchenChemistryLessons, KitchenChemistryLessonType } from '@/data/kitchen-chemistry';
-import { PageProps } from '@/types';
 import { createModuleMetadata } from '@/utils/seo';
 import { FlaskConical } from 'lucide-react';
 
@@ -15,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return createModuleMetadata(
       'Hóa Học Trong Bếp',
@@ -29,7 +28,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component
-export default function KitchenChemistryLessonPage({ params }: PageProps) {
+export default async function KitchenChemistryLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<KitchenChemistryLessonType> = {
     moduleName: 'kitchen-chemistry',
     moduleTitle: 'Hóa Học Trong Bếp',
@@ -42,6 +41,6 @@ export default function KitchenChemistryLessonPage({ params }: PageProps) {
     getFieldValue: (lesson) => lesson.keyConcept,
   };
 
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

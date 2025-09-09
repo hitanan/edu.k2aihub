@@ -47,7 +47,7 @@ const MEDICAL_DEVICES: Device[] = [
     development: 70,
     safety: 95,
     innovation: 85,
-    description: 'Theo dõi nhịp tim và phát hiện rối loạn tim mạch thông minh'
+    description: 'Theo dõi nhịp tim và phát hiện rối loạn tim mạch thông minh',
   },
   {
     id: 'surgical-robot',
@@ -57,7 +57,7 @@ const MEDICAL_DEVICES: Device[] = [
     development: 90,
     safety: 90,
     innovation: 95,
-    description: 'Robot siêu nhỏ hỗ trợ phẫu thuật chính xác cao'
+    description: 'Robot siêu nhỏ hỗ trợ phẫu thuật chính xác cao',
   },
   {
     id: 'smart-prosthetic',
@@ -67,7 +67,7 @@ const MEDICAL_DEVICES: Device[] = [
     development: 80,
     safety: 85,
     innovation: 90,
-    description: 'Chân tay giả điều khiển bằng tín hiệu não'
+    description: 'Chân tay giả điều khiển bằng tín hiệu não',
   },
   {
     id: 'cancer-scanner',
@@ -77,7 +77,7 @@ const MEDICAL_DEVICES: Device[] = [
     development: 85,
     safety: 92,
     innovation: 88,
-    description: 'Phát hiện tế bào ung thư ở giai đoạn rất sớm'
+    description: 'Phát hiện tế bào ung thư ở giai đoạn rất sớm',
   },
   {
     id: 'drug-delivery',
@@ -87,7 +87,7 @@ const MEDICAL_DEVICES: Device[] = [
     development: 60,
     safety: 88,
     innovation: 75,
-    description: 'Tiêm thuốc tự động với liều lượng chính xác'
+    description: 'Tiêm thuốc tự động với liều lượng chính xác',
   },
   {
     id: 'brain-interface',
@@ -97,8 +97,8 @@ const MEDICAL_DEVICES: Device[] = [
     development: 95,
     safety: 80,
     innovation: 98,
-    description: 'Đọc và phiên dịch tín hiệu não để điều khiển thiết bị'
-  }
+    description: 'Đọc và phiên dịch tín hiệu não để điều khiển thiết bị',
+  },
 ];
 
 const MATERIALS: Material[] = [
@@ -108,7 +108,7 @@ const MATERIALS: Material[] = [
     biocompatibility: 95,
     durability: 90,
     cost: 40,
-    innovation: 70
+    innovation: 70,
   },
   {
     id: 'bioceramics',
@@ -116,7 +116,7 @@ const MATERIALS: Material[] = [
     biocompatibility: 90,
     durability: 85,
     cost: 60,
-    innovation: 85
+    innovation: 85,
   },
   {
     id: 'smart-polymers',
@@ -124,7 +124,7 @@ const MATERIALS: Material[] = [
     biocompatibility: 85,
     durability: 80,
     cost: 30,
-    innovation: 90
+    innovation: 90,
   },
   {
     id: 'graphene-composite',
@@ -132,7 +132,7 @@ const MATERIALS: Material[] = [
     biocompatibility: 80,
     durability: 95,
     cost: 80,
-    innovation: 95
+    innovation: 95,
   },
   {
     id: 'hydrogel',
@@ -140,8 +140,8 @@ const MATERIALS: Material[] = [
     biocompatibility: 98,
     durability: 70,
     cost: 25,
-    innovation: 80
-  }
+    innovation: 80,
+  },
 ];
 
 const TECHNOLOGIES: Technology[] = [
@@ -151,7 +151,7 @@ const TECHNOLOGIES: Technology[] = [
     type: 'ai',
     accuracy: 95,
     cost: 70,
-    complexity: 85
+    complexity: 85,
   },
   {
     id: 'quantum-sensors',
@@ -159,7 +159,7 @@ const TECHNOLOGIES: Technology[] = [
     type: 'sensors',
     accuracy: 98,
     cost: 90,
-    complexity: 95
+    complexity: 95,
   },
   {
     id: 'micro-robotics',
@@ -167,7 +167,7 @@ const TECHNOLOGIES: Technology[] = [
     type: 'robotics',
     accuracy: 90,
     cost: 85,
-    complexity: 90
+    complexity: 90,
   },
   {
     id: 'bio-sensors',
@@ -175,7 +175,7 @@ const TECHNOLOGIES: Technology[] = [
     type: 'sensors',
     accuracy: 85,
     cost: 40,
-    complexity: 60
+    complexity: 60,
   },
   {
     id: 'neural-chips',
@@ -183,7 +183,7 @@ const TECHNOLOGIES: Technology[] = [
     type: 'electronics',
     accuracy: 92,
     cost: 100,
-    complexity: 95
+    complexity: 95,
   },
   {
     id: 'smart-materials',
@@ -191,18 +191,20 @@ const TECHNOLOGIES: Technology[] = [
     type: 'materials',
     accuracy: 80,
     cost: 50,
-    complexity: 70
-  }
+    complexity: 70,
+  },
 ];
 
 const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'device-selection' | 'material-selection' | 'technology-selection' | 'development' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'device-selection' | 'material-selection' | 'technology-selection' | 'development' | 'results'
+  >('briefing');
   const [selectedDevice, setSelectedDevice] = useState<Device | null>(null);
   const [selectedMaterials, setSelectedMaterials] = useState<Material[]>([]);
   const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([]);
-  const [budget, setBudget] = useState(300);
+  const [budget] = useState(300);
   const [developmentProgress, setDevelopmentProgress] = useState(0);
-  const [isSimulating, setIsSimulating] = useState(false);
+  const [, setIsSimulating] = useState(false);
 
   // Development phases
   const [designPhase, setDesignPhase] = useState(0);
@@ -210,40 +212,44 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
   const [testingPhase, setTestingPhase] = useState(0);
   const [approvalPhase, setApprovalPhase] = useState(0);
 
-  const totalCost = (selectedDevice?.cost || 0) + 
-    selectedMaterials.reduce((sum, m) => sum + m.cost, 0) + 
+  const totalCost =
+    (selectedDevice?.cost || 0) +
+    selectedMaterials.reduce((sum, m) => sum + m.cost, 0) +
     selectedTechnologies.reduce((sum, t) => sum + t.cost, 0);
 
   const canAfford = totalCost <= budget;
 
   const calculateSafetyScore = () => {
     if (!selectedDevice || selectedMaterials.length === 0) return 0;
-    
+
     const deviceSafety = selectedDevice.safety;
     const materialSafety = selectedMaterials.reduce((sum, m) => sum + m.biocompatibility, 0) / selectedMaterials.length;
-    const technologyComplexity = selectedTechnologies.reduce((sum, t) => sum + (100 - t.complexity), 0) / Math.max(selectedTechnologies.length, 1);
-    
-    return Math.round((deviceSafety * 0.4 + materialSafety * 0.4 + technologyComplexity * 0.2));
+    const technologyComplexity =
+      selectedTechnologies.reduce((sum, t) => sum + (100 - t.complexity), 0) / Math.max(selectedTechnologies.length, 1);
+
+    return Math.round(deviceSafety * 0.4 + materialSafety * 0.4 + technologyComplexity * 0.2);
   };
 
   const calculateInnovationScore = () => {
     if (!selectedDevice || selectedMaterials.length === 0) return 0;
-    
+
     const deviceInnovation = selectedDevice.innovation;
     const materialInnovation = selectedMaterials.reduce((sum, m) => sum + m.innovation, 0) / selectedMaterials.length;
-    const technologyInnovation = selectedTechnologies.reduce((sum, t) => sum + t.accuracy, 0) / Math.max(selectedTechnologies.length, 1);
-    
-    return Math.round((deviceInnovation * 0.4 + materialInnovation * 0.3 + technologyInnovation * 0.3));
+    const technologyInnovation =
+      selectedTechnologies.reduce((sum, t) => sum + t.accuracy, 0) / Math.max(selectedTechnologies.length, 1);
+
+    return Math.round(deviceInnovation * 0.4 + materialInnovation * 0.3 + technologyInnovation * 0.3);
   };
 
   const calculateEffectivenessScore = () => {
     if (!selectedDevice || selectedMaterials.length === 0) return 0;
-    
+
     const materialDurability = selectedMaterials.reduce((sum, m) => sum + m.durability, 0) / selectedMaterials.length;
-    const technologyAccuracy = selectedTechnologies.reduce((sum, t) => sum + t.accuracy, 0) / Math.max(selectedTechnologies.length, 1);
-    const budgetEfficiency = Math.min(100, (budget - totalCost) / budget * 100);
-    
-    return Math.round((materialDurability * 0.4 + technologyAccuracy * 0.4 + budgetEfficiency * 0.2));
+    const technologyAccuracy =
+      selectedTechnologies.reduce((sum, t) => sum + t.accuracy, 0) / Math.max(selectedTechnologies.length, 1);
+    const budgetEfficiency = Math.min(100, ((budget - totalCost) / budget) * 100);
+
+    return Math.round(materialDurability * 0.4 + technologyAccuracy * 0.4 + budgetEfficiency * 0.2);
   };
 
   const startDevelopment = () => {
@@ -254,12 +260,15 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
 
     setGamePhase('development');
     setIsSimulating(true);
-    
-    const developmentSpeed = 100 - (selectedDevice.development + 
-      selectedTechnologies.reduce((sum, t) => sum + t.complexity, 0) / Math.max(selectedTechnologies.length, 1)) / 2;
-    
+
+    const developmentSpeed =
+      100 -
+      (selectedDevice.development +
+        selectedTechnologies.reduce((sum, t) => sum + t.complexity, 0) / Math.max(selectedTechnologies.length, 1)) /
+        2;
+
     const interval = setInterval(() => {
-      setDevelopmentProgress(prev => {
+      setDevelopmentProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsSimulating(false);
@@ -268,11 +277,11 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
         }
         return prev + Math.max(1, developmentSpeed / 20);
       });
-      
-      setDesignPhase(prev => Math.min(100, prev + Math.random() * 5));
-      setPrototypePhase(prev => Math.min(100, prev + Math.random() * 3));
-      setTestingPhase(prev => Math.min(100, prev + Math.random() * 2));
-      setApprovalPhase(prev => Math.min(100, prev + Math.random() * 1.5));
+
+      setDesignPhase((prev) => Math.min(100, prev + Math.random() * 5));
+      setPrototypePhase((prev) => Math.min(100, prev + Math.random() * 3));
+      setTestingPhase((prev) => Math.min(100, prev + Math.random() * 2));
+      setApprovalPhase((prev) => Math.min(100, prev + Math.random() * 1.5));
     }, 200);
   };
 
@@ -280,9 +289,9 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
     const safety = calculateSafetyScore();
     const innovation = calculateInnovationScore();
     const effectiveness = calculateEffectivenessScore();
-    const costEfficiency = Math.min(100, (budget - totalCost) / budget * 100);
-    
-    return Math.round((safety * 0.3 + innovation * 0.3 + effectiveness * 0.25 + costEfficiency * 0.15));
+    const costEfficiency = Math.min(100, ((budget - totalCost) / budget) * 100);
+
+    return Math.round(safety * 0.3 + innovation * 0.3 + effectiveness * 0.25 + costEfficiency * 0.15);
   };
 
   useEffect(() => {
@@ -300,9 +309,7 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
               <Heart className="w-16 h-16 text-red-400" />
             </div>
             <h1 className="text-4xl font-bold text-white mb-4">Thiết kế Thiết bị Y tế</h1>
-            <p className="text-xl text-gray-300 mb-6">
-              Thiết kế thiết bị y tế cách mạng để cứu sống con người!
-            </p>
+            <p className="text-xl text-gray-300 mb-6">Thiết kế thiết bị y tế cách mạng để cứu sống con người!</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -326,10 +333,18 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                 Tiêu chí đánh giá
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-red-400">An toàn (30%)</span> - Độ tương thích sinh học</li>
-                <li>• <span className="text-blue-400">Đổi mới (30%)</span> - Tính sáng tạo và tiến bộ</li>
-                <li>• <span className="text-green-400">Hiệu quả (25%)</span> - Độ chính xác và bền bỉ</li>
-                <li>• <span className="text-yellow-400">Chi phí (15%)</span> - Hiệu quả kinh tế</li>
+                <li>
+                  • <span className="text-red-400">An toàn (30%)</span> - Độ tương thích sinh học
+                </li>
+                <li>
+                  • <span className="text-blue-400">Đổi mới (30%)</span> - Tính sáng tạo và tiến bộ
+                </li>
+                <li>
+                  • <span className="text-green-400">Hiệu quả (25%)</span> - Độ chính xác và bền bỉ
+                </li>
+                <li>
+                  • <span className="text-yellow-400">Chi phí (15%)</span> - Hiệu quả kinh tế
+                </li>
               </ul>
             </div>
           </div>
@@ -380,27 +395,21 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                   </div>
                   <span className="text-yellow-400 font-bold">{device.cost}M VNĐ</span>
                 </div>
-                
+
                 <h3 className="text-lg font-bold text-white mb-2">{device.name}</h3>
                 <p className="text-gray-300 text-sm mb-4">{device.description}</p>
-                
+
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <div>
                     <span className="text-gray-400">An toàn:</span>
                     <div className="bg-gray-700 rounded-full h-2 mt-1">
-                      <div 
-                        className="bg-red-500 h-2 rounded-full" 
-                        style={{width: `${device.safety}%`}}
-                      ></div>
+                      <div className="bg-red-500 h-2 rounded-full" style={{ width: `${device.safety}%` }}></div>
                     </div>
                   </div>
                   <div>
                     <span className="text-gray-400">Đổi mới:</span>
                     <div className="bg-gray-700 rounded-full h-2 mt-1">
-                      <div 
-                        className="bg-blue-500 h-2 rounded-full" 
-                        style={{width: `${device.innovation}%`}}
-                      ></div>
+                      <div className="bg-blue-500 h-2 rounded-full" style={{ width: `${device.innovation}%` }}></div>
                     </div>
                   </div>
                 </div>
@@ -440,10 +449,9 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {MATERIALS.map((material) => {
-              const isSelected = selectedMaterials.some(m => m.id === material.id);
-              const canSelect = selectedMaterials.length < 3 && 
-                (totalCost + material.cost) <= budget;
-              
+              const isSelected = selectedMaterials.some((m) => m.id === material.id);
+              const canSelect = selectedMaterials.length < 3 && totalCost + material.cost <= budget;
+
               return (
                 <div
                   key={material.id}
@@ -451,14 +459,14 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                     isSelected
                       ? 'border-green-500 bg-green-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-green-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-green-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedMaterials(prev => prev.filter(m => m.id !== material.id));
+                      setSelectedMaterials((prev) => prev.filter((m) => m.id !== material.id));
                     } else if (canSelect) {
-                      setSelectedMaterials(prev => [...prev, material]);
+                      setSelectedMaterials((prev) => [...prev, material]);
                     }
                   }}
                 >
@@ -466,30 +474,30 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                     <Shield className="w-8 h-8 text-green-400" />
                     <span className="text-yellow-400 font-bold">{material.cost}M VNĐ</span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{material.name}</h3>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div>
                       <span className="text-gray-400">Tương thích:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${material.biocompatibility}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${material.biocompatibility}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Bền bỉ:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-blue-500 h-2 rounded-full" 
-                          style={{width: `${material.durability}%`}}
+                        <div
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: `${material.durability}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -521,7 +529,10 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Chọn công nghệ (tối đa 2)</h2>
             <div className="flex justify-center items-center gap-4 text-gray-300">
-              <span>Ngân sách còn lại: {budget - totalCost + selectedTechnologies.reduce((sum, t) => sum + t.cost, 0)} triệu VNĐ</span>
+              <span>
+                Ngân sách còn lại: {budget - totalCost + selectedTechnologies.reduce((sum, t) => sum + t.cost, 0)} triệu
+                VNĐ
+              </span>
               <span>Đã chọn: {selectedTechnologies.length}/2</span>
             </div>
             <div className="text-right text-yellow-400">
@@ -532,13 +543,13 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {TECHNOLOGIES.map((tech) => {
-              const isSelected = selectedTechnologies.some(t => t.id === tech.id);
-              const currentCostWithoutTech = (selectedDevice?.cost || 0) + 
+              const isSelected = selectedTechnologies.some((t) => t.id === tech.id);
+              const currentCostWithoutTech =
+                (selectedDevice?.cost || 0) +
                 selectedMaterials.reduce((sum, m) => sum + m.cost, 0) +
-                selectedTechnologies.filter(t => t.id !== tech.id).reduce((sum, t) => sum + t.cost, 0);
-              const canSelect = selectedTechnologies.length < 2 && 
-                (currentCostWithoutTech + tech.cost) <= budget;
-              
+                selectedTechnologies.filter((t) => t.id !== tech.id).reduce((sum, t) => sum + t.cost, 0);
+              const canSelect = selectedTechnologies.length < 2 && currentCostWithoutTech + tech.cost <= budget;
+
               return (
                 <div
                   key={tech.id}
@@ -546,14 +557,14 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                     isSelected
                       ? 'border-purple-500 bg-purple-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-purple-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-purple-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedTechnologies(prev => prev.filter(t => t.id !== tech.id));
+                      setSelectedTechnologies((prev) => prev.filter((t) => t.id !== tech.id));
                     } else if (canSelect) {
-                      setSelectedTechnologies(prev => [...prev, tech]);
+                      setSelectedTechnologies((prev) => [...prev, tech]);
                     }
                   }}
                 >
@@ -561,30 +572,24 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                     <Zap className="w-8 h-8 text-purple-400" />
                     <span className="text-yellow-400 font-bold">{tech.cost}M VNĐ</span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{tech.name}</h3>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div>
                       <span className="text-gray-400">Độ chính xác:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-purple-500 h-2 rounded-full" 
-                          style={{width: `${tech.accuracy}%`}}
-                        ></div>
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: `${tech.accuracy}%` }}></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Độ phức tạp:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-orange-500 h-2 rounded-full" 
-                          style={{width: `${tech.complexity}%`}}
-                        ></div>
+                        <div className="bg-orange-500 h-2 rounded-full" style={{ width: `${tech.complexity}%` }}></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -604,14 +609,18 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-green-400 mb-2">Vật liệu</h4>
-                {selectedMaterials.map(material => (
-                  <p key={material.id} className="text-gray-300 text-sm">{material.name}</p>
+                {selectedMaterials.map((material) => (
+                  <p key={material.id} className="text-gray-300 text-sm">
+                    {material.name}
+                  </p>
                 ))}
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-purple-400 mb-2">Công nghệ</h4>
-                {selectedTechnologies.map(tech => (
-                  <p key={tech.id} className="text-gray-300 text-sm">{tech.name}</p>
+                {selectedTechnologies.map((tech) => (
+                  <p key={tech.id} className="text-gray-300 text-sm">
+                    {tech.name}
+                  </p>
                 ))}
               </div>
             </div>
@@ -655,9 +664,9 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                 <span>{Math.round(designPhase)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-4">
-                <div 
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 h-4 rounded-full transition-all duration-500" 
-                  style={{width: `${designPhase}%`}}
+                <div
+                  className="bg-gradient-to-r from-blue-500 to-cyan-500 h-4 rounded-full transition-all duration-500"
+                  style={{ width: `${designPhase}%` }}
                 ></div>
               </div>
             </div>
@@ -668,9 +677,9 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                 <span>{Math.round(prototypePhase)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-4">
-                <div 
-                  className="bg-gradient-to-r from-green-500 to-emerald-500 h-4 rounded-full transition-all duration-500" 
-                  style={{width: `${prototypePhase}%`}}
+                <div
+                  className="bg-gradient-to-r from-green-500 to-emerald-500 h-4 rounded-full transition-all duration-500"
+                  style={{ width: `${prototypePhase}%` }}
                 ></div>
               </div>
             </div>
@@ -681,9 +690,9 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                 <span>{Math.round(testingPhase)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-4">
-                <div 
-                  className="bg-gradient-to-r from-yellow-500 to-orange-500 h-4 rounded-full transition-all duration-500" 
-                  style={{width: `${testingPhase}%`}}
+                <div
+                  className="bg-gradient-to-r from-yellow-500 to-orange-500 h-4 rounded-full transition-all duration-500"
+                  style={{ width: `${testingPhase}%` }}
                 ></div>
               </div>
             </div>
@@ -694,18 +703,16 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                 <span>{Math.round(approvalPhase)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-4">
-                <div 
-                  className="bg-gradient-to-r from-red-500 to-pink-500 h-4 rounded-full transition-all duration-500" 
-                  style={{width: `${approvalPhase}%`}}
+                <div
+                  className="bg-gradient-to-r from-red-500 to-pink-500 h-4 rounded-full transition-all duration-500"
+                  style={{ width: `${approvalPhase}%` }}
                 ></div>
               </div>
             </div>
           </div>
 
           <div className="text-center">
-            <div className="text-6xl font-bold text-white mb-4">
-              {Math.round(developmentProgress)}%
-            </div>
+            <div className="text-6xl font-bold text-white mb-4">{Math.round(developmentProgress)}%</div>
             <p className="text-gray-300">Hoàn thành phát triển</p>
           </div>
         </div>
@@ -760,11 +767,11 @@ const MedicalDeviceDesignerGame: React.FC<GameProps> = ({ onComplete, timeLeft, 
                 {deviceScore >= 70 && deviceScore < 80 && <p>✅ Thiết bị tốt! Có thể ứng dụng thực tế.</p>}
                 {deviceScore >= 60 && deviceScore < 70 && <p>⚠️ Thiết bị khá ổn! Cần cải thiện thêm.</p>}
                 {deviceScore < 60 && <p>❌ Thiết bị cần phát triển thêm để đảm bảo an toàn.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
-                    <strong>Lời khuyên:</strong> Thiết bị y tế cần cân bằng giữa an toàn, 
-                    đổi mới và hiệu quả kinh tế để có thể ứng dụng rộng rãi trong y tế.
+                    <strong>Lời khuyên:</strong> Thiết bị y tế cần cân bằng giữa an toàn, đổi mới và hiệu quả kinh tế để
+                    có thể ứng dụng rộng rãi trong y tế.
                   </p>
                 </div>
               </div>

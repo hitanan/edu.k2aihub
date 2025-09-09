@@ -2,7 +2,7 @@ import { gameDevLessons } from '@/data/game-development';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { PageProps } from '@/types';
+
 import { createTitle, createDescription } from '@/utils/seo';
 import { Metadata } from 'next';
 
@@ -12,8 +12,8 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
+  const { lessonId } = await params;
   const lesson = gameDevLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
@@ -50,8 +50,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function GameDevelopmentLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function GameDevelopmentLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const lesson = gameDevLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {

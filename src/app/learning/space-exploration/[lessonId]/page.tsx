@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { spaceLessons, type SpaceExplorationLesson } from '@/data/space-exploration';
-import { PageProps } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
 import { Rocket, Satellite, Globe, Star } from 'lucide-react';
 import { notFound } from 'next/navigation';
@@ -45,8 +44,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -65,8 +64,8 @@ function getSpaceIcon(field: string) {
 }
 
 // Page component with standardized config
-export default function SpaceExplorationLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function SpaceExplorationLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

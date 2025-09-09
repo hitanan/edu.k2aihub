@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { crossBorderEcommerceLessons, CrossBorderEcommerceLessonData } from '@/data/cross-border-ecommerce';
-import { PageProps } from '@/types';
+
 import { Globe, ShoppingCart, TrendingUp } from 'lucide-react';
 
 // Generate static params for all lessons
@@ -14,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Lesson not found',
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function CrossBorderEcommerceLessonPage({ params }: PageProps) {
+export default async function CrossBorderEcommerceLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<CrossBorderEcommerceLessonData> = {
     moduleName: 'cross-border-ecommerce',
     moduleTitle: 'Thương mại Điện tử Xuyên biên giới',
@@ -96,6 +96,6 @@ export default function CrossBorderEcommerceLessonPage({ params }: PageProps) {
     ),
   };
 
-  const { lessonId } = params;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { genZMarketingLessons, GenZMarketingLesson } from '@/data/genz-marketing';
-import { PageProps } from '@/types';
+
 import { Metadata } from 'next';
 import { createTitle } from '@/utils/seo';
 
@@ -15,8 +15,8 @@ export function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export function generateMetadata({ params }: PageProps): Metadata {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: createTitle('Bài học không tồn tại'),
@@ -27,8 +27,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 // Page component with standardized config
-export default function GenZMarketingLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function GenZMarketingLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
 
   const config: LessonPageConfig<GenZMarketingLesson> = {
     moduleName: 'genz-marketing',

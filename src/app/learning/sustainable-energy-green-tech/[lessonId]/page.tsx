@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { PageProps } from '@/types';
+
 import {
   LessonPageTemplate,
   LessonPageConfig,
@@ -10,16 +10,16 @@ import { sustainableEnergyGreenTechLessons } from '@/data/sustainable-energy-gre
 import { sustainableEnergyModuleData } from '@/data/sustainable-energy-green-tech-module';
 import { BaseLessonData } from '@/types/lesson-base';
 
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
   return generateLessonMetadata(lessonId, sustainableEnergyGreenTechLessons, 'sustainable-energy-green-tech');
 }
 
-export default async function SustainableEnergyGreenTechLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function SustainableEnergyGreenTechLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

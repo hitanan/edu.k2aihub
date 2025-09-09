@@ -49,6 +49,7 @@ export function generateUnsplashImage(config: {
     ...themeKeywords[theme].slice(0, 2), // Take first 2 theme keywords
   ];
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const searchQuery = combinedKeywords.join(',');
 
   // Use Unsplash Source API for reliable, high-quality educational images
@@ -141,7 +142,7 @@ export function generateTwitterCardTags(config: SocialSeoConfig) {
 /**
  * Generate Facebook-specific meta tags for enhanced sharing
  */
-export function generateFacebookTags(config: SocialSeoConfig) {
+export function generateFacebookTags() {
   return {
     'fb:app_id': '1234567890123456', // Replace with actual Facebook App ID when available
     property: 'og:see_also',
@@ -155,7 +156,7 @@ export function generateFacebookTags(config: SocialSeoConfig) {
 export function generateCompleteSocialMetaTags(config: SocialSeoConfig) {
   const openGraph = generateOpenGraphTags(config);
   const twitter = generateTwitterCardTags(config);
-  const facebook = generateFacebookTags(config);
+  const facebook = generateFacebookTags();
 
   // Convert to Next.js metadata format
   return {

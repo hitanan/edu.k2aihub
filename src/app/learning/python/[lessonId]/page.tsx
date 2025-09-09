@@ -3,7 +3,6 @@ import { createTitle, createDescription } from '@/utils/seo';
 import { pythonLessons } from '@/data/python';
 import Link from 'next/link';
 import { Clock, Target, User, Play, ChevronLeft, ChevronRight, Code, CheckCircle, Youtube } from 'lucide-react';
-import { PageProps } from '@/types';
 
 // Generate static params
 export async function generateStaticParams() {
@@ -13,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   const lesson = pythonLessons.find((l) => l.id === lessonId);
 
@@ -32,7 +31,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component
-export default async function PythonLessonPage({ params }: PageProps) {
+export default async function PythonLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   const lesson = pythonLessons.find((l) => l.id === lessonId);
 

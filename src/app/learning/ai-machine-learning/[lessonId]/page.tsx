@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { aiMachineLearningLessons } from '@/data/ai-machine-learning';
-import { PageProps } from '@/types';
+
 import { BaseLessonData } from '@/types/lesson-base';
 import { Brain } from 'lucide-react';
 
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Lesson not found',
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function AIMachineLearningLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function AIMachineLearningLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return null;
   }

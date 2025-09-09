@@ -5,15 +5,15 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { AIForStudentsLessons } from '@/data/ai-for-students';
-import { PageProps } from '@/types';
+
 import { BaseLessonData } from '@/types/lesson-base';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(AIForStudentsLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Lesson not found',
@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: PageProps) {
   return generateLessonMetadata(lessonId, AIForStudentsLessons, 'ai-for-students');
 }
 
-export default async function AIForStudentsLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function AIForStudentsLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return null;
   }

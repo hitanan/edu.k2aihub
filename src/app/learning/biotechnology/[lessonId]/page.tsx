@@ -5,15 +5,15 @@ import {
   type LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { biotechnologyLessons, type BiotechnologyLesson } from '@/data/biotechnology';
-import { PageProps } from '@/types';
+
 import { Dna, Heart, Leaf, TestTube, Microscope, FlaskConical } from 'lucide-react';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(biotechnologyLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Lesson not found',
@@ -61,8 +61,8 @@ const sidebarContent = (lesson: BiotechnologyLesson) => (
   </>
 );
 
-export default async function BiotechnologyLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function BiotechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return null;
   }

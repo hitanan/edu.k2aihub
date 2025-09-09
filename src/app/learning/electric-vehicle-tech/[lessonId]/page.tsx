@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { electricVehicleLessons } from '@/data/electric-vehicle-tech';
-import { PageProps } from '@/types';
+
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { createTitle } from '@/utils/seo';
@@ -15,8 +15,8 @@ export function generateStaticParams() {
   return generateLessonStaticParams(electricVehicleLessons);
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: createTitle('Bài học không tồn tại'),
@@ -26,8 +26,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return generateLessonMetadata(lessonId, electricVehicleLessons, 'electric-vehicle-tech');
 }
 
-export default function ElectricVehicleLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function ElectricVehicleLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

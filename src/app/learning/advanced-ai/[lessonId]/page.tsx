@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { advancedAILessons } from '@/data/advanced-ai';
-import { PageProps } from '@/types';
+
 import { BaseLessonData, CaseStudy } from '@/types/lesson-base';
 import { Brain, Eye, MessageSquare, Target, Shield } from 'lucide-react';
 import { notFound } from 'next/navigation';
@@ -16,8 +16,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return { title: 'Lesson not found' };
   }
@@ -43,8 +43,8 @@ function getAIDomainIcon(aiDomain: string) {
 }
 
 // Page component with standardized config
-export default async function AdvancedAILessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function AdvancedAILessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

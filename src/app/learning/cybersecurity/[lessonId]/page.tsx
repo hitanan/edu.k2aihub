@@ -17,7 +17,6 @@ import {
 import { CybersecurityLessons } from '@/data/cybersecurity';
 import { ToolDetail } from '@/types/lesson-base';
 import { createTitle, createDescription } from '@/utils/seo';
-import { PageProps } from '@/types';
 
 export async function generateStaticParams() {
   return CybersecurityLessons.map((lesson) => ({
@@ -25,7 +24,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
   const { lessonId } = await params;
   const lesson = CybersecurityLessons.find((l) => l.id === lessonId);
 
@@ -50,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function CyberSecurityLessonPage({ params }: PageProps) {
+export default async function CyberSecurityLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   const lesson = CybersecurityLessons.find((l) => l.id === lessonId);
 

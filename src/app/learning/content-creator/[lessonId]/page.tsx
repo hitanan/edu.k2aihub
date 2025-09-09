@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { contentCreatorLessons, ContentCreatorLessonData } from '@/data/content-creator';
-import { PageProps } from '@/types';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -13,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   if (!lessonId) {
     return {};
@@ -22,7 +21,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function ContentCreatorLessonPage({ params }: PageProps) {
+export default async function ContentCreatorLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<ContentCreatorLessonData> = {
     moduleName: 'content-creator',
     moduleTitle: 'Content Creator Academy',

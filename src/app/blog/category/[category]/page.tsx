@@ -3,18 +3,23 @@ import { getBlogPostsByCategorySlug, getAllCategorySlugs } from '@/lib/blog';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import { getCategoryFromSlug } from '@/utils/slug';
 import { ArrowLeft, Clock, User, Tag, Calendar } from 'lucide-react';
-import { PageProps } from '@/types';
+
 import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
+type Props = {
+  params: Promise<{ category: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateStaticParams(): Promise<{ category: string }[]> {
   const categorySlugs = await getAllCategorySlugs();
   return categorySlugs.map((categorySlug) => ({
     category: categorySlug,
   }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const { category } = params;
+export async function generateMetadata({ params }: Props) {
+  const { category } = await params;
   if (!category) {
     return {
       title: createTitle('Chủ đề không tìm thấy'),
@@ -32,8 +37,8 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function CategoryPage({ params }: PageProps) {
-  const { category } = params;
+export default async function CategoryPage({ params }: Props) {
+  const { category } = await params;
 
   if (!category) {
     return notFound();

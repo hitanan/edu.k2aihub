@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { physicsOfSportsLessons, PhysicsLessonType } from '@/data/physics-of-sports';
-import { PageProps } from '@/types';
 import { FaFlask } from 'react-icons/fa';
 import { notFound } from 'next/navigation';
 
@@ -13,14 +12,14 @@ export async function generateStaticParams() {
   return generateLessonStaticParams(physicsOfSportsLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) return {};
   return generateLessonMetadata(lessonId, physicsOfSportsLessons, 'physics-of-sports');
 }
 
-export default async function PhysicsLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function PhysicsLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

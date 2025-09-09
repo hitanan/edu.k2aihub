@@ -11,7 +11,7 @@ import {
   GreenTechResource,
   GreenTechCaseStudy,
 } from '@/data/green-technology';
-import { PageProps } from '@/types';
+
 import { BaseLessonData } from '@/types/lesson-base';
 import { createModuleMetadata } from '@/utils/seo';
 import { Palette } from 'lucide-react';
@@ -62,8 +62,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const convertedLessons = greenTechLessons.map(convertToLesson);
   if (!lessonId) {
     return createModuleMetadata(
@@ -77,8 +77,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component
-export default function GreenTechnologyLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function GreenTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   // Convert lessons to base interface
   const convertedLessons = greenTechLessons.map(convertToLesson);
   const config: LessonPageConfig<BaseLessonData> = {

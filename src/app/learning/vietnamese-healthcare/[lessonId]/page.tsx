@@ -5,19 +5,27 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { vietnameseHealthcareLessons, VietnameseHealthcareLesson } from '@/data/vietnamese-healthcare';
-import { PageProps } from '@/types';
+
 import { Activity } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(vietnameseHealthcareLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, vietnameseHealthcareLessons, 'vietnamese-healthcare');
 }
 
-export default async function VietnameseHealthcareLessonPage({ params }: PageProps) {
+export default async function VietnameseHealthcareLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<VietnameseHealthcareLesson> = {
     moduleName: 'vietnamese-healthcare',
     moduleTitle: 'Công Nghệ Y Tế Việt Nam',
@@ -47,6 +55,5 @@ export default async function VietnameseHealthcareLessonPage({ params }: PagePro
     ),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

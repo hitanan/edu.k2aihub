@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { sustainableAgricultureLessons } from '@/data/sustainable-agriculture';
-import { PageProps } from '@/types';
+
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
 
@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   if (!lessonId) {
     return {};
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function SustainableAgricultureLessonPage({ params }: PageProps) {
+export default async function SustainableAgricultureLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'sustainable-agriculture',
     moduleTitle: 'Nông nghiệp Bền vững và AgriTech',

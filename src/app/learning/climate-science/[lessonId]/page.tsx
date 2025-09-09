@@ -5,14 +5,14 @@ import {
   generateLessonMetadata,
   generateLessonStaticParams,
 } from '@/components/learning/LessonPageTemplate';
-import { getLessonById } from '@utils/lesson-utils';
+import { getLessonById } from '@/utils/lesson-utils';
 import { ClimateLessons } from '@/data/climate-science';
-import { PageProps } from '@/types';
+
 import { LessonPageConfig, BaseLessonData, CaseStudy } from '@/types/lesson-base';
 import { Thermometer, CloudRain, Wind, Trees } from 'lucide-react';
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }
@@ -63,8 +63,8 @@ const config: LessonPageConfig<BaseLessonData> = {
   ),
 };
 
-export default async function ModuleLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function ModuleLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

@@ -138,6 +138,7 @@ function extractModuleFromLesson(lessonId: string): string {
 }
 
 // Check for global achievements that span multiple systems
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function checkGlobalAchievements(gameId: string, gameScore: number, learningPoints: number): void {
   if (typeof window === 'undefined') return;
 

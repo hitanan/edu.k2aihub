@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { BaseLessonData } from '@/types/lesson-base';
 import { threeDPrintingLessons } from '@/data/3d-printing';
-import { PageProps } from '@/types';
+
 import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return { title: 'Lesson not found' };
   }
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function ThreeDPrintingLessonPage({ params }: PageProps) {
+export default async function ThreeDPrintingLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: '3d-printing',
     moduleTitle: 'Làm chủ Công nghệ In 3D',
@@ -34,7 +34,7 @@ export default async function ThreeDPrintingLessonPage({ params }: PageProps) {
     secondaryColor: 'amber',
     gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
   };
-  const { lessonId } = params;
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

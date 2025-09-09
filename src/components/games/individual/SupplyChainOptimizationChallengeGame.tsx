@@ -186,7 +186,7 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
       });
 
       // Update customer satisfaction
-      setCustomerSatisfaction((prev) => {
+      setCustomerSatisfaction(() => {
         const customers = nodes.filter((n) => n.type === 'customer');
         let satisfaction = 100;
 

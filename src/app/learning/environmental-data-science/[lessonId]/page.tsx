@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
-import { PageProps } from '@/types';
+
 import { createLessonMetadata } from '@/utils/seo';
 import { environmentalDataScienceLessons, EnvironmentalDataScienceLesson } from '@/data/environmental-data-science';
 
@@ -10,16 +10,21 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const lesson = environmentalDataScienceLessons.find((l) => l.id === params.lessonId);
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
+  const { lessonId } = await params;
+  const lesson = environmentalDataScienceLessons.find((l) => l.id === lessonId);
   if (!lesson) {
     return {};
   }
   return createLessonMetadata(lesson.title, lesson.description, 'environmental-data-science', lesson.id, []);
 }
 
-export default function EnvironmentalDataScienceLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function EnvironmentalDataScienceLessonPage({
+  params,
+}: {
+  params: Promise<{ lessonId: string }>;
+}) {
+  const { lessonId } = await params;
 
   const config: LessonPageConfig<EnvironmentalDataScienceLesson> = {
     moduleName: 'environmental-data-science',

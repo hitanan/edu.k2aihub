@@ -1,19 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  Smartphone, 
-  Tablet, 
-  Monitor, 
-  Palette, 
-  Eye, 
-  Users, 
-  Star, 
+import {
+  Smartphone,
+  Tablet,
+  Monitor,
+  Palette,
+  Users,
+  Star,
   Award,
   Play,
-  Pause,
   RotateCcw,
   Layers,
   MousePointer,
-  Grid
+  Grid,
 } from 'lucide-react';
 
 interface InterfaceDesignChallengeGameProps {
@@ -58,14 +56,14 @@ const DESIGN_BRIEFS: DesignBrief[] = [
       'Chữ cỡ lớn, dễ đọc',
       'Màu sắc tương phản cao',
       'Nút bấm lớn, dễ chạm',
-      'Điều hướng trực quan'
+      'Điều hướng trực quan',
     ],
     constraints: [
       'Không quá 3 màu chính',
       'Font chữ tối thiểu 16px',
       'Không sử dụng gesture phức tạp',
-      'Thời gian phản hồi < 2 giây'
-    ]
+      'Thời gian phản hồi < 2 giây',
+    ],
   },
   {
     id: 'ecommerce-tablet',
@@ -78,14 +76,14 @@ const DESIGN_BRIEFS: DesignBrief[] = [
       'Tìm kiếm thông minh',
       'Giỏ hàng trực quan',
       'Thanh toán an toàn',
-      'Đánh giá và review'
+      'Đánh giá và review',
     ],
     constraints: [
       'Tải trang trong 3 giây',
       'Hỗ trợ landscape và portrait',
       'Tối ưu cho touchscreen',
-      'Responsive design'
-    ]
+      'Responsive design',
+    ],
   },
   {
     id: 'productivity-desktop',
@@ -98,15 +96,15 @@ const DESIGN_BRIEFS: DesignBrief[] = [
       'Gantt chart trực quan',
       'Quản lý task hiệu quả',
       'Báo cáo và analytics',
-      'Collaboration tools'
+      'Collaboration tools',
     ],
     constraints: [
       'Độ phân giải tối thiểu 1366x768',
       'Hỗ trợ multiple monitors',
       'Keyboard shortcuts',
-      'Dark/Light theme'
-    ]
-  }
+      'Dark/Light theme',
+    ],
+  },
 ];
 
 const DESIGN_ELEMENTS: DesignElement[] = [
@@ -117,7 +115,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'color',
     icon: <Palette className="w-4 h-4" />,
     value: '#000000 / #FFFFFF',
-    impact: { usability: 8, accessibility: 9, aesthetics: 6, performance: 8 }
+    impact: { usability: 8, accessibility: 9, aesthetics: 6, performance: 8 },
   },
   {
     id: 'warm-palette',
@@ -125,7 +123,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'color',
     icon: <Palette className="w-4 h-4" />,
     value: '#FF6B6B / #4ECDC4',
-    impact: { usability: 7, accessibility: 6, aesthetics: 9, performance: 8 }
+    impact: { usability: 7, accessibility: 6, aesthetics: 9, performance: 8 },
   },
   {
     id: 'blue-gradient',
@@ -133,9 +131,9 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'color',
     icon: <Palette className="w-4 h-4" />,
     value: '#667eea / #764ba2',
-    impact: { usability: 6, accessibility: 7, aesthetics: 8, performance: 6 }
+    impact: { usability: 6, accessibility: 7, aesthetics: 8, performance: 6 },
   },
-  
+
   // Typography Elements
   {
     id: 'large-font',
@@ -143,7 +141,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'typography',
     icon: <Grid className="w-4 h-4" />,
     value: 'Open Sans 18px',
-    impact: { usability: 9, accessibility: 9, aesthetics: 7, performance: 8 }
+    impact: { usability: 9, accessibility: 9, aesthetics: 7, performance: 8 },
   },
   {
     id: 'serif-elegant',
@@ -151,7 +149,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'typography',
     icon: <Grid className="w-4 h-4" />,
     value: 'Playfair Display',
-    impact: { usability: 6, accessibility: 7, aesthetics: 9, performance: 7 }
+    impact: { usability: 6, accessibility: 7, aesthetics: 9, performance: 7 },
   },
   {
     id: 'monospace-code',
@@ -159,7 +157,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'typography',
     icon: <Grid className="w-4 h-4" />,
     value: 'Source Code Pro',
-    impact: { usability: 8, accessibility: 8, aesthetics: 6, performance: 9 }
+    impact: { usability: 8, accessibility: 8, aesthetics: 6, performance: 9 },
   },
 
   // Layout Elements
@@ -169,7 +167,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'layout',
     icon: <Layers className="w-4 h-4" />,
     value: 'Grid Cards',
-    impact: { usability: 8, accessibility: 7, aesthetics: 8, performance: 7 }
+    impact: { usability: 8, accessibility: 7, aesthetics: 8, performance: 7 },
   },
   {
     id: 'sidebar-nav',
@@ -177,7 +175,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'layout',
     icon: <Layers className="w-4 h-4" />,
     value: 'Left Sidebar',
-    impact: { usability: 9, accessibility: 8, aesthetics: 7, performance: 8 }
+    impact: { usability: 9, accessibility: 8, aesthetics: 7, performance: 8 },
   },
   {
     id: 'fullscreen-focus',
@@ -185,7 +183,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'layout',
     icon: <Layers className="w-4 h-4" />,
     value: 'Full Screen Layout',
-    impact: { usability: 7, accessibility: 6, aesthetics: 8, performance: 9 }
+    impact: { usability: 7, accessibility: 6, aesthetics: 8, performance: 9 },
   },
 
   // Interaction Elements
@@ -195,7 +193,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'interaction',
     icon: <MousePointer className="w-4 h-4" />,
     value: '48px min touch target',
-    impact: { usability: 9, accessibility: 9, aesthetics: 7, performance: 8 }
+    impact: { usability: 9, accessibility: 9, aesthetics: 7, performance: 8 },
   },
   {
     id: 'hover-animations',
@@ -203,7 +201,7 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'interaction',
     icon: <MousePointer className="w-4 h-4" />,
     value: 'CSS Transitions',
-    impact: { usability: 7, accessibility: 6, aesthetics: 9, performance: 6 }
+    impact: { usability: 7, accessibility: 6, aesthetics: 9, performance: 6 },
   },
   {
     id: 'swipe-gestures',
@@ -211,14 +209,14 @@ const DESIGN_ELEMENTS: DesignElement[] = [
     type: 'interaction',
     icon: <MousePointer className="w-4 h-4" />,
     value: 'Touch Gestures',
-    impact: { usability: 8, accessibility: 5, aesthetics: 8, performance: 7 }
-  }
+    impact: { usability: 8, accessibility: 5, aesthetics: 8, performance: 7 },
+  },
 ];
 
 const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> = ({
   onComplete,
   timeLeft,
-  onRestart
+  onRestart,
 }) => {
   const [currentBrief, setCurrentBrief] = useState<DesignBrief>(DESIGN_BRIEFS[0]);
   const [selectedElements, setSelectedElements] = useState<DesignElement[]>([]);
@@ -228,7 +226,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
     usability: 0,
     accessibility: 0,
     aesthetics: 0,
-    performance: 0
+    performance: 0,
   });
   const [feedback, setFeedback] = useState<string[]>([]);
   const [currentBriefIndex, setCurrentBriefIndex] = useState(0);
@@ -236,10 +234,14 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
 
   const getPlatformIcon = (platform: string) => {
     switch (platform) {
-      case 'mobile': return <Smartphone className="w-5 h-5" />;
-      case 'tablet': return <Tablet className="w-5 h-5" />;
-      case 'desktop': return <Monitor className="w-5 h-5" />;
-      default: return <Monitor className="w-5 h-5" />;
+      case 'mobile':
+        return <Smartphone className="w-5 h-5" />;
+      case 'tablet':
+        return <Tablet className="w-5 h-5" />;
+      case 'desktop':
+        return <Monitor className="w-5 h-5" />;
+      default:
+        return <Monitor className="w-5 h-5" />;
     }
   };
 
@@ -249,7 +251,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
     const newFeedback: string[] = [];
 
     // Calculate base scores from selected elements
-    selectedElements.forEach(element => {
+    selectedElements.forEach((element) => {
       scores.usability += element.impact.usability;
       scores.accessibility += element.impact.accessibility;
       scores.aesthetics += element.impact.aesthetics;
@@ -258,11 +260,11 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
 
     // Platform-specific bonuses/penalties
     if (currentBrief.platform === 'mobile') {
-      if (selectedElements.some(e => e.id === 'large-buttons')) {
+      if (selectedElements.some((e) => e.id === 'large-buttons')) {
         scores.usability += 10;
         newFeedback.push('✓ Sử dụng nút bấm lớn phù hợp cho mobile');
       }
-      if (selectedElements.some(e => e.id === 'swipe-gestures')) {
+      if (selectedElements.some((e) => e.id === 'swipe-gestures')) {
         scores.usability += 5;
         newFeedback.push('✓ Tích hợp cử chỉ vuốt tốt cho mobile');
       }
@@ -270,11 +272,11 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
 
     // Audience-specific evaluation
     if (currentBrief.targetAudience.includes('cao tuổi')) {
-      if (selectedElements.some(e => e.id === 'large-font')) {
+      if (selectedElements.some((e) => e.id === 'large-font')) {
         scores.accessibility += 15;
         newFeedback.push('✓ Font chữ lớn phù hợp cho người cao tuổi');
       }
-      if (selectedElements.some(e => e.id === 'high-contrast')) {
+      if (selectedElements.some((e) => e.id === 'high-contrast')) {
         scores.accessibility += 10;
         newFeedback.push('✓ Màu tương phản cao dễ đọc');
       }
@@ -282,26 +284,27 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
 
     // Requirements checking
     let requirementsMet = 0;
-    currentBrief.requirements.forEach(req => {
+    currentBrief.requirements.forEach((req) => {
       if (req.includes('đơn giản') && selectedElements.length <= 4) {
         requirementsMet++;
         newFeedback.push('✓ Thiết kế đơn giản, không phức tạp');
       }
-      if (req.includes('chữ cỡ lớn') && selectedElements.some(e => e.id === 'large-font')) {
+      if (req.includes('chữ cỡ lớn') && selectedElements.some((e) => e.id === 'large-font')) {
         requirementsMet++;
       }
-      if (req.includes('tương phản cao') && selectedElements.some(e => e.id === 'high-contrast')) {
+      if (req.includes('tương phản cao') && selectedElements.some((e) => e.id === 'high-contrast')) {
         requirementsMet++;
       }
     });
 
     // Bonus for meeting requirements
     const requirementBonus = (requirementsMet / currentBrief.requirements.length) * 50;
-    
+
     // Calculate final scores (out of 100 each)
-    Object.keys(scores).forEach(key => {
-      scores[key as keyof typeof scores] = Math.min(100, 
-        (scores[key as keyof typeof scores] / selectedElements.length) * 10 + requirementBonus / 4
+    Object.keys(scores).forEach((key) => {
+      scores[key as keyof typeof scores] = Math.min(
+        100,
+        (scores[key as keyof typeof scores] / selectedElements.length) * 10 + requirementBonus / 4,
       );
     });
 
@@ -344,7 +347,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
         break;
       case 'results':
         if (currentBriefIndex < DESIGN_BRIEFS.length - 1) {
-          setCurrentBriefIndex(prev => prev + 1);
+          setCurrentBriefIndex((prev) => prev + 1);
           setCurrentBrief(DESIGN_BRIEFS[currentBriefIndex + 1]);
           setGamePhase('briefing');
           setSelectedElements([]);
@@ -356,10 +359,10 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
   };
 
   const toggleElement = (element: DesignElement) => {
-    setSelectedElements(prev => {
-      const exists = prev.find(e => e.id === element.id);
+    setSelectedElements((prev) => {
+      const exists = prev.find((e) => e.id === element.id);
       if (exists) {
-        return prev.filter(e => e.id !== element.id);
+        return prev.filter((e) => e.id !== element.id);
       } else {
         return [...prev, element];
       }
@@ -420,8 +423,8 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
             </div>
             <h2 className="text-3xl font-bold text-white mb-4">Chào Mừng Đến Thử Thách Thiết Kế!</h2>
             <p className="text-blue-200 text-lg mb-8 max-w-2xl mx-auto">
-              Hãy thể hiện kỹ năng thiết kế giao diện của bạn! Tạo ra những trải nghiệm người dùng tuyệt vời 
-              cho các ứng dụng khác nhau trên nhiều nền tảng.
+              Hãy thể hiện kỹ năng thiết kế giao diện của bạn! Tạo ra những trải nghiệm người dùng tuyệt vời cho các ứng
+              dụng khác nhau trên nhiều nền tảng.
             </p>
             <button
               onClick={startGame}
@@ -436,13 +439,15 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
             {/* Progress Bar */}
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-blue-200">Dự án {currentBriefIndex + 1}/{DESIGN_BRIEFS.length}</span>
+                <span className="text-blue-200">
+                  Dự án {currentBriefIndex + 1}/{DESIGN_BRIEFS.length}
+                </span>
                 <span className="text-purple-300 capitalize">{gamePhase}</span>
               </div>
               <div className="w-full bg-blue-900/50 rounded-full h-2">
-                <div 
+                <div
                   className="bg-gradient-to-r from-purple-500 to-blue-400 h-2 rounded-full transition-all duration-500"
-                  style={{ width: `${((currentBriefIndex) / DESIGN_BRIEFS.length) * 100}%` }}
+                  style={{ width: `${(currentBriefIndex / DESIGN_BRIEFS.length) * 100}%` }}
                 ></div>
               </div>
             </div>
@@ -454,14 +459,14 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                   {getPlatformIcon(currentBrief.platform)}
                   <h2 className="text-2xl font-bold text-white">{currentBrief.title}</h2>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="bg-blue-900/30 rounded-lg p-4">
                       <h3 className="font-semibold text-blue-200 mb-2">📋 Mô Tả Dự Án</h3>
                       <p className="text-white">{currentBrief.description}</p>
                     </div>
-                    
+
                     <div className="bg-green-900/30 rounded-lg p-4">
                       <h3 className="font-semibold text-green-200 mb-2 flex items-center gap-2">
                         <Users className="w-4 h-4" />
@@ -470,7 +475,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                       <p className="text-white">{currentBrief.targetAudience}</p>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div className="bg-purple-900/30 rounded-lg p-4">
                       <h3 className="font-semibold text-purple-200 mb-2">✅ Yêu Cầu</h3>
@@ -483,7 +488,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div className="bg-red-900/30 rounded-lg p-4">
                       <h3 className="font-semibold text-red-200 mb-2">⚠️ Ràng Buộc</h3>
                       <ul className="space-y-1">
@@ -497,7 +502,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                     </div>
                   </div>
                 </div>
-                
+
                 <button
                   onClick={nextPhase}
                   className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold mt-6 transition-all duration-200"
@@ -513,12 +518,13 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                 <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
                   <h2 className="text-xl font-bold text-white mb-4">🎨 Chọn Các Yếu Tố Thiết Kế</h2>
                   <p className="text-blue-200 mb-6">
-                    Chọn các thành phần thiết kế phù hợp với yêu cầu dự án. Hãy cân nhắc đối tượng người dùng và ràng buộc kỹ thuật.
+                    Chọn các thành phần thiết kế phù hợp với yêu cầu dự án. Hãy cân nhắc đối tượng người dùng và ràng
+                    buộc kỹ thuật.
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-6">
                     {DESIGN_ELEMENTS.map((element) => {
-                      const isSelected = selectedElements.find(e => e.id === element.id);
+                      const isSelected = selectedElements.find((e) => e.id === element.id);
                       return (
                         <button
                           key={element.id}
@@ -556,11 +562,9 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                       );
                     })}
                   </div>
-                  
+
                   <div className="flex justify-between items-center">
-                    <div className="text-blue-200">
-                      Đã chọn: {selectedElements.length} thành phần
-                    </div>
+                    <div className="text-blue-200">Đã chọn: {selectedElements.length} thành phần</div>
                     <button
                       onClick={nextPhase}
                       disabled={selectedElements.length === 0}
@@ -580,7 +584,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                   <Award className="w-6 h-6 text-yellow-400" />
                   <h2 className="text-2xl font-bold text-white">📊 Đánh Giá Thiết Kế</h2>
                 </div>
-                
+
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-4">
                     <div className="bg-blue-900/30 rounded-lg p-4">
@@ -637,7 +641,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-purple-900/30 rounded-lg p-4">
                     <h3 className="font-semibold text-purple-200 mb-3">💬 Phản Hồi Chi Tiết</h3>
                     <div className="space-y-2 max-h-48 overflow-y-auto">
@@ -649,14 +653,14 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 mb-2">
                     {Math.round(score)}
                   </div>
                   <div className="text-xl text-blue-200 mb-6">Điểm tổng kết</div>
                 </div>
-                
+
                 <button
                   onClick={nextPhase}
                   className="w-full bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
@@ -676,7 +680,7 @@ const InterfaceDesignChallengeGame: React.FC<InterfaceDesignChallengeGameProps> 
                 <p className="text-blue-200 text-lg mb-8">
                   Bạn đã hoàn thành thử thách thiết kế giao diện! Khả năng UI/UX của bạn thật ấn tượng.
                 </p>
-                
+
                 <div className="flex gap-4 justify-center">
                   <button
                     onClick={restartGame}

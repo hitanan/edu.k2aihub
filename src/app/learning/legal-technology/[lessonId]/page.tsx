@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { legalTechLessons, LegalTechLesson } from '@/data/legal-technology';
-import { PageProps } from '@/types';
 import { Scale, FileText, Search, Shield, Copyright } from 'lucide-react';
 
 // Generate static params for all lessons
@@ -14,8 +13,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Bài học không tìm thấy',
@@ -26,8 +25,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with legal technology-specific configuration
-export default async function LegalTechnologyLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function LegalTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const config: LessonPageConfig<LegalTechLesson> = {
     moduleName: 'legal-technology',
     moduleTitle: 'Legal Technology',

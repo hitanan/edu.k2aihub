@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
-import { PageProps } from '@/types';
+
 import { createLessonMetadata } from '@/utils/seo';
 import { energyManagementLessons, EnergyManagementLesson } from '@/data/energy-management-smart-grid';
 
@@ -10,16 +10,17 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const lesson = energyManagementLessons.find((l) => l.id === params.lessonId);
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
+  const { lessonId } = await params;
+  const lesson = energyManagementLessons.find((l) => l.id === lessonId);
   if (!lesson) {
     return {};
   }
   return createLessonMetadata(lesson.title, lesson.description, 'energy-management-smart-grid', lesson.id, []);
 }
 
-export default function EnergyManagementLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function EnergyManagementLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
 
   const config: LessonPageConfig<EnergyManagementLesson> = {
     moduleName: 'energy-management-smart-grid',

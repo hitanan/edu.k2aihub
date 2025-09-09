@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { arduinoLessons, ArduinoLesson } from '@/data/arduino';
-import { PageProps } from '@/types';
+
 import { Cpu, Rocket, Wifi, Wrench } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function ArduinoLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function ArduinoLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const config: LessonPageConfig<ArduinoLesson> = {
     moduleName: 'arduino',
     moduleTitle: 'Lập trình Arduino & IoT',

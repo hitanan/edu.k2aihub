@@ -90,10 +90,10 @@ const Vehicle3D: React.FC<{
 
         // Update visual position
         meshRef.current.position.set(...newPosition);
-        
+
         // Update local state
         setCurrentPosition(newPosition);
-        
+
         // Update parent component
         onPositionUpdate(vehicle.id, newPosition);
 
@@ -275,18 +275,11 @@ const Road3D: React.FC<{
 };
 
 // Main traffic management simulator component
-// Component props
-interface TrafficManagementSimulator3DProps {
-  onComplete?: (success: boolean, rawScore?: number) => void;
-  timeLeft?: number;
-  onRestart?: () => void;
-}
-
-const TrafficManagementSimulator3D: React.FC<TrafficManagementSimulator3DProps> = ({ 
-  onComplete, 
-  timeLeft: gameTimeLeft, 
-  onRestart 
-}) => {
+const TrafficManagementSimulator3D: React.FC<{
+  onComplete: (success: boolean, score: number) => void;
+  timeLeft: number;
+  onRestart: () => void;
+}> = ({ onComplete, timeLeft, onRestart }) => {
   // Instructions state
   const [showInstructions, setShowInstructions] = useState(true);
 
@@ -314,47 +307,122 @@ const TrafficManagementSimulator3D: React.FC<TrafficManagementSimulator3DProps> 
 
   // Handle vehicle position updates from 3D movement
   const handleVehiclePositionUpdate = useCallback((vehicleId: string, newPosition: [number, number, number]) => {
-    setVehicles(prev => prev.map(vehicle => 
-      vehicle.id === vehicleId 
-        ? { ...vehicle, position: newPosition }
-        : vehicle
-    ));
+    setVehicles((prev) =>
+      prev.map((vehicle) => (vehicle.id === vehicleId ? { ...vehicle, position: newPosition } : vehicle)),
+    );
   }, []);
 
-  // Initialize traffic system
-  useEffect(() => {
-    initializeTrafficSystem();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  const generateRandomRoute = useCallback((start: [number, number, number], end: [number, number, number]) => {
+    const route: [number, number, number][] = [];
+    const steps = Math.floor(Math.random() * 5) + 3;
+
+    for (let i = 0; i < steps; i++) {
+      const progress = (i + 1) / steps;
+      route.push([
+        start[0] + (end[0] - start[0]) * progress + (Math.random() - 0.5) * 2,
+        start[1],
+        start[2] + (end[2] - start[2]) * progress + (Math.random() - 0.5) * 2,
+      ]);
+    }
+
+    return route;
   }, []);
 
-  // Game loop for traffic simulation
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
+  const updateAnalytics = useCallback(() => {
+    if (vehicles.length === 0) return;
 
-    if (gameState.isRunning && !gameState.isPaused) {
-      interval = setInterval(() => {
-        setTime((prev) => prev + 1);
-        updateTrafficSimulation();
-      }, 1000 / gameState.simulationSpeed);
-    }
+    // Calculate real-time analytics from current vehicle states
+    const currentTotalWaitTime = vehicles.reduce((sum, v) => sum + v.waitTime, 0);
+    const currentAverageSpeed = vehicles.reduce((sum, v) => sum + v.speed, 0) / vehicles.length;
+    const currentCongestionLevel = roads.reduce((sum, r) => sum + r.congestion, 0) / roads.length;
 
-    return () => clearInterval(interval);
-  }, [gameState.isRunning, gameState.isPaused, gameState.simulationSpeed]);
+    // Update game state with current analytics
+    setGameState((prev) => ({
+      ...prev,
+      totalWaitTime: currentTotalWaitTime,
+      averageSpeed: isNaN(currentAverageSpeed) ? 0 : currentAverageSpeed,
+      congestionLevel: isNaN(currentCongestionLevel) ? 0 : currentCongestionLevel,
+      totalVehicles: vehicles.length,
+    }));
 
-  // Analytics update loop - separate from traffic simulation for better performance
-  useEffect(() => {
-    let analyticsInterval: NodeJS.Timeout;
+    // Update score based on traffic efficiency
+    const efficiency = Math.max(0, 100 - currentTotalWaitTime / 10 - currentCongestionLevel * 50);
+    setScore((prev) => prev + Math.floor(efficiency * 0.1)); // Smaller increments for smoother scoring
+  }, [vehicles, roads]);
 
-    if (gameState.isRunning && !gameState.isPaused) {
-      analyticsInterval = setInterval(() => {
-        updateAnalytics();
-      }, 500); // Update analytics twice per second
-    }
+  const updateTrafficSimulation = useCallback(() => {
+    // Update traffic lights
+    setTrafficLights((prevLights) =>
+      prevLights.map((light) => {
+        let newTimer = light.timer - 1;
+        let newState = light.state;
 
-    return () => clearInterval(analyticsInterval);
-  }, [gameState.isRunning, gameState.isPaused, vehicles]);
+        if (newTimer <= 0) {
+          newState = light.state === 'red' ? 'green' : light.state === 'green' ? 'yellow' : 'red';
+          newTimer = light.maxTimer;
+        }
 
-  const initializeTrafficSystem = () => {
+        return { ...light, timer: newTimer, state: newState };
+      }),
+    );
+
+    // Update vehicles - only route and wait time logic
+    setVehicles((prevVehicles) =>
+      prevVehicles.map((vehicle) => {
+        // Calculate wait time based on current speed
+        const currentSpeed = Math.sqrt(
+          (vehicle.position[0] - (vehicle.route[0]?.[0] || vehicle.position[0])) ** 2 +
+            (vehicle.position[2] - (vehicle.route[0]?.[2] || vehicle.position[2])) ** 2,
+        );
+
+        const newWaitTime = currentSpeed < 0.1 ? vehicle.waitTime + 1 : Math.max(0, vehicle.waitTime - 0.5);
+
+        // Generate new route if current route is completed
+        const newRoute =
+          vehicle.route.length === 0
+            ? generateRandomRoute(vehicle.position, vehicle.destination)
+            : vehicle.route.slice(1);
+
+        // Update congestion based on nearby vehicles
+        const nearbyVehicles = prevVehicles.filter((v) => {
+          if (v.id === vehicle.id) return false;
+          const distance = Math.sqrt(
+            (v.position[0] - vehicle.position[0]) ** 2 + (v.position[2] - vehicle.position[2]) ** 2,
+          );
+          return distance < 2;
+        });
+
+        return {
+          ...vehicle,
+          waitTime: newWaitTime,
+          route: newRoute,
+          speed: Math.max(1, vehicle.speed - nearbyVehicles.length * 0.5), // Slow down if crowded
+        };
+      }),
+    );
+
+    // Update road congestion based on vehicle density
+    setRoads((prevRoads) =>
+      prevRoads.map((road) => {
+        const vehiclesOnRoad = vehicles.filter((v) => {
+          const distanceToStart = Math.sqrt(
+            (v.position[0] - road.start[0]) ** 2 + (v.position[2] - road.start[2]) ** 2,
+          );
+          const distanceToEnd = Math.sqrt((v.position[0] - road.end[0]) ** 2 + (v.position[2] - road.end[2]) ** 2);
+          return distanceToStart < 3 || distanceToEnd < 3;
+        });
+
+        const newCongestion = Math.min(1, vehiclesOnRoad.length / 10);
+
+        return {
+          ...road,
+          congestion: newCongestion,
+        };
+      }),
+    );
+  }, [vehicles, generateRandomRoute]);
+
+  const initializeTrafficSystem = useCallback(() => {
     // Create a grid-based city layout
     const newRoads: Road[] = [];
     const newIntersections: Intersection[] = [];
@@ -432,119 +500,39 @@ const TrafficManagementSimulator3D: React.FC<TrafficManagementSimulator3DProps> 
     setIntersections(newIntersections);
     setTrafficLights(newTrafficLights);
     setVehicles(newVehicles);
-  };
+  }, [gameState.totalVehicles]);
 
-  const updateAnalytics = useCallback(() => {
-    if (vehicles.length === 0) return;
-    
-    // Calculate real-time analytics from current vehicle states
-    const currentTotalWaitTime = vehicles.reduce((sum, v) => sum + v.waitTime, 0);
-    const currentAverageSpeed = vehicles.reduce((sum, v) => sum + v.speed, 0) / vehicles.length;
-    const currentCongestionLevel = roads.reduce((sum, r) => sum + r.congestion, 0) / roads.length;
-    
-    // Update game state with current analytics
-    setGameState((prev) => ({
-      ...prev,
-      totalWaitTime: currentTotalWaitTime,
-      averageSpeed: isNaN(currentAverageSpeed) ? 0 : currentAverageSpeed,
-      congestionLevel: isNaN(currentCongestionLevel) ? 0 : currentCongestionLevel,
-      totalVehicles: vehicles.length,
-    }));
-    
-    // Update score based on traffic efficiency
-    const efficiency = Math.max(0, 100 - currentTotalWaitTime / 10 - currentCongestionLevel * 50);
-    setScore((prev) => prev + Math.floor(efficiency * 0.1)); // Smaller increments for smoother scoring
-  }, [vehicles, roads]);
+  // Initialize traffic system
+  useEffect(() => {
+    initializeTrafficSystem();
+  }, [initializeTrafficSystem]);
 
-  const generateRandomRoute = useCallback((start: [number, number, number], end: [number, number, number]) => {
-    const route: [number, number, number][] = [];
-    const steps = Math.floor(Math.random() * 5) + 3;
+  // Game loop for traffic simulation
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
 
-    for (let i = 0; i < steps; i++) {
-      const progress = (i + 1) / steps;
-      route.push([
-        start[0] + (end[0] - start[0]) * progress + (Math.random() - 0.5) * 2,
-        start[1],
-        start[2] + (end[2] - start[2]) * progress + (Math.random() - 0.5) * 2,
-      ]);
+    if (gameState.isRunning && !gameState.isPaused) {
+      interval = setInterval(() => {
+        setTime((prev) => prev + 1);
+        updateTrafficSimulation();
+      }, 1000 / gameState.simulationSpeed);
     }
 
-    return route;
-  }, []);
+    return () => clearInterval(interval);
+  }, [gameState.isRunning, gameState.isPaused, gameState.simulationSpeed, updateTrafficSimulation]);
 
-  const updateTrafficSimulation = useCallback(() => {
-    // Update traffic lights
-    setTrafficLights((prevLights) =>
-      prevLights.map((light) => {
-        let newTimer = light.timer - 1;
-        let newState = light.state;
+  // Analytics update loop - separate from traffic simulation for better performance
+  useEffect(() => {
+    let analyticsInterval: NodeJS.Timeout;
 
-        if (newTimer <= 0) {
-          newState = light.state === 'red' ? 'green' : light.state === 'green' ? 'yellow' : 'red';
-          newTimer = light.maxTimer;
-        }
+    if (gameState.isRunning && !gameState.isPaused) {
+      analyticsInterval = setInterval(() => {
+        updateAnalytics();
+      }, 500); // Update analytics twice per second
+    }
 
-        return { ...light, timer: newTimer, state: newState };
-      }),
-    );
-
-    // Update vehicles - only route and wait time logic
-    setVehicles((prevVehicles) =>
-      prevVehicles.map((vehicle) => {
-        // Calculate wait time based on current speed
-        const currentSpeed = Math.sqrt(
-          (vehicle.position[0] - (vehicle.route[0]?.[0] || vehicle.position[0])) ** 2 +
-          (vehicle.position[2] - (vehicle.route[0]?.[2] || vehicle.position[2])) ** 2
-        );
-        
-        const newWaitTime = currentSpeed < 0.1 ? vehicle.waitTime + 1 : Math.max(0, vehicle.waitTime - 0.5);
-
-        // Generate new route if current route is completed
-        const newRoute = vehicle.route.length === 0
-          ? generateRandomRoute(vehicle.position, vehicle.destination)
-          : vehicle.route.slice(1);
-
-        // Update congestion based on nearby vehicles
-        const nearbyVehicles = prevVehicles.filter(v => {
-          if (v.id === vehicle.id) return false;
-          const distance = Math.sqrt(
-            (v.position[0] - vehicle.position[0]) ** 2 +
-            (v.position[2] - vehicle.position[2]) ** 2
-          );
-          return distance < 2;
-        });
-
-        return {
-          ...vehicle,
-          waitTime: newWaitTime,
-          route: newRoute,
-          speed: Math.max(1, vehicle.speed - nearbyVehicles.length * 0.5), // Slow down if crowded
-        };
-      }),
-    );
-
-    // Update road congestion based on vehicle density
-    setRoads((prevRoads) =>
-      prevRoads.map((road) => {
-        const vehiclesOnRoad = vehicles.filter(v => {
-          const distanceToStart = Math.sqrt(
-            (v.position[0] - road.start[0]) ** 2 + (v.position[2] - road.start[2]) ** 2
-          );
-          const distanceToEnd = Math.sqrt(
-            (v.position[0] - road.end[0]) ** 2 + (v.position[2] - road.end[2]) ** 2
-          );
-          return distanceToStart < 3 || distanceToEnd < 3;
-        });
-
-        const newCongestion = Math.min(1, vehiclesOnRoad.length / 10);
-        
-        return {
-          ...road,
-          congestion: newCongestion,
-        };
-      })
-    );
-  }, [vehicles, generateRandomRoute]);
+    return () => clearInterval(analyticsInterval);
+  }, [gameState.isRunning, gameState.isPaused, vehicles, updateAnalytics]);
 
   const handleStart = () => {
     setGameState((prev) => ({ ...prev, isRunning: true, isPaused: false }));
@@ -574,21 +562,21 @@ const TrafficManagementSimulator3D: React.FC<TrafficManagementSimulator3DProps> 
   };
 
   const handleTrafficLightSelect = (lightId: string) => {
-    const light = trafficLights.find(l => l.id === lightId);
+    const light = trafficLights.find((l) => l.id === lightId);
     if (!light) return;
 
-    setGameState(prev => ({ ...prev, selectedIntersection: light.intersection }));
-    
+    setGameState((prev) => ({ ...prev, selectedIntersection: light.intersection }));
+
     // Cycle through traffic light states
     const newState = light.state === 'red' ? 'green' : light.state === 'green' ? 'yellow' : 'red';
     const newTimer = newState === 'red' ? 30 : newState === 'green' ? 25 : 5;
-    
-    setTrafficLights(prev => prev.map(l => 
-      l.id === lightId ? { ...l, state: newState, timer: newTimer, maxTimer: newTimer } : l
-    ));
+
+    setTrafficLights((prev) =>
+      prev.map((l) => (l.id === lightId ? { ...l, state: newState, timer: newTimer, maxTimer: newTimer } : l)),
+    );
 
     // Update score for traffic management
-    setScore(prev => prev + 10);
+    setScore((prev) => prev + 10);
   };
 
   return (
@@ -782,9 +770,7 @@ const TrafficManagementSimulator3D: React.FC<TrafficManagementSimulator3DProps> 
           onClick={handlePause}
           disabled={!gameState.isRunning}
           className={`${
-            gameState.isPaused 
-              ? 'bg-green-600 hover:bg-green-700' 
-              : 'bg-yellow-600 hover:bg-yellow-700'
+            gameState.isPaused ? 'bg-green-600 hover:bg-green-700' : 'bg-yellow-600 hover:bg-yellow-700'
           } disabled:bg-gray-600 px-4 py-2 rounded-lg font-bold transition-colors flex items-center gap-2`}
         >
           {gameState.isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
@@ -905,18 +891,14 @@ const TrafficManagementSimulator3D: React.FC<TrafficManagementSimulator3DProps> 
 
           {/* Render traffic lights */}
           {trafficLights.map((light) => (
-            <TrafficLight3D
-              key={light.id}
-              light={light}
-              onSelect={handleTrafficLightSelect}
-            />
+            <TrafficLight3D key={light.id} light={light} onSelect={handleTrafficLightSelect} />
           ))}
 
           {/* Render vehicles */}
           {vehicles.map((vehicle) => (
-            <Vehicle3D 
-              key={vehicle.id} 
-              vehicle={vehicle} 
+            <Vehicle3D
+              key={vehicle.id}
+              vehicle={vehicle}
               onSelect={(id) => console.log('Vehicle selected:', id)}
               onPositionUpdate={handleVehiclePositionUpdate}
             />

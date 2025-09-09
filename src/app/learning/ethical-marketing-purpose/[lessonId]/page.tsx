@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
 } from '@/components/learning/LessonPageTemplate';
 import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
-import { PageProps } from '@/types';
+
 import { LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function EthicalMarketingLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function EthicalMarketingLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

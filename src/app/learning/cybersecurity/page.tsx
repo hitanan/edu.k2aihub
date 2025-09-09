@@ -7,7 +7,7 @@ import type { ModuleData } from '@/types';
 import { createModuleMetadata } from '@/utils/seo';
 import { CybersecurityLessons } from '@/data/cybersecurity';
 
-export const cybersecurityModuleData: ModuleData = {
+const cybersecurityModuleData: ModuleData = {
   id: 'cybersecurity',
   title: 'An Ninh Mạng & Ethical Hacking',
   subtitle: 'Trở thành chuyên gia an ninh mạng với các kỹ năng phòng thủ và tấn công có đạo đức.',

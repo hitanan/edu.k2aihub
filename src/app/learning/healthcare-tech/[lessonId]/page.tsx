@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { healthcareTechLessons, HealthcareTechLesson } from '@/data/healthcare-tech';
-import { PageProps } from '@/types';
+
 import { createModuleMetadata } from '@/utils/seo';
 import { Activity, Shield, Database, Heart, Stethoscope } from 'lucide-react';
 
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return createModuleMetadata(
       'Công Nghệ Y Tế & Sức Khỏe Số',
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with healthcare tech-specific configuration
-export default function HealthcareTechLessonPage({ params }: PageProps) {
+export default async function HealthcareTechLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<HealthcareTechLesson> = {
     moduleName: 'healthcare-tech',
     moduleTitle: 'Công Nghệ Y Tế & Sức Khỏe Số',
@@ -124,6 +124,6 @@ export default function HealthcareTechLessonPage({ params }: PageProps) {
     ),
   };
 
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { spaceTechnologyLessons, type SpaceTechnologyLesson } from '@/data/space-technology';
-import { PageProps } from '@/types';
+
 import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
@@ -14,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function SpaceTechnologyLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function ModuleLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

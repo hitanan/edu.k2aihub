@@ -250,12 +250,6 @@ interface CityStats {
   income: number;
 }
 
-interface Building {
-  id: string;
-  type: string;
-  position: [number, number, number];
-}
-
 // Control panel component
 function ControlPanel({
   selectedBuildingType,
@@ -390,14 +384,15 @@ function Instructions({ onStart }: { onStart: () => void }) {
   );
 }
 
-// Main component props
-interface SmartCityPlanner3DProps {
-  onComplete?: (success: boolean, rawScore?: number) => void;
-  timeLeft?: number;
-  onRestart?: () => void;
-}
-
-export default function SmartCityPlanner3D({ onComplete, timeLeft, onRestart }: SmartCityPlanner3DProps = {}) {
+export default function SmartCityPlanner3D({
+  onComplete,
+  timeLeft,
+  onRestart,
+}: {
+  onComplete: (success: boolean, score: number) => void;
+  timeLeft: number;
+  onRestart: () => void;
+}) {
   const { smartCity, setSmartCityState } = useGameStore();
   const [gameStarted, setGameStarted] = useState(true); // Start directly with the game
   const [selectedBuildingType, setSelectedBuildingType] = useState<string | null>('residential');

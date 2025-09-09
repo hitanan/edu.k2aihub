@@ -6,7 +6,6 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { BaseLessonData } from '@/types/lesson-base';
 import { arduinoCircuitsLessons } from '@/data/arduino-circuits';
-import { PageProps } from '@/types';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -14,8 +13,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Lesson not found',
@@ -26,8 +25,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function ArduinoLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function ArduinoLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return null;
   }

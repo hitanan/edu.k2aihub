@@ -7,7 +7,7 @@ export const metadata: Metadata = createGameMetadata('traffic-management-simulat
 export default function TrafficManagementPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <TrafficManagementSimulator3D />
+      <TrafficManagementSimulator3D onComplete={() => {}} timeLeft={0} onRestart={() => {}} />
     </div>
   );
 }

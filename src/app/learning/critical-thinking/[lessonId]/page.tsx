@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { criticalThinkingLessons, CriticalThinkingLessonType } from '@/data/critical-thinking';
-import { PageProps } from '@/types';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -13,8 +12,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Lesson not found',
@@ -24,7 +23,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function CriticalThinkingLessonPage({ params }: PageProps) {
+export default async function CriticalThinkingLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<CriticalThinkingLessonType> = {
     moduleName: 'critical-thinking',
     moduleTitle: 'Tư Duy Phê Phán và Giải Quyết Vấn Đề Sáng Tạo',
@@ -102,6 +101,6 @@ export default function CriticalThinkingLessonPage({ params }: PageProps) {
       </div>
     ),
   };
-  const { lessonId } = params;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

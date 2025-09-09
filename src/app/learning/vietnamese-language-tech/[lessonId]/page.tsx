@@ -5,22 +5,30 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { vietnameseLangTechLessons, VietnameseLangTechLesson } from '@/data/vietnamese-language-tech';
-import { PageProps } from '@/types';
+
 import { MessageSquare } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(vietnameseLangTechLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, vietnameseLangTechLessons, 'vietnamese-language-tech');
 }
 
-export default async function VietnameseLangTechLessonPage({ params }: PageProps) {
+export default async function VietnameseLangTechLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<VietnameseLangTechLesson> = {
     moduleName: 'vietnamese-language-tech',
-    moduleTitle: 'Vietnamese Language Technology',
+    moduleTitle: 'Công nghệ Ngôn ngữ Tiếng Việt',
     modulePath: '/learning/vietnamese-language-tech',
     lessons: vietnameseLangTechLessons,
     primaryColor: 'violet',
@@ -51,6 +59,5 @@ export default async function VietnameseLangTechLessonPage({ params }: PageProps
     ),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

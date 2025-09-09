@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { Trophy, BookOpen, Clock, TrendingUp, Star, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { useUnifiedScoring } from '@/utils/unifiedScoring';
+import { isModuleData, isModuleNavigation } from '@/utils/typeguards';
+import { LessonNavigation } from '@/types';
 
 // Learning progress types
 export interface LearningProgress {
@@ -387,18 +389,39 @@ function ModuleProgressSection({ progress }: ModuleProgressSectionProps) {
   const displayProgress = showAll ? sortedProgress : sortedProgress.slice(0, 3);
 
   const getModuleInfo = (moduleName: string) => {
-    const moduleData = moduleNavigation.find((m) => m.title === moduleName || m.id === moduleName);
+    const moduleInfo = moduleNavigation.find((m) => m.title === moduleName || ('id' in m && m.id === moduleName));
+
+    if (!moduleInfo) {
+      return { title: moduleName, href: `#${moduleName}`, lessons: [] };
+    }
+
+    if (isModuleData(moduleInfo)) {
+      return {
+        title: moduleInfo.title,
+        href: `/learning/${moduleInfo.id}`,
+        lessons: [], // ModuleData doesn't have lessons in moduleNavigation
+      };
+    }
+
+    if (isModuleNavigation(moduleInfo)) {
+      return {
+        title: moduleInfo.title,
+        href: moduleInfo.href || '#',
+        lessons: moduleInfo.lessons || [],
+      };
+    }
+
     return {
-      title: moduleData?.title || moduleName,
-      href: moduleData?.href || `#${moduleName}`,
-      lessons: moduleData?.lessons || [],
+      title: moduleName,
+      href: `#${moduleName}`,
+      lessons: [],
     };
   };
 
   const getLessonCompletedInfo = (moduleProgress: LearningProgress) => {
     const moduleInfo = getModuleInfo(moduleProgress.moduleName);
     const completedLessons = moduleProgress.lessonsCompleted || [];
-    const totalLessons = moduleInfo.lessons.length || moduleProgress.totalLessons || 0;
+    const totalLessons = moduleProgress.totalLessons || moduleInfo.lessons.length || 0;
 
     return {
       completed: completedLessons,
@@ -471,7 +494,7 @@ function ModuleProgressSection({ progress }: ModuleProgressSectionProps) {
                   <div className="text-gray-300 mb-1">Bài học đã hoàn thành:</div>
                   <div className="flex flex-wrap gap-1">
                     {lessonInfo.completed.slice(0, 3).map((lessonId, index) => {
-                      const lesson = lessonInfo.lessons.find((l) => l.id === lessonId);
+                      const lesson = lessonInfo.lessons.find((l: LessonNavigation) => l.id === lessonId);
                       const lessonTitle = lesson?.title || `Bài ${lessonId}`;
 
                       return (

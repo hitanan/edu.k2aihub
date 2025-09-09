@@ -52,7 +52,7 @@ const APP_FEATURES: Feature[] = [
     development_cost: 60,
     user_engagement: 90,
     privacy_level: 80,
-    description: 'AI phân tích tâm trạng qua văn bản và giọng nói'
+    description: 'AI phân tích tâm trạng qua văn bản và giọng nói',
   },
   {
     id: 'ai-therapy',
@@ -62,7 +62,7 @@ const APP_FEATURES: Feature[] = [
     development_cost: 120,
     user_engagement: 85,
     privacy_level: 90,
-    description: 'Chatbot chuyên nghiệp hỗ trợ tâm lý mọi lúc'
+    description: 'Chatbot chuyên nghiệp hỗ trợ tâm lý mọi lúc',
   },
   {
     id: 'peer-support',
@@ -72,7 +72,7 @@ const APP_FEATURES: Feature[] = [
     development_cost: 80,
     user_engagement: 95,
     privacy_level: 70,
-    description: 'Kết nối với những người có cùng trải nghiệm'
+    description: 'Kết nối với những người có cùng trải nghiệm',
   },
   {
     id: 'crisis-intervention',
@@ -82,7 +82,7 @@ const APP_FEATURES: Feature[] = [
     development_cost: 100,
     user_engagement: 60,
     privacy_level: 95,
-    description: 'Phát hiện và ứng phó tự động với khủng hoảng tâm lý'
+    description: 'Phát hiện và ứng phó tự động với khủng hoảng tâm lý',
   },
   {
     id: 'mindfulness-exercises',
@@ -92,7 +92,7 @@ const APP_FEATURES: Feature[] = [
     development_cost: 40,
     user_engagement: 80,
     privacy_level: 90,
-    description: 'Thư viện meditation và breathing exercises'
+    description: 'Thư viện meditation và breathing exercises',
   },
   {
     id: 'professional-connect',
@@ -102,7 +102,7 @@ const APP_FEATURES: Feature[] = [
     development_cost: 90,
     user_engagement: 75,
     privacy_level: 85,
-    description: 'Video call bảo mật với tâm lý học viên'
+    description: 'Video call bảo mật với tâm lý học viên',
   },
   {
     id: 'stress-analytics',
@@ -112,7 +112,7 @@ const APP_FEATURES: Feature[] = [
     development_cost: 70,
     user_engagement: 70,
     privacy_level: 75,
-    description: 'Kết hợp wearables và behavioral patterns'
+    description: 'Kết hợp wearables và behavioral patterns',
   },
   {
     id: 'educational-content',
@@ -122,8 +122,8 @@ const APP_FEATURES: Feature[] = [
     development_cost: 30,
     user_engagement: 60,
     privacy_level: 95,
-    description: 'Kiến thức về sức khỏe tâm thần và self-care'
-  }
+    description: 'Kiến thức về sức khỏe tâm thần và self-care',
+  },
 ];
 
 const TECH_STACKS: TechStack[] = [
@@ -135,7 +135,7 @@ const TECH_STACKS: TechStack[] = [
     security: 75,
     cost: 60,
     scalability: 85,
-    description: 'Cross-platform development với JavaScript ecosystem'
+    description: 'Cross-platform development với JavaScript ecosystem',
   },
   {
     id: 'flutter-firebase',
@@ -145,7 +145,7 @@ const TECH_STACKS: TechStack[] = [
     security: 80,
     cost: 50,
     scalability: 80,
-    description: 'Fast development với Google cloud backend'
+    description: 'Fast development với Google cloud backend',
   },
   {
     id: 'native-aws',
@@ -155,7 +155,7 @@ const TECH_STACKS: TechStack[] = [
     security: 90,
     cost: 120,
     scalability: 95,
-    description: 'Maximum performance với enterprise cloud'
+    description: 'Maximum performance với enterprise cloud',
   },
   {
     id: 'ai-nlp-stack',
@@ -165,7 +165,7 @@ const TECH_STACKS: TechStack[] = [
     security: 70,
     cost: 100,
     scalability: 75,
-    description: 'Advanced AI cho sentiment analysis và chatbot'
+    description: 'Advanced AI cho sentiment analysis và chatbot',
   },
   {
     id: 'blockchain-security',
@@ -175,7 +175,7 @@ const TECH_STACKS: TechStack[] = [
     security: 98,
     cost: 150,
     scalability: 60,
-    description: 'Decentralized data storage cho ultimate privacy'
+    description: 'Decentralized data storage cho ultimate privacy',
   },
   {
     id: 'analytics-ml',
@@ -185,8 +185,8 @@ const TECH_STACKS: TechStack[] = [
     security: 75,
     cost: 80,
     scalability: 90,
-    description: 'Predictive analytics cho intervention timing'
-  }
+    description: 'Predictive analytics cho intervention timing',
+  },
 ];
 
 const TARGET_GROUPS: TargetGroup[] = [
@@ -199,7 +199,7 @@ const TARGET_GROUPS: TargetGroup[] = [
     price_sensitivity: 80,
     engagement_pattern: 'High frequency, short sessions',
     market_size: 85,
-    description: 'Digital natives, stressed về tương lai và công việc'
+    description: 'Digital natives, stressed về tương lai và công việc',
   },
   {
     id: 'working-professionals',
@@ -210,7 +210,7 @@ const TARGET_GROUPS: TargetGroup[] = [
     price_sensitivity: 60,
     engagement_pattern: 'Medium frequency, focused sessions',
     market_size: 90,
-    description: 'Có thu nhập ổn định, cần giải pháp hiệu quả nhanh'
+    description: 'Có thu nhập ổn định, cần giải pháp hiệu quả nhanh',
   },
   {
     id: 'parents',
@@ -221,7 +221,7 @@ const TARGET_GROUPS: TargetGroup[] = [
     price_sensitivity: 70,
     engagement_pattern: 'Irregular, crisis-driven',
     market_size: 75,
-    description: 'Cần hỗ trợ nuôi dạy con và cân bằng cuộc sống'
+    description: 'Cần hỗ trợ nuôi dạy con và cân bằng cuộc sống',
   },
   {
     id: 'seniors',
@@ -232,7 +232,7 @@ const TARGET_GROUPS: TargetGroup[] = [
     price_sensitivity: 85,
     engagement_pattern: 'Low frequency, long sessions',
     market_size: 60,
-    description: 'Cần giao diện đơn giản và hỗ trợ kỹ thuật'
+    description: 'Cần giao diện đơn giản và hỗ trợ kỹ thuật',
   },
   {
     id: 'students',
@@ -243,62 +243,64 @@ const TARGET_GROUPS: TargetGroup[] = [
     price_sensitivity: 95,
     engagement_pattern: 'Very high frequency, micro-sessions',
     market_size: 70,
-    description: 'Ngân sách hạn chế nhưng rất am hiểu công nghệ'
-  }
+    description: 'Ngân sách hạn chế nhưng rất am hiểu công nghệ',
+  },
 ];
 
 const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'target-selection' | 'feature-selection' | 'tech-selection' | 'development' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'target-selection' | 'feature-selection' | 'tech-selection' | 'development' | 'results'
+  >('briefing');
   const [selectedTarget, setSelectedTarget] = useState<TargetGroup | null>(null);
   const [selectedFeatures, setSelectedFeatures] = useState<Feature[]>([]);
   const [selectedTech, setSelectedTech] = useState<TechStack[]>([]);
-  const [budget, setBudget] = useState(400);
+  const [budget] = useState(400);
   const [developmentProgress, setDevelopmentProgress] = useState(0);
-  const [isDeveloping, setIsDeveloping] = useState(false);
+  const [, setIsDeveloping] = useState(false);
 
   // App metrics
   const [userEngagement, setUserEngagement] = useState(0);
   const [privacyScore, setPrivacyScore] = useState(0);
   const [marketFit, setMarketFit] = useState(0);
 
-  const totalCost = selectedFeatures.reduce((sum, f) => sum + f.development_cost, 0) + 
-    selectedTech.reduce((sum, t) => sum + t.cost, 0);
+  const totalCost =
+    selectedFeatures.reduce((sum, f) => sum + f.development_cost, 0) + selectedTech.reduce((sum, t) => sum + t.cost, 0);
 
   const canAfford = totalCost <= budget;
 
   const calculateAppScore = () => {
     if (!selectedTarget || selectedFeatures.length === 0) return { impact: 0, engagement: 0, privacy: 0, fit: 0 };
-    
+
     // Impact score based on feature effectiveness
     const impactScore = selectedFeatures.reduce((sum, f) => sum + f.impact, 0) / selectedFeatures.length;
-    
+
     // Engagement score combining feature engagement and tech comfort
     const featureEngagement = selectedFeatures.reduce((sum, f) => sum + f.user_engagement, 0) / selectedFeatures.length;
     const techEngagement = selectedTech.reduce((sum, t) => sum + t.performance, 0) / Math.max(selectedTech.length, 1);
     const targetComfort = selectedTarget.tech_comfort;
-    const engagementScore = (featureEngagement * 0.4 + techEngagement * 0.3 + targetComfort * 0.3);
-    
+    const engagementScore = featureEngagement * 0.4 + techEngagement * 0.3 + targetComfort * 0.3;
+
     // Privacy score
     const featurePrivacy = selectedFeatures.reduce((sum, f) => sum + f.privacy_level, 0) / selectedFeatures.length;
     const techSecurity = selectedTech.reduce((sum, t) => sum + t.security, 0) / Math.max(selectedTech.length, 1);
-    const privacyScore = (featurePrivacy * 0.6 + techSecurity * 0.4);
-    
+    const privacyScore = featurePrivacy * 0.6 + techSecurity * 0.4;
+
     // Market fit score
-    const needsAlignment = selectedFeatures.filter(f => {
+    const needsAlignment = selectedFeatures.filter((f) => {
       if (f.category === 'therapy' && selectedTarget.mental_health_needs.includes('anxiety')) return true;
       if (f.category === 'monitoring' && selectedTarget.mental_health_needs.includes('stress')) return true;
       if (f.category === 'community' && selectedTarget.mental_health_needs.includes('social anxiety')) return true;
       if (f.category === 'emergency' && selectedTarget.mental_health_needs.includes('depression')) return true;
       return f.category === 'education';
     }).length;
-    
+
     const marketFitScore = (needsAlignment / selectedFeatures.length) * 100 * (selectedTarget.market_size / 100);
-    
+
     return {
       impact: Math.round(impactScore),
       engagement: Math.round(engagementScore),
       privacy: Math.round(privacyScore),
-      fit: Math.round(marketFitScore)
+      fit: Math.round(marketFitScore),
     };
   };
 
@@ -310,17 +312,18 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
     setGamePhase('development');
     setIsDeveloping(true);
-    
+
     const appMetrics = calculateAppScore();
     setUserEngagement(appMetrics.engagement);
     setPrivacyScore(appMetrics.privacy);
     setMarketFit(appMetrics.fit);
-    
-    const totalComplexity = selectedFeatures.reduce((sum, f) => sum + f.development_cost, 0) +
+
+    const totalComplexity =
+      selectedFeatures.reduce((sum, f) => sum + f.development_cost, 0) +
       selectedTech.reduce((sum, t) => sum + t.cost, 0);
-    
+
     const interval = setInterval(() => {
-      setDevelopmentProgress(prev => {
+      setDevelopmentProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsDeveloping(false);
@@ -334,16 +337,16 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
   const getOverallScore = () => {
     const appMetrics = calculateAppScore();
-    const costEfficiency = Math.round((budget - totalCost) / budget * 100);
+    const costEfficiency = Math.round(((budget - totalCost) / budget) * 100);
     const scalability = selectedTech.reduce((sum, t) => sum + t.scalability, 0) / Math.max(selectedTech.length, 1);
-    
+
     return Math.round(
-      appMetrics.impact * 0.25 + 
-      appMetrics.engagement * 0.25 + 
-      appMetrics.privacy * 0.2 + 
-      appMetrics.fit * 0.2 + 
-      costEfficiency * 0.05 + 
-      scalability * 0.05
+      appMetrics.impact * 0.25 +
+        appMetrics.engagement * 0.25 +
+        appMetrics.privacy * 0.2 +
+        appMetrics.fit * 0.2 +
+        costEfficiency * 0.05 +
+        scalability * 0.05,
     );
   };
 
@@ -388,11 +391,21 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                 Tiêu chí đánh giá
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-pink-400">Tác động (25%)</span> - Hiệu quả hỗ trợ tâm lý</li>
-                <li>• <span className="text-blue-400">Tương tác (25%)</span> - Engagement của người dùng</li>
-                <li>• <span className="text-green-400">Bảo mật (20%)</span> - Quyền riêng tư dữ liệu</li>
-                <li>• <span className="text-yellow-400">Phù hợp (20%)</span> - Market-product fit</li>
-                <li>• <span className="text-purple-400">Khác (10%)</span> - Chi phí & khả năng mở rộng</li>
+                <li>
+                  • <span className="text-pink-400">Tác động (25%)</span> - Hiệu quả hỗ trợ tâm lý
+                </li>
+                <li>
+                  • <span className="text-blue-400">Tương tác (25%)</span> - Engagement của người dùng
+                </li>
+                <li>
+                  • <span className="text-green-400">Bảo mật (20%)</span> - Quyền riêng tư dữ liệu
+                </li>
+                <li>
+                  • <span className="text-yellow-400">Phù hợp (20%)</span> - Market-product fit
+                </li>
+                <li>
+                  • <span className="text-purple-400">Khác (10%)</span> - Chi phí & khả năng mở rộng
+                </li>
               </ul>
             </div>
           </div>
@@ -426,14 +439,12 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {TARGET_GROUPS.map((target) => {
               const isSelected = selectedTarget?.id === target.id;
-              
+
               return (
                 <div
                   key={target.id}
                   className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 cursor-pointer transition-all duration-200 hover:scale-105 ${
-                    isSelected
-                      ? 'border-pink-500 bg-pink-500/20'
-                      : 'border-white/20 hover:border-pink-400/50'
+                    isSelected ? 'border-pink-500 bg-pink-500/20' : 'border-white/20 hover:border-pink-400/50'
                   }`}
                   onClick={() => setSelectedTarget(target)}
                 >
@@ -441,10 +452,10 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     <Users className="w-8 h-8 text-pink-400" />
                     <span className="text-blue-400 font-bold">Thị trường: {target.market_size}%</span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{target.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{target.description}</p>
-                  
+
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Độ tuổi:</span>
@@ -453,25 +464,25 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     <div className="flex justify-between">
                       <span className="text-gray-400">Thông thạo công nghệ:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-blue-500 h-2 rounded-full" 
-                          style={{width: `${target.tech_comfort}%`}}
+                        <div
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: `${target.tech_comfort}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Nhạy cảm giá:</span>
                       <div className="bg-gray-700 rounded-full h-2 w-16">
-                        <div 
-                          className="bg-red-500 h-2 rounded-full" 
-                          style={{width: `${target.price_sensitivity}%`}}
+                        <div
+                          className="bg-red-500 h-2 rounded-full"
+                          style={{ width: `${target.price_sensitivity}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="mt-3">
                       <span className="text-gray-400 text-xs">Nhu cầu chính:</span>
                       <div className="flex flex-wrap gap-1 mt-1">
-                        {target.mental_health_needs.slice(0, 2).map(need => (
+                        {target.mental_health_needs.slice(0, 2).map((need) => (
                           <span key={need} className="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-xs">
                             {need}
                           </span>
@@ -479,7 +490,7 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-pink-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -522,10 +533,11 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {APP_FEATURES.map((feature) => {
-              const isSelected = selectedFeatures.some(f => f.id === feature.id);
-              const canSelect = selectedFeatures.length < 4 && 
-                (totalCost + feature.development_cost - (isSelected ? feature.development_cost : 0)) <= budget;
-              
+              const isSelected = selectedFeatures.some((f) => f.id === feature.id);
+              const canSelect =
+                selectedFeatures.length < 4 &&
+                totalCost + feature.development_cost - (isSelected ? feature.development_cost : 0) <= budget;
+
               return (
                 <div
                   key={feature.id}
@@ -533,14 +545,14 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     isSelected
                       ? 'border-green-500 bg-green-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-green-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-green-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedFeatures(prev => prev.filter(f => f.id !== feature.id));
+                      setSelectedFeatures((prev) => prev.filter((f) => f.id !== feature.id));
                     } else if (canSelect) {
-                      setSelectedFeatures(prev => [...prev, feature]);
+                      setSelectedFeatures((prev) => [...prev, feature]);
                     }
                   }}
                 >
@@ -554,40 +566,37 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     </div>
                     <span className="text-yellow-400 font-bold text-sm">{feature.development_cost}M</span>
                   </div>
-                  
+
                   <h3 className="text-sm font-bold text-white mb-2">{feature.name}</h3>
                   <p className="text-gray-300 text-xs mb-3">{feature.description}</p>
-                  
+
                   <div className="space-y-1 text-xs">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Tác động:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-pink-500 h-1 rounded-full" 
-                          style={{width: `${feature.impact}%`}}
-                        ></div>
+                        <div className="bg-pink-500 h-1 rounded-full" style={{ width: `${feature.impact}%` }}></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Engagement:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-blue-500 h-1 rounded-full" 
-                          style={{width: `${feature.user_engagement}%`}}
+                        <div
+                          className="bg-blue-500 h-1 rounded-full"
+                          style={{ width: `${feature.user_engagement}%` }}
                         ></div>
                       </div>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Bảo mật:</span>
                       <div className="bg-gray-700 rounded-full h-1 w-12">
-                        <div 
-                          className="bg-green-500 h-1 rounded-full" 
-                          style={{width: `${feature.privacy_level}%`}}
+                        <div
+                          className="bg-green-500 h-1 rounded-full"
+                          style={{ width: `${feature.privacy_level}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-3 text-center">
                       <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs">Đã chọn</span>
@@ -619,7 +628,9 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Chọn công nghệ phát triển (tối đa 3)</h2>
             <div className="flex justify-center items-center gap-4 text-gray-300">
-              <span>Ngân sách còn lại: {budget - selectedFeatures.reduce((sum, f) => sum + f.development_cost, 0)} triệu VNĐ</span>
+              <span>
+                Ngân sách còn lại: {budget - selectedFeatures.reduce((sum, f) => sum + f.development_cost, 0)} triệu VNĐ
+              </span>
               <span>Đã chọn: {selectedTech.length}/3</span>
             </div>
             <div className="text-right text-yellow-400">
@@ -630,12 +641,12 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {TECH_STACKS.map((tech) => {
-              const isSelected = selectedTech.some(t => t.id === tech.id);
-              const currentCostWithoutTech = selectedFeatures.reduce((sum, f) => sum + f.development_cost, 0) +
-                selectedTech.filter(t => t.id !== tech.id).reduce((sum, t) => sum + t.cost, 0);
-              const canSelect = selectedTech.length < 3 && 
-                (currentCostWithoutTech + tech.cost) <= budget;
-              
+              const isSelected = selectedTech.some((t) => t.id === tech.id);
+              const currentCostWithoutTech =
+                selectedFeatures.reduce((sum, f) => sum + f.development_cost, 0) +
+                selectedTech.filter((t) => t.id !== tech.id).reduce((sum, t) => sum + t.cost, 0);
+              const canSelect = selectedTech.length < 3 && currentCostWithoutTech + tech.cost <= budget;
+
               return (
                 <div
                   key={tech.id}
@@ -643,14 +654,14 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     isSelected
                       ? 'border-blue-500 bg-blue-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-blue-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-blue-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedTech(prev => prev.filter(t => t.id !== tech.id));
+                      setSelectedTech((prev) => prev.filter((t) => t.id !== tech.id));
                     } else if (canSelect) {
-                      setSelectedTech(prev => [...prev, tech]);
+                      setSelectedTech((prev) => [...prev, tech]);
                     }
                   }}
                 >
@@ -658,51 +669,48 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     <Smartphone className="w-8 h-8 text-blue-400" />
                     <span className="text-yellow-400 font-bold">{tech.cost}M VNĐ</span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{tech.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{tech.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div>
                       <span className="text-gray-400">Performance:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${tech.performance}%`}}
-                        ></div>
+                        <div className="bg-green-500 h-2 rounded-full" style={{ width: `${tech.performance}%` }}></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Security:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-red-500 h-2 rounded-full" 
-                          style={{width: `${tech.security}%`}}
-                        ></div>
+                        <div className="bg-red-500 h-2 rounded-full" style={{ width: `${tech.security}%` }}></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Scalability:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-purple-500 h-2 rounded-full" 
-                          style={{width: `${tech.scalability}%`}}
-                        ></div>
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: `${tech.scalability}%` }}></div>
                       </div>
                     </div>
                     <div className="text-center">
-                      <span className={`text-sm px-2 py-1 rounded ${
-                        tech.type === 'frontend' ? 'bg-blue-500/20 text-blue-400' :
-                        tech.type === 'backend' ? 'bg-green-500/20 text-green-400' :
-                        tech.type === 'ai' ? 'bg-purple-500/20 text-purple-400' :
-                        tech.type === 'security' ? 'bg-red-500/20 text-red-400' :
-                        'bg-yellow-500/20 text-yellow-400'
-                      }`}>
+                      <span
+                        className={`text-sm px-2 py-1 rounded ${
+                          tech.type === 'frontend'
+                            ? 'bg-blue-500/20 text-blue-400'
+                            : tech.type === 'backend'
+                              ? 'bg-green-500/20 text-green-400'
+                              : tech.type === 'ai'
+                                ? 'bg-purple-500/20 text-purple-400'
+                                : tech.type === 'security'
+                                  ? 'bg-red-500/20 text-red-400'
+                                  : 'bg-yellow-500/20 text-yellow-400'
+                        }`}
+                      >
                         {tech.type}
                       </span>
                     </div>
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -722,14 +730,18 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-green-400 mb-2">Tính năng ({selectedFeatures.length})</h4>
-                {selectedFeatures.map(feature => (
-                  <p key={feature.id} className="text-gray-300 text-sm">{feature.name}</p>
+                {selectedFeatures.map((feature) => (
+                  <p key={feature.id} className="text-gray-300 text-sm">
+                    {feature.name}
+                  </p>
                 ))}
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-blue-400 mb-2">Công nghệ ({selectedTech.length})</h4>
-                {selectedTech.map(tech => (
-                  <p key={tech.id} className="text-gray-300 text-sm">{tech.name}</p>
+                {selectedTech.map((tech) => (
+                  <p key={tech.id} className="text-gray-300 text-sm">
+                    {tech.name}
+                  </p>
                 ))}
               </div>
             </div>
@@ -773,9 +785,9 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                 <span>{Math.round(developmentProgress)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-6">
-                <div 
-                  className="bg-gradient-to-r from-pink-500 to-purple-500 h-6 rounded-full transition-all duration-300" 
-                  style={{width: `${developmentProgress}%`}}
+                <div
+                  className="bg-gradient-to-r from-pink-500 to-purple-500 h-6 rounded-full transition-all duration-300"
+                  style={{ width: `${developmentProgress}%` }}
                 ></div>
               </div>
             </div>
@@ -787,9 +799,9 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{userEngagement}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${userEngagement}%`}}
+                  <div
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${userEngagement}%` }}
                   ></div>
                 </div>
               </div>
@@ -800,9 +812,9 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{privacyScore}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${privacyScore}%`}}
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${privacyScore}%` }}
                   ></div>
                 </div>
               </div>
@@ -813,9 +825,9 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{marketFit}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-yellow-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${marketFit}%`}}
+                  <div
+                    className="bg-yellow-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${marketFit}%` }}
                   ></div>
                 </div>
               </div>
@@ -879,11 +891,11 @@ const MentalHealthAppGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                 {appScore >= 70 && appScore < 80 && <p>✅ Ứng dụng khá ổn! Cần cải thiện một số tính năng.</p>}
                 {appScore >= 60 && appScore < 70 && <p>⚠️ Ứng dụng cơ bản! Cần phát triển thêm để cạnh tranh.</p>}
                 {appScore < 60 && <p>❌ Ứng dụng cần cải thiện nhiều để đáp ứng nhu cầu người dùng.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
-                    <strong>Lưu ý:</strong> Ứng dụng sức khỏe tâm thần cần cân bằng giữa 
-                    hiệu quả trị liệu, quyền riêng tư và trải nghiệm người dùng.
+                    <strong>Lưu ý:</strong> Ứng dụng sức khỏe tâm thần cần cân bằng giữa hiệu quả trị liệu, quyền riêng
+                    tư và trải nghiệm người dùng.
                   </p>
                 </div>
               </div>

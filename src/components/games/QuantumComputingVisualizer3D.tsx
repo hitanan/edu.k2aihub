@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, Text, Html, Sphere, Box } from '@react-three/drei';
-import { Vector3, Color, BufferGeometry, Float32BufferAttribute } from 'three';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls, Html, Sphere, Box } from '@react-three/drei';
 import * as THREE from 'three';
 import { useAdvancedGameStore } from '@/stores/advancedGameStore';
 
@@ -88,73 +87,13 @@ function Qubit3D({
   );
 }
 
-// Quantum Gate component
-function QuantumGate({
-  position,
-  type,
-  onClick,
-}: {
-  position: [number, number, number];
-  type: string;
-  onClick: () => void;
-}) {
-  const [hovered, setHovered] = useState(false);
-
-  const color = useMemo(() => {
-    switch (type) {
-      case 'Hadamard':
-        return '#ff8800';
-      case 'Pauli-X':
-        return '#ff0000';
-      case 'Pauli-Y':
-        return '#00ff00';
-      case 'Pauli-Z':
-        return '#0000ff';
-      case 'CNOT':
-        return '#ff00ff';
-      default:
-        return '#888888';
-    }
-  }, [type]);
-
-  return (
-    <group position={position}>
-      <Box
-        args={[0.8, 0.8, 0.2]}
-        onClick={onClick}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
-        scale={hovered ? 1.1 : 1}
-      >
-        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.2} />
-      </Box>
-
-      <Html position={[0, 0, 0.15]} center>
-        <div className="text-white text-xs font-bold">
-          {type === 'Hadamard'
-            ? 'H'
-            : type === 'Pauli-X'
-              ? 'X'
-              : type === 'Pauli-Y'
-                ? 'Y'
-                : type === 'Pauli-Z'
-                  ? 'Z'
-                  : type === 'CNOT'
-                    ? '⊕'
-                    : type}
-        </div>
-      </Html>
-    </group>
-  );
-}
-
 // Quantum circuit visualization với đường connection
 function QuantumCircuit({
   qubits,
 }: {
   qubits: { id: string; position: [number, number, number]; state: string; entangled: boolean }[];
 }) {
-  const positions: number[] = useMemo(() => {
+  useMemo(() => {
     const posArray: number[] = [];
 
     // Tạo circuit lines nối các qubits

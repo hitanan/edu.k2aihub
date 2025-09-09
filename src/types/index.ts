@@ -81,16 +81,6 @@ export interface ContactForm {
   message: string;
 }
 
-export type PageProps = {
-  params: {
-    lessonId?: string;
-    gameId?: string;
-    slug?: string;
-    category?: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
 export interface EducationalGame {
   id: string;
   title: string;

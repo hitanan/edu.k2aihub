@@ -52,7 +52,7 @@ const NANO_MATERIALS: NanoMaterial[] = [
     reactivity: 30,
     cost: 80,
     applications: ['Electronics', 'Composite materials', 'Energy storage'],
-    description: 'Cấu trúc carbon siêu mạnh với tính dẫn điện xuất sắc'
+    description: 'Cấu trúc carbon siêu mạnh với tính dẫn điện xuất sắc',
   },
   {
     id: 'graphene',
@@ -63,7 +63,7 @@ const NANO_MATERIALS: NanoMaterial[] = [
     reactivity: 40,
     cost: 120,
     applications: ['Flexible electronics', 'Sensors', 'Batteries'],
-    description: 'Lớp carbon một nguyên tử dày với tính chất độc đáo'
+    description: 'Lớp carbon một nguyên tử dày với tính chất độc đáo',
   },
   {
     id: 'silver-nanoparticles',
@@ -74,7 +74,7 @@ const NANO_MATERIALS: NanoMaterial[] = [
     reactivity: 70,
     cost: 60,
     applications: ['Antibacterial coatings', 'Medical devices', 'Water treatment'],
-    description: 'Hạt nano bạc có tính kháng khuẩn mạnh'
+    description: 'Hạt nano bạc có tính kháng khuẩn mạnh',
   },
   {
     id: 'titanium-dioxide',
@@ -85,7 +85,7 @@ const NANO_MATERIALS: NanoMaterial[] = [
     reactivity: 50,
     cost: 40,
     applications: ['UV protection', 'Photocatalysis', 'Coatings'],
-    description: 'Vật liệu quang xúc tác bền và an toàn'
+    description: 'Vật liệu quang xúc tác bền và an toàn',
   },
   {
     id: 'quantum-dots',
@@ -96,7 +96,7 @@ const NANO_MATERIALS: NanoMaterial[] = [
     reactivity: 60,
     cost: 100,
     applications: ['Displays', 'Solar cells', 'Biomarkers'],
-    description: 'Tinh thể nano phát sáng với màu sắc điều chỉnh được'
+    description: 'Tinh thể nano phát sáng với màu sắc điều chỉnh được',
   },
   {
     id: 'polymer-nanofibers',
@@ -107,8 +107,8 @@ const NANO_MATERIALS: NanoMaterial[] = [
     reactivity: 80,
     cost: 30,
     applications: ['Filtration', 'Tissue engineering', 'Textiles'],
-    description: 'Sợi polymer siêu nhỏ có khả năng lọc tuyệt vời'
-  }
+    description: 'Sợi polymer siêu nhỏ có khả năng lọc tuyệt vời',
+  },
 ];
 
 const EXPERIMENTS: Experiment[] = [
@@ -120,7 +120,7 @@ const EXPERIMENTS: Experiment[] = [
     success_rate: 85,
     safety_risk: 30,
     expected_outcome: 'Tạo ra vật liệu nano với kích thước đồng đều',
-    materials_needed: ['carbon-nanotubes', 'silver-nanoparticles']
+    materials_needed: ['carbon-nanotubes', 'silver-nanoparticles'],
   },
   {
     id: 'characterization',
@@ -130,7 +130,7 @@ const EXPERIMENTS: Experiment[] = [
     success_rate: 95,
     safety_risk: 10,
     expected_outcome: 'Xác định kích thước và tính chất vật liệu',
-    materials_needed: ['graphene', 'quantum-dots']
+    materials_needed: ['graphene', 'quantum-dots'],
   },
   {
     id: 'functionalization',
@@ -140,7 +140,7 @@ const EXPERIMENTS: Experiment[] = [
     success_rate: 75,
     safety_risk: 40,
     expected_outcome: 'Cải thiện tính tương thích và hoạt tính',
-    materials_needed: ['titanium-dioxide', 'polymer-nanofibers']
+    materials_needed: ['titanium-dioxide', 'polymer-nanofibers'],
   },
   {
     id: 'assembly',
@@ -150,7 +150,7 @@ const EXPERIMENTS: Experiment[] = [
     success_rate: 70,
     safety_risk: 50,
     expected_outcome: 'Tạo cấu trúc 3D phức tạp từ nano building blocks',
-    materials_needed: ['carbon-nanotubes', 'graphene', 'quantum-dots']
+    materials_needed: ['carbon-nanotubes', 'graphene', 'quantum-dots'],
   },
   {
     id: 'application-test',
@@ -160,8 +160,8 @@ const EXPERIMENTS: Experiment[] = [
     success_rate: 80,
     safety_risk: 20,
     expected_outcome: 'Kiểm tra hiệu suất trong ứng dụng thực tế',
-    materials_needed: ['silver-nanoparticles', 'titanium-dioxide']
-  }
+    materials_needed: ['silver-nanoparticles', 'titanium-dioxide'],
+  },
 ];
 
 const EQUIPMENT: Equipment[] = [
@@ -172,7 +172,7 @@ const EQUIPMENT: Equipment[] = [
     cost: 150,
     maintenance: 40,
     specialization: ['imaging', 'characterization'],
-    description: 'Quan sát cấu trúc nano với độ phân giải nguyên tử'
+    description: 'Quan sát cấu trúc nano với độ phân giải nguyên tử',
   },
   {
     id: 'atomic-force-microscope',
@@ -181,7 +181,7 @@ const EQUIPMENT: Equipment[] = [
     cost: 120,
     maintenance: 30,
     specialization: ['surface-analysis', 'manipulation'],
-    description: 'Đo lực và thao tác nguyên tử đơn lẻ'
+    description: 'Đo lực và thao tác nguyên tử đơn lẻ',
   },
   {
     id: 'cvd-reactor',
@@ -190,7 +190,7 @@ const EQUIPMENT: Equipment[] = [
     cost: 100,
     maintenance: 60,
     specialization: ['synthesis', 'growth'],
-    description: 'Tạo màng mỏng và cấu trúc nano bằng hơi hóa học'
+    description: 'Tạo màng mỏng và cấu trúc nano bằng hơi hóa học',
   },
   {
     id: 'sputtering-system',
@@ -199,7 +199,7 @@ const EQUIPMENT: Equipment[] = [
     cost: 80,
     maintenance: 50,
     specialization: ['coating', 'deposition'],
-    description: 'Tạo lớp phủ nano đồng đều trên bề mặt'
+    description: 'Tạo lớp phủ nano đồng đều trên bề mặt',
   },
   {
     id: 'xray-diffractometer',
@@ -208,26 +208,28 @@ const EQUIPMENT: Equipment[] = [
     cost: 90,
     maintenance: 35,
     specialization: ['structure-analysis', 'crystallography'],
-    description: 'Phân tích cấu trúc tinh thể của vật liệu nano'
-  }
+    description: 'Phân tích cấu trúc tinh thể của vật liệu nano',
+  },
 ];
 
 const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'material-selection' | 'equipment-selection' | 'experiment-selection' | 'lab-work' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<
+    'briefing' | 'material-selection' | 'equipment-selection' | 'experiment-selection' | 'lab-work' | 'results'
+  >('briefing');
   const [selectedMaterials, setSelectedMaterials] = useState<NanoMaterial[]>([]);
   const [selectedEquipment, setSelectedEquipment] = useState<Equipment[]>([]);
   const [selectedExperiment, setSelectedExperiment] = useState<Experiment | null>(null);
-  const [budget, setBudget] = useState(400);
+  const [budget] = useState(400);
   const [experimentProgress, setExperimentProgress] = useState(0);
-  const [isExperimenting, setIsExperimenting] = useState(false);
+  const [, setIsExperimenting] = useState(false);
 
   // Lab metrics
   const [safetyLevel, setSafetyLevel] = useState(100);
   const [precision, setPrecision] = useState(0);
   const [efficiency, setEfficiency] = useState(0);
 
-  const totalCost = selectedMaterials.reduce((sum, m) => sum + m.cost, 0) + 
-    selectedEquipment.reduce((sum, e) => sum + e.cost, 0);
+  const totalCost =
+    selectedMaterials.reduce((sum, m) => sum + m.cost, 0) + selectedEquipment.reduce((sum, e) => sum + e.cost, 0);
 
   const canAfford = totalCost <= budget;
 
@@ -238,18 +240,20 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
   const calculateSuccess = () => {
     if (!selectedExperiment) return 0;
-    
+
     const basePrecision = calculatePrecision();
-    const materialStability = selectedMaterials.reduce((sum, m) => sum + m.stability, 0) / Math.max(selectedMaterials.length, 1);
+    const materialStability =
+      selectedMaterials.reduce((sum, m) => sum + m.stability, 0) / Math.max(selectedMaterials.length, 1);
     const experimentComplexity = selectedExperiment.complexity;
-    
-    const successRate = Math.min(100, 
-      selectedExperiment.success_rate + 
-      (basePrecision - 80) * 0.5 + 
-      (materialStability - 80) * 0.3 - 
-      (experimentComplexity - 70) * 0.2
+
+    const successRate = Math.min(
+      100,
+      selectedExperiment.success_rate +
+        (basePrecision - 80) * 0.5 +
+        (materialStability - 80) * 0.3 -
+        (experimentComplexity - 70) * 0.2,
     );
-    
+
     return Math.max(0, Math.round(successRate));
   };
 
@@ -259,13 +263,13 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
       const applicationBonus = m.applications.length * 5;
       return sum + sizeBonus + applicationBonus;
     }, 0);
-    
+
     const equipmentInnovation = selectedEquipment.reduce((sum, e) => {
       return sum + e.precision + e.specialization.length * 5;
     }, 0);
-    
+
     const experimentInnovation = selectedExperiment ? selectedExperiment.complexity : 0;
-    
+
     return Math.min(100, Math.round((materialInnovation + equipmentInnovation + experimentInnovation) / 10));
   };
 
@@ -277,20 +281,20 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
     setGamePhase('lab-work');
     setIsExperimenting(true);
-    
+
     const safetyRisk = selectedExperiment.safety_risk;
     const initialSafety = Math.max(50, 100 - safetyRisk);
     setSafetyLevel(initialSafety);
-    
+
     const basePrecision = calculatePrecision();
     setPrecision(basePrecision);
-    
-    const efficiency = Math.round((budget - totalCost) / budget * 100);
+
+    const efficiency = Math.round(((budget - totalCost) / budget) * 100);
     setEfficiency(efficiency);
-    
+
     const duration = selectedExperiment.duration;
     const interval = setInterval(() => {
-      setExperimentProgress(prev => {
+      setExperimentProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
           setIsExperimenting(false);
@@ -299,19 +303,19 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
         }
         return prev + (100 / duration) * 2;
       });
-      
+
       // Random safety fluctuations during experiment
-      setSafetyLevel(prev => Math.max(30, Math.min(100, prev + (Math.random() - 0.5) * 5)));
+      setSafetyLevel((prev) => Math.max(30, Math.min(100, prev + (Math.random() - 0.5) * 5)));
     }, 100);
   };
 
   const getOverallScore = () => {
     const successRate = calculateSuccess();
     const innovationScore = calculateInnovationScore();
-    const costEfficiency = Math.round((budget - totalCost) / budget * 100);
+    const costEfficiency = Math.round(((budget - totalCost) / budget) * 100);
     const finalSafety = safetyLevel;
-    
-    return Math.round((successRate * 0.3 + innovationScore * 0.3 + costEfficiency * 0.2 + finalSafety * 0.2));
+
+    return Math.round(successRate * 0.3 + innovationScore * 0.3 + costEfficiency * 0.2 + finalSafety * 0.2);
   };
 
   useEffect(() => {
@@ -329,9 +333,7 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
               <Atom className="w-16 h-16 text-purple-400" />
             </div>
             <h1 className="text-4xl font-bold text-white mb-4">Nano Lab Explorer</h1>
-            <p className="text-xl text-gray-300 mb-6">
-              Khám phá thế giới nano và tạo ra vật liệu tương lai!
-            </p>
+            <p className="text-xl text-gray-300 mb-6">Khám phá thế giới nano và tạo ra vật liệu tương lai!</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -355,10 +357,18 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                 Tiêu chí đánh giá
               </h3>
               <ul className="text-gray-300 space-y-2">
-                <li>• <span className="text-green-400">Tỷ lệ thành công (30%)</span> - Kết quả thí nghiệm</li>
-                <li>• <span className="text-purple-400">Tính đổi mới (30%)</span> - Sự sáng tạo trong nghiên cứu</li>
-                <li>• <span className="text-blue-400">Hiệu quả chi phí (20%)</span> - Tối ưu ngân sách</li>
-                <li>• <span className="text-red-400">An toàn lab (20%)</span> - Quản lý rủi ro</li>
+                <li>
+                  • <span className="text-green-400">Tỷ lệ thành công (30%)</span> - Kết quả thí nghiệm
+                </li>
+                <li>
+                  • <span className="text-purple-400">Tính đổi mới (30%)</span> - Sự sáng tạo trong nghiên cứu
+                </li>
+                <li>
+                  • <span className="text-blue-400">Hiệu quả chi phí (20%)</span> - Tối ưu ngân sách
+                </li>
+                <li>
+                  • <span className="text-red-400">An toàn lab (20%)</span> - Quản lý rủi ro
+                </li>
               </ul>
             </div>
           </div>
@@ -391,10 +401,10 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {NANO_MATERIALS.map((material) => {
-              const isSelected = selectedMaterials.some(m => m.id === material.id);
-              const canSelect = selectedMaterials.length < 3 && 
-                (totalCost + material.cost - (isSelected ? material.cost : 0)) <= budget;
-              
+              const isSelected = selectedMaterials.some((m) => m.id === material.id);
+              const canSelect =
+                selectedMaterials.length < 3 && totalCost + material.cost - (isSelected ? material.cost : 0) <= budget;
+
               return (
                 <div
                   key={material.id}
@@ -402,14 +412,14 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     isSelected
                       ? 'border-purple-500 bg-purple-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-purple-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-purple-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedMaterials(prev => prev.filter(m => m.id !== material.id));
+                      setSelectedMaterials((prev) => prev.filter((m) => m.id !== material.id));
                     } else if (canSelect) {
-                      setSelectedMaterials(prev => [...prev, material]);
+                      setSelectedMaterials((prev) => [...prev, material]);
                     }
                   }}
                 >
@@ -420,35 +430,35 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     </div>
                     <span className="text-yellow-400 font-bold">{material.cost}M VNĐ</span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{material.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{material.description}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-sm mb-4">
                     <div>
                       <span className="text-gray-400">Ổn định:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${material.stability}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${material.stability}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Phản ứng:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-orange-500 h-2 rounded-full" 
-                          style={{width: `${material.reactivity}%`}}
+                        <div
+                          className="bg-orange-500 h-2 rounded-full"
+                          style={{ width: `${material.reactivity}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="text-xs text-gray-400">
                     <strong>Ứng dụng:</strong> {material.applications.join(', ')}
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -491,12 +501,12 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {EQUIPMENT.map((equipment) => {
-              const isSelected = selectedEquipment.some(e => e.id === equipment.id);
-              const currentCostWithoutEquip = selectedMaterials.reduce((sum, m) => sum + m.cost, 0) +
-                selectedEquipment.filter(e => e.id !== equipment.id).reduce((sum, e) => sum + e.cost, 0);
-              const canSelect = selectedEquipment.length < 2 && 
-                (currentCostWithoutEquip + equipment.cost) <= budget;
-              
+              const isSelected = selectedEquipment.some((e) => e.id === equipment.id);
+              const currentCostWithoutEquip =
+                selectedMaterials.reduce((sum, m) => sum + m.cost, 0) +
+                selectedEquipment.filter((e) => e.id !== equipment.id).reduce((sum, e) => sum + e.cost, 0);
+              const canSelect = selectedEquipment.length < 2 && currentCostWithoutEquip + equipment.cost <= budget;
+
               return (
                 <div
                   key={equipment.id}
@@ -504,14 +514,14 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     isSelected
                       ? 'border-blue-500 bg-blue-500/20'
                       : !canSelect && !isSelected
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-blue-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-blue-400/50'
                   }`}
                   onClick={() => {
                     if (isSelected) {
-                      setSelectedEquipment(prev => prev.filter(e => e.id !== equipment.id));
+                      setSelectedEquipment((prev) => prev.filter((e) => e.id !== equipment.id));
                     } else if (canSelect) {
-                      setSelectedEquipment(prev => [...prev, equipment]);
+                      setSelectedEquipment((prev) => [...prev, equipment]);
                     }
                   }}
                 >
@@ -519,26 +529,26 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     <Microscope className="w-8 h-8 text-blue-400" />
                     <span className="text-yellow-400 font-bold">{equipment.cost}M VNĐ</span>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{equipment.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{equipment.description}</p>
-                  
+
                   <div className="grid grid-cols-1 gap-2 text-sm mb-4">
                     <div>
                       <span className="text-gray-400">Độ chính xác:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-blue-500 h-2 rounded-full" 
-                          style={{width: `${equipment.precision}%`}}
+                        <div
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: `${equipment.precision}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="text-xs text-gray-400">
                     <strong>Chuyên môn:</strong> {equipment.specialization.join(', ')}
                   </div>
-                  
+
                   {isSelected && (
                     <div className="mt-4 text-center">
                       <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -569,9 +579,7 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Chọn loại thí nghiệm</h2>
-            <div className="text-gray-300">
-              Tổng chi phí hiện tại: {totalCost} triệu VNĐ
-            </div>
+            <div className="text-gray-300">Tổng chi phí hiện tại: {totalCost} triệu VNĐ</div>
             <div className="text-right text-yellow-400">
               <Clock className="w-5 h-5 inline mr-1" />
               {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
@@ -580,10 +588,10 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {EXPERIMENTS.map((experiment) => {
-              const hasRequiredMaterials = experiment.materials_needed.every(materialId =>
-                selectedMaterials.some(m => m.id === materialId)
+              const hasRequiredMaterials = experiment.materials_needed.every((materialId) =>
+                selectedMaterials.some((m) => m.id === materialId),
               );
-              
+
               return (
                 <div
                   key={experiment.id}
@@ -591,8 +599,8 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                     selectedExperiment?.id === experiment.id
                       ? 'border-green-500 bg-green-500/20'
                       : !hasRequiredMaterials
-                      ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
-                      : 'border-white/20 hover:border-green-400/50'
+                        ? 'border-gray-600 bg-gray-600/20 cursor-not-allowed opacity-50'
+                        : 'border-white/20 hover:border-green-400/50'
                   }`}
                   onClick={() => {
                     if (hasRequiredMaterials) {
@@ -607,43 +615,42 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                       <div className="text-red-400">Rủi ro: {experiment.safety_risk}%</div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-bold text-white mb-2">{experiment.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{experiment.expected_outcome}</p>
-                  
+
                   <div className="grid grid-cols-2 gap-2 text-sm mb-4">
                     <div>
                       <span className="text-gray-400">Độ phức tạp:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-orange-500 h-2 rounded-full" 
-                          style={{width: `${experiment.complexity}%`}}
+                        <div
+                          className="bg-orange-500 h-2 rounded-full"
+                          style={{ width: `${experiment.complexity}%` }}
                         ></div>
                       </div>
                     </div>
                     <div>
                       <span className="text-gray-400">Tỷ lệ thành công:</span>
                       <div className="bg-gray-700 rounded-full h-2 mt-1">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full" 
-                          style={{width: `${experiment.success_rate}%`}}
+                        <div
+                          className="bg-green-500 h-2 rounded-full"
+                          style={{ width: `${experiment.success_rate}%` }}
                         ></div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="text-xs text-gray-400 mb-4">
-                    <strong>Vật liệu cần:</strong> {experiment.materials_needed.map(id => 
-                      NANO_MATERIALS.find(m => m.id === id)?.name || id
-                    ).join(', ')}
+                    <strong>Vật liệu cần:</strong>{' '}
+                    {experiment.materials_needed
+                      .map((id) => NANO_MATERIALS.find((m) => m.id === id)?.name || id)
+                      .join(', ')}
                   </div>
-                  
+
                   {!hasRequiredMaterials && (
-                    <div className="text-red-400 text-sm text-center">
-                      ❌ Thiếu vật liệu cần thiết
-                    </div>
+                    <div className="text-red-400 text-sm text-center">❌ Thiếu vật liệu cần thiết</div>
                   )}
-                  
+
                   {selectedExperiment?.id === experiment.id && (
                     <div className="mt-4 text-center">
                       <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Đã chọn</span>
@@ -659,14 +666,18 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
             <div className="grid md:grid-cols-3 gap-4">
               <div>
                 <h4 className="text-lg font-semibold text-purple-400 mb-2">Vật liệu</h4>
-                {selectedMaterials.map(material => (
-                  <p key={material.id} className="text-gray-300 text-sm">{material.name}</p>
+                {selectedMaterials.map((material) => (
+                  <p key={material.id} className="text-gray-300 text-sm">
+                    {material.name}
+                  </p>
                 ))}
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-blue-400 mb-2">Thiết bị</h4>
-                {selectedEquipment.map(equipment => (
-                  <p key={equipment.id} className="text-gray-300 text-sm">{equipment.name}</p>
+                {selectedEquipment.map((equipment) => (
+                  <p key={equipment.id} className="text-gray-300 text-sm">
+                    {equipment.name}
+                  </p>
                 ))}
               </div>
               <div>
@@ -714,9 +725,9 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                 <span>{Math.round(experimentProgress)}%</span>
               </div>
               <div className="bg-gray-700 rounded-full h-6">
-                <div 
-                  className="bg-gradient-to-r from-purple-500 to-blue-500 h-6 rounded-full transition-all duration-300" 
-                  style={{width: `${experimentProgress}%`}}
+                <div
+                  className="bg-gradient-to-r from-purple-500 to-blue-500 h-6 rounded-full transition-all duration-300"
+                  style={{ width: `${experimentProgress}%` }}
                 ></div>
               </div>
             </div>
@@ -728,12 +739,11 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{Math.round(safetyLevel)}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
+                  <div
                     className={`h-3 rounded-full transition-all duration-300 ${
-                      safetyLevel > 80 ? 'bg-green-500' : 
-                      safetyLevel > 60 ? 'bg-yellow-500' : 'bg-red-500'
+                      safetyLevel > 80 ? 'bg-green-500' : safetyLevel > 60 ? 'bg-yellow-500' : 'bg-red-500'
                     }`}
-                    style={{width: `${safetyLevel}%`}}
+                    style={{ width: `${safetyLevel}%` }}
                   ></div>
                 </div>
               </div>
@@ -744,9 +754,9 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{precision}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-blue-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${precision}%`}}
+                  <div
+                    className="bg-blue-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${precision}%` }}
                   ></div>
                 </div>
               </div>
@@ -757,9 +767,9 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                   <span className="text-white font-bold">{efficiency}%</span>
                 </div>
                 <div className="bg-gray-700 rounded-full h-3">
-                  <div 
-                    className="bg-green-500 h-3 rounded-full transition-all duration-300" 
-                    style={{width: `${efficiency}%`}}
+                  <div
+                    className="bg-green-500 h-3 rounded-full transition-all duration-300"
+                    style={{ width: `${efficiency}%` }}
                   ></div>
                 </div>
               </div>
@@ -824,11 +834,11 @@ const NanoLabExplorerGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRest
                 {labScore >= 70 && labScore < 80 && <p>✅ Nghiên cứu thành công! Có thể publish được trong journal.</p>}
                 {labScore >= 60 && labScore < 70 && <p>⚠️ Nghiên cứu khá ổn! Cần cải thiện một số khía cạnh.</p>}
                 {labScore < 60 && <p>❌ Nghiên cứu cần phát triển thêm để đạt tiêu chuẩn xuất bản.</p>}
-                
+
                 <div className="mt-4 pt-4 border-t border-white/20">
                   <p className="text-sm">
-                    <strong>Ghi chú:</strong> Nghiên cứu nano thành công cần cân bằng giữa 
-                    độ chính xác thiết bị, an toàn thí nghiệm và hiệu quả kinh tế.
+                    <strong>Ghi chú:</strong> Nghiên cứu nano thành công cần cân bằng giữa độ chính xác thiết bị, an
+                    toàn thí nghiệm và hiệu quả kinh tế.
                   </p>
                 </div>
               </div>

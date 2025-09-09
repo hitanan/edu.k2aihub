@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { liveCommerceLessons, LiveCommerceLessonType } from '@/data/live-commerce-streaming';
-import { PageProps } from '@/types';
 import { Video } from 'lucide-react';
 
 // Generate static params for all lessons
@@ -14,8 +13,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Bài học không tìm thấy',
@@ -26,7 +25,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function LiveCommerceStreamingLessonPage({ params }: PageProps) {
+export default async function LiveCommerceStreamingLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<LiveCommerceLessonType> = {
     moduleName: 'live-commerce-streaming',
     moduleTitle: 'Live Commerce & Streaming',
@@ -38,6 +37,6 @@ export default function LiveCommerceStreamingLessonPage({ params }: PageProps) {
     getFieldIcon: () => <Video className="w-5 h-5" />, // Optional
     getFieldValue: (lesson) => lesson.streamingPlatforms?.join(', ') || '', // Optional
   };
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

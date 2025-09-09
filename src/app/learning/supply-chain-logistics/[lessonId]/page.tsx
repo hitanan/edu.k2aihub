@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { supplyChainLogisticsLessons } from '@/data/supply-chain-logistics';
 import type { SupplyChainLogisticsLessonType } from '@/data/supply-chain-logistics';
-import { PageProps } from '@/types';
+
 import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   if (!lessonId) {
     return {};
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function SupplyChainLogisticsLessonPage({ params }: PageProps) {
+export default async function SupplyChainLogisticsLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<SupplyChainLogisticsLessonType> = {
     moduleName: 'supply-chain-logistics',
     moduleTitle: 'Supply Chain & Logistics',

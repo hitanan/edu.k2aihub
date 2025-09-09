@@ -3,12 +3,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const __dirname = path.dirname(__filename);
 
 // List of modules to process (12 modules as specified)
 const MODULES_TO_PROCESS = [
   'digital-marketing',
-  'financial-literacy', 
+  'financial-literacy',
   'green-technology',
   'game-development',
   'ai-art-creative-tech',
@@ -18,7 +19,7 @@ const MODULES_TO_PROCESS = [
   'arduino',
   'robotics',
   'blockchain-technology',
-  'renewable-energy'
+  'renewable-energy',
 ];
 
 // Default video URL to replace
@@ -29,7 +30,10 @@ function getApiKeys() {
   try {
     const envyPath = path.join(process.cwd(), '.envy');
     const envyContent = fs.readFileSync(envyPath, 'utf8');
-    return envyContent.split(/\r?\n/).filter((line) => line.trim() && !line.startsWith('#')).map(line => line.trim());
+    return envyContent
+      .split(/\r?\n/)
+      .filter((line) => line.trim() && !line.startsWith('#'))
+      .map((line) => line.trim());
   } catch (error) {
     console.error('Error reading .envy file:', error);
     return [];

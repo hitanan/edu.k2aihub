@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { ProgrammingRoboticsLessons, type ProgrammingRoboticsLessonData } from '@/data/programming-robotics';
-import { PageProps } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
 import { Bot, Code, Cpu, Zap } from 'lucide-react';
 
@@ -44,8 +43,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -64,8 +63,8 @@ function getRoboticsIcon(field: string) {
 }
 
 // Page component with standardized config
-export default function ProgrammingRoboticsLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function ProgrammingRoboticsLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'programming-robotics',
     moduleTitle: 'Programming & Robotics',

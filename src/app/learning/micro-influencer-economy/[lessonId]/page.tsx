@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { microInfluencerEconomyLessons, MicroInfluencerLessonType } from '@/data/micro-influencer-economy';
-import { PageProps } from '@/types';
 import { Users } from 'lucide-react';
 
 // Generate static params for all lessons
@@ -14,8 +13,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Bài học không tìm thấy',
@@ -26,8 +25,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function MicroInfluencerEconomyLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function MicroInfluencerEconomyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   const config: LessonPageConfig<MicroInfluencerLessonType> = {
     moduleName: 'micro-influencer-economy',
     moduleTitle: 'Micro-Influencer Economy',

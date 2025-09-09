@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Zap, Star, ArrowRight, RotateCcw, Target } from 'lucide-react';
 
 interface FutureSkillsIntegrationChallengeGameProps {
@@ -121,11 +121,26 @@ const FutureSkillsIntegrationChallengeGame: React.FC<FutureSkillsIntegrationChal
   const [skillsEarned, setSkillsEarned] = useState<Set<string>>(new Set());
   const [gamePhase, setGamePhase] = useState<'playing' | 'completed'>('playing');
 
+  const handleGameComplete = useCallback(() => {
+    setGamePhase('completed');
+    const skillCount = skillsEarned.size;
+    const maxScore = scenarios.reduce((sum, scenario) => sum + Math.max(...scenario.solutions.map((s) => s.points)), 0);
+    const percentage = Math.round((totalScore / maxScore) * 100);
+
+    let feedback = `Hoàn thành ${skillCount} kỹ năng tương lai! `;
+    if (percentage >= 90) feedback += '🌟 Future Skills Master!';
+    else if (percentage >= 70) feedback += '🚀 Xuất sắc về tích hợp kỹ năng!';
+    else if (percentage >= 50) feedback += '✨ Tốt, cần phát triển thêm!';
+    else feedback += '💪 Cần practice nhiều hơn về future skills!';
+
+    onComplete(totalScore, feedback);
+  }, [onComplete, skillsEarned, totalScore]);
+
   useEffect(() => {
     if (timeLeft === 0 && gamePhase === 'playing') {
       handleGameComplete();
     }
-  }, [timeLeft, gamePhase]);
+  }, [timeLeft, gamePhase, handleGameComplete]);
 
   const handleSolutionSelect = (solutionIndex: number) => {
     const solution = scenarios[currentScenario].solutions[solutionIndex];
@@ -149,21 +164,6 @@ const FutureSkillsIntegrationChallengeGame: React.FC<FutureSkillsIntegrationChal
     } else {
       handleGameComplete();
     }
-  };
-
-  const handleGameComplete = () => {
-    setGamePhase('completed');
-    const skillCount = skillsEarned.size;
-    const maxScore = scenarios.reduce((sum, scenario) => sum + Math.max(...scenario.solutions.map((s) => s.points)), 0);
-    const percentage = Math.round((totalScore / maxScore) * 100);
-
-    let feedback = `Hoàn thành ${skillCount} kỹ năng tương lai! `;
-    if (percentage >= 90) feedback += '🌟 Future Skills Master!';
-    else if (percentage >= 70) feedback += '🚀 Xuất sắc về tích hợp kỹ năng!';
-    else if (percentage >= 50) feedback += '✨ Tốt, cần phát triển thêm!';
-    else feedback += '💪 Cần practice nhiều hơn về future skills!';
-
-    onComplete(totalScore, feedback);
   };
 
   const currentScenarioData = scenarios[currentScenario];

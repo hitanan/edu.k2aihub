@@ -6,12 +6,13 @@ import Image from 'next/image';
 import { Mail, Heart, Star } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { moduleStats } from '@/utils/moduleStats';
+import { isModuleData, isModuleNavigation } from '@/utils/typeguards';
+import { ModuleNavigation } from '@/types';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const [faviconError, setFaviconError] = useState(false);
 
-  // Generate categories dynamically from moduleNavigation
   const getCategorizedModules = () => {
     const categoryMap: Record<
       string,
@@ -23,8 +24,7 @@ const Footer: React.FC = () => {
       }
     > = {};
 
-    // Core modules
-    const coreModules = moduleNavigation.filter((module) => module.coreModule);
+    const coreModules = moduleNavigation.filter(isModuleNavigation).filter((module) => module.coreModule);
     if (coreModules.length > 0) {
       categoryMap['core'] = {
         title: 'Core Modules',
@@ -38,61 +38,45 @@ const Footer: React.FC = () => {
       };
     }
 
-    // Learning modules by category
     const categoryNames: Record<string, { title: string; icon: string; color: string }> = {
-      trending: {
-        title: '2025 Trending',
-        icon: '🚀',
-        color: 'text-purple-400',
-      },
-      professional: {
-        title: 'Professional Skills',
-        icon: '💼',
-        color: 'text-emerald-400',
-      },
-      creative: {
-        title: 'Creative & Tech',
-        icon: '🎨',
-        color: 'text-pink-400',
-      },
+      trending: { title: '2025 Trending', icon: '🚀', color: 'text-purple-400' },
+      professional: { title: 'Professional Skills', icon: '💼', color: 'text-emerald-400' },
+      creative: { title: 'Creative & Tech', icon: '🎨', color: 'text-pink-400' },
       programming: { title: 'Programming', icon: '💻', color: 'text-cyan-400' },
       stem: { title: 'STEM & Hardware', icon: '🔬', color: 'text-orange-400' },
     };
 
     moduleNavigation.forEach((module) => {
-      if (!module.coreModule && module.category) {
-        let categoryKey = module.category;
-        if (typeof categoryKey === 'string') {
-          categoryKey = [categoryKey];
-        }
-        categoryKey.forEach((key) => {
-          const categoryInfo = categoryNames[key];
-          if (categoryInfo && !categoryMap[key]) {
+      const category = isModuleData(module) ? module.category : (module as ModuleNavigation).category;
+      const isCore = isModuleNavigation(module) && module.coreModule;
+
+      if (!isCore && category) {
+        const categoryKeys = Array.isArray(category) ? category : [category];
+
+        categoryKeys.forEach((key) => {
+          if (!categoryNames[key]) return;
+
+          if (!categoryMap[key]) {
             categoryMap[key] = {
-              title: categoryInfo.title,
-              icon: categoryInfo.icon,
-              color: categoryInfo.color,
+              ...categoryNames[key],
               modules: [],
             };
           }
 
-          if (categoryMap[key]) {
-            categoryMap[key].modules.push({
-              name: module.title,
-              href: module.href || `/learning/${module.id}`,
-              icon: module.icon,
-            });
-          }
+          categoryMap[key].modules.push({
+            name: module.title,
+            href: isModuleData(module) ? `/learning/${module.id}` : (module as ModuleNavigation).href || '#',
+            icon: module.icon,
+          });
         });
       }
     });
 
-    // Limit to 3-4 modules per category for footer
     Object.keys(categoryMap).forEach((key) => {
       categoryMap[key].modules = categoryMap[key].modules.slice(0, 4);
     });
 
-    return Object.values(categoryMap).slice(0, 4); // Limit to 4 categories for footer
+    return Object.values(categoryMap).slice(0, 4);
   };
 
   const modulesByCategory = getCategorizedModules();
@@ -141,7 +125,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 max-w-md text-sm">
-              Nền tảng giáo dục với 66+ module chuyên sâu cho tương lai công nghệ.
+              Nền tảng giáo dục với {moduleStats.totalModules}+ module chuyên sâu cho tương lai công nghệ.
             </p>
           </div>
 

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Gamepad2, Users, Code, Paintbrush, Clock, Star, Zap, Target, TrendingUp, Cpu } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Gamepad2, Code, Paintbrush, Clock, Star, Zap, Target, TrendingUp, Cpu } from 'lucide-react';
 
 interface GameProps {
   onComplete: (_: boolean, score: number) => void;
@@ -49,7 +49,7 @@ const GAME_GENRES: GameGenre[] = [
     marketDemand: 8,
     developmentTime: 4,
     cost: 20,
-    revenueMultiplier: 1.5
+    revenueMultiplier: 1.5,
   },
   {
     id: 'mmorpg',
@@ -59,7 +59,7 @@ const GAME_GENRES: GameGenre[] = [
     marketDemand: 9,
     developmentTime: 12,
     cost: 100,
-    revenueMultiplier: 5.0
+    revenueMultiplier: 5.0,
   },
   {
     id: 'indie-platformer',
@@ -69,7 +69,7 @@ const GAME_GENRES: GameGenre[] = [
     marketDemand: 6,
     developmentTime: 6,
     cost: 30,
-    revenueMultiplier: 2.0
+    revenueMultiplier: 2.0,
   },
   {
     id: 'vr-experience',
@@ -79,7 +79,7 @@ const GAME_GENRES: GameGenre[] = [
     marketDemand: 7,
     developmentTime: 8,
     cost: 60,
-    revenueMultiplier: 3.0
+    revenueMultiplier: 3.0,
   },
   {
     id: 'educational-game',
@@ -89,7 +89,7 @@ const GAME_GENRES: GameGenre[] = [
     marketDemand: 7,
     developmentTime: 5,
     cost: 25,
-    revenueMultiplier: 1.8
+    revenueMultiplier: 1.8,
   },
   {
     id: 'battle-royale',
@@ -99,8 +99,8 @@ const GAME_GENRES: GameGenre[] = [
     marketDemand: 9,
     developmentTime: 10,
     cost: 80,
-    revenueMultiplier: 4.0
-  }
+    revenueMultiplier: 4.0,
+  },
 ];
 
 const TECHNOLOGIES: Technology[] = [
@@ -111,7 +111,7 @@ const TECHNOLOGIES: Technology[] = [
     performance: 8,
     learningCurve: 6,
     cost: 15,
-    platforms: ['PC', 'Mobile', 'Console', 'VR']
+    platforms: ['PC', 'Mobile', 'Console', 'VR'],
   },
   {
     id: 'unreal',
@@ -120,7 +120,7 @@ const TECHNOLOGIES: Technology[] = [
     performance: 10,
     learningCurve: 8,
     cost: 25,
-    platforms: ['PC', 'Console', 'VR']
+    platforms: ['PC', 'Console', 'VR'],
   },
   {
     id: 'godot',
@@ -129,7 +129,7 @@ const TECHNOLOGIES: Technology[] = [
     performance: 7,
     learningCurve: 4,
     cost: 0,
-    platforms: ['PC', 'Mobile']
+    platforms: ['PC', 'Mobile'],
   },
   {
     id: 'custom-engine',
@@ -138,7 +138,7 @@ const TECHNOLOGIES: Technology[] = [
     performance: 9,
     learningCurve: 10,
     cost: 50,
-    platforms: ['PC', 'Console']
+    platforms: ['PC', 'Console'],
   },
   {
     id: 'photon-networking',
@@ -147,7 +147,7 @@ const TECHNOLOGIES: Technology[] = [
     performance: 9,
     learningCurve: 7,
     cost: 20,
-    platforms: ['All']
+    platforms: ['All'],
   },
   {
     id: 'ai-middleware',
@@ -156,8 +156,8 @@ const TECHNOLOGIES: Technology[] = [
     performance: 8,
     learningCurve: 6,
     cost: 18,
-    platforms: ['PC', 'Console']
-  }
+    platforms: ['PC', 'Console'],
+  },
 ];
 
 const TEAM_MEMBERS: TeamMember[] = [
@@ -168,7 +168,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     skill: 9,
     experience: 8,
     salary: 35,
-    specialties: ['Engine Development', 'Optimization', 'Architecture']
+    specialties: ['Engine Development', 'Optimization', 'Architecture'],
   },
   {
     id: 'game-designer',
@@ -177,7 +177,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     skill: 8,
     experience: 6,
     salary: 25,
-    specialties: ['Game Mechanics', 'Level Design', 'Balancing']
+    specialties: ['Game Mechanics', 'Level Design', 'Balancing'],
   },
   {
     id: 'artist',
@@ -186,7 +186,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     skill: 8,
     experience: 5,
     salary: 22,
-    specialties: ['Character Modeling', 'Environment Art', 'Animation']
+    specialties: ['Character Modeling', 'Environment Art', 'Animation'],
   },
   {
     id: 'ui-designer',
@@ -195,7 +195,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     skill: 7,
     experience: 4,
     salary: 18,
-    specialties: ['Interface Design', 'User Experience', 'Mobile UI']
+    specialties: ['Interface Design', 'User Experience', 'Mobile UI'],
   },
   {
     id: 'sound-designer',
@@ -204,7 +204,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     skill: 7,
     experience: 5,
     salary: 20,
-    specialties: ['Music Composition', 'Sound Effects', 'Audio Implementation']
+    specialties: ['Music Composition', 'Sound Effects', 'Audio Implementation'],
   },
   {
     id: 'qa-tester',
@@ -213,7 +213,7 @@ const TEAM_MEMBERS: TeamMember[] = [
     skill: 6,
     experience: 3,
     salary: 12,
-    specialties: ['Bug Testing', 'Balance Testing', 'Platform Testing']
+    specialties: ['Bug Testing', 'Balance Testing', 'Platform Testing'],
   },
   {
     id: 'junior-programmer',
@@ -222,12 +222,14 @@ const TEAM_MEMBERS: TeamMember[] = [
     skill: 5,
     experience: 2,
     salary: 15,
-    specialties: ['Scripting', 'Tools Development', 'Bug Fixing']
-  }
+    specialties: ['Scripting', 'Tools Development', 'Bug Fixing'],
+  },
 ];
 
 const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestart }) => {
-  const [gamePhase, setGamePhase] = useState<'briefing' | 'genre' | 'team' | 'technology' | 'development' | 'results'>('briefing');
+  const [gamePhase, setGamePhase] = useState<'briefing' | 'genre' | 'team' | 'technology' | 'development' | 'results'>(
+    'briefing',
+  );
   const [budget] = useState(250); // 250 million VND budget
   const [selectedGenre, setSelectedGenre] = useState<GameGenre | null>(null);
   const [selectedTeam, setSelectedTeam] = useState<TeamMember[]>([]);
@@ -260,16 +262,51 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
     onRestart(); // Call parent restart function
   };
 
+  const calculateResults = useCallback(() => {
+    if (!selectedGenre || selectedTeam.length === 0 || selectedTech.length === 0) {
+      setStudioScore(0);
+      setGamePhase('results');
+      onComplete(false, 0);
+      return;
+    }
+
+    // Calculate game quality based on team skills and genre difficulty
+    const teamSkillAverage = selectedTeam.reduce((sum, member) => sum + member.skill, 0) / selectedTeam.length;
+    const genreDifficultyPenalty = selectedGenre.difficulty * 5;
+    const quality = Math.max(0, Math.min(100, teamSkillAverage * 10 - genreDifficultyPenalty + 30));
+
+    // Calculate technical excellence based on technology selection
+    const techPerformanceAverage = selectedTech.reduce((sum, tech) => sum + tech.performance, 0) / selectedTech.length;
+    const techExcellence = Math.min(100, techPerformanceAverage * 10);
+
+    // Calculate market success based on genre demand and game quality
+    const marketDemandScore = selectedGenre.marketDemand * 10;
+    const qualityBonus = quality * 0.5;
+    const market = Math.min(100, marketDemandScore * 0.6 + qualityBonus * 0.4);
+
+    // Calculate overall studio score
+    const budgetEfficiency = Math.min(100, ((budget - spentBudget) / budget) * 100);
+    const overall = quality * 0.4 + techExcellence * 0.3 + market * 0.2 + budgetEfficiency * 0.1;
+
+    setGameQuality(Math.round(quality));
+    setTechnicalExcellence(Math.round(techExcellence));
+    setMarketSuccess(Math.round(market));
+    setStudioScore(Math.round(overall));
+
+    setGamePhase('results');
+    onComplete(true, overall);
+  }, [selectedGenre, selectedTeam, selectedTech, budget, spentBudget, onComplete]);
+
   useEffect(() => {
     if (timeLeft <= 0 && gamePhase !== 'results') {
       calculateResults();
     }
-  }, [timeLeft, gamePhase]);
+  }, [timeLeft, gamePhase, calculateResults]);
 
   useEffect(() => {
     if (isDeveloping) {
       const interval = setInterval(() => {
-        setDevelopmentProgress(prev => {
+        setDevelopmentProgress((prev) => {
           if (prev >= 100) {
             setIsDeveloping(false);
             setGamePhase('results');
@@ -282,41 +319,6 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
     }
   }, [isDeveloping]);
 
-  const calculateResults = () => {
-    if (!selectedGenre || selectedTeam.length === 0 || selectedTech.length === 0) {
-      setStudioScore(0);
-      setGamePhase('results');
-      onComplete(false, 0);
-      return;
-    }
-
-    // Calculate game quality based on team skills and genre difficulty
-    const teamSkillAverage = selectedTeam.reduce((sum, member) => sum + member.skill, 0) / selectedTeam.length;
-    const genreDifficultyPenalty = selectedGenre.difficulty * 5;
-    const quality = Math.max(0, Math.min(100, (teamSkillAverage * 10) - genreDifficultyPenalty + 30));
-
-    // Calculate technical excellence based on technology selection
-    const techPerformanceAverage = selectedTech.reduce((sum, tech) => sum + tech.performance, 0) / selectedTech.length;
-    const techExcellence = Math.min(100, techPerformanceAverage * 10);
-
-    // Calculate market success based on genre demand and game quality
-    const marketDemandScore = selectedGenre.marketDemand * 10;
-    const qualityBonus = quality * 0.5;
-    const market = Math.min(100, (marketDemandScore * 0.6 + qualityBonus * 0.4));
-
-    // Calculate overall studio score
-    const budgetEfficiency = Math.min(100, ((budget - spentBudget) / budget) * 100);
-    const overall = (quality * 0.4 + techExcellence * 0.3 + market * 0.2 + budgetEfficiency * 0.1);
-
-    setGameQuality(Math.round(quality));
-    setTechnicalExcellence(Math.round(techExcellence));
-    setMarketSuccess(Math.round(market));
-    setStudioScore(Math.round(overall));
-    
-    setGamePhase('results');
-    onComplete(true, overall);
-  };
-
   const handleGenreSelect = (genre: GameGenre) => {
     setSelectedGenre(genre);
     setSpentBudget(genre.cost);
@@ -325,32 +327,32 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
 
   const handleTeamSelect = (member: TeamMember) => {
     const newCost = spentBudget + member.salary;
-    if (newCost <= budget && !selectedTeam.find(m => m.id === member.id) && selectedTeam.length < 6) {
+    if (newCost <= budget && !selectedTeam.find((m) => m.id === member.id) && selectedTeam.length < 6) {
       setSelectedTeam([...selectedTeam, member]);
       setSpentBudget(newCost);
     }
   };
 
   const removeTeamMember = (memberId: string) => {
-    const member = selectedTeam.find(m => m.id === memberId);
+    const member = selectedTeam.find((m) => m.id === memberId);
     if (member) {
-      setSelectedTeam(selectedTeam.filter(m => m.id !== memberId));
+      setSelectedTeam(selectedTeam.filter((m) => m.id !== memberId));
       setSpentBudget(spentBudget - member.salary);
     }
   };
 
   const handleTechSelect = (tech: Technology) => {
     const newCost = spentBudget + tech.cost;
-    if (newCost <= budget && !selectedTech.find(t => t.id === tech.id) && selectedTech.length < 4) {
+    if (newCost <= budget && !selectedTech.find((t) => t.id === tech.id) && selectedTech.length < 4) {
       setSelectedTech([...selectedTech, tech]);
       setSpentBudget(newCost);
     }
   };
 
   const removeTech = (techId: string) => {
-    const tech = selectedTech.find(t => t.id === techId);
+    const tech = selectedTech.find((t) => t.id === techId);
     if (tech) {
-      setSelectedTech(selectedTech.filter(t => t.id !== techId));
+      setSelectedTech(selectedTech.filter((t) => t.id !== techId));
       setSpentBudget(spentBudget - tech.cost);
     }
   };
@@ -442,19 +444,23 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
           <h2 className="text-2xl font-bold">Chọn thể loại game</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {GAME_GENRES.map((genre) => {
-            const canAfford = genre.cost <= (budget - spentBudget + (selectedGenre?.cost || 0));
-            
+            const canAfford = genre.cost <= budget - spentBudget + (selectedGenre?.cost || 0);
+
             return (
               <div
                 key={genre.id}
@@ -462,8 +468,8 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                   selectedGenre?.id === genre.id
                     ? 'border-purple-400 bg-purple-500/20'
                     : canAfford
-                    ? 'border-blue-400 bg-blue-500/10 hover:bg-blue-500/20'
-                    : 'border-gray-500 bg-gray-500/10 opacity-50'
+                      ? 'border-blue-400 bg-blue-500/10 hover:bg-blue-500/20'
+                      : 'border-gray-500 bg-gray-500/10 opacity-50'
                 }`}
                 onClick={() => canAfford && handleGenreSelect(genre)}
               >
@@ -474,9 +480,9 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                     <div className="font-bold text-purple-300">{genre.cost}M VNĐ</div>
                   </div>
                 </div>
-                
+
                 <p className="text-sm text-gray-300 mb-4">{genre.description}</p>
-                
+
                 <div className="grid grid-cols-2 gap-3 text-sm mb-4">
                   <div className="text-center bg-white/10 p-2 rounded">
                     <div className="text-red-300">Độ khó</div>
@@ -523,11 +529,15 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
           <h2 className="text-2xl font-bold">Tuyển dụng team phát triển (Tối đa 6 người)</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
@@ -547,10 +557,10 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
             <h3 className="text-lg font-bold">Nhân sự có sẵn:</h3>
             <div className="space-y-3 max-h-96 overflow-y-auto">
               {TEAM_MEMBERS.map((member) => {
-                const isSelected = selectedTeam.find(m => m.id === member.id);
+                const isSelected = selectedTeam.find((m) => m.id === member.id);
                 const canAfford = spentBudget + member.salary <= budget;
                 const canSelect = selectedTeam.length < 6;
-                
+
                 return (
                   <div
                     key={member.id}
@@ -558,8 +568,8 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                       isSelected
                         ? 'border-green-400 bg-green-500/20'
                         : canAfford && canSelect
-                        ? 'border-purple-400 bg-purple-500/10 hover:bg-purple-500/20'
-                        : 'border-gray-500 bg-gray-500/10 opacity-50'
+                          ? 'border-purple-400 bg-purple-500/10 hover:bg-purple-500/20'
+                          : 'border-gray-500 bg-gray-500/10 opacity-50'
                     }`}
                     onClick={() => {
                       if (isSelected) {
@@ -578,7 +588,7 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                         <div className="text-green-300 font-bold">{member.salary}M/tháng</div>
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-2 text-xs mb-2">
                       <div className="text-center">
                         <div className="text-blue-300">Skill</div>
@@ -589,7 +599,7 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                         <div className="font-bold">{member.experience} năm</div>
                       </div>
                     </div>
-                    
+
                     <div className="text-xs">
                       <div className="text-gray-300 mb-1">Chuyên môn:</div>
                       <div className="flex flex-wrap gap-1">
@@ -616,10 +626,7 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                       <h4 className="font-semibold">{member.name}</h4>
                       <p className="text-sm text-green-300">{member.role}</p>
                     </div>
-                    <button
-                      onClick={() => removeTeamMember(member.id)}
-                      className="text-red-400 hover:text-red-300"
-                    >
+                    <button onClick={() => removeTeamMember(member.id)} className="text-red-400 hover:text-red-300">
                       ✕
                     </button>
                   </div>
@@ -638,7 +645,7 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                   {selectedTeam.reduce((sum, member) => sum + member.salary, 0)}M VNĐ
                 </span>
               </div>
-              
+
               <button
                 onClick={() => setGamePhase('technology')}
                 disabled={selectedTeam.length === 0}
@@ -660,11 +667,15 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
           <h2 className="text-2xl font-bold">Chọn công nghệ phát triển (Tối đa 4)</h2>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600/50 px-4 py-2 rounded">
-              <span className="text-sm">Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ</span>
+              <span className="text-sm">
+                Ngân sách: {budget - spentBudget}/{budget} triệu VNĐ
+              </span>
             </div>
             <div className="bg-blue-600/50 px-4 py-2 rounded flex items-center">
               <Clock className="w-4 h-4 mr-1" />
-              <span className="text-sm">{Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}</span>
+              <span className="text-sm">
+                {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
+              </span>
             </div>
           </div>
         </div>
@@ -677,7 +688,11 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
           <div className="bg-white/10 p-4 rounded-lg">
             <h3 className="font-bold mb-2">Team: {selectedTeam.length} thành viên</h3>
             <div className="text-sm text-gray-300">
-              Skill trung bình: {selectedTeam.length > 0 ? (selectedTeam.reduce((sum, m) => sum + m.skill, 0) / selectedTeam.length).toFixed(1) : 0}/10
+              Skill trung bình:{' '}
+              {selectedTeam.length > 0
+                ? (selectedTeam.reduce((sum, m) => sum + m.skill, 0) / selectedTeam.length).toFixed(1)
+                : 0}
+              /10
             </div>
           </div>
         </div>
@@ -687,10 +702,10 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
             <h3 className="text-lg font-bold">Công nghệ có sẵn:</h3>
             <div className="space-y-3 max-h-96 overflow-y-auto">
               {TECHNOLOGIES.map((tech) => {
-                const isSelected = selectedTech.find(t => t.id === tech.id);
+                const isSelected = selectedTech.find((t) => t.id === tech.id);
                 const canAfford = spentBudget + tech.cost <= budget;
                 const canSelect = selectedTech.length < 4;
-                
+
                 return (
                   <div
                     key={tech.id}
@@ -698,8 +713,8 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                       isSelected
                         ? 'border-green-400 bg-green-500/20'
                         : canAfford && canSelect
-                        ? 'border-blue-400 bg-blue-500/10 hover:bg-blue-500/20'
-                        : 'border-gray-500 bg-gray-500/10 opacity-50'
+                          ? 'border-blue-400 bg-blue-500/10 hover:bg-blue-500/20'
+                          : 'border-gray-500 bg-gray-500/10 opacity-50'
                     }`}
                     onClick={() => {
                       if (isSelected) {
@@ -718,7 +733,7 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                         <div className="text-green-300 font-bold">{tech.cost}M VNĐ</div>
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-2 text-xs mb-2">
                       <div className="text-center">
                         <div className="text-green-300">Performance</div>
@@ -729,7 +744,7 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                         <div className="font-bold">{tech.learningCurve}/10</div>
                       </div>
                     </div>
-                    
+
                     <div className="text-xs">
                       <div className="text-gray-300 mb-1">Platforms:</div>
                       <div className="flex flex-wrap gap-1">
@@ -756,10 +771,7 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
                       <h4 className="font-semibold">{tech.name}</h4>
                       <p className="text-sm text-blue-300">{tech.type}</p>
                     </div>
-                    <button
-                      onClick={() => removeTech(tech.id)}
-                      className="text-red-400 hover:text-red-300"
-                    >
+                    <button onClick={() => removeTech(tech.id)} className="text-red-400 hover:text-red-300">
                       ✕
                     </button>
                   </div>
@@ -774,9 +786,11 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
             <div className="border-t border-white/20 pt-4">
               <div className="flex justify-between items-center mb-4">
                 <span className="font-semibold">Tổng chi phí:</span>
-                <span className="text-xl font-bold text-green-300">{spentBudget}/{budget} triệu VNĐ</span>
+                <span className="text-xl font-bold text-green-300">
+                  {spentBudget}/{budget} triệu VNĐ
+                </span>
               </div>
-              
+
               <button
                 onClick={() => {
                   setGamePhase('development');
@@ -810,12 +824,12 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
             <span className="text-xl font-bold text-green-300">{developmentProgress}%</span>
           </div>
           <div className="w-full bg-gray-700 rounded-full h-6 mb-4">
-            <div 
+            <div
               className="bg-gradient-to-r from-purple-600 to-blue-600 h-6 rounded-full transition-all duration-300"
               style={{ width: `${developmentProgress}%` }}
             ></div>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-4">
             <div className="text-center">
               <div className="text-sm text-gray-300">Game</div>
@@ -912,11 +926,15 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
               </div>
               <div className="flex justify-between">
                 <span>Ngân sách sử dụng:</span>
-                <span className="font-bold">{spentBudget}/{budget} triệu VNĐ</span>
+                <span className="font-bold">
+                  {spentBudget}/{budget} triệu VNĐ
+                </span>
               </div>
               <div className="flex justify-between">
                 <span>ROI dự kiến:</span>
-                <span className="font-bold">{selectedGenre ? (selectedGenre.revenueMultiplier * (studioScore / 100)).toFixed(1) : 0}x</span>
+                <span className="font-bold">
+                  {selectedGenre ? (selectedGenre.revenueMultiplier * (studioScore / 100)).toFixed(1) : 0}x
+                </span>
               </div>
             </div>
           </div>
@@ -930,33 +948,33 @@ const GameDevStudioGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRestar
           <div className="text-gray-300 leading-relaxed">
             {studioScore >= 90 && (
               <p>
-                🎉 <strong>Game of the Year candidate!</strong> Studio của bạn đã tạo ra một tựa game masterpiece với 
-                chất lượng đỉnh cao, công nghệ tiên tiến và sức hút thị trường mạnh mẽ. Đây là khởi đầu tuyệt vời cho 
+                🎉 <strong>Game of the Year candidate!</strong> Studio của bạn đã tạo ra một tựa game masterpiece với
+                chất lượng đỉnh cao, công nghệ tiên tiến và sức hút thị trường mạnh mẽ. Đây là khởi đầu tuyệt vời cho
                 một studio game huyền thoại!
               </p>
             )}
             {studioScore >= 80 && studioScore < 90 && (
               <p>
-                ⭐ <strong>Hit game!</strong> Game của bạn có chất lượng cao và được người chơi đón nhận tích cực. 
+                ⭐ <strong>Hit game!</strong> Game của bạn có chất lượng cao và được người chơi đón nhận tích cực.
                 Studio đã thể hiện năng lực phát triển mạnh mẽ và có tiềm năng tạo ra những tựa game lớn hơn.
               </p>
             )}
             {studioScore >= 70 && studioScore < 80 && (
               <p>
-                👍 <strong>Solid game!</strong> Game có chất lượng tốt và đáp ứng kỳ vọng người chơi. 
-                Studio có nền tảng vững chắc để phát triển thêm và cải thiện cho dự án tiếp theo.
+                👍 <strong>Solid game!</strong> Game có chất lượng tốt và đáp ứng kỳ vọng người chơi. Studio có nền tảng
+                vững chắc để phát triển thêm và cải thiện cho dự án tiếp theo.
               </p>
             )}
             {studioScore >= 60 && studioScore < 70 && (
               <p>
-                📈 <strong>Average game.</strong> Game đạt mức chấp nhận được nhưng cần cải thiện thêm về 
-                chất lượng, kỹ thuật hoặc chiến lược thị trường.
+                📈 <strong>Average game.</strong> Game đạt mức chấp nhận được nhưng cần cải thiện thêm về chất lượng, kỹ
+                thuật hoặc chiến lược thị trường.
               </p>
             )}
             {studioScore < 60 && (
               <p>
-                🔧 <strong>Needs improvement.</strong> Studio cần đầu tư thêm vào team, công nghệ và 
-                quy trình phát triển để tạo ra game chất lượng cao hơn.
+                🔧 <strong>Needs improvement.</strong> Studio cần đầu tư thêm vào team, công nghệ và quy trình phát
+                triển để tạo ra game chất lượng cao hơn.
               </p>
             )}
           </div>

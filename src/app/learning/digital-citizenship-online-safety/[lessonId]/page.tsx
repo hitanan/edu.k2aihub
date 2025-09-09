@@ -1,12 +1,13 @@
-import { notFound } from 'next/navigation';
+// import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
-import { PageProps } from '@/types';
+
 import { createLessonMetadata } from '@/utils/seo';
 import { DigitalCitizenshipLessons, DigitalCitizenshipLesson } from '@/data/digital-citizenship-online-safety';
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const lesson = DigitalCitizenshipLessons.find((l) => l.id === params.lessonId);
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
+  const { lessonId } = await params;
+  const lesson = DigitalCitizenshipLessons.find((l) => l.id === lessonId);
   if (!lesson) {
     return {};
   }
@@ -19,8 +20,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   );
 }
 
-export default function DigitalCitizenshipLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function DigitalCitizenshipLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
 
   const config: LessonPageConfig<DigitalCitizenshipLesson> = {
     moduleName: 'digital-citizenship-online-safety',

@@ -596,8 +596,8 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                       Nguyên Nhân
                     </h3>
                     <ul className="space-y-1">
-                      {currentScenario.triggers.map((trigger, index) => (
-                        <li key={index} className="text-red-100 text-sm">
+                      {currentScenario.triggers.map((trigger) => (
+                        <li key={trigger} className="text-red-100 text-sm">
                           • {trigger}
                         </li>
                       ))}
@@ -610,8 +610,8 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                       Triệu Chứng Thể Chất
                     </h3>
                     <ul className="space-y-1">
-                      {currentScenario.physicalSymptoms.map((symptom, index) => (
-                        <li key={index} className="text-orange-100 text-sm">
+                      {currentScenario.physicalSymptoms.map((symptom) => (
+                        <li key={symptom} className="text-orange-100 text-sm">
                           • {symptom}
                         </li>
                       ))}
@@ -624,8 +624,8 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                       Triệu Chứng Cảm Xúc
                     </h3>
                     <ul className="space-y-1">
-                      {currentScenario.emotionalSymptoms.map((symptom, index) => (
-                        <li key={index} className="text-yellow-100 text-sm">
+                      {currentScenario.emotionalSymptoms.map((symptom) => (
+                        <li key={symptom} className="text-yellow-100 text-sm">
                           • {symptom}
                         </li>
                       ))}
@@ -638,8 +638,8 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                       Suy Nghĩ Tức Thì
                     </h3>
                     <ul className="space-y-1">
-                      {currentScenario.immediateThoughts.map((thought, index) => (
-                        <li key={index} className="text-purple-100 text-sm">
+                      {currentScenario.immediateThoughts.map((thought) => (
+                        <li key={thought} className="text-purple-100 text-sm">
                           • {thought}
                         </li>
                       ))}
@@ -749,7 +749,7 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
 
                 {!practiceActive ? (
                   <div className="space-y-6">
-                    {selectedStrategies.map((strategy, index) => (
+                    {selectedStrategies.map((strategy) => (
                       <div key={strategy.id} className="bg-teal-900/30 rounded-lg p-4">
                         <div className="flex items-center gap-2 mb-3">
                           {strategy.icon}
@@ -851,7 +851,7 @@ const StressResilienceTrainingGame: React.FC<StressResilienceTrainingGameProps> 
                   <h3 className="font-semibold text-teal-200 mb-3">📋 Tóm Tắt Phiên Học</h3>
                   <div className="space-y-3">
                     {sessionHistory.map((session, index) => (
-                      <div key={index} className="bg-white/5 rounded p-3">
+                      <div key={`${session.scenario.id}-${index}`} className="bg-white/5 rounded p-3">
                         <div className="flex justify-between items-start mb-2">
                           <div>
                             <span className="font-semibold text-white">{session.scenario.title}</span>

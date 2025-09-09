@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { MCPLessons, MCPLessonData } from '@/data/mcp';
-import { PageProps } from '@/types';
 import { Code, Server, Shield, Zap, Users } from 'lucide-react';
 import { createModuleMetadata } from '@/utils/seo';
 
@@ -15,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return createModuleMetadata('MCP', 'Model Context Protocol', ['MCP', 'AI', 'Model Context'], 'mcp');
   }
@@ -128,7 +127,7 @@ function MCPSidebarContent({ lesson }: { lesson: MCPLessonData }) {
 }
 
 // Page component with standardized config
-export default function MCPLessonPage({ params }: PageProps) {
+export default async function MCPLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<MCPLessonData> = {
     moduleName: 'mcp',
     moduleTitle: 'MCP - Model Context Protocol',
@@ -141,6 +140,6 @@ export default function MCPLessonPage({ params }: PageProps) {
     sidebarContent: (lesson) => <MCPSidebarContent lesson={lesson} />,
   };
 
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

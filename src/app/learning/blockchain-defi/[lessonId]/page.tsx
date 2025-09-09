@@ -5,7 +5,7 @@ import {
   type LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { blockchainLessons, type BlockchainLesson } from '@/data/blockchain-defi';
-import { type PageProps } from '@/types';
+
 import { Book, Cpu } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -62,8 +62,8 @@ const config: LessonPageConfig<BlockchainLesson> = {
 };
 
 // Page component with standardized config
-export default async function BlockchainLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function BlockchainLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

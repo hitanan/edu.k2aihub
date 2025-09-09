@@ -213,7 +213,7 @@ function Room3D({ room, onDeviceClick }: { room: any; onDeviceClick: (deviceId: 
 
 // Smart Home Control Panel
 function SmartHomeControlPanel() {
-  const { smartHome, updateSmartHomeState, addDevice, toggleDevice: toggleDeviceStore } = useAdvancedGameStore();
+  const { smartHome, updateSmartHomeState, addDevice } = useAdvancedGameStore();
   const [selectedRoom, setSelectedRoom] = useState('living-room');
   const [selectedDeviceType, setSelectedDeviceType] = useState('light');
 

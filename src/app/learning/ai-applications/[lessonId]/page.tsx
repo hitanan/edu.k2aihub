@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { AIApplicationLessons, AIApplicationLessonData } from '@/data/ai-applications';
-import { PageProps } from '@/types';
+
 import { Bot, Briefcase, Building, Target, TrendingUp } from 'lucide-react';
 
 // Generate static params for all lessons
@@ -14,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Lesson not found',
@@ -122,7 +122,7 @@ function AIAppSidebarContent({ lesson }: { lesson: AIApplicationLessonData }) {
 }
 
 // Page component with standardized config
-export default function AIApplicationLessonPage({ params }: PageProps) {
+export default async function AIApplicationLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<AIApplicationLessonData> = {
     moduleName: 'ai-applications',
     moduleTitle: 'AI Applications - Ứng dụng AI thực tế',
@@ -135,7 +135,7 @@ export default function AIApplicationLessonPage({ params }: PageProps) {
     sidebarContent: (lesson) => <AIAppSidebarContent lesson={lesson} />,
   };
 
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
   if (!lessonId) {
     return null;
   }

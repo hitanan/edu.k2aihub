@@ -6,7 +6,7 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { educationTechnologyLessons } from '@/data/education-technology';
 import { educationTechnologyModuleData } from '@/data/education-technology-module';
-import { PageProps } from '@/types';
+
 import { BaseLessonData } from '@/types/lesson-base';
 
 // Generate static params for all lessons
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function EducationTechnologyLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId as string;
+export default async function EducationTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
 
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'education-technology',

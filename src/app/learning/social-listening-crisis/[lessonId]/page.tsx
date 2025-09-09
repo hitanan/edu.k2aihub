@@ -6,7 +6,6 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import { socialListeningLessons } from '@/data/social-listening-crisis';
 import type { SocialListeningLessonType } from '@/data/social-listening-crisis';
-import { PageProps } from '@/types';
 import { AlertTriangle } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -16,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -25,8 +24,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function SocialListeningLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function SocialListeningLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

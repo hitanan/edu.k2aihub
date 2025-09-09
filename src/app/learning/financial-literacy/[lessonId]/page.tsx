@@ -2,7 +2,7 @@ import { financialLiteracyLessons, FinancialLiteracyLesson } from '@/data/financ
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { PageProps } from '@/types';
+
 import { createDescription, createTitle } from '@/utils/seo';
 
 export async function generateStaticParams() {
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   const lesson = financialLiteracyLessons.find((l) => l.id === lessonId);
 
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function FinancialLiteracyLessonPage({ params }: PageProps) {
+export default async function FinancialLiteracyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   const lesson = financialLiteracyLessons.find((l) => l.id === lessonId) as FinancialLiteracyLesson;
 

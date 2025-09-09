@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface LogicalFallacy {
   id: string;
@@ -29,11 +29,7 @@ interface LogicalFallacyDetectorProps {
   onRestart?: () => void;
 }
 
-const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({ 
-  onComplete, 
-  timeLeft: gameTimeLeft, 
-  onRestart 
-}) => {
+const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = () => {
   const [currentScenario, setCurrentScenario] = useState(0);
   const [selectedArgument, setSelectedArgument] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -49,36 +45,36 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
       name: 'Ad Hominem',
       description: 'Tấn công người đưa ra lập luận thay vì tấn công lập luận đó',
       example: 'Bạn không thể tin tưởng ý kiến của anh ta về kinh tế vì anh ta từng thất bại trong kinh doanh.',
-      category: 'Informal'
+      category: 'Informal',
     },
     {
       id: 'strawman',
       name: 'Straw Man',
       description: 'Bóp méo lập luận của đối phương để dễ dàng phản bác',
       example: 'Người ta nói cần cải thiện hệ thống y tế, nhưng họ muốn tiêu tốn hết ngân sách quốc gia.',
-      category: 'Informal'
+      category: 'Informal',
     },
     {
       id: 'false-dilemma',
       name: 'False Dilemma',
       description: 'Đưa ra chỉ hai lựa chọn khi thực tế có nhiều lựa chọn khác',
       example: 'Hoặc là bạn ủng hộ hoàn toàn, hoặc là bạn phản đối hoàn toàn.',
-      category: 'Informal'
+      category: 'Informal',
     },
     {
       id: 'appeal-to-authority',
       name: 'Appeal to Authority',
       description: 'Sử dụng uy tín của ai đó thay vì bằng chứng logic',
       example: 'Một diễn viên nổi tiếng nói rằng sản phẩm này tốt, nên nó phải tốt.',
-      category: 'Appeal'
+      category: 'Appeal',
     },
     {
       id: 'bandwagon',
       name: 'Bandwagon',
       description: 'Cho rằng điều gì đó đúng vì nhiều người tin vậy',
       example: 'Tất cả mọi người đều dùng mạng xã hội này, nên bạn cũng nên dùng.',
-      category: 'Appeal'
-    }
+      category: 'Appeal',
+    },
   ];
 
   const scenarios: Scenario[] = [
@@ -93,20 +89,22 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
           text: 'Xe máy gây ô nhiễm và tắc nghẽn, nên chúng ta phải cấm hoàn toàn.',
           isValid: false,
           fallacy: 'false-dilemma',
-          explanation: 'Đây là False Dilemma - chỉ đưa ra hai lựa chọn cực đoan (cấm hoàn toàn hoặc không làm gì), trong khi có thể có nhiều giải pháp trung gian như hạn chế theo giờ, cải thiện phương tiện công cộng.'
+          explanation:
+            'Đây là False Dilemma - chỉ đưa ra hai lựa chọn cực đoan (cấm hoàn toàn hoặc không làm gì), trong khi có thể có nhiều giải pháp trung gian như hạn chế theo giờ, cải thiện phương tiện công cộng.',
         },
         {
           text: 'Nghiên cứu của Viện Giao thông Vận tải cho thấy xe máy chiếm 65% phương tiện di chuyển tại TP.HCM.',
           isValid: true,
-          explanation: 'Đây là lập luận hợp lý dựa trên dữ liệu từ nguồn đáng tin cậy và chuyên môn.'
+          explanation: 'Đây là lập luận hợp lý dựa trên dữ liệu từ nguồn đáng tin cậy và chuyên môn.',
         },
         {
           text: 'Ông A ủng hộ cấm xe máy, nhưng ông ta thường xuyên vi phạm giao thông, nên ý kiến của ông ta không đáng tin.',
           isValid: false,
           fallacy: 'ad-hominem',
-          explanation: 'Đây là Ad Hominem - tấn công cá nhân thay vì phản bác lập luận. Hành vi cá nhân của ông A không làm cho lập luận của ông ta trở nên sai.'
-        }
-      ]
+          explanation:
+            'Đây là Ad Hominem - tấn công cá nhân thay vì phản bác lập luận. Hành vi cá nhân của ông A không làm cho lập luận của ông ta trở nên sai.',
+        },
+      ],
     },
     {
       id: 'education-reform',
@@ -119,20 +117,22 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
           text: 'Tất cả các nước phát triển đều đang sử dụng AI trong giáo dục, Việt Nam cũng phải theo.',
           isValid: false,
           fallacy: 'bandwagon',
-          explanation: 'Đây là Bandwagon fallacy - cho rằng điều gì đó đúng chỉ vì nhiều người hoặc nhiều nước làm vậy, mà không xem xét điều kiện cụ thể của Việt Nam.'
+          explanation:
+            'Đây là Bandwagon fallacy - cho rằng điều gì đó đúng chỉ vì nhiều người hoặc nhiều nước làm vậy, mà không xem xét điều kiện cụ thể của Việt Nam.',
         },
         {
           text: 'Bill Gates nói AI sẽ thay đổi giáo dục, nên chúng ta nên áp dụng ngay.',
           isValid: false,
           fallacy: 'appeal-to-authority',
-          explanation: 'Đây là Appeal to Authority - dựa vào uy tín của Bill Gates thay vì bằng chứng cụ thể về hiệu quả của AI trong bối cảnh giáo dục Việt Nam.'
+          explanation:
+            'Đây là Appeal to Authority - dựa vào uy tín của Bill Gates thay vì bằng chứng cụ thể về hiệu quả của AI trong bối cảnh giáo dục Việt Nam.',
         },
         {
           text: 'Nghiên cứu thí điểm tại 10 trường THPT cho thấy học sinh sử dụng AI hỗ trợ có điểm số cải thiện 15% so với nhóm kiểm soát.',
           isValid: true,
-          explanation: 'Lập luận hợp lý dựa trên dữ liệu thực nghiệm cụ thể và có thể kiểm chứng.'
-        }
-      ]
+          explanation: 'Lập luận hợp lý dựa trên dữ liệu thực nghiệm cụ thể và có thể kiểm chứng.',
+        },
+      ],
     },
     {
       id: 'climate-action',
@@ -145,21 +145,23 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
           text: 'Hoặc là chúng ta dừng hoàn toàn việc sử dụng than, hoặc là chúng ta sẽ không thể giảm phát thải.',
           isValid: false,
           fallacy: 'false-dilemma',
-          explanation: 'False Dilemma - bỏ qua các lựa chọn trung gian như giảm dần sử dụng than, chuyển sang than sạch hơn, hoặc kết hợp nhiều nguồn năng lượng.'
+          explanation:
+            'False Dilemma - bỏ qua các lựa chọn trung gian như giảm dần sử dụng than, chuyển sang than sạch hơn, hoặc kết hợp nhiều nguồn năng lượng.',
         },
         {
           text: 'Theo báo cáo của Bộ Tài nguyên và Môi trường, Việt Nam đã giảm 8.2% phát thải so với kịch bản thông thường trong giai đoạn 2011-2020.',
           isValid: true,
-          explanation: 'Lập luận dựa trên dữ liệu chính thức và có thể kiểm chứng từ cơ quan có thẩm quyền.'
+          explanation: 'Lập luận dựa trên dữ liệu chính thức và có thể kiểm chứng từ cơ quan có thẩm quyền.',
         },
         {
           text: 'Những người phản đối năng lượng tái tạo chỉ quan tâm đến lợi nhuận từ nhiên liệu hóa thạch.',
           isValid: false,
           fallacy: 'ad-hominem',
-          explanation: 'Ad Hominem - quy động cơ cho nhóm người mà không giải quyết các lập luận cụ thể của họ về năng lượng tái tạo.'
-        }
-      ]
-    }
+          explanation:
+            'Ad Hominem - quy động cơ cho nhóm người mà không giải quyết các lập luận cụ thể của họ về năng lượng tái tạo.',
+        },
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -189,18 +191,20 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
 
   const selectArgument = (index: number) => {
     if (selectedArgument !== null || !gameStarted) return;
-    
+
     setSelectedArgument(index);
     const argument = scenarios[currentScenario].arguments[index];
-    
+
     if (argument.isValid) {
-      setScore(score + 100 - (hintsUsed * 20));
+      setScore(score + 100 - hintsUsed * 20);
       setFeedback('🎉 Chính xác! Đây là lập luận hợp lý.');
     } else {
       setScore(Math.max(0, score - 50));
-      setFeedback(`❌ Không chính xác. Đây là lỗi lập luận: ${argument.fallacy ? fallacies.find(f => f.id === argument.fallacy)?.name : 'Lỗi logic'}`);
+      setFeedback(
+        `❌ Không chính xác. Đây là lỗi lập luận: ${argument.fallacy ? fallacies.find((f) => f.id === argument.fallacy)?.name : 'Lỗi logic'}`,
+      );
     }
-    
+
     setShowExplanation(true);
   };
 
@@ -224,12 +228,14 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
 
   const getHint = () => {
     if (hintsUsed >= 2) return;
-    
+
     setHintsUsed(hintsUsed + 1);
-    const invalidArgs = scenarios[currentScenario].arguments.filter(arg => !arg.isValid);
+    const invalidArgs = scenarios[currentScenario].arguments.filter((arg) => !arg.isValid);
     if (invalidArgs.length > 0) {
       const hint = invalidArgs[Math.floor(Math.random() * invalidArgs.length)];
-      setFeedback(`💡 Gợi ý: Hãy chú ý đến lỗi lập luận "${hint.fallacy ? fallacies.find(f => f.id === hint.fallacy)?.name : 'Lỗi logic'}" trong một trong các lập luận.`);
+      setFeedback(
+        `💡 Gợi ý: Hãy chú ý đến lỗi lập luận "${hint.fallacy ? fallacies.find((f) => f.id === hint.fallacy)?.name : 'Lỗi logic'}" trong một trong các lập luận.`,
+      );
     }
   };
 
@@ -243,13 +249,12 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
     return (
       <div className="max-w-4xl mx-auto p-6 bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-xl border border-purple-500/30">
         <div className="text-center space-y-6">
-          <h2 className="text-3xl font-bold text-purple-300 mb-4">
-            🧠 Logical Fallacy Detector
-          </h2>
+          <h2 className="text-3xl font-bold text-purple-300 mb-4">🧠 Logical Fallacy Detector</h2>
           <p className="text-gray-300 text-lg">
-            Phát triển kỹ năng tư duy phê phán bằng cách nhận biết các lỗi lập luận trong các tình huống thực tế tại Việt Nam.
+            Phát triển kỹ năng tư duy phê phán bằng cách nhận biết các lỗi lập luận trong các tình huống thực tế tại
+            Việt Nam.
           </p>
-          
+
           <div className="grid md:grid-cols-3 gap-4 my-8">
             <div className="bg-purple-900/30 rounded-lg p-4 border border-purple-400/20">
               <h3 className="font-semibold text-purple-200 mb-2">🎯 Mục tiêu</h3>
@@ -295,20 +300,14 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h2 className="text-2xl font-bold text-purple-300">
-            🧠 Logical Fallacy Detector
-          </h2>
+          <h2 className="text-2xl font-bold text-purple-300">🧠 Logical Fallacy Detector</h2>
           <p className="text-gray-400">
             Tình huống {currentScenario + 1}/{scenarios.length} - {scenario.difficulty}
           </p>
         </div>
         <div className="text-right">
-          <div className="text-lg font-semibold text-pink-300">
-            ⏱️ {formatTime(timeLeft)}
-          </div>
-          <div className="text-purple-300">
-            🏆 {score} điểm
-          </div>
+          <div className="text-lg font-semibold text-pink-300">⏱️ {formatTime(timeLeft)}</div>
+          <div className="text-purple-300">🏆 {score} điểm</div>
         </div>
       </div>
 
@@ -321,9 +320,7 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
 
       {/* Arguments */}
       <div className="space-y-4 mb-6">
-        <h4 className="text-lg font-semibold text-pink-300">
-          Hãy chọn lập luận HỢP LÝ nhất:
-        </h4>
+        <h4 className="text-lg font-semibold text-pink-300">Hãy chọn lập luận HỢP LÝ nhất:</h4>
         {scenario.arguments.map((argument, index) => (
           <button
             key={index}
@@ -335,8 +332,8 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
                   ? 'bg-green-900/30 border-green-400/50 text-green-300'
                   : 'bg-red-900/30 border-red-400/50 text-red-300'
                 : selectedArgument !== null
-                ? 'bg-gray-800/30 border-gray-600/30 text-gray-500'
-                : 'bg-purple-800/20 border-purple-400/30 text-gray-300 hover:bg-purple-700/30 hover:border-purple-400/50'
+                  ? 'bg-gray-800/30 border-gray-600/30 text-gray-500'
+                  : 'bg-purple-800/20 border-purple-400/30 text-gray-300 hover:bg-purple-700/30 hover:border-purple-400/50'
             }`}
           >
             <div className="flex items-start gap-3">
@@ -356,7 +353,7 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = ({
         >
           💡 Gợi ý ({2 - hintsUsed} còn lại)
         </button>
-        
+
         {showExplanation && (
           <button
             onClick={nextScenario}

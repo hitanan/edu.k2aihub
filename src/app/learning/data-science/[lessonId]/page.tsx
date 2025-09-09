@@ -1,19 +1,20 @@
 import { Metadata } from 'next';
 import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
-import { PageProps } from '@/types';
+
 import { createLessonMetadata } from '@/utils/seo';
 import { DataScienceLessons, DataScienceLesson } from '@/data/data-science';
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const lesson = DataScienceLessons.find((l) => l.id === params.lessonId);
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
+  const { lessonId } = await params;
+  const lesson = DataScienceLessons.find((l) => l.id === lessonId);
   if (!lesson) {
     return {};
   }
   return createLessonMetadata(lesson.title, lesson.description, 'data-science', lesson.id, []);
 }
 
-export default function DataScienceLessonPage({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export default async function DataScienceLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
 
   const config: LessonPageConfig<DataScienceLesson> = {
     moduleName: 'data-science',

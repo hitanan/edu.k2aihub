@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { stemLessons, type StemLesson } from '@/data/stem';
-import { PageProps } from '@/types';
+
 import { TestTube, Target, User, Play, Lightbulb } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -15,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -42,8 +42,8 @@ function getCategoryIcon(category?: string) {
 }
 
 // Page component with standardized config
-export default function StemLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function StemLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

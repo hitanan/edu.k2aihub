@@ -242,103 +242,104 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
                 Bài tập thực hành
               </h2>
               <div className="space-y-4 sm:space-y-6">
-                {lesson.exercises.map((exercise, index) => (
-                  <details
-                    key={index}
-                    className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5 group"
-                    open={index === 0}
-                  >
-                    <summary className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 cursor-pointer">
-                      <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-primary-400 transition-colors">
-                        {exercise.title}
-                      </h3>
-                      <span
-                        className={`px-3 py-1 bg-gradient-to-r ${getDifficultyColor(exercise.difficulty)} rounded-full text-white text-sm font-medium self-start`}
-                      >
-                        {exercise.difficulty}
-                      </span>
-                    </summary>
+                {lesson.exercises &&
+                  lesson.exercises.map((exercise, index) => (
+                    <details
+                      key={index}
+                      className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5 group"
+                      open={index === 0}
+                    >
+                      <summary className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 cursor-pointer">
+                        <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-primary-400 transition-colors">
+                          {exercise.title}
+                        </h3>
+                        <span
+                          className={`px-3 py-1 bg-gradient-to-r ${getDifficultyColor(exercise.difficulty)} rounded-full text-white text-sm font-medium self-start`}
+                        >
+                          {exercise.difficulty}
+                        </span>
+                      </summary>
 
-                    <div className="mt-4">
-                      <p className="text-gray-300 mb-4 text-sm sm:text-base">{exercise.description}</p>
+                      <div className="mt-4">
+                        <p className="text-gray-300 mb-4 text-sm sm:text-base">{exercise.description}</p>
 
-                      {/* Materials */}
-                      {exercise.materials && exercise.materials.length > 0 && (
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Công cụ cần thiết:</h4>
-                          <ul className="space-y-1">
-                            {exercise.materials.map((material, matIndex) => (
-                              <li key={matIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
-                                <span
-                                  className={`w-2 h-2 bg-primary-400 rounded-full mr-2 mt-1.5 sm:mt-2 flex-shrink-0`}
-                                ></span>
-                                {material}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {/* Procedure */}
-                      {exercise.procedure && exercise.procedure.length > 0 && (
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Các bước thực hiện:</h4>
-                          <ol className="space-y-2">
-                            {exercise.procedure.map((step, stepIndex) => (
-                              <li key={stepIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
-                                <span
-                                  className={`w-5 h-5 sm:w-6 sm:h-6 bg-primary-500/20 rounded-full flex items-center justify-center text-primary-400 text-xs font-bold mr-2 mt-0.5 flex-shrink-0`}
-                                >
-                                  {stepIndex + 1}
-                                </span>
-                                <span className="leading-relaxed">{step}</span>
-                              </li>
-                            ))}
-                          </ol>
-                        </div>
-                      )}
-
-                      {/* Expected Results */}
-                      {exercise.expectedResults && (
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Kết quả mong đợi:</h4>
-                          <p
-                            className={`text-gray-300 text-xs sm:text-sm bg-primary-500/10 p-3 rounded-lg border border-primary-500/20`}
-                          >
-                            {exercise.expectedResults}
-                          </p>
-                        </div>
-                      )}
-
-                      {/* Video for exercise */}
-                      {exercise.videoUrl && (
-                        <div className="mt-4">
-                          <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Video hướng dẫn:</h4>
-                          <div className="relative rounded-xl overflow-hidden bg-black/20">
-                            <YoutubePlayer videoId={exercise.videoUrl.split('v=')[1]} />
+                        {/* Materials */}
+                        {exercise.materials && exercise.materials.length > 0 && (
+                          <div className="mb-4">
+                            <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Công cụ cần thiết:</h4>
+                            <ul className="space-y-1">
+                              {exercise.materials.map((material, matIndex) => (
+                                <li key={matIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
+                                  <span
+                                    className={`w-2 h-2 bg-primary-400 rounded-full mr-2 mt-1.5 sm:mt-2 flex-shrink-0`}
+                                  ></span>
+                                  {material}
+                                </li>
+                              ))}
+                            </ul>
                           </div>
-                        </div>
-                      )}
+                        )}
 
-                      {/* Solution Toggle */}
-                      {exercise.solution && (
-                        <details className="mt-4">
-                          <summary
-                            className={`cursor-pointer font-semibold text-primary-400 hover:text-primary-300 transition-colors text-sm sm:text-base`}
-                            data-solution-exercise={exercise.title}
-                          >
-                            Xem hướng dẫn chi tiết & phân tích
-                          </summary>
-                          <div className="mt-4 p-3 sm:p-4 bg-black/20 rounded-lg border border-white/10">
-                            <pre className="text-gray-300 text-xs sm:text-sm whitespace-pre-wrap overflow-x-auto">
-                              {exercise.solution}
-                            </pre>
+                        {/* Procedure */}
+                        {exercise.procedure && exercise.procedure.length > 0 && (
+                          <div className="mb-4">
+                            <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Các bước thực hiện:</h4>
+                            <ol className="space-y-2">
+                              {exercise.procedure.map((step, stepIndex) => (
+                                <li key={stepIndex} className="text-gray-300 text-xs sm:text-sm flex items-start">
+                                  <span
+                                    className={`w-5 h-5 sm:w-6 sm:h-6 bg-primary-500/20 rounded-full flex items-center justify-center text-primary-400 text-xs font-bold mr-2 mt-0.5 flex-shrink-0`}
+                                  >
+                                    {stepIndex + 1}
+                                  </span>
+                                  <span className="leading-relaxed">{step}</span>
+                                </li>
+                              ))}
+                            </ol>
                           </div>
-                        </details>
-                      )}
-                    </div>
-                  </details>
-                ))}
+                        )}
+
+                        {/* Expected Results */}
+                        {exercise.expectedResults && (
+                          <div className="mb-4">
+                            <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Kết quả mong đợi:</h4>
+                            <p
+                              className={`text-gray-300 text-xs sm:text-sm bg-primary-500/10 p-3 rounded-lg border border-primary-500/20`}
+                            >
+                              {exercise.expectedResults}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* Video for exercise */}
+                        {exercise.videoUrl && (
+                          <div className="mt-4">
+                            <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Video hướng dẫn:</h4>
+                            <div className="relative rounded-xl overflow-hidden bg-black/20">
+                              <YoutubePlayer videoId={exercise.videoUrl.split('v=')[1]} />
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Solution Toggle */}
+                        {exercise.solution && (
+                          <details className="mt-4">
+                            <summary
+                              className={`cursor-pointer font-semibold text-primary-400 hover:text-primary-300 transition-colors text-sm sm:text-base`}
+                              data-solution-exercise={exercise.title}
+                            >
+                              Xem hướng dẫn chi tiết & phân tích
+                            </summary>
+                            <div className="mt-4 p-3 sm:p-4 bg-black/20 rounded-lg border border-white/10">
+                              <pre className="text-gray-300 text-xs sm:text-sm whitespace-pre-wrap overflow-x-auto">
+                                {exercise.solution}
+                              </pre>
+                            </div>
+                          </details>
+                        )}
+                      </div>
+                    </details>
+                  ))}
               </div>
             </div>
 

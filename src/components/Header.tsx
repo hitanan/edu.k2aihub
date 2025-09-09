@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X, Home, Globe, Brain, Code, BookOpen, FileText } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
+import { isModuleData, isModuleNavigation } from '@/utils/typeguards';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,12 +95,9 @@ const Header: React.FC = () => {
       }
     > = {};
 
-    moduleNavigation.slice(0, 40).forEach((module) => {
-      if (!module.coreModule && module.href?.startsWith('/learning/')) {
-        let categoryKey = module.category;
-        if (typeof categoryKey === 'string') {
-          categoryKey = [categoryKey];
-        }
+    moduleNavigation.slice(0, 16).forEach((module) => {
+      if (isModuleNavigation(module) && !module.coreModule && module.href?.startsWith('/learning/')) {
+        const categoryKeys = Array.isArray(module.category) ? module.category : [module.category];
         const categoryNames: Record<string, string> = {
           trending: '🚀 2025 Trending',
           vietnamese: '🇻🇳 Vietnamese Market',
@@ -110,7 +108,7 @@ const Header: React.FC = () => {
           stem: '🔬 STEM Foundation',
         };
 
-        categoryKey.forEach((key) => {
+        categoryKeys.forEach((key) => {
           if (!categoryMap[key]) {
             categoryMap[key] = {
               category: categoryNames[key] || key,
@@ -125,6 +123,33 @@ const Header: React.FC = () => {
             icon: module.icon,
           });
         });
+      } else if (isModuleData(module)) {
+        const categoryKeys = Array.isArray(module.category) ? module.category : [module.category];
+        const categoryNames: Record<string, string> = {
+          trending: '🚀 2025 Trending',
+          vietnamese: '🇻🇳 Vietnamese Market',
+          professional: '💼 Professional Skills',
+          creative: '🎨 Creative & Technology',
+          security: '🔒 Security & Science',
+          programming: '💻 Programming',
+          stem: '🔬 STEM Foundation',
+        };
+
+        categoryKeys.forEach((key: string) => {
+          if (!categoryMap[key]) {
+            categoryMap[key] = {
+              category: categoryNames[key] || key,
+              icon: module.icon,
+              modules: [],
+            };
+          }
+
+          categoryMap[key].modules.push({
+            name: module.title,
+            href: `/learning/${module.id}`,
+            icon: module.icon,
+          });
+        });
       }
     });
 
@@ -133,7 +158,7 @@ const Header: React.FC = () => {
       ...categoryData,
       categoryKey,
       modules: categoryData.modules.slice(0, 2), // Limit to 4 modules
-      hasMore: categoryData.modules.length > 4, // Check if there are more modules
+      hasMore: categoryData.modules.length > 2, // Check if there are more modules
       totalCount: categoryData.modules.length,
     }));
   };
@@ -160,9 +185,9 @@ const Header: React.FC = () => {
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-shadow duration-300">
               {!faviconError ? (
-                <Image 
-                  src="/favicon.ico" 
-                  alt="K2AI Logo" 
+                <Image
+                  src="/favicon.ico"
+                  alt="K2AI Logo"
                   width={24}
                   height={24}
                   className="object-contain"

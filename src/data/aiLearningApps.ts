@@ -3,9 +3,14 @@ import { BaseLessonData } from '@/types/lesson-base';
 export const aiLearningApps: BaseLessonData[] = [
   {
     id: 'photomath',
+    title: 'PhotoMath',
     name: 'PhotoMath',
     description:
       'Ứng dụng AI giải toán bằng cách chụp ảnh, có thể giải từ số học cơ bản đến giải tích nâng cao với lời giải chi tiết từng bước.',
+    duration: 'Tự khám phá',
+    difficulty: 'Mọi cấp độ',
+    objectives: ['Học cách sử dụng PhotoMath để giải toán và hiểu các bước giải chi tiết.'],
+    realWorldApplications: ['Hỗ trợ làm bài tập về nhà, ôn tập cho các kỳ thi và kiểm tra lại đáp án.'],
     category: 'math',
     platform: 'Both',
     pricing: 'Freemium',
@@ -122,9 +127,14 @@ export const aiLearningApps: BaseLessonData[] = [
   },
   {
     id: 'gauth',
+    title: 'Gauth (Gauthmath)',
     name: 'Gauth (Gauthmath)',
     description:
       'Trợ lý học tập AI giải toán 24/7 bằng camera và có thể kết nối với gia sư thật. Hỗ trợ từ toán cơ bản đến toán đại học và các môn khoa học khác.',
+    duration: 'Tự khám phá',
+    difficulty: 'Mọi cấp độ',
+    objectives: ['Sử dụng Gauth để nhận lời giải tức thì và kết nối với gia sư khi cần thiết.'],
+    realWorldApplications: ['Nhận trợ giúp cho các bài toán phức tạp, luyện thi và học 1-1 với gia sư.'],
     category: 'math',
     platform: 'Both',
     pricing: 'Freemium',
@@ -247,9 +257,16 @@ export const aiLearningApps: BaseLessonData[] = [
   },
   {
     id: 'socratic',
+    title: 'Socratic by Google',
     name: 'Socratic by Google',
     description:
       'Trợ lý bài tập về nhà được hỗ trợ bởi AI cho nhiều môn học. Sử dụng camera và giọng nói để giải thích các khái niệm một cách dễ hiểu.',
+    duration: 'Tự khám phá',
+    difficulty: 'Mọi cấp độ',
+    objectives: [
+      'Khám phá cách dùng Socratic để học nhiều môn và hiểu các khái niệm phức tạp qua giải thích trực quan.',
+    ],
+    realWorldApplications: ['Hỗ trợ bài tập về nhà cho nhiều môn học, học nhóm và tìm hiểu sâu các khái niệm.'],
     category: 'general',
     platform: 'Mobile',
     pricing: 'Free',
@@ -372,9 +389,16 @@ export const aiLearningApps: BaseLessonData[] = [
   },
   {
     id: 'grammarly',
+    title: 'Grammarly',
     name: 'Grammarly',
     description:
       'Trợ lý viết lách AI giúp cải thiện ngữ pháp, chính tả, văn phong và giọng văn. Một công cụ thiết yếu cho việc viết luận học thuật và giao tiếp chuyên nghiệp.',
+    duration: 'Tự khám phá',
+    difficulty: 'Mọi cấp độ',
+    objectives: ['Học cách sử dụng Grammarly để cải thiện kỹ năng viết tiếng Anh, từ ngữ pháp đến văn phong.'],
+    realWorldApplications: [
+      'Viết luận, email công việc, báo cáo và bất kỳ văn bản tiếng Anh nào một cách chuyên nghiệp.',
+    ],
     category: 'writing',
     platform: 'Both',
     pricing: 'Freemium',
@@ -493,9 +517,14 @@ export const aiLearningApps: BaseLessonData[] = [
   },
   {
     id: 'questionai',
+    title: 'Question.AI',
     name: 'Question.AI',
     description:
       'Trợ lý giải bài tập và gia sư AI cho mọi môn học. Tải ảnh câu hỏi lên và nhận giải thích chi tiết với nhiều phương pháp giải khác nhau.',
+    duration: 'Tự khám phá',
+    difficulty: 'Mọi cấp độ',
+    objectives: ['Sử dụng Question.AI để giải bài tập nhiều môn học và học các phương pháp giải khác nhau.'],
+    realWorldApplications: ['Hỗ trợ làm bài tập về nhà, luyện thi và tự học hiệu quả.'],
     category: 'general',
     platform: 'Both',
     pricing: 'Freemium',
@@ -618,9 +647,14 @@ export const aiLearningApps: BaseLessonData[] = [
   },
   {
     id: 'duolingo',
+    title: 'Duolingo',
     name: 'Duolingo',
     description:
       'Nền tảng học ngoại ngữ được hỗ trợ bởi AI với các bài học được cá nhân hóa, nhận dạng giọng nói và trò chơi hóa. Ứng dụng học ngôn ngữ phổ biến nhất thế giới.',
+    duration: 'Tự khám phá',
+    difficulty: 'Mọi cấp độ',
+    objectives: ['Bắt đầu học một ngôn ngữ mới hoặc duy trì kỹ năng ngôn ngữ với các bài học vui nhộn hàng ngày.'],
+    realWorldApplications: ['Xây dựng thói quen học ngoại ngữ, chuẩn bị cho du lịch hoặc giao tiếp cơ bản.'],
     category: 'language',
     platform: 'Both',
     pricing: 'Freemium',
@@ -752,9 +786,16 @@ export const aiLearningApps: BaseLessonData[] = [
   },
   {
     id: 'github-copilot',
+    title: 'GitHub Copilot',
     name: 'GitHub Copilot',
     description:
       'Lập trình viên cặp AI được cung cấp bởi OpenAI Codex. Cung cấp các gợi ý mã, hoàn thành các hàm và giải thích mã trong thời gian thực.',
+    duration: 'Tự khám phá',
+    difficulty: 'Mọi cấp độ',
+    objectives: [
+      'Học cách tích hợp GitHub Copilot vào quy trình làm việc để tăng tốc độ lập trình và học các mẫu mã mới.',
+    ],
+    realWorldApplications: ['Tăng tốc độ phát triển phần mềm, tạo mẫu nhanh, viết tài liệu và bài kiểm thử tự động.'],
     category: 'coding',
     platform: 'Web',
     pricing: 'Paid',
@@ -877,9 +918,16 @@ export const aiLearningApps: BaseLessonData[] = [
   },
   {
     id: 'quillbot',
+    title: 'QuillBot',
     name: 'QuillBot',
     description:
       'Công cụ diễn giải (paraphrasing) và trợ lý viết lách được hỗ trợ bởi AI. Giúp cải thiện sự rõ ràng, tránh đạo văn và nâng cao văn phong học thuật.',
+    duration: 'Tự khám phá',
+    difficulty: 'Mọi cấp độ',
+    objectives: ['Sử dụng QuillBot để diễn giải văn bản, kiểm tra ngữ pháp và tránh đạo văn hiệu quả.'],
+    realWorldApplications: [
+      'Viết bài luận, báo cáo nghiên cứu và các tài liệu học thuật khác với văn phong chuyên nghiệp.',
+    ],
     category: 'writing',
     platform: 'Both',
     pricing: 'Freemium',

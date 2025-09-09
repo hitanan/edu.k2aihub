@@ -5,19 +5,27 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { vietnameseCultureLessons, VietnameseCultureLesson } from '@/data/vietnamese-culture';
-import { PageProps } from '@/types';
+
 import { Landmark } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(vietnameseCultureLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
+  if (!lessonId) {
+    return {};
+  }
   return generateLessonMetadata(lessonId, vietnameseCultureLessons, 'vietnamese-culture');
 }
 
-export default async function VietnameseCultureLessonPage({ params }: PageProps) {
+export default async function VietnameseCultureLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
+  if (!lessonId) {
+    notFound();
+  }
   const config: LessonPageConfig<VietnameseCultureLesson> = {
     moduleName: 'vietnamese-culture',
     moduleTitle: 'Văn Hóa Việt Nam & Di Sản Số',
@@ -51,6 +59,5 @@ export default async function VietnameseCultureLessonPage({ params }: PageProps)
     ),
   };
 
-  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -5,7 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { crossPlatformStrategyLessons, CrossPlatformStrategyLessonType } from '@/data/cross-platform-strategy';
-import { PageProps } from '@/types';
+
 import { Globe, Target, BarChart3, Settings } from 'lucide-react';
 
 // Generate static params for all lessons
@@ -14,8 +14,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {
       title: 'Lesson not found',
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default async function CrossPlatformStrategyLessonPage({ params }: PageProps) {
+export default async function CrossPlatformStrategyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<CrossPlatformStrategyLessonType> = {
     moduleName: 'cross-platform-strategy',
     moduleTitle: 'Chiến Lược Đa Nền Tảng',
@@ -50,6 +50,6 @@ export default async function CrossPlatformStrategyLessonPage({ params }: PagePr
     },
   };
 
-  const { lessonId } = params;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { roboticsLessons, RoboticsLessonType } from '@/data/robotics';
-import { PageProps } from '@/types';
 import { K2Module } from '@/data/k2-modules';
 import { Bot, Settings, Play, Target, Award } from 'lucide-react';
 import { notFound } from 'next/navigation';
@@ -16,8 +15,8 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
@@ -25,8 +24,8 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 // Page component with standardized config
-export default function RoboticsLessonPage({ params }: PageProps) {
-  const { lessonId } = params;
+export default async function RoboticsLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     notFound();
   }

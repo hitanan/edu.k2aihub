@@ -5,7 +5,6 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { quantumComputingLessons } from '@/data/quantum-computing';
-import { PageProps } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
 
@@ -13,15 +12,15 @@ export async function generateStaticParams() {
   return generateLessonStaticParams(quantumComputingLessons);
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const lessonId = params.lessonId;
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+  const { lessonId } = await params;
   if (!lessonId) {
     return {};
   }
   return generateLessonMetadata(lessonId, quantumComputingLessons, 'quantum-computing');
 }
 
-export default async function QuantumComputingLessonPage({ params }: PageProps) {
+export default async function QuantumComputingLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'quantum-computing',
     moduleTitle: 'Điện toán Lượng tử',
@@ -32,7 +31,7 @@ export default async function QuantumComputingLessonPage({ params }: PageProps) 
     gradientColors: 'from-indigo-500 via-purple-600 to-pink-500',
   };
 
-  const lessonId = params.lessonId;
+  const { lessonId } = await params;
 
   if (!lessonId) {
     return notFound();
