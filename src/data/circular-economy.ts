@@ -7,7 +7,7 @@ export const circularEconomyLessons: BaseLessonData[] = [
     description: 'Hiểu các nguyên tắc cốt lõi của kinh tế tuần hoàn và sự khác biệt so với kinh tế tuyến tính.',
     duration: '45 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=z_4E255p3jY',
+    videoUrl: 'https://www.youtube.com/watch?v=BSqMgDUOi4A',
     imageUrl: '/images/modules/circular-economy/intro.jpg',
     objectives: [
       'Định nghĩa kinh tế tuần hoàn.',
@@ -45,7 +45,7 @@ export const circularEconomyLessons: BaseLessonData[] = [
     description: 'Học cách thiết kế sản phẩm và dịch vụ để chúng có thể được tái sử dụng, sửa chữa và tái chế.',
     duration: '60 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=L4s6I_3-b2s',
+    videoUrl: 'https://www.youtube.com/watch?v=BSqMgDUOi4A',
     imageUrl: '/images/modules/circular-economy/design.jpg',
     objectives: [
       'Hiểu các chiến lược thiết kế cho kinh tế tuần hoàn.',
