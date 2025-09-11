@@ -182,13 +182,13 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   return generateLessonMetadata(lessonId, convertedLessons, 'module-name');
 }
 
 // Page component with standardized config
-export default async function ModuleLessonPage({ params }: PageProps) {
+export default async function ModuleLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const config: LessonPageConfig<ModuleLessonType> = {
     moduleName: 'module-name',
     moduleTitle: 'Module Title in Vietnamese',

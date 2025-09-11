@@ -50,7 +50,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'government-technology',
-        lessonId: 'smart-city-development',
+        lessonId: 'smart-city-iot-solutions',
         title: 'Smart City Development',
         connection: 'Design and manage smart city infrastructure with IoT integration',
       },
@@ -1646,7 +1646,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'digital-government',
-        lessonId: 'smart-city-integration',
+        lessonId: 'smart-city-iot-solutions',
         title: 'Tích Hợp Thành Phố Thông Minh',
         connection: 'Kết nối dịch vụ chính phủ với hệ thống thành phố thông minh',
       },
@@ -1979,7 +1979,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'blue-economy',
-        lessonId: 'smart-aquaculture',
+        lessonId: 'sustainable-aquaculture-systems',
         title: 'Nuôi trồng Thủy sản Thông minh',
         connection: 'Thực hành với IoT sensors và automated systems',
       },
@@ -2025,7 +2025,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'environmental-data-science',
-        lessonId: 'environmental-impact-assessment',
+        lessonId: 'environmental-monitoring',
         title: 'Đánh Giá Tác Động Môi Trường',
         connection: 'Phân tích environmental impact của renewable projects',
       },
@@ -2047,13 +2047,13 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'blue-economy',
-        lessonId: 'blue-carbon-management',
+        lessonId: 'blue-carbon-ecosystems',
         title: 'Quản lý Carbon Xanh Biển',
         connection: 'Tính toán và quản lý blue carbon credits',
       },
       {
         moduleId: 'environmental-data-science',
-        lessonId: 'carbon-footprint-calculation',
+        lessonId: 'carbon-footprint-analysis',
         title: 'Tính Toán Dấu Chân Carbon',
         connection: 'Áp dụng methods để measure carbon sequestration',
       },
@@ -2081,7 +2081,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'smart-manufacturing',
-        lessonId: 'iot-sensor-networks',
+        lessonId: 'iot-integration-lessons',
         title: 'Mạng Cảm Biến IoT',
         connection: 'Triển khai sensor networks để monitor production lines',
       },
@@ -2121,13 +2121,13 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'smart-manufacturing',
-        lessonId: 'digital-twin-modeling',
+        lessonId: 'digital-twin-development',
         title: 'Mô Hình Digital Twin',
         connection: 'Tạo digital twin cho supply chain visualization',
       },
       {
         moduleId: 'data-science',
-        lessonId: 'predictive-analytics',
+        lessonId: 'data-driven-predictions',
         title: 'Phân Tích Dự Đoán',
         connection: 'Dự đoán demand và optimize inventory levels',
       },
@@ -2155,7 +2155,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'edtech',
-        lessonId: 'ai-personalized-learning',
+        lessonId: 'personalized-ai-learning',
         title: 'Học Tập Cá Nhân Hóa AI',
         connection: 'Thiết kế AI systems để personalize learning paths',
       },
@@ -2189,13 +2189,13 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'edtech',
-        lessonId: 'adaptive-learning-systems',
+        lessonId: 'adaptive-learning-technologies',
         title: 'Hệ Thống Học Thích Ứng',
         connection: 'Xây dựng adaptive algorithms cho language learning',
       },
       {
         moduleId: 'ai-machine-learning',
-        lessonId: 'speech-recognition',
+        lessonId: 'ai-voice-processing',
         title: 'Nhận Dạng Giọng Nói',
         connection: 'Implement speech recognition cho pronunciation feedback',
       },
@@ -2223,13 +2223,13 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'smart-city',
-        lessonId: 'intelligent-transportation',
+        lessonId: 'smart-transportation-systems',
         title: 'Giao Thông Thông Minh',
         connection: 'Thiết kế intelligent traffic management systems',
       },
       {
         moduleId: 'arduino',
-        lessonId: 'iot-sensor-networks',
+        lessonId: 'iot-integration-lessons',
         title: 'Mạng Cảm Biến IoT',
         connection: 'Deploy traffic sensors và monitoring devices',
       },
@@ -2269,7 +2269,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'arduino',
-        lessonId: 'sensor-integration',
+        lessonId: 'arduino-sensors',
         title: 'Tích Hợp Cảm Biến',
         connection: 'Build parking sensors và occupancy detection',
       },
@@ -2371,25 +2371,25 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'circular-economy',
-        lessonId: 'waste-to-resource-systems',
+        lessonId: 'circular-design',
         title: 'Hệ Thống Chuyển Đổi Chất Thải',
         connection: 'Optimize waste processing và resource recovery',
       },
       {
         moduleId: 'green-technology',
-        lessonId: 'recycling-technologies',
+        lessonId: 'recycling-innovation',
         title: 'Công Nghệ Tái Chế',
         connection: 'Implement advanced recycling processes',
       },
       {
         moduleId: 'arduino',
-        lessonId: 'sensor-automation',
+        lessonId: 'arduino-sensors',
         title: 'Tự Động Hóa Cảm Biến',
         connection: 'Build automated sorting systems với sensors',
       },
       {
         moduleId: 'environmental-data-science',
-        lessonId: 'environmental-impact-assessment',
+        lessonId: 'environmental-monitoring',
         title: 'Đánh Giá Tác Động Môi Trường',
         connection: 'Monitor environmental impact của recycling operations',
       },
@@ -2411,25 +2411,25 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'circular-economy',
-        lessonId: 'energy-recovery-systems',
+        lessonId: 'renewable-energy-systems',
         title: 'Hệ Thống Thu Hồi Năng Lượng',
         connection: 'Design efficient waste-to-energy conversion processes',
       },
       {
         moduleId: 'renewable-energy',
-        lessonId: 'biomass-energy-systems',
+        lessonId: 'bioenergy-systems',
         title: 'Hệ Thống Năng Lượng Sinh Khối',
         connection: 'Convert organic waste thành renewable energy',
       },
       {
         moduleId: 'green-technology',
-        lessonId: 'emission-control-systems',
+        lessonId: 'pollution-control-technology',
         title: 'Hệ Thống Kiểm Soát Khí Thải',
         connection: 'Minimize environmental impact của energy conversion',
       },
       {
         moduleId: 'chemical-engineering',
-        lessonId: 'process-optimization',
+        lessonId: 'process-improvement',
         title: 'Tối Ưu Hóa Quy Trình',
         connection: 'Optimize chemical processes trong waste-to-energy plants',
       },
@@ -3585,4 +3585,158 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
     ],
   },
-];
+
+  {
+    id: 'circular-economy-resource-flow-3d',
+    title: 'Mô Phỏng Luồng Tài Nguyên Tuần Hoàn 3D',
+    description:
+      'Thiết kế và quản lý hệ thống tuần hoàn tài nguyên trong thành phố 3D với waste-to-resource conversion và sustainability metrics',
+    category: ['3D', 'simulation', 'strategy'],
+    difficulty: 'Nâng cao',
+    estimatedTime: '35-45 phút',
+    skills: [
+      'Circular Economy Design',
+      'Resource Management',
+      'Sustainability Planning',
+      '3D System Modeling',
+      'Environmental Impact Analysis',
+    ],
+    moduleType: 'circular-economy',
+    isInternal: true,
+    points: 150,
+    icon: '🔄',
+    color: 'from-green-500 via-emerald-600 to-teal-700',
+    gameFeatures: [
+      '3D city environment với interactive resource flows',
+      'Real-time waste tracking và conversion processes',
+      'Multi-layer resource cycles (materials, energy, water)',
+      'Sustainability metrics dashboard với environmental impact',
+      'Challenge modes với different waste scenarios',
+      'Educational tooltips explaining circular economy principles',
+    ],
+    educationalObjectives: [
+      'Hiểu nguyên tắc design for circularity',
+      'Học cách optimize resource flows để minimize waste',
+      'Phát triển strategic thinking về sustainability',
+      'Áp dụng systems thinking trong environmental management',
+    ],
+    relatedLessons: [
+      {
+        moduleId: 'circular-economy',
+        lessonId: 'introduction-to-circular-economy',
+        title: 'Giới thiệu về Kinh tế Tuần hoàn',
+        connection: 'Áp dụng 3 nguyên tắc cốt lõi của kinh tế tuần hoàn trong game simulation',
+      },
+      {
+        moduleId: 'circular-economy',
+        lessonId: 'circular-design',
+        title: 'Thiết kế Tuần hoàn',
+        connection: 'Implement design strategies để create efficient resource cycles',
+      },
+      {
+        moduleId: 'green-technology',
+        lessonId: 'smart-city-iot-solutions',
+        title: 'Giải pháp IoT Thành phố Thông minh',
+        connection: 'Integrate IoT systems để monitor và optimize resource flows',
+      },
+      {
+        moduleId: 'sustainable-energy-green-tech',
+        lessonId: 'circular-economy-principles',
+        title: 'Nguyên tắc Kinh tế Tuần hoàn',
+        connection: 'Apply circular principles trong energy và material management',
+      },
+      {
+        moduleId: 'environmental-data-science',
+        lessonId: 'environmental-monitoring',
+        title: 'Đánh giá Tác động Môi trường',
+        connection: 'Use data analytics để measure environmental impact của circular systems',
+      },
+      {
+        moduleId: 'robotics',
+        lessonId: 'autonomous-robotics',
+        title: 'Hệ thống Phân loại Tự động',
+        connection: 'Design robotic systems để automate waste sorting và resource recovery',
+      },
+    ],
+  },
+  {
+    id: 'career-development-virtual-mentor-3d',
+    title: 'Cố Vấn Nghề Nghiệp Ảo 3D - Interactive Career Journey',
+    description:
+      'Navigate through một virtual office environment để develop career skills, build professional network và make strategic career decisions',
+    category: ['3D', 'simulation', 'educational'],
+    difficulty: 'Trung bình',
+    estimatedTime: '30-40 phút',
+    skills: [
+      'Career Planning',
+      'Professional Communication',
+      'Network Building',
+      'Interview Skills',
+      'Personal Branding',
+    ],
+    moduleType: 'career-development',
+    isInternal: true,
+    points: 130,
+    icon: '🚀',
+    color: 'from-purple-500 via-blue-600 to-indigo-700',
+    gameFeatures: [
+      '3D virtual office environment với interactive NPCs',
+      'Multiple career path scenarios với branching storylines',
+      'Real-time skill assessment và personality tests',
+      'Professional networking minigames',
+      'Interview simulation với AI feedback',
+      'Personal branding workshop với portfolio builder',
+    ],
+    educationalObjectives: [
+      'Develop strategic career planning skills',
+      'Improve professional communication và presentation',
+      'Learn effective networking techniques',
+      'Build confidence trong job interviews',
+      'Create compelling personal brand và professional presence',
+    ],
+    relatedLessons: [
+      {
+        moduleId: 'career-development',
+        lessonId: 'career-planning-fundamentals',
+        title: 'Nền Tảng Lập Kế Hoạch Nghề Nghiệp',
+        connection: 'Apply career planning frameworks trong interactive scenarios',
+      },
+      {
+        moduleId: 'career-development',
+        lessonId: 'personal-branding-strategy',
+        title: 'Chiến Lược Xây Dựng Thương Hiệu Cá Nhân',
+        connection: 'Practice personal branding exercises trong virtual environment',
+      },
+      {
+        moduleId: 'career-development',
+        lessonId: 'networking-relationship-building',
+        title: 'Xây Dựng Mạng Lưới Quan Hệ Nghề Nghiệp',
+        connection: 'Engage in networking simulations với virtual professionals',
+      },
+      {
+        moduleId: 'career-development',
+        lessonId: 'job-interview-mastery',
+        title: 'Thành Thạo Kỹ Thuật Phỏng Vấn Việc Làm',
+        connection: 'Practice interview techniques với AI-powered feedback system',
+      },
+      {
+        moduleId: 'career-development',
+        lessonId: 'leadership-management-skills',
+        title: 'Kỹ Năng Lãnh Đạo và Quản Lý',
+        connection: 'Develop leadership skills through team management scenarios',
+      },
+      {
+        moduleId: 'digital-marketing',
+        lessonId: 'personal-branding-strategy',
+        title: 'Phát Triển Thương Hiệu Cá Nhân',
+        connection: 'Apply digital marketing principles để build online professional presence',
+      },
+      {
+        moduleId: 'ai-art-creative-tech',
+        lessonId: 'ai-assisted-design',
+        title: 'Tạo Portfolio với AI',
+        connection: 'Use AI tools để create impressive professional portfolios',
+      },
+    ],
+  },
+].filter(Boolean) as EducationalGame[];

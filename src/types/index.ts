@@ -97,6 +97,8 @@ export interface EducationalGame {
   imageUrl?: string;
   tags?: string[];
   isNew?: boolean;
+  gameFeatures?: string[];
+  educationalObjectives?: string[];
   relatedLessons: Array<{
     moduleId: string;
     lessonId: string;

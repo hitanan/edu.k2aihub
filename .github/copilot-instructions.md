@@ -625,7 +625,7 @@ npm run build    # Production build with static generation
    - **SEO content must be in Vietnamese for local search optimization**
 8. **Documentation Requirement**: ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.
 9. **Image Url**: incase you done have the image url, use import { defaultImage } from "@/utils/image"; to ensure all images are properly accessible.
-10. **Module data**: when generate module pages, Prefer to create data and then to use it to create a dynamic pages with slug is `lessonId`, ensure use PageProps to get lessonId (import { PageProps } from '@/types'). In ModuleMainPage function, moduledata must use ModuleData type, has heroImageUrl property. the module metadat must follow below pattern
+10. **Module data**: when generate module pages, Prefer to create data and then to use it to create a dynamic pages with slug is `lessonId`. In ModuleMainPage function, moduledata must use ModuleData type the module metadata must follow below pattern
 ``` typescript
 export const metadata: Metadata = createModuleMetadata(
   'TikTok Shop & Social Commerce',
