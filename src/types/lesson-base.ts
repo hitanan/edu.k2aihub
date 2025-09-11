@@ -106,6 +106,7 @@ export interface BaseLessonData {
   vietnamContext?: VietnamContext;
   careerConnect?: CareerProfile;
   quizzes?: QuizQuestion[];
+  faqs?: Array<{ question: string; answer: string }>;
   environmentalImpact?: string;
   tools?: string[] | ToolDetail[];
   materials?: string[];
@@ -134,6 +135,12 @@ export interface BaseLessonData {
     title?: string;
     connection?: string;
     difficulty?: string;
+  }>;
+  relatedLessons?: Array<{
+    moduleId: string;
+    lessonId: string;
+    title: string;
+    connection: string;
   }>;
   aiTools?: string[];
   practicalUses?: string[];

@@ -7,8 +7,8 @@ export const AIForStudentsLessons: BaseLessonData[] = [
     description: 'Bài học đầu tiên giới thiệu về Trí tuệ nhân tạo, lịch sử phát triển và những khái niệm cơ bản nhất.',
     duration: '60 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=NRdF9BH9uiM',
-    imageUrl: 'https://i.ytimg.com/vi/NRdF9BH9uiM/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=ttIOdAdQaUE',
+    imageUrl: 'https://i.ytimg.com/vi/ttIOdAdQaUE/hqdefault.jpg',
     objectives: [
       'Hiểu được AI là gì và không phải là gì.',
       'Nắm được các mốc quan trọng trong lịch sử AI.',

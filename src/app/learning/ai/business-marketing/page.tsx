@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import BusinessMarketingClient from './BusinessMarketingClient';
 import { createModuleMetadata } from '@/utils/seo';
+import { businessMarketingLessons } from '@/data/business-marketing';
+import { digitalMarketingLessons } from '@/data/digital-marketing';
+import { BaseLessonData } from '@/types/lesson-base';
 
 export const metadata: Metadata = createModuleMetadata(
   'AI cho Kinh Doanh & Marketing - Content Marketing, Customer Service',
@@ -17,5 +20,6 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function BusinessMarketingAI() {
-  return <BusinessMarketingClient />;
+  const allLessons: BaseLessonData[] = [...businessMarketingLessons, ...digitalMarketingLessons];
+  return <BusinessMarketingClient lessons={allLessons} />;
 }

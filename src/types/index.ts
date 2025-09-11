@@ -109,6 +109,11 @@ export interface EducationalGame {
   is3D?: boolean;
 }
 
+export interface PageProps {
+  params: { [key: string]: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
 export interface ModuleNavigation {
   id: string;
   title: string;

@@ -23,6 +23,7 @@ import { YoutubePlayer } from '@/components/media/YoutubePlayer';
 import { CareerConnectSection } from './CareerConnectSection';
 import { EducationalGamesShowcase } from '../games/EducationalGames';
 import { InteractiveQuiz } from './InteractiveQuiz';
+import { InteractiveFAQ } from './InteractiveFAQ';
 import { LessonAnalytics } from './LessonAnalytics';
 import { VietnamContextBox } from './VietnamContextBox';
 
@@ -217,6 +218,13 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
             {lesson.vietnamContext && (
               <div className="mb-6 sm:mb-8">
                 <VietnamContextBox title={lesson.vietnamContext.title} content={lesson.vietnamContext.content} />
+              </div>
+            )}
+
+            {/* FAQ Section */}
+            {lesson.faqs && lesson.faqs.length > 0 && (
+              <div className="mb-6 sm:mb-8">
+                <InteractiveFAQ faqs={lesson.faqs} primaryColor={config.primaryColor} />
               </div>
             )}
 

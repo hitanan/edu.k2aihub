@@ -3,8 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import ShareButton from '@/components/ShareButton';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export default function BusinessMarketingClient() {
+interface BusinessMarketingClientProps {
+  lessons: BaseLessonData[];
+}
+
+export default function BusinessMarketingClient({ lessons }: BusinessMarketingClientProps) {
   const [activeSection, setActiveSection] = useState('content-marketing');
 
   const sections = [
@@ -29,7 +34,7 @@ Include:
 2. Content calendar for 3 months
 3. Platform-specific strategies
 4. KPIs and success metrics
-5. Content repurposing plan"`
+5. Content repurposing plan"`,
           },
           {
             title: 'Blog posts chiến lược',
@@ -46,7 +51,7 @@ Structure:
 - H2/H3 subheadings with keywords
 - Actionable tips and examples
 - Strong call-to-action
-- Internal/external link suggestions"`
+- Internal/external link suggestions"`,
           },
           {
             title: 'Social media campaigns',
@@ -62,7 +67,7 @@ Deliver:
 3. Captions with CTAs
 4. Posting schedule for maximum engagement
 5. Paid advertising copy
-6. Influencer outreach templates"`
+6. Influencer outreach templates"`,
           },
           {
             title: 'Email marketing sequences',
@@ -78,16 +83,16 @@ Create:
 3. Promotional emails (product launches)
 4. Re-engagement campaign
 5. Customer retention series
-Include subject lines, preview text, and CTAs"`
-          }
+Include subject lines, preview text, and CTAs"`,
+          },
         ],
         tips: [
           'Always define clear target audience trước khi tạo content',
           'A/B test headlines, CTAs, và send times',
           'Repurpose content across multiple platforms',
-          'Track metrics và adjust strategy based on performance'
-        ]
-      }
+          'Track metrics và adjust strategy based on performance',
+        ],
+      },
     },
     {
       id: 'customer-service',
@@ -112,7 +117,7 @@ Design flows for:
 5. Appointment scheduling
 6. Lead qualification
 
-Include fallback responses and handoff protocols."`
+Include fallback responses and handoff protocols."`,
           },
           {
             title: 'FAQ optimization',
@@ -127,7 +132,7 @@ Improve by:
 3. Creating searchable knowledge base
 4. Implementing smart suggestions
 5. Regular updates based on new inquiries
-6. Multi-language support if needed"`
+6. Multi-language support if needed"`,
           },
           {
             title: 'Complaint resolution templates',
@@ -142,7 +147,7 @@ Templates for:
 3. Resolution and compensation
 4. Prevention and process improvement
 5. Feedback request and relationship repair
-Include empathetic language and clear next steps."`
+Include empathetic language and clear next steps."`,
           },
           {
             title: 'Customer feedback analysis',
@@ -156,16 +161,16 @@ Extract:
 4. Customer satisfaction drivers
 5. Competitive advantages mentioned
 6. Actionable recommendations for teams
-7. Priority ranking for addressing issues"`
-          }
+7. Priority ranking for addressing issues"`,
+          },
         ],
         tips: [
           'Train AI responses với actual customer language',
           'Regular review và update automated responses',
           'Always provide option cho human support',
-          'Use customer feedback để continuously improve AI'
-        ]
-      }
+          'Use customer feedback để continuously improve AI',
+        ],
+      },
     },
     {
       id: 'market-research',
@@ -188,7 +193,7 @@ Research areas:
 4. Social media presence and engagement
 5. Website performance and SEO
 6. Strengths, weaknesses, opportunities, threats
-7. Market gaps and differentiation opportunities"`
+7. Market gaps and differentiation opportunities"`,
           },
           {
             title: 'Target audience research',
@@ -205,7 +210,7 @@ Develop personas including:
 5. Preferred communication channels
 6. Budget and price sensitivity
 7. Objections and concerns
-Create 2-3 detailed buyer personas with names and stories."`
+Create 2-3 detailed buyer personas with names and stories."`,
           },
           {
             title: 'Market trends analysis',
@@ -223,7 +228,7 @@ Provide:
 4. Strategic recommendations
 5. Timeline for trend adoption
 6. Investment priorities
-7. Risk mitigation strategies"`
+7. Risk mitigation strategies"`,
           },
           {
             title: 'SWOT analysis generation',
@@ -239,16 +244,16 @@ Weaknesses: Areas for improvement and limitations
 Opportunities: External factors that could benefit business
 Threats: External challenges and competitive pressures
 
-Include strategic recommendations for each quadrant."`
-          }
+Include strategic recommendations for each quadrant."`,
+          },
         ],
         tips: [
           'Use multiple sources để validate research findings',
           'Regular updates để track market changes',
           'Focus on actionable insights rather than data collection',
-          'Combine quantitative data với qualitative insights'
-        ]
-      }
+          'Combine quantitative data với qualitative insights',
+        ],
+      },
     },
     {
       id: 'sales-optimization',
@@ -272,7 +277,7 @@ Scoring criteria:
 4. Pain point alignment with solution
 5. Competition and urgency factors
 6. Previous interaction quality
-Assign point values and qualification thresholds."`
+Assign point values and qualification thresholds."`,
           },
           {
             title: 'Sales email sequences',
@@ -290,7 +295,7 @@ Create 7-email sequence:
 5. Objection handling
 6. Urgency and scarcity
 7. Final value reinforcement
-Include subject lines, personalization, and clear CTAs."`
+Include subject lines, personalization, and clear CTAs."`,
           },
           {
             title: 'Sales call scripts',
@@ -308,7 +313,7 @@ Script structure:
 5. Objection handling techniques
 6. Trial close and next steps
 7. Follow-up commitment
-Include transition phrases and backup questions."`
+Include transition phrases and backup questions."`,
           },
           {
             title: 'Proposal and contract templates',
@@ -326,20 +331,20 @@ Proposal sections:
 5. Investment and ROI justification
 6. Team credentials and case studies
 7. Terms, conditions, and next steps
-Include persuasive language and risk mitigation."`
-          }
+Include persuasive language and risk mitigation."`,
+          },
         ],
         tips: [
           'Personalize outreach based on research và prospect data',
           'Track và analyze response rates để optimize messaging',
           'Follow up consistently with value-added content',
-          'Use social proof và testimonials throughout sales process'
-        ]
-      }
-    }
+          'Use social proof và testimonials throughout sales process',
+        ],
+      },
+    },
   ];
 
-  const activeContent = sections.find(s => s.id === activeSection);
+  const activeContent = sections.find((s) => s.id === activeSection);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -352,9 +357,7 @@ Include persuasive language and risk mitigation."`
                 <div className="w-8 h-8 bg-gradient-to-br from-green-600 to-teal-600 rounded-lg flex items-center justify-center text-white text-sm">
                   📈
                 </div>
-                <h1 className="text-xl font-bold text-gray-900">
-                  AI cho Kinh Doanh & Marketing
-                </h1>
+                <h1 className="text-xl font-bold text-gray-900">AI cho Kinh Doanh & Marketing</h1>
               </Link>
               <nav className="hidden md:flex items-center gap-1 ml-6">
                 <Link href="/" className="text-gray-500 hover:text-gray-700 text-sm">
@@ -365,12 +368,10 @@ Include persuasive language and risk mitigation."`
                   AI Của Tôi
                 </Link>
                 <span className="text-gray-300 mx-2">/</span>
-                <span className="text-gray-900 text-sm font-medium">
-                  Kinh Doanh & Marketing
-                </span>
+                <span className="text-gray-900 text-sm font-medium">Kinh Doanh & Marketing</span>
               </nav>
             </div>
-            <ShareButton 
+            <ShareButton
               title="AI cho Kinh Doanh & Marketing | K2AiHub"
               description="Ứng dụng AI trong marketing và kinh doanh: tạo content marketing, AI customer service, market research và sales optimization với công cụ AI"
             />
@@ -414,9 +415,7 @@ Include persuasive language and risk mitigation."`
                     <span className="text-3xl">{activeContent.icon}</span>
                     <h1 className="text-3xl font-bold text-gray-900">{activeContent.title}</h1>
                   </div>
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    {activeContent.content.overview}
-                  </p>
+                  <p className="text-lg text-gray-600 leading-relaxed">{activeContent.content.overview}</p>
                 </div>
 
                 {/* Steps */}
@@ -430,9 +429,7 @@ Include persuasive language and risk mitigation."`
                             {index + 1}
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                              {step.title}
-                            </h3>
+                            <h3 className="text-lg font-semibold text-gray-900 mb-3">{step.title}</h3>
                             <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-green-500">
                               <pre className="text-gray-700 text-sm leading-relaxed whitespace-pre-wrap font-sans">
                                 {step.content}
@@ -461,6 +458,25 @@ Include persuasive language and risk mitigation."`
                 </div>
               </div>
             )}
+            <div className="mt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Các bài học liên quan</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {lessons.map((lesson) => (
+                  <Link
+                    key={lesson.id}
+                    href={`/learning/digital-marketing/${lesson.id}`}
+                    className="block bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow"
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{lesson.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4">{lesson.description}</p>
+                    <div className="flex items-center justify-between text-sm text-gray-500">
+                      <span>{lesson.duration}</span>
+                      <span>{lesson.difficulty}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

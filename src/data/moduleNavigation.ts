@@ -4,6 +4,7 @@ import { aiArtCreativeTechModuleData } from './ai-art-creative-tech-module';
 import { aiForStudentsModuleData } from './ai-for-students-module';
 import { aiMachineLearningModuleData } from './ai-machine-learning-module';
 import { aiLearningModuleData } from './ai-learning-module';
+import { aiSeoOptimizationModuleData } from './ai-seo-optimization-module';
 import { arduinoCircuitsModuleData } from './arduino-circuits-module';
 import { arduinoModuleData } from './arduino-module';
 import { blueEconomyModuleData } from './blue-economy-module';
@@ -131,6 +132,7 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   aiForStudentsModuleData,
   aiMachineLearningModuleData,
   aiLearningModuleData,
+  aiSeoOptimizationModuleData,
   arduinoCircuitsModuleData,
   arduinoModuleData,
   blueEconomyModuleData,

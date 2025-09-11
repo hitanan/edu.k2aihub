@@ -39,5 +39,11 @@ export const businessMarketingModuleData: ModuleNavigation = {
       duration: '50 phút',
       difficulty: 'Trung bình',
     },
+    {
+      id: 'ai-powered-seo-business',
+      title: 'SEO được hỗ trợ bởi AI cho doanh nghiệp',
+      duration: '60 phút',
+      difficulty: 'Trung bình',
+    },
   ],
 };

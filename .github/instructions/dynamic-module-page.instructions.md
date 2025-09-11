@@ -8,6 +8,8 @@ applyTo: '**'
 
 This instruction guide provides comprehensive guidance for creating standardized, dynamic module pages using the K2AiHub template system. All learning modules MUST follow this architecture for consistency, maintainability, and optimal user experience.
 
+## Implement
+
 ### 📺 Default Media Resources
 
 **Youtube VideoUrl Generation**
@@ -304,7 +306,17 @@ export const [MODULE_NAME]Lessons: ModuleLessonType[] = [
         correctAnswerIndex: 2,
         explanation: 'Cảm biến PIR hoạt động một cách thụ động bằng cách phát hiện sự thay đổi đột ngột của bức xạ hồng ngoại, vốn được phát ra từ các cơ thể sống như người và động vật.'
       }
-    ]
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để kết nối cảm biến DHT22 với Arduino?',
+        answer: 'Cảm biến DHT22 có 4 chân: VCC, GND, DATA, và NC (không kết nối). Kết nối chân VCC với 5V trên Arduino, GND với GND, và DATA với một chân số (ví dụ: chân 2). Sử dụng thư viện DHT để đọc dữ liệu từ cảm biến.'
+      },
+      {
+        question: 'Cảm biến PIR có thể phát hiện chuyển động trong phạm vi bao xa?',
+        answer: 'Phạm vi phát hiện của cảm biến PIR thường từ 5 đến 12 mét, tùy thuộc vào model cụ thể và điều kiện môi trường.'
+      }
+    ],
   }
   // ... more lessons
 ]
