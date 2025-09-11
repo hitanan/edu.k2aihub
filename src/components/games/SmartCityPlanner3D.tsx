@@ -384,15 +384,7 @@ function Instructions({ onStart }: { onStart: () => void }) {
   );
 }
 
-export default function SmartCityPlanner3D({
-  onComplete,
-  timeLeft,
-  onRestart,
-}: {
-  onComplete: (success: boolean, score: number) => void;
-  timeLeft: number;
-  onRestart: () => void;
-}) {
+export default function SmartCityPlanner3D() {
   const { smartCity, setSmartCityState } = useGameStore();
   const [gameStarted, setGameStarted] = useState(true); // Start directly with the game
   const [selectedBuildingType, setSelectedBuildingType] = useState<string | null>('residential');

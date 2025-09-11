@@ -7,7 +7,6 @@ import {
 import { electricVehicleLessons } from '@/data/electric-vehicle-tech';
 
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
 import { createTitle } from '@/utils/seo';
 import { BaseLessonData } from '@/types/lesson-base';
 

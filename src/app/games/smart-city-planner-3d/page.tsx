@@ -5,5 +5,5 @@ import SmartCityPlanner3D from '@/components/games/SmartCityPlanner3D';
 export const metadata: Metadata = createGameMetadata('smart-city-planner-3d');
 
 export default function SmartCityPlanner3DPage() {
-  return <SmartCityPlanner3D onComplete={() => {}} timeLeft={0} onRestart={() => {}} />;
+  return <SmartCityPlanner3D />;
 }

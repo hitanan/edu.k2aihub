@@ -275,11 +275,8 @@ const Road3D: React.FC<{
 };
 
 // Main traffic management simulator component
-const TrafficManagementSimulator3D: React.FC<{
-  onComplete: (success: boolean, score: number) => void;
-  timeLeft: number;
-  onRestart: () => void;
-}> = ({ onComplete, timeLeft, onRestart }) => {
+
+export default function TrafficManagementSimulator3D() {
   // Instructions state
   const [showInstructions, setShowInstructions] = useState(true);
 
@@ -944,6 +941,4 @@ const TrafficManagementSimulator3D: React.FC<{
       </div>
     </div>
   );
-};
-
-export default TrafficManagementSimulator3D;
+}
