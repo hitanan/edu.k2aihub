@@ -27,6 +27,8 @@ import { InteractiveQuiz } from './InteractiveQuiz';
 import { InteractiveFAQ } from './InteractiveFAQ';
 import { LessonAnalytics } from './LessonAnalytics';
 import { VietnamContextBox } from './VietnamContextBox';
+import JsonLd from '@/components/JsonLd';
+import { createFAQStructuredDataFromQA, createLessonStructuredData } from '@/utils/seo';
 
 export interface LessonPageConfig<T extends BaseLessonData> {
   moduleName: string;
@@ -106,8 +108,23 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
   const previousLesson = currentIndex > 0 ? config.lessons[currentIndex - 1] : null;
   const nextLesson = currentIndex < config.lessons.length - 1 ? config.lessons[currentIndex + 1] : null;
 
+  const lessonUrl = `https://k2aihub.com${config.modulePath}/${lesson.id}`;
+  const lessonStructured = createLessonStructuredData({
+    title: lesson.title,
+    description: lesson.description,
+    url: lessonUrl,
+    duration: lesson.duration,
+    difficulty: lesson.difficulty,
+    videoUrl: lesson.videoUrl || undefined,
+    moduleTitle: config.moduleTitle,
+  });
+  const faqStructured =
+    lesson.faqs && lesson.faqs.length > 0 ? createFAQStructuredDataFromQA(lesson.faqs, lessonUrl) : null;
+
   return (
     <div className={`min-h-screen bg-gradient-to-br ${config.gradientColors}`}>
+      <JsonLd data={lessonStructured} />
+      {faqStructured && <JsonLd data={faqStructured} />}
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 pt-6">
         <DynamicBreadcrumbs moduleId={config.moduleName} lessonId={lesson.id} lessonTitle={lesson.title} />

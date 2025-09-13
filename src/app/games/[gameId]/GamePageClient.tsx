@@ -70,6 +70,14 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
     setIsPlaying(false);
   };
 
+  const handleBack = () => {
+    if (isPlaying) {
+      setIsPlaying(false);
+    } else {
+      window.history.back();
+    }
+  };
+
   if (isPlaying && SpecificGameComponent) {
     return <SpecificGameComponent onComplete={handleGameComplete} />;
   }
@@ -84,13 +92,13 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Link
-          href="/games"
+        <button
+          onClick={handleBack}
           className="inline-flex items-center text-purple-300 hover:text-white transition-colors mb-6"
         >
           <ArrowLeft className="w-5 h-5 mr-2" />
-          Quay lại danh sách trò chơi
-        </Link>
+          Quay lại
+        </button>
       </div>
 
       {/* Game Hero */}
