@@ -1,6 +1,6 @@
 'use client';
 
-import { BlogPost as BlogPostType } from '@/lib/blog';
+import { BlogPost as BlogPostType } from '@/types';
 import { format } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import { Calendar, Clock, User } from 'lucide-react';
@@ -61,7 +61,7 @@ export function BlogPost({ post }: BlogPostProps) {
         <div className="mt-12">
           <h2 className="text-lg font-semibold mb-2">Tags:</h2>
           <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
+            {post.tags.map((tag: string) => (
               <Link
                 key={tag}
                 href={`/blog/tag/${tag.toLowerCase().replace(/ /g, '-')}`}

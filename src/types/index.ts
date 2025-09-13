@@ -91,6 +91,7 @@ export interface ModuleData {
   careerProspects?: string | string[];
   targetAudience?: string;
   imageUrl?: string;
+  faqs?: Array<{ question: string; answer: string }>;
 }
 
 export interface ContactForm {
@@ -159,4 +160,26 @@ export interface LessonNavigation {
   duration: string;
   difficulty: string;
   completed?: boolean;
+}
+
+export interface BlogMetadata {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  author: string;
+  category: string;
+  tags: string[];
+  featured: boolean;
+  readingTime: string;
+  coverImage?: string;
+}
+
+export interface BlogPost extends BlogMetadata {
+  content: string;
+}
+
+export interface BlogCategory {
+  name: string;
+  count: number;
 }

@@ -241,6 +241,110 @@ export function createEducationalContentStructuredData(title: string, descriptio
 }
 
 /**
+ * Creates structured data for a specific lesson (LearningResource)
+ */
+export function createLessonStructuredData(options: {
+  title: string;
+  description: string;
+  url: string;
+  duration?: string; // e.g., "90 phút"
+  difficulty?: string; // e.g., "Cơ bản"
+  videoUrl?: string | null;
+  moduleTitle?: string;
+}): Record<string, unknown> {
+  const { title, description, url, duration, difficulty, videoUrl, moduleTitle } = options;
+  const data: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: title,
+    description,
+    url,
+    inLanguage: 'vi',
+    educationalLevel: difficulty || 'Mixed',
+    isPartOf: moduleTitle
+      ? {
+          '@type': 'EducationalOccupationalProgram',
+          name: moduleTitle,
+        }
+      : undefined,
+  };
+
+  if (duration) {
+    // Best-effort convert minutes to ISO 8601 duration when the string contains a number
+    const minutesMatch = duration.match(/(\d+)/);
+    if (minutesMatch) {
+      const minutes = parseInt(minutesMatch[1], 10);
+      if (!Number.isNaN(minutes) && minutes > 0) {
+        (data as Record<string, unknown>)['timeRequired'] = `PT${minutes}M`;
+      }
+    }
+  }
+
+  if (videoUrl) {
+    (data as Record<string, unknown>)['video'] = {
+      '@type': 'VideoObject',
+      name: title,
+      description,
+      uploadDate: new Date().toISOString(),
+      url: videoUrl,
+      embedUrl: videoUrl,
+    };
+  }
+
+  return data;
+}
+
+/**
+ * Creates generic FAQPage structured data from Q&A array
+ */
+export function createFAQStructuredDataFromQA(
+  faqs: Array<{ question: string; answer: string }>,
+  url?: string,
+): Record<string, unknown> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer,
+      },
+    })),
+    ...(url ? { url } : {}),
+  };
+}
+
+/**
+ * Creates structured data for a game page
+ */
+export function createGameStructuredData(gameId: string) {
+  const game = EDUCATIONAL_GAMES_DATA.find((g) => g.id === gameId);
+  if (!game) return null;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: game.title,
+    applicationCategory: 'GameApplication',
+    applicationSubCategory: 'EducationalGame',
+    description: game.description,
+    operatingSystem: 'Web',
+    url: `https://k2aihub.com/games/${game.id}`,
+    inLanguage: 'vi',
+    genre: game.category?.join(', '),
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'VND',
+      availability: 'https://schema.org/InStock',
+    },
+    keywords: (game.skills || []).join(', '),
+  };
+}
+
+/**
  * Creates structured data for FAQ sections
  */
 export function createFAQStructuredData(city: City) {

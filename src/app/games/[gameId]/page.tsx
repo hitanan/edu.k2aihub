@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
-import { createTitle, createDescription } from '@/utils/seo';
+import { createTitle, createDescription, createGameStructuredData } from '@/utils/seo';
 import GamePageClient from './GamePageClient';
+import StructuredData from '@/components/StructuredData';
 
 type Props = {
   params: Promise<{ gameId: string }>;
@@ -73,6 +74,12 @@ export default async function GamePage({ params }: Props) {
   }
 
   const SpecificGameComponent = gameComponents[gameId];
+  const gameStructured = createGameStructuredData(gameId);
 
-  return <GamePageClient game={game} SpecificGameComponent={SpecificGameComponent} />;
+  return (
+    <>
+      {gameStructured && <StructuredData data={gameStructured} />}
+      <GamePageClient game={game} SpecificGameComponent={SpecificGameComponent} />
+    </>
+  );
 }

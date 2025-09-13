@@ -4,6 +4,7 @@ import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/blog';
 import { siteConfig } from '@/config/site';
 import { BlogPost } from '@/components/blog/BlogPost';
 import { siteCode } from '@/config/site-code';
+import StructuredData from '@/components/StructuredData';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -84,5 +85,30 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
-  return <BlogPost post={post} />;
+  const blogPostingStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    datePublished: new Date(post.date).toISOString(),
+    author: {
+      '@type': 'Person',
+      name: post.author || 'K2AiHub Team',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'K2AiHub',
+    },
+    url: `${siteCode.url}/blog/${post.slug}`,
+    inLanguage: 'vi',
+    articleSection: post.category || 'Tổng Hợp',
+    keywords: (post.tags || []).join(', '),
+  };
+
+  return (
+    <>
+      <StructuredData data={blogPostingStructuredData} />
+      <BlogPost post={post} />
+    </>
+  );
 }
