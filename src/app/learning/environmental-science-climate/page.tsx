@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { environmentalClimateLessons } from '@/data/environmental-science-climate';
-import { environmentalScienceClimateModuleData } from '@/data/environmental-science-climate-module';
+import { environmentalScienceClimateModuleData } from '@/data/modules/environmental-science-climate';
+import { environmentalClimateLessons } from '@/data/lessons/environmental-science-climate';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(

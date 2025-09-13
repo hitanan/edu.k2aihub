@@ -14,7 +14,7 @@ import {
   Lightbulb,
   Users,
 } from 'lucide-react';
-import { CybersecurityLessons } from '@/data/cybersecurity';
+import { CybersecurityLessons } from '@/data/lessons/cybersecurity';
 import { ToolDetail } from '@/types/lesson-base';
 import { createTitle, createDescription } from '@/utils/seo';
 
@@ -271,7 +271,7 @@ export default async function CyberSecurityLessonPage({ params }: { params: Prom
                         <div>
                           <h4 className="font-semibold text-white mb-2">Key Innovations:</h4>
                           <ul className="space-y-1">
-                            {caseStudy.innovations.map((innovation, innovationIndex) => (
+                            {caseStudy.innovations?.map((innovation, innovationIndex) => (
                               <li key={innovationIndex} className="text-gray-300 flex items-start">
                                 <CheckCircle className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                                 {innovation}

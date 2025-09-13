@@ -6,11 +6,11 @@ import {
 } from '@/components/learning/LessonPageTemplate';
 import {
   greenTechLessons,
-  GreenTechLesson,
-  GreenTechExercise,
-  GreenTechResource,
-  GreenTechCaseStudy,
-} from '@/data/green-technology';
+  type GreenTechLesson,
+  type GreenTechExercise,
+  type GreenTechResource,
+  type GreenTechCaseStudy,
+} from '@/data/modules/green-technology';
 
 import { BaseLessonData } from '@/types/lesson-base';
 import { createModuleMetadata } from '@/utils/seo';
@@ -110,7 +110,7 @@ export default async function GreenTechnologyLessonPage({ params }: { params: Pr
       return 'Sustainable Impact';
     },
     sidebarContent: (lesson) => {
-      const currentLesson = greenTechLessons.find((l) => l.id === lesson.id);
+      const currentLesson = greenTechLessons.find((l: GreenTechLesson) => l.id === lesson.id);
       return (
         <div className="space-y-6">
           {/* Environmental Impact */}

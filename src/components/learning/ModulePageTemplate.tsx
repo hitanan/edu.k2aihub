@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import DynamicBreadcrumbs from './DynamicBreadcrumbs';
 import Image from 'next/image';
 import { Clock, Target, Users, TrendingUp, Play, ChevronRight, Star, Award, Lightbulb } from 'lucide-react';
 import { BaseLessonData } from '@/types/lesson-base';
@@ -90,6 +91,10 @@ export default function ModulePageTemplate({
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${gradientColors || color}`}>
+      {/* Breadcrumbs */}
+      <div className="max-w-7xl mx-auto px-4 pt-6">
+        <DynamicBreadcrumbs moduleId={moduleData.id} />
+      </div>
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>

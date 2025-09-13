@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
+import { createModuleMetadata } from '@/utils/seo';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { financialLiteracyLessons } from '@/data/financial-literacy';
-import { createModuleMetadata } from '@/utils/seo';
-import { financialLiteracyModuleData } from '@/data/financial-literacy-module';
+import { financialLiteracyLessons, financialLiteracyModuleData } from '@/data/modules/financial-literacy';
 
 export const metadata: Metadata = createModuleMetadata(
   'Financial Literacy - Kiến Thức Tài Chính',

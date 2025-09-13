@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { futureCareersLessons, FutureCareersLesson } from '@/data/future-careers-ai';
+import { futureCareersLessons, type FutureCareersLesson } from '@/data/lessons/future-careers-ai';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {

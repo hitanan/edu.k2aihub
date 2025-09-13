@@ -1,7 +1,8 @@
-import { gameDevLessons } from '@/data/game-development';
+import { gameDevLessons, type GameDevLesson } from '@/data/modules/game-development';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { CaseStudy, Exercise, Resource } from '@/types/lesson-base';
 
 import { createTitle, createDescription } from '@/utils/seo';
 import { Metadata } from 'next';
@@ -188,7 +189,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Learning Objectives</h2>
               <ul className="space-y-3">
-                {lesson.objectives.map((objective, index) => (
+                {lesson.objectives.map((objective: string, index: number) => (
                   <li key={index} className="flex items-start">
                     <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
                       <span className="text-purple-600 text-sm font-bold">{index + 1}</span>
@@ -201,7 +202,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
 
             {/* Exercises */}
             {lesson.exercises &&
-              lesson.exercises.map((exercise, index) => (
+              lesson.exercises.map((exercise: Exercise, index: number) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-2xl font-bold text-gray-800">{exercise.title}</h2>
@@ -215,7 +216,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
                   <div className="mb-6">
                     <h3 className="font-semibold text-gray-800 mb-3">Requirements:</h3>
                     <ul className="space-y-2">
-                      {exercise.materials?.map((req, i) => (
+                      {exercise.materials?.map((req: string, i: number) => (
                         <li key={i} className="flex items-start">
                           <span className="text-purple-500 mr-2">•</span>
                           <span className="text-gray-600">{req}</span>
@@ -241,7 +242,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
               ))}
 
             {/* Case Studies */}
-            {lesson.caseStudies?.map((caseStudy, index) => (
+            {lesson.caseStudies?.map((caseStudy: CaseStudy, index: number) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Case Study: {caseStudy.title}</h2>
 
@@ -266,7 +267,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
                 <div className="mt-6 pt-6 border-t">
                   <h3 className="font-semibold text-gray-800 mb-3">Key Insights</h3>
                   <ul className="space-y-2">
-                    {caseStudy.innovations.map((insight, i) => (
+                    {caseStudy.innovations?.map((insight: string, i: number) => (
                       <li key={i} className="flex items-start">
                         <span className="text-purple-500 mr-2">💡</span>
                         <span className="text-gray-600">{insight}</span>
@@ -309,7 +310,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Real-world Applications</h3>
               <ul className="space-y-2">
-                {lesson.realWorldApplications.map((application, index) => (
+                {lesson.realWorldApplications.map((application: string, index: number) => (
                   <li key={index} className="flex items-start">
                     <span className="text-indigo-500 mr-2 mt-1">🌟</span>
                     <span className="text-gray-600 text-sm">{application}</span>
@@ -322,7 +323,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Additional Resources</h3>
               <div className="space-y-3">
-                {lesson.resources?.map((resource, index) => (
+                {lesson.resources?.map((resource: Resource, index: number) => (
                   <a
                     key={index}
                     href={resource.url}
@@ -341,7 +342,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Course Navigation</h3>
               <div className="space-y-3">
-                {gameDevLessons.map((navLesson, index) => (
+                {gameDevLessons.map((navLesson: GameDevLesson, index: number) => (
                   <Link
                     key={navLesson.id}
                     href={`/learning/game-development/${navLesson.id}`}

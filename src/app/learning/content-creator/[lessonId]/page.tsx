@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { contentCreatorLessons, ContentCreatorLessonData } from '@/data/content-creator';
+import { contentCreatorLessons, ContentCreatorLessonData } from '@/data/modules/content-creator';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -14,9 +14,6 @@ export async function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  if (!lessonId) {
-    return {};
-  }
   return generateLessonMetadata(lessonId, contentCreatorLessons, 'content-creator');
 }
 
@@ -134,8 +131,5 @@ export default async function ContentCreatorLessonPage({ params }: { params: Pro
   };
 
   const { lessonId } = await params;
-  if (!lessonId) {
-    return null;
-  }
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

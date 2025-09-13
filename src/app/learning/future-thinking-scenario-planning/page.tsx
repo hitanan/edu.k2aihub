@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { futureThinkingLessons } from '@/data/future-thinking-scenario-planning';
+import { futureThinkingLessons } from '@/data/lessons/future-thinking-scenario-planning';
 import { createModuleMetadata } from '@/utils/seo';
-import { futureThinkingModuleData } from '@/data/future-thinking-scenario-planning-module';
+import { futureThinkingScenarioPlanningModule } from '@/data/modules/future-thinking-scenario-planning';
 
 export const metadata: Metadata = createModuleMetadata(
   'Tư Duy Tương Lai và Kế Hoạch Kịch Bản',
@@ -12,5 +12,5 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function FutureThinkingMainPage() {
-  return <ModulePageTemplate moduleData={futureThinkingModuleData} lessons={futureThinkingLessons} />;
+  return <ModulePageTemplate moduleData={futureThinkingScenarioPlanningModule} lessons={futureThinkingLessons} />;
 }

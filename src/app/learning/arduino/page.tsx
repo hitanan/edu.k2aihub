@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { arduinoLessons } from '@/data/arduino';
+import { arduinoLessons } from '@/data/modules/arduino';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/k2-modules';
 import { ModuleData } from '@/types';

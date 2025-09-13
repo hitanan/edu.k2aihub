@@ -4,11 +4,11 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { electricVehicleLessons } from '@/data/electric-vehicle-tech';
-
+import { electricVehicleTechModuleData } from '@/data/modules/electric-vehicle-tech';
+import { electricVehicleLessons } from '@/data/lessons/electric-vehicle-tech';
 import { notFound } from 'next/navigation';
 import { createTitle } from '@/utils/seo';
-import { BaseLessonData } from '@/types/lesson-base';
+import { BaseLessonData } from '@/types';
 
 export function generateStaticParams() {
   return generateLessonStaticParams(electricVehicleLessons);
@@ -33,7 +33,7 @@ export default async function ElectricVehicleLessonPage({ params }: { params: Pr
 
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'electric-vehicle-tech',
-    moduleTitle: 'Công Nghệ Xe Điện và Tự Hành',
+    moduleTitle: electricVehicleTechModuleData.title,
     modulePath: '/learning/electric-vehicle-tech',
     lessons: electricVehicleLessons,
     primaryColor: 'blue',

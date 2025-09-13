@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 
 import { createLessonMetadata } from '@/utils/seo';
-import { energyManagementLessons, EnergyManagementLesson } from '@/data/energy-management-smart-grid';
+import { energyManagementLessons, EnergyManagementLesson } from '@/data/lessons/energy-management-smart-grid';
 
 export async function generateStaticParams() {
   return energyManagementLessons.map((lesson) => ({

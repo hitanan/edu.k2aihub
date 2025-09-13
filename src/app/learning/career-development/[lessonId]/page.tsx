@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { careerDevelopmentLessons } from '@/data/career-development';
+import { careerDevelopmentLessons } from '@/data/modules/career-development';
 import { BaseLessonData } from '@/types/lesson-base';
 
 // Generate static params for all lessons

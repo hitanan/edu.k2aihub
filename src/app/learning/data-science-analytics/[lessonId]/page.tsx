@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { dataScienceLessons, DataScienceAnalyticsLesson } from '@/data/data-science-analytics';
+import { lessons as dataScienceLessons, DataScienceAnalyticsLesson } from '@/data/modules/data-science-analytics';
 
 import { Database, BarChart, Brain } from 'lucide-react';
 

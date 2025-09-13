@@ -4,7 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { foodTechnologyLessons, type FoodTechnologyLesson } from '@/data/food-technology';
+import { foodTechnologyLessons } from '@/data/lessons/food-technology';
+import { BaseLessonData } from '@/types/lesson-base';
 
 import { Metadata } from 'next';
 import { createTitle } from '@/utils/seo';
@@ -44,7 +45,7 @@ function getFoodTechIcon(field: string) {
 // Page component with standardized config
 export default async function FoodTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  const config: LessonPageConfig<FoodTechnologyLesson> = {
+  const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'food-technology',
     moduleTitle: 'Food Technology',
     modulePath: '/learning/food-technology',

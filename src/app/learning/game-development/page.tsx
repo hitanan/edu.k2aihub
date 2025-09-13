@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { gameDevLessons } from '@/data/game-development';
+import { gameDevLessons, gameDevelopmentModuleData } from '@/data/modules/game-development';
 import { createModuleMetadata } from '@/utils/seo';
-import { gameDevelopmentModuleData } from '@/data/game-development-module';
 
 export const metadata: Metadata = createModuleMetadata(
   'Game Development & Interactive Media - Phát triển Game và Truyền thông Tương tác',

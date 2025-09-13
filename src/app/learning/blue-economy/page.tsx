@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { blueEconomyLessons } from '@/data/blue-economy';
+import { blueEconomyLessons } from '@/data/modules/blue-economy';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/k2-modules';
 

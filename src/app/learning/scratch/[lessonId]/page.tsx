@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { scratchLessons } from '@/data/scratch';
+import { scratchLessons } from '@/data/modules/scratch';
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
 export async function generateStaticParams() {

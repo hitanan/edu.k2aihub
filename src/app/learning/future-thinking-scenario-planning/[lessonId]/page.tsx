@@ -4,10 +4,29 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { futureThinkingLessons, FutureThinkingLessonType } from '@/data/future-thinking-scenario-planning';
+import { futureThinkingLessons } from '@/data/lessons/future-thinking-scenario-planning';
+import { BaseLessonData } from '@/types/lesson-base';
 
 import { Metadata } from 'next';
 import { createTitle } from '@/utils/seo';
+
+export interface FutureThinkingLessonType extends BaseLessonData {
+  scenarioMethods?: string[];
+  trendAnalysisFrameworks?: string[];
+  uncertaintyFactors?: string[];
+  futuringTechniques?: {
+    name: string;
+    description: string;
+    timeHorizon: string;
+    bestUseCases: string[];
+    steps: string[];
+  }[];
+  relatedGames?: {
+    id: string;
+    name: string;
+    description: string;
+  }[];
+}
 
 // Generate static params for all lessons
 export function generateStaticParams() {

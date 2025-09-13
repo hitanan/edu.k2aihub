@@ -4,23 +4,20 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { BlockchainLessons, type BlockchainTechnologyLesson } from '@/data/blockchain-technology';
+import { blockchainLessons, type BlockchainLesson } from '@/data/modules/blockchain-technology';
 
 import { notFound } from 'next/navigation';
 import { Shield, Link2, Database, Cpu } from 'lucide-react';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(BlockchainLessons);
+  return generateLessonStaticParams(blockchainLessons);
 }
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  if (!lessonId) {
-    return {};
-  }
-  return generateLessonMetadata(lessonId, BlockchainLessons, 'blockchain-technology');
+  return generateLessonMetadata(lessonId, blockchainLessons, 'blockchain-technology');
 }
 
 // Icon mapping function for blockchain fields
@@ -37,17 +34,18 @@ function getBlockchainIcon(field: string) {
 // Page component with standardized config
 export default async function BlockchainTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  const lesson = BlockchainLessons.find((l) => l.id === lessonId);
+
+  const lesson = blockchainLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     notFound();
   }
 
-  const config: LessonPageConfig<BlockchainTechnologyLesson> = {
+  const config: LessonPageConfig<BlockchainLesson> = {
     moduleName: 'blockchain-technology',
     moduleTitle: 'Công nghệ Blockchain',
     modulePath: '/learning/blockchain-technology',
-    lessons: BlockchainLessons,
+    lessons: blockchainLessons,
     primaryColor: 'purple',
     secondaryColor: 'indigo',
     gradientColors: 'from-slate-900 via-purple-900 to-slate-900',

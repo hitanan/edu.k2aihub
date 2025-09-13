@@ -4,7 +4,10 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { digitalCitizenshipLessons, DigitalCitizenshipLessonType } from '@/data/digital-citizenship-ai-ethics';
+import {
+  lessons as digitalCitizenshipLessons,
+  DigitalCitizenshipLessonType,
+} from '@/data/modules/digital-citizenship-ai-ethics';
 
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';

@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { circularEconomyLessons } from '@/data/circular-economy';
+import { circularEconomyLessons } from '@/data/modules/circular-economy';
 
 import { K2Module } from '@/data/k2-modules';
 import { notFound } from 'next/navigation';

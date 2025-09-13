@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { crossPlatformStrategyLessons, CrossPlatformStrategyLessonType } from '@/data/cross-platform-strategy';
+import { crossPlatformStrategyLessons, CrossPlatformStrategyLessonType } from '@/data/modules/cross-platform-strategy';
 
 import { Globe, Target, BarChart3, Settings } from 'lucide-react';
 

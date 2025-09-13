@@ -3,7 +3,7 @@ import {
   generateLessonMetadata,
   generateLessonStaticParams,
 } from '@/components/learning/LessonPageTemplate';
-import { DigitalArtsLessons } from '@/data/digital-arts-creative-tech';
+import { lessons as DigitalArtsLessons } from '@/data/modules/digital-arts-creative-tech';
 
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';

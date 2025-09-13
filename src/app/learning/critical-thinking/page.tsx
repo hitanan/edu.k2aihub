@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { ModuleData } from '@/types';
-import { criticalThinkingLessons } from '@/data/critical-thinking';
+import { criticalThinkingLessons } from '@/data/modules/critical-thinking';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(

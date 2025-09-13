@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import BusinessMarketingClient from './BusinessMarketingClient';
 import { createModuleMetadata } from '@/utils/seo';
-import { businessMarketingLessons } from '@/data/business-marketing';
-import { digitalMarketingLessons } from '@/data/digital-marketing';
+import { businessMarketingLessons } from '@/data/modules/business-marketing';
+import { lessons as digitalMarketingLessons } from '@/data/modules/digital-marketing';
 import { BaseLessonData } from '@/types/lesson-base';
 
 export const metadata: Metadata = createModuleMetadata(

@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { blueEconomyLessons } from '@/data/blue-economy';
+import { blueEconomyLessons } from '@/data/modules/blue-economy';
 
 import { BaseLessonData } from '@/types/lesson-base';
 import { Waves, Fish, Zap } from 'lucide-react';

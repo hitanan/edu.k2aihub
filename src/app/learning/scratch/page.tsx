@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { scratchLessons } from '@/data/scratch';
+import { scratchLessons, scratchModuleData } from '@/data/modules/scratch';
 import { createModuleMetadata } from '@/utils/seo';
-import { scratchModuleData } from '@/data/scratch-module';
 
 export const metadata: Metadata = createModuleMetadata(
   scratchModuleData.title,

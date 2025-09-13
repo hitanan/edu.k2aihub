@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { careerDevelopmentLessons } from '@/data/career-development';
+import { careerDevelopmentLessons } from '@/data/modules/career-development';
 import { createModuleMetadata } from '@/utils/seo';
 import { ModuleData } from '@/types';
 

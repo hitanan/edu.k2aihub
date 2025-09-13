@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { circularEconomyLessons } from '@/data/circular-economy';
-import { circularEconomyModuleData } from '@/data/circular-economy-module';
+import { circularEconomyLessons } from '@/data/modules/circular-economy';
+import { circularEconomyModuleData } from '@/data/modules/circular-economy';
 import { createModuleMetadata } from '@/utils/seo';
 
 // Generate metadata

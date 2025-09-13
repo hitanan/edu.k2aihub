@@ -1,4 +1,5 @@
-import { financialLiteracyLessons, FinancialLiteracyLesson } from '@/data/financial-literacy';
+import { financialLiteracyLessons, type FinancialLiteracyLesson } from '@/data/modules/financial-literacy';
+import type { CaseStudy, Exercise, Resource } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,14 +7,14 @@ import Image from 'next/image';
 import { createDescription, createTitle } from '@/utils/seo';
 
 export async function generateStaticParams() {
-  return financialLiteracyLessons.map((lesson) => ({
+  return financialLiteracyLessons.map((lesson: FinancialLiteracyLesson) => ({
     lessonId: lesson.id,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  const lesson = financialLiteracyLessons.find((l) => l.id === lessonId);
+  const lesson = financialLiteracyLessons.find((l: FinancialLiteracyLesson) => l.id === lessonId);
 
   if (!lesson) {
     return {
@@ -44,7 +45,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
 
 export default async function FinancialLiteracyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  const lesson = financialLiteracyLessons.find((l) => l.id === lessonId) as FinancialLiteracyLesson;
+  const lesson = financialLiteracyLessons.find(
+    (l: FinancialLiteracyLesson) => l.id === lessonId,
+  ) as FinancialLiteracyLesson;
 
   if (!lesson) {
     notFound();
@@ -174,7 +177,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Learning Objectives</h2>
               <ul className="space-y-3">
-                {lesson.objectives.map((objective, index) => (
+                {lesson.objectives.map((objective: string, index: number) => (
                   <li key={index} className="flex items-start">
                     <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
                       <span className="text-amber-600 text-sm font-bold">{index + 1}</span>
@@ -186,7 +189,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
             </div>
 
             {/* Exercises */}
-            {lesson.exercises?.map((exercise, index) => (
+            {lesson.exercises?.map((exercise: Exercise, index: number) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-2xl font-bold text-gray-800">{exercise.title}</h2>
@@ -200,7 +203,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
                 <div className="mb-6">
                   <h3 className="font-semibold text-gray-800 mb-3">Requirements:</h3>
                   <ul className="space-y-2">
-                    {exercise.materials?.map((req, i) => (
+                    {exercise.materials?.map((req: string, i: number) => (
                       <li key={i} className="flex items-start">
                         <span className="text-amber-500 mr-2">•</span>
                         <span className="text-gray-600">{req}</span>
@@ -224,7 +227,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
             ))}
 
             {/* Case Studies */}
-            {lesson.caseStudies?.map((caseStudy, index) => (
+            {lesson.caseStudies?.map((caseStudy: CaseStudy, index: number) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Case Study: {caseStudy.title}</h2>
 
@@ -249,7 +252,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
                 <div className="mt-6 pt-6 border-t">
                   <h3 className="font-semibold text-gray-800 mb-3">Key Insights</h3>
                   <ul className="space-y-2">
-                    {caseStudy.innovations.map((insight, i) => (
+                    {caseStudy.innovations?.map((insight: string, i: number) => (
                       <li key={i} className="flex items-start">
                         <span className="text-amber-500 mr-2">💡</span>
                         <span className="text-gray-600">{insight}</span>
@@ -267,7 +270,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Financial Tools Used</h3>
               <div className="space-y-2">
-                {lesson.technologies.map((tool) => (
+                {lesson.technologies.map((tool: string) => (
                   <div key={tool} className="bg-amber-50 text-amber-700 px-3 py-2 rounded-lg text-sm">
                     {tool}
                   </div>
@@ -279,7 +282,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Prerequisites</h3>
               <ul className="space-y-2">
-                {lesson.prerequisites?.map((prereq, index) => (
+                {lesson.prerequisites?.map((prereq: string, index: number) => (
                   <li key={index} className="flex items-start">
                     <span className="text-amber-500 mr-2 mt-1">✓</span>
                     <span className="text-gray-600 text-sm">{prereq}</span>
@@ -292,7 +295,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Real-world Applications</h3>
               <ul className="space-y-2">
-                {lesson.realWorldApplications.map((application, index) => (
+                {lesson.realWorldApplications.map((application: string, index: number) => (
                   <li key={index} className="flex items-start">
                     <span className="text-orange-500 mr-2 mt-1">🌟</span>
                     <span className="text-gray-600 text-sm">{application}</span>
@@ -305,7 +308,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Additional Resources</h3>
               <div className="space-y-3">
-                {lesson.resources?.map((resource, index) => (
+                {lesson.resources?.map((resource: Resource, index: number) => (
                   <a
                     key={index}
                     href={resource.url}
@@ -324,7 +327,7 @@ export default async function FinancialLiteracyLessonPage({ params }: { params: 
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Course Navigation</h3>
               <div className="space-y-3">
-                {financialLiteracyLessons.map((navLesson, index) => (
+                {financialLiteracyLessons.map((navLesson: FinancialLiteracyLesson, index: number) => (
                   <Link
                     key={navLesson.id}
                     href={`/learning/financial-literacy/${navLesson.id}`}

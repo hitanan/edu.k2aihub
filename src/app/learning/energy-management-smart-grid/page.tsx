@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { energyManagementLessons } from '@/data/energy-management-smart-grid';
-import { energyManagementSmartGridModuleData } from '@/data/energy-management-smart-grid-module';
+import { energyManagementSmartGridModuleData, energyManagementLessons } from '@/data/modules/energy-management';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(

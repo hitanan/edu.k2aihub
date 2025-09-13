@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { createTitle, createDescription } from '@/utils/seo';
-import { aiArtLessons } from '@/data/ai-art-creative-tech';
+import { aiArtCreativeTechLessons } from '@/data/modules/ai-art-creative-tech';
 import Link from 'next/link';
 import {
   Clock,
@@ -20,7 +20,7 @@ import CourseProgress from '@/components/learning/CourseProgress';
 
 // Generate static params
 export async function generateStaticParams() {
-  return aiArtLessons.map((lesson) => ({
+  return aiArtCreativeTechLessons.map((lesson) => ({
     lessonId: lesson.id,
   }));
 }
@@ -28,7 +28,7 @@ export async function generateStaticParams() {
 // Generate metadata
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  const lesson = aiArtLessons.find((l) => l.id === lessonId);
+  const lesson = aiArtCreativeTechLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     return {
@@ -52,15 +52,16 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
     notFound();
   }
 
-  const lesson = aiArtLessons.find((l) => l.id === lessonId);
+  const lesson = aiArtCreativeTechLessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     notFound();
   }
 
-  const currentIndex = aiArtLessons.findIndex((l) => l.id === lessonId);
-  const previousLesson = currentIndex > 0 ? aiArtLessons[currentIndex - 1] : null;
-  const nextLesson = currentIndex < aiArtLessons.length - 1 ? aiArtLessons[currentIndex + 1] : null;
+  const currentIndex = aiArtCreativeTechLessons.findIndex((l) => l.id === lessonId);
+  const previousLesson = currentIndex > 0 ? aiArtCreativeTechLessons[currentIndex - 1] : null;
+  const nextLesson =
+    currentIndex < aiArtCreativeTechLessons.length - 1 ? aiArtCreativeTechLessons[currentIndex + 1] : null;
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -130,7 +131,7 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
                 </div>
                 <div className="bg-white/10 rounded-lg p-4 text-center">
                   <Play className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                  <div className="text-white font-semibold">{lesson.exercises.length}</div>
+                  <div className="text-white font-semibold">{lesson.exercises?.length}</div>
                   <div className="text-sm text-gray-300">Bài tập</div>
                 </div>
               </div>
@@ -174,7 +175,7 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <h2 className="text-2xl font-bold text-white mb-6">Bài tập thực hành</h2>
               <div className="space-y-6">
-                {lesson.exercises.map((exercise, index) => (
+                {lesson.exercises?.map((exercise, index) => (
                   <div key={index} className="border border-white/20 rounded-lg p-6">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-xl font-semibold text-white">{exercise.title}</h3>
@@ -186,11 +187,11 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
                     </div>
                     <p className="text-gray-200 mb-4">{exercise.description}</p>
 
-                    {exercise.requirements.length > 0 && (
+                    {(exercise.requirements?.length ?? 0) > 0 && (
                       <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
                         <h4 className="text-blue-300 font-semibold mb-2">📋 Yêu cầu:</h4>
                         <ul className="space-y-1">
-                          {exercise.requirements.map((req, reqIndex) => (
+                          {exercise.requirements?.map((req, reqIndex) => (
                             <li key={reqIndex} className="text-gray-300 text-sm">
                               • {req}
                             </li>
@@ -199,14 +200,14 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
                       </div>
                     )}
 
-                    {exercise.hints.length > 0 && (
+                    {(exercise.hints?.length ?? 0) > 0 && (
                       <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 mb-4">
                         <h4 className="text-yellow-300 font-semibold mb-2 flex items-center">
                           <Lightbulb className="w-4 h-4 mr-2" />
                           Gợi ý:
                         </h4>
                         <ul className="space-y-1">
-                          {exercise.hints.map((hint, hintIndex) => (
+                          {exercise.hints?.map((hint, hintIndex) => (
                             <li key={hintIndex} className="text-gray-300 text-sm">
                               • {hint}
                             </li>
@@ -237,11 +238,11 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
             </div>
 
             {/* Case Studies */}
-            {lesson.caseStudies.length > 0 && (
+            {(lesson.caseStudies?.length ?? 0) > 0 && (
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
                 <h2 className="text-2xl font-bold text-white mb-6">Case Studies</h2>
                 <div className="space-y-6">
-                  {lesson.caseStudies.map((caseStudy, index) => (
+                  {lesson.caseStudies?.map((caseStudy, index) => (
                     <div key={index} className="border border-white/20 rounded-lg p-6">
                       <h3 className="text-xl font-semibold text-white mb-2">{caseStudy.title}</h3>
                       <p className="text-gray-300 mb-2">
@@ -256,11 +257,11 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
                       <p className="text-gray-200 mb-4">
                         <span className="font-semibold">Results:</span> {caseStudy.results}
                       </p>
-                      {caseStudy.insights.length > 0 && (
+                      {(caseStudy.insights?.length ?? 0) > 0 && (
                         <div>
                           <p className="text-purple-400 font-semibold mb-2">💡 Key Insights:</p>
                           <ul className="space-y-1">
-                            {caseStudy.insights.map((insight, insightIndex) => (
+                            {caseStudy.insights?.map((insight, insightIndex) => (
                               <li key={insightIndex} className="text-gray-300 text-sm">
                                 • {insight}
                               </li>
@@ -279,7 +280,7 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
           <div className="lg:col-span-1 space-y-6">
             {/* Course Progress */}
             <CourseProgress
-              lessons={aiArtLessons.map((lesson) => ({
+              lessons={aiArtCreativeTechLessons.map((lesson) => ({
                 id: lesson.id,
                 title: lesson.title,
                 duration: lesson.duration,
@@ -313,7 +314,7 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
                 Kiến thức cần thiết
               </h3>
               <ul className="space-y-2">
-                {lesson.prerequisites.map((prerequisite, index) => (
+                {lesson.prerequisites?.map((prerequisite, index) => (
                   <li key={index} className="text-gray-300 text-sm">
                     • {prerequisite}
                   </li>
@@ -322,11 +323,11 @@ export default async function AiArtLessonPage({ params }: { params: Promise<{ le
             </div>
 
             {/* Resources */}
-            {lesson.resources.length > 0 && (
+            {(lesson.resources?.length ?? 0) > 0 && (
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="text-lg font-semibold text-white mb-4">📚 Tài liệu tham khảo</h3>
                 <ul className="space-y-3">
-                  {lesson.resources.map((resource, index) => (
+                  {lesson.resources?.map((resource, index) => (
                     <li key={index}>
                       <a
                         href={resource.url}

@@ -5,7 +5,7 @@ import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { K2Module } from '@/data/k2-modules';
 import type { ModuleData } from '@/types';
 import { createModuleMetadata } from '@/utils/seo';
-import { CybersecurityLessons } from '@/data/cybersecurity';
+import { CybersecurityLessons } from '@/data/lessons/cybersecurity';
 
 const cybersecurityModuleData: ModuleData = {
   id: 'cybersecurity',

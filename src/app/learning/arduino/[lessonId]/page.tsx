@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { arduinoLessons, ArduinoLesson } from '@/data/arduino';
+import { arduinoLessons, ArduinoLesson } from '@/data/modules/arduino';
 
 import { Cpu, Rocket, Wifi, Wrench } from 'lucide-react';
 import { notFound } from 'next/navigation';

@@ -1,12 +1,20 @@
 // Dynamic Navigation Utility for Module Sub-pages
 // Generates navigation based on lesson index in data array
 
-import { arduinoLessons } from '@/data/arduino';
-import { roboticsLessons } from '@/data/robotics';
-import { scratchLessons } from '@/data/scratch';
-import { stemLessons } from '@/data/stem';
-import { digitalMarketingLessons } from '@/data/digital-marketing';
-import { greenTechLessons } from '@/data/green-technology';
+import { arduinoModuleData } from '@/data/modules/arduino';
+import { roboticsModuleData } from '@/data/modules/robotics';
+import { scratchModuleData } from '@/data/modules/scratch';
+import { stemModuleData } from '@/data/modules/stem';
+import { digitalMarketingModuleData } from '@/data/modules/digital-marketing';
+import { greenTechnologyModuleData } from '@/data/modules/green-technology';
+import { BaseLessonData } from '@/types/lesson-base';
+
+const arduinoLessons = arduinoModuleData.lessons;
+const roboticsLessons = roboticsModuleData.lessons;
+const scratchLessons = scratchModuleData.lessons;
+const stemLessons = stemModuleData.lessons;
+const digitalMarketingLessons = digitalMarketingModuleData.lessons;
+const greenTechLessons = greenTechnologyModuleData.lessons;
 
 export interface NavigationLink {
   href: string;
@@ -61,34 +69,25 @@ const pageMapping = {
   'environmental-solutions': '/stem/environmental-solutions',
 
   // Digital Marketing mappings
-  'digital-marketing-fundamentals':
-    '/digital-marketing/digital-marketing-fundamentals',
+  'digital-marketing-fundamentals': '/digital-marketing/digital-marketing-fundamentals',
   'social-media-marketing': '/digital-marketing/social-media-marketing',
   'content-marketing-strategy': '/digital-marketing/content-marketing-strategy',
   'seo-search-marketing': '/digital-marketing/seo-search-marketing',
   'paid-advertising': '/digital-marketing/paid-advertising',
   'email-marketing-automation': '/digital-marketing/email-marketing-automation',
-  'analytics-data-driven-marketing':
-    '/digital-marketing/analytics-data-driven-marketing',
-  'creator-economy-monetization':
-    '/digital-marketing/creator-economy-monetization',
+  'analytics-data-driven-marketing': '/digital-marketing/analytics-data-driven-marketing',
+  'creator-economy-monetization': '/digital-marketing/creator-economy-monetization',
 
   // Green Technology mappings
   'renewable-energy-basics': '/green-technology/renewable-energy-basics',
-  'smart-city-iot-solutions': '/green-technology/smart-city-iot-solutions'
+  'smart-city-iot-solutions': '/green-technology/smart-city-iot-solutions',
 };
 
 export function getModuleNavigation(
-  module:
-    | 'arduino'
-    | 'robotics'
-    | 'scratch'
-    | 'stem'
-    | 'digital-marketing'
-    | 'green-technology',
-  currentLessonId: string
+  module: 'arduino' | 'robotics' | 'scratch' | 'stem' | 'digital-marketing' | 'green-technology',
+  currentLessonId: string,
 ): ModuleNavigation | null {
-  let lessons;
+  let lessons: BaseLessonData[] | undefined;
   let moduleBasePath;
 
   switch (module) {
@@ -120,9 +119,11 @@ export function getModuleNavigation(
       return null;
   }
 
-  const currentIndex = lessons.findIndex(
-    (lesson) => lesson.id === currentLessonId
-  );
+  if (!lessons) {
+    return null;
+  }
+
+  const currentIndex = lessons.findIndex((lesson) => lesson.id === currentLessonId);
 
   if (currentIndex === -1) {
     return null;
@@ -132,37 +133,34 @@ export function getModuleNavigation(
     current: {
       index: currentIndex + 1,
       total: lessons.length,
-      title: lessons[currentIndex].title
-    }
+      title: lessons[currentIndex].title,
+    },
   };
 
   // Previous lesson
   if (currentIndex > 0) {
     const previousLesson = lessons[currentIndex - 1];
     const previousPath =
-      pageMapping[previousLesson.id as keyof typeof pageMapping] ||
-      `${moduleBasePath}/${previousLesson.id}`;
+      pageMapping[previousLesson.id as keyof typeof pageMapping] || `${moduleBasePath}/${previousLesson.id}`;
 
     navigation.previous = {
       href: previousPath,
       title: previousLesson.title,
       isPrevious: true,
-      isNext: false
+      isNext: false,
     };
   }
 
   // Next lesson
   if (currentIndex < lessons.length - 1) {
     const nextLesson = lessons[currentIndex + 1];
-    const nextPath =
-      pageMapping[nextLesson.id as keyof typeof pageMapping] ||
-      `${moduleBasePath}/${nextLesson.id}`;
+    const nextPath = pageMapping[nextLesson.id as keyof typeof pageMapping] || `${moduleBasePath}/${nextLesson.id}`;
 
     navigation.next = {
       href: nextPath,
       title: nextLesson.title,
       isPrevious: false,
-      isNext: true
+      isNext: true,
     };
   }
 
@@ -170,11 +168,8 @@ export function getModuleNavigation(
 }
 
 // Helper function to get lesson by ID
-export function getLessonById(
-  module: 'arduino' | 'robotics' | 'scratch' | 'stem',
-  lessonId: string
-) {
-  let lessons;
+export function getLessonById(module: 'arduino' | 'robotics' | 'scratch' | 'stem', lessonId: string) {
+  let lessons: BaseLessonData[] | undefined;
 
   switch (module) {
     case 'arduino':
@@ -193,43 +188,42 @@ export function getLessonById(
       return null;
   }
 
+  if (!lessons) {
+    return null;
+  }
+
   return lessons.find((lesson) => lesson.id === lessonId);
 }
 
 // Generate navigation object for components to use
-export function getNavigationConfig(
-  navigation: ModuleNavigation,
-  moduleBasePath: string
-) {
+export function getNavigationConfig(navigation: ModuleNavigation, moduleBasePath: string) {
   return {
     previous: navigation.previous
       ? {
           href: navigation.previous.href,
           title: navigation.previous.title,
-          label: `← Bài trước: ${navigation.previous.title}`
+          label: `← Bài trước: ${navigation.previous.title}`,
         }
       : {
           href: moduleBasePath,
           title: 'Module',
-          label: '← Quay lại Module'
+          label: '← Quay lại Module',
         },
     next: navigation.next
       ? {
           href: navigation.next.href,
           title: navigation.next.title,
-          label: `Bài tiếp theo: ${navigation.next.title} →`
+          label: `Bài tiếp theo: ${navigation.next.title} →`,
         }
       : {
           href: moduleBasePath,
           title: 'Module',
-          label: 'Hoàn thành Module →'
+          label: 'Hoàn thành Module →',
         },
     progress: {
       current: navigation.current.index,
       total: navigation.current.total,
-      percentage: Math.round(
-        (navigation.current.index / navigation.current.total) * 100
-      )
-    }
+      percentage: Math.round((navigation.current.index / navigation.current.total) * 100),
+    },
   };
 }

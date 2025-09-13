@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { dataDrivenAnalyticsLessons, DataDrivenAnalyticsLesson } from '@/data/data-driven-analytics';
+import { dataDrivenAnalyticsLessons, DataDrivenAnalyticsLesson } from '@/data/modules/data-driven-analytics';
 
 import { TrendingUp, BarChart3, Target } from 'lucide-react';
 

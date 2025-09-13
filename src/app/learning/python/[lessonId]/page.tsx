@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 import { createTitle, createDescription } from '@/utils/seo';
-import { pythonLessons } from '@/data/python';
+import { pythonLessons } from '@/data/modules/python';
 import Link from 'next/link';
 import { Clock, Target, User, Play, ChevronLeft, ChevronRight, Code, CheckCircle, Youtube } from 'lucide-react';
+import { Exercise } from '@/types/lesson-base';
 
 // Generate static params
 export async function generateStaticParams() {
@@ -139,7 +140,7 @@ export default async function PythonLessonPage({ params }: { params: Promise<{ l
                 Mục tiêu học tập
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
-                {lesson.objectives.map((objective, index) => (
+                {lesson.objectives.map((objective: string, index: number) => (
                   <div key={index} className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
                     <span className="text-gray-200">{objective}</span>
@@ -153,7 +154,7 @@ export default async function PythonLessonPage({ params }: { params: Promise<{ l
               <h2 className="text-2xl font-bold text-white mb-6">Bài tập thực hành</h2>
               <div className="space-y-6">
                 {lesson.exercises &&
-                  lesson.exercises.map((exercise, index) => (
+                  lesson.exercises.map((exercise: Exercise, index: number) => (
                     <div key={index} className="border border-white/20 rounded-lg p-6">
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-xl font-semibold text-white">{exercise.title}</h3>
@@ -169,7 +170,7 @@ export default async function PythonLessonPage({ params }: { params: Promise<{ l
                         <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4 mb-4">
                           <h4 className="text-blue-300 font-semibold mb-2">📋 Các bước thực hiện:</h4>
                           <ul className="space-y-1">
-                            {exercise.procedure.map((step, stepIndex) => (
+                            {exercise.procedure.map((step: string, stepIndex: number) => (
                               <li key={stepIndex} className="text-gray-300 text-sm">
                                 • {step}
                               </li>
@@ -202,7 +203,7 @@ export default async function PythonLessonPage({ params }: { params: Promise<{ l
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <h2 className="text-2xl font-bold text-white mb-6">Ứng dụng thực tế</h2>
               <div className="grid md:grid-cols-2 gap-4">
-                {lesson.realWorldApplications.map((application, index) => (
+                {lesson.realWorldApplications.map((application: string, index: number) => (
                   <div key={index} className="bg-white/10 rounded-lg p-4">
                     <p className="text-gray-200">{application}</p>
                   </div>
@@ -221,7 +222,7 @@ export default async function PythonLessonPage({ params }: { params: Promise<{ l
               </h3>
               <ul className="space-y-2">
                 {lesson.prerequisites &&
-                  lesson.prerequisites.map((prerequisite, index) => (
+                  lesson.prerequisites.map((prerequisite: string, index: number) => (
                     <li key={index} className="text-gray-300 text-sm">
                       • {prerequisite}
                     </li>

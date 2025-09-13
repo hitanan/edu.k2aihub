@@ -20,6 +20,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import { YoutubePlayer } from '@/components/media/YoutubePlayer';
+import DynamicBreadcrumbs from './DynamicBreadcrumbs';
 import { CareerConnectSection } from './CareerConnectSection';
 import { EducationalGamesShowcase } from '../games/EducationalGames';
 import { InteractiveQuiz } from './InteractiveQuiz';
@@ -107,6 +108,10 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${config.gradientColors}`}>
+      {/* Breadcrumbs */}
+      <div className="max-w-7xl mx-auto px-4 pt-6">
+        <DynamicBreadcrumbs moduleId={config.moduleName} lessonId={lesson.id} lessonTitle={lesson.title} />
+      </div>
       {/* Analytics and Progress Tracking */}
       <LessonAnalytics lesson={lesson} moduleName={config.moduleName} moduleTitle={config.moduleTitle} />
 
@@ -418,7 +423,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
                         <div>
                           <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Đổi mới chính:</h4>
                           <ul className="space-y-1 sm:space-y-2">
-                            {caseStudy.innovations.map((innovation, innovationIndex) => (
+                            {caseStudy.innovations?.map((innovation, innovationIndex) => (
                               <li key={innovationIndex} className="text-gray-300 flex items-start text-sm sm:text-base">
                                 <CheckCircle className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                                 <span className="leading-relaxed">{innovation}</span>

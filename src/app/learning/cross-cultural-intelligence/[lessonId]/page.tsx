@@ -4,7 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { crossCulturalLessons, CrossCulturalLessonType } from '@/data/cross-cultural-intelligence';
+import { crossCulturalLessons } from '@/data/modules/cross-cultural-intelligence';
+import { BaseLessonData } from '@/types/lesson-base';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
 
 // Page component with standardized config
 export default async function CrossCulturalLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
-  const config: LessonPageConfig<CrossCulturalLessonType> = {
+  const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'cross-cultural-intelligence',
     moduleTitle: 'Trí Tuệ Đa Văn Hóa',
     modulePath: '/learning/cross-cultural-intelligence',

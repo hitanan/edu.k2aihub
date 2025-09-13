@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X, Home, Globe, Brain, Code, BookOpen, FileText } from 'lucide-react';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { isModuleData, isModuleNavigation } from '@/utils/typeguards';
+import SearchHeader from '@/components/SearchHeader';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -205,6 +206,11 @@ const Header: React.FC = () => {
             </div>
           </Link>
 
+          {/* Search Component - Hidden on mobile, shown between logo and navigation */}
+          <div className="hidden md:flex flex-1 max-w-md mx-8">
+            <SearchHeader />
+          </div>
+
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-2">
             {/* Core modules */}
@@ -312,8 +318,12 @@ const Header: React.FC = () => {
             </div>
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
+          {/* Mobile menu button and search */}
+          <div className="flex items-center space-x-2 lg:hidden">
+            {/* Mobile Search */}
+            <div className="flex-1 max-w-xs">
+              <SearchHeader />
+            </div>
             <button
               type="button"
               className="p-2 rounded-xl text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"

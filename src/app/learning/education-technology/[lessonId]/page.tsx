@@ -4,8 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { educationTechnologyLessons } from '@/data/education-technology';
-import { educationTechnologyModuleData } from '@/data/education-technology-module';
+import { educationTechnologyModuleData, educationTechnologyLessons } from '@/data/modules/education-technology';
 
 import { BaseLessonData } from '@/types/lesson-base';
 

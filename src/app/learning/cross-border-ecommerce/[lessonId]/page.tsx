@@ -4,7 +4,10 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { crossBorderEcommerceLessons, CrossBorderEcommerceLessonData } from '@/data/cross-border-ecommerce';
+import {
+  crossBorderEcommerceLessons,
+  type CrossBorderEcommerceLessonData,
+} from '@/data/modules/cross-border-ecommerce';
 
 import { Globe, ShoppingCart, TrendingUp } from 'lucide-react';
 

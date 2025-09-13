@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { criticalThinkingLessons, CriticalThinkingLessonType } from '@/data/critical-thinking';
+import { criticalThinkingLessons, CriticalThinkingLessonType } from '@/data/modules/critical-thinking';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -44,7 +44,8 @@ export default async function CriticalThinkingLessonPage({ params }: { params: P
     getFieldValue: (lesson) => {
       if (lesson.thinkingFrameworks) return lesson.thinkingFrameworks.join(', ');
       if (lesson.cognitiveSkills) return lesson.cognitiveSkills.join(', ');
-      if (lesson.practicalExercises) return lesson.practicalExercises.map((ex) => ex.title).join(', ');
+      if (lesson.practicalExercises)
+        return lesson.practicalExercises.map((ex: { title: string }) => ex.title).join(', ');
       if (lesson.assessmentMethods) return lesson.assessmentMethods.join(', ');
       return 'Không có thông tin';
     },
@@ -88,13 +89,15 @@ export default async function CriticalThinkingLessonPage({ params }: { params: P
               <span>💡</span> Practical Exercises
             </h4>
             <div className="space-y-3">
-              {lesson.practicalExercises.map((exercise, index) => (
-                <div key={index} className="border-l-2 border-purple-400 pl-3">
-                  <h5 className="font-medium text-gray-200 text-sm">{exercise.title}</h5>
-                  <p className="text-xs text-gray-400 mt-1">{exercise.scenario}</p>
-                  <div className="text-xs text-purple-300 mt-2">Application: {exercise.realWorldApplication}</div>
-                </div>
-              ))}
+              {lesson.practicalExercises.map(
+                (exercise: { title: string; scenario: string; realWorldApplication: string }, index: number) => (
+                  <div key={index} className="border-l-2 border-purple-400 pl-3">
+                    <h5 className="font-medium text-gray-200 text-sm">{exercise.title}</h5>
+                    <p className="text-xs text-gray-400 mt-1">{exercise.scenario}</p>
+                    <div className="text-xs text-purple-300 mt-2">Application: {exercise.realWorldApplication}</div>
+                  </div>
+                ),
+              )}
             </div>
           </div>
         )}

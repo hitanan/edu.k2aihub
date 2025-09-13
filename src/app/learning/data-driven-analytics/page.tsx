@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { dataDrivenAnalyticsLessons } from '@/data/data-driven-analytics';
+import { dataDrivenAnalyticsLessons } from '@/data/modules/data-driven-analytics';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/k2-modules';
 

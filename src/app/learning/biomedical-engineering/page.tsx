@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { biomedicalEngineeringLessons } from '@/data/biomedical-engineering';
+import { biomedicalEngineeringLessons } from '@/data/modules/biomedical-engineering';
 import { createModuleMetadata } from '@/utils/seo';
 import { ModuleData } from '@/types';
 

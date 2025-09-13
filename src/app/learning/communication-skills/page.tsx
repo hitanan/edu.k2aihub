@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { communicationSkillsLessons } from '@/data/communication-skills';
+import { communicationSkillsLessons } from '@/data/modules/communication-skills';
 import { createModuleMetadata } from '@/utils/seo';
 import { ModuleData } from '@/types';
 

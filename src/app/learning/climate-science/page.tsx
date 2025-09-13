@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { ClimateLessons } from '@/data/climate-science';
+import { ClimateLessons } from '@/data/modules/climate-science';
 import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
 import { ModuleData } from '@/types';

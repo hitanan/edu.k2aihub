@@ -4,8 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { digitalMarketingLessons } from '@/data/digital-marketing';
-import { digitalMarketingModuleData } from '@/data/digital-marketing-module';
+import { digitalMarketingModuleData, lessons as digitalMarketingLessons } from '@/data/modules/digital-marketing';
 
 import { BaseLessonData } from '@/types/lesson-base';
 

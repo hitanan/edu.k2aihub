@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { electricVehicleLessons } from '@/data/electric-vehicle-tech';
-import { electricVehicleTechModuleData } from '@/data/electric-vehicle-tech-module';
+import { electricVehicleTechModuleData, electricVehicleLessons } from '@/data/modules/electric-vehicle-tech';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(

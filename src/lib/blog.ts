@@ -54,7 +54,7 @@ function calculateReadingTime(content: string): string {
 function generateCategory(slug: string, content: string): string {
   const categoryMap: { [key: string]: string } = {
     education: 'Giáo Dục',
-    trends: 'xu Hướng',
+    trends: 'Xu Hướng',
     analysis: 'Phân Tích',
     research: 'Nghiên Cứu',
     technology: 'Công Nghệ',
@@ -67,6 +67,9 @@ function generateCategory(slug: string, content: string): string {
     guide: 'Hướng Dẫn',
     cities: 'Thành Phố',
     geography: 'Địa Lý',
+    'critical-thinking': 'Tư Duy Phê Phán',
+    'digital-citizenship': 'Công Dân Số',
+    'energy-management': 'Quản Lý Năng Lượng',
   };
 
   // Check slug for category keywords
@@ -112,6 +115,11 @@ function generateTags(slug: string, content: string): string[] {
     skills: 'Kỹ Năng',
     geography: 'Địa Lý',
     cities: 'Thành Phố',
+    'critical-thinking': 'Tư Duy Phê Phán',
+    'digital-citizenship': 'Công Dân Số',
+    'online-safety': 'An Toàn Trực Tuyến',
+    'energy-management': 'Quản Lý Năng Lượng',
+    'smart-grid': 'Lưới Điện Thông Minh',
   };
 
   const tags = new Set<string>();

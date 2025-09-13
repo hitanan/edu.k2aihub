@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { chemicalEngineeringLessons } from '@/data/chemical-engineering';
+import { chemicalEngineeringLessons } from '@/data/modules/chemical-engineering';
 import { BaseLessonData } from '@/types/lesson-base';
 
 export async function generateStaticParams() {

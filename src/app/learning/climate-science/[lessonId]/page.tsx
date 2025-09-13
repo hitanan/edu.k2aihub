@@ -6,7 +6,7 @@ import {
   generateLessonStaticParams,
 } from '@/components/learning/LessonPageTemplate';
 import { getLessonById } from '@/utils/lesson-utils';
-import { ClimateLessons } from '@/data/climate-science';
+import { ClimateLessons } from '@/data/modules/climate-science';
 
 import { LessonPageConfig, BaseLessonData, CaseStudy } from '@/types/lesson-base';
 import { Thermometer, CloudRain, Wind, Trees } from 'lucide-react';

@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { environmentalClimateLessons } from '@/data/environmental-science-climate';
+import { environmentalClimateLessons } from '@/data/lessons/environmental-science-climate';
 import { BaseLessonData } from '@/types/lesson-base';
 
 import { notFound } from 'next/navigation';
@@ -24,7 +24,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
 }
 
 // Page component with standardized config
-export default async function EnvironmentalScienceClimateLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+export default async function EnvironmentalScienceClimateLessonPage({
+  params,
+}: {
+  params: Promise<{ lessonId: string }>;
+}) {
   const { lessonId } = await params;
 
   if (!lessonId) {

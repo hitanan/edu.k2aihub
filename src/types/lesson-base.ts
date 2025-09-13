@@ -51,13 +51,16 @@ export interface Exercise {
 
 export interface CaseStudy {
   title: string;
-  organization: string;
-  problem: string;
+  organization?: string;
+  problem?: string;
   solution: string;
-  impact: string;
-  innovations: string[];
+  impact?: string;
+  innovations?: string[];
   government?: string;
   challenge?: string;
+  artist?: string;
+  results?: string;
+  insights?: string[];
 }
 
 export interface Resource {
@@ -95,12 +98,14 @@ export interface BaseLessonData {
   description: string;
   duration: string;
   difficulty: string;
+  type?: string;
   videoUrl?: string | null;
   imageUrl?: string;
   objectives: string[];
   prerequisites?: string[];
   exercises?: Exercise[];
   realWorldApplications: string[];
+  tags?: string[];
   caseStudies?: CaseStudy[];
   resources?: Resource[];
   vietnamContext?: VietnamContext;

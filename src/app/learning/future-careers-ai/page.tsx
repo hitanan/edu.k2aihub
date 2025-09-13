@@ -1,7 +1,7 @@
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { futureCareersLessons } from '@/data/future-careers-ai';
-import { futureCareersModuleData } from '@/data/future-careers-ai-module';
+import { futureCareersLessons } from '@/data/lessons/future-careers-ai';
+import { futureCareersModuleData } from '@/data/modules/future-careers-ai';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = createModuleMetadata(

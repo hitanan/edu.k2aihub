@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   type LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { biotechnologyLessons, type BiotechnologyLesson } from '@/data/biotechnology';
+import { biotechnologyLessons, type BiotechnologyLesson } from '@/data/modules/biotechnology';
 
 import { Dna, Heart, Leaf, TestTube, Microscope, FlaskConical } from 'lucide-react';
 

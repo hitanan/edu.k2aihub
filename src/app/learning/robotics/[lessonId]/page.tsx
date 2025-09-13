@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { roboticsLessons, RoboticsLessonType } from '@/data/robotics';
+import { roboticsLessons, RoboticsLessonType } from '@/data/modules/robotics';
 import { K2Module } from '@/data/k2-modules';
 import { Bot, Settings, Play, Target, Award } from 'lucide-react';
 import { notFound } from 'next/navigation';
@@ -61,7 +61,7 @@ export default async function RoboticsLessonPage({ params }: { params: Promise<{
               Vật liệu cần thiết
             </h3>
             <ul className="space-y-2">
-              {lesson.materials.map((material, index) => (
+              {lesson.materials.map((material: string, index: number) => (
                 <li key={index} className="text-gray-300 text-sm">
                   • {material}
                 </li>
@@ -76,7 +76,7 @@ export default async function RoboticsLessonPage({ params }: { params: Promise<{
               Cuộc thi liên quan
             </h3>
             <ul className="space-y-2">
-              {lesson.competitions.map((competition, index) => (
+              {lesson.competitions.map((competition: string, index: number) => (
                 <li key={index} className="text-gray-300 text-sm">
                   • {competition}
                 </li>

@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { stemLessons, type StemLesson } from '@/data/stem';
+import { stemLessons, type StemLesson } from '@/data/modules/stem';
 
 import { TestTube, Target, User, Play, Lightbulb } from 'lucide-react';
 import { notFound } from 'next/navigation';
@@ -76,7 +76,7 @@ export default async function StemLessonPage({ params }: { params: Promise<{ les
               Vật liệu cần thiết
             </h3>
             <ul className="space-y-2">
-              {lesson.materials.map((material, index) => (
+              {lesson.materials.map((material: string, index: number) => (
                 <li key={index} className="text-gray-300 text-sm">
                   • {material}
                 </li>
@@ -88,7 +88,7 @@ export default async function StemLessonPage({ params }: { params: Promise<{ les
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
             <h3 className="text-lg font-semibold text-white mb-4">🏆 Cuộc thi liên quan</h3>
             <ul className="space-y-2">
-              {lesson.competitions.map((competition, index) => (
+              {lesson.competitions.map((competition: string, index: number) => (
                 <li key={index} className="text-gray-300 text-sm">
                   • {competition}
                 </li>

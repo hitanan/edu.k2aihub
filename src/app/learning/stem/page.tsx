@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { stemLessons } from '@/data/stem';
-import { stemModuleData } from '@/data/stem-module';
+import { stemLessons, stemModuleData } from '@/data/modules/stem';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(

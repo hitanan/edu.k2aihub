@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { foodTechnologyLessons } from '@/data/food-technology';
+import { foodTechnologyModuleData } from '@/data/modules/food-technology';
+import { foodTechnologyLessons } from '@/data/lessons/food-technology';
 import { createModuleMetadata } from '@/utils/seo';
-import { foodTechnologyModuleData } from '@/data/food-technology-module';
 
 export const metadata: Metadata = createModuleMetadata(
   'Food Technology - Công Nghệ Thực Phẩm',

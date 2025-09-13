@@ -2,7 +2,10 @@ import { Metadata } from 'next';
 import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 
 import { createLessonMetadata } from '@/utils/seo';
-import { environmentalDataScienceLessons, EnvironmentalDataScienceLesson } from '@/data/environmental-data-science';
+import {
+  environmentalDataScienceLessons,
+  EnvironmentalDataScienceLesson,
+} from '@/data/lessons/environmental-data-science';
 
 export async function generateStaticParams() {
   return environmentalDataScienceLessons.map((lesson) => ({

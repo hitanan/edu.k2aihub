@@ -1,3 +1,7 @@
+import { BaseLessonData } from './lesson-base';
+
+export type { BaseLessonData };
+
 export interface TouristAttraction {
   name: string;
   description: string;
@@ -41,7 +45,7 @@ export interface ModuleData {
   objectives: string[];
   prerequisites: string[];
   careerOutcomes: string[];
-  industryApplications: (string | { name: string; description: string })[];
+  industryApplications: (string | { name: string; description: string; url?: string })[];
   marketDemand: {
     averageSalary: string;
     jobGrowth: string;
@@ -72,6 +76,21 @@ export interface ModuleData {
     icon: string;
     items: string[];
   }>;
+  lessons?: BaseLessonData[];
+  totalDuration?: string;
+  tags?: string[];
+  difficulty?: string;
+  learningObjectives?: string[];
+  href?: string;
+  practicalApplications?: Array<{
+    title: string;
+    description: string;
+    steps: string[];
+    imageUrl: string;
+  }>;
+  careerProspects?: string | string[];
+  targetAudience?: string;
+  imageUrl?: string;
 }
 
 export interface ContactForm {
