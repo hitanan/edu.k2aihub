@@ -112,6 +112,17 @@ import IoTSmartCityBuilder3D from './IoTSmartCityBuilder3D';
 import AIPythonCodingAssistantGame from './individual/AIPythonCodingAssistantGame';
 import AutonomousRobotMission3D from './AutonomousRobotMission3D';
 
+// Additional new game components for the missing games
+import CircularEconomyResourceFlow3DGame from './CircularEconomyResourceFlow3DGame';
+import CareerDevelopmentVirtualMentor3DGame from './CareerDevelopmentVirtualMentor3DGame';
+import SemiconductorDesignPuzzleGame from './individual/SemiconductorDesignPuzzleGame';
+import LogisticsNetworkSimGame from './individual/LogisticsNetworkSimGame';
+import PsychologyPuzzleBoxGame from './individual/PsychologyPuzzleBoxGame';
+import DataDetectiveGame from './individual/DataDetectiveGame';
+import SoftSkillsScenarioGame from './individual/SoftSkillsScenarioGame';
+import EventPlannerProGame from './individual/EventPlannerProGame';
+import InternationalBusinessSimGame from './individual/InternationalBusinessSimGame';
+
 interface MiniGameProps {
   game: EducationalGame;
   onComplete: (score: number) => void;
@@ -379,7 +390,13 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
       case 'virtual-chemistry-lab-3d':
         return <VirtualChemistryLab3D onComplete={(success, score) => endGame(success, score)} />;
       case 'space-exploration-3d':
-        return <SpaceExploration3DGame onComplete={(success, score) => endGame(success, score)} timeLeft={timeLeft} />;
+        return (
+          <SpaceExploration3DGame
+            onComplete={(success, score) => endGame(success, score)}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
       case 'logical-fallacy-detector':
         return <LogicalFallacyDetector onComplete={endGame} timeLeft={timeLeft} onRestart={restartGame} />;
       case 'presentation-master':
@@ -532,6 +549,85 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <AIPythonCodingAssistantGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
       case 'autonomous-robot-mission-3d':
         return <AutonomousRobotMission3D onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+
+      // New games implementation
+      case 'circular-economy-resource-flow-3d':
+        return (
+          <CircularEconomyResourceFlow3DGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
+        );
+      case 'career-development-virtual-mentor-3d':
+        return (
+          <CareerDevelopmentVirtualMentor3DGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
+      case 'global-marketplace-manager':
+        return (
+          <GlobalMarketplaceSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
+        );
+      case 'precision-farm-manager':
+        return <SmartFarmingSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'sustainable-aquaculture-sim':
+        return <AquacultureIoTManagerGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'semiconductor-design-puzzle':
+        return (
+          <SemiconductorDesignPuzzleGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
+        );
+      case 'logistics-network-sim':
+        return <LogisticsNetworkSimGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'interstellar-explorer-3d':
+        return <SpaceExploration3DGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'psychology-puzzle-box':
+        return <PsychologyPuzzleBoxGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'data-detective':
+        return <DataDetectiveGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'ux-ui-design-challenge':
+        return <UXDesignStudio3DGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'soft-skills-scenario':
+        return <SoftSkillsScenarioGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'future-scenario-planner':
+        return <FutureScenarioBuilder3DGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'digital-citizen-dilemma':
+        return (
+          <DigitalCitizenshipEthicsSimulatorGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
+      case 'cross-cultural-negotiation':
+        return (
+          <CulturalIntelligenceNavigator3DGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
+      case 'personal-energy-manager':
+        return (
+          <EnergyOptimizationSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
+        );
+      case 'event-planner-pro':
+        return <EventPlannerProGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'gov-tech-service-designer':
+        return <EGovernmentPortalGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+      case 'international-business-sim':
+        return (
+          <InternationalBusinessSimGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />
+        );
+      case 'supply-chain-manager':
+        return (
+          <SupplyChainOptimizationChallengeGame
+            onComplete={endGame}
+            timeLeft={timeLeft}
+            onRestart={() => restartGame()}
+          />
+        );
+      case 'sustainable-farm-sim':
+        return <SmartFarmingSimulatorGame onComplete={endGame} timeLeft={timeLeft} onRestart={() => restartGame()} />;
+
       default:
         return <div className="text-white">Game not implemented yet!</div>;
     }

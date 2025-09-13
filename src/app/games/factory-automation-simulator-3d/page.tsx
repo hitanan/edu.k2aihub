@@ -2,7 +2,7 @@ import FactoryAutomationSimulator3D from '@/components/games/FactoryAutomationSi
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
 
-export const metadata: Metadata = createGameMetadata('factory-automation-simulator-3d');
+export const metadata: Metadata = createGameMetadata('factory-automation-simulator');
 
 export default function FactoryAutomationPage() {
   return (

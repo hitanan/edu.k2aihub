@@ -549,3 +549,5 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
     </div>
   );
 }
+
+export default SupplyChainOptimizationChallengeGame;

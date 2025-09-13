@@ -10,6 +10,7 @@ import * as THREE from 'three';
 interface SpaceExploration3DGameProps {
   onComplete: (success: boolean, score: number) => void;
   timeLeft: number;
+  onRestart: () => void;
 }
 
 interface Position3D {
@@ -245,7 +246,7 @@ function MissionPanel({
 }
 
 // Main Game Component
-export default function SpaceExploration3DGame({ onComplete, timeLeft }: SpaceExploration3DGameProps) {
+export default function SpaceExploration3DGame({ onComplete, timeLeft, onRestart }: SpaceExploration3DGameProps) {
   const [planets, setPlanets] = useState<Planet[]>([
     {
       id: 'mars',

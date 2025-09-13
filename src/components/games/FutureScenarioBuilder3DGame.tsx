@@ -4,7 +4,7 @@ import { OrbitControls, Text, Sphere } from '@react-three/drei';
 import { RotateCcw, Target, Award, TrendingUp, Zap, Globe, Users, Brain } from 'lucide-react';
 
 interface GameProps {
-  onComplete: () => void;
+  onComplete: (success: boolean, rawScore?: number) => void;
   timeLeft: number;
   onRestart: () => void;
 }
@@ -211,10 +211,10 @@ const FutureScenarioBuilder3DGame: React.FC<GameProps> = ({ onComplete, timeLeft
       // Check for completion
       if (implementedScenarios.size >= 6) {
         setGamePhase('completed');
-        setTimeout(() => onComplete(), 2000);
+        setTimeout(() => onComplete(true, score), 2000);
       }
     },
-    [implementedScenarios, scenarios, onComplete],
+    [implementedScenarios, scenarios, onComplete, score],
   );
 
   const analyzeScenario = useCallback(() => {
