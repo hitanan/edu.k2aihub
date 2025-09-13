@@ -4,10 +4,12 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { aiMachineLearningLessons } from '@/data/ai-machine-learning';
+import { aiMachineLearningModuleData } from '@/data/modules/ai-machine-learning';
+import { Brain } from 'lucide-react';
 
 import { BaseLessonData } from '@/types/lesson-base';
-import { Brain } from 'lucide-react';
+
+const aiMachineLearningLessons = aiMachineLearningModuleData.lessons || [];
 
 // Generate static params for all lessons
 export async function generateStaticParams() {

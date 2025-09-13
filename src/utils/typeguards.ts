@@ -6,6 +6,7 @@ export function isModuleData(item: ModuleData | ModuleNavigation): item is Modul
 }
 
 export function isModuleNavigation(item: ModuleData | ModuleNavigation): item is ModuleNavigation {
-  // A property that exists only on ModuleNavigation, e.g., 'href' or 'coreModule'
-  return (item as ModuleNavigation).href !== undefined || (item as ModuleNavigation).coreModule !== undefined;
+  // A property that exists only on ModuleNavigation, e.g., 'coreModule'
+  // Using a more specific property to avoid ambiguity with optional properties on ModuleData
+  return 'coreModule' in item;
 }

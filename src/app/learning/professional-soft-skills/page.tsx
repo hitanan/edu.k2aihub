@@ -1,16 +1,15 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { professionalSoftSkillsLessons } from '@/data/professional-soft-skills';
-import { professionalSoftSkillsModuleData } from '@/data/professional-soft-skills-module';
+import { professionalSoftSkillsModule } from '@/data/modules/professional-soft-skills';
 import { createModuleMetadata } from '@/utils/seo';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = createModuleMetadata(
-  professionalSoftSkillsModuleData.title,
-  professionalSoftSkillsModuleData.description,
+  professionalSoftSkillsModule.title,
+  professionalSoftSkillsModule.description,
   ['kỹ năng mềm', 'giao tiếp', 'lãnh đạo', 'thuyết trình', 'đàm phán', 'quản lý thời gian'],
-  professionalSoftSkillsModuleData.id,
+  professionalSoftSkillsModule.id,
 );
 
 export default function ProfessionalSoftSkillsPage() {
-  return <ModulePageTemplate moduleData={professionalSoftSkillsModuleData} lessons={professionalSoftSkillsLessons} />;
+  return <ModulePageTemplate moduleData={professionalSoftSkillsModule} lessons={professionalSoftSkillsModule.lessons || []} />;
 }

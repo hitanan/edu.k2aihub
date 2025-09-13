@@ -1,4 +1,10 @@
-import { BaseLessonData } from './lesson-base';
+import {
+  BaseLessonData,
+  ProgrammingRoboticsLesson,
+  PsychologyBehavioralScienceLesson,
+  QuantumComputingEducationLesson,
+  QuantumComputingLesson,
+} from './lesson-base';
 
 export type { BaseLessonData };
 
@@ -29,29 +35,29 @@ export interface City {
   touristAttractions?: TouristAttraction[];
 }
 
-export interface ModuleData {
+export interface ModuleData<T extends BaseLessonData = BaseLessonData> {
   id: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   description: string;
-  level: string;
-  duration: string;
-  category: string;
+  level?: string;
+  duration?: string;
+  category: string | string[];
   primaryColor?: string;
-  features: string[];
-  icon: string;
-  color: string;
+  features?: string[];
+  icon?: string;
+  color?: string;
   heroImageUrl?: string;
-  objectives: string[];
-  prerequisites: string[];
-  careerOutcomes: string[];
-  industryApplications: (string | { name: string; description: string; url?: string })[];
-  marketDemand: {
+  objectives?: string[];
+  prerequisites?: string[];
+  careerOutcomes?: string[];
+  industryApplications?: (string | { name: string; description: string; url?: string })[];
+  marketDemand?: {
     averageSalary: string;
     jobGrowth: string;
     hireDemand: string;
   };
-  relatedModules: string[];
+  relatedModules?: string[];
   gradientColors?: string;
   basePath?: string;
   statsConfig?: {
@@ -76,21 +82,31 @@ export interface ModuleData {
     icon: string;
     items: string[];
   }>;
-  lessons?: BaseLessonData[];
+  lessons?: T[];
   totalDuration?: string;
   tags?: string[];
   difficulty?: string;
   learningObjectives?: string[];
   href?: string;
   practicalApplications?: Array<{
-    title: string;
+    name: string;
     description: string;
-    steps: string[];
-    imageUrl: string;
+    steps?: string[];
+    imageUrl?: string;
   }>;
   careerProspects?: string | string[];
-  targetAudience?: string;
+  targetAudience?: string | { level: string[]; description: string };
   imageUrl?: string;
+  image?: string;
+  version?: string;
+  lastUpdated?: string;
+  author?: string;
+  isNew?: boolean;
+  isComingSoon?: boolean;
+  isPremium?: boolean;
+  isUnlocked?: boolean;
+  learningGoals?: string[];
+  projectIdeas?: string[];
 }
 
 export interface ContactForm {
@@ -139,8 +155,8 @@ export interface ModuleNavigation {
   subtitle?: string;
   description: string;
   category: string[] | string; // Support both single and multiple categories
-  icon: string;
-  color: string;
+  icon?: string;
+  color?: string;
   lessons?: LessonNavigation[]; // Make lessons optional for dynamic loading
   totalDuration?: string;
   difficulty?: string;

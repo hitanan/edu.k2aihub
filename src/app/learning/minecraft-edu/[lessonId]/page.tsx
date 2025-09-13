@@ -4,12 +4,13 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { minecraftLessons, MinecraftLessonType } from '@/data/minecraft-edu';
+import { minecraftEduModule } from '@/data/modules/minecraft-edu';
+import type { MinecraftEduLesson as MinecraftLessonType } from '@/types/lesson-base';
 import { FlaskConical, Cpu, Wrench } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-  return generateLessonStaticParams(minecraftLessons);
+  return generateLessonStaticParams(minecraftEduModule.lessons || []);
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
@@ -17,14 +18,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
   if (!lessonId) {
     return {};
   }
-  return generateLessonMetadata(lessonId, minecraftLessons, 'minecraft-edu');
+  return generateLessonMetadata(lessonId, minecraftEduModule.lessons || [], 'minecraft-edu');
 }
 
 const config: LessonPageConfig<MinecraftLessonType> = {
   moduleName: 'minecraft-edu',
   moduleTitle: 'Minecraft Education',
   modulePath: '/learning/minecraft-edu',
-  lessons: minecraftLessons,
+  lessons: minecraftEduModule.lessons || [],
   primaryColor: 'green',
   secondaryColor: 'emerald',
   gradientColors: 'from-slate-900 via-green-900 to-slate-900',

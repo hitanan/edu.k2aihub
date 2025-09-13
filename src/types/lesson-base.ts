@@ -328,3 +328,149 @@ export interface LessonPageTemplateProps<T extends BaseLessonData> {
   lessonId: string;
   config: LessonPageConfig<T>;
 }
+
+export interface DigitalCitizenshipLesson extends BaseLessonData {}
+
+export interface GenZMarketingLesson extends BaseLessonData {
+  genZMarketingMainContent?: {
+    generationalInsights: string[];
+    authenticityPrinciples: string[];
+    platformPreferences: string[];
+    valueAlignment: string[];
+    engagementTactics: string[];
+  };
+}
+
+export interface GovernmentTechnologyLesson extends BaseLessonData {
+  governmentTechnologyMainContent?: {
+    governmentDomain: 'digital-government' | 'public-service-tech' | 'civic-engagement' | 'smart-city' | 'policy-tech';
+    technologyCategory: string[];
+    vietnameseGovernmentContext: string[];
+    publicServiceApplications: string[];
+    digitalTransformationAspects: string[];
+  };
+}
+
+export interface HealthcareTechLesson extends BaseLessonData {
+  healthcareCategory: 'Telehealth' | 'Health Data Analytics' | 'Medical IoT' | 'HealthTech Business' | 'Mental Health Tech';
+  regulatoryCompliance: string[];
+  techProficiencyLevel: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
+  targetAudience: string[];
+}
+
+export interface KitchenChemistryLesson extends BaseLessonData {
+  keyConcept: string;
+}
+
+export interface LegalTechLesson extends BaseLessonData {
+  legalArea: 'document-automation' | 'legal-research' | 'case-management' | 'regulatory-compliance' | 'ip-management';
+  legalTechTools: string[];
+  complianceRequirements?: string[];
+  vietnameseLegalSystem?: string[];
+  targetLegalProfessionals: string[];
+}
+
+export interface LiveCommerceLesson extends BaseLessonData {
+  streamingPlatforms?: string[];
+  liveCommerceContent?: {
+    platformSpecifics: Array<{
+      platform: string;
+      features: string[];
+      bestPractices: string[];
+    }>;
+    kpis: Array<{
+      metric: string;
+      description: string;
+      benchmark: string;
+    }>;
+  };
+}
+
+export interface MentalHealthLesson extends BaseLessonData {
+  technologies?: string[];
+  wellnessImpact?: string;
+}
+
+export interface MetaverseVRLesson extends BaseLessonData {
+  technologyLevel?: string;
+  tools?: string[];
+}
+
+export interface MicroInfluencerLesson extends BaseLessonData {
+  vietnamContext: {
+    title: string;
+    content: string[];
+  };
+  careerConnect: {
+    name: string;
+    title: string;
+    company: string;
+    imageUrl: string;
+    quote: string;
+  };
+  quizzes: Array<{
+    question: string;
+    options: string[];
+    correctAnswerIndex: number;
+    explanation: string;
+  }>;
+}
+
+export interface MinecraftEduLesson extends BaseLessonData {
+  skills: string[];
+  gameVersion: string;
+}
+
+export interface MobileAppDevelopmentLesson extends BaseLessonData {
+  // No unique properties for now, but can be extended later
+}
+
+export interface NanotechnologyLesson extends BaseLessonData {
+  nanotechApplications: string[];
+  materialsProperties: string[];
+  safetyConsiderations: string[];
+}
+
+export interface EnergyManagementLesson extends BaseLessonData {
+  // No extra properties, but defining for consistency and future extension.
+}
+
+export interface PhysicsOfSportsLesson extends BaseLessonData {
+  keyConcept: string;
+}
+
+export interface ProfessionalSoftSkillsLesson extends BaseLessonData {
+  // No unique properties, but defined for consistency and future extension.
+}
+
+export interface ProgrammingRoboticsLesson extends BaseLessonData {
+  programmingLanguages?: string[];
+  roboticsPlatforms?: string[];
+  projects?: Array<{
+    name: string;
+    difficulty: string;
+    description: string;
+    technologies: string[];
+    estimatedTime: string;
+  }>;
+}
+
+export interface PsychologyBehavioralScienceLesson extends BaseLessonData {
+  // No unique properties required for this lesson type yet
+}
+
+export interface QuantumComputingEducationLesson extends BaseLessonData {
+  // No unique properties required for this lesson type yet
+}
+
+export interface QuantumComputingLesson extends BaseLessonData {
+  // No unique properties for this lesson type yet
+}
+
+export interface RealEstateTechLesson extends BaseLessonData {
+  measurableROI?: {
+    metric: string;
+    value: string;
+    description: string;
+  }[];
+}

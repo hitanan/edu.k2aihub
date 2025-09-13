@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { psychologyBehavioralScienceLessons } from '@/data/psychology-behavioral-science';
+import { psychologyBehavioralScienceModule } from '@/data/modules/psychology-behavioral-science';
 import { createModuleMetadata } from '@/utils/seo';
-import { psychologyBehavioralScienceModuleData } from '@/data/psychology-behavioral-science-module';
 
 export const metadata: Metadata = createModuleMetadata(
-  psychologyBehavioralScienceModuleData.title,
-  psychologyBehavioralScienceModuleData.description,
+  psychologyBehavioralScienceModule.title,
+  psychologyBehavioralScienceModule.description,
   [
     'behavioral psychology',
     'behavioral science',
@@ -17,14 +16,14 @@ export const metadata: Metadata = createModuleMetadata(
     'vietnam psychology',
     'k2aihub',
   ],
-  psychologyBehavioralScienceModuleData.id,
+  psychologyBehavioralScienceModule.id,
 );
 
 export default function PsychologyBehavioralSciencePage() {
   return (
     <ModulePageTemplate
-      moduleData={psychologyBehavioralScienceModuleData}
-      lessons={psychologyBehavioralScienceLessons}
+      moduleData={psychologyBehavioralScienceModule}
+      lessons={psychologyBehavioralScienceModule.lessons || []}
     />
   );
 }

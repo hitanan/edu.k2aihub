@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { microInfluencerEconomyLessons } from '@/data/micro-influencer-economy';
 import { createModuleMetadata } from '@/utils/seo';
-import { microInfluencerEconomyModuleData } from '@/data/micro-influencer-economy-module';
+import { microInfluencerEconomyModule } from '@/data/modules/micro-influencer-economy';
 
 export const metadata: Metadata = createModuleMetadata(
-  microInfluencerEconomyModuleData.title,
-  microInfluencerEconomyModuleData.description,
+  microInfluencerEconomyModule.title,
+  microInfluencerEconomyModule.description,
   [
     'micro influencer',
     'influencer marketing',
@@ -17,9 +16,9 @@ export const metadata: Metadata = createModuleMetadata(
     'brand partnerships',
     'k2aihub',
   ],
-  microInfluencerEconomyModuleData.id,
+  microInfluencerEconomyModule.id,
 );
 
 export default function MicroInfluencerEconomyPage() {
-  return <ModulePageTemplate moduleData={microInfluencerEconomyModuleData} lessons={microInfluencerEconomyLessons} />;
+  return <ModulePageTemplate moduleData={microInfluencerEconomyModule} lessons={microInfluencerEconomyModule.lessons || []} />;
 }

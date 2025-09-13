@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { realEstateTechnologyLessons } from '@/data/real-estate-technology';
+import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
 import { createModuleMetadata } from '@/utils/seo';
-import { realEstateTechnologyModuleData } from '@/data/real-estate-technology-module';
+import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(
@@ -24,5 +23,10 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function RealEstateTechnologyPage() {
-  return <ModulePageTemplate moduleData={realEstateTechnologyModuleData} lessons={realEstateTechnologyLessons} />;
+  return (
+    <ModulePageTemplate
+      moduleData={realEstateTechnologyModuleData}
+      lessons={realEstateTechnologyModuleData.lessons || []}
+    />
+  );
 }

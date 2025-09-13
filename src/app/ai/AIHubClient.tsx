@@ -2,11 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { EducationalGame, ModuleNavigation } from '@/types';
+import { EducationalGame, ModuleNavigation, ModuleData } from '@/types';
 import { BookOpen, Cpu, Gamepad2, Sparkles, Wrench } from 'lucide-react';
 
 interface AIHubClientProps {
-  lessons: ModuleNavigation[];
+  lessons: (ModuleNavigation | ModuleData)[];
   games: EducationalGame[];
 }
 

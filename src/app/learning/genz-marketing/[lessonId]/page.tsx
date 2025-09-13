@@ -4,7 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { genZMarketingLessons, GenZMarketingLesson } from '@/data/genz-marketing';
+import { genZMarketingLessons } from '@/data/modules/genz-marketing';
+import type { GenZMarketingLesson } from '@/types/lesson-base';
 
 import { Metadata } from 'next';
 import { createTitle } from '@/utils/seo';

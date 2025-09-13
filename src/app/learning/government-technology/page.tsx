@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { governmentTechnologyLessons } from '@/data/government-technology';
-import { governmentTechnologyModuleData } from '@/data/government-technology-module';
+import { governmentTechnologyModuleData, governmentTechnologyLessons } from '@/data/modules/government-technology';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(

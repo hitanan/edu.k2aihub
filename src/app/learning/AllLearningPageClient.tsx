@@ -35,15 +35,15 @@ const allLearningModules = moduleNavigation
         title: module.title,
         subtitle: module.subtitle || '',
         description: module.description,
-        level: module.level,
-        duration: module.duration,
+        level: module.level || 'N/A',
+        duration: module.duration || 'N/A',
         href: `/learning/${module.id}`,
-        color: module.color,
+        color: module.color || 'from-gray-500 to-gray-700',
         category: module.category,
-        lessons: module.statsConfig?.lessons ? parseInt(module.statsConfig.lessons, 10) : 0,
+        lessons: module.lessons?.length ?? (module.statsConfig?.lessons ? parseInt(module.statsConfig.lessons, 10) : 0),
         features: module.features || [],
-        icon: module.icon,
-        tags: [], // ModuleData doesn't have tags, provide a default
+        icon: module.icon || '📚',
+        tags: module.tags || [],
       };
     }
 

@@ -1,7 +1,9 @@
 import { K2Module } from '@/data/k2-modules';
 import { createTitle, createDescription } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { arduinoCircuitsLessons } from '@/data/arduino-circuits';
+import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
+
+const lessons = arduinoCircuitsModuleData.lessons || [];
 
 export async function generateMetadata() {
   const title = createTitle('Xây dựng Mạch điện tử với Arduino');
@@ -70,5 +72,5 @@ export default function ArduinoCircuitsPage() {
     relatedModules: [K2Module.Robosim, K2Module.SmartManufacturing, K2Module.RobloxGameDev],
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={arduinoCircuitsLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={lessons} />;
 }

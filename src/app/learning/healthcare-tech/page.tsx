@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { healthcareTechLessons } from '@/data/healthcare-tech';
+import { healthcareTechModuleData, healthcareTechLessons } from '@/data/modules/healthcare-tech';
 import { createModuleMetadata } from '@/utils/seo';
-import { healthcareTechModuleData } from '@/data/healthcare-tech-module';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(

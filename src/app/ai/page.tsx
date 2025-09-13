@@ -3,7 +3,7 @@ import React from 'react';
 import { createModuleMetadata } from '@/utils/seo';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
-import { EducationalGame, ModuleNavigation } from '@/types';
+import { EducationalGame, ModuleNavigation, ModuleData } from '@/types';
 import AIHubClient from './AIHubClient';
 
 export const metadata: Metadata = createModuleMetadata(
@@ -24,7 +24,7 @@ export const metadata: Metadata = createModuleMetadata(
   'ai',
 );
 
-const getAiLessons = (): ModuleNavigation[] => {
+const getAiLessons = (): (ModuleNavigation | ModuleData)[] => {
   return moduleNavigation.filter(
     (module) =>
       (Array.isArray(module.category) && module.category.includes('ai')) ||

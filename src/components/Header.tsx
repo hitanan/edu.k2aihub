@@ -8,6 +8,7 @@ import { ChevronDown, Menu, X, Home, Globe, Brain, Code, BookOpen, FileText } fr
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { isModuleData, isModuleNavigation } from '@/utils/typeguards';
 import SearchHeader from '@/components/SearchHeader';
+import { cn } from '@/lib/utils';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -113,7 +114,7 @@ const Header: React.FC = () => {
           if (!categoryMap[key]) {
             categoryMap[key] = {
               category: categoryNames[key] || key,
-              icon: module.icon,
+              icon: module.icon || '📚', // Fallback icon
               modules: [],
             };
           }
@@ -121,7 +122,7 @@ const Header: React.FC = () => {
           categoryMap[key].modules.push({
             name: module.title,
             href: module.href || `/learning/${module.id}`,
-            icon: module.icon,
+            icon: module.icon || '📚',
           });
         });
       } else if (isModuleData(module)) {
@@ -140,7 +141,7 @@ const Header: React.FC = () => {
           if (!categoryMap[key]) {
             categoryMap[key] = {
               category: categoryNames[key] || key,
-              icon: module.icon,
+              icon: module.icon || '📚', // Fallback icon
               modules: [],
             };
           }
@@ -148,7 +149,7 @@ const Header: React.FC = () => {
           categoryMap[key].modules.push({
             name: module.title,
             href: `/learning/${module.id}`,
-            icon: module.icon,
+            icon: module.icon || '📚',
           });
         });
       }
@@ -271,7 +272,7 @@ const Header: React.FC = () => {
                                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50 transition-all duration-200 group border border-transparent hover:border-blue-100"
                                   onClick={() => setIsLearningDropdownOpen(false)}
                                 >
-                                  <span className="text-sm">{module.icon}</span>
+                                  <span className="text-sm">{module.icon || '📚'}</span>
                                   <div className="flex-1">
                                     <span className="text-xs font-medium text-gray-700 group-hover:text-blue-600 block leading-tight">
                                       {module.name}

@@ -4,7 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { liveCommerceLessons, LiveCommerceLessonType } from '@/data/live-commerce-streaming';
+import { liveCommerceLessons } from '@/data/modules/live-commerce-streaming';
+import type { LiveCommerceLesson as LiveCommerceLessonType } from '@/types/lesson-base';
 import { Video } from 'lucide-react';
 
 // Generate static params for all lessons

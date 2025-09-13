@@ -1,12 +1,11 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { quantumComputingLessons } from '@/data/quantum-computing-education';
+import { quantumComputingEducationModule } from '@/data/modules/quantum-computing-education';
 import { createModuleMetadata } from '@/utils/seo';
 import type { Metadata } from 'next';
-import { quantumComputingEducationModuleData } from '@/data/quantum-computing-education-module';
 
 export const metadata: Metadata = createModuleMetadata(
-  quantumComputingEducationModuleData.title,
-  quantumComputingEducationModuleData.description,
+  quantumComputingEducationModule.title,
+  quantumComputingEducationModule.description,
   [
     'quantum computing',
     'điện toán lượng tử',
@@ -16,9 +15,9 @@ export const metadata: Metadata = createModuleMetadata(
     'K2AI',
     'học tập thông minh',
   ],
-  quantumComputingEducationModuleData.id,
+  quantumComputingEducationModule.id,
 );
 
 export default function QuantumComputingMainPage() {
-  return <ModulePageTemplate moduleData={quantumComputingEducationModuleData} lessons={quantumComputingLessons} />;
+  return <ModulePageTemplate moduleData={quantumComputingEducationModule} lessons={quantumComputingEducationModule.lessons || []} />;
 }

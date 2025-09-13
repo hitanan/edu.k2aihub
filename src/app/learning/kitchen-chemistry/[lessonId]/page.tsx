@@ -4,7 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { kitchenChemistryLessons, KitchenChemistryLessonType } from '@/data/kitchen-chemistry';
+import { kitchenChemistryLessons } from '@/data/modules/kitchen-chemistry';
+import type { KitchenChemistryLesson as KitchenChemistryLessonType } from '@/types/lesson-base';
 import { createModuleMetadata } from '@/utils/seo';
 import { FlaskConical } from 'lucide-react';
 

@@ -5,7 +5,9 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { BaseLessonData } from '@/types/lesson-base';
-import { threeDPrintingLessons } from '@/data/3d-printing';
+import { threeDPrintingModuleData } from '@/data/modules/3d-printing';
+
+const threeDPrintingLessons = threeDPrintingModuleData.lessons || [];
 
 import { notFound } from 'next/navigation';
 

@@ -5,6 +5,7 @@ export const K2Module = {
 
   // Professional Learning Modules
   DigitalMarketing: 'digital-marketing',
+  SocialMedia: 'social-media',
   GreenTechnology: 'green-technology',
   MentalHealthTech: 'mental-health-tech',
   FinancialLiteracy: 'financial-literacy',

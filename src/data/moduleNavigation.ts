@@ -1,10 +1,10 @@
 import { ModuleNavigation, ModuleData } from '@/types';
-import { advancedCreativeSkillsModuleData } from './advanced-creative-skills-module';
-import { aiForStudentsModuleData } from './ai-for-students-module';
-import { aiMachineLearningModuleData } from './ai-machine-learning-module';
-import { aiLearningModuleData } from './ai-learning-module';
-import { aiSeoOptimizationModuleData } from './ai-seo-optimization-module';
-import { arduinoCircuitsModuleData } from './arduino-circuits-module';
+import { advancedCreativeSkillsModuleData } from '@/data/modules/advanced-creative-skills';
+import { aiForStudentsModuleData } from '@/data/modules/ai-for-students';
+import { aiMachineLearningModuleData } from '@/data/modules/ai-machine-learning';
+import { aiLearningModule } from '@/data/modules/ai-learning';
+import { aiSeoOptimizationModule } from '@/data/modules/ai-seo-optimization';
+import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
 import { blueEconomyModuleData } from '@/data/modules/blue-economy';
 import { businessMarketingModuleData } from '@/data/modules/business-marketing';
 import { careerDevelopmentModuleData } from '@/data/modules/career-development';
@@ -22,41 +22,41 @@ import { digitalCitizenshipOnlineSafetyModuleData } from '@/data/modules/digital
 import { educationLearningModuleData } from '@/data/modules/education-learning';
 import { educationTechnologyModuleData } from '@/data/modules/education-technology';
 import { electricVehicleTechModuleData } from '@/data/modules/electric-vehicle-tech';
-import { energyManagementModuleData } from './energy-management-module';
-import { ethicalMarketingPurposeModuleData } from './ethical-marketing-purpose-module';
-import { genZMarketingModuleData } from './genz-marketing-module';
-import { healthcareTechModuleData } from './healthcare-tech-module';
-import { kitchenChemistryModuleData } from './kitchen-chemistry-module';
-import { leadershipManagementModuleData } from './leadership-management-module';
-import { legalTechnologyModuleData } from './legal-technology-module';
-import { liveCommerceStreamingModuleData } from './live-commerce-streaming-module';
-import { mentalHealthTechModuleData } from './mental-health-tech-module';
-import { metaverseVREducationModuleData } from './metaverse-vr-education-module';
-import { microInfluencerEconomyModuleData } from './micro-influencer-economy-module';
-import { minecraftEduModuleData } from './minecraft-edu-module';
-import { mobileAppDevelopmentModuleData } from './mobile-app-development-module';
-import { nanotechnologyModuleData } from './nanotechnology-module';
-import { officeWorkModuleData } from './office-work-module';
-import { personalEnergyPerformanceManagementModuleData } from './personal-energy-performance-management-module';
-import { physicsOfSportsModuleData } from './physics-of-sports-module';
-import { professionalSkillsModuleData } from './professional-skills-module';
-import { professionalSoftSkillsModuleData } from './professional-soft-skills-module';
-import { programmingDevModuleData } from './programming-dev-module';
-import { programmingRoboticsModuleData } from './programming-robotics-module';
-import { psychologyBehavioralScienceModuleData } from './psychology-behavioral-science-module';
-import { quantumComputingEducationModuleData } from './quantum-computing-education-module';
-import { quantumComputingModuleData } from './quantum-computing-module';
-import { realEstateTechnologyModuleData } from './real-estate-technology-module';
-import { renewableEnergyModuleData } from './renewable-energy-module';
-import { robloxGameDevModuleData } from './roblox-game-dev-module';
-import { robosimModuleData } from './robosim-module';
-import { semiconductorTechnologyModuleData } from './semiconductor-technology-module';
-import { shortVideoMasteryModuleData } from './short-video-mastery-module';
-import { smartManufacturingModuleData } from './smart-manufacturing-module';
-import { socialListeningCrisisModuleData } from './social-listening-crisis-module';
-import { softSkillsModuleData } from './soft-skills-module';
-import { spaceExplorationModuleData } from './space-exploration-module';
-import { spaceTechnologyModuleData } from './space-technology-module';
+import { energyManagementModule } from '@/data/modules/energy-management';
+import { ethicalMarketingPurposeModule } from '@/data/modules/ethical-marketing-purpose';
+import { genZMarketingModuleData } from '@/data/modules/genz-marketing';
+import { healthcareTechModuleData } from '@/data/modules/healthcare-tech';
+import { kitchenChemistryModuleData } from '@/data/modules/kitchen-chemistry';
+import { leadershipManagementModule } from '@/data/modules/leadership-management';
+import { legalTechnologyModuleData } from '@/data/modules/legal-technology';
+import { liveCommerceStreamingModuleData } from '@/data/modules/live-commerce-streaming';
+import { mentalHealthTechModule } from '@/data/modules/mental-health-tech';
+import { metaverseVREducationModule } from '@/data/modules/metaverse-vr-education';
+import { microInfluencerEconomyModule } from '@/data/modules/micro-influencer-economy';
+import { minecraftEduModule } from '@/data/modules/minecraft-edu';
+import { mobileAppDevelopmentModule } from '@/data/modules/mobile-app-development';
+import { nanotechnologyModule } from '@/data/modules/nanotechnology';
+import { officeWorkModule } from '@/data/modules/office-work';
+import { personalEnergyPerformanceManagementModule } from '@/data/modules/personal-energy-performance-management';
+import { physicsOfSportsModule } from '@/data/modules/physics-of-sports';
+import { professionalSkillsModule } from '@/data/modules/professional-skills';
+import { professionalSoftSkillsModule } from '@/data/modules/professional-soft-skills';
+import { programmingDevModule } from '@/data/modules/programming-dev';
+import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
+import { psychologyBehavioralScienceModule } from '@/data/modules/psychology-behavioral-science';
+import { quantumComputingEducationModule } from '@/data/modules/quantum-computing-education';
+import { quantumComputingModule } from '@/data/modules/quantum-computing';
+import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
+import { renewableEnergyModule } from '@/data/modules/renewable-energy';
+import { robloxGameDevModule } from '@/data/modules/roblox-game-dev';
+import { robosimModule } from '@/data/modules/robosim';
+import { semiconductorTechnologyModule } from '@/data/modules/semiconductor-technology';
+import { shortVideoMasteryModule } from '@/data/modules/short-video-mastery';
+import { smartManufacturingModule } from '@/data/modules/smart-manufacturing';
+import { socialListeningCrisisModule } from '@/data/modules/social-listening-crisis';
+import { softSkillsModule } from '@/data/modules/soft-skills';
+import { spaceExplorationModule } from '@/data/modules/space-exploration';
+import { spaceTechnologyModule } from '@/data/modules/space-technology';
 import { K2Module } from './k2-modules';
 
 // Migrated Modules
@@ -65,7 +65,7 @@ import { arduinoModuleData } from '@/data/modules/arduino';
 import { biotechnologyModuleData } from '@/data/modules/biotechnology';
 import { cybersecurityModuleData } from '@/data/modules/cybersecurity';
 import { digitalMarketingModuleData } from '@/data/modules/digital-marketing';
-import { energyManagementSmartGridModuleData } from '@/data/modules/energy-management';
+import { energyManagementSmartGridModule } from '@/data/modules/energy-management-smart-grid';
 import { environmentalDataScienceModuleData } from '@/data/modules/environmental-data-science';
 import { environmentalScienceClimateModuleData } from '@/data/modules/environmental-science-climate';
 import { financialLiteracyModuleData } from '@/data/modules/financial-literacy';
@@ -120,8 +120,8 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   aiArtCreativeTechModuleData,
   aiForStudentsModuleData,
   aiMachineLearningModuleData,
-  aiLearningModuleData,
-  aiSeoOptimizationModuleData,
+  aiLearningModule,
+  aiSeoOptimizationModule,
   arduinoCircuitsModuleData,
   arduinoModuleData,
   blueEconomyModuleData,
@@ -143,11 +143,11 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   educationLearningModuleData,
   educationTechnologyModuleData,
   electricVehicleTechModuleData,
-  energyManagementModuleData,
-  energyManagementSmartGridModuleData,
+  energyManagementModule,
+  energyManagementSmartGridModule,
   environmentalDataScienceModuleData,
   environmentalScienceClimateModuleData,
-  ethicalMarketingPurposeModuleData,
+  ethicalMarketingPurposeModule,
   financialLiteracyModuleData,
   foodTechnologyModuleData,
   futureCareersModuleData,
@@ -157,39 +157,39 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   greenTechnologyModuleData,
   healthcareTechModuleData,
   kitchenChemistryModuleData,
-  leadershipManagementModuleData,
+  leadershipManagementModule,
   legalTechnologyModuleData,
   liveCommerceStreamingModuleData,
-  mentalHealthTechModuleData,
-  metaverseVREducationModuleData,
-  microInfluencerEconomyModuleData,
-  minecraftEduModuleData,
-  mobileAppDevelopmentModuleData,
-  nanotechnologyModuleData,
-  officeWorkModuleData,
-  personalEnergyPerformanceManagementModuleData,
-  physicsOfSportsModuleData,
-  professionalSkillsModuleData,
-  professionalSoftSkillsModuleData,
-  programmingDevModuleData,
-  programmingRoboticsModuleData,
-  psychologyBehavioralScienceModuleData,
+  mentalHealthTechModule,
+  metaverseVREducationModule,
+  microInfluencerEconomyModule,
+  minecraftEduModule,
+  mobileAppDevelopmentModule,
+  nanotechnologyModule,
+  officeWorkModule,
+  personalEnergyPerformanceManagementModule,
+  physicsOfSportsModule,
+  professionalSkillsModule,
+  professionalSoftSkillsModule,
+  programmingDevModule,
+  programmingRoboticsModule,
+  psychologyBehavioralScienceModule,
   pythonModuleData,
-  quantumComputingEducationModuleData,
-  quantumComputingModuleData,
+  quantumComputingEducationModule,
+  quantumComputingModule,
   realEstateTechnologyModuleData,
-  renewableEnergyModuleData,
-  robloxGameDevModuleData,
-  robosimModuleData,
+  renewableEnergyModule,
+  robloxGameDevModule,
+  robosimModule,
   roboticsModuleData,
   scratchModuleData,
-  semiconductorTechnologyModuleData,
-  shortVideoMasteryModuleData,
-  smartManufacturingModuleData,
-  socialListeningCrisisModuleData,
-  softSkillsModuleData,
-  spaceExplorationModuleData,
-  spaceTechnologyModuleData,
+  semiconductorTechnologyModule,
+  shortVideoMasteryModule,
+  smartManufacturingModule,
+  socialListeningCrisisModule,
+  softSkillsModule,
+  spaceExplorationModule,
+  spaceTechnologyModule,
   stemModuleData,
   biotechnologyModuleData,
 ];

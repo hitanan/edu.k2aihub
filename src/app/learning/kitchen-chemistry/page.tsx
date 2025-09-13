@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { kitchenChemistryLessons } from '@/data/kitchen-chemistry';
+import { kitchenChemistryModuleData, kitchenChemistryLessons } from '@/data/modules/kitchen-chemistry';
 import { createModuleMetadata } from '@/utils/seo';
-import { kitchenChemistryModuleData } from '@/data/kitchen-chemistry-module';
 
 export const metadata: Metadata = createModuleMetadata(
   kitchenChemistryModuleData.title,

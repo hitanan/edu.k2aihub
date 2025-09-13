@@ -4,7 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { healthcareTechLessons, HealthcareTechLesson } from '@/data/healthcare-tech';
+import { healthcareTechLessons } from '@/data/modules/healthcare-tech';
+import type { HealthcareTechLesson } from '@/types/lesson-base';
 
 import { createModuleMetadata } from '@/utils/seo';
 import { Activity, Shield, Database, Heart, Stethoscope } from 'lucide-react';

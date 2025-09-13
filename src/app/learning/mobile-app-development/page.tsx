@@ -1,13 +1,12 @@
-import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { mobileAppDevelopmentLessons } from '@/data/mobile-app-development';
+import { mobileAppDevelopmentModule } from '@/data/modules/mobile-app-development';
 import { createModuleMetadata } from '@/utils/seo';
-import { mobileAppDevelopmentModuleData } from '@/data/mobile-app-development-module';
+import { Metadata } from 'next';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(
-  mobileAppDevelopmentModuleData.title,
-  mobileAppDevelopmentModuleData.description,
+  mobileAppDevelopmentModule.title,
+  mobileAppDevelopmentModule.description,
   [
     'mobile app development',
     'react native',
@@ -19,9 +18,9 @@ export const metadata: Metadata = createModuleMetadata(
     'lập trình mobile',
     'K2AI',
   ],
-  mobileAppDevelopmentModuleData.id,
+  mobileAppDevelopmentModule.id,
 );
 
 export default function MobileAppDevelopmentMainPage() {
-  return <ModulePageTemplate moduleData={mobileAppDevelopmentModuleData} lessons={mobileAppDevelopmentLessons} />;
+  return <ModulePageTemplate moduleData={mobileAppDevelopmentModule} lessons={mobileAppDevelopmentModule.lessons || []} />;
 }

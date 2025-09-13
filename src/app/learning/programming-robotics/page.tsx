@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { ProgrammingRoboticsLessons } from '@/data/programming-robotics';
+import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
 import { createModuleMetadata } from '@/utils/seo';
-import { programmingRoboticsModuleData } from '@/data/programming-robotics-module';
 
 export const metadata: Metadata = createModuleMetadata(
-  programmingRoboticsModuleData.title,
-  programmingRoboticsModuleData.description,
+  programmingRoboticsModule.title,
+  programmingRoboticsModule.description,
   [
     'programming robotics',
     'robot programming',
@@ -16,9 +15,9 @@ export const metadata: Metadata = createModuleMetadata(
     'embedded systems',
     'k2aihub',
   ],
-  programmingRoboticsModuleData.id,
+  programmingRoboticsModule.id,
 );
 
 export default function ProgrammingRoboticsPage() {
-  return <ModulePageTemplate moduleData={programmingRoboticsModuleData} lessons={ProgrammingRoboticsLessons} />;
+  return <ModulePageTemplate moduleData={programmingRoboticsModule} lessons={programmingRoboticsModule.lessons || []} />;
 }

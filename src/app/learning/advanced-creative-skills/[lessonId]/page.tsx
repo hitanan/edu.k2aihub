@@ -4,9 +4,11 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { advancedCreativeLessons, AdvancedCreativeLesson } from '@/data/advanced-creative-skills';
+import { advancedCreativeSkillsModuleData, AdvancedCreativeLesson } from '@/data/modules/advanced-creative-skills';
 
 import { Palette, Camera, Mic, PenTool, Video, Briefcase } from 'lucide-react';
+
+const advancedCreativeLessons = advancedCreativeSkillsModuleData.lessons as AdvancedCreativeLesson[];
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
@@ -74,7 +76,7 @@ export default async function AdvancedCreativeLessonPage({ params }: { params: P
             Software & Tools
           </h3>
           <div className="space-y-2">
-            {lesson.softwareTools?.map((tool, index) => (
+            {lesson.softwareTools?.map((tool: string, index: number) => (
               <div key={index} className="flex items-center">
                 <span className="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
                 <span className="text-pink-100 text-sm">{tool}</span>
@@ -90,7 +92,7 @@ export default async function AdvancedCreativeLessonPage({ params }: { params: P
               Portfolio Requirements
             </h3>
             <ul className="space-y-2">
-              {lesson.portfolioRequirements.map((requirement, index) => (
+              {lesson.portfolioRequirements.map((requirement: string, index: number) => (
                 <li key={index} className="text-purple-100 text-sm flex items-start">
                   <span className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
                   {requirement}
@@ -107,7 +109,7 @@ export default async function AdvancedCreativeLessonPage({ params }: { params: P
               Freelancing Opportunities
             </h3>
             <ul className="space-y-2">
-              {lesson.freelancingOpportunities.map((opportunity, index) => (
+              {lesson.freelancingOpportunities.map((opportunity: string, index: number) => (
                 <li key={index} className="text-green-100 text-sm flex items-start">
                   <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
                   {opportunity}
@@ -124,7 +126,7 @@ export default async function AdvancedCreativeLessonPage({ params }: { params: P
               Vietnamese Creative Industry
             </h3>
             <ul className="space-y-2">
-              {lesson.vietnameseCreativeIndustry.map((insight, index) => (
+              {lesson.vietnameseCreativeIndustry.map((insight: string, index: number) => (
                 <li key={index} className="text-blue-100 text-sm flex items-start">
                   <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
                   {insight}

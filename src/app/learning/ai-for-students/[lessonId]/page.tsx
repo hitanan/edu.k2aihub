@@ -4,9 +4,11 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { AIForStudentsLessons } from '@/data/ai-for-students';
+import { aiForStudentsModuleData } from '@/data/modules/ai-for-students';
 
 import { BaseLessonData } from '@/types/lesson-base';
+
+const AIForStudentsLessons = aiForStudentsModuleData.lessons || [];
 
 export async function generateStaticParams() {
   return generateLessonStaticParams(AIForStudentsLessons);

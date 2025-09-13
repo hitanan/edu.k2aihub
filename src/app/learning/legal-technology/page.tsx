@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { legalTechLessons } from '@/data/legal-technology';
+import { legalTechnologyModuleData, legalTechLessons } from '@/data/modules/legal-technology';
 import { createModuleMetadata } from '@/utils/seo';
-import { legalTechnologyModuleData } from '@/data/legal-technology-module';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(

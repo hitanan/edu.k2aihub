@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { governmentTechnologyLessons } from '@/data/government-technology';
+import { governmentTechnologyLessons } from '@/data/modules/government-technology';
 import { BaseLessonData } from '@/types/lesson-base';
 
 export async function generateStaticParams() {

@@ -4,7 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { legalTechLessons, LegalTechLesson } from '@/data/legal-technology';
+import { legalTechLessons } from '@/data/modules/legal-technology';
+import type { LegalTechLesson } from '@/types/lesson-base';
 import { Scale, FileText, Search, Shield, Copyright } from 'lucide-react';
 
 // Generate static params for all lessons

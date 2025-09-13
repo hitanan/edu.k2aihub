@@ -2,7 +2,10 @@ import { Metadata } from 'next';
 import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 
 import { createLessonMetadata } from '@/utils/seo';
-import { DataScienceLessons, DataScienceLesson } from '@/data/data-science';
+import {
+  lessons as DataScienceLessons,
+  type DataScienceAnalyticsLesson as DataScienceLesson,
+} from '@/data/modules/data-science-analytics';
 
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
   const { lessonId } = await params;

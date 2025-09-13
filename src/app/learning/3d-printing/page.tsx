@@ -1,7 +1,9 @@
 import { K2Module } from '@/data/k2-modules';
 import { createTitle, createDescription } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { threeDPrintingLessons } from '@/data/3d-printing';
+import { threeDPrintingModuleData } from '@/data/modules/3d-printing';
+
+const lessons = threeDPrintingModuleData.lessons || [];
 
 export async function generateMetadata() {
   const title = createTitle('Làm chủ Công nghệ In 3D');
@@ -70,5 +72,5 @@ export default function ThreeDPrintingPage() {
     relatedModules: [K2Module.ArduinoCircuits, K2Module.Robosim, K2Module.SmartManufacturing],
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={threeDPrintingLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={lessons} />;
 }

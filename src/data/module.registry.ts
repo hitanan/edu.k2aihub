@@ -65,18 +65,19 @@ import { dataDrivenAnalyticsModuleData } from '@/data/modules/data-driven-analyt
 import { dataScienceAnalyticsModuleData } from '@/data/modules/data-science-analytics';
 import { criticalThinkingModuleData } from '@/data/modules/critical-thinking';
 import { digitalCitizenshipOnlineSafetyModuleData } from '@/data/modules/digital-citizenship-online-safety';
-import { energyManagementSmartGridModuleData } from '@/data/modules/energy-management';
+import { energyManagementModule } from '@/data/modules/energy-management';
+import { mentalHealthTechModule } from '@/data/modules/mental-health-tech';
+import { nanotechnologyModule } from '@/data/modules/nanotechnology';
+import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
+import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
+import quantumComputingModule from '@/data/modules/quantum-computing';
 
 // Group 2: Modules exporting a `...Lessons` array directly
-import { aiMachineLearningLessons } from '@/data/ai-machine-learning';
-import { quantumComputingLessons } from '@/data/quantum-computing';
+import { aiMachineLearningLessons } from '@/data/modules/ai-machine-learning';
 import { DataScienceLessons } from '@/data/data-science';
 import { spaceLessons } from '@/data/space-exploration';
-import { ProgrammingRoboticsLessons } from '@/data/programming-robotics';
 import { smartManufacturingLessons } from '@/data/smart-manufacturing';
 import { aerospaceEngineeringLessons } from '@/data/aerospace-engineering';
-import { nanotechnologyLessons } from '@/data/nanotechnology';
-import { mentalHealthLessons } from '@/data/mental-health-tech';
 import { advancedAILessons } from '@/data/advanced-ai';
 import { vietnameseCultureLessons } from '@/data/vietnamese-culture';
 import { aiContentCreatorLessons } from '@/data/ai-content-creator';
@@ -84,9 +85,9 @@ import { tiktokSocialCommerceLessons } from '@/data/tiktok-social-commerce';
 import { genZMarketingLessons } from '@/data/genz-marketing';
 import { shortVideoMasteryLessons } from '@/data/short-video-mastery';
 import { liveCommerceLessons } from '@/data/live-commerce-streaming';
-import { microInfluencerEconomyLessons } from '@/data/micro-influencer-economy';
+import { microInfluencerEconomyModule } from '@/data/modules/micro-influencer-economy';
 import { socialListeningLessons } from '@/data/social-listening-crisis';
-import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
+import { ethicalMarketingPurposeModule } from '@/data/modules/ethical-marketing-purpose';
 
 // --- Consolidate all modules into a single array ---
 
@@ -119,19 +120,22 @@ const modulesWithFullData: ModuleData[] = [
   dataScienceAnalyticsModuleData,
   criticalThinkingModuleData,
   digitalCitizenshipOnlineSafetyModuleData,
-  energyManagementSmartGridModuleData,
+  energyManagementModule,
+  quantumComputingModule,
+  realEstateTechnologyModuleData,
+  programmingRoboticsModule,
+  nanotechnologyModule,
+  mentalHealthTechModule,
+  microInfluencerEconomyModule,
+  ethicalMarketingPurposeModule,
 ];
 
 const modulesFromLessons: ModuleData[] = [
   createModuleDataFromLessons('ai-machine-learning', 'AI & Machine Learning', aiMachineLearningLessons),
-  createModuleDataFromLessons('quantum-computing', 'Quantum Computing', quantumComputingLessons),
   createModuleDataFromLessons('data-science', 'Data Science', DataScienceLessons),
   createModuleDataFromLessons('space-exploration', 'Space Exploration', spaceLessons),
-  createModuleDataFromLessons('programming-robotics', 'Programming Robotics', ProgrammingRoboticsLessons),
   createModuleDataFromLessons('smart-manufacturing', 'Smart Manufacturing', smartManufacturingLessons),
   createModuleDataFromLessons('aerospace-engineering', 'Aerospace Engineering', aerospaceEngineeringLessons),
-  createModuleDataFromLessons('nanotechnology', 'Nanotechnology', nanotechnologyLessons),
-  createModuleDataFromLessons('mental-health-tech', 'Mental Health Tech', mentalHealthLessons),
   createModuleDataFromLessons('advanced-ai', 'Advanced AI', advancedAILessons),
   createModuleDataFromLessons('vietnamese-culture', 'Vietnamese Culture', vietnameseCultureLessons),
   createModuleDataFromLessons('ai-content-creator', 'AI Content Creator', aiContentCreatorLessons),
@@ -139,9 +143,7 @@ const modulesFromLessons: ModuleData[] = [
   createModuleDataFromLessons('genz-marketing', 'GenZ Marketing', genZMarketingLessons),
   createModuleDataFromLessons('short-video-mastery', 'Short Video Mastery', shortVideoMasteryLessons),
   createModuleDataFromLessons('live-commerce-streaming', 'Live Commerce Streaming', liveCommerceLessons),
-  createModuleDataFromLessons('micro-influencer-economy', 'Micro-Influencer Economy', microInfluencerEconomyLessons),
   createModuleDataFromLessons('social-listening-crisis', 'Social Listening & Crisis', socialListeningLessons),
-  createModuleDataFromLessons('ethical-marketing-purpose', 'Ethical Marketing & Purpose', ethicalMarketingLessons),
 ];
 
 export const allModules: ModuleData[] = [...modulesWithFullData, ...modulesFromLessons];

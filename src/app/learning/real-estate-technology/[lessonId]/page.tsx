@@ -4,22 +4,20 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { realEstateTechnologyLessons, RealEstateTechLesson } from '@/data/real-estate-technology';
+import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
+import { RealEstateTechLesson } from '@/types/lesson-base';
 import { TrendingUp } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(realEstateTechnologyLessons);
+  return generateLessonStaticParams(realEstateTechnologyModuleData.lessons || []);
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params;
-  if (!lessonId) {
-    return {};
-  }
-  return generateLessonMetadata(lessonId, realEstateTechnologyLessons, 'real-estate-technology');
+export async function generateMetadata({ params }: { params: { lessonId: string } }) {
+  const { lessonId } = params;
+  return generateLessonMetadata(lessonId, realEstateTechnologyModuleData.lessons || [], 'real-estate-technology');
 }
 
 // Custom sidebar content for Real Estate Technology lessons
@@ -34,7 +32,7 @@ function RealEstateTechSidebar({ lesson }: { lesson: RealEstateTechLesson }) {
             <span className="font-semibold text-green-900">Measurable ROI</span>
           </div>
           <ul className="space-y-2">
-            {lesson.measurableROI.map((roi, index) => (
+            {lesson.measurableROI.map((roi: { metric: string; description: string }, index: number) => (
               <li key={index} className="text-sm text-green-700 flex items-start gap-2">
                 <span className="text-green-500 mt-1">💰</span>
                 <span>
@@ -50,8 +48,8 @@ function RealEstateTechSidebar({ lesson }: { lesson: RealEstateTechLesson }) {
 }
 
 // Page component with standardized config
-export default async function RealEstateTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params;
+export default async function RealEstateTechnologyLessonPage({ params }: { params: { lessonId: string } }) {
+  const { lessonId } = params;
   if (!lessonId) {
     notFound();
   }
@@ -60,7 +58,7 @@ export default async function RealEstateTechnologyLessonPage({ params }: { param
     moduleName: 'real-estate-technology',
     moduleTitle: 'Công Nghệ Bất Động Sản',
     modulePath: '/learning/real-estate-technology',
-    lessons: realEstateTechnologyLessons,
+    lessons: realEstateTechnologyModuleData.lessons || [],
     primaryColor: 'blue',
     secondaryColor: 'indigo',
     gradientColors: 'from-slate-900 via-blue-900 to-slate-900',

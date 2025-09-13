@@ -1,42 +1,43 @@
-import {
-  LessonPageTemplate,
-  generateLessonMetadata,
-  generateLessonStaticParams,
-} from '@/components/learning/LessonPageTemplate';
-import { professionalSoftSkillsLessons } from '@/data/professional-soft-skills';
+import { LessonPageTemplate, LessonPageTemplateProps } from '@/components/learning/LessonPageTemplate';
+import { professionalSoftSkillsModule } from '@/data/modules/professional-soft-skills';
+import { ProfessionalSoftSkillsLesson } from '@/types/lesson-base';
+import { createLessonMetadata } from '@/utils/seo';
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
-  return generateLessonStaticParams(professionalSoftSkillsLessons);
+interface ProfessionalSoftSkillsLessonPageProps {
+  params: { lessonId: string };
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
-  const { lessonId } = await params;
-  if (!lessonId) {
+export async function generateMetadata({ params }: ProfessionalSoftSkillsLessonPageProps): Promise<Metadata> {
+  const lesson = professionalSoftSkillsModule.lessons?.find(l => l.id === params.lessonId);
+  if (!lesson) {
     return {};
   }
-  return generateLessonMetadata(lessonId, professionalSoftSkillsLessons, 'professional-soft-skills');
+  return createLessonMetadata(
+    lesson.title,
+    lesson.description,
+    professionalSoftSkillsModule.id,
+    lesson.id,
+    lesson.objectives
+  );
 }
 
-export default async function ProfessionalSoftSkillsLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params;
-  if (!lessonId) {
-    notFound();
-  }
+export default async function ProfessionalSoftSkillsLessonPage({ params }: ProfessionalSoftSkillsLessonPageProps) {
+  const config: LessonPageTemplateProps<ProfessionalSoftSkillsLesson>['config'] = {
+    moduleName: professionalSoftSkillsModule.id,
+    moduleTitle: professionalSoftSkillsModule.title,
+    modulePath: `/learning/${professionalSoftSkillsModule.id}`,
+    lessons: professionalSoftSkillsModule.lessons || [],
+    primaryColor: professionalSoftSkillsModule.primaryColor || '#000000',
+    secondaryColor: professionalSoftSkillsModule.primaryColor || '#FFFFFF', // Fallback
+    gradientColors: professionalSoftSkillsModule.gradientColors || 'from-gray-700 to-gray-900',
+  };
 
-  return (
-    <LessonPageTemplate
-      lessonId={lessonId}
-      config={{
-        moduleName: 'professional-soft-skills',
-        moduleTitle: 'Kỹ Năng Mềm Chuyên Nghiệp',
-        modulePath: '/learning/professional-soft-skills',
-        lessons: professionalSoftSkillsLessons,
-        primaryColor: 'sky',
-        secondaryColor: 'indigo',
-        gradientColors: 'from-sky-900 via-indigo-900 to-slate-900',
-      }}
-    />
-  );
+  return <LessonPageTemplate lessonId={params.lessonId} config={config} />;
+}
+
+export async function generateStaticParams() {
+  return (professionalSoftSkillsModule.lessons || []).map(lesson => ({
+    lessonId: lesson.id,
+  }));
 }

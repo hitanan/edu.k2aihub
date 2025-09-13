@@ -5,7 +5,9 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { BaseLessonData } from '@/types/lesson-base';
-import { arduinoCircuitsLessons } from '@/data/arduino-circuits';
+import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
+
+const arduinoCircuitsLessons = arduinoCircuitsModuleData.lessons || [];
 
 // Generate static params for all lessons
 export async function generateStaticParams() {

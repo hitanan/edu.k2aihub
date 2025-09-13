@@ -1,5 +1,5 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { AIForStudentsLessons } from '@/data/ai-for-students';
+import { aiForStudentsModuleData } from '@/data/modules/ai-for-students';
 import { createTitle, createDescription } from '@/utils/seo';
 
 export async function generateMetadata() {
@@ -61,5 +61,5 @@ export default function AIForStudentsPage() {
     relatedModules: ['digital-citizenship-online-safety', 'critical-thinking', 'future-careers-ai'],
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={AIForStudentsLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={aiForStudentsModuleData.lessons || []} />;
 }

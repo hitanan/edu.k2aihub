@@ -1,16 +1,15 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { minecraftLessons } from '@/data/minecraft-edu';
+import { minecraftEduModule } from '@/data/modules/minecraft-edu';
 import { createModuleMetadata } from '@/utils/seo';
-import { minecraftEduModuleData } from '@/data/minecraft-edu-module';
 
 export const metadata: Metadata = createModuleMetadata(
-  minecraftEduModuleData.title,
-  minecraftEduModuleData.description,
+  minecraftEduModule.title,
+  minecraftEduModule.description,
   ['minecraft', 'minecraft education', 'lập trình khối', 'hóa học', 'stem', 'K2AI'],
-  minecraftEduModuleData.id,
+  minecraftEduModule.id,
 );
 
 export default function MinecraftEduPage() {
-  return <ModulePageTemplate moduleData={minecraftEduModuleData} lessons={minecraftLessons} />;
+  return <ModulePageTemplate moduleData={minecraftEduModule} lessons={minecraftEduModule.lessons || []} />;
 }

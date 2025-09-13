@@ -38,10 +38,7 @@ export * from '@/data/modules/education-learning';
 export * from '@/data/modules/education-technology';
 export * from '@/data/modules/electric-vehicle-tech';
 export * from '@/data/modules/energy-management-smart-grid';
-export {
-  energyManagementSmartGridModuleData as energyManagementModuleData,
-  energyManagementLessons,
-} from '@/data/modules/energy-management';
+export { energyManagementModule as energyManagementModuleData } from '@/data/modules/energy-management';
 export * from '@/data/modules/environmental-data-science';
 export * from '@/data/modules/environmental-science-climate';
 export * from '@/data/modules/financial-literacy';

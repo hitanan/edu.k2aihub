@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { genZMarketingLessons } from '@/data/genz-marketing';
+import { genZMarketingModuleData, genZMarketingLessons } from '@/data/modules/genz-marketing';
 import { createModuleMetadata } from '@/utils/seo';
-import { genZMarketingModuleData } from '@/data/genz-marketing-module';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(

@@ -1,16 +1,15 @@
 import type { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { nanotechnologyLessons } from '@/data/nanotechnology';
-import { nanotechnologyModuleData } from '@/data/nanotechnology-module';
+import { nanotechnologyModule } from '@/data/modules/nanotechnology';
 
 export const metadata: Metadata = createModuleMetadata(
-  nanotechnologyModuleData.title,
-  nanotechnologyModuleData.description,
+  nanotechnologyModule.title,
+  nanotechnologyModule.description,
   ['công nghệ nano', 'vật liệu tiên tiến', 'nanomedicine', 'quantum devices', 'nanotechnology vietnam', 'K2AI'],
-  nanotechnologyModuleData.id,
+  nanotechnologyModule.id,
 );
 
 export default function NanotechnologyPage() {
-  return <ModulePageTemplate moduleData={nanotechnologyModuleData} lessons={nanotechnologyLessons} />;
+  return <ModulePageTemplate moduleData={nanotechnologyModule} lessons={nanotechnologyModule.lessons || []} />;
 }

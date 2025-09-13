@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { ModuleData } from '@/types';
-import { aiMachineLearningLessons } from '@/data/ai-machine-learning';
+import { aiMachineLearningModuleData } from '@/data/modules/ai-machine-learning';
 import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
 
@@ -52,7 +52,7 @@ export default function AIMachineLearningPage() {
     icon: '🤖',
     color: 'from-purple-600 to-indigo-600',
     statsConfig: {
-      lessons: `${aiMachineLearningLessons.length}+ bài`,
+      lessons: `${(aiMachineLearningModuleData.lessons || []).length}+ bài`,
       duration: '25-35 giờ',
       level: 'Trung bình đến Nâng cao',
       projects: '15+ AI projects',
@@ -144,5 +144,5 @@ export default function AIMachineLearningPage() {
     },
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={aiMachineLearningLessons} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={aiMachineLearningModuleData.lessons || []} />;
 }

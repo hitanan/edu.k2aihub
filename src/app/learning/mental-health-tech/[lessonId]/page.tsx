@@ -4,13 +4,13 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { mentalHealthLessons, MentalHealthLessonType } from '@/data/mental-health-tech';
+import { mentalHealthTechModule, type MentalHealthLesson } from '@/data/modules/mental-health-tech';
 import { BrainCircuit } from 'lucide-react';
 import { createModuleMetadata } from '@/utils/seo';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(mentalHealthLessons);
+  return generateLessonStaticParams(mentalHealthTechModule.lessons as MentalHealthLesson[]);
 }
 
 // Generate metadata for each lesson
@@ -24,16 +24,16 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
       'mental-health-tech',
     );
   }
-  return generateLessonMetadata(lessonId, mentalHealthLessons, 'mental-health-tech');
+  return generateLessonMetadata(lessonId, mentalHealthTechModule.lessons as MentalHealthLesson[], 'mental-health-tech');
 }
 
 // Page component with standardized config
 export default async function MentalHealthTechLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
-  const config: LessonPageConfig<MentalHealthLessonType> = {
+  const config: LessonPageConfig<MentalHealthLesson> = {
     moduleName: 'mental-health-tech',
     moduleTitle: 'Mental Health & Technology',
     modulePath: '/learning/mental-health-tech',
-    lessons: mentalHealthLessons,
+    lessons: mentalHealthTechModule.lessons as MentalHealthLesson[],
     primaryColor: 'emerald',
     secondaryColor: 'teal',
     gradientColors: 'from-slate-900 via-emerald-900 to-slate-900',

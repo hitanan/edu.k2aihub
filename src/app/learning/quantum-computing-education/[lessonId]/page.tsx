@@ -1,44 +1,40 @@
-import {
-  LessonPageTemplate,
-  generateLessonMetadata,
-  generateLessonStaticParams,
-  LessonPageConfig,
-} from '@/components/learning/LessonPageTemplate';
-import { quantumComputingLessons, QuantumComputingLessonType } from '@/data/quantum-computing-education';
-import { Zap, Atom, TrendingUp } from 'lucide-react';
-import { notFound } from 'next/navigation';
+import { LessonPageTemplate, LessonPageTemplateProps } from '@/components/learning/LessonPageTemplate';
+import { quantumComputingEducationModule } from '@/data/modules/quantum-computing-education';
+import { QuantumComputingEducationLesson } from '@/types/lesson-base';
+import { createLessonMetadata } from '@/utils/seo';
+import { Metadata } from 'next';
+import { Atom, TrendingUp, Zap } from 'lucide-react';
+import { ReactNode } from 'react';
 
-// Generate static params for all lessons
-export async function generateStaticParams() {
-  return generateLessonStaticParams(quantumComputingLessons);
+interface QuantumComputingLessonPageProps {
+  params: { lessonId: string };
 }
 
-// Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params;
-  if (!lessonId) {
+export async function generateMetadata({ params }: QuantumComputingLessonPageProps): Promise<Metadata> {
+  const lesson = quantumComputingEducationModule.lessons?.find(l => l.id === params.lessonId);
+  if (!lesson) {
     return {};
   }
-  return generateLessonMetadata(lessonId, quantumComputingLessons, 'quantum-computing-education');
+  return createLessonMetadata(
+    lesson.title,
+    lesson.description,
+    quantumComputingEducationModule.id,
+    lesson.id,
+    lesson.objectives
+  );
 }
 
-// Page component with quantum computing-specific configuration
-export default async function QuantumComputingLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params;
-  if (!lessonId) {
-    notFound();
-  }
-  const config: LessonPageConfig<QuantumComputingLessonType> = {
-    moduleName: 'quantum-computing-education',
-    moduleTitle: 'Quantum Computing Education',
-    modulePath: '/learning/quantum-computing-education',
-    lessons: quantumComputingLessons,
-    primaryColor: 'purple',
-    secondaryColor: 'indigo',
-    gradientColors: 'from-slate-900 via-purple-900 to-slate-900',
-    getFieldValue: (lesson) => `Concepts: ${lesson.objectives.length}`, // Example, can be more specific
-    getFieldIcon: (field: string) => {
-      // This is now less critical as getFieldValue is simple, but kept for structure
+export default async function QuantumComputingLessonPage({ params }: QuantumComputingLessonPageProps) {
+  const config: LessonPageTemplateProps<QuantumComputingEducationLesson>['config'] = {
+    moduleName: quantumComputingEducationModule.id,
+    moduleTitle: quantumComputingEducationModule.title,
+    modulePath: `/learning/${quantumComputingEducationModule.id}`,
+    lessons: quantumComputingEducationModule.lessons || [],
+    primaryColor: quantumComputingEducationModule.primaryColor || '#A855F7',
+    secondaryColor: quantumComputingEducationModule.primaryColor || '#A855F7', // Fallback
+    gradientColors: quantumComputingEducationModule.gradientColors || 'from-purple-600 to-violet-700',
+    getFieldValue: (lesson) => `Concepts: ${lesson.objectives.length}`,
+    getFieldIcon: (field: string): ReactNode => {
       switch (field) {
         case 'quantumConcepts':
           return <Atom className="w-5 h-5" />;
@@ -50,7 +46,6 @@ export default async function QuantumComputingLessonPage({ params }: { params: P
     },
     sidebarContent: (lesson) => (
       <div className="space-y-6">
-        {/* Quizzes */}
         {lesson.quizzes && lesson.quizzes.length > 0 && (
           <div>
             <h4 className="font-semibold text-purple-300 mb-3 flex items-center">
@@ -67,8 +62,6 @@ export default async function QuantumComputingLessonPage({ params }: { params: P
             </div>
           </div>
         )}
-
-        {/* Career Connect */}
         {lesson.careerConnect && (
           <div>
             <h4 className="font-semibold text-emerald-300 mb-3 flex items-center">
@@ -86,5 +79,11 @@ export default async function QuantumComputingLessonPage({ params }: { params: P
     ),
   };
 
-  return <LessonPageTemplate lessonId={lessonId} config={config} />;
+  return <LessonPageTemplate lessonId={params.lessonId} config={config} />;
+}
+
+export async function generateStaticParams() {
+  return (quantumComputingEducationModule.lessons || []).map(lesson => ({
+    lessonId: lesson.id,
+  }));
 }

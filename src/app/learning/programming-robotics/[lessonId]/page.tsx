@@ -1,58 +1,30 @@
-import {
-  LessonPageTemplate,
-  generateLessonMetadata,
-  generateLessonStaticParams,
-  LessonPageConfig,
-} from '@/components/learning/LessonPageTemplate';
-import { ProgrammingRoboticsLessons, type ProgrammingRoboticsLessonData } from '@/data/programming-robotics';
-import { BaseLessonData } from '@/types/lesson-base';
+import { LessonPageTemplate, LessonPageTemplateProps } from '@/components/learning/LessonPageTemplate';
+import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
+import { ProgrammingRoboticsLesson } from '@/types/lesson-base';
+import { createLessonMetadata } from '@/utils/seo';
+import { Metadata } from 'next';
 import { Bot, Code, Cpu, Zap } from 'lucide-react';
+import { ReactNode } from 'react';
 
-// Convert ProgrammingRoboticsLessonData to BaseLessonData
-function convertToBaseLessonData(lesson: ProgrammingRoboticsLessonData): BaseLessonData {
-  return {
-    id: lesson.id,
-    title: lesson.title,
-    description: lesson.description,
-    duration: lesson.duration,
-    difficulty: lesson.difficulty,
-    videoUrl: lesson.videoUrl,
-    imageUrl: lesson.imageUrl,
-    objectives: lesson.objectives,
-    prerequisites: lesson.prerequisites,
-    exercises: lesson.exercises,
-    realWorldApplications: lesson.realWorldApplications,
-    caseStudies: lesson.caseStudies?.map((study) => ({
-      title: study.title,
-      organization: study.organization,
-      problem: study.problem,
-      solution: study.solution,
-      impact: study.impact,
-      innovations: study.innovations || [],
-    })),
-    resources: lesson.resources,
-  };
+interface ProgrammingRoboticsLessonPageProps {
+  params: { lessonId: string };
 }
 
-// Convert lessons to BaseLessonData format
-const convertedLessons = ProgrammingRoboticsLessons.map(convertToBaseLessonData);
-
-// Generate static params for all lessons
-export async function generateStaticParams() {
-  return generateLessonStaticParams(convertedLessons);
-}
-
-// Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params;
-  if (!lessonId) {
+export async function generateMetadata({ params }: ProgrammingRoboticsLessonPageProps): Promise<Metadata> {
+  const lesson = programmingRoboticsModule.lessons?.find((l) => l.id === params.lessonId);
+  if (!lesson) {
     return {};
   }
-  return generateLessonMetadata(lessonId, convertedLessons, 'programming-robotics');
+  return createLessonMetadata(
+    lesson.title,
+    lesson.description,
+    programmingRoboticsModule.id,
+    lesson.id,
+    lesson.objectives
+  );
 }
 
-// Icon mapping function for programming robotics fields
-function getRoboticsIcon(field: string) {
+function getRoboticsIcon(field: string): ReactNode {
   const iconMap: Record<string, React.ReactNode> = {
     robotics: <Bot className="w-5 h-5" />,
     programming: <Code className="w-5 h-5" />,
@@ -62,19 +34,24 @@ function getRoboticsIcon(field: string) {
   return iconMap[field] || <Bot className="w-5 h-5" />;
 }
 
-// Page component with standardized config
-export default async function ProgrammingRoboticsLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params;
-  const config: LessonPageConfig<BaseLessonData> = {
-    moduleName: 'programming-robotics',
-    moduleTitle: 'Programming & Robotics',
-    modulePath: '/learning/programming-robotics',
-    lessons: convertedLessons,
-    primaryColor: 'blue',
-    secondaryColor: 'cyan',
-    gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
+export default async function ProgrammingRoboticsLessonPage({ params }: ProgrammingRoboticsLessonPageProps) {
+  const config: LessonPageTemplateProps<ProgrammingRoboticsLesson>['config'] = {
+    moduleName: programmingRoboticsModule.id,
+    moduleTitle: programmingRoboticsModule.title,
+    modulePath: `/learning/${programmingRoboticsModule.id}`,
+    lessons: programmingRoboticsModule.lessons || [],
+    primaryColor: programmingRoboticsModule.primaryColor || '#2563eb',
+    secondaryColor: programmingRoboticsModule.primaryColor || '#06b6d4',
+    gradientColors: programmingRoboticsModule.gradientColors || 'from-slate-900 via-blue-900 to-slate-900',
     getFieldIcon: (field: string) => getRoboticsIcon(field),
+    getFieldValue: (lesson) => lesson.programmingLanguages?.[0] || 'Robotics',
   };
 
-  return <LessonPageTemplate lessonId={lessonId} config={config} />;
+  return <LessonPageTemplate lessonId={params.lessonId} config={config} />;
+}
+
+export async function generateStaticParams() {
+  return (programmingRoboticsModule.lessons || []).map((lesson) => ({
+    lessonId: lesson.id,
+  }));
 }

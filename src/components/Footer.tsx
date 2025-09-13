@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
         modules: coreModules.map((module) => ({
           name: module.title,
           href: module.href || '/',
-          icon: module.icon,
+          icon: module.icon || '📚',
         })),
       };
     }
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
           categoryMap[key].modules.push({
             name: module.title,
             href: isModuleData(module) ? `/learning/${module.id}` : (module as ModuleNavigation).href || '#',
-            icon: module.icon,
+            icon: module.icon || '📚',
           });
         });
       }

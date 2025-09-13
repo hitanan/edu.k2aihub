@@ -3,15 +3,17 @@ import {
   generateLessonMetadata,
   generateLessonStaticParams,
 } from '@/components/learning/LessonPageTemplate';
-import { ethicalMarketingLessons } from '@/data/ethical-marketing-purpose';
+import { ethicalMarketingPurposeModule } from '@/data/modules/ethical-marketing-purpose';
 
 import { LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
 
+const lessons = ethicalMarketingPurposeModule.lessons || [];
+
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(ethicalMarketingLessons);
+  return generateLessonStaticParams(lessons);
 }
 
 // Generate metadata for each lesson
@@ -20,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
   if (!lessonId) {
     notFound();
   }
-  return generateLessonMetadata(lessonId, ethicalMarketingLessons, 'ethical-marketing-purpose');
+  return generateLessonMetadata(lessonId, lessons, 'ethical-marketing-purpose');
 }
 
 // Page component with standardized config
@@ -34,7 +36,7 @@ export default async function EthicalMarketingLessonPage({ params }: { params: P
     moduleName: 'ethical-marketing-purpose',
     moduleTitle: 'Ethical Marketing & Purpose-Driven Brands',
     modulePath: '/learning/ethical-marketing-purpose',
-    lessons: ethicalMarketingLessons,
+    lessons: lessons,
     primaryColor: 'green',
     secondaryColor: 'emerald',
     gradientColors: 'from-slate-900 via-green-900 to-emerald-900',
