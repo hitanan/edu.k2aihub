@@ -140,7 +140,7 @@ export interface EducationalGame {
 
 export type PageProps = {
   params: Promise<{ lessonId: string }>;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export interface ModuleNavigation {

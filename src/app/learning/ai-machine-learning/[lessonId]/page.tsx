@@ -1,44 +1,34 @@
-import {
-  LessonPageTemplate,
-  generateLessonMetadata,
-  generateLessonStaticParams,
-  LessonPageConfig,
-} from '@/components/learning/LessonPageTemplate';
-import { aiMachineLearningModuleData } from '@/data/modules/ai-machine-learning';
+import { LessonPageTemplate, generateLessonMetadata, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
+import { aiMachineLearningModuleData, aiMachineLearningLessons } from '@/data/modules/ai-machine-learning';
+import { PageProps } from '@/types';
+import { Metadata } from 'next';
 import { Brain } from 'lucide-react';
-
 import { BaseLessonData } from '@/types/lesson-base';
 
-const aiMachineLearningLessons = aiMachineLearningModuleData.lessons || [];
-
 // Generate static params for all lessons
-export async function generateStaticParams() {
-  return generateLessonStaticParams(aiMachineLearningLessons);
+export function generateStaticParams() {
+  return (aiMachineLearningLessons || []).map((lesson) => ({
+    lessonId: lesson.id,
+  }));
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lessonId } = await params;
-  if (!lessonId) {
-    return {
-      title: 'Lesson not found',
-      description: 'The requested lesson could not be found.',
-    };
-  }
   return generateLessonMetadata(lessonId, aiMachineLearningLessons, 'ai-machine-learning');
 }
 
 // Page component with standardized config
-export default async function AIMachineLearningLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+export default async function AIMachineLearningLessonPage({ params }: PageProps) {
   const { lessonId } = await params;
   if (!lessonId) {
     return null;
   }
 
   const config: LessonPageConfig<BaseLessonData & { algorithmTypes?: string[] }> = {
-    moduleName: 'ai-machine-learning',
-    moduleTitle: 'AI & Machine Learning',
-    modulePath: '/learning/ai-machine-learning',
+    moduleName: aiMachineLearningModuleData.id,
+    moduleTitle: aiMachineLearningModuleData.title,
+    modulePath: aiMachineLearningModuleData.href || '',
     lessons: aiMachineLearningLessons,
     primaryColor: 'purple', // Primary theme color
     secondaryColor: 'indigo', // Secondary theme color

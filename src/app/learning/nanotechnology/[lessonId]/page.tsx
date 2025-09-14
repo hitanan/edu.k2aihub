@@ -1,3 +1,4 @@
+import { PageProps } from '@/types';
 import {
   LessonPageTemplate,
   generateLessonMetadata,
@@ -8,11 +9,7 @@ import { nanotechnologyLessons } from '@/data/modules/nanotechnology';
 import { NanotechnologyLesson } from '@/types/lesson-base';
 import { Metadata } from 'next';
 
-type PageProps = {
-  params: Promise<{ lessonId: string }>;
-};
-
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return generateLessonStaticParams(nanotechnologyLessons);
 }
 

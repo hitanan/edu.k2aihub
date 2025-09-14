@@ -5,6 +5,7 @@ import {
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
 import { mobileAppDevelopmentLessons } from '@/data/modules/mobile-app-development';
+import { PageProps } from '@/types';
 import { MobileAppDevelopmentLesson } from '@/types/lesson-base';
 import { Metadata } from 'next';
 
@@ -16,19 +17,15 @@ export function generateStaticParams() {
 // Generate metadata for each lesson
 export async function generateMetadata({
   params,
-}: {
-  params: { lessonId: string };
-}): Promise<Metadata> {
-  const { lessonId } = params;
+}: PageProps): Promise<Metadata> {
+  const { lessonId } = await params;
   return generateLessonMetadata(lessonId, mobileAppDevelopmentLessons, 'mobile-app-development');
 }
 
 // Page component with standardized config
-export default function MobileAppDevelopmentLessonPage({
+export default async function MobileAppDevelopmentLessonPage({
   params,
-}: {
-  params: { lessonId: string };
-}) {
+}: PageProps) {
   const config: LessonPageConfig<MobileAppDevelopmentLesson> = {
     moduleName: 'mobile-app-development',
     moduleTitle: 'Phát triển Ứng dụng Di động',
@@ -38,6 +35,6 @@ export default function MobileAppDevelopmentLessonPage({
     secondaryColor: 'sky',
     gradientColors: 'from-blue-900 via-sky-900 to-blue-900',
   };
-  const { lessonId } = params;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

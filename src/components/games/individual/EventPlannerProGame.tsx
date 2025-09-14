@@ -53,6 +53,7 @@ const EventPlannerProGame: React.FC<EventPlannerProGameProps> = ({ onComplete, t
   });
   const [tasks, setTasks] = useState<Task[]>([]);
   const [selectedTasks, setSelectedTasks] = useState<Task[]>([]);
+  const [eventProgress, setEventProgress] = useState(0);
 
   const [events, setEvents] = useState<Event[]>([
     {

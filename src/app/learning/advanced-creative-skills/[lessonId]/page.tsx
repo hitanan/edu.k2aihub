@@ -1,29 +1,27 @@
-import { Metadata } from 'next';
+import { PageProps } from '@/types';
 import {
   LessonPageTemplate,
   generateLessonMetadata,
-  generateLessonStaticParams,
   LessonPageConfig,
+  generateLessonStaticParams,
 } from '@/components/learning/LessonPageTemplate';
-import { advancedCreativeSkillsModuleData, AdvancedCreativeLesson } from '@/data/modules/advanced-creative-skills';
-
+import { advancedCreativeLessons, AdvancedCreativeLesson } from '@/data/modules/advanced-creative-skills';
+import { Metadata } from 'next';
 import { Palette, Camera, Mic, PenTool, Video, Briefcase } from 'lucide-react';
 
-const advancedCreativeLessons = advancedCreativeSkillsModuleData.lessons as AdvancedCreativeLesson[];
-
 // Generate static params for all lessons
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return generateLessonStaticParams(advancedCreativeLessons);
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: { lessonId: string } }): Promise<Metadata> {
-  const { lessonId } = params;
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lessonId } = await params;
   return generateLessonMetadata(lessonId, advancedCreativeLessons, 'advanced-creative-skills');
 }
 
 // Page component with advanced creative skills-specific configuration
-export default function AdvancedCreativeLessonPage({ params }: { params: { lessonId: string } }) {
+export default async function AdvancedCreativeLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<AdvancedCreativeLesson> = {
     moduleName: 'advanced-creative-skills',
     moduleTitle: 'Advanced Creative Skills',
@@ -140,6 +138,6 @@ export default function AdvancedCreativeLessonPage({ params }: { params: { lesso
     ),
   };
 
-  const { lessonId } = params;
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -1,39 +1,32 @@
 import {
   LessonPageTemplate,
   generateLessonMetadata,
-  generateLessonStaticParams,
   LessonPageConfig,
+  generateLessonStaticParams,
 } from '@/components/learning/LessonPageTemplate';
-import { aiForStudentsModuleData } from '@/data/modules/ai-for-students';
-
+import { aiForStudentsModuleData, AIForStudentsLessons } from '@/data/modules/ai-for-students';
+import { PageProps } from '@/types';
+import { Metadata } from 'next';
 import { BaseLessonData } from '@/types/lesson-base';
 
-const AIForStudentsLessons = aiForStudentsModuleData.lessons || [];
-
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return generateLessonStaticParams(AIForStudentsLessons);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lessonId } = await params;
-  if (!lessonId) {
-    return {
-      title: 'Lesson not found',
-      description: 'The requested lesson could not be found.',
-    };
-  }
   return generateLessonMetadata(lessonId, AIForStudentsLessons, 'ai-for-students');
 }
 
-export default async function AIForStudentsLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+export default async function AIForStudentsLessonPage({ params }: PageProps) {
   const { lessonId } = await params;
   if (!lessonId) {
     return null;
   }
   const config: LessonPageConfig<BaseLessonData> = {
-    moduleName: 'ai-for-students',
-    moduleTitle: 'AI cho Học sinh',
-    modulePath: '/learning/ai-for-students',
+    moduleName: aiForStudentsModuleData.id,
+    moduleTitle: aiForStudentsModuleData.title,
+    modulePath: aiForStudentsModuleData.href || '',
     lessons: AIForStudentsLessons,
     primaryColor: 'blue',
     secondaryColor: 'indigo',

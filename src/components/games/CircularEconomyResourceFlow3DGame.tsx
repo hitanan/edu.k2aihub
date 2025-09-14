@@ -46,6 +46,7 @@ const CircularEconomyResourceFlow3DGame: React.FC<CircularEconomyResourceFlow3DG
   const [zoom, setZoom] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
   const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   // Game data
   const [resources, setResources] = useState<Resource[]>([

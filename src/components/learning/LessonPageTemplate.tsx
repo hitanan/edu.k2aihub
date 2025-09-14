@@ -75,6 +75,9 @@ export function generateLessonMetadata<T extends BaseLessonData>(
 }
 
 export function generateLessonStaticParams<T extends BaseLessonData>(lessons: T[]) {
+  if (!lessons) {
+    return [];
+  }
   return lessons.map((lesson) => ({
     lessonId: lesson.id,
   }));

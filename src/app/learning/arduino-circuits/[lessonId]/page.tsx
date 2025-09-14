@@ -1,41 +1,33 @@
-import {
-  LessonPageTemplate,
-  generateLessonMetadata,
-  generateLessonStaticParams,
-  LessonPageConfig,
-} from '@/components/learning/LessonPageTemplate';
+import { LessonPageTemplate, generateLessonMetadata, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
 import { BaseLessonData } from '@/types/lesson-base';
-import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
-
-const arduinoCircuitsLessons = arduinoCircuitsModuleData.lessons || [];
+import { arduinoCircuitsModuleData, arduinoCircuitsLessons } from '@/data/modules/arduino-circuits';
+import { PageProps } from '@/types';
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
-export async function generateStaticParams() {
-  return generateLessonStaticParams(arduinoCircuitsLessons);
+export function generateStaticParams() {
+  return (arduinoCircuitsLessons || []).map((lesson) => ({
+    lessonId: lesson.id,
+  }));
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lessonId } = await params;
-  if (!lessonId) {
-    return {
-      title: 'Lesson not found',
-      description: 'The requested lesson could not be found.',
-    };
-  }
   return generateLessonMetadata(lessonId, arduinoCircuitsLessons, 'arduino-circuits');
 }
 
 // Page component with standardized config
-export default async function ArduinoLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+export default async function ArduinoLessonPage({ params }: PageProps) {
   const { lessonId } = await params;
   if (!lessonId) {
-    return null;
+    notFound();
   }
   const config: LessonPageConfig<BaseLessonData> = {
-    moduleName: 'arduino-circuits',
-    moduleTitle: 'Xây dựng Mạch điện tử với Arduino',
-    modulePath: '/learning/arduino-circuits',
+    moduleName: arduinoCircuitsModuleData.id,
+    moduleTitle: arduinoCircuitsModuleData.title,
+    modulePath: arduinoCircuitsModuleData.href || '',
     lessons: arduinoCircuitsLessons,
     primaryColor: 'green',
     secondaryColor: 'teal',
