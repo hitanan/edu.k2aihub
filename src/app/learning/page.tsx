@@ -2,12 +2,17 @@ import { Metadata } from 'next';
 import { createTitle, createDescription, createKeywords } from '@/utils/seo';
 import AllLearningPageClient from './AllLearningPageClient';
 import { moduleNavigation } from '@/data/moduleNavigation';
+import StructuredData from '@/components/StructuredData';
+import { ModuleData } from '@/types';
 
 export async function generateMetadata(): Promise<Metadata> {
+  const learningModules = moduleNavigation.filter((m) => !('coreModule' in m && m.coreModule));
+  const moduleCount = learningModules.length;
+
   return {
-    title: createTitle(`Tất Cả Khóa Học - ${moduleNavigation.length} Modules Chuyên Sâu`),
+    title: createTitle(`Tất Cả Khóa Học - ${moduleCount} Modules Chuyên Sâu`),
     description: createDescription(
-      `Khám phá ${moduleNavigation.length} khóa học chuyên sâu từ Vietnamese business, AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering, Environmental Data Science, Food Technology, Aerospace Engineering, Nanotechnology đến programming và science. Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.`,
+      `Khám phá ${moduleCount} khóa học chuyên sâu từ Vietnamese business, AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering, Environmental Data Science, Food Technology, Aerospace Engineering, Nanotechnology đến programming và science. Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.`,
     ),
     keywords: createKeywords([
       'khóa học',
@@ -39,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ]),
     openGraph: {
       title: 'Tất Cả Khóa Học - K2AI Learning Platform',
-      description: `Khám phá ${moduleNavigation.length} khóa học chuyên sâu từ Vietnamese business đến AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering và các công nghệ tiên tiến. Miễn phí cho thị trường Việt Nam.`,
+      description: `Khám phá ${moduleCount} khóa học chuyên sâu từ Vietnamese business đến AI technology, Electric Vehicle Tech, Blockchain & DeFi, Biomedical Engineering và các công nghệ tiên tiến. Miễn phí cho thị trường Việt Nam.`,
       type: 'website',
       locale: 'vi_VN',
       siteName: 'K2AiHub - Nền tảng học tập thông minh',
@@ -47,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: 'Tất Cả Khóa Học - K2AI Learning Platform',
-      description: `Khám phá ${moduleNavigation.length} khóa học chuyên sâu từ Vietnamese business đến AI technology và các công nghệ tiên tiến.`,
+      description: `Khám phá ${moduleCount} khóa học chuyên sâu từ Vietnamese business đến AI technology và các công nghệ tiên tiến.`,
     },
     alternates: {
       canonical: '/learning',
@@ -63,5 +68,47 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function LearningPage() {
-  return <AllLearningPageClient />;
+  const learningModules = moduleNavigation.filter((m) => !('coreModule' in m && m.coreModule)) as ModuleData[];
+  const moduleCount = learningModules.length;
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `Tất Cả Khóa Học - ${moduleCount} Modules Chuyên Sâu`,
+    description: `Khám phá ${moduleCount} khóa học chuyên sâu từ Vietnamese business, AI technology, đến programming và science. Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.`,
+    url: 'https://k2aihub.com/learning',
+    inLanguage: 'vi-VN',
+    publisher: {
+      '@type': 'Organization',
+      name: 'K2AiHub',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://k2aihub.com/logo.png',
+      },
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: learningModules.map((module, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Course',
+          name: module.title,
+          description: module.description,
+          url: `https://k2aihub.com/learning/${module.id}`,
+          provider: {
+            '@type': 'Organization',
+            name: 'K2AiHub',
+          },
+        },
+      })),
+    },
+  };
+
+  return (
+    <>
+      <StructuredData data={structuredData} />
+      <AllLearningPageClient />
+    </>
+  );
 }

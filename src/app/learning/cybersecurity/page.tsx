@@ -5,7 +5,7 @@ import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { K2Module } from '@/data/k2-modules';
 import type { ModuleData } from '@/types';
 import { createModuleMetadata } from '@/utils/seo';
-import { CybersecurityLessons } from '@/data/lessons/cybersecurity';
+import { cybersecurityLessons } from '@/data/modules/cybersecurity';
 
 const cybersecurityModuleData: ModuleData = {
   id: 'cybersecurity',
@@ -66,7 +66,7 @@ export default function CybersecurityPage() {
   return (
     <ModulePageTemplate
       moduleData={cybersecurityModuleData}
-      lessons={CybersecurityLessons}
+      lessons={cybersecurityLessons}
       additionalStats={[
         {
           label: 'Tỷ lệ việc làm sau khóa học',

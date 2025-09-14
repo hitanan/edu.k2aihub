@@ -2,11 +2,11 @@
 mode: agent
 ---
 
-Mục tiêu: Cho mỗi bài học trong thư mục /src/data, nếu trường videoUrl theo yêu cầu (ví dụ đang không có field videoUrl), hãy tìm và đề xuất một YouTube video phù hợp với nội dung bài học.
+Mục tiêu: Cho mỗi bài học trong thư mục /src/data/modules, nếu trường videoUrl theo yêu cầu (ví dụ đang không có field videoUrl), hãy tìm và đề xuất một YouTube video phù hợp với nội dung bài học.
 
 Yêu cầu thực thi:
 
-1. Đọc tất cả file bài học trong /src/data và tìm các bài có videoUrl theo yêu cầu.
+1. Đọc tất cả file bài học trong /src/data/modules và tìm các bài có videoUrl theo yêu cầu.
 2. Với mỗi bài cần cập nhật, tạo truy vấn tìm kiếm gồm: tiêu đề bài học + các từ khóa liên quan (module name, chủ đề, description) và ưu tiên kết quả bằng tiếng Việt nếu có.
 3. Thực hiện tìm kiếm YouTube Data API v3 bằng API key lấy từ [.envy](../../.envy) file và lấy giá trị KEY từ dòng đầu tiên (biến KEY: YOUR_API_KEY). Không hardcode key, Nếu KEY hết quota, hãy dùng key ở dòng thứ tiếp theo.
    - Sử dụng endpoint Search: https://www.googleapis.com/youtube/v3/search?part=snippet&q={query}&type=video&key=YOUR_API_KEY

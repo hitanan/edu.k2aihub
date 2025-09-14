@@ -14,8 +14,7 @@ import {
   Lightbulb,
   Users,
 } from 'lucide-react';
-import { CybersecurityLessons } from '@/data/lessons/cybersecurity';
-import { ToolDetail } from '@/types/lesson-base';
+import { cybersecurityLessons as CybersecurityLessons } from '@/data/modules/cybersecurity';
 import { createTitle, createDescription } from '@/utils/seo';
 
 export async function generateStaticParams() {
@@ -314,37 +313,14 @@ export default async function CyberSecurityLessonPage({ params }: { params: Prom
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            {/* Tools Used */}
+            {/* Resources */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-6 sticky top-24">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-red-400" />
-                Security Tools
-              </h3>
-              <div className="space-y-2">
-                {lesson.tools &&
-                  lesson.tools.map((tool, index) => (
-                    <div key={index} className="flex items-center p-3 bg-white/5 rounded-lg border border-white/10">
-                      <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
-                      {typeof tool === 'string' ? (
-                        <span className="text-gray-300 text-sm">{tool}</span>
-                      ) : (
-                        <ul className="list-disc list-inside text-gray-300">
-                          <li>
-                            <span className="text-gray-300 text-sm">{(tool as ToolDetail).name}</span>
-                            <span className="text-gray-300 text-sm">{(tool as ToolDetail).description}</span>
-                            <span className="text-gray-300 text-sm">{(tool as ToolDetail).category}</span>
-                            <span className="text-gray-300 text-sm">{(tool as ToolDetail).difficulty}</span>
-                          </li>
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-              </div>
-
-              {/* Resources */}
               {lesson.resources && lesson.resources.length > 0 && (
-                <div className="mt-6">
-                  <h4 className="font-semibold text-white mb-3">Additional Resources</h4>
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                    <Shield className="w-5 h-5 mr-2 text-red-400" />
+                    Công cụ & Tài nguyên
+                  </h3>
                   <div className="space-y-2">
                     {lesson.resources.map((resource, index) => (
                       <a
@@ -355,12 +331,17 @@ export default async function CyberSecurityLessonPage({ params }: { params: Prom
                         className="block p-3 bg-white/5 rounded-lg border border-white/10 hover:border-red-500/30 transition-colors group"
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
-                            {resource.title}
-                          </span>
-                          <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-red-400 transition-colors" />
+                          <div>
+                            <span className="text-sm font-semibold text-gray-200 group-hover:text-white transition-colors">
+                              {resource.title}
+                            </span>
+                            {resource.description && (
+                              <p className="text-xs text-gray-400 mt-1">{resource.description}</p>
+                            )}
+                          </div>
+                          <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-red-400 transition-colors flex-shrink-0 ml-2" />
                         </div>
-                        <div className="text-xs text-gray-500 mt-1">{resource.type}</div>
+                        <div className="text-xs text-gray-500 mt-2">{resource.type}</div>
                       </a>
                     ))}
                   </div>

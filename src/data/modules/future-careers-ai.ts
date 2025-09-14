@@ -1,55 +1,317 @@
+import { BaseLessonData } from '@/types/lesson-base';
+import type { CareerProfile, VietnamContext } from '@/types/lesson-base';
 import { ModuleData } from '@/types';
-import { K2Module } from '@/data/k2-modules';
-import { futureCareersLessons } from '../lessons/future-careers-ai';
+import { K2Module } from '../k2-modules';
 
-export const futureCareersModuleData: ModuleData = {
+export interface FutureCareersLesson extends BaseLessonData {
+  vietnamContext: VietnamContext;
+  careerConnect: CareerProfile;
+}
+
+export const futureCareersLessons: FutureCareersLesson[] = [
+  {
+    id: 'ai-impact-on-jobs',
+    title: 'Tác động của AI đến Thị trường Lao động',
+    description:
+      'Tìm hiểu cách AI và tự động hóa đang thay đổi cấu trúc công việc, những ngành nghề nào sẽ bị ảnh hưởng và những cơ hội nào sẽ mở ra.',
+    duration: '90 phút',
+    difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=S_Ld_5i2T4o',
+    imageUrl: 'https://i.ytimg.com/vi/S_Ld_5i2T4o/hqdefault.jpg',
+    objectives: [
+      'Phân biệt được 4 làn sóng tự động hóa.',
+      'Hiểu các khái niệm: Reskilling (Tái đào tạo kỹ năng) và Upskilling (Nâng cao kỹ năng).',
+      'Nhận diện các ngành nghề có nguy cơ cao bị thay thế.',
+      'Khám phá các vai trò công việc mới do AI tạo ra.',
+    ],
+    prerequisites: ['Không có'],
+    exercises: [
+      {
+        title: 'Phân tích Công việc của Chính bạn',
+        description:
+          'Phân tích các nhiệm vụ hàng ngày trong công việc (hoặc việc học) của bạn và đánh giá xem phần nào có thể được tự động hóa bởi AI.',
+        difficulty: 'Cơ bản',
+        procedure: [
+          'Liệt kê 5-10 nhiệm vụ chính bạn thực hiện thường xuyên.',
+          'Với mỗi nhiệm vụ, đánh giá mức độ lặp lại và dựa trên dữ liệu.',
+          'Sử dụng ma trận Eisenhower-AI để phân loại các nhiệm vụ.',
+          'Suy nghĩ về cách AI có thể hỗ trợ hoặc thay thế từng nhiệm vụ.',
+        ],
+        expectedResults: 'Một bản phân tích cá nhân về tác động của AI đến vai trò hiện tại hoặc tương lai của bạn.',
+      },
+    ],
+    realWorldApplications: [
+      'Các công ty đang tái cấu trúc đội ngũ nhân sự.',
+      'Người lao động chủ động học các kỹ năng mới.',
+      'Sự phát triển của các nền tảng giáo dục trực tuyến.',
+    ],
+    vietnamContext: {
+      title: 'Thị trường lao động Việt Nam trước làn sóng AI',
+      content: [
+        'Nhiều ngành thâm dụng lao động như dệt may, da giày đang đối mặt với áp lực tự động hóa.',
+        'Sự bùng nổ của các công ty công nghệ (tech companies) và startup tạo ra nhu cầu lớn về nhân lực ngành AI, dữ liệu.',
+        'Chính phủ Việt Nam đã có "Chiến lược quốc gia về nghiên cứu, phát triển và ứng dụng Trí tuệ nhân tạo đến năm 2030".',
+        'Các trường đại học lớn đang mở các ngành học mới liên quan đến AI và khoa học dữ liệu.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Trần Mạnh Huy',
+      title: 'AI Product Manager',
+      company: 'FPT Software',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-manh-huy',
+      quote:
+        'Công việc của tôi là tìm hiểu các vấn đề kinh doanh và xem AI có thể giải quyết chúng như thế nào. Tôi không cần phải là người viết code giỏi nhất, nhưng phải hiểu cả công nghệ và nhu cầu của khách hàng. Kỹ năng giao tiếp và phân tích vấn đề là quan trọng nhất.',
+    },
+    quizzes: [
+      {
+        question: 'Khái niệm nào sau đây mô tả việc học một kỹ năng hoàn toàn mới để làm một công việc khác?',
+        options: ['Upskilling', 'Reskilling', 'Downsizing', 'Outsourcing'],
+        correctAnswerIndex: 1,
+        explanation:
+          'Reskilling (Tái đào tạo kỹ năng) là quá trình học các kỹ năng mới để đảm nhận một vai trò công việc khác, thường là trong cùng một công ty.',
+      },
+      {
+        question: 'Ngành nào ở Việt Nam được dự báo sẽ chịu tác động mạnh mẽ nhất từ tự động hóa?',
+        options: ['Giáo dục', 'Y tế', 'Dệt may và lắp ráp điện tử', 'Du lịch và khách sạn'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Các ngành thâm dụng lao động với các công việc có tính lặp lại cao như dệt may, lắp ráp điện tử có nguy cơ bị tự động hóa cao nhất.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Reskilling và Upskilling khác nhau như thế nào?',
+        answer:
+          'Upskilling là nâng cao kỹ năng hiện tại để làm tốt hơn công việc đang làm, trong khi Reskilling là học những kỹ năng hoàn toàn mới để chuyển sang một vai trò hoặc công việc khác.',
+      },
+      {
+        question: 'AI có thể lấy hết việc làm của con người không?',
+        answer:
+          'AI sẽ thay thế một số công việc, đặc biệt là những công việc có tính lặp lại, nhưng đồng thời cũng tạo ra nhiều công việc mới đòi hỏi kỹ năng hợp tác với AI, tư duy sáng tạo và trí tuệ cảm xúc mà máy móc chưa thể có được.',
+      },
+      {
+        question: 'Tại sao các ngành như dệt may ở Việt Nam lại dễ bị ảnh hưởng bởi tự động hóa?',
+        answer:
+          'Vì đây là các ngành thâm dụng lao động, với nhiều công đoạn có tính chất lặp đi lặp lại, có thể được thay thế hiệu quả bằng robot và dây chuyền tự động để tăng năng suất và giảm chi phí.',
+      },
+      {
+        question: 'Chiến lược quốc gia về AI của Việt Nam có mục tiêu gì?',
+        answer:
+          'Chiến lược này đặt mục tiêu đưa Việt Nam trở thành một trung tâm đổi mới, phát triển các giải pháp và ứng dụng AI trong khu vực ASEAN và trên thế giới, thúc đẩy ứng dụng AI trong nhiều lĩnh vực để phát triển kinh tế - xã hội.',
+      },
+    ],
+  },
+  {
+    id: 'future-proof-skills',
+    title: "Những Kỹ năng 'Vàng' trong Kỷ nguyên AI",
+    description:
+      'Không phải tất cả các kỹ năng đều có thể bị thay thế. Bài học này tập trung vào những năng lực cốt lõi của con người mà AI khó có thể sao chép.',
+    duration: '120 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=zJ-A-J_go0c',
+    imageUrl: 'https://i.ytimg.com/vi/zJ-A-J_go0c/hqdefault.jpg',
+    objectives: [
+      'Xác định 4 nhóm kỹ năng quan trọng: Tư duy phức tạp, Trí tuệ xã hội & cảm xúc, Năng lực thích ứng, và Năng lực số.',
+      'Hiểu tại sao sự sáng tạo, tư duy phản biện và trí tuệ cảm xúc lại trở nên quan trọng hơn bao giờ hết.',
+      'Học các phương pháp để rèn luyện và phát triển những kỹ năng này.',
+      "Xây dựng một 'bộ kỹ năng' linh hoạt cho tương lai.",
+    ],
+    prerequisites: ["Hoàn thành bài 'Tác động của AI'"],
+    exercises: [
+      {
+        title: 'Xây dựng Ma trận Kỹ năng Cá nhân',
+        description:
+          'Tự đánh giá mức độ thành thạo của bạn đối với các kỹ năng tương lai và lập kế hoạch để cải thiện chúng.',
+        difficulty: 'Trung bình',
+        procedure: [
+          'Vẽ một ma trận với các kỹ năng tương lai trên các trục.',
+          'Đánh giá bản thân trên thang điểm từ 1 đến 10 cho mỗi kỹ năng.',
+          'Xác định 2-3 kỹ năng bạn muốn tập trung phát triển nhất.',
+          'Lập kế hoạch hành động cụ thể: các khóa học, sách, dự án để rèn luyện.',
+        ],
+        expectedResults:
+          'Một kế hoạch phát triển cá nhân (Personal Development Plan) tập trung vào các kỹ năng chống lại sự thay thế của AI.',
+      },
+    ],
+    realWorldApplications: [
+      'Chương trình đào tạo nội bộ của các tập đoàn lớn.',
+      'Sự thay đổi trong chương trình giảng dạy của các trường đại học.',
+      'Các chuyên gia tự do (freelancer) xây dựng lợi thế cạnh tranh.',
+    ],
+    vietnamContext: {
+      title: 'Nhu cầu kỹ năng tại Việt Nam',
+      content: [
+        'Các báo cáo tuyển dụng gần đây cho thấy các nhà tuyển dụng Việt Nam đánh giá cao kỹ năng mềm như giải quyết vấn đề phức tạp, làm việc nhóm và giao tiếp.',
+        'Năng lực ngoại ngữ (đặc biệt là tiếng Anh) kết hợp với kỹ năng số được xem là "chìa khóa vàng" cho các công việc lương cao.',
+        'Thế hệ Gen Z Việt Nam được đánh giá là có khả năng thích ứng công nghệ nhanh, nhưng cần trau dồi thêm tư duy phản biện và sự bền bỉ (resilience).',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Phạm Thị Thảo',
+      title: 'Head of People & Culture',
+      company: 'Tiki',
+      imageUrl: 'https://i.pravatar.cc/150?u=pham-thi-thao',
+      quote:
+        'Khi tuyển dụng, chúng tôi không chỉ nhìn vào bằng cấp. Chúng tôi tìm kiếm những ứng viên có khả năng học hỏi nhanh, biết cách đặt câu hỏi và có thể làm việc tốt với người khác. Một thái độ tích cực và khả năng thích ứng với thay đổi còn quý hơn kinh nghiệm ở một lĩnh vực cụ thể.',
+    },
+    quizzes: [
+      {
+        question: 'Kỹ năng nào sau đây KHÔNG thuộc nhóm năng lực cốt lõi của con người mà AI khó thay thế?',
+        options: ['Trí tuệ cảm xúc', 'Tư duy phản biện', 'Nhập liệu và xử lý dữ liệu cơ bản', 'Sự sáng tạo'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Nhập liệu và xử lý dữ liệu cơ bản là các tác vụ có cấu trúc, lặp lại mà AI và các công cụ tự động hóa có thể thực hiện rất hiệu quả, thậm chí tốt hơn con người.',
+      },
+      {
+        question: 'Theo bối cảnh Việt Nam, sự kết hợp nào được xem là "chìa khóa vàng" cho công việc lương cao?',
+        options: [
+          'Bằng cấp tốt và kinh nghiệm lâu năm',
+          'Ngoại ngữ và kỹ năng số',
+          'Làm việc chăm chỉ và trung thành',
+          'Sáng tạo và nghệ thuật',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Trong bối cảnh hội nhập và chuyển đổi số, khả năng sử dụng thành thạo ngoại ngữ (đặc biệt là tiếng Anh) và các công cụ kỹ thuật số là lợi thế cạnh tranh cực lớn trên thị trường lao động Việt Nam.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Kỹ năng nào được coi là quan trọng nhất trong kỷ nguyên AI?',
+        answer:
+          'Không có một kỹ năng duy nhất nào là quan trọng nhất, mà là một bộ kỹ năng. Tuy nhiên, khả năng học hỏi liên tục (learnability), tư duy phản biện, và trí tuệ cảm xúc thường được xem là những năng lực cốt lõi giúp con người duy trì lợi thế so với AI.',
+      },
+      {
+        question: 'Tại sao trí tuệ cảm xúc (EQ) lại quan trọng?',
+        answer:
+          'AI có thể xử lý dữ liệu logic nhưng rất yếu trong việc thấu hiểu và phản hồi lại cảm xúc của con người. Các công việc đòi hỏi sự đồng cảm, lãnh đạo, làm việc nhóm, và xây dựng mối quan hệ sẽ là "đất diễn" của con người.',
+      },
+      {
+        question: 'Làm thế nào để rèn luyện tư duy phản biện?',
+        answer:
+          'Hãy tập thói quen đặt câu hỏi "Tại sao?" trước mọi thông tin bạn nhận được. Phân tích thông tin từ nhiều nguồn khác nhau, nhận diện các thành kiến (biases), và xem xét các góc nhìn đối lập trước khi đưa ra kết luận của riêng mình.',
+      },
+      {
+        question: 'Năng lực thích ứng (Adaptability Quotient - AQ) là gì?',
+        answer:
+          'AQ là khả năng nhận thức, chấp nhận và thích ứng với sự thay đổi một cách hiệu quả. Trong một thế giới biến đổi nhanh chóng bởi công nghệ, người có AQ cao sẽ dễ dàng học hỏi kỹ năng mới và tìm thấy cơ hội trong sự thay đổi.',
+      },
+    ],
+  },
+  {
+    id: 'human-ai-collaboration',
+    title: 'Hợp tác Người-Máy: AI như một Đồng nghiệp',
+    description:
+      'Thay vì lo sợ AI, hãy học cách làm việc cùng nó. Bài học này khám phá các mô hình hợp tác hiệu quả giữa con người và trí tuệ nhân tạo.',
+    duration: '90 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=Yed_y_93-qA',
+    imageUrl: 'https://i.ytimg.com/vi/Yed_y_93-qA/hqdefault.jpg',
+    objectives: [
+      'Hiểu các mô hình hợp tác Người-AI: AI hỗ trợ, AI khuếch đại, và AI là đối tác.',
+      "Học cách 'giao tiếp' hiệu quả với AI thông qua Prompt Engineering.",
+      'Sử dụng AI để tăng cường sự sáng tạo và hiệu suất.',
+      'Nhận thức về các vấn đề đạo đức và thiên bias khi làm việc với AI.',
+    ],
+    prerequisites: ['Hoàn thành các bài học trước'],
+    exercises: [
+      {
+        title: 'Giải quyết vấn đề cùng AI',
+        description: 'Sử dụng một công cụ AI (như ChatGPT, Copilot) để cùng giải quyết một vấn đề thực tế.',
+        difficulty: 'Trung bình',
+        materials: ['Tài khoản ChatGPT hoặc công cụ tương tự'],
+        procedure: [
+          'Chọn một vấn đề (ví dụ: lập kế hoạch cho một sự kiện, viết một bài blog).',
+          'Sử dụng kỹ thuật prompt để yêu cầu AI đưa ra các ý tưởng, cấu trúc, và nội dung chi tiết.',
+          'Đóng vai trò là người biên tập: chỉnh sửa, bổ sung và hoàn thiện sản phẩm cuối cùng.',
+          'Phản ánh về quá trình: AI đã giúp gì? Vai trò của bạn là gì?',
+        ],
+        expectedResults:
+          'Một sản phẩm hoàn chỉnh được tạo ra từ sự hợp tác giữa bạn và AI, cùng với một bản ghi chép về quá trình làm việc.',
+      },
+    ],
+    realWorldApplications: [
+      'Lập trình viên sử dụng GitHub Copilot để viết code nhanh hơn.',
+      "Nhà văn sử dụng AI để tìm ý tưởng và vượt qua 'writer's block'.",
+      'Các nhà marketing sử dụng AI để phân tích dữ liệu và tạo chiến dịch.',
+    ],
+    vietnamContext: {
+      title: 'Ứng dụng AI trong công việc tại Việt Nam',
+      content: [
+        'Các lập trình viên tại các công ty như VNG, Viettel, FPT đang sử dụng các công cụ AI trợ lý lập trình để tăng năng suất.',
+        'Nhiều doanh nghiệp vừa và nhỏ sử dụng chatbot (như FPT.AI, Zalo AI) để tự động hóa việc chăm sóc khách hàng.',
+        'Các nhà sáng tạo nội dung trên YouTube, TikTok sử dụng AI để phân tích xu hướng, đề xuất ý tưởng và thậm chí tạo phụ đề tự động.',
+        'Prompt Engineering đang dần trở thành một kỹ năng được săn đón, đặc biệt trong các lĩnh vực marketing, nội dung và thiết kế.',
+      ],
+    },
+    careerConnect: {
+      name: 'Bạn Nguyễn Hoàng An',
+      title: 'AI Artist / Prompt Engineer',
+      company: 'Freelancer',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-hoang-an',
+      quote:
+        'Mình dùng Midjourney và Stable Diffusion để tạo ra các tác phẩm nghệ thuật số. Công việc của mình không phải là vẽ, mà là "ra lệnh" cho AI bằng ngôn ngữ. Để có một bức ảnh đẹp, mình phải thử hàng chục, thậm chí hàng trăm câu lệnh khác nhau. Đó là sự kết hợp giữa kỹ thuật và nghệ thuật.',
+    },
+    quizzes: [
+      {
+        question: '"Prompt Engineering" là kỹ năng gì?',
+        options: [
+          'Lập trình một mô hình AI từ đầu.',
+          'Thiết kế giao diện cho các ứng dụng AI.',
+          'Viết các câu lệnh (prompt) hiệu quả để giao tiếp và điều khiển AI.',
+          'Kiểm thử và sửa lỗi cho các hệ thống AI.',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Prompt Engineering là nghệ thuật và khoa học của việc thiết kế các đầu vào (câu lệnh, câu hỏi) để một mô hình AI tạo ra kết quả mong muốn.',
+      },
+      {
+        question: 'Mô hình hợp tác nào mô tả việc AI đề xuất các lựa chọn và con người đưa ra quyết định cuối cùng?',
+        options: ['AI là công cụ', 'AI là đối tác', 'AI hỗ trợ (AI assistant)', 'AI tự trị hoàn toàn'],
+        correctAnswerIndex: 2,
+        explanation:
+          'Trong mô hình AI hỗ trợ, AI hoạt động như một trợ lý thông minh, cung cấp thông tin, phân tích và các phương án để con người xem xét và đưa ra quyết định cuối cùng.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Prompt Engineering là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Prompt Engineering là nghệ thuật và khoa học của việc thiết kế các câu lệnh (prompt) để giao tiếp và ra lệnh cho các mô hình AI tạo sinh (như ChatGPT, Midjourney) một cách hiệu quả. Nó quan trọng vì chất lượng của kết quả AI tạo ra phụ thuộc rất lớn vào chất lượng của prompt đầu vào.',
+      },
+      {
+        question: 'Làm thế nào để viết một prompt tốt?',
+        answer:
+          'Một prompt tốt thường bao gồm các yếu tố: **Vai trò** (ví dụ: "Hãy đóng vai một chuyên gia marketing"), **Bối cảnh** (ví dụ: "Tôi đang chuẩn bị một chiến dịch cho sản phẩm X"), **Nhiệm vụ cụ thể** (ví dụ: "Hãy viết 5 câu slogan"), và **Định dạng đầu ra** (ví dụ: "trình bày dưới dạng danh sách"). Càng cụ thể, kết quả càng tốt.',
+      },
+      {
+        question: 'Thiên vị (bias) trong AI là gì và tại sao chúng ta cần quan tâm?',
+        answer:
+          'Thiên vị trong AI xảy ra khi mô hình đưa ra các kết quả không công bằng hoặc mang tính định kiến, thường là do nó được huấn luyện trên bộ dữ liệu có sẵn những định kiến đó. Chúng ta cần quan tâm vì AI có thể khuếch đại các định kiến xã hội, dẫn đến các quyết định bất công trong tuyển dụng, cho vay, hoặc thậm chí là pháp lý.',
+      },
+      {
+        question: 'AI có thể thay thế hoàn toàn sự sáng tạo của con người không?',
+        answer:
+          'Không. AI là một công cụ khuếch đại sự sáng tạo cực kỳ mạnh mẽ, nhưng nó không có ý thức, trải nghiệm sống, hay cảm xúc thực sự - những yếu tố cốt lõi của sự sáng tạo độc đáo. Vai trò của con người chuyển từ việc "tạo ra từ đầu" sang "định hướng, lựa chọn, và tinh chỉnh" các ý tưởng mà AI đề xuất.',
+      },
+    ],
+  },
+];
+
+export const futureCareersModuleData: ModuleData<FutureCareersLesson> = {
   id: 'future-careers-ai',
   title: 'Định hướng Nghề nghiệp trong Kỷ nguyên AI',
-  subtitle: 'Chuẩn bị cho Tương lai Công việc',
   description:
-    'Trí tuệ nhân tạo không còn là khoa học viễn tưởng, nó đang ở đây và định hình lại mọi ngành nghề. Khóa học này giúp bạn hiểu rõ những thay đổi đó, xác định các cơ hội mới, và trang bị những kỹ năng cốt lõi để không chỉ tồn tại mà còn phát triển mạnh mẽ trong thị trường lao động tương lai.',
-  level: 'Cơ bản',
-  duration: '10-12 giờ',
-  category: 'Professional Skills',
-  features: [
-    'Phân tích xu hướng thị trường lao động.',
-    'Nhận diện kỹ năng chống lại sự thay thế của AI.',
-    'Xây dựng lộ trình sự nghiệp cá nhân.',
-    'Case study về các ngành nghề mới nổi.',
-  ],
-  icon: '🚀',
-  color: 'fuchsia',
-  heroImageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&h=600&fit=crop',
-  objectives: [
-    'Hiểu được tác động của AI đến các ngành nghề khác nhau.',
-    "Xác định được những kỹ năng 'vàng' trong kỷ nguyên AI.",
-    'Học cách sử dụng AI như một công cụ để nâng cao hiệu suất công việc.',
-    'Xây dựng tư duy linh hoạt và khả năng học tập suốt đời.',
-    'Lên kế hoạch phát triển sự nghiệp phù hợp với xu hướng tương lai.',
-  ],
-  prerequisites: [
-    'Tò mò về tương lai và công nghệ.',
-    'Mong muốn phát triển bản thân và sự nghiệp.',
-    'Không yêu cầu kiến thức chuyên sâu về AI.',
-  ],
-  careerOutcomes: [
-    'Chuyên viên tư vấn chuyển đổi số',
-    'Nhà phân tích xu hướng tương lai',
-    'Chuyên gia đào tạo và phát triển nhân lực',
-    'Bất kỳ ngành nghề nào cũng cần kỹ năng thích ứng với AI',
-  ],
-  industryApplications: [
-    'Tất cả các ngành, từ Y tế, Giáo dục đến Tài chính, Sáng tạo.',
-    'Quản trị nhân sự và tuyển dụng.',
-    'Tư vấn chiến lược và phát triển kinh doanh.',
-  ],
-  marketDemand: {
-    averageSalary: 'Không áp dụng trực tiếp',
-    jobGrowth: 'Kỹ năng liên quan AI tăng trưởng >50%',
-    hireDemand: 'Rất cao',
-  },
-  relatedModules: [K2Module.AI, K2Module.CriticalThinking, K2Module.ContentCreator],
+    'Khám phá cách AI đang định hình lại thị trường lao động, những kỹ năng cần thiết để thành công và cách hợp tác hiệu quả với AI để phát triển sự nghiệp.',
+  image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop',
+  category: 'AI',
+  basePath: '/learning/future-careers-ai',
   lessons: futureCareersLessons,
+  features: [
+    'Tác động của AI đến việc làm',
+    "Kỹ năng 'vàng' cho tương lai",
+    'Hợp tác hiệu quả Người-Máy',
+    'Xây dựng lộ trình sự nghiệp cá nhân',
+  ],
+  relatedModules: [K2Module.AI, K2Module.CareerDevelopment, K2Module.EmotionalIntelligence],
 };
-
-export default futureCareersModuleData;

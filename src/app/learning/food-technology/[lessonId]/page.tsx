@@ -4,8 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { foodTechnologyLessons } from '@/data/lessons/food-technology';
 import { BaseLessonData } from '@/types/lesson-base';
+import { foodTechnologyModuleData } from '@/data/modules/food-technology';
 
 import { Metadata } from 'next';
 import { createTitle } from '@/utils/seo';
@@ -13,7 +13,7 @@ import { Shield, FlaskConical, ChefHat, Leaf, Utensils, Beaker } from 'lucide-re
 
 // Generate static params for all lessons
 export function generateStaticParams() {
-  return generateLessonStaticParams(foodTechnologyLessons);
+  return generateLessonStaticParams(foodTechnologyModuleData.lessons || []);
 }
 
 // Generate metadata for each lesson
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
       description: 'Bài học này không tồn tại hoặc đã bị di chuyển.',
     };
   }
-  return generateLessonMetadata(lessonId, foodTechnologyLessons, 'food-technology');
+  return generateLessonMetadata(lessonId, foodTechnologyModuleData.lessons || [], 'food-technology');
 }
 
 // Icon mapping function for food technology fields
@@ -46,10 +46,10 @@ function getFoodTechIcon(field: string) {
 export default async function FoodTechnologyLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
   const config: LessonPageConfig<BaseLessonData> = {
-    moduleName: 'food-technology',
-    moduleTitle: 'Food Technology',
-    modulePath: '/learning/food-technology',
-    lessons: foodTechnologyLessons,
+    moduleName: foodTechnologyModuleData.id,
+    moduleTitle: foodTechnologyModuleData.title,
+    modulePath: foodTechnologyModuleData.basePath || '/learning/food-technology',
+    lessons: foodTechnologyModuleData.lessons || [],
     primaryColor: 'amber',
     secondaryColor: 'orange',
     gradientColors: 'from-slate-900 via-amber-900 to-slate-900',

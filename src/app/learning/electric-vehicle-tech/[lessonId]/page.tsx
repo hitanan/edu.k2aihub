@@ -4,8 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { electricVehicleTechModuleData } from '@/data/modules/electric-vehicle-tech';
-import { electricVehicleLessons } from '@/data/lessons/electric-vehicle-tech';
+import { electricVehicleLessons, electricVehicleTechModuleData } from '@/data/modules/electric-vehicle-tech';
 import { notFound } from 'next/navigation';
 import { createTitle } from '@/utils/seo';
 import { BaseLessonData } from '@/types';

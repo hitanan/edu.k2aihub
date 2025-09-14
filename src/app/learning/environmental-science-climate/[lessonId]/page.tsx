@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { environmentalClimateLessons } from '@/data/lessons/environmental-science-climate';
+import { environmentalClimateLessons } from '@/data/modules/environmental-science-climate';
 import { BaseLessonData } from '@/types/lesson-base';
 
 import { notFound } from 'next/navigation';

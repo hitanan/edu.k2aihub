@@ -1,26 +1,15 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { foodTechnologyModuleData } from '@/data/modules/food-technology';
-import { foodTechnologyLessons } from '@/data/lessons/food-technology';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
-  'Food Technology - Công Nghệ Thực Phẩm',
-  'Master food technology: food safety, fermentation, molecular gastronomy, sustainable production. Vietnamese food industry modernization với traditional focus.',
-  [
-    'food technology',
-    'food safety',
-    'fermentation',
-    'molecular gastronomy',
-    'vietnamese food',
-    'nuoc mam',
-    'food processing',
-    'sustainability',
-    'K2AI',
-  ],
-  'food-technology',
+  foodTechnologyModuleData.title,
+  foodTechnologyModuleData.description,
+  ['food technology', 'công nghệ thực phẩm', 'an toàn thực phẩm', 'lên men', 'ẩm thực phân tử', 'K2AI'],
+  foodTechnologyModuleData.id,
 );
 
 export default function FoodTechnologyPage() {
-  return <ModulePageTemplate moduleData={foodTechnologyModuleData} lessons={foodTechnologyLessons} />;
+  return <ModulePageTemplate moduleData={foodTechnologyModuleData} lessons={foodTechnologyModuleData.lessons || []} />;
 }

@@ -30,7 +30,7 @@ export const lessons: DigitalCitizenshipLesson[] = [
     duration: '45 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=uJ065EhtUG4',
-    imageUrl: 'https://i.ytimg.com/vi/vd2dtkMINIw/hqdefault.jpg',
+    imageUrl: 'https://i.ytimg.com/vi/s_c0n_O_w-E/hqdefault.jpg',
     mainContent: {
       introduction:
         'Trong thế giới số, mỗi hành động của chúng ta đều để lại dấu vết. Bài học này sẽ giúp bạn hiểu rõ về "dấu chân số", quyền và nghĩa vụ của một công dân số, từ đó xây dựng một hình ảnh cá nhân tích cực và có trách nhiệm trên không gian mạng.',

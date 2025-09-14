@@ -5,7 +5,7 @@ import { createLessonMetadata } from '@/utils/seo';
 import {
   environmentalDataScienceLessons,
   EnvironmentalDataScienceLesson,
-} from '@/data/lessons/environmental-data-science';
+} from '@/data/modules/environmental-data-science';
 
 export async function generateStaticParams() {
   return environmentalDataScienceLessons.map((lesson) => ({

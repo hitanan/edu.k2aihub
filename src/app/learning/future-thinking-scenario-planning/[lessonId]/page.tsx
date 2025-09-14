@@ -4,33 +4,16 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { futureThinkingLessons } from '@/data/lessons/future-thinking-scenario-planning';
-import { BaseLessonData } from '@/types/lesson-base';
-
+import {
+  futureThinkingScenarioPlanningModule,
+  FutureThinkingLessonType,
+} from '@/data/modules/future-thinking-scenario-planning';
 import { Metadata } from 'next';
 import { createTitle } from '@/utils/seo';
 
-export interface FutureThinkingLessonType extends BaseLessonData {
-  scenarioMethods?: string[];
-  trendAnalysisFrameworks?: string[];
-  uncertaintyFactors?: string[];
-  futuringTechniques?: {
-    name: string;
-    description: string;
-    timeHorizon: string;
-    bestUseCases: string[];
-    steps: string[];
-  }[];
-  relatedGames?: {
-    id: string;
-    name: string;
-    description: string;
-  }[];
-}
-
 // Generate static params for all lessons
 export function generateStaticParams() {
-  return generateLessonStaticParams(futureThinkingLessons);
+  return generateLessonStaticParams(futureThinkingScenarioPlanningModule.lessons || []);
 }
 
 // Generate metadata for each lesson
@@ -42,7 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
       description: 'Bài học này không tồn tại hoặc đã bị di chuyển.',
     };
   }
-  return generateLessonMetadata(lessonId, futureThinkingLessons, 'future-thinking-scenario-planning');
+  return generateLessonMetadata(
+    lessonId,
+    futureThinkingScenarioPlanningModule.lessons || [],
+    'future-thinking-scenario-planning',
+  );
 }
 
 // Page component with standardized config
@@ -52,7 +39,7 @@ export default async function FutureThinkingLessonPage({ params }: { params: Pro
     moduleName: 'future-thinking-scenario-planning',
     moduleTitle: 'Tư Duy Tương Lai và Kế Hoạch Kịch Bản',
     modulePath: '/learning/future-thinking-scenario-planning',
-    lessons: futureThinkingLessons,
+    lessons: futureThinkingScenarioPlanningModule.lessons || [],
     primaryColor: 'purple',
     secondaryColor: 'pink',
     gradientColors: 'from-slate-900 via-purple-900 to-slate-900',

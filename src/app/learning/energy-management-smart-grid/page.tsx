@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { energyManagementModule } from '@/data/modules/energy-management';
+import { energyManagementSmartGridModule } from '@/data/modules/energy-management-smart-grid';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
-  energyManagementModule.title,
-  energyManagementModule.description,
+  energyManagementSmartGridModule.title,
+  energyManagementSmartGridModule.description,
   [
     'energy management',
     'smart grid',
@@ -16,9 +16,14 @@ export const metadata: Metadata = createModuleMetadata(
     'vietnam energy',
     'k2aihub',
   ],
-  energyManagementModule.id,
+  energyManagementSmartGridModule.id,
 );
 
 export default function EnergyManagementSmartGridPage() {
-  return <ModulePageTemplate moduleData={energyManagementModule} lessons={energyManagementModule.lessons || []} />;
+  return (
+    <ModulePageTemplate
+      moduleData={energyManagementSmartGridModule}
+      lessons={energyManagementSmartGridModule.lessons || []}
+    />
+  );
 }

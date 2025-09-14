@@ -100,7 +100,9 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <StructuredData data={blogPostingStructuredData} />
-      <BlogPost post={post} />
+      <article className="prose prose-invert max-w-none">
+        <BlogPost post={post} />
+      </article>
     </>
   );
 }

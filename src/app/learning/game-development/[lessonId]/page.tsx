@@ -1,4 +1,4 @@
-import { gameDevLessons, type GameDevLesson } from '@/data/modules/game-development';
+import { gameDevelopmentModuleData } from '@/data/modules/game-development';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,15 +7,17 @@ import { CaseStudy, Exercise, Resource } from '@/types/lesson-base';
 import { createTitle, createDescription } from '@/utils/seo';
 import { Metadata } from 'next';
 
+const lessons = gameDevelopmentModuleData.lessons || [];
+
 export function generateStaticParams() {
-  return gameDevLessons.map((lesson) => ({
+  return lessons.map((lesson) => ({
     lessonId: lesson.id,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }): Promise<Metadata> {
   const { lessonId } = await params;
-  const lesson = gameDevLessons.find((l) => l.id === lessonId);
+  const lesson = lessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     return {
@@ -53,7 +55,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
 
 export default async function GameDevelopmentLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  const lesson = gameDevLessons.find((l) => l.id === lessonId);
+  const lesson = lessons.find((l) => l.id === lessonId);
 
   if (!lesson) {
     notFound();
@@ -342,7 +344,7 @@ export default async function GameDevelopmentLessonPage({ params }: { params: Pr
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">Course Navigation</h3>
               <div className="space-y-3">
-                {gameDevLessons.map((navLesson: GameDevLesson, index: number) => (
+                {lessons.map((navLesson, index: number) => (
                   <Link
                     key={navLesson.id}
                     href={`/learning/game-development/${navLesson.id}`}

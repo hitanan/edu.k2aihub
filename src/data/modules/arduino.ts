@@ -1484,6 +1484,9 @@ void loop() {
   unsigned long currentTime = millis();
   
   // Đọc cảm biến định kỳ
+ 
+
+
   if (currentTime - lastReading >= READING_INTERVAL) {
     SensorData data = readSensors();
     displayData(data);
@@ -1799,7 +1802,7 @@ void autoLighting() {
         options: ['Vẽ đồ thị', 'Nén dữ liệu', 'Tạo và phân tích cú pháp chuỗi JSON', 'Mã hóa dữ liệu'],
         correctAnswerIndex: 2,
         explanation:
-          'JSON (JavaScript Object Notation) là định dạng dữ liệu phổ biến để giao tiếp với các API và dịch vụ web. Thư viện `ArduinoJson` giúp tạo (serialize) và đọc (deserialize) dữ liệu JSON một cách hiệu quả trên các vi điều khiển có bộ nhớ hạn chế.',
+          'JSON (JavaScript Object Notation) là định dạng dữ liệu phổ biến để giao tiếp với các API và dịch vụ web. Thư viện `ArduinoJson` giúp tạo (serialize) và đọc (deserialize) dữ liệu JSON một cách hiệu quả, ngay cả trên các thiết bị có bộ nhớ hạn chế.',
       },
     ],
     faqs: [
@@ -1829,7 +1832,7 @@ export const arduinoQuizzes = [
     lessonId: 'arduino-setup',
     question: 'Hai hàm bắt buộc trong mọi chương trình Arduino là gì?',
     options: ['begin() và end()', 'setup() và loop()', 'start() và stop()', 'init() và main()'],
-    correctAnswer: 1,
+    correctAnswerIndex: 1,
     explanation: 'setup() chạy một lần khi Arduino khởi động, loop() chạy liên tục sau đó.',
   },
   {
@@ -1837,7 +1840,7 @@ export const arduinoQuizzes = [
     lessonId: 'arduino-inputs',
     question: 'INPUT_PULLUP được sử dụng để làm gì?',
     options: ['Tăng điện áp đầu vào', 'Kích hoạt điện trở kéo lên nội bộ', 'Giảm nhiễu điện', 'Tăng tốc độ đọc'],
-    correctAnswer: 1,
+    correctAnswerIndex: 1,
     explanation: 'INPUT_PULLUP kích hoạt điện trở kéo lên 20kΩ nội bộ, giúp pin đọc trạng thái button chính xác.',
   },
   {
@@ -1845,7 +1848,7 @@ export const arduinoQuizzes = [
     lessonId: 'arduino-sensors',
     question: 'Hàm nào được sử dụng để đọc giá trị analog?',
     options: ['digitalRead()', 'analogRead()', 'pinMode()', 'digitalWrite()'],
-    correctAnswer: 1,
+    correctAnswerIndex: 1,
     explanation: 'analogRead() đọc giá trị từ 0-1023 từ các pin analog A0-A5.',
   },
   {
@@ -1853,7 +1856,7 @@ export const arduinoQuizzes = [
     lessonId: 'arduino-communication',
     question: 'Giao thức nào thường được sử dụng cho OLED display?',
     options: ['UART', 'SPI', 'I2C', 'USB'],
-    correctAnswer: 2,
+    correctAnswerIndex: 2,
     explanation: 'I2C (Inter-Integrated Circuit) thường được sử dụng cho OLED displays vì chỉ cần 2 dây (SDA và SCL).',
   },
 ];
