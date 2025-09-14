@@ -172,6 +172,18 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
           'Scikit-learn là thư viện cực kỳ phổ biến, cung cấp các công cụ đơn giản và hiệu quả cho phân tích dữ liệu và các thuật toán Machine Learning cổ điển.',
       },
     ],
+    faqs: [
+      {
+        question: '"Machine Learning" có phải là "Trí tuệ nhân tạo" không?',
+        answer:
+          'Machine Learning (Học máy) là một tập hợp con của Trí tuệ nhân tạo (AI). AI là một lĩnh vực rộng lớn hơn, bao gồm nhiều phương pháp khác nhau để làm cho máy móc thông minh, và Machine Learning là một trong những phương pháp quan trọng và phổ biến nhất hiện nay, tập trung vào việc cho máy tính học từ dữ liệu.',
+      },
+      {
+        question: 'Tôi cần biết lập trình để học Machine Learning không?',
+        answer:
+          'Có. Kiến thức lập trình, đặc biệt là Python, là rất cần thiết để triển khai và thử nghiệm các mô hình Machine Learning. Python có hệ sinh thái thư viện mạnh mẽ (như Scikit-learn, Pandas, NumPy) hỗ trợ rất tốt cho các tác vụ học máy.',
+      },
+    ],
   },
 
   {
@@ -280,6 +292,18 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Học chuyển giao là một kỹ thuật mạnh mẽ giúp tiết kiệm thời gian và tài nguyên tính toán bằng cách tận dụng kiến thức đã học của một mô hình lớn để giải quyết một vấn đề mới nhưng có liên quan.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Mạng nơ-ron (Neural Network) là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Mạng nơ-ron là một mô hình tính toán lấy cảm hứng từ cấu trúc của bộ não sinh học. Nó bao gồm các "nơ-ron" nhân tạo được kết nối với nhau và có khả năng học hỏi các mẫu phức tạp từ dữ liệu. Deep Learning, một nhánh của Machine Learning, sử dụng các mạng nơ-ron có nhiều lớp (sâu) và đã tạo ra những đột phá trong các lĩnh vực như nhận dạng hình ảnh, giọng nói và ngôn ngữ tự nhiên.',
+      },
+      {
+        question: 'Huấn luyện một mô hình Deep Learning có tốn kém không?',
+        answer:
+          'Có, việc huấn luyện các mô hình Deep Learning lớn có thể rất tốn kém về mặt tài nguyên tính toán (đặc biệt là GPU) và thời gian. Tuy nhiên, các kỹ thuật như học chuyển giao (transfer learning) và các nền tảng đám mây (Google Colab, Kaggle) cung cấp GPU miễn phí đã giúp cho việc học và thử nghiệm Deep Learning trở nên dễ tiếp cận hơn rất nhiều.',
       },
     ],
   },
@@ -397,6 +421,18 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
           'OCR là công nghệ cho phép máy tính "đọc" văn bản từ hình ảnh, ví dụ như đọc chữ trên biển số xe, scan tài liệu giấy thành văn bản điện tử.',
       },
     ],
+    faqs: [
+      {
+        question: 'Thị giác máy tính (Computer Vision) có thể làm được những gì?',
+        answer:
+          'Thị giác máy tính cho phép máy tính "nhìn" và "hiểu" thế giới thông qua hình ảnh và video. Các ứng dụng phổ biến bao gồm nhận dạng khuôn mặt, phát hiện đối tượng (ví dụ: xe cộ, người đi bộ), phân tích hình ảnh y tế để chẩn đoán bệnh, xe tự lái, và kiểm soát chất lượng sản phẩm trong nhà máy.',
+      },
+      {
+        question: 'OpenCV là gì?',
+        answer:
+          'OpenCV (Open Source Computer Vision Library) là một thư viện mã nguồn mở hàng đầu dành cho các ứng dụng thị giác máy tính. Nó cung cấp hàng ngàn thuật toán được tối ưu hóa cho việc xử lý ảnh và video thời gian thực, giúp các nhà phát triển dễ dàng xây dựng các ứng dụng thị giác máy tính phức tạp.',
+      },
+    ],
   },
 
   {
@@ -498,23 +534,35 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
           'Một món phở đặc biệt',
           'Một mô hình Transformer được huấn luyện trước dành riêng cho tiếng Việt',
           'Một thư viện xử lý ảnh',
-          'Tên một công ty AI',
+          'Một công cụ dịch thuật',
         ],
         correctAnswerIndex: 1,
         explanation:
-          'PhoBERT là một mô hình ngôn ngữ dựa trên kiến trúc BERT, được phát triển bởi VinAI Research, và nó đã đạt được hiệu suất rất cao trên nhiều tác vụ NLP tiếng Việt.',
+          'PhoBERT là một mô hình ngôn ngữ dựa trên kiến trúc Transformer, được VinAI Research huấn luyện trước trên một tập dữ liệu tiếng Việt khổng lồ, giúp nó đạt hiệu suất cao trong các tác vụ NLP tiếng Việt.',
       },
       {
-        question: 'Tách từ (Tokenization) trong NLP tiếng Việt khó hơn tiếng Anh vì sao?',
+        question: '"Tokenization" trong NLP là gì?',
         options: [
-          'Tiếng Việt có nhiều từ hơn',
-          'Tiếng Việt không dùng khoảng trắng để phân tách các từ một cách rõ ràng như tiếng Anh (ví dụ: "học sinh" là một từ nhưng có khoảng trắng)',
-          'Tiếng Việt không có bảng chữ cái',
-          'Tiếng Việt có quá nhiều dấu câu',
+          'Một loại tiền điện tử',
+          'Quá trình mã hóa văn bản',
+          'Quá trình tách một câu hoặc đoạn văn bản thành các đơn vị nhỏ hơn (tokens) như từ hoặc âm tiết',
+          'Quá trình dịch văn bản',
         ],
-        correctAnswerIndex: 1,
+        correctAnswerIndex: 2,
         explanation:
-          'Trong tiếng Anh, từ thường được ngăn cách bởi khoảng trắng. Nhưng trong tiếng Việt, một từ có thể bao gồm nhiều "tiếng" ngăn cách bởi khoảng trắng (ví dụ: "máy học", "trí tuệ nhân tạo"), điều này làm cho việc tách từ trở nên phức tạp hơn.',
+          'Tokenization là bước tiền xử lý cơ bản và quan trọng trong hầu hết các tác vụ NLP, giúp máy tính có thể xử lý ngôn ngữ tự nhiên dưới dạng các đơn vị có thể quản lý được.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tại sao xử lý ngôn ngữ tự nhiên (NLP) cho tiếng Việt lại khó hơn tiếng Anh?',
+        answer:
+          'Tiếng Việt có những đặc thù riêng như dấu thanh, sự đa dạng trong cách diễn đạt, từ đồng âm khác nghĩa, và sự thiếu hụt các bộ dữ liệu lớn, được gán nhãn chuẩn hóa so với tiếng Anh. Điều này đòi hỏi các mô hình NLP phải được thiết kế và huấn luyện đặc biệt để hiểu đúng ngữ cảnh và ý nghĩa.',
+      },
+      {
+        question: '"Transformer" trong NLP là gì?',
+        answer:
+          'Transformer là một kiến trúc mô hình đột phá được giới thiệu vào năm 2017. Nó đã cách mạng hóa lĩnh vực NLP bằng cách sử dụng cơ chế "chú ý" (attention) để xử lý các mối quan hệ giữa các từ trong một câu, bất kể khoảng cách giữa chúng. Các mô hình nổi tiếng như BERT, GPT-3, và PhoBERT đều dựa trên kiến trúc Transformer.',
       },
     ],
   },

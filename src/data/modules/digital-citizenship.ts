@@ -127,6 +127,28 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
           'Dấu chân số bị động là dữ liệu được thu thập mà bạn không chủ động cung cấp, ví dụ như lịch sử duyệt web, địa chỉ IP, vị trí địa lý.',
       },
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào để giảm thiểu dấu chân số bị động?',
+        answer:
+          'Bạn có thể sử dụng các công cụ như trình duyệt ẩn danh, mạng riêng ảo (VPN) để che giấu địa chỉ IP, và thường xuyên xóa cookies trên trình duyệt. Ngoài ra, hãy kiểm tra kỹ quyền truy cập của các ứng dụng trên điện thoại, đặc biệt là quyền truy cập vị trí.',
+      },
+      {
+        question: 'Dấu chân số có bao giờ biến mất hoàn toàn không?',
+        answer:
+          'Rất khó. Một khi thông tin đã được đưa lên Internet, nó có thể được sao chép và lưu trữ ở nhiều nơi. "Quyền được lãng quên" ở một số quốc gia cho phép bạn yêu cầu xóa thông tin, nhưng việc thực thi có thể phức tạp. Cách tốt nhất là hãy suy nghĩ kỹ trước khi chia sẻ.',
+      },
+      {
+        question: 'Tại sao nhà tuyển dụng lại quan tâm đến dấu chân số của tôi?',
+        answer:
+          'Dấu chân số của bạn có thể tiết lộ nhiều điều về tính cách, kỹ năng giao tiếp và sự chuyên nghiệp của bạn. Một hồ sơ trực tuyến tích cực, không có các phát ngôn gây tranh cãi hoặc hình ảnh không phù hợp, sẽ tạo ấn tượng tốt và cho thấy bạn là một người có trách nhiệm.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng một dấu chân số tích cực?',
+        answer:
+          'Hãy chia sẻ những nội dung thể hiện sự quan tâm của bạn đến ngành nghề, các dự án bạn đã làm, hoặc các bài viết thể hiện tư duy tích cực. Tham gia các cuộc thảo luận một cách văn minh. Sử dụng LinkedIn để xây dựng một hồ sơ chuyên nghiệp. Về cơ bản, hãy biến Internet thành nơi để thể hiện phiên bản tốt nhất của bạn.',
+      },
+    ],
   },
   {
     id: 'cyberbullying-and-online-harassment',
@@ -193,6 +215,28 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
         correctAnswerIndex: 2,
         explanation:
           'Đối đầu trực tiếp có thể làm tình hình tồi tệ hơn. Việc lưu bằng chứng là rất quan trọng để báo cáo sau này. Chia sẻ với người lớn (phụ huynh, thầy cô) sẽ giúp bạn có được sự hỗ trợ cần thiết.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Đâu là ranh giới giữa trêu đùa và bắt nạt?',
+        answer:
+          'Sự khác biệt chính nằm ở sự đồng thuận và cảm xúc của người nhận. Nếu một người cảm thấy bị tổn thương và đã yêu cầu dừng lại nhưng hành vi vẫn tiếp diễn, đó là bắt nạt. Bắt nạt còn có yếu tố lặp đi lặp lại và sự mất cân bằng quyền lực.',
+      },
+      {
+        question: '"Upstander" (Người bảo vệ) là gì và tại sao lại quan trọng?',
+        answer:
+          'Upstander là người chứng kiến hành vi bắt nạt và chọn cách can thiệp một cách an toàn, thay vì làm ngơ (bystander). Họ có thể trực tiếp lên tiếng phản đối, báo cáo hành vi, hoặc an ủi, ủng hộ nạn nhân. Sự can thiệp của upstander có sức mạnh rất lớn để ngăn chặn hành vi bắt nạt.',
+      },
+      {
+        question: 'Làm thế nào để báo cáo một hành vi bắt nạt trên mạng xã hội?',
+        answer:
+          'Hầu hết các nền tảng như Facebook, Instagram, TikTok đều có nút "Báo cáo" (Report) ngay trên mỗi bài đăng, bình luận hoặc tài khoản. Hãy chọn lý do báo cáo phù hợp nhất (ví dụ: quấy rối, ngôn từ gây thù ghét). Báo cáo của bạn thường là ẩn danh.',
+      },
+      {
+        question: 'Nếu tôi bị bắt nạt, có phải là lỗi của tôi không?',
+        answer:
+          'Hoàn toàn không. Không ai đáng bị bắt nạt. Lỗi thuộc về người có hành vi bắt nạt. Điều quan trọng là bạn không nên tự trách mình và hãy tìm kiếm sự giúp đỡ từ những người bạn tin tưởng.',
       },
     ],
   },

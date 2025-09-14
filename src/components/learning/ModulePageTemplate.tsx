@@ -5,7 +5,7 @@ import { Clock, Target, Users, TrendingUp, Play, ChevronRight, Star, Award, Ligh
 import { BaseLessonData } from '@/types/lesson-base';
 import { ModuleData } from '@/types';
 import { moduleNavigation } from '@/data/moduleNavigation';
-import { createEducationalContentStructuredData, createFAQStructuredDataFromQA } from '@/utils/seo';
+import { createFAQStructuredDataFromQA, createCourseStructuredData } from '@/utils/seo';
 import StructuredData from '@/components/StructuredData';
 import { InteractiveFAQ } from './InteractiveFAQ';
 
@@ -52,7 +52,11 @@ export default function ModulePageTemplate({
   } = moduleData;
 
   const moduleUrl = `https://k2aihub.com/learning/${id}`;
-  const structuredData = createEducationalContentStructuredData(title, description, moduleUrl);
+  const courseStructuredData = createCourseStructuredData({
+    moduleData,
+    lessons,
+    moduleUrl,
+  });
   const moduleFaqStructured =
     moduleData.faqs && moduleData.faqs.length > 0 ? createFAQStructuredDataFromQA(moduleData.faqs, moduleUrl) : null;
 
@@ -100,7 +104,7 @@ export default function ModulePageTemplate({
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${gradientColors || color}`}>
-      <StructuredData data={structuredData} />
+      <StructuredData data={courseStructuredData} />
       {moduleFaqStructured && <StructuredData data={moduleFaqStructured} />}
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 pt-6">

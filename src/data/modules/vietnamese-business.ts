@@ -114,6 +114,18 @@ export const vietnameseBusinessLessons: VietnameseBusinessLesson[] = [
           'Chuyển đổi số là một trong những ưu tiên hàng đầu của Chính phủ Việt Nam, nhằm hiện đại hóa nền kinh tế và nâng cao năng lực cạnh tranh quốc gia.',
       },
     ],
+    faqs: [
+      {
+        question: 'Loại hình doanh nghiệp nào phổ biến nhất cho các startup ở Việt Nam?',
+        answer:
+          'Công ty TNHH (Trách nhiệm hữu hạn) và Công ty Cổ phần là hai loại hình phổ biến nhất. Công ty TNHH thường đơn giản hơn để thành lập và quản lý, phù hợp cho giai đoạn đầu. Công ty Cổ phần linh hoạt hơn trong việc huy động vốn (phát hành cổ phiếu), phù hợp khi startup cần mở rộng và kêu gọi đầu tư từ nhiều nguồn.',
+      },
+      {
+        question: 'Chuyển đổi số (Digital Transformation) có nghĩa là gì?',
+        answer:
+          'Chuyển đổi số không chỉ là việc "online hóa" hay số hóa tài liệu. Đó là sự thay đổi toàn diện về cách một doanh nghiệp hoạt động và cung cấp giá trị cho khách hàng bằng cách ứng dụng công nghệ số. Nó bao gồm cả việc thay đổi văn hóa công ty, quy trình làm việc và mô hình kinh doanh.',
+      },
+    ],
     resources: [
       {
         title: 'Cổng thông tin quốc gia về đăng ký doanh nghiệp',

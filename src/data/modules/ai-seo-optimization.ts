@@ -124,6 +124,18 @@ export const aiSeoOptimizationLessons = [
     difficulty: 'Cơ bản',
     objectives: ['Hiểu cách AI hỗ trợ nghiên cứu từ khóa.'],
     realWorldApplications: ['Tối ưu hóa chiến dịch SEO cho website e-commerce.'],
+    faqs: [
+      {
+        question: 'AI có thể thay thế hoàn toàn con người trong việc nghiên cứu từ khóa không?',
+        answer:
+          'Không hoàn toàn. AI là một công cụ hỗ trợ cực kỳ mạnh mẽ, giúp tự động hóa việc phân tích dữ liệu lớn và tìm ra các cụm từ khóa tiềm năng. Tuy nhiên, sự hiểu biết sâu sắc về ngành và khách hàng của con người vẫn là yếu tố quan trọng để lựa chọn từ khóa chiến lược và phù hợp nhất.',
+      },
+      {
+        question: 'Công cụ AI nào tốt nhất cho việc nghiên cứu từ khóa?',
+        answer:
+          'Có nhiều công cụ tốt như Ahrefs, SEMrush, và các công cụ chuyên dụng như Keyword Insights. Việc lựa chọn phụ thuộc vào ngân sách và nhu cầu cụ thể. Một số công cụ mạnh về phân tích đối thủ, trong khi công cụ khác lại mạnh về việc nhóm các từ khóa theo chủ đề (keyword clustering).',
+      },
+    ],
   },
   {
     id: 'content-creation-ai',
@@ -133,6 +145,18 @@ export const aiSeoOptimizationLessons = [
     difficulty: 'Trung cấp',
     objectives: ['Sử dụng AI để viết bài blog, mô tả sản phẩm.'],
     realWorldApplications: ['Tạo content cho trang blog công ty công nghệ.'],
+    faqs: [
+      {
+        question: 'Nội dung do AI tạo ra có bị Google phạt không?',
+        answer:
+          'Google không phạt nội dung chỉ vì nó được tạo ra bởi AI. Google quan tâm đến chất lượng và sự hữu ích của nội dung, bất kể nó được tạo ra như thế nào. Miễn là nội dung của bạn nguyên gốc, chất lượng cao và đáp ứng nhu-cầu-tìm-kiếm của người dùng, nó vẫn có thể xếp hạng tốt.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo nội dung AI tạo ra là độc nhất và chính xác?',
+        answer:
+          'Luôn sử dụng AI như một trợ lý viết bài, không phải là người viết thay thế. Bạn cần kiểm tra lại thông tin (fact-check), chỉnh sửa văn phong cho phù hợp với thương hiệu, và thêm vào những hiểu biết, kinh nghiệm độc đáo của riêng bạn để làm cho nội dung trở nên khác biệt và giá trị hơn.',
+      },
+    ],
   },
   {
     id: 'technical-seo-automation',
@@ -142,6 +166,18 @@ export const aiSeoOptimizationLessons = [
     difficulty: 'Trung cấp',
     objectives: ['Tự động phát hiện và sửa lỗi 404.'],
     realWorldApplications: ['Bảo trì SEO cho một trang web lớn.'],
+    faqs: [
+      {
+        question: 'AI có thể giúp gì trong SEO kỹ thuật?',
+        answer:
+          'AI có thể giúp tự động hóa các công việc tốn thời gian như phân tích log file để hiểu cách Googlebot thu thập dữ liệu trang web, giám sát hiệu suất Core Web Vitals, phát hiện các trang bị lỗi (404, 500), và gợi ý các cơ hội tối ưu hóa liên kết nội bộ.',
+      },
+      {
+        question: 'Sử dụng AI để tự động sửa lỗi SEO kỹ thuật có rủi ro không?',
+        answer:
+          'Có. Việc tự động hóa hoàn toàn có thể dẫn đến những thay đổi không mong muốn. Cách tiếp cận tốt nhất là sử dụng các công cụ AI để phát hiện và chẩn đoán vấn đề, sau đó một chuyên gia SEO sẽ xem xét và phê duyệt các thay đổi trước khi thực hiện.',
+      },
+    ],
   },
   {
     id: 'performance-tracking-ai',
@@ -151,5 +187,17 @@ export const aiSeoOptimizationLessons = [
     difficulty: 'Nâng cao',
     objectives: ['Xây dựng dashboard báo cáo SEO tự động.'],
     realWorldApplications: ['Báo cáo hiệu quả SEO cho khách hàng agency.'],
+    faqs: [
+      {
+        question: 'AI giúp việc theo dõi hiệu suất SEO khác biệt như thế nào so với cách truyền thống?',
+        answer:
+          'AI không chỉ thu thập và hiển thị dữ liệu. Nó có thể phân tích các mối tương quan phức tạp, ví dụ như xác định một bản cập nhật thuật toán của Google đã ảnh hưởng đến thứ hạng của bạn như thế nào, hoặc dự báo lưu lượng truy cập trong tương lai dựa trên các xu hướng hiện tại. Nó chuyển từ việc "cái gì đã xảy ra" sang "tại sao nó xảy ra" và "điều gì sẽ xảy ra tiếp theo".',
+      },
+      {
+        question: 'Tôi có thể tự xây dựng một hệ thống báo cáo SEO bằng AI không?',
+        answer:
+          'Hoàn toàn có thể. Bằng cách kết nối API từ Google Search Console, Google Analytics với các nền tảng như Google Looker Studio và sử dụng các mô hình AI, bạn có thể tạo ra các báo cáo tùy chỉnh. Tuy nhiên, việc này đòi hỏi kiến thức về API, xử lý dữ liệu và một chút về khoa học dữ liệu.',
+      },
+    ],
   },
 ];

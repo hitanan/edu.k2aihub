@@ -104,6 +104,28 @@ export const chemicalEngineeringLessons: BaseLessonData[] = [
       'Hệ thống xử lý nước thải dệt nhuộm.',
       'Công nghệ carbon capture và storage.',
     ],
+    faqs: [
+      {
+        question: 'Tại sao kiểm soát ô nhiễm lại là một phần quan trọng của kỹ thuật hóa học?',
+        answer:
+          'Hầu hết các quy trình công nghiệp hóa học đều tạo ra các sản phẩm phụ hoặc chất thải có thể gây hại cho môi trường. Kỹ sư hóa học có trách nhiệm thiết kế các quy trình không chỉ hiệu quả về mặt kinh tế mà còn phải an toàn và bền vững, bao gồm cả việc xử lý và giảm thiểu ô nhiễm.',
+      },
+      {
+        question: 'Công nghệ xử lý khí thải và nước thải có giống nhau không?',
+        answer:
+          'Chúng khác nhau về nguyên tắc cơ bản. Xử lý khí thải thường liên quan đến các quá trình như hấp phụ, hấp thụ, hoặc chuyển hóa hóa học để loại bỏ các chất ô nhiễm dạng khí. Xử lý nước thải tập trung vào việc loại bỏ các chất rắn lơ lửng, chất hữu cơ hòa tan và các chất dinh dưỡng thông qua các quá trình sinh học, hóa học và vật lý.',
+      },
+      {
+        question: 'Carbon Capture and Storage (CCS) là gì?',
+        answer:
+          'CCS là một nhóm các công nghệ nhằm thu giữ khí carbon dioxide (CO2) từ các nguồn phát thải lớn như nhà máy điện hoặc nhà máy công nghiệp, sau đó vận chuyển và lưu trữ nó ở một nơi mà nó không thể thoát vào khí quyển, thường là trong các thành tạo địa chất dưới lòng đất.',
+      },
+      {
+        question: 'Làm thế nào để chọn công nghệ xử lý ô nhiễm phù hợp?',
+        answer:
+          'Việc lựa chọn phụ thuộc vào nhiều yếu tố, bao gồm: loại và nồng độ chất ô nhiễm, lưu lượng dòng thải, các quy định môi trường cần tuân thủ, chi phí đầu tư và vận hành, và không gian có sẵn. Một kỹ sư hóa học cần phân tích tất cả các yếu tố này để đưa ra giải pháp tối ưu.',
+      },
+    ],
   },
 ];
 

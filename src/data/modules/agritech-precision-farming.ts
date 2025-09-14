@@ -104,6 +104,18 @@ export const AgriTechLessons: AgriTechLessonData[] = [
           'IoT (Internet of Things) là mạng lưới các thiết bị vật lý được gắn cảm biến, phần mềm và các công nghệ khác để kết nối và trao đổi dữ liệu với nhau qua Internet.',
       },
     ],
+    faqs: [
+      {
+        question: 'Precision Farming (Nông nghiệp chính xác) là gì?',
+        answer:
+          'Nông nghiệp chính xác là một khái niệm quản lý trang trại sử dụng công nghệ thông tin để đảm bảo rằng cây trồng và đất nhận được chính xác những gì chúng cần để có sức khỏe và năng suất tối ưu. Nó trái ngược với phương pháp truyền thống là áp dụng cùng một lượng nước, phân bón cho toàn bộ cánh đồng.',
+      },
+      {
+        question: 'ROI (Return on Investment) của việc áp dụng nông nghiệp thông minh được tính như thế nào?',
+        answer:
+          'ROI được tính bằng cách lấy lợi nhuận ròng (do tăng năng suất, giảm chi phí đầu vào như nước, phân bón, thuốc trừ sâu) chia cho tổng chi phí đầu tư công nghệ. Một hệ thống IoT có thể có ROI dương trong vòng 1-3 năm tùy thuộc vào quy mô và loại cây trồng.',
+      },
+    ],
   },
   {
     id: 'drone-crop-monitoring-3d',
@@ -198,6 +210,18 @@ export const AgriTechLessons: AgriTechLessonData[] = [
           'NDVI được tính toán từ ánh sáng phản xạ ở vùng cận hồng ngoại (NIR) và vùng ánh sáng nhìn thấy (VIS). Thực vật khỏe mạnh hấp thụ nhiều ánh sáng đỏ và phản xạ nhiều ánh sáng cận hồng ngoại, do đó có chỉ số NDVI cao.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sử dụng drone trong nông nghiệp ở Việt Nam có cần giấy phép không?',
+        answer:
+          'Có. Việc sử dụng máy bay không người lái (drone) tại Việt Nam phải tuân thủ các quy định của Bộ Quốc phòng. Người dùng cần đăng ký thiết bị và xin giấy phép bay cho từng khu vực và khoảng thời gian cụ thể để đảm bảo an ninh, an toàn hàng không.',
+      },
+      {
+        question: 'Camera đa phổ (multispectral camera) khác gì camera thường?',
+        answer:
+          'Camera thường (RGB) chỉ thu nhận ánh sáng trong 3 dải màu mà mắt người nhìn thấy (Đỏ, Xanh lá, Xanh dương). Camera đa phổ có thể thu nhận ánh sáng ở các dải sóng khác, đặc biệt là vùng cận hồng ngoại (NIR), giúp phát hiện các dấu hiệu stress của cây trồng mà mắt thường không thể nhìn thấy.',
+      },
+    ],
   },
   {
     id: 'smart-irrigation-systems',
@@ -290,6 +314,18 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Cảm biến độ ẩm đất là thành phần cốt lõi, nó cung cấp dữ liệu trực tiếp về lượng nước có sẵn cho rễ cây, giúp hệ thống quyết định khi nào và tưới bao nhiêu là tối ưu.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Hệ thống tưới nhỏ giọt có lợi ích gì so với tưới phun mưa?',
+        answer:
+          'Tưới nhỏ giọt đưa nước trực tiếp đến vùng rễ của cây, giảm thiểu sự bay hơi và thất thoát nước. Nó hiệu quả hơn tưới phun mưa, đặc biệt ở những vùng khô hạn và gió nhiều. Tưới nhỏ giọt cũng giúp hạn chế sự phát triển của cỏ dại giữa các hàng cây.',
+      },
+      {
+        question: 'Làm thế nào để một hệ thống tưới thông minh tích hợp được dự báo thời tiết?',
+        answer:
+          'Hệ thống sẽ kết nối với một dịch vụ API thời tiết. Nếu hệ thống dự báo sắp có mưa lớn, lịch tưới tự động sẽ được hoãn lại hoặc giảm lượng nước tưới, giúp tiết kiệm nước và tránh tình trạng ngập úng cho cây trồng.',
       },
     ],
   },
@@ -391,6 +427,18 @@ export const AgriTechLessons: AgriTechLessonData[] = [
           'Tính bất biến đảm bảo rằng một khi dữ liệu đã được ghi vào chuỗi, không ai có thể sửa đổi hoặc xóa nó. Tính minh bạch cho phép tất cả các bên được cấp phép có thể xem cùng một thông tin, tạo ra một "sự thật duy nhất".',
       },
     ],
+    faqs: [
+      {
+        question: 'Smart Contract (Hợp đồng thông minh) trong chuỗi cung ứng nông sản là gì?',
+        answer:
+          'Smart Contract là các chương trình máy tính tự động thực thi các điều khoản của một hợp đồng khi các điều kiện được đáp ứng. Ví dụ, một smart contract có thể tự động chuyển tiền thanh toán cho nông dân ngay khi hệ thống xác nhận lô hàng đã được giao đến kho của nhà bán lẻ, mà không cần sự can thiệp của bên thứ ba.',
+      },
+      {
+        question: 'Blockchain có giúp chống hàng giả, hàng nhái không?',
+        answer:
+          'Có. Bằng cách tạo ra một bản ghi kỹ thuật số không thể thay đổi cho mỗi sản phẩm, blockchain giúp người tiêu dùng xác thực nguồn gốc và hành trình của sản phẩm. Nếu một sản phẩm không có trong hệ thống blockchain hoặc có thông tin không khớp, nó có khả năng cao là hàng giả.',
+      },
+    ],
   },
   {
     id: 'vertical-farming-systems',
@@ -488,6 +536,18 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Hydroponics là một nhánh của hydroculture, phương pháp trồng cây mà không cần đất, bằng cách sử dụng dung dịch dinh dưỡng khoáng chất trong dung môi nước.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tại sao đèn LED chuyên dụng lại quan trọng cho vertical farming?',
+        answer:
+          'Đèn LED chuyên dụng cho phép tùy chỉnh quang phổ ánh sáng để phù hợp với từng giai đoạn phát triển của cây (ví dụ, ánh sáng xanh cho giai đoạn tăng trưởng lá, ánh sáng đỏ cho giai đoạn ra hoa). Chúng cũng tiết kiệm năng lượng và tỏa nhiệt ít hơn so với các loại đèn truyền thống, rất quan trọng trong không gian kín của trang trại thẳng đứng.',
+      },
+      {
+        question: 'Vertical farming có thực sự bền vững không?',
+        answer:
+          'Mô hình này có nhiều ưu điểm bền vững: sử dụng ít hơn tới 95% nước so với nông nghiệp truyền thống, không cần thuốc trừ sâu, và giảm quãng đường vận chuyển thực phẩm đến người tiêu dùng. Tuy nhiên, nó đòi hỏi một lượng lớn năng lượng cho việc chiếu sáng và kiểm soát khí hậu, đây là một thách thức cần được giải quyết bằng các nguồn năng lượng tái tạo.',
       },
     ],
   },
@@ -589,6 +649,18 @@ export const AgriTechLessons: AgriTechLessonData[] = [
           'Transfer Learning giúp tiết kiệm thời gian và tài nguyên tính toán đáng kể. Thay vì huấn luyện từ đầu, chúng ta tận dụng các "kiến thức" về các đặc trưng hình ảnh (cạnh, góc, kết cấu...) mà mô hình lớn đã học được.',
       },
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào để cải thiện độ chính xác của mô hình AI nhận diện bệnh cây trồng?',
+        answer:
+          'Độ chính xác có thể được cải thiện bằng nhiều cách: tăng số lượng và sự đa dạng của hình ảnh trong tập dữ liệu huấn luyện, sử dụng các kỹ thuật tăng cường dữ liệu (data augmentation), tinh chỉnh kiến trúc mô hình (ví dụ: thêm các lớp, thay đổi hàm kích hoạt), và sử dụng các kỹ thuật ensemble (kết hợp nhiều mô hình).',
+      },
+      {
+        question: 'Mô hình AI có thể hoạt động khi không có kết nối internet không?',
+        answer:
+          'Có. Các mô hình có thể được tối ưu hóa và nén lại (ví dụ: sử dụng TensorFlow Lite) để chạy trực tiếp trên thiết bị di động. Điều này rất quan trọng cho nông dân ở các khu vực có kết nối internet kém, cho phép họ sử dụng ứng dụng ngay tại ruộng đồng.',
+      },
+    ],
   },
   {
     id: 'agricultural-robotics',
@@ -686,6 +758,18 @@ export const AgriTechLessons: AgriTechLessonData[] = [
         correctAnswerIndex: 0,
         explanation:
           'ROS (Robot Operating System) là một framework linh hoạt để viết phần mềm cho robot. Nó cung cấp một tập hợp các công cụ, thư viện và quy ước nhằm mục đích đơn giản hóa nhiệm vụ tạo ra các hành vi robot phức tạp và mạnh mẽ trên nhiều nền tảng robot khác nhau.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Robot nông nghiệp có thay thế hoàn toàn lao động con người không?',
+        answer:
+          'Không hoàn toàn. Robot có xu hướng thay thế các công việc lặp đi lặp lại, nặng nhọc và nguy hiểm (như phun thuốc trừ sâu). Tuy nhiên, vẫn cần con người để giám sát, bảo trì robot, và thực hiện các công việc đòi hỏi sự phán đoán tinh vi. Robot sẽ thay đổi bản chất của công việc nông nghiệp, đòi hỏi người lao động có kỹ năng cao hơn.',
+      },
+      {
+        question: 'SLAM (Simultaneous Localization and Mapping) là gì và tại sao nó quan trọng cho robot nông nghiệp?',
+        answer:
+          'SLAM là khả năng của một robot có thể xây dựng một bản đồ của môi trường xung quanh và đồng thời xác định vị trí của chính nó trên bản đồ đó. Đây là công nghệ cốt lõi cho phép robot tự động di chuyển và điều hướng trong các môi trường phức tạp như một trang trại mà không cần đến GPS có độ chính xác cao.',
       },
     ],
   },

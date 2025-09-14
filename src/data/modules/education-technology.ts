@@ -435,6 +435,28 @@ export const educationTechnologyLessons: BaseLessonData[] = [
           'CoSpaces Edu là một nền tảng thân thiện với người dùng, cho phép giáo viên và học sinh tạo ra các nội dung 3D, VR và AR một cách dễ dàng bằng giao diện kéo-thả và lập trình khối đơn giản.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt cơ bản giữa VR và AR là gì?',
+        answer:
+          'VR (Thực tế ảo) đưa bạn vào một thế giới hoàn toàn ảo, tách biệt bạn khỏi môi trường thực tại, thường thông qua một chiếc kính che kín mắt. AR (Thực tế tăng cường) thì ngược lại, nó không thay thế mà "tăng cường" thế giới thực bằng cách chèn các vật thể hoặc thông tin ảo vào môi trường xung quanh bạn, thường qua màn hình điện thoại hoặc kính trong suốt.',
+      },
+      {
+        question: 'Chi phí để triển khai VR/AR trong lớp học có đắt không?',
+        answer:
+          'Chi phí đã giảm đáng kể. Đối với AR, hầu hết học sinh đã có sẵn thiết bị là smartphone. Đối với VR, các giải pháp chi phí thấp như Google Cardboard (sử dụng với điện thoại) có giá rất rẻ. Các thiết bị VR độc lập như Oculus Quest có giá cao hơn nhưng đang ngày càng phải chăng. Quan trọng hơn chi phí phần cứng là chi phí phát triển nội dung chất lượng.',
+      },
+      {
+        question: 'VR/AR có thể được áp dụng cho những môn học nào?',
+        answer:
+          'Hầu hết mọi môn học! Lịch sử (tham quan di tích ảo), Địa lý (du hành đến các quốc gia), Sinh học (khám phá cơ thể người từ bên trong), Hóa học (thực hiện thí nghiệm nguy hiểm một cách an toàn), Kỹ thuật (tháo lắp động cơ ảo), Nghệ thuật (điêu khắc trong không gian 3D)... Khả năng là vô tận.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu tạo nội dung VR/AR cho giáo dục mà không cần biết lập trình?',
+        answer:
+          'Bạn có thể bắt đầu với các nền tảng "no-code" hoặc "low-code" được thiết kế cho giáo dục như CoSpaces Edu hoặc Nearpod. Chúng cung cấp giao diện kéo-thả, thư viện tài nguyên 3D có sẵn và các công cụ lập trình trực quan (dạng khối lệnh), cho phép giáo viên và học sinh tự tạo ra các trải nghiệm tương tác mà không cần kiến thức lập trình chuyên sâu.',
+      },
+    ],
   },
 
   {
@@ -576,6 +598,28 @@ export const educationTechnologyLessons: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Power BI và Tableau là hai công cụ Business Intelligence (BI) hàng đầu, rất mạnh mẽ trong việc tạo ra các báo cáo và dashboard tương tác, trực quan từ các bộ dữ liệu lớn, rất phù hợp cho learning analytics.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Phân tích dữ liệu giáo dục có vi phạm quyền riêng tư của học sinh không?',
+        answer:
+          'Đây là một vấn đề rất quan trọng. Việc phân tích dữ liệu phải luôn tuân thủ các quy định về bảo mật và quyền riêng tư (như GDPR). Dữ liệu phải được ẩn danh hóa, chỉ được sử dụng cho mục đích cải thiện giáo dục, và phải có sự đồng ý của học sinh hoặc phụ huynh. Đạo đức trong việc sử dụng dữ liệu là ưu tiên hàng đầu.',
+      },
+      {
+        question: 'Sự khác biệt giữa Educational Data Mining (EDM) và Learning Analytics (LA) là gì?',
+        answer:
+          'Hai lĩnh vực này rất gần nhau. Nói một cách đơn giản, EDM thường tập trung hơn vào việc phát triển các thuật toán và phương pháp kỹ thuật mới để khám phá các mẫu trong dữ liệu. Trong khi đó, LA tập trung hơn vào việc áp dụng các phương pháp đó để giải quyết các vấn đề thực tiễn trong giáo dục, hỗ trợ người học và giáo viên.',
+      },
+      {
+        question: 'Làm thế nào dữ liệu có thể dự đoán một học sinh có nguy cơ bỏ học?',
+        answer:
+          'Các mô hình dự đoán phân tích các mẫu hành vi trong quá khứ. Ví dụ, một học sinh có thể bị gắn cờ "có nguy cơ" nếu dữ liệu cho thấy họ thường xuyên vắng mặt, nộp bài tập muộn, điểm số giảm dần, và ít tương tác trên hệ thống LMS so với các bạn cùng lớp đã thành công. Việc phát hiện sớm giúp nhà trường can thiệp kịp thời.',
+      },
+      {
+        question: 'Tôi không phải là chuyên gia dữ liệu, làm sao tôi có thể áp dụng Learning Analytics?',
+        answer:
+          'Bạn có thể bắt đầu bằng việc sử dụng các công cụ phân tích có sẵn trong các hệ thống LMS như Canvas, Moodle. Chúng thường cung cấp các dashboard trực quan về tỷ lệ hoàn thành khóa học, điểm số trung bình, mức độ tương tác... Hãy bắt đầu bằng việc đặt câu hỏi về lớp học của bạn và tìm kiếm câu trả lời trong các dữ liệu đó.',
       },
     ],
   },
@@ -724,6 +768,28 @@ export const educationTechnologyLessons: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Mô hình Freemium là sự kết hợp giữa "Free" (miễn phí) và "Premium" (cao cấp). Nó cho phép người dùng trải nghiệm các tính năng cơ bản miễn phí và khuyến khích họ nâng cấp lên phiên bản trả phí để sử dụng các chức năng cao cấp hơn.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tôi có một ý tưởng EdTech, bước đầu tiên tôi nên làm là gì?',
+        answer:
+          'Đừng vội xây dựng sản phẩm. Bước đầu tiên và quan trọng nhất là "ra khỏi tòa nhà" và nói chuyện với khách hàng tiềm năng của bạn (học sinh, giáo viên, phụ huynh, quản lý trường học). Hãy xác thực xem vấn đề bạn đang cố gắng giải quyết có thực sự tồn tại và đủ "đau" để họ sẵn sàng trả tiền cho một giải pháp hay không. Giai đoạn này gọi là "xác thực vấn đề" (problem validation).',
+      },
+      {
+        question: 'Làm thế nào để một startup EdTech có thể cạnh tranh với các "ông lớn"?',
+        answer:
+          'Hãy tập trung vào một thị trường ngách (niche market) mà các công ty lớn đang bỏ qua. Hãy làm tốt hơn họ ở một khía cạnh cụ thể, ví dụ: cung cấp dịch vụ chăm sóc khách hàng tốt hơn, tạo ra trải nghiệm người dùng vượt trội, hoặc tập trung sâu vào một chương trình giáo dục địa phương. Sự linh hoạt và tốc độ cũng là lợi thế của startup.',
+      },
+      {
+        question: 'Mô hình kinh doanh nào là phổ biến nhất trong EdTech?',
+        answer:
+          'Có nhiều mô hình, nhưng phổ biến nhất bao gồm: 1. **Subscription (Thuê bao):** Người dùng trả phí hàng tháng/năm (ví dụ: Duolingo Plus). 2. **Freemium:** Miễn phí tính năng cơ bản, trả phí cho tính năng nâng cao (ví dụ: Canva for Education). 3. **B2B/B2B2C:** Bán cho các tổ chức (trường học, công ty), sau đó họ cung cấp cho người dùng cuối (ví dụ: Coursera for Business). 4. **Marketplace:** Nền tảng kết nối người dạy và người học, và lấy một phần phí giao dịch (ví dụ: Udemy).',
+      },
+      {
+        question: 'Thách thức lớn nhất khi bán sản phẩm EdTech cho trường học là gì?',
+        answer:
+          'Chu kỳ bán hàng dài và phức tạp. Bạn thường phải thuyết phục nhiều bên liên quan: giáo viên (người dùng cuối), tổ trưởng chuyên môn, ban giám hiệu (người ra quyết định), và phòng tài chính (người chi tiền). Ngoài ra, ngân sách của các trường học thường có hạn và được quyết định theo năm học. Việc tích hợp với các hệ thống hiện có của trường cũng là một rào cản kỹ thuật lớn.',
       },
     ],
   },

@@ -157,6 +157,28 @@ export const blueEconomyLessons: BaseLessonData[] = [
           'IoT cho phép giám sát liên tục các chỉ số quan trọng của môi trường nước (pH, oxy hòa tan, nhiệt độ), từ đó đưa ra cảnh báo và điều khiển tự động, giúp tối ưu hóa điều kiện sống cho vật nuôi.',
       },
     ],
+    faqs: [
+      {
+        question: 'Hệ thống nuôi trồng thủy sản thông minh giải quyết vấn đề gì?',
+        answer:
+          'Nó giải quyết các vấn đề về rủi ro dịch bệnh, lãng phí thức ăn, và ô nhiễm môi trường trong nuôi trồng thủy sản truyền thống bằng cách sử dụng công nghệ để giám sát và kiểm soát chính xác các điều kiện ao nuôi.',
+      },
+      {
+        question: 'AI được ứng dụng như thế nào trong hệ thống này?',
+        answer:
+          'AI có thể phân tích dữ liệu từ các cảm biến để dự đoán nguy cơ dịch bệnh, tối ưu hóa lượng thức ăn cần thiết dựa trên hành vi của vật nuôi, và đề xuất các hành động can thiệp kịp thời để duy trì môi trường nước lý tưởng.',
+      },
+      {
+        question: 'Chi phí để triển khai một hệ thống như vậy có cao không?',
+        answer:
+          'Chi phí ban đầu có thể cao hơn so với phương pháp truyền thống, nhưng về lâu dài, hệ thống có thể giúp tiết kiệm chi phí thức ăn, giảm tổn thất do dịch bệnh và tăng năng suất, dẫn đến lợi tức đầu tư (ROI) tốt.',
+      },
+      {
+        question: 'Người nông dân không rành công nghệ có thể sử dụng hệ thống này không?',
+        answer:
+          'Có. Các hệ thống hiện đại thường được thiết kế với giao diện thân thiện, trực quan trên điện thoại thông minh. Người nông dân có thể nhận cảnh báo và xem các chỉ số quan trọng một cách dễ dàng mà không cần kiến thức kỹ thuật sâu.',
+      },
+    ],
   },
   {
     id: 'marine-renewable-energy',
@@ -220,6 +242,28 @@ export const blueEconomyLessons: BaseLessonData[] = [
           'Tốc độ gió ngoài khơi thường cao hơn và ít bị ảnh hưởng bởi các vật cản hơn so với trên đất liền, giúp các tuabin gió hoạt động hiệu quả và tạo ra sản lượng điện lớn hơn.',
       },
     ],
+    faqs: [
+      {
+        question: 'Ngoài năng lượng gió, còn có loại năng lượng tái tạo biển nào khác?',
+        answer:
+          'Ngoài gió, biển còn cung cấp năng lượng từ sóng, thủy triều, dòng chảy và sự chênh lệch nhiệt độ giữa các lớp nước (OTEC). Mỗi loại có tiềm năng và thách thức công nghệ riêng.',
+      },
+      {
+        question: 'Xây dựng một trang trại gió ngoài khơi có tác động gì đến môi trường biển?',
+        answer:
+          'Các tác động tiềm tàng bao gồm tiếng ồn dưới nước ảnh hưởng đến sinh vật biển trong quá trình xây dựng, sự thay đổi của đáy biển, và rủi ro va chạm đối với chim biển. Do đó, việc đánh giá tác động môi trường (EIA) kỹ lưỡng là cực kỳ quan trọng.',
+      },
+      {
+        question: 'Làm thế nào để truyền tải điện từ ngoài khơi vào đất liền?',
+        answer:
+          'Điện được truyền tải qua các hệ thống cáp ngầm dưới biển công suất lớn, thường là cáp điện một chiều cao thế (HVDC) để giảm tổn thất năng lượng trên khoảng cách xa.',
+      },
+      {
+        question: 'Chi phí sản xuất điện gió ngoài khơi có cạnh tranh không?',
+        answer:
+          'Hiện tại, chi phí vẫn cao hơn so với điện gió trên bờ và điện mặt trời. Tuy nhiên, với sự tiến bộ của công nghệ và quy mô dự án ngày càng lớn, chi phí đang giảm nhanh chóng và dự kiến sẽ trở nên rất cạnh tranh trong tương lai gần.',
+      },
+    ],
   },
   {
     id: 'marine-biotechnology',
@@ -279,6 +323,28 @@ export const blueEconomyLessons: BaseLessonData[] = [
           'Công nghệ sinh học biển có phạm vi ứng dụng rất rộng, từ việc tìm kiếm các hợp chất mới cho y học, tạo ra các thành phần tự nhiên cho mỹ phẩm, đến việc phát triển nhiên liệu sinh học từ tảo.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao sinh vật biển lại là nguồn dược liệu tiềm năng?',
+        answer:
+          'Sinh vật biển sống trong môi trường khắc nghiệt và cạnh tranh cao, do đó chúng tiến hóa để tạo ra các hợp chất hóa học độc đáo có hoạt tính sinh học mạnh (như kháng khuẩn, chống viêm, chống ung thư) mà không tìm thấy trên cạn.',
+      },
+      {
+        question: 'Việc khai thác sinh vật biển để làm thuốc có gây hại cho hệ sinh thái không?',
+        answer:
+          'Đây là một rủi ro lớn. Do đó, các nhà khoa học đang tập trung vào các phương pháp bền vững như nuôi cấy tế bào sinh vật biển trong phòng thí nghiệm hoặc tổng hợp hóa học các hợp chất đã được xác định, thay vì khai thác trực tiếp từ tự nhiên.',
+      },
+      {
+        question: 'Một ví dụ về thuốc thành công từ biển là gì?',
+        answer:
+          'Ziconotide (tên thương mại Prialt), một loại thuốc giảm đau cực mạnh, được phát triển từ nọc độc của ốc nón biển. Một ví dụ khác là Trabectedin (Yondelis), một loại thuốc điều trị ung thư, có nguồn gốc từ một loài hải tiêu (sea squirt).',
+      },
+      {
+        question: 'Làm thế nào để tìm kiếm các hợp chất mới trong đại dương?',
+        answer:
+          'Quá trình này bao gồm việc thu thập mẫu từ các môi trường đa dạng (như rạn san hô, miệng phun thủy nhiệt), sau đó sử dụng các kỹ thuật sàng lọc thông lượng cao để kiểm tra hàng ngàn chiết xuất đối với các hoạt tính sinh học mong muốn (ví dụ: khả năng tiêu diệt tế bào ung thư).',
+      },
+    ],
   },
   {
     id: 'sustainable-fisheries-management',
@@ -336,6 +402,28 @@ export const blueEconomyLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Hệ thống truy xuất nguồn gốc giúp minh bạch hóa toàn bộ chuỗi cung ứng, từ lúc đánh bắt đến khi tới tay người tiêu dùng, đảm bảo sản phẩm tuân thủ các quy định về an toàn thực phẩm và khai thác bền vững.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'IUU là gì và tại sao nó lại là một vấn đề nghiêm trọng?',
+        answer:
+          'IUU là viết tắt của Khai thác Bất hợp pháp, Không báo cáo và Không theo quy định (Illegal, Unreported, and Unregulated). Nó là một vấn đề toàn cầu gây cạn kiệt nguồn lợi cá, phá hủy môi trường biển, và tạo ra sự cạnh tranh không công bằng với những ngư dân tuân thủ pháp luật.',
+      },
+      {
+        question: 'Công nghệ có thể giúp chống khai thác IUU như thế nào?',
+        answer:
+          'Công nghệ đóng vai trò quan trọng thông qua Hệ thống giám sát tàu cá (VMS), nhật ký khai thác điện tử, và công nghệ blockchain để truy xuất nguồn gốc. Những công cụ này giúp cơ quan chức năng theo dõi hoạt động của tàu cá và đảm bảo tính minh bạch của chuỗi cung ứng.',
+      },
+      {
+        question: 'Blockchain giúp ích gì trong việc truy xuất nguồn gốc hải sản?',
+        answer:
+          'Blockchain tạo ra một sổ cái kỹ thuật số không thể thay đổi. Mỗi bước trong chuỗi cung ứng (đánh bắt, chế biến, vận chuyển) có thể được ghi lại như một giao dịch. Điều này giúp người tiêu dùng và nhà quản lý có thể xác minh chính xác nguồn gốc và hành trình của sản phẩm, chống lại gian lận.',
+      },
+      {
+        question: 'Là một người tiêu dùng, tôi có thể làm gì để ủng hộ nghề cá bền vững?',
+        answer:
+          'Bạn có thể chọn mua các sản phẩm hải sản có nhãn chứng nhận bền vững (như MSC - Marine Stewardship Council), ưu tiên các loài không bị đánh bắt quá mức, và đặt câu hỏi cho nhà bán lẻ về nguồn gốc của sản phẩm.',
       },
     ],
   },

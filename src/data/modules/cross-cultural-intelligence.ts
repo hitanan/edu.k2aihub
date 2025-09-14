@@ -654,6 +654,29 @@ export const lessons: CrossCulturalLessonType[] = [
           'Các nền văn hóa ngữ cảnh thấp, như Mỹ hay Đức, coi trọng sự rõ ràng và trực tiếp. Thông điệp nằm ở chính lời nói, không cần phải "đọc giữa các dòng".',
       },
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào để giao tiếp hiệu quả với người từ văn hóa ngữ cảnh cao (high-context)?',
+        answer:
+          'Hãy kiên nhẫn và tập trung vào việc xây dựng mối quan hệ. Lắng nghe không chỉ lời nói mà cả những gì không được nói ra. Chú ý đến ngôn ngữ cơ thể và các tín hiệu phi ngôn ngữ. Đừng đi thẳng vào vấn đề ngay lập tức, hãy dành thời gian cho các cuộc trò chuyện xã giao.',
+      },
+      {
+        question: 'Làm thế nào để đưa phản hồi cho một người từ văn hóa không quen nhận phản hồi trực tiếp?',
+        answer:
+          'Sử dụng phương pháp "sandwich": bắt đầu bằng một lời khen ngợi chân thành, sau đó đưa ra góp ý một cách nhẹ nhàng (ví dụ: "Để làm cho nó hoàn hảo hơn, chúng ta có thể..."), và kết thúc bằng một lời động viên. Tránh đưa ra phản hồi tiêu cực trước mặt người khác.',
+      },
+      {
+        question: 'Sự khác biệt giữa văn hóa thời gian "đơn tuyến" (monochronic) và "đa tuyến" (polychronic) là gì?',
+        answer:
+          'Văn hóa đơn tuyến (ví dụ: Đức, Thụy Sĩ) xem thời gian là một đường thẳng, họ coi trọng sự đúng giờ và làm từng việc một. Văn hóa đa tuyến (ví dụ: Mỹ Latinh, Trung Đông) xem thời gian là linh hoạt, họ có thể làm nhiều việc cùng lúc và ưu tiên mối quan hệ hơn là lịch trình.',
+      },
+      {
+        question:
+          'Làm thế nào để một người Việt Nam (văn hóa ngữ cảnh cao) có thể thích nghi với môi trường làm việc của Mỹ (văn hóa ngữ cảnh thấp)?',
+        answer:
+          'Hãy tập giao tiếp một cách rõ ràng, trực tiếp và đi thẳng vào vấn đề hơn. Đừng ngại đặt câu hỏi nếu bạn chưa hiểu rõ. Trong các cuộc họp, hãy chủ động phát biểu ý kiến của mình. Hiểu rằng việc tranh luận thẳng thắn về công việc được coi là bình thường và không ảnh hưởng đến quan hệ cá nhân.',
+      },
+    ],
   },
   {
     id: 'building-global-networks',
@@ -879,6 +902,28 @@ export const lessons: CrossCulturalLessonType[] = [
         correctAnswerIndex: 1,
         explanation:
           'Trong các nền văn hóa ưu tiên mối quan hệ, việc xây dựng một nền tảng quan hệ cá nhân vững chắc là bước đi bắt buộc trước khi các hoạt động kinh doanh có thể diễn ra một cách suôn sẻ.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để bắt đầu networking nếu tôi là người hướng nội?',
+        answer:
+          'Networking không nhất thiết phải là các sự kiện đông người. Hãy tập trung vào chất lượng thay vì số lượng. Bắt đầu bằng việc kết nối 1-1 qua LinkedIn hoặc email. Chuẩn bị trước một vài câu hỏi để bắt đầu cuộc trò chuyện. Lắng nghe nhiều hơn nói cũng là một chiến lược networking hiệu quả.',
+      },
+      {
+        question: 'Làm thế nào để duy trì một mối quan hệ sau lần gặp đầu tiên?',
+        answer:
+          'Hãy gửi một email hoặc tin nhắn ngắn cảm ơn sau cuộc gặp. Tìm cách "cho đi" giá trị, ví dụ như chia sẻ một bài viết hữu ích, giới thiệu một mối quan hệ khác, hoặc đơn giản là gửi lời chúc vào một dịp đặc biệt. Hãy thể hiện sự quan tâm chân thành đến công việc và cuộc sống của họ.',
+      },
+      {
+        question: 'Sử dụng LinkedIn để networking toàn cầu như thế nào cho hiệu quả?',
+        answer:
+          'Hãy cá nhân hóa lời mời kết nối của bạn, nêu rõ lý do tại sao bạn muốn kết nối. Thường xuyên chia sẻ các nội dung có giá trị liên quan đến lĩnh vực của bạn. Tương tác (like, comment) với các bài đăng của người khác một cách có ý nghĩa. Tham gia vào các nhóm chuyên ngành để mở rộng mạng lưới.',
+      },
+      {
+        question: 'Sự khác biệt giữa mentor (người cố vấn) và sponsor (người bảo trợ) là gì?',
+        answer:
+          'Một mentor là người cho bạn lời khuyên, chia sẻ kinh nghiệm và hướng dẫn bạn. Một sponsor là một người có vị trí cao hơn, người không chỉ cho bạn lời khuyên mà còn chủ động sử dụng ảnh hưởng của họ để tạo ra cơ hội cho bạn, ví dụ như đề cử bạn cho một dự án quan trọng hoặc một vị trí cao hơn.',
       },
     ],
   },

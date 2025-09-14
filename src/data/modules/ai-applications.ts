@@ -32,6 +32,10 @@ export interface AIApplicationLessonData extends BaseLessonData {
     correctAnswerIndex: number;
     explanation: string;
   }[];
+  faqs?: {
+    question: string;
+    answer: string;
+  }[];
 }
 
 export const AIApplicationLessons: AIApplicationLessonData[] = [
@@ -213,6 +217,23 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
           'Các trường đại học có công cụ để phát hiện đạo văn. Quan trọng hơn, bài luận là cơ hội để bạn thể hiện con người và câu chuyện của mình, điều mà AI không thể thay thế.',
       },
     ],
+    faqs: [
+      {
+        question: 'AI có thể tự viết bài luận du học cho tôi không?',
+        answer:
+          'AI là công cụ hỗ trợ tuyệt vời để brainstorm ý tưởng, xây dựng dàn ý, và kiểm tra ngữ pháp. Tuy nhiên, bạn không nên sao chép hoàn toàn. Bài luận cần phản ánh câu chuyện và cá tính riêng của bạn, điều mà AI không thể thay thế. Hãy dùng AI như một người trợ lý thông minh, không phải một cỗ máy viết hộ.',
+      },
+      {
+        question: 'Luyện nói IELTS với AI có thực sự hiệu quả không?',
+        answer:
+          'Rất hiệu quả. Các công cụ như ELSA Speak hay chế độ hội thoại của ChatGPT cho phép bạn luyện tập 24/7 với "người bản xứ", nhận phản hồi tức thì về phát âm, ngữ điệu. Điều này giúp bạn tăng sự tự tin và trôi chảy một cách nhanh chóng mà không tốn chi phí cho gia sư.',
+      },
+      {
+        question: 'Sử dụng AI để tìm học bổng có an toàn không?',
+        answer:
+          'An toàn và hiệu quả. AI giúp bạn lọc và tổng hợp thông tin từ hàng ngàn nguồn khác nhau dựa trên hồ sơ của bạn, giúp bạn không bỏ lỡ các cơ hội "ngách". Tuy nhiên, hãy luôn kiểm tra lại thông tin trên trang web chính thức của trường hoặc quỹ học bổng trước khi nộp đơn.',
+      },
+    ],
   },
   {
     id: 'ai-business-automation',
@@ -323,6 +344,23 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
           'Chatbot AI cung cấp hỗ trợ tức thì và liên tục, giải phóng nhân viên con người để xử lý các vấn đề phức tạp hơn, từ đó nâng cao trải nghiệm của khách hàng.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tự động hóa bằng AI có làm nhân viên của tôi mất việc không?',
+        answer:
+          'Mục tiêu của tự động hóa không phải là thay thế con người, mà là giải phóng họ khỏi các công việc lặp đi lặp lại, nhàm chán. Điều này cho phép nhân viên tập trung vào các nhiệm vụ đòi hỏi sự sáng tạo, tư duy chiến lược và tương tác phức tạp với khách hàng, từ đó tạo ra giá trị cao hơn.',
+      },
+      {
+        question: 'Chi phí để triển khai chatbot AI cho doanh nghiệp nhỏ có đắt không?',
+        answer:
+          'Không hề. Hiện nay có rất nhiều nền tảng chatbot (như Tawk.to, ManyChat, hoặc sử dụng API của ChatGPT) với chi phí rất hợp lý, thậm chí có gói miễn phí. Lợi ích về việc tiết kiệm thời gian và tăng sự hài lòng của khách hàng thường vượt xa chi phí ban đầu.',
+      },
+      {
+        question: 'Doanh nghiệp của tôi có cần một chuyên gia dữ liệu để sử dụng AI không?',
+        answer:
+          'Không nhất thiết. Nhiều công cụ AI hiện đại được thiết kế với giao diện thân thiện với người dùng, cho phép bạn tận dụng sức mạnh của AI mà không cần biết code. Ví dụ, các công cụ marketing tự động như HubSpot hay Mailchimp đã tích hợp sẵn các tính năng AI dễ sử dụng.',
+      },
+    ],
   },
   {
     id: 'ai-content-creation-monetization',
@@ -426,6 +464,23 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'RunwayML là một nền tảng chỉnh sửa video và tạo nội dung bằng AI mạnh mẽ, bao gồm cả tính năng Gen-2 cho phép tạo video từ các câu lệnh văn bản (text-to-video).',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Nội dung do AI tạo ra có bị YouTube/Google phạt không?',
+        answer:
+          'Google và YouTube quan tâm đến chất lượng và giá trị của nội dung hơn là cách nó được tạo ra. Miễn là nội dung của bạn hữu ích, độc đáo và mang lại trải nghiệm tốt cho người dùng, nó sẽ không bị phạt. Vấn đề phát sinh khi người ta dùng AI để tạo ra nội dung rác, spam hàng loạt.',
+      },
+      {
+        question: 'Tôi có thể kiếm tiền từ một kênh YouTube hoàn toàn tự động bằng AI không?',
+        answer:
+          'Về mặt kỹ thuật là có thể, nhưng rất khó để thành công. Khán giả kết nối với cá tính, câu chuyện và góc nhìn độc đáo của nhà sáng tạo. Một kênh hoàn toàn tự động có thể thiếu "linh hồn" và khó xây dựng được một cộng đồng trung thành. Cách tốt nhất là kết hợp hiệu suất của AI với dấu ấn cá nhân của bạn.',
+      },
+      {
+        question: 'AI có thể giúp tôi tìm ra những chủ đề "hot" để sáng tạo nội dung không?',
+        answer:
+          'Chắc chắn. Các công cụ như VidIQ, TubeBuddy (cho YouTube) hay các công cụ phân tích xu hướng mạng xã hội sử dụng AI để phân tích hàng triệu điểm dữ liệu, từ đó gợi ý cho bạn các chủ đề đang thịnh hành, các từ khóa có lượng tìm kiếm cao nhưng cạnh tranh thấp, giúp nội dung của bạn dễ dàng được khám phá hơn.',
       },
     ],
   },
@@ -537,6 +592,23 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
           'AI, đặc biệt là các mô hình học sâu (deep learning), được huấn luyện trên hàng triệu hình ảnh y tế để nhận diện các mẫu hình bất thường, giúp chẩn đoán bệnh như ung thư ở giai đoạn sớm với độ chính xác cao.',
       },
     ],
+    faqs: [
+      {
+        question: 'Dữ liệu sức khỏe của tôi có được bảo mật khi sử dụng các ứng dụng AI không?',
+        answer:
+          'Đây là một vấn đề rất quan trọng. Các công ty uy tín trong lĩnh vực Health-tech phải tuân thủ các quy định nghiêm ngặt về bảo mật dữ liệu như HIPAA (ở Mỹ). Bạn nên luôn đọc kỹ chính sách bảo mật, ưu tiên các ứng dụng mã hóa dữ liệu và cho phép bạn kiểm soát việc chia sẻ thông tin của mình.',
+      },
+      {
+        question: 'Chatbot trị liệu có thể thay thế chuyên gia tâm lý không?',
+        answer:
+          'Không. Chatbot là một công cụ hỗ trợ ban đầu tuyệt vời, giúp bạn có nơi để chia sẻ và thực hành các kỹ thuật cơ bản như thiền định hay CBT. Tuy nhiên, chúng không thể thay thế sự thấu cảm, kinh nghiệm và khả năng chẩn đoán sâu của một chuyên gia tâm lý được đào tạo.',
+      },
+      {
+        question: 'Làm thế nào để AI tạo ra một kế hoạch tập luyện cá nhân hóa?',
+        answer:
+          'AI thu thập dữ liệu từ nhiều nguồn: thông tin bạn cung cấp (tuổi, cân nặng, mục tiêu), dữ liệu từ thiết bị đeo (nhịp tim, chất lượng giấc ngủ, mức độ hoạt động), và thậm chí cả lịch trình hàng ngày của bạn. Dựa trên đó, nó sử dụng các thuật toán để xây dựng một kế hoạch tối ưu và liên tục điều chỉnh để phù hợp với tiến độ và trạng thái cơ thể của bạn.',
+      },
+    ],
   },
   {
     id: 'ai-financial-planning-investment',
@@ -645,6 +717,23 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Robo-advisors sử dụng các thuật toán để xây dựng và quản lý danh mục đầu tư của khách hàng, thường có chi phí thấp hơn so với các cố vấn tài chính con người.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Robo-advisor có an toàn không? Tiền của tôi có được bảo vệ không?',
+        answer:
+          'Các robo-advisor uy tín thường được quản lý bởi các cơ quan tài chính và có các biện pháp bảo vệ nhà đầu tư tương tự như các công ty môi giới truyền thống (ví dụ: SIPC ở Mỹ). Tiền và tài sản của bạn được giữ tại một bên lưu ký độc lập. Tuy nhiên, như mọi khoản đầu tư, giá trị danh mục của bạn vẫn có thể biến động theo thị trường.',
+      },
+      {
+        question: 'AI có thể dự báo chính xác thị trường chứng khoán sẽ tăng hay giảm không?',
+        answer:
+          'Không ai, kể cả AI, có thể dự báo chính xác 100% biến động ngắn hạn của thị trường. Sức mạnh của AI nằm ở việc phân tích một lượng lớn dữ liệu để xác định xu hướng, xác suất và quản lý rủi ro tốt hơn con người. Nó giúp bạn đưa ra quyết định đầu tư có kỷ luật và dựa trên dữ liệu, thay vì cảm tính.',
+      },
+      {
+        question: 'Tôi có cần nhiều tiền để bắt đầu đầu tư với robo-advisor không?',
+        answer:
+          'Không. Đây chính là một trong những ưu điểm lớn nhất của robo-advisor. Nhiều nền tảng cho phép bạn bắt đầu chỉ với vài trăm nghìn hoặc vài triệu đồng. Điều này giúp dân chủ hóa việc đầu tư, cho phép mọi người tiếp cận với các chiến lược đầu tư chuyên nghiệp mà không cần số vốn lớn.',
       },
     ],
   },

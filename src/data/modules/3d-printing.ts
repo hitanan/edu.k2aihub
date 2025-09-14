@@ -96,6 +96,18 @@ export const threeDPrintingLessons: BaseLessonData[] = [
           'FDM là công nghệ phổ biến nhất do chi phí thấp, dễ sử dụng và vật liệu đa dạng, rất phù hợp cho người mới bắt đầu và mục đích giáo dục.',
       },
     ],
+    faqs: [
+      {
+        question: 'In 3D có thể in được những vật liệu gì?',
+        answer:
+          'Công nghệ in 3D có thể in được rất nhiều loại vật liệu, từ nhựa (PLA, ABS, PETG), kim loại (thép, nhôm, titan), gốm sứ, cho đến cả vật liệu sinh học như tế bào sống. Công nghệ FDM phổ thông thường dùng các loại nhựa.',
+      },
+      {
+        question: 'Chi phí để in một sản phẩm 3D có đắt không?',
+        answer:
+          'Chi phí phụ thuộc vào kích thước, độ phức tạp của vật thể và loại vật liệu. Tuy nhiên, với sự phát triển của công nghệ, đặc biệt là FDM, chi phí in 3D ngày càng rẻ và dễ tiếp cận, phù hợp cho cả việc tạo mẫu và sản xuất các sản phẩm nhỏ.',
+      },
+    ],
   },
   {
     id: 'thiet-ke-3d-co-ban-voi-tinkercad',
@@ -158,6 +170,19 @@ export const threeDPrintingLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Công cụ "Group" (Phím tắt: Ctrl + G) được sử dụng để hợp nhất các đối tượng được chọn thành một hình dạng duy nhất.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tinkercad có cần cài đặt không?',
+        answer:
+          'Không, Tinkercad là một ứng dụng hoàn toàn dựa trên web. Bạn chỉ cần một trình duyệt và kết nối internet để sử dụng mà không cần cài đặt bất kỳ phần mềm nào.',
+      },
+      {
+        question:
+          'Sự khác biệt giữa Tinkercad và các phần mềm thiết kế 3D chuyên nghiệp như Blender hay Fusion 360 là gì?',
+        answer:
+          'Tinkercad được thiết kế cho người mới bắt đầu với giao diện kéo-thả và các khối hình học cơ bản, rất dễ học. Trong khi đó, Blender và Fusion 360 là những công cụ chuyên nghiệp với bộ tính năng mạnh mẽ hơn rất nhiều, cho phép tạo các mô hình phức tạp, điêu khắc kỹ thuật số và thiết kế cơ khí chính xác, nhưng cũng khó học hơn.',
       },
     ],
   },
@@ -228,6 +253,18 @@ export const threeDPrintingLessons: BaseLessonData[] = [
           '"Infill" (lấp đầy) là thông số xác định mật độ của cấu trúc lưới bên trong vật thể, ảnh hưởng trực tiếp đến độ cứng và lượng vật liệu tiêu thụ.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao cần phải có phần mềm Slicer?',
+        answer:
+          'Máy in 3D không thể hiểu trực tiếp file mô hình 3D (như .STL). Phần mềm Slicer "dịch" mô hình đó thành một chuỗi các lớp mỏng và tạo ra file G-code, là tập hợp các chỉ lệnh chi tiết (tọa độ di chuyển, nhiệt độ, tốc độ) để máy in thực hiện.',
+      },
+      {
+        question: 'Thông số "Layer Height" (chiều cao lớp in) ảnh hưởng đến sản phẩm như thế nào?',
+        answer:
+          'Layer Height là một trong những thông số quan trọng nhất. Layer Height càng nhỏ (ví dụ 0.1mm) thì bề mặt sản phẩm càng mịn và chi tiết, nhưng thời gian in sẽ rất lâu. Ngược lại, Layer Height lớn hơn (ví dụ 0.3mm) sẽ in nhanh hơn nhưng bề mặt sẽ thô và có thể thấy rõ các lớp in.',
+      },
+    ],
   },
   {
     id: 'van-hanh-may-in-3d-fdm',
@@ -291,6 +328,18 @@ export const threeDPrintingLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Cân bàn in là bước tối quan trọng, đảm bảo khoảng cách giữa đầu in và mặt bàn là đồng đều ở mọi điểm, giúp lớp in đầu tiên bám chắc và tạo nền tảng tốt cho toàn bộ vật thể.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào khi vật thể in không dính vào bàn in?',
+        answer:
+          'Đây là vấn đề phổ biến. Các nguyên nhân chính bao gồm: bàn in chưa được cân chỉnh đúng, bàn in bẩn, nhiệt độ bàn in chưa phù hợp, hoặc cần sử dụng các chất hỗ trợ bám dính như keo hồ, keo xịt tóc. Việc cân lại bàn in thường là giải pháp đầu tiên và hiệu quả nhất.',
+      },
+      {
+        question: 'Nhựa in bị tắc ở đầu in thì phải làm sao?',
+        answer:
+          'Tắc nhựa (clogging) có thể do nhiều nguyên nhân: nhiệt độ in quá thấp, nhựa bị ẩm, hoặc có bụi bẩn. Cách xử lý phổ biến là tăng nhiệt độ đầu in lên cao hơn bình thường một chút để nhựa cũ chảy ra, hoặc dùng một cây kim nhỏ (cleaning needle) đi kèm máy in để thông đầu phun.',
       },
     ],
   },

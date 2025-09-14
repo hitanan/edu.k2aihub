@@ -379,6 +379,23 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Phức bộ QRS, trong đó đỉnh R là nổi bật nhất, đại diện cho sự khử cực (co) của tâm thất, là sự kiện bơm máu chính của tim.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tín hiệu sinh học là gì và tại sao chúng ta cần xử lý chúng?',
+        answer:
+          'Tín hiệu sinh học là các tín hiệu điện được tạo ra bởi cơ thể, ví dụ như điện tim (ECG), điện não (EEG). Chúng chứa thông tin quý giá về tình trạng sức khỏe. Việc xử lý các tín hiệu này giúp loại bỏ nhiễu, trích xuất các đặc trưng quan trọng và hỗ trợ bác sĩ chẩn đoán bệnh chính xác hơn.',
+      },
+      {
+        question: 'Học máy và AI đóng vai trò gì trong xử lý hình ảnh y tế?',
+        answer:
+          'AI và học máy có thể tự động phát hiện các dấu hiệu bất thường trong hình ảnh y tế (như khối u trên ảnh MRI, tổn thương trên ảnh X-quang) mà mắt người có thể bỏ sót. Chúng giúp tăng tốc độ chẩn đoán, cải thiện độ chính xác và giảm tải công việc cho các bác sĩ X-quang.',
+      },
+      {
+        question: 'U-Net là gì và tại sao nó hiệu quả cho việc phân đoạn ảnh y tế?',
+        answer:
+          'U-Net là một kiến trúc mạng nơ-ron học sâu được thiết kế đặc biệt để "tô màu" hoặc phân đoạn các vùng quan tâm trong ảnh y tế (ví dụ: xác định ranh giới của một khối u). Kiến trúc đối xứng của nó cho phép nắm bắt cả thông tin tổng thể và chi tiết, giúp nó hoạt động rất hiệu quả ngay cả với số lượng ảnh huấn luyện hạn chế.',
+      },
+    ],
   },
   {
     id: 'regenerative-medicine',
@@ -570,6 +587,23 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Điểm cốt lõi của in sinh học 3D là sử dụng vật liệu chứa tế bào sống (bioink) để tạo ra các cấu trúc mô có chức năng sinh học, thay vì chỉ dùng nhựa hoặc kim loại.',
       },
     ],
+    faqs: [
+      {
+        question: 'Y học tái tạo có phải là "nuôi cấy" các bộ phận cơ thể trong phòng thí nghiệm không?',
+        answer:
+          'Đó là một trong những mục tiêu cuối cùng. Y học tái tạo là một lĩnh vực rộng lớn nhằm mục đích sửa chữa, thay thế hoặc tái tạo các tế bào, mô hoặc cơ quan bị tổn thương. Nó bao gồm các phương pháp như liệu pháp tế bào gốc, kỹ thuật mô (sử dụng khung đỡ sinh học), và in sinh học 3D.',
+      },
+      {
+        question: 'Tế bào gốc là gì và chúng được lấy từ đâu?',
+        answer:
+          'Tế bào gốc là những tế bào "chưa biệt hóa", có khả năng phát triển thành nhiều loại tế bào khác nhau trong cơ thể. Chúng có thể được lấy từ tủy xương, mô mỡ, máu cuống rốn,... và có tiềm năng to lớn trong việc điều trị nhiều loại bệnh.',
+      },
+      {
+        question: 'In sinh học 3D (3D Bioprinting) có thể tạo ra một trái tim hoàn chỉnh để cấy ghép chưa?',
+        answer:
+          'Hiện tại, công nghệ in sinh học 3D đã có thể tạo ra các cấu trúc mô nhỏ và đơn giản có chức năng. Việc in một cơ quan phức tạp và hoàn chỉnh như trái tim vẫn là một thách thức lớn và là mục tiêu nghiên cứu trong tương lai. Tuy nhiên, các mô được in ra đã rất hữu ích cho việc thử nghiệm thuốc và nghiên cứu bệnh tật.',
+      },
+    ],
   },
   {
     id: 'medical-robotics',
@@ -754,6 +788,23 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
         correctAnswerIndex: 1,
         explanation:
           'ROS là một framework mã nguồn mở cung cấp các dịch vụ chuẩn cho robot, như trình điều khiển phần cứng, thông điệp, quản lý gói, giúp đơn giản hóa việc phát triển các phần mềm robot phức tạp.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Robot phẫu thuật có tự mình thực hiện ca mổ không?',
+        answer:
+          'Không. Các hệ thống robot phẫu thuật hiện tại như Da Vinci là hệ thống "master-slave". Bác sĩ phẫu thuật ngồi tại một bàn điều khiển và thực hiện các thao tác, các cánh tay robot sẽ sao chép chính xác các chuyển động đó với độ chính xác và ổn định cao hơn. Robot là một công cụ tinh vi, không phải là một bác sĩ tự động.',
+      },
+      {
+        question: 'Ưu điểm lớn nhất của phẫu thuật bằng robot là gì?',
+        answer:
+          'Ưu điểm chính là phẫu thuật xâm lấn tối thiểu. Nhờ các vết mổ rất nhỏ, bệnh nhân ít đau hơn, mất ít máu hơn, giảm nguy cơ nhiễm trùng và thời gian hồi phục nhanh hơn đáng kể so với phẫu thuật mở truyền thống.',
+      },
+      {
+        question: 'ROS (Robot Operating System) có vai trò gì trong robot y tế?',
+        answer:
+          'ROS là một nền tảng phần mềm mã nguồn mở, cung cấp các công cụ và thư viện giúp các nhà phát triển xây dựng ứng dụng cho robot một cách nhanh chóng hơn. Trong robot y tế, ROS giúp xử lý các tác vụ phức tạp như điều khiển chuyển động, xử lý dữ liệu cảm biến, và lập kế hoạch quỹ đạo, cho phép các kỹ sư tập trung vào các tính năng y tế chuyên biệt.',
       },
     ],
   },

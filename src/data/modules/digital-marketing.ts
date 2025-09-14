@@ -331,6 +331,28 @@ export const lessons: BaseLessonData[] = [
           'Zalo là ứng dụng nhắn tin và mạng xã hội do Việt Nam phát triển, rất phổ biến và có các tính năng như Zalo Official Account, Zalo Shop hỗ trợ tốt cho các doanh nghiệp địa phương.',
       },
     ],
+    faqs: [
+      {
+        question: 'Nên tập trung vào Facebook, Instagram hay TikTok cho doanh nghiệp của tôi?',
+        answer:
+          'Điều này phụ thuộc hoàn toàn vào đối tượng khách hàng của bạn. Nếu bạn nhắm đến Gen Z, TikTok là không thể bỏ qua. Nếu sản phẩm của bạn có yếu tố hình ảnh cao (thời trang, ẩm thực), Instagram là lựa chọn tốt. Facebook vẫn là nền tảng lớn nhất, phù hợp với nhiều đối tượng, đặc biệt là cho việc xây dựng cộng đồng và chạy quảng cáo nhắm mục tiêu chi tiết.',
+      },
+      {
+        question: 'Làm thế nào để tăng tương tác trên mạng xã hội một cách tự nhiên?',
+        answer:
+          'Hãy tạo ra nội dung thực sự giá trị và có tính tương tác cao. Đặt câu hỏi, tạo cuộc thăm dò ý kiến (polls), tổ chức mini-game, và trả lời mọi bình luận. Nội dung nên tập trung vào việc giải quyết vấn đề hoặc mang lại niềm vui cho khán giả, thay vì chỉ nói về sản phẩm của bạn. Video ngắn và livestream cũng là những định dạng rất hiệu quả.',
+      },
+      {
+        question: 'Chạy quảng cáo trên mạng xã hội có thực sự hiệu quả không?',
+        answer:
+          'Cực kỳ hiệu quả nếu bạn làm đúng cách. Sức mạnh của quảng cáo mạng xã hội nằm ở khả năng nhắm mục tiêu (targeting) siêu chi tiết. Bạn có thể tiếp cận chính xác những người có khả năng quan tâm đến sản phẩm của bạn dựa trên sở thích, hành vi, nhân khẩu học. Hãy bắt đầu với ngân sách nhỏ, thử nghiệm (A/B testing) các mẫu quảng cáo và đối tượng khác nhau để tìm ra công thức hiệu quả nhất.',
+      },
+      {
+        question: 'KOC/KOL là gì và khi nào tôi nên sử dụng họ?',
+        answer:
+          'KOL (Key Opinion Leader) là người có sức ảnh hưởng lớn, còn KOC (Key Opinion Consumer) là người tiêu dùng có chuyên môn và đưa ra đánh giá chân thực. Bạn nên sử dụng họ khi muốn tăng độ nhận diện thương hiệu, xây dựng lòng tin và thúc đẩy doanh số. Hãy chọn những người có tệp người theo dõi phù hợp với khách hàng mục tiêu của bạn và có phong cách chân thực, đáng tin cậy.',
+      },
+    ],
   },
   {
     id: 'content-marketing-strategy',
@@ -426,6 +448,28 @@ export const lessons: BaseLessonData[] = [
           'Clear value proposition delivered entertainingly',
           'Authentic founder storytelling builds trust',
         ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Content Marketing có phải chỉ là viết blog không?',
+        answer:
+          'Không hề. Viết blog chỉ là một phần của Content Marketing. Content Marketing bao gồm tất cả các loại nội dung bạn tạo ra để thu hút và giữ chân khách hàng, ví dụ: video, podcast, infographic, ebook, webinar, case study, bài đăng trên mạng xã hội... Mục tiêu là cung cấp giá trị trước khi yêu cầu họ mua hàng.',
+      },
+      {
+        question: 'Làm thế nào để "kể chuyện" về một sản phẩm nhàm chán?',
+        answer:
+          'Mọi sản phẩm đều có một câu chuyện. Thay vì tập trung vào sản phẩm, hãy tập trung vào vấn đề mà nó giải quyết và những người mà nó giúp đỡ. Hãy kể câu chuyện về khách hàng của bạn: họ đã gặp khó khăn gì trước khi có sản phẩm, và cuộc sống/công việc của họ đã thay đổi như thế nào sau khi sử dụng nó. Con người luôn kết nối với câu chuyện về con người.',
+      },
+      {
+        question: 'Sự khác biệt giữa Content Marketing và quảng cáo truyền thống là gì?',
+        answer:
+          'Quảng cáo truyền thống thường "chen ngang" và nói "Hãy mua tôi đi!". Content Marketing thì "thu hút" bằng cách nói "Hãy để tôi giúp bạn giải quyết vấn đề này" hoặc "Hãy để tôi kể bạn nghe một câu chuyện thú vị". Content Marketing xây dựng lòng tin và mối quan hệ lâu dài, trong khi quảng cáo thường tập trung vào việc bán hàng ngay lập tức.',
+      },
+      {
+        question: 'Làm sao để biết Content Marketing có hiệu quả hay không?',
+        answer:
+          'Bạn cần đo lường các chỉ số phù hợp với mục tiêu của mình. Nếu mục tiêu là nhận diện thương hiệu, hãy đo lường lượt truy cập (traffic), lượt xem (views), lượt chia sẻ (shares). Nếu mục tiêu là tạo khách hàng tiềm năng (leads), hãy đo lường số lượng email đăng ký, lượt tải ebook. Nếu mục tiêu là doanh số, hãy theo dõi tỷ lệ chuyển đổi từ những người đã xem nội dung của bạn.',
       },
     ],
   },
@@ -563,6 +607,28 @@ export const lessons: BaseLessonData[] = [
           'Local language optimization crucial cho emerging markets',
           'Product page SEO can drive massive e-commerce growth',
         ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'SEO mất bao lâu để có kết quả?',
+        answer:
+          'SEO là một cuộc chạy marathon, không phải chạy nước rút. Thông thường, bạn có thể bắt đầu thấy những kết quả đầu tiên sau 3-6 tháng nỗ lực nhất quán. Kết quả bền vững và thứ hạng cao cho các từ khóa cạnh tranh có thể mất từ 6 tháng đến một năm. SEO đòi hỏi sự kiên nhẫn, nhưng lợi ích dài hạn là rất lớn.',
+      },
+      {
+        question: 'Tôi có thể tự làm SEO cho website của mình không?',
+        answer:
+          'Hoàn toàn có thể, đặc biệt là với các website nhỏ. Bạn có thể bắt đầu bằng việc học các kiến thức cơ bản về SEO on-page (tối ưu hóa tiêu đề, mô tả, nội dung), nghiên cứu từ khóa đơn giản và tạo nội dung chất lượng. Tuy nhiên, đối với các thị trường cạnh tranh, việc thuê một chuyên gia hoặc agency có thể giúp bạn đi nhanh và hiệu quả hơn.',
+      },
+      {
+        question: '"Content is King" có còn đúng trong SEO không?',
+        answer:
+          'Vẫn đúng, nhưng cần bổ sung: "Content is King, but Distribution is Queen". Nội dung chất lượng, độc đáo và giải quyết được vấn đề của người dùng vẫn là nền tảng của SEO. Tuy nhiên, nếu bạn không quảng bá nội dung đó (qua mạng xã hội, email, xây dựng backlink), sẽ không ai biết đến nó. Một nội dung tuyệt vời cần một chiến lược phân phối thông minh.',
+      },
+      {
+        question: 'Backlink là gì và tại sao nó quan trọng?',
+        answer:
+          'Backlink là một liên kết từ một website khác trỏ về website của bạn. Google xem mỗi backlink như một "phiếu bầu" cho sự uy tín của website bạn. Càng có nhiều phiếu bầu từ các website uy tín, chất lượng, Google càng tin tưởng và xếp hạng website của bạn cao hơn. Tuy nhiên, chất lượng của backlink quan trọng hơn số lượng.',
       },
     ],
   },
@@ -726,6 +792,28 @@ export const lessons: BaseLessonData[] = [
           'Creative testing essential cho ad fatigue prevention',
           'Landing page optimization can 2x conversion rates',
         ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tôi nên chi bao nhiêu tiền cho quảng cáo trả phí?',
+        answer:
+          'Không có một con số cố định. Thay vì hỏi "bao nhiêu", hãy hỏi "ROI (Return on Investment) là bao nhiêu?". Bạn có thể bắt đầu với một ngân sách nhỏ (ví dụ: 1-2 triệu VNĐ/tháng) để thử nghiệm. Nếu mỗi 1 đồng bạn chi ra mang về 4-5 đồng doanh thu, bạn có thể tự tin tăng ngân sách. Điều quan trọng là phải theo dõi và đo lường hiệu quả liên tục.',
+      },
+      {
+        question: 'Tại sao quảng cáo của tôi không ra đơn?',
+        answer:
+          'Có nhiều lý do: 1. Nhắm mục tiêu sai đối tượng. 2. Nội dung quảng cáo không hấp dẫn. 3. Lời kêu gọi hành động (Call-to-Action) không rõ ràng. 4. Trang đích (Landing Page) không tối ưu, khó sử dụng hoặc không đáng tin cậy. 5. Giá sản phẩm hoặc ưu đãi không cạnh tranh. Hãy kiểm tra lại toàn bộ hành trình của khách hàng, từ lúc họ thấy quảng cáo đến lúc thanh toán.',
+      },
+      {
+        question: 'Google Ads và Facebook Ads, tôi nên chọn cái nào?',
+        answer:
+          'Hãy đi đến nơi khách hàng của bạn đang ở. Google Ads rất mạnh trong việc "bắt lấy nhu cầu" (khi ai đó chủ động tìm kiếm một sản phẩm/dịch vụ). Facebook Ads lại xuất sắc trong việc "tạo ra nhu cầu" (tiếp cận những người có thể quan tâm dựa trên sở thích và hành vi của họ, ngay cả khi họ chưa tìm kiếm). Nhiều doanh nghiệp thành công sử dụng cả hai kênh này.',
+      },
+      {
+        question: 'Remarketing (Tiếp thị lại) là gì và nó có hiệu quả không?',
+        answer:
+          'Remarketing là hình thức quảng cáo nhắm đến những người đã từng truy cập website của bạn nhưng chưa mua hàng. Đây là một chiến thuật cực kỳ hiệu quả vì bạn đang quảng cáo cho những người đã biết đến thương hiệu của bạn. Tỷ lệ chuyển đổi từ các chiến dịch remarketing thường cao hơn nhiều so với quảng cáo cho đối tượng hoàn toàn mới.',
       },
     ],
   },
@@ -892,6 +980,28 @@ export const lessons: BaseLessonData[] = [
         ],
       },
     ],
+    faqs: [
+      {
+        question: 'Email marketing có còn hiệu quả không khi đã có quá nhiều mạng xã hội?',
+        answer:
+          'Vẫn cực kỳ hiệu quả. Email là kênh bạn sở hữu 100%, không bị chi phối bởi thuật toán của bên thứ ba như mạng xã hội. Đây là kênh trực tiếp nhất để xây dựng mối quan hệ 1-1 với khách hàng, nuôi dưỡng khách hàng tiềm năng và thúc đẩy khách hàng quay lại mua hàng. ROI của email marketing thường cao nhất trong các kênh digital marketing.',
+      },
+      {
+        question: 'Làm thế nào để người dùng không cho email của tôi vào mục spam?',
+        answer:
+          'Đầu tiên, chỉ gửi email cho những người đã đồng ý nhận tin (opt-in). Thứ hai, cung cấp nội dung thực sự giá trị và liên quan. Thứ ba, đừng gửi email với tần suất quá dày. Thứ tư, luôn có một nút "hủy đăng ký" (unsubscribe) rõ ràng. Cuối cùng, hãy cá nhân hóa email, gọi tên họ và gửi nội dung dựa trên hành vi của họ.',
+      },
+      {
+        question: 'Automation trong email marketing là gì?',
+        answer:
+          'Đó là việc thiết lập các chuỗi email được gửi đi một cách tự động dựa trên một hành động hoặc mốc thời gian cụ thể của người dùng. Ví dụ: tự động gửi email chào mừng khi có người đăng ký, tự động gửi email nhắc nhở khi họ bỏ quên giỏ hàng, hoặc tự động gửi email chúc mừng sinh nhật kèm mã giảm giá. Nó giúp bạn chăm sóc khách hàng 24/7 một cách cá nhân hóa.',
+      },
+      {
+        question: 'Tiêu đề email như thế nào là hiệu quả?',
+        answer:
+          'Một tiêu đề hiệu quả cần ngắn gọn, hấp dẫn và gợi sự tò mò. Hãy thử cá nhân hóa bằng cách thêm tên người nhận, sử dụng con số, đặt câu hỏi, hoặc tạo cảm giác khẩn cấp (một cách có chừng mực). A/B testing (thử nghiệm 2 phiên bản) các tiêu đề khác nhau là cách tốt nhất để biết điều gì hiệu quả với đối tượng của bạn.',
+      },
+    ],
   },
   {
     id: 'analytics-data-driven-marketing',
@@ -998,105 +1108,63 @@ export const lessons: BaseLessonData[] = [
 #### Customer Segmentation
 **New Customers:** 65% of transactions
 - Average Order Value: $180
-- Lifetime Value: $320
+- Top Acquisition Channel: Paid Search
 
-**Returning Customers:** 35% of transactions  
-- Average Order Value: $240
-- Lifetime Value: $850
+**Returning Customers:** 35% of transactions
+- Average Order Value: $250
+- Customer Lifetime Value: $850
+- Top Retention Channel: Email Marketing
 
-### Section 5: Content Performance
+### Section 5: Actionable Insights & Recommendations
 
-#### Blog Content ROI
-**Top Performing Articles:**
-1. "iPhone 15 vs iPhone 14 Comparison" - 45,000 views, 340 conversions
-2. "Best Smartphones Under $500" - 32,000 views, 280 conversions
-3. "MacBook Buying Guide 2024" - 28,000 views, 145 conversions
-
-**Content Attribution Revenue:** $125,000 (30% of total)
-
-### Section 6: Key Performance Indicators
-
-#### Monthly Targets vs Actual
-- **Revenue Target:** $400,000 | **Actual:** $420,000 ✅ (+5%)
-- **Traffic Target:** 35,000 users | **Actual:** 40,000 ✅ (+14%)
-- **Conversion Rate Target:** 5% | **Actual:** 5.25% ✅ (+5%)
-- **Customer Acquisition Cost Target:** $25 | **Actual:** $22 ✅ (-12%)
-
-### Section 7: Actionable Insights & Recommendations
-
-#### Quick Wins (Implementation: 1-2 weeks)
-1. **Cart Abandonment Email Campaign** 
-   - Current: No automation
-   - Opportunity: Recover 15% of abandoned carts = $15,750 additional revenue
-
-2. **Product Page Optimization**
-   - Add more product reviews (current: 3.2 avg reviews)
-   - Implement size guides for accessories
-   - Expected: +10% conversion rate improvement
-
-#### Medium-term Optimizations (1-3 months)  
-1. **Expand High-ROI Channels**
-   - Increase email marketing frequency từ 2x/week to 3x/week
-   - Double SEO content production (4 articles/month to 8)
-   - Expected: +25% revenue growth
-
-2. **Improve Low-Performing Channels**
-   - Redesign social media strategy focusing on product tutorials
-   - A/B test paid search ad copy và landing pages
-   - Expected: +30% social commerce conversion rate
+#### Key Insights
+1. **Cart Abandonment is High (75%):** Significant revenue leakage at checkout.
+2. **Email Marketing has Highest ROI:** Underutilized channel with huge potential.
+3. **Mobile Traffic High, Conversion Low:** Mobile experience needs optimization.
+4. **Paid Search Drives New Customers:** Effective for acquisition but lower AOV.
+5. **Organic Search Drives High-Value Traffic:** High engagement and conversion.
 
 #### Strategic Initiatives (3-6 months)
-1. **Customer Retention Program**
-   - Implement loyalty program
-   - Personalized product recommendations
-   - Expected: +40% customer lifetime value
-
-2. **Mobile App Development**
-   - 70% of traffic is mobile, but mobile conversion is 40% lower
-   - Native app could improve mobile experience
-   - Expected: +20% mobile conversion rate
-
-### Reporting Schedule:
-- **Daily:** Traffic, revenue, ad spend monitoring
-- **Weekly:** Conversion funnel, top products, campaign performance  
-- **Monthly:** Full dashboard review, strategy adjustments
-- **Quarterly:** Customer segmentation analysis, channel attribution modeling`,
+1. **Implement Cart Abandonment Email Sequence:** Target 75% of users who drop off.
+   - **Expected Impact:** Recover 10-15% of abandoned carts, adding $30k-$45k monthly revenue.
+2. **Scale Email Marketing Efforts:** Increase email frequency and segmentation.
+   - **Expected Impact:** Double email revenue to $72k/month.
+3. **Mobile Checkout Optimization Project:** A/B test mobile checkout flow.
+   - **Insight:** 70% of traffic is mobile, nhưng mobile conversion là 40% lower.
+   - **Expected Impact:** Increase mobile conversion rate by 20%.
+4. **Shift Budget to SEO & Content:** Reallocate 10% of paid search budget to content creation.
+   - **Expected Impact:** Boost organic traffic by 15% in 6 months.
+5. **Develop Customer Loyalty Program:** Increase retention and LTV.
+   - **Expected Impact:** Increase returning customer rate to 40%.`,
       },
     ],
     realWorldApplications: [
+      'E-commerce performance tracking và optimization',
+      'SaaS user behavior analysis và churn prediction',
+      'Content marketing ROI measurement',
+      'A/B testing cho landing page optimization',
       'Multi-channel attribution modeling cho complex customer journeys',
-      'A/B testing programs cho website optimization',
-      'Predictive analytics cho customer churn prevention',
-      'Marketing mix modeling cho budget allocation',
-      'Real-time performance monitoring và alerting systems',
     ],
-    resources: [
+    faqs: [
       {
-        title: 'Google Analytics Academy',
-        url: 'https://analytics.google.com/analytics/academy/',
-        type: 'tool',
+        question: 'Tôi cần theo dõi những chỉ số (metrics) nào là quan trọng nhất?',
+        answer:
+          'Điều này phụ thuộc vào mục tiêu của bạn. Tuy nhiên, một vài chỉ số cốt lõi bao gồm: 1. **Traffic** (Lưu lượng truy cập): Có bao nhiêu người đến với bạn? 2. **Conversion Rate** (Tỷ lệ chuyển đổi): Bao nhiêu người trong số đó thực hiện hành động bạn muốn (mua hàng, điền form)? 3. **Cost Per Acquisition - CPA** (Chi phí cho mỗi chuyển đổi): Bạn tốn bao nhiêu tiền để có một khách hàng? 4. **Return on Ad Spend - ROAS** (Lợi nhuận trên chi tiêu quảng cáo): Mỗi đồng quảng cáo mang về bao nhiêu doanh thu?',
       },
       {
-        title: 'Google Data Studio Templates',
-        url: 'https://datastudio.google.com/gallery',
-        type: 'tool',
+        question: 'Google Analytics có quá phức tạp, tôi nên bắt đầu từ đâu?',
+        answer:
+          'Đừng cố gắng hiểu tất cả mọi thứ cùng một lúc. Hãy bắt đầu với 3 báo cáo chính: 1. **Báo cáo Thu nạp (Acquisition):** Xem khách hàng đến từ đâu (Google, Facebook, Zalo...). 2. **Báo cáo Hành vi (Behavior):** Xem họ làm gì trên website của bạn (họ xem trang nào nhiều nhất, họ ở lại bao lâu). 3. **Báo cáo Chuyển đổi (Conversions):** Xem liệu họ có hoàn thành các mục tiêu bạn đặt ra không. Nắm vững 3 báo cáo này là bạn đã có một nền tảng rất tốt.',
       },
-    ],
-    caseStudies: [
       {
-        title: 'VinFast data-driven marketing optimization',
-        organization: 'VinFast',
-        problem:
-          'Optimize marketing spend across channels cho electric vehicle launch campaign với challenge về ROI measurement và channel attribution',
-        solution:
-          'Implemented advanced attribution modeling và real-time performance tracking across all digital channels với sophisticated data analytics platform',
-        impact:
-          '35% improvement in marketing efficiency, $2M cost savings, 50% better lead quality, enhanced customer acquisition strategy',
-        innovations: [
-          'Multi-touch attribution reveals true channel performance',
-          'Real-time optimization prevents budget waste',
-          'Customer journey analytics improve lead scoring accuracy',
-        ],
+        question: 'A/B testing là gì và tại sao nó quan trọng?',
+        answer:
+          'A/B testing là phương pháp so sánh hai phiên bản của một thứ gì đó (ví dụ: hai tiêu đề email khác nhau, hai màu nút "Mua ngay" khác nhau) để xem phiên bản nào hoạt động hiệu quả hơn. Nó cực kỳ quan trọng vì nó giúp bạn đưa ra quyết định dựa trên dữ liệu thực tế thay vì phỏng đoán, từ đó liên tục cải thiện hiệu quả marketing của bạn.',
+      },
+      {
+        question: 'Làm thế nào để chứng minh marketing mang lại lợi nhuận cho công ty?',
+        answer:
+          'Bằng cách theo dõi và báo cáo ROI (Return on Investment - Tỷ suất hoàn vốn). Bạn cần tính toán tổng chi phí cho các hoạt động marketing (quảng cáo, nhân sự, công cụ...) và so sánh nó với tổng doanh thu mà các hoạt động đó mang lại. Các công cụ như Google Analytics cho phép bạn theo dõi giá trị chuyển đổi, giúp việc tính toán ROI trở nên dễ dàng và chính xác hơn.',
       },
     ],
   },

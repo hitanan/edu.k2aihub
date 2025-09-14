@@ -91,6 +91,18 @@ export const aiLessons: BaseLessonData[] = [
           'Prompt là đầu vào (thường là văn bản) mà người dùng cung cấp để AI xử lý và tạo ra kết quả tương ứng.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sử dụng AI để viết email có làm mất đi tính cá nhân không?',
+        answer:
+          'Điều đó phụ thuộc vào cách bạn sử dụng. Nếu bạn chỉ sao chép và dán, email có thể trở nên chung chung. Tuy nhiên, nếu bạn dùng AI như một trợ lý để lên dàn ý, gợi ý cấu trúc và kiểm tra ngữ pháp, sau đó tự mình chỉnh sửa và thêm vào các chi tiết cá nhân, thì AI sẽ giúp bạn tiết kiệm thời gian mà vẫn giữ được dấu ấn riêng.',
+      },
+      {
+        question: 'Liệu AI có thể tự động hóa hoàn toàn công việc văn phòng của tôi không?',
+        answer:
+          'Hiện tại thì chưa. AI rất giỏi trong việc tự động hóa các tác vụ lặp đi lặp lại và có quy tắc rõ ràng. Tuy nhiên, các công việc đòi hỏi sự phán đoán phức tạp, tư duy phản biện, và kỹ năng giao tiếp giữa người với người vẫn cần sự can thiệp của con người. AI là công cụ để tăng năng suất, không phải để thay thế hoàn toàn.',
+      },
+    ],
   },
   {
     id: 'creative-design',
@@ -169,6 +181,18 @@ export const aiLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Remove.bg là một công cụ chuyên dụng sử dụng AI để tự động tách nền khỏi chủ thể trong ảnh một cách nhanh chóng và chính xác.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Viết "prompt" cho AI tạo ảnh như thế nào cho hiệu quả?',
+        answer:
+          'Một prompt hiệu quả cần chi tiết và cụ thể. Hãy mô tả rõ chủ thể, hành động, bối cảnh, phong cách nghệ thuật (ví dụ: "tranh sơn dầu", "ảnh chụp siêu thực"), ánh sáng, và thậm chí cả loại máy ảnh hoặc ống kính. Càng nhiều chi tiết, kết quả càng gần với ý tưởng của bạn.',
+      },
+      {
+        question: 'Tôi có được sở hữu bản quyền của hình ảnh do AI tạo ra không?',
+        answer:
+          'Vấn đề bản quyền cho tác phẩm do AI tạo ra vẫn còn phức tạp và khác nhau tùy theo quy định của từng quốc gia và điều khoản dịch vụ của từng công cụ. Nhìn chung, nhiều dịch vụ cho phép bạn sử dụng hình ảnh cho mục đích thương mại, nhưng bạn nên đọc kỹ điều khoản của họ để đảm bảo tuân thủ.',
       },
     ],
   },
@@ -259,6 +283,18 @@ export const aiLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Học tập cá nhân hóa giúp điều chỉnh nội dung và phương pháp học cho phù hợp với năng lực, sở thích và mục tiêu của từng cá nhân, từ đó nâng cao hiệu quả học tập.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'AI có thể giúp tôi học một kỹ năng mới như thế nào?',
+        answer:
+          'AI có thể đóng vai trò như một gia sư cá nhân. Nó có thể tạo ra một lộ trình học tập dựa trên mục tiêu của bạn, giải thích các khái niệm phức tạp một cách đơn giản, tạo ra các bài tập thực hành và câu đố để kiểm tra kiến thức, và thậm chí mô phỏng các cuộc trò chuyện để bạn luyện tập kỹ năng mềm.',
+      },
+      {
+        question: 'Sử dụng AI để làm bài tập có phải là gian lận không?',
+        answer:
+          'Nếu bạn sao chép nguyên văn câu trả lời của AI và nộp nó như là của mình, đó là gian lận. Tuy nhiên, nếu bạn sử dụng AI để tìm kiếm thông tin, giải thích các khái niệm khó, kiểm tra lại bài viết của mình, hoặc lấy ý tưởng, thì đó là một cách học tập thông minh và hiệu quả.',
       },
     ],
   },
@@ -356,6 +392,18 @@ export const aiLessons: BaseLessonData[] = [
           'Salesforce Einstein là lớp trí tuệ nhân tạo được tích hợp vào nền tảng CRM của Salesforce, giúp tự động hóa bán hàng, marketing và dịch vụ khách hàng.',
       },
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào một doanh nghiệp nhỏ có thể bắt đầu với AI marketing?',
+        answer:
+          'Không cần phải xây dựng các hệ thống phức tạp. Doanh nghiệp nhỏ có thể bắt đầu bằng cách sử dụng các tính năng AI có sẵn trong các công cụ phổ biến như Facebook Ads (để tối ưu hóa quảng cáo), Mailchimp (để cá nhân hóa email), hoặc sử dụng ChatGPT để lên ý tưởng nội dung và viết bài cho mạng xã hội.',
+      },
+      {
+        question: 'Insight khách hàng (customer insight) do AI tạo ra có đáng tin cậy không?',
+        answer:
+          'Insight do AI tạo ra dựa trên việc phân tích dữ liệu, vì vậy nó có tính khách quan cao. Tuy nhiên, độ tin cậy của nó phụ thuộc vào chất lượng và số lượng dữ liệu đầu vào. Dữ liệu sai lệch sẽ dẫn đến insight sai lệch. Do đó, việc kết hợp phân tích của AI với sự hiểu biết về thị trường của con người là rất quan trọng.',
+      },
+    ],
   },
   {
     id: 'daily-life',
@@ -446,6 +494,18 @@ export const aiLessons: BaseLessonData[] = [
           'Xử lý ngôn ngữ tự nhiên là công nghệ cốt lõi cho phép trợ lý ảo hiểu được giọng nói và văn bản của con người, sau đó thực hiện yêu cầu tương ứng.',
       },
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào để bắt đầu sử dụng AI trong cuộc sống hàng ngày?',
+        answer:
+          'Cách đơn giản nhất là bắt đầu với những gì bạn đã có. Hãy khám phá các tính năng của trợ lý ảo trên điện thoại của bạn (Siri, Google Assistant). Bạn có thể yêu cầu nó đặt báo thức, tạo nhắc nhở, gửi tin nhắn, hoặc tìm kiếm thông tin. Từ đó, bạn có thể khám phá các ứng dụng chuyên biệt hơn.',
+      },
+      {
+        question: 'Sử dụng AI có ảnh hưởng đến quyền riêng tư của tôi không?',
+        answer:
+          'Có, đây là một vấn đề quan trọng. Các công cụ AI thường cần dữ liệu của bạn để hoạt động hiệu quả. Bạn nên luôn đọc kỹ chính sách bảo mật của các ứng dụng, quản lý các quyền truy cập mà bạn cấp cho chúng, và cẩn thận với những thông tin nhạy cảm mà bạn chia sẻ.',
+      },
+    ],
   },
   {
     id: 'programming-dev',
@@ -513,23 +573,40 @@ export const aiLessons: BaseLessonData[] = [
     },
     quizzes: [
       {
-        question: 'GitHub Copilot được phát triển dựa trên công nghệ của công ty nào?',
-        options: ['Google', 'Facebook', 'Apple', 'OpenAI'],
-        correctAnswerIndex: 3,
-        explanation:
-          'GitHub Copilot được phát triển bởi GitHub và OpenAI. Nó sử dụng các mô hình ngôn ngữ lớn của OpenAI, được huấn luyện trên một kho mã nguồn khổng lồ.',
-      },
-      {
-        question: '"Boilerplate code" là gì?',
+        question: 'GitHub Copilot có thể làm gì cho lập trình viên?',
         options: [
-          'Mã nguồn bị lỗi',
-          'Các đoạn mã được lặp đi lặp lại ở nhiều dự án với rất ít thay đổi',
-          'Mã nguồn được viết bởi robot',
-          'Mã nguồn rất khó đọc',
+          'Tự động viết toàn bộ một ứng dụng phức tạp',
+          'Gợi ý và tự động hoàn thành các đoạn code khi bạn đang gõ',
+          'Đảm bảo code không có lỗi 100%',
+          'Thay thế hoàn toàn kỹ sư kiểm thử (QA)',
         ],
         correctAnswerIndex: 1,
         explanation:
-          'Boilerplate code là những đoạn mã cần thiết để một chương trình hoạt động nhưng không đóng góp vào logic chính. AI rất giỏi trong việc tự động tạo ra các đoạn mã này, giúp lập trình viên tiết kiệm thời gian.',
+          'GitHub Copilot hoạt động như một người "lập trình cặp" (pair programmer), nó phân tích ngữ cảnh code của bạn và đưa ra các gợi ý để hoàn thành dòng code hoặc cả một hàm, giúp tăng tốc độ lập trình.',
+      },
+      {
+        question: 'Sử dụng AI để viết code có làm giảm kỹ năng của lập trình viên không?',
+        options: [
+          'Có, nó làm cho lập trình viên lười biếng hơn',
+          'Không, nó giúp lập trình viên tập trung vào các vấn đề cấp cao hơn',
+          'Chỉ dành cho người mới bắt đầu',
+          'Chỉ dành cho các dự án nhỏ',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Các công cụ AI giúp tự động hóa các phần việc lặp đi lặp lại và tốn thời gian, cho phép lập trình viên tập trung hơn vào việc thiết kế kiến trúc, giải quyết logic phức tạp và sáng tạo các giải pháp mới.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Code do AI tạo ra có đáng tin cậy và an toàn không?',
+        answer:
+          'Không phải lúc nào cũng vậy. Code do AI tạo ra có thể chứa lỗi, không hiệu quả, hoặc thậm chí có lỗ hổng bảo mật. Lập trình viên phải luôn xem xét, hiểu, và kiểm tra kỹ lưỡng code do AI gợi ý trước khi sử dụng. AI là một công cụ hỗ trợ, không phải là một chuyên gia không thể sai lầm.',
+      },
+      {
+        question: 'AI có thể thay thế lập trình viên trong tương lai không?',
+        answer:
+          'AI có khả năng sẽ thay đổi vai trò của lập trình viên, chứ không hoàn toàn thay thế họ. Các công việc lập trình cấp thấp và lặp đi lặp lại có thể được tự động hóa, nhưng vai trò của lập trình viên sẽ chuyển dịch lên cấp cao hơn, tập trung vào thiết kế hệ thống, giải quyết vấn đề phức tạp, và giám sát các hệ thống AI.',
       },
     ],
   },

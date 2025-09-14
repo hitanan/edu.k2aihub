@@ -115,6 +115,18 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
           'FPT.AI tập trung vào việc cung cấp một nền tảng (Platform as a Service) để các doanh nghiệp có thể dễ dàng tích hợp các tính năng AI, đặc biệt là NLP, vào sản phẩm của mình.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tách từ (Word Segmentation) là gì và tại sao nó khó với tiếng Việt?',
+        answer:
+          'Tách từ là quá trình xác định ranh giới của các từ trong một câu. Trong tiếng Anh, các từ được ngăn cách bởi dấu cách, nên việc này khá đơn giản. Nhưng trong tiếng Việt, một từ có thể bao gồm nhiều "tiếng" (âm tiết) viết liền nhau không có dấu cách rõ ràng (ví dụ: "học sinh", "xã hội chủ nghĩa"). Việc xác định đâu là một từ có ý nghĩa hoàn chỉnh là một bài toán phức tạp, đòi hỏi các mô hình phải hiểu ngữ cảnh.',
+      },
+      {
+        question: 'Tại sao cần các mô hình ngôn ngữ riêng cho tiếng Việt thay vì dùng các mô hình tiếng Anh đã dịch?',
+        answer:
+          'Các mô hình được huấn luyện trực tiếp trên dữ liệu tiếng Việt (như PhoBERT của VinAI) có khả năng hiểu sâu sắc hơn về ngữ pháp, cấu trúc câu, và các sắc thái văn hóa, thành ngữ, tiếng lóng của người Việt. Các mô hình dịch máy có thể mất đi những sắc thái này và không hiệu quả bằng trong các tác vụ NLP phức tạp.',
+      },
+    ],
     resources: [
       {
         title: 'VnCoreNLP',

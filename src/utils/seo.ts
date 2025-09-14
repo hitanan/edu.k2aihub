@@ -3,9 +3,10 @@
  * Centralizes SEO-related functionality for consistency across the application
  */
 
-import { City, TouristAttraction } from '@/types';
+import { City, TouristAttraction, ModuleData } from '@/types';
 import { SocialSeoPresets } from './socialSeo';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
+import { BaseLessonData } from '@/types/lesson-base';
 
 const SITE_NAME = 'K2AiHub';
 const SITE_TAGLINE = 'Học tập thông minh - Công nghệ AI dẫn lối Việt Nam';
@@ -33,6 +34,54 @@ export function createDescription(description: string): string {
     return description;
   }
   return `${description} - ${SITE_NAME}`;
+}
+
+/**
+ * Creates structured data for a Course, including all its lessons.
+ * This is a more specific and powerful schema than LearningResource for a whole module.
+ */
+export function createCourseStructuredData({
+  moduleData,
+  lessons,
+  moduleUrl,
+}: {
+  moduleData: ModuleData;
+  lessons: BaseLessonData[];
+  moduleUrl: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: moduleData.title,
+    description: moduleData.description,
+    url: moduleUrl,
+    provider: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: 'https://k2aihub.com',
+    },
+    hasCourseInstance: [
+      {
+        '@type': 'CourseInstance',
+        courseMode: 'online',
+        courseWorkload: `PT${moduleData.duration || '10H'}`, // ISO 8601 duration
+        instructor: {
+          '@type': 'Person',
+          name: 'K2AiHub Team',
+        },
+      },
+    ],
+    coursePrerequisites: moduleData.prerequisites?.join(', '),
+    educationalLevel: moduleData.level || 'Beginner',
+    hasPart: lessons.map((lesson) => ({
+      '@type': 'LearningResource',
+      name: lesson.title,
+      description: lesson.description,
+      url: `${moduleUrl}/${lesson.id}`,
+      learningResourceType: 'Lesson',
+      timeRequired: `PT${lesson.duration?.match(/\d+/)?.[0] || '20'}M`,
+    })),
+  };
 }
 
 /**

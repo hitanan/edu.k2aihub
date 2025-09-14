@@ -410,6 +410,28 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
           'Nguyên tắc này là cốt lõi của giai đoạn Tạo mẫu (Prototype) và Kiểm thử (Test). Thay vì xây dựng một sản phẩm hoàn hảo rồi mới ra mắt, Design Thinking khuyến khích tạo ra các mẫu thử đơn giản, chi phí thấp để nhanh chóng nhận phản hồi, học hỏi từ sai lầm và cải tiến.',
       },
     ],
+    faqs: [
+      {
+        question: 'Design Thinking có chỉ dành cho các nhà thiết kế không?',
+        answer:
+          'Hoàn toàn không. Design Thinking là một phương pháp giải quyết vấn đề có thể được áp dụng trong mọi lĩnh vực, từ kinh doanh, giáo dục, y tế đến quản lý nhà nước. Bất cứ ai muốn tạo ra các giải pháp lấy con người làm trung tâm đều có thể sử dụng nó.',
+      },
+      {
+        question: 'Làm thế nào để "thấu cảm" với người dùng nếu tôi không có nhiều thời gian?',
+        answer:
+          'Thấu cảm không nhất thiết phải là các cuộc nghiên cứu dài ngày. Bạn có thể bắt đầu bằng cách quan sát (xem người dùng tương tác với một sản phẩm), thực hiện các cuộc phỏng vấn ngắn (5-10 phút), hoặc thậm chí thử tự mình trải nghiệm vấn đề. Quan trọng là có thái độ cởi mở và thực sự lắng nghe.',
+      },
+      {
+        question: 'Sự khác biệt giữa Brainstorming truyền thống và giai đoạn Ideate là gì?',
+        answer:
+          'Giai đoạn Ideate trong Design Thinking không chỉ là Brainstorming. Nó nhấn mạnh nguyên tắc "quantity over quality" (số lượng hơn chất lượng) ở giai đoạn đầu và "defer judgment" (trì hoãn phán xét). Nó cũng sử dụng nhiều kỹ thuật có cấu trúc hơn (như SCAMPER) để thúc đẩy tư duy đột phá, thay vì chỉ ngồi và nghĩ tự do.',
+      },
+      {
+        question: 'Prototype có cần phải phức tạp và tốn kém không?',
+        answer:
+          'Ngược lại, một prototype tốt nên được làm nhanh, rẻ và đơn giản. Nó có thể chỉ là một loạt các bản vẽ trên giấy (storyboard), một mô hình bằng bìa cứng, hoặc một bản trình bày có thể nhấp qua lại. Mục đích là để truyền tải ý tưởng và nhận phản hồi, không phải để tạo ra một sản phẩm hoàn chỉnh.',
+      },
+    ],
   },
   {
     id: 'systems-thinking',
@@ -573,6 +595,28 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
         correctAnswerIndex: 1,
         explanation:
           'Theo Donella Meadows, điểm đòn bẩy là những vị trí chiến lược trong một hệ thống phức tạp nơi một sự thay đổi nhỏ có thể tạo ra những thay đổi lớn ở cấp độ hệ thống. Tìm ra và tác động vào các điểm này hiệu quả hơn nhiều so với việc cố gắng thay đổi mọi thứ.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tư duy hệ thống có quá phức tạp để áp dụng vào các vấn đề hàng ngày không?',
+        answer:
+          'Không hề. Bạn có thể bắt đầu một cách đơn giản. Ví dụ, khi bạn bị cảm, thay vì chỉ uống thuốc (giải pháp bề mặt), hãy tự hỏi: "Tại sao mình bị cảm?". Có thể là do thiếu ngủ, căng thẳng, hoặc ăn uống không đủ chất. Giải quyết những nguyên nhân gốc rễ đó chính là áp dụng tư duy hệ thống.',
+      },
+      {
+        question: 'Làm thế nào để vẽ một Biểu đồ Nhân quả (Causal Loop Diagram) đơn giản?',
+        answer:
+          'Bắt đầu với một yếu tố (ví dụ: "Mức độ căng thẳng"). Sau đó, hỏi "Điều gì ảnh hưởng đến nó?" (ví dụ: "Khối lượng công việc") và vẽ một mũi tên. Tiếp tục hỏi "Nó ảnh hưởng đến điều gì?" (ví dụ: "Chất lượng giấc ngủ"). Kết nối các yếu tố lại với nhau và bạn sẽ bắt đầu thấy các vòng lặp hình thành.',
+      },
+      {
+        question: 'Tại sao các giải pháp "rõ ràng" đôi khi lại làm vấn đề tồi tệ hơn?',
+        answer:
+          'Đây là một hiện tượng phổ biến trong các hệ thống phức tạp. Một giải pháp có thể có tác dụng tốt trong ngắn hạn nhưng lại tạo ra các hậu quả không mong muốn ở nơi khác hoặc trong dài hạn. Ví dụ, việc trợ cấp cho một ngành công nghiệp có thể cứu nó tạm thời nhưng lại làm nó mất đi khả năng cạnh tranh tự nhiên.',
+      },
+      {
+        question: 'Tư duy hệ thống và tư duy phê phán liên quan đến nhau như thế nào?',
+        answer:
+          'Chúng là hai kỹ năng bổ trợ cho nhau. Tư duy phê phán giúp bạn phân tích và đánh giá các thành phần riêng lẻ của một lập luận hoặc vấn đề. Tư duy hệ thống giúp bạn đặt các thành phần đó vào một bối cảnh lớn hơn, hiểu được mối quan hệ tương tác và các tác động qua lại giữa chúng để có một cái nhìn toàn cảnh.',
       },
     ],
   },

@@ -299,6 +299,28 @@ export const lessons: DigitalCitizenshipLesson[] = [
           'Đây là dấu hiệu của một cuộc tấn công phishing. Kẻ tấn công thường sử dụng tên miền gần giống với tên miền thật để lừa người dùng. Luôn kiểm tra kỹ địa chỉ người gửi và không bao giờ nhấp vào các liên kết đáng ngờ.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao tôi không nên sử dụng cùng một mật khẩu cho nhiều tài khoản?',
+        answer:
+          'Bởi vì nếu một trong các tài khoản đó bị rò rỉ dữ liệu (data breach), kẻ tấn công sẽ có được mật khẩu của bạn và thử dùng nó để đăng nhập vào tất cả các tài khoản khác của bạn (như email, ngân hàng, mạng xã hội). Đây được gọi là tấn công "credential stuffing".',
+      },
+      {
+        question: 'Trình quản lý mật khẩu (password manager) có an toàn không?',
+        answer:
+          'Có, các trình quản lý mật khẩu uy tín (như Bitwarden, 1Password, LastPass) rất an toàn. Chúng mã hóa kho mật khẩu của bạn bằng một "mật khẩu chủ" mà chỉ bạn biết. Việc sử dụng chúng an toàn hơn nhiều so với việc cố gắng ghi nhớ hàng chục mật khẩu yếu hoặc ghi chúng ra giấy.',
+      },
+      {
+        question: 'Xác thực hai yếu tố (2FA) qua SMS có an toàn tuyệt đối không?',
+        answer:
+          '2FA qua SMS tốt hơn là không có gì, nhưng nó không phải là an toàn nhất. Kẻ tấn công có thể thực hiện một cuộc tấn công "tráo SIM" (SIM swapping) để chiếm quyền kiểm soát số điện thoại của bạn. Phương pháp an toàn hơn là sử dụng các ứng dụng xác thực (như Google Authenticator) hoặc khóa bảo mật vật lý (YubiKey).',
+      },
+      {
+        question: 'Tôi nên làm gì nếu nghi ngờ mình đã bị lừa đảo phishing?',
+        answer:
+          'Hãy hành động ngay lập tức. Thay đổi mật khẩu của tài khoản bị ảnh hưởng và bất kỳ tài khoản nào khác có cùng mật khẩu. Kiểm tra các hoạt động đáng ngờ trên tài khoản (ví dụ: giao dịch lạ, bài đăng lạ). Bật xác thực hai yếu tố nếu bạn chưa làm. Báo cáo email hoặc tin nhắn lừa đảo cho nhà cung cấp dịch vụ.',
+      },
+    ],
   },
   {
     id: 'nhan-dien-tin-gia',
@@ -430,6 +452,28 @@ export const lessons: DigitalCitizenshipLesson[] = [
           'Đối chiếu thông tin từ nhiều nguồn đáng tin cậy là phương pháp kiểm tra thông tin (fact-checking) cơ bản và hiệu quả nhất để xác định tính xác thực của một tin tức.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao tin giả lại lan truyền nhanh như vậy?',
+        answer:
+          'Tin giả thường được thiết kế để khai thác cảm xúc của con người như sự sợ hãi, tức giận hoặc tò mò. Các thuật toán mạng xã hội cũng có xu hướng ưu tiên hiển thị những nội dung gây tương tác mạnh, và tin giả thường làm được điều này rất tốt, tạo ra một vòng lặp lan truyền.',
+      },
+      {
+        question: 'Làm thế nào để phân biệt giữa một trang tin tức thật và một trang tin giả?',
+        answer:
+          'Hãy kiểm tra phần "Giới thiệu" hoặc "Liên hệ" của trang web. Các trang tin thật thường có thông tin rõ ràng về ban biên tập, địa chỉ và sứ mệnh. Các trang tin giả thường có thông tin này rất sơ sài hoặc không có. Ngoài ra, hãy chú ý đến chất lượng của bài viết, lỗi chính tả, và các nguồn tin được trích dẫn.',
+      },
+      {
+        question: 'Thiên kiến xác nhận (Confirmation Bias) ảnh hưởng đến việc chúng ta tiếp nhận tin tức như thế nào?',
+        answer:
+          'Nó giống như việc đeo một cặp kính màu. Nếu bạn đã có sẵn một quan điểm, não của bạn sẽ tự động tìm kiếm và ưu tiên những thông tin phù hợp với quan điểm đó và bỏ qua những thông tin trái chiều. Điều này khiến chúng ta rất dễ bị tin giả "dẫn dắt" nếu nó phù hợp với những gì chúng ta muốn tin.',
+      },
+      {
+        question: 'Tôi nên làm gì khi một người bạn hoặc người thân chia sẻ tin giả?',
+        answer:
+          'Hãy tiếp cận một cách nhẹ nhàng và không phán xét. Thay vì nói "Tin này giả đấy", bạn có thể nói "Tôi thấy thông tin này có vẻ đáng ngờ, tôi đã tìm thấy một bài báo từ một nguồn tin cậy nói khác. Bạn xem thử xem?". Gửi cho họ một liên kết từ một trang kiểm chứng thông tin uy tín cũng là một cách hay.',
+      },
+    ],
   },
   {
     id: 'giao-tiep-va-ung-xu-tren-mang',
@@ -557,6 +601,28 @@ export const lessons: DigitalCitizenshipLesson[] = [
         correctAnswerIndex: 1,
         explanation:
           'VIẾT HOA TOÀN BỘ trong giao tiếp trực tuyến thường được coi là hành động "hét lớn", gây khó chịu và thiếu chuyên nghiệp. Hãy sử dụng định dạng văn bản một cách hợp lý.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Netiquette là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Netiquette là sự kết hợp của "Net" (mạng) và "etiquette" (phép lịch sự). Đó là bộ quy tắc ứng xử không chính thức khi giao tiếp trên mạng. Nó quan trọng vì giúp ngăn chặn hiểu lầm, xây dựng các cuộc thảo luận tích cực, và duy trì một môi trường trực tuyến văn minh, tôn trọng.',
+      },
+      {
+        question: 'Làm thế nào để đối phó với một người có hành vi "toxic" hoặc bắt nạt tôi trên mạng?',
+        answer:
+          'Quy tắc vàng là "Đừng nuôi troll" (Don\'t feed the trolls). Đừng tranh cãi tay đôi với họ. Hãy sử dụng các công cụ có sẵn: báo cáo (report) hành vi của họ cho quản trị viên nền tảng, chặn (block) họ để không thấy nội dung của họ nữa, và nếu cần, hãy lưu lại bằng chứng và tìm kiếm sự giúp đỡ từ người lớn hoặc cơ quan chức năng.',
+      },
+      {
+        question: 'Tại sao việc sử dụng biểu tượng cảm xúc (emoji) lại quan trọng trong giao tiếp trực tuyến?',
+        answer:
+          'Giao tiếp qua văn bản thiếu đi các yếu tố phi ngôn ngữ như nét mặt, giọng điệu. Emoji giúp bổ sung các sắc thái cảm xúc này, làm cho cuộc trò chuyện trở nên thân thiện hơn và giúp tránh các hiểu lầm không đáng có. Tuy nhiên, hãy sử dụng chúng một cách phù hợp với ngữ cảnh (ví dụ: hạn chế trong email công việc trang trọng).',
+      },
+      {
+        question: 'Tôi có nên kết bạn với sếp và đồng nghiệp trên Facebook không?',
+        answer:
+          'Điều này phụ thuộc vào văn hóa công ty và mối quan hệ của bạn. Một quy tắc chung an toàn là sử dụng LinkedIn để kết nối chuyên nghiệp và giữ Facebook cho các mối quan hệ cá nhân hơn. Nếu bạn quyết định kết bạn, hãy đảm bảo rằng các cài đặt quyền riêng tư của bạn được thiết lập phù hợp để phân tách giữa cuộc sống cá nhân và công việc.',
       },
     ],
   },

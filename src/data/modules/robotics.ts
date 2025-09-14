@@ -72,6 +72,18 @@ export const roboticsLessons: RoboticsLessonType[] = [
     category: 'theory',
     materials: ['Sách: Robotics Fundamentals', 'Video: Introduction to Robotics'],
     competitions: ['Robocon', 'VEX Robotics Competition'],
+    faqs: [
+      {
+        question: 'Robot có phải lúc nào cũng có hình người không?',
+        answer:
+          'Không. Hình dạng của robot phụ thuộc vào chức năng của nó. Robot công nghiệp có thể là một cánh tay máy, robot hút bụi có dạng đĩa tròn, và drone là một thiết bị bay. Hình người (humanoid) chỉ là một trong rất nhiều hình dạng của robot.',
+      },
+      {
+        question: 'Học robotics có cần giỏi toán và vật lý không?',
+        answer:
+          'Giỏi toán và vật lý là một lợi thế lớn, đặc biệt khi đi sâu vào thiết kế cơ khí và thuật toán điều khiển phức tạp. Tuy nhiên, ở cấp độ nhập môn, sự tò mò, tư duy logic và kiên nhẫn là quan trọng nhất. Bạn có thể bắt đầu với các bộ kit và học dần các khái niệm khoa học liên quan.',
+      },
+    ],
   },
   {
     id: 'arduino-co-ban',
@@ -138,6 +150,18 @@ export const roboticsLessons: RoboticsLessonType[] = [
     category: 'programming',
     materials: ['Sách: Arduino Programming Basics', 'Video: Getting Started with Arduino'],
     competitions: ['Arduino Challenge', 'Robotics Hackathon'],
+    faqs: [
+      {
+        question: 'Arduino là gì và tại sao nó lại phổ biến?',
+        answer:
+          'Arduino là một nền tảng mã nguồn mở bao gồm một board mạch vi điều khiển và một môi trường phát triển tích hợp (IDE). Nó phổ biến vì giá thành rẻ, dễ sử dụng, có cộng đồng hỗ trợ lớn và thư viện mã nguồn phong phú, giúp người mới bắt đầu có thể nhanh chóng tạo ra các sản phẩm điện tử tương tác.',
+      },
+      {
+        question: 'Em có thể làm gì với Arduino?',
+        answer:
+          'Bạn có thể làm vô số thứ! Từ những dự án đơn giản như bật tắt đèn LED, điều khiển động cơ, cho đến các hệ thống phức tạp hơn như robot, nhà thông minh, trạm thời tiết, máy in 3D, hoặc các tác phẩm nghệ thuật tương tác. Giới hạn duy nhất là sự sáng tạo của bạn.',
+      },
+    ],
   },
   {
     id: 'cam-bien-va-co-cau-chap-hanh',
@@ -202,6 +226,18 @@ export const roboticsLessons: RoboticsLessonType[] = [
     category: 'hardware',
     materials: ['Sách: Sensors and Actuators', 'Video: How Sensors and Actuators Work'],
     competitions: ['RoboCup', 'Drone Racing League'],
+    faqs: [
+      {
+        question: 'Sự khác biệt giữa cảm biến (sensor) và cơ cấu chấp hành (actuator) là gì?',
+        answer:
+          'Cảm biến là thiết bị "thu thập" thông tin từ môi trường (ví dụ: nhiệt độ, ánh sáng, khoảng cách) và chuyển thành tín hiệu điện. Cơ cấu chấp hành là thiết bị "hành động", nhận tín hiệu điện và tạo ra chuyển động hoặc một dạng năng lượng khác (ví dụ: động cơ quay, đèn LED phát sáng). Nôm na, cảm biến là "giác quan", còn cơ cấu chấp hành là "cơ bắp" của robot.',
+      },
+      {
+        question: 'Tại sao động cơ Servo lại quan trọng trong robotics?',
+        answer:
+          'Động cơ Servo cho phép điều khiển chính xác vị trí góc quay. Điều này cực kỳ quan trọng cho các khớp của cánh tay robot, bánh lái của xe, hoặc bất kỳ bộ phận nào cần di chuyển đến một vị trí cụ thể và giữ yên ở đó, thay vì chỉ quay liên tục như động cơ DC thông thường.',
+      },
+    ],
   },
 ];
 

@@ -446,6 +446,28 @@ export const lessons: DigitalCitizenshipLessonType[] = [
           'Khả năng giải thích đòi hỏi các quyết định của AI không phải là "hộp đen", mà phải có khả năng được diễn giải và hiểu bởi con người, đặc biệt trong các lĩnh vực có ảnh hưởng lớn như y tế hay tài chính.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao "đạo đức AI" lại trở thành một chủ đề nóng như vậy?',
+        answer:
+          'Vì AI ngày càng có quyền lực lớn trong việc đưa ra các quyết định ảnh hưởng đến cuộc sống con người, từ việc bạn có được vay vốn ngân hàng hay không, đến việc chẩn đoán bệnh. Nếu không có sự giám sát về đạo đức, AI có thể gây ra những tác hại nghiêm trọng và khuếch đại sự bất công trong xã hội.',
+      },
+      {
+        question: 'Sự khác biệt giữa đạo đức (ethics) và luật pháp (law) trong AI là gì?',
+        answer:
+          'Luật pháp là những quy tắc tối thiểu mà mọi người phải tuân theo. Đạo đức là những nguyên tắc cao hơn về điều gì là đúng đắn và công bằng. Thường thì các cuộc thảo luận về đạo đức sẽ đi trước và định hình cho việc xây dựng luật pháp trong tương lai. Một hành động có thể hợp pháp nhưng lại không có đạo đức.',
+      },
+      {
+        question: 'Vấn đề "hộp đen" (black box) trong AI là gì?',
+        answer:
+          'Đây là tình trạng mà ngay cả những người tạo ra mô hình AI cũng không thể giải thích đầy đủ tại sao nó lại đưa ra một quyết định cụ thể. Điều này đặc biệt nguy hiểm trong các lĩnh vực quan trọng như y tế hoặc tư pháp, nơi việc giải trình là tối quan trọng.',
+      },
+      {
+        question: 'Là một người dùng bình thường, tôi có thể làm gì để thúc đẩy đạo đức AI?',
+        answer:
+          'Bạn có thể: 1/ Lựa chọn sử dụng sản phẩm từ các công ty minh bạch về cách họ sử dụng AI. 2/ Lên tiếng khi bạn phát hiện các trường hợp AI hoạt động một cách thiên vị hoặc không công bằng. 3/ Tự giáo dục bản thân về các vấn đề đạo đức AI để có những cuộc thảo luận sáng suốt. 4/ Ủng hộ các chính sách và quy định yêu cầu sự minh bạch và trách nhiệm giải trình từ các hệ thống AI.',
+      },
+    ],
   },
   {
     id: 'digital-wellness-mindful-tech',
@@ -628,6 +650,28 @@ export const lessons: DigitalCitizenshipLessonType[] = [
         correctAnswerIndex: 1,
         explanation:
           'Kiểm tra điện thoại ngay khi thức dậy sẽ khiến não bộ bị quá tải với thông tin và các yêu cầu từ bên ngoài, làm giảm khả năng tập trung và bắt đầu ngày mới một cách chủ động. Đây là một thói quen xấu cần thay đổi.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Digital Wellness (Sức khỏe số) có phải là anti-technology (chống lại công nghệ) không?',
+        answer:
+          'Hoàn toàn không. Sức khỏe số không phải là từ bỏ công nghệ, mà là xây dựng một mối quan hệ lành mạnh với nó. Đó là việc sử dụng công nghệ một cách có chủ đích để phục vụ cho các giá trị và mục tiêu của bạn, thay vì để công nghệ điều khiển sự chú ý và thời gian của bạn.',
+      },
+      {
+        question: 'Tại sao các ứng dụng mạng xã hội lại có thể gây "nghiện"?',
+        answer:
+          'Nhiều ứng dụng được thiết kế dựa trên "kinh tế học chú ý" (attention economy), sử dụng các cơ chế tâm lý như phần thưởng ngẫu nhiên (giống như máy đánh bạc), thông báo liên tục, và dòng tin vô tận (infinite scroll) để giữ chân người dùng càng lâu càng tốt. Những cơ chế này có thể kích hoạt hệ thống tưởng thưởng dopamine trong não, tạo ra một vòng lặp gây nghiện.',
+      },
+      {
+        question: 'Digital Minimalism (Chủ nghĩa tối giản số) là gì?',
+        answer:
+          'Đó là một triết lý sử dụng công nghệ, trong đó bạn tập trung vào một số ít các công cụ được lựa chọn cẩn thận và tối ưu hóa chúng để phục vụ cho những điều bạn thực sự coi trọng, và vui vẻ bỏ lỡ mọi thứ khác. Nó không phải là về việc có ít công nghệ hơn, mà là về việc có công nghệ "tốt hơn".',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu một cuộc "digital detox" (cai nghiện số) mà không cảm thấy bị cô lập?',
+        answer:
+          'Hãy thông báo cho bạn bè và gia đình về kế hoạch của bạn. Bắt đầu từ những khoảng thời gian nhỏ, ví dụ như "không điện thoại trong bữa tối" hoặc "không mạng xã hội sau 9 giờ tối". Tìm các hoạt động thay thế thú vị để lấp đầy khoảng thời gian đó, như đọc sách, đi dạo, hoặc trò chuyện trực tiếp với người thân.',
       },
     ],
   },

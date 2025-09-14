@@ -91,6 +91,28 @@ export const circularEconomyLessons: BaseLessonData[] = [
       },
     ],
     realWorldApplications: ['Nội thất module', 'Điện thoại có thể sửa chữa', 'Bao bì có thể phân hủy'],
+    faqs: [
+      {
+        question: 'Thiết kế tuần hoàn khác gì với thiết kế truyền thống?',
+        answer:
+          'Thiết kế truyền thống thường tập trung vào thẩm mỹ, chức năng và chi phí sản xuất. Thiết kế tuần hoàn bổ sung một yếu tố quan trọng: toàn bộ vòng đời của sản phẩm. Nó đặt câu hỏi "Điều gì sẽ xảy ra với sản phẩm này sau khi người dùng không cần nó nữa?" ngay từ giai đoạn đầu tiên.',
+      },
+      {
+        question: '"Thiết kế để tháo dỡ" (Design for Disassembly) có nghĩa là gì?',
+        answer:
+          'Đó là nguyên tắc thiết kế sản phẩm sao cho các bộ phận của nó có thể dễ dàng được tách rời. Điều này giúp cho việc sửa chữa, nâng cấp và tái chế trở nên đơn giản hơn, thay vì phải vứt bỏ toàn bộ sản phẩm khi chỉ một bộ phận bị hỏng.',
+      },
+      {
+        question: 'Làm thế nào để chọn vật liệu bền vững cho thiết kế?',
+        answer:
+          'Việc lựa chọn vật liệu cần xem xét nhiều yếu tố: nó có phải là vật liệu tái chế không, nó có thể được tái chế sau khi sử dụng không, nó có thể phân hủy sinh học không, và quá trình sản xuất ra nó có tiêu tốn nhiều năng lượng và tài nguyên hay không. Các công cụ như Phân tích Vòng đời Sản phẩm (LCA) có thể giúp đánh giá tác động này.',
+      },
+      {
+        question: 'Một ví dụ về thiết kế tuần hoàn thành công là gì?',
+        answer:
+          'Điện thoại Fairphone là một ví dụ điển hình. Nó được thiết kế theo dạng module, cho phép người dùng dễ dàng tự thay thế các bộ phận như pin, camera, màn hình. Điều này kéo dài tuổi thọ của sản phẩm và giảm thiểu rác thải điện tử.',
+      },
+    ],
   },
 ];
 

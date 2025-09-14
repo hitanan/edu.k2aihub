@@ -7,6 +7,7 @@ import { ProgressDashboard } from '@/components/gamification/LearningProgress';
 import { EducationalGamesShowcase } from '@/components/games/EducationalGames';
 import { createModuleMetadata } from '@/utils/seo';
 import { moduleStats } from '@/utils/moduleStats';
+import CtaButton from '@/components/ui/CtaButton';
 
 export const metadata: Metadata = createModuleMetadata(
   'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
@@ -209,22 +210,12 @@ export default function HomePage() {
 
             {/* Action buttons with neon effects */}
             <div className="flex flex-wrap justify-center gap-6">
-              <a
-                href="#featured-modules"
-                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-black font-black">🚀 BẮT ĐẦU HỌC NGAY</span>
-              </a>
-              <a
+              <CtaButton href="#featured-modules" text="🚀 BẮT ĐẦU HỌC NGAY" />
+              <CtaButton
                 href="#learning-paths"
-                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border-2 border-violet-400"
-              >
-                <div className="absolute inset-0 bg-violet-400/10 rounded-2xl"></div>
-                <div className="absolute inset-0 bg-violet-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-violet-400 font-black">🗺️ XEM LỘ TRÌNH</span>
-              </a>
+                text="🗺️ XEM LỘ TRÌNH"
+                className="bg-gradient-to-r from-violet-500 to-rose-500"
+              />
             </div>
           </div>
         </div>
@@ -416,30 +407,17 @@ export default function HomePage() {
               <span className="text-violet-400 font-bold"> định hình tương lai</span> của chính bạn
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Link
+              <CtaButton
                 href="/city"
-                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border-2 border-emerald-400"
-              >
-                <div className="absolute inset-0 bg-emerald-400/10 rounded-2xl"></div>
-                <div className="absolute inset-0 bg-emerald-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-black font-black">🌏 KHÁM PHÁ VIỆT NAM</span>
-              </Link>
-              <Link
-                href="/ai"
-                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-orange-500 rounded-2xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-rose-400 to-orange-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-black font-black">🤖 HỌC AI NGAY</span>
-              </Link>
-              <Link
+                text="🌏 KHÁM PHÁ VIỆT NAM"
+                className="bg-gradient-to-r from-emerald-500 to-cyan-500"
+              />
+              <CtaButton href="/ai" text="🤖 HỌC AI NGAY" className="bg-gradient-to-r from-rose-500 to-orange-500" />
+              <CtaButton
                 href="/learning"
-                className="relative group px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border-2 border-violet-400"
-              >
-                <div className="absolute inset-0 bg-violet-400/10 rounded-2xl"></div>
-                <div className="absolute inset-0 bg-violet-400/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative text-violet-400 font-black">📚 TẤT CẢ KHÓA HỌC</span>
-              </Link>
+                text="📚 TẤT CẢ KHÓA HỌC"
+                className="bg-gradient-to-r from-violet-500 to-purple-500"
+              />
             </div>
           </div>
         </div>

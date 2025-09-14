@@ -278,6 +278,28 @@ export const foodTechnologyLessons: BaseLessonData[] = [
         type: 'Cơ sở dữ liệu tham khảo',
       },
     ],
+    faqs: [
+      {
+        question: 'Công nghệ lên men đóng vai trò gì trong thực phẩm Việt Nam?',
+        answer:
+          'Công nghệ lên men là trái tim của nhiều món ăn và gia vị truyền thống Việt Nam, như nước mắm, tương, mắm tôm, và dưa chua. Quá trình này không chỉ giúp bảo quản thực phẩm mà còn tạo ra những hương vị umami phức hợp và độc đáo, đặc trưng cho ẩm thực Việt.',
+      },
+      {
+        question: 'Làm thế nào công nghệ hiện đại có thể cải tiến quy trình lên men truyền thống?',
+        answer:
+          'Công nghệ hiện đại giúp kiểm soát các yếu tố quan trọng như nhiệt độ, độ pH, và các chủng vi sinh vật. Điều này giúp chuẩn hóa chất lượng sản phẩm, rút ngắn thời gian lên men, đảm bảo an toàn vệ sinh và tăng hiệu suất sản xuất mà vẫn giữ được hương vị truyền thống.',
+      },
+      {
+        question: 'Probiotic là gì và nó có trong thực phẩm lên men Việt Nam không?',
+        answer:
+          'Probiotic là các vi sinh vật sống có lợi cho sức khỏe, đặc biệt là hệ tiêu hóa. Nhiều thực phẩm lên men truyền thống của Việt Nam, như sữa chua, dưa cải muối, kim chi, có chứa probiotic tự nhiên. Các nhà khoa học cũng đang nghiên cứu để phát triển các sản phẩm probiotic mới từ các chủng vi khuẩn bản địa.',
+      },
+      {
+        question: 'Sự khác biệt giữa lên men hiếu khí và kỵ khí là gì?',
+        answer:
+          'Lên men hiếu khí cần có oxy để diễn ra, ví dụ như trong sản xuất giấm. Ngược lại, lên men kỵ khí diễn ra trong môi trường không có oxy, ví dụ như trong quá trình ủ rượu hoặc làm sữa chua. Mỗi loại quá trình tạo ra các sản phẩm và hương vị khác nhau.',
+      },
+    ],
   },
   {
     id: 'molecular-gastronomy-food-innovation',
@@ -410,6 +432,28 @@ export const foodTechnologyLessons: BaseLessonData[] = [
         type: 'Nền tảng công nghiệp',
       },
     ],
+    faqs: [
+      {
+        question: 'Ẩm thực phân tử là gì?',
+        answer:
+          'Ẩm thực phân tử là một phân ngành của khoa học thực phẩm, tìm cách nghiên cứu, giải thích và ứng dụng các biến đổi hóa học và vật lý của nguyên liệu trong quá trình nấu ăn. Nó sử dụng các kỹ thuật khoa học để tạo ra các kết cấu, hương vị và hình thức trình bày mới lạ.',
+      },
+      {
+        question: 'Kỹ thuật "cầu hóa" (spherification) hoạt động như thế nào?',
+        answer:
+          'Cầu hóa là một kỹ thuật tạo ra các viên "trứng cá" lỏng bên trong một lớp màng gel mỏng. Quá trình này thường sử dụng natri alginat (chiết xuất từ tảo biển) và canxi clorua. Khi dung dịch chứa alginat tiếp xúc với dung dịch canxi, một phản ứng hóa học xảy ra, tạo thành một lớp gel bao bọc lấy chất lỏng bên trong.',
+      },
+      {
+        question: 'Ẩm thực phân tử có an toàn không?',
+        answer:
+          'Có, ẩm thực phân tử hoàn toàn an toàn. Các chất phụ gia được sử dụng, như agar-agar, natri alginat, hay lecithin đậu nành, đều có nguồn gốc tự nhiên và đã được cấp phép sử dụng rộng rãi trong ngành công nghiệp thực phẩm. Các kỹ thuật như sử dụng nitơ lỏng cũng an toàn khi được thực hiện đúng cách bởi người đã qua đào tạo.',
+      },
+      {
+        question: 'Mục đích của ẩm thực phân tử là gì? Có phải chỉ để "làm màu" không?',
+        answer:
+          'Mặc dù hình thức trình bày rất quan trọng, mục đích chính của ẩm thực phân tử là để tăng cường trải nghiệm ăn uống bằng cách tạo ra những sự tương phản bất ngờ về kết cấu và nhiệt độ, hoặc tập trung và khuếch đại hương vị. Nó là một công cụ để đầu bếp thể hiện sự sáng tạo và mang đến cho thực khách một góc nhìn mới về món ăn quen thuộc.',
+      },
+    ],
   },
   {
     id: 'sustainable-food-production',
@@ -538,6 +582,28 @@ export const foodTechnologyLessons: BaseLessonData[] = [
         title: 'Các chương trình Bền vững của Bộ Nông nghiệp Việt Nam',
         url: 'https://www.mard.gov.vn/',
         type: 'Sáng kiến của Chính phủ',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Sản xuất thực phẩm bền vững có nghĩa là gì?',
+        answer:
+          'Sản xuất thực phẩm bền vững là một phương thức sản xuất đáp ứng nhu cầu lương thực hiện tại mà không làm tổn hại đến khả năng đáp ứng nhu cầu của các thế hệ tương lai. Nó bao gồm việc bảo vệ môi trường, công bằng xã hội và hiệu quả kinh tế.',
+      },
+      {
+        question: 'Tại sao giảm lãng phí thực phẩm lại quan trọng đối với tính bền vững?',
+        answer:
+          'Giảm lãng phí thực phẩm giúp tiết kiệm các nguồn tài nguyên quý giá (đất, nước, năng lượng) đã được sử dụng để sản xuất ra nó. Nó cũng làm giảm lượng khí nhà kính (như metan) phát sinh từ thực phẩm phân hủy trong các bãi chôn lấp, góp phần chống biến đổi khí hậu.',
+      },
+      {
+        question: 'Kinh tế tuần hoàn trong chuỗi cung ứng thực phẩm là gì?',
+        answer:
+          'Kinh tế tuần hoàn trong chuỗi cung ứng thực phẩm nhằm mục đích loại bỏ chất thải bằng cách tận dụng tối đa các nguồn tài nguyên. Ví dụ, phụ phẩm nông nghiệp có thể được chuyển thành thức ăn chăn nuôi hoặc phân bón hữu cơ, và bao bì được thiết kế để có thể tái chế hoặc tái sử dụng hoàn toàn.',
+      },
+      {
+        question: 'Làm thế nào người tiêu dùng có thể góp phần vào một chuỗi cung ứng thực phẩm bền vững hơn?',
+        answer:
+          'Người tiêu dùng có thể đóng góp bằng cách: mua các sản phẩm địa phương và theo mùa, giảm tiêu thụ thịt, lên kế hoạch bữa ăn để tránh mua thừa và lãng phí thực phẩm, và ủng hộ các thương hiệu cam kết thực hành sản xuất bền vững và minh bạch.',
       },
     ],
   },

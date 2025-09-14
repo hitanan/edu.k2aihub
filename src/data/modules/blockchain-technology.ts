@@ -279,6 +279,28 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Các framework như Hardhat và Truffle cung cấp một bộ công cụ hoàn chỉnh giúp đơn giản hóa và tự động hóa các tác vụ trong vòng đời phát triển hợp đồng thông minh, từ việc viết mã, kiểm thử đến triển khai lên các mạng lưới blockchain.',
       },
     ],
+    faqs: [
+      {
+        question: 'Solidity là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Solidity là ngôn ngữ lập trình chính để viết hợp đồng thông minh trên Ethereum và các blockchain tương thích EVM. Việc thành thạo Solidity là kỹ năng cơ bản cho bất kỳ nhà phát triển blockchain nào muốn xây dựng các ứng dụng phi tập trung (dApps).',
+      },
+      {
+        question: 'Sự khác biệt giữa Hardhat và Truffle là gì?',
+        answer:
+          'Cả hai đều là các môi trường phát triển phổ biến cho Ethereum. Hardhat được biết đến với tính linh hoạt, hiệu suất nhanh và khả năng debug mạnh mẽ với console.log. Truffle có lịch sử lâu đời hơn và một hệ sinh thái trưởng thành với các công cụ tích hợp như Ganache và Drizzle.',
+      },
+      {
+        question: 'Tại sao bảo mật hợp đồng thông minh lại cực kỳ quan trọng?',
+        answer:
+          'Một khi đã được triển khai, mã của hợp đồng thông minh là bất biến và quản lý các tài sản có giá trị thực. Một lỗ hổng bảo mật nhỏ có thể dẫn đến thiệt hại tài chính không thể khắc phục. Do đó, việc kiểm toán và tuân thủ các phương pháp tốt nhất về bảo mật là tối quan trọng.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu với việc phát triển hợp đồng thông minh?',
+        answer:
+          'Bắt đầu bằng cách học các khái niệm cơ bản của Solidity, sau đó thiết lập một môi trường phát triển cục bộ với Hardhat hoặc Truffle. Sử dụng các thư viện như OpenZeppelin để tận dụng các hợp đồng đã được kiểm toán và an toàn. Thực hành bằng cách xây dựng các dự án nhỏ như token ERC-20 hoặc một dApp bỏ phiếu đơn giản.',
+      },
+    ],
   },
   {
     id: 'defi-protocols-applications',
@@ -401,6 +423,28 @@ export const blockchainLessons: BlockchainLesson[] = [
         correctAnswerIndex: 1,
         explanation:
           'Yield Farming là một chiến lược đầu tư trong DeFi, nơi người dùng di chuyển tài sản của họ giữa các giao thức cho vay và bể thanh khoản khác nhau để tối đa hóa lợi nhuận. Đây là một hoạt động có rủi ro cao nhưng cũng có thể mang lại lợi nhuận cao.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'DeFi là gì và nó khác với tài chính truyền thống (TradFi) như thế nào?',
+        answer:
+          'DeFi (Tài chính phi tập trung) là một hệ thống tài chính mở được xây dựng trên công nghệ blockchain, không cần đến các trung gian tài chính truyền thống như ngân hàng. Nó cho phép mọi người cho vay, đi vay, giao dịch và đầu tư một cách minh bạch và không cần cấp phép, trong khi TradFi phụ thuộc vào các tổ chức tập trung.',
+      },
+      {
+        question: 'Rủi ro lớn nhất khi tham gia vào DeFi là gì?',
+        answer:
+          'Các rủi ro chính trong DeFi bao gồm rủi ro hợp đồng thông minh (lỗi mã), rủi ro thị trường (biến động giá tài sản), rủi ro thanh khoản, và tổn thất vô thường (impermanent loss) khi cung cấp thanh khoản cho các AMM. Việc nghiên cứu kỹ lưỡng và quản lý rủi ro là rất quan trọng.',
+      },
+      {
+        question: 'Làm thế nào các giao thức DeFi có thể mang lại lợi nhuận cao như vậy?',
+        answer:
+          'Lợi nhuận cao trong DeFi (yield) đến từ nhiều nguồn: phí giao dịch, phần thưởng từ việc cung cấp thanh khoản (khai thác thanh khoản), lãi suất cho vay, và phần thưởng quản trị (governance tokens). Tuy nhiên, lợi nhuận cao thường đi kèm với rủi ro cao.',
+      },
+      {
+        question: 'Tôi có cần nhiều tiền để bắt đầu với DeFi không?',
+        answer:
+          'Không hẳn. Mặc dù một số chiến lược yêu cầu vốn đáng kể, bạn có thể bắt đầu với một số tiền nhỏ để thử nghiệm. Tuy nhiên, hãy lưu ý đến phí giao dịch (gas fee), đặc biệt là trên mạng Ethereum, có thể làm cho các giao dịch nhỏ không hiệu quả về mặt chi phí. Các giải pháp Layer 2 có thể giúp giảm bớt vấn đề này.',
       },
     ],
   },
@@ -527,6 +571,28 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Metaverse là một khái niệm về một không gian ảo tập thể, được tạo ra bởi sự hội tụ của thực tế vật lý và không gian kỹ thuật số. Nó được coi là bước tiến tiếp theo của Internet, nơi người dùng có thể tương tác với nhau và với các đối tượng kỹ thuật số trong một môi trường 3D sống động.',
       },
     ],
+    faqs: [
+      {
+        question: 'NFT thực sự là gì? Tôi có sở hữu hình ảnh không?',
+        answer:
+          'NFT (Non-Fungible Token) là một chứng chỉ sở hữu kỹ thuật số duy nhất được ghi lại trên blockchain. Khi bạn mua một NFT, bạn không nhất thiết sở hữu bản quyền của hình ảnh, mà bạn sở hữu chính token đó, một bản ghi xác thực quyền sở hữu của bạn đối với một tài sản kỹ thuật số cụ thể.',
+      },
+      {
+        question: 'Sự khác biệt giữa ERC-721 và ERC-1155 là gì?',
+        answer:
+          'ERC-721 là tiêu chuẩn cho các NFT hoàn toàn độc nhất, mỗi token là một hợp đồng riêng. ERC-1155 là một tiêu chuẩn đa token, cho phép một hợp đồng duy nhất quản lý nhiều loại token khác nhau, cả fungible (có thể thay thế) và non-fungible (không thể thay thế). Điều này hiệu quả hơn cho các game có nhiều vật phẩm.',
+      },
+      {
+        question: 'Metaverse có phải chỉ là một trò chơi không?',
+        answer:
+          'Không. Mặc dù game là một phần quan trọng, metaverse là một khái niệm rộng lớn hơn về một Internet 3D, nơi công việc, giao tiếp xã hội, giải trí, và thương mại đều có thể diễn ra. Nó được xem là một không gian ảo liên tục và tương tác.',
+      },
+      {
+        question: 'Làm thế nào để tạo và bán một NFT?',
+        answer:
+          'Bạn có thể sử dụng các nền tảng như OpenSea, Rarible, hoặc Foundation. Quá trình này thường bao gồm việc tải lên tệp kỹ thuật số của bạn (hình ảnh, video, v.v.), điền thông tin chi tiết, và "mint" (đúc) nó thành một NFT trên blockchain. Sau đó, bạn có thể niêm yết nó để bán.',
+      },
+    ],
   },
   {
     id: 'regulatory-compliance-security',
@@ -649,6 +715,28 @@ export const blockchainLessons: BlockchainLesson[] = [
         correctAnswerIndex: 2,
         explanation:
           'Tấn công Re-entrancy là một trong những lỗ hổng bảo mật khét tiếng nhất trong lịch sử Ethereum, đã được sử dụng trong vụ hack The DAO. Nó xảy ra khi một hợp đồng bên ngoài có thể gọi lại vào hợp đồng đang gọi trước khi nó hoàn thành việc thực thi, cho phép kẻ tấn công thao túng trạng thái và rút tiền nhiều lần.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tại sao quy định pháp lý lại quan trọng đối với sự phát triển của blockchain?',
+        answer:
+          'Một khung pháp lý rõ ràng giúp bảo vệ người tiêu dùng và nhà đầu tư, ngăn chặn các hoạt động bất hợp pháp, và tạo ra một môi trường ổn định để các doanh nghiệp hợp pháp có thể đổi mới và phát triển. Sự rõ ràng về quy định là cần thiết cho việc áp dụng blockchain ở quy mô lớn.',
+      },
+      {
+        question: 'Kiểm toán hợp đồng thông minh (smart contract audit) là gì?',
+        answer:
+          'Đó là một quá trình phân tích và xem xét mã của hợp đồng thông minh một cách kỹ lưỡng để tìm ra các lỗ hổng bảo mật, lỗi logic, và các vấn đề tiềm ẩn trước khi nó được triển khai. Đây là một bước quan trọng để đảm bảo an toàn cho các ứng dụng DeFi và NFT.',
+      },
+      {
+        question: 'AML là viết tắt của gì và nó liên quan gì đến tiền điện tử?',
+        answer:
+          'AML là viết tắt của Anti-Money Laundering (Chống rửa tiền). Các quy định AML yêu cầu các sàn giao dịch và dịch vụ tiền điện tử phải thực hiện các biện pháp để ngăn chặn việc sử dụng nền tảng của họ cho các hoạt động rửa tiền, thường bao gồm cả quy trình KYC (Know Your Customer).',
+      },
+      {
+        question: 'Nếu tôi tìm thấy một lỗi trong một giao thức DeFi, tôi nên làm gì?',
+        answer:
+          'Nếu bạn tin rằng mình đã tìm thấy một lỗ hổng bảo mật, hãy hành động có trách nhiệm. Tìm kiếm chương trình "bug bounty" (săn lỗi nhận thưởng) của dự án và báo cáo riêng cho nhóm phát triển. Đừng khai thác lỗ hổng hoặc tiết lộ công khai cho đến khi nó được vá, vì điều này có thể gây nguy hiểm cho tiền của người dùng.',
       },
     ],
   },

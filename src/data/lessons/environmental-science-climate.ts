@@ -171,6 +171,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         type: 'Tài liệu tiêu chuẩn',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao giám sát môi trường lại quan trọng?',
+        answer:
+          'Giám sát môi trường cung cấp dữ liệu cần thiết để hiểu tình trạng của môi trường, xác định các nguồn ô nhiễm, đánh giá hiệu quả của các chính sách bảo vệ môi trường và cảnh báo sớm các nguy cơ tiềm ẩn đối với sức khỏe con người và hệ sinh thái.',
+      },
+      {
+        question: 'PM2.5 là gì và tại sao nó nguy hiểm?',
+        answer:
+          'PM2.5 là các hạt bụi mịn trong không khí có đường kính nhỏ hơn hoặc bằng 2.5 micromet. Chúng nguy hiểm vì kích thước siêu nhỏ cho phép chúng xâm nhập sâu vào phổi và thậm chí cả mạch máu, gây ra các bệnh về hô hấp, tim mạch và nhiều vấn đề sức khỏe nghiêm trọng khác.',
+      },
+      {
+        question: 'Đánh giá tác động môi trường (ĐTM) là gì?',
+        answer:
+          'Đánh giá tác động môi trường (tiếng Anh: Environmental Impact Assessment - EIA) là quá trình phân tích, dự báo các tác động (cả tích cực và tiêu cực) của một dự án đầu tư (ví dụ: xây dựng nhà máy, khu công nghiệp) đến môi trường. Mục đích là để đề xuất các biện pháp giảm thiểu tác động xấu và là một công cụ quan trọng để cơ quan có thẩm quyền xem xét trước khi cấp phép cho dự án.',
+      },
+      {
+        question: 'Làm thế nào người dân có thể tham gia vào việc giám sát môi trường?',
+        answer:
+          'Người dân có thể tham gia thông qua các chương trình "khoa học công dân" (citizen science), sử dụng các thiết bị cảm biến chi phí thấp để đo chất lượng không khí, nước, hoặc báo cáo các sự cố môi trường cho cơ quan chức năng qua các ứng dụng di động hoặc đường dây nóng. Sự tham gia của cộng đồng giúp tăng cường mạng lưới giám sát và nâng cao nhận thức.',
+      },
+    ],
   },
 
   {
@@ -248,6 +270,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         type: 'Công cụ đánh giá',
       },
     ],
+    faqs: [
+      {
+        question: 'Nguồn năng lượng tái tạo nào có tiềm năng lớn nhất ở Việt Nam?',
+        answer:
+          'Việt Nam có tiềm năng lớn cho cả năng lượng mặt trời và năng lượng gió. Năng lượng mặt trời có tiềm năng cao ở các tỉnh miền Trung và miền Nam, nơi có số giờ nắng nhiều. Năng lượng gió, đặc biệt là gió ngoài khơi, có tiềm năng khổng lồ dọc theo bờ biển dài của đất nước.',
+      },
+      {
+        question: 'Điện mặt trời áp mái có lợi ích gì cho hộ gia đình?',
+        answer:
+          'Lắp đặt điện mặt trời áp mái giúp các hộ gia đình giảm đáng kể hóa đơn tiền điện hàng tháng, giảm sự phụ thuộc vào lưới điện quốc gia, và góp phần bảo vệ môi trường. Ngoài ra, nếu lượng điện sản xuất ra nhiều hơn mức tiêu thụ, hộ gia đình có thể bán lại phần điện dư thừa cho công ty điện lực.',
+      },
+      {
+        question: 'Thủy điện có phải là năng lượng sạch không?',
+        answer:
+          'Thủy điện được coi là một dạng năng lượng tái tạo vì nó sử dụng sức nước. Tuy nhiên, việc xây dựng các đập thủy điện lớn có thể gây ra các tác động tiêu cực đến môi trường, như thay đổi dòng chảy của sông, ảnh hưởng đến hệ sinh thái thủy sinh và di dời cộng đồng dân cư. Do đó, các dự án thủy điện nhỏ và bền vững thường được ưu tiên hơn.',
+      },
+      {
+        question: 'Chi phí lắp đặt hệ thống năng lượng tái tạo có đắt không?',
+        answer:
+          'Chi phí ban đầu để lắp đặt các hệ thống như điện mặt trời có thể khá cao, nhưng nó đã giảm đáng kể trong những năm gần đây. Quan trọng hơn, đây là một khoản đầu tư dài hạn. Chi phí vận hành gần như bằng không và bạn sẽ tiết kiệm được tiền điện trong nhiều năm, thường sẽ hoàn vốn sau khoảng 5-7 năm ở Việt Nam.',
+      },
+    ],
   },
 
   {
@@ -319,6 +363,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         title: 'Kế hoạch Thích ứng Nông nghiệp Việt Nam',
         url: 'https://mard.gov.vn/Pages/climate-agriculture.aspx',
         type: 'Tài liệu chính sách',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Nông nghiệp bền vững là gì?',
+        answer:
+          'Nông nghiệp bền vững là phương thức canh tác đáp ứng nhu cầu lương thực hiện tại mà không làm tổn hại đến khả năng đáp ứng nhu cầu của các thế hệ tương lai. Nó tập trung vào việc bảo vệ môi trường (sức khỏe đất, nước), lợi nhuận kinh tế cho nông dân và sự công bằng xã hội.',
+      },
+      {
+        question: 'Canh tác hữu cơ (organic farming) có phải là nông nghiệp bền vững không?',
+        answer:
+          'Canh tác hữu cơ là một phần quan trọng của nông nghiệp bền vững, nhưng không phải là tất cả. Nông nghiệp bền vững là một khái niệm rộng hơn, bao gồm cả việc sử dụng nước hiệu quả, bảo tồn năng lượng, đảm bảo điều kiện lao động tốt và giảm thiểu chất thải trong toàn bộ chuỗi cung ứng.',
+      },
+      {
+        question: 'Làm thế nào nông nghiệp có thể giúp chống lại biến đổi khí hậu?',
+        answer:
+          'Nông nghiệp có thể đóng vai trò quan trọng thông qua việc "cô lập carbon trong đất" (soil carbon sequestration). Các phương pháp canh tác như không cày xới, trồng cây che phủ và nông lâm kết hợp giúp đưa carbon từ khí quyển vào và lưu trữ trong đất, cải thiện sức khỏe của đất và giảm lượng CO2 trong không khí.',
+      },
+      {
+        question: 'Nông nghiệp chính xác (precision agriculture) là gì?',
+        answer:
+          'Nông nghiệp chính xác là việc sử dụng công nghệ như GPS, cảm biến, drone và AI để quản lý và canh tác trên từng khu vực nhỏ của cánh đồng. Thay vì bón phân hoặc tưới nước đồng đều trên toàn bộ cánh đồng, nông dân có thể áp dụng đúng lượng cần thiết cho từng vị trí cụ thể, giúp tiết kiệm tài nguyên, giảm chi phí và bảo vệ môi trường.',
       },
     ],
   },
@@ -394,6 +460,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         type: 'Tạp chí khoa học',
       },
     ],
+    faqs: [
+      {
+        question: 'Đa dạng sinh học là gì và tại sao nó quan trọng?',
+        answer:
+          'Đa dạng sinh học là sự đa dạng của sự sống trên Trái đất, từ gen, loài, cho đến toàn bộ hệ sinh thái. Nó quan trọng vì cung cấp cho chúng ta "các dịch vụ hệ sinh thái" thiết yếu như không khí sạch, nước sạch, thụ phấn cho cây trồng, và điều hòa khí hậu. Mất đa dạng sinh học có thể làm sụp đổ các hệ thống tự nhiên mà con người phụ thuộc vào.',
+      },
+      {
+        question: 'Nguyên nhân chính gây mất đa dạng sinh học là gì?',
+        answer:
+          'Năm nguyên nhân chính bao gồm: 1. Thay đổi/mất môi trường sống (do phá rừng, đô thị hóa). 2. Khai thác quá mức tài nguyên (đánh bắt cá quá mức, săn bắn trái phép). 3. Biến đổi khí hậu. 4. Ô nhiễm (nhựa, hóa chất). 5. Các loài ngoại lai xâm lấn.',
+      },
+      {
+        question: 'Vườn quốc gia và khu bảo tồn có vai trò gì?',
+        answer:
+          'Vườn quốc gia và khu bảo tồn là những khu vực được bảo vệ nghiêm ngặt để bảo tồn các hệ sinh thái tự nhiên và các loài quan trọng. Chúng hoạt động như những "hòn đảo" an toàn cho đa dạng sinh học, là nơi nghiên cứu khoa học, giáo dục môi trường và du lịch sinh thái có trách nhiệm.',
+      },
+      {
+        question: 'Làm thế nào một cá nhân có thể góp phần vào việc bảo tồn đa dạng sinh học?',
+        answer:
+          'Bạn có thể góp phần bằng nhiều cách: giảm tiêu thụ, tái sử dụng, tái chế; lựa chọn các sản phẩm bền vững, không mua các sản phẩm từ động vật hoang dã; tham gia các hoạt động tình nguyện như trồng cây, dọn dẹp rác thải; và nâng cao nhận thức cho những người xung quanh về tầm quan trọng của việc bảo vệ thiên nhiên.',
+      },
+    ],
   },
 
   {
@@ -465,6 +553,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         title: 'Hướng dẫn Phân tích Chính sách Môi trường',
         url: 'https://www.unep.org/resources/toolkits-manuals',
         type: 'Hướng dẫn chính sách',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Chính sách môi trường là gì?',
+        answer:
+          'Chính sách môi trường là tập hợp các luật, quy định, và các hành động của chính phủ nhằm mục đích bảo vệ môi trường, quản lý tài nguyên thiên nhiên và kiểm soát ô nhiễm. Nó đặt ra các quy tắc và tiêu chuẩn mà các cá nhân, tổ chức và doanh nghiệp phải tuân theo.',
+      },
+      {
+        question: 'Nguyên tắc "Người gây ô nhiễm phải trả tiền" (Polluter Pays Principle) có nghĩa là gì?',
+        answer:
+          'Đây là một nguyên tắc cốt lõi trong chính sách môi trường, theo đó bên gây ra ô nhiễm phải chịu trách nhiệm về chi phí để xử lý và khắc phục các thiệt hại do ô nhiễm đó gây ra. Nguyên tắc này nhằm mục đích buộc các cá nhân và doanh nghiệp phải tính đến chi phí môi trường trong hoạt động của họ.',
+      },
+      {
+        question: 'Vai trò của các tổ chức phi chính phủ (NGO) trong chính sách môi trường là gì?',
+        answer:
+          'Các NGO đóng một vai trò quan trọng. Họ thường hoạt động như những người giám sát, theo dõi việc thực thi chính sách của chính phủ và doanh nghiệp. Họ cũng thực hiện các chiến dịch vận động để nâng cao nhận thức cộng đồng, đề xuất các chính sách mới và đại diện cho tiếng nói của các cộng đồng bị ảnh hưởng bởi các vấn đề môi trường.',
+      },
+      {
+        question: 'Tại sao các thỏa thuận môi trường quốc tế lại quan trọng?',
+        answer:
+          'Các vấn đề môi trường như biến đổi khí hậu, ô nhiễm đại dương, hay mất đa dạng sinh học không có biên giới. Các thỏa thuận quốc tế (như Thỏa thuận Paris về biến đổi khí hậu) tạo ra một khuôn khổ hợp tác toàn cầu, đặt ra các mục tiêu chung và thúc đẩy các quốc gia cùng hành động để giải quyết những thách thức chung mà không một quốc gia nào có thể tự mình giải quyết được.',
       },
     ],
   },
@@ -540,6 +650,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         type: 'Cơ sở dữ liệu công nghệ',
       },
     ],
+    faqs: [
+      {
+        question: 'Công nghệ xanh (Green Tech) là gì?',
+        answer:
+          'Công nghệ xanh, hay công nghệ sạch (cleantech), là thuật ngữ chỉ các công nghệ và sản phẩm được phát triển và sử dụng theo cách giảm thiểu hoặc không gây tác động tiêu cực đến môi trường. Ví dụ bao gồm năng lượng tái tạo, vật liệu xây dựng bền vững, xe điện, và các quy trình xử lý chất thải tiên tiến.',
+      },
+      {
+        question: 'Kinh tế tuần hoàn (Circular Economy) là gì?',
+        answer:
+          'Kinh tế tuần hoàn là một mô hình kinh tế trái ngược với mô hình "khai thác - sản xuất - vứt bỏ" truyền thống. Trong kinh tế tuần hoàn, các sản phẩm được thiết kế để có thể tái sử dụng, sửa chữa, tân trang và cuối cùng là tái chế, nhằm giữ cho vật liệu được lưu thông trong vòng lặp sản xuất càng lâu càng tốt và giảm thiểu chất thải ra môi trường.',
+      },
+      {
+        question: 'Đổi mới công nghệ xanh có tạo ra cơ hội kinh doanh không?',
+        answer:
+          'Chắc chắn có. Việc chuyển đổi sang một nền kinh tế bền vững hơn đang tạo ra những thị trường mới khổng lồ. Các công ty phát triển các giải pháp năng lượng sạch, vật liệu mới, nông nghiệp bền vững, hoặc các công nghệ giúp tiết kiệm tài nguyên đang thu hút được nhiều vốn đầu tư và có tiềm năng tăng trưởng rất lớn.',
+      },
+      {
+        question: 'Làm thế nào để một ý tưởng công nghệ xanh trở thành một sản phẩm thực tế?',
+        answer:
+          'Quá trình này thường bao gồm các bước: nghiên cứu và phát triển (R&D) để chứng minh tính khả thi của công nghệ; xây dựng một sản phẩm khả dụng tối thiểu (MVP) để thử nghiệm; tìm kiếm nguồn vốn đầu tư; bảo vệ sở hữu trí tuệ (bằng sáng chế); và xây dựng một mô hình kinh doanh để đưa sản phẩm ra thị trường và mở rộng quy mô.',
+      },
+    ],
   },
 
   {
@@ -612,6 +744,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         title: 'Sổ tay Truyền thông Khoa học',
         url: 'https://www.sciencecommunication.org/',
         type: 'Hướng dẫn truyền thông',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tại sao giáo dục môi trường lại quan trọng, đặc biệt là cho thế hệ trẻ?',
+        answer:
+          'Giáo dục môi trường trang bị cho thế hệ trẻ kiến thức, kỹ năng và thái độ cần thiết để hiểu và giải quyết các thách thức môi trường. Nó giúp nuôi dưỡng một thế hệ công dân có trách nhiệm, biết đưa ra các quyết định sáng suốt và hành động để bảo vệ hành tinh cho tương lai.',
+      },
+      {
+        question: 'Làm thế nào để truyền đạt các vấn đề khoa học phức tạp một cách dễ hiểu?',
+        answer:
+          'Hãy sử dụng các câu chuyện (storytelling), các ví dụ gần gũi và các hình ảnh trực quan. Thay vì chỉ trình bày các con số và dữ liệu khô khan, hãy kết nối vấn đề đó với cuộc sống hàng ngày của khán giả. Tập trung vào "tại sao nó lại quan trọng với bạn" thay vì chỉ "nó là cái gì".',
+      },
+      {
+        question: 'Làm thế nào để một chiến dịch truyền thông môi trường trở nên hiệu quả?',
+        answer:
+          'Một chiến dịch hiệu quả cần có: một thông điệp rõ ràng, đơn giản; nhắm đúng đối tượng mục tiêu; sử dụng nhiều kênh truyền thông khác nhau (mạng xã hội, báo chí, sự kiện cộng đồng); và quan trọng nhất là phải có một lời kêu gọi hành động (call to action) cụ thể, cho mọi người biết chính xác họ cần làm gì.',
+      },
+      {
+        question: 'Làm sao để đối phó với thông tin sai lệch (misinformation) về các vấn đề môi trường?',
+        answer:
+          'Hãy luôn dựa vào các nguồn thông tin khoa học đáng tin cậy, như các báo cáo từ IPCC (Ủy ban Liên chính phủ về Biến đổi Khí hậu), NASA, hoặc các tạp chí khoa học uy tín. Khi chia sẻ thông tin, hãy trích dẫn nguồn rõ ràng. Thay vì tranh cãi, hãy tập trung vào việc trình bày các bằng chứng một cách bình tĩnh và xây dựng sự đồng thuận dựa trên sự thật.',
       },
     ],
   },
@@ -741,6 +895,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         type: 'Kho dữ liệu',
       },
     ],
+    faqs: [
+      {
+        question: 'Hiệu ứng nhà kính là gì và nó liên quan như thế nào đến biến đổi khí hậu?',
+        answer:
+          'Hiệu ứng nhà kính là quá trình tự nhiên giữ lại một phần nhiệt của Mặt trời trong bầu khí quyển, giúp Trái đất đủ ấm để duy trì sự sống. Tuy nhiên, các hoạt động của con người đã làm tăng nồng độ các khí nhà kính (như CO2), giữ lại nhiều nhiệt hơn và gây ra sự nóng lên toàn cầu, tức là biến đổi khí hậu.',
+      },
+      {
+        question: 'Việt Nam bị ảnh hưởng bởi biến đổi khí hậu như thế nào?',
+        answer:
+          'Việt Nam là một trong những quốc gia bị ảnh hưởng nặng nề nhất. Các tác động chính bao gồm: mực nước biển dâng gây ngập lụt và xâm nhập mặn ở Đồng bằng sông Cửu Long, các cơn bão mạnh và thường xuyên hơn ở miền Trung, và các đợt nắng nóng, hạn hán khắc nghiệt hơn ở nhiều vùng.',
+      },
+      {
+        question: 'Sự khác biệt giữa thời tiết và khí hậu là gì?',
+        answer:
+          'Thời tiết là các điều kiện khí quyển trong một khoảng thời gian ngắn (ngày, giờ) tại một địa điểm cụ thể, ví dụ như "hôm nay trời mưa". Khí hậu là mô hình thời tiết trung bình của một khu vực trong một khoảng thời gian dài (thường là 30 năm trở lên), ví dụ như "miền Nam có khí hậu nhiệt đới gió mùa".',
+      },
+      {
+        question: 'Chúng ta có thể làm gì để giảm thiểu tác động của biến đổi khí hậu?',
+        answer:
+          'Các hành động bao gồm: giảm phát thải khí nhà kính bằng cách chuyển sang năng lượng tái tạo (mặt trời, gió), sử dụng năng lượng hiệu quả, trồng cây gây rừng, và giảm tiêu thụ. Đồng thời, chúng ta cần thích ứng bằng cách xây dựng các công trình chống lũ, phát triển các giống cây trồng chịu mặn, và bảo vệ các hệ sinh thái ven biển.',
+      },
+    ],
   },
   {
     id: 'environmental-policy-sustainable-development',
@@ -824,6 +1000,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         type: 'Khung pháp lý',
       },
     ],
+    faqs: [
+      {
+        question: 'Chính sách môi trường là gì?',
+        answer:
+          'Chính sách môi trường là tập hợp các luật, quy định, và các hành động của chính phủ nhằm mục đích bảo vệ môi trường, quản lý tài nguyên thiên nhiên và kiểm soát ô nhiễm. Nó đặt ra các quy tắc và tiêu chuẩn mà các cá nhân, tổ chức và doanh nghiệp phải tuân theo.',
+      },
+      {
+        question: 'Nguyên tắc "Người gây ô nhiễm phải trả tiền" (Polluter Pays Principle) có nghĩa là gì?',
+        answer:
+          'Đây là một nguyên tắc cốt lõi trong chính sách môi trường, theo đó bên gây ra ô nhiễm phải chịu trách nhiệm về chi phí để xử lý và khắc phục các thiệt hại do ô nhiễm đó gây ra. Nguyên tắc này nhằm mục đích buộc các cá nhân và doanh nghiệp phải tính đến chi phí môi trường trong hoạt động của họ.',
+      },
+      {
+        question: 'Vai trò của các tổ chức phi chính phủ (NGO) trong chính sách môi trường là gì?',
+        answer:
+          'Các NGO đóng một vai trò quan trọng. Họ thường hoạt động như những người giám sát, theo dõi việc thực thi chính sách của chính phủ và doanh nghiệp. Họ cũng thực hiện các chiến dịch vận động để nâng cao nhận thức cộng đồng, đề xuất các chính sách mới và đại diện cho tiếng nói của các cộng đồng bị ảnh hưởng bởi các vấn đề môi trường.',
+      },
+      {
+        question: 'Tại sao các thỏa thuận môi trường quốc tế lại quan trọng?',
+        answer:
+          'Các vấn đề môi trường như biến đổi khí hậu, ô nhiễm đại dương, hay mất đa dạng sinh học không có biên giới. Các thỏa thuận quốc tế (như Thỏa thuận Paris về biến đổi khí hậu) tạo ra một khuôn khổ hợp tác toàn cầu, đặt ra các mục tiêu chung và thúc đẩy các quốc gia cùng hành động để giải quyết những thách thức chung mà không một quốc gia nào có thể tự mình giải quyết được.',
+      },
+    ],
   },
   {
     id: 'ecosystem-restoration-biodiversity-conservation',
@@ -905,6 +1103,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         title: 'Chiến lược Đa dạng Sinh học Quốc gia Việt Nam',
         url: 'http://www.biodiv.gov.vn',
         type: 'Chiến lược quốc gia',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Đa dạng sinh học là gì và tại sao nó quan trọng?',
+        answer:
+          'Đa dạng sinh học là sự đa dạng của sự sống trên Trái đất, từ gen, loài, cho đến toàn bộ hệ sinh thái. Nó quan trọng vì cung cấp cho chúng ta "các dịch vụ hệ sinh thái" thiết yếu như không khí sạch, nước sạch, thụ phấn cho cây trồng, và điều hòa khí hậu. Mất đa dạng sinh học có thể làm sụp đổ các hệ thống tự nhiên mà con người phụ thuộc vào.',
+      },
+      {
+        question: 'Nguyên nhân chính gây mất đa dạng sinh học là gì?',
+        answer:
+          'Năm nguyên nhân chính bao gồm: 1. Thay đổi/mất môi trường sống (do phá rừng, đô thị hóa). 2. Khai thác quá mức tài nguyên (đánh bắt cá quá mức, săn bắn trái phép). 3. Biến đổi khí hậu. 4. Ô nhiễm (nhựa, hóa chất). 5. Các loài ngoại lai xâm lấn.',
+      },
+      {
+        question: 'Vườn quốc gia và khu bảo tồn có vai trò gì?',
+        answer:
+          'Vườn quốc gia và khu bảo tồn là những khu vực được bảo vệ nghiêm ngặt để bảo tồn các hệ sinh thái tự nhiên và các loài quan trọng. Chúng hoạt động như những "hòn đảo" an toàn cho đa dạng sinh học, là nơi nghiên cứu khoa học, giáo dục môi trường và du lịch sinh thái có trách nhiệm.',
+      },
+      {
+        question: 'Làm thế nào một cá nhân có thể góp phần vào việc bảo tồn đa dạng sinh học?',
+        answer:
+          'Bạn có thể góp phần bằng nhiều cách: giảm tiêu thụ, tái sử dụng, tái chế; lựa chọn các sản phẩm bền vững, không mua các sản phẩm từ động vật hoang dã; tham gia các hoạt động tình nguyện như trồng cây, dọn dẹp rác thải; và nâng cao nhận thức cho những người xung quanh về tầm quan trọng của việc bảo vệ thiên nhiên.',
       },
     ],
   },

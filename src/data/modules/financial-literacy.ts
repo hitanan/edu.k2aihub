@@ -191,6 +191,28 @@ export const financialLiteracyLessons: FinancialLiteracyLesson[] = [
     financialImpact:
       'Hiểu biết và áp dụng các nguyên tắc đầu tư cơ bản để xây dựng tài sản và đạt được các mục tiêu tài chính dài hạn.',
     technologies: ['Nền tảng giao dịch trực tuyến', 'Phần mềm phân tích đầu tư', 'Ứng dụng theo dõi danh mục đầu tư'],
+    faqs: [
+      {
+        question: 'Đầu tư là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Đầu tư là việc sử dụng tiền của bạn (vốn) để mua tài sản với kỳ vọng rằng chúng sẽ tạo ra thu nhập hoặc tăng giá trị trong tương lai. Nó quan trọng vì giúp tiền của bạn không bị mất giá do lạm phát và là cách hiệu quả để xây dựng tài sản cho các mục tiêu dài hạn như nghỉ hưu.',
+      },
+      {
+        question: 'Đa dạng hóa danh mục đầu tư nghĩa là gì?',
+        answer:
+          'Đa dạng hóa là một chiến lược quản lý rủi ro, bao gồm việc đầu tư vào nhiều loại tài sản khác nhau (ví dụ: cổ phiếu, trái phiếu) và trong các lĩnh vực, ngành công nghiệp khác nhau. Mục đích là để nếu một khoản đầu tư hoạt động kém, các khoản đầu tư khác có thể bù lại, giảm thiểu tổn thất tổng thể.',
+      },
+      {
+        question: 'Trung bình giá (DCA - Dollar-Cost Averaging) là gì?',
+        answer:
+          'Trung bình giá là một chiến lược đầu tư bằng cách bỏ ra một số tiền cố định vào một tài sản cụ thể theo một lịch trình đều đặn, bất kể giá của tài sản đó như thế nào. Phương pháp này giúp giảm thiểu rủi ro khi mua vào lúc giá cao và loại bỏ yếu tố cảm xúc ra khỏi quyết định đầu tư.',
+      },
+      {
+        question: 'Tôi nên bắt đầu đầu tư với bao nhiêu tiền?',
+        answer:
+          'Không có số tiền tối thiểu tuyệt đối. Nhiều nền tảng đầu tư hiện nay cho phép bạn bắt đầu chỉ với vài trăm nghìn đồng. Điều quan trọng hơn số tiền ban đầu là tính nhất quán. Bắt đầu nhỏ và đầu tư đều đặn theo thời gian thường hiệu quả hơn là chờ đợi để có một số tiền lớn.',
+      },
+    ],
   },
 ];
 

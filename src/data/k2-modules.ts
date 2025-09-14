@@ -15,6 +15,7 @@ export const K2Module = {
   Biotechnology: 'biotechnology',
   MCP: 'mcp',
   AIApplications: 'ai-applications',
+  AILearning: 'ai-learning',
   AIForStudents: 'ai-for-students',
   AdvancedAI: 'advanced-ai',
   SemiconductorTechnology: 'semiconductor-technology',

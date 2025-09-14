@@ -138,6 +138,18 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
           'Bốn lực cơ bản của chuyến bay là Lực nâng (Lift) chống lại Trọng lực (Weight), và Lực đẩy (Thrust) chống lại Lực cản (Drag). Sự cân bằng giữa các lực này quyết định trạng thái bay của máy bay.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao cánh máy bay có hình dạng cong ở trên và phẳng ở dưới?',
+        answer:
+          'Hình dạng này, gọi là airfoil, được thiết kế dựa trên nguyên lý Bernoulli. Không khí di chuyển qua mặt cong phía trên sẽ có vận tốc cao hơn và áp suất thấp hơn so với không khí di chuyển ở mặt phẳng phía dưới. Sự chênh lệch áp suất này tạo ra một lực hướng lên, gọi là lực nâng.',
+      },
+      {
+        question: 'UAV (Unmanned Aerial Vehicle) là gì và nó có ứng dụng gì ở Việt Nam?',
+        answer:
+          'UAV, hay còn gọi là drone hoặc máy bay không người lái, là các phương tiện bay được điều khiển từ xa hoặc bay tự động. Tại Việt Nam, UAV được ứng dụng rộng rãi trong nông nghiệp (phun thuốc, giám sát cây trồng), xây dựng (khảo sát địa hình), truyền thông (quay phim, chụp ảnh từ trên cao) và cả trong lĩnh vực quân sự.',
+      },
+    ],
   },
   {
     id: 'satellite-communication-systems',
@@ -262,6 +274,18 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
           'Vệ tinh địa tĩnh có quỹ đạo tròn ngay trên đường xích đạo của Trái đất với chu kỳ quay đúng bằng chu kỳ tự quay của Trái đất (khoảng 23 giờ 56 phút 4 giây). Điều này làm cho nó có vẻ như "đứng yên" tại một điểm cố định trên bầu trời so với người quan sát trên mặt đất.',
       },
     ],
+    faqs: [
+      {
+        question: 'Vệ tinh VINASAT của Việt Nam được sử dụng để làm gì?',
+        answer:
+          'VINASAT là hệ thống vệ tinh viễn thông địa tĩnh của Việt Nam. Chức năng chính của nó là cung cấp các dịch vụ như truyền hình, điện thoại, internet băng thông rộng đến các vùng sâu, vùng xa, hải đảo của Việt Nam, cũng như cho thuê băng tần cho các quốc gia khác, đảm bảo an ninh thông tin liên lạc quốc gia.',
+      },
+      {
+        question: 'Tại sao có sự trễ tín hiệu khi liên lạc qua vệ tinh?',
+        answer:
+          'Sự trễ tín hiệu (latency) xảy ra do tín hiệu phải di chuyển một quãng đường rất xa từ trạm mặt đất lên vệ tinh và quay trở lại. Đối với vệ tinh địa tĩnh cách Trái đất khoảng 35,786 km, thời gian trễ tối thiểu là khoảng 240 mili giây cho một lượt đi và về, điều này có thể nhận thấy rõ trong các cuộc gọi điện thoại qua vệ tinh.',
+      },
+    ],
   },
   {
     id: 'space-mission-planning',
@@ -336,13 +360,6 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
         ],
       },
     ],
-    safetyStandards: [
-      'Hướng dẫn giảm thiểu mảnh vỡ không gian quốc tế',
-      'Yêu cầu an toàn phóng và hoạt động tầm bay',
-      'Tiêu chuẩn an toàn tàu vũ trụ: bình áp lực, chất nổ',
-      'Giao thức an toàn bay có người lái',
-      'Yêu cầu xử lý cuối đời',
-    ],
     resources: [
       {
         title: 'Viện Hàn lâm Khoa học và Công nghệ Việt Nam',
@@ -383,6 +400,18 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
         correctAnswerIndex: 1,
         explanation:
           'Delta-v là một đại lượng vô hướng đo lường "nỗ lực" cần thiết để thay đổi quỹ đạo. Nó là một trong những thông số quan trọng nhất trong hoạch định nhiệm vụ, vì nó quyết định lượng nhiên liệu cần thiết cho một tàu vũ trụ.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Kỹ thuật hệ thống (Systems Engineering) có vai trò gì trong một nhiệm vụ không gian?',
+        answer:
+          'Kỹ thuật hệ thống đóng vai trò "nhạc trưởng" trong một dự án không gian. Nó đảm bảo rằng tất cả các hệ thống con phức tạp (như động cơ đẩy, thông tin liên lạc, máy tính, tải trọng khoa học) hoạt động hài hòa với nhau, đáp ứng các yêu cầu tổng thể của nhiệm vụ và được phát triển trong giới hạn về chi phí và thời gian.',
+      },
+      {
+        question: 'Tại sao việc giảm thiểu mảnh vỡ không gian lại quan trọng?',
+        answer:
+          'Mảnh vỡ không gian, từ các vệ tinh cũ hoặc các tầng tên lửa, di chuyển với tốc độ cực lớn và có thể gây ra va chạm thảm khốc cho các vệ tinh đang hoạt động hoặc các tàu vũ trụ có người lái. Việc giảm thiểu mảnh vỡ là rất quan trọng để đảm bảo sự an toàn và bền vững của các hoạt động trong không gian.',
       },
     ],
   },
@@ -506,6 +535,18 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
         correctAnswerIndex: 1,
         explanation:
           'Fly-by-wire thay thế các liên kết cơ khí truyền thống giữa bộ điều khiển của phi công và các bề mặt điều khiển bằng một giao diện điện tử. Máy tính sẽ nhận tín hiệu đầu vào từ phi công, xử lý và gửi lệnh điện tử đến các cơ cấu chấp hành để di chuyển các bề mặt điều khiển.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'ADS-B (Automatic Dependent Surveillance–Broadcast) là gì?',
+        answer:
+          'ADS-B là một công nghệ giám sát hàng không. Máy bay sẽ tự động phát đi thông tin vị trí, độ cao, tốc độ của mình (lấy từ GPS) cho các trạm mặt đất và các máy bay khác. Công nghệ này giúp kiểm soát viên không lưu và phi công có được bức tranh chính xác và thời gian thực về tình hình giao thông trên không, tăng cường an toàn bay.',
+      },
+      {
+        question: 'Buồng lái kính (Glass Cockpit) là gì?',
+        answer:
+          'Buồng lái kính là một buồng lái máy bay có các màn hình hiển thị điện tử đa chức năng, thay thế cho các đồng hồ cơ học truyền thống. Nó cung cấp cho phi công nhiều thông tin hơn một cách trực quan, giảm khối lượng công việc và tăng cường nhận thức tình huống.',
       },
     ],
   },

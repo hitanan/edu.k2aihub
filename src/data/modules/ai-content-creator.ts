@@ -170,6 +170,23 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
           'RunwayML là một trong những công cụ AI hàng đầu cho phép tạo ra các cảnh quay video từ mô tả văn bản (text-to-video) hoặc từ một hình ảnh tĩnh (image-to-video).',
       },
     ],
+    faqs: [
+      {
+        question: 'Tôi có cần phải xuất hiện trên camera để tạo video không?',
+        answer:
+          'Không cần thiết. Với các công cụ như Synthesia, bạn có thể tạo ra các video với người thuyết trình AI (avatar) chuyên nghiệp. Bạn cũng có thể tạo video hoàn toàn bằng cảnh quay do AI tạo ra (với RunwayML) hoặc video hoạt hình, chỉ cần giọng nói của bạn hoặc giọng nói do AI tạo ra.',
+      },
+      {
+        question: 'Làm thế nào để nội dung do AI tạo ra không bị nhàm chán và giống nhau?',
+        answer:
+          'Chìa khóa nằm ở "prompt engineering" và sự sáng tạo của bạn. Hãy kết hợp các phong cách khác nhau, thêm vào góc nhìn và câu chuyện cá nhân của bạn. Sử dụng AI như một công cụ để thực thi ý tưởng, không phải để thay thế ý tưởng. Hậu kỳ cũng rất quan trọng để tạo ra dấu ấn riêng.',
+      },
+      {
+        question: 'Sử dụng giọng nói do AI tạo ra có ảnh hưởng đến việc kiếm tiền trên YouTube không?',
+        answer:
+          'Chính sách của YouTube cho phép sử dụng giọng nói tổng hợp, miễn là nội dung của bạn mang lại giá trị, có tính bình luận, giáo dục và không phải là nội dung lặp lại, spam. Chất lượng và sự độc đáo của nội dung vẫn là yếu tố quan trọng nhất.',
+      },
+    ],
   },
   {
     id: 'ai-powered-social-media-automation',
@@ -295,6 +312,23 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
           'Zapier là một nền tảng tự động hóa mạnh mẽ cho phép bạn kết nối hàng ngàn ứng dụng khác nhau (ví dụ: khi có email mới trong Gmail, tự động tạo một bài đăng trên Facebook) để tạo ra các quy trình làm việc tự động.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tự động hóa có làm cho tài khoản mạng xã hội của tôi trông như robot không?',
+        answer:
+          'Nếu lạm dụng thì có. Tự động hóa thông minh là về việc xử lý các tác vụ lặp lại (như lên lịch đăng bài, trả lời câu hỏi thường gặp) để bạn có nhiều thời gian hơn cho các tương tác chân thực (như trả lời các bình luận sâu sắc, tham gia vào các cuộc thảo luận). Hãy luôn giữ yếu tố con người trong chiến lược của bạn.',
+      },
+      {
+        question: 'Nền tảng nào là tốt nhất để bắt đầu tự động hóa mạng xã hội?',
+        answer:
+          'Đối với người mới bắt đầu, các công cụ như Buffer hoặc Hootsuite là lựa chọn tốt vì chúng có giao diện thân thiện và tích hợp sẵn các tính năng AI cơ bản. Khi bạn cần các quy trình phức tạp hơn, việc kết hợp chúng với Zapier sẽ mở ra khả năng tự động hóa gần như vô hạn.',
+      },
+      {
+        question: 'Chatbot có thể xử lý các tình huống khách hàng tức giận không?',
+        answer:
+          'Chatbot cơ bản nên được lập trình để nhận diện các từ khóa tiêu cực hoặc cảm xúc tức giận và ngay lập tức chuyển cuộc trò chuyện cho một nhân viên hỗ trợ con người. Các chatbot AI tiên tiến hơn có thể cố gắng xoa dịu tình hình, nhưng việc chuyển cho con người xử lý vẫn là phương án tốt nhất để tránh làm tình hình tồi tệ hơn.',
+      },
+    ],
   },
   {
     id: 'ai-personal-branding-strategy',
@@ -417,6 +451,23 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Một tiếng nói thương hiệu nhất quán giúp khán giả dễ dàng nhận ra bạn, tạo cảm giác quen thuộc, xây dựng lòng tin và hình thành một mối liên kết cảm xúc mạnh mẽ hơn.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để AI giúp tôi tìm ra "tiếng nói thương hiệu" (brand voice) của mình?',
+        answer:
+          'Bạn có thể cung cấp cho AI (như ChatGPT) các bài viết, email, hoặc các nội dung bạn đã viết và yêu cầu nó phân tích các đặc điểm chung về văn phong, từ ngữ, và giọng điệu. Dựa trên đó, AI có thể giúp bạn định hình và mô tả tiếng nói thương hiệu của mình một cách rõ ràng.',
+      },
+      {
+        question: 'AI có thể giúp tôi kết nối với những người có ảnh hưởng trong ngành không?',
+        answer:
+          'Có. Các công cụ lắng nghe xã hội (social listening) như Brandwatch hay Mention có thể giúp bạn xác định ai là những người có tiếng nói quan trọng trong lĩnh vực của bạn. AI cũng có thể gợi ý các nội dung hoặc cuộc thảo luận mà bạn có thể tham gia để thu hút sự chú ý của họ một cách tự nhiên.',
+      },
+      {
+        question: 'Làm thế nào để tái sử dụng nội dung hiệu quả bằng AI?',
+        answer:
+          'Các công cụ như Lately AI rất mạnh mẽ trong việc này. Bạn có thể cung cấp cho nó một bài viết blog dài hoặc một video, và nó sẽ tự động phân tích và cắt ra hàng chục bài đăng nhỏ cho mạng xã hội (tweet, post LinkedIn, v.v.), mỗi bài đều được tối ưu hóa cho nền tảng tương ứng, giúp bạn tiết kiệm hàng giờ làm việc.',
       },
     ],
   },

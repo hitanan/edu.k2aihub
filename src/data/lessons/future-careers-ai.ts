@@ -173,6 +173,28 @@ export const futureCareersLessons: FutureCareersLesson[] = [
           'Trong bối cảnh hội nhập và chuyển đổi số, khả năng sử dụng thành thạo ngoại ngữ (đặc biệt là tiếng Anh) và các công cụ kỹ thuật số là lợi thế cạnh tranh cực lớn trên thị trường lao động Việt Nam.',
       },
     ],
+    faqs: [
+      {
+        question: 'Kỹ năng nào được coi là quan trọng nhất trong kỷ nguyên AI?',
+        answer:
+          'Không có một kỹ năng duy nhất nào là quan trọng nhất, mà là một bộ kỹ năng. Tuy nhiên, khả năng học hỏi liên tục (learnability), tư duy phản biện, và trí tuệ cảm xúc thường được xem là những năng lực cốt lõi giúp con người duy trì lợi thế so với AI.',
+      },
+      {
+        question: 'Tại sao trí tuệ cảm xúc (EQ) lại quan trọng?',
+        answer:
+          'AI có thể xử lý dữ liệu logic nhưng rất yếu trong việc thấu hiểu và phản hồi lại cảm xúc của con người. Các công việc đòi hỏi sự đồng cảm, lãnh đạo, làm việc nhóm, và xây dựng mối quan hệ sẽ là "đất diễn" của con người.',
+      },
+      {
+        question: 'Làm thế nào để rèn luyện tư duy phản biện?',
+        answer:
+          'Hãy tập thói quen đặt câu hỏi "Tại sao?" trước mọi thông tin bạn nhận được. Phân tích thông tin từ nhiều nguồn khác nhau, nhận diện các thành kiến (biases), và xem xét các góc nhìn đối lập trước khi đưa ra kết luận của riêng mình.',
+      },
+      {
+        question: 'Năng lực thích ứng (Adaptability Quotient - AQ) là gì?',
+        answer:
+          'AQ là khả năng nhận thức, chấp nhận và thích ứng với sự thay đổi một cách hiệu quả. Trong một thế giới biến đổi nhanh chóng bởi công nghệ, người có AQ cao sẽ dễ dàng học hỏi kỹ năng mới và tìm thấy cơ hội trong sự thay đổi.',
+      },
+    ],
   },
   {
     id: 'human-ai-collaboration',
@@ -187,7 +209,7 @@ export const futureCareersLessons: FutureCareersLesson[] = [
       'Hiểu các mô hình hợp tác Người-AI: AI hỗ trợ, AI khuếch đại, và AI là đối tác.',
       "Học cách 'giao tiếp' hiệu quả với AI thông qua Prompt Engineering.",
       'Sử dụng AI để tăng cường sự sáng tạo và hiệu suất.',
-      'Nhận thức về các vấn đề đạo đức và thiên vị khi làm việc với AI.',
+      'Nhận thức về các vấn đề đạo đức và thiên bias khi làm việc với AI.',
     ],
     prerequisites: ['Hoàn thành các bài học trước'],
     exercises: [
@@ -247,6 +269,28 @@ export const futureCareersLessons: FutureCareersLesson[] = [
         correctAnswerIndex: 2,
         explanation:
           'Trong mô hình AI hỗ trợ, AI hoạt động như một trợ lý thông minh, cung cấp thông tin, phân tích và các phương án để con người xem xét và đưa ra quyết định cuối cùng.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Prompt Engineering là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Prompt Engineering là nghệ thuật và khoa học của việc thiết kế các câu lệnh (prompt) để giao tiếp và ra lệnh cho các mô hình AI tạo sinh (như ChatGPT, Midjourney) một cách hiệu quả. Nó quan trọng vì chất lượng của kết quả AI tạo ra phụ thuộc rất lớn vào chất lượng của prompt đầu vào.',
+      },
+      {
+        question: 'Làm thế nào để viết một prompt tốt?',
+        answer:
+          'Một prompt tốt thường bao gồm các yếu tố: **Vai trò** (ví dụ: "Hãy đóng vai một chuyên gia marketing"), **Bối cảnh** (ví dụ: "Tôi đang chuẩn bị một chiến dịch cho sản phẩm X"), **Nhiệm vụ cụ thể** (ví dụ: "Hãy viết 5 câu slogan"), và **Định dạng đầu ra** (ví dụ: "trình bày dưới dạng danh sách"). Càng cụ thể, kết quả càng tốt.',
+      },
+      {
+        question: 'Thiên vị (bias) trong AI là gì và tại sao chúng ta cần quan tâm?',
+        answer:
+          'Thiên vị trong AI xảy ra khi mô hình đưa ra các kết quả không công bằng hoặc mang tính định kiến, thường là do nó được huấn luyện trên bộ dữ liệu có sẵn những định kiến đó. Chúng ta cần quan tâm vì AI có thể khuếch đại các định kiến xã hội, dẫn đến các quyết định bất công trong tuyển dụng, cho vay, hoặc thậm chí là pháp lý.',
+      },
+      {
+        question: 'AI có thể thay thế hoàn toàn sự sáng tạo của con người không?',
+        answer:
+          'Không. AI là một công cụ khuếch đại sự sáng tạo cực kỳ mạnh mẽ, nhưng nó không có ý thức, trải nghiệm sống, hay cảm xúc thực sự - những yếu tố cốt lõi của sự sáng tạo độc đáo. Vai trò của con người chuyển từ việc "tạo ra từ đầu" sang "định hướng, lựa chọn, và tinh chỉnh" các ý tưởng mà AI đề xuất.',
       },
     ],
   },

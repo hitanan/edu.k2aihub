@@ -131,6 +131,23 @@ export const AIForStudentsLessons: BaseLessonData[] = [
           'Một robot có ý thức và khả năng tư duy như con người là ví dụ của AI tổng quát (AGI), một cấp độ AI mà chúng ta chưa đạt tới. Các ví dụ còn lại đều là AI hẹp, được thiết kế để thực hiện một nhiệm vụ cụ thể.',
       },
     ],
+    faqs: [
+      {
+        question: 'AI có thể suy nghĩ và có cảm xúc như con người không?',
+        answer:
+          'Hiện tại thì chưa. AI mà chúng ta sử dụng hàng ngày là "AI hẹp", chúng rất giỏi trong một nhiệm vụ cụ thể (như chơi cờ, nhận dạng khuôn mặt) nhưng không có ý thức, cảm xúc hay sự hiểu biết toàn diện như con người. AI có khả năng tư duy như người (gọi là "AI tổng quát") vẫn còn là một mục tiêu xa trong tương lai.',
+      },
+      {
+        question: 'Học về AI có cần phải giỏi toán và lập trình không?',
+        answer:
+          'Để trở thành một nhà nghiên cứu hay kỹ sư AI chuyên sâu thì cần. Nhưng để hiểu và sử dụng AI, bạn không nhất thiết phải là chuyên gia. Giống như bạn không cần biết cách chế tạo động cơ để lái xe hơi, bạn có thể học cách sử dụng các công cụ AI một cách hiệu quả mà không cần biết code.',
+      },
+      {
+        question: 'AI có nguy hiểm không? Nó có "cướp" hết việc làm của con người không?',
+        answer:
+          'AI là một công cụ mạnh mẽ, và như mọi công cụ, nó có thể được sử dụng cho mục đích tốt hoặc xấu. AI sẽ thay đổi thị trường lao động, một số công việc sẽ biến mất nhưng nhiều công việc mới sẽ ra đời, đòi hỏi kỹ năng làm việc cùng AI. Việc học về AI chính là cách tốt nhất để chuẩn bị cho sự thay đổi này.',
+      },
+    ],
   },
   {
     id: 'ai-in-learning',
@@ -219,6 +236,23 @@ export const AIForStudentsLessons: BaseLessonData[] = [
           'Học tập thích ứng là một phương pháp giáo dục sử dụng AI để điều chỉnh lộ trình học tập, nội dung và độ khó của bài tập cho phù hợp với năng lực và tiến độ của từng cá nhân.',
       },
     ],
+    faqs: [
+      {
+        question: 'Dùng AI để làm bài tập có phải là gian lận không?',
+        answer:
+          'Điều này phụ thuộc vào CÁCH bạn sử dụng. Nếu bạn sao chép nguyên văn câu trả lời của AI và nộp bài, đó là gian lận. Nhưng nếu bạn dùng AI để giải thích một khái niệm khó, tìm kiếm thông tin, kiểm tra lại bài làm của mình, hoặc tạo một kế hoạch học tập, thì đó là cách học tập thông minh và hiệu quả.',
+      },
+      {
+        question: 'Thông tin từ AI có luôn luôn chính xác không?',
+        answer:
+          'Không. Các mô hình AI có thể "tự tin" đưa ra thông tin sai, hiện tượng này gọi là "ảo giác" (hallucination). Vì vậy, kỹ năng quan trọng nhất khi dùng AI là tư duy phản biện. Hãy luôn kiểm tra lại các thông tin quan trọng từ những nguồn đáng tin cậy khác.',
+      },
+      {
+        question: 'Làm thế nào để đặt câu hỏi (prompt) cho AI để có câu trả lời tốt nhất?',
+        answer:
+          'Hãy cụ thể và cung cấp nhiều ngữ cảnh. Thay vì hỏi "Nước Pháp thế nào?", hãy hỏi "Hãy cho tôi biết 5 địa điểm du lịch nổi tiếng nhất ở Paris, Pháp dành cho một người yêu thích nghệ thuật và lịch sử". Cung cấp vai trò (ví dụ: "Hãy đóng vai một giáo viên lịch sử"), định dạng (ví dụ: "trình bày dưới dạng gạch đầu dòng"), và mục tiêu rõ ràng sẽ giúp AI cho ra kết quả tốt hơn nhiều.',
+      },
+    ],
   },
   {
     id: 'ethical-use-of-ai',
@@ -304,6 +338,23 @@ export const AIForStudentsLessons: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Sử dụng AI để hỗ trợ học tập là rất tốt, nhưng việc sao chép nguyên văn sản phẩm của AI và nhận đó là của mình được coi là đạo văn, một hành vi không trung thực trong học thuật.',
+      },
+    ],
+    faqs: [
+      {
+        question: '"Deepfake" là gì và tại sao nó lại nguy hiểm?',
+        answer:
+          'Deepfake là công nghệ sử dụng AI để tạo ra các video hoặc hình ảnh giả mạo rất chân thực, ví dụ như ghép mặt một người vào video của người khác. Nó nguy hiểm vì có thể được sử dụng để tạo tin giả, lừa đảo, bôi nhọ danh dự người khác, hoặc tạo ra các nội dung không phù hợp.',
+      },
+      {
+        question: 'Làm thế nào để nhận biết một hình ảnh do AI tạo ra?',
+        answer:
+          'Ngày càng khó để nhận biết, nhưng có một vài dấu hiệu cần chú ý: các chi tiết vô lý (ví dụ: người có 6 ngón tay), nền ảnh bị biến dạng, chữ viết không rõ ràng, hoặc các chi tiết quá hoàn hảo một cách phi tự nhiên. Tuy nhiên, cách tốt nhất vẫn là xem xét nguồn gốc của hình ảnh.',
+      },
+      {
+        question: 'Tại sao dữ liệu lại quan trọng đối với đạo đức AI?',
+        answer:
+          'Bởi vì AI học hỏi từ dữ liệu mà con người cung cấp cho nó. Nếu dữ liệu đầu vào có chứa sự thiên vị (ví dụ: dữ liệu lịch sử cho thấy một nhóm người nào đó ít được tuyển dụng hơn), AI sẽ học theo sự thiên vị đó và khuếch đại nó, dẫn đến các quyết định không công bằng trong tương lai.',
       },
     ],
   },

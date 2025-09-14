@@ -118,6 +118,18 @@ export const vietnameseCultureLessons: VietnameseCultureLesson[] = [
           'Dự án tập trung vào việc ghi lại lịch sử truyền miệng (oral history) từ các nhân chứng sống để bảo tồn ký ức và chia sẻ với các thế hệ tương lai.',
       },
     ],
+    faqs: [
+      {
+        question: 'Số hóa di sản là gì?',
+        answer:
+          'Số hóa di sản là quá trình chuyển đổi các tài sản văn hóa (như cổ vật, tài liệu, công trình kiến trúc, hoặc các loại hình nghệ thuật phi vật thể) sang định dạng kỹ thuật số. Điều này không chỉ giúp lưu trữ chúng một cách an toàn mà còn mở ra nhiều cách thức mới để tiếp cận, nghiên cứu và trải nghiệm di sản.',
+      },
+      {
+        question: 'Tại sao việc bảo tồn di sản văn hóa lại quan trọng?',
+        answer:
+          'Di sản văn hóa là bản sắc, là tâm hồn của một dân tộc. Nó kết nối chúng ta với quá khứ, giúp chúng ta hiểu mình là ai và định hình tương lai. Bảo tồn di sản không chỉ là giữ gìn những giá trị cho thế hệ mai sau mà còn là một nguồn lực quan trọng để phát triển kinh tế - xã hội, đặc biệt là trong lĩnh vực du lịch và giáo dục.',
+      },
+    ],
     resources: [
       {
         title: 'Vietnam Museum of Ethnology Online',

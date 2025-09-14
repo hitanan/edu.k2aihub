@@ -109,9 +109,9 @@ function generateTags(slug: string, content: string): string[] {
 }
 
 // Get blog post by slug
-export function getBlogPostBySlugSync(slug: string): BlogPost | null {
+export function getBlogPostBySlugSync(originalSlug: string): BlogPost | null {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    const fullPath = path.join(postsDirectory, `${originalSlug}.md`);
 
     if (!fs.existsSync(fullPath)) {
       return null;
@@ -121,15 +121,16 @@ export function getBlogPostBySlugSync(slug: string): BlogPost | null {
     const { data, content } = matter(fileContents);
 
     // Generate metadata if not provided
-    const title = data.title || generateTitleFromContent(content, slug);
+    const title = data.title || generateTitleFromContent(content, originalSlug);
     const description = data.description || generateDescriptionFromContent(content);
     const author = data.author || 'K2AiHub Team';
     const date = data.date || getFileCreationDate(fullPath);
-    const category = data.category || generateCategory(slug, content);
-    const tags = data.tags || generateTags(slug, content);
+    const category = data.category || generateCategory(originalSlug, content);
+    const tags = data.tags || generateTags(originalSlug, content);
     const readingTime = data.readingTime || calculateReadingTime(content);
     const featured = data.featured || false;
     const coverImage = data.coverImage || generateCoverImage(category);
+    const slug = data.slug || originalSlug;
 
     return {
       slug,
@@ -145,7 +146,7 @@ export function getBlogPostBySlugSync(slug: string): BlogPost | null {
       content: content, // Return raw markdown content
     };
   } catch (error) {
-    console.error(`Error reading blog post ${slug}:`, error);
+    console.error(`Error reading blog post ${originalSlug}:`, error);
     return null;
   }
 }
@@ -202,26 +203,21 @@ export function getAllBlogPostsMetadata(): BlogMetadata[] {
   });
 }
 
-// Get all blog posts metadata (async wrapper)
-export async function getAllBlogPosts(): Promise<BlogMetadata[]> {
-  return Promise.resolve(getAllBlogPostsMetadata());
-}
-
 // Get featured blog posts
-export async function getFeaturedBlogPosts(): Promise<BlogMetadata[]> {
-  const allPosts = await getAllBlogPosts();
+export function getFeaturedBlogPosts(): BlogMetadata[] {
+  const allPosts = getAllBlogPostsMetadata();
   return allPosts.filter((post) => post.featured).slice(0, 3);
 }
 
 // Get blog posts by category
-export async function getBlogPostsByCategory(category: string): Promise<BlogMetadata[]> {
-  const allPosts = await getAllBlogPosts();
+export function getBlogPostsByCategory(category: string): BlogMetadata[] {
+  const allPosts = getAllBlogPostsMetadata();
   return allPosts.filter((post) => post.category === category);
 }
 
 // Get blog posts by tag
-export async function getBlogPostsByTag(tag: string): Promise<BlogMetadata[]> {
-  const allPosts = await getAllBlogPosts();
+export function getBlogPostsByTag(tag: string): BlogMetadata[] {
+  const allPosts = getAllBlogPostsMetadata();
   return allPosts.filter((post) => post.tags?.includes(tag));
 }
 
@@ -281,8 +277,8 @@ function generateCoverImage(category: string): string {
 }
 
 // Get all categories with post counts
-export async function getAllCategories(): Promise<{ name: string; count: number }[]> {
-  const posts = await getAllBlogPosts();
+export function getAllCategories(): { name: string; count: number }[] {
+  const posts = getAllBlogPostsSync();
   const categoryCounts: { [key: string]: number } = {};
 
   posts.forEach((post) => {
@@ -357,8 +353,8 @@ export function getAllTagsSync(): string[] {
 }
 
 // Get all unique tags with post counts
-export async function getAllTags(): Promise<{ name: string; count: number }[]> {
-  const posts = await getAllBlogPosts();
+export function getAllTags(): { name: string; count: number }[] {
+  const posts = getAllBlogPostsSync();
   const tagCounts: { [key: string]: number } = {};
 
   posts.forEach((post) => {
@@ -373,25 +369,25 @@ export async function getAllTags(): Promise<{ name: string; count: number }[]> {
 }
 
 // Get all category slugs for static params generation
-export async function getAllCategorySlugs(): Promise<string[]> {
-  const categories = await getAllCategories();
-  return categories.map((category) => createCategorySlug(category.name));
+export function getAllCategorySlugs(): string[] {
+  const categories = getAllCategoriesSync();
+  return categories.map((category) => createCategorySlug(category));
 }
 
 // Get all tag slugs for static params generation
-export async function getAllTagSlugs(): Promise<string[]> {
-  const tags = await getAllTags();
-  return tags.map((tag) => createTagSlug(tag.name));
+export function getAllTagSlugs(): string[] {
+  const tags = getAllTagsSync();
+  return tags.map((tag) => createTagSlug(tag));
 }
 
 // Get blog posts by category slug
-export async function getBlogPostsByCategorySlug(categorySlug: string): Promise<BlogMetadata[]> {
-  const category = getCategoryFromSlug(categorySlug);
-  return getBlogPostsByCategory(category);
+export function getBlogPostsByCategorySlug(categorySlug: string): BlogMetadata[] {
+  const categoryName = getCategoryFromSlug(categorySlug);
+  return getBlogPostsByCategory(categoryName);
 }
 
 // Get blog posts by tag slug
-export async function getBlogPostsByTagSlug(tagSlug: string): Promise<BlogMetadata[]> {
+export function getBlogPostsByTagSlug(tagSlug: string): BlogMetadata[] {
   const tagName = getTagFromSlug(tagSlug);
   return getBlogPostsByTag(tagName);
 }

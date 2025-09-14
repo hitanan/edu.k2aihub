@@ -727,6 +727,374 @@ public class Crystal : MonoBehaviour
           'Rigidbody2D cung cấp các thuộc tính vật lý (như khối lượng, trọng lực) cho một đối tượng, trong khi Collider2D xác định hình dạng của đối tượng cho mục đích va chạm. Cả hai đều cần thiết cho tương tác vật lý 2D.',
       },
     ],
+    faqs: [
+      {
+        question: 'Unity là gì?',
+        answer:
+          'Unity là một game engine đa nền tảng mạnh mẽ được sử dụng để tạo ra các trò chơi 2D, 3D, thực tế ảo (VR), và thực tế tăng cường (AR), cũng như các mô phỏng và trải nghiệm tương tác khác. Đây là công cụ rất phổ biến trong ngành công nghiệp game, đặc biệt là với các nhà phát triển độc lập và game di động.',
+      },
+      {
+        question: 'Tại sao C# là ngôn ngữ được sử dụng trong Unity?',
+        answer:
+          'Unity sử dụng C# (phát âm là "C-sharp") làm ngôn ngữ lập trình chính vì nó là một ngôn ngữ hiện đại, mạnh mẽ, tương đối dễ học và được hỗ trợ bởi hệ sinh thái .NET của Microsoft. C# cho phép các nhà phát triển viết logic game phức tạp một cách hiệu quả và có cấu trúc.',
+      },
+      {
+        question: 'Sự khác biệt giữa `Update()` và `FixedUpdate()` trong Unity là gì?',
+        answer:
+          '`Update()` được gọi một lần mỗi khung hình (frame). Tần suất của nó có thể thay đổi tùy thuộc vào hiệu suất của máy tính. Nó phù hợp để xử lý đầu vào (input) và logic game không liên quan đến vật lý. `FixedUpdate()` được gọi theo một tần suất cố định, không phụ thuộc vào tốc độ khung hình. Nó là nơi tốt nhất để đặt các đoạn mã liên quan đến vật lý (như tác động lực lên Rigidbody) để đảm bảo tính nhất quán.',
+      },
+      {
+        question: 'Parallax scrolling là gì?',
+        answer:
+          'Parallax scrolling là một kỹ thuật đồ họa trong đó các lớp hình nền (background layers) di chuyển với tốc độ khác nhau so với lớp tiền cảnh (foreground). Lớp càng ở xa camera thì di chuyển càng chậm. Kỹ thuật này tạo ra ảo giác về chiều sâu trong một cảnh 2D, làm cho thế giới game trở nên sống động và có chiều sâu hơn.',
+      },
+    ],
+  },
+  {
+    id: 'unreal-engine-3d-basics',
+    title: 'Bài 3: Những Điều Cơ Bản về Unreal Engine 3D',
+    description:
+      'Giới thiệu về Unreal Engine 5: giao diện, công cụ, và quy trình làm việc cơ bản. Tạo một dự án 3D đơn giản với ánh sáng, vật liệu, và camera.',
+    videoUrl: 'https://www.youtube.com/watch?v=xyz',
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=400&fit=crop',
+    difficulty: 'Trung bình',
+    duration: '180 phút',
+    objectives: [
+      'Làm quen với giao diện và công cụ của Unreal Engine 5',
+      'Tạo và quản lý dự án 3D',
+      'Sử dụng ánh sáng và vật liệu cơ bản',
+      'Triển khai camera và thiết lập góc nhìn',
+      'Hiểu quy trình làm việc cơ bản trong Unreal Engine',
+    ],
+    prerequisites: ['Kiến thức cơ bản về máy tính và phần mềm', 'Đam mê khám phá công nghệ và sáng tạo nội dung 3D'],
+    gameDevMainContent: {
+      gameGenres: ['3D Adventure', 'Shooter', 'Simulation'],
+      technologies: [
+        'Unreal Engine 5',
+        'Blueprints (Visual Scripting)',
+        'C++ (cơ bản)',
+        'Hệ thống Vật lý',
+        'Hệ thống Hoạt ảnh',
+        'Hệ thống Âm thanh',
+      ],
+      careerOpportunities: [
+        'Nhà phát triển Unreal',
+        'Lập trình viên Game 3D',
+        'Nhà thiết kế Môi trường 3D',
+        'Nhà phát triển Game Di động',
+        'Nhà thiết kế Game Kỹ thuật',
+        'Lập trình viên Công cụ',
+      ],
+    },
+    exercises: [
+      {
+        title: 'Tạo một Cảnh 3D Đơn giản với Unreal Engine',
+        description:
+          'Sử dụng Unreal Engine 5 để tạo ra một cảnh 3D đơn giản bao gồm ánh sáng, vật liệu, và camera. Xuất bản cảnh để chia sẻ.',
+        difficulty: 'Cơ bản',
+        solution: `# Hướng dẫn Tạo Cảnh 3D Đơn giản với Unreal Engine 5
+
+## 1. Thiết lập Dự án
+
+- Mở Unreal Engine 5 và chọn "Games" dưới "New Project Categories".
+- Chọn "Blank" và đảm bảo rằng "Blueprint" được chọn.
+- Đặt tên cho dự án là "MyFirst3DScene" và nhấn "Create".
+
+## 2. Làm quen với Giao diện
+
+- **Viewport:** Nơi bạn sẽ thấy và chỉnh sửa cảnh 3D của mình.
+- **Content Browser:** Nơi quản lý tất cả tài sản (assets) của dự án.
+- **Outliner:** Danh sách tất cả các đối tượng trong cảnh hiện tại.
+- **Details Panel:** Hiển thị và cho phép chỉnh sửa các thuộc tính của đối tượng được chọn.
+
+## 3. Tạo và Quản lý Đối tượng
+
+- Kéo thả một số đối tượng từ **Place Actors** panel vào Viewport (ví dụ: Cube, Sphere, Light).
+- Sử dụng công cụ di chuyển (W), xoay (E), và thay đổi kích thước (R) để chỉnh sửa các đối tượng.
+- Nhấn nút "Play" để xem cảnh trong thời gian thực.
+
+## 4. Ánh sáng và Vật liệu
+
+- Thêm một **Directional Light** từ **Place Actors** panel để tạo ánh sáng cho cảnh.
+- Tạo một vật liệu mới trong Content Browser và áp dụng cho một trong những đối tượng của bạn.
+- Chỉnh sửa vật liệu trong **Material Editor** để thay đổi màu sắc và độ bóng.
+
+## 5. Camera
+
+- Thêm một **Camera** từ **Place Actors** panel.
+- Đặt camera ở vị trí mong muốn và điều chỉnh góc nhìn.
+- Nhấn nút "Play" và kiểm tra góc nhìn từ camera.
+
+## 6. Xuất bản Cảnh
+
+- Vào menu "File" > "Package Project" > chọn nền tảng mong muốn (ví dụ: Windows).
+- Chọn thư mục lưu trữ và nhấn "Select Folder".
+- Đợi quá trình xuất bản hoàn tất và kiểm tra sản phẩm đầu ra.
+
+## Tài liệu tham khảo
+
+- [Unreal Engine Documentation](https://docs.unrealengine.com/)
+- [Unreal Engine YouTube Channel](https://www.youtube.com/user/UnrealDevelopmentKit)`,
+        materials: ['Hướng dẫn từng bước để tạo ra một cảnh 3D đơn giản', 'Tài liệu tham khảo về Unreal Engine 5'],
+        expectedResults:
+          'Một cảnh 3D đơn giản trong Unreal Engine 5 với ánh sáng và vật liệu cơ bản, có thể xuất bản và chia sẻ',
+      },
+    ],
+    realWorldApplications: [
+      'Phát triển game 3D với Unreal Engine',
+      'Mô phỏng và đào tạo 3D',
+      'Nội dung tương tác cho giáo dục',
+      'Trải nghiệm thực tế ảo (VR)',
+      'Phát triển ứng dụng di động 3D',
+    ],
+    resources: [
+      {
+        title: 'Unreal Engine Learning',
+        url: 'https://www.unrealengine.com/en-US/onlinelearning-courses',
+        type: 'tutorial',
+      },
+      {
+        title: 'Kênh YouTube Unreal Engine',
+        url: 'https://www.youtube.com/user/UnrealDevelopmentKit',
+        type: 'tutorial',
+      },
+    ],
+    caseStudies: [
+      {
+        title: 'Fortnite: Từ Ý tưởng đến Hiện thực',
+        organization: 'Epic Games',
+        problem: 'Tạo ra một game battle royale hấp dẫn với quy mô lớn và cơ chế xây dựng độc đáo',
+        solution:
+          'Kết hợp gameplay bắn súng truyền thống với cơ chế xây dựng sáng tạo. Sử dụng Unreal Engine để phát triển nhanh chóng và tinh chỉnh các yếu tố gameplay.',
+        impact:
+          'Hơn 350 triệu người chơi đăng ký, doanh thu hàng tỷ đô la, thiết lập tiêu chuẩn mới cho các game battle royale khác.',
+        innovations: [
+          'Cơ chế xây dựng trong thời gian thực tạo ra sự khác biệt lớn',
+          'Sự kiện trong game và cập nhật nội dung thường xuyên giữ chân người chơi',
+          'Tích hợp chặt chẽ giữa các nền tảng khác nhau',
+          'Mô hình kinh doanh miễn phí để chơi với các giao dịch trong game',
+        ],
+      },
+    ],
+    vietnamContext: {
+      title: 'Unreal Engine và Cơ hội tại Việt Nam',
+      content: [
+        'Unreal Engine đang ngày càng phổ biến tại Việt Nam, đặc biệt trong lĩnh vực phát triển game 3D và mô phỏng.',
+        'Nhiều studio game lớn tại Việt Nam đã chuyển sang sử dụng Unreal Engine để tận dụng sức mạnh đồ họa và khả năng tối ưu hóa cho nhiều nền tảng.',
+        'Cộng đồng Unreal Engine tại Việt Nam đang phát triển mạnh mẽ, với nhiều sự kiện, hội thảo và khóa học trực tuyến được tổ chức thường xuyên.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Trần Thị Kim Chi',
+      title: 'Nhà phát triển Game 3D',
+      company: 'VNG Game Studios',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-thi-kim-chi',
+      quote:
+        'Là một nhà phát triển game 3D sử dụng Unreal Engine, tôi đã có cơ hội làm việc trên nhiều dự án thú vị và thách thức. Unreal Engine không chỉ mạnh mẽ mà còn rất linh hoạt, cho phép tôi thể hiện sự sáng tạo của mình trong từng chi tiết của game.',
+    },
+    quizzes: [
+      {
+        question: 'Blueprints trong Unreal Engine là gì?',
+        options: [
+          'Một công cụ để vẽ các bản thiết kế 2D',
+          'Một hệ thống kịch bản trực quan dựa trên node, cho phép tạo logic game mà không cần viết code',
+          'Một loại vật liệu đặc biệt',
+          'Tên của trình chỉnh sửa cấp độ',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Blueprints là một trong những tính năng mạnh mẽ nhất của Unreal Engine, cho phép các nhà thiết kế và nghệ sĩ tạo ra logic gameplay phức tạp bằng cách kết nối các node với nhau, thay vì phải viết mã C++.',
+      },
+      {
+        question: 'Nanite và Lumen là những công nghệ đột phá nào trong Unreal Engine 5?',
+        options: [
+          'Hệ thống âm thanh và AI',
+          'Hệ thống hình học ảo hóa và hệ thống chiếu sáng toàn cầu động',
+          'Công cụ tạo nhân vật và hoạt ảnh',
+          'Hệ thống mạng và vật lý',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Nanite là hệ thống hình học vi đa giác ảo hóa, cho phép hiển thị các mô hình 3D với chi tiết cực cao. Lumen là hệ thống chiếu sáng và phản xạ toàn cầu động hoàn toàn, tạo ra ánh sáng chân thực trong thời gian thực.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Học Unreal Engine có khó hơn Unity không?',
+        answer:
+          'Nhìn chung, Unreal Engine có một đường cong học tập dốc hơn so với Unity, đặc biệt là đối với người mới bắt đầu. Giao diện của nó phức tạp hơn và C++, ngôn ngữ lập trình chính của nó, khó hơn C#. Tuy nhiên, hệ thống Blueprints của Unreal cho phép bạn làm được rất nhiều thứ mà không cần code, điều này có thể giúp người mới bắt đầu dễ tiếp cận hơn ở một số khía cạnh.',
+      },
+      {
+        question: 'Tôi có cần biết C++ để sử dụng Unreal Engine không?',
+        answer:
+          'Không hoàn toàn. Bạn có thể tạo ra một trò chơi hoàn chỉnh chỉ bằng Blueprints. Tuy nhiên, để thực hiện các hệ thống phức tạp, tối ưu hóa hiệu suất ở mức độ cao, hoặc làm việc trong các dự án AAA chuyên nghiệp, kiến thức về C++ là gần như bắt buộc.',
+      },
+      {
+        question: 'Máy tính của tôi có cần phải rất mạnh để chạy Unreal Engine 5 không?',
+        answer:
+          'Có. Unreal Engine 5, đặc biệt là với các công nghệ như Nanite và Lumen, đòi hỏi một cấu hình máy tính khá mạnh. Bạn sẽ cần một card đồ họa (GPU) hiện đại (NVIDIA RTX 20-series trở lên được khuyến nghị), một CPU đa lõi, ít nhất 16GB RAM (32GB là lý tưởng) và một ổ cứng SSD để có trải nghiệm mượt mà.',
+      },
+      {
+        question: 'Sự khác biệt chính giữa game làm bằng Unity và Unreal là gì?',
+        answer:
+          'Đây là một sự khái quát, nhưng thường thì các game Unreal có xu hướng nổi bật về đồ họa chân thực, cao cấp (ví dụ: các game AAA, FPS). Các game Unity rất đa dạng, nhưng nó đặc biệt mạnh trong lĩnh vực game di động, game 2D, và các game có phong cách đồ họa độc đáo, không nhất thiết phải chân thực.',
+      },
+    ],
+  },
+  {
+    id: 'game-monetization-strategies',
+    title: 'Bài 4: Chiến Lược Kiếm Tiền Trong Game',
+    description:
+      'Khám phá các mô hình kiếm tiền trong game: quảng cáo, in-app purchases, subscription, và premium games. Chiến lược tối ưu hóa doanh thu và giữ chân người chơi.',
+    videoUrl: 'https://www.youtube.com/watch?v=abc',
+    imageUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
+    difficulty: 'Trung bình',
+    duration: '150 phút',
+    objectives: [
+      'Hiểu các mô hình kiếm tiền chính trong ngành công nghiệp game',
+      'Phân tích ưu và nhược điểm của từng mô hình',
+      'Thiết kế một chiến lược kiếm tiền cho trò chơi của bạn',
+      'Tối ưu hóa trải nghiệm người chơi trong khi vẫn đạt được mục tiêu doanh thu',
+    ],
+    prerequisites: [
+      'Hoàn thành các bài học trước về thiết kế và phát triển game',
+      'Có ý tưởng về trò chơi mà bạn muốn phát triển và kiếm tiền',
+    ],
+    gameDevMainContent: {
+      gameGenres: ['Casual', 'Hyper-casual', 'Strategy', 'Simulation'],
+      technologies: [
+        'AdMob',
+        'Facebook Audience Network',
+        'Unity Ads',
+        'In-App Purchase (IAP)',
+        'Google Play Billing',
+        'Apple App Store Connect',
+      ],
+      careerOpportunities: [
+        'Chuyên gia Monetization',
+        'Nhà phân tích Dữ liệu Game',
+        'Nhà phát triển Game Di động',
+        'Quản lý Sản phẩm Game',
+        'Chuyên gia Tiếp thị Game',
+      ],
+    },
+    exercises: [
+      {
+        title: 'Thiết kế Chiến lược Kiếm tiền cho Game của bạn',
+        description:
+          'Xác định và lập kế hoạch cho các nguồn doanh thu tiềm năng cho trò chơi của bạn, bao gồm quảng cáo, IAP, và các mô hình thuê bao.',
+        difficulty: 'Trung bình',
+        solution:
+          '# Chiến lược Kiếm tiền cho Game Di động: "Vùng Đất Bị Lãng Quên"\\n\\n## 1. Tổng quan Game\\n- **Thể loại:** Phiêu lưu, Xây dựng thành phố\\n- **Đối tượng mục tiêu:** Trẻ em và thanh thiếu niên (6-18 tuổi)\\n- **Nền tảng:** iOS và Android\\n\\n## 2. Mô hình Kiếm tiền Chính\\n- **Quảng cáo trong game:** Hiển thị quảng cáo video và banner thông qua AdMob và Unity Ads.\\n- **In-App Purchases (IAP):** Bán vật phẩm trong game, tiền tệ ảo, và gói tăng tốc thông qua Google Play Billing và Apple App Store Connect.\\n- **Thuê bao:** Cung cấp gói thuê bao hàng tháng cho người chơi để nhận vật phẩm độc quyền, miễn phí quảng cáo, và nội dung đặc biệt.\\n\\n## 3. Chi tiết về Quảng cáo trong game\\n- **Quảng cáo video:** Hiển thị sau mỗi 2 cấp độ hoàn thành hoặc khi người chơi chết. Người chơi có thể nhận phần thưởng (như tiền tệ ảo) khi xem quảng cáo.\\n- **Quảng cáo banner:** Hiển thị ở dưới cùng của màn hình trong khi chơi, không che khuất nội dung chính.\\n\\n## 4. Chi tiết về In-App Purchases (IAP)\\n- **Gói khởi đầu:** $0.99 cho 500 tiền tệ ảo + vật phẩm độc quyền.\\n- **Gói cao cấp:** $4.99 cho 3000 tiền tệ ảo + 5 vật phẩm ngẫu nhiên.\\n- **Gói VIP hàng tháng:** $9.99/tháng cho 10000 tiền tệ ảo + miễn phí quảng cáo + nội dung độc quyền hàng tháng.\\n\\n## 5. Chiến lược Giữ chân Người chơi\\n- **Sự kiện trong game:** Tổ chức sự kiện hàng tuần với phần thưởng hấp dẫn để khuyến khích người chơi quay lại.\\n- **Cập nhật nội dung thường xuyên:** Thêm cấp độ mới, vật phẩm, và tính năng dựa trên phản hồi của người chơi và xu hướng thị trường.\\n- **Chương trình khách hàng thân thiết:** Tích điểm cho mỗi lần mua hàng và cho phép đổi điểm lấy phần thưởng trong game.\\n\\n## 6. Dự đoán Doanh thu Hàng tháng (sau 6 tháng phát hành)**\\n- **Quảng cáo trong game:** $10,000 (dựa trên 1 triệu lượt xem quảng cáo)\\n- **In-App Purchases:** $15,000 (dựa trên 3% người chơi chi tiêu trung bình $5)\\n- **Thuê bao:** $5,000 (dựa trên 1,000 người chơi đăng ký gói VIP)\\n- **Tổng Doanh thu Dự kiến:** $30,000/tháng',
+        materials: [
+          'Nghiên cứu và phân tích các mô hình kiếm tiền khác nhau trong ngành game',
+          'Xác định mô hình kiếm tiền phù hợp nhất cho trò chơi của bạn',
+          'Lập kế hoạch chi tiết cho từng nguồn doanh thu',
+          'Thiết kế trải nghiệm người chơi tối ưu với các yếu tố kiếm tiền tích hợp',
+        ],
+        expectedResults:
+          'Một tài liệu chiến lược kiếm tiền chi tiết cho trò chơi của bạn, bao gồm các mô hình doanh thu, kế hoạch triển khai, và dự đoán doanh thu',
+      },
+    ],
+    realWorldApplications: [
+      'Phát triển game di động với chiến lược kiếm tiền hiệu quả',
+      'Tối ưu hóa doanh thu cho các trò chơi hiện có',
+      'Phân tích và dự đoán doanh thu trong ngành game',
+      'Lập kế hoạch và triển khai các chiến dịch tiếp thị cho game',
+    ],
+    resources: [
+      {
+        title: 'Game Monetization: How to Make Money from Your Game',
+        url: 'https://www.gamasutra.com/blogs/JohnDoe/20230101/404123/Game_Monetization_How_to_Make_Money_from_Your_Game.php',
+        type: 'article',
+      },
+      {
+        title: 'The Ultimate Guide to Game Monetization',
+        url: 'https://www.admob.com/monetize/unity-game-monetization-guide',
+        type: 'guide',
+      },
+    ],
+    caseStudies: [
+      {
+        title: 'PUBG Mobile: Chiến lược kiếm tiền và giữ chân người chơi',
+        organization: 'Tencent',
+        problem: 'Tạo ra doanh thu bền vững từ một trò chơi miễn phí nhưng vẫn giữ chân được người chơi lâu dài',
+        solution:
+          'Kết hợp quảng cáo trong game, bán vật phẩm và gói thuê bao. Cập nhật nội dung thường xuyên và tổ chức sự kiện trong game để giữ chân người chơi.',
+        impact:
+          'Doanh thu hàng tỷ đô la, hàng triệu người chơi hoạt động hàng tháng, thiết lập tiêu chuẩn mới cho các game battle royale khác.',
+        innovations: [
+          'Mô hình kinh doanh miễn phí để chơi với các giao dịch trong game rất thành công',
+          'Sự kiện trong game và cập nhật nội dung thường xuyên giữ chân người chơi',
+          'Tích hợp chặt chẽ giữa các nền tảng khác nhau',
+          'Hệ thống phần thưởng và thăng tiến hấp dẫn người chơi chi tiêu nhiều hơn',
+        ],
+      },
+    ],
+    vietnamContext: {
+      title: 'Thị Trường Game Việt Nam: Cơ Hội và Thách Thức',
+      content: [
+        'Thị trường game Việt Nam đang trên đà phát triển mạnh mẽ với sự gia tăng nhanh chóng về số lượng game thủ và doanh thu từ game.',
+        'Nhu cầu về các trò chơi di động chất lượng cao, đặc biệt là từ các nhà phát triển nội địa, đang tăng cao.',
+        'Các nhà phát triển game Việt Nam ngày càng chú trọng đến việc tối ưu hóa doanh thu qua các mô hình kiếm tiền đa dạng và bền vững.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Thị Hằng',
+      title: 'Chuyên gia Monetization Game',
+      company: 'Gameloft',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-hang',
+      quote:
+        'Tại Gameloft, chúng tôi luôn tìm kiếm những cách sáng tạo để tối ưu hóa doanh thu từ các trò chơi của mình mà không làm ảnh hưởng đến trải nghiệm của người chơi. Hiểu biết sâu sắc về thị trường và người chơi là chìa khóa để thành công trong ngành công nghiệp game đầy cạnh tranh này.',
+    },
+    quizzes: [
+      {
+        question: 'Mô hình kiếm tiền nào phổ biến nhất trong game di động hiện nay?',
+        options: [
+          'Bán game với giá cố định',
+          'Quảng cáo trong game và in-app purchases',
+          'Chỉ sử dụng quảng cáo',
+          'Chỉ sử dụng in-app purchases',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Mô hình quảng cáo trong game kết hợp với in-app purchases (IAP) hiện đang là mô hình phổ biến nhất trong game di động. Nó cho phép người chơi tải game miễn phí nhưng vẫn tạo ra doanh thu cho nhà phát triển thông qua quảng cáo và việc bán vật phẩm trong game.',
+      },
+      {
+        question: 'Tại sao việc giữ chân người chơi lại quan trọng đối với chiến lược kiếm tiền của một trò chơi?',
+        options: [
+          'Để tăng lượng người chơi mới',
+          'Để giảm chi phí quảng cáo',
+          'Để tăng doanh thu từ quảng cáo và in-app purchases',
+          'Tất cả các đáp án trên',
+        ],
+        correctAnswerIndex: 2,
+        explanation:
+          'Việc giữ chân người chơi quan trọng vì nó giúp tăng doanh thu từ quảng cáo và in-app purchases. Người chơi quay lại thường xuyên hơn có nghĩa là họ sẽ thấy nhiều quảng cáo hơn và có khả năng thực hiện các giao dịch mua trong game cao hơn.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Các mô hình kiếm tiền trong game di động phổ biến hiện nay là gì?',
+        answer:
+          'Các mô hình kiếm tiền phổ biến bao gồm: quảng cáo trong game (như video, banner), in-app purchases (mua vật phẩm, tiền tệ ảo), subscription (thuê bao hàng tháng), và bán game với giá cố định.',
+      },
+      {
+        question: 'Làm thế nào để tối ưu hóa doanh thu từ quảng cáo trong game?',
+        answer:
+          'Để tối ưu hóa doanh thu từ quảng cáo, bạn cần chọn đúng mạng quảng cáo (như AdMob, Unity Ads), tối ưu vị trí và tần suất hiển thị quảng cáo, và đảm bảo rằng quảng cáo không làm ảnh hưởng đến trải nghiệm người chơi.',
+      },
+      {
+        question: 'In-app purchases có ảnh hưởng đến trải nghiệm người chơi không?',
+        answer:
+          'Nếu được triển khai đúng cách, in-app purchases sẽ không làm ảnh hưởng đến trải nghiệm người chơi. Chúng nên được thiết kế để cung cấp giá trị thực sự cho người chơi mà không gây ra sự mất cân bằng trong game.',
+      },
+      {
+        question: 'Tại sao cần phải có chiến lược giữ chân người chơi?',
+        answer:
+          'Chiến lược giữ chân người chơi giúp tăng cường sự gắn bó của người chơi với trò chơi, từ đó tăng doanh thu và giảm chi phí quảng cáo. Nó cũng giúp xây dựng một cộng đồng người chơi trung thành và tích cực.',
+      },
+    ],
   },
 ];
 

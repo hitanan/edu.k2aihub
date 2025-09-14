@@ -152,6 +152,18 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
           "'Shoppertainment' là sự kết hợp giữa 'shopping' và 'entertainment', mô tả xu hướng người dùng mua sắm trong khi đang tìm kiếm nội dung giải trí, một đặc điểm nổi bật của TikTok.",
       },
     ],
+    faqs: [
+      {
+        question: 'Em có cần phải là một công ty lớn để bán hàng trên TikTok Shop không?',
+        answer:
+          'Không. TikTok Shop mở cửa cho cả các doanh nghiệp lớn, doanh nghiệp vừa và nhỏ, và cả các cá nhân kinh doanh (hộ kinh doanh). Miễn là bạn có giấy phép kinh doanh hợp lệ và sản phẩm phù hợp, bạn đều có thể đăng ký.',
+      },
+      {
+        question: 'KOC là gì và tại sao họ quan trọng trên TikTok?',
+        answer:
+          'KOC (Key Opinion Consumer) là những người tiêu dùng có sức ảnh hưởng. Khác với KOL (Key Opinion Leader) là người nổi tiếng, KOC xây dựng uy tín bằng những bài review chân thực, chi tiết. Trên TikTok, người dùng tin tưởng KOC vì họ giống như một người bạn đang chia sẻ trải nghiệm thật, giúp thúc đẩy quyết định mua hàng một cách tự nhiên.',
+      },
+    ],
   },
   {
     id: 'advanced-livestream-selling',
@@ -203,6 +215,18 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
         solution: 'Kịch bản chặt chẽ kết hợp với khả năng tương tác tự nhiên và các ưu đãi hấp dẫn theo chủ đề.',
       },
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào để giữ chân người xem trong suốt buổi livestream dài?',
+        answer:
+          'Bí quyết là tạo ra sự thay đổi liên tục. Hãy xen kẽ giữa việc giới thiệu sản phẩm, các mini-game tương tác (ví dụ: đố vui có thưởng), các phiên Q&A, và tung ra các "deal chớp nhoáng" vào những thời điểm bất ngờ. Một kịch bản có cao trào và nhịp độ tốt sẽ giữ cho người xem luôn tò mò và ở lại.',
+      },
+      {
+        question: 'Em nên làm gì nếu không có ai xem livestream của mình?',
+        answer:
+          'Đừng nản lòng! Hãy thông báo trước về buổi live trên các kênh mạng xã hội khác. Trong những phút đầu, ngay cả khi chỉ có vài người xem, hãy cứ năng lượng và tương tác nhiệt tình với họ. Bạn cũng có thể nhờ bạn bè, người thân vào xem và "mồi" các câu hỏi. Kiên trì là chìa khóa, dần dần bạn sẽ xây dựng được một lượng khán giả trung thành.',
+      },
+    ],
   },
   {
     id: 'tiktok-viral-marketing',
@@ -249,6 +273,18 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
         expectedResults: 'Video đạt được lượng view cao hơn ít nhất 2 lần so với các video thông thường của kênh.',
         solution:
           'Sự sáng tạo trong việc biến tấu trend để phù hợp với sản phẩm, đồng thời giữ được tính giải trí và bất ngờ.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để "bắt trend" trên TikTok một cách hiệu quả?',
+        answer:
+          'Hãy dành thời gian lướt tab "For You" mỗi ngày để xem những âm thanh, hiệu ứng, và format video nào đang được nhiều người sử dụng. Đừng chỉ sao chép, hãy suy nghĩ làm thế nào để biến tấu trend đó cho phù hợp với cá tính thương hiệu và sản phẩm của bạn. Hành động nhanh là rất quan trọng vì trend trên TikTok thay đổi rất nhanh.',
+      },
+      {
+        question: 'Độ dài video bao nhiêu là lý tưởng trên TikTok?',
+        answer:
+          'Không có câu trả lời tuyệt đối, nhưng các video ngắn (7-15 giây) thường có khả năng được xem lại cao hơn, giúp tăng tỷ lệ xem hết (watch time) - một yếu tố quan trọng của thuật toán. Tuy nhiên, nếu nội dung của bạn thực sự hấp dẫn và có giá trị (ví dụ: kể một câu chuyện, hướng dẫn chi tiết), video dài hơn vẫn có thể thành công. Hãy thử nghiệm các độ dài khác nhau và xem khán giả của bạn phản ứng tốt nhất với loại nào.',
       },
     ],
   },

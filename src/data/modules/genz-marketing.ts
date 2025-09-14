@@ -355,6 +355,23 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
           'Bitis đã có những chiến dịch marketing rất thành công và ý nghĩa, thể hiện sự ủng hộ đối với cộng đồng LGBTQ+ tại Việt Nam, được Gen Z đón nhận nồng nhiệt.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao marketing hòa nhập lại quan trọng đối với Gen Z?',
+        answer:
+          'Gen Z là thế hệ đa dạng nhất trong lịch sử và họ mong đợi các thương hiệu phản ánh sự đa dạng đó. Marketing hòa nhập cho thấy thương hiệu tôn trọng và công nhận tất cả mọi người, từ đó xây dựng lòng tin và sự kết nối mạnh mẽ hơn với khách hàng trẻ tuổi.',
+      },
+      {
+        question: '"Tokenism" (chủ nghĩa hình thức) trong marketing đa dạng là gì?',
+        answer:
+          'Tokenism là hành động đưa một vài cá nhân từ các nhóm thiểu số vào quảng cáo chỉ để tạo vẻ ngoài đa dạng, mà không có sự cam kết thực sự về hòa nhập trong văn hóa công ty hay các hoạt động khác. Gen Z rất nhạy bén trong việc phát hiện và chỉ trích hành động này.',
+      },
+      {
+        question: 'Làm thế nào để một thương hiệu nhỏ có thể thực hiện marketing hòa nhập mà không cần ngân sách lớn?',
+        answer:
+          'Sự hòa nhập bắt đầu từ tư duy. Thương hiệu nhỏ có thể bắt đầu bằng cách sử dụng ngôn ngữ hòa nhập trong giao tiếp, hợp tác với các micro-influencer đa dạng, lắng nghe và tương tác với các cộng đồng khác nhau trên mạng xã hội, và đảm bảo rằng nội dung của họ phản ánh nhiều góc nhìn khác nhau.',
+      },
+    ],
     exercises: [
       {
         title: 'Phát triển Chiến dịch Marketing Hòa nhập',
@@ -507,6 +524,23 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
         correctAnswerIndex: 2,
         explanation:
           'Doanh nghiệp xã hội là mô hình kinh doanh sử dụng các chiến lược thương mại để tạo ra sự cải thiện về tài chính, xã hội và môi trường.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Chủ nghĩa tích cực thương hiệu (brand activism) là gì?',
+        answer:
+          'Đó là khi một thương hiệu công khai thể hiện lập trường và hành động về các vấn đề xã hội, chính trị hoặc môi trường gây tranh cãi. Đối với Gen Z, hành động này phải xuất phát từ giá trị cốt lõi của thương hiệu và được thực hiện một cách chân thành, không chỉ là một chiêu trò marketing.',
+      },
+      {
+        question: 'Làm thế nào để một thương hiệu chọn đúng vấn đề xã hội để ủng hộ?',
+        answer:
+          'Thương hiệu nên chọn một vấn đề phù hợp với giá trị cốt lõi, ngành nghề kinh doanh và cộng đồng khách hàng của mình. Ví dụ, một thương hiệu thời trang có thể tập trung vào tính bền vững, một công ty công nghệ có thể ủng hộ quyền riêng tư kỹ thuật số. Sự liên quan và tính xác thực là chìa khóa.',
+      },
+      {
+        question: 'Rủi ro của việc tham gia vào chủ nghĩa tích cực thương hiệu là gì?',
+        answer:
+          'Rủi ro lớn nhất là bị cho là "đạo đức giả" hoặc "hành động hình thức" (performative activism) nếu hành động của thương hiệu không nhất quán với lời nói. Ngoài ra, việc chọn một phe trong một vấn đề gây tranh cãi có thể làm xa lánh một bộ phận khách hàng không đồng tình.',
       },
     ],
     exercises: [

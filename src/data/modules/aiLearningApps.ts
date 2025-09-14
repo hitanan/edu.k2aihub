@@ -124,6 +124,18 @@ export const aiLearningApps: BaseLessonData[] = [
           'PhotoMath có khả năng giải quyết một phổ rộng các bài toán, từ các phép tính đơn giản đến các chủ đề phức tạp như giải tích, đại số tuyến tính.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sử dụng PhotoMath để chép bài có tốt không?',
+        answer:
+          'Không. Việc lạm dụng PhotoMath để chép lời giải mà không hiểu bản chất sẽ làm giảm khả năng tư duy và giải quyết vấn đề của bạn. Hãy sử dụng nó như một công cụ để kiểm tra đáp án và học hỏi các phương pháp giải mới.',
+      },
+      {
+        question: 'PhotoMath có hoàn toàn chính xác không?',
+        answer:
+          'PhotoMath rất chính xác với các bài toán được in rõ ràng. Tuy nhiên, nó có thể nhận dạng sai chữ viết tay hoặc các ký hiệu phức tạp. Luôn kiểm tra lại các bước giải để đảm bảo tính logic, đặc biệt với các bài toán quan trọng.',
+      },
+    ],
   },
   {
     id: 'gauth',
@@ -252,6 +264,18 @@ export const aiLearningApps: BaseLessonData[] = [
         options: ['Chỉ Toán', 'Chỉ Văn', 'Toán, Lý, Hóa', 'Tất cả các môn'],
         correctAnswerIndex: 2,
         explanation: 'Gauth không chỉ mạnh về Toán mà còn hỗ trợ các môn khoa học tự nhiên khác như Vật lý và Hóa học.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Việc kết nối với gia sư trên Gauth có tốn phí không?',
+        answer:
+          'Có. Gauth thường cung cấp một số lượt hỏi gia sư miễn phí ban đầu, nhưng để sử dụng tính năng này thường xuyên, bạn sẽ cần mua thêm "credits" hoặc đăng ký gói trả phí. Lời giải bằng AI thường là miễn phí.',
+      },
+      {
+        question: 'Gia sư trên Gauth có phải là người Việt không?',
+        answer:
+          'Phần lớn gia sư trên Gauth là người nước ngoài và giao tiếp bằng tiếng Anh. Đây có thể là một thách thức nếu bạn không quen thuộc với tiếng Anh, nhưng cũng là cơ hội tốt để luyện tập tiếng Anh chuyên ngành.',
       },
     ],
   },
@@ -386,6 +410,18 @@ export const aiLearningApps: BaseLessonData[] = [
           'Socratic nổi bật với khả năng hỗ trợ nhiều môn học khác nhau, không chỉ là Toán, và cách giải thích vấn đề bằng nhiều định dạng (văn bản, hình ảnh, video).',
       },
     ],
+    faqs: [
+      {
+        question: 'Socratic có hoàn toàn miễn phí không?',
+        answer:
+          'Có, Socratic là một ứng dụng hoàn toàn miễn phí do Google cung cấp. Bạn có thể sử dụng tất cả các tính năng của nó mà không cần trả bất kỳ khoản phí nào.',
+      },
+      {
+        question: 'Tại sao Socratic lại cung cấp nhiều nguồn tài liệu khác nhau cho một câu hỏi?',
+        answer:
+          'Phương pháp của Socratic là giúp bạn "học cách học". Thay vì chỉ đưa ra một câu trả lời duy nhất, nó tổng hợp các cách giải thích tốt nhất từ nhiều nguồn trên web, giúp bạn tìm ra cách giải thích phù hợp nhất với mình và hiểu sâu hơn về khái niệm.',
+      },
+    ],
   },
   {
     id: 'grammarly',
@@ -512,6 +548,18 @@ export const aiLearningApps: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Tính năng này so sánh văn bản của bạn với hàng tỷ trang web và tài liệu học thuật để đảm bảo tính nguyên gốc và tránh đạo văn.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Grammarly có hoạt động với tiếng Việt không?',
+        answer:
+          'Không. Hiện tại, Grammarly chủ yếu tập trung vào tiếng Anh (Anh-Anh, Anh-Mỹ, Anh-Úc, Anh-Canada). Nó không hỗ trợ kiểm tra ngữ pháp và văn phong cho tiếng Việt.',
+      },
+      {
+        question: 'Tính năng phát hiện đạo văn (Plagiarism Checker) của Grammarly hoạt động như thế nào?',
+        answer:
+          'Tính năng này (chỉ có ở bản Premium) so sánh văn bản của bạn với hàng tỷ trang web và các bài báo học thuật trong cơ sở dữ liệu của ProQuest để phát hiện các đoạn văn không nguyên gốc. Nó giúp đảm bảo tính trung thực trong học thuật và viết lách.',
       },
     ],
   },

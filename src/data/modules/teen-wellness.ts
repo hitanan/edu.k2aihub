@@ -99,6 +99,18 @@ export const teenWellnessLessons: TeenWellnessLessonData[] = [
           'Kỹ thuật tiếp đất giúp bạn thoát khỏi những suy nghĩ tiêu cực hoặc lo lắng về quá khứ/tương lai bằng cách tập trung vào môi trường xung quanh bạn ngay tại thời điểm hiện tại, thông qua 5 giác quan.',
       },
     ],
+    faqs: [
+      {
+        question: 'Căng thẳng (stress) có phải lúc nào cũng xấu không?',
+        answer:
+          'Không hẳn. Một mức độ căng thẳng vừa phải (gọi là "eustress") có thể tạo động lực giúp bạn tập trung và hoàn thành công việc, ví dụ như căng thẳng trước một trận đấu thể thao. Tuy nhiên, căng thẳng kéo dài và quá mức (distress) sẽ gây hại cho cả thể chất và tinh thần.',
+      },
+      {
+        question: 'Khi nào em nên tìm kiếm sự giúp đỡ chuyên nghiệp?',
+        answer:
+          'Nếu bạn cảm thấy căng thẳng và lo âu ảnh hưởng nghiêm trọng đến cuộc sống hàng ngày (học tập, giấc ngủ, ăn uống, các mối quan hệ) trong một thời gian dài (vài tuần trở lên), và các kỹ thuật tự quản lý không còn hiệu quả, đó là lúc bạn nên nói chuyện với tư vấn viên học đường, cha mẹ hoặc một chuyên gia tâm lý.',
+      },
+    ],
   },
   {
     id: 'digital-wellness-social-media',
@@ -176,6 +188,18 @@ export const teenWellnessLessons: TeenWellnessLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Việc tùy chỉnh newfeed của bạn bằng cách bỏ theo dõi những tài khoản không mang lại giá trị tích cực là một cách hiệu quả để kiểm soát nội dung bạn tiếp xúc và bảo vệ sức khỏe tinh thần của bạn.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để nhận biết mình đang "nghiện" mạng xã hội?',
+        answer:
+          'Một số dấu hiệu bao gồm: cảm thấy bồn chồn, lo lắng khi không thể truy cập mạng xã hội; dành nhiều thời gian hơn dự định trên các nền tảng; việc sử dụng mạng xã hội ảnh hưởng tiêu cực đến giấc ngủ, học tập hoặc các mối quan hệ thực tế; và liên tục so sánh bản thân với người khác trên mạng.',
+      },
+      {
+        question: 'Em nên làm gì khi bị bắt nạt trực tuyến (cyberbullying)?',
+        answer:
+          'Đừng trả lời. Hãy chụp màn hình lại để làm bằng chứng. Chặn (block) người đó và báo cáo (report) hành vi với nền tảng. Quan trọng nhất, hãy nói chuyện với một người lớn mà bạn tin tưởng, như cha mẹ, thầy cô hoặc tư vấn viên học đường. Bạn không phải đối mặt với điều này một mình.',
       },
     ],
   },

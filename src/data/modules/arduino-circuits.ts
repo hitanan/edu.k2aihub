@@ -147,6 +147,18 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
           'Hàm `delay(milliseconds)` được sử dụng để tạm dừng chương trình trong một khoảng thời gian nhất định, tính bằng mili giây.',
       },
     ],
+    faqs: [
+      {
+        question: 'Arduino là gì và nó khác gì so với máy tính?',
+        answer:
+          'Arduino là một bo mạch vi điều khiển, không phải là một máy tính hoàn chỉnh. Nó được thiết kế để đọc tín hiệu từ cảm biến và điều khiển các thiết bị vật lý (như đèn, động cơ). Nó chạy một chương trình duy nhất lặp đi lặp lại, khác với máy tính có thể chạy nhiều chương trình cùng lúc trên một hệ điều hành.',
+      },
+      {
+        question: 'Tại sao tôi cần dùng điện trở với đèn LED?',
+        answer:
+          'Đèn LED không có khả năng tự điều chỉnh dòng điện. Nếu bạn kết nối trực tiếp một đèn LED với nguồn 5V của Arduino, dòng điện sẽ quá lớn và làm cháy đèn LED gần như ngay lập tức. Điện trở giúp giới hạn dòng điện ở mức an toàn cho đèn LED.',
+      },
+    ],
   },
   {
     id: 'dieu-khien-dau-vao-ky-thuat-so',
@@ -221,6 +233,18 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
         correctAnswerIndex: 3,
         explanation:
           'Hàm `pinMode(pinNumber, mode)` được sử dụng trong hàm `setup()` để thiết lập một chân cụ thể là đầu vào (INPUT), đầu ra (OUTPUT), hoặc đầu vào với điện trở kéo lên (INPUT_PULLUP).',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Điện trở kéo lên (pull-up) và kéo xuống (pull-down) để làm gì?',
+        answer:
+          'Chúng được dùng để đảm bảo chân đầu vào kỹ thuật số luôn ở một trạng thái xác định (HIGH hoặc LOW) khi không có tín hiệu tích cực (như khi nút nhấn không được bấm). Điều này giúp tránh trạng thái "thả nổi" (floating) gây ra việc đọc giá trị không ổn định và sai lệch.',
+      },
+      {
+        question: 'Tôi có thể sử dụng `INPUT_PULLUP` thay vì dùng điện trở ngoài không?',
+        answer:
+          'Có. Arduino có sẵn các điện trở kéo lên bên trong. Bằng cách cấu hình chân với `pinMode(pin, INPUT_PULLUP)`, bạn đã kích hoạt điện trở này. Khi đó, bạn chỉ cần nối một đầu của nút nhấn với chân đó và đầu còn lại với GND, không cần thêm điện trở ngoài. Lưu ý rằng logic sẽ bị đảo ngược: chân sẽ đọc LOW khi nhấn nút.',
       },
     ],
   },
@@ -298,6 +322,18 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
           'Các chân digital có ký hiệu "~" (dấu ngã) bên cạnh số hiệu chân (ví dụ: ~3, ~5, ~6, ~9, ~10, ~11) là những chân có khả năng xuất tín hiệu PWM.',
       },
     ],
+    faqs: [
+      {
+        question: 'PWM có phải là tín hiệu analog thực sự không?',
+        answer:
+          'Không. PWM là một kỹ thuật để "giả lập" một tín hiệu analog bằng cách sử dụng một tín hiệu kỹ thuật số. Nó bật và tắt tín hiệu digital rất nhanh. Mắt người hoặc động cơ sẽ cảm nhận sự thay đổi nhanh này như một mức điện áp trung bình, tạo ra hiệu ứng tương tự như tín hiệu analog (ví dụ: đèn mờ đi hoặc động cơ chạy chậm lại).',
+      },
+      {
+        question: 'Tôi có thể sử dụng `analogWrite()` trên một chân không có dấu `~` không?',
+        answer:
+          'Không. Hàm `analogWrite()` chỉ hoạt động trên các chân có phần cứng hỗ trợ PWM, được đánh dấu bằng dấu ngã (~). Nếu bạn cố gắng sử dụng nó trên một chân digital thông thường, nó sẽ không hoạt động như mong đợi.',
+      },
+    ],
   },
   {
     id: 'doc-tin-hieu-analog',
@@ -373,6 +409,18 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Hàm `map()` rất hữu ích để tái định tỷ lệ một số từ một khoảng giá trị này (ví dụ: 0-1023 từ `analogRead`) sang một khoảng giá trị khác (ví dụ: 0-255 cho `analogWrite`).',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tại sao giá trị đọc từ `analogRead()` lại từ 0 đến 1023?',
+        answer:
+          'Arduino Uno sử dụng một bộ chuyển đổi Analog-to-Digital (ADC) 10-bit. Điều này có nghĩa là nó có thể biểu diễn một điện áp analog (từ 0V đến 5V) thành 2^10 = 1024 mức kỹ thuật số khác nhau, được đánh số từ 0 (tương ứng 0V) đến 1023 (tương ứng 5V).',
+      },
+      {
+        question: 'Tôi có thể đọc tín hiệu analog trên các chân digital không?',
+        answer:
+          'Không. Bạn chỉ có thể sử dụng hàm `analogRead()` trên các chân được đánh dấu là "Analog In" (A0, A1, A2, v.v.). Các chân này được kết nối đặc biệt với bộ ADC của vi điều khiển.',
       },
     ],
   },

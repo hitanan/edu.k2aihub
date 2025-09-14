@@ -246,50 +246,40 @@ void loop() {
     },
     quizzes: [
       {
-        question: 'Hàm `setup()` trong một chương trình Arduino chạy bao nhiêu lần?',
+        question: 'Mục đích chính của hàm `setup()` trong một chương trình Arduino là gì?',
         options: [
-          'Mỗi khi vòng lặp `loop()` chạy xong',
-          'Không bao giờ',
-          'Chỉ một lần khi Arduino được cấp nguồn hoặc reset',
-          'Liên tục',
+          'Để chạy code lặp đi lặp lại',
+          'Để khởi tạo các biến và cài đặt chế độ cho các chân (pin)',
+          'Để viết các hàm tùy chỉnh',
+          'Để kết nối với máy tính',
         ],
-        correctAnswerIndex: 2,
+        correctAnswerIndex: 1,
         explanation:
-          'Hàm `setup()` được thiết kế để chạy một lần duy nhất, dùng để khởi tạo các cài đặt ban đầu như cấu hình chân (pin), bắt đầu giao tiếp serial, v.v.',
+          'Hàm `setup()` chỉ chạy một lần duy nhất khi Arduino khởi động. Đây là nơi lý tưởng để cài đặt trạng thái ban đầu cho các chân (INPUT/OUTPUT), khởi tạo các thư viện, và thiết lập giao tiếp Serial.',
       },
       {
-        question: 'Mục đích của hàm `pinMode(pin, mode)` là gì?',
-        options: [
-          'Đọc giá trị từ một chân',
-          'Ghi giá trị ra một chân',
-          'Cấu hình một chân cụ thể là đầu vào (INPUT) hoặc đầu ra (OUTPUT)',
-          'Tạo độ trễ',
-        ],
+        question: 'Arduino IDE sử dụng ngôn ngữ lập trình nào?',
+        options: ['Python', 'Java', 'Một phiên bản của C/C++', 'JavaScript'],
         correctAnswerIndex: 2,
         explanation:
-          '`pinMode()` là hàm thiết yếu trong `setup()` để báo cho Arduino biết một chân sẽ được sử dụng để nhận tín hiệu (INPUT) hay để điều khiển thiết bị khác (OUTPUT).',
+          'Ngôn ngữ lập trình Arduino dựa trên C/C++, nhưng được đơn giản hóa với các hàm và thư viện được xây dựng sẵn, giúp người mới bắt đầu dễ dàng tiếp cận hơn với lập trình vi điều khiển.',
       },
     ],
     faqs: [
       {
+        question: 'Tôi cần những gì để bắt đầu học Arduino?',
+        answer:
+          'Bạn cần một bo mạch Arduino (ví dụ: Arduino Uno), một cáp USB để kết nối với máy tính, và máy tính đã cài đặt phần mềm Arduino IDE miễn phí. Một bộ kit dành cho người mới bắt đầu sẽ rất hữu ích vì nó đi kèm nhiều linh kiện như đèn LED, điện trở, và cảm biến.',
+      },
+      {
         question: 'Arduino IDE là gì và tại sao tôi cần nó?',
         answer:
-          'Arduino IDE (Integrated Development Environment) là phần mềm chính thức bạn sử dụng để viết mã, biên dịch và tải chương trình (gọi là "sketch") lên bo mạch Arduino. Nó cung cấp một trình soạn thảo văn bản, một khu vực thông báo, một bảng điều khiển văn bản và một loạt các công cụ cần thiết khác.',
+          'Arduino IDE (Integrated Development Environment) là phần mềm chính thức bạn dùng để viết mã lệnh, kiểm tra lỗi (biên dịch), và tải mã lệnh đó lên bo mạch Arduino của bạn. Nó cung cấp một trình soạn thảo văn bản và các công cụ cần thiết để giao tiếp với bo mạch.',
       },
       {
-        question: 'Sự khác biệt giữa hàm `setup()` và `loop()` là gì?',
+        question: 'Sự khác biệt giữa Arduino và Raspberry Pi là gì?',
         answer:
-          'Hàm `setup()` chỉ chạy một lần duy nhất khi bo mạch Arduino được cấp nguồn hoặc được reset. Nó được dùng để khởi tạo các cài đặt ban đầu. Hàm `loop()` chạy liên tục lặp đi lặp lại sau khi `setup()` đã hoàn thành, đây là nơi chứa logic chính của chương trình.',
-      },
-      {
-        question: 'Tại sao đèn LED của tôi không sáng?',
-        answer:
-          'Có một vài lý do phổ biến: 1) Đèn LED bị cắm ngược (chân dài hơn là cực dương, phải nối với nguồn dương). 2) Điện trở không đúng giá trị hoặc không được kết nối. 3) Kết nối dây bị lỏng hoặc sai chân. 4) Lỗi trong code, ví dụ như sai số chân (pin number).',
-      },
-      {
-        question: 'Làm thế nào để tôi biết Arduino của tôi đang hoạt động?',
-        answer:
-          'Cách đơn giản nhất là tải lên chương trình "Blink" (Nhấp nháy). Nếu đèn LED tích hợp trên bo mạch (thường được đánh dấu là "L" và nối với chân 13) bắt đầu nhấp nháy, bo mạch của bạn đang hoạt động tốt.',
+          'Arduino là một vi điều khiển, lý tưởng cho việc đọc cảm biến và điều khiển các linh kiện điện tử đơn giản như đèn, động cơ. Raspberry Pi là một máy tính mini hoàn chỉnh, có hệ điều hành riêng, phù hợp cho các tác vụ phức tạp hơn như xử lý hình ảnh, chạy máy chủ web, hoặc các ứng dụng trí tuệ nhân tạo.',
       },
     ],
   },
@@ -516,6 +506,23 @@ void loop() {
           'Hàm `analogWrite()` gửi đi một tín hiệu PWM (Điều chế độ rộng xung), cho phép điều khiển "độ sáng" của đèn LED hoặc "tốc độ" của động cơ, thay vì chỉ có hai trạng thái bật/tắt.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao luôn cần một điện trở khi kết nối đèn LED với Arduino?',
+        answer:
+          'Đèn LED không thể tự điều chỉnh dòng điện. Chân output của Arduino cung cấp dòng điện quá mạnh có thể làm cháy LED ngay lập tức. Điện trở hoạt động như một "van nước", giúp hạn chế dòng điện xuống mức an toàn cho đèn LED.',
+      },
+      {
+        question: '`digitalWrite(pin, HIGH)` và `digitalWrite(pin, LOW)` có nghĩa là gì?',
+        answer:
+          '`digitalWrite(pin, HIGH)` cấp một điện áp cao (thường là 5V) cho chân `pin`, làm đèn LED sáng. `digitalWrite(pin, LOW)` ngắt điện áp (xuống 0V), làm đèn LED tắt. Đây là hai lệnh cơ bản nhất để điều khiển đầu ra số.',
+      },
+      {
+        question: 'Chân PWM là gì và tại sao nó có dấu ngã (~) bên cạnh?',
+        answer:
+          'PWM (Pulse Width Modulation - Điều chế độ rộng xung) là một kỹ thuật cho phép "giả lập" một tín hiệu analog. Các chân có dấu (~) có thể sử dụng hàm `analogWrite()` để thay đổi độ sáng của LED hoặc tốc độ của động cơ, thay vì chỉ bật/tắt hoàn toàn.',
+      },
+    ],
   },
   {
     id: 'arduino-inputs',
@@ -733,6 +740,23 @@ void loop() {
         correctAnswerIndex: 2,
         explanation:
           'Các chân có ký hiệu A (A0, A1, A2, ...) là các chân đầu vào analog, được kết nối với bộ chuyển đổi ADC (Analog-to-Digital Converter) để đọc các giá trị điện áp liên tục.',
+      },
+    ],
+    faqs: [
+      {
+        question: '`INPUT_PULLUP` có tác dụng gì và tại sao nó lại hữu ích?',
+        answer:
+          '`INPUT_PULLUP` kích hoạt một điện trở "kéo lên" đã có sẵn bên trong chip Arduino. Nó giữ cho chân input ở trạng thái HIGH ổn định khi nút nhấn không được nhấn, giúp tránh tình trạng nhiễu và đọc sai tín hiệu. Việc này cũng giúp mạch điện gọn gàng hơn vì không cần thêm điện trở bên ngoài.',
+      },
+      {
+        question: 'Sự khác biệt cơ bản giữa tín hiệu digital và analog là gì?',
+        answer:
+          'Tín hiệu digital chỉ có hai trạng thái rõ ràng: BẬT (HIGH) hoặc TẮT (LOW), giống như công tắc đèn. Tín hiệu analog có thể nhận một dải giá trị liên tục, giống như núm vặn điều chỉnh âm lượng. Nút nhấn tạo ra tín hiệu digital, trong khi biến trở tạo ra tín hiệu analog.',
+      },
+      {
+        question: 'Tại sao cần "chống nhiễu" (debouncing) cho nút nhấn?',
+        answer:
+          'Về mặt vật lý, khi bạn nhấn nút, các tiếp điểm kim loại bên trong có thể va chạm và nảy lên nhiều lần trong một khoảng thời gian rất ngắn. Arduino đủ nhanh để đọc những lần nảy này thành nhiều lần nhấn. Code chống nhiễu (thường dùng một khoảng trễ nhỏ) giúp đảm bảo mỗi lần nhấn vật lý chỉ được tính là một lần nhấn trong chương trình.',
       },
     ],
   },
@@ -1005,6 +1029,23 @@ void loop() {
         correctAnswerIndex: 2,
         explanation:
           'Cảm biến PIR hoạt động một cách thụ động bằng cách phát hiện sự thay đổi đột ngột của bức xạ hồng ngoại, vốn được phát ra từ các cơ thể sống như người và động vật.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để kết nối cảm biến DHT22 với Arduino?',
+        answer:
+          'Cảm biến DHT22 thường có 3 hoặc 4 chân. Bạn cần kết nối chân VCC với nguồn 5V, GND với chân GND của Arduino, và chân DATA với một chân digital bất kỳ. Sau đó, bạn cần cài đặt thư viện DHT từ Library Manager trong Arduino IDE để có thể đọc dữ liệu nhiệt độ và độ ẩm.',
+      },
+      {
+        question: 'Cảm biến PIR hoạt động dựa trên nguyên tắc nào?',
+        answer:
+          'PIR là viết tắt của Passive Infrared (Hồng ngoại thụ động). Nó không phát ra bất cứ thứ gì mà chỉ "lắng nghe" sự thay đổi của bức xạ hồng ngoại (thân nhiệt) trong môi trường. Khi một vật thể ấm như người hoặc động vật di chuyển qua vùng quét, cảm biến sẽ phát hiện sự thay đổi này và gửi tín hiệu HIGH.',
+      },
+      {
+        question: 'Sự khác biệt giữa cảm biến và cơ cấu chấp hành (actuator) là gì?',
+        answer:
+          'Cảm biến là "giác quan" của hệ thống, chúng thu thập thông tin từ môi trường (ví dụ: nhiệt độ, ánh sáng, chuyển động). Cơ cấu chấp hành là "cơ bắp" của hệ thống, chúng thực hiện hành động dựa trên thông tin từ cảm biến (ví dụ: đèn LED, còi, động cơ).',
       },
     ],
   },
@@ -1330,6 +1371,23 @@ void loop() {
         correctAnswerIndex: 2,
         explanation:
           'ESP32 là một lựa chọn hàng đầu cho các dự án IoT vì nó được tích hợp sẵn các module WiFi và Bluetooth, giúp việc kết nối mạng trở nên dễ dàng và gọn nhẹ hơn rất nhiều so với việc phải gắn thêm shield cho Arduino Uno.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Giao thức I2C là gì và tại sao nó lại phổ biến?',
+        answer:
+          'I2C (Inter-Integrated Circuit) là một giao thức giao tiếp cho phép nhiều thiết bị (cảm biến, màn hình,...) kết nối với vi điều khiển chỉ bằng hai dây tín hiệu (SDA và SCL). Ưu điểm lớn của nó là tiết kiệm chân cắm và cho phép tạo ra các hệ thống phức tạp một cách gọn gàng.',
+      },
+      {
+        question: 'Tại sao nên dùng bo mạch ESP32 cho các dự án IoT thay vì Arduino Uno?',
+        answer:
+          'ESP32 là một "người kế nhiệm" mạnh mẽ của Arduino Uno cho lĩnh vực IoT. Nó có bộ xử lý nhanh hơn, nhiều bộ nhớ hơn, và quan trọng nhất là đã tích hợp sẵn kết nối WiFi và Bluetooth. Điều này giúp bạn dễ dàng kết nối dự án của mình với Internet mà không cần mua thêm các module (shield) đắt đỏ và phức tạp.',
+      },
+      {
+        question: 'API là gì và nó liên quan gì đến các dự án IoT?',
+        answer:
+          'API (Application Programming Interface) là một bộ quy tắc cho phép các chương trình khác nhau "nói chuyện" với nhau. Trong IoT, Arduino/ESP32 của bạn có thể gửi dữ liệu cảm biến đến một API của một dịch vụ web (như thời tiết, hoặc một nền tảng IoT) và nhận lại thông tin hoặc lệnh điều khiển. Đây là cầu nối giữa thiết bị vật lý và thế giới internet.',
       },
     ],
   },
@@ -1742,6 +1800,23 @@ void autoLighting() {
         correctAnswerIndex: 2,
         explanation:
           'JSON (JavaScript Object Notation) là định dạng dữ liệu phổ biến để giao tiếp với các API và dịch vụ web. Thư viện `ArduinoJson` giúp tạo (serialize) và đọc (deserialize) dữ liệu JSON một cách hiệu quả trên các vi điều khiển có bộ nhớ hạn chế.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tại sao nên sử dụng hàm `millis()` thay vì `delay()` trong các dự án phức tạp?',
+        answer:
+          'Hàm `delay()` sẽ dừng hoàn toàn chương trình trong một khoảng thời gian, khiến vi điều khiển không thể làm gì khác. Ngược lại, `millis()` trả về số mili giây đã trôi qua kể từ khi bo mạch khởi động. Bằng cách so sánh giá trị `millis()` hiện tại với giá trị đã lưu, bạn có thể thực hiện các tác vụ định kỳ mà không "đóng băng" toàn bộ hệ thống, cho phép xử lý nhiều việc cùng lúc.',
+      },
+      {
+        question: 'Thư viện `ArduinoJson` dùng để làm gì trong một dự án IoT?',
+        answer:
+          'Khi bạn muốn gửi dữ liệu từ nhiều cảm biến lên một dịch vụ web (API), bạn cần đóng gói chúng vào một định dạng chuẩn. JSON là định dạng phổ biến nhất. Thư viện `ArduinoJson` giúp bạn dễ dàng tạo một chuỗi JSON từ dữ liệu của mình để gửi đi và phân tích chuỗi JSON nhận về từ server một cách hiệu quả, ngay cả trên các thiết bị có bộ nhớ hạn chế.',
+      },
+      {
+        question: 'Làm thế nào để quản lý một dự án Arduino lớn với nhiều file code?',
+        answer:
+          'Arduino IDE cho phép bạn tạo các "tab" mới, mỗi tab là một file `.ino` hoặc `.h` / `.cpp`. Bạn có thể chia nhỏ code của mình thành các file logic, ví dụ một file để xử lý cảm biến, một file để quản lý kết nối WiFi, một file cho màn hình hiển thị. File chính của bạn sẽ `#include` các file này, giúp code trở nên gọn gàng, dễ đọc và dễ bảo trì hơn.',
       },
     ],
   },

@@ -91,6 +91,18 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLessonType[] = [
           'China + 1 là chiến lược của các công ty toàn cầu nhằm giảm sự phụ thuộc vào một quốc gia sản xuất duy nhất (Trung Quốc) bằng cách thiết lập thêm hoạt động ở một quốc gia khác, và Việt Nam là một trong những điểm đến hàng đầu.',
       },
     ],
+    faqs: [
+      {
+        question: 'Chuỗi cung ứng là gì và tại sao nó quan trọng?',
+        answer:
+          'Chuỗi cung ứng là mạng lưới bao gồm các tổ chức, con người, hoạt động, thông tin và nguồn lực liên quan đến việc di chuyển một sản phẩm hoặc dịch vụ từ nhà cung cấp đến khách hàng. Quản lý tốt chuỗi cung ứng giúp giảm chi phí, tăng hiệu quả và nâng cao sự hài lòng của khách hàng, là yếu tố sống còn của mọi doanh nghiệp.',
+      },
+      {
+        question: 'Vai trò của Việt Nam trong chuỗi cung ứng toàn cầu hiện nay là gì?',
+        answer:
+          'Việt Nam đang trở thành một "công xưởng mới" của thế giới, đặc biệt trong các lĩnh vực sản xuất điện tử, dệt may, và đồ gỗ. Nhờ chiến lược "China + 1", nhiều tập đoàn lớn đang dịch chuyển sản xuất sang Việt Nam để đa dạng hóa rủi ro, tạo ra cơ hội lớn cho nền kinh tế và lao động trong nước.',
+      },
+    ],
   },
   {
     id: 'warehouse-inventory-technology',
@@ -172,6 +184,18 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLessonType[] = [
         correctAnswerIndex: 2,
         explanation:
           'FIFO (Nhập trước, Xuất trước) là phương pháp phổ biến, đặc biệt quan trọng đối với các sản phẩm có hạn sử dụng như thực phẩm và dược phẩm, đảm bảo rằng các lô hàng cũ hơn được bán trước.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Hệ thống Quản lý Kho (WMS) là gì?',
+        answer:
+          'WMS (Warehouse Management System) là một phần mềm giúp tối ưu hóa mọi hoạt động trong kho hàng, từ việc nhận hàng, cất giữ, quản lý vị trí, đến việc lấy hàng và đóng gói. Nó giống như "bộ não" của kho hàng, giúp tăng độ chính xác, hiệu quả và giảm thiểu sai sót.',
+      },
+      {
+        question: 'Robot tự hành (AGV/AMR) khác nhau như thế nào?',
+        answer:
+          'AGV (Automated Guided Vehicle) thường di chuyển theo các đường dẫn được định sẵn (vạch từ, mã QR). Trong khi đó, AMR (Autonomous Mobile Robot) thông minh hơn, có thể tự lập bản đồ kho hàng và linh hoạt tìm đường đi ngắn nhất để tránh vật cản. AMR đại diện cho thế hệ tự động hóa kho bãi mới, linh hoạt và dễ triển khai hơn.',
       },
     ],
   },

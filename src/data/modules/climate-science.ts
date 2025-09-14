@@ -210,6 +210,28 @@ export const ClimateLessons: BaseLessonData[] = [
           'Downscaling là một tập hợp các kỹ thuật cho phép chuyển đổi thông tin từ các mô hình khí hậu toàn cầu (GCMs) có độ phân giải thấp sang độ phân giải cao hơn cho các nghiên cứu tác động ở quy mô khu vực hoặc địa phương.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt giữa GCM, RCM và ESM là gì?',
+        answer:
+          'GCM (General Circulation Model) là mô hình khí hậu toàn cầu. RCM (Regional Climate Model) lấy đầu ra của GCM để mô phỏng chi tiết hơn cho một khu vực nhỏ. ESM (Earth System Model) là một GCM phức tạp hơn, bao gồm cả các chu trình sinh địa hóa như chu trình carbon.',
+      },
+      {
+        question: 'Tại sao chúng ta cần "ensemble methods" (phương pháp tổ hợp) trong mô hình hóa khí hậu?',
+        answer:
+          'Mỗi mô hình khí hậu có những giả định và cách tiếp cận hơi khác nhau, dẫn đến các kết quả dự báo khác nhau. Bằng cách chạy nhiều mô hình (một tổ hợp) và phân tích kết quả trung bình cũng như độ phân tán, các nhà khoa học có thể đưa ra một dự báo đáng tin cậy hơn và định lượng được mức độ không chắc chắn.',
+      },
+      {
+        question: 'CMIP6 là gì và tại sao nó quan trọng?',
+        answer:
+          'CMIP6 (Coupled Model Intercomparison Project Phase 6) là một nỗ lực hợp tác toàn cầu để chuẩn hóa và so sánh các mô hình khí hậu từ các trung tâm nghiên cứu trên khắp thế giới. Kết quả của CMIP6 là nền tảng khoa học chính cho các Báo cáo Đánh giá của IPCC (Ủy ban Liên chính phủ về Biến đổi Khí hậu).',
+      },
+      {
+        question: 'Làm thế nào dữ liệu vệ tinh giúp chúng ta hiểu về khí hậu?',
+        answer:
+          'Vệ tinh cung cấp một cái nhìn toàn cầu, liên tục về nhiều yếu tố quan trọng của hệ thống khí hậu mà không thể đo đạc được trên mặt đất, chẳng hạn như nhiệt độ bề mặt biển, độ che phủ của băng, nồng độ khí nhà kính trong khí quyển, và mực nước biển dâng.',
+      },
+    ],
   },
   {
     id: 'climate-solutions-tech',
@@ -290,6 +312,28 @@ export const ClimateLessons: BaseLessonData[] = [
           'Năng lượng mặt trời là một nguồn năng lượng sạch, tái tạo, và không tạo ra khí nhà kính trong quá trình vận hành. Tuy nhiên, nó phụ thuộc vào ánh sáng mặt trời và có chi phí đầu tư ban đầu.',
       },
     ],
+    faqs: [
+      {
+        question: 'Geoengineering là gì và nó có phải là một giải pháp thực tế không?',
+        answer:
+          'Geoengineering (Kỹ thuật địa cầu) là các can thiệp quy mô lớn có chủ ý vào hệ thống khí hậu của Trái Đất để chống lại biến đổi khí hậu. Các phương pháp bao gồm Quản lý Bức xạ Mặt trời (SRM) và Loại bỏ Carbon Dioxide (CDR). Đây vẫn là một lĩnh vực gây tranh cãi và đầy rủi ro, hiện chỉ được coi là một phương án dự phòng tiềm năng chứ chưa phải là giải pháp chính.',
+      },
+      {
+        question: 'Sự khác biệt giữa giảm thiểu (mitigation) và thích ứng (adaptation) với biến đổi khí hậu là gì?',
+        answer:
+          'Giảm thiểu là các hành động nhằm giảm hoặc ngăn chặn việc phát thải khí nhà kính (ví dụ: sử dụng năng lượng tái tạo). Thích ứng là các hành động nhằm điều chỉnh để đối phó với các tác động đã và sẽ xảy ra của biến đổi khí hậu (ví dụ: xây dựng đê biển cao hơn).',
+      },
+      {
+        question: 'Lifecycle Assessment (LCA) là gì?',
+        answer:
+          'LCA (Đánh giá Vòng đời) là một phương pháp để đánh giá các tác động môi trường liên quan đến tất cả các giai đoạn của vòng đời một sản phẩm, từ khai thác nguyên liệu thô, sản xuất, sử dụng, cho đến xử lý cuối cùng. Nó giúp xác định xem một công nghệ "xanh" có thực sự bền vững trên toàn bộ vòng đời của nó hay không.',
+      },
+      {
+        question: 'Tại sao việc lưu trữ năng lượng (ví dụ: pin) lại quan trọng đối với năng lượng tái tạo?',
+        answer:
+          'Các nguồn năng lượng tái tạo như mặt trời và gió có tính không liên tục (chỉ tạo ra điện khi có nắng hoặc gió). Hệ thống lưu trữ năng lượng giúp tích trữ năng lượng dư thừa khi có sẵn và cung cấp lại khi cần, đảm bảo nguồn cung cấp điện ổn định và đáng tin cậy.',
+      },
+    ],
   },
   {
     id: 'climate-policy-economics',
@@ -368,6 +412,28 @@ export const ClimateLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'ESG là viết tắt của Environmental (Môi trường), Social (Xã hội), và Governance (Quản trị). Đây là bộ ba tiêu chí được sử dụng để đánh giá mức độ bền vững và tác động đạo đức của một khoản đầu tư vào một công ty hoặc doanh nghiệp.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Carbon pricing là gì và nó hoạt động như thế nào?',
+        answer:
+          'Carbon pricing (Định giá carbon) là một công cụ chính sách đặt một mức giá cho việc phát thải carbon. Có hai hình thức chính: (1) Thuế carbon, một loại thuế trực tiếp đánh vào lượng phát thải; và (2) Hệ thống Giao dịch Phát thải (ETS) hay thị trường carbon, nơi các công ty mua bán giấy phép phát thải.',
+      },
+      {
+        question: 'Thỏa thuận Paris về biến đổi khí hậu là gì?',
+        answer:
+          'Thỏa thuận Paris là một hiệp ước quốc tế mang tính ràng buộc pháp lý về biến đổi khí hậu, được thông qua vào năm 2015. Mục tiêu chính của nó là giữ cho mức tăng nhiệt độ trung bình toàn cầu ở mức dưới 2°C so với thời kỳ tiền công nghiệp và nỗ lực giới hạn ở mức 1.5°C.',
+      },
+      {
+        question: '"Trái phiếu xanh" (Green Bonds) khác gì so với trái phiếu thông thường?',
+        answer:
+          'Về cơ bản, trái phiếu xanh hoạt động giống như trái phiếu thông thường, nhưng số tiền thu được từ việc phát hành được cam kết dành riêng để tài trợ cho các dự án có lợi cho môi trường, chẳng hạn như các dự án năng lượng tái tạo, hiệu quả năng lượng, hoặc giao thông sạch.',
+      },
+      {
+        question: 'Tại sao các nhà đầu tư ngày càng quan tâm đến các yếu tố ESG?',
+        answer:
+          'Các nhà đầu tư nhận ra rằng các công ty có hoạt động tốt về ESG thường có khả năng quản lý rủi ro tốt hơn, có khả năng phục hồi cao hơn và có tiềm năng tăng trưởng bền vững trong dài hạn. Các vấn đề như biến đổi khí hậu và bất bình đẳng xã hội có thể tạo ra những rủi ro tài chính đáng kể.',
       },
     ],
   },

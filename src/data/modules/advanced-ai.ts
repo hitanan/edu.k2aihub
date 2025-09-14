@@ -113,6 +113,18 @@ export const advancedAILessons: BaseLessonData[] = [
           'Backpropagation (lan truyền ngược) tính toán gradient của hàm mất mát đối với các trọng số của mạng, từ đó cho phép cập nhật trọng số thông qua các thuật toán tối ưu như Gradient Descent.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt chính giữa Deep Learning và Machine Learning truyền thống là gì?',
+        answer:
+          'Machine Learning truyền thống thường yêu cầu kỹ sư phải thực hiện "feature engineering" (trích xuất đặc trưng) thủ công. Ngược lại, Deep Learning, với kiến trúc mạng neural đa lớp, có khả năng tự động học các đặc trưng phức tạp trực tiếp từ dữ liệu thô (như hình ảnh, văn bản), giúp giải quyết các bài toán phức tạp hơn.',
+      },
+      {
+        question: 'Tại sao GPU lại quan trọng cho việc huấn luyện mô hình Deep Learning?',
+        answer:
+          'Việc huấn luyện mô hình Deep Learning đòi hỏi một lượng lớn các phép tính ma trận song song. GPU (Graphics Processing Unit) được thiết kế với hàng nghìn nhân xử lý, cho phép thực hiện các phép tính này nhanh hơn CPU hàng chục đến hàng trăm lần, từ đó rút ngắn đáng kể thời gian huấn luyện.',
+      },
+    ],
   },
   {
     id: 'computer-vision-applications',
@@ -226,6 +238,18 @@ export const advancedAILessons: BaseLessonData[] = [
           'YOLO là một trong những thuật toán phát hiện vật thể một pha (single-stage) hiệu quả và nhanh nhất, cho phép xử lý video trong thời gian thực, rất phù hợp cho các ứng dụng như xe tự lái, giám sát an ninh.',
       },
     ],
+    faqs: [
+      {
+        question: 'Object Detection và Image Segmentation khác nhau như thế nào?',
+        answer:
+          'Object Detection xác định vị trí và loại của các vật thể trong ảnh bằng cách vẽ một hộp bao (bounding box) quanh chúng. Image Segmentation đi sâu hơn, phân loại từng pixel trong ảnh vào một lớp đối tượng cụ thể, tạo ra một "mặt nạ" chính xác cho vật thể thay vì chỉ là hộp bao.',
+      },
+      {
+        question: 'Tại sao việc xử lý ảnh DICOM trong y tế lại cần các công cụ chuyên dụng?',
+        answer:
+          'DICOM không chỉ là một định dạng ảnh, mà là một tiêu chuẩn lưu trữ và truyền tải thông tin y tế. Mỗi file DICOM chứa cả dữ liệu hình ảnh (ví dụ: ảnh X-quang) và siêu dữ liệu quan trọng về bệnh nhân, thiết bị chụp, v.v. Việc xử lý cần đảm bảo tính toàn vẹn của cả hai loại thông tin này và tuân thủ các quy định nghiêm ngặt về bảo mật y tế.',
+      },
+    ],
   },
   {
     id: 'nlp-language-models',
@@ -332,6 +356,18 @@ export const advancedAILessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'PhoBERT được xây dựng dựa trên kiến trúc BERT (Bidirectional Encoder Representations from Transformers) của Google và được huấn luyện trước trên một tập dữ liệu tiếng Việt khổng lồ.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Large Language Model (LLM) là gì?',
+        answer:
+          'LLM là một mô hình Deep Learning cực lớn, được huấn luyện trên một kho dữ liệu văn bản khổng lồ. Nhờ đó, nó có khả năng hiểu, tạo và xử lý ngôn ngữ tự nhiên ở mức độ rất phức tạp, thực hiện các tác vụ như dịch thuật, tóm tắt, trả lời câu hỏi, và viết văn bản một cách mạch lạc.',
+      },
+      {
+        question: '"Fine-tuning" một LLM có nghĩa là gì?',
+        answer:
+          'Fine-tuning là quá trình tiếp tục huấn luyện một LLM đã được huấn luyện trước (pre-trained) trên một tập dữ liệu nhỏ hơn, chuyên biệt hơn. Quá trình này giúp mô hình "thích nghi" với một nhiệm vụ hoặc một lĩnh vực cụ thể, ví dụ như fine-tuning trên dữ liệu pháp lý để nó hiểu và phân tích văn bản luật tốt hơn.',
       },
     ],
   },
@@ -447,6 +483,18 @@ export const advancedAILessons: BaseLessonData[] = [
           'Hàm thưởng là tín hiệu quan trọng nhất trong RL, nó định hướng quá trình học của tác tử. Việc thiết kế một hàm thưởng tốt là yếu tố then chốt để tác tử học được hành vi mong muốn.',
       },
     ],
+    faqs: [
+      {
+        question: 'Học tăng cường (Reinforcement Learning) khác gì so với học có giám sát (Supervised Learning)?',
+        answer:
+          'Trong học có giám sát, mô hình học từ dữ liệu đã được gán nhãn sẵn (ví dụ: ảnh con mèo được gán nhãn "mèo"). Trong học tăng cường, tác giả (agent) không có câu trả lời đúng cho trước. Nó phải tự khám phá môi trường, thực hiện hành động và học hỏi từ "phần thưởng" hoặc "hình phạt" nhận được để tối đa hóa phần thưởng tích lũy theo thời gian.',
+      },
+      {
+        question: 'Tại sao mô phỏng (simulation) lại quan trọng trong việc huấn luyện các hệ thống RL?',
+        answer:
+          'Nhiều hệ thống RL, đặc biệt là trong robotics hay xe tự lái, quá nguy hiểm hoặc tốn kém để huấn luyện trực tiếp trong thế giới thực. Môi trường mô phỏng cho phép tác giả "thất bại" hàng triệu lần một cách an toàn và nhanh chóng, giúp nó học được các chiến lược hiệu quả trước khi triển khai ra thực tế.',
+      },
+    ],
   },
   {
     id: 'ai-ethics-deployment',
@@ -557,6 +605,18 @@ export const advancedAILessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Nguồn gốc phổ biến nhất của bias là từ dữ liệu. Nếu dữ liệu huấn luyện chứa đựng những định kiến có sẵn (ví dụ: nam giới thường làm kỹ sư), mô hình AI sẽ học và khuếch đại những định kiến đó.',
+      },
+    ],
+    faqs: [
+      {
+        question: '"AI có trách nhiệm" (Responsible AI) nghĩa là gì?',
+        answer:
+          'Responsible AI là một khuôn khổ để phát triển và triển khai các hệ thống AI một cách an toàn, đáng tin cậy và có đạo đức. Nó bao gồm các nguyên tắc như công bằng (fairness), minh bạch (transparency), giải trình được (accountability), bảo mật (privacy), và an toàn (safety), đảm bảo công nghệ AI mang lại lợi ích và giảm thiểu tác hại cho xã hội.',
+      },
+      {
+        question: 'MLOps là gì và tại sao nó quan trọng cho việc triển khai AI?',
+        answer:
+          'MLOps (Machine Learning Operations) là tập hợp các quy trình và công cụ nhằm tự động hóa và quản lý vòng đời của các mô hình machine learning trong môi trường sản xuất. Nó giúp đảm bảo các mô hình được triển khai một cách đáng tin cậy, có thể giám sát, cập nhật và duy trì hiệu suất theo thời gian, thay vì chỉ là một thử nghiệm trong phòng thí nghiệm.',
       },
     ],
   },

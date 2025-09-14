@@ -174,24 +174,24 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
     ],
     faqs: [
       {
-        question: 'Tôi cần bao nhiêu vốn để bắt đầu kinh doanh TMĐT xuyên biên giới?',
+        question: 'Tôi nên bắt đầu với nền tảng nào trước?',
         answer:
-          'Số vốn ban đầu có thể rất linh hoạt. Bạn có thể bắt đầu với chi phí thấp bằng mô hình dropshipping hoặc tự gửi hàng (self-fulfillment) với số lượng nhỏ. Các chi phí chính cần cân nhắc bao gồm: phí đăng ký trên sàn, chi phí marketing ban đầu, và chi phí cho lô hàng đầu tiên nếu bạn chọn mô hình FBA.',
+          'Nếu bạn mới bắt đầu, hãy tập trung làm tốt trên MỘT nền tảng trước khi mở rộng. Amazon thường là lựa chọn tốt nhất cho thị trường B2C ở Mỹ/EU vì lượng truy cập khổng lồ và hệ thống FBA mạnh mẽ. Nếu sản phẩm của bạn là đồ thủ công, Etsy là lựa chọn không thể bỏ qua.',
       },
       {
-        question: 'Sản phẩm nào của Việt Nam có tiềm năng bán chạy nhất trên thị trường quốc tế?',
+        question: 'Làm thế nào để tối ưu hóa tiêu đề sản phẩm?',
         answer:
-          'Các sản phẩm có tính độc đáo, mang đậm bản sắc văn hóa và có chất lượng tốt thường có tiềm năng lớn. Ví dụ: hàng thủ công mỹ nghệ (mây tre đan, gốm sứ), nông sản đặc sản (cà phê, hạt điều, gia vị), và các sản phẩm dệt may có thiết kế riêng.',
+          'Một công thức hiệu quả là: [Thương hiệu] + [Tên sản phẩm chính] + [2-3 Từ khóa mô tả quan trọng] + [Lợi ích chính hoặc đối tượng sử dụng]. Ví dụ: "VietCrafts Giỏ Mây Tre Đan Thủ Công, Túi Xách Đi Biển Mùa Hè cho Nữ". Hãy sử dụng các công cụ nghiên cứu từ khóa để tìm ra các thuật ngữ mà khách hàng thực sự tìm kiếm.',
       },
       {
-        question: 'Rào cản lớn nhất khi bán hàng ra nước ngoài là gì?',
+        question: 'Tại sao hình ảnh sản phẩm lại quan trọng đến vậy?',
         answer:
-          'Các rào cản chính bao gồm: logistics (vận chuyển và kho bãi), thủ tục hải quan và thuế, xử lý thanh toán quốc tế, và sự khác biệt về văn hóa, ngôn ngữ. Tuy nhiên, hiện nay có nhiều công ty dịch vụ (3PL, payment gateways) có thể giúp bạn giải quyết các vấn đề này.',
+          'Vì khách hàng không thể chạm vào sản phẩm của bạn. Hình ảnh là yếu tố quan trọng nhất để truyền tải chất lượng, chi tiết và công dụng của sản phẩm. Hãy đầu tư vào việc chụp ít nhất 5-7 ảnh chất lượng cao, bao gồm ảnh trên nền trắng, ảnh chi tiết, ảnh lifestyle (sản phẩm trong bối cảnh sử dụng) và ảnh so sánh kích thước.',
       },
       {
-        question: 'Làm thế nào để cạnh tranh với các nhà bán hàng từ Trung Quốc?',
+        question: 'Làm thế nào để xử lý một đánh giá tiêu cực (1-2 sao)?',
         answer:
-          'Thay vì cạnh tranh về giá, hãy tập trung vào chất lượng, xây dựng thương hiệu và câu chuyện sản phẩm độc đáo. Cung cấp dịch vụ khách hàng xuất sắc và xây dựng lòng tin thông qua các đánh giá tích cực cũng là một lợi thế cạnh tranh quan trọng.',
+          'Đừng hoảng sợ và đừng bao giờ tranh cãi với khách hàng. Hãy trả lời một cách công khai, chuyên nghiệp và đồng cảm. Cảm ơn họ đã phản hồi, xin lỗi về trải nghiệm không tốt và đề nghị một giải pháp (ví dụ: hoàn tiền, gửi sản phẩm thay thế). Một phản hồi tốt có thể biến một khách hàng không hài lòng thành một người ủng hộ thương hiệu.',
       },
     ],
   },
@@ -320,6 +320,28 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Đối với khách hàng quốc tế khi mua một sản phẩm từ Việt Nam, đánh giá từ những người mua trước là bằng chứng xã hội quan trọng nhất để họ ra quyết định. Các thuật toán của sàn cũng ưu tiên hiển thị các sản phẩm có đánh giá tốt.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tôi nên bắt đầu với nền tảng nào trước?',
+        answer:
+          'Nếu bạn mới bắt đầu, hãy tập trung làm tốt trên MỘT nền tảng trước khi mở rộng. Amazon thường là lựa chọn tốt nhất cho thị trường B2C ở Mỹ/EU vì lượng truy cập khổng lồ và hệ thống FBA mạnh mẽ. Nếu sản phẩm của bạn là đồ thủ công, Etsy là lựa chọn không thể bỏ qua.',
+      },
+      {
+        question: 'Làm thế nào để tối ưu hóa tiêu đề sản phẩm?',
+        answer:
+          'Một công thức hiệu quả là: [Thương hiệu] + [Tên sản phẩm chính] + [2-3 Từ khóa mô tả quan trọng] + [Lợi ích chính hoặc đối tượng sử dụng]. Ví dụ: "VietCrafts Giỏ Mây Tre Đan Thủ Công, Túi Xách Đi Biển Mùa Hè cho Nữ". Hãy sử dụng các công cụ nghiên cứu từ khóa để tìm ra các thuật ngữ mà khách hàng thực sự tìm kiếm.',
+      },
+      {
+        question: 'Tại sao hình ảnh sản phẩm lại quan trọng đến vậy?',
+        answer:
+          'Vì khách hàng không thể chạm vào sản phẩm của bạn. Hình ảnh là yếu tố quan trọng nhất để truyền tải chất lượng, chi tiết và công dụng của sản phẩm. Hãy đầu tư vào việc chụp ít nhất 5-7 ảnh chất lượng cao, bao gồm ảnh trên nền trắng, ảnh chi tiết, ảnh lifestyle (sản phẩm trong bối cảnh sử dụng) và ảnh so sánh kích thước.',
+      },
+      {
+        question: 'Làm thế nào để xử lý một đánh giá tiêu cực (1-2 sao)?',
+        answer:
+          'Đừng hoảng sợ và đừng bao giờ tranh cãi với khách hàng. Hãy trả lời một cách công khai, chuyên nghiệp và đồng cảm. Cảm ơn họ đã phản hồi, xin lỗi về trải nghiệm không tốt và đề nghị một giải pháp (ví dụ: hoàn tiền, gửi sản phẩm thay thế). Một phản hồi tốt có thể biến một khách hàng không hài lòng thành một người ủng hộ thương hiệu.',
       },
     ],
   },
@@ -453,6 +475,28 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Vận chuyển đường biển có chi phí rẻ hơn nhiều so với đường hàng không nhưng thời gian vận chuyển lâu hơn đáng kể. Đây là lựa chọn tối ưu để vận chuyển hàng tồn kho số lượng lớn đến các kho ở nước ngoài.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'FBA (Fulfillment by Amazon) có đắt không?',
+        answer:
+          'FBA có các loại phí như phí lưu kho (hàng tháng) và phí hoàn thiện đơn hàng (cho mỗi đơn hàng được bán). Mặc dù có chi phí, nhưng lợi ích mà nó mang lại (đủ điều kiện Prime, giao hàng nhanh, dịch vụ khách hàng của Amazon) thường vượt trội so với chi phí, đặc biệt khi bạn bán hàng với số lượng lớn.',
+      },
+      {
+        question: 'Mã HS (HS Code) là gì và tại sao nó quan trọng?',
+        answer:
+          'Mã HS (Harmonized System Code) là một hệ thống phân loại hàng hóa được tiêu chuẩn hóa quốc tế. Việc xác định đúng mã HS cho sản phẩm của bạn là cực kỳ quan trọng để tính toán chính xác thuế nhập khẩu và đảm bảo hàng hóa được thông quan một cách suôn sẻ.',
+      },
+      {
+        question: 'Tôi có nên tự gửi hàng từ Việt Nam (self-fulfillment) không?',
+        answer:
+          'Tự gửi hàng là một lựa chọn tốt khi bạn mới bắt đầu, có số lượng đơn hàng ít, hoặc bán các sản phẩm có giá trị cao, nhỏ gọn. Tuy nhiên, khi số lượng đơn hàng tăng lên, việc này sẽ tốn nhiều thời gian và chi phí vận chuyển cho mỗi đơn hàng có thể cao hơn so với việc sử dụng FBA hoặc 3PL.',
+      },
+      {
+        question: '3PL (Third-Party Logistics) là gì?',
+        answer:
+          '3PL là một công ty dịch vụ mà bạn có thể thuê để thực hiện các hoạt động logistics thay cho bạn, bao gồm lưu kho, quản lý tồn kho, đóng gói và vận chuyển. Sử dụng 3PL là một giải pháp linh hoạt, cho phép bạn tập trung vào việc kinh doanh và marketing.',
       },
     ],
   },
@@ -596,6 +640,28 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
           'Việc Stripe chưa hỗ trợ trực tiếp tại Việt Nam là một trở ngại lớn, buộc nhiều doanh nghiệp phải tìm các giải pháp thay thế hoặc đăng ký kinh doanh ở nước ngoài, làm tăng chi phí và độ phức tạp.',
       },
     ],
+    faqs: [
+      {
+        question: 'PayPal và Payoneer khác nhau như thế nào?',
+        answer:
+          'PayPal chủ yếu là một cổng thanh toán cho khách hàng lẻ (B2C), cho phép họ thanh toán an toàn trên các website. Payoneer mạnh hơn về mảng nhận thanh toán B2B, nhận tiền từ các sàn TMĐT (như Amazon), và cho phép các doanh nghiệp trả tiền cho nhà cung cấp hoặc đối tác trên toàn cầu.',
+      },
+      {
+        question: 'Làm thế nào để giảm phí khi nhận tiền từ nước ngoài?',
+        answer:
+          'Hãy so sánh biểu phí của các dịch vụ khác nhau. Các dịch vụ như Payoneer hoặc Wise thường có tỷ giá hối đoái và phí chuyển tiền tốt hơn so với việc nhận tiền trực tiếp qua ngân hàng hoặc PayPal. Gom nhiều khoản thanh toán và rút tiền một lần cũng có thể giúp giảm phí.',
+      },
+      {
+        question: 'PCI-DSS là gì và tại sao tôi cần quan tâm?',
+        answer:
+          'PCI-DSS (Payment Card Industry Data Security Standard) là một bộ tiêu chuẩn an ninh dành cho các tổ chức xử lý thẻ tín dụng. Nếu bạn tự xây dựng website và xử lý thanh toán, bạn phải tuân thủ PCI-DSS. Tuy nhiên, nếu bạn sử dụng các cổng thanh toán lớn như Stripe hoặc PayPal, họ đã tuân thủ sẵn cho bạn, giúp giảm bớt gánh nặng này.',
+      },
+      {
+        question: 'Tôi có nên chấp nhận thanh toán bằng tiền điện tử (crypto) không?',
+        answer:
+          'Chấp nhận crypto có thể thu hút một nhóm khách hàng mới và có phí giao dịch thấp. Tuy nhiên, nó cũng đi kèm với rủi ro biến động giá rất cao và các vấn đề pháp lý chưa rõ ràng ở nhiều quốc gia, bao gồm cả Việt Nam. Hiện tại, đây vẫn là một lựa chọn có tính thử nghiệm cao.',
+      },
+    ],
   },
   {
     id: 'cultural-localization',
@@ -735,6 +801,28 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
           'Các nền văn hóa theo chủ nghĩa cá nhân như Mỹ đánh giá cao sự khác biệt và thành tựu cá nhân, do đó các thông điệp marketing tập trung vào việc sản phẩm giúp họ thể hiện bản thân sẽ có hiệu quả cao.',
       },
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào để nghiên cứu văn hóa của một thị trường mới?',
+        answer:
+          'Bắt đầu bằng việc đọc các báo cáo thị trường, xem các nội dung phổ biến trên YouTube hoặc TikTok tại quốc gia đó, và phân tích các quảng cáo của các thương hiệu địa phương thành công. Sử dụng các công cụ như Hofstede Insights để so sánh các chiều văn hóa. Nếu có thể, hãy nói chuyện trực tiếp với người bản xứ.',
+      },
+      {
+        question: 'Một ví dụ về lỗi localization thất bại là gì?',
+        answer:
+          'Khi Pepsi vào thị trường Trung Quốc, slogan "Come alive with the Pepsi Generation" của họ đã bị dịch thành "Pepsi brings your ancestors back from the grave" (Pepsi mang tổ tiên của bạn từ dưới mộ trở về), gây ra một sự hiểu lầm tai hại về mặt văn hóa.',
+      },
+      {
+        question: 'Tôi có cần phải dịch toàn bộ website sang nhiều ngôn ngữ không?',
+        answer:
+          'Không nhất thiết phải làm tất cả cùng một lúc. Hãy bắt đầu với các thị trường quan trọng nhất của bạn. Tiếng Anh là một khởi đầu tốt, nhưng việc cung cấp phiên bản tiếng Tây Ban Nha cho thị trường Mỹ, hoặc tiếng Đức cho thị trường Đức có thể làm tăng đáng kể tỷ lệ chuyển đổi.',
+      },
+      {
+        question: 'Làm thế nào để tìm một người dịch/localizer tốt?',
+        answer:
+          'Đừng chỉ tìm một người dịch. Hãy tìm một người bản xứ của thị trường mục tiêu, người cũng hiểu về marketing và lĩnh vực sản phẩm của bạn. Họ không chỉ dịch từ ngữ mà còn có thể tư vấn cho bạn về các sắc thái văn hóa và cách diễn đạt phù hợp.',
+      },
+    ],
   },
   {
     id: 'legal-compliance',
@@ -862,6 +950,28 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Nguyên tắc lãnh thổ là một trong những nguyên tắc cơ bản nhất của luật sở hữu trí tuệ. Bạn phải đăng ký bảo hộ ở từng quốc gia hoặc khu vực mà bạn muốn kinh doanh.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tôi có cần một luật sư để kinh doanh xuyên biên giới không?',
+        answer:
+          'Khi bạn mới bắt đầu, bạn có thể sử dụng các mẫu tài liệu pháp lý có sẵn và tuân thủ các quy định của sàn TMĐT. Tuy nhiên, khi doanh nghiệp của bạn phát triển, việc tham khảo ý kiến của một luật sư chuyên về thương mại quốc tế và sở hữu trí tuệ là một khoản đầu tư khôn ngoan để tránh các rủi ro đắt giá.',
+      },
+      {
+        question: 'Làm thế nào để viết một Chính sách Bảo mật (Privacy Policy) tuân thủ GDPR?',
+        answer:
+          'Chính sách của bạn phải nêu rõ: bạn thu thập loại dữ liệu nào, tại sao bạn thu thập nó, bạn sử dụng nó như thế nào, bạn lưu trữ nó trong bao lâu, và người dùng có quyền gì đối với dữ liệu của họ (ví dụ: quyền được xóa). Có nhiều công cụ và mẫu online có thể giúp bạn tạo ra một chính sách cơ bản.',
+      },
+      {
+        question: 'Quy tắc xuất xứ (Rules of Origin) trong các FTA có nghĩa là gì?',
+        answer:
+          'Để được hưởng ưu đãi thuế quan từ một Hiệp định thương mại tự do (FTA), hàng hóa của bạn phải chứng minh được nó có "xuất xứ" từ quốc gia thành viên (ví dụ: Việt Nam). Điều này thường có nghĩa là một tỷ lệ phần trăm nhất định của sản phẩm phải được sản xuất hoặc chế biến tại Việt Nam. Đây là một quy định phức tạp và quan trọng.',
+      },
+      {
+        question: 'Tôi có phải đóng thuế ở nước ngoài không?',
+        answer:
+          'Điều này phụ thuộc vào luật của từng quốc gia và quy mô kinh doanh của bạn. Ví dụ, ở EU, bạn có thể cần phải đăng ký và nộp thuế VAT. Ở Mỹ, bạn có thể phải nộp thuế bán hàng (Sales Tax) ở các tiểu bang mà bạn có "nexus" (sự hiện diện kinh tế đáng kể). Đây là một lĩnh vực phức tạp và bạn nên tham khảo ý kiến của một chuyên gia về thuế quốc tế.',
       },
     ],
   },
@@ -998,12 +1108,34 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
         options: [
           'Thử nghiệm hai phiên bản hoàn toàn khác nhau của một website.',
           'Một phương pháp so sánh hai phiên bản của một trang web hoặc ứng dụng (phiên bản A và phiên bản B) để xem phiên bản nào hoạt động tốt hơn.',
-          'Chỉ kiểm tra phiên bản B của một trang web.',
           'Một bài kiểm tra về kiến thức cơ bản.',
+          'Luôn luôn chọn phiên bản B.',
         ],
         correctAnswerIndex: 1,
         explanation:
-          'A/B testing là một công cụ cốt lõi của CRO, cho phép bạn đưa ra các quyết định cải tiến dựa trên bằng chứng dữ liệu thay vì cảm tính.',
+          'A/B testing là một công cụ cực kỳ mạnh mẽ trong CRO. Bằng cách chỉ thay đổi một yếu tố (ví dụ: tiêu đề) và giữ nguyên mọi thứ khác, bạn có thể xác định một cách khoa học yếu tố nào có tác động thực sự đến hành vi của người dùng.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Những chỉ số (metrics) nào là quan trọng nhất để theo dõi?',
+        answer:
+          'Một vài chỉ số quan trọng nhất bao gồm: Tỷ lệ chuyển đổi (Conversion Rate), Giá trị đơn hàng trung bình (Average Order Value - AOV), Chi phí thu hút khách hàng (Customer Acquisition Cost - CAC), và Giá trị vòng đời khách hàng (Customer Lifetime Value - LTV). Việc theo dõi tỷ lệ LTV/CAC là cực kỳ quan trọng để đảm bảo sự tăng trưởng bền vững.',
+      },
+      {
+        question: 'Google Analytics có quá phức tạp cho người mới bắt đầu không?',
+        answer:
+          'Google Analytics có thể trông đáng sợ lúc đầu, nhưng bạn có thể bắt đầu với những báo cáo cơ bản nhất. Hãy tập trung vào các báo cáo như: Đối tượng (Audience) -> Tổng quan (Overview) để biết khách hàng của bạn từ đâu, và Chuyển đổi (Conversions) -> Thương mại điện tử (Ecommerce) để xem hiệu suất bán hàng.',
+      },
+      {
+        question: 'Làm thế nào để biết kênh marketing nào đang hoạt động hiệu quả nhất?',
+        answer:
+          'Sử dụng báo cáo "Sức thu hút" (Acquisition) trong Google Analytics. Báo cáo này sẽ cho bạn biết khách hàng đến từ đâu (ví dụ: Google Search, Facebook, Email) và kênh nào mang lại nhiều doanh thu nhất. Điều này giúp bạn quyết định nên đầu tư ngân sách marketing vào đâu.',
+      },
+      {
+        question: 'Tôi nên xem dữ liệu của mình bao lâu một lần?',
+        answer:
+          'Tránh việc xem dữ liệu hàng giờ vì nó có thể gây ra các quyết định vội vàng. Hãy tạo một thói quen xem xét các chỉ số chính hàng tuần để theo dõi xu hướng và xem xét sâu hơn hàng tháng để đưa ra các quyết định chiến lược. ',
       },
     ],
   },

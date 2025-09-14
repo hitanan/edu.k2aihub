@@ -116,6 +116,18 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
           'Gradient Boosting (như XGBoost, LightGBM) là một phương pháp ensemble tuần tự, nơi mỗi cây quyết định mới được huấn luyện để sửa các lỗi còn lại từ tập hợp các cây trước đó, giúp tạo ra một mô hình tổng thể rất mạnh.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt giữa PCA và t-SNE là gì?',
+        answer:
+          'PCA (Principal Component Analysis) là một kỹ thuật giảm chiều dữ liệu tuyến tính, tập trung vào việc giữ lại phương sai lớn nhất của dữ liệu. t-SNE (t-Distributed Stochastic Neighbor Embedding) là một kỹ thuật phi tuyến, tập trung vào việc giữ lại cấu trúc lân cận của các điểm dữ liệu, rất hiệu quả trong việc trực quan hóa các cụm dữ liệu trong không gian ít chiều hơn.',
+      },
+      {
+        question: 'Overfitting (quá khớp) trong Machine Learning là gì?',
+        answer:
+          'Overfitting xảy ra khi một mô hình học quá "thuộc lòng" dữ liệu huấn luyện, bao gồm cả nhiễu và các chi tiết không quan trọng. Kết quả là mô hình hoạt động rất tốt trên dữ liệu đã thấy nhưng lại hoạt động kém trên dữ liệu mới, mất đi khả năng tổng quát hóa.',
+      },
+    ],
   },
   {
     id: 'deep-learning-neural-networks',
@@ -229,6 +241,18 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Cơ chế "Attention" cho phép mô hình cân nhắc tầm quan trọng của các từ khác nhau trong câu khi xử lý một từ cụ thể, giúp nó nắm bắt được các mối quan hệ ngữ nghĩa phức tạp và xa nhau, một bước đột phá so với RNN/LSTM.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Mạng CNN (Convolutional Neural Network) hoạt động như thế nào?',
+        answer:
+          'Mạng CNN hoạt động bằng cách trượt các "bộ lọc" (filters hoặc kernels) qua hình ảnh đầu vào. Mỗi bộ lọc được thiết kế để phát hiện một đặc trưng cụ thể (như cạnh, góc, hoặc màu sắc). Các lớp sâu hơn sẽ kết hợp các đặc trưng đơn giản này để nhận diện các cấu trúc phức tạp hơn (như mắt, mũi, hoặc toàn bộ khuôn mặt).',
+      },
+      {
+        question: 'Transfer Learning (Học chuyển giao) là gì và tại sao nó hữu ích?',
+        answer:
+          'Transfer Learning là kỹ thuật sử dụng một mô hình đã được huấn luyện trước trên một tập dữ liệu lớn (ví dụ: ImageNet) và tinh chỉnh (fine-tune) nó cho một nhiệm vụ cụ thể với tập dữ liệu nhỏ hơn. Điều này rất hữu ích vì nó tiết kiệm thời gian và tài nguyên tính toán, đồng thời cho phép đạt được hiệu suất cao ngay cả khi không có nhiều dữ liệu.',
       },
     ],
   },
@@ -348,6 +372,18 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
           'Trong tiếng Anh, từ được ngăn cách bởi khoảng trắng. Nhưng trong tiếng Việt, một "từ" có thể gồm nhiều âm tiết (ví dụ: "khoa học dữ liệu"), và các âm tiết này cũng được ngăn cách bởi khoảng trắng. Điều này làm cho việc xác định đâu là một từ trở nên phức tạp.',
       },
     ],
+    faqs: [
+      {
+        question: 'Word Embedding là gì?',
+        answer:
+          'Word Embedding là kỹ thuật biểu diễn các từ dưới dạng các vector số thực trong một không gian nhiều chiều. Các từ có ngữ nghĩa tương tự nhau (ví dụ: "vua" và "nữ hoàng") sẽ có vị trí gần nhau trong không gian vector này. Đây là nền tảng cho hầu hết các mô hình NLP hiện đại.',
+      },
+      {
+        question: 'Phân tích sắc thái (Sentiment Analysis) được ứng dụng để làm gì?',
+        answer:
+          'Phân tích sắc thái được sử dụng để tự động xác định thái độ (tích cực, tiêu cực, trung tính) của một đoạn văn bản. Các doanh nghiệp thường dùng nó để theo dõi phản hồi của khách hàng về sản phẩm trên mạng xã hội, phân tích đánh giá sản phẩm, hoặc đo lường hiệu quả của các chiến dịch marketing.',
+      },
+    ],
   },
   {
     id: 'computer-vision-image-processing',
@@ -462,6 +498,18 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Object Detection xác định vị trí và loại của vật thể bằng một hộp chữ nhật. Image Segmentation đi sâu hơn, nó tạo ra một "mặt nạ" (mask) cho từng vật thể, xác định chính xác ranh giới của vật thể ở cấp độ pixel.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Data Augmentation (Tăng cường dữ liệu) trong Computer Vision là gì?',
+        answer:
+          'Data Augmentation là kỹ thuật tạo ra các phiên bản mới của ảnh từ tập dữ liệu huấn luyện hiện có bằng cách áp dụng các phép biến đổi như xoay, lật, thay đổi độ sáng, hoặc cắt cúp. Kỹ thuật này giúp làm tăng sự đa dạng của dữ liệu, giảm overfitting và cải thiện khả năng tổng quát hóa của mô hình.',
+      },
+      {
+        question: 'YOLO (You Only Look Once) hoạt động như thế nào?',
+        answer:
+          'YOLO là một thuật toán phát hiện vật thể hoạt động theo cơ chế "một pha". Nó chia ảnh thành một lưới các ô và dự đoán các hộp bao (bounding boxes) và xác suất lớp cho mỗi ô cùng một lúc. Cách tiếp cận này giúp YOLO đạt được tốc độ xử lý rất nhanh, phù hợp cho các ứng dụng thời gian thực.',
       },
     ],
   },
@@ -585,6 +633,18 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Data Lake theo nguyên tắc "lưu trữ tất cả", chấp nhận dữ liệu ở mọi định dạng (có cấu trúc, bán cấu trúc, phi cấu trúc). Ngược lại, Data Warehouse đòi hỏi dữ liệu phải được làm sạch, chuyển đổi và đưa về một cấu trúc (schema) xác định trước khi được nạp vào.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Apache Spark là gì và tại sao nó phổ biến?',
+        answer:
+          'Apache Spark là một framework tính toán phân tán mạnh mẽ, được thiết kế để xử lý dữ liệu lớn một cách nhanh chóng. Nó phổ biến vì cung cấp các API dễ sử dụng (bằng Python, Scala, Java), hỗ trợ cả xử lý theo lô (batch) và xử lý thời gian thực (streaming), và có thể chạy nhanh hơn Hadoop MapReduce đáng kể nhờ khả năng xử lý trong bộ nhớ (in-memory processing).',
+      },
+      {
+        question: 'ETL và ELT là gì?',
+        answer:
+          'ETL (Extract, Transform, Load) là quy trình truyền thống: trích xuất dữ liệu từ nguồn, biến đổi nó trên một máy chủ trung gian, sau đó tải vào kho dữ liệu. ELT (Extract, Load, Transform) là quy trình hiện đại hơn: trích xuất dữ liệu, tải thẳng vào một hệ thống đích mạnh mẽ (như data lake hoặc data warehouse trên cloud), sau đó mới thực hiện các phép biến đổi tại đó. ELT tận dụng được sức mạnh tính toán của các hệ thống đích.',
       },
     ],
   },

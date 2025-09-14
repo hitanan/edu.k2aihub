@@ -128,6 +128,18 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
           'Grab sử dụng sức mạnh của dữ liệu lớn và trí tuệ nhân tạo để phân tích, dự đoán và tối ưu hóa mọi khía cạnh của hoạt động, từ điều phối xe đến định giá và tìm đường.',
       },
     ],
+    faqs: [
+      {
+        question: 'Smart Mobility (Di chuyển thông minh) là gì?',
+        answer:
+          'Smart Mobility là việc ứng dụng công nghệ (như IoT, AI, dữ liệu lớn) để tạo ra một hệ thống giao thông an toàn, hiệu quả, và bền vững hơn. Nó không chỉ là về phương tiện thông minh, mà còn bao gồm cả hạ tầng thông minh và người dùng thông minh.',
+      },
+      {
+        question: 'Tại sao xe máy lại là một thách thức lớn cho giao thông thông minh ở Việt Nam?',
+        answer:
+          'Hành vi di chuyển của xe máy rất linh hoạt và khó dự đoán hơn ô tô. Chúng có thể di chuyển trong không gian hẹp, thường xuyên thay đổi làn đường. Bất kỳ hệ thống giao thông thông minh nào ở Việt Nam đều phải được "huấn luyện" đặc biệt để hiểu và dự đoán hành vi của dòng xe máy dày đặc, một đặc thù không có ở nhiều nước phương Tây.',
+      },
+    ],
   },
   {
     id: 'autonomous-vehicles-ai-systems',
@@ -229,6 +241,18 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
         correctAnswerIndex: 3,
         explanation:
           'Xe tự lái sử dụng sự kết hợp của nhiều công nghệ cảm biến khác nhau, bao gồm LiDAR, camera và radar, để nhận diện và phản ứng với môi trường xung quanh một cách chính xác và an toàn.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Các cấp độ của xe tự lái là gì?',
+        answer:
+          'Có 6 cấp độ (từ 0 đến 5). Cấp 0 là không có tự động hóa. Cấp 1-2 là hỗ trợ lái (ví dụ: giữ làn, ga tự động). Cấp 3 là tự động hóa có điều kiện (xe có thể tự lái trong một số điều kiện, nhưng tài xế phải sẵn sàng can thiệp). Cấp 4 là tự động hóa cao (xe tự lái hoàn toàn trong hầu hết các điều kiện). Cấp 5 là tự động hóa hoàn toàn (không cần vô lăng hay bàn đạp).',
+      },
+      {
+        question: 'LiDAR là gì và tại sao nó quan trọng cho xe tự lái?',
+        answer:
+          'LiDAR (Light Detection and Ranging) là một cảm biến hoạt động bằng cách phát ra các tia laser và đo thời gian chúng phản xạ lại. Nó tạo ra một "đám mây điểm" 3D cực kỳ chi tiết về môi trường xung quanh, giúp xe "nhìn" được trong bóng tối, sương mù và nhận diện chính xác hình dạng, khoảng cách của các vật thể.',
       },
     ],
   },
@@ -337,6 +361,18 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
         correctAnswerIndex: 3,
         explanation:
           'Các công nghệ tiên tiến như Blockchain, trí tuệ nhân tạo, học máy và IoT đang được áp dụng rộng rãi trong ngành logistics để tối ưu hóa quy trình giao hàng, từ quản lý kho bãi đến theo dõi đơn hàng và tối ưu hóa lộ trình giao hàng.',
+      },
+    ],
+    faqs: [
+      {
+        question: '"Last-mile delivery" (Giao hàng chặng cuối) là gì và tại sao nó lại khó?',
+        answer:
+          'Giao hàng chặng cuối là bước cuối cùng của quá trình vận chuyển, từ trung tâm phân phối đến tận tay khách hàng. Đây là chặng tốn kém và phức tạp nhất vì phải xử lý một số lượng lớn các điểm giao hàng nhỏ lẻ, riêng biệt trong môi trường đô thị đông đúc, thay vì vận chuyển hàng loạt giữa các kho lớn.',
+      },
+      {
+        question: 'Làm thế nào AI có thể tối ưu hóa logistics?',
+        answer:
+          'AI có thể dự báo nhu cầu hàng hóa để sắp xếp tồn kho hợp lý, tối ưu hóa lộ trình giao hàng để tiết kiệm thời gian và nhiên liệu, tự động hóa việc sắp xếp hàng hóa trong kho bằng robot, và phát hiện sớm các rủi ro có thể gây gián đoạn chuỗi cung ứng.',
       },
     ],
   },
@@ -451,6 +487,18 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
           'Xe buýt điện giúp giảm thiểu ô nhiễm không khí và tiếng ồn, đồng thời cũng giảm chi phí nhiên liệu cho các thành phố. Đây là một trong những giải pháp giao thông bền vững và hiệu quả nhất hiện nay.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sử dụng xe điện có thực sự "xanh" hơn không, khi điện năng vẫn được sản xuất từ than đá?',
+        answer:
+          'Đây là một câu hỏi hợp lý. Mặc dù nguồn điện có thể chưa hoàn toàn sạch, xe điện vẫn hiệu quả hơn. Thứ nhất, nhà máy điện lớn có các hệ thống xử lý khí thải hiệu quả hơn so với hàng triệu động cơ đốt trong nhỏ lẻ. Thứ hai, việc tập trung ô nhiễm tại một điểm (nhà máy điện) dễ quản lý hơn. Quan trọng nhất, xe điện mở ra cánh cửa cho việc sử dụng năng lượng tái tạo (mặt trời, gió) để sạc, điều mà xe xăng không thể làm được.',
+      },
+      {
+        question: 'Phạm vi di chuyển của xe điện có phải là một vấn đề lớn không?',
+        answer:
+          'Phạm vi di chuyển (range anxiety) từng là một vấn đề lớn, nhưng công nghệ pin đang cải thiện rất nhanh. Nhiều mẫu xe điện hiện nay có thể đi được 400-500km mỗi lần sạc. Đối với việc di chuyển hàng ngày trong thành phố, phạm vi này là quá đủ. Thách thức chính hiện nay là phát triển mạng lưới trạm sạc nhanh công cộng để phục vụ các chuyến đi đường dài.',
+      },
+    ],
   },
   {
     id: 'urban-planning-mobility-integration',
@@ -557,6 +605,18 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
         correctAnswerIndex: 3,
         explanation:
           'Các công nghệ như GIS, cảm biến giao thông và phần mềm mô phỏng giao thông cung cấp dữ liệu và công cụ phân tích hữu ích, giúp các nhà quy hoạch đô thị đưa ra các quyết định chính xác và hiệu quả hơn trong việc thiết kế và quản lý hệ thống giao thông đô thị.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Phát triển theo định hướng giao thông công cộng (TOD) là gì?',
+        answer:
+          'TOD (Transit-Oriented Development) là một chiến lược quy hoạch đô thị tập trung xây dựng các khu dân cư, văn phòng, và cửa hàng có mật độ cao xung quanh các trạm giao thông công cộng (như ga metro, bến xe buýt). Mục tiêu là tạo ra các cộng đồng sôi động, nơi người dân có thể sống, làm việc và giải trí mà không cần phụ thuộc vào xe cá nhân.',
+      },
+      {
+        question: 'Làm thế nào để tích hợp xe máy vào quy hoạch đô thị hiện đại?',
+        answer:
+          'Thay vì cố gắng loại bỏ, quy hoạch thông minh cần tích hợp xe máy một cách an toàn và hiệu quả. Các giải pháp bao gồm việc tạo ra các làn đường riêng cho xe máy, các bãi đỗ xe máy thông minh gần các trạm trung chuyển công cộng, và khuyến khích chuyển đổi sang xe máy điện để giảm ô nhiễm.',
       },
     ],
   },

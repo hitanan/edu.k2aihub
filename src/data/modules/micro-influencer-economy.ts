@@ -172,6 +172,23 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
           'Việc chọn đúng thị trường ngách (niche) là yếu tố sống còn để nổi bật trong một thị trường ngày càng đông đúc.',
         ],
       },
+      faqs: [
+        {
+          question: 'Làm thế nào để chọn đúng thị trường ngách (niche)?',
+          answer:
+            'Hãy kết hợp ba yếu tố: (1) Điều bạn đam mê, (2) Điều bạn có kiến thức hoặc kỹ năng tốt, và (3) Điều mà có một nhóm khán giả quan tâm và sẵn sàng chi trả. Một niche tốt là nơi giao thoa của cả ba yếu tố này.',
+        },
+        {
+          question: 'Thương hiệu cá nhân (personal brand) là gì?',
+          answer:
+            'Thương hiệu cá nhân là cách người khác nhìn nhận về bạn dựa trên chuyên môn, giá trị và cá tính mà bạn thể hiện ra bên ngoài. Đó là "dấu ấn" riêng của bạn trong tâm trí của khán giả.',
+        },
+        {
+          question: 'Tại sao định vị thương hiệu lại quan trọng?',
+          answer:
+            'Định vị giúp bạn nổi bật so với các đối thủ cạnh tranh. Nó xác định rõ bạn là ai, bạn làm gì, và điều gì khiến bạn khác biệt. Một định vị tốt sẽ thu hút đúng đối tượng khán giả và các cơ hội hợp tác.',
+        },
+      ],
       careerConnect: {
         name: 'Trần Tuấn Anh',
         title: 'Brand Strategist',
@@ -229,6 +246,23 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
           'Nội dung dạng video ngắn, đặc biệt là trên TikTok và Instagram Reels, đang thống trị và thu hút sự chú ý lớn từ khán giả Việt.',
         ],
       },
+      faqs: [
+        {
+          question: 'Làm thế nào để tạo ra nội dung hấp dẫn một cách nhất quán?',
+          answer:
+            'Chìa khóa là lập kế hoạch. Hãy tạo một lịch đăng bài (content calendar) và lên ý tưởng hàng loạt (batching). Dành một ngày để lên kế hoạch và quay/viết nội dung cho cả tuần hoặc cả tháng sẽ giúp bạn tiết kiệm thời gian và duy trì sự đều đặn.',
+        },
+        {
+          question: 'Tôi nên tập trung vào chất lượng hay số lượng nội dung?',
+          answer:
+            'Cả hai đều quan trọng, nhưng khi mới bắt đầu, hãy ưu tiên sự nhất quán (số lượng) để thuật toán nhận diện bạn. Khi đã có một lượng khán giả nhất định, hãy tập trung nhiều hơn vào việc nâng cao chất lượng để giữ chân họ.',
+        },
+        {
+          question: 'Làm thế nào để biết khán giả của tôi thích loại nội dung nào?',
+          answer:
+            'Hãy xem các chỉ số phân tích (analytics) trên nền tảng của bạn. Xem bài đăng nào có nhiều lượt xem, lượt thích, bình luận và chia sẻ nhất. Ngoài ra, đừng ngại hỏi trực tiếp khán giả của bạn thông qua các cuộc khảo sát hoặc story polls.',
+        },
+      ],
       careerConnect: {
         name: 'Ngọc Mai',
         title: 'Content Director',
@@ -286,6 +320,23 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
           'Xây dựng cộng đồng không chỉ là tăng follow, mà là tạo ra một không gian tương tác hai chiều, nơi khán giả cảm thấy được lắng nghe.',
         ],
       },
+      faqs: [
+        {
+          question: 'Làm thế nào để tăng lượng người theo dõi một cách tự nhiên?',
+          answer:
+            'Hãy tập trung vào việc tạo ra nội dung có giá trị và có khả năng chia sẻ cao. Sử dụng các hashtag liên quan, hợp tác với các nhà sáng tạo khác trong cùng lĩnh vực, và tích cực tương tác trong các cộng đồng có liên quan đến niche của bạn.',
+        },
+        {
+          question: 'Sự khác biệt giữa khán giả (audience) và cộng đồng (community) là gì?',
+          answer:
+            'Khán giả là những người tiêu thụ nội dung của bạn. Cộng đồng là khi những người trong khán giả đó bắt đầu kết nối và tương tác với nhau, tạo thành một mạng lưới. Mục tiêu của bạn là chuyển đổi khán giả thành cộng đồng.',
+        },
+        {
+          question: 'Làm thế nào để xử lý các bình luận tiêu cực hoặc "troll"?',
+          answer:
+            'Đừng xóa trừ khi chúng chứa ngôn từ thù địch hoặc spam. Hãy trả lời một cách chuyên nghiệp và bình tĩnh. Đôi khi, một phản hồi tốt có thể biến một người chỉ trích thành người ủng hộ. Nếu đó là "troll" cố tình gây rối, việc phớt lờ thường là lựa chọn tốt nhất.',
+        },
+      ],
       careerConnect: {
         name: 'Phạm An',
         title: 'Community Manager',
@@ -339,6 +390,23 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
           'Các nhãn hàng Việt Nam ngày càng ưa chuộng làm việc với micro-influencer vì tính chân thực và chi phí hợp lý hơn so với các ngôi sao lớn.',
         ],
       },
+      faqs: [
+        {
+          question: 'Khi nào tôi nên bắt đầu tìm kiếm cơ hội hợp tác với nhãn hàng?',
+          answer:
+            'Không có con số người theo dõi cụ thể, nhưng hãy tập trung vào việc xây dựng một cộng đồng tương tác tốt trước. Khi bạn có tỷ lệ tương tác cao và một thương hiệu cá nhân rõ ràng, các nhãn hàng sẽ bắt đầu chú ý đến bạn. Bạn cũng có thể chủ động liên hệ với các nhãn hàng nhỏ mà bạn yêu thích.',
+        },
+        {
+          question: 'Làm thế nào để định giá cho một bài đăng quảng cáo?',
+          answer:
+            'Giá cả phụ thuộc vào nhiều yếu tố: số lượng người theo dõi, tỷ lệ tương tác, mức độ phức tạp của nội dung, và ngành hàng. Một công thức phổ biến cho người mới bắt đầu là khoảng 1-2% số lượng người theo dõi (ví dụ: 10.000 followers có thể tính phí 1-2 triệu VNĐ cho một bài đăng). Hãy nghiên cứu các influencer tương tự để có mức giá phù hợp.',
+        },
+        {
+          question: 'Media Kit là gì và tại sao nó lại quan trọng?',
+          answer:
+            'Media Kit giống như một CV dành cho influencer. Nó giới thiệu về bạn, thương hiệu cá nhân, các chỉ số quan trọng (lượt theo dõi, tương tác, nhân khẩu học khán giả), các hợp tác thành công trước đây và bảng giá dịch vụ. Một Media Kit chuyên nghiệp sẽ giúp bạn gây ấn tượng tốt với các nhãn hàng.',
+        },
+      ],
       careerConnect: {
         name: 'Lê Thu Trang',
         title: 'Influencer Marketing Lead',
@@ -396,6 +464,23 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
           'Thuật toán của các nền tảng liên tục thay đổi, đòi hỏi nhà sáng tạo phải linh hoạt và không ngừng thử nghiệm để tối ưu hóa phạm vi tiếp cận.',
         ],
       },
+      faqs: [
+        {
+          question: 'Thuật toán mạng xã hội hoạt động như thế nào?',
+          answer:
+            'Mỗi nền tảng có một thuật toán riêng, nhưng mục tiêu chung là giữ người dùng ở lại ứng dụng càng lâu càng tốt. Chúng ưu tiên hiển thị nội dung mà chúng dự đoán người dùng sẽ thích, dựa trên các hành vi trong quá khứ của họ (bài đã thích, video đã xem, tài khoản đã theo dõi).',
+        },
+        {
+          question: 'Làm thế nào để nội dung của tôi được thuật toán ưu tiên?',
+          answer:
+            'Hãy tập trung vào việc tạo ra "tín hiệu tương tác" sớm. Khi bạn vừa đăng bài, nếu có nhiều người thích, bình luận, chia sẻ ngay lập tức, thuật toán sẽ hiểu rằng đây là nội dung tốt và phân phối nó đến nhiều người hơn. Khuyến khích tương tác trong caption và trả lời bình luận là rất quan trọng.',
+        },
+        {
+          question: 'Việc đăng bài vào "giờ vàng" có còn quan trọng không?',
+          answer:
+            'Có, nhưng mức độ quan trọng đã giảm so với trước đây. Đăng bài khi khán giả của bạn hoạt động mạnh nhất vẫn giúp tạo ra lượng tương tác ban đầu tốt. Tuy nhiên, chất lượng nội dung và khả năng giữ chân người xem hiện nay quan trọng hơn nhiều so với thời điểm đăng bài.',
+        },
+      ],
       careerConnect: {
         name: 'Đức Huy',
         title: 'Growth Hacker',
@@ -453,6 +538,23 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
           'Nhiều micro-influencer thành công tại Việt Nam đang chuyển mình thành doanh nhân, xây dựng các thương hiệu riêng hoặc công ty truyền thông.',
         ],
       },
+      faqs: [
+        {
+          question: 'Khi nào tôi nên nghĩ đến việc mở rộng kinh doanh từ thương hiệu cá nhân?',
+          answer:
+            'Khi bạn đã có một nguồn thu nhập ổn định, một cộng đồng trung thành và bạn cảm thấy mình đang dành quá nhiều thời gian cho các công việc vận hành thay vì sáng tạo. Đây là lúc nên xem xét việc tự động hóa, thuê trợ lý hoặc xây dựng đội nhóm.',
+        },
+        {
+          question: 'Làm thế nào để đa dạng hóa nguồn thu nhập?',
+          answer:
+            'Đừng chỉ dựa vào hợp tác với nhãn hàng. Hãy xem xét việc tạo ra sản phẩm số (ebook, khóa học online), sản phẩm vật lý (merchandise), cung cấp dịch vụ tư vấn, hoặc xây dựng một cộng đồng trả phí (membership).',
+        },
+        {
+          question: 'Tôi có cần thành lập công ty không?',
+          answer:
+            'Khi thu nhập của bạn tăng lên và bạn bắt đầu thuê người, việc thành lập một hộ kinh doanh cá thể hoặc công ty sẽ giúp bạn chuyên nghiệp hóa hoạt động, quản lý tài chính và tuân thủ các quy định về thuế một cách dễ dàng hơn. Hãy tham khảo ý kiến của luật sư hoặc kế toán.',
+        },
+      ],
       careerConnect: {
         name: 'Vân Chi',
         title: 'CEO & Founder',

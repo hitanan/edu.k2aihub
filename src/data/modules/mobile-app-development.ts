@@ -77,6 +77,23 @@ const lessons: MobileAppDevelopmentLesson[] = [
       'macOS computer với Xcode installed',
       'Understanding của object-oriented programming',
     ],
+    faqs: [
+      {
+        question: 'Swift và SwiftUI khác nhau như thế nào?',
+        answer:
+          'Swift là ngôn ngữ lập trình được Apple tạo ra để phát triển ứng dụng trên các nền tảng của họ. SwiftUI là một framework giao diện người dùng (UI) hiện đại, cho phép bạn xây dựng UI cho iOS, macOS, watchOS và tvOS bằng cách khai báo, giúp code ngắn gọn và trực quan hơn so với UIKit (framework UI cũ hơn).',
+      },
+      {
+        question: 'Core Data là gì?',
+        answer:
+          'Core Data là một framework của Apple giúp lưu trữ và quản lý dữ liệu của ứng dụng một cách bền vững (persistent), ngay cả khi ứng dụng đã tắt. Nó không phải là một cơ sở dữ liệu, mà là một framework để làm việc với cơ sở dữ liệu (thường là SQLite) một cách hướng đối tượng.',
+      },
+      {
+        question: 'Tại sao cần tuân thủ iOS Human Interface Guidelines?',
+        answer:
+          'Đây là bộ quy tắc và khuyến nghị thiết kế của Apple. Tuân thủ chúng giúp ứng dụng của bạn có giao diện và trải nghiệm người dùng nhất quán, quen thuộc với người dùng iOS, từ đó tăng khả năng được chấp nhận và đánh giá cao trên App Store.',
+      },
+    ],
     realWorldApplications: [
       'Banking apps như VietinBank iPay, ACB Mobile',
       'E-commerce apps như Tiki, Sendo',
@@ -106,6 +123,23 @@ const lessons: MobileAppDevelopmentLesson[] = [
       'Programming fundamentals (preferably Java or Kotlin)',
       'Android Studio setup',
       'Basic understanding của Android platform',
+    ],
+    faqs: [
+      {
+        question: 'Tại sao nên dùng Kotlin thay vì Java để phát triển Android?',
+        answer:
+          'Kotlin là ngôn ngữ được Google chính thức đề xuất cho phát triển Android. Nó ngắn gọn, an toàn hơn (giảm lỗi NullPointerException), và có nhiều tính năng hiện đại hơn Java, giúp tăng năng suất và làm cho code dễ đọc, dễ bảo trì hơn.',
+      },
+      {
+        question: 'Jetpack Compose là gì?',
+        answer:
+          'Jetpack Compose là bộ công cụ UI hiện đại của Android để xây dựng giao diện người dùng native. Giống như SwiftUI của iOS, nó cho phép bạn xây dựng UI bằng cách khai báo bằng code Kotlin, giúp quá trình phát triển nhanh hơn và đơn giản hơn so với cách dùng XML layout truyền thống.',
+      },
+      {
+        question: 'Room database là gì?',
+        answer:
+          'Room là một thư viện trong bộ Android Jetpack, cung cấp một lớp trừu tượng trên SQLite để cho phép truy cập cơ sở dữ liệu một cách mạnh mẽ hơn trong khi vẫn khai thác toàn bộ sức mạnh của SQLite. Nó giúp giảm code soạn sẵn và xác minh các truy vấn SQL tại thời điểm biên dịch.',
+      },
     ],
     realWorldApplications: [
       'E-commerce apps như Shopee, Lazada',
@@ -137,6 +171,23 @@ const lessons: MobileAppDevelopmentLesson[] = [
       'Basic mobile app development concepts',
       'Flutter SDK installed',
     ],
+    faqs: [
+      {
+        question: 'Flutter là gì và nó khác React Native như thế nào?',
+        answer:
+          'Flutter là một bộ công cụ UI của Google để xây dựng các ứng dụng đẹp, được biên dịch tự nhiên cho di động, web và máy tính để bàn từ một cơ sở mã duy nhất. Điểm khác biệt chính là Flutter không sử dụng các widget native của HĐH mà tự vẽ toàn bộ giao diện, cho phép kiểm soát giao diện tuyệt đối và hiệu năng cao.',
+      },
+      {
+        question: 'Ngôn ngữ Dart là gì?',
+        answer:
+          'Dart là ngôn ngữ lập trình do Google tạo ra, được tối ưu hóa cho việc xây dựng giao diện người dùng. Nó có cú pháp dễ học (tương tự C/Java/JavaScript) và hỗ trợ cả biên dịch JIT (Just-In-Time) cho phát triển nhanh và AOT (Ahead-Of-Time) cho hiệu năng cao khi phát hành.',
+      },
+      {
+        question: 'Khi nào nên chọn Flutter thay vì React Native?',
+        answer:
+          'Chọn Flutter nếu bạn ưu tiên một giao diện tùy chỉnh cao, hiệu năng gần bằng native và muốn phát triển cho cả web và desktop từ cùng một codebase. Chọn React Native nếu đội ngũ của bạn đã quen thuộc với React và JavaScript, và muốn tận dụng một hệ sinh thái thư viện lớn hơn.',
+      },
+    ],
     realWorldApplications: [
       'Startup MVP development',
       'Cross-platform utility apps',
@@ -166,6 +217,23 @@ const lessons: MobileAppDevelopmentLesson[] = [
       'Published mobile app experience',
       'Basic marketing knowledge',
       'Understanding của mobile app ecosystem',
+    ],
+    faqs: [
+      {
+        question: 'App Store Optimization (ASO) là gì?',
+        answer:
+          'ASO là quá trình tối ưu hóa trang ứng dụng của bạn trên App Store và Google Play để tăng khả năng hiển thị khi người dùng tìm kiếm và tăng tỷ lệ chuyển đổi (tải xuống). Nó giống như SEO (Tối ưu hóa công cụ tìm kiếm) nhưng dành cho cửa hàng ứng dụng.',
+      },
+      {
+        question: 'Các yếu tố quan trọng nhất trong ASO là gì?',
+        answer:
+          'Các yếu tố chính bao gồm: tên ứng dụng (app title), từ khóa (keywords), mô tả (description), biểu tượng (icon), ảnh chụp màn hình (screenshots), và video xem trước. Ngoài ra, xếp hạng (ratings) và đánh giá (reviews) của người dùng cũng ảnh hưởng rất lớn đến ASO.',
+      },
+      {
+        question: 'Làm thế nào để tăng lượt tải ứng dụng ở thị trường Việt Nam?',
+        answer:
+          'Ngoài ASO, hãy xem xét các kênh marketing khác như quảng cáo trên mạng xã hội (Facebook, TikTok), hợp tác với các KOLs/Influencer Việt Nam, chạy các chiến dịch PR trên các trang báo công nghệ, và tạo ra các chương trình giới thiệu (referral) để khuyến khích người dùng hiện tại mời bạn bè.',
+      },
     ],
     realWorldApplications: [
       'Mobile app marketing campaigns',

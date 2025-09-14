@@ -65,6 +65,18 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
           'Nông nghiệp bền vững tìm cách cân bằng giữa lợi ích kinh tế, trách nhiệm xã hội và bảo vệ môi trường, chứ không chỉ tập trung vào việc tối đa hóa năng suất mà bỏ qua các yếu tố khác.',
       },
     ],
+    faqs: [
+      {
+        question: 'AgriTech là gì?',
+        answer:
+          'AgriTech (Agricultural Technology) là việc ứng dụng công nghệ hiện đại vào nông nghiệp để tăng năng suất, hiệu quả và tính bền vững. Nó bao gồm mọi thứ từ cảm biến IoT, drone, robot, đến phần mềm quản lý và công nghệ sinh học.',
+      },
+      {
+        question: 'Tại sao nông nghiệp bền vững lại quan trọng với Việt Nam?',
+        answer:
+          'Việt Nam là một trong những quốc gia dễ bị tổn thương nhất bởi biến đổi khí hậu. Nông nghiệp bền vững giúp giảm phát thải khí nhà kính, bảo vệ tài nguyên nước và đất, đồng thời giúp nông dân thích ứng tốt hơn với các điều kiện thời tiết khắc nghiệt, đảm bảo an ninh lương thực lâu dài.',
+      },
+    ],
   },
   {
     id: 'iot-sensors-in-farming',
@@ -131,6 +143,18 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
           'IoT (Internet of Things) hay "Mạng lưới vạn vật kết nối" là một mạng lưới các thiết bị vật lý được tích hợp cảm biến, phần mềm và các công nghệ khác để kết nối và trao đổi dữ liệu với nhau qua Internet.',
       },
     ],
+    faqs: [
+      {
+        question: 'Một hệ thống tưới tiêu thông minh hoạt động như thế nào?',
+        answer:
+          'Một cảm biến độ ẩm được đặt trong đất sẽ liên tục đo lượng nước. Dữ liệu này được gửi đến một bộ điều khiển trung tâm. Khi độ ẩm giảm xuống dưới ngưỡng cài đặt, bộ điều khiển sẽ tự động kích hoạt máy bơm hoặc van nước để tưới cây. Khi đất đủ ẩm, hệ thống sẽ tự tắt. Điều này giúp tiết kiệm nước và đảm bảo cây luôn nhận đủ lượng nước cần thiết.',
+      },
+      {
+        question: 'Chi phí để lắp đặt một hệ thống IoT cho trang trại có đắt không?',
+        answer:
+          'Chi phí ban đầu có thể là một rào cản, nhưng đang giảm dần. Đối với quy mô nhỏ, bạn có thể bắt đầu với các bộ kit Arduino/Raspberry Pi giá rẻ. Đối với quy mô lớn, lợi ích từ việc tiết kiệm nước, phân bón và tăng năng suất thường sẽ bù đắp chi phí đầu tư trong dài hạn. Nhiều công ty AgriTech Việt Nam cũng cung cấp các gói dịch vụ cho thuê thay vì mua đứt.',
+      },
+    ],
   },
   {
     id: 'drones-and-precision-agriculture',
@@ -194,6 +218,18 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
           'NDVI là một chỉ số quan trọng được tính toán từ hình ảnh vệ tinh hoặc drone, dựa trên cách thực vật phản xạ ánh sáng cận hồng ngoại và ánh sáng đỏ. Chỉ số NDVI cao thường cho thấy cây trồng khỏe mạnh và phát triển tốt.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sử dụng drone trong nông nghiệp có hợp pháp ở Việt Nam không?',
+        answer:
+          'Có, nhưng cần tuân thủ các quy định. Người điều khiển drone cần được đào tạo và có giấy phép bay. Các chuyến bay cần được đăng ký và cấp phép bởi cơ quan quản lý bay. Các công ty cung cấp dịch vụ drone chuyên nghiệp thường sẽ lo các thủ tục pháp lý này cho nông dân.',
+      },
+      {
+        question: 'Drone có thể thay thế hoàn toàn con người trong việc phun thuốc không?',
+        answer:
+          'Ở nhiều khía cạnh, drone vượt trội hơn, đặc biệt là về tốc độ, khả năng tiếp cận địa hình khó và giảm thiểu sự tiếp xúc của con người với hóa chất. Tuy nhiên, con người vẫn đóng vai trò quan trọng trong việc phân tích dữ liệu, lập kế hoạch bay, bảo trì thiết bị và đưa ra quyết định cuối cùng. Drone là một công cụ mạnh mẽ, không phải là sự thay thế hoàn toàn.',
+      },
+    ],
   },
   {
     id: 'circular-economy-in-agriculture',
@@ -254,6 +290,18 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
         correctAnswerIndex: 0,
         explanation:
           'Mô hình VAC là một hệ thống nông nghiệp bền vững truyền thống của Việt Nam, bao gồm Vườn (trồng cây), Ao (nuôi cá), và Chuồng (nuôi gia súc, gia cầm). Hệ thống này giúp tuần hoàn chất dinh dưỡng và năng lượng trong nông nghiệp.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Kinh tế tuần hoàn khác gì với tái chế?',
+        answer:
+          'Tái chế chỉ là một phần của kinh tế tuần hoàn. Kinh tế tuần hoàn là một khái niệm rộng hơn, bao gồm việc thiết kế các sản phẩm và hệ thống ngay từ đầu để giảm thiểu chất thải, tái sử dụng, sửa chữa, và cuối cùng là tái chế. Nó hướng tới việc loại bỏ hoàn toàn khái niệm "rác thải".',
+      },
+      {
+        question: 'Làm thế nào để áp dụng kinh tế tuần hoàn tại nhà?',
+        answer:
+          'Bạn có thể bắt đầu bằng những việc đơn giản như ủ phân compost từ rác nhà bếp để bón cho cây trồng, tận dụng nước vo gạo để tưới cây, hoặc xây dựng một hệ thống aquaponics nhỏ (kết hợp nuôi cá và trồng rau) trên ban công. Quan trọng nhất là thay đổi tư duy, xem "chất thải" là "tài nguyên".',
       },
     ],
   },

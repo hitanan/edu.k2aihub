@@ -307,6 +307,28 @@ export const greenTechLessons: GreenTechLesson[] = [
           'Điện toán biên giúp giảm độ trễ và tiết kiệm băng thông bằng cách xử lý dữ liệu ngay tại "biên" của mạng, gần các thiết bị IoT, thay vì phải gửi tất cả dữ liệu thô lên máy chủ trung tâm để xử lý.',
       },
     ],
+    faqs: [
+      {
+        question: 'Thành phố thông minh (Smart City) là gì?',
+        answer:
+          'Thành phố thông minh là một khu vực đô thị sử dụng các loại cảm biến và phương pháp điện tử khác nhau để thu thập dữ liệu. Thông tin chi tiết thu được từ dữ liệu đó được sử dụng để quản lý tài sản, tài nguyên và dịch vụ một cách hiệu quả; đổi lại, dữ liệu đó được sử dụng để cải thiện hoạt động trên toàn thành phố.',
+      },
+      {
+        question: 'IoT đóng vai trò gì trong thành phố thông minh?',
+        answer:
+          'IoT (Internet of Things) là xương sống của thành phố thông minh. Nó bao gồm một mạng lưới các thiết bị được kết nối (cảm biến, camera, đồng hồ thông minh) thu thập và truyền dữ liệu thời gian thực về mọi thứ, từ luồng giao thông, chất lượng không khí đến việc sử dụng năng lượng. Dữ liệu này cho phép các nhà quản lý thành phố đưa ra quyết định sáng suốt.',
+      },
+      {
+        question: 'Làm thế nào một thành phố thông minh có thể cải thiện cuộc sống của người dân?',
+        answer:
+          'Một thành phố thông minh có thể cải thiện cuộc sống bằng cách giảm tắc nghẽn giao thông thông qua quản lý giao thông thông minh, cải thiện chất lượng không khí bằng cách giám sát ô nhiễm, tăng cường an toàn công cộng với hệ thống giám sát thông minh và làm cho các dịch vụ của chính phủ hiệu quả và dễ tiếp cận hơn.',
+      },
+      {
+        question: 'Những thách thức lớn nhất trong việc xây dựng thành phố thông minh ở Việt Nam là gì?',
+        answer:
+          'Những thách thức chính bao gồm nhu cầu đầu tư cơ sở hạ tầng lớn, đảm bảo an ninh mạng và quyền riêng tư dữ liệu, thiếu các tiêu chuẩn và quy định thống nhất, và cần có sự phối hợp đồng bộ giữa nhiều cơ quan chính phủ khác nhau.',
+      },
+    ],
     exercises: [
       {
         title: 'Hệ thống Quản lý Giao thông Thông minh',

@@ -350,6 +350,28 @@ export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLesson[] = [
           'Với lượng người dùng trẻ khổng lồ và thuật toán ưu tiên sự lan truyền, TikTok đã trở thành "cỗ máy tạo trend" chính trong văn hóa số Việt Nam. Việc nắm bắt và dự báo các xu hướng này là chìa khóa để tiếp cận đối tượng khách hàng trẻ.',
       },
     ],
+    faqs: [
+      {
+        question: 'Phân tích dự báo có phải là "đoán mò" không?',
+        answer:
+          'Không hề. Phân tích dự báo không phải là đoán mò mà là một khoa học. Nó sử dụng các mô hình toán học và thống kê để tìm ra các quy luật và xu hướng từ dữ liệu quá khứ, từ đó đưa ra những dự đoán có xác suất cao về tương lai. Độ chính xác của dự báo phụ thuộc rất nhiều vào chất lượng và số lượng của dữ liệu đầu vào.',
+      },
+      {
+        question: 'Tôi cần những kỹ năng gì để làm về phân tích dự báo?',
+        answer:
+          'Bạn sẽ cần kiến thức về thống kê, hiểu biết về các thuật toán machine learning (như hồi quy, cây quyết định), và kỹ năng lập trình (thường là Python hoặc R). Quan trọng không kém là tư duy kinh doanh để hiểu bối cảnh và đặt ra những câu hỏi đúng cho dữ liệu.',
+      },
+      {
+        question: 'Một ví dụ đơn giản về phân tích dự báo trong marketing?',
+        answer:
+          'Một ví dụ kinh điển là "phân tích giỏ hàng". Bằng cách phân tích lịch sử mua hàng, siêu thị có thể dự báo rằng những khách hàng mua tã lót cũng có khả năng cao sẽ mua bia. Từ đó, họ có thể đặt hai sản phẩm này gần nhau để tăng doanh số. Đây là một dạng dự báo về hành vi mua sắm.',
+      },
+      {
+        question: 'Làm thế nào để một doanh nghiệp có thể bắt đầu với phân tích dự báo khi có ít dữ liệu?',
+        answer:
+          'Hãy bắt đầu thu thập dữ liệu một cách có hệ thống ngay từ bây giờ. Ngay cả với dữ liệu nhỏ, bạn vẫn có thể bắt đầu với các mô hình đơn giản như phân tích xu hướng (trend analysis) trên Google Analytics. Khi lượng dữ liệu tăng lên, bạn có thể triển khai các mô hình phức tạp hơn. Đừng đợi có "dữ liệu lớn" mới hành động.',
+      },
+    ],
   },
 ];
 

@@ -180,6 +180,18 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
           'Brand Guidelines là tài liệu cốt lõi, hướng dẫn cách sử dụng các yếu tố thương hiệu (logo, màu sắc, font chữ) một cách nhất quán, giúp xây dựng hình ảnh chuyên nghiệp và dễ nhận biết.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt cơ bản giữa đồ họa vector và raster là gì?',
+        answer:
+          'Đồ họa Raster (như ảnh JPEG, PNG) được tạo thành từ các pixel, khi phóng to sẽ bị vỡ hình. Đồ họa Vector (như file AI, SVG) được tạo từ các phương trình toán học, có thể phóng to vô hạn mà không mất chất lượng. Logo và các biểu tượng thường được thiết kế dưới dạng vector.',
+      },
+      {
+        question: 'Tại sao việc hiểu đối tượng mục tiêu lại quan trọng trong thiết kế thương hiệu?',
+        answer:
+          'Hiểu đối tượng mục tiêu giúp nhà thiết kế lựa chọn màu sắc, font chữ, và phong cách hình ảnh phù hợp, tạo ra một bản sắc thương hiệu có thể kết nối và giao tiếp hiệu quả với nhóm khách hàng mà doanh nghiệp muốn hướng tới.',
+      },
+    ],
   },
   {
     id: 'video-production-editing',
@@ -290,6 +302,18 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
           'B-roll là những cảnh quay bổ sung, không phải là cảnh quay chính (A-roll). Nó giúp video trở nên sinh động hơn, che đi các lỗi cắt ghép và cung cấp thêm ngữ cảnh cho người xem.',
       },
     ],
+    faqs: [
+      {
+        question: 'Quy tắc 180 độ trong quay phim là gì?',
+        answer:
+          'Quy tắc 180 độ là một nguyên tắc cơ bản trong điện ảnh. Nó quy định rằng máy quay nên được giữ ở một phía của một đường tưởng tượng giữa hai nhân vật đang nói chuyện. Việc tuân thủ quy tắc này giúp duy trì phương hướng và không gian nhất quán, tránh làm người xem bối rối.',
+      },
+      {
+        question: 'Tại sao thiết kế âm thanh (sound design) lại quan trọng như hình ảnh trong video?',
+        answer:
+          'Âm thanh là một nửa trải nghiệm của video. Thiết kế âm thanh tốt, bao gồm nhạc nền, hiệu ứng âm thanh (SFX), và giọng nói rõ ràng, có thể tạo ra cảm xúc, dẫn dắt sự chú ý, và làm cho câu chuyện trở nên sống động và chân thực hơn rất nhiều.',
+      },
+    ],
   },
   {
     id: 'audio-production-podcasting',
@@ -388,6 +412,18 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         correctAnswerIndex: 1,
         explanation:
           'Normalization điều chỉnh âm lượng đỉnh (peak) hoặc âm lượng trung bình (RMS) của một file audio lên một mức tiêu chuẩn, giúp các file âm thanh khác nhau có độ lớn đồng đều hơn khi phát.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Mức âm lượng lý tưởng cho một podcast là bao nhiêu?',
+        answer:
+          'Tiêu chuẩn ngành công nghiệp cho podcast là khoảng -16 LUFS (Loudness Units Full Scale) cho âm thanh stereo và -19 LUFS cho mono. Việc duy trì mức âm lượng này giúp người nghe có trải nghiệm đồng nhất trên các nền tảng và thiết bị khác nhau mà không cần phải liên tục điều chỉnh âm lượng.',
+      },
+      {
+        question: 'Sự khác biệt giữa micro dynamic và condenser là gì?',
+        answer:
+          'Micro Dynamic bền hơn và ít nhạy cảm với âm thanh xung quanh, rất phù hợp cho việc thu âm trong môi trường không được xử lý âm học tốt hoặc thu âm nhiều người. Micro Condenser nhạy hơn, thu được chi tiết âm thanh tốt hơn, lý tưởng cho việc thu âm trong studio yên tĩnh để có chất giọng trong và rõ.',
       },
     ],
   },
@@ -499,6 +535,18 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
           'CTA là một yếu tố cực kỳ quan trọng, nó chỉ cho người đọc biết họ cần làm gì tiếp theo, ví dụ: "Mua ngay", "Đăng ký tư vấn", "Tải tài liệu". Một CTA rõ ràng và hấp dẫn sẽ quyết định hiệu quả của một bài quảng cáo.',
       },
     ],
+    faqs: [
+      {
+        question: 'Mô hình AIDA trong copywriting là gì?',
+        answer:
+          'AIDA là một công thức kinh điển trong copywriting, viết tắt của Attention (Gây chú ý), Interest (Tạo sự quan tâm), Desire (Khơi gợi ham muốn), và Action (Kêu gọi hành động). Nó là một cấu trúc hiệu quả để dẫn dắt người đọc từ lúc họ chú ý đến quảng cáo cho đến khi thực hiện hành động mong muốn.',
+      },
+      {
+        question: 'Làm thế nào để viết một tiêu đề hấp dẫn?',
+        answer:
+          'Một tiêu đề tốt thường tập trung vào lợi ích cho người đọc, sử dụng con số cụ thể, tạo sự tò mò, hoặc đặt một câu hỏi khơi gợi. Ví dụ: "5 Cách Đơn Giản Để Tăng Gấp Đôi Năng Suất" hiệu quả hơn nhiều so với "Cách Để Năng Suất Hơn".',
+      },
+    ],
   },
   {
     id: 'photography-visual-storytelling',
@@ -601,6 +649,18 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         correctAnswerIndex: 1,
         explanation:
           'Tam giác phơi sáng là khái niệm cơ bản nhất trong nhiếp ảnh, bao gồm Khẩu độ (Aperture), Tốc độ màn trập (Shutter Speed) và ISO. Việc hiểu và cân bằng ba yếu tố này là chìa khóa để kiểm soát độ sáng của bức ảnh.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Quy tắc một phần ba (Rule of Thirds) trong nhiếp ảnh là gì?',
+        answer:
+          'Đó là một nguyên tắc bố cục cơ bản. Bạn chia khung hình thành 9 phần bằng nhau bởi hai đường ngang và hai đường dọc. Đặt các yếu tố quan trọng của cảnh dọc theo các đường này hoặc tại giao điểm của chúng sẽ tạo ra một bố cục cân bằng và hấp dẫn hơn về mặt thị giác.',
+      },
+      {
+        question: 'Sự khác biệt giữa chụp ảnh định dạng RAW và JPEG là gì?',
+        answer:
+          'JPEG là một file ảnh đã được nén và xử lý bởi máy ảnh, sẵn sàng để sử dụng ngay. RAW là một file chứa toàn bộ dữ liệu chưa qua xử lý từ cảm biến của máy ảnh. Chụp RAW cho phép bạn có nhiều sự linh hoạt hơn trong quá trình hậu kỳ (chỉnh sửa màu sắc, độ sáng,...) nhưng dung lượng file lớn hơn nhiều.',
       },
     ],
   },

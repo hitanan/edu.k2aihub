@@ -339,6 +339,28 @@ export const lessons: BaseLessonData[] = [
           'Keyframes là nền tảng của animation trong After Effects. Bằng cách đặt các keyframe tại các thời điểm khác nhau, bạn ra lệnh cho phần mềm tự động tạo ra chuyển động giữa các trạng thái đó.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt giữa Motion Graphics và Animation truyền thống là gì?',
+        answer:
+          'Animation truyền thống thường tập trung vào việc kể một câu chuyện có nhân vật (ví dụ: phim hoạt hình Disney). Motion Graphics tập trung vào việc làm cho các đối tượng đồ họa (văn bản, logo, hình khối) chuyển động một cách hấp dẫn, thường dùng trong video giải thích, quảng cáo, hoặc giao diện người dùng.',
+      },
+      {
+        question: 'Tôi có cần phải biết vẽ để làm Motion Graphics không?',
+        answer:
+          'Không nhất thiết. Nhiều tác phẩm motion graphics xuất sắc được tạo ra từ các hình khối cơ bản, văn bản và hình ảnh có sẵn. Kỹ năng quan trọng hơn là tư duy về nhịp điệu, thời gian (timing), và bố cục chuyển động. Tuy nhiên, biết vẽ sẽ là một lợi thế lớn.',
+      },
+      {
+        question: 'Học After Effects có khó không?',
+        answer:
+          'After Effects là một phần mềm rất mạnh và có nhiều tính năng, vì vậy nó có thể gây choáng ngợp lúc đầu. Tuy nhiên, bạn có thể bắt đầu với những khái niệm cơ bản như keyframes, layers, và các hiệu ứng đơn giản. Có rất nhiều tài nguyên học tập trực tuyến miễn phí để bạn bắt đầu.',
+      },
+      {
+        question: 'Làm thế nào để video motion graphics của tôi trông chuyên nghiệp hơn?',
+        answer:
+          'Hãy chú ý đến các nguyên tắc animation, đặc biệt là "easing" (làm cho chuyển động mượt mà, không bị đột ngột). Sử dụng một bảng màu nhất quán, chọn font chữ phù hợp, và đầu tư vào chất lượng âm thanh (nhạc nền và hiệu ứng âm thanh) sẽ nâng tầm sản phẩm của bạn một cách đáng kể.',
+      },
+    ],
   },
   {
     id: 'generative-ai-art',
@@ -495,6 +517,28 @@ export const lessons: BaseLessonData[] = [
           'Midjourney được cộng đồng đánh giá cao về khả năng tạo ra những hình ảnh có tính thẩm mỹ cao, nghệ thuật và thường được sử dụng trong các lĩnh vực như concept art, thiết kế và minh họa.',
       },
     ],
+    faqs: [
+      {
+        question: 'AI có "sáng tạo" thực sự không, hay nó chỉ sao chép?',
+        answer:
+          'Đây là một câu hỏi triết học. Các mô hình AI hiện tại không "sao chép" theo cách con người hiểu. Chúng học hỏi các mẫu, phong cách, và mối liên hệ từ một lượng dữ liệu khổng lồ, sau đó "tái tổ hợp" chúng để tạo ra một cái gì đó mới dựa trên yêu cầu của bạn. Nó giống như một người nghệ sĩ đã xem hàng triệu bức tranh và sau đó vẽ một bức tranh mới theo phong cách đã học.',
+      },
+      {
+        question: 'Tôi có sở hữu bản quyền của hình ảnh do AI tạo ra không?',
+        answer:
+          'Luật bản quyền về AI art vẫn đang phát triển và khác nhau ở mỗi quốc gia. Tại Mỹ, các tác phẩm hoàn toàn do AI tạo ra không được bảo hộ bản quyền. Tuy nhiên, nếu có sự can thiệp và sáng tạo đáng kể của con người (ví dụ: chỉnh sửa, kết hợp nhiều hình ảnh), bạn có thể có quyền sở hữu. Các dịch vụ như Midjourney có các điều khoản sử dụng riêng về quyền sở hữu, bạn nên đọc kỹ.',
+      },
+      {
+        question: 'Làm thế nào để tạo ra các nhân vật nhất quán qua nhiều hình ảnh khác nhau?',
+        answer:
+          'Đây là một trong những thách thức lớn nhất của AI art. Các kỹ thuật tiên tiến bao gồm việc sử dụng "seed" (một con số khởi tạo) giống nhau cho các lần tạo ảnh, và sử dụng các tham số như "--cref" (Character Reference) trong Midjourney để yêu cầu AI tham chiếu đến một hình ảnh nhân vật có sẵn.',
+      },
+      {
+        question: 'AI có thay thế hoàn toàn các nghệ sĩ con người không?',
+        answer:
+          'Hầu hết các chuyên gia tin rằng AI sẽ trở thành một công cụ mạnh mẽ cho nghệ sĩ, chứ không thay thế họ. Nó giúp tăng tốc quá trình lên ý tưởng, thử nghiệm các phong cách khác nhau, và tự động hóa các công việc tốn thời gian. Vai trò của nghệ sĩ sẽ chuyển dịch sang việc định hướng sáng tạo, lựa chọn và tinh chỉnh kết quả do AI tạo ra.',
+      },
+    ],
   },
   {
     id: 'immersive-media-production',
@@ -629,7 +673,7 @@ export const lessons: BaseLessonData[] = [
     quizzes: [
       {
         question:
-          'Công nghệ nào cho phép hiển thị các đối tượng ảo trong môi trường thực tế thông qua camera của điện thoại?',
+          'Công nghệ nào cho phép hiển thị các đối tượng ảo trong môi trường thực tế thông qua điện thoại của người dùng?',
         options: ['Virtual Reality (VR)', 'Augmented Reality (AR)', '360° Video', 'Spatial Audio'],
         correctAnswerIndex: 1,
         explanation:
@@ -641,6 +685,28 @@ export const lessons: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Unity 3D, cùng với Unreal Engine, là hai game engine hàng đầu thế giới, cung cấp bộ công cụ mạnh mẽ để xây dựng các trải nghiệm 2D, 3D, VR và AR tương tác.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Sự khác biệt chính giữa VR (Thực tế ảo) và AR (Thực tế tăng cường) là gì?',
+        answer:
+          'VR thay thế hoàn toàn môi trường của bạn bằng một thế giới ảo, bạn cần đeo một chiếc kính che kín mắt. AR thì ngược lại, nó "phủ" hoặc "thêm" các yếu-tố-ảo vào thế-giới-thực mà bạn đang thấy, thường là qua camera của điện thoại hoặc kính trong suốt.',
+      },
+      {
+        question: 'Tôi có cần một máy tính rất mạnh để bắt đầu với VR/AR không?',
+        answer:
+          'Để phát triển (development) các ứng dụng VR/AR phức tạp, bạn cần một máy tính có card đồ họa mạnh. Tuy nhiên, để trải nghiệm, có những lựa chọn không cần máy tính như kính Oculus Quest (nay là Meta Quest), hoặc bạn có thể bắt đầu với AR ngay trên chiếc điện thoại thông minh của mình.',
+      },
+      {
+        question: 'WebXR là gì và tại sao nó quan trọng?',
+        answer:
+          'WebXR là một chuẩn web cho phép tạo ra các trải nghiệm VR và AR chạy trực tiếp trên trình duyệt web, không cần cài đặt ứng dụng riêng. Điều này giúp việc tiếp cận nội dung VR/AR trở nên dễ dàng và nhanh chóng hơn rất nhiều.',
+      },
+      {
+        question: 'Ngoài giải trí, VR/AR có những ứng dụng thực tế nào khác?',
+        answer:
+          'Rất nhiều! Trong y tế, VR được dùng để đào tạo phẫu thuật. Trong kiến trúc, nó giúp khách hàng "đi bộ" trong ngôi nhà chưa xây. Trong giáo dục, học sinh có thể "du hành" đến các di tích lịch sử. Trong công nghiệp, công nhân được đào tạo vận hành máy móc phức tạp trong môi trường an toàn.',
       },
     ],
   },
@@ -801,6 +867,28 @@ export const lessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Portfolio là "bộ mặt" của một nhà sáng tạo. Nó không chỉ trưng bày các tác phẩm tốt nhất mà còn thể hiện năng lực, kinh nghiệm và phong cách độc đáo, là yếu tố quyết định để khách hàng hoặc nhà tuyển dụng lựa chọn bạn.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để định giá cho sản phẩm/dịch vụ sáng tạo của mình?',
+        answer:
+          'Đây là một câu hỏi khó. Có nhiều cách tiếp cận: 1/ Định giá theo giờ: tính toán chi phí vận hành mỗi giờ và cộng thêm lợi nhuận. 2/ Định giá theo dự án: ước tính tổng thời gian và công sức cho toàn bộ dự án. 3/ Định giá dựa trên giá trị: xem xét giá trị và lợi ích mà sản phẩm của bạn mang lại cho khách hàng. Hãy nghiên cứu thị trường để xem các đối thủ cạnh tranh đang định giá như thế nào.',
+      },
+      {
+        question: 'Là một freelancer, làm sao để tìm kiếm khách hàng đầu tiên?',
+        answer:
+          'Hãy bắt đầu với mạng lưới quan hệ của bạn: bạn bè, gia đình, đồng nghiệp cũ. Xây dựng một portfolio trực tuyến chuyên nghiệp trên các nền tảng như Behance, Dribbble. Tham gia các cộng đồng trực tuyến liên quan đến lĩnh vực của bạn. Đừng ngại làm một vài dự án nhỏ với giá ưu đãi hoặc thậm chí miễn phí để xây dựng portfolio và lấy kinh nghiệm.',
+      },
+      {
+        question: 'Tôi có nên chuyên môn hóa vào một lĩnh vực hẹp không?',
+        answer:
+          'Khi mới bắt đầu, việc thử nghiệm nhiều lĩnh vực có thể giúp bạn khám phá ra thế mạnh của mình. Tuy nhiên, về lâu dài, việc chuyên môn hóa (ví dụ: chỉ thiết kế logo cho ngành F&B, hoặc chỉ làm animation cho các công ty công nghệ) thường giúp bạn trở thành chuyên gia trong lĩnh vực đó, dễ dàng định vị thương hiệu và thu hút đúng đối tượng khách hàng hơn.',
+      },
+      {
+        question: 'Hợp đồng có thực sự cần thiết khi làm việc với khách hàng không?',
+        answer:
+          'CỰC KỲ CẦN THIẾT, ngay cả với những dự án nhỏ nhất. Một hợp đồng rõ ràng sẽ bảo vệ cả bạn và khách hàng. Nó nên quy định rõ về phạm vi công việc, số lần chỉnh sửa, thời hạn, chi phí, và các điều khoản thanh toán. Điều này giúp tránh những hiểu lầm và tranh chấp không đáng có sau này.',
       },
     ],
   },

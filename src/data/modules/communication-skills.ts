@@ -243,6 +243,28 @@ export const communicationSkillsLessons: BaseLessonData[] = [
           'Mentimeter và Slido là các nền tảng phổ biến cho phép người thuyết trình tạo các cuộc thăm dò ý kiến (polls), hỏi đáp (Q&A), và các đám mây từ (word clouds) để thu hút sự tham gia và nhận phản hồi trực tiếp từ khán giả trong thời gian thực.',
       },
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào để thiết kế một slide thuyết trình hiệu quả, không bị rối mắt?',
+        answer:
+          'Hãy tuân thủ quy tắc "ít hơn là nhiều hơn". Mỗi slide chỉ nên truyền tải một ý tưởng chính. Sử dụng hình ảnh chất lượng cao, font chữ dễ đọc, và hạn chế lượng văn bản. Sử dụng không gian trắng một cách chiến lược để tạo sự thoáng đãng và tập trung vào nội dung quan trọng.',
+      },
+      {
+        question: 'Sự khác biệt giữa thuyết trình trực tiếp và thuyết trình ảo là gì?',
+        answer:
+          'Thuyết trình ảo đòi hỏi bạn phải nỗ lực hơn để giữ sự chú ý của khán giả vì có nhiều yếu tố gây xao nhãng. Bạn cần sử dụng giọng điệu đa dạng hơn, tích cực sử dụng các công cụ tương tác (polls, Q&A), và thường xuyên kiểm tra sự tương tác của khán giả.',
+      },
+      {
+        question: 'Tôi nên sử dụng công cụ nào: PowerPoint, Google Slides, hay Canva?',
+        answer:
+          'PowerPoint mạnh về các tính năng tùy chỉnh và hoạt ảnh phức tạp. Google Slides tuyệt vời cho việc cộng tác theo thời gian thực. Canva rất mạnh về thiết kế trực quan, cung cấp nhiều mẫu đẹp và dễ sử dụng ngay cả khi bạn không phải là nhà thiết kế chuyên nghiệp. Hãy chọn công cụ phù hợp nhất với nhu cầu và kỹ năng của bạn.',
+      },
+      {
+        question: 'Làm thế nào để xử lý các câu hỏi khó từ khán giả?',
+        answer:
+          'Hãy giữ bình tĩnh và lắng nghe kỹ câu hỏi. Nếu bạn không biết câu trả lời, hãy thành thật thừa nhận và hứa sẽ tìm hiểu sau. Bạn có thể diễn giải lại câu hỏi để đảm bảo mình hiểu đúng, hoặc thậm chí hỏi lại khán giả xem có ai có kinh nghiệm về vấn đề đó không. Sự trung thực luôn được đánh giá cao hơn là một câu trả lời sai.',
+      },
+    ],
   },
   {
     id: 'cross-cultural-communication',
@@ -346,6 +368,28 @@ export const communicationSkillsLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Trong các nền văn hóa high-context (ví dụ: Nhật Bản, Việt Nam), thông điệp thường không được nói ra một cách trực tiếp. Người nghe cần phải dựa vào ngữ cảnh, mối quan hệ, và các tín hiệu phi ngôn ngữ để hiểu đầy đủ ý nghĩa. Ngược lại, văn hóa low-context (ví dụ: Mỹ, Đức) ưa chuộng giao tiếp trực tiếp và rõ ràng.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Trí tuệ văn hóa (Cultural Intelligence - CQ) là gì?',
+        answer:
+          'CQ là khả năng của một người hoạt động và quản lý hiệu quả trong các môi trường đa dạng về văn hóa. Nó bao gồm bốn yếu tố: CQ Drive (động lực), CQ Knowledge (kiến thức), CQ Strategy (chiến lược), và CQ Action (hành động).',
+      },
+      {
+        question: 'Làm thế nào để tránh hiểu lầm khi giao tiếp với người có trình độ tiếng Anh khác nhau?',
+        answer:
+          'Hãy nói chậm và rõ ràng, tránh dùng tiếng lóng hoặc thành ngữ phức tạp. Sử dụng các câu đơn giản. Kiên nhẫn lắng nghe và đừng ngại yêu cầu họ lặp lại hoặc diễn giải. Sử dụng các công cụ hỗ trợ trực quan như hình ảnh hoặc văn bản cũng rất hữu ích.',
+      },
+      {
+        question: 'Sốc văn hóa là gì và làm thế nào để đối phó với nó?',
+        answer:
+          'Sốc văn hóa là cảm giác mất phương hướng khi một người đột nhiên phải đối mặt với một lối sống hoặc nền văn hóa xa lạ. Để đối phó, hãy tìm hiểu về nền văn hóa mới trước khi đến, giữ một tâm trí cởi mở, tìm kiếm bạn bè (cả người địa phương và người nước ngoài khác), và duy trì các thói quen quen thuộc để giữ sự cân bằng.',
+      },
+      {
+        question: 'Tại sao việc hiểu về các chiều văn hóa của Hofstede lại hữu ích?',
+        answer:
+          'Mô hình của Hofstede (bao gồm Khoảng cách quyền lực, Chủ nghĩa cá nhân vs. Tập thể, v.v.) cung cấp một khung sườn để hiểu và so sánh các giá trị văn hóa khác nhau. Nó giúp bạn dự đoán các phong cách giao tiếp và hành vi tiềm ẩn, từ đó điều chỉnh cách tiếp cận của mình để tương tác hiệu quả hơn.',
       },
     ],
   },

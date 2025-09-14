@@ -119,6 +119,18 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
           'eDoctor tập trung vào việc cung cấp dịch vụ tư vấn từ xa (telemedicine), giúp người dùng tiếp cận bác sĩ một cách thuận tiện cho các nhu cầu chăm sóc sức khỏe ban đầu, giảm tải cho bệnh viện.',
       },
     ],
+    faqs: [
+      {
+        question: 'Bệnh án điện tử (EHR) là gì và lợi ích của nó là gì?',
+        answer:
+          'Bệnh án điện tử (Electronic Health Record) là phiên bản số của bệnh án giấy. Nó chứa toàn bộ lịch sử khám chữa bệnh của một bệnh nhân. Lợi ích chính là giúp các bác sĩ ở các bệnh viện khác nhau có thể truy cập thông tin sức khỏe của bệnh nhân một cách nhanh chóng và đầy đủ, tránh các xét nghiệm trùng lặp, giảm sai sót y khoa và cải thiện chất lượng điều trị.',
+      },
+      {
+        question: 'Telemedicine (Khám chữa bệnh từ xa) có thể thay thế hoàn toàn việc đến bệnh viện không?',
+        answer:
+          'Không. Telemedicine rất hiệu quả cho việc tư vấn, theo dõi các bệnh mãn tính, chăm sóc sức khỏe tâm thần và các vấn đề không khẩn cấp. Tuy nhiên, nó không thể thay thế việc khám trực tiếp trong các trường hợp cấp cứu, cần làm các thủ tục, hoặc các chẩn đoán đòi hỏi sự thăm khám vật lý.',
+      },
+    ],
     resources: [
       {
         title: 'Bộ Y tế Việt Nam',

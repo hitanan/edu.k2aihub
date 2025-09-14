@@ -233,6 +233,28 @@ export const ethicalMarketingPurposeModule: ModuleData = {
           type: 'Tham khảo pháp lý',
         },
       ],
+      faqs: [
+        {
+          question: 'Marketing đạo đức là gì?',
+          answer:
+            'Marketing đạo đức là quá trình truyền thông, quảng bá và bán sản phẩm/dịch vụ một cách trung thực, công bằng và có trách nhiệm. Nó không chỉ tuân thủ pháp luật mà còn dựa trên các nguyên tắc đạo đức, tôn trọng người tiêu dùng, xã hội và môi trường.',
+        },
+        {
+          question: 'Tại sao marketing đạo đức lại quan trọng hơn bao giờ hết?',
+          answer:
+            'Trong thời đại thông tin, người tiêu dùng ngày càng thông thái và có ý thức hơn. Họ yêu cầu sự minh bạch và có xu hướng ủng hộ các thương hiệu có đạo đức. Marketing đạo đức giúp xây dựng lòng tin, uy tín và lòng trung thành của khách hàng, tạo ra lợi thế cạnh tranh bền vững.',
+        },
+        {
+          question: 'Làm thế nào để phân biệt giữa marketing đạo đức và các chiêu trò marketing?',
+          answer:
+            'Marketing đạo đức tập trung vào việc tạo ra giá trị thực sự cho khách hàng và xã hội, dựa trên sự trung thực và minh bạch. Ngược lại, các chiêu trò marketing thường sử dụng các kỹ thuật thao túng, thông tin gây hiểu lầm hoặc che giấu sự thật để thúc đẩy doanh số bán hàng trong ngắn hạn.',
+        },
+        {
+          question: 'Một doanh nghiệp nhỏ có thể áp dụng marketing đạo đức không?',
+          answer:
+            'Hoàn toàn có thể. Marketing đạo đức không phụ thuộc vào quy mô doanh nghiệp. Các doanh nghiệp nhỏ có thể bắt đầu bằng việc cam kết minh bạch về sản phẩm, đối xử công bằng với nhân viên và khách hàng, và tham gia vào các hoạt động cộng đồng địa phương. Sự chân thành và nhất quán là chìa khóa.',
+        },
+      ],
     },
 
     {
@@ -308,6 +330,28 @@ export const ethicalMarketingPurposeModule: ModuleData = {
           type: 'Hướng dẫn',
         },
       ],
+      faqs: [
+        {
+          question: 'Đo lường tác động xã hội (Social Impact Measurement) là gì?',
+          answer:
+            'Đo lường tác động xã hội là quá trình xác định và định lượng các hiệu quả xã hội, môi trường và kinh tế của một tổ chức hoặc một chương trình cụ thể. Nó giúp hiểu được sự thay đổi thực sự mà một sáng kiến tạo ra cho cộng đồng.',
+        },
+        {
+          question: 'Tại sao việc đo lường tác động xã hội lại quan trọng đối với một thương hiệu có mục đích?',
+          answer:
+            'Việc đo lường giúp chứng minh một cách cụ thể rằng thương hiệu đang thực hiện đúng cam kết của mình, không chỉ là lời nói. Nó cung cấp dữ liệu để cải thiện chiến lược, báo cáo cho các bên liên quan (nhà đầu tư, khách hàng), và tăng cường tính minh bạch và uy tín.',
+        },
+        {
+          question: 'Các chỉ số phổ biến để đo lường tác động xã hội là gì?',
+          answer:
+            'Các chỉ số rất đa dạng tùy thuộc vào mục tiêu của chương trình. Ví dụ có thể bao gồm: số người được hưởng lợi, mức độ cải thiện về sức khỏe hoặc giáo dục, lượng khí thải carbon giảm được, số việc làm được tạo ra cho cộng đồng yếu thế, hoặc sự thay đổi trong nhận thức của cộng đồng.',
+        },
+        {
+          question: 'Làm thế nào để bắt đầu đo lường tác động xã hội mà không cần ngân sách lớn?',
+          answer:
+            'Bạn có thể bắt đầu bằng cách xác định một vài chỉ số quan trọng nhất (Key Performance Indicators - KPIs) liên quan trực tiếp đến sứ mệnh của bạn. Sử dụng các công cụ khảo sát miễn phí (như Google Forms) để thu thập phản hồi từ người hưởng lợi, và theo dõi các dữ liệu hoạt động nội bộ. Quan trọng nhất là bắt đầu một cách đơn giản và nhất quán.',
+        },
+      ],
     },
 
     {
@@ -379,6 +423,28 @@ export const ethicalMarketingPurposeModule: ModuleData = {
           type: 'Đánh giá',
         },
       ],
+      faqs: [
+        {
+          question: 'Mô hình kinh doanh bền vững là gì?',
+          answer:
+            'Mô hình kinh doanh bền vững là một mô hình kinh doanh tạo ra giá trị cho tất cả các bên liên quan, bao gồm cả cổ đông và xã hội, bằng cách hoạt động trong giới hạn của hệ sinh thái. Nó cân bằng giữa lợi nhuận kinh tế, trách nhiệm xã hội và bảo vệ môi trường.',
+        },
+        {
+          question: 'Kinh tế tuần hoàn (Circular Economy) khác gì so với kinh tế tuyến tính truyền thống?',
+          answer:
+            'Kinh tế tuyến tính hoạt động theo mô hình "khai thác - sản xuất - vứt bỏ". Ngược lại, kinh tế tuần hoàn được thiết kế để loại bỏ lãng phí và ô nhiễm, giữ cho sản phẩm và vật liệu được sử dụng càng lâu càng tốt, và tái tạo các hệ thống tự nhiên. Nó chuyển từ mô hình sở hữu sang mô hình chia sẻ, cho thuê hoặc tái chế.',
+        },
+        {
+          question: 'Lợi ích của việc áp dụng mô hình kinh tế tuần hoàn là gì?',
+          answer:
+            'Lợi ích bao gồm giảm chi phí nguyên vật liệu, tạo ra các nguồn doanh thu mới (ví dụ từ việc bán lại sản phẩm đã qua sử dụng), tăng cường khả năng chống chịu của chuỗi cung ứng, giảm tác động môi trường, và xây dựng hình ảnh thương hiệu tích cực, sáng tạo.',
+        },
+        {
+          question: 'Làm thế nào một doanh nghiệp có thể chuyển đổi sang mô hình kinh doanh bền vững hơn?',
+          answer:
+            'Quá trình chuyển đổi có thể bắt đầu bằng các bước nhỏ như: đánh giá lại chuỗi cung ứng để ưu tiên các nhà cung cấp bền vững, thiết kế sản phẩm để dễ sửa chữa và tái chế, giảm thiểu rác thải trong quá trình sản xuất, và khám phá các mô hình kinh doanh mới như cho thuê sản phẩm thay vì bán đứt.',
+        },
+      ],
     },
 
     {
@@ -448,6 +514,28 @@ export const ethicalMarketingPurposeModule: ModuleData = {
           title: 'Các phương pháp hay nhất về Xây dựng Cộng đồng',
           url: 'https://www.communityroundtable.com/research/community-management-best-practices/',
           type: 'Phương pháp hay nhất',
+        },
+      ],
+      faqs: [
+        {
+          question: 'Người tiêu dùng có ý thức (Conscious Consumer) là ai?',
+          answer:
+            'Người tiêu dùng có ý thức là những người đưa ra quyết định mua hàng dựa trên các giá trị cá nhân của họ, ngoài các yếu tố truyền thống như giá cả và chất lượng. Họ quan tâm đến tác động xã hội, môi trường, và đạo đức của sản phẩm và thương hiệu mà họ ủng hộ.',
+        },
+        {
+          question: 'Làm thế nào để một thương hiệu có thể kết nối hiệu quả với người tiêu dùng có ý thức?',
+          answer:
+            'Để kết nối, thương hiệu cần phải minh bạch, trung thực và hành động nhất quán với các giá trị mà họ tuyên bố. Việc xây dựng một cộng đồng xung quanh mục đích chung, cung cấp nội dung giáo dục và tạo cơ hội cho người tiêu dùng tham gia vào sứ mệnh của thương hiệu là những chiến lược hiệu quả.',
+        },
+        {
+          question: 'Tại sao xây dựng cộng đồng lại quan trọng đối với các thương hiệu có mục đích?',
+          answer:
+            'Cộng đồng tạo ra một không gian để các khách hàng có cùng chí hướng kết nối với nhau và với thương hiệu ở một mức độ sâu sắc hơn. Nó biến mối quan hệ từ giao dịch mua bán thành một phong trào chung, giúp tăng cường lòng trung thành và lan tỏa thông điệp của thương hiệu một cách tự nhiên.',
+        },
+        {
+          question: 'Làm thế nào để khuyến khích sự tương tác đích thực trong cộng đồng?',
+          answer:
+            'Hãy tạo ra các cuộc thảo luận có ý nghĩa, lắng nghe và phản hồi các ý kiến của thành viên, chia sẻ những câu chuyện hậu trường về hành trình của thương hiệu, và tôn vinh những đóng góp của thành viên trong cộng đồng. Tránh việc chỉ tập trung vào quảng cáo sản phẩm.',
         },
       ],
     },
@@ -526,6 +614,29 @@ export const ethicalMarketingPurposeModule: ModuleData = {
           type: 'Nghiên cứu thị trường',
         },
       ],
+      faqs: [
+        {
+          question: 'Tại sao việc tích hợp giá trị văn hóa Việt Nam lại quan trọng trong marketing có mục đích?',
+          answer:
+            'Để một thông điệp về mục đích thực sự có sức ảnh hưởng, nó cần phải phù hợp và có ý nghĩa với bối cảnh văn hóa địa phương. Tích hợp các giá trị như tôn trọng gia đình, cộng đồng, và lòng hiếu thảo sẽ giúp thương hiệu kết nối sâu sắc và chân thực hơn với người tiêu dùng Việt Nam.',
+        },
+        {
+          question: 'Những giá trị văn hóa cốt lõi nào của Việt Nam mà các thương hiệu nên cân nhắc?',
+          answer:
+            'Một số giá trị quan trọng bao gồm: tầm quan trọng của gia đình và các mối quan hệ xã hội, tinh thần tập thể, sự tôn trọng người lớn tuổi, lòng yêu nước, và sự trân trọng đối với truyền thống và di sản. Tuy nhiên, cần hiểu các giá trị này trong bối cảnh hiện đại.',
+        },
+        {
+          question:
+            'Làm thế nào để tránh việc sử dụng văn hóa một cách hời hợt hoặc thiếu tôn trọng (cultural appropriation)?',
+          answer:
+            'Điều quan trọng là phải có sự hợp tác và tham vấn từ những người trong cuộc (người bản địa). Thay vì chỉ "vay mượn" hình ảnh, hãy thực sự tìm hiểu ý nghĩa sâu xa, tôn vinh nguồn gốc, và đảm bảo rằng câu chuyện bạn kể là chân thực và đóng góp tích cực cho cộng đồng.',
+        },
+        {
+          question: 'Có sự khác biệt về giá trị văn hóa giữa các vùng miền Bắc, Trung, Nam không?',
+          answer:
+            'Có, có những sắc thái khác biệt. Ví dụ, người miền Bắc có thể coi trọng truyền thống và các quy tắc xã hội hơn, trong khi người miền Nam có thể cởi mở và linh hoạt hơn. Hiểu được những khác biệt này giúp thương hiệu điều chỉnh thông điệp và cách tiếp cận cho phù hợp với từng vùng.',
+        },
+      ],
     },
 
     {
@@ -582,7 +693,7 @@ export const ethicalMarketingPurposeModule: ModuleData = {
           problem: 'Truyền đạt cam kết bền vững thực sự trên các thương hiệu toàn cầu',
           solution: 'Tích hợp cuộc sống bền vững vào mục đích thương hiệu với cách kể chuyện đích thực',
           impact: 'Các thương hiệu bền vững tăng trưởng nhanh hơn 69% so với các thương hiệu khác',
-          innovations: ['Kế hoạch Sống Bền vững', 'Tích hợp Mục đích Thương hiệu', 'Nền tảng Kể chuyện Tác động'],
+          innovations: ['Kế hoạch Sống bền vững', 'Tích hợp Mục đích Thương hiệu', 'Nền tảng Kể chuyện Tác động'],
         },
       ],
       resources: [
@@ -595,6 +706,28 @@ export const ethicalMarketingPurposeModule: ModuleData = {
           title: 'Tiêu chuẩn Sáng kiến Báo cáo Toàn cầu',
           url: 'https://www.globalreporting.org/standards/',
           type: 'Tiêu chuẩn',
+        },
+      ],
+      faqs: [
+        {
+          question: 'Trách nhiệm xã hội của doanh nghiệp (CSR) là gì?',
+          answer:
+            'CSR là cam kết của một doanh nghiệp trong việc đóng góp vào sự phát triển kinh tế bền vững, thông qua việc tuân thủ các chuẩn mực về bảo vệ môi trường, bình đẳng giới, an toàn lao động, quyền lợi lao động, trả lương công bằng, đào tạo và phát triển nhân viên, và đóng góp cho cộng đồng.',
+        },
+        {
+          question: 'Kể chuyện đích thực trong CSR có nghĩa là gì?',
+          answer:
+            'Đó là việc chia sẻ những câu chuyện về các hoạt động CSR một cách trung thực, minh bạch và tập trung vào con người. Thay vì chỉ khoe khoang về số tiền đã chi, kể chuyện đích thực tập trung vào tác động thực sự đối với cuộc sống của con người và những thách thức đã gặp phải.',
+        },
+        {
+          question: 'Làm thế nào để câu chuyện CSR không bị coi là "tẩy xanh" (greenwashing)?',
+          answer:
+            'Để tránh bị coi là "tẩy xanh", câu chuyện của bạn phải được hỗ trợ bởi hành động thực tế và dữ liệu có thể kiểm chứng. Hãy minh bạch về cả thành công và thất bại. Tập trung vào tác động dài hạn thay vì các hoạt động mang tính bề nổi, và để cho những người hưởng lợi tự kể câu chuyện của họ.',
+        },
+        {
+          question: 'Tại sao việc nhân viên tham gia vào các hoạt động CSR lại quan trọng?',
+          answer:
+            'Khi nhân viên trực tiếp tham gia, họ trở thành những đại sứ thương hiệu đáng tin cậy nhất. Sự tham gia của họ không chỉ làm tăng tác động của chương trình mà còn giúp xây dựng văn hóa doanh nghiệp mạnh mẽ, tăng cường sự gắn kết và tự hào của nhân viên đối với công ty.',
         },
       ],
     },

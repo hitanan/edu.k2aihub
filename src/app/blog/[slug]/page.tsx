@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getAllBlogPosts, getBlogPostBySlug } from '@/lib/blog';
+import { getAllBlogPostsMetadata, getBlogPostBySlug } from '@/lib/blog';
 import { siteConfig } from '@/config/site';
 import { BlogPost } from '@/components/blog/BlogPost';
 import { siteCode } from '@/config/site-code';
@@ -10,14 +10,6 @@ type Props = {
   params: Promise<{ slug: string }>;
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 };
-
-// Define a specific props type for this page
-// type BlogPostPageProps = {
-//   params: {
-//     slug: string;
-//   };
-//   searchParams?: { [key: string]: string | string[] | undefined };
-// };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -67,8 +59,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = await getAllBlogPosts();
+export function generateStaticParams(): { slug: string }[] {
+  const posts = getAllBlogPostsMetadata();
   return posts.map((post) => ({
     slug: post.slug,
   }));

@@ -1,4 +1,4 @@
-import { getAllBlogPostsWithContent, getAllCategories, getAllTags } from '@/lib/blog';
+import { getAllBlogPostsWithContentSync, getAllCategories, getAllTags } from '@/lib/blog';
 import StructuredData from '@/components/StructuredData';
 import BlogList from '@/components/blog/BlogList';
 import Link from 'next/link';
@@ -8,27 +8,30 @@ import { generateMetadata as generateRootMetadata } from '../../page';
 
 export { generateRootMetadata as generateMetadata };
 
-export async function generateStaticParams() {
-  const posts = await getAllBlogPostsWithContent();
+export function generateStaticParams() {
+  const posts = getAllBlogPostsWithContentSync();
   const totalPages = Math.ceil(posts.length / 10);
   return Array.from({ length: totalPages }, (_, i) => ({
     page: (i + 1).toString(),
   }));
 }
 
-export default async function PaginatedBlogPage({ params }: { params: { page: string } }) {
-  const currentPage = parseInt(params.page, 10);
+type Props = {
+  params: Promise<{ page: string }>;
+};
+
+export default async function PaginatedBlogPage({ params }: Props) {
+  const { page } = await params;
+  const currentPage = parseInt(page, 10);
   if (isNaN(currentPage) || currentPage < 1) {
     notFound();
   }
 
   const pageSize = 10;
 
-  const [allPosts, categories, tags] = await Promise.all([
-    getAllBlogPostsWithContent(),
-    getAllCategories(),
-    getAllTags(),
-  ]);
+  const allPosts = getAllBlogPostsWithContentSync();
+  const categories = getAllCategories();
+  const tags = getAllTags();
 
   const totalPosts = allPosts.length;
   const totalPages = Math.ceil(totalPosts / pageSize);
@@ -96,7 +99,7 @@ export default async function PaginatedBlogPage({ params }: { params: { page: st
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Chủ đề</h3>
                 <div className="flex flex-wrap gap-2">
-                  {categories.map((category) => (
+                  {categories.map((category: { name: string; count: number }) => (
                     <Link
                       key={category.name}
                       href={`/blog/category/${createCategorySlug(category.name)}`}
@@ -111,7 +114,7 @@ export default async function PaginatedBlogPage({ params }: { params: { page: st
               <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Tags</h3>
                 <div className="flex flex-wrap gap-2">
-                  {tags.map((tag) => (
+                  {tags.map((tag: { name: string; count: number }) => (
                     <Link
                       key={tag.name}
                       href={`/blog/tag/${createTagSlug(tag.name)}`}

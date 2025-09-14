@@ -106,6 +106,18 @@ export const stemLessons: StemLesson[] = [
           'Chữ "A" (Arts - Nghệ thuật) được thêm vào STEM để tạo thành STEAM, nhấn mạnh vai trò của sự sáng tạo, thiết kế và tư duy nhân văn trong việc giải quyết các vấn đề kỹ thuật.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao Nghệ thuật (Arts) lại được thêm vào STEM?',
+        answer:
+          'Việc thêm "A" (Arts) vào tạo thành STEAM công nhận rằng sự sáng tạo, thiết kế, và tư duy lấy con người làm trung tâm là yếu tố cốt lõi để đổi mới. Nghệ thuật giúp các nhà khoa học và kỹ sư suy nghĩ vượt ra ngoài các con số và công thức, tạo ra các giải pháp không chỉ hiệu quả về mặt kỹ thuật mà còn đẹp, thân thiện và có ý nghĩa với người dùng.',
+      },
+      {
+        question: 'Học STEM có khô khan và khó không?',
+        answer:
+          'Hoàn toàn không! Giáo dục STEM hiện đại tập trung vào việc học qua dự án và giải quyết vấn đề thực tế. Bạn sẽ được làm những thí nghiệm vui, chế tạo robot, thiết kế game, hoặc xây dựng các mô hình. Quá trình này rất thú vị và đầy tính tương tác, giúp bạn học một cách tự nhiên và hiệu quả.',
+      },
+    ],
   },
   {
     id: 'engineering-design-process',
@@ -172,6 +184,18 @@ export const stemLessons: StemLesson[] = [
         correctAnswerIndex: 2,
         explanation:
           'Sau khi có nhiều ý tưởng, bước hợp lý tiếp theo là chọn ra ý tưởng tốt nhất và xây dựng một phiên bản mẫu đơn giản (prototype) để kiểm tra xem nó có hoạt động như mong đợi hay không.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Quy trình Thiết kế Kỹ thuật có bắt buộc phải theo đúng thứ tự các bước không?',
+        answer:
+          'Không hẳn. Quy trình này mang tính lặp lại (iterative). Bạn có thể quay lại các bước trước đó bất cứ lúc nào. Ví dụ, sau khi thử nghiệm mẫu thử (Test), bạn có thể phát hiện ra một vấn đề mới và phải quay lại bước "Xác định vấn-đề" (Ask) hoặc "Lên ý tưởng" (Imagine) để tìm giải pháp tốt hơn.',
+      },
+      {
+        question: 'Tại sao việc "thất bại" trong thử nghiệm lại được coi là hữu ích?',
+        answer:
+          'Trong kỹ thuật, mỗi thất bại là một bài học quý giá. Nó cung cấp dữ liệu về những gì không hoạt động và tại sao. Việc "thất bại sớm, thất bại rẻ" (fail fast, fail cheap) với các mẫu thử đơn giản giúp các kỹ sư tránh được những sai lầm tốn kém hơn nhiều ở giai đoạn sản xuất hàng loạt. Thất bại chính là một phần không thể thiếu của quá trình đổi mới và sáng tạo.',
       },
     ],
   },

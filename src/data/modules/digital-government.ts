@@ -167,6 +167,28 @@ export const lessons: DigitalGovLesson[] = [
         description: 'National strategy for smart city development',
       },
     ],
+    faqs: [
+      {
+        question: 'IoT (Internet of Things) là gì và nó được ứng dụng như thế nào trong thành phố thông minh?',
+        answer:
+          'IoT là mạng lưới các thiết bị vật lý được gắn cảm biến và kết nối internet, cho phép chúng thu thập và trao đổi dữ liệu. Trong thành phố thông minh, IoT được dùng để giám sát chất lượng không khí, quản lý đèn đường thông minh (tự động điều chỉnh độ sáng), thùng rác thông minh (báo khi đầy), và hệ thống đỗ xe thông minh.',
+      },
+      {
+        question: 'LoRaWAN là gì và tại sao nó phù hợp cho các ứng dụng Smart City?',
+        answer:
+          'LoRaWAN là một công nghệ mạng không dây diện rộng, tiêu thụ ít năng lượng. Nó rất phù hợp cho các ứng dụng Smart City vì cho phép các cảm biến (chạy bằng pin) có thể gửi dữ liệu đi xa hàng kilomet mà không cần thay pin trong nhiều năm, giúp giảm chi phí triển khai và bảo trì.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo an ninh cho hàng triệu thiết bị IoT trong một thành phố?',
+        answer:
+          'Đây là một thách thức lớn. Các biện pháp bao gồm mã hóa dữ liệu từ cảm biến đến máy chủ, xác thực thiết bị để đảm bảo chỉ các thiết bị hợp lệ mới được kết nối vào mạng, thường xuyên cập nhật phần mềm cho thiết bị, và phân đoạn mạng để nếu một phần bị tấn công, các phần khác vẫn an toàn.',
+      },
+      {
+        question: 'Người dân có thể hưởng lợi gì từ các hệ thống giám sát môi trường bằng IoT?',
+        answer:
+          'Người dân có thể truy cập vào dữ liệu chất lượng không khí, mức độ ô nhiễm tiếng ồn, hoặc chất lượng nước theo thời gian thực qua các ứng dụng di động hoặc website. Điều này giúp họ đưa ra các quyết định tốt hơn cho sức khỏe, ví dụ như có nên ra ngoài tập thể dục vào một ngày không khí ô nhiễm hay không.',
+      },
+    ],
   },
   {
     id: 'civic-engagement-platforms',
@@ -231,6 +253,28 @@ export const lessons: DigitalGovLesson[] = [
         url: 'https://www.undp.org/vietnam/civic-engagement',
         type: 'guide',
         description: 'Best practices for civic technology in Vietnam',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để khuyến khích người dân, đặc biệt là người lớn tuổi, tham gia vào các nền tảng số?',
+        answer:
+          'Cần có một cách tiếp cận đa kênh. Bên cạnh ứng dụng di động, cần có các kênh khác như tổng đài điện thoại, các điểm hỗ trợ trực tiếp tại phường xã. Giao diện ứng dụng cần được thiết kế cực kỳ đơn giản, trực quan, sử dụng ngôn ngữ dễ hiểu và có hướng dẫn rõ ràng. Tổ chức các buổi tập huấn tại cộng đồng cũng rất hiệu quả.',
+      },
+      {
+        question: 'Làm sao để đảm bảo các phản ánh của người dân được xử lý và không bị "bỏ quên"?',
+        answer:
+          'Sự minh bạch là chìa khóa. Nền tảng cần có cơ chế theo dõi trạng thái xử lý của một phản ánh (ví dụ: "Đã tiếp nhận", "Đang xử lý", "Đã hoàn thành") và thông báo tự động cho người dân. Việc công khai hóa thời gian xử lý trung bình và tỷ lệ hoàn thành cũng tạo ra áp lực tích cực cho các cơ quan chức năng.',
+      },
+      {
+        question: 'Participatory Budgeting (Ngân sách có sự tham gia) hoạt động như thế nào?',
+        answer:
+          'Đây là một quy trình dân chủ trong đó người dân được trực tiếp quyết định cách phân bổ một phần ngân sách công. Ví dụ, chính quyền có thể đưa ra một khoản ngân sách và một danh sách các dự án đề xuất (làm đường, trồng cây, xây sân chơi), và người dân sẽ bỏ phiếu để chọn dự án họ cho là ưu tiên nhất.',
+      },
+      {
+        question: 'Các nền tảng CivicTech có đối mặt với nguy cơ bị lạm dụng, ví dụ như tạo phản ánh giả không?',
+        answer:
+          'Có, đây là một rủi ro. Để giảm thiểu, các nền tảng có thể yêu cầu xác thực tài khoản (ví dụ qua số điện thoại), sử dụng cơ chế "cộng đồng xác thực" (nhiều người cùng báo một vấn đề), và áp dụng các thuật toán AI để phát hiện các hành vi bất thường hoặc spam.',
       },
     ],
   },
