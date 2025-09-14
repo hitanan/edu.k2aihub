@@ -262,6 +262,7 @@ npm run build    # Production build with static generation
 
 ## Instructions for Development
 
+0. **Semantic SEO**: Structuring your content around topics and entities, not just keywords. This involves creating a web of interconnected content that fully covers a particular subject.
 1. **Maintain Current Architecture**: Keep server/client component separation
 2. **Performance First**: Always consider loading times and bundle size
 3. **SEO Optimization**: Ensure all new pages have proper dynamic metadata (createTitle, createDescription, createKeywords)

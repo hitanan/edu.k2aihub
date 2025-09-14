@@ -6,33 +6,7 @@ import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import { createCategorySlug, createTagSlug, getCategoryFromSlug } from '@/utils/slug';
 
-// Types for blog posts
-export interface BlogPost {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  author?: string;
-  category?: string;
-  tags?: string[];
-  readingTime?: string;
-  featured?: boolean;
-  coverImage?: string;
-  content: string;
-}
-
-export interface BlogMetadata {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  author?: string;
-  category?: string;
-  tags?: string[];
-  readingTime?: string;
-  featured?: boolean;
-  coverImage?: string;
-}
+import { BlogPost, BlogMetadata, BlogCategory } from '@/types';
 
 const postsDirectory = path.join(process.cwd(), 'docs');
 
@@ -181,6 +155,15 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
   }
 }
 
+// Get all blog posts with full content
+export async function getAllBlogPostsWithContent(): Promise<BlogPost[]> {
+  const slugs = getBlogSlugs();
+  const posts = await Promise.all(slugs.map((slug) => getBlogPostBySlug(slug)));
+  return posts
+    .filter((post): post is BlogPost => post !== null)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
 // Get all blog posts metadata
 export async function getAllBlogPosts(): Promise<BlogMetadata[]> {
   const slugs = getBlogSlugs();
@@ -274,14 +257,23 @@ function generateCoverImage(category: string): string {
   return imageMap[category] || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop';
 }
 
-// Get all unique categories
-export async function getAllCategories(): Promise<string[]> {
-  const allPosts = await getAllBlogPosts();
-  const categories = new Set(allPosts.map((post) => post.category));
-  return Array.from(categories).filter((cat): cat is string => Boolean(cat));
+// Get all categories with post counts
+export async function getAllCategories(): Promise<{ name: string; count: number }[]> {
+  const posts = await getAllBlogPosts();
+  const categoryCounts: { [key: string]: number } = {};
+
+  posts.forEach((post) => {
+    if (post.category) {
+      categoryCounts[post.category] = (categoryCounts[post.category] || 0) + 1;
+    }
+  });
+
+  return Object.entries(categoryCounts)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
 }
 
-// Get all unique categories (synchronous version for sitemap)
+// Get all categories synchronously
 export function getAllCategoriesSync(): string[] {
   const posts = getAllBlogPostsSync();
   const categories = new Set(posts.map((post) => post.category));
@@ -344,7 +336,7 @@ export async function getAllTags(): Promise<string[]> {
 // Get all category slugs for static params generation
 export async function getAllCategorySlugs(): Promise<string[]> {
   const categories = await getAllCategories();
-  return categories.map(createCategorySlug);
+  return categories.map((category) => createCategorySlug(category.name));
 }
 
 // Get all tag slugs for static params generation

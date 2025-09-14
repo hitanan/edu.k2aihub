@@ -1,3 +1,3 @@
 export const siteCode = {
-  url: 'http://localhost:3000',
+  url: 'https://k2aihub.com',
 };

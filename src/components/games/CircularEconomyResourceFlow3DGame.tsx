@@ -288,7 +288,8 @@ const CircularEconomyResourceFlow3DGame: React.FC<CircularEconomyResourceFlow3DG
     processingNodes.forEach((node) => {
       const pos = project3DTo2D(node.position.x, node.position.y, node.position.z);
       const distance = Math.sqrt((mouseX - pos.x) ** 2 + (mouseY - pos.y) ** 2);
-      if (distance < 30) {
+      const clickRadius = 30 * (pos.scale ?? 1);
+      if (distance < clickRadius) {
         setSelectedNode(node.id);
         processResource(node);
       }

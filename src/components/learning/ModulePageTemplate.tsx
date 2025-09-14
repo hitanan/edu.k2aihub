@@ -5,6 +5,9 @@ import { Clock, Target, Users, TrendingUp, Play, ChevronRight, Star, Award, Ligh
 import { BaseLessonData } from '@/types/lesson-base';
 import { ModuleData } from '@/types';
 import { moduleNavigation } from '@/data/moduleNavigation';
+import { createEducationalContentStructuredData, createFAQStructuredDataFromQA } from '@/utils/seo';
+import JsonLd from '@/components/JsonLd';
+import { InteractiveFAQ } from './InteractiveFAQ';
 
 interface ModulePageTemplateProps {
   moduleData: ModuleData;
@@ -24,6 +27,7 @@ export default function ModulePageTemplate({
   specialSections = [],
 }: ModulePageTemplateProps) {
   const {
+    id,
     title,
     subtitle,
     description,
@@ -46,6 +50,11 @@ export default function ModulePageTemplate({
     technicalHighlights,
     relatedModules,
   } = moduleData;
+
+  const moduleUrl = `https://k2aihub.com/learning/${id}`;
+  const structuredData = createEducationalContentStructuredData(title, description, moduleUrl);
+  const moduleFaqStructured =
+    moduleData.faqs && moduleData.faqs.length > 0 ? createFAQStructuredDataFromQA(moduleData.faqs, moduleUrl) : null;
 
   // Get relatedModules data from moduleNavigation
   const relatedModulesData = relatedModules
@@ -91,6 +100,8 @@ export default function ModulePageTemplate({
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${gradientColors || color}`}>
+      <JsonLd data={structuredData} />
+      {moduleFaqStructured && <JsonLd data={moduleFaqStructured} />}
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 pt-6">
         <DynamicBreadcrumbs moduleId={moduleData.id} />
@@ -220,6 +231,15 @@ export default function ModulePageTemplate({
                 </div>
               )}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQs (Module-level) */}
+      {moduleData.faqs && moduleData.faqs.length > 0 && (
+        <section className="py-8 px-4">
+          <div className="max-w-5xl mx-auto">
+            <InteractiveFAQ faqs={moduleData.faqs} primaryColor={moduleData.primaryColor || 'blue'} />
           </div>
         </section>
       )}

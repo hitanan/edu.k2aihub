@@ -361,6 +361,16 @@ export const [MODULE_NAME]Lessons: ModuleLessonType[] = [
 
 ## 🔧 SEO and Performance Requirements
 
+### SEO Best Practices
+
+Semantic SEO: Structuring your content around topics and entities, not just keywords. This involves creating a web of interconnected content that fully covers a particular subject.
+
+Structured Data: Utilizing schema markup to provide explicit context to search engines about your content, such as defining what your AI tool is, what it does, and who it's for.
+
+E-E-A-T (Experience, Expertise, Authoritativeness, and Trustworthiness): Demonstrating the credibility of your content and tools is more critical than ever. This can be achieved through author bios, case studies, and transparently explaining how your AI models work.
+
+Content for the Entire User Journey: Creating a mix of content that targets users at different stages of awareness, from those just learning about AI summarization to those ready to use a specific tool.
+
 ### Metadata Standards
 
 **All pages MUST include**:
@@ -408,7 +418,7 @@ export const [MODULE_NAME]Lessons: ModuleLessonType[] = [
 
 ### Module Creation Checklist
 
-- [ ] **Data File**: Create `/src/data/[module-name].ts` with complete lesson data
+- [ ] **Data File**: Create `/src/data/modules/[module-name].ts` with complete lesson data
 - [ ] **Main Page**: Implement `/src/app/learning/[module-name]/page.tsx`
 - [ ] **Lesson Pages**: Implement `/src/app/learning/[module-name]/[lessonId]/page.tsx`
 - [ ] **Metadata**: Add proper Vietnamese SEO metadata
