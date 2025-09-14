@@ -2020,39 +2020,39 @@ void loop() {
   'memory-match': {
     themes: [
       {
-        name: "Động Vật Việt Nam",
-        difficulty: "Cơ bản",
-        estimatedTime: "5 phút",
+        name: 'Động Vật Việt Nam',
+        difficulty: 'Cơ bản',
+        estimatedTime: '5 phút',
         gridSize: { rows: 3, cols: 4 },
         cards: [
           {
-            id: "buffalo",
-            frontImage: "https://images.unsplash.com/photo-1544966503-7cc5ac882d5e?w=400&h=300&fit=crop",
-            backImage: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400&h=300&fit=crop",
-            category: "domestic",
-            description: "Trâu - Gia súc quan trọng ở nông thôn Việt Nam",
-            educationalNote: "Trâu giúp cày ruộng và cung cấp sữa, thịt cho con người"
+            id: 'buffalo',
+            frontImage: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5e?w=400&h=300&fit=crop',
+            backImage: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400&h=300&fit=crop',
+            category: 'domestic',
+            description: 'Trâu - Gia súc quan trọng ở nông thôn Việt Nam',
+            educationalNote: 'Trâu giúp cày ruộng và cung cấp sữa, thịt cho con người',
           },
           {
-            id: "elephant",
-            frontImage: "https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=400&h=300&fit=crop",
-            backImage: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400&h=300&fit=crop",
-            category: "wild",
-            description: "Voi - Động vật có vú lớn nhất châu Á",
-            educationalNote: "Voi Á có tai nhỏ hơn voi Phi và sống ở rừng nhiệt đới"
+            id: 'elephant',
+            frontImage: 'https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=400&h=300&fit=crop',
+            backImage: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=400&h=300&fit=crop',
+            category: 'wild',
+            description: 'Voi - Động vật có vú lớn nhất châu Á',
+            educationalNote: 'Voi Á có tai nhỏ hơn voi Phi và sống ở rừng nhiệt đới',
           },
         ],
         timeLimit: 300,
         maxAttempts: 20,
         hints: [
-          "Chú ý đến màu sắc và hình dạng đặc biệt của từng động vật",
-          "Nhớ vị trí các thẻ đã lật để ghép cặp hiệu quả"
+          'Chú ý đến màu sắc và hình dạng đặc biệt của từng động vật',
+          'Nhớ vị trí các thẻ đã lật để ghép cặp hiệu quả',
         ],
         learningObjectives: [
-          "Nhận biết các loài động vật bản địa Việt Nam",
-          "Hiểu vai trò của động vật trong hệ sinh thái"
-        ]
-      }
+          'Nhận biết các loài động vật bản địa Việt Nam',
+          'Hiểu vai trò của động vật trong hệ sinh thái',
+        ],
+      },
     ],
     gameConfig: {
       flipDuration: 600,
@@ -2061,9 +2061,9 @@ void loop() {
       scoreMultiplier: {
         perfect: 3.0,
         good: 2.0,
-        average: 1.0
-      }
-    }
+        average: 1.0,
+      },
+    },
   },
   'math-puzzle': {
     puzzles: [
