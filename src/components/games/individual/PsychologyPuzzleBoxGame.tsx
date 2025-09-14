@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Brain, Lightbulb, Clock, Target, RotateCcw, Star, CheckCircle2, X } from 'lucide-react';
+import { Brain, Clock, Target, RotateCcw, Star, CheckCircle2 } from 'lucide-react';
 
 interface PsychologyPuzzleBoxGameProps {
   onComplete: (success: boolean, score: number) => void;

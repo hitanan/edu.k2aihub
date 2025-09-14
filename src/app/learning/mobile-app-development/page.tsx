@@ -1,5 +1,5 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { mobileAppDevelopmentModule } from '@/data/modules/mobile-app-development';
+import { mobileAppDevelopmentModule, mobileAppDevelopmentLessons } from '@/data/modules/mobile-app-development';
 import { createModuleMetadata } from '@/utils/seo';
 import { Metadata } from 'next';
 
@@ -22,5 +22,5 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function MobileAppDevelopmentMainPage() {
-  return <ModulePageTemplate moduleData={mobileAppDevelopmentModule} lessons={mobileAppDevelopmentModule.lessons || []} />;
+  return <ModulePageTemplate moduleData={mobileAppDevelopmentModule} lessons={mobileAppDevelopmentLessons} />;
 }

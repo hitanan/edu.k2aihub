@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import {
   LessonPageTemplate,
   generateLessonMetadata,
@@ -16,13 +17,13 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params ?? '';
+export async function generateMetadata({ params }: { params: { lessonId: string } }): Promise<Metadata> {
+  const { lessonId } = params;
   return generateLessonMetadata(lessonId, advancedCreativeLessons, 'advanced-creative-skills');
 }
 
 // Page component with advanced creative skills-specific configuration
-export default async function AdvancedCreativeLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+export default function AdvancedCreativeLessonPage({ params }: { params: { lessonId: string } }) {
   const config: LessonPageConfig<AdvancedCreativeLesson> = {
     moduleName: 'advanced-creative-skills',
     moduleTitle: 'Advanced Creative Skills',
@@ -139,6 +140,6 @@ export default async function AdvancedCreativeLessonPage({ params }: { params: P
     ),
   };
 
-  const { lessonId } = await params ?? '';
+  const { lessonId } = params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

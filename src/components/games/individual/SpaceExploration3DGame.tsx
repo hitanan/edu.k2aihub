@@ -246,7 +246,7 @@ function MissionPanel({
 }
 
 // Main Game Component
-export default function SpaceExploration3DGame({ onComplete, timeLeft, onRestart }: SpaceExploration3DGameProps) {
+export default function SpaceExploration3DGame({ onComplete, timeLeft }: SpaceExploration3DGameProps) {
   const [planets, setPlanets] = useState<Planet[]>([
     {
       id: 'mars',

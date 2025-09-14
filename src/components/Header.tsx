@@ -8,7 +8,6 @@ import { ChevronDown, Menu, X, Home, Globe, Brain, Code, BookOpen, FileText } fr
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { isModuleData, isModuleNavigation } from '@/utils/typeguards';
 import SearchHeader from '@/components/SearchHeader';
-import { cn } from '@/lib/utils';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

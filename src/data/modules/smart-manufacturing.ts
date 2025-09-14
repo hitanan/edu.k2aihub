@@ -3,7 +3,8 @@ import { ModuleData } from '@/types';
 export const smartManufacturingModule: ModuleData = {
   id: 'smart-manufacturing',
   title: 'Sản xuất thông minh',
-  description: 'Tìm hiểu về cuộc cách mạng công nghiệp 4.0 và cách các nhà máy thông minh đang thay đổi ngành sản xuất.',
+  description:
+    'Tìm hiểu về cuộc cách mạng công nghiệp 4.0 và cách các nhà máy thông minh đang thay đổi ngành sản xuất.',
   category: 'Công nghệ',
   lessons: [
     {

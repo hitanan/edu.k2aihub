@@ -45,7 +45,8 @@ export const energyManagementModule: ModuleData = {
     {
       id: 'introduction-to-smart-grids',
       title: 'Giới thiệu về Lưới điện Thông minh',
-      description: 'Hiểu rõ khái niệm, kiến trúc và lợi ích của lưới điện thông minh trong bối cảnh năng lượng hiện đại.',
+      description:
+        'Hiểu rõ khái niệm, kiến trúc và lợi ích của lưới điện thông minh trong bối cảnh năng lượng hiện đại.',
       duration: '90 phút',
       difficulty: 'Beginner',
       objectives: [],
@@ -54,7 +55,8 @@ export const energyManagementModule: ModuleData = {
     {
       id: 'renewable-energy-integration',
       title: 'Tích hợp Năng lượng Tái tạo',
-      description: 'Các thách thức và giải pháp khi tích hợp các nguồn năng lượng tái tạo như mặt trời và gió vào lưới điện.',
+      description:
+        'Các thách thức và giải pháp khi tích hợp các nguồn năng lượng tái tạo như mặt trời và gió vào lưới điện.',
       duration: '120 phút',
       difficulty: 'Intermediate',
       objectives: [],
@@ -63,7 +65,8 @@ export const energyManagementModule: ModuleData = {
     {
       id: 'energy-storage-systems',
       title: 'Hệ thống Lưu trữ Năng lượng (ESS)',
-      description: 'Tìm hiểu về các công nghệ lưu trữ năng lượng, đặc biệt là hệ thống lưu trữ bằng pin (BESS) và vai trò của chúng.',
+      description:
+        'Tìm hiểu về các công nghệ lưu trữ năng lượng, đặc biệt là hệ thống lưu trữ bằng pin (BESS) và vai trò của chúng.',
       duration: '110 phút',
       difficulty: 'Intermediate',
       objectives: [],
@@ -72,7 +75,8 @@ export const energyManagementModule: ModuleData = {
     {
       id: 'grid-optimization-with-ai',
       title: 'Tối ưu hóa Lưới điện bằng AI',
-      description: 'Ứng dụng Trí tuệ Nhân tạo (AI) và Học máy (ML) để dự báo, tối ưu hóa và tự động hóa vận hành lưới điện.',
+      description:
+        'Ứng dụng Trí tuệ Nhân tạo (AI) và Học máy (ML) để dự báo, tối ưu hóa và tự động hóa vận hành lưới điện.',
       duration: '120 phút',
       difficulty: 'Advanced',
       objectives: [],
@@ -81,7 +85,8 @@ export const energyManagementModule: ModuleData = {
     {
       id: 'sustainability-reporting-esg',
       title: 'Báo cáo Bền vững (ESG)',
-      description: 'Tìm hiểu về các tiêu chuẩn Môi trường, Xã hội và Quản trị (ESG) và cách các công ty năng lượng báo cáo về tính bền vững.',
+      description:
+        'Tìm hiểu về các tiêu chuẩn Môi trường, Xã hội và Quản trị (ESG) và cách các công ty năng lượng báo cáo về tính bền vững.',
       duration: '90 phút',
       difficulty: 'Intermediate',
       objectives: [],
@@ -173,4 +178,3 @@ export const energyManagementModule: ModuleData = {
     },
   ],
 };
-

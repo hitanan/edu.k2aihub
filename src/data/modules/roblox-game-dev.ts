@@ -3,7 +3,8 @@ import { ModuleData } from '@/types';
 export const robloxGameDevModule: ModuleData = {
   id: 'roblox-game-dev',
   title: 'Phát triển game trên Roblox',
-  description: 'Học cách tạo ra các trò chơi của riêng bạn trên nền tảng Roblox và chia sẻ chúng với hàng triệu người chơi.',
+  description:
+    'Học cách tạo ra các trò chơi của riêng bạn trên nền tảng Roblox và chia sẻ chúng với hàng triệu người chơi.',
   category: 'Phát triển game',
   lessons: [
     {

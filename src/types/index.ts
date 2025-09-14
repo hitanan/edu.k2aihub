@@ -1,10 +1,4 @@
-import {
-  BaseLessonData,
-  ProgrammingRoboticsLesson,
-  PsychologyBehavioralScienceLesson,
-  QuantumComputingEducationLesson,
-  QuantumComputingLesson,
-} from './lesson-base';
+import { BaseLessonData } from './lesson-base';
 
 export type { BaseLessonData };
 
@@ -144,10 +138,10 @@ export interface EducationalGame {
   is3D?: boolean;
 }
 
-export interface PageProps {
-  params: { [key: string]: string };
+export type PageProps = {
+  params: Promise<{ lessonId: string }>;
   searchParams?: { [key: string]: string | string[] | undefined };
-}
+};
 
 export interface ModuleNavigation {
   id: string;

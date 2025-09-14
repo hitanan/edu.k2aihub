@@ -7,14 +7,9 @@ export const metadata: Metadata = createModuleMetadata(
   governmentTechnologyModuleData.title,
   governmentTechnologyModuleData.description,
   ['government-technology', 'education', 'K2AI', 'học tập thông minh'],
-  governmentTechnologyModuleData.id
+  governmentTechnologyModuleData.id,
 );
 
 export default function GovernmentTechnologyPage() {
-  return (
-    <ModulePageTemplate
-      moduleData={governmentTechnologyModuleData}
-      lessons={governmentTechnologyLessons}
-    />
-  );
+  return <ModulePageTemplate moduleData={governmentTechnologyModuleData} lessons={governmentTechnologyLessons} />;
 }

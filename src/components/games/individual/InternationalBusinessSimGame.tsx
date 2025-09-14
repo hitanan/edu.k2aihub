@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Globe, TrendingUp, DollarSign, Clock, Target, RotateCcw, Building2, Users, BarChart3 } from 'lucide-react';
+import { Globe, DollarSign, Clock, Target, RotateCcw, Building2, Users, BarChart3 } from 'lucide-react';
 
 interface InternationalBusinessSimGameProps {
   onComplete: (success: boolean, score: number) => void;
@@ -410,9 +410,9 @@ const InternationalBusinessSimGame: React.FC<InternationalBusinessSimGameProps> 
     }
   };
 
-  const calculateTotalRevenue = () => {
+  const calculateTotalRevenue = React.useCallback(() => {
     return markets.reduce((sum, m) => sum + m.revenue, 0);
-  };
+  }, [markets]);
 
   const calculateTotalInvestment = () => {
     return markets.reduce((sum, m) => sum + m.invested, 0);
@@ -427,7 +427,7 @@ const InternationalBusinessSimGame: React.FC<InternationalBusinessSimGameProps> 
       setGameState('completed');
       onComplete(true, score);
     }
-  }, [markets, year, score, onComplete]);
+  }, [markets, year, score, onComplete, calculateTotalRevenue]);
 
   useEffect(() => {
     if (timeLeft <= 0) {

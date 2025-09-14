@@ -40,7 +40,10 @@ export const minecraftEduModule: ModuleData<MinecraftEduLesson> = {
   industryApplications: [
     { name: 'Giáo dục K-12', description: 'Ứng dụng trong giảng dạy các môn học chính khóa.' },
     { name: 'Phát triển chương trình giảng dạy STEM/STEAM', description: 'Tạo ra các bài học và dự án liên môn.' },
-    { name: 'Các trại hè công nghệ và workshop sáng tạo', description: 'Sử dụng làm nền tảng cho các hoạt động ngoại khóa.' },
+    {
+      name: 'Các trại hè công nghệ và workshop sáng tạo',
+      description: 'Sử dụng làm nền tảng cho các hoạt động ngoại khóa.',
+    },
     { name: 'Đào tạo và phát triển kỹ năng mềm', description: 'Rèn luyện kỹ năng làm việc nhóm, giải quyết vấn đề.' },
   ],
   marketDemand: {

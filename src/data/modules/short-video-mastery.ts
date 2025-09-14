@@ -3,7 +3,8 @@ import { ModuleData } from '@/types';
 export const shortVideoMasteryModule: ModuleData = {
   id: 'short-video-mastery',
   title: 'Làm chủ video ngắn',
-  description: 'Học cách tạo ra các video ngắn hấp dẫn và lan truyền trên các nền tảng như TikTok, Instagram Reels và YouTube Shorts.',
+  description:
+    'Học cách tạo ra các video ngắn hấp dẫn và lan truyền trên các nền tảng như TikTok, Instagram Reels và YouTube Shorts.',
   category: 'Sáng tạo nội dung',
   lessons: [
     {

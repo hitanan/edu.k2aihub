@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { physicsOfSportsModule } from '@/data/modules/physics-of-sports';
+import { physicsOfSportsModule, physicsOfSportsLessons } from '@/data/modules/physics-of-sports';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
@@ -11,5 +11,5 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function PhysicsOfSportsPage() {
-  return <ModulePageTemplate moduleData={physicsOfSportsModule} lessons={physicsOfSportsModule.lessons || []} />;
+  return <ModulePageTemplate moduleData={physicsOfSportsModule} lessons={physicsOfSportsLessons} />;
 }

@@ -21,5 +21,10 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function EthicalMarketingPurposePage() {
-  return <ModulePageTemplate moduleData={ethicalMarketingPurposeModule} lessons={ethicalMarketingPurposeModule.lessons || []} />;
+  return (
+    <ModulePageTemplate
+      moduleData={ethicalMarketingPurposeModule}
+      lessons={ethicalMarketingPurposeModule.lessons || []}
+    />
+  );
 }

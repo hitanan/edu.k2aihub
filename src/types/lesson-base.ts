@@ -329,7 +329,7 @@ export interface LessonPageTemplateProps<T extends BaseLessonData> {
   config: LessonPageConfig<T>;
 }
 
-export interface DigitalCitizenshipLesson extends BaseLessonData {}
+export type DigitalCitizenshipLesson = BaseLessonData;
 
 export interface GenZMarketingLesson extends BaseLessonData {
   genZMarketingMainContent?: {
@@ -352,7 +352,12 @@ export interface GovernmentTechnologyLesson extends BaseLessonData {
 }
 
 export interface HealthcareTechLesson extends BaseLessonData {
-  healthcareCategory: 'Telehealth' | 'Health Data Analytics' | 'Medical IoT' | 'HealthTech Business' | 'Mental Health Tech';
+  healthcareCategory:
+    | 'Telehealth'
+    | 'Health Data Analytics'
+    | 'Medical IoT'
+    | 'HealthTech Business'
+    | 'Mental Health Tech';
   regulatoryCompliance: string[];
   techProficiencyLevel: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
   targetAudience: string[];
@@ -421,9 +426,7 @@ export interface MinecraftEduLesson extends BaseLessonData {
   gameVersion: string;
 }
 
-export interface MobileAppDevelopmentLesson extends BaseLessonData {
-  // No unique properties for now, but can be extended later
-}
+export type MobileAppDevelopmentLesson = BaseLessonData;
 
 export interface NanotechnologyLesson extends BaseLessonData {
   nanotechApplications: string[];
@@ -431,17 +434,13 @@ export interface NanotechnologyLesson extends BaseLessonData {
   safetyConsiderations: string[];
 }
 
-export interface EnergyManagementLesson extends BaseLessonData {
-  // No extra properties, but defining for consistency and future extension.
-}
+export type EnergyManagementLesson = BaseLessonData;
 
 export interface PhysicsOfSportsLesson extends BaseLessonData {
   keyConcept: string;
 }
 
-export interface ProfessionalSoftSkillsLesson extends BaseLessonData {
-  // No unique properties, but defined for consistency and future extension.
-}
+export type ProfessionalSoftSkillsLesson = BaseLessonData;
 
 export interface ProgrammingRoboticsLesson extends BaseLessonData {
   programmingLanguages?: string[];
@@ -455,17 +454,11 @@ export interface ProgrammingRoboticsLesson extends BaseLessonData {
   }>;
 }
 
-export interface PsychologyBehavioralScienceLesson extends BaseLessonData {
-  // No unique properties required for this lesson type yet
-}
+export type PsychologyBehavioralScienceLesson = BaseLessonData;
 
-export interface QuantumComputingEducationLesson extends BaseLessonData {
-  // No unique properties required for this lesson type yet
-}
+export type QuantumComputingEducationLesson = BaseLessonData;
 
-export interface QuantumComputingLesson extends BaseLessonData {
-  // No unique properties for this lesson type yet
-}
+export type QuantumComputingLesson = BaseLessonData;
 
 export interface RealEstateTechLesson extends BaseLessonData {
   measurableROI?: {

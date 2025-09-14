@@ -4,66 +4,32 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
-import { RealEstateTechLesson } from '@/types/lesson-base';
-import { TrendingUp } from 'lucide-react';
-import { notFound } from 'next/navigation';
+import { realEstateLessons, RealEstateTechLesson } from '@/data/modules/real-estate-technology';
+import { PageProps } from '@/types';
+import { Metadata } from 'next';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(realEstateTechnologyModuleData.lessons || []);
+  return generateLessonStaticParams(realEstateLessons);
 }
 
 // Generate metadata for each lesson
-export async function generateMetadata({ params }: { params: { lessonId: string } }) {
-  const { lessonId } = params;
-  return generateLessonMetadata(lessonId, realEstateTechnologyModuleData.lessons || [], 'real-estate-technology');
-}
-
-// Custom sidebar content for Real Estate Technology lessons
-function RealEstateTechSidebar({ lesson }: { lesson: RealEstateTechLesson }) {
-  return (
-    <div className="space-y-6">
-      {/* Measurable ROI */}
-      {lesson.measurableROI && lesson.measurableROI.length > 0 && (
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-lg border border-green-100">
-          <div className="flex items-center gap-2 mb-3">
-            <TrendingUp className="w-5 h-5 text-green-600" />
-            <span className="font-semibold text-green-900">Measurable ROI</span>
-          </div>
-          <ul className="space-y-2">
-            {lesson.measurableROI.map((roi: { metric: string; description: string }, index: number) => (
-              <li key={index} className="text-sm text-green-700 flex items-start gap-2">
-                <span className="text-green-500 mt-1">💰</span>
-                <span>
-                  <strong>{roi.metric}:</strong> {roi.description}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lessonId } = await params;
+  return generateLessonMetadata(lessonId, realEstateLessons, 'real-estate-technology');
 }
 
 // Page component with standardized config
-export default async function RealEstateTechnologyLessonPage({ params }: { params: { lessonId: string } }) {
-  const { lessonId } = params;
-  if (!lessonId) {
-    notFound();
-  }
-
+export default async function RealEstateLessonPage({ params }: PageProps) {
   const config: LessonPageConfig<RealEstateTechLesson> = {
     moduleName: 'real-estate-technology',
     moduleTitle: 'Công Nghệ Bất Động Sản',
     modulePath: '/learning/real-estate-technology',
-    lessons: realEstateTechnologyModuleData.lessons || [],
+    lessons: realEstateLessons,
     primaryColor: 'blue',
-    secondaryColor: 'indigo',
-    gradientColors: 'from-slate-900 via-blue-900 to-slate-900',
-    sidebarContent: (lesson) => <RealEstateTechSidebar lesson={lesson} />,
+    secondaryColor: 'teal',
+    gradientColors: 'from-green-900 via-teal-900 to-green-900',
   };
-
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

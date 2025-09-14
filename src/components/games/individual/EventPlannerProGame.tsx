@@ -53,7 +53,6 @@ const EventPlannerProGame: React.FC<EventPlannerProGameProps> = ({ onComplete, t
   });
   const [tasks, setTasks] = useState<Task[]>([]);
   const [selectedTasks, setSelectedTasks] = useState<Task[]>([]);
-  const [eventProgress, setEventProgress] = useState(0);
 
   const [events, setEvents] = useState<Event[]>([
     {
@@ -362,23 +361,6 @@ const EventPlannerProGame: React.FC<EventPlannerProGameProps> = ({ onComplete, t
         return '📦';
       default:
         return '⭐';
-    }
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'venue':
-        return 'bg-blue-600';
-      case 'catering':
-        return 'bg-green-600';
-      case 'entertainment':
-        return 'bg-purple-600';
-      case 'marketing':
-        return 'bg-orange-600';
-      case 'logistics':
-        return 'bg-teal-600';
-      default:
-        return 'bg-gray-600';
     }
   };
 

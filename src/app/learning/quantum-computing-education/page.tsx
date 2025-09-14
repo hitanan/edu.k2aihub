@@ -1,5 +1,5 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { quantumComputingEducationModule } from '@/data/modules/quantum-computing-education';
+import { quantumComputingEducationModule, quantumComputingLessons } from '@/data/modules/quantum-computing-education';
 import { createModuleMetadata } from '@/utils/seo';
 import type { Metadata } from 'next';
 
@@ -19,5 +19,5 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function QuantumComputingMainPage() {
-  return <ModulePageTemplate moduleData={quantumComputingEducationModule} lessons={quantumComputingEducationModule.lessons || []} />;
+  return <ModulePageTemplate moduleData={quantumComputingEducationModule} lessons={quantumComputingLessons} />;
 }

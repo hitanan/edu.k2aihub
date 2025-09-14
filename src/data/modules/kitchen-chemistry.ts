@@ -28,7 +28,11 @@ export const kitchenChemistryModuleData: ModuleData = {
   ],
   prerequisites: ['Tò mò về nấu ăn.', 'Kiến thức hóa học cơ bản.'],
   careerOutcomes: ['Nhà khoa học thực phẩm.', 'Đầu bếp chuyên nghiệp.', 'Chuyên gia phát triển sản phẩm (R&D).'],
-  industryApplications: [{ name: 'Công nghệ thực phẩm.', description: '' }, { name: 'Nhà hàng và ẩm thực.', description: '' }, { name: 'Sản xuất đồ uống.', description: '' }],
+  industryApplications: [
+    { name: 'Công nghệ thực phẩm.', description: '' },
+    { name: 'Nhà hàng và ẩm thực.', description: '' },
+    { name: 'Sản xuất đồ uống.', description: '' },
+  ],
   marketDemand: { averageSalary: '15-30 triệu VNĐ', jobGrowth: '+12%', hireDemand: 'Trung bình' },
   relatedModules: [K2Module.FoodTechnology, K2Module.Biotechnology],
 };

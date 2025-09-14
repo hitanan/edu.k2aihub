@@ -3,7 +3,8 @@ import { ModuleData } from '@/types';
 export const aiLearningModule: ModuleData = {
   id: 'ai-learning',
   title: 'Học máy và AI',
-  description: 'Khám phá các khái niệm cơ bản về trí tuệ nhân tạo và học máy, và cách chúng được áp dụng trong thực tế.',
+  description:
+    'Khám phá các khái niệm cơ bản về trí tuệ nhân tạo và học máy, và cách chúng được áp dụng trong thực tế.',
   category: 'Công nghệ',
   lessons: [
     {

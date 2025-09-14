@@ -4,43 +4,29 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { personalEnergyPerformanceManagementModule } from '@/data/modules/personal-energy-performance-management';
-import { EnergyManagementLesson } from '@/types/lesson-base';
-import { notFound } from 'next/navigation';
+import { personalEnergyLessons, PersonalEnergyLesson } from '@/data/modules/personal-energy-performance-management';
+import { PageProps } from '@/types';
 import { Metadata } from 'next';
 
-interface LessonPageProps {
-  params: {
-    lessonId: string;
-  };
-}
-
-// Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(personalEnergyPerformanceManagementModule.lessons || []);
+  return generateLessonStaticParams(personalEnergyLessons);
 }
 
-// Generate metadata for each lesson
-export async function generateMetadata({ params }: LessonPageProps): Promise<Metadata> {
-  return generateLessonMetadata(params.lessonId, personalEnergyPerformanceManagementModule.lessons || [], personalEnergyPerformanceManagementModule.id);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lessonId } = await params;
+  return generateLessonMetadata(lessonId, personalEnergyLessons, 'personal-energy-performance-management');
 }
 
-// Page component with standardized config
-const config: LessonPageConfig<EnergyManagementLesson> = {
-  moduleName: 'personal-energy-performance-management',
-  moduleTitle: 'Quản Lý Năng Lượng và Hiệu Suất Cá Nhân',
-  modulePath: '/learning/personal-energy-performance-management',
-  lessons: personalEnergyPerformanceManagementModule.lessons || [],
-  primaryColor: 'orange',
-  secondaryColor: 'red',
-  gradientColors: 'from-slate-900 via-orange-900 to-slate-900',
-};
-
-export default async function EnergyManagementLessonPage({ params }: LessonPageProps) {
-  const { lessonId } = params;
-  if (!lessonId) {
-    notFound();
-  }
-
+export default async function PersonalEnergyLessonPage({ params }: PageProps) {
+  const config: LessonPageConfig<PersonalEnergyLesson> = {
+    moduleName: 'personal-energy-performance-management',
+    moduleTitle: 'Quản lý Năng lượng & Hiệu suất Cá nhân',
+    modulePath: '/learning/personal-energy-performance-management',
+    lessons: personalEnergyLessons,
+    primaryColor: 'yellow',
+    secondaryColor: 'amber',
+    gradientColors: 'from-yellow-800 via-amber-800 to-yellow-800',
+  };
+  const { lessonId } = await params;
   return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

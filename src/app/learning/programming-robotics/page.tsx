@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
+import { programmingRoboticsModule, programmingRoboticsLessons } from '@/data/modules/programming-robotics';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
@@ -19,5 +19,5 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function ProgrammingRoboticsPage() {
-  return <ModulePageTemplate moduleData={programmingRoboticsModule} lessons={programmingRoboticsModule.lessons || []} />;
+  return <ModulePageTemplate moduleData={programmingRoboticsModule} lessons={programmingRoboticsLessons} />;
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Maximize, RotateCcw, Volume2, VolumeX, Recycle, Leaf, Factory, Truck, Home } from 'lucide-react';
+import { Maximize, RotateCcw, Volume2, VolumeX, Recycle, Leaf, Factory, Home } from 'lucide-react';
 
 interface CircularEconomyResourceFlow3DGameProps {
   onComplete: (success: boolean, score: number) => void;
@@ -39,7 +39,6 @@ const CircularEconomyResourceFlow3DGame: React.FC<CircularEconomyResourceFlow3DG
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [score, setScore] = useState(0);
-  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [gameState, setGameState] = useState<'playing' | 'completed'>('playing');
   const [selectedNode, setSelectedNode] = useState<string | null>(null);

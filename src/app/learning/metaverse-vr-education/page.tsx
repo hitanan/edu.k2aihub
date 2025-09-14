@@ -12,5 +12,7 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function MetaverseVREducationMainPage() {
-  return <ModulePageTemplate moduleData={metaverseVREducationModule} lessons={metaverseVREducationModule.lessons || []} />;
+  return (
+    <ModulePageTemplate moduleData={metaverseVREducationModule} lessons={metaverseVREducationModule.lessons || []} />
+  );
 }

@@ -97,24 +97,27 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         'Travel micro-influencers promoting Vietnamese destinations',
       ],
       vietnamContext: {
-        title: "Bối cảnh Việt Nam",
-        content: ["Thị trường micro-influencer tại Việt Nam đang phát triển mạnh mẽ, đặc biệt trên các nền tảng như TikTok và Instagram."]
+        title: 'Bối cảnh Việt Nam',
+        content: [
+          'Thị trường micro-influencer tại Việt Nam đang phát triển mạnh mẽ, đặc biệt trên các nền tảng như TikTok và Instagram.',
+        ],
       },
       careerConnect: {
-        name: "Linh Nguyễn",
-        title: "Founder, The Creator Hub",
-        company: "The Creator Hub",
-        imageUrl: "/placeholder-attraction.svg",
-        quote: "Xây dựng thương hiệu cá nhân chân thực là chìa khóa thành công trong nền kinh tế sáng tạo."
+        name: 'Linh Nguyễn',
+        title: 'Founder, The Creator Hub',
+        company: 'The Creator Hub',
+        imageUrl: '/placeholder-attraction.svg',
+        quote: 'Xây dựng thương hiệu cá nhân chân thực là chìa khóa thành công trong nền kinh tế sáng tạo.',
       },
       quizzes: [
         {
-          question: "Đâu là nền tảng phổ biến nhất cho micro-influencer tại Việt Nam?",
-          options: ["Facebook", "TikTok", "LinkedIn", "Zalo"],
+          question: 'Đâu là nền tảng phổ biến nhất cho micro-influencer tại Việt Nam?',
+          options: ['Facebook', 'TikTok', 'LinkedIn', 'Zalo'],
           correctAnswerIndex: 1,
-          explanation: "TikTok đang là nền tảng có tốc độ phát triển người dùng và nhà sáng tạo nội dung nhanh nhất tại Việt Nam."
-        }
-      ]
+          explanation:
+            'TikTok đang là nền tảng có tốc độ phát triển người dùng và nhà sáng tạo nội dung nhanh nhất tại Việt Nam.',
+        },
+      ],
     },
     {
       id: 'niche-selection-positioning',
@@ -142,24 +145,32 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         'Traditional craft experts modernizing heritage skills',
       ],
       vietnamContext: {
-        title: "Bối cảnh Việt Nam",
-        content: ["Việc chọn đúng thị trường ngách (niche) là yếu tố sống còn để nổi bật trong một thị trường ngày càng đông đúc."]
+        title: 'Bối cảnh Việt Nam',
+        content: [
+          'Việc chọn đúng thị trường ngách (niche) là yếu tố sống còn để nổi bật trong một thị trường ngày càng đông đúc.',
+        ],
       },
       careerConnect: {
-        name: "Trần Tuấn Anh",
-        title: "Brand Strategist",
-        company: "BrandUp Asia",
-        imageUrl: "/placeholder-attraction.svg",
-        quote: "Thương hiệu cá nhân của bạn không phải là bạn là ai, mà là người khác nghĩ bạn là ai."
+        name: 'Trần Tuấn Anh',
+        title: 'Brand Strategist',
+        company: 'BrandUp Asia',
+        imageUrl: '/placeholder-attraction.svg',
+        quote: 'Thương hiệu cá nhân của bạn không phải là bạn là ai, mà là người khác nghĩ bạn là ai.',
       },
       quizzes: [
         {
-          question: "Tại sao việc chọn niche lại quan trọng?",
-          options: ["Để dễ dàng sao chép người khác", "Để thu hút một lượng khán giả nhỏ nhưng trung thành", "Để có thể quảng cáo mọi sản phẩm", "Để không cần sáng tạo nội dung"],
+          question: 'Tại sao việc chọn niche lại quan trọng?',
+          options: [
+            'Để dễ dàng sao chép người khác',
+            'Để thu hút một lượng khán giả nhỏ nhưng trung thành',
+            'Để có thể quảng cáo mọi sản phẩm',
+            'Để không cần sáng tạo nội dung',
+          ],
           correctAnswerIndex: 1,
-          explanation: "Một niche cụ thể giúp bạn xây dựng chuyên môn và kết nối sâu sắc hơn với một nhóm đối tượng khán giả nhất định."
-        }
-      ]
+          explanation:
+            'Một niche cụ thể giúp bạn xây dựng chuyên môn và kết nối sâu sắc hơn với một nhóm đối tượng khán giả nhất định.',
+        },
+      ],
     },
     {
       id: 'content-creation-strategies',
@@ -191,24 +202,32 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         'Beauty influencers creating skincare routine content',
       ],
       vietnamContext: {
-        title: "Bối cảnh Việt Nam",
-        content: ["Nội dung dạng video ngắn, đặc biệt là trên TikTok và Instagram Reels, đang thống trị và thu hút sự chú ý lớn từ khán giả Việt."]
+        title: 'Bối cảnh Việt Nam',
+        content: [
+          'Nội dung dạng video ngắn, đặc biệt là trên TikTok và Instagram Reels, đang thống trị và thu hút sự chú ý lớn từ khán giả Việt.',
+        ],
       },
       careerConnect: {
-        name: "Ngọc Mai",
-        title: "Content Director",
-        company: "V-Creators",
-        imageUrl: "/placeholder-attraction.svg",
-        quote: "Nội dung là vua, nhưng sự nhất quán là hoàng hậu. Hãy lên kế hoạch và thực thi đều đặn."
+        name: 'Ngọc Mai',
+        title: 'Content Director',
+        company: 'V-Creators',
+        imageUrl: '/placeholder-attraction.svg',
+        quote: 'Nội dung là vua, nhưng sự nhất quán là hoàng hậu. Hãy lên kế hoạch và thực thi đều đặn.',
       },
       quizzes: [
         {
-          question: "Yếu tố nào quan trọng nhất trong chiến lược nội dung?",
-          options: ["Sản xuất video thật dài", "Đăng bài không thường xuyên", "Cung cấp giá trị cho khán giả", "Chỉ nói về bản thân"],
+          question: 'Yếu tố nào quan trọng nhất trong chiến lược nội dung?',
+          options: [
+            'Sản xuất video thật dài',
+            'Đăng bài không thường xuyên',
+            'Cung cấp giá trị cho khán giả',
+            'Chỉ nói về bản thân',
+          ],
           correctAnswerIndex: 2,
-          explanation: "Nội dung thành công là nội dung giải quyết được vấn đề, mang lại thông tin hữu ích hoặc giải trí cho người xem."
-        }
-      ]
+          explanation:
+            'Nội dung thành công là nội dung giải quyết được vấn đề, mang lại thông tin hữu ích hoặc giải trí cho người xem.',
+        },
+      ],
     },
     {
       id: 'audience-growth-engagement',
@@ -240,24 +259,32 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         'Local influencers building neighborhood connections',
       ],
       vietnamContext: {
-        title: "Bối cảnh Việt Nam",
-        content: ["Xây dựng cộng đồng không chỉ là tăng follow, mà là tạo ra một không gian tương tác hai chiều, nơi khán giả cảm thấy được lắng nghe."]
+        title: 'Bối cảnh Việt Nam',
+        content: [
+          'Xây dựng cộng đồng không chỉ là tăng follow, mà là tạo ra một không gian tương tác hai chiều, nơi khán giả cảm thấy được lắng nghe.',
+        ],
       },
       careerConnect: {
-        name: "Phạm An",
-        title: "Community Manager",
-        company: "ConnectX",
-        imageUrl: "/placeholder-attraction.svg",
-        quote: "Đừng chỉ nói chuyện với khán giả của bạn, hãy tạo cơ hội để họ nói chuyện với nhau."
+        name: 'Phạm An',
+        title: 'Community Manager',
+        company: 'ConnectX',
+        imageUrl: '/placeholder-attraction.svg',
+        quote: 'Đừng chỉ nói chuyện với khán giả của bạn, hãy tạo cơ hội để họ nói chuyện với nhau.',
       },
       quizzes: [
         {
-          question: "Đâu là một hoạt động hiệu quả để tăng tương tác cộng đồng?",
-          options: ["Tổ chức Q&A (Hỏi & Đáp)", "Không bao giờ trả lời bình luận", "Chỉ đăng bài quảng cáo", "Ẩn tất cả các bình luận tiêu cực"],
+          question: 'Đâu là một hoạt động hiệu quả để tăng tương tác cộng đồng?',
+          options: [
+            'Tổ chức Q&A (Hỏi & Đáp)',
+            'Không bao giờ trả lời bình luận',
+            'Chỉ đăng bài quảng cáo',
+            'Ẩn tất cả các bình luận tiêu cực',
+          ],
           correctAnswerIndex: 0,
-          explanation: "Các phiên Q&A, livestream, và việc trả lời bình luận thường xuyên giúp khán giả cảm thấy được kết nối và trân trọng."
-        }
-      ]
+          explanation:
+            'Các phiên Q&A, livestream, và việc trả lời bình luận thường xuyên giúp khán giả cảm thấy được kết nối và trân trọng.',
+        },
+      ],
     },
     {
       id: 'brand-partnership-monetization',
@@ -285,24 +312,32 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         'Beauty creators featuring Vietnamese skincare brands',
       ],
       vietnamContext: {
-        title: "Bối cảnh Việt Nam",
-        content: ["Các nhãn hàng Việt Nam ngày càng ưa chuộng làm việc với micro-influencer vì tính chân thực và chi phí hợp lý hơn so với các ngôi sao lớn."]
+        title: 'Bối cảnh Việt Nam',
+        content: [
+          'Các nhãn hàng Việt Nam ngày càng ưa chuộng làm việc với micro-influencer vì tính chân thực và chi phí hợp lý hơn so với các ngôi sao lớn.',
+        ],
       },
       careerConnect: {
-        name: "Lê Thu Trang",
-        title: "Influencer Marketing Lead",
-        company: "LocalBrands.vn",
-        imageUrl: "/placeholder-attraction.svg",
-        quote: "Chúng tôi tìm kiếm những người có ảnh hưởng thực sự, không chỉ là những người có nhiều lượt theo dõi."
+        name: 'Lê Thu Trang',
+        title: 'Influencer Marketing Lead',
+        company: 'LocalBrands.vn',
+        imageUrl: '/placeholder-attraction.svg',
+        quote: 'Chúng tôi tìm kiếm những người có ảnh hưởng thực sự, không chỉ là những người có nhiều lượt theo dõi.',
       },
       quizzes: [
         {
-          question: "Khi làm việc với nhãn hàng, yếu tố nào là quan trọng nhất?",
-          options: ["Chỉ nhận sản phẩm miễn phí", "Đảm bảo sự hợp tác phù hợp với giá trị thương hiệu cá nhân", "Quảng cáo bất chấp sản phẩm tốt hay xấu", "Không cần hợp đồng"],
+          question: 'Khi làm việc với nhãn hàng, yếu tố nào là quan trọng nhất?',
+          options: [
+            'Chỉ nhận sản phẩm miễn phí',
+            'Đảm bảo sự hợp tác phù hợp với giá trị thương hiệu cá nhân',
+            'Quảng cáo bất chấp sản phẩm tốt hay xấu',
+            'Không cần hợp đồng',
+          ],
           correctAnswerIndex: 1,
-          explanation: "Sự phù hợp giữa influencer và nhãn hàng đảm bảo tính chân thực cho nội dung và hiệu quả cho chiến dịch."
-        }
-      ]
+          explanation:
+            'Sự phù hợp giữa influencer và nhãn hàng đảm bảo tính chân thực cho nội dung và hiệu quả cho chiến dịch.',
+        },
+      ],
     },
     {
       id: 'platform-optimization-algorithms',
@@ -334,24 +369,32 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         'Cross-platform audience building strategies',
       ],
       vietnamContext: {
-        title: "Bối cảnh Việt Nam",
-        content: ["Thuật toán của các nền tảng liên tục thay đổi, đòi hỏi nhà sáng tạo phải linh hoạt và không ngừng thử nghiệm để tối ưu hóa phạm vi tiếp cận."]
+        title: 'Bối cảnh Việt Nam',
+        content: [
+          'Thuật toán của các nền tảng liên tục thay đổi, đòi hỏi nhà sáng tạo phải linh hoạt và không ngừng thử nghiệm để tối ưu hóa phạm vi tiếp cận.',
+        ],
       },
       careerConnect: {
-        name: "Đức Huy",
-        title: "Growth Hacker",
-        company: "ViralWorks",
-        imageUrl: "/placeholder-attraction.svg",
-        quote: "Đừng chống lại thuật toán, hãy học cách 'lướt' trên nó. Hiểu nó muốn gì và cung cấp cho nó điều đó."
+        name: 'Đức Huy',
+        title: 'Growth Hacker',
+        company: 'ViralWorks',
+        imageUrl: '/placeholder-attraction.svg',
+        quote: "Đừng chống lại thuật toán, hãy học cách 'lướt' trên nó. Hiểu nó muốn gì và cung cấp cho nó điều đó.",
       },
       quizzes: [
         {
           question: "Làm thế nào để 'thân thiện' với thuật toán?",
-          options: ["Đăng nội dung chất lượng thấp", "Tương tác với khán giả của bạn", "Mua followers giả", "Không bao giờ thay đổi định dạng nội dung"],
+          options: [
+            'Đăng nội dung chất lượng thấp',
+            'Tương tác với khán giả của bạn',
+            'Mua followers giả',
+            'Không bao giờ thay đổi định dạng nội dung',
+          ],
           correctAnswerIndex: 1,
-          explanation: "Các thuật toán thường ưu tiên nội dung có tỷ lệ tương tác cao (like, comment, share), vì vậy việc khuyến khích và tham gia vào các cuộc trò chuyện là rất quan trọng."
-        }
-      ]
+          explanation:
+            'Các thuật toán thường ưu tiên nội dung có tỷ lệ tương tác cao (like, comment, share), vì vậy việc khuyến khích và tham gia vào các cuộc trò chuyện là rất quan trọng.',
+        },
+      ],
     },
     {
       id: 'business-scaling-systematization',
@@ -383,24 +426,33 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         'Influencers scaling into agencies',
       ],
       vietnamContext: {
-        title: "Bối cảnh Việt Nam",
-        content: ["Nhiều micro-influencer thành công tại Việt Nam đang chuyển mình thành doanh nhân, xây dựng các thương hiệu riêng hoặc công ty truyền thông."]
+        title: 'Bối cảnh Việt Nam',
+        content: [
+          'Nhiều micro-influencer thành công tại Việt Nam đang chuyển mình thành doanh nhân, xây dựng các thương hiệu riêng hoặc công ty truyền thông.',
+        ],
       },
       careerConnect: {
-        name: "Vân Chi",
-        title: "CEO & Founder",
-        company: "Chi Cosmetics",
-        imageUrl: "/placeholder-attraction.svg",
-        quote: "Xây dựng thương hiệu cá nhân là bước đầu. Xây dựng một doanh nghiệp từ thương hiệu đó mới là sự phát triển bền vững."
+        name: 'Vân Chi',
+        title: 'CEO & Founder',
+        company: 'Chi Cosmetics',
+        imageUrl: '/placeholder-attraction.svg',
+        quote:
+          'Xây dựng thương hiệu cá nhân là bước đầu. Xây dựng một doanh nghiệp từ thương hiệu đó mới là sự phát triển bền vững.',
       },
       quizzes: [
         {
-          question: "Đa dạng hóa doanh thu có nghĩa là gì?",
-          options: ["Chỉ phụ thuộc vào một nguồn thu nhập duy nhất", "Tạo ra nhiều nguồn thu nhập khác nhau (quảng cáo, bán sản phẩm, affiliate...)", "Không kiếm tiền từ thương hiệu cá nhân", "Chỉ làm việc với một nhãn hàng"],
+          question: 'Đa dạng hóa doanh thu có nghĩa là gì?',
+          options: [
+            'Chỉ phụ thuộc vào một nguồn thu nhập duy nhất',
+            'Tạo ra nhiều nguồn thu nhập khác nhau (quảng cáo, bán sản phẩm, affiliate...)',
+            'Không kiếm tiền từ thương hiệu cá nhân',
+            'Chỉ làm việc với một nhãn hàng',
+          ],
           correctAnswerIndex: 1,
-          explanation: "Việc có nhiều nguồn thu nhập giúp giảm rủi ro và tăng tính ổn định cho sự nghiệp của một nhà sáng tạo."
-        }
-      ]
+          explanation:
+            'Việc có nhiều nguồn thu nhập giúp giảm rủi ro và tăng tính ổn định cho sự nghiệp của một nhà sáng tạo.',
+        },
+      ],
     },
   ],
 };

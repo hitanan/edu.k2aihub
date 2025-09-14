@@ -78,7 +78,8 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
     exercises: [
       {
         title: 'Kiểm tra Dấu chân số của bạn',
-        description: 'Thực hiện một cuộc "tự kiểm tra" trên Google để xem những thông tin gì về bạn đang công khai trên mạng.',
+        description:
+          'Thực hiện một cuộc "tự kiểm tra" trên Google để xem những thông tin gì về bạn đang công khai trên mạng.',
         difficulty: 'Cơ bản',
         procedure: [
           'Mở một trình duyệt ở chế độ ẩn danh.',
@@ -87,7 +88,8 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
           'Tìm kiếm hình ảnh liên quan đến tên của bạn.',
           'Ghi lại những kết quả đáng ngạc nhiên hoặc đáng lo ngại.',
         ],
-        expectedResults: 'Một bản tóm tắt về những thông tin công khai của bạn trên Internet và cảm nhận của bạn về chúng.',
+        expectedResults:
+          'Một bản tóm tắt về những thông tin công khai của bạn trên Internet và cảm nhận của bạn về chúng.',
       },
     ],
     realWorldApplications: [
@@ -108,7 +110,8 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
       title: 'Chuyên gia An ninh mạng',
       company: 'Viettel Cyber Security',
       imageUrl: 'https://i.pravatar.cc/150?u=nguyen-huu-thong',
-      quote: 'Trên Internet, không có gì là thực sự biến mất. Mỗi cú nhấp chuột, mỗi bình luận, mỗi bức ảnh bạn đăng đều là một viên gạch xây nên ngôi nhà số của bạn. Hãy đảm bảo rằng đó là một ngôi nhà mà bạn tự hào, chứ không phải là một nhà tù.',
+      quote:
+        'Trên Internet, không có gì là thực sự biến mất. Mỗi cú nhấp chuột, mỗi bình luận, mỗi bức ảnh bạn đăng đều là một viên gạch xây nên ngôi nhà số của bạn. Hãy đảm bảo rằng đó là một ngôi nhà mà bạn tự hào, chứ không phải là một nhà tù.',
     },
     quizzes: [
       {
@@ -120,7 +123,8 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
           'Viết một bình luận trên Facebook.',
         ],
         correctAnswerIndex: 2,
-        explanation: 'Dấu chân số bị động là dữ liệu được thu thập mà bạn không chủ động cung cấp, ví dụ như lịch sử duyệt web, địa chỉ IP, vị trí địa lý.',
+        explanation:
+          'Dấu chân số bị động là dữ liệu được thu thập mà bạn không chủ động cung cấp, ví dụ như lịch sử duyệt web, địa chỉ IP, vị trí địa lý.',
       },
     ],
   },
@@ -138,7 +142,10 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
       'Học các chiến lược đối phó khi bản thân hoặc người khác bị bắt nạt.',
       'Biết cách thu thập bằng chứng và báo cáo các hành vi quấy rối.',
     ],
-    prerequisites: ['Tham gia các cộng đồng trực tuyến (nhóm Facebook, diễn đàn).', 'Chứng kiến hoặc trải qua các tương tác tiêu cực trên mạng.'],
+    prerequisites: [
+      'Tham gia các cộng đồng trực tuyến (nhóm Facebook, diễn đàn).',
+      'Chứng kiến hoặc trải qua các tương tác tiêu cực trên mạng.',
+    ],
     exercises: [
       {
         title: 'Kịch bản Nhập vai',
@@ -171,7 +178,8 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
       title: 'Chuyên gia Tâm lý học đường',
       company: 'Hệ thống giáo dục Vinschool',
       imageUrl: 'https://i.pravatar.cc/150?u=nguyen-phuong-anh',
-      quote: 'Bắt nạt trên mạng còn đáng sợ hơn bắt nạt ngoài đời thực vì nó theo bạn 24/7, vào tận phòng ngủ, vào tận tâm trí bạn. Học cách tự bảo vệ mình và lên tiếng vì người khác không chỉ là một kỹ năng, đó là một hành động dũng cảm để đòi lại sự tử tế cho không gian mạng.',
+      quote:
+        'Bắt nạt trên mạng còn đáng sợ hơn bắt nạt ngoài đời thực vì nó theo bạn 24/7, vào tận phòng ngủ, vào tận tâm trí bạn. Học cách tự bảo vệ mình và lên tiếng vì người khác không chỉ là một kỹ năng, đó là một hành động dũng cảm để đòi lại sự tử tế cho không gian mạng.',
     },
     quizzes: [
       {
@@ -183,7 +191,8 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
           'Xóa tài khoản và không bao giờ lên mạng nữa.',
         ],
         correctAnswerIndex: 2,
-        explanation: 'Đối đầu trực tiếp có thể làm tình hình tồi tệ hơn. Việc lưu bằng chứng là rất quan trọng để báo cáo sau này. Chia sẻ với người lớn (phụ huynh, thầy cô) sẽ giúp bạn có được sự hỗ trợ cần thiết.',
+        explanation:
+          'Đối đầu trực tiếp có thể làm tình hình tồi tệ hơn. Việc lưu bằng chứng là rất quan trọng để báo cáo sau này. Chia sẻ với người lớn (phụ huynh, thầy cô) sẽ giúp bạn có được sự hỗ trợ cần thiết.',
       },
     ],
   },

@@ -1,43 +1,34 @@
-import { LessonPageTemplate, LessonPageTemplateProps } from '@/components/learning/LessonPageTemplate';
-import { professionalSoftSkillsModule } from '@/data/modules/professional-soft-skills';
-import { ProfessionalSoftSkillsLesson } from '@/types/lesson-base';
-import { createLessonMetadata } from '@/utils/seo';
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { softSkillsLessons, SoftSkillsLesson } from '@/data/modules/professional-soft-skills';
+import { PageProps } from '@/types';
 import { Metadata } from 'next';
 
-interface ProfessionalSoftSkillsLessonPageProps {
-  params: { lessonId: string };
-}
-
-export async function generateMetadata({ params }: ProfessionalSoftSkillsLessonPageProps): Promise<Metadata> {
-  const lesson = professionalSoftSkillsModule.lessons?.find(l => l.id === params.lessonId);
-  if (!lesson) {
-    return {};
-  }
-  return createLessonMetadata(
-    lesson.title,
-    lesson.description,
-    professionalSoftSkillsModule.id,
-    lesson.id,
-    lesson.objectives
-  );
-}
-
-export default async function ProfessionalSoftSkillsLessonPage({ params }: ProfessionalSoftSkillsLessonPageProps) {
-  const config: LessonPageTemplateProps<ProfessionalSoftSkillsLesson>['config'] = {
-    moduleName: professionalSoftSkillsModule.id,
-    moduleTitle: professionalSoftSkillsModule.title,
-    modulePath: `/learning/${professionalSoftSkillsModule.id}`,
-    lessons: professionalSoftSkillsModule.lessons || [],
-    primaryColor: professionalSoftSkillsModule.primaryColor || '#000000',
-    secondaryColor: professionalSoftSkillsModule.primaryColor || '#FFFFFF', // Fallback
-    gradientColors: professionalSoftSkillsModule.gradientColors || 'from-gray-700 to-gray-900',
-  };
-
-  return <LessonPageTemplate lessonId={params.lessonId} config={config} />;
-}
-
+// Generate static params for all lessons in the module
 export async function generateStaticParams() {
-  return (professionalSoftSkillsModule.lessons || []).map(lesson => ({
-    lessonId: lesson.id,
-  }));
+  return generateLessonStaticParams(softSkillsLessons);
+}
+
+// Generate metadata for each lesson
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lessonId } = await params;
+  return generateLessonMetadata(lessonId, softSkillsLessons, 'professional-soft-skills');
+}
+
+export default async function SoftSkillsLessonPage({ params }: PageProps) {
+  const config: LessonPageConfig<SoftSkillsLesson> = {
+    moduleName: 'professional-soft-skills',
+    moduleTitle: 'Kỹ Năng Mềm Chuyên Nghiệp',
+    modulePath: '/learning/professional-soft-skills',
+    lessons: softSkillsLessons,
+    primaryColor: '#4A90E2',
+    secondaryColor: 'teal',
+    gradientColors: 'from-blue-500 to-teal-400',
+  };
+  const { lessonId } = await params;
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

@@ -1,43 +1,34 @@
-import { LessonPageTemplate, LessonPageTemplateProps } from '@/components/learning/LessonPageTemplate';
-import { psychologyBehavioralScienceModule } from '@/data/modules/psychology-behavioral-science';
-import { PsychologyBehavioralScienceLesson } from '@/types/lesson-base';
-import { createLessonMetadata } from '@/utils/seo';
+import {
+  LessonPageTemplate,
+  generateLessonMetadata,
+  generateLessonStaticParams,
+  LessonPageConfig,
+} from '@/components/learning/LessonPageTemplate';
+import { psychologyLessons, PsychologyLesson } from '@/data/modules/psychology-behavioral-science';
+import { PageProps } from '@/types';
 import { Metadata } from 'next';
 
-interface PsychologyBehavioralScienceLessonPageProps {
-  params: { lessonId: string };
-}
-
-export async function generateMetadata({ params }: PsychologyBehavioralScienceLessonPageProps): Promise<Metadata> {
-  const lesson = psychologyBehavioralScienceModule.lessons?.find(l => l.id === params.lessonId);
-  if (!lesson) {
-    return {};
-  }
-  return createLessonMetadata(
-    lesson.title,
-    lesson.description,
-    psychologyBehavioralScienceModule.id,
-    lesson.id,
-    lesson.objectives
-  );
-}
-
-export default async function PsychologyBehavioralScienceLessonPage({ params }: PsychologyBehavioralScienceLessonPageProps) {
-  const config: LessonPageTemplateProps<PsychologyBehavioralScienceLesson>['config'] = {
-    moduleName: psychologyBehavioralScienceModule.id,
-    moduleTitle: psychologyBehavioralScienceModule.title,
-    modulePath: `/learning/${psychologyBehavioralScienceModule.id}`,
-    lessons: psychologyBehavioralScienceModule.lessons || [],
-    primaryColor: psychologyBehavioralScienceModule.primaryColor || '#8B5CF6',
-    secondaryColor: psychologyBehavioralScienceModule.primaryColor || '#6366F1', // Fallback
-    gradientColors: psychologyBehavioralScienceModule.gradientColors || 'from-purple-500 to-indigo-600',
-  };
-
-  return <LessonPageTemplate lessonId={params.lessonId} config={config} />;
-}
-
+// Generate static params for all lessons in the module
 export async function generateStaticParams() {
-  return (psychologyBehavioralScienceModule.lessons || []).map(lesson => ({
-    lessonId: lesson.id,
-  }));
+  return generateLessonStaticParams(psychologyLessons);
+}
+
+// Generate metadata for each lesson
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { lessonId } = await params;
+  return generateLessonMetadata(lessonId, psychologyLessons, 'psychology-behavioral-science');
+}
+
+export default async function PsychologyLessonPage({ params }: PageProps) {
+  const config: LessonPageConfig<PsychologyLesson> = {
+    moduleName: 'psychology-behavioral-science',
+    moduleTitle: 'Tâm lý học & Khoa học hành vi',
+    modulePath: '/learning/psychology-behavioral-science',
+    lessons: psychologyLessons,
+    primaryColor: '#8B5CF6',
+    secondaryColor: 'indigo',
+    gradientColors: 'from-purple-500 to-indigo-600',
+  };
+  const { lessonId } = await params;
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

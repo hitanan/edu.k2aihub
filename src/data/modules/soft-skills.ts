@@ -1,10 +1,10 @@
-
 import { ModuleData } from '@/types';
 
 export const softSkillsModule: ModuleData = {
   id: 'soft-skills',
   title: 'Kỹ năng mềm thiết yếu',
-  description: 'Phát triển các kỹ năng mềm quan trọng như giao tiếp, làm việc nhóm, giải quyết vấn đề và tư duy phản biện.',
+  description:
+    'Phát triển các kỹ năng mềm quan trọng như giao tiếp, làm việc nhóm, giải quyết vấn đề và tư duy phản biện.',
   category: 'Phát triển bản thân',
   lessons: [
     {

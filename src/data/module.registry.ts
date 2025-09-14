@@ -70,11 +70,11 @@ import { mentalHealthTechModule } from '@/data/modules/mental-health-tech';
 import { nanotechnologyModule } from '@/data/modules/nanotechnology';
 import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
 import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
-import quantumComputingModule from '@/data/modules/quantum-computing';
+import { quantumComputingModule } from '@/data/modules/quantum-computing';
 
 // Group 2: Modules exporting a `...Lessons` array directly
 import { aiMachineLearningLessons } from '@/data/modules/ai-machine-learning';
-import { DataScienceLessons } from '@/data/data-science';
+// import { DataScienceLessons } from '@/data/data-science';
 import { spaceLessons } from '@/data/space-exploration';
 import { smartManufacturingLessons } from '@/data/smart-manufacturing';
 import { aerospaceEngineeringLessons } from '@/data/aerospace-engineering';
@@ -82,9 +82,9 @@ import { advancedAILessons } from '@/data/advanced-ai';
 import { vietnameseCultureLessons } from '@/data/vietnamese-culture';
 import { aiContentCreatorLessons } from '@/data/ai-content-creator';
 import { tiktokSocialCommerceLessons } from '@/data/tiktok-social-commerce';
-import { genZMarketingLessons } from '@/data/genz-marketing';
+// import { genZMarketingLessons } from '@/data/genz-marketing';
 import { shortVideoMasteryLessons } from '@/data/short-video-mastery';
-import { liveCommerceLessons } from '@/data/live-commerce-streaming';
+// import { liveCommerceLessons } from '@/data/live-commerce-streaming';
 import { microInfluencerEconomyModule } from '@/data/modules/micro-influencer-economy';
 import { socialListeningLessons } from '@/data/social-listening-crisis';
 import { ethicalMarketingPurposeModule } from '@/data/modules/ethical-marketing-purpose';
@@ -132,7 +132,7 @@ const modulesWithFullData: ModuleData[] = [
 
 const modulesFromLessons: ModuleData[] = [
   createModuleDataFromLessons('ai-machine-learning', 'AI & Machine Learning', aiMachineLearningLessons),
-  createModuleDataFromLessons('data-science', 'Data Science', DataScienceLessons),
+  // createModuleDataFromLessons('data-science', 'Data Science', DataScienceLessons),
   createModuleDataFromLessons('space-exploration', 'Space Exploration', spaceLessons),
   createModuleDataFromLessons('smart-manufacturing', 'Smart Manufacturing', smartManufacturingLessons),
   createModuleDataFromLessons('aerospace-engineering', 'Aerospace Engineering', aerospaceEngineeringLessons),
@@ -140,9 +140,9 @@ const modulesFromLessons: ModuleData[] = [
   createModuleDataFromLessons('vietnamese-culture', 'Vietnamese Culture', vietnameseCultureLessons),
   createModuleDataFromLessons('ai-content-creator', 'AI Content Creator', aiContentCreatorLessons),
   createModuleDataFromLessons('tiktok-social-commerce', 'TikTok Social Commerce', tiktokSocialCommerceLessons),
-  createModuleDataFromLessons('genz-marketing', 'GenZ Marketing', genZMarketingLessons),
+  // createModuleDataFromLessons('genz-marketing', 'GenZ Marketing', genZMarketingLessons),
   createModuleDataFromLessons('short-video-mastery', 'Short Video Mastery', shortVideoMasteryLessons),
-  createModuleDataFromLessons('live-commerce-streaming', 'Live Commerce Streaming', liveCommerceLessons),
+  // createModuleDataFromLessons('live-commerce-streaming', 'Live Commerce Streaming', liveCommerceLessons),
   createModuleDataFromLessons('social-listening-crisis', 'Social Listening & Crisis', socialListeningLessons),
 ];
 

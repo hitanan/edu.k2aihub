@@ -1,10 +1,10 @@
-
 import { ModuleData } from '@/types';
 
 export const spaceExplorationModule: ModuleData = {
   id: 'space-exploration',
   title: 'Khám phá không gian',
-  description: 'Tìm hiểu về lịch sử khám phá không gian, các hành tinh trong hệ mặt trời và các công nghệ du hành vũ trụ.',
+  description:
+    'Tìm hiểu về lịch sử khám phá không gian, các hành tinh trong hệ mặt trời và các công nghệ du hành vũ trụ.',
   category: 'Khoa học',
   lessons: [
     {

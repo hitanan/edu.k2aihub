@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { dataScienceAnalyticsModuleData } from '@/data/modules/data-science-analytics';
 import { createModuleMetadata } from '@/utils/seo';
-import { K2Module } from '@/data/k2-modules';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(
@@ -13,5 +12,10 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function DataScienceAnalyticsPage() {
-  return <ModulePageTemplate moduleData={dataScienceAnalyticsModuleData} lessons={dataScienceAnalyticsModuleData.lessons || []} />;
+  return (
+    <ModulePageTemplate
+      moduleData={dataScienceAnalyticsModuleData}
+      lessons={dataScienceAnalyticsModuleData.lessons || []}
+    />
+  );
 }

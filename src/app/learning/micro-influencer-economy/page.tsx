@@ -20,5 +20,10 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function MicroInfluencerEconomyPage() {
-  return <ModulePageTemplate moduleData={microInfluencerEconomyModule} lessons={microInfluencerEconomyModule.lessons || []} />;
+  return (
+    <ModulePageTemplate
+      moduleData={microInfluencerEconomyModule}
+      lessons={microInfluencerEconomyModule.lessons || []}
+    />
+  );
 }
