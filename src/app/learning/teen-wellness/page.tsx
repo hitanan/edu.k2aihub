@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { teenWellnessLessons } from '@/data/teen-wellness';
-import { teenWellnessModuleData } from '@/data/teen-wellness-module';
+import { teenWellnessLessons } from '@/data/modules/teen-wellness';
+import { teenWellnessModuleData } from '@/data/modules/teen-wellness';
 
 export const metadata: Metadata = createModuleMetadata(
   teenWellnessModuleData.title,

@@ -4,8 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { socialListeningLessons } from '@/data/social-listening-crisis';
-import type { SocialListeningLessonType } from '@/data/social-listening-crisis';
+import { socialListeningLessons } from '@/data/modules/social-listening-crisis';
+import type { SocialListeningLessonType } from '@/data/modules/social-listening-crisis';
 import { AlertTriangle } from 'lucide-react';
 import { notFound } from 'next/navigation';
 

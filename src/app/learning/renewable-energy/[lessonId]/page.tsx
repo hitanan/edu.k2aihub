@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { renewableEnergyLessons, type RenewableEnergyLesson } from '@/data/renewable-energy';
+import { renewableEnergyLessons, type RenewableEnergyLesson } from '@/data/modules/renewable-energy';
 import { Battery, Zap, Sun, Wind } from 'lucide-react';
 import { notFound } from 'next/navigation';
 

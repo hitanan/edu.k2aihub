@@ -4,8 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { supplyChainLogisticsLessons } from '@/data/supply-chain-logistics';
-import type { SupplyChainLogisticsLessonType } from '@/data/supply-chain-logistics';
+import { supplyChainLogisticsLessons } from '@/data/modules/supply-chain-logistics';
+import type { SupplyChainLogisticsLessonType } from '@/data/modules/supply-chain-logistics';
 
 import { notFound } from 'next/navigation';
 

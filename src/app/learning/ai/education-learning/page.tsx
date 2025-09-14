@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import { createModuleMetadata } from '@/utils/seo';
-import { aiLearningApps, aiAppCategories, learningPathways } from '@/data/aiLearningApps';
+import { aiLearningApps, aiAppCategories, learningPathways } from '@/data/modules/aiLearningApps';
 import YouTubePlayer from '@/components/YouTubePlayer';
 
 export const metadata: Metadata = createModuleMetadata(

@@ -4,8 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { shortVideoMasteryLessons } from '@/data/short-video-mastery';
-import { ShortVideoMasteryLessonType } from '@/data/short-video-mastery';
+import { shortVideoMasteryLessons } from '@/data/modules/short-video-mastery';
+import { ShortVideoMasteryLessonType } from '@/data/modules/short-video-mastery';
 import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons

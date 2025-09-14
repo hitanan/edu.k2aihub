@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { teenWellnessLessons, TeenWellnessLessonData as TeenWellnessLessonType } from '@/data/teen-wellness';
+import { teenWellnessLessons, TeenWellnessLessonData as TeenWellnessLessonType } from '@/data/modules/teen-wellness';
 
 import { notFound } from 'next/navigation';
 

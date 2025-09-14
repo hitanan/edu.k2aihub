@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { robloxLessons } from '@/data/roblox-game-dev';
+import { robloxLessons } from '@/data/modules/roblox-game-dev';
 import { createModuleMetadata } from '@/utils/seo';
-import { robloxGameDevModuleData } from '@/data/roblox-game-dev-module';
+import { robloxGameDevModuleData } from '@/data/modules/roblox-game-dev';
 
 export const metadata: Metadata = createModuleMetadata(
   robloxGameDevModuleData.title,

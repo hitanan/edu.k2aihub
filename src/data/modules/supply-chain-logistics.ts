@@ -1,4 +1,7 @@
 import { BaseLessonData } from '@/types/lesson-base';
+import { ModuleData } from '@/types';
+import { K2Module } from '@/data/k2-modules';
+
 export interface SupplyChainLogisticsLessonType extends BaseLessonData {
   logisticsFramework?: 'SCOR' | 'APICS' | 'Lean Logistics';
 }
@@ -173,3 +176,69 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLessonType[] = [
     ],
   },
 ];
+
+export const supplyChainLogisticsModuleData: ModuleData = {
+  id: 'supply-chain-logistics',
+  title: 'Supply Chain & Logistics',
+  subtitle: 'Quản lý chuỗi cung ứng thông minh',
+  description:
+    'Khám phá advanced supply chain management techniques, từ inventory optimization đến global distribution strategies trong digital age.',
+  level: 'Nâng cao',
+  duration: '18-24 giờ',
+  category: 'Business Technology',
+  heroImageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop',
+  features: [
+    'Supply Chain Optimization Algorithms',
+    'Inventory Management Systems',
+    'Distribution Network Design',
+    'Supplier Relationship Management',
+    'Demand Forecasting & Planning',
+    'Warehouse Management Technology',
+    'Transportation Optimization',
+    'Risk Management & Resilience',
+  ],
+  icon: '🚛',
+  color: 'from-orange-600 to-amber-600',
+  objectives: [
+    'Master supply chain optimization strategies và algorithms',
+    'Implement advanced inventory management systems',
+    'Design efficient distribution networks',
+    'Develop demand forecasting capabilities',
+    'Create supplier relationship management frameworks',
+    'Build resilient supply chain architectures',
+  ],
+  prerequisites: [
+    'Business operations understanding',
+    'Basic data analysis skills',
+    'Project management experience',
+    'Strategic thinking capabilities',
+  ],
+  careerOutcomes: [
+    'Supply Chain Manager (45-80 triệu VNĐ)',
+    'Logistics Technology Specialist (35-65 triệu VNĐ)',
+    'Operations Research Analyst (40-75 triệu VNĐ)',
+    'Procurement Technology Manager (45-85 triệu VNĐ)',
+    'Distribution Network Designer (40-70 triệu VNĐ)',
+    'Supply Chain Data Scientist (50-90 triệu VNĐ)',
+    'Warehouse Automation Engineer (45-80 triệu VNĐ)',
+    'Supply Chain Consultant (50-100 triệu VNĐ)',
+  ],
+  industryApplications: [
+    'Manufacturing supply chain optimization',
+    'E-commerce fulfillment networks',
+    'Retail inventory management',
+    'Automotive supply chains',
+    'Food & beverage distribution',
+    'Pharmaceutical cold chain',
+    'Fashion & apparel logistics',
+    'Construction material supply',
+    'Electronics component sourcing',
+    'Healthcare supply management',
+  ],
+  marketDemand: {
+    averageSalary: '40-100 triệu VNĐ',
+    jobGrowth: '65% Growth',
+    hireDemand: 'Rất cao',
+  },
+  relatedModules: [K2Module.DataScienceAnalytics, K2Module.ProfessionalSkills, K2Module.DigitalMarketing],
+};

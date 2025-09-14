@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { spaceTechnologyLessons } from '@/data/space-technology';
+import { spaceTechnologyLessons } from '@/data/modules/space-technology';
 import { createModuleMetadata } from '@/utils/seo';
-import { spaceTechnologyModuleData } from '@/data/space-technology-module';
+import { spaceTechnologyModuleData } from '@/data/modules/space-technology';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(

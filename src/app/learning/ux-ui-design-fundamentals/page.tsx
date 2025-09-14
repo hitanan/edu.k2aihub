@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { uxuiDesignLessons } from '@/data/ux-ui-design-fundamentals';
+import { uxuiDesignLessons } from '@/data/modules/ux-ui-design-fundamentals';
 import { createModuleMetadata } from '@/utils/seo';
-import { uxUiDesignFundamentalsModuleData } from '@/data/ux-ui-design-fundamentals-module';
+import { uxUiDesignFundamentalsModuleData } from '@/data/modules/ux-ui-design-fundamentals';
 
 export const metadata: Metadata = createModuleMetadata(
   uxUiDesignFundamentalsModuleData.title,

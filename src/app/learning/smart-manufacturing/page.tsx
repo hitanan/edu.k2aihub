@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { smartManufacturingLessons } from '@/data/smart-manufacturing';
+import { smartManufacturingLessons } from '@/data/modules/smart-manufacturing';
 import { createModuleMetadata } from '@/utils/seo';
-import { smartManufacturingModuleData } from '@/data/smart-manufacturing-module';
+import { smartManufacturingModuleData } from '@/data/modules/smart-manufacturing';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(

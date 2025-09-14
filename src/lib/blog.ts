@@ -6,7 +6,7 @@ import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import { createCategorySlug, createTagSlug, getCategoryFromSlug } from '@/utils/slug';
 
-import { BlogPost, BlogMetadata, BlogCategory } from '@/types';
+import { BlogPost, BlogMetadata } from '@/types';
 
 const postsDirectory = path.join(process.cwd(), 'docs');
 
@@ -109,7 +109,7 @@ function generateTags(slug: string, content: string): string[] {
 }
 
 // Get blog post by slug
-export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+export function getBlogPostBySlugSync(slug: string): BlogPost | null {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
 
@@ -119,11 +119,6 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
 
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
-
-    // Process markdown content to HTML
-    const processedContent = await unified().use(remarkParse).use(remarkHtml, { sanitize: false }).process(content);
-
-    const contentHtml = processedContent.toString();
 
     // Generate metadata if not provided
     const title = data.title || generateTitleFromContent(content, slug);
@@ -147,7 +142,7 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
       readingTime,
       featured,
       coverImage,
-      content: contentHtml,
+      content: content, // Return raw markdown content
     };
   } catch (error) {
     console.error(`Error reading blog post ${slug}:`, error);
@@ -155,33 +150,61 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
   }
 }
 
+// Get blog post by slug
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  const post = getBlogPostBySlugSync(slug);
+  if (!post) return null;
+
+  // Process markdown content to HTML
+  const processedContent = await unified().use(remarkParse).use(remarkHtml, { sanitize: false }).process(post.content);
+  const contentHtml = processedContent.toString();
+
+  return {
+    ...post,
+    content: contentHtml,
+  };
+}
+
 // Get all blog posts with full content
-export async function getAllBlogPostsWithContent(): Promise<BlogPost[]> {
+export function getAllBlogPostsWithContentSync(): BlogPost[] {
   const slugs = getBlogSlugs();
-  const posts = await Promise.all(slugs.map((slug) => getBlogPostBySlug(slug)));
+  const posts = slugs.map((slug) => getBlogPostBySlugSync(slug));
   return posts
     .filter((post): post is BlogPost => post !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-// Get all blog posts metadata
-export async function getAllBlogPosts(): Promise<BlogMetadata[]> {
-  const slugs = getBlogSlugs();
-  const posts = await Promise.all(
-    slugs.map(async (slug) => {
-      const post = await getBlogPostBySlug(slug);
-      if (!post) return null;
-
-      // Return only metadata, not full content
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { content, ...metadata } = post;
-      return metadata;
+// Get all blog posts with full content
+export async function getAllBlogPostsWithContent(): Promise<BlogPost[]> {
+  const posts = getAllBlogPostsWithContentSync();
+  const processedPosts = await Promise.all(
+    posts.map(async (post) => {
+      const processedContent = await unified()
+        .use(remarkParse)
+        .use(remarkHtml, { sanitize: false })
+        .process(post.content);
+      return {
+        ...post,
+        content: processedContent.toString(),
+      };
     }),
   );
+  return processedPosts;
+}
 
-  return posts
-    .filter((post): post is BlogMetadata => post !== null)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+// Get all blog posts metadata
+export function getAllBlogPostsMetadata(): BlogMetadata[] {
+  const posts = getAllBlogPostsSync();
+  return posts.map((post) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { content, ...metadata } = post;
+    return metadata;
+  });
+}
+
+// Get all blog posts metadata (async wrapper)
+export async function getAllBlogPosts(): Promise<BlogMetadata[]> {
+  return Promise.resolve(getAllBlogPostsMetadata());
 }
 
 // Get featured blog posts

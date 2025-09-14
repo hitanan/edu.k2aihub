@@ -75,18 +75,18 @@ import { quantumComputingModule } from '@/data/modules/quantum-computing';
 // Group 2: Modules exporting a `...Lessons` array directly
 import { aiMachineLearningLessons } from '@/data/modules/ai-machine-learning';
 // import { DataScienceLessons } from '@/data/data-science';
-import { spaceLessons } from '@/data/space-exploration';
-import { smartManufacturingLessons } from '@/data/smart-manufacturing';
-import { aerospaceEngineeringLessons } from '@/data/aerospace-engineering';
-import { advancedAILessons } from '@/data/advanced-ai';
-import { vietnameseCultureLessons } from '@/data/vietnamese-culture';
-import { aiContentCreatorLessons } from '@/data/ai-content-creator';
-import { tiktokSocialCommerceLessons } from '@/data/tiktok-social-commerce';
+import { spaceLessons } from '@/data/modules/space-exploration';
+import { smartManufacturingLessons } from '@/data/modules/smart-manufacturing';
+import { aerospaceEngineeringLessons } from '@/data/modules/aerospace-engineering';
+import { advancedAILessons } from '@/data/modules/advanced-ai';
+import { vietnameseCultureLessons } from '@/data/modules/vietnamese-culture';
+import { aiContentCreatorLessons } from '@/data/modules/ai-content-creator';
+import { tiktokSocialCommerceLessons } from '@/data/modules/tiktok-social-commerce';
 // import { genZMarketingLessons } from '@/data/genz-marketing';
-import { shortVideoMasteryLessons } from '@/data/short-video-mastery';
+import { shortVideoMasteryLessons } from '@/data/modules/short-video-mastery';
 // import { liveCommerceLessons } from '@/data/live-commerce-streaming';
 import { microInfluencerEconomyModule } from '@/data/modules/micro-influencer-economy';
-import { socialListeningLessons } from '@/data/social-listening-crisis';
+import { socialListeningLessons } from '@/data/modules/social-listening-crisis';
 import { ethicalMarketingPurposeModule } from '@/data/modules/ethical-marketing-purpose';
 
 // --- Consolidate all modules into a single array ---

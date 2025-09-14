@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { softSkillsLessons } from '@/data/soft-skills';
+import { softSkillsLessons } from '@/data/modules/soft-skills';
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
 

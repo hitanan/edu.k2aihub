@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { aerospaceEngineeringLessons, type AerospaceEngineeringLesson } from '@/data/aerospace-engineering';
+import { aerospaceEngineeringLessons, type AerospaceEngineeringLesson } from '@/data/modules/aerospace-engineering';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/k2-modules';
 import { BaseLessonData } from '@/types/lesson-base';

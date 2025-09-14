@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { AIApplicationLessons } from '@/data/ai-applications';
+import { AIApplicationLessons } from '@/data/modules/ai-applications';
 import { createModuleMetadata } from '@/utils/seo';
 import { K2Module } from '@/data/k2-modules';
 

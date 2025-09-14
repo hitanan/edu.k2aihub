@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { sustainableAgricultureLessons } from '@/data/sustainable-agriculture';
-import { sustainableAgricultureModuleData } from '@/data/sustainable-agriculture-module';
+import { sustainableAgricultureLessons } from '@/data/modules/sustainable-agriculture';
+import { sustainableAgricultureModuleData } from '@/data/modules/sustainable-agriculture';
 
 export const metadata: Metadata = createModuleMetadata(
   sustainableAgricultureModuleData.title,

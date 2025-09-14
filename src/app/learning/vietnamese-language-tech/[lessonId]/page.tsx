@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { vietnameseLangTechLessons, VietnameseLangTechLesson } from '@/data/vietnamese-language-tech';
+import { vietnameseLangTechLessons, VietnameseLangTechLesson } from '@/data/modules/vietnamese-language-tech';
 
 import { MessageSquare } from 'lucide-react';
 import { notFound } from 'next/navigation';

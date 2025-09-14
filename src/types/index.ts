@@ -44,6 +44,7 @@ export interface ModuleData<T extends BaseLessonData = BaseLessonData> {
   heroImageUrl?: string;
   objectives?: string[];
   prerequisites?: string[];
+  careerOpportunities?: string[];
   careerOutcomes?: string[];
   industryApplications?: (string | { name: string; description: string; url?: string })[];
   marketDemand?: {

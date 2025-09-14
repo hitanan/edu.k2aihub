@@ -4,8 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { smartManufacturingLessons } from '@/data/smart-manufacturing';
-import { SmartManufacturingLessonType } from '@/data/smart-manufacturing';
+import { smartManufacturingLessons } from '@/data/modules/smart-manufacturing';
+import { SmartManufacturingLessonType } from '@/data/modules/smart-manufacturing';
 import { Factory, Cog, Zap } from 'lucide-react';
 import { notFound } from 'next/navigation';
 

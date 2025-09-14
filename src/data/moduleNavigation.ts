@@ -3,7 +3,7 @@ import { advancedCreativeSkillsModuleData } from '@/data/modules/advanced-creati
 import { aiForStudentsModuleData } from '@/data/modules/ai-for-students';
 import { aiMachineLearningModuleData } from '@/data/modules/ai-machine-learning';
 import { aiLearningModule } from '@/data/modules/ai-learning';
-import { aiSeoOptimizationModule } from '@/data/modules/ai-seo-optimization';
+import { aiSeoOptimizationModuleData } from '@/data/modules/ai-seo-optimization';
 import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
 import { blueEconomyModuleData } from '@/data/modules/blue-economy';
 import { businessMarketingModuleData } from '@/data/modules/business-marketing';
@@ -47,16 +47,16 @@ import { psychologyBehavioralScienceModule } from '@/data/modules/psychology-beh
 import { quantumComputingEducationModule } from '@/data/modules/quantum-computing-education';
 import { quantumComputingModule } from '@/data/modules/quantum-computing';
 import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
-import { renewableEnergyModule } from '@/data/modules/renewable-energy';
-import { robloxGameDevModule } from '@/data/modules/roblox-game-dev';
-import { robosimModule } from '@/data/modules/robosim';
-import { semiconductorTechnologyModule } from '@/data/modules/semiconductor-technology';
-import { shortVideoMasteryModule } from '@/data/modules/short-video-mastery';
-import { smartManufacturingModule } from '@/data/modules/smart-manufacturing';
-import { socialListeningCrisisModule } from '@/data/modules/social-listening-crisis';
-import { softSkillsModule } from '@/data/modules/soft-skills';
-import { spaceExplorationModule } from '@/data/modules/space-exploration';
-import { spaceTechnologyModule } from '@/data/modules/space-technology';
+import { renewableEnergyModuleData as renewableEnergyModule } from '@/data/modules/renewable-energy';
+import { robloxGameDevModuleData as robloxGameDevModule } from '@/data/modules/roblox-game-dev';
+import { robosimModuleData } from '@/data/modules/robosim';
+import { semiconductorTechnologyModuleData } from '@/data/modules/semiconductor-technology';
+import { shortVideoMasteryModuleData } from '@/data/modules/short-video-mastery';
+import { smartManufacturingModuleData } from '@/data/modules/smart-manufacturing';
+import { socialListeningCrisisModuleData } from '@/data/modules/social-listening-crisis';
+import { softSkillsModuleData } from '@/data/modules/soft-skills';
+import { spaceExplorationModuleData } from '@/data/modules/space-exploration';
+import { spaceTechnologyModuleData } from '@/data/modules/space-technology';
 import { K2Module } from './k2-modules';
 
 // Migrated Modules
@@ -121,7 +121,7 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   aiForStudentsModuleData,
   aiMachineLearningModuleData,
   aiLearningModule,
-  aiSeoOptimizationModule,
+  aiSeoOptimizationModuleData,
   arduinoCircuitsModuleData,
   arduinoModuleData,
   blueEconomyModuleData,
@@ -180,16 +180,16 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   realEstateTechnologyModuleData,
   renewableEnergyModule,
   robloxGameDevModule,
-  robosimModule,
+  robosimModuleData,
   roboticsModuleData,
   scratchModuleData,
-  semiconductorTechnologyModule,
-  shortVideoMasteryModule,
-  smartManufacturingModule,
-  socialListeningCrisisModule,
-  softSkillsModule,
-  spaceExplorationModule,
-  spaceTechnologyModule,
+  semiconductorTechnologyModuleData,
+  shortVideoMasteryModuleData,
+  smartManufacturingModuleData,
+  socialListeningCrisisModuleData,
+  softSkillsModuleData,
+  spaceExplorationModuleData,
+  spaceTechnologyModuleData,
   stemModuleData,
   biotechnologyModuleData,
 ];

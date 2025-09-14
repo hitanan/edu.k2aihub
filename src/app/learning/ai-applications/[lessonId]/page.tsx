@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { AIApplicationLessons, AIApplicationLessonData } from '@/data/ai-applications';
+import { AIApplicationLessons, AIApplicationLessonData } from '@/data/modules/ai-applications';
 
 import { Bot, Briefcase, Building, Target, TrendingUp } from 'lucide-react';
 

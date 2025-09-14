@@ -5,7 +5,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { vietnameseBusinessLessons, VietnameseBusinessLesson } from '@/data/vietnamese-business';
+import { vietnameseBusinessLessons, VietnameseBusinessLesson } from '@/data/modules/vietnamese-business';
 
 import { notFound } from 'next/navigation';
 

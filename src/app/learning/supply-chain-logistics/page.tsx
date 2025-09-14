@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { supplyChainLogisticsLessons } from '@/data/supply-chain-logistics';
+import { supplyChainLogisticsLessons } from '@/data/modules/supply-chain-logistics';
 import { createModuleMetadata } from '@/utils/seo';
-import { supplyChainLogisticsModuleData } from '@/data/supply-chain-logistics-module';
+import { supplyChainLogisticsModuleData } from '@/data/modules/supply-chain-logistics';
 
 export const metadata: Metadata = createModuleMetadata(
   supplyChainLogisticsModuleData.title,

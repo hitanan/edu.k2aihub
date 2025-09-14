@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { robosimLessons, RobosimLessonType } from '@/data/robosim';
+import { robosimLessons, RobosimLessonType } from '@/data/modules/robosim';
 import { Bot, Cpu, Puzzle } from 'lucide-react';
 import { notFound } from 'next/navigation';
 

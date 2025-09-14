@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { semiconductorLessons } from '@/data/semiconductor-technology';
+import { semiconductorLessons } from '@/data/modules/semiconductor-technology';
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';
 

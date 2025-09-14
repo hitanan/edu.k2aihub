@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { youngEntrepreneurLessons } from '@/data/young-entrepreneur';
-import { youngEntrepreneurModuleData } from '@/data/young-entrepreneur-module';
+import { youngEntrepreneurLessons } from '@/data/modules/young-entrepreneur';
+import { youngEntrepreneurModuleData } from '@/data/modules/young-entrepreneur';
 
 export const metadata: Metadata = createModuleMetadata(
   youngEntrepreneurModuleData.title,

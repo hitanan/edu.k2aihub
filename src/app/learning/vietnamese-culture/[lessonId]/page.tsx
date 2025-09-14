@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { vietnameseCultureLessons, VietnameseCultureLesson } from '@/data/vietnamese-culture';
+import { vietnameseCultureLessons, VietnameseCultureLesson } from '@/data/modules/vietnamese-culture';
 
 import { Landmark } from 'lucide-react';
 import { notFound } from 'next/navigation';

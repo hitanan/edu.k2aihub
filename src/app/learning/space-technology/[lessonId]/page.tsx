@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { spaceTechnologyLessons, type SpaceTechnologyLesson } from '@/data/space-technology';
+import { spaceTechnologyLessons, type SpaceTechnologyLesson } from '@/data/modules/space-technology';
 
 import { notFound } from 'next/navigation';
 

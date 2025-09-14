@@ -1,5 +1,5 @@
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { robosimLessons } from '@/data/robosim';
+import { robosimLessons } from '@/data/modules/robosim';
 import { createTitle, createDescription } from '@/utils/seo';
 import { K2Module } from '@/data/k2-modules';
 

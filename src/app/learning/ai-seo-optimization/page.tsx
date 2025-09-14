@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { aiSeoOptimizationLessons } from '@/data/ai-seo-optimization';
-import { aiSeoOptimizationModuleData } from '@/data/ai-seo-optimization-module';
+import { aiSeoOptimizationLessons } from '@/data/modules/ai-seo-optimization';
+import { aiSeoOptimizationModuleData } from '@/data/modules/ai-seo-optimization';
 import { createModuleMetadata } from '@/utils/seo';
 
 // Generate metadata

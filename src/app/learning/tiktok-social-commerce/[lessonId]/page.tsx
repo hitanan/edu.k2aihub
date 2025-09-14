@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { tiktokSocialCommerceLessons, TikTokSocialCommerceLessonType } from '@/data/tiktok-social-commerce';
+import { tiktokSocialCommerceLessons, TikTokSocialCommerceLessonType } from '@/data/modules/tiktok-social-commerce';
 
 import { notFound } from 'next/navigation';
 

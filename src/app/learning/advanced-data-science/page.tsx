@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { advancedDataScienceLessons } from '@/data/advanced-data-science';
+import { advancedDataScienceLessons } from '@/data/modules/advanced-data-science';
 import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
 import { ModuleData } from '@/types';

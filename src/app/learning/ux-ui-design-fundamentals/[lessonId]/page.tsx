@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { uxuiDesignLessons, UXUILessonType } from '@/data/ux-ui-design-fundamentals';
+import { uxuiDesignLessons, UXUILessonType } from '@/data/modules/ux-ui-design-fundamentals';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {

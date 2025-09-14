@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { spaceLessons, type SpaceExplorationLesson } from '@/data/space-exploration';
+import { spaceLessons, type SpaceExplorationLesson } from '@/data/modules/space-exploration';
 import { BaseLessonData } from '@/types/lesson-base';
 import { Rocket, Satellite, Globe, Star } from 'lucide-react';
 import { notFound } from 'next/navigation';

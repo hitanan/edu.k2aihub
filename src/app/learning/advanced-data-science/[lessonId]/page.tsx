@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { advancedDataScienceLessons } from '@/data/advanced-data-science';
+import { advancedDataScienceLessons } from '@/data/modules/advanced-data-science';
 
 import { BaseLessonData } from '@/types/lesson-base';
 
@@ -15,12 +15,12 @@ export async function generateStaticParams() {
 
 // Generate metadata for each lesson
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params ?? '';
+  const { lessonId } = (await params) ?? '';
   return generateLessonMetadata(lessonId, advancedDataScienceLessons, 'advanced-data-science');
 }
 
 export default async function AdvancedDataScienceLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
-  const { lessonId } = await params ?? '';
+  const { lessonId } = (await params) ?? '';
 
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'advanced-data-science',

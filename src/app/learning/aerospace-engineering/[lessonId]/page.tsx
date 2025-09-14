@@ -4,12 +4,12 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { aerospaceEngineeringLessons } from '@/data/aerospace-engineering';
+import { aerospaceEngineeringLessons } from '@/data/modules/aerospace-engineering';
 
 import { BaseLessonData } from '@/types/lesson-base';
 import { Plane, Satellite, Rocket, Cog, Navigation, Radar } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { AerospaceEngineeringLesson } from '@/data/aerospace-engineering';
+import { AerospaceEngineeringLesson } from '@/data/modules/aerospace-engineering';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {

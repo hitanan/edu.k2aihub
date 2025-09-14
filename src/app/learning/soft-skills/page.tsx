@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { softSkillsLessons } from '@/data/soft-skills';
+import { softSkillsLessons } from '@/data/modules/soft-skills';
 import { createModuleMetadata } from '@/utils/seo';
-import { softSkillsModuleData } from '@/data/soft-skills-module';
+import { softSkillsModuleData } from '@/data/modules/soft-skills';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { renewableEnergyLessons } from '@/data/renewable-energy';
+import { renewableEnergyLessons } from '@/data/modules/renewable-energy';
 import { createModuleMetadata } from '@/utils/seo';
-import { renewableEnergyModuleData } from '@/data/renewable-energy-module';
+import { renewableEnergyModuleData } from '@/data/modules/renewable-energy';
 
 export const metadata: Metadata = createModuleMetadata(
   renewableEnergyModuleData.title,

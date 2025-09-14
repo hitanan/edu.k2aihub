@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { LessonPageTemplate, LessonPageConfig } from '@/components/learning/LessonPageTemplate';
-import { transportationTechnologyLessons, TransportationTechnologyLesson } from '@/data/transportation-technology';
+import {
+  transportationTechnologyLessons,
+  TransportationTechnologyLesson,
+} from '@/data/modules/transportation-technology';
 
 export async function generateStaticParams() {
   return transportationTechnologyLessons.map((lesson) => ({
@@ -19,7 +22,7 @@ type Params = {
 
 export default async function TransportationTechnologyLessonPage({ params }: { params: Promise<Params> }) {
   const { lessonId } = await params;
-  
+
   const config: LessonPageConfig<TransportationTechnologyLesson> = {
     moduleName: 'transportation-technology',
     moduleTitle: 'Transportation Technology',
@@ -27,13 +30,8 @@ export default async function TransportationTechnologyLessonPage({ params }: { p
     lessons: transportationTechnologyLessons,
     primaryColor: 'indigo',
     secondaryColor: 'purple',
-    gradientColors: 'from-slate-900 via-indigo-900 to-slate-900'
+    gradientColors: 'from-slate-900 via-indigo-900 to-slate-900',
   };
 
-  return (
-    <LessonPageTemplate<TransportationTechnologyLesson>
-      lessonId={lessonId}
-      config={config}
-    />
-  );
+  return <LessonPageTemplate<TransportationTechnologyLesson> lessonId={lessonId} config={config} />;
 }

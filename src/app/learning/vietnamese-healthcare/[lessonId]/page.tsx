@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { vietnameseHealthcareLessons, VietnameseHealthcareLesson } from '@/data/vietnamese-healthcare';
+import { vietnameseHealthcareLessons, VietnameseHealthcareLesson } from '@/data/modules/vietnamese-healthcare';
 
 import { Activity } from 'lucide-react';
 import { notFound } from 'next/navigation';

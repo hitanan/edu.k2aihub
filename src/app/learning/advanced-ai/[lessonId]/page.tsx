@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { advancedAILessons } from '@/data/advanced-ai';
+import { advancedAILessons } from '@/data/modules/advanced-ai';
 
 import { BaseLessonData, CaseStudy } from '@/types/lesson-base';
 import { Brain, Eye, MessageSquare, Target, Shield } from 'lucide-react';

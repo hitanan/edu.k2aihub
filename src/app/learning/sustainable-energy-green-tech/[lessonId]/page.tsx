@@ -6,8 +6,8 @@ import {
   generateLessonMetadata,
   generateLessonStaticParams,
 } from '@/components/learning/LessonPageTemplate';
-import { sustainableEnergyGreenTechLessons } from '@/data/sustainable-energy-green-tech';
-import { sustainableEnergyModuleData } from '@/data/sustainable-energy-green-tech-module';
+import { sustainableEnergyGreenTechLessons } from '@/data/modules/sustainable-energy-green-tech';
+import { sustainableEnergyModuleData } from '@/data/modules/sustainable-energy-green-tech';
 import { BaseLessonData } from '@/types/lesson-base';
 
 export async function generateMetadata({ params }: { params: Promise<{ lessonId: string }> }) {
@@ -18,7 +18,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
   return generateLessonMetadata(lessonId, sustainableEnergyGreenTechLessons, 'sustainable-energy-green-tech');
 }
 
-export default async function SustainableEnergyGreenTechLessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
+export default async function SustainableEnergyGreenTechLessonPage({
+  params,
+}: {
+  params: Promise<{ lessonId: string }>;
+}) {
   const { lessonId } = await params;
   if (!lessonId) {
     notFound();

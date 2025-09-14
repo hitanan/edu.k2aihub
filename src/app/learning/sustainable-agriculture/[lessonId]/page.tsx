@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { sustainableAgricultureLessons } from '@/data/sustainable-agriculture';
+import { sustainableAgricultureLessons } from '@/data/modules/sustainable-agriculture';
 
 import { BaseLessonData } from '@/types/lesson-base';
 import { notFound } from 'next/navigation';

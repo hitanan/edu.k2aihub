@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { shortVideoMasteryLessons } from '@/data/short-video-mastery';
+import { shortVideoMasteryLessons } from '@/data/modules/short-video-mastery';
 import { createModuleMetadata } from '@/utils/seo';
-import { shortVideoMasteryModuleData } from '@/data/short-video-mastery-module';
+import { shortVideoMasteryModuleData } from '@/data/modules/short-video-mastery';
 
 // Generate metadata
 export const metadata: Metadata = createModuleMetadata(

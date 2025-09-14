@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { youngEntrepreneurLessons, YoungEntrepreneurLessonData } from '@/data/young-entrepreneur';
+import { youngEntrepreneurLessons, YoungEntrepreneurLessonData } from '@/data/modules/young-entrepreneur';
 
 import React from 'react';
 import { notFound } from 'next/navigation';

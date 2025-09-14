@@ -4,8 +4,8 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { robloxLessons } from '@/data/roblox-game-dev';
-import { RobloxLessonType } from '@/data/roblox-game-dev';
+import { robloxLessons } from '@/data/modules/roblox-game-dev';
+import { RobloxLessonType } from '@/data/modules/roblox-game-dev';
 import { Code, Package } from 'lucide-react';
 import { notFound } from 'next/navigation';
 

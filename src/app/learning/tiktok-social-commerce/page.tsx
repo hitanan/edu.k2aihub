@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { tiktokSocialCommerceLessons } from '@/data/tiktok-social-commerce';
-import { tiktokSocialCommerceModuleData } from '@/data/tiktok-social-commerce-module';
+import { tiktokSocialCommerceLessons } from '@/data/modules/tiktok-social-commerce';
+import { tiktokSocialCommerceModuleData } from '@/data/modules/tiktok-social-commerce';
 
 export const metadata: Metadata = createModuleMetadata(
   tiktokSocialCommerceModuleData.title,

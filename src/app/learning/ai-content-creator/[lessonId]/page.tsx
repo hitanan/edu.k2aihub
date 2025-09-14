@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { aiContentCreatorLessons } from '@/data/ai-content-creator';
+import { aiContentCreatorLessons } from '@/data/modules/ai-content-creator';
 
 import { BaseLessonData } from '@/types/lesson-base';
 

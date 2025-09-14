@@ -4,7 +4,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { aiSeoOptimizationLessons } from '@/data/ai-seo-optimization';
+import { aiSeoOptimizationLessons } from '@/data/modules/ai-seo-optimization';
 import { BaseLessonData } from '@/types/lesson-base';
 import { Zap } from 'lucide-react';
 

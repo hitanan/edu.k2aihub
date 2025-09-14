@@ -6,7 +6,7 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { AgriTechLessons, AgriTechLessonData } from '@/data/agritech-precision-farming';
+import { AgriTechLessons, AgriTechLessonData } from '@/data/modules/agritech-precision-farming';
 import { getLessonById } from '@/utils/lesson-utils';
 
 import { Sprout, Wifi, Drone, Cpu } from 'lucide-react';
