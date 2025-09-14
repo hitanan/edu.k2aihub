@@ -10,7 +10,7 @@ export const lessons: BaseLessonData[] = [
     duration: '100 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=OzemCeywKOM',
-    imageUrl: '/images/digital-art-fundamentals.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop',
     objectives: [
       'Master digital art tools và software',
       'Understand color theory và composition trong digital medium',
@@ -192,7 +192,7 @@ export const lessons: BaseLessonData[] = [
     duration: '120 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=5tQ0hf2SCeo',
-    imageUrl: '/images/motion-graphics-animation.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Master After Effects cho professional motion graphics',
       'Create engaging animated explainer videos',
@@ -369,7 +369,7 @@ export const lessons: BaseLessonData[] = [
     duration: '90 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=SVcsDDABEkM',
-    imageUrl: '/images/generative-ai-art.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&h=600&fit=crop',
     objectives: [
       'Master advanced prompt engineering techniques',
       'Create consistent character designs using AI',
@@ -547,7 +547,7 @@ export const lessons: BaseLessonData[] = [
     duration: '130 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=4JVfa3SSDQU',
-    imageUrl: '/images/immersive-media.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=800&h=600&fit=crop',
     objectives: [
       'Produce professional VR/AR content',
       'Master 360° video production techniques',
@@ -717,7 +717,7 @@ export const lessons: BaseLessonData[] = [
     duration: '100 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=qulcqiWzx0M',
-    imageUrl: '/images/creative-tech-business.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     objectives: [
       'Develop sustainable creative business models',
       'Master client acquisition và retention strategies',

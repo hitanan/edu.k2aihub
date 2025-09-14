@@ -12,7 +12,7 @@ const lessons: ProgrammingRoboticsLesson[] = [
     duration: '180 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://youtube.com/watch?v=rfscVS0vtbw',
-    imageUrl: '/images/programming-fundamentals.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=600&fit=crop',
     objectives: [
       'Học Python, C++, và ROS programming cho robotics',
       'Hiểu object-oriented programming trong robotics context',

@@ -60,7 +60,7 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
       duration: '90 phút',
       difficulty: 'Cơ bản',
       videoUrl: 'https://www.youtube.com/watch?v=YJg02ivYzSs',
-      imageUrl: '/images/metaverse-fundamentals.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=800&h=600&fit=crop',
       technologyLevel: 'Beginner',
       tools: ['Oculus Quest 2', 'Horizon Worlds'],
       objectives: [
@@ -106,7 +106,7 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
       duration: '120 phút',
       difficulty: 'Trung bình',
       videoUrl: 'https://www.youtube.com/watch?v=1cQbMP3I5Sk',
-      imageUrl: '/images/vr-content-creation.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=800&h=600&fit=crop',
       technologyLevel: 'Intermediate',
       tools: ['Unity', 'A-Frame'],
       objectives: [
@@ -131,7 +131,7 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
       duration: '100 phút',
       difficulty: 'Trung bình',
       videoUrl: 'https://www.youtube.com/watch?v=WzfDo2Wpxks',
-      imageUrl: '/images/ar-mobile-applications.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=800&h=600&fit=crop',
       technologyLevel: 'Intermediate',
       tools: ['ARCore', 'ARKit', 'Unity'],
       objectives: [
@@ -155,7 +155,7 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
       duration: '80 phút',
       difficulty: 'Trung bình',
       videoUrl: 'https://www.youtube.com/watch?v=k_y8YYcGaZQ',
-      imageUrl: '/images/social-vr-collaboration.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc696?w=800&h=600&fit=crop',
       technologyLevel: 'Intermediate',
       tools: ['VRChat', 'Rec Room', 'Spatial'],
       objectives: [
@@ -179,7 +179,7 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
       duration: '90 phút',
       difficulty: 'Trung bình',
       videoUrl: null,
-      imageUrl: '/images/metaverse-business-economics.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
       technologyLevel: 'Advanced',
       tools: ['Decentraland', 'The Sandbox', 'OpenSea'],
       objectives: [

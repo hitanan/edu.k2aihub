@@ -9,7 +9,7 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
     duration: '180 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=dj-miOAo3LM',
-    imageUrl: '/images/lessons/ai-video-creation.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Sử dụng AI để viết kịch bản video hấp dẫn',
       'Làm chủ các công cụ chỉnh sửa video AI như RunwayML, Synthesia',
@@ -196,7 +196,7 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
     duration: '150 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=C75y3n2Ra-w',
-    imageUrl: '/images/lessons/social-automation.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Thiết lập quy trình tự động hóa cho nhiều nền tảng',
       'Sử dụng AI để lên lịch nội dung thông minh',
@@ -337,7 +337,7 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
     duration: '120 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=KfoenLbhOTI',
-    imageUrl: '/images/lessons/ai-personal-branding.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     objectives: [
       'Phát triển nhận diện thương hiệu cá nhân độc đáo với thông tin chi tiết từ AI',
       'Tạo ra tiếng nói thương hiệu nhất quán trên các nền tảng',

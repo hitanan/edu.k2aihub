@@ -9,7 +9,7 @@ export const businessMarketingLessons: BaseLessonData[] = [
     description:
       'Khai thác sức mạnh của AI để cách mạng hóa chiến lược SEO của bạn, từ nghiên cứu từ khóa đến tạo nội dung và phân tích hiệu suất.',
     videoUrl: 'https://www.youtube.com/watch?v=example',
-    imageUrl: '/images/modules/business-marketing/ai-powered-seo.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     difficulty: 'Trung bình',
     duration: '60 phút',
     objectives: [

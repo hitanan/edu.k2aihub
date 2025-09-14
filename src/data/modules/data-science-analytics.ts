@@ -31,7 +31,7 @@ export const lessons: DataScienceAnalyticsLesson[] = [
     duration: '240 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=rfscVS0vtbw',
-    imageUrl: '/images/lessons/data-science-python.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     tools: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn'],
     objectives: [
       'Master Python cho data science workflows',
@@ -196,7 +196,7 @@ export const lessons: DataScienceAnalyticsLesson[] = [
     duration: '220 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=aircAruvnKk',
-    imageUrl: '/images/lessons/big-data-ml.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=600&fit=crop',
     tools: ['Apache Spark', 'Hadoop', 'TensorFlow', 'PyTorch', 'MLflow'],
     objectives: [
       'Understand big data processing architectures',
@@ -339,7 +339,7 @@ export const lessons: DataScienceAnalyticsLesson[] = [
     duration: '180 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=8EMW7io4rSI',
-    imageUrl: '/images/lessons/data-storytelling.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     tools: ['Power BI', 'Tableau', 'SQL', 'Python', 'Excel'],
     objectives: [
       'Master data storytelling techniques',

@@ -61,7 +61,7 @@ export const minecraftEduModule: ModuleData<MinecraftEduLesson> = {
       duration: '90 phút',
       difficulty: 'Cơ bản',
       videoUrl: 'https://www.youtube.com/watch?v=JqZfTqJ4OsI',
-      imageUrl: '/images/modules/minecraft/minecraft-edu-intro.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop',
       objectives: [
         'Phân biệt giữa Minecraft phiên bản thường và Minecraft Education.',
         'Nắm vững các kỹ năng di chuyển, phá block, và đặt block.',
@@ -111,7 +111,7 @@ export const minecraftEduModule: ModuleData<MinecraftEduLesson> = {
       duration: '150 phút',
       difficulty: 'Trung bình',
       videoUrl: 'https://www.youtube.com/watch?v=KsVqBIWtRec',
-      imageUrl: '/images/modules/minecraft/code-builder.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=600&fit=crop',
       objectives: [
         'Mở và sử dụng giao diện Code Builder.',
         'Hiểu khái niệm về Agent và cách ra lệnh cho nó.',
@@ -138,7 +138,7 @@ export const minecraftEduModule: ModuleData<MinecraftEduLesson> = {
       duration: '120 phút',
       difficulty: 'Trung bình',
       videoUrl: 'https://www.youtube.com/watch?v=EFRbwG3x75g',
-      imageUrl: '/images/modules/minecraft/chemistry-update.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
       objectives: [
         'Sử dụng Element Constructor để tạo ra các nguyên tố.',
         'Kết hợp các nguyên tố trong Compound Creator để tạo hợp chất.',

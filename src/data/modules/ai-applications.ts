@@ -47,7 +47,7 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
     duration: '180 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=HfG0_yYTcGI',
-    imageUrl: '/images/ai-study-abroad.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
     objectives: [
       'Làm chủ các công cụ AI để viết luận và chuẩn bị SOP',
       'Tối ưu hóa việc luyện thi IELTS với hệ thống gia sư AI',

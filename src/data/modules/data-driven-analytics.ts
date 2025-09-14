@@ -30,7 +30,7 @@ export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLesson[] = [
     duration: '180 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=HjUJf5bKCpU',
-    imageUrl: '/images/lessons/advanced-analytics.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     objectives: [
       'Master advanced analytics tools và techniques',
       'Extract actionable insights từ complex data',
@@ -205,7 +205,7 @@ export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLesson[] = [
     duration: '150 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=481lC6AeLIg',
-    imageUrl: '/images/lessons/predictive-analytics.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=600&fit=crop',
     objectives: [
       'Implement predictive analytics models',
       'Forecast content performance',

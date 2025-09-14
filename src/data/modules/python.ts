@@ -54,7 +54,7 @@ print("Chào mừng bạn đến với Python!")`,
       name: 'Vương Quang Khải',
       title: 'Phó Tổng Giám đốc',
       company: 'VNG Corporation',
-      imageUrl: '/images/career/vuong-quang-khai.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       quote:
         'Python là ngôn ngữ của tương lai. Tại VNG, chúng tôi sử dụng Python để xây dựng các sản phẩm AI đột phá, phục vụ hàng triệu người dùng. Nắm vững Python là bạn đang nắm giữ chìa khóa để mở ra cánh cửa của cuộc cách mạng công nghiệp 4.0.',
     },
@@ -172,7 +172,7 @@ print(f"Ngược lại: {reversed_text}")`,
       name: 'Nguyễn Hà Đông',
       title: 'Nhà phát triển Game',
       company: '.GEARS',
-      imageUrl: '/images/career/nguyen-ha-dong.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       quote:
         'Trong game, mỗi biến số đều quan trọng, từ điểm số của người chơi đến tọa độ của nhân vật. Quản lý tốt các kiểu dữ liệu là bước đầu tiên để tạo ra một thế giới game hoạt động trơn tru và không có lỗi.',
     },
@@ -272,7 +272,7 @@ else:
       name: 'Đàm Quang Hùng',
       title: 'Lead Software Engineer',
       company: 'Grab Vietnam',
-      imageUrl: '/images/career/dam-quang-hung.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       quote:
         'Hệ thống của Grab xử lý hàng triệu yêu cầu mỗi ngày. Logic điều khiển chính xác là xương sống giúp chúng tôi quyết định ghép cặp tài xế và khách hàng, tính toán giá cước và ước tính thời gian di chuyển một cách hiệu quả.',
     },
@@ -399,7 +399,7 @@ while True:
       name: 'Lê Hồng Minh',
       title: 'Nhà sáng lập & CEO',
       company: 'VNG Corporation',
-      imageUrl: '/images/career/le-hong-minh.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       quote:
         'Để xây dựng những sản phẩm lớn, bạn phải bắt đầu từ những khối xây dựng nhỏ và vững chắc. Functions trong lập trình cũng vậy. Một hàm được viết tốt cũng giống như một viên gạch chất lượng cao, là nền tảng cho cả một hệ thống vĩ đại.',
     },
@@ -527,7 +527,7 @@ while True:
       name: 'Phan Bá Việt',
       title: 'Head of Engineering',
       company: 'Tiki',
-      imageUrl: '/images/career/phan-ba-viet.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       quote:
         'Tại Tiki, chúng tôi xử lý hàng triệu sản phẩm. Việc sử dụng hiệu quả các cấu trúc dữ liệu như list và tuple là cực kỳ quan trọng để đảm bảo hệ thống chạy nhanh, ổn định và mang lại trải nghiệm tốt nhất cho người dùng.',
     },
@@ -660,7 +660,7 @@ def list_all_students():
       name: 'Nguyễn Hòa Bình',
       title: 'Chủ tịch Tập đoàn',
       company: 'NextTech Group',
-      imageUrl: '/images/career/nguyen-hoa-binh.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       quote:
         'Trong thế giới số, mọi thứ đều có thể được ánh xạ. Dictionary là công cụ mạnh mẽ để tạo ra các ánh xạ đó, kết nối dữ liệu và tạo ra thông tin có giá trị. Hiểu nó là hiểu cách thông tin được tổ chức trong kỷ nguyên số.',
     },
@@ -821,7 +821,7 @@ elif choice == "2":
       name: 'Lưu Danh Anh Vũ',
       title: 'Data Engineering Manager',
       company: 'Amanotes',
-      imageUrl: '/images/career/luu-danh-anh-vu.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       quote:
         'Dữ liệu là dầu mỏ của thế kỷ 21, và các file chính là những mỏ dầu. Kỹ năng đọc, xử lý và trích xuất thông tin từ hàng terabyte dữ liệu file mỗi ngày là công việc cốt lõi của một kỹ sư dữ liệu tại Amanotes.',
     },

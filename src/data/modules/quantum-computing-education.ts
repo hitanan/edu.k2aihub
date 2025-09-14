@@ -88,7 +88,7 @@ const lessons: QuantumComputingLesson[] = [
       name: 'Dr. Nguyễn Thị Lượng Tử',
       title: 'Nhà nghiên cứu Vật lý Lượng tử',
       company: 'Viện Khoa học và Công nghệ K2AI',
-      imageUrl: '/images/career-quantum-physicist.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       quote:
         'Điện toán lượng tử không chỉ là một công cụ tính toán mới, nó là một cách tư duy hoàn toàn mới về vũ trụ.',
     },

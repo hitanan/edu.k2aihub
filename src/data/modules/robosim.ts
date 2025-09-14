@@ -14,7 +14,7 @@ export const robosimLessons: RobosimLessonType[] = [
     duration: '90 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=JkgqysIeaEE',
-    imageUrl: '/images/modules/robosim/hero.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu được Robosim là gì và lợi ích của việc học robotics qua giả lập.',
       'Nắm được thông tin về các cuộc thi robotics lớn ở Việt Nam: VEX IQ, FLL, RoboBimi.',
@@ -75,7 +75,7 @@ export const robosimLessons: RobosimLessonType[] = [
     duration: '120 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=oId2PQhm1_Q',
-    imageUrl: '/images/modules/robosim/vex-iq.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop',
     objectives: [
       'Phân tích và hiểu rõ luật chơi của một mùa giải VEX IQ cụ thể.',
       'Học các nguyên tắc thiết kế robot VEX IQ hiệu quả (khung gầm, hệ thống nâng, gắp).',
@@ -134,7 +134,7 @@ export const robosimLessons: RobosimLessonType[] = [
     duration: '120 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=9ZrWsVKT30A',
-    imageUrl: '/images/modules/robosim/fll.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu rõ 3 phần của một mùa giải FLL: Robot Game, Innovation Project, và Core Values.',
       'Làm quen với bộ lập trình LEGO Mindstorms (EV3 hoặc Spike Prime).',

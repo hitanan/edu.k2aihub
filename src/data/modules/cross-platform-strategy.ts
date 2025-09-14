@@ -19,7 +19,7 @@ export const crossPlatformStrategyLessons: CrossPlatformStrategyLessonType[] = [
     duration: '150 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=RziXIvXpvr0',
-    imageUrl: '/images/lessons/unified-messaging.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
     objectives: [
       'Develop consistent brand voice across platforms',
       'Adapt messaging cho platform-specific audiences',
@@ -190,7 +190,7 @@ export const crossPlatformStrategyLessons: CrossPlatformStrategyLessonType[] = [
     duration: '120 phút',
     difficulty: 'Nâng cao',
     videoUrl: 'https://www.youtube.com/watch?v=yye7rSsiV6k',
-    imageUrl: '/images/lessons/content-repurposing.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
     objectives: [
       'Develop efficient content repurposing workflows',
       'Maximize content ROI through strategic distribution',

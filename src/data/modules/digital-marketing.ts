@@ -1446,7 +1446,7 @@ export const digitalMarketingModuleData: ModuleData = {
   ],
   icon: '🚀',
   color: 'from-blue-500 to-purple-600',
-  heroImageUrl: '/images/modules/digital-marketing.jpg',
+  heroImageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
   objectives: [
     'Nắm vững các khái niệm và công cụ cốt lõi của Digital Marketing.',
     'Xây dựng được một kế hoạch marketing kỹ thuật số hoàn chỉnh.',

@@ -10,7 +10,7 @@ export const ClimateLessons: BaseLessonData[] = [
     duration: '140 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=AIkI_nPkZJ4',
-    imageUrl: '/images/climate-fundamentals.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1569163139394-de44cb988190?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu hệ thống khí hậu Trái Đất và các thành phần',
       'Nắm vững hiệu ứng nhà kính và bức xạ',

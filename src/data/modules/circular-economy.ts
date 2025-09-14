@@ -10,7 +10,7 @@ export const circularEconomyLessons: BaseLessonData[] = [
     duration: '45 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=BSqMgDUOi4A',
-    imageUrl: '/images/modules/circular-economy/intro.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop',
     objectives: [
       'Định nghĩa kinh tế tuần hoàn.',
       'So sánh mô hình kinh tế tuần hoàn và kinh tế tuyến tính.',
@@ -70,7 +70,7 @@ export const circularEconomyLessons: BaseLessonData[] = [
     duration: '60 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=BSqMgDUOi4A',
-    imageUrl: '/images/modules/circular-economy/design.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu các chiến lược thiết kế cho kinh tế tuần hoàn.',
       'Áp dụng các nguyên tắc như thiết kế để tháo dỡ, sử dụng vật liệu bền vững.',
