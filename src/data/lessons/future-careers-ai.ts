@@ -76,6 +76,28 @@ export const futureCareersLessons: FutureCareersLesson[] = [
           'Các ngành thâm dụng lao động với các công việc có tính lặp lại cao như dệt may, lắp ráp điện tử có nguy cơ bị tự động hóa cao nhất.',
       },
     ],
+    faqs: [
+      {
+        question: 'Reskilling và Upskilling khác nhau như thế nào?',
+        answer:
+          'Upskilling là nâng cao kỹ năng hiện tại để làm tốt hơn công việc đang làm, trong khi Reskilling là học những kỹ năng hoàn toàn mới để chuyển sang một vai trò hoặc công việc khác.',
+      },
+      {
+        question: 'AI có thể lấy hết việc làm của con người không?',
+        answer:
+          'AI sẽ thay thế một số công việc, đặc biệt là những công việc có tính lặp lại, nhưng đồng thời cũng tạo ra nhiều công việc mới đòi hỏi kỹ năng hợp tác với AI, tư duy sáng tạo và trí tuệ cảm xúc mà máy móc chưa thể có được.',
+      },
+      {
+        question: 'Tại sao các ngành như dệt may ở Việt Nam lại dễ bị ảnh hưởng bởi tự động hóa?',
+        answer:
+          'Vì đây là các ngành thâm dụng lao động, với nhiều công đoạn có tính chất lặp đi lặp lại, có thể được thay thế hiệu quả bằng robot và dây chuyền tự động để tăng năng suất và giảm chi phí.',
+      },
+      {
+        question: 'Chiến lược quốc gia về AI của Việt Nam có mục tiêu gì?',
+        answer:
+          'Chiến lược này đặt mục tiêu đưa Việt Nam trở thành một trung tâm đổi mới, phát triển các giải pháp và ứng dụng AI trong khu vực ASEAN và trên thế giới, thúc đẩy ứng dụng AI trong nhiều lĩnh vực để phát triển kinh tế - xã hội.',
+      },
+    ],
   },
   {
     id: 'future-proof-skills',

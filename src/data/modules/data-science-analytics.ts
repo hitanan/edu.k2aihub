@@ -165,6 +165,28 @@ export const lessons: DataScienceAnalyticsLesson[] = [
           'Pandas là thư viện nền tảng cho việc làm sạch, chuyển đổi, và phân tích dữ liệu ở dạng bảng (DataFrame) trong Python, là công cụ không thể thiếu của bất kỳ nhà khoa học dữ liệu nào.',
       },
     ],
+    faqs: [
+      {
+        question: 'Khoa học dữ liệu, Kỹ thuật dữ liệu và Phân tích dữ liệu khác nhau như thế nào?',
+        answer:
+          'Một cách đơn giản: Kỹ sư dữ liệu xây dựng "đường ống" để thu thập và chuẩn bị dữ liệu. Nhà khoa học dữ liệu sử dụng dữ liệu đó để xây dựng các mô hình dự báo phức tạp. Chuyên viên phân tích dữ liệu phân tích dữ liệu lịch sử để tìm ra các insight và xu hướng, thường trình bày qua các báo cáo và dashboard.',
+      },
+      {
+        question: 'Tôi có cần bằng Tiến sĩ để trở thành một nhà khoa học dữ liệu không?',
+        answer:
+          'Không cần thiết, đặc biệt là cho các vị trí trong ngành. Mặc dù nhiều nhà khoa học dữ liệu trong lĩnh vực nghiên cứu có bằng cấp cao, nhưng trong ngành công nghiệp, các kỹ năng thực tế, kinh nghiệm dự án và một portfolio tốt thường được đánh giá cao hơn bằng cấp học thuật.',
+      },
+      {
+        question: 'Ngôn ngữ lập trình nào là tốt nhất cho Khoa học Dữ liệu?',
+        answer:
+          'Python hiện là ngôn ngữ phổ biến và được ưa chuộng nhất trong cộng đồng Khoa học Dữ liệu nhờ hệ sinh thái thư viện mạnh mẽ (Pandas, Scikit-learn, TensorFlow). R cũng là một lựa chọn tốt, đặc biệt trong môi trường học thuật và thống kê.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng một portfolio Khoa học Dữ liệu ấn tượng?',
+        answer:
+          'Hãy thực hiện các dự án cá nhân từ đầu đến cuối. Chọn một bộ dữ liệu công khai bạn quan tâm (ví dụ trên Kaggle), đặt ra một câu hỏi kinh doanh, và thực hiện toàn bộ quy trình: làm sạch dữ liệu, phân tích, xây dựng mô hình, và trình bày kết quả. Ghi lại quá trình này trên GitHub hoặc một bài blog.',
+      },
+    ],
   },
   {
     id: 'big-data-machine-learning-applications',

@@ -25,6 +25,28 @@ const lessons: NanotechnologyLesson[] = [
     nanotechApplications: ['Tổng quan về ứng dụng', 'Lịch sử phát triển'],
     materialsProperties: ['Định nghĩa Nanomet', 'Tỷ lệ bề mặt/thể tích'],
     safetyConsiderations: ['Tiềm năng và rủi ro', 'Bối cảnh đạo đức'],
+    faqs: [
+      {
+        question: 'Công nghệ nano là gì?',
+        answer:
+          'Công nghệ nano là ngành khoa học, kỹ thuật và công nghệ thực hiện ở quy mô nano, tức là khoảng từ 1 đến 100 nanomet. Ở kích thước này, vật liệu có thể biểu hiện những đặc tính hoàn toàn mới so với khi chúng ở kích thước lớn hơn.',
+      },
+      {
+        question: 'Một nanomet nhỏ đến mức nào?',
+        answer:
+          'Một nanomet (nm) bằng một phần tỷ của một mét. Để dễ hình dung, một tờ giấy có độ dày khoảng 100,000 nm, và một sợi tóc người dày khoảng 80,000-100,000 nm.',
+      },
+      {
+        question: 'Tại sao vật liệu ở kích thước nano lại có đặc tính khác biệt?',
+        answer:
+          'Ở quy mô nano, các hiệu ứng lượng tử trở nên rõ rệt hơn và tỷ lệ diện tích bề mặt so với thể tích tăng lên đáng kể. Điều này làm thay đổi các đặc tính như độ bền, khả năng dẫn điện, khả năng phản ứng hóa học và màu sắc của vật liệu.',
+      },
+      {
+        question: 'Công nghệ nano có an toàn không?',
+        answer:
+          'Đây là một lĩnh vực nghiên cứu quan trọng. Giống như bất kỳ công nghệ mới nào, có những lo ngại tiềm ẩn về tác động của vật liệu nano đối với sức khỏe con người và môi trường. Các nhà khoa học đang tích cực nghiên cứu để hiểu và giảm thiểu các rủi ro này.',
+      },
+    ],
   },
   {
     id: 'nanomaterials-fabrication',

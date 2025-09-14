@@ -41,6 +41,28 @@ export const contentCreatorLessons: ContentCreatorLessonData[] = [
       'Digital marketing consultant với social media expertise',
       'Influencer marketing coordinator cho agencies',
     ],
+    faqs: [
+      {
+        question: 'Làm thế nào để tìm ra "ngách" (niche) cho kênh của mình?',
+        answer:
+          'Bắt đầu bằng cách liệt kê đam mê, sở trường và kiến thức chuyên môn của bạn. Sau đó, nghiên cứu xem trong những lĩnh vực đó, có chủ đề nào có lượng khán giả đủ lớn nhưng chưa có quá nhiều người làm hoặc có thể làm tốt hơn không. Kết hợp đam mê và nhu cầu thị trường là chìa khóa.',
+      },
+      {
+        question: 'Tần suất đăng bài bao nhiêu là hợp lý?',
+        answer:
+          'Tần suất lý tưởng phụ thuộc vào nền tảng và khả năng của bạn. Ví dụ, TikTok và Instagram Stories đòi hỏi sự hiện diện hàng ngày, trong khi YouTube có thể là 1-2 video/tuần. Quan trọng nhất là sự nhất quán. Hãy chọn một lịch trình bạn có thể duy trì lâu dài.',
+      },
+      {
+        question: 'Làm sao để vượt qua cảm giác ngại ngùng trước ống kính?',
+        answer:
+          'Hãy bắt đầu bằng cách nói chuyện một mình trước gương, sau đó quay những video ngắn không đăng. Tập trung vào việc chia sẻ giá trị cho khán giả thay vì lo lắng về ngoại hình. Càng thực hành nhiều, bạn sẽ càng tự tin hơn.',
+      },
+      {
+        question: 'Nội dung của tôi không có ai xem, tôi nên làm gì?',
+        answer:
+          'Đừng nản lòng! Hãy phân tích các chỉ số (analytics) để hiểu khán giả của bạn là ai và họ thích gì. Thử nghiệm với các định dạng nội dung, tiêu đề, và thời gian đăng khác nhau. Tích cực tương tác với các kênh khác trong cùng lĩnh vực để tăng khả năng được khám phá.',
+      },
+    ],
   },
   {
     id: 'video-production-editing-mastery',

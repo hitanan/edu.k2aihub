@@ -174,6 +174,28 @@ export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLesson[] = [
           'Sự phong phú và phức tạp của ngôn ngữ tự nhiên tiếng Việt đòi hỏi các hệ thống phân tích phải được xây dựng và huấn luyện đặc thù, thay vì chỉ sử dụng các mô hình sẵn có cho tiếng Anh.',
       },
     ],
+    faqs: [
+      {
+        question: 'Phân tích dữ liệu có thực sự cần thiết cho một doanh nghiệp nhỏ không?',
+        answer:
+          'Cực kỳ cần thiết. Đối với doanh nghiệp nhỏ, mỗi đồng chi cho marketing đều quý giá. Phân tích dữ liệu giúp bạn hiểu rõ kênh nào mang lại hiệu quả, khách hàng nào giá trị nhất, từ đó tối ưu hóa ngân sách và cạnh tranh hiệu quả hơn với các đối thủ lớn.',
+      },
+      {
+        question: 'Tôi không giỏi toán, liệu tôi có thể học phân tích dữ liệu được không?',
+        answer:
+          'Hoàn toàn có thể. Phân tích dữ liệu marketing hiện đại không đòi hỏi bạn phải là một nhà toán học. Các công cụ ngày nay rất trực quan, tập trung vào việc diễn giải ý nghĩa đằng sau con số hơn là các công thức phức tạp. Tư duy logic và sự tò mò quan trọng hơn là khả năng tính toán cao siêu.',
+      },
+      {
+        question: 'Insight là gì và nó khác gì với dữ liệu thông thường?',
+        answer:
+          'Dữ liệu là những con số thô (ví dụ: "70% người dùng rời khỏi trang thanh toán"). Insight là sự diễn giải có ý nghĩa và có tính hành động từ dữ liệu đó (ví dụ: "Người dùng đang gặp khó khăn ở bước thanh toán, có thể do quy trình quá phức tạp. Chúng ta nên đơn giản hóa nó.").',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu xây dựng văn hóa dựa trên dữ liệu trong một tổ chức?',
+        answer:
+          'Hãy bắt đầu từ những bước nhỏ. Thiết lập các báo cáo tự động đơn giản, dễ hiểu. Trong các cuộc họp, hãy tập thói quen hỏi "Dữ liệu nào cho thấy điều đó?". Tôn vinh những quyết định thành công dựa trên dữ liệu để khuyến khích mọi người. Quan trọng nhất là sự gương mẫu từ cấp lãnh đạo.',
+      },
+    ],
   },
   {
     id: 'predictive-analytics-trend-forecasting',

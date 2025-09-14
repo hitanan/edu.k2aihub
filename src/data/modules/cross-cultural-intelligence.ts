@@ -350,6 +350,28 @@ export const lessons: CrossCulturalLessonType[] = [
           'CQ Drive là "động cơ" của Trí tuệ Đa văn hóa. Nếu không có động lực và sự tò mò, việc học hỏi kiến thức hay kỹ năng khác sẽ trở nên khó khăn.',
       },
     ],
+    faqs: [
+      {
+        question: 'Trí tuệ Đa văn hóa (CQ) có phải là bẩm sinh không?',
+        answer:
+          'Không. CQ là một kỹ năng có thể học hỏi và phát triển thông qua đào tạo, trải nghiệm và sự tự nhận thức. Bất kỳ ai cũng có thể nâng cao CQ của mình nếu có sự nỗ lực và tư duy cởi mở.',
+      },
+      {
+        question: 'Làm thế nào để tránh việc tạo ra các khuôn mẫu (stereotype) khi học về các nền văn hóa?',
+        answer:
+          'Hãy xem các mô hình văn hóa là một "điểm khởi đầu", không phải là "chân lý tuyệt đối". Luôn nhớ rằng mỗi cá nhân là một thực thể riêng biệt và có thể không hoàn toàn giống với đặc điểm chung của nền văn hóa đó. Hãy sử dụng kiến thức văn hóa để đặt câu hỏi tốt hơn, không phải để đưa ra kết luận vội vàng.',
+      },
+      {
+        question: '"Giữ thể diện" (saving face) trong các nền văn hóa châu Á có nghĩa là gì?',
+        answer:
+          'Giữ thể diện là việc duy trì uy tín, danh dự và sự tôn trọng của một người trong mắt người khác. Nó bao gồm việc tránh đối đầu trực tiếp, không làm người khác bẽ mặt nơi công cộng, và sử dụng cách giao tiếp gián tiếp để đưa ra những phản hồi nhạy cảm.',
+      },
+      {
+        question: 'Sự khác biệt giữa văn hóa "định hướng nhiệm vụ" và "định hướng mối quan hệ" là gì?',
+        answer:
+          'Trong văn hóa định hướng nhiệm vụ (task-oriented), hiệu quả công việc và việc hoàn thành mục tiêu được ưu tiên hàng đầu. Trong văn hóa định hướng mối quan hệ (relationship-oriented), việc xây dựng lòng tin và mối quan hệ cá nhân được xem là nền tảng cần thiết trước khi có thể hợp tác làm việc hiệu quả.',
+      },
+    ],
   },
   {
     id: 'global-communication-mastery',

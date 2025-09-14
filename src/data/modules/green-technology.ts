@@ -84,6 +84,28 @@ export const greenTechLessons: GreenTechLesson[] = [
           'Quy hoạch phát triển điện lực quốc gia thời kỳ 2021-2030, tầm nhìn đến năm 2050 (Quy hoạch điện VIII) đặt mục tiêu mạnh mẽ về chuyển dịch năng lượng, ưu tiên phát triển các nguồn năng lượng tái tạo để đảm bảo an ninh năng lượng và bảo vệ môi trường.',
       },
     ],
+    faqs: [
+      {
+        question: 'Năng lượng tái tạo là gì?',
+        answer:
+          'Năng lượng tái tạo là năng lượng được tạo ra từ các nguồn thiên nhiên có khả năng tái tạo liên tục như ánh sáng mặt trời, gió, nước, địa nhiệt. Chúng được coi là "sạch" vì không tạo ra khí thải nhà kính gây biến đổi khí hậu.',
+      },
+      {
+        question: 'Tại sao Việt Nam có tiềm năng lớn về năng lượng mặt trời và gió?',
+        answer:
+          'Việt Nam có đường bờ biển dài hơn 3.260 km, đón gió tốt, và nằm trong khu vực có bức xạ mặt trời cao trên bản đồ thế giới, đặc biệt là các tỉnh miền Trung và Nam Bộ. Đây là những điều kiện tự nhiên lý tưởng để phát triển điện gió và điện mặt trời.',
+      },
+      {
+        question: 'Hệ thống điện mặt trời áp mái hoạt động như thế nào?',
+        answer:
+          'Các tấm pin mặt trời lắp trên mái nhà sẽ hấp thụ ánh sáng mặt trời và chuyển đổi thành dòng điện một chiều (DC). Dòng điện này sau đó đi qua một bộ biến tần (inverter) để chuyển thành dòng điện xoay chiều (AC) tương thích với các thiết bị điện trong nhà và lưới điện quốc gia.',
+      },
+      {
+        question: 'Quy hoạch điện VIII có ý nghĩa gì đối với tương lai năng lượng của Việt Nam?',
+        answer:
+          'Quy hoạch điện VIII là một cam kết mạnh mẽ của Chính phủ Việt Nam về việc chuyển đổi từ năng lượng hóa thạch (than, dầu) sang năng lượng sạch. Nó đặt ra lộ trình để tăng tỷ trọng năng lượng tái tạo, giảm phát thải carbon, và hướng tới mục tiêu Net Zero vào năm 2050.',
+      },
+    ],
     exercises: [
       {
         title: 'Thiết kế hệ thống năng lượng mặt trời cho gia đình',

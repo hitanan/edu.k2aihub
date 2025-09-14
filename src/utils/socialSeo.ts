@@ -71,6 +71,19 @@ export function getFallbackImage(contentType: 'module' | 'game' | 'lesson' | 'ar
 }
 
 /**
+ * Generates a complete social SEO object including Open Graph and Twitter cards.
+ */
+export function generateSocialSeo(config: SocialSeoConfig) {
+  const openGraph = generateOpenGraphTags(config);
+  const twitter = generateTwitterCardTags(config);
+
+  return {
+    openGraph,
+    twitter,
+  };
+}
+
+/**
  * Generate comprehensive Open Graph meta tags for Facebook sharing
  */
 export function generateOpenGraphTags(config: SocialSeoConfig) {
@@ -87,29 +100,30 @@ export function generateOpenGraphTags(config: SocialSeoConfig) {
       : getFallbackImage('module'); // Default fallback
 
   const openGraphTags = {
-    'og:title': config.title,
-    'og:description': config.description,
-    'og:type': config.type || 'website',
-    'og:url': '', // Will be set dynamically per page
-    'og:site_name': siteName,
-    'og:locale': locale,
-    'og:image': imageUrl,
-    'og:image:width': '1200',
-    'og:image:height': '630',
-    'og:image:type': 'image/jpeg',
-    'og:image:alt': `${config.title} - ${siteName}`,
+    title: config.title,
+    description: config.description,
+    type: config.type || 'website',
+    url: '', // Will be set dynamically per page
+    siteName: siteName,
+    locale: locale,
+    images: [
+      {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: `${config.title} - ${siteName}`,
+      },
+    ],
   };
 
-  // Add article-specific tags
   if (config.type === 'article') {
-    return {
-      ...openGraphTags,
-      'og:type': 'article',
-      'article:author': config.author || 'K2AiHub Development Team',
-      'article:section': config.section || 'Education',
-      'article:published_time': config.publishedTime || new Date().toISOString(),
-      'article:modified_time': config.modifiedTime || new Date().toISOString(),
-      'article:tag': config.tags?.join(', ') || '',
+    (openGraphTags as any).article = {
+      publishedTime: config.publishedTime,
+      modifiedTime: config.modifiedTime || config.publishedTime,
+      author: config.author,
+      section: config.section,
+      tags: config.tags,
     };
   }
 
@@ -117,95 +131,43 @@ export function generateOpenGraphTags(config: SocialSeoConfig) {
 }
 
 /**
- * Generate Twitter Card meta tags
+ * Generate comprehensive Twitter Card meta tags for sharing
  */
 export function generateTwitterCardTags(config: SocialSeoConfig) {
+  const siteName = config.siteName || 'K2AiHub';
+
+  // Generate optimized image URL
   const imageUrl =
     config.imageKeywords && config.imageKeywords.length > 0
       ? generateUnsplashImage({
           keywords: config.imageKeywords,
           theme: config.imageTheme || 'education',
         })
-      : getFallbackImage('module');
+      : getFallbackImage('module'); // Default fallback
 
-  return {
-    'twitter:card': 'summary_large_image',
-    'twitter:site': '@K2AiHub',
-    'twitter:creator': '@K2AiHub',
-    'twitter:title': config.title,
-    'twitter:description': config.description,
-    'twitter:image': imageUrl,
-    'twitter:image:alt': `${config.title} - K2AiHub`,
-  };
-}
-
-/**
- * Generate Facebook-specific meta tags for enhanced sharing
- */
-export function generateFacebookTags() {
-  return {
-    'fb:app_id': '1234567890123456', // Replace with actual Facebook App ID when available
-    property: 'og:see_also',
-    content: 'https://k2aihub.com/',
-  };
-}
-
-/**
- * Generate complete social media meta tags for any page
- */
-export function generateCompleteSocialMetaTags(config: SocialSeoConfig) {
-  const openGraph = generateOpenGraphTags(config);
-  const twitter = generateTwitterCardTags(config);
-  const facebook = generateFacebookTags();
-
-  // Convert to Next.js metadata format
-  return {
+  const twitterTags = {
+    card: 'summary_large_image' as const,
+    site: '@k2aihub',
+    creator: '@k2aihub',
     title: config.title,
     description: config.description,
-    keywords: config.tags || [],
-    openGraph: {
-      title: openGraph['og:title'],
-      description: openGraph['og:description'],
-      type: openGraph['og:type'] as any,
-      siteName: openGraph['og:site_name'],
-      locale: openGraph['og:locale'],
-      images: [
-        {
-          url: openGraph['og:image'],
-          width: parseInt(openGraph['og:image:width']),
-          height: parseInt(openGraph['og:image:height']),
-          alt: openGraph['og:image:alt'],
-        },
-      ],
-      ...(config.type === 'article' && {
-        type: 'article',
-        authors: [config.author || 'K2AiHub Development Team'],
-        section: config.section || 'Education',
-        publishedTime: config.publishedTime || new Date().toISOString(),
-        modifiedTime: config.modifiedTime || new Date().toISOString(),
-        tags: config.tags || [],
-      }),
-    },
-    twitter: {
-      card: twitter['twitter:card'] as any,
-      site: twitter['twitter:site'],
-      creator: twitter['twitter:creator'],
-      title: twitter['twitter:title'],
-      description: twitter['twitter:description'],
-      images: [twitter['twitter:image']],
-    },
-    other: {
-      'fb:app_id': facebook['fb:app_id'],
-    },
+    images: [
+      {
+        url: imageUrl,
+        alt: `${config.title} - ${siteName}`,
+      },
+    ],
   };
+
+  return twitterTags;
 }
 
 /**
- * Pre-configured social SEO for different content types
+ * Pre-defined SEO configurations for different content types
  */
 export const SocialSeoPresets = {
   module: (title: string, description: string, keywords: string[] = []) =>
-    generateCompleteSocialMetaTags({
+    generateSocialSeo({
       title,
       description,
       type: 'website',
@@ -216,7 +178,7 @@ export const SocialSeoPresets = {
     }),
 
   game: (title: string, description: string, keywords: string[] = []) =>
-    generateCompleteSocialMetaTags({
+    generateSocialSeo({
       title,
       description,
       type: 'website',
@@ -227,7 +189,7 @@ export const SocialSeoPresets = {
     }),
 
   lesson: (title: string, description: string, moduleType: string, keywords: string[] = []) =>
-    generateCompleteSocialMetaTags({
+    generateSocialSeo({
       title,
       description,
       type: 'article',
@@ -238,17 +200,23 @@ export const SocialSeoPresets = {
       category: 'Lessons',
     }),
 
-  article: (title: string, description: string, author: string, publishedTime: string, tags: string[] = []) =>
-    generateCompleteSocialMetaTags({
+  article: (title: string, description: string, author: string, publishedTime: string, tags: string[]) =>
+    generateSocialSeo({
       title,
       description,
       type: 'article',
       author,
       publishedTime,
-      imageKeywords: ['article', 'blog', ...tags.slice(0, 2)],
-      imageTheme: 'innovation',
-      tags: ['bài viết', 'blog', 'K2AiHub', ...tags],
-      category: 'Articles',
+      tags,
+      imageKeywords: ['writing', ...tags],
+      imageTheme: 'art',
+    }),
+  city: (title: string, description: string, keywords: string[]) =>
+    generateSocialSeo({
+      title,
+      description,
+      imageKeywords: ['vietnam', 'travel', ...keywords],
+      imageTheme: 'technology',
     }),
 };
 

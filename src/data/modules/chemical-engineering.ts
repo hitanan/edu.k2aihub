@@ -46,6 +46,28 @@ export const chemicalEngineeringLessons: BaseLessonData[] = [
         'Nhu cầu về kỹ sư hóa học có chuyên môn cao đang tăng mạnh.',
       ],
     },
+    faqs: [
+      {
+        question: 'Kỹ thuật hóa học là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Kỹ thuật hóa học là một ngành kỹ thuật ứng dụng các nguyên tắc của hóa học, vật lý, và toán học để thiết kế, vận hành và tối ưu hóa các quy trình biến đổi nguyên liệu thô thành các sản phẩm có giá trị hơn. Nó quan trọng vì đóng vai trò trung tâm trong hầu hết các ngành công nghiệp, từ năng lượng, dược phẩm đến thực phẩm và vật liệu.',
+      },
+      {
+        question: 'Cải tiến quy trình trong kỹ thuật hóa học có nghĩa là gì?',
+        answer:
+          'Cải tiến quy trình là việc tìm cách làm cho một quy trình sản xuất trở nên hiệu quả hơn, an toàn hơn, bền vững hơn và ít tốn kém hơn. Điều này có thể bao gồm việc thay đổi điều kiện vận hành, sử dụng chất xúc tác mới, hoặc thiết kế lại thiết bị để tăng hiệu suất và giảm thiểu chất thải.',
+      },
+      {
+        question: 'Một "bottleneck" trong quy trình sản xuất là gì?',
+        answer:
+          'Một "bottleneck" (nút cổ chai) là một điểm trong quy trình sản-xuất mà tại đó dòng chảy bị hạn chế, làm giảm tốc độ tổng thể của toàn bộ hệ thống. Xác định và giải quyết các bottleneck là một phần quan trọng của việc tối ưu hóa quy trình.',
+      },
+      {
+        question: 'Triển vọng nghề nghiệp cho kỹ sư hóa học tại Việt Nam như thế nào?',
+        answer:
+          'Với sự phát triển mạnh mẽ của ngành công nghiệp hóa chất và các dự án lọc hóa dầu lớn, nhu cầu về kỹ sư hóa học có chuyên môn cao tại Việt Nam đang tăng mạnh. Đây là một lĩnh vực có nhiều cơ hội việc làm và tiềm năng phát triển lớn.',
+      },
+    ],
   },
   {
     id: 'pollution-control-technology',

@@ -270,6 +270,28 @@ void loop() {
           '`pinMode()` là hàm thiết yếu trong `setup()` để báo cho Arduino biết một chân sẽ được sử dụng để nhận tín hiệu (INPUT) hay để điều khiển thiết bị khác (OUTPUT).',
       },
     ],
+    faqs: [
+      {
+        question: 'Arduino IDE là gì và tại sao tôi cần nó?',
+        answer:
+          'Arduino IDE (Integrated Development Environment) là phần mềm chính thức bạn sử dụng để viết mã, biên dịch và tải chương trình (gọi là "sketch") lên bo mạch Arduino. Nó cung cấp một trình soạn thảo văn bản, một khu vực thông báo, một bảng điều khiển văn bản và một loạt các công cụ cần thiết khác.',
+      },
+      {
+        question: 'Sự khác biệt giữa hàm `setup()` và `loop()` là gì?',
+        answer:
+          'Hàm `setup()` chỉ chạy một lần duy nhất khi bo mạch Arduino được cấp nguồn hoặc được reset. Nó được dùng để khởi tạo các cài đặt ban đầu. Hàm `loop()` chạy liên tục lặp đi lặp lại sau khi `setup()` đã hoàn thành, đây là nơi chứa logic chính của chương trình.',
+      },
+      {
+        question: 'Tại sao đèn LED của tôi không sáng?',
+        answer:
+          'Có một vài lý do phổ biến: 1) Đèn LED bị cắm ngược (chân dài hơn là cực dương, phải nối với nguồn dương). 2) Điện trở không đúng giá trị hoặc không được kết nối. 3) Kết nối dây bị lỏng hoặc sai chân. 4) Lỗi trong code, ví dụ như sai số chân (pin number).',
+      },
+      {
+        question: 'Làm thế nào để tôi biết Arduino của tôi đang hoạt động?',
+        answer:
+          'Cách đơn giản nhất là tải lên chương trình "Blink" (Nhấp nháy). Nếu đèn LED tích hợp trên bo mạch (thường được đánh dấu là "L" và nối với chân 13) bắt đầu nhấp nháy, bo mạch của bạn đang hoạt động tốt.',
+      },
+    ],
   },
   {
     id: 'led-digital-outputs',

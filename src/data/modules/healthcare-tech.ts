@@ -170,6 +170,28 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
           'Sự chênh lệch về hạ tầng CNTT giữa các vùng miền và việc đảm bảo an toàn, bảo mật cho dữ liệu sức khỏe nhạy cảm là những rào cản lớn cần được giải quyết để chuyển đổi số y tế thành công trên diện rộng.',
       },
     ],
+    faqs: [
+      {
+        question: 'Telemedicine (Y tế từ xa) là gì?',
+        answer:
+          'Telemedicine là việc sử dụng công nghệ viễn thông để cung cấp dịch vụ chăm sóc sức khỏe từ xa. Điều này bao gồm việc chẩn đoán, điều trị và tư vấn cho bệnh nhân mà không cần gặp mặt trực tiếp, thường thông qua video call, điện thoại hoặc ứng dụng.',
+      },
+      {
+        question: 'Lợi ích chính của y tế từ xa đối với bệnh nhân là gì?',
+        answer:
+          'Lợi ích chính là sự tiện lợi. Bệnh nhân có thể tiết kiệm thời gian và chi phí đi lại, dễ dàng tiếp cận các bác sĩ chuyên khoa ở xa, và nhận được sự chăm sóc liên tục cho các bệnh mãn tính ngay tại nhà.',
+      },
+      {
+        question: 'Tại sao y tế từ xa lại phát triển mạnh mẽ sau đại dịch COVID-19?',
+        answer:
+          'Đại dịch đã tạo ra nhu cầu cấp thiết về việc khám chữa bệnh mà không cần tiếp xúc trực tiếp để tránh lây nhiễm. Điều này đã thúc đẩy cả bệnh nhân, bác sĩ và các nhà quản lý y tế nhanh chóng chấp nhận và triển khai các giải pháp y tế từ xa.',
+      },
+      {
+        question: 'Một startup HealthTech ở Việt Nam cần đối mặt với những thách thức nào?',
+        answer:
+          'Các thách thức chính bao gồm: hành lang pháp lý chưa hoàn chỉnh, việc xây dựng lòng tin với người dùng và bác sĩ, cạnh tranh với các bệnh viện truyền thống, và vấn đề bảo mật dữ liệu sức khỏe của người dùng.',
+      },
+    ],
   },
   {
     id: 'health-data-analytics-management',

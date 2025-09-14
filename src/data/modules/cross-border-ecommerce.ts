@@ -172,6 +172,28 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
           'So với xuất khẩu truyền thống đòi hỏi vốn lớn và các mối quan hệ phức tạp, TMĐT xuyên biên giới cho phép các SMEs tiếp cận hàng tỷ khách hàng với chi phí khởi đầu thấp hơn rất nhiều.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tôi cần bao nhiêu vốn để bắt đầu kinh doanh TMĐT xuyên biên giới?',
+        answer:
+          'Số vốn ban đầu có thể rất linh hoạt. Bạn có thể bắt đầu với chi phí thấp bằng mô hình dropshipping hoặc tự gửi hàng (self-fulfillment) với số lượng nhỏ. Các chi phí chính cần cân nhắc bao gồm: phí đăng ký trên sàn, chi phí marketing ban đầu, và chi phí cho lô hàng đầu tiên nếu bạn chọn mô hình FBA.',
+      },
+      {
+        question: 'Sản phẩm nào của Việt Nam có tiềm năng bán chạy nhất trên thị trường quốc tế?',
+        answer:
+          'Các sản phẩm có tính độc đáo, mang đậm bản sắc văn hóa và có chất lượng tốt thường có tiềm năng lớn. Ví dụ: hàng thủ công mỹ nghệ (mây tre đan, gốm sứ), nông sản đặc sản (cà phê, hạt điều, gia vị), và các sản phẩm dệt may có thiết kế riêng.',
+      },
+      {
+        question: 'Rào cản lớn nhất khi bán hàng ra nước ngoài là gì?',
+        answer:
+          'Các rào cản chính bao gồm: logistics (vận chuyển và kho bãi), thủ tục hải quan và thuế, xử lý thanh toán quốc tế, và sự khác biệt về văn hóa, ngôn ngữ. Tuy nhiên, hiện nay có nhiều công ty dịch vụ (3PL, payment gateways) có thể giúp bạn giải quyết các vấn đề này.',
+      },
+      {
+        question: 'Làm thế nào để cạnh tranh với các nhà bán hàng từ Trung Quốc?',
+        answer:
+          'Thay vì cạnh tranh về giá, hãy tập trung vào chất lượng, xây dựng thương hiệu và câu chuyện sản phẩm độc đáo. Cung cấp dịch vụ khách hàng xuất sắc và xây dựng lòng tin thông qua các đánh giá tích cực cũng là một lợi thế cạnh tranh quan trọng.',
+      },
+    ],
   },
   {
     id: 'international-platforms',

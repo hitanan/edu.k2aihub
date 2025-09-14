@@ -88,6 +88,28 @@ export const financialLiteracyLessons: FinancialLiteracyLesson[] = [
     financialImpact:
       'Nâng cao nhận thức và kỹ năng quản lý tài chính cá nhân, từ đó cải thiện chất lượng cuộc sống và giảm bớt căng thẳng tài chính.',
     technologies: ['Ứng dụng di động', 'Phần mềm kế toán cá nhân', 'Nền tảng giáo dục trực tuyến'],
+    faqs: [
+      {
+        question: 'Quy tắc 50/30/20 trong lập ngân sách là gì?',
+        answer:
+          'Quy tắc 50/30/20 là một phương pháp phân bổ thu nhập sau thuế: 50% dành cho nhu cầu thiết yếu (nhà ở, thực phẩm, đi lại), 30% dành cho mong muốn (giải trí, ăn ngoài, mua sắm), và 20% dành cho tiết kiệm và trả nợ.',
+      },
+      {
+        question: 'Tại sao cần phải có một quỹ khẩn cấp?',
+        answer:
+          'Quỹ khẩn cấp là một khoản tiền tiết kiệm riêng biệt dùng để chi trả cho các chi phí bất ngờ như mất việc, sửa chữa xe cộ hoặc y tế. Nó giúp bạn tránh phải vay nợ hoặc rút tiền từ các khoản đầu tư dài hạn khi gặp khó khăn.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu theo dõi chi tiêu một cách hiệu quả?',
+        answer:
+          'Bạn có thể bắt đầu bằng cách sử dụng một ứng dụng quản lý tài chính cá nhân (như Money Lover, MISA MoneyKeeper), một bảng tính Excel, hoặc đơn giản là một cuốn sổ tay. Điều quan trọng là ghi lại tất cả các khoản chi tiêu trong ít nhất một tháng để nhận ra các thói quen và xác định các lĩnh vực có thể cắt giảm.',
+      },
+      {
+        question: 'Mục tiêu tài chính SMART là gì? Cho một ví dụ.',
+        answer:
+          'SMART là viết tắt của Specific (Cụ thể), Measurable (Đo lường được), Achievable (Khả thi), Relevant (Liên quan), và Time-bound (Có thời hạn). Ví dụ về một mục tiêu SMART: "Tiết kiệm 100 triệu đồng để làm khoản trả trước mua nhà (Specific, Measurable) trong vòng 2 năm tới (Time-bound) bằng cách tiết kiệm 4.2 triệu đồng mỗi tháng (Achievable, Relevant)."',
+      },
+    ],
   },
   {
     id: 'investment-fundamentals',

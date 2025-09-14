@@ -143,6 +143,28 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
           'VNeID là ứng dụng định danh điện tử cấp bởi Bộ Công an, giúp công dân thực hiện các giao dịch hành chính, chứng minh thông tin cá nhân một cách tiện lợi và an toàn.',
       },
     ],
+    faqs: [
+      {
+        question: 'Chính phủ số và Chính phủ điện tử khác nhau như thế nào?',
+        answer:
+          'Chính phủ điện tử tập trung vào việc "tin học hóa" các quy trình hiện có, đưa dịch vụ công lên môi trường mạng. Chính phủ số là bước phát triển cao hơn, là "chuyển đổi số" toàn diện, thay đổi cách thức vận hành, lấy dữ liệu làm trung tâm để ra quyết định và cung cấp dịch vụ mới, thông minh hơn.',
+      },
+      {
+        question: 'Tại sao VNeID lại quan trọng trong chuyển đổi số quốc gia?',
+        answer:
+          'VNeID cung cấp một phương thức định danh công dân duy nhất và an toàn trên môi trường số. Điều này là nền tảng để thực hiện các giao dịch điện tử tin cậy, loại bỏ việc phải sử dụng nhiều loại giấy tờ khác nhau, và là chìa khóa để kết nối, chia sẻ dữ liệu giữa các hệ thống của chính phủ.',
+      },
+      {
+        question: 'Lợi ích chính của Cổng Dịch vụ công Quốc gia là gì?',
+        answer:
+          'Lợi ích lớn nhất là giúp người dân và doanh nghiệp có thể thực hiện các thủ tục hành chính trực tuyến tại một địa chỉ duy nhất, mọi lúc mọi nơi, thay vì phải đến trực tiếp nhiều cơ quan nhà nước khác nhau. Điều này giúp tiết kiệm thời gian, chi phí và tăng tính minh bạch.',
+      },
+      {
+        question: 'Thách thức lớn nhất khi xây dựng Chính phủ số ở Việt Nam là gì?',
+        answer:
+          'Một trong những thách thức lớn nhất là việc đảm bảo an toàn, an ninh mạng cho các hệ thống thông tin và cơ sở dữ liệu quốc gia. Bên cạnh đó, việc thay đổi thói quen, quy trình làm việc truyền thống của cán bộ và nâng cao kỹ năng số cho người dân cũng là những thách thức quan trọng.',
+      },
+    ],
     exercises: [
       {
         title: 'Dự án Thiết kế Dịch vụ Chính phủ Điện tử',

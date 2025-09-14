@@ -32,6 +32,28 @@ const lessons: MobileAppDevelopmentLesson[] = [
       'Social platforms như Zalo, Facebook Messenger',
       'Education apps như Monkey Junior, ELSA Speak',
     ],
+    faqs: [
+      {
+        question: 'React Native là gì và tại sao nên học nó?',
+        answer:
+          'React Native là một framework do Facebook phát triển, cho phép bạn xây dựng ứng dụng di động cho cả iOS và Android chỉ từ một codebase duy nhất bằng JavaScript và React. Bạn nên học nó để tiết kiệm thời gian, công sức và chi phí phát triển.',
+      },
+      {
+        question: 'Sự khác biệt giữa phát triển "native" và "cross-platform" là gì?',
+        answer:
+          'Phát triển "native" (bản địa) là xây dựng ứng dụng riêng cho từng hệ điều hành (iOS dùng Swift, Android dùng Kotlin), mang lại hiệu năng và trải nghiệm tốt nhất. "Cross-platform" (đa nền tảng) như React Native hay Flutter cho phép dùng chung một bộ mã cho cả hai, tiết kiệm chi phí nhưng có thể không tối ưu bằng native.',
+      },
+      {
+        question: 'Flexbox trong React Native dùng để làm gì?',
+        answer:
+          'Flexbox là một mô hình layout mạnh mẽ giúp bạn thiết kế giao diện người dùng một cách linh hoạt và đáp ứng (responsive) trên nhiều kích thước màn hình khác nhau. Nó cho phép bạn sắp xếp, căn chỉnh và phân phối không gian giữa các thành phần một cách dễ dàng.',
+      },
+      {
+        question: 'API là gì và tại sao ứng dụng cần tích hợp API?',
+        answer:
+          'API (Giao diện lập trình ứng dụng) là cách để các chương trình máy tính giao tiếp với nhau. Ứng dụng di động cần tích hợp API để lấy dữ liệu từ máy chủ (ví dụ: danh sách sản phẩm, thông tin người dùng), gửi dữ liệu lên máy chủ (ví dụ: đặt hàng), hoặc sử dụng dịch vụ của bên thứ ba (ví dụ: bản đồ, thanh toán).',
+      },
+    ],
   },
   {
     id: 'ios-swift-development',

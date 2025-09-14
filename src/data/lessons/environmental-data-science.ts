@@ -74,6 +74,28 @@ export const environmentalDataScienceLessons: EnvironmentalDataScienceLesson[] =
         type: 'Dữ liệu chính phủ',
       },
     ],
+    faqs: [
+      {
+        question: 'Phân tích dữ liệu khí hậu có thể giúp ích gì cho nông dân Việt Nam?',
+        answer:
+          'Phân tích dữ liệu khí hậu giúp nông dân dự đoán các kiểu thời tiết, như thời điểm bắt đầu và kết thúc mùa mưa, nguy cơ hạn hán hoặc lũ lụt. Thông tin này cho phép họ điều chỉnh lịch gieo trồng, lựa chọn giống cây trồng phù hợp và lên kế hoạch tưới tiêu hiệu quả, từ đó tăng năng suất và giảm thiểu rủi ro.',
+      },
+      {
+        question: 'Làm thế nào để mô hình hóa tác động của biến đổi khí hậu đến các vùng ven biển?',
+        answer:
+          'Các nhà khoa học sử dụng dữ liệu lịch sử về mực nước biển, nhiệt độ, và các cơn bão, kết hợp với các mô hình dự báo khí hậu toàn cầu. Họ tạo ra các kịch bản mô phỏng để dự đoán mức độ dâng của nước biển, nguy cơ ngập lụt và xói lở bờ biển trong tương lai, giúp các nhà quy hoạch đưa ra các biện pháp phòng chống.',
+      },
+      {
+        question: 'Dữ liệu từ vệ tinh có thể được sử dụng để giám sát những gì ở Việt Nam?',
+        answer:
+          'Dữ liệu vệ tinh ở Việt Nam được sử dụng để giám sát nhiều vấn đề như: nạn phá rừng ở Tây Nguyên và các vùng núi phía Bắc, mức độ ô nhiễm không khí ở các thành phố lớn, sự thay đổi của đường bờ biển và tình trạng xói lở ở Đồng bằng sông Cửu Long, cũng như theo dõi sức khỏe cây trồng và dự báo sản lượng nông nghiệp.',
+      },
+      {
+        question: 'Python có những thư viện nào hữu ích cho việc phân tích dữ liệu khí hậu?',
+        answer:
+          'Các thư viện Python phổ biến cho phân tích dữ liệu khí hậu bao gồm: xarray (để làm việc với dữ liệu đa chiều như NetCDF), pandas/GeoPandas (cho dữ liệu chuỗi thời gian và không gian), Matplotlib/Seaborn (để trực quan hóa), và scikit-learn (cho các mô hình học máy và dự báo).',
+      },
+    ],
   },
   {
     id: 'air-water-quality-monitoring',

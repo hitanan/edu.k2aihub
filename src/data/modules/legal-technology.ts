@@ -169,6 +169,28 @@ export const legalTechLessons: LegalTechLesson[] = [
           'Chatbot tư vấn pháp lý là một ví dụ điển hình của Legal Tech, giúp tự động hóa việc cung cấp thông tin pháp lý cơ bản cho người dùng.',
       },
     ],
+    faqs: [
+      {
+        question: 'Legal Tech là gì?',
+        answer:
+          'Legal Tech (Công nghệ Pháp lý) là việc sử dụng công nghệ, phần mềm và các giải pháp kỹ thuật số để cung cấp, hỗ trợ và nâng cao hiệu quả của các dịch vụ pháp lý. Nó bao gồm từ việc tự động hóa soạn thảo hợp đồng đến sử dụng AI để nghiên cứu án lệ.',
+      },
+      {
+        question: 'Công nghệ có thay thế được luật sư không?',
+        answer:
+          'Không. Công nghệ là một công cụ mạnh mẽ giúp luật sư làm việc hiệu quả hơn, không phải để thay thế họ. Legal Tech giúp tự động hóa các công việc lặp đi lặp lại, tốn thời gian, cho phép luật sư tập trung vào các nhiệm vụ đòi hỏi tư duy chiến lược, phân tích phức tạp và sự tương tác con người.',
+      },
+      {
+        question: 'Lợi ích chính của việc tự động hóa hợp đồng là gì?',
+        answer:
+          'Tự động hóa hợp đồng giúp tiết kiệm đáng kể thời gian và chi phí, giảm thiểu sai sót do con người, đảm bảo tính nhất quán và tuân thủ, đồng thời cho phép theo dõi và quản lý vòng đời hợp đồng một cách hiệu quả.',
+      },
+      {
+        question: 'Tại sao Legal Tech lại quan trọng đối với các doanh nghiệp ở Việt Nam?',
+        answer:
+          'Trong bối cảnh môi trường pháp lý ngày càng phức tạp và hội nhập kinh tế quốc tế, Legal Tech giúp các doanh nghiệp Việt Nam quản lý rủi ro pháp lý tốt hơn, đảm bảo tuân thủ, tối ưu hóa chi phí và nâng cao năng lực cạnh tranh.',
+      },
+    ],
   },
   {
     id: 'legal-research-ai-tools',

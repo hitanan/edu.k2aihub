@@ -138,6 +138,28 @@ export const blockchainLessons: BlockchainLesson[] = [
           'Proof of Work là một cơ chế đồng thuận, trong đó các "thợ đào" cạnh tranh để giải một bài toán mật mã. Người đầu tiên giải được sẽ có quyền thêm khối tiếp theo vào chuỗi và nhận phần thưởng. Quá trình này đòi hỏi năng lực tính toán đáng kể, giúp bảo mật mạng lưới.',
       },
     ],
+    faqs: [
+      {
+        question: 'Blockchain là gì và nó hoạt động như thế nào?',
+        answer:
+          'Blockchain là một sổ cái kỹ thuật số phi tập trung, phân tán, ghi lại các giao dịch trên nhiều máy tính để không thể thay đổi bản ghi một cách hồi tố. Mỗi khối chứa một danh sách các giao dịch và được liên kết với khối trước đó bằng một hàm băm mật mã, tạo thành một chuỗi an toàn và bất biến.',
+      },
+      {
+        question: 'Sự khác biệt giữa Proof of Work (PoW) và Proof of Stake (PoS) là gì?',
+        answer:
+          'PoW (như trong Bitcoin) yêu cầu các "thợ đào" giải các bài toán phức tạp để xác thực giao dịch và tạo khối mới, tiêu tốn nhiều năng lượng. PoS (như trong Ethereum 2.0) cho phép chủ sở hữu tiền điện tử "đặt cược" coin của họ làm tài sản thế chấp để có cơ hội xác thực các giao dịch và nhận phần thưởng, tiết kiệm năng lượng hơn nhiều.',
+      },
+      {
+        question: 'Hợp đồng thông minh là gì?',
+        answer:
+          'Hợp đồng thông minh là các hợp đồng tự thực thi với các điều khoản của thỏa thuận được viết trực tiếp vào mã. Chúng chạy trên blockchain, tự động thực thi và thực thi các điều khoản khi các điều kiện được xác định trước được đáp ứng, loại bỏ nhu cầu về trung gian.',
+      },
+      {
+        question: 'Tại sao blockchain lại quan trọng đối với Việt Nam?',
+        answer:
+          'Đối với Việt Nam, blockchain mang lại tiềm năng to lớn trong việc tăng cường tính minh bạch trong chuỗi cung ứng (ví dụ: nông sản), tạo điều kiện cho các giao dịch kiều hối rẻ hơn và nhanh hơn, và thúc đẩy tài chính toàn diện. Với cộng đồng nhà phát triển năng động, Việt Nam có vị thế tốt để đổi mới trong không gian này.',
+      },
+    ],
   },
   {
     id: 'smart-contract-development',

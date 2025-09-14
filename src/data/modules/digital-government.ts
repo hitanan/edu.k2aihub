@@ -79,6 +79,28 @@ export const lessons: DigitalGovLesson[] = [
         description: 'Official APIs for government data integration',
       },
     ],
+    faqs: [
+      {
+        question: '"Chính phủ số" là gì và tại sao nó quan trọng đối với Việt Nam?',
+        answer:
+          'Chính phủ số là việc ứng dụng công nghệ số để thay đổi mô hình hoạt động, quản lý của chính phủ, nhằm phục vụ người dân và doanh nghiệp tốt hơn, hiệu quả hơn, minh bạch hơn. Đối với Việt Nam, đây là yếu tố then chốt để thúc đẩy phát triển kinh tế - xã hội, nâng cao năng lực cạnh tranh quốc gia và hội nhập quốc tế.',
+      },
+      {
+        question: '"Thành phố thông minh" (Smart City) là gì và có ví dụ nào ở Việt Nam không?',
+        answer:
+          'Thành phố thông minh sử dụng công nghệ thông tin và truyền thông (ICT) để cải thiện chất lượng cuộc sống, hiệu quả hoạt động đô thị và tính bền vững. Các ví dụ ở Việt Nam bao gồm Đà Nẵng (tiên phong về giao thông thông minh, chính quyền điện tử), Bình Dương (tập trung vào khu công nghiệp thông minh) và TP.HCM (triển khai trung tâm điều hành đô thị thông minh).',
+      },
+      {
+        question: '"CivicTech" (Công nghệ Công dân) là gì và làm thế nào tôi có thể tham gia?',
+        answer:
+          'CivicTech là các công nghệ giúp tăng cường mối quan hệ giữa người dân và chính phủ. Bạn có thể tham gia bằng cách sử dụng các ứng dụng phản ánh hiện trường (như app của tổng đài 1022), tham gia góp ý chính sách qua các cổng thông tin điện tử, hoặc thậm chí tự phát triển các ứng dụng giải quyết vấn đề cộng đồng dựa trên dữ liệu mở.',
+      },
+      {
+        question: 'Dữ liệu của tôi có an toàn khi sử dụng các dịch vụ công trực tuyến không?',
+        answer:
+          'Chính phủ Việt Nam đã và đang triển khai nhiều giải pháp để đảm bảo an toàn thông tin cho các hệ thống dịch vụ công, tuân thủ theo Luật An ninh mạng. Tuy nhiên, người dùng cũng cần có trách nhiệm tự bảo vệ tài khoản của mình bằng cách sử dụng mật khẩu mạnh và bật xác thực hai yếu tố.',
+      },
+    ],
   },
   {
     id: 'smart-city-iot',

@@ -97,6 +97,19 @@ A comprehensive educational module covering STEM/STEAM disciplines through inter
 - ✅ Vietnamese metadata for all pages using `createTitle()`, `createDescription()` - Design thinking and problem solving
 
 - ✅ JSON-LD structured data for education content - Building challenges and prototyping
+  You can type your JSON-LD with TypeScript using community packages like schema-dts:
+
+```ts
+import { Product, WithContext } from 'schema-dts';
+
+const jsonLd: WithContext<Product> = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'K2AI Sticker',
+  image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=800&fit=crop',
+  description: 'K2AI Dynamic at the speed of static.',
+};
+```
 
 - ✅ OpenGraph + Twitter Cards for social sharing
 

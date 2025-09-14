@@ -191,6 +191,28 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
           'Bộ Y tế là cơ quan quản lý nhà nước cao nhất, chịu trách nhiệm cấp phép lưu hành, quản lý và giám sát chất lượng thiết bị y tế tại Việt Nam.',
       },
     ],
+    faqs: [
+      {
+        question: 'Kỹ thuật Y sinh có khó không và cần những tố chất gì?',
+        answer:
+          'Kỹ thuật Y sinh là một ngành học liên ngành, đòi hỏi kiến thức tổng hợp từ kỹ thuật, sinh học và y học. Bạn cần có tư duy logic, khả năng giải quyết vấn đề, sự tỉ mỉ, chính xác và một niềm đam mê với việc cải thiện sức khỏe con người.',
+      },
+      {
+        question: 'Sự khác biệt giữa thiết bị y tế loại A, B, C, D tại Việt Nam là gì?',
+        answer:
+          'Đây là cách phân loại mức độ rủi ro của thiết bị y tế theo quy định của Bộ Y tế. Loại A có rủi ro thấp nhất (ví dụ: bông băng), trong khi loại D có rủi ro cao nhất (ví dụ: máy tạo nhịp tim cấy ghép). Việc phân loại này quyết định quy trình đăng ký và quản lý.',
+      },
+      {
+        question: 'Tôi có thể tự làm một thiết bị y tế đơn giản tại nhà không?',
+        answer:
+          'Bạn có thể tạo ra các nguyên mẫu (prototype) cho mục đích học tập, ví dụ như một máy đo nhịp tim đơn giản dùng Arduino. Tuy nhiên, để trở thành một thiết bị y tế thực thụ và sử dụng cho con người, nó phải trải qua quá trình kiểm định, thử nghiệm và cấp phép cực kỳ nghiêm ngặt.',
+      },
+      {
+        question: 'Cơ hội việc làm cho ngành Kỹ thuật Y sinh ở Việt Nam như thế nào?',
+        answer:
+          'Rất rộng mở. Bạn có thể làm việc tại các bệnh viện (quản lý trang thiết bị), các công ty sản xuất và kinh doanh thiết bị y tế, các viện nghiên cứu, trường đại học, hoặc các cơ quan quản lý nhà nước. Nhu cầu nhân lực chất lượng cao trong lĩnh vực này đang ngày càng tăng.',
+      },
+    ],
   },
   {
     id: 'biosignal-processing',

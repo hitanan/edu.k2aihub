@@ -27,7 +27,7 @@ import { InteractiveQuiz } from './InteractiveQuiz';
 import { InteractiveFAQ } from './InteractiveFAQ';
 import { LessonAnalytics } from './LessonAnalytics';
 import { VietnamContextBox } from './VietnamContextBox';
-import JsonLd from '@/components/JsonLd';
+import StructuredData from '@/components/StructuredData';
 import { createFAQStructuredDataFromQA, createLessonStructuredData } from '@/utils/seo';
 
 export interface LessonPageConfig<T extends BaseLessonData> {
@@ -126,8 +126,8 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${config.gradientColors}`}>
-      <JsonLd data={lessonStructured} />
-      {faqStructured && <JsonLd data={faqStructured} />}
+      <StructuredData data={lessonStructured} />
+      {faqStructured && <StructuredData data={faqStructured} />}
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 pt-6">
         <DynamicBreadcrumbs moduleId={config.moduleName} lessonId={lesson.id} lessonTitle={lesson.title} />

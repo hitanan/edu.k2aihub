@@ -127,6 +127,28 @@ export const foodTechnologyLessons: BaseLessonData[] = [
         type: 'Hướng dẫn kỹ thuật',
       },
     ],
+    faqs: [
+      {
+        question: 'HACCP là gì và tại sao nó quan trọng trong ngành thực phẩm?',
+        answer:
+          'HACCP (Hazard Analysis and Critical Control Points) là một hệ thống quản lý an toàn thực phẩm có hệ thống, phòng ngừa. Nó quan trọng vì giúp xác định, đánh giá và kiểm soát các mối nguy đáng kể đối với an toàn thực phẩm, từ đó đảm bảo sản phẩm an toàn cho người tiêu dùng và đáp ứng các yêu cầu pháp lý.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo an toàn thực phẩm cho các sản phẩm truyền thống như nước mắm?',
+        answer:
+          'Để đảm bảo an toàn, các nhà sản xuất nước mắm hiện đại áp dụng HACCP. Họ kiểm soát chặt chẽ các điểm tới hạn như chất lượng cá đầu vào, nồng độ muối, nhiệt độ và thời gian ủ, đồng thời thực hiện các xét nghiệm vi sinh định kỳ để đảm bảo sản phẩm không chứa mầm bệnh gây hại.',
+      },
+      {
+        question: 'Hệ thống truy xuất nguồn gốc thực phẩm hoạt động như thế nào?',
+        answer:
+          'Hệ thống truy xuất nguồn gốc cho phép theo dõi đường đi của một sản phẩm thực phẩm qua tất cả các giai đoạn sản xuất, chế biến và phân phối. Bằng cách sử dụng mã vạch, mã QR hoặc công nghệ blockchain, người tiêu dùng và nhà quản lý có thể quét sản phẩm để biết thông tin về nơi sản xuất, ngày thu hoạch, quy trình chế biến, v.v.',
+      },
+      {
+        question: 'Sự khác biệt giữa ISO 22000 và HACCP là gì?',
+        answer:
+          'HACCP là một hệ thống tập trung vào việc xác định và kiểm soát các mối nguy cụ thể trong quá trình sản xuất. ISO 22000 là một tiêu chuẩn quốc tế về hệ thống quản lý an toàn thực phẩm, bao trùm rộng hơn, bao gồm cả các nguyên tắc của HACCP, các chương trình tiên quyết (như vệ sinh nhà xưởng) và các yêu cầu về quản lý hệ thống.',
+      },
+    ],
   },
   {
     id: 'fermentation-technology-vietnamese-foods',

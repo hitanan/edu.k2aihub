@@ -161,6 +161,28 @@ export const gameDevLessons: GameDevLesson[] = [
           'Vòng lặp gameplay cốt lõi là chuỗi các hành động chính mà người chơi thực hiện lặp đi lặp lại, tạo nên trải nghiệm trung tâm của trò chơi. Ví dụ: trong một game platformer, đó là chạy, nhảy, và thu thập vật phẩm.',
       },
     ],
+    faqs: [
+      {
+        question: 'Khung MDA trong thiết kế game là gì?',
+        answer:
+          'MDA là viết tắt của Mechanics (Cơ chế), Dynamics (Động lực), và Aesthetics (Thẩm mỹ). Đây là một khung lý thuyết giúp nhà thiết kế phân tích và tạo ra trải nghiệm chơi game. Cơ chế là các quy tắc, Động lực là cách người chơi tương tác với các quy tắc đó, và Thẩm mỹ là cảm xúc mà trải nghiệm đó gợi lên.',
+      },
+      {
+        question: 'Game Jam là gì và tại sao nó lại quan trọng ở Việt Nam?',
+        answer:
+          'Game Jam là một sự kiện nơi các nhà phát triển game hợp tác để tạo ra một trò chơi hoàn chỉnh trong một khoảng thời gian rất ngắn (thường là 48-72 giờ). Nó rất quan trọng ở Việt Nam vì nó thúc đẩy sự sáng tạo, hợp tác, học hỏi nhanh và là nơi ươm mầm cho nhiều tài năng và ý tưởng game độc đáo.',
+      },
+      {
+        question: 'Sự khác biệt chính giữa Game Designer và Game Developer là gì?',
+        answer:
+          'Game Designer (Nhà thiết kế game) chịu trách nhiệm về ý tưởng, luật chơi, và trải nghiệm tổng thể của trò chơi. Họ là kiến trúc sư. Game Developer (Nhà phát triển game) là người lập trình, người biến các ý tưởng và thiết kế đó thành một sản phẩm có thể chơi được bằng cách viết code.',
+      },
+      {
+        question: 'Tại sao Flappy Bird lại thành công dù đồ họa rất đơn giản?',
+        answer:
+          'Flappy Bird thành công nhờ vào cơ chế gameplay cực kỳ đơn giản nhưng rất khó, tạo ra một vòng lặp "thử lại" gây nghiện. Sự khó khăn và tính cạnh tranh điểm số đã tạo ra hiệu ứng lan truyền mạnh mẽ trên mạng xã hội, chứng minh rằng gameplay hấp dẫn quan trọng hơn đồ họa phức tạp.',
+      },
+    ],
   },
   {
     id: 'unity-2d-development',

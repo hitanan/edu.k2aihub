@@ -51,6 +51,28 @@ export const energyManagementModule: ModuleData = {
       difficulty: 'Beginner',
       objectives: [],
       realWorldApplications: [],
+      faqs: [
+        {
+          question: 'Lưới điện thông minh (Smart Grid) khác gì so với lưới điện truyền thống?',
+          answer:
+            'Lưới điện thông minh sử dụng công nghệ kỹ thuật số hai chiều để giao tiếp giữa nhà cung cấp và người tiêu dùng, cho phép tự động hóa, giám sát và điều khiển lưới điện. Lưới điện truyền thống chủ yếu là dòng chảy một chiều, từ nhà máy điện đến người tiêu dùng, và ít có khả năng tự động hóa.',
+        },
+        {
+          question: 'Tại sao lưới điện thông minh lại quan trọng cho việc phát triển năng lượng tái tạo?',
+          answer:
+            'Năng lượng tái tạo như mặt trời và gió có tính không ổn định (phụ thuộc vào thời tiết). Lưới điện thông minh có thể quản lý sự biến đổi này bằng cách điều chỉnh phụ tải, sử dụng hệ thống lưu trữ năng lượng và định tuyến lại dòng điện một cách linh hoạt, điều mà lưới điện truyền thống không thể làm hiệu quả.',
+        },
+        {
+          question: 'Đồng hồ thông minh (Smart Meter) có vai trò gì trong lưới điện thông minh?',
+          answer:
+            'Đồng hồ thông minh là thành phần quan trọng, ghi lại dữ liệu tiêu thụ điện năng theo thời gian thực và gửi thông tin đó về công ty điện lực. Nó cho phép thanh toán chính xác, phát hiện sự cố nhanh chóng và giúp người tiêu dùng theo dõi, điều chỉnh việc sử dụng điện của mình để tiết kiệm chi phí.',
+        },
+        {
+          question: 'An ninh mạng có phải là một rủi ro lớn đối với lưới điện thông minh không?',
+          answer:
+            'Có, an ninh mạng là một trong những thách thức lớn nhất. Vì lưới điện thông minh kết nối nhiều thiết bị qua mạng, nó có thể trở thành mục tiêu của các cuộc tấn công mạng, có khả năng gây mất điện trên diện rộng. Do đó, việc xây dựng các biện pháp bảo mật mạnh mẽ là cực kỳ quan trọng.',
+        },
+      ],
     },
     {
       id: 'renewable-energy-integration',

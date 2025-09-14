@@ -98,6 +98,28 @@ export const ClimateLessons: BaseLessonData[] = [
           'Việt Nam là một trong những quốc gia bị ảnh hưởng nặng nề nhất bởi biến đổi khí hậu, đặc biệt là hiện tượng nước biển dâng gây ngập lụt và nhiễm mặn ở các vùng ven biển như Đồng bằng sông Cửu Long.',
       },
     ],
+    faqs: [
+      {
+        question: 'Biến đổi khí hậu là gì và nguyên nhân chính gây ra nó?',
+        answer:
+          'Biến đổi khí hậu là sự thay đổi dài hạn của nhiệt độ và các kiểu thời tiết. Nguyên nhân chính là do các hoạt động của con người, đặc biệt là việc đốt nhiên liệu hóa thạch (than, dầu, khí đốt), làm tăng nồng độ khí nhà kính trong khí quyển và gây ra hiệu ứng nhà kính tăng cường.',
+      },
+      {
+        question: 'Hiệu ứng nhà kính có phải lúc nào cũng xấu không?',
+        answer:
+          'Không hẳn. Hiệu ứng nhà kính là một quá trình tự nhiên cần thiết để duy trì nhiệt độ trên Trái Đất ở mức phù hợp cho sự sống. Tuy nhiên, các hoạt động của con người đã làm tăng cường hiệu ứng này một cách bất thường, dẫn đến sự nóng lên toàn cầu và các tác động tiêu cực.',
+      },
+      {
+        question: 'Tại sao Đồng bằng sông Cửu Long lại đặc biệt dễ bị tổn thương bởi biến đổi khí hậu?',
+        answer:
+          'Đồng bằng sông Cửu Long là một vùng đất thấp, chỉ cao hơn mực nước biển trung bình một chút. Do đó, nó rất nhạy cảm với hiện tượng nước biển dâng, gây ra ngập lụt, nhiễm mặn nguồn nước và đất đai, ảnh hưởng nghiêm trọng đến nông nghiệp và sinh kế của hàng triệu người.',
+      },
+      {
+        question: 'Cam kết đạt phát thải ròng bằng "0" vào năm 2050 của Việt Nam có ý nghĩa gì?',
+        answer:
+          'Đây là một cam kết chính trị mạnh mẽ, thể hiện quyết tâm của Việt Nam trong việc chung tay cùng cộng đồng quốc tế giải quyết khủng hoảng khí hậu. Để đạt được mục tiêu này, Việt Nam sẽ phải thực hiện một cuộc chuyển đổi sâu rộng, đặc biệt là chuyển đổi từ năng lượng hóa thạch sang các nguồn năng lượng tái tạo như điện gió và mặt trời.',
+      },
+    ],
   },
   {
     id: 'climate-modeling-data',

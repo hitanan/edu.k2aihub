@@ -230,6 +230,28 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
           'Phương pháp 5 Whys là một kỹ thuật phân tích nguyên nhân gốc rễ, bằng cách hỏi "Tại sao?" nhiều lần (thường là 5 lần) cho đến khi tìm ra được nguyên nhân cốt lõi của một vấn đề, thay vì chỉ xử lý các triệu chứng bề mặt.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tư duy phê phán có phải là luôn luôn chỉ trích và phản đối không?',
+        answer:
+          'Không. Tư duy phê phán không phải là chỉ trích tiêu cực. Đó là quá trình phân tích và đánh giá thông tin một cách có hệ thống để hình thành một nhận định có cơ sở. Nó bao gồm cả việc công nhận những điểm mạnh và hợp lý trong một lập luận, chứ không chỉ tìm ra điểm yếu.',
+      },
+      {
+        question: 'Làm thế nào để rèn luyện tư duy phê phán hàng ngày?',
+        answer:
+          'Bạn có thể bắt đầu bằng cách tập đặt câu hỏi về những thông tin bạn tiếp nhận: "Nguồn tin này có đáng tin cậy không?", "Có góc nhìn nào khác không?", "Giả định đằng sau thông điệp này là gì?". Ngoài ra, hãy đọc các bài phân tích đa chiều và tham gia vào các cuộc thảo luận lành mạnh.',
+      },
+      {
+        question: 'Fact (sự thật) và Opinion (ý kiến) khác nhau như thế nào?',
+        answer:
+          'Fact là một thông tin có thể được kiểm chứng và chứng minh là đúng hoặc sai một cách khách quan (ví dụ: "Hà Nội là thủ đô của Việt Nam"). Opinion là một nhận định, niềm tin hoặc cảm xúc cá nhân, không thể chứng minh một cách tuyệt đối (ví dụ: "Hà Nội là thành phố đẹp nhất").',
+      },
+      {
+        question: 'Tại sao việc nhận diện lỗi ngụy biện (logical fallacies) lại quan trọng?',
+        answer:
+          'Nhận diện lỗi ngụy biện giúp bạn không bị thuyết phục bởi những lập luận sai lầm, thiếu logic. Nó giúp bạn tập trung vào bản chất của vấn đề, đánh giá bằng chứng một cách chính xác và xây dựng lập luận của riêng mình một cách vững chắc hơn.',
+      },
+    ],
   },
   {
     id: 'creative-problem-solving',

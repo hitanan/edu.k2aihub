@@ -136,6 +136,28 @@ export const ethicalMarketingPurposeModule: ModuleData = {
           type: 'Công cụ',
         },
       ],
+      faqs: [
+        {
+          question: 'Thương hiệu có mục đích (Purpose-Driven Brand) là gì?',
+          answer:
+            'Thương hiệu có mục đích là thương hiệu hoạt động không chỉ vì lợi nhuận mà còn cam kết tạo ra tác động tích cực đến xã hội hoặc môi trường. Mục đích này được tích hợp vào cốt lõi chiến lược kinh doanh, sản phẩm và truyền thông của họ.',
+        },
+        {
+          question: 'Tại sao việc xây dựng một thương hiệu có mục đích lại quan trọng trong thị trường hiện nay?',
+          answer:
+            'Người tiêu dùng, đặc biệt là thế hệ trẻ, ngày càng có xu hướng ủng hộ các thương hiệu có chung giá trị với họ. Một thương hiệu có mục đích rõ ràng sẽ tạo ra sự kết nối cảm xúc sâu sắc hơn, xây dựng lòng trung thành và có thể tạo ra lợi thế cạnh tranh bền vững.',
+        },
+        {
+          question: 'Làm thế nào để một thương hiệu có thể tìm ra mục đích đích thực của mình?',
+          answer:
+            'Để tìm ra mục đích, thương hiệu cần trả lời câu hỏi "Tại sao chúng ta tồn tại?" ngoài việc "Chúng ta làm gì?". Quá trình này bao gồm việc nhìn vào di sản của công ty, giá trị cốt lõi, tác động mà họ muốn tạo ra cho thế giới, và những vấn đề mà cả thương hiệu và khách hàng của họ cùng quan tâm.',
+        },
+        {
+          question: '"Tẩy xanh" (Greenwashing) là gì và làm thế nào để tránh nó?',
+          answer:
+            '"Tẩy xanh" là hành vi marketing gây hiểu lầm, khiến người tiêu dùng tin rằng sản phẩm hoặc công ty thân thiện với môi trường hơn thực tế. Để tránh điều này, thương hiệu cần đảm bảo các tuyên bố về tác động xã hội hoặc môi trường của mình là trung thực, có thể kiểm chứng, minh bạch và được hỗ trợ bởi các hành động cụ thể, thay vì chỉ là lời nói.',
+        },
+      ],
     },
 
     {

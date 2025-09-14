@@ -75,6 +75,28 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
         'Hiểu biết về mạng xã hội và trò chơi',
         'Không cần kinh nghiệm VR trước đó',
       ],
+      faqs: [
+        {
+          question: 'Metaverse là gì?',
+          answer:
+            'Metaverse là một không gian ảo tập thể, được tạo ra bởi sự hội tụ của thực tế vật lý và không gian kỹ thuật số. Nó giống như một phiên bản 3D của Internet, nơi bạn có thể tương tác với người khác và các đối tượng kỹ thuật số thông qua avatar.',
+        },
+        {
+          question: 'VR và AR khác nhau như thế nào?',
+          answer:
+            'VR (Virtual Reality - Thực tế ảo) đưa bạn hoàn toàn vào một thế giới kỹ thuật số, thường yêu cầu một chiếc kính chuyên dụng. AR (Augmented Reality - Thực tế tăng cường) lại phủ các lớp thông tin kỹ thuật số lên thế giới thực của bạn, thường thông qua camera của điện thoại.',
+        },
+        {
+          question: 'Tôi có cần một thiết bị đắt tiền để trải nghiệm Metaverse không?',
+          answer:
+            'Không hẳn. Mặc dù kính VR chuyên dụng mang lại trải nghiệm tốt nhất, nhiều nền tảng Metaverse có thể được truy cập qua máy tính hoặc thậm chí là điện thoại thông minh, giúp mọi người dễ dàng tham gia hơn.',
+        },
+        {
+          question: 'Học trong Metaverse có gì khác so với học trực tuyến thông thường?',
+          answer:
+            'Học trong Metaverse cho phép bạn tương tác với bài học một cách trực quan và sinh động hơn. Ví dụ, bạn có thể "đi bộ" trên bề mặt sao Hỏa trong giờ học thiên văn, hoặc "thực hành" phẫu thuật trên mô hình 3D trong giờ học y khoa, thay vì chỉ nhìn vào màn hình.',
+        },
+      ],
       realWorldApplications: [],
     },
     {

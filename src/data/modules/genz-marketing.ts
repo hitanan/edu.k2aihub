@@ -149,6 +149,28 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
           'Gen Z có xu hướng ủng hộ các thương hiệu thể hiện sự chân thực, minh bạch và có chung giá trị về các vấn đề xã hội và môi trường với họ.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao marketing cho Gen Z lại khác biệt so với các thế hệ trước?',
+        answer:
+          'Gen Z là thế hệ "bản địa kỹ thuật số" đầu tiên, lớn lên cùng internet và mạng xã hội. Họ có khoảng chú ý ngắn, hoài nghi quảng cáo truyền thống, và đặc biệt coi trọng sự chân thực, tính tương tác và các thương hiệu có cùng giá trị với họ.',
+      },
+      {
+        question: '"Authenticity" (tính chân thực) trong marketing cho Gen Z có nghĩa là gì?',
+        answer:
+          'Tính chân thực có nghĩa là thương hiệu phải minh bạch, không ngại thừa nhận sai lầm, thể hiện con người thật đằng sau sản phẩm, và hành động nhất quán với những giá trị mà họ tuyên bố. Nó đối lập với hình ảnh được đánh bóng, hoàn hảo một cách giả tạo.',
+      },
+      {
+        question: 'Làm thế nào để một thương hiệu Việt Nam có thể kết nối với Gen Z hiệu quả?',
+        answer:
+          'Thương hiệu cần phải "sống" trên các nền tảng mà Gen Z yêu thích như TikTok, Instagram; bắt kịp các "trend" và meme; sử dụng ngôn ngữ tự nhiên, gần gũi; hợp tác với các KOCs (Key Opinion Consumers) mà Gen Z tin tưởng; và thể hiện trách nhiệm xã hội một cách chân thành.',
+      },
+      {
+        question: 'Tại sao văn hóa "đu idol" lại quan trọng trong marketing cho Gen Z ở Việt Nam?',
+        answer:
+          'Văn hóa "đu idol" tạo ra những cộng đồng người hâm mộ rất gắn kết và có sức ảnh hưởng lớn. Khi một thương hiệu hợp tác thành công với một thần tượng mà Gen Z yêu mến, họ không chỉ tiếp cận được lượng lớn người hâm mộ mà còn nhận được sự tin tưởng và ủng hộ mạnh mẽ từ cộng đồng đó.',
+      },
+    ],
     exercises: [
       {
         title: 'Kiểm toán Thương hiệu & Phát triển Chiến lược cho Gen Z',

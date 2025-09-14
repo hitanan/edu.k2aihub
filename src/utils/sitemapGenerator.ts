@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import citiesData from '@/data/cities';
-import { getBlogSlugs, getAllCategoriesSync } from '@/lib/blog';
+import { getBlogSlugs, getAllCategoriesSync, getAllTagsSync } from '@/lib/blog';
+import { createCategorySlug, createTagSlug } from '@/utils/slug';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 import { BaseLessonData } from '@/types/lesson-base';
 import { getAllModules } from '@/data/module.registry';
@@ -136,6 +137,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
   // Blog pages - get all blog posts and categories
   const blogSlugs = getBlogSlugs();
   const blogCategories = getAllCategoriesSync();
+  const allTags = getAllTagsSync(); // Assuming you create this sync function
 
   const blogPages = [
     // Main blog page
@@ -154,10 +156,13 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     })),
     // Blog category pages
     ...blogCategories.map((category) => ({
-      url: `${baseUrl}/blog/category/${category.toLowerCase().replace(/\s+/g, '-')}`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.6,
+      url: `${baseUrl}/blog/category/${createCategorySlug(category)}`,
+      lastModified: new Date().toISOString(),
+    })),
+    // Blog tag pages
+    ...allTags.map((tag) => ({
+      url: `${baseUrl}/blog/tag/${createTagSlug(tag)}`,
+      lastModified: new Date().toISOString(),
     })),
   ];
 

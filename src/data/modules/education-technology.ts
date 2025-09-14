@@ -136,6 +136,28 @@ export const educationTechnologyLessons: BaseLessonData[] = [
           'Mặc dù LMS có trình soạn thảo văn bản, nhưng nó không phải là một công cụ soạn thảo chuyên nghiệp như Word. Các chức năng cốt lõi của LMS tập trung vào quản lý và phân phối nội dung học tập.',
       },
     ],
+    faqs: [
+      {
+        question: 'LMS là gì và tại sao nó quan trọng trong giáo dục hiện đại?',
+        answer:
+          'LMS (Learning Management System) là một phần mềm ứng dụng để quản trị, tài liệu hóa, theo dõi, báo cáo và cung cấp các khóa học giáo dục hoặc chương trình đào tạo. Nó quan trọng vì giúp tự động hóa việc quản lý, cung cấp nội dung học tập mọi lúc mọi nơi, cá nhân hóa lộ trình học và thu thập dữ liệu để cải thiện chất lượng giảng dạy.',
+      },
+      {
+        question: 'Sự khác biệt chính giữa Moodle, Canvas và Google Classroom là gì?',
+        answer:
+          'Moodle là mã nguồn mở, tùy biến cao, phù hợp cho các tổ chức muốn toàn quyền kiểm soát. Canvas có giao diện hiện đại, thân thiện người dùng và hệ sinh thái tích hợp mạnh mẽ, phổ biến ở giáo dục đại học. Google Classroom đơn giản, miễn phí, tích hợp chặt chẽ với bộ công cụ Google, rất phổ biến trong giáo dục phổ thông.',
+      },
+      {
+        question: 'Làm thế nào để lựa chọn LMS phù hợp cho một trường học hoặc doanh nghiệp?',
+        answer:
+          'Để chọn LMS phù hợp, bạn cần xem xét các yếu tố như: quy mô người dùng, ngân sách, yêu cầu về tính năng (ví dụ: gamification, báo cáo, tích hợp), trình độ kỹ thuật của đội ngũ quản trị và người dùng, và khả năng mở rộng trong tương lai.',
+      },
+      {
+        question: 'Triển khai một hệ thống LMS thành công cần những yếu tố nào?',
+        answer:
+          'Một dự án triển khai LMS thành công cần có: sự ủng hộ từ ban lãnh đạo, một kế hoạch triển khai rõ ràng, chương trình đào tạo kỹ lưỡng cho giảng viên và học sinh, nội dung học tập chất lượng cao được chuẩn bị sẵn, và một đội ngũ hỗ trợ kỹ thuật chuyên nghiệp.',
+      },
+    ],
   },
 
   {

@@ -182,6 +182,33 @@ export const dataScienceLessons: DataScienceLesson[] = [
           'EDA là bước "làm quen" và "trò chuyện" với dữ liệu. Bằng cách sử dụng các công cụ thống kê và trực quan hóa, nhà khoa học dữ liệu có thể khám phá các đặc điểm, phát hiện các điểm bất thường và hình thành các giả thuyết ban đầu.',
       },
     ],
+    faqs: [
+      {
+        question: 'Khoa học Dữ liệu, Phân tích Dữ liệu và Kỹ thuật Dữ liệu khác nhau như thế nào?',
+        answer:
+          'Nói một cách đơn giản: Kỹ sư Dữ liệu xây dựng "đường ống" để thu thập và chuẩn bị dữ liệu. Nhà khoa học Dữ liệu sử dụng dữ liệu đó để xây dựng các mô hình dự báo phức tạp. Chuyên viên Phân tích Dữ liệu phân tích dữ liệu lịch sử để tìm ra insight và xu hướng, thường được trình bày qua báo cáo và dashboard.',
+      },
+      {
+        question: 'Tôi có cần bằng Tiến sĩ để trở thành một nhà khoa học dữ liệu không?',
+        answer:
+          'Không hoàn toàn cần thiết, đặc biệt là cho các vị trí trong ngành. Mặc dù nhiều nhà khoa học dữ liệu trong lĩnh vực nghiên cứu có bằng cấp cao, nhưng trong công nghiệp, kỹ năng thực tế, kinh nghiệm dự án và một portfolio tốt thường được đánh giá cao hơn bằng cấp học thuật.',
+      },
+      {
+        question: 'Ngôn ngữ lập trình nào là tốt nhất cho Khoa học Dữ liệu?',
+        answer:
+          'Python hiện là ngôn ngữ phổ biến và được ưa chuộng nhất trong cộng đồng Khoa học Dữ liệu nhờ hệ sinh thái thư viện mạnh mẽ (Pandas, Scikit-learn, TensorFlow). R cũng là một lựa chọn tốt, đặc biệt trong môi trường học thuật và thống kê.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng một portfolio Khoa học Dữ liệu ấn tượng?',
+        answer:
+          'Hãy thực hiện các dự án cá nhân từ đầu đến cuối. Chọn một bộ dữ liệu công khai bạn quan tâm (ví dụ trên Kaggle), đặt ra một câu hỏi kinh doanh, và thực hiện toàn bộ quy trình: làm sạch dữ liệu, phân tích, xây dựng mô hình và trình bày kết quả. Ghi lại quá trình này trên GitHub hoặc một bài blog.',
+      },
+      {
+        question: 'Việc làm sạch dữ liệu có thực sự quan trọng không?',
+        answer:
+          'Cực kỳ quan trọng. Người ta thường nói 80% thời gian của một nhà khoa học dữ liệu là dành cho việc làm sạch và chuẩn bị dữ liệu. Nguyên tắc "rác vào, rác ra" rất đúng trong khoa học dữ liệu. Một mô hình được xây dựng trên dữ liệu sạch, được chuẩn bị tốt sẽ luôn hoạt động tốt hơn một mô hình phức tạp được xây dựng trên dữ liệu lộn xộn.',
+      },
+    ],
   },
   {
     id: 'machine-learning-algorithms',

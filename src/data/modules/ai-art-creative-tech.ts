@@ -420,6 +420,28 @@ Thư viện Tài sản Cuối cùng:
           'Prompt Engineering là kỹ năng cốt lõi để làm việc với các mô hình AI tạo sinh. Một prompt tốt sẽ chỉ định rõ ràng về chủ thể, phong cách, bố cục, ánh sáng và các chi tiết khác để hướng dẫn AI tạo ra hình ảnh chính xác và nghệ thuật.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt chính giữa Midjourney, DALL-E 3 và Stable Diffusion là gì?',
+        answer:
+          'Midjourney mạnh về diễn giải nghệ thuật và sáng tạo. DALL-E 3 vượt trội trong việc tuân thủ prompt chính xác và tạo văn bản. Stable Diffusion cung cấp khả năng tùy chỉnh và kiểm soát tối đa vì là mã nguồn mở.',
+      },
+      {
+        question: 'Làm thế nào để tránh các vấn đề về bản quyền khi sử dụng ảnh do AI tạo ra cho mục đích thương mại?',
+        answer:
+          'Hãy đảm bảo tác phẩm của bạn có tính "biến đổi" đủ để được coi là nguyên gốc, kiểm tra giấy phép thương mại của nền tảng bạn sử dụng, và tránh sao chép trực tiếp phong cách của các nghệ sĩ đang còn sống hoặc các tác phẩm có bản quyền.',
+      },
+      {
+        question: '"Prompt có trọng số" (weighted prompt) hoạt động như thế nào?',
+        answer:
+          'Prompt có trọng số cho phép bạn gán mức độ quan trọng khác nhau cho các phần khác nhau của prompt. Ví dụ, trong Midjourney, bạn có thể sử dụng `::` theo sau là một số (ví dụ: `red car::2 blue background::1`) để nhấn mạnh tầm quan trọng của "red car" hơn "blue background".',
+      },
+      {
+        question: 'Tôi có cần kỹ năng nghệ thuật để sử dụng các công cụ này không?',
+        answer:
+          'Không cần thiết, nhưng có kiến thức cơ bản về bố cục, màu sắc và lý thuyết nghệ thuật sẽ giúp bạn tạo ra các prompt tốt hơn và đạt được kết quả ấn tượng hơn. Các công cụ này là để hỗ trợ sự sáng tạo, không phải thay thế nó.',
+      },
+    ],
   },
   {
     id: 'creative-video-ai-production',

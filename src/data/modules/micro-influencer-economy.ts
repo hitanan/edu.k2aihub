@@ -102,6 +102,28 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
           'Thị trường micro-influencer tại Việt Nam đang phát triển mạnh mẽ, đặc biệt trên các nền tảng như TikTok và Instagram.',
         ],
       },
+      faqs: [
+        {
+          question: 'Micro-influencer là gì?',
+          answer:
+            'Micro-influencer là những người có ảnh hưởng trên mạng xã hội với lượng người theo dõi tương đối nhỏ nhưng rất trung thành, thường từ 1,000 đến 100,000 người. Họ được tin tưởng vì tính chân thực và chuyên môn trong một lĩnh vực cụ thể.',
+        },
+        {
+          question: 'Tại sao các nhãn hàng lại thích làm việc với micro-influencer?',
+          answer:
+            'Các nhãn hàng thích micro-influencer vì họ có tỷ lệ tương tác cao, chi phí hợp tác thấp hơn và được khán giả tin tưởng hơn. Lời giới thiệu của họ giống như một lời khuyên từ bạn bè hơn là một quảng cáo.',
+        },
+        {
+          question: 'Làm thế nào để bắt đầu trở thành một micro-influencer?',
+          answer:
+            'Hãy bắt đầu bằng việc chọn một lĩnh vực (niche) mà bạn đam mê và có kiến thức. Sau đó, hãy tạo ra những nội dung chất lượng, có giá trị và đăng tải đều đặn trên một nền tảng mạng xã hội phù hợp để thu hút và xây dựng cộng đồng của riêng bạn.',
+        },
+        {
+          question: 'Tôi có thể kiếm tiền như một micro-influencer bằng cách nào?',
+          answer:
+            'Có nhiều cách để kiếm tiền, bao gồm: hợp tác quảng cáo cho các nhãn hàng, tiếp thị liên kết (affiliate marketing), bán sản phẩm hoặc dịch vụ của riêng bạn, nhận quyên góp từ người hâm mộ, hoặc tạo nội dung độc quyền có trả phí.',
+        },
+      ],
       careerConnect: {
         name: 'Linh Nguyễn',
         title: 'Founder, The Creator Hub',

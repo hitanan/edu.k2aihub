@@ -72,6 +72,28 @@ export const environmentalClimateLessons: BaseLessonData[] = [
         type: 'Báo cáo khoa học',
       },
     ],
+    faqs: [
+      {
+        question: 'Hiệu ứng nhà kính là gì và nó liên quan như thế nào đến biến đổi khí hậu?',
+        answer:
+          'Hiệu ứng nhà kính là quá trình tự nhiên giữ lại một phần nhiệt của Mặt trời trong bầu khí quyển, giúp Trái đất đủ ấm để duy trì sự sống. Tuy nhiên, các hoạt động của con người đã làm tăng nồng độ các khí nhà kính (như CO2), giữ lại nhiều nhiệt hơn và gây ra sự nóng lên toàn cầu, tức là biến đổi khí hậu.',
+      },
+      {
+        question: 'Việt Nam bị ảnh hưởng bởi biến đổi khí hậu như thế nào?',
+        answer:
+          'Việt Nam là một trong những quốc gia bị ảnh hưởng nặng nề nhất. Các tác động chính bao gồm: mực nước biển dâng gây ngập lụt và xâm nhập mặn ở Đồng bằng sông Cửu Long, các cơn bão mạnh và thường xuyên hơn ở miền Trung, và các đợt nắng nóng, hạn hán khắc nghiệt hơn ở nhiều vùng.',
+      },
+      {
+        question: 'Sự khác biệt giữa thời tiết và khí hậu là gì?',
+        answer:
+          'Thời tiết là các điều kiện khí quyển trong một khoảng thời gian ngắn (ngày, giờ) tại một địa điểm cụ thể, ví dụ như "hôm nay trời mưa". Khí hậu là mô hình thời tiết trung bình của một khu vực trong một khoảng thời gian dài (thường là 30 năm trở lên), ví dụ như "miền Nam có khí hậu nhiệt đới gió mùa".',
+      },
+      {
+        question: 'Chúng ta có thể làm gì để giảm thiểu tác động của biến đổi khí hậu?',
+        answer:
+          'Các hành động bao gồm: giảm phát thải khí nhà kính bằng cách chuyển sang năng lượng tái tạo (mặt trời, gió), sử dụng năng lượng hiệu quả, trồng cây gây rừng, và giảm tiêu thụ. Đồng thời, chúng ta cần thích ứng bằng cách xây dựng các công trình chống lũ, phát triển các giống cây trồng chịu mặn, và bảo vệ các hệ sinh thái ven biển.',
+      },
+    ],
   },
 
   {

@@ -70,6 +70,28 @@ export const blueEconomyLessons: BaseLessonData[] = [
           'Kinh tế biển xanh nhấn mạnh sự cân bằng giữa phát triển kinh tế và bảo vệ môi trường biển, đảm bảo sự bền vững cho các thế hệ tương lai.',
       },
     ],
+    faqs: [
+      {
+        question: 'Kinh tế biển xanh khác gì so với kinh tế biển truyền thống?',
+        answer:
+          'Kinh tế biển truyền thống thường tập trung vào việc khai thác tối đa tài nguyên. Kinh tế biển xanh đặt sự bền vững làm trọng tâm, tìm cách phát triển kinh tế đồng thời bảo vệ sức khỏe của hệ sinh thái biển và cải thiện phúc lợi của cộng đồng ven biển.',
+      },
+      {
+        question: 'Tại sao Việt Nam có tiềm năng lớn về kinh tế biển xanh?',
+        answer:
+          'Việt Nam có đường bờ biển dài hơn 3.200 km, đa dạng sinh học cao, và vị trí chiến lược. Điều này tạo điều kiện thuận lợi cho nhiều ngành như du lịch, năng lượng tái tạo (đặc biệt là điện gió ngoài khơi), nuôi trồng thủy sản công nghệ cao và vận tải biển.',
+      },
+      {
+        question: 'Những thách thức chính đối với phát triển kinh tế biển xanh ở Việt Nam là gì?',
+        answer:
+          'Các thách thức bao gồm ô nhiễm môi trường biển, khai thác tài nguyên quá mức, tác động của biến đổi khí hậu, và nhu cầu về công nghệ cao cũng như nguồn nhân lực chất lượng. Việc cân bằng giữa phát triển và bảo tồn là một bài toán khó.',
+      },
+      {
+        question: 'Một ví dụ về ứng dụng công nghệ trong kinh tế biển xanh được đề cập trong module là gì?',
+        answer:
+          'Module đề cập đến việc sử dụng IoT và AI trong nuôi trồng thủy sản thông minh. Các cảm biến giám sát chất lượng nước theo thời gian thực, và AI giúp dự đoán, tối ưu hóa việc cho ăn, qua đó tăng năng suất và giảm tác động đến môi trường.',
+      },
+    ],
   },
   {
     id: 'smart-aquaculture-systems',

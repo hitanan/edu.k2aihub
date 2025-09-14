@@ -6,7 +6,7 @@ import VietnamMap from '@/components/city/VietnamMap';
 import CityInfo from '@/components/city/CityInfo';
 import Search from '@/components/city/Search';
 import LoadingSpinner from '@/components/LoadingSpinner';
-import FAQ from '@/components/FAQ';
+import { InteractiveFAQ } from '@/components/learning/InteractiveFAQ';
 import { City } from '@/types';
 import citiesData from '@/data/cities';
 
@@ -191,7 +191,7 @@ export default function CityPageClient() {
 
         {/* FAQ Section */}
         <div className="mt-16">
-          <FAQ items={faqItems} title="Câu Hỏi Thường Gặp về Địa Lý Việt Nam" />
+          <InteractiveFAQ faqs={faqItems} />
         </div>
       </main>
       {/* Additional info */}

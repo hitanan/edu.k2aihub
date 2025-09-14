@@ -162,6 +162,28 @@ export const lessons: BaseLessonData[] = [
           'Concept art là giai đoạn trực quan hóa ý tưởng, định hình phong cách và cảm xúc cho một dự án trước khi đi vào sản xuất chi tiết.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tôi có cần phải biết vẽ tay giỏi để học nghệ thuật số không?',
+        answer:
+          'Biết vẽ tay là một lợi thế lớn, nhưng không phải là điều kiện bắt buộc. Nhiều công cụ kỹ thuật số có thể hỗ trợ bạn, và quan trọng hơn là tư duy về bố cục, màu sắc và ánh sáng. Tuy nhiên, việc luyện tập kỹ năng vẽ cơ bản sẽ giúp bạn tiến bộ nhanh hơn rất nhiều.',
+      },
+      {
+        question: 'Sự khác biệt chính giữa Photoshop và Illustrator là gì?',
+        answer:
+          'Photoshop làm việc với ảnh raster (pixel), lý tưởng cho digital painting và chỉnh sửa ảnh. Illustrator làm việc với ảnh vector (đối tượng toán học), lý tưởng cho logo, icon và các thiết kế cần co giãn mà không bị vỡ hình.',
+      },
+      {
+        question: 'Tôi nên bắt đầu với bảng vẽ (drawing tablet) loại nào?',
+        answer:
+          'Đối với người mới bắt đầu, một chiếc bảng vẽ không có màn hình như Wacom Intuos hoặc Huion Inspiroy là một lựa chọn hợp lý về chi phí và rất tốt để học những điều cơ bản. Khi bạn đã chuyên nghiệp hơn, có thể nâng cấp lên bảng vẽ có màn hình (display tablet) để có trải nghiệm vẽ trực tiếp hơn.',
+      },
+      {
+        question: 'Làm thế nào để tìm phong cách nghệ thuật của riêng mình?',
+        answer:
+          'Đừng quá lo lắng về việc tìm phong cách ngay lập tức. Hãy bắt đầu bằng cách học hỏi và thử nghiệm phong cách của các nghệ sĩ bạn ngưỡng mộ. Dần dần, qua quá trình thực hành và kết hợp những gì bạn thích, phong cách độc đáo của riêng bạn sẽ tự nhiên hình thành.',
+      },
+    ],
   },
   {
     id: 'motion-graphics-animation',

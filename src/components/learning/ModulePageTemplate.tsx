@@ -6,7 +6,7 @@ import { BaseLessonData } from '@/types/lesson-base';
 import { ModuleData } from '@/types';
 import { moduleNavigation } from '@/data/moduleNavigation';
 import { createEducationalContentStructuredData, createFAQStructuredDataFromQA } from '@/utils/seo';
-import JsonLd from '@/components/JsonLd';
+import StructuredData from '@/components/StructuredData';
 import { InteractiveFAQ } from './InteractiveFAQ';
 
 interface ModulePageTemplateProps {
@@ -100,8 +100,8 @@ export default function ModulePageTemplate({
 
   return (
     <div className={`min-h-screen bg-gradient-to-br ${gradientColors || color}`}>
-      <JsonLd data={structuredData} />
-      {moduleFaqStructured && <JsonLd data={moduleFaqStructured} />}
+      <StructuredData data={structuredData} />
+      {moduleFaqStructured && <StructuredData data={moduleFaqStructured} />}
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 pt-6">
         <DynamicBreadcrumbs moduleId={moduleData.id} />

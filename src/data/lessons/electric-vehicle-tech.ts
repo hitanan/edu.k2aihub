@@ -16,6 +16,28 @@ export const electricVehicleLessons: BaseLessonData[] = [
     ],
     realWorldApplications: ['Lựa chọn mua xe điện phù hợp với nhu cầu.', 'Sử dụng và bảo dưỡng xe điện đúng cách.'],
     tags: ['xe điện', 'pin EV', 'động cơ điện', 'công nghệ ô tô'],
+    faqs: [
+      {
+        question: 'Sự khác biệt lớn nhất giữa xe điện (EV) và xe hybrid là gì?',
+        answer:
+          'Xe điện (EV) chạy hoàn toàn bằng điện từ pin sạc. Xe hybrid có cả động cơ đốt trong và một động cơ điện, có thể sử dụng cả hai nguồn năng lượng. Xe hybrid sạc pin thông qua quá trình phanh tái tạo năng lượng, trong khi EV cần được cắm sạc từ nguồn điện bên ngoài.',
+      },
+      {
+        question: 'Tuổi thọ trung bình của pin xe điện là bao lâu và chi phí thay thế có đắt không?',
+        answer:
+          'Hầu hết các nhà sản xuất bảo hành pin xe điện từ 8 đến 10 năm hoặc khoảng 160.000 km. Pin thường có tuổi thọ dài hơn thời gian bảo hành. Chi phí thay thế pin vẫn còn cao, nhưng đang giảm dần theo thời gian nhờ tiến bộ công nghệ và quy mô sản xuất.',
+      },
+      {
+        question: 'Phạm vi hoạt động của xe điện bị ảnh hưởng bởi những yếu tố nào?',
+        answer:
+          'Phạm vi hoạt động của xe điện bị ảnh hưởng bởi nhiều yếu tố, bao gồm: dung lượng pin, nhiệt độ môi trường (thời tiết lạnh làm giảm phạm vi), tốc độ lái xe, địa hình (leo dốc tốn nhiều năng lượng hơn), và việc sử dụng các hệ thống phụ trợ như điều hòa không khí hoặc sưởi.',
+      },
+      {
+        question: '"Phanh tái tạo" (Regenerative Braking) trên xe điện hoạt động như thế nào?',
+        answer:
+          'Phanh tái tạo là một quá trình trong đó động cơ điện hoạt động như một máy phát điện khi người lái giảm tốc hoặc phanh. Thay vì lãng phí năng lượng dưới dạng nhiệt như phanh truyền thống, nó chuyển đổi động năng của xe thành điện năng và sạc lại một phần cho pin, giúp tăng hiệu quả sử dụng năng lượng và phạm vi hoạt động.',
+      },
+    ],
   },
   {
     id: 'charging-infrastructure',

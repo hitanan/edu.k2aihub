@@ -136,6 +136,28 @@ export const lessons: DigitalCitizenshipLesson[] = [
           'Một công dân số có trách nhiệm luôn tôn trọng các quy định về bản quyền, giao tiếp văn minh và chia sẻ thông tin một cách có ý thức.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao việc quản lý "dấu chân số" lại quan trọng?',
+        answer:
+          'Dấu chân số của bạn tạo nên hình ảnh và uy tín của bạn trên mạng. Nhà tuyển dụng, trường học và cả những người bạn tương lai có thể xem nó. Một dấu chân số tích cực và chuyên nghiệp có thể mở ra nhiều cơ hội, trong khi một dấu chân số tiêu cực có thể gây ra những hậu quả không mong muốn.',
+      },
+      {
+        question: 'Làm thế nào để phân biệt giữa dấu chân số chủ động và bị động?',
+        answer:
+          'Dấu chân chủ động là những gì bạn cố ý chia sẻ, như một bài đăng trên Facebook hoặc một bình luận trên YouTube. Dấu chân bị động là dữ liệu được thu thập mà bạn có thể không nhận thức được, như lịch sử duyệt web của bạn được các trang web theo dõi qua cookies hoặc vị trí của bạn được một ứng dụng ghi lại.',
+      },
+      {
+        question: 'Trở thành công dân số có trách nhiệm có lợi ích gì?',
+        answer:
+          'Nó không chỉ giúp bạn bảo vệ bản thân khỏi các rủi ro như lừa đảo, đánh cắp danh tính và bắt nạt trực tuyến, mà còn giúp bạn xây dựng uy tín cá nhân, tận dụng các cơ hội học tập và việc làm, và góp phần tạo ra một môi trường Internet an toàn và văn minh hơn cho mọi người.',
+      },
+      {
+        question: 'Trẻ em có cần học về công dân số không?',
+        answer:
+          'Cực kỳ cần thiết. Trẻ em ngày nay tiếp xúc với Internet từ rất sớm. Dạy cho trẻ về công dân số giúp chúng hình thành các thói quen tốt, biết cách tự bảo vệ và tương tác một cách tích cực ngay từ đầu, thay vì phải sửa chữa những sai lầm sau này.',
+      },
+    ],
   },
   {
     id: 'bao-ve-danh-tinh-truc-tuyen',

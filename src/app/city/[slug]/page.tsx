@@ -14,7 +14,7 @@ import {
   createBreadcrumbStructuredData,
   createPlaceStructuredData,
 } from '@/utils/seo';
-import { getAbsoluteAssetUrl } from '@/utils/assets';
+import { SocialSeoPresets } from '@/utils/socialSeo';
 import citiesData from '@/data/cities';
 
 interface CityPageProps {
@@ -84,72 +84,20 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
 
     enhancedDescription += ` Tìm hiểu lịch sử, văn hóa và kinh tế của ${city.name}`;
 
-    // Create enhanced structured data for better SEO
-    const educationalData = createEducationalContentStructuredData(
-      `${city.name} - ${city.region}`,
+    const socialMeta = SocialSeoPresets.city(
+      `${city.name} - ${city.region} | Địa Lý Việt Nam`,
       enhancedDescription,
-      `https://k2aihub.com/city/${city.slug}`,
+      cityKeywords,
     );
-
-    const faqData = createFAQStructuredData(city);
-    const breadcrumbData = createBreadcrumbStructuredData(city);
-    const placeData = createPlaceStructuredData(city);
-
-    // Combine all structured data
-    const combinedStructuredData = [educationalData, faqData, breadcrumbData, placeData];
 
     return {
       title: createTitle(`${city.name} - ${city.region} | Địa Lý Việt Nam`),
-      description: createDescription(
-        enhancedDescription.length > 150 ? enhancedDescription.substring(0, 147) + '...' : enhancedDescription,
-      ),
+      description: enhancedDescription,
       keywords: createKeywords(cityKeywords),
-      authors: [{ name: 'K2AI Team' }],
-      creator: 'K2AI',
-      publisher: 'K2AI',
-      formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
-      },
-      robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          'max-video-preview': -1,
-          'max-image-preview': 'large',
-          'max-snippet': -1,
-        },
-      },
-      openGraph: {
-        type: 'article',
-        locale: 'vi_VN',
-        url: `https://k2aihub.com/city/${city.slug}`,
-        title: createTitle(`${city.name} - Khám Phá ${city.region}`),
-        description: createDescription(city.description),
-        siteName: 'K2AiHub - Nền tảng học tập thông minh',
-        images: [
-          {
-            url: getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg'),
-            width: 1200,
-            height: 630,
-            alt: `Địa Lý Việt Nam - Vị trí ${city.name} | K2AiHub`,
-          },
-        ],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: createTitle(`${city.name} - ${city.region}`),
-        description: createDescription(city.description.substring(0, 150)),
-        images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')],
-      },
+      openGraph: socialMeta.openGraph,
+      twitter: socialMeta.twitter,
       alternates: {
-        canonical: `https://k2aihub.com/city/${city.slug}`,
-      },
-      other: {
-        'structured-data': JSON.stringify(combinedStructuredData),
+        canonical: `/city/${city.slug}`,
       },
     };
   } catch (error) {
@@ -183,9 +131,20 @@ export default async function Page({ params }: CityPageProps) {
       );
     }
 
+    const enhancedDescription = `${city.description} Diện tích: ${city.area}, Dân số: ${city.population}.`;
+    const educationalData = createEducationalContentStructuredData(
+      `${city.name} - ${city.region}`,
+      enhancedDescription,
+      `https://k2aihub.com/city/${city.slug}`,
+    );
+    const faqData = createFAQStructuredData(city);
+    const breadcrumbData = createBreadcrumbStructuredData(city);
+    const placeData = createPlaceStructuredData(city);
+    const structuredData = [educationalData, faqData, breadcrumbData, placeData].filter(Boolean);
+
     return (
       <Suspense fallback={<LoadingSpinner message={`Đang tải thông tin ${city.name}...`} />}>
-        <CityPage city={city} allCities={citiesData} />
+        <CityPage city={city} allCities={citiesData} structuredData={structuredData} />
       </Suspense>
     );
   } catch (error) {

@@ -148,6 +148,28 @@ export const liveCommerceLessons: LiveCommerceLesson[] = [
         'Các ngành hàng phổ biến nhất trên live commerce Việt Nam bao gồm thời trang, mỹ phẩm, đồ gia dụng và thực phẩm.',
       ],
     },
+    faqs: [
+      {
+        question: 'Live commerce là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Live commerce là hình thức bán hàng kết hợp livestream (phát sóng trực tiếp) với thương mại điện tử, cho phép người xem tương tác và mua sản phẩm ngay trong lúc xem. Nó quan trọng vì tạo ra trải nghiệm mua sắm chân thực, giải trí và có tính tương tác cao, giúp tăng tỷ lệ chuyển đổi và xây dựng lòng tin với khách hàng.',
+      },
+      {
+        question: 'Cần chuẩn bị những gì để bắt đầu livestream bán hàng?',
+        answer:
+          'Về cơ bản, bạn cần một sản phẩm tốt, một chiếc điện thoại thông minh có camera chất lượng, kết nối internet ổn định và một tài khoản trên nền tảng livestream (như TikTok, Facebook, Shopee). Khi chuyên nghiệp hơn, bạn có thể đầu tư thêm đèn chiếu sáng, micro và phần mềm hỗ trợ.',
+      },
+      {
+        question: 'Làm thế nào để thu hút người xem cho phiên livestream của mình?',
+        answer:
+          'Hãy thông báo trước về buổi live trên các kênh mạng xã hội, tạo ra một chủ đề hấp dẫn hoặc một chương trình khuyến mãi đặc biệt (chỉ có trên live). Trong lúc live, hãy liên tục tương tác, gọi tên người xem, trả lời câu hỏi và tạo ra các mini-game để giữ chân họ.',
+      },
+      {
+        question: 'Khung giờ nào livestream bán hàng hiệu quả nhất tại Việt Nam?',
+        answer:
+          'Thường có hai khung giờ vàng chính: buổi trưa (khoảng 12h-13h) khi dân văn phòng nghỉ ngơi, và buổi tối (khoảng 20h-22h) khi mọi người đã về nhà và thư giãn. Tuy nhiên, bạn nên thử nghiệm để tìm ra khung giờ phù hợp nhất với tệp khách hàng của mình.',
+      },
+    ],
     careerConnect: {
       name: 'Chị Nguyễn Ngọc Huyền',
       title: 'Trưởng nhóm Vận hành Live Commerce',

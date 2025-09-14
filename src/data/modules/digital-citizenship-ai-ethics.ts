@@ -229,6 +229,28 @@ export const lessons: DigitalCitizenshipLessonType[] = [
           'Đây là một hình thức lừa đảo giả mạo (phishing) phổ biến, nhằm mục đích lừa người dùng nhấp vào liên kết độc hại để đánh cắp thông tin cá nhân hoặc tài khoản ngân hàng.',
       },
     ],
+    faqs: [
+      {
+        question: 'Công dân số là gì và tại sao nó lại quan trọng?',
+        answer:
+          'Công dân số là một người có kỹ năng, kiến thức và thái độ để tham gia vào xã hội số một cách an toàn, có trách nhiệm và đạo đức. Điều này quan trọng vì hầu hết mọi khía cạnh của cuộc sống hiện đại, từ giao tiếp, học tập đến làm việc, đều có yếu tố kỹ thuật số.',
+      },
+      {
+        question: 'Làm thế nào để bảo vệ danh tính số của tôi?',
+        answer:
+          'Hãy bắt đầu với những điều cơ bản: sử dụng mật khẩu mạnh và duy nhất cho mỗi tài khoản, bật xác thực hai yếu tố (2FA) ở mọi nơi có thể, cẩn thận với những thông tin bạn chia sẻ công khai và thường xuyên kiểm tra cài đặt quyền riêng tư trên các tài khoản mạng xã hội của bạn.',
+      },
+      {
+        question: 'Thiên vị thuật toán (algorithmic bias) là gì?',
+        answer:
+          'Thiên vị thuật toán xảy ra khi một hệ thống AI tạo ra các kết quả không công bằng hoặc mang tính định kiến, thường là do dữ liệu huấn luyện của nó phản ánh những định kiến đã có trong xã hội. Ví dụ, một AI tuyển dụng có thể ưu tiên ứng viên nam nếu nó được huấn luyện chủ yếu trên dữ liệu lịch sử tuyển dụng của nam giới.',
+      },
+      {
+        question: 'Quyền được lãng quên (Right to be Forgotten) có nghĩa là gì?',
+        answer:
+          'Đây là quyền cho phép cá nhân yêu cầu các tổ chức xóa dữ liệu cá nhân của họ trong một số trường hợp nhất định, ví dụ như khi thông tin đó không còn cần thiết hoặc đã lỗi thời. Đây là một quyền quan trọng để kiểm soát dấu vết kỹ thuật số của một người.',
+      },
+    ],
   },
   {
     id: 'ai-ethics-deep-dive',

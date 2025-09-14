@@ -58,6 +58,28 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
         'Kỹ năng mềm như giao tiếp, làm việc nhóm và tư duy phản biện được đánh giá cao bởi nhà tuyển dụng Việt Nam.',
       ],
     },
+    faqs: [
+      {
+        question: 'Tại sao việc lập kế hoạch nghề nghiệp lại quan trọng?',
+        answer:
+          'Lập kế hoạch nghề nghiệp giúp bạn xác định rõ mục tiêu, hiểu được điểm mạnh, điểm yếu của bản thân và vạch ra một lộ trình rõ ràng để đạt được những gì bạn mong muốn. Nó giúp bạn chủ động trong sự nghiệp thay vì chỉ phản ứng với các cơ hội đến một cách ngẫu nhiên.',
+      },
+      {
+        question: 'Mục tiêu SMART trong lập kế hoạch nghề nghiệp là gì?',
+        answer:
+          'SMART là viết tắt của Specific (Cụ thể), Measurable (Đo lường được), Achievable (Khả thi), Relevant (Liên quan), và Time-bound (Có thời hạn). Đặt mục tiêu theo tiêu chí SMART giúp bạn tạo ra những mục tiêu rõ ràng, thực tế và có khả năng thành công cao hơn.',
+      },
+      {
+        question: 'Làm thế nào để biết mình phù hợp với ngành nghề nào?',
+        answer:
+          'Bài học này hướng dẫn bạn thực hiện các bài tập tự đánh giá để khám phá sở thích, giá trị và kỹ năng của mình. Kết hợp kết quả này với việc nghiên cứu thị trường lao động sẽ giúp bạn xác định được những ngành nghề phù hợp nhất với bản thân.',
+      },
+      {
+        question: 'Kỹ năng nào là quan trọng nhất trên thị trường lao động Việt Nam hiện nay?',
+        answer:
+          'Bên cạnh kỹ năng chuyên môn, các nhà tuyển dụng Việt Nam ngày càng đánh giá cao kỹ năng mềm. Theo bối cảnh được đề cập, các kỹ năng như giao tiếp, làm việc nhóm, và tư duy phản biện là cực kỳ quan trọng trong môi trường làm việc hiện đại.',
+      },
+    ],
   },
   {
     id: 'personal-branding-strategy',

@@ -121,6 +121,29 @@ export const communicationSkillsLessons: BaseLessonData[] = [
           'Lắng nghe chủ động là một quá trình đòi hỏi sự tham gia tích cực, bao gồm việc tập trung hoàn toàn vào người nói, diễn giải lại những gì bạn hiểu để xác nhận, và đặt câu hỏi để làm rõ thông tin, thể hiện sự đồng cảm.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao kỹ năng giao tiếp lại quan trọng trong sự nghiệp?',
+        answer:
+          'Kỹ năng giao tiếp là nền tảng cho hầu hết mọi khía cạnh của công việc, từ làm việc nhóm, thuyết trình ý tưởng, đàm phán với khách hàng đến xây dựng mối quan hệ với đồng nghiệp. Giao tiếp tốt giúp bạn truyền đạt ý tưởng rõ ràng, tránh hiểu lầm và xây dựng lòng tin, từ đó thúc đẩy hiệu quả công việc và cơ hội thăng tiến.',
+      },
+      {
+        question: 'Làm thế nào để vượt qua nỗi sợ nói trước đám đông?',
+        answer:
+          'Nỗi sợ nói trước đám đông là rất phổ biến. Cách tốt nhất để vượt qua là chuẩn bị kỹ lưỡng (nắm vững nội dung), thực hành nhiều lần (trước gương, với bạn bè), bắt đầu từ những nhóm nhỏ, và tập trung vào việc chia sẻ giá trị cho khán giả thay vì lo lắng về sự phán xét của họ. Hít thở sâu trước khi bắt đầu cũng là một kỹ thuật hữu ích.',
+      },
+      {
+        question: 'Giao tiếp phi ngôn ngữ là gì và tại sao nó quan trọng?',
+        answer:
+          'Giao tiếp phi ngôn ngữ bao gồm ngôn ngữ cơ thể, nét mặt, ánh mắt, và giọng điệu. Nó thường chiếm một phần lớn trong thông điệp mà chúng ta truyền tải. Hiểu và sử dụng hiệu quả giao tiếp phi ngôn ngữ giúp bạn thể hiện sự tự tin, chân thành và tạo sự kết nối tốt hơn với người đối diện.',
+      },
+      {
+        question:
+          'Trong bối cảnh Việt Nam, điều gì cần lưu ý khi giao tiếp với người lớn tuổi hoặc có chức vụ cao hơn?',
+        answer:
+          'Văn hóa Việt Nam rất coi trọng sự tôn trọng người lớn tuổi và cấp trên. Điều này thể hiện qua cách xưng hô (sử dụng "ạ", "thưa"), ngôn ngữ cơ thể (cúi đầu nhẹ khi chào), và thái độ khiêm tốn, lắng nghe. Tránh ngắt lời hoặc tranh luận quá gay gắt một cách công khai.',
+      },
+    ],
   },
   {
     id: 'digital-presentation-mastery',

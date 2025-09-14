@@ -101,9 +101,9 @@ export function getCategoryFromSlug(slug: string): string {
     'nghien-cuu': 'Nghiên Cứu',
     'tro-choi': 'Trò Chơi',
     'xu-huong': 'Xu Hướng',
-    'k2aihub': 'K2AiHub',
+    k2aihub: 'K2AiHub',
     'trien-khai': 'Triển Khai',
-    'tong-hop': 'Tổng Hợp'
+    'tong-hop': 'Tổng Hợp',
   };
   return categoryMap[slug] || slug;
 }
@@ -112,6 +112,9 @@ export function getTagFromSlug(slug: string): string {
   // This is a simplified version - in a real app you might want to store this mapping
   return slug
     .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => {
+      if (word.toLowerCase() === '3d') return '3D';
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
     .join(' ');
 }

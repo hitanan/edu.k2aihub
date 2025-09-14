@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
-import { createCategorySlug, createTagSlug, getCategoryFromSlug } from '@/utils/slug';
+import { createCategorySlug, createTagSlug, getCategoryFromSlug, getTagFromSlug } from '@/utils/slug';
 
 import { BlogPost, BlogMetadata } from '@/types';
 
@@ -346,14 +346,30 @@ export function getAllBlogPostsSync(): BlogPost[] {
   return posts;
 }
 
-// Get all unique tags
-export async function getAllTags(): Promise<string[]> {
-  const allPosts = await getAllBlogPosts();
+// Get all unique tags synchronously
+export function getAllTagsSync(): string[] {
+  const posts = getAllBlogPostsSync();
   const tags = new Set<string>();
-  allPosts.forEach((post) => {
+  posts.forEach((post) => {
     post.tags?.forEach((tag) => tags.add(tag));
   });
   return Array.from(tags);
+}
+
+// Get all unique tags with post counts
+export async function getAllTags(): Promise<{ name: string; count: number }[]> {
+  const posts = await getAllBlogPosts();
+  const tagCounts: { [key: string]: number } = {};
+
+  posts.forEach((post) => {
+    post.tags?.forEach((tag) => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  });
+
+  return Object.entries(tagCounts)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
 }
 
 // Get all category slugs for static params generation
@@ -365,11 +381,17 @@ export async function getAllCategorySlugs(): Promise<string[]> {
 // Get all tag slugs for static params generation
 export async function getAllTagSlugs(): Promise<string[]> {
   const tags = await getAllTags();
-  return tags.map(createTagSlug);
+  return tags.map((tag) => createTagSlug(tag.name));
 }
 
 // Get blog posts by category slug
 export async function getBlogPostsByCategorySlug(categorySlug: string): Promise<BlogMetadata[]> {
   const category = getCategoryFromSlug(categorySlug);
   return getBlogPostsByCategory(category);
+}
+
+// Get blog posts by tag slug
+export async function getBlogPostsByTagSlug(tagSlug: string): Promise<BlogMetadata[]> {
+  const tagName = getTagFromSlug(tagSlug);
+  return getBlogPostsByTag(tagName);
 }

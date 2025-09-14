@@ -68,6 +68,28 @@ export const kitchenChemistryLessons: KitchenChemistryLesson[] = [
           'Miếng bít tết ở lửa lớn có màu nâu đậm và hương vị phức tạp hơn do phản ứng Maillard diễn ra mạnh mẽ.',
       },
     ],
+    faqs: [
+      {
+        question: 'Phản ứng Maillard là gì?',
+        answer:
+          'Phản ứng Maillard là một phản ứng hóa học phức tạp giữa axit amin và đường khử, xảy ra khi thực phẩm được đun nóng. Nó tạo ra hàng trăm hợp chất hương vị và màu sắc mới, mang lại màu nâu hấp dẫn và hương vị thơm ngon cho nhiều loại thực phẩm như bánh mì nướng, bít tết, và cà phê rang.',
+      },
+      {
+        question: 'Phản ứng Maillard và caramen hóa có giống nhau không?',
+        answer:
+          'Không. Caramen hóa chỉ liên quan đến việc đun nóng đường, trong khi phản ứng Maillard cần cả đường và axit amin (thành phần của protein). Phản ứng Maillard tạo ra một phổ hương vị phức tạp và đa dạng hơn nhiều so với caramen hóa.',
+      },
+      {
+        question: 'Tại sao cần phải thấm khô miếng thịt trước khi áp chảo?',
+        answer:
+          'Phản ứng Maillard chỉ xảy ra ở nhiệt độ cao (trên 140°C). Nước trên bề mặt thịt sẽ sôi ở 100°C và ngăn nhiệt độ tăng cao hơn cho đến khi nó bay hơi hết. Việc thấm khô thịt giúp bề mặt nhanh chóng đạt đến nhiệt độ cần thiết để phản ứng Maillard diễn ra, tạo lớp vỏ màu nâu đẹp mắt.',
+      },
+      {
+        question: 'Có thể tăng tốc phản ứng Maillard không?',
+        answer:
+          'Có. Tăng nhiệt độ, tăng độ pH (môi trường kiềm, ví dụ thêm một chút baking soda), và chọn các loại đường và axit amin phù hợp có thể giúp phản ứng Maillard diễn ra nhanh hơn và mạnh mẽ hơn.',
+      },
+    ],
     realWorldApplications: ['Nướng bánh mì', 'Rang cà phê', 'Áp chảo thịt'],
   },
   {

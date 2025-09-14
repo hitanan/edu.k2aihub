@@ -159,6 +159,28 @@ export const crossPlatformStrategyLessons: CrossPlatformStrategyLessonType[] = [
           'Zalo Official Account đã trở thành một kênh quan trọng cho các doanh nghiệp tại Việt Nam để gửi thông báo, cập nhật và tương tác trực tiếp với khách hàng một cách chính thức.',
       },
     ],
+    faqs: [
+      {
+        question: 'Chiến lược đa nền tảng có nghĩa là đăng cùng một nội dung ở mọi nơi không?',
+        answer:
+          'Không. Đó là một hiểu lầm phổ biến. Chiến lược đa nền tảng hiệu quả là việc duy trì một thông điệp và nhận diện thương hiệu CỐT LÕI nhất quán, nhưng điều chỉnh cách thể hiện, định dạng và giọng điệu cho phù hợp với từng nền tảng và đối tượng khán giả trên đó.',
+      },
+      {
+        question: 'Làm thế nào để quyết định nên tập trung vào những nền tảng nào?',
+        answer:
+          'Hãy bắt đầu bằng việc xác định đối tượng khách hàng mục tiêu của bạn đang ở đâu nhiều nhất. Sau đó, xem xét nền tảng nào phù hợp nhất với loại nội dung và sản phẩm của bạn. Tốt hơn là làm thật tốt trên 2-3 nền tảng chính còn hơn là làm hời hợt trên 10 nền tảng.',
+      },
+      {
+        question: 'Làm sao để đo lường hiệu quả của một chiến dịch đa nền tảng?',
+        answer:
+          'Bạn cần sử dụng các công cụ phân tích có khả năng tổng hợp dữ liệu từ nhiều kênh, ví dụ như Google Analytics 4, Sprout Social, hoặc Hubspot. Hãy theo dõi các chỉ số chung như tổng lượt tiếp cận, tổng tỷ lệ chuyển đổi, và chi phí trên mỗi chuyển đổi (CPA) trên toàn bộ chiến dịch, cũng như các chỉ số riêng của từng kênh.',
+      },
+      {
+        question: 'Tái sử dụng nội dung (content repurposing) có làm giảm chất lượng không?',
+        answer:
+          'Nếu làm đúng cách thì không. Tái sử dụng nội dung không phải là copy-paste. Đó là việc lấy ý tưởng cốt lõi từ một nội dung chất lượng cao (ví dụ: một video YouTube) và biến nó thành các định dạng mới, phù hợp với nền tảng khác (ví dụ: một chuỗi story trên Instagram, một bài viết blog, một infographic).',
+      },
+    ],
   },
   {
     id: 'advanced-content-repurposing-distribution',

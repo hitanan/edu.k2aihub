@@ -191,6 +191,28 @@ export const futureThinkingLessons = [
     ]
       .filter((game): game is EducationalGame => !!game)
       .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    faqs: [
+      {
+        question: 'Tư duy tương lai khác gì với dự đoán thông thường?',
+        answer:
+          'Dự đoán cố gắng tìm ra một tương lai duy nhất sẽ xảy ra. Tư duy tương lai khám phá nhiều tương lai có thể xảy ra để chuẩn bị tốt hơn cho sự không chắc chắn và đưa ra quyết định chiến lược vững vàng hơn.',
+      },
+      {
+        question: 'Lập kế hoạch kịch bản (Scenario Planning) là gì?',
+        answer:
+          'Đó là một phương pháp tư duy chiến lược bao gồm việc tạo ra một vài câu chuyện chi tiết và hợp lý về tương lai (kịch bản) để khám phá các yếu tố không chắc chắn và kiểm tra các chiến lược hiện tại.',
+      },
+      {
+        question: 'Tại sao phân tích STEEP lại quan trọng?',
+        answer:
+          'Phân tích STEEP (Social, Technological, Economic, Environmental, Political) là một khung phân tích giúp xác định và hiểu các động lực vĩ mô đang định hình thế giới, cung cấp một cái nhìn toàn cảnh về các lực lượng thay đổi.',
+      },
+      {
+        question: 'Hoạch định ngược (Backcasting) hoạt động như thế nào?',
+        answer:
+          'Thay vì dự báo từ hiện tại tới tương lai, hoạch định ngược bắt đầu bằng việc xác định một tương lai mong muốn. Sau đó, bạn làm việc ngược lại để xác định các bước và chính sách cần thiết để kết nối tương lai đó với hiện tại.',
+      },
+    ],
   },
   {
     id: 'weak-signals-trend-spotting',

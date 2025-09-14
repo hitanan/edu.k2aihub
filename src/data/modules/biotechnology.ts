@@ -145,6 +145,28 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
           'PCR là một kỹ thuật nền tảng cho phép tạo ra hàng triệu bản sao của một đoạn DNA mục tiêu từ một lượng mẫu rất nhỏ, phục vụ cho vô số ứng dụng từ chẩn đoán bệnh đến pháp y.',
       },
     ],
+    faqs: [
+      {
+        question: 'CRISPR-Cas9 là gì và tại sao nó lại quan trọng đến vậy?',
+        answer:
+          'CRISPR-Cas9 là một công cụ chỉnh sửa gen mang tính cách mạng cho phép các nhà khoa học thay đổi trình tự DNA với độ chính xác cao. Nó quan trọng vì mở ra tiềm năng to lớn trong việc điều trị các bệnh di truyền, phát triển các liệu pháp mới và kỹ thuật di truyền sinh vật.',
+      },
+      {
+        question: 'Sự khác biệt giữa công nghệ sinh học và kỹ thuật di truyền là gì?',
+        answer:
+          'Công nghệ sinh học là một lĩnh vực rộng lớn sử dụng các sinh vật sống hoặc các thành phần của chúng để tạo ra sản phẩm hoặc quy trình. Kỹ thuật di truyền là một kỹ thuật cụ thể trong công nghệ sinh học, liên quan đến việc trực tiếp thao tác gen của một sinh vật.',
+      },
+      {
+        question: 'Kỹ thuật di truyền có an toàn không?',
+        answer:
+          'Kỹ thuật di truyền tuân theo các quy định nghiêm ngặt về đạo đức và an toàn. Mặc dù có tiềm năng to lớn, nó cũng đặt ra những lo ngại đang được tranh luận và nghiên cứu tích cực, chẳng hạn như các hậu quả không lường trước và ảnh hưởng lâu dài. Bài học này có đề cập đến các quy trình an toàn và đạo đức sinh học.',
+      },
+      {
+        question: 'Một số ứng dụng thực tế của kỹ thuật di truyền được thảo luận trong bài học này là gì?',
+        answer:
+          'Bài học nhấn mạnh việc sản xuất các dược phẩm như insulin trong vi khuẩn, tạo ra cây trồng biến đổi gen trong nông nghiệp, và việc sử dụng nó trong nghiên cứu y học để hiểu và chống lại bệnh tật.',
+      },
+    ],
   },
   {
     id: 'medical-biotechnology-drug-discovery',

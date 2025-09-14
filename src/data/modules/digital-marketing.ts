@@ -174,6 +174,28 @@ export const lessons: BaseLessonData[] = [
           'Phát tờ rơi là một hình thức marketing truyền thống (offline), trong khi các lựa chọn còn lại đều là các kênh marketing kỹ thuật số (online).',
       },
     ],
+    faqs: [
+      {
+        question: 'Digital Marketing có thực sự cần thiết cho một cửa hàng nhỏ ở Việt Nam không?',
+        answer:
+          'Cực kỳ cần thiết. Ngày nay, khách hàng Việt Nam, kể cả ở các thành phố nhỏ, đều tìm kiếm thông tin sản phẩm, dịch vụ trên Google và mạng xã hội trước khi mua. Digital Marketing giúp cửa hàng của bạn xuất hiện đúng lúc khách hàng cần, cạnh tranh sòng phẳng với các thương hiệu lớn và tiếp cận khách hàng vượt ra ngoài địa phương.',
+      },
+      {
+        question: 'Sự khác biệt giữa SEO và SEM là gì?',
+        answer:
+          'SEO (Search Engine Optimization) là quá trình tối ưu hóa website để có thứ hạng cao trên kết quả tìm kiếm một cách tự nhiên (miễn phí). SEM (Search Engine Marketing) là một thuật ngữ rộng hơn, bao gồm cả SEO và quảng cáo trả phí trên công cụ tìm kiếm (như Google Ads). Nói đơn giản, SEO là nỗ lực dài hạn, còn SEM có thể mang lại kết quả ngay lập tức thông qua quảng cáo.',
+      },
+      {
+        question: 'Tại sao phải xây dựng "Buyer Persona"?',
+        answer:
+          'Buyer Persona (chân dung khách hàng lý tưởng) giúp bạn hiểu sâu sắc khách hàng của mình là ai, họ cần gì, họ gặp khó khăn gì. Khi bạn hiểu rõ họ, mọi hoạt động marketing của bạn, từ viết nội dung, chạy quảng cáo đến phát triển sản phẩm, đều sẽ trở nên trúng đích và hiệu quả hơn, thay vì "nói chuyện" với một đám đông vô danh.',
+      },
+      {
+        question: 'Kênh Digital Marketing nào là quan trọng nhất tại Việt Nam hiện nay?',
+        answer:
+          'Điều này phụ thuộc vào sản phẩm và đối tượng khách hàng của bạn. Tuy nhiên, nhìn chung, một chiến lược hiệu quả tại Việt Nam thường không thể bỏ qua: 1. Mạng xã hội (Facebook, TikTok, Zalo) để xây dựng cộng đồng và tương tác. 2. Công cụ tìm kiếm (Google) để bắt lấy nhu cầu của khách hàng. 3. Các sàn thương mại điện tử (Shopee, Lazada, TikTok Shop) nếu bạn bán lẻ.',
+      },
+    ],
   },
   {
     id: 'social-media-marketing',

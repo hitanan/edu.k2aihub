@@ -22,6 +22,28 @@ export const educationLearningLessons: BaseLessonData[] = [
       'Nghiên cứu và chuẩn bị cho các kỳ thi.',
     ],
     tags: ['AI trong giáo dục', 'học tập cá nhân hóa', 'gia sư ảo', 'công nghệ giáo dục'],
+    faqs: [
+      {
+        question: 'Liệu AI có thể thay thế hoàn toàn giáo viên con người không?',
+        answer:
+          'Không. AI là một công cụ hỗ trợ mạnh mẽ, có thể cá nhân hóa việc học và giải đáp thắc mắc 24/7. Tuy nhiên, giáo viên con người vẫn không thể thiếu trong việc truyền cảm hứng, hướng dẫn kỹ năng mềm, và tạo ra một môi trường học tập tương tác, giàu cảm xúc.',
+      },
+      {
+        question: 'Làm thế nào để đặt câu hỏi (prompt) hiệu quả cho AI gia sư?',
+        answer:
+          'Hãy cụ thể và cung cấp ngữ cảnh. Thay vì hỏi "Giải thích về quang hợp", hãy thử "Hãy giải thích quá trình quang hợp cho một học sinh lớp 7, sử dụng ví dụ về một cái cây trong vườn và vai trò của mặt trời, nước và không khí."',
+      },
+      {
+        question: 'Sử dụng AI để làm bài tập có được coi là gian lận không?',
+        answer:
+          'Điều này phụ thuộc vào cách bạn sử dụng. Nếu bạn sao chép nguyên văn câu trả lời của AI, đó là gian lận. Nếu bạn sử dụng AI để hiểu khái niệm, tìm các nguồn tham khảo, hoặc kiểm tra lại ý tưởng của mình, đó là một cách học tập thông minh và hiệu quả.',
+      },
+      {
+        question: 'Các công cụ AI gia sư phổ biến hiện nay là gì?',
+        answer:
+          'Một số công cụ nổi bật bao gồm ChatGPT (với các prompt được thiết kế cho việc học), Khan Academy (tích hợp AI để hỗ trợ), Duolingo (cho việc học ngôn ngữ), và Socratic by Google (giúp giải các bài toán).',
+      },
+    ],
   },
   {
     id: 'research-ai',

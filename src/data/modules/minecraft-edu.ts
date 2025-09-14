@@ -79,6 +79,28 @@ export const minecraftEduModule: ModuleData<MinecraftEduLesson> = {
         'Nền tảng cho các dự án sáng tạo và kỹ thuật phức tạp hơn.',
       ],
       skills: ['navigation', 'crafting', 'inventory-management'],
+      faqs: [
+        {
+          question: 'Minecraft Education có miễn phí không?',
+          answer:
+            'Minecraft Education yêu cầu một tài khoản Microsoft 365 Education, thường được cung cấp miễn phí bởi các trường học. Nếu trường của bạn có đăng ký, bạn có thể tải và chơi miễn phí. Nếu không, bạn cần mua giấy phép riêng.',
+        },
+        {
+          question: 'Sự khác biệt chính giữa Minecraft thường và Minecraft Education là gì?',
+          answer:
+            'Minecraft Education có tất cả các tính năng của phiên bản Bedrock (bản thường), nhưng được bổ sung các công cụ dành riêng cho giáo dục như Code Builder (lập trình), Chemistry Update (hóa học), và các vật phẩm như Camera, Portfolio để ghi lại quá trình học tập.',
+        },
+        {
+          question: 'Con tôi chưa từng chơi Minecraft, có thể học khóa này không?',
+          answer:
+            'Hoàn toàn có thể! Khóa học được thiết kế cho người mới bắt đầu, với bài học đầu tiên tập trung vào việc làm quen với cách điều khiển và các khái niệm cơ bản trong game.',
+        },
+        {
+          question: 'Học lập trình trong Minecraft có khó không?',
+          answer:
+            'Không hề khó. Minecraft Education sử dụng giao diện lập trình kéo-thả (giống như Scratch), rất trực quan và dễ hiểu. Đây là một cách tuyệt vời để trẻ em làm quen với tư duy lập trình mà không cần phải viết những dòng code phức tạp.',
+        },
+      ],
       gameVersion: '1.18.32',
     },
     {

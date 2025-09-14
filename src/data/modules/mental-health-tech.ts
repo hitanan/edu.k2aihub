@@ -77,6 +77,28 @@ export const mentalHealthTechModule: ModuleData<MentalHealthLesson> = {
         'Hỗ trợ sức khỏe tâm thần tại các cơ sở giáo dục',
         'Phát triển chương trình sức khỏe tâm thần cộng đồng',
       ],
+      faqs: [
+        {
+          question: 'Digital wellness (sức khỏe kỹ thuật số) là gì?',
+          answer:
+            'Sức khỏe kỹ thuật số là việc thực hành các thói quen lành mạnh liên quan đến việc sử dụng công nghệ. Nó bao gồm việc quản lý thời gian sử dụng thiết bị, bảo vệ bản thân khỏi các nội dung tiêu cực và sử dụng công nghệ một cách có chủ đích để cải thiện sức khỏe thể chất và tinh thần.',
+        },
+        {
+          question: 'Làm thế nào một ứng dụng trên điện thoại có thể giúp tôi thiền?',
+          answer:
+            'Các ứng dụng thiền thường cung cấp các bài hướng dẫn bằng giọng nói, âm thanh tự nhiên, hoặc nhạc thư giãn để giúp bạn tập trung vào hơi thở và thư giãn tâm trí. Chúng cũng có thể nhắc nhở bạn dành thời gian thiền mỗi ngày và theo dõi tiến trình của bạn.',
+        },
+        {
+          question: 'Thiết bị đeo tay theo dõi sức khỏe có ích lợi gì cho sức khỏe tâm thần?',
+          answer:
+            'Thiết bị đeo có thể theo dõi các chỉ số sinh trắc học như nhịp tim, chất lượng giấc ngủ và mức độ hoạt động thể chất. Những dữ liệu này có thể giúp bạn nhận ra các dấu hiệu của căng thẳng (stress) và hiểu rõ hơn mối liên hệ giữa thể chất và tinh thần, từ đó có những điều chỉnh phù hợp.',
+        },
+        {
+          question: 'Cai nghiện kỹ thuật số (digital detox) có thực sự cần thiết không?',
+          answer:
+            'Việc "cai nghiện" kỹ thuật số, tức là giảm bớt hoặc tạm dừng sử dụng các thiết bị điện tử, có thể rất hữu ích. Nó giúp não bộ được nghỉ ngơi, giảm cảm giác quá tải thông tin, cải thiện sự tập trung và khuyến khích các tương tác xã hội trực tiếp, tất cả đều có lợi cho sức khỏe tâm thần.',
+        },
+      ],
     },
     {
       id: 'ai-therapy-tools',

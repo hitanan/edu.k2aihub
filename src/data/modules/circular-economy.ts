@@ -40,6 +40,28 @@ export const circularEconomyLessons: BaseLessonData[] = [
         'Nhiều doanh nghiệp Việt Nam đang bắt đầu áp dụng các mô hình kinh doanh tuần hoàn.',
       ],
     },
+    faqs: [
+      {
+        question: 'Kinh tế tuần hoàn là gì?',
+        answer:
+          'Kinh tế tuần hoàn là một mô hình kinh tế thay thế cho mô hình kinh tế tuyến tính truyền thống (sản xuất, sử dụng, vứt bỏ). Trong kinh tế tuần hoàn, chúng ta cố gắng giữ cho các nguồn tài nguyên được sử dụng càng lâu càng tốt, khai thác giá trị tối đa từ chúng, sau đó phục hồi và tái tạo các sản phẩm và vật liệu ở cuối mỗi vòng đời phục vụ.',
+      },
+      {
+        question: 'Ba nguyên tắc chính của kinh tế tuần hoàn là gì?',
+        answer:
+          'Ba nguyên tắc chính là: 1) Thiết kế để loại bỏ chất thải và ô nhiễm ngay từ đầu. 2) Giữ cho các sản phẩm và vật liệu được sử dụng và lưu thông ở giá trị cao nhất của chúng. 3) Tái tạo các hệ thống tự nhiên.',
+      },
+      {
+        question: 'Tại sao kinh tế tuần hoàn lại quan trọng đối với Việt Nam?',
+        answer:
+          'Việt Nam đang đối mặt với những thách thức nghiêm trọng về môi trường như ô nhiễm rác thải nhựa. Việc chuyển đổi sang kinh tế tuần hoàn không chỉ giúp giải quyết các vấn đề này mà còn tạo ra cơ hội kinh tế mới, tăng cường khả năng cạnh tranh và thúc đẩy sự phát triển bền vững.',
+      },
+      {
+        question: 'Làm thế nào tôi có thể đóng góp vào kinh tế tuần hoàn trong cuộc sống hàng ngày?',
+        answer:
+          'Bạn có thể bắt đầu bằng những hành động đơn giản như giảm thiểu rác thải, ưu tiên sửa chữa đồ đạc thay vì mua mới, tái sử dụng các vật dụng, phân loại rác để tái chế, và ủng hộ các doanh nghiệp áp dụng mô hình kinh doanh bền vững.',
+      },
+    ],
   },
   {
     id: 'circular-design',
