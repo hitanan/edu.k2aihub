@@ -10,12 +10,12 @@ type Props = {
   params: Promise<{ tag: string; page: string }>;
 };
 
-export async function generateStaticParams(): Promise<{ tag: string; page: string }[]> {
-  const tagSlugs = await getAllTagSlugs();
+export function generateStaticParams(): { tag: string; page: string }[] {
+  const tagSlugs = getAllTagSlugs();
   const params: { tag: string; page: string }[] = [];
 
   for (const tagSlug of tagSlugs) {
-    const posts = await getBlogPostsByTagSlug(tagSlug);
+    const posts = getBlogPostsByTagSlug(tagSlug);
     const totalPages = Math.ceil(posts.length / 10);
     for (let i = 1; i <= totalPages; i++) {
       params.push({ tag: tagSlug, page: i.toString() });

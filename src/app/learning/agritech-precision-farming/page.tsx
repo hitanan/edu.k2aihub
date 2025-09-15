@@ -73,7 +73,7 @@ export default function AgriTechMainPage() {
       jobGrowth: '+40%',
       hireDemand: 'Rất Cao',
     },
-    heroImageUrl: '/images/agritech-smart-farming.jpg',
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     relatedModules: ['green-technology', 'arduino', 'ai-art', 'biotechnology'],
   };
 

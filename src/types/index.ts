@@ -3,6 +3,18 @@ export * from './blog';
 
 export type { BaseLessonData };
 
+export interface BlogCategory {
+  slug: string;
+  name: string;
+  description: string;
+}
+
+export interface BlogTag {
+  slug: string;
+  name: string;
+  description: string;
+}
+
 export interface TouristAttraction {
   name: string;
   description: string;
@@ -172,4 +184,22 @@ export interface LessonNavigation {
   duration: string;
   difficulty: string;
   completed?: boolean;
+}
+
+export interface Region {
+  name: string;
+  slug: string;
+  description: string;
+}
+
+export interface Contributor {
+  name: string;
+  bio: string;
+  avatarUrl: string;
+  socialLinks?: {
+    twitter?: string;
+    linkedin?: string;
+    facebook?: string;
+    instagram?: string;
+  };
 }

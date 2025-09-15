@@ -77,8 +77,8 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
       'Làm quen với thế giới Arduino, tìm hiểu các linh kiện điện tử cơ bản và cách dòng điện hoạt động. Đây là bước đệm vững chắc cho hành trình sáng tạo của bạn.',
     duration: '90 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=m_O0g_V4pG4',
-    imageUrl: 'https://i.ytimg.com/vi/m_O0g_V4pG4/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=5E6b2D8zjno',
+    imageUrl: 'https://i.ytimg.com/vi/5E6b2D8zjno/hqdefault.jpg',
     objectives: [
       'Hiểu cấu trúc và chức năng của bo mạch Arduino Uno.',
       'Phân biệt được các linh kiện điện tử cơ bản: điện trở, đèn LED, nút nhấn.',
@@ -167,8 +167,8 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
       "Học cách Arduino 'cảm nhận' thế giới bên ngoài thông qua các tín hiệu kỹ thuật số, sử dụng nút nhấn để điều khiển đèn LED.",
     duration: '120 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=9-s9E_3_vTo',
-    imageUrl: 'https://i.ytimg.com/vi/9-s9E_3_vTo/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=mCSbd5auH5o',
+    imageUrl: 'https://i.ytimg.com/vi/mCSbd5auH5o/hqdefault.jpg',
     objectives: [
       'Hiểu khái niệm tín hiệu digital (HIGH/LOW).',
       'Biết cách đọc trạng thái của một chân đầu vào bằng hàm digitalRead().',
@@ -255,8 +255,8 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
       "Khám phá sức mạnh của PWM để tạo ra các tín hiệu analog 'giả', cho phép bạn điều khiển độ sáng của đèn LED hoặc tốc độ của động cơ.",
     duration: '90 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=Ym_g_m-51dM',
-    imageUrl: 'https://i.ytimg.com/vi/Ym_g_m-51dM/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=YfV-vYT3yfQ',
+    imageUrl: 'https://i.ytimg.com/vi/YfV-vYT3yfQ/hqdefault.jpg',
     objectives: [
       'Hiểu nguyên lý hoạt động của Điều chế độ rộng xung (PWM).',
       'Sử dụng hàm analogWrite() để tạo tín hiệu PWM trên các chân được hỗ trợ.',
@@ -342,8 +342,8 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
       'Học cách Arduino đo lường các giá trị liên tục từ thế giới thực, sử dụng biến trở để điều khiển độ sáng LED một cách linh hoạt.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=5n24v_a_4tE',
-    imageUrl: 'https://i.ytimg.com/vi/5n24v_a_4tE/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/watch?v=Y5XOpyQ6mf8',
+    imageUrl: 'https://i.ytimg.com/vi/Y5XOpyQ6mf8/hqdefault.jpg',
     objectives: [
       'Hiểu sự khác biệt giữa tín hiệu analog và tín hiệu digital.',
       'Sử dụng hàm analogRead() để đọc giá trị điện áp trên các chân analog.',

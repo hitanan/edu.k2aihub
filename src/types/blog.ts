@@ -9,6 +9,7 @@ export interface BlogMetadata {
   featured?: boolean;
   readingTime: string;
   coverImage?: string;
+  lastModified?: string;
 }
 
 export interface BlogPost extends BlogMetadata {

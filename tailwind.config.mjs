@@ -1,4 +1,5 @@
 import tailwindcssAnimate from 'tailwindcss-animate';
+import typography from '@tailwindcss/typography';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -32,6 +33,44 @@ const config = {
       },
     },
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.300'),
+            a: {
+              color: theme('colors.blue.400'),
+              '&:hover': {
+                color: theme('colors.blue.300'),
+              },
+            },
+            h1: {
+              color: theme('colors.white'),
+            },
+            h2: {
+              color: theme('colors.white'),
+            },
+            h3: {
+              color: theme('colors.white'),
+            },
+            h4: {
+              color: theme('colors.white'),
+            },
+            strong: {
+              color: theme('colors.white'),
+            },
+            code: {
+              color: theme('colors.pink.400'),
+              backgroundColor: theme('colors.gray.800'),
+              padding: '2px 4px',
+              borderRadius: '4px',
+            },
+            blockquote: {
+              color: theme('colors.gray.400'),
+              borderLeftColor: theme('colors.gray.700'),
+            },
+          },
+        },
+      }),
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -88,7 +127,7 @@ const config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, typography],
 };
 
 export default config;

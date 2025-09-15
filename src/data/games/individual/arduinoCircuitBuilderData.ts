@@ -42,7 +42,7 @@ export const ARDUINO_CIRCUIT_BUILDER_DATA: ArduinoCircuitBuilderGameData = {
           id: "arduino-uno",
           name: "Arduino Uno",
           type: "microcontroller",
-          image: "/images/arduino-uno.svg",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           pins: ["5V", "GND", "D13", "D12", "D11", "D10", "D9", "D8", "D7", "D6", "D5", "D4", "D3", "D2"],
           connections: [],
           position: { x: 100, y: 100 }
@@ -51,7 +51,7 @@ export const ARDUINO_CIRCUIT_BUILDER_DATA: ArduinoCircuitBuilderGameData = {
           id: "led-red",
           name: "LED Đỏ",
           type: "output",
-          image: "/images/led-red.svg",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           pins: ["anode", "cathode"],
           connections: [],
           position: { x: 300, y: 150 }
@@ -60,7 +60,7 @@ export const ARDUINO_CIRCUIT_BUILDER_DATA: ArduinoCircuitBuilderGameData = {
           id: "resistor-220",
           name: "Điện trở 220Ω",
           type: "passive",
-          image: "/images/resistor-220.svg",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           pins: ["pin1", "pin2"],
           connections: [],
           position: { x: 250, y: 200 }
@@ -69,7 +69,7 @@ export const ARDUINO_CIRCUIT_BUILDER_DATA: ArduinoCircuitBuilderGameData = {
           id: "breadboard",
           name: "Breadboard",
           type: "base",
-          image: "/images/breadboard.svg",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           pins: ["1a", "1b", "1c", "1d", "1e", "2a", "2b", "2c", "2d", "2e", "power+", "power-"],
           connections: [],
           position: { x: 200, y: 250 }
@@ -111,7 +111,7 @@ void loop() {
           id: "arduino-uno",
           name: "Arduino Uno",
           type: "microcontroller",
-          image: "/images/arduino-uno.svg",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           pins: ["5V", "GND", "A0", "A1", "A2", "A3", "A4", "A5"],
           connections: [],
           position: { x: 100, y: 100 }
@@ -120,7 +120,7 @@ void loop() {
           id: "dht22",
           name: "Cảm biến DHT22",
           type: "sensor",
-          image: "/images/dht22.svg",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           pins: ["VCC", "DATA", "NC", "GND"],
           connections: [],
           position: { x: 300, y: 120 }
@@ -129,7 +129,7 @@ void loop() {
           id: "resistor-10k",
           name: "Điện trở 10kΩ",
           type: "passive",
-          image: "/images/resistor-10k.svg",
+          image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           pins: ["pin1", "pin2"],
           connections: [],
           position: { x: 250, y: 180 }

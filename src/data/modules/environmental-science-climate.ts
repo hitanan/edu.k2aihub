@@ -781,7 +781,7 @@ export const environmentalClimateLessons: BaseLessonData[] = [
     duration: '200',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=EtW2rrLHs08', // Climate Change Explained
-    imageUrl: '/images/lessons/climate-monitoring.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu các cơ chế và tác động của biến đổi khí hậu',
       'Nắm vững các kỹ thuật giám sát môi trường',

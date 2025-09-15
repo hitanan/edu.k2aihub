@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
     { label: 'Learning Modules', value: `${moduleStats.totalModules}+`, icon: '📚' },
     { label: 'Interactive Lessons', value: `${moduleStats.totalLessons}+`, icon: '🎯' },
     { label: 'Study Hours', value: `${moduleStats.totalHours}+`, icon: '⏰' },
-    { label: 'Educational Games', value: `57+`, icon: '🎮' },
+    { label: 'Educational Games', value: `123+`, icon: '🎮' },
   ];
 
   return (

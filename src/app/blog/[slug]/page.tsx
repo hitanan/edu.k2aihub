@@ -6,6 +6,8 @@ import { BlogPost } from '@/components/blog/BlogPost';
 import { siteCode } from '@/config/site-code';
 import StructuredData from '@/components/StructuredData';
 
+import { BlogMetadata } from '@/types';
+
 type Props = {
   params: Promise<{ slug: string }>;
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -77,6 +79,16 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  const allPosts = getAllBlogPostsMetadata();
+  const relatedPosts = allPosts
+    .filter(
+      (p: BlogMetadata) =>
+        (p.category === post.category ||
+          (p.tags && post.tags && (post.tags as string[]).some((tag) => (p.tags as string[]).includes(tag)))) &&
+        p.slug !== post.slug,
+    )
+    .slice(0, 3);
+
   const blogPostingStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -101,7 +113,7 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <StructuredData data={blogPostingStructuredData} />
       <article className="prose prose-invert max-w-none">
-        <BlogPost post={post} />
+        <BlogPost post={post} relatedPosts={relatedPosts} />
       </article>
     </>
   );

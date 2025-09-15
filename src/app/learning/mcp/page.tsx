@@ -73,7 +73,7 @@ export default function MCPMainPage() {
       hireDemand: 'Rất cao',
     },
     relatedModules: [K2Module.Python, K2Module.AIArtCreativeTech, K2Module.Cybersecurity, K2Module.DigitalMarketing],
-    heroImageUrl: '/images/mcp-hero.jpg',
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
   };
 
   return <ModulePageTemplate moduleData={moduleData} lessons={MCPLessons} />;

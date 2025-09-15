@@ -71,6 +71,7 @@ import { nanotechnologyModule } from '@/data/modules/nanotechnology';
 import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
 import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
 import { quantumComputingModule } from '@/data/modules/quantum-computing';
+import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
 
 // Group 2: Modules exporting a `...Lessons` array directly
 import { aiMachineLearningLessons } from '@/data/modules/ai-machine-learning';
@@ -94,6 +95,7 @@ import { ethicalMarketingPurposeModule } from '@/data/modules/ethical-marketing-
 const modulesWithFullData: ModuleData[] = [
   pythonModuleData,
   arduinoModuleData,
+  arduinoCircuitsModuleData,
   roboticsModuleData,
   scratchModuleData,
   stemModuleData,

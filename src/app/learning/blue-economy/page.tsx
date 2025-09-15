@@ -58,7 +58,7 @@ export default function BlueEconomyMainPage() {
       hireDemand: 'Rất cao',
     },
     relatedModules: [K2Module.GreenTechnology, K2Module.Arduino, K2Module.Stem, K2Module.EnvironmentalDataScience],
-    heroImageUrl: '/images/blue-economy-hero.jpg',
+    heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
   };
 
   return <ModulePageTemplate moduleData={moduleData} lessons={blueEconomyLessons} />;

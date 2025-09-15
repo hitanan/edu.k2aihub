@@ -16,7 +16,7 @@ export const MCPLessons: MCPLessonData[] = [
     duration: '120 phút',
     difficulty: 'Cơ bản',
     videoUrl: 'https://www.youtube.com/watch?v=xcoBQaEmuWY',
-    imageUrl: '/images/mcp-fundamentals.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu về Model Context Protocol và tầm quan trọng',
       'Nắm vững kiến trúc Atlassian Remote MCP Server',
@@ -82,7 +82,7 @@ export const MCPLessons: MCPLessonData[] = [
     duration: '180 phút',
     difficulty: 'Trung bình',
     videoUrl: 'https://www.youtube.com/watch?v=xcoBQaEmuWY',
-    imageUrl: '/images/jira-mcp-integration.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     objectives: [
       'Setup MCP integration với VS Code và Cursor',
       'Master Jira task management qua AI commands',

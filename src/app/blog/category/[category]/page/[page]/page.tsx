@@ -10,12 +10,12 @@ type Props = {
   params: Promise<{ category: string; page: string }>;
 };
 
-export async function generateStaticParams(): Promise<{ category: string; page: string }[]> {
-  const categorySlugs = await getAllCategorySlugs();
+export function generateStaticParams(): { category: string; page: string }[] {
+  const categorySlugs = getAllCategorySlugs();
   const params: { category: string; page: string }[] = [];
 
   for (const categorySlug of categorySlugs) {
-    const posts = await getBlogPostsByCategorySlug(categorySlug);
+    const posts = getBlogPostsByCategorySlug(categorySlug);
     const totalPages = Math.ceil(posts.length / 10);
     for (let i = 1; i <= totalPages; i++) {
       params.push({ category: categorySlug, page: i.toString() });

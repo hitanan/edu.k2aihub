@@ -1,3 +1,4 @@
+import { blogCategories, blogTags } from '@/data/blogData';
 import { City } from '@/types';
 
 export function createSlug(name: string): string {
@@ -92,29 +93,16 @@ export function createTagSlug(tag: string): string {
     .trim();
 }
 
-// Reverse lookup functions
+// --- Reverse Lookup Functions ---
+
+// Create maps for efficient reverse lookups
+const categorySlugToNameMap = new Map(blogCategories.map((cat) => [createCategorySlug(cat.name), cat.name]));
+const tagSlugToNameMap = new Map(blogTags.map((tag) => [createTagSlug(tag.name), tag.name]));
+
 export function getCategoryFromSlug(slug: string): string {
-  const categoryMap: { [key: string]: string } = {
-    'giao-duc': 'Giáo Dục',
-    'cong-nghe': 'Công Nghệ',
-    'phan-tich': 'Phân Tích',
-    'nghien-cuu': 'Nghiên Cứu',
-    'tro-choi': 'Trò Chơi',
-    'xu-huong': 'Xu Hướng',
-    k2aihub: 'K2AiHub',
-    'trien-khai': 'Triển Khai',
-    'tong-hop': 'Tổng Hợp',
-  };
-  return categoryMap[slug] || slug;
+  return categorySlugToNameMap.get(slug) || slug;
 }
 
 export function getTagFromSlug(slug: string): string {
-  // This is a simplified version - in a real app you might want to store this mapping
-  return slug
-    .split('-')
-    .map((word) => {
-      if (word.toLowerCase() === '3d') return '3D';
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join(' ');
+  return tagSlugToNameMap.get(slug) || slug;
 }

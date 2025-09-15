@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { unified } from 'unified';
@@ -6,7 +5,9 @@ import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import { createCategorySlug, createTagSlug, getCategoryFromSlug, getTagFromSlug } from '@/utils/slug';
 
+import { blogCategories, blogTags } from '@/data/blogData';
 import { BlogPost, BlogMetadata } from '@/types';
+import fs from 'fs';
 
 const postsDirectory = path.join(process.cwd(), 'docs');
 
@@ -26,84 +27,30 @@ function calculateReadingTime(content: string): string {
 
 // Generate category from slug or content
 function generateCategory(slug: string, content: string): string {
-  const categoryMap: { [key: string]: string } = {
-    education: 'Giáo Dục',
-    trends: 'Xu Hướng',
-    analysis: 'Phân Tích',
-    research: 'Nghiên Cứu',
-    technology: 'Công Nghệ',
-    games: 'Trò Chơi',
-    vietnam: 'Việt Nam',
-    market: 'Thị Trường',
-    ux: 'Trải Nghiệm Người Dùng',
-    deployment: 'Triển Khai',
-    k2aihub: 'K2AiHub',
-    guide: 'Hướng Dẫn',
-    cities: 'Thành Phố',
-    geography: 'Địa Lý',
-    'critical-thinking': 'Tư Duy Phê Phán',
-    'digital-citizenship': 'Công Dân Số',
-    'energy-management': 'Quản Lý Năng Lượng',
-  };
+  const lowerSlug = slug.toLowerCase();
+  const lowerContent = content.toLowerCase();
 
-  // Check slug for category keywords
-  for (const [key, value] of Object.entries(categoryMap)) {
-    if (slug.toLowerCase().includes(key)) {
-      return value;
-    }
-  }
+  // Check for exact match in slug
+  const category = blogCategories.find((c) => lowerSlug.includes(c.slug));
+  if (category) return category.name;
 
-  // Check content for category indicators
-  const lowercaseContent = content.toLowerCase();
-  for (const [key, value] of Object.entries(categoryMap)) {
-    if (lowercaseContent.includes(key)) {
-      return value;
-    }
-  }
+  // Check for exact match in content
+  const categoryFromContent = blogCategories.find((c) => lowerContent.includes(c.slug));
+  if (categoryFromContent) return categoryFromContent.name;
 
   return 'Tổng Hợp';
 }
 
 // Generate tags from content and filename
 function generateTags(slug: string, content: string): string[] {
-  const tagMap: { [key: string]: string } = {
-    ai: 'Trí Tuệ Nhân Tạo',
-    education: 'Giáo Dục',
-    vietnam: 'Việt Nam',
-    technology: 'Công Nghệ',
-    games: 'Trò Chơi',
-    research: 'Nghiên Cứu',
-    analysis: 'Phân Tích',
-    trends: 'Xu Hướng',
-    k2aihub: 'K2AiHub',
-    development: 'Phát Triển',
-    programming: 'Lập Trình',
-    arduino: 'Arduino',
-    robot: 'Robot',
-    navigation: 'Điều Hướng',
-    '3d': '3D',
-    ux: 'UX/UI',
-    deployment: 'Triển Khai',
-    market: 'Thị Trường',
-    student: 'Học Sinh',
-    skills: 'Kỹ Năng',
-    geography: 'Địa Lý',
-    cities: 'Thành Phố',
-    'critical-thinking': 'Tư Duy Phê Phán',
-    'digital-citizenship': 'Công Dân Số',
-    'online-safety': 'An Toàn Trực Tuyến',
-    'energy-management': 'Quản Lý Năng Lượng',
-    'smart-grid': 'Lưới Điện Thông Minh',
-  };
-
   const tags = new Set<string>();
   const combinedText = `${slug} ${content}`.toLowerCase();
 
-  for (const [key, value] of Object.entries(tagMap)) {
-    if (combinedText.includes(key)) {
-      tags.add(value);
+  blogTags.forEach((tag) => {
+    if (combinedText.includes(tag.slug)) {
+      tags.add(tag.name);
     }
-  }
+  });
 
   return Array.from(tags).slice(0, 5); // Limit to 5 tags
 }
@@ -268,9 +215,11 @@ function generateCoverImage(category: string): string {
     'Phân Tích': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop',
     'Nghiên Cứu': 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&h=600&fit=crop',
     'Trò Chơi': 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&h=600&fit=crop',
+    'Trò Chơi Giáo Dục': 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&h=600&fit=crop',
     'Xu Hướng': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop',
     K2AiHub: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     'Triển Khai': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop',
+    'Tài Liệu': 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1200&h=600&fit=crop',
   };
 
   return imageMap[category] || 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop';
@@ -287,16 +236,18 @@ export function getAllCategories(): { name: string; count: number }[] {
     }
   });
 
-  return Object.entries(categoryCounts)
-    .map(([name, count]) => ({ name, count }))
+  return blogCategories
+    .map((category) => ({
+      name: category.name,
+      count: categoryCounts[category.name] || 0,
+    }))
+    .filter((category) => category.count > 0)
     .sort((a, b) => b.count - a.count);
 }
 
 // Get all categories synchronously
-export function getAllCategoriesSync(): string[] {
-  const posts = getAllBlogPostsSync();
-  const categories = new Set(posts.map((post) => post.category));
-  return Array.from(categories).filter((cat): cat is string => Boolean(cat));
+export function getAllCategoriesSync(): { name: string; slug: string; description: string }[] {
+  return blogCategories;
 }
 
 // Get all blog posts synchronously (for sitemap generation)
@@ -343,13 +294,8 @@ export function getAllBlogPostsSync(): BlogPost[] {
 }
 
 // Get all unique tags synchronously
-export function getAllTagsSync(): string[] {
-  const posts = getAllBlogPostsSync();
-  const tags = new Set<string>();
-  posts.forEach((post) => {
-    post.tags?.forEach((tag) => tags.add(tag));
-  });
-  return Array.from(tags);
+export function getAllTagsSync(): { name: string; slug: string; description: string }[] {
+  return blogTags;
 }
 
 // Get all unique tags with post counts
@@ -363,31 +309,35 @@ export function getAllTags(): { name: string; count: number }[] {
     });
   });
 
-  return Object.entries(tagCounts)
-    .map(([name, count]) => ({ name, count }))
+  return blogTags
+    .map((tag) => ({
+      name: tag.name,
+      count: tagCounts[tag.name] || 0,
+    }))
+    .filter((tag) => tag.count > 0)
     .sort((a, b) => b.count - a.count);
 }
 
 // Get all category slugs for static params generation
 export function getAllCategorySlugs(): string[] {
-  const categories = getAllCategoriesSync();
-  return categories.map((category) => createCategorySlug(category));
+  return blogCategories.map((category) => createCategorySlug(category.name));
 }
 
 // Get all tag slugs for static params generation
 export function getAllTagSlugs(): string[] {
-  const tags = getAllTagsSync();
-  return tags.map((tag) => createTagSlug(tag));
+  return blogTags.map((tag) => createTagSlug(tag.name));
 }
 
 // Get blog posts by category slug
 export function getBlogPostsByCategorySlug(categorySlug: string): BlogMetadata[] {
   const categoryName = getCategoryFromSlug(categorySlug);
+  if (!categoryName) return [];
   return getBlogPostsByCategory(categoryName);
 }
 
 // Get blog posts by tag slug
 export function getBlogPostsByTagSlug(tagSlug: string): BlogMetadata[] {
   const tagName = getTagFromSlug(tagSlug);
+  if (!tagName) return [];
   return getBlogPostsByTag(tagName);
 }

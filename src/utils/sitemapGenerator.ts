@@ -1,72 +1,56 @@
 import { MetadataRoute } from 'next';
-import citiesData from '@/data/cities';
-import { getBlogSlugs, getAllCategoriesSync, getAllTagsSync } from '@/lib/blog';
+import { getAllBlogPostsSync, getAllCategoriesSync, getAllTagsSync } from '@/lib/blog';
 import { createCategorySlug, createTagSlug } from '@/utils/slug';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 import { BaseLessonData } from '@/types/lesson-base';
 import { getAllModules } from '@/data/module.registry';
+import { regions } from '@/data/regions';
+import { citiesData } from '@/data/cities';
+import { City, Region, BlogCategory, BlogTag } from '@/types';
 
-// Utility to automatically generate sitemap entries for all pages
-const baseUrl = 'https://k2aihub.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://k2aihub.com';
+
 export function generateSitemapEntries(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  // Get all modules from registry
   const allModules = getAllModules();
 
-  // Core application pages
-  const corePages = [
-    { url: baseUrl, priority: 1.0, changeFrequency: 'monthly' as const },
-    {
-      url: `${baseUrl}/city`,
-      priority: 0.9,
-      changeFrequency: 'weekly' as const,
-    },
-    {
-      url: `${baseUrl}/region`,
-      priority: 0.8,
-      changeFrequency: 'weekly' as const,
-    },
-    { url: `${baseUrl}/ai`, priority: 0.8, changeFrequency: 'weekly' as const },
-    {
-      url: `${baseUrl}/feedback`,
-      priority: 0.5,
-      changeFrequency: 'monthly' as const,
-    },
-    {
-      url: `${baseUrl}/learning`,
-      priority: 0.9,
-      changeFrequency: 'weekly' as const,
-    },
-    // Dynamically generated module pages
-    ...allModules.map((moduleData) => ({
-      url: `${baseUrl}/learning/${moduleData.id}`,
-      priority: 0.8,
-      changeFrequency: 'weekly' as const,
-      lastModified,
-    })),
+  const corePages: MetadataRoute.Sitemap = [
+    { url: baseUrl, priority: 1.0, changeFrequency: 'daily' },
+    { url: `${baseUrl}/city`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/region`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/ai`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/feedback`, priority: 0.5, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/learning`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/games`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/blog`, priority: 0.9, changeFrequency: 'daily' },
   ];
 
-  // Educational Games pages
-  const gamesPages = [
-    // Main games page
-    {
-      url: `${baseUrl}/games`,
-      priority: 0.8,
-      changeFrequency: 'weekly' as const,
-      lastModified,
-    },
-    // Individual game pages
-    ...EDUCATIONAL_GAMES_DATA.map((game) => ({
-      url: `${baseUrl}/games/${game.id}`,
-      priority: 0.7,
-      changeFrequency: 'monthly' as const,
-      lastModified,
-    })),
-  ];
+  const modulePages: MetadataRoute.Sitemap = allModules.map((moduleData) => ({
+    url: `${baseUrl}/learning/${moduleData.id}`,
+    priority: 0.8,
+    changeFrequency: 'weekly',
+    lastModified,
+  }));
 
-  // AI module pages
-  const aiCategories = [
+  const lessonPages: MetadataRoute.Sitemap = allModules.flatMap(
+    (moduleData) =>
+      moduleData.lessons?.map((lesson: BaseLessonData) => ({
+        url: `${baseUrl}/learning/${moduleData.id}/${lesson.id}`,
+        lastModified,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      })) || [],
+  );
+
+  const gamePages: MetadataRoute.Sitemap = EDUCATIONAL_GAMES_DATA.map((game) => ({
+    url: `${baseUrl}/games/${game.id}`,
+    priority: 0.7,
+    changeFrequency: 'monthly',
+    lastModified,
+  }));
+
+  const aiCategoryPages: MetadataRoute.Sitemap = [
     'office-work',
     'creative-design',
     'education-learning',
@@ -74,111 +58,87 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     'daily-life',
     'programming-dev',
     'ai-apps',
-  ];
-
-  const aiPages = aiCategories.map((category) => ({
+  ].map((category) => ({
     url: `${baseUrl}/ai/${category}`,
     lastModified,
-    changeFrequency: 'weekly' as const,
+    changeFrequency: 'weekly',
     priority: 0.7,
   }));
 
-  // Dynamically generate lesson pages for all modules
-  const lessonPages = allModules.flatMap(
-    (moduleData) =>
-      moduleData.lessons?.map((lesson: BaseLessonData) => ({
-        url: `${baseUrl}/learning/${moduleData.id}/${lesson.id}`,
-        lastModified,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-      })) || [],
-  );
-
-  // Region pages
-  const regionSlugs = [
-    'bac-bo',
-    'tay-bac',
-    'dong-bac',
-    'dong-bang-bac-bo',
-    'bac-trung-bo',
-    'nam-trung-bo',
-    'tay-nguyen',
-    'dong-nam-bo',
-    'dong-bang-song-cuu-long',
-  ];
-
-  const regionPages = regionSlugs.map((slug) => ({
-    url: `${baseUrl}/region/${slug}`,
+  const regionPages: MetadataRoute.Sitemap = regions.map((region: Region) => ({
+    url: `${baseUrl}/region/${region.slug}`,
     lastModified,
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'monthly',
     priority: 0.7,
   }));
 
-  // City pages - automatically generated from cities data with enhanced SEO
-  const regularCityPages = citiesData
-    .filter((city) => !['ha-noi', 'ho-chi-minh', 'da-nang', 'hai-phong', 'can-tho', 'hue'].includes(city.slug))
-    .map((city) => ({
-      url: `${baseUrl}/city/${city.slug}`,
+  const cityPages: MetadataRoute.Sitemap = citiesData.map((city: City) => ({
+    url: `${baseUrl}/city/${city.slug}`,
+    lastModified,
+    changeFrequency: 'weekly',
+    priority: ['ha-noi', 'ho-chi-minh', 'da-nang', 'hai-phong', 'can-tho', 'hue'].includes(city.slug) ? 0.9 : 0.8,
+  }));
+
+  const blogPosts = getAllBlogPostsSync();
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.lastModified || post.date,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  const postsPerPage = 10;
+
+  const blogCategoryPages: MetadataRoute.Sitemap = getAllCategoriesSync().flatMap((category: BlogCategory) => {
+    const categorySlug = createCategorySlug(category.name);
+    const postsInCategory = blogPosts.filter((post) => post.category === category.name);
+    const numPages = Math.ceil(postsInCategory.length / postsPerPage);
+    const pages = Array.from({ length: numPages }, (_, i) => ({
+      url: `${baseUrl}/blog/category/${categorySlug}/page/${i + 1}`,
       lastModified,
       changeFrequency: 'weekly' as const,
-      priority: 0.7,
+      priority: 0.6,
     }));
-
-  // Add specific high-value city pages with higher priority
-  const majorCityPages = citiesData
-    .filter((city) => ['ha-noi', 'ho-chi-minh', 'da-nang', 'hai-phong', 'can-tho', 'hue'].includes(city.slug))
-    .map((city) => ({
-      url: `${baseUrl}/city/${city.slug}`,
+    pages.push({
+      url: `${baseUrl}/blog/category/${categorySlug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
-      priority: 0.9, // Higher priority for major cities
+      priority: 0.6,
+    });
+    return pages;
+  });
+
+  const blogTagPages: MetadataRoute.Sitemap = getAllTagsSync().flatMap((tag: BlogTag) => {
+    const tagSlug = createTagSlug(tag.name);
+    const postsWithTag = blogPosts.filter((post) => post.tags?.includes(tag.name));
+    const numPages = Math.ceil(postsWithTag.length / postsPerPage);
+    const pages = Array.from({ length: numPages }, (_, i) => ({
+      url: `${baseUrl}/blog/tag/${tagSlug}/page/${i + 1}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
     }));
-
-  // Blog pages - get all blog posts and categories
-  const blogSlugs = getBlogSlugs();
-  const blogCategories = getAllCategoriesSync();
-  const allTags = getAllTagsSync(); // Assuming you create this sync function
-
-  const blogPages = [
-    // Main blog page
-    {
-      url: `${baseUrl}/blog`,
+    pages.push({
+      url: `${baseUrl}/blog/tag/${tagSlug}`,
       lastModified,
-      changeFrequency: 'daily' as const,
-      priority: 0.8,
-    },
-    // Individual blog posts
-    ...blogSlugs.map((slug) => ({
-      url: `${baseUrl}/blog/${slug}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-    // Blog category pages
-    ...blogCategories.map((category) => ({
-      url: `${baseUrl}/blog/category/${createCategorySlug(category)}`,
-      lastModified: new Date().toISOString(),
-    })),
-    // Blog tag pages
-    ...allTags.map((tag) => ({
-      url: `${baseUrl}/blog/tag/${createTagSlug(tag)}`,
-      lastModified: new Date().toISOString(),
-    })),
-  ];
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    });
+    return pages;
+  });
 
-  // Combine all pages with proper prioritization
-  const allPages = [
-    ...corePages.map((page) => ({ ...page, lastModified })),
-    ...blogPages, // Blog content with high priority
-    ...gamesPages, // Educational games pages
-    ...aiPages,
-    ...lessonPages, // All lesson pages from modules
+  return [
+    ...corePages,
+    ...modulePages,
+    ...lessonPages,
+    ...gamePages,
+    ...aiCategoryPages,
     ...regionPages,
-    ...majorCityPages, // High priority cities first
-    ...regularCityPages, // Regular cities
+    ...cityPages,
+    ...blogPages,
+    ...blogCategoryPages,
+    ...blogTagPages,
   ];
-
-  return allPages;
 }
 
 // Utility to generate robots.txt rules with enhanced SEO directives

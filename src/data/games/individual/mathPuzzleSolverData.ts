@@ -48,7 +48,7 @@ export const MATH_PUZZLE_SOLVER_DATA: MathPuzzleSolverGameData = {
             "Viết phép tính: 15 + 8 = ?",
             "Đếm từ 15: 16, 17, 18, 19, 20, 21, 22, 23"
           ],
-          visualAid: "/images/math/candy-counting.svg",
+          visualAid: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           realWorldContext: "Việc đếm kẹo giúp trẻ hiểu khái niệm cộng số trong thực tế",
           points: 10,
           timeLimit: 30
@@ -64,7 +64,7 @@ export const MATH_PUZZLE_SOLVER_DATA: MathPuzzleSolverGameData = {
             "Lấy số tiền ban đầu trừ đi số tiền đã chi",
             "50.000 - 35.000 = ?"
           ],
-          visualAid: "/images/math/money-subtraction.svg",
+          visualAid: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           realWorldContext: "Học cách quản lý tiền bạc qua phép tính trừ",
           points: 15,
           timeLimit: 45
@@ -81,7 +81,7 @@ export const MATH_PUZZLE_SOLVER_DATA: MathPuzzleSolverGameData = {
             "Công thức: Diện tích = chiều dài × chiều rộng",
             "6 × 4 = ?"
           ],
-          visualAid: "/images/math/rectangle-area.svg",
+          visualAid: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           realWorldContext: "Tính diện tích phòng, mảnh đất trong thực tế",
           points: 20,
           timeLimit: 60
@@ -114,7 +114,7 @@ export const MATH_PUZZLE_SOLVER_DATA: MathPuzzleSolverGameData = {
             "Thể tích hình hộp = chiều dài × chiều rộng × chiều cao",
             "8 × 6 × 10 = ?"
           ],
-          visualAid: "/images/math/box-volume.svg",
+          visualAid: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           realWorldContext: "Tính dung tích hộp, thùng chứa trong đời sống",
           points: 25,
           timeLimit: 90
@@ -132,7 +132,7 @@ export const MATH_PUZZLE_SOLVER_DATA: MathPuzzleSolverGameData = {
             "Diện tích mỗi mặt = cạnh × cạnh",
             "Diện tích toàn phần = 6 × diện tích một mặt"
           ],
-          visualAid: "/images/math/cube-surface.svg",
+          visualAid: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           realWorldContext: "Tính lượng sơn cần để sơn một vật thể",
           points: 30,
           timeLimit: 120
@@ -166,7 +166,7 @@ export const MATH_PUZZLE_SOLVER_DATA: MathPuzzleSolverGameData = {
             "Số tiền giảm = giá gốc × phần trăm giảm",
             "Giá cuối = giá gốc - số tiền giảm"
           ],
-          visualAid: "/images/math/discount-calculation.svg",
+          visualAid: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           realWorldContext: "Tính toán khi mua sắm có khuyến mãi",
           points: 35,
           timeLimit: 150
@@ -184,7 +184,7 @@ export const MATH_PUZZLE_SOLVER_DATA: MathPuzzleSolverGameData = {
             "120 km ÷ 1.5 giờ = ?",
             "1.5 giờ = 1 giờ 30 phút"
           ],
-          visualAid: "/images/math/speed-calculation.svg",
+          visualAid: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
           realWorldContext: "Tính toán thời gian di chuyển khi đi du lịch",
           points: 40,
           timeLimit: 180
