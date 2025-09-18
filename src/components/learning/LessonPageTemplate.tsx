@@ -269,14 +269,14 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
             )}
 
             {/* Exercises */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
-                <Play className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
-                Bài tập thực hành
-              </h2>
-              <div className="space-y-4 sm:space-y-6">
-                {lesson.exercises &&
-                  lesson.exercises.map((exercise, index) => (
+            {lesson.exercises && lesson.exercises.length > 0 && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
+                  <Play className={`w-5 h-5 sm:w-6 sm:h-6 mr-3 text-primary-400 flex-shrink-0`} />
+                  Bài tập thực hành
+                </h2>
+                <div className="space-y-4 sm:space-y-6">
+                  {lesson.exercises.map((exercise, index) => (
                     <details
                       key={index}
                       className="border border-white/10 rounded-xl p-4 sm:p-6 bg-white/5 group"
@@ -373,8 +373,9 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
                       </div>
                     </details>
                   ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Real-world Applications */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10 mb-6 sm:mb-8">

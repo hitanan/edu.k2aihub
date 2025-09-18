@@ -1,6 +1,14 @@
 import { K2Module } from '@/data/k2-modules';
 import { ModuleData } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
+import { createModuleMetadata } from '@/utils/seo';
+
+export const metadata = createModuleMetadata(
+  'AI cho Học sinh',
+  'Khóa học trang bị cho học sinh những kiến thức và kỹ năng cơ bản về Trí tuệ nhân tạo, giúp các em hiểu rõ công nghệ và ứng dụng AI một cách có trách nhiệm.',
+  ['AI cho học sinh', 'trí tuệ nhân tạo', 'giáo dục STEM', 'công nghệ giáo dục', 'AI đạo đức', 'K2AI'],
+  'ai-for-students',
+);
 
 export const aiForStudentsModuleData: ModuleData = {
   id: K2Module.AIForStudents,

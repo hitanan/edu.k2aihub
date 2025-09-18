@@ -118,6 +118,12 @@ export interface ModuleData<T extends BaseLessonData = BaseLessonData> {
   faqs?: Array<{ question: string; answer: string }>;
 }
 
+export interface Heading {
+  id: string;
+  text: string;
+  level: number;
+}
+
 export interface ContactForm {
   name: string;
   email: string;

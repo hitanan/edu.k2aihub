@@ -1,4 +1,14 @@
 import { BaseLessonData } from '@/types/lesson-base';
+import { K2Module } from '@/data/k2-modules';
+import { ModuleData } from '@/types';
+import { createModuleMetadata } from '@/utils/seo';
+
+export const metadata = createModuleMetadata(
+  'AI trong Đời sống Hàng ngày',
+  'Khám phá cách AI có thể trở thành một trợ lý đắc lực trong cuộc sống, từ quản lý công việc, tài chính, sức khỏe đến việc lên kế hoạch du lịch.',
+  ['AI đời sống', 'trợ lý AI', 'công nghệ hàng ngày', 'smart home', 'AI cá nhân', 'K2AI'],
+  'daily-life',
+);
 
 export const dailyLifeLessons: BaseLessonData[] = [
   {
@@ -126,9 +136,6 @@ export const dailyLifeLessons: BaseLessonData[] = [
     ],
   },
 ];
-
-import { K2Module } from '@/data/k2-modules';
-import { ModuleData } from '@/types';
 
 export const dailyLifeModuleData: ModuleData = {
   id: K2Module.DailyLife,

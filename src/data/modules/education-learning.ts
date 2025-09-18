@@ -116,7 +116,7 @@ import { K2Module } from '@/data/k2-modules';
 import { ModuleData } from '@/types';
 
 export const educationLearningModuleData: ModuleData = {
-  id: K2Module.AILearning,
+  id: K2Module.EducationTechnology,
   title: 'Học tập và Giáo dục với AI',
   description:
     'Khám phá cách AI đang cách mạng hóa giáo dục, từ việc trở thành gia sư cá nhân đến việc tăng tốc nghiên cứu và học ngôn ngữ.',

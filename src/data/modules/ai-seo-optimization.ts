@@ -122,6 +122,7 @@ export const aiSeoOptimizationLessons = [
     description: 'Sử dụng AI để phân tích và tìm ra các từ khóa tiềm năng.',
     duration: '60 phút',
     difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=EBMNZKUdV_Y',
     objectives: ['Hiểu cách AI hỗ trợ nghiên cứu từ khóa.'],
     realWorldApplications: ['Tối ưu hóa chiến dịch SEO cho website e-commerce.'],
     faqs: [
@@ -164,6 +165,7 @@ export const aiSeoOptimizationLessons = [
     description: 'Tự động hóa các tác vụ SEO kỹ thuật bằng công cụ AI.',
     duration: '60 phút',
     difficulty: 'Trung cấp',
+    videoUrl: 'https://www.youtube.com/watch?v=EBMNZKUdV_Y',
     objectives: ['Tự động phát hiện và sửa lỗi 404.'],
     realWorldApplications: ['Bảo trì SEO cho một trang web lớn.'],
     faqs: [
@@ -185,6 +187,7 @@ export const aiSeoOptimizationLessons = [
     description: 'Dùng AI để theo dõi và phân tích hiệu suất chiến dịch SEO.',
     duration: '45 phút',
     difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=ckzOfrctlbU',
     objectives: ['Xây dựng dashboard báo cáo SEO tự động.'],
     realWorldApplications: ['Báo cáo hiệu quả SEO cho khách hàng agency.'],
     faqs: [

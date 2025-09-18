@@ -1,6 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getAllBlogPostsMetadata, getBlogPostBySlug } from '@/lib/blog';
+import {
+  getAllBlogPostsMetadata,
+  getBlogPostBySlug,
+  getFeaturedBlogPosts,
+  getAllCategories,
+  getAllTags,
+} from '@/lib/blog';
 import { siteConfig } from '@/config/site';
 import { BlogPost } from '@/components/blog/BlogPost';
 import { siteCode } from '@/config/site-code';
@@ -79,7 +85,13 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
-  const allPosts = getAllBlogPostsMetadata();
+  const [allPosts, featuredPosts, categories, tags] = await Promise.all([
+    getAllBlogPostsMetadata(),
+    getFeaturedBlogPosts(),
+    getAllCategories(),
+    getAllTags(),
+  ]);
+
   const relatedPosts = allPosts
     .filter(
       (p: BlogMetadata) =>
@@ -113,7 +125,13 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <StructuredData data={blogPostingStructuredData} />
       <article className="prose prose-invert max-w-none">
-        <BlogPost post={post} relatedPosts={relatedPosts} />
+        <BlogPost
+          post={post}
+          relatedPosts={relatedPosts}
+          featuredPosts={featuredPosts}
+          categories={categories}
+          tags={tags}
+        />
       </article>
     </>
   );
