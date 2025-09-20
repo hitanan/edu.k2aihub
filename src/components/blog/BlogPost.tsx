@@ -73,12 +73,16 @@ export function BlogPost({ post, relatedPosts, featuredPosts = [], categories = 
                 </header>
 
                 <div
-                  className="prose prose-lg prose-invert max-w-none text-gray-300 
-                             prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-white
-                             prose-h3:text-xl prose-h3:font-bold prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-white
-                             prose-p:leading-relaxed
+                  className="blog prose prose-lg prose-invert max-w-none text-gray-300 
+                             prose-h1:text-4xl prose-h1:font-bold prose-h1:mt-16 prose-h1:mb-6 prose-h1:text-white
+                             prose-h2:text-3xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-5 prose-h2:text-white prose-h2:border-b prose-h2:border-gray-700/50 prose-h2:pb-2
+                             prose-h3:text-2xl prose-h3:font-bold prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-white
+                             prose-h4:text-xl prose-h4:font-semibold prose-h4:mt-8 prose-h4:mb-3 prose-h4:text-gray-100
+                             prose-h5:text-lg prose-h5:font-semibold prose-h5:mt-6 prose-h5:mb-2 prose-h5:text-gray-200
+                             prose-h6:text-base prose-h6:font-medium prose-h6:mt-4 prose-h6:mb-2 prose-h6:text-gray-300
+                             prose-p:leading-relaxed prose-p:mb-4
                              prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-a:transition-colors prose-a:duration-200
-                             prose-strong:text-white 
+                             prose-strong:text-white prose-strong:font-semibold
                              prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-400
                              prose-code:bg-gray-700/50 prose-code:rounded prose-code:px-2 prose-code:py-1 prose-code:font-mono prose-code:text-sm
                              prose-pre:bg-gray-800 prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto"

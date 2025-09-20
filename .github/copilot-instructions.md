@@ -288,9 +288,10 @@ npm run build    # Production build with static generation
    - **Module names: "Địa Lý Việt Nam", "AI Của Tôi", and other modules**
    - **All metadata, UI text, error messages in Vietnamese**
    - **SEO content must be in Vietnamese for local search optimization**
-8. **Documentation Requirement**: ALL new features, updates, or changes MUST be documented in [K2AiHub.md](../docs/K2AiHub.md) as the single source of truth. This includes technical specifications, implementation details, architectural decisions, and development guidelines.
+8. **Documentation Requirement**: ALL new features, updates, or major changes MUST be documented in /docs folder as an article for update announcement.
 9. **Image Url**: incase you done have the image url, use import { defaultImage } from "@/utils/image"; to ensure all images are properly accessible.
 10. **Module data**: when generate module pages, Prefer to create data and then to use it to create a dynamic pages with slug is `lessonId`. In ModuleMainPage function, moduledata must use ModuleData type the module metadata must follow below pattern
+11. When add a blog page in /docs folder, ensure to add new category or tag to src/data/blogData.ts to ensure it can be used in category page or tag page
 
 ```typescript
 export const metadata: Metadata = createModuleMetadata(

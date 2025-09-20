@@ -2,10 +2,11 @@ import path from 'path';
 import matter from 'gray-matter';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
+import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
-import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
 import { createCategorySlug, createTagSlug, getCategoryFromSlug, getTagFromSlug } from '@/utils/slug';
+import { rehypeVietnameseSlug } from '@/utils/vietnameseSlug';
 
 import { blogCategories, blogTags } from '@/data/blogData';
 import { BlogPost, BlogMetadata } from '@/types';
@@ -108,8 +109,9 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
   // Process markdown content to HTML
   const processedContent = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkRehype)
-    .use(rehypeSlug)
+    .use(rehypeVietnameseSlug)
     .use(rehypeStringify)
     .process(post.content);
   const contentHtml = processedContent.toString();
@@ -136,8 +138,9 @@ export async function getAllBlogPostsWithContent(): Promise<BlogPost[]> {
     posts.map(async (post) => {
       const processedContent = await unified()
         .use(remarkParse)
+        .use(remarkGfm)
         .use(remarkRehype)
-        .use(rehypeSlug)
+        .use(rehypeVietnameseSlug)
         .use(rehypeStringify)
         .process(post.content);
       return {

@@ -323,27 +323,49 @@ const CircularEconomyResourceFlow3DGame: React.FC<CircularEconomyResourceFlow3DG
   // Game logic
   const processResource = (node: ProcessingNode) => {
     if (node.type === 'recycling') {
-      // Convert waste to recycled materials
-      setResources((prev) =>
-        prev.map((resource) => {
-          if (resource.type === 'waste' && resource.amount > 0) {
-            return { ...resource, amount: Math.max(0, resource.amount - 10) };
-          }
-          if (resource.type === 'recycled' && resource.name.includes('tái chế')) {
-            return { ...resource, amount: resource.amount + 8 };
-          }
-          return resource;
-        }),
-      );
+      // Find waste resources to process
+      const availableWaste = resources.find((r) => r.type === 'waste' && r.amount > 0);
+      if (availableWaste) {
+        // Convert waste to recycled materials
+        setResources((prev) =>
+          prev.map((resource) => {
+            if (resource.id === availableWaste.id && resource.amount > 0) {
+              return { ...resource, amount: Math.max(0, resource.amount - 10) };
+            }
+            if (resource.type === 'recycled') {
+              return { ...resource, amount: resource.amount + 8 };
+            }
+            return resource;
+          }),
+        );
 
-      setScore((prev) => prev + 20);
-      setCircularityScore((prev) => Math.min(100, prev + 5));
+        setScore((prev) => prev + 20);
+        setCircularityScore((prev) => Math.min(100, prev + 5));
 
-      // Add flow animation
-      setFlows((prev) => [...prev, { from: 'consumption', to: 'recycling', amount: 10, active: true }]);
-      setTimeout(() => {
-        setFlows((prev) => prev.filter((f) => !(f.from === 'consumption' && f.to === 'recycling')));
-      }, 2000);
+        // Add flow animation
+        setFlows((prev) => [...prev, { from: availableWaste.id, to: 'recycling', amount: 10, active: true }]);
+        setTimeout(() => {
+          setFlows((prev) => prev.filter((f) => !(f.from === availableWaste.id && f.to === 'recycling')));
+        }, 2000);
+
+        // Visual feedback
+        setSelectedNode(node.id);
+        setTimeout(() => setSelectedNode(null), 1000);
+      }
+    } else if (node.type === 'manufacturing') {
+      // Convert raw materials to manufactured goods
+      const rawMaterial = resources.find((r) => r.type === 'raw' && r.amount > 5);
+      if (rawMaterial) {
+        setResources((prev) =>
+          prev.map((resource) => {
+            if (resource.id === rawMaterial.id) {
+              return { ...resource, amount: Math.max(0, resource.amount - 5) };
+            }
+            return resource;
+          }),
+        );
+        setScore((prev) => prev + 10);
+      }
     }
   };
 

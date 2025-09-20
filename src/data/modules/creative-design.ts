@@ -3,6 +3,7 @@ import { BaseLessonData } from '@/types/lesson-base';
 export const creativeDesignLessons: BaseLessonData[] = [
   {
     id: 'midjourney-basics',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Midjourney cơ bản',
     description: 'Học những điều cơ bản về Midjourney.',
     duration: '60 phút',
@@ -34,6 +35,7 @@ export const creativeDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'advanced-prompting',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Prompt engineering nâng cao',
     description: 'Học cách viết prompt nâng cao cho Midjourney.',
     duration: '75 phút',
@@ -65,6 +67,7 @@ export const creativeDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'canva-ai',
+    videoUrl: 'https://www.youtube.com/watch?v=HbBvNooPUP8',
     title: 'Canva AI Magic Studio',
     description: 'Khám phá sức mạnh của Canva AI Magic Studio.',
     duration: '50 phút',
@@ -96,6 +99,7 @@ export const creativeDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'content-creation',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Tạo nội dung với AI',
     description: 'Học cách tạo nội dung hấp dẫn bằng các công cụ AI.',
     duration: '45 phút',

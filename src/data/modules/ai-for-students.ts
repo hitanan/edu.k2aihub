@@ -366,4 +366,310 @@ export const AIForStudentsLessons: BaseLessonData[] = [
       },
     ],
   },
+  {
+    id: 'ai-tools-for-learning',
+    title: 'Công cụ AI hỗ trợ học tập',
+    description: 'Khám phá và sử dụng các công cụ AI phổ biến để nâng cao hiệu quả học tập và nghiên cứu.',
+    duration: '90 phút',
+    difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=JTxsNm9IdYU',
+    imageUrl: 'https://i.ytimg.com/vi/JTxsNm9IdYU/hqdefault.jpg',
+    objectives: [
+      'Làm quen với các công cụ AI hỗ trợ học tập phổ biến.',
+      'Sử dụng ChatGPT, Google Bard cho việc giải thích bài học.',
+      'Ứng dụng AI trong việc tìm kiếm và tổng hợp thông tin.',
+      'Thực hành sử dụng AI để cải thiện kỹ năng viết và thuyết trình.',
+    ],
+    prerequisites: ['Biết sử dụng trình duyệt web cơ bản.', 'Có tài khoản Google hoặc Microsoft.'],
+    exercises: [
+      {
+        title: 'Thử nghiệm với ChatGPT cho học tập',
+        description: 'Sử dụng ChatGPT để giải thích một khái niệm khó hiểu trong chương trình học.',
+        difficulty: 'Cơ bản',
+        procedure: [
+          'Chọn một chủ đề khó hiểu từ môn học yêu thích.',
+          'Đặt câu hỏi cụ thể cho ChatGPT để giải thích khái niệm đó.',
+          'Thử các cách đặt câu hỏi khác nhau để có câu trả lời tốt nhất.',
+          'So sánh với thông tin từ sách giáo khoa.',
+        ],
+        expectedResults: 'Hiểu rõ hơn về chủ đề đã chọn và biết cách đặt câu hỏi hiệu quả với AI.',
+      },
+    ],
+    realWorldApplications: [
+      'Sử dụng AI trợ lý để giải thích bài tập khó.',
+      'Tạo outline cho bài thuyết trình.',
+      'Nghiên cứu và tổng hợp thông tin cho dự án nhóm.',
+      'Cải thiện kỹ năng viết tiếng Anh.',
+    ],
+    vietnamContext: {
+      title: 'Xu hướng sử dụng AI trong giáo dục Việt Nam',
+      content: [
+        'Nhiều trường học tại Việt Nam đang pilot các chương trình tích hợp AI vào giảng dạy.',
+        'Các ứng dụng học tiếng Anh như ELSA Speak đang sử dụng AI để cải thiện phát âm cho học sinh Việt.',
+        'Bộ GD&ĐT đang nghiên cứu đưa AI vào chương trình giáo dục phổ thông.',
+      ],
+    },
+    careerConnect: {
+      name: 'Cô Nguyễn Thị Lan',
+      title: 'Giáo viên Tin học, THPT Lê Quý Đôn',
+      company: 'THPT Lê Quý Đôn, TP.HCM',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-lan',
+      quote:
+        'Học sinh ngày nay cần biết cách sử dụng AI như một công cụ học tập hiệu quả. Quan trọng là phải biết đặt câu hỏi đúng và kiểm chứng thông tin.',
+    },
+    quizzes: [
+      {
+        question: 'Khi sử dụng AI để hỗ trợ học tập, điều quan trọng nhất là gì?',
+        options: [
+          'Copy nguyên văn câu trả lời của AI',
+          'Đặt câu hỏi rõ ràng và kiểm chứng thông tin',
+          'Chỉ tin tưởng hoàn toàn vào AI',
+          'Không cần đọc sách giáo khoa nữa',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Điều quan trọng nhất là đặt câu hỏi rõ ràng và luôn kiểm chứng thông tin từ nhiều nguồn khác nhau.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Sử dụng AI để làm bài tập có bị coi là gian lận không?',
+        answer:
+          'Tùy thuộc vào cách sử dụng. Nếu copy nguyên văn đáp án từ AI thì có thể bị coi là gian lận. Nhưng nếu sử dụng AI để hiểu bài, tìm hướng giải và tự làm lại thì đó là cách học thông minh.',
+      },
+    ],
+  },
+  {
+    id: 'creative-ai-projects',
+    title: 'Sáng tạo với AI - Dự án nghệ thuật và nội dung',
+    description: 'Học cách sử dụng AI để tạo ra các tác phẩm nghệ thuật, âm nhạc, và nội dung sáng tạo.',
+    duration: '120 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=SVcsDDABEkM',
+    imageUrl: 'https://i.ytimg.com/vi/SVcsDDABEkM/hqdefault.jpg',
+    objectives: [
+      'Sử dụng AI để tạo hình ảnh và artwork.',
+      'Tạo ra âm nhạc và âm thanh với AI.',
+      'Viết truyện và thơ với sự hỗ trợ của AI.',
+      'Hiểu về bản quyền và đạo đức trong sáng tạo AI.',
+    ],
+    prerequisites: ['Đã hoàn thành bài "Công cụ AI hỗ trợ học tập".', 'Có sự sáng tạo và tò mò khám phá.'],
+    exercises: [
+      {
+        title: 'Tạo poster tuyên truyền với AI',
+        description: 'Sử dụng AI để tạo poster tuyên truyền về một chủ đề xã hội mà bạn quan tâm.',
+        difficulty: 'Trung bình',
+        procedure: [
+          'Chọn chủ đề xã hội (môi trường, giáo dục, sức khỏe...).',
+          'Sử dụng DALL-E hoặc Midjourney để tạo hình ảnh.',
+          'Dùng ChatGPT để viết slogan hấp dẫn.',
+          'Kết hợp hình ảnh và text để hoàn thiện poster.',
+        ],
+        expectedResults: 'Poster hoàn chỉnh với thông điệp rõ ràng và hình ảnh bắt mắt.',
+      },
+    ],
+    realWorldApplications: [
+      'Tạo content cho social media cá nhân.',
+      'Thiết kế poster cho hoạt động trường học.',
+      'Sáng tác truyện ngắn hoặc thơ.',
+      'Tạo nhạc nền cho video presentation.',
+    ],
+    vietnamContext: {
+      title: 'Cộng đồng sáng tạo AI tại Việt Nam',
+      content: [
+        'Nhiều nghệ sĩ trẻ Việt Nam đang thử nghiệm với AI art để tạo ra những tác phẩm độc đáo.',
+        'Các cuộc thi sáng tạo với AI đang được tổ chức tại nhiều trường đại học.',
+        'Vietnamese AI Art Group trên Facebook là nơi chia sẻ tác phẩm và kinh nghiệm.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Trần Minh Đức',
+      title: 'AI Artist & Creative Director',
+      company: 'Freelancer',
+      imageUrl: 'https://i.pravatar.cc/150?u=tran-minh-duc',
+      quote:
+        'AI không thay thế sự sáng tạo của con người mà giúp chúng ta biểu đạt ý tưởng nhanh hơn. Điều quan trọng vẫn là ý tưởng và cảm xúc mà bạn muốn truyền tải.',
+    },
+    quizzes: [
+      {
+        question: 'Khi sử dụng AI để tạo nội dung sáng tạo, điều nào cần lưu ý?',
+        options: [
+          'Có thể sử dụng bất kỳ hình ảnh nào AI tạo ra',
+          'Cần tôn trọng bản quyền và credit nguồn gốc',
+          'AI tạo ra luôn là độc nhất',
+          'Không cần kiểm tra nội dung trước khi public',
+        ],
+        correctAnswerIndex: 1,
+        explanation: 'Cần tôn trọng bản quyền, kiểm tra nội dung và credit nguồn gốc khi sử dụng AI tạo nội dung.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tác phẩm do AI tạo ra có thuộc về tác giả không?',
+        answer:
+          'Hiện tại luật bản quyền chưa rõ ràng về vấn đề này. Tốt nhất là luôn ghi rõ đã sử dụng AI và không claim là 100% sáng tạo cá nhân.',
+      },
+    ],
+  },
+  {
+    id: 'ai-ethics-safety',
+    title: 'Đạo đức AI và An toàn Số',
+    description: 'Tìm hiểu về những vấn đề đạo đức, an toàn và trách nhiệm khi sử dụng công nghệ AI.',
+    duration: '75 phút',
+    difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=WXuK6gekU1Y',
+    imageUrl: 'https://i.ytimg.com/vi/WXuK6gekU1Y/hqdefault.jpg',
+    objectives: [
+      'Nhận biết được những rủi ro và thách thức của AI.',
+      'Hiểu các nguyên tắc sử dụng AI một cách có trách nhiệm.',
+      'Phát triển tư duy phản biện về thông tin được tạo bởi AI.',
+      'Bảo vệ quyền riêng tư và dữ liệu cá nhân.',
+    ],
+    prerequisites: ['Đã có kinh nghiệm sử dụng một số công cụ AI.'],
+    exercises: [
+      {
+        title: 'Phân tích case study về AI bias',
+        description: 'Nghiên cứu và thảo luận về một trường hợp thực tế AI có thiên kiến.',
+        difficulty: 'Trung bình',
+        procedure: [
+          'Nghiên cứu case study về AI bias (ví dụ: thuật toán tuyển dụng thiên vị).',
+          'Xác định nguyên nhân gây ra thiên kiến.',
+          'Thảo luận về tác động đến xã hội.',
+          'Đề xuất giải pháp để giảm thiểu thiên kiến.',
+        ],
+        expectedResults: 'Hiểu rõ về AI bias và có khả năng đánh giá phỏng đoán việc sử dụng AI.',
+      },
+    ],
+    realWorldApplications: [
+      'Đánh giá độ tin cậy của thông tin AI tạo ra.',
+      'Bảo vệ thông tin cá nhân khi sử dụng dịch vụ AI.',
+      'Sử dụng AI một cách có trách nhiệm trong học tập.',
+      'Nhận biết và phản đối AI bias trong cuộc sống.',
+    ],
+    vietnamContext: {
+      title: 'Quy định về AI tại Việt Nam',
+      content: [
+        'Việt Nam đang xây dựng khung pháp lý cho việc phát triển và sử dụng AI.',
+        'Bộ TT&TT đã ban hành các hướng dẫn về an toàn thông tin cho ứng dụng AI.',
+        'Nhiều tổ chức giáo dục đang phát triển quy tắc ứng xử với AI cho học sinh.',
+      ],
+    },
+    careerConnect: {
+      name: 'TS. Đặng Thành Nam',
+      title: 'Chuyên gia AI Ethics',
+      company: 'Đại học Bách Khoa Hà Nội',
+      imageUrl: 'https://i.pravatar.cc/150?u=dang-thanh-nam',
+      quote:
+        'AI chỉ tốt khi được sử dụng đúng cách. Học sinh cần có tư duy phản biện để đánh giá và sử dụng AI một cách có trách nhiệm.',
+    },
+    quizzes: [
+      {
+        question: 'AI bias là gì?',
+        options: [
+          'AI luôn luôn đúng',
+          'AI có thể có những thiên kiến không công bằng',
+          'AI không thể mắc lỗi',
+          'AI chỉ thiên vị các kỹ sư',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'AI bias là khi hệ thống AI có những thiên kiến không công bằng, thường xuất phát từ dữ liệu huấn luyện.',
+      },
+    ],
+    faqs: [
+      {
+        question: '"Deepfake" là gì và tại sao nó lại nguy hiểm?',
+        answer:
+          'Deepfake là công nghệ sử dụng AI để tạo ra các video hoặc hình ảnh giả mạo rất chân thực, ví dụ như ghép mặt một người vào video của người khác. Nó nguy hiểm vì có thể được sử dụng để tạo tin giả, lừa đảo, bôi nhọ danh dự người khác, hoặc tạo ra các nội dung không phù hợp.',
+      },
+      {
+        question: 'Làm thế nào để nhận biết một hình ảnh do AI tạo ra?',
+        answer:
+          'Ngày càng khó để nhận biết, nhưng có một vài dấu hiệu cần chú ý: các chi tiết vô lý (ví dụ: người có 6 ngón tay), nền ảnh bị biến dạng, chữ viết không rõ ràng, hoặc các chi tiết quá hoàn hảo một cách phi tự nhiên. Tuy nhiên, cách tốt nhất vẫn là xem xét nguồn gốc của hình ảnh.',
+      },
+      {
+        question: 'Tại sao dữ liệu lại quan trọng đối với đạo đức AI?',
+        answer:
+          'Bởi vì AI học hỏi từ dữ liệu mà con người cung cấp cho nó. Nếu dữ liệu đầu vào có chứa sự thiên vị (ví dụ: dữ liệu lịch sử cho thấy một nhóm người nào đó ít được tuyển dụng hơn), AI sẽ học theo sự thiên vị đó và khuếch đại nó, dẫn đến các quyết định không công bằng trong tương lai.',
+      },
+    ],
+  },
+  {
+    id: 'ai-future-careers',
+    title: 'AI và Tương lai Nghề nghiệp',
+    description: 'Khám phá những nghề nghiệp mới xuất hiện nhờ AI và cách chuẩn bị cho tương lai việc làm.',
+    duration: '90 phút',
+    difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=gWmRkYsLzB4',
+    imageUrl: 'https://i.ytimg.com/vi/gWmRkYsLzB4/hqdefault.jpg',
+    objectives: [
+      'Tìm hiểu các nghề nghiệp mới trong thời đại AI.',
+      'Hiểu những kỹ năng cần thiết cho tương lai.',
+      'Lập kế hoạch học tập để chuẩn bị cho nghề nghiệp AI.',
+      'Nhận biết những ngành nghề có thể bị ảnh hưởng bởi AI.',
+    ],
+    prerequisites: ['Hoàn thành tất cả các bài học trước.'],
+    exercises: [
+      {
+        title: 'Lập kế hoạch nghề nghiệp AI',
+        description: 'Tạo lộ trình học tập và phát triển để theo đuổi một nghề nghiệp liên quan đến AI.',
+        difficulty: 'Trung bình',
+        procedure: [
+          'Chọn một nghề nghiệp AI mà bạn quan tâm (Data Scientist, AI Engineer, UX Designer for AI...).',
+          'Nghiên cứu yêu cầu kỹ năng và kiến thức.',
+          'Lập lộ trình học tập từ bậc THCS/THPT đến đại học.',
+          'Xác định các hoạt động thực hành và dự án cần làm.',
+        ],
+        expectedResults: 'Kế hoạch nghề nghiệp rõ ràng với các mục tiêu ngắn hạn và dài hạn.',
+      },
+    ],
+    realWorldApplications: [
+      'Chọn chuyên ngành đại học phù hợp với AI.',
+      'Tham gia các khóa học và workshop về AI.',
+      'Xây dựng portfolio dự án AI cá nhân.',
+      'Networking với cộng đồng AI Việt Nam.',
+    ],
+    vietnamContext: {
+      title: 'Thị trường việc làm AI tại Việt Nam',
+      content: [
+        'Nhu cầu nhân lực AI tại Việt Nam đang tăng mạnh với mức lương hấp dẫn.',
+        'Các tập đoàn như FPT, Viettel, Vingroup đang đầu tư mạnh vào AI.',
+        'Nhiều startup AI Việt Nam đang nhận được đầu tư từ quốc tế.',
+      ],
+    },
+    careerConnect: {
+      name: 'Anh Lê Hoàng Nam',
+      title: 'Machine Learning Engineer',
+      company: 'Grab Vietnam',
+      imageUrl: 'https://i.pravatar.cc/150?u=le-hoang-nam',
+      quote:
+        'Ngành AI không chỉ cần kỹ năng kỹ thuật mà còn cần khả năng tư duy logic và giải quyết vấn đề. Hãy bắt đầu từ những dự án nhỏ và không ngừng học hỏi.',
+    },
+    quizzes: [
+      {
+        question: 'Kỹ năng nào quan trọng nhất cho nghề nghiệp AI?',
+        options: [
+          'Chỉ cần biết lập trình',
+          'Tư duy logic và khả năng giải quyết vấn đề',
+          'Chỉ cần học thuộc lòng thuật toán',
+          'Không cần kỹ năng giao tiếp',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Tư duy logic và khả năng giải quyết vấn đề là kỹ năng quan trọng nhất, bên cạnh kiến thức kỹ thuật.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Cần học đại học gì để làm việc trong lĩnh vực AI?',
+        answer:
+          'Có nhiều ngành phù hợp như Khoa học máy tính, Kỹ thuật phần mềm, Toán ứng dụng, Khoa học dữ liệu. Quan trọng là có nền tảng toán học và lập trình tốt.',
+      },
+      {
+        question: 'AI có thể thay thế hoàn toàn con người trong công việc không?',
+        answer:
+          'AI sẽ tự động hóa nhiều công việc nhưng cũng tạo ra những việc làm mới. Những công việc cần sáng tạo, đồng cảm và tương tác xã hội sẽ vẫn cần con người.',
+      },
+    ],
+  },
 ];

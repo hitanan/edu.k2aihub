@@ -26,7 +26,7 @@ export const aiSeoOptimizationModuleData: ModuleData = {
     'Báo cáo hiệu suất thông minh',
     'Xây dựng liên kết với AI',
   ],
-  icon: 'zap',
+  icon: '🌏',
   color: 'blue',
   heroImageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
   objectives: [
@@ -140,6 +140,7 @@ export const aiSeoOptimizationLessons = [
   },
   {
     id: 'content-creation-ai',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Sáng tạo nội dung chuẩn SEO với AI',
     description: 'Học cách dùng AI để tạo ra nội dung hấp dẫn, chuẩn SEO.',
     duration: '75 phút',

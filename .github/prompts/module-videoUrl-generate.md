@@ -2,7 +2,7 @@
 mode: agent
 ---
 
-Mục tiêu: Cho mỗi bài học trong mỗi module đầu vào, cầu hãy tìm và đề xuất một YouTube video phù hợp với nội dung bài học (không quan tâm videoUrl cũ).
+Mục tiêu: Cho mỗi bài học trong mỗi module đầu vào, cầu hãy tìm và đề xuất một YouTube video phù hợp với nội dung bài học: title, description (không quan tâm videoUrl cũ đã có hay chưa).
 
 Yêu cầu thực thi:
 
@@ -48,7 +48,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
 **Yêu cầu parsing:**
 
 - Parse toàn bộ array lessons, không chỉ lesson đầu tiên
-- Xử lý tất cả lessons, lấy title và description để tìn video cần cập nhật cho trường videoUrl
+- Xử lý tất cả lessons, lấy title và description để tìm video cần cập nhật cho trường videoUrl
 
   **OUTPUT FORMAT:** Trả về kết quả ở định dạng JSON (một mảng object). Mỗi object gồm:
 
@@ -78,7 +78,7 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
 
 3. Thực hiện tìm kiếm YouTube Data API v3 bằng API key lấy từ [.envy](../../.envy) file và lấy giá trị KEY từ dòng đầu tiên (biến KEY: YOUR_API_KEY). Không hardcode key, Nếu KEY hết quota, hãy dùng key ở dòng thứ tiếp theo.
    - Sử dụng endpoint Search: https://www.googleapis.com/youtube/v3/search?part=snippet&q={query}&type=video&key=YOUR_API_KEY
-     => Update list module và dùng lại src\utils\generateVideoUrls.js để generate video
+     => Update list module và có thể tham khảo dùng lại và update file src\utils\generateVideoUrls.js để generate video tối ưu
 
 4. Lựa chọn video ưu tiên theo thứ tự:
    - Trong kết quả query title và description

@@ -128,6 +128,7 @@ const lessons: ProgrammingRoboticsLesson[] = [
   },
   {
     id: 'ai-robotics-integration',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'AI Integration trong Robotics',
     description: 'Tích hợp artificial intelligence và machine learning vào robotics systems.',
     duration: '160 phút',
@@ -179,6 +180,7 @@ const lessons: ProgrammingRoboticsLesson[] = [
   },
   {
     id: 'advanced-robotics-applications',
+    videoUrl: 'https://www.youtube.com/watch?v=kH1x2zkozLs',
     title: 'Advanced Robotics Applications',
     description: 'Khám phá cutting-edge robotics applications và future trends.',
     duration: '140 phút',

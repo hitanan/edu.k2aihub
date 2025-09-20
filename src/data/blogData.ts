@@ -177,4 +177,11 @@ export const blogTags: BlogTag[] = [
   { slug: 'web-development', name: 'Web Development', description: 'Phát triển ứng dụng web.' },
   { slug: 'call-to-action', name: 'Call-to-Action', description: 'Nút kêu gọi hành động trên website.' },
   { slug: 'toi-uu-hoa-chuyen-doi', name: 'Tối Ưu Hóa Chuyển Đổi', description: 'Cải thiện tỷ lệ chuyển đổi.' },
+  { slug: 'quantum-computing', name: 'Quantum Computing', description: 'Điện toán lượng tử và các ứng dụng.' },
+  { slug: 'dien-toan-luong-tu', name: 'Điện Toán Lượng Tử', description: 'Công nghệ điện toán lượng tử.' },
+  { slug: 'qubit', name: 'Qubit', description: 'Đơn vị thông tin lượng tử.' },
+  { slug: 'khoa-hoc', name: 'Khoa Học', description: 'Các chủ đề khoa học và nghiên cứu.' },
+  { slug: 'giao-duc-luong-tu', name: 'Giáo Dục Lượng Tử', description: 'Giáo dục về điện toán lượng tử.' },
+  { slug: 'stem', name: 'STEM', description: 'Khoa học, Công nghệ, Kỹ thuật, Toán học.' },
+  { slug: 'cong-nghe-tuong-lai', name: 'Công Nghệ Tương Lai', description: 'Các công nghệ tiềm năng trong tương lai.' },
 ];

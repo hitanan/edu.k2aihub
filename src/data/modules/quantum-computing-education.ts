@@ -20,6 +20,7 @@ export interface QuantumComputingLesson extends BaseLessonData {
 const lessons: QuantumComputingLesson[] = [
   {
     id: 'what-is-quantum-computing',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Điện toán Lượng tử là gì?',
     description:
       'Một phần giới thiệu nhẹ nhàng về các khái niệm cốt lõi của điện toán lượng tử, giải thích sự khác biệt so với máy tính cổ điển.',
@@ -49,6 +50,7 @@ const lessons: QuantumComputingLesson[] = [
   },
   {
     id: 'quantum-algorithms',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Các Thuật toán Lượng tử Nổi tiếng',
     description:
       'Tìm hiểu về các thuật toán đã chứng minh sức mạnh vượt trội của máy tính lượng tử, như thuật toán của Shor và Grover.',
@@ -69,6 +71,7 @@ const lessons: QuantumComputingLesson[] = [
   },
   {
     id: 'building-a-quantum-computer',
+    videoUrl: 'https://www.youtube.com/watch?v=AFYe0I4QUu8',
     title: 'Xây dựng một Máy tính Lượng tử',
     description:
       'Khám phá những thách thức kỹ thuật to lớn trong việc xây dựng và vận hành một máy tính lượng tử ổn định.',

@@ -297,6 +297,7 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
   },
   {
     id: 'medical-devices-iot-applications',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Thiết Bị Y Tế & Ứng Dụng IoT',
     description:
       'Khám phá các thiết bị y tế tiên tiến và ứng dụng IoT trong y tế, từ thiết bị đeo được đến cơ sở hạ tầng bệnh viện thông minh.',
@@ -306,7 +307,6 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     regulatoryCompliance: ['FDA', 'CE Mark', 'ISO 13485'],
     techProficiencyLevel: 'Intermediate',
     targetAudience: ['Biomedical Engineers', 'Clinicians', 'Patients'],
-    videoUrl: null, // IoT in Healthcare: Smart Medical Devices
     imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu hệ sinh thái IoT trong môi trường y tế',

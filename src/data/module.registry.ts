@@ -72,6 +72,26 @@ import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
 import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
 import { quantumComputingModule } from '@/data/modules/quantum-computing';
 import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
+import { appliedMathematicsLogicModuleData } from '@/data/modules/applied-mathematics-logic';
+import { artHistoryAppreciationModuleData } from '@/data/modules/art-history-appreciation';
+import { biologyHealthModuleData } from '@/data/modules/biology-health';
+import { careerGuidanceDevelopmentModuleData } from '@/data/modules/career-guidance-development';
+import { chemistryEnvironmentModuleData } from '@/data/modules/chemistry-environment';
+import { civicEducationLifeSkillsModuleData } from '@/data/modules/civic-education-life-skills';
+import { cyberSafetyDigitalEthicsModuleData } from '@/data/modules/cyber-safety-digital-ethics';
+import { economicGeographyVietnamModuleData } from '@/data/modules/economic-geography-vietnam';
+import { genderEducationMentalHealthModuleData } from '@/data/modules/gender-education-mental-health';
+import { literatureReadingSkillsModuleData } from '@/data/modules/literature-reading-skills';
+import { modernVietnameseHistoryModuleData } from '@/data/modules/modern-vietnamese-history';
+import { musicAppreciationModuleData } from '@/data/modules/music-appreciation';
+import { physicalEducationSportsScienceModuleData } from '@/data/modules/physical-education-sports-science';
+import { physicsInLifeModuleData } from '@/data/modules/physics-in-life';
+import { appliedEnglishModuleData } from '@/data/modules/applied-english';
+import { criticalThinkingProblemSolvingModuleData } from '@/data/modules/critical-thinking-problem-solving';
+import { entrepreneurshipAndInnovationModuleData } from '@/data/modules/entrepreneurship-and-innovation';
+import { introductionToPhilosophyModuleData } from '@/data/modules/introduction-to-philosophy';
+import { personalFinanceForBeginnersModuleData } from '@/data/modules/personal-finance-for-beginners';
+import { scientificResearchSkillsModuleData } from '@/data/modules/scientific-research-skills';
 
 // Group 2: Modules exporting a `...Lessons` array directly
 import { aiMachineLearningLessons } from '@/data/modules/ai-machine-learning';
@@ -130,6 +150,26 @@ const modulesWithFullData: ModuleData[] = [
   mentalHealthTechModule,
   microInfluencerEconomyModule,
   ethicalMarketingPurposeModule,
+  appliedMathematicsLogicModuleData,
+  artHistoryAppreciationModuleData,
+  biologyHealthModuleData,
+  careerGuidanceDevelopmentModuleData,
+  chemistryEnvironmentModuleData,
+  civicEducationLifeSkillsModuleData,
+  cyberSafetyDigitalEthicsModuleData,
+  economicGeographyVietnamModuleData,
+  genderEducationMentalHealthModuleData,
+  literatureReadingSkillsModuleData,
+  modernVietnameseHistoryModuleData,
+  musicAppreciationModuleData,
+  physicalEducationSportsScienceModuleData,
+  physicsInLifeModuleData,
+  appliedEnglishModuleData,
+  criticalThinkingProblemSolvingModuleData,
+  entrepreneurshipAndInnovationModuleData,
+  introductionToPhilosophyModuleData,
+  personalFinanceForBeginnersModuleData,
+  scientificResearchSkillsModuleData,
 ];
 
 const modulesFromLessons: ModuleData[] = [

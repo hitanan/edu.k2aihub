@@ -502,6 +502,7 @@ export const advancedAILessons: BaseLessonData[] = [
     description:
       'Critical understanding về AI ethics, bias detection, fairness, và responsible AI deployment trong Vietnamese context với focus trên cultural sensitivity.',
     duration: '170 phút',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     difficulty: 'Nâng cao',
     aiDomain: 'AI Ethics',
     objectives: [

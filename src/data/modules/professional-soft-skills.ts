@@ -6,6 +6,7 @@ export type SoftSkillsLesson = BaseLessonData;
 const lessons: SoftSkillsLesson[] = [
   {
     id: 'effective-communication',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Giao tiếp Hiệu quả và Lắng nghe Chủ động',
     description:
       'Nắm vững nghệ thuật truyền đạt thông điệp rõ ràng, thuyết phục và xây dựng mối quan hệ qua việc lắng nghe sâu sắc.',
@@ -26,6 +27,7 @@ const lessons: SoftSkillsLesson[] = [
   },
   {
     id: 'presentation-public-speaking',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Kỹ năng Thuyết trình và Nói trước Công chúng',
     description:
       'Tự tin trình bày ý tưởng, báo cáo và dự án trước đám đông, từ việc chuẩn bị nội dung đến làm chủ ngôn ngữ cơ thể.',
@@ -46,6 +48,7 @@ const lessons: SoftSkillsLesson[] = [
   },
   {
     id: 'time-management-productivity',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Quản lý Thời gian và Tăng năng suất',
     description:
       'Học các phương pháp và công cụ để ưu tiên công việc, loại bỏ sự trì hoãn và tối đa hóa hiệu suất làm việc.',
@@ -66,6 +69,7 @@ const lessons: SoftSkillsLesson[] = [
   },
   {
     id: 'leadership-teamwork',
+    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
     title: 'Lãnh đạo và Làm việc Nhóm',
     description:
       'Phát triển khả năng gây ảnh hưởng, truyền cảm hứng cho người khác và hợp tác hiệu quả để đạt được mục tiêu chung.',
@@ -86,6 +90,7 @@ const lessons: SoftSkillsLesson[] = [
   },
   {
     id: 'negotiation-persuasion',
+    videoUrl: 'https://www.youtube.com/watch?v=YCyWQKhqLEM',
     title: 'Nghệ thuật Đàm phán và Thuyết phục',
     description:
       'Trang bị kỹ năng để đạt được các thỏa thuận có lợi cho đôi bên trong công việc và cuộc sống, từ đàm phán lương đến chốt hợp đồng.',

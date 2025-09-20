@@ -157,7 +157,7 @@ async function processLesson(lesson, filePath, moduleName, apiKeys, currentKeyIn
   }
 
   // Create search query
-  const searchQuery = `${lesson.title} tutorial vietnamese english ${moduleName}`;
+  const searchQuery = `${lesson.title} ${moduleName}`;
 
   // Try with current API key
   if (currentKeyIndex >= apiKeys.length) {

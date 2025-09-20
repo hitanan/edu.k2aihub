@@ -473,7 +473,7 @@ export const youngEntrepreneurLessons: YoungEntrepreneurLessonData[] = [
     businessTools: ['Recruitment Platforms', 'Performance Management Systems', 'Team Collaboration Tools'],
     vietnameseMarketFocus: ['Startup Culture', 'Talent Retention', 'Remote Work Management'],
     successMetrics: ['Employee Satisfaction', 'Team Performance', 'Low Turnover Rate'],
-    videoUrl: null,
+    videoUrl: 'https://www.youtube.com/watch?v=anClAIcriq8',
     imageUrl: 'https://i.ytimg.com/vi/anClAIcriq8/hqdefault.jpg',
     objectives: [
       'Phát triển leadership skills cho founders trẻ',
