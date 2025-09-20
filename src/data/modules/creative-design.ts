@@ -3,7 +3,7 @@ import { BaseLessonData } from '@/types/lesson-base';
 export const creativeDesignLessons: BaseLessonData[] = [
   {
     id: 'midjourney-basics',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Midjourney cơ bản',
     description: 'Học những điều cơ bản về Midjourney.',
     duration: '60 phút',
@@ -35,7 +35,7 @@ export const creativeDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'advanced-prompting',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Prompt engineering nâng cao',
     description: 'Học cách viết prompt nâng cao cho Midjourney.',
     duration: '75 phút',
@@ -99,7 +99,7 @@ export const creativeDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'content-creation',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Tạo nội dung với AI',
     description: 'Học cách tạo nội dung hấp dẫn bằng các công cụ AI.',
     duration: '45 phút',

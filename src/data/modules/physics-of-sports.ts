@@ -8,7 +8,7 @@ export interface PhysicsOfSportsLesson extends BaseLessonData {
 const lessons: PhysicsOfSportsLesson[] = [
   {
     id: 'mechanics-of-motion',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Cơ học của Chuyển động trong Thể thao',
     description: 'Phân tích các định luật Newton về chuyển động qua các ví dụ trong bóng đá, bóng rổ và điền kinh.',
     duration: '60 phút',
@@ -28,7 +28,7 @@ const lessons: PhysicsOfSportsLesson[] = [
   },
   {
     id: 'energy-and-power',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Năng lượng và Sức mạnh trong Thể thao',
     description:
       'Tìm hiểu về công, năng lượng và sức mạnh, và cách chúng được tối ưu hóa trong các môn cử tạ, bơi lội.',
@@ -49,7 +49,7 @@ const lessons: PhysicsOfSportsLesson[] = [
   },
   {
     id: 'projectile-motion',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Chuyển động Ném xiên: Từ Quả bóng rổ đến Cú sút phạt',
     description: 'Nghiên cứu quỹ đạo của các vật thể được ném hoặc đá, áp dụng vào bóng rổ, golf và bóng đá.',
     duration: '75 phút',
@@ -69,7 +69,7 @@ const lessons: PhysicsOfSportsLesson[] = [
   },
   {
     id: 'rotational-dynamics',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Động lực học Quay và Hiệu ứng Magnus',
     description:
       'Khám phá nguyên lý của chuyển động quay, mô-men xoắn và hiệu ứng Magnus trong các môn như bóng bàn, tennis và trượt băng nghệ thuật.',
@@ -91,7 +91,7 @@ const lessons: PhysicsOfSportsLesson[] = [
   },
   {
     id: 'fluid-dynamics-aerodynamics',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Khí động lực học trong Đua xe và Bơi lội',
     description:
       'Nghiên cứu về lực cản không khí và lực cản của nước, và cách các vận động viên và kỹ sư tối ưu hóa hình dạng để tăng tốc độ.',

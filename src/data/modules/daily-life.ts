@@ -13,7 +13,7 @@ export const metadata = createModuleMetadata(
 export const dailyLifeLessons: BaseLessonData[] = [
   {
     id: 'personal-assistant',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Trợ lý AI cá nhân',
     description: 'Sử dụng trợ lý AI để quản lý lịch trình và công việc.',
     duration: '45 phút',
@@ -45,7 +45,7 @@ export const dailyLifeLessons: BaseLessonData[] = [
   },
   {
     id: 'financial-ai',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Quản lý tài chính với AI',
     description: 'Dùng AI để theo dõi chi tiêu và lập kế hoạch tài chính.',
     duration: '50 phút',
@@ -77,7 +77,7 @@ export const dailyLifeLessons: BaseLessonData[] = [
   },
   {
     id: 'health-fitness',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Sức khỏe & Fitness AI',
     description: 'Theo dõi sức khỏe và tập luyện với sự hỗ trợ của AI.',
     duration: '40 phút',
@@ -109,7 +109,7 @@ export const dailyLifeLessons: BaseLessonData[] = [
   },
   {
     id: 'travel-ai',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Du lịch thông minh với AI',
     description: 'Lên kế hoạch chuyến đi và khám phá địa điểm mới với AI.',
     duration: '35 phút',

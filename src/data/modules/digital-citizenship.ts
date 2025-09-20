@@ -62,7 +62,7 @@ export const digitalCitizenshipModuleData: ModuleData = {
 export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
   {
     id: 'digital-identity-and-footprint',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Xây Dựng và Quản Lý Dấu Chân Số',
     description: 'Khám phá dấu chân số của bạn là gì, nó được tạo ra như thế nào và tại sao nó lại quan trọng.',
     duration: '100 phút',
@@ -137,7 +137,7 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
   },
   {
     id: 'privacy-and-security',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Bảo vệ Quyền riêng tư và An ninh mạng',
     description:
       'Trang bị các kỹ năng thiết yếu để bảo vệ thông tin cá nhân trong môi trường số. Tìm hiểu về các mối đe dọa phổ biến và các công cụ, thói quen tốt nhất để giữ an toàn.',
@@ -210,7 +210,7 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
   },
   {
     id: 'media-literacy-and-critical-thinking',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Tư Duy Phản Biện và Đọc Hiểu Truyền Thông Số',
     description:
       'Phát triển khả năng phân tích và đánh giá thông tin trên môi trường số. Nhận diện tin giả, thông tin sai lệch và hiểu biết về cách thức truyền thông hoạt động.',

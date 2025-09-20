@@ -9,7 +9,7 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
     description: 'Học cách đặt mục tiêu nghề nghiệp, đánh giá kỹ năng và xây dựng lộ trình phát triển cá nhân.',
     duration: '45 phút',
     difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=600&fit=crop',
     objectives: [
       'Xác định giá trị và sở thích nghề nghiệp cá nhân.',
@@ -87,7 +87,7 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
     description: 'Phát triển thương hiệu cá nhân mạnh mẽ trên các nền tảng số và trong môi trường chuyên nghiệp.',
     duration: '60 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1200&h=600&fit=crop',
     objectives: [
       'Xác định thông điệp thương hiệu cá nhân độc đáo.',
@@ -145,7 +145,7 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
     description: 'Master các kỹ thuật networking hiệu quả và xây dựng mối quan hệ nghề nghiệp bền vững.',
     duration: '50 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1529119368496-2dfda6ec2804?w=1200&h=600&fit=crop',
     objectives: [
       'Phát triển kỹ năng giao tiếp và kết nối chuyên nghiệp.',
@@ -203,7 +203,7 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
     description: 'Chuẩn bị và thực hiện phỏng vấn việc làm thành công với các kỹ thuật chuyên nghiệp.',
     duration: '55 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop',
     objectives: [
       'Chuẩn bị CV và cover letter ấn tượng.',
@@ -261,7 +261,7 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
     description: 'Phát triển kỹ năng lãnh đạo, quản lý nhóm và thúc đẩy hiệu suất làm việc.',
     duration: '65 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu các style lãnh đạo khác nhau và ứng dụng.',
@@ -319,7 +319,7 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
     description: 'Học các nguyên tắc khởi nghiệp, validate ý tưởng kinh doanh và xây dựng startup từ zero.',
     duration: '70 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu mindset và skills của entrepreneur thành công.',

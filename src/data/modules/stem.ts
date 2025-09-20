@@ -127,7 +127,7 @@ export const stemLessons: StemLesson[] = [
     difficulty: 'Cơ bản',
     duration: '60 phút',
     category: 'engineering',
-    videoUrl: 'https://www.youtube.com/watch?v=b7oI_i_4i5c',
+    videoUrl: 'https://www.youtube.com/watch?v=0gyz5IswV3s',
     imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop',
     materials: ['20 que mỳ Ý', '1m băng dính', '1m dây', '1 viên kẹo marshmallow'],
     competitions: ['Maker Faire', 'First Lego League'],

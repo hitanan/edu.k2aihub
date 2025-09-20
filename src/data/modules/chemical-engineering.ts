@@ -9,7 +9,7 @@ export const chemicalEngineeringLessons: BaseLessonData[] = [
     description: 'Học các phương pháp tối ưu hóa và cải tiến quy trình trong công nghiệp hóa học.',
     duration: '60 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu các nguyên tắc tối ưu hóa quy trình hóa học.',
@@ -75,7 +75,7 @@ export const chemicalEngineeringLessons: BaseLessonData[] = [
     description: 'Thiết kế và vận hành hệ thống kiểm soát khí thải và nước thải trong công nghiệp.',
     duration: '55 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     imageUrl: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu các công nghệ xử lý khí thải và nước thải.',

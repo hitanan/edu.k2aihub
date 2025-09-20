@@ -69,7 +69,7 @@ export const educationLearningLessons: BaseLessonData[] = [
   },
   {
     id: 'language-learning',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Học ngôn ngữ với AI',
     duration: '45 phút',
     difficulty: 'Cơ bản',

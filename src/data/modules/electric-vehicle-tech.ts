@@ -5,7 +5,7 @@ import { K2Module } from '../k2-modules';
 export const electricVehicleLessons: BaseLessonData[] = [
   {
     id: 'ev-fundamentals',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Nguyên Lý Cơ Bản Của Xe Điện',
     duration: '60 phút',
     difficulty: 'Cơ bản',
@@ -44,7 +44,7 @@ export const electricVehicleLessons: BaseLessonData[] = [
   },
   {
     id: 'charging-infrastructure',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Hạ Tầng Sạc và Hệ Sinh Thái',
     duration: '75 phút',
     difficulty: 'Trung bình',
@@ -83,7 +83,7 @@ export const electricVehicleLessons: BaseLessonData[] = [
   },
   {
     id: 'ev-market-trends',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Thị Trường và Xu Hướng Xe Điện Toàn Cầu',
     duration: '50 phút',
     difficulty: 'Cơ bản',
@@ -125,7 +125,7 @@ export const electricVehicleLessons: BaseLessonData[] = [
   },
   {
     id: 'ev-maintenance-repair',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Bảo Dưỡng và Sửa Chữa Xe Điện',
     duration: '45 phút',
     difficulty: 'Trung bình',

@@ -6,7 +6,7 @@ export type PsychologyLesson = BaseLessonData;
 const lessons: PsychologyLesson[] = [
   {
     id: 'introduction-to-behavioral-science',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Giới thiệu về Khoa học Hành vi',
     description: 'Tìm hiểu các khái niệm cốt lõi của khoa học hành vi và cách nó định hình quyết định của chúng ta.',
     duration: '45 phút',
@@ -26,7 +26,7 @@ const lessons: PsychologyLesson[] = [
   },
   {
     id: 'cognitive-biases-heuristics',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Thiên kiến Nhận thức và Quy tắc suy nghiệm',
     description:
       'Đi sâu vào các lối tắt tinh thần và những sai lầm có hệ thống trong tư duy ảnh hưởng đến lựa chọn hàng ngày.',
@@ -47,7 +47,7 @@ const lessons: PsychologyLesson[] = [
   },
   {
     id: 'behavioral-economics-nudging',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Kinh tế học Hành vi và Cú hích',
     description:
       'Khám phá cách các yếu tố tâm lý, xã hội và cảm xúc ảnh hưởng đến quyết định kinh tế và cách "cú hích" có thể thay đổi hành vi.',
@@ -68,7 +68,7 @@ const lessons: PsychologyLesson[] = [
   },
   {
     id: 'psychology-in-ux-design',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Tâm lý học trong Thiết kế UX/UI',
     description: 'Áp dụng các nguyên tắc tâm lý học để tạo ra các sản phẩm số hấp dẫn, dễ sử dụng và có ý nghĩa hơn.',
     duration: '60 phút',

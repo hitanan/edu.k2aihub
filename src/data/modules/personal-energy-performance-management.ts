@@ -6,7 +6,7 @@ export type { PersonalEnergyLesson };
 const lessons: PersonalEnergyLesson[] = [
   {
     id: 'understanding-personal-energy',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Hiểu về Năng lượng Cá nhân',
     description: 'Khám phá bốn chiều năng lượng: thể chất, cảm xúc, tinh thần và tâm hồn.',
     duration: '45 phút',
@@ -23,7 +23,7 @@ const lessons: PersonalEnergyLesson[] = [
   },
   {
     id: 'physical-energy-optimization',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Tối ưu hóa Năng lượng Thể chất',
     description: 'Tìm hiểu về vai trò của dinh dưỡng, giấc ngủ và vận động trong việc duy trì năng lượng thể chất.',
     duration: '60 phút',
@@ -40,7 +40,7 @@ const lessons: PersonalEnergyLesson[] = [
   },
   {
     id: 'emotional-resilience',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Xây dựng Sức bền Cảm xúc',
     description: 'Học cách quản lý cảm xúc tiêu cực và nuôi dưỡng cảm xúc tích cực để đối phó với áp lực.',
     duration: '60 phút',
@@ -57,7 +57,7 @@ const lessons: PersonalEnergyLesson[] = [
   },
   {
     id: 'mental-focus-management',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Quản lý Sự tập trung Tinh thần',
     description:
       'Các chiến lược để cải thiện sự tập trung, giảm thiểu sự phân tâm và thực hiện công việc sâu (deep work).',
@@ -75,7 +75,7 @@ const lessons: PersonalEnergyLesson[] = [
   },
   {
     id: 'spiritual-alignment-purpose',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Kết nối với Mục đích và Ý nghĩa',
     description:
       'Tìm kiếm và kết nối với các giá trị cốt lõi và mục đích sống để tạo ra nguồn năng lượng mạnh mẽ nhất.',

@@ -223,7 +223,7 @@ async function processModules() {
             filePath: path.relative(process.cwd(), filePath),
             lessonId: lesson.id,
             lessonTitle: lesson.title,
-            videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw', // Default fallback
+            videoUrl: null, // Default fallback
             status: 'fallback',
             searchQuery,
           });

@@ -140,7 +140,7 @@ export const aiSeoOptimizationLessons = [
   },
   {
     id: 'content-creation-ai',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Sáng tạo nội dung chuẩn SEO với AI',
     description: 'Học cách dùng AI để tạo ra nội dung hấp dẫn, chuẩn SEO.',
     duration: '75 phút',

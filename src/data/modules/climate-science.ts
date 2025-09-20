@@ -235,7 +235,7 @@ export const ClimateLessons: BaseLessonData[] = [
   },
   {
     id: 'climate-solutions-tech',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Climate Solutions và Green Technology',
     description: 'Khám phá các giải pháp công nghệ để giảm thiểu và thích ứng với biến đổi khí hậu.',
     duration: '150 phút',
@@ -338,7 +338,7 @@ export const ClimateLessons: BaseLessonData[] = [
   },
   {
     id: 'climate-policy-economics',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Climate Policy và Economics',
     description: 'Tìm hiểu các chính sách khí hậu và khía cạnh kinh tế của biến đổi khí hậu.',
     duration: '120 phút',

@@ -128,7 +128,7 @@ const lessons: ProgrammingRoboticsLesson[] = [
   },
   {
     id: 'ai-robotics-integration',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'AI Integration trong Robotics',
     description: 'Tích hợp artificial intelligence và machine learning vào robotics systems.',
     duration: '160 phút',

@@ -239,6 +239,26 @@ const EVChargingNetworkGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
   const [networkEfficiency, setNetworkEfficiency] = useState(0);
   const [marketCoverage, setMarketCoverage] = useState(0);
 
+  const resetGameState = () => {
+    setGamePhase('briefing');
+    setSelectedLocations([]);
+    setSelectedStations([]);
+    setSelectedTechnologies([]);
+    setDeploymentProgress(0);
+    setIsDeploying(false);
+    setUserSatisfaction(0);
+    setNetworkEfficiency(0);
+    setMarketCoverage(0);
+  };
+
+  useEffect(() => {
+    // A bit of a hack: When the parent restarts the game, timeLeft is reset to 120.
+    // We use this to detect a restart and reset the internal state.
+    if (timeLeft === 120 && gamePhase !== 'briefing') {
+      resetGameState();
+    }
+  }, [timeLeft, gamePhase]);
+
   const totalCost =
     selectedStations.reduce((sum, item) => sum + item.station.cost * item.location.installation_cost_multiplier, 0) +
     selectedTechnologies.reduce((sum, tech) => sum + tech.cost, 0);
@@ -903,7 +923,10 @@ const EVChargingNetworkGame: React.FC<GameProps> = ({ onComplete, timeLeft, onRe
 
           <div className="text-center space-x-4">
             <button
-              onClick={onRestart}
+              onClick={() => {
+                onRestart();
+                resetGameState();
+              }}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
             >
               Thiết kế lại mạng lưới

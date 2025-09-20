@@ -297,7 +297,7 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
   },
   {
     id: 'medical-devices-iot-applications',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Thiết Bị Y Tế & Ứng Dụng IoT',
     description:
       'Khám phá các thiết bị y tế tiên tiến và ứng dụng IoT trong y tế, từ thiết bị đeo được đến cơ sở hạ tầng bệnh viện thông minh.',

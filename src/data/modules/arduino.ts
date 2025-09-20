@@ -762,7 +762,7 @@ void loop() {
   },
   {
     id: 'arduino-sensors',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Làm Việc Với Cảm Biến',
     description:
       'Khám phá bí mật của môi trường xung quanh qua các cảm biến hiện đại! Đo nhiệt độ, độ ẩm, ánh sáng, chuyển động... và biến dữ liệu thành các giải pháp thông minh cho nhà ở, nông nghiệp và an ninh.',
@@ -1051,7 +1051,7 @@ void loop() {
   },
   {
     id: 'arduino-communication',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Giao Tiếp và Mạng (Networking)',
     description:
       'Kết nối Arduino với thế giới! Học cách truyền và nhận dữ liệu qua các giao thức Serial, I2C, SPI, xây dựng một web server, gửi dữ liệu lên đám mây (cloud) và điều khiển thiết bị từ xa qua WiFi/Bluetooth. Mở rộng khả năng sáng tạo của bạn đến vô hạn.',

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'AI-powered search',
       'semantic SEO',
       'K2AI',
-      'học tập thông minh'
+      'học tập thông minh',
     ]),
     openGraph: {
       title: createTitle(lesson.title),
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LessonPage({ params }: Props) {
   const { lessonId } = await params;
   if (!llmAiSeoModuleData.lessons) notFound();
-  
+
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'llm-ai-seo',
     moduleTitle: 'LLM AI SEO - Tối Ưu cho AI Search',
@@ -74,7 +74,5 @@ export default async function LessonPage({ params }: Props) {
     gradientColors: 'from-purple-900 via-pink-900 to-purple-900',
   };
 
-  return (
-    <LessonPageTemplate lessonId={lessonId} config={config} />
-  );
+  return <LessonPageTemplate lessonId={lessonId} config={config} />;
 }

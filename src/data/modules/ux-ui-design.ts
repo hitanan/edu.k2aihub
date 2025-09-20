@@ -4,7 +4,7 @@ import { BaseLessonData } from '@/types/lesson-base';
 export const uxUiDesignLessons: BaseLessonData[] = [
   {
     id: 'user-research-and-personas',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Nghiên cứu Người dùng và Xây dựng Chân dung Khách hàng',
     description: 'Học cách thực hiện nghiên cứu người dùng và tạo ra các persona chi tiết.',
     duration: '280 phút',
@@ -26,7 +26,7 @@ export const uxUiDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'wireframing-prototyping-with-figma',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Wireframing và Prototyping với Figma',
     description: 'Sử dụng Figma để tạo wireframe và prototype cho ứng dụng web/mobile.',
     duration: '300 phút',
@@ -48,7 +48,7 @@ export const uxUiDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'usability-testing-and-feedback-analysis',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Kiểm thử Tính khả dụng và Phân tích Phản hồi',
     description: 'Học cách tổ chức các buổi usability testing và phân tích feedback từ người dùng.',
     duration: '260 phút',
@@ -73,7 +73,7 @@ export const uxUiDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'building-and-maintaining-design-systems',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Xây dựng và Duy trì Hệ thống Thiết kế',
     description: 'Tìm hiểu về tầm quan trọng của design system và cách xây dựng, duy trì nó.',
     duration: '240 phút',
@@ -95,7 +95,7 @@ export const uxUiDesignLessons: BaseLessonData[] = [
   },
   {
     id: 'agile-product-management-for-designers',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Quản lý Sản phẩm Agile cho Nhà thiết kế',
     description: 'Hiểu vai trò của designer trong quy trình phát triển sản phẩm Agile.',
     duration: '220 phút',

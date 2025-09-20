@@ -6,7 +6,7 @@ export type SoftSkillsLesson = BaseLessonData;
 const lessons: SoftSkillsLesson[] = [
   {
     id: 'effective-communication',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Giao tiếp Hiệu quả và Lắng nghe Chủ động',
     description:
       'Nắm vững nghệ thuật truyền đạt thông điệp rõ ràng, thuyết phục và xây dựng mối quan hệ qua việc lắng nghe sâu sắc.',
@@ -27,7 +27,7 @@ const lessons: SoftSkillsLesson[] = [
   },
   {
     id: 'presentation-public-speaking',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Kỹ năng Thuyết trình và Nói trước Công chúng',
     description:
       'Tự tin trình bày ý tưởng, báo cáo và dự án trước đám đông, từ việc chuẩn bị nội dung đến làm chủ ngôn ngữ cơ thể.',
@@ -48,7 +48,7 @@ const lessons: SoftSkillsLesson[] = [
   },
   {
     id: 'time-management-productivity',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Quản lý Thời gian và Tăng năng suất',
     description:
       'Học các phương pháp và công cụ để ưu tiên công việc, loại bỏ sự trì hoãn và tối đa hóa hiệu suất làm việc.',
@@ -69,7 +69,7 @@ const lessons: SoftSkillsLesson[] = [
   },
   {
     id: 'leadership-teamwork',
-    videoUrl: 'https://www.youtube.com/watch?v=vd2dtkMINIw',
+    videoUrl: null,
     title: 'Lãnh đạo và Làm việc Nhóm',
     description:
       'Phát triển khả năng gây ảnh hưởng, truyền cảm hứng cho người khác và hợp tác hiệu quả để đạt được mục tiêu chung.',
