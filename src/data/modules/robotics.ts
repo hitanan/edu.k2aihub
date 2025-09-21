@@ -83,6 +83,38 @@ export const roboticsLessons: RoboticsLessonType[] = [
         answer:
           'Giỏi toán và vật lý là một lợi thế lớn, đặc biệt khi đi sâu vào thiết kế cơ khí và thuật toán điều khiển phức tạp. Tuy nhiên, ở cấp độ nhập môn, sự tò mò, tư duy logic và kiên nhẫn là quan trọng nhất. Bạn có thể bắt đầu với các bộ kit và học dần các khái niệm khoa học liên quan.',
       },
+      {
+        question: 'Sự khác biệt giữa tự động hóa (automation) và robotics là gì?',
+        answer: 'Tự động hóa là một khái niệm rộng, chỉ việc làm cho một quy trình trở nên tự động. Robotics là một nhánh của tự động hóa, tập trung vào việc tạo ra các cỗ máy (robot) có thể thực hiện các tác vụ vật lý. Một robot là một dạng của tự động hóa, nhưng không phải tất cả hệ thống tự động hóa đều là robot (ví dụ: phần mềm tự động gửi email).',
+      },
+      {
+        question: 'Ba Điều luật Robotics của Asimov là gì?',
+        answer: 'Đây là ba quy tắc do nhà văn khoa học viễn tưởng Isaac Asimov đặt ra trong các tác phẩm của mình: 1) Robot không được làm hại con người. 2) Robot phải tuân lệnh con người, trừ khi lệnh đó vi phạm Điều luật 1. 3) Robot phải tự bảo vệ mình, trừ khi điều đó vi phạm Điều luật 1 hoặc 2. Chúng không phải là luật thực tế nhưng có ảnh hưởng lớn đến các cuộc thảo luận về đạo đức robot.',
+      },
+      {
+        question: 'Trí tuệ nhân tạo (AI) có giống với robotics không?',
+        answer: 'Không. AI là "bộ não" - phần mềm đưa ra quyết định thông minh. Robotics là "cơ thể" - cỗ máy vật lý thực hiện hành động. Một robot có thể chỉ được điều khiển bằng một chương trình đơn giản không có AI, và một AI có thể tồn tại mà không cần cơ thể robot (như ChatGPT).',
+      },
+      {
+        question: 'Ngôn ngữ lập trình nào được sử dụng phổ biến nhất trong robotics?',
+        answer: 'C++ và Python là hai ngôn ngữ phổ biến nhất. C++ thường được sử dụng cho các tác vụ điều khiển cấp thấp đòi hỏi hiệu năng cao và thời gian thực. Python rất mạnh cho việc phát triển AI, học máy, xử lý dữ liệu và tạo mẫu nhanh (rapid prototyping).',
+      },
+      {
+        question: 'ROS (Robot Operating System) là gì?',
+        answer: 'ROS không phải là một hệ điều hành thực sự như Windows hay Linux. Nó là một framework (bộ khung) phần mềm linh hoạt cung cấp các thư viện và công cụ để giúp các nhà phát triển viết phần mềm cho robot một cách dễ dàng và module hóa hơn.',
+      },
+      {
+        question: 'Em có thể tự chế tạo một robot tại nhà không?',
+        answer: 'Chắc chắn có! Với sự phổ biến của các bộ kit như LEGO Mindstorms, VEX, hoặc các linh kiện như Arduino và Raspberry Pi, việc chế tạo một robot đơn giản tại nhà đã trở nên rất dễ tiếp cận. Đây là một cách tuyệt vời để học hỏi và thực hành.',
+      },
+      {
+        question: '"Cobot" là gì?',
+        answer: 'Cobot là viết tắt của "Collaborative Robot" (Robot hợp tác). Đây là loại robot được thiết kế đặc biệt để làm việc an toàn bên cạnh con người trong cùng một không gian làm việc, không cần hàng rào bảo vệ như các robot công nghiệp truyền thống.',
+      },
+      {
+        question: 'Tương lai của ngành robotics sẽ như thế nào?',
+        answer: 'Chúng ta sẽ thấy robot ngày càng xuất hiện nhiều hơn trong cuộc sống hàng ngày, từ xe tự lái, drone giao hàng, đến robot trợ lý chăm sóc sức khỏe và các cobot tiên tiến trong sản xuất. Robot sẽ trở nên thông minh hơn, linh hoạt hơn và an toàn hơn.',
+      },
     ],
   },
   {
@@ -161,6 +193,38 @@ export const roboticsLessons: RoboticsLessonType[] = [
         answer:
           'Bạn có thể làm vô số thứ! Từ những dự án đơn giản như bật tắt đèn LED, điều khiển động cơ, cho đến các hệ thống phức tạp hơn như robot, nhà thông minh, trạm thời tiết, máy in 3D, hoặc các tác phẩm nghệ thuật tương tác. Giới hạn duy nhất là sự sáng tạo của bạn.',
       },
+      {
+        question: 'Sự khác biệt giữa `digitalWrite()` và `analogWrite()` là gì?',
+        answer: '`digitalWrite()` chỉ có thể đặt một chân ở hai trạng thái: HIGH (5V) hoặc LOW (0V). `analogWrite()` sử dụng kỹ thuật PWM (Điều chế độ rộng xung) để tạo ra một điện áp "giả-tương tự", cho phép bạn điều khiển độ sáng của LED hoặc tốc độ động cơ với các giá trị từ 0 đến 255.',
+      },
+      {
+        question: 'Có cần dùng breadboard (bảng cắm) khi làm việc với Arduino không?',
+        answer: 'Breadboard không bắt buộc nhưng rất được khuyến khích. Nó cho phép bạn kết nối các linh kiện và xây dựng mạch điện mà không cần hàn, giúp việc thử nghiệm và thay đổi thiết kế trở nên cực kỳ nhanh chóng và tiện lợi.',
+      },
+      {
+        question: '"Sketch" trong Arduino là gì?',
+        answer: '"Sketch" là tên gọi mà Arduino sử dụng cho một chương trình. Đó là đoạn mã bạn viết trong Arduino IDE, sau đó được biên dịch và tải lên board mạch Arduino để thực thi.',
+      },
+      {
+        question: 'Chức năng của hai hàm `setup()` và `loop()` là gì?',
+        answer: 'Hàm `setup()` chỉ chạy một lần duy nhất khi board Arduino được cấp nguồn hoặc reset. Nó được dùng để thực hiện các cài đặt ban đầu, ví dụ như `pinMode()`. Hàm `loop()` sẽ chạy lặp đi lặp lại mãi mãi sau khi `setup()` đã chạy xong. Đây là nơi chứa logic chính của chương trình.',
+      },
+      {
+        question: 'Tại sao cần phải có điện trở khi kết nối LED với Arduino?',
+        answer: 'Điện trở dùng để giới hạn dòng điện chạy qua đèn LED. Nếu không có điện trở, dòng điện từ chân Arduino sẽ quá lớn, có thể làm cháy đèn LED và thậm chí làm hỏng chân của board Arduino.',
+      },
+      {
+        question: 'Arduino có thể kết nối Internet được không?',
+        answer: 'Bản thân board Arduino Uno cơ bản không thể kết nối Internet. Tuy nhiên, bạn có thể dễ dàng làm điều này bằng cách kết hợp nó với các "shield" (mạch mở rộng) như Ethernet Shield hoặc WiFi Shield (ví dụ: dùng chip ESP8266/ESP32).',
+      },
+      {
+        question: 'Sự khác biệt giữa chân Digital và chân Analog trên Arduino là gì?',
+        answer: 'Chân Digital (ví dụ: 0-13 trên Uno) có thể đọc hoặc ghi các giá trị số (HIGH/LOW). Chân Analog Input (A0-A5) được thiết kế để đọc các giá trị điện áp tương tự, ví dụ như từ cảm biến nhiệt độ hoặc chiết áp, chuyển đổi chúng thành một con số từ 0 đến 1023.',
+      },
+      {
+        question: 'Nguồn điện cho Arduino lấy từ đâu?',
+        answer: 'Bạn có thể cấp nguồn cho Arduino qua cổng USB kết nối với máy tính, hoặc sử dụng một nguồn điện ngoài (như pin hoặc adapter) cắm vào giắc cắm nguồn DC. Board sẽ tự động chọn nguồn phù hợp.',
+      },
     ],
   },
   {
@@ -236,6 +300,38 @@ export const roboticsLessons: RoboticsLessonType[] = [
         question: 'Tại sao động cơ Servo lại quan trọng trong robotics?',
         answer:
           'Động cơ Servo cho phép điều khiển chính xác vị trí góc quay. Điều này cực kỳ quan trọng cho các khớp của cánh tay robot, bánh lái của xe, hoặc bất kỳ bộ phận nào cần di chuyển đến một vị trí cụ thể và giữ yên ở đó, thay vì chỉ quay liên tục như động cơ DC thông thường.',
+      },
+      {
+        question: 'Cảm biến siêu âm (ultrasonic sensor) hoạt động như thế nào?',
+        answer: 'Nó hoạt động giống như con dơi. Cảm biến phát ra một sóng âm tần số cao (siêu âm). Sóng này di chuyển, đập vào vật cản và phản xạ lại. Cảm biến đo thời gian từ lúc phát đến lúc nhận lại sóng phản xạ, từ đó tính toán ra khoảng cách đến vật cản.',
+      },
+      {
+        question: 'Sự khác biệt giữa động cơ Servo và động cơ Bước (Stepper Motor) là gì?',
+        answer: 'Cả hai đều cho phép điều khiển vị trí chính xác. Động cơ Servo sử dụng một hệ thống phản hồi (feedback) để quay đến một góc tuyệt đối. Động cơ Bước di chuyển theo từng "bước" góc rất nhỏ và không có phản hồi; nó giả định rằng nó đã di chuyển đúng số bước được yêu cầu. Động cơ bước rất tốt cho việc lặp lại các chuyển động chính xác, như trong máy in 3D.',
+      },
+      {
+        question: 'Làm thế nào để một robot có thể đi theo một vạch đen trên sàn?',
+        answer: 'Robot sử dụng các cảm biến dò line (line sensor), thường là cảm biến hồng ngoại. Cảm biến này bao gồm một cặp LED phát và thu hồng ngoại. Bề mặt màu trắng phản xạ nhiều ánh sáng hơn bề mặt màu đen. Bằng cách đọc giá trị từ các cảm biến này, robot có thể biết được vị trí của nó so với vạch đen và điều chỉnh động cơ để đi theo vạch.',
+      },
+      {
+        question: 'IMU (Inertial Measurement Unit) là cảm biến gì?',
+        answer: 'IMU là một cảm biến phức hợp, thường bao gồm một gia tốc kế (accelerometer) để đo gia tốc và một con quay hồi chuyển (gyroscope) để đo tốc độ góc. IMU giúp robot xác định được hướng, độ nghiêng và sự thay đổi trong chuyển động của nó, rất quan trọng cho robot tự cân bằng hoặc drone.',
+      },
+      {
+        question: 'Cơ cấu chấp hành không chỉ là động cơ đúng không?',
+        answer: 'Đúng vậy. Bất cứ thứ gì tạo ra một hành động vật lý đều là cơ cấu chấp hành. Ví dụ bao gồm: đèn LED (phát sáng), còi (tạo âm thanh), nam châm điện (tạo lực từ), xi lanh khí nén/thủy lực (tạo chuyển động thẳng), và thậm chí cả màn hình hiển thị (thay đổi hình ảnh).',
+      },
+      {
+        question: 'Làm thế nào để điều khiển tốc độ của một động cơ DC đơn giản?',
+        answer: 'Bạn có thể điều khiển tốc độ của động cơ DC bằng cách thay đổi điện áp cấp cho nó. Với Arduino, cách phổ biến nhất là sử dụng kỹ thuật PWM (thông qua hàm `analogWrite()`) kết hợp với một mạch cầu H (H-Bridge) hoặc một transistor để xử lý dòng điện lớn hơn mà động cơ yêu cầu.',
+      },
+      {
+        question: 'Cảm biến PIR là gì và nó được dùng để làm gì?',
+        answer: 'PIR là viết tắt của Passive Infrared (Hồng ngoại thụ động). Đây là loại cảm biến có thể phát hiện bức xạ hồng ngoại (thân nhiệt) phát ra từ các vật thể sống như người và động vật. Nó thường được sử dụng trong các hệ thống báo trộm, đèn tự động bật sáng khi có người di chuyển vào vùng cảm ứng.',
+      },
+      {
+        question: 'Em có thể kết nối nhiều cảm biến và động cơ với một board Arduino không?',
+        answer: 'Có, đó chính là thế mạnh của Arduino. Một board Arduino Uno có 14 chân digital và 6 chân analog input, cho phép bạn kết nối đồng thời nhiều cảm biến và cơ cấu chấp hành. Nếu cần nhiều chân hơn, bạn có thể sử dụng các board lớn hơn như Arduino Mega hoặc các kỹ thuật mở rộng chân.',
       },
     ],
   },

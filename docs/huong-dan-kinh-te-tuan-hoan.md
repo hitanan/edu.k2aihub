@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Kinh Tế Tuần Hoàn: Từ "Vứt Bỏ" Đến "Tái Tạo"'
 description: 'Khám phá mô hình Kinh tế Tuần hoàn (Circular Economy), một giải pháp thay thế cho mô hình kinh tế tuyến tính "khai thác-sản xuất-vứt bỏ", nhằm giảm thiểu lãng phí và tối đa hóa giá trị tài nguyên.'
-date: '2025-10-16'
+date: '2025-09-16'
 author: 'K2AiHub Sustainability Team'
 category: 'Hướng Dẫn'
 tags: ['kinh tế tuần hoàn', 'circular economy', 'bền vững', 'tái chế', 'giảm thiểu rác thải', 'hướng dẫn', 'K2AiHub']
@@ -24,11 +24,13 @@ Theo Ellen MacArthur Foundation, một tổ chức tiên phong trong lĩnh vực
 ### 1. Loại Bỏ Rác Thải và Ô Nhiễm Ngay Từ Đầu (Eliminate Waste and Pollution)
 
 Đây là sự thay đổi tư duy cơ bản. Thay vì tìm cách xử lý rác thải sau khi nó đã được tạo ra, chúng ta nên thiết kế các sản phẩm và quy trình để không tạo ra rác thải ngay từ đầu.
+
 - **Ví dụ:** Một công ty thiết kế bao bì có thể ăn được hoặc tự phân hủy hoàn toàn, thay vì bao bì nhựa dùng một lần.
 
 ### 2. Giữ Sản Phẩm và Vật Liệu Trong Vòng Tuần Hoàn (Keep Products and Materials in Use)
 
 Mục tiêu là kéo dài tuổi thọ của mọi thứ chúng ta tạo ra và khai thác tối đa giá trị từ chúng. Điều này có thể được thực hiện thông qua nhiều chiến lược, thường được gọi là các "vòng lặp" tuần hoàn:
+
 - **Duy trì & Sửa chữa (Maintain & Repair):** Thiết kế sản phẩm dễ sửa chữa, cung cấp phụ tùng thay thế và hướng dẫn sửa chữa cho người tiêu dùng.
 - **Tái sử dụng (Reuse):** Tạo ra các hệ thống cho phép sản phẩm được sử dụng lại nhiều lần, ví dụ như các mô hình cho thuê quần áo, hoặc chai lọ có thể hoàn trả.
 - **Tân trang & Tái sản xuất (Refurbish & Remanufacture):** Thu hồi các sản phẩm cũ, tháo dỡ, thay thế các bộ phận bị hỏng và bán lại chúng như mới (ví dụ: điện thoại tân trang).
@@ -37,6 +39,7 @@ Mục tiêu là kéo dài tuổi thọ của mọi thứ chúng ta tạo ra và 
 ### 3. Tái Tạo Hệ Thống Tự Nhiên (Regenerate Natural Systems)
 
 Kinh tế tuần hoàn không chỉ là giảm tác động tiêu cực, mà còn chủ động tạo ra tác động tích cực. Thay vì chỉ khai thác từ thiên nhiên, chúng ta có thể trả lại cho nó.
+
 - **Ví dụ:** Nông nghiệp tái tạo (regenerative agriculture) là phương pháp canh tác không chỉ sản xuất lương thực mà còn cải thiện sức khỏe của đất, tăng cường đa dạng sinh học và hấp thụ carbon từ khí quyển.
 
 ## Các Mô Hình Kinh Doanh Tuần Hoàn

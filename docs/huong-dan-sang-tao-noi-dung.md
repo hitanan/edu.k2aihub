@@ -1,10 +1,11 @@
 ---
 title: 'Hướng Dẫn Trở Thành Nhà Sáng Tạo Nội Dung (Content Creator)'
 description: 'Học cách xây dựng thương hiệu cá nhân và sản xuất nội dung hấp dẫn trên các nền tảng như YouTube, TikTok, Instagram. Từ việc tìm ý tưởng, quay dựng đến việc phát triển cộng đồng.'
-date: '2025-10-19'
+date: '2025-09-19'
 author: 'K2AiHub Creator Team'
 category: 'Hướng Dẫn'
-tags: ['sáng tạo nội dung', 'content creator', 'YouTube', 'TikTok', 'xây dựng thương hiệu cá nhân', 'hướng dẫn', 'K2AiHub']
+tags:
+  ['sáng tạo nội dung', 'content creator', 'YouTube', 'TikTok', 'xây dựng thương hiệu cá nhân', 'hướng dẫn', 'K2AiHub']
 featured: true
 readingTime: '22 phút đọc'
 ---
@@ -22,6 +23,7 @@ Bài viết này của **K2AiHub** sẽ cung cấp một lộ trình 7 bước t
 Thế giới nội dung số rất rộng lớn và cạnh tranh. Cố gắng làm hài lòng tất cả mọi người là cách nhanh nhất để không ai nhớ đến bạn. Bạn cần tìm ra một lĩnh vực cụ thể mà bạn vừa đam mê, vừa có kiến thức.
 
 **Hãy tự hỏi:**
+
 - **Đam mê:** Bạn có thể nói về chủ đề gì hàng giờ mà không thấy chán? (Ví dụ: làm vườn, chăm sóc thú cưng, lịch sử, phim ảnh...)
 - **Kiến thức/Kỹ năng:** Bạn biết gì hoặc có thể làm gì tốt hơn hầu hết mọi người? (Ví dụ: lập trình, nấu ăn, trang điểm, sửa chữa đồ đạc...)
 - **Nhu cầu thị trường:** Mọi người có đang tìm kiếm thông tin về chủ đề này không? Có những creator nào khác trong lĩnh vực này không? (Một chút cạnh tranh là một dấu hiệu tốt, cho thấy có khán giả quan tâm).
@@ -54,8 +56,8 @@ Sự nhất quán là chìa khóa. Đừng đợi đến khi có cảm hứng m�
 - **Brainstorm ý tưởng:** Dành thời gian để liệt kê hàng loạt ý tưởng nội dung. Sử dụng các công cụ như Google Trends, AnswerThePublic hoặc xem các bình luận của khán giả để biết họ quan tâm điều gì.
 - **Tạo lịch đăng bài (Content Calendar):** Lên kế hoạch bạn sẽ đăng gì và khi nào. Điều này giúp bạn duy trì sự đều đặn và không bị "bí" ý tưởng.
 - **Chuẩn bị thiết bị:** Bạn không cần những thiết bị đắt tiền nhất để bắt đầu.
-    - **Hình ảnh:** Một chiếc smartphone đời mới là đủ tốt. Hãy đầu tư vào một chiếc micro nhỏ (để có âm thanh tốt) và một chiếc đèn ring light (để có ánh sáng tốt). Âm thanh và ánh sáng quan trọng hơn chất lượng camera.
-    - **Dựng phim:** Bắt đầu với các ứng dụng miễn phí và dễ sử dụng như CapCut, InShot trên điện thoại hoặc DaVinci Resolve trên máy tính.
+  - **Hình ảnh:** Một chiếc smartphone đời mới là đủ tốt. Hãy đầu tư vào một chiếc micro nhỏ (để có âm thanh tốt) và một chiếc đèn ring light (để có ánh sáng tốt). Âm thanh và ánh sáng quan trọng hơn chất lượng camera.
+  - **Dựng phim:** Bắt đầu với các ứng dụng miễn phí và dễ sử dụng như CapCut, InShot trên điện thoại hoặc DaVinci Resolve trên máy tính.
 
 ## Bước 5: Tối Ưu Hóa và Phân Phối
 

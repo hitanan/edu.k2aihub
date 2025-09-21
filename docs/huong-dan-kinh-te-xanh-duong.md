@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Kinh Tế Xanh Dương: Khai Thác Bền Vững Tài Nguyên Biển'
 description: 'Tìm hiểu về Kinh tế Xanh Dương (Blue Economy), một mô hình phát triển kinh tế dựa trên việc khai thác bền vững và bảo tồn các hệ sinh thái biển và đại dương.'
-date: '2025-10-15'
+date: '2025-09-15'
 author: 'K2AiHub Sustainability Team'
 category: 'Hướng Dẫn'
 tags: ['kinh tế xanh dương', 'blue economy', 'bền vững', 'bảo tồn biển', 'kinh tế biển', 'hướng dẫn', 'K2AiHub']
@@ -31,6 +31,7 @@ Kinh tế Xanh Dương mở ra nhiều cơ hội vượt ra ngoài các ngành t
 ### 1. Năng Lượng Tái Tạo Từ Biển
 
 Đại dương là một nguồn năng lượng sạch khổng lồ và chưa được khai thác hết.
+
 - **Năng lượng gió ngoài khơi (Offshore Wind):** Các tuabin gió được đặt trên biển, nơi có sức gió mạnh và ổn định hơn trên đất liền.
 - **Năng lượng sóng và thủy triều:** Chuyển đổi động năng của sóng và dòng chảy thủy triều thành điện năng.
 - **Năng lượng từ chênh lệch nhiệt độ (OTEC):** Khai thác sự chênh lệch nhiệt độ giữa nước biển sâu (lạnh) và nước bề mặt (ấm) để chạy tuabin.
@@ -38,12 +39,14 @@ Kinh tế Xanh Dương mở ra nhiều cơ hội vượt ra ngoài các ngành t
 ### 2. Nuôi Trồng Thủy Sản Bền Vững
 
 Dân số thế giới đang tăng, và nhu cầu về protein cũng vậy. Nuôi trồng thủy sản truyền thống có thể gây ô nhiễm và phá hủy môi trường sống.
+
 - **Nuôi trồng đa tầng tích hợp (IMTA):** Một hệ thống khép kín nơi chất thải từ một loài (ví dụ: cá) trở thành thức ăn cho một loài khác (ví dụ: rong biển, hải sâm). Hệ thống này bắt chước một hệ sinh thái tự nhiên, giảm thiểu ô nhiễm và tạo ra nhiều sản phẩm có giá trị.
 - **Nuôi trồng ngoài khơi:** Di chuyển các trang trại nuôi trồng ra xa bờ hơn để giảm tác động đến các hệ sinh thái ven biển nhạy cảm.
 
 ### 3. Công Nghệ Sinh Học Biển (Marine Biotechnology)
 
 Các sinh vật biển sống trong những môi trường khắc nghiệt nhất trên Trái Đất, từ các miệng phun thủy nhiệt sâu thẳm đến các vùng băng giá. Điều này đã giúp chúng phát triển các hợp chất sinh hóa độc đáo.
+
 - **Dược phẩm:** Tìm kiếm các hợp chất chống ung thư, kháng sinh và chống viêm mới từ san hô, bọt biển và vi khuẩn biển.
 - **Mỹ phẩm:** Chiết xuất collagen, chất chống oxy hóa từ rong biển và các sinh vật biển khác.
 - **Vật liệu sinh học:** Tạo ra các loại nhựa sinh học phân hủy được từ tảo.
@@ -51,6 +54,7 @@ Các sinh vật biển sống trong những môi trường khắc nghiệt nhấ
 ### 4. Du Lịch Sinh Thái Biển
 
 Thay vì du lịch đại chúng gây áp lực lên môi trường, du lịch sinh thái tập trung vào trải nghiệm và giáo dục.
+
 - **Lặn biển ngắm san hô có trách nhiệm:** Du khách được hướng dẫn để không làm hại đến các rạn san hô.
 - **Các tour xem cá voi, cá heo:** Hỗ trợ các nỗ lực bảo tồn và mang lại thu nhập cho cộng đồng địa phương.
 - **Xây dựng các khu nghỉ dưỡng bền vững:** Sử dụng năng lượng tái tạo, xử lý nước thải và giảm thiểu rác thải nhựa.
@@ -62,6 +66,7 @@ Thay vì du lịch đại chúng gây áp lực lên môi trường, du lịch s
 ## Làm Thế Nào Để Bạn Có Thể Đóng Góp?
 
 Bạn không cần phải là một nhà khoa học biển để tham gia vào Kinh tế Xanh Dương.
+
 1.  **Là một người tiêu dùng có ý thức:**
     - Chọn các sản phẩm hải sản có chứng nhận bền vững (như MSC - Marine Stewardship Council).
     - Giảm thiểu việc sử dụng nhựa dùng một lần. Tham gia các hoạt động dọn dẹp bãi biển.

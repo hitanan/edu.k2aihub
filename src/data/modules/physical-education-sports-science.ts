@@ -37,6 +37,38 @@ export const physicalEducationSportsScienceModuleData: ModuleData = {
           answer:
             'Cả hai đều quan trọng và mang lại những lợi ích khác nhau. Cardio (chạy bộ, đạp xe) tốt cho tim mạch và sức bền. Tập tạ giúp xây dựng cơ bắp, tăng cường sức mạnh và trao đổi chất. Một chương trình tập luyện cân bằng nên bao gồm cả hai.',
         },
+        {
+            question: 'Nguyên tắc quá tải (Overload) nghĩa là gì?',
+            answer: 'Là nguyên tắc nền tảng nhất: để cải thiện, bạn phải bắt cơ thể làm việc ở cường độ cao hơn mức nó đã quen. Ví dụ: nâng mức tạ nặng hơn, chạy nhanh hơn hoặc xa hơn.'
+        },
+        {
+            question: 'Tại sao nguyên tắc tiến triển (Progression) lại quan trọng?',
+            answer: 'Cơ thể sẽ thích nghi với mức độ tập luyện hiện tại. Nếu bạn không tăng dần độ khó, sự tiến bộ của bạn sẽ chững lại. Nguyên tắc tiến triển đảm bảo bạn liên tục thử thách cơ thể để ngày càng khỏe hơn.'
+        },
+        {
+            question: 'Nguyên tắc đặc thù (Specificity) được áp dụng như thế nào?',
+            answer: 'Nguyên tắc này nói rằng lợi ích của việc tập luyện là đặc thù cho loại hình hoạt động bạn thực hiện. Ví dụ, nếu bạn muốn chạy marathon, việc tập bơi sẽ không hiệu quả bằng việc tập chạy. "You get what you train for."'
+        },
+        {
+            question: 'Phục hồi (Recovery) bao gồm những gì?',
+            answer: 'Phục hồi không chỉ là nghỉ ngơi. Nó còn bao gồm giấc ngủ đủ, dinh dưỡng hợp lý, và các hoạt động nhẹ nhàng như giãn cơ, yoga. Đây là lúc cơ thể thực sự xây dựng lại và trở nên mạnh mẽ hơn.'
+        },
+        {
+            question: 'DOMS (Delayed Onset Muscle Soreness) là gì? Nó có tốt không?',
+            answer: 'DOMS là cảm giác đau nhức cơ bắp xuất hiện 24-48 giờ sau khi tập luyện. Đây là một dấu hiệu bình thường cho thấy cơ bắp của bạn đã được thử thách và đang trong quá trình sửa chữa, phát triển. Tuy nhiên, đau đớn dữ dội có thể là dấu hiệu của chấn thương.'
+        },
+        {
+            question: 'Tần suất tập luyện lý tưởng là bao nhiêu?',
+            answer: 'Đối với người mới bắt đầu, 3-4 buổi/tuần là một khởi đầu tốt. Điều quan trọng là sự đều đặn. Lắng nghe cơ thể và đảm bảo có ít nhất 1-2 ngày nghỉ hoàn toàn mỗi tuần.'
+        },
+        {
+            question: 'Sự khác biệt giữa tập sức mạnh (strength) và sức bền cơ bắp (endurance) là gì?',
+            answer: 'Tập sức mạnh tập trung vào việc nâng mức tạ nặng trong số lần lặp lại ít (ví dụ: 3-5 lần) để tăng sức mạnh tối đa. Tập sức bền cơ bắp tập trung vào việc nâng mức tạ nhẹ hơn trong số lần lặp lại nhiều (ví dụ: 12-15 lần) để tăng khả năng cơ bắp hoạt động trong thời gian dài.'
+        },
+        {
+            question: 'Warm-up (khởi động) và Cool-down (thả lỏng) khác nhau như thế nào?',
+            answer: 'Warm-up được thực hiện trước khi tập, bao gồm các hoạt động nhẹ nhàng để tăng nhiệt độ cơ thể và chuẩn bị cho vận động. Cool-down được thực hiện sau khi tập, bao gồm các động tác giãn cơ để giúp cơ thể dần trở về trạng thái nghỉ ngơi và giảm đau nhức.'
+        }
       ],
       quizzes: [
         {
@@ -78,6 +110,38 @@ export const physicalEducationSportsScienceModuleData: ModuleData = {
           answer:
             'Bữa ăn sau tập rất quan trọng để phục hồi. Lý tưởng nhất là một bữa ăn kết hợp cả protein (để sửa chữa cơ bắp) và carbohydrate (để bù lại năng lượng đã mất). Ví dụ: một ly sữa sô cô la, ức gà với khoai lang, hoặc sữa chua Hy Lạp với trái cây.',
         },
+        {
+            question: 'Carbohydrate (carb) là gì và vai trò của nó?',
+            answer: 'Carbohydrate là nguồn năng lượng ưu tiên của cơ thể, đặc biệt là cho não và các hoạt động cường độ cao. Chúng được phân giải thành glucose và được lưu trữ dưới dạng glycogen trong cơ và gan.'
+        },
+        {
+            question: 'Protein có vai trò gì ngoài việc xây dựng cơ bắp?',
+            answer: 'Protein còn cần thiết cho việc sản xuất enzyme, hormone, và các kháng thể của hệ miễn dịch. Nó cũng có thể được sử dụng làm năng lượng khi nguồn carb cạn kiệt.'
+        },
+        {
+            question: 'Chất béo có phải lúc nào cũng xấu không?',
+            answer: 'Không. Chất béo không bão hòa (có trong quả bơ, các loại hạt, dầu ô liu) rất cần thiết cho sức khỏe, giúp hấp thụ vitamin và là nguồn năng lượng quan trọng cho các hoạt động cường độ thấp và kéo dài.'
+        },
+        {
+            question: 'Tại sao việc uống đủ nước lại quan trọng khi vận động?',
+            answer: 'Khi vận động, cơ thể mất nước qua mồ hôi để làm mát. Mất nước chỉ 2% trọng lượng cơ thể cũng có thể làm giảm đáng kể hiệu suất, sức mạnh và khả năng tập trung. Nước cần thiết cho hầu hết mọi chức năng của cơ thể.'
+        },
+        {
+            question: 'Chất điện giải là gì?',
+            answer: 'Là các khoáng chất như natri, kali, magie mang điện tích khi hòa tan trong nước. Chúng rất quan trọng để duy trì sự cân bằng chất lỏng, chức năng thần kinh và co cơ. Chúng ta mất điện giải qua mồ hôi.'
+        },
+        {
+            question: 'Khi nào thì nên dùng đồ uống thể thao?',
+            answer: 'Đồ uống thể thao (chứa carb và điện giải) thường chỉ cần thiết cho các hoạt động kéo dài hơn 60-90 phút. Đối với các buổi tập ngắn hơn, nước lọc thường là đủ.'
+        },
+        {
+            question: '"Cửa sổ đồng hóa" (anabolic window) sau tập là gì?',
+            answer: 'Là khoảng thời gian khoảng 30-60 phút sau khi tập luyện, được cho là thời điểm cơ thể hấp thụ protein và carb hiệu quả nhất để phục hồi và phát triển. Mặc dù tầm quan trọng của nó vẫn còn được tranh luận, việc có một bữa ăn nhẹ sau tập vẫn là một thói quen tốt.'
+        },
+        {
+            question: 'Creatine là gì? Nó có an toàn không?',
+            answer: 'Creatine là một hợp chất tự nhiên giúp cung cấp năng lượng cho các hoạt động bùng nổ, ngắn hạn. Nó là một trong những chất bổ sung được nghiên cứu nhiều nhất và được chứng minh là an toàn và hiệu quả trong việc tăng sức mạnh và khối lượng cơ bắp khi kết hợp với tập luyện.'
+        }
       ],
       quizzes: [
         {
@@ -114,6 +178,38 @@ export const physicalEducationSportsScienceModuleData: ModuleData = {
           answer:
             'R.I.C.E. là viết tắt của: Rest (Nghỉ ngơi, không tiếp tục vận động vùng bị thương), Ice (Chườm đá khoảng 15-20 phút mỗi lần, vài lần một ngày để giảm sưng và đau), Compression (Dùng băng thun băng ép nhẹ nhàng để hạn chế sưng), và Elevation (Nâng cao vùng bị thương lên cao hơn tim để giúp giảm sưng).',
         },
+        {
+            question: 'Sự khác biệt giữa bong gân (sprain) và căng cơ (strain) là gì?',
+            answer: 'Bong gân là chấn thương ở dây chằng (mô nối xương với xương). Căng cơ là chấn thương ở cơ hoặc gân (mô nối cơ với xương). Cả hai đều thường xảy ra do chuyển động đột ngột hoặc quá mức.'
+        },
+        {
+            question: 'Tại sao không nên chườm nóng ngay sau khi bị chấn thương cấp tính?',
+            answer: 'Chườm nóng làm giãn mạch máu, tăng lưu lượng máu đến khu vực bị thương, điều này có thể làm tăng sưng và viêm. Chườm nóng chỉ nên được sử dụng cho các cơn đau cơ mãn tính, không sưng, để giúp thư giãn cơ.'
+        },
+        {
+            question: 'Thả lỏng (cool-down) sau khi tập có tác dụng gì?',
+            answer: 'Thả lỏng giúp nhịp tim và nhịp thở của bạn giảm xuống một cách từ từ. Các động tác giãn cơ nhẹ nhàng trong khi thả lỏng có thể giúp cải thiện sự linh hoạt và giảm đau nhức cơ bắp sau này.'
+        },
+        {
+            question: 'Làm thế nào để phòng tránh chuột rút khi vận động?',
+            answer: 'Chuột rút thường do mất nước, mất điện giải hoặc cơ bắp quá tải. Hãy đảm bảo bạn uống đủ nước, khởi động kỹ và không tăng cường độ tập luyện quá đột ngột.'
+        },
+        {
+            question: 'Khi nào một chấn thương được coi là nghiêm trọng và cần đi gặp bác sĩ?',
+            answer: 'Bạn nên đi gặp bác sĩ nếu nghe thấy tiếng "rắc" hoặc "bốp" khi bị chấn thương, không thể đặt trọng lượng lên vùng bị thương, vùng bị thương bị biến dạng rõ rệt, hoặc cơn đau dữ dội và không thuyên giảm sau khi sơ cứu.'
+        },
+        {
+            question: 'Giãn cơ tĩnh (static stretching) và giãn cơ động (dynamic stretching) khác nhau như thế nào?',
+            answer: 'Giãn cơ động bao gồm các chuyển động có kiểm soát để đưa khớp qua toàn bộ phạm vi chuyển động của nó (ví dụ: xoay tay, đá chân), rất tốt cho việc khởi động. Giãn cơ tĩnh là giữ một vị trí giãn trong một khoảng thời gian (ví dụ: 15-30 giây), tốt nhất nên thực hiện sau khi tập (cool-down).'
+        },
+        {
+            question: 'Overreaching và Overtraining khác nhau như thế nào?',
+            answer: 'Overreaching là tình trạng mệt mỏi ngắn hạn do tập luyện quá sức, có thể phục hồi sau vài ngày nghỉ ngơi. Overtraining (tập luyện quá sức) là một tình trạng mãn tính nghiêm trọng hơn, khi bạn liên tục tập luyện mà không phục hồi đủ, dẫn đến suy giảm hiệu suất kéo dài, rối loạn giấc ngủ và các vấn đề sức khỏe khác.'
+        },
+        {
+            question: 'Làm thế nào để chọn giày phù hợp cho hoạt động thể thao?',
+            answer: 'Chọn giày được thiết kế riêng cho môn thể thao bạn chơi. Giày chạy bộ khác giày tập gym, giày chơi bóng rổ. Một đôi giày phù hợp sẽ hỗ trợ đúng cách cho bàn chân của bạn và giúp giảm nguy cơ chấn thương.'
+        }
       ],
       quizzes: [
         {

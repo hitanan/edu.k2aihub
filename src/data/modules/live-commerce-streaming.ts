@@ -22,7 +22,7 @@ export const liveCommerceStreamingModuleData: ModuleData = {
     'Brand Partnerships & Collaborations',
   ],
   icon: '🎥',
-  color: 'orange',
+  color: 'from-orange-500 to-red-600',
   heroImageUrl: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=1200&h=600&fit=crop',
   objectives: [
     'Setup professional livestream selling environment',
@@ -169,6 +169,30 @@ export const liveCommerceLessons: LiveCommerceLesson[] = [
         answer:
           'Thường có hai khung giờ vàng chính: buổi trưa (khoảng 12h-13h) khi dân văn phòng nghỉ ngơi, và buổi tối (khoảng 20h-22h) khi mọi người đã về nhà và thư giãn. Tuy nhiên, bạn nên thử nghiệm để tìm ra khung giờ phù hợp nhất với tệp khách hàng của mình.',
       },
+      {
+        question: 'Sự khác biệt chính giữa live commerce trên TikTok Shop và Shopee Live là gì?',
+        answer: 'TikTok Shop mạnh về tính giải trí và khả năng tạo trend, tiếp cận tệp khách hàng trẻ rất nhanh. Shopee Live lại có thế mạnh về các chương trình siêu sale, voucher và sự tin cậy của một sàn TMĐT lớn, thu hút người dùng có mục đích mua sắm rõ ràng.'
+      },
+      {
+        question: '"Chốt đơn" trong livestream nghĩa là gì?',
+        answer: 'Là thuật ngữ quen thuộc của người bán hàng online Việt Nam, chỉ hành động khách hàng quyết định mua sản phẩm bằng cách để lại bình luận xác nhận (ví dụ: "Cho mình 1 cái màu đen", "Chốt đơn + SĐT").'
+      },
+      {
+        question: 'Làm thế nào để xử lý các bình luận tiêu cực hoặc gây rối trong lúc livestream?',
+        answer: 'Hãy giữ bình tĩnh và chuyên nghiệp. Nếu là góp ý xác đáng, hãy cảm ơn và ghi nhận. Nếu là bình luận gây rối, bạn có thể ẩn bình luận đó và chặn người dùng đó khỏi phiên live. Việc có một người hỗ trợ (admin/mod) để quản lý bình luận là rất hữu ích.'
+      },
+      {
+        question: 'Kịch bản livestream có cần thiết không?',
+        answer: 'Rất cần thiết. Một kịch bản tốt giúp bạn kiểm soát nội dung, thời lượng và các chương trình khuyến mãi một cách trôi chảy. Kịch bản không cần quá chi tiết, nhưng nên có các phần chính: chào hỏi, giới thiệu sản phẩm, mini-game, kêu gọi hành động, và phần hỏi đáp.'
+      },
+      {
+        question: 'Làm sao để giữ năng lượng trong suốt một phiên livestream dài?',
+        answer: 'Chuẩn bị sức khỏe tốt, uống đủ nước, và có thể chuẩn bị sẵn một vài câu chuyện vui hoặc thông tin thú vị để chia sẻ khi không khí trầm xuống. Tương tác liên tục với khán giả cũng là một cách tuyệt vời để duy trì năng lượng.'
+      },
+      {
+        question: 'Tỷ lệ chuyển đổi trong live commerce được tính như thế nào?',
+        answer: 'Tỷ lệ chuyển đổi (Conversion Rate) thường được tính bằng cách lấy tổng số đơn hàng thành công chia cho tổng số người xem phiên live, sau đó nhân với 100%. Đây là một chỉ số quan trọng để đo lường hiệu quả của buổi bán hàng.'
+      }
     ],
     careerConnect: {
       name: 'Chị Nguyễn Ngọc Huyền',
@@ -276,6 +300,48 @@ export const liveCommerceLessons: LiveCommerceLesson[] = [
         'Phần mềm OBS Studio được cộng đồng streamer Việt Nam sử dụng rộng rãi vì tính linh hoạt và miễn phí, cho phép tạo ra các buổi live chuyên nghiệp với chi phí thấp.',
       ],
     },
+    faqs: [
+        {
+            question: 'Ánh sáng ba điểm (three-point lighting) là gì?',
+            answer: 'Là một kỹ thuật chiếu sáng cơ bản trong nhiếp ảnh và quay phim, bao gồm ba nguồn sáng: đèn chính (key light), đèn phụ (fill light) và đèn viền (backlight). Kỹ thuật này giúp chủ thể nổi bật, có chiều sâu và trông chuyên nghiệp hơn.'
+        },
+        {
+            question: 'Tại sao cần một micro riêng thay vì dùng micro của điện thoại?',
+            answer: 'Micro của điện thoại thu âm thanh từ mọi hướng, dễ bị lẫn tạp âm. Một micro riêng (như micro cài áo hoặc micro condenser) tập trung vào việc thu giọng nói của bạn, cho âm thanh rõ ràng, trong trẻo và chuyên nghiệp hơn, giúp giữ chân người xem.'
+        },
+        {
+            question: 'Bitrate là gì và tại sao nó quan trọng đối với livestream?',
+            answer: 'Bitrate là lượng dữ liệu được truyền đi mỗi giây, quyết định chất lượng hình ảnh của video. Bitrate cao hơn cho hình ảnh đẹp hơn nhưng đòi hỏi kết nối internet mạnh hơn. Bạn cần cân bằng giữa chất lượng hình ảnh và sự ổn định của đường truyền.'
+        },
+        {
+            question: 'OBS Studio có khó sử dụng không?',
+            answer: 'OBS có thể hơi phức tạp lúc ban đầu, nhưng có rất nhiều hướng dẫn trực tuyến. Các chức năng cơ bản như thêm camera, hình ảnh, và bắt đầu stream khá dễ học. Nó cho phép bạn tùy chỉnh mọi thứ, từ việc chèn logo, thêm khung chat, đến chuyển đổi giữa nhiều camera.'
+        },
+        {
+            question: 'Làm thế nào để có phông nền (background) đẹp khi livestream?',
+            answer: 'Bạn có thể sử dụng phông nền vật lý (một góc phòng được trang trí đẹp, giá sách, tường có logo thương hiệu) hoặc sử dụng phông xanh và công nghệ "chroma key" trong OBS để thay thế bằng bất kỳ hình ảnh hoặc video nào bạn muốn.'
+        },
+        {
+            question: 'Cần tốc độ internet tối thiểu bao nhiêu để livestream ổn định?',
+            answer: 'Để livestream ở chất lượng 720p, bạn nên có tốc độ tải lên (upload speed) tối thiểu là 5 Mbps. Đối với chất lượng 1080p, tốc độ tải lên nên từ 8-10 Mbps trở lên. Tốc độ tải lên quan trọng hơn tốc độ tải xuống khi livestream.'
+        },
+        {
+            question: 'Sử dụng hai camera (multi-cam) trong livestream có lợi ích gì?',
+            answer: 'Việc chuyển đổi giữa các góc quay khác nhau (một góc quay toàn cảnh, một góc quay cận cảnh sản phẩm) làm cho buổi livestream trở nên sinh động, chuyên nghiệp và hấp dẫn hơn, giống như một chương trình truyền hình.'
+        },
+        {
+            question: 'Làm thế nào để hiển thị bình luận của khán giả trực tiếp trên màn hình livestream?',
+            answer: 'Nhiều nền tảng và phần mềm bên thứ ba (như Streamlabs, Restream) cung cấp các widget cho phép bạn tùy chỉnh và hiển thị hộp chat trực tiếp trên luồng stream của mình. Điều này giúp tăng tương tác và làm cho khán giả cảm thấy được chú ý.'
+        },
+        {
+            question: 'Có cần một máy tính mạnh để livestream không?',
+            answer: 'Có. Livestream đòi hỏi máy tính phải mã hóa video trong thời gian thực, đây là một tác vụ nặng. Một máy tính có CPU mạnh (ví dụ: Intel Core i5 hoặc AMD Ryzen 5 trở lên) và card đồ họa rời sẽ giúp đảm bảo luồng stream mượt mà, không bị giật lag.'
+        },
+        {
+            question: 'Làm thế nào để kiểm tra chất lượng âm thanh trước khi live?',
+            answer: 'Hầu hết các phần mềm streaming như OBS đều có thanh đo mức âm thanh. Hãy nói vào micro và đảm bảo mức âm thanh nằm trong vùng màu xanh lá cây hoặc vàng, không chạm đến vùng màu đỏ (gây vỡ tiếng). Bạn cũng nên ghi thử một đoạn video ngắn để nghe lại chất lượng âm thanh.'
+        }
+    ],
     careerConnect: {
       name: 'Anh Trần Văn Hùng',
       title: 'Kỹ thuật viên Livestream tự do',
@@ -385,6 +451,48 @@ export const liveCommerceLessons: LiveCommerceLesson[] = [
         'Tặng quà, đặc biệt là các sản phẩm "cây nhà lá vườn" hoặc quà lưu niệm độc quyền, là một cách hiệu quả để tạo thiện cảm và sự gắn kết với khán giả Việt.',
       ],
     },
+    faqs: [
+        {
+            question: 'Làm thế nào để kêu gọi tương tác hiệu quả trong livestream?',
+            answer: 'Hãy đặt câu hỏi mở, tạo các cuộc thăm dò ý kiến (polls), khuyến khích khán giả "thả tim", "share live", và gọi tên những người bình luận tích cực. Việc tạo ra các mini-game như "đoán giá sản phẩm" cũng rất hiệu quả.'
+        },
+        {
+            question: 'Một chương trình khách hàng thân thiết cho live commerce nên có những gì?',
+            answer: 'Nên có các cấp độ thành viên khác nhau (ví dụ: Bạc, Vàng, Kim Cương) dựa trên mức độ chi tiêu. Mỗi cấp độ sẽ có những đặc quyền riêng như: voucher độc quyền, quà tặng sinh nhật, được xem trước các sản phẩm mới, hoặc tham gia các phiên live riêng tư.'
+        },
+        {
+            question: 'Làm thế nào để biến người xem thành người quảng bá cho thương hiệu?',
+            answer: 'Hãy mang lại cho họ trải nghiệm vượt xa mong đợi. Trả lời bình luận của họ một cách cá nhân, nhớ tên họ, và thỉnh thoảng tặng những món quà bất ngờ. Khi họ cảm thấy được trân trọng, họ sẽ tự nguyện chia sẻ về bạn với bạn bè.'
+        },
+        {
+            question: 'Vai trò của người điều hành (moderator/mod) trong livestream là gì?',
+            answer: 'Người điều hành là trợ thủ đắc lực của streamer. Họ giúp trả lời các câu hỏi lặp đi lặp lại, lọc các bình luận tiêu cực, đăng link sản phẩm, và hỗ trợ các mini-game, giúp streamer tập trung vào việc trình bày và tương tác chính.'
+        },
+        {
+            question: 'Làm sao để xử lý khi không có ai tương tác trong livestream?',
+            answer: 'Đừng nản lòng. Hãy tiếp tục nói chuyện một cách năng lượng như thể bạn đang nói với hàng nghìn người. Bạn có thể chia sẻ một câu chuyện thú vị về sản phẩm, kể về một ngày của bạn, hoặc tự đặt câu hỏi và trả lời. Năng lượng tích cực của bạn sẽ dần thu hút người khác.'
+        },
+        {
+            question: 'Tổ chức giveaway (tặng quà) như thế nào cho hiệu quả?',
+            answer: 'Hãy đặt ra các điều kiện tham gia đơn giản nhưng giúp tăng tương tác, ví dụ: "Share livestream này và tag 3 người bạn". Hãy công bố kết quả một cách minh bạch và trao quà đúng hẹn để xây dựng lòng tin.'
+        },
+        {
+            question: 'Làm thế nào để nội dung livestream không bị nhàm chán?',
+            answer: 'Hãy đa dạng hóa kịch bản. Thay vì chỉ bán hàng, bạn có thể có các buổi trò chuyện (talkshow) với chuyên gia, các buổi "đập hộp" (unboxing) sản phẩm mới, hoặc các phiên "hỏi đáp" (Q&A) về một chủ đề mà khán giả quan tâm.'
+        },
+        {
+            question: 'Tại sao việc gọi tên người xem lại quan trọng?',
+            answer: 'Việc gọi tên một ai đó trong đám đông ngay lập tức tạo ra một kết nối cá nhân. Nó cho thấy bạn thực sự thấy họ và quan tâm đến sự hiện diện của họ, làm cho họ cảm thấy được trân trọng và có xu hướng ở lại lâu hơn.'
+        },
+        {
+            question: 'Làm thế nào để thu thập phản hồi từ cộng đồng một cách hiệu quả?',
+            answer: 'Bạn có thể tạo các cuộc khảo sát ngắn, tổ chức các buổi livestream hỏi đáp riêng, hoặc đơn giản là đặt câu hỏi trực tiếp trong các phiên live và trong nhóm cộng đồng. Hãy cho họ thấy rằng ý kiến của họ thực sự được lắng nghe và có thể ảnh hưởng đến sản phẩm hoặc dịch vụ của bạn.'
+        },
+        {
+            question: 'Sự khác biệt giữa "khán giả" và "cộng đồng" là gì?',
+            answer: 'Khán giả là những người xem bạn một cách thụ động. Cộng đồng là khi những khán giả đó bắt đầu tương tác không chỉ với bạn mà còn với nhau, chia sẻ một mối quan tâm chung và cảm thấy thuộc về một nhóm. Mục tiêu của bạn là biến khán giả thành cộng đồng.'
+        }
+    ],
     careerConnect: {
       name: 'Bạn Lê Minh Anh',
       title: 'Quản lý Cộng đồng',
@@ -503,6 +611,48 @@ export const liveCommerceLessons: LiveCommerceLesson[] = [
         'Mỗi nền tảng phục vụ một mục đích khác nhau: TikTok để tạo trend và tiếp cận giới trẻ, Facebook để xây dựng cộng đồng và bán hàng cho tệp khách hàng lớn tuổi hơn, Shopee/Lazada để chốt đơn với các voucher hấp dẫn.',
       ],
     },
+    faqs: [
+        {
+            question: 'Tại sao cần phải điều chỉnh nội dung cho từng nền tảng?',
+            answer: 'Mỗi nền tảng có một văn hóa, thuật toán và đối tượng người dùng khác nhau. Ví dụ, nội dung trên TikTok cần nhanh, gọn, và bắt trend, trong khi nội dung trên Facebook có thể sâu hơn và tập trung vào xây dựng cộng đồng. Việc điều chỉnh nội dung giúp tối ưu hóa sự tương tác trên từng kênh.'
+        },
+        {
+            question: 'Làm thế nào để kéo traffic từ nền tảng này sang nền tảng khác?',
+            answer: 'Bạn có thể thông báo trên tất cả các kênh về một phiên live độc quyền sắp diễn ra trên một nền tảng cụ thể. Ví dụ: "Tối nay mình sẽ live trên TikTok với deal giảm 50% duy nhất!". Hoặc bạn có thể đặt link dẫn đến các kênh khác trong phần tiểu sử (bio) của mình.'
+        },
+        {
+            question: 'Simulcasting (phát đồng thời) có nhược điểm gì không?',
+            answer: 'Nhược điểm chính là khó có thể tương tác sâu với tất cả các luồng bình luận từ nhiều nền tảng cùng một lúc. Bạn có thể bỏ lỡ câu hỏi hoặc bình luận quan trọng. Một số nền tảng cũng có thể giảm Reich (lượt tiếp cận) của các luồng phát lại.'
+        },
+        {
+            question: 'Làm thế nào để quản lý tin nhắn và bình luận từ nhiều nền tảng?',
+            answer: 'Có các công cụ quản lý mạng xã hội (như Hootsuite, Sprout Social) hoặc các công cụ chuyên cho live commerce có thể hợp nhất tất cả các tin nhắn và bình luận vào một hộp thư đến duy nhất, giúp bạn dễ dàng quản lý và trả lời.'
+        },
+        {
+            question: 'Nên tập trung xây dựng một kênh mạnh trước hay phát triển đa kênh ngay từ đầu?',
+            answer: 'Đối với người mới bắt đầu, việc tập trung xây dựng một kênh thật mạnh, hiểu rõ đối tượng khán giả của mình thường hiệu quả hơn. Khi bạn đã có một cộng đồng vững chắc, việc mở rộng sang các nền tảng khác sẽ dễ dàng hơn nhiều.'
+        },
+        {
+            question: 'Làm thế nào để đo lường hiệu quả của chiến lược đa nền tảng?',
+            answer: 'Bạn cần theo dõi các chỉ số trên từng nền tảng riêng lẻ (lượt xem, tương tác, chuyển đổi) và cả các chỉ số tổng hợp. Quan trọng hơn, hãy xem xét các chỉ số chéo, ví dụ như có bao nhiêu người theo dõi bạn trên TikTok đã tham gia vào nhóm Facebook của bạn.'
+        },
+        {
+            question: 'Content repurposing (tái sử dụng nội dung) là gì?',
+            answer: 'Là việc lấy một nội dung gốc và biến tấu nó thành nhiều định dạng khác nhau cho các nền tảng khác nhau. Ví dụ, một buổi livestream dài 1 tiếng có thể được cắt thành 10 video ngắn để đăng lên TikTok, một bài viết blog tóm tắt nội dung, và nhiều trích dẫn hay để đăng lên Instagram.'
+        },
+        {
+            question: 'Làm sao để duy trì hình ảnh thương hiệu nhất quán trên các nền tảng?',
+            answer: 'Hãy sử dụng cùng một bộ nhận diện thương hiệu (logo, màu sắc, font chữ) trên tất cả các kênh. Quan trọng hơn, hãy duy trì một "tính cách" và "tiếng nói" thương hiệu nhất quán, dù bạn đang nói chuyện với khách hàng trên TikTok hay trả lời email.'
+        },
+        {
+            question: 'Có nên sử dụng cùng một chương trình khuyến mãi trên tất cả các nền tảng không?',
+            answer: 'Không nhất thiết. Bạn có thể tạo ra các khuyến mãi độc quyền cho từng nền tảng để khuyến khích người dùng theo dõi bạn trên nhiều kênh. Ví dụ: "Deal này chỉ có trên Shopee Live" hoặc "Voucher này chỉ dành cho thành viên group Facebook".'
+        },
+        {
+            question: 'Xu hướng sắp tới của live commerce đa nền tảng là gì?',
+            answer: 'Xu hướng đang hướng tới một trải nghiệm mua sắm liền mạch hơn, nơi khách hàng có thể bắt đầu xem trên điện thoại, tiếp tục trên TV thông minh và hoàn tất việc mua hàng trên máy tính mà không có bất kỳ sự gián đoạn nào. Việc tích hợp sâu hơn giữa các nền tảng sẽ là chìa khóa.'
+        }
+    ],
     careerConnect: {
       name: 'Chị Phạm Thị Thảo',
       title: 'Chủ shop thời trang online',
@@ -613,6 +763,48 @@ export const liveCommerceLessons: LiveCommerceLesson[] = [
         'Việc phân tích "khung giờ vàng" - thời điểm có nhiều người xem nhất - là một yếu tố quan trọng để quyết định lịch livestream, thường là buổi trưa hoặc buổi tối.',
       ],
     },
+    faqs: [
+        {
+            question: 'Những chỉ số KPI nào là quan trọng nhất cần theo dõi trong live commerce?',
+            answer: 'Các KPI quan trọng bao gồm: Lượt xem đồng thời cao nhất (Peak Concurrent Viewers), Tổng lượt xem, Tỷ lệ tương tác (bình luận, lượt thích, chia sẻ), Tỷ lệ nhấp vào sản phẩm (Click-Through Rate), Tỷ lệ chuyển đổi (Conversion Rate), và Doanh thu trên mỗi phiên live.'
+        },
+        {
+            question: 'A/B testing trong livestream là gì?',
+            answer: 'Là việc thử nghiệm hai phiên bản khác nhau của một yếu tố để xem phiên bản nào hiệu quả hơn. Ví dụ, bạn có thể A/B test hai kịch bản khác nhau, hai cách giới thiệu sản phẩm khác nhau, hoặc hai loại khuyến mãi khác nhau để xem cách nào tạo ra nhiều đơn hàng hơn.'
+        },
+        {
+            question: 'Làm thế nào để theo dõi phễu chuyển đổi (conversion funnel) trong live commerce?',
+            answer: 'Phễu chuyển đổi trong live commerce thường bao gồm các bước: Người xem (Viewer) -> Người tương tác (Engager) -> Người nhấp vào sản phẩm (Clicker) -> Người thêm vào giỏ hàng (Adder) -> Người mua hàng (Buyer). Theo dõi tỷ lệ rớt ở mỗi bước giúp bạn xác định điểm yếu cần cải thiện.'
+        },
+        {
+            question: 'Phân tích dự báo (predictive analytics) có thể giúp gì cho live commerce?',
+            answer: 'Nó có thể dự báo doanh thu tiềm năng của một phiên live dựa trên các yếu tố như sản phẩm, thời gian, và người dẫn chương trình. Nó cũng có thể đề xuất sản phẩm nào nên được giới thiệu vào thời điểm nào để tối đa hóa khả năng "chốt đơn".'
+        },
+        {
+            question: 'ROI (Return on Investment) của một chiến dịch live commerce được tính như thế nào?',
+            answer: 'ROI được tính bằng cách lấy Lợi nhuận ròng (Doanh thu trừ đi Chi phí) chia cho tổng Chi phí, sau đó nhân với 100%. Chi phí có thể bao gồm chi phí sản phẩm, chi phí thuê streamer, chi phí quảng cáo, v.v.'
+        },
+        {
+            question: 'Làm thế nào để biết khán giả rời đi ở đoạn nào của livestream?',
+            answer: 'Hầu hết các nền tảng livestream đều cung cấp biểu đồ phân tích lượt xem theo thời gian. Bằng cách xem biểu đồ này, bạn có thể thấy những điểm mà lượt "mắt xem" bị sụt giảm đột ngột, từ đó phân tích xem nội dung ở thời điểm đó có vấn đề gì không.'
+        },
+        {
+            question: 'Dữ liệu nhân khẩu học của khán giả (tuổi, giới tính, vị trí) giúp ích gì?',
+            answer: 'Dữ liệu này giúp bạn hiểu rõ hơn về đối tượng khách hàng của mình. Từ đó, bạn có thể lựa chọn sản phẩm, xây dựng kịch bản và sử dụng ngôn ngữ phù hợp hơn để thu hút họ.'
+        },
+        {
+            question: 'Làm thế nào để tối ưu hóa dựa trên dữ liệu mà không làm mất đi tính tự nhiên của livestream?',
+            answer: 'Hãy sử dụng dữ liệu như một kim chỉ nam, không phải một kịch bản cứng nhắc. Dữ liệu giúp bạn hiểu "cái gì" đang hoạt động hiệu quả, nhưng "tại sao" và "làm thế nào" để thực hiện nó một cách duyên dáng vẫn phụ thuộc vào sự sáng tạo và kỹ năng của streamer.'
+        },
+        {
+            question: 'Báo cáo hiệu suất live commerce nên bao gồm những gì?',
+            answer: 'Một báo cáo tốt nên bao gồm cả chỉ số về tương tác (lượt xem, bình luận, chia sẻ) và chỉ số kinh doanh (doanh thu, số đơn hàng, giá trị đơn hàng trung bình). Báo cáo cũng nên có phần nhận xét, phân tích nguyên nhân và đề xuất các hành động cải thiện cho lần sau.'
+        },
+        {
+            question: 'Làm thế nào để phân tích đối thủ cạnh tranh trong live commerce?',
+            answer: 'Hãy xem các phiên live của họ, chú ý đến sản phẩm họ bán, cách họ tương tác, các chương trình khuyến mãi họ sử dụng, và lượng tương tác họ nhận được. Nhiều công cụ phân tích mạng xã hội cũng cho phép bạn theo dõi hiệu suất của các đối thủ.'
+        }
+    ],
     careerConnect: {
       name: 'Anh Nguyễn Hoàng Long',
       title: 'Chuyên gia Phân tích Dữ liệu TMĐT',

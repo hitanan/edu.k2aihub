@@ -53,6 +53,30 @@ const lessons: MobileAppDevelopmentLesson[] = [
         answer:
           'API (Giao diện lập trình ứng dụng) là cách để các chương trình máy tính giao tiếp với nhau. Ứng dụng di động cần tích hợp API để lấy dữ liệu từ máy chủ (ví dụ: danh sách sản phẩm, thông tin người dùng), gửi dữ liệu lên máy chủ (ví dụ: đặt hàng), hoặc sử dụng dịch vụ của bên thứ ba (ví dụ: bản đồ, thanh toán).',
       },
+      {
+        question: 'State management trong React Native là gì?',
+        answer: 'State là dữ liệu nội bộ của một component, quyết định component đó sẽ hiển thị như thế nào. State management là quá trình quản lý sự thay đổi của dữ liệu này trong toàn bộ ứng dụng. Các thư viện phổ biến để quản lý state phức tạp bao gồm Redux, MobX, hoặc Context API của React.'
+      },
+      {
+        question: 'React Navigation là gì?',
+        answer: 'React Navigation là thư viện phổ biến nhất để quản lý việc điều hướng giữa các màn hình trong ứng dụng React Native. Nó cung cấp các loại điều hướng khác nhau như Stack (xếp chồng), Tab (thanh tab), và Drawer (ngăn kéo).'
+      },
+      {
+        question: 'Làm thế nào để gỡ lỗi (debug) một ứng dụng React Native?',
+        answer: 'Bạn có thể sử dụng các công cụ tích hợp sẵn như Flipper, React Native Debugger, hoặc đơn giản là menu gỡ lỗi trong ứng dụng (lắc điện thoại hoặc dùng phím tắt) để theo dõi log, kiểm tra giao diện và hiệu năng.'
+      },
+      {
+        question: 'Expo và React Native CLI khác nhau như thế nào?',
+        answer: 'React Native CLI cho phép bạn toàn quyền kiểm soát dự án, bao gồm cả việc viết code native. Expo là một nền tảng và bộ công cụ xây dựng trên React Native, giúp đơn giản hóa quá trình phát triển và triển khai, nhưng có một số giới hạn về việc sử dụng các thư viện native.'
+      },
+      {
+        question: 'Làm thế nào để ứng dụng React Native có hiệu năng tốt?',
+        answer: 'Để tối ưu hiệu năng, bạn nên tránh các re-render không cần thiết bằng cách sử dụng `React.memo`, `useCallback`, `useMemo`. Ngoài ra, hãy tối ưu hóa việc xử lý danh sách dài với `FlatList` và giảm kích thước bundle của ứng dụng.'
+      },
+      {
+        question: 'Tôi có thể sử dụng các thư viện JavaScript thông thường trong React Native không?',
+        answer: 'Có, bạn có thể sử dụng hầu hết các thư viện JavaScript không phụ thuộc vào DOM của trình duyệt. Đối với các thư viện cần tương tác với phần cứng hoặc API của hệ điều hành, bạn cần tìm các phiên bản được viết riêng cho React Native.'
+      }
     ],
   },
   {
@@ -93,6 +117,34 @@ const lessons: MobileAppDevelopmentLesson[] = [
         answer:
           'Đây là bộ quy tắc và khuyến nghị thiết kế của Apple. Tuân thủ chúng giúp ứng dụng của bạn có giao diện và trải nghiệm người dùng nhất quán, quen thuộc với người dùng iOS, từ đó tăng khả năng được chấp nhận và đánh giá cao trên App Store.',
       },
+      {
+        question: 'Xcode là gì?',
+        answer: 'Xcode là môi trường phát triển tích hợp (IDE) chính thức của Apple để xây dựng ứng dụng cho tất cả các nền tảng của họ. Nó bao gồm trình soạn thảo mã, trình gỡ lỗi, trình thiết kế giao diện và các công cụ để gửi ứng dụng lên App Store.'
+      },
+      {
+        question: 'UIKit và SwiftUI, tôi nên học cái nào?',
+        answer: 'SwiftUI là tương lai của phát triển UI trên nền tảng Apple và dễ học hơn. Tuy nhiên, rất nhiều ứng dụng hiện tại vẫn đang sử dụng UIKit. Nếu bạn là người mới, hãy bắt đầu với SwiftUI, nhưng có kiến thức cơ bản về UIKit vẫn rất hữu ích.'
+      },
+      {
+        question: 'Làm thế nào để quản lý các gói phụ thuộc trong dự án iOS?',
+        answer: 'Bạn có thể sử dụng Swift Package Manager (SPM), một công cụ được tích hợp sẵn trong Xcode, để dễ dàng thêm, xóa và quản lý các thư viện của bên thứ ba trong dự án của mình. CocoaPods và Carthage là các lựa chọn phổ biến khác nhưng cũ hơn.'
+      },
+      {
+        question: 'Auto Layout là gì?',
+        answer: 'Auto Layout là một hệ thống dựa trên các ràng buộc (constraints) trong UIKit, giúp bạn tạo ra các giao diện có thể tự động điều chỉnh theo các kích thước và hướng màn hình khác nhau. Đây là nền tảng của thiết kế giao diện đáp ứng trên iOS.'
+      },
+      {
+        question: 'CloudKit là gì?',
+        answer: 'CloudKit là một framework của Apple cho phép bạn lưu trữ và đồng bộ hóa dữ liệu ứng dụng của mình trên iCloud một cách dễ dàng. Nó cung cấp một giải pháp backend đơn giản mà không cần phải tự quản lý máy chủ.'
+      },
+      {
+        question: 'TestFlight là gì?',
+        answer: 'TestFlight là một nền tảng của Apple cho phép bạn mời người dùng thử nghiệm phiên bản beta của ứng dụng trước khi phát hành chính thức trên App Store. Đây là một công cụ quan trọng để thu thập phản hồi và sửa lỗi.'
+      },
+      {
+        question: 'Tôi có cần một chiếc iPhone để phát triển ứng dụng iOS không?',
+        answer: 'Không bắt buộc. Xcode cung cấp một trình giả lập (Simulator) mạnh mẽ cho phép bạn chạy và kiểm tra ứng dụng trên nhiều loại thiết bị và phiên bản iOS khác nhau ngay trên máy Mac. Tuy nhiên, việc kiểm tra trên thiết bị thật vẫn được khuyến khích để đảm bảo trải nghiệm tốt nhất.'
+      }
     ],
     realWorldApplications: [
       'Banking apps như VietinBank iPay, ACB Mobile',
@@ -140,6 +192,34 @@ const lessons: MobileAppDevelopmentLesson[] = [
         answer:
           'Room là một thư viện trong bộ Android Jetpack, cung cấp một lớp trừu tượng trên SQLite để cho phép truy cập cơ sở dữ liệu một cách mạnh mẽ hơn trong khi vẫn khai thác toàn bộ sức mạnh của SQLite. Nó giúp giảm code soạn sẵn và xác minh các truy vấn SQL tại thời điểm biên dịch.',
       },
+      {
+        question: 'Android Studio là gì?',
+        answer: 'Android Studio là Môi trường phát triển tích hợp (IDE) chính thức để phát triển ứng dụng Android. Nó được xây dựng trên IntelliJ IDEA của JetBrains và cung cấp các công cụ chuyên dụng cho việc phát triển Android.'
+      },
+      {
+        question: 'ViewModel trong Android là gì?',
+        answer: 'ViewModel là một lớp trong Android Architecture Components, được thiết kế để lưu trữ và quản lý dữ liệu liên quan đến UI một cách có ý thức về vòng đời. Nó giúp dữ liệu tồn tại sau các thay đổi cấu hình như xoay màn hình.'
+      },
+      {
+        question: 'Sự khác biệt giữa `findViewById` và `View Binding` là gì?',
+        answer: '`findViewById` là cách truyền thống để tham chiếu đến các view trong layout XML, nhưng nó không an toàn về kiểu và dễ gây ra lỗi. `View Binding` là một tính năng hiện đại hơn, tự động tạo ra một lớp tham chiếu trực tiếp đến các view, giúp code an toàn và ngắn gọn hơn.'
+      },
+      {
+        question: 'APK và AAB (Android App Bundle) khác nhau như thế nào?',
+        answer: 'APK là định dạng tệp truyền thống mà bạn cài đặt trên thiết bị. AAB là định dạng xuất bản mà bạn tải lên Google Play. Google Play sau đó sẽ sử dụng App Bundle để tạo và phân phát các APK được tối ưu hóa cho từng cấu hình thiết bị của người dùng, giúp giảm kích thước ứng dụng.'
+      },
+      {
+        question: 'Coroutines trong Kotlin là gì?',
+        answer: 'Coroutines là một tính năng của Kotlin giúp đơn giản hóa việc viết mã bất đồng bộ. Chúng cho phép bạn viết các thao tác chạy nền (như gọi API, truy vấn cơ sở dữ liệu) một cách tuần tự mà không chặn luồng chính, giúp ứng dụng luôn mượt mà.'
+      },
+      {
+        question: 'Gradle trong Android là gì?',
+        answer: 'Gradle là một hệ thống tự động hóa xây dựng được sử dụng để quản lý các phụ thuộc (dependencies) và định nghĩa quy trình xây dựng ứng dụng Android của bạn. Tệp `build.gradle` là nơi bạn khai báo các thư viện và cấu hình cho dự án.'
+      },
+      {
+        question: 'Làm thế nào để hỗ trợ nhiều kích thước màn hình trên Android?',
+        answer: 'Bạn nên sử dụng các layout linh hoạt như `ConstraintLayout`, cung cấp các tài nguyên thay thế (alternative resources) cho các kích thước màn hình khác nhau, và sử dụng các đơn vị như `dp` (density-independent pixels) thay vì `px` (pixels).'
+      }
     ],
     realWorldApplications: [
       'E-commerce apps như Shopee, Lazada',
@@ -187,6 +267,34 @@ const lessons: MobileAppDevelopmentLesson[] = [
         answer:
           'Chọn Flutter nếu bạn ưu tiên một giao diện tùy chỉnh cao, hiệu năng gần bằng native và muốn phát triển cho cả web và desktop từ cùng một codebase. Chọn React Native nếu đội ngũ của bạn đã quen thuộc với React và JavaScript, và muốn tận dụng một hệ sinh thái thư viện lớn hơn.',
       },
+      {
+        question: 'Widget trong Flutter là gì?',
+        answer: 'Trong Flutter, mọi thứ đều là Widget. Từ một nút bấm, một dòng chữ, đến toàn bộ màn hình. Bạn xây dựng giao diện bằng cách lồng các widget vào nhau, tạo thành một cây widget (widget tree).'
+      },
+      {
+        question: 'StatefulWidget và StatelessWidget khác nhau như thế nào?',
+        answer: '`StatelessWidget` là các widget không thay đổi theo thời gian, chúng chỉ được vẽ một lần. `StatefulWidget` là các widget có trạng thái (state) có thể thay đổi trong quá trình sử dụng, và giao diện của chúng sẽ được vẽ lại mỗi khi trạng thái thay đổi.'
+      },
+      {
+        question: 'Làm thế nào để quản lý trạng thái (state management) trong Flutter?',
+        answer: 'Đối với các ứng dụng phức tạp, bạn nên sử dụng các giải pháp quản lý trạng thái như Provider, Riverpod, Bloc, hoặc GetX. Chúng giúp tách biệt logic nghiệp vụ khỏi giao diện và giúp việc quản lý dữ liệu trong ứng dụng trở nên dễ dàng hơn.'
+      },
+      {
+        question: 'Pub.dev là gì?',
+        answer: 'Pub.dev là kho lưu trữ các gói (packages) và plugin cho Dart và Flutter. Đây là nơi bạn có thể tìm thấy hàng ngàn thư viện của cộng đồng để thêm các chức năng vào ứng dụng của mình, từ việc gọi API đến tích hợp bản đồ.'
+      },
+      {
+        question: 'Hot Reload trong Flutter hoạt động như thế nào?',
+        answer: 'Hot Reload là một tính năng cực kỳ mạnh mẽ của Flutter. Nó cho phép bạn thấy ngay lập tức các thay đổi về giao diện và logic mà không cần phải khởi động lại toàn bộ ứng dụng, giúp tăng tốc độ phát triển lên đáng kể.'
+      },
+      {
+        question: 'Firebase là gì và nó hoạt động với Flutter như thế nào?',
+        answer: 'Firebase là một nền tảng phát triển ứng dụng di động của Google, cung cấp các dịch vụ backend như xác thực người dùng, cơ sở dữ liệu thời gian thực (Firestore), lưu trữ tệp, và nhiều hơn nữa. Flutter có sự tích hợp rất tốt với Firebase thông qua các plugin chính thức.'
+      },
+      {
+        question: 'Flutter có thể gọi code native (Swift/Kotlin) không?',
+        answer: 'Có, Flutter cung cấp một cơ chế gọi là "platform channels" cho phép ứng dụng Flutter của bạn giao tiếp và gọi các hàm được viết bằng ngôn ngữ native của nền tảng (Swift/Objective-C cho iOS và Kotlin/Java cho Android).'
+      }
     ],
     realWorldApplications: [
       'Startup MVP development',
@@ -234,6 +342,34 @@ const lessons: MobileAppDevelopmentLesson[] = [
         answer:
           'Ngoài ASO, hãy xem xét các kênh marketing khác như quảng cáo trên mạng xã hội (Facebook, TikTok), hợp tác với các KOLs/Influencer Việt Nam, chạy các chiến dịch PR trên các trang báo công nghệ, và tạo ra các chương trình giới thiệu (referral) để khuyến khích người dùng hiện tại mời bạn bè.',
       },
+      {
+        question: 'Làm thế nào để nghiên cứu từ khóa cho ASO?',
+        answer: 'Bạn có thể sử dụng các công cụ ASO như AppTweak, Sensor Tower, hoặc đơn giản là sử dụng tính năng gợi ý tìm kiếm trên App Store/Google Play. Hãy nghĩ xem người dùng sẽ tìm kiếm thuật ngữ gì để giải quyết vấn đề mà ứng dụng của bạn cung cấp.'
+      },
+      {
+        question: 'Tỷ lệ chuyển đổi (Conversion Rate) trong ASO là gì?',
+        answer: 'Là tỷ lệ phần trăm người dùng đã tải xuống ứng dụng của bạn sau khi xem trang ứng dụng. Để cải thiện tỷ lệ này, bạn cần có một biểu tượng hấp dẫn, ảnh chụp màn hình rõ ràng và một mô tả thuyết phục.'
+      },
+      {
+        question: 'Tại sao xếp hạng và đánh giá lại quan trọng?',
+        answer: 'Xếp hạng và đánh giá là một bằng chứng xã hội mạnh mẽ. Các ứng dụng có xếp hạng cao và nhiều đánh giá tích cực thường được tin tưởng hơn và có thứ hạng tìm kiếm tốt hơn. Hãy khuyến khích người dùng hài lòng để lại đánh giá.'
+      },
+      {
+        question: 'Làm thế nào để theo dõi hiệu quả của các chiến dịch marketing ứng dụng?',
+        answer: 'Bạn nên tích hợp một SDK phân tích di động như Firebase Analytics, AppsFlyer, hoặc Adjust. Các công cụ này giúp bạn theo dõi người dùng đến từ đâu, hành vi của họ trong ứng dụng và hiệu quả của từng kênh marketing.'
+      },
+      {
+        question: 'Các mô hình kiếm tiền phổ biến cho ứng dụng di động là gì?',
+        answer: 'Các mô hình phổ biến bao gồm: ứng dụng trả phí, mua hàng trong ứng dụng (in-app purchases), đăng ký theo tháng/năm (subscriptions), hiển thị quảng cáo, và mô hình freemium (miễn phí các tính năng cơ bản, trả phí cho các tính năng nâng cao).'
+      },
+      {
+        question: 'Push notification (thông báo đẩy) có vai trò gì trong việc giữ chân người dùng?',
+        answer: 'Thông báo đẩy là một công cụ mạnh mẽ để kéo người dùng quay trở lại ứng dụng. Tuy nhiên, hãy sử dụng chúng một cách thông minh, gửi đi những thông báo thực sự hữu ích và có liên quan, nếu không người dùng sẽ tắt chúng hoặc gỡ bỏ ứng dụng.'
+      },
+      {
+        question: 'Localize (bản địa hóa) ứng dụng có quan trọng không?',
+        answer: 'Rất quan trọng, đặc biệt ở thị trường Việt Nam. Việc dịch ứng dụng, mô tả trên cửa hàng và các tài liệu marketing sang tiếng Việt sẽ giúp bạn tiếp cận và thuyết phục người dùng bản địa tốt hơn rất nhiều.'
+      }
     ],
     realWorldApplications: [
       'Mobile app marketing campaigns',

@@ -195,6 +195,30 @@ export const lessons: BaseLessonData[] = [
         answer:
           'Điều này phụ thuộc vào sản phẩm và đối tượng khách hàng của bạn. Tuy nhiên, nhìn chung, một chiến lược hiệu quả tại Việt Nam thường không thể bỏ qua: 1. Mạng xã hội (Facebook, TikTok, Zalo) để xây dựng cộng đồng và tương tác. 2. Công cụ tìm kiếm (Google) để bắt lấy nhu cầu của khách hàng. 3. Các sàn thương mại điện tử (Shopee, Lazada, TikTok Shop) nếu bạn bán lẻ.',
       },
+      {
+        question: 'Customer Journey Map (Bản đồ hành trình khách hàng) là gì?',
+        answer: 'Đó là một sơ đồ trực quan mô tả toàn bộ trải nghiệm của khách hàng với công ty của bạn, từ lúc họ nhận biết về bạn lần đầu tiên, đến lúc cân nhắc, mua hàng, và trở thành khách hàng trung thành. Việc lập bản đồ này giúp bạn xác định các "điểm chạm" quan trọng và cơ hội để cải thiện trải nghiệm khách hàng.'
+      },
+      {
+        question: 'Marketing 360 độ là gì?',
+        answer: 'Marketing 360 độ là một chiến lược tiếp thị tích hợp, sử dụng đồng bộ nhiều kênh cả online (SEO, social media, email) và offline (sự kiện, PR) để tạo ra một trải nghiệm thương hiệu nhất quán và liền mạch cho khách hàng ở mọi điểm chạm.'
+      },
+      {
+        question: 'Làm thế nào để đo lường ROI (Return on Investment) trong Digital Marketing?',
+        answer: 'Để đo lường ROI, bạn lấy tổng doanh thu tạo ra từ marketing, trừ đi tổng chi phí marketing, sau đó chia cho tổng chi phí marketing. Ví dụ: (Doanh thu 100 triệu - Chi phí 20 triệu) / Chi phí 20 triệu = 4. Điều này có nghĩa là ROI của bạn là 400%, hay mỗi 1 đồng chi ra bạn thu về 4 đồng lợi nhuận.'
+      },
+      {
+        question: 'Sự khác biệt giữa Inbound và Outbound Marketing là gì?',
+        answer: 'Outbound Marketing là hình thức "chen ngang" như quảng cáo TV, gọi điện thoại. Inbound Marketing là hình thức "thu hút" khách hàng bằng cách tạo ra nội dung giá trị (blog, video, SEO) để họ tự tìm đến bạn. Digital marketing hiện đại tập trung nhiều vào Inbound Marketing.'
+      },
+      {
+        question: 'Pain points (Điểm đau) của khách hàng là gì?',
+        answer: 'Pain points là những vấn đề, thách thức, hoặc sự khó chịu cụ thể mà khách hàng tiềm năng của bạn đang gặp phải. Hiểu rõ "nỗi đau" của họ là chìa khóa để định vị sản phẩm của bạn như một giải pháp và tạo ra các thông điệp marketing hiệu quả.'
+      },
+      {
+        question: 'Tại sao cần phải có một website chuyên nghiệp?',
+        answer: 'Website là "ngôi nhà số" của thương hiệu bạn. Đó là nơi bạn hoàn toàn kiểm soát thông điệp và trải nghiệm của khách hàng, không phụ thuộc vào thuật toán của mạng xã hội. Một website chuyên nghiệp xây dựng sự tin cậy, thu thập dữ liệu khách hàng và là trung tâm cho mọi hoạt động digital marketing.'
+      }
     ],
   },
   {
@@ -352,6 +376,30 @@ export const lessons: BaseLessonData[] = [
         answer:
           'KOL (Key Opinion Leader) là người có sức ảnh hưởng lớn, còn KOC (Key Opinion Consumer) là người tiêu dùng có chuyên môn và đưa ra đánh giá chân thực. Bạn nên sử dụng họ khi muốn tăng độ nhận diện thương hiệu, xây dựng lòng tin và thúc đẩy doanh số. Hãy chọn những người có tệp người theo dõi phù hợp với khách hàng mục tiêu của bạn và có phong cách chân thực, đáng tin cậy.',
       },
+      {
+        question: 'Content Pillar (Trụ cột nội dung) là gì?',
+        answer: 'Content Pillar là 3-5 chủ đề cốt lõi mà thương hiệu của bạn sẽ tập trung vào. Việc xác định các trụ cột này giúp bạn tạo ra nội dung nhất quán, có chiều sâu và xây dựng được vị thế chuyên gia trong lĩnh vực của mình, thay vì sản xuất nội dung một cách ngẫu hứng.'
+      },
+      {
+        question: 'Làm thế nào để xử lý khủng hoảng truyền thông trên mạng xã hội?',
+        answer: 'Quy tắc vàng là: Nhanh chóng, Minh bạch và Chân thành. Hãy thừa nhận vấn đề một cách nhanh chóng, đưa ra lời giải thích rõ ràng (nếu có thể), thể hiện sự đồng cảm và đưa ra giải pháp. Đừng xóa các bình luận tiêu cực (trừ khi chúng có nội dung xúc phạm), thay vào đó hãy trả lời một cách chuyên nghiệp.'
+      },
+      {
+        question: 'Social Listening là gì?',
+        answer: 'Social Listening là quá trình theo dõi các nền tảng mạng xã hội để tìm kiếm các cuộc trò chuyện và đề cập liên quan đến thương hiệu, sản phẩm, đối thủ cạnh tranh và ngành của bạn. Nó giúp bạn nắm bắt tâm lý khách hàng, phát hiện xu hướng và xử lý các vấn đề tiềm ẩn trước khi chúng bùng phát.'
+      },
+      {
+        question: 'Hashtag có vai trò gì và sử dụng chúng như thế nào cho hiệu quả?',
+        answer: 'Hashtag giúp phân loại nội dung và tăng khả năng khám phá bài viết của bạn cho những người quan tâm đến chủ đề đó. Một chiến lược hiệu quả là sử dụng kết hợp các loại hashtag: hashtag thương hiệu (ví dụ: #BitisHunter), hashtag chiến dịch (ví dụ: #DiDeTroVe), và hashtag cộng đồng (ví dụ: #foodreview).'
+      },
+      {
+        question: 'Thế nào là một nội dung "viral"?',
+        answer: 'Một nội dung viral là nội dung được lan truyền một cách tự nhiên và nhanh chóng bởi người dùng. Các yếu tố thường thấy ở nội dung viral bao gồm: cảm xúc mạnh (hài hước, cảm động, ngạc nhiên), tính liên quan cao, tính độc đáo, hoặc khơi gợi một cuộc tranh luận. Tuy nhiên, việc tạo ra nội dung viral là rất khó và không thể đoán trước.'
+      },
+      {
+        question: 'Social Commerce là gì?',
+        answer: 'Social Commerce là hình thức mua bán sản phẩm trực tiếp trên các nền tảng mạng xã hội (ví dụ: Facebook Shop, Instagram Shopping, TikTok Shop). Nó rút ngắn hành trình mua sắm của khách hàng bằng cách cho phép họ khám phá và mua hàng mà không cần rời khỏi ứng dụng, tạo ra trải nghiệm mua sắm liền mạch và tiện lợi.'
+      }
     ],
   },
   {
@@ -471,6 +519,30 @@ export const lessons: BaseLessonData[] = [
         answer:
           'Bạn cần đo lường các chỉ số phù hợp với mục tiêu của mình. Nếu mục tiêu là nhận diện thương hiệu, hãy đo lường lượt truy cập (traffic), lượt xem (views), lượt chia sẻ (shares). Nếu mục tiêu là tạo khách hàng tiềm năng (leads), hãy đo lường số lượng email đăng ký, lượt tải ebook. Nếu mục tiêu là doanh số, hãy theo dõi tỷ lệ chuyển đổi từ những người đã xem nội dung của bạn.',
       },
+      {
+        question: 'Content Funnel (Phễu nội dung) là gì?',
+        answer: 'Đó là một mô hình mô tả việc tạo ra các loại nội dung khác nhau cho từng giai đoạn của hành trình của khách hàng. Giai đoạn đầu phễu (TOFU) là nội dung thu hút (blog, video giải trí). Giai đoạn giữa (MOFU) là nội dung nuôi dưỡng (ebook, webinar). Giai đoạn cuối (BOFU) là nội dung chuyển đổi (case study, demo sản phẩm).'
+      },
+      {
+        question: 'Làm thế nào để tìm ý tưởng viết bài không bao giờ cạn?',
+        answer: 'Hãy bắt đầu từ khách hàng của bạn. Họ đang hỏi những câu gì? Họ gặp khó khăn gì? Sử dụng các công cụ nghiên cứu từ khóa (Ahrefs, SEMrush), theo dõi các câu hỏi trên các diễn đàn (Quora, Reddit), xem đối thủ của bạn đang viết gì, và tái sử dụng nội dung cũ dưới các định dạng mới (ví dụ: biến một bài blog thành video).'
+      },
+      {
+        question: 'Brand Narrative (Tường thuật thương hiệu) là gì?',
+        answer: 'Brand Narrative là câu chuyện tổng thể, bao trùm mà thương hiệu của bạn kể cho thế giới. Nó không chỉ là một câu chuyện đơn lẻ, mà là một chuỗi các thông điệp, giá trị, và trải nghiệm nhất quán qua thời gian, giúp định hình cách công chúng nhìn nhận về thương hiệu của bạn.'
+      },
+      {
+        question: 'Evergreen Content (Nội dung thường xanh) là gì?',
+        answer: 'Là loại nội dung không bị lỗi thời và vẫn giữ nguyên giá trị theo thời gian. Ví dụ: "Hướng dẫn cách chăm sóc cây cảnh trong nhà" là nội dung thường xanh, trong khi "Tin tức về sự kiện X" sẽ nhanh chóng mất đi sự liên quan. Đầu tư vào nội dung thường xanh rất tốt cho SEO và thu hút lưu lượng truy cập bền vững.'
+      },
+      {
+        question: 'Tại sao Storytelling lại quan trọng trong marketing?',
+        answer: 'Con người được lập trình để ghi nhớ và kết nối với các câu chuyện, không phải các dữ kiện và con số. Kể chuyện giúp thương hiệu của bạn trở nên gần gũi, dễ nhớ và khác biệt. Một câu chuyện hay có thể truyền tải giá trị, xây dựng lòng tin và thúc đẩy hành động hiệu quả hơn bất kỳ lời quảng cáo nào.'
+      },
+      {
+        question: 'Làm thế nào để đo lường ROI của Content Marketing?',
+        answer: 'Đây là một thách thức. Một cách tiếp cận là sử dụng các mô hình phân bổ (attribution models) trong Google Analytics để xem nội dung nào đã đóng góp vào hành trình của khách hàng trước khi họ mua hàng. Bạn cũng có thể theo dõi các chỉ số gián tiếp như tăng trưởng lưu lượng truy cập tự nhiên, số lượng khách hàng tiềm năng tạo ra, và sự cải thiện về nhận diện thương hiệu.'
+      }
     ],
   },
   {
@@ -630,6 +702,30 @@ export const lessons: BaseLessonData[] = [
         answer:
           'Backlink là một liên kết từ một website khác trỏ về website của bạn. Google xem mỗi backlink như một "phiếu bầu" cho sự uy tín của website bạn. Càng có nhiều phiếu bầu từ các website uy tín, chất lượng, Google càng tin tưởng và xếp hạng website của bạn cao hơn. Tuy nhiên, chất lượng của backlink quan trọng hơn số lượng.',
       },
+      {
+        question: 'Sự khác biệt giữa SEO On-page, Off-page và Technical SEO là gì?',
+        answer: 'SEO On-page là tối ưu hóa các yếu tố ngay trên trang web của bạn (nội dung, từ khóa, tiêu đề). SEO Off-page là các hoạt động bên ngoài website để tăng uy tín (xây dựng backlink, social media). Technical SEO là đảm bảo nền tảng kỹ thuật của website thân thiện với công cụ tìm kiếm (tốc độ trang, cấu trúc dữ liệu, sitemap).'
+      },
+      {
+        question: 'Keyword Research (Nghiên cứu từ khóa) là gì?',
+        answer: 'Đó là quá trình tìm kiếm và phân tích các cụm từ mà người dùng nhập vào công cụ tìm kiếm. Mục tiêu là tìm ra những từ khóa có lượng tìm kiếm cao, mức độ cạnh tranh vừa phải và quan trọng nhất là phù hợp với sản phẩm/dịch vụ của bạn. Đây là bước đầu tiên và quan trọng nhất trong mọi chiến dịch SEO.'
+      },
+      {
+        question: 'Domain Authority (DA) là gì?',
+        answer: 'Domain Authority là một chỉ số do công ty Moz tạo ra để dự đoán khả năng xếp hạng của một website trên công cụ tìm kiếm. Thang điểm từ 1 đến 100. DA cao hơn cho thấy website có uy tín và khả năng xếp hạng tốt hơn. Nó được tính toán dựa trên nhiều yếu tố, trong đó quan trọng nhất là số lượng và chất lượng của backlink.'
+      },
+      {
+        question: 'Local SEO là gì và nó quan trọng như thế nào đối với doanh nghiệp Việt Nam?',
+        answer: 'Local SEO là tối ưu hóa để website của bạn xuất hiện khi người dùng tìm kiếm các dịch vụ/sản phẩm "gần đây" (ví dụ: "quán cà phê gần đây"). Nó cực kỳ quan trọng cho các doanh nghiệp có địa điểm thực tế như nhà hàng, cửa hàng, spa... vì hầu hết khách hàng đều tìm kiếm thông tin trên Google Maps trước khi đến.'
+      },
+      {
+        question: 'Google E-E-A-T là gì?',
+        answer: 'E-E-A-T là viết tắt của Experience (Kinh nghiệm), Expertise (Chuyên môn), Authoritativeness (Thẩm quyền), và Trustworthiness (Độ tin cậy). Đây là các yếu tố Google sử dụng để đánh giá chất lượng của một trang web, đặc biệt là các trang trong lĩnh vực YMYL (Your Money or Your Life - liên quan đến tiền bạc, sức khỏe). Để có thứ hạng tốt, nội dung của bạn phải thể hiện được các yếu tố này.'
+      },
+      {
+        question: 'Làm thế nào để xây dựng backlink chất lượng?',
+        answer: 'Hãy tạo ra nội dung tuyệt vời mà người khác muốn liên kết đến một cách tự nhiên. Các phương pháp khác bao gồm: viết bài với tư cách khách (guest posting) trên các blog uy tín, tham gia vào các cuộc phỏng vấn hoặc podcast, và xây dựng các công cụ miễn phí hữu ích. Tránh mua backlink hoặc sử dụng các chiến thuật spam, vì chúng có thể khiến website của bạn bị Google phạt.'
+      }
     ],
   },
   {
@@ -815,6 +911,30 @@ export const lessons: BaseLessonData[] = [
         answer:
           'Remarketing là hình thức quảng cáo nhắm đến những người đã từng truy cập website của bạn nhưng chưa mua hàng. Đây là một chiến thuật cực kỳ hiệu quả vì bạn đang quảng cáo cho những người đã biết đến thương hiệu của bạn. Tỷ lệ chuyển đổi từ các chiến dịch remarketing thường cao hơn nhiều so với quảng cáo cho đối tượng hoàn toàn mới.',
       },
+      {
+        question: 'Chỉ số CTR (Click-Through Rate) là gì và nó có ý nghĩa gì?',
+        answer: 'CTR là tỷ lệ phần trăm số lần người dùng nhấp vào quảng cáo của bạn sau khi nhìn thấy nó. CTR cao cho thấy mẫu quảng cáo của bạn hấp dẫn và liên quan đến đối tượng mục tiêu. Trên Google Ads, CTR cao cũng góp phần làm tăng Điểm chất lượng (Quality Score) và giảm chi phí mỗi lượt nhấp.'
+      },
+      {
+        question: 'Điểm chất lượng (Quality Score) trong Google Ads là gì?',
+        answer: 'Quality Score là một chỉ số từ 1-10 mà Google dùng để đánh giá chất lượng và sự liên quan của quảng cáo, từ khóa và trang đích của bạn. Điểm chất lượng cao hơn sẽ giúp quảng cáo của bạn có vị trí tốt hơn và chi phí mỗi lượt nhấp (CPC) thấp hơn.'
+      },
+      {
+        question: 'Lookalike Audience (Đối tượng tương tự) trên Facebook là gì?',
+        answer: 'Đây là một công cụ cực kỳ mạnh mẽ của Facebook. Bạn có thể tải lên một danh sách khách hàng hiện tại của mình, và Facebook sẽ tìm và tạo ra một tệp đối tượng mới có những đặc điểm, sở thích và hành vi tương tự như tệp khách hàng gốc của bạn. Điều này giúp bạn mở rộng quy mô quảng cáo đến những người có khả năng cao sẽ quan tâm đến sản phẩm.'
+      },
+      {
+        question: 'PPC (Pay-Per-Click) là gì?',
+        answer: 'PPC là một mô hình quảng cáo trực tuyến trong đó nhà quảng cáo trả một khoản phí mỗi khi một trong số các quảng cáo của họ được nhấp chuột. Về cơ bản, đó là cách "mua" lượt truy cập vào trang web của bạn, thay vì cố gắng "kiếm" những lượt truy cập đó một cách tự nhiên thông qua SEO.'
+      },
+      {
+        question: 'Làm thế nào để tối ưu hóa trang đích (Landing Page) cho quảng cáo?',
+        answer: 'Trang đích phải có thông điệp nhất quán với quảng cáo. Nó cần có một tiêu đề rõ ràng, lợi ích nổi bật, hình ảnh/video hấp dẫn, bằng chứng xã hội (đánh giá, logo khách hàng), và một lời kêu gọi hành động (Call-to-Action) duy nhất, nổi bật. Tốc độ tải trang nhanh cũng cực kỳ quan trọng.'
+      },
+      {
+        question: 'Tôi có nên chạy quảng cáo trên TikTok không?',
+        answer: 'Nếu đối tượng khách hàng của bạn là Gen Z và Millennials trẻ, thì câu trả lời gần như chắc chắn là có. TikTok là một nền tảng mạnh mẽ để xây dựng nhận diện thương hiệu và thúc đẩy doanh số thông qua các video ngắn, sáng tạo. Quảng cáo trên TikTok thường có tính giải trí cao và ít "giống quảng cáo" hơn so với các nền tảng khác.'
+      }
     ],
   },
   {
@@ -1001,6 +1121,30 @@ export const lessons: BaseLessonData[] = [
         answer:
           'Một tiêu đề hiệu quả cần ngắn gọn, hấp dẫn và gợi sự tò mò. Hãy thử cá nhân hóa bằng cách thêm tên người nhận, sử dụng con số, đặt câu hỏi, hoặc tạo cảm giác khẩn cấp (một cách có chừng mực). A/B testing (thử nghiệm 2 phiên bản) các tiêu đề khác nhau là cách tốt nhất để biết điều gì hiệu quả với đối tượng của bạn.',
       },
+      {
+        question: 'Làm thế nào để xây dựng danh sách email (email list)?',
+        answer: 'Cách tốt nhất là cung cấp một thứ gì đó giá trị để đổi lấy địa chỉ email của người dùng. Đây được gọi là "lead magnet". Ví dụ: cung cấp một ebook miễn phí, một mã giảm giá, một checklist hữu ích, hoặc quyền truy cập vào một webinar. Đừng bao giờ mua danh sách email, vì nó sẽ làm hại đến uy tín của bạn và hiệu quả rất thấp.'
+      },
+      {
+        question: 'Phân khúc (Segmentation) trong email marketing là gì?',
+        answer: 'Phân khúc là việc chia danh sách email của bạn thành các nhóm nhỏ hơn dựa trên các tiêu chí nhất định (ví dụ: những người đã mua hàng, những người chưa mua, những người quan tâm đến sản phẩm A...). Việc này cho phép bạn gửi những nội dung phù hợp và cá nhân hóa hơn cho từng nhóm, từ đó tăng tỷ lệ mở và tỷ lệ nhấp.'
+      },
+      {
+        question: 'Tỷ lệ mở (Open Rate) và Tỷ lệ nhấp (Click-Through Rate) là gì?',
+        answer: 'Tỷ lệ mở là phần trăm người nhận đã mở email của bạn. Tỷ lệ nhấp là phần trăm người nhận đã nhấp vào một liên kết bên trong email đó. Đây là hai chỉ số cơ bản để đo lường mức độ hấp dẫn của tiêu đề và nội dung email của bạn.'
+      },
+      {
+        question: 'Chuỗi email chào mừng (Welcome Series) là gì?',
+        answer: 'Đó là một chuỗi từ 3-5 email được gửi tự động cho người đăng ký mới. Đây là cơ hội vàng để giới thiệu về thương hiệu của bạn, xây dựng lòng tin, và hướng dẫn họ những bước tiếp theo. Các email trong chuỗi chào mừng thường có tỷ lệ mở và tương tác cao nhất.'
+      },
+      {
+        question: 'Làm thế nào để viết nội dung email hấp dẫn?',
+        answer: 'Hãy viết như thể bạn đang nói chuyện với một người bạn. Sử dụng ngôn ngữ đơn giản, trực tiếp. Tập trung vào một ý chính cho mỗi email. Sử dụng các đoạn văn ngắn, gạch đầu dòng và hình ảnh để email dễ đọc hơn. Và quan trọng nhất, luôn có một lời kêu gọi hành động (Call-to-Action) rõ ràng.'
+      },
+      {
+        question: 'Các công cụ email marketing phổ biến ở Việt Nam là gì?',
+        answer: 'Trên thế giới, các công cụ phổ biến là Mailchimp, ConvertKit, Klaviyo. Tại Việt Nam, nhiều doanh nghiệp cũng sử dụng các giải pháp trong nước như GetResponse, Sendinblue (nay là Brevo), hoặc các nền tảng CRM có tích hợp email marketing như HubSpot, Zoho.'
+      }
     ],
   },
   {
@@ -1133,260 +1277,151 @@ export const lessons: BaseLessonData[] = [
    - **Insight:** 70% of traffic is mobile, nhưng mobile conversion là 40% lower.
    - **Expected Impact:** Increase mobile conversion rate by 20%.
 4. **Shift Budget to SEO & Content:** Reallocate 10% of paid search budget to content creation.
-   - **Expected Impact:** Boost organic traffic by 15% in 6 months.
-5. **Develop Customer Loyalty Program:** Increase retention and LTV.
-   - **Expected Impact:** Increase returning customer rate to 40%.`,
+   - **Expected Impact:** Increase organic traffic by 30%, improve brand visibility.`,
       },
     ],
     realWorldApplications: [
-      'E-commerce performance tracking và optimization',
-      'SaaS user behavior analysis và churn prediction',
-      'Content marketing ROI measurement',
-      'A/B testing cho landing page optimization',
-      'Multi-channel attribution modeling cho complex customer journeys',
+      'Tối ưu hóa chi tiêu marketing cho startup',
+      'Xây dựng hệ thống báo cáo marketing cho doanh nghiệp',
+      'Phân tích hành vi người dùng để cải thiện sản phẩm',
+      'Thực hiện A/B testing để tăng tỷ lệ chuyển đổi website',
+      'Dự báo doanh thu dựa trên dữ liệu marketing',
     ],
     faqs: [
       {
-        question: 'Tôi cần theo dõi những chỉ số (metrics) nào là quan trọng nhất?',
-        answer:
-          'Điều này phụ thuộc vào mục tiêu của bạn. Tuy nhiên, một vài chỉ số cốt lõi bao gồm: 1. **Traffic** (Lưu lượng truy cập): Có bao nhiêu người đến với bạn? 2. **Conversion Rate** (Tỷ lệ chuyển đổi): Bao nhiêu người trong số đó thực hiện hành động bạn muốn (mua hàng, điền form)? 3. **Cost Per Acquisition - CPA** (Chi phí cho mỗi chuyển đổi): Bạn tốn bao nhiêu tiền để có một khách hàng? 4. **Return on Ad Spend - ROAS** (Lợi nhuận trên chi tiêu quảng cáo): Mỗi đồng quảng cáo mang về bao nhiêu doanh thu?',
+        question: 'Data-Driven Marketing là gì?',
+        answer: 'Data-Driven Marketing (Marketing dựa trên dữ liệu) là phương pháp sử dụng dữ liệu thu thập được từ các tương tác của khách hàng để hiểu rõ hơn về họ, từ đó đưa ra các quyết định marketing chính xác, hiệu quả và được cá nhân hóa hơn.'
       },
       {
-        question: 'Google Analytics có quá phức tạp, tôi nên bắt đầu từ đâu?',
-        answer:
-          'Đừng cố gắng hiểu tất cả mọi thứ cùng một lúc. Hãy bắt đầu với 3 báo cáo chính: 1. **Báo cáo Thu nạp (Acquisition):** Xem khách hàng đến từ đâu (Google, Facebook, Zalo...). 2. **Báo cáo Hành vi (Behavior):** Xem họ làm gì trên website của bạn (họ xem trang nào nhiều nhất, họ ở lại bao lâu). 3. **Báo cáo Chuyển đổi (Conversions):** Xem liệu họ có hoàn thành các mục tiêu bạn đặt ra không. Nắm vững 3 báo cáo này là bạn đã có một nền tảng rất tốt.',
+        question: 'Google Analytics 4 (GA4) khác gì so với phiên bản cũ (Universal Analytics)?',
+        answer: 'GA4 là một sự thay đổi lớn. Nó tập trung vào việc theo dõi "sự kiện" (events) thay vì "phiên" (sessions), giúp theo dõi hành trình người dùng xuyên suốt trên cả website và ứng dụng di động. GA4 cũng tích hợp sâu hơn trí tuệ nhân tạo để đưa ra các dự báo và phân tích thông minh.'
       },
       {
         question: 'A/B testing là gì và tại sao nó quan trọng?',
-        answer:
-          'A/B testing là phương pháp so sánh hai phiên bản của một thứ gì đó (ví dụ: hai tiêu đề email khác nhau, hai màu nút "Mua ngay" khác nhau) để xem phiên bản nào hoạt động hiệu quả hơn. Nó cực kỳ quan trọng vì nó giúp bạn đưa ra quyết định dựa trên dữ liệu thực tế thay vì phỏng đoán, từ đó liên tục cải thiện hiệu quả marketing của bạn.',
+        answer: 'A/B testing là một phương pháp thử nghiệm trong đó bạn tạo ra hai phiên bản (A và B) của một yếu tố nào đó (ví dụ: tiêu đề, nút bấm, màu sắc) và cho một nửa người dùng xem phiên bản A, nửa còn lại xem phiên bản B. Bằng cách đo lường phiên bản nào có tỷ lệ chuyển đổi tốt hơn, bạn có thể đưa ra quyết định cải tiến dựa trên dữ liệu thực tế thay vì phỏng đoán.'
       },
       {
-        question: 'Làm thế nào để chứng minh marketing mang lại lợi nhuận cho công ty?',
-        answer:
-          'Bằng cách theo dõi và báo cáo ROI (Return on Investment - Tỷ suất hoàn vốn). Bạn cần tính toán tổng chi phí cho các hoạt động marketing (quảng cáo, nhân sự, công cụ...) và so sánh nó với tổng doanh thu mà các hoạt động đó mang lại. Các công cụ như Google Analytics cho phép bạn theo dõi giá trị chuyển đổi, giúp việc tính toán ROI trở nên dễ dàng và chính xác hơn.',
+        question: 'Conversion Funnel (Phễu chuyển đổi) là gì?',
+        answer: 'Phễu chuyển đổi là một mô hình mô tả các bước mà một người dùng trải qua từ lúc biết đến sản phẩm của bạn cho đến khi thực hiện một hành động mong muốn (ví dụ: mua hàng, đăng ký). Phân tích phễu giúp bạn xác định được người dùng đang "rơi rụng" ở bước nào để có biện pháp cải thiện.'
       },
-    ],
+      {
+        question: 'UTM parameters là gì và sử dụng chúng để làm gì?',
+        answer: 'UTM parameters là các đoạn mã bạn thêm vào cuối URL để theo dõi hiệu quả của các chiến dịch marketing. Chúng giúp Google Analytics biết được người dùng đến từ nguồn nào (utm_source), phương tiện nào (utm_medium), và chiến dịch cụ thể nào (utm_campaign). Điều này cực kỳ quan trọng để đo lường ROI của từng kênh.'
+      },
+      {
+        question: 'Làm thế nào để phân tích hành vi người dùng trên website?',
+        answer: 'Ngoài Google Analytics, bạn có thể sử dụng các công cụ như Hotjar hoặc Microsoft Clarity. Chúng cung cấp các bản đồ nhiệt (heatmaps) cho thấy người dùng hay nhấp vào đâu, các bản ghi phiên (session recordings) để xem lại chính xác cách người dùng tương tác với trang web, giúp bạn phát hiện các vấn đề về trải nghiệm người dùng.'
+      },
+      {
+        question: 'Chỉ số Bounce Rate (Tỷ lệ thoát) có còn quan trọng trong GA4 không?',
+        answer: 'Trong GA4, khái niệm Bounce Rate đã được thay thế bằng "Engaged sessions" (Phiên tương tác). Một phiên được tính là có tương tác nếu nó kéo dài hơn 10 giây, có một sự kiện chuyển đổi, hoặc có ít nhất 2 lượt xem trang. Tỷ lệ tương tác (Engagement Rate) là một chỉ số tích cực hơn, cho biết có bao nhiêu phần trăm người dùng thực sự tương tác với trang của bạn.'
+      },
+      {
+        question: 'Làm thế nào để bắt đầu với việc phân tích dữ liệu khi tôi không phải là chuyên gia?',
+        answer: 'Hãy bắt đầu đơn giản. Tập trung vào 3-5 chỉ số quan trọng nhất đối với doanh nghiệp của bạn (ví dụ: số lượng người dùng mới, tỷ lệ chuyển đổi, chi phí cho mỗi khách hàng). Sử dụng các báo cáo mặc định của Google Analytics. Đặt ra các câu hỏi kinh doanh cụ thể (ví dụ: "Kênh nào mang lại nhiều khách hàng nhất?") và dùng dữ liệu để trả lời chúng.'
+      },
+      {
+        question: 'Attribution Model (Mô hình phân bổ) là gì?',
+        answer: 'Mô hình phân bổ là quy tắc xác định cách ghi nhận công lao cho các điểm chạm trong hành trình chuyển đổi. Ví dụ, một khách hàng thấy quảng cáo Facebook, sau đó tìm kiếm trên Google, rồi mới mua hàng. Mô hình "Last Click" sẽ ghi 100% công lao cho Google. Các mô hình khác (Linear, Time Decay) sẽ phân chia công lao cho cả hai kênh. GA4 mặc định sử dụng mô hình dựa trên dữ liệu (Data-Driven Attribution).'
+      },
+      {
+        question: 'Làm thế nào để đảm bảo dữ liệu thu thập được là chính xác?',
+        answer: 'Việc cài đặt tracking code đúng cách là cực kỳ quan trọng. Sử dụng Google Tag Manager để quản lý tất cả các thẻ theo dõi một cách có tổ chức. Thường xuyên kiểm tra và xác thực các sự kiện chuyển đổi để đảm bảo chúng đang được ghi nhận chính xác. Lọc ra lưu lượng truy cập nội bộ (từ nhân viên công ty) để không làm sai lệch dữ liệu.'
+      }
+    ]
   },
   {
-    id: 'creator-economy-monetization',
-    title: 'Bài 8: Creator Economy & Monetization',
-    description:
-      'Kiếm tiền từ content creation và personal branding. Từ influencer marketing đến building personal brand empire.',
-    videoUrl: 'https://www.youtube.com/watch?v=eoWcQUjNM8o',
-    imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop',
+    id: 'creator-economy-personal-branding',
+    title: 'Bài 8: Creator Economy & Personal Branding',
+    description: 'Xây dựng thương hiệu cá nhân và tạo thu nhập từ đam mê của bạn trong nền kinh tế sáng tạo.',
+    videoUrl: 'https://www.youtube.com/watch?v=N46lJ-p4I4M',
+    imageUrl: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop',
     difficulty: 'Trung bình',
-    duration: '120 phút',
+    duration: '100 phút',
     objectives: [
-      'Xây dựng personal brand strategy',
-      'Hiểu creator economy landscape và opportunities',
-      'Develop multiple revenue streams từ content',
-      'Master influencer marketing và partnerships',
-      'Scale personal brand thành business empire',
+      'Hiểu về Creator Economy và các mô hình kinh doanh',
+      'Xây dựng chiến lược thương hiệu cá nhân bền vững',
+      'Tạo nội dung thu hút và xây dựng cộng đồng',
+      'Đa dạng hóa nguồn thu nhập (sản phẩm số, affiliate, brand deals)',
+      'Phát triển từ một người sáng tạo thành một doanh nghiệp',
     ],
-    prerequisites: ['Hiểu social media platforms', 'Content creation experience'],
+    prerequisites: ['Đam mê một lĩnh vực cụ thể', 'Kỹ năng giao tiếp và sáng tạo'],
     exercises: [
       {
-        title: 'Personal Brand Strategy',
-        description: 'Develop comprehensive personal brand strategy cho tech entrepreneur',
+        title: 'Personal Brand Strategy Blueprint',
+        description: 'Tạo một kế hoạch chi tiết để xây dựng thương hiệu cá nhân trong lĩnh vực công nghệ tại Việt Nam.',
         difficulty: 'Trung bình',
         materials: [
-          'Define brand positioning và unique value proposition',
-          'Analyze target audience segments',
-          'Develop content pillars và platform strategy',
-          'Create multi-year monetization plan',
+          'Xác định niche, đối tượng mục tiêu và thông điệp cốt lõi.',
+          'Lập kế hoạch nội dung cho 3-6 tháng đầu tiên.',
+          'Xây dựng kế hoạch đa dạng hóa nguồn thu nhập.',
+          'Đặt ra các KPI để đo lường sự thành công.',
         ],
-        expectedResults: 'Comprehensive personal brand strategy document với clear action plan',
-        solution: `# Personal Brand Strategy: "TechMinh" - Vietnam Tech Entrepreneur
+        expectedResults: 'Một bản kế hoạch chiến lược thương hiệu cá nhân hoàn chỉnh với các bước hành động cụ thể.',
+        solution: `# Personal Brand Strategy: "The Vietnam Tech Catalyst"
 
-## 1. Brand Positioning & Unique Value Proposition
+## 1. Brand Foundation
 
-### Core Identity:
-**Who:** Tech entrepreneur, startup advisor, angel investor
-**What:** Sharing practical insights về building tech startups trong Vietnamese market
-**Why:** Bridge gap between global startup best practices và Vietnamese business culture
+### Niche:
+Helping non-technical professionals (marketing, sales, HR) understand and leverage emerging technologies (AI, Blockchain, Low-code) in the Vietnamese business context.
 
-### Unique Value Proposition:
-"Practical startup wisdom for Vietnamese entrepreneurs - từ someone who built và sold 2 tech companies ở Vietnam"
+### Target Audience:
+- Mid-level managers (28-40) in non-tech roles in Vietnam.
+- Ambitious professionals looking to upskill.
+- Small business owners wanting to implement tech.
 
-### Brand Personality:
-- **Authentic:** Share both successes và failures openly
-- **Practical:** Focus on actionable advice rather than theory
-- **Local:** Understand Vietnamese business culture deeply
-- **Global:** Connected to international startup ecosystem
+### Core Message:
+"Bạn không cần phải là một lập trình viên để có thể ứng dụng công nghệ. Tôi sẽ giúp bạn dịch chuyển từ một người 'sợ công nghệ' thành một người 'lãnh đạo bằng công nghệ'."
 
-## 2. Target Audience Analysis
+### Unique Selling Proposition (USP):
+Simplifying complex tech concepts with practical, local Vietnamese case studies and actionable frameworks.
 
-### Primary Audience: "Aspiring Tech Entrepreneurs" (70%)
-- **Demographics:** 25-35 years old, college-educated, urban areas
-- **Psychographics:** Ambitious, risk-tolerant, tech-savvy
-- **Pain Points:** 
-  - Don't know how to start a tech business ở Vietnam
-  - Lack access to mentorship và networks
-  - Struggle with funding và investor relationships
-- **Content Preferences:** Practical tutorials, case studies, behind-the-scenes content
+## 2. Content Strategy (First 6 Months)
 
-### Secondary Audience: "Startup Employees" (20%)
-- **Demographics:** 22-30 years old, working at startups/tech companies
-- **Goals:** Career advancement, skill development, networking
-- **Pain Points:** Limited growth opportunities, want to learn from leaders
+### Content Pillars:
+1.  **Tech Explained Simply:** (e.g., "AI cho Marketers trong 5 phút", "Blockchain không phải là Bitcoin")
+2.  **Practical Applications:** (e.g., "5 công cụ AI giúp phòng nhân sự tiết kiệm 10 giờ/tuần")
+3.  **Career & Upskilling:** (e.g., "Kỹ năng công nghệ nào cần học trong năm 2025?")
+4.  **Vietnam Tech Scene:** (e.g., "Phỏng vấn CEO startup AI Việt Nam")
 
-### Tertiary Audience: "Investors & Partners" (10%)  
-- **Demographics:** 30-50 years old, VCs, angels, corporate partners
-- **Goals:** Deal flow, market insights, partnership opportunities
+### Platform Focus:
+1.  **LinkedIn (Primary):** Daily text/image posts, weekly articles.
+2.  **YouTube (Secondary):** Weekly deep-dive videos (10-15 mins).
+3.  **Email Newsletter (Tertiary):** Bi-weekly summary and exclusive insights.
 
-## 3. Content Strategy & Pillars
+## 3. Monetization Strategy
 
-### Content Pillar 1: "Startup Lessons" (40% of content)
-**Formats:**
-- Weekly "Startup Story" posts sharing specific lessons
-- "Mistake Monday" series về common startup failures
-- Case study breakdowns của successful Vietnamese startups
+### Phase 1 (Months 1-6): Build Authority & Audience
+- **Focus:** Provide massive value for free.
+- **Goal:** Grow LinkedIn to 10k followers, YouTube to 1k subscribers.
 
-**Example Topics:**
-- "Why our first startup failed: 5 expensive lessons"
-- "How Grab built their Vietnam strategy"
-- "Raising money ở Vietnam vs Singapore: Key differences"
+### Phase 2 (Months 7-12): Introduce First Products
+- **Affiliate Marketing:** Recommend trusted software/tools.
+- **Consulting:** Offer 1-on-1 "Tech Strategy" sessions for individuals/SMEs.
+- **First Digital Product:** Launch an ebook: "Cẩm nang công nghệ cho nhà quản lý không chuyên".
 
-### Content Pillar 2: "Industry Insights" (30% of content)
-**Formats:**
-- Market analysis posts về Vietnamese tech ecosystem  
-- Trend predictions và commentary
-- Interview highlights với other entrepreneurs
+### Phase 3 (Months 13-24): Scale & Diversify
+- **Online Course:** Develop a signature course: "AI for Business Leaders".
+- **Corporate Workshops:** Offer in-house training for companies.
+- **Community:** Launch a paid community for exclusive content and networking.
 
-**Example Topics:**
-- "Vietnam fintech landscape: Opportunities ahead"
-- "Why now is the best time để start a SaaS ở Vietnam"
-- "Southeast Asia expansion: Vietnam first vs last strategy"
+## 4. Key Performance Indicators (KPIs)
 
-### Content Pillar 3: "Behind-the-Scenes" (20% of content)
-**Formats:**
-- Day-in-the-life content
-- Investment decision process
-- Travel to conferences và meetings
+### Audience Growth:
+- LinkedIn Followers: 10k (6 months), 30k (12 months)
+- YouTube Subscribers: 1k (6 months), 5k (12 months)
+- Email Subscribers: 500 (6 months), 2000 (12 months)
 
-**Example Topics:**
-- "Deciding whether to invest in this AI startup"
-- "My daily routine for staying productive"
-- "What I learned at TechCrunch Disrupt"
+### Engagement:
+- LinkedIn Average Likes/Post: 100+
+- YouTube Watch Time: > 40%
+- Email Open Rate: > 35%
 
-### Content Pillar 4: "Personal Development" (10% of content)
-**Formats:**
-- Book recommendations
-- Productivity tips
-- Health và wellness content
-
-## 4. Platform Strategy
-
-### LinkedIn (Primary Platform - 60% effort)
-**Why:** Best platform cho B2B networking ở Vietnam
-**Content Types:** 
-- Long-form posts về startup insights
-- Company updates và announcements  
-- Industry commentary và analysis
-**Posting Schedule:** 3x/week
-**Target:** 50K followers within 12 months
-
-### Instagram (Secondary - 25% effort)
-**Why:** Visual storytelling và personal connection
-**Content Types:**
-- Stories: Behind-the-scenes, polls, Q&As
-- Posts: Quote cards, team photos, lifestyle content
-- Reels: Quick tips, office tours, event highlights
-**Posting Schedule:** Daily stories, 3 posts/week
-**Target:** 20K followers within 12 months
-
-### YouTube (Growth - 15% effort)
-**Why:** Long-form content và thought leadership
-**Content Types:**
-- Weekly "Startup Stories" episodes (10-15 phút)
-- Monthly "Market Deep Dives" (20-30 phút)
-- Quarterly "Investor Updates" (5-10 phút)
-**Posting Schedule:** 2 videos/month initially
-**Target:** 10K subscribers within 18 months
-
-## 5. Monetization Strategy
-
-### Year 1: Foundation Building ($0-5K/month)
-**Focus:** Build audience và establish credibility
-**Revenue Streams:**
-- Speaking fees tại events: $500-1,500/event
-- Consulting calls: $200/hour (limited availability)
-- Affiliate commissions: Books, tools, services
-
-### Year 2: Content Monetization ($5-15K/month)
-**Focus:** Create premium content offerings
-**Revenue Streams:**
-- Online course: "From Idea to Startup" - $297
-- Monthly newsletter subscription: $29/month
-- Group coaching program: $997/quarter
-- Brand partnerships với relevant tools
-
-### Year 3: Business Empire ($15-50K/month)
-**Focus:** Build scalable business systems
-**Revenue Streams:**
-- Mastermind program: $2,997/year
-- Annual conference: $500K revenue potential
-- Investment fund management fees
-- Book deal và publishing royalties
-
-## 6. Content Creation Workflow
-
-### Weekly Schedule:
-**Monday:** Content planning, research, interviews
-**Tuesday:** Writing LinkedIn posts, creating graphics
-**Wednesday:** Recording video content, editing
-**Thursday:** Instagram content creation, stories
-**Friday:** Community management, partnerships
-
-### Monthly Activities:
-- Strategy review và content performance analysis
-- Networking events và conference speaking
-- Collaboration planning với other creators
-- Product development và iteration
-
-## 7. Key Performance Indicators
-
-### Awareness Metrics:
-- **Follower Growth:** 10% month-over-month across all platforms
-- **Reach:** 100K+ people reached monthly by Month 12
-- **Brand Mentions:** Track mentions across social media và press
-
-### Engagement Metrics:
-- **Engagement Rate:** >5% average across all platforms
-- **Comment Quality:** Focus on meaningful conversations
-- **DM Volume:** Track inbound partnership opportunities
-
-### Business Metrics:
-- **Email List Growth:** 1,000 subscribers by Month 6
-- **Speaking Opportunities:** 2-3 events per quarter
-- **Revenue Diversification:** No single stream >40% of total
-
-### Network Metrics:
-- **Industry Connections:** Connect with 50+ ecosystem players
-- **Media Coverage:** Featured in 2+ major publications
-- **Influence Score:** Track mentions by other thought leaders
-
-## 8. Risk Management & Challenges
-
-### Potential Challenges:
-1. **Time Management:** Balancing content creation với actual business activities
-2. **Content Consistency:** Maintaining quality khi scaling
-3. **Authenticity:** Staying genuine khi building commercial brand
-4. **Market Changes:** Adapting content để tech ecosystem evolution
-
-### Mitigation Strategies:
-- **Batch Content Creation:** Create multiple pieces per session
-- **Team Building:** Hire content manager by Month 6
-- **Authentic Storytelling:** Always share real experiences
-- **Continuous Learning:** Stay updated với industry changes
-
-### Success Timeline:
-- **Month 3:** 5K LinkedIn followers, first speaking gig
-- **Month 6:** 15K total followers, first consulting client  
-- **Month 12:** 50K total followers, $5K monthly revenue
-- **Month 18:** 100K total followers, $15K monthly revenue
-- **Month 24:** 200K total followers, $30K monthly revenue, successful product launch`,
+### Business:
+- Month 7: First affiliate income.
+- Month 9: First consulting client.
+- Month 12: $1,000/month total revenue.
+- Month 24: $5,000/month total revenue.`,
       },
     ],
     realWorldApplications: [
@@ -1423,6 +1458,48 @@ export const lessons: BaseLessonData[] = [
           'Personal brand can be a foundation for a diversified business',
         ],
       },
+    ],
+    faqs: [
+      {
+        question: 'Creator Economy (Nền kinh tế sáng tạo) là gì?',
+        answer: 'Đó là một nền kinh tế được xây dựng bởi những người sáng tạo nội dung độc lập (YouTuber, blogger, podcaster...), những người kiếm tiền trực tiếp từ khán giả của họ thông qua nhiều hình thức khác nhau như quảng cáo, tài trợ, bán sản phẩm số, hoặc nhận donate.'
+      },
+      {
+        question: 'Làm thế nào để bắt đầu xây dựng thương hiệu cá nhân?',
+        answer: 'Hãy bắt đầu bằng cách xác định "niche" (thị trường ngách) của bạn: bạn đam mê điều gì và bạn có thể giúp đỡ ai? Sau đó, chọn một nền tảng chính mà bạn cảm thấy thoải mái nhất và bắt đầu tạo nội dung một cách nhất quán. Hãy tập trung vào việc cung cấp giá trị và xây dựng mối quan hệ với khán giả trước khi nghĩ đến việc kiếm tiền.'
+      },
+      {
+        question: 'Các cách phổ biến để một nhà sáng tạo nội dung kiếm tiền là gì?',
+        answer: 'Có rất nhiều cách: 1. Doanh thu quảng cáo (ví dụ: từ YouTube). 2. Hợp tác với thương hiệu (sponsored content). 3. Tiếp thị liên kết (affiliate marketing). 4. Bán sản phẩm của riêng mình (khóa học, ebook, merchandise). 5. Nhận quyên góp từ người hâm mộ (Patreon, donate). 6. Cung cấp dịch vụ (tư vấn, coaching).'
+      },
+      {
+        question: 'Tôi cần bao nhiêu người theo dõi để bắt đầu kiếm tiền?',
+        answer: 'Không có một con số cụ thể. Thay vì tập trung vào số lượng, hãy tập trung vào chất lượng và sự tương tác của khán giả. Một nhà sáng tạo có 1,000 người hâm mộ thực sự (true fans) sẵn sàng trả tiền cho sản phẩm của họ có thể kiếm được nhiều tiền hơn một người có 100,000 người theo dõi hời hợt.'
+      },
+      {
+        question: 'Sự khác biệt giữa Influencer và Creator là gì?',
+        answer: 'Mặc dù thường được sử dụng thay thế cho nhau, "Influencer" thường ám chỉ những người có khả năng ảnh hưởng đến quyết định mua hàng của người khác, thường thông qua các hợp đồng quảng cáo. "Creator" là một thuật ngữ rộng hơn, chỉ những người tạo ra nội dung và xây dựng một cộng đồng xung quanh nội dung đó, với nhiều nguồn thu nhập đa dạng hơn.'
+      },
+      {
+        question: 'Làm thế nào để làm việc với các thương hiệu?',
+        answer: 'Hãy tạo một "Media Kit" - một tài liệu giới thiệu về bạn, các chỉ số về khán giả (nhân khẩu học, tương tác), và các gói hợp tác bạn cung cấp. Bạn có thể chủ động liên hệ với các thương hiệu bạn yêu thích, hoặc xây dựng thương hiệu cá nhân đủ mạnh để các thương hiệu tự tìm đến bạn.'
+      },
+      {
+        question: 'Làm thế nào để không bị "burnout" (kiệt sức) khi làm sáng tạo nội dung?',
+        answer: 'Burnout là một vấn đề lớn. Hãy đặt ra một lịch trình làm việc bền vững, đừng cố gắng có mặt trên mọi nền tảng. Tái sử dụng nội dung một cách thông minh (ví dụ: biến một video dài thành nhiều clip ngắn). Hãy nhớ rằng nghỉ ngơi cũng là một phần của quá trình sáng tạo. Và quan trọng nhất, hãy tạo ra nội dung mà bạn thực sự đam mê.'
+      },
+      {
+        question: 'Sản phẩm số (digital product) là gì?',
+        answer: 'Là bất kỳ sản phẩm nào tồn tại ở dạng kỹ thuật số mà bạn có thể bán đi bán lại nhiều lần mà không tốn thêm chi phí sản xuất. Ví dụ phổ biến bao gồm: khóa học online, ebook, template (mẫu thiết kế, mẫu kế hoạch), preset chỉnh ảnh, nhạc nền...'
+      },
+      {
+        question: 'Tiếp thị liên kết (Affiliate Marketing) hoạt động như thế nào?',
+        answer: 'Bạn giới thiệu một sản phẩm hoặc dịch vụ của người khác bằng một đường link đặc biệt. Khi ai đó nhấp vào link của bạn và thực hiện mua hàng, bạn sẽ nhận được một khoản hoa hồng. Đây là một cách tuyệt vời để bắt đầu kiếm tiền mà không cần tạo ra sản phẩm của riêng mình.'
+      },
+      {
+        question: 'Làm thế nào để xây dựng một cộng đồng gắn kết?',
+        answer: 'Hãy tạo ra một không gian an toàn để mọi người tương tác. Trả lời bình luận và tin nhắn. Tổ chức các buổi livestream Q&A. Tạo ra các "truyền thống" hoặc "trò đùa nội bộ" mà chỉ cộng đồng của bạn hiểu. Hãy cho khán giả thấy bạn thực sự quan tâm đến họ với tư cách là những con người, không chỉ là những con số.'
+      }
     ],
   },
 ];

@@ -100,6 +100,30 @@ export const lessons: DigitalGovLesson[] = [
         answer:
           'Chính phủ Việt Nam đã và đang triển khai nhiều giải pháp để đảm bảo an toàn thông tin cho các hệ thống dịch vụ công, tuân thủ theo Luật An ninh mạng. Tuy nhiên, người dùng cũng cần có trách nhiệm tự bảo vệ tài khoản của mình bằng cách sử dụng mật khẩu mạnh và bật xác thực hai yếu tố.',
       },
+      {
+        question: 'Dữ liệu mở (Open Data) là gì và nó có lợi ích gì?',
+        answer: 'Dữ liệu mở là dữ liệu được các cơ quan chính phủ cung cấp công khai, cho phép mọi người truy cập, sử dụng và chia sẻ. Lợi ích của nó là thúc đẩy sự minh bạch, cho phép các nhà phát triển tạo ra các ứng dụng hữu ích (ví dụ: ứng dụng tìm xe buýt từ dữ liệu giao thông công cộng), và thúc đẩy đổi mới sáng tạo.'
+      },
+      {
+        question: 'Cổng Dịch vụ công Quốc gia cung cấp những tiện ích gì?',
+        answer: 'Cổng Dịch vụ công Quốc gia (dichvucong.gov.vn) là điểm truy cập duy nhất cho công dân và doanh nghiệp để thực hiện các thủ tục hành chính trực tuyến như đăng ký kinh doanh, nộp thuế, xin cấp giấy phép, và nhiều dịch vụ khác, giúp tiết kiệm thời gian và chi phí đi lại.'
+      },
+      {
+        question: 'Định danh điện tử (Digital ID) là gì và nó khác gì với CCCD gắn chip?',
+        answer: 'CCCD gắn chip là một phương tiện vật lý. Định danh điện tử (ví dụ: VNeID) là một tài khoản số, cho phép bạn sử dụng điện thoại thông minh để xác thực danh tính và thực hiện các giao dịch điện tử mà không cần mang theo thẻ vật lý. Nó được coi là bước tiếp theo của CCCD gắn chip.'
+      },
+      {
+        question: 'Làm thế nào để một thành phố trở nên "thông minh" hơn?',
+        answer: 'Một thành phố thông minh không chỉ là về công nghệ. Nó bắt đầu bằng việc xác định các vấn đề cấp bách của người dân (giao thông, môi trường, y tế), sau đó áp dụng công nghệ một cách chiến lược để giải quyết các vấn đề đó, đồng thời phải có sự tham gia của người dân và doanh nghiệp.'
+      },
+      {
+        question: 'Thách thức lớn nhất khi triển khai Chính phủ số ở Việt Nam là gì?',
+        answer: 'Các thách thức bao gồm: thay đổi thói quen làm việc của cán bộ công chức, đảm bảo an ninh mạng cho các hệ thống lớn, kết nối và chia sẻ dữ liệu giữa các bộ ngành, và nâng cao kỹ năng số cho người dân để họ có thể sử dụng thành thạo các dịch vụ số.'
+      },
+      {
+        question: 'Blockchain có thể được ứng dụng như thế nào trong Chính phủ số?',
+        answer: 'Blockchain có thể được sử dụng để tạo ra các hệ thống đăng ký đất đai, quản lý hồ sơ công dân hoặc truy xuất nguồn gốc sản phẩm một cách minh bạch và chống giả mạo. Vì dữ liệu trên blockchain không thể bị thay đổi, nó giúp tăng cường niềm tin và tính toàn vẹn của thông tin.'
+      }
     ],
   },
   {
@@ -188,6 +212,30 @@ export const lessons: DigitalGovLesson[] = [
         answer:
           'Người dân có thể truy cập vào dữ liệu chất lượng không khí, mức độ ô nhiễm tiếng ồn, hoặc chất lượng nước theo thời gian thực qua các ứng dụng di động hoặc website. Điều này giúp họ đưa ra các quyết định tốt hơn cho sức khỏe, ví dụ như có nên ra ngoài tập thể dục vào một ngày không khí ô nhiễm hay không.',
       },
+      {
+        question: 'Edge Computing (Điện toán biên) là gì và vai trò của nó trong Smart City?',
+        answer: 'Edge Computing là việc xử lý dữ liệu ngay tại nơi nó được tạo ra (ví dụ: tại một camera giao thông) thay vì gửi tất cả về một trung tâm dữ liệu. Trong Smart City, nó giúp giảm độ trễ, tiết kiệm băng thông và cho phép các phản ứng nhanh hơn, ví dụ như một camera có thể tự phát hiện một vụ tai nạn và gửi cảnh báo ngay lập tức.'
+      },
+      {
+        question: 'Dữ liệu từ các cảm biến IoT được sử dụng để lập kế hoạch đô thị như thế nào?',
+        answer: 'Dữ liệu về luồng giao thông giúp xác định nơi cần mở rộng đường hoặc xây cầu vượt. Dữ liệu về việc sử dụng năng lượng giúp quy hoạch mạng lưới điện hiệu quả hơn. Dữ liệu về ô nhiễm không khí giúp xác định vị trí cần trồng thêm cây xanh hoặc khu công nghiệp nào cần cải thiện xử lý khí thải.'
+      },
+      {
+        question: '5G có vai trò gì trong việc phát triển các giải pháp Smart City?',
+        answer: '5G cung cấp tốc độ cực cao và độ trễ cực thấp, cho phép các ứng dụng đòi hỏi phản ứng tức thời như xe tự lái giao tiếp với nhau, hoặc các bác sĩ phẫu thuật từ xa qua robot. Nó cũng cho phép kết nối đồng thời một số lượng lớn thiết bị IoT trong một khu vực nhỏ.'
+      },
+      {
+        question: 'Làm thế nào để quản lý rác thải thông minh hơn bằng IoT?',
+        answer: 'Các thùng rác công cộng có thể được gắn cảm biến để báo khi chúng đầy. Dữ liệu này được gửi đến một phần mềm trung tâm, giúp tối ưu hóa lộ trình thu gom rác. Xe chở rác sẽ chỉ đến những nơi cần thiết, giúp tiết kiệm nhiên liệu, thời gian và giảm ùn tắc giao thông.'
+      },
+      {
+        question: 'Chi phí để triển khai một mạng lưới cảm biến cho toàn thành phố có lớn không?',
+        answer: 'Chi phí ban đầu có thể lớn, nhưng lợi ích lâu dài về tiết kiệm năng lượng, giảm ô nhiễm, và cải thiện hiệu quả hoạt động thường vượt qua chi phí đầu tư. Việc sử dụng các công nghệ như LoRaWAN và các cảm biến giá rẻ đang làm cho việc triển khai trở nên khả thi hơn.'
+      },
+      {
+        question: 'Dữ liệu cá nhân của tôi có bị thu thập bởi các cảm biến trong thành phố không?',
+        answer: 'Hầu hết các cảm biến môi trường và giao thông thu thập dữ liệu ẩn danh (ví dụ: đếm số lượng xe, không phải biển số xe). Tuy nhiên, các hệ thống camera an ninh có liên quan đến quyền riêng tư. Các thành phố thông minh phải có chính sách rõ ràng về việc thu thập, sử dụng và bảo vệ dữ liệu cá nhân để xây dựng lòng tin của người dân.'
+      }
     ],
   },
   {
@@ -276,6 +324,30 @@ export const lessons: DigitalGovLesson[] = [
         answer:
           'Có, đây là một rủi ro. Để giảm thiểu, các nền tảng có thể yêu cầu xác thực tài khoản (ví dụ qua số điện thoại), sử dụng cơ chế "cộng đồng xác thực" (nhiều người cùng báo một vấn đề), và áp dụng các thuật toán AI để phát hiện các hành vi bất thường hoặc spam.',
       },
+      {
+        question: 'Crowdsourcing (Huy động trí tuệ đám đông) được ứng dụng trong CivicTech như thế nào?',
+        answer: 'Crowdsourcing có thể được dùng để thu thập ý tưởng cho một dự án công cộng, lập bản đồ các điểm ngập lụt trong thành phố do người dân đóng góp, hoặc cùng nhau dịch các tài liệu của chính phủ sang ngôn ngữ dân tộc thiểu số. Nó tận dụng sức mạnh tập thể để giải quyết các vấn đề chung.'
+      },
+      {
+        question: 'Làm thế nào để một ứng dụng CivicTech có thể bền vững về mặt tài chính?',
+        answer: 'Đây là một thách thức. Các mô hình có thể bao gồm: nhận tài trợ từ các quỹ phát triển, chính phủ trả phí cho việc sử dụng nền tảng (SaaS model), hoặc cung cấp các dịch vụ phân tích dữ liệu nâng cao cho các tổ chức nghiên cứu. Một số ứng dụng cũng có thể hoạt động như một tổ chức phi lợi nhuận.'
+      },
+      {
+        question: 'Sự khác biệt giữa CivicTech và GovTech là gì?',
+        answer: 'GovTech (Công nghệ Chính phủ) thường là các giải pháp công nghệ do chính phủ mua hoặc xây dựng để cải thiện hoạt động nội bộ của mình. CivicTech (Công nghệ Công dân) thường tập trung vào việc kết nối người dân với chính phủ và với nhau, thường được xây dựng bởi các công ty khởi nghiệp hoặc các tổ chức xã hội.'
+      },
+      {
+        question: 'Làm thế nào để đảm bảo tính toàn diện và công bằng, không để ai bị bỏ lại phía sau trong các nền tảng số?',
+        answer: 'Thiết kế phải ưu tiên khả năng tiếp cận (accessibility) cho người khuyết tật. Cần có các kênh thay thế không phải kỹ thuật số (như điện thoại, gặp mặt trực tiếp). Ngôn ngữ phải đơn giản, dễ hiểu. Và quan trọng nhất là phải có các chương trình đào tạo, hỗ trợ người dân có kỹ năng số thấp.'
+      },
+      {
+        question: 'Vai trò của mạng xã hội trong việc tham gia của công dân là gì?',
+        answer: 'Mạng xã hội là một công cụ mạnh mẽ để lan tỏa thông tin, huy động cộng đồng và tạo ra các cuộc thảo luận về các vấn đề xã hội. Nhiều cơ quan chính phủ cũng sử dụng mạng xã hội như một kênh để lắng nghe ý kiến và giao tiếp với người dân. Tuy nhiên, nó cũng tiềm ẩn nguy cơ lan truyền tin giả.'
+      },
+      {
+        question: 'Làm thế nào để xây dựng lòng tin giữa người dân và chính phủ thông qua công nghệ?',
+        answer: 'Công nghệ chỉ là công cụ. Lòng tin được xây dựng thông qua sự minh bạch (công khai dữ liệu, quy trình), sự phản hồi (chính phủ lắng nghe và hành động dựa trên phản hồi của người dân), và sự hiệu quả (công nghệ thực sự giải quyết được vấn đề và cải thiện cuộc sống). Một ứng dụng tốt nhưng không có sự cam kết từ chính quyền sẽ không thể xây dựng được lòng tin.'
+      }
     ],
   },
 ];

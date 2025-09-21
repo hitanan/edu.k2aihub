@@ -126,6 +126,47 @@ export const vietnameseLangTechLessons: VietnameseLangTechLesson[] = [
         answer:
           'Các mô hình được huấn luyện trực tiếp trên dữ liệu tiếng Việt (như PhoBERT của VinAI) có khả năng hiểu sâu sắc hơn về ngữ pháp, cấu trúc câu, và các sắc thái văn hóa, thành ngữ, tiếng lóng của người Việt. Các mô hình dịch máy có thể mất đi những sắc thái này và không hiệu quả bằng trong các tác vụ NLP phức tạp.',
       },
+      {
+        question: 'Named Entity Recognition (NER) là gì?',
+        answer:
+          'NER là một tác vụ của NLP nhằm xác định và phân loại các thực thể có tên trong văn bản, chẳng hạn như tên người, tên tổ chức, địa điểm, ngày tháng, v.v. Ví dụ, trong câu "Ông Nguyễn Phú Trọng đến thăm Hà Nội vào ngày 10/10/2020", NER sẽ nhận diện "Nguyễn Phú Trọng" là TÊN NGƯỜI, "Hà Nội" là ĐỊA ĐIỂM, và "10/10/2020" là NGÀY THÁNG.',
+      },
+      {
+        question: 'Phân tích cảm xúc (Sentiment Analysis) hoạt động như thế nào?',
+        answer:
+          'Phân tích cảm xúc sử dụng NLP và học máy để xác định thái độ hoặc cảm xúc (tích cực, tiêu cực, trung tính) được thể hiện trong một đoạn văn bản. Các doanh nghiệp thường sử dụng công cụ này để phân tích các bình luận của khách hàng trên mạng xã hội, từ đó hiểu được phản ứng của công chúng đối với sản phẩm hoặc chiến dịch của họ.',
+      },
+      {
+        question: 'Mô hình ngôn ngữ lớn (Large Language Model - LLM) là gì?',
+        answer:
+          'LLM là một loại mô hình AI được huấn luyện trên một lượng dữ liệu văn bản khổng lồ để hiểu và tạo ra ngôn ngữ giống như con người. GPT-3, BERT, và PhoBERT là các ví dụ về LLM. Chúng là nền tảng cho rất nhiều ứng dụng NLP hiện đại, từ dịch máy, tóm tắt văn bản đến trả lời câu hỏi.',
+      },
+      {
+        question:
+          'Nhận dạng giọng nói (Speech Recognition) và Tổng hợp giọng nói (Speech Synthesis) khác nhau như thế nào?',
+        answer:
+          'Nhận dạng giọng nói (còn gọi là Speech-to-Text) là quá trình chuyển đổi ngôn ngữ nói thành văn bản viết. Ngược lại, Tổng hợp giọng nói (Text-to-Speech) là quá trình tạo ra giọng nói nhân tạo từ văn bản viết. Cả hai công nghệ này là cốt lõi của các trợ lý ảo như Siri hay Google Assistant.',
+      },
+      {
+        question: 'Làm thế nào để xử lý các vùng miền khác nhau của tiếng Việt trong nhận dạng giọng nói?',
+        answer:
+          'Đây là một thách thức lớn. Để một hệ thống nhận dạng giọng nói hoạt động tốt, nó cần được huấn luyện trên một tập dữ liệu âm thanh đa dạng, bao gồm giọng nói từ nhiều vùng miền khác nhau (Bắc, Trung, Nam) và từ nhiều lứa tuổi, giới tính khác nhau. Các kỹ thuật thích ứng (adaptation) cũng được sử dụng để mô hình có thể tùy chỉnh theo giọng của người dùng cụ thể.',
+      },
+      {
+        question: 'Chatbot dựa trên quy tắc (Rule-based) và Chatbot dựa trên AI khác nhau như thế nào?',
+        answer:
+          'Chatbot dựa trên quy tắc hoạt động theo một kịch bản được lập trình sẵn. Nó chỉ có thể trả lời các câu hỏi đã được định nghĩa trước. Chatbot dựa trên AI sử dụng NLP để hiểu ý định của người dùng và có thể xử lý các câu hỏi linh hoạt hơn, ngay cả khi chúng không được diễn đạt chính xác theo kịch bản. Chatbot AI có khả năng "học" từ các cuộc hội thoại.',
+      },
+      {
+        question: 'Embedding là gì trong NLP?',
+        answer:
+          'Embedding là quá trình biểu diễn các từ hoặc câu dưới dạng các vector số học trong một không gian nhiều chiều. Quá trình này giúp máy tính có thể "hiểu" được mối quan hệ ngữ nghĩa giữa các từ. Ví dụ, trong không gian vector, từ "vua" và "hoàng hậu" sẽ có mối quan hệ tương tự như từ "ông" và "bà".',
+      },
+      {
+        question: 'Dịch máy thần kinh (Neural Machine Translation - NMT) là gì?',
+        answer:
+          'NMT là một phương pháp dịch máy hiện đại sử dụng các mạng nơ-ron sâu (deep neural networks) để dịch toàn bộ câu cùng một lúc, thay vì dịch từng cụm từ riêng lẻ như các phương pháp cũ. Điều này cho phép NMT tạo ra các bản dịch trôi chảy và chính xác hơn nhiều, vì nó có thể nắm bắt được ngữ cảnh của cả câu.',
+      },
     ],
     resources: [
       {

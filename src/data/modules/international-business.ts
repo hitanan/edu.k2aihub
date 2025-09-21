@@ -4,93 +4,90 @@ export const internationalBusinessLessons: BaseLessonData[] = [
     id: 'cross-cultural-management-leadership',
     title: 'Quản Lý & Lãnh Đạo Đa Văn Hóa',
     description:
-      'Nắm vững các kỹ thuật quản lý đa văn hóa, lãnh đạo trong các nhóm đa dạng, phát triển trí tuệ văn hóa và giao tiếp hiệu quả giữa các nền văn hóa.',
-    duration: '220 phút',
-    difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=YMyofREc5Jk', // Cross Cultural Management
-    imageUrl: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=600&fit=crop',
+      'Phát triển trí tuệ văn hóa (CQ) để lãnh đạo các nhóm đa dạng, điều hướng các phong cách giao tiếp khác nhau và xây dựng lòng tin trong môi trường toàn cầu.',
+    duration: '180 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=secy_s0_mh4', // Cross-Cultural Management
+    imageUrl: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&h=600&fit=crop',
     objectives: [
-      'Phát triển năng lực trí tuệ văn hóa (CQ)',
-      'Thực hiện các chiến lược giao tiếp đa văn hóa hiệu quả',
-      'Quản lý thành công các nhóm đa văn hóa',
-      'Vượt qua sự khác biệt văn hóa trong đàm phán kinh doanh',
-      'Tạo môi trường làm việc toàn cầu hòa nhập',
+      'Phát triển trí tuệ văn hóa (CQ) để quản lý hiệu quả',
+      'Hiểu và thích ứng với các phong cách giao tiếp đa văn hóa',
+      'Xây dựng và duy trì lòng tin trong các nhóm toàn cầu',
+      'Giải quyết xung đột phát sinh từ khác biệt văn hóa',
+      'Thúc đẩy một môi trường làm việc hòa nhập và hợp tác',
     ],
     prerequisites: [
-      'Kinh nghiệm quản lý cơ bản',
-      'Quan tâm đến kinh doanh quốc tế',
-      'Tư duy cởi mở về sự khác biệt văn hóa',
+      'Kiến thức cơ bản về quản lý',
+      'Kinh nghiệm làm việc nhóm',
+      'Sự cởi mở và sẵn sàng học hỏi về các nền văn hóa khác',
     ],
     exercises: [
       {
-        title: 'Đánh giá Trí tuệ Văn hóa & Kế hoạch Phát triển',
+        title: 'Phân tích Tình huống Đa văn hóa',
         description:
-          'Đánh giá trí tuệ văn hóa cá nhân và tạo kế hoạch phát triển để quản lý các mối quan hệ kinh doanh quốc tế',
+          'Phân tích một tình huống kinh doanh thực tế liên quan đến hiểu lầm văn hóa và đề xuất các giải pháp dựa trên các khung lý thuyết về văn hóa.',
         difficulty: 'Trung bình',
-        materials: [
-          'Thang đo Trí tuệ Văn hóa (CQS)',
-          'Công cụ lập bản đồ văn hóa',
-          'Khung đánh giá giao tiếp',
-          'Mẫu lập kế hoạch phát triển',
-        ],
+        materials: ['Nghiên cứu tình huống', 'Các mô hình văn hóa (Hofstede, GLOBE)', 'Video đóng vai'],
         procedure: [
-          'Hoàn thành đánh giá trí tuệ văn hóa toàn diện',
-          'Xác định điểm mạnh và lĩnh vực cần phát triển về văn hóa',
-          'Nghiên cứu bối cảnh văn hóa mục tiêu cho hoạt động kinh doanh',
-          'Thiết kế kế hoạch phát triển kỹ năng với các bài tập thực tế',
-          'Tạo khung đo lường để theo dõi sự cải thiện',
+          'Đọc và thảo luận về nghiên cứu tình huống.',
+          'Xác định các chiều văn hóa chính gây ra xung đột.',
+          'Sử dụng mô hình Hofstede để phân tích sự khác biệt.',
+          'Đề xuất các chiến lược giao tiếp và quản lý để giải quyết vấn đề.',
+          'Trình bày phân tích và giải pháp của nhóm.',
         ],
         expectedResults:
-          'Kế hoạch phát triển trí tuệ văn hóa được cá nhân hóa với các năng lực cụ thể và mục tiêu có thể đo lường',
+          'Một báo cáo phân tích chi tiết và một bộ khuyến nghị hành động để cải thiện sự hợp tác đa văn hóa.',
         solution:
-          'Phương pháp tiếp cận có hệ thống để phát triển nhận thức văn hóa, sự đồng cảm, kỹ năng giao tiếp và hành vi thích ứng',
+          'Áp dụng các mô hình văn hóa để hiểu sâu sắc hơn về các giá trị và giả định nền tảng, từ đó đưa ra các can thiệp có mục tiêu và hiệu quả.',
       },
     ],
     realWorldApplications: [
-      'Quản lý các liên doanh Việt-Nhật',
-      'Lãnh đạo các nhóm bán hàng quốc tế',
-      'Tạo điều kiện cho các cuộc đàm phán kinh doanh đa văn hóa',
-      'Xây dựng mối quan hệ với nhà cung cấp toàn cầu',
+      'Quản lý các nhóm làm việc từ xa trên toàn cầu',
+      'Đàm phán với các đối tác quốc tế',
+      'Phát triển các chiến dịch marketing toàn cầu',
+      'Hội nhập nhân viên từ các chi nhánh quốc tế',
     ],
     caseStudies: [
       {
-        title: 'Chiến lược Mở rộng Quốc tế của Vingroup',
-        organization: 'Tập đoàn Vingroup',
-        problem: 'Mở rộng hoạt động bán lẻ và bất động sản sang các thị trường Đông Nam Á đa dạng về văn hóa',
+        title: 'Thành công Toàn cầu của FPT Software',
+        organization: 'FPT Software',
+        problem:
+          'Làm thế nào để một công ty công nghệ Việt Nam có thể quản lý hiệu quả hàng nghìn nhân viên từ nhiều nền văn hóa khác nhau và phục vụ khách hàng trên toàn thế giới?',
         solution:
-          'Các chương trình đào tạo trí tuệ văn hóa, chiến lược hợp tác địa phương, mô hình kinh doanh thích ứng, phát triển lãnh đạo đa văn hóa',
+          'FPT đã đầu tư mạnh vào các chương trình đào tạo về trí tuệ văn hóa, triển khai các "cầu nối văn hóa" (cultural bridge) trong các dự án, và trao quyền cho các nhà quản lý địa phương.',
         impact:
-          'Thâm nhập thành công 3 thị trường mới, giảm 70% sự cố xung đột văn hóa, cải thiện 45% hiệu suất nhóm quốc tế',
-        innovations: [
-          'Khung thích ứng văn hóa',
-          'Mô hình kết hợp địa phương-toàn cầu',
-          'Lộ trình phát triển lãnh đạo đa văn hóa',
-        ],
+          'FPT Software đã trở thành một trong những công ty dịch vụ CNTT lớn nhất Đông Nam Á, với sự hiện diện tại 27 quốc gia và một lực lượng lao động đa dạng, góp phần vào doanh thu tỷ đô.',
+        innovations: ['Chương trình đào tạo CQ chuyên sâu', 'Vai trò "Cầu nối văn hóa"', 'Mô hình quản lý linh hoạt'],
       },
     ],
     resources: [
       {
-        title: 'Nghiên cứu Trí tuệ Văn hóa',
-        url: 'https://culturalq.com/',
+        title: 'The Culture Map của Erin Meyer',
+        url: 'https://www.amazon.com/Culture-Map-Breaking-Invisible-Boundaries/dp/1610392507',
+        type: 'Book',
+      },
+      {
+        title: 'Nghiên cứu của Geert Hofstede',
+        url: 'https://geerthofstede.com/',
         type: 'Research',
       },
     ],
     vietnamContext: {
-      title: 'Bối cảnh Kinh doanh Đa văn hóa tại Việt Nam',
+      title: 'Bối cảnh Đa văn hóa trong Doanh nghiệp Việt Nam',
       content: [
-        'Việt Nam là một trong những nền kinh tế mở nhất thế giới, là điểm giao thoa của nhiều nền văn hóa kinh doanh, đặc biệt là giữa Đông Á và phương Tây.',
-        'Các tập đoàn đa quốc gia hoạt động tại Việt Nam phải đối mặt với thách thức quản lý đội ngũ nhân sự địa phương và chuyên gia nước ngoài.',
-        'Doanh nghiệp Việt Nam khi vươn ra toàn cầu (như FPT, Viettel, Vinamilk) cần xây dựng năng lực lãnh đạo đa văn hóa để thành công trên thị trường quốc tế.',
-        'Hiểu biết về các khái niệm như "giữ thể diện" và tầm quan trọng của mối quan hệ cá nhân là chìa khóa để đàm phán và hợp tác thành công tại Việt Nam.',
+        'Với sự gia tăng đầu tư nước ngoài (FDI), các công ty tại Việt Nam ngày càng trở thành môi trường làm việc đa quốc gia.',
+        'Các nhà quản lý Việt Nam cần nhanh chóng trang bị kỹ năng làm việc với các chuyên gia và đối tác từ Nhật Bản, Hàn Quốc, Châu Âu và Bắc Mỹ.',
+        'Sự khác biệt về thứ bậc quyền lực, chủ nghĩa cá nhân so với chủ nghĩa tập thể, và phong cách giao tiếp trực tiếp so với gián tiếp là những thách thức phổ biến.',
+        'Các công ty Việt Nam vươn ra toàn cầu như Viettel, Vinamilk cũng phải đối mặt với thách thức quản lý nhân viên và khách hàng địa phương ở các thị trường mới.',
       ],
     },
     careerConnect: {
-      name: 'Bà Nguyễn Thị Mai',
-      title: 'Giám đốc Nhân sự Toàn cầu, Tập đoàn FPT',
-      company: 'FPT',
-      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-mai',
+      name: 'Bà Nguyễn Thị Phương Thảo',
+      title: 'CEO, VietJet Air',
+      company: 'VietJet Air',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-phuong-thao',
       quote:
-        'Lãnh đạo trong môi trường toàn cầu đòi hỏi sự thấu cảm sâu sắc và khả năng thích ứng liên tục. Tại FPT, chúng tôi không chỉ xây dựng sản phẩm, mà còn xây dựng những cây cầu văn hóa để kết nối tài năng Việt với thế giới.',
+        'Kinh doanh toàn cầu không chỉ là về những con số. Đó là về việc kết nối con người, thấu hiểu và tôn trọng sự khác biệt. Một nhà lãnh đạo giỏi phải là một nhà ngoại giao văn hóa.',
     },
     quizzes: [
       {
@@ -116,6 +113,58 @@ export const internationalBusinessLessons: BaseLessonData[] = [
         correctAnswerIndex: 1,
         explanation:
           'Sự khác biệt trong phong cách giao tiếp (trực tiếp vs. gián tiếp), cách ra quyết định, và kỳ vọng về vai trò lãnh đạo là những thách thức cốt lõi trong quản lý nhóm đa văn hóa.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Trí tuệ văn hóa (CQ) là gì và tại sao nó quan trọng?',
+        answer:
+          'Trí tuệ văn hóa (Cultural Intelligence - CQ) là khả năng của một cá nhân để hoạt động và quản lý hiệu quả trong các môi trường có sự đa dạng về văn hóa. Nó quan trọng vì trong môi trường kinh doanh toàn cầu, CQ giúp các nhà lãnh đạo xây dựng lòng tin, giao tiếp hiệu quả và thúc đẩy sự hợp tác giữa các thành viên trong nhóm từ nhiều nền văn hóa khác nhau.',
+      },
+      {
+        question: 'Làm thế nào để cải thiện trí tuệ văn hóa của bản thân?',
+        answer:
+          'Bạn có thể cải thiện CQ bằng cách chủ động học hỏi về các nền văn hóa khác qua sách báo, phim ảnh; tiếp xúc và làm việc với người từ nhiều quốc gia; thực hành sự đồng cảm bằng cách cố gắng nhìn nhận vấn đề từ quan điểm của họ; và sẵn sàng điều chỉnh phong cách giao tiếp và hành vi của mình cho phù hợp với từng bối cảnh.',
+      },
+      {
+        question: 'Sự khác biệt chính giữa phong cách lãnh đạo ở phương Tây và phương Đông là gì?',
+        answer:
+          'Một cách tổng quát, phong cách lãnh đạo phương Tây thường tập trung vào cá nhân, kết quả và giao tiếp trực tiếp. Trong khi đó, phong cách lãnh đạo phương Đông thường nhấn mạnh sự hài hòa của tập thể, xây dựng mối quan hệ lâu dài và giao tiếp gián tiếp, giữ thể diện.',
+      },
+      {
+        question: 'Tại sao "giữ thể diện" (saving face) lại quan trọng trong văn hóa kinh doanh châu Á?',
+        answer:
+          'Trong nhiều nền văn hóa châu Á, "thể diện" đại diện cho uy tín, danh dự và vị thế xã hội của một người. Việc làm mất thể diện của đối tác có thể phá hỏng mối quan hệ và dẫn đến thất bại trong đàm phán. Do đó, việc giao tiếp khéo léo, tránh đối đầu trực tiếp và đưa ra phản hồi một cách tinh tế là rất quan trọng.',
+      },
+      {
+        question: 'Làm thế nào để một nhà lãnh đạo tạo ra một môi trường làm việc hòa nhập cho nhóm đa văn hóa?',
+        answer:
+          'Một nhà lãnh đạo cần thúc đẩy sự tôn trọng lẫn nhau, tạo cơ hội công bằng cho mọi thành viên được lên tiếng, xây dựng các quy trình làm việc rõ ràng và minh bạch, và khuyến khích việc chia sẻ và học hỏi về văn hóa của nhau một cách cởi mở.',
+      },
+      {
+        question: 'Đâu là một sai lầm phổ biến khi làm việc với đối tác từ nền văn hóa khác?',
+        answer:
+          'Một sai lầm phổ biến là cho rằng cách làm việc và các giá trị của nền văn hóa mình là "chuẩn" và áp đặt nó lên người khác (chủ nghĩa vị chủng). Điều này cho thấy sự thiếu nhạy bén về văn hóa và có thể gây ra xung đột và hiểu lầm không đáng có.',
+      },
+      {
+        question: 'Vai trò của người lãnh đạo trong việc giải quyết xung đột đa văn hóa là gì?',
+        answer:
+          'Người lãnh đạo đóng vai trò là người hòa giải, giúp các bên hiểu được quan điểm của nhau từ góc độ văn hóa, tìm ra nguồn gốc của sự hiểu lầm (thường là do khác biệt về giá trị hoặc phong cách giao tiếp) và tạo điều kiện cho một giải pháp mà tất cả các bên đều có thể chấp nhận và "giữ được thể diện".',
+      },
+      {
+        question: 'FPT đã áp dụng chiến lược gì để thành công trên thị trường toàn cầu?',
+        answer:
+          'FPT đã đầu tư vào việc đào tạo năng lực đa văn hóa cho nhân viên, xây dựng các đội ngũ "lai" gồm cả người địa phương và người Việt Nam tại các thị trường nước ngoài, và linh hoạt điều chỉnh các quy trình và sản phẩm cho phù hợp với từng thị trường cụ thể, thay vì áp dụng một mô hình duy nhất.',
+      },
+      {
+        question: 'Tại sao việc có kinh nghiệm làm việc ở nước ngoài lại có giá trị cho sự phát triển lãnh đạo?',
+        answer:
+          'Kinh nghiệm làm việc ở nước ngoài buộc các nhà lãnh đạo tương lai phải bước ra khỏi vùng an toàn, phát triển khả năng thích ứng, sự đồng cảm, kỹ năng giải quyết vấn đề trong môi trường không chắc chắn, và xây dựng một mạng lưới quan hệ quốc tế rộng lớn. Đây là những năng lực cốt lõi của một nhà lãnh đạo toàn cầu.',
+      },
+      {
+        question: 'Thế nào là văn hóa "ít ngữ cảnh" và "nhiều ngữ cảnh"? Việt Nam thuộc loại nào?',
+        answer:
+          'Trong văn hóa "ít ngữ cảnh" (low-context, ví dụ: Mỹ, Đức), thông điệp được truyền tải rõ ràng và trực tiếp bằng lời nói. Trong văn hóa "nhiều ngữ cảnh" (high-context, ví dụ: Việt Nam, Nhật Bản), nhiều ý nghĩa được truyền tải một cách gián tiếp qua bối cảnh, mối quan hệ và các tín hiệu phi ngôn ngữ. Việt Nam là một nền văn hóa "nhiều ngữ cảnh".',
       },
     ],
   },

@@ -109,6 +109,36 @@ export const financialLiteracyLessons: FinancialLiteracyLesson[] = [
         answer:
           'SMART là viết tắt của Specific (Cụ thể), Measurable (Đo lường được), Achievable (Khả thi), Relevant (Liên quan), và Time-bound (Có thời hạn). Ví dụ về một mục tiêu SMART: "Tiết kiệm 100 triệu đồng để làm khoản trả trước mua nhà (Specific, Measurable) trong vòng 2 năm tới (Time-bound) bằng cách tiết kiệm 4.2 triệu đồng mỗi tháng (Achievable, Relevant)."',
       },
+      {
+        question: 'Làm thế nào để đối phó với các khoản chi tiêu không thường xuyên, chẳng hạn như quà sinh nhật hoặc sửa chữa nhà cửa?',
+        answer:
+          'Hãy tạo một hoặc nhiều "quỹ chìm" (sinking funds). Đây là những tài khoản tiết kiệm nhỏ mà bạn đóng góp một khoản tiền nhỏ đều đặn mỗi tháng cho một mục tiêu chi tiêu cụ thể trong tương lai. Bằng cách này, khi chi phí phát sinh, bạn đã có sẵn tiền và không làm ảnh hưởng đến ngân sách hàng tháng.',
+      },
+      {
+        question: 'Tôi nên làm gì nếu tôi liên tục chi tiêu quá mức trong một danh mục nào đó?',
+        answer:
+          'Đầu tiên, hãy xem xét liệu ngân sách của bạn có thực tế không. Nếu có, hãy thử các chiến lược như phương pháp "phong bì tiền mặt" (chỉ chi tiêu số tiền mặt bạn đã phân bổ) hoặc tìm kiếm các giải pháp thay thế rẻ hơn. Nếu vẫn không hiệu quả, bạn có thể cần phải điều chỉnh ngân sách bằng cách cắt giảm ở một danh mục khác.',
+      },
+      {
+        question: 'Sự khác biệt giữa trả nợ "tuyết lở" (avalanche) và "quả cầu tuyết" (snowball) là gì?',
+        answer:
+          'Phương pháp "tuyết lở" ưu tiên trả hết khoản nợ có lãi suất cao nhất trước, giúp bạn tiết kiệm nhiều tiền lãi nhất. Phương pháp "quả cầu tuyết" ưu tiên trả hết khoản nợ có số dư nhỏ nhất trước, tạo ra các "chiến thắng" nhanh chóng để thúc đẩy động lực.',
+      },
+      {
+        question: 'Làm thế nào để quản lý tài chính khi có thu nhập không ổn định (ví dụ: làm nghề tự do)?',
+        answer:
+          'Khi có thu nhập không ổn định, hãy lập ngân sách dựa trên mức thu nhập trung bình thấp nhất của bạn. Trong những tháng có thu nhập cao, hãy ưu tiên xây dựng một quỹ khẩn cấp lớn hơn (6-12 tháng chi phí) và một quỹ "đệm" để bù đắp cho những tháng thu nhập thấp.',
+      },
+      {
+        question: 'Điểm tín dụng là gì và tại sao nó quan trọng ở Việt Nam?',
+        answer:
+          'Điểm tín dụng là một con số đánh giá mức độ uy tín tài chính của bạn, dựa trên lịch sử vay và trả nợ. Ở Việt Nam, thông tin này được quản lý bởi Trung tâm Thông tin Tín dụng Quốc gia (CIC). Một điểm tín dụng tốt sẽ giúp bạn dễ dàng được duyệt các khoản vay (mua nhà, mua xe) với lãi suất ưu đãi hơn.',
+      },
+      {
+        question: 'Tôi có nên tự động hóa các khoản tiết kiệm và thanh toán hóa đơn không?',
+        answer:
+          'Chắc chắn rồi. Tự động hóa là một trong những cách hiệu quả nhất để đảm bảo bạn luôn đi đúng hướng. Hãy thiết lập lệnh chuyển tiền tự động từ tài khoản lương sang tài khoản tiết kiệm/đầu tư ngay sau khi bạn nhận lương ("trả cho mình trước") và tự động thanh toán các hóa đơn cố định để tránh phí phạt trễ hạn.',
+      },
     ],
   },
   {
@@ -211,6 +241,36 @@ export const financialLiteracyLessons: FinancialLiteracyLesson[] = [
         question: 'Tôi nên bắt đầu đầu tư với bao nhiêu tiền?',
         answer:
           'Không có số tiền tối thiểu tuyệt đối. Nhiều nền tảng đầu tư hiện nay cho phép bạn bắt đầu chỉ với vài trăm nghìn đồng. Điều quan trọng hơn số tiền ban đầu là tính nhất quán. Bắt đầu nhỏ và đầu tư đều đặn theo thời gian thường hiệu quả hơn là chờ đợi để có một số tiền lớn.',
+      },
+      {
+        question: 'Cổ phiếu và trái phiếu khác nhau như thế nào?',
+        answer:
+          'Khi bạn mua cổ phiếu, bạn đang mua một phần nhỏ của công ty (trở thành cổ đông) và có tiềm năng thu lợi nhuận cao hơn nhưng cũng rủi ro hơn. Khi bạn mua trái phiếu, bạn đang cho một tổ chức (chính phủ hoặc công ty) vay tiền và nhận lại lãi suất cố định, đây là một khoản đầu tư an toàn hơn nhưng lợi nhuận thường thấp hơn.',
+      },
+      {
+        question: 'ETF (Exchange-Traded Fund) là gì?',
+        answer:
+          'ETF là một loại quỹ đầu tư theo dõi một chỉ số cụ thể (như VN30), một ngành hoặc một loại tài sản. Nó được giao dịch trên sàn chứng khoán giống như một cổ phiếu. ETF là một cách tuyệt vời để đạt được sự đa dạng hóa ngay lập tức với chi phí thấp.',
+      },
+      {
+        question: 'Lãi kép hoạt động như thế nào?',
+        answer:
+          'Lãi kép là quá trình mà tiền lãi bạn kiếm được từ một khoản đầu tư lại tiếp tục được tái đầu tư để tạo ra thêm lãi. Theo thời gian, hiệu ứng này có thể làm cho tài sản của bạn tăng trưởng theo cấp số nhân. Albert Einstein được cho là đã gọi nó là "kỳ quan thứ tám của thế giới".',
+      },
+      {
+        question: 'Tôi nên phân bổ tài sản của mình như thế nào giữa cổ phiếu và trái phiếu?',
+        answer:
+          'Một quy tắc chung đơn giản là "110 trừ đi tuổi của bạn". Con số kết quả là tỷ lệ phần trăm danh mục đầu tư bạn nên dành cho cổ phiếu. Ví dụ, nếu bạn 25 tuổi, bạn nên đầu tư khoảng 85% vào cổ phiếu và 15% vào trái phiếu. Khi bạn lớn tuổi hơn, bạn nên giảm dần tỷ lệ cổ phiếu để giảm rủi ro.',
+      },
+      {
+        question: 'Khi nào tôi nên bán một khoản đầu tư?',
+        answer:
+          'Lý do tốt nhất để bán là khi các yếu tố cơ bản của khoản đầu tư đã thay đổi (ví dụ: công ty hoạt động kém đi) hoặc khi bạn cần tái cân bằng danh mục đầu tư. Cố gắng tránh bán vì hoảng loạn khi thị trường đi xuống. Đầu tư dài hạn thường đòi hỏi sự kiên nhẫn.',
+      },
+      {
+        question: 'Đầu tư vào bất động sản có phải là một ý tưởng tốt không?',
+        answer:
+          'Bất động sản có thể là một khoản đầu tư tốt, mang lại cả dòng tiền từ việc cho thuê và sự tăng giá trị theo thời gian. Tuy nhiên, nó đòi hỏi một lượng vốn lớn ban đầu, có tính thanh khoản thấp (khó bán nhanh) và đi kèm với các chi phí quản lý, bảo trì.',
       },
     ],
   },

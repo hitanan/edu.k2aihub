@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Công Nghệ Nano: Khám Phá Sức Mạnh Từ Thế Giới Siêu Nhỏ'
 description: 'Tìm hiểu về công nghệ nano, cách các nhà khoa học thao tác với vật chất ở cấp độ nguyên tử và phân tử để tạo ra các vật liệu và thiết bị với những đặc tính phi thường.'
-date: '2025-10-14'
+date: '2025-09-14'
 author: 'K2AiHub Research Team'
 category: 'Hướng Dẫn'
 tags: ['công nghệ nano', 'nanotechnology', 'vật liệu nano', 'khoa học', 'công nghệ', 'hướng dẫn', 'K2AiHub']
@@ -14,6 +14,7 @@ readingTime: '21 phút đọc'
 Bạn đã bao giờ nghe nói về những loại vải không bao giờ bẩn, những loại sơn chống trầy xước tuyệt đối, hay những phương pháp điều trị ung thư chỉ nhắm vào tế bào bệnh mà không làm hại tế bào lành? Đằng sau những công nghệ đột phá này là một lĩnh vực khoa học hấp dẫn: **Công nghệ Nano (Nanotechnology)**.
 
 Công nghệ nano là ngành khoa học, kỹ thuật và công nghệ thực hiện ở quy mô nano, tức là từ 1 đến 100 nanomet (nm). Để dễ hình dung, một nanomet nhỏ đến mức nào:
+
 - Một tờ giấy có độ dày khoảng 100,000 nm.
 - Một sợi tóc người có đường kính khoảng 80,000 - 100,000 nm.
 - Một phân tử DNA có chiều rộng khoảng 2.5 nm.

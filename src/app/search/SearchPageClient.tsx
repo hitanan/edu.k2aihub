@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Search, BookOpen, Hash, GamepadIcon, PenTool, Clock, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { getAllModules } from '@/data/module.registry';
@@ -40,6 +41,7 @@ export default function SearchPageClient({
   initialType,
   blogPosts,
 }: SearchPageClientProps) {
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState<SearchResult[]>([]);
   const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
@@ -60,6 +62,15 @@ export default function SearchPageClient({
       }
     }
   }, []);
+
+  // Initialize query from URL ?q= when present
+  useEffect(() => {
+    const q = searchParams?.get('q') || '';
+    if (q && q !== query) {
+      setQuery(q);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   // Enhanced fuzzy search with Vietnamese support
   const fuzzyMatch = useCallback((searchTerm: string, text: string): number => {

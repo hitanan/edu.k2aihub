@@ -98,6 +98,30 @@ export const mentalHealthTechModule: ModuleData<MentalHealthLesson> = {
           answer:
             'Việc "cai nghiện" kỹ thuật số, tức là giảm bớt hoặc tạm dừng sử dụng các thiết bị điện tử, có thể rất hữu ích. Nó giúp não bộ được nghỉ ngơi, giảm cảm giác quá tải thông tin, cải thiện sự tập trung và khuyến khích các tương tác xã hội trực tiếp, tất cả đều có lợi cho sức khỏe tâm thần.',
         },
+        {
+          question: 'Làm thế nào để thiết lập một "ranh giới kỹ thuật số" lành mạnh?',
+          answer: 'Bạn có thể bắt đầu bằng cách tắt các thông báo không cần thiết, quy định các khoảng thời gian "không dùng điện thoại" trong ngày (ví dụ: trong bữa ăn, 1 giờ trước khi ngủ), và chỉ theo dõi các tài khoản mạng xã hội mang lại giá trị tích cực cho bạn.'
+        },
+        {
+          question: 'Theo dõi tâm trạng (mood tracking) hoạt động như thế nào?',
+          answer: 'Các ứng dụng theo dõi tâm trạng cho phép bạn ghi lại cảm xúc của mình hàng ngày. Theo thời gian, dữ liệu này giúp bạn nhận ra các quy luật, ví dụ như điều gì thường khiến bạn vui, buồn hoặc căng thẳng, từ đó giúp bạn quản lý cảm xúc tốt hơn.'
+        },
+        {
+          question: 'Sử dụng công nghệ để kết nối xã hội có tốt cho sức khỏe tâm thần không?',
+          answer: 'Có, nếu được sử dụng một cách có chủ đích. Công nghệ giúp kết nối với bạn bè, gia đình ở xa và tham gia các cộng đồng có cùng sở thích. Tuy nhiên, việc lạm dụng mạng xã hội và so sánh bản thân với người khác có thể gây tác động tiêu cực.'
+        },
+        {
+          question: 'Ánh sáng xanh từ màn hình ảnh hưởng đến giấc ngủ như thế nào?',
+          answer: 'Ánh sáng xanh có thể ức chế việc sản xuất melatonin, một loại hormone giúp điều chỉnh giấc ngủ. Tiếp xúc với ánh sáng xanh vào buổi tối có thể khiến bạn khó ngủ và làm giảm chất lượng giấc ngủ. Nhiều điện thoại hiện có chế độ "Night Shift" để giảm ánh sáng xanh.'
+        },
+        {
+          question: 'Có những loại ứng dụng sức khỏe tâm thần nào?',
+          answer: 'Có rất nhiều loại, bao gồm ứng dụng thiền và chánh niệm (Calm, Headspace), ứng dụng theo dõi tâm trạng (Daylio), ứng dụng trị liệu nhận thức-hành vi (CBT), và các chatbot trị liệu sử dụng AI.'
+        },
+        {
+          question: 'Làm thế nào để chọn một ứng dụng sức khỏe tâm thần phù hợp?',
+          answer: 'Hãy tìm hiểu xem ứng dụng có được phát triển dựa trên các bằng chứng khoa học không, đọc các bài đánh giá của người dùng, và kiểm tra chính sách bảo mật của ứng dụng. Quan trọng nhất là hãy thử và xem liệu nó có phù hợp với nhu cầu và sở thích của bạn không.'
+        }
       ],
     },
     {
@@ -123,6 +147,48 @@ export const mentalHealthTechModule: ModuleData<MentalHealthLesson> = {
         'Tiếp cận sức khỏe tâm thần cộng đồng',
         'Can thiệp khủng hoảng và phòng chống tự tử',
       ],
+      faqs: [
+        {
+          question: 'Chatbot trị liệu là gì?',
+          answer: 'Là một chương trình máy tính sử dụng trí tuệ nhân tạo (AI) để mô phỏng cuộc trò chuyện với người dùng, cung cấp sự hỗ trợ về mặt cảm xúc và các kỹ thuật trị liệu cơ bản, chẳng hạn như liệu pháp nhận thức-hành vi (CBT).'
+        },
+        {
+          question: 'AI có thể thay thế chuyên gia trị liệu con người không?',
+          answer: 'Hiện tại, AI không thể thay thế hoàn toàn chuyên gia trị liệu con người. Chúng được xem là công cụ hỗ trợ, giúp cung cấp sự trợ giúp ban đầu, thực hành các kỹ năng, và có mặt 24/7. Sự đồng cảm, thấu hiểu sâu sắc và kinh nghiệm của con người vẫn là không thể thay thế.'
+        },
+        {
+          question: 'Lợi ích chính của việc sử dụng chatbot trị liệu là gì?',
+          answer: 'Các lợi ích chính bao gồm tính ẩn danh, sự tiện lợi (có thể sử dụng mọi lúc, mọi nơi), chi phí thấp hơn so với trị liệu truyền thống, và không có cảm giác bị phán xét, giúp người dùng dễ dàng mở lòng hơn.'
+        },
+        {
+          question: 'AI làm thế nào để cá nhân hóa các can thiệp sức khỏe tâm thần?',
+          answer: 'Bằng cách phân tích dữ liệu người dùng cung cấp (như nhật ký tâm trạng, các cuộc trò chuyện), AI có thể xác định các mẫu hành vi, suy nghĩ và đề xuất các bài tập, kỹ thuật hoặc thông tin phù hợp nhất với tình trạng cụ thể của người đó.'
+        },
+        {
+          question: 'Phân tích dự báo trong sức khỏe tâm thần là gì?',
+          answer: 'Là việc sử dụng các thuật toán học máy để phân tích dữ liệu (ví dụ: từ thiết bị đeo, mạng xã hội) nhằm xác định các cá nhân có nguy cơ cao gặp phải các vấn đề sức khỏe tâm thần (như trầm cảm, lo âu) trước khi các triệu chứng trở nên nghiêm trọng.'
+        },
+        {
+          question: 'Những lo ngại về đạo đức khi sử dụng AI trong sức khỏe tâm thần là gì?',
+          answer: 'Các lo ngại chính bao gồm bảo mật và quyền riêng tư dữ liệu của người dùng, nguy cơ AI đưa ra lời khuyên sai hoặc không phù hợp, sự thiếu hụt kết nối con người, và khả năng AI không nhận diện được các tình huống khủng hoảng nghiêm trọng cần sự can thiệp của chuyên gia.'
+        },
+        {
+          question: 'Một chatbot trị liệu có thể xử lý tình huống khủng hoảng không?',
+          answer: 'Hầu hết các chatbot trị liệu uy tín đều được lập trình để nhận diện các từ khóa hoặc cụm từ liên quan đến khủng hoảng (ví dụ: tự tử, tự làm hại bản thân). Khi phát hiện, chúng sẽ ngay lập tức cung cấp thông tin liên hệ đến các đường dây nóng hoặc chuyên gia can thiệp khủng hoảng.'
+        },
+        {
+          question: 'Liệu pháp Nhận thức-Hành vi (CBT) mà các chatbot thường sử dụng là gì?',
+          answer: 'CBT là một loại trị liệu tâm lý giúp mọi người xác định và thay đổi các kiểu suy nghĩ và hành vi tiêu cực hoặc không hữu ích. Chatbot thường hướng dẫn người dùng qua các bài tập CBT để giúp họ tự quản lý các vấn đề như lo âu hoặc trầm cảm nhẹ.'
+        },
+        {
+          question: 'Dữ liệu của tôi có được an toàn khi sử dụng các ứng dụng AI này không?',
+          answer: 'Điều này phụ thuộc vào từng ứng dụng. Các ứng dụng uy tín thường mã hóa dữ liệu và có chính sách bảo mật rõ ràng. Người dùng nên đọc kỹ chính sách bảo mật và chỉ sử dụng các ứng dụng từ các nhà phát triển đáng tin cậy.'
+        },
+        {
+          question: 'Tương lai của AI trong sức khỏe tâm thần sẽ như thế nào?',
+          answer: 'Trong tương lai, AI có thể trở thành một công cụ sàng lọc và hỗ trợ ban đầu mạnh mẽ hơn, tích hợp sâu hơn với các thiết bị đeo để đưa ra cảnh báo sớm, và giúp các chuyên gia trị liệu phân tích dữ liệu để đưa ra phác đồ điều trị hiệu quả hơn.'
+        }
+      ]
     },
   ],
 };

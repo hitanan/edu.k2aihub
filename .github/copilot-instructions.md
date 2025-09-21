@@ -304,22 +304,73 @@ export const metadata: Metadata = createModuleMetadata(
 
 11. **Module integration**: After module created, add it to all related part in application to moduleNavigation.ts, summary new module in /docs folder and Use data from moduleNavigation.ts to update Homepage, header navigation, footer, sitemap, ...
 12. **Lesson and Game integration**: After lesson created, add it to all related part in gameData.ts, summary new module in /docs folder, when adding a game, ensure to link to the lessons accordingly by relatedLessons attribute.
-13. ** Blog post**: When creating file in /docs folder, ensure to add with proper front matter including title, description, date (in ISO format), author, category, tags, featured like below, please also update src/lib/blog.ts to ensure it can be used in blog listing page, category page, tag page, ... Also ensure to add readingTime attribute to show how long it takes to read the post. All blog post must be in Vietnamese language.
+13. **Blog Post Creation Standards 2025**: When creating file in /docs folder, ensure to follow these comprehensive standards:
 
-```
+### 📝 Blog Guide Content Standards 2025
+
+**Target Length**: 80-120 dòng (1,500-3,000 từ) cho guide posts
+- **Minimum viable**: 60 dòng (1,000 từ)
+- **Comprehensive guides**: 100-150 dòng (2,000-4,000 từ)
+- **Deep technical**: 150-200 dòng (4,000+ từ)
+
+### Content Structure Framework
+
+```markdown
+---
+title: 'Tiêu đề SEO-optimized với từ khóa chính (60-80 ký tự)'
+description: 'Mô tả 140-160 ký tự với value proposition rõ ràng'
+date: 'YYYY-MM-DD'
+author: 'K2AiHub [Subject] Team'
+category: 'Hướng Dẫn'
+tags: ['tag1', 'tag2', 'tag3', 'K2AiHub']
+featured: true/false
+readingTime: 'X phút đọc'
 ---
 
-title: "Nghiên Cứu & Phát Triển 20 Trò Chơi Giáo Dục Mới"
-description: "Kế hoạch nghiên cứu và phát triển 20 trò chơi giáo dục tương tác mới cho K2AiHub, tập trung vào gamification và trải nghiệm học tập hấp dẫn."
-date: "2025-01-05"
-author: "K2AiHub Game Development Team"
-category: "Nghiên Cứu"
-tags: ["trò chơi giáo dục", "gamification", "phát triển game", "học tập tương tác", "K2AiHub"]
-featured: true
-readingTime: "18 phút đọc"
+## Giới Thiệu: Hook với Problem/Solution (200-300 từ)
+- Vấn đề thực tế của người đọc
+- Promise về giá trị sẽ nhận được
+- Tại sao guide này khác biệt
 
----
+## Bước 1-6: Implementation Steps (60-80% của nội dung)
+- Mỗi bước 300-500 từ
+- Code examples/screenshots khi cần
+- Practical tips và best practices
+- Common mistakes và cách tránh
+
+## Kết Luận: Call-to-Action & Next Steps (150-200 từ)
+- Tổng kết key takeaways
+- Link đến related K2AiHub modules
+- Encourage engagement/feedback
 ```
+
+### 2025 Quality Standards
+
+**Visual Elements:**
+- Headers với emoji phù hợp (🎯, 🚀, 💡, ⚡, 📱)
+- Code blocks với syntax highlighting khi cần
+- Bold/italic cho emphasis
+- Bullet points cho readability
+
+**Engagement Features:**
+- Interactive elements description
+- Real-world Vietnamese examples
+- Links to K2AiHub learning modules (/learning/module-name)
+- Practical exercises/challenges
+
+**SEO Requirements:**
+- Primary keyword trong title & H1
+- 3-5 semantic keywords naturally integrated
+- Meta description với compelling CTA
+- Internal links đến 3-5 K2AiHub pages
+- External links đến authoritative sources (với rel="noopener noreferrer")
+
+**Mobile Optimization:**
+- Short paragraphs (2-3 sentences max)
+- Scannable content structure
+- Touch-friendly elements description
+
+All blog post must be in Vietnamese language. Please also update src/lib/blog.ts to ensure it can be used in blog listing page, category page, tag page, ... Also ensure to add readingTime attribute to show how long it takes to read the post.
 
 ## Git strategy
 

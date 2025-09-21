@@ -105,6 +105,42 @@ export const cybersecurityLessons: BaseLessonData[] = [
         answer:
           'Một mật khẩu mạnh nên có ít nhất 12 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt. Tránh sử dụng thông tin cá nhân dễ đoán. Tốt nhất là sử dụng một cụm từ dễ nhớ nhưng khó đoán, ví dụ: "ToiThichAnPhoHaNoi@2025!"',
       },
+      {
+        question: 'Malware, Virus, và Ransomware khác nhau như thế nào?',
+        answer: 'Malware (phần mềm độc hại) là thuật ngữ chung cho mọi loại phần mềm có hại. Virus là một loại malware có khả năng tự nhân bản bằng cách chèn mã của nó vào các chương trình khác. Ransomware là một loại malware chuyên mã hóa dữ liệu của nạn nhân và đòi tiền chuộc để giải mã.',
+      },
+      {
+        question: 'Tại sao tôi nên cập nhật phần mềm thường xuyên?',
+        answer: 'Các bản cập nhật phần mềm không chỉ mang lại tính năng mới mà còn thường xuyên vá các lỗ hổng bảo mật mà tin tặc có thể khai thác. Việc không cập nhật khiến hệ thống của bạn trở thành một mục tiêu dễ dàng.',
+      },
+      {
+        question: 'Tường lửa (Firewall) hoạt động như thế nào?',
+        answer: 'Tường lửa hoạt động như một người bảo vệ giữa mạng nội bộ của bạn và Internet. Nó giám sát và lọc lưu lượng truy cập mạng đến và đi dựa trên các quy tắc bảo mật đã được xác định trước, ngăn chặn các truy cập trái phép.',
+      },
+      {
+        question: 'Xác thực đa yếu tố (MFA) có thực sự cần thiết không?',
+        answer: 'Cực kỳ cần thiết. Ngay cả khi tin tặc có được mật khẩu của bạn, chúng vẫn không thể đăng nhập vào tài khoản nếu không có yếu tố thứ hai (ví dụ: mã OTP trên điện thoại của bạn). Đây là một trong những cách hiệu quả nhất để bảo vệ tài khoản.',
+      },
+      {
+        question: 'Social Engineering là gì?',
+        answer: 'Social Engineering là nghệ thuật thao túng tâm lý con người để họ tiết lộ thông tin bí mật hoặc thực hiện một hành động nào đó. Phishing là một hình thức phổ biến của social engineering. Kẻ tấn công khai thác lòng tin, sự sợ hãi hoặc tính tò mò của con người thay vì khai thác lỗ hổng kỹ thuật.',
+      },
+      {
+        question: 'Làm thế nào để lướt web an toàn khi dùng Wi-Fi công cộng?',
+        answer: 'Tránh truy cập vào các trang web nhạy cảm như ngân hàng trực tuyến. Luôn ưu tiên các trang web sử dụng HTTPS. Cách tốt nhất là sử dụng một dịch vụ Mạng riêng ảo (VPN) để mã hóa toàn bộ lưu lượng truy cập của bạn, khiến tin tặc không thể đọc được.',
+      },
+      {
+        question: 'Sự khác biệt giữa HTTP và HTTPS là gì?',
+        answer: 'Chữ "S" trong HTTPS là viết tắt của "Secure". HTTPS sử dụng mã hóa (thường là SSL/TLS) để bảo mật kết nối giữa trình duyệt của bạn và máy chủ web. Điều này ngăn chặn kẻ gian nghe lén hoặc thay đổi dữ liệu được truyền đi. Luôn tìm kiếm biểu tượng ổ khóa trên thanh địa chỉ.',
+      },
+      {
+        question: 'Zero-day attack là gì?',
+        answer: 'Đây là một cuộc tấn công khai thác một lỗ hổng bảo mật chưa từng được biết đến trước đây và chưa có bản vá nào cho nó. Các cuộc tấn công zero-day rất nguy hiểm vì không có biện pháp phòng thủ cụ thể nào chống lại chúng cho đến khi lỗ hổng được phát hiện và vá.',
+      },
+      {
+        question: 'Tôi có cần phần mềm diệt virus nếu tôi dùng macOS hoặc Linux không?',
+        answer: 'Mặc dù Windows là mục tiêu phổ biến nhất của malware, macOS và Linux không hoàn toàn miễn nhiễm. Việc sử dụng một phần mềm diệt virus uy tín vẫn là một biện pháp phòng thủ thông minh để tăng cường bảo vệ, đặc biệt nếu bạn thường xuyên tải xuống tệp từ internet hoặc trao đổi tệp với người dùng Windows.',
+      },
     ],
   },
   // ... other lessons will be added here

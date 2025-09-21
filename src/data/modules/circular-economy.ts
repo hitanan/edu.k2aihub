@@ -61,6 +61,30 @@ export const circularEconomyLessons: BaseLessonData[] = [
         answer:
           'Bạn có thể bắt đầu bằng những hành động đơn giản như giảm thiểu rác thải, ưu tiên sửa chữa đồ đạc thay vì mua mới, tái sử dụng các vật dụng, phân loại rác để tái chế, và ủng hộ các doanh nghiệp áp dụng mô hình kinh doanh bền vững.',
       },
+      {
+        question: 'Kinh tế tuyến tính (linear economy) là gì?',
+        answer: 'Kinh tế tuyến tính là mô hình "take-make-dispose" (khai thác-sản xuất-vứt bỏ). Trong mô hình này, chúng ta khai thác tài nguyên thiên nhiên, sản xuất sản phẩm, sử dụng chúng và sau đó vứt bỏ chúng như rác thải, dẫn đến cạn kiệt tài nguyên và ô nhiễm môi trường.',
+      },
+      {
+        question: 'Upcycling và Downcycling khác nhau như thế nào?',
+        answer: 'Upcycling (tái chế nâng cấp) là quá trình biến đổi chất thải hoặc sản phẩm không mong muốn thành sản phẩm mới có chất lượng và giá trị cao hơn. Downcycling (tái chế hạ cấp) cũng là tái chế, nhưng sản phẩm mới có chất lượng thấp hơn bản gốc, ví dụ như tái chế chai nhựa thành sợi tổng hợp.',
+      },
+      {
+        question: 'Mô hình "Sản phẩm như một Dịch vụ" (Product as a Service - PaaS) là gì?',
+        answer: 'Đây là một mô hình kinh doanh tuần hoàn, nơi khách hàng trả tiền để sử dụng sản phẩm thay vì sở hữu nó. Ví dụ, thay vì mua một máy in, bạn trả phí hàng tháng cho dịch vụ in ấn. Nhà sản xuất chịu trách nhiệm bảo trì, sửa chữa và thu hồi sản phẩm, khuyến khích họ thiết kế sản phẩm bền hơn.',
+      },
+      {
+        question: 'Kinh tế tuần hoàn có tạo ra việc làm mới không?',
+        answer: 'Có, kinh tế tuần hoàn tạo ra nhiều cơ hội việc làm mới trong các lĩnh vực như sửa chữa, tân trang, tái chế, logistics ngược (reverse logistics), và thiết kế bền vững. Nó đòi hỏi các kỹ năng mới và thúc đẩy sự đổi mới.',
+      },
+      {
+        question: 'Thách thức lớn nhất khi chuyển đổi sang kinh tế tuần hoàn là gì?',
+        answer: 'Các thách thức bao gồm việc thay đổi tư duy và thói quen tiêu dùng của xã hội, cần có sự đầu tư ban đầu vào công nghệ và cơ sở hạ tầng mới, và xây dựng các chính sách hỗ trợ mạnh mẽ từ chính phủ để tạo ra một sân chơi bình đẳng cho các doanh nghiệp tuần hoàn.',
+      },
+      {
+        question: 'Kinh tế sinh học (Bioeconomy) có liên quan đến kinh tế tuần hoàn không?',
+        answer: 'Có, chúng có mối quan hệ chặt chẽ. Kinh tế sinh học tập trung vào việc sử dụng các nguồn tài nguyên sinh học tái tạo (như thực vật, tảo) để sản xuất thực phẩm, năng lượng và vật liệu. Nó là một phần quan trọng của kinh tế tuần hoàn, đặc biệt trong việc tái tạo các hệ thống tự nhiên và tạo ra các vật liệu có thể phân hủy sinh học.',
+      },
     ],
   },
   {
@@ -111,6 +135,30 @@ export const circularEconomyLessons: BaseLessonData[] = [
         question: 'Một ví dụ về thiết kế tuần hoàn thành công là gì?',
         answer:
           'Điện thoại Fairphone là một ví dụ điển hình. Nó được thiết kế theo dạng module, cho phép người dùng dễ dàng tự thay thế các bộ phận như pin, camera, màn hình. Điều này kéo dài tuổi thọ của sản phẩm và giảm thiểu rác thải điện tử.',
+      },
+      {
+        question: 'Thiết kế cảm xúc (Emotional Design) có vai trò gì trong thiết kế tuần hoàn?',
+        answer: 'Thiết kế cảm xúc tạo ra một mối liên kết mạnh mẽ hơn giữa người dùng và sản phẩm. Khi người dùng yêu thích một sản phẩm, họ có xu hướng giữ gìn, sửa chữa và sử dụng nó lâu hơn, thay vì nhanh chóng vứt bỏ. Điều này trực tiếp góp phần vào việc kéo dài vòng đời sản phẩm.',
+      },
+      {
+        question: 'Vật liệu đơn (Monomaterials) là gì và tại sao chúng quan trọng?',
+        answer: 'Vật liệu đơn là các sản phẩm được làm từ một loại vật liệu duy nhất. Ví dụ, một chai hoàn toàn làm từ nhựa PET (kể cả nắp và nhãn) sẽ dễ tái chế hơn nhiều so với một chai có nhiều loại nhựa khác nhau. Sử dụng vật liệu đơn giúp đơn giản hóa quá trình phân loại và tái chế.',
+      },
+      {
+        question: 'Làm thế nào để thiết kế một sản phẩm có thể nâng cấp được?',
+        answer: 'Thiết kế để nâng cấp đòi hỏi một kiến trúc module, nơi các thành phần chính có thể được thay thế hoặc bổ sung. Ví dụ, một máy tính cho phép người dùng dễ dàng thêm RAM hoặc thay thế card đồ họa. Điều này giúp sản phẩm không bị lỗi thời và kéo dài thời gian sử dụng.',
+      },
+      {
+        question: 'Thiết kế bao bì tuần hoàn cần những yếu tố nào?',
+        answer: 'Bao bì tuần hoàn cần được thiết kế để: 1) Giảm thiểu vật liệu sử dụng (Reduce). 2) Có thể tái sử dụng nhiều lần (Reuse). 3) Dễ dàng tái chế (Recycle). 4) Nếu có thể, làm từ vật liệu có thể phân hủy sinh học (Rot).',
+      },
+      {
+        question: 'Cradle to Cradle (C2C) là gì?',
+        answer: 'Cradle to Cradle (Từ Nôi đến Nôi) là một triết lý thiết kế coi tất cả các vật liệu là "chất dinh dưỡng" cho một chu trình mới. Có hai loại chu trình: chu trình sinh học (vật liệu phân hủy và quay trở lại tự nhiên) và chu trình kỹ thuật (vật liệu được tái chế thành sản phẩm mới mà không làm giảm chất lượng).',
+      },
+      {
+        question: 'Tại sao mã nguồn mở lại có thể hỗ trợ thiết kế tuần hoàn?',
+        answer: 'Mã nguồn mở, đặc biệt là trong thiết kế phần cứng, cho phép mọi người truy cập vào bản thiết kế của sản phẩm. Điều này tạo điều kiện cho một cộng đồng toàn cầu tham gia vào việc sửa chữa, cải tiến và tùy biến sản phẩm, giúp chúng tồn tại lâu hơn và thích ứng tốt hơn với nhu cầu của người dùng.',
       },
     ],
   },

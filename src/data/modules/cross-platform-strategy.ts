@@ -180,6 +180,30 @@ export const crossPlatformStrategyLessons: CrossPlatformStrategyLessonType[] = [
         answer:
           'Nếu làm đúng cách thì không. Tái sử dụng nội dung không phải là copy-paste. Đó là việc lấy ý tưởng cốt lõi từ một nội dung chất lượng cao (ví dụ: một video YouTube) và biến nó thành các định dạng mới, phù hợp với nền tảng khác (ví dụ: một chuỗi story trên Instagram, một bài viết blog, một infographic).',
       },
+      {
+        question: 'Giọng điệu thương hiệu (brand voice) và tông giọng (tone of voice) khác nhau như thế nào?',
+        answer: 'Giọng điệu thương hiệu là cá tính cốt lõi, không đổi của thương hiệu bạn (ví dụ: chuyên nghiệp, hài hước, thân thiện). Tông giọng là sự điều chỉnh của giọng điệu đó cho phù hợp với từng tình huống, nền tảng hoặc đối tượng cụ thể. Ví dụ, một thương hiệu có giọng điệu hài hước nhưng sẽ sử dụng tông giọng nghiêm túc khi xử lý khiếu nại của khách hàng.',
+      },
+      {
+        question: 'Làm thế nào để xử lý một cuộc khủng hoảng truyền thông trên nhiều nền tảng?',
+        answer: 'Hãy hành động nhanh chóng và nhất quán. Đưa ra một thông báo chính thức trên kênh chính của bạn (ví dụ: website, Facebook Page) và sau đó dẫn link về thông báo đó từ các nền tảng khác. Điều này đảm bảo thông điệp được thống nhất và tránh việc phải trả lời lắt nhắt ở nhiều nơi.',
+      },
+      {
+        question: 'Customer Journey Map (Bản đồ hành trình khách hàng) đa kênh là gì?',
+        answer: 'Đó là việc hình dung tất cả các điểm chạm (touchpoints) mà một khách hàng có thể tương tác với thương hiệu của bạn trên các kênh khác nhau, từ lúc họ nhận biết về bạn trên TikTok, tìm hiểu thêm trên website, đến khi mua hàng qua Zalo. Việc này giúp bạn tạo ra một trải nghiệm liền mạch và không bị đứt gãy.',
+      },
+      {
+        question: 'Làm thế nào để tối ưu hóa cho các thuật toán khác nhau?',
+        answer: 'Mỗi thuật toán ưu tiên những thứ khác nhau. Ví dụ, thuật toán YouTube ưu tiên thời gian xem (watch time), thuật toán Instagram ưu tiên lượt lưu (saves) và chia sẻ (shares), thuật toán TikTok ưu tiên tỷ lệ xem lại (rewatch rate). Hãy tạo ra nội dung thỏa mãn các yếu tố này trên từng nền tảng.',
+      },
+      {
+        question: 'Có nên sử dụng cùng một hashtag trên tất cả các nền tảng không?',
+        answer: 'Bạn nên có một vài hashtag thương hiệu cốt lõi và sử dụng chúng một cách nhất quán. Tuy nhiên, bạn cũng nên nghiên cứu và sử dụng các hashtag đang thịnh hành và phù hợp riêng cho từng nền tảng (ví dụ: các hashtag challenge trên TikTok) để tăng khả năng được khám phá.',
+      },
+      {
+        question: 'Làm thế nào để quản lý cộng đồng hiệu quả trên nhiều kênh?',
+        answer: 'Sử dụng các công cụ quản lý mạng xã hội (như Sprout Social, Buffer) để tập trung tất cả các bình luận và tin nhắn vào một nơi. Tạo ra các câu trả lời mẫu (canned responses) cho các câu hỏi thường gặp để tiết kiệm thời gian, nhưng luôn cá nhân hóa chúng trước khi gửi đi.',
+      },
     ],
   },
   {
@@ -333,6 +357,48 @@ export const crossPlatformStrategyLessons: CrossPlatformStrategyLessonType[] = [
         explanation:
           'Tái sử dụng nội dung là một chiến lược thông minh giúp tối đa hóa giá trị từ mỗi mảnh nội dung bạn tạo ra, giúp bạn làm được nhiều hơn với ít công sức hơn.',
       },
+    ],
+    faqs: [
+        {
+            question: 'Làm thế nào để biến một bài blog thành nội dung cho mạng xã hội?',
+            answer: 'Bạn có thể: 1. Trích xuất mỗi tiêu đề phụ thành một bài đăng riêng. 2. Lấy các số liệu thống kê quan trọng để tạo thành một infographic. 3. Biến các điểm chính thành một chuỗi story trên Instagram/Facebook. 4. Quay một video ngắn tóm tắt 3 ý chính của bài viết. 5. Tạo một file PDF checklist để người dùng tải về.',
+        },
+        {
+            question: 'Sự khác biệt giữa tái sử dụng (repurpose) và tái đăng (repost) là gì?',
+            answer: 'Tái đăng là đăng lại y hệt một nội dung cũ. Tái sử dụng là lấy ý tưởng cốt lõi của một nội dung và biến nó thành một định dạng HOÀN TOÀN MỚI, được tối ưu hóa cho một nền tảng khác. Tái sử dụng mang lại giá trị cao hơn nhiều.',
+        },
+        {
+            question: 'Làm thế nào để tái sử dụng một video dài thành nội dung cho TikTok?',
+            answer: 'Đừng chỉ cắt một đoạn ngẫu nhiên. Hãy tìm những khoảnh khắc "aha", những câu nói đắt giá, những đoạn hướng dẫn nhanh hoặc những phần hài hước nhất trong video. Cắt chúng thành các clip dưới 60 giây, thêm phụ đề lớn, bắt mắt và một bản nhạc đang thịnh hành.',
+        },
+        {
+            question: 'Có công cụ AI nào giúp tái sử dụng nội dung không?',
+            answer: 'Có rất nhiều. Các công cụ như Opus Clip hoặc Vizard.ai có thể tự động cắt các video dài (từ YouTube) thành các clip ngắn có tiềm năng viral cho TikTok/Reels. Các công cụ như Jasper.ai có thể giúp bạn viết lại một bài blog thành các bài đăng mạng xã hội với các tông giọng khác nhau.',
+        },
+        {
+            question: 'Làm thế nào để theo dõi hiệu quả của nội dung được tái sử dụng?',
+            answer: 'Sử dụng các tham số UTM (UTM parameters) trong các link bạn chia sẻ. Điều này cho phép bạn theo dõi trong Google Analytics xem lưu lượng truy cập và chuyển đổi đến từ nguồn nào (ví dụ: từ bài đăng Facebook tái sử dụng từ video YouTube A).',
+        },
+        {
+            question: 'Tái sử dụng nội dung có bị coi là spam không?',
+            answer: 'Không, nếu bạn làm đúng. Spam là đăng cùng một thứ lặp đi lặp lại. Tái sử dụng là cung cấp cùng một giá trị cốt lõi nhưng dưới các hình thức mới mẻ, phù hợp với trải nghiệm của từng nền tảng. Người dùng Instagram muốn xem ảnh, người dùng TikTok muốn xem video ngắn - bạn đang đáp ứng nhu cầu của họ.',
+        },
+        {
+            question: 'Tôi nên bắt đầu tái sử dụng từ loại nội dung nào?',
+            answer: 'Hãy bắt đầu với những nội dung "thường xanh" (evergreen content) - những nội dung có giá trị lâu dài và không bị lỗi thời. Ngoài ra, hãy xem lại các phân tích của bạn và tìm ra những nội dung đã từng hoạt động rất tốt trong quá khứ. Tái sử dụng chúng có thể mang lại một làn sóng tương tác mới.',
+        },
+        {
+            question: 'Làm thế nào để tạo một quy trình tái sử dụng nội dung hiệu quả?',
+            answer: 'Hãy tích hợp việc tái sử dụng ngay từ khâu lên ý tưởng. Khi bạn lên kế hoạch cho một video YouTube, hãy nghĩ ngay xem nó có thể được "phân rã" thành những nội dung nào khác. Tạo ra các template (mẫu) cho từng loại nội dung tái sử dụng để đẩy nhanh quá trình sản xuất.',
+        },
+        {
+            question: 'Tần suất tái sử dụng một nội dung là bao nhiêu thì hợp lý?',
+            answer: 'Không có quy tắc cứng nhắc. Bạn có thể chia sẻ các phiên bản tái sử dụng của một nội dung trụ cột trong vài tuần hoặc thậm chí vài tháng. Miễn là bạn đang cung cấp chúng dưới một góc độ hoặc định dạng mới, nó sẽ không gây cảm giác nhàm chán cho khán giả.',
+        },
+        {
+            question: 'Làm thế nào để đảm bảo chất lượng khi tái sử dụng nội dung?',
+            answer: 'Đừng chỉ tự động hóa. Luôn có một bước kiểm duyệt của con người để đảm bảo rằng nội dung được tái sử dụng vẫn có ý nghĩa, ngữ cảnh phù hợp và đạt tiêu chuẩn chất lượng của thương hiệu bạn trước khi đăng.',
+        },
     ],
   },
 ];

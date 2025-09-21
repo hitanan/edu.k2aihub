@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Kinh Doanh và Marketing: Từ Ý Tưởng Đến Khách Hàng Đầu Tiên'
 description: 'Nắm vững các bước cơ bản để khởi sự kinh doanh, từ việc nghiên cứu thị trường, xây dựng sản phẩm đến việc triển khai các chiến lược marketing hiệu quả để thu hút khách hàng.'
-date: '2025-10-09'
+date: '2025-09-09'
 author: 'K2AiHub Business Team'
 category: 'Hướng Dẫn'
 tags: ['kinh doanh', 'marketing', 'khởi nghiệp', 'chiến lược kinh doanh', 'marketing plan', 'hướng dẫn', 'K2AiHub']
@@ -81,10 +81,10 @@ Với ngân sách hạn hẹp, hãy tập trung vào các chiến lược hiệu
 ## Bước 7: Đo Lường, Phân Tích và Tối Ưu
 
 - **Theo dõi các chỉ số quan trọng:**
-    - Lượng truy cập website.
-    - Số lượng khách hàng tiềm năng (leads).
-    - Tỷ lệ chuyển đổi (bao nhiêu % người truy cập website thực hiện mua hàng).
-    - Chi phí để có một khách hàng mới (Customer Acquisition Cost - CAC).
+  - Lượng truy cập website.
+  - Số lượng khách hàng tiềm năng (leads).
+  - Tỷ lệ chuyển đổi (bao nhiêu % người truy cập website thực hiện mua hàng).
+  - Chi phí để có một khách hàng mới (Customer Acquisition Cost - CAC).
 - **Lắng nghe phản hồi của khách hàng:** Họ thích gì? Họ không thích gì? Họ muốn có thêm tính năng gì?
 - **Tối ưu hóa:** Dựa trên dữ liệu và phản hồi, hãy liên tục cải thiện sản phẩm và chiến lược marketing của bạn. Kinh doanh là một vòng lặp: **Xây dựng -> Đo lường -> Học hỏi**.
 

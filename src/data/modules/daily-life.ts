@@ -41,6 +41,30 @@ export const dailyLifeLessons: BaseLessonData[] = [
         answer:
           'Chắc chắn rồi. Đây là một trong những ứng dụng phổ biến nhất của trợ lý AI. Bằng cách kết nối với các thiết bị nhà thông minh (smart home), bạn có thể dùng giọng nói để điều khiển đèn, quạt, TV, máy lạnh và nhiều thiết bị khác.',
       },
+      {
+        question: 'Sự khác biệt giữa Google Assistant, Siri và Alexa là gì?',
+        answer: 'Về cơ bản, chúng đều là trợ lý ảo nhưng được phát triển bởi các công ty khác nhau. Google Assistant (của Google) mạnh về tìm kiếm và tích hợp với các dịch vụ của Google. Siri (của Apple) tích hợp sâu với hệ sinh thái Apple. Alexa (của Amazon) mạnh về mua sắm và điều khiển các thiết bị nhà thông minh.',
+      },
+      {
+        question: 'Làm thế nào để "dạy" trợ lý AI hiểu tôi tốt hơn?',
+        answer: 'Hãy thường xuyên tương tác và sửa lỗi cho nó. Khi trợ lý không hiểu đúng ý bạn, hãy thử diễn đạt lại bằng cách khác. Nhiều trợ lý cũng có phần cài đặt để bạn có thể xem lại lịch sử và giúp nó nhận dạng giọng nói của bạn tốt hơn.',
+      },
+      {
+        question: 'Trợ lý AI có thể hoạt động mà không cần Internet không?',
+        answer: 'Hầu hết các tính năng phức tạp như tìm kiếm thông tin, chơi nhạc trực tuyến đều cần Internet. Tuy nhiên, một số tác vụ cơ bản như đặt báo thức hoặc mở ứng dụng có thể hoạt động ngoại tuyến trên một số thiết bị.',
+      },
+      {
+        question: 'Routine (Thói quen) trong trợ lý AI là gì?',
+        answer: 'Routine là một tính năng cho phép bạn kích hoạt một chuỗi hành động chỉ bằng một câu lệnh duy nhất. Ví dụ, bạn có thể tạo một routine "Chào buổi sáng" để khi bạn nói câu lệnh đó, trợ lý sẽ tự động tắt báo thức, đọc tin tức, thông báo thời tiết và bật bản nhạc yêu thích của bạn.',
+      },
+      {
+        question: 'Tôi có thể sử dụng trợ lý AI bằng tiếng Việt không?',
+        answer: 'Có, Google Assistant và Siri đều hỗ trợ tiếng Việt rất tốt. Bạn có thể giao tiếp, ra lệnh và nhận phản hồi hoàn toàn bằng tiếng Việt, giúp trải nghiệm trở nên tự nhiên và dễ dàng hơn cho người dùng Việt Nam.',
+      },
+      {
+        question: 'Trợ lý AI có thể giúp gì cho người lớn tuổi?',
+        answer: 'Trợ lý AI rất hữu ích cho người lớn tuổi. Họ có thể dùng giọng nói để gọi điện cho người thân mà không cần nhớ số, đặt lịch nhắc uống thuốc, nghe tin tức hoặc sách nói một cách dễ dàng, giúp họ kết nối với thế giới và sống độc lập hơn.',
+      },
     ],
   },
   {
@@ -72,6 +96,30 @@ export const dailyLifeLessons: BaseLessonData[] = [
         question: 'Sử dụng các ứng dụng này có an toàn không?',
         answer:
           'Các ứng dụng tài chính uy tín sử dụng mã hóa cấp ngân hàng và các biện pháp bảo mật mạnh mẽ để bảo vệ dữ liệu của bạn. Tuy nhiên, hãy luôn chọn các ứng dụng có tên tuổi, đọc kỹ các bài đánh giá và sử dụng mật khẩu mạnh.',
+      },
+      {
+        question: 'Việc kết nối tài khoản ngân hàng với ứng dụng AI có rủi ro gì?',
+        answer: 'Rủi ro chính là nguy cơ rò rỉ dữ liệu. Tuy nhiên, các ứng dụng uy tín thường sử dụng các giao thức kết nối "chỉ đọc" (read-only) thông qua các bên trung gian an toàn như Plaid, nghĩa là ứng dụng chỉ có thể xem chứ không thể thực hiện giao dịch trên tài khoản của bạn.',
+      },
+      {
+        question: 'AI có thể giúp tôi phát hiện gian lận thẻ tín dụng không?',
+        answer: 'Chính các ngân hàng và công ty thẻ tín dụng đang sử dụng AI rất nhiều để làm việc này. AI học các thói quen chi tiêu của bạn và có thể gắn cờ các giao dịch bất thường (ví dụ: một giao dịch lớn ở một quốc gia khác) và thông báo cho bạn ngay lập tức.',
+      },
+      {
+        question: 'Làm thế nào AI có thể giúp tôi cải thiện điểm tín dụng?',
+        answer: 'Một số ứng dụng AI có thể phân tích lịch sử tài chính của bạn và đưa ra các khuyến nghị cụ thể để cải thiện điểm tín dụng, chẳng hạn như đề xuất thanh toán các khoản nợ nào trước, hoặc nhắc nhở bạn về các ngày đến hạn thanh toán để tránh trả chậm.',
+      },
+      {
+        question: 'Robo-advisor có tốt hơn một nhà tư vấn tài chính con người không?',
+        answer: 'Robo-advisor có ưu điểm là chi phí thấp, dễ tiếp cận và loại bỏ cảm xúc ra khỏi quyết định đầu tư. Tuy nhiên, một nhà tư vấn con người có thể hiểu sâu hơn về các tình huống cuộc sống phức tạp của bạn và đưa ra lời khuyên toàn diện hơn, không chỉ về đầu tư. Nhiều người kết hợp cả hai.',
+      },
+      {
+        question: 'AI có thể dự đoán thị trường chứng khoán không?',
+        answer: 'Mặc dù các quỹ đầu tư lớn sử dụng AI để phân tích dữ liệu và tìm kiếm lợi thế, nhưng không có AI nào có thể dự đoán thị trường chứng khoán một cách chính xác và nhất quán. Thị trường bị ảnh hưởng bởi quá nhiều yếu tố bất ngờ. Hãy cẩn thận với bất kỳ ai hứa hẹn điều này.',
+      },
+      {
+        question: 'Tôi có cần phải là chuyên gia tài chính để sử dụng các công cụ này không?',
+        answer: 'Hoàn toàn không. Ưu điểm lớn nhất của các ứng dụng tài chính AI là chúng dân chủ hóa việc quản lý tài chính. Chúng được thiết kế với giao diện trực quan, dễ hiểu để giúp những người không chuyên có thể đưa ra các quyết định tài chính thông minh hơn.',
       },
     ],
   },
@@ -105,6 +153,30 @@ export const dailyLifeLessons: BaseLessonData[] = [
         answer:
           'Mặc dù không thể chính xác 100% như các thiết bị y tế chuyên dụng, các thiết bị đeo hiện đại ngày càng trở nên chính xác hơn trong việc theo dõi các chỉ số như nhịp tim, số bước chân và lượng calo tiêu thụ. Chúng là công cụ tuyệt vời để theo dõi xu hướng và tạo động lực.',
       },
+      {
+        question: 'AI có thể phân tích dáng chạy hoặc tư thế tập luyện của tôi không?',
+        answer: 'Có, một số ứng dụng tiên tiến sử dụng camera của điện thoại để phân tích chuyển động của bạn trong thời gian thực. AI có thể đưa ra phản hồi tức thì để giúp bạn sửa lỗi tư thế, tránh chấn thương và tập luyện hiệu quả hơn, giống như có một huấn luyện viên cá nhân ảo.',
+      },
+      {
+        question: 'AI có thể dự đoán nguy cơ mắc bệnh không?',
+        answer: 'Đây là một lĩnh vực đang phát triển rất nhanh. AI có thể phân tích dữ liệu sức khỏe tổng hợp của bạn (nhịp tim khi nghỉ, biến thiên nhịp tim HRV, chất lượng giấc ngủ) để phát hiện các dấu hiệu sớm của stress, kiệt sức hoặc thậm chí là một số bệnh tật, và cảnh báo bạn nên đi khám bác sĩ.',
+      },
+      {
+        question: 'Làm thế nào AI giúp quản lý stress?',
+        answer: 'Nhiều ứng dụng thiền định và sức khỏe tinh thần như Calm hay Headspace sử dụng AI để đề xuất các bài thiền hoặc bài tập thở phù hợp với tâm trạng hiện tại của bạn. Các thiết bị đeo cũng có thể phát hiện mức độ stress dựa trên nhịp tim và nhắc nhở bạn dành thời gian để thư giãn.',
+      },
+      {
+        question: 'Dữ liệu sức khỏe của tôi có được bảo mật không?',
+        answer: 'Dữ liệu sức khỏe là loại thông tin cực kỳ nhạy cảm. Các công ty uy tín như Apple, Google, Garmin có các chính sách bảo mật rất chặt chẽ. Tuy nhiên, bạn nên cẩn thận với các ứng dụng ít tên tuổi và luôn kiểm tra xem bạn đang cấp cho họ những quyền truy cập nào.',
+      },
+      {
+        question: 'AI có thể thay thế bác sĩ không?',
+        answer: 'Không. Các công cụ AI là những trợ lý sức khỏe tuyệt vời, giúp bạn theo dõi, tạo động lực và có ý thức hơn về lối sống. Tuy nhiên, chúng không thể chẩn đoán bệnh. Nếu có bất kỳ vấn đề sức khỏe nào, bạn phải luôn tham khảo ý kiến của bác sĩ hoặc chuyên gia y tế.',
+      },
+      {
+        question: 'AI có thể giúp gì cho người có bệnh mãn tính (ví dụ: tiểu đường)?',
+        answer: 'AI rất hữu ích. Các máy theo dõi đường huyết liên tục (CGM) kết hợp với AI có thể dự đoán xu hướng đường huyết, cảnh báo về nguy cơ hạ hoặc tăng đường huyết, và giúp bệnh nhân điều chỉnh liều lượng insulin hoặc chế độ ăn uống một cách chính xác hơn.',
+      },
     ],
   },
   {
@@ -136,6 +208,30 @@ export const dailyLifeLessons: BaseLessonData[] = [
         question: 'AI có thể giúp gì khi tôi đang ở một quốc gia không nói tiếng Anh?',
         answer:
           'Ứng dụng Google Translate là một cứu cánh. Nó sử dụng AI để dịch văn bản qua camera (ví dụ: dịch thực đơn), dịch giọng nói trong thời gian thực để bạn có thể trò chuyện với người bản xứ, và dịch các đoạn văn bản bạn nhập vào.',
+      },
+      {
+        question: 'AI có thể gợi ý các địa điểm "ẩn" mà ít người biết không?',
+        answer: 'Có. Thay vì chỉ dựa vào các địa điểm nổi tiếng, một số nền tảng AI phân tích các bài đăng trên mạng xã hội, blog du lịch, và các bài đánh giá để tìm ra những "viên ngọc ẩn" (hidden gems) mà chỉ người dân địa phương hoặc những người đi du lịch sành sỏi mới biết.',
+      },
+      {
+        question: 'Làm thế nào AI giúp tôi chọn khách sạn phù hợp?',
+        answer: 'Các trang web đặt phòng như Booking.com sử dụng AI để cá nhân hóa các kết quả tìm kiếm. Dựa trên các lựa chọn trước đây của bạn, AI sẽ ưu tiên hiển thị các khách sạn có phong cách, mức giá và tiện nghi mà bạn có khả năng thích nhất.',
+      },
+      {
+        question: 'AI có thể giúp tôi đóng gói hành lý không?',
+        answer: 'Có, một số ứng dụng du lịch có thể đưa ra danh sách các vật dụng cần đóng gói dựa trên điểm đến, thời gian của chuyến đi và dự báo thời tiết. Chúng sẽ nhắc bạn mang theo áo mưa nếu trời có khả năng mưa, hoặc kem chống nắng nếu trời nắng.',
+      },
+      {
+        question: 'Các hãng hàng không sử dụng AI để làm gì?',
+        answer: 'Họ sử dụng AI cho rất nhiều việc, từ việc tối ưu hóa giá vé (dynamic pricing), dự đoán nhu cầu bay để sắp xếp lịch trình, cho đến việc bảo trì dự đoán (predictive maintenance) để phát hiện các vấn đề tiềm ẩn của máy bay trước khi chúng xảy ra.',
+      },
+      {
+        question: 'AI có thể giúp tôi tránh đám đông khi đi du lịch không?',
+        answer: 'Có. Google Maps có tính năng "Popular times" (Thời gian phổ biến) sử dụng dữ liệu vị trí ẩn danh để cho bạn biết một địa điểm (như bảo tàng, nhà hàng) thường đông đúc vào lúc nào, giúp bạn lên kế hoạch ghé thăm vào những giờ vắng khách hơn.',
+      },
+      {
+        question: 'Trong tương lai, AI sẽ thay đổi ngành du lịch như thế nào?',
+        answer: 'Trong tương lai, AI có thể tạo ra các trải nghiệm du lịch siêu cá nhân hóa. Hãy tưởng tượng một trợ lý AI biết rõ sở thích của bạn, tự động đặt vé, lên lịch trình, và thậm chí điều chỉnh kế hoạch trong thời gian thực dựa trên tâm trạng hoặc thời tiết, tạo ra một chuyến đi hoàn hảo chỉ dành riêng cho bạn.',
       },
     ],
   },

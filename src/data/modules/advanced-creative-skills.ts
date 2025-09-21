@@ -191,6 +191,38 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         answer:
           'Hiểu đối tượng mục tiêu giúp nhà thiết kế lựa chọn màu sắc, font chữ, và phong cách hình ảnh phù hợp, tạo ra một bản sắc thương hiệu có thể kết nối và giao tiếp hiệu quả với nhóm khách hàng mà doanh nghiệp muốn hướng tới.',
       },
+      {
+        question: 'Tâm lý học màu sắc trong thiết kế thương hiệu có ý nghĩa gì?',
+        answer: 'Màu sắc có khả năng gợi lên những cảm xúc và liên tưởng mạnh mẽ. Ví dụ, màu xanh dương thường tạo cảm giác tin cậy, chuyên nghiệp (công nghệ, tài chính), trong khi màu đỏ tạo cảm giác năng lượng, đam mê (thực phẩm, giải trí). Sử dụng màu sắc một cách có chủ đích là một công cụ mạnh mẽ để truyền tải thông điệp thương hiệu.',
+      },
+      {
+        question: 'Typography (nghệ thuật chữ) đóng vai trò gì trong nhận diện thương hiệu?',
+        answer: 'Typography không chỉ là chọn một font chữ đẹp. Nó là "giọng nói" của thương hiệu. Một font chữ có chân (serif) có thể tạo cảm giác cổ điển, sang trọng, trong khi một font không chân (sans-serif) tạo cảm giác hiện đại, sạch sẽ. Sự nhất quán trong typography giúp tăng cường khả năng nhận diện thương hiệu.',
+      },
+      {
+        question: 'Sự khác biệt giữa logo, nhận diện thương hiệu (brand identity) và thương hiệu (brand) là gì?',
+        answer: 'Logo chỉ là một biểu tượng. Nhận diện thương hiệu là tập hợp tất cả các yếu tố hình ảnh (logo, màu sắc, font chữ, hình ảnh). Thương hiệu là khái niệm rộng nhất, là toàn bộ nhận thức, cảm xúc và trải nghiệm mà khách hàng có về một công ty hoặc sản phẩm.',
+      },
+      {
+        question: 'Figma và Adobe Illustrator, tôi nên dùng công cụ nào để thiết kế logo?',
+        answer: 'Cả hai đều là công cụ mạnh mẽ. Illustrator là tiêu chuẩn công nghiệp cho đồ họa vector và thiết kế logo trong nhiều năm. Figma, mặc dù chủ yếu cho thiết kế UI/UX, cũng có các công cụ vector rất tốt và lợi thế về tính năng cộng tác thời gian thực. Đối với logo phức tạp, Illustrator có thể mạnh hơn, nhưng với logo đơn giản, Figma hoàn toàn có thể đáp ứng.',
+      },
+      {
+        question: 'Làm thế nào để tạo ra một hệ thống lưới (grid system) hiệu quả trong thiết kế?',
+        answer: 'Hệ thống lưới là một cấu trúc vô hình gồm các đường thẳng và cột giúp sắp xếp các yếu tố thiết kế một cách có tổ chức và nhất quán. Bắt đầu bằng việc xác định lề (margins), số cột (thường là 12 cột cho web vì tính linh hoạt), và khoảng cách giữa các cột (gutter). Sử dụng lưới giúp tạo ra sự cân bằng, nhịp điệu và dễ đọc cho thiết kế.',
+      },
+      {
+        question: 'Không gian âm (negative space) trong thiết kế là gì?',
+        answer: 'Không gian âm, hay không gian trắng, là khoảng trống xung quanh và giữa các đối tượng trong một thiết kế. Nó không phải là không gian "lãng phí". Sử dụng không gian âm một cách hiệu quả giúp thiết kế "dễ thở", làm nổi bật các yếu tố quan trọng và cải thiện tính dễ đọc.',
+      },
+      {
+        question: 'Làm thế nào để tìm kiếm nguồn cảm hứng thiết kế một cách chuyên nghiệp?',
+        answer: 'Thay vì chỉ sao chép các xu hướng, hãy tìm cảm hứng từ nhiều nguồn: kiến trúc, thiên nhiên, nghệ thuật cổ điển, nhiếp ảnh... Các trang web như Behance, Dribbble, Pinterest là những nơi tuyệt vời để xem các tác phẩm chất lượng. Quan trọng là phân tích "tại sao" một thiết kế lại hiệu quả, chứ không chỉ là "cái gì" được thiết kế.',
+      },
+      {
+        question: 'Khi nào thì nên sử dụng ảnh chụp và khi nào nên sử dụng hình minh họa (illustration)?',
+        answer: 'Ảnh chụp thường được sử dụng để tạo sự chân thực, tin cậy và kết nối với con người thật. Hình minh họa rất linh hoạt, có thể dùng để giải thích các khái niệm trừu tượng, tạo ra một phong cách độc đáo cho thương hiệu và thể hiện sự sáng tạo không giới hạn.',
+      },
     ],
   },
   {
@@ -313,6 +345,38 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         answer:
           'Âm thanh là một nửa trải nghiệm của video. Thiết kế âm thanh tốt, bao gồm nhạc nền, hiệu ứng âm thanh (SFX), và giọng nói rõ ràng, có thể tạo ra cảm xúc, dẫn dắt sự chú ý, và làm cho câu chuyện trở nên sống động và chân thực hơn rất nhiều.',
       },
+      {
+        question: 'Sự khác biệt giữa DaVinci Resolve và Adobe Premiere Pro là gì?',
+        answer: 'Cả hai đều là phần mềm dựng phim chuyên nghiệp. Premiere Pro nổi tiếng với sự tích hợp liền mạch trong hệ sinh thái Adobe (After Effects, Photoshop). DaVinci Resolve ban đầu là một công cụ chỉnh màu chuyên dụng và đến nay vẫn được coi là mạnh nhất về chỉnh màu. Phiên bản miễn phí của Resolve cũng rất mạnh mẽ, trong khi Premiere Pro yêu cầu trả phí thuê bao.',
+      },
+      {
+        question: 'Tốc độ khung hình (frame rate) ảnh hưởng đến video như thế nào?',
+        answer: 'Tốc độ khung hình tiêu chuẩn cho phim điện ảnh là 24fps (khung hình/giây), tạo cảm giác điện ảnh. 30fps phổ biến cho truyền hình và video online. 60fps hoặc cao hơn tạo ra chuyển động mượt mà, rất phù hợp cho các cảnh quay thể thao, game hoặc để tạo hiệu ứng quay chậm (slow motion) khi dựng phim.',
+      },
+      {
+        question: 'Color Grading và Color Correction khác nhau như thế nào?',
+        answer: 'Color Correction (chỉnh màu) là bước kỹ thuật, nhằm sửa các lỗi về màu sắc, đảm bảo video có cân bằng trắng đúng, độ phơi sáng phù hợp và các cảnh quay khác nhau trông nhất quán. Color Grading (phân loại màu) là bước sáng tạo, nhằm tạo ra một phong cách và cảm xúc riêng cho video bằng cách áp dụng một bảng màu nghệ thuật.',
+      },
+      {
+        question: 'Log profile khi quay video là gì?',
+        answer: 'Quay ở chế độ Log (logarithmic profile) tạo ra một hình ảnh có độ tương phản thấp, màu sắc nhạt và trông "phẳng". Điều này cho phép máy quay ghi lại được dải tần nhạy sáng (dynamic range) rộng nhất có thể. Mặc dù cảnh quay thô trông không đẹp, nhưng nó lưu giữ nhiều thông tin hơn ở cả vùng sáng và vùng tối, cho phép sự linh hoạt tối đa trong quá trình chỉnh màu sau này.',
+      },
+      {
+        question: 'Làm thế nào để kể chuyện hiệu quả qua video?',
+        answer: 'Một câu chuyện hay thường có cấu trúc 3 hồi: Thiết lập (giới thiệu nhân vật và bối cảnh), Đối đầu (nhân vật đối mặt với thử thách), và Giải quyết (kết quả của cuộc đối đầu). Sử dụng các góc quay, ánh sáng, âm nhạc và nhịp độ dựng phim để nhấn mạnh cảm xúc và dẫn dắt câu chuyện.',
+      },
+      {
+        question: 'Một số loại micro phổ biến dùng trong sản xuất video là gì?',
+        answer: 'Microphone shotgun rất lý tưởng để thu âm thanh định hướng từ một khoảng cách xa. Microphone lavalier (mic cài áo) nhỏ gọn, được gắn trực tiếp lên người nói, cho âm thanh rõ ràng và nhất quán. Micro condenser trong studio cho chất lượng âm thanh tốt nhất để thu âm giọng đọc (voice-over).',
+      },
+      {
+        question: 'Làm thế nào để tạo ra các video hấp dẫn cho TikTok và Reels?',
+        answer: 'Nội dung dạng ngắn đòi hỏi phải thu hút sự chú ý ngay trong 3 giây đầu tiên. Sử dụng văn bản trên màn hình, các đoạn cắt nhanh, âm nhạc theo xu hướng (trending music), và một lời kêu gọi hành động rõ ràng. Câu chuyện cần được kể một cách nhanh gọn và trực diện.',
+      },
+      {
+        question: 'Ánh sáng 3 điểm (Three-Point Lighting) là gì?',
+        answer: 'Đây là một kỹ thuật chiếu sáng cơ bản bao gồm ba nguồn sáng: Key light (ánh sáng chính, mạnh nhất), Fill light (ánh sáng phụ, dùng để làm mềm bóng do key light tạo ra), và Backlight (ánh sáng ngược, dùng để tách chủ thể ra khỏi hậu cảnh). Kỹ thuật này tạo ra hình ảnh có chiều sâu và trông chuyên nghiệp.',
+      },
     ],
   },
   {
@@ -424,6 +488,38 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         question: 'Sự khác biệt giữa micro dynamic và condenser là gì?',
         answer:
           'Micro Dynamic bền hơn và ít nhạy cảm với âm thanh xung quanh, rất phù hợp cho việc thu âm trong môi trường không được xử lý âm học tốt hoặc thu âm nhiều người. Micro Condenser nhạy hơn, thu được chi tiết âm thanh tốt hơn, lý tưởng cho việc thu âm trong studio yên tĩnh để có chất giọng trong và rõ.',
+      },
+      {
+        question: 'EQ (Equalizer) được sử dụng để làm gì trong xử lý âm thanh?',
+        answer: 'EQ cho phép bạn tăng hoặc giảm âm lượng của các dải tần số cụ thể. Nó được sử dụng để "dọn dẹp" âm thanh, ví dụ như cắt bỏ các tần số thấp gây ù (rumble), giảm các âm thanh "xì" (sibilance) ở tần số cao, hoặc tăng một chút ở dải trung để giọng nói trở nên rõ ràng hơn.',
+      },
+      {
+        question: 'Compressor (bộ nén) có tác dụng gì?',
+        answer: 'Compressor làm giảm sự khác biệt về âm lượng giữa phần to nhất và phần nhỏ nhất của một tín hiệu âm thanh. Nó giúp làm cho âm lượng tổng thể trở nên đồng đều hơn, tránh việc người nghe phải liên tục điều chỉnh volume khi có đoạn nói quá to hoặc quá nhỏ.',
+      },
+      {
+        question: 'Tại sao cần phải xử lý âm học cho phòng thu?',
+        answer: 'Một căn phòng trống và có nhiều bề mặt phẳng (tường, sàn, trần) sẽ tạo ra tiếng vang (reverb) và tiếng dội (echo), làm cho bản thu bị "loãng" và không chuyên nghiệp. Xử lý âm học bằng cách sử dụng các tấm hút âm (acoustic panels), bẫy âm trầm (bass traps) giúp kiểm soát các phản xạ âm thanh này, tạo ra một bản thu "khô" và sạch sẽ hơn.',
+      },
+      {
+        question: 'Sự khác biệt giữa Audacity và Adobe Audition là gì?',
+        answer: 'Audacity là một phần mềm chỉnh sửa âm thanh miễn phí, mã nguồn mở, rất tốt cho các tác vụ cơ bản như cắt, ghép, và một số hiệu ứng đơn giản. Adobe Audition là một phần mềm chuyên nghiệp, trả phí, cung cấp một bộ công cụ mạnh mẽ hơn nhiều, đặc biệt là các công cụ phục hồi âm thanh (noise reduction, de-reverb) và quy trình làm việc "non-destructive" (không phá hủy file gốc).',
+      },
+      {
+        question: 'Làm thế nào để loại bỏ tạp âm (background noise) khỏi bản thu?',
+        answer: 'Cách tốt nhất là ngăn chặn tạp âm ngay từ nguồn (tắt quạt, điều hòa, đóng cửa sổ). Nếu vẫn còn, các phần mềm như Adobe Audition hay iZotope RX có các công cụ giảm nhiễu mạnh mẽ. Chúng hoạt động bằng cách lấy một "mẫu" của tiếng ồn (noise print) từ một đoạn im lặng, sau đó loại bỏ các tần số đó khỏi toàn bộ file.',
+      },
+      {
+        question: 'Podcast hosting platform là gì và tại sao tôi cần nó?',
+        answer: 'Bạn không thể tải trực tiếp file MP3 của podcast lên Spotify hay Apple Podcasts. Bạn cần tải nó lên một nền tảng lưu trữ (hosting platform) như Buzzsprout, Transistor.fm, hoặc Anchor (miễn phí của Spotify). Nền tảng này sẽ tạo ra một RSS feed, và bạn sẽ gửi RSS feed đó đến các ứng dụng podcast. Khi bạn tải tập mới lên host, nó sẽ tự động được cập nhật ở mọi nơi.',
+      },
+      {
+        question: 'Làm thế nào để có giọng nói hay hơn khi thu âm?',
+        answer: 'Kỹ thuật là quan trọng. Hãy nói gần micro (khoảng 15-20cm) để có âm thanh ấm áp (proximity effect). Sử dụng màng lọc âm (pop filter) để ngăn các âm "p", "b" tạo ra tiếng nổ. Nói chậm và rõ ràng, và hãy mỉm cười khi nói, nó thực sự làm cho giọng của bạn nghe thân thiện hơn.',
+      },
+      {
+        question: 'Âm thanh Mono và Stereo khác nhau như thế nào đối với podcast?',
+        answer: 'Stereo có hai kênh âm thanh (trái và phải), tạo ra không gian. Mono chỉ có một kênh. Đối với podcast chỉ có một người nói, thu âm mono là đủ và giúp file nhẹ hơn. Nếu podcast có nhiều người hoặc có sử dụng hiệu ứng âm thanh, âm nhạc, stereo sẽ tạo ra trải nghiệm nghe phong phú hơn.',
       },
     ],
   },
@@ -546,6 +642,38 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         answer:
           'Một tiêu đề tốt thường tập trung vào lợi ích cho người đọc, sử dụng con số cụ thể, tạo sự tò mò, hoặc đặt một câu hỏi khơi gợi. Ví dụ: "5 Cách Đơn Giản Để Tăng Gấp Đôi Năng Suất" hiệu quả hơn nhiều so với "Cách Để Năng Suất Hơn".',
       },
+      {
+        question: 'Sự khác biệt giữa Content Writing và Copywriting là gì?',
+        answer: 'Mặc dù thường được sử dụng thay thế cho nhau, chúng có mục tiêu khác nhau. Content Writing nhằm mục đích giáo dục, thông tin hoặc giải trí để xây dựng mối quan hệ và sự tin tưởng với khán giả (ví dụ: bài blog, bài viết chuyên sâu). Copywriting nhằm mục đích thuyết phục người đọc thực hiện một hành động cụ thể, thường là mua hàng (ví dụ: quảng cáo, trang bán hàng, email marketing).',
+      },
+      {
+        question: 'SEO On-page là gì và nó liên quan gì đến viết lách?',
+        answer: 'SEO On-page là việc tối ưu hóa các yếu tố ngay trên một trang web để xếp hạng cao hơn trên các công cụ tìm kiếm. Đối với người viết, điều này bao gồm việc sử dụng từ khóa mục tiêu một cách tự nhiên trong tiêu đề, các thẻ tiêu đề phụ (H1, H2), mô tả meta, và trong toàn bộ nội dung bài viết.',
+      },
+      {
+        question: 'Brand Voice (Tông giọng thương hiệu) là gì?',
+        answer: 'Brand Voice là tính cách độc đáo mà một thương hiệu thể hiện qua các bài viết của mình. Nó có thể là chuyên nghiệp, hài hước, thân thiện, hay sang trọng. Việc xác định và duy trì một tông giọng nhất quán giúp thương hiệu trở nên khác biệt và dễ nhận biết.',
+      },
+      {
+        question: 'Làm thế nào để tìm ý tưởng viết bài không bao giờ cạn?',
+        answer: 'Có nhiều cách: sử dụng các công cụ nghiên cứu từ khóa để xem mọi người đang tìm kiếm gì, đọc các câu hỏi trên các diễn đàn và mạng xã hội trong lĩnh vực của bạn, phân tích nội dung của đối thủ cạnh tranh, hoặc tái sử dụng nội dung cũ dưới một định dạng mới (ví dụ: biến một bài blog thành một video hoặc infographic).',
+      },
+      {
+        question: 'Công thức PAS (Problem-Agitate-Solve) trong copywriting là gì?',
+        answer: 'Đây là một công thức thuyết phục mạnh mẽ. Đầu tiên, bạn nêu ra một Vấn đề (Problem) mà khách hàng đang gặp phải. Sau đó, bạn Khoét sâu (Agitate) vào nỗi đau đó, làm cho nó trở nên cấp bách hơn. Cuối cùng, bạn giới thiệu sản phẩm của mình như một Giải pháp (Solve) cho vấn đề đó.',
+      },
+      {
+        question: 'Tại sao "lợi ích" lại quan trọng hơn "tính năng" trong copywriting?',
+        answer: 'Tính năng là những gì sản phẩm "có" (ví dụ: "máy ảnh 12MP"). Lợi ích là những gì sản phẩm "làm được" cho khách hàng (ví dụ: "ghi lại những khoảnh khắc quý giá với độ chi tiết đáng kinh ngạc"). Khách hàng mua hàng vì lợi ích mà sản phẩm mang lại cho họ, không phải vì các thông số kỹ thuật.',
+      },
+      {
+        question: 'Làm thế nào để cải thiện kỹ năng viết của mình?',
+        answer: 'Cách tốt nhất là: Đọc nhiều và Viết nhiều. Hãy đọc các tác phẩm của những người viết giỏi trong lĩnh vực của bạn để học hỏi. Và hãy viết mỗi ngày, ngay cả khi chỉ là một đoạn ngắn. Sử dụng các công cụ như Grammarly để kiểm tra ngữ pháp và Hemingway Editor để làm cho câu văn của bạn rõ ràng và súc tích hơn.',
+      },
+      {
+        question: 'Content Pillar (Trụ cột nội dung) là gì?',
+        answer: 'Content Pillar là một bài viết lớn, toàn diện về một chủ đề cốt lõi. Từ "trụ cột" này, bạn có thể tạo ra nhiều mẩu nội dung nhỏ hơn (bài đăng mạng xã hội, video ngắn, infographic) để chia sẻ trên các kênh khác nhau, tất cả đều dẫn link trở lại bài viết chính. Đây là một chiến lược hiệu quả để xây dựng uy tín chuyên môn và tối ưu hóa SEO.',
+      },
     ],
   },
   {
@@ -661,6 +789,38 @@ export const advancedCreativeLessons: AdvancedCreativeLesson[] = [
         question: 'Sự khác biệt giữa chụp ảnh định dạng RAW và JPEG là gì?',
         answer:
           'JPEG là một file ảnh đã được nén và xử lý bởi máy ảnh, sẵn sàng để sử dụng ngay. RAW là một file chứa toàn bộ dữ liệu chưa qua xử lý từ cảm biến của máy ảnh. Chụp RAW cho phép bạn có nhiều sự linh hoạt hơn trong quá trình hậu kỳ (chỉnh sửa màu sắc, độ sáng,...) nhưng dung lượng file lớn hơn nhiều.',
+      },
+      {
+        question: 'Khẩu độ (Aperture) ảnh hưởng đến bức ảnh như thế nào?',
+        answer: 'Khẩu độ là độ mở của ống kính, được đo bằng f-stop (ví dụ: f/1.8, f/8). Khẩu độ càng lớn (số f-stop càng nhỏ) thì càng nhiều ánh sáng đi vào, và vùng ảnh rõ (độ sâu trường ảnh - depth of field) càng mỏng, tạo hiệu ứng xóa phông đẹp mắt. Khẩu độ nhỏ (số f-stop lớn) cho độ sâu trường ảnh dày, làm cho cả tiền cảnh và hậu cảnh đều rõ nét.',
+      },
+      {
+        question: 'Tốc độ màn trập (Shutter Speed) có tác dụng gì?',
+        answer: 'Tốc độ màn trập là khoảng thời gian mà cảm biến máy ảnh tiếp xúc với ánh sáng. Tốc độ nhanh (ví dụ: 1/1000s) giúp "đóng băng" chuyển động, phù hợp để chụp thể thao. Tốc độ chậm (ví dụ: 1s) tạo ra hiệu ứng mờ nhòe chuyển động (motion blur), thường được dùng để chụp thác nước mềm mại hoặc vệt đèn xe vào ban đêm.',
+      },
+      {
+        question: 'ISO là gì?',
+        answer: 'ISO là độ nhạy sáng của cảm biến máy ảnh. ISO càng cao, cảm biến càng nhạy với ánh sáng, cho phép bạn chụp ảnh trong điều kiện thiếu sáng mà không cần đèn flash. Tuy nhiên, ISO cao cũng làm tăng nhiễu (noise) trong ảnh, làm giảm chất lượng hình ảnh.',
+      },
+      {
+        question: 'Cân bằng trắng (White Balance) là gì?',
+        answer: 'Mắt người có thể tự động điều chỉnh để nhìn thấy màu trắng là màu trắng dưới các nguồn sáng khác nhau (ánh sáng mặt trời, đèn huỳnh quang, đèn sợi đốt). Máy ảnh cần được "chỉ" cho biết đâu là màu trắng thực sự trong một cảnh để tái tạo màu sắc một cách chính xác. Đó chính là cân bằng trắng.',
+      },
+      {
+        question: 'Sự khác biệt giữa ống kính prime và ống kính zoom là gì?',
+        answer: 'Ống kính prime (hay ống kính một tiêu cự) có một tiêu cự cố định (ví dụ: 50mm). Chúng thường nhẹ hơn, có khẩu độ lớn hơn và cho chất lượng hình ảnh sắc nét hơn. Ống kính zoom có một dải tiêu cự (ví dụ: 24-70mm), mang lại sự linh hoạt vì bạn có thể thay đổi góc nhìn mà không cần di chuyển.',
+      },
+      {
+        question: 'Làm thế nào để kể một câu chuyện qua một bộ ảnh?',
+        answer: 'Một bộ ảnh kể chuyện cần có sự đa dạng về góc chụp. Hãy bao gồm một ảnh góc rộng để thiết lập bối cảnh (establishing shot), các ảnh góc trung để giới thiệu chủ thể (medium shot), và các ảnh cận cảnh để thể hiện chi tiết và cảm xúc (close-up). Sắp xếp chúng theo một trình tự hợp lý để tạo ra một dòng chảy câu chuyện.',
+      },
+      {
+        question: 'Adobe Lightroom và Adobe Photoshop, tôi nên dùng phần mềm nào để chỉnh ảnh?',
+        answer: 'Lightroom được thiết kế để quản lý và chỉnh sửa hàng loạt ảnh một cách nhanh chóng. Nó rất mạnh về các điều chỉnh tổng thể như màu sắc, độ sáng, tương phản. Photoshop là một công cụ chỉnh sửa chuyên sâu hơn, cho phép bạn can thiệp vào từng pixel, thực hiện các thao tác phức tạp như xóa vật thể, ghép ảnh. Quy trình làm việc phổ biến là bắt đầu với Lightroom và sau đó chuyển sang Photoshop cho những chỉnh sửa chi tiết.',
+      },
+      {
+        question: 'Chụp ảnh vào "giờ vàng" (golden hour) có lợi ích gì?',
+        answer: 'Giờ vàng là khoảng thời gian ngắn sau khi mặt trời mọc và trước khi mặt trời lặn. Lúc này, ánh sáng mặt trời mềm mại, ấm áp và có hướng xiên, tạo ra bóng đổ dài và làm cho mọi thứ trông đẹp hơn. Đây được coi là thời điểm lý tưởng nhất trong ngày để chụp ảnh ngoại cảnh.',
       },
     ],
   },

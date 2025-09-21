@@ -467,3 +467,19 @@ export interface RealEstateTechLesson extends BaseLessonData {
     description: string;
   }[];
 }
+
+export interface ProgrammingLesson extends BaseLessonData {
+  codeExamples?: {
+    language: string;
+    code: string;
+    description: string;
+  }[];
+}
+
+export interface PsychologyLesson extends BaseLessonData {
+  researchStudies?: {
+    title: string;
+    findings: string;
+    source: string;
+  }[];
+}

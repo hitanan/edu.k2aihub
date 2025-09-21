@@ -166,6 +166,36 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
         answer:
           'Bài học nhấn mạnh việc sản xuất các dược phẩm như insulin trong vi khuẩn, tạo ra cây trồng biến đổi gen trong nông nghiệp, và việc sử dụng nó trong nghiên cứu y học để hiểu và chống lại bệnh tật.',
       },
+      {
+        question: 'PCR là gì và nó hoạt động như thế nào?',
+        answer:
+          'PCR (Phản ứng chuỗi Polymerase) là một kỹ thuật phòng thí nghiệm dùng để khuếch đại một đoạn DNA cụ thể. Quá trình này bao gồm các chu kỳ lặp đi lặp lại của việc đun nóng để tách hai sợi DNA, làm nguội để mồi gắn vào, và sau đó một enzyme polymerase sao chép đoạn DNA giữa các mồi.',
+      },
+      {
+        question: 'Điện di trên gel được sử dụng để làm gì?',
+        answer:
+          'Điện di trên gel là một kỹ thuật được sử dụng để tách các phân tử DNA, RNA hoặc protein dựa trên kích thước và điện tích của chúng. Khi một dòng điện được áp dụng, các phân tử di chuyển qua gel với tốc độ khác nhau, cho phép các nhà khoa học phân tích chúng.',
+      },
+      {
+        question: 'Đạo đức sinh học (bioethics) trong kỹ thuật di truyền là gì?',
+        answer:
+          'Đạo đức sinh học trong kỹ thuật di truyền liên quan đến việc xem xét các vấn đề đạo đức, pháp lý và xã hội phát sinh từ việc sử dụng công nghệ này. Các chủ đề bao gồm sự đồng ý của con người, khả năng tạo ra "em bé thiết kế", và các tác động tiềm tàng đến môi trường.',
+      },
+      {
+        question: 'Làm thế nào để vi khuẩn sản xuất được protein của người như insulin?',
+        answer:
+          'Bằng cách sử dụng kỹ thuật DNA tái tổ hợp, gen mã hóa cho protein của người (ví dụ: insulin) được chèn vào một plasmid. Plasmid này sau đó được đưa vào vi khuẩn. Vi khuẩn sẽ đọc gen ngoại lai này và sản xuất protein tương ứng, sau đó có thể được tinh sạch và sử dụng cho mục đích y tế.',
+      },
+      {
+        question: 'Thế nào là một sinh vật biến đổi gen (GMO)?',
+        answer:
+          'Một sinh vật biến đổi gen (Genetically Modified Organism) là một sinh vật có vật liệu di truyền đã được thay đổi bằng các kỹ thuật kỹ thuật di truyền. Điều này thường được thực hiện để cung cấp cho sinh vật những đặc tính mong muốn, chẳng hạn như khả năng kháng sâu bệnh ở cây trồng.',
+      },
+      {
+        question: 'Tại sao việc tối ưu hóa codon lại quan trọng khi biểu hiện gen ở một sinh vật khác?',
+        answer:
+          'Các sinh vật khác nhau có xu hướng sử dụng các codon (bộ ba nucleotide) khác nhau để mã hóa cho cùng một axit amin. Tối ưu hóa codon là quá trình điều chỉnh trình tự gen để phù hợp với xu hướng sử dụng codon của sinh vật chủ (ví dụ: E. coli), giúp tăng hiệu quả dịch mã và sản lượng protein.',
+      },
     ],
   },
   {
@@ -320,6 +350,41 @@ export const biotechnologyLessons: BiotechnologyLesson[] = [
         question: 'Tin sinh học (Bioinformatics) đóng vai trò gì trong việc khám phá thuốc?',
         answer:
           'Tin sinh học sử dụng các công cụ máy tính để phân tích lượng lớn dữ liệu sinh học. Trong khám phá thuốc, nó giúp xác định các gen gây bệnh, mô hình hóa cấu trúc protein để thiết kế thuốc, và phân tích dữ liệu từ các thử nghiệm lâm sàng, giúp quá trình R&D nhanh hơn và hiệu quả hơn.',
+      },
+      {
+        question: 'Sàng lọc thông lượng cao (HTS) là gì?',
+        answer:
+          'Sàng lọc thông lượng cao (High-Throughput Screening) là một phương pháp sử dụng robot và tự động hóa để nhanh chóng kiểm tra hàng nghìn đến hàng triệu hợp chất hóa học hoặc sinh học để xác định các hợp chất có hoạt tính mong muốn đối với một mục tiêu cụ thể, ví dụ như một enzyme hoặc thụ thể.',
+      },
+      {
+        question: 'Tại sao các thử nghiệm lâm sàng lại được chia thành nhiều giai đoạn (I, II, III)?',
+        answer:
+          'Các thử nghiệm lâm sàng được chia thành các giai đoạn để đảm bảo tính an toàn và hiệu quả của thuốc một cách có hệ thống. Giai đoạn I tập trung vào an toàn trên một nhóm nhỏ. Giai đoạn II đánh giá hiệu quả ban đầu và liều lượng trên một nhóm lớn hơn. Giai đoạn III xác nhận hiệu quả và theo dõi tác dụng phụ trên một quần thể lớn trước khi xin phê duyệt.',
+      },
+      {
+        question: 'Thế nào là một "dấu ấn sinh học" (biomarker) trong y học?',
+        answer:
+          'Dấu ấn sinh học là một đặc điểm có thể đo lường được, cho biết một tình trạng sinh học bình thường, một quá trình bệnh lý, hoặc phản ứng của cơ thể đối với một phương pháp điều trị. Ví dụ, mức độ biểu hiện của gen HER2 là một dấu ấn sinh học cho ung thư vú.',
+      },
+      {
+        question: 'Sự khác biệt giữa thuốc phân tử nhỏ và thuốc sinh học (biologics) là gì?',
+        answer:
+          'Thuốc phân tử nhỏ thường được tổng hợp hóa học, có cấu trúc đơn giản và trọng lượng phân tử thấp (ví dụ: Aspirin). Thuốc sinh học là các phân tử lớn, phức tạp được sản xuất từ các sinh vật sống, chẳng hạn như kháng thể đơn dòng (ví dụ: Herceptin).',
+      },
+      {
+        question: 'Mục đích của các nghiên cứu tiền lâm sàng là gì?',
+        answer:
+          'Các nghiên cứu tiền lâm sàng được thực hiện trên các mô hình trong phòng thí nghiệm (in vitro) và trên động vật (in vivo) trước khi thử nghiệm trên người. Mục đích là để đánh giá tính an toàn ban đầu, độc tính, dược động học và hiệu quả tiềm năng của một loại thuốc mới.',
+      },
+      {
+        question: 'Tại sao việc phát triển một loại thuốc mới lại tốn kém và mất nhiều thời gian?',
+        answer:
+          'Quá trình này rất tốn kém và kéo dài (thường hơn 10 năm) do yêu cầu nghiên cứu sâu rộng, các thử nghiệm nghiêm ngặt để đảm bảo an toàn và hiệu quả, tỷ lệ thất bại cao của các hợp chất ứng cử viên, và quy trình phê duyệt pháp lý phức tạp.',
+      },
+      {
+        question: 'Liệu pháp miễn dịch ung thư hoạt động như thế nào?',
+        answer:
+          'Liệu pháp miễn dịch ung thư là một loại điều trị giúp hệ thống miễn dịch của chính bệnh nhân chống lại ung thư. Nó hoạt động bằng cách "tháo phanh" cho các tế bào miễn dịch (như tế bào T) để chúng có thể nhận biết và tiêu diệt các tế bào ung thư hiệu quả hơn.',
       },
     ],
   },

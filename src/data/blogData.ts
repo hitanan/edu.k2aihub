@@ -57,6 +57,7 @@ export const blogCategories: BlogCategory[] = [
     description: 'Các giải pháp và công nghệ trong quản lý năng lượng.',
   },
   { slug: 'tai-lieu', name: 'Tài Liệu', description: 'Tài liệu, hướng dẫn và tài nguyên học tập.' },
+  { slug: 'tai-chinh', name: 'Tài Chính', description: 'Quản lý tài chính cá nhân và công nghệ FinTech.' },
 ];
 
 export const blogTags: BlogTag[] = [
@@ -184,4 +185,6 @@ export const blogTags: BlogTag[] = [
   { slug: 'giao-duc-luong-tu', name: 'Giáo Dục Lượng Tử', description: 'Giáo dục về điện toán lượng tử.' },
   { slug: 'stem', name: 'STEM', description: 'Khoa học, Công nghệ, Kỹ thuật, Toán học.' },
   { slug: 'cong-nghe-tuong-lai', name: 'Công Nghệ Tương Lai', description: 'Các công nghệ tiềm năng trong tương lai.' },
+  { slug: 'tai-chinh', name: 'Tài Chính', description: 'Quản lý tài chính cá nhân và đầu tư cơ bản.' },
+  { slug: 'fintech', name: 'FinTech', description: 'Công nghệ tài chính và ứng dụng.' },
 ];

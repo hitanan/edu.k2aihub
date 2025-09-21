@@ -171,6 +171,48 @@ const lessons: RealEstateTechLesson[] = [
           'Sự thiếu minh bạch về giá, pháp lý và quy hoạch, cùng với các thủ tục giấy tờ phức tạp là những rào cản lớn mà các nền tảng PropTech đang nỗ lực đơn giản hóa và cải thiện.',
       },
     ],
+    faqs: [
+      {
+        question: 'PropTech là gì và nó ảnh hưởng đến ngành bất động sản như thế nào?',
+        answer: 'PropTech (Property Technology) là việc ứng dụng công nghệ và đổi mới vào ngành bất động sản. Nó ảnh hưởng đến mọi khía cạnh, từ tìm kiếm, mua bán, cho thuê, quản lý đến đầu tư bất động sản, giúp quy trình trở nên hiệu quả, minh bạch và dễ tiếp cận hơn.'
+      },
+      {
+        question: 'Tại sao chuyển đổi số lại quan trọng đối với các công ty bất động sản?',
+        answer: 'Chuyển đổi số giúp các công ty bất động sản tối ưu hóa hoạt động, giảm chi phí, tiếp cận được nhiều khách hàng hơn, và cung cấp trải nghiệm tốt hơn. Trong một thị trường cạnh tranh, việc không áp dụng công nghệ có thể dẫn đến việc bị tụt hậu.'
+      },
+      {
+        question: 'Một vài ví dụ về công nghệ đột phá trong PropTech là gì?',
+        answer: 'Các công nghệ đột phá bao gồm Trí tuệ nhân tạo (AI) để định giá và phân tích, Thực tế ảo (VR/AR) cho các chuyến tham quan ảo, Internet of Things (IoT) cho các tòa nhà thông minh, và Blockchain cho các giao dịch an toàn và minh bạch.'
+      },
+      {
+        question: 'Làm thế nào để một công ty bất động sản truyền thống có thể bắt đầu chuyển đổi số?',
+        answer: 'Họ có thể bắt đầu bằng những bước nhỏ như xây dựng một website chuyên nghiệp, sử dụng hệ thống quản lý quan hệ khách hàng (CRM), áp dụng các công cụ tiếp thị kỹ thuật số, và sau đó dần dần tích hợp các công nghệ phức tạp hơn như tour ảo 360 độ hoặc phân tích dữ liệu.'
+      },
+      {
+        question: 'Thách thức lớn nhất khi triển khai PropTech là gì?',
+        answer: 'Các thách thức bao gồm chi phí đầu tư ban đầu, sự thay đổi trong tư duy và văn hóa của tổ chức, vấn đề bảo mật dữ liệu, và việc tích hợp các công nghệ mới vào các quy trình làm việc hiện có. Tại Việt Nam, hành lang pháp lý chưa hoàn thiện cũng là một rào cản.'
+      },
+      {
+        question: 'FinTech có liên quan gì đến PropTech?',
+        answer: 'FinTech (Financial Technology) và PropTech có mối quan hệ chặt chẽ. Các giải pháp FinTech như cho vay thế chấp trực tuyến, thanh toán kỹ thuật số, và các nền tảng đầu tư chung (crowdfunding) đang được tích hợp vào các nền tảng PropTech để tạo ra một quy trình giao dịch bất động sản liền mạch.'
+      },
+      {
+        question: 'Mô hình kinh doanh "iBuyer" như Opendoor hoạt động như thế nào?',
+        answer: 'iBuyer (instant buyer) là các công ty sử dụng công nghệ để đưa ra lời đề nghị mua nhà ngay lập tức cho người bán. Họ sử dụng các thuật toán để định giá và sau đó sửa chữa, bán lại ngôi nhà để kiếm lời, mang lại sự tiện lợi và nhanh chóng cho người bán.'
+      },
+      {
+        question: 'Công nghệ có thay thế hoàn toàn các nhà môi giới bất động sản không?',
+        answer: 'Hầu hết các chuyên gia tin rằng công nghệ sẽ không thay thế hoàn toàn mà sẽ trao quyền cho các nhà môi giới. Công nghệ giúp môi giới tự động hóa các công việc lặp đi lặp lại, tiếp cận nhiều khách hàng hơn và cung cấp dịch vụ tư vấn chuyên sâu hơn, thay vì chỉ là người cung cấp thông tin.'
+      },
+      {
+        question: 'Hệ sinh thái PropTech bao gồm những thành phần nào?',
+        answer: 'Hệ sinh thái PropTech rất đa dạng, bao gồm các nền tảng niêm yết (listing platforms), công nghệ cho thuê và quản lý tài sản, công nghệ xây dựng (ConTech), công nghệ tài chính cho BĐS (FinTech), và các công cụ dành cho môi giới.'
+      },
+      {
+        question: 'Xu hướng nào đang định hình tương lai của PropTech?',
+        answer: 'Các xu hướng chính bao gồm sự bền vững và công nghệ xanh trong các tòa nhà, việc sử dụng AI và dữ liệu lớn để ra quyết định, sự phát triển của các thành phố thông minh, và việc mã hóa bất động sản trên blockchain để dân chủ hóa đầu tư.'
+      }
+    ]
   },
 
   {
@@ -315,6 +357,48 @@ const lessons: RealEstateTechLesson[] = [
           'Virtual tour giúp tiếp cận khách hàng 24/7 trên toàn cầu, đồng thời giúp sàng lọc những khách hàng thực sự quan tâm, tiết kiệm thời gian và chi phí cho các buổi tham quan thực tế không cần thiết.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt giữa tour 360°, VR tour và AR là gì?',
+        answer: 'Tour 360° là một chuỗi các hình ảnh toàn cảnh được ghép lại, cho phép bạn nhìn xung quanh từ một điểm cố định. VR (Thực tế ảo) tour đưa bạn vào một môi trường 3D hoàn toàn, thường yêu cầu kính VR để có trải nghiệm đắm chìm. AR (Thực tế tăng cường) phủ thông tin hoặc vật thể ảo lên thế giới thực thông qua camera của điện thoại hoặc máy tính bảng.'
+      },
+      {
+        question: 'Tôi có cần thiết bị đắt tiền để tạo một tour 360° không?',
+        answer: 'Không nhất thiết. Bạn có thể bắt đầu với một chiếc máy ảnh 360° dành cho người tiêu dùng như Insta360 hoặc Ricoh Theta. Chất lượng có thể không bằng các hệ thống chuyên nghiệp như Matterport, nhưng nó là một điểm khởi đầu tốt và chi phí hợp lý.'
+      },
+      {
+        question: 'Dàn dựng ảo (virtual staging) là gì?',
+        answer: 'Dàn dựng ảo là quá trình sử dụng phần mềm để thêm đồ nội thất và trang trí vào hình ảnh của một căn phòng trống. Điều này giúp người mua tiềm năng hình dung được không gian sống và làm cho bất động sản trở nên hấp dẫn hơn mà không cần chi phí cho việc dàn dựng vật lý.'
+      },
+      {
+        question: 'Làm thế nào để một tour ảo có thể giúp bán bất động sản nhanh hơn?',
+        answer: 'Tour ảo cho phép bất động sản "mở cửa" 24/7, thu hút người mua từ khắp nơi trên thế giới. Nó giúp người mua có cái nhìn chi tiết và sàng lọc các lựa chọn trước khi đến xem trực tiếp, điều này có nghĩa là những người đến xem thực tế thường là những khách hàng nghiêm túc hơn.'
+      },
+      {
+        question: 'Matterport là gì và tại sao nó lại phổ biến?',
+        answer: 'Matterport là một nền tảng tất cả trong một cung cấp camera chuyên dụng và phần mềm để tạo ra các "bản sao kỹ thuật số" (digital twins) 3D chính xác của một không gian. Nó phổ biến vì chất lượng cao, khả năng tạo sơ đồ mặt bằng tự động và trải nghiệm điều hướng mượt mà.'
+      },
+      {
+        question: 'Công nghệ VR có thể được sử dụng cho các dự án bất động sản chưa được xây dựng không?',
+        answer: 'Chắc chắn rồi. Đây là một trong những ứng dụng mạnh mẽ nhất của VR. Các nhà phát triển có thể tạo ra các mô hình 3D của các dự án tương lai, cho phép khách hàng "đi bộ" trong căn hộ hoặc tòa nhà của họ trước cả khi nó được xây dựng, giúp thúc đẩy việc bán hàng trên giấy.'
+      },
+      {
+        question: 'Những thách thức khi tạo một tour VR chất lượng cao là gì?',
+        answer: 'Các thách thức bao gồm việc tạo ra các mô hình 3D chân thực, tối ưu hóa hiệu suất để tránh gây chóng mặt cho người dùng (motion sickness), thiết kế cơ chế điều hướng trực quan, và chi phí sản xuất cao hơn so với chụp ảnh truyền thống.'
+      },
+      {
+        question: 'Làm thế nào để tối ưu hóa một tour ảo cho thiết bị di động?',
+        answer: 'Cần đảm bảo rằng nền tảng lưu trữ tour ảo có thiết kế đáp ứng (responsive), các hình ảnh được nén để tải nhanh mà không làm giảm chất lượng quá nhiều, và các điều khiển điều hướng phải thân thiện với màn hình cảm ứng.'
+      },
+      {
+        question: 'Sơ đồ mặt bằng tương tác (interactive floor plan) là gì?',
+        answer: 'Đó là một sơ đồ 2D hoặc 3D của bất động sản, nơi người dùng có thể nhấp vào một phòng cụ thể để "nhảy" ngay đến vị trí đó trong tour 360° hoặc xem hình ảnh của phòng đó. Nó cung cấp một cái nhìn tổng quan và cải thiện trải nghiệm điều hướng.'
+      },
+      {
+        question: 'Tương lai của công nghệ xem nhà ảo sẽ như thế nào?',
+        answer: 'Tương lai có thể bao gồm các trải nghiệm VR xã hội (nhiều người cùng tham quan một lúc), tích hợp AI để trả lời câu hỏi của khách hàng trong tour, và sử dụng AR để cho phép người dùng thử các loại sơn hoặc đồ nội thất khác nhau trong thời gian thực.'
+      }
+    ]
   },
 
   {
@@ -463,6 +547,48 @@ const lessons: RealEstateTechLesson[] = [
           'Bằng cách tự động điều khiển hệ thống chiếu sáng, HVAC (điều hòa không khí) dựa trên dữ liệu thời gian thực (như số người trong phòng), BMS có thể giúp giảm đáng kể lượng năng lượng tiêu thụ.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tòa nhà thông minh (Smart Building) là gì?',
+        answer: 'Tòa nhà thông minh là một công trình sử dụng công nghệ để tự động hóa và tích hợp các hệ thống của tòa nhà, bao gồm HVAC (sưởi, thông gió, điều hòa không khí), chiếu sáng, an ninh, và nhiều hệ thống khác, nhằm mục đích tăng hiệu quả vận hành, tiết kiệm năng lượng và nâng cao trải nghiệm cho người sử dụng.'
+      },
+      {
+        question: 'IoT đóng vai trò gì trong các tòa nhà thông minh?',
+        answer: 'IoT (Internet of Things) là xương sống của tòa nhà thông minh. Nó bao gồm một mạng lưới các cảm biến (nhiệt độ, ánh sáng, chuyển động, chất lượng không khí...) và các thiết bị được kết nối để thu thập dữ liệu thời gian thực và cho phép điều khiển các hệ thống của tòa nhà từ xa.'
+      },
+      {
+        question: 'Bảo trì dự đoán (predictive maintenance) hoạt động như thế nào?',
+        answer: 'Bảo trì dự đoán sử dụng dữ liệu từ các cảm biến IoT (ví dụ: độ rung, nhiệt độ của một động cơ) và các thuật toán học máy để dự đoán khi nào một thiết bị có khả năng bị hỏng. Điều này cho phép việc bảo trì được thực hiện trước khi sự cố xảy ra, giúp giảm thời gian chết và chi phí sửa chữa.'
+      },
+      {
+        question: 'Các giao thức kết nối phổ biến cho các thiết bị IoT trong tòa nhà là gì?',
+        answer: 'Các giao thức phổ biến bao gồm Wi-Fi (cho băng thông cao), Zigbee và Z-Wave (cho các mạng lưới cảm biến tiêu thụ ít năng lượng), và LoRaWAN (cho các ứng dụng tầm xa, xuyên tường tốt). Việc lựa chọn phụ thuộc vào yêu cầu cụ thể của ứng dụng.'
+      },
+      {
+        question: 'Làm thế nào một tòa nhà thông minh có thể cải thiện trải nghiệm của người thuê nhà?',
+        answer: 'Nó có thể cung cấp khả năng điều khiển cá nhân hóa về nhiệt độ và ánh sáng qua ứng dụng di động, tự động đặt phòng họp, hướng dẫn tìm chỗ đỗ xe trống, cải thiện chất lượng không khí, và tăng cường an ninh với hệ thống nhận dạng khuôn mặt.'
+      },
+      {
+        question: 'Bản sao kỹ thuật số (Digital Twin) của một tòa nhà là gì?',
+        answer: 'Bản sao kỹ thuật số là một mô hình ảo, thời gian thực của một tòa nhà vật lý. Nó được cập nhật liên tục với dữ liệu từ các cảm biến IoT, cho phép người quản lý mô phỏng các kịch bản, theo dõi hiệu suất và tối ưu hóa hoạt động của tòa nhà một cách trực quan.'
+      },
+      {
+        question: 'Những lo ngại về bảo mật đối với các tòa nhà thông minh là gì?',
+        answer: 'Với hàng ngàn thiết bị được kết nối, các tòa nhà thông minh có thể trở thành mục tiêu của các cuộc tấn công mạng. Kẻ tấn công có thể cố gắng chiếm quyền điều khiển các hệ thống của tòa nhà, đánh cắp dữ liệu nhạy cảm, hoặc gây ra gián đoạn vật lý. Do đó, an ninh mạng là một ưu tiên hàng đầu.'
+      },
+      {
+        question: 'Hệ thống quản lý tòa nhà (BMS) là gì?',
+        answer: 'BMS (Building Management System) là một hệ thống điều khiển dựa trên máy tính được cài đặt trong các tòa nhà để kiểm soát và giám sát các thiết bị cơ và điện của tòa nhà như thông gió, chiếu sáng, điện, hệ thống chữa cháy và an ninh.'
+      },
+      {
+        question: 'Tòa nhà thông minh có thể giúp tiết kiệm năng lượng như thế nào?',
+        answer: 'Bằng cách sử dụng cảm biến chiếm dụng để tự động tắt đèn và điều hòa ở những khu vực trống, điều chỉnh rèm cửa dựa trên ánh sáng mặt trời, và tối ưu hóa hoạt động của hệ thống HVAC dựa trên dự báo thời tiết và mô hình sử dụng của tòa nhà.'
+      },
+      {
+        question: 'Tương lai của các tòa nhà thông minh sẽ như thế nào?',
+        answer: 'Tương lai sẽ chứng kiến các tòa nhà ngày càng tự chủ hơn, có khả năng học hỏi và thích ứng với hành vi của người dùng. Chúng sẽ được tích hợp sâu hơn vào lưới điện thông minh và các hệ sinh thái thành phố thông minh, đồng thời tập trung nhiều hơn vào sức khỏe và sự thoải mái của con người.'
+      }
+    ]
   },
 
   {
@@ -613,6 +739,48 @@ const lessons: RealEstateTechLesson[] = [
           'AI có thể phân tích một lượng lớn dữ liệu để xác định các khu vực có tiềm năng tăng trưởng, dự báo sự thay đổi giá, và đề xuất các bất động sản phù hợp với tiêu chí của nhà đầu tư, giúp họ ra quyết định tốt hơn.',
       },
     ],
+    faqs: [
+      {
+        question: 'Phân tích dữ liệu bất động sản là gì?',
+        answer: 'Đó là quá trình thu thập, làm sạch, phân tích và trực quan hóa dữ liệu liên quan đến bất động sản để rút ra những hiểu biết sâu sắc, xác định xu hướng và đưa ra các quyết định dựa trên dữ liệu, thay vì chỉ dựa vào trực giác.'
+      },
+      {
+        question: 'Mô hình định giá tự động (AVM) hoạt động như thế nào?',
+        answer: 'AVM sử dụng các thuật toán học máy để phân tích dữ liệu của một bất động sản (diện tích, số phòng ngủ, vị trí...) cùng với dữ liệu về các giao dịch gần đây trong khu vực để ước tính giá trị thị trường của nó. Các mô hình phức tạp hơn có thể kết hợp cả dữ liệu về trường học, tiện ích, và các chỉ số kinh tế.'
+      },
+      {
+        question: 'Những nguồn dữ liệu nào được sử dụng trong phân tích bất động sản?',
+        answer: 'Các nguồn dữ liệu bao gồm dữ liệu niêm yết từ các cổng thông tin bất động sản, dữ liệu giao dịch công khai từ chính phủ, dữ liệu nhân khẩu học từ điều tra dân số, dữ liệu kinh tế (lãi suất, GDP), và thậm chí cả dữ liệu thay thế như hình ảnh vệ tinh hoặc dữ liệu từ mạng xã hội.'
+      },
+      {
+        question: 'Làm thế nào AI có thể dự báo xu hướng thị trường bất động sản?',
+        answer: 'AI có thể phân tích các chuỗi dữ liệu thời gian lịch sử về giá cả, số lượng giao dịch, và các chỉ số kinh tế vĩ mô để xác định các mẫu và dự báo các biến động trong tương lai. Các mô hình này có thể giúp nhà đầu tư quyết định khi nào nên mua hoặc bán.'
+      },
+      {
+        question: 'Trí tuệ thị trường (Market Intelligence) trong bất động sản là gì?',
+        answer: 'Đó là thông tin chi tiết và có thể hành động về một thị trường bất động sản cụ thể. Nó không chỉ là dữ liệu thô, mà là sự phân tích sâu sắc về các yếu tố cạnh tranh, cơ hội đầu tư, rủi ro, và động lực của người mua/người bán.'
+      },
+      {
+        question: 'Tại sao việc làm sạch dữ liệu lại quan trọng trong phân tích bất động sản?',
+        answer: 'Dữ liệu bất động sản thường không nhất quán, thiếu sót và chứa lỗi (ví dụ: nhập sai diện tích, địa chỉ không chuẩn). Việc làm sạch và chuẩn hóa dữ liệu là một bước quan trọng để đảm bảo rằng các phân tích và mô hình được xây dựng trên đó là chính xác và đáng tin cậy.'
+      },
+      {
+        question: 'Các công cụ phổ biến để phân tích dữ liệu bất động sản là gì?',
+        answer: 'Các nhà phân tích thường sử dụng Python (với các thư viện như Pandas, Scikit-learn) hoặc R để xử lý và mô hình hóa dữ liệu. Đối với trực quan hóa và tạo bảng điều khiển, các công cụ như Tableau và Power BI rất phổ biến.'
+      },
+      {
+        question: 'AI có thể giúp cá nhân hóa việc tìm kiếm nhà như thế nào?',
+        answer: 'Các hệ thống đề xuất dựa trên AI có thể học hỏi từ hành vi duyệt web và sở thích của người dùng (ví dụ: những bất động sản họ đã xem, lưu lại) để đề xuất những bất động sản khác có khả năng phù hợp cao, giúp tiết kiệm thời gian tìm kiếm.'
+      },
+      {
+        question: 'Phân tích không gian địa lý (Geospatial Analysis) có vai trò gì?',
+        answer: 'Bất động sản là tất cả về vị trí. Phân tích không gian địa lý cho phép các nhà phân tích hiểu được các yếu tố liên quan đến vị trí ảnh hưởng đến giá trị như thế nào, ví dụ như khoảng cách đến trường học, công viên, trạm giao thông công cộng, hoặc mức độ tiếng ồn và ô nhiễm.'
+      },
+      {
+        question: 'Những hạn chế của các mô hình AI trong bất động sản là gì?',
+        answer: 'Các mô hình AI phụ thuộc vào chất lượng của dữ liệu lịch sử và có thể không dự đoán chính xác các sự kiện "thiên nga đen" hoặc những thay đổi đột ngột của thị trường. Chúng cũng có thể kế thừa và khuếch đại các thành kiến có sẵn trong dữ liệu, ví dụ như phân biệt đối xử trong định giá.'
+      }
+    ]
   },
 
   {
@@ -763,6 +931,48 @@ const lessons: RealEstateTechLesson[] = [
           'Smart contract là các chương trình máy tính tự động thực thi các điều khoản đã được lập trình sẵn, giúp giảm thiểu vai trò của các bên trung gian (như ngân hàng, công chứng), từ đó giảm chi phí và tăng tốc độ giao dịch.',
       },
     ],
+    faqs: [
+      {
+        question: 'Blockchain có thể giải quyết vấn đề gì trong ngành bất động sản?',
+        answer: 'Blockchain có thể giải quyết các vấn đề về thiếu minh bạch, quy trình thủ tục giấy tờ phức tạp, và chi phí giao dịch cao. Bằng cách tạo ra một sổ cái phi tập trung, bất biến, nó có thể giúp theo dõi lịch sử sở hữu một cách rõ ràng và tự động hóa các giao dịch.'
+      },
+      {
+        question: 'Hợp đồng thông minh (Smart Contract) là gì?',
+        answer: 'Hợp đồng thông minh là một chương trình máy tính chạy trên blockchain, tự động thực thi các điều khoản của một hợp đồng. Ví dụ, một hợp đồng thông minh có thể tự động chuyển quyền sở hữu (dưới dạng token) cho người mua và chuyển tiền cho người bán khi tất cả các điều kiện đã được đáp ứng.'
+      },
+      {
+        question: 'Token hóa bất động sản (Real Estate Tokenization) là gì?',
+        answer: 'Đó là quá trình chuyển đổi quyền sở hữu của một tài sản bất động sản thành các token kỹ thuật số trên blockchain. Điều này cho phép chia nhỏ tài sản thành nhiều phần, giúp các nhà đầu tư nhỏ có thể mua một phần của bất động sản, tăng tính thanh khoản và dân chủ hóa việc đầu tư.'
+      },
+      {
+        question: 'Sở hữu phân đoạn (Fractional Ownership) thông qua token hóa có lợi ích gì?',
+        answer: 'Lợi ích chính là cho phép các nhà đầu tư nhỏ lẻ tiếp cận thị trường bất động sản với số vốn ít. Nó cũng tăng tính thanh khoản cho tài sản, vì các token có thể được giao dịch dễ dàng trên các sàn giao dịch thứ cấp, không giống như việc mua bán cả một bất động sản.'
+      },
+      {
+        question: 'DeFi (Tài chính phi tập trung) có thể được áp dụng cho bất động sản như thế nào?',
+        answer: 'DeFi có thể tạo ra các nền tảng cho vay thế chấp ngang hàng (peer-to-peer), nơi các nhà đầu tư có thể cho người mua nhà vay tiền trực tiếp thông qua các hợp đồng thông minh, loại bỏ các ngân hàng truyền thống. Nó cũng có thể tạo ra các công cụ tài chính phức tạp hơn dựa trên tài sản bất động sản được mã hóa.'
+      },
+      {
+        question: 'NFT có thể được sử dụng trong bất động sản không?',
+        answer: 'Có. Một NFT (Non-Fungible Token) có thể được sử dụng để đại diện cho quyền sở hữu duy nhất của một bất động sản cụ thể. Giấy chứng nhận quyền sở hữu có thể được phát hành dưới dạng NFT, giúp việc chuyển nhượng trở nên dễ dàng và an toàn hơn trên blockchain.'
+      },
+      {
+        question: 'Những thách thức pháp lý đối với blockchain trong bất động sản là gì?',
+        answer: 'Thách thức lớn nhất là việc công nhận pháp lý đối với các giao dịch và quyền sở hữu được ghi lại trên blockchain. Nhiều khu vực pháp lý vẫn chưa có khung pháp lý rõ ràng cho tài sản số và hợp đồng thông minh, tạo ra sự không chắc chắn cho các nhà đầu tư và người dùng.'
+      },
+      {
+        question: 'Làm thế nào để blockchain tăng cường tính minh bạch?',
+        answer: 'Mọi giao dịch trên blockchain đều được ghi lại trên một sổ cái công khai và không thể thay đổi. Bất kỳ ai cũng có thể kiểm tra lịch sử sở hữu của một tài sản, các khoản thế chấp, và các thông tin liên quan khác, giúp giảm gian lận và tăng cường sự tin tưởng.'
+      },
+      {
+        question: 'Sử dụng blockchain có thực sự loại bỏ hoàn toàn các bên trung gian không?',
+        answer: 'Nó có thể giảm đáng kể vai trò của một số bên trung gian như ngân hàng trong việc ký quỹ hoặc công chứng viên trong việc xác thực. Tuy nhiên, vẫn cần có các bên khác như các nhà thẩm định giá, thanh tra, và các chuyên gia pháp lý để đảm bảo các khía cạnh vật lý và pháp lý của tài sản.'
+      },
+      {
+        question: 'Tình hình áp dụng blockchain trong bất động sản tại Việt Nam như thế nào?',
+        answer: 'Hiện tại, việc áp dụng vẫn còn rất hạn chế và chủ yếu ở giairoạn thử nghiệm, tập trung vào việc token hóa để huy động vốn. Rào cản lớn nhất là hành lang pháp lý chưa rõ ràng. Tuy nhiên, tiềm năng của công nghệ này đang được nhiều nhà đổi mới và các cơ quan quản lý quan tâm.'
+      }
+    ]
   },
 ];
 

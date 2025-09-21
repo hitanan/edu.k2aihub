@@ -125,6 +125,47 @@ export const vietnameseBusinessLessons: VietnameseBusinessLesson[] = [
         answer:
           'Chuyển đổi số không chỉ là việc "online hóa" hay số hóa tài liệu. Đó là sự thay đổi toàn diện về cách một doanh nghiệp hoạt động và cung cấp giá trị cho khách hàng bằng cách ứng dụng công nghệ số. Nó bao gồm cả việc thay đổi văn hóa công ty, quy trình làm việc và mô hình kinh doanh.',
       },
+      {
+        question:
+          'Nhà đầu tư thiên thần (Angel Investor) và Quỹ đầu tư mạo hiểm (Venture Capital - VC) khác nhau như thế nào?',
+        answer:
+          'Nhà đầu tư thiên thần thường là các cá nhân giàu có, đầu tư tiền của chính họ vào các startup giai đoạn rất sớm (seed stage). Họ thường linh hoạt hơn và có thể đưa ra quyết định nhanh chóng. Quỹ VC là các tổ chức chuyên nghiệp, quản lý tiền của người khác (Limited Partners) và đầu tư vào các startup ở nhiều giai đoạn khác nhau, thường với số tiền lớn hơn. Họ có quy trình thẩm định chặt chẽ hơn.',
+      },
+      {
+        question: 'Một "kỳ lân" (unicorn) công nghệ là gì?',
+        answer:
+          'Là một công ty khởi nghiệp tư nhân (chưa niêm yết trên sàn chứng khoán) được định giá từ 1 tỷ USD trở lên. VNG là kỳ lân đầu tiên của Việt Nam, và sau đó có thêm các tên tuổi như VNLife (công ty mẹ của VNPAY).',
+      },
+      {
+        question: 'Fintech là gì và tại sao nó lại phát triển mạnh ở Việt Nam?',
+        answer:
+          'Fintech (Financial Technology) là việc ứng dụng công nghệ vào các dịch vụ tài chính. Nó phát triển mạnh ở Việt Nam do tỷ lệ dân số trẻ, mức độ sử dụng smartphone cao, và một bộ phận lớn người dân chưa được tiếp cận đầy đủ các dịch vụ ngân hàng truyền thống. Các ví điện tử như MoMo, ZaloPay, và các nền tảng cho vay ngang hàng (P2P lending) là những ví dụ điển hình.',
+      },
+      {
+        question: 'Luật An ninh mạng ảnh hưởng đến các doanh nghiệp như thế nào?',
+        answer:
+          'Luật An ninh mạng yêu cầu các doanh nghiệp trong và ngoài nước cung cấp một số dịch vụ trên mạng tại Việt Nam phải lưu trữ dữ liệu của người dùng Việt Nam tại Việt Nam và đặt văn phòng đại diện. Điều này ảnh hưởng đến chi phí và cấu trúc hoạt động của nhiều công ty công nghệ, đặc biệt là các công ty nước ngoài.',
+      },
+      {
+        question: 'Thương mại điện tử xuyên biên giới (Cross-border e-commerce) có tiềm năng gì ở Việt Nam?',
+        answer:
+          'Rất lớn. Người tiêu dùng Việt Nam ngày càng có xu hướng mua sắm các sản phẩm từ nước ngoài qua các nền tảng như Amazon, Shopee Global. Ngược lại, các doanh nghiệp Việt Nam cũng có cơ hội lớn để xuất khẩu hàng hóa (đặc biệt là hàng thủ công mỹ nghệ, nông sản, may mặc) ra thị trường thế giới thông qua các sàn thương mại điện tử.',
+      },
+      {
+        question: 'Mô hình D2C (Direct-to-Consumer) là gì?',
+        answer:
+          'Là mô hình kinh doanh trong đó thương hiệu bán sản phẩm trực tiếp cho người tiêu dùng cuối cùng mà không qua các kênh trung gian như nhà bán buôn hay bán lẻ. Các thương hiệu D2C thường xây dựng website riêng và sử dụng mạng xã hội để marketing. Mô hình này giúp họ kiểm soát trải nghiệm khách hàng và thu thập dữ liệu trực tiếp.',
+      },
+      {
+        question: 'Tại sao việc xây dựng mối quan hệ với chính phủ (Government Relations) lại quan trọng ở Việt Nam?',
+        answer:
+          'Ở Việt Nam, chính phủ có vai trò quan trọng trong việc định hướng và điều tiết nền kinh tế. Việc xây dựng mối quan hệ tốt, hiểu rõ các chính sách và tham gia đóng góp ý kiến giúp doanh nghiệp hoạt động thuận lợi hơn, nắm bắt các cơ hội từ các chương trình của chính phủ và tránh được các rủi ro pháp lý.',
+      },
+      {
+        question: 'EdTech (Công nghệ giáo dục) có phải là một lĩnh vực tiềm năng ở Việt Nam không?',
+        answer:
+          'Cực kỳ tiềm năng. Với truyền thống hiếu học, sự đầu tư lớn của các gia đình cho giáo dục, và nhu cầu học tập kỹ năng mới trong thời đại số, thị trường EdTech Việt Nam đang bùng nổ. Các nền tảng học trực tuyến, ứng dụng học ngoại ngữ, và các công cụ quản lý trường học đều có cơ hội phát triển lớn.',
+      },
     ],
     resources: [
       {

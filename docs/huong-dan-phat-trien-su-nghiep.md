@@ -1,10 +1,19 @@
 ---
 title: 'Hướng Dẫn Phát Triển Sự Nghiệp: Xây Dựng Lộ Trình Thành Công Của Riêng Bạn'
 description: 'Lập kế hoạch và phát triển sự nghiệp một cách chiến lược, từ việc xác định mục tiêu, xây dựng thương hiệu cá nhân đến việc mở rộng mạng lưới quan hệ. Hướng dẫn từ K2AiHub.'
-date: '2025-10-03'
+date: '2025-09-03'
 author: 'K2AiHub Career Team'
 category: 'Hướng Dẫn'
-tags: ['phát triển sự nghiệp', 'career development', 'xây dựng thương hiệu cá nhân', 'mạng lưới quan hệ', 'kỹ năng mềm', 'hướng dẫn', 'K2AiHub']
+tags:
+  [
+    'phát triển sự nghiệp',
+    'career development',
+    'xây dựng thương hiệu cá nhân',
+    'mạng lưới quan hệ',
+    'kỹ năng mềm',
+    'hướng dẫn',
+    'K2AiHub',
+  ]
 featured: true
 readingTime: '18 phút đọc'
 ---
@@ -57,12 +66,12 @@ Thương hiệu cá nhân là những gì người khác nghĩ về bạn khi b�
 Thế giới thay đổi chóng mặt, và những kỹ năng hôm nay có thể trở nên lỗi thời vào ngày mai.
 
 - **Nâng cao kỹ năng chuyên môn (Hard Skills):**
-    - Tham gia các khóa học trực tuyến (Coursera, edX, K2AiHub).
-    - Lấy các chứng chỉ chuyên ngành.
-    - Đọc sách, tài liệu và các báo cáo mới nhất trong ngành.
+  - Tham gia các khóa học trực tuyến (Coursera, edX, K2AiHub).
+  - Lấy các chứng chỉ chuyên ngành.
+  - Đọc sách, tài liệu và các báo cáo mới nhất trong ngành.
 - **Rèn luyện kỹ năng mềm (Soft Skills):**
-    - Đây là những kỹ năng giúp bạn làm việc hiệu quả với con người: Giao tiếp, làm việc nhóm, lãnh đạo, tư duy phản biện.
-    - Tham gia các workshop, câu lạc bộ hoặc tình nguyện để có môi trường thực hành.
+  - Đây là những kỹ năng giúp bạn làm việc hiệu quả với con người: Giao tiếp, làm việc nhóm, lãnh đạo, tư duy phản biện.
+  - Tham gia các workshop, câu lạc bộ hoặc tình nguyện để có môi trường thực hành.
 
 ## Bước 5: Mở Rộng Mạng Lưới Quan Hệ (Networking)
 

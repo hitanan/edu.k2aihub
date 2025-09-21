@@ -37,6 +37,38 @@ export const musicAppreciationModuleData: ModuleData = {
           answer:
             'Âm sắc là "màu sắc" hay "chất giọng" riêng của mỗi loại nhạc cụ hoặc giọng hát. Đó là lý do tại sao cùng chơi một nốt Đô, nhưng tiếng piano, guitar và sáo lại nghe hoàn toàn khác nhau.',
         },
+        {
+            question: 'Tiết tấu (rhythm) là gì?',
+            answer: 'Tiết tấu là sự sắp xếp của âm thanh trong thời gian. Nó bao gồm độ dài của các nốt nhạc và khoảng lặng giữa chúng, tạo ra các mẫu hình nhịp điệu (pattern) lặp đi lặp lại, khiến bạn muốn gật gù hay nhún nhảy theo.'
+        },
+        {
+            question: 'Tempo là gì?',
+            answer: 'Tempo là tốc độ của bản nhạc, được đo bằng số phách mỗi phút (BPM - Beats Per Minute). Tempo nhanh tạo cảm giác sôi nổi, khẩn trương, trong khi tempo chậm tạo cảm giác thư thái, buồn bã.'
+        },
+        {
+            question: 'Động lực (dynamics) trong âm nhạc nghĩa là gì?',
+            answer: 'Động lực là độ to nhỏ (âm lượng) của âm nhạc. Các ký hiệu như p (piano - nhỏ) và f (forte - to) được dùng để chỉ dẫn người chơi nhạc thể hiện sắc thái tình cảm, từ thì thầm đến bùng nổ.'
+        },
+        {
+            question: 'Cấu trúc verse-chorus là gì?',
+            answer: 'Đây là cấu trúc phổ biến nhất trong nhạc pop. "Verse" (phiên khúc) là phần lời hát thay đổi để kể chuyện. "Chorus" (điệp khúc) là phần có giai điệu và lời hát lặp lại, chứa đựng thông điệp chính và dễ nhớ nhất của bài hát.'
+        },
+        {
+            question: 'Hợp âm là gì?',
+            answer: 'Hợp âm là sự kết hợp của ba hoặc nhiều nốt nhạc vang lên cùng một lúc. Các chuỗi hợp âm (chord progression) tạo nên phần nền hòa âm cho bài hát, dẫn dắt cảm xúc của người nghe.'
+        },
+        {
+            question: 'Tại sao một bài hát nghe có vẻ "vui" hoặc "buồn"?',
+            answer: 'Điều này thường được quyết định bởi việc sử dụng hợp âm trưởng (major) và thứ (minor). Hợp âm trưởng thường tạo cảm giác vui tươi, lạc quan, trong khi hợp âm thứ thường gợi lên cảm giác buồn, sâu lắng hoặc kịch tính.'
+        },
+        {
+            question: 'Nhịp 4/4 nghĩa là gì?',
+            answer: 'Đây là loại nhịp phổ biến nhất. Số 4 ở trên có nghĩa là có 4 phách trong mỗi ô nhịp. Số 4 ở dưới có nghĩa là mỗi phách tương ứng với một nốt đen. Bạn có thể đếm "1-2-3-4, 1-2-3-4" theo hầu hết các bài nhạc pop, rock hiện nay.'
+        },
+        {
+            question: 'Sự khác biệt giữa cấu trúc và hình thức (form) là gì?',
+            answer: 'Cấu trúc (structure) thường đề cập đến cách sắp xếp các phần trong một bài hát (verse, chorus, bridge). Hình thức (form) là một khái niệm rộng hơn, có thể chỉ các mẫu hình lớn hơn như sonata form trong nhạc cổ điển hay 12-bar blues trong nhạc blues.'
+        }
       ],
       quizzes: [
         {
@@ -73,6 +105,38 @@ export const musicAppreciationModuleData: ModuleData = {
           answer:
             'Không hẳn. Nhiều tác phẩm nhạc cổ điển có giai điệu rất hay và quen thuộc (bạn có thể đã nghe trong phim ảnh hoặc quảng cáo mà không biết). Hãy bắt đầu với những bản nhạc ngắn, vui tươi của Mozart hoặc những giai điệu mạnh mẽ, quen thuộc của Beethoven, bạn sẽ thấy nó không hề xa lạ.',
         },
+        {
+            question: 'Thời kỳ Cổ điển trong âm nhạc là khoảng thời gian nào?',
+            answer: 'Thời kỳ Cổ điển (Classical period) trong âm nhạc phương Tây kéo dài từ khoảng năm 1730 đến 1820. Đặc trưng của thời kỳ này là sự nhấn mạnh vào sự rõ ràng, cân bằng và cấu trúc mạch lạc.'
+        },
+        {
+            question: 'Haydn được mệnh danh là gì?',
+            answer: 'Joseph Haydn thường được gọi là "Cha đẻ của Giao hưởng" và "Cha đẻ của Tứ tấu đàn dây" vì những đóng góp to lớn của ông trong việc định hình và phát triển hai thể loại âm nhạc quan trọng này.'
+        },
+        {
+            question: 'Mozart đã sáng tác bao nhiêu tác phẩm?',
+            answer: 'Trong cuộc đời ngắn ngủi 35 năm của mình, Mozart đã sáng tác hơn 800 tác phẩm ở mọi thể loại âm nhạc thời đó, từ opera, giao hưởng, concerto cho đến nhạc thính phòng. Đây là một minh chứng cho tài năng thiên bẩm của ông.'
+        },
+        {
+            question: 'Sonata form là gì?',
+            answer: 'Đây là một hình thức âm nhạc quan trọng của thời kỳ Cổ điển, thường được sử dụng trong chương đầu tiên của các bản giao hưởng, sonata. Nó gồm 3 phần chính: Trình bày (Exposition), Phát triển (Development), và Tái hiện (Recapitulation).'
+        },
+        {
+            question: 'Tại sao âm nhạc của Mozart nghe có vẻ "trong sáng" và "thanh lịch"?',
+            answer: 'Âm nhạc của Mozart phản ánh đặc trưng của thời kỳ Cổ điển: giai điệu đẹp, dễ nghe, cấu trúc cân đối và hòa âm rõ ràng. Ông là bậc thầy trong việc tạo ra những giai điệu duyên dáng và có khả năng biểu cảm sâu sắc một cách tự nhiên.'
+        },
+        {
+            question: 'Bản giao hưởng số 9 của Beethoven có gì đặc biệt?',
+            answer: 'Đây là bản giao hưởng lớn đầu tiên có sự tham gia của dàn hợp xướng và ca sĩ solo. Phần cuối của bản giao hưởng phổ nhạc bài thơ "Ode to Joy" (Khúc hoan ca), trở thành một biểu tượng của tình huynh đệ và hòa bình thế giới.'
+        },
+        {
+            question: 'Concerto là gì?',
+            answer: 'Concerto là một tác phẩm âm nhạc dành cho một hoặc nhiều nhạc cụ độc tấu (soloist) chơi cùng với dàn nhạc. Đây là nơi để người nghệ sĩ độc tấu thể hiện kỹ thuật điêu luyện của mình.'
+        },
+        {
+            question: 'Sự khác biệt chính giữa thời kỳ Baroque và Cổ điển là gì?',
+            answer: 'Âm nhạc Baroque (trước Cổ điển) thường phức tạp, trang trí công phu với nhiều tuyến giai điệu chồng chéo (polyphony). Âm nhạc Cổ điển chuyển sang phong cách đơn giản hơn, tập trung vào một giai điệu chính rõ ràng và phần đệm hòa âm (homophony).'
+        }
       ],
       quizzes: [
         {
@@ -114,6 +178,38 @@ export const musicAppreciationModuleData: ModuleData = {
           answer:
             'Ứng tác là việc người nhạc công sáng tạo ra giai điệu ngay tại chỗ, không dựa trên bản nhạc có sẵn. Trong một ban nhạc Jazz, các nhạc công sẽ lần lượt "solo", thể hiện kỹ thuật và sự sáng tạo của mình dựa trên một cấu trúc hợp âm đã được thống nhất trước. Đây chính là linh hồn của nhạc Jazz.',
         },
+        {
+            question: 'Cấu trúc 12 ô nhịp (12-bar blues) là gì?',
+            answer: 'Đây là một chuỗi hợp âm (chord progression) gồm 12 ô nhịp, là cấu trúc phổ biến và nền tảng nhất trong nhạc Blues. Hầu hết các bài hát Blues và nhiều bài Rock and Roll đều được xây dựng dựa trên cấu trúc này.'
+        },
+        {
+            question: 'Nốt "blue" (blue note) là gì?',
+            answer: 'Là những nốt nhạc được chơi hoặc hát ở một cao độ hơi khác (thường là thấp hơn một chút) so với cao độ chuẩn. Những nốt này tạo ra âm thanh đặc trưng, có chút "méo mó", u uất của nhạc Blues.'
+        },
+        {
+            question: 'Nhịp điệu "swing" trong nhạc Jazz là gì?',
+            answer: 'Swing là một cảm giác về nhịp điệu, khó có thể định nghĩa chính xác bằng lời. Về cơ bản, nó là cách chơi các nốt móc đơn không đều nhau (nốt đầu dài hơn nốt sau), tạo ra một cảm giác nhún nhảy, lôi cuốn, thôi thúc người nghe phải chuyển động.'
+        },
+        {
+            question: 'Louis Armstrong có đóng góp gì quan trọng cho nhạc Jazz?',
+            answer: 'Louis Armstrong, với biệt danh "Satchmo", là một trong những nhân vật có ảnh hưởng nhất trong lịch sử nhạc Jazz. Ông đã biến Jazz từ một dòng nhạc tập thể thành nghệ thuật của người độc tấu (soloist) và là một bậc thầy về ứng tác.'
+        },
+        {
+            question: 'Big Band là gì?',
+            answer: 'Big Band là một loại dàn nhạc Jazz lớn, phổ biến trong kỷ nguyên Swing (những năm 1930-1940). Nó thường bao gồm các bộ kèn (trumpet, trombone, saxophone) và bộ nhịp điệu (piano, guitar, bass, trống).'
+        },
+        {
+            question: 'Blues đã ảnh hưởng đến Rock and Roll như thế nào?',
+            answer: 'Rock and Roll về cơ bản là nhạc Blues được chơi với nhịp điệu mạnh hơn, tempo nhanh hơn và sử dụng các nhạc cụ điện. Nhiều nghệ sĩ Rock and Roll đầu tiên như Elvis Presley, Chuck Berry đều cover lại các bài hát Blues.'
+        },
+        {
+            question: 'Scat singing là gì?',
+            answer: 'Là một kỹ thuật hát ứng tác trong nhạc Jazz, trong đó ca sĩ sử dụng những âm tiết vô nghĩa (như "doo-be-doo-bop") để hát những giai điệu ngẫu hứng, bắt chước âm thanh của một nhạc cụ. Louis Armstrong là một trong những người tiên phong của kỹ thuật này.'
+        },
+        {
+            question: 'Sự khác biệt giữa Blues và Jazz là gì?',
+            answer: 'Blues thường có cấu trúc đơn giản hơn (ví dụ: 12 ô nhịp) và tập trung vào việc thể hiện cảm xúc qua lời ca và giai điệu. Jazz phức tạp hơn về hòa âm và nhịp điệu, và đặc biệt nhấn mạnh vào sự ứng tác của các nhạc công.'
+        }
       ],
       quizzes: [
         {

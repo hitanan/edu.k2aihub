@@ -1,9 +1,38 @@
 import { ModuleNavigation, ModuleData } from '@/types';
+import { K2Module } from './k2-modules';
+
+// Newest Modules (alphabetical order)
+import { appliedEnglishModuleData } from '@/data/modules/applied-english';
+import { appliedMathematicsLogicModuleData } from '@/data/modules/applied-mathematics-logic';
+import { artHistoryAppreciationModuleData } from '@/data/modules/art-history-appreciation';
+import { biologyHealthModuleData } from '@/data/modules/biology-health';
+import { careerGuidanceDevelopmentModuleData } from '@/data/modules/career-guidance-development';
+import { chemistryEnvironmentModuleData } from '@/data/modules/chemistry-environment';
+import { civicEducationLifeSkillsModuleData } from '@/data/modules/civic-education-life-skills';
+import { criticalThinkingProblemSolvingModuleData } from '@/data/modules/critical-thinking-problem-solving';
+import { cyberSafetyDigitalEthicsModuleData } from '@/data/modules/cyber-safety-digital-ethics';
+import { economicGeographyVietnamModuleData } from '@/data/modules/economic-geography-vietnam';
+import { entrepreneurshipAndInnovationModuleData } from '@/data/modules/entrepreneurship-and-innovation';
+import { genderEducationMentalHealthModuleData } from '@/data/modules/gender-education-mental-health';
+import { introductionToPhilosophyModuleData } from '@/data/modules/introduction-to-philosophy';
+import { literatureReadingSkillsModuleData } from '@/data/modules/literature-reading-skills';
+import { llmAiSeoModuleData } from '@/data/modules/llm-ai-seo';
+import { modernVietnameseHistoryModuleData } from '@/data/modules/modern-vietnamese-history';
+import { musicAppreciationModuleData } from '@/data/modules/music-appreciation';
+import { personalFinanceForBeginnersModuleData } from '@/data/modules/personal-finance-for-beginners';
+import { physicalEducationSportsScienceModuleData } from '@/data/modules/physical-education-sports-science';
+import { physicsInLifeModuleData } from '@/data/modules/physics-in-life';
+import { scientificResearchSkillsModuleData } from '@/data/modules/scientific-research-skills';
+
+// Existing Modules (alphabetical order)
 import { advancedCreativeSkillsModuleData } from '@/data/modules/advanced-creative-skills';
+import { aiArtCreativeTechModuleData } from '@/data/modules/ai-art-creative-tech';
 import { aiForStudentsModuleData } from '@/data/modules/ai-for-students';
 import { aiMachineLearningModuleData } from '@/data/modules/ai-machine-learning';
 import { aiSeoOptimizationModuleData } from '@/data/modules/ai-seo-optimization';
 import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
+import { arduinoModuleData } from '@/data/modules/arduino';
+import { biotechnologyModuleData } from '@/data/modules/biotechnology';
 import { blueEconomyModuleData } from '@/data/modules/blue-economy';
 import { businessMarketingModuleData } from '@/data/modules/business-marketing';
 import { careerDevelopmentModuleData } from '@/data/modules/career-development';
@@ -13,17 +42,28 @@ import { communicationSkillsModuleData } from '@/data/modules/communication-skil
 import { contentCreatorModuleData } from '@/data/modules/content-creator';
 import { creativeDesignModuleData } from '@/data/modules/creative-design';
 import { criticalThinkingModuleData } from '@/data/modules/critical-thinking';
+import { cybersecurityModuleData } from '@/data/modules/cybersecurity';
 import { dailyLifeModuleData } from '@/data/modules/daily-life';
 import { dataScienceModuleData } from '@/data/modules/data-science';
 import { digitalArtsCreativeTechModuleData } from '@/data/modules/digital-arts-creative-tech';
 import { digitalCitizenshipAiEthicsModuleData } from '@/data/modules/digital-citizenship-ai-ethics';
 import { digitalCitizenshipOnlineSafetyModuleData } from '@/data/modules/digital-citizenship-online-safety';
+import { digitalMarketingModuleData } from '@/data/modules/digital-marketing';
 import { educationLearningModuleData } from '@/data/modules/education-learning';
 import { educationTechnologyModuleData } from '@/data/modules/education-technology';
 import { electricVehicleTechModuleData } from '@/data/modules/electric-vehicle-tech';
 import { energyManagementModule } from '@/data/modules/energy-management';
+import { energyManagementSmartGridModule } from '@/data/modules/energy-management-smart-grid';
+import { environmentalDataScienceModuleData } from '@/data/modules/environmental-data-science';
+import { environmentalScienceClimateModuleData } from '@/data/modules/environmental-science-climate';
 import { ethicalMarketingPurposeModule } from '@/data/modules/ethical-marketing-purpose';
+import { financialLiteracyModuleData } from '@/data/modules/financial-literacy';
+import { foodTechnologyModuleData } from '@/data/modules/food-technology';
+import { futureCareersModuleData } from '@/data/modules/future-careers-ai';
+import { futureThinkingScenarioPlanningModule } from '@/data/modules/future-thinking-scenario-planning';
+import { gameDevelopmentModuleData } from '@/data/modules/game-development';
 import { genZMarketingModuleData } from '@/data/modules/genz-marketing';
+import { greenTechnologyModuleData } from '@/data/modules/green-technology';
 import { healthcareTechModuleData } from '@/data/modules/healthcare-tech';
 import { kitchenChemistryModuleData } from '@/data/modules/kitchen-chemistry';
 import { leadershipManagementModule } from '@/data/modules/leadership-management';
@@ -39,16 +79,18 @@ import { officeWorkModule } from '@/data/modules/office-work';
 import { personalEnergyPerformanceManagementModule } from '@/data/modules/personal-energy-performance-management';
 import { physicsOfSportsModule } from '@/data/modules/physics-of-sports';
 import { professionalSkillsModule } from '@/data/modules/professional-skills';
-import { professionalSoftSkillsModule } from '@/data/modules/professional-soft-skills';
 import { programmingDevModule } from '@/data/modules/programming-dev';
 import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
 import { psychologyBehavioralScienceModule } from '@/data/modules/psychology-behavioral-science';
+import { pythonModuleData } from '@/data/modules/python';
 import { quantumComputingEducationModule } from '@/data/modules/quantum-computing-education';
 import { quantumComputingModule } from '@/data/modules/quantum-computing';
 import { realEstateTechnologyModuleData } from '@/data/modules/real-estate-technology';
 import { renewableEnergyModuleData as renewableEnergyModule } from '@/data/modules/renewable-energy';
 import { robloxGameDevModuleData as robloxGameDevModule } from '@/data/modules/roblox-game-dev';
 import { robosimModuleData } from '@/data/modules/robosim';
+import { roboticsModuleData } from '@/data/modules/robotics';
+import { scratchModuleData } from '@/data/modules/scratch';
 import { semiconductorTechnologyModuleData } from '@/data/modules/semiconductor-technology';
 import { shortVideoMasteryModuleData } from '@/data/modules/short-video-mastery';
 import { smartManufacturingModuleData } from '@/data/modules/smart-manufacturing';
@@ -56,48 +98,7 @@ import { socialListeningCrisisModuleData } from '@/data/modules/social-listening
 import { softSkillsModuleData } from '@/data/modules/soft-skills';
 import { spaceExplorationModuleData } from '@/data/modules/space-exploration';
 import { spaceTechnologyModuleData } from '@/data/modules/space-technology';
-import { K2Module } from './k2-modules';
-
-// Migrated Modules
-import { aiArtCreativeTechModuleData } from '@/data/modules/ai-art-creative-tech';
-import { arduinoModuleData } from '@/data/modules/arduino';
-import { biotechnologyModuleData } from '@/data/modules/biotechnology';
-import { cybersecurityModuleData } from '@/data/modules/cybersecurity';
-import { digitalMarketingModuleData } from '@/data/modules/digital-marketing';
-import { energyManagementSmartGridModule } from '@/data/modules/energy-management-smart-grid';
-import { environmentalDataScienceModuleData } from '@/data/modules/environmental-data-science';
-import { environmentalScienceClimateModuleData } from '@/data/modules/environmental-science-climate';
-import { financialLiteracyModuleData } from '@/data/modules/financial-literacy';
-import { foodTechnologyModuleData } from '@/data/modules/food-technology';
-import { futureCareersModuleData } from '@/data/modules/future-careers-ai';
-import { futureThinkingScenarioPlanningModule } from '@/data/modules/future-thinking-scenario-planning';
-import { gameDevelopmentModuleData } from '@/data/modules/game-development';
-import { greenTechnologyModuleData } from '@/data/modules/green-technology';
-import { pythonModuleData } from '@/data/modules/python';
-import { roboticsModuleData } from '@/data/modules/robotics';
-import { scratchModuleData } from '@/data/modules/scratch';
 import { stemModuleData } from '@/data/modules/stem';
-import { appliedMathematicsLogicModuleData } from '@/data/modules/applied-mathematics-logic';
-import { artHistoryAppreciationModuleData } from '@/data/modules/art-history-appreciation';
-import { biologyHealthModuleData } from '@/data/modules/biology-health';
-import { careerGuidanceDevelopmentModuleData } from '@/data/modules/career-guidance-development';
-import { chemistryEnvironmentModuleData } from '@/data/modules/chemistry-environment';
-import { civicEducationLifeSkillsModuleData } from '@/data/modules/civic-education-life-skills';
-import { cyberSafetyDigitalEthicsModuleData } from '@/data/modules/cyber-safety-digital-ethics';
-import { economicGeographyVietnamModuleData } from '@/data/modules/economic-geography-vietnam';
-import { genderEducationMentalHealthModuleData } from '@/data/modules/gender-education-mental-health';
-import { literatureReadingSkillsModuleData } from '@/data/modules/literature-reading-skills';
-import { modernVietnameseHistoryModuleData } from '@/data/modules/modern-vietnamese-history';
-import { musicAppreciationModuleData } from '@/data/modules/music-appreciation';
-import { physicalEducationSportsScienceModuleData } from '@/data/modules/physical-education-sports-science';
-import { physicsInLifeModuleData } from '@/data/modules/physics-in-life';
-import { appliedEnglishModuleData } from '@/data/modules/applied-english';
-import { criticalThinkingProblemSolvingModuleData } from '@/data/modules/critical-thinking-problem-solving';
-import { entrepreneurshipAndInnovationModuleData } from '@/data/modules/entrepreneurship-and-innovation';
-import { introductionToPhilosophyModuleData } from '@/data/modules/introduction-to-philosophy';
-import { personalFinanceForBeginnersModuleData } from '@/data/modules/personal-finance-for-beginners';
-import { scientificResearchSkillsModuleData } from '@/data/modules/scientific-research-skills';
-import { llmAiSeoModuleData } from '@/data/modules/llm-ai-seo';
 
 export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   // Core Modules (outside /learning/ folder)
@@ -136,12 +137,8 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
     lessons: [],
     coreModule: true,
   },
-  advancedCreativeSkillsModuleData,
-  aiArtCreativeTechModuleData,
-  aiForStudentsModuleData,
-  aiMachineLearningModuleData,
-  aiSeoOptimizationModuleData,
-  llmAiSeoModuleData,
+
+  // Newest Modules
   appliedEnglishModuleData,
   appliedMathematicsLogicModuleData,
   artHistoryAppreciationModuleData,
@@ -156,14 +153,23 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   genderEducationMentalHealthModuleData,
   introductionToPhilosophyModuleData,
   literatureReadingSkillsModuleData,
+  llmAiSeoModuleData,
   modernVietnameseHistoryModuleData,
   musicAppreciationModuleData,
   personalFinanceForBeginnersModuleData,
   physicalEducationSportsScienceModuleData,
   physicsInLifeModuleData,
   scientificResearchSkillsModuleData,
+
+  // Existing Modules
+  advancedCreativeSkillsModuleData,
+  aiArtCreativeTechModuleData,
+  aiForStudentsModuleData,
+  aiMachineLearningModuleData,
+  aiSeoOptimizationModuleData,
   arduinoCircuitsModuleData,
   arduinoModuleData,
+  biotechnologyModuleData,
   blueEconomyModuleData,
   businessMarketingModuleData,
   careerDevelopmentModuleData,
@@ -210,7 +216,6 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   personalEnergyPerformanceManagementModule,
   physicsOfSportsModule,
   professionalSkillsModule,
-  professionalSoftSkillsModule,
   programmingDevModule,
   programmingRoboticsModule,
   psychologyBehavioralScienceModule,
@@ -231,5 +236,4 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   spaceExplorationModuleData,
   spaceTechnologyModuleData,
   stemModuleData,
-  biotechnologyModuleData,
 ];

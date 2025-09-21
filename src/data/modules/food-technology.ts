@@ -150,6 +150,30 @@ export const foodTechnologyLessons: BaseLessonData[] = [
         answer:
           'HACCP là một hệ thống tập trung vào việc xác định và kiểm soát các mối nguy cụ thể trong quá trình sản xuất. ISO 22000 là một tiêu chuẩn quốc tế về hệ thống quản lý an toàn thực phẩm, bao trùm rộng hơn, bao gồm cả các nguyên tắc của HACCP, các chương trình tiên quyết (như vệ sinh nhà xưởng) và các yêu cầu về quản lý hệ thống.',
       },
+      {
+        question: 'Điểm kiểm soát tới hạn (CCP) là gì?',
+        answer: 'CCP là một bước trong quy trình sản xuất mà tại đó việc kiểm soát có thể được áp dụng và là cần thiết để ngăn chặn hoặc loại bỏ một mối nguy về an toàn thực phẩm hoặc giảm nó xuống mức có thể chấp nhận được. Ví dụ, bước nấu chín là một CCP để tiêu diệt vi khuẩn gây bệnh.',
+      },
+      {
+        question: 'Làm thế nào để một nhà hàng nhỏ có thể áp dụng các nguyên tắc an toàn thực phẩm?',
+        answer: 'Một nhà hàng nhỏ có thể bắt đầu bằng cách thực hiện các chương trình tiên quyết (PRPs) như: vệ sinh cá nhân tốt, kiểm soát nhiệt độ (giữ nóng thực phẩm nóng, giữ lạnh thực phẩm lạnh), ngăn ngừa ô nhiễm chéo (sử dụng thớt riêng cho thực phẩm sống và chín), và kiểm soát côn trùng gây hại.',
+      },
+      {
+        question: 'Tại sao việc ghi chép lại hồ sơ trong hệ thống HACCP lại quan trọng?',
+        answer: 'Việc ghi chép hồ sơ (ví dụ: nhật ký nhiệt độ tủ lạnh, hồ sơ đào tạo nhân viên) là bằng chứng cho thấy hệ thống an toàn thực phẩm đang được thực hiện đúng cách. Nó rất quan trọng cho việc xác minh nội bộ, kiểm tra của cơ quan quản lý và để điều tra nếu có sự cố xảy ra.',
+      },
+      {
+        question: 'Dị ứng thực phẩm là một mối nguy an toàn thực phẩm không?',
+        answer: 'Có, các chất gây dị ứng (như đậu phộng, hải sản, sữa) được coi là một mối nguy hóa học. Các cơ sở sản xuất và nhà hàng phải có quy trình rõ ràng để ngăn ngừa ô nhiễm chéo và ghi nhãn chính xác các sản phẩm có chứa chất gây dị ứng để bảo vệ người tiêu dùng.',
+      },
+      {
+        question: 'Thực hành sản xuất tốt (GMP) là gì?',
+        answer: 'GMP (Good Manufacturing Practices) là các yêu cầu và hướng dẫn nhằm đảm bảo sản phẩm được sản xuất một cách nhất quán và kiểm soát theo các tiêu chuẩn chất lượng. Nó bao gồm các khía cạnh như thiết kế nhà xưởng, vệ sinh, thiết bị, và quy trình vận hành.',
+      },
+      {
+        question: 'Làm thế nào để kiểm soát chất lượng nguyên liệu đầu vào?',
+        answer: 'Kiểm soát chất lượng nguyên liệu đầu vào bắt đầu bằng việc lựa chọn các nhà cung cấp uy tín. Cần thiết lập các tiêu chuẩn chất lượng rõ ràng cho từng loại nguyên liệu và thực hiện kiểm tra khi nhận hàng (ví dụ: kiểm tra cảm quan, đo nhiệt độ, hoặc lấy mẫu xét nghiệm) để đảm bảo chúng đáp ứng yêu cầu trước khi đưa vào sản xuất.',
+      },
     ],
   },
   {
@@ -284,7 +308,7 @@ export const foodTechnologyLessons: BaseLessonData[] = [
       {
         question: 'Công nghệ lên men đóng vai trò gì trong thực phẩm Việt Nam?',
         answer:
-          'Công nghệ lên men là trái tim của nhiều món ăn và gia vị truyền thống Việt Nam, như nước mắm, tương, mắm tôm, và dưa chua. Quá trình này không chỉ giúp bảo quản thực phẩm mà còn tạo ra những hương vị umami phức hợp và độc đáo, đặc trưng cho ẩm thực Việt.',
+          'Công nghệ lên men là trái tim của nhiều món ăn và gia vị truyền thống Việt Nam, như nước mắm, tương, mắm tôm, và dưa chua. Quá trình này không chỉ giúp bảo quản thực phẩm mà còn tạo ra những hương vị umami phức tạp và độc đáo, đặc trưng cho ẩm thực Việt.',
       },
       {
         question: 'Làm thế nào công nghệ hiện đại có thể cải tiến quy trình lên men truyền thống?',
@@ -300,6 +324,30 @@ export const foodTechnologyLessons: BaseLessonData[] = [
         question: 'Sự khác biệt giữa lên men hiếu khí và kỵ khí là gì?',
         answer:
           'Lên men hiếu khí cần có oxy để diễn ra, ví dụ như trong sản xuất giấm. Ngược lại, lên men kỵ khí diễn ra trong môi trường không có oxy, ví dụ như trong quá trình ủ rượu hoặc làm sữa chua. Mỗi loại quá trình tạo ra các sản phẩm và hương vị khác nhau.',
+      },
+      {
+        question: 'Umami là gì và nó được tạo ra như thế nào trong quá trình lên men?',
+        answer: 'Umami là vị cơ bản thứ năm, thường được mô tả là "vị ngọt thịt" hoặc "vị ngon". Trong quá trình lên men nước mắm hoặc tương, các enzyme từ vi sinh vật sẽ phân giải protein trong cá hoặc đậu nành thành các axit amin, trong đó có glutamate. Glutamate là hợp chất chính tạo ra vị umami đậm đà.',
+      },
+      {
+        question: 'Men khởi động (starter culture) là gì?',
+        answer: 'Men khởi động là một tập hợp các vi sinh vật được chọn lọc (vi khuẩn, nấm men, hoặc nấm mốc) được thêm vào nguyên liệu để bắt đầu và kiểm soát quá trình lên men. Việc sử dụng men khởi động giúp đảm bảo sản phẩm cuối cùng có chất lượng và hương vị nhất quán.',
+      },
+      {
+        question: 'Tại sao một số loại phô mai lại có mùi rất nồng?',
+        answer: 'Mùi nồng của một số loại phô mai (như phô mai xanh) là kết quả của hoạt động của các vi sinh vật (nấm mốc, vi khuẩn) trong quá trình ủ. Chúng phân giải chất béo và protein trong sữa thành các hợp chất thơm dễ bay hơi, tạo ra hương vị phức tạp và đặc trưng.',
+      },
+      {
+        question: 'Làm thế nào để làm sữa chua tại nhà?',
+        answer: 'Để làm sữa chua, bạn cần đun nóng sữa để tiệt trùng, sau đó để nguội đến khoảng 40-45°C. Tiếp theo, bạn hòa một ít men (có thể dùng sữa chua không đường mua sẵn) vào sữa, rồi ủ ấm trong khoảng 6-8 tiếng. Trong thời gian này, vi khuẩn lactic sẽ lên men đường lactose trong sữa thành axit lactic, làm sữa đông lại và tạo ra vị chua đặc trưng.',
+      },
+      {
+        question: 'Kombucha là gì?',
+        answer: 'Kombucha là một loại trà lên men có vị chua ngọt và có ga nhẹ. Nó được làm bằng cách thêm một "con giống" gọi là SCOBY (Symbiotic Culture of Bacteria and Yeast - Cộng sinh của vi khuẩn và nấm men) vào trà ngọt. SCOBY sẽ lên men trà, tạo ra axit axetic, axit gluconic và một lượng nhỏ cồn.',
+      },
+      {
+        question: 'Sự khác biệt giữa dưa chua và kim chi là gì?',
+        answer: 'Cả hai đều là rau củ lên men, nhưng có sự khác biệt về nguyên liệu và quy trình. Dưa chua của Việt Nam thường chỉ được lên men với muối và nước, tạo ra vị chua tự nhiên. Kim chi của Hàn Quốc phức tạp hơn, được ướp với nhiều loại gia vị như bột ớt, tỏi, gừng, và nước mắm, tạo ra hương vị cay, nồng và phức hợp hơn.',
       },
     ],
   },
@@ -455,6 +503,30 @@ export const foodTechnologyLessons: BaseLessonData[] = [
         answer:
           'Mặc dù hình thức trình bày rất quan trọng, mục đích chính của ẩm thực phân tử là để tăng cường trải nghiệm ăn uống bằng cách tạo ra những sự tương phản bất ngờ về kết cấu và nhiệt độ, hoặc tập trung và khuếch đại hương vị. Nó là một công cụ để đầu bếp thể hiện sự sáng tạo và mang đến cho thực khách một góc nhìn mới về món ăn quen thuộc.',
       },
+      {
+        question: 'Sous-vide là gì và nó có liên quan đến ẩm thực phân tử không?',
+        answer: 'Sous-vide (tiếng Pháp có nghĩa là "dưới chân không") là một kỹ thuật nấu ăn trong đó thực phẩm được cho vào túi hút chân không và nấu trong một nồi nước được kiểm soát nhiệt độ chính xác. Mặc dù không phải lúc nào cũng được coi là ẩm thực phân tử, nó chia sẻ nguyên tắc cốt lõi là sử dụng khoa học để kiểm soát chính xác quá trình nấu nướng, mang lại kết quả nhất quán.',
+      },
+      {
+        question: 'Làm thế nào để tạo ra "bọt" (foam) trong ẩm thực phân tử?',
+        answer: 'Bọt có thể được tạo ra bằng cách sử dụng một chất tạo nhũ hóa như lecithin đậu nành. Lecithin giúp ổn định các bong bóng khí trong một chất lỏng. Bằng cách hòa tan lecithin vào một chất lỏng có hương vị (như nước ép trái cây) và sử dụng máy đánh cầm tay, bạn có thể tạo ra một lớp bọt nhẹ và thoáng, chứa đầy hương vị.',
+      },
+      {
+        question: 'Gel hóa (gelling) khác với việc sử dụng gelatin thông thường như thế nào?',
+        answer: 'Trong ẩm thực phân tử, các đầu bếp sử dụng nhiều loại hydrocolloid khác nhau (như agar-agar, gellan gum) để tạo ra các loại gel với kết cấu đa dạng, từ mềm dẻo đến cứng giòn, và có thể tạo gel ngay cả trong chất lỏng nóng. Điều này mang lại nhiều khả năng sáng tạo hơn so với gelatin truyền thống.',
+      },
+      {
+        question: 'Có thể áp dụng ẩm thực phân tử tại nhà không?',
+        answer: 'Chắc chắn rồi. Nhiều kỹ thuật cơ bản như tạo bọt với lecithin hoặc làm "trứng cá" trái cây với agar-agar có thể được thực hiện tại nhà với các bộ dụng cụ dành cho người mới bắt đầu. Nó đòi hỏi sự chính xác trong việc đo lường, nhưng không quá phức tạp.',
+      },
+      {
+        question: 'Tại sao nitơ lỏng lại được sử dụng trong ẩm thực phân tử?',
+        answer: 'Nitơ lỏng có nhiệt độ cực thấp (-196°C). Nó được sử dụng để làm đông lạnh thực phẩm gần như ngay lập tức. Quá trình đông lạnh nhanh này tạo ra các tinh thể băng siêu nhỏ, mang lại kết cấu cực kỳ mịn cho kem hoặc sorbet. Nó cũng tạo ra hiệu ứng khói ấn tượng khi trình bày.',
+      },
+      {
+        question: 'Deconstruction (giải cấu trúc) trong ẩm thực là gì?',
+        answer: 'Giải cấu trúc là một khái niệm trong đó một món ăn cổ điển được tách ra thành các thành phần hương vị cốt lõi của nó, sau đó được chế biến và trình bày lại theo một hình thức mới và bất ngờ. Ví dụ, một chiếc bánh phô mai "giải cấu trúc" có thể bao gồm một vệt kem phô mai, vụn bánh quy, và một loại gel dâu tây.',
+      },
     ],
   },
   {
@@ -606,6 +678,30 @@ export const foodTechnologyLessons: BaseLessonData[] = [
         question: 'Làm thế nào người tiêu dùng có thể góp phần vào một chuỗi cung ứng thực phẩm bền vững hơn?',
         answer:
           'Người tiêu dùng có thể đóng góp bằng cách: mua các sản phẩm địa phương và theo mùa, giảm tiêu thụ thịt, lên kế hoạch bữa ăn để tránh mua thừa và lãng phí thực phẩm, và ủng hộ các thương hiệu cam kết thực hành sản xuất bền vững và minh bạch.',
+      },
+      {
+        question: 'Canh tác hữu cơ (organic farming) là gì?',
+        answer: 'Canh tác hữu cơ là một phương pháp nông nghiệp không sử dụng phân bón hóa học tổng hợp, thuốc trừ sâu, thuốc diệt cỏ, hoặc sinh vật biến đổi gen (GMO). Thay vào đó, nó tập trung vào việc duy trì sức khỏe của đất thông qua phân compost, luân canh cây trồng và các phương pháp tự nhiên khác.',
+      },
+      {
+        question: 'Dấu chân carbon (carbon footprint) của thực phẩm là gì?',
+        answer: 'Dấu chân carbon của thực phẩm là tổng lượng khí nhà kính được thải ra trong suốt vòng đời của nó, từ sản xuất, chế biến, vận chuyển, đến tiêu thụ và thải bỏ. Thực phẩm có nguồn gốc động vật và được vận chuyển bằng đường hàng không thường có dấu chân carbon cao nhất.',
+      },
+      {
+        question: 'Thực phẩm "từ trang trại đến bàn ăn" (farm-to-table) có ý nghĩa gì?',
+        answer: 'Đây là một phong trào xã hội nhằm thúc đẩy việc phục vụ thực phẩm địa phương tại các nhà hàng và cơ sở ăn uống. Bằng cách giảm thiểu các bước trung gian trong chuỗi cung ứng, nó giúp đảm bảo thực phẩm tươi ngon hơn, hỗ trợ nông dân địa phương và giảm tác động môi trường từ việc vận chuyển.',
+      },
+      {
+        question: 'Làm thế nào để giảm lãng phí thực phẩm tại nhà?',
+        answer: 'Bạn có thể giảm lãng phí bằng cách: lên kế hoạch bữa ăn và mua sắm theo danh sách, bảo quản thực phẩm đúng cách để giữ được lâu hơn, tận dụng thức ăn thừa để chế biến các món mới, và hiểu sự khác biệt giữa ngày "sử dụng trước" (use by) và "tốt nhất trước" (best before).',
+      },
+      {
+        question: 'Nông nghiệp đô thị (urban agriculture) là gì và lợi ích của nó là gì?',
+        answer: 'Nông nghiệp đô thị là việc trồng trọt, chế biến và phân phối thực phẩm trong hoặc xung quanh các thành phố. Lợi ích của nó bao gồm: cung cấp thực phẩm tươi sống cho người dân thành thị, giảm quãng đường vận chuyển thực phẩm, tạo không gian xanh, và giáo dục cộng đồng về nguồn gốc thực phẩm.',
+      },
+      {
+        question: 'Thực phẩm biến đổi gen (GMO) có bền vững không?',
+        answer: 'Đây là một chủ đề gây tranh cãi. Những người ủng hộ cho rằng GMO có thể tăng năng suất, giảm nhu cầu sử dụng thuốc trừ sâu và tạo ra các loại cây trồng chịu được hạn hán, góp phần vào an ninh lương thực. Tuy nhiên, những người phản đối lo ngại về các tác động tiềm tàng đối với đa dạng sinh học và sự phụ thuộc vào một số ít các công ty hạt giống lớn.',
       },
     ],
   },

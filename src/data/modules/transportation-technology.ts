@@ -139,6 +139,46 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
         answer:
           'Hành vi di chuyển của xe máy rất linh hoạt và khó dự đoán hơn ô tô. Chúng có thể di chuyển trong không gian hẹp, thường xuyên thay đổi làn đường. Bất kỳ hệ thống giao thông thông minh nào ở Việt Nam đều phải được "huấn luyện" đặc biệt để hiểu và dự đoán hành vi của dòng xe máy dày đặc, một đặc thù không có ở nhiều nước phương Tây.',
       },
+      {
+        question: 'Hệ thống giao thông thông minh (ITS) bao gồm những thành phần nào?',
+        answer:
+          'ITS (Intelligent Transportation Systems) là một tập hợp các công nghệ. Các thành phần chính bao gồm: cảm biến (camera, radar) để thu thập dữ liệu, mạng lưới truyền thông (5G, Wifi) để truyền dữ liệu, trung tâm điều hành để phân tích và ra quyết định, và các thiết bị đầu cuối (đèn tín hiệu, bảng thông báo, ứng dụng di động) để thực thi và thông báo.',
+      },
+      {
+        question: 'MaaS (Mobility as a Service) là gì?',
+        answer:
+          'MaaS là một mô hình tích hợp các dịch vụ vận tải khác nhau (xe buýt, metro, taxi, xe đạp chia sẻ) vào một nền tảng kỹ thuật số duy nhất. Người dùng có thể lập kế hoạch, đặt vé và thanh toán cho toàn bộ hành trình của mình qua một ứng dụng duy nhất, thay vì phải sử dụng nhiều ứng dụng riêng lẻ.',
+      },
+      {
+        question: 'Làm thế nào AI có thể giúp giảm ùn tắc giao thông?',
+        answer:
+          'AI có thể phân tích dữ liệu giao thông theo thời gian thực từ nhiều nguồn để dự đoán các điểm có nguy cơ ùn tắc. Dựa trên đó, nó có thể tự động điều chỉnh thời gian của đèn tín hiệu, đề xuất các tuyến đường thay thế cho người lái xe, và tối ưu hóa lịch trình của phương tiện công cộng.',
+      },
+      {
+        question: 'Giao thông đa phương thức (Multimodal Transportation) có lợi ích gì?',
+        answer:
+          'Nó cho phép người dân kết hợp nhiều loại phương tiện trong một hành trình (ví dụ: đi xe đạp đến ga metro, sau đó đi bộ đến văn phòng). Điều này giúp giảm sự phụ thuộc vào xe cá nhân, tăng tính linh hoạt, tiết kiệm chi phí và thân thiện với môi trường hơn.',
+      },
+      {
+        question: 'Thanh toán không tiếp xúc đóng vai trò gì trong giao thông thông minh?',
+        answer:
+          'Nó giúp quá trình lên xuống các phương tiện công cộng nhanh chóng và liền mạch hơn, giảm thời gian dừng tại các trạm. Việc sử dụng thẻ ngân hàng, ví điện tử hoặc mã QR để thanh toán giúp loại bỏ nhu cầu mua vé giấy, làm cho giao thông công cộng trở nên thuận tiện và hấp dẫn hơn.',
+      },
+      {
+        question: 'Dữ liệu lớn (Big Data) được sử dụng trong giao thông đô thị như thế nào?',
+        answer:
+          'Dữ liệu từ GPS, camera, cảm biến và ứng dụng di động được thu thập và phân tích để hiểu rõ các mô hình di chuyển của người dân. Các nhà quy hoạch sử dụng thông tin này để xác định nơi cần xây dựng đường mới, mở tuyến xe buýt mới, hoặc bố trí các trạm xe đạp chia sẻ một cách hiệu quả.',
+      },
+      {
+        question: 'Thách thức về quyền riêng tư trong giao thông thông minh là gì?',
+        answer:
+          'Việc thu thập một lượng lớn dữ liệu di chuyển cá nhân làm dấy lên lo ngại về quyền riêng tư. Các hệ thống giao thông thông minh phải đảm bảo rằng dữ liệu được ẩn danh hóa, mã hóa và chỉ được sử dụng cho các mục đích đã định, đồng thời phải có các chính sách rõ ràng về việc ai có thể truy cập và sử dụng dữ liệu này.',
+      },
+      {
+        question: 'Tương lai của vận tải đô thị ở Việt Nam sẽ như thế nào?',
+        answer:
+          'Tương lai sẽ là một hệ sinh thái tích hợp, nơi các phương tiện công cộng sức chứa lớn (metro, BRT) đóng vai trò xương sống, kết nối với các dịch vụ di chuyển linh hoạt như xe buýt nhỏ, taxi, xe ôm công nghệ và xe đạp/xe máy điện chia sẻ cho các chặng đường đầu và cuối.',
+      },
     ],
   },
   {
@@ -253,6 +293,46 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
         question: 'LiDAR là gì và tại sao nó quan trọng cho xe tự lái?',
         answer:
           'LiDAR (Light Detection and Ranging) là một cảm biến hoạt động bằng cách phát ra các tia laser và đo thời gian chúng phản xạ lại. Nó tạo ra một "đám mây điểm" 3D cực kỳ chi tiết về môi trường xung quanh, giúp xe "nhìn" được trong bóng tối, sương mù và nhận diện chính xác hình dạng, khoảng cách của các vật thể.',
+      },
+      {
+        question: 'Sự khác biệt giữa xe tự lái và xe được kết nối (connected car) là gì?',
+        answer:
+          'Xe tự lái tập trung vào khả năng tự vận hành của chiếc xe. Xe được kết nối tập trung vào việc giao tiếp với các phương tiện khác (V2V), hạ tầng (V2I), và mọi thứ khác (V2X). Một chiếc xe có thể được kết nối mà không tự lái, nhưng một chiếc xe tự lái hiệu quả nhất khi nó cũng được kết nối.',
+      },
+      {
+        question: 'Hợp nhất cảm biến (Sensor Fusion) là gì?',
+        answer:
+          'Là quá trình kết hợp dữ liệu từ nhiều loại cảm biến khác nhau (như camera, LiDAR, radar) để tạo ra một bức tranh duy nhất, chính xác và đáng tin cậy hơn về môi trường xung quanh. Ví dụ, camera nhận dạng màu sắc tốt, trong khi LiDAR đo khoảng cách chính xác. Hợp nhất chúng lại sẽ cho kết quả tốt hơn từng cảm biến riêng lẻ.',
+      },
+      {
+        question: 'Làm thế nào để "dạy" một chiếc xe tự lái?',
+        answer:
+          'Xe tự lái được "dạy" bằng cách sử dụng các mô hình học máy (machine learning), đặc biệt là học sâu (deep learning). Các mô hình này được huấn luyện trên một tập dữ liệu khổng lồ gồm hàng triệu km đường đi thực tế, chứa hình ảnh về các tình huống giao thông khác nhau. Từ đó, xe học cách nhận diện vật thể và đưa ra quyết định lái xe.',
+      },
+      {
+        question: 'Xe tự lái có thể bị hack không?',
+        answer:
+          'Có, đây là một rủi ro nghiêm trọng. Bất kỳ hệ thống máy tính nào được kết nối đều có khả năng bị tấn công. Các nhà sản xuất xe tự lái đang đầu tư rất nhiều vào an ninh mạng để bảo vệ xe khỏi các cuộc tấn công có thể chiếm quyền điều khiển hoặc đánh cắp dữ liệu.',
+      },
+      {
+        question: 'Vấn đề đạo đức "trolley problem" trong xe tự lái là gì?',
+        answer:
+          'Đây là một tình huống giả định khi xe tự lái phải đối mặt với một tai nạn không thể tránh khỏi và phải lựa chọn giữa hai kết quả tồi tệ (ví dụ: đâm vào một nhóm người đi bộ hoặc đánh lái để hy sinh hành khách). Các lập trình viên và nhà đạo đức học đang tranh luận về cách lập trình cho những quyết định khó khăn này.',
+      },
+      {
+        question: 'Bản đồ độ phân giải cao (HD Map) có vai trò gì?',
+        answer:
+          'Bản đồ HD không chỉ cho biết đường đi mà còn chứa thông tin cực kỳ chi tiết về làn đường, biển báo, lề đường, cột đèn với độ chính xác đến từng centimet. Xe tự lái sử dụng bản đồ này để định vị chính xác vị trí của nó trên đường và lên kế hoạch cho các hành động tiếp theo.',
+      },
+      {
+        question: 'Khi nào chúng ta sẽ thấy xe tự lái cấp 5 trên đường phố?',
+        answer:
+          'Xe tự lái cấp 4 (tự lái trong khu vực địa lý nhất định) đã bắt đầu xuất hiện dưới dạng taxi tự lái ở một số thành phố trên thế giới. Tuy nhiên, xe tự lái cấp 5, có thể đi đến bất cứ đâu, trong mọi điều kiện, vẫn còn là một thách thức lớn và có thể cần nhiều năm, thậm chí nhiều thập kỷ nữa để trở thành hiện thực phổ biến.',
+      },
+      {
+        question: 'Xe tự lái sẽ thay đổi các thành phố như thế nào?',
+        answer:
+          'Nó có thể thay đổi hoàn toàn bộ mặt đô thị. Nhu cầu về bãi đỗ xe sẽ giảm mạnh vì xe có thể tự đi tìm chỗ đỗ hoặc liên tục phục vụ người khác. Tai nạn giao thông sẽ giảm, và thời gian di chuyển có thể được sử dụng để làm việc hoặc giải trí. Các thành phố có thể được thiết kế lại với nhiều không gian xanh và không gian cho con người hơn.',
       },
     ],
   },
@@ -373,6 +453,46 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
         question: 'Làm thế nào AI có thể tối ưu hóa logistics?',
         answer:
           'AI có thể dự báo nhu cầu hàng hóa để sắp xếp tồn kho hợp lý, tối ưu hóa lộ trình giao hàng để tiết kiệm thời gian và nhiên liệu, tự động hóa việc sắp xếp hàng hóa trong kho bằng robot, và phát hiện sớm các rủi ro có thể gây gián đoạn chuỗi cung ứng.',
+      },
+      {
+        question: 'Chuỗi cung ứng kỹ thuật số (Digital Supply Chain) là gì?',
+        answer:
+          'Là một chuỗi cung ứng sử dụng các công nghệ kỹ thuật số như IoT, blockchain, và AI để tạo ra một mạng lưới kết nối, thông minh và minh bạch hơn. Nó cho phép các công ty theo dõi hàng hóa theo thời gian thực, phản ứng nhanh hơn với sự thay đổi của thị trường và cộng tác hiệu quả hơn với các đối tác.',
+      },
+      {
+        question: 'Blockchain có thể được ứng dụng trong chuỗi cung ứng như thế nào?',
+        answer:
+          'Blockchain có thể tạo ra một sổ cái kỹ thuật số không thể thay đổi để ghi lại mọi giao dịch và di chuyển của sản phẩm trong chuỗi cung ứng. Điều này giúp tăng cường tính minh bạch, khả năng truy xuất nguồn gốc (ví dụ: từ nông trại đến bàn ăn), chống hàng giả và đơn giản hóa các thủ tục giấy tờ.',
+      },
+      {
+        question: 'Nhà kho tự động (Automated Warehouse) hoạt động ra sao?',
+        answer:
+          'Các nhà kho hiện đại sử dụng robot tự hành (AGV) để di chuyển hàng hóa, hệ thống băng chuyền thông minh để phân loại sản phẩm, và các cánh tay robot để bốc xếp hàng. Tất cả được điều khiển bởi một hệ thống quản lý kho (WMS) thông minh, giúp tăng tốc độ xử lý đơn hàng và giảm thiểu sai sót.',
+      },
+      {
+        question: 'Dự báo nhu cầu (Demand Forecasting) quan trọng như thế nào?',
+        answer:
+          'Dự báo nhu cầu chính xác giúp các công ty biết cần sản xuất bao nhiêu sản phẩm, lưu trữ ở đâu và khi nào. Điều này giúp tránh tình trạng tồn kho quá nhiều (gây lãng phí chi phí) hoặc thiếu hàng (mất doanh thu và khách hàng). AI và học máy đang làm cho việc dự báo trở nên chính xác hơn bao giờ hết.',
+      },
+      {
+        question: 'Tháp kiểm soát chuỗi cung ứng (Supply Chain Control Tower) là gì?',
+        answer:
+          'Đó là một bảng điều khiển trung tâm, được cá nhân hóa, cung cấp khả năng hiển thị toàn bộ chuỗi cung ứng theo thời gian thực. Nó thu thập dữ liệu từ nhiều hệ thống khác nhau và sử dụng phân tích để giúp các nhà quản lý phát hiện và giải quyết các vấn đề (như một chuyến hàng bị trễ) một cách nhanh chóng.',
+      },
+      {
+        question: 'Logistics ngược (Reverse Logistics) là gì?',
+        answer:
+          'Là quá trình quản lý việc trả lại hàng hóa từ khách hàng về cho nhà sản xuất hoặc nhà bán lẻ. Nó bao gồm việc xử lý hàng trả lại, sửa chữa, tái chế hoặc thải bỏ sản phẩm. Một quy trình logistics ngược hiệu quả là rất quan trọng trong thương mại điện tử.',
+      },
+      {
+        question: 'In 3D (Sản xuất bồi đắp) ảnh hưởng đến chuỗi cung ứng như thế nào?',
+        answer:
+          'In 3D cho phép sản xuất các bộ phận và sản phẩm theo yêu cầu ngay tại nơi cần thiết. Điều này có thể làm giảm đáng kể nhu cầu vận chuyển và lưu kho các bộ phận thay thế, tạo ra một chuỗi cung ứng phi tập trung và linh hoạt hơn.',
+      },
+      {
+        question: 'Tại sao tính bền vững ngày càng quan trọng trong logistics?',
+        answer:
+          'Ngành vận tải là một trong những nguồn phát thải carbon lớn. Khách hàng và các nhà quản lý ngày càng yêu cầu các chuỗi cung ứng "xanh" hơn. Các công ty đang tìm cách tối ưu hóa lộ trình để giảm nhiên liệu, sử dụng xe điện, và chọn các phương thức vận tải ít carbon hơn như đường sắt hoặc đường biển.',
       },
     ],
   },
@@ -498,6 +618,46 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
         answer:
           'Phạm vi di chuyển (range anxiety) từng là một vấn đề lớn, nhưng công nghệ pin đang cải thiện rất nhanh. Nhiều mẫu xe điện hiện nay có thể đi được 400-500km mỗi lần sạc. Đối với việc di chuyển hàng ngày trong thành phố, phạm vi này là quá đủ. Thách thức chính hiện nay là phát triển mạng lưới trạm sạc nhanh công cộng để phục vụ các chuyến đi đường dài.',
       },
+      {
+        question: 'Ngoài xe điện, còn có những hình thức vận tải bền vững nào khác?',
+        answer:
+          'Rất nhiều! Đi bộ và đi xe đạp là bền vững nhất. Giao thông công cộng (xe buýt, metro) hiệu quả hơn nhiều so với xe cá nhân. Các phương tiện sử dụng hydro (hydrogen vehicles) và nhiên liệu sinh học (biofuels) cũng là những lựa chọn tiềm năng đang được nghiên cứu và phát triển.',
+      },
+      {
+        question: 'Kinh tế chia sẻ (Sharing Economy) đóng góp gì cho green mobility?',
+        answer:
+          'Các dịch vụ như gọi xe chung (ride-pooling), chia sẻ xe hơi (car-sharing), và chia sẻ xe đạp/xe máy điện giúp tối đa hóa việc sử dụng một phương tiện. Thay vì 10 người đi 10 chiếc xe riêng, họ có thể chia sẻ một vài chiếc xe, làm giảm số lượng phương tiện trên đường, giảm ùn tắc và khí thải.',
+      },
+      {
+        question: 'Làn đường dành cho xe đạp có thực sự hiệu quả không?',
+        answer:
+          'Rất hiệu quả. Việc xây dựng một mạng lưới làn đường dành cho xe đạp an toàn và được kết nối tốt là một trong những yếu tố quan trọng nhất để khuyến khích người dân đi xe đạp. Khi cảm thấy an toàn, nhiều người sẽ chọn xe đạp làm phương tiện di chuyển cho các quãng đường ngắn.',
+      },
+      {
+        question: 'Thế nào là một "thành phố 15 phút"?',
+        answer:
+          'Là một khái niệm quy hoạch đô thị nơi mọi người dân có thể tiếp cận hầu hết các nhu cầu thiết yếu hàng ngày (cửa hàng, trường học, công viên, trạm y tế) trong vòng 15 phút đi bộ hoặc đi xe đạp từ nhà của họ. Mô hình này thúc đẩy mạnh mẽ việc di chuyển bền vững.',
+      },
+      {
+        question: 'Nhiên liệu hydro (hydrogen fuel) hoạt động như thế nào?',
+        answer:
+          'Xe chạy bằng hydro sử dụng một pin nhiên liệu (fuel cell) để kết hợp hydro (được lưu trữ trong bình) với oxy từ không khí để tạo ra điện, và sản phẩm phụ duy nhất là nước. Điện này sau đó được dùng để chạy động cơ điện. Nó có ưu điểm là sạc (nạp hydro) rất nhanh, nhưng việc sản xuất và lưu trữ hydro vẫn còn tốn kém.',
+      },
+      {
+        question: 'Làm thế nào để giảm lượng khí thải carbon từ ngành hàng không?',
+        answer:
+          'Đây là một thách thức lớn. Các giải pháp bao gồm việc phát triển các loại nhiên liệu hàng không bền vững (Sustainable Aviation Fuels - SAF) được làm từ thực vật hoặc chất thải, thiết kế máy bay nhẹ hơn và hiệu quả hơn, và tối ưu hóa đường bay để giảm tiêu thụ nhiên liệu.',
+      },
+      {
+        question: 'Chính phủ có thể làm gì để thúc đẩy vận tải bền vững?',
+        answer:
+          'Chính phủ có vai trò rất quan trọng. Họ có thể đầu tư vào hạ tầng cho giao thông công cộng và xe đạp, đưa ra các chính sách trợ giá cho xe điện, đánh thuế cao hơn đối với các phương tiện gây ô nhiễm, và ban hành các quy định xây dựng khuyến khích phát triển đô thị theo định hướng giao thông công cộng.',
+      },
+      {
+        question: 'Vai trò của cá nhân trong việc thúc đẩy green mobility là gì?',
+        answer:
+          'Mỗi cá nhân đều có thể đóng góp. Hãy cân nhắc đi bộ, đi xe đạp hoặc sử dụng phương tiện công cộng cho các chuyến đi ngắn. Nếu mua xe, hãy ưu tiên các mẫu xe tiết kiệm nhiên liệu hoặc xe điện. Kết hợp nhiều chuyến đi thành một để giảm số lần phải dùng xe. Lựa chọn của bạn tạo ra sự khác biệt.',
+      },
     ],
   },
   {
@@ -617,6 +777,46 @@ export const transportationTechnologyLessons: TransportationTechnologyLesson[] =
         question: 'Làm thế nào để tích hợp xe máy vào quy hoạch đô thị hiện đại?',
         answer:
           'Thay vì cố gắng loại bỏ, quy hoạch thông minh cần tích hợp xe máy một cách an toàn và hiệu quả. Các giải pháp bao gồm việc tạo ra các làn đường riêng cho xe máy, các bãi đỗ xe máy thông minh gần các trạm trung chuyển công cộng, và khuyến khích chuyển đổi sang xe máy điện để giảm ô nhiễm.',
+      },
+      {
+        question: 'Sử dụng hỗn hợp (Mixed-use development) trong quy hoạch đô thị có nghĩa là gì?',
+        answer:
+          'Là việc quy hoạch các khu vực nơi các chức năng khác nhau như nhà ở, văn phòng, cửa hàng bán lẻ và không gian giải trí được đặt gần nhau, thậm chí trong cùng một tòa nhà. Điều này làm giảm nhu cầu di chuyển xa, khuyến khích đi bộ và tạo ra các khu phố sống động 24/7.',
+      },
+      {
+        question: 'Không gian công cộng đóng vai trò gì trong một đô thị đáng sống?',
+        answer:
+          'Không gian công cộng như công viên, quảng trường, và vỉa hè rộng rãi là "phòng khách" của thành phố. Chúng là nơi mọi người gặp gỡ, tương tác xã hội, và thư giãn. Một hệ thống không gian công cộng chất lượng cao giúp tăng cường sức khỏe thể chất và tinh thần cho cư dân, đồng thời thúc đẩy sự gắn kết cộng đồng.',
+      },
+      {
+        question: 'Làm thế nào để làm cho việc đi bộ trở nên hấp dẫn hơn?',
+        answer:
+          'Để khuyến khích đi bộ, cần có vỉa hè rộng rãi, an toàn, không bị lấn chiếm. Cây xanh che bóng mát, ghế đá để nghỉ chân, ánh sáng tốt vào ban đêm, và các mặt tiền cửa hàng thú vị dọc đường đi đều là những yếu tố quan trọng tạo nên một môi trường đi bộ thân thiện.',
+      },
+      {
+        question: 'Hạ tầng xanh (Green Infrastructure) trong đô thị là gì?',
+        answer:
+          'Là một mạng lưới các không gian tự nhiên và bán tự nhiên được quy hoạch trong đô thị. Nó bao gồm công viên, mái nhà xanh, vườn trên tường, và các hồ điều hòa. Hạ tầng xanh giúp quản lý nước mưa, giảm hiệu ứng đảo nhiệt đô thị, cải thiện chất lượng không khí và tăng cường đa dạng sinh học.',
+      },
+      {
+        question: 'Sự tham gia của cộng đồng quan trọng như thế nào trong quy hoạch đô thị?',
+        answer:
+          'Cực kỳ quan trọng. Người dân chính là những "chuyên gia" về khu phố của họ. Việc lấy ý kiến và cho phép cộng đồng tham gia vào quá trình thiết kế đảm bảo rằng các dự án quy hoạch đáp ứng đúng nhu cầu thực tế, được người dân ủng hộ và sử dụng hiệu quả sau khi hoàn thành.',
+      },
+      {
+        question: 'Zoning (Phân khu chức năng) là gì?',
+        answer:
+          'Là một công cụ quy hoạch quy định loại hình sử dụng đất được phép trong một khu vực cụ thể (ví dụ: khu dân cư, khu thương mại, khu công nghiệp). Quy hoạch hiện đại đang hướng tới việc phân khu linh hoạt hơn (flexible zoning) để cho phép sự phát triển hỗn hợp, thay vì phân chia các chức năng một cách cứng nhắc.',
+      },
+      {
+        question: 'Làm thế nào để quy hoạch đô thị thích ứng với biến đổi khí hậu?',
+        answer:
+          'Quy hoạch thích ứng bao gồm việc xây dựng các công trình chống ngập (như đê, hồ điều hòa), bảo vệ các hệ sinh thái ven biển (như rừng ngập mặn), sử dụng các vật liệu có khả năng thấm nước cho vỉa hè và đường xá, và tăng cường không gian xanh để giảm nhiệt độ đô thị.',
+      },
+      {
+        question: 'Công nghệ "Digital Twin" (Bản sao số) được sử dụng trong quy hoạch đô thị như thế nào?',
+        answer:
+          'Digital Twin là một mô hình ảo, 3D của một thành phố, được cập nhật liên tục với dữ liệu thời gian thực từ các cảm biến. Các nhà quy hoạch có thể sử dụng bản sao số này để mô phỏng các kịch bản khác nhau (ví dụ: "Điều gì sẽ xảy ra nếu chúng ta xây một cây cầu mới ở đây?") trước khi đưa ra quyết định trong thế giới thực.',
       },
     ],
   },

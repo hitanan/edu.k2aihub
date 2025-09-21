@@ -183,6 +183,30 @@ export const lessons: BaseLessonData[] = [
         answer:
           'Đừng quá lo lắng về việc tìm phong cách ngay lập tức. Hãy bắt đầu bằng cách học hỏi và thử nghiệm phong cách của các nghệ sĩ bạn ngưỡng mộ. Dần dần, qua quá trình thực hành và kết hợp những gì bạn thích, phong cách độc đáo của riêng bạn sẽ tự nhiên hình thành.',
       },
+      {
+        question: 'Độ phân giải (resolution) và DPI/PPI quan trọng như thế nào trong nghệ thuật số?',
+        answer: 'Rất quan trọng. Đối với các tác phẩm để xem trên màn hình (web, social media), độ phân giải 1920x1080 pixels và 72 PPI là đủ. Đối với in ấn, bạn cần độ phân giải cao hơn nhiều (ví dụ: 3000x4000 pixels) và tối thiểu 300 DPI để đảm bảo hình ảnh sắc nét, không bị vỡ.',
+      },
+      {
+        question: 'Layer (lớp) trong Photoshop hoạt động như thế nào?',
+        answer: 'Hãy tưởng tượng các layer như những tấm kính trong suốt xếp chồng lên nhau. Bạn có thể vẽ trên mỗi tấm kính mà không ảnh hưởng đến các tấm khác. Điều này cho phép bạn dễ dàng chỉnh sửa, di chuyển, hoặc thay đổi các phần riêng biệt của tác phẩm một cách linh hoạt.',
+      },
+      {
+        question: 'Sự khác biệt giữa digital painting và photo manipulation là gì?',
+        answer: 'Digital painting là quá trình vẽ một tác phẩm từ đầu bằng các công cụ kỹ thuật số, tương tự như vẽ trên canvas. Photo manipulation (thao tác ảnh) là quá trình lấy các yếu tố từ nhiều bức ảnh có sẵn để cắt ghép, chỉnh sửa và tạo ra một tác phẩm mới.',
+      },
+      {
+        question: 'Làm thế nào để phối màu đẹp hơn?',
+        answer: 'Hãy bắt đầu bằng việc học lý thuyết màu sắc cơ bản: màu bổ túc, màu tương đồng, màu bộ ba. Sử dụng các công cụ trực tuyến như Adobe Color để tạo các bảng màu hài hòa. Quan sát màu sắc từ thiên nhiên và các tác phẩm nghệ thuật bạn yêu thích cũng là một cách học hỏi tuyệt vời.',
+      },
+      {
+        question: 'Tôi có thể bán các tác phẩm nghệ thuật số của mình ở đâu?',
+        answer: 'Có nhiều nền tảng để bán tác phẩm nghệ thuật số. Bạn có thể bán bản in trên các trang như Etsy, Redbubble. Bạn cũng có thể bán các file kỹ thuật số trên Creative Market. Gần đây, thị trường NFT (Non-Fungible Token) trên các sàn như OpenSea, Foundation cũng là một lựa chọn phổ biến.',
+      },
+      {
+        question: 'Cần bao lâu để trở thành một nghệ sĩ kỹ thuật số giỏi?',
+        answer: 'Không có câu trả lời chính xác. Giống như bất kỳ kỹ năng nào, nó phụ thuộc vào thời gian và nỗ lực bạn đầu tư. Việc luyện tập hàng ngày, dù chỉ 30 phút, sẽ hiệu quả hơn nhiều so với việc chỉ vẽ một lần một tuần. Hãy kiên nhẫn và tận hưởng quá trình học hỏi.',
+      },
     ],
   },
   {
@@ -359,6 +383,30 @@ export const lessons: BaseLessonData[] = [
         question: 'Làm thế nào để video motion graphics của tôi trông chuyên nghiệp hơn?',
         answer:
           'Hãy chú ý đến các nguyên tắc animation, đặc biệt là "easing" (làm cho chuyển động mượt mà, không bị đột ngột). Sử dụng một bảng màu nhất quán, chọn font chữ phù hợp, và đầu tư vào chất lượng âm thanh (nhạc nền và hiệu ứng âm thanh) sẽ nâng tầm sản phẩm của bạn một cách đáng kể.',
+      },
+      {
+        question: '12 nguyên tắc animation là gì?',
+        answer: 'Đây là 12 nguyên tắc cơ bản do các nhà làm phim hoạt hình của Disney phát triển, bao gồm: Nén và giãn, Chuẩn bị hành động, Dàn cảnh, Vẽ thẳng và Vẽ tuần tự, Theo sau và Chồng lấp hành động, Tăng tốc và Giảm tốc, Chuyển động vòng cung, Hành động phụ, Thời gian, Cường điệu, Vẽ chắc chắn, và Hấp dẫn. Nắm vững chúng sẽ làm cho animation của bạn sống động hơn rất nhiều.',
+      },
+      {
+        question: 'Kinetic Typography là gì?',
+        answer: 'Kinetic Typography (hay "chữ chuyển động") là một kỹ thuật motion graphics trong đó văn bản được làm cho chuyển động một cách sáng tạo để truyền tải cảm xúc hoặc ý tưởng. Nó không chỉ là làm cho chữ xuất hiện, mà là làm cho chúng "nhảy múa" theo nhạc hoặc lời nói.',
+      },
+      {
+        question: 'Tôi có thể tìm nhạc và hiệu ứng âm thanh miễn phí cho video của mình ở đâu?',
+        answer: 'Có nhiều nguồn tài nguyên tốt. YouTube Audio Library cung cấp một kho nhạc và hiệu ứng âm thanh miễn phí bản quyền. Các trang web khác như Pixabay, Mixkit, và ZapSplat cũng cung cấp các tài sản âm thanh chất lượng cao mà bạn có thể sử dụng cho các dự án của mình.',
+      },
+      {
+        question: 'Sự khác biệt giữa Composition và Project trong After Effects là gì?',
+        answer: 'Một Project (.aep file) là file chứa toàn bộ công việc của bạn, bao gồm tất cả các composition, footage, và tài sản khác. Một Composition (thường gọi là "comp") là một timeline riêng lẻ nơi bạn sắp xếp các layer và tạo ra animation. Bạn có thể có nhiều comp lồng vào nhau trong một project.',
+      },
+      {
+        question: 'Tại sao cần phải tổ chức các file và layer một cách gọn gàng?',
+        answer: 'Các dự án motion graphics có thể trở nên rất phức tạp với hàng trăm layer. Việc đặt tên rõ ràng, sử dụng màu sắc để phân loại, và nhóm các layer liên quan vào các pre-composition sẽ giúp bạn quản lý dự án hiệu quả, dễ dàng chỉnh sửa và tránh được các lỗi không đáng có.',
+      },
+      {
+        question: 'Render video là gì và làm thế nào để tối ưu hóa nó?',
+        answer: 'Render là quá trình After Effects tính toán và xuất tất cả các layer, hiệu ứng, và chuyển động của bạn thành một file video duy nhất. Để tối ưu, bạn có thể đóng các chương trình không cần thiết, sử dụng các định dạng nén hiệu quả như H.264, và sử dụng Adobe Media Encoder để render trong nền trong khi bạn vẫn có thể tiếp tục làm việc.',
       },
     ],
   },
@@ -538,6 +586,30 @@ export const lessons: BaseLessonData[] = [
         answer:
           'Hầu hết các chuyên gia tin rằng AI sẽ trở thành một công cụ mạnh mẽ cho nghệ sĩ, chứ không thay thế họ. Nó giúp tăng tốc quá trình lên ý tưởng, thử nghiệm các phong cách khác nhau, và tự động hóa các công việc tốn thời gian. Vai trò của nghệ sĩ sẽ chuyển dịch sang việc định hướng sáng tạo, lựa chọn và tinh chỉnh kết quả do AI tạo ra.',
       },
+      {
+        question: '"Negative Prompt" là gì?',
+        answer: 'Negative Prompt là một câu lệnh bạn đưa cho AI để chỉ định những gì bạn KHÔNG muốn thấy trong hình ảnh. Ví dụ, bạn có thể thêm "-—no blurry, deformed hands" để yêu cầu AI tránh tạo ra các hình ảnh bị mờ hoặc có bàn tay bị biến dạng. Đây là một công cụ rất mạnh mẽ để kiểm soát kết quả.',
+      },
+      {
+        question: 'Sự khác biệt giữa Midjourney và Stable Diffusion là gì?',
+        answer: 'Midjourney là một dịch vụ trả phí, dễ sử dụng thông qua Discord và nổi tiếng với việc tạo ra các hình ảnh có tính nghệ thuật cao. Stable Diffusion là một mô hình mã nguồn mở, miễn phí, có thể chạy trên máy tính cá nhân (nếu đủ mạnh) và cho phép tùy chỉnh sâu hơn thông qua các mô hình con (checkpoints) và LoRA.',
+      },
+      {
+        question: 'LoRA trong Stable Diffusion là gì?',
+        answer: 'LoRA (Low-Rank Adaptation) là một kỹ thuật cho phép bạn "huấn luyện" thêm cho mô hình Stable Diffusion chính để nó có thể tạo ra một phong cách nghệ thuật, một nhân vật, hoặc một đối tượng cụ thể nào đó. Đây là một cách hiệu quả để tùy biến AI mà không cần phải huấn luyện lại toàn bộ mô hình lớn.',
+      },
+      {
+        question: 'Làm thế nào để viết một prompt hiệu quả?',
+        answer: 'Một prompt tốt thường bao gồm các yếu tố: [Chủ thể] + [Mô tả chi tiết] + [Phong cách nghệ thuật] + [Thông số kỹ thuật]. Ví dụ: "A majestic Vietnamese dragon, made of jade and clouds, in the style of Studio Ghibli, cinematic lighting, 4K". Hãy càng cụ thể càng tốt.',
+      },
+      {
+        question: '"Upscaling" một hình ảnh AI là gì?',
+        answer: 'Các mô hình AI thường tạo ra hình ảnh ở độ phân giải tương đối thấp. Upscaling là quá trình sử dụng các công cụ AI khác để tăng kích thước và độ phân giải của hình ảnh đó mà không làm mất chi tiết, giúp nó đủ chất lượng để in ấn hoặc sử dụng chuyên nghiệp.',
+      },
+      {
+        question: 'Tôi có thể sử dụng AI để chỉnh sửa một phần của hình ảnh không?',
+        answer: 'Có, kỹ thuật này được gọi là "inpainting". Bạn có thể che đi một phần của hình ảnh và ra lệnh cho AI vẽ lại chỉ khu vực đó. Ví dụ, bạn có thể thay đổi khuôn mặt của một nhân vật hoặc thêm một đối tượng vào nền. Ngược lại, "outpainting" là kỹ thuật mở rộng khung hình ra ngoài hình ảnh gốc.',
+      },
     ],
   },
   {
@@ -707,6 +779,30 @@ export const lessons: BaseLessonData[] = [
         question: 'Ngoài giải trí, VR/AR có những ứng dụng thực tế nào khác?',
         answer:
           'Rất nhiều! Trong y tế, VR được dùng để đào tạo phẫu thuật. Trong kiến trúc, nó giúp khách hàng "đi bộ" trong ngôi nhà chưa xây. Trong giáo dục, học sinh có thể "du hành" đến các di tích lịch sử. Trong công nghiệp, công nhân được đào tạo vận hành máy móc phức tạp trong môi trường an toàn.',
+      },
+      {
+        question: '"Degrees of Freedom" (DoF) trong VR nghĩa là gì?',
+        answer: 'DoF mô tả khả năng di chuyển trong không gian ảo. 3DoF (3 bậc tự do) cho phép bạn nhìn xung quanh (xoay đầu), nhưng không thể di chuyển trong không gian. 6DoF (6 bậc tự do) cho phép bạn vừa xoay đầu vừa di chuyển tới, lui, qua lại, lên, xuống trong thế giới ảo, mang lại trải nghiệm nhập vai sâu sắc hơn.',
+      },
+      {
+        question: 'Say chuyển động (motion sickness) trong VR là gì và làm thế nào để giảm thiểu nó?',
+        answer: 'Say chuyển động xảy ra khi có sự không đồng nhất giữa những gì mắt bạn thấy (bạn đang di chuyển trong game) và những gì cơ thể bạn cảm nhận (bạn đang đứng yên). Để giảm thiểu, các nhà phát triển sử dụng các kỹ thuật như di chuyển bằng "teleport", đảm bảo tốc độ khung hình (FPS) cao và ổn định, và tạo ra một "buồng lái" ảo.',
+      },
+      {
+        question: 'Spatial Audio (Âm thanh không gian) là gì?',
+        answer: 'Spatial Audio làm cho âm thanh trong VR/AR có vẻ như phát ra từ một vị trí cụ thể trong không gian 3D. Nếu một vật thể ở bên trái bạn phát ra tiếng động, bạn sẽ nghe thấy nó từ tai trái. Điều này làm tăng đáng kể cảm giác chân thực và nhập vai.',
+      },
+      {
+        question: 'Haptic feedback là gì?',
+        answer: 'Haptic feedback là việc sử dụng các rung động hoặc lực tác động để mô phỏng cảm giác chạm trong thế giới ảo. Ví dụ, bộ điều khiển của bạn có thể rung lên khi bạn chạm vào một vật thể hoặc khi bạn bắn một cây cung trong game. Nó giúp "đánh lừa" bộ não của bạn và tăng cường sự hiện diện.',
+      },
+      {
+        question: 'Một "avatar" trong thế giới ảo là gì?',
+        answer: 'Avatar là hiện thân kỹ thuật số của bạn trong một môi trường ảo. Nó có thể là một hình ảnh đại diện 3D thực tế hoặc cách điệu. Việc có một avatar cho phép bạn tương tác với người khác và thể hiện bản thân trong không gian xã hội ảo.',
+      },
+      {
+        question: 'Metaverse là gì?',
+        answer: 'Metaverse là một khái niệm về một không gian ảo 3D liên tục, được chia sẻ, nơi người dùng có thể tương tác với nhau và với các đối tượng kỹ thuật số thông qua avatar. Nó được hình dung như một phiên bản tiếp theo của Internet, nơi chúng ta không chỉ xem nội dung mà còn "sống" và "trải nghiệm" bên trong nó.',
       },
     ],
   },
@@ -889,6 +985,30 @@ export const lessons: BaseLessonData[] = [
         question: 'Hợp đồng có thực sự cần thiết khi làm việc với khách hàng không?',
         answer:
           'CỰC KỲ CẦN THIẾT, ngay cả với những dự án nhỏ nhất. Một hợp đồng rõ ràng sẽ bảo vệ cả bạn và khách hàng. Nó nên quy định rõ về phạm vi công việc, số lần chỉnh sửa, thời hạn, chi phí, và các điều khoản thanh toán. Điều này giúp tránh những hiểu lầm và tranh chấp không đáng có sau này.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng thương hiệu cá nhân (personal brand) cho một nhà sáng tạo?',
+        answer: 'Thương hiệu cá nhân là những gì người khác nghĩ về bạn khi bạn không có ở đó. Hãy xác định thế mạnh độc đáo của bạn, chia sẻ công việc của bạn một cách nhất quán trên các nền tảng phù hợp, và tương tác với cộng đồng. Hãy cho mọi người thấy không chỉ sản phẩm của bạn, mà cả quá trình và con người đằng sau nó.',
+      },
+      {
+        question: 'Sự khác biệt giữa giá (price) và giá trị (value) là gì?',
+        answer: 'Giá là số tiền khách hàng trả cho bạn. Giá trị là lợi ích, giải pháp, hoặc cảm xúc mà khách hàng nhận được từ sản phẩm của bạn. Một chiến lược kinh doanh tốt là tập trung vào việc tạo ra giá trị cao, điều này cho phép bạn đặt một mức giá tương xứng.',
+      },
+      {
+        question: 'Tôi có nên nhận các dự án "vì đam mê" (passion project) không trả phí không?',
+        answer: 'Khi bạn mới bắt đầu và cần xây dựng portfolio, việc thực hiện các dự án cho các tổ chức phi lợi nhuận hoặc các dự án cá nhân có thể là một ý tưởng tốt. Tuy nhiên, hãy cẩn thận để không bị lợi dụng. Hãy đặt ra giới hạn và đảm bảo rằng dự án đó thực sự giúp bạn phát triển kỹ năng hoặc có được sự công nhận.',
+      },
+      {
+        question: 'Làm thế nào để đối phó với phản hồi tiêu cực từ khách hàng?',
+        answer: 'Đừng coi đó là một cuộc tấn công cá nhân. Hãy lắng nghe cẩn thận để hiểu gốc rễ của vấn đề. Tách biệt các phản hồi mang tính xây dựng (ví dụ: "màu này hơi tối") khỏi các ý kiến chủ quan (ví dụ: "tôi không thích nó"). Giao tiếp một cách chuyên nghiệp và đề xuất các giải pháp thay vì tranh cãi.',
+      },
+      {
+        question: 'Tại sao việc xây dựng một cộng đồng lại quan trọng?',
+        answer: 'Một cộng đồng gồm những người theo dõi và ủng hộ công việc của bạn là một tài sản vô giá. Họ không chỉ là những khách hàng tiềm năng mà còn là những người quảng bá cho thương hiệu của bạn, cung cấp phản hồi quý giá, và tạo ra một mạng lưới hỗ trợ tinh thần.',
+      },
+      {
+        question: 'Làm thế nào để cân bằng giữa công việc sáng tạo và công việc kinh doanh?',
+        answer: 'Đây là thách thức lớn nhất. Hãy phân bổ thời gian rõ ràng trong tuần cho từng việc. Ví dụ, dành buổi sáng cho công việc sáng tạo và buổi chiều cho việc trả lời email, marketing, và kế toán. Sử dụng các công cụ quản lý dự án và tự động hóa các công việc lặp đi lặp lại để tiết kiệm thời gian.',
       },
     ],
   },

@@ -346,6 +346,46 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
         answer:
           'Có. Kiến thức lập trình, đặc biệt là Python, là rất cần thiết để triển khai và thử nghiệm các mô hình Machine Learning. Python có hệ sinh thái thư viện mạnh mẽ (như Scikit-learn, Pandas, NumPy) hỗ trợ rất tốt cho các tác vụ học máy.',
       },
+      {
+        question: 'Sự khác biệt giữa học có giám sát và không giám sát là gì?',
+        answer:
+          'Học có giám sát (supervised learning) học từ dữ liệu đã được gán nhãn (ví dụ: ảnh có nhãn "mèo", "chó"). Ngược lại, học không giám sát (unsupervised learning) làm việc với dữ liệu không có nhãn và cố gắng tự tìm ra cấu trúc hoặc các nhóm trong đó (ví dụ: phân nhóm khách hàng).',
+      },
+      {
+        question: '"Hồi quy" và "phân loại" trong Machine Learning khác nhau như thế nào?',
+        answer:
+          'Phân loại (classification) là dự đoán một nhãn rời rạc (ví dụ: "email spam" hoặc "không phải spam"). Hồi quy (regression) là dự đoán một giá trị liên tục (ví dụ: dự đoán giá của một ngôi nhà).',
+      },
+      {
+        question: 'Tại sao cần phải chia dữ liệu thành tập huấn luyện và tập kiểm tra?',
+        answer:
+          'Chúng ta chia dữ liệu để đánh giá hiệu suất của mô hình một cách khách quan. Mô hình học từ tập huấn luyện (training set) và sau đó hiệu suất của nó được kiểm tra trên tập kiểm tra (testing set) mà nó chưa từng thấy trước đây. Điều này giúp đảm bảo mô hình có khả năng tổng quát hóa tốt cho dữ liệu mới.',
+      },
+      {
+        question: '"Overfitting" (quá khớp) là gì và làm thế nào để tránh nó?',
+        answer:
+          'Overfitting xảy ra khi một mô hình học quá tốt trên dữ liệu huấn luyện, bao gồm cả nhiễu, và do đó hoạt động kém trên dữ liệu mới. Các cách để tránh nó bao gồm sử dụng nhiều dữ liệu hơn, đơn giản hóa mô hình, hoặc sử dụng các kỹ thuật điều chuẩn (regularization).',
+      },
+      {
+        question: 'Một vài ví dụ về ứng dụng Machine Learning trong đời sống hàng ngày ở Việt Nam?',
+        answer:
+          'Các ứng dụng rất phổ biến bao gồm: hệ thống gợi ý sản phẩm trên các trang thương mại điện tử như Tiki, Shopee; nhận dạng khuôn mặt để mở khóa điện thoại; trợ lý ảo trên Zalo; và các bộ lọc spam trong email.',
+      },
+      {
+        question: 'Tôi có cần một máy tính rất mạnh để bắt đầu học Machine Learning không?',
+        answer:
+          'Không cần thiết. Để bắt đầu, một máy tính xách tay thông thường là đủ để chạy các ví dụ cơ bản. Khi bạn chuyển sang các mô hình phức tạp hơn, bạn có thể sử dụng các dịch vụ đám mây miễn phí như Google Colab cung cấp quyền truy cập vào GPU.',
+      },
+      {
+        question: '"Kỹ thuật đặc trưng" (feature engineering) là gì và tại sao nó quan trọng?',
+        answer:
+          'Đây là quá trình sử dụng kiến thức chuyên môn để tạo ra các "đặc trưng" (features) hoặc tín hiệu đầu vào mới từ dữ liệu thô, giúp các thuật toán Machine Learning hoạt động tốt hơn. Đây thường là một trong những bước quan trọng nhất để xây dựng một mô hình hiệu quả.',
+      },
+      {
+        question: 'Mất bao lâu để trở thành một Kỹ sư Machine Learning?',
+        answer:
+          'Thời gian phụ thuộc vào nền tảng và nỗ lực của bạn. Nếu bạn đã có kiến thức về lập trình và toán, bạn có thể học các kiến thức cơ bản trong vài tháng. Tuy nhiên, để trở thành một kỹ sư giỏi với kinh nghiệm thực tế, thường mất từ 1-2 năm học tập và thực hành liên tục.',
+      },
     ],
   },
 
@@ -467,6 +507,46 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
         question: 'Huấn luyện một mô hình Deep Learning có tốn kém không?',
         answer:
           'Có, việc huấn luyện các mô hình Deep Learning lớn có thể rất tốn kém về mặt tài nguyên tính toán (đặc biệt là GPU) và thời gian. Tuy nhiên, các kỹ thuật như học chuyển giao (transfer learning) và các nền tảng đám mây (Google Colab, Kaggle) cung cấp GPU miễn phí đã giúp cho việc học và thử nghiệm Deep Learning trở nên dễ tiếp cận hơn rất nhiều.',
+      },
+      {
+        question: 'Deep Learning khác gì so với Machine Learning truyền thống?',
+        answer:
+          'Machine Learning truyền thống thường yêu cầu bước "kỹ thuật đặc trưng" (feature engineering) thủ công. Ngược lại, Deep Learning, với kiến trúc nhiều lớp, có khả năng tự động học các đặc trưng phức tạp trực tiếp từ dữ liệu thô (như pixel của ảnh), làm cho nó rất mạnh mẽ cho các bài toán phức tạp.',
+      },
+      {
+        question: '"Hàm kích hoạt" (activation function) trong mạng nơ-ron có vai trò gì?',
+        answer:
+          'Hàm kích hoạt đưa tính phi tuyến vào mạng nơ-ron, cho phép nó học các mối quan hệ phức tạp và phi tuyến trong dữ liệu. Nếu không có hàm kích hoạt, một mạng nơ-ron dù có bao nhiêu lớp cũng chỉ tương đương với một mô hình tuyến tính đơn giản.',
+      },
+      {
+        question: 'Tại sao GPU lại quan trọng cho việc huấn luyện mô hình Deep Learning?',
+        answer:
+          'GPU (Bộ xử lý đồ họa) có hàng ngàn lõi xử lý có thể thực hiện các phép toán song song, đặc biệt là các phép nhân ma trận, vốn là hoạt động cốt lõi trong việc huấn luyện mạng nơ-ron. Điều này làm cho việc huấn luyện trên GPU nhanh hơn rất nhiều so với trên CPU.',
+      },
+      {
+        question: 'Mạng nơ-ron tích chập (CNN) và mạng nơ-ron hồi quy (RNN) khác nhau ở điểm nào?',
+        answer:
+          'CNN (Convolutional Neural Network) rất giỏi trong việc xử lý dữ liệu có cấu trúc lưới như hình ảnh. RNN (Recurrent Neural Network) được thiết kế để xử lý dữ liệu tuần tự như chuỗi văn bản hoặc chuỗi thời gian, vì nó có "bộ nhớ" về các thông tin trước đó.',
+      },
+      {
+        question: 'Một vài framework Deep Learning phổ biến hiện nay là gì?',
+        answer:
+          'Các framework phổ biến và mạnh mẽ nhất hiện nay bao gồm TensorFlow (do Google phát triển) và PyTorch (do Facebook phát triển). Cả hai đều có hệ sinh thái lớn và được cộng đồng hỗ trợ rộng rãi.',
+      },
+      {
+        question: 'Làm thế nào để chọn kiến trúc mạng nơ-ron phù hợp cho một bài toán?',
+        answer:
+          'Việc lựa chọn phụ thuộc vào loại dữ liệu và nhiệm vụ. Ví dụ, sử dụng CNN cho bài toán phân loại ảnh, sử dụng RNN hoặc Transformer cho dịch máy. Thường thì nên bắt đầu với một kiến trúc tiêu chuẩn đã được chứng minh là hiệu quả cho loại bài toán tương tự.',
+      },
+      {
+        question: '"Vanishing gradient problem" (vấn đề gradien biến mất) là gì?',
+        answer:
+          'Đây là một vấn đề xảy ra trong các mạng nơ-ron rất sâu, nơi gradien (đạo hàm của hàm mất mát) trở nên rất nhỏ khi được lan truyền ngược về các lớp đầu tiên. Điều này làm cho các lớp đầu tiên học rất chậm hoặc không học được gì cả. Các kiến trúc như ResNet và việc sử dụng các hàm kích hoạt như ReLU đã giúp giải quyết vấn đề này.',
+      },
+      {
+        question: 'Tôi có thể học Deep Learning mà không cần bằng cấp về khoa học máy tính không?',
+        answer:
+          'Chắc chắn có. Với sự phong phú của các khóa học trực tuyến, tài liệu mở và cộng đồng hỗ trợ, bất kỳ ai có đam mê và kiên trì đều có thể tự học Deep Learning. Điều quan trọng là có nền tảng tốt về lập trình Python và toán học.',
       },
     ],
   },
@@ -594,6 +674,46 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
         question: 'OpenCV là gì?',
         answer:
           'OpenCV (Open Source Computer Vision Library) là một thư viện mã nguồn mở hàng đầu dành cho các ứng dụng thị giác máy tính. Nó cung cấp hàng ngàn thuật toán được tối ưu hóa cho việc xử lý ảnh và video thời gian thực, giúp các nhà phát triển dễ dàng xây dựng các ứng dụng thị giác máy tính phức tạp.',
+      },
+      {
+        question: 'Thị giác máy tính có thể được ứng dụng trong những lĩnh vực nào ở Việt Nam?',
+        answer:
+          'Tại Việt Nam, thị giác máy tính được ứng dụng rộng rãi trong giám sát giao thông thông minh, kiểm soát chất lượng tại các nhà máy sản xuất, nông nghiệp công nghệ cao (giám sát cây trồng qua drone), và hệ thống an ninh nhận dạng khuôn mặt.',
+      },
+      {
+        question: '"Phân đoạn ảnh" (image segmentation) khác gì với "phát hiện đối tượng" (object detection)?',
+        answer:
+          'Phát hiện đối tượng vẽ một hộp bao quanh đối tượng (ví dụ: một hộp quanh con mèo). Phân đoạn ảnh đi xa hơn bằng cách phân loại từng pixel trong ảnh thuộc về đối tượng nào (ví dụ: tô màu tất cả các pixel thuộc về con mèo). Nó cung cấp một sự hiểu biết chi tiết hơn về hình dạng của đối tượng.',
+      },
+      {
+        question: 'Công nghệ nhận dạng khuôn mặt hoạt động như thế nào?',
+        answer:
+          'Về cơ bản, hệ thống sẽ phát hiện một khuôn mặt trong ảnh, sau đó trích xuất các đặc trưng độc nhất của khuôn mặt đó (ví dụ: khoảng cách giữa hai mắt, hình dạng của mũi) thành một dạng vector số. Vector này sau đó được so sánh với các vector trong cơ sở dữ liệu để tìm ra người khớp nhất.',
+      },
+      {
+        question: 'Liệu thị giác máy tính có thể hoạt động trong điều kiện ánh sáng yếu không?',
+        answer:
+          'Đây là một thách thức, nhưng có nhiều kỹ thuật để giải quyết. Các phương pháp bao gồm sử dụng camera hồng ngoại, hoặc các thuật toán xử lý ảnh đặc biệt để tăng cường độ sáng và giảm nhiễu trước khi đưa vào mô hình AI.',
+      },
+      {
+        question: 'Những thách thức về đạo đức của công nghệ nhận dạng khuôn mặt là gì?',
+        answer:
+          'Các vấn đề đạo đức chính bao gồm quyền riêng tư (theo dõi mà không có sự đồng ý), khả năng sai sót và thiên vị (nhận dạng sai người hoặc hoạt động kém hiệu quả với các nhóm dân tộc thiểu số), và nguy cơ lạm dụng cho mục đích giám sát hàng loạt.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu với một dự án thị giác máy tính cá nhân?',
+        answer:
+          'Một cách tuyệt vời để bắt đầu là thử một dự án đơn giản như xây dựng một bộ phân loại chó và mèo. Bạn có thể tìm các bộ dữ liệu công khai trên Kaggle, sử dụng thư viện OpenCV để xử lý ảnh và TensorFlow/PyTorch để xây dựng mô hình CNN.',
+      },
+      {
+        question: 'OpenCV có phải là công cụ duy nhất cho thị giác máy tính không?',
+        answer:
+          'Không. Mặc dù OpenCV là công cụ rất phổ biến cho các tác vụ xử lý ảnh truyền thống, các thư viện học sâu như TensorFlow và PyTorch lại là công cụ chính để xây dựng các mô hình thị giác máy tính hiện đại dựa trên mạng nơ-ron.',
+      },
+      {
+        question: '"Tăng cường dữ liệu" (data augmentation) trong thị giác máy tính là gì?',
+        answer:
+          'Đây là kỹ thuật tạo ra các phiên bản mới của hình ảnh huấn luyện bằng cách áp dụng các phép biến đổi ngẫu nhiên như xoay, lật, thay đổi độ sáng, hoặc phóng to. Nó giúp mô hình trở nên mạnh mẽ hơn và có khả năng tổng quát hóa tốt hơn với các hình ảnh trong thực tế.',
       },
     ],
   },
@@ -727,6 +847,46 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
         answer:
           'Transformer là một kiến trúc mô hình đột phá được giới thiệu vào năm 2017. Nó đã cách mạng hóa lĩnh vực NLP bằng cách sử dụng cơ chế "chú ý" (attention) để xử lý các mối quan hệ giữa các từ trong một câu, bất kể khoảng cách giữa chúng. Các mô hình nổi tiếng như BERT, GPT-3, và PhoBERT đều dựa trên kiến trúc Transformer.',
       },
+      {
+        question: 'NLP có thể giúp gì cho các doanh nghiệp Việt Nam?',
+        answer:
+          'NLP có thể giúp doanh nghiệp tự động hóa dịch vụ khách hàng qua chatbot, phân tích phản hồi của khách hàng trên mạng xã hội (social listening), tóm tắt các văn bản dài, và phân loại email hoặc tài liệu một cách thông minh.',
+      },
+      {
+        question: '"Phân tích tình cảm" (sentiment analysis) là gì?',
+        answer:
+          'Đây là quá trình sử dụng NLP để xác định xem một đoạn văn bản thể hiện thái độ tích cực, tiêu cực hay trung lập. Nó rất hữu ích để theo dõi danh tiếng thương hiệu hoặc phân tích phản hồi về sản phẩm.',
+      },
+      {
+        question: 'Chatbot và trợ lý ảo khác nhau như thế nào?',
+        answer:
+          'Một chatbot thường được thiết kế để thực hiện các tác vụ cụ thể trong một lĩnh vực hẹp (ví dụ: trả lời câu hỏi về sản phẩm). Một trợ lý ảo (như Siri, Google Assistant) có phạm vi rộng hơn, có thể thực hiện nhiều tác vụ khác nhau và duy trì cuộc trò chuyện tự nhiên hơn.',
+      },
+      {
+        question: '"Word embedding" là gì?',
+        answer:
+          'Word embedding là một kỹ thuật biểu diễn các từ dưới dạng các vector số trong một không gian nhiều chiều. Các từ có nghĩa tương tự sẽ có các vector gần nhau trong không gian này. Điều này cho phép máy tính "hiểu" được mối quan hệ ngữ nghĩa giữa các từ.',
+      },
+      {
+        question: 'Những thách thức lớn nhất khi xử lý tiếng Việt là gì?',
+        answer:
+          'Các thách thức chính bao gồm: tách từ (word segmentation) vì tiếng Việt không có ranh giới từ rõ ràng như tiếng Anh, xử lý dấu thanh và các biến thể vùng miền, cùng với sự thiếu hụt các bộ dữ liệu lớn và được gán nhãn tốt.',
+      },
+      {
+        question: 'Tôi có thể tự xây dựng một chatbot đơn giản không?',
+        answer:
+          'Chắc chắn có. Các nền tảng như Dialogflow của Google, Rasa (mã nguồn mở) cung cấp các công cụ cho phép bạn xây dựng các chatbot dựa trên quy tắc hoặc thậm chí là AI mà không cần kiến thức quá sâu về NLP.',
+      },
+      {
+        question: 'NLP có liên quan gì đến dịch máy (machine translation) không?',
+        answer:
+          'Có, dịch máy là một trong những ứng dụng quan trọng và lâu đời nhất của NLP. Các hệ thống dịch máy hiện đại như Google Translate sử dụng các mô hình NLP dựa trên Transformer để dịch văn bản giữa các ngôn ngữ một cách hiệu quả.',
+      },
+      {
+        question: 'Làm thế nào để một mô hình NLP hiểu được tiếng lóng hoặc từ ngữ mới trên mạng xã hội?',
+        answer:
+          'Để hiểu được ngôn ngữ luôn thay đổi, các mô hình NLP cần được thường xuyên huấn luyện lại (retrain) trên các dữ liệu mới nhất từ mạng xã hội và các nguồn khác. Đây là một phần quan trọng của vòng đời MLOps cho các ứng dụng NLP.',
+      },
     ],
   },
 
@@ -746,31 +906,6 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
       'Áp dụng RL cho các bài toán tối ưu hóa',
       'Hiểu về học tăng cường sâu',
       'Triển khai các tác nhân RL trong các kịch bản thế giới thực',
-    ],
-    prerequisites: [
-      'Kiến thức về ML và học sâu',
-      'Thành thạo lập trình Python',
-      'Hiểu biết về các khái niệm tối ưu hóa',
-    ],
-    exercises: [
-      {
-        title: 'Tác nhân AI chơi Cờ Tướng',
-        description: 'Xây dựng một tác nhân RL để chơi Cờ Tướng một cách cạnh tranh.',
-        difficulty: 'Nâng cao',
-        materials: ['Môi trường Cờ Tướng', 'Khung RL sâu', 'Luật Cờ Tướng', 'Cơ sở hạ tầng huấn luyện'],
-        procedure: [
-          'Triển khai môi trường game Cờ Tướng',
-          'Thiết kế biểu diễn trạng thái cho các thế cờ',
-          'Triển khai thuật toán Deep Q-Network (DQN)',
-          'Huấn luyện tác nhân bằng kỹ thuật tự chơi (self-play)',
-          'Áp dụng các kỹ thuật RL nâng cao (Double DQN, Dueling Networks)',
-          'Đánh giá hiệu suất của tác nhân so với các cấp độ kỹ năng khác nhau',
-          'Tối ưu hóa việc huấn luyện bằng điện toán phân tán',
-          'Triển khai tác nhân với giao diện thân thiện với người dùng',
-        ],
-        expectedResults: 'AI chơi Cờ Tướng đạt trình độ từ trung cấp đến cao cấp',
-        solution: 'Hệ thống AI chơi cờ hoàn chỉnh với giao diện web cho các trận đấu giữa người và AI',
-      },
     ],
     realWorldApplications: [
       'Thuật toán giao dịch chứng khoán cho thị trường Việt Nam',
@@ -847,6 +982,48 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
           'Đây là một sự đánh đổi kinh điển trong RL. Nếu chỉ khai thác, tác nhân có thể bỏ lỡ các hành động tốt hơn. Nếu chỉ thăm dò, tác nhân sẽ không tận dụng được những gì nó đã học.',
       },
     ],
+    faqs: [
+      {
+        question: 'Học tăng cường có cần dữ liệu được gán nhãn không?',
+        answer:
+          'Không. Khác với học có giám sát, học tăng cường không cần một bộ dữ liệu được gán nhãn trước. Tác nhân học trực tiếp thông qua tương tác với môi trường và nhận tín hiệu phần thưởng. Đây là một trong những điểm mạnh lớn nhất của RL.',
+      },
+      {
+        question: 'AlphaGo là một ví dụ về loại học máy nào?',
+        answer:
+          'AlphaGo, chương trình chơi cờ vây nổi tiếng của DeepMind, là một ví dụ điển hình của Học tăng cường sâu (Deep Reinforcement Learning). Nó kết hợp mạng nơ-ron sâu để đánh giá thế cờ và học tăng cường để cải thiện chiến lược chơi của mình thông qua hàng triệu ván tự chơi.',
+      },
+      {
+        question: 'Học tăng cường có thể được áp dụng ngoài lĩnh vực game không?',
+        answer:
+          'Chắc chắn có. RL có tiềm năng ứng dụng rất lớn trong nhiều lĩnh vực như tối ưu hóa chuỗi cung ứng, điều khiển robot, quản lý danh mục đầu tư tài chính, và cá nhân hóa các chiến dịch marketing.',
+      },
+      {
+        question: 'Q-learning là gì?',
+        answer:
+          'Q-learning là một trong những thuật toán học tăng cường cơ bản và quan trọng nhất. Nó học một hàm "chất lượng" (Q-function) để ước tính phần thưởng kỳ vọng khi thực hiện một hành động cụ thể tại một trạng thái nhất định. Tác nhân sau đó có thể chọn hành động có giá trị Q cao nhất.',
+      },
+      {
+        question: 'Sự khác biệt giữa "on-policy" và "off-policy" trong RL là gì?',
+        answer:
+          'Thuật toán "on-policy" (ví dụ: SARSA) cải thiện chính sách mà nó đang sử dụng để đưa ra quyết định. Thuật toán "off-policy" (ví dụ: Q-learning) cải thiện một chính sách khác với chính sách mà nó đang sử dụng để khám phá. Off-policy thường linh hoạt và hiệu quả hơn về mặt dữ liệu.',
+      },
+      {
+        question: 'Mô phỏng (simulation) có vai trò gì trong học tăng cường?',
+        answer:
+          'Mô phỏng đóng một vai trò cực kỳ quan trọng. Nó cho phép tác nhân RL tương tác với một môi trường ảo hàng triệu hoặc hàng tỷ lần một cách an toàn và nhanh chóng, điều không thể thực hiện được trong thế giới thực. Hầu hết các thành công lớn của RL đều dựa vào môi trường mô phỏng.',
+      },
+      {
+        question: 'Học tăng cường có khó học không?',
+        answer:
+          'RL được coi là một trong những nhánh khó hơn của Machine Learning vì nó liên quan đến nhiều khái niệm phức tạp (như quy hoạch động, phương sai cao). Tuy nhiên, với các thư viện hiện đại như Stable Baselines3 hoặc RLlib, việc bắt đầu và thử nghiệm với RL đã trở nên dễ dàng hơn nhiều.',
+      },
+      {
+        question: 'Tương lai của Học tăng cường sẽ như thế nào?',
+        answer:
+          'Tương lai của RL rất hứa hẹn, đặc biệt là trong lĩnh vực robot học, nơi các robot có thể tự học các kỹ năng phức tạp. Ngoài ra, RL cũng được kỳ vọng sẽ tạo ra các hệ thống AI có khả năng ra quyết định và lập kế hoạch chiến lược tốt hơn trong các môi trường kinh doanh và khoa học.',
+      },
+    ],
   },
 
   {
@@ -856,8 +1033,6 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
       'Làm chủ các thực hành MLOps để triển khai, giám sát và duy trì các mô hình ML trong môi trường sản xuất một cách hiệu quả và đáng tin cậy.',
     duration: '175 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=t3KRhBANPbI', // MLOps introduction
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu vòng đời và các thực hành tốt nhất của MLOps',
       'Triển khai tích hợp liên tục cho các mô hình ML',
@@ -865,31 +1040,6 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
       'Triển khai mô hình bằng cách sử dụng containerization',
       'Quản lý phiên bản và khôi phục mô hình',
       'Mở rộng quy mô hệ thống ML cho lưu lượng truy cập cao',
-    ],
-    prerequisites: [
-      'Kinh nghiệm phát triển mô hình ML',
-      'Kiến thức cơ bản về DevOps và điện toán đám mây',
-      'Hiểu biết về các thực hành kỹ thuật phần mềm',
-    ],
-    exercises: [
-      {
-        title: 'Triển khai Quy trình ML từ đầu đến cuối',
-        description: 'Xây dựng một quy trình MLOps hoàn chỉnh từ phát triển đến giám sát sản xuất.',
-        difficulty: 'Nâng cao',
-        materials: ['Truy cập nền tảng đám mây', 'Docker', 'Kubernetes', 'MLflow', 'Công cụ giám sát'],
-        procedure: [
-          'Thiết lập theo dõi thử nghiệm ML với MLflow',
-          'Đóng gói mô hình ML bằng Docker',
-          'Tạo API phục vụ mô hình với FastAPI',
-          'Triển khai mô hình lên cụm Kubernetes',
-          'Triển khai giám sát và ghi log mô hình',
-          'Thiết lập quy trình huấn luyện lại mô hình tự động',
-          'Cấu hình khung thử nghiệm A/B',
-          'Giám sát hiệu suất mô hình và các chỉ số kinh doanh',
-        ],
-        expectedResults: 'Hệ thống ML sẵn sàng sản xuất với triển khai và giám sát tự động',
-        solution: 'Cơ sở hạ tầng MLOps hoàn chỉnh hỗ trợ cải tiến mô hình liên tục',
-      },
     ],
     realWorldApplications: [
       'Hệ thống gợi ý thương mại điện tử quy mô lớn',
@@ -966,6 +1116,48 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
           'Containerization giải quyết vấn đề "nó chạy trên máy của tôi!". Bằng cách đóng gói mọi thứ, nó đảm bảo rằng mô hình sẽ hoạt động nhất quán trên máy của lập trình viên, trên máy chủ thử nghiệm và trong môi trường sản xuất.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao việc giám sát mô hình trong sản xuất lại quan trọng?',
+        answer:
+          'Việc giám sát là rất quan trọng để phát hiện "model drift" - hiện tượng hiệu suất của mô hình giảm dần theo thời gian do sự thay đổi trong dữ liệu thực tế. Giám sát giúp chúng ta biết khi nào cần huấn luyện lại hoặc cập nhật mô hình.',
+      },
+      {
+        question: 'CI/CD trong MLOps là gì?',
+        answer:
+          'CI/CD là viết tắt của Tích hợp liên tục (Continuous Integration) và Triển khai liên tục (Continuous Deployment). Trong MLOps, nó không chỉ bao gồm việc kiểm thử và triển khai mã nguồn, mà còn cả việc kiểm thử, xác thực và triển khai các mô hình và đường ống dữ liệu một cách tự động.',
+      },
+      {
+        question: 'Một "đường ống ML" (ML pipeline) là gì?',
+        answer:
+          'Một đường ống ML là một chuỗi các bước được tự động hóa để xây dựng và triển khai một mô hình ML. Nó thường bao gồm các bước như thu thập dữ liệu, tiền xử lý, huấn luyện mô hình, đánh giá, và triển khai. Tự động hóa đường ống này là một mục tiêu cốt lõi của MLOps.',
+      },
+      {
+        question: 'MLflow là gì và nó được sử dụng để làm gì?',
+        answer:
+          'MLflow là một nền tảng mã nguồn mở để quản lý vòng đời của machine learning. Nó giúp theo dõi các thử nghiệm (experiment tracking), đóng gói mã (packaging code), và triển khai mô hình. Đây là một công cụ rất phổ biến trong MLOps.',
+      },
+      {
+        question: 'Sự khác biệt giữa Data Scientist và MLOps Engineer là gì?',
+        answer:
+          'Data Scientist thường tập trung vào việc phân tích dữ liệu và xây dựng các mô hình thử nghiệm. MLOps Engineer tập trung vào việc lấy các mô hình đó và xây dựng các hệ thống mạnh mẽ, có thể mở rộng để chạy chúng trong môi trường sản xuất một cách đáng tin cậy.',
+      },
+      {
+        question: 'Thử nghiệm A/B cho mô hình ML hoạt động như thế nào?',
+        answer:
+          'Trong thử nghiệm A/B, chúng ta triển khai đồng thời hai phiên bản của mô hình (ví dụ: mô hình cũ và mô hình mới) và phân chia lưu lượng người dùng cho cả hai. Sau đó, chúng ta so sánh các chỉ số kinh doanh (ví dụ: tỷ lệ nhấp chuột) để xác định xem mô hình nào hoạt động tốt hơn trong thực tế.',
+      },
+      {
+        question: 'Tôi có cần biết về Kubernetes để làm MLOps không?',
+        answer:
+          'Kiến thức về Kubernetes (K8s) rất hữu ích vì nó là nền tảng tiêu chuẩn để triển khai các ứng dụng container hóa ở quy mô lớn. Nhiều công cụ MLOps được xây dựng để chạy trên K8s. Tuy nhiên, bạn có thể bắt đầu với các khái niệm đơn giản hơn như Docker và các dịch vụ đám mây được quản lý.',
+      },
+      {
+        question: 'MLOps có phải chỉ dành cho các công ty lớn không?',
+        answer:
+          'Không hề. Ngay cả các dự án cá nhân hoặc các startup nhỏ cũng có thể hưởng lợi từ việc áp dụng các nguyên tắc MLOps cơ bản. Việc thiết lập một quy trình có tổ chức ngay từ đầu sẽ giúp tiết kiệm rất nhiều thời gian và công sức khi dự án phát triển.',
+      },
+    ],
   },
 
   {
@@ -975,8 +1167,6 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
       'Hiểu các cân nhắc về đạo đức trong phát triển AI, phát hiện và giảm thiểu thiên vị, và xây dựng các hệ thống AI công bằng và có trách nhiệm.',
     duration: '165 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=1RptHwfkx_k', // AI ethics and fairness
-    imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop',
     objectives: [
       'Hiểu các nguyên tắc và khuôn khổ đạo đức AI',
       'Xác định và đo lường thiên vị trong các mô hình ML',
@@ -984,37 +1174,6 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
       'Thiết kế các hệ thống AI minh bạch và có thể giải thích được',
       'Xử lý các mối quan tâm về quyền riêng tư và bảo vệ dữ liệu',
       'Tạo ra các khuôn khổ quản trị AI có đạo đức',
-    ],
-    prerequisites: [
-      'Kiến thức cơ bản về ML',
-      'Hiểu biết về bối cảnh xã hội và văn hóa',
-      'Phân tích dữ liệu và thống kê cơ bản',
-    ],
-    exercises: [
-      {
-        title: 'Kiểm toán Thiên vị Hệ thống Tuyển dụng Việt Nam',
-        description: 'Kiểm toán một hệ thống AI tuyển dụng về thiên vị đối với các nhóm nhân khẩu học Việt Nam.',
-        difficulty: 'Trung bình',
-        materials: [
-          'Bộ dữ liệu tuyển dụng',
-          'Thư viện công bằng',
-          'Công cụ phát hiện thiên vị',
-          'Dữ liệu nhân khẩu học Việt Nam',
-        ],
-        procedure: [
-          'Phân tích bộ dữ liệu tuyển dụng Việt Nam về sự đại diện nhân khẩu học',
-          'Xác định các nguồn thiên vị tiềm ẩn trong quy trình tuyển dụng',
-          'Triển khai nhiều chỉ số công bằng để đánh giá',
-          'Phát hiện thiên vị đối với các nhóm dân tộc khác nhau của Việt Nam',
-          'Áp dụng các kỹ thuật giảm thiểu thiên vị',
-          'Đánh giá sự đánh đổi giữa độ chính xác và sự công bằng',
-          'Tạo bảng điều khiển báo cáo minh bạch',
-          'Phát triển các khuyến nghị cho các thực hành tuyển dụng công bằng',
-        ],
-        expectedResults: 'Báo cáo kiểm toán thiên vị toàn diện với các cải tiến công bằng có thể hành động',
-        solution:
-          'Hệ thống tuyển dụng công bằng và minh bạch được điều chỉnh cho sự đa dạng tại nơi làm việc ở Việt Nam',
-      },
     ],
     realWorldApplications: [
       'Hệ thống cho vay công bằng cho các tổ chức tài chính Việt Nam',
@@ -1085,6 +1244,48 @@ export const aiMachineLearningLessons: BaseLessonData[] = [
         correctAnswerIndex: 2,
         explanation:
           'Nguyên tắc "rác vào, rác ra" (garbage in, garbage out) rất đúng với AI. Một bộ dữ liệu huấn luyện đa dạng và đại diện cho toàn bộ dân số là bước đầu tiên và quan trọng nhất để xây dựng một hệ thống AI công bằng.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Thiên vị trong AI đến từ đâu?',
+        answer:
+          'Thiên vị (bias) có thể đến từ nhiều nguồn. Phổ biến nhất là từ dữ liệu huấn luyện không đại diện hoặc phản ánh các định kiến xã hội sẵn có. Nó cũng có thể đến từ cách các đặc trưng được lựa chọn hoặc từ chính thuật toán.',
+      },
+      {
+        question: 'Sự khác biệt giữa "công bằng" (fairness) và "chính xác" (accuracy) trong AI là gì?',
+        answer:
+          'Độ chính xác đo lường mức độ đúng đắn của các dự đoán của mô hình. Công bằng đo lường xem các sai sót của mô hình có được phân bổ một cách công bằng giữa các nhóm dân số khác nhau hay không. Đôi khi, việc tối ưu hóa độ chính xác có thể làm giảm tính công bằng và ngược lại.',
+      },
+      {
+        question: 'Một ví dụ về tác hại của AI thiên vị là gì?',
+        answer:
+          'Một ví dụ nổi tiếng là hệ thống tuyển dụng bằng AI của Amazon đã bị phát hiện có xu hướng loại bỏ hồ sơ của các ứng viên nữ, vì nó được huấn luyện trên dữ liệu lịch sử mà trong đó nam giới chiếm đa số.',
+      },
+      {
+        question: 'Làm thế nào chúng ta có thể đo lường sự công bằng của một mô hình AI?',
+        answer:
+          'Có nhiều chỉ số toán học để đo lường sự công bằng, ví dụ như "demographic parity" (đảm bảo tỷ lệ kết quả tích cực là như nhau giữa các nhóm) hoặc "equal opportunity" (đảm bảo tỷ lệ dương tính thật là như nhau giữa các nhóm). Việc chọn chỉ số nào phụ thuộc vào bối cảnh cụ thể.',
+      },
+      {
+        question: 'Quyền riêng tư dữ liệu liên quan đến đạo đức AI như thế nào?',
+        answer:
+          'Các mô hình AI cần rất nhiều dữ liệu để huấn luyện, điều này làm dấy lên lo ngại về cách dữ liệu cá nhân được thu thập, sử dụng và bảo vệ. Các kỹ thuật như "học liên kết" (federated learning) hoặc "quyền riêng tư vi phân" (differential privacy) đang được phát triển để huấn luyện mô hình mà không cần truy cập trực tiếp vào dữ liệu nhạy cảm.',
+      },
+      {
+        question: 'Ai là người chịu trách nhiệm khi một hệ thống AI mắc lỗi?',
+        answer:
+          'Đây là một câu hỏi pháp lý và đạo đức phức tạp chưa có câu trả lời rõ ràng. Trách nhiệm có thể thuộc về nhà phát triển, công ty triển khai hệ thống, hoặc thậm chí là người dùng. Việc thiết lập các quy định và luật lệ rõ ràng về trách nhiệm AI là một thách thức lớn hiện nay.',
+      },
+      {
+        question: 'Liệu AI có thể thực sự "có đạo đức" không?',
+        answer:
+          'Bản thân AI không có đạo đức; chúng là công cụ. "Đạo đức AI" là việc con người thiết kế, xây dựng và triển khai các hệ thống AI theo cách phù hợp với các nguyên tắc và giá trị đạo đức của xã hội. Trách nhiệm nằm ở con người.',
+      },
+      {
+        question: 'Tôi có thể làm gì để đóng góp vào việc phát triển AI có trách nhiệm?',
+        answer:
+          'Dù bạn là nhà phát triển, người dùng hay nhà hoạch định chính sách, bạn đều có thể đóng góp. Hãy luôn đặt câu hỏi về sự công bằng và tác động xã hội của các hệ thống AI, yêu cầu sự minh bạch, và tham gia vào các cuộc thảo luận công khai về tương lai của công nghệ này.',
       },
     ],
   },

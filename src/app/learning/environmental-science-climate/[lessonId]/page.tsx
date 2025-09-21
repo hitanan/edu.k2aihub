@@ -4,14 +4,14 @@ import {
   generateLessonStaticParams,
   LessonPageConfig,
 } from '@/components/learning/LessonPageTemplate';
-import { environmentalClimateLessons } from '@/data/modules/environmental-science-climate';
+import { environmentalScienceClimateLessons } from '@/data/modules/environmental-science-climate';
 import { BaseLessonData } from '@/types/lesson-base';
 
 import { notFound } from 'next/navigation';
 
 // Generate static params for all lessons
 export async function generateStaticParams() {
-  return generateLessonStaticParams(environmentalClimateLessons);
+  return generateLessonStaticParams(environmentalScienceClimateLessons);
 }
 
 // Generate metadata for each lesson
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lessonId:
   if (!lessonId) {
     return {};
   }
-  return generateLessonMetadata(lessonId, environmentalClimateLessons, 'environmental-science-climate');
+  return generateLessonMetadata(lessonId, environmentalScienceClimateLessons, 'environmental-science-climate');
 }
 
 // Page component with standardized config
@@ -38,7 +38,7 @@ export default async function EnvironmentalScienceClimateLessonPage({
   const config: LessonPageConfig<BaseLessonData> = {
     moduleName: 'environmental-science-climate',
     moduleTitle: 'Environmental Science & Climate Change',
-    lessons: environmentalClimateLessons,
+    lessons: environmentalScienceClimateLessons,
     primaryColor: 'green',
     secondaryColor: 'emerald',
     modulePath: '/learning/environmental-science-climate',

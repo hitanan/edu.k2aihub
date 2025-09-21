@@ -1,10 +1,11 @@
 ---
 title: 'Hướng Dẫn Khoa Học Khí Hậu: Hiểu Rõ Về Biến Đổi Khí Hậu Toàn Cầu'
 description: 'Tìm hiểu các nguyên tắc cơ bản của khoa học khí hậu, bằng chứng về sự nóng lên toàn cầu, các tác động và các giải pháp tiềm năng để giảm thiểu cuộc khủng hoảng khí hậu.'
-date: '2025-10-17'
+date: '2025-09-17'
 author: 'K2AiHub Science Team'
 category: 'Hướng Dẫn'
-tags: ['biến đổi khí hậu', 'khoa học khí hậu', 'nóng lên toàn cầu', 'hiệu ứng nhà kính', 'bền vững', 'hướng dẫn', 'K2AiHub']
+tags:
+  ['biến đổi khí hậu', 'khoa học khí hậu', 'nóng lên toàn cầu', 'hiệu ứng nhà kính', 'bền vững', 'hướng dẫn', 'K2AiHub']
 featured: true
 readingTime: '22 phút đọc'
 ---
@@ -24,6 +25,7 @@ Bài viết này của **K2AiHub** sẽ phân tích các khái niệm cốt lõi
 Hãy tưởng tượng Trái Đất không có bầu khí quyển. Ban ngày, nó sẽ nóng như thiêu đốt, và ban đêm, nó sẽ lạnh cóng. Bầu khí quyển của chúng ta, đặc biệt là một số loại khí trong đó, hoạt động giống như một tấm chăn, giữ lại một phần nhiệt của Mặt Trời và làm cho hành tinh của chúng ta đủ ấm để sự sống có thể tồn tại. Đây được gọi là **hiệu ứng nhà kính tự nhiên**.
 
 Các khí chính gây ra hiệu ứng này được gọi là **khí nhà kính (Greenhouse Gases - GHGs)**, bao gồm:
+
 - Hơi nước (H₂O)
 - Carbon Dioxide (CO₂)
 - Methane (CH₄)
@@ -65,14 +67,14 @@ Sự nóng lên 1.1°C nghe có vẻ không nhiều, nhưng nó gây ra những 
 Đối mặt với cuộc khủng hoảng này, chúng ta có hai hướng hành động chính:
 
 - **Giảm thiểu (Mitigation):** Nỗ lực cắt giảm hoặc ngăn chặn việc phát thải khí nhà kính.
-    - **Chuyển đổi sang năng lượng tái tạo:** Đầu tư mạnh mẽ vào năng lượng mặt trời, gió, thủy điện.
-    - **Nâng cao hiệu quả sử dụng năng lượng:** Cách nhiệt tốt hơn cho các tòa nhà, sử dụng các thiết bị tiết kiệm điện.
-    - **Giao thông bền vững:** Chuyển sang xe điện, phát triển giao thông công cộng, đi xe đạp và đi bộ.
-    - **Bảo vệ và trồng lại rừng.**
+  - **Chuyển đổi sang năng lượng tái tạo:** Đầu tư mạnh mẽ vào năng lượng mặt trời, gió, thủy điện.
+  - **Nâng cao hiệu quả sử dụng năng lượng:** Cách nhiệt tốt hơn cho các tòa nhà, sử dụng các thiết bị tiết kiệm điện.
+  - **Giao thông bền vững:** Chuyển sang xe điện, phát triển giao thông công cộng, đi xe đạp và đi bộ.
+  - **Bảo vệ và trồng lại rừng.**
 - **Thích ứng (Adaptation):** Học cách sống chung và đối phó với những tác động của biến đổi khí hậu đã và đang xảy ra.
-    - **Xây dựng đê biển và hệ thống phòng chống lũ lụt.**
-    - **Phát triển các giống cây trồng chịu hạn, chịu mặn.**
-    - **Thiết lập các hệ thống cảnh báo sớm thiên tai.**
+  - **Xây dựng đê biển và hệ thống phòng chống lũ lụt.**
+  - **Phát triển các giống cây trồng chịu hạn, chịu mặn.**
+  - **Thiết lập các hệ thống cảnh báo sớm thiên tai.**
 
 ## Kết Luận
 

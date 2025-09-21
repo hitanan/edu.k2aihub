@@ -212,6 +212,36 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
         answer:
           'Rất rộng mở. Bạn có thể làm việc tại các bệnh viện (quản lý trang thiết bị), các công ty sản xuất và kinh doanh thiết bị y tế, các viện nghiên cứu, trường đại học, hoặc các cơ quan quản lý nhà nước. Nhu cầu nhân lực chất lượng cao trong lĩnh vực này đang ngày càng tăng.',
       },
+      {
+        question: 'ISO 13485 là gì và tại sao nó quan trọng?',
+        answer:
+          'ISO 13485 là một tiêu chuẩn quốc tế về hệ thống quản lý chất lượng dành riêng cho các nhà sản xuất thiết bị y tế. Việc tuân thủ tiêu chuẩn này đảm bảo rằng sản phẩm được thiết kế, sản xuất và phân phối một cách an toàn và nhất quán, đáp ứng các yêu cầu pháp lý.',
+      },
+      {
+        question: 'Quản lý rủi ro (ISO 14971) trong thiết kế thiết bị y tế là gì?',
+        answer:
+          'Đây là một quy trình có hệ thống để xác định, đánh giá và kiểm soát các rủi ro liên quan đến việc sử dụng một thiết bị y tế trong suốt vòng đời của nó. Mục tiêu là đảm bảo lợi ích của việc sử dụng thiết bị vượt trội so với các rủi ro tiềm ẩn.',
+      },
+      {
+        question: 'Giao diện người dùng (UI/UX) có quan trọng đối với thiết bị y tế không?',
+        answer:
+          'Cực kỳ quan trọng. Một giao diện được thiết kế tồi có thể dẫn đến lỗi sử dụng, gây nguy hiểm cho bệnh nhân. Thiết kế UI/UX trong y tế phải ưu tiên sự rõ ràng, dễ sử dụng, giảm thiểu khả năng nhầm lẫn, đặc biệt là trong các tình huống căng thẳng, khẩn cấp.',
+      },
+      {
+        question: 'Thử nghiệm lâm sàng cho thiết bị y tế là gì?',
+        answer:
+          'Là quá trình nghiên cứu trên người để đánh giá sự an toàn và hiệu quả của một thiết bị y tế mới. Quá trình này được kiểm soát chặt chẽ và phải tuân thủ các nguyên tắc đạo đức nghiêm ngặt để bảo vệ người tham gia.',
+      },
+      {
+        question: 'Sự khác biệt giữa FDA (Mỹ) và dấu CE (Châu Âu) là gì?',
+        answer:
+          'Cả hai đều là các quy chuẩn để đưa thiết bị y tế ra thị trường. FDA (Cục quản lý Thực phẩm và Dược phẩm Hoa Kỳ) yêu cầu một quy trình phê duyệt trước khi ra thị trường. Dấu CE (Conformité Européenne) là một tuyên bố của nhà sản xuất rằng sản phẩm của họ đáp ứng các yêu cầu của EU, và quy trình này thường dựa trên sự tự chứng nhận hoặc đánh giá của một bên thứ ba.',
+      },
+      {
+        question: 'Vật liệu sinh học (biomaterial) là gì?',
+        answer:
+          'Vật liệu sinh học là bất kỳ vật liệu nào, tự nhiên hay tổng hợp, được sử dụng để tương tác với các hệ thống sinh học. Trong kỹ thuật y sinh, chúng được dùng để làm các bộ phận cấy ghép (khớp nhân tạo), khung đỡ cho kỹ thuật mô, hoặc hệ thống phân phối thuốc.',
+      },
     ],
   },
   {
@@ -395,6 +425,41 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
         answer:
           'U-Net là một kiến trúc mạng nơ-ron học sâu được thiết kế đặc biệt để "tô màu" hoặc phân đoạn các vùng quan tâm trong ảnh y tế (ví dụ: xác định ranh giới của một khối u). Kiến trúc đối xứng của nó cho phép nắm bắt cả thông tin tổng thể và chi tiết, giúp nó hoạt động rất hiệu quả ngay cả với số lượng ảnh huấn luyện hạn chế.',
       },
+      {
+        question: 'Sự khác biệt giữa ECG, EEG và EMG là gì?',
+        answer:
+          'Cả ba đều là các tín hiệu điện sinh học. ECG (Điện tâm đồ) ghi lại hoạt động điện của tim. EEG (Điện não đồ) ghi lại hoạt động điện của não. EMG (Điện cơ đồ) ghi lại hoạt động điện của cơ bắp.',
+      },
+      {
+        question: 'Phân tích miền tần số (Fourier Transform) được sử dụng để làm gì trong xử lý tín hiệu sinh học?',
+        answer:
+          'Biến đổi Fourier giúp chuyển đổi một tín hiệu từ miền thời gian sang miền tần số. Điều này cho phép chúng ta phân tích các thành phần tần số khác nhau của tín hiệu. Ví dụ, trong EEG, các dải tần số khác nhau (alpha, beta, delta) tương ứng với các trạng thái khác nhau của não (thư giãn, tập trung, ngủ sâu).',
+      },
+      {
+        question: 'Lọc kỹ thuật số (digital filtering) là gì?',
+        answer:
+          'Lọc kỹ thuật số là một thuật toán dùng để loại bỏ các thành phần không mong muốn khỏi một tín hiệu. Ví dụ, chúng ta có thể sử dụng bộ lọc thông thấp để loại bỏ nhiễu tần số cao khỏi tín hiệu ECG, làm cho các sóng quan trọng trở nên rõ ràng hơn.',
+      },
+      {
+        question: 'DICOM là gì?',
+        answer:
+          'DICOM (Digital Imaging and Communications in Medicine) là một tiêu chuẩn quốc tế để truyền, lưu trữ, truy xuất, in, xử lý và hiển thị thông tin hình ảnh y tế. Nó đảm bảo rằng hình ảnh y tế từ các thiết bị khác nhau (MRI, CT) có thể được xem và chia sẻ một cách nhất quán.',
+      },
+      {
+        question: 'Phân đoạn (segmentation) trong hình ảnh y tế có nghĩa là gì?',
+        answer:
+          'Phân đoạn là quá trình phân chia một hình ảnh y tế thành nhiều phân đoạn hoặc vùng khác nhau. Mục tiêu thường là để xác định vị trí và ranh giới của các cơ quan, mô hoặc khối u. Đây là một bước quan trọng để phân tích định lượng và lập kế hoạch điều trị.',
+      },
+      {
+        question: 'Thế nào là một hệ thống hỗ trợ chẩn đoán bằng máy tính (CAD)?',
+        answer:
+          'CAD là các hệ thống sử dụng công nghệ máy tính để giúp các bác sĩ diễn giải hình ảnh y tế. Hệ thống CAD có thể đánh dấu các khu vực đáng ngờ trên hình ảnh để bác sĩ X-quang chú ý, hoạt động như một "con mắt thứ hai" để cải thiện độ chính xác.',
+      },
+      {
+        question: 'Thách thức lớn nhất của việc áp dụng AI trong y tế là gì?',
+        answer:
+          'Một trong những thách thức lớn nhất là sự cần thiết của dữ liệu lớn, chất lượng cao và được gán nhãn chính xác để huấn luyện các mô hình AI. Ngoài ra, các vấn đề về quyền riêng tư của bệnh nhân, sự chấp nhận của bác sĩ và các quy định pháp lý cũng là những rào cản quan trọng cần được giải quyết.',
+      },
     ],
   },
   {
@@ -521,13 +586,6 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
         ],
       },
     ],
-    safetyCriteria: [
-      'Vô trùng và phòng ngừa ô nhiễm trong suốt quá trình sản xuất.',
-      'Kiểm tra khả năng sinh khối u cho các sản phẩm tế bào gốc.',
-      'Đánh giá tính sinh miễn dịch và theo dõi phản ứng có hại.',
-      'Các nghiên cứu phân bố sinh học để theo dõi tế bào.',
-      'Quy trình theo dõi an toàn lâu dài.',
-    ],
     resources: [
       {
         title: 'Hướng dẫn của Hiệp hội Quốc tế về Nghiên cứu Tế bào gốc',
@@ -602,6 +660,41 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
         question: 'In sinh học 3D (3D Bioprinting) có thể tạo ra một trái tim hoàn chỉnh để cấy ghép chưa?',
         answer:
           'Hiện tại, công nghệ in sinh học 3D đã có thể tạo ra các cấu trúc mô nhỏ và đơn giản có chức năng. Việc in một cơ quan phức tạp và hoàn chỉnh như trái tim vẫn là một thách thức lớn và là mục tiêu nghiên cứu trong tương lai. Tuy nhiên, các mô được in ra đã rất hữu ích cho việc thử nghiệm thuốc và nghiên cứu bệnh tật.',
+      },
+      {
+        question: 'Khung đỡ (scaffold) trong kỹ thuật mô có vai trò gì?',
+        answer:
+          'Khung đỡ là một cấu trúc tạm thời, thường được làm từ vật liệu sinh học, cung cấp một "giàn giáo" cho các tế bào bám vào và phát triển thành mô mới. Nó định hình cấu trúc của mô và có thể chứa các yếu tố tăng trưởng để khuyến khích sự phát triển của tế bào.',
+      },
+      {
+        question: 'Sự khác biệt giữa tế bào gốc phôi và tế bào gốc trưởng thành là gì?',
+        answer:
+          'Tế bào gốc phôi (lấy từ phôi giai đoạn sớm) là toàn năng, có nghĩa là chúng có thể phát triển thành bất kỳ loại tế bào nào trong cơ thể. Tế bào gốc trưởng thành (tìm thấy trong các mô của cơ thể) là đa năng, có nghĩa là chúng chỉ có thể phát triển thành một số loại tế bào nhất định, thường là của mô mà chúng được tìm thấy.',
+      },
+      {
+        question: 'Tế bào gốc vạn năng cảm ứng (iPSCs) là gì?',
+        answer:
+          'iPSCs là các tế bào trưởng thành (ví dụ: tế bào da) đã được tái lập trình trong phòng thí nghiệm để trở lại trạng thái giống như tế bào gốc phôi. Đây là một đột phá lớn vì nó cho phép tạo ra các tế bào gốc dành riêng cho bệnh nhân mà không cần sử dụng phôi, tránh được các vấn đề về đạo đức và thải ghép.',
+      },
+      {
+        question: 'Vật liệu sinh học thông minh (smart biomaterials) là gì?',
+        answer:
+          'Đây là những vật liệu có thể phản ứng với những thay đổi trong môi trường của chúng. Ví dụ, một hydrogel thông minh có thể giải phóng thuốc khi nhiệt độ cơ thể tăng lên (dấu hiệu của nhiễm trùng) hoặc thay đổi hình dạng để lấp đầy một vết thương.',
+      },
+      {
+        question: 'Bioreactor (lò phản ứng sinh học) được sử dụng để làm gì trong kỹ thuật mô?',
+        answer:
+          'Bioreactor là một thiết bị cung cấp một môi trường được kiểm soát chặt chẽ (nhiệt độ, oxy, chất dinh dưỡng, lực cơ học) để nuôi cấy các mô được thiết kế trong phòng thí nghiệm. Nó giúp mô phát triển khỏe mạnh và có chức năng giống như mô tự nhiên trong cơ thể.',
+      },
+      {
+        question: 'Những thách thức về đạo đức trong y học tái tạo là gì?',
+        answer:
+          'Các vấn đề đạo đức chính bao gồm việc sử dụng tế bào gốc phôi, khả năng tạo ra các sinh vật lai, và các câu hỏi về sự an toàn lâu dài và khả năng tiếp cận công bằng của các liệu pháp đắt tiền này.',
+      },
+      {
+        question: 'Y học tái tạo có thể chữa được bệnh lão hóa không?',
+        answer:
+          'Mặc dù y học tái tạo có tiềm năng sửa chữa các tổn thương liên quan đến tuổi tác và điều trị nhiều bệnh mãn tính, việc "chữa khỏi" hoàn toàn quá trình lão hóa phức tạp vẫn còn là một mục tiêu rất xa. Tuy nhiên, nó hứa hẹn sẽ kéo dài "tuổi thọ khỏe mạnh" (healthspan) của con người.',
       },
     ],
   },
@@ -805,6 +898,41 @@ export const biomedicalEngineeringLessons: BiomedicalEngineeringLesson[] = [
         question: 'ROS (Robot Operating System) có vai trò gì trong robot y tế?',
         answer:
           'ROS là một nền tảng phần mềm mã nguồn mở, cung cấp các công cụ và thư viện giúp các nhà phát triển xây dựng ứng dụng cho robot một cách nhanh chóng hơn. Trong robot y tế, ROS giúp xử lý các tác vụ phức tạp như điều khiển chuyển động, xử lý dữ liệu cảm biến, và lập kế hoạch quỹ đạo, cho phép các kỹ sư tập trung vào các tính năng y tế chuyên biệt.',
+      },
+      {
+        question: 'Phản hồi xúc giác (haptic feedback) trong robot phẫu thuật là gì?',
+        answer:
+          'Phản hồi xúc giác là công nghệ truyền lại cảm giác về lực và kết cấu từ đầu dụng cụ phẫu thuật của robot về tay của bác sĩ phẫu thuật. Điều này giúp bác sĩ "cảm nhận" được mô mà họ đang thao tác, làm cho ca phẫu thuật trở nên trực quan và an toàn hơn.',
+      },
+      {
+        question: 'Thị giác máy tính được sử dụng như thế nào để dẫn đường phẫu thuật?',
+        answer:
+          'Thị giác máy tính giúp robot "nhìn" và hiểu được không gian phẫu thuật. Nó có thể theo dõi vị trí của các dụng cụ, xác định các mốc giải phẫu quan trọng, và chồng lớp hình ảnh 3D từ dữ liệu quét trước phẫu thuật (như CT, MRI) lên hình ảnh thực tế để dẫn đường cho bác sĩ.',
+      },
+      {
+        question: 'Động học robot (robot kinematics) là gì?',
+        answer:
+          'Động học robot là môn khoa học nghiên cứu về chuyển động của robot. Động học thuận tính toán vị trí của đầu công tác (ví dụ: đầu dao mổ) dựa trên góc của các khớp. Động học ngược giải bài toán ngược lại: cần các góc khớp là bao nhiêu để đưa đầu công tác đến một vị trí mong muốn.',
+      },
+      {
+        question: 'Ngoài phẫu thuật, robot còn được ứng dụng gì khác trong y tế?',
+        answer:
+          'Robot y tế có rất nhiều ứng dụng khác, bao gồm: robot phục hồi chức năng (giúp bệnh nhân tập đi), robot khử khuẩn trong bệnh viện, robot dược sĩ (tự động cấp phát thuốc), và robot hỗ trợ chăm sóc người già.',
+      },
+      {
+        question: 'Những thách thức về an toàn của robot phẫu thuật là gì?',
+        answer:
+          'An toàn là ưu tiên hàng đầu. Các thách thức bao gồm: đảm bảo hệ thống không bao giờ có những chuyển động không mong muốn, có cơ chế dừng khẩn cấp đáng tin cậy, phần mềm không có lỗi, và bảo mật hệ thống khỏi các cuộc tấn công mạng.',
+      },
+      {
+        question: 'Phẫu thuật từ xa (telesurgery) là gì?',
+        answer:
+          'Phẫu thuật từ xa là việc bác sĩ phẫu thuật ở một nơi có thể điều khiển một robot phẫu thuật ở một nơi khác (có thể cách xa hàng nghìn km) để thực hiện ca mổ. Công nghệ này có tiềm năng mang lại dịch vụ y tế chuyên sâu cho các vùng sâu vùng xa.',
+      },
+      {
+        question: 'Tương lai của robot y tế sẽ như thế nào?',
+        answer:
+          'Tương lai của robot y tế hướng tới các hệ thống nhỏ hơn, thông minh hơn và tự chủ hơn. Chúng ta có thể thấy các robot siêu nhỏ (nanobots) di chuyển trong mạch máu để đưa thuốc đến khối u, hoặc các robot phẫu thuật được tích hợp AI có khả năng tự thực hiện một số bước đơn giản dưới sự giám sát của bác sĩ.',
       },
     ],
   },

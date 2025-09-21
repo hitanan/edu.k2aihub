@@ -110,6 +110,46 @@ export const teenWellnessLessons: TeenWellnessLessonData[] = [
         answer:
           'Nếu bạn cảm thấy căng thẳng và lo âu ảnh hưởng nghiêm trọng đến cuộc sống hàng ngày (học tập, giấc ngủ, ăn uống, các mối quan hệ) trong một thời gian dài (vài tuần trở lên), và các kỹ thuật tự quản lý không còn hiệu quả, đó là lúc bạn nên nói chuyện với tư vấn viên học đường, cha mẹ hoặc một chuyên gia tâm lý.',
       },
+      {
+        question: 'Sự khác biệt giữa căng thẳng và lo âu là gì?',
+        answer:
+          'Căng thẳng thường là phản ứng với một tác nhân bên ngoài có thể xác định được (ví dụ: một bài kiểm tra sắp tới). Lo âu là sự lo lắng, sợ hãi kéo dài, có thể không có nguyên nhân rõ ràng. Lo âu có thể tồn tại ngay cả khi tác nhân gây căng thẳng đã biến mất.',
+      },
+      {
+        question: 'Thở hộp (Box Breathing) thực hiện như thế nào?',
+        answer:
+          'Rất đơn giản: 1. Hít vào từ từ bằng mũi trong 4 giây. 2. Giữ hơi thở trong 4 giây. 3. Thở ra từ từ bằng miệng trong 4 giây. 4. Giữ phổi trống trong 4 giây. Lặp lại chu kỳ này vài lần. Nó giúp điều hòa hệ thần kinh và làm dịu tâm trí.',
+      },
+      {
+        question: 'Tại sao viết nhật ký lại giúp giảm căng thẳng?',
+        answer:
+          'Viết nhật ký giúp bạn "trút bỏ" những suy nghĩ và cảm xúc tiêu cực ra khỏi đầu, tạo ra một khoảng cách để bạn có thể nhìn nhận chúng một cách khách quan hơn. Nó cũng giúp bạn xác định các tác nhân gây căng thẳng và tìm ra các giải pháp.',
+      },
+      {
+        question: 'Làm thế nào để tái cấu trúc một suy nghĩ tiêu cực?',
+        answer:
+          'Đầu tiên, nhận diện suy nghĩ đó (ví dụ: "Mình sẽ thi trượt"). Tiếp theo, thách thức nó bằng cách tìm bằng chứng chống lại nó (ví dụ: "Mình đã ôn bài rất kỹ"). Cuối cùng, thay thế nó bằng một suy nghĩ thực tế và cân bằng hơn (ví dụ: "Bài thi sẽ khó, nhưng mình đã chuẩn bị tốt và sẽ cố gắng hết sức").',
+      },
+      {
+        question: 'Giấc ngủ ảnh hưởng đến căng thẳng như thế nào?',
+        answer:
+          'Giấc ngủ và căng thẳng có mối quan hệ hai chiều. Thiếu ngủ làm tăng hormone căng thẳng (cortisol) và khiến bạn khó đối phó với các thách thức. Ngược lại, căng thẳng cao độ có thể gây khó ngủ. Vì vậy, ưu tiên ngủ đủ giấc (8-10 tiếng mỗi đêm cho tuổi teen) là một trong những cách tốt nhất để quản lý căng thẳng.',
+      },
+      {
+        question: 'Tập thể dục có thực sự giúp giảm lo âu không?',
+        answer:
+          'Chắc chắn có. Hoạt động thể chất giúp giải phóng endorphins, là chất hóa học trong não có tác dụng như thuốc giảm đau tự nhiên và cải thiện tâm trạng. Nó cũng giúp giảm mức độ hormone căng thẳng và cải thiện chất lượng giấc ngủ.',
+      },
+      {
+        question: 'Em có nên tránh hoàn toàn những tình huống gây căng thẳng không?',
+        answer:
+          'Không. Việc tránh né có thể làm tăng sự lo âu trong dài hạn. Thay vào đó, hãy học cách đối mặt với các tình huống đó một cách dần dần và trang bị cho mình những kỹ năng đối phó. Việc vượt qua những thử thách nhỏ sẽ giúp bạn xây dựng sự tự tin.',
+      },
+      {
+        question: 'Nói chuyện với bạn bè về căng thẳng có ích lợi gì?',
+        answer:
+          'Chia sẻ với một người bạn đáng tin cậy có thể giúp bạn cảm thấy được thấu hiểu và không đơn độc. Bạn bè có thể đưa ra một góc nhìn khác, chia sẻ kinh nghiệm của họ, hoặc đơn giản là lắng nghe. Điều này giúp bình thường hóa trải nghiệm của bạn và giảm bớt gánh nặng tâm lý.',
+      },
     ],
   },
   {
@@ -200,6 +240,46 @@ export const teenWellnessLessons: TeenWellnessLessonData[] = [
         question: 'Em nên làm gì khi bị bắt nạt trực tuyến (cyberbullying)?',
         answer:
           'Đừng trả lời. Hãy chụp màn hình lại để làm bằng chứng. Chặn (block) người đó và báo cáo (report) hành vi với nền tảng. Quan trọng nhất, hãy nói chuyện với một người lớn mà bạn tin tưởng, như cha mẹ, thầy cô hoặc tư vấn viên học đường. Bạn không phải đối mặt với điều này một mình.',
+      },
+      {
+        question: 'Hội chứng FOMO (Fear Of Missing Out) là gì?',
+        answer:
+          'Là cảm giác lo sợ rằng mình sẽ bỏ lỡ những trải nghiệm thú vị mà người khác đang có, thường được thúc đẩy bởi những gì bạn thấy trên mạng xã hội. Để đối phó, hãy nhớ rằng mọi người thường chỉ đăng những khoảnh khắc đẹp nhất của họ, và tập trung vào việc tận hưởng những gì bạn đang có trong hiện tại.',
+      },
+      {
+        question: 'Tại sao so sánh bản thân với người khác trên mạng lại nguy hiểm?',
+        answer:
+          'Vì bạn đang so sánh "cảnh hậu trường" đầy đủ thăng trầm của mình với "thước phim nổi bật" được biên tập cẩn thận của người khác. Điều này có thể dẫn đến cảm giác tự ti, ghen tị và không hài lòng với cuộc sống của chính mình, dù sự so sánh đó là không thực tế.',
+      },
+      {
+        question: '"Digital Detox" có nghĩa là gì và làm thế nào để thực hiện?',
+        answer:
+          'Là một khoảng thời gian bạn chủ động ngưng sử dụng các thiết bị kỹ thuật số, đặc biệt là mạng xã hội. Bạn có thể bắt đầu nhỏ, ví dụ như không dùng điện thoại trong 1 giờ trước khi ngủ, hoặc thử thách lớn hơn như không dùng mạng xã hội vào cuối tuần. Mục đích là để kết nối lại với thế giới thực và giảm sự phụ thuộc vào công nghệ.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng một "dấu chân kỹ thuật số" (digital footprint) tích cực?',
+        answer:
+          'Hãy suy nghĩ trước khi đăng: liệu nội dung này có thể hiện con người bạn một cách tích cực không? Chia sẻ những thành tựu, sở thích lành mạnh, và tham gia vào các cuộc thảo luận một cách tôn trọng. Hãy nhớ rằng những gì bạn đăng lên mạng có thể tồn tại rất lâu và ảnh hưởng đến cơ hội học tập, việc làm trong tương lai.',
+      },
+      {
+        question: 'Chánh niệm khi dùng mạng xã hội (Mindful Scrolling) là gì?',
+        answer:
+          'Là việc sử dụng mạng xã hội một cách có ý thức. Trước khi mở ứng dụng, hãy tự hỏi: "Mình vào đây để làm gì?". Trong khi lướt, hãy chú ý đến cảm xúc của bạn: "Nội dung này khiến mình cảm thấy thế nào?". Điều này giúp bạn chuyển từ việc lướt vô thức sang sử dụng có chủ đích.',
+      },
+      {
+        question: 'Làm thế nào để bảo vệ thông tin cá nhân trên mạng xã hội?',
+        answer:
+          'Hãy sử dụng cài đặt riêng tư (privacy settings) để kiểm soát ai có thể xem bài đăng của bạn. Đừng chia sẻ thông tin nhạy cảm như địa chỉ nhà, số điện thoại. Cẩn thận với các liên kết lạ và sử dụng mật khẩu mạnh, khác nhau cho các tài khoản.',
+      },
+      {
+        question: 'Ánh sáng xanh từ màn hình ảnh hưởng đến giấc ngủ như thế nào?',
+        answer:
+          'Ánh sáng xanh từ điện thoại, máy tính bảng có thể ức chế việc sản xuất melatonin, hormone giúp bạn buồn ngủ. Sử dụng các thiết bị này trước khi đi ngủ có thể khiến bạn khó ngủ hơn và làm giảm chất lượng giấc ngủ. Hãy cố gắng ngưng sử dụng màn hình ít nhất 1 giờ trước khi ngủ.',
+      },
+      {
+        question: 'Làm sao để cân bằng giữa cuộc sống thực và cuộc sống trên mạng?',
+        answer:
+          'Hãy đặt ra những ranh giới rõ ràng. Ví dụ: không dùng điện thoại trong bữa ăn, dành thời gian chất lượng cho gia đình và bạn bè mà không bị phân tâm bởi thông báo. Ưu tiên các hoạt động và mối quan hệ ngoài đời thực, và xem mạng xã hội chỉ là một công cụ bổ trợ, không phải là trung tâm của cuộc sống.',
       },
     ],
   },

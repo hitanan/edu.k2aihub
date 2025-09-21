@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Machine Learning: Dạy Máy Tính Học Như Con Người'
 description: 'Bước vào thế giới của Machine Learning (Học Máy), một nhánh cốt lõi của AI. Hướng dẫn từ K2AiHub giúp bạn hiểu cách máy tính học hỏi từ dữ liệu và tạo ra các mô hình dự đoán.'
-date: '2025-10-05'
+date: '2025-09-05'
 author: 'K2AiHub AI Team'
 category: 'Hướng Dẫn'
 tags: ['machine learning', 'học máy', 'trí tuệ nhân tạo', 'AI', 'Python', 'hướng dẫn', 'K2AiHub']
@@ -23,15 +23,15 @@ Machine Learning thường được chia thành ba loại chính:
     - **Ý tưởng:** Bạn dạy máy tính bằng dữ liệu đã được "gán nhãn". Giống như bạn đưa cho một đứa trẻ một chồng ảnh có ghi "đây là mèo", "đây là chó".
     - **Dữ liệu:** Bao gồm các "đặc trưng" (features) và một "nhãn" (label) hoặc "kết quả" (outcome) tương ứng.
     - **Ví dụ:**
-        - **Phân loại (Classification):** Dự đoán một email là "thư rác" hay "không phải thư rác" (nhãn là loại email).
-        - **Hồi quy (Regression):** Dự đoán giá của một ngôi nhà dựa trên diện tích, số phòng ngủ (nhãn là giá nhà).
+      - **Phân loại (Classification):** Dự đoán một email là "thư rác" hay "không phải thư rác" (nhãn là loại email).
+      - **Hồi quy (Regression):** Dự đoán giá của một ngôi nhà dựa trên diện tích, số phòng ngủ (nhãn là giá nhà).
     - **Đây là loại hình phổ biến nhất trong Machine Learning.**
 
 2.  **Học Không Giám Sát (Unsupervised Learning):**
     - **Ý tưởng:** Bạn đưa cho máy tính dữ liệu không có nhãn và để nó tự tìm ra các cấu trúc hoặc quy luật ẩn bên trong.
     - **Ví dụ:**
-        - **Phân cụm (Clustering):** Tự động nhóm các khách hàng có hành vi mua sắm giống nhau thành các cụm để marketing hiệu quả hơn.
-        - **Phát hiện bất thường (Anomaly Detection):** Tìm ra các giao dịch thẻ tín dụng bất thường có thể là gian lận.
+      - **Phân cụm (Clustering):** Tự động nhóm các khách hàng có hành vi mua sắm giống nhau thành các cụm để marketing hiệu quả hơn.
+      - **Phát hiện bất thường (Anomaly Detection):** Tìm ra các giao dịch thẻ tín dụng bất thường có thể là gian lận.
 
 3.  **Học Tăng Cường (Reinforcement Learning):**
     - **Ý tưởng:** Dạy máy tính thông qua phương pháp "thử và sai". Máy tính (gọi là "agent") sẽ thực hiện các hành động trong một môi trường để tối đa hóa "phần thưởng".

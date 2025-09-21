@@ -130,6 +130,46 @@ export const vietnameseHealthcareLessons: VietnameseHealthcareLesson[] = [
         answer:
           'Không. Telemedicine rất hiệu quả cho việc tư vấn, theo dõi các bệnh mãn tính, chăm sóc sức khỏe tâm thần và các vấn đề không khẩn cấp. Tuy nhiên, nó không thể thay thế việc khám trực tiếp trong các trường hợp cấp cứu, cần làm các thủ tục, hoặc các chẩn đoán đòi hỏi sự thăm khám vật lý.',
       },
+      {
+        question: 'AI được ứng dụng trong chẩn đoán hình ảnh y tế như thế nào?',
+        answer:
+          'AI, đặc biệt là các mô hình học sâu (deep learning), được "huấn luyện" trên hàng triệu hình ảnh y tế (như X-quang, CT scan, MRI) đã được chẩn đoán bởi các chuyên gia. Sau đó, AI có thể tự động phát hiện các dấu hiệu bất thường trong các hình ảnh mới, ví dụ như khoanh vùng các khối u tiềm năng hoặc phát hiện sớm các dấu hiệu của bệnh lao phổi. Nó hoạt động như một "trợ lý" giúp bác sĩ chẩn đoán nhanh và chính xác hơn.',
+      },
+      {
+        question: 'Healthtech là gì?',
+        answer:
+          'Healthtech (Healthcare Technology) là một thuật ngữ rộng, chỉ việc sử dụng công nghệ để cải thiện việc cung cấp, thanh toán và/hoặc tiêu thụ các dịch vụ chăm sóc sức khỏe. Nó bao gồm y tế số (digital health), công nghệ sinh học (biotech), thiết bị y tế (medical devices), và nhiều hơn nữa.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo an toàn và bảo mật cho dữ liệu y tế?',
+        answer:
+          'Đây là một ưu tiên hàng đầu. Các giải pháp bao gồm: mã hóa dữ liệu cả khi lưu trữ và khi truyền đi, sử dụng hệ thống xác thực đa yếu tố để kiểm soát truy cập, tuân thủ các tiêu chuẩn quốc tế như HIPAA (của Mỹ), và xây dựng các quy định pháp lý rõ ràng (như Luật An ninh mạng và Luật Khám chữa bệnh của Việt Nam) về việc xử lý dữ liệu y tế.',
+      },
+      {
+        question: 'Thiết bị đeo thông minh (wearables) có vai trò gì trong y tế số?',
+        answer:
+          'Các thiết bị như đồng hồ thông minh hay vòng đeo tay sức khỏe có thể liên tục theo dõi các chỉ số quan trọng như nhịp tim, nồng độ oxy trong máu (SpO2), chất lượng giấc ngủ, và mức độ hoạt động. Dữ liệu này giúp người dùng theo dõi sức khỏe chủ động và cung cấp cho bác sĩ thông tin hữu ích để theo dõi các bệnh mãn tính từ xa.',
+      },
+      {
+        question: 'Thách thức lớn nhất khi triển khai y tế số ở vùng nông thôn Việt Nam là gì?',
+        answer:
+          'Các thách thức chính bao gồm: hạ tầng internet chưa ổn định, người dân (đặc biệt là người lớn tuổi) chưa quen thuộc với công nghệ số, và thiếu hụt các cơ sở y tế địa phương có đủ trang thiết bị và nhân lực để kết nối với hệ thống y tế từ xa.',
+      },
+      {
+        question: 'Genomics (Hệ gen học) và y học cá thể hóa là gì?',
+        answer:
+          'Genomics là việc nghiên cứu toàn bộ bộ gen của một người. Dựa trên thông tin di truyền này, y học cá thể hóa (personalized medicine) hướng tới việc "may đo" các phương pháp điều trị và phòng ngừa bệnh tật cho từng cá nhân cụ thể, thay vì áp dụng một phác đồ chung cho tất cả mọi người. Ví dụ, lựa chọn loại thuốc ung thư hiệu quả nhất dựa trên đột biến gen của khối u.',
+      },
+      {
+        question: 'Blockchain có thể được ứng dụng trong y tế như thế nào?',
+        answer:
+          'Blockchain có thể tạo ra một hệ thống an toàn và minh bạch để quản lý bệnh án điện tử, cho phép bệnh nhân kiểm soát hoàn toàn việc ai có thể truy cập dữ liệu sức khỏe của mình. Nó cũng có thể được dùng để truy xuất nguồn gốc thuốc, chống lại nạn thuốc giả.',
+      },
+      {
+        question: 'Sự khác biệt giữa EMR và EHR là gì?',
+        answer:
+          'EMR (Electronic Medical Record) là bệnh án y tế điện tử, là phiên bản số của bệnh án giấy tại một cơ sở y tế duy nhất. EHR (Electronic Health Record) là hồ sơ sức khỏe điện tử, có phạm vi rộng hơn, được thiết kế để chia sẻ thông tin của bệnh nhân giữa nhiều nhà cung cấp dịch vụ y tế khác nhau. Về cơ bản, EHR là một tập hợp các EMR.',
+      },
     ],
     resources: [
       {

@@ -133,6 +133,42 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
         answer:
           'Bắt đầu bằng cách tìm kiếm tên của bạn trên Google. Kiểm tra cài đặt quyền riêng tư trên các tài khoản mạng xã hội. Sử dụng các dịch vụ như Have I Been Pwned để xem email của bạn có bị lộ trong các vụ rò rỉ dữ liệu không. Thường xuyên xem lại các ứng dụng và dịch vụ bạn đã cấp quyền truy cập vào dữ liệu của mình.',
       },
+      {
+        question: 'Xóa một bài đăng có làm nó biến mất hoàn toàn không?',
+        answer: 'Không hẳn. Mặc dù bạn xóa nó khỏi trang cá nhân, nhưng nó có thể đã được người khác lưu lại, chụp màn hình, hoặc được các công cụ lưu trữ web ghi lại. Quy tắc vàng là: "Đừng đăng bất cứ thứ gì mà bạn không muốn nó tồn tại mãi mãi".'
+      },
+      {
+        question: 'Tại sao nhà tuyển dụng lại quan tâm đến dấu chân số?',
+        answer: 'Dấu chân số của bạn cung cấp cho nhà tuyển dụng một cái nhìn chân thực hơn về con người bạn ngoài CV. Nó cho thấy kỹ năng giao tiếp, sự chuyên nghiệp, sở thích và cách bạn tương tác với người khác. Một dấu chân số tích cực có thể là một lợi thế cạnh tranh lớn.'
+      },
+      {
+        question: 'Làm thế nào để xây dựng một dấu chân số tích cực?',
+        answer: 'Hãy chia sẻ những thành tựu, kiến thức và nội dung có giá trị. Tham gia các cuộc thảo luận một cách văn minh, tôn trọng. Thể hiện sự chuyên nghiệp trên các nền tảng như LinkedIn. Tránh đăng tải những nội dung tiêu cực, gây tranh cãi hoặc thiếu suy nghĩ.'
+      },
+      {
+        question: 'Danh tính số (digital identity) là gì?',
+        answer: 'Danh tính số là tập hợp các thông tin và thuộc tính của bạn tồn tại trên không gian mạng. Nó bao gồm tên người dùng, hồ sơ cá nhân, các hoạt động và tương tác của bạn. Quản lý tốt danh tính số là một phần quan trọng của việc trở thành công dân số có trách nhiệm.'
+      },
+      {
+        question: 'Sự khác biệt giữa danh tiếng trực tuyến và dấu chân số là gì?',
+        answer: 'Dấu chân số là tập hợp dữ liệu bạn để lại. Danh tiếng trực tuyến là cách người khác diễn giải và cảm nhận về dấu chân số đó. Bạn có thể kiểm soát dấu chân số của mình, nhưng danh tiếng trực tuyến còn phụ thuộc vào cách người khác nhìn nhận nó.'
+      },
+      {
+        question: 'Trẻ em có dấu chân số không?',
+        answer: 'Có. Ngay cả khi cha mẹ đăng ảnh của con mình lên mạng, đó cũng là một phần dấu chân số của đứa trẻ. Điều quan trọng là cha mẹ phải nhận thức được điều này và bảo vệ quyền riêng tư cho con cái mình.'
+      },
+      {
+        question: 'Sharenting là gì và tại sao nó lại gây tranh cãi?',
+        answer: 'Sharenting là thuật ngữ chỉ việc cha mẹ thường xuyên chia sẻ thông tin, hình ảnh của con cái lên mạng xã hội. Nó gây tranh cãi vì có thể vi phạm quyền riêng tư của đứa trẻ, tạo ra một dấu chân số mà chúng không đồng ý, và tiềm ẩn các rủi ro về an toàn.'
+      },
+      {
+        question: 'Làm cách nào để giảm thiểu dấu chân số bị động?',
+        answer: 'Bạn có thể sử dụng các trình duyệt tập trung vào quyền riêng tư (như DuckDuckGo, Brave), sử dụng VPN để che giấu địa chỉ IP, từ chối các cookie không cần thiết trên các trang web, và thường xuyên xem lại quyền của các ứng dụng đã cài đặt trên điện thoại.'
+      },
+      {
+        question: 'Quyền được lãng quên (Right to be Forgotten) là gì?',
+        answer: 'Đây là một nguyên tắc pháp lý, nổi bật trong luật GDPR của Châu Âu, cho phép các cá nhân yêu cầu các tổ chức xóa dữ liệu cá nhân của họ trong một số trường hợp nhất định. Nó trao cho người dùng nhiều quyền kiểm soát hơn đối với dấu chân số của họ.'
+      }
     ],
   },
   {
@@ -206,6 +242,42 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
         answer:
           'Xác thực hai yếu tố là một lớp bảo mật bổ sung yêu cầu bạn cung cấp hai hình thức nhận dạng khác nhau để đăng nhập. Ví dụ: mật khẩu của bạn (yếu tố đầu tiên) và một mã số được gửi đến điện thoại của bạn (yếu tố thứ hai). Nó cực kỳ quan trọng vì ngay cả khi kẻ xấu có được mật khẩu của bạn, họ vẫn không thể truy cập vào tài khoản nếu không có thiết bị của bạn.',
       },
+      {
+        question: 'VPN (Mạng riêng ảo) là gì và nó giúp bảo vệ tôi như thế nào?',
+        answer: 'VPN tạo ra một "đường hầm" mã hóa cho kết nối internet của bạn. Nó che giấu địa chỉ IP thật của bạn và ngăn chặn người khác (kể cả nhà cung cấp dịch vụ Internet) theo dõi hoạt động trực tuyến của bạn. Nó đặc biệt hữu ích khi sử dụng Wi-Fi công cộng.'
+      },
+      {
+        question: 'Phishing (lừa đảo giả mạo) là gì?',
+        answer: 'Phishing là hình thức tấn công mà kẻ gian giả mạo thành một tổ chức uy tín (như ngân hàng, mạng xã hội) để lừa bạn tiết lộ thông tin nhạy cảm như mật khẩu, số thẻ tín dụng. Chúng thường được thực hiện qua email, tin nhắn văn bản hoặc các trang web giả mạo.'
+      },
+      {
+        question: 'Làm thế nào để nhận biết một email phishing?',
+        answer: 'Hãy cảnh giác với các dấu hiệu như: địa chỉ email người gửi trông đáng ngờ, lời lẽ khẩn cấp hoặc đe dọa, các lỗi chính tả và ngữ pháp, các liên kết yêu cầu bạn đăng nhập hoặc cung cấp thông tin cá nhân. Luôn kiểm tra kỹ trước khi nhấp vào bất cứ thứ gì.'
+      },
+      {
+        question: 'Tại sao tôi không nên sử dụng cùng một mật khẩu cho nhiều trang web?',
+        answer: 'Nếu một trong những trang web đó bị rò rỉ dữ liệu, kẻ tấn công sẽ có được mật khẩu của bạn. Sau đó, chúng sẽ thử dùng mật khẩu đó để đăng nhập vào tất cả các tài khoản khác của bạn (email, ngân hàng, v.v.). Đây được gọi là tấn công "nhồi thông tin xác thực" (credential stuffing).'
+      },
+      {
+        question: 'Trình quản lý mật khẩu hoạt động như thế nào?',
+        answer: 'Trình quản lý mật khẩu là một ứng dụng giúp bạn tạo, lưu trữ và tự động điền các mật khẩu mạnh và duy nhất cho mỗi tài khoản. Bạn chỉ cần nhớ một "mật khẩu chủ" để mở khóa kho mật khẩu đã được mã hóa của mình. Đây là một công cụ rất được khuyến khích.'
+      },
+      {
+        question: 'Dữ liệu của tôi có thực sự an toàn trên "đám mây" không?',
+        answer: 'Các nhà cung cấp dịch vụ đám mây lớn (như Google Drive, iCloud) có các biện pháp bảo mật rất mạnh. Tuy nhiên, mắt xích yếu nhất thường là người dùng. Hãy đảm bảo bạn sử dụng mật khẩu mạnh và bật 2FA cho các tài khoản đám mây của mình để giữ an toàn cho dữ liệu.'
+      },
+      {
+        question: 'Malware (phần mềm độc hại) là gì?',
+        answer: 'Malware là một thuật ngữ chung cho bất kỳ phần mềm nào được thiết kế để gây hại cho máy tính của bạn, bao gồm virus, trojan, ransomware (mã độc tống tiền), và spyware (phần mềm gián điệp). Hãy luôn cài đặt một chương trình chống virus uy tín và cẩn thận với những gì bạn tải xuống.'
+      },
+      {
+        question: 'Tôi nên làm gì nếu tài khoản mạng xã hội của tôi bị hack?',
+        answer: 'Hãy hành động nhanh chóng. Cố gắng đặt lại mật khẩu ngay lập tức. Nếu không thể, hãy liên hệ với bộ phận hỗ trợ của nền tảng đó. Thông báo cho bạn bè và người thân của bạn rằng tài khoản của bạn đã bị xâm phạm để họ không bị lừa bởi kẻ tấn công.'
+      },
+      {
+        question: 'Doxing là gì và làm thế nào để phòng tránh?',
+        answer: 'Doxing là hành vi công khai và phát tán thông tin cá nhân của một người nào đó lên mạng mà không có sự cho phép của họ, thường với mục đích xấu. Để phòng tránh, hãy hạn chế chia sẻ thông tin nhạy cảm, sử dụng tên người dùng khác nhau trên các nền tảng và kiểm tra cài đặt quyền riêng tư của bạn một cách cẩn thận.'
+      }
     ],
   },
   {
@@ -286,6 +358,38 @@ export const DigitalCitizenshipLessons: DigitalCitizenshipLesson[] = [
         answer:
           'Hãy chia sẻ những nội dung thể hiện sự quan tâm của bạn đến ngành nghề, các dự án bạn đã làm, hoặc các bài viết thể hiện tư duy tích cực. Tham gia các cuộc thảo luận một cách văn minh. Sử dụng LinkedIn để xây dựng một hồ sơ chuyên nghiệp. Về cơ bản, hãy biến Internet thành nơi để thể hiện phiên bản tốt nhất của bạn.',
       },
+      {
+        question: 'Tin giả (Fake News) là gì?',
+        answer: 'Tin giả là những thông tin sai sự thật được cố tình tạo ra và lan truyền với mục đích lừa dối, gây hại hoặc thu lợi. Chúng thường bắt chước hình thức của các tin tức hợp pháp để tăng độ tin cậy.'
+      },
+      {
+        question: 'Làm thế nào để phát hiện tin giả?',
+        answer: 'Hãy kiểm tra nguồn tin, tìm kiếm các báo cáo tương tự từ các hãng tin uy tín, chú ý đến các tiêu đề giật gân và lỗi chính tả, và sử dụng các công cụ kiểm tra thông tin (fact-checking) như Snopes hoặc các tổ chức kiểm chứng tại địa phương.'
+      },
+      {
+        question: 'Thiên kiến xác nhận (Confirmation Bias) là gì?',
+        answer: 'Đó là xu hướng tâm lý của con người chỉ tìm kiếm, diễn giải và ghi nhớ những thông tin xác nhận cho niềm tin sẵn có của mình, trong khi bỏ qua những thông tin trái ngược. Đây là một trong những lý do chính khiến tin giả dễ dàng lan truyền.'
+      },
+      {
+        question: 'Sự khác biệt giữa Misinformation và Disinformation là gì?',
+        answer: 'Misinformation là thông tin sai lệch được chia sẻ mà không có ý định gây hại (ví dụ: một người chia sẻ một tin đồn mà họ tin là thật). Disinformation là thông tin sai lệch được cố tình tạo ra và lan truyền để gây hại hoặc lừa dối.'
+      },
+      {
+        question: 'Làm thế nào để tranh luận một cách văn minh trên mạng?',
+        answer: 'Hãy tập trung vào việc phản biện ý tưởng, chứ không phải công kích cá nhân. Sử dụng bằng chứng và lập luận logic. Lắng nghe quan điểm của người khác và sẵn sàng thay đổi ý kiến của mình. Biết khi nào nên dừng lại nếu cuộc thảo luận trở nên quá tiêu cực.'
+      },
+      {
+        question: '"Bong bóng bộ lọc" (Filter Bubble) là gì?',
+        answer: '"Bong bóng bộ lọc" là trạng thái mà các thuật toán trên mạng xã hội chỉ hiển thị cho bạn những nội dung mà chúng nghĩ rằng bạn sẽ thích, dựa trên lịch sử hoạt động của bạn. Điều này có thể khiến bạn bị cô lập khỏi các quan điểm và thông tin trái chiều.'
+      },
+      {
+        question: 'Tại sao việc đọc nhiều nguồn tin khác nhau lại quan trọng?',
+        answer: 'Việc đọc nhiều nguồn tin từ các góc độ chính trị và quan điểm khác nhau giúp bạn có một cái nhìn toàn diện hơn về một vấn đề, thoát khỏi "bong bóng bộ lọc" và đưa ra những kết luận sáng suốt hơn.'
+      },
+      {
+        question: 'Deepfake là gì và tại sao nó nguy hiểm?',
+        answer: 'Deepfake là công nghệ sử dụng AI để tạo ra các video hoặc âm thanh giả mạo cực kỳ chân thực, ví dụ như ghép mặt một người vào video của người khác. Nó nguy hiểm vì có thể được sử dụng để tạo ra tin giả, bôi nhọ danh dự, hoặc lừa đảo, khiến việc phân biệt thật giả trở nên khó khăn hơn bao giờ hết.'
+      }
     ],
   },
 ];

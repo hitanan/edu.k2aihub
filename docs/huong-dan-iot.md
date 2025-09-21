@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn IoT (Internet of Things): Kết Nối Thế Giới Thực Lên Internet'
 description: 'Tìm hiểu các khái niệm cơ bản về IoT, từ cảm biến, vi điều khiển đến nền tảng đám mây. Bắt đầu xây dựng dự án IoT đầu tiên của bạn để giám sát và điều khiển thiết bị từ xa.'
-date: '2025-10-11'
+date: '2025-09-11'
 author: 'K2AiHub Tech Team'
 category: 'Hướng Dẫn'
 tags: ['IoT', 'Internet of Things', 'Arduino', 'ESP32', 'cảm biến', 'điện toán đám mây', 'hướng dẫn', 'K2AiHub']
@@ -14,6 +14,7 @@ readingTime: '22 phút đọc'
 Hãy tưởng tượng một thế giới nơi mọi vật dụng quanh bạn, từ chiếc đèn bàn, tủ lạnh, đến máy tưới cây trong vườn, đều có thể "nói chuyện" với nhau và với bạn qua Internet. Đó chính là **Internet of Things (IoT)** - Mạng lưới vạn vật kết nối.
 
 IoT không phải là một công nghệ tương lai xa vời. Nó đã và đang hiện hữu trong cuộc sống của chúng ta:
+
 - **Nhà thông minh (Smart Home):** Bạn có thể bật/tắt đèn, điều chỉnh nhiệt độ điều hòa từ xa qua điện thoại.
 - **Thiết bị đeo thông minh (Wearables):** Đồng hồ theo dõi sức khỏe, đo nhịp tim và gửi dữ liệu về điện thoại của bạn.
 - **Nông nghiệp thông minh:** Cảm biến độ ẩm đất tự động kích hoạt hệ thống tưới tiêu, giúp tiết kiệm nước và tăng năng suất.
@@ -43,6 +44,7 @@ Dự án này sẽ giúp bạn hiểu rõ cách các thành phần IoT hoạt đ
 ### Bước 1: Chuẩn Bị Phần Cứng
 
 Bạn sẽ cần:
+
 1.  **Vi điều khiển có kết nối Wi-Fi:** **ESP32** hoặc **ESP8266 (NodeMCU)** là những lựa chọn tuyệt vời, giá rẻ và mạnh mẽ. ESP32 được khuyến khích vì có nhiều tính năng hơn.
 2.  **Cảm biến nhiệt độ và độ ẩm:** **DHT11** hoặc **DHT22** là loại phổ biến, dễ sử dụng và rất rẻ. DHT22 có độ chính xác cao hơn.
 3.  **Dây cắm (Jumper wires)** và **Breadboard (Bảng mạch cắm)**.
@@ -50,15 +52,17 @@ Bạn sẽ cần:
 ### Bước 2: Kết Nối Mạch
 
 Sơ đồ kết nối rất đơn giản:
+
 - Nối chân **VCC** (hoặc `+`) của cảm biến DHT với chân **3.3V** trên ESP32.
 - Nối chân **GND** (hoặc `-`) của cảm biến DHT với chân **GND** trên ESP32.
 - Nối chân **DATA** (hoặc `OUT`) của cảm biến DHT với một chân Digital bất kỳ trên ESP32 (ví dụ: **D4** hoặc **GPIO 4**).
 
-*(Để đảm bảo tín hiệu ổn định, bạn có thể nối thêm một điện trở 10kΩ giữa chân VCC và chân DATA của cảm biến DHT, nhưng với khoảng cách dây ngắn, nó thường hoạt động tốt mà không cần điện trở này).*
+_(Để đảm bảo tín hiệu ổn định, bạn có thể nối thêm một điện trở 10kΩ giữa chân VCC và chân DATA của cảm biến DHT, nhưng với khoảng cách dây ngắn, nó thường hoạt động tốt mà không cần điện trở này)._
 
 ### Bước 3: Lựa Chọn Nền Tảng IoT Cloud
 
 Có nhiều dịch vụ miễn phí và dễ sử dụng cho người mới bắt đầu:
+
 - **Blynk:** Rất trực quan, cho phép bạn kéo-thả để tạo giao diện ứng dụng trên điện thoại.
 - **ThingSpeak:** Được phát triển bởi MathWorks, rất mạnh về phân tích và trực quan hóa dữ liệu theo thời gian.
 - **Adafruit IO:** Một nền tảng đơn giản, dễ dùng với các API rõ ràng.
@@ -161,6 +165,7 @@ Chúng ta sẽ sử dụng **Blynk** trong hướng dẫn này vì sự đơn gi
 ## Kết Luận
 
 Chúc mừng! Bạn vừa hoàn thành dự án IoT đầu tiên của mình. Từ đây, bạn có thể mở rộng dự án theo vô vàn hướng khác nhau:
+
 - **Thêm cơ cấu chấp hành:** Gắn thêm một rơ-le và một bóng đèn, sau đó thêm một "Button" widget trên Blynk để bật/tắt đèn từ xa.
 - **Thiết lập cảnh báo:** Sử dụng widget "Notification" của Blynk để nhận thông báo khi nhiệt độ quá cao.
 - **Lưu trữ và phân tích dữ liệu:** Khám phá các nền tảng như ThingSpeak để vẽ biểu đồ dữ liệu theo thời gian và phân tích xu hướng.

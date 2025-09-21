@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Khoa Học Dữ Liệu Môi Trường: Dùng Dữ Liệu Để Bảo Vệ Hành Tinh'
 description: 'Khám phá lĩnh vực Khoa học Dữ liệu Môi trường, học cách áp dụng các kỹ năng phân tích, lập trình và trực quan hóa để giải quyết các vấn đề cấp bách về môi trường và khí hậu.'
-date: '2025-10-30'
+date: '2025-09-30'
 author: 'K2AiHub Data Science Team'
 category: 'Hướng Dẫn'
 tags: ['khoa học dữ liệu', 'môi trường', 'phân tích dữ liệu', 'biến đổi khí hậu', 'bền vững', 'hướng dẫn', 'K2AiHub']
@@ -24,12 +24,12 @@ Bài viết này của **K2AiHub** sẽ hướng dẫn bạn về các khái ni�
 Dữ liệu môi trường đến từ rất nhiều nguồn khác nhau, thường được gọi là "dữ liệu lớn" (Big Data) do khối lượng, sự đa dạng và tốc độ của chúng.
 
 - **Viễn thám (Remote Sensing):**
-    - **Vệ tinh:** Các vệ tinh như Landsat (NASA) và Sentinel (ESA) liên tục chụp ảnh Trái Đất, cung cấp dữ liệu vô giá về lớp phủ thực vật, nhiệt độ bề mặt biển, nồng độ băng ở hai cực, và các khí trong khí quyển (như CO₂, Methane).
-    - **Drone (Máy bay không người lái):** Cung cấp hình ảnh có độ phân giải cực cao cho các khu vực nhỏ, hữu ích cho việc giám sát đa dạng sinh học hoặc đánh giá thiệt hại sau thiên tai.
+  - **Vệ tinh:** Các vệ tinh như Landsat (NASA) và Sentinel (ESA) liên tục chụp ảnh Trái Đất, cung cấp dữ liệu vô giá về lớp phủ thực vật, nhiệt độ bề mặt biển, nồng độ băng ở hai cực, và các khí trong khí quyển (như CO₂, Methane).
+  - **Drone (Máy bay không người lái):** Cung cấp hình ảnh có độ phân giải cực cao cho các khu vực nhỏ, hữu ích cho việc giám sát đa dạng sinh học hoặc đánh giá thiệt hại sau thiên tai.
 - **Trạm quan trắc tại chỗ (In-situ Sensors):**
-    - **Trạm thời tiết:** Đo nhiệt độ, lượng mưa, tốc độ gió.
-    - **Trạm theo dõi chất lượng không khí:** Đo nồng độ các chất ô nhiễm như PM2.5, O₃.
-    - **Phao và cảm biến trên biển:** Đo nhiệt độ, độ mặn, và độ pH của nước biển.
+  - **Trạm thời tiết:** Đo nhiệt độ, lượng mưa, tốc độ gió.
+  - **Trạm theo dõi chất lượng không khí:** Đo nồng độ các chất ô nhiễm như PM2.5, O₃.
+  - **Phao và cảm biến trên biển:** Đo nhiệt độ, độ mặn, và độ pH của nước biển.
 - **Mô hình khí hậu:** Các siêu máy tính chạy các mô hình phức tạp để mô phỏng hệ thống khí hậu của Trái Đất, tạo ra các bộ dữ liệu dự báo cho tương lai.
 - **Dữ liệu từ cộng đồng (Citizen Science):** Các ứng dụng như iNaturalist cho phép người dân trên toàn thế giới ghi nhận và xác định các loài động thực vật họ nhìn thấy, tạo ra một bộ dữ liệu khổng lồ về đa dạng sinh học.
 
@@ -38,13 +38,13 @@ Dữ liệu môi trường đến từ rất nhiều nguồn khác nhau, thườ
 Để xử lý và phân tích các bộ dữ liệu khổng lồ này, bạn sẽ cần một bộ công cụ mạnh mẽ.
 
 - **Ngôn ngữ lập trình:**
-    - **Python:** Là ngôn ngữ phổ biến nhất trong khoa học dữ liệu nói chung và khoa học dữ liệu môi trường nói riêng. Nó có một hệ sinh thái thư viện cực kỳ phong phú.
-    - **R:** Một ngôn ngữ mạnh mẽ khác, đặc biệt được ưa chuộng trong giới học thuật và thống kê.
+  - **Python:** Là ngôn ngữ phổ biến nhất trong khoa học dữ liệu nói chung và khoa học dữ liệu môi trường nói riêng. Nó có một hệ sinh thái thư viện cực kỳ phong phú.
+  - **R:** Một ngôn ngữ mạnh mẽ khác, đặc biệt được ưa chuộng trong giới học thuật và thống kê.
 - **Các thư viện Python thiết yếu:**
-    - **Phân tích dữ liệu:** `Pandas` (để làm việc với dữ liệu dạng bảng), `NumPy` (cho tính toán số học).
-    - **Dữ liệu không gian địa lý (Geospatial Data):** `GeoPandas`, `Rasterio`, `Shapely` (để làm việc với dữ liệu bản đồ, ảnh vệ tinh).
-    - **Trực quan hóa dữ liệu:** `Matplotlib`, `Seaborn`, `Plotly` (để tạo ra các biểu đồ và đồ thị).
-    - **Học máy (Machine Learning):** `Scikit-learn` (cho các thuật toán học máy cổ điển), `TensorFlow`/`PyTorch` (cho học sâu).
+  - **Phân tích dữ liệu:** `Pandas` (để làm việc với dữ liệu dạng bảng), `NumPy` (cho tính toán số học).
+  - **Dữ liệu không gian địa lý (Geospatial Data):** `GeoPandas`, `Rasterio`, `Shapely` (để làm việc với dữ liệu bản đồ, ảnh vệ tinh).
+  - **Trực quan hóa dữ liệu:** `Matplotlib`, `Seaborn`, `Plotly` (để tạo ra các biểu đồ và đồ thị).
+  - **Học máy (Machine Learning):** `Scikit-learn` (cho các thuật toán học máy cổ điển), `TensorFlow`/`PyTorch` (cho học sâu).
 
 ## 3. Quy Trình Làm Việc
 

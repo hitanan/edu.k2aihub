@@ -233,6 +233,41 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
         answer:
           'An toàn và hiệu quả. AI giúp bạn lọc và tổng hợp thông tin từ hàng ngàn nguồn khác nhau dựa trên hồ sơ của bạn, giúp bạn không bỏ lỡ các cơ hội "ngách". Tuy nhiên, hãy luôn kiểm tra lại thông tin trên trang web chính thức của trường hoặc quỹ học bổng trước khi nộp đơn.',
       },
+      {
+        question: 'Làm thế nào để AI giúp tôi chuẩn bị cho buổi phỏng vấn visa?',
+        answer:
+          'Bạn có thể sử dụng AI để mô phỏng các cuộc phỏng vấn. AI có thể đóng vai một nhân viên lãnh sự, đặt các câu hỏi phỏng vấn phổ biến và đưa ra phản hồi về sự rõ ràng, tự tin và nội dung câu trả lời của bạn, giúp bạn chuẩn bị tốt hơn cho buổi phỏng vấn thực tế.',
+      },
+      {
+        question: 'AI có thể giúp tôi chọn trường đại học phù hợp không?',
+        answer:
+          'Chắc chắn. Bằng cách cung cấp cho AI các thông tin như điểm số, ngành học mong muốn, ngân sách và sở thích, nó có thể phân tích và đề xuất một danh sách các trường phù hợp, bao gồm cả những trường mà bạn có thể chưa từng nghe tới, giúp mở rộng lựa chọn của bạn.',
+      },
+      {
+        question: 'Sự khác biệt giữa việc dùng Grammarly và dùng AI như ChatGPT để sửa bài luận là gì?',
+        answer:
+          'Grammarly chủ yếu tập trung vào việc sửa lỗi ngữ pháp, chính tả và văn phong. ChatGPT có thể làm điều đó, nhưng còn có thể đưa ra các gợi ý về cấu trúc, lập luận, và thậm chí viết lại các đoạn văn để làm cho chúng mạch lạc và thuyết phục hơn. Nó giống như một người biên tập viên hơn là một công cụ kiểm tra lỗi.',
+      },
+      {
+        question: 'Tôi có cần trả phí để sử dụng các công cụ AI này không?',
+        answer:
+          'Nhiều công cụ AI mạnh mẽ như ChatGPT, Claude, Perplexity đều có phiên bản miễn phí rất hữu dụng. Các công cụ chuyên biệt như ELSA Speak cũng thường có bản dùng thử hoặc các tính năng miễn phí. Bạn hoàn toàn có thể chuẩn bị tốt cho hành trình du học của mình với các công cụ miễn phí này.',
+      },
+      {
+        question: 'AI có thể giúp tôi dịch thuật các tài liệu học thuật không?',
+        answer:
+          'Có, các công cụ dịch thuật AI như Google Translate hay DeepL ngày càng trở nên chính xác. Tuy nhiên, đối với các tài liệu quan trọng, bạn nên sử dụng AI như một bước khởi đầu và sau đó nhờ người có chuyên môn kiểm tra lại để đảm bảo tính chính xác tuyệt đối về mặt thuật ngữ và ngữ cảnh.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo tính nguyên bản khi sử dụng AI viết luận?',
+        answer:
+          'Hãy coi AI là một người bạn để thảo luận. Lấy ý tưởng từ nó, yêu cầu nó xây dựng dàn ý, nhưng hãy tự viết bằng giọng văn của chính bạn. Sau khi viết xong, bạn có thể nhờ AI đọc lại và đề xuất cải tiến. Luôn sử dụng các công cụ kiểm tra đạo văn (plagiarism checker) trước khi nộp bài.',
+      },
+      {
+        question: 'Ngoài IELTS, AI có thể giúp tôi luyện thi các chứng chỉ khác như SAT/GRE/GMAT không?',
+        answer:
+          'Chắc chắn. AI có thể tạo ra vô số câu hỏi luyện tập, giải thích các đáp án sai, phân tích các điểm yếu của bạn trong từng phần thi và tạo ra một lộ trình ôn luyện cá nhân hóa để bạn tập trung vào những kỹ năng cần cải thiện nhất, giúp việc ôn thi hiệu quả hơn rất nhiều.',
+      },
     ],
   },
   {
@@ -360,380 +395,489 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
         answer:
           'Không nhất thiết. Nhiều công cụ AI hiện đại được thiết kế với giao diện thân thiện với người dùng, cho phép bạn tận dụng sức mạnh của AI mà không cần biết code. Ví dụ, các công cụ marketing tự động như HubSpot hay Mailchimp đã tích hợp sẵn các tính năng AI dễ sử dụng.',
       },
+      {
+        question: 'AI có thể tự động hóa việc đăng bài lên mạng xã hội không?',
+        answer:
+          'Có. Các công cụ như Hootsuite, Buffer có thể tích hợp AI để gợi ý nội dung, tìm thời điểm đăng bài tốt nhất và tự động đăng bài lên nhiều nền tảng khác nhau. Điều này giúp duy trì sự hiện diện trực tuyến của doanh nghiệp một cách nhất quán và tiết kiệm thời gian.',
+      },
+      {
+        question: 'Làm thế nào AI có thể giúp tôi trong việc quản lý email marketing?',
+        answer:
+          'AI có thể tự động phân loại khách hàng (segmentation), cá nhân hóa tiêu đề và nội dung email cho từng nhóm đối tượng, và gửi email vào thời điểm mà người nhận có khả năng mở cao nhất. Nó cũng có thể tự động dọn dẹp danh sách email bằng cách loại bỏ các địa chỉ không hợp lệ.',
+      },
+      {
+        question: 'AI có thể giúp dự báo doanh thu không?',
+        answer:
+          'Có. Bằng cách phân tích dữ liệu bán hàng trong quá khứ, xu hướng thị trường và các yếu tố bên ngoài (ví dụ: mùa vụ, ngày lễ), các mô hình AI có thể đưa ra các dự báo về doanh thu trong tương lai với độ chính xác ngày càng cao, giúp doanh nghiệp lập kế hoạch tốt hơn.',
+      },
+      {
+        question: 'Tự động hóa quy trình tuyển dụng bằng AI hoạt động như thế nào?',
+        answer:
+          'AI có thể tự động đăng tin tuyển dụng, sàng lọc hàng ngàn hồ sơ ứng viên để tìm ra những người phù hợp nhất, lên lịch phỏng vấn và thậm chí sử dụng chatbot để trả lời các câu hỏi phổ biến của ứng viên, giúp bộ phận nhân sự tiết kiệm rất nhiều thời gian.',
+      },
+      {
+        question: 'Zapier và Make.com là gì và chúng liên quan gì đến tự động hóa AI?',
+        answer:
+          'Zapier và Make.com là các nền tảng tự động hóa quy trình làm việc (workflow automation). Chúng cho phép bạn kết nối hàng ngàn ứng dụng khác nhau (ví dụ: Gmail, Slack, Google Sheets) và tạo ra các "luồng" tự động. Khi kết hợp với AI, bạn có thể tạo ra các quy trình cực kỳ mạnh mẽ, ví dụ: "Khi có email mới, dùng AI để tóm tắt nội dung và gửi tóm tắt đó vào kênh Slack".',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu tự động hóa doanh nghiệp của tôi?',
+        answer:
+          'Hãy bắt đầu từ những việc nhỏ và lặp đi lặp lại nhất. Đó có thể là việc trả lời các câu hỏi thường gặp của khách hàng, hoặc việc gửi email cảm ơn sau khi khách hàng mua hàng. Chọn một nền tảng dễ sử dụng, thử nghiệm và đo lường hiệu quả trước khi mở rộng sang các quy trình phức tạp hơn.',
+      },
+      {
+        question: 'Rủi ro lớn nhất của việc tự động hóa bằng AI là gì?',
+        answer:
+          'Rủi ro lớn nhất là "tự động hóa sự ngu ngốc" - tức là tự động hóa một quy trình vốn đã không hiệu quả. Trước khi áp dụng AI, điều quan trọng là phải xem xét và tối ưu hóa quy trình của bạn. Ngoài ra, việc phụ thuộc quá nhiều vào tự động hóa mà mất đi sự tiếp xúc cá nhân với khách hàng cũng là một rủi ro cần cân nhắc.',
+      },
     ],
   },
   {
     id: 'ai-content-creation-monetization',
-    title: 'Sáng tạo và Kiếm tiền từ Nội dung với AI',
+    title: 'AI Content Creation & Monetization - Tạo và Kiếm tiền từ Nội dung AI',
     description:
-      'Tận dụng AI để tạo và kiếm tiền từ nội dung trên các nền tảng: YouTube, TikTok, Instagram, blog và các khóa học trực tuyến.',
+      'Khám phá sức mạnh của AI trong việc tạo ra nội dung sáng tạo và cách kiếm tiền từ nó: viết lách, thiết kế, âm nhạc và video.',
     duration: '220 phút',
-    videoUrl: 'https://www.youtube.com/watch?v=duGOA6ZiGtE',
-    difficulty: 'Trung bình',
-    mainContent: [
-      {
-        heading: 'Kỷ nguyên Sáng tạo Nội dung của AI',
-        details:
-          'Sáng tạo nội dung không còn là cuộc chơi của riêng con người. AI đã trở thành một đối tác sáng tạo, giúp các nhà sáng tạo (content creators) tăng tốc độ sản xuất, đa dạng hóa nội dung và tiếp cận khán giả hiệu quả hơn. Từ việc viết kịch bản video, tạo hình ảnh minh họa, đến việc chỉnh sửa video tự động, AI đang phá vỡ các rào cản kỹ thuật và cho phép bất kỳ ai có ý tưởng đều có thể trở thành nhà sáng tạo.',
-      },
-      {
-        heading: 'Quy trình Sáng tạo Nội dung Tự động',
-        details:
-          'Hãy tưởng tượng một quy trình hoàn toàn tự động: AI phân tích các chủ đề đang thịnh hành trên mạng xã hội. Dựa trên đó, nó viết ra một kịch bản video hấp dẫn. Một AI khác tạo ra giọng nói và hình ảnh/video minh họa phù hợp. Cuối cùng, một công cụ AI chỉnh sửa tất cả lại thành một video hoàn chỉnh, tạo phụ đề và thậm chí viết mô tả và tiêu đề tối ưu SEO cho YouTube. Đây không còn là viễn tưởng mà là một quy trình có thể thực hiện được ngay hôm nay, giúp bạn sản xuất nội dung ở quy mô chưa từng có.',
-      },
-      {
-        heading: 'Kiếm tiền từ Nội dung do AI hỗ trợ',
-        details:
-          'Nội dung chất lượng là nền tảng của mọi chiến lược kiếm tiền. AI giúp bạn tạo ra các khóa học online, sách điện tử, bài viết blog chuyên sâu một cách nhanh chóng, từ đó tạo ra các sản phẩm số để bán. Nó cũng có thể tạo ra nội dung cho các chiến dịch affiliate marketing, viết bài đánh giá sản phẩm, hoặc tạo các video ngắn hấp dẫn trên TikTok/Instagram Reels để thu hút lưu lượng truy cập và tăng doanh thu quảng cáo. Chìa khóa là kết hợp sức mạnh của AI với sự độc đáo và góc nhìn cá nhân của bạn.',
-      },
-      {
-        heading: 'Tối ưu hóa và Tương tác với Khán giả',
-        details:
-          'AI không chỉ giúp tạo nội dung mà còn giúp bạn hiểu rõ hơn về khán giả của mình. Các công cụ phân tích AI có thể cho bạn biết loại nội dung nào được yêu thích nhất, thời điểm đăng bài tốt nhất, và cảm xúc của khán giả về thương hiệu của bạn. Dựa trên đó, bạn có thể điều chỉnh chiến lược nội dung và tạo ra các cuộc thảo luận, câu đố hoặc cuộc thăm dò ý kiến do AI tạo ra để tăng cường sự tương tác và xây dựng một cộng đồng trung thành.',
-      },
-    ],
-    objectives: [
-      'Làm chủ việc tạo nội dung bằng AI cho nhiều nền tảng',
-      'Triển khai các chiến lược kiếm tiền với nội dung được hỗ trợ bởi AI',
-      'Mở rộng quy mô sản xuất nội dung với các quy trình tự động hóa',
-      'Tối ưu hóa sự tương tác của khán giả với phân tích AI',
-    ],
-    prerequisites: [
-      'Kinh nghiệm sáng tạo nội dung',
-      'Hiểu biết về các nền tảng mạng xã hội',
-      'Kỹ năng chỉnh sửa video/âm thanh cơ bản',
-      'Kiến thức về các nền tảng kiếm tiền',
-    ],
-    exercises: [
-      {
-        title: 'Tự động hóa Kênh YouTube với sự hỗ trợ của AI',
-        description: 'Tạo quy trình sản xuất nội dung tự động để phát triển kênh YouTube',
-        difficulty: 'Nâng cao',
-        procedure: [
-          'Nghiên cứu các chủ đề thịnh hành với các công cụ phân tích xu hướng AI',
-          'Tạo kịch bản video với các trợ lý viết AI',
-          'Tạo thumbnail và tiêu đề với các công cụ thiết kế AI',
-          'Tự động hóa việc chỉnh sửa video với các nền tảng video AI',
-          'Tối ưu hóa SEO với nghiên cứu từ khóa AI',
-          'Lên lịch và phân tích hiệu suất với phân tích AI',
-        ],
-      },
-    ],
-    realWorldApplications: [
-      'Kinh doanh toàn thời gian với tư cách là nhà sáng tạo nội dung',
-      'Tạo và bán các khóa học trực tuyến',
-      'Tiếp thị liên kết với nội dung AI',
-      'Xây dựng thương hiệu cá nhân và tầm ảnh hưởng',
-      'Tối ưu hóa việc bán sản phẩm kỹ thuật số',
-    ],
-    relatedGames: [
-      {
-        id: 'game-design-studio-3d',
-        name: 'Game Design Studio 3D',
-        description:
-          'Học cách tạo ra các sản phẩm sáng tạo và quản lý dự án, tương tự như việc xây dựng một kênh nội dung.',
-      },
-    ],
-    aiTools: [
-      'RunwayML để tạo video',
-      'Copy.ai để viết kịch bản',
-      'Canva AI để thiết kế thumbnail',
-      'VidIQ để tối ưu hóa YouTube',
-      'Hootsuite AI để quản lý mạng xã hội',
-    ],
-    vietnamContext: {
-      title: 'Nền kinh tế sáng tạo (Creator Economy) tại Việt Nam',
-      content: [
-        'Việt Nam là một trong những thị trường có tốc độ phát triển nhà sáng tạo nội dung nhanh nhất Đông Nam Á, đặc biệt trên các nền tảng TikTok và YouTube.',
-        'Các công cụ AI giúp các nhà sáng tạo Việt Nam vượt qua rào cản ngôn ngữ, tạo ra nội dung có thể tiếp cận khán giả toàn cầu.',
-        'Thị trường kiếm tiền từ nội dung đang ngày càng đa dạng, từ quảng cáo, affiliate, đến bán sản phẩm số (khóa học, ebook) và merchandise.',
-      ],
-    },
-    careerConnect: {
-      name: 'Anh Nguyễn Thành Nam (Châu Muối)',
-      title: 'Nhà sáng tạo nội dung',
-      company: 'Schannel',
-      imageUrl: 'https://i.pravatar.cc/150?u=chaumuoi',
-      quote:
-        'Công nghệ thay đổi mỗi ngày, và AI là làn sóng lớn nhất. Người làm sáng tạo phải liên tục học hỏi, thử nghiệm để không bị tụt hậu. AI giúp mình làm được nhiều việc hơn, nhanh hơn, nhưng chất riêng và sự kết nối với khán giả vẫn là quan trọng nhất.',
-    },
-    quizzes: [
-      {
-        question: 'Công cụ AI nào có thể giúp bạn tạo video từ văn bản?',
-        options: ['Canva', 'RunwayML', 'VidIQ', 'Hootsuite'],
-        correctAnswerIndex: 1,
-        explanation:
-          'RunwayML là một nền tảng chỉnh sửa video và tạo nội dung bằng AI mạnh mẽ, bao gồm cả tính năng Gen-2 cho phép tạo video từ các câu lệnh văn bản (text-to-video).',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Nội dung do AI tạo ra có bị YouTube/Google phạt không?',
-        answer:
-          'Google và YouTube quan tâm đến chất lượng và giá trị của nội dung hơn là cách nó được tạo ra. Miễn là nội dung của bạn hữu ích, độc đáo và mang lại trải nghiệm tốt cho người dùng, nó sẽ không bị phạt. Vấn đề phát sinh khi người ta dùng AI để tạo ra nội dung rác, spam hàng loạt.',
-      },
-      {
-        question: 'Tôi có thể kiếm tiền từ một kênh YouTube hoàn toàn tự động bằng AI không?',
-        answer:
-          'Về mặt kỹ thuật là có thể, nhưng rất khó để thành công. Khán giả kết nối với cá tính, câu chuyện và góc nhìn độc đáo của nhà sáng tạo. Một kênh hoàn toàn tự động có thể thiếu "linh hồn" và khó xây dựng được một cộng đồng trung thành. Cách tốt nhất là kết hợp hiệu suất của AI với dấu ấn cá nhân của bạn.',
-      },
-      {
-        question: 'AI có thể giúp tôi tìm ra những chủ đề "hot" để sáng tạo nội dung không?',
-        answer:
-          'Chắc chắn. Các công cụ như VidIQ, TubeBuddy (cho YouTube) hay các công cụ phân tích xu hướng mạng xã hội sử dụng AI để phân tích hàng triệu điểm dữ liệu, từ đó gợi ý cho bạn các chủ đề đang thịnh hành, các từ khóa có lượng tìm kiếm cao nhưng cạnh tranh thấp, giúp nội dung của bạn dễ dàng được khám phá hơn.',
-      },
-    ],
-  },
-  {
-    id: 'ai-healthcare-wellness',
-    title: 'AI cho Sức khỏe & Chăm sóc Cá nhân',
-    description:
-      'Áp dụng AI trong chăm sóc sức khỏe và ευεξία: theo dõi sức khỏe, lập kế hoạch thể dục, hỗ trợ sức khỏe tâm thần và nghiên cứu y học.',
-    duration: '160 phút',
-    videoUrl: 'https://www.youtube.com/watch?v=7ZsyYCZB3Nw',
-    difficulty: 'Trung bình',
-    mainContent: [
-      {
-        heading: 'AI: Bác sĩ Cá nhân trong Túi của bạn',
-        details:
-          'AI đang thay đổi cách chúng ta chăm sóc sức khỏe, biến nó từ bị động (chữa bệnh) sang chủ động (phòng bệnh). Các thiết bị đeo tay kết hợp với AI có thể theo dõi các dấu hiệu sinh tồn 24/7, phát hiện những thay đổi bất thường và cảnh báo sớm về các nguy cơ sức khỏe tiềm ẩn. AI không thay thế bác sĩ, nhưng nó cung cấp cho bạn và bác sĩ của bạn dữ liệu quý giá để đưa ra các quyết định chăm sóc sức khỏe tốt hơn.',
-      },
-      {
-        heading: 'Lập kế hoạch Tập luyện và Dinh dưỡng Siêu Cá nhân hóa',
-        details:
-          'Các kế hoạch tập luyện và dinh dưỡng chung chung thường không hiệu quả. AI có thể phân tích dữ liệu về cơ thể, lối sống, mục tiêu và thậm chí cả dữ liệu di truyền của bạn để tạo ra một lộ trình tối ưu. Nó có thể điều chỉnh cường độ tập luyện dựa trên chất lượng giấc ngủ của bạn đêm qua, hoặc đề xuất một bữa ăn nhẹ dựa trên mức năng lượng bạn đã tiêu thụ. Đây là cấp độ cá nhân hóa mà một huấn luyện viên con người khó có thể đạt được.',
-      },
-      {
-        heading: 'Hỗ trợ Sức khỏe Tinh thần Kín đáo và Dễ tiếp cận',
-        details:
-          'Sức khỏe tinh thần là một lĩnh vực mà AI đang tạo ra tác động lớn. Các chatbot trị liệu cung cấp một không gian an toàn, không phán xét để người dùng có thể chia sẻ cảm xúc của mình bất cứ lúc nào. Các ứng dụng thiền định sử dụng AI để cá nhân hóa các bài tập dựa trên mức độ căng thẳng của bạn. Mặc dù không thể thay thế các chuyên gia, AI đang làm cho việc chăm sóc sức khỏe tinh thần trở nên dễ tiếp cận hơn bao giờ hết.',
-      },
-      {
-        heading: 'AI trong Chẩn đoán Y khoa: Nhìn thấy những gì Mắt thường Bỏ lỡ',
-        details:
-          'Trong lĩnh vực chuyên nghiệp, AI đang được huấn luyện để phân tích hình ảnh y tế (như X-quang, MRI) và phát hiện các dấu hiệu bệnh tật, chẳng hạn như khối u ung thư, ở giai đoạn rất sớm với độ chính xác cao. Nó có thể phân tích hàng triệu hồ sơ bệnh án để tìm ra các mẫu hình và yếu tố nguy cơ, giúp các nhà nghiên cứu phát triển các phương pháp điều trị mới. Hiểu về các ứng dụng này giúp chúng ta thấy được tiềm năng to lớn của AI trong việc cứu sống con người.',
-      },
-    ],
-    objectives: [
-      'Triển khai hệ thống theo dõi sức khỏe được hỗ trợ bởi AI',
-      'Tạo kế hoạch thể dục cá nhân hóa với huấn luyện viên AI',
-      'Sử dụng AI để hỗ trợ sức khỏe tâm thần và trị liệu',
-      'Hiểu các ứng dụng của AI trong chẩn đoán y khoa',
-    ],
-    prerequisites: [
-      'Kiến thức cơ bản về sức khỏe và ευεξία',
-      'Hiểu biết về công nghệ đeo được',
-      'Quan tâm đến việc tối ưu hóa sức khỏe cá nhân',
-      'Truy cập vào các thiết bị theo dõi sức khỏe',
-    ],
-    exercises: [
-      {
-        title: 'Bảng điều khiển Sức khỏe Cá nhân AI',
-        description: 'Xây dựng hệ thống theo dõi sức khỏe toàn diện với thông tin chi tiết từ AI',
-        difficulty: 'Trung bình',
-        procedure: [
-          'Kết nối các thiết bị đeo và ứng dụng sức khỏe',
-          'Thiết lập phân tích AI cho các mẫu dữ liệu sức khỏe',
-          'Tạo hệ thống đề xuất cá nhân hóa',
-          'Triển khai cảnh báo sớm',
-          'Tạo báo cáo sức khỏe hàng tuần với thông tin chi tiết từ AI',
-          'Tích hợp với hệ thống của nhà cung cấp dịch vụ chăm sóc sức khỏe',
-        ],
-      },
-    ],
-    realWorldApplications: [
-      'Tối ưu hóa sức khỏe cá nhân và tuổi thọ',
-      'Quản lý bệnh mãn tính với theo dõi AI',
-      'Hệ thống hỗ trợ và can thiệp sức khỏe tâm thần',
-      'Huấn luyện thể dục và lập kế hoạch dinh dưỡng',
-      'Công cụ hỗ trợ chuyên gia chăm sóc sức khỏe',
-    ],
-    relatedGames: [
-      {
-        id: 'gene-editing-lab-3d',
-        name: 'Gene Editing Lab 3D',
-        description: 'Khám phá một lĩnh vực công nghệ sinh học tiên tiến khác có tác động lớn đến y học và sức khỏe.',
-      },
-    ],
-    aiTools: [
-      'Thông tin chi tiết từ Apple Health AI',
-      'Huấn luyện viên AI của Fitbit Premium',
-      'Theo dõi dinh dưỡng AI của MyFitnessPal',
-      'Hướng dẫn thiền định AI của Headspace',
-      'Trình kiểm tra triệu chứng Ada Health AI',
-    ],
-    vietnamContext: {
-      title: 'Y tế thông minh (Smart Healthcare) tại Việt Nam',
-      content: [
-        'Nhiều bệnh viện lớn tại Việt Nam như Vinmec, Bệnh viện Đại học Y Dược TP.HCM đang ứng dụng AI trong chẩn đoán hình ảnh và quản lý bệnh án điện tử.',
-        'Các startup Health-tech Việt Nam đang phát triển mạnh mẽ, cung cấp các giải pháp từ đặt lịch khám online, tư vấn từ xa, đến các thiết bị theo dõi sức khỏe cá nhân.',
-        'Chính phủ đang thúc đẩy chương trình chuyển đổi số y tế quốc gia, hướng tới việc mỗi người dân có một hồ sơ sức khỏe điện tử được quản lý và phân tích bằng AI.',
-      ],
-    },
-    careerConnect: {
-      name: 'Bác sĩ Bùi Quang Trung',
-      title: 'Trưởng khoa Chẩn đoán Hình ảnh',
-      company: 'Bệnh viện Vinmec',
-      imageUrl: 'https://i.pravatar.cc/150?u=buiquangtrung',
-      quote:
-        'AI là "con mắt thứ hai" của người bác sĩ, giúp chúng tôi phát hiện những tổn thương nhỏ nhất mà mắt thường có thể bỏ sót. Nó không thay thế chúng tôi, mà giúp chúng tôi làm việc tốt hơn.',
-    },
-    quizzes: [
-      {
-        question: 'Ứng dụng nào của AI trong y tế giúp phát hiện bệnh sớm từ hình ảnh X-quang, MRI?',
-        options: [
-          'Chatbot trị liệu',
-          'Phân tích hình ảnh y tế (Medical Image Analysis)',
-          'Lập kế hoạch dinh dưỡng',
-          'Theo dõi giấc ngủ',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'AI, đặc biệt là các mô hình học sâu (deep learning), được huấn luyện trên hàng triệu hình ảnh y tế để nhận diện các mẫu hình bất thường, giúp chẩn đoán bệnh như ung thư ở giai đoạn sớm với độ chính xác cao.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Dữ liệu sức khỏe của tôi có được bảo mật khi sử dụng các ứng dụng AI không?',
-        answer:
-          'Đây là một vấn đề rất quan trọng. Các công ty uy tín trong lĩnh vực Health-tech phải tuân thủ các quy định nghiêm ngặt về bảo mật dữ liệu như HIPAA (ở Mỹ). Bạn nên luôn đọc kỹ chính sách bảo mật, ưu tiên các ứng dụng mã hóa dữ liệu và cho phép bạn kiểm soát việc chia sẻ thông tin của mình.',
-      },
-      {
-        question: 'Chatbot trị liệu có thể thay thế chuyên gia tâm lý không?',
-        answer:
-          'Không. Chatbot là một công cụ hỗ trợ ban đầu tuyệt vời, giúp bạn có nơi để chia sẻ và thực hành các kỹ thuật cơ bản như thiền định hay CBT. Tuy nhiên, chúng không thể thay thế sự thấu cảm, kinh nghiệm và khả năng chẩn đoán sâu của một chuyên gia tâm lý được đào tạo.',
-      },
-      {
-        question: 'Làm thế nào để AI tạo ra một kế hoạch tập luyện cá nhân hóa?',
-        answer:
-          'AI thu thập dữ liệu từ nhiều nguồn: thông tin bạn cung cấp (tuổi, cân nặng, mục tiêu), dữ liệu từ thiết bị đeo (nhịp tim, chất lượng giấc ngủ, mức độ hoạt động), và thậm chí cả lịch trình hàng ngày của bạn. Dựa trên đó, nó sử dụng các thuật toán để xây dựng một kế hoạch tối ưu và liên tục điều chỉnh để phù hợp với tiến độ và trạng thái cơ thể của bạn.',
-      },
-    ],
-  },
-  {
-    id: 'ai-financial-planning-investment',
-    title: 'Lập kế hoạch Tài chính & Đầu tư với AI',
-    description:
-      'Sử dụng AI để lập kế hoạch tài chính, chiến lược đầu tư, đánh giá rủi ro và tối ưu hóa việc xây dựng tài sản.',
-    duration: '190 phút',
-    videoUrl: 'https://www.youtube.com/watch?v=i98JHmss-AQ',
     difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=8VhZ8tFxVPe',
     mainContent: [
       {
-        heading: 'AI: Cố vấn Tài chính Cá nhân 4.0',
+        heading: 'Sự Nổi Bật của Nội Dung AI trong Kỷ Nguyên Số',
         details:
-          'Quản lý tài chính cá nhân và đầu tư là một mê cung phức tạp. AI đang dân chủ hóa lĩnh vực này, mang đến những công cụ phân tích và lập kế hoạch mạnh mẽ mà trước đây chỉ dành cho các chuyên gia. Từ việc tự động phân loại chi tiêu, dự báo dòng tiền, đến việc đề xuất các chiến lược đầu tư dựa trên mức độ chấp nhận rủi ro của bạn, AI giúp bạn có một cái nhìn toàn cảnh và đưa ra các quyết định tài chính thông minh hơn.',
+          'Nội dung là vua, nhưng việc tạo ra nội dung chất lượng cao, hấp dẫn và nhất quán lại là một thách thức lớn. AI đang thay đổi cuộc chơi bằng cách cung cấp các công cụ và giải pháp mạnh mẽ để tự động hóa quy trình sáng tạo nội dung. Từ việc viết bài, tạo hình ảnh, sản xuất video đến sáng tác nhạc, AI không chỉ giúp tiết kiệm thời gian mà còn mở ra những khả năng sáng tạo vô hạn.',
       },
       {
-        heading: 'Robo-Advisor: Tự động hóa Danh mục Đầu tư',
+        heading: 'Phần 1: Viết Lách với Trợ Lực của AI',
         details:
-          'Robo-advisor là các nền tảng đầu tư tự động sử dụng thuật toán AI. Bạn chỉ cần xác định mục tiêu tài chính (ví dụ: tiết kiệm để nghỉ hưu, mua nhà) và mức độ rủi ro, AI sẽ tự động xây dựng và quản lý một danh mục đầu tư đa dạng cho bạn. Nó tự động tái cân bằng danh mục khi thị trường biến động và tối ưu hóa thuế, những công việc phức tạp mà hầu hết các nhà đầu tư cá nhân không có thời gian hoặc kiến thức để thực hiện.',
+          'Viết lách không chỉ đơn thuần là ghép nối các từ lại với nhau. Đó là nghệ thuật kể chuyện, truyền tải cảm xúc và kết nối với độc giả. AI có thể phân tích hàng triệu bài viết, hiểu được cấu trúc, phong cách và ngữ điệu để tạo ra những bản nháp chất lượng cao. Hơn nữa, AI còn có khả năng tối ưu hóa nội dung dựa trên phân tích dữ liệu độc giả, giúp tăng cường khả năng tiếp cận và tương tác.',
       },
       {
-        heading: 'Phân tích Rủi ro và Đánh giá Thị trường',
+        heading: 'Phần 2: Thiết Kế Đồ Họa và Hình Ảnh với AI',
         details:
-          'Thị trường tài chính biến động không ngừng. AI có thể xử lý một lượng lớn dữ liệu trong thời gian thực - từ tin tức kinh tế, báo cáo tài chính của công ty, đến các cuộc thảo luận trên mạng xã hội - để đánh giá tâm lý thị trường (market sentiment). Nó giúp các nhà đầu tư nhận diện sớm các cơ hội và rủi ro tiềm ẩn, vượt qua các thành kiến cảm tính và đưa ra quyết định dựa trên dữ liệu.',
+          'Hình ảnh trực quan có sức mạnh truyền tải thông điệp mạnh mẽ hơn cả ngàn lời nói. AI có khả năng tạo ra các hình ảnh, đồ họa và thiết kế ấn tượng chỉ trong vài giây. Bằng cách học hỏi từ hàng triệu mẫu thiết kế, AI có thể tạo ra các sản phẩm thiết kế độc đáo, phù hợp với yêu cầu và sở thích của từng khách hàng.',
       },
       {
-        heading: 'Xây dựng Kế hoạch Tài chính Toàn diện',
+        heading: 'Phần 3: Sản Xuất Video và Âm Nhạc với AI',
         details:
-          'Một kế hoạch tài chính tốt không chỉ là về đầu tư. AI có thể giúp bạn tối ưu hóa mọi khía cạnh: tự động tạo ngân sách dựa trên thói quen chi tiêu, đề xuất các gói bảo hiểm phù hợp với nhu_cầu của bạn, lập kế hoạch trả nợ một cách hiệu quả nhất, và mô phỏng các kịch bản tài chính khác nhau để bạn chuẩn bị cho tương lai. AI đóng vai trò như một người giám sát tài chính khách quan, giúp bạn luôn đi đúng hướng tới các mục tiêu của mình.',
+          'Video và âm nhạc là hai yếu tố không thể thiếu trong chiến lược tiếp thị nội dung hiện đại. AI có thể tự động hóa quy trình sản xuất video từ việc biên tập, thêm hiệu ứng, đến việc chọn nhạc nền phù hợp. Đối với âm nhạc, AI có khả năng sáng tác nhạc dựa trên tâm trạng, thể loại và yêu cầu cụ thể, mở ra cơ hội cho việc tạo ra các bản nhạc độc quyền với chi phí thấp.',
+      },
+      {
+        heading: 'Kiếm Tiền Từ Nội Dung AI: Cơ Hội và Thách Thức',
+        details:
+          'Việc tạo ra nội dung chất lượng cao chỉ là bước đầu tiên. Câu hỏi lớn tiếp theo là: Làm thế nào để kiếm tiền từ nó? Từ việc bán sản phẩm nội dung, nhận tài trợ, quảng cáo đến việc cung cấp dịch vụ tư vấn và đào tạo, có rất nhiều cách để biến đam mê sáng tạo nội dung thành nguồn thu nhập ổn định. Tuy nhiên, cũng cần lưu ý rằng, với sự phát triển nhanh chóng của công nghệ AI, việc bảo vệ bản quyền và quyền sở hữu trí tuệ cũng trở nên phức tạp hơn bao giờ hết.',
       },
     ],
     objectives: [
-      'Triển khai quản lý danh mục đầu tư dựa trên AI',
-      'Tạo ngân sách tự động với phân loại chi tiêu bằng AI',
-      'Sử dụng AI để đánh giá rủi ro và tối ưu hóa bảo hiểm',
-      'Phát triển các chiến lược xây dựng tài sản với thông tin chi tiết từ AI',
+      'Sử dụng AI để tạo ra nội dung viết chất lượng cao',
+      'Thiết kế đồ họa và hình ảnh ấn tượng với sự trợ giúp của AI',
+      'Sản xuất video và âm nhạc chuyên nghiệp bằng AI',
+      'Khám phá các mô hình kinh doanh và cách kiếm tiền từ nội dung AI',
     ],
     prerequisites: [
-      'Kiến thức tài chính cơ bản',
-      'Hiểu biết về các nguyên tắc đầu tư',
-      'Truy cập vào các tài khoản và dữ liệu tài chính',
-      'Quan tâm đến việc tối ưu hóa tài chính cá nhân',
+      'Kỹ năng viết cơ bản',
+      'Kiến thức về marketing nội dung',
+      'Quen thuộc với các công cụ thiết kế đồ họa cơ bản',
+      'Có thiết bị ghi âm và biên tập video cơ bản',
     ],
     exercises: [
       {
-        title: 'Trình tối ưu hóa Danh mục Đầu tư AI',
-        description: 'Xây dựng hệ thống AI để tối ưu hóa danh mục đầu tư dựa trên mục tiêu và mức độ chấp nhận rủi ro',
-        difficulty: 'Nâng cao',
-        procedure: [
-          'Kết nối các tài khoản đầu tư với các nền tảng phân tích AI',
-          'Xác định các mục tiêu đầu tư và các thông số chấp nhận rủi ro',
-          'Thiết lập cảnh báo tái cân bằng danh mục được hỗ trợ bởi AI',
-          'Triển khai các chiến lược trung bình giá tự động',
-          'Tạo phân tích tâm lý thị trường dựa trên AI',
-          'Tạo báo cáo hiệu suất hàng tháng với thông tin chi tiết từ AI',
+        title: 'Tạo Nội Dung Viết với AI',
+        description: 'Sử dụng AI để tạo ra các bài viết, blog, hoặc nội dung truyền thông xã hội hấp dẫn',
+        difficulty: 'Trung bình',
+        materials: [
+          'Tài khoản ChatGPT hoặc các công cụ viết AI tương tự',
+          'Chủ đề hoặc từ khóa cần viết',
+          'Thông tin và dữ liệu hỗ trợ (nếu có)',
         ],
+        procedure: [
+          'Chọn chủ đề và xác định đối tượng độc giả mục tiêu',
+          'Sử dụng AI để nghiên cứu và thu thập thông tin',
+          'Tạo dàn ý cho bài viết với sự trợ giúp của AI',
+          'Soạn thảo nội dung bài viết, điều chỉnh phong cách và ngữ điệu',
+          'Sử dụng AI để kiểm tra ngữ pháp, chính tả và tối ưu hóa nội dung',
+          'Xuất bản và quảng bá nội dung qua các kênh truyền thông xã hội',
+        ],
+        expectedResults: 'Bài viết chất lượng cao, thu hút và tương tác tốt với độc giả, được tối ưu hóa cho SEO',
+        solution: 'Hướng dẫn chi tiết và phản hồi từ AI trong từng bước sẽ được cung cấp',
+      },
+      {
+        title: 'Thiết Kế Đồ Họa với AI',
+        description: 'Tạo ra các thiết kế đồ họa chuyên nghiệp cho bài viết, trang web hoặc mạng xã hội',
+        difficulty: 'Trung bình',
+        materials: [
+          'Tài khoản Canva, Adobe Spark hoặc các công cụ thiết kế AI tương tự',
+          'Hình ảnh, logo và tài liệu thương hiệu (nếu có)',
+          'Chủ đề và ý tưởng thiết kế cụ thể',
+        ],
+        procedure: [
+          'Xác định yêu cầu thiết kế và đối tượng mục tiêu',
+          'Sử dụng AI để tạo ra các mẫu thiết kế ban đầu',
+          'Tùy chỉnh và điều chỉnh thiết kế theo ý tưởng và yêu cầu cụ thể',
+          'Xuất bản và sử dụng thiết kế cho các mục đích truyền thông',
+        ],
+        expectedResults:
+          'Các thiết kế đồ họa chuyên nghiệp, ấn tượng và phù hợp với thương hiệu, sẵn sàng để sử dụng cho các chiến dịch tiếp thị',
+      },
+      {
+        title: 'Sản Xuất Video và Âm Nhạc với AI',
+        description: 'Tạo ra các video và bản nhạc độc quyền cho nội dung số của bạn',
+        difficulty: 'Nâng cao',
+        materials: [
+          'Tài khoản các công cụ sản xuất video và âm nhạc AI như Pictory, Lumen5, Amper Music',
+          'Kịch bản hoặc ý tưởng cho video và âm nhạc',
+          'Hình ảnh, video clip và tài liệu âm thanh hỗ trợ (nếu có)',
+        ],
+        procedure: [
+          'Lên kế hoạch và viết kịch bản cho video và âm nhạc',
+          'Sử dụng AI để tạo ra video và âm nhạc dựa trên kịch bản đã cho',
+          'Chỉnh sửa và tinh chỉnh sản phẩm cuối cùng với sự trợ giúp của AI',
+          'Xuất bản và quảng bá video và âm nhạc qua các kênh truyền thông xã hội và nền tảng phát trực tuyến',
+        ],
+        expectedResults: 'Video và bản nhạc chất lượng cao, sáng tạo và độc quyền, thu hút người xem và người nghe',
+        solution: 'Hướng dẫn chi tiết và phản hồi từ AI trong từng bước sẽ được cung cấp',
       },
     ],
     realWorldApplications: [
-      'Xây dựng tài sản cá nhân và lập kế hoạch nghỉ hưu',
-      'Quản lý tài chính doanh nghiệp nhỏ',
-      'Tối ưu hóa đầu tư bất động sản',
-      'Quản lý danh mục tiền điện tử',
-      'Chiến lược tối ưu hóa thuế với AI',
+      'Tạo nội dung cho blog, trang web và mạng xã hội',
+      'Sản xuất video quảng cáo và nội dung tiếp thị',
+      'Sáng tác nhạc cho video, trò chơi và ứng dụng',
+      'Thiết kế đồ họa cho thương hiệu và chiến dịch tiếp thị',
+      'Cung cấp dịch vụ tư vấn và đào tạo về nội dung AI',
     ],
     relatedGames: [
       {
-        id: 'economic-simulation-3d',
-        name: 'Economic Simulation 3D',
+        id: 'digital-marketing-simulator',
+        name: 'Digital Marketing Simulator',
         description:
-          'Học về các nguyên tắc kinh tế vĩ mô và vi mô, nền tảng để hiểu về thị trường tài chính và đầu tư.',
+          'Trải nghiệm và quản lý các chiến dịch tiếp thị số trong một môi trường mô phỏng, áp dụng các kiến thức về marketing nội dung và tự động hóa.',
       },
     ],
     aiTools: [
-      'Robo-advisor AI của Betterment',
-      'Theo dõi tài chính AI của Personal Capital',
-      'Thông tin chi tiết về ngân sách AI của YNAB',
-      'Tối ưu hóa thuế AI của TaxAct',
-      'Nghiên cứu đầu tư AI của Robinhood',
+      'ChatGPT để viết nội dung và ý tưởng sáng tạo',
+      'Canva và Adobe Spark để thiết kế đồ họa',
+      'Pictory và Lumen5 để sản xuất video',
+      'Amper Music để sáng tác nhạc',
+      'Google Analytics để phân tích hiệu suất nội dung',
     ],
     vietnamContext: {
-      title: 'Fintech và Đầu tư 4.0 tại Việt Nam',
+      title: 'Nội dung số và Tiềm năng từ AI tại Việt Nam',
       content: [
-        'Sự bùng nổ của các ứng dụng Fintech tại Việt Nam như Finhay, Tikop, Infina đang giúp giới trẻ tiếp cận đầu tư một cách dễ dàng hơn.',
-        'Các ứng dụng này sử dụng robo-advisor để tự động phân bổ vốn vào các quỹ đầu tư, phù hợp với những người mới bắt đầu không có nhiều kiến thức chuyên sâu.',
-        'Ngân hàng nhà nước và các cơ quan chính phủ đang xây dựng hành lang pháp lý cho Fintech, tạo điều kiện cho thị trường phát triển minh bạch và an toàn hơn.',
+        'Thị trường nội dung số tại Việt Nam đang bùng nổ với sự gia tăng của các nền tảng trực tuyến và mạng xã hội.',
+        'AI đang được áp dụng rộng rãi trong việc tạo ra nội dung, từ viết lách, thiết kế đồ họa đến sản xuất video và âm nhạc.',
+        'Nhiều doanh nghiệp và cá nhân đã bắt đầu nhận ra tiềm năng kiếm tiền từ nội dung AI, nhưng vẫn còn nhiều thách thức về bản quyền và chất lượng nội dung.',
       ],
     },
     careerConnect: {
-      name: 'Anh Nguyễn Hoàng Giang',
-      title: 'Chủ tịch',
-      company: 'Công ty Chứng khoán DNSE',
-      imageUrl: 'https://i.pravatar.cc/150?u=nguyenhoanggiang',
+      name: 'Chị Nguyễn Thị Hương',
+      title: 'Chuyên gia Tiếp thị Nội dung',
+      company: 'Công ty TNHH Nội dung số Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyenthihuong',
       quote:
-        'Công nghệ đang phá vỡ ngành tài chính truyền thống. Sứ mệnh của chúng tôi là dùng AI để mọi người dân Việt Nam, dù có bao nhiêu tiền, cũng có thể trở thành một nhà đầu tư thông thái.',
+        'Nội dung chất lượng cao là chìa khóa để thu hút và giữ chân khách hàng. AI là công cụ đắc lực giúp chúng tôi tạo ra nội dung đó một cách nhanh chóng và hiệu quả.',
     },
     quizzes: [
       {
-        question: 'Robo-advisor là gì?',
+        question: 'AI có thể tạo ra những loại nội dung nào?',
         options: [
-          'Một con robot vật lý giao dịch tại sàn chứng khoán',
-          'Một chuyên gia tài chính trả lời qua điện thoại',
-          'Một nền tảng kỹ thuật số cung cấp dịch vụ quản lý tài chính tự động, dựa trên thuật toán',
-          'Một ứng dụng dự báo thời tiết',
+          'Chỉ có văn bản',
+          'Chỉ có hình ảnh và video',
+          'Văn bản, hình ảnh, video và âm nhạc',
+          'Không có loại nội dung nào cả',
         ],
         correctAnswerIndex: 2,
         explanation:
-          'Robo-advisors sử dụng các thuật toán để xây dựng và quản lý danh mục đầu tư của khách hàng, thường có chi phí thấp hơn so với các cố vấn tài chính con người.',
+          'AI có khả năng tạo ra nhiều loại nội dung khác nhau bao gồm văn bản, hình ảnh, video và âm nhạc, tùy thuộc vào công cụ và công nghệ được sử dụng.',
+      },
+      {
+        question: 'Lợi ích của việc sử dụng AI trong tạo nội dung là gì?',
+        options: [
+          'Tiết kiệm thời gian và công sức',
+          'Tạo ra nội dung chất lượng thấp hơn',
+          'Không cần thiết kế hay viết lách',
+          'Chỉ dành cho những người có kỹ năng lập trình',
+        ],
+        correctAnswerIndex: 0,
+        explanation:
+          'AI giúp tự động hóa nhiều khía cạnh của quy trình tạo nội dung, từ nghiên cứu, viết lách, thiết kế đến sản xuất video và âm nhạc, giúp tiết kiệm thời gian và công sức cho người sáng tạo nội dung.',
       },
     ],
     faqs: [
       {
-        question: 'Robo-advisor có an toàn không? Tiền của tôi có được bảo vệ không?',
+        question: 'AI có thể hoàn toàn thay thế con người trong việc tạo nội dung không?',
         answer:
-          'Các robo-advisor uy tín thường được quản lý bởi các cơ quan tài chính và có các biện pháp bảo vệ nhà đầu tư tương tự như các công ty môi giới truyền thống (ví dụ: SIPC ở Mỹ). Tiền và tài sản của bạn được giữ tại một bên lưu ký độc lập. Tuy nhiên, như mọi khoản đầu tư, giá trị danh mục của bạn vẫn có thể biến động theo thị trường.',
+          'Không, AI không thể hoàn toàn thay thế con người. Mặc dù AI có thể tự động hóa nhiều quy trình và tạo ra nội dung chất lượng cao, nhưng sự sáng tạo, cảm xúc và khả năng kết nối với độc giả của con người là điều mà AI không thể thay thế được.',
       },
       {
-        question: 'AI có thể dự báo chính xác thị trường chứng khoán sẽ tăng hay giảm không?',
+        question: 'Làm thế nào để đảm bảo nội dung AI tạo ra là độc đáo và không vi phạm bản quyền?',
         answer:
-          'Không ai, kể cả AI, có thể dự báo chính xác 100% biến động ngắn hạn của thị trường. Sức mạnh của AI nằm ở việc phân tích một lượng lớn dữ liệu để xác định xu hướng, xác suất và quản lý rủi ro tốt hơn con người. Nó giúp bạn đưa ra quyết định đầu tư có kỷ luật và dựa trên dữ liệu, thay vì cảm tính.',
+          'Để đảm bảo nội dung AI tạo ra là độc đáo, bạn nên sử dụng các công cụ kiểm tra đạo văn và chỉnh sửa lại nội dung trước khi xuất bản. Ngoài ra, hãy kết hợp nội dung AI tạo ra với sự sáng tạo và phong cách riêng của bạn để tạo ra sản phẩm độc đáo.',
       },
       {
-        question: 'Tôi có cần nhiều tiền để bắt đầu đầu tư với robo-advisor không?',
+        question: 'Có những rủi ro nào khi sử dụng AI để tạo nội dung?',
         answer:
-          'Không. Đây chính là một trong những ưu điểm lớn nhất của robo-advisor. Nhiều nền tảng cho phép bạn bắt đầu chỉ với vài trăm nghìn hoặc vài triệu đồng. Điều này giúp dân chủ hóa việc đầu tư, cho phép mọi người tiếp cận với các chiến lược đầu tư chuyên nghiệp mà không cần số vốn lớn.',
+          'Một số rủi ro khi sử dụng AI để tạo nội dung bao gồm việc tạo ra nội dung không chính xác, vi phạm bản quyền, và thiếu tính nhân văn. Do đó, việc kiểm tra và chỉnh sửa lại nội dung AI tạo ra là rất quan trọng.',
+      },
+      {
+        question: 'AI có thể giúp tôi kiếm tiền từ nội dung của mình như thế nào?',
+        answer:
+          'AI có thể giúp bạn kiếm tiền từ nội dung của mình bằng cách tối ưu hóa nội dung cho SEO, tự động hóa quy trình tiếp thị nội dung, và phân tích dữ liệu để cải thiện hiệu suất nội dung. Ngoài ra, bạn cũng có thể sử dụng AI để tạo ra các sản phẩm nội dung độc quyền để bán.',
+      },
+      {
+        question: 'Tôi có cần phải là một chuyên gia công nghệ để sử dụng AI trong việc tạo nội dung không?',
+        answer:
+          'Không nhất thiết. Nhiều công cụ AI hiện nay được thiết kế để dễ dàng sử dụng cho cả những người không có kỹ năng công nghệ. Bạn chỉ cần có kiến thức cơ bản về máy tính và internet là có thể bắt đầu sử dụng AI để tạo nội dung.',
+      },
+      {
+        question: 'Làm thế nào để tìm ra ngách (niche) nội dung phù hợp để kiếm tiền với AI?',
+        answer:
+          'Hãy kết hợp ba yếu tố: (1) Đam mê của bạn, (2) Vấn đề mà thị trường đang cần giải quyết, và (3) Lĩnh vực mà AI có thể tạo ra sự khác biệt. Sử dụng các công cụ như Google Trends hoặc Ahrefs để nghiên cứu từ khóa, và dùng AI để nhanh chóng tạo ra các nội dung thử nghiệm cho các ngách khác nhau để xem ngách nào có phản hồi tốt nhất.',
+      },
+      {
+        question:
+          'Tôi có thể bán các tác phẩm nghệ thuật do AI tạo ra trên các nền tảng như Etsy hay Adobe Stock không?',
+        answer:
+          'Có, nhưng bạn cần kiểm tra kỹ chính sách của từng nền tảng. Một số nền tảng chấp nhận nội dung do AI tạo ra miễn là bạn ghi rõ, trong khi những nền tảng khác có thể có các quy định chặt chẽ hơn. Điều quan trọng là tác phẩm của bạn phải có sự sáng tạo và chỉnh sửa của con người, không chỉ đơn thuần là kết quả thô từ AI.',
+      },
+      {
+        question: 'Mô hình kiếm tiền nào là phổ biến nhất cho các nhà sáng tạo nội dung AI?',
+        answer:
+          'Có nhiều mô hình: (1) Cung cấp dịch vụ (ví dụ: viết bài, thiết kế logo bằng AI cho khách hàng), (2) Bán sản phẩm số (ví dụ: bán các bộ prompt, hình ảnh stock do AI tạo), (3) Xây dựng thương hiệu cá nhân và nhận tài trợ/quảng cáo, (4) Tạo các khóa học hoặc workshop hướng dẫn người khác sử dụng công cụ AI.',
+      },
+      {
+        question: 'Làm thế nào để nội dung của tôi nổi bật khi có quá nhiều người cũng đang sử dụng AI?',
+        answer:
+          'Hãy tập trung vào "dấu ấn con người". Sử dụng AI để xử lý 80% công việc nặng nhọc, và dành 20% còn lại để thêm vào câu chuyện cá nhân, góc nhìn độc đáo, và sự thấu hiểu sâu sắc về đối tượng của bạn. Chất lượng của prompt và khả năng hậu kỳ, chỉnh sửa cũng là yếu tố tạo nên sự khác biệt lớn.',
+      },
+      {
+        question: 'Liệu tôi có bị Google phạt vì sử dụng nội dung do AI tạo ra cho website của mình không?',
+        answer:
+          'Google đã tuyên bố rằng họ không phạt nội dung do AI tạo ra, miễn là nội dung đó hữu ích, chất lượng cao và đáp ứng nhuodu của người tìm kiếm. Họ quan tâm đến chất lượng cuối cùng của nội dung hơn là cách nó được tạo ra. Hãy tập trung vào việc tạo ra giá trị cho người đọc.',
+      },
+    ],
+  },
+  {
+    id: 'ai-personal-branding-strategy',
+    title: 'AI Personal Branding Strategy - Xây dựng thương hiệu cá nhân với AI',
+    description:
+      'Khám phá cách AI có thể giúp bạn xây dựng và phát triển thương hiệu cá nhân mạnh mẽ: từ xác định bản sắc đến kết nối với đối tượng mục tiêu.',
+    duration: '240 phút',
+    difficulty: 'Nâng cao',
+    videoUrl: 'https://www.youtube.com/watch?v=8VhZ8tFxVPe',
+    mainContent: [
+      {
+        heading: 'Tại sao Thương hiệu Cá nhân lại Quan trọng?',
+        details:
+          'Trong kỷ nguyên số, thương hiệu cá nhân mạnh mẽ giúp bạn nổi bật giữa đám đông. Nó không chỉ là về việc có một hồ sơ trực tuyến ấn tượng, mà còn là cách bạn truyền tải giá trị, chuyên môn và đam mê của mình đến với thế giới. Thương hiệu cá nhân là câu chuyện mà bạn kể về chính mình, và AI có thể là công cụ đắc lực để bạn kể câu chuyện đó một cách mạnh mẽ và nhất quán.',
+      },
+      {
+        heading: 'Phần 1: Xác định Bản sắc Thương hiệu của Bạn',
+        details:
+          'Bước đầu tiên trong việc xây dựng thương hiệu cá nhân là xác định rõ ràng bạn là ai, bạn đại diện cho điều gì, và bạn muốn được nhớ đến như thế nào. AI có thể giúp bạn phân tích các giá trị cốt lõi, sở trường, và đam mê của mình để từ đó định hình nên một bản sắc thương hiệu độc đáo và dễ nhận diện.',
+      },
+      {
+        heading: 'Phần 2: Tạo Dựng Nội dung Chất lượng Cao với AI',
+        details:
+          'Nội dung là công cụ mạnh mẽ nhất để truyền tải thông điệp thương hiệu của bạn. AI có thể hỗ trợ bạn trong việc tạo ra các bài viết, video, hình ảnh và âm thanh chất lượng cao, phù hợp với phong cách và thông điệp của thương hiệu. Hơn nữa, AI còn giúp tối ưu hóa nội dung để tiếp cận đúng đối tượng mục tiêu.',
+      },
+      {
+        heading: 'Phần 3: Kết Nối và Mở Rộng Mạng Lưới với AI',
+        details:
+          'Xây dựng thương hiệu cá nhân không chỉ dừng lại ở việc tạo ra nội dung chất lượng, mà còn ở việc kết nối và tương tác với đối tượng mục tiêu. AI có thể giúp bạn xác định và tiếp cận những người có ảnh hưởng, tham gia vào các cuộc thảo luận có liên quan, và mở rộng mạng lưới quan hệ một cách hiệu quả.',
+      },
+      {
+        heading: 'Phần 4: Đo Lường và Tối Ưu Chiến Lược Thương Hiệu',
+        details:
+          'Cuối cùng, để đảm bảo thương hiệu cá nhân của bạn phát triển bền vững, bạn cần thường xuyên đo lường và đánh giá hiệu quả của các chiến lược thương hiệu mà bạn đang áp dụng. AI có thể cung cấp các phân tích chi tiết về hiệu suất nội dung, mức độ tương tác, và sự phát triển của mạng lưới quan hệ, từ đó giúp bạn điều chỉnh và tối ưu hóa chiến lược một cách kịp thời.',
+      },
+    ],
+    objectives: [
+      'Hiểu rõ tầm quan trọng của thương hiệu cá nhân trong kỷ nguyên số',
+      'Xác định và phát triển bản sắc thương hiệu cá nhân độc đáo',
+      'Tạo ra nội dung chất lượng cao phù hợp với thương hiệu cá nhân',
+      'Sử dụng AI để mở rộng mạng lưới và kết nối với đối tượng mục tiêu',
+      'Đo lường và tối ưu hóa chiến lược thương hiệu cá nhân',
+    ],
+    prerequisites: [
+      'Kiến thức cơ bản về marketing và thương hiệu',
+      'Quen thuộc với các công cụ AI cơ bản',
+      'Kỹ năng viết và giao tiếp cơ bản',
+      'Có thiết bị ghi âm và biên tập video cơ bản',
+    ],
+    exercises: [
+      {
+        title: 'Xác định Bản sắc Thương hiệu Cá nhân',
+        description: 'Sử dụng AI để phân tích và xác định các giá trị cốt lõi, sở trường và đam mê của bạn',
+        difficulty: 'Trung bình',
+        materials: [
+          'Tài khoản ChatGPT hoặc các công cụ phân tích AI tương tự',
+          'Bảng câu hỏi tự đánh giá',
+          'Các bài viết, email, hoặc nội dung bạn đã viết',
+        ],
+        procedure: [
+          'Điền vào bảng câu hỏi tự đánh giá về bản thân',
+          'Sử dụng AI để phân tích các câu trả lời và rút ra các đặc điểm chung',
+          'Thảo luận và điều chỉnh dựa trên phản hồi của AI',
+          'Ghi lại bản sắc thương hiệu cá nhân trong một tài liệu rõ ràng',
+        ],
+        expectedResults:
+          'Một bản sắc thương hiệu cá nhân rõ ràng, độc đáo và dễ nhận diện, làm nền tảng cho các hoạt động xây dựng thương hiệu sau này',
+        solution: 'Hướng dẫn chi tiết và phản hồi từ AI trong từng bước sẽ được cung cấp',
+      },
+      {
+        title: 'Tạo Nội dung Thương hiệu với AI',
+        description:
+          'Sử dụng AI để tạo ra các bài viết, video, hoặc hình ảnh truyền tải thông điệp thương hiệu của bạn',
+        difficulty: 'Trung bình',
+        materials: [
+          'Tài khoản ChatGPT, Canva, hoặc các công cụ AI tương tự',
+          'Chủ đề hoặc thông điệp thương hiệu cần truyền tải',
+          'Thông tin và dữ liệu hỗ trợ (nếu có)',
+        ],
+        procedure: [
+          'Xác định chủ đề và thông điệp chính của nội dung',
+          'Sử dụng AI để nghiên cứu và thu thập thông tin cần thiết',
+          'Tạo dàn ý cho nội dung với sự trợ giúp của AI',
+          'Soạn thảo và thiết kế nội dung, điều chỉnh phong cách và ngữ điệu cho phù hợp với thương hiệu',
+          'Xuất bản và quảng bá nội dung qua các kênh truyền thông xã hội và nền tảng trực tuyến',
+        ],
+        expectedResults:
+          'Nội dung chất lượng cao, nhất quán với bản sắc thương hiệu, thu hút và tương tác tốt với đối tượng mục tiêu',
+        solution: 'Hướng dẫn chi tiết và phản hồi từ AI trong từng bước sẽ được cung cấp',
+      },
+      {
+        title: 'Kết Nối và Mở Rộng Mạng Lưới với AI',
+        description: 'Sử dụng AI để xác định và tiếp cận những người có ảnh hưởng trong lĩnh vực của bạn',
+        difficulty: 'Trung bình',
+        materials: [
+          'Tài khoản các công cụ lắng nghe xã hội (Brandwatch, Mention)',
+          'Danh sách các người có ảnh hưởng tiềm năng',
+          'Nội dung hoặc thông điệp bạn muốn chia sẻ',
+        ],
+        procedure: [
+          'Sử dụng công cụ lắng nghe xã hội để xác định những người có ảnh hưởng trong lĩnh vực của bạn',
+          'Phân tích nội dung và phong cách giao tiếp của họ',
+          'Sử dụng AI để tạo ra các gợi ý về cách tiếp cận và tương tác với họ',
+          'Thực hiện các bước tiếp cận và theo dõi kết quả',
+        ],
+        expectedResults:
+          'Mạng lưới quan hệ mở rộng, bao gồm các kết nối với những người có ảnh hưởng và tiềm năng hợp tác trong tương lai',
+        solution: 'Hướng dẫn chi tiết và phản hồi từ AI trong từng bước sẽ được cung cấp',
+      },
+    ],
+    realWorldApplications: [
+      'Xây dựng thương hiệu cá nhân cho chuyên gia, nhà văn, nghệ sĩ, và doanh nhân',
+      'Tạo dựng uy tín và tăng cường sự hiện diện trực tuyến',
+      'Kết nối với các cơ hội nghề nghiệp và hợp tác mới',
+      'Tăng cường khả năng thương lượng và đàm phán trong công việc',
+      'Phát triển bền vững thương hiệu cá nhân qua thời gian',
+    ],
+    relatedGames: [
+      {
+        id: 'personal-branding-simulator',
+        name: 'Personal Branding Simulator',
+        description:
+          'Mô phỏng và quản lý các chiến dịch xây dựng thương hiệu cá nhân trong một môi trường ảo, áp dụng các kiến thức về marketing và tự động hóa.',
+      },
+    ],
+    aiTools: [
+      'ChatGPT để viết nội dung và ý tưởng sáng tạo',
+      'Canva và Adobe Spark để thiết kế đồ họa',
+      'Pictory và Lumen5 để sản xuất video',
+      'Amper Music để sáng tác nhạc',
+      'Brandwatch và Mention để lắng nghe xã hội',
+    ],
+    vietnamContext: {
+      title: 'Thương hiệu cá nhân và Tiềm năng từ AI tại Việt Nam',
+      content: [
+        'Thị trường thương hiệu cá nhân tại Việt Nam đang trên đà phát triển mạnh mẽ, đặc biệt là trong giới trẻ và các chuyên gia tự do.',
+        'AI đang được áp dụng để phân tích dữ liệu, tối ưu hóa nội dung và tự động hóa quy trình tiếp cận, giúp việc xây dựng thương hiệu cá nhân trở nên dễ dàng và hiệu quả hơn.',
+        'Tuy nhiên, vẫn còn nhiều thách thức về nhận thức và kiến thức để tận dụng tối đa tiềm năng của AI trong việc xây dựng thương hiệu cá nhân.',
+      ],
+    },
+    careerConnect: {
+      name: 'Chị Nguyễn Thị Hương',
+      title: 'Chuyên gia Xây dựng Thương hiệu Cá nhân',
+      company: 'Công ty TNHH Thương hiệu số Việt Nam',
+      imageUrl: 'https://i.pravatar.cc/150?u=nguyenthihuong',
+      quote:
+        'Thương hiệu cá nhân mạnh mẽ không chỉ giúp bạn nổi bật mà còn mở ra nhiều cơ hội mới. AI là công cụ đắc lực trong hành trình xây dựng thương hiệu cá nhân của bạn.',
+    },
+    quizzes: [
+      {
+        question: 'Thương hiệu cá nhân là gì?',
+        options: [
+          'Chỉ là một trang web cá nhân',
+          'Là cách mà người khác nhận diện và nhớ đến bạn dựa trên các giá trị, chuyên môn và cá tính của bạn',
+          'Là một chiến dịch quảng cáo',
+          'Không quan trọng trong kỷ nguyên số',
+        ],
+        correctAnswerIndex: 1,
+        explanation:
+          'Thương hiệu cá nhân là tổng hợp các ấn tượng, cảm nhận và nhận thức của người khác về bạn. Nó được xây dựng dựa trên các giá trị, chuyên môn và cá tính mà bạn thể hiện ra bên ngoài.',
+      },
+      {
+        question: 'Tại sao thương hiệu cá nhân lại quan trọng trong kỷ nguyên số?',
+        options: [
+          'Giúp bạn nổi bật giữa đám đông',
+          'Tăng cường uy tín và độ tin cậy',
+          'Mở ra nhiều cơ hội nghề nghiệp và hợp tác',
+          'Tất cả các đáp án trên đều đúng',
+        ],
+        correctAnswerIndex: 3,
+        explanation:
+          'Trong kỷ nguyên số, nơi mà thông tin và cơ hội tràn ngập, một thương hiệu cá nhân mạnh mẽ giúp bạn nổi bật, xây dựng uy tín và mở rộng mạng lưới quan hệ, từ đó tạo ra nhiều cơ hội hơn cho sự nghiệp và phát triển cá nhân.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Làm thế nào để AI giúp tôi tìm ra "tiếng nói thương hiệu" (brand voice) của mình?',
+        answer:
+          'Bạn có thể cung cấp cho AI (như ChatGPT) các bài viết, email, hoặc các nội dung bạn đã viết và yêu cầu nó phân tích các đặc điểm chung về văn phong, từ ngữ, và giọng điệu. Dựa trên đó, AI có thể giúp bạn định hình và mô tả tiếng nói thương hiệu của mình một cách rõ ràng.',
+      },
+      {
+        question: 'AI có thể giúp tôi kết nối với những người có ảnh hưởng trong ngành không?',
+        answer:
+          'Có. Các công cụ lắng nghe xã hội (social listening) như Brandwatch hay Mention có thể giúp bạn xác định ai là những người có tiếng nói quan trọng trong lĩnh vực của bạn. AI cũng có thể gợi ý các nội dung hoặc cuộc thảo luận mà bạn có thể tham gia để thu hút sự chú ý của họ một cách tự nhiên.',
+      },
+      {
+        question: 'Làm thế nào để tái sử dụng nội dung hiệu quả bằng AI?',
+        answer:
+          'Các công cụ như Lately AI rất mạnh mẽ trong việc này. Bạn có thể cung cấp cho nó một bài viết blog dài hoặc một video, và nó sẽ tự động phân tích và cắt ra hàng chục bài đăng nhỏ cho mạng xã hội (tweet, post LinkedIn, v.v.), mỗi bài đều được tối ưu hóa cho nền tảng tương ứng, giúp bạn tiết kiệm hàng giờ làm việc.',
+      },
+      {
+        question: 'Tôi có cần phải là một chuyên gia để xây dựng thương hiệu cá nhân không?',
+        answer:
+          'Không cần. Bất kỳ ai có đam mê, kiến thức và sự kiên trì đều có thể xây dựng thương hiệu cá nhân. AI là công cụ giúp bạn thực hiện điều đó một cách chuyên nghiệp và hiệu quả hơn, ngay cả khi bạn không có đội ngũ hỗ trợ lớn.',
+      },
+      {
+        question: 'Làm thế nào để đo lường hiệu quả của việc xây dựng thương hiệu cá nhân?',
+        answer:
+          'Bạn có thể đo lường qua các chỉ số như số lượng người theo dõi, tỷ lệ tương tác trên các bài đăng, số lượt đề cập đến tên bạn, lưu lượng truy cập vào website cá nhân, và quan trọng nhất là số lượng cơ hội (công việc, dự án, lời mời phát biểu) mà bạn nhận được.',
+      },
+      {
+        question: 'AI có thể giúp tôi thiết kế logo và bộ nhận diện thương hiệu cá nhân không?',
+        answer:
+          'Chắc chắn. Các công cụ như Midjourney hay Looka.com có thể tạo ra hàng trăm mẫu logo và gợi ý về màu sắc, font chữ dựa trên mô tả của bạn về phong cách và lĩnh vực bạn theo đuổi, giúp bạn có một bộ nhận diện chuyên nghiệp mà không cần tốn nhiều chi phí.',
+      },
+      {
+        question: 'Mất bao lâu để xây dựng một thương hiệu cá nhân thành công?',
+        answer:
+          'Xây dựng thương hiệu cá nhân là một quá trình dài hạn, không phải là một chiến dịch ngắn hạn. Nó đòi hỏi sự nhất quán và kiên nhẫn. Thông thường, bạn có thể bắt đầu thấy kết quả rõ rệt sau 6 tháng đến 1 năm nỗ lực liên tục.',
+      },
+      {
+        question: 'Làm thế nào để xử lý các bình luận tiêu cực hoặc khủng hoảng truyền thông nhỏ?',
+        answer:
+          'AI có thể giúp bạn theo dõi các cuộc thảo luận về mình và cảnh báo sớm khi có dấu hiệu tiêu cực. Hãy luôn giữ một thái độ chuyên nghiệp, lắng nghe và phản hồi một cách xây dựng. Đừng xóa các bình luận tiêu cực trừ khi chúng có nội dung xúc phạm. Sự minh bạch và chân thành thường là cách xử lý tốt nhất.',
+      },
+      {
+        question: 'AI có thể giúp tôi viết một cuốn sách để khẳng định vị thế chuyên gia không?',
+        answer:
+          'Có, AI là một trợ thủ đắc lực trong việc viết sách. Nó có thể giúp bạn nghiên cứu, xây dựng dàn ý chi tiết cho từng chương, viết bản nháp đầu tiên, và sau đó giúp bạn biên tập, chỉnh sửa. Quá trình viết một cuốn sách trở nên nhanh chóng và ít áp lực hơn rất nhiều.',
+      },
+      {
+        question: 'Thương hiệu cá nhân có giúp tôi tăng thu nhập không?',
+        answer:
+          'Chắc chắn. Một thương hiệu cá nhân mạnh mẽ giúp bạn trở thành một chuyên gia được công nhận trong lĩnh vực của mình. Điều này dẫn đến nhiều cơ hội hơn như được mời làm diễn giả, tư vấn, nhận các dự án với mức phí cao hơn, và dễ dàng hơn trong việc đàm phán lương hoặc thu hút nhà đầu tư.',
       },
     ],
   },

@@ -102,6 +102,46 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLessonType[] = [
         answer:
           'Việt Nam đang trở thành một "công xưởng mới" của thế giới, đặc biệt trong các lĩnh vực sản xuất điện tử, dệt may, và đồ gỗ. Nhờ chiến lược "China + 1", nhiều tập đoàn lớn đang dịch chuyển sản xuất sang Việt Nam để đa dạng hóa rủi ro, tạo ra cơ hội lớn cho nền kinh tế và lao động trong nước.',
       },
+      {
+        question: 'Mô hình SCOR là gì?',
+        answer:
+          'SCOR (Supply Chain Operations Reference) là một mô hình tham chiếu chuẩn hóa các quy trình trong chuỗi cung ứng, bao gồm Plan (Kế hoạch), Source (Nguồn cung), Make (Sản xuất), Deliver (Giao hàng), Return (Trả hàng), và Enable (Hỗ trợ). Nó giúp các công ty đánh giá và cải thiện hiệu suất chuỗi cung ứng của mình.',
+      },
+      {
+        question: 'Những rủi ro lớn nhất trong chuỗi cung ứng toàn cầu là gì?',
+        answer:
+          'Các rủi ro bao gồm gián đoạn do thiên tai, bất ổn địa chính trị (chiến tranh, biểu tình), biến động kinh tế (lạm phát, suy thoái), rủi ro từ nhà cung cấp (phá sản, chất lượng kém), và các cuộc tấn công mạng. Đại dịch COVID-19 là một ví dụ điển hình về một rủi ro gây gián đoạn trên quy mô toàn cầu.',
+      },
+      {
+        question: 'Công nghệ giúp tối ưu hóa chuỗi cung ứng như thế nào?',
+        answer:
+          'Công nghệ đóng vai trò then chốt qua việc sử dụng AI để dự báo nhu cầu, IoT để theo dõi hàng hóa theo thời gian thực, Blockchain để tăng cường tính minh bạch và truy xuất nguồn gốc, và các phần mềm quản lý (WMS, TMS) để tự động hóa các quy trình phức tạp.',
+      },
+      {
+        question: 'Sản xuất "Just-in-Time" (JIT) là gì?',
+        answer:
+          'JIT là một chiến lược sản xuất và quản lý tồn kho, trong đó nguyên vật liệu chỉ được đặt hàng và nhận về ngay khi cần thiết cho quá trình sản xuất. Mục tiêu là giảm thiểu chi phí lưu kho và lãng phí, nhưng nó đòi hỏi một chuỗi cung ứng rất đáng tin cậy và được đồng bộ hóa cao.',
+      },
+      {
+        question: 'Điểm nghẽn (bottleneck) trong chuỗi cung ứng là gì?',
+        answer:
+          'Điểm nghẽn là một công đoạn trong chuỗi cung ứng có công suất thấp hơn các công đoạn khác, làm chậm toàn bộ dòng chảy của hàng hóa. Ví dụ, một cảng biển bị tắc nghẽn có thể là một điểm nghẽn lớn, gây trì hoãn cho hàng ngàn container.',
+      },
+      {
+        question: 'Sự khác biệt giữa Logistics và Quản lý chuỗi cung ứng là gì?',
+        answer:
+          'Logistics là một phần của quản lý chuỗi cung ứng, tập trung vào việc di chuyển và lưu trữ hàng hóa một cách hiệu quả. Quản lý chuỗi cung ứng có phạm vi rộng hơn, bao gồm tất cả các quy trình từ tìm nguồn cung ứng nguyên vật liệu, sản xuất, đến phân phối sản phẩm cuối cùng cho người tiêu dùng và cả dịch vụ sau bán hàng.',
+      },
+      {
+        question: 'Các hiệp định thương mại như EVFTA và CPTPP ảnh hưởng đến chuỗi cung ứng Việt Nam ra sao?',
+        answer:
+          'Các hiệp định này giúp giảm hoặc loại bỏ thuế quan, tạo điều kiện cho hàng hóa Việt Nam xuất khẩu sang các thị trường lớn với giá cạnh tranh hơn. Chúng cũng thúc đẩy đầu tư nước ngoài vào lĩnh vực sản xuất và logistics tại Việt Nam, giúp nâng cấp và hội nhập sâu hơn vào chuỗi cung ứng toàn cầu.',
+      },
+      {
+        question: 'Một chuỗi cung ứng "kiên cường" (resilient) có đặc điểm gì?',
+        answer:
+          'Một chuỗi cung ứng kiên cường có khả năng dự đoán, chống chọi và phục hồi nhanh chóng sau các sự cố gián đoạn. Các đặc điểm chính bao gồm sự đa dạng hóa (nhà cung cấp, tuyến đường vận chuyển), tính minh bạch cao (khả năng theo dõi hàng hóa), sự linh hoạt và hợp tác chặt chẽ giữa các đối tác.',
+      },
     ],
   },
   {
@@ -196,6 +236,46 @@ export const supplyChainLogisticsLessons: SupplyChainLogisticsLessonType[] = [
         question: 'Robot tự hành (AGV/AMR) khác nhau như thế nào?',
         answer:
           'AGV (Automated Guided Vehicle) thường di chuyển theo các đường dẫn được định sẵn (vạch từ, mã QR). Trong khi đó, AMR (Autonomous Mobile Robot) thông minh hơn, có thể tự lập bản đồ kho hàng và linh hoạt tìm đường đi ngắn nhất để tránh vật cản. AMR đại diện cho thế hệ tự động hóa kho bãi mới, linh hoạt và dễ triển khai hơn.',
+      },
+      {
+        question: 'Sự khác biệt giữa kho hàng (warehouse) và trung tâm hoàn tất đơn hàng (fulfillment center) là gì?',
+        answer:
+          'Kho hàng truyền thống chủ yếu tập trung vào việc lưu trữ hàng hóa với số lượng lớn (pallets). Trung tâm hoàn tất đơn hàng được thiết kế cho thương mại điện tử, tập trung vào việc xử lý các đơn hàng nhỏ, lẻ (individual items) một cách nhanh chóng, bao gồm cả việc lấy hàng, đóng gói và giao cho các đơn vị vận chuyển.',
+      },
+      {
+        question: '"Cross-docking" là gì?',
+        answer:
+          'Cross-docking là một kỹ thuật logistics mà ở đó hàng hóa từ nhà cung cấp được chuyển trực tiếp từ xe tải đến sang xe tải đi giao hàng mà không cần lưu kho. Kỹ thuật này giúp giảm đáng kể thời gian lưu kho và chi phí, thường được áp dụng cho các mặt hàng có nhu cầu cao và ổn định.',
+      },
+      {
+        question: 'Chuỗi cung ứng lạnh (cold chain) là gì?',
+        answer:
+          'Là một chuỗi cung ứng được kiểm soát nhiệt độ không gián đoạn, được sử dụng để vận chuyển và lưu trữ các sản phẩm nhạy cảm với nhiệt độ như thực phẩm tươi sống, vắc-xin, và dược phẩm. Việc duy trì nhiệt độ ổn định trong suốt quá trình là cực kỳ quan trọng để đảm bảo chất lượng và an toàn sản phẩm.',
+      },
+      {
+        question: 'Mô hình EOQ (Economic Order Quantity) là gì?',
+        answer:
+          'EOQ là một công thức tính toán số lượng đặt hàng lý tưởng mà một công ty nên mua để giảm thiểu tổng chi phí tồn kho, bao gồm chi phí đặt hàng và chi phí lưu kho. Mục tiêu là tìm ra điểm cân bằng để không đặt hàng quá thường xuyên (tốn chi phí đặt hàng) và cũng không lưu trữ quá nhiều hàng (tốn chi phí lưu kho).',
+      },
+      {
+        question: 'IoT (Internet of Things) được ứng dụng trong quản lý kho như thế nào?',
+        answer:
+          'IoT được sử dụng rộng rãi trong kho thông minh. Các cảm biến IoT trên kệ hàng và sản phẩm có thể theo dõi mức tồn kho theo thời gian thực, giám sát điều kiện môi trường (nhiệt độ, độ ẩm), và cung cấp dữ liệu cho robot tự hành để tối ưu hóa đường đi. Điều này giúp tăng cường khả năng hiển thị và tự động hóa.',
+      },
+      {
+        question: 'Giao hàng chặng cuối (last-mile delivery) là gì và tại sao nó lại thách thức?',
+        answer:
+          'Là bước cuối cùng của quá trình giao hàng, từ trung tâm phân phối đến tay người tiêu dùng cuối cùng. Đây là chặng tốn kém và phức tạp nhất do phải xử lý nhiều đơn hàng nhỏ lẻ đến nhiều địa chỉ khác nhau trong khu vực đô thị đông đúc, đối mặt với các vấn đề như kẹt xe, khó tìm địa chỉ, và khách hàng không có nhà.',
+      },
+      {
+        question: 'Dark store (cửa hàng không khách) là gì?',
+        answer:
+          'Dark store là một loại hình trung tâm phân phối được bố trí giống như một siêu thị thông thường nhưng không mở cửa cho công chúng. Nhân viên sẽ lấy hàng từ các kệ để hoàn thành các đơn đặt hàng online. Mô hình này giúp các nhà bán lẻ đẩy nhanh tốc độ giao hàng trong khu vực đô thị.',
+      },
+      {
+        question: 'Trí tuệ nhân tạo (AI) giúp quản lý tồn kho như thế nào?',
+        answer:
+          'AI có thể phân tích dữ liệu lịch sử bán hàng, xu hướng thị trường, và thậm chí cả các yếu tố bên ngoài như thời tiết để dự báo nhu cầu một cách chính xác hơn. Điều này giúp doanh nghiệp tối ưu hóa mức tồn kho, tránh tình trạng hết hàng hoặc tồn kho quá nhiều, và tự động đề xuất các đơn đặt hàng bổ sung.',
       },
     ],
   },

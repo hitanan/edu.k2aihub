@@ -1,10 +1,19 @@
 ---
 title: 'Hướng Dẫn Quản Lý Năng Lượng: Tối Ưu Hóa Hiệu Suất, Giảm Chi Phí'
 description: 'Học các nguyên tắc cơ bản về quản lý năng lượng trong gia đình và doanh nghiệp, từ việc thực hiện kiểm toán năng lượng đến việc áp dụng các công nghệ tiết kiệm và sản xuất năng lượng tại chỗ.'
-date: '2025-10-28'
+date: '2025-09-28'
 author: 'K2AiHub Sustainability Team'
 category: 'Hướng Dẫn'
-tags: ['quản lý năng lượng', 'tiết kiệm điện', 'năng lượng tái tạo', 'hiệu quả năng lượng', 'bền vững', 'hướng dẫn', 'K2AiHub']
+tags:
+  [
+    'quản lý năng lượng',
+    'tiết kiệm điện',
+    'năng lượng tái tạo',
+    'hiệu quả năng lượng',
+    'bền vững',
+    'hướng dẫn',
+    'K2AiHub',
+  ]
 featured: true
 readingTime: '20 phút đọc'
 ---
@@ -22,10 +31,10 @@ Bài viết này của **K2AiHub** sẽ cung cấp một lộ trình 5 bước �
 Bạn không thể quản lý những gì bạn không đo lường. Bước đầu tiên là tìm hiểu xem năng lượng của bạn đang được sử dụng ở đâu.
 
 - **Đối với gia đình:**
-    - **Đọc hóa đơn tiền điện:** Xem xét hóa đơn hàng tháng để nhận ra các xu hướng. Mức tiêu thụ có tăng đột biến vào mùa hè do sử dụng điều hòa không?
-    - **Sử dụng thiết bị đo điện:** Cắm các thiết bị điện tử (tủ lạnh, TV, máy tính) vào một thiết bị đo công suất tiêu thụ để xác định "thủ phạm" tiêu tốn nhiều năng lượng nhất. Bạn có thể sẽ ngạc nhiên khi biết các thiết bị ở chế độ chờ (standby) cũng tiêu thụ một lượng điện đáng kể.
+  - **Đọc hóa đơn tiền điện:** Xem xét hóa đơn hàng tháng để nhận ra các xu hướng. Mức tiêu thụ có tăng đột biến vào mùa hè do sử dụng điều hòa không?
+  - **Sử dụng thiết bị đo điện:** Cắm các thiết bị điện tử (tủ lạnh, TV, máy tính) vào một thiết bị đo công suất tiêu thụ để xác định "thủ phạm" tiêu tốn nhiều năng lượng nhất. Bạn có thể sẽ ngạc nhiên khi biết các thiết bị ở chế độ chờ (standby) cũng tiêu thụ một lượng điện đáng kể.
 - **Đối với doanh nghiệp:**
-    - **Thực hiện kiểm toán năng lượng chuyên nghiệp:** Thuê một chuyên gia để phân tích toàn bộ hệ thống của bạn, từ chiếu sáng, điều hòa không khí (HVAC) đến các máy móc sản xuất, để xác định các khu vực lãng phí năng lượng.
+  - **Thực hiện kiểm toán năng lượng chuyên nghiệp:** Thuê một chuyên gia để phân tích toàn bộ hệ thống của bạn, từ chiếu sáng, điều hòa không khí (HVAC) đến các máy móc sản xuất, để xác định các khu vực lãng phí năng lượng.
 
 ## Bước 2: Tìm Kiếm "Trái Cây Tầm Thấp" (Các Giải Pháp Dễ Thực Hiện)
 
@@ -57,8 +66,8 @@ Công nghệ có thể giúp bạn tự động hóa việc tiết kiệm năng 
 Đây là bước đi cao nhất trong quản lý năng lượng: tự sản xuất năng lượng sạch của riêng bạn.
 
 - **Lắp đặt pin mặt trời trên mái nhà:**
-    - Chi phí lắp đặt pin mặt trời đã giảm đáng kể trong những năm gần đây.
-    - Hệ thống này không chỉ giúp giảm hóa đơn tiền điện mà bạn còn có thể bán lại lượng điện dư thừa cho lưới điện quốc gia ở nhiều nơi.
+  - Chi phí lắp đặt pin mặt trời đã giảm đáng kể trong những năm gần đây.
+  - Hệ thống này không chỉ giúp giảm hóa đơn tiền điện mà bạn còn có thể bán lại lượng điện dư thừa cho lưới điện quốc gia ở nhiều nơi.
 - **Hệ thống nước nóng năng lượng mặt trời:** Sử dụng nhiệt từ mặt trời để làm nóng nước, giảm đáng kể lượng điện hoặc gas cần thiết.
 
 ## Kết Luận

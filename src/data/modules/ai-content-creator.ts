@@ -1,3 +1,5 @@
+import { K2Module } from '@/data/k2-modules';
+import { ModuleData } from '@/types';
 import { BaseLessonData } from '@/types/lesson-base';
 
 export const aiContentCreatorLessons: BaseLessonData[] = [
@@ -186,6 +188,41 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
         answer:
           'Chính sách của YouTube cho phép sử dụng giọng nói tổng hợp, miễn là nội dung của bạn mang lại giá trị, có tính bình luận, giáo dục và không phải là nội dung lặp lại, spam. Chất lượng và sự độc đáo của nội dung vẫn là yếu tố quan trọng nhất.',
       },
+      {
+        question: 'Prompt Engineering cho video khác gì so với cho hình ảnh?',
+        answer:
+          'Prompt cho video phức tạp hơn vì bạn cần mô tả cả chuyển động, diễn biến của cảnh quay và phong cách điện ảnh. Ví dụ, bạn cần thêm các thuật ngữ như "dolly shot", "crane shot", "slow motion" để kiểm soát chuyển động của camera ảo.',
+      },
+      {
+        question: 'Chất lượng video do AI tạo ra đã đủ tốt để sử dụng chuyên nghiệp chưa?',
+        answer:
+          'Chất lượng đang cải thiện rất nhanh. Hiện tại, video AI phù hợp nhất cho các video ngắn trên mạng xã hội, video giải thích hoặc các cảnh quay bổ trợ (B-roll). Đối với các sản phẩm điện ảnh cao cấp, nó vẫn thường được dùng ở khâu lên ý tưởng hoặc tạo hiệu ứng đặc biệt hơn là tạo toàn bộ phim.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo tính nhất quán về nhân vật hoặc phong cách qua nhiều cảnh quay AI?',
+        answer:
+          'Đây là một trong những thách thức lớn nhất. Các công cụ như RunwayML đang giới thiệu các tính năng "character consistency" để giữ một nhân vật không đổi. Một mẹo khác là mô tả nhân vật hoặc phong cách thật chi tiết và sử dụng cùng một "seed" (nếu nền tảng hỗ trợ) cho các lần tạo khác nhau.',
+      },
+      {
+        question: 'Chi phí để sử dụng các công cụ video AI này là bao nhiêu?',
+        answer:
+          'Hầu hết các nền tảng hoạt động theo mô hình đăng ký (subscription), với chi phí từ 20-100 USD mỗi tháng tùy thuộc vào số lượng video bạn muốn tạo và các tính năng nâng cao. Nhiều công cụ cũng có bản dùng thử miễn phí để bạn trải nghiệm.',
+      },
+      {
+        question: 'AI có thể tự động thêm nhạc nền và hiệu ứng âm thanh không?',
+        answer:
+          'Một số công cụ chỉnh sửa video AI có khả năng đề xuất và tự động thêm nhạc nền phù hợp với tâm trạng của video. Tuy nhiên, việc thiết kế âm thanh chi tiết (sound design) vẫn thường đòi hỏi sự can thiệp của con người để đạt hiệu quả tốt nhất.',
+      },
+      {
+        question: 'Tôi có thể sử dụng cảnh quay có sẵn và dùng AI để chỉnh sửa nó không?',
+        answer:
+          'Chắc chắn. Các công cụ như Descript cho phép bạn chỉnh sửa video bằng cách chỉnh sửa văn bản phiên âm. Các công cụ khác có thể tự động cắt bỏ những khoảng lặng, thêm phụ đề, hoặc thậm chí thay đổi nền của video (roto-scoping) một cách nhanh chóng.',
+      },
+      {
+        question: 'Tương lai của việc tạo video với AI sẽ như thế nào?',
+        answer:
+          'Trong tương lai gần, chúng ta có thể sẽ thấy các mô hình AI có khả năng tạo ra các video dài hơn, phức tạp hơn với cốt truyện mạch lạc chỉ từ một vài câu lệnh. Việc tích hợp AI vào các phần mềm chỉnh sửa chuyên nghiệp như Adobe Premiere Pro hay DaVinci Resolve cũng sẽ ngày càng sâu sắc hơn, trở thành một phần không thể thiếu của quy trình sản xuất.',
+      },
     ],
   },
   {
@@ -251,82 +288,62 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
       },
     ],
     realWorldApplications: [
-      'Agency quản lý hơn 50 tài khoản khách hàng cùng một lúc',
-      'Các thương hiệu thương mại điện tử duy trì dịch vụ khách hàng 24/7',
-      'Các thương hiệu cá nhân mở rộng ảnh hưởng mà không tăng thời gian tương ứng',
-      'Các công ty B2B nuôi dưỡng khách hàng tiềm năng qua nhiều điểm chạm',
-    ],
-    caseStudies: [
-      {
-        title: 'Thành công Tự động hóa của Agency',
-        organization: 'Agency Quản lý Mạng xã hội',
-        problem: 'Không thể mở rộng hoạt động để phục vụ nhiều khách hàng hơn',
-        solution: 'Quy trình tự động hóa AI giảm 90% công việc thủ công',
-        impact: 'Tăng từ 20 lên 100 khách hàng với quy mô nhóm không đổi',
-        innovations: [
-          'Quy trình phê duyệt nội dung được hỗ trợ bởi AI',
-          'Tối ưu hóa tương tác dự đoán',
-          'Giao thức quản lý khủng hoảng tự động',
-        ],
-      },
-    ],
-    resources: [
-      {
-        title: 'Thực hành Tốt nhất về Tự động hóa Mạng xã hội',
-        url: 'https://hootsuite.com/automation',
-        type: 'Guide',
-      },
-      {
-        title: 'Triển khai Chatbot AI',
-        url: 'https://manychat.com/blog/ai-chatbots',
-        type: 'Tutorial',
-      },
-    ],
-    vietnamContext: {
-      title: 'Tự động hóa và Tương lai của Social Media Marketing tại Việt Nam',
-      content: [
-        'Các doanh nghiệp Việt Nam đang ngày càng nhận thức được tầm quan trọng của việc duy trì sự hiện diện 24/7 trên mạng xã hội để tương tác với khách hàng.',
-        'Tự động hóa bằng AI, đặc biệt là chatbot, đang được ứng dụng rộng rãi trong các ngành như thương mại điện tử, bất động sản, và du lịch để trả lời các câu hỏi thường gặp và sàng lọc khách hàng tiềm năng.',
-        'Việc sử dụng AI để phân tích dữ liệu mạng xã hội giúp các thương hiệu Việt Nam hiểu rõ hơn về xu hướng của người tiêu dùng và phản ứng nhanh chóng với các cuộc khủng hoảng truyền thông.',
-      ],
-    },
-    careerConnect: {
-      name: 'Anh Phùng Thái Học',
-      title: 'Chuyên gia Marketing Tự động hóa',
-      company: 'LadiPage Việt Nam',
-      imageUrl: 'https://i.pravatar.cc/150?u=phung-thai-hoc',
-      quote:
-        'Tự động hóa không phải là để thay thế con người, mà là để giải phóng con người khỏi những công việc nhàm chán. AI giúp chúng ta có thời gian tập trung vào chiến lược, sáng tạo và xây dựng mối quan hệ thực sự với khách hàng.',
-    },
-    quizzes: [
-      {
-        question: 'Zapier là công cụ được sử dụng để làm gì?',
-        options: [
-          'Lắng nghe xã hội',
-          'Tạo chatbot',
-          'Tích hợp và tự động hóa quy trình giữa các ứng dụng khác nhau',
-          'Lên lịch bài đăng',
-        ],
-        correctAnswerIndex: 2,
-        explanation:
-          'Zapier là một nền tảng tự động hóa mạnh mẽ cho phép bạn kết nối hàng ngàn ứng dụng khác nhau (ví dụ: khi có email mới trong Gmail, tự động tạo một bài đăng trên Facebook) để tạo ra các quy trình làm việc tự động.',
-      },
+      'Tự động đăng bài và lên lịch cho các chiến dịch marketing.',
+      'Phân tích cảm xúc của khách hàng và phản hồi tự động.',
+      'Tạo báo cáo phân tích hiệu suất mạng xã hội tự động.',
+      'Chatbot trả lời các câu hỏi thường gặp trên Fanpage.',
+      'Gợi ý nội dung và thời điểm đăng bài tối ưu.',
     ],
     faqs: [
       {
-        question: 'Tự động hóa có làm cho tài khoản mạng xã hội của tôi trông như robot không?',
+        question: 'Liệu tự động hóa có làm mất đi tính "con người" của thương hiệu không?',
         answer:
-          'Nếu lạm dụng thì có. Tự động hóa thông minh là về việc xử lý các tác vụ lặp lại (như lên lịch đăng bài, trả lời câu hỏi thường gặp) để bạn có nhiều thời gian hơn cho các tương tác chân thực (như trả lời các bình luận sâu sắc, tham gia vào các cuộc thảo luận). Hãy luôn giữ yếu tố con người trong chiến lược của bạn.',
+          'Đây là một lo ngại chính đáng. Chìa khóa là sử dụng tự động hóa cho các tác vụ lặp đi lặp lại (như lên lịch đăng bài, báo cáo) và dành thời gian con người cho các tương tác sâu hơn (như trả lời các bình luận phức tạp, tạo chiến lược sáng tạo). Tự động hóa nên là công cụ giải phóng bạn, không phải thay thế bạn.',
       },
       {
-        question: 'Nền tảng nào là tốt nhất để bắt đầu tự động hóa mạng xã hội?',
+        question: 'Các công cụ AI có thể tự tạo ra nội dung hoàn toàn mới cho mạng xã hội không?',
         answer:
-          'Đối với người mới bắt đầu, các công cụ như Buffer hoặc Hootsuite là lựa chọn tốt vì chúng có giao diện thân thiện và tích hợp sẵn các tính năng AI cơ bản. Khi bạn cần các quy trình phức tạp hơn, việc kết hợp chúng với Zapier sẽ mở ra khả năng tự động hóa gần như vô hạn.',
+          'Có, các công cụ như Jasper hay Copy.ai có thể viết các bài đăng, tweet, hoặc mô tả sản phẩm từ một vài gợi ý. Tuy nhiên, kết quả tốt nhất thường đến từ việc con người chỉnh sửa, thêm thắt góc nhìn và cá tính riêng vào nội dung do AI tạo ra.',
       },
       {
-        question: 'Chatbot có thể xử lý các tình huống khách hàng tức giận không?',
+        question: 'Làm thế nào AI xác định được "thời điểm tốt nhất" để đăng bài?',
         answer:
-          'Chatbot cơ bản nên được lập trình để nhận diện các từ khóa tiêu cực hoặc cảm xúc tức giận và ngay lập tức chuyển cuộc trò chuyện cho một nhân viên hỗ trợ con người. Các chatbot AI tiên tiến hơn có thể cố gắng xoa dịu tình hình, nhưng việc chuyển cho con người xử lý vẫn là phương án tốt nhất để tránh làm tình hình tồi tệ hơn.',
+          'Các công cụ như Buffer hoặc Hootsuite phân tích dữ liệu lịch sử tương tác của đối tượng mục tiêu của bạn. Chúng xác định các khung giờ mà người theo dõi của bạn hoạt động tích cực nhất và đề xuất lịch đăng bài dựa trên dữ liệu đó để tối đa hóa phạm vi tiếp cận và tương tác.',
+      },
+      {
+        question: 'Sử dụng chatbot trên Fanpage có hiệu quả không?',
+        answer:
+          'Rất hiệu quả nếu được thiết lập đúng cách. Chatbot có thể xử lý ngay lập tức 80% các câu hỏi phổ biến (giá cả, địa chỉ, giờ làm việc), giúp giảm thời gian chờ đợi của khách hàng và giải phóng nhân viên hỗ trợ. Đối với các câu hỏi phức tạp, chatbot nên có khả năng chuyển cuộc trò chuyện cho người thật.',
+      },
+      {
+        question: 'AI có thể giúp tôi theo dõi đối thủ cạnh tranh trên mạng xã hội không?',
+        answer:
+          'Chắc chắn. Các nền tảng như Brand24 hoặc Sprout Social sử dụng AI để theo dõi các lượt đề cập (mentions) về đối thủ, phân tích chiến lược nội dung của họ, và xác định các xu hướng trong ngành. Điều này giúp bạn có cái nhìn toàn cảnh về thị trường và đưa ra quyết định tốt hơn.',
+      },
+      {
+        question: 'Chi phí cho các công cụ tự động hóa mạng xã hội bằng AI là bao nhiêu?',
+        answer:
+          'Chi phí rất đa dạng. Có những công cụ miễn phí với tính năng hạn chế. Các gói trả phí thường bắt đầu từ khoảng 50-150 USD/tháng cho các doanh nghiệp nhỏ và có thể lên đến hàng nghìn USD cho các doanh nghiệp lớn với nhu cầu phân tích sâu và quản lý nhiều tài khoản.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu với tự động hóa mạng xã hội?',
+        answer:
+          'Hãy bắt đầu nhỏ. Chọn một tác vụ lặp đi lặp lại và tốn nhiều thời gian nhất, ví dụ như lên lịch đăng bài. Sử dụng một công cụ như Buffer hoặc Later để tự động hóa việc đó. Khi đã quen, bạn có thể khám phá các tính năng nâng cao hơn như phân tích hoặc chatbot.',
+      },
+      {
+        question: 'AI có thể phân tích hình ảnh và video trên mạng xã hội không?',
+        answer:
+          'Có. AI có thể nhận dạng logo, sản phẩm, hoặc thậm chí cả cảm xúc trên khuôn mặt trong hình ảnh và video. Điều này rất hữu ích để theo dõi cách thương hiệu của bạn xuất hiện trong nội dung do người dùng tạo (UGC) hoặc để phân tích chiến lược hình ảnh của đối thủ.',
+      },
+      {
+        question: 'Rủi ro lớn nhất khi sử dụng tự động hóa AI trên mạng xã hội là gì?',
+        answer:
+          'Rủi ro lớn nhất là thiết lập và quên đi. Thị trường và các cuộc trò chuyện trên mạng xã hội thay đổi liên tục. Nếu bạn tự động hóa hoàn toàn mà không có sự giám sát, thương hiệu của bạn có thể trở nên lạc lõng, không phù hợp, hoặc bỏ lỡ các cơ hội tương tác quan trọng. Luôn cần có sự kết hợp giữa tự động hóa và giám sát của con người.',
+      },
+      {
+        question: 'Liệu AI có thể giúp tạo ra các chiến dịch quảng cáo trả phí (paid ads) hiệu quả hơn không?',
+        answer:
+          'Có. Các nền tảng quảng cáo như Facebook Ads và Google Ads sử dụng AI rất nhiều để tối ưu hóa việc nhắm mục tiêu (targeting), đề xuất các nhóm đối tượng mới, và tự động phân bổ ngân sách vào các quảng cáo hoạt động hiệu quả nhất. Các công cụ của bên thứ ba còn có thể giúp tạo ra các biến thể quảng cáo để thử nghiệm A/B một cách nhanh chóng.',
       },
     ],
   },
@@ -469,6 +486,81 @@ export const aiContentCreatorLessons: BaseLessonData[] = [
         answer:
           'Các công cụ như Lately AI rất mạnh mẽ trong việc này. Bạn có thể cung cấp cho nó một bài viết blog dài hoặc một video, và nó sẽ tự động phân tích và cắt ra hàng chục bài đăng nhỏ cho mạng xã hội (tweet, post LinkedIn, v.v.), mỗi bài đều được tối ưu hóa cho nền tảng tương ứng, giúp bạn tiết kiệm hàng giờ làm việc.',
       },
+      {
+        question: 'Tôi có cần phải là một chuyên gia để xây dựng thương hiệu cá nhân không?',
+        answer:
+          'Không cần. Bất kỳ ai có đam mê, kiến thức và sự kiên trì đều có thể xây dựng thương hiệu cá nhân. AI là công cụ giúp bạn thực hiện điều đó một cách chuyên nghiệp và hiệu quả hơn, ngay cả khi bạn không có đội ngũ hỗ trợ lớn.',
+      },
+      {
+        question: 'Làm thế nào để đo lường hiệu quả của việc xây dựng thương hiệu cá nhân?',
+        answer:
+          'Bạn có thể đo lường qua các chỉ số như số lượng người theo dõi, tỷ lệ tương tác trên các bài đăng, số lượt đề cập đến tên bạn, lưu lượng truy cập vào website cá nhân, và quan trọng nhất là số lượng cơ hội (công việc, dự án, lời mời phát biểu) mà bạn nhận được.',
+      },
+      {
+        question: 'AI có thể giúp tôi thiết kế logo và bộ nhận diện thương hiệu cá nhân không?',
+        answer:
+          'Chắc chắn. Các công cụ như Midjourney hay Looka.com có thể tạo ra hàng trăm mẫu logo và gợi ý về màu sắc, font chữ dựa trên mô tả của bạn về phong cách và lĩnh vực bạn theo đuổi, giúp bạn có một bộ nhận diện chuyên nghiệp mà không cần tốn nhiều chi phí.',
+      },
+      {
+        question: 'Mất bao lâu để xây dựng một thương hiệu cá nhân thành công?',
+        answer:
+          'Xây dựng thương hiệu cá nhân là một quá trình dài hạn, không phải là một chiến dịch ngắn hạn. Nó đòi hỏi sự nhất quán và kiên nhẫn. Thông thường, bạn có thể bắt đầu thấy kết quả rõ rệt sau 6 tháng đến 1 năm nỗ lực liên tục.',
+      },
+      {
+        question: 'Làm thế nào để xử lý các bình luận tiêu cực hoặc khủng hoảng truyền thông nhỏ?',
+        answer:
+          'AI có thể giúp bạn theo dõi các cuộc thảo luận về mình và cảnh báo sớm khi có dấu hiệu tiêu cực. Hãy luôn giữ một thái độ chuyên nghiệp, lắng nghe và phản hồi một cách xây dựng. Đừng xóa các bình luận tiêu cực trừ khi chúng có nội dung xúc phạm. Sự minh bạch và chân thành thường là cách xử lý tốt nhất.',
+      },
+      {
+        question: 'AI có thể giúp tôi viết một cuốn sách để khẳng định vị thế chuyên gia không?',
+        answer:
+          'Có, AI là một trợ thủ đắc lực trong việc viết sách. Nó có thể giúp bạn nghiên cứu, xây dựng dàn ý chi tiết cho từng chương, viết bản nháp đầu tiên, và sau đó giúp bạn biên tập, chỉnh sửa. Quá trình viết một cuốn sách trở nên nhanh chóng và ít áp lực hơn rất nhiều.',
+      },
+      {
+        question: 'Thương hiệu cá nhân có giúp tôi tăng thu nhập không?',
+        answer:
+          'Chắc chắn. Một thương hiệu cá nhân mạnh mẽ giúp bạn trở thành một chuyên gia được công nhận trong lĩnh vực của mình. Điều này dẫn đến nhiều cơ hội hơn như được mời làm diễn giả, tư vấn, nhận các dự án với mức phí cao hơn, và dễ dàng hơn trong việc đàm phán lương hoặc thu hút nhà đầu tư.',
+      },
     ],
   },
 ];
+
+export const aiContentCreatorModuleData: ModuleData = {
+  id: K2Module.AIContentCreator,
+  title: 'AI Content Creator',
+  subtitle: 'Sáng tạo nội dung với AI',
+  description:
+    'Khám phá cách sử dụng AI để tạo ra nội dung hấp dẫn, từ video, bài viết đến hình ảnh và âm thanh. Khóa học này cung cấp kiến thức và kỹ năng cần thiết để tận dụng sức mạnh của AI trong việc sáng tạo nội dung.',
+  category: 'creative',
+  icon: '✍️',
+  color: 'from-cyan-500 to-blue-500',
+  duration: '6-8 giờ',
+  level: 'Trung bình',
+  features: ['Viết kịch bản video', 'Chỉnh sửa video bằng AI', 'Tạo ảnh thumbnail', 'Tối ưu hóa nội dung'],
+  prerequisites: ['Hiểu biết cơ bản về mạng xã hội', 'Tư duy sáng tạo', 'Kỹ năng máy tính cơ bản'],
+  objectives: [
+    'Sử dụng AI để viết kịch bản video hấp dẫn.',
+    'Làm chủ các công cụ chỉnh sửa video AI như RunwayML.',
+    'Tạo ảnh thumbnail và đồ họa với Midjourney và Canva AI.',
+    'Tối ưu hóa nội dung cho từng nền tảng.',
+  ],
+  careerOutcomes: [
+    'Chuyên gia sáng tạo nội dung số',
+    'Quản lý mạng xã hội',
+    'Digital Marketer',
+    'YouTuber / TikToker chuyên nghiệp',
+  ],
+  industryApplications: [
+    { name: 'Marketing & Quảng cáo', description: 'Tạo nội dung quảng cáo sáng tạo và hiệu quả.' },
+    { name: 'Truyền thông & Báo chí', description: 'Sản xuất tin tức và bài viết nhanh chóng.' },
+    { name: 'Giáo dục', description: 'Tạo tài liệu học tập và video giảng dạy sinh động.' },
+    { name: 'Giải trí', description: 'Sản xuất video, kịch bản phim và nội dung giải trí khác.' },
+  ],
+  marketDemand: {
+    averageSalary: '60-110 triệu VND/năm',
+    jobGrowth: '40%',
+    hireDemand: 'Rất cao',
+  },
+  relatedModules: [K2Module.AIArtCreativeTech, K2Module.DigitalMarketing],
+  lessons: aiContentCreatorLessons,
+};

@@ -91,6 +91,36 @@ export const blueEconomyLessons: BaseLessonData[] = [
         answer:
           'Module đề cập đến việc sử dụng IoT và AI trong nuôi trồng thủy sản thông minh. Các cảm biến giám sát chất lượng nước theo thời gian thực, và AI giúp dự đoán, tối ưu hóa việc cho ăn, qua đó tăng năng suất và giảm tác động đến môi trường.',
       },
+      {
+        question: 'Các trụ cột chính của kinh tế biển xanh là gì?',
+        answer:
+          'Các trụ cột chính bao gồm: 1. Bền vững về môi trường (bảo vệ hệ sinh thái biển), 2. Bền vững về kinh tế (tạo ra tăng trưởng và việc làm), và 3. Bền vững về xã hội (cải thiện sinh kế và đảm bảo công bằng cho cộng đồng ven biển).',
+      },
+      {
+        question: 'Du lịch biển bền vững có nghĩa là gì?',
+        answer:
+          'Du lịch biển bền vững là các hoạt động du lịch giảm thiểu tác động tiêu cực đến môi trường và văn hóa địa phương, đồng thời tạo ra lợi ích kinh tế cho cộng đồng. Ví dụ bao gồm du lịch sinh thái, lặn biển có trách nhiệm, và các hoạt động giáo dục về bảo tồn.',
+      },
+      {
+        question: 'Chính phủ Việt Nam có những chính sách gì để thúc đẩy kinh tế biển xanh?',
+        answer:
+          'Chính phủ đã ban hành "Chiến lược phát triển bền vững kinh tế biển Việt Nam đến năm 2030, tầm nhìn đến năm 2045", trong đó ưu tiên phát triển các ngành kinh tế biển công nghệ cao, thân thiện với môi trường và tăng cường hợp tác quốc tế.',
+      },
+      {
+        question: 'Vai trò của cộng đồng địa phương trong kinh tế biển xanh là gì?',
+        answer:
+          'Cộng đồng địa phương đóng vai trò trung tâm. Họ là những người trực tiếp quản lý và hưởng lợi từ tài nguyên biển. Việc trao quyền, đào tạo và đảm bảo họ được chia sẻ lợi ích công bằng là yếu tố then chốt để phát triển bền vững.',
+      },
+      {
+        question: 'Công nghệ sinh học biển đóng góp như thế nào vào kinh tế biển xanh?',
+        answer:
+          'Công nghệ sinh học biển khai thác các hợp chất độc đáo từ sinh vật biển để tạo ra các sản phẩm có giá trị cao như dược phẩm, mỹ phẩm, và thực phẩm chức năng một cách bền vững, thường là thông qua nuôi cấy trong phòng thí nghiệm thay vì khai thác tự nhiên.',
+      },
+      {
+        question: 'Làm thế nào để đo lường sự thành công của một nền kinh tế biển xanh?',
+        answer:
+          'Sự thành công không chỉ được đo bằng tăng trưởng GDP từ các ngành kinh tế biển, mà còn qua các chỉ số về sức khỏe hệ sinh thái (chất lượng nước, đa dạng sinh học), mức độ việc làm và thu nhập của người dân ven biển, và khả năng chống chịu với biến đổi khí hậu.',
+      },
     ],
   },
   {
@@ -178,6 +208,36 @@ export const blueEconomyLessons: BaseLessonData[] = [
         answer:
           'Có. Các hệ thống hiện đại thường được thiết kế với giao diện thân thiện, trực quan trên điện thoại thông minh. Người nông dân có thể nhận cảnh báo và xem các chỉ số quan trọng một cách dễ dàng mà không cần kiến thức kỹ thuật sâu.',
       },
+      {
+        question: 'Những loại cảm biến nào thường được sử dụng trong ao nuôi thông minh?',
+        answer:
+          'Các cảm biến phổ biến bao gồm cảm biến đo pH, nồng độ oxy hòa tan (DO), nhiệt độ, độ mặn, và độ đục. Một số hệ thống tiên tiến còn có camera dưới nước để theo dõi hành vi của tôm, cá.',
+      },
+      {
+        question: 'Hệ thống cho ăn tự động hoạt động như thế nào?',
+        answer:
+          'Hệ thống cho ăn tự động có thể được lập trình để cho ăn theo một lịch trình cố định. Các hệ thống thông minh hơn sử dụng micro hoặc cảm biến âm thanh để phát hiện tiếng "kêu" khi tôm/cá ăn, từ đó điều chỉnh lượng thức ăn cho phù hợp, tránh lãng phí và ô nhiễm.',
+      },
+      {
+        question: 'Làm thế nào hệ thống có thể giúp phát hiện sớm dịch bệnh?',
+        answer:
+          'Hệ thống có thể phát hiện các thay đổi bất thường trong môi trường nước (ví dụ: oxy giảm đột ngột) hoặc trong hành vi của vật nuôi (ví dụ: giảm ăn, bơi lờ đờ qua camera). Những dấu hiệu này có thể là chỉ báo sớm của dịch bệnh, cho phép can thiệp kịp thời.',
+      },
+      {
+        question: 'Dữ liệu từ các trang trại thông minh có thể được sử dụng cho mục đích gì khác?',
+        answer:
+          'Dữ liệu lớn (big data) thu thập từ nhiều trang trại có thể được phân tích để tìm ra các mô hình tối ưu về con giống, loại thức ăn, và quy trình nuôi cho từng vùng cụ thể, góp phần nâng cao hiệu quả cho toàn ngành.',
+      },
+      {
+        question: 'Công nghệ RAS (Recirculating Aquaculture System) là gì?',
+        answer:
+          'RAS là hệ thống nuôi trồng thủy sản tuần hoàn, nơi nước được lọc và tái sử dụng liên tục. Đây là một công nghệ cao, giúp kiểm soát hoàn toàn môi trường nuôi, tiết kiệm nước và có thể được triển khai ở bất kỳ đâu, không phụ thuộc vào nguồn nước tự nhiên.',
+      },
+      {
+        question: 'Nuôi trồng thủy sản thông minh có bền vững hơn không?',
+        answer:
+          'Có, nó bền vững hơn đáng kể. Bằng cách tối ưu hóa việc sử dụng thức ăn, giảm thiểu ô nhiễm nước, và hạn chế sử dụng hóa chất nhờ phát hiện bệnh sớm, nuôi trồng thủy sản thông minh giúp giảm tác động tiêu cực đến môi trường.',
+      },
     ],
   },
   {
@@ -263,6 +323,36 @@ export const blueEconomyLessons: BaseLessonData[] = [
         answer:
           'Hiện tại, chi phí vẫn cao hơn so với điện gió trên bờ và điện mặt trời. Tuy nhiên, với sự tiến bộ của công nghệ và quy mô dự án ngày càng lớn, chi phí đang giảm nhanh chóng và dự kiến sẽ trở nên rất cạnh tranh trong tương lai gần.',
       },
+      {
+        question: 'Loại móng nào thường được sử dụng cho tuabin gió ngoài khơi?',
+        answer:
+          'Các loại móng phổ biến bao gồm móng đơn (monopile) cho vùng nước nông, móng jacket (giàn thép) cho vùng nước sâu hơn, và móng nổi (floating foundation) cho các vùng biển rất sâu, nơi móng cố định không khả thi.',
+      },
+      {
+        question: 'Năng lượng sóng hoạt động như thế nào?',
+        answer:
+          'Công nghệ năng lượng sóng chuyển đổi chuyển động lên xuống hoặc tới lui của sóng biển thành năng lượng điện. Có nhiều thiết kế khác nhau, chẳng hạn như các phao nổi dao động, cột nước dao động, hoặc các thiết bị "con rắn biển" uốn lượn theo sóng.',
+      },
+      {
+        question: 'Năng lượng thủy triều được khai thác ra sao?',
+        answer:
+          'Năng lượng thủy triều được khai thác chủ yếu theo hai cách: xây dựng các đập thủy triều (tương tự đập thủy điện) ở các cửa sông, hoặc đặt các tuabin dưới nước để khai thác năng lượng từ các dòng chảy thủy triều mạnh.',
+      },
+      {
+        question: 'Tại sao việc bảo trì tuabin gió ngoài khơi lại khó khăn và tốn kém?',
+        answer:
+          'Việc bảo trì rất khó khăn do điều kiện thời tiết khắc nghiệt trên biển, sự ăn mòn của nước mặn, và khoảng cách xa bờ. Nó đòi hỏi các tàu chuyên dụng, kỹ thuật viên được đào tạo đặc biệt và thường chỉ có thể thực hiện được trong những khoảng thời gian thời tiết thuận lợi.',
+      },
+      {
+        question: 'Dự án điện gió ngoài khơi có thể tạo ra những lợi ích kinh tế gì?',
+        answer:
+          'Ngoài việc cung cấp năng lượng sạch, các dự án này còn tạo ra hàng ngàn việc làm trong các lĩnh vực xây dựng, sản xuất, vận hành và bảo trì, đồng thời thúc đẩy sự phát triển của các ngành công nghiệp phụ trợ và cơ sở hạ tầng cảng biển.',
+      },
+      {
+        question: 'Việt Nam có những lợi thế gì để phát triển điện gió ngoài khơi?',
+        answer:
+          'Việt Nam có lợi thế về đường bờ biển dài, tốc độ gió tốt và ổn định ở nhiều khu vực (đặc biệt là vùng biển phía Nam), và vùng nước nông ven bờ tương đối rộng, phù hợp cho việc lắp đặt các tuabin móng cố định với chi phí hợp lý.',
+      },
     ],
   },
   {
@@ -344,6 +434,37 @@ export const blueEconomyLessons: BaseLessonData[] = [
         answer:
           'Quá trình này bao gồm việc thu thập mẫu từ các môi trường đa dạng (như rạn san hô, miệng phun thủy nhiệt), sau đó sử dụng các kỹ thuật sàng lọc thông lượng cao để kiểm tra hàng ngàn chiết xuất đối với các hoạt tính sinh học mong muốn (ví dụ: khả năng tiêu diệt tế bào ung thư).',
       },
+      {
+        question:
+          'Công nghệ sinh học "xanh" (green biotechnology) khác gì công nghệ sinh học "xanh dương" (blue biotechnology)?',
+        answer:
+          'Công nghệ sinh học "xanh" (green) tập trung vào các ứng dụng trong nông nghiệp trên cạn, trong khi công nghệ sinh học "xanh dương" (blue) chuyên về việc khám phá và ứng dụng các tài nguyên từ môi trường biển và nước ngọt.',
+      },
+      {
+        question: 'Astaxanthin từ vi tảo có ứng dụng gì?',
+        answer:
+          'Astaxanthin là một chất chống oxy hóa cực mạnh được chiết xuất từ vi tảo biển. Nó được sử dụng rộng rãi trong ngành thực phẩm chức năng để chống lão hóa, bảo vệ da khỏi tia UV, và trong ngành nuôi trồng thủy sản để tạo màu sắc cho cá hồi và tôm.',
+      },
+      {
+        question: 'Enzyme từ sinh vật biển có gì đặc biệt?',
+        answer:
+          'Nhiều sinh vật biển sống ở điều kiện khắc nghiệt (nhiệt độ cực cao hoặc cực thấp, áp suất lớn). Các enzyme của chúng đã thích nghi để hoạt động hiệu quả trong những điều kiện này, mở ra các ứng dụng công nghiệp độc đáo mà enzyme trên cạn không làm được, ví dụ như trong sản xuất bột giặt hoạt động ở nước lạnh.',
+      },
+      {
+        question: 'Nhiên liệu sinh học từ tảo có tiềm năng như thế nào?',
+        answer:
+          'Tảo có tốc độ phát triển rất nhanh và có thể tích lũy một lượng lớn dầu. Nhiên liệu sinh học từ tảo được coi là một giải pháp tiềm năng cho tương lai vì nó không cạnh tranh đất đai với cây lương thực và có thể được trồng trên các vùng đất không thể canh tác.',
+      },
+      {
+        question: 'Vật liệu sinh học từ biển là gì?',
+        answer:
+          'Đây là các vật liệu được tạo ra từ các nguồn tài nguyên biển. Ví dụ, chitosan từ vỏ tôm, cua có thể được sử dụng để tạo ra các màng bọc thực phẩm kháng khuẩn hoặc chỉ khâu tự tiêu trong y tế. Collagen từ sứa hoặc da cá được dùng trong mỹ phẩm.',
+      },
+      {
+        question: 'Thế nào là "bioprospecting" (thăm dò sinh học)?',
+        answer:
+          'Bioprospecting là quá trình tìm kiếm và thương mại hóa các sản phẩm mới dựa trên các nguồn tài nguyên sinh học, đặc biệt là các hợp chất hóa học. Thăm dò sinh học biển là một lĩnh vực rất sôi động, tập trung vào việc khám phá "kho báu" hóa học trong đại dương.',
+      },
     ],
   },
   {
@@ -424,6 +545,36 @@ export const blueEconomyLessons: BaseLessonData[] = [
         question: 'Là một người tiêu dùng, tôi có thể làm gì để ủng hộ nghề cá bền vững?',
         answer:
           'Bạn có thể chọn mua các sản phẩm hải sản có nhãn chứng nhận bền vững (như MSC - Marine Stewardship Council), ưu tiên các loài không bị đánh bắt quá mức, và đặt câu hỏi cho nhà bán lẻ về nguồn gốc của sản phẩm.',
+      },
+      {
+        question: 'Hạn ngạch khai thác (fishing quota) là gì?',
+        answer:
+          'Hạn ngạch khai thác là một giới hạn về tổng sản lượng của một loài cá cụ thể mà ngư dân được phép đánh bắt trong một khoảng thời gian nhất định tại một khu vực nhất định. Đây là một công cụ quản lý quan trọng để ngăn chặn việc đánh bắt quá mức.',
+      },
+      {
+        question: 'Đánh bắt không chọn lọc (bycatch) là gì?',
+        answer:
+          'Đánh bắt không chọn lọc là việc vô tình bắt phải các loài sinh vật biển không phải là mục tiêu trong quá trình đánh bắt, chẳng hạn như rùa biển, cá heo, hoặc các loài cá non. Giảm thiểu bycatch là một mục tiêu quan trọng của nghề cá bền vững.',
+      },
+      {
+        question: 'Hệ thống giám sát tàu cá (VMS) hoạt động như thế nào?',
+        answer:
+          'VMS (Vessel Monitoring System) là một hệ thống sử dụng thiết bị phát sóng vệ tinh được lắp đặt trên tàu cá. Nó tự động truyền thông tin về vị trí, tốc độ và hướng đi của tàu về cho trung tâm giám sát trên bờ, giúp cơ quan chức năng quản lý hoạt động của đội tàu.',
+      },
+      {
+        question: 'Nhãn chứng nhận MSC (Marine Stewardship Council) có ý nghĩa gì?',
+        answer:
+          'Nhãn MSC là một chứng nhận quốc tế cho thấy sản phẩm hải sản đến từ một ngư trường được quản lý tốt và bền vững. Để đạt được chứng nhận này, ngư trường phải đáp ứng các tiêu chuẩn nghiêm ngặt về sức khỏe của quần thể cá, tác động đến hệ sinh thái và hiệu quả quản lý.',
+      },
+      {
+        question: 'Khu bảo tồn biển (Marine Protected Area - MPA) có vai trò gì?',
+        answer:
+          'MPA là các khu vực biển được bảo vệ khỏi một số hoặc tất cả các hoạt động của con người. Chúng đóng vai trò như những "ngân hàng cá", nơi các quần thể sinh vật biển có thể phục hồi và sinh sản, từ đó bổ sung nguồn lợi cho các vùng biển xung quanh.',
+      },
+      {
+        question: 'Tại sao việc bảo vệ các loài cá đầu chuỗi thức ăn lại quan trọng?',
+        answer:
+          'Các loài cá nhỏ như cá cơm, cá trích là mắt xích quan trọng trong chuỗi thức ăn biển, là nguồn thức ăn cho nhiều loài lớn hơn như cá ngừ, chim biển và động vật có vú biển. Việc quản lý bền vững các loài này là rất cần thiết để duy trì sức khỏe của toàn bộ hệ sinh thái.',
       },
     ],
   },

@@ -99,6 +99,36 @@ export const futureCareersLessons: FutureCareersLesson[] = [
         answer:
           'Chiến lược này đặt mục tiêu đưa Việt Nam trở thành một trung tâm đổi mới, phát triển các giải pháp và ứng dụng AI trong khu vực ASEAN và trên thế giới, thúc đẩy ứng dụng AI trong nhiều lĩnh vực để phát triển kinh tế - xã hội.',
       },
+      {
+        question: 'Công việc của tôi có bị AI lấy mất không?',
+        answer:
+          'Câu trả lời phụ thuộc vào bản chất công việc của bạn. Nếu công việc bao gồm các nhiệm vụ lặp đi lặp lại và có thể dự đoán được, nguy cơ sẽ cao hơn. Tuy nhiên, thay vì "lấy mất", AI thường sẽ "thay đổi" công việc, tự động hóa một số phần và đòi hỏi bạn phải tập trung vào các kỹ năng khác như giám sát, ra quyết định và tương tác với khách hàng.',
+      },
+      {
+        question: 'Những công việc mới nào sẽ xuất hiện nhờ có AI?',
+        answer:
+          'Nhiều công việc mới đang và sẽ xuất hiện, ví dụ: Kỹ sư Prompt (Prompt Engineer), Người huấn luyện AI (AI Trainer), Chuyên gia đạo đức AI (AI Ethicist), Người kiểm soát robot (Robot Controller), và các vai trò chuyên môn hóa việc ứng dụng AI trong các ngành cụ thể như y tế, luật, nghệ thuật.',
+      },
+      {
+        question: 'Tôi nên làm gì nếu công việc của mình có nguy cơ cao bị tự động hóa?',
+        answer:
+          'Đừng hoảng sợ. Hãy chủ động: 1. Xác định những phần nào trong công việc của bạn mà con người làm tốt hơn máy móc (ví dụ: giao tiếp, sáng tạo). 2. Bắt đầu học các kỹ năng mới (Reskilling) liên quan đến việc hợp tác với AI hoặc chuyển sang một lĩnh vực an toàn hơn. 3. Xem AI như một công cụ để nâng cao hiệu suất của bạn.',
+      },
+      {
+        question: 'Làm thế nào để một người không có nền tảng công nghệ có thể chuẩn bị cho tương lai AI?',
+        answer:
+          'Bạn không nhất thiết phải học lập trình. Hãy tập trung vào các kỹ năng "con người" như tư duy phản biện, giao tiếp, sáng tạo, và trí tuệ cảm xúc. Ngoài ra, hãy học cách sử dụng các công cụ AI phổ biến như một người dùng thông thạo. Khả năng ứng dụng AI vào lĩnh vực chuyên môn của bạn sẽ là một lợi thế lớn.',
+      },
+      {
+        question: 'Tự động hóa có làm giảm lương của người lao động không?',
+        answer:
+          'Tác động của tự động hóa lên tiền lương là một vấn đề phức tạp. Đối với các công việc có kỹ năng thấp, tự động hóa có thể tạo ra áp lực giảm lương. Tuy nhiên, đối với những người lao động có kỹ năng làm việc và quản lý các hệ thống AI, năng suất tăng lên có thể dẫn đến mức lương cao hơn.',
+      },
+      {
+        question: 'Chính phủ có vai trò gì trong việc hỗ trợ người lao động trong kỷ nguyên AI?',
+        answer:
+          'Chính phủ có vai trò quan trọng trong việc: 1. Cải cách hệ thống giáo dục để trang bị các kỹ năng phù hợp. 2. Xây dựng các chính sách hỗ trợ người lao động bị ảnh hưởng (ví dụ: các chương trình tái đào tạo, bảo hiểm thất nghiệp). 3. Đầu tư vào nghiên cứu và phát triển AI để tạo ra các ngành công nghiệp mới.',
+      },
     ],
   },
   {
@@ -195,6 +225,36 @@ export const futureCareersLessons: FutureCareersLesson[] = [
         question: 'Năng lực thích ứng (Adaptability Quotient - AQ) là gì?',
         answer:
           'AQ là khả năng nhận thức, chấp nhận và thích ứng với sự thay đổi một cách hiệu quả. Trong một thế giới biến đổi nhanh chóng bởi công nghệ, người có AQ cao sẽ dễ dàng học hỏi kỹ năng mới và tìm thấy cơ hội trong sự thay đổi.',
+      },
+      {
+        question: 'Tại sao kỹ năng giải quyết vấn đề phức tạp lại quan trọng?',
+        answer:
+          'AI rất giỏi trong việc giải quyết các vấn đề đã được định nghĩa rõ ràng, nhưng lại yếu thế trước các vấn đề mới, mơ hồ, và có nhiều yếu tố con người. Khả năng nhìn nhận một vấn đề từ nhiều góc độ, phân tích các yếu tố liên quan và đưa ra một giải pháp sáng tạo là một năng lực quý giá của con người.',
+      },
+      {
+        question: 'Làm thế nào để cải thiện kỹ năng giao tiếp trong thời đại số?',
+        answer:
+          'Trong thời đại làm việc từ xa và giao tiếp qua màn hình, kỹ năng giao tiếp càng trở nên quan trọng. Hãy rèn luyện khả năng viết email, tin nhắn rõ ràng, súc tích. Khi họp trực tuyến, hãy tập trung lắng nghe, sử dụng ngôn ngữ cơ thể tích cực và đảm bảo thông điệp của bạn được truyền tải một cách hiệu quả.',
+      },
+      {
+        question: 'Sự sáng tạo có thể được rèn luyện không?',
+        answer:
+          'Có. Sự sáng tạo không phải là một tài năng thiên bẩm mà là một kỹ năng có thể rèn luyện. Hãy thử tiếp xúc với các lĩnh vực mới, đọc sách ngoài chuyên môn của bạn, kết nối các ý tưởng tưởng chừng không liên quan, và dành thời gian để suy ngẫm và "chán". Đừng ngại thử nghiệm và thất bại.',
+      },
+      {
+        question: 'Năng lực số (Digital Literacy) có nghĩa là gì?',
+        answer:
+          'Năng lực số không chỉ là biết cách sử dụng máy tính. Nó bao gồm khả năng tìm kiếm, đánh giá, và sử dụng thông tin trên môi trường số một cách hiệu quả và có đạo đức; khả năng giao tiếp và hợp tác bằng các công cụ kỹ thuật số; và nhận thức về các vấn đề an ninh mạng.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng sự bền bỉ (resilience)?',
+        answer:
+          'Sự bền bỉ là khả năng phục hồi sau thất bại hoặc nghịch cảnh. Hãy rèn luyện nó bằng cách: chấp nhận rằng thất bại là một phần của quá trình học hỏi, tập trung vào những gì bạn có thể kiểm soát, duy trì một mạng lưới hỗ trợ xã hội (bạn bè, gia đình), và chăm sóc sức khỏe thể chất và tinh thần của bạn.',
+      },
+      {
+        question: 'Kỹ năng lãnh đạo sẽ thay đổi như thế nào trong kỷ nguyên AI?',
+        answer:
+          'Các nhà lãnh đạo tương lai sẽ cần ít tập trung hơn vào việc quản lý vi mô các tác vụ (vì AI có thể hỗ trợ việc đó) và tập trung nhiều hơn vào việc truyền cảm hứng, đặt ra tầm nhìn, xây dựng văn hóa đội nhóm, và huấn luyện (coaching) nhân viên để họ phát huy hết tiềm năng của mình khi hợp tác với công nghệ.',
       },
     ],
   },
@@ -293,6 +353,36 @@ export const futureCareersLessons: FutureCareersLesson[] = [
         question: 'AI có thể thay thế hoàn toàn sự sáng tạo của con người không?',
         answer:
           'Không. AI là một công cụ khuếch đại sự sáng tạo cực kỳ mạnh mẽ, nhưng nó không có ý thức, trải nghiệm sống, hay cảm xúc thực sự - những yếu tố cốt lõi của sự sáng tạo độc đáo. Vai trò của con người chuyển từ việc "tạo ra từ đầu" sang "định hướng, lựa chọn, và tinh chỉnh" các ý tưởng mà AI đề xuất.',
+      },
+      {
+        question: 'Sự khác biệt giữa AI tạo sinh (Generative AI) và AI phân tích (Analytical AI) là gì?',
+        answer:
+          'AI phân tích (ví dụ: hệ thống gợi ý sản phẩm của Amazon) được thiết kế để phân tích dữ liệu và đưa ra dự đoán hoặc phân loại. AI tạo sinh (ví dụ: ChatGPT, Midjourney) được thiết kế để tạo ra nội dung mới, như văn bản, hình ảnh, hoặc âm nhạc, dựa trên dữ liệu nó đã học.',
+      },
+      {
+        question: 'Mô hình "Human-in-the-loop" là gì?',
+        answer:
+          'Đây là một mô hình hợp tác trong đó con người can thiệp vào quá trình làm việc của AI ở những điểm quan trọng. Con người có thể cung cấp dữ liệu huấn luyện, kiểm tra và sửa lỗi các kết quả của AI, hoặc đưa ra quyết định cuối cùng trong các trường hợp phức tạp. Điều này giúp cải thiện độ chính xác và độ tin cậy của hệ thống AI.',
+      },
+      {
+        question: 'Làm thế nào để tránh việc quá phụ thuộc vào AI?',
+        answer:
+          'Hãy xem AI như một người trợ lý hoặc một công cụ, không phải là người thay thế cho tư duy của bạn. Luôn kiểm tra lại thông tin mà AI cung cấp. Sử dụng nó để tự động hóa các công việc nhàm chán, giải phóng thời gian cho bạn để tập trung vào tư duy chiến lược, sáng tạo và giải quyết vấn đề.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu học Prompt Engineering?',
+        answer:
+          'Cách tốt nhất để học là thực hành. Bắt đầu sử dụng các công cụ như ChatGPT. Hãy thử nghiệm với các câu lệnh khác nhau để xem kết quả thay đổi như thế nào. Có rất nhiều tài nguyên và cộng đồng trực tuyến chia sẻ các kỹ thuật và ví dụ về prompt hiệu quả mà bạn có thể học hỏi.',
+      },
+      {
+        question: 'AI có thể giúp tôi học một kỹ năng mới không?',
+        answer:
+          'Chắc chắn rồi. AI là một công cụ học tập tuyệt vời. Bạn có thể yêu cầu nó giải thích các khái niệm phức tạp một cách đơn giản, tạo ra các lộ trình học tập, tóm tắt các bài báo khoa học, hoặc thậm chí đóng vai một người đối thoại để bạn thực hành một ngôn ngữ mới.',
+      },
+      {
+        question: 'Trong tương lai, vai trò quan trọng nhất của con người khi làm việc với AI là gì?',
+        answer:
+          'Vai trò quan-trọng-nhất có thể là vai trò của người "nhạc trưởng" hoặc "người giám sát". Con người sẽ là người đặt ra mục tiêu, xác định các vấn đề cần giải quyết, đánh giá các kết quả của AI dựa trên các tiêu chuẩn đạo đức và bối cảnh thực tế, và đưa ra quyết định cuối cùng. Về cơ bản, con người cung cấp "trí tuệ" và "sự phán đoán" mà máy móc còn thiếu.',
       },
     ],
   },

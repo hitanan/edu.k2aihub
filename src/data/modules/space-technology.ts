@@ -95,6 +95,53 @@ export const spaceTechnologyLessons: SpaceTechnologyLesson[] = [
           'VINASAT-1, vệ tinh viễn thông đầu tiên của Việt Nam, đã được phóng thành công vào ngày 19 tháng 4 năm 2008, đánh dấu một cột mốc quan trọng trong lịch sử công nghệ vũ trụ của đất nước.',
       },
     ],
+    faqs: [
+      {
+        question: 'Công nghệ vũ trụ là gì?',
+        answer:
+          'Công nghệ vũ trụ bao gồm tất cả các công nghệ được phát triển và sử dụng cho các hoạt động trong không gian, như tên lửa, vệ tinh, tàu vũ trụ, và các thiết bị hỗ trợ trên mặt đất.',
+      },
+      {
+        question: 'Sự khác biệt giữa khoa học vũ trụ và công nghệ vũ trụ là gì?',
+        answer:
+          'Khoa học vũ trụ tập trung vào việc tìm hiểu vũ trụ (thiên văn học, vật lý thiên văn). Công nghệ vũ trụ tập trung vào việc tạo ra các công cụ và phương tiện (tên lửa, vệ tinh) để thực hiện các nghiên cứu khoa học đó và các ứng dụng khác.',
+      },
+      {
+        question: 'Tại sao một quốc gia như Việt Nam lại cần đầu tư vào công nghệ vũ trụ?',
+        answer:
+          'Đầu tư vào công nghệ vũ trụ giúp một quốc gia tự chủ về viễn thông, giám sát tài nguyên thiên nhiên, dự báo và ứng phó với thiên tai, khẳng định chủ quyền và thúc đẩy phát triển khoa học công nghệ cao.',
+      },
+      {
+        question: 'CubeSat là gì và tại sao nó lại quan trọng?',
+        answer:
+          'CubeSat là một loại vệ tinh siêu nhỏ có dạng hình lập phương với kích thước tiêu chuẩn (10x10x10 cm). Chúng quan trọng vì chi phí chế tạo và phóng thấp, cho phép các trường đại học, công ty khởi nghiệp và các nước đang phát triển dễ dàng tiếp cận không gian.',
+      },
+      {
+        question: 'Làm thế nào để một vệ tinh có thể ở trên quỹ đạo mà không bị rơi xuống Trái Đất?',
+        answer:
+          'Vệ tinh duy trì trên quỹ đạo nhờ sự cân bằng giữa hai lực: lực hấp dẫn của Trái Đất kéo nó vào và vận tốc hướng ngang rất lớn của nó, khiến nó "liên tục rơi vòng quanh Trái Đất" thay vì rơi thẳng xuống.',
+      },
+      {
+        question: 'Trạm mặt đất có vai trò gì trong một sứ mệnh không gian?',
+        answer:
+          'Trạm mặt đất là cơ sở trên Trái Đất có nhiệm vụ giao tiếp với tàu vũ trụ hoặc vệ tinh. Nó gửi lệnh điều khiển lên và nhận dữ liệu khoa học hoặc dữ liệu đo từ xa (telemetry) trở về.',
+      },
+      {
+        question: 'Spin-off technology (công nghệ phái sinh) từ ngành vũ trụ là gì?',
+        answer:
+          'Là những công nghệ ban đầu được phát triển cho các sứ mệnh không gian nhưng sau đó được ứng dụng rộng rãi trong đời sống hàng ngày. Ví dụ bao gồm GPS, vật liệu memory foam, máy lọc nước, và thực phẩm đông khô.',
+      },
+      {
+        question: 'Rác vũ trụ (space debris) là gì và tại sao nó nguy hiểm?',
+        answer:
+          'Rác vũ trụ là bất kỳ vật thể nhân tạo nào trên quỹ đạo không còn hoạt động, từ các vệ tinh hỏng đến các mảnh vỡ nhỏ. Chúng nguy hiểm vì di chuyển với tốc độ cực lớn và một vụ va chạm nhỏ cũng có thể phá hủy một vệ tinh đang hoạt động hoặc gây nguy hiểm cho các phi hành gia.',
+      },
+      {
+        question: 'Việt Nam có kế hoạch tự phóng vệ tinh không?',
+        answer:
+          'Hiện tại, Việt Nam vẫn đang thuê các dịch vụ phóng của nước ngoài. Tuy nhiên, việc nghiên cứu và phát triển các công nghệ tên lửa đẩy là một mục tiêu dài hạn trong chiến lược vũ trụ của quốc gia, hướng tới khả năng tự chủ trong tương lai.',
+      },
+    ],
   },
   {
     id: 'satellite-communications-gps',
@@ -176,6 +223,53 @@ export const spaceTechnologyLessons: SpaceTechnologyLesson[] = [
         correctAnswerIndex: 3,
         explanation:
           'Về lý thuyết, 3 vệ tinh là đủ để xác định vị trí 2D. Tuy nhiên, cần có tín hiệu từ vệ tinh thứ tư để giải quyết sai số về thời gian và đồng bộ đồng hồ, từ đó cung cấp vị trí 3D chính xác.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Sự khác biệt giữa quỹ đạo LEO, MEO và GEO là gì?',
+        answer:
+          'LEO (Quỹ đạo Trái Đất tầm thấp) gần Trái Đất, phù hợp cho vệ tinh quan sát và Internet tốc độ cao (như Starlink). MEO (Quỹ đạo Trái Đất tầm trung) là nơi đặt các hệ thống định vị như GPS. GEO (Quỹ đạo địa tĩnh) ở rất xa, nơi vệ tinh có vẻ "đứng yên" so với một điểm trên mặt đất, lý tưởng cho vệ tinh viễn thông và truyền hình.',
+      },
+      {
+        question: 'Tại sao tín hiệu GPS lại yếu và dễ bị chặn bởi các tòa nhà?',
+        answer:
+          'Tín hiệu GPS được phát từ các vệ tinh cách xa hơn 20,000 km. Khi đến Trái Đất, chúng rất yếu (yếu hơn cả nhiễu nền vũ trụ). Do đó, chúng dễ dàng bị các vật cản lớn như tòa nhà, núi non, hoặc thậm chí là tán lá cây rậm rạp chặn lại.',
+      },
+      {
+        question: 'Ngoài GPS, còn có những hệ thống định vị toàn cầu nào khác?',
+        answer:
+          'Các hệ thống định vị toàn cầu (GNSS) khác bao gồm GLONASS của Nga, Galileo của Liên minh Châu Âu, và BeiDou của Trung Quốc. Hầu hết các điện thoại thông minh hiện đại đều có thể sử dụng tín hiệu từ nhiều hệ thống này để tăng độ chính xác.',
+      },
+      {
+        question: 'Làm thế nào thuyết tương đối của Einstein lại liên quan đến GPS?',
+        answer:
+          'Thuyết tương đối của Einstein đóng vai trò cực kỳ quan trọng. Do tốc độ cao (Thuyết tương đối hẹp) và trường hấp dẫn yếu hơn (Thuyết tương đối rộng), đồng hồ trên vệ tinh GPS chạy nhanh hơn một chút so với đồng hồ trên mặt đất. Nếu không tính toán và hiệu chỉnh sự khác biệt này, hệ thống GPS sẽ sai lệch tới vài km mỗi ngày.',
+      },
+      {
+        question: 'SNR (Signal-to-Noise Ratio) trong tín hiệu GPS có ý nghĩa gì?',
+        answer:
+          'SNR là Tỷ lệ Tín hiệu trên Nhiễu. Nó đo lường cường độ của tín hiệu vệ tinh so với nhiễu nền. SNR càng cao, tín hiệu càng rõ ràng và đáng tin cậy, góp phần vào việc xác định vị trí chính xác hơn.',
+      },
+      {
+        question: 'Tại sao điện thoại vệ tinh có thể hoạt động ở những nơi không có sóng di động?',
+        answer:
+          'Điện thoại di động dựa vào các trạm phát sóng mặt đất (BTS). Ở những vùng sâu vùng xa không có BTS, chúng sẽ mất sóng. Điện thoại vệ tinh không cần BTS, nó kết nối trực tiếp với các vệ tinh trên quỹ đạo, do đó có thể hoạt động ở bất kỳ đâu miễn là nhìn thấy bầu trời.',
+      },
+      {
+        question: 'Chòm sao vệ tinh (satellite constellation) là gì?',
+        answer:
+          'Là một nhóm các vệ tinh nhân tạo hoạt động phối hợp với nhau như một hệ thống. Ví dụ, hệ thống GPS và Starlink đều là các chòm sao vệ tinh.',
+      },
+      {
+        question: 'Độ trễ (latency) trong truyền thông vệ tinh là gì?',
+        answer:
+          'Là khoảng thời gian trễ từ khi tín hiệu được gửi đi cho đến khi nó được nhận lại. Với các vệ tinh GEO ở xa, độ trễ có thể lên tới nửa giây, gây khó khăn cho các ứng dụng thời gian thực như chơi game online hoặc gọi video. Các vệ tinh LEO như Starlink có độ trễ thấp hơn nhiều do ở gần Trái Đất hơn.',
+      },
+      {
+        question: 'GPS có thể được sử dụng để làm gì ngoài việc chỉ đường?',
+        answer:
+          'GPS có rất nhiều ứng dụng: đồng bộ hóa thời gian cho các mạng tài chính và viễn thông, theo dõi và quản lý đội xe vận tải, nông nghiệp chính xác, khảo sát địa chất, và thậm chí là nghiên cứu sự dịch chuyển của các mảng kiến tạo.',
       },
     ],
   },

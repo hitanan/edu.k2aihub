@@ -72,6 +72,48 @@ print("Chào mừng bạn đến với Python!")`,
           'Sức mạnh của Python trong AI và Data Science đến từ cộng đồng lớn và hệ thống thư viện phong phú, giúp các nhà phát triển xây dựng mô hình phức tạp một cách nhanh chóng và hiệu quả.',
       },
     ],
+    faqs: [
+      {
+        question: 'Python là gì và tại sao nó lại phổ biến đến vậy?',
+        answer: 'Python là một ngôn ngữ lập trình bậc cao, thông dịch, đa năng với cú pháp đơn giản và dễ đọc. Nó phổ biến vì có một hệ sinh thái thư viện khổng lồ, một cộng đồng lớn mạnh, và khả năng ứng dụng rộng rãi từ phát triển web, khoa học dữ liệu, AI, đến tự động hóa.'
+      },
+      {
+        question: 'Python có phải là lựa chọn tốt cho người mới bắt đầu không?',
+        answer: 'Chắc chắn rồi. Cú pháp của Python rất gần với ngôn ngữ tự nhiên, giúp người mới bắt đầu tập trung vào việc học các khái niệm lập trình thay vì phải vật lộn với các cú pháp phức tạp. Đây là một trong những ngôn ngữ được khuyến khích nhất cho người mới học lập trình.'
+      },
+      {
+        question: 'Tôi có thể xây dựng những gì với Python?',
+        answer: 'Bạn có thể xây dựng gần như mọi thứ: các trang web và ứng dụng web (sử dụng Django, Flask), các mô hình học máy và AI, các công cụ phân tích dữ liệu, script tự động hóa, game, ứng dụng máy tính, và nhiều hơn nữa.'
+      },
+      {
+        question: 'Sự khác biệt giữa Python 2 và Python 3 là gì?',
+        answer: 'Python 3 là phiên bản hiện tại và được khuyến nghị sử dụng. Python 2 là phiên bản cũ, đã ngừng được hỗ trợ chính thức từ năm 2020. Python 3 có nhiều cải tiến và cú pháp rõ ràng hơn so với Python 2.'
+      },
+      {
+        question: 'Học Python có tốn phí không?',
+        answer: 'Không. Python là một ngôn ngữ lập trình mã nguồn mở và hoàn toàn miễn phí. Bạn có thể tải về, cài đặt và sử dụng Python cho bất kỳ mục đích nào, kể cả thương mại, mà không tốn bất kỳ chi phí bản quyền nào.'
+      },
+      {
+        question: 'IDE là gì và tôi nên dùng IDE nào cho Python?',
+        answer: 'IDE (Integrated Development Environment) là môi trường phát triển tích hợp, cung cấp các công cụ như trình soạn thảo code, trình gỡ lỗi, và trình quản lý dự án. Đối với Python, các lựa chọn phổ biến bao gồm Visual Studio Code (với extension Python), PyCharm, và Jupyter Notebook cho khoa học dữ liệu.'
+      },
+      {
+        question: 'Ngôn ngữ "thông dịch" (interpreted language) nghĩa là gì?',
+        answer: 'Điều đó có nghĩa là code Python được thực thi từng dòng một bởi một chương trình gọi là trình thông dịch. Điều này khác với các ngôn ngữ "biên dịch" (compiled language) như C++, nơi toàn bộ code phải được chuyển đổi thành mã máy trước khi chạy.'
+      },
+      {
+        question: 'Mất bao lâu để học Python?',
+        answer: 'Bạn có thể học các kiến thức cơ bản của Python trong vài tuần. Tuy nhiên, để trở nên thành thạo và có thể xây dựng các ứng dụng phức tạp, bạn sẽ cần vài tháng đến một năm thực hành và học hỏi liên tục.'
+      },
+      {
+        question: 'Tôi có thể tìm sự giúp đỡ từ cộng đồng Python ở Việt Nam ở đâu?',
+        answer: 'Cộng đồng Python Việt Nam rất năng động. Bạn có thể tham gia các nhóm trên Facebook như "PyMi.vn", "Python Việt Nam", hoặc tham dự các sự kiện, hội thảo như PyCon Vietnam để kết nối và học hỏi.'
+      },
+      {
+        question: 'Chương trình "Hello, World!" trong Python trông như thế nào?',
+        answer: 'Nó cực kỳ đơn giản, chỉ cần một dòng code: `print("Hello, World!")`. Điều này thể hiện triết lý thiết kế đơn giản và rõ ràng của Python.'
+      }
+    ]
   },
   {
     id: 'variables-data-types',
@@ -186,6 +228,48 @@ print(f"Ngược lại: {reversed_text}")`,
           'Sử dụng `int` (lưu 50000) là tốt nhất để tránh các sai số làm tròn có thể xảy ra với `float`. Các phép tính tiền tệ nên được thực hiện trên số nguyên (ví dụ: tính theo đơn vị đồng hoặc xu).',
       },
     ],
+    faqs: [
+      {
+        question: 'Biến trong Python là gì?',
+        answer: 'Biến là một cái tên bạn đặt để tham chiếu đến một giá trị được lưu trữ trong bộ nhớ. Thay vì phải nhớ địa chỉ bộ nhớ phức tạp, bạn chỉ cần sử dụng tên biến để truy cập giá trị đó.'
+      },
+      {
+        question: 'Các kiểu dữ liệu cơ bản trong Python là gì?',
+        answer: 'Các kiểu dữ liệu cơ bản bao gồm: `int` (số nguyên), `float` (số thực), `str` (chuỗi ký tự), và `bool` (logic, chỉ có hai giá trị là `True` hoặc `False`).'
+      },
+      {
+        question: 'Sự khác biệt giữa `int` và `float` là gì?',
+        answer: '`int` dùng để biểu diễn các số nguyên (ví dụ: 10, -5, 0). `float` dùng để biểu diễn các số có phần thập phân (ví dụ: 3.14, -0.5). `float` cần nhiều bộ nhớ hơn và có thể có sai số làm tròn.'
+      },
+      {
+        question: 'Làm thế nào để chuyển đổi một chuỗi thành một số?',
+        answer: 'Bạn có thể sử dụng các hàm `int()` và `float()`. Ví dụ: `int("123")` sẽ trả về số nguyên 123, và `float("3.14")` sẽ trả về số thực 3.14. Nếu chuỗi không thể chuyển đổi, Python sẽ báo lỗi `ValueError`.'
+      },
+      {
+        question: 'Kiểu dữ liệu boolean dùng để làm gì?',
+        answer: 'Kiểu `bool` (boolean) được dùng để biểu diễn các giá trị chân lý: `True` (đúng) và `False` (sai). Nó là nền tảng cho các cấu trúc điều khiển như `if`, `while` để ra quyết định trong chương trình.'
+      },
+      {
+        question: 'Tôi có thể thay đổi kiểu dữ liệu của một biến không?',
+        answer: 'Có. Python là ngôn ngữ có kiểu động (dynamically typed), nghĩa là bạn có thể gán một giá trị có kiểu dữ liệu khác cho cùng một biến. Ví dụ: `x = 10` (int), sau đó `x = "hello"` (str) là hoàn toàn hợp lệ.'
+      },
+      {
+        question: 'f-string là gì và tại sao tôi nên sử dụng chúng?',
+        answer: 'f-string (formatted string literals) là một cách hiện đại và tiện lợi để chèn giá trị của biến vào bên trong một chuỗi. Ví dụ: `f"Xin chào, {ten_bien}"`. Nó dễ đọc, ngắn gọn và thường nhanh hơn các phương pháp định dạng chuỗi khác.'
+      },
+      {
+        question: 'Làm thế nào để xử lý ký tự tiếng Việt trong chuỗi?',
+        answer: 'Python 3 mặc định sử dụng mã hóa UTF-8, hỗ trợ đầy đủ tiếng Việt và hầu hết các ngôn ngữ trên thế giới. Bạn chỉ cần đảm bảo rằng trình soạn thảo code của bạn cũng được lưu với mã hóa UTF-8.'
+      },
+      {
+        question: 'Tại sao tôi lại gặp lỗi `TypeError`?',
+        answer: 'Lỗi `TypeError` xảy ra khi bạn thực hiện một thao tác trên một kiểu dữ liệu không được hỗ trợ. Ví dụ phổ biến là cố gắng cộng một số với một chuỗi (`5 + "hello"`). Hãy kiểm tra kiểu dữ liệu của các biến của bạn.'
+      },
+      {
+        question: 'Quy tắc đặt tên biến tốt nhất trong Python là gì?',
+        answer: 'Theo quy ước PEP 8, tên biến nên được viết bằng chữ thường, và các từ được phân cách bằng dấu gạch dưới (ví dụ: `ten_hoc_sinh`). Tên biến nên có ý nghĩa và mô tả rõ ràng giá trị mà nó lưu trữ.'
+      }
+    ]
   },
   {
     id: 'control-structures',
@@ -291,6 +375,48 @@ else:
           '`for` loop là lựa chọn lý tưởng để duyệt qua một số lượng phần tử xác định trong một chuỗi hoặc danh sách, giúp code ngắn gọn và dễ hiểu.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt giữa `if`, `elif`, và `else` là gì?',
+        answer: '`if` được dùng để kiểm tra một điều kiện. Nếu đúng, khối lệnh của `if` sẽ được thực thi. `elif` (else if) được dùng để kiểm tra một điều kiện khác nếu điều kiện `if` trước đó là sai. `else` sẽ được thực thi nếu tất cả các điều kiện `if` và `elif` trước đó đều sai.'
+      },
+      {
+        question: 'Làm thế nào để viết một vòng lặp `for`?',
+        answer: 'Vòng lặp `for` được dùng để duyệt qua các phần tử của một đối tượng có thể lặp (như list, string, tuple). Cú pháp chung là: `for ten_bien in doi_tuong_lap: ...`'
+      },
+      {
+        question: 'Sự khác biệt giữa vòng lặp `for` và `while` là gì?',
+        answer: 'Vòng lặp `for` thường được sử dụng khi bạn biết trước số lần lặp (ví dụ: duyệt qua tất cả các phần tử của một danh sách). Vòng lặp `while` được sử dụng khi bạn muốn lặp cho đến khi một điều kiện nào đó không còn đúng nữa, và bạn không biết trước số lần lặp.'
+      },
+      {
+        question: 'Hàm `range()` trong Python dùng để làm gì?',
+        answer: 'Hàm `range()` tạo ra một chuỗi các số. Nó thường được dùng trong vòng lặp `for` để lặp một số lần nhất định. Ví dụ, `range(5)` sẽ tạo ra các số 0, 1, 2, 3, 4.'
+      },
+      {
+        question: 'Làm thế nào để thoát khỏi một vòng lặp sớm?',
+        answer: 'Bạn có thể sử dụng câu lệnh `break`. Khi gặp `break`, chương trình sẽ ngay lập tức thoát khỏi vòng lặp gần nhất chứa nó và tiếp tục thực thi các lệnh sau vòng lặp.'
+      },
+      {
+        question: 'Từ khóa `pass` có tác dụng gì?',
+        answer: '`pass` là một câu lệnh không làm gì cả. Nó được sử dụng như một chỗ giữ chỗ (placeholder) ở những nơi cú pháp yêu cầu phải có một câu lệnh nhưng bạn chưa muốn viết logic cho nó, ví dụ như trong một khối `if` hoặc một hàm rỗng.'
+      },
+      {
+        question: 'Toán tử so sánh trong Python là gì?',
+        answer: 'Các toán tử so sánh dùng để so sánh hai giá trị và trả về `True` hoặc `False`. Chúng bao gồm: `==` (bằng), `!=` (không bằng), `>` (lớn hơn), `<` (nhỏ hơn), `>=` (lớn hơn hoặc bằng), `<=` (nhỏ hơn hoặc bằng).'
+      },
+      {
+        question: 'Các toán tử logic `and`, `or`, `not` hoạt động như thế nào?',
+        answer: '`and` trả về `True` nếu cả hai vế đều đúng. `or` trả về `True` nếu ít nhất một vế đúng. `not` đảo ngược giá trị boolean (biến `True` thành `False` và ngược lại). Chúng được dùng để kết hợp nhiều điều kiện.'
+      },
+      {
+        question: 'Tôi có thể lồng các vòng lặp vào nhau không?',
+        answer: 'Có, bạn hoàn toàn có thể. Một vòng lặp lồng nhau là một vòng lặp nằm bên trong một vòng lặp khác. Điều này rất hữu ích cho việc xử lý các cấu trúc dữ liệu hai chiều như ma trận hoặc bảng.'
+      },
+      {
+        question: 'Tại sao việc thụt lề (indentation) lại quan trọng trong Python?',
+        answer: 'Không giống như nhiều ngôn ngữ khác dùng dấu ngoặc nhọn `{}`, Python sử dụng việc thụt lề (thường là 4 dấu cách) để xác định các khối code, ví dụ như nội dung của một vòng lặp hoặc một câu lệnh `if`. Thụt lề sai sẽ gây ra lỗi cú pháp `IndentationError`.'
+      }
+    ]
   },
   {
     id: 'functions',
@@ -417,6 +543,48 @@ while True:
           'Hàm cho phép bạn đóng gói một đoạn code để có thể gọi lại nhiều lần, giúp code ngắn gọn, dễ đọc, dễ bảo trì và nâng cấp.',
       },
     ],
+    faqs: [
+      {
+        question: 'Hàm (function) trong Python là gì?',
+        answer: 'Hàm là một khối code được đặt tên, có thể tái sử dụng, dùng để thực hiện một tác vụ cụ thể. Hàm giúp chia nhỏ chương trình thành các phần dễ quản lý, tránh lặp lại code và làm cho code dễ đọc hơn.'
+      },
+      {
+        question: 'Sự khác biệt giữa tham số (parameter) và đối số (argument) là gì?',
+        answer: 'Tham số là tên biến được định nghĩa trong phần khai báo hàm. Đối số là giá trị thực tế được truyền vào hàm khi nó được gọi. Ví dụ: trong `def chao(ten):`, `ten` là tham số. Khi gọi `chao("An")`, `"An"` là đối số.'
+      },
+      {
+        question: 'Từ khóa `return` có tác dụng gì?',
+        answer: '`return` được dùng để kết thúc việc thực thi một hàm và trả về một giá trị cho nơi đã gọi hàm đó. Một hàm có thể không có `return`, trong trường hợp đó nó sẽ ngầm trả về `None`.'
+      },
+      {
+        question: 'Docstring là gì và tại sao nó quan trọng?',
+        answer: 'Docstring (documentation string) là một chuỗi ký tự được đặt ở dòng đầu tiên của một hàm (hoặc module, class) để giải thích mục đích và cách sử dụng của nó. Docstring rất quan trọng để tạo tài liệu cho code, giúp người khác (và cả bạn trong tương lai) hiểu được code làm gì.'
+      },
+      {
+        question: 'Sự khác biệt giữa biến cục bộ (local) và biến toàn cục (global) là gì?',
+        answer: 'Biến cục bộ chỉ tồn tại và có thể được truy cập bên trong hàm nơi nó được khai báo. Biến toàn cục được khai báo bên ngoài tất cả các hàm và có thể được truy cập từ bất kỳ đâu trong chương trình. Nên hạn chế sử dụng biến toàn cục để tránh các lỗi khó lường.'
+      },
+      {
+        question: 'Đệ quy (recursion) là gì?',
+        answer: 'Đệ quy là một kỹ thuật lập trình trong đó một hàm tự gọi lại chính nó. Một hàm đệ quy phải có một "điều kiện dừng" (base case) để tránh việc lặp vô hạn. Đệ quy rất hữu ích để giải quyết các bài toán có thể được chia nhỏ thành các bài toán con tương tự.'
+      },
+      {
+        question: 'Một hàm có thể trả về nhiều giá trị không?',
+        answer: 'Có. Trong Python, bạn có thể trả về nhiều giá trị từ một hàm bằng cách phân tách chúng bằng dấu phẩy. Về mặt kỹ thuật, hàm sẽ trả về một tuple chứa các giá trị đó, và bạn có thể "giải nén" (unpack) tuple này vào nhiều biến.'
+      },
+      {
+        question: 'Đối số mặc định (default arguments) là gì?',
+        answer: 'Đối số mặc định là một giá trị được gán sẵn cho một tham số trong định nghĩa hàm. Nếu khi gọi hàm, người dùng không cung cấp đối số cho tham số đó, giá trị mặc định sẽ được sử dụng.'
+      },
+      {
+        question: '`*args` và `**kwargs` dùng để làm gì?',
+        answer: '`*args` cho phép một hàm nhận một số lượng đối số vị trí (positional arguments) không xác định, chúng sẽ được gói vào một tuple. `**kwargs` cho phép hàm nhận một số lượng đối số từ khóa (keyword arguments) không xác định, chúng sẽ được gói vào một dictionary.'
+      },
+      {
+        question: 'Làm thế nào để viết các hàm có thể tái sử dụng?',
+        answer: 'Để một hàm có thể tái sử dụng, nó nên được thiết kế để thực hiện một tác vụ cụ thể và duy nhất. Tránh để hàm thực hiện quá nhiều việc. Hàm nên nhận dữ liệu qua tham số và trả về kết quả qua `return`, thay vì phụ thuộc vào các biến toàn cục.'
+      }
+    ]
   },
   {
     id: 'lists-tuples',
@@ -545,6 +713,48 @@ while True:
           'Tuple là "immutable" (bất biến), nghĩa là sau khi tạo ra, bạn không thể thay đổi nó. Điều này làm cho tuple trở nên an toàn và hiệu quả hơn cho các dữ liệu cố định.',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự khác biệt chính giữa List và Tuple là gì?',
+        answer: 'Sự khác biệt cốt lõi là List là "mutable" (có thể thay đổi), nghĩa là bạn có thể thêm, xóa, hoặc sửa đổi các phần tử sau khi tạo. Tuple là "immutable" (bất biến), nghĩa là một khi đã được tạo, bạn không thể thay đổi các phần tử của nó.'
+      },
+      {
+        question: 'Khi nào tôi nên sử dụng List và khi nào nên sử dụng Tuple?',
+        answer: 'Sử dụng List khi bạn cần một tập hợp các mục có thể thay đổi, ví dụ như danh sách công việc hoặc giỏ hàng. Sử dụng Tuple khi bạn có một tập hợp các mục không nên thay đổi, ví dụ như tọa độ (x, y) hoặc các ngày trong tuần. Tuple cũng nhanh hơn một chút và an toàn hơn.'
+      },
+      {
+        question: 'Làm thế nào để thêm một phần tử vào cuối một List?',
+        answer: 'Bạn có thể sử dụng phương thức `.append()`. Ví dụ: `my_list.append(new_item)` sẽ thêm `new_item` vào cuối của `my_list`.'
+      },
+      {
+        question: 'Làm thế nào để xóa một phần tử khỏi một List?',
+        answer: 'Có nhiều cách: `.remove(value)` để xóa phần tử đầu tiên có giá trị `value`. `.pop(index)` để xóa và trả về phần tử tại vị trí `index`. `del my_list[index]` để xóa phần tử tại vị trí `index`.'
+      },
+      {
+        question: 'List slicing là gì?',
+        answer: 'Slicing là một cách để trích xuất một phần của một List (hoặc chuỗi, tuple). Cú pháp là `my_list[start:stop:step]`. Nó tạo ra một List mới chứa các phần tử được chọn mà không làm thay đổi List ban đầu.'
+      },
+      {
+        question: 'Làm thế nào để sắp xếp một List?',
+        answer: 'Bạn có thể dùng phương thức `.sort()` để sắp xếp List tại chỗ (thay đổi List gốc). Hoặc dùng hàm `sorted(my_list)` để trả về một List mới đã được sắp xếp mà không thay đổi List gốc.'
+      },
+      {
+        question: 'List comprehension là gì?',
+        answer: 'List comprehension là một cách viết ngắn gọn và dễ đọc để tạo ra một List mới dựa trên một List đã có. Ví dụ: `[x*x for x in range(5)]` sẽ tạo ra một List chứa bình phương của các số từ 0 đến 4.'
+      },
+      {
+        question: 'Một List có thể chứa các kiểu dữ liệu khác nhau không?',
+        answer: 'Có. Một List trong Python rất linh hoạt và có thể chứa các phần tử với các kiểu dữ liệu khác nhau, ví dụ: `[1, "hello", 3.14, True]`.'
+      },
+      {
+        question: 'Làm thế nào để tìm số lượng phần tử trong một List?',
+        answer: 'Sử dụng hàm `len()`. Ví dụ: `len(my_list)` sẽ trả về số lượng phần tử có trong `my_list`.'
+      },
+      {
+        question: 'Hàm `enumerate()` có tác dụng gì khi dùng với List?',
+        answer: '`enumerate()` rất hữu ích khi bạn cần cả chỉ số (index) và giá trị (value) của các phần tử trong một List khi lặp. Nó trả về một cặp `(index, value)` cho mỗi lần lặp.'
+      }
+    ]
   },
   {
     id: 'dictionaries',
@@ -666,14 +876,55 @@ def list_all_students():
     },
     quizzes: [
       {
-        question:
-          'Để lấy giá trị tương ứng với key "age" trong một dictionary có tên là `person`, bạn sẽ dùng cú pháp nào?',
+        question: 'Để lấy giá trị tương ứng với key "age" trong một dictionary có tên là `person`, bạn sẽ dùng cú pháp nào?',
         options: ['person(age)', 'person.age', 'person["age"]', 'person.get_age()'],
         correctAnswerIndex: 2,
         explanation:
           'Cú pháp `dictionary[key]` là cách cơ bản và trực tiếp nhất để truy cập giá trị của một key trong dictionary.',
       },
     ],
+    faqs: [
+      {
+        question: 'Dictionary trong Python là gì?',
+        answer: 'Dictionary là một cấu trúc dữ liệu dùng để lưu trữ các cặp key-value (khóa-giá trị). Mỗi key là duy nhất và được dùng để truy cập giá trị tương ứng. Dictionary không có thứ tự và có thể thay đổi (mutable).'
+      },
+      {
+        question: 'Làm thế nào để truy cập một giá trị trong Dictionary?',
+        answer: 'Bạn có thể truy cập giá trị bằng cách sử dụng key của nó trong dấu ngoặc vuông, ví dụ: `my_dict["key"]`. Một cách khác an toàn hơn là sử dụng phương thức `.get("key")`, phương thức này sẽ trả về `None` (hoặc một giá trị mặc định) nếu key không tồn tại, thay vì báo lỗi.'
+      },
+      {
+        question: 'Điều gì xảy ra nếu tôi cố gắng truy cập một key không tồn tại?',
+        answer: 'Nếu bạn dùng cú pháp `my_dict["non_existent_key"]`, Python sẽ báo lỗi `KeyError`. Nếu bạn dùng `my_dict.get("non_existent_key")`, nó sẽ trả về `None` và không gây lỗi.'
+      },
+      {
+        question: 'Làm thế nào để thêm hoặc cập nhật một cặp key-value?',
+        answer: 'Rất đơn giản, bạn chỉ cần gán một giá trị cho một key: `my_dict["new_key"] = "new_value"`. Nếu key đã tồn tại, giá trị của nó sẽ được cập nhật. Nếu key chưa tồn tại, một cặp key-value mới sẽ được thêm vào.'
+      },
+      {
+        question: 'Làm thế nào để duyệt qua tất cả các cặp key-value trong một Dictionary?',
+        answer: 'Cách tốt nhất là sử dụng phương thức `.items()`. Ví dụ: `for key, value in my_dict.items(): ...`. Bạn cũng có thể duyệt qua chỉ các key với `.keys()` hoặc chỉ các giá trị với `.values()`.'
+      },
+      {
+        question: 'Key trong Dictionary có thể là kiểu dữ liệu gì?',
+        answer: 'Key phải là một kiểu dữ liệu bất biến (immutable) như string, number, hoặc tuple. Bạn không thể sử dụng list hoặc dictionary khác làm key.'
+      },
+      {
+        question: 'Làm thế nào để kiểm tra xem một key có tồn tại trong Dictionary hay không?',
+        answer: 'Sử dụng toán tử `in`. Ví dụ: `if "my_key" in my_dict:` sẽ trả về `True` nếu `my_key` tồn tại trong `my_dict`.'
+      },
+      {
+        question: 'Sự khác biệt giữa List và Dictionary là gì?',
+        answer: 'List là một tập hợp các phần tử có thứ tự, được truy cập bằng chỉ số (index) là số nguyên. Dictionary là một tập hợp các cặp key-value không có thứ tự, được truy cập bằng key (có thể là string, number...).'
+      },
+      {
+        question: 'Dictionary lồng nhau (nested dictionary) là gì?',
+        answer: 'Đó là một dictionary mà giá trị của nó lại là một dictionary khác. Điều này rất hữu ích để biểu diễn các cấu trúc dữ liệu phức tạp, có thứ bậc, ví dụ như một đối tượng JSON.'
+      },
+      {
+        question: 'Làm thế nào để xóa một cặp key-value khỏi Dictionary?',
+        answer: 'Bạn có thể sử dụng câu lệnh `del my_dict["key_to_delete"]`. Một cách khác là sử dụng phương thức `.pop("key_to_delete")`, phương thức này sẽ xóa cặp key-value và trả về giá trị đã bị xóa.'
+      }
+    ]
   },
   {
     id: 'file-handling',
@@ -839,6 +1090,48 @@ elif choice == "2":
           'Sử dụng `with` statement đảm bảo rằng file sẽ luôn được đóng một cách an toàn, giúp tránh rò rỉ tài nguyên và các lỗi tiềm ẩn, làm cho code của bạn an toàn và đáng tin cậy hơn.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao nên sử dụng `with open(...)` khi làm việc với file?',
+        answer: 'Cú pháp `with open(...) as f:` tạo ra một "context manager". Nó đảm bảo rằng file sẽ được tự động đóng lại sau khi khối lệnh bên trong `with` thực thi xong, ngay cả khi có lỗi xảy ra. Điều này giúp tránh rò rỉ tài nguyên và làm cho code an toàn hơn.'
+      },
+      {
+        question: 'Sự khác biệt giữa các chế độ (mode) "r", "w", và "a" là gì?',
+        answer: '"r" (read): Mở file để đọc. Đây là chế độ mặc định. Sẽ báo lỗi nếu file không tồn tại. "w" (write): Mở file để ghi. Sẽ tạo file mới nếu chưa có, hoặc xóa toàn bộ nội dung file cũ nếu đã có. "a" (append): Mở file để ghi tiếp vào cuối. Sẽ tạo file mới nếu chưa có.'
+      },
+      {
+        question: 'Làm thế nào để đọc toàn bộ nội dung của một file text?',
+        answer: 'Bạn có thể sử dụng phương thức `.read()`. Ví dụ: `with open("my_file.txt", "r") as f: content = f.read()`.'
+      },
+      {
+        question: 'Làm thế nào để đọc file theo từng dòng?',
+        answer: 'Cách hiệu quả nhất là lặp trực tiếp qua đối tượng file: `for line in f: ...`. Một cách khác là sử dụng `.readlines()` để đọc tất cả các dòng vào một list, nhưng cách này không hiệu quả với các file lớn.'
+      },
+      {
+        question: 'Làm thế nào để ghi dữ liệu vào một file?',
+        answer: 'Sử dụng phương thức `.write()`. Lưu ý rằng `.write()` không tự động thêm ký tự xuống dòng (`\\n`), bạn cần phải tự thêm nếu muốn mỗi lần ghi là một dòng mới.'
+      },
+      {
+        question: 'File CSV là gì và làm thế nào để xử lý nó trong Python?',
+        answer: 'CSV (Comma-Separated Values) là một định dạng file văn bản đơn giản để lưu trữ dữ liệu dạng bảng. Python có một module tích hợp sẵn tên là `csv` giúp việc đọc và ghi file CSV trở nên rất dễ dàng và an toàn.'
+      },
+      {
+        question: 'Làm thế nào để xử lý lỗi khi file không tồn tại?',
+        answer: 'Bạn có thể sử dụng khối `try...except FileNotFoundError`. Đặt lệnh `open()` bên trong khối `try` và xử lý lỗi trong khối `except`.'
+      },
+      {
+        question: 'Đường dẫn tương đối (relative path) và đường dẫn tuyệt đối (absolute path) khác nhau như thế nào?',
+        answer: 'Đường dẫn tuyệt đối chỉ định vị trí của file từ thư mục gốc của hệ thống (ví dụ: `C:\\Users\\Admin\\file.txt`). Đường dẫn tương đối chỉ định vị trí của file so với thư mục làm việc hiện tại (ví dụ: `data/file.txt`).'
+      },
+      {
+        question: 'Làm thế nào để làm việc với các thư mục trong Python?',
+        answer: 'Module `os` cung cấp nhiều hàm để tương tác với hệ điều hành, bao gồm tạo thư mục (`os.mkdir()`), xóa thư mục (`os.rmdir()`), liệt kê các file trong thư mục (`os.listdir()`), và kiểm tra sự tồn tại của đường dẫn (`os.path.exists()`).'
+      },
+      {
+        question: 'Tại sao cần phải chỉ định `encoding="utf-8"` khi làm việc với file?',
+        answer: 'Chỉ định `encoding="utf-8"` đảm bảo rằng các ký tự đặc biệt, như tiếng Việt có dấu, được đọc và ghi một cách chính xác. Nếu không, bạn có thể gặp lỗi `UnicodeDecodeError` hoặc dữ liệu bị hiển thị sai.'
+      }
+    ]
   },
   {
     id: 'oop-basics',
@@ -1006,6 +1299,48 @@ demo_bank_system()`,
           'Đóng gói giúp bảo vệ dữ liệu của object khỏi các truy cập không hợp lệ từ bên ngoài, tăng tính bảo mật và giúp code dễ quản lý hơn vì bạn chỉ cần quan tâm đến giao diện (các hàm public) mà không cần biết chi tiết bên trong.',
       },
     ],
+    faqs: [
+      {
+        question: 'Lập trình hướng đối tượng (OOP) là gì?',
+        answer: 'OOP là một phương pháp lập trình dựa trên khái niệm "đối tượng" (object), có thể chứa dữ liệu (dưới dạng thuộc tính - attributes) và code (dưới dạng phương thức - methods). OOP giúp tổ chức các chương trình phức tạp thành các khối có thể tái sử dụng và dễ quản lý.'
+      },
+      {
+        question: 'Sự khác biệt giữa Class và Object là gì?',
+        answer: 'Class là một bản thiết kế hoặc khuôn mẫu để tạo ra các đối tượng. Nó định nghĩa các thuộc tính và phương thức chung. Object là một thực thể cụ thể được tạo ra từ một class. Ví dụ, `Dog` là một class, còn `my_dog` là một object của class `Dog`.'
+      },
+      {
+        question: 'Phương thức `__init__` dùng để làm gì?',
+        answer: '`__init__` là một phương thức đặc biệt được gọi là hàm khởi tạo (constructor). Nó được tự động gọi khi một object mới được tạo ra từ class. `__init__` thường được dùng để khởi tạo các thuộc tính ban đầu cho object.'
+      },
+      {
+        question: 'Sự khác biệt giữa thuộc tính (attribute) và phương thức (method) là gì?',
+        answer: 'Thuộc tính là các biến thuộc về một object, dùng để lưu trữ trạng thái hoặc dữ liệu của object đó (ví dụ: `dog.name`). Phương thức là các hàm thuộc về một object, dùng để định nghĩa hành vi của object đó (ví dụ: `dog.bark()`).'
+      },
+      {
+        question: 'Đóng gói (Encapsulation) trong OOP là gì?',
+        answer: 'Đóng gói là nguyên tắc gộp dữ liệu và các phương thức làm việc với dữ liệu đó vào trong một đối tượng duy nhất. Nó cũng bao gồm việc che giấu các chi tiết triển khai bên trong và chỉ cho phép tương tác thông qua một giao diện công khai, giúp bảo vệ dữ liệu.'
+      },
+      {
+        question: 'Kế thừa (Inheritance) trong OOP là gì?',
+        answer: 'Kế thừa cho phép một class mới (class con) thừa hưởng các thuộc tính và phương thức từ một class đã có (class cha). Điều này thúc đẩy việc tái sử dụng code và tạo ra một hệ thống phân cấp logic giữa các class.'
+      },
+      {
+        question: 'Từ khóa `self` trong các phương thức của class có ý nghĩa gì?',
+        answer: '`self` là một tham chiếu đến chính object đang gọi phương thức đó. Nó phải là tham số đầu tiên của bất kỳ phương thức nào trong class. Qua `self`, bạn có thể truy cập các thuộc tính và phương thức khác của object đó.'
+      },
+      {
+        question: 'Đa hình (Polymorphism) trong OOP là gì?',
+        answer: 'Đa hình có nghĩa là "nhiều hình dạng". Trong OOP, nó cho phép các đối tượng của các class khác nhau có thể được xử lý thông qua cùng một giao diện. Ví dụ, cả object `Dog` và `Cat` đều có thể có phương thức `.speak()`, nhưng mỗi object sẽ thực hiện nó theo cách riêng.'
+      },
+      {
+        question: 'Tại sao nên sử dụng OOP?',
+        answer: 'OOP giúp code trở nên có tổ chức, dễ bảo trì, dễ mở rộng và tái sử dụng. Nó cho phép mô hình hóa các vấn đề trong thế giới thực một cách tự nhiên hơn, đặc biệt hữu ích cho các dự án lớn và phức tạp.'
+      },
+      {
+        question: 'Làm thế nào để biểu thị một thuộc tính là "private" trong Python?',
+        answer: 'Theo quy ước, các lập trình viên Python sử dụng một dấu gạch dưới ở đầu tên thuộc tính (ví dụ: `self._my_private_var`) để chỉ ra rằng nó chỉ nên được sử dụng nội bộ bên trong class và không nên được truy cập trực tiếp từ bên ngoài.'
+      }
+    ]
   },
   {
     id: 'algorithms-data-structures',
@@ -1406,6 +1741,48 @@ demo_binary_tree()`,
       'Financial algorithmic trading',
       'Data compression algorithms',
     ],
+    faqs: [
+      {
+        question: 'Độ phức tạp thời gian (Big O) là gì?',
+        answer: 'Big O là một ký hiệu toán học dùng để mô tả hành vi của một thuật toán khi kích thước đầu vào tăng lên. Nó cho biết thời gian chạy hoặc không gian bộ nhớ của thuật toán tăng nhanh như thế nào, giúp so sánh hiệu quả giữa các thuật toán khác nhau.'
+      },
+      {
+        question: 'Tại sao cần học thuật toán và cấu trúc dữ liệu?',
+        answer: 'Học thuật toán và cấu trúc dữ liệu giúp bạn viết code hiệu quả hơn, giải quyết các vấn đề phức tạp một cách tối ưu, và vượt qua các cuộc phỏng vấn kỹ thuật tại các công ty công nghệ lớn. Nó là nền tảng của khoa học máy tính.'
+      },
+      {
+        question: 'Sự khác biệt giữa tìm kiếm tuyến tính và tìm kiếm nhị phân là gì?',
+        answer: 'Tìm kiếm tuyến tính (O(n)) duyệt qua từng phần tử cho đến khi tìm thấy. Tìm kiếm nhị phân (O(log n)) yêu cầu danh sách phải được sắp xếp và hoạt động bằng cách liên tục chia đôi khoảng tìm kiếm. Tìm kiếm nhị phân nhanh hơn rất nhiều với dữ liệu lớn.'
+      },
+      {
+        question: 'Stack và Queue khác nhau như thế nào?',
+        answer: 'Stack hoạt động theo nguyên tắc LIFO (Last-In, First-Out) - phần tử vào sau cùng sẽ ra trước tiên, giống như một chồng đĩa. Queue hoạt động theo nguyên tắc FIFO (First-In, First-Out) - phần tử vào trước sẽ ra trước, giống như một hàng người xếp hàng.'
+      },
+      {
+        question: 'Cây nhị phân (Binary Tree) là gì?',
+        answer: 'Cây nhị phân là một cấu trúc dữ liệu dạng cây trong đó mỗi nút có tối đa hai nút con, được gọi là nút con trái và nút con phải. Nó được sử dụng rộng rãi trong các thuật toán tìm kiếm và sắp xếp.'
+      },
+      {
+        question: 'Khi nào tôi nên sử dụng Dictionary (Hash Table)?',
+        answer: 'Sử dụng Dictionary khi bạn cần truy cập, chèn hoặc xóa các phần tử một cách nhanh chóng dựa trên một khóa (key). Thời gian trung bình cho các thao tác này là O(1), rất hiệu quả.'
+      },
+      {
+        question: 'Quy hoạch động (Dynamic Programming) là gì?',
+        answer: 'Quy hoạch động là một kỹ thuật tối ưu hóa bằng cách giải quyết các bài toán con nhỏ hơn và lưu trữ kết quả của chúng để tránh tính toán lại. Nó thường được áp dụng cho các bài toán có các bài toán con gối lên nhau.'
+      },
+      {
+        question: 'Một số thuật toán sắp xếp phổ biến là gì?',
+        answer: 'Các thuật toán sắp xếp phổ biến bao gồm Bubble Sort (đơn giản nhưng chậm), Insertion Sort, Selection Sort, Merge Sort (hiệu quả, O(n log n)), Quick Sort (thường nhanh nhất trong thực tế), và Heap Sort.'
+      },
+      {
+        question: 'Đồ thị (Graph) trong cấu trúc dữ liệu là gì?',
+        answer: 'Đồ thị là một cấu trúc bao gồm một tập hợp các đỉnh (vertices) và một tập hợp các cạnh (edges) nối các đỉnh đó. Đồ thị được dùng để mô hình hóa các mối quan hệ mạng lưới, như mạng xã hội, mạng máy tính, hoặc bản đồ đường đi.'
+      },
+      {
+        question: 'Làm thế nào để chọn đúng cấu trúc dữ liệu cho bài toán của mình?',
+        answer: 'Việc lựa chọn phụ thuộc vào các thao tác bạn cần thực hiện. Hãy tự hỏi: Bạn có cần truy cập nhanh theo chỉ số không (dùng List)? Bạn có cần truy cập nhanh theo khóa không (dùng Dictionary)? Dữ liệu có cần được sắp xếp không? Bạn có cần thêm/xóa ở đầu/cuối không (dùng Stack/Queue)?'
+      }
+    ]
   },
 ];
 

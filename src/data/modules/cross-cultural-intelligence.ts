@@ -371,6 +371,30 @@ export const lessons: CrossCulturalLessonType[] = [
         answer:
           'Trong văn hóa định hướng nhiệm vụ (task-oriented), hiệu quả công việc và việc hoàn thành mục tiêu được ưu tiên hàng đầu. Trong văn hóa định hướng mối quan hệ (relationship-oriented), việc xây dựng lòng tin và mối quan hệ cá nhân được xem là nền tảng cần thiết trước khi có thể hợp tác làm việc hiệu quả.',
       },
+      {
+        question: 'CQ khác gì so với EQ (Trí tuệ cảm xúc)?',
+        answer: 'EQ là khả năng nhận biết và quản lý cảm xúc của bản thân và người khác. CQ là một nhánh chuyên biệt hơn, tập trung vào khả năng hoạt động hiệu quả trong các bối cảnh đa dạng về văn hóa. Một người có EQ cao có thể vẫn gặp khó khăn nếu họ không có kiến thức và chiến lược để áp dụng sự đồng cảm của mình trong một môi trường văn hóa xa lạ.',
+      },
+      {
+        question: 'Làm thế nào để rèn luyện CQ Drive (Động lực)?',
+        answer: 'Hãy chủ động tìm kiếm những trải nghiệm đa văn hóa: thử món ăn mới, xem phim nước ngoài không thuyết minh, kết bạn với người nước ngoài, đọc sách về lịch sử các quốc gia khác. Sự tò mò và hứng thú sẽ nảy sinh từ chính những trải nghiệm này.',
+      },
+      {
+        question: 'Mô hình văn hóa của Hofstede có còn phù hợp trong thế giới hiện đại không?',
+        answer: 'Mô hình của Hofstede là một công cụ nền tảng và vẫn rất hữu ích để hiểu những xu hướng chung của một nền văn hóa. Tuy nhiên, nó có những hạn chế như dữ liệu cũ và có thể không phản ánh hết sự phức tạp và thay đổi của xã hội hiện đại. Do đó, nên sử dụng nó như một tài liệu tham khảo, kết hợp với các quan sát và mô hình khác.',
+      },
+      {
+        question: 'Tại sao việc nhận diện thiên kiến vô thức lại quan trọng?',
+        answer: 'Thiên kiến vô thức (unconscious bias) ảnh hưởng đến cách chúng ta ra quyết định và đối xử với người khác một cách tự động mà chúng ta không hề hay biết. Nhận diện chúng giúp chúng ta đưa ra những quyết định công bằng hơn, khách quan hơn và tránh được những hiểu lầm đáng tiếc trong giao tiếp đa văn hóa.',
+      },
+      {
+        question: 'Cultural Code-Switching có phải là "giả tạo" hay không?',
+        answer: 'Không. Đó không phải là thay đổi bản chất con người bạn, mà là sự điều chỉnh hành vi một cách có ý thức để giao tiếp hiệu quả hơn trong một bối cảnh cụ thể. Giống như bạn sẽ dùng ngôn ngữ khác khi nói chuyện với một đứa trẻ so với khi nói chuyện với một giáo sư, đó là sự linh hoạt và thông minh trong giao tiếp.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu áp dụng CQ vào công việc hàng ngày?',
+        answer: 'Hãy bắt đầu từ việc quan sát. Trong cuộc họp tiếp theo với đồng nghiệp quốc tế, hãy thử để ý xem ai nói nhiều, ai ít nói, cách họ ngắt lời, cách họ đưa ra ý kiến. Đừng phán xét, chỉ quan sát và tự hỏi: "Điều gì trong văn hóa của họ có thể giải thích cho hành vi này?".',
+      },
     ],
   },
   {
@@ -676,254 +700,29 @@ export const lessons: CrossCulturalLessonType[] = [
         answer:
           'Hãy tập giao tiếp một cách rõ ràng, trực tiếp và đi thẳng vào vấn đề hơn. Đừng ngại đặt câu hỏi nếu bạn chưa hiểu rõ. Trong các cuộc họp, hãy chủ động phát biểu ý kiến của mình. Hiểu rằng việc tranh luận thẳng thắn về công việc được coi là bình thường và không ảnh hưởng đến quan hệ cá nhân.',
       },
-    ],
-  },
-  {
-    id: 'building-global-networks',
-    title: 'Xây Dựng Mạng Lưới Toàn Cầu',
-    description:
-      'Strategies để build và maintain professional networks across cultures, leveraging diversity cho career và business success.',
-    duration: '120 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=GXy__kBVq1M', // Global Networking
-    imageUrl: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&h=600&fit=crop',
-    mainContent: {
-      introduction:
-        'Trong thế giới kết nối, mạng lưới của bạn chính là tài sản của bạn. Nhưng làm thế nào để xây dựng những mối quan hệ chuyên nghiệp, chân thành và bền vững với những người đến từ khắp nơi trên thế giới, mỗi nơi lại có một quy tắc "networking" khác nhau? Bài học này sẽ cung cấp cho bạn chiến lược để xây dựng và nuôi dưỡng một mạng lưới toàn cầu thực sự.',
-      keyConcepts: [
-        {
-          title: 'Định hướng Mối quan hệ vs. Nhiệm vụ (Relationship vs. Task-oriented)',
-          description:
-            'Hiểu rõ liệu một nền văn hóa ưu tiên xây dựng mối quan hệ trước khi bàn về công việc (relationship-oriented) hay đi thẳng vào vấn đề (task-oriented). Điều này quyết định cách bạn tiếp cận một người mới.',
-          examples: [
-            'Ở Mỹ, bạn có thể bắt đầu một email bằng việc giới thiệu trực tiếp về cơ hội hợp tác. Ở Trung Quốc, bạn có thể cần nhiều buổi ăn tối và trò chuyện xã giao trước khi đề cập đến kinh doanh.',
-          ],
-        },
-        {
-          title: 'Xây dựng lòng tin đa văn hóa (Building Cross-cultural Trust)',
-          description:
-            'Lòng tin được xây dựng theo những cách khác nhau. Lòng tin dựa trên năng lực (Cognitive trust) phổ biến ở các nước phương Tây - "bạn đáng tin vì bạn làm việc giỏi". Lòng tin dựa trên tình cảm (Affective trust) phổ biến ở châu Á và Mỹ Latinh - "bạn đáng tin vì tôi có cảm tình và mối quan hệ cá nhân với bạn".',
-          examples: [
-            'Để xây dựng cognitive trust, hãy thể hiện năng lực qua các dự án thành công. Để xây dựng affective trust, hãy dành thời gian chia sẻ về gia đình, sở thích và xây dựng mối quan hệ cá nhân.',
-          ],
-        },
-        {
-          title: 'Sự có đi có lại (Reciprocity)',
-          description:
-            'Nguyên tắc "cho và nhận" tồn tại ở mọi nơi, nhưng cách thể hiện lại khác nhau. Học cách cho đi giá trị một cách chân thành và hiểu các quy tắc bất thành văn về việc "đáp lễ" trong các nền văn hóa khác nhau để tránh gây khó xử.',
-          examples: [
-            'Ở văn hóa phương Tây, việc giới thiệu một mối quan hệ hữu ích được coi là một sự giúp đỡ lớn. Ở một số văn hóa châu Á, một món quà nhỏ hoặc một lời mời ăn tối có thể là một phần quan trọng của việc xây dựng mối quan hệ.',
-          ],
-        },
-      ],
-      practicalApplications: [
-        {
-          area: 'Phát triển kinh doanh quốc tế',
-          description:
-            'Xây dựng một mạng lưới các đối tác, nhà phân phối và khách hàng tiềm năng ở các thị trường mục tiêu.',
-        },
-        {
-          area: 'Thăng tiến sự nghiệp toàn cầu',
-          description:
-            'Kết nối với các nhà lãnh đạo, người cố vấn (mentors) và đồng nghiệp trên toàn cầu để mở ra các cơ hội làm việc và học hỏi quốc tế.',
-        },
-        {
-          area: 'Huy động vốn đầu tư',
-          description:
-            'Xây dựng mối quan hệ với các nhà đầu tư mạo hiểm và các quỹ đầu tư từ các trung tâm tài chính khác nhau trên thế giới.',
-        },
-      ],
-      conclusion:
-        'Xây dựng mạng lưới toàn cầu không phải là thu thập danh thiếp, mà là vun trồng những khu vườn quan hệ trên khắp thế giới. Bằng sự tò mò, chân thành và nhạy bén về văn hóa, bạn có thể tạo ra một mạng lưới đa dạng, không chỉ giúp bạn trong sự nghiệp mà còn làm phong phú thêm cuộc sống của bạn.',
-    },
-    relatedGames: [
       {
-        id: 'global-ambassador-3d',
-        name: 'Global Ambassador 3D',
-        description:
-          'Navigate cross-cultural communication scenarios, build diplomatic skills, and solve global challenges in 3D',
-      },
-    ],
-    objectives: [
-      'Build authentic relationships across cultures',
-      'Leverage cultural diversity trong networks',
-      'Navigate different networking styles globally',
-      'Maintain global relationships long-term',
-    ],
-    prerequisites: ['Đã hoàn thành lessons trước trong module', 'Active trong professional networking'],
-    culturalDimensions: [
-      'Relationship vs Task Orientation',
-      'Trust Building Approaches',
-      'Reciprocity Expectations',
-      'Introduction Protocols',
-      'Gift-Giving Customs',
-      'Business Card Etiquette',
-    ],
-    adaptationStrategies: [
-      'Cultural Networking Approaches',
-      'Virtual Relationship Building',
-      'Cross-Cultural Mentorship',
-      'Global Community Participation',
-      'Cultural Bridge Building',
-      'International Alumni Networks',
-    ],
-    globalCompetencies: [
-      'Cultural Relationship Intelligence',
-      'Global Network Orchestration',
-      'Cross-Cultural Value Creation',
-      'International Collaboration',
-      'Cultural Knowledge Sharing',
-      'Global Opportunity Recognition',
-    ],
-    communicationPatterns: [
-      {
-        culture: 'Western Professional',
-        directness: 'Direct',
-        contextLevel: 'Low Context',
-        timeOrientation: 'Task-First',
-        hierarchyStyle: 'Egalitarian',
-        examples: ['Quick value proposition', 'LinkedIn connections', 'Coffee meetings', 'Direct ask for help'],
+        question: 'Làm thế nào để điều hành một cuộc họp hiệu quả với nhiều nền văn hóa tham gia?',
+        answer: 'Hãy gửi agenda và tài liệu trước để mọi người có thời gian chuẩn bị. Trong cuộc họp, hãy chủ động mời những người ít nói phát biểu. Sử dụng "round-robin" (mời từng người phát biểu lần lượt) để đảm bảo ai cũng có cơ hội. Tóm tắt lại các quyết định và các bước tiếp theo một cách rõ ràng bằng văn bản sau cuộc họp.',
       },
       {
-        culture: 'East Asian Professional',
-        directness: 'Indirect',
-        contextLevel: 'High Context',
-        timeOrientation: 'Relationship-First',
-        hierarchyStyle: 'Hierarchical',
-        examples: ['Proper introductions', 'Long relationship building', 'Group activities', 'Indirect reciprocity'],
-      },
-    ],
-    exercises: [
-      {
-        title: 'Cultural Networking Map',
-        description: 'Map và strategize your global professional network',
-        difficulty: 'Trung bình',
-        materials: ['Network mapping tool', 'Cultural analysis framework'],
-        procedure: [
-          'Audit current professional network by culture',
-          'Identify cultural gaps và opportunities',
-          'Research networking customs of target cultures',
-          'Create culturally-appropriate outreach strategies',
-          'Set relationship building goals by region',
-          'Track progress và cultural learnings',
-        ],
-        expectedResults: 'Strategic global network development plan',
-        solution: 'Quality over quantity, genuine interest trong other cultures, consistent follow-up.',
+        question: 'Tại sao việc hiểu về "power distance" (khoảng cách quyền lực) lại quan trọng?',
+        answer: 'Nó ảnh hưởng đến cách mọi người giao tiếp với cấp trên và cấp dưới. Trong văn hóa có khoảng cách quyền lực cao (như nhiều nước châu Á), nhân viên có thể ngần ngại nói ra ý kiến trái với sếp. Trong văn hóa có khoảng cách quyền lực thấp (như các nước Bắc Âu), việc tranh luận với sếp được coi là bình thường. Hiểu điều này giúp bạn biết cách khuyến khích sự tham gia của đội nhóm.',
       },
       {
-        title: 'Virtual Cross-Cultural Event',
-        description: 'Organize online event connecting different cultures',
-        difficulty: 'Nâng cao',
-        materials: ['Event platform', 'Cultural programming guides', 'Networking tools'],
-        procedure: [
-          'Design event accommodating multiple time zones',
-          'Create culturally inclusive programming',
-          'Facilitate cross-cultural introductions',
-          'Enable meaningful conversations across cultures',
-          'Follow up to maintain connections',
-          'Measure networking success across cultures',
-        ],
-        expectedResults: 'Successful cross-cultural networking event',
-        solution: 'Cultural co-hosts, structured networking activities, cultural sharing moments, clear follow-up.',
-      },
-    ],
-    realWorldApplications: [
-      'International business development',
-      'Global career advancement',
-      'Cross-cultural partnerships',
-      'International investment opportunities',
-      'Global knowledge exchange',
-    ],
-    caseStudies: [
-      {
-        title: 'World Economic Forum Network',
-        organization: 'World Economic Forum',
-        problem: 'Creating meaningful connections across global leaders',
-        solution: 'Structured cross-cultural networking approaches',
-        impact: 'Influential global leadership network',
-        innovations: [
-          'Cultural pairing programs',
-          'Regional integration',
-          'Shared purpose initiatives',
-          'Long-term relationship cultivation',
-        ],
-      },
-    ],
-    resources: [
-      {
-        title: 'Global Professional Networks',
-        url: 'https://www.linkedin.com/company/world-economic-forum',
-        type: 'Platform',
+        question: 'Làm thế nào để viết một email hiệu quả cho đối tác quốc tế?',
+        answer: 'Hãy xem xét văn hóa của người nhận. Với người từ văn hóa ngữ cảnh thấp, hãy đi thẳng vào vấn đề chính sau một lời chào ngắn gọn. Với người từ văn hóa ngữ cảnh cao, hãy dành một vài câu để hỏi thăm, xây dựng mối quan hệ trước khi đề cập đến công việc. Luôn sử dụng ngôn ngữ rõ ràng, đơn giản và tránh các thành ngữ địa phương.',
       },
       {
-        title: 'Cultural Detective',
-        url: 'https://www.culturaldetective.com',
-        type: 'Tools',
-      },
-    ],
-    vietnamContext: {
-      title: 'Bối cảnh Việt Nam: Xây dựng quan hệ "kiểu Việt"',
-      content: [
-        'Networking ở Việt Nam nặng về "tình cảm" và các mối quan hệ cá nhân. Người Việt thường muốn biết về bạn với tư cách một con người trước khi bàn về công việc.',
-        'Khái niệm "quan hệ" (connections) rất quan trọng. Một lời giới thiệu từ một người đáng tin cậy có giá trị hơn hàng chục email lạnh.',
-        'Các hoạt động như ăn nhậu, cà phê, hay thậm chí là karaoke là một phần không thể thiếu của quá trình xây dựng mối quan hệ kinh doanh.',
-        'Sự có đi có lại (reciprocity) rất được coi trọng. Nếu ai đó giúp bạn, họ sẽ ngầm kỳ vọng bạn sẽ giúp lại họ trong tương lai, dù không nói ra trực tiếp.',
-      ],
-    },
-    careerConnect: {
-      name: 'Bà Hà Thị Thu Thanh',
-      title: 'Chủ tịch HĐTV',
-      company: 'Deloitte Việt Nam',
-      imageUrl: 'https://i.pravatar.cc/150?u=ha-thi-thu-thanh',
-      quote:
-        'Để thành công trong ngành dịch vụ chuyên nghiệp tại Việt Nam, năng lực chuyên môn là điều kiện cần, nhưng xây dựng được mạng lưới quan hệ tin cậy mới là điều kiện đủ. Mạng lưới đó không được tạo ra trong phòng họp, mà được vun đắp qua những lần tương tác chân thành, nơi con người kết nối với con người.',
-    },
-    quizzes: [
-      {
-        question: 'Lòng tin dựa trên tình cảm (Affective trust) được xây dựng dựa trên yếu tố nào?',
-        options: [
-          'Bằng cấp và chứng chỉ của một người.',
-          'Hiệu quả công việc và các dự án đã hoàn thành.',
-          'Mối quan hệ cá nhân, sự đồng cảm và cảm giác thân thuộc.',
-          'Chức vụ của một người trong công ty.',
-        ],
-        correctAnswerIndex: 2,
-        explanation:
-          'Affective trust phổ biến ở các nền văn hóa thiên về mối quan hệ (relationship-oriented) như Việt Nam, nơi mọi người có xu hướng tin tưởng những người mà họ có mối liên kết cá nhân.',
+        question: 'Sự im lặng trong giao tiếp có ý nghĩa gì?',
+        answer: 'Ý nghĩa của sự im lặng rất khác nhau. Ở phương Tây, nó thường có nghĩa là không có gì để nói hoặc không đồng ý. Ở nhiều nền văn hóa phương Đông, sự im lặng có thể là dấu hiệu của sự tôn trọng, sự lắng nghe chăm chú, hoặc đang suy nghĩ kỹ trước khi trả lời. Đừng vội vàng lấp đầy khoảng trống im lặng.',
       },
       {
-        question: 'Khi networking ở một nền văn hóa "relationship-oriented", bạn nên làm gì?',
-        options: [
-          'Đi thẳng vào vấn đề kinh doanh để tiết kiệm thời gian.',
-          'Dành thời gian cho các hoạt động xã giao, chia sẻ về bản thân và tìm hiểu về đối tác như một con người trước khi bàn về công việc.',
-          'Chỉ gửi email và không bao giờ gặp mặt trực tiếp.',
-          'Tránh nói về các chủ đề cá nhân như gia đình hay sở thích.',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'Trong các nền văn hóa ưu tiên mối quan hệ, việc xây dựng một nền tảng quan hệ cá nhân vững chắc là bước đi bắt buộc trước khi các hoạt động kinh doanh có thể diễn ra một cách suôn sẻ.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Làm thế nào để bắt đầu networking nếu tôi là người hướng nội?',
-        answer:
-          'Networking không nhất thiết phải là các sự kiện đông người. Hãy tập trung vào chất lượng thay vì số lượng. Bắt đầu bằng việc kết nối 1-1 qua LinkedIn hoặc email. Chuẩn bị trước một vài câu hỏi để bắt đầu cuộc trò chuyện. Lắng nghe nhiều hơn nói cũng là một chiến lược networking hiệu quả.',
+        question: 'Làm thế nào để xây dựng một "ngôn ngữ chung" cho đội nhóm đa văn hóa?',
+        answer: 'Đội nhóm nên cùng nhau thống nhất về các quy tắc giao tiếp. Ví dụ: "Chúng ta sẽ luôn xác nhận lại các yêu cầu quan trọng bằng email", "Mọi ý kiến đều được hoan nghênh trong các buổi brainstorming", "Khi đưa phản hồi, chúng ta sẽ tập trung vào hành vi, không phải con người".',
       },
       {
-        question: 'Làm thế nào để duy trì một mối quan hệ sau lần gặp đầu tiên?',
-        answer:
-          'Hãy gửi một email hoặc tin nhắn ngắn cảm ơn sau cuộc gặp. Tìm cách "cho đi" giá trị, ví dụ như chia sẻ một bài viết hữu ích, giới thiệu một mối quan hệ khác, hoặc đơn giản là gửi lời chúc vào một dịp đặc biệt. Hãy thể hiện sự quan tâm chân thành đến công việc và cuộc sống của họ.',
-      },
-      {
-        question: 'Sử dụng LinkedIn để networking toàn cầu như thế nào cho hiệu quả?',
-        answer:
-          'Hãy cá nhân hóa lời mời kết nối của bạn, nêu rõ lý do tại sao bạn muốn kết nối. Thường xuyên chia sẻ các nội dung có giá trị liên quan đến lĩnh vực của bạn. Tương tác (like, comment) với các bài đăng của người khác một cách có ý nghĩa. Tham gia vào các nhóm chuyên ngành để mở rộng mạng lưới.',
-      },
-      {
-        question: 'Sự khác biệt giữa mentor (người cố vấn) và sponsor (người bảo trợ) là gì?',
-        answer:
-          'Một mentor là người cho bạn lời khuyên, chia sẻ kinh nghiệm và hướng dẫn bạn. Một sponsor là một người có vị trí cao hơn, người không chỉ cho bạn lời khuyên mà còn chủ động sử dụng ảnh hưởng của họ để tạo ra cơ hội cho bạn, ví dụ như đề cử bạn cho một dự án quan trọng hoặc một vị trí cao hơn.',
+        question: 'Vai trò của storytelling trong giao tiếp toàn cầu là gì?',
+        answer: 'Kể chuyện là một công cụ mạnh mẽ để kết nối con người vượt qua rào cản văn hóa. Một câu chuyện hay có thể truyền tải các giá trị, xây dựng sự đồng cảm và làm cho thông điệp của bạn trở nên dễ nhớ và có sức ảnh hưởng hơn, bất kể người nghe đến từ đâu.',
       },
     ],
   },

@@ -115,6 +115,48 @@ export const eventManagementLessons: EventManagementLesson[] = [
         type: 'Resource',
       },
     ],
+    faqs: [
+      {
+        question: 'Sự kiện hybrid (kết hợp) là gì và tại sao nó lại quan trọng?',
+        answer: 'Sự kiện hybrid là sự kiện diễn ra đồng thời ở một địa điểm vật lý và một nền tảng ảo, cho phép người tham dự có thể tham gia trực tiếp hoặc từ xa. Nó quan trọng vì giúp mở rộng phạm vi tiếp cận khán giả toàn cầu, tăng tính linh hoạt và thu thập được nhiều dữ liệu hơn về người tham dự.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo chất lượng live stream không bị gián đoạn?',
+        answer: 'Để đảm bảo chất lượng, cần có đường truyền internet tốc độ cao và ổn định (nên có cả đường truyền dự phòng), sử dụng thiết bị quay phim và âm thanh chuyên nghiệp, và thực hiện kiểm tra kỹ thuật toàn diện trước khi sự kiện diễn ra. Việc có một đội ngũ kỹ thuật viên giàu kinh nghiệm là rất quan trọng.',
+      },
+      {
+        question: 'Làm thế nào để giữ chân khán giả tham gia sự kiện ảo?',
+        answer: 'Tăng cường tương tác là chìa khóa. Hãy sử dụng các công cụ như Q&A trực tiếp, các cuộc thăm dò ý kiến (polls), phòng thảo luận nhóm (breakout rooms), và các yếu tố gamification. Nội dung cần được thiết kế ngắn gọn, hấp dẫn và có tính tương tác cao.',
+      },
+      {
+        question: 'Chi phí tổ chức một sự kiện hybrid so với sự kiện truyền thống như thế nào?',
+        answer: 'Ban đầu, chi phí cho sự kiện hybrid có thể cao hơn do phải đầu tư vào công nghệ và nền tảng ảo. Tuy nhiên, về lâu dài, nó có thể tiết kiệm chi phí liên quan đến địa điểm, đi lại và ăn ở cho một lượng lớn người tham dự. Doanh thu cũng có thể tăng lên nhờ bán vé cho khán giả ảo.',
+      },
+      {
+        question: 'Nền tảng nào là tốt nhất để tổ chức sự kiện ảo?',
+        answer: 'Không có nền tảng "tốt nhất" cho mọi loại sự kiện. Lựa chọn phụ thuộc vào quy mô, ngân sách và mục tiêu của bạn. Các nền tảng phổ biến bao gồm Zoom Events, Microsoft Teams, và các giải pháp chuyên nghiệp hơn như Hopin, Cvent, hoặc các nền tảng được xây dựng tùy chỉnh.',
+      },
+      {
+        question: 'Sự khác biệt giữa webinar và một hội nghị ảo là gì?',
+        answer: 'Webinar thường là một buổi thuyết trình một chiều từ một hoặc vài diễn giả đến một lượng lớn khán giả, với sự tương tác hạn chế. Một hội nghị ảo phức tạp hơn, bao gồm nhiều phiên họp, nhiều diễn giả, các khu vực triển lãm ảo, và nhiều cơ hội kết nối mạng lưới hơn, mô phỏng một hội nghị thực tế.',
+      },
+      {
+        question: 'Làm thế nào để đo lường sự thành công của một sự kiện số?',
+        answer: 'Sự thành công có thể được đo lường qua nhiều chỉ số: số lượng người đăng ký và tham dự, mức độ tương tác (số câu hỏi, bình luận), thời gian xem trung bình, tỷ lệ chuyển đổi (nếu có mục tiêu kinh doanh), và phản hồi của người tham dự qua khảo sát sau sự kiện.',
+      },
+      {
+        question: 'Cần những vai trò nhân sự chủ chốt nào cho một đội ngũ sản xuất sự kiện số?',
+        answer: 'Một đội ngũ cơ bản cần có: người quản lý sự kiện (event manager), đạo diễn kỹ thuật (technical director), người điều hành nền tảng (platform operator), người quản lý cộng đồng/tương tác (community manager), và các kỹ thuật viên âm thanh/hình ảnh.',
+      },
+      {
+        question: 'Làm thế nào để tạo trải nghiệm kết nối mạng lưới (networking) hiệu quả trong sự kiện ảo?',
+        answer: 'Sử dụng các tính năng như phòng họp 1-1, các phòng thảo luận theo chủ đề, và các "quán cà phê ảo". Các nền tảng được hỗ trợ bởi AI có thể gợi ý kết nối dựa trên sở thích và hồ sơ của người tham dự. Việc có người điều phối để khởi động các cuộc trò chuyện cũng rất hữu ích.',
+      },
+      {
+        question: 'Xu hướng nào đang định hình tương lai của sự kiện số?',
+        answer: 'Các xu hướng chính bao gồm sự gia tăng của các sự kiện hybrid, việc sử dụng thực tế ảo (VR) và thực tế tăng cường (AR) để tạo ra trải nghiệm nhập vai, cá nhân hóa nội dung dựa trên AI, và sự tập trung vào việc xây dựng cộng đồng trực tuyến bền vững sau sự kiện.',
+      },
+    ],
     relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'digital-marketing-campaign')]
       .filter((game): game is EducationalGame => !!game)
       .map((game) => ({ id: game.id, name: game.title, description: game.description })),
@@ -213,6 +255,48 @@ export const eventManagementLessons: EventManagementLesson[] = [
         title: 'Hướng Dẫn Hệ Thống Âm Thanh Chuyên Nghiệp',
         url: 'https://service.shure.com/s/article/live-sound-system-setup-guide',
         type: 'Technical',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Line array là gì và tại sao nó lại phổ biến trong các sự kiện lớn?',
+        answer: 'Line array là một hệ thống loa bao gồm nhiều loa giống hệt nhau được treo thành một hàng dọc. Nó phổ biến vì cho phép âm thanh được phân bổ đều và xa hơn trong không gian lớn, giảm thiểu sự khác biệt về âm lượng giữa khán giả ở gần và ở xa sân khấu.',
+      },
+      {
+        question: 'Sự khác biệt giữa âm thanh mono và stereo trong một sự kiện trực tiếp là gì?',
+        answer: 'Trong một sự kiện trực tiếp, hệ thống âm thanh thường được thiết lập ở chế độ mono (đơn kênh). Điều này đảm bảo rằng tất cả khán giả, dù ngồi ở bất kỳ vị trí nào, đều nghe được cùng một bản mix âm thanh. Âm thanh stereo (hai kênh) thường chỉ hiệu quả cho những người ngồi ở vị trí trung tâm.',
+      },
+      {
+        question: 'Vai trò của một kỹ sư FOH (Front of House) là gì?',
+        answer: 'Kỹ sư FOH là người chịu trách nhiệm mix âm thanh cho khán giả. Họ ngồi ở một vị trí trong khu vực khán giả và điều chỉnh bàn trộn âm thanh (mixing console) để đảm bảo âm thanh phát ra loa có chất lượng tốt nhất, cân bằng và rõ ràng.',
+      },
+      {
+        question: 'DMX là gì và nó được sử dụng như thế nào trong thiết kế ánh sáng?',
+        answer: 'DMX (Digital Multiplex) là một giao thức tiêu chuẩn để điều khiển các thiết bị ánh sáng sân khấu như đèn moving head, đèn PAR, và máy tạo khói. Nó cho phép một bộ điều khiển duy nhất gửi tín hiệu đến hàng trăm thiết bị, đồng bộ hóa các hiệu ứng ánh sáng phức tạp.',
+      },
+      {
+        question: 'Projection mapping là gì?',
+        answer: 'Projection mapping là một kỹ thuật sử dụng máy chiếu để chiếu hình ảnh hoặc video lên các bề mặt không phẳng, như các tòa nhà, sân khấu có hình dạng đặc biệt, hoặc thậm chí là một chiếc ô tô. Nó biến các vật thể thông thường thành các màn hình hiển thị động và ấn tượng.',
+      },
+      {
+        question: 'Tại sao an toàn điện lại cực kỳ quan trọng trong sản xuất sự kiện?',
+        answer: 'Các sự kiện lớn sử dụng một lượng điện năng khổng lồ. Việc quản lý an toàn điện không đúng cách có thể gây ra nguy cơ cháy nổ, điện giật cho đội ngũ sản xuất và khán giả, cũng như làm hỏng các thiết bị đắt tiền. Việc phân phối điện, nối đất và bảo vệ quá tải phải được thực hiện bởi các chuyên gia.',
+      },
+      {
+        question: 'Hệ thống giàn giáo (truss) và rigging được sử dụng để làm gì?',
+        answer: 'Hệ thống giàn giáo là bộ khung kim loại (thường bằng nhôm) được sử dụng để treo loa, đèn, màn hình LED và các thiết bị khác phía trên sân khấu. Rigging là quá trình và kỹ thuật treo các hệ thống này một cách an toàn, đòi hỏi sự tính toán cẩn thận về tải trọng và cấu trúc.',
+      },
+      {
+        question: 'Làm thế nào để tích hợp VR/AR vào một buổi hòa nhạc trực tiếp?',
+        answer: 'AR có thể được sử dụng thông qua ứng dụng di động của sự kiện, cho phép khán giả xem các hiệu ứng kỹ thuật số chồng lên sân khấu thực qua màn hình điện thoại. VR có thể cung cấp một trải nghiệm xem hòa nhạc 360 độ, nhập vai cho những người không thể tham dự trực tiếp, cho phép họ "đứng" trên sân khấu cùng nghệ sĩ.',
+      },
+      {
+        question: 'Technical rider là gì và tại sao nó quan trọng?',
+        answer: 'Technical rider là một tài liệu do nghệ sĩ hoặc ban nhạc cung cấp cho ban tổ chức sự kiện, trong đó liệt kê chi tiết các yêu cầu kỹ thuật của họ về âm thanh, ánh sáng, sân khấu, và các thiết bị khác. Nó là một tài liệu hợp đồng quan trọng để đảm bảo buổi biểu diễn diễn ra suôn sẻ và đạt chất lượng như mong muốn.',
+      },
+      {
+        question: 'Làm thế nào để giảm thiểu độ trễ âm thanh (latency) trong các hệ thống không dây?',
+        answer: 'Để giảm thiểu độ trễ, cần sử dụng các hệ thống micro và tai nghe không dây kỹ thuật số chất lượng cao được thiết kế cho các ứng dụng chuyên nghiệp. Việc quản lý tần số cẩn thận để tránh nhiễu sóng và đặt các bộ thu tín hiệu ở vị trí tối ưu cũng rất quan trọng.',
       },
     ],
     relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'digital-marketing-campaign')]
@@ -314,6 +398,48 @@ export const eventManagementLessons: EventManagementLesson[] = [
         type: 'Resource',
       },
     ],
+    faqs: [
+      {
+        question: '"Early bird" là gì và tại sao nó hiệu quả trong việc bán vé sự kiện?',
+        answer: 'Vé "Early bird" là loại vé được bán với giá ưu đãi trong một khoảng thời gian giới hạn trước khi sự kiện diễn ra. Nó hiệu quả vì tạo ra cảm giác khẩn cấp, khuyến khích mọi người mua vé sớm, giúp ban tổ chức có được nguồn vốn ban đầu và đánh giá được sự quan tâm của khán giả.',
+      },
+      {
+        question: 'Làm thế nào để sử dụng mạng xã hội hiệu quả để quảng bá sự kiện?',
+        answer: 'Hãy tạo một hashtag độc đáo cho sự kiện, chia sẻ nội dung hậu trường, tổ chức các cuộc thi hoặc giveaway, và chạy quảng cáo nhắm mục tiêu đến các đối tượng phù hợp. Tận dụng các tính năng như Instagram Stories, Facebook Events, và live streaming để tạo sự hào hứng.',
+      },
+      {
+        question: 'Vai trò của email marketing trong quảng bá sự kiện là gì?',
+        answer: 'Email marketing là một kênh hiệu quả để giao tiếp trực tiếp với những người đã quan tâm. Nó được sử dụng để thông báo về việc mở bán vé, giới thiệu diễn giả, gửi lời nhắc nhở trước sự kiện, và thu thập phản hồi sau sự kiện. Việc phân khúc danh sách email sẽ giúp gửi đi những thông điệp phù hợp hơn.',
+      },
+      {
+        question: 'Làm thế nào để lựa chọn influencer (người ảnh hưởng) phù hợp cho sự kiện?',
+        answer: 'Hãy chọn những influencer có đối tượng người theo dõi trùng khớp với đối tượng mục tiêu của bạn. Mức độ tương tác (engagement rate) quan trọng hơn số lượng người theo dõi. Đảm bảo rằng phong cách và giá trị của họ phù hợp với hình ảnh của sự kiện.',
+      },
+      {
+        question: 'Ứng dụng di động cho sự kiện nên có những tính năng gì?',
+        answer: 'Một ứng dụng sự kiện tốt nên có: lịch trình chi tiết, hồ sơ diễn giả, bản đồ địa điểm, tính năng kết nối (chat, đặt lịch hẹn), thông báo đẩy (push notifications), và các công cụ tương tác như Q&A và thăm dò ý kiến.',
+      },
+      {
+        question: 'Content marketing cho sự kiện là gì?',
+        answer: 'Đó là việc tạo ra và chia sẻ các nội dung có giá trị (như bài blog, video, infographic) liên quan đến chủ đề của sự kiện. Mục đích là để thu hút và giữ chân khán giả, thể hiện chuyên môn và xây dựng sự tin tưởng, từ đó khuyến khích họ tham gia sự kiện.',
+      },
+      {
+        question: 'Làm thế nào để đo lường hiệu quả của một chiến dịch marketing sự kiện?',
+        answer: 'Hiệu quả có thể được đo bằng nhiều chỉ số: số lượng vé bán ra, chi phí cho mỗi lượt chuyển đổi (CPA), lưu lượng truy cập website, mức độ tương tác trên mạng xã hội, và tỷ lệ mở/click của email. Các công cụ như Google Analytics và các nền tảng quản lý mạng xã hội sẽ giúp theo dõi các chỉ số này.',
+      },
+      {
+        question: 'Tại sao việc tạo một trang đích (landing page) riêng cho sự kiện lại quan trọng?',
+        answer: 'Một trang đích tập trung cung cấp tất cả thông tin quan trọng về sự kiện (thời gian, địa điểm, diễn giả, lịch trình) và có một lời kêu gọi hành động (call-to-action) rõ ràng, thường là "Mua vé". Nó giúp tối ưu hóa tỷ lệ chuyển đổi và dễ dàng theo dõi hiệu quả của các chiến dịch quảng cáo.',
+      },
+      {
+        question: 'Làm thế nào để tận dụng UGC (User-Generated Content - Nội dung do người dùng tạo) cho sự kiện?',
+        answer: 'Khuyến khích người tham dự chia sẻ hình ảnh, video và trải nghiệm của họ trên mạng xã hội bằng cách sử dụng hashtag của sự kiện. Bạn có thể tổ chức một cuộc thi ảnh hoặc tạo một "photo booth" độc đáo. UGC là một hình thức marketing truyền miệng mạnh mẽ và đáng tin cậy.',
+      },
+      {
+        question: 'Remarketing (tiếp thị lại) hoạt động như thế nào trong marketing sự kiện?',
+        answer: 'Remarketing cho phép bạn hiển thị quảng cáo cho những người đã truy cập trang web sự kiện của bạn nhưng chưa mua vé. Bằng cách "nhắc nhở" họ về sự kiện trên các trang web và mạng xã hội khác, bạn có thể tăng cơ hội họ quay lại và hoàn tất việc đăng ký.',
+      },
+    ],
     relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'digital-marketing-campaign')]
       .filter((game): game is EducationalGame => !!game)
       .map((game) => ({ id: game.id, name: game.title, description: game.description })),
@@ -407,6 +533,48 @@ export const eventManagementLessons: EventManagementLesson[] = [
         title: 'Sổ Tay Vận Hành Festival',
         url: 'https://www.eventbrite.com/blog/festival-planning-guide/',
         type: 'Guide',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Vai trò của một Giám đốc Vận hành (Operations Director) tại một festival là gì?',
+        answer: 'Giám đốc Vận hành chịu trách nhiệm giám sát tất cả các khía cạnh phi sản xuất của festival, bao gồm logistics, an ninh, quản lý địa điểm, nhân sự, nhà cung cấp, và đảm bảo mọi thứ diễn ra suôn sẻ, an toàn và hiệu quả.',
+      },
+      {
+        question: 'Site plan (sơ đồ địa điểm) là gì và tại sao nó quan trọng?',
+        answer: 'Site plan là một bản đồ chi tiết của toàn bộ khu vực festival, chỉ rõ vị trí của sân khấu, khu vực khán giả, cổng vào/ra, nhà vệ sinh, trạm y tế, quầy hàng, và các cơ sở hạ tầng khác. Nó là công cụ cốt lõi để lập kế hoạch luồng di chuyển của đám đông, logistics và an toàn.',
+      },
+      {
+        question: 'Làm thế nào để quản lý rác thải hiệu quả tại một festival lớn?',
+        answer: 'Cần có một kế hoạch quản lý rác thải toàn diện, bao gồm việc đặt đủ số lượng thùng rác (phân loại rác tái chế và rác thông thường), có đội ngũ thu gom rác thường xuyên, và hợp tác với một công ty xử lý rác thải chuyên nghiệp. Khuyến khích khán giả giữ gìn vệ sinh chung cũng rất quan trọng.',
+      },
+      {
+        question: 'Kế hoạch ứng phó khẩn cấp (Emergency Response Plan) bao gồm những gì?',
+        answer: 'Kế hoạch này phải bao gồm các quy trình chi tiết để xử lý các tình huống như cấp cứu y tế, hỏa hoạn, thời tiết khắc nghiệt, hoặc các vấn đề an ninh. Nó phải xác định rõ các tuyến đường sơ tán, vị trí của các trạm y tế, cách thức liên lạc với các cơ quan chức năng (cảnh sát, cứu hỏa), và vai trò của từng thành viên trong đội ngũ.',
+      },
+      {
+        question: 'Tại sao việc quản lý nhà cung cấp (vendor management) lại phức tạp?',
+        answer: 'Một festival có thể có hàng trăm nhà cung cấp khác nhau (thực phẩm, đồ uống, hàng hóa, kỹ thuật). Việc quản lý bao gồm quá trình lựa chọn, ký hợp đồng, điều phối thời gian và địa điểm lắp đặt, đảm bảo họ tuân thủ các quy định về an toàn và vệ sinh, và xử lý các vấn đề phát sinh trong suốt sự kiện.',
+      },
+      {
+        question: 'Công nghệ RFID được sử dụng như thế nào tại các festival?',
+        answer: 'Vòng tay RFID (Radio-Frequency Identification) có thể được sử dụng làm vé vào cổng, ví thanh toán không dùng tiền mặt, và công cụ để thu thập dữ liệu về hành vi của người tham dự (ví dụ: họ dành thời gian ở khu vực nào nhiều nhất). Điều này giúp tăng tốc độ phục vụ và cung cấp dữ liệu quý giá cho ban tổ chức.',
+      },
+      {
+        question: 'Làm thế nào để lập kế hoạch cho các yếu tố không lường trước được như thời tiết?',
+        answer: 'Cần có kế hoạch dự phòng (contingency plan) cho các kịch bản thời tiết xấu. Điều này có thể bao gồm việc có sẵn các khu vực có mái che, hệ thống thoát nước tốt, quy trình tạm dừng hoặc sơ tán sự kiện nếu cần, và thông báo kịp thời cho khán giả.',
+      },
+      {
+        question: 'Vai trò của tình nguyện viên trong vận hành festival là gì?',
+        answer: 'Tình nguyện viên là một phần không thể thiếu, họ hỗ trợ trong nhiều lĩnh vực như hướng dẫn khán giả, hỗ trợ tại các điểm thông tin, quản lý hàng lối, và giữ gìn vệ sinh. Một chương trình quản lý tình nguyện viên tốt sẽ đảm bảo họ được đào tạo, phân công công việc phù hợp và được ghi nhận đóng góp.',
+      },
+      {
+        question: 'Trung tâm Chỉ huy Sự kiện (Event Command Center) là gì?',
+        answer: 'Đây là "bộ não" của festival trong thời gian diễn ra, nơi các trưởng bộ phận (an ninh, y tế, vận hành) tập trung để giám sát mọi hoạt động, giao tiếp với nhau qua bộ đàm, và đưa ra quyết định nhanh chóng khi có sự cố.',
+      },
+      {
+        question: 'Load-in và load-out là gì?',
+        answer: 'Load-in là quá trình vận chuyển và lắp đặt tất cả các thiết bị, sân khấu, và cơ sở hạ tầng vào địa điểm trước khi festival bắt đầu. Load-out là quá trình tháo dỡ và vận chuyển mọi thứ ra khỏi địa điểm sau khi festival kết thúc. Đây là hai giai đoạn logistics cực kỳ quan trọng và phức tạp.',
       },
     ],
     relatedGames: [EDUCATIONAL_GAMES_DATA.find((game) => game.id === 'treasure-hunt-adventure')]
@@ -506,6 +674,48 @@ export const eventManagementLessons: EventManagementLesson[] = [
         title: 'Hướng Dẫn Đo Lường ROI Sự Kiện',
         url: 'https://www.cvent.com/en/blog/events/event-roi-measurement',
         type: 'Resource',
+      },
+    ],
+    faqs: [
+      {
+        question: 'ROI (Return on Investment) của sự kiện được tính như thế nào?',
+        answer: 'ROI sự kiện được tính bằng công thức: [(Tổng giá trị thu được từ sự kiện - Tổng chi phí sự kiện) / Tổng chi phí sự kiện] x 100%. "Tổng giá trị" có thể bao gồm doanh thu bán vé, các hợp đồng mới, giá trị thương hiệu tăng lên, v.v.',
+      },
+      {
+        question: 'Ngoài ROI, còn những chỉ số KPI (Key Performance Indicator) nào quan trọng cần theo dõi?',
+        answer: 'Các KPI quan trọng khác bao gồm: Tỷ lệ tham dự (số người tham dự thực tế / số người đăng ký), Mức độ hài lòng của người tham dự (qua khảo sát), Mức độ tương tác trên mạng xã hội (lượt đề cập, hashtag), Số lượng khách hàng tiềm năng mới, và Độ phủ truyền thông (số lượng bài báo viết về sự kiện).',
+      },
+      {
+        question: 'Làm thế nào để thu thập dữ liệu về hành vi của người tham dự một cách hiệu quả?',
+        answer: 'Có thể sử dụng nhiều công nghệ: ứng dụng di động của sự kiện để theo dõi phiên nào được tham dự nhiều nhất, vòng tay RFID để xem khu vực nào được ghé thăm thường xuyên, và bản đồ nhiệt (heat maps) để phân tích luồng di chuyển của đám đông.',
+      },
+      {
+        question: 'Tại sao khảo sát sau sự kiện (post-event survey) lại quan trọng?',
+        answer: 'Khảo sát sau sự kiện là cách trực tiếp nhất để thu thập phản hồi định tính và định lượng về trải nghiệm của người tham dự. Nó giúp bạn hiểu được điểm mạnh, điểm yếu của sự kiện và cung cấp những hiểu biết quý giá để cải thiện cho những lần tổ chức sau.',
+      },
+      {
+        question: 'Net Promoter Score (NPS) là gì và làm thế nào để áp dụng cho sự kiện?',
+        answer: 'NPS là một chỉ số đo lường lòng trung thành của khách hàng. Trong khảo sát sau sự kiện, bạn có thể hỏi: "Trên thang điểm từ 0-10, bạn có khả năng giới thiệu sự kiện này cho bạn bè hoặc đồng nghiệp không?". Chỉ số này giúp đánh giá mức độ yêu thích và khả năng marketing truyền miệng của sự kiện.',
+      },
+      {
+        question: 'Làm thế nào để chứng minh giá trị của một sự kiện không tạo ra doanh thu trực tiếp (ví dụ: sự kiện nội bộ)?',
+        answer: 'Đối với các sự kiện này, giá trị có thể được đo lường thông qua các chỉ số khác như: sự cải thiện về tinh thần và sự gắn kết của nhân viên (qua khảo sát), tỷ lệ giữ chân nhân viên, mức độ hiểu biết về chiến lược công ty, hoặc số lượng các ý tưởng sáng tạo mới được tạo ra.',
+      },
+      {
+        question: 'Bảng điều khiển (dashboard) phân tích sự kiện nên hiển thị những thông tin gì?',
+        answer: 'Một bảng điều khiển hiệu quả nên hiển thị các KPI chính một cách trực quan: số liệu đăng ký và tham dự theo thời gian thực, mức độ tương tác, doanh thu, chi phí, và kết quả khảo sát. Nó nên cho phép lọc dữ liệu theo các tiêu chí khác nhau (ví dụ: theo loại vé, theo khu vực địa lý).',
+      },
+      {
+        question: 'Phân tích dự đoán (predictive analytics) có thể giúp gì trong việc lập kế hoạch sự kiện?',
+        answer: 'Dựa trên dữ liệu từ các sự kiện trước, phân tích dự đoán có thể giúp dự báo số lượng người tham dự, thời điểm mua vé cao điểm, hoặc thậm chí là phiên họp nào sẽ được quan tâm nhất. Điều này giúp tối ưu hóa việc phân bổ nguồn lực và chiến lược marketing.',
+      },
+      {
+        question: 'Làm thế nào để theo dõi mức độ tương tác trong một sự kiện ảo?',
+        answer: 'Các nền tảng sự kiện ảo cung cấp rất nhiều dữ liệu: số người xem mỗi phiên, thời gian xem trung bình, số lượng câu hỏi được đặt, số tin nhắn trong chat, và số lượt click vào các liên kết. Những dữ liệu này rất hữu ích để đánh giá mức độ hấp dẫn của nội dung.',
+      },
+      {
+        question: 'ROO (Return on Objectives) là gì và nó khác ROI như thế nào?',
+        answer: 'ROO đo lường mức độ thành công của sự kiện dựa trên các mục tiêu phi tài chính đã đặt ra ban đầu (ví dụ: nâng cao nhận thức thương hiệu, đào tạo nhân viên). Trong khi ROI tập trung vào lợi nhuận tài chính, ROO tập trung vào việc hoàn thành các mục tiêu chiến lược. Cả hai đều quan trọng để có một cái nhìn toàn diện.',
       },
     ],
     relatedGames: [

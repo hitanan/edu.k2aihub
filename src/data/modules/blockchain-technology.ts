@@ -159,6 +159,36 @@ export const blockchainLessons: BlockchainLesson[] = [
         answer:
           'Đối với Việt Nam, blockchain mang lại tiềm năng to lớn trong việc tăng cường tính minh bạch trong chuỗi cung ứng (ví dụ: nông sản), tạo điều kiện cho các giao dịch kiều hối rẻ hơn và nhanh hơn, và thúc đẩy tài chính toàn diện. Với cộng đồng nhà phát triển năng động, Việt Nam có vị thế tốt để đổi mới trong không gian này.',
       },
+      {
+        question: 'Tiền điện tử có hợp pháp tại Việt Nam không?',
+        answer:
+          'Hiện tại, Việt Nam chưa công nhận tiền điện tử là phương tiện thanh toán hợp pháp. Tuy nhiên, việc sở hữu, giao dịch và đầu tư vào tài sản số không bị cấm. Chính phủ đang trong quá trình nghiên cứu và xây dựng hành lang pháp lý để quản lý tài sản ảo và tiền ảo.',
+      },
+      {
+        question: 'Sổ cái phi tập trung (decentralized ledger) có nghĩa là gì?',
+        answer:
+          'Sổ cái phi tập trung có nghĩa là không có một thực thể trung tâm nào (như ngân hàng hoặc chính phủ) kiểm soát sổ cái. Thay vào đó, một bản sao của sổ cái được lưu trữ và đồng bộ trên nhiều máy tính (nút) trong mạng lưới, đảm bảo tính minh bạch và chống kiểm duyệt.',
+      },
+      {
+        question: 'Thế nào là một "khối" trong blockchain?',
+        answer:
+          'Một "khối" là một bản ghi chứa một tập hợp các giao dịch đã được xác thực. Mỗi khối cũng chứa một tham chiếu đến khối trước đó (hàm băm của khối trước), tạo thành một chuỗi liên kết. Đây là lý do tại sao nó được gọi là "blockchain" (chuỗi khối).',
+      },
+      {
+        question: 'Ai có thể tham gia vào một mạng lưới blockchain công khai?',
+        answer:
+          'Bất kỳ ai có kết nối internet đều có thể tham gia vào một mạng lưới blockchain công khai (public blockchain) như Bitcoin hoặc Ethereum. Người dùng có thể gửi giao dịch, xem lịch sử giao dịch và tham gia vào quá trình đồng thuận (ví dụ: đào coin).',
+      },
+      {
+        question: 'Sự khác biệt giữa blockchain công khai và riêng tư là gì?',
+        answer:
+          'Blockchain công khai (public) cho phép bất kỳ ai tham gia, trong khi blockchain riêng tư (private) yêu cầu quyền truy cập và thường được kiểm soát bởi một tổ chức duy nhất. Blockchain riêng tư thường được các doanh nghiệp sử dụng để tăng hiệu quả nội bộ.',
+      },
+      {
+        question: 'Tấn công 51% là gì?',
+        answer:
+          'Tấn công 51% là một cuộc tấn công tiềm tàng vào một mạng lưới blockchain (đặc biệt là các mạng sử dụng PoW), nơi một cá nhân hoặc một nhóm kiểm soát hơn 50% sức mạnh tính toán của mạng. Điều này cho phép họ có thể ngăn chặn các giao dịch mới hoặc đảo ngược các giao dịch của chính họ, gây ra tình trạng chi tiêu kép.',
+      },
     ],
   },
   {
@@ -299,6 +329,36 @@ export const blockchainLessons: BlockchainLesson[] = [
         question: 'Làm thế nào để bắt đầu với việc phát triển hợp đồng thông minh?',
         answer:
           'Bắt đầu bằng cách học các khái niệm cơ bản của Solidity, sau đó thiết lập một môi trường phát triển cục bộ với Hardhat hoặc Truffle. Sử dụng các thư viện như OpenZeppelin để tận dụng các hợp đồng đã được kiểm toán và an toàn. Thực hành bằng cách xây dựng các dự án nhỏ như token ERC-20 hoặc một dApp bỏ phiếu đơn giản.',
+      },
+      {
+        question: 'Gas fee là gì và tại sao nó lại tồn tại?',
+        answer:
+          'Gas fee là phí giao dịch trên mạng Ethereum, được trả cho những người xác thực (thợ đào/validator) để thực hiện các hoạt động như gửi token hoặc tương tác với hợp đồng thông minh. Phí này bù đắp cho tài nguyên tính toán cần thiết để xử lý và bảo mật giao dịch.',
+      },
+      {
+        question: 'Thư viện OpenZeppelin là gì?',
+        answer:
+          'OpenZeppelin là một thư viện cung cấp các hợp đồng thông minh đã được kiểm toán và an toàn cho các tiêu chuẩn phổ biến như ERC-20 và ERC-721. Sử dụng OpenZeppelin giúp các nhà phát triển tiết kiệm thời gian và giảm thiểu rủi ro bảo mật bằng cách xây dựng trên các thành phần đã được kiểm chứng.',
+      },
+      {
+        question: 'EVM (Ethereum Virtual Machine) là gì?',
+        answer:
+          'EVM là môi trường thực thi cho các hợp đồng thông minh trên Ethereum. Nó giống như một máy tính toàn cầu phi tập trung, nơi mọi giao dịch và hợp đồng thông minh được thực thi. Mọi nút trong mạng Ethereum đều chạy một bản sao của EVM để duy trì sự đồng thuận.',
+      },
+      {
+        question: 'Làm thế nào để kiểm thử một hợp đồng thông minh?',
+        answer:
+          'Kiểm thử là một bước quan trọng. Các framework như Hardhat và Truffle cung cấp các công cụ mạnh mẽ để viết các bài kiểm thử đơn vị (unit test) và kiểm thử tích hợp (integration test) bằng JavaScript hoặc TypeScript. Điều này cho phép bạn mô phỏng các tương tác và xác minh hành vi của hợp đồng trước khi triển khai.',
+      },
+      {
+        question: 'Sự khác biệt giữa testnet và mainnet là gì?',
+        answer:
+          'Mainnet là mạng lưới blockchain chính nơi các giao dịch có giá trị thực. Testnet là các mạng lưới song song được sử dụng cho mục đích thử nghiệm. Các nhà phát triển triển khai và kiểm thử ứng dụng của họ trên testnet (sử dụng token không có giá trị) trước khi triển khai lên mainnet.',
+      },
+      {
+        question: 'Một "oracle" trong blockchain là gì?',
+        answer:
+          'Một oracle là một dịch vụ của bên thứ ba cung cấp dữ liệu từ thế giới thực (ví dụ: giá cổ phiếu, kết quả thời tiết) cho các hợp đồng thông minh. Hợp đồng thông minh không thể tự truy cập dữ liệu bên ngoài blockchain, vì vậy oracles đóng vai trò là cầu nối quan trọng.',
       },
     ],
   },
@@ -446,6 +506,36 @@ export const blockchainLessons: BlockchainLesson[] = [
         answer:
           'Không hẳn. Mặc dù một số chiến lược yêu cầu vốn đáng kể, bạn có thể bắt đầu với một số tiền nhỏ để thử nghiệm. Tuy nhiên, hãy lưu ý đến phí giao dịch (gas fee), đặc biệt là trên mạng Ethereum, có thể làm cho các giao dịch nhỏ không hiệu quả về mặt chi phí. Các giải pháp Layer 2 có thể giúp giảm bớt vấn đề này.',
       },
+      {
+        question: 'Tổn thất vô thường (Impermanent Loss) là gì?',
+        answer:
+          'Tổn thất vô thường là một rủi ro đặc thù khi cung cấp thanh khoản cho một AMM. Nó xảy ra khi giá của các token trong bể thanh khoản thay đổi so với khi bạn gửi chúng vào. Nếu bạn rút tiền ra, giá trị tổng cộng của các token bạn nhận lại có thể thấp hơn so với việc bạn chỉ giữ chúng trong ví của mình.',
+      },
+      {
+        question: 'Stablecoin là gì và vai trò của nó trong DeFi là gì?',
+        answer:
+          'Stablecoin là một loại tiền điện tử được thiết kế để duy trì một giá trị ổn định, thường được neo giá vào một tài sản trong thế giới thực như đô la Mỹ. Trong DeFi, chúng đóng vai trò quan trọng như một phương tiện trao đổi ổn định, một tài sản thế chấp, và một nơi trú ẩn an toàn khỏi sự biến động của thị trường.',
+      },
+      {
+        question: 'Sàn giao dịch phi tập trung (DEX) khác với sàn giao dịch tập trung (CEX) như thế nào?',
+        answer:
+          'DEX (như Uniswap) hoạt động trên blockchain, cho phép người dùng giao dịch trực tiếp từ ví của họ mà không cần ký gửi tài sản cho một bên thứ ba. CEX (như Binance) là các công ty tập trung giữ tiền của người dùng và hoạt động thông qua sổ lệnh truyền thống. DEX cung cấp quyền tự chủ lớn hơn nhưng CEX thường có tốc độ nhanh hơn và thanh khoản cao hơn.',
+      },
+      {
+        question: 'DAO (Tổ chức tự trị phi tập trung) là gì?',
+        answer:
+          'DAO là một tổ chức được điều hành bởi các quy tắc được mã hóa trong các hợp đồng thông minh. Các quyết định thường được đưa ra thông qua việc bỏ phiếu của các thành viên sở hữu token quản trị. Nhiều giao thức DeFi được quản lý bởi các DAO.',
+      },
+      {
+        question: 'Làm thế nào để tôi có thể tham gia vào yield farming?',
+        answer:
+          'Để tham gia, bạn cần có một ví tiền điện tử (như MetaMask), một số vốn ban đầu, và kiến thức về các giao thức khác nhau. Bạn sẽ cần cung cấp thanh khoản cho một bể trên một DEX hoặc cho vay tài sản trên một nền tảng cho vay, sau đó "stake" (đặt cược) các token nhận được để kiếm thêm phần thưởng.',
+      },
+      {
+        question: 'Flash loan là gì?',
+        answer:
+          'Flash loan là một loại khoản vay không cần tài sản thế chấp trong DeFi, nhưng nó phải được vay và trả lại trong cùng một giao dịch blockchain. Chúng thường được các nhà giao dịch sử dụng cho các cơ hội kinh doanh chênh lệch giá (arbitrage) và các chiến lược phức tạp khác.',
+      },
     ],
   },
   {
@@ -592,6 +682,36 @@ export const blockchainLessons: BlockchainLesson[] = [
         answer:
           'Bạn có thể sử dụng các nền tảng như OpenSea, Rarible, hoặc Foundation. Quá trình này thường bao gồm việc tải lên tệp kỹ thuật số của bạn (hình ảnh, video, v.v.), điền thông tin chi tiết, và "mint" (đúc) nó thành một NFT trên blockchain. Sau đó, bạn có thể niêm yết nó để bán.',
       },
+      {
+        question: 'Dữ liệu của NFT (hình ảnh, video) được lưu trữ ở đâu?',
+        answer:
+          'Việc lưu trữ các tệp lớn trực tiếp trên blockchain rất tốn kém. Do đó, siêu dữ liệu (metadata) và tệp phương tiện của NFT thường được lưu trữ off-chain (ngoài chuỗi) bằng các hệ thống như IPFS (InterPlanetary File System) hoặc Arweave. NFT trên chuỗi chỉ chứa một liên kết đến vị trí lưu trữ này.',
+      },
+      {
+        question: 'GameFi là gì?',
+        answer:
+          'GameFi là sự kết hợp giữa Game (trò chơi) và Finance (tài chính). Đây là các trò chơi blockchain kết hợp các yếu tố DeFi và thường sử dụng NFT cho các vật phẩm trong game. Mô hình "Play-to-Earn" (Chơi để kiếm tiền) là một đặc điểm nổi bật của GameFi, cho phép người chơi kiếm được tài sản có giá trị thực.',
+      },
+      {
+        question: 'Tiền bản quyền (royalties) hoạt động như thế nào với NFT?',
+        answer:
+          'Một trong những tính năng mạnh mẽ của NFT là khả năng lập trình tiền bản quyền vĩnh viễn. Người tạo ra NFT có thể mã hóa một tỷ lệ phần trăm (ví dụ: 5-10%) vào hợp đồng thông minh. Mỗi khi NFT đó được bán lại trên thị trường thứ cấp, một phần tiền bán sẽ tự động được chuyển đến ví của người tạo ban đầu.',
+      },
+      {
+        question: 'Tôi có thể sử dụng NFT của mình trong metaverse không?',
+        answer:
+          'Điều đó phụ thuộc vào metaverse cụ thể. Mục tiêu dài hạn là khả năng tương tác, nơi bạn có thể mang tài sản kỹ thuật số (avatar, vật phẩm, nghệ thuật) của mình qua các thế giới ảo khác nhau. Các tiêu chuẩn như ERC-721 và ERC-1155 là nền tảng cho tầm nhìn này.',
+      },
+      {
+        question: '"Minting" một NFT có nghĩa là gì?',
+        answer:
+          '"Minting" là quá trình xuất bản một token duy nhất của bạn lên blockchain để làm cho nó có thể mua được. Nó tương tự như việc tạo ra một đồng xu mới. Quá trình này ghi lại thông tin của NFT vào sổ cái phi tập trung, biến nó thành một tài sản kỹ thuật số vĩnh viễn và có thể xác minh.',
+      },
+      {
+        question: 'Tại sao một số NFT lại có giá trị hàng triệu đô la?',
+        answer:
+          'Giá trị của NFT, giống như nghệ thuật truyền thống, mang tính chủ quan cao và được quyết định bởi thị trường. Các yếu tố ảnh hưởng đến giá trị bao gồm danh tiếng của nghệ sĩ, tính độc đáo và hiếm có, ý nghĩa văn hóa, cộng đồng xung quanh dự án, và tiện ích (utility) mà NFT đó mang lại (ví dụ: quyền truy cập vào một sự kiện hoặc cộng đồng độc quyền).',
+      },
     ],
   },
   {
@@ -737,6 +857,36 @@ export const blockchainLessons: BlockchainLesson[] = [
         question: 'Nếu tôi tìm thấy một lỗi trong một giao thức DeFi, tôi nên làm gì?',
         answer:
           'Nếu bạn tin rằng mình đã tìm thấy một lỗ hổng bảo mật, hãy hành động có trách nhiệm. Tìm kiếm chương trình "bug bounty" (săn lỗi nhận thưởng) của dự án và báo cáo riêng cho nhóm phát triển. Đừng khai thác lỗ hổng hoặc tiết lộ công khai cho đến khi nó được vá, vì điều này có thể gây nguy hiểm cho tiền của người dùng.',
+      },
+      {
+        question: 'Phân tích tĩnh (static analysis) trong kiểm toán hợp đồng thông minh là gì?',
+        answer:
+          'Phân tích tĩnh là quá trình kiểm tra mã nguồn của hợp đồng thông minh mà không cần thực thi nó. Các công cụ như Slither hoặc MythX sẽ tự động quét mã để tìm các mẫu lỗ hổng đã biết, các lỗi logic phổ biến và các vi phạm các phương pháp bảo mật tốt nhất.',
+      },
+      {
+        question: 'Fuzzing là gì và nó được áp dụng như thế nào cho hợp đồng thông minh?',
+        answer:
+          'Fuzzing là một kỹ thuật kiểm thử tự động bao gồm việc cung cấp một lượng lớn dữ liệu đầu vào ngẫu nhiên hoặc không hợp lệ cho một chương trình để tìm ra các lỗi hoặc sự cố. Đối với hợp đồng thông minh, các công cụ như Echidna có thể được sử dụng để kiểm tra các thuộc tính và tìm ra các trường hợp ngoại lệ không mong muốn.',
+      },
+      {
+        question: 'Mô hình "Checks-Effects-Interactions" là gì?',
+        answer:
+          'Đây là một mẫu thiết kế bảo mật quan trọng trong Solidity để ngăn chặn các cuộc tấn công re-entrancy. Nó khuyến nghị rằng một hàm nên: 1. Thực hiện tất cả các kiểm tra (Checks) trước. 2. Thực hiện các thay đổi đối với trạng thái của hợp đồng (Effects). 3. Cuối cùng, tương tác (Interactions) với các hợp đồng bên ngoài. Điều này đảm bảo trạng thái được cập nhật trước khi bất kỳ mã bên ngoài nào có thể gọi lại.',
+      },
+      {
+        question: 'Tại sao việc quản lý khóa riêng (private key) lại quan trọng đến vậy?',
+        answer:
+          'Trong thế giới blockchain, "không phải khóa của bạn, không phải coin của bạn". Khóa riêng cung cấp toàn quyền kiểm soát đối với một ví và tài sản trong đó. Nếu khóa riêng bị mất hoặc bị đánh cắp, không có cách nào để khôi phục lại tài sản. Do đó, việc bảo mật khóa riêng bằng ví phần cứng hoặc các phương pháp an toàn khác là tối quan trọng.',
+      },
+      {
+        question: 'Travel Rule (Quy tắc di chuyển) của FATF là gì?',
+        answer:
+          'Travel Rule là một khuyến nghị từ Lực lượng đặc nhiệm tài chính (FATF) yêu cầu các nhà cung cấp dịch vụ tài sản ảo (VASP) phải thu thập và chia sẻ thông tin về người gửi và người nhận trong các giao dịch tiền điện tử. Đây là một phần của nỗ lực toàn cầu nhằm chống rửa tiền và tài trợ khủng bố.',
+      },
+      {
+        question: 'Làm thế nào để bảo vệ mình khỏi các vụ lừa đảo (scam) trong không gian tiền điện tử?',
+        answer:
+          'Hãy luôn cảnh giác. Không bao giờ chia sẻ khóa riêng hoặc cụm từ khôi phục của bạn. Cẩn thận với các lời hứa về lợi nhuận "chắc chắn" hoặc "không có rủi ro". Xác minh danh tính của những người bạn tương tác và kiểm tra kỹ địa chỉ hợp đồng trước khi tương tác với một dApp. Luôn tự mình nghiên cứu (DYOR - Do Your Own Research).',
       },
     ],
   },

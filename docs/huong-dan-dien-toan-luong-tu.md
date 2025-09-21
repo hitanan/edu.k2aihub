@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Điện Toán Lượng Tử: Khám Phá Thế Giới Kỳ Thú Của Qubit'
 description: 'Bước vào thế giới của điện toán lượng tử, tìm hiểu về các nguyên lý cơ bản như chồng chất và rối lượng tử, và khám phá tiềm năng của công nghệ này trong việc giải quyết các vấn đề phức tạp.'
-date: '2025-10-13'
+date: '2025-09-13'
 author: 'K2AiHub Research Team'
 category: 'Hướng Dẫn'
 tags: ['điện toán lượng tử', 'quantum computing', 'qubit', 'công nghệ', 'khoa học', 'hướng dẫn', 'K2AiHub']
@@ -14,6 +14,7 @@ readingTime: '25 phút đọc'
 Trong hơn nửa thế kỷ, sức mạnh của máy tính đã tăng trưởng theo cấp số nhân, tuân theo Định luật Moore. Những chiếc máy tính chúng ta sử dụng hàng ngày, từ smartphone đến siêu máy tính, đều hoạt động dựa trên cùng một nguyên tắc cơ bản: sử dụng các **bit**. Một bit là đơn vị thông tin nhỏ nhất, và nó chỉ có thể ở một trong hai trạng thái: **0** hoặc **1**.
 
 Tuy nhiên, có một lớp các bài toán cực kỳ phức tạp mà ngay cả những siêu máy tính mạnh nhất thế giới cũng phải mất hàng triệu năm để giải quyết. Ví dụ:
+
 - Mô phỏng chính xác các phân tử để phát minh ra thuốc mới hoặc vật liệu mới.
 - Phá vỡ các thuật toán mã hóa hiện đại.
 - Tối ưu hóa các hệ thống logistics khổng lồ với hàng triệu biến số.
@@ -32,6 +33,7 @@ Trạng thái "vừa 0 vừa 1" này được gọi là **sự chồng chất (s
 Hãy tưởng tượng một đồng xu. Khi bạn tung nó lên, trong lúc nó đang xoay tròn trong không trung, nó không phải là sấp hay ngửa. Nó là một sự kết hợp của cả hai khả năng. Chỉ khi nó rơi xuống và bạn quan sát nó, nó mới "chọn" một trạng thái cụ thể (sấp hoặc ngửa). Qubit cũng hoạt động tương tự như vậy.
 
 Sức mạnh thực sự bùng nổ khi bạn có nhiều qubit.
+
 - 2 bit cổ điển có thể biểu diễn 1 trong 4 trạng thái (00, 01, 10, 11) tại một thời điểm.
 - 2 qubit, nhờ sự chồng chất, có thể biểu diễn **cả 4 trạng thái cùng một lúc**.
 

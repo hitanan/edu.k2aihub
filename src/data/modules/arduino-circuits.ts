@@ -158,6 +158,46 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
         answer:
           'Đèn LED không có khả năng tự điều chỉnh dòng điện. Nếu bạn kết nối trực tiếp một đèn LED với nguồn 5V của Arduino, dòng điện sẽ quá lớn và làm cháy đèn LED gần như ngay lập tức. Điện trở giúp giới hạn dòng điện ở mức an toàn cho đèn LED.',
       },
+      {
+        question: 'Breadboard (bảng cắm) là gì và tại sao nó hữu ích?',
+        answer:
+          'Breadboard là một công cụ cho phép bạn xây dựng và thử nghiệm các mạch điện tử mà không cần hàn. Các lỗ trên breadboard được kết nối với nhau theo hàng, giúp bạn dễ dàng cắm và tháo các linh kiện để tạo ra một mạch hoàn chỉnh.',
+      },
+      {
+        question: 'IDE trong "Arduino IDE" có nghĩa là gì?',
+        answer:
+          'IDE là viết tắt của Integrated Development Environment (Môi trường phát triển tích hợp). Arduino IDE là một phần mềm cung cấp cho bạn mọi thứ cần thiết để viết, biên dịch và tải code lên bo mạch Arduino, bao gồm một trình soạn thảo văn bản, một trình biên dịch và một công cụ giao tiếp nối tiếp.',
+      },
+      {
+        question: 'Sự khác biệt giữa hàm `setup()` và `loop()` là gì?',
+        answer:
+          'Hàm `setup()` chỉ chạy một lần duy nhất khi bo mạch Arduino được cấp nguồn hoặc reset. Nó được dùng để khởi tạo các cài đặt ban đầu như cấu hình chân (pinMode). Hàm `loop()` chạy lặp đi lặp lại liên tục sau khi `setup()` đã hoàn thành. Đây là nơi chứa logic chính của chương trình.',
+      },
+      {
+        question: 'Chân digital là gì?',
+        answer:
+          'Chân digital là các chân trên bo mạch Arduino có thể được cấu hình làm đầu vào (INPUT) hoặc đầu ra (OUTPUT). Chúng chỉ có thể ở một trong hai trạng thái: HIGH (thường là 5V) hoặc LOW (thường là 0V).',
+      },
+      {
+        question: 'Chân GND là gì?',
+        answer:
+          'GND là viết tắt của "Ground" (đất). Nó là điểm tham chiếu 0 volt cho tất cả các điện áp trong mạch. Mọi mạch điện cần phải có một đường nối đất chung để hoàn thành vòng lặp và cho phép dòng điện chảy.',
+      },
+      {
+        question: 'Tôi có thể sử dụng giá trị điện trở khác cho đèn LED không?',
+        answer:
+          'Có, nhưng bạn cần tính toán để đảm bảo nó an toàn. Giá trị điện trở phổ biến là 220 Ohm hoặc 330 Ohm cho đèn LED 5mm thông thường với nguồn 5V. Sử dụng điện trở quá nhỏ có thể làm cháy LED, trong khi điện trở quá lớn sẽ làm đèn sáng yếu hoặc không sáng.',
+      },
+      {
+        question: 'Điều gì xảy ra nếu tôi kết nối đèn LED ngược chiều?',
+        answer:
+          'Đèn LED là một loại diode, nghĩa là nó chỉ cho phép dòng điện đi qua theo một chiều. Nếu bạn kết nối ngược (chân ngắn vào nguồn dương, chân dài vào nguồn âm), dòng điện sẽ không đi qua và đèn sẽ không sáng. Nó thường không gây hại cho đèn LED nếu chỉ là điện áp thấp từ Arduino.',
+      },
+      {
+        question: 'Dây cắm (jumper wires) dùng để làm gì?',
+        answer:
+          'Dây cắm là những sợi dây nhỏ có đầu cắm ở hai đầu, được sử dụng để kết nối các linh kiện trên breadboard với nhau và với bo mạch Arduino một cách tạm thời và linh hoạt.',
+      },
     ],
   },
   {
@@ -246,6 +286,46 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
         answer:
           'Có. Arduino có sẵn các điện trở kéo lên bên trong. Bằng cách cấu hình chân với `pinMode(pin, INPUT_PULLUP)`, bạn đã kích hoạt điện trở này. Khi đó, bạn chỉ cần nối một đầu của nút nhấn với chân đó và đầu còn lại với GND, không cần thêm điện trở ngoài. Lưu ý rằng logic sẽ bị đảo ngược: chân sẽ đọc LOW khi nhấn nút.',
       },
+      {
+        question: 'Tín hiệu digital là gì?',
+        answer:
+          'Tín hiệu digital là một tín hiệu chỉ có thể nhận một trong hai giá trị rời rạc: HIGH (cao, thường là 5V) hoặc LOW (thấp, thường là 0V). Nó giống như một công tắc chỉ có thể bật hoặc tắt.',
+      },
+      {
+        question: 'Tại sao chúng ta sử dụng câu lệnh `if/else` với nút nhấn?',
+        answer:
+          'Câu lệnh `if/else` cho phép chương trình đưa ra quyết định. Chúng ta đọc trạng thái của nút nhấn (HIGH hoặc LOW) và sau đó sử dụng `if/else` để thực hiện các hành động khác nhau dựa trên trạng thái đó, ví dụ: "NẾU nút được nhấn, BẬT đèn; NẾU KHÔNG, TẮT đèn".',
+      },
+      {
+        question: 'Tôi có thể sử dụng bất kỳ chân digital nào làm đầu vào không?',
+        answer:
+          'Có, tất cả các chân digital trên Arduino Uno (từ 0 đến 13) đều có thể được sử dụng làm chân đầu vào (INPUT) hoặc chân đầu ra (OUTPUT) bằng cách sử dụng hàm `pinMode()`.',
+      },
+      {
+        question: 'Debouncing (chống dội) là gì và tại sao nó quan trọng với nút nhấn?',
+        answer:
+          'Khi bạn nhấn một nút cơ học, các tiếp điểm kim loại bên trong có thể va chạm và nảy lên nhiều lần trong một khoảng thời gian rất ngắn, tạo ra nhiều tín hiệu HIGH/LOW giả. Debouncing là kỹ thuật (bằng phần cứng hoặc phần mềm) để bỏ qua những tín hiệu giả này và chỉ ghi nhận một lần nhấn duy nhất.',
+      },
+      {
+        question: 'Làm thế nào để đèn LED bật/tắt mỗi lần nhấn nút (toggle)?',
+        answer:
+          'Bạn cần một biến để lưu trạng thái của đèn LED. Khi phát hiện một lần nhấn nút, bạn sẽ đảo ngược trạng thái của biến đó (ví dụ: từ `true` thành `false`) và sau đó cập nhật trạng thái đèn LED theo biến này. Bạn cũng cần thêm logic để chỉ phát hiện một lần nhấn cho mỗi lần bấm và thả nút.',
+      },
+      {
+        question: 'Sự khác biệt giữa công tắc nhất thời (momentary switch) và công tắc bật/tắt (toggle switch)?',
+        answer:
+          'Công tắc nhất thời (như nút nhấn chúng ta đang dùng) chỉ duy trì kết nối khi nó được giữ. Công tắc bật/tắt (như công tắc đèn trong nhà) sẽ giữ nguyên trạng thái (bật hoặc tắt) sau khi bạn tác động và thả tay ra.',
+      },
+      {
+        question: 'Tôi có thể điều khiển nhiều đèn LED bằng một nút không?',
+        answer:
+          'Chắc chắn rồi. Trong khối lệnh `if` khi phát hiện nút nhấn, bạn có thể viết nhiều lệnh `digitalWrite()` để điều khiển nhiều đèn LED khác nhau cùng một lúc.',
+      },
+      {
+        question: 'Sơ đồ mạch điện (circuit diagram) là gì và tại sao nó hữu ích?',
+        answer:
+          'Sơ đồ mạch điện là một bản vẽ biểu diễn một mạch điện bằng cách sử dụng các ký hiệu tiêu chuẩn cho các linh kiện. Nó giúp người khác hiểu, xây dựng và sửa chữa mạch của bạn một cách dễ dàng mà không cần nhìn vào mạch thực tế.',
+      },
     ],
   },
   {
@@ -332,6 +412,46 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
         question: 'Tôi có thể sử dụng `analogWrite()` trên một chân không có dấu `~` không?',
         answer:
           'Không. Hàm `analogWrite()` chỉ hoạt động trên các chân có phần cứng hỗ trợ PWM, được đánh dấu bằng dấu ngã (~). Nếu bạn cố gắng sử dụng nó trên một chân digital thông thường, nó sẽ không hoạt động như mong đợi.',
+      },
+      {
+        question: 'Chu kỳ hoạt động (Duty Cycle) là gì?',
+        answer:
+          'Duty Cycle là tỷ lệ phần trăm thời gian mà tín hiệu ở trạng thái HIGH trong một chu kỳ hoàn chỉnh. Ví dụ, duty cycle 50% có nghĩa là tín hiệu ở mức HIGH trong một nửa thời gian và ở mức LOW trong nửa còn lại. Trong Arduino, `analogWrite(pin, 127)` tương ứng với duty cycle khoảng 50%.',
+      },
+      {
+        question: 'Tôi có thể tự tạo tín hiệu PWM trên một chân không có PWM không?',
+        answer:
+          'Có, bằng phần mềm. Kỹ thuật này được gọi là "Software PWM". Bạn có thể tự viết code để bật/tắt một chân digital rất nhanh. Tuy nhiên, nó sẽ không chính xác và ổn định bằng PWM phần cứng, và nó sẽ chiếm dụng tài nguyên của bộ vi xử lý.',
+      },
+      {
+        question: 'PWM điều khiển tốc độ của động cơ DC như thế nào?',
+        answer:
+          'Bằng cách thay đổi duty cycle của tín hiệu cấp cho động cơ, PWM điều chỉnh điện áp trung bình mà động cơ nhận được. Duty cycle cao hơn (điện áp trung bình cao hơn) làm động cơ quay nhanh hơn, và ngược lại.',
+      },
+      {
+        question: 'Đèn LED RGB là gì và PWM điều khiển màu sắc của nó như thế nào?',
+        answer:
+          'Đèn LED RGB thực chất là 3 đèn LED (Đỏ, Xanh lá, Xanh dương) trong cùng một vỏ. Bằng cách sử dụng PWM để điều khiển độ sáng của từng màu riêng biệt, bạn có thể trộn chúng lại với nhau để tạo ra hàng triệu màu sắc khác nhau.',
+      },
+      {
+        question: 'Tần số của tín hiệu PWM trên Arduino Uno là bao nhiêu?',
+        answer:
+          'Trên hầu hết các chân PWM của Arduino Uno (3, 9, 10, 11), tần số mặc định là khoảng 490 Hz. Riêng chân 5 và 6 có tần số khoảng 980 Hz.',
+      },
+      {
+        question: 'Tôi có thể thay đổi tần số PWM không?',
+        answer:
+          'Có, nhưng nó không đơn giản như một hàm thông thường. Bạn cần phải thao tác trực tiếp với các thanh ghi (registers) của bộ vi điều khiển. Việc này dành cho người dùng nâng cao và có thể ảnh hưởng đến các chức năng khác của Arduino.',
+      },
+      {
+        question: 'Tại sao giá trị của `analogWrite` lại từ 0 đến 255?',
+        answer:
+          'Vì bộ điều khiển PWM của Arduino có độ phân giải 8-bit. Điều này có nghĩa là nó có thể chia một chu kỳ thành 2^8 = 256 mức khác nhau, được biểu diễn bằng các số từ 0 đến 255.',
+      },
+      {
+        question: 'Có cách nào khác để tạo hiệu ứng "hơi thở" không?',
+        answer:
+          'Có, bạn có thể sử dụng các hàm toán học như hàm sin để tạo ra một đường cong độ sáng mượt mà và tự nhiên hơn là việc tăng/giảm tuyến tính bằng vòng lặp `for`.',
       },
     ],
   },
@@ -421,6 +541,46 @@ export const arduinoCircuitsLessons: BaseLessonData[] = [
         question: 'Tôi có thể đọc tín hiệu analog trên các chân digital không?',
         answer:
           'Không. Bạn chỉ có thể sử dụng hàm `analogRead()` trên các chân được đánh dấu là "Analog In" (A0, A1, A2, v.v.). Các chân này được kết nối đặc biệt với bộ ADC của vi điều khiển.',
+      },
+      {
+        question: 'Tín hiệu analog là gì?',
+        answer:
+          'Tín hiệu analog là một tín hiệu liên tục có thể nhận bất kỳ giá trị nào trong một phạm vi nhất định. Ví dụ, nhiệt độ, độ sáng, hoặc âm thanh là các tín hiệu analog. Nó khác với tín hiệu digital chỉ có hai trạng thái HIGH và LOW.',
+      },
+      {
+        question: 'Biến trở (potentiometer) là gì?',
+        answer:
+          'Biến trở là một loại điện trở có thể thay đổi giá trị. Nó thường có 3 chân và một núm xoay hoặc thanh trượt. Bằng cách thay đổi vị trí của núm xoay, bạn thay đổi điện trở và do đó thay đổi điện áp ở chân giữa, tạo ra một tín hiệu analog.',
+      },
+      {
+        question: 'Tại sao lại kết nối chân giữa của biến trở vào chân analog?',
+        answer:
+          'Hai chân bên ngoài của biến trở được nối với 5V và GND, tạo thành một bộ chia điện áp. Chân giữa hoạt động như một "cần gạt" di chuyển giữa 0V và 5V. Vị trí của cần gạt này quyết định điện áp đầu ra, và đó chính là tín hiệu analog mà chúng ta muốn đo.',
+      },
+      {
+        question: 'Tôi có thể đọc điện áp cao hơn 5V với Arduino không?',
+        answer:
+          'Không trực tiếp. Các chân analog của Arduino Uno chỉ có thể đo điện áp từ 0-5V. Việc đưa vào một điện áp cao hơn có thể làm hỏng bo mạch. Để đo điện áp cao hơn, bạn cần sử dụng một mạch chia điện áp bên ngoài để giảm điện áp xuống phạm vi an toàn.',
+      },
+      {
+        question: 'Một số cảm biến analog phổ biến khác là gì?',
+        answer:
+          'Rất nhiều! Ví dụ: quang trở (LDR) để đo cường độ ánh sáng, cảm biến nhiệt độ (TMP36), cảm biến độ ẩm đất, cảm biến uốn (flex sensor), và micro để đo cường độ âm thanh.',
+      },
+      {
+        question: 'Độ phân giải của cảm biến là gì?',
+        answer:
+          'Độ phân giải là sự thay đổi nhỏ nhất mà cảm biến có thể phát hiện. Đối với Arduino, độ phân giải của bộ ADC là 5V / 1024 ≈ 4.9mV. Điều này có nghĩa là nó chỉ có thể phát hiện những thay đổi điện áp lớn hơn 4.9mV.',
+      },
+      {
+        question: 'Làm thế nào để giá trị đọc từ analog được ổn định hơn?',
+        answer:
+          'Giá trị đọc từ cảm biến analog có thể bị nhiễu. Một kỹ thuật đơn giản để làm mịn dữ liệu là lấy trung bình của nhiều lần đọc liên tiếp. Ví dụ, đọc giá trị 10 lần, cộng chúng lại rồi chia cho 10 để có được một giá trị ổn định hơn.',
+      },
+      {
+        question: 'Sự khác biệt giữa `analogRead()` và `digitalRead()` là gì?',
+        answer:
+          '`digitalRead()` chỉ đọc các giá trị HIGH hoặc LOW trên các chân digital. `analogRead()` đọc một dải giá trị điện áp (từ 0V đến 5V) trên các chân analog và trả về một số nguyên từ 0 đến 1023.',
       },
     ],
   },

@@ -117,6 +117,58 @@ export const uxuiDesignLessons: UXUILessonType[] = [
           'Thành công của MoMo đến từ việc tích hợp nhiều dịch vụ vào một ứng dụng duy nhất (super-app) và thiết kế một trải nghiệm người dùng đơn giản, dễ hiểu cho mọi đối tượng.',
       },
     ],
+    faqs: [
+      {
+        question: 'UX và UI khác nhau như thế nào?',
+        answer:
+          'UX (User Experience) là trải nghiệm tổng thể của người dùng với sản phẩm, bao gồm cảm xúc, sự dễ dàng khi sử dụng. Nó tập trung vào "cảm nhận". UI (User Interface) là giao diện người dùng, bao gồm các yếu tố trực quan như nút bấm, màu sắc, bố cục. Nó tập trung vào "cái nhìn". UI là một phần của UX.',
+      },
+      {
+        question: 'Tại sao User Research lại quan trọng?',
+        answer:
+          'User Research giúp chúng ta hiểu được nhu cầu, hành vi, và vấn đề của người dùng. Nếu không có nghiên cứu, chúng ta chỉ đang "đoán" và có thể tạo ra một sản phẩm không ai muốn hoặc không thể sử dụng. Nghiên cứu cung cấp dữ liệu thực tế để đưa ra quyết định thiết kế đúng đắn.',
+      },
+      {
+        question: 'Wireframe, Mockup, và Prototype khác nhau ra sao?',
+        answer:
+          'Wireframe là bản phác thảo cấu trúc cơ bản, chỉ có màu đen trắng, tập trung vào bố cục. Mockup là phiên bản có màu sắc, hình ảnh, và kiểu chữ, cho thấy giao diện sẽ trông như thế nào. Prototype là một phiên bản có thể tương tác được, cho phép người dùng nhấp và trải nghiệm luồng hoạt động của sản phẩm.',
+      },
+      {
+        question: 'Heuristic Evaluation là gì?',
+        answer:
+          'Là một phương pháp kiểm tra khả năng sử dụng của giao diện bằng cách đối chiếu nó với một bộ các nguyên tắc thiết kế đã được công nhận (thường là 10 nguyên tắc của Jakob Nielsen). Các chuyên gia sẽ đánh giá giao diện và chỉ ra các vấn đề tiềm ẩn mà không cần có người dùng thật.',
+      },
+      {
+        question: 'A/B testing trong UX/UI là gì?',
+        answer:
+          'Là một phương pháp thử nghiệm bằng cách tạo ra hai phiên bản khác nhau của một thiết kế (Phiên bản A và Phiên bản B) và cho hai nhóm người dùng khác nhau sử dụng. Bằng cách đo lường chỉ số thành công (ví dụ: tỷ lệ nhấp chuột), chúng ta có thể xác định phiên bản nào hiệu quả hơn.',
+      },
+      {
+        question: 'Design System là gì?',
+        answer:
+          'Là một bộ sưu tập các thành phần giao diện có thể tái sử dụng (như nút, form, màu sắc, font chữ), được quản lý bằng các tiêu chuẩn rõ ràng. Nó giúp đảm bảo tính nhất quán trong thiết kế trên toàn bộ sản phẩm và giúp các nhóm làm việc hiệu quả hơn.',
+      },
+      {
+        question: 'Mobile-First Design là gì?',
+        answer:
+          'Là một chiến lược thiết kế bắt đầu bằng việc thiết kế cho màn hình nhỏ nhất (điện thoại di động) trước, sau đó mới mở rộng lên các màn hình lớn hơn (máy tính bảng, máy tính để bàn). Cách tiếp cận này buộc các nhà thiết kế phải tập trung vào những nội dung và chức năng quan trọng nhất.',
+      },
+      {
+        question: 'Accessibility (Khả năng tiếp cận) trong thiết kế có nghĩa là gì?',
+        answer:
+          'Là việc thiết kế sản phẩm để tất cả mọi người, bao gồm cả những người khuyết tật (về thị giác, thính giác, vận động, nhận thức), đều có thể sử dụng được. Ví dụ: đảm bảo độ tương phản màu sắc đủ cao, cung cấp văn bản thay thế cho hình ảnh, và cho phép điều hướng bằng bàn phím.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu sự nghiệp trong ngành UX/UI?',
+        answer:
+          'Bắt đầu bằng việc học các kiến thức cơ bản qua các khóa học online hoặc bootcamp. Thực hành liên tục bằng cách làm các dự án cá nhân hoặc thiết kế lại các ứng dụng hiện có. Xây dựng một portfolio (hồ sơ năng lực) chất lượng để giới thiệu các dự án của bạn. Cuối cùng, kết nối với cộng đồng và tìm kiếm cơ hội thực tập hoặc làm việc cấp độ junior.',
+      },
+      {
+        question: 'Sự khác biệt giữa "Design Thinking" và "User-Centered Design" là gì?',
+        answer:
+          '"User-Centered Design" (UCD) là một triết lý thiết kế đặt người dùng vào trung tâm của mọi quyết định. "Design Thinking" là một quy trình, một phương pháp luận cụ thể để thực hành UCD. Nó bao gồm các bước như Thấu cảm, Định nghĩa, Lên ý tưởng, Tạo mẫu và Thử nghiệm để giải quyết vấn đề một cách sáng tạo.',
+      },
+    ],
   },
   // ... (các bài học khác)
 ];

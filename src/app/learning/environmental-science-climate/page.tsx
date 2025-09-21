@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import {
   environmentalScienceClimateModuleData,
-  environmentalClimateLessons,
+  environmentalScienceClimateLessons,
 } from '@/data/modules/environmental-science-climate';
 import { createModuleMetadata } from '@/utils/seo';
 
@@ -27,6 +27,6 @@ export const metadata: Metadata = createModuleMetadata(
 
 export default function EnvironmentalScienceClimatePage() {
   return (
-    <ModulePageTemplate moduleData={environmentalScienceClimateModuleData} lessons={environmentalClimateLessons} />
+    <ModulePageTemplate moduleData={environmentalScienceClimateModuleData} lessons={environmentalScienceClimateLessons} />
   );
 }

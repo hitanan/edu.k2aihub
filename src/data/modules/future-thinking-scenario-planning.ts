@@ -233,6 +233,36 @@ export const futureThinkingLessons: FutureThinkingLessonType[] = [
         answer:
           'Thay vì dự báo từ hiện tại tới tương lai, hoạch định ngược bắt đầu bằng việc xác định một tương lai mong muốn. Sau đó, bạn làm việc ngược lại để xác định các bước và chính sách cần thiết để kết nối tương lai đó với hiện tại.',
       },
+      {
+        question: 'Tín hiệu yếu (weak signal) là gì?',
+        answer:
+          'Tín hiệu yếu là một chỉ báo sớm, thường khó nhận thấy về một sự thay đổi có thể xảy ra trong tương lai. Nó là một mầm mống của một xu hướng hoặc sự đột phá tiềm năng. Việc nhận diện và phân tích các tín hiệu yếu là một phần quan trọng của tư duy tương lai.',
+      },
+      {
+        question: 'Tại sao chúng ta cần nghĩ về "nhiều tương lai" thay vì một tương lai duy nhất?',
+        answer:
+          'Tương lai vốn dĩ không chắc chắn. Việc chỉ tập trung vào một tương lai duy nhất sẽ khiến chúng ta dễ bị bất ngờ và không chuẩn bị trước những thay đổi. Bằng cách khám phá nhiều kịch bản tương lai khác nhau (có thể xảy ra, có khả năng xảy ra, và mong muốn), chúng ta có thể xây dựng các chiến lược linh hoạt và vững chắc hơn.',
+      },
+      {
+        question: 'Tư duy tương lai có thể áp dụng cho cá nhân như thế nào?',
+        answer:
+          'Cá nhân có thể sử dụng tư duy tương lai để lập kế hoạch sự nghiệp, phát triển kỹ năng, và đưa ra các quyết định lớn trong cuộc sống. Bằng cách phân tích các xu hướng trong ngành của mình và xây dựng các kịch bản cho tương lai cá nhân, bạn có thể chủ động định hình con đường của mình thay vì chỉ phản ứng với hoàn cảnh.',
+      },
+      {
+        question: 'Đâu là một sai lầm phổ biến trong tư duy về tương lai?',
+        answer:
+          'Một sai lầm phổ biến là giả định rằng tương lai sẽ chỉ là một phiên bản mở rộng của hiện tại (tư duy tuyến tính). Lịch sử đã cho thấy những thay đổi đột phá (disruptive changes) thường xảy ra một cách phi tuyến tính. Tư duy tương lai giúp chúng ta thoát khỏi giả định này.',
+      },
+      {
+        question: 'Khung Ba Chân trời (Three Horizons Framework) được sử dụng để làm gì?',
+        answer:
+          'Đây là một công cụ giúp các tổ chức quản lý sự thay đổi và đổi mới. Chân trời 1 là duy trì hoạt động kinh doanh hiện tại. Chân trời 2 là phát triển các cơ hội mới nổi. Chân trời 3 là tạo ra các lựa chọn cho một tương lai xa hơn, thường mang tính đột phá. Khung này giúp cân bằng giữa nhu cầu hiện tại và sự chuẩn bị cho tương lai.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu rèn luyện tư duy tương lai?',
+        answer:
+          'Hãy bắt đầu bằng cách đọc rộng hơn, không chỉ trong lĩnh vực của bạn. Theo dõi các nguồn tin về công nghệ, xã hội, môi trường. Tập đặt câu hỏi "Nếu...thì sao?" về các xu hướng bạn quan sát được. Thảo luận về các khả năng tương lai với bạn bè và đồng nghiệp để có nhiều góc nhìn khác nhau.',
+      },
     ],
   },
   {
@@ -374,6 +404,58 @@ export const futureThinkingLessons: FutureThinkingLessonType[] = [
     ]
       .filter((game): game is EducationalGame => !!game)
       .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    faqs: [
+      {
+        question: 'Làm thế nào để phân biệt giữa "tín hiệu yếu" và "nhiễu thông tin"?',
+        answer:
+          'Đây là một thách thức lớn. Một tín hiệu yếu thường có một câu chuyện hoặc một logic đằng sau nó, kết nối với một sự thay đổi tiềm tàng, trong khi nhiễu thông tin thường là ngẫu nhiên và không có ý nghĩa sâu xa. Việc theo dõi tín hiệu theo thời gian và xem liệu nó có mạnh lên hay kết nối với các tín hiệu khác không sẽ giúp phân biệt.',
+      },
+      {
+        question: 'Quét môi trường (Environmental Scanning) là gì?',
+        answer:
+          'Đó là quá trình thu thập và phân tích thông tin một cách có hệ thống từ môi trường bên ngoài (kinh tế, xã hội, công nghệ, v.v.) để xác định các cơ hội và mối đe dọa tiềm tàng. Đây là hoạt động nền tảng để phát hiện tín hiệu yếu và xu hướng.',
+      },
+      {
+        question: 'Tại sao việc theo dõi các nguồn tin "bên lề" lại quan trọng?',
+        answer:
+          'Các xu hướng lớn thường không bắt đầu từ các nguồn tin chính thống. Chúng thường nảy mầm trong các cộng đồng nhỏ, các blog chuyên ngành, các bài báo khoa học, hoặc các tác phẩm nghệ thuật tiên phong. Việc theo dõi các nguồn tin "bên lề" giúp bạn phát hiện sự thay đổi sớm hơn.',
+      },
+      {
+        question: 'Phương pháp Delphi là gì?',
+        answer:
+          'Phương pháp Delphi là một kỹ thuật dự báo có cấu trúc, dựa trên việc thu thập ý kiến từ một hội đồng chuyên gia qua nhiều vòng câu hỏi. Sau mỗi vòng, các chuyên gia sẽ nhận được phản hồi tổng hợp (ẩn danh) từ những người khác và có cơ hội điều chỉnh câu trả lời của mình. Quá trình này giúp hội tụ các ý kiến và đưa ra một dự báo đáng tin cậy hơn.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng một "Radar Xu hướng" cá nhân?',
+        answer:
+          'Bắt đầu bằng việc xác định các lĩnh vực bạn quan tâm. Sau đó, tạo một hệ thống để thu thập thông tin từ nhiều nguồn đa dạng (blog, podcast, tạp chí khoa học, mạng xã hội). Sử dụng các công cụ như Feedly, Google Alerts để tự động hóa việc thu thập. Quan trọng nhất là dành thời gian hàng tuần để xem xét và phân tích những gì bạn đã thu thập được.',
+      },
+      {
+        question: 'Một xu hướng (trend) khác gì so với một mốt (fad)?',
+        answer:
+          'Một mốt thường là một hiện tượng ngắn hạn, bùng nổ nhanh chóng và cũng nhanh chóng lụi tàn, thường liên quan đến thẩm mỹ hoặc hành vi bề mặt. Một xu hướng có gốc rễ sâu xa hơn, phát triển chậm hơn nhưng có tác động lâu dài và có khả năng định hình lại hành vi, thị trường hoặc xã hội.',
+      },
+      {
+        question: 'Thiên vị xác nhận (confirmation bias) ảnh hưởng đến việc phát hiện xu hướng như thế nào?',
+        answer:
+          'Thiên vị xác nhận là xu hướng chúng ta chỉ tìm kiếm và diễn giải thông tin theo cách xác nhận những gì chúng ta đã tin tưởng. Điều này rất nguy hiểm khi phát hiện xu hướng, vì nó có thể khiến chúng ta bỏ qua các tín hiệu yếu đi ngược lại với giả định của mình và chỉ tập trung vào những gì củng cố quan điểm hiện tại.',
+      },
+      {
+        question: 'Làm thế nào để biến một tín hiệu yếu thành một hiểu biết có thể hành động?',
+        answer:
+          'Sau khi xác định một tín hiệu, hãy đặt câu hỏi: "Nếu tín hiệu này trở thành xu hướng, nó sẽ có tác động gì đến ngành của tôi/công việc của tôi/cuộc sống của tôi?". Phát triển một vài kịch bản "nếu-thì". Từ đó, bạn có thể xác định các hành động chuẩn bị, chẳng hạn như học một kỹ năng mới hoặc thử nghiệm một dự án nhỏ.',
+      },
+      {
+        question: 'Tại sao sự đa dạng trong nhóm phân tích xu hướng lại quan trọng?',
+        answer:
+          'Mỗi người có một "điểm mù" riêng dựa trên kinh nghiệm, văn hóa và chuyên môn của họ. Một nhóm đa dạng (về độ tuổi, giới tính, ngành nghề, nền tảng văn hóa) sẽ có nhiều góc nhìn khác nhau, giúp phát hiện được nhiều tín hiệu hơn và giảm thiểu rủi ro bỏ sót những thay đổi quan trọng.',
+      },
+      {
+        question: 'Tôi có thể tìm các báo cáo xu hướng đáng tin cậy ở đâu?',
+        answer:
+          'Có nhiều tổ chức uy tín công bố các báo cáo xu hướng hàng năm. Một số cái tên nổi bật bao gồm Gartner (đặc biệt về công nghệ), McKinsey, Deloitte, The World Economic Forum, và các công ty nghiên cứu thị trường như WGSN hoặc Trend Hunter.',
+      },
+    ],
   },
   {
     id: 'personal-strategic-planning',
@@ -510,6 +592,58 @@ export const futureThinkingLessons: FutureThinkingLessonType[] = [
     ]
       .filter((game): game is EducationalGame => !!game)
       .map((game) => ({ id: game.id, name: game.title, description: game.description })),
+    faqs: [
+      {
+        question: 'Kế hoạch chiến lược cá nhân khác gì với việc đặt mục tiêu thông thường?',
+        answer:
+          'Đặt mục tiêu thường tập trung vào kết quả cụ thể (cái gì). Kế hoạch chiến lược cá nhân là một quá trình toàn diện hơn, bao gồm việc xác định tầm nhìn, giá trị cốt lõi (tại sao), phân tích điểm mạnh/yếu, cơ hội/thách thức (SWOT), và xây dựng một lộ trình linh hoạt để đạt được tầm nhìn đó trong một thế giới bất định.',
+      },
+      {
+        question: 'Tại sao cần phải có một "tuyên bố sứ mệnh cá nhân"?',
+        answer:
+          'Một tuyên bố sứ mệnh cá nhân hoạt động như một chiếc la bàn, giúp bạn định hướng các quyết định lớn trong cuộc sống. Nó định nghĩa mục đích, giá trị và điều bạn muốn đóng góp. Khi đối mặt với các lựa chọn khó khăn, bạn có thể quay lại với tuyên bố sứ mệnh để xem lựa chọn nào phù hợp nhất với con người bạn muốn trở thành.',
+      },
+      {
+        question: 'Tư duy thiết kế cuộc sống (Life Design Thinking) là gì?',
+        answer:
+          'Đây là việc áp dụng các nguyên tắc của tư duy thiết kế (thường dùng để tạo sản phẩm) vào việc thiết kế cuộc sống và sự nghiệp của bạn. Nó khuyến khích sự tò mò, thử nghiệm các "nguyên mẫu" (ví dụ: làm một dự án nhỏ, trò chuyện với người trong ngành) để học hỏi, thay vì cố gắng lên một kế hoạch hoàn hảo từ đầu.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng một sự nghiệp "chống mong manh" (antifragile)?',
+        answer:
+          'Một sự nghiệp chống mong manh không chỉ đứng vững trước biến động mà còn mạnh mẽ hơn nhờ nó. Cách xây dựng bao gồm: phát triển một danh mục kỹ năng đa dạng (thay vì chỉ một chuyên môn sâu), xây dựng một mạng lưới quan hệ rộng và chất lượng, tạo ra nhiều nguồn thu nhập, và luôn duy trì tư duy học hỏi để có thể thích ứng nhanh chóng.',
+      },
+      {
+        question: 'Phân tích SWOT cá nhân được thực hiện như thế nào?',
+        answer:
+          'Hãy chia một tờ giấy thành bốn phần: Strengths (Điểm mạnh - kỹ năng, kinh nghiệm của bạn), Weaknesses (Điểm yếu - những gì bạn cần cải thiện), Opportunities (Cơ hội - các xu hướng bên ngoài bạn có thể tận dụng), và Threats (Thách thức - các yếu tố bên ngoài có thể cản trở bạn). Phân tích này giúp bạn có một cái nhìn tổng quan để xây dựng chiến lược.',
+      },
+      {
+        question: 'Chiến lược tùy chọn (Optionality Strategy) trong sự nghiệp là gì?',
+        answer:
+          'Đó là việc chủ động tạo ra và duy trì nhiều lựa chọn cho tương lai, thay vì đặt cược tất cả vào một con đường duy nhất. Ví dụ, một luật sư có thể học thêm về lập trình. Kỹ năng này có thể không cần thiết ngay lập tức, nhưng nó mở ra các lựa chọn trong tương lai trong lĩnh vực công nghệ pháp lý (legal tech) nếu ngành luật truyền thống bị gián đoạn.',
+      },
+      {
+        question: 'Làm thế nào để cân bằng giữa kế hoạch dài hạn và sự linh hoạt?',
+        answer:
+          'Hãy có một tầm nhìn dài hạn rõ ràng (la bàn) nhưng một kế hoạch ngắn hạn linh hoạt (bản đồ). Đặt ra các mục tiêu cho 1-3 tháng và thường xuyên xem xét lại chúng dựa trên những gì bạn học được và những thay đổi của môi trường. Đây được gọi là "định hướng và điều chỉnh".',
+      },
+      {
+        question: 'Tại sao việc "thử nghiệm" lại quan trọng trong kế hoạch sự nghiệp?',
+        answer:
+          'Chúng ta thường không biết mình thực sự thích gì cho đến khi thử nó. Thay vì đưa ra một quyết định lớn như chuyển việc ngay lập tức, hãy "tạo mẫu" cho nó. Bạn có thể làm một dự án tự do, tham gia một khóa học ngắn hạn, hoặc dành thời gian trò chuyện với những người đang làm công việc đó để có được trải nghiệm thực tế trước khi cam kết.',
+      },
+      {
+        question: 'Làm thế nào để biết khi nào cần phải thay đổi kế hoạch chiến lược cá nhân?',
+        answer:
+          'Hãy xem xét lại kế hoạch của bạn định kỳ (ví dụ: 6 tháng một lần) hoặc khi có một sự kiện lớn xảy ra (thay đổi công việc, một công nghệ mới xuất hiện). Hãy tự hỏi: "Kế hoạch này còn phù hợp với giá trị của tôi không? Nó có còn thực tế với hoàn cảnh hiện tại không? Tôi đã học được điều gì mới có thể ảnh hưởng đến kế hoạch này?"',
+      },
+      {
+        question: 'Làm thế nào để vượt qua nỗi sợ hãi về một tương lai không chắc chắn?',
+        answer:
+          'Thay vì cố gắng loại bỏ sự không chắc chắn (điều không thể), hãy học cách chấp nhận và thậm chí tận dụng nó. Xây dựng một quỹ khẩn cấp vững chắc, một mạng lưới hỗ trợ mạnh mẽ, và một danh mục kỹ năng đa dạng sẽ cho bạn sự tự tin để đối mặt với bất cứ điều gì xảy ra. Hãy nhớ rằng, sự không chắc chắn cũng là nơi chứa đựng những cơ hội lớn nhất.',
+      },
+    ],
   },
 ];
 

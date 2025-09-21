@@ -100,6 +100,53 @@ export const spaceLessons: SpaceExplorationLesson[] = [
           'Sputnik 1, được Liên Xô phóng vào ngày 4 tháng 10 năm 1957, đã mở ra kỷ nguyên chinh phục không gian của loài người.',
       },
     ],
+    faqs: [
+      {
+        question: 'Tại sao chúng ta lại khám phá vũ trụ?',
+        answer:
+          'Việc khám phá vũ trụ thúc đẩy sự tò mò vốn có của con người, thúc đẩy tiến bộ công nghệ, tìm kiếm sự sống ngoài Trái Đất, và có thể đảm bảo sự tồn tại lâu dài của loài người bằng cách tìm kiếm những ngôi nhà mới.',
+      },
+      {
+        question: 'Cơ học quỹ đạo là gì?',
+        answer:
+          'Cơ học quỹ đạo là ngành khoa học nghiên cứu chuyển động của các vật thể trong không gian dưới tác động của lực hấp dẫn, ví dụ như chuyển động của các hành tinh quanh Mặt Trời hoặc của vệ tinh quanh Trái Đất.',
+      },
+      {
+        question: 'Sự khác biệt giữa một hành tinh và một ngôi sao là gì?',
+        answer:
+          'Một ngôi sao (như Mặt Trời) tự tạo ra ánh sáng và năng lượng thông qua phản ứng tổng hợp hạt nhân ở lõi của nó. Một hành tinh (như Trái Đất) không tự phát sáng mà chỉ phản chiếu ánh sáng từ ngôi sao mà nó quay quanh.',
+      },
+      {
+        question: 'GPS hoạt động như thế nào?',
+        answer:
+          'Hệ thống Định vị Toàn cầu (GPS) hoạt động dựa trên một mạng lưới các vệ tinh quay quanh Trái Đất. Máy thu GPS của bạn nhận tín hiệu từ ít nhất bốn vệ tinh để tính toán vị trí chính xác của bạn thông qua quá trình giao hội ba chiều (trilateration).',
+      },
+      {
+        question: 'Launch window (cửa sổ phóng) là gì?',
+        answer:
+          'Là một khoảng thời gian cụ thể mà một tên lửa phải được phóng để đạt được quỹ đạo hoặc mục tiêu mong muốn một cách hiệu quả nhất. Đối với các sứ mệnh liên hành tinh, cửa sổ phóng rất quan trọng để tiết kiệm nhiên liệu và thời gian di chuyển.',
+      },
+      {
+        question: 'Tại sao môi trường không trọng lực lại quan trọng cho nghiên cứu khoa học?',
+        answer:
+          'Môi trường không trọng lực (chính xác hơn là vi trọng lực) trên Trạm Vũ trụ Quốc tế (ISS) cho phép các nhà khoa học nghiên cứu các hiện tượng vật lý, hóa học và sinh học mà không bị ảnh hưởng bởi lực hấp dẫn, dẫn đến những khám phá mới trong y học và khoa học vật liệu.',
+      },
+      {
+        question: 'Ai là người đầu tiên đi bộ trên Mặt Trăng?',
+        answer:
+          'Phi hành gia người Mỹ Neil Armstrong là người đầu tiên đặt chân lên Mặt Trăng vào ngày 20 tháng 7 năm 1969, trong sứ mệnh Apollo 11 của NASA.',
+      },
+      {
+        question: 'Kính viễn vọng không gian Hubble đã đóng góp gì cho khoa học?',
+        answer:
+          'Kính viễn vọng Hubble, quay quanh Trái Đất bên ngoài bầu khí quyển, đã cung cấp những hình ảnh vũ trụ sâu sắc và rõ nét nhất, giúp xác định tuổi của vũ trụ, khám phá năng lượng tối, và nghiên cứu các thiên hà xa xôi.',
+      },
+      {
+        question: 'Tên lửa hoạt động như thế nào trong chân không khi không có không khí để "đẩy" vào?',
+        answer:
+          'Tên lửa hoạt động dựa trên Định luật III của Newton (Hành động và Phản ứng). Nó không "đẩy" vào không khí. Thay vào đó, nó phụt ra một lượng lớn khí nóng với tốc độ cao về phía sau, và theo nguyên tắc bảo toàn động lượng, tên lửa được đẩy về phía trước.',
+      },
+    ],
   },
   {
     id: 'rocket-science-propulsion',
@@ -178,6 +225,53 @@ export const spaceLessons: SpaceExplorationLesson[] = [
         correctAnswerIndex: 2,
         explanation:
           'Phương trình Tsiolkovsky (Δv = Ve * ln(m0 / mf)) chỉ phụ thuộc vào vận tốc phụt khí (Ve) và logarit tự nhiên của tỷ lệ khối lượng (m0/mf). Thời gian đốt cháy ảnh hưởng đến lực đẩy và gia tốc, nhưng không trực tiếp quyết định tổng delta-v.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Delta-v là gì và tại sao nó lại là một chỉ số quan trọng trong du hành vũ trụ?',
+        answer:
+          'Delta-v (Δv), hay "thay đổi vận tốc", là thước đo "ngân sách" cơ động của một tàu vũ trụ. Nó biểu thị tổng lượng thay đổi vận tốc mà một con tàu có thể thực hiện. Mọi thao tác trong không gian, từ việc cất cánh khỏi Trái Đất đến việc đi vào quỹ đạo một hành tinh khác, đều "tiêu tốn" một lượng delta-v nhất định.',
+      },
+      {
+        question: 'Xung lực riêng (Specific Impulse - Isp) là gì?',
+        answer:
+          'Xung lực riêng là một thước đo hiệu quả của động cơ tên lửa. Nó cho biết động cơ có thể tạo ra bao nhiêu lực đẩy từ một lượng nhiên liệu nhất định trong một khoảng thời gian. Isp càng cao, động cơ càng hiệu quả.',
+      },
+      {
+        question: 'Sự khác biệt giữa động cơ tên lửa nhiên liệu lỏng và rắn là gì?',
+        answer:
+          'Động cơ nhiên liệu rắn đơn giản, đáng tin cậy và cung cấp lực đẩy lớn, nhưng một khi đã được kích hoạt thì không thể tắt hoặc điều chỉnh. Động cơ nhiên liệu lỏng phức tạp hơn nhưng cho phép điều chỉnh lực đẩy và có thể tắt/bật lại, mang lại khả năng điều khiển tốt hơn.',
+      },
+      {
+        question: 'Động cơ đẩy ion hoạt động như thế nào?',
+        answer:
+          'Động cơ đẩy ion sử dụng điện trường để gia tốc các ion (nguyên tử tích điện) ra khỏi động cơ với tốc độ cực cao. Chúng tạo ra lực đẩy rất nhỏ nhưng cực kỳ hiệu quả về mặt nhiên liệu (Isp rất cao), lý tưởng cho các sứ mệnh du hành không gian sâu và dài ngày.',
+      },
+      {
+        question: 'Tại sao tên lửa cần nhiều tầng?',
+        answer:
+          'Tên lửa sử dụng nhiều tầng để loại bỏ khối lượng không cần thiết (vỏ bình nhiên liệu rỗng của tầng trước) trong quá trình bay. Điều này làm tăng tỷ lệ khối lượng (m0/mf) cho các tầng còn lại, giúp chúng đạt được delta-v cao hơn theo phương trình Tsiolkovsky.',
+      },
+      {
+        question: 'Làm thế nào tên lửa tái sử dụng của SpaceX có thể hạ cánh?',
+        answer:
+          'Sau khi tách ra, tầng đầu tiên sử dụng các động cơ đẩy nhỏ để định hướng lại, các vây lưới (grid fins) để điều khiển khí động học khi quay lại bầu khí quyển, và thực hiện một cú "đốt hạ cánh" (landing burn) ngay trước khi chạm đất để giảm tốc độ và hạ cánh nhẹ nhàng trên các chân đáp.',
+      },
+      {
+        question: 'Nhiên liệu Hypergolic là gì?',
+        answer:
+          'Là một loại nhiên liệu tên lửa bao gồm hai chất (nhiên liệu và chất oxy hóa) sẽ tự động bốc cháy ngay khi tiếp xúc với nhau. Điều này làm cho động cơ rất đáng tin cậy vì không cần hệ thống đánh lửa phức tạp, rất hữu ích cho các động cơ cần phải khởi động lại trong không gian.',
+      },
+      {
+        question: 'Aerospike engine là gì và ưu điểm của nó là gì?',
+        answer:
+          'Là một loại động cơ tên lửa có hình dạng vòi phun độc đáo, cho phép nó tự điều chỉnh để duy trì hiệu quả ở các độ cao và áp suất khí quyển khác nhau. Về lý thuyết, nó hiệu quả hơn các động cơ hình chuông truyền thống.',
+      },
+      {
+        question: 'Tương lai của hệ thống đẩy trong không gian là gì?',
+        answer:
+          'Các công nghệ tương lai đầy hứa hẹn bao gồm động cơ đẩy hạt nhân (cung cấp lực đẩy và hiệu quả cao), cánh buồm mặt trời (sử dụng áp suất từ ánh sáng mặt trời để di chuyển), và các khái niệm xa hơn như động cơ nhiệt hạch hoặc động cơ EmDrive vẫn đang được nghiên cứu.',
       },
     ],
   },

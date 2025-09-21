@@ -157,6 +157,30 @@ export const educationTechnologyLessons: BaseLessonData[] = [
         answer:
           'Một dự án triển khai LMS thành công cần có: sự ủng hộ từ ban lãnh đạo, một kế hoạch triển khai rõ ràng, chương trình đào tạo kỹ lưỡng cho giảng viên và học sinh, nội dung học tập chất lượng cao được chuẩn bị sẵn, và một đội ngũ hỗ trợ kỹ thuật chuyên nghiệp.',
       },
+      {
+        question: 'SCORM là gì và tại sao nó quan trọng với LMS?',
+        answer: 'SCORM (Sharable Content Object Reference Model) là một bộ tiêu chuẩn kỹ thuật cho các phần mềm e-learning. Nội dung được tạo theo chuẩn SCORM có thể được chạy trên bất kỳ LMS nào tương thích với SCORM. Điều này cho phép các trường học và doanh nghiệp dễ dàng mua hoặc chia sẻ nội dung khóa học mà không bị "khóa" vào một nhà cung cấp LMS duy nhất.'
+      },
+      {
+        question: 'Làm thế nào để tăng cường sự tương tác của học sinh trên LMS?',
+        answer: 'Hãy tận dụng các công cụ tương tác như diễn đàn thảo luận, các buổi học ảo qua video conference, các bài tập nhóm, và các hoạt động có tính "game hóa" (gamification) như trao huy hiệu, bảng xếp hạng. Việc thiết kế các hoạt động đòi hỏi sự hợp tác và phản hồi thường xuyên cũng rất quan trọng.'
+      },
+      {
+        question: 'xAPI (Experience API) là gì và nó khác gì so với SCORM?',
+        answer: 'xAPI là một tiêu chuẩn e-learning mới hơn, linh hoạt hơn SCORM. Nó cho phép theo dõi nhiều loại trải nghiệm học tập hơn, không chỉ giới hạn trong LMS, mà còn cả trên ứng dụng di động, mô phỏng VR/AR, hoặc các hoạt động ngoài đời thực. Dữ liệu được lưu trữ trong một Kho lưu trữ hồ sơ học tập (LRS).'
+      },
+      {
+        question: 'LMS có thể giúp gì trong việc đánh giá và kiểm định chất lượng giáo dục?',
+        answer: 'LMS là một nguồn dữ liệu quý giá cho việc kiểm định. Nó cung cấp bằng chứng về việc phân phối nội dung, sự tương tác của sinh viên, kết quả đánh giá, và phản hồi của giảng viên. Các báo cáo từ LMS giúp chứng minh rằng chương trình đào tạo đang đáp ứng các tiêu chuẩn chất lượng đã đề ra.'
+      },
+      {
+        question: 'Vai trò của quản trị viên LMS (LMS Administrator) là gì?',
+        answer: 'Quản trị viên LMS chịu trách nhiệm về mặt kỹ thuật và vận hành của hệ thống. Công việc của họ bao gồm tạo khóa học, quản lý người dùng, cấu hình hệ thống, sao lưu dữ liệu, hỗ trợ kỹ thuật cho giảng viên và học sinh, và đảm bảo hệ thống hoạt động ổn định.'
+      },
+      {
+        question: 'LMS trên nền tảng đám mây (Cloud-based) có ưu điểm gì so với tự host?',
+        answer: 'LMS trên đám mây (SaaS) có ưu điểm là không cần đầu tư vào hạ tầng máy chủ, dễ dàng triển khai, được nhà cung cấp tự động cập nhật và bảo trì, và có khả năng mở rộng linh hoạt. Tự host cho phép tùy biến sâu hơn nhưng đòi hỏi đội ngũ kỹ thuật có chuyên môn cao để vận hành và bảo trì.'
+      }
     ],
   },
 
@@ -295,6 +319,48 @@ export const educationTechnologyLessons: BaseLessonData[] = [
           'ELSA Speak là một trong những startup EdTech thành công nhất của Việt Nam, huy động được hàng triệu USD vốn đầu tư và có hàng chục triệu người dùng trên toàn thế giới.',
       },
     ],
+    faqs: [
+      {
+        question: 'AI có thể giúp cá nhân hóa việc học như thế nào?',
+        answer: 'AI phân tích dữ liệu về cách một học sinh học (tốc độ, các lỗi thường gặp, các chủ đề đã nắm vững) để tự động điều chỉnh nội dung và độ khó của bài học tiếp theo. Điều này đảm bảo mỗi học sinh đều học ở nhịp độ phù hợp nhất với khả năng của mình, không bị quá dễ gây nhàm chán hay quá khó gây nản chí.'
+      },
+      {
+        question: 'Hệ thống chấm bài tự động bằng AI hoạt động ra sao?',
+        answer: 'Đối với câu hỏi trắc nghiệm, việc chấm điểm rất đơn giản. Đối với bài tự luận, AI sử dụng Xử lý ngôn ngữ tự nhiên (NLP) để phân tích cấu trúc, ngữ pháp, sự mạch lạc và cả ý nghĩa của bài viết dựa trên một rubric (bộ tiêu chí) được cung cấp. Nó có thể đưa ra phản hồi chi tiết và nhất quán.'
+      },
+      {
+        question: 'Chatbot trong giáo dục có thể làm được những gì?',
+        answer: 'Chatbot có thể đóng vai trò là một trợ giảng 24/7, trả lời các câu hỏi thường gặp về khóa học, giải thích các khái niệm cơ bản, đưa ra các câu đố vui để ôn tập, hoặc thậm chí đóng vai một nhân vật lịch sử để học sinh phỏng vấn. Điều này giúp giải phóng thời gian cho giáo viên để tập trung vào các vấn đề phức tạp hơn.'
+      },
+      {
+        question: 'Sử dụng AI trong giáo dục có những rủi ro đạo đức nào?',
+        answer: 'Các rủi ro chính bao gồm: 1. Thiên vị (bias) trong thuật toán, có thể đối xử không công bằng với một nhóm học sinh nào đó. 2. Quyền riêng tư dữ liệu của học sinh. 3. Sự phụ thuộc quá mức vào công nghệ, làm giảm tương tác giữa người với người. 4. Nguy cơ gian lận học thuật nếu không được quản lý đúng cách.'
+      },
+      {
+        question: 'AI có thể giúp học sinh có nhu cầu đặc biệt như thế nào?',
+        answer: 'AI mang lại lợi ích to lớn cho học sinh có nhu cầu đặc biệt. Ví dụ, công nghệ chuyển văn bản thành giọng nói (text-to-speech) giúp học sinh khiếm thị; công nghệ nhận dạng giọng nói giúp học sinh khó khăn vận động; các ứng dụng học tập thích ứng có thể điều chỉnh để phù hợp với học sinh mắc chứng khó đọc hoặc rối loạn tăng động giảm chú ý (ADHD).'
+      },
+      {
+        question: 'Làm thế nào để giáo viên có thể bắt đầu sử dụng AI trong lớp học?',
+        answer: 'Hãy bắt đầu từ những công cụ đơn giản. Sử dụng các nền tảng như Quizlet (với tính năng học thông minh), Grammarly để kiểm tra bài viết, hoặc thậm chí là ChatGPT để tạo ra các ý tưởng bài học, các ví dụ minh họa, hoặc các câu hỏi thảo luận. Điều quan trọng là hãy thử nghiệm và xem công cụ nào phù hợp với phong cách giảng dạy của bạn.'
+      },
+      {
+        question: 'AI có thể dự đoán hiệu suất học tập của học sinh không?',
+        answer: 'Có, đây là một ứng dụng quan trọng của phân tích dữ liệu học tập. Bằng cách phân tích các yếu tố như lịch sử điểm số, mức độ chuyên cần, và sự tương tác trên LMS, AI có thể xác định sớm những học sinh có nguy cơ học kém hoặc bỏ học, từ đó cho phép nhà trường can thiệp và hỗ trợ kịp thời.'
+      },
+      {
+        question: 'Generative AI (AI tạo sinh) như DALL-E hay Midjourney có thể được dùng trong giáo dục không?',
+        answer: 'Chắc chắn có. Trong môn nghệ thuật, học sinh có thể dùng nó để tạo ra các tác phẩm minh họa. Trong môn văn, học sinh có thể tạo hình ảnh cho các nhân vật trong truyện. Trong môn lịch sử, có thể dùng AI để tái hiện lại các bối cảnh lịch sử. Nó là một công cụ tuyệt vời để thúc đẩy sự sáng tạo.'
+      },
+      {
+        question: 'Làm thế nào để đánh giá một công cụ giáo dục AI có tốt hay không?',
+        answer: 'Hãy xem xét các yếu tố: nó có dựa trên các nguyên tắc khoa học giáo dục không? Nó có dễ sử dụng cho cả giáo viên và học sinh không? Nó có cung cấp dữ liệu và phân tích hữu ích không? Và quan trọng nhất, nó có thực sự cải thiện được kết quả học tập và tăng cường sự hứng thú của học sinh không?'
+      },
+      {
+        question: 'Tương lai của AI trong giáo dục sẽ như thế nào?',
+        answer: 'Trong tương lai, AI có thể tạo ra những người bạn đồng hành học tập siêu cá nhân hóa, hiểu rõ điểm mạnh, điểm yếu và cả cảm xúc của từng học sinh. Các lớp học ảo với giáo viên AI có thể dạy bất kỳ chủ đề nào. Việc đánh giá sẽ diễn ra liên tục và tức thì, thay vì chỉ qua các kỳ thi định kỳ.'
+      }
+    ]
   },
 
   {
@@ -456,6 +522,30 @@ export const educationTechnologyLessons: BaseLessonData[] = [
         answer:
           'Bạn có thể bắt đầu với các nền tảng "no-code" hoặc "low-code" được thiết kế cho giáo dục như CoSpaces Edu hoặc Nearpod. Chúng cung cấp giao diện kéo-thả, thư viện tài nguyên 3D có sẵn và các công cụ lập trình trực quan (dạng khối lệnh), cho phép giáo viên và học sinh tự tạo ra các trải nghiệm tương tác mà không cần kiến thức lập trình chuyên sâu.',
       },
+      {
+        question: 'Mixed Reality (MR) là gì?',
+        answer: 'Mixed Reality (Thực tế hỗn hợp) là một bước tiến của AR. Nó không chỉ hiển thị các vật thể ảo trong thế giới thực, mà còn cho phép các vật thể ảo đó tương tác với môi trường thực. Ví dụ, một quả bóng ảo có thể nảy trên một chiếc bàn thật. Các thiết bị như Microsoft HoloLens là ví dụ điển hình của MR.'
+      },
+      {
+        question: 'Những thách thức khi triển khai VR/AR trong giáo dục là gì?',
+        answer: 'Các thách thức chính bao gồm: chi phí phần cứng ban đầu, thiếu nội dung giáo dục chất lượng cao, yêu cầu đào tạo cho giáo viên, các vấn đề kỹ thuật (pin, kết nối), và các lo ngại về sức khỏe (say chuyển động, mỏi mắt) nếu sử dụng trong thời gian dài.'
+      },
+      {
+        question: 'Làm thế nào VR/AR có thể giúp phát triển kỹ năng mềm (soft skills)?',
+        answer: 'VR có thể tạo ra các kịch bản mô phỏng thực tế để rèn luyện kỹ năng mềm. Ví dụ, sinh viên có thể thực hành một bài thuyết trình trước đám đông ảo, một nhân viên bán hàng có thể xử lý một khách hàng khó tính ảo, hoặc một nhà quản lý có thể thực hành đưa ra phản hồi cho nhân viên ảo. Môi trường an toàn này cho phép người học thực hành và nhận phản hồi mà không sợ hậu quả.'
+      },
+      {
+        question: 'Một "chuyến đi thực tế ảo" (virtual field trip) hoạt động như thế nào?',
+        answer: 'Sử dụng video 360 độ hoặc môi trường 3D được tái tạo, giáo viên có thể "dẫn" học sinh đến những nơi khó có thể đến được trong thực tế, như đỉnh Everest, bên trong một kim tự tháp Ai Cập, hoặc bề mặt sao Hỏa. Học sinh có thể nhìn xung quanh và tương tác với môi trường ảo, mang lại trải nghiệm học tập sống động hơn nhiều so với chỉ xem hình ảnh.'
+      },
+      {
+        question: 'AR có thể được sử dụng trong sách giáo khoa như thế nào?',
+        answer: 'Sách giáo khoa có thể được in với các "dấu hiệu" (markers) đặc biệt. Khi học sinh dùng điện thoại hoặc máy tính bảng quét qua các dấu hiệu này, các mô hình 3D, video, hoặc hoạt ảnh liên quan đến bài học sẽ hiện lên trên trang sách. Ví dụ, một mô hình 3D của trái tim đang đập có thể hiện ra từ trang sách sinh học.'
+      },
+      {
+        question: 'Các công cụ phát triển VR/AR chuyên nghiệp là gì?',
+        answer: 'Đối với các nhà phát triển chuyên nghiệp, hai game engine phổ biến nhất để tạo ra các ứng dụng VR/AR là Unity (sử dụng ngôn ngữ C#) và Unreal Engine (sử dụng C++ và hệ thống lập trình trực quan Blueprints). Cả hai đều hỗ trợ hầu hết các thiết bị VR/AR trên thị trường.'
+      }
     ],
   },
 
@@ -621,6 +711,30 @@ export const educationTechnologyLessons: BaseLessonData[] = [
         answer:
           'Bạn có thể bắt đầu bằng việc sử dụng các công cụ phân tích có sẵn trong các hệ thống LMS như Canvas, Moodle. Chúng thường cung cấp các dashboard trực quan về tỷ lệ hoàn thành khóa học, điểm số trung bình, mức độ tương tác... Hãy bắt đầu bằng việc đặt câu hỏi về lớp học của bạn và tìm kiếm câu trả lời trong các dữ liệu đó.',
       },
+      {
+        question: 'Dữ liệu nào có thể được thu thập cho Learning Analytics?',
+        answer: 'Rất nhiều loại dữ liệu có thể được thu thập, bao gồm: dữ liệu nhân khẩu học (tuổi, giới tính), dữ liệu tương tác trên LMS (số lần nhấp chuột, thời gian trên trang, video đã xem), kết quả học tập (điểm số, tỷ lệ hoàn thành), và cả dữ liệu từ các nguồn bên ngoài (thư viện, hoạt động ngoại khóa).'
+      },
+      {
+        question: 'Làm thế nào để trực quan hóa dữ liệu giáo dục một cách hiệu quả?',
+        answer: 'Hãy chọn loại biểu đồ phù hợp với thông điệp bạn muốn truyền tải. Ví dụ, sử dụng biểu đồ đường để thể hiện sự tiến bộ theo thời gian, biểu đồ cột để so sánh kết quả giữa các nhóm, và biểu đồ phân tán để tìm mối tương quan giữa hai biến số (ví dụ: thời gian học và điểm số).'
+      },
+      {
+        question: 'Một "dashboard" trong Learning Analytics là gì?',
+        answer: 'Dashboard là một giao diện trực quan, thường là một trang duy nhất, tổng hợp các chỉ số và biểu đồ quan trọng nhất về tình hình học tập. Nó giúp các nhà quản lý, giáo viên, và cả học sinh có một cái nhìn tổng quan, nhanh chóng về hiệu suất và các xu hướng chính.'
+      },
+      {
+        question: 'Phân tích dữ liệu có thể giúp cải thiện thiết kế khóa học không?',
+        answer: 'Chắc chắn có. Bằng cách phân tích xem học sinh thường gặp khó khăn ở bài học nào, video nào bị bỏ qua nhiều nhất, hoặc câu hỏi nào có tỷ lệ trả lời sai cao, các nhà thiết kế khóa học có thể xác định và cải thiện những phần nội dung chưa hiệu quả.'
+      },
+      {
+        question: 'Vai trò của AI trong Learning Analytics là gì?',
+        answer: 'AI có thể tự động phát hiện các mẫu phức tạp trong dữ liệu mà con người khó có thể nhìn thấy. Nó là nền tảng cho các mô hình dự đoán (ví dụ: dự đoán học sinh có nguy cơ bỏ học) và các hệ thống đề xuất (ví dụ: gợi ý tài liệu học tập tiếp theo phù hợp nhất cho một học sinh cụ thể).'
+      },
+      {
+        question: 'Làm thế nào để đảm bảo chất lượng của dữ liệu được sử dụng để phân tích?',
+        answer: 'Đây là một bước cực kỳ quan trọng. Cần có quy trình làm sạch dữ liệu (data cleaning) để xử lý các giá trị bị thiếu, các lỗi nhập liệu, và các dữ liệu không nhất quán. "Rác vào, rác ra" (Garbage in, garbage out) - nếu dữ liệu đầu vào không chính xác, kết quả phân tích sẽ vô nghĩa.'
+      }
     ],
   },
 
@@ -791,6 +905,30 @@ export const educationTechnologyLessons: BaseLessonData[] = [
         answer:
           'Chu kỳ bán hàng dài và phức tạp. Bạn thường phải thuyết phục nhiều bên liên quan: giáo viên (người dùng cuối), tổ trưởng chuyên môn, ban giám hiệu (người ra quyết định), và phòng tài chính (người chi tiền). Ngoài ra, ngân sách của các trường học thường có hạn và được quyết định theo năm học. Việc tích hợp với các hệ thống hiện có của trường cũng là một rào cản kỹ thuật lớn.',
       },
+      {
+        question: '"Product-Market Fit" trong EdTech nghĩa là gì?',
+        answer: 'Product-Market Fit (Sự phù hợp giữa sản phẩm và thị trường) là điểm mà bạn đã xây dựng được một sản phẩm mà một thị trường đủ lớn thực sự cần và sẵn sàng trả tiền để sử dụng. Dấu hiệu của Product-Market Fit là khi bạn có được sự tăng trưởng người dùng tự nhiên, khách hàng hài lòng và giới thiệu sản phẩm cho người khác.'
+      },
+      {
+        question: 'Tại sao "Design Thinking" lại quan trọng trong việc phát triển sản phẩm EdTech?',
+        answer: 'Design Thinking là một quy trình lấy người dùng làm trung tâm, bắt đầu bằng việc đồng cảm sâu sắc với các vấn đề của họ. Trong giáo dục, điều này cực kỳ quan trọng vì bạn cần thiết kế một giải pháp không chỉ hiệu quả về mặt sư phạm mà còn phải dễ sử dụng và hấp dẫn đối với cả giáo viên và học sinh, những người có nhu cầu và khả năng công nghệ rất khác nhau.'
+      },
+      {
+        question: 'Các xu hướng lớn trong ngành EdTech hiện nay là gì?',
+        answer: 'Một số xu hướng chính bao gồm: 1. Cá nhân hóa học tập bằng AI (AI-powered personalized learning). 2. Học tập nhập vai qua VR/AR (Immersive learning). 3. Học tập dựa trên kỹ năng và chứng chỉ vi mô (Micro-credentials). 4. Game hóa (Gamification). 5. Học tập kết hợp (Blended learning) giữa online và offline.'
+      },
+      {
+        question: 'Làm thế nào để gọi vốn cho một startup EdTech?',
+        answer: 'Bạn cần chuẩn bị một "pitch deck" (bản trình bày) thuyết phục, trong đó nêu rõ vấn đề bạn giải quyết, giải pháp của bạn, quy mô thị trường, mô hình kinh doanh, đội ngũ sáng lập, và kế hoạch sử dụng vốn. Hãy bắt đầu bằng việc tìm kiếm các quỹ đầu tư mạo hiểm hoặc các nhà đầu tư thiên thần chuyên về lĩnh vực EdTech.'
+      },
+      {
+        question: 'Sự khác biệt giữa B2C và B2B trong EdTech là gì?',
+        answer: 'B2C (Business-to-Consumer) là mô hình bán sản phẩm trực tiếp cho người dùng cuối, như học sinh hoặc phụ huynh (ví dụ: Duolingo). B2B (Business-to-Business) là mô hình bán sản phẩm cho các tổ chức, như trường học hoặc công ty (ví dụ: Canvas). Mô hình B2B thường có giá trị hợp đồng lớn hơn nhưng chu kỳ bán hàng cũng dài hơn.'
+      },
+      {
+        question: 'Làm thế nào để đo lường "tác động giáo dục" (educational impact) của một sản phẩm EdTech?',
+        answer: 'Đây là một thách thức. Ngoài các chỉ số kinh doanh (doanh thu, người dùng), bạn cần đo lường các chỉ số học thuật. Điều này có thể được thực hiện thông qua các bài kiểm tra trước và sau khi sử dụng sản phẩm, các nghiên cứu đối chứng (so sánh một nhóm dùng sản phẩm và một nhóm không), hoặc thu thập phản hồi định tính từ giáo viên và học sinh về sự tiến bộ của họ.'
+      }
     ],
   },
 ];

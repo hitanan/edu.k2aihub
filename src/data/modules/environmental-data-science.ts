@@ -97,6 +97,30 @@ export const environmentalDataScienceLessons: EnvironmentalDataScienceLesson[] =
         answer:
           'Các thư viện Python phổ biến cho phân tích dữ liệu khí hậu bao gồm: xarray (để làm việc với dữ liệu đa chiều như NetCDF), pandas/GeoPandas (cho dữ liệu chuỗi thời gian và không gian), Matplotlib/Seaborn (để trực quan hóa), và scikit-learn (cho các mô hình học máy và dự báo).',
       },
+      {
+          "question": "Sự khác biệt giữa 'thời tiết' và 'khí hậu' là gì?",
+          "answer": "'Thời tiết' là trạng thái của khí quyển tại một thời điểm và địa điểm cụ thể (ví dụ: hôm nay trời mưa). 'Khí hậu' là mô hình thời tiết trung bình trong một khoảng thời gian dài (thường là 30 năm) của một khu vực (ví dụ: Sài Gòn có khí hậu nhiệt đới gió mùa)."
+      },
+      {
+          "question": "El Niño và La Niña ảnh hưởng đến khí hậu Việt Nam như thế nào?",
+          "answer": "El Niño thường gây ra tình trạng khô hạn, ít mưa và nhiệt độ cao hơn ở Việt Nam, đặc biệt là ở các vùng phía Nam và Tây Nguyên. Ngược lại, La Niña thường mang lại lượng mưa nhiều hơn mức trung bình và có thể gây ra lũ lụt, đặc biệt là ở miền Trung."
+      },
+      {
+          "question": "Tại sao Đồng bằng sông Cửu Long lại đặc biệt dễ bị tổn thương bởi biến đổi khí hậu?",
+          "answer": "Đây là một vùng đồng bằng thấp, rộng lớn nên rất nhạy cảm với việc nước biển dâng. Ngoài ra, sự thay đổi của các dòng chảy trên sông Mê Kông (do các đập thủy điện ở thượng nguồn) và việc khai thác nước ngầm quá mức cũng làm gia tăng tình trạng sụt lún đất và xâm nhập mặn, khiến vấn đề càng thêm trầm trọng."
+      },
+      {
+          "question": "Dữ liệu proxy trong nghiên cứu khí hậu là gì?",
+          "answer": "Dữ liệu proxy là các nguồn thông tin gián tiếp giúp các nhà khoa học tái tạo lại khí hậu trong quá khứ, trước khi có các thiết bị đo lường hiện đại. Ví dụ bao gồm: lõi băng ở các cực, vòng cây cổ thụ, trầm tích dưới đáy hồ, và san hô."
+      },
+      {
+          "question": "Làm thế nào để phân biệt giữa biến đổi khí hậu tự nhiên và do con người gây ra?",
+          "answer": "Các nhà khoa học sử dụng các mô hình khí hậu phức tạp để mô phỏng sự thay đổi nhiệt độ toàn cầu. Họ chạy các kịch bản chỉ bao gồm các yếu tố tự nhiên (như hoạt động của mặt trời, núi lửa) và các kịch bản bao gồm cả yếu tố con người (phát thải khí nhà kính). Kết quả cho thấy chỉ khi có yếu tố con người, mô hình mới khớp với sự nóng lên quan sát được trong thực tế."
+      },
+      {
+          "question": "Mô hình hóa dữ liệu khí hậu có những hạn chế nào?",
+          "answer": "Các mô hình khí hậu là những hệ thống cực kỳ phức tạp và vẫn còn những điều không chắc chắn, đặc biệt là trong việc dự báo các sự kiện thời tiết cực đoan ở quy mô địa phương. Chúng phụ thuộc rất nhiều vào chất lượng dữ liệu đầu vào và các giả định được sử dụng trong mô hình. Tuy nhiên, chúng vẫn là công cụ tốt nhất hiện có để hiểu về các xu hướng khí hậu trong tương lai."
+      }
     ],
   },
   {

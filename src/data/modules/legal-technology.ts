@@ -190,6 +190,30 @@ export const legalTechLessons: LegalTechLesson[] = [
         answer:
           'Trong bối cảnh môi trường pháp lý ngày càng phức tạp và hội nhập kinh tế quốc tế, Legal Tech giúp các doanh nghiệp Việt Nam quản lý rủi ro pháp lý tốt hơn, đảm bảo tuân thủ, tối ưu hóa chi phí và nâng cao năng lực cạnh tranh.',
       },
+      {
+        question: 'Contract Lifecycle Management (CLM) là gì?',
+        answer: 'Quản lý Vòng đời Hợp đồng (CLM) là quá trình quản lý toàn diện một hợp đồng từ khi khởi tạo, đàm phán, ký kết, thực hiện, cho đến khi gia hạn hoặc chấm dứt. Các hệ thống CLM giúp tự động hóa và chuẩn hóa quy trình này.'
+      },
+      {
+        question: 'Chữ ký điện tử có giá trị pháp lý tại Việt Nam không?',
+        answer: 'Có. Theo Luật Giao dịch điện tử 2023 và các văn bản hướng dẫn, chữ ký số được chứng thực bởi các tổ chức cung cấp dịch vụ chứng thực chữ ký số công cộng có giá trị pháp lý tương đương chữ ký tay và con dấu của doanh nghiệp trong các giao dịch điện tử.'
+      },
+      {
+        question: 'Làm thế nào để bắt đầu tự động hóa tài liệu pháp lý?',
+        answer: 'Bắt đầu bằng việc xác định các loại tài liệu lặp đi lặp lại và có tính chuẩn hóa cao nhất, ví dụ như hợp đồng lao động, thỏa thuận bảo mật thông tin (NDA), hoặc biên bản họp. Sau đó, lựa chọn một công cụ tự động hóa phù hợp và tạo ra các mẫu (templates) chuẩn.'
+      },
+      {
+        question: 'AI có thể giúp gì trong việc rà soát hợp đồng?',
+        answer: 'AI có thể tự động trích xuất các điều khoản quan trọng (ví dụ: ngày hết hạn, điều khoản bồi thường), xác định các điều khoản rủi ro hoặc không theo tiêu chuẩn, và so sánh hợp đồng với các mẫu chuẩn của công ty, giúp quá trình rà soát nhanh hơn và chính xác hơn.'
+      },
+      {
+        question: 'Việc kiểm soát phiên bản (version control) trong quản lý tài liệu pháp lý quan trọng như thế nào?',
+        answer: 'Rất quan trọng. Nó đảm bảo rằng tất cả các bên liên quan luôn làm việc trên phiên bản mới nhất của tài liệu, tránh nhầm lẫn và sai sót. Nó cũng cung cấp một lịch sử rõ ràng về các thay đổi đã được thực hiện, bởi ai và khi nào, điều này rất cần thiết cho mục đích kiểm toán và giải quyết tranh chấp.'
+      },
+      {
+        question: 'Một "kho tài liệu pháp lý" (document repository) tốt cần có những tính năng gì?',
+        answer: 'Một kho tài liệu tốt cần có khả năng tìm kiếm mạnh mẽ, phân quyền truy cập chi tiết (ai được xem, sửa, xóa), kiểm soát phiên bản, tích hợp với các công cụ khác (như email, chữ ký điện tử), và có các biện pháp bảo mật mạnh mẽ để bảo vệ thông tin nhạy cảm.'
+      }
     ],
   },
   {
@@ -286,6 +310,40 @@ export const legalTechLessons: LegalTechLesson[] = [
           'Chất lượng và số lượng của dữ liệu đầu vào là yếu tố quyết định đến hiệu quả của một mô hình AI. Việc thiếu các bộ dữ liệu pháp lý lớn, được chuẩn hóa bằng tiếng Việt là một rào cản lớn hiện nay.',
       },
     ],
+    faqs: [
+        {
+          question: 'Natural Language Processing (NLP) là gì và nó giúp ích gì cho nghiên cứu pháp lý?',
+          answer: 'Xử lý Ngôn ngữ Tự nhiên (NLP) là một nhánh của AI giúp máy tính hiểu, diễn giải và tạo ra ngôn ngữ của con người. Trong nghiên cứu pháp lý, NLP giúp tự động tóm tắt văn bản, trích xuất các thực thể pháp lý (tên, ngày, địa điểm), phân loại tài liệu và tìm kiếm các văn bản có nội dung tương tự một cách thông minh.'
+        },
+        {
+          question: 'Phân tích dự đoán (predictive analytics) trong ngành luật hoạt động như thế nào?',
+          answer: 'Phân tích dự đoán sử dụng các thuật toán học máy để phân tích dữ liệu từ các vụ việc trong quá khứ (ví dụ: các phán quyết của một thẩm phán cụ thể, kết quả của các loại tranh chấp tương tự) để dự báo các kết quả có thể xảy ra trong tương lai, chẳng hạn như khả năng thắng kiện hoặc mức bồi thường tiềm năng.'
+        },
+        {
+          question: 'Sử dụng AI trong nghiên cứu pháp lý có những rủi ro đạo đức nào?',
+          answer: 'Các rủi ro bao gồm sự thiên vị (bias) trong dữ liệu huấn luyện có thể dẫn đến kết quả không công bằng, sự thiếu minh bạch trong cách AI đưa ra kết luận ("hộp đen"), và nguy cơ quá phụ thuộc vào công nghệ mà bỏ qua sự phán đoán chuyên môn của luật sư. Việc bảo mật thông tin khách hàng cũng là một vấn đề lớn.'
+        },
+        {
+          question: 'Làm thế nào để luật sư có thể xác minh tính chính xác của kết quả do AI cung cấp?',
+          answer: 'Luật sư không bao giờ nên chấp nhận kết quả của AI một cách mù quáng. Họ phải luôn sử dụng nó như một điểm khởi đầu, một công cụ hỗ trợ. Việc kiểm tra chéo với các nguồn chính thống, đọc bản gốc của các án lệ hoặc văn bản pháp luật mà AI trích dẫn là bước bắt buộc để đảm bảo tính chính xác.'
+        },
+        {
+          question: '"Án lệ" ở Việt Nam có vai trò như thế nào và AI giúp gì trong việc phân tích án lệ?',
+          answer: 'Ở Việt Nam, án lệ được Hội đồng Thẩm phán Tòa án nhân dân tối cao lựa chọn và công bố, có giá trị hướng dẫn áp dụng thống nhất pháp luật. AI có thể giúp luật sư nhanh chóng tìm kiếm các án lệ có tình tiết tương tự vụ việc của họ, phân tích lập luận của tòa án và đánh giá khả năng áp dụng của một án lệ cụ thể.'
+        },
+        {
+          question: 'Các cơ sở dữ liệu pháp luật trực tuyến như "Thư Viện Pháp Luật" hay "Luật Việt Nam" có phải là AI không?',
+          answer: 'Bản thân chúng là các cơ sở dữ liệu được số hóa, không phải AI. Tuy nhiên, các nền tảng này ngày càng tích hợp các tính năng thông minh hơn, chẳng hạn như công cụ tìm kiếm nâng cao sử dụng từ khóa và ngữ cảnh, liên kết các văn bản liên quan. Đây là những bước đầu tiên tiến tới việc ứng dụng AI một cách sâu rộng hơn.'
+        },
+        {
+          question: 'Làm thế nào để xây dựng một "cơ sở dữ liệu kiến thức pháp lý" (legal knowledge base)?',
+          answer: 'Bắt đầu bằng việc thu thập và số hóa tất cả các tài liệu pháp lý nội bộ của công ty (mẫu hợp đồng, bản tư vấn, ghi chú nghiên cứu). Sau đó, sử dụng các công cụ để gắn thẻ (tagging), phân loại và tạo liên kết giữa các tài liệu. Các hệ thống tiên tiến hơn có thể dùng AI để tự động hóa quá trình này.'
+        },
+        {
+          question: 'Sự khác biệt giữa tìm kiếm từ khóa truyền thống và tìm kiếm ngữ nghĩa (semantic search) của AI là gì?',
+          answer: 'Tìm kiếm từ khóa chỉ trả về các kết quả chứa chính xác từ bạn đã gõ. Tìm kiếm ngữ nghĩa hiểu được ý định và ngữ cảnh đằng sau câu hỏi của bạn, và có thể trả về các kết quả có liên quan về mặt khái niệm ngay cả khi chúng không chứa từ khóa chính xác. Ví dụ, tìm "trách nhiệm của giám đốc" có thể trả về các văn bản nói về "nghĩa vụ của người quản lý doanh nghiệp".'
+        }
+      ]
   },
   {
     id: 'legal-case-management-systems',
@@ -384,6 +442,40 @@ export const legalTechLessons: LegalTechLesson[] = [
           'Mỗi quốc gia có hệ thống pháp luật và các quy định về tài chính, kế toán riêng. Do đó, phần mềm quản lý cần được tùy chỉnh để phù hợp với các yêu cầu này, đảm bảo công ty luật hoạt động đúng pháp luật và hiệu quả.',
       },
     ],
+    faqs: [
+        {
+            question: 'Sự khác biệt giữa Quản lý Vụ việc (Case Management) và Quản lý Thực hành (Practice Management) là gì?',
+            answer: 'Quản lý Vụ việc tập trung vào các chi tiết của một vụ việc cụ thể (tài liệu, nhiệm vụ, thời hạn). Quản lý Thực hành có phạm vi rộng hơn, bao gồm quản lý vụ việc cộng với các khía cạnh kinh doanh của công ty luật như quản lý quan hệ khách hàng (CRM), thanh toán, kế toán, và báo cáo hiệu suất.'
+        },
+        {
+            question: 'Một "cổng thông tin khách hàng" (client portal) mang lại lợi ích gì?',
+            answer: 'Cổng thông tin khách hàng cung cấp một không gian trực tuyến an toàn để luật sư và khách hàng chia sẻ tài liệu, trao đổi thông tin và theo dõi tiến độ vụ việc. Nó tăng cường tính minh bạch, cải thiện giao tiếp và mang lại trải nghiệm chuyên nghiệp hơn cho khách hàng.'
+        },
+        {
+            question: 'Làm thế nào hệ thống quản lý có thể giúp theo dõi thời hạn (deadline)?',
+            answer: 'Các hệ thống này cho phép tạo ra các quy trình công việc (workflows) với các chuỗi nhiệm vụ và thời hạn được thiết lập sẵn. Khi một vụ việc mới được tạo, hệ thống có thể tự động điền vào lịch các thời hạn quan trọng (ví dụ: thời hạn nộp đơn, phiên tòa) và gửi nhắc nhở tự động cho luật sư phụ trách.'
+        },
+        {
+            question: 'Việc theo dõi thời gian (time tracking) có quan trọng đối với các công ty luật không tính phí theo giờ không?',
+            answer: 'Có, rất quan trọng. Ngay cả khi không tính phí theo giờ, việc theo dõi thời gian giúp công ty hiểu được mức độ lợi nhuận của từng loại vụ việc, đánh giá hiệu suất làm việc của nhân viên, và có dữ liệu để định giá các gói dịch vụ trọn gói một cách chính xác hơn.'
+        },
+        {
+            question: 'Làm thế nào để lựa chọn phần mềm quản lý thực hành phù hợp?',
+            answer: 'Hãy bắt đầu bằng việc xác định các nhu cầu và quy trình làm việc đặc thù của công ty bạn. Sau đó, nghiên cứu các nhà cung cấp, yêu cầu họ demo sản phẩm, và kiểm tra xem phần mềm có thể tùy chỉnh theo luật pháp Việt Nam không. Yếu tố bảo mật và hỗ trợ kỹ thuật cũng rất quan trọng.'
+        },
+        {
+            question: 'Lưu trữ dữ liệu trên đám mây (cloud-based) cho công ty luật có an toàn không?',
+            answer: 'Các nhà cung cấp phần mềm Legal Tech uy tín thường có các biện pháp bảo mật rất nghiêm ngặt, thường là tốt hơn so với những gì một công ty luật nhỏ có thể tự trang bị (ví dụ: mã hóa dữ liệu, sao lưu định kỳ, chứng chỉ bảo mật quốc tế). Tuy nhiên, cần đảm bảo nhà cung cấp tuân thủ các quy định về bảo vệ dữ liệu của Việt Nam.'
+        },
+        {
+            question: 'Hệ thống quản lý thực hành giúp gì trong việc quản lý quan hệ khách hàng (CRM)?',
+            answer: 'Nó giúp lưu trữ tập trung mọi thông tin và lịch sử tương tác với khách hàng, từ thông tin liên hệ, các vụ việc đã thực hiện, đến các email và cuộc gọi. Điều này giúp luật sư có cái nhìn 360 độ về khách hàng và cung cấp dịch vụ tốt hơn.'
+        },
+        {
+            question: 'Triển khai một hệ thống quản lý mới có khó không?',
+            answer: 'Có thể là một thách thức, đòi hỏi sự cam kết từ ban lãnh đạo và sự hợp tác của toàn bộ nhân viên. Quá trình này bao gồm việc di chuyển dữ liệu cũ, tùy chỉnh hệ thống, và đào tạo người dùng. Bắt đầu với một kế hoạch triển khai chi tiết là chìa khóa để thành công.'
+        }
+    ]
   },
   {
     id: 'regulatory-compliance-technology',
@@ -482,6 +574,40 @@ export const legalTechLessons: LegalTechLesson[] = [
           'Luật An ninh mạng và đặc biệt là Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân đã đặt ra các yêu cầu nghiêm ngặt về việc xử lý dữ liệu, buộc các doanh nghiệp phải tìm đến các giải pháp công nghệ để đảm bảo tuân thủ.',
       },
     ],
+    faqs: [
+        {
+            question: 'Sự khác biệt giữa Legal Tech và RegTech là gì?',
+            answer: 'Legal Tech có phạm vi rộng hơn, bao gồm mọi công nghệ ứng dụng trong ngành luật. RegTech là một nhánh của FinTech (Công nghệ Tài chính), tập trung đặc biệt vào việc dùng công nghệ để giải quyết các vấn đề về tuân thủ quy định, thường là trong lĩnh vực tài chính nhưng cũng mở rộng ra các ngành khác.'
+        },
+        {
+            question: 'Một "hệ thống giám sát tuân thủ tự động" hoạt động như thế nào?',
+            answer: 'Hệ thống này liên tục quét các nguồn dữ liệu (giao dịch, email, nhật ký hệ thống) để tìm kiếm các dấu hiệu của hành vi không tuân thủ dựa trên các quy tắc được định sẵn. Khi phát hiện một hoạt động đáng ngờ, nó sẽ tự động tạo cảnh báo cho bộ phận tuân thủ để điều tra.'
+        },
+        {
+            question: 'AML và KYC là gì?',
+            answer: 'AML (Anti-Money Laundering) là Phòng chống rửa tiền, bao gồm các quy định và quy trình để ngăn chặn các tổ chức tài chính bị lợi dụng cho hoạt động rửa tiền. KYC (Know Your Customer) là Định danh khách hàng, là một phần của AML, yêu cầu các tổ chức phải xác minh danh tính của khách hàng trước khi thực hiện giao dịch.'
+        },
+        {
+            question: 'Làm thế nào công nghệ có thể giúp quản lý các thay đổi quy định?',
+            answer: 'Các công cụ RegTech có thể tự động theo dõi các nguồn tin tức pháp lý, website của các cơ quan chính phủ và các cơ sở dữ liệu pháp luật. Khi có một luật hoặc quy định mới được ban hành hoặc sửa đổi, hệ thống sẽ thông báo cho doanh nghiệp và phân tích các tác động tiềm tàng.'
+        },
+        {
+            question: 'Ma trận rủi ro và tuân thủ (Risk and Compliance Matrix) là gì?',
+            answer: 'Đây là một công cụ để xác định các rủi ro pháp lý và tuân thủ mà một tổ chức phải đối mặt, đánh giá mức độ nghiêm trọng và khả năng xảy ra của chúng, và vạch ra các biện pháp kiểm soát hiện có để giảm thiểu những rủi ro đó. Công nghệ giúp tự động hóa việc xây dựng và cập nhật ma trận này.'
+        },
+        {
+            question: 'Tại sao RegTech lại quan trọng đối với các công ty Fintech?',
+            answer: 'Các công ty Fintech hoạt động trong một lĩnh vực được quản lý rất chặt chẽ. Việc không tuân thủ có thể dẫn đến các khoản phạt khổng lồ và thậm chí bị thu hồi giấy phép. RegTech giúp họ vừa đổi mới nhanh chóng, vừa đảm bảo tuân thủ các quy định phức tạp, giảm chi phí và rủi ro.'
+        },
+        {
+            question: 'Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân yêu cầu doanh nghiệp làm gì?',
+            answer: 'Nghị định này yêu cầu doanh nghiệp phải có sự đồng ý rõ ràng của khách hàng trước khi thu thập, xử lý và chuyển giao dữ liệu cá nhân. Doanh nghiệp cũng phải thông báo cho khách hàng về mục đích xử lý, thực hiện các biện pháp bảo vệ dữ liệu, và chỉ định bộ phận/nhân sự phụ trách.'
+        },
+        {
+            question: 'Làm thế nào để triển khai một chương trình đào tạo tuân thủ hiệu quả bằng công nghệ?',
+            answer: 'Sử dụng một hệ thống quản lý học tập (LMS) để cung cấp các khóa học trực tuyến về tuân thủ cho nhân viên. Hệ thống có thể theo dõi tiến độ học tập, tổ chức các bài kiểm tra để đánh giá kiến thức, và tự động gửi các khóa học cập nhật khi có quy định mới.'
+        }
+    ]
   },
   {
     id: 'intellectual-property-management',
@@ -589,5 +715,39 @@ export const legalTechLessons: LegalTechLesson[] = [
           'Đối với các startup, tài sản trí tuệ (như mã nguồn, thuật toán, thương hiệu) thường là tài sản giá trị nhất. Việc bảo hộ IP giúp họ ngăn chặn các đối thủ lớn hơn sao chép và đảm bảo lợi thế cạnh tranh trên thị trường.',
       },
     ],
+    faqs: [
+        {
+            question: 'Các loại tài sản trí tuệ (IP) chính là gì?',
+            answer: 'Các loại chính bao gồm: Bằng sáng chế (cho phát minh), Nhãn hiệu (cho tên và logo), Bản quyền (cho các tác phẩm văn học, nghệ thuật), và Bí mật kinh doanh (cho thông tin kinh doanh bí mật). Mỗi loại có cơ chế bảo hộ và thời hạn khác nhau.'
+        },
+        {
+            question: 'Phân tích bối cảnh bằng sáng chế (patent landscaping) là gì?',
+            answer: 'Đây là quá trình sử dụng các công cụ phân tích để trực quan hóa dữ liệu bằng sáng chế trong một lĩnh vực công nghệ cụ thể. Nó giúp doanh nghiệp xác định các xu hướng công nghệ, theo dõi hoạt động của đối thủ cạnh tranh, tìm kiếm đối tác tiềm năng và tránh vi phạm bằng sáng chế của người khác.'
+        },
+        {
+            question: 'Làm thế nào công nghệ có thể giúp giám sát và thực thi nhãn hiệu?',
+            answer: 'Các công cụ công nghệ có thể tự động quét internet, các trang thương mại điện tử và mạng xã hội để tìm kiếm các trường hợp sử dụng trái phép logo hoặc tên thương hiệu của bạn. Khi phát hiện vi phạm, hệ thống có thể tự động gửi thư yêu cầu gỡ bỏ.'
+        },
+        {
+            question: 'Thương mại hóa IP (IP commercialization) là gì?',
+            answer: 'Là quá trình biến tài sản trí tuệ thành doanh thu. Các hình thức phổ biến bao gồm: tự sản xuất và bán sản phẩm được bảo hộ, cấp phép (licensing) cho công ty khác sử dụng IP để đổi lấy phí bản quyền, hoặc bán đứt tài sản trí tuệ.'
+        },
+        {
+            question: 'Hiệp định TRIPS của WTO có ý nghĩa gì đối với IP tại Việt Nam?',
+            answer: 'Hiệp định về các khía cạnh liên quan đến thương mại của quyền sở hữu trí tuệ (TRIPS) đặt ra các tiêu chuẩn tối thiểu về bảo hộ IP mà các nước thành viên WTO, bao gồm Việt Nam, phải tuân thủ. Việc tham gia TRIPS buộc Việt Nam phải nâng cao hệ thống pháp luật IP của mình cho phù hợp với chuẩn mực quốc tế.'
+        },
+        {
+            question: 'Một "danh mục IP" (IP portfolio) là gì?',
+            answer: 'Là tập hợp tất cả các tài sản trí tuệ mà một cá nhân hoặc tổ chức sở hữu, bao gồm bằng sáng chế, nhãn hiệu, bản quyền, v.v. Quản lý danh mục IP là việc đưa ra các quyết định chiến lược về việc duy trì, từ bỏ, cấp phép hoặc thực thi các tài sản này để tối đa hóa giá trị.'
+        },
+        {
+            question: 'Tại sao cần phải "định giá" tài sản trí tuệ?',
+            answer: 'Việc định giá IP rất quan trọng trong các giao dịch mua bán, sáp nhập doanh nghiệp (M&A), kêu gọi vốn đầu tư, hoặc khi cấp phép. Nó giúp xác định giá trị tài chính của các tài sản vô hình này, làm cơ sở cho việc đàm phán.'
+        },
+        {
+            question: 'Làm thế nào để bảo vệ một ý tưởng kinh doanh?',
+            answer: 'Bản thân một ý tưởng không thể được bảo hộ. Bạn phải biến nó thành một dạng cụ thể. Ví dụ, nếu ý tưởng là một quy trình kỹ thuật mới, bạn có thể xin cấp bằng sáng chế. Nếu là một ứng dụng phần mềm, bạn có thể đăng ký bản quyền cho mã nguồn. Nếu là một thương hiệu cho sản phẩm, bạn có thể đăng ký nhãn hiệu.'
+        }
+    ]
   },
 ];

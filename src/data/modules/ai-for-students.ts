@@ -155,6 +155,34 @@ export const AIForStudentsLessons: BaseLessonData[] = [
         answer:
           'AI là một công cụ mạnh mẽ, và như mọi công cụ, nó có thể được sử dụng cho mục đích tốt hoặc xấu. AI sẽ thay đổi thị trường lao động, một số công việc sẽ biến mất nhưng nhiều công việc mới sẽ ra đời, đòi hỏi kỹ năng làm việc cùng AI. Việc học về AI chính là cách tốt nhất để chuẩn bị cho sự thay đổi này.',
       },
+      {
+        question: 'Sự khác biệt giữa AI, Machine Learning và Deep Learning là gì?',
+        answer: 'Hãy tưởng tượng chúng như những con búp bê Nga. AI (Trí tuệ nhân tạo) là con búp bê lớn nhất, là khái niệm bao trùm về việc máy móc bắt chước trí thông minh của con người. Machine Learning (Học máy) là một tập hợp con của AI, là phương pháp để AI học hỏi từ dữ liệu mà không cần lập trình tường minh. Deep Learning (Học sâu) là một tập hợp con của Machine Learning, sử dụng các mạng nơ-ron phức tạp để giải quyết các vấn đề khó hơn nữa.'
+      },
+      {
+        question: 'Ai là "cha đẻ" của Trí tuệ nhân tạo?',
+        answer: 'Thuật ngữ "Artificial Intelligence" được John McCarthy đặt ra lần đầu tiên tại Hội thảo Dartmouth năm 1956. Tuy nhiên, nhiều người coi Alan Turing là một trong những người đặt nền móng lý thuyết quan trọng nhất cho AI với "Phép thử Turing" của ông.'
+      },
+      {
+        question: 'Tại sao bây giờ chúng ta lại nghe nói nhiều về AI đến vậy?',
+        answer: 'Sự bùng nổ của AI gần đây là nhờ vào ba yếu tố chính: (1) Dữ liệu lớn (Big Data) - chúng ta có một lượng dữ liệu khổng lồ để huấn luyện AI; (2) Sức mạnh tính toán - các bộ xử lý máy tính (như GPU) đã trở nên cực kỳ mạnh mẽ; và (3) Các thuật toán tiên tiến - các nhà nghiên cứu đã phát triển các mô hình Deep Learning hiệu quả hơn.'
+      },
+      {
+        question: 'Một chiếc máy tính có được coi là AI không?',
+        answer: 'Không hẳn. Một chiếc máy tính thông thường chỉ thực hiện các lệnh mà con người lập trình sẵn. Một hệ thống AI có khả năng "học" từ dữ liệu và đưa ra quyết định hoặc dự đoán mà không cần được lập trình một cách tường minh cho mọi trường hợp.'
+      },
+      {
+        question: 'Trợ lý ảo như Siri hay Google Assistant có phải là AI không?',
+        answer: 'Chắc chắn rồi. Chúng là những ví dụ điển hình của AI hẹp. Chúng sử dụng công nghệ xử lý ngôn ngữ tự nhiên (một nhánh của AI) để hiểu câu hỏi của bạn và thực hiện các yêu cầu.'
+      },
+      {
+        question: 'Làm thế nào để một chiếc xe tự lái "nhìn" thấy đường?',
+        answer: 'Xe tự lái sử dụng một lĩnh vực của AI gọi là "Thị giác máy tính" (Computer Vision). Nó kết hợp dữ liệu từ nhiều cảm biến như camera, radar, và LiDAR để "nhìn" và hiểu môi trường xung quanh, nhận dạng người đi bộ, các phương tiện khác và biển báo giao thông.'
+      },
+      {
+        question: 'AI có sáng tạo được không?',
+        answer: 'Có, AI ngày nay có thể sáng tạo nghệ thuật, viết nhạc, làm thơ. Các mô hình AI tạo sinh (Generative AI) như DALL-E hay Midjourney có thể tạo ra những hình ảnh độc đáo từ mô tả văn bản. Tuy nhiên, sự sáng tạo của AI vẫn dựa trên các mẫu mà nó đã học được từ dữ liệu do con người tạo ra.'
+      }
     ],
   },
   {
@@ -251,192 +279,41 @@ export const AIForStudentsLessons: BaseLessonData[] = [
           'Điều này phụ thuộc vào CÁCH bạn sử dụng. Nếu bạn sao chép nguyên văn câu trả lời của AI và nộp bài, đó là gian lận. Nhưng nếu bạn dùng AI để giải thích một khái niệm khó, tìm kiếm thông tin, kiểm tra lại bài làm của mình, hoặc tạo một kế hoạch học tập, thì đó là cách học tập thông minh và hiệu quả.',
       },
       {
-        question: 'Thông tin từ AI có luôn luôn chính xác không?',
-        answer:
-          'Không. Các mô hình AI có thể "tự tin" đưa ra thông tin sai, hiện tượng này gọi là "ảo giác" (hallucination). Vì vậy, kỹ năng quan trọng nhất khi dùng AI là tư duy phản biện. Hãy luôn kiểm tra lại các thông tin quan trọng từ những nguồn đáng tin cậy khác.',
+        question: 'ChatGPT, Gemini (trước đây là Bard), và Microsoft Copilot khác nhau như thế nào?',
+        answer: 'Về cơ bản, chúng đều là các chatbot AI mạnh mẽ. ChatGPT (của OpenAI) rất phổ biến và mạnh về sáng tạo văn bản. Gemini (của Google) có lợi thế là được cập nhật thông tin từ Internet theo thời gian thực. Copilot (của Microsoft) được tích hợp sâu vào hệ điều hành Windows và các ứng dụng Office, rất tiện lợi cho công việc.'
       },
       {
-        question: 'Làm thế nào để đặt câu hỏi (prompt) cho AI để có câu trả lời tốt nhất?',
-        answer:
-          'Hãy cụ thể và cung cấp nhiều ngữ cảnh. Thay vì hỏi "Nước Pháp thế nào?", hãy hỏi "Hãy cho tôi biết 5 địa điểm du lịch nổi tiếng nhất ở Paris, Pháp dành cho một người yêu thích nghệ thuật và lịch sử". Cung cấp vai trò (ví dụ: "Hãy đóng vai một giáo viên lịch sử"), định dạng (ví dụ: "trình bày dưới dạng gạch đầu dòng"), và mục tiêu rõ ràng sẽ giúp AI cho ra kết quả tốt hơn nhiều.',
-      },
-    ],
-  },
-  {
-    id: 'ethical-use-of-ai',
-    title: 'Sử dụng AI có trách nhiệm và đạo đức',
-    description:
-      'Bài học quan trọng về những vấn đề đạo đức khi sử dụng AI, bao gồm thiên vị trong thuật toán, quyền riêng tư dữ liệu, và trách nhiệm của người dùng.',
-    duration: '75 phút',
-    difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=yNbGY3s3xqU',
-    imageUrl: 'https://i.ytimg.com/vi/yNbGY3s3xqU/hqdefault.jpg',
-    objectives: [
-      'Nhận biết được các vấn đề đạo đức tiềm ẩn trong các hệ thống AI.',
-      'Hiểu về tầm quan trọng của dữ liệu, quyền riêng tư và sự thiên vị (bias) trong AI.',
-      'Thảo luận về trách nhiệm của người dùng và người tạo ra AI trong việc đảm bảo sử dụng AI một cách công bằng và an toàn.',
-      'Phân biệt giữa việc sử dụng AI để hỗ trợ và việc lạm dụng AI (ví dụ: đạo văn).',
-    ],
-    prerequisites: ['Hoàn thành các bài học trước'],
-    relatedGames: [
-      {
-        id: 'ai-ethics-simulator',
-        name: 'Ethical AI Simulator',
-        description: 'Face complex ethical dilemmas and make decisions on how to develop and deploy AI responsibly.',
-      },
-    ],
-    exercises: [
-      {
-        title: 'Phân tích tình huống: AI trong tuyển dụng',
-        description:
-          'Cho một tình huống giả định về một công ty sử dụng AI để lọc hồ sơ ứng viên, hãy phân tích các vấn đề đạo đức có thể phát sinh.',
-        difficulty: 'Nâng cao',
-        procedure: [
-          'Đọc tình huống: "Một công ty công nghệ lớn sử dụng AI để quét hàng nghìn CV. AI được huấn luyện dựa trên dữ liệu các nhân viên thành công trước đây của công ty, phần lớn là nam giới tốt nghiệp từ các trường đại học hàng đầu."',
-          'Thảo luận nhóm về các câu hỏi: AI này có thể có những thiên vị nào? Điều gì sẽ xảy ra với các ứng viên nữ hoặc ứng viên từ các trường ít danh tiếng hơn? Ai là người chịu trách nhiệm nếu AI đưa ra quyết định không công bằng?',
-          'Đề xuất các giải pháp để giảm thiểu thiên bias trong hệ thống AI này.',
-        ],
-        expectedResults:
-          'Học sinh hiểu được khái niệm "thiên vị thuật toán" (algorithmic bias) và nhận thức được tầm quan trọng của việc xây dựng và sử dụng AI một cách công bằng.',
-      },
-    ],
-    realWorldApplications: [
-      'Hệ thống nhận dạng khuôn mặt và các lo ngại về quyền riêng tư.',
-      'AI trong tuyển dụng và nguy cơ phân biệt đối xử.',
-      'Thuật toán gợi ý nội dung trên mạng xã hội và vấn đề "bong bóng bộ lọc".',
-      'Deepfake và các vấn đề về thông tin sai lệch.',
-    ],
-    vietnamContext: {
-      title: 'Luật pháp và Đạo đức AI tại Việt Nam',
-      content: [
-        'Việt Nam đang trong quá trình xây dựng hành lang pháp lý cho việc phát triển và ứng dụng AI, bao gồm các quy định về bảo vệ dữ liệu cá nhân theo Nghị định 13/2023/NĐ-CP.',
-        'Các tổ chức và doanh nghiệp Việt Nam ngày càng quan tâm đến việc xây dựng các bộ quy tắc đạo đức cho AI để đảm bảo sự phát triển bền vững và có trách nhiệm.',
-        'Vấn đề bản quyền và sở hữu trí tuệ đối với các sản phẩm do AI tạo ra là một chủ đề đang được thảo luận sôi nổi trong cộng đồng sáng tạo và pháp lý tại Việt Nam.',
-      ],
-    },
-    careerConnect: {
-      name: 'Luật sư Trương Anh Tú',
-      title: 'Chuyên gia Luật Công nghệ',
-      company: 'Đoàn Luật sư TP. Hà Nội',
-      imageUrl: 'https://i.pravatar.cc/150?u=truong-anh-tu',
-      quote:
-        'Pháp luật luôn đi sau công nghệ. Vì vậy, ý thức và trách nhiệm đạo đức của mỗi người dùng và nhà phát triển AI chính là hàng rào bảo vệ quan trọng nhất để công nghệ phục vụ con người một cách tốt đẹp.',
-    },
-    quizzes: [
-      {
-        question: 'Thiên vị trong AI (AI Bias) có nghĩa là gì?',
-        options: [
-          'AI luôn đưa ra quyết định đúng đắn',
-          'Hệ thống AI đưa ra các kết quả không công bằng một cách có hệ thống do dữ liệu huấn luyện hoặc thiết kế thuật toán có vấn đề',
-          'AI có sở thích riêng',
-          'AI hoạt động chậm hơn bình thường',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'Thiên vị trong AI xảy ra khi thuật toán tạo ra các kết quả bất lợi cho một nhóm người nhất định so với nhóm khác, thường là do dữ liệu dùng để huấn luyện nó đã có sẵn sự thiên vị.',
+        question: 'Công cụ AI nào tốt nhất để kiểm tra ngữ pháp tiếng Anh?',
+        answer: 'Grammarly là công cụ phổ biến và mạnh mẽ nhất. Nó không chỉ sửa lỗi chính tả, ngữ pháp mà còn đề xuất cách diễn đạt tự nhiên và chuyên nghiệp hơn. Nhiều trình duyệt và ứng dụng soạn thảo văn bản cũng đã tích hợp các tính năng tương tự.'
       },
       {
-        question: 'Khi sử dụng AI để viết bài luận, hành động nào sau đây được coi là đạo văn?',
-        options: [
-          'Sử dụng AI để tìm ý tưởng và lập dàn ý',
-          'Sử dụng AI để kiểm tra lỗi ngữ pháp và chính tả',
-          'Sao chép nguyên văn một đoạn văn do AI tạo ra và nộp bài mà không ghi nguồn',
-          'Sử dụng AI để dịch một câu sang ngôn ngữ khác',
-        ],
-        correctAnswerIndex: 2,
-        explanation:
-          'Sử dụng AI để hỗ trợ học tập là rất tốt, nhưng việc sao chép nguyên văn sản phẩm của AI và nhận đó là của mình được coi là đạo văn, một hành vi không trung thực trong học thuật.',
-      },
-    ],
-    faqs: [
-      {
-        question: '"Deepfake" là gì và tại sao nó lại nguy hiểm?',
-        answer:
-          'Deepfake là công nghệ sử dụng AI để tạo ra các video hoặc hình ảnh giả mạo rất chân thực, ví dụ như ghép mặt một người vào video của người khác. Nó nguy hiểm vì có thể được sử dụng để tạo tin giả, lừa đảo, bôi nhọ danh dự người khác, hoặc tạo ra các nội dung không phù hợp.',
+        question: 'Làm thế nào để dùng AI tóm tắt một video YouTube dài?',
+        answer: 'Có nhiều tiện ích mở rộng (extensions) cho trình duyệt Chrome như "YouTube Summary with ChatGPT & Claude" có thể làm điều này. Chúng sẽ lấy phụ đề của video và yêu cầu một chatbot AI tóm tắt lại nội dung chính cho bạn, giúp tiết kiệm rất nhiều thời gian.'
       },
       {
-        question: 'Làm thế nào để nhận biết một hình ảnh do AI tạo ra?',
-        answer:
-          'Ngày càng khó để nhận biết, nhưng có một vài dấu hiệu cần chú ý: các chi tiết vô lý (ví dụ: người có 6 ngón tay), nền ảnh bị biến dạng, chữ viết không rõ ràng, hoặc các chi tiết quá hoàn hảo một cách phi tự nhiên. Tuy nhiên, cách tốt nhất vẫn là xem xét nguồn gốc của hình ảnh.',
+        question: 'AI có thể giúp tôi học toán không?',
+        answer: 'Chắc chắn. Các ứng dụng như Photomath cho phép bạn chụp ảnh một bài toán và nó sẽ hiển thị các bước giải chi tiết. Các công cụ như WolframAlpha có thể giải các phương trình phức tạp và vẽ đồ thị hàm số. Đây là những trợ thủ đắc lực cho môn Toán.'
       },
       {
-        question: 'Tại sao dữ liệu lại quan trọng đối với đạo đức AI?',
-        answer:
-          'Bởi vì AI học hỏi từ dữ liệu mà con người cung cấp cho nó. Nếu dữ liệu đầu vào có chứa sự thiên vị (ví dụ: dữ liệu lịch sử cho thấy một nhóm người nào đó ít được tuyển dụng hơn), AI sẽ học theo sự thiên vị đó và khuếch đại nó, dẫn đến các quyết định không công bằng trong tương lai.',
+        question: 'Có công cụ AI nào giúp tôi tạo bài thuyết trình (slide) không?',
+        answer: 'Có, các công cụ như Gamma.app hoặc Tome.app có thể tạo ra một bộ slide hoàn chỉnh chỉ từ một vài câu lệnh của bạn. Chúng sẽ tự động tạo cấu trúc, viết nội dung và tìm hình ảnh minh họa. Bạn chỉ cần chỉnh sửa lại cho phù hợp với ý mình.'
       },
-    ],
-  },
-  {
-    id: 'ai-tools-for-learning',
-    title: 'Công cụ AI hỗ trợ học tập',
-    description: 'Khám phá và sử dụng các công cụ AI phổ biến để nâng cao hiệu quả học tập và nghiên cứu.',
-    duration: '90 phút',
-    difficulty: 'Cơ bản',
-    videoUrl: 'https://www.youtube.com/watch?v=JTxsNm9IdYU',
-    imageUrl: 'https://i.ytimg.com/vi/JTxsNm9IdYU/hqdefault.jpg',
-    objectives: [
-      'Làm quen với các công cụ AI hỗ trợ học tập phổ biến.',
-      'Sử dụng ChatGPT, Google Bard cho việc giải thích bài học.',
-      'Ứng dụng AI trong việc tìm kiếm và tổng hợp thông tin.',
-      'Thực hành sử dụng AI để cải thiện kỹ năng viết và thuyết trình.',
-    ],
-    prerequisites: ['Biết sử dụng trình duyệt web cơ bản.', 'Có tài khoản Google hoặc Microsoft.'],
-    exercises: [
       {
-        title: 'Thử nghiệm với ChatGPT cho học tập',
-        description: 'Sử dụng ChatGPT để giải thích một khái niệm khó hiểu trong chương trình học.',
-        difficulty: 'Cơ bản',
-        procedure: [
-          'Chọn một chủ đề khó hiểu từ môn học yêu thích.',
-          'Đặt câu hỏi cụ thể cho ChatGPT để giải thích khái niệm đó.',
-          'Thử các cách đặt câu hỏi khác nhau để có câu trả lời tốt nhất.',
-          'So sánh với thông tin từ sách giáo khoa.',
-        ],
-        expectedResults: 'Hiểu rõ hơn về chủ đề đã chọn và biết cách đặt câu hỏi hiệu quả với AI.',
+        question: 'Làm sao để chắc chắn rằng AI không "bịa" ra thông tin?',
+        answer: 'Đây là một vấn đề lớn của AI, gọi là "hallucination". Để giảm thiểu rủi ro, hãy sử dụng các chatbot có khả năng trích dẫn nguồn, ví dụ như Perplexity AI hoặc Copilot. Sau khi chúng trả lời, hãy kiểm tra các nguồn tin mà chúng đã sử dụng để đảm bảo tính chính xác.'
       },
-    ],
-    realWorldApplications: [
-      'Sử dụng AI trợ lý để giải thích bài tập khó.',
-      'Tạo outline cho bài thuyết trình.',
-      'Nghiên cứu và tổng hợp thông tin cho dự án nhóm.',
-      'Cải thiện kỹ năng viết tiếng Anh.',
-    ],
-    vietnamContext: {
-      title: 'Xu hướng sử dụng AI trong giáo dục Việt Nam',
-      content: [
-        'Nhiều trường học tại Việt Nam đang pilot các chương trình tích hợp AI vào giảng dạy.',
-        'Các ứng dụng học tiếng Anh như ELSA Speak đang sử dụng AI để cải thiện phát âm cho học sinh Việt.',
-        'Bộ GD&ĐT đang nghiên cứu đưa AI vào chương trình giáo dục phổ thông.',
-      ],
-    },
-    careerConnect: {
-      name: 'Cô Nguyễn Thị Lan',
-      title: 'Giáo viên Tin học, THPT Lê Quý Đôn',
-      company: 'THPT Lê Quý Đôn, TP.HCM',
-      imageUrl: 'https://i.pravatar.cc/150?u=nguyen-thi-lan',
-      quote:
-        'Học sinh ngày nay cần biết cách sử dụng AI như một công cụ học tập hiệu quả. Quan trọng là phải biết đặt câu hỏi đúng và kiểm chứng thông tin.',
-    },
-    quizzes: [
       {
-        question: 'Khi sử dụng AI để hỗ trợ học tập, điều quan trọng nhất là gì?',
-        options: [
-          'Copy nguyên văn câu trả lời của AI',
-          'Đặt câu hỏi rõ ràng và kiểm chứng thông tin',
-          'Chỉ tin tưởng hoàn toàn vào AI',
-          'Không cần đọc sách giáo khoa nữa',
-        ],
-        correctAnswerIndex: 1,
-        explanation:
-          'Điều quan trọng nhất là đặt câu hỏi rõ ràng và luôn kiểm chứng thông tin từ nhiều nguồn khác nhau.',
+        question: 'Tôi có thể dùng AI để học một loại nhạc cụ không?',
+        answer: 'Có. AI có thể giúp bạn theo nhiều cách: các ứng dụng như Yousician sử dụng AI để "nghe" bạn chơi và đưa ra phản hồi tức thì. Bạn cũng có thể hỏi AI về lý thuyết âm nhạc, hợp âm, hoặc thậm chí yêu cầu nó sáng tác một đoạn nhạc ngắn để bạn tập theo.'
       },
-    ],
-    faqs: [
       {
-        question: 'Sử dụng AI để làm bài tập có bị coi là gian lận không?',
-        answer:
-          'Tùy thuộc vào cách sử dụng. Nếu copy nguyên văn đáp án từ AI thì có thể bị coi là gian lận. Nhưng nếu sử dụng AI để hiểu bài, tìm hướng giải và tự làm lại thì đó là cách học thông minh.',
+        question: 'AI có thể dịch thuật tốt đến mức nào?',
+        answer: 'Các công cụ như Google Translate hay DeepL đã trở nên cực kỳ tốt cho việc dịch các văn bản thông thường. Tuy nhiên, đối với các văn bản quan trọng, văn học, hoặc có nhiều sắc thái, chúng vẫn có thể mắc lỗi. Luôn cần có sự kiểm tra của người hiểu ngôn ngữ đó.'
       },
+      {
+        question: 'Các công cụ AI này có miễn phí không?',
+        answer: 'Nhiều công cụ AI phổ biến có phiên bản miễn phí rất mạnh mẽ (như ChatGPT, Gemini, Copilot). Các phiên bản trả phí thường cung cấp các mô hình AI mạnh hơn, tốc độ nhanh hơn và các tính năng nâng cao. Đối với việc học tập thông thường, phiên bản miễn phí thường là đủ.'
+      }
     ],
   },
   {
@@ -500,8 +377,8 @@ export const AIForStudentsLessons: BaseLessonData[] = [
           'Không cần kiểm tra nội dung trước khi public',
         ],
         correctAnswerIndex: 1,
-        explanation: 'Cần tôn trọng bản quyền, kiểm tra nội dung và credit nguồn gốc khi sử dụng AI tạo nội dung.',
-      },
+        explanation: 'Cần tôn trọng bản quyền, kiểm tra nội dung và credit nguồn gốc khi sử dụng AI tạo nội dung.'
+      }
     ],
     faqs: [
       {
@@ -509,6 +386,42 @@ export const AIForStudentsLessons: BaseLessonData[] = [
         answer:
           'Hiện tại luật bản quyền chưa rõ ràng về vấn đề này. Tốt nhất là luôn ghi rõ đã sử dụng AI và không claim là 100% sáng tạo cá nhân.',
       },
+      {
+        question: 'Sự khác biệt giữa DALL-E, Midjourney và Stable Diffusion là gì?',
+        answer: 'DALL-E (của OpenAI) rất giỏi trong việc hiểu các câu lệnh phức tạp và tạo ra hình ảnh đúng theo yêu cầu. Midjourney nổi tiếng với việc tạo ra những hình ảnh có tính nghệ thuật cao, đẹp mắt. Stable Diffusion là mã nguồn mở, cho phép tùy chỉnh sâu nhất nhưng cũng đòi hỏi kỹ thuật cao hơn để sử dụng hiệu quả.'
+      },
+      {
+        question: 'Làm thế nào để viết một "prompt" (câu lệnh) tốt để tạo hình ảnh?',
+        answer: 'Một prompt tốt thường bao gồm 4 phần: (1) Chủ thể (ví dụ: "một phi hành gia"), (2) Mô tả chi tiết (ví dụ: "đang cưỡi ngựa"), (3) Phong cách (ví dụ: "theo phong cách tranh sơn dầu"), và (4) Các yếu tố kỹ thuật (ví dụ: "ánh sáng điện ảnh, độ phân giải cao"). Càng chi tiết, kết quả càng gần với ý bạn.'
+      },
+      {
+        question: 'AI có thể sáng tác nhạc theo yêu cầu của tôi không?',
+        answer: 'Có. Các công cụ như Suno AI hoặc Udio có thể tạo ra một bài hát hoàn chỉnh (bao gồm cả nhạc và lời) chỉ từ một vài mô tả của bạn về thể loại và chủ đề. Bạn có thể yêu cầu nó tạo một "bài hát pop vui tươi về mùa hè" và nó sẽ làm điều đó trong vài phút.'
+      },
+      {
+        question: 'Tôi có thể sử dụng hình ảnh do AI tạo ra cho các dự án ở trường không?',
+        answer: 'Thường là có, nhưng bạn nên hỏi lại giáo viên của mình. Khi sử dụng, một thói quen tốt là ghi chú rằng hình ảnh được tạo bởi AI (ví dụ: "Hình ảnh được tạo bởi Midjourney"). Điều này thể hiện sự minh bạch và trung thực.'
+      },
+      {
+        question: 'Làm thế nào để AI có thể viết một câu chuyện hay một bài thơ?',
+        answer: 'Các mô hình ngôn ngữ lớn như ChatGPT được huấn luyện trên một kho dữ liệu văn học khổng lồ. Chúng học được các cấu trúc câu chuyện, nhịp điệu của thơ và các phong cách viết khác nhau. Bạn có thể yêu cầu nó "viết một câu chuyện ngắn kinh dị với kết thúc bất ngờ" và nó sẽ áp dụng các mẫu đã học để tạo ra một câu chuyện mới.'
+      },
+      {
+        question: 'Chất lượng của các tác phẩm do AI tạo ra có đủ tốt không?',
+        answer: 'Chất lượng đang ngày càng tốt hơn một cách đáng kinh ngạc. Hình ảnh AI có thể đạt đến độ chân thực như ảnh chụp. Âm nhạc AI có thể rất bắt tai. Tuy nhiên, các tác phẩm này đôi khi có thể thiếu đi "linh hồn" hoặc sự sâu sắc mà chỉ con người mới có thể mang lại.'
+      },
+      {
+        question: 'Tôi có cần trả tiền để sử dụng các công cụ sáng tạo AI này không?',
+        answer: 'Nhiều công cụ cho phép bạn sử dụng miễn phí với một số giới hạn (ví dụ: số lượng hình ảnh có thể tạo mỗi ngày). Các gói trả phí sẽ cho bạn nhiều lượt sử dụng hơn, tốc độ nhanh hơn và các tính năng cao cấp.'
+      },
+      {
+        question: 'AI có thể giúp tôi thiết kế một trò chơi đơn giản không?',
+        answer: 'Có. Bạn có thể sử dụng AI để lên ý tưởng cho nhân vật, cốt truyện, và các cấp độ chơi. Các công cụ như ChatGPT có thể giúp bạn viết mã cho các cơ chế đơn giản trong các nền tảng như Scratch hoặc Roblox, ngay cả khi bạn không phải là một lập trình viên chuyên nghiệp.'
+      },
+      {
+        question: 'Liệu AI có làm cho sự sáng tạo của con người trở nên vô giá trị không?',
+        answer: 'Không. Ngược lại, AI đang trở thành một công cụ mạnh mẽ để khuếch đại sự sáng tạo của con người. Nó giúp hiện thực hóa ý tưởng nhanh hơn và cho phép những người không có kỹ năng kỹ thuật (vẽ, sáng tác nhạc) có thể thể hiện bản thân. Người chiến thắng sẽ là người biết cách kết hợp tốt nhất sự sáng tạo của mình với sức mạnh của AI.'
+      }
     ],
   },
   {
@@ -592,6 +505,34 @@ export const AIForStudentsLessons: BaseLessonData[] = [
         answer:
           'Bởi vì AI học hỏi từ dữ liệu mà con người cung cấp cho nó. Nếu dữ liệu đầu vào có chứa sự thiên vị (ví dụ: dữ liệu lịch sử cho thấy một nhóm người nào đó ít được tuyển dụng hơn), AI sẽ học theo sự thiên vị đó và khuếch đại nó, dẫn đến các quyết định không công bằng trong tương lai.',
       },
+      {
+        question: 'Quyền riêng tư của tôi có bị ảnh hưởng khi sử dụng các công cụ AI không?',
+        answer: 'Có, đây là một vấn đề rất quan trọng. Khi bạn sử dụng các công cụ AI, đặc biệt là các dịch vụ trực tuyến, dữ liệu bạn nhập vào (câu hỏi, văn bản, hình ảnh) có thể được sử dụng để huấn luyện các mô hình AI trong tương lai. Luôn đọc kỹ chính sách bảo mật và tránh nhập các thông tin cá nhân nhạy cảm.'
+      },
+      {
+        question: '"Bong bóng bộ lọc" (Filter Bubble) là gì?',
+        answer: 'Đây là hiện tượng khi các thuật toán AI (ví dụ trên YouTube, TikTok, Facebook) chỉ hiển thị cho bạn những nội dung mà chúng nghĩ bạn sẽ thích, dựa trên lịch sử xem của bạn. Điều này có thể khiến bạn bị cô lập trong một "bong bóng" quan điểm, khó tiếp cận với những ý kiến và thông tin trái chiều.'
+      },
+      {
+        question: 'Ai chịu trách nhiệm khi một hệ thống AI gây ra lỗi?',
+        answer: 'Đây là một câu hỏi pháp lý và đạo đức phức tạp. Trách nhiệm có thể thuộc về người lập trình, công ty phát triển AI, người sử dụng AI, hoặc thậm chí là chính hệ thống AI (trong tương lai). Đây là lý do tại sao việc xây dựng các quy tắc và luật lệ cho AI lại cấp thiết đến vậy.'
+      },
+      {
+        question: 'Làm thế nào để tôi có thể sử dụng AI một cách có đạo đức?',
+        answer: 'Hãy luôn tự hỏi: "Việc này có công bằng không? Có làm hại ai không? Tôi có đang trung thực không?". Hãy minh bạch về việc sử dụng AI, tôn trọng quyền riêng tư của người khác, và luôn sử dụng tư duy phản biện để đánh giá kết quả mà AI đưa ra.'
+      },
+      {
+        question: 'Tại sao một số hệ thống AI lại có những hành vi phân biệt chủng tộc hoặc giới tính?',
+        answer: 'Điều này thường xuất phát từ "thiên vị trong dữ liệu" (data bias). Nếu một hệ thống AI được huấn luyện chủ yếu bằng hình ảnh của người da trắng, nó có thể nhận dạng khuôn mặt người da màu kém chính xác hơn. AI không tự nó "phân biệt chủng tộc", nó chỉ phản ánh những thiên vị đã có sẵn trong dữ liệu mà con người cung cấp.'
+      },
+      {
+        question: 'Tôi có nên tin tưởng các lời khuyên y tế hoặc tài chính từ AI không?',
+        answer: 'Tuyệt đối không nên tin tưởng hoàn toàn. Mặc dù AI có thể cung cấp thông tin hữu ích, nhưng nó không thể thay thế lời khuyên từ một chuyên gia thực thụ (bác sĩ, luật sư, nhà tư vấn tài chính). Luôn tham khảo ý kiến của chuyên gia có trình độ cho các quyết định quan trọng.'
+      },
+      {
+        question: 'Là một học sinh, tôi có thể làm gì để thúc đẩy việc sử dụng AI có đạo đức?',
+        answer: 'Bạn có thể bắt đầu bằng việc tự giáo dục bản thân và bạn bè về những vấn đề này. Tham gia các cuộc thảo luận, đặt câu hỏi về cách các công cụ bạn dùng hoạt động, và học cách nhận biết tin giả hoặc nội dung do AI tạo ra. Chính nhận thức của bạn là bước đầu tiên quan trọng nhất.'
+      }
     ],
   },
   {
@@ -670,6 +611,38 @@ export const AIForStudentsLessons: BaseLessonData[] = [
         answer:
           'AI sẽ tự động hóa nhiều công việc nhưng cũng tạo ra những việc làm mới. Những công việc cần sáng tạo, đồng cảm và tương tác xã hội sẽ vẫn cần con người.',
       },
+      {
+        question: '"Prompt Engineer" là nghề gì?',
+        answer: 'Đây là một nghề mới và rất "hot". Một Prompt Engineer là người chuyên thiết kế, viết và tối ưu hóa các câu lệnh (prompt) để giao tiếp với các mô hình AI, nhằm tạo ra kết quả mong muốn một cách chính xác và hiệu quả nhất. Đây là một nghề đòi hỏi cả kỹ năng kỹ thuật và sáng tạo.'
+      },
+      {
+        question: 'Ngoài các nghề kỹ thuật, AI tạo ra những cơ hội việc làm nào khác?',
+        answer: 'Rất nhiều. Ví dụ: Chuyên gia đạo đức AI (AI Ethicist), Luật sư chuyên về AI, Nhà thiết kế trải nghiệm người dùng cho các sản phẩm AI (AI UX Designer), Chuyên gia tư vấn triển khai AI cho doanh nghiệp, hoặc các nhà sáng tạo nội dung sử dụng AI làm công cụ chính.'
+      },
+      {
+        question: 'Là một học sinh, tôi nên học những kỹ năng gì ngay từ bây giờ để chuẩn bị cho tương lai AI?',
+        answer: 'Bên cạnh các môn STEM (Khoa học, Công nghệ, Kỹ thuật, Toán), hãy tập trung vào 4 kỹ năng "vàng": (1) Tư duy phản biện, (2) Sáng tạo, (3) Giao tiếp, và (4) Hợp tác. Đây là những kỹ năng mà AI khó có thể thay thế được con người.'
+      },
+      {
+        question: 'Học lập trình có còn quan trọng không khi AI có thể tự viết code?',
+        answer: 'Vẫn rất quan trọng. AI có thể viết các đoạn code nhỏ, nhưng nó vẫn cần con người để thiết kế kiến trúc hệ thống, kiểm tra lỗi, và hiểu được yêu cầu của người dùng. Biết lập trình giúp bạn hiểu cách AI hoạt động và làm việc với nó hiệu quả hơn.'
+      },
+      {
+        question: 'Những ngành nghề nào sẽ bị ảnh hưởng nhiều nhất bởi AI?',
+        answer: 'Các công việc có tính chất lặp đi lặp lại và dựa trên dữ liệu sẽ bị ảnh hưởng nhiều, ví dụ như nhập liệu, một số công việc trong dịch vụ khách hàng, hoặc phân tích dữ liệu cơ bản. Tuy nhiên, trong chính những ngành này, các vai trò mới đòi hỏi kỹ năng giám sát và làm việc cùng AI sẽ xuất hiện.'
+      },
+      {
+        question: 'Làm thế nào để tôi có thể xây dựng một "portfolio" về AI khi còn là học sinh?',
+        answer: 'Hãy bắt đầu từ những dự án nhỏ! Bạn có thể tạo một blog nơi bạn thử nghiệm và đánh giá các công cụ AI mới. Tạo một bộ sưu tập các tác phẩm nghệ thuật do bạn chỉ đạo AI tạo ra. Hoặc tham gia các cuộc thi về AI và robotics dành cho học sinh. Ghi lại quá trình và kết quả của bạn.'
+      },
+      {
+        question: 'AI có thể giúp tôi chọn nghề nghiệp không?',
+        answer: 'Có. Bạn có thể hỏi một chatbot AI: "Tôi thích môn toán và vẽ, có những nghề nghiệp nào trong tương lai kết hợp cả hai sở thích này và liên quan đến AI không?". AI có thể phân tích và gợi ý cho bạn những con đường sự nghiệp mà bạn có thể chưa từng nghĩ tới.'
+      },
+      {
+        question: 'Tương lai của công việc sẽ là con người "đấu" với AI hay con người "làm việc cùng" AI?',
+        answer: 'Chắc chắn là "làm việc cùng" AI. Tương lai thuộc về những người biết cách tận dụng sức mạnh của AI như một công cụ để nâng cao năng suất, giải quyết các vấn đề phức tạp hơn và giải phóng thời gian cho các công việc đòi hỏi sự sáng tạo và kết nối con người.'
+      }
     ],
   },
 ];

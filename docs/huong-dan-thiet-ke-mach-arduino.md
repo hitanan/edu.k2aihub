@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Thiết Kế Mạch Arduino: Từ Sơ Đồ Đến Mạch In'
 description: 'Học cách thiết kế và mô phỏng mạch điện tử cho các dự án Arduino của bạn bằng phần mềm chuyên nghiệp, chuẩn bị cho việc tạo ra mạch in PCB thực tế. Hướng dẫn từ K2AiHub.'
-date: '2025-10-08'
+date: '2025-09-08'
 author: 'K2AiHub Hardware Team'
 category: 'Hướng Dẫn'
 tags: ['Arduino', 'thiết kế mạch', 'mạch điện tử', 'PCB', 'Fritzing', 'DIY', 'hướng dẫn', 'K2AiHub']
@@ -20,13 +20,13 @@ Việc thiết kế mạch không chỉ là vẽ lại các kết nối. Nó là
 EDA (Electronic Design Automation) là các phần mềm chuyên dụng cho việc thiết kế mạch.
 
 - **Fritzing:**
-    - **Ưu điểm:** Cực kỳ thân thiện với người mới bắt đầu và dân DIY. Giao diện trực quan với 3 chế độ xem: Breadboard, Sơ đồ nguyên lý (Schematic), và PCB. Có thư viện linh kiện Arduino và các module phổ biến.
-    - **Nhược điểm:** Ít tính năng nâng cao so với các phần mềm chuyên nghiệp.
-    - **Khuyến nghị:** **Lựa chọn tốt nhất để bắt đầu.**
+  - **Ưu điểm:** Cực kỳ thân thiện với người mới bắt đầu và dân DIY. Giao diện trực quan với 3 chế độ xem: Breadboard, Sơ đồ nguyên lý (Schematic), và PCB. Có thư viện linh kiện Arduino và các module phổ biến.
+  - **Nhược điểm:** Ít tính năng nâng cao so với các phần mềm chuyên nghiệp.
+  - **Khuyến nghị:** **Lựa chọn tốt nhất để bắt đầu.**
 - **EasyEDA / KiCad:**
-    - **Ưu điểm:** Miễn phí, mạnh mẽ, với đầy đủ các tính năng chuyên nghiệp. Được cộng đồng lớn sử dụng và hỗ trợ.
-    - **Nhược điểm:** Giao diện phức tạp hơn, đòi hỏi thời gian học hỏi nhiều hơn.
-    - **Khuyến nghị:** Dành cho khi bạn đã quen với các khái niệm cơ bản và muốn đi sâu hơn.
+  - **Ưu điểm:** Miễn phí, mạnh mẽ, với đầy đủ các tính năng chuyên nghiệp. Được cộng đồng lớn sử dụng và hỗ trợ.
+  - **Nhược điểm:** Giao diện phức tạp hơn, đòi hỏi thời gian học hỏi nhiều hơn.
+  - **Khuyến nghị:** Dành cho khi bạn đã quen với các khái niệm cơ bản và muốn đi sâu hơn.
 
 Trong hướng dẫn này, chúng ta sẽ sử dụng **Fritzing** vì tính trực quan của nó.
 
@@ -50,6 +50,7 @@ Sơ đồ nguyên lý là "bản thiết kế logic" của mạch điện. Nó c
     - Chọn điện trở. Trong cửa sổ "Inspector" ở bên trái, thay đổi giá trị "resistance" thành `220 Ω` (Ohm). Đây là giá trị phổ biến để bảo vệ LED khi dùng với Arduino 5V.
 
 **Tại sao cần sơ đồ nguyên lý?**
+
 - Nó là ngôn ngữ chung để các kỹ sư điện tử giao tiếp.
 - Giúp bạn kiểm tra lại logic kết nối một cách rõ ràng trước khi đi dây trên PCB.
 - Là tài liệu quan trọng cho việc sửa chữa và nâng cấp sau này.
@@ -62,17 +63,17 @@ Sau khi sơ đồ nguyên lý đã hoàn chỉnh, hãy chuyển sang tab "PCB". 
 2.  **Sắp xếp linh kiện (Placement):**
     - Kéo các linh kiện vào vị trí trên bo mạch.
     - **Nguyên tắc:**
-        - Đặt các linh kiện có kết nối với nhau ở gần nhau để đường đi dây ngắn nhất.
-        - Đặt các cổng kết nối (USB, jack nguồn) ra sát mép bo mạch để tiện sử dụng.
-        - Nếu có các linh kiện tỏa nhiệt (như ổn áp), hãy để chúng ở nơi thông thoáng.
+      - Đặt các linh kiện có kết nối với nhau ở gần nhau để đường đi dây ngắn nhất.
+      - Đặt các cổng kết nối (USB, jack nguồn) ra sát mép bo mạch để tiện sử dụng.
+      - Nếu có các linh kiện tỏa nhiệt (như ổn áp), hãy để chúng ở nơi thông thoáng.
 3.  **Đi dây (Routing):**
     - Đây là quá trình biến các đường kết nối ảo thành các đường mạch đồng thực tế.
     - Nhấp vào một chân linh kiện và vẽ đường đi đến chân cần kết nối.
     - **Nguyên tắc:**
-        - **Đường mạch nguồn (VCC, GND):** Nên đi dây to hơn các đường tín hiệu. Trong Fritzing, bạn có thể chọn độ rộng của đường dây trong Inspector.
-        - **Tránh các góc 90 độ:** Thay vào đó, hãy dùng hai góc 45 độ. Góc 90 độ có thể gây ra các vấn đề về tín hiệu ở tần số cao.
-        - **Sử dụng cả hai lớp mạch (Top và Bottom):** Nếu các đường dây bị chồng chéo, bạn có thể chuyển một đường dây sang lớp mạch còn lại. Các đường màu đỏ là lớp trên, màu xanh là lớp dưới.
-        - **Sử dụng "Via":** Via là một lỗ xuyên kim loại giúp kết nối đường mạch ở lớp trên và lớp dưới. Fritzing sẽ tự động tạo via khi bạn chuyển lớp.
+      - **Đường mạch nguồn (VCC, GND):** Nên đi dây to hơn các đường tín hiệu. Trong Fritzing, bạn có thể chọn độ rộng của đường dây trong Inspector.
+      - **Tránh các góc 90 độ:** Thay vào đó, hãy dùng hai góc 45 độ. Góc 90 độ có thể gây ra các vấn đề về tín hiệu ở tần số cao.
+      - **Sử dụng cả hai lớp mạch (Top và Bottom):** Nếu các đường dây bị chồng chéo, bạn có thể chuyển một đường dây sang lớp mạch còn lại. Các đường màu đỏ là lớp trên, màu xanh là lớp dưới.
+      - **Sử dụng "Via":** Via là một lỗ xuyên kim loại giúp kết nối đường mạch ở lớp trên và lớp dưới. Fritzing sẽ tự động tạo via khi bạn chuyển lớp.
 4.  **Tạo vùng phủ mass (Copper Fill / Ground Fill):**
     - Sau khi đi dây xong, bạn có thể phủ đầy các khu vực trống trên bo mạch bằng một lớp đồng lớn kết nối với GND.
     - **Lợi ích:** Giúp giảm nhiễu điện, tản nhiệt tốt hơn và tiết kiệm dung dịch ăn mòn khi làm mạch thủ công.
@@ -82,8 +83,8 @@ Sau khi sơ đồ nguyên lý đã hoàn chỉnh, hãy chuyển sang tab "PCB". 
 
 - **Kiểm tra thiết kế (DRC - Design Rule Check):** Hầu hết các phần mềm EDA đều có công cụ này để tự động kiểm tra các lỗi như đường dây quá gần nhau, khoan lỗ quá nhỏ...
 - **Xuất file Gerber:**
-    - File Gerber là một bộ file tiêu chuẩn chứa tất cả thông tin cần thiết để một nhà sản xuất có thể tạo ra PCB của bạn.
-    - Trong Fritzing, vào "File -> Export -> for Production -> Extended Gerber (RS-274X)".
+  - File Gerber là một bộ file tiêu chuẩn chứa tất cả thông tin cần thiết để một nhà sản xuất có thể tạo ra PCB của bạn.
+  - Trong Fritzing, vào "File -> Export -> for Production -> Extended Gerber (RS-274X)".
 
 Bây giờ, bạn có thể gửi bộ file Gerber này đến các dịch vụ làm mạch in như JLCPCB, PCBWay để đặt hàng sản xuất.
 

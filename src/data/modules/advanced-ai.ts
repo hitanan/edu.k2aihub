@@ -124,6 +124,38 @@ export const advancedAILessons: BaseLessonData[] = [
         answer:
           'Việc huấn luyện mô hình Deep Learning đòi hỏi một lượng lớn các phép tính ma trận song song. GPU (Graphics Processing Unit) được thiết kế với hàng nghìn nhân xử lý, cho phép thực hiện các phép tính này nhanh hơn CPU hàng chục đến hàng trăm lần, từ đó rút ngắn đáng kể thời gian huấn luyện.',
       },
+      {
+        question: 'Mạng CNN (Convolutional Neural Network) hoạt động như thế nào?',
+        answer: 'CNN được thiết kế đặc biệt cho dữ liệu dạng lưới như hình ảnh. Nó sử dụng các bộ lọc (kernels) để trượt qua ảnh và học các đặc trưng cục bộ như cạnh, góc, và các họa tiết. Các lớp sau đó kết hợp các đặc trưng đơn giản này thành các đặc trưng phức tạp hơn, như mắt, mũi, hoặc toàn bộ khuôn mặt.',
+      },
+      {
+        question: 'Mạng RNN (Recurrent Neural Network) phù hợp với loại dữ liệu nào?',
+        answer: 'RNN được thiết kế để xử lý dữ liệu dạng chuỗi (sequential data) như văn bản, chuỗi thời gian, hoặc giọng nói. Chúng có một "bộ nhớ" nội tại cho phép thông tin từ các bước thời gian trước đó ảnh hưởng đến đầu ra ở bước hiện tại, giúp mô hình hiểu được ngữ cảnh.',
+      },
+      {
+        question: 'Kiến trúc Transformer là gì và tại sao nó lại tạo ra một cuộc cách mạng?',
+        answer: 'Transformer là một kiến trúc mạng neural được giới thiệu vào năm 2017, hoàn toàn dựa vào cơ chế "chú ý" (attention mechanism). Nó có khả năng xử lý các mối quan hệ xa trong dữ liệu chuỗi một cách hiệu quả và song song hóa quá trình tính toán, vượt qua những hạn chế của RNN. Đây là nền tảng của hầu hết các mô hình ngôn ngữ lớn hiện đại như GPT và BERT.',
+      },
+      {
+        question: 'Overfitting (quá khớp) là gì và làm thế nào để giảm thiểu nó?',
+        answer: 'Overfitting xảy ra khi mô hình học quá tốt trên dữ liệu huấn luyện, bao gồm cả nhiễu, và do đó hoạt động kém trên dữ liệu mới. Các kỹ thuật để giảm overfitting bao gồm: thêm dữ liệu, tăng cường dữ liệu (data augmentation), sử dụng các kỹ thuật điều chuẩn (regularization) như L1/L2, và dropout.',
+      },
+      {
+        question: 'Transfer Learning (Học chuyển giao) là gì?',
+        answer: 'Transfer Learning là một kỹ thuật trong đó một mô hình đã được huấn luyện trên một tác vụ lớn (ví dụ: phân loại hàng triệu ảnh trên ImageNet) được tái sử dụng làm điểm khởi đầu để huấn luyện cho một tác vụ khác nhưng có liên quan. Kỹ thuật này giúp tiết kiệm đáng kể thời gian và tài nguyên tính toán, đặc biệt khi dữ liệu cho tác vụ mới bị hạn chế.',
+      },
+      {
+        question: 'Hyperparameter tuning là gì?',
+        answer: 'Hyperparameters là các tham số cấu hình của mô hình được đặt trước khi quá trình huấn luyện bắt đầu (ví dụ: tốc độ học, số lớp, số nơ-ron mỗi lớp). Hyperparameter tuning là quá trình tìm kiếm bộ giá trị tốt nhất cho các tham số này để tối đa hóa hiệu suất của mô hình.',
+      },
+      {
+        question: 'Sự khác biệt giữa TensorFlow và PyTorch là gì?',
+        answer: 'Cả hai đều là các thư viện deep learning mã nguồn mở hàng đầu. PyTorch được biết đến với tính linh hoạt, giao diện "Pythonic" và đồ thị tính toán động, rất phổ biến trong giới nghiên cứu. TensorFlow (đặc biệt với Keras API) mạnh mẽ về khả năng triển khai sản phẩm (deployment) và có một hệ sinh thái công cụ hỗ trợ rộng lớn.',
+      },
+      {
+        question: 'Gradient Descent hoạt động như thế nào?',
+        answer: 'Gradient Descent là một thuật toán tối ưu hóa dùng để tìm giá trị cực tiểu của một hàm. Trong deep learning, nó được dùng để giảm thiểu hàm mất mát (loss function). Thuật toán tính toán gradient (đạo hàm) của hàm mất mát theo các trọng số của mạng, sau đó cập nhật các trọng số theo hướng ngược lại của gradient để từ từ "đi xuống dốc" đến điểm có sai số thấp nhất.',
+      },
     ],
   },
   {
@@ -249,6 +281,38 @@ export const advancedAILessons: BaseLessonData[] = [
         answer:
           'DICOM không chỉ là một định dạng ảnh, mà là một tiêu chuẩn lưu trữ và truyền tải thông tin y tế. Mỗi file DICOM chứa cả dữ liệu hình ảnh (ví dụ: ảnh X-quang) và siêu dữ liệu quan trọng về bệnh nhân, thiết bị chụp, v.v. Việc xử lý cần đảm bảo tính toàn vẹn của cả hai loại thông tin này và tuân thủ các quy định nghiêm ngặt về bảo mật y tế.',
       },
+      {
+        question: 'U-Net là kiến trúc gì và tại sao nó hiệu quả cho phân đoạn ảnh y tế?',
+        answer: 'U-Net là một kiến trúc mạng CNN có hình dạng chữ U. Nó bao gồm một đường đi xuống (encoder) để nắm bắt ngữ cảnh và một đường đi lên (decoder) đối xứng để cho phép bản địa hóa chính xác. Kiến trúc này rất hiệu quả trong việc phân đoạn ảnh y tế vì nó hoạt động tốt ngay cả với tập dữ liệu tương đối nhỏ và cho ra kết quả phân đoạn rất chính xác.',
+      },
+      {
+        question: 'Làm thế nào để một mô hình Computer Vision có thể chạy trên điện thoại di động (edge deployment)?',
+        answer: 'Để triển khai trên các thiết bị có tài nguyên hạn chế, các mô hình cần được tối ưu hóa. Các kỹ thuật phổ biến bao gồm: lượng tử hóa (quantization - giảm độ chính xác của các con số), cắt tỉa (pruning - loại bỏ các kết nối không quan trọng trong mạng), và sử dụng các kiến trúc mạng nhẹ được thiết kế riêng cho di động như MobileNet hoặc EfficientNet-Lite.',
+      },
+      {
+        question: 'Data Augmentation trong Computer Vision là gì?',
+        answer: 'Data Augmentation là kỹ thuật tạo ra các dữ liệu huấn luyện mới từ dữ liệu hiện có bằng cách áp dụng các phép biến đổi như xoay, lật, cắt, thay đổi độ sáng, màu sắc... Kỹ thuật này giúp làm tăng sự đa dạng của tập dữ liệu, giúp mô hình khái quát hóa tốt hơn và chống lại overfitting.',
+      },
+      {
+        question: 'Sự khác biệt giữa R-CNN, Fast R-CNN, và Faster R-CNN là gì?',
+        answer: 'Đây là một họ các thuật toán phát hiện đối tượng. R-CNN đề xuất các vùng có khả năng chứa vật thể rồi mới dùng CNN để phân loại. Fast R-CNN cải tiến bằng cách đưa toàn bộ ảnh vào CNN một lần duy nhất. Faster R-CNN đi thêm một bước nữa bằng cách tích hợp việc đề xuất vùng ngay vào trong mạng neural (Region Proposal Network), giúp tăng tốc độ đáng kể.',
+      },
+      {
+        question: 'Làm thế nào để nhận dạng khuôn mặt hoạt động?',
+        answer: 'Hệ thống nhận dạng khuôn mặt thường hoạt động theo hai bước. Đầu tiên, nó phát hiện khuôn mặt trong ảnh. Sau đó, nó trích xuất các đặc trưng độc nhất của khuôn mặt đó (ví dụ: khoảng cách giữa hai mắt, hình dạng mũi) thành một vector số gọi là "face embedding". Vector này sau đó được so sánh với các vector trong cơ sở dữ liệu để tìm ra người tương ứng.',
+      },
+      {
+        question: 'OpenCV là gì?',
+        answer: 'OpenCV (Open Source Computer Vision Library) là một thư viện mã nguồn mở khổng lồ chứa hàng ngàn thuật toán xử lý ảnh và thị giác máy tính. Nó cung cấp các công cụ từ cơ bản (đọc/ghi ảnh, vẽ hình) đến phức tạp (phát hiện đối tượng, theo dõi chuyển động) và là công cụ không thể thiếu cho bất kỳ ai làm việc trong lĩnh vực này.',
+      },
+      {
+        question: 'Semantic Segmentation và Instance Segmentation khác nhau ở điểm nào?',
+        answer: 'Cả hai đều phân loại từng pixel. Tuy nhiên, Semantic Segmentation chỉ quan tâm đến loại đối tượng (ví dụ: tất cả các con mèo trong ảnh đều có cùng một màu). Instance Segmentation đi xa hơn, nó phân biệt được các thực thể khác nhau của cùng một loại đối tượng (ví dụ: con mèo số 1 có màu xanh, con mèo số 2 có màu đỏ).',
+      },
+      {
+        question: 'Làm thế nào để đánh giá hiệu suất của một mô hình phát hiện đối tượng?',
+        answer: 'Các chỉ số phổ biến bao gồm Precision (độ chính xác - trong số các dự đoán, bao nhiêu là đúng) và Recall (độ bao phủ - trong số các vật thể thực tế, mô hình tìm thấy được bao nhiêu). Mean Average Precision (mAP) là một chỉ số tổng hợp thường được sử dụng, nó tính toán giá trị trung bình của Average Precision trên tất cả các lớp đối tượng và các ngưỡng IoU (Intersection over Union) khác nhau.',
+      },
     ],
   },
   {
@@ -368,6 +432,38 @@ export const advancedAILessons: BaseLessonData[] = [
         question: '"Fine-tuning" một LLM có nghĩa là gì?',
         answer:
           'Fine-tuning là quá trình tiếp tục huấn luyện một LLM đã được huấn luyện trước (pre-trained) trên một tập dữ liệu nhỏ hơn, chuyên biệt hơn. Quá trình này giúp mô hình "thích nghi" với một nhiệm vụ hoặc một lĩnh vực cụ thể, ví dụ như fine-tuning trên dữ liệu pháp lý để nó hiểu và phân tích văn bản luật tốt hơn.',
+      },
+      {
+        question: 'Tokenization trong NLP là gì?',
+        answer: 'Tokenization là bước đầu tiên trong hầu hết các quy trình NLP, là quá trình tách một đoạn văn bản thành các đơn vị nhỏ hơn gọi là "token". Các token có thể là từ, một phần của từ (subword), hoặc ký tự. Việc này giúp máy tính có thể xử lý văn bản dưới dạng số.',
+      },
+      {
+        question: 'Sự khác biệt giữa BERT và GPT là gì?',
+        answer: 'Cả hai đều là mô hình Transformer, nhưng có sự khác biệt cốt lõi. BERT (Bidirectional Encoder Representations from Transformers) là một mô hình "encoder", nó nhìn vào toàn bộ câu (cả trái và phải) cùng một lúc để hiểu ngữ cảnh, rất mạnh cho các tác vụ phân tích văn bản. GPT (Generative Pre-trained Transformer) là một mô hình "decoder", nó xử lý văn bản từ trái sang phải, rất mạnh cho các tác vụ sinh văn bản.',
+      },
+      {
+        question: 'Named Entity Recognition (NER) là gì?',
+        answer: 'NER là một tác vụ của NLP nhằm xác định và phân loại các thực thể có tên trong văn bản vào các danh mục được xác định trước như tên người, tổ chức, địa điểm, ngày tháng, v.v. Ví dụ, trong câu "Ông Nguyễn Văn A làm việc tại FPT ở Hà Nội", NER sẽ xác định "Nguyễn Văn A" là Tên người, "FPT" là Tổ chức, và "Hà Nội" là Địa điểm.',
+      },
+      {
+        question: 'Word Embedding là gì?',
+        answer: 'Word Embedding là một kỹ thuật biểu diễn các từ dưới dạng các vector số nhiều chiều. Các vector này nắm bắt được mối quan hệ ngữ nghĩa giữa các từ. Ví dụ, vector của từ "vua" và "nữ hoàng" sẽ gần nhau trong không gian vector, và mối quan hệ vector giữa "vua" và "đàn ông" sẽ tương tự như giữa "nữ hoàng" và "phụ nữ".',
+      },
+      {
+        question: 'LangChain là gì?',
+        answer: 'LangChain là một framework giúp đơn giản hóa việc xây dựng các ứng dụng phức tạp dựa trên các mô hình ngôn ngữ lớn (LLM). Nó cung cấp các công cụ để kết nối LLM với các nguồn dữ liệu bên ngoài, cho phép LLM tương tác với môi trường và tạo ra các chuỗi xử lý (chains) phức tạp.',
+      },
+      {
+        question: 'Tại sao xử lý tiếng Việt lại khó hơn tiếng Anh?',
+        answer: 'Tiếng Việt có nhiều thách thức: nó là ngôn ngữ đơn âm tiết, không có ranh giới từ rõ ràng (ví dụ: "học sinh" có thể bị tách thành "học" và "sinh"); có hệ thống thanh điệu phức tạp (6 thanh điệu thay đổi ý nghĩa của từ); và có nhiều từ đồng âm khác nghĩa. Những yếu tố này đòi hỏi các kỹ thuật xử lý đặc thù.',
+      },
+      {
+        question: 'POS Tagging (Part-of-Speech Tagging) là gì?',
+        answer: 'POS Tagging là quá trình gán nhãn cho mỗi từ trong một câu với một từ loại tương ứng như danh từ, động từ, tính từ, trạng từ, v.v. Đây là một bước phân tích cú pháp cơ bản quan trọng cho nhiều tác vụ NLP phức tạp hơn.',
+      },
+      {
+        question: 'Hugging Face là gì và tại sao nó lại phổ biến?',
+        answer: 'Hugging Face là một công ty và một cộng đồng cung cấp các công cụ mã nguồn mở cho NLP. Thư viện "Transformers" của họ cung cấp hàng ngàn mô hình ngôn ngữ lớn đã được huấn luyện trước, giúp các nhà phát triển dễ dàng tải về, sử dụng và fine-tuning các mô hình state-of-the-art mà không cần phải huấn luyện từ đầu.',
       },
     ],
   },
@@ -494,6 +590,38 @@ export const advancedAILessons: BaseLessonData[] = [
         answer:
           'Nhiều hệ thống RL, đặc biệt là trong robotics hay xe tự lái, quá nguy hiểm hoặc tốn kém để huấn luyện trực tiếp trong thế giới thực. Môi trường mô phỏng cho phép tác giả "thất bại" hàng triệu lần một cách an toàn và nhanh chóng, giúp nó học được các chiến lược hiệu quả trước khi triển khai ra thực tế.',
       },
+      {
+        question: 'Vấn đề "khám phá và khai thác" (exploration vs. exploitation) trong RL là gì?',
+        answer: 'Đây là một sự đánh đổi cốt lõi trong RL. "Khai thác" (exploitation) có nghĩa là tác tử thực hiện hành động mà nó biết là sẽ mang lại phần thưởng tốt nhất dựa trên kinh nghiệm hiện tại. "Khám phá" (exploration) có nghĩa là tác tử thử các hành động mới, có thể không tối ưu ở hiện tại, để tìm ra những phần thưởng tiềm năng lớn hơn trong tương lai. Cân bằng giữa hai yếu tố này là rất quan trọng để học được chính sách tối ưu.',
+      },
+      {
+        question: 'Q-learning là gì?',
+        answer: 'Q-learning là một thuật toán RL "off-policy" và "model-free". Nó học một hàm giá trị hành động (gọi là Q-function) để ước tính phần thưởng kỳ vọng khi thực hiện một hành động cụ thể tại một trạng thái nhất định. Tác tử sau đó chỉ cần chọn hành động có giá trị Q cao nhất ở mỗi trạng thái.',
+      },
+      {
+        question: 'Sự khác biệt giữa "model-free" và "model-based" RL là gì?',
+        answer: 'Các phương pháp "Model-free" (như Q-learning, Policy Gradient) học trực tiếp một chính sách hoặc một hàm giá trị mà không cần xây dựng một mô hình đầy đủ về môi trường. Các phương pháp "Model-based" cố gắng học một mô hình của môi trường (tức là học cách môi trường phản ứng với các hành động), sau đó sử dụng mô hình đó để lập kế hoạch.',
+      },
+      {
+        question: 'Policy Gradient hoạt động như thế nào?',
+        answer: 'Không giống như Q-learning học giá trị của hành động, các phương pháp Policy Gradient học trực tiếp một chính sách (policy), tức là một hàm ánh xạ từ trạng thái sang hành động. Chúng điều chỉnh các tham số của chính sách theo hướng làm tăng xác suất của các hành động dẫn đến phần thưởng cao.',
+      },
+      {
+        question: 'Actor-Critic là gì?',
+        answer: 'Các phương pháp Actor-Critic kết hợp những điểm mạnh của cả hai phương pháp Policy Gradient và Q-learning. "Actor" (diễn viên) là một chính sách quyết định hành động nào cần thực hiện. "Critic" (nhà phê bình) là một hàm giá trị đánh giá hành động đó tốt như thế nào. Critic cung cấp phản hồi cho Actor, giúp nó cập nhật chính sách một cách hiệu quả hơn.',
+      },
+      {
+        question: 'OpenAI Gym là gì?',
+        answer: 'OpenAI Gym là một bộ công cụ (toolkit) cung cấp một loạt các môi trường mô phỏng tiêu chuẩn (từ các bài toán kinh điển như cân bằng con lắc đến các trò chơi Atari). Nó cung cấp một giao diện chung để phát triển và so sánh các thuật toán RL, đã trở thành một tiêu chuẩn trong nghiên cứu RL.',
+      },
+      {
+        question: 'Học tăng cường có thể được áp dụng ở đâu ngoài game và robot?',
+        answer: 'RL có rất nhiều ứng dụng: tối ưu hóa các chiến dịch marketing, quản lý danh mục đầu tư tài chính, điều khiển các phản ứng hóa học, đề xuất sản phẩm cho người dùng trong e-commerce, và tối ưu hóa hoạt động của các trung tâm dữ liệu để tiết kiệm năng lượng.',
+      },
+      {
+        question: 'Thế nào là một hàm thưởng (reward function) được thiết kế tốt?',
+        answer: 'Một hàm thưởng tốt phải phản ánh chính xác mục tiêu cuối cùng của tác vụ. Nếu hàm thưởng được thiết kế sơ sài, tác tử có thể "hack" nó bằng cách tìm ra những hành vi không mong muốn nhưng vẫn tối đa hóa được phần thưởng. Ví dụ, một robot dọn dẹp được thưởng vì thu thập rác có thể học cách đổ rác ra để thu thập lại. Thiết kế hàm thưởng là một trong những phần khó và quan trọng nhất của RL.',
+      },
     ],
   },
   {
@@ -618,6 +746,38 @@ export const advancedAILessons: BaseLessonData[] = [
         question: 'MLOps là gì và tại sao nó quan trọng cho việc triển khai AI?',
         answer:
           'MLOps (Machine Learning Operations) là tập hợp các quy trình và công cụ nhằm tự động hóa và quản lý vòng đời của các mô hình machine learning trong môi trường sản xuất. Nó giúp đảm bảo các mô hình được triển khai một cách đáng tin cậy, có thể giám sát, cập nhật và duy trì hiệu suất theo thời gian, thay vì chỉ là một thử nghiệm trong phòng thí nghiệm.',
+      },
+      {
+        question: 'Thiên vị thuật toán (algorithmic bias) có thể dẫn đến những hậu quả tiêu cực nào?',
+        answer: 'Thiên vị thuật toán có thể dẫn đến sự phân biệt đối xử và bất bình đẳng. Ví dụ, một hệ thống AI tuyển dụng thiên vị có thể bỏ qua các ứng viên nữ đủ tiêu chuẩn, một hệ thống cho vay thiên vị có thể từ chối các khoản vay cho một nhóm dân tộc thiểu số, hoặc một hệ thống chẩn đoán y tế có thể hoạt động kém chính xác hơn đối với một giới tính nhất định.',
+      },
+      {
+        question: 'Sự khác biệt giữa tính minh bạch (transparency) và tính giải trình được (explainability) của AI là gì?',
+        answer: 'Tính minh bạch liên quan đến việc hiểu rõ cách một mô hình được tạo ra, dữ liệu nào được sử dụng và quy trình triển khai của nó. Tính giải trình được (hay diễn giải được) tập trung vào việc có thể giải thích tại sao một mô hình lại đưa ra một quyết định hoặc dự đoán cụ thể. Một hệ thống có thể minh bạch nhưng vẫn khó giải thích (ví dụ: một mạng neural sâu).',
+      },
+      {
+        question: 'Fairlearn và AI Fairness 360 là những công cụ gì?',
+        answer: 'Đây là các bộ công cụ mã nguồn mở giúp các nhà phát triển đánh giá và giảm thiểu các vấn đề về tính công bằng trong các mô hình machine learning. Chúng cung cấp các chỉ số để đo lường sự thiên vị và các thuật toán để giảm thiểu sự thiên vị đó.',
+      },
+      {
+        question: 'Tại sao bối cảnh văn hóa lại quan trọng trong đạo đức AI?',
+        answer: 'Các giá trị đạo đức và chuẩn mực xã hội không phải là phổ quát; chúng khác nhau giữa các nền văn hóa. Một hệ thống AI được coi là phù hợp ở một quốc gia có thể bị coi là xúc phạm hoặc không phù hợp ở một quốc-gia khác. Do đó, việc thiết kế AI có trách nhiệm đòi hỏi sự nhạy bén và thấu hiểu về văn hóa địa phương nơi nó được triển khai.',
+      },
+      {
+        question: '"Adversarial debiasing" là một kỹ thuật như thế nào?',
+        answer: 'Đây là một kỹ thuật giảm thiểu thiên vị, trong đó một mạng "đối thủ" (adversary) được huấn luyện để cố gắng dự đoán một thuộc tính nhạy cảm (ví dụ: giới tính, chủng tộc) từ các dự đoán của mô hình chính. Mô hình chính sau đó được huấn luyện để vừa thực hiện tốt nhiệm vụ của mình, vừa "đánh lừa" mạng đối thủ, tức là làm cho các dự đoán của nó không chứa thông tin về thuộc tính nhạy cảm đó.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo quyền riêng tư trong các hệ thống AI?',
+        answer: 'Các kỹ thuật bao gồm ẩn danh hóa và mã hóa dữ liệu, nhưng các phương pháp tiên tiến hơn như "Differential Privacy" (Quyền riêng tư vi phân) đang ngày càng phổ biến. Differential Privacy thêm một lượng nhiễu được kiểm soát vào dữ liệu hoặc kết quả truy vấn, giúp bảo vệ thông tin của các cá nhân trong khi vẫn cho phép thực hiện các phân tích thống kê hữu ích trên toàn bộ tập dữ liệu.',
+      },
+      {
+        question: 'Vòng đời MLOps điển hình bao gồm những giai đoạn nào?',
+        answer: 'Một vòng đời MLOps thường bao gồm: thu thập và chuẩn bị dữ liệu, huấn luyện và xác thực mô hình, đóng gói và triển khai mô hình, giám sát hiệu suất mô hình trong thực tế, và huấn luyện lại mô hình khi cần thiết. Toàn bộ quá trình này được tự động hóa và lặp lại.',
+      },
+      {
+        question: 'Ai là người chịu trách nhiệm khi một hệ thống AI gây ra lỗi?',
+        answer: 'Đây là một câu hỏi phức tạp về mặt pháp lý và đạo đức mà chưa có câu trả lời rõ ràng, được gọi là vấn đề về "trách nhiệm giải trình" (accountability). Trách nhiệm có thể thuộc về nhà phát triển, công ty triển khai, người dùng cuối, hoặc thậm chí là chính hệ thống AI. Việc thiết lập các khuôn khổ pháp lý và quy định rõ ràng là rất quan trọng để giải quyết vấn đề này.',
       },
     ],
   },

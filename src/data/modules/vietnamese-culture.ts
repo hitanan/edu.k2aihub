@@ -129,6 +129,46 @@ export const vietnameseCultureLessons: VietnameseCultureLesson[] = [
         answer:
           'Di sản văn hóa là bản sắc, là tâm hồn của một dân tộc. Nó kết nối chúng ta với quá khứ, giúp chúng ta hiểu mình là ai và định hình tương lai. Bảo tồn di sản không chỉ là giữ gìn những giá trị cho thế hệ mai sau mà còn là một nguồn lực quan trọng để phát triển kinh tế - xã hội, đặc biệt là trong lĩnh vực du lịch và giáo dục.',
       },
+      {
+        question: 'Photogrammetry là gì?',
+        answer:
+          'Là kỹ thuật tạo ra các mô hình 3D từ một loạt các bức ảnh 2D được chụp từ nhiều góc độ khác nhau. Một phần mềm chuyên dụng sẽ phân tích các bức ảnh này, tìm ra các điểm chung và tái tạo lại hình dạng 3D của vật thể. Đây là một phương pháp hiệu quả về chi phí để số hóa các vật thể và không gian lớn.',
+      },
+      {
+        question: 'Thực tế ảo (VR) và Thực tế tăng cường (AR) có thể được ứng dụng trong bảo tồn di sản như thế nào?',
+        answer:
+          'VR có thể tạo ra các chuyến tham quan ảo hoàn toàn, cho phép người dùng "đến thăm" các di tích đã bị phá hủy hoặc ở những nơi xa xôi. AR có thể làm phong phú thêm trải nghiệm tại di tích thật, ví dụ như hướng điện thoại vào một bức tường thành và xem cảnh tượng chiến trận xưa kia được tái hiện, hoặc xem thông tin bổ sung về một cổ vật.',
+      },
+      {
+        question: 'Di sản văn hóa phi vật thể là gì và làm thế nào để số hóa nó?',
+        answer:
+          'Là các di sản không thể sờ nắm được, như âm nhạc dân gian (Ca trù, Quan họ), các nghi lễ, lễ hội, nghề thủ công truyền thống, và các câu chuyện truyền miệng. Việc số hóa chúng bao gồm việc ghi âm, quay video, phỏng vấn các nghệ nhân, và xây dựng các kho lưu trữ trực tuyến để lưu giữ và chia sẻ các tư liệu này.',
+      },
+      {
+        question: 'Metadata (siêu dữ liệu) quan trọng như thế nào trong việc lưu trữ di sản số?',
+        answer:
+          'Metadata là "dữ liệu về dữ liệu". Nó mô tả các thông tin quan trọng về một đối tượng số, như nó là gì, được tạo ra khi nào, bởi ai, bằng công nghệ gì, bối cảnh lịch sử của nó. Nếu không có metadata, một file 3D hay một bản ghi âm sẽ chỉ là một tập tin vô nghĩa, không có giá trị nghiên cứu hay tra cứu.',
+      },
+      {
+        question: 'Làm thế nào để cộng đồng có thể tham gia vào việc số hóa di sản?',
+        answer:
+          'Cộng đồng có thể tham gia bằng nhiều cách: chia sẻ những câu chuyện, hình ảnh, tài liệu cũ của gia đình; tham gia các dự án ghi lại lịch sử truyền miệng; giúp nhận dạng và cung cấp thông tin về các địa điểm hoặc nhân vật trong các bức ảnh cũ; hoặc thậm chí học các kỹ năng số hóa cơ bản để giúp ghi lại di sản tại địa phương mình.',
+      },
+      {
+        question: 'Bản quyền trong di sản số được xử lý như thế nào?',
+        answer:
+          'Đây là một vấn đề phức tạp. Cần xác định ai là người sở hữu bản quyền của di sản gốc (nếu có) và ai sở hữu bản quyền của phiên bản số hóa. Nhiều tổ chức văn hóa chọn sử dụng các giấy phép mở (như Creative Commons) để cho phép công chúng truy cập và tái sử dụng di sản một cách hợp pháp cho các mục đích giáo dục và phi thương mại.',
+      },
+      {
+        question: 'Du lịch văn hóa số là gì?',
+        answer:
+          'Là việc sử dụng công nghệ số để nâng cao trải nghiệm của du khách khi khám phá văn hóa. Nó có thể bao gồm các ứng dụng hướng dẫn du lịch AR, các tour tham quan ảo VR trước khi đi, các mã QR tại di tích để cung cấp thông tin sâu hơn, hoặc các nền tảng kể chuyện kỹ thuật số về lịch sử và văn hóa địa phương.',
+      },
+      {
+        question: 'Thách thức lớn nhất của việc bảo tồn di sản số là gì?',
+        answer:
+          'Một trong những thách thức lớn nhất là sự lỗi thời của công nghệ. Các định dạng file, phần mềm và phần cứng thay đổi rất nhanh. Một file được tạo ra hôm nay có thể không mở được trong 10-20 năm nữa. Do đó, bảo tồn di sản số đòi hỏi một chiến lược dài hạn về việc di chuyển dữ liệu (data migration) và cập nhật công nghệ liên tục.',
+      },
     ],
     resources: [
       {

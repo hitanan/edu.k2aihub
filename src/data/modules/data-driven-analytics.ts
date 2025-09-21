@@ -195,6 +195,30 @@ export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLesson[] = [
         answer:
           'Hãy bắt đầu từ những bước nhỏ. Thiết lập các báo cáo tự động đơn giản, dễ hiểu. Trong các cuộc họp, hãy tập thói quen hỏi "Dữ liệu nào cho thấy điều đó?". Tôn vinh những quyết định thành công dựa trên dữ liệu để khuyến khích mọi người. Quan trọng nhất là sự gương mẫu từ cấp lãnh đạo.',
       },
+      {
+        question: 'Sự khác biệt giữa Google Analytics 4 (GA4) và phiên bản cũ (Universal Analytics) là gì?',
+        answer: 'GA4 tập trung vào việc theo dõi người dùng qua các "sự kiện" (events) thay vì "phiên" (sessions). Điều này giúp hiểu rõ hơn hành trình của người dùng trên cả website và ứng dụng di động, cung cấp một cái nhìn toàn diện hơn trong thế giới đa nền tảng ngày nay.',
+      },
+      {
+        question: 'Attribution modeling (mô hình phân bổ) là gì và tại sao nó quan trọng?',
+        answer: 'Mô hình phân bổ là cách bạn ghi nhận công lao cho các kênh marketing khác nhau đã góp phần tạo ra một chuyển đổi (ví dụ: một đơn hàng). Thay vì chỉ ghi nhận cho kênh cuối cùng (last-click), các mô hình phức tạp hơn sẽ phân bổ giá trị cho tất cả các điểm chạm (email, quảng cáo, tìm kiếm) trong hành trình của khách hàng, giúp bạn đánh giá đúng hiệu quả của từng kênh.',
+      },
+      {
+        question: 'A/B testing là gì?',
+        answer: 'A/B testing là một phương pháp thử nghiệm bằng cách tạo ra hai phiên bản (A và B) của một yếu tố nào đó (ví dụ: tiêu đề email, màu sắc nút bấm) và cho hai nhóm người dùng khác nhau xem. Bằng cách đo lường phiên bản nào tạo ra kết quả tốt hơn (ví dụ: tỷ lệ mở email cao hơn), bạn có thể đưa ra quyết định cải tiến dựa trên dữ liệu thực tế.',
+      },
+      {
+        question: 'ROI (Return on Investment) trong marketing được tính như thế nào?',
+        answer: 'Công thức cơ bản là: ROI = [(Doanh thu từ đầu tư - Chi phí đầu tư) / Chi phí đầu tư] x 100%. Trong marketing, việc xác định chính xác "Doanh thu từ đầu tư" đôi khi rất phức tạp, và đây là lúc các mô hình phân bổ (attribution modeling) trở nên hữu ích.',
+      },
+      {
+        question: 'Dữ liệu định tính (qualitative data) và dữ liệu định lượng (quantitative data) khác nhau như thế nào?',
+        answer: 'Dữ liệu định lượng là những gì có thể đếm được (số lượng truy cập, tỷ lệ chuyển đổi). Dữ liệu định tính là những gì không thể đếm được nhưng mô tả được (phản hồi của khách hàng, cảm xúc về thương hiệu). Một nhà phân tích giỏi cần kết hợp cả hai để có cái nhìn toàn diện: "cái gì" đang xảy ra (định lượng) và "tại sao" nó lại xảy ra (định tính).',
+      },
+      {
+        question: 'Làm thế nào để trực quan hóa dữ liệu (data visualization) một cách hiệu quả?',
+        answer: 'Hãy chọn đúng loại biểu đồ cho đúng mục đích. Ví dụ, dùng biểu đồ đường để thể hiện xu hướng theo thời gian, biểu đồ cột để so sánh các hạng mục, và biểu đồ tròn để thể hiện tỷ lệ phần trăm. Một biểu đồ tốt phải tự nó kể được một câu chuyện mà không cần giải thích nhiều.',
+      },
     ],
   },
   {
@@ -370,6 +394,30 @@ export const dataDrivenAnalyticsLessons: DataDrivenAnalyticsLesson[] = [
         question: 'Làm thế nào để một doanh nghiệp có thể bắt đầu với phân tích dự báo khi có ít dữ liệu?',
         answer:
           'Hãy bắt đầu thu thập dữ liệu một cách có hệ thống ngay từ bây giờ. Ngay cả với dữ liệu nhỏ, bạn vẫn có thể bắt đầu với các mô hình đơn giản như phân tích xu hướng (trend analysis) trên Google Analytics. Khi lượng dữ liệu tăng lên, bạn có thể triển khai các mô hình phức tạp hơn. Đừng đợi có "dữ liệu lớn" mới hành động.',
+      },
+      {
+        question: 'Mô hình hồi quy (Regression Model) trong phân tích dự báo là gì?',
+        answer: 'Đây là một trong những mô hình cơ bản nhất, được sử dụng để dự báo một giá trị số liên tục. Ví dụ, bạn có thể sử dụng mô hình hồi quy để dự báo doanh số bán hàng trong tháng tới dựa trên các yếu tố như chi tiêu quảng cáo, lượng truy cập website và mùa trong năm.',
+      },
+      {
+        question: 'Phân tích dự báo có thể giúp ngăn chặn khách hàng rời bỏ (customer churn) không?',
+        answer: 'Chắc chắn có. Bằng cách phân tích hành vi của những khách hàng đã rời bỏ trong quá khứ (ví dụ: giảm tần suất sử dụng, ít tương tác hơn), mô hình dự báo có thể xác định những khách hàng hiện tại đang có nguy cơ rời bỏ cao. Từ đó, doanh nghiệp có thể chủ động đưa ra các chương trình ưu đãi để giữ chân họ.',
+      },
+      {
+        question: 'Sự khác biệt giữa Machine Learning và Phân tích dự báo là gì?',
+        answer: 'Phân tích dự báo là một lĩnh vực ứng dụng, trong khi Machine Learning (Học máy) là một tập hợp các công cụ và kỹ thuật. Có thể nói, Machine Learning cung cấp các thuật toán và phương pháp để thực hiện phân tích dự báo. Phân tích dự báo là "cái gì", còn Machine Learning là "cách làm".',
+      },
+      {
+        question: 'Dữ liệu phi cấu trúc (unstructured data) như bình luận, email có thể được dùng để dự báo không?',
+        answer: 'Có, và đây là một lĩnh vực rất mạnh. Bằng cách sử dụng các kỹ thuật Xử lý Ngôn ngữ Tự nhiên (NLP), chúng ta có thể chuyển đổi văn bản thành dữ liệu có cấu trúc (ví dụ: phân tích cảm xúc tích cực/tiêu cực) và đưa vào các mô hình dự báo. Điều này giúp hiểu sâu hơn về ý kiến của khách hàng.',
+      },
+      {
+        question: 'Làm thế nào để đánh giá một mô hình dự báo có tốt hay không?',
+        answer: 'Chúng ta thường chia dữ liệu lịch sử thành hai phần: tập huấn luyện (training set) và tập kiểm tra (test set). Mô hình được xây dựng trên tập huấn luyện. Sau đó, chúng ta dùng mô hình để dự báo trên tập kiểm tra và so sánh kết quả dự báo với kết quả thực tế. Các chỉ số như MAE (Sai số tuyệt đối trung bình) hay RMSE (Sai số toàn phương trung bình) thường được dùng để đo lường độ chính xác.',
+      },
+      {
+        question: 'Liệu phân tích dự báo có thể mắc sai lầm không?',
+        answer: 'Chắc chắn có. Không có mô hình nào là hoàn hảo 100%. Các mô hình dự báo dựa trên giả định rằng các quy luật trong quá khứ sẽ tiếp tục đúng trong tương lai. Nếu có một sự kiện bất ngờ xảy ra (ví dụ: đại dịch, khủng hoảng kinh tế), các mô hình có thể trở nên không chính xác. Vì vậy, kết quả dự báo nên được xem là một hướng dẫn quan trọng, chứ không phải là một sự thật tuyệt đối.',
       },
     ],
   },

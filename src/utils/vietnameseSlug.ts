@@ -2,21 +2,33 @@ import { visit } from 'unist-util-visit';
 import type { Root, Element } from 'hast';
 
 /**
- * Custom slug function that preserves Vietnamese characters
- * @param text The heading text to create a slug from
- * @returns A URL-safe slug that preserves Vietnamese characters
+ * Create URL-safe, non-diacritic Vietnamese slug (ASCII-only)
+ * - Remove all Vietnamese diacritics (including Đ/đ -> d)
+ * - Keep a-z, 0-9 and dashes
+ * - Collapse spaces to single dash
  */
 export function createVietnameseSlug(text: string): string {
+  if (!text) return '';
+
+  // Normalize and strip diacritics
+  const withoutDiacritics = text
+    .toLowerCase()
+    .trim()
+    // Normalize to NFD form and remove combining marks
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    // Vietnamese special letters
+    .replace(/đ/g, 'd');
+
   return (
-    text
-      .toLowerCase()
-      .trim()
-      // Keep Vietnamese characters, numbers, letters, spaces, and basic punctuation
-      .replace(/[^\wàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ\s-]/g, '')
-      // Replace spaces and multiple dashes with single dash
+    withoutDiacritics
+      // Remove all non-alphanumeric characters except spaces and dashes
+      .replace(/[^a-z0-9\s-]/g, '')
+      // Replace whitespace with dashes
       .replace(/\s+/g, '-')
+      // Collapse multiple dashes
       .replace(/-+/g, '-')
-      // Remove leading/trailing dashes
+      // Trim leading/trailing dashes
       .replace(/^-+|-+$/g, '')
   );
 }

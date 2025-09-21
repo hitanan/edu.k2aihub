@@ -76,6 +76,46 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
         answer:
           'Việt Nam là một trong những quốc gia dễ bị tổn thương nhất bởi biến đổi khí hậu. Nông nghiệp bền vững giúp giảm phát thải khí nhà kính, bảo vệ tài nguyên nước và đất, đồng thời giúp nông dân thích ứng tốt hơn với các điều kiện thời tiết khắc nghiệt, đảm bảo an ninh lương thực lâu dài.',
       },
+      {
+        question: 'Nông nghiệp hữu cơ (organic) có phải là nông nghiệp bền vững không?',
+        answer:
+          'Nông nghiệp hữu cơ là một phần quan trọng của nông nghiệp bền vững, nhưng không phải là tất cả. Nông nghiệp hữu cơ tập trung vào việc không sử dụng hóa chất tổng hợp. Nông nghiệp bền vững có phạm vi rộng hơn, bao gồm cả các yếu tố về công bằng xã hội (điều kiện làm việc cho nông dân), hiệu quả kinh tế và bảo tồn đa dạng sinh học.',
+      },
+      {
+        question: 'Làm thế nào để biết một sản phẩm là "bền vững"?',
+        answer:
+          'Bạn có thể tìm kiếm các nhãn chứng nhận uy tín như Hữu cơ (USDA Organic, EU Organic), Fair Trade (Thương mại Công bằng), Rainforest Alliance. Ngoài ra, việc ưu tiên các sản phẩm địa phương, theo mùa cũng là một cách để hỗ trợ nông nghiệp bền vững.',
+      },
+      {
+        question: 'An ninh lương thực là gì?',
+        answer:
+          'An ninh lương thực có nghĩa là tất cả mọi người, vào mọi lúc, đều có thể tiếp cận được về mặt vật lý và kinh tế đối với thực phẩm đủ, an toàn và bổ dưỡng để đáp ứng nhu cầu ăn uống và sở thích thực phẩm của họ cho một cuộc sống năng động và khỏe mạnh.',
+      },
+      {
+        question: 'Biến đổi khí hậu ảnh hưởng đến nông nghiệp như thế nào?',
+        answer:
+          'Biến đổi khí hậu gây ra các hiện tượng thời tiết cực đoan như hạn hán, lũ lụt, bão, và xâm nhập mặn. Nó làm thay đổi mùa vụ, tăng nguy cơ sâu bệnh, và giảm năng suất cây trồng, đe dọa trực tiếp đến nguồn cung cấp lương thực toàn cầu.',
+      },
+      {
+        question: 'Nông nghiệp có đóng góp vào biến đổi khí hậu không?',
+        answer:
+          'Có. Nông nghiệp, đặc biệt là nông nghiệp công nghiệp, đóng góp một phần đáng kể vào lượng khí thải nhà kính toàn cầu, chủ yếu từ việc sử dụng phân bón hóa học (phát thải N2O), chăn nuôi gia súc (phát thải metan), và thay đổi mục đích sử dụng đất (phá rừng).',
+      },
+      {
+        question: 'Canh tác không cày xới (No-till farming) là gì?',
+        answer:
+          'Là một phương pháp canh tác bền vững, trong đó người nông dân trồng cây vụ mới trực tiếp trên phần còn lại của vụ cũ mà không cày xới đất. Phương pháp này giúp cải thiện sức khỏe của đất, tăng khả năng giữ nước, giảm xói mòn và cô lập carbon trong đất.',
+      },
+      {
+        question: 'Đa dạng sinh học có vai trò gì trong nông nghiệp bền vững?',
+        answer:
+          'Đa dạng sinh học là nền tảng của một hệ sinh thái nông nghiệp khỏe mạnh. Nó cung cấp các "dịch vụ" miễn phí như thụ phấn (nhờ ong, bướm), kiểm soát sâu bệnh tự nhiên (nhờ các loài thiên địch), và cải tạo đất. Việc trồng xen canh nhiều loại cây khác nhau giúp tăng cường đa dạng sinh học.',
+      },
+      {
+        question: 'Nông nghiệp tái tạo (Regenerative Agriculture) là gì?',
+        answer:
+          'Là một triết lý canh tác còn tiến bộ hơn cả bền vững. Mục tiêu của nó không chỉ là "duy trì" mà còn là "cải tạo và phục hồi" sức khỏe của hệ sinh thái, đặc biệt là đất đai. Các phương pháp bao gồm canh tác không cày xới, trồng cây che phủ, và chăn thả luân phiên.',
+      },
     ],
   },
   {
@@ -154,6 +194,46 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
         answer:
           'Chi phí ban đầu có thể là một rào cản, nhưng đang giảm dần. Đối với quy mô nhỏ, bạn có thể bắt đầu với các bộ kit Arduino/Raspberry Pi giá rẻ. Đối với quy mô lớn, lợi ích từ việc tiết kiệm nước, phân bón và tăng năng suất thường sẽ bù đắp chi phí đầu tư trong dài hạn. Nhiều công ty AgriTech Việt Nam cũng cung cấp các gói dịch vụ cho thuê thay vì mua đứt.',
       },
+      {
+        question: 'Ngoài độ ẩm, cảm biến IoT có thể đo được những gì khác?',
+        answer:
+          'Cảm biến IoT trong nông nghiệp rất đa dạng, có thể đo độ pH của đất, độ dẫn điện (EC - cho biết hàm lượng dinh dưỡng), nhiệt độ và độ ẩm không khí, cường độ ánh sáng, và thậm chí cả nồng độ các khí cụ thể trong nhà kính.',
+      },
+      {
+        question: 'Dữ liệu từ cảm biến được truyền đi bằng cách nào?',
+        answer:
+          'Dữ liệu có thể được truyền qua nhiều công nghệ không dây khác nhau. Wi-Fi phù hợp cho khoảng cách ngắn. LoRaWAN và NB-IoT là các công nghệ truyền thông công suất thấp, tầm xa, rất lý tưởng cho các trang trại rộng lớn nơi không có sẵn Wi-Fi hoặc 4G.',
+      },
+      {
+        question: 'Nền tảng quản lý trang trại thông minh là gì?',
+        answer:
+          'Là một phần mềm (thường là ứng dụng web hoặc di động) tổng hợp tất cả dữ liệu từ các cảm biến IoT, drone, và các nguồn khác. Nó trực quan hóa dữ liệu qua biểu đồ, bản đồ và cung cấp các phân tích, cảnh báo giúp người nông dân đưa ra quyết định quản lý tốt hơn.',
+      },
+      {
+        question: 'Làm thế nào để đảm bảo an ninh cho hệ thống IoT nông nghiệp?',
+        answer:
+          'Bảo mật là một thách thức lớn. Các biện pháp bao gồm mã hóa dữ liệu truyền đi, sử dụng mật khẩu mạnh cho các thiết bị, thường xuyên cập nhật phần mềm, và phân quyền truy cập để ngăn chặn các cuộc tấn công mạng có thể phá hoại mùa màng.',
+      },
+      {
+        question: 'Arduino và Raspberry Pi khác nhau như thế nào trong ứng dụng IoT?',
+        answer:
+          'Arduino là một vi điều khiển, rất giỏi trong việc đọc dữ liệu từ cảm biến và điều khiển các thiết bị đơn giản như máy bơm. Raspberry Pi là một máy tính mini hoàn chỉnh, có hệ điều hành, mạnh hơn và phù hợp hơn cho các tác vụ phức tạp như xử lý dữ liệu, kết nối internet và chạy các ứng dụng phức tạp.',
+      },
+      {
+        question: 'Hệ thống IoT có thể giúp phát hiện sâu bệnh không?',
+        answer:
+          'Có, một cách gián tiếp. Các cảm biến có thể phát hiện những thay đổi nhỏ về vi khí hậu (nhiệt độ, độ ẩm) trong tán lá, là điều kiện thuận lợi cho một số loại nấm hoặc sâu bệnh phát triển. Dữ liệu này có thể đưa ra cảnh báo sớm để nông dân kiểm tra và can thiệp kịp thời.',
+      },
+      {
+        question: 'Trang trại thẳng đứng (Vertical Farming) có sử dụng IoT không?',
+        answer:
+          'Chắc chắn có. Trang trại thẳng đứng hoàn toàn phụ thuộc vào IoT. Các cảm biến và bộ điều khiển quản lý mọi thứ một cách tự động, từ hệ thống đèn LED, tưới tiêu dinh dưỡng, đến kiểm soát nhiệt độ và CO2, tạo ra một môi trường được kiểm soát hoàn hảo cho cây trồng.',
+      },
+      {
+        question: 'Lợi ích lớn nhất của việc áp dụng IoT trong nông nghiệp là gì?',
+        answer:
+          'Lợi ích lớn nhất là chuyển từ việc ra quyết định dựa trên kinh nghiệm và phỏng đoán sang ra quyết định dựa trên dữ liệu (data-driven decision making). Điều này giúp tối ưu hóa việc sử dụng tài nguyên, giảm rủi ro, tăng năng suất và lợi nhuận một cách bền vững.',
+      },
     ],
   },
   {
@@ -229,6 +309,46 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
         answer:
           'Ở nhiều khía cạnh, drone vượt trội hơn, đặc biệt là về tốc độ, khả năng tiếp cận địa hình khó và giảm thiểu sự tiếp xúc của con người với hóa chất. Tuy nhiên, con người vẫn đóng vai trò quan trọng trong việc phân tích dữ liệu, lập kế hoạch bay, bảo trì thiết bị và đưa ra quyết định cuối cùng. Drone là một công cụ mạnh mẽ, không phải là sự thay thế hoàn toàn.',
       },
+      {
+        question: 'Drone sử dụng loại cảm biến nào để thu thập dữ liệu cây trồng?',
+        answer:
+          'Drone nông nghiệp thường được trang bị các cảm biến đa phổ (multispectral) hoặc siêu phổ (hyperspectral). Các cảm biến này có thể "nhìn thấy" các bước sóng ánh sáng mà mắt người không thể, đặc biệt là vùng cận hồng ngoại (NIR), là chìa khóa để tính toán chỉ số NDVI và đánh giá sức khỏe thực vật.',
+      },
+      {
+        question: 'Nông nghiệp chính xác (Precision Agriculture) là gì?',
+        answer:
+          'Là một phương pháp quản lý trang trại sử dụng công nghệ thông tin để quan sát, đo lường và ứng phó với sự thay đổi trong một cánh đồng. Thay vì xử lý toàn bộ cánh đồng như một thể thống nhất, nông nghiệp chính xác cho phép nông dân quản lý từng khu vực nhỏ theo nhu cầu cụ thể của nó, ví dụ như chỉ bón phân ở những nơi cần thiết.',
+      },
+      {
+        question: 'Drone giúp tiết kiệm chi phí như thế nào?',
+        answer:
+          'Drone giúp tiết kiệm chi phí bằng cách giảm lượng thuốc trừ sâu và phân bón sử dụng (chỉ phun ở những nơi cần), giảm chi phí nhân công, và phát hiện sớm các vấn đề về sâu bệnh hoặc dinh dưỡng trước khi chúng lan rộng, từ đó giảm thiểu thiệt hại năng suất.',
+      },
+      {
+        question: 'Dữ liệu từ drone được xử lý như thế nào?',
+        answer:
+          'Các hình ảnh thu thập từ drone được ghép lại với nhau (stitching) để tạo thành một bản đồ lớn của toàn bộ trang trại. Sau đó, các phần mềm chuyên dụng sẽ phân tích các hình ảnh này để tạo ra các bản đồ chỉ số (như NDVI), bản đồ độ cao, hoặc đếm số lượng cây trồng.',
+      },
+      {
+        question: 'Ngoài phun thuốc, drone còn có thể làm gì khác?',
+        answer:
+          'Drone ngày càng đa năng. Chúng có thể được sử dụng để gieo hạt, bón phân, thụ phấn nhân tạo cho cây trồng, và thậm chí là để lùa gia súc. Các drone có camera độ phân giải cao cũng được dùng để giám sát an ninh trang trại.',
+      },
+      {
+        question: 'Một phi công drone nông nghiệp cần những kỹ năng gì?',
+        answer:
+          'Ngoài kỹ năng điều khiển bay thành thạo, một phi công drone nông nghiệp cần có kiến thức về nông học để hiểu dữ liệu cây trồng, kỹ năng phân tích dữ liệu để diễn giải bản đồ NDVI, và kiến thức kỹ thuật để bảo trì, sửa chữa drone.',
+      },
+      {
+        question: 'Hạn chế của việc sử dụng drone trong nông nghiệp là gì?',
+        answer:
+          'Các hạn chế chính bao gồm chi phí đầu tư ban đầu, thời lượng pin bay có hạn, sự phụ thuộc vào điều kiện thời tiết (không thể bay khi có gió mạnh hoặc mưa), và các quy định pháp lý về không phận có thể phức tạp ở một số quốc gia.',
+      },
+      {
+        question: 'Tương lai của drone trong nông nghiệp sẽ như thế nào?',
+        answer:
+          'Trong tương lai, chúng ta sẽ thấy các đàn drone (drone swarms) hoạt động tự động cùng nhau, được hỗ trợ bởi AI để tự đưa ra quyết định. Chúng sẽ có khả năng thực hiện các nhiệm vụ phức tạp hơn như nhận dạng và tiêu diệt từng con sâu bệnh hoặc cỏ dại một cách có chọn lọc.',
+      },
     ],
   },
   {
@@ -302,6 +422,46 @@ export const sustainableAgricultureLessons: BaseLessonData[] = [
         question: 'Làm thế nào để áp dụng kinh tế tuần hoàn tại nhà?',
         answer:
           'Bạn có thể bắt đầu bằng những việc đơn giản như ủ phân compost từ rác nhà bếp để bón cho cây trồng, tận dụng nước vo gạo để tưới cây, hoặc xây dựng một hệ thống aquaponics nhỏ (kết hợp nuôi cá và trồng rau) trên ban công. Quan trọng nhất là thay đổi tư duy, xem "chất thải" là "tài nguyên".',
+      },
+      {
+        question: 'Biogas là gì và nó được tạo ra như thế nào?',
+        answer:
+          'Biogas là một loại khí sinh học được tạo ra từ quá trình phân hủy kỵ khí (không có oxy) của các chất hữu cơ như phân gia súc, rác thải thực phẩm. Thành phần chính của nó là metan (CH4). Biogas có thể được sử dụng làm nhiên liệu để đun nấu, sưởi ấm hoặc chạy máy phát điện.',
+      },
+      {
+        question: 'Phụ phẩm nông nghiệp có thể được sử dụng để làm gì?',
+        answer:
+          'Phụ phẩm nông nghiệp như rơm rạ, trấu, bã mía có rất nhiều ứng dụng. Chúng có thể được dùng làm thức ăn gia súc, làm nấm, sản xuất phân bón hữu cơ, làm vật liệu xây dựng, hoặc đốt để tạo ra năng lượng sinh khối (biomass energy).',
+      },
+      {
+        question: 'Mô hình VAC (Vườn - Ao - Chuồng) hoạt động như thế nào?',
+        answer:
+          'Đây là một mô hình kinh tế tuần hoàn kinh điển. Chất thải từ chuồng trại được ủ làm phân bón cho vườn cây. Lá cây hoặc rau thừa từ vườn được dùng làm thức ăn cho cá dưới ao hoặc cho vật nuôi. Bùn từ đáy ao được nạo vét để bón cho cây. Đây là một chu trình khép kín, tận dụng tối đa tài nguyên.',
+      },
+      {
+        question: 'Aquaponics là gì?',
+        answer:
+          'Aquaponics là một hệ thống kết hợp nuôi trồng thủy sản (nuôi cá) và thủy canh (trồng cây không cần đất). Nước thải từ bể cá, giàu dinh dưỡng, được bơm đến các khay trồng cây. Rễ cây sẽ hấp thụ các chất dinh dưỡng này, làm sạch nước. Nước sạch sau đó được tuần hoàn trở lại bể cá.',
+      },
+      {
+        question: 'Tại sao kinh tế tuần hoàn lại giúp tăng lợi nhuận cho nông dân?',
+        answer:
+          'Kinh tế tuần hoàn giúp nông dân giảm chi phí đầu vào (không cần mua nhiều phân bón hóa học), đồng thời tạo ra các nguồn thu nhập mới từ việc bán các sản phẩm phụ (phân compost, biogas, nấm từ rơm). Điều này làm tăng hiệu quả kinh tế tổng thể của trang trại.',
+      },
+      {
+        question: 'Compost (phân hữu cơ) khác gì với phân bón hóa học?',
+        answer:
+          'Phân compost là sản phẩm của quá trình phân hủy hữu cơ, nó không chỉ cung cấp dinh dưỡng cho cây mà còn cải tạo cấu trúc đất, tăng khả năng giữ nước và nuôi dưỡng hệ vi sinh vật có lợi trong đất. Phân bón hóa học chỉ cung cấp dinh dưỡng một cách nhanh chóng nhưng có thể làm chai cứng đất và gây ô nhiễm nguồn nước về lâu dài.',
+      },
+      {
+        question: 'Thách thức lớn nhất khi triển khai kinh tế tuần hoàn trong nông nghiệp là gì?',
+        answer:
+          'Thách thức lớn nhất là về nhận thức và kiến thức của người nông dân. Ngoài ra, việc đầu tư ban đầu cho các công nghệ như hầm biogas hay hệ thống compost quy mô lớn cũng có thể là một rào cản. Việc thiếu các thị trường đầu ra ổn định cho các sản phẩm tái chế cũng là một khó khăn.',
+      },
+      {
+        question: 'Chính phủ có vai trò gì trong việc thúc đẩy kinh tế tuần hoàn?',
+        answer:
+          'Chính phủ đóng vai trò quan trọng trong việc ban hành các chính sách khuyến khích (hỗ trợ vốn, giảm thuế), xây dựng các tiêu chuẩn và quy chuẩn kỹ thuật, hỗ trợ chuyển giao công nghệ, và tạo ra các thị trường cho sản phẩm tái chế, giúp kết nối các bên liên quan trong chuỗi giá trị tuần hoàn.',
       },
     ],
   },

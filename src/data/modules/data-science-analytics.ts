@@ -186,6 +186,30 @@ export const lessons: DataScienceAnalyticsLesson[] = [
         answer:
           'Hãy thực hiện các dự án cá nhân từ đầu đến cuối. Chọn một bộ dữ liệu công khai bạn quan tâm (ví dụ trên Kaggle), đặt ra một câu hỏi kinh doanh, và thực hiện toàn bộ quy trình: làm sạch dữ liệu, phân tích, xây dựng mô hình, và trình bày kết quả. Ghi lại quá trình này trên GitHub hoặc một bài blog.',
       },
+      {
+        question: 'Exploratory Data Analysis (EDA) là gì và tại sao nó quan trọng?',
+        answer: 'EDA là quá trình khám phá ban đầu một bộ dữ liệu để tóm tắt các đặc điểm chính của nó, thường bằng các phương pháp trực quan. Nó giống như việc "làm quen" với dữ liệu trước khi đi sâu vào mô hình hóa, giúp phát hiện các điểm bất thường, các mẫu và các mối quan hệ tiềm ẩn.',
+      },
+      {
+        question: 'Sự khác biệt giữa học có giám sát (supervised learning) và học không giám sát (unsupervised learning) là gì?',
+        answer: 'Trong học có giám sát, bạn có dữ liệu đã được "gán nhãn" (ví dụ: email là spam hay không spam) và mục tiêu là dạy mô hình dự đoán nhãn cho dữ liệu mới. Trong học không giám sát, bạn không có nhãn và mục tiêu là để mô hình tự tìm ra cấu trúc hoặc các cụm (cluster) trong dữ liệu.',
+      },
+      {
+        question: 'Feature Engineering là gì?',
+        answer: 'Đây là quá trình sử dụng kiến thức chuyên môn về lĩnh vực để tạo ra các "tính năng" (features) mới từ dữ liệu thô, giúp các thuật toán học máy hoạt động hiệu quả hơn. Ví dụ, từ ngày sinh, bạn có thể tạo ra tính năng "tuổi". Đây thường là một trong những bước quan trọng nhất quyết định sự thành công của một dự án.',
+      },
+      {
+        question: 'Làm thế nào để xử lý dữ liệu bị thiếu (missing data)?',
+        answer: 'Có nhiều cách: bạn có thể xóa các hàng hoặc cột có dữ liệu bị thiếu (nếu số lượng ít), hoặc "điền vào" (impute) các giá trị bị thiếu bằng các giá trị thống kê như trung bình, trung vị, hoặc sử dụng các mô hình phức tạp hơn để dự đoán giá trị bị thiếu.',
+      },
+      {
+        question: 'Overfitting (quá khớp) là gì?',
+        answer: 'Overfitting xảy ra khi một mô hình học quá "thuộc lòng" dữ liệu huấn luyện, bao gồm cả nhiễu, đến mức nó hoạt động rất tốt trên dữ liệu đó nhưng lại hoạt động kém trên dữ liệu mới. Nó giống như một học sinh học vẹt, chỉ biết những gì trong sách mà không thể áp dụng vào thực tế.',
+      },
+      {
+        question: 'Jupyter Notebook là gì?',
+        answer: 'Đó là một môi trường làm việc tương tác dựa trên web cho phép bạn viết và thực thi code (thường là Python), xem kết quả, trực quan hóa dữ liệu và viết các ghi chú giải thích trong cùng một tài liệu. Nó rất phổ biến cho việc phân tích dữ liệu và thử nghiệm các mô hình.',
+      },
     ],
   },
   {
@@ -330,6 +354,48 @@ export const lessons: DataScienceAnalyticsLesson[] = [
           'Spark là một framework tính toán phân tán mạnh mẽ, cho phép xử lý các tập dữ liệu khổng lồ (terabytes, petabytes) nhanh hơn nhiều so với các công nghệ truyền thống như Hadoop MapReduce.',
       },
     ],
+    faqs: [
+      {
+        question: 'Big Data (Dữ liệu lớn) được định nghĩa bởi những đặc điểm nào?',
+        answer: 'Big Data thường được định nghĩa bởi 3 chữ V (và sau này mở rộng thêm): Volume (Khối lượng lớn), Velocity (Tốc độ cao, dữ liệu được tạo ra liên tục), và Variety (Sự đa dạng, từ dữ liệu có cấu trúc đến phi cấu trúc như văn bản, hình ảnh).',
+      },
+      {
+        question: 'Hadoop và Spark khác nhau như thế nào?',
+        answer: 'Hadoop (cụ thể là MapReduce) xử lý dữ liệu trên đĩa, làm cho nó chậm hơn nhưng phù hợp cho các tác vụ xử lý hàng loạt (batch processing) rất lớn. Spark xử lý dữ liệu trong bộ nhớ (in-memory), giúp nó nhanh hơn đáng kể và linh hoạt hơn cho cả xử lý hàng loạt và phân tích tương tác.',
+      },
+      {
+        question: 'Deep Learning (Học sâu) là gì và nó khác gì với Machine Learning truyền thống?',
+        answer: 'Deep Learning là một nhánh của Machine Learning sử dụng các mạng nơ-ron nhân tạo có nhiều lớp (do đó có từ "sâu"). Nó đặc biệt mạnh trong việc tự động học các tính năng phức tạp từ dữ liệu phi cấu trúc như hình ảnh, âm thanh, văn bản, trong khi Machine Learning truyền thống thường cần bước "feature engineering" thủ công.',
+      },
+      {
+        question: 'TensorFlow và PyTorch là gì?',
+        answer: 'Đây là hai framework mã nguồn mở phổ biến nhất để xây dựng và huấn luyện các mô hình Deep Learning. TensorFlow (phát triển bởi Google) mạnh về khả năng triển khai sản phẩm và hệ sinh thái. PyTorch (phát triển bởi Facebook) được yêu thích trong cộng đồng nghiên cứu vì tính linh hoạt và dễ sử dụng.',
+      },
+      {
+        question: 'MLOps (Machine Learning Operations) là gì?',
+        answer: 'MLOps là tập hợp các thực hành nhằm mục đích triển khai và duy trì các mô hình học máy trong môi trường sản phẩm một cách đáng tin cậy và hiệu quả. Nó kết hợp Machine Learning, DevOps và Kỹ thuật dữ liệu, bao gồm các khía cạnh như tự động hóa, giám sát và quản lý vòng đời mô hình.',
+      },
+      {
+        question: 'Một ví dụ về ứng dụng của Big Data và Machine Learning trong thực tế?',
+        answer: 'Hệ thống gợi ý sản phẩm của Amazon là một ví dụ điển hình. Nó phân tích lịch sử mua sắm và hành vi duyệt web của hàng triệu người dùng (Big Data) để xây dựng các mô hình Machine Learning dự đoán những sản phẩm bạn có thể quan tâm và hiển thị chúng cho bạn trong thời gian thực.',
+      },
+      {
+        question: 'Containerization (ví dụ: Docker) giúp gì trong việc triển khai mô hình ML?',
+        answer: 'Docker cho phép bạn "đóng gói" mô hình của mình cùng với tất cả các thư viện và môi trường cần thiết vào một "container" duy nhất. Điều này đảm bảo rằng mô hình sẽ chạy nhất quán trên mọi môi trường, từ máy tính của nhà phát triển đến máy chủ sản phẩm, giải quyết vấn đề "nó chạy trên máy của tôi mà!".',
+      },
+      {
+        question: 'Xử lý dữ liệu streaming (streaming data processing) là gì?',
+        answer: 'Đây là việc xử lý dữ liệu ngay khi nó được tạo ra, trong thời gian thực, thay vì chờ đợi để xử lý theo lô. Nó rất quan trọng cho các ứng dụng cần phản ứng tức thì, chẳng hạn như phát hiện gian lận thẻ tín dụng hoặc phân tích dữ liệu từ cảm biến IoT.',
+      },
+      {
+        question: 'Tại sao cần các hệ thống phân tán như Spark để xử lý Big Data?',
+        answer: 'Khi một tập dữ liệu quá lớn để chứa hoặc xử lý trên một máy tính duy nhất, chúng ta cần phải chia nhỏ dữ liệu và công việc xử lý ra nhiều máy tính (một cụm - cluster). Các hệ thống như Spark cung cấp một framework để quản lý và điều phối công việc phức tạp này một cách tự động.',
+      },
+      {
+        question: 'Reinforcement Learning (Học tăng cường) là gì?',
+        answer: 'Đây là một loại hình học máy trong đó một "tác nhân" (agent) học cách hành động trong một môi trường để tối đa hóa phần thưởng. Nó không học từ dữ liệu được gán nhãn mà học thông qua thử và sai. Đây là công nghệ đằng sau các AI chơi game như AlphaGo hay xe tự lái.',
+      },
+    ],
   },
   {
     id: 'business-intelligence-data-storytelling',
@@ -471,6 +537,48 @@ export const lessons: DataScienceAnalyticsLesson[] = [
         correctAnswerIndex: 3,
         explanation:
           'Kể chuyện bằng dữ liệu là sự kết hợp giữa khoa học (dữ liệu) và nghệ thuật (cách kể chuyện) để làm cho thông tin trở nên dễ hiểu, thuyết phục và có tác động mạnh mẽ đến người nghe.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Business Intelligence (BI) là gì?',
+        answer: 'Business Intelligence là quá trình sử dụng công nghệ để thu thập, tích hợp, phân tích và trình bày thông tin kinh doanh. Mục tiêu của BI là giúp các nhà lãnh đạo đưa ra các quyết định kinh doanh tốt hơn, nhanh hơn và dựa trên dữ liệu thực tế thay vì cảm tính.',
+      },
+      {
+        question: 'Sự khác biệt giữa Power BI và Tableau là gì?',
+        answer: 'Cả hai đều là công cụ BI hàng đầu. Power BI (của Microsoft) thường được đánh giá cao về khả năng tích hợp chặt chẽ với hệ sinh thái Microsoft (Excel, Azure), dễ sử dụng cho người mới bắt đầu và có giá cả cạnh tranh. Tableau thường được coi là mạnh hơn về khả năng trực quan hóa dữ liệu phức tạp và linh hoạt hơn cho các nhà phân tích chuyên sâu.',
+      },
+      {
+        question: 'Dashboard là gì và một dashboard tốt cần những yếu tố nào?',
+        answer: 'Dashboard là một giao diện trực quan cung cấp cái nhìn tổng quan về các chỉ số hiệu suất chính (KPIs) quan trọng nhất. Một dashboard tốt cần: rõ ràng (hiển thị đúng thông tin quan trọng), đơn giản (không làm người xem bị quá tải), và có tính hành động (giúp người xem biết cần phải làm gì tiếp theo).',
+      },
+      {
+        question: 'Tại sao "kể chuyện" lại quan trọng khi làm việc với dữ liệu?',
+        answer: 'Con người có xu hướng ghi nhớ và bị thuyết phục bởi những câu chuyện hơn là những con số khô khan. Kể chuyện giúp tạo ra ngữ cảnh, kết nối cảm xúc và làm cho các insight từ dữ liệu trở nên dễ hiểu và đáng nhớ, từ đó thúc đẩy sự thay đổi và hành động trong một tổ chức.',
+      },
+      {
+        question: 'SQL có vai trò gì trong Business Intelligence?',
+        answer: 'SQL (Structured Query Language) là ngôn ngữ tiêu chuẩn để truy vấn và lấy dữ liệu từ các cơ sở dữ liệu quan hệ. Đây là kỹ năng nền tảng cho bất kỳ chuyên gia BI nào, cho phép họ trích xuất chính xác dữ liệu cần thiết để phân tích và tạo báo cáo.',
+      },
+      {
+        question: 'Self-service BI (BI tự phục vụ) là gì?',
+        answer: 'Đây là một phương pháp cho phép người dùng cuối (ví dụ: nhân viên phòng marketing, bán hàng) tự tạo báo cáo và dashboard của riêng họ mà không cần sự can thiệp liên tục từ bộ phận IT hoặc các nhà phân tích dữ liệu. Các công cụ như Power BI và Tableau rất mạnh trong việc hỗ trợ self-service BI.',
+      },
+      {
+        question: 'Làm thế nào để chọn đúng KPI (Key Performance Indicator)?',
+        answer: 'Một KPI tốt phải trực tiếp liên quan đến mục tiêu kinh doanh của bạn. Thay vì theo dõi hàng chục chỉ số, hãy tập trung vào một vài chỉ số quan trọng nhất thực sự phản ánh sự thành công. Ví dụ, đối với một trang web thương mại điện tử, "Tỷ lệ chuyển đổi" quan trọng hơn nhiều so với "Số lượt xem trang".',
+      },
+      {
+        question: 'DAX trong Power BI là gì?',
+        answer: 'DAX (Data Analysis Expressions) là một ngôn ngữ công thức được sử dụng trong Power BI (và các công cụ khác của Microsoft) để tạo ra các cột tính toán và các thước đo (measures) tùy chỉnh. Nó cho phép bạn thực hiện các phép tính phức tạp trên dữ liệu của mình, vượt ra ngoài những gì có thể làm với các tổng hợp cơ bản.',
+      },
+      {
+        question: 'Làm thế nào để tránh việc trình bày thông tin sai lệch bằng biểu đồ?',
+        answer: 'Hãy luôn bắt đầu trục Y từ 0 để tránh phóng đại sự khác biệt. Sử dụng đúng loại biểu đồ cho dữ liệu của bạn. Đảm bảo rằng các nhãn và tiêu đề rõ ràng, không gây hiểu lầm. Tránh sử dụng các hiệu ứng 3D hoặc các yếu tố trang trí không cần thiết làm sai lệch nhận thức về tỷ lệ.',
+      },
+      {
+        question: 'Xu hướng của ngành Business Intelligence trong tương lai là gì?',
+        answer: 'Các xu hướng chính bao gồm sự tích hợp ngày càng sâu của AI và Machine Learning (để tự động tạo insight), phân tích tăng cường (augmented analytics), xử lý ngôn ngữ tự nhiên (cho phép người dùng đặt câu hỏi cho dữ liệu bằng ngôn ngữ thông thường), và sự tập trung mạnh mẽ hơn vào quản trị dữ liệu và bảo mật.',
       },
     ],
   },

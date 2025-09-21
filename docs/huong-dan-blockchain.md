@@ -1,7 +1,7 @@
 ---
 title: 'Hướng Dẫn Blockchain 101: Từ Giao Dịch Đầu Tiên Đến Hợp Đồng Thông Minh'
 description: 'Khám phá những khái niệm cốt lõi đằng sau công nghệ Blockchain, bao gồm sổ cái phi tập trung, cơ chế đồng thuận và mật mã học. Tìm hiểu cách hoạt động và tiềm năng ứng dụng của nó.'
-date: '2025-10-12'
+date: '2025-09-12'
 author: 'K2AiHub Tech Team'
 category: 'Hướng Dẫn'
 tags: ['blockchain', 'tiền mã hóa', 'hợp đồng thông minh', 'phi tập trung', 'công nghệ', 'hướng dẫn', 'K2AiHub']
@@ -28,6 +28,7 @@ Bài viết này của **K2AiHub** sẽ giải mã những khái niệm cốt l�
 Đây là đặc tính quan trọng nhất. Trong một hệ thống tập trung truyền thống (như hệ thống ngân hàng), mọi giao dịch đều phải đi qua một máy chủ trung tâm. Nếu máy chủ này bị tấn công, bị lỗi, hoặc bị kiểm soát bởi một bên có ý đồ xấu, toàn bộ hệ thống sẽ gặp rủi ro.
 
 Với Blockchain, không có một điểm kiểm soát trung tâm nào. Dữ liệu được lưu trữ trên nhiều máy tính (gọi là các **nút** - nodes) trong mạng. Điều này mang lại:
+
 - **Tính bền vững:** Mạng lưới vẫn hoạt động ngay cả khi một vài nút bị ngắt kết nối.
 - **Tính minh bạch:** Hầu hết các blockchain công khai cho phép bất kỳ ai cũng có thể xem lịch sử giao dịch.
 - **Tính chống kiểm duyệt:** Không một cá nhân hay tổ chức nào có thể đơn phương ngăn chặn hay thay đổi giao dịch.
@@ -53,10 +54,12 @@ Khi có hàng ngàn nút trong mạng, làm thế nào để tất cả cùng đ
 **Hợp đồng thông minh** là các chương trình máy tính được lưu trữ và thực thi trên blockchain. Chúng hoạt động giống như một hợp đồng truyền thống, nhưng việc thực thi là hoàn toàn tự động và không cần bên trung gian.
 
 **Ví dụ đơn giản:** Một hợp đồng thông minh cho máy bán hàng tự động.
+
 - **Quy tắc:** "NẾU ai đó bỏ vào 2 đồng, THÌ máy sẽ tự động nhả ra một lon nước ngọt."
 - **Thực thi:** Logic này được lập trình vào blockchain. Khi hợp đồng nhận được 2 đồng từ ví của bạn, nó sẽ tự động thực thi lệnh "nhả lon nước". Không ai có thể can thiệp, không có trường hợp "máy nuốt tiền mà không nhả nước".
 
 Tiềm năng của hợp đồng thông minh là vô hạn:
+
 - **Tài chính phi tập trung (DeFi):** Vay, cho vay, giao dịch tài sản mà không cần ngân hàng.
 - **Chuỗi cung ứng:** Tự động theo dõi và xác minh nguồn gốc sản phẩm từ nông trại đến bàn ăn.
 - **Bảo hiểm:** Tự động chi trả bồi thường khi có dữ liệu xác nhận về một sự kiện (ví dụ: chuyến bay bị hủy).
