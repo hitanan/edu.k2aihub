@@ -60,7 +60,7 @@ export interface ArduinoLesson extends BaseLessonData {
 
 export const arduinoLessons: ArduinoLesson[] = [
   {
-    id: 'arduino-setup',
+    id: 'getting-started-with-arduino',
     title: 'Cài Đặt và Làm Quen Arduino',
     description:
       'Bước đầu khám phá thế giới Arduino! Bạn sẽ tự tay cài đặt phần mềm, kết nối bo mạch, làm cho đèn LED nhấp nháy và cảm nhận niềm vui của việc lập trình phần cứng. Bài học này giúp bạn tự tin bắt đầu mọi dự án sáng tạo với Arduino.',
@@ -284,7 +284,7 @@ void loop() {
     ],
   },
   {
-    id: 'led-digital-outputs',
+    id: 'digital-outputs-and-led-control',
     title: 'LED và Đầu ra Kỹ thuật số (Digital Outputs)',
     description:
       'Khám phá thế giới điều khiển ánh sáng! Học cách tạo ra các hiệu ứng đẹp mắt, điều khiển nhiều đèn LED cùng lúc, và hiểu sâu về các chân đầu ra kỹ thuật số. Từ một đèn LED đơn giản đến ma trận LED và LED RGB phức tạp.',
@@ -525,7 +525,7 @@ void loop() {
     ],
   },
   {
-    id: 'arduino-inputs',
+    id: 'reading-analog-and-digital-inputs',
     title: 'Đọc Tín hiệu Đầu vào và Điều khiển',
     description:
       'Trải nghiệm việc điều khiển thiết bị bằng nút nhấn, biến trở và cảm biến! Bạn sẽ học cách tương tác với thế giới thực, tạo ra các hiệu ứng thú vị và xây dựng những hệ thống thông minh chỉ với vài dòng code.',
@@ -761,7 +761,7 @@ void loop() {
     ],
   },
   {
-    id: 'arduino-sensors',
+    id: 'working-with-sensors',
     videoUrl: null,
     title: 'Làm Việc Với Cảm Biến',
     description:
@@ -1050,7 +1050,7 @@ void loop() {
     ],
   },
   {
-    id: 'arduino-communication',
+    id: 'communication-and-networking',
     videoUrl: null,
     title: 'Giao Tiếp và Mạng (Networking)',
     description:
@@ -1392,7 +1392,7 @@ void loop() {
     ],
   },
   {
-    id: 'arduino-advanced-projects',
+    id: 'advanced-arduino-projects',
     title: 'Dự Án Arduino Nâng Cao',
     description:
       'Khám phá sức mạnh thực sự của Arduino qua một dự án IoT thông minh! Tự tay thiết kế một trạm giám sát môi trường hiện đại, kết nối nhiều cảm biến, truyền dữ liệu lên đám mây, xử lý thời gian thực, tạo giao diện trực quan và điều khiển thiết bị từ xa. Làm chủ công nghệ, sáng tạo giải pháp phục vụ cuộc sống và chinh phục các cuộc thi lớn! 🚀',

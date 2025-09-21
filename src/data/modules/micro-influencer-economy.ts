@@ -125,28 +125,34 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         },
         {
           question: 'Sự khác biệt giữa micro-influencer và macro-influencer là gì?',
-          answer: 'Sự khác biệt chính nằm ở lượng người theo dõi. Micro-influencer có từ 1.000 - 100.000 người theo dõi, trong khi macro-influencer có từ 100.000 đến 1 triệu. Micro-influencer thường có tỷ lệ tương tác cao hơn và mối quan hệ gần gũi hơn với khán giả.'
+          answer:
+            'Sự khác biệt chính nằm ở lượng người theo dõi. Micro-influencer có từ 1.000 - 100.000 người theo dõi, trong khi macro-influencer có từ 100.000 đến 1 triệu. Micro-influencer thường có tỷ lệ tương tác cao hơn và mối quan hệ gần gũi hơn với khán giả.',
         },
         {
           question: 'Tỷ lệ tương tác (engagement rate) là gì và tại sao nó quan trọng?',
-          answer: 'Tỷ lệ tương tác là tỷ lệ phần trăm người theo dõi tương tác (thích, bình luận, chia sẻ) với nội dung của bạn. Đây là một chỉ số quan trọng vì nó cho thấy mức độ gắn kết và quan tâm thực sự của khán giả, điều mà các nhãn hàng rất coi trọng.'
+          answer:
+            'Tỷ lệ tương tác là tỷ lệ phần trăm người theo dõi tương tác (thích, bình luận, chia sẻ) với nội dung của bạn. Đây là một chỉ số quan trọng vì nó cho thấy mức độ gắn kết và quan tâm thực sự của khán giả, điều mà các nhãn hàng rất coi trọng.',
         },
         {
           question: 'Tôi có cần phải có thiết bị đắt tiền để bắt đầu không?',
-          answer: 'Không cần thiết. Hầu hết các micro-influencer thành công đều bắt đầu với những gì họ có, thường chỉ là một chiếc điện thoại thông minh. Chất lượng nội dung và sự sáng tạo quan trọng hơn nhiều so với thiết bị đắt tiền.'
+          answer:
+            'Không cần thiết. Hầu hết các micro-influencer thành công đều bắt đầu với những gì họ có, thường chỉ là một chiếc điện thoại thông minh. Chất lượng nội dung và sự sáng tạo quan trọng hơn nhiều so với thiết bị đắt tiền.',
         },
         {
           question: 'Làm thế nào để xây dựng lòng tin với khán giả?',
-          answer: 'Hãy luôn minh bạch và chân thực. Chỉ giới thiệu những sản phẩm bạn thực sự tin dùng. Chia sẻ cả những thành công và thất bại. Tương tác và lắng nghe khán giả của bạn một cách chân thành.'
+          answer:
+            'Hãy luôn minh bạch và chân thực. Chỉ giới thiệu những sản phẩm bạn thực sự tin dùng. Chia sẻ cả những thành công và thất bại. Tương tác và lắng nghe khán giả của bạn một cách chân thành.',
         },
         {
           question: 'Nền tảng nào tốt nhất để bắt đầu?',
-          answer: 'Điều này phụ thuộc vào niche của bạn và đối tượng khán giả bạn muốn nhắm tới. Instagram và TikTok rất mạnh về hình ảnh và video ngắn, phù hợp với thời trang, làm đẹp, ẩm thực. YouTube phù hợp cho các nội dung chuyên sâu, hướng dẫn. Facebook vẫn tốt cho việc xây dựng cộng đồng.'
+          answer:
+            'Điều này phụ thuộc vào niche của bạn và đối tượng khán giả bạn muốn nhắm tới. Instagram và TikTok rất mạnh về hình ảnh và video ngắn, phù hợp với thời trang, làm đẹp, ẩm thực. YouTube phù hợp cho các nội dung chuyên sâu, hướng dẫn. Facebook vẫn tốt cho việc xây dựng cộng đồng.',
         },
         {
           question: 'Mất bao lâu để trở thành một micro-influencer thành công?',
-          answer: 'Không có câu trả lời chính xác. Điều này phụ thuộc vào sự nỗ lực, nhất quán và chất lượng nội dung của bạn. Có thể mất vài tháng đến một năm hoặc hơn để xây dựng một lượng người theo dõi đủ lớn và có tương tác tốt.'
-        }
+          answer:
+            'Không có câu trả lời chính xác. Điều này phụ thuộc vào sự nỗ lực, nhất quán và chất lượng nội dung của bạn. Có thể mất vài tháng đến một năm hoặc hơn để xây dựng một lượng người theo dõi đủ lớn và có tương tác tốt.',
+        },
       ],
       careerConnect: {
         name: 'Linh Nguyễn',
@@ -214,32 +220,39 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         },
         {
           question: 'Làm thế nào để kể câu chuyện thương hiệu cá nhân hấp dẫn?',
-          answer: 'Câu chuyện của bạn nên bao gồm nguồn gốc, lý do bạn làm điều này, những giá trị bạn theo đuổi và tầm nhìn của bạn. Hãy kể một cách chân thực, thể hiện được cá tính và kết nối cảm xúc với khán giả.'
+          answer:
+            'Câu chuyện của bạn nên bao gồm nguồn gốc, lý do bạn làm điều này, những giá trị bạn theo đuổi và tầm nhìn của bạn. Hãy kể một cách chân thực, thể hiện được cá tính và kết nối cảm xúc với khán giả.',
         },
         {
           question: 'Unique Value Proposition (UVP) là gì?',
-          answer: 'UVP là một lời tuyên bố ngắn gọn, rõ ràng mô tả lợi ích độc nhất mà bạn mang lại cho khán giả, tại sao họ nên theo dõi bạn thay vì người khác. Ví dụ: "Hướng dẫn nấu món ăn Việt cho người bận rộn trong 15 phút".'
+          answer:
+            'UVP là một lời tuyên bố ngắn gọn, rõ ràng mô tả lợi ích độc nhất mà bạn mang lại cho khán giả, tại sao họ nên theo dõi bạn thay vì người khác. Ví dụ: "Hướng dẫn nấu món ăn Việt cho người bận rộn trong 15 phút".',
         },
         {
           question: 'Làm thế nào để phân tích đối thủ cạnh tranh trong niche của mình?',
-          answer: 'Hãy theo dõi các influencer khác trong niche của bạn. Xem họ làm loại nội dung gì, họ tương tác với khán giả ra sao, điểm mạnh và điểm yếu của họ là gì. Từ đó, tìm ra "khoảng trống" mà bạn có thể lấp đầy và làm tốt hơn.'
+          answer:
+            'Hãy theo dõi các influencer khác trong niche của bạn. Xem họ làm loại nội dung gì, họ tương tác với khán giả ra sao, điểm mạnh và điểm yếu của họ là gì. Từ đó, tìm ra "khoảng trống" mà bạn có thể lấp đầy và làm tốt hơn.',
         },
         {
           question: 'Tính nhất quán của thương hiệu có nghĩa là gì?',
-          answer: 'Là việc duy trì sự đồng bộ về mặt hình ảnh (màu sắc, logo, font chữ), giọng điệu (tone of voice) và thông điệp trên tất cả các nền tảng. Điều này giúp khán giả dễ dàng nhận ra và ghi nhớ thương hiệu của bạn.'
+          answer:
+            'Là việc duy trì sự đồng bộ về mặt hình ảnh (màu sắc, logo, font chữ), giọng điệu (tone of voice) và thông điệp trên tất cả các nền tảng. Điều này giúp khán giả dễ dàng nhận ra và ghi nhớ thương hiệu của bạn.',
         },
         {
           question: 'Tôi có nên thể hiện cá tính thật của mình không?',
-          answer: 'Chắc chắn rồi. Sự chân thực là tài sản lớn nhất của một micro-influencer. Đừng cố gắng trở thành một người khác. Khán giả kết nối với con người thật của bạn, bao gồm cả những điểm không hoàn hảo.'
+          answer:
+            'Chắc chắn rồi. Sự chân thực là tài sản lớn nhất của một micro-influencer. Đừng cố gắng trở thành một người khác. Khán giả kết nối với con người thật của bạn, bao gồm cả những điểm không hoàn hảo.',
         },
         {
           question: 'Làm sao để biết niche của tôi có tiềm năng kiếm tiền không?',
-          answer: 'Hãy nghiên cứu xem có các nhãn hàng nào đang hoạt động trong niche đó không, có các influencer khác đang kiếm tiền từ nó không, và khán giả có sẵn sàng chi tiêu cho các sản phẩm/dịch vụ liên quan không.'
+          answer:
+            'Hãy nghiên cứu xem có các nhãn hàng nào đang hoạt động trong niche đó không, có các influencer khác đang kiếm tiền từ nó không, và khán giả có sẵn sàng chi tiêu cho các sản phẩm/dịch vụ liên quan không.',
         },
         {
           question: 'Tôi có thể thay đổi niche của mình sau này không?',
-          answer: 'Có thể, nhưng hãy làm điều đó một cách từ từ và có chiến lược. Hãy dần dần giới thiệu các chủ đề mới liên quan đến niche cũ và giải thích cho khán giả của bạn về sự thay đổi này để không làm họ cảm thấy xa lạ.'
-        }
+          answer:
+            'Có thể, nhưng hãy làm điều đó một cách từ từ và có chiến lược. Hãy dần dần giới thiệu các chủ đề mới liên quan đến niche cũ và giải thích cho khán giả của bạn về sự thay đổi này để không làm họ cảm thấy xa lạ.',
+        },
       ],
       careerConnect: {
         name: 'Trần Tuấn Anh',
@@ -316,32 +329,39 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         },
         {
           question: 'Content Pillar (Trụ cột nội dung) là gì?',
-          answer: 'Là 3-5 chủ đề chính mà kênh của bạn sẽ xoay quanh. Việc xác định các trụ cột nội dung giúp bạn giữ cho nội dung của mình tập trung, có định hướng và dễ dàng lên ý tưởng hơn.'
+          answer:
+            'Là 3-5 chủ đề chính mà kênh của bạn sẽ xoay quanh. Việc xác định các trụ cột nội dung giúp bạn giữ cho nội dung của mình tập trung, có định hướng và dễ dàng lên ý tưởng hơn.',
         },
         {
           question: 'Làm thế nào để kể chuyện (storytelling) trong nội dung của mình?',
-          answer: 'Hãy cấu trúc nội dung của bạn theo một câu chuyện có mở đầu, diễn biến và kết thúc. Sử dụng các yếu tố cảm xúc, chia sẻ kinh nghiệm cá nhân và tạo ra một nhân vật (chính là bạn) mà khán giả có thể đồng cảm.'
+          answer:
+            'Hãy cấu trúc nội dung của bạn theo một câu chuyện có mở đầu, diễn biến và kết thúc. Sử dụng các yếu tố cảm xúc, chia sẻ kinh nghiệm cá nhân và tạo ra một nhân vật (chính là bạn) mà khán giả có thể đồng cảm.',
         },
         {
           question: 'Làm sao để tái sử dụng nội dung (repurpose content) hiệu quả?',
-          answer: 'Từ một nội dung gốc (ví dụ: một video YouTube dài), bạn có thể cắt thành nhiều video ngắn cho TikTok/Reels, chuyển thể thành một bài blog, trích dẫn các ý hay để làm bài đăng trên Twitter, và tạo thành một infographic cho Pinterest. Điều này giúp bạn tiết kiệm công sức và tiếp cận nhiều đối tượng hơn.'
+          answer:
+            'Từ một nội dung gốc (ví dụ: một video YouTube dài), bạn có thể cắt thành nhiều video ngắn cho TikTok/Reels, chuyển thể thành một bài blog, trích dẫn các ý hay để làm bài đăng trên Twitter, và tạo thành một infographic cho Pinterest. Điều này giúp bạn tiết kiệm công sức và tiếp cận nhiều đối tượng hơn.',
         },
         {
           question: 'Call-to-Action (CTA - Kêu gọi hành động) là gì?',
-          answer: 'Là lời kêu gọi bạn đưa ra ở cuối nội dung để khuyến khích khán giả làm một điều gì đó cụ thể, ví dụ: "Hãy bình luận ý kiến của bạn bên dưới!", "Nhấn link ở bio để xem sản phẩm nhé!", hoặc "Hãy theo dõi để xem thêm nhiều video như thế này!".'
+          answer:
+            'Là lời kêu gọi bạn đưa ra ở cuối nội dung để khuyến khích khán giả làm một điều gì đó cụ thể, ví dụ: "Hãy bình luận ý kiến của bạn bên dưới!", "Nhấn link ở bio để xem sản phẩm nhé!", hoặc "Hãy theo dõi để xem thêm nhiều video như thế này!".',
         },
         {
           question: 'A/B testing trong sáng tạo nội dung là gì?',
-          answer: 'Là việc thử nghiệm hai phiên bản khác nhau của một yếu tố (ví dụ: hai tiêu đề, hai ảnh thumbnail khác nhau) để xem phiên bản nào hoạt động hiệu quả hơn. Điều này giúp bạn tối ưu hóa nội dung dựa trên dữ liệu thực tế.'
+          answer:
+            'Là việc thử nghiệm hai phiên bản khác nhau của một yếu tố (ví dụ: hai tiêu đề, hai ảnh thumbnail khác nhau) để xem phiên bản nào hoạt động hiệu quả hơn. Điều này giúp bạn tối ưu hóa nội dung dựa trên dữ liệu thực tế.',
         },
         {
           question: 'Làm thế nào để vượt qua "content block" (bí ý tưởng)?',
-          answer: 'Hãy đọc sách, xem phim, nghe podcast, theo dõi các nhà sáng tạo khác (cả trong và ngoài niche của bạn), và ghi lại tất cả những ý tưởng chợt nảy ra. Đôi khi, nghỉ ngơi và cho phép bản thân không sáng tạo cũng là một cách để nạp lại năng lượng.'
+          answer:
+            'Hãy đọc sách, xem phim, nghe podcast, theo dõi các nhà sáng tạo khác (cả trong và ngoài niche của bạn), và ghi lại tất cả những ý tưởng chợt nảy ra. Đôi khi, nghỉ ngơi và cho phép bản thân không sáng tạo cũng là một cách để nạp lại năng lượng.',
         },
         {
           question: 'Định dạng nội dung nào đang hiệu quả nhất hiện nay?',
-          answer: 'Video ngắn (short-form video) trên các nền tảng như TikTok, Instagram Reels và YouTube Shorts đang là định dạng có khả năng lan truyền (viral) và tiếp cận tự nhiên cao nhất. Tuy nhiên, bạn vẫn nên kết hợp với các định dạng khác để xây dựng mối quan hệ sâu sắc hơn với khán giả.'
-        }
+          answer:
+            'Video ngắn (short-form video) trên các nền tảng như TikTok, Instagram Reels và YouTube Shorts đang là định dạng có khả năng lan truyền (viral) và tiếp cận tự nhiên cao nhất. Tuy nhiên, bạn vẫn nên kết hợp với các định dạng khác để xây dựng mối quan hệ sâu sắc hơn với khán giả.',
+        },
       ],
       careerConnect: {
         name: 'Ngọc Mai',
@@ -366,7 +386,7 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
       ],
     },
     {
-      id: 'audience-growth-engagement',
+      id: 'authentic-influence-community-building',
       title: 'Audience Growth Và Community Engagement Strategies',
       description:
         'Learn advanced strategies để grow authentic, engaged audiences và build loyal communities around your micro-influencer brand.',
@@ -418,32 +438,39 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         },
         {
           question: 'Làm thế nào để khuyến khích khán giả tương tác?',
-          answer: 'Hãy đặt câu hỏi trong nội dung của bạn, tạo các cuộc thăm dò ý kiến (polls), tổ chức các thử thách (challenges), và trả lời hầu hết các bình luận. Khi khán giả thấy bạn quan tâm đến ý kiến của họ, họ sẽ có xu hướng tương tác nhiều hơn.'
+          answer:
+            'Hãy đặt câu hỏi trong nội dung của bạn, tạo các cuộc thăm dò ý kiến (polls), tổ chức các thử thách (challenges), và trả lời hầu hết các bình luận. Khi khán giả thấy bạn quan tâm đến ý kiến của họ, họ sẽ có xu hướng tương tác nhiều hơn.',
         },
         {
           question: 'Hợp tác (collaboration) với các influencer khác có lợi ích gì?',
-          answer: 'Hợp tác giúp bạn tiếp cận với một lượng khán giả mới đã có sẵn sự quan tâm đến niche của bạn. Đây là một trong những cách nhanh nhất để tăng trưởng người theo dõi một cách chất lượng.'
+          answer:
+            'Hợp tác giúp bạn tiếp cận với một lượng khán giả mới đã có sẵn sự quan tâm đến niche của bạn. Đây là một trong những cách nhanh nhất để tăng trưởng người theo dõi một cách chất lượng.',
         },
         {
           question: 'Tôi có nên sử dụng quảng cáo trả phí để tăng trưởng không?',
-          answer: 'Khi mới bắt đầu, hãy tập trung vào tăng trưởng tự nhiên (organic growth). Khi bạn đã có một lượng nội dung tốt và hiểu rõ đối tượng khán giả của mình, bạn có thể sử dụng quảng cáo trả phí để khuếch đại phạm vi tiếp cận và thu hút thêm người theo dõi mục tiêu.'
+          answer:
+            'Khi mới bắt đầu, hãy tập trung vào tăng trưởng tự nhiên (organic growth). Khi bạn đã có một lượng nội dung tốt và hiểu rõ đối tượng khán giả của mình, bạn có thể sử dụng quảng cáo trả phí để khuếch đại phạm vi tiếp cận và thu hút thêm người theo dõi mục tiêu.',
         },
         {
           question: 'Làm thế nào để giữ chân người theo dõi?',
-          answer: 'Hãy nhất quán trong việc đăng bài và cung cấp giá trị. Tiếp tục tạo ra nội dung mà họ yêu thích, lắng nghe phản hồi của họ, và cho họ thấy sự tiến bộ và phát triển của bạn. Xây dựng mối quan hệ cá nhân bằng cách tương tác thường xuyên.'
+          answer:
+            'Hãy nhất quán trong việc đăng bài và cung cấp giá trị. Tiếp tục tạo ra nội dung mà họ yêu thích, lắng nghe phản hồi của họ, và cho họ thấy sự tiến bộ và phát triển của bạn. Xây dựng mối quan hệ cá nhân bằng cách tương tác thường xuyên.',
         },
         {
           question: 'User-Generated Content (UGC - Nội dung do người dùng tạo) là gì?',
-          answer: 'Là bất kỳ nội dung nào (hình ảnh, video, đánh giá) được tạo bởi khán giả của bạn liên quan đến thương hiệu của bạn. Khuyến khích và chia sẻ lại UGC là một cách tuyệt vời để xây dựng cộng đồng và tăng cường sự tin tưởng.'
+          answer:
+            'Là bất kỳ nội dung nào (hình ảnh, video, đánh giá) được tạo bởi khán giả của bạn liên quan đến thương hiệu của bạn. Khuyến khích và chia sẻ lại UGC là một cách tuyệt vời để xây dựng cộng đồng và tăng cường sự tin tưởng.',
         },
         {
           question: 'Tổ chức giveaway có phải là một cách tốt để tăng follow không?',
-          answer: 'Giveaway có thể giúp bạn tăng follow nhanh chóng, nhưng thường những người theo dõi này có chất lượng thấp và ít tương tác, họ chỉ quan tâm đến phần thưởng. Hãy sử dụng giveaway một cách chiến lược và đảm bảo nó liên quan đến niche của bạn.'
+          answer:
+            'Giveaway có thể giúp bạn tăng follow nhanh chóng, nhưng thường những người theo dõi này có chất lượng thấp và ít tương tác, họ chỉ quan tâm đến phần thưởng. Hãy sử dụng giveaway một cách chiến lược và đảm bảo nó liên quan đến niche của bạn.',
         },
         {
           question: 'Làm thế nào để biến người theo dõi thành những người hâm mộ cuồng nhiệt (superfans)?',
-          answer: 'Hãy mang lại giá trị vượt trội, tạo ra những kết nối cá nhân (nhớ tên, câu chuyện của họ), và tạo ra những trải nghiệm độc quyền cho những người ủng hộ trung thành nhất. Superfans sẽ là những người quảng bá nhiệt tình nhất cho thương hiệu của bạn.'
-        }
+          answer:
+            'Hãy mang lại giá trị vượt trội, tạo ra những kết nối cá nhân (nhớ tên, câu chuyện của họ), và tạo ra những trải nghiệm độc quyền cho những người ủng hộ trung thành nhất. Superfans sẽ là những người quảng bá nhiệt tình nhất cho thương hiệu của bạn.',
+        },
       ],
       careerConnect: {
         name: 'Phạm An',
@@ -457,7 +484,7 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
           question: 'Đâu là một hoạt động hiệu quả để tăng tương tác cộng đồng?',
           options: [
             'Tổ chức Q&A (Hỏi & Đáp)',
-            'Không bao giờ trả lời bình luận',
+            'Không bao vời trả lời bình luận',
             'Chỉ đăng bài quảng cáo',
             'Ẩn tất cả các bình luận tiêu cực',
           ],
@@ -516,32 +543,39 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         },
         {
           question: 'Làm thế nào để liên hệ với các nhãn hàng?',
-          answer: 'Bạn có thể gửi email trực tiếp đến bộ phận marketing hoặc PR của họ. Email nên ngắn gọn, chuyên nghiệp, giới thiệu về kênh của bạn, tại sao bạn phù hợp với họ và đính kèm Media Kit. Bạn cũng có thể tham gia các nền tảng kết nối influencer với nhãn hàng (influencer marketing platforms).'
+          answer:
+            'Bạn có thể gửi email trực tiếp đến bộ phận marketing hoặc PR của họ. Email nên ngắn gọn, chuyên nghiệp, giới thiệu về kênh của bạn, tại sao bạn phù hợp với họ và đính kèm Media Kit. Bạn cũng có thể tham gia các nền tảng kết nối influencer với nhãn hàng (influencer marketing platforms).',
         },
         {
           question: 'Sự khác biệt giữa hợp tác trả phí và hợp tác trên cơ sở tặng sản phẩm (gifting) là gì?',
-          answer: 'Hợp tác tặng sản phẩm (còn gọi là PR product) là khi nhãn hàng gửi cho bạn sản phẩm miễn phí để trải nghiệm, không có yêu cầu bắt buộc phải đăng bài. Hợp tác trả phí là một giao dịch kinh doanh, nơi bạn được trả tiền để tạo và đăng nội dung theo các điều khoản đã thỏa thuận.'
+          answer:
+            'Hợp tác tặng sản phẩm (còn gọi là PR product) là khi nhãn hàng gửi cho bạn sản phẩm miễn phí để trải nghiệm, không có yêu cầu bắt buộc phải đăng bài. Hợp tác trả phí là một giao dịch kinh doanh, nơi bạn được trả tiền để tạo và đăng nội dung theo các điều khoản đã thỏa thuận.',
         },
         {
           question: 'Tôi có cần phải có hợp đồng khi làm việc với nhãn hàng không?',
-          answer: 'Chắc chắn có. Dù là hợp tác lớn hay nhỏ, một hợp đồng hoặc thỏa thuận bằng văn bản sẽ bảo vệ cả hai bên. Nó nên quy định rõ về nội dung cần thực hiện, số lần đăng, thời gian, quyền sở hữu nội dung và các điều khoản thanh toán.'
+          answer:
+            'Chắc chắn có. Dù là hợp tác lớn hay nhỏ, một hợp đồng hoặc thỏa thuận bằng văn bản sẽ bảo vệ cả hai bên. Nó nên quy định rõ về nội dung cần thực hiện, số lần đăng, thời gian, quyền sở hữu nội dung và các điều khoản thanh toán.',
         },
         {
           question: 'Làm thế nào để từ chối một lời đề nghị hợp tác không phù hợp?',
-          answer: 'Hãy từ chối một cách lịch sự và chuyên nghiệp. Cảm ơn họ đã quan tâm, nhưng giải thích rằng sự hợp tác này không phù hợp với thương hiệu hoặc khán giả của bạn vào lúc này. Giữ mối quan hệ tốt đẹp có thể hữu ích cho tương lai.'
+          answer:
+            'Hãy từ chối một cách lịch sự và chuyên nghiệp. Cảm ơn họ đã quan tâm, nhưng giải thích rằng sự hợp tác này không phù hợp với thương hiệu hoặc khán giả của bạn vào lúc này. Giữ mối quan hệ tốt đẹp có thể hữu ích cho tương lai.',
         },
         {
           question: 'Affiliate Marketing (Tiếp thị liên kết) hoạt động như thế nào?',
-          answer: 'Bạn sẽ nhận được một đường link hoặc mã giảm giá duy nhất cho một sản phẩm/dịch vụ. Khi ai đó mua hàng thông qua link/mã của bạn, bạn sẽ nhận được một khoản hoa hồng. Đây là một cách tốt để kiếm tiền mà không cần làm việc trực tiếp với nhãn hàng.'
+          answer:
+            'Bạn sẽ nhận được một đường link hoặc mã giảm giá duy nhất cho một sản phẩm/dịch vụ. Khi ai đó mua hàng thông qua link/mã của bạn, bạn sẽ nhận được một khoản hoa hồng. Đây là một cách tốt để kiếm tiền mà không cần làm việc trực tiếp với nhãn hàng.',
         },
         {
           question: 'Làm thế nào để đảm bảo tính chân thực khi đăng bài quảng cáo?',
-          answer: 'Hãy minh bạch với khán giả rằng đây là nội dung được tài trợ (sử dụng hashtag như #ad, #sponsored). Chỉ nhận quảng cáo cho những sản phẩm bạn thực sự tin tưởng và yêu thích. Hãy chia sẻ trải nghiệm của bạn một cách trung thực, bao gồm cả ưu và nhược điểm (nếu có).'
+          answer:
+            'Hãy minh bạch với khán giả rằng đây là nội dung được tài trợ (sử dụng hashtag như #ad, #sponsored). Chỉ nhận quảng cáo cho những sản phẩm bạn thực sự tin tưởng và yêu thích. Hãy chia sẻ trải nghiệm của bạn một cách trung thực, bao gồm cả ưu và nhược điểm (nếu có).',
         },
         {
           question: 'Ngoài hợp tác với nhãn hàng, còn cách nào khác để kiếm tiền không?',
-          answer: 'Rất nhiều! Bạn có thể bán sản phẩm của riêng mình (merchandise, sản phẩm số), cung cấp dịch vụ tư vấn/coaching, tạo nội dung độc quyền cho thành viên trả phí (Patreon, YouTube Memberships), nhận donate, hoặc trở thành đại sứ thương hiệu dài hạn.'
-        }
+          answer:
+            'Rất nhiều! Bạn có thể bán sản phẩm của riêng mình (merchandise, sản phẩm số), cung cấp dịch vụ tư vấn/coaching, tạo nội dung độc quyền cho thành viên trả phí (Patreon, YouTube Memberships), nhận donate, hoặc trở thành đại sứ thương hiệu dài hạn.',
+        },
       ],
       careerConnect: {
         name: 'Lê Thu Trang',
@@ -618,32 +652,39 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         },
         {
           question: 'Các thuật toán ưu tiên loại nội dung nào?',
-          answer: 'Hiện tại, hầu hết các nền tảng đều ưu tiên nội dung video, đặc biệt là video ngắn. Các nội dung gốc (được tạo trực tiếp trên nền tảng) cũng thường được ưu ái hơn là các nội dung được chia sẻ lại từ nơi khác.'
+          answer:
+            'Hiện tại, hầu hết các nền tảng đều ưu tiên nội dung video, đặc biệt là video ngắn. Các nội dung gốc (được tạo trực tiếp trên nền tảng) cũng thường được ưu ái hơn là các nội dung được chia sẻ lại từ nơi khác.',
         },
         {
           question: 'Hashtag hoạt động như thế nào và nên sử dụng chúng ra sao?',
-          answer: 'Hashtag giúp phân loại nội dung của bạn và giúp người dùng khám phá nó. Hãy sử dụng một hỗn hợp các hashtag: hashtag phổ biến rộng, hashtag cụ thể cho niche của bạn, và hashtag riêng của thương hiệu bạn. Đừng lạm dụng quá nhiều hashtag không liên quan.'
+          answer:
+            'Hashtag giúp phân loại nội dung của bạn và giúp người dùng khám phá nó. Hãy sử dụng một hỗn hợp các hashtag: hashtag phổ biến rộng, hashtag cụ thể cho niche của bạn, và hashtag riêng của thương hiệu bạn. Đừng lạm dụng quá nhiều hashtag không liên quan.',
         },
         {
           question: 'Làm thế nào để theo dõi sự thay đổi của thuật toán?',
-          answer: 'Hãy theo dõi các blog chính thức từ các nền tảng (ví dụ: Instagram Creators), các chuyên gia marketing uy tín, và các trang tin tức về công nghệ. Tham gia các cộng đồng của nhà sáng tạo cũng là một cách tốt để cập nhật thông tin.'
+          answer:
+            'Hãy theo dõi các blog chính thức từ các nền tảng (ví dụ: Instagram Creators), các chuyên gia marketing uy tín, và các trang tin tức về công nghệ. Tham gia các cộng đồng của nhà sáng tạo cũng là một cách tốt để cập nhật thông tin.',
         },
         {
           question: 'Shadowban là gì và làm thế nào để tránh nó?',
-          answer: 'Shadowban là tình trạng nội dung của bạn bị giảm phạm vi tiếp cận một cách âm thầm mà không có thông báo. Để tránh điều này, hãy tuân thủ các quy tắc cộng đồng, không sử dụng các hashtag bị cấm, không spam, và tránh các hành vi bị coi là giả tạo (như mua follow).'
+          answer:
+            'Shadowban là tình trạng nội dung của bạn bị giảm phạm vi tiếp cận một cách âm thầm mà không có thông báo. Để tránh điều này, hãy tuân thủ các quy tắc cộng đồng, không sử dụng các hashtag bị cấm, không spam, và tránh các hành vi bị coi là giả tạo (như mua follow).',
         },
         {
           question: 'Tối ưu hóa SEO trên mạng xã hội là gì?',
-          answer: 'Là việc sử dụng các từ khóa liên quan trong tên người dùng, tiểu sử (bio), và mô tả bài đăng của bạn để mọi người có thể tìm thấy bạn khi họ tìm kiếm các chủ đề đó trên nền tảng.'
+          answer:
+            'Là việc sử dụng các từ khóa liên quan trong tên người dùng, tiểu sử (bio), và mô tả bài đăng của bạn để mọi người có thể tìm thấy bạn khi họ tìm kiếm các chủ đề đó trên nền tảng.',
         },
         {
           question: 'Tại sao phạm vi tiếp cận (reach) của tôi lại giảm?',
-          answer: 'Phạm vi tiếp cận có thể giảm do nhiều lý do: sự cạnh tranh ngày càng tăng, sự thay đổi của thuật toán, hoặc chất lượng nội dung của bạn không còn phù hợp với khán giả. Đây là lúc cần phân tích lại chiến lược và thử nghiệm những điều mới.'
+          answer:
+            'Phạm vi tiếp cận có thể giảm do nhiều lý do: sự cạnh tranh ngày càng tăng, sự thay đổi của thuật toán, hoặc chất lượng nội dung của bạn không còn phù hợp với khán giả. Đây là lúc cần phân tích lại chiến lược và thử nghiệm những điều mới.',
         },
         {
           question: 'Làm thế nào để thích ứng khi một nền tảng mới nổi lên?',
-          answer: 'Đừng vội vàng từ bỏ nền tảng hiện tại. Hãy thử nghiệm nền tảng mới, xem nó có phù hợp với nội dung và khán giả của bạn không. Nếu có, hãy bắt đầu xây dựng sự hiện diện ở đó, nhưng không nhất thiết phải sao chép y hệt nội dung từ kênh chính của bạn.'
-        }
+          answer:
+            'Đừng vội vàng từ bỏ nền tảng hiện tại. Hãy thử nghiệm nền tảng mới, xem nó có phù hợp với nội dung và khán giả của bạn không. Nếu có, hãy bắt đầu xây dựng sự hiện diện ở đó, nhưng không nhất thiết phải sao chép y hệt nội dung từ kênh chính của bạn.',
+        },
       ],
       careerConnect: {
         name: 'Đức Huy',
@@ -720,32 +761,39 @@ export const microInfluencerEconomyModule: ModuleData<MicroInfluencerLesson> = {
         },
         {
           question: 'Những công cụ tự động hóa nào hữu ích cho influencer?',
-          answer: 'Các công cụ lập lịch đăng bài (như Later, Buffer), các công cụ quản lý email marketing (như ConvertKit), và các công cụ quản lý dự án (như Trello, Asana) có thể giúp bạn tiết kiệm rất nhiều thời gian và công sức.'
+          answer:
+            'Các công cụ lập lịch đăng bài (như Later, Buffer), các công cụ quản lý email marketing (như ConvertKit), và các công cụ quản lý dự án (như Trello, Asana) có thể giúp bạn tiết kiệm rất nhiều thời gian và công sức.',
         },
         {
           question: 'Tôi nên thuê ai đầu tiên?',
-          answer: 'Vị trí đầu tiên nhiều influencer thuê thường là một trợ lý ảo (Virtual Assistant - VA). Họ có thể giúp bạn các công việc như trả lời email, lập lịch đăng bài, tương tác cơ bản với cộng đồng, và các công việc hành chính khác, giúp bạn có thêm thời gian để sáng tạo.'
+          answer:
+            'Vị trí đầu tiên nhiều influencer thuê thường là một trợ lý ảo (Virtual Assistant - VA). Họ có thể giúp bạn các công việc như trả lời email, lập lịch đăng bài, tương tác cơ bản với cộng đồng, và các công việc hành chính khác, giúp bạn có thêm thời gian để sáng tạo.',
         },
         {
           question: 'Làm thế nào để xây dựng một đội nhóm hiệu quả?',
-          answer: 'Hãy xác định rõ vai trò và trách nhiệm của từng người. Xây dựng một quy trình làm việc rõ ràng. Giao tiếp thường xuyên và cởi mở. Tin tưởng và trao quyền cho đội nhóm của bạn.'
+          answer:
+            'Hãy xác định rõ vai trò và trách nhiệm của từng người. Xây dựng một quy trình làm việc rõ ràng. Giao tiếp thường xuyên và cởi mở. Tin tưởng và trao quyền cho đội nhóm của bạn.',
         },
         {
           question: 'Làm thế nào để biến thương hiệu cá nhân thành một thương hiệu sản phẩm?',
-          answer: 'Hãy bắt đầu với một sản phẩm giải quyết được vấn đề cốt lõi của khán giả. Ví dụ, một influencer về fitness có thể ra mắt dòng sản phẩm bột protein hoặc một chương trình tập luyện online. Hãy đảm bảo sản phẩm đó phù hợp với giá trị mà bạn đã xây dựng.'
+          answer:
+            'Hãy bắt đầu với một sản phẩm giải quyết được vấn đề cốt lõi của khán giả. Ví dụ, một influencer về fitness có thể ra mắt dòng sản phẩm bột protein hoặc một chương trình tập luyện online. Hãy đảm bảo sản phẩm đó phù hợp với giá trị mà bạn đã xây dựng.',
         },
         {
           question: 'Làm thế nào để quản lý tài chính khi là một influencer?',
-          answer: 'Hãy tách biệt tài chính cá nhân và kinh doanh. Ghi chép lại tất cả các khoản thu chi. Dành ra một phần thu nhập để đóng thuế. Hãy làm việc với một kế toán chuyên nghiệp để được tư vấn tốt nhất.'
+          answer:
+            'Hãy tách biệt tài chính cá nhân và kinh doanh. Ghi chép lại tất cả các khoản thu chi. Dành ra một phần thu nhập để đóng thuế. Hãy làm việc với một kế toán chuyên nghiệp để được tư vấn tốt nhất.',
         },
         {
           question: 'Làm thế nào để tránh bị "burnout" (kiệt sức)?',
-          answer: 'Hãy đặt ra ranh giới rõ ràng giữa công việc và cuộc sống. Lên lịch cho những ngày nghỉ không làm việc. Tự động hóa và giao việc. Nhớ rằng bạn không cần phải có mặt trên mọi nền tảng và tham gia mọi xu hướng. Sức khỏe tinh thần của bạn là quan trọng nhất.'
+          answer:
+            'Hãy đặt ra ranh giới rõ ràng giữa công việc và cuộc sống. Lên lịch cho những ngày nghỉ không làm việc. Tự động hóa và giao việc. Nhớ rằng bạn không cần phải có mặt trên mọi nền tảng và tham gia mọi xu hướng. Sức khỏe tinh thần của bạn là quan trọng nhất.',
         },
         {
           question: 'Tầm nhìn dài hạn cho một "doanh nghiệp influencer" là gì?',
-          answer: 'Tầm nhìn dài hạn có thể là xây dựng một công ty truyền thông, một thương hiệu thương mại điện tử lớn, một nền tảng giáo dục, hoặc một quỹ đầu tư. Mục tiêu là tạo ra một hệ thống có thể hoạt động và tạo ra giá trị ngay cả khi bạn không trực tiếp tham gia vào mọi hoạt động hàng ngày.'
-        }
+          answer:
+            'Tầm nhìn dài hạn có thể là xây dựng một công ty truyền thông, một thương hiệu thương mại điện tử lớn, một nền tảng giáo dục, hoặc một quỹ đầu tư. Mục tiêu là tạo ra một hệ thống có thể hoạt động và tạo ra giá trị ngay cả khi bạn không trực tiếp tham gia vào mọi hoạt động hàng ngày.',
+        },
       ],
       careerConnect: {
         name: 'Vân Chi',

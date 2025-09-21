@@ -20,7 +20,7 @@ export interface BlockchainLesson extends BaseLessonData {
 
 export const blockchainLessons: BlockchainLesson[] = [
   {
-    id: 'blockchain-fundamentals-vietnam',
+    id: 'blockchain-fundamentals',
     title: 'Bài 1: Nền tảng Blockchain & Tiền điện tử tại Việt Nam',
     description:
       'Khám phá các nguyên tắc cơ bản của công nghệ blockchain, tiền điện tử và các ứng dụng của chúng trong bối cảnh Việt Nam, bao gồm các cơ chế đồng thuận, hợp đồng thông minh và các trường hợp sử dụng trong thế giới thực.',
@@ -192,7 +192,7 @@ export const blockchainLessons: BlockchainLesson[] = [
     ],
   },
   {
-    id: 'smart-contract-development',
+    id: 'smart-contracts-dapps',
     title: 'Bài 2: Phát triển Hợp đồng thông minh & Lập trình Solidity',
     description:
       'Phát triển hợp đồng thông minh nâng cao bằng Solidity, các framework kiểm thử, các phương pháp bảo mật tốt nhất và chiến lược triển khai cho Ethereum và các blockchain tương thích.',

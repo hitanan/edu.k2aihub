@@ -107,28 +107,34 @@ export const greenTechLessons: GreenTechLesson[] = [
       },
       {
         question: 'Lợi ích của việc lắp đặt điện mặt trời áp mái là gì?',
-        answer: 'Lắp đặt điện mặt trời áp mái giúp giảm hóa đơn tiền điện hàng tháng, giảm phụ thuộc vào lưới điện quốc gia, tăng giá trị cho ngôi nhà và góp phần bảo vệ môi trường bằng cách sử dụng năng lượng sạch.'
+        answer:
+          'Lắp đặt điện mặt trời áp mái giúp giảm hóa đơn tiền điện hàng tháng, giảm phụ thuộc vào lưới điện quốc gia, tăng giá trị cho ngôi nhà và góp phần bảo vệ môi trường bằng cách sử dụng năng lượng sạch.',
       },
       {
         question: 'Đầu tư vào năng lượng tái tạo có rủi ro không?',
-        answer: 'Mọi hình thức đầu tư đều có rủi ro. Với năng lượng tái tạo, rủi ro có thể đến từ sự thay đổi chính sách của chính phủ, biến động thời tiết ảnh hưởng đến sản lượng (ít nắng, ít gió), và chi phí bảo trì thiết bị. Tuy nhiên, với công nghệ ngày càng phát triển và sự ủng hộ mạnh mẽ của toàn cầu, đây được xem là một lĩnh vực đầu tư bền vững.'
+        answer:
+          'Mọi hình thức đầu tư đều có rủi ro. Với năng lượng tái tạo, rủi ro có thể đến từ sự thay đổi chính sách của chính phủ, biến động thời tiết ảnh hưởng đến sản lượng (ít nắng, ít gió), và chi phí bảo trì thiết bị. Tuy nhiên, với công nghệ ngày càng phát triển và sự ủng hộ mạnh mẽ của toàn cầu, đây được xem là một lĩnh vực đầu tư bền vững.',
       },
       {
         question: '"Net Zero" là gì và Việt Nam cam kết đạt được vào năm nào?',
-        answer: 'Net Zero (Phát thải ròng bằng không) có nghĩa là cân bằng giữa lượng khí nhà kính thải ra và lượng khí được loại bỏ khỏi khí quyển. Việt Nam đã đưa ra cam kết mạnh mẽ tại COP26 để đạt được mục tiêu Net Zero vào năm 2050.'
+        answer:
+          'Net Zero (Phát thải ròng bằng không) có nghĩa là cân bằng giữa lượng khí nhà kính thải ra và lượng khí được loại bỏ khỏi khí quyển. Việt Nam đã đưa ra cam kết mạnh mẽ tại COP26 để đạt được mục tiêu Net Zero vào năm 2050.',
       },
       {
         question: 'Ngoài điện gió và mặt trời, Việt Nam còn có tiềm năng về loại năng lượng tái tạo nào khác?',
-        answer: 'Ngoài hai nguồn năng lượng chính là gió và mặt trời, Việt Nam còn có tiềm năng phát triển điện sinh khối (từ rác thải, phụ phẩm nông nghiệp), thủy điện nhỏ và năng lượng địa nhiệt ở một số khu vực.'
+        answer:
+          'Ngoài hai nguồn năng lượng chính là gió và mặt trời, Việt Nam còn có tiềm năng phát triển điện sinh khối (từ rác thải, phụ phẩm nông nghiệp), thủy điện nhỏ và năng lượng địa nhiệt ở một số khu vực.',
       },
       {
         question: 'Làm thế nào để một cá nhân có thể đóng góp vào việc phát triển năng lượng tái tạo?',
-        answer: 'Bạn có thể bắt đầu bằng việc tiết kiệm điện, sử dụng các thiết bị hiệu suất cao, lắp đặt hệ thống điện mặt trời áp mái nếu có điều kiện, và ủng hộ các sản phẩm, dịch vụ từ các công ty sử dụng năng lượng sạch.'
+        answer:
+          'Bạn có thể bắt đầu bằng việc tiết kiệm điện, sử dụng các thiết bị hiệu suất cao, lắp đặt hệ thống điện mặt trời áp mái nếu có điều kiện, và ủng hộ các sản phẩm, dịch vụ từ các công ty sử dụng năng lượng sạch.',
       },
       {
         question: 'Điện gió ngoài khơi có ưu điểm gì so với trên bờ?',
-        answer: 'Điện gió ngoài khơi thường có hiệu suất cao hơn do tốc độ gió mạnh và ổn định hơn. Các tuabin cũng có thể được thiết kế lớn hơn mà không bị giới hạn về không gian và tiếng ồn như trên đất liền. Tuy nhiên, chi phí đầu tư và bảo trì ngoài khơi cũng cao hơn đáng kể.'
-      }
+        answer:
+          'Điện gió ngoài khơi thường có hiệu suất cao hơn do tốc độ gió mạnh và ổn định hơn. Các tuabin cũng có thể được thiết kế lớn hơn mà không bị giới hạn về không gian và tiếng ồn như trên đất liền. Tuy nhiên, chi phí đầu tư và bảo trì ngoài khơi cũng cao hơn đáng kể.',
+      },
     ],
     exercises: [
       {
@@ -272,7 +278,7 @@ export const greenTechLessons: GreenTechLesson[] = [
     ],
   },
   {
-    id: 'smart-city-iot-solutions',
+    id: 'smart-cities-iot',
     title: 'Giải pháp IoT cho Thành phố Thông minh',
     description:
       'Xây dựng hệ thống thành phố thông minh với cảm biến IoT, phân tích dữ liệu và AI để giải quyết các vấn đề đô thị.',
@@ -354,28 +360,34 @@ export const greenTechLessons: GreenTechLesson[] = [
       },
       {
         question: 'Một ví dụ về ứng dụng IoT trong quản lý rác thải thông minh là gì?',
-        answer: 'Các thùng rác công cộng được trang bị cảm biến siêu âm để đo mức độ đầy. Khi thùng rác gần đầy, nó sẽ tự động gửi tín hiệu đến trung tâm điều hành để xe thu gom rác đến đúng vị trí, thay vì đi theo một lịch trình cố định. Điều này giúp tối ưu hóa lộ trình, tiết kiệm nhiên liệu và nhân công.'
+        answer:
+          'Các thùng rác công cộng được trang bị cảm biến siêu âm để đo mức độ đầy. Khi thùng rác gần đầy, nó sẽ tự động gửi tín hiệu đến trung tâm điều hành để xe thu gom rác đến đúng vị trí, thay vì đi theo một lịch trình cố định. Điều này giúp tối ưu hóa lộ trình, tiết kiệm nhiên liệu và nhân công.',
       },
       {
         question: 'Làm thế nào AI có thể giúp giảm ùn tắc giao thông?',
-        answer: 'AI có thể phân tích dữ liệu từ camera và cảm biến giao thông trong thời gian thực để dự đoán các điểm có nguy cơ ùn tắc. Dựa trên đó, hệ thống có thể tự động điều chỉnh thời gian đèn tín hiệu, đề xuất các tuyến đường thay thế cho người lái xe qua ứng dụng bản đồ, và thông báo cho cảnh sát giao thông để điều tiết.'
+        answer:
+          'AI có thể phân tích dữ liệu từ camera và cảm biến giao thông trong thời gian thực để dự đoán các điểm có nguy cơ ùn tắc. Dựa trên đó, hệ thống có thể tự động điều chỉnh thời gian đèn tín hiệu, đề xuất các tuyến đường thay thế cho người lái xe qua ứng dụng bản đồ, và thông báo cho cảnh sát giao thông để điều tiết.',
       },
       {
         question: 'An ninh và quyền riêng tư là thách thức lớn như thế nào đối với thành phố thông minh?',
-        answer: 'Đây là một trong những thách thức lớn nhất. Việc thu thập lượng lớn dữ liệu từ hàng triệu thiết bị làm dấy lên lo ngại về việc dữ liệu cá nhân có thể bị lạm dụng hoặc bị tấn công. Các thành phố thông minh phải đầu tư mạnh mẽ vào các giải pháp an ninh mạng, mã hóa dữ liệu và xây dựng các chính sách quản lý dữ liệu minh bạch để bảo vệ người dân.'
+        answer:
+          'Đây là một trong những thách thức lớn nhất. Việc thu thập lượng lớn dữ liệu từ hàng triệu thiết bị làm dấy lên lo ngại về việc dữ liệu cá nhân có thể bị lạm dụng hoặc bị tấn công. Các thành phố thông minh phải đầu tư mạnh mẽ vào các giải pháp an ninh mạng, mã hóa dữ liệu và xây dựng các chính sách quản lý dữ liệu minh bạch để bảo vệ người dân.',
       },
       {
         question: 'Công nghệ "Digital Twin" (Bản sao số) được ứng dụng trong thành phố thông minh ra sao?',
-        answer: 'Digital Twin là một mô hình ảo, chi tiết của một thành phố vật lý. Nó cho phép các nhà quy hoạch và quản lý mô phỏng các kịch bản khác nhau, ví dụ: "Điều gì sẽ xảy ra nếu chúng ta xây một cây cầu mới ở đây?" hoặc "Hệ thống thoát nước sẽ phản ứng thế nào với một trận mưa lớn?". Điều này giúp đưa ra quyết định tốt hơn mà không cần thử nghiệm tốn kém và rủi ro trong thế giới thực.'
+        answer:
+          'Digital Twin là một mô hình ảo, chi tiết của một thành phố vật lý. Nó cho phép các nhà quy hoạch và quản lý mô phỏng các kịch bản khác nhau, ví dụ: "Điều gì sẽ xảy ra nếu chúng ta xây một cây cầu mới ở đây?" hoặc "Hệ thống thoát nước sẽ phản ứng thế nào với một trận mưa lớn?". Điều này giúp đưa ra quyết định tốt hơn mà không cần thử nghiệm tốn kém và rủi ro trong thế giới thực.',
       },
       {
         question: 'Người dân có thể tương tác với chính quyền trong một thành phố thông minh như thế nào?',
-        answer: 'Thông qua các ứng dụng di động hoặc cổng thông tin của thành phố, người dân có thể báo cáo sự cố (ổ gà, đèn đường hỏng), thanh toán các dịch vụ công, góp ý cho các dự án quy hoạch, và nhận các cảnh báo khẩn cấp. Điều này tạo ra một kênh giao tiếp hai chiều hiệu quả giữa chính quyền và công dân.'
+        answer:
+          'Thông qua các ứng dụng di động hoặc cổng thông tin của thành phố, người dân có thể báo cáo sự cố (ổ gà, đèn đường hỏng), thanh toán các dịch vụ công, góp ý cho các dự án quy hoạch, và nhận các cảnh báo khẩn cấp. Điều này tạo ra một kênh giao tiếp hai chiều hiệu quả giữa chính quyền và công dân.',
       },
       {
         question: 'Tại sao 5G lại quan trọng cho sự phát triển của thành phố thông minh?',
-        answer: '5G cung cấp tốc độ cực cao, độ trễ cực thấp và khả năng kết nối một số lượng lớn thiết bị cùng lúc. Điều này rất quan trọng cho các ứng dụng đòi hỏi phản ứng tức thời như xe tự lái, điều khiển giao thông thông minh và các dịch vụ y tế từ xa.'
-      }
+        answer:
+          '5G cung cấp tốc độ cực cao, độ trễ cực thấp và khả năng kết nối một số lượng lớn thiết bị cùng lúc. Điều này rất quan trọng cho các ứng dụng đòi hỏi phản ứng tức thời như xe tự lái, điều khiển giao thông thông minh và các dịch vụ y tế từ xa.',
+      },
     ],
     exercises: [
       {
