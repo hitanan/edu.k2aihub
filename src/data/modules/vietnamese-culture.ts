@@ -232,4 +232,5 @@ export const vietnameseCultureModuleData: ModuleData = {
     hireDemand: 'Cao',
   },
   relatedModules: [K2Module.AI, K2Module.VietnameseBusiness, K2Module.DigitalGovernment],
+  lessons: vietnameseCultureLessons,
 };

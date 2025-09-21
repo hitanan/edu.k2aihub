@@ -886,4 +886,5 @@ export const transportationTechnologyModuleData: ModuleData = {
     hireDemand: 'Rất cao',
   },
   relatedModules: [K2Module.AIApplications, K2Module.ElectricVehicleTech, K2Module.SmartManufacturing],
+  lessons: transportationTechnologyLessons,
 };

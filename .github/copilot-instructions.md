@@ -309,6 +309,7 @@ export const metadata: Metadata = createModuleMetadata(
 ### 📝 Blog Guide Content Standards 2025
 
 **Target Length**: 80-120 dòng (1,500-3,000 từ) cho guide posts
+
 - **Minimum viable**: 60 dòng (1,000 từ)
 - **Comprehensive guides**: 100-150 dòng (2,000-4,000 từ)
 - **Deep technical**: 150-200 dòng (4,000+ từ)
@@ -328,17 +329,20 @@ readingTime: 'X phút đọc'
 ---
 
 ## Giới Thiệu: Hook với Problem/Solution (200-300 từ)
+
 - Vấn đề thực tế của người đọc
 - Promise về giá trị sẽ nhận được
 - Tại sao guide này khác biệt
 
 ## Bước 1-6: Implementation Steps (60-80% của nội dung)
+
 - Mỗi bước 300-500 từ
 - Code examples/screenshots khi cần
 - Practical tips và best practices
 - Common mistakes và cách tránh
 
 ## Kết Luận: Call-to-Action & Next Steps (150-200 từ)
+
 - Tổng kết key takeaways
 - Link đến related K2AiHub modules
 - Encourage engagement/feedback
@@ -347,18 +351,21 @@ readingTime: 'X phút đọc'
 ### 2025 Quality Standards
 
 **Visual Elements:**
+
 - Headers với emoji phù hợp (🎯, 🚀, 💡, ⚡, 📱)
 - Code blocks với syntax highlighting khi cần
 - Bold/italic cho emphasis
 - Bullet points cho readability
 
 **Engagement Features:**
+
 - Interactive elements description
 - Real-world Vietnamese examples
 - Links to K2AiHub learning modules (/learning/module-name)
 - Practical exercises/challenges
 
 **SEO Requirements:**
+
 - Primary keyword trong title & H1
 - 3-5 semantic keywords naturally integrated
 - Meta description với compelling CTA
@@ -366,6 +373,7 @@ readingTime: 'X phút đọc'
 - External links đến authoritative sources (với rel="noopener noreferrer")
 
 **Mobile Optimization:**
+
 - Short paragraphs (2-3 sentences max)
 - Scannable content structure
 - Touch-friendly elements description

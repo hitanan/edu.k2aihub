@@ -1,34 +1,6 @@
 import { BaseLessonData } from '@/types/lesson-base';
 import { ModuleData } from '@/types';
 
-export const renewableEnergyModuleData: ModuleData = {
-  id: 'renewable-energy',
-  title: 'Năng lượng Tái tạo',
-  description:
-    'Khám phá các công nghệ năng lượng tái tạo hàng đầu và vai trò của chúng trong tương lai năng lượng bền vững của Việt Nam.',
-  category: 'green-tech',
-  icon: 'wind',
-  color: 'from-green-500 to-teal-500',
-  totalDuration: '12 giờ',
-  difficulty: 'Trung bình',
-  lessons: [],
-  prerequisites: ['Kiến thức vật lý cơ bản', 'Hiểu biết về các vấn đề môi trường'],
-  tags: ['năng lượng tái tạo', 'điện mặt trời', 'điện gió', 'bền vững'],
-  features: [
-    'Công nghệ quang điện và điện gió',
-    'Hệ thống lưu trữ năng lượng',
-    'Lưới điện thông minh',
-    'Kinh tế và chính sách năng lượng',
-  ],
-  careerOpportunities: [
-    'Kỹ sư năng lượng tái tạo',
-    'Chuyên gia phát triển dự án điện gió/mặt trời',
-    'Nhà phân tích chính sách năng lượng',
-    'Quản lý vận hành nhà máy điện',
-  ],
-  href: '/learning/renewable-energy',
-};
-
 export interface RenewableEnergyLesson extends BaseLessonData {
   energyType?: string;
 }
@@ -165,45 +137,55 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     faqs: [
       {
         question: 'Tuổi thọ trung bình của một tấm pin mặt trời là bao lâu?',
-        answer: 'Hầu hết các nhà sản xuất tấm pin mặt trời đều bảo hành hiệu suất trong 25 năm. Sau 25 năm, hiệu suất của chúng thường giảm xuống còn khoảng 80-85% so với ban đầu, nhưng chúng vẫn có thể tiếp tục sản xuất điện trong nhiều năm nữa.'
+        answer:
+          'Hầu hết các nhà sản xuất tấm pin mặt trời đều bảo hành hiệu suất trong 25 năm. Sau 25 năm, hiệu suất của chúng thường giảm xuống còn khoảng 80-85% so với ban đầu, nhưng chúng vẫn có thể tiếp tục sản xuất điện trong nhiều năm nữa.',
       },
       {
         question: 'Chi phí lắp đặt một hệ thống điện mặt trời áp mái cho hộ gia đình ở Việt Nam là bao nhiêu?',
-        answer: 'Chi phí phụ thuộc vào công suất hệ thống. Một hệ thống 3-5 kWp, đủ cho hầu hết các hộ gia đình, có chi phí dao động từ 50 đến 90 triệu đồng. Chi phí này đang có xu hướng giảm dần theo thời gian.'
+        answer:
+          'Chi phí phụ thuộc vào công suất hệ thống. Một hệ thống 3-5 kWp, đủ cho hầu hết các hộ gia đình, có chi phí dao động từ 50 đến 90 triệu đồng. Chi phí này đang có xu hướng giảm dần theo thời gian.',
       },
       {
         question: 'Vào những ngày nhiều mây hoặc mưa, hệ thống điện mặt trời có hoạt động không?',
-        answer: 'Có, nhưng hiệu suất sẽ giảm. Tấm pin mặt trời vẫn có thể tạo ra điện từ ánh sáng khuếch tán trong những ngày nhiều mây, mặc dù sản lượng sẽ thấp hơn đáng kể so với những ngày nắng đẹp.'
+        answer:
+          'Có, nhưng hiệu suất sẽ giảm. Tấm pin mặt trời vẫn có thể tạo ra điện từ ánh sáng khuếch tán trong những ngày nhiều mây, mặc dù sản lượng sẽ thấp hơn đáng kể so với những ngày nắng đẹp.',
       },
       {
         question: 'Hệ thống điện mặt trời có cần bảo trì thường xuyên không?',
-        answer: 'Hệ thống điện mặt trời yêu cầu bảo trì rất ít. Công việc chính là giữ cho bề mặt tấm pin sạch sẽ để đảm bảo hiệu suất tối đa. Bạn nên vệ sinh tấm pin vài lần một năm, đặc biệt là ở những khu vực có nhiều bụi.'
+        answer:
+          'Hệ thống điện mặt trời yêu cầu bảo trì rất ít. Công việc chính là giữ cho bề mặt tấm pin sạch sẽ để đảm bảo hiệu suất tối đa. Bạn nên vệ sinh tấm pin vài lần một năm, đặc biệt là ở những khu vực có nhiều bụi.',
       },
       {
         question: 'Sử dụng điện mặt trời có thực sự giúp bảo vệ môi trường không?',
-        answer: 'Chắc chắn có. Điện mặt trời là một nguồn năng lượng sạch, không phát thải khí nhà kính (như CO2) trong quá trình hoạt động, góp phần giảm thiểu biến đổi khí hậu và ô nhiễm không khí.'
+        answer:
+          'Chắc chắn có. Điện mặt trời là một nguồn năng lượng sạch, không phát thải khí nhà kính (như CO2) trong quá trình hoạt động, góp phần giảm thiểu biến đổi khí hậu và ô nhiễm không khí.',
       },
       {
         question: 'Pin lưu trữ năng lượng (battery) có cần thiết cho mọi hệ thống điện mặt trời không?',
-        answer: 'Không cần thiết nhưng rất được khuyến khích. Nếu không có pin lưu trữ, điện mặt trời dư thừa sẽ được phát lên lưới điện (nếu là hệ thống hòa lưới). Pin lưu trữ cho phép bạn sử dụng điện mặt trời vào ban đêm hoặc khi mất điện, tăng tính tự chủ về năng lượng.'
+        answer:
+          'Không cần thiết nhưng rất được khuyến khích. Nếu không có pin lưu trữ, điện mặt trời dư thừa sẽ được phát lên lưới điện (nếu là hệ thống hòa lưới). Pin lưu trữ cho phép bạn sử dụng điện mặt trời vào ban đêm hoặc khi mất điện, tăng tính tự chủ về năng lượng.',
       },
       {
         question: '"Nông nghiệp quang điện" (Agrivoltaics) là gì?',
-        answer: 'Đây là mô hình kết hợp sản xuất nông nghiệp và sản xuất điện mặt trời trên cùng một diện tích đất. Các tấm pin được lắp đặt ở độ cao nhất định, cho phép cây trồng vẫn có thể phát triển bên dưới, tối ưu hóa hiệu quả sử dụng đất.'
+        answer:
+          'Đây là mô hình kết hợp sản xuất nông nghiệp và sản xuất điện mặt trời trên cùng một diện tích đất. Các tấm pin được lắp đặt ở độ cao nhất định, cho phép cây trồng vẫn có thể phát triển bên dưới, tối ưu hóa hiệu quả sử dụng đất.',
       },
       {
         question: 'Sự khác biệt giữa tấm pin đơn tinh thể (mono) và đa tinh thể (poly) là gì?',
-        answer: 'Tấm pin mono được làm từ các thỏi silicon đơn tinh thể, có hiệu suất cao hơn và màu đen đồng nhất. Tấm pin poly được làm từ nhiều tinh thể silicon nấu chảy, có hiệu suất thấp hơn một chút, giá thành rẻ hơn và có màu xanh lốm đốm.'
+        answer:
+          'Tấm pin mono được làm từ các thỏi silicon đơn tinh thể, có hiệu suất cao hơn và màu đen đồng nhất. Tấm pin poly được làm từ nhiều tinh thể silicon nấu chảy, có hiệu suất thấp hơn một chút, giá thành rẻ hơn và có màu xanh lốm đốm.',
       },
       {
         question: 'Việt Nam có những chính sách nào để khuyến khích điện mặt trời?',
-        answer: 'Chính phủ Việt Nam đã triển khai nhiều chính sách, nổi bật là cơ chế giá FIT (Feed-in Tariff) cho phép người dân và doanh nghiệp bán lại điện dư thừa cho EVN với giá ưu đãi. Hiện nay, chính sách đang chuyển dần sang các cơ chế khác như đấu thầu và DPPA.'
+        answer:
+          'Chính phủ Việt Nam đã triển khai nhiều chính sách, nổi bật là cơ chế giá FIT (Feed-in Tariff) cho phép người dân và doanh nghiệp bán lại điện dư thừa cho EVN với giá ưu đãi. Hiện nay, chính sách đang chuyển dần sang các cơ chế khác như đấu thầu và DPPA.',
       },
       {
         question: 'Làm thế nào để tính toán kích thước hệ thống điện mặt trời phù hợp cho gia đình tôi?',
-        answer: 'Bạn cần dựa vào hóa đơn tiền điện hàng tháng để xác định mức tiêu thụ điện trung bình (kWh/tháng). Từ đó, các chuyên gia sẽ tư vấn và thiết kế một hệ thống có công suất (kWp) phù hợp để đáp ứng nhu cầu của gia đình bạn.'
-      }
-    ]
+        answer:
+          'Bạn cần dựa vào hóa đơn tiền điện hàng tháng để xác định mức tiêu thụ điện trung bình (kWh/tháng). Từ đó, các chuyên gia sẽ tư vấn và thiết kế một hệ thống có công suất (kWp) phù hợp để đáp ứng nhu cầu của gia đình bạn.',
+      },
+    ],
   },
   {
     id: 'wind-power-technology',
@@ -329,45 +311,55 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     faqs: [
       {
         question: 'Một turbine gió có thể cung cấp điện cho bao nhiêu hộ gia đình?',
-        answer: 'Điều này phụ thuộc vào công suất của turbine và mức tiêu thụ điện. Một turbine gió ngoài khơi hiện đại (công suất 10-15 MW) có thể cung cấp đủ điện cho khoảng 10.000 - 15.000 hộ gia đình Việt Nam.'
+        answer:
+          'Điều này phụ thuộc vào công suất của turbine và mức tiêu thụ điện. Một turbine gió ngoài khơi hiện đại (công suất 10-15 MW) có thể cung cấp đủ điện cho khoảng 10.000 - 15.000 hộ gia đình Việt Nam.',
       },
       {
         question: 'Turbine gió có gây ra tiếng ồn không?',
-        answer: 'Có, turbine gió tạo ra tiếng ồn, nhưng ở khoảng cách an toàn (vài trăm mét), mức ồn thường thấp hơn tiếng ồn nền của môi trường xung quanh như tiếng gió, tiếng xe cộ. Các dự án điện gió luôn phải tuân thủ các quy định nghiêm ngặt về tiếng ồn.'
+        answer:
+          'Có, turbine gió tạo ra tiếng ồn, nhưng ở khoảng cách an toàn (vài trăm mét), mức ồn thường thấp hơn tiếng ồn nền của môi trường xung quanh như tiếng gió, tiếng xe cộ. Các dự án điện gió luôn phải tuân thủ các quy định nghiêm ngặt về tiếng ồn.',
       },
       {
         question: 'Điện gió có ảnh hưởng đến các loài chim không?',
-        answer: 'Có, va chạm với cánh quạt là một rủi ro đối với các loài chim. Tuy nhiên, các nghiên cứu và công nghệ hiện đại như sơn một cánh quạt màu đen, sử dụng radar để phát hiện và tạm dừng turbine khi có đàn chim bay qua đang giúp giảm thiểu đáng kể tác động này.'
+        answer:
+          'Có, va chạm với cánh quạt là một rủi ro đối với các loài chim. Tuy nhiên, các nghiên cứu và công nghệ hiện đại như sơn một cánh quạt màu đen, sử dụng radar để phát hiện và tạm dừng turbine khi có đàn chim bay qua đang giúp giảm thiểu đáng kể tác động này.',
       },
       {
         question: 'Tại sao chi phí xây dựng điện gió ngoài khơi lại đắt hơn trên bờ?',
-        answer: 'Chi phí cao hơn do các yếu tố như: móng turbine cần phức tạp hơn để chịu được sóng và dòng chảy, cáp ngầm dưới biển đắt đỏ, và công tác lắp đặt, vận hành, bảo trì trên biển khó khăn và tốn kém hơn nhiều.'
+        answer:
+          'Chi phí cao hơn do các yếu tố như: móng turbine cần phức tạp hơn để chịu được sóng và dòng chảy, cáp ngầm dưới biển đắt đỏ, và công tác lắp đặt, vận hành, bảo trì trên biển khó khăn và tốn kém hơn nhiều.',
       },
       {
         question: 'Hiệu ứng "bóng gió" (wake effect) trong một trang trại điện gió là gì?',
-        answer: 'Là hiện tượng turbine phía sau bị ảnh hưởng bởi dòng không khí nhiễu động do turbine phía trước tạo ra. Điều này làm giảm tốc độ gió và tăng tải trọng lên turbine phía sau, làm giảm hiệu suất chung của cả trang trại. Việc bố trí khoảng cách hợp lý giữa các turbine là rất quan trọng để giảm hiệu ứng này.'
+        answer:
+          'Là hiện tượng turbine phía sau bị ảnh hưởng bởi dòng không khí nhiễu động do turbine phía trước tạo ra. Điều này làm giảm tốc độ gió và tăng tải trọng lên turbine phía sau, làm giảm hiệu suất chung của cả trang trại. Việc bố trí khoảng cách hợp lý giữa các turbine là rất quan trọng để giảm hiệu ứng này.',
       },
       {
         question: 'Chiều cao của một turbine gió ngoài khơi hiện đại là bao nhiêu?',
-        answer: 'Các turbine gió ngoài khơi ngày càng lớn hơn. Chiều cao tổng thể (tính đến đỉnh cánh quạt) có thể vượt quá 250 mét, tương đương một tòa nhà 80 tầng.'
+        answer:
+          'Các turbine gió ngoài khơi ngày càng lớn hơn. Chiều cao tổng thể (tính đến đỉnh cánh quạt) có thể vượt quá 250 mét, tương đương một tòa nhà 80 tầng.',
       },
       {
         question: 'Việt Nam có tự sản xuất được turbine gió không?',
-        answer: 'Hiện tại, Việt Nam chủ yếu nhập khẩu các thành phần chính của turbine như cánh quạt, hộp số, máy phát. Tuy nhiên, một số doanh nghiệp trong nước đã bắt đầu tham gia vào chuỗi cung ứng, sản xuất các bộ phận như tháp thép, móng, và cung cấp dịch vụ lắp đặt, bảo trì.'
+        answer:
+          'Hiện tại, Việt Nam chủ yếu nhập khẩu các thành phần chính của turbine như cánh quạt, hộp số, máy phát. Tuy nhiên, một số doanh nghiệp trong nước đã bắt đầu tham gia vào chuỗi cung ứng, sản xuất các bộ phận như tháp thép, móng, và cung cấp dịch vụ lắp đặt, bảo trì.',
       },
       {
         question: 'Làm thế nào để turbine gió luôn quay về hướng gió?',
-        answer: 'Turbine gió được trang bị một hệ thống điều khiển gọi là "yaw system". Hệ thống này sử dụng các cảm biến tốc độ và hướng gió (anemometer) đặt trên đỉnh vỏ máy để tự động xoay toàn bộ phần đầu turbine (nacelle) đối diện với hướng gió, đảm bảo thu được năng lượng tối đa.'
+        answer:
+          'Turbine gió được trang bị một hệ thống điều khiển gọi là "yaw system". Hệ thống này sử dụng các cảm biến tốc độ và hướng gió (anemometer) đặt trên đỉnh vỏ máy để tự động xoay toàn bộ phần đầu turbine (nacelle) đối diện với hướng gió, đảm bảo thu được năng lượng tối đa.',
       },
       {
         question: 'Khi có bão, các turbine gió sẽ hoạt động như thế nào?',
-        answer: 'Khi tốc độ gió vượt quá một ngưỡng an toàn (thường khoảng 25 m/s hoặc 90 km/h), hệ thống điều khiển sẽ tự động xoay các cánh quạt để chúng song song với hướng gió và khóa rotor lại để tránh hư hỏng. Đây được gọi là chế độ "dừng bão".'
+        answer:
+          'Khi tốc độ gió vượt quá một ngưỡng an toàn (thường khoảng 25 m/s hoặc 90 km/h), hệ thống điều khiển sẽ tự động xoay các cánh quạt để chúng song song với hướng gió và khóa rotor lại để tránh hư hỏng. Đây được gọi là chế độ "dừng bão".',
       },
       {
         question: 'Tiềm năng điện gió ngoài khơi của Việt Nam lớn đến mức nào?',
-        answer: 'Theo Ngân hàng Thế giới (World Bank), Việt Nam có tiềm năng điện gió ngoài khơi ước tính khoảng 475 GW, một con số khổng lồ, đủ sức đáp ứng toàn bộ nhu cầu điện của quốc gia trong tương lai và trở thành một trung tâm năng lượng sạch của khu vực.'
-      }
-    ]
+        answer:
+          'Theo Ngân hàng Thế giới (World Bank), Việt Nam có tiềm năng điện gió ngoài khơi ước tính khoảng 475 GW, một con số khổng lồ, đủ sức đáp ứng toàn bộ nhu cầu điện của quốc gia trong tương lai và trở thành một trung tâm năng lượng sạch của khu vực.',
+      },
+    ],
   },
   {
     id: 'energy-storage-systems',
@@ -490,45 +482,55 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     faqs: [
       {
         question: 'Ngoài pin Lithium-ion, còn có những công nghệ lưu trữ năng lượng nào khác?',
-        answer: 'Có nhiều công nghệ khác như: Thủy điện tích năng (dùng nước để lưu trữ thế năng), pin dòng chảy (redox flow battery), lưu trữ năng lượng bằng khí nén (CAES), bánh đà (flywheel), và các công nghệ mới nổi như pin thể rắn và pin natri-ion.'
+        answer:
+          'Có nhiều công nghệ khác như: Thủy điện tích năng (dùng nước để lưu trữ thế năng), pin dòng chảy (redox flow battery), lưu trữ năng lượng bằng khí nén (CAES), bánh đà (flywheel), và các công nghệ mới nổi như pin thể rắn và pin natri-ion.',
       },
       {
         question: '"Lưới điện thông minh" (Smart Grid) là gì?',
-        answer: 'Là một hệ thống lưới điện được hiện đại hóa, sử dụng công nghệ thông tin và truyền thông để thu thập và xử lý dữ liệu về hành vi của nhà cung cấp và người tiêu dùng. Điều này cho phép lưới điện tự động điều chỉnh, tăng hiệu quả, độ tin cậy và tích hợp tốt hơn các nguồn năng lượng tái tạo.'
+        answer:
+          'Là một hệ thống lưới điện được hiện đại hóa, sử dụng công nghệ thông tin và truyền thông để thu thập và xử lý dữ liệu về hành vi của nhà cung cấp và người tiêu dùng. Điều này cho phép lưới điện tự động điều chỉnh, tăng hiệu quả, độ tin cậy và tích hợp tốt hơn các nguồn năng lượng tái tạo.',
       },
       {
         question: 'Hệ thống lưu trữ năng lượng có thể giúp tôi tiết kiệm tiền điện không?',
-        answer: 'Có. Bằng cách lưu trữ điện mặt trời vào ban ngày để dùng vào buổi tối, bạn sẽ giảm lượng điện mua từ lưới điện vào giờ cao điểm (giá cao). Ngoài ra, một số nơi có cơ chế cho phép bạn bán lại điện từ pin của mình cho lưới điện khi có nhu cầu cao, tạo thêm một nguồn thu nhập.'
+        answer:
+          'Có. Bằng cách lưu trữ điện mặt trời vào ban ngày để dùng vào buổi tối, bạn sẽ giảm lượng điện mua từ lưới điện vào giờ cao điểm (giá cao). Ngoài ra, một số nơi có cơ chế cho phép bạn bán lại điện từ pin của mình cho lưới điện khi có nhu cầu cao, tạo thêm một nguồn thu nhập.',
       },
       {
         question: 'Tuổi thọ của một hệ thống pin lưu trữ năng lượng là bao lâu?',
-        answer: 'Tuổi thọ của pin lithium-ion thường được tính bằng số chu kỳ sạc-xả và độ sâu xả (Depth of Discharge - DoD). Hầu hết các hệ thống pin dân dụng hiện nay được bảo hành từ 10 đến 15 năm hoặc một số lượng chu kỳ nhất định (ví dụ: 6000 chu kỳ).'
+        answer:
+          'Tuổi thọ của pin lithium-ion thường được tính bằng số chu kỳ sạc-xả và độ sâu xả (Depth of Discharge - DoD). Hầu hết các hệ thống pin dân dụng hiện nay được bảo hành từ 10 đến 15 năm hoặc một số lượng chu kỳ nhất định (ví dụ: 6000 chu kỳ).',
       },
       {
         question: 'Thủy điện tích năng hoạt động như thế nào?',
-        answer: 'Nó hoạt động như một cục pin nước khổng lồ. Khi thừa điện (giá rẻ), hệ thống sẽ bơm nước từ một hồ chứa thấp lên một hồ chứa cao hơn. Khi cần điện (giá cao), nước sẽ được xả từ hồ cao xuống hồ thấp qua các turbine để phát điện.'
+        answer:
+          'Nó hoạt động như một cục pin nước khổng lồ. Khi thừa điện (giá rẻ), hệ thống sẽ bơm nước từ một hồ chứa thấp lên một hồ chứa cao hơn. Khi cần điện (giá cao), nước sẽ được xả từ hồ cao xuống hồ thấp qua các turbine để phát điện.',
       },
       {
         question: 'Hệ thống lưu trữ năng lượng có an toàn không?',
-        answer: 'Các hệ thống lưu trữ năng lượng hiện đại từ các nhà sản xuất uy tín đều được trang bị nhiều lớp bảo vệ an toàn, bao gồm hệ thống quản lý pin (BMS) để giám sát nhiệt độ, điện áp, dòng điện và ngăn ngừa các sự cố như quá nhiệt, quá sạc. Việc lắp đặt đúng tiêu chuẩn kỹ thuật là cực kỳ quan trọng.'
+        answer:
+          'Các hệ thống lưu trữ năng lượng hiện đại từ các nhà sản xuất uy tín đều được trang bị nhiều lớp bảo vệ an toàn, bao gồm hệ thống quản lý pin (BMS) để giám sát nhiệt độ, điện áp, dòng điện và ngăn ngừa các sự cố như quá nhiệt, quá sạc. Việc lắp đặt đúng tiêu chuẩn kỹ thuật là cực kỳ quan trọng.',
       },
       {
         question: '"Đáp ứng nhu cầu" (Demand Response) trong lưới điện thông minh là gì?',
-        answer: 'Là khả năng của người tiêu dùng có thể chủ động giảm hoặc dời việc sử dụng điện của mình trong những giờ cao điểm, để đáp lại các tín hiệu về giá hoặc các yêu cầu từ công ty điện lực. Điều này giúp giảm tải cho lưới điện mà không cần xây thêm nhà máy điện mới.'
+        answer:
+          'Là khả năng của người tiêu dùng có thể chủ động giảm hoặc dời việc sử dụng điện của mình trong những giờ cao điểm, để đáp lại các tín hiệu về giá hoặc các yêu cầu từ công ty điện lực. Điều này giúp giảm tải cho lưới điện mà không cần xây thêm nhà máy điện mới.',
       },
       {
         question: 'Tại sao lưu trữ năng lượng lại quan trọng cho việc phát triển xe điện?',
-        answer: 'Lưu trữ năng lượng giúp quản lý tác động của việc sạc đồng loạt nhiều xe điện lên lưới điện. Các trạm sạc có thể được trang bị pin lưu trữ để sạc vào giờ thấp điểm và cung cấp cho xe vào giờ cao điểm. Ngoài ra, công nghệ Vehicle-to-Grid (V2G) còn cho phép xe điện hoạt động như một nguồn điện di động, bán lại điện cho lưới khi cần.'
+        answer:
+          'Lưu trữ năng lượng giúp quản lý tác động của việc sạc đồng loạt nhiều xe điện lên lưới điện. Các trạm sạc có thể được trang bị pin lưu trữ để sạc vào giờ thấp điểm và cung cấp cho xe vào giờ cao điểm. Ngoài ra, công nghệ Vehicle-to-Grid (V2G) còn cho phép xe điện hoạt động như một nguồn điện di động, bán lại điện cho lưới khi cần.',
       },
       {
         question: 'Dung lượng lưu trữ của pin được đo bằng đơn vị gì?',
-        answer: 'Dung lượng lưu trữ năng lượng thường được đo bằng kilowatt-giờ (kWh). Ví dụ, một hệ thống pin 10 kWh có thể cung cấp công suất 1 kW liên tục trong 10 giờ, hoặc 2 kW trong 5 giờ.'
+        answer:
+          'Dung lượng lưu trữ năng lượng thường được đo bằng kilowatt-giờ (kWh). Ví dụ, một hệ thống pin 10 kWh có thể cung cấp công suất 1 kW liên tục trong 10 giờ, hoặc 2 kW trong 5 giờ.',
       },
       {
         question: 'Việt Nam có tiềm năng phát triển thủy điện tích năng không?',
-        answer: 'Có, Việt Nam có tiềm năng đáng kể để phát triển thủy điện tích năng, đặc biệt là ở các vùng miền núi phía Bắc và miền Trung, nơi có địa hình chênh lệch độ cao lớn. Đây được coi là một giải pháp lưu trữ quy mô lớn và dài hạn hiệu quả cho hệ thống điện quốc gia.'
-      }
-    ]
+        answer:
+          'Có, Việt Nam có tiềm năng đáng kể để phát triển thủy điện tích năng, đặc biệt là ở các vùng miền núi phía Bắc và miền Trung, nơi có địa hình chênh lệch độ cao lớn. Đây được coi là một giải pháp lưu trữ quy mô lớn và dài hạn hiệu quả cho hệ thống điện quốc gia.',
+      },
+    ],
   },
   {
     id: 'hydroelectric-systems',
@@ -641,45 +643,55 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     faqs: [
       {
         question: 'Thủy điện có phải là năng lượng tái tạo không?',
-        answer: 'Có, thủy điện được coi là một dạng năng lượng tái tạo vì nó sử dụng chu trình tuần hoàn của nước trong tự nhiên. Tuy nhiên, các dự án thủy điện lớn có thể gây ra các tác động môi trường và xã hội đáng kể, nên tính "bền vững" của chúng vẫn là một chủ đề được tranh luận.'
+        answer:
+          'Có, thủy điện được coi là một dạng năng lượng tái tạo vì nó sử dụng chu trình tuần hoàn của nước trong tự nhiên. Tuy nhiên, các dự án thủy điện lớn có thể gây ra các tác động môi trường và xã hội đáng kể, nên tính "bền vững" của chúng vẫn là một chủ đề được tranh luận.',
       },
       {
         question: 'Nhà máy thủy điện lớn nhất Việt Nam là nhà máy nào?',
-        answer: 'Nhà máy Thủy điện Sơn La là nhà máy thủy điện lớn nhất Việt Nam và cả Đông Nam Á, với công suất lắp đặt 2.400 MW.'
+        answer:
+          'Nhà máy Thủy điện Sơn La là nhà máy thủy điện lớn nhất Việt Nam và cả Đông Nam Á, với công suất lắp đặt 2.400 MW.',
       },
       {
         question: '"Cột nước" trong thủy điện có nghĩa là gì?',
-        answer: 'Cột nước (head) là chênh lệch độ cao giữa mực nước ở hồ chứa phía trên và mực nước ở cửa ra của turbine phía dưới. Cột nước càng cao và lưu lượng nước càng lớn thì tiềm năng phát điện càng cao.'
+        answer:
+          'Cột nước (head) là chênh lệch độ cao giữa mực nước ở hồ chứa phía trên và mực nước ở cửa ra của turbine phía dưới. Cột nước càng cao và lưu lượng nước càng lớn thì tiềm năng phát điện càng cao.',
       },
       {
         question: 'Thủy điện "chạy trên sông" (run-of-river) khác gì với thủy điện có hồ chứa?',
-        answer: 'Thủy điện chạy trên sông chỉ sử dụng một phần dòng chảy tự nhiên của sông để quay turbine mà không cần xây đập lớn để tích nước. Loại hình này ít gây tác động đến môi trường nhưng sản lượng điện phụ thuộc nhiều vào lưu lượng nước theo mùa.'
+        answer:
+          'Thủy điện chạy trên sông chỉ sử dụng một phần dòng chảy tự nhiên của sông để quay turbine mà không cần xây đập lớn để tích nước. Loại hình này ít gây tác động đến môi trường nhưng sản lượng điện phụ thuộc nhiều vào lưu lượng nước theo mùa.',
       },
       {
         question: 'Tua bin Pelton và tua bin Francis khác nhau như thế nào?',
-        answer: 'Đây là hai loại tua bin thủy điện phổ biến. Tua bin Pelton (gáo) là loại tua bin xung lực, phù hợp với nơi có cột nước cao và lưu lượng thấp. Tua bin Francis là loại tua bin phản lực, hoạt động hiệu quả ở dải cột nước và lưu lượng rộng hơn, là loại được sử dụng phổ biến nhất trên thế giới.'
+        answer:
+          'Đây là hai loại tua bin thủy điện phổ biến. Tua bin Pelton (gáo) là loại tua bin xung lực, phù hợp với nơi có cột nước cao và lưu lượng thấp. Tua bin Francis là loại tua bin phản lực, hoạt động hiệu quả ở dải cột nước và lưu lượng rộng hơn, là loại được sử dụng phổ biến nhất trên thế giới.',
       },
       {
         question: 'Ngoài sản xuất điện, các đập thủy điện lớn còn có vai trò gì khác?',
-        answer: 'Các đập thủy điện lớn còn có vai trò quan trọng trong việc kiểm soát lũ lụt cho vùng hạ du, cung cấp nước cho tưới tiêu nông nghiệp, sinh hoạt, và phát triển giao thông đường thủy, du lịch.'
+        answer:
+          'Các đập thủy điện lớn còn có vai trò quan trọng trong việc kiểm soát lũ lụt cho vùng hạ du, cung cấp nước cho tưới tiêu nông nghiệp, sinh hoạt, và phát triển giao thông đường thủy, du lịch.',
       },
       {
         question: 'Phát triển thủy điện có thể gây ra những tác động tiêu cực nào?',
-        answer: 'Các tác động tiêu cực có thể bao gồm: mất đất và di dời dân cư, thay đổi hệ sinh thái aguas và hạ lưu, ảnh hưởng đến các loài cá di cư, lắng đọng phù sa, và nguy cơ mất an toàn đập.'
+        answer:
+          'Các tác động tiêu cực có thể bao gồm: mất đất và di dời dân cư, thay đổi hệ sinh thái aguas và hạ lưu, ảnh hưởng đến các loài cá di cư, lắng đọng phù sa, và nguy cơ mất an toàn đập.',
       },
       {
         question: 'Thủy điện siêu nhỏ (pico-hydro) là gì?',
-        answer: 'Là các hệ thống thủy điện có công suất rất nhỏ, thường dưới 5 kW. Chúng rất phù hợp để cung cấp điện cho một vài hộ gia đình hoặc một trang trại nhỏ ở những khu vực miền núi hẻo lánh có sông suối nhỏ.'
+        answer:
+          'Là các hệ thống thủy điện có công suất rất nhỏ, thường dưới 5 kW. Chúng rất phù hợp để cung cấp điện cho một vài hộ gia đình hoặc một trang trại nhỏ ở những khu vực miền núi hẻo lánh có sông suối nhỏ.',
       },
       {
         question: 'Làm thế nào để giảm tác động môi trường của các dự án thủy điện?',
-        answer: 'Các biện pháp bao gồm: xây dựng các "đường đi cho cá" (fish ladder) để cá có thể di cư, duy trì "dòng chảy môi trường" tối thiểu để duy trì sự sống ở hạ lưu, quản lý trầm tích, và thực hiện các chương trình tái định cư và hỗ trợ sinh kế bền vững cho người dân bị ảnh hưởng.'
+        answer:
+          'Các biện pháp bao gồm: xây dựng các "đường đi cho cá" (fish ladder) để cá có thể di cư, duy trì "dòng chảy môi trường" tối thiểu để duy trì sự sống ở hạ lưu, quản lý trầm tích, và thực hiện các chương trình tái định cư và hỗ trợ sinh kế bền vững cho người dân bị ảnh hưởng.',
       },
       {
         question: 'Tại sao thủy điện lại đóng vai trò quan trọng trong việc ổn định lưới điện?',
-        answer: 'So với các nhà máy nhiệt điện, các nhà máy thủy điện có khả năng khởi động, dừng và thay đổi công suất rất nhanh. Điều này giúp chúng đóng vai trò như một nguồn điện dự phòng linh hoạt, nhanh chóng bù đắp sự thiếu hụt công suất khi có sự cố hoặc khi các nguồn năng lượng biến đổi như mặt trời, gió ngừng phát.'
-      }
-    ]
+        answer:
+          'So với các nhà máy nhiệt điện, các nhà máy thủy điện có khả năng khởi động, dừng và thay đổi công suất rất nhanh. Điều này giúp chúng đóng vai trò như một nguồn điện dự phòng linh hoạt, nhanh chóng bù đắp sự thiếu hụt công suất khi có sự cố hoặc khi các nguồn năng lượng biến đổi như mặt trời, gió ngừng phát.',
+      },
+    ],
   },
   {
     id: 'renewable-economics-policy',
@@ -792,44 +804,82 @@ export const renewableEnergyLessons: RenewableEnergyLesson[] = [
     faqs: [
       {
         question: 'LCOE (Levelized Cost of Energy) là gì và tại sao nó quan trọng?',
-        answer: 'LCOE là tổng chi phí vòng đời của một nhà máy điện chia cho tổng sản lượng điện mà nó tạo ra. Đây là một thước đo chuẩn để so sánh chi phí sản xuất điện từ các nguồn khác nhau (ví dụ: so sánh LCOE của điện mặt trời với điện than). Một LCOE thấp hơn có nghĩa là nguồn năng lượng đó kinh tế hơn.'
+        answer:
+          'LCOE là tổng chi phí vòng đời của một nhà máy điện chia cho tổng sản lượng điện mà nó tạo ra. Đây là một thước đo chuẩn để so sánh chi phí sản xuất điện từ các nguồn khác nhau (ví dụ: so sánh LCOE của điện mặt trời với điện than). Một LCOE thấp hơn có nghĩa là nguồn năng lượng đó kinh tế hơn.',
       },
       {
         question: '"Trái phiếu xanh" (Green Bond) là gì?',
-        answer: 'Là một loại trái phiếu được phát hành để huy động vốn dành riêng cho các dự án có tác động tích cực đến môi trường, chẳng hạn như các dự án năng lượng tái tạo, hiệu quả năng lượng, hoặc giao thông sạch.'
+        answer:
+          'Là một loại trái phiếu được phát hành để huy động vốn dành riêng cho các dự án có tác động tích cực đến môi trường, chẳng hạn như các dự án năng lượng tái tạo, hiệu quả năng lượng, hoặc giao thông sạch.',
       },
       {
         question: 'Tại sao việc nâng cấp lưới điện lại quan trọng khi phát triển năng lượng tái tạo?',
-        answer: 'Lưới điện truyền thống được thiết kế cho dòng điện một chiều từ các nhà máy lớn. Năng lượng tái tạo, đặc biệt là điện mặt trời áp mái, có tính phân tán và không ổn định. Lưới điện cần được nâng cấp thành "lưới điện thông minh" để có thể quản lý dòng điện hai chiều và cân bằng sự biến thiên của các nguồn này.'
+        answer:
+          'Lưới điện truyền thống được thiết kế cho dòng điện một chiều từ các nhà máy lớn. Năng lượng tái tạo, đặc biệt là điện mặt trời áp mái, có tính phân tán và không ổn định. Lưới điện cần được nâng cấp thành "lưới điện thông minh" để có thể quản lý dòng điện hai chiều và cân bằng sự biến thiên của các nguồn này.',
       },
       {
         question: 'Cơ chế đấu thầu (auction/bidding) trong năng lượng tái tạo hoạt động như thế nào?',
-        answer: 'Thay vì đưa ra một mức giá FIT cố định, chính phủ sẽ xác định một lượng công suất cần phát triển (ví dụ: 500 MW điện gió). Các nhà đầu tư sẽ tham gia đấu thầu bằng cách đưa ra mức giá bán điện mà họ đề xuất. Các dự án có giá thầu thấp nhất sẽ được chọn để thực hiện. Cơ chế này thúc đẩy cạnh tranh và giúp giảm giá điện.'
+        answer:
+          'Thay vì đưa ra một mức giá FIT cố định, chính phủ sẽ xác định một lượng công suất cần phát triển (ví dụ: 500 MW điện gió). Các nhà đầu tư sẽ tham gia đấu thầu bằng cách đưa ra mức giá bán điện mà họ đề xuất. Các dự án có giá thầu thấp nhất sẽ được chọn để thực hiện. Cơ chế này thúc đẩy cạnh tranh và giúp giảm giá điện.',
       },
       {
         question: 'Hợp đồng mua bán điện (PPA - Power Purchase Agreement) là gì?',
-        answer: 'Là một hợp đồng dài hạn giữa một bên sản xuất điện và một bên mua điện. Hợp đồng này xác định các điều khoản thương mại như thời hạn, giá điện, sản lượng, v.v. PPA là nền tảng pháp lý và tài chính cho hầu hết các dự án năng lượng.'
+        answer:
+          'Là một hợp đồng dài hạn giữa một bên sản xuất điện và một bên mua điện. Hợp đồng này xác định các điều khoản thương mại như thời hạn, giá điện, sản lượng, v.v. PPA là nền tảng pháp lý và tài chính cho hầu hết các dự án năng lượng.',
       },
       {
         question: '"Hàm lượng nội địa" trong các dự án năng lượng có ý nghĩa gì?',
-        answer: 'Là yêu cầu của chính phủ về một tỷ lệ phần trăm nhất định các thiết bị, dịch vụ được sử dụng trong dự án phải được sản xuất hoặc cung cấp bởi các doanh nghiệp trong nước. Điều này nhằm thúc đẩy sự phát triển của ngành công nghiệp phụ trợ nội địa.'
+        answer:
+          'Là yêu cầu của chính phủ về một tỷ lệ phần trăm nhất định các thiết bị, dịch vụ được sử dụng trong dự án phải được sản xuất hoặc cung cấp bởi các doanh nghiệp trong nước. Điều này nhằm thúc đẩy sự phát triển của ngành công nghiệp phụ trợ nội địa.',
       },
       {
         question: 'Những rủi ro chính khi đầu tư vào một dự án năng lượng tái tạo ở Việt Nam là gì?',
-        answer: 'Các rủi ro bao gồm: rủi ro về chính sách (thay đổi đột ngột), rủi ro về lưới điện (quá tải, không thể giải tỏa hết công suất), rủi ro về tài nguyên (nắng, gió không như dự báo), và rủi ro về xây dựng và vận hành.'
+        answer:
+          'Các rủi ro bao gồm: rủi ro về chính sách (thay đổi đột ngột), rủi ro về lưới điện (quá tải, không thể giải tỏa hết công suất), rủi ro về tài nguyên (nắng, gió không như dự báo), và rủi ro về xây dựng và vận hành.',
       },
       {
         question: 'Quy hoạch phát triển điện lực quốc gia (PDP) là gì?',
-        answer: 'Là một bản quy hoạch tổng thể, dài hạn của chính phủ, xác định mục tiêu, cơ cấu nguồn điện, và lộ trình phát triển của ngành điện Việt Nam trong một giai đoạn nhất định (thường là 10 năm, có tầm nhìn xa hơn). PDP là kim chỉ nam cho mọi hoạt động đầu tư trong ngành điện.'
+        answer:
+          'Là một bản quy hoạch tổng thể, dài hạn của chính phủ, xác định mục tiêu, cơ cấu nguồn điện, và lộ trình phát triển của ngành điện Việt Nam trong một giai đoạn nhất định (thường là 10 năm, có tầm nhìn xa hơn). PDP là kim chỉ nam cho mọi hoạt động đầu tư trong ngành điện.',
       },
       {
         question: 'Tại sao các tập đoàn lớn như Apple, Google lại quan tâm đến DPPA?',
-        answer: 'Các tập đoàn này có các cam kết mạnh mẽ về việc sử dụng 100% năng lượng tái tạo. DPPA cho phép họ ký hợp đồng trực tiếp để đảm bảo nguồn cung năng lượng sạch, ổn định trong dài hạn, giúp họ đạt được mục tiêu bền vững và nâng cao hình ảnh thương hiệu.'
+        answer:
+          'Các tập đoàn này có các cam kết mạnh mẽ về việc sử dụng 100% năng lượng tái tạo. DPPA cho phép họ ký hợp đồng trực tiếp để đảm bảo nguồn cung năng lượng sạch, ổn định trong dài hạn, giúp họ đạt được mục tiêu bền vững và nâng cao hình ảnh thương hiệu.',
       },
       {
         question: 'Chuyển dịch năng lượng công bằng (Just Energy Transition) có nghĩa là gì?',
-        answer: 'Là quá trình chuyển đổi từ nền kinh tế dựa trên năng lượng hóa thạch sang năng lượng sạch, nhưng phải đảm bảo rằng quá trình này diễn ra một cách công bằng, không để ai bị bỏ lại phía sau. Điều này bao gồm việc hỗ trợ người lao động trong ngành than chuyển đổi việc làm, đảm bảo người dân nghèo có thể tiếp cận năng lượng sạch với giá cả phải chăng.'
-      }
-    ]
+        answer:
+          'Là quá trình chuyển đổi từ nền kinh tế dựa trên năng lượng hóa thạch sang năng lượng sạch, nhưng phải đảm bảo rằng quá trình này diễn ra một cách công bằng, không để ai bị bỏ lại phía sau. Điều này bao gồm việc hỗ trợ người lao động trong ngành than chuyển đổi việc làm, đảm bảo người dân nghèo có thể tiếp cận năng lượng sạch với giá cả phải chăng.',
+      },
+    ],
   },
 ];
+
+export const renewableEnergyModuleData: ModuleData = {
+  id: 'renewable-energy',
+  title: 'Năng lượng Tái tạo',
+  description:
+    'Khám phá các công nghệ năng lượng tái tạo hàng đầu và vai trò của chúng trong tương lai năng lượng bền vững của Việt Nam.',
+  category: 'green-tech',
+  icon: 'wind',
+  color: 'from-green-500 to-teal-500',
+  totalDuration: '12 giờ',
+  difficulty: 'Trung bình',
+  lessons: renewableEnergyLessons,
+  prerequisites: ['Kiến thức vật lý cơ bản', 'Hiểu biết về các vấn đề môi trường'],
+  tags: ['năng lượng tái tạo', 'điện mặt trời', 'điện gió', 'bền vững'],
+  features: [
+    'Công nghệ quang điện và điện gió',
+    'Hệ thống lưu trữ năng lượng',
+    'Lưới điện thông minh',
+    'Kinh tế và chính sách năng lượng',
+  ],
+  careerOpportunities: [
+    'Kỹ sư năng lượng tái tạo',
+    'Chuyên gia phát triển dự án điện gió/mặt trời',
+    'Nhà phân tích chính sách năng lượng',
+    'Quản lý vận hành nhà máy điện',
+  ],
+  href: '/learning/renewable-energy',
+};

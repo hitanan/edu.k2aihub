@@ -81,47 +81,57 @@ export const shortVideoMasteryLessons: ShortVideoMasteryLessonType[] = [
       },
     ],
     faqs: [
-        {
-            question: 'Một "hook" tốt cần có những yếu tố gì?',
-            answer: 'Một hook tốt thường gây tò mò (ví dụ: "Đây là lý do bạn luôn thất bại..."), tạo ra sự bất ngờ (một cảnh quay lạ mắt), đặt ra một câu hỏi mà người xem muốn biết câu trả lời, hoặc chạm đến một vấn đề/cảm xúc chung của nhiều người.'
-        },
-        {
-            question: 'Tỷ lệ giữ chân người xem (retention rate) là gì và tại sao nó quan trọng?',
-            answer: 'Là tỷ lệ phần trăm người xem còn ở lại tại mỗi thời điểm của video. Đây là một trong những chỉ số quan trọng nhất mà thuật toán của các nền tảng sử dụng để đánh giá chất lượng video. Tỷ lệ giữ chân cao cho thấy nội dung của bạn hấp dẫn và sẽ được ưu tiên phân phối đến nhiều người hơn.'
-        },
-        {
-            question: 'Ngoài "hook", yếu tố nào khác giúp tăng tỷ lệ giữ chân?',
-            answer: 'Sử dụng các kỹ thuật chỉnh sửa nhanh (quick cuts), thêm phụ đề động (animated captions), sử dụng hiệu ứng âm thanh (sound effects), và kể một câu chuyện có cao trào, nút thắt sẽ giúp giữ sự chú ý của người xem trong suốt video.'
-        },
-        {
-            question: 'Làm thế nào để tìm ra các "trend" đang thịnh hành?',
-            answer: 'Hãy dành thời gian lướt trang "Dành cho bạn" (For You Page) trên TikTok, xem tab "Thịnh hành" (Trending) trên YouTube. Chú ý đến các bài nhạc, hiệu ứng, hoặc các dạng format video được nhiều người sử dụng lặp đi lặp lại.'
-        },
-        {
-            question: 'Có nên lúc nào cũng chạy theo trend không?',
-            answer: 'Không nhất thiết. "Bắt trend" là một cách tốt để tăng khả năng được phân phối, nhưng bạn cần biến tấu nó để phù hợp với phong cách và nội dung của kênh mình. Nội dung nguyên bản, độc đáo và mang lại giá trị vẫn là yếu tố cốt lõi để xây dựng một kênh bền vững.'
-        },
-        {
-            question: 'Độ dài lý tưởng cho một video TikTok/Reels là bao nhiêu?',
-            answer: 'Không có con số chính xác, nhưng các video ngắn (7-15 giây) thường có tỷ lệ xem hết cao hơn. Tuy nhiên, nếu nội dung của bạn thực sự hấp dẫn và có chiều sâu, các video dài hơn (30-60 giây) vẫn có thể hoạt động tốt và giúp xây dựng mối quan hệ sâu sắc hơn với khán giả.'
-        },
-        {
-            question: 'Tại sao một số video có rất nhiều lượt xem nhưng ít lượt thích?',
-            answer: 'Điều này có thể do video có một "hook" rất tốt khiến nhiều người dừng lại xem, nhưng nội dung phần sau lại không đáp ứng được kỳ vọng hoặc không đủ hấp dẫn để họ nhấn thích. Hoặc video đó gây tranh cãi, khiến người ta xem để bình luận nhưng không đồng tình.'
-        },
-        {
-            question: 'Sử dụng nhạc đang trend có thực sự hiệu quả không?',
-            answer: 'Rất hiệu quả. Thuật toán của các nền tảng thường ưu tiên phân phối các video sử dụng âm thanh đang thịnh hành. Nó giúp video của bạn có cơ hội tiếp cận một lượng lớn khán giả đang quan tâm đến trend đó.'
-        },
-        {
-            question: 'Làm thế nào để video của tôi trông chuyên nghiệp hơn chỉ bằng điện thoại?',
-            answer: 'Hãy chú ý đến 3 yếu tố: Ánh sáng (luôn quay ở nơi đủ sáng), Âm thanh (sử dụng mic cài áo hoặc đảm bảo không có tiếng ồn), và Sự ổn định (dùng tripod hoặc tựa tay vào đâu đó để chống rung).'
-        },
-        {
-            question: 'Call to Action (CTA) trong video ngắn nên đặt ở đâu?',
-            answer: 'CTA nên được đặt một cách tự nhiên ở cuối video. Thay vì nói "Hãy follow tôi", hãy thử nói "Follow mình để biết thêm nhiều mẹo hay như thế này nhé!". Một CTA hiệu quả là CTA mang lại lợi ích cho người xem.'
-        }
-    ]
+      {
+        question: 'Một "hook" tốt cần có những yếu tố gì?',
+        answer:
+          'Một hook tốt thường gây tò mò (ví dụ: "Đây là lý do bạn luôn thất bại..."), tạo ra sự bất ngờ (một cảnh quay lạ mắt), đặt ra một câu hỏi mà người xem muốn biết câu trả lời, hoặc chạm đến một vấn đề/cảm xúc chung của nhiều người.',
+      },
+      {
+        question: 'Tỷ lệ giữ chân người xem (retention rate) là gì và tại sao nó quan trọng?',
+        answer:
+          'Là tỷ lệ phần trăm người xem còn ở lại tại mỗi thời điểm của video. Đây là một trong những chỉ số quan trọng nhất mà thuật toán của các nền tảng sử dụng để đánh giá chất lượng video. Tỷ lệ giữ chân cao cho thấy nội dung của bạn hấp dẫn và sẽ được ưu tiên phân phối đến nhiều người hơn.',
+      },
+      {
+        question: 'Ngoài "hook", yếu tố nào khác giúp tăng tỷ lệ giữ chân?',
+        answer:
+          'Sử dụng các kỹ thuật chỉnh sửa nhanh (quick cuts), thêm phụ đề động (animated captions), sử dụng hiệu ứng âm thanh (sound effects), và kể một câu chuyện có cao trào, nút thắt sẽ giúp giữ sự chú ý của người xem trong suốt video.',
+      },
+      {
+        question: 'Làm thế nào để tìm ra các "trend" đang thịnh hành?',
+        answer:
+          'Hãy dành thời gian lướt trang "Dành cho bạn" (For You Page) trên TikTok, xem tab "Thịnh hành" (Trending) trên YouTube. Chú ý đến các bài nhạc, hiệu ứng, hoặc các dạng format video được nhiều người sử dụng lặp đi lặp lại.',
+      },
+      {
+        question: 'Có nên lúc nào cũng chạy theo trend không?',
+        answer:
+          'Không nhất thiết. "Bắt trend" là một cách tốt để tăng khả năng được phân phối, nhưng bạn cần biến tấu nó để phù hợp với phong cách và nội dung của kênh mình. Nội dung nguyên bản, độc đáo và mang lại giá trị vẫn là yếu tố cốt lõi để xây dựng một kênh bền vững.',
+      },
+      {
+        question: 'Độ dài lý tưởng cho một video TikTok/Reels là bao nhiêu?',
+        answer:
+          'Không có con số chính xác, nhưng các video ngắn (7-15 giây) thường có tỷ lệ xem hết cao hơn. Tuy nhiên, nếu nội dung của bạn thực sự hấp dẫn và có chiều sâu, các video dài hơn (30-60 giây) vẫn có thể hoạt động tốt và giúp xây dựng mối quan hệ sâu sắc hơn với khán giả.',
+      },
+      {
+        question: 'Tại sao một số video có rất nhiều lượt xem nhưng ít lượt thích?',
+        answer:
+          'Điều này có thể do video có một "hook" rất tốt khiến nhiều người dừng lại xem, nhưng nội dung phần sau lại không đáp ứng được kỳ vọng hoặc không đủ hấp dẫn để họ nhấn thích. Hoặc video đó gây tranh cãi, khiến người ta xem để bình luận nhưng không đồng tình.',
+      },
+      {
+        question: 'Sử dụng nhạc đang trend có thực sự hiệu quả không?',
+        answer:
+          'Rất hiệu quả. Thuật toán của các nền tảng thường ưu tiên phân phối các video sử dụng âm thanh đang thịnh hành. Nó giúp video của bạn có cơ hội tiếp cận một lượng lớn khán giả đang quan tâm đến trend đó.',
+      },
+      {
+        question: 'Làm thế nào để video của tôi trông chuyên nghiệp hơn chỉ bằng điện thoại?',
+        answer:
+          'Hãy chú ý đến 3 yếu tố: Ánh sáng (luôn quay ở nơi đủ sáng), Âm thanh (sử dụng mic cài áo hoặc đảm bảo không có tiếng ồn), và Sự ổn định (dùng tripod hoặc tựa tay vào đâu đó để chống rung).',
+      },
+      {
+        question: 'Call to Action (CTA) trong video ngắn nên đặt ở đâu?',
+        answer:
+          'CTA nên được đặt một cách tự nhiên ở cuối video. Thay vì nói "Hãy follow tôi", hãy thử nói "Follow mình để biết thêm nhiều mẹo hay như thế này nhé!". Một CTA hiệu quả là CTA mang lại lợi ích cho người xem.',
+      },
+    ],
   },
   {
     id: 'content-strategy-monetization',
@@ -194,47 +204,57 @@ export const shortVideoMasteryLessons: ShortVideoMasteryLessonType[] = [
       },
     ],
     faqs: [
-        {
-            question: 'Trụ cột nội dung (content pillars) là gì?',
-            answer: 'Là 3-5 chủ đề chính, cốt lõi mà kênh của bạn sẽ tập trung vào. Việc xác định các trụ cột nội dung giúp kênh của bạn có định hướng rõ ràng, thu hút đúng đối tượng khán giả và giúp bạn không bị cạn kiệt ý tưởng.'
-        },
-        {
-            question: 'Làm thế nào để tìm ra trụ cột nội dung cho kênh của mình?',
-            answer: 'Hãy trả lời 3 câu hỏi: 1. Bạn đam mê điều gì? 2. Bạn có kiến thức/kỹ năng chuyên môn về lĩnh vực nào? 3. Thị trường (khán giả) đang quan tâm đến điều gì? Giao điểm của ba yếu tố này chính là nơi chứa các trụ cột nội dung lý tưởng của bạn.'
-        },
-        {
-            question: 'Booking PR là gì?',
-            answer: 'Đây là hình thức các nhãn hàng trả tiền cho nhà sáng tạo để sản xuất và đăng tải video có nội dung quảng bá cho sản phẩm/dịch vụ của họ. Đây là một trong những nguồn thu nhập chính của các KOC/KOL (Key Opinion Consumer/Leader).'
-        },
-        {
-            question: 'Em cần bao nhiêu followers để bắt đầu kiếm tiền?',
-            answer: 'Không có con số cố định. Với Affiliate Marketing hoặc bán sản phẩm riêng, bạn có thể bắt đầu ngay cả khi có ít followers, miễn là bạn xây dựng được một cộng đồng tin tưởng. Với Booking PR, các nhãn hàng thường bắt đầu để ý đến các kênh có từ 10,000 followers trở lên.'
-        },
-        {
-            question: 'TikTok Shop hoạt động như thế nào?',
-            answer: 'TikTok Shop cho phép người bán và nhà sáng tạo gắn link sản phẩm trực tiếp vào video và các buổi livestream. Người xem có thể nhấn vào link và mua hàng ngay trên ứng dụng TikTok mà không cần chuyển sang nền tảng khác, tạo ra trải nghiệm mua sắm liền mạch.'
-        },
-        {
-            question: 'Làm thế nào để xây dựng một cộng đồng gắn kết?',
-            answer: 'Hãy thường xuyên tương tác với khán giả: trả lời bình luận, mở các phiên Q&A (Hỏi & Đáp), tạo ra các nội dung mà họ có thể tham gia (duet, stitch). Hãy cho họ thấy bạn lắng nghe và trân trọng sự ủng hộ của họ.'
-        },
-        {
-            question: 'Các chỉ số phân tích nào là quan trọng nhất cần theo dõi?',
-            answer: 'Ngoài lượt xem, hãy chú ý đến: 1. Tỷ lệ giữ chân (cho biết nội dung có hấp dẫn không). 2. Thời gian xem trung bình (cho biết mức độ quan tâm sâu sắc). 3. Tỷ lệ tương tác (thích, bình luận, chia sẻ). 4. Lượt truy cập hồ sơ (cho thấy video có đủ hấp dẫn để người ta muốn tìm hiểu thêm về bạn không).'
-        },
-        {
-            question: 'Làm sao để cân bằng giữa nội dung mang lại giá trị và nội dung quảng cáo?',
-            answer: 'Một quy tắc phổ biến là 80/20. Dành 80% thời gian để tạo ra các nội dung hữu ích, giải trí, và xây dựng cộng đồng. 20% còn lại có thể dành cho các nội dung quảng bá, bán hàng. Khi khán giả đã tin tưởng bạn, họ sẽ sẵn lòng đón nhận các đề xuất của bạn hơn.'
-        },
-        {
-            question: 'MCN (Multi-Channel Network) có thể giúp gì cho nhà sáng tạo?',
-            answer: 'MCN là các công ty quản lý và hỗ trợ nhà sáng tạo. Họ có thể giúp bạn trong việc kết nối với nhãn hàng, bảo vệ bản quyền, hỗ trợ sản xuất, và định hướng phát triển kênh. Đổi lại, họ sẽ nhận một phần trăm doanh thu của bạn.'
-        },
-        {
-            question: 'Ngoài các cách trên, còn có cách nào khác để kiếm tiền không?',
-            answer: 'Có. Khi bạn đã xây dựng được thương hiệu cá nhân, bạn có thể kiếm tiền từ việc cung cấp dịch vụ coaching/tư vấn, bán các sản phẩm số (ebook, khóa học online), tổ chức workshop, hoặc nhận được tài trợ từ các nền tảng (Creator Fund).'
-        }
-    ]
+      {
+        question: 'Trụ cột nội dung (content pillars) là gì?',
+        answer:
+          'Là 3-5 chủ đề chính, cốt lõi mà kênh của bạn sẽ tập trung vào. Việc xác định các trụ cột nội dung giúp kênh của bạn có định hướng rõ ràng, thu hút đúng đối tượng khán giả và giúp bạn không bị cạn kiệt ý tưởng.',
+      },
+      {
+        question: 'Làm thế nào để tìm ra trụ cột nội dung cho kênh của mình?',
+        answer:
+          'Hãy trả lời 3 câu hỏi: 1. Bạn đam mê điều gì? 2. Bạn có kiến thức/kỹ năng chuyên môn về lĩnh vực nào? 3. Thị trường (khán giả) đang quan tâm đến điều gì? Giao điểm của ba yếu tố này chính là nơi chứa các trụ cột nội dung lý tưởng của bạn.',
+      },
+      {
+        question: 'Booking PR là gì?',
+        answer:
+          'Đây là hình thức các nhãn hàng trả tiền cho nhà sáng tạo để sản xuất và đăng tải video có nội dung quảng bá cho sản phẩm/dịch vụ của họ. Đây là một trong những nguồn thu nhập chính của các KOC/KOL (Key Opinion Consumer/Leader).',
+      },
+      {
+        question: 'Em cần bao nhiêu followers để bắt đầu kiếm tiền?',
+        answer:
+          'Không có con số cố định. Với Affiliate Marketing hoặc bán sản phẩm riêng, bạn có thể bắt đầu ngay cả khi có ít followers, miễn là bạn xây dựng được một cộng đồng tin tưởng. Với Booking PR, các nhãn hàng thường bắt đầu để ý đến các kênh có từ 10,000 followers trở lên.',
+      },
+      {
+        question: 'TikTok Shop hoạt động như thế nào?',
+        answer:
+          'TikTok Shop cho phép người bán và nhà sáng tạo gắn link sản phẩm trực tiếp vào video và các buổi livestream. Người xem có thể nhấn vào link và mua hàng ngay trên ứng dụng TikTok mà không cần chuyển sang nền tảng khác, tạo ra trải nghiệm mua sắm liền mạch.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng một cộng đồng gắn kết?',
+        answer:
+          'Hãy thường xuyên tương tác với khán giả: trả lời bình luận, mở các phiên Q&A (Hỏi & Đáp), tạo ra các nội dung mà họ có thể tham gia (duet, stitch). Hãy cho họ thấy bạn lắng nghe và trân trọng sự ủng hộ của họ.',
+      },
+      {
+        question: 'Các chỉ số phân tích nào là quan trọng nhất cần theo dõi?',
+        answer:
+          'Ngoài lượt xem, hãy chú ý đến: 1. Tỷ lệ giữ chân (cho biết nội dung có hấp dẫn không). 2. Thời gian xem trung bình (cho biết mức độ quan tâm sâu sắc). 3. Tỷ lệ tương tác (thích, bình luận, chia sẻ). 4. Lượt truy cập hồ sơ (cho thấy video có đủ hấp dẫn để người ta muốn tìm hiểu thêm về bạn không).',
+      },
+      {
+        question: 'Làm sao để cân bằng giữa nội dung mang lại giá trị và nội dung quảng cáo?',
+        answer:
+          'Một quy tắc phổ biến là 80/20. Dành 80% thời gian để tạo ra các nội dung hữu ích, giải trí, và xây dựng cộng đồng. 20% còn lại có thể dành cho các nội dung quảng bá, bán hàng. Khi khán giả đã tin tưởng bạn, họ sẽ sẵn lòng đón nhận các đề xuất của bạn hơn.',
+      },
+      {
+        question: 'MCN (Multi-Channel Network) có thể giúp gì cho nhà sáng tạo?',
+        answer:
+          'MCN là các công ty quản lý và hỗ trợ nhà sáng tạo. Họ có thể giúp bạn trong việc kết nối với nhãn hàng, bảo vệ bản quyền, hỗ trợ sản xuất, và định hướng phát triển kênh. Đổi lại, họ sẽ nhận một phần trăm doanh thu của bạn.',
+      },
+      {
+        question: 'Ngoài các cách trên, còn có cách nào khác để kiếm tiền không?',
+        answer:
+          'Có. Khi bạn đã xây dựng được thương hiệu cá nhân, bạn có thể kiếm tiền từ việc cung cấp dịch vụ coaching/tư vấn, bán các sản phẩm số (ebook, khóa học online), tổ chức workshop, hoặc nhận được tài trợ từ các nền tảng (Creator Fund).',
+      },
+    ],
   },
 ];
 
@@ -286,4 +306,5 @@ export const shortVideoMasteryModuleData: ModuleData = {
     hireDemand: 'Rất Cao',
   },
   relatedModules: ['ai-content-creator', 'content-creator', 'tiktok-social-commerce', 'live-commerce-streaming'],
+  lessons: shortVideoMasteryLessons,
 };

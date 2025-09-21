@@ -241,4 +241,5 @@ export const vietnameseHealthcareModuleData: ModuleData = {
     hireDemand: 'Rất cao',
   },
   relatedModules: [K2Module.AI, K2Module.Biotechnology, K2Module.DigitalGovernment],
+  lessons: vietnameseHealthcareLessons,
 };

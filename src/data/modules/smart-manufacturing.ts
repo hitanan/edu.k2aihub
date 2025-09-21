@@ -1020,4 +1020,5 @@ export const smartManufacturingModuleData: ModuleData = {
     hireDemand: 'Rất cao',
   },
   relatedModules: ['iot-basics', 'robotics', 'data-analytics', 'supply-chain-logistics'],
+  lessons: smartManufacturingLessons,
 };

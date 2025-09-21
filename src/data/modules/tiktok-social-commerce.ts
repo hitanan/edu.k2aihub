@@ -159,9 +159,49 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
           'Không. TikTok Shop mở cửa cho cả các doanh nghiệp lớn, doanh nghiệp vừa và nhỏ, và cả các cá nhân kinh doanh (hộ kinh doanh). Miễn là bạn có giấy phép kinh doanh hợp lệ và sản phẩm phù hợp, bạn đều có thể đăng ký.',
       },
       {
+        question: 'Làm thế nào để video của em có cơ hội được lên xu hướng (For You page)?',
+        answer:
+          'Thuật toán TikTok ưu tiên những video có tỷ lệ xem hết cao, nhiều lượt tương tác (thích, bình luận, chia sẻ) và được xem lại. Vì vậy, hãy tập trung tạo ra những video hấp dẫn ngay từ 3 giây đầu tiên, có nội dung giá trị hoặc giải trí, và kết thúc bằng một câu hỏi hoặc lời kêu gọi hành động để khuyến khích bình luận.',
+      },
+      {
+        question: 'Em có nên xóa những video có lượt xem thấp không?',
+        answer:
+          'Không nên. Đôi khi một video có thể "nổ" view sau vài ngày hoặc vài tuần. Việc xóa video có thể ảnh hưởng không tốt đến thuật toán của kênh. Thay vào đó, hãy phân tích xem tại sao video đó không thành công và rút kinh nghiệm cho những lần sau.',
+      },
+      {
+        question: 'Phí sàn trên TikTok Shop là bao nhiêu?',
+        answer:
+          'Mức phí sàn trên TikTok Shop có thể thay đổi theo chính sách của TikTok. Thông thường, sẽ có một khoản phí giao dịch (khoảng 2-3%) trên mỗi đơn hàng thành công. Bạn nên kiểm tra thông tin mới nhất trong trung tâm người bán (Seller Center) để có con số chính xác.',
+      },
+      {
+        question: 'Làm sao để liên kết tài khoản ngân hàng và rút tiền từ TikTok Shop?',
+        answer:
+          'Trong Seller Center, bạn vào mục "Tài chính" -> "Tài khoản ngân hàng" để thêm thông tin tài khoản của mình. Sau khi đơn hàng được giao thành công và qua thời gian đối soát, số dư sẽ được ghi nhận vào ví của bạn và bạn có thể thực hiện lệnh rút tiền về tài khoản đã liên kết.',
+      },
+      {
+        question: 'Sản phẩm của em có cần được TikTok duyệt trước khi bán không?',
+        answer:
+          'Có. Tất cả sản phẩm tải lên TikTok Shop đều phải qua một quy trình xét duyệt để đảm bảo chúng tuân thủ chính sách bán hàng của nền tảng, không phải là hàng giả, hàng cấm, hoặc vi phạm bản quyền.',
+      },
+      {
         question: 'KOC là gì và tại sao họ quan trọng trên TikTok?',
         answer:
           'KOC (Key Opinion Consumer) là những người tiêu dùng có sức ảnh hưởng. Khác với KOL (Key Opinion Leader) là người nổi tiếng, KOC xây dựng uy tín bằng những bài review chân thực, chi tiết. Trên TikTok, người dùng tin tưởng KOC vì họ giống như một người bạn đang chia sẻ trải nghiệm thật, giúp thúc đẩy quyết định mua hàng một cách tự nhiên.',
+      },
+      {
+        question: 'Làm thế nào để tìm KOC phù hợp với sản phẩm của mình?',
+        answer:
+          'Bạn có thể tìm KOC thông qua Creator Marketplace của TikTok, tìm kiếm các hashtag liên quan đến ngành hàng của bạn, hoặc quan sát xem ai đang tạo ra những nội dung chất lượng về các sản phẩm tương tự. Hãy ưu tiên những KOC có tệp khán giả trùng với khách hàng mục tiêu của bạn.',
+      },
+      {
+        question: 'Affiliate Marketing trên TikTok Shop hoạt động như thế nào?',
+        answer:
+          'Affiliate Marketing cho phép các nhà sáng tạo nội dung gắn link sản phẩm của bạn vào video hoặc livestream của họ. Khi có người mua hàng qua link đó, nhà sáng tạo sẽ nhận được một khoản hoa hồng. Đây là một cách hiệu quả để mở rộng phạm vi tiếp cận mà không cần trả trước chi phí quảng cáo.',
+      },
+      {
+        question: 'Em nên chuẩn bị những gì trước khi bắt đầu bán hàng trên TikTok Shop?',
+        answer:
+          'Hãy chuẩn bị: 1. Giấy phép kinh doanh. 2. Nguồn hàng ổn định và chất lượng. 3. Hình ảnh, video sản phẩm hấp dẫn. 4. Kế hoạch nội dung ban đầu để xây dựng kênh. 5. Kiến thức cơ bản về các chính sách của TikTok Shop.',
       },
     ],
   },
@@ -226,6 +266,46 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
         answer:
           'Đừng nản lòng! Hãy thông báo trước về buổi live trên các kênh mạng xã hội khác. Trong những phút đầu, ngay cả khi chỉ có vài người xem, hãy cứ năng lượng và tương tác nhiệt tình với họ. Bạn cũng có thể nhờ bạn bè, người thân vào xem và "mồi" các câu hỏi. Kiên trì là chìa khóa, dần dần bạn sẽ xây dựng được một lượng khán giả trung thành.',
       },
+      {
+        question: 'Làm thế nào để thiết lập kịch bản cho một buổi livestream hiệu quả?',
+        answer:
+          'Một kịch bản tốt nên có cấu trúc rõ ràng: Mở đầu (warm-up, giới thiệu), Thân bài (giới thiệu sản phẩm, mini-game, trả lời câu hỏi), và Kết thúc (tung deal chốt, thông báo lịch live tiếp theo). Hãy phân bổ thời gian hợp lý cho từng phần và chuẩn bị sẵn các phương án dự phòng nếu có sự cố.',
+      },
+      {
+        question: 'Sự khác biệt giữa TikTok Shop và các sàn e-commerce khác (Shopee, Lazada) là gì?',
+        answer:
+          'Điểm khác biệt lớn nhất là TikTok Shop được tích hợp liền mạch vào nền tảng giải trí. Người dùng khám phá và mua sản phẩm trong khi đang lướt xem video hoặc xem livestream, tạo ra hành vi mua sắm bốc đồng và dựa trên cảm xúc nhiều hơn là tìm kiếm chủ động như trên các sàn khác.',
+      },
+      {
+        question: 'Làm thế nào để tăng mắt xem (số người xem đồng thời) cho livestream?',
+        answer:
+          'Ngoài việc thông báo trước, bạn có thể chạy quảng cáo TikTok Live, hợp tác với các KOC/KOL khác để livestream chung, hoặc tạo ra các "deal hủy diệt" chỉ có trong phiên live để thu hút người xem. Nội dung "nhá hàng" trước buổi live cũng rất quan trọng.',
+      },
+      {
+        question: 'Em có thể livestream bán hàng trên tài khoản TikTok cá nhân không?',
+        answer:
+          'Có, bạn có thể livestream trên tài khoản cá nhân đã được liên kết với TikTok Shop. Tuy nhiên, việc xây dựng một tài khoản doanh nghiệp chuyên nghiệp sẽ tạo dựng được nhiều lòng tin hơn từ khách hàng về lâu dài.',
+      },
+      {
+        question: 'Làm sao để xử lý các bình luận tiêu cực hoặc spam trong lúc livestream?',
+        answer:
+          'Bạn có thể thiết lập bộ lọc từ khóa trong cài đặt livestream để tự động ẩn các bình luận chứa từ ngữ không mong muốn. Ngoài ra, bạn có thể chỉ định một người làm quản trị viên (moderator) để hỗ trợ bạn quản lý bình luận trong suốt phiên live.',
+      },
+      {
+        question: 'Có nên lưu lại video livestream sau khi kết thúc không?',
+        answer:
+          'Có, bạn nên lưu lại. TikTok cho phép bạn ghim lại các sản phẩm nổi bật từ livestream đã kết thúc, giúp những người xem sau vẫn có thể mua hàng. Bạn cũng có thể cắt những khoảnh khắc hay nhất từ livestream để đăng lại dưới dạng video ngắn.',
+      },
+      {
+        question: 'Làm thế nào để phân tích hiệu quả của một buổi livestream?',
+        answer:
+          'Sau mỗi buổi live, TikTok Shop cung cấp một bảng phân tích chi tiết về các chỉ số như: doanh thu, số lượng đơn hàng, số người xem cao nhất, thời gian xem trung bình, tỷ lệ chuyển đổi... Hãy phân tích các chỉ số này để hiểu rõ hơn về hành vi của khách hàng và tối ưu cho các phiên live sau.',
+      },
+      {
+        question: 'Mini-game trong livestream có thực sự hiệu quả không?',
+        answer:
+          'Rất hiệu quả. Mini-game như "đoán giá sản phẩm", "bốc thăm may mắn", "trả lời câu hỏi nhận voucher" giúp tăng vọt lượng tương tác, giữ chân người xem lâu hơn và tạo không khí sôi động, từ đó kích thích nhu cầu mua sắm.',
+      },
     ],
   },
   {
@@ -286,6 +366,46 @@ export const tiktokSocialCommerceLessons: TikTokSocialCommerceLessonType[] = [
         answer:
           'Không có câu trả lời tuyệt đối, nhưng các video ngắn (7-15 giây) thường có khả năng được xem lại cao hơn, giúp tăng tỷ lệ xem hết (watch time) - một yếu tố quan trọng của thuật toán. Tuy nhiên, nếu nội dung của bạn thực sự hấp dẫn và có giá trị (ví dụ: kể một câu chuyện, hướng dẫn chi tiết), video dài hơn vẫn có thể thành công. Hãy thử nghiệm các độ dài khác nhau và xem khán giả của bạn phản ứng tốt nhất với loại nào.',
       },
+      {
+        question: 'Hashtag có thực sự quan trọng trên TikTok không?',
+        answer:
+          'Có, nhưng không phải theo cách bạn nghĩ. Hashtag giúp thuật toán của TikTok hiểu được nội dung video của bạn nói về chủ đề gì để phân phối đến đúng đối tượng. Hãy sử dụng một vài hashtag rộng và một vài hashtag rất cụ thể (niche) liên quan đến nội dung của bạn, thay vì lạm dụng quá nhiều hashtag không liên quan.',
+      },
+      {
+        question: 'Làm thế nào để tạo ra một "móc câu" (hook) hấp dẫn trong 3 giây đầu tiên?',
+        answer:
+          'Hãy bắt đầu video bằng một câu hỏi gây tò mò, một tuyên bố gây sốc, một cảnh quay hành động bất ngờ, hoặc một vấn đề mà khán giả mục tiêu của bạn đang gặp phải. 3 giây đầu tiên quyết định liệu người xem có ở lại hay lướt đi, vì vậy nó phải thật mạnh mẽ.',
+      },
+      {
+        question: 'Tỷ lệ đăng video bao nhiêu là hợp lý?',
+        answer:
+          'Sự nhất quán quan trọng hơn số lượng. Tốt nhất là đăng ít nhất 1 video mỗi ngày. Tuy nhiên, nếu bạn không thể duy trì chất lượng, hãy đặt một lịch đăng bài mà bạn có thể theo được, ví dụ 3-4 video mỗi tuần, và tuân thủ nó.',
+      },
+      {
+        question: 'Làm thế nào để biết được thời điểm "vàng" để đăng video?',
+        answer:
+          'Hãy nâng cấp lên tài khoản TikTok Pro (miễn phí) để truy cập vào mục Phân tích (Analytics). Tại đây, bạn có thể xem được những ngày và giờ mà người theo dõi của bạn hoạt động tích cực nhất. Hãy đăng video trước thời điểm đó khoảng 1-2 tiếng.',
+      },
+      {
+        question: 'Content Pillar (Trụ cột nội dung) là gì và tại sao nó quan trọng?',
+        answer:
+          'Content Pillar là 3-5 chủ đề chính mà kênh của bạn sẽ xoay quanh. Việc xác định các trụ cột này giúp bạn xây dựng một kênh có định hướng rõ ràng, thu hút đúng đối tượng khán giả và không bao giờ bị "bí" ý tưởng.',
+      },
+      {
+        question: 'Làm thế nào để khuyến khích người xem tạo User-Generated Content (UGC)?',
+        answer:
+          'Hãy tạo ra các thử thách (challenge) với hashtag riêng của thương hiệu, tổ chức các cuộc thi, hoặc đơn giản là kêu gọi người dùng chia sẻ trải nghiệm của họ với sản phẩm. UGC là một hình thức marketing truyền miệng cực kỳ hiệu quả và đáng tin cậy.',
+      },
+      {
+        question: 'Sử dụng CapCut có giúp video của tôi được ưu tiên hơn không?',
+        answer:
+          'CapCut là một ứng dụng chỉnh sửa video thuộc sở hữu của ByteDance (công ty mẹ của TikTok). Mặc dù không có thông báo chính thức, nhiều nhà sáng tạo tin rằng việc sử dụng các mẫu (template) và hiệu ứng từ CapCut có thể giúp video của bạn được thuật toán TikTok ưu ái hơn.',
+      },
+      {
+        question: 'Sự khác biệt giữa video viral và chiến lược nội dung bền vững là gì?',
+        answer:
+          'Một video viral có thể mang lại cho bạn một lượng lớn người theo dõi trong thời gian ngắn, nhưng họ có thể không phải là đối tượng khách hàng mục tiêu. Một chiến lược nội dung bền vững tập trung vào việc tạo ra giá trị lâu dài cho một nhóm khán giả cụ thể, từ đó xây dựng một cộng đồng trung thành và chuyển đổi họ thành khách hàng.',
+      },
     ],
   },
 ];
@@ -343,4 +463,5 @@ export const tiktokSocialCommerceModuleData: ModuleData = {
     K2Module.DigitalMarketing,
     K2Module.ShortVideoMastery,
   ],
+  lessons: tiktokSocialCommerceLessons,
 };

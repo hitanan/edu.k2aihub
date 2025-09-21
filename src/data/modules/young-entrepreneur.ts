@@ -923,6 +923,7 @@ export const youngEntrepreneurModuleData: ModuleData = {
     hireDemand: 'Cao (đối với nhân sự có kỹ năng)',
   },
   relatedModules: ['digital-marketing', 'financial-literacy', 'soft-skills'],
+  lessons: youngEntrepreneurLessons,
 };
 
 export default youngEntrepreneurLessons;

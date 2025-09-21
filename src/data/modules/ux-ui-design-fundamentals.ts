@@ -211,4 +211,5 @@ export const uxUiDesignFundamentalsModuleData: ModuleData = {
     hireDemand: 'Cao',
   },
   relatedModules: ['web-development-fundamentals', 'mobile-app-development', 'digital-marketing'],
+  lessons: uxuiDesignLessons,
 };

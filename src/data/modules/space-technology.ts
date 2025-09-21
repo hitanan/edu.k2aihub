@@ -141,6 +141,11 @@ export const spaceTechnologyLessons: SpaceTechnologyLesson[] = [
         answer:
           'Hiện tại, Việt Nam vẫn đang thuê các dịch vụ phóng của nước ngoài. Tuy nhiên, việc nghiên cứu và phát triển các công nghệ tên lửa đẩy là một mục tiêu dài hạn trong chiến lược vũ trụ của quốc gia, hướng tới khả năng tự chủ trong tương lai.',
       },
+      {
+        question: 'Sự khác biệt giữa một tàu thăm dò (probe) và một tàu quỹ đạo (orbiter) là gì?',
+        answer:
+          'Một tàu quỹ đạo được thiết kế để đi vào quỹ đạo của một hành tinh hoặc mặt trăng và nghiên cứu nó trong một thời gian dài. Một tàu thăm dò có thể bay ngang qua (flyby) một thiên thể, hoặc được thiết kế để đâm vào (impactor) hoặc hạ cánh (lander) trên bề mặt của nó.',
+      },
     ],
   },
   {
@@ -271,6 +276,11 @@ export const spaceTechnologyLessons: SpaceTechnologyLesson[] = [
         answer:
           'GPS có rất nhiều ứng dụng: đồng bộ hóa thời gian cho các mạng tài chính và viễn thông, theo dõi và quản lý đội xe vận tải, nông nghiệp chính xác, khảo sát địa chất, và thậm chí là nghiên cứu sự dịch chuyển của các mảng kiến tạo.',
       },
+      {
+        question: 'Tại sao các sứ mệnh liên hành tinh lại mất nhiều thời gian như vậy?',
+        answer:
+          'Các khoảng cách trong không gian là cực kỳ lớn. Ngay cả khi di chuyển với tốc độ hàng chục nghìn km/h, một chuyến đi đến Sao Hỏa cũng mất vài tháng. Các tàu vũ trụ thường sử dụng các quỹ đạo tiết kiệm năng lượng (như quỹ đạo chuyển tiếp Hohmann) thay vì đi đường thẳng, điều này càng làm tăng thêm thời gian di chuyển.',
+      },
     ],
   },
 ];
@@ -319,4 +329,5 @@ export const spaceTechnologyModuleData: ModuleData = {
     hireDemand: 'Cao, đặc biệt cho chuyên gia có kinh nghiệm',
   },
   relatedModules: ['aerospace-engineering', 'robotics', 'materials-science'],
+  lessons: spaceTechnologyLessons,
 };

@@ -22,12 +22,14 @@ Bài viết này của **K2AiHub** sẽ hướng dẫn bạn các nguyên tắc 
 ### Quản Lý (Management) vs. Lãnh Đạo (Leadership)
 
 **Quản lý** tập trung vào:
+
 - **Quy trình và hệ thống**: Đảm bảo công việc được thực hiện đúng cách
 - **Kiểm soát**: Theo dõi tiến độ, chất lượng, ngân sách
 - **Giải quyết vấn đề**: Xử lý các tình huống phát sinh hàng ngày
 - **Duy trì hiện trạng**: Đảm bảo hoạt động ổn định
 
 **Lãnh đạo** tập trung vào:
+
 - **Tầm nhìn và định hướng**: Vẽ ra bức tranh tương lai
 - **Truyền cảm hứng**: Tạo động lực cho nhân viên
 - **Phát triển người**: Giúp nhân viên phát triển và đạt tiềm năng
@@ -42,6 +44,7 @@ Bài viết này của **K2AiHub** sẽ hướng dẫn bạn các nguyên tắc 
 Đây là kỹ năng quan trọng nhất của một nhà lãnh đạo. 80% thời gian giao tiếp nên dành để lắng nghe, chỉ 20% để nói.
 
 **Kỹ thuật lắng nghe hiệu quả:**
+
 - **Tập trung hoàn toàn**: Tắt điện thoại, nhìn vào mắt người nói
 - **Đặt câu hỏi mở**: "Bạn nghĩ sao về...?", "Có thể chia sẻ thêm về...?"
 - **Paraphrase**: Tóm tắt lại những gì vừa nghe để xác nhận hiểu đúng
@@ -61,6 +64,7 @@ Bài viết này của **K2AiHub** sẽ hướng dẫn bạn các nguyên tắc 
 Mỗi người trong đội nhóm đều có những điểm mạnh riêng biệt. Nhiệm vụ của nhà lãnh đạo là nhận diện và tận dụng những điểm mạnh này.
 
 **Framework DISC để hiểu tính cách nhân viên:**
+
 - **D (Dominance)**: Thích thách thức, quyết đoán, hướng kết quả
 - **I (Influence)**: Năng động, giao tiếp tốt, thích làm việc nhóm
 - **S (Steadiness)**: Kiên nhẫn, ổn định, hỗ trợ đồng đội tốt
@@ -69,6 +73,7 @@ Mỗi người trong đội nhóm đều có những điểm mạnh riêng biệ
 ### 3.2. Giao Phó Quyền Hạn Hiệu Quả (Delegation)
 
 **Quy trình SMART delegation:**
+
 1. **Specific**: Mô tả rõ ràng công việc cần làm
 2. **Measurable**: Đặt ra tiêu chí đo lường thành công
 3. **Achievable**: Đảm bảo nhân viên có khả năng thực hiện
@@ -130,6 +135,7 @@ Mỗi người trong đội nhóm đều có những điểm mạnh riêng biệ
 **Appreciation** (Trân trọng): Thể hiện sự biết ơn cá nhân
 
 **5 ngôn ngữ tình yêu trong công việc:**
+
 1. **Words of Affirmation**: Lời khen ngợi chân thành
 2. **Quality Time**: Dành thời gian 1-1 với nhân viên
 3. **Receiving Gifts**: Quà tặng ý nghĩa (không cần đắt)
@@ -141,6 +147,7 @@ Mỗi người trong đội nhóm đều có những điểm mạnh riêng biệ
 ### 7.1. Self-Assessment và 360-Degree Feedback
 
 **Các câu hỏi tự đánh giá:**
+
 - Tôi có thực sự lắng nghe nhân viên không?
 - Nhân viên có tin tưởng chia sẻ ý kiến trung thực với tôi không?
 - Tôi có tạo ra nhiều leader hơn follower không?

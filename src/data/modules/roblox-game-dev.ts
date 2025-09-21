@@ -76,6 +76,58 @@ export const robloxLessons: RobloxLessonType[] = [
           'Cửa sổ "Explorer" hiển thị tất cả các đối tượng trong game của bạn dưới dạng cây thư mục, giúp bạn dễ dàng quản lý và tìm kiếm chúng.',
       },
     ],
+    faqs: [
+      {
+        question: 'Roblox Studio có miễn phí không?',
+        answer:
+          'Có, Roblox Studio hoàn toàn miễn phí để tải về và sử dụng. Bạn chỉ cần một tài khoản Roblox để bắt đầu tạo ra thế giới của riêng mình.',
+      },
+      {
+        question: 'Tôi có cần biết lập trình để sử dụng Roblox Studio không?',
+        answer:
+          'Không cần thiết cho việc xây dựng cơ bản! Bạn có thể tạo ra nhiều thứ thú vị chỉ bằng cách sử dụng các công cụ xây dựng và các mô hình có sẵn trong Toolbox. Tuy nhiên, để tạo ra các trò chơi có tương tác phức tạp, bạn sẽ cần học lập trình Lua.',
+      },
+      {
+        question: 'Part là gì và tại sao nó quan trọng?',
+        answer:
+          'Part là viên gạch xây dựng cơ bản nhất trong Roblox. Mọi thứ từ tường nhà, mặt đất, đến các vật thể phức tạp đều được tạo ra từ việc kết hợp và tùy chỉnh các Part. Nắm vững cách sử dụng Part là bước đầu tiên để trở thành một nhà xây dựng giỏi.',
+      },
+      {
+        question: 'Làm thế nào để thay đổi màu sắc và vật liệu của một Part?',
+        answer:
+          'Bạn có thể thay đổi các thuộc tính này trong cửa sổ "Properties". Chọn Part bạn muốn thay đổi, sau đó tìm đến thuộc tính "Color" để chọn màu và "Material" để chọn vật liệu (ví dụ: gỗ, kim loại, cỏ).',
+      },
+      {
+        question: 'Công cụ "Toolbox" dùng để làm gì?',
+        answer:
+          'Toolbox là một thư viện khổng lồ chứa các mô hình, script, và các tài sản khác do Roblox và cộng đồng tạo ra. Bạn có thể kéo thả chúng vào game của mình để tiết kiệm thời gian, nhưng hãy cẩn thận với các script độc hại có thể có trong các mô hình miễn phí.',
+      },
+      {
+        question: 'Làm thế nào để cố định một vật thể không bị rơi xuống khi game bắt đầu?',
+        answer:
+          'Bạn cần "neo" (Anchor) vật thể đó lại. Chọn Part bạn muốn cố định, sau đó trong cửa sổ Properties, tìm và tick vào ô "Anchored". Các vật thể được neo sẽ không bị ảnh hưởng bởi trọng lực.',
+      },
+      {
+        question: 'Sự khác biệt giữa công cụ "Move" và "Scale" là gì?',
+        answer:
+          'Công cụ "Move" dùng để di chuyển vị trí của vật thể trong không gian 3D. Công cụ "Scale" dùng để thay đổi kích thước (chiều dài, rộng, cao) của vật thể.',
+      },
+      {
+        question: 'Làm thế nào để kiểm tra game của tôi hoạt động như thế nào?',
+        answer:
+          'Bạn có thể nhấn nút "Play" (hoặc phím F5) ở thanh công cụ trên cùng. Thao tác này sẽ bắt đầu một phiên chơi thử, cho phép bạn trải nghiệm game của mình như một người chơi thực thụ.',
+      },
+      {
+        question: 'Tôi có thể hợp tác xây dựng game với bạn bè không?',
+        answer:
+          'Có, Roblox Studio có một tính năng gọi là "Team Create". Nó cho phép nhiều người cùng làm việc trên một dự án game trong thời gian thực, rất tuyệt vời cho các dự án nhóm.',
+      },
+      {
+        question: 'Xuất bản (Publish) game có nghĩa là gì?',
+        answer:
+          'Xuất bản game là quá trình tải game của bạn lên nền tảng Roblox, giúp lưu lại tiến trình của bạn trên đám mây và cho phép người khác có thể tìm và chơi game của bạn (nếu bạn đặt nó ở chế độ công khai).',
+      },
+    ],
   },
   {
     id: 'lua-scripting-basics',
@@ -151,6 +203,58 @@ export const robloxLessons: RobloxLessonType[] = [
         correctAnswerIndex: 1,
         explanation:
           'Hàm `wait(n)` là một hàm rất quan trọng trong Roblox, dùng để tạo độ trễ và ngăn các vòng lặp vô tận làm treo game.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Tại sao tôi nên học Lua?',
+        answer:
+          'Nếu bạn muốn tạo ra các trò chơi tương tác trên Roblox, Lua là ngôn ngữ bắt buộc phải học. Nó cho phép bạn điều khiển mọi thứ, từ việc làm cho một cánh cửa tự mở, tạo ra vũ khí, đến việc xây dựng các hệ thống phức tạp như bảng xếp hạng hay cửa hàng trong game.',
+      },
+      {
+        question: 'Script và LocalScript khác nhau như thế nào?',
+        answer:
+          'Script chạy trên máy chủ (server-side), ảnh hưởng đến tất cả người chơi trong game. LocalScript chạy trên máy của từng người chơi (client-side), chỉ ảnh hưởng đến người chơi đó. Ví dụ: Script dùng để xử lý điểm số chung, còn LocalScript dùng để hiển thị giao diện người dùng (GUI) riêng cho mỗi người.',
+      },
+      {
+        question: 'Biến (variable) trong Lua là gì?',
+        answer:
+          'Biến là một cái tên bạn đặt để lưu trữ một giá trị, ví dụ như một con số, một chuỗi văn bản, hoặc một tham chiếu đến một đối tượng trong game. Ví dụ: `local score = 0` tạo ra một biến tên là `score` và gán cho nó giá trị ban đầu là 0.',
+      },
+      {
+        question: '`script.Parent` có nghĩa là gì?',
+        answer:
+          '`script.Parent` là một cách rất phổ biến để tham chiếu đến đối tượng chứa script đó. Ví dụ, nếu bạn đặt một Script vào trong một Part, thì `script.Parent` chính là Part đó.',
+      },
+      {
+        question: 'Làm thế nào để xử lý sự kiện một người chơi chạm vào một Part?',
+        answer:
+          'Bạn có thể sử dụng sự kiện (event) `.Touched`. Bạn kết nối một hàm với sự kiện này, và hàm đó sẽ được thực thi mỗi khi có một vật thể khác chạm vào Part. Ví dụ: `part.Touched:Connect(function(otherPart) ... end)`.',
+      },
+      {
+        question: 'Hàm (function) là gì?',
+        answer:
+          'Hàm là một khối code có thể được đặt tên và gọi lại nhiều lần. Nó giúp bạn tổ chức code gọn gàng và tránh lặp lại cùng một đoạn code ở nhiều nơi.',
+      },
+      {
+        question: 'Cửa sổ "Output" trong Roblox Studio dùng để làm gì?',
+        answer:
+          'Cửa sổ "Output" rất quan trọng để gỡ lỗi (debug). Nó hiển thị các thông báo lỗi từ script của bạn và bạn cũng có thể dùng hàm `print()` để in ra các giá trị của biến hoặc các thông báo để kiểm tra xem script có đang chạy đúng như mong đợi không.',
+      },
+      {
+        question: 'Làm thế nào để lấy một đối tượng trong game bằng script?',
+        answer:
+          'Bạn có thể sử dụng `game.Workspace` để truy cập vào không gian làm việc chính, sau đó dùng dấu chấm để đi sâu vào các đối tượng con. Ví dụ: `game.Workspace.MyPart` sẽ lấy đối tượng có tên là "MyPart" nằm trong Workspace.',
+      },
+      {
+        question: 'Vòng lặp `for` và `while` khác nhau như thế nào?',
+        answer:
+          'Vòng lặp `for` thường được sử dụng khi bạn biết trước số lần lặp (ví dụ: lặp 10 lần). Vòng lặp `while` được sử dụng khi bạn muốn lặp lại một hành động miễn là một điều kiện nào đó vẫn còn đúng (ví dụ: lặp lại cho đến khi máu của người chơi về 0).',
+      },
+      {
+        question: 'Tôi có thể tìm hiểu thêm về Roblox API ở đâu?',
+        answer:
+          'Trang web Roblox Creator Documentation (trước đây là Developer Hub) là nguồn tài liệu chính thức và đầy đủ nhất. Nó chứa thông tin chi tiết về tất cả các đối tượng, thuộc tính, sự kiện và hàm mà bạn có thể sử dụng trong lập trình Roblox.',
       },
     ],
   },
@@ -230,6 +334,58 @@ export const robloxLessons: RobloxLessonType[] = [
         correctAnswerIndex: 2,
         explanation:
           'Developer Exchange (DevEx) là chương trình cho phép các nhà phát triển thành công biến đam mê của mình thành một nguồn thu nhập thực sự bằng cách quy đổi Robux sang USD.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Sự khác biệt giữa việc "Save to Roblox" và "Publish to Roblox" là gì?',
+        answer:
+          '"Save to Roblox" chỉ đơn giản là lưu phiên bản game của bạn lên đám mây để bạn có thể tiếp tục làm việc trên các máy tính khác. "Publish to Roblox" sẽ cập nhật phiên bản game mà người chơi sẽ thấy và chơi.',
+      },
+      {
+        question: 'Làm thế nào để game của tôi nổi bật giữa hàng triệu game khác?',
+        answer:
+          'Một icon và thumbnail hấp dẫn là rất quan trọng để thu hút sự chú ý ban đầu. Ngoài ra, một ý tưởng game độc đáo, gameplay cuốn hút và việc cập nhật thường xuyên là chìa khóa để giữ chân người chơi.',
+      },
+      {
+        question: 'Tôi có thể kiếm tiền từ game Roblox của mình như thế nào?',
+        answer:
+          'Có nhiều cách: bán Game Passes (đặc quyền vĩnh viễn), Developer Products (vật phẩm dùng một lần), tạo quần áo và vật phẩm cho avatar, và thông qua Premium Payouts (bạn được trả tiền khi người dùng Premium dành thời gian trong game của bạn).',
+      },
+      {
+        question: 'Developer Products khác Game Passes như thế nào?',
+        answer:
+          'Game Pass được mua một lần và cung cấp lợi ích vĩnh viễn (ví dụ: quyền truy cập khu vực VIP). Developer Product có thể được mua nhiều lần (ví dụ: mua 100 vàng, một bình máu).',
+      },
+      {
+        question: 'Làm thế nào để quảng bá game của tôi?',
+        answer:
+          'Bạn có thể sử dụng hệ thống quảng cáo của Roblox (Roblox Ads) để chạy các banner quảng cáo. Ngoài ra, xây dựng một cộng đồng trên các mạng xã hội như YouTube, TikTok, Discord cũng là một cách rất hiệu quả để thu hút người chơi.',
+      },
+      {
+        question: 'Tôi có cần phải trả tiền để xuất bản game không?',
+        answer:
+          'Không, việc xuất bản game lên Roblox là hoàn toàn miễn phí. Tuy nhiên, việc chạy quảng cáo để quảng bá game sẽ tốn Robux.',
+      },
+      {
+        question: 'Làm thế nào để xem các số liệu phân tích về game của tôi?',
+        answer:
+          'Trên trang web của Roblox, vào tab "Create", bạn có thể truy cập vào "Developer Stats" cho game của mình. Nó cung cấp các thông tin hữu ích như số lượng người chơi hàng ngày, thời gian chơi trung bình, và doanh thu.',
+      },
+      {
+        question: 'Tại sao việc cập nhật game thường xuyên lại quan trọng?',
+        answer:
+          'Cập nhật thường xuyên cho thấy rằng bạn quan tâm đến game và cộng đồng của mình. Các bản cập nhật với nội dung mới (vật phẩm, bản đồ, tính năng) sẽ giữ cho game luôn mới mẻ và khiến người chơi quay trở lại.',
+      },
+      {
+        question: 'Tôi nên đặt game của mình ở chế độ "Public" hay "Private"?',
+        answer:
+          'Khi bạn đang trong quá trình phát triển và thử nghiệm, bạn nên đặt game ở chế độ "Private". Khi bạn đã sẵn sàng để mọi người chơi, hãy chuyển nó sang "Public".',
+      },
+      {
+        question: 'Robux kiếm được từ game có thể đổi ra tiền thật ngay lập tức không?',
+        answer:
+          'Không. Bạn cần phải đáp ứng các yêu cầu của chương trình Developer Exchange (DevEx), bao gồm việc là thành viên Premium, đủ 13 tuổi, và có một lượng Robux kiếm được tối thiểu (hiện tại là 30,000 Robux) để có thể yêu cầu quy đổi.',
       },
     ],
   },

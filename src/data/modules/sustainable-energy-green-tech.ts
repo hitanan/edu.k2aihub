@@ -584,4 +584,5 @@ export const sustainableEnergyModuleData: ModuleData = {
     hireDemand: 'Cao',
   },
   relatedModules: [K2Module.EnvironmentalDataScience, K2Module.Stem, K2Module.CircularEconomy],
+  lessons: sustainableEnergyGreenTechLessons,
 };

@@ -514,4 +514,5 @@ export const sustainableAgricultureModuleData: ModuleData = {
     hireDemand: 'Rất cao',
   },
   relatedModules: [K2Module.GreenTechnology, K2Module.EnvironmentalDataScience, K2Module.CircularEconomy],
+  lessons: sustainableAgricultureLessons,
 };

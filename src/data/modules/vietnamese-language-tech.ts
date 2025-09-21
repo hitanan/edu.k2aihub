@@ -238,4 +238,5 @@ export const vietnameseLanguageTechModuleData: ModuleData = {
     hireDemand: 'Rất cao',
   },
   relatedModules: [K2Module.DigitalMarketing, K2Module.VietnameseBusiness, K2Module.Python],
+  lessons: vietnameseLangTechLessons,
 };

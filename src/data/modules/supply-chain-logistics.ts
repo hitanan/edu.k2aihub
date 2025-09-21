@@ -345,4 +345,5 @@ export const supplyChainLogisticsModuleData: ModuleData = {
     hireDemand: 'Rất cao',
   },
   relatedModules: [K2Module.DataScienceAnalytics, K2Module.ProfessionalSkills, K2Module.DigitalMarketing],
+  lessons: supplyChainLogisticsLessons,
 };

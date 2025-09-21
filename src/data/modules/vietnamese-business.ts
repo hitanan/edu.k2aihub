@@ -229,4 +229,5 @@ export const vietnameseBusinessModuleData: ModuleData = {
     hireDemand: 'Rất cao',
   },
   relatedModules: [K2Module.FinancialLiteracy, K2Module.DigitalMarketing, K2Module.VietnameseLanguageTech],
+  lessons: vietnameseBusinessLessons,
 };

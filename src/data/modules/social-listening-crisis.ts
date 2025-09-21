@@ -94,6 +94,58 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
           'Phân tích cảm xúc là quá trình sử dụng xử lý ngôn ngữ tự nhiên (NLP) để xác định và phân loại quan điểm, cảm xúc được thể hiện trong một đoạn văn bản.',
       },
     ],
+    faqs: [
+      {
+        question: 'Social listening là gì?',
+        answer:
+          'Social listening là quá trình theo dõi các kênh truyền thông xã hội để phát hiện các cuộc trò chuyện và đề cập liên quan đến thương hiệu của bạn, sau đó phân tích chúng để có được những hiểu biết sâu sắc nhằm khám phá cơ hội hành động.',
+      },
+      {
+        question: 'Sự khác biệt giữa social listening và social monitoring là gì?',
+        answer:
+          'Social monitoring (giám sát xã hội) là việc thu thập các đề cập và cuộc trò chuyện. Social listening (lắng nghe xã hội) tiến một bước xa hơn bằng cách phân tích dữ liệu đó để hiểu tâm trạng đằng sau các cuộc trò chuyện và tìm ra nguyên nhân gốc rễ.',
+      },
+      {
+        question: 'Tại sao social listening lại quan trọng đối với một thương hiệu?',
+        answer:
+          'Nó giúp thương hiệu hiểu được nhận thức của công chúng, xác định các điểm yếu của sản phẩm/dịch vụ, theo dõi đối thủ cạnh tranh, phát hiện các xu hướng mới, và quan trọng nhất là ngăn chặn các cuộc khủng hoảng truyền thông trước khi chúng bùng phát.',
+      },
+      {
+        question: 'Làm thế nào để bắt đầu với social listening mà không cần công cụ đắt tiền?',
+        answer:
+          'Bạn có thể bắt đầu bằng các công cụ miễn phí như Google Alerts, TweetDeck, hoặc chức năng tìm kiếm nâng cao trên Facebook và Twitter. Mặc dù không mạnh mẽ bằng các công cụ trả phí, chúng vẫn cung cấp một cái nhìn tổng quan ban đầu.',
+      },
+      {
+        question: 'Sentiment analysis (phân tích cảm xúc) hoạt động như thế nào?',
+        answer:
+          'Nó sử dụng xử lý ngôn ngữ tự nhiên (NLP) và máy học để tự động phân loại các đề cập là tích cực, tiêu cực hay trung lập. Tuy nhiên, nó có thể gặp khó khăn với các sắc thái, từ lóng, hoặc mỉa mai trong ngôn ngữ Việt Nam.',
+      },
+      {
+        question: 'Những chỉ số nào cần theo dõi trong social listening?',
+        answer:
+          'Các chỉ số quan trọng bao gồm: tổng số lượt đề cập (volume of mentions), thị phần thảo luận (share of voice), phân tích cảm xúc (sentiment analysis), các chủ đề thảo luận chính, và những người có ảnh hưởng (influencers) hàng đầu.',
+      },
+      {
+        question: 'Share of Voice (SOV) là gì?',
+        answer:
+          'Là một chỉ số đo lường mức độ thảo luận về thương hiệu của bạn so với các đối thủ cạnh tranh. Nó cho biết thương hiệu của bạn chiếm bao nhiêu phần trăm trong tổng số các cuộc trò chuyện trong ngành.',
+      },
+      {
+        question: 'Làm thế nào để xử lý các bình luận tiêu cực được phát hiện qua social listening?',
+        answer:
+          'Đừng xóa chúng (trừ khi chúng vi phạm chính sách). Hãy phản hồi một cách nhanh chóng, đồng cảm và chuyên nghiệp. Cố gắng chuyển cuộc trò chuyện sang một kênh riêng tư (tin nhắn, email) để giải quyết vấn đề cụ thể.',
+      },
+      {
+        question: 'Social listening có thể giúp ích cho việc phát triển sản phẩm không?',
+        answer:
+          'Chắc chắn có. Bằng cách lắng nghe những gì khách hàng thích, không thích, và mong muốn, các thương hiệu có thể thu thập được những ý tưởng quý giá để cải tiến sản phẩm hiện tại hoặc phát triển các sản phẩm mới đáp ứng đúng nhu cầu thị trường.',
+      },
+      {
+        question: 'Teencode và từ lóng ảnh hưởng đến social listening ở Việt Nam như thế nào?',
+        answer:
+          'Đây là một thách thức lớn. Các công cụ social listening cần được "huấn luyện" đặc biệt cho thị trường Việt Nam để có thể hiểu và phân tích chính xác các biến thể ngôn ngữ này. Các nhà phân tích cũng cần có sự am hiểu văn hóa bản địa để diễn giải dữ liệu một cách chính xác.',
+      },
+    ],
   },
   {
     id: 'crisis-detection-early-warning',
@@ -177,6 +229,58 @@ export const socialListeningLessons: SocialListeningLessonType[] = [
           'Trước khi có bất kỳ hành động nào, việc cần làm là nhanh chóng tập hợp thông tin, xác thực tính chính xác của vấn đề và đánh giá mức độ ảnh hưởng tiềm tàng để có phương án phản ứng phù hợp.',
       },
     ],
+    faqs: [
+      {
+        question: 'Khủng hoảng truyền thông là gì?',
+        answer:
+          'Là một sự kiện hoặc một loạt sự kiện gây ảnh hưởng tiêu cực đáng kể đến danh tiếng và hoạt động kinh doanh của một tổ chức. Trên mạng xã hội, khủng hoảng có thể lan truyền với tốc độ chóng mặt.',
+      },
+      {
+        question: 'Dấu hiệu sớm của một cuộc khủng hoảng tiềm tàng là gì?',
+        answer:
+          'Các dấu hiệu bao gồm: sự gia tăng đột biến về số lượng bình luận tiêu cực, một bài đăng tiêu cực bắt đầu nhận được nhiều lượt chia sẻ và tương tác bất thường, hoặc khi các tài khoản có ảnh hưởng bắt đầu đề cập đến vấn đề.',
+      },
+      {
+        question: 'Phòng "war room" trong xử lý khủng hoảng là gì?',
+        answer:
+          'Là một nhóm nòng cốt bao gồm đại diện từ các bộ phận quan trọng (lãnh đạo, pháp lý, truyền thông, chăm sóc khách hàng) được tập hợp lại để đưa ra quyết định và phối hợp hành động một cách nhanh chóng trong suốt cuộc khủng hoảng.',
+      },
+      {
+        question: 'Tại sao việc có một phát ngôn viên duy nhất lại quan trọng trong khủng hoảng?',
+        answer:
+          'Điều này đảm bảo thông điệp của công ty là nhất quán, chính xác và được kiểm soát. Việc có nhiều người phát ngôn không được ủy quyền có thể dẫn đến thông tin trái chiều và làm tình hình trở nên tồi tệ hơn.',
+      },
+      {
+        question: 'Nguyên tắc "Golden Hour" trong xử lý khủng hoảng là gì?',
+        answer:
+          'Là khoảng thời gian đầu tiên (thường là 60 phút) kể từ khi khủng hoảng nổ ra. Việc đưa ra một phản hồi ban đầu (thậm chí chỉ là một thông báo thừa nhận vấn đề và cho biết đang điều tra) trong khoảng thời gian này là cực kỳ quan trọng để kiểm soát câu chuyện.',
+      },
+      {
+        question: 'Làm thế nào để xây dựng một kế hoạch xử lý khủng hoảng?',
+        answer:
+          'Một kế hoạch tốt bao gồm: xác định các kịch bản khủng hoảng có thể xảy ra, thành lập đội phản ứng (war room), soạn thảo các thông điệp mẫu, xác định các kênh liên lạc, và thiết lập quy trình leo thang và phê duyệt.',
+      },
+      {
+        question: 'Sự khác biệt giữa "xin lỗi" và "lấy làm tiếc" là gì?',
+        answer:
+          'Xin lỗi ("Chúng tôi xin lỗi") là một sự thừa nhận trách nhiệm. "Chúng tôi lấy làm tiếc về sự bất tiện này" thể hiện sự đồng cảm nhưng không nhất thiết thừa nhận lỗi. Việc lựa chọn từ ngữ phụ thuộc vào bản chất của khủng hoảng và tư vấn pháp lý.',
+      },
+      {
+        question: 'Làm thế nào để theo dõi hiệu quả của việc xử lý khủng hoảng?',
+        answer:
+          'Tiếp tục sử dụng các công cụ social listening để theo dõi sự thay đổi trong sentiment (cảm xúc), số lượng đề cập tiêu cực, và các chủ đề thảo luận chính. Mục tiêu là thấy sentiment dần trở nên trung lập hoặc tích cực hơn và số lượng đề cập tiêu cực giảm xuống.',
+      },
+      {
+        question: 'Có nên sử dụng seeding (gieo mầm nội dung) để dập tắt khủng hoảng không?',
+        answer:
+          'Đây là một chiến thuật rủi ro. Nếu bị phát hiện, việc seeding các bình luận tích cực giả mạo có thể làm mất hoàn toàn niềm tin của công chúng và khiến khủng hoảng trở nên tồi tệ hơn. Sự minh bạch và trung thực thường là cách tiếp cận tốt nhất.',
+      },
+      {
+        question: 'Sau khi khủng hoảng kết thúc, cần làm gì tiếp theo?',
+        answer:
+          'Cần tiến hành một cuộc họp "rút kinh nghiệm" để phân tích những gì đã làm tốt và những gì có thể cải thiện. Cập nhật lại kế hoạch xử lý khủng hoảng dựa trên những bài học đã học được và tiếp tục theo dõi danh tiếng thương hiệu.',
+      },
+    ],
   },
 ];
 
@@ -244,4 +348,5 @@ export const socialListeningCrisisModuleData: ModuleData = {
     hireDemand: 'Cao',
   },
   relatedModules: [K2Module.DigitalMarketing, K2Module.ContentCreator, K2Module.EthicalMarketingPurpose],
+  lessons: socialListeningLessons,
 };

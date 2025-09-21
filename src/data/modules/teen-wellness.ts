@@ -332,4 +332,5 @@ export const teenWellnessModuleData: ModuleData = {
     K2Module.DigitalCitizenshipOnlineSafety,
     K2Module.EmotionalIntelligence,
   ],
+  lessons: teenWellnessLessons,
 };

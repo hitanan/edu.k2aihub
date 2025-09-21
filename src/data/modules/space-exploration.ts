@@ -146,6 +146,11 @@ export const spaceLessons: SpaceExplorationLesson[] = [
         answer:
           'Tên lửa hoạt động dựa trên Định luật III của Newton (Hành động và Phản ứng). Nó không "đẩy" vào không khí. Thay vào đó, nó phụt ra một lượng lớn khí nóng với tốc độ cao về phía sau, và theo nguyên tắc bảo toàn động lượng, tên lửa được đẩy về phía trước.',
       },
+      {
+        question: 'Rác vũ trụ là gì và tại sao nó nguy hiểm?',
+        answer:
+          'Rác vũ trụ là bất kỳ mảnh vỡ nào do con người tạo ra còn lại trên quỹ đạo Trái Đất, từ các vệ tinh cũ đến các mảnh tên lửa. Chúng di chuyển với tốc độ cực lớn và va chạm với các vệ tinh đang hoạt động hoặc tàu vũ trụ có thể gây ra thiệt hại thảm khốc.',
+      },
     ],
   },
   {
@@ -273,6 +278,11 @@ export const spaceLessons: SpaceExplorationLesson[] = [
         answer:
           'Các công nghệ tương lai đầy hứa hẹn bao gồm động cơ đẩy hạt nhân (cung cấp lực đẩy và hiệu quả cao), cánh buồm mặt trời (sử dụng áp suất từ ánh sáng mặt trời để di chuyển), và các khái niệm xa hơn như động cơ nhiệt hạch hoặc động cơ EmDrive vẫn đang được nghiên cứu.',
       },
+      {
+        question: 'Phương trình tên lửa Tsiolkovsky có ý nghĩa gì?',
+        answer:
+          'Đây là phương trình nền tảng của du hành vũ trụ, cho thấy mối quan hệ giữa delta-v (khả năng thay đổi vận tốc của tên lửa), vận tốc phụt khí của động cơ, và tỷ lệ khối lượng (khối lượng ban đầu so với khối lượng cuối cùng). Nó giải thích tại sao việc làm cho tên lửa nhẹ hơn và có động cơ hiệu quả hơn lại cực kỳ quan trọng.',
+      },
     ],
   },
 ];
@@ -313,4 +323,5 @@ export const spaceExplorationModuleData: ModuleData = {
     hireDemand: 'Cao',
   },
   relatedModules: ['physics-of-flight', 'rocket-science', 'satellite-communication'],
+  lessons: spaceLessons,
 };
