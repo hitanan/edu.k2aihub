@@ -12,6 +12,75 @@ const SITE_NAME = 'K2AiHub';
 const SITE_TAGLINE = 'Học tập thông minh - Công nghệ AI dẫn lối Việt Nam';
 
 /**
+ * Extract YouTube video ID from various YouTube URL formats
+ * @param url - YouTube URL in various formats
+ * @returns YouTube video ID or null if not found
+ */
+function extractYouTubeId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/,
+    /^([a-zA-Z0-9_-]{11})$/, // Direct video ID
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
+}
+
+/**
+ * Creates comprehensive VideoObject structured data for YouTube videos
+ * @param title - Video title
+ * @param description - Video description
+ * @param videoUrl - YouTube video URL or ID
+ * @returns VideoObject structured data
+ */
+function createVideoObjectData(title: string, description: string, videoUrl: string): Record<string, unknown> {
+  const videoId = extractYouTubeId(videoUrl);
+  if (!videoId) {
+    return {
+      '@type': 'VideoObject',
+      name: title,
+      description,
+      url: videoUrl,
+    };
+  }
+
+  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+  return {
+    '@type': 'VideoObject',
+    name: title,
+    description,
+    thumbnailUrl: [
+      `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+      `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+      `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+      `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`,
+    ],
+    uploadDate: new Date().toISOString().split('T')[0] + 'T08:00:00+08:00', // Default to Vietnam timezone
+    duration: 'PT10M', // Default duration, could be enhanced to get actual duration from API
+    contentUrl: watchUrl,
+    embedUrl: embedUrl,
+    url: watchUrl,
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: 'https://k2aihub.com',
+    },
+    inLanguage: 'vi-VN',
+    regionsAllowed: ['VN', 'US', 'SG', 'MY', 'TH', 'PH', 'ID', 'KH', 'LA'],
+    interactionStatistic: {
+      '@type': 'InteractionCounter',
+      interactionType: { '@type': 'WatchAction' },
+      userInteractionCount: 0, // Default, could be enhanced with actual data
+    },
+  };
+}
+
+/**
  * Creates a properly formatted title with K2AiHub branding
  * @param title - The main title content
  * @param includeTagline - Whether to include the site tagline (default: false)
@@ -330,14 +399,8 @@ export function createLessonStructuredData(options: {
   }
 
   if (videoUrl) {
-    (data as Record<string, unknown>)['video'] = {
-      '@type': 'VideoObject',
-      name: title,
-      description,
-      uploadDate: new Date().toISOString(),
-      url: videoUrl,
-      embedUrl: videoUrl,
-    };
+    const videoData = createVideoObjectData(title, description, videoUrl);
+    (data as Record<string, unknown>)['video'] = videoData;
   }
 
   return data;

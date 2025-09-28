@@ -1,15 +1,16 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { officeWorkModule } from '@/data/modules/office-work';
+import { officeWorkLessons } from '@/data/modules/office-work';
+import { officeWorkModuleData } from '@/data/modules/office-work-module';
 import { createModuleMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createModuleMetadata(
-  officeWorkModule.title,
-  officeWorkModule.description,
-  ['office work', 'văn phòng', 'kỹ năng làm việc', 'Microsoft Office', 'K2AI'],
-  officeWorkModule.id,
+  officeWorkModuleData.title,
+  officeWorkModuleData.description,
+  officeWorkModuleData.tags,
+  officeWorkModuleData.id,
 );
 
 export default function OfficeWorkModulePage() {
-  return <ModulePageTemplate moduleData={officeWorkModule} lessons={officeWorkModule.lessons || []} />;
+  return <ModulePageTemplate moduleData={officeWorkModuleData} lessons={officeWorkLessons} />;
 }

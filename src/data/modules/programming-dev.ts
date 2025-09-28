@@ -1,175 +1,191 @@
-import { ModuleData } from '@/types';
-import { ProgrammingLesson } from '@/types/lesson-base';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export const programmingDevLessons: ProgrammingLesson[] = [
+export interface ProgrammingDevLesson extends BaseLessonData {
+  technologies: string[];
+  platforms: string[];
+}
+
+export const programmingDevLessons: ProgrammingDevLesson[] = [
   {
-    id: 'git-version-control',
-    title: 'Quản lý phiên bản với Git',
-    description: 'Học cách sử dụng Git để quản lý mã nguồn và hợp tác trong các dự án phần mềm.',
-    duration: '90 phút',
-    difficulty: 'Cơ bản',
+    id: 'github-copilot-mastery',
+    title: 'Làm chủ GitHub Copilot',
+    description:
+      'Học cách sử dụng GitHub Copilot không chỉ như một công cụ tự động hoàn thành code, mà còn là một người trợ lý lập trình AI thực thụ.',
+    duration: '75 phút',
+    difficulty: 'Trung bình',
+    videoUrl: 'https://www.youtube.com/watch?v=8n2n_Gq0v_E',
+    imageUrl: 'https://images.unsplash.com/photo-1633356122544-f1a467f032f3?w=400&h=400&fit=crop',
     objectives: [
-        'Hiểu khái niệm về hệ thống quản lý phiên bản (VCS).',
-        'Thực hiện các lệnh Git cơ bản: clone, add, commit, push, pull.',
-        'Tạo và quản lý nhánh (branch) để phát triển tính năng mới.',
-        'Giải quyết xung đột (merge conflict) khi hợp nhất code.'
+      'Sử dụng Copilot để tạo các hàm và class hoàn chỉnh từ comment.',
+      'Học cách viết comment hiệu quả để hướng dẫn Copilot tạo code chính xác.',
+      'Sử dụng Copilot để viết unit test và debug code.',
+      'Khám phá các tính năng nâng cao như Copilot Chat và Copilot for PRs.',
     ],
-    prerequisites: ['Kiến thức cơ bản về dòng lệnh (command line).'],
+    prerequisites: [
+      'Kiến thức cơ bản về ít nhất một ngôn ngữ lập trình (ví dụ: Python, JavaScript).',
+      'Đã cài đặt VS Code và extension GitHub Copilot.',
+    ],
+    technologies: ['GitHub Copilot', 'VS Code', 'Git'],
+    platforms: ['Web Development', 'Data Science', 'Mobile App Development'],
     exercises: [
-        {
-            title: 'Tạo repository đầu tiên',
-            description: 'Khởi tạo một dự án mới, tạo một file README.md, và đẩy lên một repository mới trên GitHub.',
-            difficulty: 'Cơ bản',
-            expectedResults: 'Một repository mới trên GitHub chứa code của bạn.'
-        }
+      {
+        title: 'Tạo hàm bằng Comment',
+        description: 'Thực hành viết một comment mô tả chức năng và xem Copilot tự động tạo ra một hàm hoàn chỉnh.',
+        difficulty: 'Cơ bản',
+        procedure: [
+          'Trong một tệp JavaScript, viết comment: "// function to fetch user data from an API endpoint and return it as JSON".',
+          'Quan sát Copilot đề xuất một hàm `fetchUserData` hoàn chỉnh.',
+          'Chấp nhận và kiểm tra lại code được tạo ra.',
+        ],
+        expectedResults: 'Một hàm bất đồng bộ sử dụng `fetch` để lấy dữ liệu người dùng, có xử lý lỗi cơ bản.',
+      },
     ],
     realWorldApplications: [
-        'Hợp tác với các nhà phát triển khác trên toàn thế giới trong các dự án mã nguồn mở.',
-        'Quản lý các phiên bản khác nhau của một sản phẩm phần mềm.',
-        'Dễ dàng quay lại một phiên bản ổn định khi có lỗi xảy ra.'
+      'Một lập trình viên web tăng tốc độ xây dựng các component React.',
+      'Một nhà khoa học dữ liệu nhanh chóng viết các kịch bản phân tích dữ liệu với Pandas.',
+      'Một kỹ sư DevOps sử dụng Copilot để viết các tệp cấu hình YAML.',
     ],
     faqs: [
-        {
-            question: 'Git và GitHub khác nhau như thế nào?',
-            answer: 'Git là một hệ thống quản lý phiên bản phân tán, một công cụ dòng lệnh bạn cài đặt trên máy tính. GitHub là một dịch vụ lưu trữ repository Git trên nền tảng web, cung cấp thêm các tính năng như quản lý dự án, theo dõi lỗi, và mạng xã hội cho lập trình viên.'
-        },
-        {
-            question: '`git fetch` và `git pull` khác nhau ra sao?',
-            answer: '`git fetch` tải về tất cả các thay đổi từ remote repository nhưng không tự động hợp nhất (merge) chúng vào nhánh hiện tại của bạn. `git pull` là sự kết hợp của `git fetch` và `git merge`, nó vừa tải về thay đổi vừa cố gắng hợp nhất chúng ngay lập tức.'
-        },
-        {
-            question: 'HEAD trong Git là gì?',
-            answer: 'HEAD là một con trỏ tham chiếu đến commit mới nhất trong nhánh bạn đang làm việc. Hầu hết các lệnh Git ghi lại thay đổi đều bắt đầu từ HEAD.'
-        },
-        {
-            question: '`git rebase` là gì và khi nào nên sử dụng?',
-            answer: '`git rebase` là một cách khác để tích hợp các thay đổi từ một nhánh này sang một nhánh khác. Thay vì tạo một commit hợp nhất, rebase sẽ viết lại lịch sử commit bằng cách đặt các commit của bạn lên trên cùng của nhánh đích. Nó giúp lịch sử commit thẳng và sạch sẽ hơn, thường được sử dụng trên các nhánh cá nhân trước khi hợp nhất vào nhánh chính.'
-        },
-        {
-            question: 'Làm thế nào để hoàn tác một commit đã đẩy lên remote?',
-            answer: 'Cách an toàn nhất là sử dụng `git revert <commit_hash>`. Lệnh này sẽ tạo một commit mới để hoàn tác lại các thay đổi của commit cũ. Tránh sử dụng `git reset` trên các nhánh đã chia sẻ vì nó thay đổi lịch sử commit, có thể gây rối cho các thành viên khác.'
-        },
-        {
-            question: 'Staging area (hay index) trong Git là gì?',
-            answer: 'Là một khu vực trung gian nơi bạn chuẩn bị cho commit tiếp theo. Lệnh `git add` sẽ đưa các thay đổi từ thư mục làm việc của bạn vào staging area. Điều này cho phép bạn chọn lọc những thay đổi nào sẽ được đưa vào commit tiếp theo.'
-        },
-        {
-            question: '`.gitignore` dùng để làm gì?',
-            answer: 'Là một file văn bản nơi bạn liệt kê các file hoặc thư mục mà Git nên bỏ qua, không theo dõi. Ví dụ: các file log, thư mục chứa các gói đã cài đặt (node_modules), hoặc các file cấu hình chứa thông tin nhạy cảm.'
-        },
-        {
-            question: 'Sự khác biệt giữa `git merge` và `git merge --squash`?',
-            answer: '`git merge` sẽ tích hợp các commit từ một nhánh khác và giữ nguyên lịch sử của chúng. `git merge --squash` sẽ gộp tất cả các commit từ nhánh kia thành một commit duy nhất trên nhánh hiện tại. Điều này hữu ích khi bạn muốn giữ lịch sử của nhánh chính gọn gàng.'
-        },
-        {
-            question: 'Fork một repository là gì?',
-            answer: 'Fork là hành động tạo một bản sao của một repository của người khác về tài khoản của bạn. Điều này cho phép bạn tự do thử nghiệm, thay đổi mà không ảnh hưởng đến dự án gốc. Nếu bạn muốn đóng góp lại, bạn có thể tạo một "Pull Request".'
-        },
-        {
-            question: 'Pull Request (PR) là gì?',
-            answer: 'Là một yêu cầu bạn gửi đến chủ sở hữu của một repository để họ xem xét và hợp nhất các thay đổi từ nhánh của bạn vào nhánh của họ. Đây là cơ chế hợp tác chính trên các nền tảng như GitHub, GitLab.'
-        }
-    ]
+      {
+        question: 'GitHub Copilot có miễn phí không?',
+        answer:
+          'GitHub Copilot là một dịch vụ trả phí. Tuy nhiên, nó miễn phí cho các sinh viên đã được xác minh, giáo viên và những người bảo trì các dự án mã nguồn mở phổ biến.',
+      },
+      {
+        question: "Làm thế nào để viết comment 'thân thiện' với Copilot?",
+        answer:
+          'Hãy viết các comment rõ ràng, cụ thể và chi tiết. Thay vì `// a function`, hãy viết `// a function that takes a user ID, fetches user data from /api/users/:id, and returns the user object`. Càng nhiều chi tiết, Copilot càng tạo ra code chính xác.',
+      },
+      {
+        question: 'Copilot có thể hiểu được code đã có trong dự án của tôi không?',
+        answer:
+          'Có. Copilot phân tích ngữ cảnh từ các tệp bạn đang mở để đưa ra các đề xuất phù hợp hơn với phong cách và các hàm đã có trong dự án của bạn.',
+      },
+      {
+        question: 'Sử dụng Copilot có làm tôi lười suy nghĩ và giảm kỹ năng lập trình không?',
+        answer:
+          'Điều này phụ thuộc vào cách bạn sử dụng nó. Nếu bạn chỉ chấp nhận code mà không hiểu nó, kỹ năng của bạn có thể bị ảnh hưởng. Hãy coi Copilot là một công cụ để học hỏi và tăng tốc. Luôn đọc, hiểu và kiểm tra lại code mà nó tạo ra. Nó là một người trợ lý, không phải là người thay thế bạn.',
+      },
+      {
+        question: 'Copilot có thể giúp tôi học một ngôn ngữ lập trình mới không?',
+        answer:
+          'Rất tốt. Khi bạn không chắc về cú pháp, bạn có thể viết mô tả bằng ngôn ngữ tự nhiên và xem Copilot chuyển nó thành code. Đây là một cách học rất trực quan và hiệu quả.',
+      },
+      {
+        question: 'Copilot Chat là gì và nó khác gì so với Copilot thông thường?',
+        answer:
+          'Copilot thông thường đưa ra đề xuất code ngay trong trình soạn thảo. Copilot Chat cung cấp một giao diện trò chuyện nơi bạn có thể hỏi các câu hỏi về code, yêu cầu giải thích, tìm lỗi, hoặc thậm chí là lên kế hoạch cho các tính năng mới.',
+      },
+      {
+        question: 'Code do Copilot tạo ra có an toàn và không có lỗi không?',
+        answer:
+          'Không phải lúc nào cũng vậy. Code do Copilot tạo ra có thể chứa lỗi, các phương pháp không tối ưu, hoặc thậm chí là các lỗ hổng bảo mật. Bạn, với tư cách là lập trình viên, luôn chịu trách nhiệm cuối cùng về chất lượng và sự an toàn của code.',
+      },
+      {
+        question: 'Làm thế nào để Copilot giúp tôi viết Unit Test?',
+        answer:
+          "Sau khi viết một hàm, bạn có thể mở một tệp test và viết một comment như `// Unit tests for the 'calculateTotalPrice' function`. Copilot sẽ đề xuất các trường hợp kiểm thử khác nhau, bao gồm cả các trường hợp biên (edge cases).",
+      },
+      {
+        question: "Copilot có 'ăn cắp' code từ các dự án khác không?",
+        answer:
+          'Copilot được huấn luyện trên một tập dữ liệu khổng lồ gồm các mã nguồn mở công khai. Nó học các mẫu và cấu trúc từ đó, chứ không sao chép trực tiếp. Tuy nhiên, trong một số trường hợp hiếm, nó có thể tạo ra một đoạn code giống hệt một đoạn code trong tập dữ liệu huấn luyện. GitHub đã thêm một bộ lọc để giảm thiểu khả năng này.',
+      },
+      {
+        question: 'Tôi có thể sử dụng Copilot trong các IDE nào khác ngoài VS Code không?',
+        answer:
+          'Có. GitHub Copilot hỗ trợ một loạt các IDE phổ biến khác như JetBrains (IntelliJ, PyCharm...), Visual Studio và Neovim.',
+      },
+    ],
   },
   {
-    id: 'agile-development',
-    title: 'Phát triển phần mềm Agile',
-    description: 'Tìm hiểu về phương pháp phát triển phần mềm linh hoạt Agile và Scrum.',
-    duration: '120 phút',
+    id: 'ai-code-review',
+    title: 'Review Code Nâng cao với AI',
+    description:
+      'Sử dụng các công cụ AI để tự động phát hiện các vấn đề tiềm ẩn, cải thiện chất lượng code và tối ưu hóa hiệu suất trong quá trình review code.',
+    duration: '60 phút',
     difficulty: 'Trung bình',
     objectives: [
-        'Hiểu 4 giá trị cốt lõi và 12 nguyên tắc của Agile.',
-        'Nắm được các vai trò, sự kiện và tạo tác (artifacts) trong Scrum.',
-        'Phân biệt giữa Agile và các mô hình phát triển truyền thống (như Waterfall).',
-        'Áp dụng các khái niệm như User Story, Sprint, và Daily Stand-up.'
+      'Tích hợp các công cụ AI vào quy trình Pull Request (PR).',
+      'Tự động phát hiện các lỗi logic, vấn đề hiệu suất và lỗ hổng bảo mật.',
+      'Nhận các đề xuất cải thiện code tự động.',
+      'Tập trung vào các vấn đề kiến trúc và logic phức tạp hơn trong quá trình review.',
     ],
-    prerequisites: ['Có kinh nghiệm hoặc kiến thức cơ bản về quy trình phát triển phần mềm.'],
+    prerequisites: ['Kiến thức về Git và quy trình làm việc với Pull Request (hoặc Merge Request).'],
+    technologies: ['GitHub Copilot for PRs', 'CodeRabbit', 'Sentry'],
+    platforms: ['GitHub', 'GitLab', 'Bitbucket'],
     exercises: [
-        {
-            title: 'Lập kế hoạch một Sprint',
-            description: 'Chọn một dự án nhỏ (ví dụ: làm một trang web portfolio). Viết ra các User Story, ước tính độ khó, và chọn một vài story để đưa vào một Sprint kéo dài 1 tuần. Lên kế hoạch các công việc cần làm.',
-            difficulty: 'Trung bình',
-            expectedResults: 'Hiểu rõ hơn về cách một Sprint được lên kế hoạch và thực thi trong thực tế.'
-        }
+      {
+        title: 'Sử dụng AI để Review một Pull Request',
+        description:
+          'Cài đặt một công cụ AI review code vào một repository và xem nó tự động bình luận trên một Pull Request mới.',
+        difficulty: 'Trung bình',
+        procedure: [
+          'Chọn một repository cá nhân trên GitHub.',
+          'Vào GitHub Marketplace và cài đặt ứng dụng CodeRabbit (có gói miễn phí).',
+          'Tạo một nhánh mới, thực hiện một vài thay đổi (có thể cố tình tạo một lỗi nhỏ).',
+          'Tạo một Pull Request mới.',
+          'Quan sát bot CodeRabbit tự động review, phát hiện lỗi và đề xuất cách sửa.',
+        ],
+        expectedResults: 'Một bình luận tự động từ bot trên PR, chỉ ra các vấn đề và gợi ý code để cải thiện.',
+      },
     ],
     realWorldApplications: [
-        'Phát triển sản phẩm trong các công ty công nghệ hàng đầu thế giới.',
-        'Quản lý các dự án phức tạp với yêu cầu thường xuyên thay đổi.',
-        'Cải thiện sự hợp tác và giao tiếp giữa các đội nhóm phát triển, kinh doanh và khách hàng.'
+      'Một nhóm phát triển giảm thời gian review code xuống 40%.',
+      'Phát hiện một lỗ hổng bảo mật SQL injection trước khi code được merge.',
+      'Một lập trình viên mới học được các best practice từ các đề xuất của AI.',
     ],
     faqs: [
-        {
-            question: 'Agile có phải là một phương pháp luận (methodology) không?',
-            answer: 'Không hẳn. Agile là một tư duy (mindset) hoặc một triết lý dựa trên 4 giá trị và 12 nguyên tắc được nêu trong Tuyên ngôn Agile. Scrum, Kanban, XP là các framework hoặc phương pháp luận cụ thể để hiện thực hóa tư duy Agile đó.'
-        },
-        {
-            question: 'Scrum là gì?',
-            answer: 'Scrum là một framework phổ biến nhất để triển khai Agile. Nó cấu trúc việc phát triển thành các chu kỳ lặp lại gọi là Sprint, thường kéo dài từ 1-4 tuần. Scrum có các vai trò (Product Owner, Scrum Master, Development Team), sự kiện (Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective) và tạo tác (Product Backlog, Sprint Backlog) rất cụ thể.'
-        },
-        {
-            question: 'User Story là gì?',
-            answer: 'Là một cách mô tả yêu cầu của một tính năng từ góc nhìn của người dùng cuối. Cấu trúc phổ biến là: "Là một [vai trò người dùng], tôi muốn [làm một việc gì đó] để [đạt được một giá trị nào đó]".'
-        },
-        {
-            question: 'Sự khác biệt giữa Product Owner và Scrum Master?',
-            answer: 'Product Owner chịu trách nhiệm về "cái gì" - tức là xác định các tính năng cần xây dựng và ưu tiên chúng trong Product Backlog để tối đa hóa giá trị cho sản phẩm. Scrum Master chịu trách nhiệm về "cách làm" - tức là đảm bảo đội nhóm tuân thủ quy trình Scrum, loại bỏ các trở ngại và hoạt động hiệu quả.'
-        },
-        {
-            question: 'Sprint là gì?',
-            answer: 'Là một khoảng thời gian cố định (time-box) mà trong đó đội Scrum làm việc để hoàn thành một lượng công việc đã chọn. Vào cuối mỗi Sprint, đội nhóm phải tạo ra một phần tăng trưởng sản phẩm "có thể chuyển giao được".'
-        },
-        {
-            question: 'Mục đích của Daily Stand-up (hay Daily Scrum) là gì?',
-            answer: 'Đây là một cuộc họp ngắn 15 phút mỗi ngày để đội phát triển đồng bộ hóa công việc và lập kế hoạch cho 24 giờ tiếp theo. Mỗi thành viên thường trả lời 3 câu hỏi: Hôm qua tôi đã làm gì? Hôm nay tôi sẽ làm gì? Có trở ngại nào không?'
-        },
-        {
-            question: 'Kanban là gì và nó khác Scrum như thế nào?',
-            answer: 'Kanban cũng là một phương pháp Agile, nhưng nó tập trung vào dòng chảy công việc liên tục thay vì các Sprint có thời gian cố định. Kanban trực quan hóa công việc trên một bảng (Kanban board) và giới hạn số lượng công việc đang thực hiện (Work in Progress - WIP) để tối ưu hóa hiệu suất.'
-        },
-        {
-            question: 'Mô hình Thác nước (Waterfall) là gì?',
-            answer: 'Là một mô hình phát triển tuần tự, trong đó mỗi giai đoạn (yêu cầu, thiết kế, lập trình, kiểm thử, triển khai) phải được hoàn thành đầy đủ trước khi chuyển sang giai đoạn tiếp theo. Mô hình này thiếu linh hoạt khi có sự thay đổi yêu cầu.'
-        },
-        {
-            question: 'Definition of Done (Định nghĩa Hoàn thành) là gì?',
-            answer: 'Là một danh sách kiểm tra (checklist) chung mà cả đội thống nhất, quy định các tiêu chí để một User Story được coi là "hoàn thành". Ví dụ: đã viết code, đã qua code review, đã viết unit test, đã được kiểm thử bởi QA. Điều này đảm bảo chất lượng và sự minh bạch.'
-        },
-        {
-            question: 'Velocity (Vận tốc) trong Scrum là gì?',
-            answer: 'Là một thước đo về lượng công việc (thường tính bằng story point) mà một đội có thể hoàn thành trong một Sprint. Dữ liệu Velocity từ các Sprint trước giúp đội nhóm dự báo khả năng của mình trong các Sprint tương lai một cách thực tế hơn.'
-        }
-    ]
+      {
+        question: 'AI có thể thay thế hoàn toàn việc review code của con người không?',
+        answer:
+          'Không. AI rất giỏi trong việc phát hiện các lỗi mẫu, vấn đề hiệu suất và các lỗ hổng phổ biến. Tuy nhiên, nó không thể hiểu được bối cảnh kinh doanh hoặc các yêu cầu kiến trúc phức tạp. Vai trò của con người là tập trung vào các khía cạnh đó, trong khi để AI xử lý các kiểm tra cấp thấp.',
+      },
+      {
+        question: 'Các công cụ AI review code hoạt động như thế nào?',
+        answer:
+          'Khi một Pull Request được tạo, một webhook sẽ kích hoạt công cụ AI. Công cụ này sẽ phân tích sự thay đổi trong code (diff), so sánh với các mẫu lỗi phổ biến, phân tích luồng dữ liệu và đề xuất các cải tiến dựa trên hàng triệu dòng code mà nó đã học.',
+      },
+      {
+        question: 'Công cụ AI review code nào là tốt nhất?',
+        answer:
+          'Có nhiều lựa chọn tốt. CodeRabbit và Sentry (Code Review) rất phổ biến và có các gói miễn phí mạnh mẽ. GitHub Copilot for Pull Requests là một tính năng mới đầy hứa hẹn được tích hợp sẵn trong GitHub. Lựa chọn phụ thuộc vào ngân sách và hệ sinh thái của bạn (GitHub, GitLab...).',
+      },
+      {
+        question: 'Sử dụng AI review code có làm chậm quy trình CI/CD không?',
+        answer:
+          'Hầu hết các công cụ hiện đại được tối ưu hóa để chạy rất nhanh, thường chỉ mất một vài phút để review một PR. Lợi ích về việc phát hiện lỗi sớm thường lớn hơn nhiều so với sự chậm trễ nhỏ này.',
+      },
+      {
+        question: 'Chi phí cho các công cụ này là bao nhiêu?',
+        answer:
+          'Nhiều công cụ như CodeRabbit và Sentry cung cấp các gói miễn phí cho các dự án cá nhân và mã nguồn mở. Đối với các đội ngũ thương mại, chi phí thường được tính dựa trên số lượng lập trình viên, khoảng 10-30 USD mỗi lập trình viên mỗi tháng.',
+      },
+      {
+        question: 'AI có thể phát hiện được các lỗi logic phức tạp không?',
+        answer:
+          'Ngày càng tốt hơn. Các mô hình AI mới có thể theo dõi luồng dữ liệu qua nhiều tệp và hàm, giúp chúng phát hiện các lỗi logic tinh vi hơn. Tuy nhiên, đây vẫn là lĩnh vực mà con người vượt trội hơn.',
+      },
+      {
+        question: 'Làm thế nào để tùy chỉnh các quy tắc review của AI?',
+        answer:
+          'Hầu hết các công cụ cho phép bạn tùy chỉnh. Bạn có thể tắt các loại kiểm tra nhất định mà bạn không quan tâm, hoặc thậm chí cung cấp các hướng dẫn riêng về phong cách code của nhóm bạn để AI tuân theo.',
+      },
+      {
+        question: 'AI có thể giúp tối ưu hóa hiệu suất code không?',
+        answer:
+          'Có. AI có thể phát hiện các mẫu code không hiệu quả, chẳng hạn như các vòng lặp lồng nhau không cần thiết, các truy vấn cơ sở dữ liệu N+1, hoặc việc sử dụng các cấu trúc dữ liệu không phù hợp và đề xuất các phương án thay thế hiệu quả hơn.',
+      },
+      {
+        question: 'Việc này có ý nghĩa gì đối với các lập trình viên trẻ?',
+        answer:
+          "Đây là một công cụ học tập tuyệt vời. Bằng cách xem các đề xuất từ AI, các lập trình viên trẻ có thể nhanh chóng học được các 'code smell' (mã có mùi), các best practice và các lỗi phổ biến cần tránh.",
+      },
+      {
+        question: 'Làm thế nào để thuyết phục nhóm của tôi áp dụng AI review code?',
+        answer:
+          'Hãy bắt đầu bằng một dự án thử nghiệm nhỏ. Cài đặt một công cụ có gói miễn phí và để nhóm xem các kết quả thực tế. Thống kê thời gian tiết kiệm được và số lượng lỗi được phát hiện sớm. Dữ liệu thực tế là cách thuyết phục tốt nhất.',
+      },
+    ],
   },
 ];
-
-export const programmingDevModule: ModuleData = {
-  id: 'programming-dev',
-  title: 'Phát triển và Quy trình Lập trình',
-  description: 'Học các công cụ, phương pháp và quy trình để phát triển phần mềm chuyên nghiệp và hiệu quả.',
-  category: 'Lập trình',
-  image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&h=600&fit=crop',
-  tags: ['git', 'agile', 'scrum', 'devops', 'quy trình phát triển'],
-  level: 'Cơ bản đến Trung bình',
-  duration: '4 tuần',
-  lessons: programmingDevLessons,
-  features: [
-    'Thực hành Git trên repository thật.',
-    'Mô phỏng một Sprint trong Scrum.',
-    'So sánh các mô hình phát triển phần mềm.',
-    'Các câu hỏi phỏng vấn thường gặp về Git và Agile.'
-  ],
-  prerequisites: ['Có kiến thức về ít nhất một ngôn ngữ lập trình.'],
-  objectives: [
-    'Sử dụng thành thạo Git để quản lý mã nguồn và hợp tác.',
-    'Hiểu và áp dụng được các nguyên tắc của Agile và framework Scrum.',
-    'Nắm được quy trình phát triển phần mềm hiện đại.',
-    'Cải thiện kỹ năng làm việc nhóm và quản lý dự án.'
-  ],
-  careerOutcomes: [
-    'Sẵn sàng tham gia vào các dự án phần mềm chuyên nghiệp.',
-    'Cải thiện hiệu suất làm việc và khả năng hợp tác trong đội nhóm.',
-    'Tăng khả năng được tuyển dụng vào các công ty công nghệ áp dụng Agile.'
-  ],
-  color: 'from-gray-700 to-gray-900',
-};
-

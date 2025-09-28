@@ -34,22 +34,22 @@ import { arduinoCircuitsModuleData } from '@/data/modules/arduino-circuits';
 import { arduinoModuleData } from '@/data/modules/arduino';
 import { biotechnologyModuleData } from '@/data/modules/biotechnology';
 import { blueEconomyModuleData } from '@/data/modules/blue-economy';
-import { businessMarketingModuleData } from '@/data/modules/business-marketing';
+import { businessMarketingModule } from '@/data/modules/business-marketing-module';
 import { careerDevelopmentModuleData } from '@/data/modules/career-development';
 import { circularEconomyModuleData } from '@/data/modules/circular-economy';
 import { climateScienceModuleData } from '@/data/modules/climate-science';
 import { communicationSkillsModuleData } from '@/data/modules/communication-skills';
 import { contentCreatorModuleData } from '@/data/modules/content-creator';
-import { creativeDesignModuleData } from '@/data/modules/creative-design';
+import { creativeDesignModule } from '@/data/modules/creative-design-module';
 import { criticalThinkingModuleData } from '@/data/modules/critical-thinking';
 import { cybersecurityModuleData } from '@/data/modules/cybersecurity';
-import { dailyLifeModuleData } from '@/data/modules/daily-life';
+import { dailyLifeModuleData } from '@/data/modules/daily-life-module';
 import { dataScienceModuleData } from '@/data/modules/data-science';
 import { digitalArtsCreativeTechModuleData } from '@/data/modules/digital-arts-creative-tech';
 import { digitalCitizenshipAiEthicsModuleData } from '@/data/modules/digital-citizenship-ai-ethics';
 import { digitalCitizenshipOnlineSafetyModuleData } from '@/data/modules/digital-citizenship-online-safety';
 import { digitalMarketingModuleData } from '@/data/modules/digital-marketing';
-import { educationLearningModuleData } from '@/data/modules/education-learning';
+import { educationLearningModule } from '@/data/modules/education-learning-module';
 import { educationTechnologyModuleData } from '@/data/modules/education-technology';
 import { electricVehicleTechModuleData } from '@/data/modules/electric-vehicle-tech';
 import { energyManagementModule } from '@/data/modules/energy-management';
@@ -66,7 +66,7 @@ import { genZMarketingModuleData } from '@/data/modules/genz-marketing';
 import { greenTechnologyModuleData } from '@/data/modules/green-technology';
 import { healthcareTechModuleData } from '@/data/modules/healthcare-tech';
 import { kitchenChemistryModuleData } from '@/data/modules/kitchen-chemistry';
-import { leadershipManagementModule } from '@/data/modules/leadership-management';
+import { leadershipManagementModuleData } from '@/data/modules/leadership-management-module';
 import { legalTechnologyModuleData } from '@/data/modules/legal-technology';
 import { liveCommerceStreamingModuleData } from '@/data/modules/live-commerce-streaming';
 import { mentalHealthTechModule } from '@/data/modules/mental-health-tech';
@@ -75,11 +75,11 @@ import { microInfluencerEconomyModule } from '@/data/modules/micro-influencer-ec
 import { minecraftEduModule } from '@/data/modules/minecraft-edu';
 import { mobileAppDevelopmentModule } from '@/data/modules/mobile-app-development';
 import { nanotechnologyModule } from '@/data/modules/nanotechnology';
-import { officeWorkModule } from '@/data/modules/office-work';
+import { officeWorkModuleData } from '@/data/modules/office-work-module';
 import { personalEnergyPerformanceManagementModule } from '@/data/modules/personal-energy-performance-management';
 import { physicsOfSportsModule } from '@/data/modules/physics-of-sports';
 import { professionalSkillsModule } from '@/data/modules/professional-skills';
-import { programmingDevModule } from '@/data/modules/programming-dev';
+import { programmingDevModule } from '@/data/modules/programming-dev-module';
 import { programmingRoboticsModule } from '@/data/modules/programming-robotics';
 import { psychologyBehavioralScienceModule } from '@/data/modules/psychology-behavioral-science';
 import { pythonModuleData } from '@/data/modules/python';
@@ -171,13 +171,13 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   arduinoModuleData,
   biotechnologyModuleData,
   blueEconomyModuleData,
-  businessMarketingModuleData,
+  businessMarketingModule,
   careerDevelopmentModuleData,
   circularEconomyModuleData,
   climateScienceModuleData,
   communicationSkillsModuleData,
   contentCreatorModuleData,
-  creativeDesignModuleData,
+  creativeDesignModule,
   criticalThinkingModuleData,
   cybersecurityModuleData,
   dailyLifeModuleData,
@@ -186,7 +186,7 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   digitalCitizenshipAiEthicsModuleData,
   digitalCitizenshipOnlineSafetyModuleData,
   digitalMarketingModuleData,
-  educationLearningModuleData,
+  educationLearningModule,
   educationTechnologyModuleData,
   electricVehicleTechModuleData,
   energyManagementModule,
@@ -203,7 +203,7 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   greenTechnologyModuleData,
   healthcareTechModuleData,
   kitchenChemistryModuleData,
-  leadershipManagementModule,
+  leadershipManagementModuleData,
   legalTechnologyModuleData,
   liveCommerceStreamingModuleData,
   mentalHealthTechModule,
@@ -212,7 +212,7 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   minecraftEduModule,
   mobileAppDevelopmentModule,
   nanotechnologyModule,
-  officeWorkModule,
+  officeWorkModuleData,
   personalEnergyPerformanceManagementModule,
   physicsOfSportsModule,
   professionalSkillsModule,

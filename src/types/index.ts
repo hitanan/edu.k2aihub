@@ -47,6 +47,7 @@ export interface ModuleData<T extends BaseLessonData = BaseLessonData> {
   title: string;
   subtitle?: string;
   description: string;
+  link?: string;
   level?: string;
   duration?: string;
   category: string | string[];
@@ -116,6 +117,9 @@ export interface ModuleData<T extends BaseLessonData = BaseLessonData> {
   learningGoals?: string[];
   projectIdeas?: string[];
   faqs?: Array<{ question: string; answer: string }>;
+  active?: boolean;
+  learningTime?: string;
+  resources?: Array<{ title: string; url: string }>;
 }
 
 export interface Heading {

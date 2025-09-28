@@ -1,43 +1,34 @@
-import { ModuleNavigation } from '@/types';
+import { ModuleData } from '@/types';
+import { programmingDevLessons } from './programming-dev';
 
-export const programmingDevModuleData: ModuleNavigation = {
+export const programmingDevModule: ModuleData = {
   id: 'programming-dev',
-  title: 'AI cho Lập Trình & Phát Triển',
-  subtitle: 'Code thông minh với AI',
-  description: 'Tìm hiểu GitHub Copilot, AI code review và các công cụ AI hỗ trợ lập trình để tăng hiệu suất coding',
-  category: ['programming', 'trending'], // Multiple categories
-  icon: '💻',
-  color: 'from-slate-600 to-blue-600',
-  totalDuration: '7-9 giờ',
-  difficulty: 'Trung bình đến Nâng cao',
-  href: '/learning/ai/programming-dev',
-  features: ['GitHub Copilot', 'AI code review', 'Automated testing', 'Documentation generation'],
-  tags: ['programming', 'coding', 'development', 'automation'],
-  prerequisites: ['Kiến thức lập trình cơ bản', 'Sử dụng Git/GitHub'],
-  lessons: [
-    {
-      id: 'github-copilot',
-      title: 'GitHub Copilot mastery',
-      duration: '90 phút',
-      difficulty: 'Trung bình',
-    },
-    {
-      id: 'ai-code-review',
-      title: 'AI Code Review',
-      duration: '70 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'automated-testing',
-      title: 'Testing tự động với AI',
-      duration: '60 phút',
-      difficulty: 'Trung bình',
-    },
-    {
-      id: 'documentation-ai',
-      title: 'Tạo tài liệu với AI',
-      duration: '50 phút',
-      difficulty: 'Trung bình',
-    },
+  title: 'Lập trình & Phát triển',
+  description:
+    'Học các công cụ, phương pháp và quy trình để phát triển phần mềm chuyên nghiệp và hiệu quả với sự trợ giúp của AI.',
+  category: 'Lập trình',
+  image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&h=600&fit=crop',
+  tags: ['git', 'copilot', 'ai', 'devops', 'quy trình phát triển'],
+  level: 'Cơ bản đến Trung bình',
+  duration: '2 giờ',
+  lessons: programmingDevLessons,
+  features: [
+    'Làm chủ GitHub Copilot để tăng tốc độ code.',
+    'Sử dụng AI để review code và phát hiện lỗi sớm.',
+    'Tự động hóa việc tạo tài liệu và comment.',
+    'Khám phá các công cụ AI giúp debug và tối ưu hóa code.',
   ],
+  prerequisites: ['Có kiến thức về ít nhất một ngôn ngữ lập trình.'],
+  objectives: [
+    'Sử dụng thành thạo các công cụ AI hỗ trợ lập trình.',
+    'Hiểu và áp dụng AI vào quy trình phát triển phần mềm.',
+    'Cải thiện chất lượng code và giảm thời gian phát triển.',
+    'Nắm được các xu hướng mới nhất về AI trong ngành lập trình.',
+  ],
+  careerOutcomes: [
+    'Trở thành lập trình viên có hiệu suất cao với sự hỗ trợ của AI.',
+    'Cải thiện khả năng cạnh tranh trong thị trường việc làm công nghệ.',
+    'Có khả năng áp dụng các công cụ AI vào bất kỳ dự án phần mềm nào.',
+  ],
+  color: 'from-gray-700 to-gray-900',
 };

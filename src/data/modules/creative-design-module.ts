@@ -1,44 +1,34 @@
-import { ModuleNavigation } from '@/types';
+import { ModuleData } from '@/types';
+import { creativeDesignLessons } from './creative-design';
 
-export const creativeDesignModuleData: ModuleNavigation = {
+export const creativeDesignModule: ModuleData = {
   id: 'creative-design',
-  title: 'AI cho Sáng Tạo & Thiết Kế',
-  subtitle: 'Sáng tạo nội dung với AI',
+  title: 'Thiết kế Sáng tạo với AI',
   description:
-    'Khám phá cách sử dụng Midjourney, DALL-E, Canva AI để tạo ra nội dung sáng tạo và thiết kế chuyên nghiệp',
-  category: ['creative', 'trending'], // Multiple categories
-  icon: '🎨',
-  color: 'from-purple-600 to-pink-600',
-  totalDuration: '5-7 giờ',
-  difficulty: 'Cơ bản đến Nâng cao',
-  href: '/learning/ai/creative-design',
-  features: ['Midjourney mastery', 'Canva AI Studio', 'Content creation', 'Visual design'],
-  tags: ['design', 'creativity', 'art', 'visual'],
-  prerequisites: ['Hiểu biết cơ bản về design', 'Sử dụng máy tính thành thạo'],
-  lessons: [
-    {
-      id: 'midjourney-basics',
-      title: 'Midjourney cơ bản',
-      duration: '60 phút',
-      difficulty: 'Cơ bản',
-    },
-    {
-      id: 'advanced-prompting',
-      title: 'Prompt engineering nâng cao',
-      duration: '75 phút',
-      difficulty: 'Nâng cao',
-    },
-    {
-      id: 'canva-ai',
-      title: 'Canva AI Magic Studio',
-      duration: '50 phút',
-      difficulty: 'Trung bình',
-    },
-    {
-      id: 'content-creation',
-      title: 'Tạo nội dung với AI',
-      duration: '45 phút',
-      difficulty: 'Trung bình',
-    },
+    'Học cách sử dụng các công cụ AI hàng đầu như Midjourney và Canva Magic Studio để tạo ra hình ảnh, thiết kế và nội dung ấn tượng.',
+  category: 'Sáng tạo',
+  image: 'https://images.unsplash.com/photo-1677756119517-756a188d2d94?w=1200&h=600&fit=crop',
+  tags: ['midjourney', 'canva', 'ai design', 'prompt engineering', 'sáng tạo'],
+  level: 'Cơ bản đến Trung bình',
+  duration: '3 giờ',
+  lessons: creativeDesignLessons,
+  features: [
+    'Làm chủ Midjourney từ cơ bản đến nâng cao.',
+    'Thành thạo bộ công cụ Canva AI Magic Studio.',
+    'Kỹ thuật "prompt engineering" chuyên sâu.',
+    'Ứng dụng AI vào quy trình sáng tạo nội dung thực tế.',
   ],
+  prerequisites: ['Tài khoản Discord và Canva.'],
+  objectives: [
+    'Sử dụng thành thạo Midjourney để tạo hình ảnh từ văn bản.',
+    'Tận dụng các công cụ AI của Canva để thiết kế nhanh và hiệu quả.',
+    'Phát triển kỹ năng viết prompt để kiểm soát đầu ra của AI.',
+    'Tích hợp các công cụ AI vào quy trình làm việc sáng tạo hàng ngày.',
+  ],
+  careerOutcomes: [
+    'Trở thành nhà thiết kế có khả năng tận dụng AI.',
+    'Nâng cao hiệu suất trong các công việc liên quan đến marketing và nội dung.',
+    'Có khả năng tạo ra các sản phẩm hình ảnh và thiết kế độc đáo.',
+  ],
+  color: 'from-purple-500 to-pink-500',
 };

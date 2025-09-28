@@ -11,5 +11,10 @@ export const metadata: Metadata = createModuleMetadata(
 );
 
 export default function DigitalCitizenshipModulePage() {
-  return <ModulePageTemplate moduleData={digitalCitizenshipOnlineSafetyModuleData} lessons={digitalCitizenshipOnlineSafetyModuleData.lessons || []} />;
+  return (
+    <ModulePageTemplate
+      moduleData={digitalCitizenshipOnlineSafetyModuleData}
+      lessons={digitalCitizenshipOnlineSafetyModuleData.lessons || []}
+    />
+  );
 }

@@ -1,96 +1,276 @@
-import { ModuleData } from '@/types';
-import { ProfessionalSoftSkillsLesson } from '@/types/lesson-base';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export const officeWorkLessons: ProfessionalSoftSkillsLesson[] = [
+export interface OfficeWorkLesson extends BaseLessonData {
+  tools: string[];
+  realWorldApplications: string[];
+}
+
+export const officeWorkLessons: OfficeWorkLesson[] = [
   {
-    id: 'effective-communication',
-    title: 'Giao Tiếp Hiệu Quả Trong Công Việc',
-    description: 'Nắm vững các kỹ năng giao tiếp bằng lời, văn bản và phi ngôn ngữ để xây dựng mối quan hệ, giải quyết xung đột và thuyết trình một cách thuyết phục.',
+    id: 'chatgpt-for-email',
+    title: 'Soạn Email Chuyên nghiệp với ChatGPT',
+    description:
+      'Học cách sử dụng ChatGPT để soạn thảo, tối ưu hóa và tự động hóa các công việc liên quan đến email hàng ngày.',
     duration: '60 phút',
     difficulty: 'Cơ bản',
+    videoUrl: 'https://www.youtube.com/watch?v=b-Z4-d_s-gU',
+    imageUrl: 'https://images.unsplash.com/photo-1586766641985-6501a113c33a?w=400&h=400&fit=crop',
     objectives: [
-      'Áp dụng kỹ thuật lắng nghe chủ động để thấu hiểu đồng nghiệp.',
-      'Soạn thảo email và báo cáo chuyên nghiệp, rõ ràng, súc tích.',
-      'Sử dụng ngôn ngữ cơ thể tự tin trong các cuộc họp và thuyết trình.',
-      'Cung cấp và tiếp nhận phản hồi một cách xây dựng.',
+      'Soạn thảo email mới dựa trên các yêu cầu ngắn gọn.',
+      'Tối ưu hóa và làm chuyên nghiệp hơn các email đã viết.',
+      'Tóm tắt các chuỗi email dài và phức tạp.',
+      'Tạo các mẫu email có thể tái sử dụng cho các tình huống phổ biến.',
+    ],
+    prerequisites: ['Tài khoản ChatGPT (miễn phí hoặc trả phí).', 'Kiến thức cơ bản về cách sử dụng email.'],
+    tools: ['ChatGPT', 'Gmail', 'Microsoft Outlook'],
+    exercises: [
+      {
+        title: 'Thực hành Soạn thảo Email',
+        description:
+          'Sử dụng các prompt (câu lệnh) khác nhau để yêu cầu ChatGPT tạo ra các loại email công việc phổ biến.',
+        difficulty: 'Cơ bản',
+        procedure: [
+          'Prompt 1: "Viết một email chuyên nghiệp cho khách hàng X thông báo về việc dự án sẽ bị trễ 2 ngày và đề xuất giải pháp."',
+          'Prompt 2: "Tạo một email thân thiện để mời các thành viên trong nhóm tham gia một buổi họp brainstorming vào thứ Sáu tuần này."',
+          'Prompt 3: "Tóm tắt chuỗi email sau đây thành 3 gạch đầu dòng chính và nêu ra các hành động cần thực hiện."',
+        ],
+        expectedResults:
+          'Các email được tạo ra có văn phong phù hợp, đầy đủ thông tin và không có lỗi chính tả, ngữ pháp.',
+      },
     ],
     realWorldApplications: [
-      'Thuyết trình dự án thành công trước ban lãnh đạo.',
-      'Giải quyết mâu thuẫn với đồng nghiệp một cách êm đẹp.',
-      'Xây dựng mạng lưới quan hệ nghề nghiệp vững chắc.',
+      'Một nhân viên kinh doanh sử dụng ChatGPT để nhanh chóng trả lời các yêu cầu của khách hàng.',
+      'Một trưởng nhóm dự án dùng ChatGPT để tóm tắt các cuộc thảo luận dài và gửi báo cáo cho cấp trên.',
+      'Một nhân viên nhân sự tạo các mẫu email để gửi cho ứng viên ở các vòng phỏng vấn.',
     ],
     faqs: [
-        { question: 'Lắng nghe chủ động là gì?', answer: 'Là hoàn toàn tập trung vào người nói, thấu hiểu thông điệp của họ, tiếp thu thông tin và phản hồi một cách chu đáo. Nó không chỉ là im lặng mà còn bao gồm việc đặt câu hỏi làm rõ và diễn giải lại để xác nhận.' },
-        { question: 'Làm thế nào để viết email chuyên nghiệp?', answer: 'Bắt đầu với dòng tiêu đề rõ ràng, sử dụng lời chào hỏi phù hợp, đi thẳng vào vấn đề, trình bày mạch lạc, kiểm tra lỗi chính tả và ngữ pháp trước khi gửi, và kết thúc bằng chữ ký chuyên nghiệp.' },
-        { question: 'Ngôn ngữ cơ thể quan trọng như thế nào trong giao tiếp?', answer: 'Rất quan trọng. Giao tiếp phi ngôn ngữ chiếm một phần lớn trong việc truyền tải thông điệp. Dáng đứng thẳng, giao tiếp bằng mắt và cử chỉ tay tự tin có thể làm tăng sự tin cậy và sức thuyết phục của bạn.' },
-        { question: 'Làm sao để đưa ra phản hồi mang tính xây dựng?', answer: 'Sử dụng phương pháp "Bánh mì kẹp": Bắt đầu bằng một lời khen ngợi, sau đó nêu rõ vấn đề cần cải thiện một cách cụ thể và kết thúc bằng một lời động viên hoặc gợi ý giải pháp.' },
-        { question: 'Kỹ năng thuyết trình có cần thiết cho mọi vị trí không?', answer: 'Có, ở một mức độ nào đó. Dù bạn không thường xuyên thuyết trình trước đám đông, khả năng trình bày ý tưởng một cách rõ ràng và thuyết phục trong các cuộc họp nhóm nhỏ cũng là một kỹ năng cực kỳ giá trị.' },
-        { question: 'Làm thế nào để vượt qua nỗi sợ nói trước đám đông?', answer: 'Chuẩn bị kỹ lưỡng nội dung, luyện tập nhiều lần, hít thở sâu trước khi bắt đầu, tập trung vào việc truyền tải giá trị cho khán giả thay vì lo lắng về bản thân, và hãy nhớ rằng một chút lo lắng là hoàn toàn bình thường.' },
-        { question: 'Sự khác biệt giữa giao tiếp đồng bộ và bất đồng bộ là gì?', answer: 'Giao tiếp đồng bộ diễn ra trong thời gian thực (cuộc họp, gọi điện). Giao tiếp bất đồng bộ có độ trễ (email, tin nhắn). Hiểu khi nào nên sử dụng hình thức nào sẽ giúp tối ưu hóa hiệu quả công việc.' },
-        { question: 'Làm thế nào để giao tiếp hiệu quả khi làm việc từ xa?', answer: 'Tăng cường giao tiếp bằng văn bản một cách rõ ràng, chủ động cập nhật tiến độ công việc, tận dụng các cuộc gọi video cho các vấn đề phức tạp và thể hiện sự hiện diện của bạn một cách tích cực trên các kênh chung.' },
-        { question: 'Kỹ năng đàm phán có phải là một phần của giao tiếp không?', answer: 'Chắc chắn rồi. Đàm phán là một hình thức giao tiếp nâng cao nhằm đạt được một thỏa thuận. Nó đòi hỏi sự lắng nghe, khả năng trình bày lập luận và sự thấu cảm để tìm ra giải pháp đôi bên cùng có lợi.' },
-        { question: 'Làm sao để xây dựng mối quan hệ tốt với đồng nghiệp?', answer: 'Hãy thể hiện sự quan tâm chân thành, sẵn sàng giúp đỡ, tôn trọng ý kiến của họ, giao tiếp cởi mở và giữ thái độ tích cực. Những cuộc trò chuyện nhỏ ngoài công việc cũng giúp thắt chặt mối quan hệ.' }
-    ]
+      {
+        question: 'Làm thế nào để prompt ChatGPT viết email hiệu quả?',
+        answer:
+          "Hãy cung cấp ngữ cảnh rõ ràng. Bắt đầu bằng vai trò của bạn (ví dụ: 'Hãy đóng vai một trưởng phòng marketing'), sau đó nêu rõ mục tiêu của email, người nhận là ai, và văn phong mong muốn (trang trọng, thân thiện, thuyết phục...). Cung cấp các thông tin chính cần có trong email.",
+      },
+      {
+        question: 'ChatGPT có thể giúp tôi trả lời email nhanh hơn không?',
+        answer:
+          "Chắc chắn. Bạn có thể dán nội dung email nhận được vào ChatGPT và yêu cầu nó 'soạn một email trả lời cho email này, đồng ý với đề xuất A và hỏi thêm về chi tiết B'. Điều này giúp bạn tiết kiệm rất nhiều thời gian soạn thảo.",
+      },
+      {
+        question: 'Làm thế nào để ChatGPT học được phong cách viết của tôi?',
+        answer:
+          "Bạn có thể 'đào tạo' ChatGPT bằng cách cung cấp cho nó một vài ví dụ về các email bạn đã viết trước đây và yêu cầu: 'Đây là phong cách viết của tôi. Hãy viết một email mới về chủ đề X theo phong cách này'.",
+      },
+      {
+        question: 'Sử dụng ChatGPT để viết email có an toàn về mặt bảo mật không?',
+        answer:
+          'Hãy cẩn thận. Không bao giờ dán các thông tin nhạy cảm, bí mật của công ty hoặc thông tin cá nhân của khách hàng vào ChatGPT phiên bản miễn phí. Các phiên bản trả phí dành cho doanh nghiệp thường có các chính sách bảo mật tốt hơn. Luôn kiểm tra quy định của công ty bạn.',
+      },
+      {
+        question: 'ChatGPT có thể dịch email sang ngôn ngữ khác không?',
+        answer:
+          "Có, và nó làm rất tốt. Bạn có thể yêu cầu 'dịch email này sang tiếng Anh với văn phong kinh doanh trang trọng'. Đây là một công cụ cực kỳ hữu ích khi làm việc với các đối tác quốc tế.",
+      },
+      {
+        question: 'Làm thế nào để tóm tắt một chuỗi email dài?',
+        answer:
+          "Sao chép và dán toàn bộ chuỗi email vào ChatGPT và sử dụng prompt như: 'Tóm tắt chuỗi email này thành các điểm chính' hoặc 'Ai chịu trách nhiệm cho việc gì sau cuộc thảo luận này?'. ",
+      },
+      {
+        question: 'ChatGPT có thể giúp tôi kiểm tra lỗi ngữ pháp và chính tả không?',
+        answer:
+          "Có, đây là một trong những thế mạnh của nó. Chỉ cần dán nội dung email của bạn và yêu cầu 'kiểm tra và sửa các lỗi ngữ pháp, chính tả trong văn bản này'.",
+      },
+      {
+        question: 'Tôi có thể tạo các mẫu email (template) với ChatGPT không?',
+        answer:
+          "Hoàn toàn có thể. Hãy yêu cầu 'tạo một mẫu email để từ chối một lời mời hợp tác một cách lịch sự' hoặc 'tạo một mẫu email để chào mừng một nhân viên mới'. Lưu các mẫu này lại để sử dụng trong tương lai.",
+      },
+      {
+        question: 'Làm thế nào để email do ChatGPT viết nghe tự nhiên hơn?',
+        answer:
+          "Sau khi ChatGPT tạo ra email, hãy yêu cầu nó 'viết lại email này với giọng văn thân thiện và gần gũi hơn' hoặc 'thêm một chút hài hước vào email này'. Luôn đọc lại và chỉnh sửa một vài từ để thêm dấu ấn cá nhân của bạn.",
+      },
+      {
+        question: 'ChatGPT có thể giúp tôi lên lịch cuộc họp qua email không?',
+        answer:
+          "Có. Bạn có thể yêu cầu: 'Viết một email để đề xuất một cuộc họp vào thứ Ba hoặc thứ Tư tuần tới. Đề nghị người nhận chọn thời gian phù hợp với họ và cung cấp một liên kết Calendly để đặt lịch'. ",
+      },
+    ],
   },
   {
-    id: 'time-management',
-    title: 'Nghệ Thuật Quản Lý Thời Gian',
-    description: 'Học các phương pháp và công cụ hiệu quả để ưu tiên công việc, tránh trì hoãn và tối đa hóa năng suất làm việc trong một ngày.',
+    id: 'excel-automation-ai',
+    title: 'Tự động hóa Excel với AI và VBA',
+    description:
+      'Học cách kết hợp sức mạnh của AI và VBA để tự động hóa các tác vụ lặp đi lặp lại trong Excel, từ việc làm sạch dữ liệu đến tạo báo cáo.',
     duration: '90 phút',
     difficulty: 'Trung bình',
     objectives: [
-      'Áp dụng Ma trận Eisenhower để phân loại và ưu tiên công việc.',
-      'Sử dụng kỹ thuật Pomodoro để duy trì sự tập trung cao độ.',
-      'Học cách nói "không" với những yêu cầu không quan trọng.',
-      'Xây dựng một lịch trình làm việc hàng tuần thực tế và hiệu quả.',
+      'Sử dụng AI để tạo các công thức Excel phức tạp.',
+      'Yêu cầu AI viết các đoạn mã VBA để tự động hóa các quy trình.',
+      'Làm sạch và chuẩn hóa dữ liệu hàng loạt bằng công cụ AI.',
+      'Tạo các biểu đồ và báo cáo tự động.',
+    ],
+    prerequisites: ['Kiến thức cơ bản về Microsoft Excel.', 'Hiểu biết sơ bộ về lập trình là một lợi thế.'],
+    tools: ['Microsoft Excel', 'ChatGPT', 'Copilot for Microsoft 365'],
+    exercises: [
+      {
+        title: 'Tạo mã VBA bằng AI',
+        description:
+          'Yêu cầu ChatGPT viết một đoạn mã VBA để tự động tô màu các ô trong một cột nếu giá trị của chúng lớn hơn một ngưỡng nhất định.',
+        difficulty: 'Trung bình',
+        procedure: [
+          'Mở Excel và nhấn Alt + F11 để mở trình soạn thảo VBA.',
+          'Prompt ChatGPT: "Viết một đoạn mã VBA để lặp qua tất cả các ô trong cột A, nếu giá trị của ô lớn hơn 100, hãy tô màu nền của ô đó thành màu vàng."',
+          'Sao chép mã VBA được tạo ra và dán vào một module mới trong trình soạn thảo VBA.',
+          'Chạy macro để xem kết quả.',
+        ],
+        expectedResults: 'Tất cả các ô trong cột A có giá trị lớn hơn 100 sẽ tự động được tô màu vàng.',
+      },
     ],
     realWorldApplications: [
-      'Hoàn thành dự án đúng hạn mà không cần làm thêm giờ.',
-      'Giảm căng thẳng và cảm giác quá tải trong công việc.',
-      'Cân bằng giữa công việc và cuộc sống cá nhân.',
+      'Một kế toán viên tự động hóa việc tạo báo cáo tài chính hàng tháng.',
+      'Một nhà phân tích dữ liệu sử dụng AI để làm sạch một bộ dữ liệu lớn trước khi phân tích.',
+      'Một nhân viên bán hàng tạo một macro để tự động gửi email báo cáo từ dữ liệu Excel.',
     ],
     faqs: [
-        { question: 'Ma trận Eisenhower là gì?', answer: 'Là một công cụ giúp bạn phân loại công việc thành 4 nhóm dựa trên hai tiêu chí: Khẩn cấp và Quan trọng. Cụ thể: 1. Quan trọng & Khẩn cấp (Làm ngay), 2. Quan trọng & Không khẩn cấp (Lên lịch), 3. Không quan trọng & Khẩn cấp (Ủy thác), 4. Không quan trọng & Không khẩn cấp (Loại bỏ).' },
-        { question: 'Kỹ thuật Pomodoro hoạt động như thế nào?', answer: 'Bạn làm việc tập trung cao độ trong một khoảng thời gian (thường là 25 phút), sau đó nghỉ ngắn 5 phút. Sau 4 phiên như vậy, bạn sẽ có một kỳ nghỉ dài hơn (15-30 phút). Phương pháp này giúp duy trì năng lượng và chống lại sự mệt mỏi tinh thần.' },
-        { question: 'Làm thế nào để đối phó với sự trì hoãn?', answer: 'Hãy thử chia nhỏ công việc lớn thành các nhiệm vụ nhỏ, dễ quản lý hơn. Bắt đầu với nhiệm vụ dễ nhất để tạo đà. Đặt ra thời hạn cho bản thân và tự thưởng khi hoàn thành. Quan trọng là xác định lý do bạn trì hoãn và giải quyết nó.' },
-        { question: 'Tại sao việc nói "không" lại quan trọng?', answer: 'Nói "không" với những việc không phù hợp với mục tiêu hoặc ưu tiên của bạn sẽ giúp bạn bảo vệ thời gian và năng lượng cho những gì thực sự quan trọng. Đó là một kỹ năng cần thiết để tránh bị quá tải.' },
-        { question: 'Batching (làm việc theo lô) là gì?', answer: 'Là nhóm các công việc tương tự lại với nhau và thực hiện chúng trong một lần. Ví dụ, dành ra một khoảng thời gian cố định trong ngày để trả lời tất cả email thay vì trả lời lắt nhắt mỗi khi có email mới. Việc này giúp giảm thời gian chuyển đổi ngữ cảnh và tăng hiệu quả.' },
-        { question: 'Quy tắc 2 phút là gì?', answer: 'Nếu một công việc chỉ mất chưa đầy 2 phút để hoàn thành, hãy làm nó ngay lập tức thay vì trì hoãn. Điều này giúp giải quyết nhanh chóng các việc nhỏ và tránh chúng tích tụ lại.' },
-        { question: 'Làm thế nào để lập kế hoạch cho một ngày làm việc hiệu quả?', answer: 'Vào cuối ngày hôm trước hoặc đầu ngày hôm sau, hãy dành 10-15 phút để xác định 3 nhiệm vụ quan trọng nhất bạn cần hoàn thành. Lên lịch cho chúng vào những khoảng thời gian bạn có năng lượng cao nhất.' },
-        { question: 'Sự khác biệt giữa bận rộn và hiệu quả là gì?', answer: 'Bận rộn là làm rất nhiều việc, nhưng không nhất thiết là những việc quan trọng. Hiệu quả là tập trung làm những việc đúng đắn, những việc mang lại kết quả lớn nhất và đưa bạn đến gần hơn với mục tiêu của mình.' },
-        { question: 'Có nên làm nhiều việc cùng lúc (multitasking) không?', answer: 'Hầu hết các nghiên cứu cho thấy multitasking làm giảm năng suất và tăng khả năng mắc lỗi. Thay vào đó, hãy tập trung hoàn thành một việc tại một thời điểm (single-tasking) để có kết quả tốt hơn.' },
-        { question: 'Làm sao để duy trì sự cân bằng giữa công việc và cuộc sống?', answer: 'Đặt ra ranh giới rõ ràng. Xác định giờ kết thúc công việc và tuân thủ nó. Dành thời gian cho sở thích, gia đình và bạn bè. Học cách ngắt kết nối hoàn toàn khỏi công việc khi bạn không làm việc.' }
-    ]
+      {
+        question: 'Tôi không biết gì về VBA, AI có thể giúp tôi không?',
+        answer:
+          "Chắc chắn. Đây chính là thế mạnh của AI. Bạn chỉ cần mô tả yêu cầu của mình bằng ngôn ngữ tự nhiên, ví dụ: 'Viết cho tôi một macro Excel để sao chép dữ liệu từ sheet1 sang sheet2', và AI sẽ tạo ra mã VBA cho bạn.",
+      },
+      {
+        question: 'Làm thế nào để yêu cầu AI viết một công thức Excel phức tạp?',
+        answer:
+          "Hãy mô tả rõ ràng cấu trúc bảng tính của bạn và kết quả bạn muốn. Ví dụ: 'Trong sheet của tôi, cột A là tên sản phẩm, cột B là số lượng, cột C là đơn giá. Hãy viết một công thức ở ô D2 để tính tổng thành tiền, nhưng chỉ tính cho các sản phẩm có tên là 'Sách' và số lượng lớn hơn 10'.",
+      },
+      {
+        question: 'AI có thể giúp tôi làm sạch dữ liệu không?',
+        answer:
+          "Rất tốt. Bạn có thể yêu cầu AI viết công thức để chuẩn hóa dữ liệu, ví dụ: 'Viết công thức để xóa các khoảng trắng thừa và viết hoa chữ cái đầu của mỗi từ trong ô A1'. Đối với các tác vụ phức tạp hơn, bạn có thể yêu cầu nó viết mã VBA để xử lý hàng loạt.",
+      },
+      {
+        question: 'Copilot for Microsoft 365 khác gì so với ChatGPT?',
+        answer:
+          'Copilot được tích hợp sâu vào các ứng dụng Microsoft 365 (như Excel, Word). Nó có thể truy cập và hành động trực tiếp trên dữ liệu của bạn trong các ứng dụng đó. ChatGPT là một công cụ độc lập, bạn phải sao chép và dán dữ liệu qua lại. Copilot mạnh hơn nhưng là một dịch vụ trả phí.',
+      },
+      {
+        question: 'Làm thế nào để chạy một macro VBA trong Excel?',
+        answer:
+          "Sau khi dán mã vào trình soạn thảo VBA (Alt + F11), bạn có thể quay lại Excel, vào tab 'Developer', nhấn 'Macros', chọn macro bạn muốn chạy và nhấn 'Run'. Nếu không thấy tab 'Developer', bạn cần bật nó trong Excel Options.",
+      },
+      {
+        question: 'AI có thể giúp tôi tạo biểu đồ không?',
+        answer:
+          "Có. Bạn có thể mô tả loại biểu đồ bạn muốn và dữ liệu bạn muốn sử dụng. Ví dụ: 'Dựa trên dữ liệu từ A1 đến B10, hãy viết mã VBA để tạo một biểu đồ cột so sánh doanh thu theo tháng'.",
+      },
+      {
+        question: 'Sử dụng AI để tự động hóa Excel có rủi ro gì không?',
+        answer:
+          'Có. Mã do AI tạo ra có thể không phải lúc nào cũng hoàn hảo. Luôn thử nghiệm mã trên một bản sao của tệp dữ liệu của bạn trước khi chạy trên dữ liệu gốc. Hãy hiểu (hoặc nhờ AI giải thích) mã đó làm gì trước khi chạy nó.',
+      },
+      {
+        question: 'Tôi có thể kết nối Excel với các API bên ngoài bằng AI không?',
+        answer:
+          'Có, đây là một ứng dụng nâng cao rất mạnh mẽ. Bạn có thể yêu cầu AI viết mã VBA để lấy dữ liệu từ một API web (ví dụ: tỷ giá hối đoái, giá cổ phiếu) và cập nhật tự động vào bảng tính Excel của bạn.',
+      },
+      {
+        question: 'Làm thế nào để gỡ lỗi (debug) một đoạn mã VBA do AI tạo ra?',
+        answer:
+          "Nếu mã bị lỗi, bạn có thể dán lại toàn bộ mã và thông báo lỗi vào AI và yêu cầu nó 'tìm và sửa lỗi trong đoạn mã này'. AI thường có thể xác định vấn đề và đề xuất cách khắc phục.",
+      },
+      {
+        question: 'AI có thể giúp tôi phân tích dữ liệu trong Excel không?',
+        answer:
+          "Có. Bạn có thể mô tả bộ dữ liệu của mình và hỏi các câu hỏi như 'Xu hướng chính trong dữ liệu này là gì?' hoặc 'Sản phẩm nào có doanh thu cao nhất trong quý 3?'. AI có thể đề xuất các công thức, PivotTable hoặc thậm chí là các phân tích thống kê để trả lời câu hỏi của bạn.",
+      },
+    ],
+  },
+  {
+    id: 'ai-presentation-creation',
+    title: 'Tạo Bài Thuyết trình Ấn tượng với AI',
+    description:
+      'Khám phá các công cụ AI giúp bạn nhanh chóng tạo ra các bài thuyết trình chuyên nghiệp, từ việc xây dựng dàn ý đến thiết kế slide.',
+    duration: '45 phút',
+    difficulty: 'Cơ bản',
+    objectives: [
+      'Sử dụng AI để tạo dàn ý và nội dung cho bài thuyết trình từ một chủ đề.',
+      'Khám phá các công cụ AI tự động thiết kế slide (như Gamma, Beautiful.ai).',
+      'Tạo hình ảnh minh họa độc đáo cho slide bằng AI tạo ảnh.',
+      'Sử dụng AI để tóm tắt văn bản dài thành các gạch đầu dòng cho slide.',
+    ],
+    prerequisites: ['Kiến thức cơ bản về cách tạo bài thuyết trình (PowerPoint, Google Slides).'],
+    tools: ['Gamma.app', 'Beautiful.ai', 'ChatGPT', 'Midjourney'],
+    exercises: [
+      {
+        title: 'Tạo bài thuyết trình trong 1 phút',
+        description: 'Sử dụng Gamma.app để tạo một bài thuyết trình hoàn chỉnh từ một câu lệnh duy nhất.',
+        difficulty: 'Cơ bản',
+        procedure: [
+          'Truy cập Gamma.app và đăng ký một tài khoản.',
+          'Chọn "Tạo mới với AI" (Generate new with AI).',
+          'Nhập một câu lệnh, ví dụ: "Một bài thuyết trình về tương lai của trí tuệ nhân tạo trong giáo dục".',
+          'Xem AI tự động tạo ra dàn ý, nội dung và thiết kế cho toàn bộ bài thuyết trình.',
+          'Chỉnh sửa và tùy biến lại các slide theo ý muốn.',
+        ],
+        expectedResults:
+          'Một bài thuyết trình khoảng 8-10 slide, có cấu trúc logic, nội dung phù hợp và thiết kế đẹp mắt.',
+      },
+    ],
+    realWorldApplications: [
+      'Một sinh viên nhanh chóng tạo bài thuyết trình cho bài tập lớn.',
+      'Một nhà quản lý tạo slide để báo cáo tiến độ dự án trong cuộc họp.',
+      'Một người bán hàng tạo một bài thuyết trình sản phẩm ấn tượng để gửi cho khách hàng.',
+    ],
+    faqs: [
+      {
+        question: 'Các công cụ AI tạo bài thuyết trình hoạt động như thế nào?',
+        answer:
+          'Bạn chỉ cần cung cấp cho chúng một chủ đề hoặc một dàn ý. AI sẽ tự động nghiên cứu chủ đề đó, viết nội dung cho từng slide, tìm hoặc tạo hình ảnh minh họa, và sắp xếp tất cả vào một thiết kế chuyên nghiệp. Bạn có thể chỉnh sửa mọi thứ sau đó.',
+      },
+      {
+        question: 'Công cụ AI nào là tốt nhất để tạo bài thuyết trình?',
+        answer:
+          'Có nhiều công cụ tốt, mỗi công cụ có một thế mạnh. Gamma.app rất mạnh về việc tạo nội dung và thiết kế linh hoạt. Beautiful.ai tập trung vào việc tạo ra các slide có thiết kế cực kỳ đẹp và nhất quán. Tome.app mạnh về kể chuyện và tích hợp nội dung đa phương tiện.',
+      },
+      {
+        question: 'AI có thể giúp tôi thiết kế slide đẹp hơn không?',
+        answer:
+          'Chắc chắn. Đây là một trong những lợi ích lớn nhất. Các công cụ AI được lập trình với các nguyên tắc thiết kế tốt, giúp bạn tránh các lỗi phổ biến như quá nhiều chữ, màu sắc lộn xộn, hoặc bố cục không cân đối. Slide của bạn sẽ trông chuyên nghiệp hơn rất nhiều.',
+      },
+      {
+        question: 'Làm thế nào để tạo hình ảnh minh họa độc đáo cho slide?',
+        answer:
+          "Bạn có thể sử dụng các công cụ tạo ảnh bằng AI như Midjourney hoặc DALL-E. Hãy đưa ra các câu lệnh mô tả hình ảnh bạn muốn, ví dụ: 'Một robot đang giảng bài cho các học sinh trong một lớp học tương lai, phong cách hoạt hình 3D'. Bạn sẽ có một hình ảnh độc đáo mà không ai khác có.",
+      },
+      {
+        question: 'Tôi có một tài liệu Word dài, AI có thể biến nó thành bài thuyết trình không?',
+        answer:
+          "Có. Hầu hết các công cụ AI tạo bài thuyết trình đều cho phép bạn dán một đoạn văn bản dài vào và yêu cầu nó 'tạo một bài thuyết trình dựa trên văn bản này'. Nó sẽ tự động tóm tắt và chia nội dung vào các slide phù hợp.",
+      },
+      {
+        question: 'Sử dụng AI có làm bài thuyết trình của tôi bị rập khuôn không?',
+        answer:
+          'Có thể nếu bạn không chỉnh sửa. Hãy coi AI là một người trợ lý giúp bạn làm 80% công việc. 20% còn lại là của bạn: hãy thêm vào các ví dụ cá nhân, câu chuyện của riêng bạn, và điều chỉnh thiết kế để phù hợp với thương hiệu hoặc phong cách của bạn. Đừng bao giờ trình bày một bài thuyết trình do AI tạo ra mà không xem lại và tùy chỉnh.',
+      },
+      {
+        question: 'AI có thể giúp tôi luyện tập thuyết trình không?',
+        answer:
+          "Có. Một số công cụ như Copilot for Microsoft 365 trong PowerPoint có tính năng 'Rehearse with Coach'. Nó sẽ lắng nghe bạn thuyết trình và đưa ra phản hồi về tốc độ nói, từ đệm ('ừm', 'à'), và các khía cạnh khác.",
+      },
+      {
+        question: 'Chi phí cho các công cụ AI tạo bài thuyết trình này là bao nhiêu?',
+        answer:
+          'Hầu hết các công cụ đều có gói miễn phí cho phép bạn tạo một số lượng bài thuyết trình nhất định. Để có các tính năng nâng cao và không giới hạn, bạn sẽ cần nâng cấp lên gói trả phí, thường có giá từ 8-20 USD mỗi tháng.',
+      },
+      {
+        question: 'AI có thể giúp tôi tìm số liệu và trích dẫn cho bài thuyết trình không?',
+        answer:
+          "Có, nhưng hãy cẩn thận. Bạn có thể hỏi ChatGPT 'tìm cho tôi một vài số liệu thống kê về sự phát triển của thương mại điện tử ở Việt Nam'. Tuy nhiên, bạn PHẢI yêu cầu nó cung cấp nguồn (source) của các số liệu đó và tự mình kiểm tra lại tính chính xác trước khi đưa vào bài thuyết trình.",
+      },
+      {
+        question: 'Làm thế nào để tích hợp video hoặc các nội dung tương tác khác vào bài thuyết trình do AI tạo ra?',
+        answer:
+          'Hầu hết các nền tảng AI hiện đại đều cho phép bạn dễ dàng nhúng các nội dung từ bên ngoài như video YouTube, mô hình 3D từ Sketchfab, hoặc các trang web tương tác khác trực tiếp vào slide của bạn, làm cho bài thuyết trình trở nên sinh động hơn nhiều.',
+      },
+    ],
   },
 ];
-
-export const officeWorkModule: ModuleData = {
-  id: 'office-work',
-  title: 'Kỹ Năng Văn Phòng Thiết Yếu',
-  description: 'Trang bị những kỹ năng mềm quan trọng nhất để thành công trong môi trường công sở hiện đại, từ giao tiếp hiệu quả đến quản lý thời gian bậc thầy.',
-  category: 'Kỹ năng chuyên nghiệp',
-  image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=600&fit=crop',
-  color: 'from-sky-500 to-indigo-500',
-  level: 'Cơ bản',
-  duration: '3 giờ',
-  lessons: officeWorkLessons,
-  features: [
-    'Kỹ thuật giao tiếp thuyết phục',
-    'Phương pháp quản lý thời gian hiệu quả',
-    'Bài tập tình huống thực tế',
-    'Mẹo áp dụng ngay vào công việc',
-  ],
-  prerequisites: ['Không yêu cầu kinh nghiệm trước'],
-  objectives: [
-    'Tự tin giao tiếp và trình bày ý tưởng trong mọi tình huống.',
-    'Tối ưu hóa năng suất làm việc và giảm căng thẳng.',
-    'Xây dựng mối quan hệ đồng nghiệp tích cực và chuyên nghiệp.',
-    'Phát triển nền tảng kỹ năng mềm vững chắc cho sự nghiệp.',
-  ],
-  careerOutcomes: [
-    'Cải thiện hiệu suất làm việc ở mọi vị trí.',
-    'Tăng cơ hội thăng tiến và phát triển sự nghiệp.',
-    'Xây dựng hình ảnh cá nhân chuyên nghiệp và đáng tin cậy.',
-  ],
-  tags: ['kỹ năng mềm', 'giao tiếp', 'quản lý thời gian', 'năng suất'],
-};

@@ -1,132 +1,197 @@
-import { K2Module } from '@/data/k2-modules';
-import { ModuleData } from '@/types';
-import type { BaseLessonData } from '@/types/lesson-base';
+import { BaseLessonData } from '@/types/lesson-base';
 
-export const businessMarketingLessons: BaseLessonData[] = [
+export interface BusinessMarketingLesson extends BaseLessonData {
+  keyConcept?: string;
+  seoFocus?: string;
+  contentStrategy?: string;
+  targetAudienceProfile?: string;
+  campaignExample?: string;
+  metrics?: string;
+  strategies: string[];
+  platforms: string[];
+}
+
+export const businessMarketingLessons: BusinessMarketingLesson[] = [
   {
-    id: 'ai-powered-seo-business',
-    title: 'SEO được hỗ trợ bởi AI cho doanh nghiệp',
+    id: 'marketing-automation',
+    title: 'Tự động hóa Marketing',
     description:
-      'Khai thác sức mạnh của AI để cách mạng hóa chiến lược SEO của bạn, từ nghiên cứu từ khóa đến tạo nội dung và phân tích hiệu suất.',
-    videoUrl: 'https://www.youtube.com/watch?v=example',
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+      'Học cách sử dụng các công cụ tự động hóa để nuôi dưỡng khách hàng tiềm năng, cá nhân hóa trải nghiệm và tiết kiệm thời gian.',
+    duration: '75 phút',
     difficulty: 'Trung bình',
-    duration: '60 phút',
+    videoUrl: 'https://www.youtube.com/watch?v=n-4-1s_1-2M',
+    imageUrl: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=400&h=400&fit=crop',
     objectives: [
-      'Hiểu cách AI đang thay đổi bối cảnh SEO.',
-      'Sử dụng các công cụ AI để nghiên cứu và phân cụm từ khóa nâng cao.',
-      'Tự động hóa việc tạo nội dung được tối ưu hóa cho SEO.',
-      'Triển khai phân tích do AI điều khiển để theo dõi và cải thiện hiệu suất.',
-      'Khám phá các chiến lược SEO dự đoán cho lợi thế cạnh tranh.',
+      'Thiết lập các chuỗi email tự động (email sequences).',
+      'Phân loại và chấm điểm khách hàng tiềm năng (lead scoring).',
+      'Cá nhân hóa nội dung marketing dựa trên hành vi người dùng.',
+      'Tích hợp các công cụ marketing khác nhau thành một hệ thống.',
     ],
-    prerequisites: ['Kiến thức cơ bản về SEO', 'Hiểu biết về các khái niệm marketing'],
+    prerequisites: ['Kiến thức cơ bản về digital marketing.', 'Có website hoặc sản phẩm để thực hành.'],
+    keyConcept: 'Tự động hóa các tác vụ marketing lặp đi lặp lại để nuôi dưỡng khách hàng và tăng hiệu quả.',
+    strategies: ['Email Marketing', 'Lead Nurturing', 'Personalization'],
+    platforms: ['HubSpot', 'Mailchimp', 'ActiveCampaign'],
+    exercises: [
+      {
+        title: 'Tạo một chuỗi email chào mừng',
+        description: 'Thiết kế và thiết lập một chuỗi 3 email tự động gửi cho người dùng mới đăng ký.',
+        difficulty: 'Cơ bản',
+        procedure: [
+          'Trong Mailchimp hoặc HubSpot, tạo một automation mới.',
+          'Thiết lập trigger là "khi có người dùng mới đăng ký vào danh sách".',
+          'Soạn thảo email 1: Chào mừng và giới thiệu giá trị cốt lõi.',
+          'Thiết lập chờ 2 ngày, soạn thảo email 2: Chia sẻ một case study hoặc mẹo hữu ích.',
+          'Thiết lập chờ 3 ngày, soạn thảo email 3: Giới thiệu sản phẩm/dịch vụ và kêu gọi hành động.',
+        ],
+        expectedResults: 'Một chuỗi email tự động có khả năng nuôi dưỡng khách hàng tiềm năng mới một cách hiệu quả.',
+      },
+    ],
     realWorldApplications: [
-      'Tối ưu hóa trang web của một công ty khởi nghiệp công nghệ để có khả năng hiển thị tối đa.',
-      'Phát triển chiến lược nội dung dựa trên AI cho một blog thương mại điện tử.',
-      'Tự động hóa việc theo dõi hiệu suất SEO cho một đại lý tiếp thị kỹ thuật số.',
-      'Xác định các cơ hội từ khóa chưa được khai thác trong một thị trường cạnh tranh.',
-      'Dự báo các xu hướng SEO để luôn đi trước đối thủ.',
+      'Một công ty SaaS tự động gửi email hướng dẫn cho người dùng mới, giảm tỷ lệ rời bỏ.',
+      'Một trang thương mại điện tử gửi email nhắc nhở về giỏ hàng bị bỏ quên, tăng doanh thu.',
+      'Một blogger tự động gửi các bài viết mới nhất cho những người đăng ký theo dõi.',
     ],
-    vietnamContext: {
-      title: 'Bối cảnh SEO tại Việt Nam',
-      content: [
-        'Thị trường Việt Nam có tính cạnh tranh cao, đòi hỏi các chiến lược SEO tinh vi. AI có thể giúp các doanh nghiệp vượt qua đối thủ bằng cách xác định các thị trường ngách và tối ưu hóa cho các truy vấn tìm kiếm địa phương.',
-        'Việc sử dụng AI trong SEO vẫn còn mới ở Việt Nam, mang lại cơ hội cho những người áp dụng sớm để có được lợi thế đáng kể. Các công cụ AI có thể giúp phân tích hành vi của người tiêu dùng Việt Nam và điều chỉnh nội dung cho phù hợp.',
-      ],
-    },
-    careerConnect: {
-      name: 'Phạm Nhật Vượng',
-      title: 'Chuyên gia SEO tại Vingroup',
-      company: 'Vingroup',
-      imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop',
-      quote:
-        'Là một chuyên gia SEO tại một trong những tập đoàn lớn nhất Việt Nam, tôi đã chứng kiến AI biến đổi cách chúng tôi tiếp cận tối ưu hóa công cụ tìm kiếm. Việc áp dụng các công cụ AI đã cho phép chúng tôi tự động hóa các tác vụ lặp đi lặp lại, thu được những hiểu biết sâu sắc hơn về đối thủ cạnh tranh và tạo ra các chiến lược nội dung hiệu quả hơn. Bài học này cung cấp một nền tảng vững chắc để tận dụng AI trong các nỗ lực SEO của bạn.',
-    },
     faqs: [
       {
-        question: 'AI có thể thay thế hoàn toàn các chuyên gia SEO không?',
+        question: 'Marketing Automation là gì?',
         answer:
-          'Không, AI là một công cụ mạnh mẽ giúp tăng cường khả năng của các chuyên gia SEO, không phải là sự thay thế. AI xuất sắc trong việc phân tích dữ liệu và tự động hóa, nhưng tư duy chiến lược, sự sáng tạo và sự hiểu biết của con người vẫn rất quan trọng để thành công trong SEO.',
+          'Marketing Automation là việc sử dụng phần mềm để tự động hóa các hoạt động marketing. Nhiều bộ phận marketing phải tự động hóa các nhiệm vụ lặp đi lặp lại như email marketing, đăng bài trên mạng xã hội và thậm chí cả các chiến dịch quảng cáo.',
       },
       {
-        question: 'Các công cụ AI tốt nhất cho SEO là gì?',
+        question: 'Tại sao Marketing Automation lại quan trọng?',
         answer:
-          'Một số công cụ AI hàng đầu cho SEO bao gồm SurferSEO để tối ưu hóa nội dung, MarketMuse để lập kế hoạch nội dung và Ahrefs hoặc SEMrush, những công cụ này đang ngày càng tích hợp nhiều tính năng AI hơn để phân tích đối thủ cạnh tranh và nghiên cứu từ khóa.',
+          'Nó giúp tiết kiệm thời gian, tăng hiệu quả và cho phép bạn cung cấp trải nghiệm cá nhân hóa hơn cho khách hàng. Bằng cách tự động hóa các nhiệm vụ lặp đi lặp lại, đội ngũ của bạn có thể tập trung vào chiến lược và sáng tạo.',
       },
       {
-        question: 'AI giúp nghiên cứu từ khóa như thế nào?',
+        question: 'Lead scoring (chấm điểm khách hàng tiềm năng) là gì?',
         answer:
-          'Các công cụ AI có thể phân tích lượng lớn dữ liệu để xác định các mẫu, ý định tìm kiếm và các từ khóa đuôi dài mà con người có thể bỏ lỡ. Chúng cũng có thể thực hiện "phân cụm từ khóa", nhóm các thuật ngữ liên quan lại với nhau để tạo ra các trụ cột nội dung toàn diện hơn.',
+          'Lead scoring là một phương pháp được sử dụng để xếp hạng các khách hàng tiềm năng dựa trên một thang điểm đại diện cho giá trị cảm nhận của mỗi khách hàng đối với tổ chức. Điểm số này được sử dụng để xác định khách hàng nào cần được đội ngũ bán hàng theo dõi ngay lập tức.',
       },
       {
-        question: 'Tạo nội dung do AI điều khiển là gì?',
+        question: 'Một ví dụ về chuỗi email nuôi dưỡng (nurturing sequence) là gì?',
         answer:
-          'Điều này liên quan đến việc sử dụng các nền tảng AI như GPT-3 để tạo bài viết, bài đăng trên blog hoặc mô tả sản phẩm. Mặc dù nó có thể tăng tốc độ tạo nội dung, nhưng sản phẩm đầu ra luôn cần sự xem xét, chỉnh sửa và kiểm tra thực tế của con người để đảm bảo chất lượng, độ chính xác và giọng văn thương hiệu.',
+          'Một chuỗi email nuôi dưỡng phổ biến là chuỗi chào mừng. Khi một người dùng mới đăng ký, họ sẽ nhận được một loạt email được thiết kế để giới thiệu họ với thương hiệu, cung cấp giá trị và cuối cùng là hướng họ đến việc mua hàng.',
       },
       {
-        question: 'AI có thể dự đoán các xu hướng SEO không?',
+        question: 'Các công cụ Marketing Automation phổ biến nhất là gì?',
         answer:
-          'Có, một số công cụ AI tiên tiến phân tích dữ liệu thị trường, hành vi của đối thủ cạnh tranh và các bản cập nhật thuật toán của công cụ tìm kiếm để dự báo các xu hướng mới nổi. Điều này cho phép các doanh nghiệp chủ động điều chỉnh chiến lược SEO của mình thay vì phản ứng một cách bị động.',
+          'Một số công cụ hàng đầu bao gồm HubSpot, Marketo, Pardot (của Salesforce), và ActiveCampaign. Đối với các doanh nghiệp nhỏ hơn, các công cụ như Mailchimp và ConvertKit cũng cung cấp các tính năng tự động hóa mạnh mẽ.',
       },
       {
-        question: 'Vai trò của AI trong SEO kỹ thuật là gì?',
+        question: 'Chi phí cho Marketing Automation là bao nhiêu?',
         answer:
-          'AI có thể tự động hóa việc kiểm tra SEO kỹ thuật bằng cách thu thập dữ liệu trang web để tìm các vấn đề như liên kết hỏng, tốc độ trang chậm hoặc các vấn đề về tính thân thiện với thiết bị di động. Nó có thể nhanh chóng xác định và ưu tiên các bản sửa lỗi kỹ thuật có thể ảnh hưởng đáng kể đến thứ hạng.',
+          'Chi phí có thể dao động rất lớn, từ khoảng 20 USD/tháng cho các gói cơ bản của Mailchimp đến hàng nghìn USD/tháng cho các nền tảng doanh nghiệp như HubSpot hoặc Marketo. Chi phí thường phụ thuộc vào số lượng liên hệ và các tính năng bạn cần.',
       },
       {
-        question: 'AI cá nhân hóa trải nghiệm người dùng cho SEO như thế nào?',
+        question: 'Làm thế nào để bắt đầu với Marketing Automation?',
         answer:
-          'AI có thể phân tích hành vi của người dùng trên một trang web và tự động điều chỉnh nội dung hiển thị cho họ. Điều này làm tăng sự tương tác, thời gian phiên và tỷ lệ chuyển đổi—tất cả các tín hiệu mà các công cụ tìm kiếm như Google sử dụng để xếp hạng các trang.',
+          'Hãy bắt đầu nhỏ. Xác định một nhiệm vụ lặp đi lặp lại đang tốn nhiều thời gian nhất, ví dụ như gửi email chào mừng. Chọn một công cụ phù hợp với ngân sách của bạn và tự động hóa quy trình đó trước. Sau đó, dần dần mở rộng sang các lĩnh vực khác.',
       },
       {
-        question: 'Sử dụng AI cho SEO có được coi là "mũ đen" không?',
+        question: 'Marketing Automation có thể được sử dụng cho B2B và B2C không?',
         answer:
-          'Không nhất thiết. Sử dụng AI để phân tích dữ liệu, thu thập thông tin chi tiết và tự động hóa các tác vụ là "mũ trắng". Tuy nhiên, việc sử dụng AI để tạo ra một lượng lớn nội dung chất lượng thấp, spam để thao túng thứ hạng được coi là "mũ đen" và có thể dẫn đến các hình phạt từ các công cụ tìm kiếm.',
+          'Chắc chắn. Mặc dù chiến thuật có thể khác nhau, nhưng các nguyên tắc cốt lõi là như nhau. Cả hai đều nhằm mục đích cung cấp đúng thông điệp cho đúng người vào đúng thời điểm, một cách tự động.',
       },
       {
-        question: 'Làm thế nào một doanh nghiệp nhỏ có thể bắt đầu sử dụng AI cho SEO?',
+        question: 'Làm thế nào để đo lường ROI của Marketing Automation?',
         answer:
-          'Một doanh nghiệp nhỏ có thể bắt đầu bằng cách sử dụng các công cụ thân thiện với người dùng như SurferSEO để tối ưu hóa trên trang hoặc thử các tính năng AI trong các nền tảng như Wix hoặc Shopify. Ngay cả các công cụ miễn phí như phần "People Also Ask" của Google, vốn sử dụng AI, cũng có thể cung cấp các ý tưởng nội dung có giá trị.',
+          'Theo dõi các chỉ số như tỷ lệ chuyển đổi từ khách hàng tiềm năng sang khách hàng, giá trị vòng đời của khách hàng (Customer Lifetime Value), và chi phí thu hút khách hàng (Customer Acquisition Cost). So sánh các chỉ số này trước và sau khi triển khai tự động hóa.',
       },
       {
-        question: 'Tương lai của AI trong SEO là gì?',
+        question: 'Sai lầm phổ biến nhất khi triển khai Marketing Automation là gì?',
         answer:
-          'Tương lai hướng tới sự cá nhân hóa và phân tích dự đoán lớn hơn nữa. AI sẽ ngày càng được tích hợp nhiều hơn vào chính các công cụ tìm kiếm (như RankBrain và BERT của Google), có nghĩa là việc tạo ra nội dung chất lượng cao, lấy người dùng làm trung tâm sẽ quan trọng hơn bao giờ hết. Tối ưu hóa tìm kiếm bằng giọng nói cũng sẽ là một lĩnh vực quan trọng do AI thúc đẩy.',
+          'Sai lầm lớn nhất là "set it and forget it" (thiết lập và quên đi). Tự động hóa cần được theo dõi, phân tích và tối ưu hóa liên tục. Một sai lầm khác là gửi quá nhiều email, gây phiền nhiễu cho khách hàng. Chất lượng và sự liên quan luôn quan trọng hơn số lượng.',
+      },
+    ],
+  },
+  {
+    id: 'ai-data-analysis',
+    title: 'Phân tích dữ liệu với AI',
+    description:
+      'Học cách sử dụng các công cụ AI để phân tích dữ liệu marketing, khám phá các insight ẩn và đưa ra quyết định dựa trên dữ liệu.',
+    duration: '90 phút',
+    difficulty: 'Nâng cao',
+    objectives: [
+      'Sử dụng AI để làm sạch và chuẩn bị dữ liệu.',
+      'Thực hiện phân tích hồi quy và phân cụm để hiểu hành vi khách hàng.',
+      'Dự báo doanh thu và các chỉ số marketing quan trọng.',
+      'Trực quan hóa dữ liệu một cách hiệu quả để trình bày kết quả.',
+    ],
+    prerequisites: ['Kiến thức cơ bản về marketing và Excel.'],
+    keyConcept: 'Khai thác sức mạnh của AI để biến dữ liệu thô thành những hiểu biết sâu sắc có thể hành động.',
+    strategies: ['Phân tích dự báo', 'Phân khúc khách hàng', 'Trực quan hóa dữ liệu'],
+    platforms: ['ChatGPT (Code Interpreter)', 'Microsoft Excel (với AI features)', 'Tableau'],
+    exercises: [
+      {
+        title: 'Phân tích dữ liệu bán hàng với ChatGPT',
+        description:
+          'Tải lên một tệp CSV chứa dữ liệu bán hàng và yêu cầu ChatGPT phân tích và trực quan hóa các xu hướng chính.',
+        difficulty: 'Trung bình',
+        procedure: [
+          'Chuẩn bị một tệp CSV với các cột như "Ngày", "Sản phẩm", "Số lượng", "Doanh thu".',
+          'Trong ChatGPT (phiên bản Plus), chọn biểu tượng kẹp giấy và tải tệp lên.',
+          'Yêu cầu: "Phân tích tệp dữ liệu này. Cho tôi biết sản phẩm nào bán chạy nhất, xu hướng doanh thu theo tháng và vẽ biểu đồ tương ứng."',
+        ],
+        expectedResults:
+          'Một bản phân tích chi tiết cùng với các biểu đồ trực quan, giúp bạn nhanh chóng nắm bắt được tình hình kinh doanh.',
+      },
+    ],
+    realWorldApplications: [
+      'Một giám đốc marketing dự báo doanh thu quý tới với độ chính xác 90%.',
+      'Một nhà phân tích khám phá ra một phân khúc khách hàng mới có lợi nhuận cao.',
+      'Một nhóm sản phẩm xác định các tính năng được yêu thích nhất dựa trên phân tích dữ liệu sử dụng.',
+    ],
+    faqs: [
+      {
+        question: 'Tôi không phải là nhà khoa học dữ liệu, tôi có thể sử dụng các công cụ này không?',
+        answer:
+          'Chắc chắn. Các công cụ AI hiện đại như ChatGPT với Code Interpreter được thiết kế để cho phép người dùng không chuyên về kỹ thuật có thể phân tích dữ liệu bằng ngôn ngữ tự nhiên. Bạn chỉ cần hỏi, và AI sẽ viết code và thực hiện phân tích cho bạn.',
+      },
+      {
+        question: 'Code Interpreter trong ChatGPT là gì?',
+        answer:
+          'Code Interpreter (nay được gọi là Advanced Data Analysis) là một tính năng của ChatGPT Plus cho phép AI viết và thực thi code Python trong một môi trường an toàn. Điều này cho phép nó thực hiện các tác vụ phức tạp như phân tích dữ liệu, tạo biểu đồ, chỉnh sửa tệp, và thực hiện các phép toán.',
+      },
+      {
+        question: 'Dữ liệu của tôi có an toàn khi tôi tải nó lên ChatGPT không?',
+        answer:
+          'Theo chính sách của OpenAI, họ không sử dụng dữ liệu được gửi qua API hoặc trong ChatGPT Team/Enterprise để huấn luyện mô hình của họ. Đối với người dùng ChatGPT miễn phí hoặc Plus, bạn có thể tắt lịch sử trò chuyện để ngăn dữ liệu của bạn được sử dụng. Tuy nhiên, hãy luôn cẩn trọng và tránh tải lên các thông tin cá nhân hoặc tài chính cực kỳ nhạy cảm.',
+      },
+      {
+        question: 'Phân tích dự báo (predictive analysis) là gì?',
+        answer:
+          'Phân tích dự báo là việc sử dụng dữ liệu lịch sử, các thuật toán thống kê và kỹ thuật máy học để xác định khả năng xảy ra các kết quả trong tương lai. Trong marketing, nó có thể được sử dụng để dự báo doanh số, tỷ lệ khách hàng rời bỏ (churn rate), hoặc hiệu quả của một chiến dịch.',
+      },
+      {
+        question: 'Phân khúc khách hàng (customer segmentation) là gì?',
+        answer:
+          'Đây là quá trình chia một cơ sở khách hàng thành các nhóm nhỏ hơn (phân khúc) dựa trên các đặc điểm chung, chẳng hạn như nhân khẩu học, hành vi mua sắm, hoặc nhu cầu. AI có thể giúp xác định các phân khúc này một cách tự động, ngay cả những phân khúc mà con người khó nhận ra.',
+      },
+      {
+        question: 'Làm thế nào để AI giúp trực quan hóa dữ liệu?',
+        answer:
+          'Bạn có thể yêu cầu AI tạo ra nhiều loại biểu đồ khác nhau (biểu đồ cột, đường, tròn, bản đồ nhiệt...) từ dữ liệu của bạn. Bạn thậm chí có thể yêu cầu nó thử các cách trực quan hóa khác nhau để tìm ra cách kể câu chuyện dữ liệu của bạn một cách hiệu quả nhất.',
+      },
+      {
+        question: 'Tôi cần chuẩn bị dữ liệu như thế nào trước khi đưa cho AI?',
+        answer:
+          'Dữ liệu càng "sạch" thì kết quả càng tốt. Điều này có nghĩa là dữ liệu nên được định dạng nhất quán (ví dụ: ngày tháng cùng một định dạng), không có các giá trị bị thiếu (hoặc được xử lý một cách có chủ ý), và các cột được đặt tên rõ ràng. Tuy nhiên, bạn cũng có thể yêu cầu AI giúp bạn làm sạch dữ liệu.',
+      },
+      {
+        question: 'AI có thể giúp tôi tìm ra "tại sao" đằng sau các con số không?',
+        answer:
+          'AI có thể tìm ra các mối tương quan (correlation), ví dụ: "Khi chúng ta giảm giá, doanh số tăng". Tuy nhiên, nó không thể tự mình xác định mối quan hệ nhân quả (causation). Việc giải thích "tại sao" vẫn cần đến sự phân tích và kiến thức chuyên môn của con người.',
+      },
+      {
+        question: 'Tableau là gì và nó liên quan gì đến AI?',
+        answer:
+          'Tableau là một nền tảng trực quan hóa dữ liệu hàng đầu. Các phiên bản mới của Tableau tích hợp các tính năng AI (như Tableau Pulse và Einstein Copilot) cho phép người dùng đặt câu hỏi bằng ngôn ngữ tự nhiên, tự động phát hiện các insight, và tạo ra các phân tích dự báo.',
+      },
+      {
+        question: 'Tôi nên bắt đầu từ đâu nếu muốn học phân tích dữ liệu với AI?',
+        answer:
+          'Hãy bắt đầu với một bộ dữ liệu bạn quen thuộc, có thể là dữ liệu bán hàng của công ty bạn hoặc thậm chí là chi tiêu cá nhân của bạn được xuất ra từ ứng dụng ngân hàng. Tải nó lên ChatGPT Plus và bắt đầu đặt câu hỏi. Ví dụ: "Hãy cho tôi biết tôi chi tiêu nhiều nhất vào việc gì trong tháng qua?".',
       },
     ],
   },
 ];
-
-export const businessMarketingModuleData: ModuleData = {
-  id: K2Module.BusinessMarketing,
-  title: 'AI cho Kinh Doanh & Marketing',
-  subtitle: 'Marketing thông minh với AI',
-  description: 'Ứng dụng AI trong marketing, phân tích khách hàng, tạo chatbot và tối ưu hóa SEO cho doanh nghiệp',
-  category: 'Kinh doanh',
-  icon: '📈',
-  color: 'from-orange-600 to-red-600',
-  level: 'Trung bình đến Nâng cao',
-  duration: '6-8 giờ',
-  features: ['Marketing automation', 'Customer analytics', 'Chatbot development', 'SEO optimization'],
-  prerequisites: ['Hiểu biết cơ bản về marketing', 'Kinh nghiệm kinh doanh'],
-  objectives: [
-    'Tự động hóa các chiến dịch marketing để tăng hiệu quả.',
-    'Phân tích dữ liệu khách hàng để cá nhân hóa trải nghiệm.',
-    'Xây dựng chatbot thông minh để cải thiện dịch vụ khách hàng.',
-    'Tối ưu hóa SEO bằng các công cụ AI để tăng lưu lượng truy cập không phải trả tiền.',
-  ],
-  careerOutcomes: [
-    'Chuyên gia Marketing Automation',
-    'Nhà phân tích dữ liệu Marketing',
-    'Nhà phát triển Chatbot',
-    'Chuyên gia SEO',
-  ],
-  industryApplications: ['Thương mại điện tử', 'Dịch vụ tài chính', 'Chăm sóc sức khỏe', 'Bán lẻ'],
-  marketDemand: {
-    averageSalary: '80.000 - 130.000 USD/năm',
-    jobGrowth: '15%',
-    hireDemand: 'Rất cao',
-  },
-  relatedModules: [K2Module.DataScienceAnalytics, K2Module.AISEOOptimization],
-  lessons: businessMarketingLessons,
-};

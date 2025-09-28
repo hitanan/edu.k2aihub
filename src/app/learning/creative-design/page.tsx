@@ -1,15 +1,17 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { creativeDesignModuleData } from '@/data/modules/creative-design';
+import { creativeDesignLessons } from '@/data/modules/creative-design';
+import { creativeDesignModule } from '@/data/modules/creative-design-module';
 import { createModuleMetadata } from '@/utils/seo';
 
+// Generate metadata
 export const metadata: Metadata = createModuleMetadata(
-  creativeDesignModuleData.title,
-  creativeDesignModuleData.description,
-  ['creative design', 'thiết kế sáng tạo', 'đồ họa', 'design', 'K2AI'],
-  creativeDesignModuleData.id,
+  creativeDesignModule.title,
+  creativeDesignModule.description,
+  ['thiết kế', 'sáng tạo', 'ai', 'midjourney', 'canva', 'K2AI'],
+  creativeDesignModule.id,
 );
 
-export default function CreativeDesignModulePage() {
-  return <ModulePageTemplate moduleData={creativeDesignModuleData} lessons={creativeDesignModuleData.lessons || []} />;
+export default function CreativeDesignPage() {
+  return <ModulePageTemplate moduleData={creativeDesignModule} lessons={creativeDesignLessons} />;
 }

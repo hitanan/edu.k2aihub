@@ -1,15 +1,17 @@
 import { Metadata } from 'next';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { programmingDevModule } from '@/data/modules/programming-dev';
+import { programmingDevLessons } from '@/data/modules/programming-dev';
+import { programmingDevModule } from '@/data/modules/programming-dev-module';
 import { createModuleMetadata } from '@/utils/seo';
 
+// Generate metadata
 export const metadata: Metadata = createModuleMetadata(
   programmingDevModule.title,
   programmingDevModule.description,
-  ['programming', 'lập trình', 'phát triển phần mềm', 'development', 'K2AI'],
+  ['lập trình', 'phát triển', 'ai', 'copilot', 'K2AI'],
   programmingDevModule.id,
 );
 
-export default function ProgrammingDevModulePage() {
-  return <ModulePageTemplate moduleData={programmingDevModule} lessons={programmingDevModule.lessons || []} />;
+export default function ProgrammingDevPage() {
+  return <ModulePageTemplate moduleData={programmingDevModule} lessons={programmingDevLessons} />;
 }

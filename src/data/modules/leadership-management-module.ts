@@ -1,24 +1,12 @@
-import { ModuleNavigation } from '@/types';
+import { ModuleData } from '@/types';
+import { LeadershipLesson, leadershipManagementLessons } from './leadership-management';
 
-export const leadershipManagementModuleData: ModuleNavigation = {
+export const leadershipManagementModuleData: ModuleData<LeadershipLesson> = {
   id: 'leadership-management',
-  title: 'Lãnh Đạo & Quản Lý',
-  subtitle: 'Dẫn dắt đội nhóm hiệu quả',
+  title: 'Lãnh đạo và Quản lý',
   description:
-    'Phát triển kỹ năng lãnh đạo, quản lý đội nhóm, giải quyết xung đột và ra quyết định chiến lược để trở thành nhà lãnh đạo xuất sắc.',
-  category: ['Professional Skills', 'Leadership', 'Management'],
-  icon: '🏆',
-  color: 'from-yellow-500 to-amber-500',
-  totalDuration: '8-10 giờ',
-  difficulty: 'Nâng cao',
-  href: '/learning/leadership-management',
-  features: [
-    'Phong cách lãnh đạo và situational leadership',
-    'Quản lý hiệu suất và team motivation',
-    'Giải quyết xung đột và negotiation',
-    'Strategic decision-making',
-  ],
-  tags: ['leadership', 'management', 'team-building', 'decision-making'],
-  prerequisites: ['Kinh nghiệm làm việc nhóm', 'Hiểu biết cơ bản về quản lý dự án'],
-  lessons: [],
+    'Phát triển kỹ năng lãnh đạo và quản lý hiệu quả để dẫn dắt đội nhóm và tổ chức thành công trong môi trường kinh doanh hiện đại.',
+  category: 'Kỹ năng chuyên nghiệp',
+  imageUrl: 'https://images.unsplash.com/photo-1573496130407-57329f01f769?w=800&h=400&fit=crop',
+  lessons: leadershipManagementLessons,
 };
